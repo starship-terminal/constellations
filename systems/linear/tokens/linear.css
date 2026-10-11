@@ -1,0 +1,33 @@
+:root {
+  --linear-app-canvas: #09090B;
+  --linear-app-surface: #121214;
+  --linear-app-raised: #1A1A1C;
+  --linear-app-popover: #212123;
+  --linear-app-selected: #323234;
+  --linear-app-text: #FFFFFF;
+  --linear-app-muted: #969699;
+  --linear-app-accent: #5E6AD2;
+  --linear-app-border: #2B2B2E;
+  --linear-web-canvas: #08090A;
+  --linear-web-surface: #0F1011;
+  --linear-web-raised: #161718;
+  --linear-web-border: #24282C;
+  --linear-web-text: #F7F8F8;
+  --linear-web-secondary: #D0D6E0;
+  --linear-web-muted: #8A8F98;
+  --linear-web-subtle: #62666D;
+  --linear-web-primary: #E5E5E6;
+  --linear-web-accent: #5E6AD2;
+  --linear-brand-mercury-white: #F4F5F8;
+  --linear-brand-nordic-gray: #222326;
+  --linear-semantic-todo: #A0A0A5;
+  --linear-semantic-in-progress: #F2C94C;
+  --linear-semantic-done: #5E6AD2;
+  --linear-semantic-urgent: #EB5757;
+  --linear-semantic-success: #27A644;
+  --linear-semantic-link: #4EA7FC;
+  --linear-font-ui: "Inter Variable", Inter, system-ui, sans-serif;
+  --linear-font-mono: "Berkeley Mono", "SF Mono", Menlo, monospace;
+  --linear-font-editorial: "Tiempos Headline", Georgia, serif;
+}
+body {font-family:var(--linear-font-ui);font-feature-settings:"cv01","ss03";}

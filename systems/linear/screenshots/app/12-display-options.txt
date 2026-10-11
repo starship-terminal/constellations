@@ -1,0 +1,4 @@
+The following is a diff from the previous accessibility tree for Window: "Acme: Sample project › Iss…" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 223-224, 275
++						317 link Issues, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/issues
+The focused UI element is 318 container

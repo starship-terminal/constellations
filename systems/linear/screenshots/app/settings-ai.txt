@@ -1,0 +1,176 @@
+Window: "Acme: AI & Agents", App: Dia.
+0 standard window Acme: AI & Agents, ID: bigBrowserWindow_00000000-0000-0000-0000-000000000000, Secondary Actions: Raise
+	1 HTML content AI & Agents, URL: linear.app/acme/settings/ai
+		2 container
+			3 link Skip to content, Value: linear.app/acme/settings/teams/COR#skip-nav
+			4 container
+				5 container
+					6 container
+						7 link Back to app, Value: linear.app/acme/team/COR/overview
+						8 container Search settings
+							9 container Search…
+						10 heading Personal
+							11 text Personal
+						12 link Preferences, Value: linear.app/acme/settings/account/preferences
+						13 link Profile, Value: linear.app/acme/settings/account/profile
+						14 link Notifications, Value: linear.app/acme/settings/account/notifications
+						15 link Code & reviews, Value: linear.app/acme/settings/account/code-and-reviews
+						16 link Security & access, Value: linear.app/acme/settings/account/security
+						17 link Connected accounts, Value: linear.app/acme/settings/account/connections
+						18 link Agent personalization, Value: linear.app/acme/settings/account/agents
+						19 heading Issues
+							20 text Issues
+						21 link Labels, Value: linear.app/acme/settings/issue-labels
+						22 link Templates, Value: linear.app/acme/settings/issue-templates
+						23 link SLAs, Value: linear.app/acme/settings/sla
+						24 heading Projects
+							25 text Projects
+						26 link Labels, Value: linear.app/acme/settings/project-labels
+						27 link Templates, Value: linear.app/acme/settings/project-templates
+						28 link Statuses, Value: linear.app/acme/settings/project-statuses
+						29 link Updates, Value: linear.app/acme/settings/project-updates
+						30 heading Features
+							31 text Features
+						32 link AI & Agents, Value: linear.app/acme/settings/ai
+						33 link Loops, Value: linear.app/acme/settings/loops
+						34 link Initiatives, Value: linear.app/acme/settings/initiatives
+						35 link Documents, Value: linear.app/acme/settings/documents
+						36 link Customer requests, Value: linear.app/acme/settings/customer-requests
+						37 link Releases, Value: linear.app/acme/settings/releases
+						38 link Pulse, Value: linear.app/acme/settings/pulse
+						39 link Asks, Value: linear.app/acme/settings/asks
+						40 link Emojis, Value: linear.app/acme/settings/emojis
+						41 link Integrations, Value: linear.app/acme/settings/integrations
+						42 heading Administration
+							43 text Administration
+						44 link Workspace, Value: linear.app/acme/settings/workspace
+						45 link Teams, Value: linear.app/acme/settings/teams
+						46 link Members, Value: linear.app/acme/settings/members
+						47 link Security, Value: linear.app/acme/settings/security
+						48 link API, Value: linear.app/acme/settings/api
+						49 link Applications, Value: linear.app/acme/settings/applications
+						50 link Billing, Value: linear.app/acme/settings/billing
+						51 link Usage & limits, Value: linear.app/acme/settings/usage
+						52 link Import & export, Value: linear.app/acme/settings/import-export
+						53 heading Your teams
+							54 text Your teams
+						55 link Core, Value: linear.app/acme/settings/teams/COR
+						56 container Join or create a team
+							57 text Join or create a team
+					58 container
+						59 button View changelog
+						60 text What’s new Loops for product management
+						61 button Collapse into help menu
+				62 container
+					63 text AI & Agents
+					64 text Automate your product development processes and operations with AI
+					65 container Settings
+						66 content list
+							67 container
+								68 link Usage settings, Value: linear.app/acme/settings/usage
+								69 text Usage $0.00 remaining
+						70 content list
+							71 container
+								72 text AI & Agents Code Intelligence and Loops are available on Business and Enterprise plans
+								73 button Start free trial
+					74 container Linear Agent
+						75 heading Linear Agent
+							76 text Linear Agent
+						77 container
+							78 text Create issues and answer questions about your workspace.
+							79 link Docs↗, Value: linear.app/docs/linear-agent
+						80 content list
+							81 container
+								82 link Linear Agent settings, Value: linear.app/acme/settings/ai/agent
+								83 text Linear Agent Configure for your workspace Enabled
+							84 container
+								85 text Coding sessions Assign or ask Linear to make code changes
+								86 link Available on Basic, Value: linear.app/acme/settings/billing/plans
+							87 container
+								88 text Code Intelligence Allow Linear Agent and Loops to analyze and answer questions about your code
+								89 link Available on Business, Value: linear.app/acme/settings/billing/plans
+							90 container
+								91 text Triage Intelligence Find related issues and infer properties like team, project, labels, and assignee
+								92 link Available on Business, Value: linear.app/acme/settings/billing/plans
+					93 container Linear Agent integrations
+						94 heading Linear Agent integrations
+							95 text Linear Agent integrations
+						96 text Integrations available to Linear Agent.
+						97 link Browse integrations, Value: linear.app/acme/settings/integrations
+						98 content list
+							99 container
+								100 link Slack settings, Value: linear.app/acme/settings/integrations/slack#ai-rules
+								101 text Slack Settings and additional guidance for creating issues from Slack messages Enabled
+					102 container Installed Agents
+						103 heading Installed Agents
+							104 text Installed Agents
+						105 container
+							106 text AI agents can work alongside you as teammates. 
+							107 link Docs↗, Value: linear.app/docs/agents-in-linear
+						108 heading Browse integrations to enable new agents
+							109 text Browse 
+							110 link integrations, Value: linear.app/acme/settings/integrations#agents
+							111 text  to enable new agents
+						112 content list
+							113 container
+								114 link Installed agents guidance settings, Value: linear.app/acme/settings/agents
+								115 text Installed agents guidance Provide context and instructions for installed agents
+					116 container AI
+						117 heading AI
+							118 text AI
+						119 text Automate your product development processes and operations with AI
+						120 content list
+							121 container
+								122 text Resolved thread summaries Control AI summaries for resolved threads across Linear
+								123 link Available on Business, Value: linear.app/acme/settings/billing/plans
+				124 container
+					125 button Agent
+					126 button Chat history
+			127 container Notifications alt+T
+			128 text Navigated to AI & Agents
+	129 container navigationBar
+		130 unknown navigationBarBackButton
+		131 unknown navigationBarReloadOrStopLoadingButton
+		132 button
+		133 collection
+		134 unknown navigationBarAssistantBar
+			135 unknown
+				136 scroll area
+					137 text entry area Value: linear.app / AI & Agents, ID: navigationBarAssistantBarTextField
+	138 collection
+	139 text https://linear.app/acme/settings/ai
+	140 scroll area Secondary Actions: Scroll Up, Scroll Down
+		141 collection (disabled)
+			142 unknown acme-org/app, ID: tab
+				143 unknown
+					144 image
+					145 text acme-org/app
+			146 unknown AI & Agents, ID: tab
+				147 unknown
+					148 image
+					149 text AI & Agents
+			150 unknown
+				151 button
+		152 scroll bar (disabled) 0
+	153 close button
+	154 minimize button
+	155 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	156 button
+	157 button Chats
+	158 button
+	159 unknown OF
+	160 unknown Acme
+	161 unknown FT
+162 menu bar
+	163 Dia
+	164 File
+	165 Edit
+	166 View
+	167 Tabs
+	168 Bookmarks
+	169 History
+	170 Extensions
+	171 Window
+	172 Help
+
+The focused UI element is 32 link AI & Agents, Value: linear.app/acme/settings/ai

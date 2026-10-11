@@ -1,0 +1,12 @@
+- heading "Log in to Linear" [level=1]
+- button "Continue with Google"
+- button "Continue with email"
+- button "Continue with SAML SSO"
+- button "Log in with passkey"
+- paragraph:
+  - text: Don’t have an account?
+  - link "Sign up":
+    - /url: /signup
+  - text: or
+  - link "learn more":
+    - /url: /homepage

@@ -1,0 +1,202 @@
+Window: "Acme: Customer requests", App: Dia.
+0 standard window Acme: Customer requests, ID: bigBrowserWindow_00000000-0000-0000-0000-000000000000, Secondary Actions: Raise
+	1 HTML content Customer requests, URL: linear.app/acme/settings/customer-requests
+		2 container
+			3 link Skip to content, Value: linear.app/acme/settings/teams/COR#skip-nav
+			4 container
+				5 container
+					6 container
+						7 link Back to app, Value: linear.app/acme/team/COR/overview
+						8 container Search settings
+							9 container Search…
+						10 heading Personal
+							11 text Personal
+						12 link Preferences, Value: linear.app/acme/settings/account/preferences
+						13 link Profile, Value: linear.app/acme/settings/account/profile
+						14 link Notifications, Value: linear.app/acme/settings/account/notifications
+						15 link Code & reviews, Value: linear.app/acme/settings/account/code-and-reviews
+						16 link Security & access, Value: linear.app/acme/settings/account/security
+						17 link Connected accounts, Value: linear.app/acme/settings/account/connections
+						18 link Agent personalization, Value: linear.app/acme/settings/account/agents
+						19 heading Issues
+							20 text Issues
+						21 link Labels, Value: linear.app/acme/settings/issue-labels
+						22 link Templates, Value: linear.app/acme/settings/issue-templates
+						23 link SLAs, Value: linear.app/acme/settings/sla
+						24 heading Projects
+							25 text Projects
+						26 link Labels, Value: linear.app/acme/settings/project-labels
+						27 link Templates, Value: linear.app/acme/settings/project-templates
+						28 link Statuses, Value: linear.app/acme/settings/project-statuses
+						29 link Updates, Value: linear.app/acme/settings/project-updates
+						30 heading Features
+							31 text Features
+						32 link AI & Agents, Value: linear.app/acme/settings/ai
+						33 link Loops, Value: linear.app/acme/settings/loops
+						34 link Initiatives, Value: linear.app/acme/settings/initiatives
+						35 link Documents, Value: linear.app/acme/settings/documents
+						36 link Customer requests, Value: linear.app/acme/settings/customer-requests
+						37 link Releases, Value: linear.app/acme/settings/releases
+						38 link Pulse, Value: linear.app/acme/settings/pulse
+						39 link Asks, Value: linear.app/acme/settings/asks
+						40 link Emojis, Value: linear.app/acme/settings/emojis
+						41 link Integrations, Value: linear.app/acme/settings/integrations
+						42 heading Administration
+							43 text Administration
+						44 link Workspace, Value: linear.app/acme/settings/workspace
+						45 link Teams, Value: linear.app/acme/settings/teams
+						46 link Members, Value: linear.app/acme/settings/members
+						47 link Security, Value: linear.app/acme/settings/security
+						48 link API, Value: linear.app/acme/settings/api
+						49 link Applications, Value: linear.app/acme/settings/applications
+						50 link Billing, Value: linear.app/acme/settings/billing
+						51 link Usage & limits, Value: linear.app/acme/settings/usage
+						52 link Import & export, Value: linear.app/acme/settings/import-export
+						53 heading Your teams
+							54 text Your teams
+						55 link Core, Value: linear.app/acme/settings/teams/COR
+						56 container Join or create a team
+							57 text Join or create a team
+					58 container
+						59 button View changelog
+						60 text What’s new Loops for product management
+						61 button Collapse into help menu
+				62 container
+					63 text Customer requests
+					64 container
+						65 text Associate customers with projects and issues to align development efforts with real user needs. Manage and track customer requests across your entire organization. 
+						66 link Docs↗, Value: linear.app/docs/customer-requests
+					67 container Settings
+						68 container Settings
+							69 content list
+								70 container
+									71 text Workspace-wide access to create and view customer requests
+									72 checkbox Enable Customer requests
+						73 container Disabled settings
+							74 content list
+								75 container
+									76 text Manage customers Manage your list of customers and their requests No customers
+					77 container Issue routing
+						78 heading Issue routing
+							79 text Issue routing
+						80 text When a new issue is created from a customer page, it will be routed to the default team’s triage or backlog. This centralizes customer requests for ease of management and prioritization.
+						81 content list
+							82 container
+								83 text Default team for customer requests
+								84 combo box (disabled) Default team for customer requests, Value: No default team
+					85 container Customer statuses
+						86 heading Customer statuses
+							87 text Customer statuses
+						88 text Define statuses for segmenting customers
+						89 content list
+							90 content list
+								91 container
+									92 text 4 customer statuses
+								93 container
+									94 sortable (disabled) Active
+										95 text Active
+									96 sortable (disabled) Prospect
+										97 text Prospect
+									98 sortable (disabled) Churned
+										99 text Churned
+									100 sortable (disabled) Lost
+										101 text Lost
+					102 container Customer tiers
+						103 heading Customer tiers
+							104 text Customer tiers
+						105 text Define tiers for segmenting customers
+						106 content list
+							107 content list
+								108 container
+									109 text No  customer tiers
+					110 container Display options
+						111 heading Display options
+							112 text Display options
+						113 content list
+							114 container
+								115 text Revenue formatting Data imports must be in annual figures, but can be displayed as monthly or annual
+								116 combo box (disabled) Revenue formatting, Value: Annual
+							117 container
+								118 text Revenue currency The currency used when displaying customer revenue
+								119 combo box (disabled) Revenue currency, Value: USD ($)
+					120 container Customer attributes data source
+						121 heading Customer attributes data source
+							122 text Customer attributes data source
+						123 text Sync customer attributes from an external data source
+						124 content list
+							125 container
+								126 text External data source
+								127 container Subscribe to the Business plan to configure support integrations as external data source
+									128 text None
+							129 container
+								130 text Attributes can be edited in the Linear UI
+								131 checkbox (disabled) Enable manual edits
+					132 container Excluded domains and emails
+						133 text Excluded domains and emails
+						134 text Domains and emails that should never create customer requests
+						135 content list
+							136 container
+								137 heading No excluded domains and emails
+									138 text No excluded domains and emails
+								139 pop up button (disabled) Open menu
+					140 container Generic domains and emails
+						141 text Generic domains and emails
+						142 container
+							143 text Domains and emails that are not associated with a specific customer. Common providers like Gmail, Outlook, etc. are already included.
+							144 link List of generic domains↗, Value: linear.app/docs/customer-requests#collapsible-05932a65c71b
+						145 content list
+							146 container
+								147 heading No custom generic domains and emails
+									148 text No custom generic domains and emails
+								149 pop up button (disabled) Open menu
+				150 container
+					151 button Agent
+					152 button Chat history
+			153 container Notifications alt+T
+			154 text Navigated to Customer requests
+	155 container navigationBar
+		156 unknown navigationBarBackButton
+		157 unknown navigationBarReloadOrStopLoadingButton
+		158 button
+		159 collection
+		160 unknown navigationBarAssistantBar
+			161 unknown
+				162 scroll area
+					163 text entry area Value: linear.app / Customer requests, ID: navigationBarAssistantBarTextField
+	164 collection
+	165 text https://linear.app/acme/settings/customer-requests
+	166 scroll area Secondary Actions: Scroll Up, Scroll Down
+		167 collection (disabled)
+			168 unknown acme-org/app, ID: tab
+				169 unknown
+					170 image
+					171 text acme-org/app
+			172 unknown Customer requests, ID: tab
+				173 unknown
+					174 image
+					175 text Customer requests
+			176 unknown
+				177 button
+		178 scroll bar (disabled) 0
+	179 close button
+	180 minimize button
+	181 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	182 button
+	183 button Chats
+	184 button
+	185 unknown OF
+	186 unknown Acme
+	187 unknown FT
+188 menu bar
+	189 Dia
+	190 File
+	191 Edit
+	192 View
+	193 Tabs
+	194 Bookmarks
+	195 History
+	196 Extensions
+	197 Window
+	198 Help
+
+The focused UI element is 36 link Customer requests, Value: linear.app/acme/settings/customer-requests

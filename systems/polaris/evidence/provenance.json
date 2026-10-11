@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/Shopify/polaris-react-archive",
+  "commit": "3f7954ae42fabf26d63cee68c23ceebfd7ef0972",
+  "archiveReactVersion": "13.10.1",
+  "previewReactVersion": "13.9.5",
+  "tokens": "9.4.2",
+  "icons": "9.3.1",
+  "date": "2026-09-25",
+  "note": "Archive React version unavailable in registry; previews use published 13.9.5. Inter preview supplied by Fontsource 5.2.8; glyph version can differ from archived docs."
+}

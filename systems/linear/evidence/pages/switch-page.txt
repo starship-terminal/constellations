@@ -1,0 +1,257 @@
+- region "Notifications alt+T"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+- complementary:
+  - list:
+    - generic: "1"
+    - link "Switch to Linear":
+      - /url: /switch
+    - list:
+      - link "What's happening":
+        - /url: "#the-way-teams-build-products-is-changing"
+      - link "Introducing Linear":
+        - /url: "#linear-is-the-system-for-modern-product-development"
+      - link "Why switch?":
+        - /url: "#product-operations-on-autopilot"
+      - link "The companies pulling ahead":
+        - /url: "#linear-is-the-tool-of-choice-for-more-than-20000-organizations-from-ambitious-startups-to-major-enterprises-including-fortune-20-companies."
+      - link "How switching works":
+        - /url: "#see-for-yourself-if-linear-is-the-right-fit-for-your-team-and-switch-with-confidence."
+    - generic: "2"
+    - link "Pitching Linear":
+      - /url: /switch/pitch-guide
+    - generic: "3"
+    - link "Running a pilot":
+      - /url: /switch/pilot-guide
+    - generic: "4"
+    - link "Migration guide":
+      - /url: /switch/migration-guide
+  - link "Sign up":
+    - /url: /signup
+  - link "Talk to sales":
+    - /url: /contact/sales
+- heading "Switch to Linear" [level=1]
+- paragraph:
+  - text: Linear is shaping how product teams build with AI.
+  - text: Here is the case for why now is the time to move.
+- generic: What's happening
+- heading "The way teams build products is changing" [level=2]
+- paragraph: AI coding tools made individuals dramatically faster. But the faster your team moves, the harder it is to maintain a collective sense of direction.
+- paragraph: Coordination has become the bottleneck, and most of the software responsible for it was designed for a slower, human-only era.
+- generic: Introducing Linear
+- heading "Linear is the system for modern product development" [level=2]
+- paragraph: Linear is where product teams plan, build, and ship software. From bugs and feature requests through to projects, roadmaps, and company-wide initiatives.
+- paragraph: Linear actively drives product operations forward. Building up a living picture of your product from every connected tool and conversation, then helping your team and their agents to act on it.
+- paragraph: More than 20,000 teams have already made the switch, including OpenAI, Coinbase, and Block.
+- generic: Why switch?
+- heading "Product operations on autopilot" [level=2]
+- paragraph:
+  - text: Linear
+  - link "connects":
+    - /url: https://linear.app/integrations
+  - text: to the places where your team already talks to customers and discusses ideas, from Slack and Salesforce, through to Gong and support tools.
+- paragraph: Context from these tools flows into Linear as issues, whether automatically or captured by your team in a couple of clicks.
+- paragraph: Linear structures this context for you. Catching duplicates, applying labels, assigning tasks to the right teams. It’s like having a product operations team working around the clock, helping you to build up a picture of what you should work on next.
+- blockquote:
+  - generic: “We’ve dramatically reduced triage time for bugs using Linear.”
+  - img "Clay"
+  - generic: Clay
+  - text: Building with Linear since 2019 ·
+  - link "Read story":
+    - /url: /customers/clay
+- separator
+- heading "10x your building capacity" [level=3]
+- paragraph:
+  - text: The best agentic coding and dev tools (Cursor, Sentry, Copilot, Codex)
+  - link "integrate":
+    - /url: https://linear.app/integrations/agents
+  - text: natively into Linear. You can delegate work to them at scale, assigning dozens of tasks in parallel the same way you’d assign work to a human teammate. Their work shows up where the rest of your team can see it, and engineers verify code quality with
+  - link "Linear Diffs":
+    - /url: https://linear.app/diffs
+  - text: before anything gets merged.
+- blockquote:
+  - generic: “Perplexity is known for shipping fast, and a big reason is our use of Linear.”
+  - img "Perplexity"
+  - generic: Perplexity
+  - generic: Building with Linear since 2023
+- separator
+- heading "You move fast without losing control" [level=3]
+- paragraph: When your team and their agents are shipping work at this pace, you need to be able to see the full picture at any moment. Linear gives you that view at every altitude, from company-wide objectives down to what’s blocking an individual issue.
+- paragraph: Work becomes legible to your entire organisation. A CTO can check whether the company is on track. An engineering manager can see what their teams are working on this cycle. An IC can focus on what’s in front of them.
+- blockquote:
+  - generic: “Linear is the source of truth for what we’re building.”
+  - img "Sierra"
+  - generic: Sierra
+  - text: Building with Linear since 2025 ·
+  - link "Read story":
+    - /url: https://linear.app/customers/sierra
+- separator
+- heading "Higher deployment frequency" [level=3]
+- paragraph:
+  - text: More than 75% of Linear enterprise workspaces have deployed agents to help them build. And the humans working alongside them genuinely enjoy using Linear. It’s fast, simple, and designed to stay out of your way.
+  - text: The combination of higher engagement and agent-assisted development drives measurably higher throughput.
+- list:
+  - generic: 3.3x
+  - generic: Faster issue resolution
+  - generic: 2.0x
+  - generic: Increase in reported issues
+- paragraph: Average increased based on data from companies with 50+ employees migrating from Jira, Asana, and GitHub Issues.
+- blockquote:
+  - generic: “Linear was the only piece of software in this domain where engineers actually enjoyed using it.”
+  - img "Brex"
+  - generic: Brex
+  - text: Building with Linear since 2024 ·
+  - link "Read story":
+    - /url: https://linear.app/customers/brex
+- generic: The companies pulling ahead
+- heading "Linear is the tool of choice for more than 20,000 organizations, from ambitious startups to major enterprises, including Fortune 20 companies." [level=2]
+- paragraph: It’s never too early or too late to make the switch. Ramp has been building with Linear from the beginning, scaling to 1,000+ employees. Coinbase, Automattic, and Block migrated to Linear after decades building with other tools.
+- paragraph: They switched to stay ahead as the way teams build products changes.
+- img "Opendoor"
+- generic: Opendoor
+- link "Moved from Jira to rebuild their product culture":
+  - /url: /customers/opendoor
+- img "Automattic"
+- generic: Automattic
+- link "Migrated from Jira to unify its product teams":
+  - /url: https://linear.app/customers/automattic
+- img "Oscar Health"
+- generic: Oscar Health
+- link "Migrated 600 engineers from Jira in a month":
+  - /url: https://linear.app/customers/oscar
+- img "Coinbase"
+- generic: Coinbase
+- link "Switched to an agent-first development setup":
+  - /url: /customers/coinbase
+- generic: How switching works
+- heading "See for yourself if Linear is the right fit for your team and switch with confidence." [level=2]
+- link "Try it yourself Create a workspace. It’s free and takes minutes. →":
+  - /url: https://linear.app/signup
+  - listitem: Try it yourself
+  - generic: Create a workspace. It’s free and takes minutes.
+  - generic: →
+- link "Get help from us Talk to our team and we’ll guide you through it. →":
+  - /url: https://linear.app/contact/sales
+  - listitem: Get help from us
+  - generic: Talk to our team and we’ll guide you through it.
+  - generic: →
+- link "Need to convince your team? Learn how to pitch, pilot, and switch your team to Linear. →":
+  - /url: https://linear.app/switch/pitch-guide
+  - listitem: Need to convince your team?
+  - generic: Learn how to pitch, pilot, and switch your team to Linear.
+  - generic: →
+- heading "Resources" [level=2]
+- link "Talk to our team Request a demo, or get help with your migration →":
+  - /url: https://linear.app/contact/sales
+  - generic: Talk to our team
+  - generic: Request a demo, or get help with your migration
+  - generic: →
+- link "Pricing Find the right plan for your team →":
+  - /url: https://linear.app/pricing
+  - generic: Pricing
+  - generic: Find the right plan for your team
+  - generic: →
+- link "Security Best-in-class security practices →":
+  - /url: https://linear.app/security
+  - generic: Security
+  - generic: Best-in-class security practices
+  - generic: →
+- link "Pitch guide Convince the rest of your team →":
+  - /url: https://linear.app/switch/pitch-guide
+  - generic: Pitch guide
+  - generic: Convince the rest of your team
+  - generic: →
+- link "Pilot guide Everything you need for a successful pilot →":
+  - /url: /switch/pilot-guide
+  - generic: Pilot guide
+  - generic: Everything you need for a successful pilot
+  - generic: →
+- link "Migration guide Instructions for a seamless transition →":
+  - /url: https://linear.app/switch/migration-guide
+  - generic: Migration guide
+  - generic: Instructions for a seamless transition
+  - generic: →
+- link "Jira Sync Keep work in sync with Jira →":
+  - /url: https://linear.app/docs/jira
+  - generic: Jira Sync
+  - generic: Keep work in sync with Jira
+  - generic: →
+- link "GitHub Issues Sync Keep work in sync with GitHub Issues →":
+  - /url: https://linear.app/docs/github#github-issues-sync
+  - generic: GitHub Issues Sync
+  - generic: Keep work in sync with GitHub Issues
+  - generic: →
+- heading "FAQ" [level=2]
+- button "What is Linear’s pricing structure":
+  - text: What is Linear’s pricing structure
+- paragraph:
+  - text: Linear offers three pricing tiers (Basic, Business, Enterprise) tailored to the needs of your team. For detailed information about each plan, visit
+  - link "our Pricing page":
+    - /url: https://linear.app/pricing
+  - text: or
+  - link "get in touch with our Sales team":
+    - /url: https://linear.app/contact/sales
+  - text: .
+- button "Does Linear have dedicated support for enterprise customers?":
+  - text: Does Linear have dedicated support for enterprise customers?
+- paragraph:
+  - text: Yes, we offer white glove onboarding and migration assistance for enterprise customers as well as ongoing priority support and account management.
+  - link "Get in touch with our Sales team":
+    - /url: https://linear.app/contact/sales
+  - text: to learn more.
+- button "What if I want to make the switch, but l’m under contract with my current tool?":
+  - text: What if I want to make the switch, but l’m under contract with my current tool?
+- paragraph:
+  - text: If you’re stuck in an annual contract,
+  - link "please reach out to our team":
+    - /url: https://linear.app/contact/sales
+  - text: with a copy of your current contract.
+- button "Does Linear meet my organization's security standards?":
+  - text: Does Linear meet my organization's security standards?
+- paragraph:
+  - text: Linear is built with enterprise-grade security practices to keep your work safe and secure at every layer. This includes state-of-the-art encryption, safe and reliable infrastructure partners, and independently verified security controls. Linear is SOC2 and HIPAA compliant and committed to compliance with Europe’s General Data Protection Regulation (GDPR). You can learn more about Linear’s security features
+  - link "here":
+    - /url: https://linear.app/security
+  - text: .
+- button "How does Linear integrate with our existing tools?":
+  - text: How does Linear integrate with our existing tools?
+- paragraph:
+  - text: Linear is natively integrated with all major tools that teams use in their day-to-day workflows, ranging from engineering (
+  - link "GitHub":
+    - /url: https://linear.app/integrations/github
+  - text: ","
+  - link "GitLab":
+    - /url: https://linear.app/integrations/gitlab
+  - text: ","
+  - link "Sentry":
+    - /url: https://linear.app/integrations/sentry
+  - text: ) and design tools (
+  - link "Figma":
+    - /url: https://linear.app/figma
+  - text: ) to customer support systems (
+  - link "Intercom":
+    - /url: https://linear.app/integrations/intercom
+  - text: ","
+  - link "Front":
+    - /url: https://linear.app/integrations/front
+  - text: ","
+  - link "Zendesk":
+    - /url: https://linear.app/integrations/zendesk
+  - text: ) and communication platforms (
+  - link "Slack":
+    - /url: https://linear.app/integrations/slack
+  - text: ","
+  - link "Discord":
+    - /url: https://linear.app/integrations/discord
+  - text: ).
+  - text: Additionally, there are hundreds of
+  - link "third-party integrations":
+    - /url: https://linear.app/integrations
+  - text: . You can also build your own apps and integrations with the
+  - link "Linear API":
+    - /url: https://linear.app/developers
+  - text: .

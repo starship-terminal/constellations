@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TokenTracker style guide</title>
+<style>
+:root {
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+  --color-neutral-white: #ffffff;
+  --color-brand-50: #ecfdf5;
+  --color-brand-100: #d1fae5;
+  --color-brand-200: #a7f3d0;
+  --color-brand-300: #6ee7b7;
+  --color-brand-400: #34d399;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-800: #065f46;
+  --color-brand-900: #064e3b;
+  --color-brand-950: #022c22;
+  --color-status-success-light: #10b981;
+  --color-status-success-dark: #34d399;
+  --color-status-warning-light: #f59e0b;
+  --color-status-warning-dark: #fbbf24;
+  --color-status-error-light: #ef4444;
+  --color-status-error-dark: #f87171;
+  --color-heatmap-dark-0: #121212;
+  --color-heatmap-dark-1: #065f46;
+  --color-heatmap-dark-2: #059669;
+  --color-heatmap-dark-3: #10b981;
+  --color-heatmap-dark-4: #34d399;
+  --color-heatmap-light-0: #ebedf0;
+  --color-heatmap-light-1: #a7f3d0;
+  --color-heatmap-light-2: #6ee7b7;
+  --color-heatmap-light-3: #34d399;
+  --color-heatmap-light-4: #10b981;
+  --font-family-sans: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, sans-serif;
+  --font-family-mono: "SF Mono", sfmono-regular, ui-monospace, menlo, monaco, consolas, monospace;
+  --font-size-display: 72px;
+  --font-size-pageTitle: 36px;
+  --font-size-sectionTitle: 20px;
+  --font-size-figure: 20px;
+  --font-size-body: 16px;
+  --font-size-bodySmall: 14px;
+  --font-size-rowTitle: 14px;
+  --font-size-subnav: 14px;
+  --font-size-nav: 13px;
+  --font-size-control: 12px;
+  --font-size-caption: 12px;
+  --font-size-eyebrow: 12px;
+  --font-size-cardTitleLegacy: 14px;
+  --font-size-groupLabel: 10px;
+  --font-size-badge: 8px;
+  --font-size-tableHeader: 12px;
+  --font-weight-display: 700;
+  --font-weight-pageTitle: 600;
+  --font-weight-sectionTitle: 600;
+  --font-weight-figure: 700;
+  --font-weight-body: 400;
+  --font-weight-bodySmall: 400;
+  --font-weight-rowTitle: 500;
+  --font-weight-subnav: 500;
+  --font-weight-nav: 400;
+  --font-weight-control: 500;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 400;
+  --font-weight-cardTitleLegacy: 500;
+  --font-weight-groupLabel: 400;
+  --font-weight-badge: 600;
+  --font-weight-tableHeader: 500;
+  --font-lineHeight-display: 72px;
+  --font-lineHeight-pageTitle: 40px;
+  --font-lineHeight-sectionTitle: 28px;
+  --font-lineHeight-figure: 28px;
+  --font-lineHeight-body: 24px;
+  --font-lineHeight-bodySmall: 20px;
+  --font-lineHeight-rowTitle: 20px;
+  --font-lineHeight-subnav: 20px;
+  --font-lineHeight-nav: 19.5px;
+  --font-lineHeight-control: 16px;
+  --font-lineHeight-caption: 16px;
+  --font-lineHeight-eyebrow: 16px;
+  --font-lineHeight-cardTitleLegacy: 20px;
+  --font-lineHeight-groupLabel: 15px;
+  --font-lineHeight-badge: 12px;
+  --font-lineHeight-tableHeader: 16.8px;
+  --font-letterSpacing-display: -1.8px;
+  --font-letterSpacing-pageTitle: -0.9px;
+  --font-letterSpacing-sectionTitle: -0.5px;
+  --font-letterSpacing-figure: 0px;
+  --font-letterSpacing-body: 0px;
+  --font-letterSpacing-bodySmall: 0px;
+  --font-letterSpacing-rowTitle: 0px;
+  --font-letterSpacing-subnav: 0px;
+  --font-letterSpacing-nav: 0px;
+  --font-letterSpacing-control: 0px;
+  --font-letterSpacing-caption: 0px;
+  --font-letterSpacing-eyebrow: 0.6px;
+  --font-letterSpacing-cardTitleLegacy: 0.35px;
+  --font-letterSpacing-groupLabel: 0.5px;
+  --font-letterSpacing-badge: 0.4px;
+  --font-letterSpacing-tableHeader: 0.12px;
+  --typography-display: var(--font-weight-display) var(--font-size-display)/var(--font-lineHeight-display) var(--font-family-sans);
+  --typography-pageTitle: var(--font-weight-pageTitle) var(--font-size-pageTitle)/var(--font-lineHeight-pageTitle) var(--font-family-sans);
+  --typography-sectionTitle: var(--font-weight-sectionTitle) var(--font-size-sectionTitle)/var(--font-lineHeight-sectionTitle) var(--font-family-sans);
+  --typography-figure: var(--font-weight-figure) var(--font-size-figure)/var(--font-lineHeight-figure) var(--font-family-sans);
+  --typography-body: var(--font-weight-body) var(--font-size-body)/var(--font-lineHeight-body) var(--font-family-sans);
+  --typography-bodySmall: var(--font-weight-bodySmall) var(--font-size-bodySmall)/var(--font-lineHeight-bodySmall) var(--font-family-sans);
+  --typography-rowTitle: var(--font-weight-rowTitle) var(--font-size-rowTitle)/var(--font-lineHeight-rowTitle) var(--font-family-sans);
+  --typography-subnav: var(--font-weight-subnav) var(--font-size-subnav)/var(--font-lineHeight-subnav) var(--font-family-sans);
+  --typography-nav: var(--font-weight-nav) var(--font-size-nav)/var(--font-lineHeight-nav) var(--font-family-sans);
+  --typography-control: var(--font-weight-control) var(--font-size-control)/var(--font-lineHeight-control) var(--font-family-sans);
+  --typography-caption: var(--font-weight-caption) var(--font-size-caption)/var(--font-lineHeight-caption) var(--font-family-sans);
+  --typography-eyebrow: var(--font-weight-eyebrow) var(--font-size-eyebrow)/var(--font-lineHeight-eyebrow) var(--font-family-sans);
+  --typography-cardTitleLegacy: var(--font-weight-cardTitleLegacy) var(--font-size-cardTitleLegacy)/var(--font-lineHeight-cardTitleLegacy) var(--font-family-sans);
+  --typography-groupLabel: var(--font-weight-groupLabel) var(--font-size-groupLabel)/var(--font-lineHeight-groupLabel) var(--font-family-sans);
+  --typography-badge: var(--font-weight-badge) var(--font-size-badge)/var(--font-lineHeight-badge) var(--font-family-sans);
+  --typography-tableHeader: var(--font-weight-tableHeader) var(--font-size-tableHeader)/var(--font-lineHeight-tableHeader) var(--font-family-sans);
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+  --border-width-default: 1px;
+  --size-sidebar-width: 220px;
+  --size-sidebar-collapsedWidth: 72px;
+  --size-navItem-height: 32px;
+  --size-control-sm: 28px;
+  --size-control-md: 32px;
+  --size-control-field: 36px;
+  --size-iconButton: 36px;
+  --size-usageTrack-height: 6px;
+  --size-heatmapCell: 12px;
+  --size-icon-nav: 15px;
+  --size-icon-control: 16px;
+  --space-navItem-y: 6px;
+  --space-navItem-x: 8px;
+  --space-control-y: 6px;
+  --space-control-x: 12px;
+  --space-tile: 12px;
+  --space-card: 20px;
+  --space-statusRow: 20px;
+  --space-listRow-y: 12px;
+  --space-tableCell-y: 8px;
+  --space-tableCell-x: 16px;
+  --space-subnav-y: 8px;
+  --space-subnav-x: 12px;
+  --space-panelInset: 8px;
+  --shadow-sm: 0px 1px 2px 0px #0000000d;
+  --shadow-dialog-dark: 0px 0px 0px 1px #262626, 0px 20px 60px -10px #000000a6;
+  --shadow-dialog-light: 0px 0px 0px 1px #e5e5e5, 0px 20px 60px -20px #00000040;
+  --motion-duration-fast: 150ms;
+  --motion-duration-base: 200ms;
+  --motion-duration-dialog: 260ms;
+  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  --bg-wash: #f5f5f5;
+  --bg-panel: #fafafa;
+  --bg-card: #ffffff;
+  --bg-field: #ffffff;
+  --bg-dialog: #ffffff;
+  --bg-subtle: #fafafa;
+  --bg-code: #f5f5f5;
+  --bg-hover: #e5e5e580;
+  --bg-selected: #f5f5f5;
+  --bg-navActive: #e5e5e5b2;
+  --bg-segmentTrack: #fafafa;
+  --bg-segmentSelected: #ffffff;
+  --bg-rowHover: #fafafa80;
+  --text-primary: #0a0a0a;
+  --text-strong: #0a0a0a;
+  --text-secondary: #737373;
+  --text-nav: #525252;
+  --text-muted: #737373;
+  --text-label: #171717;
+  --text-onPrimary: #ffffff;
+  --border-default: #e5e5e5;
+  --border-strong: #d4d4d4;
+  --border-hover: #d4d4d4;
+  --accent-default: #059669;
+  --accent-hover: #047857;
+  --accent-fill: #10b981;
+  --button-primary-bg: #171717;
+  --button-primary-fg: #ffffff;
+  --button-secondary-bg: #fafafa;
+  --button-secondary-border: #d4d4d4;
+  --button-secondary-hoverFg: #059669;
+  --usage-track: #f5f5f5;
+  --status-success: var(--color-status-success-light);
+  --status-warning: var(--color-status-warning-light);
+  --status-error: var(--color-status-error-light);
+  --heatmap-0: var(--color-heatmap-light-0);
+  --heatmap-1: var(--color-heatmap-light-1);
+  --heatmap-2: var(--color-heatmap-light-2);
+  --heatmap-3: var(--color-heatmap-light-3);
+  --heatmap-4: var(--color-heatmap-light-4);
+  --elevation-dialog: var(--shadow-dialog-light);
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --bg-wash: #0a0a0a;
+  --bg-panel: #171717;
+  --bg-card: #171717;
+  --bg-field: #171717;
+  --bg-dialog: #0a0a0a;
+  --bg-subtle: #262626;
+  --bg-code: #17171799;
+  --bg-hover: #26262699;
+  --bg-selected: #262626;
+  --bg-navActive: #262626;
+  --bg-segmentTrack: #171717;
+  --bg-segmentSelected: #262626;
+  --bg-rowHover: #26262680;
+  --text-primary: #fafafa;
+  --text-strong: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-nav: #a3a3a3;
+  --text-muted: #737373;
+  --text-label: #e5e5e5;
+  --text-onPrimary: #171717;
+  --border-default: #262626;
+  --border-strong: #404040;
+  --border-hover: #404040;
+  --accent-default: #059669;
+  --accent-hover: #10b981;
+  --accent-fill: #10b981;
+  --button-primary-bg: #fafafa;
+  --button-primary-fg: #171717;
+  --button-secondary-bg: #171717;
+  --button-secondary-border: #404040;
+  --button-secondary-hoverFg: #fafafa;
+  --usage-track: #40404080;
+  --status-success: var(--color-status-success-dark);
+  --status-warning: var(--color-status-warning-dark);
+  --status-error: var(--color-status-error-dark);
+  --heatmap-0: var(--color-heatmap-dark-0);
+  --heatmap-1: var(--color-heatmap-dark-1);
+  --heatmap-2: var(--color-heatmap-dark-2);
+  --heatmap-3: var(--color-heatmap-dark-3);
+  --heatmap-4: var(--color-heatmap-dark-4);
+  --elevation-dialog: var(--shadow-dialog-dark);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg-wash); color: var(--text-primary); font-family: var(--font-family-sans); -webkit-font-smoothing: antialiased; }
+code { font-family: var(--font-family-mono); font-size: 12px; }
+.ic { display: inline-block; vertical-align: middle; flex: none; }
+
+/* page chrome of the guide itself */
+.top { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 16px; padding: 12px 24px; background: var(--bg-wash); border-bottom: 1px solid var(--border-default); }
+.top h1 { font: var(--typography-sectionTitle); letter-spacing: var(--font-letterSpacing-sectionTitle); margin: 0; flex: 1; }
+.toggle { font: var(--typography-control); display: inline-flex; gap: 2px; padding: 2px; border: 1px solid var(--border-default); border-radius: var(--radius-xl); background: var(--bg-segmentTrack); }
+.toggle button { font: inherit; border: 0; border-radius: var(--radius-lg); padding: var(--space-control-y) var(--space-control-x); background: none; color: var(--text-secondary); cursor: pointer; }
+.toggle button[aria-pressed="true"] { background: var(--bg-segmentSelected); color: var(--text-strong); box-shadow: 0 1px 2px #0000000d; }
+main.guide { max-width: 1180px; margin: 0 auto; padding: 32px 24px 80px; }
+.s { margin: 0 0 48px; }
+.sh { font: var(--typography-sectionTitle); letter-spacing: var(--font-letterSpacing-sectionTitle); color: var(--text-strong); margin: 0 0 6px; }
+.lead { font: var(--typography-body); color: var(--text-secondary); margin: 0 0 20px; max-width: 760px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border-default); border-radius: var(--radius-xl); overflow: hidden; background: var(--bg-card); }
+.sw .chip { height: 56px; border-bottom: 1px solid var(--border-default); }
+.sw .meta { padding: 8px 10px; font: var(--typography-caption); color: var(--text-secondary); }
+.sw .meta b { display: block; font-weight: 500; color: var(--text-primary); }
+.srcline { display: block; margin-top: 4px; font: 11px/1.4 var(--font-family-sans); color: var(--text-muted); overflow-wrap: anywhere; }
+.ramp { display: grid; grid-template-columns: repeat(12, 1fr); border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-default); margin-bottom: 12px; }
+.ramp div { height: 64px; padding: 6px; font: 11px/1.3 var(--font-family-mono); display: flex; flex-direction: column; justify-content: flex-end; }
+table.t { width: 100%; border-collapse: collapse; font: var(--typography-bodySmall); }
+table.t th { text-align: left; font: var(--typography-caption); color: var(--text-secondary); padding: 6px 8px; border-bottom: 1px solid var(--border-default); }
+table.t td { padding: 8px; border-bottom: 1px solid var(--border-default); vertical-align: top; }
+table.t td.src { color: var(--text-secondary); font-size: 12px; max-width: 420px; }
+.spec { display: flex; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--border-default); }
+.spec .lab { width: 170px; flex: none; font: var(--typography-caption); color: var(--text-secondary); }
+.spec .lab code { display: block; color: var(--text-muted); }
+.boxes { display: flex; flex-wrap: wrap; gap: 16px; }
+.box { width: 120px; height: 72px; background: var(--bg-card); border: 1px solid var(--border-strong); display: flex; align-items: flex-end; padding: 8px; font: var(--typography-caption); color: var(--text-secondary); }
+.note { font: var(--typography-caption); color: var(--text-secondary); margin-top: 8px; }
+
+/* TokenTracker, rebuilt from the tokens */
+.app { display: flex; height: 760px; border: 1px solid var(--border-default); border-radius: var(--radius-2xl); overflow: hidden; background: var(--bg-wash); }
+.side { width: var(--size-sidebar-width); flex: none; display: flex; flex-direction: column; padding: 8px; }
+.side .grp { font: var(--typography-groupLabel); letter-spacing: var(--font-letterSpacing-groupLabel); text-transform: uppercase; color: var(--text-muted); padding: 16px 12px 6px; }
+.nav { display: flex; align-items: center; gap: 8px; height: var(--size-navItem-height); padding: var(--space-navItem-y) var(--space-navItem-x); border-radius: var(--radius-lg); font: var(--typography-nav); color: var(--text-nav); transition: background-color var(--motion-duration-fast) var(--motion-easing-standard), color var(--motion-duration-fast) var(--motion-easing-standard); cursor: default; }
+.nav:hover { background: var(--bg-hover); color: var(--text-strong); }
+.nav.on { background: var(--bg-navActive); color: var(--text-strong); font-weight: 500; }
+.side .foot { margin-top: auto; display: flex; justify-content: space-between; padding: 4px; }
+.pill { height: 32px; min-width: 32px; padding: 0 10px; display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border-default); border-radius: var(--radius-full); font: var(--typography-caption); color: var(--text-secondary); background: none; }
+.panel { flex: 1; margin: var(--space-panelInset) 12px 12px 0; background: var(--bg-panel); border: 1px solid var(--border-default); border-radius: var(--radius-2xl); box-shadow: 0 1px 2px #0000000d; overflow: auto; padding: 32px 40px; }
+.ptitle { font: var(--typography-pageTitle); letter-spacing: var(--font-letterSpacing-pageTitle); color: var(--text-strong); margin: 0; }
+.psub { font: var(--typography-body); color: var(--text-secondary); margin: 6px 0 24px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.tabs { display: flex; gap: 4px; }
+.tab { font: var(--typography-control); height: var(--size-control-sm); padding: var(--space-control-y) var(--space-control-x); border-radius: var(--radius-lg); color: var(--text-secondary); background: none; border: 0; }
+.tab:hover { background: var(--bg-hover); color: var(--text-strong); }
+.tab.on { background: var(--bg-selected); color: var(--text-strong); }
+.btn { font: var(--typography-control); height: var(--size-control-md); padding: 0 12px; border-radius: var(--radius-lg); display: inline-flex; align-items: center; gap: 6px; cursor: default; transition: all var(--motion-duration-base) var(--motion-easing-standard); }
+.btn.primary { background: var(--button-primary-bg); color: var(--button-primary-fg); border: 0; height: var(--size-control-sm); }
+.btn.primary:hover { opacity: .9; }
+.btn.secondary { background: var(--button-secondary-bg); color: var(--text-primary); border: 1px solid var(--button-secondary-border); }
+.btn.secondary:hover { color: var(--button-secondary-hoverFg); }
+.ibtn { width: var(--size-iconButton); height: var(--size-iconButton); border-radius: var(--radius-xl); border: 1px solid var(--border-default); background: none; color: var(--text-nav); display: inline-flex; align-items: center; justify-content: center; }
+.ibtn:hover { background: var(--bg-selected); color: var(--text-strong); }
+.card { background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-2xl); padding: var(--space-card); }
+.eyebrow { font: var(--typography-eyebrow); letter-spacing: var(--font-letterSpacing-eyebrow); text-transform: uppercase; color: var(--text-secondary); text-align: center; }
+.hero { font: var(--typography-display); letter-spacing: var(--font-letterSpacing-display); text-align: center; font-variant-numeric: tabular-nums; margin: 8px 0; }
+.fig { font: var(--typography-figure); color: var(--accent-default); text-align: center; }
+.share { display: flex; height: 6px; gap: 2px; margin: 24px 0 16px; }
+.share span { border-radius: var(--radius-full); }
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.tile { border: 1px solid var(--border-strong); border-radius: var(--radius-xl); padding: var(--space-tile); transition: border-color var(--motion-duration-base); }
+.tile:hover { border-color: var(--border-hover); }
+.tile .n { font: 500 13px/1.5 var(--font-family-sans); }
+.tile .v { font: 600 20px/28px var(--font-family-sans); font-variant-numeric: tabular-nums; }
+.tile .c { font: var(--typography-caption); color: var(--text-secondary); }
+.field { height: var(--size-control-field); border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--bg-field); color: var(--text-primary); font: var(--typography-bodySmall); padding: 0 12px 0 36px; width: 320px; }
+.sel { height: var(--size-control-field); border: 1px solid var(--border-default); border-radius: var(--radius-md); background: var(--bg-field); font: var(--typography-bodySmall); color: var(--text-strong); padding: 0 12px; display: inline-flex; align-items: center; gap: 24px; }
+.sel:hover { border-color: var(--border-hover); }
+.seg { display: inline-flex; gap: 2px; padding: 2px; border: 1px solid var(--border-default); border-radius: var(--radius-xl); background: var(--bg-segmentTrack); }
+.seg button { font: var(--typography-control); height: var(--size-control-sm); padding: var(--space-control-y) var(--space-control-x); border: 0; border-radius: var(--radius-lg); background: none; color: var(--text-secondary); }
+.seg button:hover { color: var(--text-strong); }
+.seg button.on { background: var(--bg-segmentSelected); color: var(--text-strong); box-shadow: 0 1px 2px #0000000d; }
+.badge { font: var(--typography-badge); letter-spacing: var(--font-letterSpacing-badge); text-transform: uppercase; padding: 2px 6px; border-radius: var(--radius-sm); background: var(--bg-selected); color: var(--text-secondary); }
+.list { margin-top: 8px; }
+.li { display: flex; align-items: center; gap: 12px; padding: var(--space-listRow-y) 0; border-bottom: 1px solid var(--border-default); }
+.li .t { font: var(--typography-rowTitle); color: var(--text-strong); }
+.li .m { font: var(--typography-caption); color: var(--text-secondary); }
+.li .num { margin-left: auto; font: var(--typography-bodySmall); font-variant-numeric: tabular-nums; min-width: 80px; text-align: right; }
+.usage { display: grid; grid-template-columns: 48px 1fr 48px 32px; gap: 12px; align-items: center; font: var(--typography-caption); color: var(--text-secondary); margin: 6px 0; }
+.track { height: var(--size-usageTrack-height); background: var(--usage-track); border-radius: var(--radius-full); position: relative; }
+.track i { position: absolute; inset: 0 auto 0 0; border-radius: var(--radius-full); background: var(--accent-fill); }
+.heat { display: grid; grid-template-rows: repeat(7, var(--size-heatmapCell)); grid-auto-flow: column; grid-auto-columns: var(--size-heatmapCell); gap: 3px; }
+.heat span { border-radius: var(--radius-xs); }
+.dt { width: 100%; border-collapse: collapse; font: var(--typography-bodySmall); font-variant-numeric: tabular-nums; }
+.dt th { text-align: left; font: var(--typography-tableHeader); letter-spacing: var(--font-letterSpacing-tableHeader); color: var(--text-primary); padding: 8px 16px; border-bottom: 1px solid var(--border-default); }
+.dt td { padding: var(--space-tableCell-y) var(--space-tableCell-x); border-bottom: 1px solid var(--border-default); }
+.dt tr:hover td { background: var(--bg-rowHover); }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.dodont { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.dodont .card h3 { font: var(--typography-rowTitle); margin: 0 0 6px; color: var(--text-strong); }
+.dodont .card p { font: var(--typography-caption); color: var(--text-secondary); margin: 0; }
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>TokenTracker, measured</h1>
+  <div class="toggle" role="group" aria-label="Theme">
+    <button type="button" data-set="light" aria-pressed="false"><svg width="14" height="14" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle><path d="M12 2v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 20v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="m4.93 4.93 1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="m17.66 17.66 1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="m6.34 17.66-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="m19.07 4.93-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Light</button>
+    <button type="button" data-set="dark" aria-pressed="true"><svg width="14" height="14" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Dark</button>
+  </div>
+</div>
+<main class="guide">
+
+<section class="s" id="intro">
+  <h2 class="sh">What this page is</h2>
+  <p class="lead">Every value here is a CSS custom property generated from <code>tokens.json</code>, which was read from TokenTracker v1.3.5's dashboard: its CSS bundle and the computed styles of 70 components in dark and light. The drawings below are rebuilt from those tokens; the real pixels are in <code>screenshots/</code> and <code>components/crops/</code>. The toggle sets <code>data-mode</code> on this page; TokenTracker itself switches with a <code>.dark</code> class on <code>&lt;html&gt;</code>.</p>
+</section>
+
+<section class="s" id="shell">
+  <h2 class="sh">The shell, rebuilt</h2>
+  <p class="lead">A borderless sidebar on the page wash, a rounded content panel inset 8px from the top, quiet hairline cards inside it, one green accent for money.</p>
+  <div class="app">
+    <aside class="side">
+      <div class="grp">General</div>
+      <div class="nav on"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18 17V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13 17V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 17v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Tokens</div>
+      <div class="nav"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 3v5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 7v5l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Sessions</div>
+      <div class="nav"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3.34 19a10 10 0 1 1 17.32 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Limits</div>
+      <div class="grp">Tools</div>
+      <div class="nav"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect><rect width="7" height="7" x="14" y="3" rx="1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect><rect width="7" height="7" x="14" y="14" rx="1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect><rect width="7" height="7" x="3" y="14" rx="1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect></svg> Menu Bar &amp; Widgets</div>
+      <div class="nav"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Skills</div>
+      <div class="nav"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Claude IP Check</div>
+      <div class="nav"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Service Status</div>
+      <div class="grp">Account</div>
+      <div class="nav"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle></svg> Settings</div>
+      <div class="foot"><span class="pill"><svg width="14" height="14" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="pill">Star 2015</span></div>
+    </aside>
+    <div class="panel">
+      <div class="row" style="justify-content:space-between">
+        <div class="tabs"><button class="tab">Day</button><button class="tab">Week</button><button class="tab on">Month</button><button class="tab">Total</button></div>
+        <div class="row"><span class="btn secondary"><svg width="14" height="14" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="m21 3-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Share</span><span class="ibtn"><svg width="16" height="16" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 3v5h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 16H3v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></div>
+      </div>
+      <div class="eyebrow" style="margin-top:24px">Total tokens</div>
+      <div class="hero">12.9B</div>
+      <div class="fig">$4,840.32</div>
+      <div class="share"><span style="flex:83;background:#d97757"></span><span style="flex:10;background:#3b82f6"></span><span style="flex:7;background:#6d5dfc"></span></div>
+      <div class="tiles">
+        <div class="tile"><div class="n">All</div><div class="v">100.00%</div><div class="c">16 models</div></div>
+        <div class="tile"><div class="n">Claude</div><div class="v">83.00%</div><div class="c">5 models</div></div>
+        <div class="tile"><div class="n">Codex</div><div class="v">10.40%</div><div class="c">4 models</div></div>
+        <div class="tile"><div class="n">Devin</div><div class="v">6.55%</div><div class="c">5 models</div></div>
+      </div>
+      <div class="cols" style="margin-top:16px">
+        <div class="card">
+          <div class="row" style="justify-content:space-between;margin-bottom:12px"><span style="font:var(--typography-rowTitle)">Activity</span><span class="seg"><button class="on">2D</button><button>3D</button></span></div>
+          <div class="heat" id="heat"></div>
+        </div>
+        <div class="card">
+          <div style="font:var(--typography-rowTitle);margin-bottom:8px">Limits</div>
+          <div class="usage"><span>5h</span><div class="track"><i style="width:23%"></i></div><span>23%</span><span>2h</span></div>
+          <div class="usage"><span>7d</span><div class="track"><i style="width:65%"></i></div><span>65%</span><span>4d</span></div>
+          <div class="usage"><span>Fable</span><div class="track"><i style="width:2%"></i></div><span>2%</span><span>4d</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="note">Provider colours in the share bar are illustrative; TokenTracker takes them from <code>getProviderColor()</code>, which was not read as tokens.</p>
+</section>
+
+<section class="s" id="components">
+  <h2 class="sh">Controls</h2>
+  <p class="lead">Small and quiet: 12px/500 labels on 28px controls, 8px radius, one hairline, hover changes colour only. Pages put one primary action at most; the rest are outlined or icon buttons.</p>
+  <div class="row" style="margin-bottom:16px">
+    <span class="btn primary">Open in Mac app</span>
+    <span class="btn secondary"><svg width="14" height="14" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="m7 10 5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Download</span>
+    <span class="ibtn"><svg width="16" height="16" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 3v5h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 16H3v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+    <span class="seg"><button>Light</button><button>Dark</button><button class="on">System</button></span>
+    <span class="badge">Beta</span>
+  </div>
+  <div class="row" style="margin-bottom:16px">
+    <span style="position:relative;display:inline-flex;align-items:center"><span style="position:absolute;left:12px;color:var(--text-secondary)"><svg width="16" height="16" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle></svg></span><input class="field" placeholder="Search title, project, model, or ID…"></span>
+    <span class="sel">All tools <svg width="14" height="14" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+    <span class="sel"><svg width="14" height="14" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 2v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M3 9h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Any time <svg width="14" height="14" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+  </div>
+  <div class="card">
+    <div class="list">
+      <div class="li"><div><div class="t">project-1</div><div class="m">claude-opus-5-5 388M · Oct 10, 05:41 PM · 7h 42m</div></div><span class="num">393.2M</span><span class="num">$112.58</span></div>
+      <div class="li"><div><div class="t">project-2</div><div class="m">claude-opus-5-5 185.3M · Oct 10, 11:45 PM · 3h 21m</div></div><span class="num">199.9M</span><span class="num">$53.58</span></div>
+    </div>
+    <table class="dt" style="margin-top:16px"><thead><tr><th>Date</th><th>Total</th><th>Input</th><th>Output</th><th>Cached</th></tr></thead>
+      <tbody><tr><td>2026-10-11</td><td>1.3B</td><td>9.3K</td><td>1.4M</td><td>1.2B</td></tr><tr><td>2026-10-10</td><td>1B</td><td>854K</td><td>1M</td><td>1B</td></tr></tbody></table>
+  </div>
+</section>
+
+<section class="s" id="dodont">
+  <h2 class="sh">Do and don't</h2>
+  <div class="dodont">
+    <div class="card"><h3>Do: let surfaces do the work</h3><p>Wash, panel and card differ by one neutral step and a hairline. No coloured fills behind content; the only resting shadow is 0 1px 2px at 5%.</p></div>
+    <div class="card"><h3>Do: keep green for money and "on"</h3><p>The brand green marks cost, the usage fill and the heatmap. Primary buttons are black in light and near-white in dark, never green.</p></div>
+    <div class="card"><h3>Don't: copy the uppercase labels</h3><p>Older cards and the sidebar groups use tracked uppercase ("ACTIVITY HEATMAP", "GENERAL"). TokenTracker's newer cards use sentence case at 14/500. Use sentence case.</p></div>
+    <div class="card"><h3>Don't: copy the missing focus ring</h3><p>TokenTracker removes every focus ring, so keyboard focus is invisible. Add a 2px accent ring at 2px offset.</p></div>
+  </div>
+</section>
+
+<section class="s" id="roles">
+  <h2 class="sh">Colour roles</h2>
+  <p class="lead">The semantic set for the current theme. Each swatch names its token, its value and the reading it came from.</p>
+  <div class="grid" id="rolegrid"></div>
+</section>
+
+<section class="s" id="ramps">
+  <h2 class="sh">Ramps</h2>
+  <p class="lead">Neutral: the hex steps the components render (Tailwind's neutral). Brand: emerald, declared as <code>--brand-*</code>. Heatmap: five steps per theme, empty first.</p>
+  <div class="ramp" id="neutral"></div>
+  <div class="ramp" id="brand"></div>
+  <div class="ramp" id="heatramp" style="grid-template-columns:repeat(5,1fr)"></div>
+  <table class="t"><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody id="rampsrc"></tbody></table>
+</section>
+
+<section class="s" id="type">
+  <h2 class="sh">Type</h2>
+  <p class="lead">One family, the system font (SF Pro on macOS), tabular figures for numbers. Sizes step 8, 10, 12, 13, 14, 16, 20, 36, 72.</p>
+  <div id="typespecs"></div>
+</section>
+
+<section class="s" id="shape">
+  <h2 class="sh">Shape, space and motion</h2>
+  <div class="boxes" id="radii"></div>
+  <table class="t" style="margin-top:20px"><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody id="misc"></tbody></table>
+</section>
+
+</main>
+<script>
+const TOK = {"core":{"color":{"neutral":{"50":{"v":"#fafafa","t":"color","s":"Measured: computed backgroundColor of segmented.light default (parent of button \"Compact\"), raw/components-computed.json, 2026-10-11"},"100":{"v":"#f5f5f5","t":"color","s":"Measured: computed backgroundColor of period-tab-selected.light default ([role=tab][aria-selected=true]), raw/components-computed.json, 2026-10-11"},"200":{"v":"#e5e5e5","t":"color","s":"Measured: computed borderTopColor of card.light default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11"},"300":{"v":"#d4d4d4","t":"color","s":"Measured: computed borderTopColor of select.light hover (button holding \"All tools\"), raw/components-computed.json, 2026-10-11"},"400":{"v":"#a3a3a3","t":"color","s":"Measured: computed color of nav-item default (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11"},"500":{"v":"#737373","t":"color","s":"Measured: computed color of page-subtitle.light default (main h1 + p), raw/components-computed.json, 2026-10-11"},"600":{"v":"#525252","t":"color","s":"Measured: computed color of nav-item.light default (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11"},"700":{"v":"#404040","t":"color","s":"Measured: computed borderTopColor of provider-tile default (tile holding \"CLAUDE\"), raw/components-computed.json, 2026-10-11"},"800":{"v":"#262626","t":"color","s":"Measured: computed borderTopColor of card default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11"},"900":{"v":"#171717","t":"color","s":"Measured: computed backgroundColor of card default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11"},"950":{"v":"#0a0a0a","t":"color","s":"Measured: computed backgroundColor of dialog open ([role=dialog]), raw/components-computed.json, 2026-10-11"},"white":{"v":"#ffffff","t":"color","s":"Measured: computed backgroundColor of card.light default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11","d":"Pure white: light cards, dialogs, fields."}},"brand":{"50":{"v":"#ecfdf5","t":"color","s":"Measured: --brand-50 resolved on :root, raw/css-vars.json"},"100":{"v":"#d1fae5","t":"color","s":"Measured: --brand-100 resolved on :root, raw/css-vars.json"},"200":{"v":"#a7f3d0","t":"color","s":"Measured: --brand-200 resolved on :root, raw/css-vars.json"},"300":{"v":"#6ee7b7","t":"color","s":"Measured: --brand-300 resolved on :root, raw/css-vars.json"},"400":{"v":"#34d399","t":"color","s":"Measured: --brand-400 resolved on :root, raw/css-vars.json"},"500":{"v":"#10b981","t":"color","s":"Measured: --brand-500 resolved on :root, raw/css-vars.json"},"600":{"v":"#059669","t":"color","s":"Measured: --brand-600 resolved on :root, raw/css-vars.json"},"700":{"v":"#047857","t":"color","s":"Measured: --brand-700 resolved on :root, raw/css-vars.json"},"800":{"v":"#065f46","t":"color","s":"Measured: --brand-800 resolved on :root, raw/css-vars.json"},"900":{"v":"#064e3b","t":"color","s":"Measured: --brand-900 resolved on :root, raw/css-vars.json"},"950":{"v":"#022c22","t":"color","s":"Measured: --brand-950 resolved on :root, raw/css-vars.json"}},"status":{"success":{"light":{"v":"#10b981","t":"color","s":"Measured: --oai-success resolved on :root, raw/css-vars.json"},"dark":{"v":"#34d399","t":"color","s":"Measured: --oai-success resolved on :root.dark, raw/css-vars.json"}},"warning":{"light":{"v":"#f59e0b","t":"color","s":"Measured: --oai-warning resolved on :root, raw/css-vars.json"},"dark":{"v":"#fbbf24","t":"color","s":"Measured: --oai-warning resolved on :root.dark, raw/css-vars.json"}},"error":{"light":{"v":"#ef4444","t":"color","s":"Measured: --oai-error resolved on :root, raw/css-vars.json"},"dark":{"v":"#f87171","t":"color","s":"Measured: --oai-error resolved on :root.dark, raw/css-vars.json"}}},"heatmap":{"dark":{"0":{"v":"#121212","t":"color","s":"Measured: the distinct computed fills of the 12px heatmap cells on /dashboard (dark), empty first, raw/components-computed.json _meta.heatmap"},"1":{"v":"#065f46","t":"color","s":"Measured: the distinct computed fills of the 12px heatmap cells on /dashboard (dark), empty first, raw/components-computed.json _meta.heatmap"},"2":{"v":"#059669","t":"color","s":"Measured: the distinct computed fills of the 12px heatmap cells on /dashboard (dark), empty first, raw/components-computed.json _meta.heatmap"},"3":{"v":"#10b981","t":"color","s":"Measured: the distinct computed fills of the 12px heatmap cells on /dashboard (dark), empty first, raw/components-computed.json _meta.heatmap"},"4":{"v":"#34d399","t":"color","s":"Measured: the distinct computed fills of the 12px heatmap cells on /dashboard (dark), empty first, raw/components-computed.json _meta.heatmap"}},"light":{"0":{"v":"#ebedf0","t":"color","s":"Measured: the distinct computed fills of the 12px heatmap cells on /dashboard (light), empty first, raw/components-computed.json _meta.heatmap"},"1":{"v":"#a7f3d0","t":"color","s":"Measured: the distinct computed fills of the 12px heatmap cells on /dashboard (light), empty first, raw/components-computed.json _meta.heatmap"},"2":{"v":"#6ee7b7","t":"color","s":"Measured: the distinct computed fills of the 12px heatmap cells on /dashboard (light), empty first, raw/components-computed.json _meta.heatmap"},"3":{"v":"#34d399","t":"color","s":"Measured: the distinct computed fills of the 12px heatmap cells on /dashboard (light), empty first, raw/components-computed.json _meta.heatmap"},"4":{"v":"#10b981","t":"color","s":"Measured: the distinct computed fills of the 12px heatmap cells on /dashboard (light), empty first, raw/components-computed.json _meta.heatmap"}}}},"font":{"family":{"sans":{"v":"-apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, oxygen, ubuntu, sans-serif","t":"fontFamily","s":"Measured: --oai-font-sans resolved on :root, raw/css-vars.json","d":"One family carries everything: the OS system font, so SF Pro on macOS."},"mono":{"v":"\"SF Mono\", sfmono-regular, ui-monospace, menlo, monaco, consolas, monospace","t":"fontFamily","s":"Measured: --oai-font-mono resolved on :root, raw/css-vars.json","d":"Code blocks and terminal-style copy."}},"size":{"display":{"v":"72px","t":"dimension","s":"Measured: computed font of hero-metric default (dark) (its label span), raw/components-computed.json, 2026-10-11"},"pageTitle":{"v":"36px","t":"dimension","s":"Measured: computed font of page-title default (dark), raw/components-computed.json, 2026-10-11"},"sectionTitle":{"v":"20px","t":"dimension","s":"Measured: computed font of section-title default (dark), raw/components-computed.json, 2026-10-11"},"figure":{"v":"20px","t":"dimension","s":"Measured: computed font of hero-cost default (dark), raw/components-computed.json, 2026-10-11"},"body":{"v":"16px","t":"dimension","s":"Measured: computed font of page-subtitle default (dark), raw/components-computed.json, 2026-10-11"},"bodySmall":{"v":"14px","t":"dimension","s":"Measured: computed font of setting-label default (dark), raw/components-computed.json, 2026-10-11"},"rowTitle":{"v":"14px","t":"dimension","s":"Measured: computed font of list-row-title default (dark), raw/components-computed.json, 2026-10-11"},"subnav":{"v":"14px","t":"dimension","s":"Measured: computed font of subnav-item default (dark) (its label span.truncate), raw/components-computed.json, 2026-10-11"},"nav":{"v":"13px","t":"dimension","s":"Measured: computed font of nav-item default (dark) (its label span.truncate), raw/components-computed.json, 2026-10-11"},"control":{"v":"12px","t":"dimension","s":"Measured: computed font of period-tab default (dark), raw/components-computed.json, 2026-10-11"},"caption":{"v":"12px","t":"dimension","s":"Measured: computed font of setting-description default (dark), raw/components-computed.json, 2026-10-11"},"eyebrow":{"v":"12px","t":"dimension","s":"Measured: computed font of hero-label default (dark), raw/components-computed.json, 2026-10-11"},"cardTitleLegacy":{"v":"14px","t":"dimension","s":"Measured: computed font of card-title default (dark), raw/components-computed.json, 2026-10-11"},"groupLabel":{"v":"10px","t":"dimension","s":"Measured: computed font of sidebar-group-label default (dark), raw/components-computed.json, 2026-10-11"},"badge":{"v":"8px","t":"dimension","s":"Measured: computed font of beta-badge default (dark), raw/components-computed.json, 2026-10-11"},"tableHeader":{"v":"12px","t":"dimension","s":"Measured: computed font of table-header default (dark) (its label span), raw/components-computed.json, 2026-10-11"}},"weight":{"display":{"v":700,"t":"fontWeight","s":"Measured: computed font of hero-metric default (dark) (its label span), raw/components-computed.json, 2026-10-11"},"pageTitle":{"v":600,"t":"fontWeight","s":"Measured: computed font of page-title default (dark), raw/components-computed.json, 2026-10-11"},"sectionTitle":{"v":600,"t":"fontWeight","s":"Measured: computed font of section-title default (dark), raw/components-computed.json, 2026-10-11"},"figure":{"v":700,"t":"fontWeight","s":"Measured: computed font of hero-cost default (dark), raw/components-computed.json, 2026-10-11"},"body":{"v":400,"t":"fontWeight","s":"Measured: computed font of page-subtitle default (dark), raw/components-computed.json, 2026-10-11"},"bodySmall":{"v":400,"t":"fontWeight","s":"Measured: computed font of setting-label default (dark), raw/components-computed.json, 2026-10-11"},"rowTitle":{"v":500,"t":"fontWeight","s":"Measured: computed font of list-row-title default (dark), raw/components-computed.json, 2026-10-11"},"subnav":{"v":500,"t":"fontWeight","s":"Measured: computed font of subnav-item default (dark) (its label span.truncate), raw/components-computed.json, 2026-10-11"},"nav":{"v":400,"t":"fontWeight","s":"Measured: computed font of nav-item default (dark) (its label span.truncate), raw/components-computed.json, 2026-10-11"},"control":{"v":500,"t":"fontWeight","s":"Measured: computed font of period-tab default (dark), raw/components-computed.json, 2026-10-11"},"caption":{"v":400,"t":"fontWeight","s":"Measured: computed font of setting-description default (dark), raw/components-computed.json, 2026-10-11"},"eyebrow":{"v":400,"t":"fontWeight","s":"Measured: computed font of hero-label default (dark), raw/components-computed.json, 2026-10-11"},"cardTitleLegacy":{"v":500,"t":"fontWeight","s":"Measured: computed font of card-title default (dark), raw/components-computed.json, 2026-10-11"},"groupLabel":{"v":400,"t":"fontWeight","s":"Measured: computed font of sidebar-group-label default (dark), raw/components-computed.json, 2026-10-11"},"badge":{"v":600,"t":"fontWeight","s":"Measured: computed font of beta-badge default (dark), raw/components-computed.json, 2026-10-11"},"tableHeader":{"v":500,"t":"fontWeight","s":"Measured: computed font of table-header default (dark) (its label span), raw/components-computed.json, 2026-10-11"}},"lineHeight":{"display":{"v":"72px","t":"dimension","s":"Measured: computed font of hero-metric default (dark) (its label span), raw/components-computed.json, 2026-10-11"},"pageTitle":{"v":"40px","t":"dimension","s":"Measured: computed font of page-title default (dark), raw/components-computed.json, 2026-10-11"},"sectionTitle":{"v":"28px","t":"dimension","s":"Measured: computed font of section-title default (dark), raw/components-computed.json, 2026-10-11"},"figure":{"v":"28px","t":"dimension","s":"Measured: computed font of hero-cost default (dark), raw/components-computed.json, 2026-10-11"},"body":{"v":"24px","t":"dimension","s":"Measured: computed font of page-subtitle default (dark), raw/components-computed.json, 2026-10-11"},"bodySmall":{"v":"20px","t":"dimension","s":"Measured: computed font of setting-label default (dark), raw/components-computed.json, 2026-10-11"},"rowTitle":{"v":"20px","t":"dimension","s":"Measured: computed font of list-row-title default (dark), raw/components-computed.json, 2026-10-11"},"subnav":{"v":"20px","t":"dimension","s":"Measured: computed font of subnav-item default (dark) (its label span.truncate), raw/components-computed.json, 2026-10-11"},"nav":{"v":"19.5px","t":"dimension","s":"Measured: computed font of nav-item default (dark) (its label span.truncate), raw/components-computed.json, 2026-10-11"},"control":{"v":"16px","t":"dimension","s":"Measured: computed font of period-tab default (dark), raw/components-computed.json, 2026-10-11"},"caption":{"v":"16px","t":"dimension","s":"Measured: computed font of setting-description default (dark), raw/components-computed.json, 2026-10-11"},"eyebrow":{"v":"16px","t":"dimension","s":"Measured: computed font of hero-label default (dark), raw/components-computed.json, 2026-10-11"},"cardTitleLegacy":{"v":"20px","t":"dimension","s":"Measured: computed font of card-title default (dark), raw/components-computed.json, 2026-10-11"},"groupLabel":{"v":"15px","t":"dimension","s":"Measured: computed font of sidebar-group-label default (dark), raw/components-computed.json, 2026-10-11"},"badge":{"v":"12px","t":"dimension","s":"Measured: computed font of beta-badge default (dark), raw/components-computed.json, 2026-10-11"},"tableHeader":{"v":"16.8px","t":"dimension","s":"Measured: computed font of table-header default (dark) (its label span), raw/components-computed.json, 2026-10-11"}},"letterSpacing":{"display":{"v":"-1.8px","t":"dimension","s":"Measured: computed font of hero-metric default (dark) (its label span), raw/components-computed.json, 2026-10-11"},"pageTitle":{"v":"-0.9px","t":"dimension","s":"Measured: computed font of page-title default (dark), raw/components-computed.json, 2026-10-11"},"sectionTitle":{"v":"-0.5px","t":"dimension","s":"Measured: computed font of section-title default (dark), raw/components-computed.json, 2026-10-11"},"figure":{"v":"0px","t":"dimension","s":"Measured: computed font of hero-cost default (dark), raw/components-computed.json, 2026-10-11"},"body":{"v":"0px","t":"dimension","s":"Measured: computed font of page-subtitle default (dark), raw/components-computed.json, 2026-10-11"},"bodySmall":{"v":"0px","t":"dimension","s":"Measured: computed font of setting-label default (dark), raw/components-computed.json, 2026-10-11"},"rowTitle":{"v":"0px","t":"dimension","s":"Measured: computed font of list-row-title default (dark), raw/components-computed.json, 2026-10-11"},"subnav":{"v":"0px","t":"dimension","s":"Measured: computed font of subnav-item default (dark) (its label span.truncate), raw/components-computed.json, 2026-10-11"},"nav":{"v":"0px","t":"dimension","s":"Measured: computed font of nav-item default (dark) (its label span.truncate), raw/components-computed.json, 2026-10-11"},"control":{"v":"0px","t":"dimension","s":"Measured: computed font of period-tab default (dark), raw/components-computed.json, 2026-10-11"},"caption":{"v":"0px","t":"dimension","s":"Measured: computed font of setting-description default (dark), raw/components-computed.json, 2026-10-11"},"eyebrow":{"v":"0.6px","t":"dimension","s":"Measured: computed font of hero-label default (dark), raw/components-computed.json, 2026-10-11"},"cardTitleLegacy":{"v":"0.35px","t":"dimension","s":"Measured: computed font of card-title default (dark), raw/components-computed.json, 2026-10-11"},"groupLabel":{"v":"0.5px","t":"dimension","s":"Measured: computed font of sidebar-group-label default (dark), raw/components-computed.json, 2026-10-11"},"badge":{"v":"0.4px","t":"dimension","s":"Measured: computed font of beta-badge default (dark), raw/components-computed.json, 2026-10-11"},"tableHeader":{"v":"0.12px","t":"dimension","s":"Measured: computed font of table-header default (dark) (its label span), raw/components-computed.json, 2026-10-11"}}},"typography":{"display":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.display}","fontWeight":"{font.weight.display}","lineHeight":"{font.lineHeight.display}","letterSpacing":"{font.letterSpacing.display}"},"t":"typography","s":"Measured: computed font of hero-metric default (dark) (its label span), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"The one giant number (total tokens). Tabular figures."},"pageTitle":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.pageTitle}","fontWeight":"{font.weight.pageTitle}","lineHeight":"{font.lineHeight.pageTitle}","letterSpacing":"{font.letterSpacing.pageTitle}"},"t":"typography","s":"Measured: computed font of page-title default (dark), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"h1 on every page but Tokens."},"sectionTitle":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.sectionTitle}","fontWeight":"{font.weight.sectionTitle}","lineHeight":"{font.lineHeight.sectionTitle}","letterSpacing":"{font.letterSpacing.sectionTitle}"},"t":"typography","s":"Measured: computed font of section-title default (dark), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"Settings section heading."},"figure":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.figure}","fontWeight":"{font.weight.figure}","lineHeight":"{font.lineHeight.figure}","letterSpacing":"{font.letterSpacing.figure}"},"t":"typography","s":"Measured: computed font of hero-cost default (dark), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"Cost under the hero, set in the brand green."},"body":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.body}","fontWeight":"{font.weight.body}","lineHeight":"{font.lineHeight.body}","letterSpacing":"{font.letterSpacing.body}"},"t":"typography","s":"Measured: computed font of page-subtitle default (dark), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"Page subtitles and body copy."},"bodySmall":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.bodySmall}","fontWeight":"{font.weight.bodySmall}","lineHeight":"{font.lineHeight.bodySmall}","letterSpacing":"{font.letterSpacing.bodySmall}"},"t":"typography","s":"Measured: computed font of setting-label default (dark), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"Setting labels, table cells, field text."},"rowTitle":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.rowTitle}","fontWeight":"{font.weight.rowTitle}","lineHeight":"{font.lineHeight.rowTitle}","letterSpacing":"{font.letterSpacing.rowTitle}"},"t":"typography","s":"Measured: computed font of list-row-title default (dark), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"A list row's name."},"subnav":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.subnav}","fontWeight":"{font.weight.subnav}","lineHeight":"{font.lineHeight.subnav}","letterSpacing":"{font.letterSpacing.subnav}"},"t":"typography","s":"Measured: computed font of subnav-item default (dark) (its label span.truncate), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"Settings sub-navigation."},"nav":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.nav}","fontWeight":"{font.weight.nav}","lineHeight":"{font.lineHeight.nav}","letterSpacing":"{font.letterSpacing.nav}"},"t":"typography","s":"Measured: computed font of nav-item default (dark) (its label span.truncate), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"Sidebar items; the current item steps up to 500."},"control":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.control}","fontWeight":"{font.weight.control}","lineHeight":"{font.lineHeight.control}","letterSpacing":"{font.letterSpacing.control}"},"t":"typography","s":"Measured: computed font of period-tab default (dark), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"Tabs, segments, buttons."},"caption":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.caption}","fontWeight":"{font.weight.caption}","lineHeight":"{font.lineHeight.caption}","letterSpacing":"{font.letterSpacing.caption}"},"t":"typography","s":"Measured: computed font of setting-description default (dark), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"Descriptions, summary labels, column headers."},"eyebrow":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.eyebrow}","fontWeight":"{font.weight.eyebrow}","lineHeight":"{font.lineHeight.eyebrow}","letterSpacing":"{font.letterSpacing.eyebrow}"},"t":"typography","s":"Measured: computed font of hero-label default (dark), raw/components-computed.json, 2026-10-11","textTransform":"uppercase","d":"Uppercase label above the hero number. See Do and don't."},"cardTitleLegacy":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.cardTitleLegacy}","fontWeight":"{font.weight.cardTitleLegacy}","lineHeight":"{font.lineHeight.cardTitleLegacy}","letterSpacing":"{font.letterSpacing.cardTitleLegacy}"},"t":"typography","s":"Measured: computed font of card-title default (dark), raw/components-computed.json, 2026-10-11","textTransform":"uppercase","d":"Uppercase card title on the older cards. See Do and don't."},"groupLabel":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.groupLabel}","fontWeight":"{font.weight.groupLabel}","lineHeight":"{font.lineHeight.groupLabel}","letterSpacing":"{font.letterSpacing.groupLabel}"},"t":"typography","s":"Measured: computed font of sidebar-group-label default (dark), raw/components-computed.json, 2026-10-11","textTransform":"uppercase","d":"Sidebar group label, uppercase. See Do and don't."},"badge":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.badge}","fontWeight":"{font.weight.badge}","lineHeight":"{font.lineHeight.badge}","letterSpacing":"{font.letterSpacing.badge}"},"t":"typography","s":"Measured: computed font of beta-badge default (dark), raw/components-computed.json, 2026-10-11","textTransform":"uppercase","d":"Tiny uppercase badge, drawn at scale 0.9."},"tableHeader":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.tableHeader}","fontWeight":"{font.weight.tableHeader}","lineHeight":"{font.lineHeight.tableHeader}","letterSpacing":"{font.letterSpacing.tableHeader}"},"t":"typography","s":"Measured: computed font of table-header default (dark) (its label span), raw/components-computed.json, 2026-10-11","textTransform":"none","d":"Daily Breakdown column headers."}},"radius":{"xs":{"v":"2px","t":"dimension","s":"Measured: computed borderTopLeftRadius of heatmap-cell default (span.rounded-[2px] whose fill is farthest from the empty fill), raw/components-computed.json, 2026-10-11","d":"Heatmap cells."},"sm":{"v":"4px","t":"dimension","s":"Measured: computed borderTopLeftRadius of table-tab default (button \"Project Usage\"), raw/components-computed.json, 2026-10-11","d":"Table tabs, badges, code blocks."},"md":{"v":"6px","t":"dimension","s":"Measured: computed borderTopLeftRadius of select default (button holding \"All tools\"), raw/components-computed.json, 2026-10-11","d":"Selects."},"lg":{"v":"8px","t":"dimension","s":"Measured: computed borderTopLeftRadius of nav-item default (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11","d":"Nav items, buttons, tabs, fields, segments."},"xl":{"v":"12px","t":"dimension","s":"Measured: computed borderTopLeftRadius of provider-tile default (tile holding \"CLAUDE\"), raw/components-computed.json, 2026-10-11","d":"Tiles, stat chips, segmented tracks, icon buttons, menu options."},"2xl":{"v":"16px","t":"dimension","s":"Measured: computed borderTopLeftRadius of card default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11","d":"Cards, the content panel, dialogs, status rows."},"full":{"v":"9999px","t":"dimension","s":"Measured: computed borderTopLeftRadius of usage-track default (first track), raw/components-computed.json, 2026-10-11","d":"Usage tracks, the footer pills."}},"border":{"width":{"default":{"v":"1px","t":"dimension","s":"Measured: computed borderTopWidth of card default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11","d":"Every border is one hairline."}}},"size":{"sidebar":{"width":{"v":"220px","t":"dimension","s":"Measured: rendered width of sidebar default (dark), raw/components-computed.json","d":"Expanded sidebar."},"collapsedWidth":{"v":"72px","t":"dimension","s":"Derived: read from the dashboard source (the collapsed sidebar's w-[72px]); not rendered at capture time"}},"navItem":{"height":{"v":"32px","t":"dimension","s":"Measured: rendered height of nav-item default (dark), raw/components-computed.json"}},"control":{"sm":{"v":"28px","t":"dimension","s":"Measured: rendered height of period-tab default (dark), raw/components-computed.json","d":"Tabs, segments, small buttons."},"md":{"v":"32px","t":"dimension","s":"Measured: rendered height of share-button default (dark), raw/components-computed.json","d":"Outlined buttons."},"field":{"v":"36px","t":"dimension","s":"Measured: rendered height of search-input default (dark), raw/components-computed.json","d":"Fields and selects."}},"iconButton":{"v":"36px","t":"dimension","s":"Measured: rendered width of icon-button default (dark), raw/components-computed.json","d":"Square icon buttons."},"usageTrack":{"height":{"v":"6px","t":"dimension","s":"Measured: rendered height of usage-track default (dark), raw/components-computed.json"}},"heatmapCell":{"v":"12px","t":"dimension","s":"Measured: rendered width of heatmap-cell default (dark), raw/components-computed.json"},"icon":{"nav":{"v":"15px","t":"dimension","s":"Measured: rendered size of the Lucide icon in a[href=/sessions], raw/components-computed.json","d":"Lucide, default stroke 2."},"control":{"v":"16px","t":"dimension","s":"Measured: rendered size of the icon in the Refresh icon button, raw/components-computed.json"}}},"space":{"navItem":{"y":{"v":"6px","t":"dimension","s":"Measured: computed paddingTop of nav-item default (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11"},"x":{"v":"8px","t":"dimension","s":"Measured: computed paddingLeft of nav-item default (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11"}},"control":{"y":{"v":"6px","t":"dimension","s":"Measured: computed paddingTop of period-tab default ([role=tab][aria-selected=false]), raw/components-computed.json, 2026-10-11"},"x":{"v":"12px","t":"dimension","s":"Measured: computed paddingLeft of period-tab default ([role=tab][aria-selected=false]), raw/components-computed.json, 2026-10-11"}},"tile":{"v":"12px","t":"dimension","s":"Measured: computed paddingTop of provider-tile default (tile holding \"CLAUDE\"), raw/components-computed.json, 2026-10-11"},"card":{"v":"20px","t":"dimension","s":"Measured: computed paddingTop of card default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11"},"statusRow":{"v":"20px","t":"dimension","s":"Measured: computed paddingTop of status-row default (row around \"Claude\"), raw/components-computed.json, 2026-10-11"},"listRow":{"y":{"v":"12px","t":"dimension","s":"Measured: computed paddingTop of list-row default (.sessions-row), raw/components-computed.json, 2026-10-11"}},"tableCell":{"y":{"v":"8px","t":"dimension","s":"Measured: computed paddingTop of table-cell default (tbody td:nth(1)), raw/components-computed.json, 2026-10-11"},"x":{"v":"16px","t":"dimension","s":"Measured: computed paddingLeft of table-cell default (tbody td:nth(1)), raw/components-computed.json, 2026-10-11"}},"subnav":{"y":{"v":"8px","t":"dimension","s":"Measured: computed paddingTop of subnav-item default (button \"Account\"), raw/components-computed.json, 2026-10-11"},"x":{"v":"12px","t":"dimension","s":"Measured: computed paddingLeft of subnav-item default (button \"Account\"), raw/components-computed.json, 2026-10-11"}},"panelInset":{"v":"8px","t":"dimension","s":"Measured: the content panel's top offset from the window at 1440 x 900, raw/components-computed.json","d":"Gap between the window edge and the content panel."}},"shadow":{"sm":{"v":[{"offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px","color":"#0000000d"}],"t":"shadow","s":"Measured: computed boxShadow of content-panel default (first rounded, filled ancestor of main), raw/components-computed.json, 2026-10-11","d":"The only resting shadow: the content panel and the selected segment."},"dialog":{"dark":{"v":[{"offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","color":"#262626"},{"offsetX":"0px","offsetY":"20px","blur":"60px","spread":"-10px","color":"#000000a6"}],"t":"shadow","s":"Measured: computed boxShadow of dialog open ([role=dialog]), raw/components-computed.json, 2026-10-11","d":"A 1px ring in the border colour plus one deep, soft drop."},"light":{"v":[{"offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","color":"#e5e5e5"},{"offsetX":"0px","offsetY":"20px","blur":"60px","spread":"-20px","color":"#00000040"}],"t":"shadow","s":"Measured: computed boxShadow of dialog.light open ([role=dialog]), raw/components-computed.json, 2026-10-11","d":"A 1px ring in the border colour plus one deep, soft drop."}}},"motion":{"duration":{"fast":{"v":"150ms","t":"duration","s":"Measured: computed transitionDuration of nav-item default (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11","d":"Colour and background changes on hover."},"base":{"v":"200ms","t":"duration","s":"Measured: computed transitionDuration of share-button default (button \"Share\"), raw/components-computed.json, 2026-10-11","d":"Buttons, tiles, the sidebar width."},"dialog":{"v":"260ms","t":"duration","s":"Measured: computed transitionDuration of dialog open ([role=dialog]), raw/components-computed.json, 2026-10-11","d":"Dialog transform; opacity takes 220ms."}},"easing":{"standard":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":"Measured: computed transitionTimingFunction of nav-item default (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11"},"emphasized":{"v":[0.16,1,0.3,1],"t":"cubicBezier","s":"Measured: computed transitionTimingFunction of dialog open ([role=dialog]), raw/components-computed.json, 2026-10-11","d":"Dialogs ease out hard."}}}},"light":{"bg":{"wash":{"v":"#f5f5f5","t":"color","s":"Measured: computed background of the app root on /dashboard (light), raw/components-computed.json _meta.page","d":"The window behind the sidebar and panel."},"panel":{"v":"#fafafa","t":"color","s":"Measured: computed backgroundColor of content-panel.light default (first rounded, filled ancestor of main), raw/components-computed.json, 2026-10-11","d":"The rounded content panel every page sits in."},"card":{"v":"#ffffff","t":"color","s":"Measured: computed backgroundColor of card.light default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11","d":"Cards, the limits card, status rows."},"field":{"v":"#ffffff","t":"color","s":"Measured: computed backgroundColor of search-input.light default (input[placeholder^=Search]), raw/components-computed.json, 2026-10-11"},"dialog":{"v":"#ffffff","t":"color","s":"Measured: computed backgroundColor of dialog.light open ([role=dialog]), raw/components-computed.json, 2026-10-11"},"subtle":{"v":"#fafafa","t":"color","s":"Measured: computed backgroundColor of stat-chip.light default (parent of \"7d\"), raw/components-computed.json, 2026-10-11","d":"Stat chips; quiet filled tiles."},"code":{"v":"#f5f5f5","t":"color","s":"Measured: computed backgroundColor of code-block.light default (main pre), raw/components-computed.json, 2026-10-11"},"hover":{"v":"#e5e5e580","t":"color","s":"Measured: computed backgroundColor of nav-item.light hover (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11","d":"Hover wash on nav items and menu options."},"selected":{"v":"#f5f5f5","t":"color","s":"Measured: computed backgroundColor of period-tab-selected.light default ([role=tab][aria-selected=true]), raw/components-computed.json, 2026-10-11","d":"Selected tab."},"navActive":{"v":"#e5e5e5b2","t":"color","s":"Measured: computed backgroundColor of nav-item-active.light default (a[href=\"/dashboard\"] (Tokens)), raw/components-computed.json, 2026-10-11","d":"The current sidebar item."},"segmentTrack":{"v":"#fafafa","t":"color","s":"Measured: computed backgroundColor of segmented.light default (parent of button \"Compact\"), raw/components-computed.json, 2026-10-11"},"segmentSelected":{"v":"#ffffff","t":"color","s":"Measured: computed backgroundColor of segment-selected.light default (button \"Compact\"), raw/components-computed.json, 2026-10-11"},"rowHover":{"v":"#fafafa80","t":"color","s":"Measured: computed backgroundColor of table-row.light hover (tbody tr:nth(1)), raw/components-computed.json, 2026-10-11"}},"text":{"primary":{"v":"#0a0a0a","t":"color","s":"Measured: computed color of hero-metric.light default (largest text in main), raw/components-computed.json, 2026-10-11"},"strong":{"v":"#0a0a0a","t":"color","s":"Measured: computed color of page-title.light default (main h1), raw/components-computed.json, 2026-10-11","d":"Titles; pure white in dark."},"secondary":{"v":"#737373","t":"color","s":"Measured: computed color of page-subtitle.light default (main h1 + p), raw/components-computed.json, 2026-10-11"},"nav":{"v":"#525252","t":"color","s":"Measured: computed color of nav-item.light default (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11","d":"Sidebar items at rest."},"muted":{"v":"#737373","t":"color","s":"Measured: computed color of sidebar-group-label.light default (leaf \"Tools\"), raw/components-computed.json, 2026-10-11","d":"Group labels and footer links."},"label":{"v":"#171717","t":"color","s":"Measured: computed color of setting-label.light default (leaf \"Theme\"), raw/components-computed.json, 2026-10-11"},"onPrimary":{"v":"#ffffff","t":"color","s":"Measured: computed color of primary-button.light default (button \"Open in Mac app\"), raw/components-computed.json, 2026-10-11"}},"border":{"default":{"v":"#e5e5e5","t":"color","s":"Measured: computed borderTopColor of card.light default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11"},"strong":{"v":"#d4d4d4","t":"color","s":"Measured: computed borderTopColor of share-button.light default (button \"Share\"), raw/components-computed.json, 2026-10-11","d":"Outlined buttons."},"hover":{"v":"#d4d4d4","t":"color","s":"Measured: computed borderTopColor of select.light hover (button holding \"All tools\"), raw/components-computed.json, 2026-10-11"}},"accent":{"default":{"v":"#059669","t":"color","s":"Measured: computed color of hero-cost.light default (text matching $n.nn), raw/components-computed.json, 2026-10-11","d":"Cost figures, links, the brand."},"hover":{"v":"#047857","t":"color","s":"Measured: computed color of cost-button.light hover (button[aria-label=\"View cost breakdown\"]), raw/components-computed.json, 2026-10-11"},"fill":{"v":"#10b981","t":"color","s":"Measured: computed backgroundColor of usage-fill.light default (its fill), raw/components-computed.json, 2026-10-11","d":"Usage bar fill."}},"button":{"primary":{"bg":{"v":"#171717","t":"color","s":"Measured: computed backgroundColor of primary-button.light default (button \"Open in Mac app\"), raw/components-computed.json, 2026-10-11","d":"Inverted: near-black in light, near-white in dark."},"fg":{"v":"#ffffff","t":"color","s":"Measured: computed color of primary-button.light default (button \"Open in Mac app\"), raw/components-computed.json, 2026-10-11"}},"secondary":{"bg":{"v":"#fafafa","t":"color","s":"Measured: computed backgroundColor of share-button.light default (button \"Share\"), raw/components-computed.json, 2026-10-11"},"border":{"v":"#d4d4d4","t":"color","s":"Measured: computed borderTopColor of share-button.light default (button \"Share\"), raw/components-computed.json, 2026-10-11"},"hoverFg":{"v":"#059669","t":"color","s":"Measured: computed color of share-button.light hover (button \"Share\"), raw/components-computed.json, 2026-10-11"}}},"usage":{"track":{"v":"#f5f5f5","t":"color","s":"Measured: computed backgroundColor of usage-track.light default (first track), raw/components-computed.json, 2026-10-11"}},"status":{"success":{"v":"{color.status.success.light}","t":"color","s":"Derived: alias of color.status.success.light"},"warning":{"v":"{color.status.warning.light}","t":"color","s":"Derived: alias of color.status.warning.light"},"error":{"v":"{color.status.error.light}","t":"color","s":"Derived: alias of color.status.error.light"}},"heatmap":{"0":{"v":"{color.heatmap.light.0}","t":"color","s":"Derived: alias of color.heatmap.light.0"},"1":{"v":"{color.heatmap.light.1}","t":"color","s":"Derived: alias of color.heatmap.light.1"},"2":{"v":"{color.heatmap.light.2}","t":"color","s":"Derived: alias of color.heatmap.light.2"},"3":{"v":"{color.heatmap.light.3}","t":"color","s":"Derived: alias of color.heatmap.light.3"},"4":{"v":"{color.heatmap.light.4}","t":"color","s":"Derived: alias of color.heatmap.light.4"}},"elevation":{"dialog":{"v":"{shadow.dialog.light}","t":"shadow","s":"Derived: alias of shadow.dialog.light"}}},"dark":{"bg":{"wash":{"v":"#0a0a0a","t":"color","s":"Measured: computed background of the app root on /dashboard (dark), raw/components-computed.json _meta.page","d":"The window behind the sidebar and panel."},"panel":{"v":"#171717","t":"color","s":"Measured: computed backgroundColor of content-panel default (first rounded, filled ancestor of main), raw/components-computed.json, 2026-10-11","d":"The rounded content panel every page sits in."},"card":{"v":"#171717","t":"color","s":"Measured: computed backgroundColor of card default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11","d":"Cards, the limits card, status rows."},"field":{"v":"#171717","t":"color","s":"Measured: computed backgroundColor of search-input default (input[placeholder^=Search]), raw/components-computed.json, 2026-10-11"},"dialog":{"v":"#0a0a0a","t":"color","s":"Measured: computed backgroundColor of dialog open ([role=dialog]), raw/components-computed.json, 2026-10-11"},"subtle":{"v":"#262626","t":"color","s":"Measured: computed backgroundColor of stat-chip default (parent of \"7d\"), raw/components-computed.json, 2026-10-11","d":"Stat chips; quiet filled tiles."},"code":{"v":"#17171799","t":"color","s":"Measured: computed backgroundColor of code-block default (main pre), raw/components-computed.json, 2026-10-11"},"hover":{"v":"#26262699","t":"color","s":"Measured: computed backgroundColor of nav-item hover (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11","d":"Hover wash on nav items and menu options."},"selected":{"v":"#262626","t":"color","s":"Measured: computed backgroundColor of period-tab-selected default ([role=tab][aria-selected=true]), raw/components-computed.json, 2026-10-11","d":"Selected tab."},"navActive":{"v":"#262626","t":"color","s":"Measured: computed backgroundColor of nav-item-active default (a[href=\"/dashboard\"] (Tokens)), raw/components-computed.json, 2026-10-11","d":"The current sidebar item."},"segmentTrack":{"v":"#171717","t":"color","s":"Measured: computed backgroundColor of segmented default (parent of button \"Compact\"), raw/components-computed.json, 2026-10-11"},"segmentSelected":{"v":"#262626","t":"color","s":"Measured: computed backgroundColor of segment-selected default (button \"Compact\"), raw/components-computed.json, 2026-10-11"},"rowHover":{"v":"#26262680","t":"color","s":"Measured: computed backgroundColor of table-row hover (tbody tr:nth(1)), raw/components-computed.json, 2026-10-11"}},"text":{"primary":{"v":"#fafafa","t":"color","s":"Measured: computed color of hero-metric default (largest text in main), raw/components-computed.json, 2026-10-11"},"strong":{"v":"#ffffff","t":"color","s":"Measured: computed color of page-title default (main h1), raw/components-computed.json, 2026-10-11","d":"Titles; pure white in dark."},"secondary":{"v":"#a3a3a3","t":"color","s":"Measured: computed color of page-subtitle default (main h1 + p), raw/components-computed.json, 2026-10-11"},"nav":{"v":"#a3a3a3","t":"color","s":"Measured: computed color of nav-item default (a[href=\"/sessions\"]), raw/components-computed.json, 2026-10-11","d":"Sidebar items at rest."},"muted":{"v":"#737373","t":"color","s":"Measured: computed color of sidebar-group-label default (leaf \"Tools\"), raw/components-computed.json, 2026-10-11","d":"Group labels and footer links."},"label":{"v":"#e5e5e5","t":"color","s":"Measured: computed color of setting-label default (leaf \"Theme\"), raw/components-computed.json, 2026-10-11"},"onPrimary":{"v":"#171717","t":"color","s":"Measured: computed color of primary-button default (button \"Open in Mac app\"), raw/components-computed.json, 2026-10-11"}},"border":{"default":{"v":"#262626","t":"color","s":"Measured: computed borderTopColor of card default (card around \"Activity heatmap\"), raw/components-computed.json, 2026-10-11"},"strong":{"v":"#404040","t":"color","s":"Measured: computed borderTopColor of share-button default (button \"Share\"), raw/components-computed.json, 2026-10-11","d":"Outlined buttons."},"hover":{"v":"#404040","t":"color","s":"Measured: computed borderTopColor of select hover (button holding \"All tools\"), raw/components-computed.json, 2026-10-11"}},"accent":{"default":{"v":"#059669","t":"color","s":"Measured: computed color of hero-cost default (text matching $n.nn), raw/components-computed.json, 2026-10-11","d":"Cost figures, links, the brand."},"hover":{"v":"#10b981","t":"color","s":"Measured: computed color of cost-button hover (button[aria-label=\"View cost breakdown\"]), raw/components-computed.json, 2026-10-11"},"fill":{"v":"#10b981","t":"color","s":"Measured: computed backgroundColor of usage-fill default (its fill), raw/components-computed.json, 2026-10-11","d":"Usage bar fill."}},"button":{"primary":{"bg":{"v":"#fafafa","t":"color","s":"Measured: computed backgroundColor of primary-button default (button \"Open in Mac app\"), raw/components-computed.json, 2026-10-11","d":"Inverted: near-black in light, near-white in dark."},"fg":{"v":"#171717","t":"color","s":"Measured: computed color of primary-button default (button \"Open in Mac app\"), raw/components-computed.json, 2026-10-11"}},"secondary":{"bg":{"v":"#171717","t":"color","s":"Measured: computed backgroundColor of share-button default (button \"Share\"), raw/components-computed.json, 2026-10-11"},"border":{"v":"#404040","t":"color","s":"Measured: computed borderTopColor of share-button default (button \"Share\"), raw/components-computed.json, 2026-10-11"},"hoverFg":{"v":"#fafafa","t":"color","s":"Measured: computed color of share-button hover (button \"Share\"), raw/components-computed.json, 2026-10-11"}}},"usage":{"track":{"v":"#40404080","t":"color","s":"Measured: computed backgroundColor of usage-track default (first track), raw/components-computed.json, 2026-10-11"}},"status":{"success":{"v":"{color.status.success.dark}","t":"color","s":"Derived: alias of color.status.success.dark"},"warning":{"v":"{color.status.warning.dark}","t":"color","s":"Derived: alias of color.status.warning.dark"},"error":{"v":"{color.status.error.dark}","t":"color","s":"Derived: alias of color.status.error.dark"}},"heatmap":{"0":{"v":"{color.heatmap.dark.0}","t":"color","s":"Derived: alias of color.heatmap.dark.0"},"1":{"v":"{color.heatmap.dark.1}","t":"color","s":"Derived: alias of color.heatmap.dark.1"},"2":{"v":"{color.heatmap.dark.2}","t":"color","s":"Derived: alias of color.heatmap.dark.2"},"3":{"v":"{color.heatmap.dark.3}","t":"color","s":"Derived: alias of color.heatmap.dark.3"},"4":{"v":"{color.heatmap.dark.4}","t":"color","s":"Derived: alias of color.heatmap.dark.4"}},"elevation":{"dialog":{"v":"{shadow.dialog.dark}","t":"shadow","s":"Derived: alias of shadow.dialog.dark"}}}};
+const $ = (s) => document.querySelector(s);
+const theme = () => document.documentElement.getAttribute('data-mode') === 'dark' ? 'dark' : 'light';
+const get = (set, path) => path.split('.').reduce((n, k) => n && n[k], TOK[set]);
+const resolve = (v) => { const m = typeof v === 'string' && v.match(/^\{(.+)\}$/); return m ? resolve(get('core', m[1]).v) : v; };
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+function walk(node, prefix, out) { for (const [k, v] of Object.entries(node)) { if (v && v.v !== undefined) out.push([prefix + k, v]); else if (v && typeof v === 'object') walk(v, prefix + k + '.', out); } return out; }
+
+function roles() {
+  const list = walk(TOK[theme()], '', []).filter(([, t]) => t.t === 'color');
+  $('#rolegrid').innerHTML = list.map(([n, t]) => `<div class="sw"><div class="chip" style="background:${resolve(t.v)}"></div><div class="meta"><b>${esc(n)}</b>${esc(resolve(t.v))}${t.d ? ' · ' + esc(t.d) : ''}<span class="srcline">${esc(t.s)}</span></div></div>`).join('');
+  const heat = walk(TOK.core.color.heatmap[theme()], '', []);
+  $('#heatramp').innerHTML = heat.map(([n, t]) => `<div style="background:${t.v};color:${+n > 2 ? '#fff' : 'var(--text-secondary)'}">${n}<br>${t.v}</div>`).join('');
+  const cells = []; let seed = 7;
+  for (let i = 0; i < 26 * 7; i++) { seed = (seed * 9301 + 49297) % 233280; const r = seed / 233280; cells.push(r < .2 ? 0 : 1 + Math.floor(r * 4) % 4); }
+  $('#heat').innerHTML = cells.map((l) => `<span style="background:var(--heatmap-${l})"></span>`).join('');
+}
+function ramps() {
+  const row = (node, el) => { el.innerHTML = walk(node, '', []).map(([n, t]) => { const dark = ['500', '600', '700', '800', '900', '950'].includes(n); return `<div title="${esc(t.s)}" style="background:${t.v};color:${dark ? '#fafafa' : '#0a0a0a'}">${n}<br>${t.v}</div>`; }).join(''); };
+  row(TOK.core.color.neutral, $('#neutral')); row(TOK.core.color.brand, $('#brand'));
+  $('#rampsrc').innerHTML = [...walk(TOK.core.color.neutral, 'neutral.', []), ...walk(TOK.core.color.brand, 'brand.', [])].map(([n, t]) => `<tr><td><code>color.${esc(n)}</code></td><td>${esc(t.v)}</td><td class="src">${esc(t.s)}</td></tr>`).join('');
+  $('#typespecs').innerHTML = walk(TOK.core.typography, '', []).map(([n, t]) => {
+    const css = `font:var(--typography-${n});letter-spacing:var(--font-letterSpacing-${n});text-transform:${t.textTransform || 'none'}`;
+    const sz = get('core', 'font.size.' + n).v, w = get('core', 'font.weight.' + n).v, lh = get('core', 'font.lineHeight.' + n).v;
+    const sample = n === 'display' ? '12.9B' : n === 'figure' ? '$4,840.32' : n === 'pageTitle' ? 'Sessions' : n === 'tableHeader' ? 'Cached' : 'Local sessions, usage and estimated cost';
+    return `<div class="spec"><div class="lab">${esc(n)}<code>${sz} / ${lh} / ${w}</code></div><div><div style="${css}">${esc(sample)}</div><span class="srcline">${esc(t.s)}</span></div></div>`;
+  }).join('');
+  $('#radii').innerHTML = walk(TOK.core.radius, '', []).map(([n, t]) => `<div class="box" title="${esc(t.s)}" style="border-radius:${t.v}">${n} · ${t.v}</div>`).join('');
+  const misc = [...walk(TOK.core.radius, 'radius.', []), ...walk(TOK.core.size, 'size.', []), ...walk(TOK.core.space, 'space.', []), ...walk(TOK.core.motion, 'motion.', [])];
+  $('#misc').innerHTML = misc.map(([n, t]) => `<tr><td><code>${esc(n)}</code></td><td>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</td><td class="src">${esc(t.s)}</td></tr>`).join('');
+}
+function setTheme(mode) {
+  document.documentElement.setAttribute('data-mode', mode);
+  document.querySelectorAll('.toggle button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.set === mode)));
+  roles();
+}
+document.querySelectorAll('.toggle button').forEach((b) => b.addEventListener('click', () => setTheme(b.dataset.set)));
+ramps(); setTheme('dark');
+</script>
+</body>
+</html>

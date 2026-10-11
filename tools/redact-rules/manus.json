@@ -1,0 +1,628 @@
+{
+ "_note": "Pixel rectangles and UI-word keep lists for systems/manus. Coordinates only; no private text. 2880x1800 is a 1440x900 desktop shot at 2x.",
+ "ocr": {
+  "net": true,
+  "emails": true,
+  "email_allow": [
+   "@manus\\.im$",
+   "@example\\.(com|org)$",
+   "\\.example$"
+  ],
+  "delete_if_covered": 0.3,
+  "keep": [
+   "^manus$",
+   "^Lite$",
+   "^Message Manus$",
+   "Step \\d+/\\d+",
+   "^Task completed",
+   "How was this result",
+   "^[A-Z][a-z]{2,3} \\d{1,2}( \\(\\d+\\))?$",
+   "^\\d\\d:\\d\\d ?[AP]M$",
+   "^Last modified",
+   "^(Search tasks|Search files|Today|Older|Yesterday|New task)",
+   "^(Download|Save to|Share|Locate in task|Add to favorites|Send to Manus|Group by task|Favorites only|View options|Grid view)$",
+   "^(All|Slides|Documents|Text & PDF|Spreadsheets|Images|Videos|Audio|Others|Library|Recent|Files in this task)$",
+   "^Created by Learner",
+   "^Updated ",
+   "^Files in this task",
+   "^Projects$",
+   "^Tasks$",
+   "Close sidebar",
+   "Select a file to preview",
+   "Start from scratch",
+   "^\\W*(Files|Canvas|Video|New tab|Earlier)\\W*$",
+   "Edit project",
+   "View project",
+   "^\\W*Delete\\W*$",
+   "^\\W*(Share|Rename|Mark as unread|Pin|Archive)\\W*$",
+   "Open in new tab",
+   "Open in desktop app",
+   "Move to (project|section)",
+   "Locate in task",
+   "Edit in new task",
+   "Make a copy",
+   "Share Manus with a friend",
+   "Get 500 credits each",
+   "^Learner$",
+   "Personalize your",
+   "^(Create slides|Build website|More)$"
+  ],
+  "boost": [
+   "screenshots/settings-*-full.png",
+   "screenshots/computers-*.png",
+   "screenshots/home-*-notifications.png",
+   "components/crops/computers-cta-*.png",
+   "components/crops/notifications-panel-*.png"
+  ]
+ },
+ "families": [
+  {
+   "name": "sidebar, desktop",
+   "files": [
+    "screenshots/*.png"
+   ],
+   "skip": [
+    "screenshots/mobile-*",
+    "screenshots/*collapsed*",
+    "screenshots/settings-*",
+    "screenshots/*-full.png",
+    "screenshots/*files-dialog*",
+    "screenshots/*preview-doc*",
+    "screenshots/*sidebar-task-menu*",
+    "screenshots/*project-context-menu*",
+    "screenshots/*user-menu*"
+   ],
+   "size": [
+    [
+     2880,
+     1800
+    ]
+   ],
+   "rects": [
+    [
+     86,
+     812,
+     330,
+     872
+    ],
+    [
+     86,
+     990,
+     574,
+     1566
+    ]
+   ]
+  },
+  {
+   "name": "sidebar, whole-page shots",
+   "files": [
+    "screenshots/*-full.png"
+   ],
+   "skip": [
+    "screenshots/mobile-*",
+    "screenshots/settings-*",
+    "screenshots/*preview-doc*"
+   ],
+   "rects": [
+    [
+     86,
+     812,
+     330,
+     872
+    ],
+    [
+     86,
+     990,
+     574,
+     1900
+    ]
+   ]
+  },
+  {
+   "name": "sidebar behind the files dialog",
+   "files": [
+    "screenshots/*files-dialog*"
+   ],
+   "rects": [
+    [
+     86,
+     812,
+     330,
+     872
+    ],
+    [
+     86,
+     990,
+     574,
+     1566
+    ],
+    [
+     1020,
+     95,
+     1900,
+     140
+    ],
+    [
+     2044,
+     1000,
+     2560,
+     1360
+    ]
+   ]
+  },
+  {
+   "name": "sidebar behind a full-width modal",
+   "files": [
+    "screenshots/settings-*",
+    "screenshots/*preview-doc*"
+   ],
+   "rects": [
+    [
+     86,
+     812,
+     276,
+     872
+    ],
+    [
+     86,
+     990,
+     276,
+     1566
+    ]
+   ],
+   "skip": [
+    "screenshots/settings-*-full.png"
+   ]
+  },
+  {
+   "name": "sidebar under the account menu",
+   "files": [
+    "screenshots/*user-menu*"
+   ],
+   "skip": [
+    "screenshots/mobile-*"
+   ],
+   "rects": [
+    [
+     86,
+     812,
+     330,
+     866
+    ]
+   ]
+  },
+  {
+   "name": "library list",
+   "files": [
+    "screenshots/library-*.png"
+   ],
+   "skip": [
+    "screenshots/*images-grid*",
+    "screenshots/*preview-doc*"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      700,
+      190,
+      2200,
+      -1
+     ]
+    }
+   ]
+  },
+  {
+   "name": "library grid",
+   "files": [
+    "screenshots/library-*images-grid*.png"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      700,
+      190,
+      2800,
+      -1
+     ]
+    }
+   ]
+  },
+  {
+   "name": "document previewer",
+   "files": [
+    "screenshots/*preview-doc*"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      250,
+      90,
+      2860,
+      -1
+     ]
+    }
+   ]
+  },
+  {
+   "name": "library thumbnails, grouped by task",
+   "files": [
+    "screenshots/library-*-images-grid-by-task*.png"
+   ],
+   "rects": [
+    [
+     750,
+     425,
+     1380,
+     835,
+     "pixelate:40"
+    ],
+    [
+     1425,
+     425,
+     2050,
+     835,
+     "pixelate:40"
+    ],
+    [
+     750,
+     1135,
+     1380,
+     1550,
+     "pixelate:40"
+    ],
+    [
+     1425,
+     1135,
+     2050,
+     1550,
+     "pixelate:40"
+    ],
+    [
+     2100,
+     1135,
+     2740,
+     1550,
+     "pixelate:40"
+    ],
+    [
+     740,
+     1870,
+     1390,
+     2240,
+     "pixelate:40"
+    ],
+    [
+     740,
+     2565,
+     1390,
+     2975,
+     "pixelate:40"
+    ],
+    [
+     1420,
+     2565,
+     2062,
+     2975,
+     "pixelate:40"
+    ],
+    [
+     2095,
+     2565,
+     2740,
+     2975,
+     "pixelate:40"
+    ],
+    [
+     740,
+     3350,
+     1390,
+     3760,
+     "pixelate:40"
+    ],
+    [
+     1420,
+     3350,
+     2062,
+     3760,
+     "pixelate:40"
+    ],
+    [
+     2095,
+     3350,
+     2740,
+     3760,
+     "pixelate:40"
+    ]
+   ]
+  },
+  {
+   "name": "home search dialog",
+   "files": [
+    "screenshots/home-*-search.png"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      740,
+      470,
+      2130,
+      1340
+     ]
+    }
+   ]
+  },
+  {
+   "name": "creations",
+   "files": [
+    "screenshots/creations-*.png"
+   ],
+   "rects": [
+    [
+     750,
+     235,
+     1230,
+     520,
+     "pixelate:48"
+    ],
+    [
+     750,
+     570,
+     1230,
+     860,
+     "pixelate:48"
+    ]
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      1200,
+      190,
+      2700,
+      900
+     ]
+    }
+   ]
+  },
+  {
+   "name": "project page",
+   "files": [
+    "screenshots/project-*.png"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      660,
+      150,
+      2150,
+      1100
+     ]
+    }
+   ]
+  },
+  {
+   "name": "task thread",
+   "files": [
+    "screenshots/task-*.png"
+   ],
+   "skip": [
+    "screenshots/*sidebar-task-menu*",
+    "screenshots/*files-dialog*"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      600,
+      90,
+      2880,
+      1430
+     ]
+    }
+   ]
+  },
+  {
+   "name": "task files dialog",
+   "files": [
+    "screenshots/task-*files-dialog*"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      840,
+      250,
+      2050,
+      1580
+     ]
+    }
+   ]
+  },
+  {
+   "name": "sidebar with a task menu open",
+   "files": [
+    "screenshots/*sidebar-task-menu*",
+    "screenshots/*project-context-menu*"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      80,
+      800,
+      600,
+      1580
+     ]
+    }
+   ]
+  },
+  {
+   "name": "mobile drawer",
+   "files": [
+    "screenshots/mobile-*drawer*.png"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      40,
+      800,
+      600,
+      1560
+     ]
+    }
+   ]
+  },
+  {
+   "name": "mobile library",
+   "files": [
+    "screenshots/mobile-library-*.png"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      20,
+      260,
+      -1,
+      -1
+     ]
+    }
+   ]
+  },
+  {
+   "name": "mobile task",
+   "files": [
+    "screenshots/mobile-task-*.png"
+   ],
+   "rects": [
+    [
+     60,
+     205,
+     730,
+     570,
+     "pixelate:48"
+    ]
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      20,
+      190,
+      -1,
+      1400
+     ]
+    }
+   ]
+  },
+  {
+   "name": "sidebar, document previewer whole-page shot",
+   "files": [
+    "screenshots/*preview-doc-full.png"
+   ],
+   "rects": [
+    [
+     86,
+     812,
+     330,
+     872
+    ],
+    [
+     86,
+     990,
+     574,
+     1900
+    ]
+   ]
+  },
+  {
+   "name": "settings dialog at the foot of a whole-page shot",
+   "files": [
+    "screenshots/settings-*-full.png"
+   ],
+   "rects": [
+    [
+     86,
+     812,
+     574,
+     872
+    ],
+    [
+     86,
+     990,
+     574,
+     1800
+    ],
+    [
+     740,
+     190,
+     2564,
+     1800
+    ]
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      700,
+      190,
+      2200,
+      4700
+     ]
+    }
+   ]
+  },
+  {
+   "name": "library rows below the previewer's modal",
+   "files": [
+    "screenshots/library-*-preview-doc.png"
+   ],
+   "rects": [
+    [
+     700,
+     1722,
+     2200,
+     1800
+    ]
+   ]
+  }
+ ],
+ "delete_stems": [
+  "nav-project-row",
+  "nav-task-row",
+  "search-result",
+  "search-dialog",
+  "files-dialog",
+  "files-dialog-row",
+  "file-row",
+  "file-row-title",
+  "file-row-source",
+  "grid-card",
+  "grid-card-thumb",
+  "grid-card-title",
+  "task-group-heading",
+  "task-group-link",
+  "previewer",
+  "previewer-header",
+  "previewer-title",
+  "previewer-body",
+  "doc-h1",
+  "doc-h2",
+  "doc-h3",
+  "doc-paragraph",
+  "doc-bullet",
+  "project-title",
+  "project-session",
+  "user-bubble",
+  "user-attachment",
+  "assistant-text",
+  "step-row",
+  "step-footer",
+  "step-footer-row",
+  "deliverable-card",
+  "deliverable-header",
+  "deliverable-doc",
+  "file-chip",
+  "suggestion-row",
+  "file-tree",
+  "file-tree-item",
+  "m-file-row",
+  "m-task-deliverable",
+  "creation-card",
+  "creation-thumb",
+  "creation-url"
+ ]
+}

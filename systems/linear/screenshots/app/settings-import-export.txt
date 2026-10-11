@@ -1,0 +1,65 @@
+Window: "Acme: tings", App: Dia.
+0 standard window Acme: tings, ID: bigBrowserWindow_00000000-0000-0000-0000-000000000000, Secondary Actions: Raise
+	1 HTML content tings, URL: chrome-error://chromewebdata/
+		2 container
+			3 image
+			4 container
+				5 heading This site can’t be reached
+					6 text This site can’t be reached
+				7 text tings ’s server IP address could not be found.
+				8 text Try:
+				9 content list
+					10 container
+						11 AXListMarker • 
+						12 text Checking the connection
+					13 container
+						14 AXListMarker • 
+						15 link Checking the proxy, firewall, and DNS configuration, Value: chrome-error://chromewebdata/#buttons
+				16 text ERR_NAME_NOT_RESOLVED
+			17 button Reload
+			18 button Details
+	19 container navigationBar
+		20 unknown navigationBarBackButton
+		21 unknown navigationBarReloadOrStopLoadingButton
+		22 button
+		23 collection
+		24 unknown navigationBarAssistantBar
+			25 unknown
+				26 scroll area
+					27 text entry area Value: http://tings / tings, ID: navigationBarAssistantBarTextField
+	28 collection
+	29 scroll area Secondary Actions: Scroll Up, Scroll Down
+		30 collection (disabled)
+			31 unknown acme-org/app, ID: tab
+				32 unknown
+					33 image
+					34 text acme-org/app
+			35 unknown tings, ID: tab
+				36 unknown
+					37 image
+					38 text tings
+			39 unknown
+				40 button
+		41 scroll bar (disabled) 0
+	42 close button
+	43 minimize button
+	44 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	45 button
+	46 button Chats
+	47 button
+	48 unknown OF
+	49 unknown Acme
+	50 unknown FT
+51 menu bar
+	52 Dia
+	53 File
+	54 Edit
+	55 View
+	56 Tabs
+	57 Bookmarks
+	58 History
+	59 Extensions
+	60 Window
+	61 Help
+
+The focused UI element is 1 HTML content tings, URL: chrome-error://chromewebdata/

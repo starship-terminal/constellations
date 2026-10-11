@@ -1,0 +1,306 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - generic: Build, review and ship
+  - heading "Move work forward across teams and agents" [level=1]:
+    - text: Move work forward
+    - text: across teams and agents
+  - heading "Delegate, automate, and orchestrate work" [level=2]
+  - paragraph: Build and deploy AI agents that work alongside your team. Work on complex tasks together or delegate entire issues end-to-end.
+  - button "Agents +":
+    - generic: Agents
+    - generic: +
+  - main:
+    - figure "Artificial teammates. Natural collaboration. Linear is built for multiplayer work with AI. You can assign agents to any issue and mention them in comment threads, just like any other member of your team.":
+      - generic: MWT-2703
+      - generic: Refactor sonic crawler
+      - generic: 1 / 84
+      - heading "Artificial teammates. Natural collaboration." [level=3]
+      - paragraph: Linear is built for multiplayer work with AI. You can assign agents to any issue and mention them in comment threads, just like any other member of your team.
+    - figure "Agents for every use case, at your command Choose from a variety of AI agents and start delegating work, from code generation to other technical tasks. Or build your own agent.":
+      - heading "Agents for every use case, at your command" [level=3]
+      - paragraph: Choose from a variety of AI agents and start delegating work, from code generation to other technical tasks. Or build your own agent.
+    - figure "Orchestrate issues at scale Delegate multiple issues in parallel and monitor the agent’s progress.":
+      - heading "Orchestrate issues at scale" [level=3]
+      - paragraph:
+        - text: Delegate multiple issues in parallel
+        - text: and monitor the agent’s progress.
+    - figure "Go from issue to code instantly Open any issue directly in your AI coding tool of choice preloaded with full context and a custom prompt.":
+      - heading "Go from issue to code instantly" [level=3]
+      - paragraph: Open any issue directly in your AI coding tool of choice preloaded with full context and a custom prompt.
+    - figure "Backlog hygiene, automated Keep your backlog clean and uncluttered with Linear’s auto-closing and auto-archiving features.":
+      - heading "Backlog hygiene, automated" [level=3]
+      - paragraph: Keep your backlog clean and uncluttered with Linear’s auto-closing and auto-archiving features.
+  - heading "Build momentum with Cycles" [level=2]
+  - paragraph: Cycles focus your team on what work should happen next. A healthy routine to maintain velocity and make meaningful progress.
+  - button "Cycles +":
+    - generic: Cycles
+    - generic: +
+  - main:
+    - figure "Modern sprint planning, purpose-built for software teams Plan work in clear, time-boxed cycles. Linear keeps upcoming cycles ready automatically, so your team can stay focused and maintain momentum.":
+      - heading "Modern sprint planning, purpose-built for software teams" [level=3]
+      - paragraph: Plan work in clear, time-boxed cycles. Linear keeps upcoming cycles ready automatically, so your team can stay focused and maintain momentum.
+  - heading "Streamline work across tools" [level=2]
+  - paragraph: Connect your toolstack to Linear via MCP and move work forward from any environment – code, design, or research – without breaking flow.
+  - button "Linear MCP +":
+    - generic: Linear MCP
+    - generic: +
+  - main:
+    - link "Claude Code Search, create, and update Linear issues, projects, initiatives, and more.":
+      - /url: /integrations/claude
+      - figure "Claude Code Search, create, and update Linear issues, projects, initiatives, and more.":
+        - heading "Claude Code" [level=3]
+        - paragraph:
+          - text: Search, create, and update Linear issues,
+          - text: projects, initiatives, and more.
+    - link "ChatGPT Deep Research Surface Linear issues, projects, and discussions relevant to your context.":
+      - /url: /integrations/chatgpt
+      - figure "ChatGPT Deep Research Surface Linear issues, projects, and discussions relevant to your context.":
+        - heading "ChatGPT Deep Research" [level=3]
+        - paragraph:
+          - text: Surface Linear issues, projects, and
+          - text: discussions relevant to your context.
+    - link "Figma Use the context of Linear issues to generate prototypes in Figma Make.":
+      - /url: /integrations/figma-make
+      - figure "Figma Use the context of Linear issues to generate prototypes in Figma Make.":
+        - heading "Figma" [level=3]
+        - paragraph:
+          - text: Use the context of Linear issues to
+          - text: generate prototypes in Figma Make.
+  - heading "Powerful Git automations" [level=2]:
+    - text: Powerful
+    - text: Git automations
+  - paragraph: Link Linear with GitHub and GitLab to automate your pull request workflows. Less grunt work, less context switching, more time in flow.
+  - button "Git automations +":
+    - generic: Git automations
+    - generic: +
+  - main:
+    - figure:
+      - generic: Auto-assign and update
+      - generic: Auto-assign issues and move them to a started status when you copy the git branch name
+      - generic: Branch-specific rules
+      - generic: Define custom workflow automations based on specific target branches
+      - generic: Link and automate PRs
+      - generic: Automatically change issue status based on pull/merge request updates
+      - generic: PR review status
+      - generic: See the reviewers and review states of your pull and merge requests directly in Linear
+  - heading "Faster reviews, fewer bottlenecks" [level=2]:
+    - text: Faster reviews,
+    - text: fewer bottlenecks
+  - paragraph: Manage pull requests in the context of the work behind them. Review, discuss, and merge without switching tools.
+  - button "Diffs +":
+    - generic: Diffs
+    - generic: +
+  - main:
+    - figure "A fast and focused review experience See every review that needs your attention in one focused interface. Open diffs instantly, respond quickly, and keep your team unblocked.":
+      - heading "A fast and focused review experience" [level=3]
+      - paragraph: See every review that needs your attention in one focused interface. Open diffs instantly, respond quickly, and keep your team unblocked.
+    - figure "Review notifications you’ll actually see Never miss a review request again. Every PR notification surfaces clearly in a focused inbox built for action.":
+      - paragraph: Prevent duplicate trip creation
+      - paragraph: Róża requested your review
+      - paragraph: 12m
+      - paragraph: Remove view-mode condition
+      - paragraph: Nan approved
+      - paragraph: 1h
+      - paragraph: Add high contrast theme to Rider app
+      - paragraph: "Andreas mentioned you: @Isha could you…"
+      - paragraph: 3h
+      - paragraph: Prevent duplicate trip creation
+      - paragraph: Róża requested your review
+      - paragraph: 12m
+      - paragraph: Remove view-mode condition
+      - paragraph: Nan approved
+      - paragraph: 1h
+      - paragraph: Add high contrast theme to Rider app
+      - paragraph: "Andreas mentioned you: @Isha could you…"
+      - paragraph: 3h
+      - heading "Review notifications you’ll actually see" [level=3]
+      - paragraph: Never miss a review request again. Every PR notification surfaces clearly in a focused inbox built for action.
+    - figure "Structural highlighting Strip away formatting-only edits to focus on code changes, not the noise around them.":
+      - heading "Structural highlighting" [level=3]
+      - paragraph:
+        - text: Strip away formatting-only edits to focus on
+        - text: code changes, not the noise around them.
+    - figure "Iterate with agents Review feedback, resolved at agent speed. Make changes from the diff with agents and watch updates appear inline.":
+      - heading "Iterate with agents" [level=3]
+      - paragraph: Review feedback, resolved at agent speed. Make changes from the diff with agents and watch updates appear inline.
+    - figure "Review code in context Each diff is tied directly to the issue it resolves. No tab or tool switching required.":
+      - heading "Review code in context" [level=3]
+      - paragraph:
+        - text: Each diff is tied directly to the issue it resolves.
+        - text: No tab or tool switching required.
+  - heading "Reviews with direction" [level=2]:
+    - text: Reviews
+    - text: with direction
+  - paragraph: Guided reviews organize diffs by showing you what’s changed, and why. Review code faster by focusing on the updates that matter.
+  - button "Guided reviews +":
+    - generic: Guided reviews
+    - generic: +
+  - main:
+    - figure "A clear path through complex changes Large PRs are hard to review without a clear way in. Guided reviews walk you through changes in semantic order, separating out supporting changes and glue code.":
+      - heading "A clear path through complex changes" [level=3]
+      - paragraph: Large PRs are hard to review without a clear way in. Guided reviews walk you through changes in semantic order, separating out supporting changes and glue code.
+  - heading "Release management" [level=2]:
+    - text: Release
+    - text: management
+  - paragraph: Plan and track software releases. Integrates with your CI/CD tools to precisely track the deployment environment and status of every issue.
+  - button "Releases +":
+    - generic: Releases
+    - generic: +
+  - main:
+    - figure "Model how each team actually ships Create a release pipeline for every product and environment, whether continuously deployed or released on a schedule, and see every version live in one place.":
+      - heading "Model how each team actually ships" [level=3]
+      - paragraph: Create a release pipeline for every product and environment, whether continuously deployed or released on a schedule, and see every version live in one place.
+  - link "Make your product operations self-driving Intake and integrations →":
+    - /url: /intake
+    - generic: Make your product operations self-driving
+    - generic: Intake and integrations
+    - generic: →
+  - link "Plan and navigate from idea to launch Planning and monitoring →":
+    - /url: /plan
+    - generic: Plan and navigate from idea to launch
+    - generic: Planning and monitoring
+    - generic: →
+  - link "Agents that follow work from conversation to code AI and automations →":
+    - /url: /ai
+    - generic: Agents that follow work from conversation to code
+    - generic: AI and automations
+    - generic: →
+  - link "Move work forward across teams and agents Build, review and ship →":
+    - /url: /build
+    - generic: Move work forward across teams and agents
+    - generic: Build, review and ship
+    - generic: →
+  - link "The way we decide whether something actually gets fixed is if it’s an issue in Linear. If it’s not there, it gets lost. Andrew Milich Head of Engineering, Cursor":
+    - /url: /customers/cursor
+    - paragraph: The way we decide whether something actually gets fixed is if it’s an issue in Linear. If it’s not there, it gets lost.
+    - generic: Andrew Milich
+    - generic: Head of Engineering, Cursor
+  - link "You have a choice between moving fast and moving with care. Linear helps us have both. Zack Reneau-Wedeen Head of Product, Sierra":
+    - /url: /customers/sierra
+    - paragraph: You have a choice between moving fast and moving with care. Linear helps us have both.
+    - generic: Zack Reneau-Wedeen
+    - generic: Head of Product, Sierra
+  - paragraph:
+    - text: Linear powers over
+    - strong: 40,000
+    - text: product teams. From ambitious startups to major enterprises.
+  - link "Customer stories →":
+    - /url: /customers
+    - generic: Customer stories
+    - generic: →
+  - heading "Built for the future. Available today." [level=2]
+  - button "Get started"
+  - button "Contact sales"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

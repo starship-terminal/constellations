@@ -1,0 +1,244 @@
+{
+ "_note": "Pixel rectangles and UI-word keep lists for systems/notebooklm. Coordinates only; no private text. 2400x1594 is a 1200x797 window at 2x. Every OCR line outside the keep list is painted out.",
+ "ocr": {
+  "net": true,
+  "emails": true,
+  "email_allow": [
+   "@example\\.(com|org)$",
+   "\\.example$"
+  ],
+  "keep": [
+   "^\\W*(Sources|Chat|Studio|Title|Created|Role|Owner|Settings|PRO|All|Discover|Collections|My notebooks|Most recent|Featured|Create new|Create notebook|App|Next|Save|Copy link|Cancel|Delete|Rename|Share|Remove|Edit|Reports?|Quiz|Flashcards|Infographic|Mind Map|Data Table|Slide Deck|Audio|Video|New!?|Try it|Add note|Add sources|Select all|Source guide|Restricted|Anyone with the link)\\W*$",
+   "^\\W*(Audio|Video|Infograp|Slide)",
+   "Gemini Notebook",
+   "^\\d+ [Ss]ources?$",
+   "\\b\\d+ sources?$",
+   "Ask a question",
+   "Search the web",
+   "Add people and groups",
+   "People with access",
+   "Notebook Access",
+   "Notify people",
+   "Only people with access",
+   "Good content",
+   "Bad content",
+   "View \\d+ sources",
+   "View source",
+   "^[A-Z][a-z]{2} \\d{1,2}, \\d{4}$",
+   "^\\d+d ago$",
+   "^\\W*(Configure|Customize|Notebook settings|Conversational style|Response length|Default|Longer|Shorter|Learning Guide|Analyst|Guide|Custom|Learn more|Continue|Got it|Dismiss)\\W*$",
+   "^(Light|Dark|Device|Theme|Settings|Sort by|Title|Created|Last opened|Most recent|Select|Language)\\W*$",
+   "My notebooks",
+   "Discover",
+   "Collections"
+  ],
+  "boost": [
+   "screenshots/*.png"
+  ]
+ },
+ "families": [
+  {
+   "name": "every screenshot: text outside the UI keep list",
+   "files": [
+    "screenshots/*.png"
+   ],
+   "ocr_lines": [
+    {
+     "rect": [
+      0,
+      0,
+      -1,
+      -1
+     ]
+    }
+   ],
+   "skip": [
+    "screenshots/tooltip-light-default.png"
+   ]
+  },
+  {
+   "name": "account photo",
+   "files": [
+    "screenshots/*.png"
+   ],
+   "size": [
+    [
+     2400,
+     1594
+    ]
+   ],
+   "rects": [
+    [
+     2215,
+     22,
+     2312,
+     104,
+     "pixelate:24"
+    ]
+   ]
+  },
+  {
+   "name": "share dialog: the viewer's own photo",
+   "files": [
+    "screenshots/notebook-light-share-dialog.png"
+   ],
+   "rects": [
+    [
+     760,
+     745,
+     840,
+     825,
+     "pixelate:24"
+    ]
+   ]
+  },
+  {
+   "name": "notebook header: the notebook's title",
+   "files": [
+    "screenshots/notebook-*.png"
+   ],
+   "size": [
+    [
+     2400,
+     1594
+    ]
+   ],
+   "rects": [
+    [
+     140,
+     26,
+     820,
+     100
+    ]
+   ]
+  },
+  {
+   "name": "phone dialog: the account photo",
+   "files": [
+    "screenshots/mobile-*.png"
+   ],
+   "size": [
+    [
+     406,
+     797
+    ]
+   ],
+   "rects": [
+    [
+     330,
+     10,
+     384,
+     60,
+     "pixelate:16"
+    ]
+   ]
+  },
+  {
+   "name": "search box text",
+   "files": [
+    "screenshots/home-light-search-results.png"
+   ],
+   "rects": [
+    [
+     800,
+     165,
+     1100,
+     232
+    ]
+   ]
+  },
+  {
+   "name": "source names beside the add-sources dialog",
+   "files": [
+    "screenshots/notebook-light-add-sources-dialog.png"
+   ],
+   "rects": [
+    [
+     150,
+     630,
+     316,
+     1510,
+     "solid"
+    ]
+   ]
+  },
+  {
+   "name": "source names beside the announcement modal",
+   "files": [
+    "screenshots/notebook-light-announcement-modal.png"
+   ],
+   "rects": [
+    [
+     150,
+     630,
+     196,
+     1340,
+     "solid"
+    ],
+    [
+     150,
+     1345,
+     480,
+     1510
+    ]
+   ]
+  },
+  {
+   "name": "tooltip: the card title behind it, and the bubble text",
+   "files": [
+    "screenshots/tooltip-light-default.png"
+   ],
+   "rects": [
+    [
+     90,
+     35,
+     595,
+     115
+    ],
+    [
+     236,
+     232,
+     495,
+     262,
+     "solid"
+    ]
+   ]
+  },
+  {
+   "name": "source title in the viewer, dimmed behind a dialog",
+   "files": [
+    "screenshots/notebook-light-share-dialog.png",
+    "screenshots/notebook-light-share-select-open.png",
+    "screenshots/notebook-light-configure-chat-dialog.png"
+   ],
+   "size": [
+    [
+     2400,
+     1594
+    ]
+   ],
+   "rects": [
+    [
+     55,
+     270,
+     345,
+     320
+    ]
+   ]
+  },
+  {
+   "name": "source name fragment under the add-sources dialog",
+   "files": [
+    "screenshots/notebook-light-add-sources-dialog.png"
+   ],
+   "rects": [
+    [
+     315,
+     1400,
+     420,
+     1450
+    ]
+   ]
+  }
+ ]
+}

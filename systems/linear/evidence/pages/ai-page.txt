@@ -1,0 +1,325 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - generic: AI and automations
+  - heading "Agents that follow work from conversation to code" [level=1]:
+    - text: Agents that follow work
+    - text: from conversation to code
+  - heading "Artificial colleagues. Natural collaboration." [level=2]:
+    - text: Artificial colleagues.
+    - text: Natural collaboration.
+  - paragraph: Linear Agent understands your projects, issues, customer requests, docs, and code, so every decision is grounded with full context.
+  - button "Linear Agent +":
+    - generic: Linear Agent
+    - generic: +
+  - main:
+    - figure "Create issues from conversation Mention @Linear in Slack or Teams to turn discussions into scoped issues with the surrounding context.":
+      - generic: WEB-1842
+      - generic: Save button stays disabled after pasting content
+      - generic: 2 / 15
+      - heading "Create issues from conversation" [level=3]
+      - paragraph: Mention @Linear in Slack or Teams to turn discussions into scoped issues with the surrounding context.
+    - figure "Draft project updates Summarize progress, risks, blockers, and recent changes into an update your team can review and post.":
+      - heading "Draft project updates" [level=3]
+      - paragraph: Summarize progress, risks, blockers, and recent changes into an update your team can review and post.
+    - figure "Plan the next cycle Read the backlog, find repeated themes, and suggest what should move into the next cycle.":
+      - heading "Plan the next cycle" [level=3]
+      - paragraph: Read the backlog, find repeated themes, and suggest what should move into the next cycle.
+    - figure "Check project status See what’s at risk, what’s falling behind, and where your attention is needed.":
+      - heading "Check project status" [level=3]
+      - paragraph:
+        - text: See what’s at risk, what’s falling behind,
+        - text: and where your attention is needed.
+    - figure "Save reusable skills Save useful agent conversations as skills your team can run again from chat or a slash command.":
+      - heading "Save reusable skills" [level=3]
+      - paragraph: Save useful agent conversations as skills your team can run again from chat or a slash command.
+  - heading "Stay ahead of incoming work" [level=2]:
+    - text: Stay ahead of
+    - text: incoming work
+  - paragraph: Triage runs itself. Agent workflows refine, route, and follow up on new issues automatically, so nothing sits waiting on you.
+  - button "Triage +":
+    - generic: Triage
+    - generic: +
+  - main:
+    - figure "Put recurring work on a loop. Run agents on a schedule or when work matches your criteria. Each loop keeps its run history as context, so every pass builds on the last.":
+      - generic: Triggeredtriage check
+      - generic: Weeklyreview
+      - generic: Dailysummary
+      - heading "Put recurring work on a loop." [level=3]
+      - paragraph: Run agents on a schedule or when work matches your criteria. Each loop keeps its run history as context, so every pass builds on the last.
+    - figure "Automate the overhead Triage Intelligence suggests assignees, teams, projects, labels, and related issues based on how your team already works.":
+      - paragraph: Triage Intelligence
+      - paragraph: Suggestions
+      - generic: emil
+      - generic: 🧹
+      - generic: Polish
+      - generic: Website
+      - paragraph: Duplicate
+      - generic: ENG-2459
+      - generic: Submit button stuck on loading
+      - paragraph: Triage Intelligence
+      - paragraph: Suggestions
+      - generic: nan
+      - generic: 🚗
+      - generic: Rider app
+      - generic: Bug
+      - paragraph: Duplicate
+      - generic: ENG-2317
+      - generic: App freezes on splash screen
+      - paragraph: Triage Intelligence
+      - paragraph: Suggestions
+      - generic: karri
+      - generic: ⚡
+      - generic: Platform
+      - generic: Infra
+      - paragraph: Duplicate
+      - generic: ENG-2288
+      - generic: Dashboard takes seconds to load
+      - paragraph: Triage Intelligence
+      - paragraph: Suggestions
+      - generic: emil
+      - generic: 🧹
+      - generic: Polish
+      - generic: Website
+      - paragraph: Duplicate
+      - generic: ENG-2459
+      - generic: Submit button stuck on loading
+      - paragraph: Triage Intelligence
+      - paragraph: Suggestions
+      - generic: nan
+      - generic: 🚗
+      - generic: Rider app
+      - generic: Bug
+      - paragraph: Duplicate
+      - generic: ENG-2317
+      - generic: App freezes on splash screen
+      - paragraph: Triage Intelligence
+      - paragraph: Suggestions
+      - generic: karri
+      - generic: ⚡
+      - generic: Platform
+      - generic: Infra
+      - paragraph: Duplicate
+      - generic: ENG-2288
+      - generic: Dashboard takes seconds to load
+      - heading "Automate the overhead" [level=3]
+      - paragraph: Triage Intelligence suggests assignees, teams, projects, labels, and related issues based on how your team already works.
+    - figure "Put incoming issues on autopilot Use rules to prioritize key customers, escalate critical bugs, and route new work before it slows the team down.":
+      - generic: Linear, OpenAI, Coinbase, Ramp
+      - heading "Put incoming issues on autopilot" [level=3]
+      - paragraph: Use rules to prioritize key customers, escalate critical bugs, and route new work before it slows the team down.
+  - heading "Linear speaks code" [level=2]:
+    - text: Linear speaks
+    - text: code
+  - paragraph: Linear Agent reads your codebase, writes code with frontier models, and streams its work back as reviewable diffs, all visible across the org.
+  - link "Coding sessions →":
+    - /url: /coding-sessions
+    - generic: Coding sessions
+    - generic: →
+  - main:
+    - figure "Assign your issues to Linear Start a session from any issue or conversation. Linear gathers context, works in a secure cloud sandbox, and comes back with a diff your team can follow.":
+      - generic: ENG-2498
+      - generic: Dimmed Status Cards
+      - generic: "+34"
+      - generic: "-18"
+      - generic: Activity
+      - generic: Guide
+      - generic: Diff
+      - generic: Submit review
+      - text: Preview
+      - heading "Assign your issues to Linear" [level=3]
+      - paragraph: Start a session from any issue or conversation. Linear gathers context, works in a secure cloud sandbox, and comes back with a diff your team can follow.
+    - figure "Background automation Assign issues directly, or let Linear pick them up the moment they land in Triage.":
+      - heading "Background automation" [level=3]
+      - paragraph:
+        - text: Assign issues directly, or let Linear pick them up
+        - text: the moment they land in Triage.
+    - figure "Answers from the source Ask about your codebase and get answers grounded in the implementation, recent changes, and people with context.":
+      - heading "Answers from the source" [level=3]
+      - paragraph: Ask about your codebase and get answers grounded in the implementation, recent changes, and people with context.
+    - figure "Iterate with agents Review feedback, resolved at agent speed. Make changes from the diff and watch updates appear inline.":
+      - heading "Iterate with agents" [level=3]
+      - paragraph: Review feedback, resolved at agent speed. Make changes from the diff and watch updates appear inline.
+    - figure "Guided reviews Guided Reviews organize diffs by showing what changed and why, with a clear path through complex changes.":
+      - heading "Guided reviews" [level=3]
+      - paragraph: Guided Reviews organize diffs by showing what changed and why, with a clear path through complex changes.
+  - heading "See everything your agents are doing" [level=2]:
+    - text: See everything your
+    - text: agents are doing
+  - paragraph: Every agent action leaves a record in Linear, so teams can follow progress, review outcomes, and step in when needed.
+  - main:
+    - figure "Work in motion See what’s running, what shipped, and what needs a human across every team and agent.":
+      - generic: All tasks
+      - generic: Active
+      - generic: Backlog
+      - heading "Work in motion" [level=3]
+      - paragraph:
+        - text: See what’s running, what shipped, and what
+        - text: needs a human across every team and agent.
+  - heading "Open, by design" [level=2]:
+    - text: Open,
+    - text: by design
+  - paragraph: Assign work to external agents, build your own with the API, and keep everything connected in one shared system.
+  - button "Linear MCP +":
+    - generic: Linear MCP
+    - generic: +
+  - main:
+    - figure "Bring more context in Connect tools like Granola, Glean, Notion, and PostHog to ground investigations, specs, and updates in more context.":
+      - heading "Bring more context in" [level=3]
+      - paragraph: Connect tools like Granola, Glean, Notion, and PostHog to ground investigations, specs, and updates in more context.
+    - figure "Take your context anywhere Linear’s MCP server gives compatible AI tools secure access to your issues, projects, and comments.":
+      - heading "Take your context anywhere" [level=3]
+      - paragraph: Linear’s MCP server gives compatible AI tools secure access to your issues, projects, and comments.
+  - link "Make your product operations self-driving Intake and integrations →":
+    - /url: /intake
+    - generic: Make your product operations self-driving
+    - generic: Intake and integrations
+    - generic: →
+  - link "Plan and navigate from idea to launch Planning and monitoring →":
+    - /url: /plan
+    - generic: Plan and navigate from idea to launch
+    - generic: Planning and monitoring
+    - generic: →
+  - link "Agents that follow work from conversation to code AI and automations →":
+    - /url: /ai
+    - generic: Agents that follow work from conversation to code
+    - generic: AI and automations
+    - generic: →
+  - link "Move work forward across teams and agents Build, review and ship →":
+    - /url: /build
+    - generic: Move work forward across teams and agents
+    - generic: Build, review and ship
+    - generic: →
+  - link "Triage is by far my favorite feature. It’s been a game changer for our team. Sam Sipe Head of Engineering, Coinbase":
+    - /url: /customers/coinbase
+    - paragraph: Triage is by far my favorite feature. It’s been a game changer for our team.
+    - generic: Sam Sipe
+    - generic: Head of Engineering, Coinbase
+  - link "Our speed is intense and Linear helps us be action biased. Nik Koblov Head of Engineering, Ramp":
+    - /url: /customers/ramp
+    - paragraph: Our speed is intense and Linear helps us be action biased.
+    - generic: Nik Koblov
+    - generic: Head of Engineering, Ramp
+  - paragraph:
+    - text: Linear powers over
+    - strong: 40,000
+    - text: product teams. From ambitious startups to major enterprises.
+  - link "Customer stories →":
+    - /url: /customers
+    - generic: Customer stories
+    - generic: →
+  - heading "Built for the future. Available today." [level=2]
+  - button "Get started"
+  - button "Contact sales"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

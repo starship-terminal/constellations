@@ -1,0 +1,132 @@
+Window: "Acme: Core › Projects", App: Dia.
+0 standard window Acme: Core › Projects, ID: bigBrowserWindow_00000000-0000-0000-0000-000000000000, Secondary Actions: Raise
+	1 HTML content Core › Projects, URL: linear.app/acme/team/COR/projects/all
+		2 container
+			3 link Skip to content, Value: linear.app/acme/team/COR/overview#skip-nav
+			4 container
+				5 container
+					6 container
+						7 pop up button Acme Workspace Menu
+							8 text Acme
+						9 button Search workspace
+						10 button Create new issue
+						11 container
+							12 sortable Inbox
+								13 link Inbox, Value: linear.app/acme/inbox
+							14 sortable My issues
+								15 link My issues, Value: linear.app/acme/my-issues/assigned
+							16 sortable Reviews
+								17 link Reviews, Value: linear.app/acme/reviews
+							18 sortable Agent
+								19 link Agent, Value: linear.app/acme/agent
+							20 sortable
+							21 button Workspace
+							22 sortable Projects
+								23 link Projects, Value: linear.app/acme/projects/all
+							24 sortable Views
+								25 link Views, Value: linear.app/acme/views/issues
+							26 sortable
+							27 sortable
+							28 button Show more links
+						29 container
+							30 button Favorites
+							31 button Create new folder for favorites
+							32 link Sample project Remove favorite, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/issues
+							33 button Your teams
+							34 button Join a team
+							35 content list
+								36 sortable Core Team menu Home Issues Projects Views
+									37 container
+										38 container
+											39 button Core
+												40 text Core
+											41 pop up button Team menu
+										42 link Home, Value: linear.app/acme/team/COR/overview
+										43 link Issues, Value: linear.app/acme/team/COR/all
+										44 link Projects, Value: linear.app/acme/team/COR/projects/all
+										45 link Views, Value: linear.app/acme/team/COR/views/issues
+							46 button Try
+							47 container
+								48 container Enable cycles for team…
+									49 text Cycles
+								50 button Dismiss
+									51 image Dismiss
+					52 container
+						53 button View changelog
+						54 text What’s new Loops for product management
+						55 button Collapse into help menu
+				56 container
+					57 container
+						58 link Team overview, Value: linear.app/acme/team/COR/overview
+						59 heading Projects
+							60 text Projects
+						61 switch Add to favorites
+						62 button New project
+						63 link All projects, Value: linear.app/acme/team/COR/projects/all
+						64 button Add new view
+						65 button Add filter
+						66 button Display options
+						67 button Open sidebar
+					68 container
+						69 container
+							70 button Order by Name
+							71 button Order by Health
+							72 button Order by Priority
+							73 text Lead
+							74 button Order by Target date
+							75 text Issues
+							76 button Order by Status
+							77 link Value: linear.app/acme/project/core-6f5e4d3c2b1a/overview, Select project Choose icon Core No updates. Click to write update. High Priority Teammate D Change project target date 7 29%
+							78 link Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/overview, Select project Choose icon Sample project No updates. Click to write update. No Priority Teammate A Change project target date 22 57%
+				79 container
+					80 button Agent
+					81 button Chat history
+			82 container Notifications alt+T
+			83 text Navigated to Core › Projects
+			84 container
+				85 text Go to projects G, then P
+	86 container navigationBar
+		87 unknown navigationBarBackButton
+		88 unknown navigationBarReloadOrStopLoadingButton
+		89 button
+		90 collection
+		91 unknown navigationBarAssistantBar
+			92 unknown
+				93 scroll area
+					94 text entry area Value: linear.app / Core › Projects, ID: navigationBarAssistantBarTextField
+	95 collection
+	96 scroll area Secondary Actions: Scroll Up, Scroll Down
+		97 collection (disabled)
+			98 unknown acme-org/app, ID: tab
+				99 unknown
+					100 image
+					101 text acme-org/app
+			102 unknown Core › Projects, ID: tab
+				103 unknown
+					104 image
+					105 text Core › Projects
+			106 unknown
+				107 button
+		108 scroll bar (disabled) 0
+	109 close button
+	110 minimize button
+	111 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	112 button
+	113 button Chats
+	114 button
+	115 unknown OF
+	116 unknown Acme
+	117 unknown FT
+118 menu bar
+	119 Dia
+	120 File
+	121 Edit
+	122 View
+	123 Tabs
+	124 Bookmarks
+	125 History
+	126 Extensions
+	127 Window
+	128 Help
+
+The focused UI element is 44 link Projects, Value: linear.app/acme/team/COR/projects/all

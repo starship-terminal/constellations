@@ -1,0 +1,160 @@
+Window: "Acme: Labels", App: Dia.
+0 standard window Acme: Labels, ID: bigBrowserWindow_00000000-0000-0000-0000-000000000000, Secondary Actions: Raise
+	1 HTML content Labels, URL: linear.app/acme/settings/issue-labels
+		2 container
+			3 link Skip to content, Value: linear.app/acme/settings/teams/COR#skip-nav
+			4 container
+				5 container
+					6 container
+						7 link Back to app, Value: linear.app/acme/team/COR/overview
+						8 container Search settings
+							9 container Search…
+						10 heading Personal
+							11 text Personal
+						12 link Preferences, Value: linear.app/acme/settings/account/preferences
+						13 link Profile, Value: linear.app/acme/settings/account/profile
+						14 link Notifications, Value: linear.app/acme/settings/account/notifications
+						15 link Code & reviews, Value: linear.app/acme/settings/account/code-and-reviews
+						16 link Security & access, Value: linear.app/acme/settings/account/security
+						17 link Connected accounts, Value: linear.app/acme/settings/account/connections
+						18 link Agent personalization, Value: linear.app/acme/settings/account/agents
+						19 heading Issues
+							20 text Issues
+						21 link Labels, Value: linear.app/acme/settings/issue-labels
+						22 link Templates, Value: linear.app/acme/settings/issue-templates
+						23 link SLAs, Value: linear.app/acme/settings/sla
+						24 heading Projects
+							25 text Projects
+						26 link Labels, Value: linear.app/acme/settings/project-labels
+						27 link Templates, Value: linear.app/acme/settings/project-templates
+						28 link Statuses, Value: linear.app/acme/settings/project-statuses
+						29 link Updates, Value: linear.app/acme/settings/project-updates
+						30 heading Features
+							31 text Features
+						32 link AI & Agents, Value: linear.app/acme/settings/ai
+						33 link Loops, Value: linear.app/acme/settings/loops
+						34 link Initiatives, Value: linear.app/acme/settings/initiatives
+						35 link Documents, Value: linear.app/acme/settings/documents
+						36 link Customer requests, Value: linear.app/acme/settings/customer-requests
+						37 link Releases, Value: linear.app/acme/settings/releases
+						38 link Pulse, Value: linear.app/acme/settings/pulse
+						39 link Asks, Value: linear.app/acme/settings/asks
+						40 link Emojis, Value: linear.app/acme/settings/emojis
+						41 link Integrations, Value: linear.app/acme/settings/integrations
+						42 heading Administration
+							43 text Administration
+						44 link Workspace, Value: linear.app/acme/settings/workspace
+						45 link Teams, Value: linear.app/acme/settings/teams
+						46 link Members, Value: linear.app/acme/settings/members
+						47 link Security, Value: linear.app/acme/settings/security
+						48 link API, Value: linear.app/acme/settings/api
+						49 link Applications, Value: linear.app/acme/settings/applications
+						50 link Billing, Value: linear.app/acme/settings/billing
+						51 link Usage & limits, Value: linear.app/acme/settings/usage
+						52 link Import & export, Value: linear.app/acme/settings/import-export
+						53 heading Your teams
+							54 text Your teams
+						55 link Core, Value: linear.app/acme/settings/teams/COR
+						56 container Join or create a team
+							57 text Join or create a team
+					58 container
+						59 button View changelog
+						60 text What’s new Loops for product management
+						61 button Collapse into help menu
+				62 container
+					63 text Issue labels
+					64 button New group
+					65 button New label
+					66 container Filter by name…
+					67 button Add filter
+					68 button Display options
+					69 container
+						70 button Order by Name, sorted ascending
+						71 button Order by Description
+						72 button Order by Issues
+						73 button Order by Last applied
+						74 button Order by Created
+						75 container
+							76 container Select label
+								77 checkbox
+							78 container Edit text
+								79 button Bug
+							80 container Edit text
+								81 button Add label description…
+							82 container Created Dec 31, 2025, 10:53:26 AM
+								83 text Dec 2025
+							84 pop up button Open menu
+						85 container
+							86 container Select label
+								87 checkbox
+							88 container Edit text
+								89 button Feature
+							90 container Edit text
+								91 button Add label description…
+							92 container Created Dec 31, 2025, 10:53:26 AM
+								93 text Dec 2025
+							94 pop up button Open menu
+						95 container
+							96 container Select label
+								97 checkbox
+							98 container Edit text
+								99 button Improvement
+							100 container Edit text
+								101 button Add label description…
+							102 button 14
+							103 container Last applied on Jul 7, 2:25:11 AM
+								104 text 2 months ago
+							105 container Created Dec 31, 2025, 10:53:26 AM
+								106 text Dec 2025
+							107 pop up button Open menu
+				108 container
+					109 button Agent
+					110 button Chat history
+			111 container Notifications alt+T
+			112 text Navigated to Labels
+	113 container navigationBar
+		114 unknown navigationBarBackButton
+		115 unknown navigationBarReloadOrStopLoadingButton
+		116 button
+		117 collection
+		118 unknown navigationBarAssistantBar
+			119 unknown
+				120 scroll area
+					121 text entry area Value: linear.app / Labels, ID: navigationBarAssistantBarTextField
+	122 collection
+	123 text https://linear.app/acme/settings/issue-labels
+	124 scroll area Secondary Actions: Scroll Up, Scroll Down
+		125 collection (disabled)
+			126 unknown acme-org/app, ID: tab
+				127 unknown
+					128 image
+					129 text acme-org/app
+			130 unknown Labels, ID: tab
+				131 unknown
+					132 image
+					133 text Labels
+			134 unknown
+				135 button
+		136 scroll bar (disabled) 0
+	137 close button
+	138 minimize button
+	139 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	140 button
+	141 button Chats
+	142 button
+	143 unknown OF
+	144 unknown Acme
+	145 unknown FT
+146 menu bar
+	147 Dia
+	148 File
+	149 Edit
+	150 View
+	151 Tabs
+	152 Bookmarks
+	153 History
+	154 Extensions
+	155 Window
+	156 Help
+
+The focused UI element is 21 link Labels, Value: linear.app/acme/settings/issue-labels

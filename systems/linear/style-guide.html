@@ -1,0 +1,425 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Linear styling reference</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#08090a;color:#f7f8f8;font:14px/1.6 Inter,system-ui,sans-serif;font-feature-settings:"cv01","ss03"}a{color:#afb7ff;text-decoration:none}a:hover{color:white}nav{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:24px;padding:14px 32px;background:#08090af5;border-bottom:1px solid #24282c;backdrop-filter:blur(16px)}nav strong{margin-right:auto}main{max-width:1280px;margin:auto;padding:0 40px}header{padding:80px 0 54px}h1{font-size:56px;font-weight:510;letter-spacing:-2px;line-height:1.05;margin:16px 0 24px}h2{font-size:30px;line-height:1.2;font-weight:510;letter-spacing:-.7px;margin:0 0 22px}h3{font-size:19px;margin:30px 0 14px}p{max-width:840px;color:#b9bec7}header p{font-size:18px;max-width:760px}.eyebrow{font:12px ui-monospace,monospace;letter-spacing:1px;color:#8a8f98}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.actions a,button{padding:9px 17px;border-radius:999px;border:1px solid #303339;background:#161718;color:#d0d6e0;font:inherit;cursor:pointer}.actions a:first-child{background:#e5e5e6;color:#08090a}.notice{border:1px solid #303339;background:#111215;padding:18px 22px;border-radius:12px;color:#b9bec7}section{padding:40px 0;border-top:1px solid #24282c;scroll-margin-top:72px}.boards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.board{border:1px solid #24282c;border-radius:12px;overflow:hidden}.board img{width:100%;display:block}.board span{display:block;padding:12px 20px;background:#121214}.components{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.component{border:1px solid #24282c;border-radius:12px;padding:16px;overflow:hidden;background:#101113}.component div{height:140px;display:flex;align-items:center;justify-content:center}.component img{max-width:100%;max-height:125px}.component span,.component small,.capture span,.capture small{display:block;overflow-wrap:anywhere}.component span{margin-top:14px;color:#e2e4e7;font-size:12px}small{color:#8a8f98;font-size:11px}.filters{display:flex;gap:10px;margin:20px 0}.filters input{flex:1;background:#121214;border:1px solid #323234;border-radius:8px;color:#fff;padding:10px 14px;font:inherit}.filters button.active{background:#323234;color:#fff}.captures{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.capture{border:1px solid #24282c;border-radius:10px;overflow:hidden;background:#121214}.capture img{width:100%;height:200px;object-fit:cover;object-position:top;display:block}.capture span{padding:12px 14px 0;color:#e2e4e7;font-size:12px}.capture small{padding:3px 14px 14px}.capture[hidden]{display:none}.document{max-width:1050px}.document>h1{display:none}.document h2{font-size:26px;margin-top:50px}.document p{max-width:none}.document table{margin:24px 0;width:100%;border-collapse:collapse;font-size:12px}.document th,.document td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #24282c;color:#b9bec7}.document th{color:#f7f8f8;background:#161718}code{font:12px ui-monospace,monospace;color:#c1c6ff;background:#1a1b20;padding:2px 4px;border-radius:3px}footer{padding:48px 0;color:#8a8f98}details{margin:20px 0}summary{cursor:pointer}#source-table{font-size:11px;table-layout:fixed;overflow-wrap:anywhere;width:100%}#source-table td{padding:8px;border-bottom:1px solid #24282c}.families{display:flex;gap:24px;margin:30px 0}.families div{padding:20px;border:1px solid #24282c;border-radius:12px;flex:1}.families strong{display:block;font-size:24px;font-weight:500}.families small{display:block;margin-top:8px}@media(max-width:800px){main{padding:0 20px}nav{gap:10px;padding:12px 16px;font-size:11px}h1{font-size:40px}.boards,.components,.captures{grid-template-columns:1fr}.families{display:block}.families div{margin:12px 0}.filters{flex-wrap:wrap}.document table{display:block;overflow:auto}}</style><nav><strong>Linear / Reference</strong><a href="#library">Library</a><a href="#components">Components</a><a href="#screenshots">Screenshots</a><a href="#guide">Guide</a></nav><main><header><div class="eyebrow">DESIGN STUDY · 23 SEPTEMBER 2026</div><h1>Linear, in detail.</h1><p>A screenshot-backed study of the app, website and brand. Colors, typography, geometry, controls and icons, collected in an importable vector reference library.</p><div class="families"><div><strong>Inter Variable</strong><small>UI & marketing · measured CSS</small></div><div><strong style="font-family:Menlo,monospace">Berkeley Mono</strong><small>Code & technical text · measured CSS</small></div><div><strong style="font-family:Georgia,serif">Tiempos Headline</strong><small>Method editorial · measured CSS</small></div></div><div class="actions"><a href="linear-design-library.zip">Download import library</a><a href="tokens/linear.tokens.json">Design tokens</a><a href="README.md">Markdown guide</a><a href="evidence/coverage.json">Coverage manifest</a></div></header><aside class="notice">35 public page captures · 44 app screens/states (accessibility snapshots, no images) · 30 component SVGs · 39 reference icons. This is an independent reference, not an official library. App geometry is reconstructed; extra interaction states are explicitly proposed.</aside><section id="library"><h2>Importable reference sheets</h2><p>Open or drag an SVG into your vector editor. Fonts require local installation. Import does not automatically create variants, auto-layout or variable bindings.</p><div class="boards"><a class="board" href="boards/01-colors.svg?v=43e9816d4154"><img src="boards/01-colors.svg?v=43e9816d4154" alt="01-colors"><span>01 colors · SVG</span></a><a class="board" href="boards/02-type-and-geometry.svg?v=55436ccea0cf"><img src="boards/02-type-and-geometry.svg?v=55436ccea0cf" alt="02-type-and-geometry"><span>02 type and geometry · SVG</span></a><a class="board" href="boards/03-controls.svg?v=4c29eb9f39b2"><img src="boards/03-controls.svg?v=4c29eb9f39b2" alt="03-controls"><span>03 controls · SVG</span></a><a class="board" href="boards/04-components.svg?v=565bf51d30b7"><img src="boards/04-components.svg?v=565bf51d30b7" alt="04-components"><span>04 components · SVG</span></a><a class="board" href="boards/05-icons.svg?v=d17735c18c49"><img src="boards/05-icons.svg?v=d17735c18c49" alt="05-icons"><span>05 icons · SVG</span></a></div></section><section id="components"><h2>Individual components</h2><p>Fictional content, named groups, editable vector geometry. Hover/focus/disabled/error/toast examples are reconstructions.</p><div class="components"><a class="component" href="components/button-primary-default.svg?v=6cc070760c9d"><div><img src="components/button-primary-default.svg?v=6cc070760c9d" alt="button-primary-default"></div><span>button-primary-default</span><small>97 × 28 · reconstruction</small></a><a class="component" href="components/button-primary-hover.svg?v=7846ad47407a"><div><img src="components/button-primary-hover.svg?v=7846ad47407a" alt="button-primary-hover"></div><span>button-primary-hover</span><small>97 × 28 · reconstruction</small></a><a class="component" href="components/button-primary-focus.svg?v=34ccb3dde1c5"><div><img src="components/button-primary-focus.svg?v=34ccb3dde1c5" alt="button-primary-focus"></div><span>button-primary-focus</span><small>105 × 36 · reconstruction</small></a><a class="component" href="components/button-primary-disabled.svg?v=2b91a898ffa3"><div><img src="components/button-primary-disabled.svg?v=2b91a898ffa3" alt="button-primary-disabled"></div><span>button-primary-disabled</span><small>97 × 28 · reconstruction</small></a><a class="component" href="components/button-secondary.svg?v=1ec8aa5791df"><div><img src="components/button-secondary.svg?v=1ec8aa5791df" alt="button-secondary"></div><span>button-secondary</span><small>76 × 28 · reconstruction</small></a><a class="component" href="components/button-ghost.svg?v=1328e9460b81"><div><img src="components/button-ghost.svg?v=1328e9460b81" alt="button-ghost"></div><span>button-ghost</span><small>67 × 28 · reconstruction</small></a><a class="component" href="components/button-danger.svg?v=ff1c590f3f76"><div><img src="components/button-danger.svg?v=ff1c590f3f76" alt="button-danger"></div><span>button-danger</span><small>62 × 28 · reconstruction</small></a><a class="component" href="components/button-web-primary.svg?v=d021db1eab81"><div><img src="components/button-web-primary.svg?v=d021db1eab81" alt="button-web-primary"></div><span>button-web-primary</span><small>89 × 32 · reconstruction</small></a><a class="component" href="components/button-icon.svg?v=257a4946496b"><div><img src="components/button-icon.svg?v=257a4946496b" alt="button-icon"></div><span>button-icon</span><small>28 × 28 · reconstruction</small></a><a class="component" href="components/tabs-pill.svg?v=965355568606"><div><img src="components/tabs-pill.svg?v=965355568606" alt="tabs-pill"></div><span>tabs-pill</span><small>219 × 28 · reconstruction</small></a><a class="component" href="components/field-default.svg?v=79b41a56d371"><div><img src="components/field-default.svg?v=79b41a56d371" alt="field-default"></div><span>field-default</span><small>320 × 36 · reconstruction</small></a><a class="component" href="components/field-focus.svg?v=d5c07864a7ac"><div><img src="components/field-focus.svg?v=d5c07864a7ac" alt="field-focus"></div><span>field-focus</span><small>320 × 36 · reconstruction</small></a><a class="component" href="components/field-error.svg?v=373ece852fcb"><div><img src="components/field-error.svg?v=373ece852fcb" alt="field-error"></div><span>field-error</span><small>320 × 58 · reconstruction</small></a><a class="component" href="components/checkbox-checked.svg?v=4b213e3bfce3"><div><img src="components/checkbox-checked.svg?v=4b213e3bfce3" alt="checkbox-checked"></div><span>checkbox-checked</span><small>18 × 18 · reconstruction</small></a><a class="component" href="components/checkbox-empty.svg?v=745a679ca273"><div><img src="components/checkbox-empty.svg?v=745a679ca273" alt="checkbox-empty"></div><span>checkbox-empty</span><small>18 × 18 · reconstruction</small></a><a class="component" href="components/switch-on.svg?v=18600cdf82ea"><div><img src="components/switch-on.svg?v=18600cdf82ea" alt="switch-on"></div><span>switch-on</span><small>30 × 18 · reconstruction</small></a><a class="component" href="components/switch-off.svg?v=b6bf834f7d3c"><div><img src="components/switch-off.svg?v=b6bf834f7d3c" alt="switch-off"></div><span>switch-off</span><small>30 × 18 · reconstruction</small></a><a class="component" href="components/badge-label.svg?v=d07c8dc96f8b"><div><img src="components/badge-label.svg?v=d07c8dc96f8b" alt="badge-label"></div><span>badge-label</span><small>95 × 24 · reconstruction</small></a><a class="component" href="components/avatar.svg?v=454124e6c37a"><div><img src="components/avatar.svg?v=454124e6c37a" alt="avatar"></div><span>avatar</span><small>24 × 24 · reconstruction</small></a><a class="component" href="components/shortcut.svg?v=6030570e7472"><div><img src="components/shortcut.svg?v=6030570e7472" alt="shortcut"></div><span>shortcut</span><small>32 × 23 · reconstruction</small></a><a class="component" href="components/tooltip.svg?v=230cf3b3409a"><div><img src="components/tooltip.svg?v=230cf3b3409a" alt="tooltip"></div><span>tooltip</span><small>153 × 29 · reconstruction</small></a><a class="component" href="components/toast-success.svg?v=274b177cac7c"><div><img src="components/toast-success.svg?v=274b177cac7c" alt="toast-success"></div><span>toast-success</span><small>320 × 48 · reconstruction</small></a><a class="component" href="components/nav-item-selected.svg?v=99059072f42c"><div><img src="components/nav-item-selected.svg?v=99059072f42c" alt="nav-item-selected"></div><span>nav-item-selected</span><small>220 × 28 · reconstruction</small></a><a class="component" href="components/issue-row.svg?v=d6fa2f6d3db8"><div><img src="components/issue-row.svg?v=d6fa2f6d3db8" alt="issue-row"></div><span>issue-row</span><small>720 × 40 · reconstruction</small></a><a class="component" href="components/board-card.svg?v=a1a909227635"><div><img src="components/board-card.svg?v=a1a909227635" alt="board-card"></div><span>board-card</span><small>288 × 116 · reconstruction</small></a><a class="component" href="components/status-menu.svg?v=75099d4da201"><div><img src="components/status-menu.svg?v=75099d4da201" alt="status-menu"></div><span>status-menu</span><small>280 × 270 · reconstruction</small></a><a class="component" href="components/issue-composer.svg?v=a5330eb43ec2"><div><img src="components/issue-composer.svg?v=a5330eb43ec2" alt="issue-composer"></div><span>issue-composer</span><small>640 × 286 · reconstruction</small></a><a class="component" href="components/property-panel.svg?v=1f7b8b615330"><div><img src="components/property-panel.svg?v=1f7b8b615330" alt="property-panel"></div><span>property-panel</span><small>340 × 260 · reconstruction</small></a><a class="component" href="components/empty-state.svg?v=848726aceddc"><div><img src="components/empty-state.svg?v=848726aceddc" alt="empty-state"></div><span>empty-state</span><small>420 × 208 · reconstruction</small></a><a class="component" href="components/date-picker.svg?v=b87697bef126"><div><img src="components/date-picker.svg?v=b87697bef126" alt="date-picker"></div><span>date-picker</span><small>280 × 306 · reconstruction</small></a></div></section><section id="screenshots"><h2>Screenshot collection</h2><p>Click a thumbnail for the original-resolution capture. These are the signed-out public pages, captured full-page. The signed-in app screenshots are not in this package; the app screens are listed in the evidence index as accessibility snapshots.</p><div class="filters"><input id="search" aria-label="Filter screenshots" placeholder="Search pages or components…"><button class="active" data-filter="All">All</button></div><div class="captures"><a class="capture" data-kind="Public" data-search="01-home Linear – The system for product development" href="screenshots/01-home.png"><img loading="lazy" src="thumbnails/public-01-home.jpg" alt="Linear – The system for product development"><span>01-home</span><small>Public · Linear – The system for product development</small></a><a class="capture" data-kind="Public" data-search="02-brand Brand Guidelines – Linear" href="screenshots/02-brand.png"><img loading="lazy" src="thumbnails/public-02-brand.jpg" alt="Brand Guidelines – Linear"><span>02-brand</span><small>Public · Brand Guidelines – Linear</small></a><a class="capture" data-kind="Public" data-search="about About – Linear" href="screenshots/about.png"><img loading="lazy" src="thumbnails/public-about.jpg" alt="About – Linear"><span>about</span><small>Public · About – Linear</small></a><a class="capture" data-kind="Public" data-search="agents Linear for Agents" href="screenshots/agents.png"><img loading="lazy" src="thumbnails/public-agents.jpg" alt="Linear for Agents"><span>agents</span><small>Public · Linear for Agents</small></a><a class="capture" data-kind="Public" data-search="ai Linear – Agents that follow work from conversation to code" href="screenshots/ai.png"><img loading="lazy" src="thumbnails/public-ai.jpg" alt="Linear – Agents that follow work from conversation to code"><span>ai</span><small>Public · Linear – Agents that follow work from conversation to code</small></a><a class="capture" data-kind="Public" data-search="asks Linear Asks – Manage workplace requests" href="screenshots/asks.png"><img loading="lazy" src="thumbnails/public-asks.jpg" alt="Linear Asks – Manage workplace requests"><span>asks</span><small>Public · Linear Asks – Manage workplace requests</small></a><a class="capture" data-kind="Public" data-search="build Linear – Move work forward across teams and agents" href="screenshots/build.png"><img loading="lazy" src="thumbnails/public-build.jpg" alt="Linear – Move work forward across teams and agents"><span>build</span><small>Public · Linear – Move work forward across teams and agents</small></a><a class="capture" data-kind="Public" data-search="careers We&#x27;re hiring – Linear" href="screenshots/careers.png"><img loading="lazy" src="thumbnails/public-careers.jpg" alt="We&#x27;re hiring – Linear"><span>careers</span><small>Public · We&#x27;re hiring – Linear</small></a><a class="capture" data-kind="Public" data-search="changelog Changelog – Linear" href="screenshots/changelog.png"><img loading="lazy" src="thumbnails/public-changelog.jpg" alt="Changelog – Linear"><span>changelog</span><small>Public · Changelog – Linear</small></a><a class="capture" data-kind="Public" data-search="coding-sessions Coding Sessions – Linear" href="screenshots/coding-sessions.png"><img loading="lazy" src="thumbnails/public-coding-sessions.jpg" alt="Coding Sessions – Linear"><span>coding-sessions</span><small>Public · Coding Sessions – Linear</small></a><a class="capture" data-kind="Public" data-search="contact Contact us – Linear" href="screenshots/contact.png"><img loading="lazy" src="thumbnails/public-contact.jpg" alt="Contact us – Linear"><span>contact</span><small>Public · Contact us – Linear</small></a><a class="capture" data-kind="Public" data-search="customer-requests Customer Requests – Linear" href="screenshots/customer-requests.png"><img loading="lazy" src="thumbnails/public-customer-requests.jpg" alt="Customer Requests – Linear"><span>customer-requests</span><small>Public · Customer Requests – Linear</small></a><a class="capture" data-kind="Public" data-search="customers Linear Customers" href="screenshots/customers.png"><img loading="lazy" src="thumbnails/public-customers.jpg" alt="Linear Customers"><span>customers</span><small>Public · Linear Customers</small></a><a class="capture" data-kind="Public" data-search="developers Linear Developers" href="screenshots/developers.png"><img loading="lazy" src="thumbnails/public-developers.jpg" alt="Linear Developers"><span>developers</span><small>Public · Linear Developers</small></a><a class="capture" data-kind="Public" data-search="docs Linear Docs" href="screenshots/docs.png"><img loading="lazy" src="thumbnails/public-docs.jpg" alt="Linear Docs"><span>docs</span><small>Public · Linear Docs</small></a><a class="capture" data-kind="Public" data-search="download Download Linear" href="screenshots/download.png"><img loading="lazy" src="thumbnails/public-download.jpg" alt="Download Linear"><span>download</span><small>Public · Download Linear</small></a><a class="capture" data-kind="Public" data-search="dpa Data Processing Agreement – Linear" href="screenshots/dpa.png"><img loading="lazy" src="thumbnails/public-dpa.jpg" alt="Data Processing Agreement – Linear"><span>dpa</span><small>Public · Data Processing Agreement – Linear</small></a><a class="capture" data-kind="Public" data-search="enterprise An AI product system for modern enterprises" href="screenshots/enterprise.png"><img loading="lazy" src="thumbnails/public-enterprise.jpg" alt="An AI product system for modern enterprises"><span>enterprise</span><small>Public · An AI product system for modern enterprises</small></a><a class="capture" data-kind="Public" data-search="insights Insights – Linear" href="screenshots/insights.png"><img loading="lazy" src="thumbnails/public-insights.jpg" alt="Insights – Linear"><span>insights</span><small>Public · Insights – Linear</small></a><a class="capture" data-kind="Public" data-search="intake Linear Intake – Self-driving product operations" href="screenshots/intake.png"><img loading="lazy" src="thumbnails/public-intake.jpg" alt="Linear Intake – Self-driving product operations"><span>intake</span><small>Public · Linear Intake – Self-driving product operations</small></a><a class="capture" data-kind="Public" data-search="integrations Integrations – Linear" href="screenshots/integrations.png"><img loading="lazy" src="thumbnails/public-integrations.jpg" alt="Integrations – Linear"><span>integrations</span><small>Public · Integrations – Linear</small></a><a class="capture" data-kind="Public" data-search="legal-aup Acceptable Use Policy" href="screenshots/legal-aup.png"><img loading="lazy" src="thumbnails/public-legal-aup.jpg" alt="Acceptable Use Policy"><span>legal-aup</span><small>Public · Acceptable Use Policy</small></a><a class="capture" data-kind="Public" data-search="login Linear" href="screenshots/login.png"><img loading="lazy" src="thumbnails/public-login.jpg" alt="Linear"><span>login</span><small>Public · Linear</small></a><a class="capture" data-kind="Public" data-search="method Linear Method – Practices for building" href="screenshots/method.png"><img loading="lazy" src="thumbnails/public-method.jpg" alt="Linear Method – Practices for building"><span>method</span><small>Public · Linear Method – Practices for building</small></a><a class="capture" data-kind="Public" data-search="mobile Linear Mobile – Available for iOS and Android" href="screenshots/mobile.png"><img loading="lazy" src="thumbnails/public-mobile.jpg" alt="Linear Mobile – Available for iOS and Android"><span>mobile</span><small>Public · Linear Mobile – Available for iOS and Android</small></a><a class="capture" data-kind="Public" data-search="now Now – Updates from the Linear team" href="screenshots/now.png"><img loading="lazy" src="thumbnails/public-now.jpg" alt="Now – Updates from the Linear team"><span>now</span><small>Public · Now – Updates from the Linear team</small></a><a class="capture" data-kind="Public" data-search="plan Linear – Plan and navigate from idea to launch" href="screenshots/plan.png"><img loading="lazy" src="thumbnails/public-plan.jpg" alt="Linear – Plan and navigate from idea to launch"><span>plan</span><small>Public · Linear – Plan and navigate from idea to launch</small></a><a class="capture" data-kind="Public" data-search="pricing Pricing – Linear" href="screenshots/pricing.png"><img loading="lazy" src="thumbnails/public-pricing.jpg" alt="Pricing – Linear"><span>pricing</span><small>Public · Pricing – Linear</small></a><a class="capture" data-kind="Public" data-search="privacy Privacy Policy" href="screenshots/privacy.png"><img loading="lazy" src="thumbnails/public-privacy.jpg" alt="Privacy Policy"><span>privacy</span><small>Public · Privacy Policy</small></a><a class="capture" data-kind="Public" data-search="quality Introduction - Conversations on Quality" href="screenshots/quality.png"><img loading="lazy" src="thumbnails/public-quality.jpg" alt="Introduction - Conversations on Quality"><span>quality</span><small>Public · Introduction - Conversations on Quality</small></a><a class="capture" data-kind="Public" data-search="security Security – Linear" href="screenshots/security.png"><img loading="lazy" src="thumbnails/public-security.jpg" alt="Security – Linear"><span>security</span><small>Public · Security – Linear</small></a><a class="capture" data-kind="Public" data-search="signup Linear" href="screenshots/signup.png"><img loading="lazy" src="thumbnails/public-signup.jpg" alt="Linear"><span>signup</span><small>Public · Linear</small></a><a class="capture" data-kind="Public" data-search="startups Linear for startups – Linear" href="screenshots/startups.png"><img loading="lazy" src="thumbnails/public-startups.jpg" alt="Linear for startups – Linear"><span>startups</span><small>Public · Linear for startups – Linear</small></a><a class="capture" data-kind="Public" data-search="switch Switch to Linear – Linear" href="screenshots/switch.png"><img loading="lazy" src="thumbnails/public-switch.jpg" alt="Switch to Linear – Linear"><span>switch</span><small>Public · Switch to Linear – Linear</small></a><a class="capture" data-kind="Public" data-search="terms Terms of Service" href="screenshots/terms.png"><img loading="lazy" src="thumbnails/public-terms.jpg" alt="Terms of Service"><span>terms</span><small>Public · Terms of Service</small></a></div></section><section id="guide" class="document"><h2>Styling guide</h2><h1>Linear styling reference</h1>
+<p>Captured 23 September 2026. Independent visual study, not an official Linear library.</p>
+<h2>What this package contains</h2>
+<p>A local HTML guide, full-page public-site screenshots, accessibility snapshots of the signed-in desktop app, computed-style evidence, design tokens, editable SVG sheets, individual component SVGs, and public-demo reference icons. Open <code>style-guide.html</code> to browse everything. The signed-in app screenshots were captured from a real workspace and have been removed from the package (2026-10-11); the app is documented by its anonymised accessibility snapshots and the colours sampled from it. The reconstructed components use fictional content.</p>
+<p>The study separates three systems: the authenticated desktop app, public marketing/product pages, and brand assets. The current app is more neutral and dense than the blue-gray public product examples. Using one palette for all three would lose that distinction.</p>
+<h2>Evidence and limits</h2>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Measured CSS</td>
+<td>Computed styles read from visible DOM elements on public pages. Exact for the captured page and viewport.</td>
+</tr>
+<tr>
+<td>Sampled pixels</td>
+<td>Dominant flat colors sampled from signed-in app screenshots taken before they were removed. A displayed sRGB pixel, not proof of the underlying CSS token.</td>
+</tr>
+<tr>
+<td>Observed</td>
+<td>A component or state is visible in a saved public screenshot or recorded in an app accessibility snapshot.</td>
+</tr>
+<tr>
+<td>Reconstruction</td>
+<td>A practical redraw or suggested token. Dimensions and interaction behavior may differ from Linear's implementation.</td>
+</tr>
+<tr>
+<td>Not inspected</td>
+<td>Not accessible, not enabled, not reached, or deliberately outside the capture.</td>
+</tr>
+</tbody>
+</table>
+<p>This is broad page-type coverage, not a claim that every Linear route, workspace record, historical article, responsive breakpoint, permission state, or experiment has been captured. Native app captures showed the viewport, not every scroll position. Public screenshots are full-page but video, lazy-loading and scroll-triggered animation can leave inactive regions. See <code>coverage.json</code> for exact captured URLs and exclusions. App theme was System preference with Dark selected for the dark system appearance; font size was Default. No theme, workflow, issue, project or account setting was changed.</p>
+<h2>Colors</h2>
+<h3>Authenticated app: sampled dark surfaces</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Value</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Outer canvas / navigation</td>
+<td>#09090B</td>
+<td>Flat pixels across issue list and detail</td>
+</tr>
+<tr>
+<td>Main content</td>
+<td>#121214</td>
+<td>Flat pixels across issue list and detail</td>
+</tr>
+<tr>
+<td>Raised card / dialog</td>
+<td>#1A1A1C</td>
+<td>Properties and issue composer</td>
+</tr>
+<tr>
+<td>Popover surface</td>
+<td>#212123</td>
+<td>Status menu</td>
+</tr>
+<tr>
+<td>Menu selection</td>
+<td>#323234</td>
+<td>Status menu</td>
+</tr>
+<tr>
+<td>Main text</td>
+<td>#FFFFFF</td>
+<td>Reconstruction value informed by text pixels</td>
+</tr>
+<tr>
+<td>Secondary text</td>
+<td>#969699</td>
+<td>Approximate reconstruction</td>
+</tr>
+<tr>
+<td>Subtle border</td>
+<td>#2B2B2E</td>
+<td>Approximate reconstruction</td>
+</tr>
+<tr>
+<td>Action accent</td>
+<td>#5E6AD2</td>
+<td>Measured public accent, reused in reconstructed app controls</td>
+</tr>
+</tbody>
+</table>
+<p>These values describe the captured dark appearance. A complete light-theme token set is not included because the account theme was not changed. The public Switch guide provides a light editorial reference, not a verified light app theme.</p>
+<h3>Public website: measured computed CSS</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Hex</th>
+<th>Where it appears</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Page background</td>
+<td>#08090A</td>
+<td>Homepage</td>
+</tr>
+<tr>
+<td>Low surface</td>
+<td>#0F1011</td>
+<td>Product examples / cards</td>
+</tr>
+<tr>
+<td>Raised surface</td>
+<td>#161718</td>
+<td>Product examples</td>
+</tr>
+<tr>
+<td>Border</td>
+<td>#24282C</td>
+<td>New-issue control in product demo</td>
+</tr>
+<tr>
+<td>Main text</td>
+<td>#F7F8F8</td>
+<td>Headings and general copy</td>
+</tr>
+<tr>
+<td>Secondary text</td>
+<td>#D0D6E0</td>
+<td>Product-demo navigation / issue title</td>
+</tr>
+<tr>
+<td>Muted text</td>
+<td>#8A8F98</td>
+<td>Navigation and supporting copy</td>
+</tr>
+<tr>
+<td>Subtle text / icons</td>
+<td>#62666D</td>
+<td>Demo controls and section labels</td>
+</tr>
+<tr>
+<td>Light primary button</td>
+<td>#E5E5E6</td>
+<td>Sign-up action</td>
+</tr>
+<tr>
+<td>Accent</td>
+<td>#5E6AD2</td>
+<td>Accent control styles</td>
+</tr>
+</tbody>
+</table>
+<p>Also observed: white overlays at 2%, 5%, 7% and 8%; green and red translucent code-diff fills. Use alpha over the correct surface instead of flattening all overlays to one gray. Not every color in raw evidence is a Linear token: customer logos, code syntax, illustrations and third-party integration mockups also contribute colors.</p>
+<h3>Official brand colors</h3>
+<p>Mercury White is #F4F5F8. Nordic Gray is displayed as #222326. The brand page's RGB prose for Nordic Gray says 35, 35, 38, which does not exactly match that hex; this package preserves the displayed hex and records the inconsistency instead of silently correcting it. Brand colors are not substitutes for UI text and surface tokens. Source: https://linear.app/brand.</p>
+<p>Status and label colors depend on workflow and configuration. The semantic tokens supplied here are reconstruction choices, not universal Linear assignments. Pair status color with icon shape and a text label.</p>
+<h2>Fonts and typography</h2>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Verified use</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inter Variable</td>
+<td>Public UI, navigation, product examples, marketing copy and headings; login/signup CSS stack</td>
+<td><code>01-home-styles.json</code>, <code>login-styles.json</code></td>
+</tr>
+<tr>
+<td>Berkeley Mono</td>
+<td>Code, technical examples, small numbered annotations</td>
+<td><code>01-home-styles.json</code>, <code>agents-styles.json</code>, <code>method-styles.json</code></td>
+</tr>
+<tr>
+<td>Tiempos Headline</td>
+<td>Editorial display heading on Linear Method</td>
+<td><code>method-styles.json</code>: 128px / 128px, weight 400</td>
+</tr>
+<tr>
+<td>Linear Thai</td>
+<td>Fallback name present in authentication font stack</td>
+<td>Presence in stack only; actual Thai glyph rendering not tested</td>
+</tr>
+</tbody>
+</table>
+<p>The authenticated app visually resembles Inter, but its exact computed text and code font families were not inspected. Preferences explicitly showed code Font: 12px, Regular, Default. Do not treat the public Berkeley Mono declaration as proof of the account's configured code font.</p>
+<p>The public Inter stack is <code>"Inter Variable", "SF Pro Display", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif</code>. The mono stack is <code>"Berkeley Mono", ui-monospace, "SF Mono", Menlo, monospace</code>. Tiempos falls back to a system serif/Georgia family.</p>
+<p>The public UI uses <code>font-feature-settings: "cv01", "ss03"</code> in many elements. Preserve these when matching letterforms. Common measured weights are 400, 510 and 590, rather than assuming all labels are conventional 500/600. Family names are CSS declarations; this inspection did not prove every glyph's final fallback face.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Size / line-height</th>
+<th>Weight</th>
+<th>Letter spacing</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Homepage hero</td>
+<td>64 / 64px</td>
+<td>510</td>
+<td>Read individual sample</td>
+<td>Homepage H1</td>
+</tr>
+<tr>
+<td>Section heading</td>
+<td>48 / 48px</td>
+<td>510</td>
+<td>-1.056px</td>
+<td>Changelog heading</td>
+</tr>
+<tr>
+<td>Large closing statement</td>
+<td>72 / 72px</td>
+<td>510</td>
+<td>-1.584px</td>
+<td>Homepage closing heading</td>
+</tr>
+<tr>
+<td>Product-demo issue title</td>
+<td>20 / 26.6px</td>
+<td>590</td>
+<td>-0.24px</td>
+<td>Embedded issue detail</td>
+</tr>
+<tr>
+<td>Public body</td>
+<td>16 / 24px</td>
+<td>400</td>
+<td>Context dependent</td>
+<td>Homepage</td>
+</tr>
+<tr>
+<td>Navigation</td>
+<td>13 / 19.5px</td>
+<td>400</td>
+<td>normal</td>
+<td>Product / Resources</td>
+</tr>
+<tr>
+<td>Product sidebar</td>
+<td>13px, normal line-height</td>
+<td>510</td>
+<td>Context dependent</td>
+<td>Embedded sidebar</td>
+</tr>
+<tr>
+<td>Section label</td>
+<td>12 / 14px</td>
+<td>510</td>
+<td>Context dependent</td>
+<td>Embedded Workspace label</td>
+</tr>
+<tr>
+<td>Editorial display</td>
+<td>128 / 128px</td>
+<td>400</td>
+<td>normal</td>
+<td>Linear Method</td>
+</tr>
+</tbody>
+</table>
+<p>The component redraws use 12–14px UI text and 20–24px detail titles as reconstruction choices. SVG font fallback affects appearance. Install the exact faces before judging fidelity; the package does not include font binaries. Obtain Inter from https://rsms.me/inter/, Berkeley Mono from https://usgraphics.com/products/berkeley-mono, and Tiempos Headline from https://klim.co.nz/fonts/tiempos-headline/. Inter is open-source; obtain appropriate licensing for the commercial faces. Georgia and Menlo are only preview fallbacks.</p>
+<h2>Geometry, spacing and layout</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Observed or reconstructed geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public navigation / sign-up</td>
+<td>32px tall, 12px horizontal padding, pill radius</td>
+</tr>
+<tr>
+<td>Demo icon buttons</td>
+<td>28 × 28px, circular/pill</td>
+</tr>
+<tr>
+<td>Demo sidebar rows</td>
+<td>28px tall, 8px radius, 7px horizontal padding</td>
+</tr>
+<tr>
+<td>Demo workspace label</td>
+<td>24px tall, 12px text, 8px radius</td>
+</tr>
+<tr>
+<td>Public logo link</td>
+<td>6px radius</td>
+</tr>
+<tr>
+<td>Cards / panels</td>
+<td>9, 12, 16 and 22px radii occur in public DOM; context matters</td>
+</tr>
+<tr>
+<td>App tabs</td>
+<td>Observed pills; redraw uses 28px height and half-height radius</td>
+</tr>
+<tr>
+<td>App main pane</td>
+<td>Large rounded container inset from outer canvas</td>
+</tr>
+<tr>
+<td>App properties</td>
+<td>Stacked rounded panels with thin borders and close vertical spacing</td>
+</tr>
+<tr>
+<td>Menus</td>
+<td>Rounded surface, search at top, compact rows, selected fill, shortcuts on right</td>
+</tr>
+<tr>
+<td>Issue rows</td>
+<td>One-line, aligned metadata columns, subtle horizontal dividers</td>
+</tr>
+</tbody>
+</table>
+<p>The 4, 8, 12, 16, 24, 32, 48, 64px spacing scale in the tokens is a reconstruction convenience, not an extracted official spacing system. Desktop app screenshots were captured at 3024 × 1898 device pixels on this machine; approximate logical dimensions use a 2× assumption. Browser zoom/device scaling was not independently measured. Public CSS measurements use the actual capture viewport in each JSON file.</p>
+<p>Avoid indiscriminate rounded rectangles: pill actions, modestly rounded sidebar items, squared list rows, and more rounded floating surfaces serve different roles. Public marketing pages also use large whitespace, narrow text measures and oversized editorial titles that do not belong in a dense issue table.</p>
+<h2>Buttons, fields and interaction states</h2>
+<p>Public primary actions are pale filled pills with dark text, 32px high and 13px text at weight 510. Public navigation is transparent with muted labels. The embedded demo has subtle icon buttons using 2% white fill and an inset 1px line at 5% white. Read raw border style as well as border color: computed border color alone does not imply a visible border.</p>
+<p>The authenticated issue composer shows an accent primary action, compact metadata chips, a quiet close affordance, and a footer separated by a hairline. Tabs use filled pills. Property controls often look like text-and-icon rows until opened.</p>
+<p>The library includes default, hover, focus, disabled and destructive button variants; default/focus/error fields; checkbox and switch pairs; and tooltip/toast examples. The hover, focus, validation error, switch, tooltip and toast redraws are proposals for a usable library, not claims that those precise Linear states were captured. Actual menus, the date picker, composer, filters and display settings were observed. Checkboxes are visible in settings. No destructive confirmation or error was deliberately triggered.</p>
+<h2>Icons</h2>
+<p>The reference atlas contains 39 SVG extracts from visible buttons in Linear's public homepage demos, including navigation, search, issue creation, priority-related controls, copy actions, attachments and communication actions. A button can contain more than one SVG; the named extract is the first encountered, so names describe source controls rather than guaranteed canonical icon names. Some examples depict third-party integration UI.</p>
+<p>Use the supplied source SVG paths for visual study. Preserve viewBox and aspect ratio; <code>currentColor</code> lets monochrome icons inherit foreground color. Many UI icons sit on a 16px design scale within 28px controls, but individual source viewBoxes differ. Do not replace mixed filled/outlined glyphs with a uniform arbitrary stroke. Do not assume Linear uses Lucide, Heroicons or SF Symbols: no upstream icon library was established.</p>
+<p>Reference SVGs remain proprietary/reference material and are not offered as a newly licensed icon pack. Brand assets should be taken from https://linear.app/brand and used according to its guidance. The component redraws are separate from extracted icons and do not bundle a Linear wordmark.</p>
+<h2>Component inventory and evidence</h2>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Included</th>
+<th>Primary screenshot evidence</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Navigation</td>
+<td>Selected sidebar row, pills, circular action</td>
+<td>App My issues / project overview; public demo</td>
+<td>Observed, redrawn</td>
+</tr>
+<tr>
+<td>Buttons</td>
+<td>Primary, secondary, ghost, icon, web CTA</td>
+<td>Issue composer; public homepage</td>
+<td>Observed bases, proposed extra states</td>
+</tr>
+<tr>
+<td>Forms</td>
+<td>Text fields, checkbox, switch</td>
+<td>Preferences; issue composer</td>
+<td>Mixed, switches/error state reconstructed</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>Labels, avatars, keyboard shortcut</td>
+<td>Issue list, menus</td>
+<td>Observed, redrawn</td>
+</tr>
+<tr>
+<td>Lists</td>
+<td>Issue row, board card</td>
+<td>My issues; public board example</td>
+<td>Observed, redrawn</td>
+</tr>
+<tr>
+<td>Menus</td>
+<td>Status selector</td>
+<td>App status picker</td>
+<td>Observed, redrawn</td>
+</tr>
+<tr>
+<td>Calendar</td>
+<td>Month grid and input</td>
+<td>App date picker</td>
+<td>Observed, simplified</td>
+</tr>
+<tr>
+<td>Composition</td>
+<td>Issue composer, properties, empty state</td>
+<td>App composer / project / views</td>
+<td>Observed, redrawn</td>
+</tr>
+<tr>
+<td>Feedback</td>
+<td>Tooltip and success toast</td>
+<td>No dedicated live capture</td>
+<td>Proposed reconstruction</td>
+</tr>
+<tr>
+<td>Icons</td>
+<td>39 source SVGs</td>
+<td>Public homepage buttons</td>
+<td>Extracted reference</td>
+</tr>
+</tbody>
+</table>
+<p>Other documented components include breadcrumbs, search, grouped list headers, project progress graphs, property chips, dense settings tables, empty states, billing/feature upgrade notices, code blocks and diff colors, avatar lists, footer navigation, pricing comparison tables, editorial cards and mobile illustrations. They are visible in the screenshot collection; not every one has a standalone SVG redraw.</p>
+<h2>Import into Figma, Paper or another vector editor</h2>
+<p>Import any <code>boards/*.svg</code> file for a full reference sheet, or <code>components/*.svg</code> for isolated pieces. In Figma, drag the SVG files onto the canvas. In Paper or another editor, use its SVG import/paste support if available; the exact Paper workflow has not been tested here. The SVGs use ordinary paths, rectangles, text and named groups, with no foreignObject, linked fonts or raster UI embedded.</p>
+<p>These are vector assets, not a native <code>.fig</code> library. Import does not automatically create component variants, auto-layout, variable bindings or prototype interactions; text editability depends on the importer. Convert the imported groups to components and configure variants in the destination tool if needed. <code>components/manifest.json</code> gives intended names and bounds.</p>
+<p><code>tokens/linear.tokens.json</code> uses DTCG-style <code>$type</code>/<code>$value</code> objects, including sRGB color components. <code>tokens/tokens-studio.json</code> provides a separate hex-value Tokens Studio structure. Import with a token-aware plugin/tool that supports that format; neither file is claimed to be a native Figma variables import. <code>tokens/linear.css</code> supplies CSS custom properties. Preserve evidence descriptions when promoting tokens into a production design system.</p>
+<p>The SVG syntax and browser rendering are checked locally. Import into Paper/Figma itself is unverified. Font installation and commercial font licenses are not included.</p>
+<h2>Coverage and remaining gaps</h2>
+<p>Captured public page families: homepage; Brand; Pricing; Intake; Plan; AI; Build; Asks; Agents; Coding Sessions; Customer Requests; Insights; Mobile; Integrations; Changelog; About; Customers; Careers; Now; Method; Quality; Switch; Download; Docs; Developers; Enterprise; Startups; Security; Contact; Privacy; Terms; DPA; AUP; login and signup entry screens.</p>
+<p>Captured app families (accessibility snapshots only; no screenshots remain) include agent, inbox, assigned issues, issue detail, selectors, projects, project overview/activity/issues, reviews, saved views, team home/issues/projects/views/documents/members, workspace menu, issue composer, date/filter/display menus, and settings pages listed in the evidence index. Repeated issues and project records were not individually captured because they reuse these page structures.</p>
+<p>Not completed: all nested marketing articles/customer stories/docs pages; mobile authenticated UI; light authenticated theme; board/timeline layout after a preference change; enabled cycles/triage (disabled for this team); every settings subpage; security/API/credential pages; destructive dialogs; every interaction state and breakpoint; exact authenticated computed typography, radii and shadows. These remain explicit gaps rather than inferred verification.</p>
+<h2>Source files and provenance</h2>
+<p>Each public <code>evidence/styles/*-styles.json</code> contains URL, title, viewport and visible-element computed properties. <code>evidence/pages/*-page.txt</code> preserves public page text/structure. The app accessibility snapshots in <code>screenshots/app/</code> are the only app evidence kept; early captures contain diffs, later ones contain full trees. Their workspace, team, project, people, issue titles and ids were replaced with neutral values (workspace Acme, teams Core and Research, Teammate A to D, Sample issue N) on 2026-10-11; the screenshots themselves were not changed. <code>evidence/coverage.json</code> is the final index, and <code>evidence/capture-manifest.json</code> is an earlier collection log that may include first-pass titles. <code>tools/build_library.py</code> rebuilds SVG assets and tokens; <code>tools/build_guide.py</code> rebuilds the gallery (<code>style-guide.html</code>) and validation report. Both need Pillow and Markdown (<code>pip install pillow markdown</code>) and run from any directory.</p>
+<p>Primary sources: Linear's live pages and signed-in workspace, captured 2026-09-23; https://linear.app/brand; https://rsms.me/inter/; https://usgraphics.com/products/berkeley-mono; https://klim.co.nz/fonts/tiempos-headline/.</p></section><section><h2>Evidence index</h2><details><summary>Show captured URLs and raw measurements</summary><table id="source-table"><tr><td>01-agent</td><td>App</td><td><a href="screenshots/app/01-agent.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>02-inbox</td><td>App</td><td><a href="screenshots/app/02-inbox.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>03-my-issues</td><td>App</td><td><a href="screenshots/app/03-my-issues.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>04-issue-detail</td><td>App</td><td><a href="screenshots/app/04-issue-detail.txt">Evidence</a></td><td>https://linear.app/acme/issue/COR-30/sample-issue-30</td></tr><tr><td>05-status-picker</td><td>App</td><td><a href="screenshots/app/05-status-picker.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>06-priority-picker</td><td>App</td><td><a href="screenshots/app/06-priority-picker.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>07-projects</td><td>App</td><td><a href="screenshots/app/07-projects.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>08-project-updates-empty</td><td>App</td><td><a href="screenshots/app/08-project-updates-empty.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>09-project-overview</td><td>App</td><td><a href="screenshots/app/09-project-overview.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>10-date-picker</td><td>App</td><td><a href="screenshots/app/10-date-picker.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>11-project-issues</td><td>App</td><td><a href="screenshots/app/11-project-issues.txt">Evidence</a></td><td>https://linear.app/acme/project/sample-project-0a1b2c3d4e5f/issues</td></tr><tr><td>12-display-options</td><td>App</td><td><a href="screenshots/app/12-display-options.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>13-filter-menu</td><td>App</td><td><a href="screenshots/app/13-filter-menu.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>14-create-issue-dialog</td><td>App</td><td><a href="screenshots/app/14-create-issue-dialog.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>15-reviews</td><td>App</td><td><a href="screenshots/app/15-reviews.txt">Evidence</a></td><td>https://linear.app/acme/reviews</td></tr><tr><td>16-views</td><td>App</td><td><a href="screenshots/app/16-views.txt">Evidence</a></td><td>https://linear.app/acme/views</td></tr><tr><td>17-team-home</td><td>App</td><td><a href="screenshots/app/17-team-home.txt">Evidence</a></td><td>https://linear.app/acme/team/COR/overview</td></tr><tr><td>18-team-issues</td><td>App</td><td><a href="screenshots/app/18-team-issues.txt">Evidence</a></td><td>https://linear.app/acme/team/COR/all</td></tr><tr><td>19-team-projects</td><td>App</td><td><a href="screenshots/app/19-team-projects.txt">Evidence</a></td><td>https://linear.app/acme/team/COR/projects/all</td></tr><tr><td>20-team-views</td><td>App</td><td><a href="screenshots/app/20-team-views.txt">Evidence</a></td><td>https://linear.app/acme/team/COR/views/issues</td></tr><tr><td>21-project-activity</td><td>App</td><td><a href="screenshots/app/21-project-activity.txt">Evidence</a></td><td>https://linear.app/acme/project/sample-project-0a1b2c3d4e5f/activity</td></tr><tr><td>22-team-documents</td><td>App</td><td><a href="screenshots/app/22-team-documents.txt">Evidence</a></td><td>https://linear.app/acme/team/COR/documents</td></tr><tr><td>23-team-members</td><td>App</td><td><a href="screenshots/app/23-team-members.txt">Evidence</a></td><td>https://linear.app/acme/team/COR/members</td></tr><tr><td>24-workspace-menu</td><td>App</td><td><a href="screenshots/app/24-workspace-menu.txt">Evidence</a></td><td>https://linear.app/acme/team/COR/members</td></tr><tr><td>25-team-settings</td><td>App</td><td><a href="screenshots/app/25-team-settings.txt">Evidence</a></td><td>https://linear.app/acme/settings/teams/COR</td></tr><tr><td>settings-account-notifications</td><td>App</td><td><a href="screenshots/app/settings-account-notifications.txt">Evidence</a></td><td>https://linear.app/acme/settings/account/notifications</td></tr><tr><td>settings-account-preferences</td><td>App</td><td><a href="screenshots/app/settings-account-preferences.txt">Evidence</a></td><td>https://linear.app/acme/settings/account/preferences</td></tr><tr><td>settings-ai</td><td>App</td><td><a href="screenshots/app/settings-ai.txt">Evidence</a></td><td>https://linear.app/acme/settings/ai</td></tr><tr><td>settings-asks</td><td>App</td><td><a href="screenshots/app/settings-asks.txt">Evidence</a></td><td>https://linear.app/acme/settings/asks</td></tr><tr><td>settings-customer-requests</td><td>App</td><td><a href="screenshots/app/settings-customer-requests.txt">Evidence</a></td><td>https://linear.app/acme/settings/customer-requests</td></tr><tr><td>settings-documents</td><td>App</td><td><a href="screenshots/app/settings-documents.txt">Evidence</a></td><td>https://linear.app/acme/settings/documents</td></tr><tr><td>settings-emojis</td><td>App</td><td><a href="screenshots/app/settings-emojis.txt">Evidence</a></td><td>https://linear.app/acme/settings/emojis</td></tr><tr><td>settings-initiatives</td><td>App</td><td><a href="screenshots/app/settings-initiatives.txt">Evidence</a></td><td>https://linear.app/acme/settings/initiatives</td></tr><tr><td>settings-integrations</td><td>App</td><td><a href="screenshots/app/settings-integrations.txt">Evidence</a></td><td>See snapshot / original capture</td></tr><tr><td>settings-issue-labels</td><td>App</td><td><a href="screenshots/app/settings-issue-labels.txt">Evidence</a></td><td>https://linear.app/acme/settings/issue-labels</td></tr><tr><td>settings-issue-templates</td><td>App</td><td><a href="screenshots/app/settings-issue-templates.txt">Evidence</a></td><td>https://linear.app/acme/settings/issue-templates</td></tr><tr><td>settings-loops</td><td>App</td><td><a href="screenshots/app/settings-loops.txt">Evidence</a></td><td>https://linear.app/acme/settings/loops</td></tr><tr><td>settings-project-labels</td><td>App</td><td><a href="screenshots/app/settings-project-labels.txt">Evidence</a></td><td>https://linear.app/acme/settings/project-labels</td></tr><tr><td>settings-project-statuses</td><td>App</td><td><a href="screenshots/app/settings-project-statuses.txt">Evidence</a></td><td>https://linear.app/acme/settings/project-statuses</td></tr><tr><td>settings-project-templates</td><td>App</td><td><a href="screenshots/app/settings-project-templates.txt">Evidence</a></td><td>https://linear.app/acme/settings/project-templates</td></tr><tr><td>settings-project-updates</td><td>App</td><td><a href="screenshots/app/settings-project-updates.txt">Evidence</a></td><td>https://linear.app/acme/settings/project-updates</td></tr><tr><td>settings-teams</td><td>App</td><td><a href="screenshots/app/settings-teams.txt">Evidence</a></td><td>https://linear.app/acme/settings/teams</td></tr><tr><td>settings-usage</td><td>App</td><td><a href="screenshots/app/settings-usage.txt">Evidence</a></td><td>https://linear.app/acme/settings/usage</td></tr><tr><td>settings-workspace</td><td>App</td><td><a href="screenshots/app/settings-workspace.txt">Evidence</a></td><td>https://linear.app/acme/settings/workspace</td></tr><tr><td>01-home</td><td>Public</td><td><a href="evidence/styles/01-home-styles.json">Evidence</a></td><td>https://linear.app/</td></tr><tr><td>02-brand</td><td>Public</td><td><a href="evidence/styles/02-brand-styles.json">Evidence</a></td><td>https://linear.app/brand</td></tr><tr><td>about</td><td>Public</td><td><a href="evidence/styles/about-styles.json">Evidence</a></td><td>https://linear.app/about</td></tr><tr><td>agents</td><td>Public</td><td><a href="evidence/styles/agents-styles.json">Evidence</a></td><td>https://linear.app/agents</td></tr><tr><td>ai</td><td>Public</td><td><a href="evidence/styles/ai-styles.json">Evidence</a></td><td>https://linear.app/ai</td></tr><tr><td>asks</td><td>Public</td><td><a href="evidence/styles/asks-styles.json">Evidence</a></td><td>https://linear.app/asks</td></tr><tr><td>build</td><td>Public</td><td><a href="evidence/styles/build-styles.json">Evidence</a></td><td>https://linear.app/build</td></tr><tr><td>careers</td><td>Public</td><td><a href="evidence/styles/careers-styles.json">Evidence</a></td><td>https://linear.app/careers</td></tr><tr><td>changelog</td><td>Public</td><td><a href="evidence/styles/changelog-styles.json">Evidence</a></td><td>https://linear.app/changelog</td></tr><tr><td>coding-sessions</td><td>Public</td><td><a href="evidence/styles/coding-sessions-styles.json">Evidence</a></td><td>https://linear.app/coding-sessions</td></tr><tr><td>contact</td><td>Public</td><td><a href="evidence/styles/contact-styles.json">Evidence</a></td><td>https://linear.app/contact</td></tr><tr><td>customer-requests</td><td>Public</td><td><a href="evidence/styles/customer-requests-styles.json">Evidence</a></td><td>https://linear.app/customer-requests</td></tr><tr><td>customers</td><td>Public</td><td><a href="evidence/styles/customers-styles.json">Evidence</a></td><td>https://linear.app/customers</td></tr><tr><td>developers</td><td>Public</td><td><a href="evidence/styles/developers-styles.json">Evidence</a></td><td>https://linear.app/developers</td></tr><tr><td>docs</td><td>Public</td><td><a href="evidence/styles/docs-styles.json">Evidence</a></td><td>https://linear.app/docs</td></tr><tr><td>download</td><td>Public</td><td><a href="evidence/styles/download-styles.json">Evidence</a></td><td>https://linear.app/download</td></tr><tr><td>dpa</td><td>Public</td><td><a href="evidence/styles/dpa-styles.json">Evidence</a></td><td>https://linear.app/dpa</td></tr><tr><td>enterprise</td><td>Public</td><td><a href="evidence/styles/enterprise-styles.json">Evidence</a></td><td>https://linear.app/enterprise</td></tr><tr><td>insights</td><td>Public</td><td><a href="evidence/styles/insights-styles.json">Evidence</a></td><td>https://linear.app/insights</td></tr><tr><td>intake</td><td>Public</td><td><a href="evidence/styles/intake-styles.json">Evidence</a></td><td>https://linear.app/intake</td></tr><tr><td>integrations</td><td>Public</td><td><a href="evidence/styles/integrations-styles.json">Evidence</a></td><td>https://linear.app/integrations</td></tr><tr><td>legal-aup</td><td>Public</td><td><a href="evidence/styles/legal-aup-styles.json">Evidence</a></td><td>https://linear.app/legal/aup</td></tr><tr><td>login</td><td>Public</td><td><a href="evidence/styles/login-styles.json">Evidence</a></td><td>https://linear.app/login</td></tr><tr><td>method</td><td>Public</td><td><a href="evidence/styles/method-styles.json">Evidence</a></td><td>https://linear.app/method</td></tr><tr><td>mobile</td><td>Public</td><td><a href="evidence/styles/mobile-styles.json">Evidence</a></td><td>https://linear.app/mobile</td></tr><tr><td>now</td><td>Public</td><td><a href="evidence/styles/now-styles.json">Evidence</a></td><td>https://linear.app/now</td></tr><tr><td>plan</td><td>Public</td><td><a href="evidence/styles/plan-styles.json">Evidence</a></td><td>https://linear.app/plan</td></tr><tr><td>pricing</td><td>Public</td><td><a href="evidence/styles/pricing-styles.json">Evidence</a></td><td>https://linear.app/pricing</td></tr><tr><td>privacy</td><td>Public</td><td><a href="evidence/styles/privacy-styles.json">Evidence</a></td><td>https://linear.app/privacy</td></tr><tr><td>quality</td><td>Public</td><td><a href="evidence/styles/quality-styles.json">Evidence</a></td><td>https://linear.app/quality</td></tr><tr><td>security</td><td>Public</td><td><a href="evidence/styles/security-styles.json">Evidence</a></td><td>https://linear.app/security</td></tr><tr><td>signup</td><td>Public</td><td><a href="evidence/styles/signup-styles.json">Evidence</a></td><td>https://linear.app/signup</td></tr><tr><td>startups</td><td>Public</td><td><a href="evidence/styles/startups-styles.json">Evidence</a></td><td>https://linear.app/startups</td></tr><tr><td>switch</td><td>Public</td><td><a href="evidence/styles/switch-styles.json">Evidence</a></td><td>https://linear.app/switch</td></tr><tr><td>terms</td><td>Public</td><td><a href="evidence/styles/terms-styles.json">Evidence</a></td><td>https://linear.app/terms</td></tr></table></details><p>Excluded failed/redirected captures: settings-import-export, settings-pulse, settings-releases.</p></section><footer>Independent study. Reference icons and Linear branding retain their respective rights. No font binaries bundled. Native editor import remains unverified.</footer></main><script>let filter='All';function apply(){let q=document.querySelector('#search').value.toLowerCase();document.querySelectorAll('.capture').forEach(e=>e.hidden=!(filter==='All'||e.dataset.kind===filter)||!e.dataset.search.toLowerCase().includes(q));}document.querySelector('#search').addEventListener('input',apply);document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));apply();});</script></html>

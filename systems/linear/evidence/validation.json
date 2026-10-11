@@ -1,0 +1,10 @@
+{
+  "publicCaptures": 35,
+  "appSnapshots": 44,
+  "components": 30,
+  "referenceIcons": 39,
+  "boards": 5,
+  "svgParseErrors": [],
+  "nativeEditorImport": "Not tested",
+  "browserRender": "2026-09-25: visually checked centered labels, content-sized controls, tabs and nested chips; SVG parsing passed."
+}

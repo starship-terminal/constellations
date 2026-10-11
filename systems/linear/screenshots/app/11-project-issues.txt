@@ -1,0 +1,242 @@
+Window: "Acme: Sample project › Iss…", App: Dia.
+0 standard window Acme: Sample project › Iss…, ID: bigBrowserWindow_00000000-0000-0000-0000-000000000000, Secondary Actions: Raise
+	1 HTML content Sample project › Issues, URL: linear.app/acme/project/sample-project-0a1b2c3d4e5f/issues
+		2 container
+			3 link Skip to content, Value: linear.app/acme/team/COR/overview#skip-nav
+			4 container
+				5 container
+					6 container
+						7 pop up button Acme Workspace Menu
+							8 text Acme
+						9 button Search workspace
+						10 button Create new issue
+						11 container
+							12 sortable Inbox
+								13 link Inbox, Value: linear.app/acme/inbox
+							14 sortable My issues
+								15 link My issues, Value: linear.app/acme/my-issues/assigned
+							16 sortable Reviews
+								17 link Reviews, Value: linear.app/acme/reviews
+							18 sortable Agent
+								19 link Agent, Value: linear.app/acme/agent
+							20 sortable
+							21 button Workspace
+							22 sortable Projects
+								23 link Projects, Value: linear.app/acme/projects/all
+							24 sortable Views
+								25 link Views, Value: linear.app/acme/views/issues
+							26 sortable
+							27 sortable
+							28 button Show more links
+						29 container
+							30 button Favorites
+							31 button Create new folder for favorites
+							32 link Sample project Remove favorite, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/issues
+							33 button Your teams
+							34 button Join a team
+							35 content list
+								36 sortable Core Team menu Home Issues Projects Views
+									37 container
+										38 container
+											39 button Core
+												40 text Core
+											41 pop up button Team menu
+										42 link Home, Value: linear.app/acme/team/COR/overview
+										43 link Issues, Value: linear.app/acme/team/COR/all
+										44 link Projects, Value: linear.app/acme/team/COR/projects/all
+										45 link Views, Value: linear.app/acme/team/COR/views/issues
+							46 button Try
+							47 container
+								48 container Enable cycles for team…
+									49 text Cycles
+								50 button Dismiss
+									51 image Dismiss
+					52 container
+						53 button View changelog
+						54 text What’s new Loops for product management
+						55 button Collapse into help menu
+				56 container
+					57 container
+						58 link Sample project, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/overview
+						59 switch Remove from favorites
+						60 pop up button Project actions
+						61 button Copy page URL
+						62 button Setup project notifications
+						63 link Overview, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/overview
+						64 link Activity, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/activity
+						65 link Issues, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/issues
+						66 button Add new view
+						67 button Add filter
+						68 button Display options
+						69 button Close project details
+					70 container
+						71 container
+							72 container
+								73 button Collapse group
+								74 image
+								75 heading Pull request is being reviewed
+									76 container Pull request is being reviewed
+										77 text In Review
+								78 button 2
+								79 pop up button Create new issue
+							80 link Select issue Medium Priority COR-30 In Review Sample issue 30 #107 Teammate A Created Jul 4, 3:32:00 AM, Value: linear.app/acme/issue/COR-30/sample-issue-30
+							81 link Value: linear.app/acme/issue/COR-31/sample-issue-31, Select issue Low Priority COR-31 In Review Sample issue 31 #102 Teammate A Created Jul 4, 3:32:01 AM
+							82 container
+								83 button Collapse group
+								84 image
+								85 heading Todo
+									86 text Todo
+								87 button 2
+								88 pop up button Create new issue
+							89 link Select issue Medium Priority COR-32 Todo Sample issue 32 Teammate A Created Jul 4, 3:32:04 AM, Value: linear.app/acme/issue/COR-32/sample-issue-32
+							90 link Value: linear.app/acme/issue/COR-33/sample-issue-33, Select issue Low Priority COR-33 Todo Sample issue 33 Teammate A Created Jul 4, 3:32:05 AM
+							91 container
+								92 button Collapse group
+								93 image
+								94 heading Backlog
+									95 text Backlog
+								96 button 6
+								97 pop up button Create new issue
+							98 link Select issue High Priority COR-49 Backlog Sample issue 49 follow-up Teammate A Created Jul 8, 5:33:42 AM, Value: linear.app/acme/issue/COR-49/sample-issue-49
+							99 link Select issue High Priority COR-48 Backlog Sample issue 48 follow-up Teammate A Created Jul 8, 5:33:39 AM, Value: linear.app/acme/issue/COR-48/sample-issue-48
+							100 link Select issue Medium Priority COR-52 Backlog Sample issue 52 follow-up Teammate A Created Jul 8, 5:33:49 AM, Value: linear.app/acme/issue/COR-52/sample-issue-52
+							101 link Select issue Medium Priority COR-50 Backlog Sample issue 50 follow-up Teammate A Created Jul 8, 5:33:44 AM, Value: linear.app/acme/issue/COR-50/sample-issue-50
+							102 link Select issue Low Priority COR-53 Backlog Sample issue 53 follow-up Teammate A Created Jul 8, 5:33:51 AM, Value: linear.app/acme/issue/COR-53/sample-issue-53
+							103 link Value: linear.app/acme/issue/COR-51/sample-issue-51, Select issue Low Priority COR-51 Backlog Sample issue 51 follow-up Teammate A Created Jul 8, 5:33:46 AM
+							104 container
+								105 button Collapse group
+								106 image
+								107 heading Done
+									108 text Done
+								109 button 12
+								110 pop up button Create new issue
+							111 link Select issue Urgent Priority COR-28 Done Sample issue 28 #106 Teammate A Created Jul 4, 3:13:42 AM, Value: linear.app/acme/issue/COR-28/sample-issue-28
+							112 link Select issue High Priority COR-29 Done Sample issue 29 #103 Teammate A Created Jul 4, 3:30:29 AM, Value: linear.app/acme/issue/COR-29/sample-issue-29
+							113 link Select issue High Priority COR-26 Done Sample issue 26 #105 Teammate A Created Jul 4, 3:13:39 AM, Value: linear.app/acme/issue/COR-26/sample-issue-26
+							114 link Value: linear.app/acme/issue/COR-16/sample-issue-16, Select issue High Priority COR-16 Done Sample issue 16 #101 Teammate A Created Jul 4, 3:13:27 AM
+							115 link Value: linear.app/acme/issue/COR-17/sample-issue-17, Select issue High Priority COR-17 Done Sample issue 17 #108 Teammate A Created Jul 4, 3:13:28 AM
+							116 link Value: linear.app/acme/issue/COR-18/sample-issue-18, Select issue High Priority COR-18 Done Sample issue 18 #104 Teammate A Created Jul 4, 3:13:29 AM
+						117 container Project sidebar
+							118 container
+								119 button Collapse properties section
+									120 text Properties
+								121 button Add dependency
+								122 container
+									123 text Status
+									124 button In Progress
+										125 image
+										126 text In Progress
+									127 text Priority
+									128 button No Priority No priority
+										129 image No Priority
+										130 text No priority
+									131 text Lead
+									132 button Teammate A Teammate A
+										133 image Teammate A
+										134 text Teammate A
+									135 text Members
+									136 button Add members
+									137 text Dates
+									138 button Change project start date
+										139 container Change project start date
+											140 text Jun 15th
+									141 button Change project target date
+										142 container Change project target date
+											143 text Sep 14th
+									144 text Teams
+									145 button Core
+									146 text Slack
+									147 button #team-channel
+									148 text Labels
+									149 container Add labels
+										150 button Add labels
+								151 button Collapse milestones section
+									152 text Milestones
+								153 button Add milestone
+								154 container
+									155 text Add milestones to organize work within your project and break it into more granular stages.
+									156 link Learn more, Value: linear.app/docs/project-milestones
+								157 button Collapse progress section
+									158 text Progress
+								159 container
+									160 text Scope 22 Started 2 Completed 12
+									161 image
+									162 tab group
+										163 tab (selected) Assignees, Value: 1
+										164 tab (settable, integer) Labels, Value: 0
+									165 button Assigned to Teammate A 57% of 22
+										166 container
+											167 container Assigned to Teammate A
+												168 text Teammate A
+										169 container
+											170 text 57 % of
+										171 button 22
+								172 button Collapse activity section
+									173 text Activity
+								174 link See all, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/activity
+								175 container
+									176 link Teammate A, Value: linear.app/acme/profiles/teammate-a
+									177 text  created the project  · 
+									178 container Sat Jul 4, 3:09:02 AM
+										179 text Jul 4
+				180 container
+					181 button Agent
+					182 button Chat history
+			183 container Notifications alt+T
+			184 text Navigated to Sample project › Issues
+			185 container
+				186 button Copy P-COR-2
+				187 link Sample project, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/overview
+				188 text In Progress
+				189 text Core
+				190 image Teammate A
+				191 text Teammate A
+				192 image No Priority
+				193 text No priority
+				194 text Sep 14th
+				195 text 57% of 22
+	196 container navigationBar
+		197 unknown navigationBarBackButton
+		198 unknown navigationBarReloadOrStopLoadingButton
+		199 button
+		200 collection
+		201 unknown navigationBarAssistantBar
+			202 unknown
+				203 scroll area
+					204 text entry area Value: linear.app / Sample project › Issues, ID: navigationBarAssistantBarTextField
+	205 collection
+	206 scroll area Secondary Actions: Scroll Up, Scroll Down
+		207 collection (disabled)
+			208 unknown acme-org/app, ID: tab
+				209 unknown
+					210 image
+					211 text acme-org/app
+			212 unknown Sample project › Issues, ID: tab
+				213 unknown
+					214 image
+					215 text Sample project › Issues
+			216 unknown
+				217 button
+		218 scroll bar (disabled) 0
+	219 close button
+	220 minimize button
+	221 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	222 button
+	223 button Chats
+	224 button
+	225 unknown OF
+	226 unknown Acme
+	227 unknown FT
+228 menu bar
+	229 Dia
+	230 File
+	231 Edit
+	232 View
+	233 Tabs
+	234 Bookmarks
+	235 History
+	236 Extensions
+	237 Window
+	238 Help
+
+The focused UI element is 32 link Sample project Remove favorite, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/issues

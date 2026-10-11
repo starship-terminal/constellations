@@ -1,0 +1,354 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "Help us craft high-quality tools" [level=1]:
+    - text: Help us craft
+    - text: high-quality tools
+  - paragraph: We are building a new species of product tool. Will you help us make it better?
+  - link "Open roles ↓":
+    - /url: "#join-us"
+    - generic: Open roles ↓
+  - region "Media player":
+    - img "Linear logo"
+    - button "Play (keyboard shortcut k)":
+    - button "Mute (keyboard shortcut m)":
+    - timer:
+      - generic: Elapsed
+      - text: 00:00
+    - slider "Seek slider" [disabled]
+    - timer:
+      - generic: Remaining time unknown
+      - text: −--:--
+    - combobox "Change playback rate (keyboard shortcut > or <)":
+      - option "0.25×"
+      - option "0.5×"
+      - option "0.75×"
+      - option "1×" [selected]
+      - option "1.25×"
+      - option "1.5×"
+      - option "1.75×"
+      - option "2×"
+    - button "Full screen (keyboard shortcut f)":
+  - heading "On a quest for quality" [level=2]:
+    - text: On a quest
+    - text: for quality
+  - paragraph: We believe that there is a lost art of building software. A craftsmanship that yields products of an exceptional, almost magical, quality.
+  - paragraph: It’s difficult to describe this quality with words and impossible to measure it in numbers, but you can feel it when it’s there. You know it when you experience it. To bring back this level of quality, we are building a tool that empowers product teams to do their best work. A tool with unparalleled speed, focus, and design.
+  - paragraph: Building this tool requires a team of talented individuals who care deeply about the quality of their work, no matter if it’s engineering, design, or customer support. We are looking for people who share our passion for software craftsmanship and getting even the smallest details right. If that sounds like you, please reach out and join us on our quest.
+  - link "›_ README":
+    - /url: /readme
+    - generic: ›_ README
+  - link "A conversation on quality Karri Saarinen":
+    - /url: https://linear.app/quality/02
+    - generic: A conversation on quality
+    - generic: Karri Saarinen
+  - link "Building the sync engine Tuomas Artman":
+    - /url: https://www.youtube.com/watch?v=Wo2m3jaJixU&ab_channel=Linear
+    - generic: Building the sync engine
+    - generic: Tuomas Artman
+  - link "Inside design at Linear Designer Fund":
+    - /url: https://designerfund.substack.com/p/ai-design-linear
+    - generic: Inside design at Linear
+    - generic: Designer Fund
+  - link "At home with Karri Saarinen Indie":
+    - /url: https://www.youtube.com/watch?v=p3tHGu84vOg&ab_channel=INDIE
+    - generic: At home with Karri Saarinen
+    - generic: Indie
+  - link "Move fast with little process The Pragmatic Engineer":
+    - /url: https://www.youtube.com/watch?v=AI_UMnTM4o8&ab_channel=ThePragmaticEngineer
+    - generic: Move fast with little process
+    - generic: The Pragmatic Engineer
+  - heading "How we think and work" [level=2]:
+    - text: How we think
+    - text: and work
+  - paragraph: Linear’s mission is to inspire and accelerate builders. To turn that ambition into reality, we operate based on a set of core principles that keep us focused.
+  - list:
+    - generic: "01."
+    - generic: Ship early
+    - generic: Simplify and ship smaller.
+    - generic: "02."
+    - generic: Build with users
+    - generic: Listen carefully and understand their problems.
+    - generic: "03."
+    - generic: Know what good looks like
+    - generic: Find and create good things. Know what needs to change to make it better.
+    - generic: "04."
+    - generic: Think in principles
+    - generic: Not in playbooks.
+    - generic: "05."
+    - generic: Build things that last
+    - generic: Put care into the foundation. Don’t make it a future person’s problem.
+    - generic: "06."
+    - generic: Avoid side quests
+    - generic: Don’t fix every problem. Avoid adding unnecessary process or documents.
+    - generic: "07."
+    - generic: Say it as it is
+    - generic: Get to the point and assume good intentions.
+    - generic: "08."
+    - generic: Keep the team small, do more with less
+    - generic: We build better with fewer people. Wear multiple hats.
+    - generic: "09."
+    - generic: Hire the best people
+    - generic: The best people hire the best people. Help recruit.
+    - generic: "10."
+    - generic: Create fans
+    - generic: Build a community of people who use, love, and defend the product.
+    - generic: "11."
+    - generic: Fully remote
+    - generic: The freedom to work remotely allows for more meaningful work.
+  - heading "Open roles" [level=2]
+  - list:
+    - link "Sales":
+      - /url: "#sales"
+    - link "Account Executive, Startups North America Learn more":
+      - /url: /careers/c21af93e-210f-4969-8eaa-90fb16a5b720
+      - generic: Account Executive, Startups
+      - generic: North America
+      - generic: Learn more
+    - link "Customer Success Manager, Enterprise North America Learn more":
+      - /url: /careers/370d9605-f02f-44f9-97fa-ebf769bed93d
+      - generic: Customer Success Manager, Enterprise
+      - generic: North America
+      - generic: Learn more
+    - link "Implementation Manager North America Learn more":
+      - /url: /careers/cec84487-60f2-4216-a514-dcf190c86c1e
+      - generic: Implementation Manager
+      - generic: North America
+      - generic: Learn more
+    - link "Solutions Engineer, Europe London Learn more":
+      - /url: /careers/d37b3d76-3080-47f9-8a19-60505573112c
+      - generic: Solutions Engineer, Europe
+      - generic: London
+      - generic: Learn more
+    - link "GTM":
+      - /url: "#gtm"
+    - link "Analytics Engineer North America Learn more":
+      - /url: /careers/f272fc4a-91a7-4dcf-9cb5-3600ebaf14e1
+      - generic: Analytics Engineer
+      - generic: North America
+      - generic: Learn more
+    - link "Customer Success Manager, Growth North America Learn more":
+      - /url: /careers/26c77e48-b4ef-455d-a02c-3ef68fc6f9f9
+      - generic: Customer Success Manager, Growth
+      - generic: North America
+      - generic: Learn more
+    - link "Operations":
+      - /url: "#operations"
+    - link "Deal Desk North America Learn more":
+      - /url: /careers/1aa6f672-5917-49aa-b015-70ebff901923
+      - generic: Deal Desk
+      - generic: North America
+      - generic: Learn more
+    - link "Revenue Operations North America Learn more":
+      - /url: /careers/29aeb82d-f00e-4283-b332-057efd487d6f
+      - generic: Revenue Operations
+      - generic: North America
+      - generic: Learn more
+    - link "Magic":
+      - /url: "#magic"
+    - link "Design Engineer (Web & Brand) Europe, North America Learn more":
+      - /url: /careers/ea0b5868-6d7a-46fa-99d8-207cd19357a6
+      - generic: Design Engineer (Web & Brand)
+      - generic: Europe, North America
+      - generic: Learn more
+    - link "Production Designer Europe, North America Learn more":
+      - /url: /careers/5b9997fd-7507-4437-8fd7-14178c99ab5d
+      - generic: Production Designer
+      - generic: Europe, North America
+      - generic: Learn more
+    - link "Marketing":
+      - /url: "#marketing"
+    - link "Developer Relations Europe, North America Learn more":
+      - /url: /careers/62a4524c-75da-499e-b150-7f68ce9f2da3
+      - generic: Developer Relations
+      - generic: Europe, North America
+      - generic: Learn more
+    - link "Design":
+      - /url: "#design"
+    - link "Mobile Product Designer North America Learn more":
+      - /url: /careers/eac7f181-d658-4943-9430-51bae2bcd110
+      - generic: Mobile Product Designer
+      - generic: North America
+      - generic: Learn more
+    - link "Principal Product Designer Europe Learn more":
+      - /url: /careers/ba8a41d2-4198-481a-a7f4-e09c5364ff7f
+      - generic: Principal Product Designer
+      - generic: Europe
+      - generic: Learn more
+    - link "Senior / Staff Product Designer North America Learn more":
+      - /url: /careers/a264869e-f058-487c-ab7f-9b77dffa427c
+      - generic: Senior / Staff Product Designer
+      - generic: North America
+      - generic: Learn more
+    - link "Engineering":
+      - /url: "#engineering"
+    - link "Product Engineer North America Learn more":
+      - /url: /careers/0c7c2e26-0a98-42cf-a47c-9a3999fb513b
+      - generic: Product Engineer
+      - generic: North America
+      - generic: Learn more
+    - link "Senior / Staff Fullstack Engineer Europe, North America Learn more":
+      - /url: /careers/d3bc1ced-3ce4-4086-a050-555055dbb1ff
+      - generic: Senior / Staff Fullstack Engineer
+      - generic: Europe, North America
+      - generic: Learn more
+    - link "Senior / Staff Product Engineer Europe, North America Learn more":
+      - /url: /careers/069c4628-88d7-4e4d-b393-c996fc7f3076
+      - generic: Senior / Staff Product Engineer
+      - generic: Europe, North America
+      - generic: Learn more
+    - link "Senior / Staff Product Engineer, AI North America Learn more":
+      - /url: /careers/b4a7764e-c680-4bdf-9956-dc78f2ca94d5
+      - generic: Senior / Staff Product Engineer, AI
+      - generic: North America
+      - generic: Learn more
+    - link "Product Management":
+      - /url: "#product-management"
+    - link "Product Manager Europe, North America Learn more":
+      - /url: /careers/86abcce0-04b2-405c-9a8e-e0ca84813914
+      - generic: Product Manager
+      - generic: Europe, North America
+      - generic: Learn more
+    - link "Product Marketing Manager London, North America Learn more":
+      - /url: /careers/b3346acf-44be-4565-b1c0-10d482d3ad4e
+      - generic: Product Marketing Manager
+      - generic: London, North America
+      - generic: Learn more
+    - link "Customer Experience":
+      - /url: "#customer-experience"
+    - link "Product Support Specialist, Europe Europe Learn more":
+      - /url: /careers/820d0d5a-0930-475c-b494-23e18ad2aa68
+      - generic: Product Support Specialist, Europe
+      - generic: Europe
+      - generic: Learn more
+    - link "Product Support Specialist, Pacific/Mountain Time North America Learn more":
+      - /url: /careers/d062065e-05bb-42ce-a430-ec205695cc2e
+      - generic: Product Support Specialist, Pacific/Mountain Time
+      - generic: North America
+      - generic: Learn more
+    - link "People":
+      - /url: "#people"
+    - link "Recruiting & HR Operations Specialist North America Learn more":
+      - /url: /careers/2ef60eea-7cff-45c2-abf2-eaedc4ea89bd
+      - generic: Recruiting & HR Operations Specialist
+      - generic: North America
+      - generic: Learn more
+    - link "Talent":
+      - /url: "#talent"
+    - link "Technical Recruiter North America Learn more":
+      - /url: /careers/fb4b6076-b943-4d95-bb9b-a66aef8275f2
+      - generic: Technical Recruiter
+      - generic: North America
+      - generic: Learn more
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

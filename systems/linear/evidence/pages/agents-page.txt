@@ -1,0 +1,538 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - generic: Linear for Agents
+  - heading "Artificial colleagues. Natural collaboration." [level=1]:
+    - generic: Artificial colleagues.
+    - generic: Natural collaboration.
+  - paragraph:
+    - generic: Build and deploy AI agents that work alongside you as teammates. Work on complex tasks together or delegate entire issues end-to-end.
+  - button "Watch example":
+    - text: Watch example
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: what are the three most important customer requests around permissions? add them to the Access Controls project
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: Review today’s mobile triage and group the issues by what should happen next
+  - generic: Mobile Triage
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: What could delay the API launch?
+  - generic: API launch
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: how does notification grouping work today, and where should we change it?
+  - generic: Notification Grouping
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - generic: Cursor
+  - paragraph: add retry handling for failed image uploads described in this issue
+  - generic: ENG-2844
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "ChatPRD"
+  - generic: ChatPRD
+  - paragraph: review this issue, draft complete offline mode requirements, and break the work into sub-issues
+  - generic: ENG-2521
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: Fix the dimmed ride rows that never reset and open a PR
+  - generic: DRV-364
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: what are the three most important customer requests around permissions? add them to the Access Controls project
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: Review today’s mobile triage and group the issues by what should happen next
+  - generic: Mobile Triage
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: What could delay the API launch?
+  - generic: API launch
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: how does notification grouping work today, and where should we change it?
+  - generic: Notification Grouping
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - generic: Cursor
+  - paragraph: add retry handling for failed image uploads described in this issue
+  - generic: ENG-2844
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "ChatPRD"
+  - generic: ChatPRD
+  - paragraph: review this issue, draft complete offline mode requirements, and break the work into sub-issues
+  - generic: ENG-2521
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: Fix the dimmed ride rows that never reset and open a PR
+  - generic: DRV-364
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: what are the three most important customer requests around permissions? add them to the Access Controls project
+  - generic: Worked for 8 sec
+  - paragraph: "Three issues ranked by customer impact:"
+  - img "Urgent Priority"
+  - generic: ENG-2298
+  - generic: Add granular project permissions
+  - img "Medium Priority"
+  - generic: ENG-2647
+  - generic: Let guests access multiple teams
+  - img "High Priority"
+  - generic: ENG-2352
+  - generic: Create custom roles with scoped access
+  - paragraph:
+    - text: I’ve added them to
+    - generic: Access Controls
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: Review today’s mobile triage and group the issues by what should happen next
+  - generic: Mobile Triage
+  - generic: added to context
+  - generic: Worked for 12 sec
+  - paragraph: "Reviewed eight issues: two are ready for backlog, two need details, and four belong to iOS or Android."
+  - paragraph: Backlog · 2
+  - img "High Priority"
+  - generic: ENG-2521
+  - generic: Missing inbox status colors
+  - img "High Priority"
+  - generic: ENG-2364
+  - generic: Notifications after logout…
+  - paragraph: Needs information · 2
+  - img "No Priority"
+  - generic: ENG-2557
+  - generic: Deep links discard issue drafts
+  - img "No Priority"
+  - generic: ENG-2362
+  - generic: Open PRs from mobile diffs
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: What could delay the API launch?
+  - generic: API launch
+  - generic: added to context
+  - generic: Worked for 12 sec
+  - paragraph: Two issues put the July 8 launch at risk. Authentication testing is blocked, and the migration guide has no owner. I drafted a project update with recommended next steps.
+  - generic: API launch
+  - paragraph: At risk. Authentication testing is blocked by an unresolved API dependency, and the migration guide still has no owner. The July 8 launch is at risk unless both are resolved this week.
+  - paragraph: "Next steps:"
+  - text: Unblock
+  - generic: ENG-2557
+  - generic: Authentication testing
+  - text: Assign an owner to
+  - generic: ENG-2512
+  - generic: Migration guide
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: how does notification grouping work today, and where should we change it?
+  - generic: Notification Grouping
+  - generic: added to context
+  - generic: Worked for 2 min
+  - paragraph:
+    - text: Notifications are grouped by issue and delivery channel. Priority changes their order, but not their grouping. Update the grouping logic in
+    - generic: groupNotifications.ts
+    - text: and the list behavior in
+    - generic: InboxNotificationList.tsx
+    - text: .
+  - generic: Code references
+  - generic: groupNotifications.ts
+  - generic: InboxNotificationList.tsx
+  - paragraph: Reply…
+  - text: Skills
+  - generic: Cursor
+  - paragraph: add retry handling for failed image uploads described in this issue
+  - generic: ENG-2844
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "ChatPRD"
+  - generic: ChatPRD
+  - paragraph: review this issue, draft complete offline mode requirements, and break the work into sub-issues
+  - generic: ENG-2521
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: Fix the dimmed ride rows that never reset and open a PR
+  - generic: DRV-364
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: what are the three most important customer requests around permissions? add them to the Access Controls project
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: Review today’s mobile triage and group the issues by what should happen next
+  - generic: Mobile Triage
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: What could delay the API launch?
+  - generic: API launch
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: how does notification grouping work today, and where should we change it?
+  - generic: Notification Grouping
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - generic: Cursor
+  - paragraph: add retry handling for failed image uploads described in this issue
+  - generic: ENG-2844
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "ChatPRD"
+  - generic: ChatPRD
+  - paragraph: review this issue, draft complete offline mode requirements, and break the work into sub-issues
+  - generic: ENG-2521
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: Fix the dimmed ride rows that never reset and open a PR
+  - generic: DRV-364
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: what are the three most important customer requests around permissions? add them to the Access Controls project
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: Review today’s mobile triage and group the issues by what should happen next
+  - generic: Mobile Triage
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: What could delay the API launch?
+  - generic: API launch
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: how does notification grouping work today, and where should we change it?
+  - generic: Notification Grouping
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - generic: Cursor
+  - paragraph: add retry handling for failed image uploads described in this issue
+  - generic: ENG-2844
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "ChatPRD"
+  - generic: ChatPRD
+  - paragraph: review this issue, draft complete offline mode requirements, and break the work into sub-issues
+  - generic: ENG-2521
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - img "Linear"
+  - generic: Linear
+  - generic: Opus 5
+  - paragraph: Fix the dimmed ride rows that never reset and open a PR
+  - generic: DRV-364
+  - generic: added to context
+  - paragraph: Reply…
+  - text: Skills
+  - paragraph:
+    - generic: Answer questions instantly
+    - text: Answer questions instantly
+  - button "Previous panel":
+  - button "Next panel":
+  - heading "Delegate, automate, and orchestrate work" [level=2]
+  - paragraph:
+    - text: Choose from a variety of AI agents and start
+    - text: delegating work, from code generation to other
+    - text: technical tasks.
+  - main:
+    - figure "Fast, focused, and reliable. Just like the rest of your team. Agents are full members of your Linear workspace. Assign them to issues, add them to projects, or @mention them in comments.":
+      - heading "Fast, focused, and reliable. Just like the rest of your team." [level=3]
+      - paragraph: Agents are full members of your Linear workspace. Assign them to issues, add them to projects, or @mention them in comments.
+    - figure "Delegate issues, but not accountability When an issue gets delegated to an agent, the human user remains the primary assignee, while the agent is added as a contributor.":
+      - heading "Delegate issues, but not accountability" [level=3]
+      - paragraph: When an issue gets delegated to an agent, the human user remains the primary assignee, while the agent is added as a contributor.
+    - figure "Stay in the loop every step of the way Agents act on your behalf, but never in the dark. Understand every change they make at a glance, or inspect the underlying reasoning.":
+      - heading "Stay in the loop every step of the way" [level=3]
+      - paragraph: Agents act on your behalf, but never in the dark. Understand every change they make at a glance, or inspect the underlying reasoning.
+    - figure "Orchestrate tasks at scale Agents can work across multiple issues simultaneously. Select tasks, assign them to an agent, and watch work move forward.":
+      - heading "Orchestrate tasks at scale" [level=3]
+      - paragraph: Agents can work across multiple issues simultaneously. Select tasks, assign them to an agent, and watch work move forward.
+  - heading "Agents for every use case, ready to deploy" [level=2]
+  - paragraph: From coding to QA, bring specialized agents into your Linear workspace and start delegating work across your team's workflows.
+  - link "Explore all agents →":
+    - /url: /integrations/agents
+    - generic: Explore all agents
+    - generic: →
+  - main:
+    - figure "Linear Agent Triage issues, answer questions, and create follow-up work directly in Linear.":
+      - img "Linear logo"
+      - heading "Linear Agent" [level=3]
+      - paragraph: Triage issues, answer questions, and create follow-up work directly in Linear.
+    - link "Cursor Drafts branches from assigned issues, ready to finish in your editor.":
+      - /url: /integrations/cursor
+      - figure "Cursor Drafts branches from assigned issues, ready to finish in your editor.":
+        - heading "Cursor" [level=3]
+        - paragraph: Drafts branches from assigned issues, ready to finish in your editor.
+    - link "OpenAI Codex Coding agent that can take on entire tasks on your behalf, straight from Linear.":
+      - /url: /integrations/codex
+      - figure "OpenAI Codex Coding agent that can take on entire tasks on your behalf, straight from Linear.":
+        - heading "OpenAI Codex" [level=3]
+        - paragraph: Coding agent that can take on entire tasks on your behalf, straight from Linear.
+    - link "Devin Scopes issues and drafts PRs":
+      - /url: /integrations/devin
+      - paragraph:
+        - generic: Devin
+      - paragraph:
+        - text: Scopes issues
+        - text: and drafts PRs
+    - link "Sentry Runs root cause analysis and fixes issues with Seer":
+      - /url: /integrations/sentry
+      - paragraph:
+        - generic: Sentry
+      - paragraph:
+        - text: Runs root cause analysis
+        - text: and fixes issues with Seer
+    - link "ChatPRD Writes requirements, manages issues, and gives feedback":
+      - /url: /integrations/chatprd
+      - paragraph:
+        - generic: ChatPRD
+      - paragraph:
+        - text: Writes requirements, manages
+        - text: issues, and gives feedback
+    - link "Oz by Warp Answers questions, fixes bugs, and explores ideas":
+      - /url: /integrations/warp
+      - paragraph:
+        - generic: Oz by Warp
+      - paragraph:
+        - text: Answers questions, fixes
+        - text: bugs, and explores ideas
+    - link "Factory Codes, tests, and creates pull requests":
+      - /url: /integrations/factory
+      - paragraph:
+        - generic: Factory
+      - paragraph:
+        - text: Codes, tests, and
+        - text: creates pull requests
+    - link "Charlie Plans, implements, and reviews your TypeScript PRs":
+      - /url: /integrations/charlie
+      - paragraph:
+        - generic: Charlie
+      - paragraph:
+        - text: Plans, implements, and
+        - text: reviews your TypeScript PRs
+    - link "Ranger Enhance bug formatting and generate test plans":
+      - /url: /integrations/ranger
+      - paragraph:
+        - generic: Ranger
+      - paragraph:
+        - text: Enhance bug formatting
+        - text: and generate test plans
+    - link "Tembo Delegates work to any coding agent":
+      - /url: /integrations/tembo
+      - paragraph:
+        - generic: Tembo
+      - paragraph:
+        - text: Delegates work to
+        - text: any coding agent
+  - heading "Create your own agents" [level=2]
+  - paragraph:
+    - text: Build your own AI teammates with the Linear API.
+    - text: Keep them private or share with the Linear community.
+  - link "Start building":
+    - /url: /developers/agents
+  - link "Read guidelines":
+    - /url: /developers/aig
+  - img "An illustration showing multiple cursor icons moving towards a pointing hand, symbolizing the interaction between humans and AI agents":
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

@@ -1,0 +1,278 @@
+Window: "Acme: Preferences", App: Dia.
+0 standard window Acme: Preferences, ID: bigBrowserWindow_00000000-0000-0000-0000-000000000000, Secondary Actions: Raise
+	1 HTML content Preferences, URL: linear.app/acme/settings/account/preferences
+		2 container
+			3 link Skip to content, Value: linear.app/acme/settings/teams/COR#skip-nav
+			4 container
+				5 container
+					6 container
+						7 link Back to app, Value: linear.app/acme/team/COR/overview
+						8 container Search settings
+							9 container Search…
+						10 heading Personal
+							11 text Personal
+						12 link Preferences, Value: linear.app/acme/settings/account/preferences
+						13 link Profile, Value: linear.app/acme/settings/account/profile
+						14 link Notifications, Value: linear.app/acme/settings/account/notifications
+						15 link Code & reviews, Value: linear.app/acme/settings/account/code-and-reviews
+						16 link Security & access, Value: linear.app/acme/settings/account/security
+						17 link Connected accounts, Value: linear.app/acme/settings/account/connections
+						18 link Agent personalization, Value: linear.app/acme/settings/account/agents
+						19 heading Issues
+							20 text Issues
+						21 link Labels, Value: linear.app/acme/settings/issue-labels
+						22 link Templates, Value: linear.app/acme/settings/issue-templates
+						23 link SLAs, Value: linear.app/acme/settings/sla
+						24 heading Projects
+							25 text Projects
+						26 link Labels, Value: linear.app/acme/settings/project-labels
+						27 link Templates, Value: linear.app/acme/settings/project-templates
+						28 link Statuses, Value: linear.app/acme/settings/project-statuses
+						29 link Updates, Value: linear.app/acme/settings/project-updates
+						30 heading Features
+							31 text Features
+						32 link AI & Agents, Value: linear.app/acme/settings/ai
+						33 link Loops, Value: linear.app/acme/settings/loops
+						34 link Initiatives, Value: linear.app/acme/settings/initiatives
+						35 link Documents, Value: linear.app/acme/settings/documents
+						36 link Customer requests, Value: linear.app/acme/settings/customer-requests
+						37 link Releases, Value: linear.app/acme/settings/releases
+						38 link Pulse, Value: linear.app/acme/settings/pulse
+						39 link Asks, Value: linear.app/acme/settings/asks
+						40 link Emojis, Value: linear.app/acme/settings/emojis
+						41 link Integrations, Value: linear.app/acme/settings/integrations
+						42 heading Administration
+							43 text Administration
+						44 link Workspace, Value: linear.app/acme/settings/workspace
+						45 link Teams, Value: linear.app/acme/settings/teams
+						46 link Members, Value: linear.app/acme/settings/members
+						47 link Security, Value: linear.app/acme/settings/security
+						48 link API, Value: linear.app/acme/settings/api
+						49 link Applications, Value: linear.app/acme/settings/applications
+						50 link Billing, Value: linear.app/acme/settings/billing
+						51 link Usage & limits, Value: linear.app/acme/settings/usage
+						52 link Import & export, Value: linear.app/acme/settings/import-export
+						53 heading Your teams
+							54 text Your teams
+						55 link Core, Value: linear.app/acme/settings/teams/COR
+						56 container Join or create a team
+							57 text Join or create a team
+					58 container
+						59 button View changelog
+						60 text What’s new Loops for product management
+						61 button Collapse into help menu
+				62 container
+					63 text Preferences
+					64 container General
+						65 heading General
+							66 text General
+						67 content list
+							68 container
+								69 text Default home view Select which view to display when launching Linear
+								70 combo box (settable) Default home view, Value: Linear Agent (default)
+									71 text Linear Agent
+									72 text  (default)
+							73 container
+								74 text Display names Select how names are displayed in the Linear interface
+								75 combo box (settable) Display names, Value: Full name
+									76 text Full name
+							77 container
+								78 text First day of the week Used for date pickers
+								79 combo box (settable) First day of the week, Value: Sunday
+									80 text Sunday
+							81 container
+								82 text Strings like  :)  will be converted to  🙂
+								83 checkbox Convert text emoticons into emojis
+							84 container
+								85 text Send comments on… Choose which key press is used to submit comments
+								86 combo box (settable) Send comments on…, Value: Enter
+									87 text Enter
+					88 container Interface and theme
+						89 heading Interface and theme
+							90 text Interface and theme
+						91 content list
+							92 container
+								93 text App sidebar Customize sidebar item visibility, ordering, and badge style
+								94 button Customize sidebar
+							95 container
+								96 text Font size Adjust the size of text across the app
+								97 combo box (settable) Font size, Value: Default
+									98 text Default
+							99 container
+								100 text Change the cursor to a pointer when hovering over any interactive elements
+								101 checkbox Use pointer cursors
+							102 container
+								103 text Always underline links in text content
+								104 checkbox Underline links
+							105 container
+								106 text When enabled, GIFs and animated emojis will be static by default and animate only on hover.
+								107 checkbox Disable animated images & emoji
+						108 container
+							109 container
+								110 text Interface theme Select or customize your interface color scheme
+								111 combo box (settable) Interface theme, Value: System preference
+									112 text System preference
+							113 content list
+								114 container
+									115 text Light Theme to use for light system appearance
+									116 combo box (settable) Light
+										117 text Light
+								118 container
+									119 text Dark Theme to use for dark system appearance
+									120 combo box (settable) Dark
+										121 text Dark
+						122 container
+							123 content list
+								124 container
+									125 text Code theme Matches your interface theme unless overridden
+									126 combo box (settable) Code theme, Value: Linear Dark
+										127 text Linear Dark
+								128 container
+									129 text Font
+									130 button 12px, Regular, Default
+							131 combo box (settable) Preview language, Value: TypeScript
+								132 text TypeScript
+							133 container
+								134 container
+									135 text 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+								136 container
+									137 text const config = {
+								138 container
+									139 text apiUrl :  "https://api.example.com" ,
+								140 container
+									141 text timeout :  5000 ,
+								142 container
+									143 text debug :  true ,
+								144 container
+									145 text headers :  { "Content-Type" :  "application/json" } ,
+								146 container
+									147 text } ;
+								148 container
+									149 text async function fetchUser ( id :  string ) :  Promise < User > {
+								150 container
+									151 text const url = ` ${ config . apiUrl } /users/ ${ id } ` ;
+								152 container
+									153 text async function fetchUser ( id :  string ) :  Promise < User | null > {
+								154 container
+									155 text const url = ` ${ config . apiUrl } / v2/ users/ ${ id } ` ;
+								156 container
+									157 text const res = await fetch ( url ) ;
+								158 container
+									159 text return res . ok  ? res . json () :  null ;
+								160 text }
+								161 container
+									162 text interface User { id :  string ; name :  string ; email :  string ; }
+								163 container
+									164 text class ApiClient {
+								165 container
+									166 text private baseUrl :  string ;
+								167 container
+									168 text constructor ( baseUrl :  string ) {
+								169 container
+									170 text this . baseUrl = baseUrl ;
+								171 container
+									172 text }
+								173 container
+									174 text async get < T > ( path :  string ) :  Promise < T > {
+								175 container
+									176 text const response = await fetch ( ` ${ this . baseUrl } / ${ path } ` ) ;
+								177 container
+									178 text const response = await fetch ( ` ${ this . baseUrl } / v2/ ${ path } ` ) ;
+								179 container
+									180 text if ( ! response . ok ) {
+								181 container
+									182 text throw new Error ( `HTTP  ${ response . status } ` ) ;
+								183 container
+									184 text }
+								185 container
+									186 text return response . json () ;
+								187 container
+									188 text }
+								189 container
+									190 text async post < T , R > ( path :  string , body :  T ) :  Promise < R > {
+								191 container
+									192 text const response = await fetch ( ` ${ this . baseUrl } / ${ path } ` , {
+								193 container
+									194 text const response = await fetch ( ` ${ this . baseUrl } / v2/ ${ path } ` , {
+								195 container
+									196 text method :  'POST' ,
+								197 container
+									198 text headers :  { 'Content-Type' :  'application/json' } ,
+								199 container
+									200 text body :  JSON . stringify ( body ) ,
+								201 container
+									202 text }) ;
+								203 container
+									204 text return response . json () ;
+								205 container
+									206 text }
+								207 text }
+								208 button
+					209 container Desktop application
+						210 heading Desktop application
+							211 text Desktop application
+						212 content list
+							213 container
+								214 text Automatically open links in desktop app when possible
+								215 checkbox Open in desktop app
+					216 container Automations and workflows
+						217 heading Automations and workflows
+							218 text Automations and workflows
+						219 content list
+							220 container
+								221 text When creating new issues, always assign them to yourself by default
+								222 checkbox Auto-assign to self
+							223 container
+								224 text When you move an unassigned issue to started, it will be automatically assigned to you
+								225 checkbox On move to started status, assign to yourself
+				226 container
+					227 button Agent
+					228 button Chat history
+			229 container Notifications alt+T
+			230 text Navigated to Preferences
+	231 container navigationBar
+		232 unknown navigationBarBackButton
+		233 unknown navigationBarReloadOrStopLoadingButton
+		234 button
+		235 collection
+		236 unknown navigationBarAssistantBar
+			237 unknown
+				238 scroll area
+					239 text entry area Value: linear.app / Preferences, ID: navigationBarAssistantBarTextField
+	240 collection
+	241 text https://linear.app/acme/settings/account/preferences
+	242 scroll area Secondary Actions: Scroll Up, Scroll Down
+		243 collection (disabled)
+			244 unknown acme-org/app, ID: tab
+				245 unknown
+					246 image
+					247 text acme-org/app
+			248 unknown Preferences, ID: tab
+				249 unknown
+					250 image
+					251 text Preferences
+			252 unknown
+				253 button
+		254 scroll bar (disabled) 0
+	255 close button
+	256 minimize button
+	257 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	258 button
+	259 button Chats
+	260 button
+	261 unknown OF
+	262 unknown Acme
+	263 unknown FT
+264 menu bar
+	265 Dia
+	266 File
+	267 Edit
+	268 View
+	269 Tabs
+	270 Bookmarks
+	271 History
+	272 Extensions
+	273 Window
+	274 Help
+
+The focused UI element is 12 link Preferences, Value: linear.app/acme/settings/account/preferences

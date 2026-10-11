@@ -1,0 +1,164 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "How can we help?" [level=1]
+  - paragraph: Get in touch with our sales and support teams for demos, onboarding support, or product questions.
+  - navigation:
+    - list:
+      - article:
+        - link "Sales Speak to our sales team about plans, pricing, enterprise contracts, or request a demo.":
+          - /url: /contact/sales
+          - generic: Sales
+          - generic: Speak to our sales team about plans, pricing, enterprise contracts, or request a demo.
+      - article:
+        - link "Support We are here to help. Ask us product questions, report problems, or leave feedback.":
+          - /url: /contact/support
+          - generic: Support
+          - generic: We are here to help. Ask us product questions, report problems, or leave feedback.
+  - generic: Get in touch
+  - article:
+    - heading "Community" [level=4]:
+      - generic: Community
+    - paragraph: Connect with Linear users in Slack
+    - link "Join Slack↗":
+      - /url: /join-slack
+      - generic: Join Slack↗
+  - article:
+    - heading "General communication" [level=4]:
+      - generic: General communication
+    - paragraph: For other questions, email us
+    - button "hello@linear.app+":
+      - generic: hello@linear.app+
+  - article:
+    - heading "Documentation" [level=4]:
+      - generic: Documentation
+    - paragraph: Features, integrations, and usage
+    - link "Linear Docs→":
+      - /url: /docs
+      - generic: Linear Docs→
+  - article:
+    - heading "Developers" [level=4]:
+      - generic: Developers
+    - paragraph: Extend Linear with our API and SDK
+    - link "Linear API→":
+      - /url: /developers
+      - generic: Linear API→
+  - generic: System
+  - article:
+    - heading "All systems operational" [level=4]:
+      - generic: All systems operational
+    - link "Check status↗":
+      - /url: https://linearstatus.com
+      - generic: Check status↗
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

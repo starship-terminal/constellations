@@ -1,0 +1,639 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "Pricing" [level=1]
+  - heading "Free" [level=3]
+  - generic: $0
+  - generic: Free for everyone
+  - list:
+    - generic: Unlimited members
+    - generic: 2 teams
+    - generic: 250 issues
+    - generic: Agent platform
+    - generic: Linear Agent
+  - link "Get started":
+    - /url: /signup
+  - heading "Basic" [level=3]
+  - generic: $10 per user/month
+  - checkbox "Billed yearly" [checked]
+  - generic: Billed yearly
+  - list:
+    - generic: All Free features +
+    - generic: 5 teams
+    - generic: Unlimited issues
+    - generic: Unlimited file uploads
+    - generic: Admin roles
+  - link "Get started":
+    - /url: /signup
+  - heading "Business" [level=3]
+  - generic: $16 per user/month
+  - checkbox "Billed yearly" [checked]
+  - generic: Billed yearly
+  - list:
+    - generic: All Basic features +
+    - generic: Unlimited teams
+    - generic: Private teams and guests
+    - generic: Triage Intelligence
+    - generic: Loops
+    - generic: Code Intelligence
+    - generic: Linear Insights
+    - generic: Linear Asks
+    - generic: Zendesk and Intercom integrations
+  - link "Get started":
+    - /url: /signup
+  - link "Contact sales":
+    - /url: /contact/sales
+  - heading "Enterprise" [level=3]
+  - generic: Custom
+  - generic: Annual billing only
+  - list:
+    - generic: All Business features +
+    - generic: Invoice/PO billing
+    - generic: SAML and SCIM
+    - generic: Granular admin controls
+    - generic: Enterprise-grade security
+    - generic: Advanced org modeling
+    - generic: Migration & onboarding support
+    - generic: Priority support
+    - generic: Account management
+  - link "Contact sales":
+    - /url: /contact/sales
+  - paragraph:
+    - text: Trusted by more than
+    - strong: 40,000
+    - text: companies
+  - link:
+    - /url: /customers
+    - list:
+  - link "Customer stories →":
+    - /url: /customers
+    - generic: Customer stories
+    - generic: →
+  - table:
+    - rowgroup:
+      - row "Features Free Basic Business Enterprise":
+        - cell "Features"
+        - columnheader "Free":
+          - generic: Free
+        - columnheader "Basic":
+          - generic: Basic
+        - columnheader "Business":
+          - generic: Business
+        - columnheader "Enterprise":
+          - generic: Enterprise
+    - rowgroup:
+      - row "Members Unlimited Unlimited Unlimited Unlimited":
+        - cell "Members":
+          - generic: Members
+        - cell "Unlimited":
+          - generic: Unlimited
+        - cell "Unlimited":
+          - generic: Unlimited
+        - cell "Unlimited":
+          - generic: Unlimited
+        - cell "Unlimited":
+          - generic: Unlimited
+      - row "File upload 10MB Unlimited Unlimited Unlimited":
+        - cell "File upload":
+          - generic: File upload
+        - cell "10MB":
+          - generic: 10MB
+        - cell "Unlimited":
+          - generic: Unlimited
+        - cell "Unlimited":
+          - generic: Unlimited
+        - cell "Unlimited":
+          - generic: Unlimited
+      - row "Issues 250 issues Unlimited Unlimited Unlimited":
+        - cell "Issues":
+          - generic: Issues
+        - cell "250 issues":
+          - generic: 250 issues
+        - cell "Unlimited":
+          - generic: Unlimited
+        - cell "Unlimited":
+          - generic: Unlimited
+        - cell "Unlimited":
+          - generic: Unlimited
+      - row "Teams 2 teams 5 teams Unlimited Unlimited":
+        - cell "Teams":
+          - generic: Teams
+        - cell "2 teams":
+          - generic: 2 teams
+        - cell "5 teams":
+          - generic: 5 teams
+        - cell "Unlimited":
+          - generic: Unlimited
+        - cell "Unlimited":
+          - generic: Unlimited
+      - generic: Core
+      - row "Issues, projects, cycles, initiatives":
+        - cell "Issues, projects, cycles, initiatives":
+          - generic: Issues, projects, cycles, initiatives
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Customer requests":
+        - cell "Customer requests":
+          - generic: Customer requests
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "API and webhook access":
+        - cell "API and webhook access":
+          - generic: API and webhook access
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Import and export":
+        - cell "Import and export":
+          - generic: Import and export
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Triage":
+        - cell "Triage":
+          - generic: Triage
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Pulse":
+        - cell "Pulse":
+          - generic: Pulse
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Issue sync":
+        - cell "Issue sync":
+          - generic: Issue sync
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Diffs":
+        - cell "Diffs":
+          - generic: Diffs
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Guided reviews":
+        - cell "Guided reviews":
+          - generic: Guided reviews
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Issue SLAs":
+        - cell "Issue SLAs":
+          - generic: Issue SLAs
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Triage responsibility":
+        - cell "Triage responsibility":
+          - generic: Triage responsibility
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Triage rules":
+        - cell "Triage rules":
+          - generic: Triage rules
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Releases 15 pipelines Unlimited":
+        - cell "Releases":
+          - generic: Releases
+        - cell:
+        - cell:
+        - cell "15 pipelines":
+          - generic: 15 pipelines
+        - cell "Unlimited":
+          - generic: Unlimited
+      - row "Sub-initiatives":
+        - cell "Sub-initiatives":
+          - generic: Sub-initiatives
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - generic: AI and agent workflows
+      - row "Agent platform":
+        - cell "Agent platform":
+          - generic: Agent platform
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "MCP access":
+        - cell "MCP access":
+          - generic: MCP access
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Linear Agent":
+        - cell "Linear Agent":
+          - generic: Linear Agent
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Coding sessions**":
+        - cell "Coding sessions**":
+          - generic: Coding sessions**
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Loops**":
+        - cell "Loops**":
+          - generic: Loops**
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Code Intelligence":
+        - cell "Code Intelligence":
+          - generic: Code Intelligence
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Triage Intelligence":
+        - cell "Triage Intelligence":
+          - generic: Triage Intelligence
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - generic: Integrations
+      - row "Integrations":
+        - cell "Integrations":
+          - generic: Integrations
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Microsoft Teams integration Multiple tenants":
+        - cell "Microsoft Teams integration":
+          - generic: Microsoft Teams integration
+        - cell:
+        - cell:
+        - cell:
+        - cell "Multiple tenants":
+          - generic: Multiple tenants
+      - row "Support integrations":
+        - cell "Support integrations":
+          - generic: Support integrations
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Salesforce integration Add-on":
+        - cell "Salesforce integration Add-on":
+          - generic: Salesforce integration
+          - generic: Add-on
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - generic: Team management
+      - row "Sub-teams 1 level 5 levels":
+        - cell "Sub-teams":
+          - generic: Sub-teams
+        - cell:
+        - cell:
+        - cell "1 level":
+          - generic: 1 level
+        - cell "5 levels":
+          - generic: 5 levels
+      - row "Private teams":
+        - cell "Private teams":
+          - generic: Private teams
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Guest accounts":
+        - cell "Guest accounts":
+          - generic: Guest accounts
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - generic: Analytics & Reporting
+      - row "Progress reports":
+        - cell "Progress reports":
+          - generic: Progress reports
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Insights":
+        - cell "Insights":
+          - generic: Insights
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Dashboards":
+        - cell "Dashboards":
+          - generic: Dashboards
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - generic: Linear Asks
+      - row "Slack intake":
+        - cell "Slack intake":
+          - generic: Slack intake
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Email intake":
+        - cell "Email intake":
+          - generic: Email intake
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Web forms":
+        - cell "Web forms":
+          - generic: Web forms
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Multiple Slack workspaces":
+        - cell "Multiple Slack workspaces":
+          - generic: Multiple Slack workspaces
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Private Slack channels":
+        - cell "Private Slack channels":
+          - generic: Private Slack channels
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Per-channel configurations":
+        - cell "Per-channel configurations":
+          - generic: Per-channel configurations
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - generic: Security
+      - row "SSO Google Google Google Google + SAML":
+        - cell "SSO":
+          - generic: SSO
+        - cell "Google":
+          - generic: Google
+        - cell "Google":
+          - generic: Google
+        - cell "Google":
+          - generic: Google
+        - cell "Google + SAML":
+          - generic: Google + SAML
+      - row "Admin roles":
+        - cell "Admin roles":
+          - generic: Admin roles
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Team owners":
+        - cell "Team owners":
+          - generic: Team owners
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Advanced authentication":
+        - cell "Advanced authentication":
+          - generic: Advanced authentication
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "SCIM provisioning":
+        - cell "SCIM provisioning":
+          - generic: SCIM provisioning
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "IP restrictions":
+        - cell "IP restrictions":
+          - generic: IP restrictions
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Domain claiming":
+        - cell "Domain claiming":
+          - generic: Domain claiming
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Audit log":
+        - cell "Audit log":
+          - generic: Audit log
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Third-party app management":
+        - cell "Third-party app management":
+          - generic: Third-party app management
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "HIPAA compliance":
+        - cell "HIPAA compliance":
+          - generic: HIPAA compliance
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - generic: Support
+      - row "Priority support":
+        - cell "Priority support":
+          - generic: Priority support
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Account manager":
+        - cell "Account manager":
+          - generic: Account manager
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Custom terms":
+        - cell "Custom terms":
+          - generic: Custom terms
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+      - row "Uptime SLA":
+        - cell "Uptime SLA":
+          - generic: Uptime SLA
+        - cell:
+        - cell:
+        - cell:
+        - cell:
+  - row "Get started Get started Get started or contact sales Contact sales":
+    - cell
+    - cell "Get started":
+      - link "Get started":
+        - /url: /signup
+    - cell "Get started":
+      - link "Get started":
+        - /url: /signup
+    - cell "Get started or contact sales":
+      - link "Get started":
+        - /url: /signup
+      - text: or
+      - link "contact sales":
+        - /url: /contact/sales
+    - cell "Contact sales":
+      - link "Contact sales":
+        - /url: /contact/sales
+  - text: "** Requires AI credits"
+  - link "View docs":
+    - /url: /docs/ai-credits
+    - text: View docs
+  - heading "Built for the future. Available today." [level=2]
+  - button "Get started"
+  - button "Contact sales"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

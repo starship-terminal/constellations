@@ -1,0 +1,179 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - generic: Brand
+  - heading "Linear Brand Guidelines" [level=1]
+  - heading "Resources for presenting the Linear brand consistently and professionally." [level=2]
+  - link "Download Brand Assets":
+    - /url: https://static.linear.app/design-assets/Linear-Brand-Assets.zip?v=3
+  - heading "Naming" [level=3]:
+    - link "Naming":
+      - /url: "#Naming"
+  - paragraph: “Linear” is a single word, always spelled with a capital “L”. It is the brand name of both our company and our application (not “Linear app”). When referring to dedicated releases from Linear, we ask that you capitalize them as proper nouns (e.g. “Linear Method”).
+  - heading "Usage" [level=3]:
+    - link "Usage":
+      - /url: "#Usage"
+  - paragraph: Provide plenty of space around Linear assets. Make them big or make them small, but give them room to breathe. They shouldn’t feel cramped or cluttered.
+  - text: This is a friendly reminder that the provided graphics are proprietary and protected under intellectual property laws. Do not alter these files in any way, display these graphics in a way that implies a relationship, affiliation, or endorsement by Linear of your product, service, or business. Do not use these graphics as part of your own product, business, or service’s name, or combine these graphics with any other graphics without written consent from Linear.
+  - link "Get in touch":
+    - /url: mailto:hello@linear.app
+  - text: if you have questions.
+  - heading "Linear wordmark" [level=3]:
+    - link "Linear wordmark":
+      - /url: "#Linear-wordmark"
+  - paragraph: The Linear wordmark should be used in all references to Linear as space allows. Monochrome usage is preferred with the brand colors below.
+  - button "Download":
+    - button "Download":
+      - text: Download
+  - button "Download":
+    - button "Download":
+      - text: Download
+  - heading "Linear logo" [level=3]:
+    - link "Linear logo":
+      - /url: "#Linear-logo"
+  - paragraph: For tight layouts or logo-only grids, the Linear logomark is a concise way to refer to Linear. Use with good judgment for your audience, as the Linear wordmark has stronger brand recognition.
+  - button "Download":
+    - button "Download":
+      - text: Download
+  - button "Download":
+    - button "Download":
+      - text: Download
+  - heading "Linear icon" [level=3]:
+    - link "Linear icon":
+      - /url: "#Linear-icon"
+  - paragraph: When referring to Linear as a company, such as on social media, or where a “chip” design is required, it is acceptable to use this stylized icon with an appropriate corner radius.
+  - button "Download":
+    - button "Download":
+      - text: Download
+  - heading "Colors" [level=3]:
+    - link "Colors":
+      - /url: "#Colors"
+  - paragraph: Comfortable against light and dark backgrounds, Linear’s primary brand color is a subtle desaturated blue. The following light and dark accents are preferred for monochrome wordmark usage, while the brand color is typically reserved for backgrounds.
+  - 'button "Mercury White RGB 244, 245, 248 #F4F5F8 Copy"':
+    - generic: Mercury White
+    - generic: RGB 244, 245, 248
+    - generic: "#F4F5F8"
+    - button "Copy":
+      - text: Copy
+  - 'button "Nordic Gray RGB 35, 35, 38 #222326 Copy"':
+    - generic: Nordic Gray
+    - generic: RGB 35, 35, 38
+    - generic: "#222326"
+    - button "Copy":
+      - text: Copy
+  - text: The Linear brand is dynamic and ever-evolving. Want to help us shape its next direction?
+  - link "Design at Linear":
+    - /url: /careers
+  - text: .
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

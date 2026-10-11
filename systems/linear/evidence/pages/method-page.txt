@@ -1,0 +1,168 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - generic: The Linear Method
+  - heading "Practices for building" [level=1]
+  - paragraph: There is a lost art of building true quality software. To bring back the right focus, here are the foundational ideas Linear is built on.
+  - generic: Introduction
+  - list:
+    - link "Principles & Practices 1.1":
+      - /url: /method/introduction
+      - text: Principles & Practices
+      - generic: "1.1"
+  - generic: Direction
+  - list:
+    - link "Set the product direction 2.1":
+      - /url: /method/product-direction
+      - text: Set the product direction
+      - generic: "2.1"
+    - link "Set useful goals 2.2":
+      - /url: /method/set-useful-goals
+      - text: Set useful goals
+      - generic: "2.2"
+    - link "Prioritize enablers and blockers 2.3":
+      - /url: /method/prioritize-enablers-and-blockers
+      - text: Prioritize enablers and blockers
+      - generic: "2.3"
+    - link "Scope projects down 2.4":
+      - /url: /method/scope-projects
+      - text: Scope projects down
+      - generic: "2.4"
+  - generic: Building
+  - list:
+    - link "Generate momentum 3.1":
+      - /url: /method/building-with-momentum
+      - text: Generate momentum
+      - generic: "3.1"
+    - link "Write issues not user stories 3.2":
+      - /url: /method/write-issues-not-user-stories
+      - text: Write issues not user stories
+      - generic: "3.2"
+    - link "Manage design projects 3.3":
+      - /url: /method/manage-design-projects
+      - text: Manage design projects
+      - generic: "3.3"
+    - link "Build with users 3.4":
+      - /url: /method/build-with-users
+      - text: Build with users
+      - generic: "3.4"
+    - link "Launch and keep launching 3.5":
+      - /url: /method/launching
+      - text: Launch and keep launching
+      - generic: "3.5"
+    - link "Build in public 3.6":
+      - /url: /method/build-in-public
+      - text: Build in public
+      - generic: "3.6"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

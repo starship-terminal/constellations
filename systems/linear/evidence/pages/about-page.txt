@@ -1,0 +1,413 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "Building tools for the next era of product development" [level=1]:
+    - text: Building tools for the next
+    - text: era of product development
+  - paragraph: AI is fundamentally changing how products get built. We are shaping what comes next.
+  - region "Media player":
+    - img "Linear logo"
+    - button "Play (keyboard shortcut k)":
+    - button "Mute (keyboard shortcut m)":
+    - timer:
+      - generic: Elapsed
+      - text: 00:00
+    - slider "Seek slider" [disabled]
+    - timer:
+      - generic: Remaining time unknown
+      - text: −--:--
+    - combobox "Change playback rate (keyboard shortcut > or <)":
+      - option "0.25×"
+      - option "0.5×"
+      - option "0.75×"
+      - option "1×" [selected]
+      - option "1.25×"
+      - option "1.5×"
+      - option "1.75×"
+      - option "2×"
+    - button "Full screen (keyboard shortcut f)":
+  - heading "A new species of product tool" [level=2]:
+    - text: A new species of
+    - text: product tool
+  - paragraph: Software development is at an inflection point. Artificial intelligence is fundamentally reshaping how products are built.
+  - paragraph: AI increases what teams can create, but it also raises the bar for clarity and coordination. At Linear, we are building the tools for this new era of product development. A purpose-built system where teams and agents operate together in a shared, structured environment.
+  - paragraph: Founded in 2019, Linear has become the tool of choice for more than 40,000 companies (including OpenAI, Coinbase, and Ramp) to plan, build, and ship their products.
+  - paragraph: Our team is distributed across North America and Europe, and we’re continuing to grow internationally. What unites us is relentless focus, fast execution, and a deep care for software craftsmanship.
+  - heading "Meet the team behind Linear" [level=2]:
+    - text: Meet the team
+    - text: behind Linear
+  - paragraph: We are designers and engineers. Problem solvers and storytellers. We are a diverse team of individuals, all makers at heart.
+  - link "We’re hiring →":
+    - /url: /careers
+    - generic: We’re hiring →
+  - link "Karri Saarinen Karri Saarinen Co-founder, CEO":
+    - /url: https://www.linkedin.com/in/karrisaarinen/
+    - img "Karri Saarinen"
+    - generic: Karri Saarinen
+    - generic: Co-founder, CEO
+  - link "Jori Lallo Jori Lallo Co-founder, CPO":
+    - /url: https://www.linkedin.com/in/jorilallo/
+    - img "Jori Lallo"
+    - generic: Jori Lallo
+    - generic: Co-founder, CPO
+  - link "Tuomas Artman Tuomas Artman Co-founder, CTO":
+    - /url: https://www.linkedin.com/in/tuomasartman/
+    - img "Tuomas Artman"
+    - generic: Tuomas Artman
+    - generic: Co-founder, CTO
+  - link "Cristina Cordova Cristina Cordova COO":
+    - /url: https://www.linkedin.com/in/cristinajcordova/
+    - img "Cristina Cordova"
+    - generic: Cristina Cordova
+    - generic: COO
+  - link "Tom Moor Tom Moor Head of Engineering":
+    - /url: https://www.linkedin.com/in/tom-moor-b6213b1ba/
+    - img "Tom Moor"
+    - generic: Tom Moor
+    - generic: Head of Engineering
+  - link "Casey Bertenthal Casey Bertenthal Head of Sales":
+    - /url: https://www.linkedin.com/in/casey-bertenthal/
+    - img "Casey Bertenthal"
+    - generic: Casey Bertenthal
+    - generic: Head of Sales
+  - link "Jamie Finnigan Jamie Finnigan Head of Security":
+    - /url: https://www.linkedin.com/in/finnigja/
+    - img "Jamie Finnigan"
+    - generic: Jamie Finnigan
+    - generic: Head of Security
+  - link "Conor Muirhead Conor Muirhead Head of Product Design":
+    - /url: https://www.linkedin.com/in/conormuirhead/
+    - img "Conor Muirhead"
+    - generic: Conor Muirhead
+    - generic: Head of Product Design
+  - list:
+    - listitem: Tim Qi
+    - listitem: Matthew Roberts
+    - listitem: Matthijs Wolting
+    - listitem: Josh Pyles
+    - listitem: Nathalie Alex
+    - listitem: Dominic Wong
+    - listitem: Meg Wayne
+    - listitem: Mingjie Jiang
+    - listitem: Nick Wijmenga
+    - listitem: Sarita Zhu
+    - listitem: Daniel Zhang
+    - listitem: Michelle Fung
+    - listitem: Sam Marley
+    - listitem: Komil Rehill
+    - listitem: Alan Doyle
+    - listitem: Alex Suevalov
+    - listitem: Anthony Vidalez
+    - listitem: Saneel Prabhu
+    - listitem: Sam Candanedo
+    - listitem: Max McKone
+    - listitem: Joseph Yoo
+    - listitem: Igor Sechyn
+    - listitem: Axel Niklasson Yun
+    - listitem: Davina Baker
+    - listitem: Jon Phey
+    - listitem: Duong Vu
+    - listitem: Rhea Purohit
+    - listitem: Mufeez Amjad
+    - listitem: Tony Wooster
+    - listitem: Ben Kinney
+    - listitem: Simone Jacobs
+    - listitem: Zoe Wellner
+    - listitem: Bojan Joveski
+    - listitem: Ben Light
+    - listitem: Ben Cooper
+    - listitem: Calum Webb
+    - listitem: Matthew Cunningham
+    - listitem: Matthew Flairty
+    - listitem: Yann-Edern Gillet
+    - listitem: Paul Macgregor
+    - listitem: Emiel Janson
+    - listitem: Dylan Hamilton
+    - listitem: Eitan Meisels
+    - listitem: Amelia Cellar
+    - listitem: Paco Coursey
+    - listitem: Kristin Boyer
+    - listitem: Peter Travers
+    - listitem: Maciek Pekala
+    - listitem: Skyline Lau
+    - listitem: Jesse Hartheimer
+    - listitem: Aaron Quinn
+    - listitem: Lena Vu
+    - listitem: Robb Böhnke
+    - listitem: Jacob Shumway
+    - listitem: Emil Kowalski
+    - listitem: Hilary Hobel
+    - listitem: Sean McGivern
+    - listitem: Andreas Eldh
+    - listitem: Allie Hughes
+    - listitem: Uros Smolnik
+    - listitem: Stephanie Yung
+    - listitem: Philip Siu
+    - listitem: Lauren Grant
+    - listitem: Mariah Bardo
+    - listitem: Romain Cascino
+    - listitem: Melissa Ross
+    - listitem: Maya Nedeljković Batić
+    - listitem: Sean Callahan
+    - listitem: Liam O’Connor
+    - listitem: Sarah Barnekow
+    - listitem: Adrien Griveau
+    - listitem: Brando Roche
+    - listitem: Katie Royer
+    - listitem: Bryan Stern
+    - listitem: Alexandra Lapinsky Wilson
+    - listitem: Tyler Black
+    - listitem: Lukas Eipert
+    - listitem: Daniel Warner Smith
+    - listitem: Sabin Roman
+    - listitem: Luke Schneider
+    - listitem: Craig Lewis
+    - listitem: Mac Watrous
+    - listitem: Angela King
+    - listitem: Ryan Delaney
+    - listitem: Maxime Heckel
+    - listitem: Cormac Flynn
+    - listitem: Emma Cox
+    - listitem: Adam Hutchinson
+    - listitem: TJ Murphy
+    - listitem: Vanessa Chung
+    - listitem: Steven Molchanov
+    - listitem: Chris Burke
+    - listitem: Devyn Galligher
+    - listitem: Zachary Chukwumah
+    - listitem: Brendan Carney
+    - listitem: Ian Guerin
+    - listitem: Jasdev Singh
+    - listitem: Angela Hottinger
+    - listitem: Marlene Guardado
+    - listitem: Emily Brody
+    - listitem: Marty McGettigan
+    - listitem: Megan Coale
+    - listitem: Nick Blackburn
+    - listitem: Jaden Schmeisser
+    - listitem: Hannes Moser
+    - listitem: Connie Mills
+    - listitem: Logan Mack
+    - listitem: Laeka Brenninkmeyer
+    - listitem: Haley Thurston
+    - listitem: Grace Leman
+    - listitem: Isha Kumar
+    - listitem: Didier Catz
+    - listitem: Drew Huppe
+    - listitem: Warner Price
+    - listitem: Sid Bhargava
+    - listitem: Jack Mangan
+    - listitem: Gino Fordiani
+    - listitem: Ema Milojkovic
+    - listitem: Kyle Ward
+    - listitem: Ivy Murphy
+    - listitem: Chris Maggio
+    - listitem: Colin Dunn
+    - listitem: Mel Mier
+    - listitem: Guglielmo D’Anna
+    - listitem: Brian Hendery
+    - listitem: Alessandro Oddone
+    - listitem: Zorast Gustavsp
+    - listitem: Beth Shecterle
+    - listitem: Veronika Fischer
+    - listitem: Yasha Mostofi
+    - listitem: Colin Rutan
+    - listitem: Julian Lehr
+    - listitem: Alyssa Garrison
+    - listitem: Allison Wei
+    - listitem: Kenneth Skovhus
+    - listitem: Doug Parker
+    - listitem: Marcos Fiscal
+    - listitem: Paul Dijou
+    - listitem: Guillaume Lachaud
+    - listitem: Natalie Stratton
+    - listitem: Ryan Walker
+    - listitem: Emer Moloney
+    - listitem: Charlie Aufmann
+    - listitem: Randall Koutnik
+    - listitem: Dima Zaytsev
+    - listitem: Logan Barragan
+    - listitem: Lasse Andersen
+    - listitem: Ari Mojdeh
+    - listitem: Mihir Parekh
+    - listitem: Seth Melchor
+    - listitem: Christopher Cohen
+    - listitem: James Smith
+    - listitem: Róża Zgiep
+    - listitem: Jeff Vaz
+    - listitem: Bojan Delić
+    - listitem: Andrew Moedinger
+    - listitem: Matt Robone
+    - listitem: Nathalie Marchino
+    - listitem: Miranda Chan
+    - listitem: Matt Beck
+    - listitem: Shannon Hu
+  - heading "Backed by the best" [level=2]:
+    - text: Backed by
+    - text: the best
+  - link "Miles Clements ↗ Partner, Accel":
+    - /url: https://www.accel.com
+    - text: Miles Clements
+    - generic: ↗
+    - generic: Partner, Accel
+  - link "Stephanie Zhan ↗ Partner, Sequoia":
+    - /url: https://www.sequoiacap.com
+    - text: Stephanie Zhan
+    - generic: ↗
+    - generic: Partner, Sequoia
+  - list:
+    - generic: Dylan Field
+    - generic: CEO, Figma
+    - generic: Patrick Collison
+    - generic: CEO, Stripe
+    - generic: Stewart Butterfield
+    - generic: Former CEO, Slack
+    - generic: Guillermo Rauch
+    - generic: CEO, Vercel
+    - generic: Dick Costolo
+    - generic: Former CEO, Twitter
+    - generic: Josh Miller
+    - generic: CEO, Browser Company
+    - generic: Andrew Mason
+    - generic: CEO, Descript
+    - generic: Immad Akhund
+    - generic: CEO, Mercury
+    - generic: Claire Hughes Johnson
+    - generic: Former COO, Stripe
+    - generic: Jorn van Dijk
+    - generic: CEO, Framer
+    - generic: Christina Cacioppo
+    - generic: CEO, Vanta
+    - generic: Job van der Voort
+    - generic: CEO, Remote
+    - generic: Ilkka Paananen
+    - generic: CEO, Supercell
+    - generic: Anthony Guo
+    - generic: CTO, Retool
+    - generic: Gustaf Alströmer
+    - generic: Partner, Y Combinator
+    - generic: Akash Garg
+    - generic: Former CTO, Afterpay
+    - generic: Alexis Ohanian
+    - generic: Seven Seven Six
+    - generic: Ben Blumenfeld
+    - generic: Designer Fund
+    - generic: Bryce Roberts
+    - generic: Indie.vc
+    - generic: Soleio
+    - generic: Designer × Investor
+  - heading "Built for the future. Available today." [level=2]
+  - button "Get started"
+  - button "Contact sales"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

@@ -1,0 +1,687 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "Integrations" [level=1]
+  - button "Search… ⌘K":
+    - text: Search…
+    - generic: ⌘K
+  - link "Essentials Essentials":
+    - /url: "#essentials"
+    - img "Essentials"
+    - generic: Essentials
+  - link "Agents Agents":
+    - /url: "#agents"
+    - img "Agents"
+    - generic: Agents
+  - link "AI clients AI clients":
+    - /url: "#ai-clients"
+    - img "AI clients"
+    - generic: AI clients
+  - link "Engineering Engineering":
+    - /url: "#engineering"
+    - img "Engineering"
+    - generic: Engineering
+  - link "Linear crafted Linear crafted":
+    - /url: "#linear-crafted"
+    - img "Linear crafted"
+    - generic: Linear crafted
+  - link "Bug Reporting Bug Reporting":
+    - /url: "#bug-reporting"
+    - img "Bug Reporting"
+    - generic: Bug Reporting
+  - link "Automations Automations":
+    - /url: "#automations"
+    - img "Automations"
+    - generic: Automations
+  - link "Customer Experience Customer Experience":
+    - /url: "#customer-experience"
+    - img "Customer Experience"
+    - generic: Customer Experience
+  - link "Security & Compliance Security & Compliance":
+    - /url: "#security-and-compliance"
+    - img "Security & Compliance"
+    - generic: Security & Compliance
+  - link "Analytics Analytics":
+    - /url: "#analytics"
+    - img "Analytics"
+    - generic: Analytics
+  - link "Collaboration Collaboration":
+    - /url: "#collaboration"
+    - img "Collaboration"
+    - generic: Collaboration
+  - link "Media & Design Media & Design":
+    - /url: "#media-and-design"
+    - img "Media & Design"
+    - generic: Media & Design
+  - heading "Essentials" [level=3]:
+    - link "Essentials":
+      - /url: /integrations/essentials
+  - text: Key integrations to enhance your Linear experience
+  - list:
+    - link "GitHub icon GitHub By Linear Connect GitHub to automate PR workflows, review code in Linear, sync issues and understand your codebase with Linear Agent":
+      - /url: /integrations/github
+      - img "GitHub icon"
+      - generic: GitHub
+      - text: By Linear
+      - generic: Connect GitHub to automate PR workflows, review code in Linear, sync issues and understand your codebase with Linear Agent
+    - link "Slack icon Slack By Linear Create issues from Slack messages and sync threads":
+      - /url: /integrations/slack
+      - img "Slack icon"
+      - generic: Slack
+      - text: By Linear
+      - generic: Create issues from Slack messages and sync threads
+    - link "GitLab icon GitLab By Linear Automate your Merge Request workflow":
+      - /url: /integrations/gitlab
+      - img "GitLab icon"
+      - generic: GitLab
+      - text: By Linear
+      - generic: Automate your Merge Request workflow
+    - link "Figma icon Figma By Linear Create and link issues directly from Figma":
+      - /url: /integrations/figma
+      - img "Figma icon"
+      - generic: Figma
+      - text: By Linear
+      - generic: Create and link issues directly from Figma
+    - link "Intercom icon Intercom By Linear Keep a tight feedback loop with customers and streamline bug reports":
+      - /url: /integrations/intercom
+      - img "Intercom icon"
+      - generic: Intercom
+      - text: By Linear
+      - generic: Keep a tight feedback loop with customers and streamline bug reports
+    - link "Google Sheets icon Google Sheets By Linear Build custom dashboards and analytics from issue and project data":
+      - /url: /integrations/google-sheets
+      - img "Google Sheets icon"
+      - generic: Google Sheets
+      - text: By Linear
+      - generic: Build custom dashboards and analytics from issue and project data
+  - heading "Agents" [level=3]:
+    - link "Agents":
+      - /url: /integrations/agents
+  - text: Deploy AI teammates inside Linear
+  - list:
+    - link "Codex icon Codex By OpenAI Delegate issues to Codex directly from Linear":
+      - /url: /integrations/codex
+      - img "Codex icon"
+      - generic: Codex
+      - generic: By OpenAI
+      - generic: Delegate issues to Codex directly from Linear
+    - link "Cursor icon Cursor By Cursor Turn issues into pull requests with Cursor cloud agents":
+      - /url: /integrations/cursor
+      - img "Cursor icon"
+      - generic: Cursor
+      - generic: By Cursor
+      - generic: Turn issues into pull requests with Cursor cloud agents
+    - link "GitHub Copilot icon GitHub Copilot By GitHub Turn Linear issues into code with GitHub Copilot coding agent":
+      - /url: /integrations/github-copilot
+      - img "GitHub Copilot icon"
+      - generic: GitHub Copilot
+      - generic: By GitHub
+      - generic: Turn Linear issues into code with GitHub Copilot coding agent
+    - link "Factory icon Factory By Factory Assign issues from your backlog to Droids":
+      - /url: /integrations/factory
+      - img "Factory icon"
+      - generic: Factory
+      - generic: By Factory
+      - generic: Assign issues from your backlog to Droids
+    - link "Sentry Agent icon Sentry Agent By Sentry Resolve Linear Issues with Seer by Sentry":
+      - /url: /integrations/sentry-agent
+      - img "Sentry Agent icon"
+      - generic: Sentry Agent
+      - generic: By Sentry
+      - generic: Resolve Linear Issues with Seer by Sentry
+    - link "Devin icon Devin By Cognition Automate work from issue to tested PR with Devin":
+      - /url: /integrations/devin
+      - img "Devin icon"
+      - generic: Devin
+      - generic: By Cognition
+      - generic: Automate work from issue to tested PR with Devin
+  - link "Browse all →":
+    - /url: /integrations/agents
+  - heading "AI clients" [level=3]:
+    - link "AI clients":
+      - /url: /integrations/ai-clients
+  - text: Let external AI apps read and act on Linear data
+  - list:
+    - link "Cursor MCP icon Cursor MCP By Cursor Connect Cursor to the Linear MCP server":
+      - /url: /integrations/cursor-mcp
+      - img "Cursor MCP icon"
+      - generic: Cursor MCP
+      - generic: By Cursor
+      - generic: Connect Cursor to the Linear MCP server
+    - link "ChatGPT icon ChatGPT By OpenAI Connect ChatGPT deep research to Linear":
+      - /url: /integrations/chatgpt
+      - img "ChatGPT icon"
+      - generic: ChatGPT
+      - generic: By OpenAI
+      - generic: Connect ChatGPT deep research to Linear
+    - link "Claude icon Claude By Claude Connect Claude to the Linear MCP server":
+      - /url: /integrations/claude
+      - img "Claude icon"
+      - generic: Claude
+      - generic: By Claude
+      - generic: Connect Claude to the Linear MCP server
+    - link "v0 by Vercel MCP connector icon v0 by Vercel MCP connector By Vercel Connect v0 and Linear through MCP":
+      - /url: /integrations/v0
+      - img "v0 by Vercel MCP connector icon"
+      - generic: v0 by Vercel MCP connector
+      - generic: By Vercel
+      - generic: Connect v0 and Linear through MCP
+    - link "Windsurf icon Windsurf By Windsurf Connect Windsurf to the Linear MCP server":
+      - /url: /integrations/windsurf
+      - img "Windsurf icon"
+      - generic: Windsurf
+      - generic: By Windsurf
+      - generic: Connect Windsurf to the Linear MCP server
+    - link "Replit icon Replit By Replit Build Apps & Automations":
+      - /url: /integrations/replit
+      - img "Replit icon"
+      - generic: Replit
+      - generic: By Replit
+      - generic: Build Apps & Automations
+  - link "Browse all →":
+    - /url: /integrations/ai-clients
+  - heading "Engineering" [level=3]:
+    - link "Engineering":
+      - /url: /integrations/engineering
+  - text: Seamlessly integrate your engineering workflows
+  - list:
+    - link "GitHub icon GitHub By Linear Connect GitHub to automate PR workflows, review code in Linear, sync issues and understand your codebase with Linear Agent":
+      - /url: /integrations/github
+      - img "GitHub icon"
+      - generic: GitHub
+      - text: By Linear
+      - generic: Connect GitHub to automate PR workflows, review code in Linear, sync issues and understand your codebase with Linear Agent
+    - link "GitLab icon GitLab By Linear Automate your Merge Request workflow":
+      - /url: /integrations/gitlab
+      - img "GitLab icon"
+      - generic: GitLab
+      - text: By Linear
+      - generic: Automate your Merge Request workflow
+    - link "VS Code icon VS Code By Linear Easily build VS Code extensions with Linear Connect":
+      - /url: /integrations/vs-code
+      - img "VS Code icon"
+      - generic: VS Code
+      - text: By Linear
+      - generic: Easily build VS Code extensions with Linear Connect
+    - link "Sentry icon Sentry By Linear Create and link issues with Sentry and automate issue creation":
+      - /url: /integrations/sentry
+      - img "Sentry icon"
+      - generic: Sentry
+      - text: By Linear
+      - generic: Create and link issues with Sentry and automate issue creation
+    - link "Datadog icon Datadog By Datadog Create Linear issues from Datadog Cases and Monitors":
+      - /url: /integrations/datadog
+      - img "Datadog icon"
+      - generic: Datadog
+      - generic: By Datadog
+      - generic: Create Linear issues from Datadog Cases and Monitors
+    - link "Raycast icon Raycast By Raycast Create, search, and modify your issues from anywhere":
+      - /url: /integrations/raycast
+      - img "Raycast icon"
+      - generic: Raycast
+      - generic: By Raycast
+      - generic: Create, search, and modify your issues from anywhere
+  - link "Browse all →":
+    - /url: /integrations/engineering
+  - heading "Linear crafted" [level=3]:
+    - link "Linear crafted":
+      - /url: /integrations/linear-crafted
+  - text: Integrations built by the Linear team
+  - list:
+    - link "GitHub icon GitHub By Linear Connect GitHub to automate PR workflows, review code in Linear, sync issues and understand your codebase with Linear Agent":
+      - /url: /integrations/github
+      - img "GitHub icon"
+      - generic: GitHub
+      - text: By Linear
+      - generic: Connect GitHub to automate PR workflows, review code in Linear, sync issues and understand your codebase with Linear Agent
+    - link "Slack icon Slack By Linear Create issues from Slack messages and sync threads":
+      - /url: /integrations/slack
+      - img "Slack icon"
+      - generic: Slack
+      - text: By Linear
+      - generic: Create issues from Slack messages and sync threads
+    - link "GitLab icon GitLab By Linear Automate your Merge Request workflow":
+      - /url: /integrations/gitlab
+      - img "GitLab icon"
+      - generic: GitLab
+      - text: By Linear
+      - generic: Automate your Merge Request workflow
+    - link "Notion icon Notion By Linear Previews of Linear issues, views and projects and query Notion AI":
+      - /url: /integrations/notion
+      - img "Notion icon"
+      - generic: Notion
+      - text: By Linear
+      - generic: Previews of Linear issues, views and projects and query Notion AI
+    - link "Figma icon Figma By Linear Create and link issues directly from Figma":
+      - /url: /integrations/figma
+      - img "Figma icon"
+      - generic: Figma
+      - text: By Linear
+      - generic: Create and link issues directly from Figma
+    - link "Zendesk icon Zendesk By Linear Keep a tight feedback loop with customers and streamline bug reports":
+      - /url: /integrations/zendesk
+      - img "Zendesk icon"
+      - generic: Zendesk
+      - text: By Linear
+      - generic: Keep a tight feedback loop with customers and streamline bug reports
+  - link "Browse all →":
+    - /url: /integrations/linear-crafted
+  - heading "Bug Reporting" [level=3]:
+    - link "Bug Reporting":
+      - /url: /integrations/bug-reporting
+  - text: Create issues and bug reports from anywhere
+  - list:
+    - link "Linear Asks for Slack icon Linear Asks for Slack By Linear Turn requests from Slack or email into actionable issues and enable helpdesk workflows":
+      - /url: /integrations/linear-asks
+      - img "Linear Asks for Slack icon"
+      - generic: Linear Asks for Slack
+      - text: By Linear
+      - generic: Turn requests from Slack or email into actionable issues and enable helpdesk workflows
+    - link "Sentry icon Sentry By Linear Create and link issues with Sentry and automate issue creation":
+      - /url: /integrations/sentry
+      - img "Sentry icon"
+      - generic: Sentry
+      - text: By Linear
+      - generic: Create and link issues with Sentry and automate issue creation
+    - link "incident.io icon incident.io By incident.io Manage incidents and triage responsibility directly in Linear":
+      - /url: /integrations/incident-io
+      - img "incident.io icon"
+      - generic: incident.io
+      - generic: By incident.io
+      - generic: Manage incidents and triage responsibility directly in Linear
+    - link "Bird Eats Bug icon Bird Eats Bug By Bird Eats Bug Speed up your bug reporting workflow with Bird Eats Bug":
+      - /url: /integrations/bird-eats-bug
+      - img "Bird Eats Bug icon"
+      - generic: Bird Eats Bug
+      - generic: By Bird Eats Bug
+      - generic: Speed up your bug reporting workflow with Bird Eats Bug
+    - link "Honeybadger icon Honeybadger By Honeybadger Manage Honeybadger errors via Linear issues":
+      - /url: /integrations/honeybadger
+      - img "Honeybadger icon"
+      - generic: Honeybadger
+      - generic: By Honeybadger
+      - generic: Manage Honeybadger errors via Linear issues
+    - link "Jam icon Jam By Jam.dev Create Linear issues with all the details developers need to resolve bugs faster":
+      - /url: /integrations/jam
+      - img "Jam icon"
+      - generic: Jam
+      - generic: By Jam.dev
+      - generic: Create Linear issues with all the details developers need to resolve bugs faster
+  - link "Browse all →":
+    - /url: /integrations/bug-reporting
+  - heading "Automations" [level=3]:
+    - link "Automations":
+      - /url: /integrations/automations
+  - text: Build custom workflows and automations
+  - list:
+    - link "Zapier icon Zapier By Linear Build custom automations to create or update Linear issues":
+      - /url: /integrations/zapier
+      - img "Zapier icon"
+      - generic: Zapier
+      - text: By Linear
+      - generic: Build custom automations to create or update Linear issues
+    - link "Create issues via email icon Create issues via email By Linear Set up email addresses for teams or templates to create issues via email":
+      - /url: /integrations/create-issues-via-email
+      - img "Create issues via email icon"
+      - generic: Create issues via email
+      - text: By Linear
+      - generic: Set up email addresses for teams or templates to create issues via email
+    - link "Jira icon Jira By Linear Smoothly transition from Jira to Linear":
+      - /url: /integrations/jira
+      - img "Jira icon"
+      - generic: Jira
+      - text: By Linear
+      - generic: Smoothly transition from Jira to Linear
+    - link "Raycast icon Raycast By Raycast Create, search, and modify your issues from anywhere":
+      - /url: /integrations/raycast
+      - img "Raycast icon"
+      - generic: Raycast
+      - generic: By Raycast
+      - generic: Create, search, and modify your issues from anywhere
+    - link "Fivetran icon Fivetran By Fivetran Sync your Linear data with the Fivetran connector":
+      - /url: /integrations/fivetran
+      - img "Fivetran icon"
+      - generic: Fivetran
+      - generic: By Fivetran
+      - generic: Sync your Linear data with the Fivetran connector
+    - link "Supernormal icon Supernormal By Supernormal Go from discussion to Linear issues in seconds":
+      - /url: /integrations/supernormal
+      - img "Supernormal icon"
+      - generic: Supernormal
+      - generic: By Supernormal
+      - generic: Go from discussion to Linear issues in seconds
+  - link "Browse all →":
+    - /url: /integrations/automations
+  - heading "Customer Experience" [level=3]:
+    - link "Customer Experience":
+      - /url: /integrations/customer-experience
+  - text: Keep a tight feedback loop with your customers
+  - list:
+    - link "Zendesk icon Zendesk By Linear Keep a tight feedback loop with customers and streamline bug reports":
+      - /url: /integrations/zendesk
+      - img "Zendesk icon"
+      - generic: Zendesk
+      - text: By Linear
+      - generic: Keep a tight feedback loop with customers and streamline bug reports
+    - link "Intercom icon Intercom By Linear Keep a tight feedback loop with customers and streamline bug reports":
+      - /url: /integrations/intercom
+      - img "Intercom icon"
+      - generic: Intercom
+      - text: By Linear
+      - generic: Keep a tight feedback loop with customers and streamline bug reports
+    - link "Front icon Front By Linear Keep a tight feedback loop with customers and streamline bug reports":
+      - /url: /integrations/front
+      - img "Front icon"
+      - generic: Front
+      - text: By Linear
+      - generic: Keep a tight feedback loop with customers and streamline bug reports
+    - link "Salesforce icon Salesforce By Linear Create Linear issues from Salesforce cases":
+      - /url: /integrations/salesforce
+      - img "Salesforce icon"
+      - generic: Salesforce
+      - text: By Linear
+      - generic: Create Linear issues from Salesforce cases
+    - link "Attio icon Attio By Attio Add customer requests and issues, plus sync customer details, directly from Attio":
+      - /url: /integrations/attio
+      - img "Attio icon"
+      - generic: Attio
+      - generic: By Attio
+      - generic: Add customer requests and issues, plus sync customer details, directly from Attio
+    - link "Gong icon Gong By Linear Automatically create customer requests from Gong calls":
+      - /url: /integrations/gong
+      - img "Gong icon"
+      - generic: Gong
+      - text: By Linear
+      - generic: Automatically create customer requests from Gong calls
+  - link "Browse all →":
+    - /url: /integrations/customer-experience
+  - heading "Security & Compliance" [level=3]:
+    - link "Security & Compliance":
+      - /url: /integrations/security-and-compliance
+  - text: Keep your work secure and compliant
+  - list:
+    - link "Fencer icon Fencer By Fencer Create and link issues directly from Fencer":
+      - /url: /integrations/fencer
+      - img "Fencer icon"
+      - generic: Fencer
+      - generic: By Fencer
+      - generic: Create and link issues directly from Fencer
+    - link "SecureSlate icon SecureSlate By SecureSlate Create and link SecureSlate security tickets to Linear":
+      - /url: /integrations/secureslate
+      - img "SecureSlate icon"
+      - generic: SecureSlate
+      - generic: By SecureSlate
+      - generic: Create and link SecureSlate security tickets to Linear
+    - link "Vanta icon Vanta By Vanta Automate compliance. Simplify security. Demonstrate trust.":
+      - /url: /integrations/vanta
+      - img "Vanta icon"
+      - generic: Vanta
+      - generic: By Vanta
+      - generic: Automate compliance. Simplify security. Demonstrate trust.
+    - link "Kawach AI icon Kawach AI By Kreeti Technologies Keep your workspace compliant with org policies using Kawach.AI":
+      - /url: /integrations/kawach-ai
+      - img "Kawach AI icon"
+      - generic: Kawach AI
+      - generic: By Kreeti Technologies
+      - generic: Keep your workspace compliant with org policies using Kawach.AI
+    - link "Drata icon Drata By Drata Simplify risk and managing frameworks like SOC 2, ISO 27001, PCI and more":
+      - /url: /integrations/drata
+      - img "Drata icon"
+      - generic: Drata
+      - generic: By Drata
+      - generic: Simplify risk and managing frameworks like SOC 2, ISO 27001, PCI and more
+    - link "SimpleBackups icon SimpleBackups By SimpleBackups Never lose an issue, project, or cycle":
+      - /url: /integrations/simplebackups
+      - img "SimpleBackups icon"
+      - generic: SimpleBackups
+      - generic: By SimpleBackups
+      - generic: Never lose an issue, project, or cycle
+  - link "Browse all →":
+    - /url: /integrations/security-and-compliance
+  - heading "Analytics" [level=3]:
+    - link "Analytics":
+      - /url: /integrations/analytics
+  - text: Build reports and dashboards based on your Linear data
+  - list:
+    - link "Airbyte icon Airbyte By Linear Connect Linear to Airbyte and consolidate data in data warehouses, lakes, and databases":
+      - /url: /integrations/airbyte
+      - img "Airbyte icon"
+      - generic: Airbyte
+      - text: By Linear
+      - generic: Connect Linear to Airbyte and consolidate data in data warehouses, lakes, and databases
+    - link "Google Sheets icon Google Sheets By Linear Build custom dashboards and analytics from issue and project data":
+      - /url: /integrations/google-sheets
+      - img "Google Sheets icon"
+      - generic: Google Sheets
+      - text: By Linear
+      - generic: Build custom dashboards and analytics from issue and project data
+    - link "Fivetran icon Fivetran By Fivetran Sync your Linear data with the Fivetran connector":
+      - /url: /integrations/fivetran
+      - img "Fivetran icon"
+      - generic: Fivetran
+      - generic: By Fivetran
+      - generic: Sync your Linear data with the Fivetran connector
+    - link "Retool icon Retool By Retool Create, update, and analyze Linear issues in custom internal tools":
+      - /url: /integrations/retool
+      - img "Retool icon"
+      - generic: Retool
+      - generic: By Retool
+      - generic: Create, update, and analyze Linear issues in custom internal tools
+    - link "Span icon Span By Span See how work translates into engineering impact":
+      - /url: /integrations/span
+      - img "Span icon"
+      - generic: Span
+      - generic: By Span
+      - generic: See how work translates into engineering impact
+    - link "Jellyfish icon Jellyfish By Jellyfish Developer productivity insights and AI impact signals in one dashboard":
+      - /url: /integrations/jellyfish
+      - img "Jellyfish icon"
+      - generic: Jellyfish
+      - generic: By Jellyfish
+      - generic: Developer productivity insights and AI impact signals in one dashboard
+  - link "Browse all →":
+    - /url: /integrations/analytics
+  - heading "Collaboration" [level=3]:
+    - link "Collaboration":
+      - /url: /integrations/collaboration
+  - text: Collaborate across teams and tools
+  - list:
+    - link "Slack icon Slack By Linear Create issues from Slack messages and sync threads":
+      - /url: /integrations/slack
+      - img "Slack icon"
+      - generic: Slack
+      - text: By Linear
+      - generic: Create issues from Slack messages and sync threads
+    - link "Notion icon Notion By Linear Previews of Linear issues, views and projects and query Notion AI":
+      - /url: /integrations/notion
+      - img "Notion icon"
+      - generic: Notion
+      - text: By Linear
+      - generic: Previews of Linear issues, views and projects and query Notion AI
+    - link "Linear Asks for Slack icon Linear Asks for Slack By Linear Turn requests from Slack or email into actionable issues and enable helpdesk workflows":
+      - /url: /integrations/linear-asks
+      - img "Linear Asks for Slack icon"
+      - generic: Linear Asks for Slack
+      - text: By Linear
+      - generic: Turn requests from Slack or email into actionable issues and enable helpdesk workflows
+    - link "Discord icon Discord By Linear Create issues, share updates, and keep everyone in sync":
+      - /url: /integrations/discord
+      - img "Discord icon"
+      - generic: Discord
+      - text: By Linear
+      - generic: Create issues, share updates, and keep everyone in sync
+    - link "Glean icon Glean By Glean Search Linear for instant insights":
+      - /url: /integrations/glean
+      - img "Glean icon"
+      - generic: Glean
+      - generic: By Glean
+      - generic: Search Linear for instant insights
+    - link "Attio icon Attio By Attio Add customer requests and issues, plus sync customer details, directly from Attio":
+      - /url: /integrations/attio
+      - img "Attio icon"
+      - generic: Attio
+      - generic: By Attio
+      - generic: Add customer requests and issues, plus sync customer details, directly from Attio
+  - link "Browse all →":
+    - /url: /integrations/collaboration
+  - heading "Media & Design" [level=3]:
+    - link "Media & Design":
+      - /url: /integrations/media-and-design
+  - text: Preview and embed design files, videos, and more
+  - list:
+    - link "Figma icon Figma By Linear Create and link issues directly from Figma":
+      - /url: /integrations/figma
+      - img "Figma icon"
+      - generic: Figma
+      - text: By Linear
+      - generic: Create and link issues directly from Figma
+    - link "Descript icon Descript By Linear Embed Descript share URLs in Linear issues and documents":
+      - /url: /integrations/descript
+      - img "Descript icon"
+      - generic: Descript
+      - text: By Linear
+      - generic: Embed Descript share URLs in Linear issues and documents
+    - link "YouTube icon YouTube By Linear Embed YouTube videos in Linear issues and documents":
+      - /url: /integrations/youtube
+      - img "YouTube icon"
+      - generic: YouTube
+      - text: By Linear
+      - generic: Embed YouTube videos in Linear issues and documents
+    - link "Miro icon Miro By Miro Import, create and manage issues directly in Miro":
+      - /url: /integrations/miro
+      - img "Miro icon"
+      - generic: Miro
+      - generic: By Miro
+      - generic: Import, create and manage issues directly in Miro
+    - link "Loom icon Loom By Linear Embed Loom videos in Linear issues and documents":
+      - /url: /integrations/loom
+      - img "Loom icon"
+      - generic: Loom
+      - text: By Linear
+      - generic: Embed Loom videos in Linear issues and documents
+    - link "Tella icon Tella By Tella Embed Tella videos in Linear":
+      - /url: /integrations/tella
+      - img "Tella icon"
+      - generic: Tella
+      - generic: By Tella
+      - generic: Embed Tella videos in Linear
+  - link "Browse all →":
+    - /url: /integrations/media-and-design
+  - heading "Build your own integration" [level=2]
+  - generic: Create your own integration with Linear’s API and submit it to the directory.
+  - link "Start building":
+    - /url: https://linear.app/docs/integration-directory#build-your-own
+  - heading "Build your own integration" [level=2]
+  - generic: Create your own integration with Linear’s API and submit it to the directory.
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

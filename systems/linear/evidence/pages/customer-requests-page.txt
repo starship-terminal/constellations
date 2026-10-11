@@ -1,0 +1,235 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - generic: Customer Requests
+  - heading "Build what customers actually want" [level=1]
+  - paragraph:
+    - generic: Capture feedback, understand user needs, and prioritize product work that matters.
+  - button "See how it works":
+    - text: See how it works
+  - img "Customer request view on the left featuring title, description and list of companies that requested it. On the right, a customer view which shows all requests made by the customer, their revenue, size, etc."
+  - heading "Bring the voice of the customer into product development" [level=2]
+  - generic: Support tools
+  - generic: CRM tools
+  - button "Set Intercom as active integration":
+  - 'button "Set #cs-unreal as active integration"':
+  - button "Set Zendesk as active integration":
+  - button "Set Front as active integration":
+  - button "Set Email as active integration":
+  - 'button "Set #shared-xmp as active integration"':
+  - button "Set Salesforce as active integration":
+  - button "Set Attio as active integration":
+  - text: Make customer feedback accessible
+  - paragraph: Capture feedback across any customer interaction – from sales calls to support chats – and turn it into a customer request linked to a Linear project or issue.
+  - paragraph: Customer Requests is seamlessly integrated with the tools you already use, so you can create requests directly from your support platform, email client, CRM tool, or shared Slack channels.
+  - text: Intercom
+  - text: ·
+  - text: zoe@acme.inc
+  - generic: We need a cost breakdown across all cloud platforms in a single report or dashboard
+  - generic: ACME
+  - generic: New Request
+  - generic: Multi-cloud cost dashboard
+  - img "Avatar of undefined"
+  - img "Medium Priority"
+  - generic: Planning
+  - generic: Q4 2025
+  - generic: "17"
+  - blockquote:
+    - paragraph: Customer Requests closes the gap between our product and go-to-market teams. Our Sales and Success orgs now track feature requests at a customer level, and feedback flows directly into our development workflow.
+  - generic: Connect product instincts with customer insights
+  - generic: Customer Requests aligns product work with user needs. Refine your product intuition with detailed customer feedback and realtime customer data to make better decisions.
+  - img "Customer requests view with revenue and tier filters on top, and list of requests below."
+  - generic: Customers
+  - generic: "13"
+  - generic: Important
+  - generic: "2"
+  - generic: Total revenue
+  - generic: $47.8K
+  - generic: ACME
+  - generic: XMP
+  - generic: Echo
+  - generic: Unreal
+  - heading "Prioritize your roadmap based on real demand" [level=3]:
+    - text: Prioritize your roadmap
+    - text: based on real demand
+  - paragraph: Segment and filter projects by request volume, customer tier, or revenue to identify and prioritize the most impactful feature work.
+  - heading "Enrich requests with realtime customer data" [level=3]
+  - paragraph: Sync customer attributes such as company size, tier, or revenue from Salesforce and other systems of record.
+  - heading "Understand customer needs in full contextual detail" [level=3]
+  - paragraph: Requests are directly attached to projects and issues, giving product teams full visibility into what customers are really asking for.
+  - generic: Idle resource detection
+  - generic: now
+  - generic: New request from XMP
+  - generic: Multi-cloud cost dashboard
+  - generic: now
+  - generic: Requested project completed
+  - generic: ENG-943 Budget alerts
+  - generic: now
+  - generic: 25th customer requesting issue
+  - generic: IOS-396 Alerts on mobile
+  - generic: now
+  - generic: Requested issue completed
+  - generic: Idle resource detection
+  - generic: now
+  - generic: New request from XMP
+  - generic: Multi-cloud cost dashboard
+  - generic: now
+  - generic: Requested project completed
+  - generic: ENG-943 Budget alerts
+  - generic: now
+  - generic: 25th customer requesting issue
+  - generic: IOS-396 Alerts on mobile
+  - generic: now
+  - generic: Requested issue completed
+  - heading "Stay in the loop with every customer" [level=3]
+  - paragraph: Subscribe to individual customers and get realtime notifications on their requests – new and completed.
+  - heading "Auto-prioritize requests from high-impact customers" [level=3]
+  - paragraph: Create triage rules based on custom fields in Salesforce to route and prioritize incoming requests.
+  - generic: Bring customer focus to all your teams
+  - generic: Center your organization around customer needs. Align product, engineering, and go-to-market teams around a shared mission to deliver exceptional customer experiences.
+  - button "Filter UI that filters customers based on customer tier. Product management Make better product decisions":
+    - img "Filter UI that filters customers based on customer tier."
+    - generic: Product management
+    - generic: Make better product decisions
+    - button:
+  - button "Customer request UI that shows the issue number on top and a list of companies that requested it, including their feedback. Engineering & Design Understand work in context":
+    - img "Customer request UI that shows the issue number on top and a list of companies that requested it, including their feedback."
+    - generic: Engineering & Design
+    - generic: Understand work in context
+    - button:
+  - button "3 request notifications from Linear Asks, Intercom, and Email integrations. Sales & Support Build stronger relationships":
+    - img "3 request notifications from Linear Asks, Intercom, and Email integrations."
+    - generic: Sales & Support
+    - generic: Build stronger relationships
+    - button:
+  - generic: Customer Requests works seamlessly with the rest of the Linear system
+  - link "Linear Asks Create customer requests from emails and shared Slack channels.":
+    - /url: /asks
+    - generic: Linear Asks
+    - generic: Create customer requests from emails and shared Slack channels.
+  - link "Linear Developers Build your own add-ons and integrations with the Linear API.":
+    - /url: /developers
+    - generic: Linear Developers
+    - generic: Build your own add-ons and integrations with the Linear API.
+  - link "Product Intelligence Use AI to auto-apply the right team, labels, and projects to new requests.":
+    - /url: /ai
+    - generic: Product Intelligence
+    - generic: Use AI to auto-apply the right team, labels, and projects to new requests.
+  - heading "Bring the voice of your customers into Linear" [level=3]
+  - link "Activate Customer Requests":
+    - /url: /signup
+    - generic: Activate Customer Requests
+  - link "Contact sales":
+    - /url: /contact/sales?message=I%27m%20interested%20in%20Linear%20for%20my%20team%20and%20would%20like%20to%20learn%20more%20about%20Customer%20Requests.
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

@@ -1,0 +1,363 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "Customers" [level=1]
+  - link "Featured":
+    - /url: /customers
+  - link "SaaS":
+    - /url: /customers/saas
+  - link "AI":
+    - /url: /customers/ai
+  - link "Fintech":
+    - /url: /customers/fintech
+  - link "Consumer":
+    - /url: /customers/consumer
+  - link "Hardware":
+    - /url: /customers/hardware
+  - link "Health":
+    - /url: /customers/healthcare
+  - link "Enterprise":
+    - /url: /customers/enterprise
+  - link "Ramp The coding agent behind 75% of Ramp’s merged PRs Watch video →":
+    - /url: /customers/ramp
+    - img "Ramp"
+    - generic: The coding agent behind 75% of Ramp’s merged PRs
+    - generic: Watch video →
+  - link "OpenAI Why OpenAI chose Linear and scaled to 3,000 users Read story →":
+    - /url: /customers/openai
+    - img "OpenAI"
+    - generic: Why OpenAI chose Linear and scaled to 3,000 users
+    - generic: Read story →
+  - link "Coinbase Coinbase’s bet on agent-first development Watch video →":
+    - /url: /customers/coinbase
+    - img "Coinbase"
+    - generic: Coinbase’s bet on agent-first development
+    - generic: Watch video →
+  - link "Oscar Health How teams at Oscar left one of the world’s most complex Jira instances Read story →":
+    - /url: /customers/oscar
+    - img "Oscar Health"
+    - generic: How teams at Oscar left one of the world’s most complex Jira instances
+    - generic: Read story →
+  - link "Boom Boom Supersonic builds as fast as it flies Watch video →":
+    - /url: /customers/boom
+    - img "Boom"
+    - generic: Boom Supersonic builds as fast as it flies
+    - generic: Watch video →
+  - link "Cursor How Cursor builds with Linear Watch video →":
+    - /url: /customers/cursor
+    - img "Cursor"
+    - generic: How Cursor builds with Linear
+    - generic: Watch video →
+  - paragraph: Why teams switch to Linear
+  - link "Learn more →":
+    - /url: /switch
+    - generic: Learn more →
+  - paragraph: 2.0x
+  - generic: Increase in filed issues
+  - paragraph: 3.3x
+  - generic: Faster issue resolution
+  - paragraph: 50%
+  - generic: Issues authored by agents
+  - link "Automattic How Automattic migrated to Linear and unified its product teams Read story →":
+    - /url: /customers/automattic
+    - img "Automattic"
+    - generic: How Automattic migrated to Linear and unified its product teams
+    - generic: Read story →
+  - link "Brex Brex proved Linear’s impact with a data-driven pilot Read story →":
+    - /url: /customers/brex
+    - img "Brex"
+    - generic: Brex proved Linear’s impact with a data-driven pilot
+    - generic: Read story →
+  - link "Dandelion How Dandelion Chocolate scales craft Watch video →":
+    - /url: /customers/dandelion-chocolate
+    - img "Dandelion"
+    - generic: How Dandelion Chocolate scales craft
+    - generic: Watch video →
+  - link "Opendoor How Opendoor is rebuilding its product culture with Linear Read story →":
+    - /url: /customers/opendoor
+    - img "Opendoor"
+    - generic: How Opendoor is rebuilding its product culture with Linear
+    - generic: Read story →
+  - link "Cars24 Cars24’s push to being AI-native with Linear Read story →":
+    - /url: /customers/cars24
+    - img "Cars24"
+    - generic: Cars24’s push to being AI-native with Linear
+    - generic: Read story →
+  - link "Scale How Scale compressed bug resolution time by 52% Read story →":
+    - /url: /customers/scale
+    - img "Scale"
+    - generic: How Scale compressed bug resolution time by 52%
+    - generic: Read story →
+  - paragraph: Powering more than 40,000 organizations. From ambitious startups to major enterprise and Fortune 20 companies.
+  - list:
+  - link "Pleo logo Pleo Pleo transitioned their internal support workflows to Linear Asks Fintech Read story →":
+    - /url: /customers/pleo
+    - img "Pleo logo"
+    - generic: Pleo
+    - generic: Pleo transitioned their internal support workflows to Linear Asks
+    - generic: Fintech
+    - text: Read story
+    - generic: →
+  - link "Klaviyo logo Klaviyo Klaviyo boosts visibility and velocity with Linear SaaS, Enterprise Read story →":
+    - /url: /customers/klaviyo
+    - img "Klaviyo logo"
+    - generic: Klaviyo
+    - generic: Klaviyo boosts visibility and velocity with Linear
+    - generic: SaaS, Enterprise
+    - text: Read story
+    - generic: →
+  - link "Mercury logo Mercury Mercury eliminated cluttered feedback with Linear Asks Fintech, Enterprise Read story →":
+    - /url: /customers/mercury
+    - img "Mercury logo"
+    - generic: Mercury
+    - generic: Mercury eliminated cluttered feedback with Linear Asks
+    - generic: Fintech, Enterprise
+    - text: Read story
+    - generic: →
+  - link "Sierra logo Sierra From project updates to accountability, Sierra moves as one company in Linear AI Read story →":
+    - /url: /customers/sierra
+    - img "Sierra logo"
+    - generic: Sierra
+    - generic: From project updates to accountability, Sierra moves as one company in Linear
+    - generic: AI
+    - text: Read story
+    - generic: →
+  - link "Cash App logo Cash App Linear helps Cash App manage aggressive roadmaps Fintech, Consumer, Enterprise Read story →":
+    - /url: /customers/cashapp
+    - img "Cash App logo"
+    - generic: Cash App
+    - generic: Linear helps Cash App manage aggressive roadmaps
+    - generic: Fintech, Consumer, Enterprise
+    - text: Read story
+    - generic: →
+  - link "Clay logo Clay How Clay manages bugs using Linear SaaS Read story →":
+    - /url: /customers/clay
+    - img "Clay logo"
+    - generic: Clay
+    - generic: How Clay manages bugs using Linear
+    - generic: SaaS
+    - text: Read story
+    - generic: →
+  - link "Watershed logo Watershed Watershed switched to Linear to accelerate their team SaaS Read story →":
+    - /url: /customers/watershed
+    - img "Watershed logo"
+    - generic: Watershed
+    - generic: Watershed switched to Linear to accelerate their team
+    - generic: SaaS
+    - text: Read story
+    - generic: →
+  - link "Clio logo Clio How Linear helps engineering managers at Clio operate more efficiently SaaS, AI, Enterprise Read story →":
+    - /url: /customers/clio
+    - img "Clio logo"
+    - generic: Clio
+    - generic: How Linear helps engineering managers at Clio operate more efficiently
+    - generic: SaaS, AI, Enterprise
+    - text: Read story
+    - generic: →
+  - link "Descript logo Descript Why Descript builds with Linear SaaS, AI Read story →":
+    - /url: /customers/descript
+    - img "Descript logo"
+    - generic: Descript
+    - generic: Why Descript builds with Linear
+    - generic: SaaS, AI
+    - text: Read story
+    - generic: →
+  - link "Retool logo Retool How Retool turns customer feedback into engineering work SaaS Read story →":
+    - /url: /customers/retool
+    - img "Retool logo"
+    - generic: Retool
+    - generic: How Retool turns customer feedback into engineering work
+    - generic: SaaS
+    - text: Read story
+    - generic: →
+  - link "Remote logo Remote Remote switched their 1,000 person team to Linear to move faster SaaS, Enterprise Read story →":
+    - /url: /customers/remote
+    - img "Remote logo"
+    - generic: Remote
+    - generic: Remote switched their 1,000 person team to Linear to move faster
+    - generic: SaaS, Enterprise
+    - text: Read story
+    - generic: →
+  - link "Cohere logo Cohere Why Cohere builds with Linear AI Read story →":
+    - /url: /customers/cohere
+    - img "Cohere logo"
+    - generic: Cohere
+    - generic: Why Cohere builds with Linear
+    - generic: AI
+    - text: Read story
+    - generic: →
+  - link "Raycast logo Raycast Why Raycast builds with Linear SaaS Read story →":
+    - /url: /customers/raycast
+    - img "Raycast logo"
+    - generic: Raycast
+    - generic: Why Raycast builds with Linear
+    - generic: SaaS
+    - text: Read story
+    - generic: →
+  - link "Semgrep logo Semgrep Why Semgrep builds with Linear SaaS Read story →":
+    - /url: /customers/semgrep
+    - img "Semgrep logo"
+    - generic: Semgrep
+    - generic: Why Semgrep builds with Linear
+    - generic: SaaS
+    - text: Read story
+    - generic: →
+  - link "Lightricks logo Lightricks Improving how teams work together at Lightricks AI Read story →":
+    - /url: /customers/lightricks
+    - img "Lightricks logo"
+    - generic: Lightricks
+    - generic: Improving how teams work together at Lightricks
+    - generic: AI
+    - text: Read story
+    - generic: →
+  - link "Alan logo Alan Why Alan builds with Linear Health, Fintech Read story →":
+    - /url: /customers/alan
+    - img "Alan logo"
+    - generic: Alan
+    - generic: Why Alan builds with Linear
+    - generic: Health, Fintech
+    - text: Read story
+    - generic: →
+  - link "Twingate logo Twingate Why Twingate builds with Linear SaaS Read story →":
+    - /url: /customers/twingate
+    - img "Twingate logo"
+    - generic: Twingate
+    - generic: Why Twingate builds with Linear
+    - generic: SaaS
+    - text: Read story
+    - generic: →
+  - link "Pulley logo Pulley How Pulley uses Linear beyond their product teams Fintech Read story →":
+    - /url: /customers/pulley
+    - img "Pulley logo"
+    - generic: Pulley
+    - generic: How Pulley uses Linear beyond their product teams
+    - generic: Fintech
+    - text: Read story
+    - generic: →
+  - link "Commure logo Commure How Commure prioritizes thousands of customer requests Health, Enterprise Read story →":
+    - /url: /customers/commure
+    - img "Commure logo"
+    - generic: Commure
+    - generic: How Commure prioritizes thousands of customer requests
+    - generic: Health, Enterprise
+    - text: Read story
+    - generic: →
+  - link "Your company Make the switch":
+    - /url: /switch
+    - generic: Your company
+    - text: Make the switch
+  - heading "Built for the future. Available today." [level=2]
+  - button "Get started"
+  - button "Contact sales"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

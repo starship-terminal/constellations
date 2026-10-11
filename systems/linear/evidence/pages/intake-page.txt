@@ -1,0 +1,273 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - generic: Intake and integrations
+  - heading "Make your product operations self-driving" [level=1]:
+    - text: Make your product
+    - text: operations self-driving
+  - heading "Issue intake, fully automated" [level=2]
+  - paragraph: Automatically turn Slack conversations, customer support interactions, and sales calls into actionable issues that instantly get routed to the right team.
+  - button "Linear Agent +":
+    - generic: Linear Agent
+    - generic: +
+  - main:
+    - figure "Create issues at the speed of conversation Mention @Linear in discussions on Slack or Microsoft Teams, and the Linear agent will create issues informed by your conversation’s context.":
+      - generic: ENG-2704
+      - generic: Track iOS startup performance
+      - generic: 2 / 15
+      - heading "Create issues at the speed of conversation" [level=3]
+      - paragraph: Mention @Linear in discussions on Slack or Microsoft Teams, and the Linear agent will create issues informed by your conversation’s context.
+    - figure "From intent to PR with a single command Turn Slack and Microsoft Teams threads into issues and assign them directly to a coding agent. No handoffs required.":
+      - generic: "@Linear"
+      - generic: create new issue and delegate to Cursor
+      - button "Attach":
+      - button "Format text":
+      - button "Emoji":
+      - button "Mention":
+      - button "Record video":
+      - button "Record audio":
+      - button "Shortcut":
+      - button "Send":
+      - button "More options":
+      - generic: "@Linear"
+      - generic: assign to alex and delegate to Copilot
+      - button "Attach":
+      - button "Format text":
+      - button "Emoji":
+      - button "Mention":
+      - button "Record video":
+      - button "Record audio":
+      - button "Shortcut":
+      - button "Send":
+      - button "More options":
+      - generic: "@Linear"
+      - generic: add to UI refresh project and give it to Codex
+      - button "Attach":
+      - button "Format text":
+      - button "Emoji":
+      - button "Mention":
+      - button "Record video":
+      - button "Record audio":
+      - button "Shortcut":
+      - button "Send":
+      - button "More options":
+      - heading "From intent to PR with a single command" [level=3]
+      - paragraph: Turn Slack and Microsoft Teams threads into issues and assign them directly to a coding agent. No handoffs required.
+    - figure "Turn support tickets into issues with a single click Auto-create well-scoped issues from Intercom and Zendesk conversations – even across long, multi-topic threads.":
+      - heading "Turn support tickets into issues with a single click" [level=3]
+      - paragraph: Auto-create well-scoped issues from Intercom and Zendesk conversations – even across long, multi-topic threads.
+    - figure "Auto-create issues from customer calls Automatically capture product feedback from Gong transcripts and route them into Linear. No prompts or clicks required.":
+      - heading "Auto-create issues from customer calls" [level=3]
+      - paragraph: Automatically capture product feedback from Gong transcripts and route them into Linear. No prompts or clicks required.
+    - figure "Create requests and bug reports from anywhere Integrate Linear with the rest of your tools to create issues directly from your CRM, monitoring system, email, and more.":
+      - heading "Create requests and bug reports from anywhere" [level=3]
+      - paragraph: Integrate Linear with the rest of your tools to create issues directly from your CRM, monitoring system, email, and more.
+  - heading "Manage incoming work with Triage" [level=2]
+  - paragraph: Review, prioritize, and assign incoming bug reports, feature requests, and other unplanned work in a shared, AI-powered team inbox.
+  - button "Triage +":
+    - generic: Triage
+    - generic: +
+  - main:
+    - figure "Automate the overhead Triage Intelligence proactively suggests and applies the right assignees, teams, projects, and labels based on your team’s historical patterns.":
+      - generic: DRV-5428
+      - generic: App freezes on splash screen
+      - heading "Automate the overhead" [level=3]
+      - paragraph: Triage Intelligence proactively suggests and applies the right assignees, teams, projects, and labels based on your team’s historical patterns.
+    - figure "Find duplicates before they slow you down Triage Intelligence identifies similar issues and links related work, so you don’t end up with three versions of the same thing.":
+      - heading "Find duplicates before they slow you down" [level=3]
+      - paragraph: Triage Intelligence identifies similar issues and links related work, so you don’t end up with three versions of the same thing.
+    - figure "Put incoming issues on autopilot Automatically process incoming issues with predefined rules to prioritize key customers or escalate critical bugs.":
+      - generic: Linear, OpenAI, Coinbase, Ramp
+      - heading "Put incoming issues on autopilot" [level=3]
+      - paragraph: Automatically process incoming issues with predefined rules to prioritize key customers or escalate critical bugs.
+    - figure "Auto-assign issues Use a triage responsibility schedule to automatically assign or notify specific team members.":
+      - heading "Auto-assign issues" [level=3]
+      - paragraph: Use a triage responsibility schedule to automatically assign or notify specific team members.
+    - figure "SLAs Apply automatic deadlines to time-sensitive issues to communicate urgency.":
+      - generic: At Risk
+      - generic: Moderate
+      - generic: Achieved
+      - generic: Breached
+      - generic: Failed
+      - generic: At Risk
+      - generic: Moderate
+      - heading "SLAs" [level=3]
+      - paragraph:
+        - text: Apply automatic deadlines to
+        - text: time-sensitive issues to communicate urgency.
+  - heading "Build what customers actually want" [level=2]
+  - paragraph: Align product work with user needs. Refine your product intuition with detailed customer feedback and realtime customer data.
+  - link "Customer Requests →":
+    - /url: /customer-requests
+    - generic: Customer Requests
+    - generic: →
+  - main:
+    - figure "Understand customer needs in full contextual detail Capture feedback across any customer interaction – from sales calls to support chats – and turn it into a customer request linked to a Linear project or issue.":
+      - heading "Understand customer needs in full contextual detail" [level=3]
+      - paragraph: Capture feedback across any customer interaction – from sales calls to support chats – and turn it into a customer request linked to a Linear project or issue.
+  - heading "Manage internal workplace requests" [level=2]
+  - paragraph: Linear Asks is the easiest way to manage internal requests from Slack and email. Streamline bug reports, feature ideas, IT tickets, and more.
+  - link "Linear Asks →":
+    - /url: /asks
+    - generic: Linear Asks
+    - generic: →
+  - main:
+    - figure "Create powerful helpdesk workflows Standardize workplace requests with forms and templates, and automatically route them to the right team in Linear.":
+      - generic: ENG-2994
+      - generic: Pickup screen stuck
+      - generic: 2 / 15
+      - heading "Create powerful helpdesk workflows" [level=3]
+      - paragraph: Standardize workplace requests with forms and templates, and automatically route them to the right team in Linear.
+  - link "Make your product operations self-driving Intake and integrations →":
+    - /url: /intake
+    - generic: Make your product operations self-driving
+    - generic: Intake and integrations
+    - generic: →
+  - link "Plan and navigate from idea to launch Planning and monitoring →":
+    - /url: /plan
+    - generic: Plan and navigate from idea to launch
+    - generic: Planning and monitoring
+    - generic: →
+  - link "Agents that follow work from conversation to code AI and automations →":
+    - /url: /ai
+    - generic: Agents that follow work from conversation to code
+    - generic: AI and automations
+    - generic: →
+  - link "Move work forward across teams and agents Build, review and ship →":
+    - /url: /build
+    - generic: Move work forward across teams and agents
+    - generic: Build, review and ship
+    - generic: →
+  - link "Triage is by far my favorite feature. It’s been a game changer for our team. Sam Sipe Head of Engineering, Scale":
+    - /url: /customers/scale
+    - paragraph: Triage is by far my favorite feature. It’s been a game changer for our team.
+    - generic: Sam Sipe
+    - generic: Head of Engineering, Scale
+  - link "Linear’s AI suggestions are invaluable for scaling our bug triage system. Tomas Fiure Clay":
+    - /url: /customers/clay
+    - paragraph: Linear’s AI suggestions are invaluable for scaling our bug triage system.
+    - generic: Tomas Fiure
+    - generic: Clay
+  - paragraph:
+    - text: Linear powers over
+    - strong: 40,000
+    - text: product teams. From ambitious startups to major enterprises.
+  - link "Customer stories →":
+    - /url: /customers
+    - generic: Customer stories
+    - generic: →
+  - heading "Built for the future. Available today." [level=2]
+  - button "Get started"
+  - button "Contact sales"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

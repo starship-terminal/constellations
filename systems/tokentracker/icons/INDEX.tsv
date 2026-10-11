@@ -1,0 +1,38 @@
+file	inferred_name	hash	sizes	viewBox	style	seen_on	place	text_or_label
+gauge.svg	gauge	348f6da2	15x15 16x16	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-gauge; button lucide-gauge	
+activity.svg	activity	498e3316	14x14 15x15	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-activity	
+moon.svg	moon	536505e4	14x14	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	button lucide-moon	Theme
+trophy.svg	trophy	a5271a75	15x15	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-trophy	
+puzzle.svg	puzzle	a6edd9e9	15x15	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-puzzle	
+chevron-left.svg	chevron-left	afb1a00c	16x16	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	button lucide-chevron-left	Collapse sidebar
+layout-grid.svg	layout-grid	b41738f6	15x15	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-layout-grid	
+globe.svg	globe	bd4c94a8	15x15 16x16	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-globe; button lucide-globe	
+settings.svg	settings	be82895e	15x15 16x16	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-settings	Display settings
+rotate-ccw-clock.svg	rotate-ccw-clock	d224dd27	15x15	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-rotate-ccw-clock	
+cloud.svg	cloud	d3a8f5bb	15x15 16x16	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-cloud; button lucide-cloud	
+chart-column.svg	chart-column	f2e04fe7	15x15	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-chart-column	
+award.svg	award	f8acf0aa	15x15	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-award	
+paw-print.svg	paw-print	f980f01a	15x15	0 0 24 24	stroke	tokens; sessions; limits; skills; settings; widgets; service-status; achievements	a lucide-paw-print	
+refresh-cw.svg	refresh-cw	08f7aac4	14x14 16x16	0 0 24 24	stroke	tokens; sessions; limits; skills; service-status	button lucide-refresh-cw	Refresh / Refresh sessions / Refresh limits
+chevron-down.svg	chevron-down	ebd8b747	14x14	0 0 24 24	stroke	sessions; skills; settings; widgets	button lucide-chevron-down	Filter by session source / Filter by date range / Filter by project
+chevron-right.svg	chevron-right	4f0f75d5	14x14 16x16	0 0 24 24	stroke	sessions; skills	button lucide-chevron-right; div lucide-chevron-right	Open details
+search.svg	search	d79bc653	16x16	0 0 24 24	stroke	sessions; skills	div lucide-search	
+info.svg	info	dbfd9936	14x14 16x16	0 0 24 24	stroke	tokens; sessions	button lucide-info	View cost breakdown / About these totals
+folder.svg	folder	04365b51	14x14	0 0 24 24	stroke	sessions	button lucide-folder	Filter by project
+copy.svg	copy	0cc69986	16x16	0 0 24 24	stroke	sessions	button lucide-copy	Copy resume command
+calendar-clock.svg	calendar-clock	21e7af50	16x16	0 0 24 24	stroke	limits	button lucide-calendar-clock	Subscriptions
+maximize-2.svg	maximize-2	2f2f6b44	14x14	0 0 24 24	stroke	tokens	button lucide-maximize-2	Expand to full screen
+square-arrow-out-up-right.svg	square-arrow-out-up-right	3c239262	14x14	0 0 24 24	stroke	tokens	button lucide-square-arrow-out-up-right	Open share card
+bell-off.svg	bell-off	465e465e	16x16	0 0 24 24	stroke	limits	button lucide-bell-off	Enable predictive limit alerts
+download.svg	download	5185cfa4	16x16	0 0 24 24	stroke	widgets	a lucide-download	
+external-link.svg	external-link	56a981a8	16x16	0 0 24 24	stroke	service-status	a lucide-external-link	Open Claude status page / Open OpenAI / Codex status page / Open Cursor status page
+arrow-up-right.svg	arrow-up-right	73c93c1e	12x12	0 0 24 24	stroke	tokens	a lucide-arrow-up-right	
+sun.svg	sun	750668a3	14x14	0 0 24 24	stroke	settings	button lucide-sun	
+palette.svg	palette	93434e1d	16x16	0 0 24 24	fill	settings	button lucide-palette	
+languages.svg	languages	b810d101	14x14	0 0 24 24	stroke	settings	button lucide-languages	Language
+hard-drive.svg	hard-drive	bf4cf6e0	11x11	0 0 24 24	stroke	achievements	button lucide-hard-drive	Project Hopper / Project Devotion / Night Owl
+calendar.svg	calendar	d91d45cb	14x14	0 0 24 24	stroke	sessions	button lucide-calendar	Filter by date range
+user-round.svg	user-round	eca407f1	16x16	0 0 24 24	stroke	settings	button lucide-user-round	
+flask-conical.svg	flask-conical	f4f9ecb8	16x16	0 0 24 24	stroke	settings	button lucide-flask-conical	
+x.svg	x	f6adc5e0	13x13	0 0 24 24	stroke	skills	button lucide-x	Clear search
+monitor.svg	monitor	fd51656b	14x14	0 0 24 24	stroke	settings	button lucide-monitor	

@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TokenTracker style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg-wash); color: var(--text-primary); font-family: var(--font-family-sans); -webkit-font-smoothing: antialiased; }
+code { font-family: var(--font-family-mono); font-size: 12px; }
+.ic { display: inline-block; vertical-align: middle; flex: none; }
+
+/* page chrome of the guide itself */
+.top { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 16px; padding: 12px 24px; background: var(--bg-wash); border-bottom: 1px solid var(--border-default); }
+.top h1 { font: var(--typography-sectionTitle); letter-spacing: var(--font-letterSpacing-sectionTitle); margin: 0; flex: 1; }
+.toggle { font: var(--typography-control); display: inline-flex; gap: 2px; padding: 2px; border: 1px solid var(--border-default); border-radius: var(--radius-xl); background: var(--bg-segmentTrack); }
+.toggle button { font: inherit; border: 0; border-radius: var(--radius-lg); padding: var(--space-control-y) var(--space-control-x); background: none; color: var(--text-secondary); cursor: pointer; }
+.toggle button[aria-pressed="true"] { background: var(--bg-segmentSelected); color: var(--text-strong); box-shadow: 0 1px 2px #0000000d; }
+main.guide { max-width: 1180px; margin: 0 auto; padding: 32px 24px 80px; }
+.s { margin: 0 0 48px; }
+.sh { font: var(--typography-sectionTitle); letter-spacing: var(--font-letterSpacing-sectionTitle); color: var(--text-strong); margin: 0 0 6px; }
+.lead { font: var(--typography-body); color: var(--text-secondary); margin: 0 0 20px; max-width: 760px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border-default); border-radius: var(--radius-xl); overflow: hidden; background: var(--bg-card); }
+.sw .chip { height: 56px; border-bottom: 1px solid var(--border-default); }
+.sw .meta { padding: 8px 10px; font: var(--typography-caption); color: var(--text-secondary); }
+.sw .meta b { display: block; font-weight: 500; color: var(--text-primary); }
+.srcline { display: block; margin-top: 4px; font: 11px/1.4 var(--font-family-sans); color: var(--text-muted); overflow-wrap: anywhere; }
+.ramp { display: grid; grid-template-columns: repeat(12, 1fr); border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-default); margin-bottom: 12px; }
+.ramp div { height: 64px; padding: 6px; font: 11px/1.3 var(--font-family-mono); display: flex; flex-direction: column; justify-content: flex-end; }
+table.t { width: 100%; border-collapse: collapse; font: var(--typography-bodySmall); }
+table.t th { text-align: left; font: var(--typography-caption); color: var(--text-secondary); padding: 6px 8px; border-bottom: 1px solid var(--border-default); }
+table.t td { padding: 8px; border-bottom: 1px solid var(--border-default); vertical-align: top; }
+table.t td.src { color: var(--text-secondary); font-size: 12px; max-width: 420px; }
+.spec { display: flex; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--border-default); }
+.spec .lab { width: 170px; flex: none; font: var(--typography-caption); color: var(--text-secondary); }
+.spec .lab code { display: block; color: var(--text-muted); }
+.boxes { display: flex; flex-wrap: wrap; gap: 16px; }
+.box { width: 120px; height: 72px; background: var(--bg-card); border: 1px solid var(--border-strong); display: flex; align-items: flex-end; padding: 8px; font: var(--typography-caption); color: var(--text-secondary); }
+.note { font: var(--typography-caption); color: var(--text-secondary); margin-top: 8px; }
+
+/* TokenTracker, rebuilt from the tokens */
+.app { display: flex; height: 760px; border: 1px solid var(--border-default); border-radius: var(--radius-2xl); overflow: hidden; background: var(--bg-wash); }
+.side { width: var(--size-sidebar-width); flex: none; display: flex; flex-direction: column; padding: 8px; }
+.side .grp { font: var(--typography-groupLabel); letter-spacing: var(--font-letterSpacing-groupLabel); text-transform: uppercase; color: var(--text-muted); padding: 16px 12px 6px; }
+.nav { display: flex; align-items: center; gap: 8px; height: var(--size-navItem-height); padding: var(--space-navItem-y) var(--space-navItem-x); border-radius: var(--radius-lg); font: var(--typography-nav); color: var(--text-nav); transition: background-color var(--motion-duration-fast) var(--motion-easing-standard), color var(--motion-duration-fast) var(--motion-easing-standard); cursor: default; }
+.nav:hover { background: var(--bg-hover); color: var(--text-strong); }
+.nav.on { background: var(--bg-navActive); color: var(--text-strong); font-weight: 500; }
+.side .foot { margin-top: auto; display: flex; justify-content: space-between; padding: 4px; }
+.pill { height: 32px; min-width: 32px; padding: 0 10px; display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border-default); border-radius: var(--radius-full); font: var(--typography-caption); color: var(--text-secondary); background: none; }
+.panel { flex: 1; margin: var(--space-panelInset) 12px 12px 0; background: var(--bg-panel); border: 1px solid var(--border-default); border-radius: var(--radius-2xl); box-shadow: 0 1px 2px #0000000d; overflow: auto; padding: 32px 40px; }
+.ptitle { font: var(--typography-pageTitle); letter-spacing: var(--font-letterSpacing-pageTitle); color: var(--text-strong); margin: 0; }
+.psub { font: var(--typography-body); color: var(--text-secondary); margin: 6px 0 24px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.tabs { display: flex; gap: 4px; }
+.tab { font: var(--typography-control); height: var(--size-control-sm); padding: var(--space-control-y) var(--space-control-x); border-radius: var(--radius-lg); color: var(--text-secondary); background: none; border: 0; }
+.tab:hover { background: var(--bg-hover); color: var(--text-strong); }
+.tab.on { background: var(--bg-selected); color: var(--text-strong); }
+.btn { font: var(--typography-control); height: var(--size-control-md); padding: 0 12px; border-radius: var(--radius-lg); display: inline-flex; align-items: center; gap: 6px; cursor: default; transition: all var(--motion-duration-base) var(--motion-easing-standard); }
+.btn.primary { background: var(--button-primary-bg); color: var(--button-primary-fg); border: 0; height: var(--size-control-sm); }
+.btn.primary:hover { opacity: .9; }
+.btn.secondary { background: var(--button-secondary-bg); color: var(--text-primary); border: 1px solid var(--button-secondary-border); }
+.btn.secondary:hover { color: var(--button-secondary-hoverFg); }
+.ibtn { width: var(--size-iconButton); height: var(--size-iconButton); border-radius: var(--radius-xl); border: 1px solid var(--border-default); background: none; color: var(--text-nav); display: inline-flex; align-items: center; justify-content: center; }
+.ibtn:hover { background: var(--bg-selected); color: var(--text-strong); }
+.card { background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-2xl); padding: var(--space-card); }
+.eyebrow { font: var(--typography-eyebrow); letter-spacing: var(--font-letterSpacing-eyebrow); text-transform: uppercase; color: var(--text-secondary); text-align: center; }
+.hero { font: var(--typography-display); letter-spacing: var(--font-letterSpacing-display); text-align: center; font-variant-numeric: tabular-nums; margin: 8px 0; }
+.fig { font: var(--typography-figure); color: var(--accent-default); text-align: center; }
+.share { display: flex; height: 6px; gap: 2px; margin: 24px 0 16px; }
+.share span { border-radius: var(--radius-full); }
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.tile { border: 1px solid var(--border-strong); border-radius: var(--radius-xl); padding: var(--space-tile); transition: border-color var(--motion-duration-base); }
+.tile:hover { border-color: var(--border-hover); }
+.tile .n { font: 500 13px/1.5 var(--font-family-sans); }
+.tile .v { font: 600 20px/28px var(--font-family-sans); font-variant-numeric: tabular-nums; }
+.tile .c { font: var(--typography-caption); color: var(--text-secondary); }
+.field { height: var(--size-control-field); border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--bg-field); color: var(--text-primary); font: var(--typography-bodySmall); padding: 0 12px 0 36px; width: 320px; }
+.sel { height: var(--size-control-field); border: 1px solid var(--border-default); border-radius: var(--radius-md); background: var(--bg-field); font: var(--typography-bodySmall); color: var(--text-strong); padding: 0 12px; display: inline-flex; align-items: center; gap: 24px; }
+.sel:hover { border-color: var(--border-hover); }
+.seg { display: inline-flex; gap: 2px; padding: 2px; border: 1px solid var(--border-default); border-radius: var(--radius-xl); background: var(--bg-segmentTrack); }
+.seg button { font: var(--typography-control); height: var(--size-control-sm); padding: var(--space-control-y) var(--space-control-x); border: 0; border-radius: var(--radius-lg); background: none; color: var(--text-secondary); }
+.seg button:hover { color: var(--text-strong); }
+.seg button.on { background: var(--bg-segmentSelected); color: var(--text-strong); box-shadow: 0 1px 2px #0000000d; }
+.badge { font: var(--typography-badge); letter-spacing: var(--font-letterSpacing-badge); text-transform: uppercase; padding: 2px 6px; border-radius: var(--radius-sm); background: var(--bg-selected); color: var(--text-secondary); }
+.list { margin-top: 8px; }
+.li { display: flex; align-items: center; gap: 12px; padding: var(--space-listRow-y) 0; border-bottom: 1px solid var(--border-default); }
+.li .t { font: var(--typography-rowTitle); color: var(--text-strong); }
+.li .m { font: var(--typography-caption); color: var(--text-secondary); }
+.li .num { margin-left: auto; font: var(--typography-bodySmall); font-variant-numeric: tabular-nums; min-width: 80px; text-align: right; }
+.usage { display: grid; grid-template-columns: 48px 1fr 48px 32px; gap: 12px; align-items: center; font: var(--typography-caption); color: var(--text-secondary); margin: 6px 0; }
+.track { height: var(--size-usageTrack-height); background: var(--usage-track); border-radius: var(--radius-full); position: relative; }
+.track i { position: absolute; inset: 0 auto 0 0; border-radius: var(--radius-full); background: var(--accent-fill); }
+.heat { display: grid; grid-template-rows: repeat(7, var(--size-heatmapCell)); grid-auto-flow: column; grid-auto-columns: var(--size-heatmapCell); gap: 3px; }
+.heat span { border-radius: var(--radius-xs); }
+.dt { width: 100%; border-collapse: collapse; font: var(--typography-bodySmall); font-variant-numeric: tabular-nums; }
+.dt th { text-align: left; font: var(--typography-tableHeader); letter-spacing: var(--font-letterSpacing-tableHeader); color: var(--text-primary); padding: 8px 16px; border-bottom: 1px solid var(--border-default); }
+.dt td { padding: var(--space-tableCell-y) var(--space-tableCell-x); border-bottom: 1px solid var(--border-default); }
+.dt tr:hover td { background: var(--bg-rowHover); }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.dodont { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.dodont .card h3 { font: var(--typography-rowTitle); margin: 0 0 6px; color: var(--text-strong); }
+.dodont .card p { font: var(--typography-caption); color: var(--text-secondary); margin: 0; }
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>TokenTracker, measured</h1>
+  <div class="toggle" role="group" aria-label="Theme">
+    <button type="button" data-set="light" aria-pressed="false"><!--icon:sun:14--> Light</button>
+    <button type="button" data-set="dark" aria-pressed="true"><!--icon:moon:14--> Dark</button>
+  </div>
+</div>
+<main class="guide">
+
+<section class="s" id="intro">
+  <h2 class="sh">What this page is</h2>
+  <p class="lead">Every value here is a CSS custom property generated from <code>tokens.json</code>, which was read from TokenTracker v1.3.5's dashboard: its CSS bundle and the computed styles of 70 components in dark and light. The drawings below are rebuilt from those tokens; the real pixels are in <code>screenshots/</code> and <code>components/crops/</code>. The toggle sets <code>data-mode</code> on this page; TokenTracker itself switches with a <code>.dark</code> class on <code>&lt;html&gt;</code>.</p>
+</section>
+
+<section class="s" id="shell">
+  <h2 class="sh">The shell, rebuilt</h2>
+  <p class="lead">A borderless sidebar on the page wash, a rounded content panel inset 8px from the top, quiet hairline cards inside it, one green accent for money.</p>
+  <div class="app">
+    <aside class="side">
+      <div class="grp">General</div>
+      <div class="nav on"><!--icon:chart-column:15--> Tokens</div>
+      <div class="nav"><!--icon:rotate-ccw-clock:15--> Sessions</div>
+      <div class="nav"><!--icon:gauge:15--> Limits</div>
+      <div class="grp">Tools</div>
+      <div class="nav"><!--icon:layout-grid:15--> Menu Bar &amp; Widgets</div>
+      <div class="nav"><!--icon:puzzle:15--> Skills</div>
+      <div class="nav"><!--icon:globe:15--> Claude IP Check</div>
+      <div class="nav"><!--icon:activity:15--> Service Status</div>
+      <div class="grp">Account</div>
+      <div class="nav"><!--icon:settings:15--> Settings</div>
+      <div class="foot"><span class="pill"><!--icon:moon:14--></span><span class="pill">Star 2015</span></div>
+    </aside>
+    <div class="panel">
+      <div class="row" style="justify-content:space-between">
+        <div class="tabs"><button class="tab">Day</button><button class="tab">Week</button><button class="tab on">Month</button><button class="tab">Total</button></div>
+        <div class="row"><span class="btn secondary"><!--icon:square-arrow-out-up-right:14--> Share</span><span class="ibtn"><!--icon:refresh-cw:16--></span></div>
+      </div>
+      <div class="eyebrow" style="margin-top:24px">Total tokens</div>
+      <div class="hero">12.9B</div>
+      <div class="fig">$4,840.32</div>
+      <div class="share"><span style="flex:83;background:#d97757"></span><span style="flex:10;background:#3b82f6"></span><span style="flex:7;background:#6d5dfc"></span></div>
+      <div class="tiles">
+        <div class="tile"><div class="n">All</div><div class="v">100.00%</div><div class="c">16 models</div></div>
+        <div class="tile"><div class="n">Claude</div><div class="v">83.00%</div><div class="c">5 models</div></div>
+        <div class="tile"><div class="n">Codex</div><div class="v">10.40%</div><div class="c">4 models</div></div>
+        <div class="tile"><div class="n">Devin</div><div class="v">6.55%</div><div class="c">5 models</div></div>
+      </div>
+      <div class="cols" style="margin-top:16px">
+        <div class="card">
+          <div class="row" style="justify-content:space-between;margin-bottom:12px"><span style="font:var(--typography-rowTitle)">Activity</span><span class="seg"><button class="on">2D</button><button>3D</button></span></div>
+          <div class="heat" id="heat"></div>
+        </div>
+        <div class="card">
+          <div style="font:var(--typography-rowTitle);margin-bottom:8px">Limits</div>
+          <div class="usage"><span>5h</span><div class="track"><i style="width:23%"></i></div><span>23%</span><span>2h</span></div>
+          <div class="usage"><span>7d</span><div class="track"><i style="width:65%"></i></div><span>65%</span><span>4d</span></div>
+          <div class="usage"><span>Fable</span><div class="track"><i style="width:2%"></i></div><span>2%</span><span>4d</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="note">Provider colours in the share bar are illustrative; TokenTracker takes them from <code>getProviderColor()</code>, which was not read as tokens.</p>
+</section>
+
+<section class="s" id="components">
+  <h2 class="sh">Controls</h2>
+  <p class="lead">Small and quiet: 12px/500 labels on 28px controls, 8px radius, one hairline, hover changes colour only. Pages put one primary action at most; the rest are outlined or icon buttons.</p>
+  <div class="row" style="margin-bottom:16px">
+    <span class="btn primary">Open in Mac app</span>
+    <span class="btn secondary"><!--icon:download:14--> Download</span>
+    <span class="ibtn"><!--icon:refresh-cw:16--></span>
+    <span class="seg"><button>Light</button><button>Dark</button><button class="on">System</button></span>
+    <span class="badge">Beta</span>
+  </div>
+  <div class="row" style="margin-bottom:16px">
+    <span style="position:relative;display:inline-flex;align-items:center"><span style="position:absolute;left:12px;color:var(--text-secondary)"><!--icon:search:16--></span><input class="field" placeholder="Search title, project, model, or ID…"></span>
+    <span class="sel">All tools <!--icon:chevron-down:14--></span>
+    <span class="sel"><!--icon:calendar:14--> Any time <!--icon:chevron-down:14--></span>
+  </div>
+  <div class="card">
+    <div class="list">
+      <div class="li"><div><div class="t">project-1</div><div class="m">claude-opus-5-5 388M · Oct 10, 05:41 PM · 7h 42m</div></div><span class="num">393.2M</span><span class="num">$112.58</span></div>
+      <div class="li"><div><div class="t">project-2</div><div class="m">claude-opus-5-5 185.3M · Oct 10, 11:45 PM · 3h 21m</div></div><span class="num">199.9M</span><span class="num">$53.58</span></div>
+    </div>
+    <table class="dt" style="margin-top:16px"><thead><tr><th>Date</th><th>Total</th><th>Input</th><th>Output</th><th>Cached</th></tr></thead>
+      <tbody><tr><td>2026-10-11</td><td>1.3B</td><td>9.3K</td><td>1.4M</td><td>1.2B</td></tr><tr><td>2026-10-10</td><td>1B</td><td>854K</td><td>1M</td><td>1B</td></tr></tbody></table>
+  </div>
+</section>
+
+<section class="s" id="dodont">
+  <h2 class="sh">Do and don't</h2>
+  <div class="dodont">
+    <div class="card"><h3>Do: let surfaces do the work</h3><p>Wash, panel and card differ by one neutral step and a hairline. No coloured fills behind content; the only resting shadow is 0 1px 2px at 5%.</p></div>
+    <div class="card"><h3>Do: keep green for money and "on"</h3><p>The brand green marks cost, the usage fill and the heatmap. Primary buttons are black in light and near-white in dark, never green.</p></div>
+    <div class="card"><h3>Don't: copy the uppercase labels</h3><p>Older cards and the sidebar groups use tracked uppercase ("ACTIVITY HEATMAP", "GENERAL"). TokenTracker's newer cards use sentence case at 14/500. Use sentence case.</p></div>
+    <div class="card"><h3>Don't: copy the missing focus ring</h3><p>TokenTracker removes every focus ring, so keyboard focus is invisible. Add a 2px accent ring at 2px offset.</p></div>
+  </div>
+</section>
+
+<section class="s" id="roles">
+  <h2 class="sh">Colour roles</h2>
+  <p class="lead">The semantic set for the current theme. Each swatch names its token, its value and the reading it came from.</p>
+  <div class="grid" id="rolegrid"></div>
+</section>
+
+<section class="s" id="ramps">
+  <h2 class="sh">Ramps</h2>
+  <p class="lead">Neutral: the hex steps the components render (Tailwind's neutral). Brand: emerald, declared as <code>--brand-*</code>. Heatmap: five steps per theme, empty first.</p>
+  <div class="ramp" id="neutral"></div>
+  <div class="ramp" id="brand"></div>
+  <div class="ramp" id="heatramp" style="grid-template-columns:repeat(5,1fr)"></div>
+  <table class="t"><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody id="rampsrc"></tbody></table>
+</section>
+
+<section class="s" id="type">
+  <h2 class="sh">Type</h2>
+  <p class="lead">One family, the system font (SF Pro on macOS), tabular figures for numbers. Sizes step 8, 10, 12, 13, 14, 16, 20, 36, 72.</p>
+  <div id="typespecs"></div>
+</section>
+
+<section class="s" id="shape">
+  <h2 class="sh">Shape, space and motion</h2>
+  <div class="boxes" id="radii"></div>
+  <table class="t" style="margin-top:20px"><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody id="misc"></tbody></table>
+</section>
+
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const theme = () => document.documentElement.getAttribute('data-mode') === 'dark' ? 'dark' : 'light';
+const get = (set, path) => path.split('.').reduce((n, k) => n && n[k], TOK[set]);
+const resolve = (v) => { const m = typeof v === 'string' && v.match(/^\{(.+)\}$/); return m ? resolve(get('core', m[1]).v) : v; };
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+function walk(node, prefix, out) { for (const [k, v] of Object.entries(node)) { if (v && v.v !== undefined) out.push([prefix + k, v]); else if (v && typeof v === 'object') walk(v, prefix + k + '.', out); } return out; }
+
+function roles() {
+  const list = walk(TOK[theme()], '', []).filter(([, t]) => t.t === 'color');
+  $('#rolegrid').innerHTML = list.map(([n, t]) => `<div class="sw"><div class="chip" style="background:${resolve(t.v)}"></div><div class="meta"><b>${esc(n)}</b>${esc(resolve(t.v))}${t.d ? ' · ' + esc(t.d) : ''}<span class="srcline">${esc(t.s)}</span></div></div>`).join('');
+  const heat = walk(TOK.core.color.heatmap[theme()], '', []);
+  $('#heatramp').innerHTML = heat.map(([n, t]) => `<div style="background:${t.v};color:${+n > 2 ? '#fff' : 'var(--text-secondary)'}">${n}<br>${t.v}</div>`).join('');
+  const cells = []; let seed = 7;
+  for (let i = 0; i < 26 * 7; i++) { seed = (seed * 9301 + 49297) % 233280; const r = seed / 233280; cells.push(r < .2 ? 0 : 1 + Math.floor(r * 4) % 4); }
+  $('#heat').innerHTML = cells.map((l) => `<span style="background:var(--heatmap-${l})"></span>`).join('');
+}
+function ramps() {
+  const row = (node, el) => { el.innerHTML = walk(node, '', []).map(([n, t]) => { const dark = ['500', '600', '700', '800', '900', '950'].includes(n); return `<div title="${esc(t.s)}" style="background:${t.v};color:${dark ? '#fafafa' : '#0a0a0a'}">${n}<br>${t.v}</div>`; }).join(''); };
+  row(TOK.core.color.neutral, $('#neutral')); row(TOK.core.color.brand, $('#brand'));
+  $('#rampsrc').innerHTML = [...walk(TOK.core.color.neutral, 'neutral.', []), ...walk(TOK.core.color.brand, 'brand.', [])].map(([n, t]) => `<tr><td><code>color.${esc(n)}</code></td><td>${esc(t.v)}</td><td class="src">${esc(t.s)}</td></tr>`).join('');
+  $('#typespecs').innerHTML = walk(TOK.core.typography, '', []).map(([n, t]) => {
+    const css = `font:var(--typography-${n});letter-spacing:var(--font-letterSpacing-${n});text-transform:${t.textTransform || 'none'}`;
+    const sz = get('core', 'font.size.' + n).v, w = get('core', 'font.weight.' + n).v, lh = get('core', 'font.lineHeight.' + n).v;
+    const sample = n === 'display' ? '12.9B' : n === 'figure' ? '$4,840.32' : n === 'pageTitle' ? 'Sessions' : n === 'tableHeader' ? 'Cached' : 'Local sessions, usage and estimated cost';
+    return `<div class="spec"><div class="lab">${esc(n)}<code>${sz} / ${lh} / ${w}</code></div><div><div style="${css}">${esc(sample)}</div><span class="srcline">${esc(t.s)}</span></div></div>`;
+  }).join('');
+  $('#radii').innerHTML = walk(TOK.core.radius, '', []).map(([n, t]) => `<div class="box" title="${esc(t.s)}" style="border-radius:${t.v}">${n} · ${t.v}</div>`).join('');
+  const misc = [...walk(TOK.core.radius, 'radius.', []), ...walk(TOK.core.size, 'size.', []), ...walk(TOK.core.space, 'space.', []), ...walk(TOK.core.motion, 'motion.', [])];
+  $('#misc').innerHTML = misc.map(([n, t]) => `<tr><td><code>${esc(n)}</code></td><td>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</td><td class="src">${esc(t.s)}</td></tr>`).join('');
+}
+function setTheme(mode) {
+  document.documentElement.setAttribute('data-mode', mode);
+  document.querySelectorAll('.toggle button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.set === mode)));
+  roles();
+}
+document.querySelectorAll('.toggle button').forEach((b) => b.addEventListener('click', () => setTheme(b.dataset.set)));
+ramps(); setTheme('dark');
+</script>
+</body>
+</html>

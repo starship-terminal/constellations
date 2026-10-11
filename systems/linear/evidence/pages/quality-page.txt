@@ -1,0 +1,66 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- main:
+  - region "Media player"
+  - link "Navigate to home":
+    - /url: /homepage
+  - link "Conversations on Quality":
+    - /url: /quality
+    - text: Conversations
+    - text: on Quality
+  - heading "Introduction" [level=1]
+  - paragraph: "What is quality? It seems hard to describe and even harder to measure, but you can feel it when it’s there. You know it when you experience it. This is a series of conversations with those who seek to create products of this undefinable quality. And an attempt to answer the central question: How do things of quality get built?"
+  - button "Play teaser P":
+    - text: Play teaser
+    - generic: P
+  - generic: Follow
+  - link "Watch on YouTube":
+    - /url: https://www.youtube.com/watch?v=VcwhJaV6ZYs
+  - generic: ·
+  - time: Oct 11, 2024
+  - generic: ·
+  - time: 1 min
+  - img "Closed Captioning"
+  - button [disabled]:
+  - button:
+  - link "Introduction Linear":
+    - /url: /quality/00
+    - paragraph: Introduction
+    - heading "Linear" [level=2]
+  - link "Episode 01 Dick Costolo":
+    - /url: /quality/01
+    - paragraph: Episode 01
+    - heading "Dick Costolo" [level=2]
+  - link "Episode 02 Karri Saarinen":
+    - /url: /quality/02
+    - paragraph: Episode 02
+    - heading "Karri Saarinen" [level=2]
+  - link "Episode 03 Jeff Weinstein":
+    - /url: /quality/03
+    - paragraph: Episode 03
+    - heading "Jeff Weinstein" [level=2]
+  - link "Episode 04 Henry Modisett":
+    - /url: /quality/04
+    - paragraph: Episode 04
+    - heading "Henry Modisett" [level=2]
+  - link "Episode 05 Adena Nadler":
+    - /url: /quality/05
+    - paragraph: Episode 05
+    - heading "Adena Nadler" [level=2]
+  - link "Episode 06 Tara Feener":
+    - /url: /quality/06
+    - paragraph: Episode 06
+    - heading "Tara Feener" [level=2]
+  - link "Episode 07 Basheer Tome":
+    - /url: /quality/07
+    - paragraph: Episode 07
+    - heading "Basheer Tome" [level=2]
+  - link "Episode 08 Kevin Twohy":
+    - /url: /quality/08
+    - paragraph: Episode 08
+    - heading "Kevin Twohy" [level=2]
+  - link "Episode 09 Ethan Eismann":
+    - /url: /quality/09
+    - paragraph: Episode 09
+    - heading "Ethan Eismann" [level=2]

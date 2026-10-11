@@ -1,0 +1,239 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - region "Media player"
+  - generic: Linear Insights
+  - heading "Instant insights. Durable dashboards." [level=1]:
+    - text: Instant insights.
+    - text: Durable dashboards.
+  - paragraph: Take the guesswork out of product planning with Linear’s purpose-built analytics and reporting features.
+  - heading "Instant analytics for any stream of work" [level=2]
+  - paragraph: Realtime reporting, purpose-built for product teams. Aggregate, segment and visualize data across your Linear workspace. Spot trends, remove blockers, and progress faster.
+  - heading "Drill down on any data point" [level=3]
+  - paragraph: Use quick filters to get an instant view of all the underlying issues and immediately take action.
+  - heading "Zoom out to narrow in" [level=3]
+  - paragraph: Get a high-level view of everything that is happening in your workspace. Identify which areas need your attention and make better decisions.
+  - link:
+    - /url: /customers/mercury
+    - blockquote:
+      - paragraph: Linear Insights is a key aspect of how we observe the efforts and performance of our team
+  - heading "Combine insights into dashboards" [level=2]
+  - paragraph: Build custom dashboards for every team. From ongoing product operations to one-off research reports, dashboards provide a single page view to monitor and analyze key metrics.
+  - button "Learn how to use Dashboards":
+    - text: Learn how to use Dashboards
+  - heading "Fully modular" [level=3]
+  - paragraph: Tailor every dashboard with flexible layout options. From quick glance metrics to detailed graphs and table views.
+  - heading "Built to share. Designed for privacy." [level=3]
+  - paragraph: Share dashboards to align everyone on your team, or keep them private until you’re ready.
+  - heading "Use cases" [level=2]
+  - paragraph: How teams use Linear Insights
+  - button "Effort distribution “Where are we spending our resources?”":
+    - heading "Effort distribution" [level=3]
+    - paragraph: “Where are we spending our resources?”
+    - button:
+  - button "Bug clearance “Are we getting better at fixing bugs?”":
+    - heading "Bug clearance" [level=3]
+    - paragraph: “Are we getting better at fixing bugs?”
+    - button:
+  - button "Data hygiene “Are we prioritizing issues consistently?”":
+    - heading "Data hygiene" [level=3]
+    - paragraph: “Are we prioritizing issues consistently?”
+    - button:
+  - paragraph: Trusted by world-class product and engineering teams
+  - link "Meet our customers":
+    - /url: /customers
+    - generic: Meet our customers
+  - heading "Tech specs" [level=2]
+  - paragraph: See what’s inside the box.
+  - button "Controls":
+    - heading "Controls" [level=3]
+  - button "Measure":
+    - heading "Measure" [level=3]
+  - generic: Issue count
+  - generic: Effort
+  - generic: Cycle time
+  - generic: Triage time
+  - generic: Lead time
+  - generic: Issue age
+  - button "Slice":
+    - heading "Slice" [level=3]
+  - generic: Status
+  - generic: Status type
+  - generic: Assignee
+  - generic: Creator
+  - generic: Priority
+  - generic: Label
+  - generic: Label group
+  - generic: SLA status
+  - generic: Estimate
+  - generic: Template
+  - generic: External source
+  - generic: Project
+  - generic: Initiative
+  - generic: Project label
+  - generic: Project label group
+  - generic: Cycle
+  - generic: Added to cycle
+  - generic: Team
+  - generic: Created date
+  - generic: Completed date
+  - generic: Canceled date
+  - generic: Started date
+  - generic: Due date
+  - generic: Burn-up
+  - button "Segment":
+    - heading "Segment" [level=3]
+  - generic: Status
+  - generic: Status type
+  - generic: Assignee
+  - generic: Creator
+  - generic: Priority
+  - generic: Label
+  - generic: Label group
+  - generic: SLA status
+  - generic: Estimate
+  - generic: Template
+  - generic: External source
+  - generic: Project
+  - generic: Initiative
+  - generic: Project label
+  - generic: Project label group
+  - generic: Added to cycle
+  - generic: Team
+  - button "Time series grouping":
+    - heading "Time series grouping" [level=3]
+  - generic: Daily
+  - generic: Weekly
+  - generic: Monthly
+  - generic: Quarterly
+  - generic: Yearly
+  - button "Chart types":
+    - heading "Chart types" [level=3]
+  - button "Dashboard display options":
+    - heading "Dashboard display options" [level=3]
+  - button "Detailed analysis":
+    - heading "Detailed analysis" [level=3]
+  - button "Data export":
+    - heading "Data export" [level=3]
+  - generic: CSV export
+  - generic: Google Sheets
+  - generic: Fivetran integration
+  - generic: Data warehouse sync via Airbyte
+  - heading "Activate Insights for your team" [level=3]
+  - paragraph: Insights is included with Linear Business, Dashboards with Linear Enterprise.
+  - link "Get started":
+    - /url: /signup
+  - link "Contact sales":
+    - /url: /contact/sales?message=I'm%20interested%20in%20Linear%20Insights%20for%20my%20team.%20I'd%20like%20to%20learn%20more%20about%E2%80%A6
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

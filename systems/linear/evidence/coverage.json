@@ -1,0 +1,656 @@
+{
+  "date": "2026-09-23",
+  "scope": "Page types and primary public navigation, not all nested routes or records",
+  "public": [
+    {
+      "name": "01-home",
+      "title": "Linear \u2013 The system for product development",
+      "url": "https://linear.app/",
+      "file": "screenshots/01-home.png",
+      "type": "Public",
+      "evidence": "evidence/styles/01-home-styles.json",
+      "thumbnail": "thumbnails/public-01-home.jpg"
+    },
+    {
+      "name": "02-brand",
+      "title": "Brand Guidelines \u2013 Linear",
+      "url": "https://linear.app/brand",
+      "file": "screenshots/02-brand.png",
+      "type": "Public",
+      "evidence": "evidence/styles/02-brand-styles.json",
+      "thumbnail": "thumbnails/public-02-brand.jpg"
+    },
+    {
+      "name": "about",
+      "title": "About \u2013 Linear",
+      "url": "https://linear.app/about",
+      "file": "screenshots/about.png",
+      "type": "Public",
+      "evidence": "evidence/styles/about-styles.json",
+      "thumbnail": "thumbnails/public-about.jpg"
+    },
+    {
+      "name": "agents",
+      "title": "Linear for Agents",
+      "url": "https://linear.app/agents",
+      "file": "screenshots/agents.png",
+      "type": "Public",
+      "evidence": "evidence/styles/agents-styles.json",
+      "thumbnail": "thumbnails/public-agents.jpg"
+    },
+    {
+      "name": "ai",
+      "title": "Linear \u2013 Agents that follow work from conversation to code",
+      "url": "https://linear.app/ai",
+      "file": "screenshots/ai.png",
+      "type": "Public",
+      "evidence": "evidence/styles/ai-styles.json",
+      "thumbnail": "thumbnails/public-ai.jpg"
+    },
+    {
+      "name": "asks",
+      "title": "Linear Asks \u2013 Manage workplace requests",
+      "url": "https://linear.app/asks",
+      "file": "screenshots/asks.png",
+      "type": "Public",
+      "evidence": "evidence/styles/asks-styles.json",
+      "thumbnail": "thumbnails/public-asks.jpg"
+    },
+    {
+      "name": "build",
+      "title": "Linear \u2013 Move work forward across teams and agents",
+      "url": "https://linear.app/build",
+      "file": "screenshots/build.png",
+      "type": "Public",
+      "evidence": "evidence/styles/build-styles.json",
+      "thumbnail": "thumbnails/public-build.jpg"
+    },
+    {
+      "name": "careers",
+      "title": "We're hiring \u2013 Linear",
+      "url": "https://linear.app/careers",
+      "file": "screenshots/careers.png",
+      "type": "Public",
+      "evidence": "evidence/styles/careers-styles.json",
+      "thumbnail": "thumbnails/public-careers.jpg"
+    },
+    {
+      "name": "changelog",
+      "title": "Changelog \u2013 Linear",
+      "url": "https://linear.app/changelog",
+      "file": "screenshots/changelog.png",
+      "type": "Public",
+      "evidence": "evidence/styles/changelog-styles.json",
+      "thumbnail": "thumbnails/public-changelog.jpg"
+    },
+    {
+      "name": "coding-sessions",
+      "title": "Coding Sessions \u2013 Linear",
+      "url": "https://linear.app/coding-sessions",
+      "file": "screenshots/coding-sessions.png",
+      "type": "Public",
+      "evidence": "evidence/styles/coding-sessions-styles.json",
+      "thumbnail": "thumbnails/public-coding-sessions.jpg"
+    },
+    {
+      "name": "contact",
+      "title": "Contact us \u2013 Linear",
+      "url": "https://linear.app/contact",
+      "file": "screenshots/contact.png",
+      "type": "Public",
+      "evidence": "evidence/styles/contact-styles.json",
+      "thumbnail": "thumbnails/public-contact.jpg"
+    },
+    {
+      "name": "customer-requests",
+      "title": "Customer Requests \u2013 Linear",
+      "url": "https://linear.app/customer-requests",
+      "file": "screenshots/customer-requests.png",
+      "type": "Public",
+      "evidence": "evidence/styles/customer-requests-styles.json",
+      "thumbnail": "thumbnails/public-customer-requests.jpg"
+    },
+    {
+      "name": "customers",
+      "title": "Linear Customers",
+      "url": "https://linear.app/customers",
+      "file": "screenshots/customers.png",
+      "type": "Public",
+      "evidence": "evidence/styles/customers-styles.json",
+      "thumbnail": "thumbnails/public-customers.jpg"
+    },
+    {
+      "name": "developers",
+      "title": "Linear Developers",
+      "url": "https://linear.app/developers",
+      "file": "screenshots/developers.png",
+      "type": "Public",
+      "evidence": "evidence/styles/developers-styles.json",
+      "thumbnail": "thumbnails/public-developers.jpg"
+    },
+    {
+      "name": "docs",
+      "title": "Linear Docs",
+      "url": "https://linear.app/docs",
+      "file": "screenshots/docs.png",
+      "type": "Public",
+      "evidence": "evidence/styles/docs-styles.json",
+      "thumbnail": "thumbnails/public-docs.jpg"
+    },
+    {
+      "name": "download",
+      "title": "Download Linear",
+      "url": "https://linear.app/download",
+      "file": "screenshots/download.png",
+      "type": "Public",
+      "evidence": "evidence/styles/download-styles.json",
+      "thumbnail": "thumbnails/public-download.jpg"
+    },
+    {
+      "name": "dpa",
+      "title": "Data Processing Agreement \u2013\u00a0Linear",
+      "url": "https://linear.app/dpa",
+      "file": "screenshots/dpa.png",
+      "type": "Public",
+      "evidence": "evidence/styles/dpa-styles.json",
+      "thumbnail": "thumbnails/public-dpa.jpg"
+    },
+    {
+      "name": "enterprise",
+      "title": "An AI product system for modern enterprises",
+      "url": "https://linear.app/enterprise",
+      "file": "screenshots/enterprise.png",
+      "type": "Public",
+      "evidence": "evidence/styles/enterprise-styles.json",
+      "thumbnail": "thumbnails/public-enterprise.jpg"
+    },
+    {
+      "name": "insights",
+      "title": "Insights \u2013 Linear",
+      "url": "https://linear.app/insights",
+      "file": "screenshots/insights.png",
+      "type": "Public",
+      "evidence": "evidence/styles/insights-styles.json",
+      "thumbnail": "thumbnails/public-insights.jpg"
+    },
+    {
+      "name": "intake",
+      "title": "Linear Intake \u2013 Self-driving product operations",
+      "url": "https://linear.app/intake",
+      "file": "screenshots/intake.png",
+      "type": "Public",
+      "evidence": "evidence/styles/intake-styles.json",
+      "thumbnail": "thumbnails/public-intake.jpg"
+    },
+    {
+      "name": "integrations",
+      "title": "Integrations \u2013\u00a0Linear",
+      "url": "https://linear.app/integrations",
+      "file": "screenshots/integrations.png",
+      "type": "Public",
+      "evidence": "evidence/styles/integrations-styles.json",
+      "thumbnail": "thumbnails/public-integrations.jpg"
+    },
+    {
+      "name": "legal-aup",
+      "title": "Acceptable Use Policy",
+      "url": "https://linear.app/legal/aup",
+      "file": "screenshots/legal-aup.png",
+      "type": "Public",
+      "evidence": "evidence/styles/legal-aup-styles.json",
+      "thumbnail": "thumbnails/public-legal-aup.jpg"
+    },
+    {
+      "name": "login",
+      "title": "Linear",
+      "url": "https://linear.app/login",
+      "file": "screenshots/login.png",
+      "type": "Public",
+      "evidence": "evidence/styles/login-styles.json",
+      "thumbnail": "thumbnails/public-login.jpg"
+    },
+    {
+      "name": "method",
+      "title": "Linear Method \u2013 Practices for building",
+      "url": "https://linear.app/method",
+      "file": "screenshots/method.png",
+      "type": "Public",
+      "evidence": "evidence/styles/method-styles.json",
+      "thumbnail": "thumbnails/public-method.jpg"
+    },
+    {
+      "name": "mobile",
+      "title": "Linear Mobile \u2013 Available for iOS and Android",
+      "url": "https://linear.app/mobile",
+      "file": "screenshots/mobile.png",
+      "type": "Public",
+      "evidence": "evidence/styles/mobile-styles.json",
+      "thumbnail": "thumbnails/public-mobile.jpg"
+    },
+    {
+      "name": "now",
+      "title": "Now \u2013 Updates from the Linear team",
+      "url": "https://linear.app/now",
+      "file": "screenshots/now.png",
+      "type": "Public",
+      "evidence": "evidence/styles/now-styles.json",
+      "thumbnail": "thumbnails/public-now.jpg"
+    },
+    {
+      "name": "plan",
+      "title": "Linear \u2013 Plan and navigate from idea to launch",
+      "url": "https://linear.app/plan",
+      "file": "screenshots/plan.png",
+      "type": "Public",
+      "evidence": "evidence/styles/plan-styles.json",
+      "thumbnail": "thumbnails/public-plan.jpg"
+    },
+    {
+      "name": "pricing",
+      "title": "Pricing \u2013 Linear",
+      "url": "https://linear.app/pricing",
+      "file": "screenshots/pricing.png",
+      "type": "Public",
+      "evidence": "evidence/styles/pricing-styles.json",
+      "thumbnail": "thumbnails/public-pricing.jpg"
+    },
+    {
+      "name": "privacy",
+      "title": "Privacy Policy",
+      "url": "https://linear.app/privacy",
+      "file": "screenshots/privacy.png",
+      "type": "Public",
+      "evidence": "evidence/styles/privacy-styles.json",
+      "thumbnail": "thumbnails/public-privacy.jpg"
+    },
+    {
+      "name": "quality",
+      "title": "Introduction - Conversations on Quality",
+      "url": "https://linear.app/quality",
+      "file": "screenshots/quality.png",
+      "type": "Public",
+      "evidence": "evidence/styles/quality-styles.json",
+      "thumbnail": "thumbnails/public-quality.jpg"
+    },
+    {
+      "name": "security",
+      "title": "Security \u2013\u00a0Linear",
+      "url": "https://linear.app/security",
+      "file": "screenshots/security.png",
+      "type": "Public",
+      "evidence": "evidence/styles/security-styles.json",
+      "thumbnail": "thumbnails/public-security.jpg"
+    },
+    {
+      "name": "signup",
+      "title": "Linear",
+      "url": "https://linear.app/signup",
+      "file": "screenshots/signup.png",
+      "type": "Public",
+      "evidence": "evidence/styles/signup-styles.json",
+      "thumbnail": "thumbnails/public-signup.jpg"
+    },
+    {
+      "name": "startups",
+      "title": "Linear for startups \u2013 Linear",
+      "url": "https://linear.app/startups",
+      "file": "screenshots/startups.png",
+      "type": "Public",
+      "evidence": "evidence/styles/startups-styles.json",
+      "thumbnail": "thumbnails/public-startups.jpg"
+    },
+    {
+      "name": "switch",
+      "title": "Switch to Linear \u2013 Linear",
+      "url": "https://linear.app/switch",
+      "file": "screenshots/switch.png",
+      "type": "Public",
+      "evidence": "evidence/styles/switch-styles.json",
+      "thumbnail": "thumbnails/public-switch.jpg"
+    },
+    {
+      "name": "terms",
+      "title": "Terms of Service",
+      "url": "https://linear.app/terms",
+      "file": "screenshots/terms.png",
+      "type": "Public",
+      "evidence": "evidence/styles/terms-styles.json",
+      "thumbnail": "thumbnails/public-terms.jpg"
+    }
+  ],
+  "app": [
+    {
+      "name": "01-agent",
+      "title": "01-agent",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/01-agent.txt"
+    },
+    {
+      "name": "02-inbox",
+      "title": "02-inbox",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/02-inbox.txt"
+    },
+    {
+      "name": "03-my-issues",
+      "title": "03-my-issues",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/03-my-issues.txt"
+    },
+    {
+      "name": "04-issue-detail",
+      "title": "COR-30 Sample issue 30",
+      "url": "https://linear.app/acme/issue/COR-30/sample-issue-30",
+      "type": "App",
+      "evidence": "screenshots/app/04-issue-detail.txt"
+    },
+    {
+      "name": "05-status-picker",
+      "title": "05-status-picker",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/05-status-picker.txt"
+    },
+    {
+      "name": "06-priority-picker",
+      "title": "06-priority-picker",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/06-priority-picker.txt"
+    },
+    {
+      "name": "07-projects",
+      "title": "07-projects",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/07-projects.txt"
+    },
+    {
+      "name": "08-project-updates-empty",
+      "title": "08-project-updates-empty",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/08-project-updates-empty.txt"
+    },
+    {
+      "name": "09-project-overview",
+      "title": "09-project-overview",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/09-project-overview.txt"
+    },
+    {
+      "name": "10-date-picker",
+      "title": "10-date-picker",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/10-date-picker.txt"
+    },
+    {
+      "name": "11-project-issues",
+      "title": "Sample project \u203a Issues",
+      "url": "https://linear.app/acme/project/sample-project-0a1b2c3d4e5f/issues",
+      "type": "App",
+      "evidence": "screenshots/app/11-project-issues.txt"
+    },
+    {
+      "name": "12-display-options",
+      "title": "12-display-options",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/12-display-options.txt"
+    },
+    {
+      "name": "13-filter-menu",
+      "title": "13-filter-menu",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/13-filter-menu.txt"
+    },
+    {
+      "name": "14-create-issue-dialog",
+      "title": "14-create-issue-dialog",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/14-create-issue-dialog.txt"
+    },
+    {
+      "name": "15-reviews",
+      "title": "Reviews (10)",
+      "url": "https://linear.app/acme/reviews",
+      "type": "App",
+      "evidence": "screenshots/app/15-reviews.txt"
+    },
+    {
+      "name": "16-views",
+      "title": "Issues",
+      "url": "https://linear.app/acme/views",
+      "type": "App",
+      "evidence": "screenshots/app/16-views.txt"
+    },
+    {
+      "name": "17-team-home",
+      "title": "Core \u203a Overview",
+      "url": "https://linear.app/acme/team/COR/overview",
+      "type": "App",
+      "evidence": "screenshots/app/17-team-home.txt"
+    },
+    {
+      "name": "18-team-issues",
+      "title": "Core \u203a All issues",
+      "url": "https://linear.app/acme/team/COR/all",
+      "type": "App",
+      "evidence": "screenshots/app/18-team-issues.txt"
+    },
+    {
+      "name": "19-team-projects",
+      "title": "Core \u203a Projects",
+      "url": "https://linear.app/acme/team/COR/projects/all",
+      "type": "App",
+      "evidence": "screenshots/app/19-team-projects.txt"
+    },
+    {
+      "name": "20-team-views",
+      "title": "Core \u203a Issues",
+      "url": "https://linear.app/acme/team/COR/views/issues",
+      "type": "App",
+      "evidence": "screenshots/app/20-team-views.txt"
+    },
+    {
+      "name": "21-project-activity",
+      "title": "Sample project \u203a Activity",
+      "url": "https://linear.app/acme/project/sample-project-0a1b2c3d4e5f/activity",
+      "type": "App",
+      "evidence": "screenshots/app/21-project-activity.txt"
+    },
+    {
+      "name": "22-team-documents",
+      "title": "Core \u203a Documents",
+      "url": "https://linear.app/acme/team/COR/documents",
+      "type": "App",
+      "evidence": "screenshots/app/22-team-documents.txt"
+    },
+    {
+      "name": "23-team-members",
+      "title": "Core \u203a Members",
+      "url": "https://linear.app/acme/team/COR/members",
+      "type": "App",
+      "evidence": "screenshots/app/23-team-members.txt"
+    },
+    {
+      "name": "24-workspace-menu",
+      "title": "Core \u203a Members",
+      "url": "https://linear.app/acme/team/COR/members",
+      "type": "App",
+      "evidence": "screenshots/app/24-workspace-menu.txt"
+    },
+    {
+      "name": "25-team-settings",
+      "title": "Core \u203a Overview",
+      "url": "https://linear.app/acme/settings/teams/COR",
+      "type": "App",
+      "evidence": "screenshots/app/25-team-settings.txt"
+    },
+    {
+      "name": "settings-account-notifications",
+      "title": "Notifications",
+      "url": "https://linear.app/acme/settings/account/notifications",
+      "type": "App",
+      "evidence": "screenshots/app/settings-account-notifications.txt"
+    },
+    {
+      "name": "settings-account-preferences",
+      "title": "Preferences",
+      "url": "https://linear.app/acme/settings/account/preferences",
+      "type": "App",
+      "evidence": "screenshots/app/settings-account-preferences.txt"
+    },
+    {
+      "name": "settings-ai",
+      "title": "AI & Agents",
+      "url": "https://linear.app/acme/settings/ai",
+      "type": "App",
+      "evidence": "screenshots/app/settings-ai.txt"
+    },
+    {
+      "name": "settings-asks",
+      "title": "Asks",
+      "url": "https://linear.app/acme/settings/asks",
+      "type": "App",
+      "evidence": "screenshots/app/settings-asks.txt"
+    },
+    {
+      "name": "settings-customer-requests",
+      "title": "Customer requests",
+      "url": "https://linear.app/acme/settings/customer-requests",
+      "type": "App",
+      "evidence": "screenshots/app/settings-customer-requests.txt"
+    },
+    {
+      "name": "settings-documents",
+      "title": "Documents",
+      "url": "https://linear.app/acme/settings/documents",
+      "type": "App",
+      "evidence": "screenshots/app/settings-documents.txt"
+    },
+    {
+      "name": "settings-emojis",
+      "title": "Emojis",
+      "url": "https://linear.app/acme/settings/emojis",
+      "type": "App",
+      "evidence": "screenshots/app/settings-emojis.txt"
+    },
+    {
+      "name": "settings-initiatives",
+      "title": "Initiatives",
+      "url": "https://linear.app/acme/settings/initiatives",
+      "type": "App",
+      "evidence": "screenshots/app/settings-initiatives.txt"
+    },
+    {
+      "name": "settings-integrations",
+      "title": "Integrations",
+      "url": null,
+      "type": "App",
+      "evidence": "screenshots/app/settings-integrations.txt"
+    },
+    {
+      "name": "settings-issue-labels",
+      "title": "Labels",
+      "url": "https://linear.app/acme/settings/issue-labels",
+      "type": "App",
+      "evidence": "screenshots/app/settings-issue-labels.txt"
+    },
+    {
+      "name": "settings-issue-templates",
+      "title": "Issue templates",
+      "url": "https://linear.app/acme/settings/issue-templates",
+      "type": "App",
+      "evidence": "screenshots/app/settings-issue-templates.txt"
+    },
+    {
+      "name": "settings-loops",
+      "title": "Loops",
+      "url": "https://linear.app/acme/settings/loops",
+      "type": "App",
+      "evidence": "screenshots/app/settings-loops.txt"
+    },
+    {
+      "name": "settings-project-labels",
+      "title": "Labels",
+      "url": "https://linear.app/acme/settings/project-labels",
+      "type": "App",
+      "evidence": "screenshots/app/settings-project-labels.txt"
+    },
+    {
+      "name": "settings-project-statuses",
+      "title": "Statuses",
+      "url": "https://linear.app/acme/settings/project-statuses",
+      "type": "App",
+      "evidence": "screenshots/app/settings-project-statuses.txt"
+    },
+    {
+      "name": "settings-project-templates",
+      "title": "Project templates",
+      "url": "https://linear.app/acme/settings/project-templates",
+      "type": "App",
+      "evidence": "screenshots/app/settings-project-templates.txt"
+    },
+    {
+      "name": "settings-project-updates",
+      "title": "Updates",
+      "url": "https://linear.app/acme/settings/project-updates",
+      "type": "App",
+      "evidence": "screenshots/app/settings-project-updates.txt"
+    },
+    {
+      "name": "settings-teams",
+      "title": "Teams",
+      "url": "https://linear.app/acme/settings/teams",
+      "type": "App",
+      "evidence": "screenshots/app/settings-teams.txt"
+    },
+    {
+      "name": "settings-usage",
+      "title": "Usage & limits",
+      "url": "https://linear.app/acme/settings/usage",
+      "type": "App",
+      "evidence": "screenshots/app/settings-usage.txt"
+    },
+    {
+      "name": "settings-workspace",
+      "title": "Workspace",
+      "url": "https://linear.app/acme/settings/workspace",
+      "type": "App",
+      "evidence": "screenshots/app/settings-workspace.txt"
+    }
+  ],
+  "excluded": [
+    {
+      "name": "settings-import-export",
+      "reason": "Destination redirected or did not load; screenshot omitted from gallery",
+      "observed": "HTML content tings, URL: chrome-error://chromewebdata/"
+    },
+    {
+      "name": "settings-pulse",
+      "reason": "Destination redirected or did not load; screenshot omitted from gallery",
+      "observed": "HTML content ai, URL: chrome-error://chromewebdata/"
+    },
+    {
+      "name": "settings-releases",
+      "reason": "Destination redirected or did not load; screenshot omitted from gallery",
+      "observed": "HTML content Workspace, URL: linear.app/acme/settings/workspace"
+    }
+  ],
+  "gaps": [
+    "Authenticated light/mobile themes",
+    "All nested public articles and documentation",
+    "Credential/security settings",
+    "Enabled cycles and triage",
+    "All scroll positions and UI states",
+    "Native Figma/Paper import verification"
+  ]
+}

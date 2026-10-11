@@ -1,0 +1,259 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "An AI product system for modern enterprises" [level=1]
+  - paragraph: Linear gives teams and agents shared context for planning and building products at scale.
+  - link "Talk to sales":
+    - /url: "#contact-sales"
+  - paragraph: Trusted by modern enterprise teams
+  - link:
+    - /url: /customers
+    - list:
+  - heading "AI is changing how products get built" [level=2]
+  - paragraph: Every EPD team is adopting AI. But traditional issue trackers weren’t built for this shift, leaving work disconnected and hard to align.
+  - paragraph: Linear is purpose-built for this new reality. It provides a shared product development system, where teams and agents work from the same context, priorities, and structure.
+  - generic: 78%
+  - generic: Linear enterprise workspaces have adopted agents
+  - generic: 28%
+  - generic: Issues authored by AI agents
+  - generic: 5.0x
+  - generic: Growth in agent-completed work
+  - heading "Why enterprise teams switch to Linear" [level=2]
+  - paragraph: Linear replaces legacy issue trackers with a fast, purpose-built system designed for AI-native product development.
+  - main:
+    - generic: ┌────────────────────────────────────────── LINEAR ──────────────────────────────────────────┐
+    - generic: │ │
+    - generic: │ ┌─────── Context ──────────────────────────────────────────────────────────────────────┐ │
+    - generic: │ │ │ │
+    - generic: │ │ ┌─────── Rules ───────────────────────────────────┐│ │
+    - generic: │ │ Plans │ ││ │
+    - generic: │ │ Discussions │ ┌────── Agents ──────┐││ │
+    - generic: Customer requests │ │ Specs │ Automations │ │││ │
+    - generic: Bug reports ◀──────▶ Technical designs ◀───▶ Skills ◀───▶ ░░░░░░▓▒▒░ ◀────────▶ Product
+    - generic: Feedback │ │ Decisions │ Permissions │ │││ │
+    - generic: │ │ Summaries │ └────────────────────┘││ │
+    - generic: │ │ Code │ ││ │
+    - generic: │ │ └─────────────────────────────────────────────────┘│ │
+    - generic: │ │ │ │
+    - generic: │ └──────────────────────────────────────────────────────────────────────────────────────┘ │
+    - generic: │ │
+    - generic: └────────────────────────────────────────────────────────────────────────────────────────────┘
+  - generic: One system for teams and agents
+  - paragraph: Customer feedback, decisions, and code all live in one place, so everyone works from the same context.
+  - generic: From solo-productivity to org-level results
+  - paragraph: AI coding accelerates individuals. Linear ensures their work is tied to team context and company priorities.
+  - generic: Self-driving product operations
+  - paragraph: Triage, routing, labeling, and updates happen automatically, so teams can focus on building.
+  - heading "Move at the speed of AI without losing control" [level=2]:
+    - text: Move at the speed of AI
+    - text: without losing control
+  - figure "Capture context across your stack Linear integrates with Slack, Teams, GitHub, support tools, and more to capture conversations, requests, and product context.":
+    - heading "Capture context across your stack" [level=3]
+    - paragraph: Linear integrates with Slack, Teams, GitHub, support tools, and more to capture conversations, requests, and product context.
+  - figure "Turn context into execution Linear’s built-in agent makes shared context actionable. Synthesize customer feedback, draft PRDs, and delegate issues.":
+    - text: Codex
+    - text: fix this issue, using the PRD for implementation context.
+    - generic: Skills
+    - button:
+    - button:
+    - button:
+    - generic: What are the top 3 use-cases customers mention in the requests on this project?
+    - generic: Skills
+    - button "Add context":
+    - button "Attach":
+    - button "Send":
+    - text: GA Launch
+    - text: Summarize the work remaining in this project’s post-GA milestone, then add it the FAQs in this doc.
+    - generic: Skills
+    - button:
+    - button:
+    - button:
+    - text: Codex
+    - text: fix this issue, using the PRD for implementation context.
+    - generic: Skills
+    - button:
+    - button:
+    - button:
+    - generic: What are the top 3 use-cases customers mention in the requests on this project?
+    - generic: Skills
+    - button:
+    - button:
+    - button:
+    - text: GA Launch
+    - text: Summarize the work remaining in this project’s post-GA milestone, then add it the FAQs in this doc.
+    - generic: Skills
+    - button:
+    - button:
+    - button:
+    - heading "Turn context into execution" [level=3]
+    - paragraph: Linear’s built-in agent makes shared context actionable. Synthesize customer feedback, draft PRDs, and delegate issues.
+  - figure "Keep coding agents aligned with company priorities Assign work to Claude, Codex, Cursor, and other AI coding tools while keeping execution connected to projects and initiatives.":
+    - heading "Keep coding agents aligned with company priorities" [level=3]
+    - paragraph: Assign work to Claude, Codex, Cursor, and other AI coding tools while keeping execution connected to projects and initiatives.
+  - figure "Measure AI execution across your organization Track how teams and agents work together with insights and dashboards that surface execution patterns and throughput.":
+    - heading "Measure AI execution across your organization" [level=3]
+    - paragraph: Track how teams and agents work together with insights and dashboards that surface execution patterns and throughput.
+  - link "Migrate Switch to Linear quickly with purpose-built migration tools and hands-on support from our team. Migration guide →":
+    - /url: /switch/migration-guide
+    - heading "Migrate" [level=3]
+    - paragraph: Switch to Linear quickly with purpose-built migration tools and hands-on support from our team.
+    - text: Migration guide
+    - generic: →
+  - link "Integrate Linear connects with AI coding agents, GitHub, Slack, Microsoft Teams, and the rest of your stack. See all integrations →":
+    - /url: /integrations
+    - heading "Integrate" [level=3]
+    - paragraph: Linear connects with AI coding agents, GitHub, Slack, Microsoft Teams, and the rest of your stack.
+    - text: See all integrations
+    - generic: →
+  - link "Secure Built with enterprise security from the ground up, including SOC2, SSO, audit logs, and granular permissions. Security overview →":
+    - /url: /security
+    - heading "Secure" [level=3]
+    - paragraph: Built with enterprise security from the ground up, including SOC2, SSO, audit logs, and granular permissions.
+    - text: Security overview
+    - generic: →
+  - link "See it in action See how Linear helps enterprises align teams, automate operations, and execute faster with AI. Watch demo →":
+    - /url: https://www.youtube.com/watch?v=9Q5BoiIFBiY
+    - heading "See it in action" [level=3]
+    - paragraph: See how Linear helps enterprises align teams, automate operations, and execute faster with AI.
+    - text: Watch demo
+    - generic: →
+  - link "I’m not designing things for humans anymore. I'm designing things for agents. And they need different things. Chintin Turakhia · Head of Engineering":
+    - /url: /customers/coinbase
+    - paragraph: I’m not designing things for humans anymore. I'm designing things for agents. And they need different things.
+    - text: Chintin Turakhia
+    - generic: · Head of Engineering
+  - link "The rip-and-replace fear is overblown, it was a breeze to move everyone over to Linear. Pete Zalewski · Staff Software Engineer":
+    - /url: /customers/oscar
+    - paragraph: The rip-and-replace fear is overblown, it was a breeze to move everyone over to Linear.
+    - text: Pete Zalewski
+    - generic: · Staff Software Engineer
+  - link "Linear was the only piece of software in this domain where engineers actually enjoyed using it and keeping it updated. James Reggio · CTO":
+    - /url: /customers/brex
+    - paragraph: Linear was the only piece of software in this domain where engineers actually enjoyed using it and keeping it updated.
+    - text: James Reggio
+    - generic: · CTO
+  - paragraph:
+    - text: Linear powers over
+    - strong: 40,000
+    - text: product teams. From ambitious startups to major enterprises.
+  - link "Customer stories →":
+    - /url: /customers
+    - generic: Customer stories
+    - generic: →
+  - heading "Contact sales" [level=2]
+  - list:
+    - generic: Map custom workflows
+    - generic: Explore AI impact
+    - generic: Learn about fast migration
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

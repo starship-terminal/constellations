@@ -1,0 +1,197 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- main:
+  - navigation:
+    - link "Linear":
+      - /url: /homepage
+      - img "Linear"
+    - link "Developers":
+      - /url: /developers
+      - generic: Developers
+    - button "Search":
+    - list:
+      - button "GraphQL API" [expanded]:
+        - generic: GraphQL API
+      - list:
+        - link "Getting started Getting started":
+          - /url: /developers/graphql
+          - img "Getting started"
+          - generic "Getting started"
+        - link "Pagination Pagination":
+          - /url: /developers/pagination
+          - img "Pagination"
+          - generic "Pagination"
+        - link "Filtering Filtering":
+          - /url: /developers/filtering
+          - img "Filtering"
+          - generic "Filtering"
+        - link "Rate limiting Rate limiting":
+          - /url: /developers/rate-limiting
+          - img "Rate limiting"
+          - generic "Rate limiting"
+        - link "Deprecations Deprecations":
+          - /url: /developers/deprecations
+          - img "Deprecations"
+          - generic "Deprecations"
+        - link "Webhooks Webhooks":
+          - /url: /developers/webhooks
+          - img "Webhooks"
+          - generic "Webhooks"
+        - link "Attachments Attachments":
+          - /url: /developers/attachments
+          - img "Attachments"
+          - generic "Attachments"
+        - link "Managing Customers Managing Customers":
+          - /url: /developers/managing-customers
+          - img "Managing Customers"
+          - generic "Managing Customers"
+        - link "GraphQL Schema GraphQL Schema ↗":
+          - /url: https://studio.apollographql.com/public/Linear-API/schema/reference?variant=current
+          - img "GraphQL Schema"
+          - generic "GraphQL Schema": GraphQL Schema ↗
+      - button "Authentication" [expanded]:
+        - generic: Authentication
+      - list:
+        - link "OAuth 2.0 authentication OAuth 2.0 authentication":
+          - /url: /developers/oauth-2-0-authentication
+          - img "OAuth 2.0 authentication"
+          - generic "OAuth 2.0 authentication"
+        - link "OAuth actor authorization OAuth actor authorization":
+          - /url: /developers/oauth-actor-authorization
+          - img "OAuth actor authorization"
+          - generic "OAuth actor authorization"
+        - link "OAuth application manifests OAuth application manifests":
+          - /url: /developers/oauth-app-manifests
+          - img "OAuth application manifests"
+          - generic "OAuth application manifests"
+        - link "File storage authentication File storage authentication":
+          - /url: /developers/file-storage-authentication
+          - img "File storage authentication"
+          - generic "File storage authentication"
+      - button "Agents" [expanded]:
+        - generic: Agents
+      - list:
+        - link "Agent Interaction Guidelines (AIG) Agent Interaction Guidelines (AIG)":
+          - /url: /developers/aig
+          - img "Agent Interaction Guidelines (AIG)"
+          - generic "Agent Interaction Guidelines (AIG)"
+        - link "Getting Started Getting Started":
+          - /url: /developers/agents
+          - img "Getting Started"
+          - generic "Getting Started"
+        - link "Developing the Agent Interaction Developing the Agent Interaction":
+          - /url: /developers/agent-interaction
+          - img "Developing the Agent Interaction"
+          - generic "Developing the Agent Interaction"
+        - link "Interaction Best Practices Interaction Best Practices":
+          - /url: /developers/agent-best-practices
+          - img "Interaction Best Practices"
+          - generic "Interaction Best Practices"
+        - link "Signals Signals":
+          - /url: /developers/agent-signals
+          - img "Signals"
+          - generic "Signals"
+      - button "TypeScript SDK" [expanded]:
+        - generic: TypeScript SDK
+      - list:
+        - link "Getting started Getting started":
+          - /url: /developers/sdk
+          - img "Getting started"
+          - generic "Getting started"
+        - link "Fetching & modifying data Fetching & modifying data":
+          - /url: /developers/sdk-fetching-and-modifying-data
+          - img "Fetching & modifying data"
+          - generic "Fetching & modifying data"
+        - link "Errors Errors":
+          - /url: /developers/sdk-errors
+          - img "Errors"
+          - generic "Errors"
+        - link "Advanced usage Advanced usage":
+          - /url: /developers/advanced-usage
+          - img "Advanced usage"
+          - generic "Advanced usage"
+        - link "Webhooks Webhooks":
+          - /url: /developers/sdk-webhooks
+          - img "Webhooks"
+          - generic "Webhooks"
+        - link "Migrating from 1.x to 2.x Migrating from 1.x to 2.x":
+          - /url: /developers/migrating-from-1-x-to-2-x
+          - img "Migrating from 1.x to 2.x"
+          - generic "Migrating from 1.x to 2.x"
+        - link "GitHub GitHub ↗":
+          - /url: https://github.com/linear/linear/tree/master/packages/sdk
+          - img "GitHub"
+          - generic "GitHub": GitHub ↗
+      - button "Guides" [expanded]:
+        - generic: Guides
+      - list:
+        - link "How to upload a file to Linear How to upload a file to Linear":
+          - /url: /developers/how-to-upload-a-file-to-linear
+          - img "How to upload a file to Linear"
+          - generic "How to upload a file to Linear"
+        - link "Create issues using linear.new Create issues using linear.new":
+          - /url: /developers/create-issues-using-linear-new
+          - img "Create issues using linear.new"
+          - generic "Create issues using linear.new"
+        - link "Integration Directory Integration Directory":
+          - /url: /developers/integration-directory
+          - img "Integration Directory"
+          - generic "Integration Directory"
+    - link "Docs":
+      - /url: /docs
+      - text: Docs
+    - link "Developers":
+      - /url: /developers
+      - text: Developers
+    - link "Learn":
+      - /url: /learn
+      - text: Learn
+    - link "Contact support":
+      - /url: /contact/support
+      - text: Contact support
+  - heading "Linear Developers" [level=1]
+  - paragraph: Learn about building apps and integrations for Linear using the GraphQL API and TypeScript SDK.
+  - heading "Getting Started" [level=2]
+  - link "GraphQL API Learn how to use the GraphQL API to query and mutate your data":
+    - /url: /developers/graphql
+    - heading "GraphQL API" [level=3]
+    - paragraph: Learn how to use the GraphQL API to query and mutate your data
+  - link "Authentication Use OAuth 2.0 or personal API keys to authenticate your requests to the Linear API":
+    - /url: /developers/oauth-2-0-authentication
+    - heading "Authentication" [level=3]
+    - paragraph: Use OAuth 2.0 or personal API keys to authenticate your requests to the Linear API
+  - link "Agents How to best integrate an AI agent into Linear":
+    - /url: /developers/agents
+    - heading "Agents" [level=3]
+    - paragraph: How to best integrate an AI agent into Linear
+  - link "TypeScript SDK Install the Linear SDK to use strongly typed models and operations":
+    - /url: /developers/sdk
+    - heading "TypeScript SDK" [level=3]
+    - paragraph: Install the Linear SDK to use strongly typed models and operations
+  - heading "Guides" [level=2]
+  - link "Upload a file Learn how to reference a file in markdown content, or upload with the API":
+    - /url: /developers/how-to-upload-a-file-to-linear
+    - heading "Upload a file" [level=3]
+    - paragraph: Learn how to reference a file in markdown content, or upload with the API
+  - link "Create issues via URL Open issue creation with pre-filled fields from a URL":
+    - /url: /developers/create-issues-using-linear-new
+    - heading "Create issues via URL" [level=3]
+    - paragraph: Open issue creation with pre-filled fields from a URL
+  - link "CLI importer Import data from other services into Linear":
+    - /url: https://github.com/linear/linear/tree/master/packages/import
+    - heading "CLI importer" [level=3]
+    - paragraph: Import data from other services into Linear
+  - heading "Resources" [level=2]
+  - link "Changelog Stay up to date with the latest changes to Linear and the API":
+    - /url: /changelog
+    - heading "Changelog" [level=3]
+    - paragraph: Stay up to date with the latest changes to Linear and the API
+  - link "Brand Guidelines Resources and assets for presenting the Linear brand":
+    - /url: /brand
+    - heading "Brand Guidelines" [level=3]
+    - paragraph: Resources and assets for presenting the Linear brand
+  - link "Agent Interaction Guidelines Principles and practices for designing agent interactions":
+    - /url: /developers/aig
+    - heading "Agent Interaction Guidelines" [level=3]
+    - paragraph: Principles and practices for designing agent interactions

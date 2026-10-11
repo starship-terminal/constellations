@@ -1,0 +1,430 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "Now" [level=1]:
+    - link "Now":
+      - /url: /now
+  - link "All":
+    - /url: /now
+  - link "Changelog":
+    - /url: /changelog
+  - link "Product launches":
+    - /url: /now/product-launches
+  - link "From the team":
+    - /url: /now/team
+  - link "From the community":
+    - /url: /now/community
+  - link "Press":
+    - /url: /now/press
+  - button "Search…":
+    - text: Search…
+  - button:
+  - link "AI coding has made CI a bottleneck, so we reworked ours to keep up We cut PR wait time and running costs by rethinking CI as a system, from the infrastructure underneath it to how work gets scheduled and tests get parallelized. Mufeez Amjad · Sep 21, 2026 →":
+    - /url: /now/ci-bottleneck-reworked
+    - heading "AI coding has made CI a bottleneck, so we reworked ours to keep up" [level=3]
+    - generic: We cut PR wait time and running costs by rethinking CI as a system, from the infrastructure underneath it to how work gets scheduled and tests get parallelized.
+    - text: Mufeez Amjad
+    - generic: ·
+    - text: Sep 21, 2026
+    - generic: →
+  - link "The coding agent behind 75% of Ramp’s merged PRs Why and how Ramp built an internal coding agent that’s now responsible three of every four PRs the company merges. Customer story · Aug 31, 2026 →":
+    - /url: /customers/ramp
+    - heading "The coding agent behind 75% of Ramp’s merged PRs" [level=3]
+    - generic: Why and how Ramp built an internal coding agent that’s now responsible three of every four PRs the company merges.
+    - text: Customer story
+    - generic: ·
+    - text: Aug 31, 2026
+    - generic: →
+  - link "Styling Linear for the future with StyleX A long-running migration that became an exercise in tooling, automation, and designing clearer boundaries for both humans and agents. Kenneth Skovhus · Aug 26, 2026 →":
+    - /url: /now/styling-linear-for-the-future-stylex
+    - heading "Styling Linear for the future with StyleX" [level=3]
+    - generic: A long-running migration that became an exercise in tooling, automation, and designing clearer boundaries for both humans and agents.
+    - text: Kenneth Skovhus
+    - generic: ·
+    - text: Aug 26, 2026
+    - generic: →
+  - link "Sharing Linear’s growth with the people building it As Linear passes $100 million in ARR, we’re giving our team another opportunity to participate in the upside. Karri Saarinen · Aug 26, 2026 →":
+    - /url: /now/sharing-growth-with-the-people-building-linear
+    - heading "Sharing Linear’s growth with the people building it" [level=3]
+    - generic: As Linear passes $100 million in ARR, we’re giving our team another opportunity to participate in the upside.
+    - text: Karri Saarinen
+    - generic: ·
+    - text: Aug 26, 2026
+    - generic: →
+  - link "Rebuilding Linear’s delta sync read path How we use turbopuffer to keep catch-up latency predictable across more than 20 TB of sync actions. Peter Travers · Aug 18, 2026 →":
+    - /url: /now/rebuilding-delta-sync-read-path
+    - heading "Rebuilding Linear’s delta sync read path" [level=3]
+    - generic: How we use turbopuffer to keep catch-up latency predictable across more than 20 TB of sync actions.
+    - text: Peter Travers
+    - generic: ·
+    - text: Aug 18, 2026
+    - generic: →
+  - 'link "How teams build AI usage patterns in software teams: who is adopting AI, how it reshapes where teams spend their time, and how much more they ship. Tim Qi · Aug 17, 2026 →"':
+    - /url: /data
+    - heading "How teams build" [level=3]
+    - generic: "AI usage patterns in software teams: who is adopting AI, how it reshapes where teams spend their time, and how much more they ship."
+    - text: Tim Qi
+    - generic: ·
+    - text: Aug 17, 2026
+    - generic: →
+  - heading "Changelog" [level=2]
+  - link "Loops for product management Loops are recurring agent workflows for teams. They now respond to more workspace activity, including changes to initiatives, projects, and cycles. They can also edit Linear documents and post updates to Slack. Sep 10, 2026":
+    - /url: /changelog/2026-09-14-loops-for-product-management
+    - generic: Loops for product management
+    - generic: Loops are recurring agent workflows for teams. They now respond to more workspace activity, including changes to initiatives, projects, and cycles. They can also edit Linear documents and post updates to Slack.
+    - generic: Sep 10, 2026
+  - link "Priority inbox An active workspace can create a significant amount of notifications each day, and until now your inbox treated them all the same. The new Priority tab separates what needs your attention from what can wait, so something like a review blocking a release never gets buried. Sep 3, 2026":
+    - /url: /changelog/2026-09-03-priority-inbox
+    - generic: Priority inbox
+    - generic: An active workspace can create a significant amount of notifications each day, and until now your inbox treated them all the same. The new Priority tab separates what needs your attention from what can wait, so something like a review blocking a release never gets buried.
+    - generic: Sep 3, 2026
+  - link "Coding sessions Linear Agent can now set up, run, and test your code before returning its work. That means fewer handoffs and changes that are further along when they come back to you. Aug 19, 2026":
+    - /url: /changelog/2026-08-20-coding-environments
+    - generic: Coding sessions
+    - generic: Linear Agent can now set up, run, and test your code before returning its work. That means fewer handoffs and changes that are further along when they come back to you.
+    - generic: Aug 19, 2026
+  - link "Team initiatives Initiatives are Linear's way to manage product strategy and high-level planning across projects. Strategy may start at the company level, but teams carry it forward. You can now assign a team to lead an initiative, making it clear who is responsible for driving the work and how it contributes to the broader direction. Aug 13, 2026":
+    - /url: /changelog/2026-08-13-team-initiatives
+    - generic: Team initiatives
+    - generic: Initiatives are Linear's way to manage product strategy and high-level planning across projects. Strategy may start at the company level, but teams carry it forward. You can now assign a team to lead an initiative, making it clear who is responsible for driving the work and how it contributes to the broader direction.
+    - generic: Aug 13, 2026
+  - link "View all →":
+    - /url: /changelog
+    - generic: View all
+    - generic: →
+  - link "Coinbase’s bet on agent-first development In January 2026, Chintan asked his entire engineering organisation to delete their IDEs and write zero lines of code. For two weeks, every engineer at Base would have to do their job without touching a code editor. Customer story · Aug 11, 2026 →":
+    - /url: /customers/coinbase
+    - heading "Coinbase’s bet on agent-first development" [level=3]
+    - generic: In January 2026, Chintan asked his entire engineering organisation to delete their IDEs and write zero lines of code. For two weeks, every engineer at Base would have to do their job without touching a code editor.
+    - text: Customer story
+    - generic: ·
+    - text: Aug 11, 2026
+    - generic: →
+  - link "How we built Linear Agent The product and engineering decisions we made so Linear Agent can handle complex tasks without becoming unpredictable. Matthijs Wolting · Aug 10, 2026 →":
+    - /url: /now/how-we-built-linear-agent
+    - heading "How we built Linear Agent" [level=3]
+    - generic: The product and engineering decisions we made so Linear Agent can handle complex tasks without becoming unpredictable.
+    - text: Matthijs Wolting
+    - generic: ·
+    - text: Aug 10, 2026
+    - generic: →
+  - link "Introducing Loops Describe a recurring job in plain language and Linear Agent will run it on a schedule or in response to events, working from the full context of your workspace. Nan Yu · Jul 20, 2026 →":
+    - /url: /now/introducing-loops
+    - heading "Introducing Loops" [level=3]
+    - generic: Describe a recurring job in plain language and Linear Agent will run it on a schedule or in response to events, working from the full context of your workspace.
+    - text: Nan Yu
+    - generic: ·
+    - text: Jul 20, 2026
+    - generic: →
+  - link "Boom Supersonic builds as fast as it flies Boom Supersonic is bringing back supersonic flight before the end of the decade. To move that fast, its engineers borrowed the habits of software, building in short cycles and getting real parts in hand as quickly as they can. Customer story · Jul 15, 2026 →":
+    - /url: /customers/boom
+    - heading "Boom Supersonic builds as fast as it flies" [level=3]
+    - generic: Boom Supersonic is bringing back supersonic flight before the end of the decade. To move that fast, its engineers borrowed the habits of software, building in short cycles and getting real parts in hand as quickly as they can.
+    - text: Customer story
+    - generic: ·
+    - text: Jul 15, 2026
+    - generic: →
+  - link "Teaching an agent to auto-fix bugs Some bugs at Linear now get fixed before a single engineer picks them up. Igor has been teaching Linear Agent to catch them in triage and ship the fix on its own. Igor Sechyn · Jun 12, 2026 →":
+    - /url: /now/linear-agent-bug-fix
+    - heading "Teaching an agent to auto-fix bugs" [level=3]
+    - generic: Some bugs at Linear now get fixed before a single engineer picks them up. Igor has been teaching Linear Agent to catch them in triage and ship the fix on its own.
+    - text: Igor Sechyn
+    - generic: ·
+    - text: Jun 12, 2026
+    - generic: →
+  - link "Now Linear writes the code, too Linear Agent can now write code. With Coding Sessions, it can take a bug from triage all the way to a reviewed fix, without the work ever leaving Linear. Karri Saarinen · Jun 11, 2026 →":
+    - /url: /now/coding-sessions-for-linear-agent
+    - heading "Now Linear writes the code, too" [level=3]
+    - generic: Linear Agent can now write code. With Coding Sessions, it can take a bug from triage all the way to a reviewed fix, without the work ever leaving Linear.
+    - text: Karri Saarinen
+    - generic: ·
+    - text: Jun 11, 2026
+    - generic: →
+  - heading "Press" [level=2]
+  - link "Protecting the Thinking Behind Great Design, Inside Linear's Design Team YouTube · Aug 12, 2026 ↗":
+    - /url: https://www.youtube.com/watch?v=8wqZXOhuJUM
+    - heading "Protecting the Thinking Behind Great Design, Inside Linear's Design Team" [level=3]
+    - text: YouTube
+    - generic: ·
+    - text: Aug 12, 2026
+    - generic: ↗
+  - 'link "The New Standard: a talk with Linear, Raycast, and Anthropic YouTube · May 13, 2026 ↗"':
+    - /url: https://www.youtube.com/watch?v=DhqEDFzI-OM
+    - 'heading "The New Standard: a talk with Linear, Raycast, and Anthropic" [level=3]'
+    - text: YouTube
+    - generic: ·
+    - text: May 13, 2026
+    - generic: ↗
+  - link "AI Agents and the Future of Software Teams with Linear + Sequoia Capital Startup Grind · May 05, 2026 ↗":
+    - /url: https://www.youtube.com/watch?v=ju7_5eOiWPI
+    - heading "AI Agents and the Future of Software Teams with Linear + Sequoia Capital" [level=3]
+    - text: Startup Grind
+    - generic: ·
+    - text: May 05, 2026
+    - generic: ↗
+  - link "How Karri Saarinen Redefined Product Design Grit Podcast · Apr 20, 2026 ↗":
+    - /url: https://www.youtube.com/watch?v=K8UCETXFGOg
+    - heading "How Karri Saarinen Redefined Product Design" [level=3]
+    - text: Grit Podcast
+    - generic: ·
+    - text: Apr 20, 2026
+    - generic: ↗
+  - link "View all →":
+    - /url: /now/press
+    - generic: View all
+    - generic: →
+  - link "Reviewing code in the agent era Agentic coding has puts real pressure on review. One of our engineers shares how he uses Linear Diffs to hold his bar high without drowning in pull requests. Maciek Pekala · Jun 10, 2026 →":
+    - /url: /now/reviewing-code-in-the-agent-era
+    - heading "Reviewing code in the agent era" [level=3]
+    - generic: Agentic coding has puts real pressure on review. One of our engineers shares how he uses Linear Diffs to hold his bar high without drowning in pull requests.
+    - text: Maciek Pekala
+    - generic: ·
+    - text: Jun 10, 2026
+    - generic: →
+  - link "Code review should be fast Agents are forcing a change in how we review code. Diffs brings code reviews directly inside Linear, so that the review lives alongside all of your product context. Tuomas Artman · May 28, 2026 →":
+    - /url: /now/code-review-should-be-fast
+    - heading "Code review should be fast" [level=3]
+    - generic: Agents are forcing a change in how we review code. Diffs brings code reviews directly inside Linear, so that the review lives alongside all of your product context.
+    - text: Tuomas Artman
+    - generic: ·
+    - text: May 28, 2026
+    - generic: →
+  - link "Code Intelligence for Linear Agent Linear Agent can now read your codebase and answer questions from the source itself. Karri Saarinen · May 14, 2026 →":
+    - /url: /now/code-intelligence-for-linear-agent
+    - heading "Code Intelligence for Linear Agent" [level=3]
+    - generic: Linear Agent can now read your codebase and answer questions from the source itself.
+    - text: Karri Saarinen
+    - generic: ·
+    - text: May 14, 2026
+    - generic: →
+  - link "Cars24’s push to being AI-native with Linear In October, Cars24 renewed its Jira license. A few weeks later, they treated that contract as a sunk cost and walked away from it. Customer story · May 13, 2026 →":
+    - /url: /customers/cars24
+    - heading "Cars24’s push to being AI-native with Linear" [level=3]
+    - generic: In October, Cars24 renewed its Jira license. A few weeks later, they treated that contract as a sunk cost and walked away from it.
+    - text: Customer story
+    - generic: ·
+    - text: May 13, 2026
+    - generic: →
+  - link "How we hire at Linear Hiring well matters more than hiring fast. We’re happy to take our time, and believe each person who joins the team should raise the bar for the next one. Doug Parker · Apr 28, 2026 →":
+    - /url: /now/how-we-hire-at-linear
+    - heading "How we hire at Linear" [level=3]
+    - generic: Hiring well matters more than hiring fast. We’re happy to take our time, and believe each person who joins the team should raise the bar for the next one.
+    - text: Doug Parker
+    - generic: ·
+    - text: Apr 28, 2026
+    - generic: →
+  - 'link "Output isn’t design Design keeps being misunderstood in our industry. New tools keep promising to generate interfaces faster, move words to product instantly, or collapse design directly into code. The assumption behind them is clear: that design is the act of producing. Karri Saarinen · Apr 17, 2026 →"':
+    - /url: /now/output-isn-t-design
+    - heading "Output isn’t design" [level=3]
+    - generic: "Design keeps being misunderstood in our industry. New tools keep promising to generate interfaces faster, move words to product instantly, or collapse design directly into code. The assumption behind them is clear: that design is the act of producing."
+    - text: Karri Saarinen
+    - generic: ·
+    - text: Apr 17, 2026
+    - generic: →
+  - heading "Archive" [level=2]
+  - link "How we use Linear Agent at Linear Rhea Purohit · Apr 10, 2026":
+    - /url: /now/how-we-use-linear-agent-at-linear
+    - generic: How we use Linear Agent at Linear
+    - text: Rhea Purohit
+    - generic: ·
+    - text: Apr 10, 2026
+  - link "Post mortem on Linear security incident on March 24th, 2026 Jamie Finnigan · Apr 06, 2026":
+    - /url: /now/linear-incident-on-mar-24th-2026
+    - generic: Post mortem on Linear security incident on March 24th, 2026
+    - text: Jamie Finnigan
+    - generic: ·
+    - text: Apr 06, 2026
+  - link "Issue tracking is dead Karri Saarinen · Mar 24, 2026":
+    - /url: /next
+    - generic: Issue tracking is dead
+    - text: Karri Saarinen
+    - generic: ·
+    - text: Mar 24, 2026
+  - link "A calmer interface for a product in motion Charlie Aufmann, Maxime Heckel · Mar 12, 2026":
+    - /url: /now/behind-the-latest-design-refresh
+    - generic: A calmer interface for a product in motion
+    - text: Charlie Aufmann, Maxime Heckel
+    - generic: ·
+    - text: Mar 12, 2026
+  - link "How Cursor builds with Linear Customer story · Feb 04, 2026":
+    - /url: /customers/cursor
+    - generic: How Cursor builds with Linear
+    - text: Customer story
+    - generic: ·
+    - text: Feb 04, 2026
+  - link "How Dandelion Chocolate scales craft Customer story · Jan 27, 2026":
+    - /url: /customers/dandelion-chocolate
+    - generic: How Dandelion Chocolate scales craft
+    - text: Customer story
+    - generic: ·
+    - text: Jan 27, 2026
+  - link "Design is more than code Karri Saarinen · Dec 19, 2025":
+    - /url: /now/design-is-more-than-code
+    - generic: Design is more than code
+    - text: Karri Saarinen
+    - generic: ·
+    - text: Dec 19, 2025
+  - link "How our Customer Experience team works in Linear Alexandra Lapinsky Wilson · Nov 06, 2025":
+    - /url: /now/cx-in-linear
+    - generic: How our Customer Experience team works in Linear
+    - text: Alexandra Lapinsky Wilson
+    - generic: ·
+    - text: Nov 06, 2025
+  - link "Continuous planning in Linear Nan Yu · Oct 30, 2025":
+    - /url: /now/continuous-planning-in-linear
+    - generic: Continuous planning in Linear
+    - text: Nan Yu
+    - generic: ·
+    - text: Oct 30, 2025
+  - link "Designing remote work at Linear Karri Saarinen · Oct 29, 2025":
+    - /url: /now/designing-remote-work-at-linear
+    - generic: Designing remote work at Linear
+    - text: Karri Saarinen
+    - generic: ·
+    - text: Oct 29, 2025
+  - 'link "Self-driving SaaS: When software runs itself Karri Saarinen · Oct 22, 2025"':
+    - /url: /now/self-driving-saas
+    - generic: "Self-driving SaaS: When software runs itself"
+    - text: Karri Saarinen
+    - generic: ·
+    - text: Oct 22, 2025
+  - link "A Linear spin on Liquid Glass Robb Böhnke · Oct 21, 2025":
+    - /url: /now/linear-liquid-glass
+    - generic: A Linear spin on Liquid Glass
+    - text: Robb Böhnke
+    - generic: ·
+    - text: Oct 21, 2025
+  - link "Best practices for designing Linear Dashboards Tim Qi · Oct 07, 2025":
+    - /url: /now/dashboards-best-practices
+    - generic: Best practices for designing Linear Dashboards
+    - text: Tim Qi
+    - generic: ·
+    - text: Oct 07, 2025
+  - link "Why we committed to a zero-bugs policy Tuomas Artman, Sabin Roman · Sep 24, 2025":
+    - /url: /now/zero-bugs-policy
+    - generic: Why we committed to a zero-bugs policy
+    - text: Tuomas Artman, Sabin Roman
+    - generic: ·
+    - text: Sep 24, 2025
+  - link "How Commure uses Dashboards to track performance and guide planning Kevin Hartnett · Sep 10, 2025":
+    - /url: /now/commure-dashboards
+    - generic: How Commure uses Dashboards to track performance and guide planning
+    - text: Kevin Hartnett
+    - generic: ·
+    - text: Sep 10, 2025
+  - button "Load more"
+  - heading "Built for the future. Available today." [level=2]
+  - button "Get started"
+  - button "Contact sales"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

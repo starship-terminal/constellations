@@ -1,0 +1,141 @@
+Window: "Acme: Core › Overview", App: Dia.
+0 standard window Acme: Core › Overview, ID: bigBrowserWindow_00000000-0000-0000-0000-000000000000, Secondary Actions: Raise
+	1 HTML content Core › Overview, URL: linear.app/acme/team/COR/overview
+		2 container
+			3 link Skip to content, Value: linear.app/acme/team/COR/overview#skip-nav
+			4 container
+				5 container
+					6 container
+						7 pop up button Acme Workspace Menu
+							8 text Acme
+						9 button Search workspace
+						10 button Create new issue
+						11 container
+							12 sortable Inbox
+								13 link Inbox, Value: linear.app/acme/inbox
+							14 sortable My issues
+								15 link My issues, Value: linear.app/acme/my-issues/assigned
+							16 sortable Reviews
+								17 link Reviews, Value: linear.app/acme/reviews
+							18 sortable Agent
+								19 link Agent, Value: linear.app/acme/agent
+							20 sortable
+							21 button Workspace
+							22 sortable Projects
+								23 link Projects, Value: linear.app/acme/projects/all
+							24 sortable Views
+								25 link Views, Value: linear.app/acme/views/issues
+							26 sortable
+							27 sortable
+							28 button Show more links
+						29 container
+							30 button Favorites
+							31 button Create new folder for favorites
+							32 link Sample project Remove favorite, Value: linear.app/acme/project/sample-project-0a1b2c3d4e5f/activity
+							33 button Your teams
+							34 button Join a team
+							35 content list
+								36 sortable Core Team menu Home Issues Projects Views
+									37 container
+										38 container
+											39 button Core
+												40 text Core
+											41 pop up button Team menu
+										42 link Home, Value: linear.app/acme/team/COR/overview
+										43 link Issues, Value: linear.app/acme/team/COR/all
+										44 link Projects, Value: linear.app/acme/team/COR/projects/all
+										45 link Views, Value: linear.app/acme/team/COR/views/issues
+							46 button Try
+							47 container
+								48 container Enable cycles for team…
+									49 text Cycles
+								50 button Dismiss
+									51 image Dismiss
+					52 container
+						53 button View changelog
+						54 text What’s new Loops for product management
+						55 button Collapse into help menu
+				56 container
+					57 container
+						58 heading Core
+							59 text Core
+						60 switch Add to favorites
+						61 pop up button Team actions
+						62 button Copy team URL
+						63 container View Overview
+							64 link Overview, Value: linear.app/acme/team/COR/overview
+						65 link Documents, Value: linear.app/acme/team/COR/documents
+						66 link Members, Value: linear.app/acme/team/COR/members
+					67 container
+						68 button Choose team icon
+						69 text field (settable) Team name, Value: Core
+							70 text Core
+						71 text field (settable) Team description
+						72 container
+							73 text Team resources
+							74 button Add resources
+							75 button Add section
+							76 text Add documents and links. Organize by creating sections.
+						77 container
+							78 text Members
+							79 link Teammate A Teammate B Teammate C Teammate D, Value: linear.app/acme/team/COR/members
+							80 button Add members
+								81 image Add members
+							82 text Go to Connect channel
+							83 link Team settings, Value: linear.app/acme/settings/teams/COR
+							84 link Issues, Value: linear.app/acme/team/COR/all
+							85 link Projects, Value: linear.app/acme/team/COR/projects/all
+							86 link Views, Value: linear.app/acme/team/COR/views/issues
+				87 container
+					88 button Agent
+					89 button Chat history
+			90 container Notifications alt+T
+			91 text Navigated to Core › Overview
+			92 container
+				93 text View Overview 1
+	94 container navigationBar
+		95 unknown navigationBarBackButton
+		96 unknown navigationBarReloadOrStopLoadingButton
+		97 button
+		98 collection
+		99 unknown navigationBarAssistantBar
+			100 unknown
+				101 scroll area
+					102 text entry area Value: linear.app / Core › Overview, ID: navigationBarAssistantBarTextField
+	103 collection
+	104 text https://linear.app/acme/team/COR/overview
+	105 scroll area Secondary Actions: Scroll Up, Scroll Down
+		106 collection (disabled)
+			107 unknown acme-org/app, ID: tab
+				108 unknown
+					109 image
+					110 text acme-org/app
+			111 unknown Core › Overview, ID: tab
+				112 unknown
+					113 image
+					114 text Core › Overview
+			115 unknown
+				116 button
+		117 scroll bar (disabled) 0
+	118 close button
+	119 minimize button
+	120 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	121 button
+	122 button Chats
+	123 button
+	124 unknown OF
+	125 unknown Acme
+	126 unknown FT
+127 menu bar
+	128 Dia
+	129 File
+	130 Edit
+	131 View
+	132 Tabs
+	133 Bookmarks
+	134 History
+	135 Extensions
+	136 Window
+	137 Help
+
+The focused UI element is 64 link Overview, Value: linear.app/acme/team/COR/overview

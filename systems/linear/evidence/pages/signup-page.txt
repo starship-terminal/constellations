@@ -1,0 +1,16 @@
+- heading "Create your workspace" [level=1]
+- button "Continue with Google"
+- button "Continue with email"
+- button "Continue with SAML SSO"
+- paragraph:
+  - text: By signing up, you agree to our
+  - link "Terms of Service":
+    - /url: /terms
+  - text: and
+  - link "Data Processing Agreement":
+    - /url: /dpa
+  - text: .
+- paragraph:
+  - text: Already have an account?
+  - link "Log in":
+    - /url: /login

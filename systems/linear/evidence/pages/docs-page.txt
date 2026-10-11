@@ -1,0 +1,115 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- main:
+  - navigation:
+    - link "Linear":
+      - /url: /homepage
+      - img "Linear"
+    - link "Docs":
+      - /url: /docs
+      - generic: Docs
+    - button "Search":
+    - list:
+      - button "Getting started":
+        - generic: Getting started
+      - button "Account":
+        - generic: Account
+      - button "AI":
+        - generic: AI
+      - button "Your sidebar":
+        - generic: Your sidebar
+      - button "Teams":
+        - generic: Teams
+      - button "Issues":
+        - generic: Issues
+      - button "Issue properties":
+        - generic: Issue properties
+      - button "Projects":
+        - generic: Projects
+      - button "Initiatives":
+        - generic: Initiatives
+      - button "Cycles":
+        - generic: Cycles
+      - button "Views":
+        - generic: Views
+      - button "Find and filter":
+        - generic: Find and filter
+      - button "Linear Asks":
+        - generic: Linear Asks
+      - button "Integrations":
+        - generic: Integrations
+      - button "Analytics":
+        - generic: Analytics
+      - button "Administration":
+        - generic: Administration
+      - button "Importers":
+        - generic: Importers
+    - link "Docs":
+      - /url: /docs
+      - text: Docs
+    - link "Developers":
+      - /url: /developers
+      - text: Developers
+    - link "Learn":
+      - /url: /learn
+      - text: Learn
+    - link "Contact support":
+      - /url: /contact/support
+      - text: Contact support
+  - list "Breadcrumbs":
+    - listitem: Home
+  - button "Toggle theme":
+  - button "Sign up"
+  - heading "Linear Docs" [level=1]
+  - paragraph: Get an overview of Linear's features, integrations, and how to use them.
+  - heading "Popular" [level=2]
+  - link "Start Guide Learn how to use the app and follow best practices for software building":
+    - /url: /docs/start-guide
+    - heading "Start Guide" [level=3]
+    - paragraph: Learn how to use the app and follow best practices for software building
+  - link "Import Issues Quickly move issues from your existing issue tracker into Linear":
+    - /url: /docs/import-issues
+    - heading "Import Issues" [level=3]
+    - paragraph: Quickly move issues from your existing issue tracker into Linear
+  - link "Projects Shape your product ideas and plan what to build next":
+    - /url: /docs/projects
+    - heading "Projects" [level=3]
+    - paragraph: Shape your product ideas and plan what to build next
+  - link "GitHub Automations Link issues and automate pull request workflows":
+    - /url: /docs/github
+    - heading "GitHub Automations" [level=3]
+    - paragraph: Link issues and automate pull request workflows
+  - heading "Linear basics" [level=2]
+  - link "Workflows Create new statuses and design custom issue workflows":
+    - /url: /docs/configuring-workflows
+    - heading "Workflows" [level=3]
+    - paragraph: Create new statuses and design custom issue workflows
+  - link "Select Issues Learn how to take actions on multiple issues at a time":
+    - /url: /docs/select-issues
+    - heading "Select Issues" [level=3]
+    - paragraph: Learn how to take actions on multiple issues at a time
+  - link "Issue Relations Indicate blocked, blocking, related, and duplicate issues":
+    - /url: /docs/issue-relations
+    - heading "Issue Relations" [level=3]
+    - paragraph: Indicate blocked, blocking, related, and duplicate issues
+  - link "Display Options Order, sort, and group issues and projects and customize views":
+    - /url: /docs/display-options
+    - heading "Display Options" [level=3]
+    - paragraph: Order, sort, and group issues and projects and customize views
+  - link "Triage Use a special inbox for issues from integrations and other teams":
+    - /url: /docs/triage
+    - heading "Triage" [level=3]
+    - paragraph: Use a special inbox for issues from integrations and other teams
+  - link "Parent and Sub-Issues Break down larger tasks into smaller pieces of work":
+    - /url: /docs/parent-and-sub-issues
+    - heading "Parent and Sub-Issues" [level=3]
+    - paragraph: Break down larger tasks into smaller pieces of work
+  - link "Notifications Learn how to manage notifications and stay up to date":
+    - /url: /docs/notifications
+    - heading "Notifications" [level=3]
+    - paragraph: Learn how to manage notifications and stay up to date
+  - link "Teams Create teams in your workspace to organize different types of work functions":
+    - /url: /docs/teams
+    - heading "Teams" [level=3]
+    - paragraph: Create teams in your workspace to organize different types of work functions

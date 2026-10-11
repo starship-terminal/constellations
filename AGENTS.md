@@ -1,0 +1,122 @@
+# AGENTS.md
+
+Instructions for coding agents working in this repository, or reading it from
+another project.
+
+## What this is
+
+A private library of design styles captured from real products: one package
+per product under `systems/<slug>/`, indexed in [catalog.json](catalog.json).
+[README.md](README.md) is the front door; the docs below hold the detail.
+
+| Document | Read it when |
+|---|---|
+| [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | You are building a design system for an app, or grading what a package covers |
+| [docs/PACKAGE.md](docs/PACKAGE.md) | You need to know which file in a package holds what |
+| [docs/EVIDENCE.md](docs/EVIDENCE.md) | You are about to copy a value and need to know how far to trust it |
+| [docs/CAPTURE.md](docs/CAPTURE.md) | You are adding or refreshing a product; start from [tools/kit/](tools/kit) |
+| [docs/RIGHTS.md](docs/RIGHTS.md) | Anything might leave this repo |
+| [example/README.md](example/README.md) | You want a public reference: the DESIGN.md spec, unverified DESIGN.md files for brands not captured here, capture ideas, or how a large token set is organised. Never a source of values |
+
+## Using a style from another project
+
+1. Find the package in [catalog.json](catalog.json) by `slug`, `category`,
+   `goodFor` or `tags` (platform, density, mood and layout words such as
+   `ios`, `dense`, `chat`, `sidebar`). `python3 tools/catalog.py find dark
+   dense` ranks them for you. Every package lives at `systems/<slug>/`.
+2. Read its `README.md` in full before anything else. It lists what was
+   captured and what is known to be wrong. Every package has one, whatever
+   its shape.
+3. Take values from its `tokens` file. Use the semantic sets (`light`,
+   `dark`) for colour roles and `core` for scales. Never read a colour off a
+   screenshot; they are 256-colour PNGs. `python3 tools/catalog.py export
+   <slug>` prints every token with aliases resolved, as CSS custom properties
+   (light on `:root`, other themes under `[data-theme]`) or `--format json`.
+   A tool that only reads DESIGN.md can be pointed at the package's
+   generated `DESIGN.md`, which holds one theme.
+4. Look at `screenshots/` and `components/crops/` (or `components/` and
+   `boards/` in an audit) for layout and proportion, not for values.
+   `style-guide.html` renders every token. For a person choosing between
+   styles, `make serve` opens a gallery of all of them.
+5. Say which package and which tokens you used in your summary, so the
+   choice can be checked.
+
+The `design-systems` plugin in quiver-hub wraps this: its `apply-style`
+skill follows the steps above, and `author-system` builds an app's own
+system against [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md). Both find this
+repository through `DESIGN_SYSTEMS_HOME`.
+
+Borrow structure and proportions. Do not copy a product's logo, icons,
+illustrations or brand colours into something that ships
+([docs/RIGHTS.md](docs/RIGHTS.md)).
+
+## Working in this repository
+
+- **Packages are copied evidence. Do not edit their contents casually.**
+  The nine reference packages are byte-identical to self-learn at commit
+  `84a260ac`, and linear and polaris to their original work-project sources apart from the
+  2026-10-10 move of their evidence and builders into `evidence/` and
+  `tools/` (and `GUIDE.md`, `index.html` renamed to `README.md`,
+  `style-guide.html`), and Linear's app evidence, anonymised on 2026-10-11. A fix to a
+  package goes through its builders (everything under the package's
+  `tools/`), and the builders' output must be committed with the input that
+  changed it.
+- **A rebuild that changes nothing is the check.** From a reference package,
+  run its builders and confirm `git status --short .` is empty. Do this
+  after touching anything under `tools/` or `raw/`. Two known exceptions,
+  present since the packages were copied: Linear's builders rewrite
+  `evidence/validation.json`, `boards/04-components.svg` and
+  `components/issue-composer.svg`, and Polaris's `build_vectors.py` measures
+  text with whatever Pillow and font versions are installed, so its SVG
+  widths drift. Compare against a rebuild from before your change, not
+  against the committed files.
+- **Every image, archive and font is a Git LFS object** (see
+  [.gitattributes](.gitattributes)). Run `git lfs install` once per
+  machine. Never commit a binary type that is not covered; add the pattern
+  to `.gitattributes` first.
+- **New packages use the reference shape** and label every value
+  ([docs/EVIDENCE.md](docs/EVIDENCE.md)). Add each one to
+  [catalog.json](catalog.json), with `tags` and a `preview` block, and to
+  the table in [README.md](README.md) in the same commit
+  ([docs/PACKAGE.md](docs/PACKAGE.md) has the steps).
+- **`DESIGN.md` is generated.** Every package has one, written by
+  `make design-md` from its tokens file and `README.md` in Google's DESIGN.md
+  format for tools that read it. Never hand-edit it and never take a value
+  from it that the tokens file holds: it carries one theme and no provenance.
+  After changing a package's tokens or README, run `make design-md` and commit
+  the result with the change; `make check` fails on a stale one.
+  [docs/PACKAGE.md](docs/PACKAGE.md#designmd) has the mapping and the lint
+  rules it is allowed to fail.
+- **The gallery is generated.** [site/](site) holds the page;
+  [tools/catalog.py](tools/catalog.py) writes `site/data.json` and
+  `site/thumbs/` from [catalog.json](catalog.json), and both are gitignored.
+  Never hand-edit them, and never list a package in the gallery any other way.
+- **Private material never enters the repo**: raw page copies, redaction
+  lists, account names, signed URLs, proprietary fonts. `systems/*/fonts/`
+  is gitignored for this reason.
+  Images count: `python3 tools/redact_images.py check systems/<slug> --patterns
+  ~/.design-systems/cleanup-redact.json` must report no match before a commit
+  that touches a signed-in package's screenshots or crops
+  ([docs/CAPTURE.md](docs/CAPTURE.md)).
+- **Do not make this repository public**, and do not push it anywhere but
+  its private GitHub remote.
+- Run Python as `python3`.
+
+## Checks before a commit
+
+```bash
+make check
+```
+
+It confirms every folder under `systems/` has a catalog entry, every entry's
+files exist, every package has `README.md`, `style-guide.html` and `tools/`,
+every `preview` token path resolves, and every package's `DESIGN.md` matches a
+fresh generation.
+
+```bash
+git lfs status
+```
+
+```bash
+git ls-files -s | awk '$1=="100644"' | cut -f2 | grep -Ei '\.(png|jpe?g|gif|webp|zip|gz|woff2?|ttf|otf|fig|mp4|mov)$' | xargs -I{} sh -c 'git check-attr filter -- "{}" | grep -q "filter: lfs" || echo "not in LFS: {}"'
+```

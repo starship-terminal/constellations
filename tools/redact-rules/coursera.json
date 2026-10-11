@@ -1,0 +1,45 @@
+{
+ "_note": "Rules for systems/coursera. Course titles, career goal, weekly target, dates and due times of the owner's enrolment are painted out by the OCR net (patterns read from a file outside the repo); crops that are only a goal, a calendar or an enrolled-course card are deleted.",
+ "ocr": {
+  "net": true,
+  "emails": true,
+  "email_allow": [
+   "@example\\.(com|org)$",
+   "@coursera\\.org$"
+  ],
+  "delete_if_covered": 0.3,
+  "boost": [
+   "screenshots/*.png",
+   "components/crops/*.png"
+  ]
+ },
+ "delete_stems": [
+  "ml-career-goal-link",
+  "topbar-ml-career-goal",
+  "ml-calendar",
+  "ml-calendar-day",
+  "rail-goal-card",
+  "mlc-course-card",
+  "ml-program-card"
+ ],
+ "delete": [
+  "components/crops/signed-in/ml-calendar-day-today.png",
+  "components/crops/signed-in/*career-goal*.png"
+ ],
+ "families": [
+  {
+   "name": "time zone wrapped onto its own line in the two-line due tag",
+   "files": [
+    "components/crops/signed-in/rail-due-tag-two-line.png"
+   ],
+   "rects": [
+    [
+     30,
+     58,
+     90,
+     84
+    ]
+   ]
+  }
+ ]
+}

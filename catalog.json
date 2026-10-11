@@ -1,0 +1,772 @@
+{
+  "version": 1,
+  "about": "One entry per package under systems/. Paths are relative to the repository root. Every package has README.md (the entry) and style-guide.html at its top level; docs/PACKAGE.md describes what sits underneath. tags are for search and filtering. preview names the gallery cover screenshot and the token paths the catalog site resolves into swatches and fonts, so every value shown traces back to tokens. An empty widths list means the package README is the place to look. Run `make check` after editing. designMd, where present, overrides the token path prefixes `make design-md` reads for a package's DESIGN.md (colors, typography, rounded, spacing); the defaults are the swatches' semantic set and core.typography, core.radius, core.spacing or core.space.",
+  "categories": {
+    "learning": "Learning",
+    "ai-chat": "AI chat",
+    "ai-agent": "AI agents",
+    "ai-research": "AI research",
+    "productivity": "Productivity",
+    "fitness": "Fitness",
+    "component-library": "Component libraries"
+  },
+  "systems": [
+    {
+      "slug": "duolingo",
+      "name": "Duolingo",
+      "url": "https://www.duolingo.com",
+      "category": "learning",
+      "goodFor": "Gamified learning: lesson flow, streaks, leaderboards, chunky 3D buttons, a mascot-led brand",
+      "tags": [
+        "web",
+        "playful",
+        "bold-colour",
+        "gamification",
+        "lesson-player",
+        "illustration"
+      ],
+      "shape": "reference",
+      "captured": "2026-09-25",
+      "access": "signed in, free account",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        570
+      ],
+      "entry": "systems/duolingo/README.md",
+      "tokens": "systems/duolingo/tokens.json",
+      "styleGuide": "systems/duolingo/style-guide.html",
+      "preview": {
+        "cover": "systems/duolingo/screenshots/learn-light-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.surface.subtle",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.primary.face",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.surface.subtle",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent.primary.face",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.display",
+          "core.fontFamily.body"
+        ]
+      },
+      "source": {
+        "repo": "https://github.com/c-wenlong/self-learn",
+        "path": "docs/design/reference/duolingo",
+        "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
+        "pr": "https://github.com/c-wenlong/self-learn/pull/75"
+      }
+    },
+    {
+      "slug": "brilliant",
+      "name": "Brilliant",
+      "url": "https://brilliant.org",
+      "category": "learning",
+      "goodFor": "Interactive problem-solving lessons, course paths, a calm editorial learning UI (Panda CSS tokens)",
+      "tags": [
+        "web",
+        "calm",
+        "editorial",
+        "lesson-player",
+        "course-path"
+      ],
+      "shape": "reference",
+      "captured": "2026-09-25",
+      "access": "signed in, free account",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/brilliant/README.md",
+      "tokens": "systems/brilliant/tokens.json",
+      "styleGuide": "systems/brilliant/style-guide.html",
+      "preview": {
+        "cover": "systems/brilliant/screenshots/home-light-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.bg.primary",
+            "surface": "light.bg.secondary",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.bg.green-primary",
+            "border": "light.border.primary"
+          },
+          "dark": {
+            "page": "dark.bg.primary",
+            "surface": "dark.bg.secondary",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.bg.green-primary",
+            "border": "dark.border.primary"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.brilliant"
+        ]
+      },
+      "source": {
+        "repo": "https://github.com/c-wenlong/self-learn",
+        "path": "docs/design/reference/brilliant",
+        "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
+        "pr": "https://github.com/c-wenlong/self-learn/pull/76"
+      }
+    },
+    {
+      "slug": "notebooklm",
+      "name": "Gemini Notebook (NotebookLM)",
+      "url": "https://notebook.google.com",
+      "category": "ai-research",
+      "goodFor": "Source-grounded AI workspace: sources panel, chat, generated studio outputs (Material 3 flavour)",
+      "tags": [
+        "web",
+        "ai",
+        "material",
+        "three-panel",
+        "chat",
+        "sources"
+      ],
+      "shape": "reference",
+      "captured": "2026-09-25",
+      "access": "signed in",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [],
+      "entry": "systems/notebooklm/README.md",
+      "tokens": "systems/notebooklm/tokens.json",
+      "styleGuide": "systems/notebooklm/style-guide.html",
+      "preview": {
+        "cover": "systems/notebooklm/screenshots/home-light-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.bg.page",
+            "surface": "light.surface.panel",
+            "text": "light.text.on-surface",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.primary",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.bg.page",
+            "surface": "dark.surface.panel",
+            "text": "dark.text.on-surface",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent.primary",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.display",
+          "core.fontFamily.text"
+        ]
+      },
+      "source": {
+        "repo": "https://github.com/c-wenlong/self-learn",
+        "path": "docs/design/reference/notebooklm",
+        "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
+        "pr": "https://github.com/c-wenlong/self-learn/pull/74"
+      }
+    },
+    {
+      "slug": "coursera",
+      "name": "Coursera",
+      "url": "https://www.coursera.org",
+      "category": "learning",
+      "goodFor": "Course catalogue, course and module pages, course cards, a mature enterprise design system (386 --cds-* variables)",
+      "tags": [
+        "web",
+        "catalogue",
+        "cards",
+        "course-page",
+        "corporate"
+      ],
+      "shape": "reference",
+      "captured": "2026-09-29",
+      "access": "public pages signed out, learner pages signed in",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/coursera/README.md",
+      "tokens": "systems/coursera/tokens.json",
+      "styleGuide": "systems/coursera/style-guide.html",
+      "preview": {
+        "cover": "systems/coursera/screenshots/course-light-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.neutral.background-primary",
+            "surface": "light.neutral.background-primary-weak",
+            "text": "light.neutral.primary",
+            "muted": "light.neutral.primary-weak",
+            "accent": "light.interactive.primary",
+            "border": "light.neutral.stroke-primary-weak"
+          },
+          "dark": {
+            "page": "dark.neutral.background-primary",
+            "surface": "dark.neutral.background-primary-weak",
+            "text": "dark.neutral.primary",
+            "muted": "dark.neutral.primary-weak",
+            "accent": "dark.interactive.primary",
+            "border": "dark.neutral.stroke-primary-weak"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.source-sans-pro"
+        ]
+      },
+      "source": {
+        "repo": "https://github.com/c-wenlong/self-learn",
+        "path": "docs/design/reference/coursera",
+        "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
+        "pr": "https://github.com/c-wenlong/self-learn/pull/191"
+      }
+    },
+    {
+      "slug": "gauth",
+      "name": "Gauth",
+      "url": "https://www.gauth.com",
+      "category": "learning",
+      "goodFor": "AI tutor learning app: course catalogue, unit pages, lesson players with an Ask Tutor panel",
+      "tags": [
+        "web",
+        "ai-tutor",
+        "lesson-player",
+        "warm",
+        "serif-display"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-04",
+      "access": "signed out (every surface is public)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/gauth/README.md",
+      "tokens": "systems/gauth/tokens.json",
+      "styleGuide": "systems/gauth/style-guide.html",
+      "preview": {
+        "cover": "systems/gauth/screenshots/home-light-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.canvas",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.text.brand",
+            "border": "light.border.card"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.libre-baskerville",
+          "core.fontFamily.inter"
+        ]
+      },
+      "source": {
+        "repo": "https://github.com/c-wenlong/self-learn",
+        "path": "docs/design/reference/gauth",
+        "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
+        "pr": "https://github.com/c-wenlong/self-learn/pull/295"
+      }
+    },
+    {
+      "slug": "researchrabbit",
+      "name": "ResearchRabbit",
+      "url": "https://www.researchrabbit.ai",
+      "category": "ai-research",
+      "goodFor": "Interactive citation graph beside a list: node and edge styling, canvas interaction (see graph.md)",
+      "tags": [
+        "web",
+        "graph",
+        "list-detail",
+        "soft-gradient",
+        "research"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-04",
+      "access": "signed in",
+      "themes": [
+        "light"
+      ],
+      "widths": [],
+      "entry": "systems/researchrabbit/README.md",
+      "tokens": "systems/researchrabbit/tokens.json",
+      "styleGuide": "systems/researchrabbit/style-guide.html",
+      "preview": {
+        "cover": "systems/researchrabbit/screenshots/library-map-light-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.panel",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.action.accent",
+            "border": "light.border.rule"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.ui"
+        ]
+      },
+      "extras": [
+        "systems/researchrabbit/graph.md"
+      ],
+      "source": {
+        "repo": "https://github.com/c-wenlong/self-learn",
+        "path": "docs/design/reference/researchrabbit",
+        "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
+        "pr": "https://github.com/c-wenlong/self-learn/pull/347"
+      }
+    },
+    {
+      "slug": "manus",
+      "name": "Manus",
+      "url": "https://manus.im/app",
+      "category": "ai-agent",
+      "goodFor": "Agent app shell: multi-section sidebar, a Library of agent outputs by type and by day, task threads with deliverables",
+      "tags": [
+        "web",
+        "ai-agent",
+        "sidebar",
+        "minimal",
+        "library",
+        "serif-accent"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-04",
+      "access": "signed in",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/manus/README.md",
+      "tokens": "systems/manus/tokens.json",
+      "styleGuide": "systems/manus/style-guide.html",
+      "preview": {
+        "cover": "systems/manus/screenshots/home-light.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.gray-main",
+            "surface": "light.background.menu-white",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.blue.primary",
+            "border": "light.border.primary"
+          },
+          "dark": {
+            "page": "dark.background.gray-main",
+            "surface": "dark.background.menu-white",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent.blue.primary",
+            "border": "dark.border.primary"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.serif"
+        ]
+      },
+      "source": {
+        "repo": "https://github.com/c-wenlong/self-learn",
+        "path": "docs/design/reference/manus",
+        "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
+        "pr": "https://github.com/c-wenlong/self-learn/pull/356"
+      }
+    },
+    {
+      "slug": "chatgpt",
+      "name": "ChatGPT",
+      "url": "https://chatgpt.com",
+      "category": "ai-chat",
+      "goodFor": "The baseline chat UI: thread, composer, sidebar history, model menu, settings dialog",
+      "tags": [
+        "web",
+        "ai",
+        "chat",
+        "composer",
+        "minimal",
+        "sidebar"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-04",
+      "access": "signed in, Free plan",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/chatgpt/README.md",
+      "tokens": "systems/chatgpt/tokens.json",
+      "styleGuide": "systems/chatgpt/style-guide.html",
+      "preview": {
+        "cover": "systems/chatgpt/screenshots/home-light.png",
+        "swatches": {
+          "light": {
+            "page": "light.bg.primary",
+            "surface": "light.bg.secondary-surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.blue",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.bg.primary",
+            "surface": "dark.bg.secondary-surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent.blue",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans"
+        ]
+      },
+      "source": {
+        "repo": "https://github.com/c-wenlong/self-learn",
+        "path": "docs/design/reference/chatgpt",
+        "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
+        "pr": "https://github.com/c-wenlong/self-learn/pull/375"
+      }
+    },
+    {
+      "slug": "claude",
+      "name": "Claude",
+      "url": "https://claude.ai",
+      "category": "ai-chat",
+      "goodFor": "A quiet chat shell with a serif model voice: composer, thread, Artifacts, Projects, settings (cds tokens)",
+      "tags": [
+        "web",
+        "ai",
+        "chat",
+        "warm-neutral",
+        "serif-accent",
+        "artifacts"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-04",
+      "access": "signed in, Max plan",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/claude/README.md",
+      "tokens": "systems/claude/tokens.json",
+      "styleGuide": "systems/claude/style-guide.html",
+      "preview": {
+        "cover": "systems/claude/screenshots/home-light.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.panel",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.fill.brand",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.panel",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.fill.brand",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.serif"
+        ]
+      },
+      "source": {
+        "repo": "https://github.com/c-wenlong/self-learn",
+        "path": "docs/design/reference/claude",
+        "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
+        "pr": "https://github.com/c-wenlong/self-learn/pull/375"
+      },
+      "designMd": {
+        "spacing": [
+          "core.density.pad-",
+          "core.density.gap-"
+        ]
+      }
+    },
+    {
+      "slug": "hevy",
+      "name": "Hevy",
+      "url": "https://www.hevyapp.com",
+      "category": "fitness",
+      "goodFor": "Native iOS workout logging: dense set table, one blue accent, pale grey fills, small corners, iOS 26 glass chrome, rest timer",
+      "tags": [
+        "ios",
+        "mobile",
+        "fitness",
+        "dense-table",
+        "one-accent",
+        "glass"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-10",
+      "access": "signed in, free account, iPhone Mirroring",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/hevy/README.md",
+      "tokens": "systems/hevy/tokens.json",
+      "styleGuide": "systems/hevy/style-guide.html",
+      "preview": {
+        "cover": "systems/hevy/screenshots/light/01-home.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.surface.card",
+            "text": "light.color.text.heading",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.card"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.surface.card",
+            "text": "dark.color.text.heading",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.input"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base"
+        ]
+      },
+      "source": {
+        "path": "~/Desktop/Personal/Internal/Indie Hacking/alke-fitness/references"
+      }
+    },
+    {
+      "slug": "tokentracker",
+      "name": "TokenTracker",
+      "url": "https://github.com/xiufengsun/TokenTracker",
+      "category": "productivity",
+      "goodFor": "Local AI usage dashboard: borderless sidebar, rounded content panel, hairline cards, one green accent for money, dense tables, limits bars",
+      "tags": [
+        "web",
+        "dashboard",
+        "dark",
+        "neutral",
+        "one-accent",
+        "dense-table",
+        "sidebar",
+        "data-viz"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-11",
+      "access": "local dashboard served by the TokenTracker CLI, no account, headless Chromium",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/tokentracker/README.md",
+      "tokens": "systems/tokentracker/tokens.json",
+      "styleGuide": "systems/tokentracker/style-guide.html",
+      "preview": {
+        "cover": "systems/tokentracker/screenshots/dashboard-dark-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.bg.wash",
+            "surface": "light.bg.card",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.bg.wash",
+            "surface": "dark.bg.card",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent.default",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      }
+    },
+    {
+      "slug": "linear",
+      "name": "Linear",
+      "url": "https://linear.app",
+      "category": "productivity",
+      "goodFor": "Dense, dark, keyboard-first product UI: issue lists, issue detail, menus; plus the public marketing site",
+      "tags": [
+        "web",
+        "dark",
+        "dense",
+        "keyboard-first",
+        "issue-tracker",
+        "marketing-site"
+      ],
+      "shape": "audit",
+      "captured": "2026-09-23",
+      "access": "public site measured signed out; desktop app captured signed in, kept only as anonymised accessibility snapshots",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/linear/README.md",
+      "tokens": "systems/linear/tokens/linear.tokens.json",
+      "styleGuide": "systems/linear/style-guide.html",
+      "preview": {
+        "cover": "systems/linear/screenshots/01-home.png",
+        "swatches": {
+          "dark": {
+            "page": "app.canvas",
+            "surface": "app.surface",
+            "text": "app.text",
+            "muted": "app.muted",
+            "accent": "app.accent",
+            "border": "app.border"
+          }
+        },
+        "fonts": [
+          "font.ui",
+          "font.mono",
+          "font.editorial"
+        ],
+        "exclude": [
+          "app"
+        ]
+      },
+      "notes": "App colours are sampled pixels, not CSS. No light app theme was captured. The signed-in app screenshots were removed; only anonymised accessibility snapshots remain.",
+      "source": {
+        "path": "a private work project (path not recorded)",
+        "excluded": [
+          "linear-complete-audit.zip",
+          "linear-design-library.zip"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "app.",
+          "semantic."
+        ],
+        "rounded": "radius.",
+        "spacing": "space."
+      }
+    },
+    {
+      "slug": "polaris",
+      "name": "Shopify Polaris (React archive)",
+      "url": "https://github.com/Shopify/polaris-react-archive",
+      "category": "component-library",
+      "goodFor": "Admin and commerce UI built from a published component library: semantic colour roles, buttons, cards, banners",
+      "tags": [
+        "web",
+        "admin",
+        "commerce",
+        "component-library",
+        "dense",
+        "forms"
+      ],
+      "shape": "audit",
+      "captured": "2026-09-25",
+      "access": "published packages and the archive repo at a pinned commit",
+      "themes": [
+        "light",
+        "light-mobile",
+        "light-high-contrast-experimental",
+        "dark-experimental"
+      ],
+      "widths": [],
+      "entry": "systems/polaris/README.md",
+      "tokens": "systems/polaris/tokens/polaris.tokens-studio.json",
+      "styleGuide": "systems/polaris/style-guide.html",
+      "preview": {
+        "cover": "systems/polaris/screenshots/01-overview.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.color-bg",
+            "surface": "light.color.color-bg-surface",
+            "text": "light.color.color-text",
+            "muted": "light.color.color-text-secondary",
+            "accent": "light.color.color-text-link",
+            "border": "light.color.color-border"
+          },
+          "dark-experimental": {
+            "page": "dark-experimental.color.color-bg",
+            "surface": "dark-experimental.color.color-bg-surface",
+            "text": "dark-experimental.color.color-text",
+            "muted": "dark-experimental.color.color-text-secondary",
+            "accent": "dark-experimental.color.color-text-link",
+            "border": "dark-experimental.color.color-border"
+          }
+        },
+        "fonts": [
+          "light.font.font-family-sans"
+        ]
+      },
+      "notes": "style-guide.html fetches its data, so open it through `make serve`, not from disk. Tokens match the archive with zero differences (evidence/token-parity.json).",
+      "source": {
+        "path": "a private work project (path not recorded)",
+        "excluded": [
+          "node_modules/",
+          "polaris-design-library.zip"
+        ]
+      },
+      "designMd": {
+        "colors": "light.color.",
+        "typography": "light.text.text-",
+        "rounded": "light.border.border-radius-",
+        "spacing": "light.space."
+      }
+    }
+  ]
+}

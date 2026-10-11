@@ -1,0 +1,285 @@
+{
+  "links": [
+    {
+      "text": "Skip to content →",
+      "url": "https://linear.app/#skip-nav"
+    },
+    {
+      "text": "",
+      "url": "https://linear.app/homepage"
+    },
+    {
+      "text": "Customers",
+      "url": "https://linear.app/customers"
+    },
+    {
+      "text": "Pricing",
+      "url": "https://linear.app/pricing"
+    },
+    {
+      "text": "Now",
+      "url": "https://linear.app/now"
+    },
+    {
+      "text": "Contact",
+      "url": "https://linear.app/contact"
+    },
+    {
+      "text": "Docs",
+      "url": "https://linear.app/docs"
+    },
+    {
+      "text": "Open app",
+      "url": "https://linear.app/login"
+    },
+    {
+      "text": "Log in",
+      "url": "https://linear.app/login"
+    },
+    {
+      "text": "Sign up",
+      "url": "https://linear.app/signup"
+    },
+    {
+      "text": "NewLoops →",
+      "url": "https://linear.app/now/introducing-loops"
+    },
+    {
+      "text": "NewLoops →",
+      "url": "https://linear.app/now/introducing-loops"
+    },
+    {
+      "text": "",
+      "url": "https://linear.app/customers"
+    },
+    {
+      "text": "Learn more→",
+      "url": "https://linear.app/intake"
+    },
+    {
+      "text": "Learn more→",
+      "url": "https://linear.app/plan"
+    },
+    {
+      "text": "Learn more→",
+      "url": "https://linear.app/ai"
+    },
+    {
+      "text": "Learn more→",
+      "url": "https://linear.app/build"
+    },
+    {
+      "text": "Loops for product managementLoops are recurring agent workflows for teams. They now respond to more workspace activity, including changes to initiatives, projects, and cycles. They can also edit Linear documents and post updates to Slack.Sep 10, 2026",
+      "url": "https://linear.app/changelog/2026-09-14-loops-for-product-management"
+    },
+    {
+      "text": "Priority inboxAn active workspace can create a significant amount of notifications each day, and until now your inbox treated them all the same. The new Priority tab separates what needs your attention from what can wait, so something like a review blocking a release never gets buried.Sep 3, 2026",
+      "url": "https://linear.app/changelog/2026-09-03-priority-inbox"
+    },
+    {
+      "text": "Coding sessionsLinear Agent can now set up, run, and test your code before returning its work. That means fewer handoffs and changes that are further along when they come back to you.Aug 19, 2026",
+      "url": "https://linear.app/changelog/2026-08-20-coding-environments"
+    },
+    {
+      "text": "Team initiativesInitiatives are Linear's way to manage product strategy and high-level planning across projects. Strategy may start at the company level, but teams carry it forward. You can now assign a team to lead an initiative, making it clear who is responsible for driving the work and how it contributes to the broader direction.Aug 13, 2026",
+      "url": "https://linear.app/changelog/2026-08-13-team-initiatives"
+    },
+    {
+      "text": "View all→",
+      "url": "https://linear.app/changelog"
+    },
+    {
+      "text": "You’ll probably build a better product, just because of the craft that using Linear infuses on your brain.Gabriel PealOpenAI",
+      "url": "https://linear.app/customers/openai"
+    },
+    {
+      "text": "Our speed is intense and Linear helps us be action biased.Nik KoblovRamp",
+      "url": "https://linear.app/customers/ramp"
+    },
+    {
+      "text": "Linear is excellent, just excellent. It has the right opinions for fast moving teams.Kaz NejatianOpendoor",
+      "url": "https://linear.app/customers/opendoor"
+    },
+    {
+      "text": "You’ll probably build a better product, just because of the craft that using Linear infuses on your brain.Gabriel PealStaff Software Engineer, OpenAI",
+      "url": "https://linear.app/customers/openai"
+    },
+    {
+      "text": "Our speed is intense and Linear helps us be action biased.Nik KoblovHead of Engineering, Ramp",
+      "url": "https://linear.app/customers/ramp"
+    },
+    {
+      "text": "Customer stories→",
+      "url": "https://linear.app/customers"
+    },
+    {
+      "text": "Get started",
+      "url": "https://linear.app/signup"
+    },
+    {
+      "text": "Contact sales",
+      "url": "https://linear.app/contact/sales"
+    },
+    {
+      "text": "Open app",
+      "url": "https://linear.app/login"
+    },
+    {
+      "text": "Download",
+      "url": "https://linear.app/download"
+    },
+    {
+      "text": "",
+      "url": "https://linear.app/"
+    },
+    {
+      "text": "Intake",
+      "url": "https://linear.app/intake"
+    },
+    {
+      "text": "Plan",
+      "url": "https://linear.app/plan"
+    },
+    {
+      "text": "AI",
+      "url": "https://linear.app/ai"
+    },
+    {
+      "text": "Build",
+      "url": "https://linear.app/build"
+    },
+    {
+      "text": "Pricing",
+      "url": "https://linear.app/pricing"
+    },
+    {
+      "text": "Security",
+      "url": "https://linear.app/security"
+    },
+    {
+      "text": "Asks",
+      "url": "https://linear.app/asks"
+    },
+    {
+      "text": "Agents",
+      "url": "https://linear.app/agents"
+    },
+    {
+      "text": "Coding Sessions",
+      "url": "https://linear.app/coding-sessions"
+    },
+    {
+      "text": "Customer Requests",
+      "url": "https://linear.app/customer-requests"
+    },
+    {
+      "text": "Insights",
+      "url": "https://linear.app/insights"
+    },
+    {
+      "text": "Mobile",
+      "url": "https://linear.app/mobile"
+    },
+    {
+      "text": "Integrations",
+      "url": "https://linear.app/integrations"
+    },
+    {
+      "text": "Changelog",
+      "url": "https://linear.app/changelog"
+    },
+    {
+      "text": "About",
+      "url": "https://linear.app/about"
+    },
+    {
+      "text": "Customers",
+      "url": "https://linear.app/customers"
+    },
+    {
+      "text": "Careers",
+      "url": "https://linear.app/careers"
+    },
+    {
+      "text": "Now",
+      "url": "https://linear.app/now"
+    },
+    {
+      "text": "Method",
+      "url": "https://linear.app/method"
+    },
+    {
+      "text": "Quality",
+      "url": "https://linear.app/quality"
+    },
+    {
+      "text": "Brand",
+      "url": "https://linear.app/brand"
+    },
+    {
+      "text": "Switch",
+      "url": "https://linear.app/switch"
+    },
+    {
+      "text": "Download",
+      "url": "https://linear.app/download"
+    },
+    {
+      "text": "DocumentationDocs",
+      "url": "https://linear.app/docs"
+    },
+    {
+      "text": "Developers",
+      "url": "https://linear.app/developers"
+    },
+    {
+      "text": "Enterprise",
+      "url": "https://linear.app/enterprise"
+    },
+    {
+      "text": "Startups",
+      "url": "https://linear.app/startups"
+    },
+    {
+      "text": "Contact us",
+      "url": "https://linear.app/contact"
+    },
+    {
+      "text": "Community",
+      "url": "https://linear.app/join-slack"
+    },
+    {
+      "text": "Privacy",
+      "url": "https://linear.app/privacy"
+    },
+    {
+      "text": "Terms",
+      "url": "https://linear.app/terms"
+    },
+    {
+      "text": "DPA",
+      "url": "https://linear.app/dpa"
+    },
+    {
+      "text": "AUP",
+      "url": "https://linear.app/legal/aup"
+    },
+    {
+      "text": "Privacy",
+      "url": "https://linear.app/privacy"
+    },
+    {
+      "text": "Terms",
+      "url": "https://linear.app/terms"
+    },
+    {
+      "text": "DPA",
+      "url": "https://linear.app/dpa"
+    },
+    {
+      "text": "AUP",
+      "url": "https://linear.app/legal/aup"
+    }
+  ],
+  "url": "https://linear.app/"
+}

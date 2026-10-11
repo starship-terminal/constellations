@@ -1,0 +1,527 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "DPA" [level=1]
+  - paragraph: "Signed: May 31, 2025"
+  - paragraph: "This Data Processing DPA (“DPA”) supplements the Terms of Service (the “Agreement”) entered into by and between Customer (as defined in the Agreement) and Linear Orbit, Inc. a Delaware corporation located at 2261 Market St STE 10632 San Francisco, CA 94114 (“Linear”). By executing the Agreement, Customer enters into this DPA on behalf of itself and, to the extent required under applicable Data Protection Laws (defined below), in the name and on behalf of its Affiliates (defined below), if any. This DPA incorporates the terms of the Agreement, and any terms not defined in this DPA shall have the meaning set forth in the Agreement. The parties therefore agree as follows:"
+  - list:
+    - link "Definitions":
+      - /url: "#1.-Definitions"
+    - link "Relationship of the Parties; Processing of Data":
+      - /url: "#2.-Relationship-of-the-Parties-Processing-of-Data"
+    - link "Authorized Sub-Processors":
+      - /url: "#3.-Authorized-Sub-Processors"
+    - link "Security of Personal Data":
+      - /url: "#4.-Security-of-Personal-Data"
+    - link "Transfers of Personal Data":
+      - /url: "#5.-Transfers-of-Personal-Data"
+    - link "Rights of Data Subjects":
+      - /url: "#6.-Rights-of-Data-Subjects"
+    - link "Actions and Access Requests; Audits":
+      - /url: "#7.-Actions-and-Access-Requests-Audits"
+    - link "Linear’s Role as a Controller":
+      - /url: "#8.-Linear's-Role-as-a-Controller"
+    - link "Conflict":
+      - /url: "#9.-Conflict"
+    - link "Exhibit A":
+      - /url: "#Exhibit-A"
+    - link "Exhibit B":
+      - /url: "#Exhibit-B"
+  - heading "Definitions" [level=2]
+  - list:
+    - listitem: “Affiliate” means (i) an entity of which a party directly or indirectly owns fifty percent (50%) or more of the stock or other equity interest, (ii) an entity that owns at least fifty percent (50%) or more of the stock or other equity interest of a party, or (iii) an entity which is under common control with a party by having at least fifty percent (50%) or more of the stock or other equity interest of such entity and a party owned by the same person, but such entity shall only be deemed to be an Affiliate so long as such ownership exists.
+    - listitem: “Authorized Sub-Processor” means a third-party who has a need to know or otherwise access Customer’s Personal Data to enable Linear to perform its obligations under this DPA or the Agreement, and who is either (1) listed in Exhibit B or (2) subsequently authorized under Section 3.2 of this DPA.
+    - listitem: “Customer Account Data” means personal data that relates to Customer’s relationship with Linear, including the names or contact information of individuals authorized by Customer to access Customer’s account and billing information of individuals that Customer has associated with its account. Customer Account Data also includes any data Linear may need to collect for the purpose of managing its relationship with Customer, identity verification, or as otherwise required by Data Protection Laws and regulations.
+    - listitem: “Customer Usage Data” means Service usage data collected and processed by Linear in connection with the provision of the Services, including without limitation data used to identify the source and destination of a communication, activity logs, and data used to optimize and maintain performance of the Services, and to investigate and prevent system abuse.
+    - listitem: “Data Exporter” means Customer.
+    - listitem: “Data Importer” means Linear.
+    - listitem: "“Data Protection Laws” means any applicable laws and regulations in any relevant jurisdiction relating to the use or processing of Personal Data including: (i) the California Consumer Privacy Act (“CCPA”), (ii) the General Data Protection Regulation (Regulation (EU) 2016/679) (“EU GDPR” or “GDPR”), (iii) the Swiss Federal Act on Data Protection, (iv) the EU GDPR as it forms part of the law of England and Wales by virtue of section 3 of the European Union (Withdrawal) Act 2018 (the “UK GDPR”); (v) the UK Data Protection Act 2018; and (vi) the Privacy and Electronic Communications (EC Directive) Regulations 2003; in each case, as updated, amended or replaced from time to time. The terms “Data Subject”, “Personal Data”, “Personal Data Breach”, “processing”, “processor,” “controller,” and “supervisory authority” shall have the meanings set forth in the GDPR."
+    - listitem: “EU SCCs” means the standard contractual clauses approved by the European Commission in Commission Decision 2021/914 dated 4 June 2021, for transfers of personal data to countries not otherwise recognized as offering an adequate level of protection for personal data by the European Commission (as amended and updated from time to time).
+    - text: “ex-EEA Transfer” means the transfer of Personal Data, which is processed in accordance with the GDPR, from the Data Exporter to the Data Importer (or its premises) outside the European Economic
+    - text: Area (the “EEA”), and such transfer is not governed by an adequacy decision made by the European Commission in accordance with the relevant provisions of the GDPR.
+    - listitem: “ex-UK Transfer” means the transfer of Personal Data, which is processed in accordance with the UK GDPR and the Data Protection Act 2018, from the Data Exporter to the Data Importer (or its premises) outside the United Kingdom (the “UK”), and such transfer is not governed by an adequacy decision made by the Secretary of State in accordance with the relevant provisions of the UK GDPR and the Data Protection Act 2018.
+    - listitem: “Services” shall have the meaning set forth in the Agreement.
+    - listitem: “UK Addendum” means the International Data Transfer Addendum to the EU Commission Standard Contractual Clauses issued by the Information Commissioner’s Office under Section 119A(1) of the Data Protection Act 2018, version B1.0, in force 21 March 2022 (including all Part 2 Mandatory Clauses), as amended, updated or replaced from time to time.
+  - separator
+  - heading "Relationship of the Parties; Processing of Data" [level=2]
+  - list:
+    - listitem: The parties acknowledge and agree that with regard to the processing of Personal Data, Customer may act either as a controller or processor and, except as expressly set forth in this DPA or the Agreement, Linear is a processor. Customer shall, in its use of the Services, process Personal Data, and provide instructions for the processing of Personal Data, in compliance with Data Protection Laws. Customer shall ensure that the processing of Personal Data in accordance with Customer’s instructions will not cause Linear to be in breach of the Data Protection Laws. Customer is solely responsible for the accuracy, quality, and legality of (i) the Personal Data provided to Linear by or on behalf of Customer, (ii) the means by which Customer acquired any such Personal Data, and (iii) the instructions it provides to Linear regarding the processing of such Personal Data. Customer shall not provide or make available to Linear any Personal Data in violation of the Agreement or otherwise inappropriate for the nature of the Services, and shall indemnify Linear from all claims and losses in connection therewith.
+    - listitem: Linear shall not process Personal Data (i) for purposes other than those set forth in the Agreement and/or Exhibit A, (ii) in a manner inconsistent with the terms and conditions set forth in this DPA or any other documented instructions provided by Customer, including with regard to transfers of personal data to a third country or an international organization, unless required to do so by Supervisory Authority to which Linear is subject; in such a case, Linear shall inform the Customer of that legal requirement before processing, unless that law prohibits such information on important grounds of public interest, or (iii) in violation of Data Protection Laws. Customer hereby instructs Linear to process Personal Data in accordance with the foregoing and as part of any processing initiated by Customer in its use of the Services.
+    - listitem: The subject matter, nature, purpose, and duration of this processing, as well as the types of Personal Data collected and categories of Data Subjects, are described in Exhibit A to this DPA.
+    - listitem: Following completion of the Services, at Customer’s choice, Linear shall return or delete Customer’s Personal Data, unless further storage of such Personal Data is required or authorized by applicable law. If return or destruction is impracticable or prohibited by law, rule or regulation, Linear shall take measures to block such Personal Data from any further processing (except to the extent necessary for its continued hosting or processing required by law, rule or regulation) and shall continue to appropriately protect the Personal Data remaining in its possession, custody, or control. If Linear will be transferring Personal Data outside of the European Union under the Standard Contractual Clauses as described in Section 5 (Transfers of Personal Data), the parties agree that the certification of deletion of Personal Data that is described in Clause 8.1(d) and Clause 8.5 of the EU SCCs (as applicable) shall be provided by Linear to Customer only upon Customer’s request.
+    - listitem: CCPA. Except with respect to Customer Account Data and Customer Usage Data, the parties acknowledge and agree that Linear is a service provider for the purposes of the CCPA (to the extent it applies) and is receiving personal information from Customer in order to provide the Services pursuant to the Agreement, which constitutes a business purpose. Linear shall not sell any such personal information. Linear shall not retain, use or disclose any personal information provided by Customer pursuant to the Agreement except as necessary for the specific purpose of performing the Services for Customer pursuant to the Agreement, or otherwise as set forth in the Agreement or as permitted by the CCPA. The terms “personal information,” “service provider,” “sale,” and “sell” are as defined in Section 1798.140 of the CCPA. Linear certifies that it understands the restrictions of this Section 2.5.
+  - separator
+  - heading "Authorized Sub-Processors" [level=2]
+  - list:
+    - listitem: Customer acknowledges and agrees that Linear may (1) engage its affiliates and the Authorized Sub-Processors listed in Exhibit B (the “List”) to this DPA to access and process Personal Data in connection with the Services and (2) from time to time engage additional third parties for the purpose of providing the Services, including without limitation the processing of Personal Data. By way of this DPA, Customer provides general written authorization to Linear to engage sub-processors as necessary to perform the Services.
+    - listitem: The List may be updated by Linear from time to time. Linear provides a mechanism to subscribe to notifications of new Authorized Sub-Processors at https://linear.app/settings/account/notifications. Customer agrees to subscribe to such notifications if available. At least thirty (30) days before enabling any third party other than existing Authorized Sub-Processors to access or participate in the processing of Personal Data, Linear will add such third party to the List and notify Customer via email. Customer may object to such an engagement by informing Linear within thirty (30) days of receipt of the aforementioned notice by Customer, provided such objection is in writing and based on reasonable grounds relating to data protection. Customer acknowledges that certain sub-processors are essential to providing the Services and that objecting to the use of a sub-processor may prevent Linear from offering the Services to Customer.
+    - listitem: If Customer reasonably objects to an engagement in accordance with Section 3.2, and Linear cannot provide a commercially reasonable alternative within a reasonable period of time, Customer may discontinue the use of the affected Service by providing written notice to Linear. Discontinuation shall not relieve Customer of any fees owed to Linear under the Agreement.
+    - listitem: If Customer does not object to the engagement of a third party in accordance with Section 3.2, that third party will be deemed an Authorized Sub-Processor for the purposes of this DPA.
+    - listitem: Linear will enter into a written agreement with the Authorized Sub-Processor imposing on the Authorized Sub-Processor data protection obligations comparable to those imposed on Linear under this DPA with respect to the protection of Personal Data. In case an Authorized Sub-Processor fails to fulfill its data protection obligations under such written agreement with Linear, Linear will remain liable to Customer for the performance of the Authorized Sub-Processor’s obligations under such agreement.
+    - listitem: If Customer and Linear have entered into Standard Contractual Clauses as described in Section 5 (Transfers of Personal Data), (i) the above authorizations will constitute Customer’s prior written consent to the subcontracting by Linear of the processing of Personal Data if such consent is required under the Standard Contractual Clauses, and (ii) the parties agree that the copies of the agreements with Authorized Sub-Processors that must be provided by Linear to Customer pursuant to Clause 9(c) of the EU SCCs may have commercial information, or information unrelated to the Standard Contractual Clauses or their equivalent, removed by Linear beforehand, and that such copies will be provided by Linear only upon request by Customer.
+  - separator
+  - heading "Security of Personal Data" [level=2]
+  - paragraph: Taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons, Linear shall maintain appropriate technical and organizational measures to ensure a level of security appropriate to the risk of processing Personal Data. Exhibit C sets forth additional information about Linear’s technical and organizational security measures.
+  - separator
+  - heading "Transfers of Personal Data" [level=2]
+  - list:
+    - listitem: The parties agree that Linear may transfer Personal Data processed under this DPA outside the EEA, the UK, or Switzerland as necessary to provide the Services. Customer acknowledges that Linear’s primary processing operations take place in the United States, and that the transfer of Customer’s Personal Data to the United States is necessary for the provision of the Services to Customer. If Linear transfers Personal Data protected under this DPA to a jurisdiction for which the European Commission has not issued an adequacy decision, Linear will ensure that appropriate safeguards have been implemented for the transfer of Personal Data in accordance with Data Protection Laws.
+    - text: "Ex-EEA Transfers. The parties agree that ex-EEA Transfers are made pursuant to the EU SCCs, which are deemed entered into (and incorporated into this DPA by this reference) and completed as follows:"
+    - list:
+      - listitem: Module One (Controller to Controller) of the EU SCCs apply when Linear is processing Personal Data as a controller pursuant to Section 8 of this DPA.
+      - listitem: Module Two (Controller to Processor) of the EU SCCs apply when Customer is a controller and Linear is processing Personal Data for Customer as a processor pursuant to Section 2 of this DPA.
+      - listitem: Module Three (Processor to Sub-Processor) of the EU SCCs apply when Customer is a processor and Linear is processing Personal Data on behalf of Customer as a sub-processor.
+      - listitem: Module Four (Processor to Controller) of the EU SCCs apply when Customer is a processor of Customer Usage Data and Linear processes Customer Usage Data as a controller.
+    - text: "For each module, where applicable the following applies:"
+    - list:
+      - listitem: The optional docking clause in Clause 7 does not apply.
+      - listitem: In Clause 9, Option 2 (general written authorization) applies, and the minimum time period for prior notice of sub-processor changes shall be as set forth in Section 3.2 of this DPA;
+      - listitem: In Clause 11, the optional language does not apply;
+      - listitem: All square brackets in Clause 13 are hereby removed;
+      - listitem: In Clause 17 (Option 1), the EU SCCs will be governed by Irishlaw;
+      - listitem: In Clause 18(b), disputes will be resolved before the courts of the Republic of Ireland;
+      - listitem: Exhibit B to this DPA contains the information required in Annex I of the EU SCCs;
+      - listitem: Exhibit C to this DPA contains the information required in Annex II of the EU SCCs; and
+      - listitem: By entering into this DPA, the parties are deemed to have signed the EU SCCs incorporated herein, including their Annexes.
+    - text: "Ex-UK Transfers. The parties agree that ex-UK Transfers are made pursuant to the UK Addendum, which is deemed entered into and incorporated into this DPA by this reference. The UK Addendum is completed as follows:"
+    - list:
+      - listitem: Table 1 is completed with the parties’ details as set out in Exhibit B of this DPA.
+      - listitem: "Table 2 incorporates the EU SCCs (Module Two: Controller to Processor) as the Approved EU SCCs."
+      - listitem: Table 3 is completed with the information set out in Exhibits B and C of this DPA.
+      - listitem: In Table 4, both the Importer and Exporter may end the UK Addendum as set out in Section 19 of the UK Addendum.
+      - listitem: "Table 4 (Ending this Addendum when the Approved Addendum changes): neither party may end the UK Addendum other than in accordance with its terms, save that the Data Importer may do so as permitted under Section 19 of the UK Addendum."
+      - listitem: By entering into this DPA, the parties are deemed to have signed the UK Addendum, including its Part 2 Mandatory Clauses, and the EU SCCs as varied by it.
+    - text: "Supplementary Measures. In respect of any ex-EEA Transfer or ex-UK Transfer, the following supplementary measures shall apply:"
+    - list:
+      - listitem: As of the date of this DPA, the Data Importer has not received any formal legal requests from any government intelligence or security service/agencies in the country to which the Personal Data is being exported, for access to (or for copies of) Customer’s Personal Data (“Government Agency Requests”);
+      - listitem: If, after the date of this DPA, the Data Importer receives any Government Agency Requests, Linear shall attempt to redirect the law enforcement or government agency to request that data directly from Customer. As part of this effort, Linear may provide Customer’s basic contact information to the government agency. If compelled to disclose Customer’s Personal Data to a law enforcement or government agency, Linear shall give Customer reasonable notice of the demand and cooperate to allow Customer to seek a protective order or other appropriate remedy unless Linear is legally prohibited from doing so. Linear shall not voluntarily disclose Personal Data to any law enforcement or government agency. Data Exporter and Data Importer shall (as soon as reasonably practicable) discuss and determine whether all or any transfers of Personal Data pursuant to this DPA should be suspended in the light of the such Government Agency Requests; and
+      - text: "The Data Exporter and Data Importer will meet regularly to consider whether:"
+      - list:
+        - listitem: the protection afforded by the laws of the country of the Data Importer to data subjects whose Personal Data is being transferred is sufficient to provide broadly equivalent protection to that afforded in the EEA or the UK, whichever the case may be;
+        - listitem: additional measures are reasonably necessary to enable the transfer to be compliant with the Data Protection Laws; and
+        - listitem: it is still appropriate for Personal Data to be transferred to the relevant Data Importer, taking into account all relevant information available to the parties, together with guidance provided by the supervisory authorities.
+      - listitem: If Data Protection Laws require the Data Exporter to execute the Standard Contractual Clauses applicable to a particular transfer of Personal Data to a Data Importer as a separate agreement, the Data Importer shall, on request of the Data Exporter, promptly execute such Standard Contractual Clauses incorporating such amendments as may reasonably be required by the Data Exporter to reflect the applicable appendices and annexes, the details of the transfer and the requirements of the relevant Data Protection Laws.
+      - listitem: If either (i) any of the means of legitimizing transfers of Personal Data outside of the EEA or UK set forth in this DPA cease to be valid or (ii) any supervisory authority requires transfers of Personal Data pursuant to those means to be suspended, then Data Importer may by notice to the Data Exporter, with effect from the date set out in such notice, amend or put in place alternative arrangements in respect of such transfers, as required by Data Protection Laws.
+  - separator
+  - heading "Rights of Data Subjects" [level=2]
+  - list:
+    - listitem: "Linear shall, to the extent permitted by law, notify Customer upon receipt of a request by a Data Subject to exercise the Data Subject’s right of: access, rectification, erasure, data portability, restriction or cessation of processing, withdrawal of consent to processing, and/or objection to being subject to processing that constitutes automated decision-making (such requests individually and collectively “Data Subject Request(s)”). If Linear receives a Data Subject Request in relation to Customer’s data, Linear will advise the Data Subject to submit their request to Customer and Customer will be responsible for responding to such request, including, where necessary, by using the functionality of the Services. Customer is solely responsible for ensuring that Data Subject Requests for erasure, restriction or cessation of processing, or withdrawal of consent to processing of any Personal Data are communicated to Linear, and, if applicable, for ensuring that a record of consent to processing is maintained with respect to each Data Subject."
+    - listitem: Linear shall, at the request of the Customer, and taking into account the nature of the processing applicable to any Data Subject Request, apply appropriate technical and organizational measures to assist Customer in complying with Customer’s obligation to respond to such Data Subject Request and/or in demonstrating such compliance, where possible, provided that (i) Customer is itself unable to respond without Linear’s assistance and (ii) Linear is able to do so in accordance with all applicable laws, rules, and regulations. Customer shall be responsible to the extent legally permitted for any costs and expenses arising from any such assistance by Linear.
+  - separator
+  - heading "Actions and Access Requests; Audits" [level=2]
+  - list:
+    - listitem: Linear shall, taking into account the nature of the processing and the information available to Linear, provide Customer with reasonable cooperation and assistance where necessary for Customer to comply with its obligations under the GDPR to conduct a data protection impact assessment and/or to demonstrate such compliance, provided that Customer does not otherwise have access to the relevant information. Customer shall be responsible to the extent legally permitted for any costs and expenses arising from any such assistance by Linear.
+    - listitem: Linear shall, taking into account the nature of the processing and the information available to Linear, provide Customer with reasonable cooperation and assistance with respect to Customer’s cooperation and/or prior consultation with any Supervisory Authority, where necessary and where required by the GDPR. Customer shall be responsible to the extent legally permitted for any costs and expenses arising from any such assistance by Linear.
+    - listitem: Linear shall maintain records sufficient to demonstrate its compliance with its obligations under this DPA, and retain such records for a period of three (3) years after the termination of the Agreement. Customer shall, with reasonable notice to Linear, have the right to review, audit and copy such records at Linear’s offices during regular business hours.
+    - listitem: Upon Customer’s written request at reasonable intervals, and subject to reasonable confidentiality controls, Linear shall, either (i) make available for Customer’s review copies of certifications or reports demonstrating Linear’s compliance with prevailing data security standards applicable to the processing of Customer’s Personal Data, or (ii) if the provision of reports or certifications pursuant to (i) is not reasonably sufficient under Data Protection Laws, allow Customer’s independent third party representative to conduct an audit or inspection of Linear’s data security infrastructure and procedures that is sufficient to demonstrate Linear’s compliance with its obligations under Data Protection Laws, provided that (a) Customer provides reasonable prior written notice of any such request for an audit and such inspection shall not be unreasonably disruptive to Linear’s business; (b) such audit shall only be performed during business hours and occur no more than once per calendar year; and (c) such audit shall be restricted to data relevant to Customer. Customer shall be responsible for the costs of any such audits or inspections, including without limitation a reimbursement to Linear for any time expended for on-site audits.If Customer and Linear have entered into Standard Contractual Clauses as described in Section 5 (Transfers of Personal Data), the parties agree that the audits described in Clause 8.9 of the EU SCCs shall be carried out in accordance with this Section 7.4.
+    - listitem: Linear shall immediately notify Customer if an instruction, in Linear’s opinion, infringes the Data Protection Laws or Supervisory Authority.
+    - listitem: In the event of a Personal Data Breach, Linear shall, without undue delay, inform Customer of the Personal Data Breach and take such steps as Linear in its sole discretion deems necessary and reasonable to remediate such violation (to the extent that remediation is within Linear’s reasonable control).
+    - listitem: In the event of a Personal Data Breach, Linear shall, taking into account the nature of the processing and the information available to Linear, provide Customer with reasonable cooperation and assistance necessary for Customer to comply with its obligations under the GDPR with respect to notifying (i) the relevant Supervisory Authority and (ii) Data Subjects affected by such Personal Data Breach without undue delay.
+    - listitem: The obligations described in Sections 7.5 and 7.6 shall not apply in the event that a Personal Data Breach results from the actions or omissions of Customer. Linear’s obligation to report or respond to a Personal Data Breach under Sections 7.5 and 7.6 will not be construed as an acknowledgement by Linear of any fault or liability with respect to the Personal Data Breach.
+  - separator
+  - heading "Linear’s Role as a Controller" [level=2]
+  - paragraph: The parties acknowledge and agree that with respect to Customer Account Data and Customer Usage data, Linear is an independent controller, not a joint controller with Customer. Linear will process Customer Account Data and Customer Usage Data as a controller (i) to manage the relationship with Customer; (ii) to carry out Linear’s core business operations, such as accounting, audits, tax preparation and filing and compliance purposes; (iii) to monitor, investigate, prevent and detect fraud, security incidents and other misuse of the Services, and to prevent harm to Customer; (iv) for identity verification purposes; (v) to comply with legal or regulatory obligations applicable to the processing and retention of Personal Data to which Linear is subject; and (vi) as otherwise permitted under Data Protection Laws and in accordance with this DPA and the Agreement. Linear may also process Customer Usage Data as a controller to provide, optimize, and maintain the Services, to the extent permitted by Data Protection Laws. Any processing by Linear as a controller of Customer Usage Data is processed for “contractual necessity”, meaning that Linear needs to process such data to perform under the Agreement, which enables Linear to provide and improve the Services, or in furtherance of the legitimate interests of Linear or third parties. Linear may also de-identify or anonymize Personal Data to further Linear’s legitimate interests. When Linear processes data due to contractual necessity, failure to provide such data, even Personal Data will result in Customer’s inability to use some or all portions of the Services that require such data. From time to time Linear may also need to process Personal Data to comply with a legal obligation, if it is necessary to protect the vital interests of Customer or other data subjects, or if it is necessary for a task carried out in the public interest.
+  - separator
+  - heading "Conflict" [level=2]
+  - paragraph: "In the event of any conflict or inconsistency among the following documents, the order of precedence will be: (1) the applicable terms in the Standard Contractual Clauses; (2) the terms of this DPA; (3) the Agreement; and (4) any other written agreement executed by the parties. Any claims brought in connection with this DPA will be subject to the terms and conditions, including, but not limited to, the exclusions and limitations set forth in the Agreement."
+  - separator
+  - heading "Exhibit A" [level=2]
+  - heading "Details of Processing" [level=3]
+  - paragraph:
+    - strong: "Nature and Purpose of Processing:"
+    - text: Linear will process Customer’s Personal Data as necessary to provide the Services under the Agreement, for the purposes specified in the Agreement and this DPA, and in accordance with Customer’s instructions as set forth in this DPA.
+  - paragraph:
+    - strong: "Duration of Processing:"
+    - text: Linear will process Customer’s Personal Data as long as required (i) to provide the Services to Customer under the Agreement; (ii) for Linear’s legitimate business needs; or (iii) by applicable law or regulation. Customer Account Data and Customer Usage Data will be processed and stored as set forth in the Agreement and this DPA.
+  - paragraph:
+    - strong: "Categories of Data Subjects:"
+    - text: Customer end-users/customers and Customer employees
+  - paragraph:
+    - strong: "Categories of Personal Data:"
+    - text: Linear processes Personal Data contained in Customer Account Data, Customer Usage Data, and any Personal Data provided by Customer (including any Personal Data Customer collects from its end users and processes through its use of the Services) or collected by Linear in order to provide the Services or as otherwise set forth in the Agreement or this DPA. Categories of Personal Data include name, location, email address, date of birth, physical address, unique identifiers such as passwords.
+  - paragraph:
+    - strong: "Sensitive Data or Special Categories of Data:"
+    - text: Refer to Agreement.
+  - separator
+  - heading "Exhibit B" [level=2]
+  - paragraph: The following includes the information required by Annex I and Annex III of the EU SCCs, and for ex-UK Transfers, constitutes the Appendix Information for Table 3 of the UK Addendum.
+  - heading "The Parties" [level=3]
+  - paragraph:
+    - strong: "Data exporter(s):"
+  - paragraph:
+    - strong: Name
+    - text: ": Customer, as stated and defined in the applicable Order (as such term is defined under the Agreement)"
+  - paragraph:
+    - strong: Address
+    - text: ": Customer’s registered business address and any address provided to Linear at the time that Customer uses the Services."
+  - paragraph: "Contact person’s name, position and contact details: Customer’s contact for the purposes of the SCC’s will be the contact of the person that properly accepts and binds Customer to the Agreement unless another contact person’s information is specifically provided to Linear in writing."
+  - paragraph: "Activities relevant to the data transferred under these Clauses:"
+  - paragraph: "Signature and date: The EU SCC’s and the UK Addendum will be considered executed upon Customer’s proper acceptance of the Agreement."
+  - paragraph:
+    - strong: Role (controller/processor)
+    - text: ": Controller and Processor"
+  - paragraph:
+    - strong: "Data importer(s):"
+  - paragraph:
+    - strong: Name
+    - text: ": Linear Orbit, Inc."
+    - strong: Address
+    - text: ": security@linear.app"
+    - strong: "Signature and date:"
+  - figure:
+    - img "Tuomas' signature"
+  - paragraph:
+    - text: Tuomas Artman, Co-Founder
+    - strong: Date
+    - text: ": 5/31/25"
+    - strong: Role (controller/processor)
+    - text: ": Controller and Processor"
+  - paragraph:
+    - strong: Description of the Transfer
+  - table:
+    - rowgroup:
+      - row "Data Subjects Refer to Agreement":
+        - columnheader "Data Subjects"
+        - columnheader "Refer to Agreement"
+    - rowgroup:
+      - row "Categories of Personal Data Refer to Agreement":
+        - cell "Categories of Personal Data"
+        - cell "Refer to Agreement"
+      - row "Special Category Personal Data (if applicable) Refer to Agreement":
+        - cell "Special Category Personal Data (if applicable)"
+        - cell "Refer to Agreement"
+      - row "Nature of the Processing Refer to Agreement":
+        - cell "Nature of the Processing"
+        - cell "Refer to Agreement"
+      - row "Purposes of Processing In order for Linear to provide the Services to Customer as stated under the Agreement.":
+        - cell "Purposes of Processing"
+        - cell "In order for Linear to provide the Services to Customer as stated under the Agreement."
+      - row "Duration of Processing and Retention (or the criteria to determine such period) For as long as Customer is using the Services.":
+        - cell "Duration of Processing and Retention (or the criteria to determine such period)"
+        - cell "For as long as Customer is using the Services."
+      - row "Frequency of the transfer As requested or initiated by Customer during the course of the Agreement.":
+        - cell "Frequency of the transfer"
+        - cell "As requested or initiated by Customer during the course of the Agreement."
+      - row "Recipients of Personal Data Transferred to the Data Importer Linear will maintain and provide a list of its Sub-Processors upon request.":
+        - cell "Recipients of Personal Data Transferred to the Data Importer"
+        - cell "Linear will maintain and provide a list of its Sub-Processors upon request."
+  - paragraph:
+    - strong
+  - paragraph:
+    - strong: Competent Supervisory Authority
+  - paragraph: The supervisory authority shall be the supervisory authority of the Data Exporter, as determined in accordance with Clause 13.
+  - paragraph:
+    - strong: List of Authorized Sub-Processors
+  - table:
+    - rowgroup:
+      - row "Company Description Location":
+        - columnheader "Company"
+        - columnheader "Description"
+        - columnheader "Location"
+    - rowgroup:
+      - row "Google LLC Cloud provider, artificial intelligence, collaboration / productivity United States, European Union":
+        - cell "Google LLC"
+        - cell "Cloud provider, artificial intelligence, collaboration / productivity"
+        - cell "United States, European Union"
+      - row "Cloudflare, Inc. Cloud provider Global":
+        - cell "Cloudflare, Inc."
+        - cell "Cloud provider"
+        - cell "Global"
+      - row "Datadog, Inc. Cloud monitoring United States":
+        - cell "Datadog, Inc."
+        - cell "Cloud monitoring"
+        - cell "United States"
+      - row "Functional Software Inc. (Sentry) Cloud monitoring United States":
+        - cell "Functional Software Inc. (Sentry)"
+        - cell "Cloud monitoring"
+        - cell "United States"
+      - row "PlanetScale, Inc. Managed database services United States, European Union":
+        - cell "PlanetScale, Inc."
+        - cell "Managed database services"
+        - cell "United States, European Union"
+      - row "Amazon Web Services, Inc Cloud provider, artificial intelligence United States, European Union":
+        - cell "Amazon Web Services, Inc"
+        - cell "Cloud provider, artificial intelligence"
+        - cell "United States, European Union"
+      - row "turbopuffer Inc. Search United States, European Union":
+        - cell "turbopuffer Inc."
+        - cell "Search"
+        - cell "United States, European Union"
+      - row "Anthropic, PBC Artificial intelligence United States, European Union":
+        - cell "Anthropic, PBC"
+        - cell "Artificial intelligence"
+        - cell "United States, European Union"
+      - row "OpenAI OpCo, LLC Artificial intelligence United States, European Union":
+        - cell "OpenAI OpCo, LLC"
+        - cell "Artificial intelligence"
+        - cell "United States, European Union"
+      - row "Fireworks AI, Inc Artificial intelligence United States":
+        - cell "Fireworks AI, Inc"
+        - cell "Artificial intelligence"
+        - cell "United States"
+      - row "Modal Labs, Inc. Cloud provider United States, European Union":
+        - cell "Modal Labs, Inc."
+        - cell "Cloud provider"
+        - cell "United States, European Union"
+      - row "The Pierre Computer Company, Inc Code storage and processing United States, European Union":
+        - cell "The Pierre Computer Company, Inc"
+        - cell "Code storage and processing"
+        - cell "United States, European Union"
+      - row "Cohere Inc Artificial intelligence United States, European Union":
+        - cell "Cohere Inc"
+        - cell "Artificial intelligence"
+        - cell "United States, European Union"
+      - row "Braintrust Data Inc. Artificial intelligence United States":
+        - cell "Braintrust Data Inc."
+        - cell "Artificial intelligence"
+        - cell "United States"
+      - row "Retool Inc. Product analytics and management United States":
+        - cell "Retool Inc."
+        - cell "Product analytics and management"
+        - cell "United States"
+      - row "PostHog, Inc Product analytics United States":
+        - cell "PostHog, Inc"
+        - cell "Product analytics"
+        - cell "United States"
+      - row "Intercom, Inc. Customer support United States":
+        - cell "Intercom, Inc."
+        - cell "Customer support"
+        - cell "United States"
+      - row "Pylon Labs, Inc. Customer support United States":
+        - cell "Pylon Labs, Inc."
+        - cell "Customer support"
+        - cell "United States"
+      - row "HubSpot, Inc. Customer relationship management United States":
+        - cell "HubSpot, Inc."
+        - cell "Customer relationship management"
+        - cell "United States"
+      - row "Enterpret Inc Customer support United States":
+        - cell "Enterpret Inc"
+        - cell "Customer support"
+        - cell "United States"
+      - row "Stripe, LLC Payments United States":
+        - cell "Stripe, LLC"
+        - cell "Payments"
+        - cell "United States"
+      - row "Slack Technologies, LLC Collaboration and community United States":
+        - cell "Slack Technologies, LLC"
+        - cell "Collaboration and community"
+        - cell "United States"
+      - row "Snowflake Inc Data storage and processing United States":
+        - cell "Snowflake Inc"
+        - cell "Data storage and processing"
+        - cell "United States"
+      - row "Fivetran Inc. Data storage and processing United States":
+        - cell "Fivetran Inc."
+        - cell "Data storage and processing"
+        - cell "United States"
+      - row "Hevo Data, Inc Data storage and processing United States":
+        - cell "Hevo Data, Inc"
+        - cell "Data storage and processing"
+        - cell "United States"
+      - row "Hex Technologies Inc. Data analytics United States":
+        - cell "Hex Technologies Inc."
+        - cell "Data analytics"
+        - cell "United States"
+      - row "AC PM, LLC (Postmark) Email delivery United States":
+        - cell "AC PM, LLC (Postmark)"
+        - cell "Email delivery"
+        - cell "United States"
+      - row "ZenLeads Inc (Pocus) Sales United States":
+        - cell "ZenLeads Inc (Pocus)"
+        - cell "Sales"
+        - cell "United States"
+      - row "Outreach Corporation Sales United States":
+        - cell "Outreach Corporation"
+        - cell "Sales"
+        - cell "United States"
+      - row "Gong.io Ltd Sales United States":
+        - cell "Gong.io Ltd"
+        - cell "Sales"
+        - cell "United States"
+      - row "Common Room, Inc Sales United States":
+        - cell "Common Room, Inc"
+        - cell "Sales"
+        - cell "United States"
+      - row "Astrodon Corp (Loops) Marketing United States":
+        - cell "Astrodon Corp (Loops)"
+        - cell "Marketing"
+        - cell "United States"
+      - row "Clay Labs Inc Marketing United States":
+        - cell "Clay Labs Inc"
+        - cell "Marketing"
+        - cell "United States"
+  - paragraph: Exhibit C
+  - paragraph:
+    - strong: Description of the Technical and Organisational Security Measures implemented by the Data Importer
+  - paragraph: The following includes the information required by Annex II of the EU SCCs and, for ex-UK Transfers, forms part of the Appendix Information for Table 3 of the UK Addendum.
+  - table:
+    - rowgroup:
+      - row "Technical and Organizational Security Measure Details":
+        - columnheader "Technical and Organizational Security Measure"
+        - columnheader "Details"
+    - rowgroup:
+      - row "Measures of pseudonymisation and encryption of personal data Customer data is stored in a multi-tenant application with logical separation between Customer instances. Sensitive authentication information is encrypted on logical database level, and the database is encrypted at rest.":
+        - cell "Measures of pseudonymisation and encryption of personal data"
+        - cell "Customer data is stored in a multi-tenant application with logical separation between Customer instances. Sensitive authentication information is encrypted on logical database level, and the database is encrypted at rest."
+      - row "Measures for ensuring ongoing confidentiality, integrity, availability and resilience of processing systems and services Linear has policies and procedures in place to ensure confidentiality, integrity and resilience of processing systems and services. These include an Access Control Policy, Business Continuity and Disaster Recovery Policy, and a Secure Development Policy. Linear will maintain and provide policies upon request.":
+        - cell "Measures for ensuring ongoing confidentiality, integrity, availability and resilience of processing systems and services"
+        - cell "Linear has policies and procedures in place to ensure confidentiality, integrity and resilience of processing systems and services. These include an Access Control Policy, Business Continuity and Disaster Recovery Policy, and a Secure Development Policy. Linear will maintain and provide policies upon request."
+      - row "Measures for ensuring the ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident All database-stored customer data is backed up daily using Google Cloud SQL offered tooling which also provides restoring capabilities. Backups and restore capabilities are tested on an annual cadence.":
+        - cell "Measures for ensuring the ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident"
+        - cell "All database-stored customer data is backed up daily using Google Cloud SQL offered tooling which also provides restoring capabilities. Backups and restore capabilities are tested on an annual cadence."
+      - row "Processes for regularly testing, assessing and evaluating the effectiveness of technical and organizational measures in order to ensure the security of the processing Linear regularly monitors and tests controls to ensure they are operating as intended and updated as needed. Linear uses the software service Vanta, Inc. to automate several of these controls, including employee activity and adherence to Linear policies and procedures, infrastructure monitoring, and development procedures. Linear leadership monitors these controls regularly, and is notified immediately when a control is at risk so that prompt action can be taken. Linear has completed its SOC2 Type II certification. Please see https://trustcenter.linear.app/ for a copy of the report.":
+        - cell "Processes for regularly testing, assessing and evaluating the effectiveness of technical and organizational measures in order to ensure the security of the processing"
+        - cell "Linear regularly monitors and tests controls to ensure they are operating as intended and updated as needed. Linear uses the software service Vanta, Inc. to automate several of these controls, including employee activity and adherence to Linear policies and procedures, infrastructure monitoring, and development procedures. Linear leadership monitors these controls regularly, and is notified immediately when a control is at risk so that prompt action can be taken. Linear has completed its SOC2 Type II certification. Please see https://trustcenter.linear.app/ for a copy of the report."
+      - row "Measures for user identification and authorization Linear maintains an Access Control Policy, which can be provided upon request. Measures for access control and authorization include formally documented roles and permissions, encrypted connection to production systems and networks, strong passwords stored within a password manager, and single-sign on or 2FA where available. Linear Access Control Policy applies to all Linear employees and to all external parties with access to Linear engineering networks and system resources.":
+        - cell "Measures for user identification and authorization"
+        - cell "Linear maintains an Access Control Policy, which can be provided upon request. Measures for access control and authorization include formally documented roles and permissions, encrypted connection to production systems and networks, strong passwords stored within a password manager, and single-sign on or 2FA where available. Linear Access Control Policy applies to all Linear employees and to all external parties with access to Linear engineering networks and system resources."
+      - row "Measures for the protection of data during transmission All data outside the Linear's private network is encrypted with HTTPS/SSL. All measures are outlined in the Linear's Data Management Policy, which can be provided upon request.":
+        - cell "Measures for the protection of data during transmission"
+        - cell "All data outside the Linear's private network is encrypted with HTTPS/SSL. All measures are outlined in the Linear's Data Management Policy, which can be provided upon request."
+      - row "Measures for the protection of data during storage Database is encrypted at rest and managed by Google Cloud Platform.":
+        - cell "Measures for the protection of data during storage"
+        - cell "Database is encrypted at rest and managed by Google Cloud Platform."
+      - 'row "Measures for ensuring physical security of locations at which personal data are processed Linear does not operate physical servers or other infrastructure. For employer-provided computers: All Linear employees are required to complete physical security training, and all employees and contractors are required to enable a screen lock when the work computer is left unattended."':
+        - cell "Measures for ensuring physical security of locations at which personal data are processed"
+        - 'cell "Linear does not operate physical servers or other infrastructure. For employer-provided computers: All Linear employees are required to complete physical security training, and all employees and contractors are required to enable a screen lock when the work computer is left unattended."'
+      - row "Measures for ensuring events logging Linear has detailed event logging with automated alerts in case no events are tracked.":
+        - cell "Measures for ensuring events logging"
+        - cell "Linear has detailed event logging with automated alerts in case no events are tracked."
+      - row "Measures for ensuring system configuration, including default configuration Security governance and management is outlined in Linear security policies, including the Information Security Roles and Responsibilities Policy, which all employees must review and agree to prior to joining Linear. Policy can be provided upon request. Roles are required within the organization to provide clearly defined responsibilities and an understanding of how the protection of information is to be accomplished. Their purpose is to clarify, coordinate activity, and actions necessary to disseminate security policy, standards, and implementation.":
+        - cell "Measures for ensuring system configuration, including default configuration"
+        - cell "Security governance and management is outlined in Linear security policies, including the Information Security Roles and Responsibilities Policy, which all employees must review and agree to prior to joining Linear. Policy can be provided upon request. Roles are required within the organization to provide clearly defined responsibilities and an understanding of how the protection of information is to be accomplished. Their purpose is to clarify, coordinate activity, and actions necessary to disseminate security policy, standards, and implementation."
+      - row "Measures for certification/assurance of processes and products Linear has completed its SOC2 Type II certification. Please see https://trustcenter.linear.app/ for a copy of the report.":
+        - cell "Measures for certification/assurance of processes and products"
+        - cell "Linear has completed its SOC2 Type II certification. Please see https://trustcenter.linear.app/ for a copy of the report."
+      - row "Measures for ensuring data minimisation Data is collected to serve commercial or business purposes, such as providing, customizing and improving Services, marketing and selling the Services, corresponding with customers about Services, and meeting legal requirements. Linear will not collect additional categories of Personal Data or use the Personal Data we collected for materially different, unrelated or incompatible purposes without providing customer notice. More information about the data Linear collects and opting-out can be found in earlier sections of this DPA.":
+        - cell "Measures for ensuring data minimisation"
+        - cell "Data is collected to serve commercial or business purposes, such as providing, customizing and improving Services, marketing and selling the Services, corresponding with customers about Services, and meeting legal requirements. Linear will not collect additional categories of Personal Data or use the Personal Data we collected for materially different, unrelated or incompatible purposes without providing customer notice. More information about the data Linear collects and opting-out can be found in earlier sections of this DPA."
+      - row "Measures for ensuring data quality All data collection is instrumented by the Linear’s software engineering team and all data collection changes are peer reviewed. Data is tested during development and verified after deployment.":
+        - cell "Measures for ensuring data quality"
+        - cell "All data collection is instrumented by the Linear’s software engineering team and all data collection changes are peer reviewed. Data is tested during development and verified after deployment."
+      - row "Measures for ensuring limited data retention Linear retains data as long as the Linear has a need for its use, or to meet regulatory or contractual requirements. Once data is no longer needed, it is securely disposed of or archived. Linear, in consultation with legal counsel, may determine retention periods for data. Retention periods shall be documented in the Linear Data Management Policy, which can be provided upon request.":
+        - cell "Measures for ensuring limited data retention"
+        - cell "Linear retains data as long as the Linear has a need for its use, or to meet regulatory or contractual requirements. Once data is no longer needed, it is securely disposed of or archived. Linear, in consultation with legal counsel, may determine retention periods for data. Retention periods shall be documented in the Linear Data Management Policy, which can be provided upon request."
+      - row "Measures for ensuring accountability Linear employees are required to review and acknowledge Linear security practices and policies, complete security training, and go through a security walkthrough with a senior member of the engineering organization. Linear conducts background checks on all new employees and requires all employees to sign a non-disclosure agreement before gaining access to Linear information.":
+        - cell "Measures for ensuring accountability"
+        - cell "Linear employees are required to review and acknowledge Linear security practices and policies, complete security training, and go through a security walkthrough with a senior member of the engineering organization. Linear conducts background checks on all new employees and requires all employees to sign a non-disclosure agreement before gaining access to Linear information."
+      - row "Measures for allowing data portability and ensuring erasure Customer can ask for a copy of its Personal Data in a machine-readable format. Customer can also request that Linear transmit the data to another controller where technically feasible. The Service allows ability to export relevant application data in a standard CSV format. Additional export capabilities for all the customer data is available through an API. In the case that a customer wishes to exercise portability or erasure rights, the Linear has measures of retrieving securely stored data and has a process in place to ensure access is restricted only to those who have a business justification for accessing data during the copy, transfer, or erasure.":
+        - cell "Measures for allowing data portability and ensuring erasure"
+        - cell "Customer can ask for a copy of its Personal Data in a machine-readable format. Customer can also request that Linear transmit the data to another controller where technically feasible. The Service allows ability to export relevant application data in a standard CSV format. Additional export capabilities for all the customer data is available through an API. In the case that a customer wishes to exercise portability or erasure rights, the Linear has measures of retrieving securely stored data and has a process in place to ensure access is restricted only to those who have a business justification for accessing data during the copy, transfer, or erasure."
+      - row "Technical and organizational measures of sub-processors Linear collects and reviews the most security assessments from sub-processors on an annual basis.":
+        - cell "Technical and organizational measures of sub-processors"
+        - cell "Linear collects and reviews the most security assessments from sub-processors on an annual basis."
+  - separator
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

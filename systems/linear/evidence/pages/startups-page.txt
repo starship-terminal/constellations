@@ -1,0 +1,359 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "Linear for startups" [level=1]:
+    - generic: Linear for startups
+  - paragraph:
+    - text: Plan, build, and scale your product with a shared system
+    - text: designed for fast-moving teams and AI agents.
+  - link "Get started":
+    - /url: /signup
+  - link "Become a partner":
+    - /url: "#apply"
+  - link:
+    - /url: /customers
+    - list:
+  - heading "One system for product work" [level=2]:
+    - text: One system for
+    - text: product work
+  - paragraph: Your team and your agents take work from first idea to shipped code together, with the context behind every decision carried the whole way.
+  - main:
+    - figure "Capture context across your stack Customer requests, support tickets, and product feedback stream from integrations into Linear so you can build with context at hand.":
+      - heading "Capture context across your stack" [level=3]
+      - paragraph: Customer requests, support tickets, and product feedback stream from integrations into Linear so you can build with context at hand.
+    - figure "Plan from idea to launch Write specs with Linear Agent based on your context and codebase. Pull in information from other tools by adding their MCP servers.":
+      - heading "Plan from idea to launch" [level=3]
+      - paragraph: Write specs with Linear Agent based on your context and codebase. Pull in information from other tools by adding their MCP servers.
+    - figure "Agents drive work forwards Delegate your issues to agents and coding tools. Linear keeps context, decisions, and follow-ups connected for the team.":
+      - heading "Agents drive work forwards" [level=3]
+      - paragraph: Delegate your issues to agents and coding tools. Linear keeps context, decisions, and follow-ups connected for the team.
+    - figure "Review and ship in context Review PRs and agent output alongside the issue, project, and customer signal behind every change.":
+      - heading "Review and ship in context" [level=3]
+      - paragraph: Review PRs and agent output alongside the issue, project, and customer signal behind every change.
+  - heading "Built to scale with you" [level=2]:
+    - text: Built to scale
+    - text: with you
+  - paragraph:
+    - text: From foundation models to supersonic jets, the
+    - text: world’s most ambitious products are planned,
+    - text: built, and shipped with Linear.
+  - main:
+    - paragraph: 80%
+    - paragraph: of the fastest growing software companies run on Linear
+    - paragraph: 66%
+    - paragraph:
+      - text: of the top AI startups
+      - text: use Linear
+    - link "Linear was the only piece of software in this domain where engineers actually enjoyed using it and keeping it updated. Gabriel Peal · Staff Software Engineer":
+      - /url: /customers/openai
+      - paragraph: Linear was the only piece of software in this domain where engineers actually enjoyed using it and keeping it updated.
+      - text: Gabriel Peal
+      - generic: · Staff Software Engineer
+    - link "The way we decide whether something actually gets fixed is if it's an issue in Linear. Andrew Milich · Head of Engineering":
+      - /url: /customers/cursor
+      - paragraph: The way we decide whether something actually gets fixed is if it's an issue in Linear.
+      - text: Andrew Milich
+      - generic: · Head of Engineering
+    - link "Linear helps us be action biased. We've been using it since day one. Nik Koblov · Head of Engineering":
+      - /url: /customers/ramp
+      - paragraph: Linear helps us be action biased. We've been using it since day one.
+      - text: Nik Koblov
+      - generic: · Head of Engineering
+    - paragraph:
+      - text: Linear powers over
+      - strong: 40,000
+      - text: product teams. From ambitious startups to major enterprises.
+    - link "Customer stories →":
+      - /url: /customers
+      - generic: Customer stories
+      - generic: →
+  - heading "Become a startup program partner" [level=2]:
+    - text: Become a startup
+    - text: program partner
+  - paragraph: Linear partners with venture capital firms, startup accelerators, and communities to provide dedicated offers to the startups they support.
+  - generic: Dedicated partner link after approval
+  - generic: No codes to manage or distribute
+  - generic: Eligible startups redeem directly with Linear
+  - generic: Full name
+  - textbox "Full name":
+    - /placeholder: e.g. Jon Doe
+  - generic: Business email
+  - textbox "Business email":
+    - /placeholder: e.g. jon@email.com
+  - generic: Your role
+  - textbox "Your role":
+    - /placeholder: e.g. designer
+  - generic: Organization name
+  - textbox "Organization name":
+    - /placeholder: Your organization
+  - generic: Organization website
+  - textbox "Organization website":
+    - /placeholder: https://address.com
+  - generic: Organization type
+  - combobox "Organization type":
+    - generic: Select
+  - textbox
+  - generic: Primary countries or regions
+  - combobox "Primary countries or regions":
+    - generic: Select
+  - textbox
+  - generic: What does your organization do?
+  - textbox "What does your organization do?":
+    - /placeholder: Tell us more about your organization...
+  - button "Continue"
+  - heading "Partners" [level=1]
+  - link "All":
+    - /url: /startups
+  - link "Investors":
+    - /url: /startups?partners=investors
+  - link "Accelerators":
+    - /url: /startups?partners=accelerators
+  - link "Startup communities":
+    - /url: /startups?partners=communities
+  - img "Accel"
+  - img "Sequoia"
+  - img "Y Combinator"
+  - img "Andreessen Horowitz"
+  - paragraph: a16z
+  - paragraph: Accel
+  - paragraph: Sequoia
+  - paragraph: Index Ventures
+  - paragraph: Kleiner Perkins
+  - paragraph: NEA
+  - paragraph: General Catalyst
+  - paragraph: Greylock
+  - paragraph: Bessemer Venture Partners
+  - paragraph: Thrive Capital
+  - paragraph: First Round Capital
+  - paragraph: Redpoint Ventures
+  - paragraph: CRV
+  - paragraph: Initialized
+  - paragraph: Felicis
+  - paragraph: Lux Capital
+  - paragraph: Bain Capital Ventures
+  - paragraph: 8VC
+  - paragraph: FirstMark
+  - paragraph: 500 Global
+  - paragraph: Techstars
+  - paragraph: Antler
+  - paragraph: STATION F
+  - paragraph: Founders Factory
+  - paragraph: On Deck
+  - paragraph: South Park Commons
+  - paragraph: Neo
+  - paragraph: AI2 Incubator
+  - paragraph: Stripe Atlas
+  - paragraph: Mercury
+  - paragraph: Brex
+  - paragraph: Clerky
+  - paragraph: Ramp
+  - paragraph: Point Nine
+  - paragraph: Seedcamp
+  - paragraph: LocalGlobe
+  - paragraph: Creandum
+  - paragraph: Cherry Ventures
+  - paragraph: Speedinvest
+  - paragraph: Project A
+  - paragraph: HV Capital
+  - paragraph: Octopus Ventures
+  - paragraph: firstminute capital
+  - paragraph: Kima Ventures
+  - paragraph: La Famiglia
+  - paragraph: Lifeline Ventures
+  - paragraph: Molten Ventures
+  - paragraph: Visionaries Club
+  - paragraph: Madrona Ventures
+  - paragraph: Forum Ventures
+  - paragraph: Peak XV
+  - paragraph: Z47
+  - paragraph: Nexus Venture Partners
+  - paragraph: Kae Capital
+  - paragraph: 3one4 Capital
+  - paragraph: Titan Capital
+  - paragraph: Blackbird Ventures
+  - paragraph: Airtree
+  - paragraph: Square Peg
+  - paragraph: Startmate
+  - paragraph: Icehouse Ventures
+  - paragraph: Latitud Ventures
+  - paragraph: VentureFriends
+  - paragraph: Pear VC
+  - paragraph: Startup Wise Guys
+  - paragraph: Le Wagon
+  - paragraph: 10x Founders
+  - paragraph: 1752vc
+  - paragraph: 20VC
+  - paragraph: 360 Capital
+  - paragraph: 40Jemz Ventures
+  - paragraph: "434"
+  - paragraph: 50 Partners
+  - paragraph: 6AM Accelerator
+  - paragraph: 886 Studios
+  - paragraph: Aalto Entrepreneurship Society
+  - paragraph: Abstract
+  - paragraph: Afore Capital
+  - paragraph: Agentic Builders Inc
+  - paragraph: Agoranov
+  - button "See all 467 partners+":
+    - generic: See all 467 partners
+    - text: +
+  - paragraph:
+    - text: Can’t find your partner? Ask them to join the
+    - link "Linear startup program":
+      - /url: /startups#apply
+    - text: .
+  - heading "Questions and answers" [level=2]:
+    - text: Questions
+    - text: and answers
+  - button "What’s included in the Linear startup program?"
+  - generic: What’s included in the Linear startup program?
+  - link "Copy link to What’s included in the Linear startup program?":
+    - /url: "#collapsible-whats-included-in-the-linear-startup-program"
+  - button "Who is eligible?"
+  - generic: Who is eligible?
+  - link "Copy link to Who is eligible?":
+    - /url: "#collapsible-who-is-eligible"
+  - button "I’m not affiliated with a Linear partner, can I still apply?"
+  - generic: I’m not affiliated with a Linear partner, can I still apply?
+  - link "Copy link to I’m not affiliated with a Linear partner, can I still apply?":
+    - /url: "#collapsible-im-not-affiliated-with-a-linear-partner-can-i-still-apply"
+  - button "Our company is larger than 50 employees, can I still apply?"
+  - generic: Our company is larger than 50 employees, can I still apply?
+  - link "Copy link to Our company is larger than 50 employees, can I still apply?":
+    - /url: "#collapsible-our-company-is-larger-than-50-employees-can-i-still-apply"
+  - button "What if I don’t see my partner?"
+  - generic: What if I don’t see my partner?
+  - link "Copy link to What if I don’t see my partner?":
+    - /url: "#collapsible-what-if-i-dont-see-my-partner"
+  - button "Can I ask my investor or accelerator to apply?"
+  - generic: Can I ask my investor or accelerator to apply?
+  - link "Copy link to Can I ask my investor or accelerator to apply?":
+    - /url: "#collapsible-can-i-ask-my-investor-or-accelerator-to-apply"
+  - button "How do I redeem through a partner?"
+  - generic: How do I redeem through a partner?
+  - link "Copy link to How do I redeem through a partner?":
+    - /url: "#collapsible-how-do-i-redeem-through-a-partner"
+  - button "What happens when the free period ends?"
+  - generic: What happens when the free period ends?
+  - link "Copy link to What happens when the free period ends?":
+    - /url: "#collapsible-what-happens-when-the-free-period-ends"
+  - button "I have more questions"
+  - generic: I have more questions
+  - link "Copy link to I have more questions":
+    - /url: "#collapsible-i-have-more-questions"
+  - button "How can I apply?"
+  - generic: How can I apply?
+  - link "Copy link to How can I apply?":
+    - /url: "#collapsible-how-can-i-apply"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Skip to content",
+    "url": "linear.app/acme/settings/teams/COR#skip-nav"
+  },
+  {
+    "name": "Preferences",
+    "url": "linear.app/acme/settings/account/preferences"
+  },
+  {
+    "name": "Profile",
+    "url": "linear.app/acme/settings/account/profile"
+  },
+  {
+    "name": "Notifications",
+    "url": "linear.app/acme/settings/account/notifications"
+  },
+  {
+    "name": "Code & reviews",
+    "url": "linear.app/acme/settings/account/code-and-reviews"
+  },
+  {
+    "name": "Security & access",
+    "url": "linear.app/acme/settings/account/security"
+  },
+  {
+    "name": "Connected accounts",
+    "url": "linear.app/acme/settings/account/connections"
+  },
+  {
+    "name": "Agent personalization",
+    "url": "linear.app/acme/settings/account/agents"
+  },
+  {
+    "name": "Labels",
+    "url": "linear.app/acme/settings/issue-labels"
+  },
+  {
+    "name": "Templates",
+    "url": "linear.app/acme/settings/issue-templates"
+  },
+  {
+    "name": "SLAs",
+    "url": "linear.app/acme/settings/sla"
+  },
+  {
+    "name": "Labels",
+    "url": "linear.app/acme/settings/project-labels"
+  },
+  {
+    "name": "Templates",
+    "url": "linear.app/acme/settings/project-templates"
+  },
+  {
+    "name": "Statuses",
+    "url": "linear.app/acme/settings/project-statuses"
+  },
+  {
+    "name": "Updates",
+    "url": "linear.app/acme/settings/project-updates"
+  },
+  {
+    "name": "AI & Agents",
+    "url": "linear.app/acme/settings/ai"
+  },
+  {
+    "name": "Loops",
+    "url": "linear.app/acme/settings/loops"
+  },
+  {
+    "name": "Initiatives",
+    "url": "linear.app/acme/settings/initiatives"
+  },
+  {
+    "name": "Documents",
+    "url": "linear.app/acme/settings/documents"
+  },
+  {
+    "name": "Customer requests",
+    "url": "linear.app/acme/settings/customer-requests"
+  },
+  {
+    "name": "Releases",
+    "url": "linear.app/acme/settings/releases"
+  },
+  {
+    "name": "Pulse",
+    "url": "linear.app/acme/settings/pulse"
+  },
+  {
+    "name": "Asks",
+    "url": "linear.app/acme/settings/asks"
+  },
+  {
+    "name": "Emojis",
+    "url": "linear.app/acme/settings/emojis"
+  },
+  {
+    "name": "Integrations",
+    "url": "linear.app/acme/settings/integrations"
+  },
+  {
+    "name": "Workspace",
+    "url": "linear.app/acme/settings/workspace"
+  },
+  {
+    "name": "Teams",
+    "url": "linear.app/acme/settings/teams"
+  },
+  {
+    "name": "Members",
+    "url": "linear.app/acme/settings/members"
+  },
+  {
+    "name": "Security",
+    "url": "linear.app/acme/settings/security"
+  },
+  {
+    "name": "API",
+    "url": "linear.app/acme/settings/api"
+  },
+  {
+    "name": "Applications",
+    "url": "linear.app/acme/settings/applications"
+  },
+  {
+    "name": "Billing",
+    "url": "linear.app/acme/settings/billing"
+  },
+  {
+    "name": "Usage & limits",
+    "url": "linear.app/acme/settings/usage"
+  },
+  {
+    "name": "Import & export",
+    "url": "linear.app/acme/settings/import-export"
+  },
+  {
+    "name": "Core",
+    "url": "linear.app/acme/settings/teams/COR"
+  },
+  {
+    "name": "Teams",
+    "url": "linear.app/acme/settings/teams"
+  },
+  {
+    "name": "General settings",
+    "url": "linear.app/acme/settings/teams/COR/general"
+  },
+  {
+    "name": "Members settings",
+    "url": "linear.app/acme/settings/teams/COR/members"
+  },
+  {
+    "name": "Slack notifications settings",
+    "url": "linear.app/acme/settings/teams/COR/notifications"
+  },
+  {
+    "name": "Issue labels settings",
+    "url": "linear.app/acme/settings/teams/COR/issue-labels"
+  },
+  {
+    "name": "Templates settings",
+    "url": "linear.app/acme/settings/teams/COR/templates"
+  },
+  {
+    "name": "Recurring issues settings",
+    "url": "linear.app/acme/settings/teams/COR/recurring-issues"
+  },
+  {
+    "name": "Issue statuses settings",
+    "url": "linear.app/acme/settings/teams/COR/statuses"
+  },
+  {
+    "name": "Workflows & automations settings",
+    "url": "linear.app/acme/settings/teams/COR/workflow"
+  },
+  {
+    "name": "Triage settings",
+    "url": "linear.app/acme/settings/teams/COR/triage"
+  },
+  {
+    "name": "Cycles settings",
+    "url": "linear.app/acme/settings/teams/COR/cycles"
+  },
+  {
+    "name": "Team agents settings",
+    "url": "linear.app/acme/settings/teams/COR/agents"
+  },
+  {
+    "name": "Agent skills settings",
+    "url": "linear.app/acme/settings/teams/COR/agent-skills"
+  },
+  {
+    "name": "Project updates settings",
+    "url": "linear.app/acme/settings/teams/COR/ai/updates"
+  },
+  {
+    "name": "Resolved thread summaries settings",
+    "url": "linear.app/acme/settings/teams/COR/ai/summaries"
+  },
+  {
+    "name": "Available on Business",
+    "url": "linear.app/acme/settings/billing/plans"
+  }
+]

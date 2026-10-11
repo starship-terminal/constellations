@@ -1,0 +1,296 @@
+[
+  {
+    "name": "02-brand",
+    "title": "Brand Guidelines – Linear",
+    "elements": 217,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "pricing",
+    "title": "Pricing – Linear",
+    "elements": 934,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "intake",
+    "title": "Linear Intake – Self-driving product operations",
+    "elements": 533,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "plan",
+    "title": "Linear – Plan and navigate from idea to launch",
+    "elements": 645,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "ai",
+    "title": "Linear – Agents that follow work from conversation to code",
+    "elements": 658,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "build",
+    "title": "Linear – Move work forward across teams and agents",
+    "elements": 605,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "asks",
+    "title": "Linear Asks – Manage workplace requests",
+    "elements": 456,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "agents",
+    "title": "Linear for Agents",
+    "elements": 1545,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "coding-sessions",
+    "title": "Coding Sessions – Linear",
+    "elements": 677,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "customer-requests",
+    "title": "Customer Requests – Linear",
+    "elements": 459,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "insights",
+    "title": "Insights – Linear",
+    "elements": 377,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "mobile",
+    "title": "Linear Mobile – Available for iOS and Android",
+    "elements": 369,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "integrations",
+    "title": "Integrations – Linear",
+    "elements": 1095,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "changelog",
+    "title": "Changelog – Linear",
+    "elements": 1945,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "about",
+    "title": "About – Linear",
+    "elements": 648,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "customers",
+    "title": "Linear Customers",
+    "elements": 600,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "careers",
+    "title": "We're hiring – Linear",
+    "elements": 528,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "now",
+    "title": "Now – Updates from the Linear team",
+    "elements": 564,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "method",
+    "title": "Linear Method – Practices for building",
+    "elements": 204,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Tiempos Headline\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "quality",
+    "title": "",
+    "elements": 159,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "switch",
+    "title": "Switch to Linear – Linear",
+    "elements": 337,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "download",
+    "title": "Download Linear",
+    "elements": 170,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "docs",
+    "title": "Linear Docs",
+    "elements": 171,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "developers",
+    "title": "Linear Developers",
+    "elements": 245,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "enterprise",
+    "title": "An AI product system for modern enterprises",
+    "elements": 529,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "startups",
+    "title": "Linear for startups – Linear",
+    "elements": 573,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "security",
+    "title": "Security – Linear",
+    "elements": 282,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "contact",
+    "title": "Contact us – Linear",
+    "elements": 204,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif"
+    ]
+  },
+  {
+    "name": "privacy",
+    "title": "Privacy Policy",
+    "elements": 577,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "terms",
+    "title": "Terms of Service",
+    "elements": 439,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "dpa",
+    "title": "Data Processing Agreement – Linear",
+    "elements": 741,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "legal-aup",
+    "title": "Acceptable Use Policy",
+    "elements": 238,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    ]
+  },
+  {
+    "name": "login",
+    "title": "Linear",
+    "elements": 7,
+    "fonts": [
+      "Times",
+      "\"Inter Variable\", Arial, Helvetica, sans-serif"
+    ]
+  },
+  {
+    "name": "signup",
+    "title": "Linear",
+    "elements": 7,
+    "fonts": [
+      "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", \"Linear Thai\", sans-serif",
+      "\"Inter Variable\", Arial, Helvetica, sans-serif"
+    ]
+  }
+]

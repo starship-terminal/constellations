@@ -1,0 +1,293 @@
+{
+ "_note": "Pixel rectangles per screenshot family for systems/duolingo. Coordinates only; no private text. Learner and owner names are painted by the OCR net, which reads patterns from files outside the repo; the rectangles below cover the leaderboard name columns and the browser status bar that shows a profile link on hover, where OCR alone misses rows.",
+ "ocr": {
+  "net": true,
+  "emails": true,
+  "email_allow": [
+   "@example\\.(com|org)$",
+   "@duolingo\\.com$"
+  ],
+  "boost": [
+   "screenshots/*.png",
+   "components/crops/*.png"
+  ],
+  "delete_if_covered": 0.3,
+  "wrap_ignore": [
+   "screenshots/settings-schools-light-default.png",
+   "components/crops/list-rows-search-*.png"
+  ]
+ },
+ "families": [
+  {
+   "name": "leaderboard names, dark desktop, league with rows",
+   "files": [
+    "screenshots/leaderboard-dark-row-hover.png",
+    "screenshots/leaderboard-dark-top.png"
+   ],
+   "rects": [
+    [
+     845,
+     540,
+     1340,
+     -1
+    ]
+   ]
+  },
+  {
+   "name": "leaderboard names, dark desktop, promotion zone label kept",
+   "files": [
+    "screenshots/leaderboard-dark-populated.png"
+   ],
+   "rects": [
+    [
+     845,
+     540,
+     1340,
+     1195
+    ],
+    [
+     845,
+     1255,
+     1340,
+     -1
+    ]
+   ]
+  },
+  {
+   "name": "leaderboard, dark desktop, empty league: only the own row has a name",
+   "files": [
+    "screenshots/leaderboard-dark-default.png"
+   ],
+   "rects": [
+    [
+     845,
+     1440,
+     1340,
+     1495
+    ]
+   ]
+  },
+  {
+   "name": "leaderboard names, light desktop",
+   "files": [
+    "screenshots/leaderboard-light-default.png"
+   ],
+   "rects": [
+    [
+     915,
+     530,
+     1330,
+     -1
+    ]
+   ]
+  },
+  {
+   "name": "leaderboard names, dark mobile, promotion zone label kept",
+   "files": [
+    "screenshots/leaderboard-dark-mobile.png"
+   ],
+   "rects": [
+    [
+     285,
+     540,
+     640,
+     810
+    ],
+    [
+     285,
+     875,
+     640,
+     1400
+    ]
+   ]
+  },
+  {
+   "name": "leaderboard names, light mobile",
+   "files": [
+    "screenshots/leaderboard-light-mobile.png"
+   ],
+   "rects": [
+    [
+     285,
+     540,
+     640,
+     1400
+    ]
+   ]
+  },
+  {
+   "name": "browser status bar showing a profile link on hover",
+   "files": [
+    "screenshots/leaderboard-light-default.png",
+    "screenshots/leaderboard-dark-row-hover.png",
+    "screenshots/profile-dark-scrolled.png",
+    "screenshots/user-search-light-results.png",
+    "screenshots/user-search-light-invite-modal.png",
+    "screenshots/user-search-dark-invite-modal.png",
+    "screenshots/user-search-dark-results.png"
+   ],
+   "rects": [
+    [
+     0,
+     1545,
+     1000,
+     -1
+    ]
+   ]
+  },
+  {
+   "name": "settings email field, dark",
+   "files": [
+    "screenshots/settings-profile-dark-*.png"
+   ],
+   "rects": [
+    [
+     575,
+     990,
+     1500,
+     1065
+    ]
+   ]
+  },
+  {
+   "name": "settings email field, light",
+   "files": [
+    "screenshots/settings-profile-light-*.png"
+   ],
+   "rects": [
+    [
+     650,
+     990,
+     1790,
+     1070
+    ]
+   ]
+  },
+  {
+   "name": "user search rows after the first (other people's names and handles), dark",
+   "files": [
+    "screenshots/user-search-dark-results.png"
+   ],
+   "rects": [
+    [
+     780,
+     900,
+     1300,
+     -1
+    ]
+   ]
+  },
+  {
+   "name": "user search rows after the first, light",
+   "files": [
+    "screenshots/user-search-light-results.png"
+   ],
+   "rects": [
+    [
+     850,
+     900,
+     1320,
+     -1
+    ]
+   ]
+  },
+  {
+   "name": "user search rows visible below the invite modal, dark",
+   "files": [
+    "screenshots/user-search-dark-invite-modal.png"
+   ],
+   "rects": [
+    [
+     780,
+     1345,
+     1215,
+     -1
+    ]
+   ]
+  },
+  {
+   "name": "friend streak invite: first row name",
+   "files": [
+    "screenshots/lesson-dark-friend-streak-invite.png"
+   ],
+   "rects": [
+    [
+     1138,
+     775,
+     1340,
+     840
+    ]
+   ]
+  },
+  {
+   "name": "crops cut from the same screens: email field",
+   "files": [
+    "components/crops/text-input-*.png"
+   ],
+   "rects": [
+    [
+     20,
+     470,
+     -20,
+     555
+    ]
+   ]
+  },
+  {
+   "name": "crops cut from the same screens: second search result",
+   "files": [
+    "components/crops/list-rows-search-light.png"
+   ],
+   "rects": [
+    [
+     225,
+     270,
+     640,
+     420
+    ]
+   ]
+  },
+  {
+   "name": "crops cut from the same screens: first friend-streak row",
+   "files": [
+    "components/crops/friend-streak-invite-dark.png"
+   ],
+   "rects": [
+    [
+     128,
+     715,
+     260,
+     790
+    ]
+   ]
+  },
+  {
+   "name": "crop of the focused name field, dark: the typed value is not read by OCR",
+   "files": [
+    "components/crops/text-input-dark.png"
+   ],
+   "rects": [
+    [
+     45,
+     75,
+     800,
+     150
+    ]
+   ]
+  },
+  {
+   "name": "focused name field, dark: the typed value is not read by OCR",
+   "files": [
+    "screenshots/settings-profile-dark-input-focus.png"
+   ],
+   "rects": [
+    [
+     585,
+     610,
+     1000,
+     660
+    ]
+   ]
+  }
+ ]
+}

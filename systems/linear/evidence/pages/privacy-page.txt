@@ -1,0 +1,462 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - heading "Privacy Policy" [level=1]
+  - paragraph: "Effective date: March 17, 2025"
+  - paragraph:
+    - text: At Linear Orbit (
+    - strong: “Linear”
+    - text: ), we take your privacy seriously. Please read this Privacy Policy to learn how we treat your personal data.
+    - strong: By using or accessing our Services in any manner, you acknowledge that you accept the practices and policies outlined below, and you hereby consent that we will collect, use and share your information as described in this Privacy Policy.
+  - paragraph:
+    - text: Remember that your use of Linear’s Services is at all times subject to our
+    - link "Terms of Service":
+      - /url: https://linear.app/terms
+    - text: . Any terms we use in this Policy without defining them have the definitions given to them in the
+    - link "Terms of Service":
+      - /url: https://linear.app/terms
+    - text: .
+  - paragraph: If you have a disability, you may access this Privacy Policy in an alternative format by contacting hello@linear.app.
+  - list:
+    - link "What this Privacy Policy Covers":
+      - /url: "#What-this-Privacy-Policy-Covers"
+    - link "Personal Data":
+      - /url: "#Personal-Data"
+    - link "How We Share Your Personal Data":
+      - /url: "#How-We-Share-Your-Personal-Data"
+    - link "Tracking Tools and Opt-Out":
+      - /url: "#Tracking-Tools-and-Opt-Out"
+    - link "Data Security and Retention":
+      - /url: "#Data-Security-and-Retention"
+    - link "Personal Data of Children":
+      - /url: "#Personal-Data-of-Children"
+    - link "State Law Privacy Rights":
+      - /url: "#State-Law-Privacy-Rights"
+    - link "European Union Data Subject Rights":
+      - /url: "#European-Union-Data-Subject-Rights"
+    - link "Changes to this Privacy Policy":
+      - /url: "#Changes-to-this-Privacy-Policy"
+    - link "Contact Information":
+      - /url: "#Contact-Information"
+  - heading "What this Privacy Policy Covers" [level=2]
+  - paragraph: This Privacy Policy covers how we treat Personal Data that we gather when you access or use our Services. “Personal Data” means any information that identifies or relates to a particular individual and also includes information referred to as “personally identifiable information” or “personal information” under applicable data privacy laws, rules or regulations. This Privacy Policy does not cover the practices of companies we don’t own or control or people we don’t manage.
+  - separator
+  - heading "Personal Data" [level=2]
+  - heading "Categories of Personal Data We Collect" [level=3]
+  - paragraph: "This list details the categories of Personal Data that we collect and have collected over the past 12 months:"
+  - heading "Profile or Contact Data Link to this section" [level=4]:
+    - strong: Profile or Contact Data
+    - link "Link to this section":
+      - /url: "#profile-or-contact-data"
+  - list:
+    - emphasis: Examples of Personal Data We Collect
+    - list:
+      - listitem: First and last name
+      - listitem: Email
+      - listitem: Date of birth
+      - listitem: Physical address
+      - listitem: Unique identifiers such as passwords
+    - emphasis: Categories of Third Parties With Whom We Share this Personal Data
+    - list:
+      - listitem: Service Providers
+      - listitem: Parties You Authorize, Access or Authenticate
+  - heading "Payment Data Link to this section" [level=4]:
+    - strong: Payment Data
+    - link "Link to this section":
+      - /url: "#payment-data"
+  - list:
+    - emphasis: Examples of Personal Data We Collect
+    - list:
+      - listitem: Payment card type
+      - listitem: Last 4 digits of payment card
+      - listitem: Billing address, phone number, and email
+    - emphasis: Categories of Third Parties With Whom We Share this Personal Data
+    - list:
+      - listitem: Service Providers (specifically our payment processing partner)
+  - heading "Device/IP Data Link to this section" [level=4]:
+    - strong: Device/IP Data
+    - link "Link to this section":
+      - /url: "#deviceip-data"
+  - list:
+    - emphasis: Examples of Personal Data We Collect
+    - list:
+      - listitem: IP address
+      - listitem: Device ID
+      - listitem: Domain server
+      - listitem: Type of device/operating system/browser used to access the Services
+    - emphasis: Categories of Third Parties With Whom We Share this Personal Data
+    - list:
+      - listitem: Service Providers
+      - listitem: Parties You Authorize, Access or Authenticate
+  - heading "Web Analytics Link to this section" [level=4]:
+    - strong: Web Analytics
+    - link "Link to this section":
+      - /url: "#web-analytics"
+  - list:
+    - emphasis: Examples of Personal Data We Collect
+    - list:
+      - listitem: Web page interactions
+      - listitem: Referring webpage/source through which you accessed the Services
+      - listitem: Non-identifiable request IDs
+      - listitem: Statistics associated with the interaction between device or browser and the Services
+    - emphasis: Categories of Third Parties With Whom We Share this Personal Data
+    - list:
+      - listitem: Service Providers
+      - listitem: Parties You Authorize, Access or Authenticate
+  - heading "Social Network Data Link to this section" [level=4]:
+    - strong: Social Network Data
+    - link "Link to this section":
+      - /url: "#social-network-data"
+  - list:
+    - emphasis: Examples of Personal Data We Collect
+    - list:
+      - listitem: Email
+      - listitem: Phone number
+      - listitem: User name
+      - listitem: IP address
+      - listitem: Device ID
+    - emphasis: Categories of Third Parties With Whom We Share this Personal Data
+    - list:
+      - listitem: Service Providers
+      - listitem: Parties You Authorize, Access or Authenticate
+  - heading "Other Identifying Information that You Voluntarily Choose to Provide Link to this section" [level=4]:
+    - strong: Other Identifying Information that You Voluntarily Choose to Provide
+    - link "Link to this section":
+      - /url: "#other-identifying-information-that-you-voluntarily-choose-to-provide"
+  - list:
+    - emphasis: Examples of Personal Data We Collect
+    - list:
+      - listitem: Identifying information in emails or letters you send us
+    - emphasis: Categories of Third Parties With Whom We Share this Personal Data
+    - list:
+      - listitem: Service Providers
+      - listitem: Business Partners
+      - listitem: Parties You Authorize, Access or Authenticate
+  - heading "Categories of Sources of Personal Data" [level=3]
+  - paragraph: "We collect Personal Data about you from the following categories of sources:"
+  - list:
+    - strong: You
+    - list:
+      - text: When you provide such information directly to us.
+      - list:
+        - listitem: When you create an account or use our interactive tools and Services.
+        - listitem: When you voluntarily provide information in free-form text boxes through the Services or through responses to surveys or questionnaires.
+        - listitem: When you send us an email or otherwise contact us.
+      - text: When you use the Services and such information is collected automatically.
+      - list:
+        - listitem: Through Cookies (as defined and described further below).
+        - listitem: If you download our mobile application or use a location-enabled browser, we may receive information about your location and mobile device, as applicable.
+        - listitem: If you download and install certain applications and software we make available, we may receive and collect information transmitted from your computing device for the purpose of providing you the relevant Services, such as information regarding when you are logged on and available to receive updates or alert notices.
+    - strong: Third Parties
+    - list:
+      - text: Vendors
+      - list:
+        - listitem: We may use analytics providers to analyze how you interact and engage with the Services, or third parties may help us provide you with customer support.
+  - paragraph:
+    - emphasis: Our Commercial or Business Purposes for Collecting Personal Data
+  - list:
+    - strong: Providing, Customizing and Improving the Services
+    - list:
+      - listitem: Creating and managing your account or other user profiles.
+      - listitem: Processing orders or other transactions; billing.
+      - listitem: Providing you with the products, services or information you request.
+      - listitem: Meeting or fulfilling the reason you provided the information to us.
+      - listitem: Providing support and assistance for the Services.
+      - listitem: Improving the Services, including testing, research, internal analytics and product development.
+      - listitem: Personalizing the Services, website content and communications based on your preferences.
+      - listitem: Doing fraud protection, security and debugging.
+      - listitem: Carrying out other business purposes stated when collecting your Personal Data or as otherwise set forth in applicable data privacy laws.
+    - strong: Marketing the Services
+    - list:
+      - listitem: Marketing and selling the Services.
+    - strong: Corresponding with You
+    - list:
+      - listitem: Responding to correspondence that we receive from you, contacting you when necessary or requested, and sending you information about Linear or the Services.
+      - listitem: Sending emails and other communications according to your preferences or that display content that we think will interest you.
+    - strong: Meeting Legal Requirements and Enforcing Legal Terms
+    - list:
+      - listitem: Fulfilling our legal obligations under applicable law, regulation, court order or other legal process, such as preventing, detecting and investigating security incidents and potentially illegal or prohibited activities.
+      - listitem: Protecting the rights, property or safety of you, Linear or another party.
+      - listitem: Enforcing any agreements with you.
+      - listitem: Responding to claims that any posting or other content violates third-party rights.
+      - listitem: Resolving disputes.
+  - paragraph: We will not collect additional categories of Personal Data or use the Personal Data we collected for materially different, unrelated or incompatible purposes without providing you notice.
+  - separator
+  - heading "How We Share Your Personal Data" [level=2]
+  - paragraph: We disclose your Personal Data to the categories of service providers and other parties listed in this section. Depending on state laws that may be applicable to you, some of these disclosures may constitute a “sale” of your Personal Data. For more information, please refer to the state-specific sections below.
+  - list:
+    - strong: Service Providers.
+    - text: "These parties help us provide the Services or perform business functions on our behalf. They include:"
+    - list:
+      - listitem: Hosting, technology and communication providers.
+      - listitem: Security and fraud prevention consultants.
+      - listitem: Analytics providers.
+      - listitem: Support and customer service vendors.
+      - listitem: Product fulfillment and delivery providers.
+      - text: Payment processors.
+      - list:
+        - listitem: Our payment processing partner collects your voluntarily-provided payment card information necessary to process your payment.
+        - listitem: Please see Stripe’s terms of service and privacy policy for information on its use and storage of your Personal Data.
+    - strong: "Business Partners. These parties partner with us in offering various services. They include:"
+    - list:
+      - listitem: Businesses that you have a relationship with.
+      - listitem: Companies that we partner with to offer joint promotional offers or opportunities.
+    - strong: Parties You Authorize, Access or Authenticate
+    - list:
+      - listitem: Third parties you access through the services.
+      - listitem: Social media services.
+      - listitem: Other users.
+  - heading "Legal Obligations Link to this section" [level=4]:
+    - emphasis: Legal Obligations
+    - link "Link to this section":
+      - /url: "#legal-obligations"
+  - paragraph: We may share any Personal Data that we collect with third parties in conjunction with any of the activities set forth under “Meeting Legal Requirements and Enforcing Legal Terms” in the “Our Commercial or Business Purposes for Collecting Personal Data” section above.
+  - heading "Business Transfers Link to this section" [level=4]:
+    - emphasis: Business Transfers
+    - link "Link to this section":
+      - /url: "#business-transfers"
+  - paragraph: All of your Personal Data that we collect may be transferred to a third party if we undergo a merger, acquisition, bankruptcy or other transaction in which that third party assumes control of our business (in whole or in part). Should one of these events occur, we will make reasonable efforts to notify you before your information becomes subject to different privacy and security policies and practices.
+  - heading "Data that is Not Personal Data Link to this section" [level=4]:
+    - emphasis: Data that is Not Personal Data
+    - link "Link to this section":
+      - /url: "#data-that-is-not-personal-data"
+  - paragraph: We may create aggregated, de-identified or anonymized data from the Personal Data we collect, including by removing information that makes the data personally identifiable to a particular user. We may use such aggregated, de-identified or anonymized data and share it with third parties for our lawful business purposes, including to analyze, build and improve the Services and promote our business, provided that we will not share such data in a manner that could identify you.
+  - separator
+  - heading "Tracking Tools and Opt-Out" [level=2]
+  - paragraph: The Services use cookies and similar technologies such as pixel tags, web beacons, clear GIFs and JavaScript (collectively, “Cookies”) to enable our servers to recognize your web browser, tell us how and when you visit and use our Services, analyze trends, learn about our user base and operate and improve our Services. Cookies are small pieces of data– usually text files – placed on your computer, tablet, phone or similar device when you use that device to access our Services. We may also supplement the information we collect from you with information received from third parties, including third parties that have placed their own Cookies on your device(s). Please note that because of our use of Cookies, the Services do not support “Do Not Track” requests sent from a browser at this time.
+  - paragraph: "We use the following types of Cookies:"
+  - list:
+    - listitem: Essential Cookies. Essential Cookies are required for providing you with features or services that you have requested. For example, certain Cookies enable you to log into secure areas of our Services. Disabling these Cookies may make certain features and services unavailable.
+    - listitem: Functional Cookies. Functional Cookies are used to record your choices and settings regarding our Services, maintain your preferences over time and recognize you when you return to our Services. These Cookies help us to personalize our content for you, greet you by name and remember your preferences (for example, your choice of language or region).
+    - listitem: Performance/Analytical Cookies. Performance/Analytical Cookies allow us to understand how visitors use our Services. They do this by collecting information about the number of visitors to the Services, what pages visitors view on our Services and how long visitors are viewing pages on the Services. Performance/Analytical Cookies also help us measure the performance of our advertising campaigns in order to help us improve our campaigns and the Services’ content for those who engage with our advertising.
+  - paragraph: You can decide whether or not to accept Cookies through your internet browser’s settings. Most browsers have an option for turning off the Cookie feature, which will prevent your browser from accepting new Cookies, as well as (depending on the sophistication of your browser software) allow you to decide on acceptance of each new Cookie in a variety of ways. You can also delete all Cookies that are already on your device. If you do this, however, you may have to manually adjust some preferences every time you visit our website and some of the Services and functionalities may not work.
+  - paragraph:
+    - text: To explore what Cookie settings are available to you, look in the “preferences” or “options” section of your browser’s menu. To find out more information about Cookies, including information about how to manage and delete Cookies, please visit
+    - link "allaboutcookies.org":
+      - /url: https://allaboutcookies.org
+    - text: .
+  - separator
+  - heading "Data Security and Retention" [level=2]
+  - paragraph: We seek to protect your Personal Data from unauthorized access, use and disclosure using appropriate physical, technical, organizational and administrative security measures based on the type of Personal Data and how we are processing that data. You should also help protect your data by appropriately selecting and protecting your password and/or other sign-on mechanism; limiting access to your computer or device and browser; and signing off after you have finished accessing your account. Although we work to protect the security of your account and other data that we hold in our records, please be aware that no method of transmitting data over the internet or storing data is completely secure.
+  - paragraph: We retain Personal Data about you for as long as you have an open account with us or as otherwise necessary to provide you with our Services. In some cases we retain Personal Data for longer, if doing so is necessary to comply with our legal obligations, resolve disputes or collect fees owed, or is otherwise permitted or required by applicable law, rule or regulation. We may further retain information in an anonymous or aggregated form where that information would not identify you personally.
+  - separator
+  - heading "Personal Data of Children" [level=2]
+  - paragraph:
+    - text: As noted in the
+    - link "Terms of Use":
+      - /url: https://linear.app/terms
+    - text: ", we do not knowingly collect or solicit Personal Information from anyone under the age of 13. If you are under 13, please do not attempt to register for the Services or send any Personal Information about yourself to us. If we learn that we have collected Personal Information from a child under age 13, we will delete that information as quickly as possible. If you believe that a child under 13 may have provided us Personal Information, please contact us at hello@linear.app."
+  - separator
+  - heading "State Law Privacy Rights" [level=2]
+  - heading "California Resident Rights Link to this section" [level=4]:
+    - emphasis: California Resident Rights
+    - link "Link to this section":
+      - /url: "#california-resident-rights"
+  - paragraph: Under California Civil Code Sections 1798.83-1798.84, California residents are entitled to contact us to prevent disclosure of Personal Data to third parties for such third parties’ direct marketing purposes; in order to submit such a request, please contact us at hello@linear.app.
+  - heading "Nevada Resident Rights Link to this section" [level=4]:
+    - emphasis: Nevada Resident Rights
+    - link "Link to this section":
+      - /url: "#nevada-resident-rights"
+  - paragraph: If you are a resident of Nevada, you have the right to opt-out of the sale of certain Personal Data to third parties who intend to license or sell that Personal Data. You can exercise this right by contacting us at hello@linear.app with the subject line “Nevada Do Not Sell Request” and providing us with your name and the email address associated with your account.
+  - separator
+  - heading "European Union Data Subject Rights" [level=2]
+  - heading "EU Residents Link to this section" [level=4]:
+    - emphasis: EU Residents
+    - link "Link to this section":
+      - /url: "#eu-residents"
+  - paragraph: If you are a resident of the European Union (“EU”), United Kingdom, Lichtenstein, Norway or Iceland, you may have additional rights under the EU General Data Protection Regulation (the “GDPR”) with respect to your Personal Data, as outlined below.
+  - paragraph: For this section, we use the terms “Personal Data” and “processing” as they are defined in the GDPR, but “Personal Data” generally means information that can be used to individually identify a person, and “processing” generally covers actions that can be performed in connection with data such as collection, use, storage and disclosure. Linear will be the controller of your Personal Data processed in connection with the Services.
+  - paragraph: If there are any conflicts between this section and any other provision of this Privacy Policy, the policy or portion that is more protective of Personal Data shall control to the extent of such conflict. If you have any questions about this section or whether any of the following applies to you, please contact us at hello@linear.app. Note that we may also process Personal Data of our customers’ end users or employees in connection with our provision of certain services to customers, in which case we are the processor of Personal Data. If we are the processor of your Personal Data (i.e., not the controller), please contact the controller party in the first instance to address your rights with respect to such data.
+  - heading "Personal Data We Collect Link to this section" [level=4]:
+    - emphasis: Personal Data We Collect
+    - link "Link to this section":
+      - /url: "#personal-data-we-collect"
+  - paragraph: The “Categories of Personal Data We Collect” section above details the Personal Data that we collect from you.
+  - heading "Personal Data Use and Processing Grounds Link to this section" [level=4]:
+    - emphasis: Personal Data Use and Processing Grounds
+    - link "Link to this section":
+      - /url: "#personal-data-use-and-processing-grounds"
+  - paragraph: The “Our Commercial or Business Purposes for Collecting Personal Data” section above explains how we use your Personal Data.
+  - paragraph: We will only process your Personal Data if we have a lawful basis for doing so. Lawful bases for processing include consent, contractual necessity and our “legitimate interests” or the legitimate interest of others, as further described below.
+  - list:
+    - text: "Contractual Necessity: We process the following categories of Personal Data as a matter of “contractual necessity”, meaning that we need to process the data to perform under our Terms of Use with you, which enables us to provide you with the Services. When we process data due to contractual necessity, failure to provide such Personal Data will result in your inability to use some or all portions of the Services that require such data. Examples include:"
+    - list:
+      - listitem: Profile or Contact Data
+      - listitem: Web Analytics or other similar network activity information
+      - listitem: Payment Data.
+      - listitem: Social Network Data.
+      - listitem: Device Data.
+      - listitem: Other Identifying Information that You Voluntarily Choose to Provide.
+    - text: "Legitimate Interest: We process the following categories of Personal Data when we believe it furthers the legitimate interest of us or third parties. We may also de-identify or anonymize Personal Data to further our legitimate interests. Examples of these legitimate interests include:"
+    - list:
+      - listitem: Providing, customizing and improving the Services.
+      - listitem: Marketing the Services.
+      - listitem: Corresponding with you.
+      - listitem: Meeting legal requirements and enforcing legal terms.
+      - listitem: Completing corporate transactions.
+    - listitem: "Consent: In some cases, we process Personal Data based on the consent you expressly grant to us at the time we collect such data. When we process Personal Data based on your consent, it will be expressly indicated to you at the point and time of collection."
+    - listitem: "Other Processing Grounds: From time to time we may also need to process Personal Data to comply with a legal obligation, if it is necessary to protect the vital interests of you or other data subjects, or if it is necessary for a task carried out in the public interest."
+  - heading "Sharing Personal Data Link to this section" [level=4]:
+    - emphasis: Sharing Personal Data
+    - link "Link to this section":
+      - /url: "#sharing-personal-data"
+  - paragraph: The “How We Share Your Personal Data” section above details how we share your Personal Data with third parties.
+  - heading "EU Data Subject Rights Link to this section" [level=4]:
+    - emphasis: EU Data Subject Rights
+    - link "Link to this section":
+      - /url: "#eu-data-subject-rights"
+  - paragraph: You have certain rights with respect to your Personal Data, including those set forth below. For more information about these rights, or to submit a request, please email us at hello@linear.app.
+  - paragraph: Please note that in some circumstances, we may not be able to fully comply with your request, such as if it is frivolous or extremely impractical, if it jeopardizes the rights of others, or if it is not required by law, but in those circumstances, we will still respond to notify you of such a decision. In some cases, we may also need you to provide us with additional information, which may include Personal Data, if necessary to verify your identity and the nature of your request.
+  - list:
+    - strong: Access
+    - text: ": You can request more information about the Personal Data we hold about you and request a copy of such Personal Data. You can also access certain of your Personal Data by logging on to your account."
+    - strong: Rectification
+    - text: ": If you believe that any Personal Data we are holding about you is incorrect or incomplete, you can request that we correct or supplement such data. You can also correct some of this information directly by logging on to your account."
+    - strong: Erasure
+    - text: ": You can request that we erase some or all of your Personal Data from our systems."
+    - strong: Withdrawal of Consent
+    - text: ": If we are processing your Personal Data based on your consent (as indicated at the time of collection of such data), you have the right to withdraw your consent at any time. Please note, however, that if you exercise this right, you may have to then provide express consent on a case-by-case basis for the use or disclosure of certain of your Personal Data, if such use or disclosure is necessary to enable you to utilize some or all of our Services."
+    - strong: Portability
+    - text: ": You can ask for a copy of your Personal Data in a machine-readable format. You can also request that we transmit the data to another controller where technically feasible."
+    - strong: Objection
+    - text: ": You can contact us to let us know that you object to the further use or disclosure of your Personal Data for certain purposes, such as for direct marketing purposes."
+    - strong: Restriction of Processing
+    - text: ": You can ask us to restrict further processing of your Personal Data."
+    - strong: Right to File Complaint
+    - text: ": You have the right to lodge a complaint about Linear’s practices with respect to your Personal Data with the supervisory authority of your country or EU Member State. A list of Supervisory Authorities is available here:"
+    - link "https://edpb.europa.eu/about-edpb/board/members_en":
+      - /url: https://edpb.europa.eu/about-edpb/board/members_en
+    - text: .
+  - heading "Transfers of Personal Data Link to this section" [level=4]:
+    - emphasis: Transfers of Personal Data
+    - link "Link to this section":
+      - /url: "#transfers-of-personal-data"
+  - paragraph:
+    - text: "The Services are hosted and operated in the United States (“U.S.”) through Linear and its service providers, and if you do not reside in the U.S., laws in the U.S. may differ from the laws where you reside. By using the Services, you acknowledge that any Personal Data about you, regardless of whether provided by you or obtained from a third party, is being provided to Linear in the U.S. and will be hosted on U.S. servers, and you authorize Linear to transfer, store and process your information to and in the U.S., and possibly other countries. You hereby consent to the transfer of your data to the U.S. pursuant to: (i) a data processing agreement incorporating standard data protection clauses promulgated by the European Commission, a copy of which can be obtained at"
+    - link "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32021D0914":
+      - /url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32021D0914
+    - text: ", (ii) binding corporate rules for data protection that align with the GDPR’s requirements, or (iii) adherence to an industry- or technology-specific approved code of conduct blessed by the European Commission."
+  - separator
+  - heading "Changes to this Privacy Policy" [level=2]
+  - paragraph: We’re constantly trying to improve our Services, so we may need to change this Privacy Policy from time to time, but we will alert you to any such changes by placing a notice on the Linear website, by sending you an email and/or by some other means. Please note that if you’ve opted not to receive legal notice emails from us (or you haven’t provided us with your email address), those legal notices will still govern your use of the Services, and you are still responsible for reading and understanding them. If you use the Services after any changes to the Privacy Policy have been posted, that means you agree to all of the changes. Use of information we collect is subject to the Privacy Policy in effect at the time such information is collected.
+  - separator
+  - heading "Contact Information" [level=2]
+  - paragraph: "If you have any questions or comments about this Privacy Policy, the ways in which we collect and use your Personal Data or your choices and rights regarding such collection and use, please do not hesitate to contact us at:"
+  - paragraph:
+    - strong: "Email:"
+    - text: hello@linear.app
+    - strong: Address
+    - text: ": 2261 Market St STE 10632 San Francisco, CA 94114"
+  - separator
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

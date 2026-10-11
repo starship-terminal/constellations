@@ -1,0 +1,257 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - generic: Coding Sessions
+  - heading "Assign your issues to Linear" [level=1]:
+    - generic: Assign your
+    - generic: issues to Linear
+  - paragraph:
+    - generic: Linear Agent can now write code using Claude Code and Codex. Triage, plan, build, and review all in one place.
+  - button "Watch video":
+    - text: Watch video
+  - generic: ENG-2498
+  - generic: Dimmed Status Cards
+  - generic: "+34"
+  - generic: "-18"
+  - generic: Activity
+  - generic: Guide
+  - generic: Diff
+  - generic: Submit review
+  - text: Preview
+  - generic: useRideHistory.ts
+  - generic: client/src/views/RideHistory
+  - generic: "+21"
+  - generic: "-14"
+  - generic: "76"
+  - generic: "77"
+  - generic: // Build sections from ride history state
+  - generic: "-"
+  - generic: "const dimmedIds: Set<string> = useComputed(() => {"
+  - generic: "-"
+  - generic: const ids = new Set<string>();
+  - generic: "-"
+  - generic: "for (const id of cancelledRideIds) {"
+  - generic: "-"
+  - generic: ids.add(id);
+  - generic: "-"
+  - generic: "}"
+  - generic: "78"
+  - generic: "const waitingStatusById: Map<string, string> = useComputed(() => {"
+  - generic: "79"
+  - generic: const map = new Map<string, string>();
+  - generic: "80"
+  - generic: "for (const ride of ridesAwaitingPickup) {"
+  - generic: "-"
+  - generic: ids.add(ride.id);
+  - generic: "81"
+  - generic: map.set(ride.id, "Driver en route");
+  - generic: "82"
+  - generic: "}"
+  - generic: "83"
+  - generic: "for (const ride of ridesInProgress) {"
+  - generic: "84"
+  - generic: map.set(ride.id, "Trip in progress");
+  - generic: "85"
+  - generic: "}"
+  - generic: "86"
+  - generic: RideHistoryPage.tsx
+  - generic: client/src/views/RideHistory
+  - generic: "+2"
+  - generic: "-1"
+  - generic: "36"
+  - generic: "background-color: ${props.theme.color.bgBase};"
+  - generic: "37"
+  - generic: "box-shadow: none;"
+  - generic: "38"
+  - generic: "39"
+  - generic: "${props.highlighted && css`"
+  - generic: "40"
+  - generic: "&:hover {"
+  - generic: "41"
+  - generic: "background-color: ${props.theme.color.bgBaseHover};"
+  - generic: "42"
+  - generic: "opacity: 1;"
+  - generic: "43"
+  - generic: "}"
+  - generic: "44"
+  - generic: "`}"
+  - generic: "45"
+  - generic: "`;"
+  - generic: "46"
+  - generic: "47"
+  - generic: "const RowContent = styled.div`"
+  - generic: "48"
+  - generic: "display: flex;"
+  - generic: "49"
+  - generic: Linear
+  - generic: Opus 5
+  - generic: Conor
+  - generic: started this session
+  - text: Worked for 32s
+  - paragraph: "Pushed and opened a draft PR. Changes:"
+  - generic: useRideHistory.ts
+  - generic: ": build a"
+  - generic: waitingStatusById
+  - generic: map and
+  - generic: use it as the
+  - generic: getLastAction
+  - generic: byline
+  - generic: RideHistoryPage.tsx
+  - generic: ": dimmed rows reset to full opacity"
+  - paragraph: Tell Linear what to do next...
+  - paragraph: Start from anywhere. Kick off a coding session from an issue, a chat, a comment, or a Slack thread. Linear gathers the relevant context and gets to work.
+  - img "01. Chat"
+  - img "02. Issues"
+  - img "03. Diffs"
+  - img "04. Mobile"
+  - img "05. Slack"
+  - img "06. Teams"
+  - paragraph: Linear Agent works where you work
+  - button "01. Chat"
+  - button "02. Issues"
+  - button "03. Diffs"
+  - button "04. Mobile"
+  - button "05. Slack"
+  - button "06. Teams"
+  - paragraph: Delegate or automate. Assign issues directly, or let Linear pick them up the moment they land in Triage. Bugs can be investigated and fixed before anyone touches a keyboard.
+  - generic: ENG-2498DIMMED STATUS
+  - generic: ENG-2486TRIP COUNT
+  - generic: Jori
+  - generic: DIMMED STATUS CARDS
+  - generic: FIX TRIP COUNT
+  - generic: Automate
+  - generic: Delegate
+  - paragraph: Close your laptop. Every coding session runs in a secure cloud sandbox. No local setup or babysitting required. When the work is ready, review the diff, ask for changes, or merge the result.
+  - paragraph: Delegate an issue from your backlog and get back a diff for review
+  - paragraph: Built for teams. Linear Agent is part of your workspace and collaborative by default. Sessions are multiplayer and run on shared context.
+  - img "Steer the session while it runs, or iterate from the diff"
+  - img "Point Linear Agent to a project and let it work from the spec"
+  - img "Turn a decision in a thread into a diff"
+  - paragraph:
+    - generic: Steer the session while it runs, or iterate from the diff
+    - text: Steer the session while it runs, or iterate from the diff
+  - paragraph: Full context
+  - paragraph: Linear natively understands your issues, projects, documents, discussions, and customer requests.
+  - paragraph: Frontier models
+  - paragraph: Sessions are powered by Claude Code and Codex, configured at the workspace level.
+  - paragraph: End-to-end
+  - paragraph: Investigate, implement, and review in one continuous workflow. No handoffs between tools.
+  - paragraph: Multiplayer
+  - paragraph: Follow progress, ask questions, and steer the work together.
+  - heading "Start a coding session today" [level=2]:
+    - text: Start a coding
+    - text: session today
+  - button "Get started"
+  - button "Contact sales"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

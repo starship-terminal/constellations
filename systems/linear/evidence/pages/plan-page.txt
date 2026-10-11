@@ -1,0 +1,355 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - generic: Planning and monitoring
+  - heading "Plan and navigate from idea to launch" [level=1]:
+    - text: Plan and navigate
+    - text: from idea to launch
+  - heading "Manage projects end-to-end" [level=2]:
+    - text: Manage projects
+    - text: end-to-end
+  - paragraph: Coordinate larger pieces of work across multiple people and teams. Move seamlessly between ideation and execution.
+  - button "Projects +":
+    - generic: Projects
+    - generic: +
+  - main:
+    - figure "Close the gap between planning and building Consolidate project specs, documents, issues, customer feedback, and updates in one centralized location.":
+      - generic: Overview
+      - generic: Activity
+      - generic: Customers
+      - generic: Issues
+      - heading "Close the gap between planning and building" [level=3]
+      - paragraph: Consolidate project specs, documents, issues, customer feedback, and updates in one centralized location.
+    - figure "Milestones and dependencies Highlight key dates and map out critical paths between projects to streamline resource allocation and execution.":
+      - heading "Milestones and dependencies" [level=3]
+      - paragraph: Highlight key dates and map out critical paths between projects to streamline resource allocation and execution.
+    - figure "Predict project outcomes Understand how your project is progressing and when it’s likely to complete, with scope and velocity visualized over time.":
+      - heading "Predict project outcomes" [level=3]
+      - paragraph: Understand how your project is progressing and when it’s likely to complete, with scope and velocity visualized over time.
+    - figure "Keep everyone up-to-date... Communicate health and progress with built-in project updates.":
+      - generic: Off Track
+      - generic: Launch postponed until legal issues are resolved
+      - generic: Sep 28
+      - generic: At Risk
+      - generic: Project will likely delay with scope changes
+      - generic: Sep 26
+      - generic: On Track
+      - generic: We are ready to launch next Thursday
+      - generic: Sep 24
+      - generic: Off Track
+      - generic: Launch postponed until legal issues are resolved
+      - generic: Sep 28
+      - generic: At Risk
+      - generic: Project will likely delay with scope changes
+      - generic: Sep 26
+      - generic: On Track
+      - generic: We are ready to launch next Thursday
+      - generic: Sep 24
+      - heading "Keep everyone up-to-date..." [level=3]
+      - paragraph:
+        - text: Communicate health and progress
+        - text: with built-in project updates.
+    - figure "...even if they are not in Linear Automatically share project updates on Slack with bi-directionally synced comment threads.":
+      - generic: Thread
+      - generic: "#p-driver-app"
+      - img "Linear"
+      - generic: Linear
+      - generic: APP
+      - generic: 1 day ago
+      - generic: Tokyo launch
+      - generic: On track | julian posted an update
+      - generic: We are ready to launch next Thursday
+      - img "cristina"
+      - generic: cristina
+      - generic: 5 hours ago
+      - generic: Is the marketing release page ready too?
+      - img "julian (via Linear)"
+      - generic: julian (via Linear)
+      - generic: 45 minutes ago
+      - generic: Yes, we are putting the final touches to it this week
+      - heading "...even if they are not in Linear" [level=3]
+      - paragraph: Automatically share project updates on Slack with bi-directionally synced comment threads.
+  - heading "Shape your product ideas" [level=2]:
+    - text: Shape your
+    - text: product ideas
+  - paragraph: Collaborate on ideas and spec out product requirements in realtime, multiplayer project documents.
+  - button "Documents +":
+    - generic: Documents
+    - generic: +
+  - main:
+    - figure:
+      - button "Collaborative editing Work together on PRDs, specs, and docs in a realtime, multiplayer editor":
+        - generic: Collaborative editing
+        - generic: Work together on PRDs, specs, and docs in a realtime, multiplayer editor
+      - button "Inline comments Discuss ideas directly in context with comments tied to specific sections":
+        - generic: Inline comments
+        - generic: Discuss ideas directly in context with comments tied to specific sections
+      - button "Text-to-issue commands Seamlessly turn bullet point lists into actionable issues":
+        - generic: Text-to-issue commands
+        - generic: Seamlessly turn bullet point lists into actionable issues
+      - button "Subscribe for updates Get notified when documents change, with clear diffs and new comments":
+        - generic: Subscribe for updates
+        - generic: Get notified when documents change, with clear diffs and new comments
+      - generic: UI Refresh
+      - generic: Meeting notes
+      - generic: Meeting notes
+      - paragraph: Feb 3, 2026 · @paul @meg @julian
+      - text: We reviewed the latest UI
+      - mark:
+        - text: refresh designs
+        - generic: meg
+      - text: for the rider app, focusing on core screens and perceived performance. The direction is
+      - mark:
+        - text: solid
+        - generic: paul
+      - text: ", but several areas"
+      - mark: need iteration
+      - text: before implementation, with Android-specific constraints currently posing the biggest risk to timeline.
+      - paragraph: Action items
+      - list:
+        - listitem: Finalize loading and empty states for core screens
+        - listitem: Align Android layouts with the design system
+        - listitem: Audit navigation transitions for performance
+      - list:
+        - paragraph: ENG-2108
+        - paragraph: Finalize loading and empty states for core screens
+        - paragraph: ENG-2109
+        - paragraph: Align Android layouts with the design system
+        - paragraph: ENG-2110
+        - paragraph: Audit navigation transitions for performance
+      - paragraph: With the public holiday next Wednesday, we’ll regroup the week after to continue the review.
+  - heading "Coordinate strategic product initiatives" [level=2]:
+    - text: Coordinate strategic
+    - text: product initiatives
+  - paragraph: Align projects into larger, strategic product efforts. Express the most important streams of work in your company and how they are progressing.
+  - button "Initiatives +":
+    - generic: Initiatives
+    - generic: +
+  - main:
+    - figure "Make strategic product work legible with Initiatives Initiatives serve as a canonical entry point, aligning everyone on the most important product efforts in your company.":
+      - heading "Make strategic product work legible with Initiatives" [level=3]
+      - paragraph: Initiatives serve as a canonical entry point, aligning everyone on the most important product efforts in your company.
+    - figure "Align everyone on the strategy Provide a detailed summary for each initiative and link to resources and related documents.":
+      - heading "Align everyone on the strategy" [level=3]
+      - paragraph: Provide a detailed summary for each initiative and link to resources and related documents.
+    - figure "Monitor progress at scale Quickly see if your initiatives are on track and identify any projects blocking progress.":
+      - heading "Monitor progress at scale" [level=3]
+      - paragraph:
+        - text: Quickly see if your initiatives are on track
+        - text: and identify any projects blocking progress.
+  - heading "Map out your product journey" [level=2]:
+    - text: Map out your
+    - text: product journey
+  - paragraph: Align your team around a unified product timeline. Plan visually with dynamic planning features, designed to help product teams ship.
+  - button "Visual planning +":
+    - generic: Visual planning
+    - generic: +
+  - main:
+    - button "Quarterly planning Align teams on what’s shipping":
+      - generic: Quarterly planning
+      - generic: Align teams on what’s shipping
+    - button "Product pipeline Monitor delivery stages across initiatives":
+      - generic: Product pipeline
+      - generic: Monitor delivery stages across initiatives
+    - button "Timeline Create roadmaps to plan visually":
+      - generic: Timeline
+      - generic: Create roadmaps to plan visually
+    - button "Resource allocation Balance staffing across projects":
+      - generic: Resource allocation
+      - generic: Balance staffing across projects
+  - heading "Keep a pulse on product progress" [level=2]:
+    - text: Keep a pulse on
+    - text: product progress
+  - paragraph: Stay up to date on what’s happening across your product organization with a personalized feed of updates and discussions.
+  - button "Pulse +":
+    - generic: Pulse
+    - generic: +
+  - main:
+    - figure "A personalized feed for what’s happening across your company Pulse brings relevant updates from across your Linear workspace into a single unified feed tailored to the workstreams that are most important to you.":
+      - generic: For me
+      - generic: Popular
+      - generic: Recent
+      - heading "A personalized feed for what’s happening across your company" [level=3]
+      - paragraph: Pulse brings relevant updates from across your Linear workspace into a single unified feed tailored to the workstreams that are most important to you.
+    - figure "Narrow in on what’s most relevant Create custom Pulse feeds to focus on a targeted subset of project and initiative updates.":
+      - heading "Narrow in on what’s most relevant" [level=3]
+      - paragraph: Create custom Pulse feeds to focus on a targeted subset of project and initiative updates.
+    - figure "AI summaries, delivered to your inbox Receive a personal AI-generated update summary in your Linear inbox, available as text or a short audio digest.":
+      - heading "AI summaries, delivered to your inbox" [level=3]
+      - paragraph: Receive a personal AI-generated update summary in your Linear inbox, available as text or a short audio digest.
+  - heading "Data to enhance your intuition" [level=2]:
+    - text: Data to enhance
+    - text: your intuition
+  - paragraph: Take the guesswork out of product planning with Linear’s purpose-built analytics, reporting, and dashboard features.
+  - link "Insights →":
+    - /url: /insights
+    - generic: Insights
+    - generic: →
+  - main:
+    - figure "Instant analytics for any stream of work Building truly great products is both art and science. It’s part intuition and part data. To help with the data part, Linear offers a variety of advanced analytics features.":
+      - generic: Cycle time by creation date
+      - heading "Instant analytics for any stream of work" [level=3]
+      - paragraph: Building truly great products is both art and science. It’s part intuition and part data. To help with the data part, Linear offers a variety of advanced analytics features.
+    - figure "Combine insights into dashboards Create custom, fully modular dashboards to monitor and understand key metrics.":
+      - heading "Combine insights into dashboards" [level=3]
+      - paragraph:
+        - text: Create custom, fully modular dashboards
+        - text: to monitor and understand key metrics.
+    - figure "Build your own reporting Export Linear data to Google Sheets, Fivetran, or Airbyte for deeper analysis.":
+      - heading "Build your own reporting" [level=3]
+      - paragraph:
+        - text: Export Linear data to Google Sheets,
+        - text: Fivetran, or Airbyte for deeper analysis.
+  - link "Make your product operations self-driving Intake and integrations →":
+    - /url: /intake
+    - generic: Make your product operations self-driving
+    - generic: Intake and integrations
+    - generic: →
+  - link "Plan and navigate from idea to launch Planning and monitoring →":
+    - /url: /plan
+    - generic: Plan and navigate from idea to launch
+    - generic: Planning and monitoring
+    - generic: →
+  - link "Agents that follow work from conversation to code AI and automations →":
+    - /url: /ai
+    - generic: Agents that follow work from conversation to code
+    - generic: AI and automations
+    - generic: →
+  - link "Move work forward across teams and agents Build, review and ship →":
+    - /url: /build
+    - generic: Move work forward across teams and agents
+    - generic: Build, review and ship
+    - generic: →
+  - link "Linear Projects give us a source-of-truth across all our work and keeps the team in-sync. Jonathan Biddle Director, Mercury":
+    - /url: /customers/mercury
+    - paragraph: Linear Projects give us a source-of-truth across all our work and keeps the team in-sync.
+    - generic: Jonathan Biddle
+    - generic: Director, Mercury
+  - link "For the first time ever we have a singular, unified roadmap. Lance Willett Chief Quality Officer, Automattic":
+    - /url: /customers/automattic
+    - paragraph: For the first time ever we have a singular, unified roadmap.
+    - generic: Lance Willett
+    - generic: Chief Quality Officer, Automattic
+  - paragraph:
+    - text: Linear powers over
+    - strong: 40,000
+    - text: product teams. From ambitious startups to major enterprises.
+  - link "Customer stories →":
+    - /url: /customers
+    - generic: Customer stories
+    - generic: →
+  - heading "Built for the future. Available today." [level=2]
+  - button "Get started"
+  - button "Contact sales"
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

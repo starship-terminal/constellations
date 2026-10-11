@@ -1,0 +1,227 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - paragraph: Introducing Linear Mobile
+  - heading "The portable companion to the Linear system" [level=1]:
+    - generic: The portable companion to the Linear system
+    - generic: The
+    - generic: portable
+    - generic: companion
+    - generic: to
+    - generic: the
+    - generic: Linear
+    - generic: system
+  - paragraph:
+    - text: Complex workflows in compact form.
+    - text: Available for iOS and Android.
+  - button "Scan to download":
+    - text: Scan to
+    - text: download
+  - link "Open App Store":
+    - /url: https://apps.apple.com/app/linear-mobile/id1645587184
+    - generic: Open App Store
+  - link "Open Play Store":
+    - /url: https://play.google.com/store/apps/details?id=app.linear
+    - generic: Open Play Store
+  - figure "See how it works Built for “away from keyboard” activities. Linear Mobile is purpose-designed for on-demand workflows that complement the desktop experience. A powerful sidekick, always available in your pocket.":
+    - button "See how it works":
+      - text: See how it works
+    - paragraph:
+      - text: Built for “away from keyboard” activities.
+      - text: Linear Mobile is purpose-designed for on-demand workflows that complement the desktop experience. A powerful sidekick, always available in your pocket.
+  - figure "Ultraportable. A from-the-ground-up redesigned user interface makes Linear Mobile both light in weight and strong in performance.":
+    - paragraph: Ultraportable. A from-the-ground-up redesigned user interface makes Linear Mobile both light in weight and strong in performance.
+  - figure "Fully native. Linear Mobile is built with native Swift and Kotlin code to guarantee a fast and fluid user experience.":
+    - paragraph: Fully native. Linear Mobile is built with native Swift and Kotlin code to guarantee a fast and fluid user experience.
+  - heading "Stay on top of your most important streams of work" [level=2]
+  - paragraph: The inbox keeps you informed about high-priority tasks and projects that need your attention. Tap to take action, swipe to delete, snooze to deal with it later.
+  - heading "React to what matters most…" [level=3]
+  - paragraph: Discuss and update issue details on the fly to unblock your team and keep work progressing.
+  - generic "Zoom image"
+  - heading "…snooze the rest for later" [level=3]
+  - paragraph: Temporarily remove notifications from your inbox to focus on what matters in the present moment.
+  - generic "Zoom image"
+  - heading "Move product work forward. No matter where you are." [level=2]
+  - paragraph: Write whenever inspiration strikes. With its ergonomic, palm-perfect design, Linear Mobile enables you to write issues, comments, and updates from anywhere.
+  - heading "Create issues in seconds" [level=3]
+  - paragraph: The quick-access issue composer is designed with an obsessive focus on speed. So you can jot down ideas as they come.
+  - generic "Zoom image"
+  - heading "From screenshot to triage in a few simple taps" [level=3]
+  - paragraph: Quickly share screenshots or photos with Linear to initiate new issues or bug reports.
+  - generic "Zoom image"
+  - heading "Read and write project updates" [level=3]
+  - paragraph: Keep everyone informed about the health and progress of your projects.
+  - generic "Zoom image"
+  - heading "PRDs-to-go" [level=3]
+  - paragraph: Review and react to product specs and other documents in a compact, mobile-optimized reading experience.
+  - generic "Zoom image"
+  - heading "Available 24/7. Or just 9-5." [level=2]
+  - paragraph: Receive push notifications about important updates in realtime (but not all the time).
+  - paragraph: Realtime notifications. Stay up-to-date on important work streams and instantly take action wherever and whenever necessary.
+  - paragraph: Notification schedule. Configure your own notification schedule to only stay in touch with your work during certain time periods.
+  - heading "Ready wherever you are" [level=3]:
+    - text: Ready wherever
+    - text: you are
+  - button "Scan to download":
+    - text: Scan to
+    - text: download
+  - link "Open App Store":
+    - /url: https://apps.apple.com/app/linear-mobile/id1645587184
+    - generic: Open App Store
+  - link "Open Play Store":
+    - /url: https://play.google.com/store/apps/details?id=app.linear
+    - generic: Open Play Store
+- paragraph:
+  - text: Linear Orbit Inc.
+  - text: Department of portable
+  - text: device applications
+- term: Producers
+- definition: Jori Lallo
+- definition: Tom Moor
+- term: Product design
+- definition: Gavin Nelson
+- term:
+  - text: Product engineering
+  - superscript:
+    - link "1":
+      - /url: "#footnote-1"
+- definition: Alessandro Oddone
+- definition: Bryan Stern
+- definition: Josh Pyles
+- term: Beta coordination
+- definition: Brian Hendery
+- term: Video director
+- definition: Gavin Nelson
+- term: Sound design
+- definition: Daniel Warner Smith
+- term: Communications
+- definition: Erin Frey
+- term: Packaging
+- definition: Edgar Ambartsoumian
+- definition: Julian Lehr
+- definition: Paco Coursey
+- term: Product photography
+- definition: Andreas Eldh
+- definition: Mufeez Amjad
+- term: Special thanks
+- definition: Karri Saarinen
+- definition: Alex Cornell
+- superscript: "1"
+- link "We’re hiring":
+  - /url: /careers#engineering
+- text: mobile engineers. Remote, US timezone.
+- link "Back to reference 1":
+  - /url: "#footnote-ref-1"
+  - text: ⤴
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

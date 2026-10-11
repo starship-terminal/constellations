@@ -1,0 +1,246 @@
+- region "Notifications alt+T"
+- link "Skip to content →":
+  - /url: "#skip-nav"
+- banner:
+  - navigation:
+    - list "Site navigation":
+      - link "Navigate to home":
+        - /url: /homepage
+        - img "Linear"
+      - list:
+        - button "Product"
+        - button "Resources"
+        - link "Customers":
+          - /url: /customers
+        - link "Pricing":
+          - /url: /pricing
+        - link "Now":
+          - /url: /now
+        - link "Contact":
+          - /url: /contact
+      - list:
+        - link "Log in":
+          - /url: /login
+        - link "Sign up":
+          - /url: /signup
+- main:
+  - generic: Linear Asks
+  - heading "Turn workplace requests into actionable issues" [level=1]:
+    - generic: Turn workplace requests into actionable issues
+    - generic: Turn workplace requests
+    - generic: into actionable issues
+  - paragraph:
+    - generic: Linear Asks is a new take on intake. Submit requests directly from Slack, email, and web forms, and automatically send them to the relevant team in Linear.
+  - button "See how it works":
+    - text: See how it works
+  - text: Intake
+  - heading "Works where your team already is" [level=2]
+  - paragraph:
+    - strong: Linear Asks is a new take on intake.
+    - text: Submit requests directly from Slack, email, and web forms, and automatically send them to the relevant team in Linear.
+  - generic: Slack
+  - generic: Email
+  - generic: Forms
+  - heading "Create new requests from Slack" [level=2]
+  - paragraph: Let anyone in your Slack workspace quickly file a request — even if they don't have a Linear account.
+  - heading "Turn any email thread into an ask" [level=2]
+  - paragraph: Create new requests by cc'ing or forwarding to designated email addresses.
+  - heading "Build custom web forms" [level=2]
+  - paragraph: Create internal request pages with custom forms that turn submissions into structured issues.
+  - heading "Get notified about new comments and updates" [level=2]
+  - paragraph: Receive realtime updates on your Asks, delivered to the same channel your request came from.
+  - generic: Linear Asks
+  - generic: 15:40
+  - generic: "Sid Bhargava created a new Customer Bug Report: ENG-920 “Investigate missing expand control”"
+  - text: IT Helpdesk
+  - generic: it@acme.com
+  - generic: 14:28
+  - generic: "An ask has been created from your email: IT-7710 “Conference room audio not working”"
+  - generic: Linear Asks
+  - generic: 09:21
+  - generic: Lora Baines changed status to Done for DATA-386 “New query for Sales dashboard”
+  - text: Requests
+  - generic: ops@acme.com
+  - generic: 17:59
+  - generic: "Your ask has been marked as Done: OPS-194 “Team offsite budget approval”"
+  - generic: Linear Asks
+  - generic: 15:40
+  - generic: "Sid Bhargava created a new Customer Bug Report: ENG-920 “Investigate missing expand control”"
+  - text: IT Helpdesk
+  - generic: it@acme.com
+  - generic: 14:28
+  - generic: "An ask has been created from your email: IT-7710 “Conference room audio not working”"
+  - generic: Linear Asks
+  - generic: 09:21
+  - generic: Lora Baines changed status to Done for DATA-386 “New query for Sales dashboard”
+  - text: Requests
+  - generic: ops@acme.com
+  - generic: 17:59
+  - generic: "Your ask has been marked as Done: OPS-194 “Team offsite budget approval”"
+  - heading "Private Asks" [level=3]:
+    - text: Private Asks
+  - paragraph: Create private Asks for sensitive requests.
+  - heading "Emoji triggers" [level=3]:
+    - text: Emoji triggers
+  - paragraph: Turn any Slack message into an Ask simply by using an emoji.
+  - heading "Auto-create" [level=3]:
+    - text: Auto-create
+  - paragraph: Every message in a Slack channel becomes an Ask.
+  - heading "Shared Slack channels" [level=3]:
+    - text: Shared Slack channels
+  - paragraph: Allow external users, such as customers, to create requests.
+  - link:
+    - /url: /blog/simplifying-support-at-scale-how-pleo-uses-linear-asks
+    - blockquote:
+      - paragraph: We save close to $30,000 per year since moving to Linear Asks
+  - text: Linear Triage
+  - heading "A better way to manage requests" [level=2]
+  - paragraph:
+    - strong: Manage incoming requests from a shared triage inbox.
+    - text: Review, prioritize, assign, and update each issue without ever switching back to Slack or Email.
+  - generic: AI duplicate detection
+  - generic: Accept...
+  - generic: "1"
+  - generic: Mark as duplicate...
+  - generic: "2"
+  - generic: Decline...
+  - generic: "3"
+  - generic: Snooze
+  - heading "Discuss requests with bi-directionally synced threads" [level=2]
+  - paragraph: Comments sync automatically between Linear and the original request channel.
+  - heading "Control who has access to sensitive requests" [level=2]
+  - paragraph: Limit visibility of sensitive Asks with private teams and scoped access controls.
+  - text: Workflows
+  - heading "Create powerful request workflows" [level=2]
+  - paragraph: Asks is seamlessly integrated with the rest of the Linear system, unlocking new levels of control over your request workflows.
+  - link "Customer Requests Link feedback with customer data to align product work with user needs":
+    - /url: /customer-requests
+    - heading "Customer Requests" [level=3]
+    - paragraph: Link feedback with customer data to align product work with user needs
+    - button:
+  - link "Insights See trends around response time, workload, and more":
+    - /url: /insights
+    - heading "Insights" [level=3]
+    - paragraph: See trends around response time, workload, and more
+    - button:
+  - link "Linear for Agents Delegate incoming requests to AI agents":
+    - /url: /agents
+    - heading "Linear for Agents" [level=3]
+    - paragraph: Delegate incoming requests to AI agents
+    - button:
+  - heading "SLAs" [level=3]
+  - paragraph: Apply automatic deadlines to time-sensitive requests
+  - heading "Triage automations" [level=3]
+  - paragraph: Auto-assign requests based on predefined rules and schedules
+  - heading "How teams use Linear Asks" [level=2]
+  - paragraph: Linear Asks supports all types of workplace requests. From engineering and design to IT, legal, and HR.
+  - heading "Streamline bug reporting" [level=3]
+  - paragraph: Enable people outside of your engineering org to quickly file bug reports without worrying about complex issue details.
+  - heading "Build an IT help desk" [level=3]
+  - paragraph: "Turn any message in your #ask-IT channel into an IT ticket by reacting with an emoji."
+  - heading "Escalate customer conversations" [level=3]
+  - paragraph: Forward emails from customers to create trackable issues when engineering support is needed.
+  - heading "Standardize Ops requests" [level=3]
+  - paragraph: Configure templates with concrete instructions, placeholders, and checkboxes to standardize and streamline intake.
+  - heading "Improve customer success" [level=3]
+  - paragraph: Add Linear Asks to shared Slack channels to enable your most important customers to file bug reports and feature requests.
+  - heading "Manage sensitive HR tickets" [level=3]
+  - paragraph: Create private Asks via DM for sensitive requests that only you and your HR team can access.
+  - paragraph: Trusted by product, GTM, and internal operations teams at leading companies
+  - link "Meet our customers":
+    - /url: /customers
+    - generic: Meet our customers
+  - heading "Streamline your internal request workflows" [level=3]
+  - link "Contact sales":
+    - /url: /contact/sales?message=I'm interested in Linear Asks for my team and would like to learn more about…
+  - link "Get started":
+    - /url: /signup
+- contentinfo:
+  - link "Linear Logo":
+    - /url: /
+    - img "Linear Logo"
+  - heading "Product" [level=3]
+  - list:
+    - link "Intake":
+      - /url: /intake
+    - link "Plan":
+      - /url: /plan
+    - link "AI":
+      - /url: /ai
+    - link "Build":
+      - /url: /build
+    - link "Pricing":
+      - /url: /pricing
+    - link "Security":
+      - /url: /security
+  - heading "Features" [level=3]
+  - list:
+    - link "Asks":
+      - /url: /asks
+    - link "Agents":
+      - /url: /agents
+    - link "Coding Sessions":
+      - /url: /coding-sessions
+    - link "Customer Requests":
+      - /url: /customer-requests
+    - link "Insights":
+      - /url: /insights
+    - link "Mobile":
+      - /url: /mobile
+    - link "Integrations":
+      - /url: /integrations
+    - link "Changelog":
+      - /url: /changelog
+  - heading "Company" [level=3]
+  - list:
+    - link "About":
+      - /url: /about
+    - link "Customers":
+      - /url: /customers
+    - link "Careers":
+      - /url: /careers
+    - link "Now":
+      - /url: /now
+    - link "Method":
+      - /url: /method
+    - link "Quality":
+      - /url: /quality
+    - link "Brand":
+      - /url: /brand
+  - heading "Resources" [level=3]
+  - list:
+    - link "Switch":
+      - /url: /switch
+    - link "Download":
+      - /url: /download
+    - link "Documentation":
+      - /url: /docs
+      - generic: Documentation
+    - link "Developers":
+      - /url: /developers
+    - link "Status":
+      - /url: https://linearstatus.com
+    - link "Enterprise":
+      - /url: /enterprise
+    - link "Startups":
+      - /url: /startups
+  - heading "Connect" [level=3]
+  - list:
+    - link "Contact us":
+      - /url: /contact
+    - link "Community":
+      - /url: https://linear.app/join-slack
+    - link "X (Twitter)":
+      - /url: https://x.com/linear
+    - link "GitHub":
+      - /url: https://github.com/linear
+    - link "YouTube":
+      - /url: https://www.youtube.com/@linear
+  - link "Privacy":
+    - /url: /privacy
+  - link "Terms":
+    - /url: /terms
+  - link "DPA":
+    - /url: /dpa
+  - link "AUP":
+    - /url: /legal/aup

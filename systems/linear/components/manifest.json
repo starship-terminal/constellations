@@ -1,0 +1,242 @@
+[
+  {
+    "name": "button-primary-default",
+    "file": "button-primary-default.svg",
+    "width": 97,
+    "height": 28,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "button-primary-hover",
+    "file": "button-primary-hover.svg",
+    "width": 97,
+    "height": 28,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "button-primary-focus",
+    "file": "button-primary-focus.svg",
+    "width": 105,
+    "height": 36,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "button-primary-disabled",
+    "file": "button-primary-disabled.svg",
+    "width": 97,
+    "height": 28,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "button-secondary",
+    "file": "button-secondary.svg",
+    "width": 76,
+    "height": 28,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "button-ghost",
+    "file": "button-ghost.svg",
+    "width": 67,
+    "height": 28,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "button-danger",
+    "file": "button-danger.svg",
+    "width": 62,
+    "height": 28,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "button-web-primary",
+    "file": "button-web-primary.svg",
+    "width": 89,
+    "height": 32,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "button-icon",
+    "file": "button-icon.svg",
+    "width": 28,
+    "height": 28,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "tabs-pill",
+    "file": "tabs-pill.svg",
+    "width": 219,
+    "height": 28,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "field-default",
+    "file": "field-default.svg",
+    "width": 320,
+    "height": 36,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "field-focus",
+    "file": "field-focus.svg",
+    "width": 320,
+    "height": 36,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "field-error",
+    "file": "field-error.svg",
+    "width": 320,
+    "height": 58,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "checkbox-checked",
+    "file": "checkbox-checked.svg",
+    "width": 18,
+    "height": 18,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "checkbox-empty",
+    "file": "checkbox-empty.svg",
+    "width": 18,
+    "height": 18,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "switch-on",
+    "file": "switch-on.svg",
+    "width": 30,
+    "height": 18,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "switch-off",
+    "file": "switch-off.svg",
+    "width": 30,
+    "height": 18,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "badge-label",
+    "file": "badge-label.svg",
+    "width": 95,
+    "height": 24,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "avatar",
+    "file": "avatar.svg",
+    "width": 24,
+    "height": 24,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "shortcut",
+    "file": "shortcut.svg",
+    "width": 32,
+    "height": 23,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "tooltip",
+    "file": "tooltip.svg",
+    "width": 153,
+    "height": 29,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "toast-success",
+    "file": "toast-success.svg",
+    "width": 320,
+    "height": 48,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "nav-item-selected",
+    "file": "nav-item-selected.svg",
+    "width": 220,
+    "height": 28,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "issue-row",
+    "file": "issue-row.svg",
+    "width": 720,
+    "height": 40,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "board-card",
+    "file": "board-card.svg",
+    "width": 288,
+    "height": 116,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "status-menu",
+    "file": "status-menu.svg",
+    "width": 280,
+    "height": 270,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "issue-composer",
+    "file": "issue-composer.svg",
+    "width": 640,
+    "height": 286,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "property-panel",
+    "file": "property-panel.svg",
+    "width": 340,
+    "height": 260,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "empty-state",
+    "file": "empty-state.svg",
+    "width": 420,
+    "height": 208,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  },
+  {
+    "name": "date-picker",
+    "file": "date-picker.svg",
+    "width": 280,
+    "height": 306,
+    "status": "reconstruction",
+    "source": "See component matrix in README.md"
+  }
+]
