@@ -1,0 +1,13 @@
+{
+ "replace": [
+  ["Account Holder", "gi", "Learner"],
+  ["account\\.holder(@|%40)example\\.com", "gi", "learner@example.com"],
+  ["\\baccountholder\\b", "gi", "learner"]
+ ],
+ "badges": [],
+ "scrub": [
+  ["[data-test='leaderboard-row'] [data-test*='name']", "A friend"]
+ ],
+ "keep": ["XP", "Diamond League", "Promotion zone", "Demotion zone"],
+ "keepPattern": "^\\d+ (XP|days?)$"
+}

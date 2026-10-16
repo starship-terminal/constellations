@@ -130,13 +130,32 @@ Family is duolingo-sans for every rendered node. Sizes are px as rendered at des
 
 The app registers its faces in JS. `fonts/f2331bbf...woff2` is duolingo-sans upright, one variable file registered for both 400 and 700 (canvas metrics match the live 400 face exactly). `fonts/3bbe299f...woff2` is the duolingo-sans italic, also both weights. `fonts/68d22534...woff2` is feather 700 (exact metric match). Body text asks for weight 500 (`--text-body-weight`) and is drawn from the same upright file. The CDN serves the files gzip-wrapped; decompress before installing them locally. `font-feature-settings` never differs from the default on any node.
 
+## 2026-10 additions
+
+Applied by [tools/refresh_tokens_2026_10.py](tools/refresh_tokens_2026_10.py); every token carries `$extensions.evidence`.
+
+| Tokens | Evidence | What they hold |
+| --- | --- | --- |
+| `ramp.{neutral,green,blue,red,orange,yellow}.*` (light and dark) | Derived | The palette's own names per hue, lightest to darkest by light value. In dark the names invert, so the dark set keeps the names, not the order |
+| `surface.overlay` | Measured | The dialog panel: the page fill, 16px radius, no border or shadow |
+| `accent.{primary,secondary,danger}.hover` | Derived | The face colour through `filter: brightness(1.1)` |
+| `accent.{primary,secondary,danger}.pressed` | Measured | The face colour; the lip shadow goes and the face drops 4px (`._2cMtD`) |
+| `status.{success,danger,info,warning}Border`, `status.infoText`, `status.warningText` | Derived | Roles assigned from the components that draw them (tile borders, the selected choice, the orange button's lip) |
+| `core.fontFamily.*` | Measured | Stacks as arrays: `duolingo-sans, sans-serif`, `feather, sans-serif` |
+| `core.size.icon.*` | Measured | 16, 18, 20, 24 and 32px |
+| `core.focusRing.*` | Measured | 0px: no ring anywhere ([components/focus.md](components/focus.md)) |
+| `core.layout.columns.*` | Measured | 2 columns at 1440 and 1000, 1 at 390 |
+| `core.duration.reducedMotion` | Measured | What `html[reduced-motion]` switches off |
+
+Not present, so not tokenised: a strong border (every neutral border is swan), a code font, blurred elevation.
+
 ## Gaps
 
 - **Inferred, not observed:** `status.warning` in light. The dark value comes from the "Previous mistake" label, whose colour is set inline (no class rule); there is no light capture, so light uses the same palette name (fox).
 - **CSS only, never rendered in that theme:** light `feedback.incorrect.*`, `status.danger{Text,Background}` and `feedback.tile.wrong*` (no light wrong-answer capture; from `._3FB5S._2cfV0`, `.o-3Ru`, `._3S8jJ`, `._2noWf`); dark `feedback.tile.correct*` (`._3v-Hx`), `gamification.combo` (`._1xB7m`), `dataViz.avatar.red` (`.XS0Dh`); light `gamification.streakInactive` (`._2HAQo`); both themes for `gamification.league.{demotion,promotedRow,demotedRow,diamond}` and `unitColors.{orange,purple,magenta,teal,red,brown,legendary,foreground}`.
 - **Not tokenised:** league tier colours (Bronze to Diamond badges are SVG images with no CSS colour); charts (no chart was on any captured screen). A dark-theme rule sets `--path-unit-background-color` to polar-always-dark on unit sections, but no rendered node used it.
 - **Colours matching no palette entry:** `#8ce31b` (profile avatar banner, the user's chosen avatar colour, 12 nodes); 58 distinct fills in inline SVG illustrations and icons (3,883 path nodes). Excluded as capture artefacts: the Claude-in-Chrome overlay (`#d97757`, `#faf9f5`, `#111111`) and the UA link blue `#0000ee` inherited by anchor wrappers with no text.
-- **Palette:** light values were checked against the live `<html>` vars (300/300 match); dark values were only checked where a dump used them (no dark root-var capture). The JS palette names `refresh` and `refresh-progress-bar` are `--color-daily_refresh*` live.
+- **Palette:** light values were checked against the live `<html>` vars on 2026-09-25 (300/300 match), and both themes again on 2026-10-17 ([raw/2026-10/rootvars-live.json](raw/2026-10/rootvars-live.json): 300/300 match in light and in dark). The JS palette names `refresh` and `refresh-progress-bar` are `--color-daily_refresh*` live.
 - **Typography:** `--text-pageTitle-*-large` (40/44) and `--text-label-*-large` (24/24 uppercase) are declared but not rendered, so they are not tokens. feather is not rendered in the app (marketing page only).
-- **Layout:** every desktop capture is 1200px or wider, so the compact 88px sidebar (700 to 1159px) is CSS only, and the breakpoint that hides the right rail was not identified. Breakpoint names other than 700px (mobile/desktop split) and 1160px (sidebar labels) describe what their rules mostly change, taken from rule counts.
+- **Layout:** the 2026-09 desktop captures are 1200px or wider; the 2026-10 refresh measured the compact 88px sidebar at 1000px and the one-column layout at 390px (`core.layout.columns`). The breakpoint that hides the right rail lies between 700 and 999px and was not pinned down. Breakpoint names other than 700px (mobile/desktop split) and 1160px (sidebar labels) describe what their rules mostly change, taken from rule counts.
 - **Resolution method:** names shared by one hex were picked from the CSS rule on the node (or an ancestor's custom property). Three tokens (`border.divider`, `status.danger`, `feedback.tile.selectedBorder`) had no class rule; their name is the only palette entry matching both the light and the dark observation.

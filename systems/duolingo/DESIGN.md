@@ -23,6 +23,7 @@ colors:
   surface-hover: "#f7f7f7"
   surface-selected: "#ddf4ff"
   surface-disabled: "#e5e5e5"
+  surface-overlay: "#ffffff"
   border-default: "#e5e5e5"
   border-divider: "#e5e5e5"
   border-selected: "#84d8ff"
@@ -39,14 +40,20 @@ colors:
   text-onColor: "#ffffff"
   accent-primary-face: "#58cc02"
   accent-primary-lip: "#58a700"
+  accent-primary-hover: "#61e002"
+  accent-primary-pressed: "#58cc02"
   accent-secondary-face: "#1cb0f6"
   accent-secondary-lip: "#1899d6"
+  accent-secondary-hover: "#1fc2ff"
+  accent-secondary-pressed: "#1cb0f6"
   accent-neutral-face: "#ffffff"
   accent-neutral-border: "#e5e5e5"
   accent-neutral-text: "#afafaf"
   accent-danger-face: "#ff4b4b"
   accent-danger-lip: "#ea2b2b"
   accent-danger-text: "#ff4b4b"
+  accent-danger-hover: "#ff5252"
+  accent-danger-pressed: "#ff4b4b"
   status-success: "#58cc02"
   status-successText: "#58a700"
   status-successBackground: "#d7ffb8"
@@ -57,6 +64,12 @@ colors:
   status-warningBackground: "#fff5d3"
   status-info: "#1cb0f6"
   status-infoBackground: "#ddf4ff"
+  status-successBorder: "#a5ed6e"
+  status-dangerBorder: "#ffb2b2"
+  status-infoBorder: "#84d8ff"
+  status-infoText: "#1899d6"
+  status-warningText: "#ff9600"
+  status-warningBorder: "#cd7900"
   feedback-correct-background: "#d7ffb8"
   feedback-correct-text: "#58a700"
   feedback-correct-buttonFace: "#58cc02"
@@ -109,6 +122,35 @@ colors:
   unitColors-legendary: "#ffc800"
   unitColors-locked: "#e5e5e5"
   unitColors-foreground: "#ffffff"
+  ramp-neutral-100: "#ffffff"
+  ramp-neutral-200: "#f7f7f7"
+  ramp-neutral-300: "#e5e5e5"
+  ramp-neutral-400: "#afafaf"
+  ramp-neutral-500: "#777777"
+  ramp-neutral-600: "#4b4b4b"
+  ramp-green-100: "#d7ffb8"
+  ramp-green-200: "#a5ed6e"
+  ramp-green-300: "#58cc02"
+  ramp-green-400: "#58a700"
+  ramp-blue-100: "#ddf4ff"
+  ramp-blue-200: "#84d8ff"
+  ramp-blue-300: "#1cb0f6"
+  ramp-blue-400: "#1899d6"
+  ramp-blue-500: "#2b70c9"
+  ramp-blue-600: "#1453a3"
+  ramp-red-100: "#ffdfe0"
+  ramp-red-200: "#ffb2b2"
+  ramp-red-300: "#f5a4a4"
+  ramp-red-400: "#ff7878"
+  ramp-red-500: "#ff4b4b"
+  ramp-red-600: "#ea2b2b"
+  ramp-orange-100: "#ffce8e"
+  ramp-orange-200: "#ff9600"
+  ramp-orange-300: "#cd7900"
+  ramp-yellow-100: "#fff5d3"
+  ramp-yellow-200: "#fbe56d"
+  ramp-yellow-300: "#ffc800"
+  ramp-yellow-400: "#e7a601"
 typography:
   pageTitle-small:
     fontFamily: "duolingo-sans"
@@ -386,9 +428,9 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: Gamified learning: lesson flow, streaks, leaderboards, chunky 3D buttons, a mascot-led brand.
 
-Captured 2026-09-25, signed in, free account. Themes: light, dark.
+Captured 2026-10-17, signed in, free account. Themes: light, dark.
 
-A token set and component reference for Duolingo's web app, for building mockups in Figma or Paper that match the product. It was extracted from www.duolingo.com on 2026-09-25, signed in to a free account on the Japanese course, in both of the app's themes, at desktop width and at a 570px mobile width.
+A token set and component reference for Duolingo's web app, for building mockups in Figma or Paper that match the product. It was extracted from www.duolingo.com on 2026-09-25, signed in to a free account on the Japanese course, in both of the app's themes, at desktop width and at a 570px mobile width. It was refreshed on 2026-10-17 against the library scorecard: the same free account, both themes, at 1440, 1000 and 390px, plus the logged-out onboarding flow, a live keyboard-focus pass, and new tokens for ramps, overlay surfaces, accent hover and pressed, status borders, icon sizes, the focus ring, layout columns and reduced motion.
 
 ## Colors
 
@@ -407,7 +449,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ### Fonts (from README.md)
 
-The app uses `duolingo-sans` for all UI text (one variable upright file serving 400 and 700, plus an italic) and `feather` 700 as a display face, seen on the logged-out marketing page. Both are proprietary and are not committed. The style guide looks for them in a local `fonts/` folder next to it (gitignored) and falls back to Nunito from Google Fonts, showing a notice when it does. [tokens-notes.md](tokens-notes.md#fonts) says which CDN file is which.
+The app uses `duolingo-sans` for all UI text (one variable upright file serving 400 and 700, plus an italic) and `feather` 700 as a display face, seen on the logged-out marketing page. Both are proprietary and are not committed. The stacks the app declares are `duolingo-sans, sans-serif` and `feather, sans-serif` (`core.fontFamily`). The app has no code or monospace role. The style guide looks for them in a local `fonts/` folder next to it (gitignored) and falls back to Nunito from Google Fonts, showing a notice when it does. [tokens-notes.md](tokens-notes.md#fonts) says which CDN file is which.
 
 ## Layout
 
@@ -446,6 +488,14 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't read colours off the screenshots; they are 256-colour PNGs.
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
+
+### What to distrust (from README.md)
+
+- **Derived tokens.** `accent.*.hover` is the face colour put through the button's `filter: brightness(1.1)`, worked out from the palette; the product applies a filter, so the pixel colour can differ slightly where the face is anti-aliased. `ramp.*` re-lists palette names Duolingo never groups into ramps, and the steps are uneven (3 to 6 per hue, not 10). `status.*Border`, `status.infoText` and `status.warningText` are roles assigned from the component that draws that colour; Duolingo has no status component with its own border.
+- **Light warning and light wrong-answer colours** come from CSS and the palette, not from a light capture (no wrong answer was given, to keep the account's hearts).
+- **The 2026-10 screenshots are renders of page copies**, not window captures: scripts are removed, so animated illustrations are frozen where the snapshot caught them, and the fonts are the same CDN files the app loads, declared again by [lib.mjs](tools/capture/signed-in/lib.mjs). The 2026-09 screenshots carry the capture tool's orange edge glow and pointer.
+- **Gem and XP totals** in the 2026-10 renders were replaced with round numbers by the redaction file; other learners' avatars are shown, their names are not.
+- **Onboarding** was taken from a logged-out session in a headless browser in Singapore; the answer lists (for example "How did you hear about Duolingo?") are localised and ordered differently per session.
 
 ### Do and don't (from README.md)
 

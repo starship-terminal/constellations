@@ -625,8 +625,8 @@
 }
 /* ===== core: everything else (generated) ===== */
 :root {
-  --fontFamily-body: "duolingo-sans";
-  --fontFamily-display: "feather";
+  --fontFamily-body: "duolingo-sans", sans-serif;
+  --fontFamily-display: "feather", sans-serif;
   --fontWeight-regular: 400;
   --fontWeight-medium: 500;
   --fontWeight-bold: 700;
@@ -809,6 +809,7 @@
   --duration-700: 700ms;
   --duration-celebrate: 1500ms;
   --duration-long: 2000ms;
+  --duration-reducedMotion: 0ms;
   --easing-standard: cubic-bezier(0.42, 0, 0.58, 1);
   --easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
   --easing-in: cubic-bezier(0.42, 0, 1, 1);
@@ -852,6 +853,11 @@
   --size-tapTokenHeight: 52px;
   --size-choiceRowHeight: 70px;
   --size-pathNodeWidth: 70px;
+  --size-icon-xs: 16px;
+  --size-icon-sm: 18px;
+  --size-icon-md: 20px;
+  --size-icon-lg: 24px;
+  --size-icon-nav: 32px;
   --zIndex-raised: 1;
   --zIndex-lessonHeader: 100;
   --zIndex-lessonFooter: 110;
@@ -862,6 +868,11 @@
   --zIndex-modal: 320;
   --zIndex-modalScrim: 322;
   --zIndex-top: 1000;
+  --focusRing-width: 0px;
+  --focusRing-offset: 0px;
+  --layout-columns-wide: 2;
+  --layout-columns-tablet: 2;
+  --layout-columns-phone: 1;
 }
 /* ===== light theme: semantic roles + theme palette (generated) ===== */
 :root, :root[data-theme="light"], [data-theme="light"] {
@@ -875,6 +886,7 @@
   --surface-hover: var(--palette-light-polar);
   --surface-selected: var(--palette-light-iguana);
   --surface-disabled: var(--palette-light-swan);
+  --surface-overlay: var(--palette-light-snow);
   --border-default: var(--palette-light-swan);
   --border-divider: var(--palette-light-swan);
   --border-selected: var(--palette-light-blue-jay);
@@ -891,14 +903,20 @@
   --text-onColor: var(--palette-light-snow-always-light);
   --accent-primary-face: var(--palette-light-owl);
   --accent-primary-lip: var(--palette-light-tree-frog);
+  --accent-primary-hover: #61e002;
+  --accent-primary-pressed: var(--palette-light-owl);
   --accent-secondary-face: var(--palette-light-macaw);
   --accent-secondary-lip: var(--palette-light-whale);
+  --accent-secondary-hover: #1fc2ff;
+  --accent-secondary-pressed: var(--palette-light-macaw);
   --accent-neutral-face: var(--palette-light-snow);
   --accent-neutral-border: var(--palette-light-swan);
   --accent-neutral-text: var(--palette-light-hare);
   --accent-danger-face: var(--palette-light-cardinal);
   --accent-danger-lip: var(--palette-light-fire-ant);
   --accent-danger-text: var(--palette-light-cardinal);
+  --accent-danger-hover: #ff5252;
+  --accent-danger-pressed: var(--palette-light-cardinal);
   --status-success: var(--palette-light-owl);
   --status-successText: var(--palette-light-tree-frog);
   --status-successBackground: var(--palette-light-sea-sponge);
@@ -909,6 +927,12 @@
   --status-warningBackground: var(--palette-light-canary);
   --status-info: var(--palette-light-macaw);
   --status-infoBackground: var(--palette-light-iguana);
+  --status-successBorder: var(--palette-light-turtle);
+  --status-dangerBorder: var(--palette-light-flamingo);
+  --status-infoBorder: var(--palette-light-blue-jay);
+  --status-infoText: var(--palette-light-whale);
+  --status-warningText: var(--palette-light-fox);
+  --status-warningBorder: var(--palette-light-guinea-pig);
   --feedback-correct-background: var(--palette-light-sea-sponge);
   --feedback-correct-text: var(--palette-light-tree-frog);
   --feedback-correct-buttonFace: var(--palette-light-owl);
@@ -961,6 +985,35 @@
   --unitColors-legendary: var(--palette-light-bee);
   --unitColors-locked: var(--palette-light-swan);
   --unitColors-foreground: var(--palette-light-snow);
+  --ramp-neutral-100: var(--palette-light-snow);
+  --ramp-neutral-200: var(--palette-light-polar);
+  --ramp-neutral-300: var(--palette-light-swan);
+  --ramp-neutral-400: var(--palette-light-hare);
+  --ramp-neutral-500: var(--palette-light-wolf);
+  --ramp-neutral-600: var(--palette-light-eel);
+  --ramp-green-100: var(--palette-light-sea-sponge);
+  --ramp-green-200: var(--palette-light-turtle);
+  --ramp-green-300: var(--palette-light-owl);
+  --ramp-green-400: var(--palette-light-tree-frog);
+  --ramp-blue-100: var(--palette-light-iguana);
+  --ramp-blue-200: var(--palette-light-blue-jay);
+  --ramp-blue-300: var(--palette-light-macaw);
+  --ramp-blue-400: var(--palette-light-whale);
+  --ramp-blue-500: var(--palette-light-humpback);
+  --ramp-blue-600: var(--palette-light-narwhal);
+  --ramp-red-100: var(--palette-light-walking-fish);
+  --ramp-red-200: var(--palette-light-flamingo);
+  --ramp-red-300: var(--palette-light-pig);
+  --ramp-red-400: var(--palette-light-crab);
+  --ramp-red-500: var(--palette-light-cardinal);
+  --ramp-red-600: var(--palette-light-fire-ant);
+  --ramp-orange-100: var(--palette-light-cheetah);
+  --ramp-orange-200: var(--palette-light-fox);
+  --ramp-orange-300: var(--palette-light-guinea-pig);
+  --ramp-yellow-100: var(--palette-light-canary);
+  --ramp-yellow-200: var(--palette-light-duck);
+  --ramp-yellow-300: var(--palette-light-bee);
+  --ramp-yellow-400: var(--palette-light-camel);
   /* the Duolingo palette as the app sees it in this theme: --c-<name> */
   --c-black-white: var(--palette-light-black-white);
   --c-diamond-stat: var(--palette-light-diamond-stat);
@@ -1275,6 +1328,7 @@
   --surface-hover: var(--palette-dark-polar);
   --surface-selected: var(--palette-dark-iguana);
   --surface-disabled: var(--palette-dark-swan);
+  --surface-overlay: var(--palette-dark-snow);
   --border-default: var(--palette-dark-swan);
   --border-divider: var(--palette-dark-swan);
   --border-selected: var(--palette-dark-blue-jay);
@@ -1291,14 +1345,20 @@
   --text-onColor: var(--palette-dark-snow-always-light);
   --accent-primary-face: var(--palette-dark-owl);
   --accent-primary-lip: var(--palette-dark-tree-frog);
+  --accent-primary-hover: #a2e838;
+  --accent-primary-pressed: var(--palette-dark-owl);
   --accent-secondary-face: var(--palette-dark-macaw);
   --accent-secondary-lip: var(--palette-dark-whale);
+  --accent-secondary-hover: #50d3ff;
+  --accent-secondary-pressed: var(--palette-dark-macaw);
   --accent-neutral-face: var(--palette-dark-snow);
   --accent-neutral-border: var(--palette-dark-swan);
   --accent-neutral-text: var(--palette-dark-hare);
   --accent-danger-face: var(--palette-dark-cardinal);
   --accent-danger-lip: var(--palette-dark-fire-ant);
   --accent-danger-text: var(--palette-dark-cardinal);
+  --accent-danger-hover: #ff5e5e;
+  --accent-danger-pressed: var(--palette-dark-cardinal);
   --status-success: var(--palette-dark-owl);
   --status-successText: var(--palette-dark-tree-frog);
   --status-successBackground: var(--palette-dark-sea-sponge);
@@ -1309,6 +1369,12 @@
   --status-warningBackground: var(--palette-dark-canary);
   --status-info: var(--palette-dark-macaw);
   --status-infoBackground: var(--palette-dark-iguana);
+  --status-successBorder: var(--palette-dark-turtle);
+  --status-dangerBorder: var(--palette-dark-flamingo);
+  --status-infoBorder: var(--palette-dark-blue-jay);
+  --status-infoText: var(--palette-dark-whale);
+  --status-warningText: var(--palette-dark-fox);
+  --status-warningBorder: var(--palette-dark-guinea-pig);
   --feedback-correct-background: var(--palette-dark-sea-sponge);
   --feedback-correct-text: var(--palette-dark-tree-frog);
   --feedback-correct-buttonFace: var(--palette-dark-owl);
@@ -1361,6 +1427,35 @@
   --unitColors-legendary: var(--palette-dark-bee);
   --unitColors-locked: var(--palette-dark-swan);
   --unitColors-foreground: var(--palette-dark-snow);
+  --ramp-neutral-100: var(--palette-dark-snow);
+  --ramp-neutral-200: var(--palette-dark-polar);
+  --ramp-neutral-300: var(--palette-dark-swan);
+  --ramp-neutral-400: var(--palette-dark-hare);
+  --ramp-neutral-500: var(--palette-dark-wolf);
+  --ramp-neutral-600: var(--palette-dark-eel);
+  --ramp-green-100: var(--palette-dark-sea-sponge);
+  --ramp-green-200: var(--palette-dark-turtle);
+  --ramp-green-300: var(--palette-dark-owl);
+  --ramp-green-400: var(--palette-dark-tree-frog);
+  --ramp-blue-100: var(--palette-dark-iguana);
+  --ramp-blue-200: var(--palette-dark-blue-jay);
+  --ramp-blue-300: var(--palette-dark-macaw);
+  --ramp-blue-400: var(--palette-dark-whale);
+  --ramp-blue-500: var(--palette-dark-humpback);
+  --ramp-blue-600: var(--palette-dark-narwhal);
+  --ramp-red-100: var(--palette-dark-walking-fish);
+  --ramp-red-200: var(--palette-dark-flamingo);
+  --ramp-red-300: var(--palette-dark-pig);
+  --ramp-red-400: var(--palette-dark-crab);
+  --ramp-red-500: var(--palette-dark-cardinal);
+  --ramp-red-600: var(--palette-dark-fire-ant);
+  --ramp-orange-100: var(--palette-dark-cheetah);
+  --ramp-orange-200: var(--palette-dark-fox);
+  --ramp-orange-300: var(--palette-dark-guinea-pig);
+  --ramp-yellow-100: var(--palette-dark-canary);
+  --ramp-yellow-200: var(--palette-dark-duck);
+  --ramp-yellow-300: var(--palette-dark-bee);
+  --ramp-yellow-400: var(--palette-dark-camel);
   /* the Duolingo palette as the app sees it in this theme: --c-<name> */
   --c-black-white: var(--palette-dark-black-white);
   --c-diamond-stat: var(--palette-dark-diamond-stat);
@@ -2641,7 +2736,7 @@ img.lb-rank { height: 42px; }
     </div>
   </header>
   <p class="font-note" id="font-note" hidden>The product fonts (duolingo-sans, feather) did not load from <code>fonts/</code>, so this page is drawn in Nunito. Text widths will not match the product crops. Put the three .woff2 files in <code>fonts/</code> next to this page and serve the folder over http.</p>
-  <p class="lead">Extracted from the logged-in duolingo.com web app (light and dark) on 2026-09-25. Every colour, size and curve below is a CSS custom property generated from <code>tokens.json</code> (759 core tokens (600 palette entries), 95 semantic roles per theme). Each specimen is live HTML and CSS built only from those properties, shown beside the matching crop of the real product in the current theme. Hover and press the buttons: the real <code>:hover</code> and <code>:active</code> rules are wired up.</p>
+  <p class="lead">Extracted from the logged-in duolingo.com web app (light and dark) on 2026-09-25. Every colour, size and curve below is a CSS custom property generated from <code>tokens.json</code> (770 core tokens (600 palette entries), 137 semantic roles per theme). Each specimen is live HTML and CSS built only from those properties, shown beside the matching crop of the real product in the current theme. Hover and press the buttons: the real <code>:hover</code> and <code>:active</code> rules are wired up.</p>
   <nav class="toc" aria-label="Contents">
     <a href="#palette">Palette</a><a href="#roles">Colour roles</a><a href="#type">Type</a><a href="#space">Spacing</a><a href="#radius">Radii &amp; borders</a><a href="#shadow">Shadows &amp; lip</a><a href="#opacity">Opacity</a><a href="#motion">Motion</a><a href="#layout">Breakpoints &amp; layout</a>
     <a href="#buttons">Buttons</a><a href="#forms">Form controls</a><a href="#nav-comp">Tabs, badges, avatars</a><a href="#overlays">Overlays</a><a href="#lists">Lists &amp; cards</a>
@@ -2970,6 +3065,7 @@ img.lb-rank { height: 42px; }
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-polar);color:#1b1b1b">#f7f7f7</span><span class="dk" style="background:var(--palette-dark-polar);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--surface-hover</code><span class="role-alias">polar / polar</span><small>Hover fill for list rows and menu items (leaderboard row, More-menu item, open top-bar stat button).</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-iguana);color:#1b1b1b">#ddf4ff</span><span class="dk" style="background:var(--palette-dark-iguana);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--surface-selected</code><span class="role-alias">iguana / iguana</span><small>Selected item fill: active sidebar nav item, selected multiple-choice card, selected settings card.</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-swan);color:#1b1b1b">#e5e5e5</span><span class="dk" style="background:var(--palette-dark-swan);color:#ffffff">#37464f</span></div><div class="role-meta"><code>--surface-disabled</code><span class="role-alias">swan / swan</span><small>Disabled button face (Check before an answer, Save changes).</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-snow);color:#1b1b1b">#ffffff</span><span class="dk" style="background:var(--palette-dark-snow);color:#ffffff">#131f24</span></div><div class="role-meta"><code>--surface-overlay</code><span class="role-alias">snow / snow</span><small>Dialog panel (quit, notifications, invite, friend-streak and lesson report dialogs): the page fill, 16px radius, no border and no shadow, on background.scrim.</small></div></div>
 </div>
 <h3>border</h3><div class="role-grid">
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-swan);color:#1b1b1b">#e5e5e5</span><span class="dk" style="background:var(--palette-dark-swan);color:#ffffff">#37464f</span></div><div class="role-meta"><code>--border-default</code><span class="role-alias">swan / swan</span><small>Default 2px border on cards, inputs, outline buttons, tap tokens, popovers.</small></div></div>
@@ -2992,14 +3088,20 @@ img.lb-rank { height: 42px; }
 <h3>accent</h3><div class="role-grid">
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-owl);color:#1b1b1b">#58cc02</span><span class="dk" style="background:var(--palette-dark-owl);color:#1b1b1b">#93d333</span></div><div class="role-meta"><code>--accent-primary-face</code><span class="role-alias">owl / owl</span><small>Primary (green) button face: Check, Continue. Drawn on the ::before layer.</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-tree-frog);color:#1b1b1b">#58a700</span><span class="dk" style="background:var(--palette-dark-tree-frog);color:#1b1b1b">#79b933</span></div><div class="role-meta"><code>--accent-primary-lip</code><span class="role-alias">tree-frog / tree-frog</span><small>Primary button lip: solid box-shadow 0 4px 0 under the face.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:#61e002;color:#1b1b1b">#61e002</span><span class="dk" style="background:#a2e838;color:#1b1b1b">#a2e838</span></div><div class="role-meta"><code>--accent-primary-hover</code><span class="role-alias">#61e002 / #a2e838</span><small>Primary button on hover: the face colour under filter brightness(1.1), the web-ui button&#x27;s only hover change (inside @media (hover:hover)). Worked out from the palette value, not read off pixels: the product applies a filter, not a colour.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-owl);color:#1b1b1b">#58cc02</span><span class="dk" style="background:var(--palette-dark-owl);color:#1b1b1b">#93d333</span></div><div class="role-meta"><code>--accent-primary-pressed</code><span class="role-alias">owl / owl</span><small>Primary button pressed: the face keeps its colour; the lip shadow is removed and the face moves down by the lip (4px) while the JS pressed class _2cMtD is on.</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-macaw);color:#1b1b1b">#1cb0f6</span><span class="dk" style="background:var(--palette-dark-macaw);color:#1b1b1b">#49c0f8</span></div><div class="role-meta"><code>--accent-secondary-face</code><span class="role-alias">macaw / macaw</span><small>Blue filled button face (notification opt-in, Get started, Continue on blue).</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-whale);color:#1b1b1b">#1899d6</span><span class="dk" style="background:var(--palette-dark-whale);color:#1b1b1b">#1899d6</span></div><div class="role-meta"><code>--accent-secondary-lip</code><span class="role-alias">whale / whale</span><small>Blue filled button lip (0 4px 0).</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:#1fc2ff;color:#1b1b1b">#1fc2ff</span><span class="dk" style="background:#50d3ff;color:#1b1b1b">#50d3ff</span></div><div class="role-meta"><code>--accent-secondary-hover</code><span class="role-alias">#1fc2ff / #50d3ff</span><small>Secondary button on hover: the face colour under filter brightness(1.1), the web-ui button&#x27;s only hover change (inside @media (hover:hover)). Worked out from the palette value, not read off pixels: the product applies a filter, not a colour.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-macaw);color:#1b1b1b">#1cb0f6</span><span class="dk" style="background:var(--palette-dark-macaw);color:#1b1b1b">#49c0f8</span></div><div class="role-meta"><code>--accent-secondary-pressed</code><span class="role-alias">macaw / macaw</span><small>Secondary button pressed: the face keeps its colour; the lip shadow is removed and the face moves down by the lip (4px) while the JS pressed class _2cMtD is on.</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-snow);color:#1b1b1b">#ffffff</span><span class="dk" style="background:var(--palette-dark-snow);color:#ffffff">#131f24</span></div><div class="role-meta"><code>--accent-neutral-face</code><span class="role-alias">snow / snow</span><small>Outline (white) button face: Skip, tap tokens, Go to Leaderboards.</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-swan);color:#1b1b1b">#e5e5e5</span><span class="dk" style="background:var(--palette-dark-swan);color:#ffffff">#37464f</span></div><div class="role-meta"><code>--accent-neutral-border</code><span class="role-alias">swan / swan</span><small>Outline button border (2px) and lip (0 2px 0), so the lip totals 4px.</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-hare);color:#1b1b1b">#afafaf</span><span class="dk" style="background:var(--palette-dark-hare);color:#ffffff">#52656d</span></div><div class="role-meta"><code>--accent-neutral-text</code><span class="role-alias">hare / hare</span><small>Outline button label (Skip, Review lesson).</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-cardinal);color:#1b1b1b">#ff4b4b</span><span class="dk" style="background:var(--palette-dark-cardinal);color:#1b1b1b">#ee5555</span></div><div class="role-meta"><code>--accent-danger-face</code><span class="role-alias">cardinal / cardinal</span><small>Destructive button face (Remove course confirm; Continue after a wrong answer).</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-fire-ant);color:#ffffff">#ea2b2b</span><span class="dk" style="background:var(--palette-dark-fire-ant);color:#ffffff">#d84848</span></div><div class="role-meta"><code>--accent-danger-lip</code><span class="role-alias">fire-ant / fire-ant</span><small>Destructive button lip (0 4px 0).</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-cardinal);color:#1b1b1b">#ff4b4b</span><span class="dk" style="background:var(--palette-dark-cardinal);color:#1b1b1b">#ee5555</span></div><div class="role-meta"><code>--accent-danger-text</code><span class="role-alias">cardinal / cardinal</span><small>Destructive text button label (Remove on settings/courses).</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:#ff5252;color:#1b1b1b">#ff5252</span><span class="dk" style="background:#ff5e5e;color:#1b1b1b">#ff5e5e</span></div><div class="role-meta"><code>--accent-danger-hover</code><span class="role-alias">#ff5252 / #ff5e5e</span><small>Danger button on hover: the face colour under filter brightness(1.1), the web-ui button&#x27;s only hover change (inside @media (hover:hover)). Worked out from the palette value, not read off pixels: the product applies a filter, not a colour.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-cardinal);color:#1b1b1b">#ff4b4b</span><span class="dk" style="background:var(--palette-dark-cardinal);color:#1b1b1b">#ee5555</span></div><div class="role-meta"><code>--accent-danger-pressed</code><span class="role-alias">cardinal / cardinal</span><small>Danger button pressed: the face keeps its colour; the lip shadow is removed and the face moves down by the lip (4px) while the JS pressed class _2cMtD is on.</small></div></div>
 </div>
 <h3>status</h3><div class="role-grid">
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-owl);color:#1b1b1b">#58cc02</span><span class="dk" style="background:var(--palette-dark-owl);color:#1b1b1b">#93d333</span></div><div class="role-meta"><code>--status-success</code><span class="role-alias">owl / owl</span><small>Success fill: online dot on leaderboard avatars, progress fill, success icons.</small></div></div>
@@ -3012,6 +3114,12 @@ img.lb-rank { height: 42px; }
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-canary);color:#1b1b1b">#fff5d3</span><span class="dk" style="background:var(--palette-dark-canary);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--status-warningBackground</code><span class="role-alias">canary / canary</span><small>Neutral/warning tint: the &quot;can&#x27;t listen now&quot; feedback bar.</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-macaw);color:#1b1b1b">#1cb0f6</span><span class="dk" style="background:var(--palette-dark-macaw);color:#1b1b1b">#49c0f8</span></div><div class="role-meta"><code>--status-info</code><span class="role-alias">macaw / macaw</span><small>Info accent: blue icons, focused input border, links.</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-iguana);color:#1b1b1b">#ddf4ff</span><span class="dk" style="background:var(--palette-dark-iguana);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--status-infoBackground</code><span class="role-alias">iguana / iguana</span><small>Info tint panel (&quot;Add your Duolingo Score&quot; card on profile, guidebook tip rows).</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-turtle);color:#1b1b1b">#a5ed6e</span><span class="dk" style="background:var(--palette-dark-turtle);color:#ffffff">#5f8428</span></div><div class="role-meta"><code>--status-successBorder</code><span class="role-alias">turtle / turtle</span><small>Success border: the correct-answer tile border (feedback.tile.correctBorder). Duolingo has no status component with its own border; the role is assigned from the component that draws it.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-flamingo);color:#1b1b1b">#ffb2b2</span><span class="dk" style="background:var(--palette-dark-flamingo);color:#ffffff">#945151</span></div><div class="role-meta"><code>--status-dangerBorder</code><span class="role-alias">flamingo / flamingo</span><small>Danger border: the wrong-answer tile border (feedback.tile.wrongBorder). Duolingo has no status component with its own border; the role is assigned from the component that draws it.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-blue-jay);color:#1b1b1b">#84d8ff</span><span class="dk" style="background:var(--palette-dark-blue-jay);color:#1b1b1b">#3f85a7</span></div><div class="role-meta"><code>--status-infoBorder</code><span class="role-alias">blue-jay / blue-jay</span><small>Info border: the selected-choice border, Duolingo&#x27;s blue state edge (border.selected). Duolingo has no status component with its own border; the role is assigned from the component that draws it.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-whale);color:#1b1b1b">#1899d6</span><span class="dk" style="background:var(--palette-dark-whale);color:#1b1b1b">#1899d6</span></div><div class="role-meta"><code>--status-infoText</code><span class="role-alias">whale / whale</span><small>Info text: the blue label on a selected choice card (text.selected). Duolingo has no status component with its own border; the role is assigned from the component that draws it.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-fox);color:#1b1b1b">#ff9600</span><span class="dk" style="background:var(--palette-dark-fox);color:#1b1b1b">#ffab33</span></div><div class="role-meta"><code>--status-warningText</code><span class="role-alias">fox / fox</span><small>Warning text: the orange &#x27;Previous mistake&#x27; label. Same value as status.warning, named for the triple. Duolingo has no status component with its own border; the role is assigned from the component that draws it.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-guinea-pig);color:#1b1b1b">#cd7900</span><span class="dk" style="background:var(--palette-dark-guinea-pig);color:#1b1b1b">#d79433</span></div><div class="role-meta"><code>--status-warningBorder</code><span class="role-alias">guinea-pig / guinea-pig</span><small>Warning border: the lip under the orange (fox) button, the one place an orange edge is drawn. Duolingo has no status component with its own border; the role is assigned from the component that draws it.</small></div></div>
 </div>
 <h3>feedback</h3><div class="role-grid">
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-sea-sponge);color:#1b1b1b">#d7ffb8</span><span class="dk" style="background:var(--palette-dark-sea-sponge);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--feedback-correct-background</code><span class="role-alias">sea-sponge / sea-sponge</span><small>Correct-answer footer bar background.</small></div></div>
@@ -3073,11 +3181,42 @@ img.lb-rank { height: 42px; }
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-swan);color:#1b1b1b">#e5e5e5</span><span class="dk" style="background:var(--palette-dark-swan);color:#ffffff">#37464f</span></div><div class="role-meta"><code>--unitColors-locked</code><span class="role-alias">swan / swan</span><small>Locked path node face.</small></div></div>
 <div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-snow);color:#1b1b1b">#ffffff</span><span class="dk" style="background:var(--palette-dark-snow);color:#ffffff">#131f24</span></div><div class="role-meta"><code>--unitColors-foreground</code><span class="role-alias">snow / snow</span><small>Icon/text colour on unit colours (--path-unit-foreground-color).</small></div></div>
 </div>
+<h3>ramp</h3><div class="role-grid">
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-snow);color:#1b1b1b">#ffffff</span><span class="dk" style="background:var(--palette-dark-snow);color:#ffffff">#131f24</span></div><div class="role-meta"><code>--ramp-neutral-100</code><span class="role-alias">snow / snow</span><small>neutral ramp step 100: palette &#x27;snow&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-polar);color:#1b1b1b">#f7f7f7</span><span class="dk" style="background:var(--palette-dark-polar);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--ramp-neutral-200</code><span class="role-alias">polar / polar</span><small>neutral ramp step 200: palette &#x27;polar&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-swan);color:#1b1b1b">#e5e5e5</span><span class="dk" style="background:var(--palette-dark-swan);color:#ffffff">#37464f</span></div><div class="role-meta"><code>--ramp-neutral-300</code><span class="role-alias">swan / swan</span><small>neutral ramp step 300: palette &#x27;swan&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-hare);color:#1b1b1b">#afafaf</span><span class="dk" style="background:var(--palette-dark-hare);color:#ffffff">#52656d</span></div><div class="role-meta"><code>--ramp-neutral-400</code><span class="role-alias">hare / hare</span><small>neutral ramp step 400: palette &#x27;hare&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-wolf);color:#ffffff">#777777</span><span class="dk" style="background:var(--palette-dark-wolf);color:#1b1b1b">#dce6ec</span></div><div class="role-meta"><code>--ramp-neutral-500</code><span class="role-alias">wolf / wolf</span><small>neutral ramp step 500: palette &#x27;wolf&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-eel);color:#ffffff">#4b4b4b</span><span class="dk" style="background:var(--palette-dark-eel);color:#1b1b1b">#f1f7fb</span></div><div class="role-meta"><code>--ramp-neutral-600</code><span class="role-alias">eel / eel</span><small>neutral ramp step 600: palette &#x27;eel&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-sea-sponge);color:#1b1b1b">#d7ffb8</span><span class="dk" style="background:var(--palette-dark-sea-sponge);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--ramp-green-100</code><span class="role-alias">sea-sponge / sea-sponge</span><small>green ramp step 100: palette &#x27;sea-sponge&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-turtle);color:#1b1b1b">#a5ed6e</span><span class="dk" style="background:var(--palette-dark-turtle);color:#ffffff">#5f8428</span></div><div class="role-meta"><code>--ramp-green-200</code><span class="role-alias">turtle / turtle</span><small>green ramp step 200: palette &#x27;turtle&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-owl);color:#1b1b1b">#58cc02</span><span class="dk" style="background:var(--palette-dark-owl);color:#1b1b1b">#93d333</span></div><div class="role-meta"><code>--ramp-green-300</code><span class="role-alias">owl / owl</span><small>green ramp step 300: palette &#x27;owl&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-tree-frog);color:#1b1b1b">#58a700</span><span class="dk" style="background:var(--palette-dark-tree-frog);color:#1b1b1b">#79b933</span></div><div class="role-meta"><code>--ramp-green-400</code><span class="role-alias">tree-frog / tree-frog</span><small>green ramp step 400: palette &#x27;tree-frog&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-iguana);color:#1b1b1b">#ddf4ff</span><span class="dk" style="background:var(--palette-dark-iguana);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--ramp-blue-100</code><span class="role-alias">iguana / iguana</span><small>blue ramp step 100: palette &#x27;iguana&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-blue-jay);color:#1b1b1b">#84d8ff</span><span class="dk" style="background:var(--palette-dark-blue-jay);color:#1b1b1b">#3f85a7</span></div><div class="role-meta"><code>--ramp-blue-200</code><span class="role-alias">blue-jay / blue-jay</span><small>blue ramp step 200: palette &#x27;blue-jay&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-macaw);color:#1b1b1b">#1cb0f6</span><span class="dk" style="background:var(--palette-dark-macaw);color:#1b1b1b">#49c0f8</span></div><div class="role-meta"><code>--ramp-blue-300</code><span class="role-alias">macaw / macaw</span><small>blue ramp step 300: palette &#x27;macaw&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-whale);color:#1b1b1b">#1899d6</span><span class="dk" style="background:var(--palette-dark-whale);color:#1b1b1b">#1899d6</span></div><div class="role-meta"><code>--ramp-blue-400</code><span class="role-alias">whale / whale</span><small>blue ramp step 400: palette &#x27;whale&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-humpback);color:#ffffff">#2b70c9</span><span class="dk" style="background:var(--palette-dark-humpback);color:#ffffff">#2b70c9</span></div><div class="role-meta"><code>--ramp-blue-500</code><span class="role-alias">humpback / humpback</span><small>blue ramp step 500: palette &#x27;humpback&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-narwhal);color:#ffffff">#1453a3</span><span class="dk" style="background:var(--palette-dark-narwhal);color:#ffffff">#1453a3</span></div><div class="role-meta"><code>--ramp-blue-600</code><span class="role-alias">narwhal / narwhal</span><small>blue ramp step 600: palette &#x27;narwhal&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-walking-fish);color:#1b1b1b">#ffdfe0</span><span class="dk" style="background:var(--palette-dark-walking-fish);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--ramp-red-100</code><span class="role-alias">walking-fish / walking-fish</span><small>red ramp step 100: palette &#x27;walking-fish&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-flamingo);color:#1b1b1b">#ffb2b2</span><span class="dk" style="background:var(--palette-dark-flamingo);color:#ffffff">#945151</span></div><div class="role-meta"><code>--ramp-red-200</code><span class="role-alias">flamingo / flamingo</span><small>red ramp step 200: palette &#x27;flamingo&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-pig);color:#1b1b1b">#f5a4a4</span><span class="dk" style="background:var(--palette-dark-pig);color:#1b1b1b">#f5a4a4</span></div><div class="role-meta"><code>--ramp-red-300</code><span class="role-alias">pig / pig</span><small>red ramp step 300: palette &#x27;pig&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-crab);color:#1b1b1b">#ff7878</span><span class="dk" style="background:var(--palette-dark-crab);color:#1b1b1b">#ff7878</span></div><div class="role-meta"><code>--ramp-red-400</code><span class="role-alias">crab / crab</span><small>red ramp step 400: palette &#x27;crab&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-cardinal);color:#1b1b1b">#ff4b4b</span><span class="dk" style="background:var(--palette-dark-cardinal);color:#1b1b1b">#ee5555</span></div><div class="role-meta"><code>--ramp-red-500</code><span class="role-alias">cardinal / cardinal</span><small>red ramp step 500: palette &#x27;cardinal&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-fire-ant);color:#ffffff">#ea2b2b</span><span class="dk" style="background:var(--palette-dark-fire-ant);color:#ffffff">#d84848</span></div><div class="role-meta"><code>--ramp-red-600</code><span class="role-alias">fire-ant / fire-ant</span><small>red ramp step 600: palette &#x27;fire-ant&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-cheetah);color:#1b1b1b">#ffce8e</span><span class="dk" style="background:var(--palette-dark-cheetah);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--ramp-orange-100</code><span class="role-alias">cheetah / cheetah</span><small>orange ramp step 100: palette &#x27;cheetah&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-fox);color:#1b1b1b">#ff9600</span><span class="dk" style="background:var(--palette-dark-fox);color:#1b1b1b">#ffab33</span></div><div class="role-meta"><code>--ramp-orange-200</code><span class="role-alias">fox / fox</span><small>orange ramp step 200: palette &#x27;fox&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-guinea-pig);color:#1b1b1b">#cd7900</span><span class="dk" style="background:var(--palette-dark-guinea-pig);color:#1b1b1b">#d79433</span></div><div class="role-meta"><code>--ramp-orange-300</code><span class="role-alias">guinea-pig / guinea-pig</span><small>orange ramp step 300: palette &#x27;guinea-pig&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-canary);color:#1b1b1b">#fff5d3</span><span class="dk" style="background:var(--palette-dark-canary);color:#ffffff">#202f36</span></div><div class="role-meta"><code>--ramp-yellow-100</code><span class="role-alias">canary / canary</span><small>yellow ramp step 100: palette &#x27;canary&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-duck);color:#1b1b1b">#fbe56d</span><span class="dk" style="background:var(--palette-dark-duck);color:#1b1b1b">#fbe56d</span></div><div class="role-meta"><code>--ramp-yellow-200</code><span class="role-alias">duck / duck</span><small>yellow ramp step 200: palette &#x27;duck&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-bee);color:#1b1b1b">#ffc800</span><span class="dk" style="background:var(--palette-dark-bee);color:#1b1b1b">#ffc700</span></div><div class="role-meta"><code>--ramp-yellow-300</code><span class="role-alias">bee / bee</span><small>yellow ramp step 300: palette &#x27;bee&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+<div class="role"><div class="role-sw"><span class="lt" style="background:var(--palette-light-camel);color:#1b1b1b">#e7a601</span><span class="dk" style="background:var(--palette-dark-camel);color:#1b1b1b">#e7a601</span></div><div class="role-meta"><code>--ramp-yellow-400</code><span class="role-alias">camel / camel</span><small>yellow ramp step 400: palette &#x27;camel&#x27;. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.</small></div></div>
+</div>
 
   <h2 id="type">Typography</h2>
   <p class="note">Everything in the app is <b>duolingo-sans</b>; there is no 500 file, so weight 500 renders with the 400 face. <b>feather</b> (700 only) appears on the logged-out marketing page. Samples below use the real stack with each style's size, weight, line height, tracking and case.</p>
-  <div class="scroll-x"><table class="spec"><tr><th>Token</th><th>Value</th><th>Sample</th><th>Note</th></tr><tr><td><code>fontFamily.body</code></td><td>duolingo-sans</td><td><span style="font:700 28px/1.2 var(--ff-body)">Duolingo 700</span> <span style="font:400 28px/1.2 var(--ff-body)">Duolingo 400</span></td><td>All in-app UI text. Rendered stack: &quot;duolingo-sans, sans-serif&quot; (css ._1ursp, ._3P5E_, --text-* rules; landing hero h1 computed &quot;duolingo-sans, sans-serif&quot;). No captured app node overrides the body family. Faces as the app registers them: upright 400 and 700 from one variable file (fonts/f2331bbf...woff2), italic 400 and 700 from fonts/3bbe299f...woff2.</td></tr>
-<tr><td><code>fontFamily.display</code></td><td>feather</td><td><span style="font:700 28px/1.2 var(--ff-display)">Duolingo 700</span></td><td>Display face, weight 700 only (fonts/68d22534...woff2). Stack &quot;feather, sans-serif&quot;. Not rendered on any captured in-app screen; seen on the logged-out marketing page (36px, letter-spacing -0.72px).</td></tr>
+  <div class="scroll-x"><table class="spec"><tr><th>Token</th><th>Value</th><th>Sample</th><th>Note</th></tr><tr><td><code>fontFamily.body</code></td><td>[&#x27;duolingo-sans&#x27;, &#x27;sans-serif&#x27;]</td><td><span style="font:700 28px/1.2 var(--ff-body)">Duolingo 700</span> <span style="font:400 28px/1.2 var(--ff-body)">Duolingo 400</span></td><td>All in-app UI text. Rendered stack: &quot;duolingo-sans, sans-serif&quot; (css ._1ursp, ._3P5E_, --text-* rules; landing hero h1 computed &quot;duolingo-sans, sans-serif&quot;). No captured app node overrides the body family. Faces as the app registers them: upright 400 and 700 from one variable file (fonts/f2331bbf...woff2), italic 400 and 700 from fonts/3bbe299f...woff2.</td></tr>
+<tr><td><code>fontFamily.display</code></td><td>[&#x27;feather&#x27;, &#x27;sans-serif&#x27;]</td><td><span style="font:700 28px/1.2 var(--ff-display)">Duolingo 700</span></td><td>Display face, weight 700 only (fonts/68d22534...woff2). Stack &quot;feather, sans-serif&quot;. Not rendered on any captured in-app screen; seen on the logged-out marketing page (36px, letter-spacing -0.72px).</td></tr>
 <tr><td><code>fontWeight.regular</code></td><td>400</td><td><span style="font:400 20px/1.2 var(--ff-body)">The quick brown owl</span></td><td>Explicit 400 on guidebook prose (44 text nodes). Uses the duolingo-sans 400 file.</td></tr>
 <tr><td><code>fontWeight.medium</code></td><td>500</td><td><span style="font:500 20px/1.2 var(--ff-body)">The quick brown owl</span></td><td>Default body weight (body{font:500 17px/20px}) and --text-body/caption weight. There is no 500 file, so the browser renders it with the 400 face.</td></tr>
 <tr><td><code>fontWeight.bold</code></td><td>700</td><td><span style="font:700 20px/1.2 var(--ff-body)">The quick brown owl</span></td><td>Headings, buttons, labels, stats (4,171 text nodes).</td></tr></table></div>
@@ -3212,7 +3351,8 @@ img.lb-rank { height: 42px; }
 <tr><td><code>duration.slow</code></td><td>500ms</td><td><div class="ease-track"><div class="ease-dot" style="transition-duration:var(--duration-slow)"></div></div></td><td>Transforms and visibility fades (transform .5s, opacity .5s ease-in-out).</td></tr>
 <tr><td><code>duration.700</code></td><td>700ms</td><td><div class="ease-track"><div class="ease-dot" style="transition-duration:var(--duration-700)"></div></div></td><td>Slow slides (transform .7s ease-in-out).</td></tr>
 <tr><td><code>duration.celebrate</code></td><td>1500ms</td><td><div class="ease-track"><div class="ease-dot" style="transition-duration:var(--duration-celebrate)"></div></div></td><td>Celebration loops (1.2s-1.5s, x14).</td></tr>
-<tr><td><code>duration.long</code></td><td>2000ms</td><td><div class="ease-track"><div class="ease-dot" style="transition-duration:var(--duration-long)"></div></div></td><td>Monthly challenge and long celebrations (2s).</td></tr></table>
+<tr><td><code>duration.long</code></td><td>2000ms</td><td><div class="ease-track"><div class="ease-dot" style="transition-duration:var(--duration-long)"></div></div></td><td>Monthly challenge and long celebrations (2s).</td></tr>
+<tr><td><code>duration.reducedMotion</code></td><td>0ms</td><td><div class="ease-track"><div class="ease-dot" style="transition-duration:var(--duration-reducedMotion)"></div></div></td><td>Under reduced motion the app sets html[reduced-motion] (from matchMedia(&#x27;(prefers-reduced-motion: reduce)&#x27;) at load), and 11 rules switch entrance animations (.4s ease-in-out, onboarding and path elements) and the Duo slide transition (.7s) to animation:none or transition:none, so they jump to their end state. The three-dot loader keeps only its opacity keyframes (class _1pK2q). No stylesheet uses @media (prefers-reduced-motion).</td></tr></table>
   </div>
 
   <h2 id="layout">Breakpoints &amp; layout</h2>
@@ -3252,7 +3392,12 @@ img.lb-rank { height: 42px; }
 <tr><td><code>size.friendRowHeight</code></td><td class="nowrap">75px</td><td>User-search result row.</td><td class="src">dump user-search-light-results dt=friend-entry h=75</td></tr>
 <tr><td><code>size.tapTokenHeight</code></td><td class="nowrap">52px</td><td>Word-bank tap token (inside a 60px row).</td><td class="src">dump lesson-light-challenge-tiles-partial cl=_2V6ug h=52</td></tr>
 <tr><td><code>size.choiceRowHeight</code></td><td class="nowrap">70px</td><td>Multiple-choice row card.</td><td class="src">dump lesson-light-choice-selected dt=challenge-choice h=70</td></tr>
-<tr><td><code>size.pathNodeWidth</code></td><td class="nowrap">70px</td><td>Learning-path lesson node (70x65; 80x90 for the chest/checkpoint).</td><td class="src">dump learn-light-default dt=skill-path-level-0 w=70</td></tr></table></div>
+<tr><td><code>size.pathNodeWidth</code></td><td class="nowrap">70px</td><td>Learning-path lesson node (70x65; 80x90 for the chest/checkpoint).</td><td class="src">dump learn-light-default dt=skill-path-level-0 w=70</td></tr>
+<tr><td><code>size.icon.xs</code></td><td class="nowrap">16px</td><td>Icon size 16px: inline glyphs in buttons and lists.</td><td class="src">icons.md &#x27;Sizes actually used&#x27; (dump node rects, distinct assets per size)</td></tr>
+<tr><td><code>size.icon.sm</code></td><td class="nowrap">18px</td><td>Icon size 18px: top-bar and lesson glyphs.</td><td class="src">icons.md &#x27;Sizes actually used&#x27; (dump node rects, distinct assets per size)</td></tr>
+<tr><td><code>size.icon.md</code></td><td class="nowrap">20px</td><td>Icon size 20px: lesson header and settings glyphs.</td><td class="src">icons.md &#x27;Sizes actually used&#x27; (dump node rects, distinct assets per size)</td></tr>
+<tr><td><code>size.icon.lg</code></td><td class="nowrap">24px</td><td>Icon size 24px: close, clear and eye buttons (24x24 hit area).</td><td class="src">icons.md &#x27;Sizes actually used&#x27; (dump node rects, distinct assets per size)</td></tr>
+<tr><td><code>size.icon.nav</code></td><td class="nowrap">32px</td><td>Icon size 32px: sidebar and phone tab-bar icons.</td><td class="src">icons.md &#x27;Sizes actually used&#x27; (dump node rects); raw/2026-10/live-measurements.json: sidebar &lt;img&gt; 32x32 at 1440 and 1000, tab bar 32x32 at 390</td></tr></table></div>
   <h3>Z-index</h3>
   <div class="scroll-x"><table class="spec"><tr><th>Token</th><th>Value</th><th>Note</th><th>Source</th></tr><tr><td><code>zIndex.raised</code></td><td class="nowrap">1</td><td>Sticky rail and local stacking (css x135).</td><td class="src">css-stats z_index 1 x135</td></tr>
 <tr><td><code>zIndex.lessonHeader</code></td><td class="nowrap">100</td><td>Lesson top bar.</td><td class="src">dump lesson-light-challenge-tiles-partial cl=wqSzE z-index 100</td></tr>

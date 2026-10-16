@@ -1,6 +1,6 @@
 # Duolingo design reference
 
-A token set and component reference for Duolingo's web app, for building mockups in Figma or Paper that match the product. It was extracted from www.duolingo.com on 2026-09-25, signed in to a free account on the Japanese course, in both of the app's themes, at desktop width and at a 570px mobile width.
+A token set and component reference for Duolingo's web app, for building mockups in Figma or Paper that match the product. It was extracted from www.duolingo.com on 2026-09-25, signed in to a free account on the Japanese course, in both of the app's themes, at desktop width and at a 570px mobile width. It was refreshed on 2026-10-17 against the library scorecard: the same free account, both themes, at 1440, 1000 and 390px, plus the logged-out onboarding flow, a live keyboard-focus pass, and new tokens for ramps, overlay surfaces, accent hover and pressed, status borders, icon sizes, the focus ring, layout columns and reduced motion.
 
 | File | What it is |
 |---|---|
@@ -8,21 +8,87 @@ A token set and component reference for Duolingo's web app, for building mockups
 | [tokens-notes.md](tokens-notes.md) | How the token file is organised, the semantic colour table in both themes, the type scale, fonts, and the token gaps. |
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and component with the real values, in both themes (toggle top right), each specimen beside a crop of the real product. Open it in a browser, or paste sections into Paper. |
 | [components.md](components.md) | The discovery list, one inventory entry per component with its crops, the icon summary, and every Gap. |
-| [components/](components) | The full specs: `core.md` (generic components, including a colour table for all 24 button variants) and `product.md` (54 Duolingo-specific components: app shell, learn path, lesson screens, gamification), their JSON twins, and the per-component crops. |
+| [patterns.md](patterns.md) | The eight patterns (app shell, forms, empty/loading/error, destructive confirmation, feedback, search, data display, onboarding), each written from the screenshots with the tokens it uses and what was not captured. |
+| [components/](components) | The full specs: `core.md` (generic components, including a colour table for all 24 button variants) and `product.md` (54 Duolingo-specific components: app shell, learn path, lesson screens, gamification), their JSON twins, the per-component crops, and [components/focus.md](components/focus.md) (the live keyboard-focus pass, one row per Tab press). Every colour in the specs is written as its token first (`border.default` #E5E5E5 (swan, light)). |
 | [icons.md](icons.md), [icons/](icons) | 13 inline UI glyphs and 210 CDN illustration SVGs, with where each is used, its rendered size and its fill or stroke style. Duolingo's property, kept for reference only. |
 | [screenshots/](screenshots) | `{page}-{theme}-{state}.png` captures of the real product at 2x. |
 | [raw/](raw) | The unprocessed readings: the palette as it sits in the app's JS bundle, the live light-theme colour variables, CSS statistics across all 182 stylesheet chunks, the discovery list, and every per-state computed-style dump (`dumps.tar.gz`, cited throughout the specs as `dump#node`). Names, usernames, user ids, avatar URLs, friend-feed event ids and XP and gem totals in the dumps were replaced with placeholders ("Learner", "A friend", round numbers) on 2026-10-11. The screenshots and crops were not retaken; on the same day the owner's name, username and email field, other learners' names and usernames, and the profile link the browser shows on hover were painted out of them with solid fills (`python3 tools/redact_images.py apply systems/duolingo --rules tools/redact-rules/duolingo.json --patterns ~/.design-systems/cleanup-redact.json --patterns <local file of other learners' names>`). Avatars, XP and gem totals stay. |
-| [tools/](tools) | The builders and the capture kit. See Rebuild. |
+| [raw/2026-10/](raw/2026-10) | The refresh readings: the live palette variables in both themes (`rootvars-live.json`), live computed styles and the focus log (`live-measurements.json`), styles read headless from the new page copies (`copy-measurements.json`), the stylesheet rules the new tokens cite (`css-evidence.json`), and one reading per onboarding screen (`onboarding/`). |
+| [tools/](tools) | The builders and the capture kits. See Rebuild. |
 
 ## How the values were read
 
 Duolingo writes its whole palette onto `<html>` as `--color-NAME: r, g, b` triplets and swaps them when `data-duo-theme` changes. The palette in [tokens.json](tokens.json) comes straight from the object in the app's JS bundle that holds both values for every name. The light values were checked against the live variables (300 of 300 match), and the dark values against every node that used them. Component measurements are computed styles: a script walked every visible element at each page and state, and the result was saved as a dump. Hover, focus, selected and disabled states were held live where possible. Pressed states, and anything a static page cannot hold, come from the app's own CSS rules, found by matching each element's hashed class names in the downloaded stylesheets. Every token and spec row names its source. Nothing was sampled from a screenshot, so no token is marked estimated. Values derived from CSS where no live capture existed say `derived, not captured`.
 
+### The 2026-10-17 refresh
+
+The refresh used the library's signed-in route ([docs/CAPTURE.md](../../docs/CAPTURE.md)): the owner signed in to the built-in browser pane, and Claude read values there and copied each state to disk with [tools/capture/signed-in/snapshot.js](tools/capture/signed-in/snapshot.js) (redaction applied by [unsnap.py](tools/capture/signed-in/unsnap.py), which refuses a copy that still holds a private string), then rendered the copies headless at 2x with [render.mjs](tools/capture/signed-in/render.mjs). The account's theme setting follows the system colour scheme, so light and dark were switched by emulating `prefers-color-scheme` in the pane; the account setting was never changed. The palette was read live in both themes from `<html style>` and matches tokens.json 300 of 300 in each (the two `refresh` entries are named `--color-daily_refresh*` live), so the dark values are now checked against the live variables too. Focus states were measured by pressing Tab for real and diffing the focused element against its resting styles ([components/focus.md](components/focus.md)). The onboarding flow was captured logged out, in a fresh headless browser with no account ([tools/capture/onboarding.mjs](tools/capture/onboarding.mjs)). New and changed tokens are applied by [tools/refresh_tokens_2026_10.py](tools/refresh_tokens_2026_10.py), and each names its source and evidence label (Measured or Derived).
+
 The screenshots were converted from the display's P3 profile to sRGB and stored as 256-colour PNGs to keep the repo small. Flat UI colours are exact, but gradients in illustrations can band slightly, so read exact values from the tokens or the dumps, not from the images.
+
+## What to distrust
+
+- **Derived tokens.** `accent.*.hover` is the face colour put through the button's `filter: brightness(1.1)`, worked out from the palette; the product applies a filter, so the pixel colour can differ slightly where the face is anti-aliased. `ramp.*` re-lists palette names Duolingo never groups into ramps, and the steps are uneven (3 to 6 per hue, not 10). `status.*Border`, `status.infoText` and `status.warningText` are roles assigned from the component that draws that colour; Duolingo has no status component with its own border.
+- **Light warning and light wrong-answer colours** come from CSS and the palette, not from a light capture (no wrong answer was given, to keep the account's hearts).
+- **The 2026-10 screenshots are renders of page copies**, not window captures: scripts are removed, so animated illustrations are frozen where the snapshot caught them, and the fonts are the same CDN files the app loads, declared again by [lib.mjs](tools/capture/signed-in/lib.mjs). The 2026-09 screenshots carry the capture tool's orange edge glow and pointer.
+- **Gem and XP totals** in the 2026-10 renders were replaced with round numbers by the redaction file; other learners' avatars are shown, their names are not.
+- **Onboarding** was taken from a logged-out session in a headless browser; the answer lists (for example "How did you hear about Duolingo?") are localised by region and shuffled per session.
 
 ## Fonts
 
-The app uses `duolingo-sans` for all UI text (one variable upright file serving 400 and 700, plus an italic) and `feather` 700 as a display face, seen on the logged-out marketing page. Both are proprietary and are not committed. The style guide looks for them in a local `fonts/` folder next to it (gitignored) and falls back to Nunito from Google Fonts, showing a notice when it does. [tokens-notes.md](tokens-notes.md#fonts) says which CDN file is which.
+The app uses `duolingo-sans` for all UI text (one variable upright file serving 400 and 700, plus an italic) and `feather` 700 as a display face, seen on the logged-out marketing page. Both are proprietary and are not committed. The stacks the app declares are `duolingo-sans, sans-serif` and `feather, sans-serif` (`core.fontFamily`). The app has no code or monospace role. The style guide looks for them in a local `fonts/` folder next to it (gitignored) and falls back to Nunito from Google Fonts, showing a notice when it does. [tokens-notes.md](tokens-notes.md#fonts) says which CDN file is which.
+
+## Coverage
+
+Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Free plan, both themes. "2026-09" rows come from the first capture, "2026-10" from the refresh.
+
+| Item | Status | Where |
+|---|---|---|
+| Colour ramps | Derived: 6 ramps of 3 to 6 steps from the palette's own names; Duolingo has no ramps of its own | `light.ramp`, `dark.ramp`; the 300-colour `core.palette` |
+| Background roles | Captured: page, surface, raised (popover), overlay (dialog), scrim | `background.*`, `surface.*` |
+| Text roles | Captured | `text.*` |
+| Border roles | Default and focus captured; strong not present (every neutral border in the CSS is swan, 117 rules) | `border.*`; [raw/2026-10/css-evidence.json](raw/2026-10/css-evidence.json) |
+| Accent states | Default and pressed captured; hover derived from the button's brightness filter | `accent.*.face`, `.hover`, `.pressed` |
+| Status colours | Captured fill, text and background; borders derived from the components that draw them | `status.*` |
+| Theme parity | Captured: light and dark hold the same keys | `light`, `dark` |
+| Type | Captured: stacks, scale, weights, line heights, roles; code role not present | `core.fontFamily`, `core.typography` |
+| Spacing | Captured as used; Duolingo's paddings (5, 10, 14, 15, 18, 30px) sit on no single base unit, so no 4 or 8px scale is claimed | `core.space` |
+| Radii, border widths | Captured | `core.radius`, `core.borderWidth` |
+| Sizing | Captured: control heights, icon sizes; the focus ring is measured as none | `core.size`, `core.size.icon`, `core.focusRing` |
+| Elevation | Not present: no blurred shadow anywhere; surfaces are separated by 2px borders and zero-blur 3D lips | `core.shadow.lip` |
+| Motion | Captured: durations, easings, and what reduced motion turns off | `core.duration`, `core.easing`, `core.duration.reducedMotion` |
+| Layout | Captured: breakpoints, widths, columns at 1440, 1000 and 390, z-index | `core.breakpoint`, `core.size`, `core.layout.columns`, `core.zIndex` |
+| Button | Captured: default, hover, pressed (CSS), disabled, focus-visible (no ring, live); loading from CSS | [components/core.md](components/core.md#button-web-ui-juicy-3d-button) |
+| Icon button | Captured: default, focus-visible (live); hover from CSS | [components/core.md](components/core.md#icon-buttons-unstyled-and-framed) |
+| Link | Captured: default, focus-visible (live); hover from CSS | [components/core.md](components/core.md#links) |
+| Text field | Captured: default, focus (live, both passes); error and disabled from CSS (no submit) | [components/core.md](components/core.md#text-input-incl-password-with-eye-toggle-clearable) |
+| Text area | Not present: the only `<textarea>` in the app (the lesson report form) stays `display:none` | [raw/2026-10/copy-measurements.json](raw/2026-10/copy-measurements.json) |
+| Select | Captured: default, focus-visible (live); the open list is drawn by the OS | [components/core.md](components/core.md#select-native-select-behind-a-3d-face) |
+| Checkbox | Captured: square toggle (2026-09) and native checkboxes unchecked and checked in both themes (2026-10) | [lesson-light-report-form-checked](screenshots/lesson-light-report-form-checked.png) |
+| Radio | Captured: radio cards, selected, focus-visible (live) | [components/core.md](components/core.md#radio--selectable-card-web-ui-card-roleradio) |
+| Switch | Captured: on, off, focus-visible (live); it has no hover change | [components/core.md](components/core.md#toggle--switch) |
+| Tabs | Captured: three tab styles, selected and hover; focus not reached by keyboard | [components/core.md](components/core.md#tabs-underline-tabs-characters-page) |
+| Menu | Captured: MORE and courses menus, row hover; focus fill from CSS | [components/core.md](components/core.md#menu-more-menu-flyout-courses-menu) |
+| Tooltip | Captured | [components/core.md](components/core.md#tooltip-bubble-small-popover-eg-start--jump-here) |
+| Dialog | Captured: quit, notifications, invite, friend-streak, lesson report | [components/core.md](components/core.md#modal-centered-dialog), [learn-light-friend-streak-modal](screenshots/learn-light-friend-streak-modal.png) |
+| Toast | Not present: none appeared in either capture and the CSS has no toast class; confirmations swap a label in place | [components/core.md](components/core.md#toast--snackbar) |
+| Card | Captured | [components/core.md](components/core.md#cards-right-rail-cards-settings-side-cards-stat-tiles) |
+| List row | Captured: default, hover | [components/core.md](components/core.md#list-rows-courses-list-search-results-following-list-settings-rows) |
+| Table | Not present: rankings and lists are rows, not tables | |
+| Avatar | Captured | [components/core.md](components/core.md#avatar) |
+| Badge | Captured | [components/core.md](components/core.md#badges-and-pills) |
+| App shell and navigation | Captured at 1440, 1000 and 390 | [patterns.md](patterns.md#app-shell-and-navigation) |
+| Form with a validation error | Not captured: errors appear only after a submit, which a capture does not do; the error styling is from CSS | [patterns.md](patterns.md#forms-and-validation) |
+| Empty, loading and error states | Captured: empty and no-results search, the loader, Error 404; in-app error not reached | [patterns.md](patterns.md#empty-loading-and-error-states) |
+| Destructive confirmation | Captured: remove-course sheet, quit dialog | [patterns.md](patterns.md#destructive-confirmation) |
+| Feedback after an action | Captured: lesson verdict footer, celebrations; no toast exists | [patterns.md](patterns.md#feedback-after-an-action) |
+| Search and filtering | Search captured; filtering not present | [patterns.md](patterns.md#search-and-filtering) |
+| List or table | Captured: leaderboard, quests, profile tiles | [patterns.md](patterns.md#data-display) |
+| Onboarding | Captured logged out: course picker to start choice, both themes, 1440 and 390; sign-up steps not captured (they ask for an age, a name and an email) | [patterns.md](patterns.md#onboarding) |
+| Light and dark | Captured | every page in both themes except the 2026-09 gaps listed in [components.md](components.md#gaps) |
+| Desktop and phone widths | Captured: 1440 (refresh), 1200 and 1384 (2026-09), 1000, 390 (refresh) and 570 (2026-09) | `screenshots/*-tablet.png`, `*-phone.png`, `*-mobile.png` |
+
+Totals over 43 rows: 37 captured (a missing part is named in its row: the strong border, a code type role, filtering, the in-app error, the sign-up steps), 1 derived, 4 not present, 1 not captured. Two of those cannot be closed by a recapture: a validation error needs a submit, and the sign-up steps need personal details.
 
 ## Do and don't
 
@@ -36,6 +102,18 @@ The app uses `duolingo-sans` for all UI text (one variable upright file serving 
 ## Rebuild
 
 ```bash
+python3 tools/refresh_tokens_2026_10.py
+```
+
+```bash
+python3 tools/tokenize_specs.py
+```
+
+```bash
+python3 tools/build_focus_md.py
+```
+
+```bash
 python3 tools/build_style_guide.py
 ```
 
@@ -43,7 +121,9 @@ python3 tools/build_style_guide.py
 python3 tools/build_components_md.py
 ```
 
-`build_style_guide.py` renders the page from `tokens.json` and `tools/style-guide.template.html`. `build_components_md.py` assembles `components.md` from `components/*.json`, `components/*.md`, `icons.md`, `tokens-notes.md` and `raw/discovery.md`. The token builder read the full scratch inputs and is not shipped, so edit `tokens.json` directly and re-run the style-guide builder. `tools/capture/` holds the in-page extraction script (`extract.js`), the local sink that saved dumps to disk (`sink.py`), the window screenshot cropper (`shot.py`), a dump query helper (`q.py`) and the CSS parser (`parse_css.py`).
+The original token builder read the full scratch inputs and is not shipped, so `tokens.json` is the source of record. `refresh_tokens_2026_10.py` applies the 2026-10 additions to it, `tokenize_specs.py` puts the token in front of every colour in `components/*.md` and `components/*.json`, and `build_focus_md.py` writes `components/focus.md` from the focus log; all three change nothing when run again. `build_style_guide.py` renders the page from `tokens.json` and `tools/style-guide.template.html`. `build_components_md.py` assembles `components.md` from `components/*.json`, `components/*.md`, `icons.md`, `tokens-notes.md` and `raw/discovery.md`.
+
+`tools/capture/` holds both capture kits. The 2026-09 one: the in-page extraction script (`extract.js`), the local sink that saved dumps to disk (`sink.py`), the window screenshot cropper (`shot.py`), a dump query helper (`q.py`) and the CSS parser (`parse_css.py`). The 2026-10 one: `live-measure.js` (pasted into the signed-in page), `signed-in/` (snapshot, unsnap, render and `measure-copies.mjs`, adapted from the library kit by way of systems/linear), `onboarding.mjs` (the logged-out flow), `css_evidence.py` and `quantize.py`. The page copies, the downloaded stylesheets and the redaction file live in `~/.design-systems/`, outside the repository.
 
 ## Use in Figma
 
