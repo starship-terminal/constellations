@@ -66,7 +66,9 @@ DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
 
 
 def check(path, ty, val):
-    """Refuse a value that is not the DTCG type it claims."""
+    """Refuse a value that is not the DTCG type it claims. An alias is checked by the alias pass."""
+    if isinstance(val, str) and val.startswith("{"):
+        return
     if ty == "dimension" and not DIM.fullmatch(str(val)):
         raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
     if ty == "color":
@@ -108,7 +110,7 @@ def leaf(path, spec):
         src = spec["source"]
     if ty == "color" and not str(val).startswith("{"):
         val = norm_color(val)
-    if ty == "fontWeight" and isinstance(val, str) and val.isdigit():
+    if ty in ("fontWeight", "number") and isinstance(val, str) and val.isdigit():
         val = int(val)
     if ty == "dimension" and isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val):
         val += "px"

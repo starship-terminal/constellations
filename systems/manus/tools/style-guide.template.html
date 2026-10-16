@@ -256,18 +256,24 @@ table.t td.src { color: var(--text-tertiary); font-size: 12px; }
 <section class="s" id="intro">
   <h2 class="sh">Manus, measured</h2>
   <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: Manus's own two palettes (<code>:root</code> for light, <code>.dark</code> for dark, in one stylesheet), its <code>--ui-*</code> type and density scale, and a handful of measured layout numbers. The toggle in the header flips the <code>dark</code> class on <code>&lt;html&gt;</code>, which is exactly how Manus switches. Component drawings below are rebuilt from the tokens, not screenshots; the real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from manus.im/app on 2026-10-04, signed in, through static copies of each page. The system font stack is what Manus ships for UI text; the serif is Libre Baskerville (self-hosted by Manus, loaded here from Google Fonts), used for the home prompt, the wordmark, the share banner and document titles.</p>
+  <p class="note">Read from manus.im/app on 2026-10-04 and refreshed on 2026-10-17 (settings forms, table, menus, dialogs and the foundation values kept in utility classes), signed in, through static copies of each page. The system font stack is what Manus ships for UI text; the serif is Libre Baskerville (self-hosted by Manus, loaded here from Google Fonts), used for the home prompt, the wordmark, the share banner and document titles.</p>
 </section>
 
 <section class="s" id="roles">
   <h2 class="sh">Colour</h2>
   <p class="lead">Manus names colours by role, not by hue: <code>text</code>, <code>icon</code>, <code>background</code>, <code>border</code>, <code>fill</code> (the translucent hover and chip fills, <code>tsp</code> for transparent), <code>function</code> (status), <code>Button</code>, <code>tab</code>, <code>shadow</code>, plus the <code>accent</code> palettes a user can choose in the desktop app. Each swatch shows the active theme's value; flip the header toggle to compare.</p>
   <div id="roles-out"></div>
+  <h3 class="sub">Ramps</h3>
+  <p class="note">Manus declares no ramps. These are assembled from the values its variables hold (Derived): the greys at least two variables share, and each accent palette, lightest to darkest.</p>
+  <div id="ramps-out"></div>
 </section>
 
 <section class="s" id="type">
   <h2 class="sh">Typography</h2>
   <p class="lead">One system sans for the interface, a serif for display moments, a mono for code. The scale is Manus's <code>--ui-font-size-*</code> / <code>--ui-line-height-*</code> pairs; <code>body-sm</code> (14/22) is what desktop chat text and the composer use.</p>
+  <h3 class="sub">Roles</h3>
+  <div id="typerole-out"></div>
+  <h3 class="sub">Scale</h3>
   <div id="type-out"></div>
   <h3 class="sub">Families</h3>
   <div class="typerow"><div class="k">fontFamily.sans<small>system stack</small></div><div class="sample" style="font: 400 20px/28px var(--fontFamily-sans)">Assign a task or type / for more</div></div>
@@ -279,13 +285,19 @@ table.t td.src { color: var(--text-tertiary); font-size: 12px; }
   <h2 class="sh">Density, space and shape</h2>
   <p class="lead">Manus drives spacing through its <code>--ui-density-*</code> variables rather than a plain spacing scale: row heights, radii, paddings and gaps that the sidebar, menus, chat and composer all read. The desktop app's Compact setting rewrites them (shown as the second value).</p>
   <div id="density-out"></div>
+  <h3 class="sub">Space</h3>
+  <div id="space-out"></div>
   <h3 class="sub">Radius</h3>
   <div class="boxes" id="radius-out"></div>
+  <h3 class="sub">Border width and focus ring</h3>
+  <div class="boxes" id="border-out"></div>
 </section>
 
 <section class="s" id="elevation">
   <h2 class="sh">Elevation</h2>
-  <p class="lead">Manus keeps shadows faint and leans on borders and fills: <code>shadow.XS/S/M/L</code> are the colours its utilities compose, the <code>shadows-drop-*</code> and <code>shadows-inner-*</code> set is a second, newer scale used by the activity indicator and cards.</p>
+  <p class="lead">Six levels, each where Manus uses it. Three are Manus's own named utilities (<code>shadow-card</code>, <code>shadow-layer</code>, <code>shadow-menu</code>); menus, popovers and every dialog share <code>menu</code>. Shadows stay faint in light and a white highlight ring appears in dark. <code>shadow.XS/S/M/L</code> are the colours the levels compose; <code>shadows-drop-*</code> is a second scale used by the activity indicator.</p>
+  <div class="shadow-grid" id="elev-out"></div>
+  <h3 class="sub">Shadow colours</h3>
   <div class="shadow-grid" id="shadow-out"></div>
 </section>
 
@@ -293,6 +305,7 @@ table.t td.src { color: var(--text-tertiary); font-size: 12px; }
   <h2 class="sh">Motion</h2>
   <p class="lead">Short and standard: the sidebar slides in 200 ms, resizes ease out over 300 ms with a spring-like curve, theme changes cross-fade over 500 ms. Click a track to play it.</p>
   <div class="motion-rows" id="motion-out"></div>
+  <p class="note">Reduced motion: every animation and hover lift is written as a <code>motion-safe:</code> variant, so none of them run when the system asks for reduced motion; <code>motion-reduce:</code> variants hide marquees and stop transforms, and the resize transition is cut to none. Colour transitions (150 ms) stay.</p>
 </section>
 
 <section class="s" id="layout">
@@ -305,6 +318,7 @@ table.t td.src { color: var(--text-tertiary); font-size: 12px; }
     <div class="r card" style="left:34%;top:48px;width:52%;height:150px">content ≤ 800<br><span class="dim">thread, cards, lists</span></div>
     <div class="r card" style="left:34%;top:214px;width:52%;height:64px;border-radius:14px">composer · radius 22</div>
   </div></div>
+  <div id="z-out"></div>
   <p class="note">The split view on a task page opens a second column to the right (Files, Slides, Canvas, Video tabs) and narrows the thread to its minimum 360 px.</p>
 </section>
 
@@ -438,7 +452,7 @@ $('#theme').addEventListener('change', (e) => { document.documentElement.classLi
 
 function roles() {
   const set = TOK[theme()];
-  const groups = ['text', 'icon', 'background', 'border', 'fill', 'function', 'button', 'tab', 'shadow', 'gradient', 'overlay', 'ansi', 'brand', 'activity-indicator', 'illustration', 'game', 'accent'];
+  const groups = ['role', 'text', 'icon', 'background', 'border', 'fill', 'function', 'button', 'tab', 'shadow', 'gradient', 'overlay', 'ansi', 'brand', 'activity-indicator', 'illustration', 'game', 'accent'];
   let h = '';
   for (const g of groups) {
     if (!set[g]) continue;
@@ -458,10 +472,45 @@ roles();
 (function type() {
   let h = '';
   for (const [n, t] of flat(TOK.core.typography, 'typography.')) {
+    if (n.startsWith('typography.role.')) continue;
     const fs = TOK.core.fontSize[n.split('.')[1]].v, lh = TOK.core.lineHeight[n.split('.')[1]].v;
     h += `<div class="typerow"><div class="k">${esc(n)}<small>${fs} / ${lh} · ${esc(t.v.fontWeight.replace(/[{}]/g, ''))}</small></div><div class="sample" style="font:var(${cssname(n)})">The quick brown fox jumps over the lazy dog</div></div>`;
   }
   $('#type-out').innerHTML = h;
+})();
+
+(function typeRoles() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography.role, 'typography.role.')) {
+    h += `<div class="typerow"><div class="k">${esc(n.replace('typography.role.', ''))}<small>${esc(String(t.v.fontSize).replace(/[{}]/g, ''))} / ${esc(String(t.v.lineHeight).replace(/[{}]/g, ''))} · ${esc(String(t.v.fontWeight).replace(/[{}]/g, ''))}</small></div><div class="sample" style="font:var(${cssname(n)})">Are you sure to delete this API key?</div></div>`;
+  }
+  $('#typerole-out').innerHTML = h;
+})();
+
+(function ramps() {
+  let h = '';
+  for (const [hue, steps] of Object.entries(TOK.core.palette)) {
+    h += `<div class="pal-h">${esc(hue)}</div><div class="pal">`;
+    for (const [k, t] of Object.entries(steps)) h += `<div class="sw"><span class="dot"><i style="background:${t.v}"></i></span><div><div class="nm">${esc(hue + '.' + k)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#ramps-out').innerHTML = h;
+})();
+
+(function space() {
+  let h = '<div class="bars">';
+  for (const [n, t] of flat(TOK.core.space, 'space.')) h += `<div class="b"><span>${esc(n)} <b>${t.v}</b></span><i style="width:${Math.min(100, parseFloat(t.v) * 3)}%"></i></div>`;
+  $('#space-out').innerHTML = h + '</div>';
+  let b = '';
+  for (const [n, t] of flat(TOK.core.borderWidth, 'borderWidth.')) b += `<div class="bx" style="border:${t.v} solid var(--border-dark)">${esc(n.replace("borderWidth.", ""))} ${t.v}</div>`;
+  b += `<div class="bx" style="outline:var(--focusRing-width) solid var(--text-blue);outline-offset:var(--focusRing-offset)">focusRing 2px, offset 2px</div>`;
+  b += `<div class="bx" style="box-shadow:0 0 0 var(--focusRing-input-width) var(--border-dark)">field ring 1px</div>`;
+  $('#border-out').innerHTML = b;
+})();
+
+(function layers() {
+  const z = TOK.core.zIndex;
+  $('#z-out').innerHTML = '<p class="note">z-index: ' + Object.entries(z).map(([k, t]) => `<code>${esc(k)} ${t.v}</code>`).join(' · ') + '. Dialogs, menus and popovers carry none; they stack in the order their portals mount.</p>';
 })();
 
 (function density() {
@@ -485,6 +534,9 @@ roles();
   for (const [n, geom] of pairs) h += `<div><div class="box" style="box-shadow:${geom} var(${cssname(n)})"></div><div class="nm" style="font:600 12px/1.3 var(--fontFamily-mono)">${n}</div><div class="cap">${geom} · colour from the set</div></div>`;
   for (const n of ['shadow.drop-1', 'shadow.drop-2', 'shadow.drop-3', 'shadow.drop-4']) h += `<div><div class="box" style="box-shadow:0 2px 8px var(${cssname(n)})"></div><div class="nm" style="font:600 12px/1.3 var(--fontFamily-mono)">${n}</div><div class="cap">drop scale</div></div>`;
   $('#shadow-out').innerHTML = h;
+  let e = '';
+  for (const [n, t] of flat(set.elevation, 'elevation.')) e += `<div><div class="box" style="box-shadow:var(${cssname(n)})"></div><div class="nm" style="font:600 12px/1.3 var(--fontFamily-mono)">${esc(n)}</div><div class="cap">${esc(t.s.replace(/^Measured: /, '').split(';')[0].slice(0, 90))}</div></div>`;
+  $('#elev-out').innerHTML = e;
 })();
 
 (function motion() {

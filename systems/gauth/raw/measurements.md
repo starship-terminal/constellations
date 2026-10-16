@@ -1,6 +1,6 @@
 # Gauth component measurements
 
-Computed styles read from www.gauth.com on 2026-10-04 by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from www.gauth.com on 2026-10-17 by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -346,10 +346,10 @@ Page: atlas. Selector: `[class*="user-cases_exploreButton__"] parent`. States: d
 | Font | -apple-system 16px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | xg-icon.xgplayer-time.xg-time-right: -apple-system 14px/36px 400, #ffffff |
+| Text node | span.xgplayer-error-text: -apple-system 20px/30px 600, #ffffff |
 | Transition | none |
 | Icon | 32 x 32, colour #000000 |
-| Painted layers | div.user-cases_playerFrame 960.0x540.0 bg #000000 r 18px shadow #000000 @ 0.48 0px 28px 80px 0px; div.user-cases_player.browser_videoWrapper 960.0x540.0 bg #000000; video 960.0x540.0 bg #000000; xg-prompt.xgplayer-prompt.controls-follow 24.0x11.0 bg #000000 @ 0.5 r 50px; xg-loading.xgplayer-loading 0.0x0.0 bg #3e424b r 20px; xg-start-inner 83.5x83.5 bg #000000 @ 0.38 r 50% |
+| Painted layers | div.user-cases_playerFrame 960.0x540.0 bg #000000 r 18px shadow #000000 @ 0.48 0px 28px 80px 0px; div.user-cases_player.browser_videoWrapper 960.0x540.0 bg #000000; video 960.0x540.0 bg #000000; xg-prompt.xgplayer-prompt.controls-follow 24.0x11.0 bg #000000 @ 0.5 r 50px; xg-loading.xgplayer-loading 0.0x0.0 bg #3e424b r 20px; xg-start-inner 0.0x0.0 bg #000000 @ 0.38 r 50% |
 | How | at rest |
 
 Crops: `story-preview-default.png`.
@@ -436,6 +436,421 @@ Page: lesson-math. Selector: `button "Continue"`. States: default, hover, focus-
 | Transform | - | = | = | matrix(0.98, 0, 0, 0.98, 0, 0) |
 
 Crops: `continue-button-default.png`, `continue-button-hover.png`, `continue-button-focus-visible.png`, `continue-button-pressed.png`.
+
+#### signin-dialog
+
+Sign in dialog. A 460px white sheet over a dark scrim: a 36px bold "Welcome", a grey line with a red Sign up link, three outlined social buttons, an OR rule, an email field and a full-width Sign in button in the brand red, pale while disabled. Opened and closed; nothing was submitted.
+
+Page: home. Selector: `[class*="modal-container_modal-context__"]`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 460 x 559.8 |
+| Padding | 0px |
+| Border | none |
+| Radius | 24px |
+| Background | #ffffff |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | div.pc-login-modal-view_account-title: -apple-system 36px/46.8px 600, #000000 |
+| Transition | none |
+| Icon | 28 x 28, colour #21252e |
+| Painted layers | div.modal-container_modal-context 460.0x559.8 bg #ffffff r 24px; div.third-auth_facebook 400.0x40.0 border T:1px solid #dadce0 / R:1px solid #dadce0 / B:1px solid #dadce0 / L:1px solid #dadce0 r 20px; div.third-auth_apple 400.0x40.0 border T:1px solid #dadce0 / R:1px solid #dadce0 / B:1px solid #dadce0 / L:1px solid #dadce0 r 20px; div::before.pc-login-modal-view_account-split-line 170pxx1.5px bg #edeef1; div::after.pc-login-modal-view_account-split-line 170pxx1.5px bg #edeef1; div.pc-login-modal-view_login-input.form_form-item 400.0x48.0 bg #f5f5f7 border T:1px solid #edeef1 / R:1px solid #edeef1 / B:1px solid #edeef1 / L:1px solid #edeef1 r 12px |
+| Ancestor paint | 1 up div.modal-container_modal-container bg #1f232b @ 0.7 |
+| How | at rest |
+
+Crops: `signin-dialog-default.png`.
+
+#### signin-scrim
+
+Dialog scrim. The full-window layer behind Gauth's own dialogs.
+
+Page: home. Selector: `[class*="modal-container_modal-container__"]`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1440 x 900 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | #1f232b @ 0.7 |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | div.pc-login-modal-view_account-title: -apple-system 36px/46.8px 600, #000000 |
+| Transition | none |
+| Icon | 28 x 28, colour #21252e |
+| Painted layers | div.modal-container_modal-container 1440.0x900.0 bg #1f232b @ 0.7; div.modal-container_modal-context 460.0x559.8 bg #ffffff r 24px; div.third-auth_facebook 400.0x40.0 border T:1px solid #dadce0 / R:1px solid #dadce0 / B:1px solid #dadce0 / L:1px solid #dadce0 r 20px; div.third-auth_apple 400.0x40.0 border T:1px solid #dadce0 / R:1px solid #dadce0 / B:1px solid #dadce0 / L:1px solid #dadce0 r 20px; div::before.pc-login-modal-view_account-split-line 170pxx1.5px bg #edeef1; div::after.pc-login-modal-view_account-split-line 170pxx1.5px bg #edeef1 |
+| Ancestor paint | 1 up body.disable-scroll bg #ffffff |
+| How | at rest |
+
+Crops: none.
+
+#### signin-social
+
+Social sign-in button. A 400 x 54 outlined pill: 1px border, radius 9999, a brand mark and a 16px label. Hovered only.
+
+Page: home. Selector: `[class*="third-auth_facebook__"]`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 400 x 40 | = |
+| Padding | 0px | = |
+| Border | 1px solid #dadce0 | 1px solid #d2e3fc |
+| Radius | 20px | = |
+| Background | transparent | #4285f4 @ 0.04 |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 14px/21px 500 | = |
+| Letter spacing | normal | = |
+| Colour | #000000 | = |
+| Transition | none | = |
+| Cursor | pointer | = |
+| Icon | 20 x 20, colour #000000 | = |
+| Painted layers | div.third-auth_facebook 400.0x40.0 border T:1px solid #dadce0 / R:1px solid #dadce0 / B:1px solid #dadce0 / L:1px solid #dadce0 r 20px | div.third-auth_facebook 400.0x40.0 bg #4285f4 @ 0.04 border T:1px solid #d2e3fc / R:1px solid #d2e3fc / B:1px solid #d2e3fc / L:1px solid #d2e3fc r 20px |
+| How | at rest | mouse hover |
+
+Crops: `signin-social-default.png`, `signin-social-hover.png`.
+
+#### signin-email
+
+Email field. A 400 x 48 grey field, radius 12, a mail icon and a clear button once text is typed. A throwaway string was typed and deleted; Gauth shows no inline error on blur, it only keeps Sign in disabled.
+
+Page: home. Selector: `[class*="pc-login-modal-view_login-input__"]`. States: default, hover, focused, filled.
+
+| Property | default | hover | focused | filled |
+|---|---|---|---|---|
+| Size (w x h) | 400 x 48 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | 1px solid #edeef1 | = | 1px solid #8e8e93 | 1px solid #8e8e93 |
+| Radius | 12px | = | = | = |
+| Background | #f5f5f7 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 16px/normal 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #000000 | = | = | = |
+| Transition | none | = | = | = |
+| Icon | 24 x 25, colour #000000 | = | = | = |
+| Painted layers | div.pc-login-modal-view_login-input.form_form-item 400.0x48.0 bg #f5f5f7 border T:1px solid #edeef1 / R:1px solid #edeef1 / B:1px solid #edeef1 / L:1px solid #edeef1 r 12px; input 334.0x46.0 bg #f5f5f7 | = | div.pc-login-modal-view_login-input.form_form-item 400.0x48.0 bg #f5f5f7 border T:1px solid #8e8e93 / R:1px solid #8e8e93 / B:1px solid #8e8e93 / L:1px solid #8e8e93 r 12px; input 334.0x46.0 bg #f5f5f7 | div.pc-login-modal-view_login-input.form_form-item 400.0x48.0 bg #f5f5f7 border T:1px solid #8e8e93 / R:1px solid #8e8e93 / B:1px solid #8e8e93 / L:1px solid #8e8e93 r 12px; input 313.0x46.0 bg #f5f5f7 |
+| How | at rest | mouse hover | clicked into the field | typed "abc", then deleted; nothing sent |
+
+Crops: `signin-email-default.png`, `signin-email-hover.png`, `signin-email-focused.png`, `signin-email-filled.png`.
+
+#### signin-submit
+
+Primary button, disabled (Sign in). The dialog's Sign in button while the email field is empty: Gauth's button_btn-primary in its disabled skin (button_btn-disabled). Never pressed.
+
+Page: home. Selector: `[class*="pc-login-modal-view_account-btn__"]`. States: disabled, hover.
+
+| Property | disabled | hover |
+|---|---|---|
+| Size (w x h) | 400 x 54 | = |
+| Padding | 0px | = |
+| Border | 1px solid #000000 @ 0 | = |
+| Radius | 14px | = |
+| Background | #ffccd8 | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 18px/48px 600 | = |
+| Letter spacing | normal | = |
+| Colour | #ffffff | = |
+| Text node | span: -apple-system 18px/48px 600, #ffffff | = |
+| Transition | none | = |
+| Cursor | not-allowed | = |
+| Painted layers | button.button_btn.button_btn-full 400.0x54.0 bg #ffccd8 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 14px | = |
+| How | empty field; classes button_btn-primary-default-disabled button_btn-disabled | mouse hover |
+
+Crops: `signin-submit-disabled.png`, `signin-submit-hover.png`.
+
+#### signup-link
+
+Inline link (Sign up). A red text link inside a grey line. Hovered only.
+
+Page: home. Selector: `[data-e2e="auth-open-signup"]`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 49.69 x 17 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 14px/21px 500 | = |
+| Letter spacing | normal | = |
+| Colour | #f00039 | = |
+| Transition | none | = |
+| Cursor | pointer | = |
+| How | at rest | mouse hover |
+
+Crops: `signup-link-default.png`, `signup-link-hover.png`.
+
+#### terms-link
+
+Inline link (Terms of Service). A darker, medium-weight link inside the 14px grey terms line.
+
+Page: home. Selector: `[class*="pc-login-modal-view_account-desc__"] a`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 97.09 x 15 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 12px/18px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #646a77 | #2e5ce5 | = |
+| Transition | none | = | outline-offset, outline 0s, 0s ease, ease delay 0s, 0s |
+| Cursor | pointer | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `terms-link-default.png`, `terms-link-hover.png`, `terms-link-focus-visible.png`.
+
+#### modal-close
+
+Dialog close button (Gauth).
+
+Page: home. Selector: `[class*="modal-container_modal-close__"]`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 28 x 28 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 16px/normal 600 | = |
+| Letter spacing | normal | = |
+| Colour | #21252e | = |
+| Transition | none | = |
+| Cursor | pointer | = |
+| Icon | 28 x 28, colour #21252e | = |
+| How | at rest | mouse hover |
+
+Crops: `modal-close-default.png`, `modal-close-hover.png`.
+
+#### plus-dialog
+
+Gauth PLUS dialog. A 1060 x 580 two-panel dialog: a warm gradient panel with an italic title and the benefits table at the left, the email field, three plan cards and a dark Join button at the right. Opened and closed; nothing chosen or bought.
+
+Page: home. Selector: `[class*="new-subscription-modal_new-subscription-modal__"]`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1060 x 580 |
+| Padding | 0px |
+| Border | none |
+| Radius | 20px |
+| Background | #ffffff |
+| Box shadow | none |
+| Outline | none |
+| Font | SF Pro 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #21252e |
+| Text node | div.text-component_h6-bold.subscription-modal-parts_title-gauth: -apple-system 30px/39px 900, #322211 |
+| Transition | none |
+| Icon | 119 x 196, colour #21252e |
+| Painted layers | div.new-subscription-modal_new-subscription-modal 1060.0x580.0 bg #ffffff r 20px; div.subscription-modal-parts_horizontal-sku-wrap.subscription-modal-parts_horizontal-sku-wrap-new 540.0x580.0 image linear-gradient(124.58deg, #ffe1dc -33.04%, #fff0d2 57.15%, #ffeac0 130.5%) r 20px 0px 0px 20px; div.subscription-modal-parts_desc-table.subscription-modal-parts_desc-table-new 460.0x347.0 image linear-gradient(107.49deg, #ffc46a @ 0.3 -2.04%, #ffc46a @ 0.15 69.72%) border T:2px solid #ffb94d / R:2px solid #ffb94d / B:2px solid #ffb94d / L:2px solid #ffb94d r 20px; div.subscription-modal-parts_desc-table-header 416.0x41.0 border B:1px solid #ffc46a @ 0.5; div.new-subscription-modal_new-right 520.0x580.0 bg #ffffff; div.subscription-modal-parts_email-input-inline-shell 420.0x48.0 bg #f5f5f7 r 16px shadow #edeef1 0px 0px 0px 1px inset |
+| Ancestor paint | 1 up div.modal-container_modal-context bg #ffffff |
+| How | at rest |
+
+Crops: `plus-dialog-default.png`.
+
+#### benefits-table
+
+Table (benefits). A three-column comparison inside a 2px gold-bordered card at radius 24: a 600 header row (All Benefits, Gauth PLUS in gold, Free), then 24px rows split into label, a green check or value, and a grey dash.
+
+Page: home. Selector: `[class*="subscription-modal-parts_desc-table__"]`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 460 x 347 |
+| Padding | 22px 20px |
+| Border | 2px solid #ffb94d |
+| Radius | 20px |
+| Background | transparent |
+| Background image | linear-gradient(107.49deg, #ffc46a @ 0.3 -2.04%, #ffc46a @ 0.15 69.72%) |
+| Box shadow | none |
+| Outline | none |
+| Font | SF Pro 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #21252e |
+| Text node | span.subscription-modal-parts_desc-table-header-title: SF Pro 16px/24px 700, #21252e |
+| Transition | none |
+| Icon | 41 x 35, colour #21252e |
+| Painted layers | div.subscription-modal-parts_desc-table.subscription-modal-parts_desc-table-new 460.0x347.0 image linear-gradient(107.49deg, #ffc46a @ 0.3 -2.04%, #ffc46a @ 0.15 69.72%) border T:2px solid #ffb94d / R:2px solid #ffb94d / B:2px solid #ffb94d / L:2px solid #ffb94d r 20px; div.subscription-modal-parts_desc-table-header 416.0x41.0 border B:1px solid #ffc46a @ 0.5 |
+| How | at rest |
+
+Crops: `benefits-table-default.png`.
+
+#### benefits-row
+
+Table row (benefits).
+
+Page: home. Selector: `[class*="subscription-modal-parts_desc-table-content-row__"]`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 416 x 24 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | SF Pro 16px/24px 500 |
+| Letter spacing | normal |
+| Colour | #3d2b09 |
+| Text node | span.subscription-modal-parts_desc-table-content-row-label: SF Pro 16px/24px 500, #3d2b09 |
+| Transition | none |
+| Icon | 18 x 18, colour #3d2b09 |
+| How | at rest |
+
+Crops: `benefits-row-default.png`.
+
+#### plan-card
+
+Plan card (single choice). One of three 147 x 160 cards that behave as a single-choice group: 2px border, radius 16, a grey 20px period, a bold price. Hovered, focused and pressed by DevTools only, so the choice never changed.
+
+Page: home. Selector: `[class*="new-subscription-modal_plus-sku-card__"]`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 146.67 x 160 | = | = | = |
+| Padding | 30px 12px 16px 12px | = | = | = |
+| Border | 3px solid #e4e6eb | 3px solid #d7dbe3 | = | 3px solid #d7dbe3 |
+| Radius | 16px | = | = | = |
+| Background | #ffffff | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Arial 13.3333px/normal 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #000000 | = | = | = |
+| Text node | span.new-subscription-modal_plus-sku-title: Arial 18px/25.2px 590, #757c88 | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.new-subscription-modal_plus-sku-card 146.7x160.0 bg #ffffff border T:3px solid #e4e6eb / R:3px solid #e4e6eb / B:3px solid #e4e6eb / L:3px solid #e4e6eb r 16px | button.new-subscription-modal_plus-sku-card 146.7x160.0 bg #ffffff border T:3px solid #d7dbe3 / R:3px solid #d7dbe3 / B:3px solid #d7dbe3 / L:3px solid #d7dbe3 r 16px | = | button.new-subscription-modal_plus-sku-card 146.7x160.0 bg #ffffff border T:3px solid #d7dbe3 / R:3px solid #d7dbe3 / B:3px solid #d7dbe3 / L:3px solid #d7dbe3 r 16px |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+
+Crops: `plan-card-default.png`, `plan-card-hover.png`, `plan-card-focus-visible.png`, `plan-card-pressed.png`.
+
+#### plan-card-selected
+
+Plan card, selected. The preselected 12 Months card: a gold border and a gold corner tag.
+
+Page: home. Selector: `[class*="new-subscription-modal_plus-sku-card-active__"]`. States: selected.
+
+| Property | selected |
+|---|---|
+| Size (w x h) | 146.67 x 160 |
+| Padding | 30px 12px 16px 12px |
+| Border | 3px solid #d38906 |
+| Radius | 16px |
+| Background | #ffffff |
+| Box shadow | none |
+| Outline | none |
+| Font | Arial 13.3333px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | span.new-subscription-modal_sku-badge.new-subscription-modal_sku-badge-active: Arial 12px/16.8px 700, #ffffff |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | button.new-subscription-modal_plus-sku-card.new-subscription-modal_plus-sku-card-active 146.7x160.0 bg #ffffff border T:3px solid #d38906 / R:3px solid #d38906 / B:3px solid #d38906 / L:3px solid #d38906 r 16px; span.new-subscription-modal_sku-badge.new-subscription-modal_sku-badge-active 50.0x21.0 bg #d38906 r 0px 16px 0px 10px |
+| How | preselected by Gauth |
+
+Crops: `plan-card-selected-selected.png`.
+
+#### plan-tag
+
+Badge (plan tag). The gold tag on a plan card's top edge.
+
+Page: home. Selector: `plan card tag`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 50 x 21 |
+| Padding | 2px 8px |
+| Border | none |
+| Radius | 0px 16px 0px 10px |
+| Background | #d38906 |
+| Box shadow | none |
+| Outline | none |
+| Font | Arial 12px/16.8px 700 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | span.new-subscription-modal_sku-badge.new-subscription-modal_sku-badge-active 50.0x21.0 bg #d38906 r 0px 16px 0px 10px |
+| Ancestor paint | 1 up button.new-subscription-modal_plus-sku-card.new-subscription-modal_plus-sku-card-active bg #ffffff |
+| How | at rest |
+
+Crops: `plan-tag-default.png`.
+
+#### join-button
+
+Join Gauth PLUS button. A dark brown full-width pill with gold text and an arrow. Hovered only; never pressed.
+
+Page: home. Selector: `button "Join Gauth PLUS Now"`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 460 x 48 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 14px | = |
+| Background | #322211 | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 16px/48px 600 | = |
+| Letter spacing | normal | = |
+| Colour | #ffffff | = |
+| Text node | span.new-subscription-modal_new-primary-button-content: -apple-system 16px/22.4px 590, #ffc46a | = |
+| Transition | none | = |
+| Cursor | not-allowed | = |
+| Icon | 18 x 18, colour #ffc46a | = |
+| Painted layers | button.button_btn.button_btn-full 460.0x48.0 bg #322211 r 14px | = |
+| Ancestor paint | 1 up footer.new-subscription-modal_new-footer bg #ffffff | = |
+| How | at rest | mouse hover |
+
+Crops: `join-button-default.png`, `join-button-hover.png`.
+
+#### plus-email
+
+Email field (PLUS dialog). Not typed into.
+
+Page: home. Selector: `[class*="subscription-modal-parts_email-input-inline-shell__"]`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 420 x 48 | = |
+| Padding | 12px 10px 12px 16px | = |
+| Gap | 8px | = |
+| Border | none | = |
+| Radius | 16px | = |
+| Background | #f5f5f7 | = |
+| Box shadow | #edeef1 0px 0px 0px 1px inset | = |
+| Outline | none | = |
+| Font | SF Pro 16px/normal 400 | = |
+| Letter spacing | normal | = |
+| Colour | #21252e | = |
+| Transition | none | = |
+| Icon | 24 x 24, colour #9ca2ac | = |
+| Painted layers | div.subscription-modal-parts_email-input-inline-shell 420.0x48.0 bg #f5f5f7 r 16px shadow #edeef1 0px 0px 0px 1px inset; input.ant-input.ant-input-lg 362.0x40.0 bg #f4f5f8 r 12px | = |
+| How | at rest | mouse hover |
+
+Crops: `plus-email-default.png`, `plus-email-hover.png`.
 
 ### Shell and navigation
 
@@ -1204,6 +1619,207 @@ Page: home. Selector: `[class*="pc-footer-view_footer-wrap__"]`. States: default
 | How | at rest |
 
 Crops: `footer-default.png`.
+
+#### language-select
+
+Select (language). The footer's language picker: an Ant Design select drawn as a blue underlined value and a chevron after a grey "Language" label.
+
+Page: home. Selector: `[class*="styles_select__"] .ant-select`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 61.56 x 40 | = | = |
+| Padding | 4px 11px | = | = |
+| Border | 1px solid #d9d9d9 | 1px solid #4096ff | 1px solid #1677ff |
+| Radius | 6px | = | = |
+| Background | #ffffff | = | = |
+| Box shadow | none | = | #0591ff @ 0.1 0px 0px 0px 2px |
+| Outline | none | = | = |
+| Font | -apple-system 14px/22px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #000000 @ 0.88 | = | = |
+| Text node | div.ant-select-content.ant-select-content-has-value: -apple-system 14px/22px 400, #000000 @ 0.88 | = | = |
+| Transition | all 0.3s ease | = | = |
+| Cursor | pointer | = | = |
+| Icon | 14 x 14, colour #000000 @ 0.25 | = | = |
+| Painted layers | div.ant-select.ant-select-outlined 61.6x40.0 bg #ffffff border T:1px solid #d9d9d9 / R:1px solid #d9d9d9 / B:1px solid #d9d9d9 / L:1px solid #d9d9d9 r 6px | div.ant-select.ant-select-outlined 61.6x40.0 bg #ffffff border T:1px solid #4096ff / R:1px solid #4096ff / B:1px solid #4096ff / L:1px solid #4096ff r 6px | div.ant-select.ant-select-outlined 61.6x40.0 bg #ffffff border T:1px solid #1677ff / R:1px solid #1677ff / B:1px solid #1677ff / L:1px solid #1677ff r 6px shadow #0591ff @ 0.1 0px 0px 0px 2px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `language-select-default.png`, `language-select-hover.png`, `language-select-focus-visible.png`.
+
+#### language-list
+
+Select list (language). The list the select opens upward: a 182px white popup, radius 8, a soft three-layer shadow, 16px rows, the current one on a grey fill. Opened and closed; no language chosen.
+
+Page: home. Selector: `.ant-select-dropdown`. States: opened.
+
+| Property | opened |
+|---|---|
+| Size (w x h) | 182 x 638 |
+| Padding | 4px |
+| Border | none |
+| Radius | 12px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0.08 0px 6px 16px 0px, #000000 @ 0.12 0px 3px 6px -4px, #000000 @ 0.05 0px 9px 28px 8px |
+| Outline | none |
+| Font | -apple-system 14px/22px 400 |
+| Letter spacing | normal |
+| Colour | #000000 @ 0.88 |
+| Text node | div.ant-select-item-option-content: -apple-system 14px/40px 600, #000000 @ 0.88 |
+| Transition | none |
+| Painted layers | div.ant-select-dropdown.select_s-popup 182.0x638.0 bg #ffffff r 12px shadow #000000 @ 0.08 0px 6px 16px 0px, #000000 @ 0.12 0px 3px 6px -4px, #000000 @ 0.05 0px 9px 28px 8px; div.ant-select-item.ant-select-item-option 174.0x40.0 bg #edeef1 r 8px; div.rc-virtual-list-scrollbar-thumb 8.0x551.0 bg #000000 @ 0.5 r 99px |
+| How | clicked the select (opens its list) |
+
+Crops: `language-list-opened.png`.
+
+#### language-option-selected
+
+Select option, current.
+
+Page: home. Selector: `.ant-select-item-option-selected`. States: selected.
+
+| Property | selected |
+|---|---|
+| Size (w x h) | 174 x 40 |
+| Padding | 5px 12px |
+| Border | none |
+| Radius | 8px |
+| Background | #edeef1 |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 14px/40px 600 |
+| Letter spacing | normal |
+| Colour | #000000 @ 0.88 |
+| Text node | div.ant-select-item-option-content: -apple-system 14px/40px 600, #000000 @ 0.88 |
+| Transition | background-color 0.3s ease |
+| Cursor | pointer |
+| Painted layers | div.ant-select-item.ant-select-item-option 174.0x40.0 bg #edeef1 r 8px |
+| How | current language |
+
+Crops: `language-option-selected-selected.png`.
+
+#### language-option
+
+Select option. Hovered only.
+
+Page: home. Selector: `.ant-select-item-option`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 174 x 40 | = |
+| Padding | 5px 12px | = |
+| Border | none | = |
+| Radius | 8px | = |
+| Background | transparent | #000000 @ 0.04 |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 14px/40px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #000000 @ 0.88 | = |
+| Text node | div.ant-select-item-option-content: -apple-system 14px/40px 400, #000000 @ 0.88 | = |
+| Transition | background-color 0.3s ease | = |
+| Cursor | pointer | = |
+| How | at rest | mouse hover |
+| Painted layers | - | div.ant-select-item.ant-select-item-option 174.0x40.0 bg #000000 @ 0.04 r 8px |
+
+Crops: `language-option-default.png`, `language-option-hover.png`.
+
+#### inline-link
+
+Inline link (Learn More). The blue link closing the honor-code line above the footer. Hovered and focused, never followed.
+
+Page: home. Selector: `a "Learn More"`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 82.53 x 18 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #2e5ce5 | #757c88 | = |
+| Transition | none | = | outline-offset, outline 0s, 0s ease, ease delay 0s, 0s |
+| Cursor | pointer | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `inline-link-default.png`, `inline-link-hover.png`, `inline-link-focus-visible.png`.
+
+#### footer-link
+
+Footer link.
+
+Page: home. Selector: `[class*="pc-footer-view_footer-wrap__"] a`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 113.22 x 21 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 14px/21px 400 | = | = |
+| Letter spacing | 0.094px | = | = |
+| Colour | #21252e | #2e5ce5 | = |
+| Transition | none | = | outline-offset, outline 0s, 0s ease, ease delay 0s, 0s |
+| Cursor | pointer | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`.
+
+#### review-avatar
+
+Avatar (review). A reviewer's 40px picture beside their name and star rating; Gauth uses mascot illustrations, square, with no radius or ring.
+
+Page: home. Selector: `review card image`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 40 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Transition | none |
+| How | at rest |
+
+Crops: `review-avatar-default.png`.
+
+#### review-card
+
+Review card. A 392 x 320 tinted card at radius 32 (pale lilac, the active slide pale pink) with the avatar, name, a 5.0 star row and the quote.
+
+Page: home. Selector: `review card`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 392 x 320 |
+| Padding | 44px 44px 31px 44px |
+| Border | none |
+| Radius | 32px |
+| Background | #f8f9ff |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | div.student-comment_author: -apple-system 16px/24px 500, #1f2556 @ 0.6 |
+| Transition | none |
+| Icon | 16 x 16, colour #1f2556 @ 0.6 |
+| Painted layers | div.swiper-slide.swiper-slide-prev 392.0x320.0 bg #f8f9ff r 32px; div.rate_rate-tips 0.0x0.0 bg #000000 @ 0.8 r 6px |
+| How | at rest |
+
+Crops: `review-card-default.png`.
 
 ### Academy catalogue
 
@@ -2442,7 +3058,7 @@ Page: lesson-science. Selector: `[class*="canvas_viewport__"]`. States: default.
 | Text node | h2.canvas_title: Canvas Chapter 24px/30px 700, #292827 |
 | Transition | none |
 | Cursor | grab |
-| Painted layers | div.canvas_viewport 1440.0x900.0 bg #fcfcfc; div.canvas_grid 1440.0x900.0 image url(data:…); figure.canvas_image 416.0x257.8 bg #ffffff r 20px |
+| Painted layers | div.canvas_viewport 1440.0x900.0 bg #fcfcfc; div.canvas_grid 1440.0x900.0 image url(data:…) |
 | Ancestor paint | 1 up main.canvas_runtime bg #fcfcfc |
 | How | at rest |
 
@@ -2558,7 +3174,7 @@ Crops: `quiz-card-default.png`.
 
 #### quiz-option
 
-Quiz option. A 44px option, 1px #e6e6e7 border, radius 10, SF Pro 14/20, over a visually hidden radio. Hover fills it #f3f3f3; keyboard focus draws Astryx's 2px #0064e0 ring 3px out. Hovered and focused only.
+Quiz option. A 44px option, 1px #e6e6e7 border, radius 10, SF Pro 14/20, over a visually hidden radio. Hover fills it #f3f3f3; keyboard focus draws Astryx's 2px #0064e0 ring 3px out.
 
 Page: lesson-science. Selector: `canvas quiz option`. States: default, hover, focus-visible.
 
@@ -2583,6 +3199,162 @@ Page: lesson-science. Selector: `canvas quiz option`. States: default, hover, fo
 | How | at rest | mouse hover | Shift+Tab, Tab |
 
 Crops: `quiz-option-default.png`, `quiz-option-hover.png`, `quiz-option-focus-visible.png`.
+
+#### speed-menu
+
+Playback speed menu. The Speed row swaps the Settings popover for a submenu: a back row on a #f3f3f3 fill, then one 44px row per speed, the current one marked with a check. Opened only; no speed was chosen.
+
+Page: lesson-science. Selector: `role=dialog (Playback speed)`. States: opened.
+
+| Property | opened |
+|---|---|
+| Size (w x h) | 298 x 290 |
+| Padding | 0px |
+| Border | none |
+| Radius | 24px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Figtree 14px/20.0004px 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | button.canvas_row.canvas_back: SF Pro 14px/21px 400, #0d0d0d |
+| Transition | none |
+| Icon | 16 x 16, colour #0d0d0d |
+| Painted layers | section.canvas_settings 298.0x290.0 bg #ffffff border T:1px solid #f2f2f2 / R:1px solid #f2f2f2 / B:1px solid #f2f2f2 / L:1px solid #f2f2f2 r 24px shadow #000000 @ 0.09 0px 8px 14px 0px; button.canvas_row.canvas_back 264.0x44.0 bg #f3f3f3 r 12px; button.astryx-button.secondary 119.0x32.0 bg #25252a @ 0.06 r 9999px |
+| How | Settings, then the Speed row (opens a submenu) |
+
+Crops: `speed-menu-opened.png`.
+
+#### menu-item-selected
+
+Menu item, current. The current speed: the same row with a check at the right.
+
+Page: lesson-science. Selector: `Playback speed row "1x"`. States: selected.
+
+| Property | selected |
+|---|---|
+| Size (w x h) | 264 x 44 |
+| Padding | 0px 12px 0px 8px |
+| Border | none |
+| Radius | 12px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | SF Pro 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #0d0d0d |
+| Transition | none |
+| Cursor | pointer |
+| Icon | 20 x 20, colour #0d0d0d |
+| Ancestor paint | 2 up section.canvas_settings bg #ffffff shadow #000000 @ 0.09 0px 8px 14px 0px |
+| How | current speed, as the menu opens |
+
+Crops: `menu-item-selected-selected.png`.
+
+#### menu-item
+
+Menu item. A 44px submenu row, radius 12; hovered and focused only, never chosen.
+
+Page: lesson-science. Selector: `Playback speed row "1.25x"`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 264 x 44 | = | = |
+| Padding | 0px 12px 0px 8px | = | = |
+| Border | none | = | = |
+| Radius | 12px | = | = |
+| Background | transparent | #f3f3f3 | #f3f3f3 |
+| Box shadow | none | = | = |
+| Outline | none | = | 2px solid #307aff offset -2px |
+| Font | SF Pro 14px/21px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0d0d0d | = | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Ancestor paint | 2 up section.canvas_settings bg #ffffff shadow #000000 @ 0.09 0px 8px 14px 0px | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | button.canvas_row.canvas_rate 264.0x44.0 bg #f3f3f3 r 12px | button.canvas_row.canvas_rate 264.0x44.0 bg #f3f3f3 r 12px outline 2px solid #307aff offset -2px |
+
+Crops: `menu-item-default.png`, `menu-item-hover.png`, `menu-item-focus-visible.png`.
+
+#### tooltip
+
+Tooltip. Hovering a header control shows Astryx's tooltip: a small dark label under the button.
+
+Page: lesson-science. Selector: `.astryx-tooltip (role=tooltip, popover)`. States: opened.
+
+| Property | opened |
+|---|---|
+| Size (w x h) | 74.06 x 28 |
+| Padding | 0px |
+| Border | none |
+| Radius | 12px |
+| Background | #25252a |
+| Box shadow | none |
+| Outline | none |
+| Font | Figtree 14px/20.0004px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | div: Figtree 14px/20.0004px 400, #ffffff |
+| Transition | none |
+| Painted layers | div.astryx-tooltip 74.1x28.0 bg #25252a r 12px |
+| How | mouse hover on Reset view |
+
+Crops: `tooltip-opened.png`.
+
+#### quiz-result
+
+Quiz result card. After an option is picked the check-in leaves the dock and comes back as a card in the notes: a status line with an icon ("Quick check · Needs review" when wrong), the question, Your answer beside Correct answer, and why the answer missed. Wrong answers paint it in the lesson's wrong colours.
+
+Page: lesson-science. Selector: `canvas result card`. States: answered-wrong.
+
+| Property | answered-wrong |
+|---|---|
+| Size (w x h) | 416 x 405 |
+| Padding | 16px 18px 18px 24px |
+| Border | 1px solid #f2c7cc |
+| Radius | 20px |
+| Background | #fef4f4 |
+| Box shadow | #000000 @ 0.05 0px 8px 24px 0px |
+| Outline | none |
+| Font | Canvas Print 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #1c242e |
+| Text node | span: Canvas Print 11px/18px 700, #b82b33, ls 0.88px |
+| Transition | none |
+| Cursor | grab |
+| Icon | 20 x 20, colour #b82b33 |
+| ::before | 8px x 405px, absolute, bg #d15259, radius 0px |
+| Painted layers | div.canvas_result 416.0x405.0 bg #fef4f4 border T:1px solid #f2c7cc / R:1px solid #f2c7cc / B:1px solid #f2c7cc / L:1px solid #f2c7cc r 20px shadow #000000 @ 0.05 0px 8px 24px 0px; div::before.canvas_result 8pxx405px bg #d15259 |
+| How | picked the last option of the practice check-in (nothing of the visitor's sent) |
+
+Crops: `quiz-result-answered-wrong.png`.
+
+#### quiz-result-label
+
+Quiz result status line.
+
+Page: lesson-science. Selector: `canvas result card status line`. States: answered-wrong.
+
+| Property | answered-wrong |
+|---|---|
+| Size (w x h) | 187.11 x 18 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Canvas Print 11px/18px 700 |
+| Letter spacing | 0.88px |
+| Colour | #b82b33 |
+| Transition | none |
+| Cursor | grab |
+| Ancestor paint | 2 up div.canvas_result bg #fef4f4 shadow #000000 @ 0.05 0px 8px 24px 0px |
+| How | picked the last option of the practice check-in (nothing of the visitor's sent) |
+
+Crops: none.
 
 ### Lesson player: math
 
@@ -3342,30 +4114,30 @@ Crops: `search-toggle-default.png`, `search-toggle-hover.png`, `search-toggle-fo
 
 #### send-button
 
-Send button. Grey #eef0f3 disc while the box is empty. Never pressed.
+Send button. Grey #eef0f3 disc while the box is empty, when it carries the disabled attribute; typing into the box enables it. Never pressed.
 
-Page: atlas. Selector: `[class*="atlas-landing_send-button__"]`. States: default, hover.
+Page: atlas. Selector: `[class*="atlas-landing_send-button__"]`. States: default, hover, disabled, enabled.
 
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 36 x 36 | = |
-| Padding | 0px | = |
-| Border | none | = |
-| Radius | 50% | = |
-| Background | #eef0f3 | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | Arial 13.3333px/normal 400 | = |
-| Letter spacing | normal | = |
-| Colour | #9ca2ac | = |
-| Transition | background, color, transform 0.18s, 0.18s, 0.18s ease, ease, ease delay 0s, 0s, 0s | = |
-| Cursor | default | = |
-| Icon | 18 x 18, colour #9ca2ac | = |
-| Painted layers | button.atlas-landing_send-button 36.0x36.0 bg #eef0f3 r 50% | = |
-| Ancestor paint | 2 up div.atlas-landing_composer bg #ffffff shadow #ffd7c7 @ 0.4 0px 6px 20px 0px | = |
-| How | at rest | mouse hover |
+| Property | default | hover | disabled | enabled |
+|---|---|---|---|---|
+| Size (w x h) | 36 x 36 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 50% | = | = | = |
+| Background | #eef0f3 | = | = | #171410 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Arial 13.3333px/normal 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #9ca2ac | = | = | #ffffff |
+| Transition | background, color, transform 0.18s, 0.18s, 0.18s ease, ease, ease delay 0s, 0s, 0s | = | = | = |
+| Cursor | default | = | = | pointer |
+| Icon | 18 x 18, colour #9ca2ac | = | = | 18 x 18, colour #ffffff |
+| Painted layers | button.atlas-landing_send-button 36.0x36.0 bg #eef0f3 r 50% | = | = | button.atlas-landing_send-button.atlas-landing_send-button-active 36.0x36.0 bg #171410 r 50% |
+| Ancestor paint | 2 up div.atlas-landing_composer bg #ffffff shadow #ffd7c7 @ 0.4 0px 6px 20px 0px | = | = | 2 up div.atlas-landing_composer bg #ffffff shadow #ffd7c7 @ 0.52 0px 8px 24px 0px |
+| How | at rest | mouse hover | empty box; disabled=true | typed "The Silk Road" into the box (deleted after); disabled=false |
 
-Crops: `send-button-default.png`, `send-button-hover.png`.
+Crops: `send-button-default.png`, `send-button-hover.png`, `send-button-disabled.png`, `send-button-enabled.png`.
 
 #### recommendation-chip
 
@@ -3424,7 +4196,7 @@ Page: atlas. Selector: `[class*="user-cases_card__"]`. States: default, hover, f
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 338.67 x 313.5 | = | = | = |
+| Size (w x h) | 338.66 x 313.5 | = | = | = |
 | Padding | 14px 14px 18px 14px | = | = | = |
 | Gap | 14px | = | = | = |
 | Border | 1px solid #000000 @ 0.08 | 1px solid #000000 @ 0.12 | = | 1px solid #000000 @ 0.12 |
@@ -3435,10 +4207,10 @@ Page: atlas. Selector: `[class*="user-cases_card__"]`. States: default, hover, f
 | Font | Arial 13.3333px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
-| Text node | span.user-cases_videoBadge.user-cases_videoOverlayHidden: Arial 12px/24px 600, #ffffff | = | span.user-cases_videoBadge: Arial 12px/24px 600, #ffffff | span.user-cases_videoBadge: Arial 12px/24px 600, #ffffff |
+| Text node | span.user-cases_newBadge: Rubik 15px/18px 600, #ffffff, ls 0.45px | = | = | = |
 | Transition | transform, box-shadow, border-color 0.25s, 0.25s, 0.25s ease, ease, ease delay 0s, 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.user-cases_card 338.7x313.5 bg #ffffff border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 16px shadow #000000 @ 0.04 0px 6px 18px 0px; span.user-cases_thumbnail 308.7x231.5 bg #f7f7f7 r 12px; span.user-cases_videoBadge.user-cases_videoOverlayHidden 48.5x24.0 bg #000000 @ 0.42 r 8px; span.user-cases_playIcon.user-cases_videoOverlayHidden 48.0x48.0 bg #ffffff @ 0.66 r 50% shadow #0f172a @ 0.22 0px 12px 28px 0px, #ffffff @ 0.24 0px 1px 0px 0px inset; span::before.user-cases_playIcon.user-cases_videoOverlayHidden 17pxx17px bg #ffffff | button.user-cases_card 338.7x313.5 bg #ffffff border T:1px solid #000000 @ 0.12 / R:1px solid #000000 @ 0.12 / B:1px solid #000000 @ 0.12 / L:1px solid #000000 @ 0.12 r 16px shadow #000000 @ 0.1 0px 18px 42px 0px; span.user-cases_thumbnail 308.7x231.5 bg #f7f7f7 r 12px; span.user-cases_videoBadge.user-cases_videoOverlayHidden 48.5x24.0 bg #000000 @ 0.42 r 8px; span.user-cases_playIcon.user-cases_videoOverlayHidden 48.0x48.0 bg #ffffff @ 0.66 r 50% shadow #0f172a @ 0.22 0px 12px 28px 0px, #ffffff @ 0.24 0px 1px 0px 0px inset; span::before.user-cases_playIcon.user-cases_videoOverlayHidden 17pxx17px bg #ffffff | button.user-cases_card 338.7x313.5 bg #ffffff border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 16px shadow #000000 @ 0.04 0px 6px 18px 0px; span.user-cases_thumbnail 308.7x231.5 bg #f7f7f7 r 12px; span.user-cases_videoBadge 48.5x24.0 bg #000000 @ 0.42 r 8px; span.user-cases_playIcon 48.0x48.0 bg #ffffff @ 0.66 r 50% shadow #0f172a @ 0.22 0px 12px 28px 0px, #ffffff @ 0.24 0px 1px 0px 0px inset; span::before.user-cases_playIcon 17pxx17px bg #ffffff | button.user-cases_card 338.7x313.5 bg #ffffff border T:1px solid #000000 @ 0.12 / R:1px solid #000000 @ 0.12 / B:1px solid #000000 @ 0.12 / L:1px solid #000000 @ 0.12 r 16px shadow #000000 @ 0.1 0px 18px 42px 0px; span.user-cases_thumbnail 308.7x231.5 bg #f7f7f7 r 12px; span.user-cases_videoBadge 48.5x24.0 bg #000000 @ 0.42 r 8px; span.user-cases_playIcon 48.0x48.0 bg #ffffff @ 0.66 r 50% shadow #0f172a @ 0.22 0px 12px 28px 0px, #ffffff @ 0.24 0px 1px 0px 0px inset; span::before.user-cases_playIcon 17pxx17px bg #ffffff |
+| Painted layers | button.user-cases_card 338.7x313.5 bg #ffffff border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 16px shadow #000000 @ 0.04 0px 6px 18px 0px; span.user-cases_thumbnail 308.7x231.5 bg #f7f7f7 r 12px; span.user-cases_newBadge 40.8x20.0 bg #ff013e r 8px | button.user-cases_card 338.7x313.5 bg #ffffff border T:1px solid #000000 @ 0.12 / R:1px solid #000000 @ 0.12 / B:1px solid #000000 @ 0.12 / L:1px solid #000000 @ 0.12 r 16px shadow #000000 @ 0.1 0px 18px 42px 0px; span.user-cases_thumbnail 308.7x231.5 bg #f7f7f7 r 12px; span.user-cases_newBadge 40.8x20.0 bg #ff013e r 8px | = | button.user-cases_card 338.7x313.5 bg #ffffff border T:1px solid #000000 @ 0.12 / R:1px solid #000000 @ 0.12 / B:1px solid #000000 @ 0.12 / L:1px solid #000000 @ 0.12 r 16px shadow #000000 @ 0.1 0px 18px 42px 0px; span.user-cases_thumbnail 308.7x231.5 bg #f7f7f7 r 12px; span.user-cases_newBadge 40.8x20.0 bg #ff013e r 8px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Transform | - | matrix(1, 0, 0, 1, 0, -4) | = | matrix(1, 0, 0, 1, 0, -4) |
 
@@ -3450,26 +4222,7 @@ Video badge. A dark translucent radius-8 label over the thumbnail.
 
 Page: atlas. Selector: `[class*="user-cases_videoBadge__"]`. States: default.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 48.47 x 24 |
-| Padding | 0px 8px |
-| Border | none |
-| Radius | 8px |
-| Background | #000000 @ 0.42 |
-| Box shadow | none |
-| Backdrop filter | blur(8px) |
-| Outline | none |
-| Font | Arial 12px/24px 600 |
-| Letter spacing | normal |
-| Colour | #ffffff |
-| Transition | opacity 0.16s ease |
-| Cursor | pointer |
-| Painted layers | span.user-cases_videoBadge 48.5x24.0 bg #000000 @ 0.42 r 8px |
-| Ancestor paint | 1 up span.user-cases_thumbnail bg #f7f7f7; 2 up button.user-cases_card bg #ffffff shadow #000000 @ 0.04 0px 6px 18px 0px |
-| How | at rest |
-
-Crops: `video-badge-default.png`.
+Not found on the page at capture time.
 
 #### new-badge
 
@@ -3504,28 +4257,7 @@ Play disc. A 48px white-alpha disc over a video thumbnail.
 
 Page: atlas. Selector: `[class*="user-cases_playIcon__"]`. States: default.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 48 x 48 |
-| Padding | 0px |
-| Border | none |
-| Radius | 50% |
-| Background | #ffffff @ 0.66 |
-| Box shadow | #0f172a @ 0.22 0px 12px 28px 0px, #ffffff @ 0.24 0px 1px 0px 0px inset |
-| Backdrop filter | blur(10px) |
-| Outline | none |
-| Font | Arial 13.3333px/normal 400 |
-| Letter spacing | normal |
-| Colour | #000000 |
-| Transition | opacity, transform 0.16s, 0.16s ease, ease delay 0s, 0s |
-| Transform | matrix(1, 0, 0, 1, -24, -24) |
-| Cursor | pointer |
-| ::before | 17px x 17px, absolute, bg #ffffff, radius 0px |
-| Painted layers | span.user-cases_playIcon 48.0x48.0 bg #ffffff @ 0.66 r 50% shadow #0f172a @ 0.22 0px 12px 28px 0px, #ffffff @ 0.24 0px 1px 0px 0px inset; span::before.user-cases_playIcon 17pxx17px bg #ffffff |
-| Ancestor paint | 1 up span.user-cases_thumbnail bg #f7f7f7; 2 up button.user-cases_card bg #ffffff shadow #000000 @ 0.04 0px 6px 18px 0px |
-| How | at rest |
-
-Crops: `play-icon-default.png`.
+Not found on the page at capture time.
 
 #### story-stage
 
@@ -3718,6 +4450,32 @@ Page: story. Selector: `story strip`. States: default, hover.
 
 Crops: `story-strip-item-default.png`, `story-strip-item-hover.png`.
 
+#### atlas-textarea
+
+Text area (Atlas prompt). The multi-line field inside the prompt box: an Ant Design textarea with no border of its own; the box around it draws the frame. Sample text was typed and deleted.
+
+Page: atlas. Selector: `[class*="atlas-landing_composer__"] textarea`. States: default, focus-visible, filled.
+
+| Property | default | focus-visible | filled |
+|---|---|---|---|
+| Size (w x h) | 894 x 78 | = | = |
+| Padding | 4px 58px 4px 8px | = | = |
+| Border | none | = | = |
+| Radius | 6px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 15px/23.5714px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #21252e | = | = |
+| Transition | all 0.3s ease | = | = |
+| Cursor | text | = | = |
+| Placeholder | #21252e, opacity 1 | = | = |
+| Ancestor paint | 2 up div.atlas-landing_composer bg #ffffff shadow #ffd7c7 @ 0.4 0px 6px 20px 0px | 2 up div.atlas-landing_composer bg #ffffff shadow #ffd7c7 @ 0.52 0px 8px 24px 0px | 2 up div.atlas-landing_composer bg #ffffff shadow #ffd7c7 @ 0.52 0px 8px 24px 0px |
+| How | at rest | Shift+Tab, Tab | typed "The Silk Road", then deleted; nothing sent |
+
+Crops: none.
+
 ### Insights
 
 #### breadcrumb
@@ -3848,6 +4606,111 @@ Page: news. Selector: `[class*="media-center_list-item__"]`. States: default, ho
 | How | at rest | mouse hover |
 
 Crops: `article-row-default.png`, `article-row-hover.png`.
+
+#### pagination
+
+Pagination. Ant Design pagination under the blog list: 32px square page items at radius 6.
+
+Page: blog. Selector: `.ant-pagination`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 752 x 36 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 14px/22px 400 |
+| Letter spacing | normal |
+| Colour | #000000 @ 0.88 |
+| Text node | a: -apple-system 16px/32px 600, #ffffff |
+| Transition | none |
+| Icon | 16 x 17, colour #000000 @ 0.25 |
+| ::after | 0px x 0px, static, bg #000000 @ 0, radius 0px |
+| Painted layers | li.ant-pagination-prev.ant-pagination-disabled 36.0x36.0 bg #f5f5f7 border T:1px solid #e4e6eb / R:1px solid #e4e6eb / B:1px solid #e4e6eb / L:1px solid #e4e6eb r 18px; button.ant-pagination-item-link 34.0x34.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 16px; li.ant-pagination-item.ant-pagination-item-1 36.0x36.0 bg #21252e border T:1px solid #21252e / R:1px solid #21252e / B:1px solid #21252e / L:1px solid #21252e r 18px; li.ant-pagination-item.ant-pagination-item-2 36.0x36.0 bg #ffffff border T:1px solid #e4e6eb / R:1px solid #e4e6eb / B:1px solid #e4e6eb / L:1px solid #e4e6eb r 18px; li.ant-pagination-item.ant-pagination-item-3 36.0x36.0 bg #ffffff border T:1px solid #e4e6eb / R:1px solid #e4e6eb / B:1px solid #e4e6eb / L:1px solid #e4e6eb r 18px; li.ant-pagination-item.ant-pagination-item-4 36.0x36.0 bg #ffffff border T:1px solid #e4e6eb / R:1px solid #e4e6eb / B:1px solid #e4e6eb / L:1px solid #e4e6eb r 18px |
+| How | at rest |
+
+Crops: `pagination-default.png`.
+
+#### pagination-prev
+
+Pagination arrow, disabled. Previous on the first page.
+
+Page: blog. Selector: `.ant-pagination-prev.ant-pagination-disabled`. States: disabled.
+
+| Property | disabled |
+|---|---|
+| Size (w x h) | 36 x 36 |
+| Padding | 0px |
+| Border | 1px solid #e4e6eb |
+| Radius | 18px |
+| Background | #f5f5f7 |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 14px/32px 400 |
+| Letter spacing | normal |
+| Colour | #21252e |
+| Transition | all 0.2s ease |
+| Cursor | not-allowed |
+| Icon | 16 x 17, colour #000000 @ 0.25 |
+| Painted layers | li.ant-pagination-prev.ant-pagination-disabled 36.0x36.0 bg #f5f5f7 border T:1px solid #e4e6eb / R:1px solid #e4e6eb / B:1px solid #e4e6eb / L:1px solid #e4e6eb r 18px; button.ant-pagination-item-link 34.0x34.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 16px |
+| How | first page; aria-disabled=true |
+
+Crops: `pagination-prev-disabled.png`.
+
+#### pagination-item-active
+
+Pagination item, current.
+
+Page: blog. Selector: `.ant-pagination-item-active`. States: selected.
+
+| Property | selected |
+|---|---|
+| Size (w x h) | 36 x 36 |
+| Padding | 0px |
+| Border | 1px solid #21252e |
+| Radius | 18px |
+| Background | #21252e |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/32px 600 |
+| Letter spacing | normal |
+| Colour | #21252e |
+| Text node | a: -apple-system 16px/32px 600, #ffffff |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | li.ant-pagination-item.ant-pagination-item-1 36.0x36.0 bg #21252e border T:1px solid #21252e / R:1px solid #21252e / B:1px solid #21252e / L:1px solid #21252e r 18px |
+| How | page 1 |
+
+Crops: `pagination-item-active-selected.png`.
+
+#### pagination-item
+
+Pagination item. Hovered and focused, never followed.
+
+Page: blog. Selector: `.ant-pagination-item`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 36 x 36 | = | = |
+| Padding | 0px | = | = |
+| Border | 1px solid #e4e6eb | = | = |
+| Radius | 18px | = | = |
+| Background | #ffffff | #000000 @ 0.06 | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 14px/32px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #21252e | = | = |
+| Text node | a: -apple-system 14px/32px 400, #000000 @ 0.88 | = | = |
+| Transition | none | all 0.2s ease | = |
+| Cursor | pointer | = | = |
+| Painted layers | li.ant-pagination-item.ant-pagination-item-2 36.0x36.0 bg #ffffff border T:1px solid #e4e6eb / R:1px solid #e4e6eb / B:1px solid #e4e6eb / L:1px solid #e4e6eb r 18px | li.ant-pagination-item.ant-pagination-item-2 36.0x36.0 bg #000000 @ 0.06 border T:1px solid #e4e6eb / R:1px solid #e4e6eb / B:1px solid #e4e6eb / L:1px solid #e4e6eb r 18px | li.ant-pagination-item.ant-pagination-item-2 36.0x36.0 bg #ffffff border T:1px solid #e4e6eb / R:1px solid #e4e6eb / B:1px solid #e4e6eb / L:1px solid #e4e6eb r 18px; a 20.3x32.0 outline 3px solid #91caff offset 1px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `pagination-item-default.png`, `pagination-item-hover.png`, `pagination-item-focus-visible.png`.
 
 ### Mobile (390 wide)
 
@@ -4057,6 +4920,162 @@ Page: math. Selector: `[class*="catalog_createButton__"]`. States: default.
 | How | at rest |
 
 Crops: `m-create-button-default.png`.
+
+### Plans page
+
+#### plan-table
+
+Table (features by plan). A real <table> in a white card, 1px border, radius 24: a header row with the two plans and their buttons, then label, Free and PLUS cells, the PLUS column tinted cream.
+
+Page: plus. Selector: `table`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1000 x 485 |
+| Padding | 0px |
+| Border | 2px solid #f2f2f7 |
+| Radius | 32px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | p: -apple-system 26px/34px 500, #3e424b |
+| Transition | none |
+| Icon | 118 x 28, colour #21252e |
+| Painted layers | table 1000.0x485.0 border T:2px solid #f2f2f7 / R:2px solid #f2f2f7 / B:2px solid #f2f2f7 / L:2px solid #f2f2f7 r 32px; thead 996.0x154.0 bg #fcfcff; td 378.5x154.0 border B:2px solid #f2f2f7; td 308.8x154.0 border B:2px solid #f2f2f7 / L:2px solid #f2f2f7; button.button_btn.button_btn-full 216.8x48.0 bg #d5dffe r 14px; td 308.8x154.0 bg #fef9ee border B:2px solid #f2f2f7 / L:2px solid #f2f2f7 |
+| How | at rest |
+
+Crops: `plan-table-default.png`.
+
+#### plan-table-header
+
+Table header cell.
+
+Page: plus. Selector: `table th`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 378.5 x 154 |
+| Padding | 0px 0px 0px 40px |
+| Border | T: none; R: none; B: 2px solid #f2f2f7; L: none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | p: -apple-system 26px/34px 500, #3e424b |
+| Transition | none |
+| Painted layers | td 378.5x154.0 border B:2px solid #f2f2f7 |
+| How | at rest |
+
+Crops: none.
+
+#### plan-table-row
+
+Table row.
+
+Page: plus. Selector: `table tbody tr`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 996 x 52 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 16px/normal 400 | = |
+| Letter spacing | normal | = |
+| Colour | #000000 | = |
+| Text node | td: -apple-system 14px/21px 500, #515761 | = |
+| Transition | none | = |
+| Icon | 21 x 21, colour #515761 | = |
+| Painted layers | td 378.5x52.0 bg #ffffff; td 308.8x52.0 bg #ffffff border L:2px solid #f2f2f7; td 308.8x52.0 bg #fef9ee border L:2px solid #f2f2f7 | = |
+| How | at rest | mouse hover |
+
+Crops: `plan-table-row-default.png`, `plan-table-row-hover.png`.
+
+#### plan-table-cell
+
+Table cell.
+
+Page: plus. Selector: `table tbody td`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 308.75 x 72 |
+| Padding | 33px 40px 13px 40px |
+| Border | T: none; R: none; B: none; L: 2px solid #f2f2f7 |
+| Radius | 0px |
+| Background | #ffffff |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 14px/21px 500 |
+| Letter spacing | normal |
+| Colour | #515761 |
+| Transition | none |
+| Painted layers | td 308.8x72.0 bg #ffffff border L:2px solid #f2f2f7 |
+| How | at rest |
+
+Crops: none.
+
+#### plan-box
+
+Plan card (plans page). A white radius-24 card: plan name, price, a full-width button and a benefits list with green checks.
+
+Page: plus. Selector: `Free Plan card`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 312.5 x 409 |
+| Padding | 28px 32px 24px 32px |
+| Border | none |
+| Radius | 24px |
+| Background | #ffffff |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | span: -apple-system 24px/34px 600, #3e424b |
+| Transition | none |
+| Icon | 21 x 21, colour #000000 |
+| Painted layers | div.product-card_plan 312.5x409.0 bg #ffffff r 24px; button.button_btn.button_btn-full 248.5x58.0 bg #d5dffe r 14px |
+| How | at rest |
+
+Crops: `plan-box-default.png`.
+
+#### start-free-button
+
+Secondary button (Start for free). A pale periwinkle 56px button at radius 16. Never pressed.
+
+Page: plus. Selector: `button "Start for free"`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 248.5 x 58 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 14px | = | = |
+| Background | #d5dffe | #c8d5ff | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 20px/48px 600 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #21252e | = | = |
+| Text node | span: -apple-system 20px/48px 600, #21252e | = | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Painted layers | button.button_btn.button_btn-full 248.5x58.0 bg #d5dffe r 14px | button.button_btn.button_btn-full 248.5x58.0 bg #c8d5ff r 14px | = |
+| Ancestor paint | 1 up div.product-card_plan bg #ffffff | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `start-free-button-default.png`, `start-free-button-hover.png`, `start-free-button-focus-visible.png`.
 
 ## Dialog backdrop
 

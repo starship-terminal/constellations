@@ -3,7 +3,8 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: promo home academy create unit science math history atlas story news mobile.
+// Pages: promo home academy create unit science math history atlas story news mobile signin trial plus
+// footer blog.
 // Writes raw/components-computed.json (merged, so a subset of pages can be re-run)
 // and one crop per component and state into components/crops/. raw/measurements.md
 // is then built from the JSON by build-measurements.mjs.
@@ -42,6 +43,8 @@ const URLS = {
   atlas: '/atlas',
   story: '/atlas',
   news: '/news',
+  plus: '/plus',
+  blog: '/blog',
 };
 
 let page, cdp, current, context, run;
@@ -206,7 +209,7 @@ async function sheetsFor(key) {
 const G = {
   shell: 'Shell and navigation', home: 'Homework home', academy: 'Academy catalogue', unit: 'Unit page',
   science: 'Lesson player: science canvas', math: 'Lesson player: math', history: 'Lesson player: history',
-  atlas: 'Atlas', news: 'Insights', overlay: 'Dialogs and overlays', mobile: 'Mobile (390 wide)',
+  atlas: 'Atlas', news: 'Insights', overlay: 'Dialogs and overlays', mobile: 'Mobile (390 wide)', plus: 'Plans page',
 };
 
 async function promo() {
@@ -390,8 +393,26 @@ async function science() {
     noScroll: true, noReset: true,
     open: async () => { if (!(await sw.isVisible().catch(() => false))) { await page.getByRole('button', { name: 'Settings' }).click(); await page.waitForTimeout(800); } },
   });
+  // the Playback speed submenu the Speed row opens: a menu whose current item carries a check
+  await S('speed-menu', page.getByRole('dialog').filter({ hasText: 'Playback speed' }).first(), ['opened'], { group: g, title: 'Playback speed menu', desc: 'The Speed row swaps the Settings popover for a submenu: a back row on a #f3f3f3 fill, then one 44px row per speed, the current one marked with a check. Opened only; no speed was chosen.', sel: 'role=dialog (Playback speed)' }, {
+    noScroll: true, noReset: true,
+    open: async () => { if (!(await sw.isVisible().catch(() => false))) { await page.getByRole('button', { name: 'Settings' }).click(); await page.waitForTimeout(800); } await page.getByRole('dialog').filter({ hasText: 'Narration' }).getByText('Speed', { exact: true }).click(); await page.waitForTimeout(900); },
+    before: { opened: async () => 'Settings, then the Speed row (opens a submenu)' },
+  });
+  await page.evaluate(() => { const d = [...document.querySelectorAll('[role=dialog]')].find((e) => /Playback speed/.test(e.textContent || '')); if (!d) return; const rows = [...d.querySelectorAll('*')].filter((e) => /^(0\.75x|1x|1\.25x)$/.test((e.textContent || '').trim()) && e.getBoundingClientRect().height >= 36); const pick = (t) => rows.filter((e) => e.textContent.trim() === t).sort((a, b) => a.getBoundingClientRect().height - b.getBoundingClientRect().height).pop(); pick('1x')?.setAttribute('data-m', 'speed-current'); pick('1.25x')?.setAttribute('data-m', 'speed-item'); });
+  await S('menu-item-selected', q('[data-m="speed-current"]'), ['selected'], { group: g, title: 'Menu item, current', desc: 'The current speed: the same row with a check at the right.', sel: 'Playback speed row "1x"' }, { noScroll: true, noReset: true, before: { selected: async () => 'current speed, as the menu opens' } });
+  await S('menu-item', q('[data-m="speed-item"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Menu item', desc: 'A 44px submenu row, radius 12; hovered and focused only, never chosen.', sel: 'Playback speed row "1.25x"' }, { noScroll: true, noReset: true });
   await page.keyboard.press('Escape').catch(() => {});
   await page.waitForTimeout(500);
+  await page.mouse.click(700, 600).catch(() => {});
+  await page.waitForTimeout(400);
+  // a tooltip: Astryx's popover tooltip on a header control, shown on hover
+  await S('tooltip', q('.astryx-tooltip:popover-open, [role=tooltip]:popover-open'), ['opened'], { group: g, title: 'Tooltip', desc: 'Hovering a header control shows Astryx\'s tooltip: a small dark label under the button.', sel: '.astryx-tooltip (role=tooltip, popover)' }, {
+    noScroll: true, noReset: true,
+    open: async () => { await page.getByRole('button', { name: 'Reset view' }).hover(); await page.waitForTimeout(1400); },
+    before: { opened: async () => 'mouse hover on Reset view' },
+  });
+  await reset();
   // the canvas body: the first chapter as it stands at the start
   await S('chapter-title', q('h2' + M('canvas_title')).first(), ['default'], { group: g, title: 'Chapter title', desc: '"Canvas Chapter", which is Libre Baskerville Bold, 24/30.', sel: 'h2' + M('canvas_title') }, { noScroll: true });
   await S('note-heading', q('h3' + M('canvas_title')).first(), ['default'], { group: g, title: 'Note heading', desc: '"Canvas Heading" (Satoshi Medium) 18/26 600; the note being read is blue #2e70ed.', sel: 'h3' + M('canvas_title') }, { noScroll: true });
@@ -430,7 +451,32 @@ async function science() {
   log('  marked', JSON.stringify(kinds));
   if (kinds.quiz) {
     await S('quiz-card', q('[data-m="quiz"]'), ['default'], { group: g, title: 'Quiz card', desc: 'A check-in question docked over the canvas: white, 1px #e3e3e3 border, radius 20, a 0 6 24 shadow at 7%, an Inter 16/24 600 question, four outlined options and a small close button. No option was chosen.', sel: 'canvas quiz' }, { noScroll: true });
-    await S('quiz-option', q('[data-m="opt0"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Quiz option', desc: 'A 44px option, 1px #e6e6e7 border, radius 10, SF Pro 14/20, over a visually hidden radio. Hover fills it #f3f3f3; keyboard focus draws Astryx\'s 2px #0064e0 ring 3px out. Hovered and focused only.', sel: 'canvas quiz option' }, { noScroll: true, focusLoc: q('[data-m="quiz"] input').first() });
+    await S('quiz-option', q('[data-m="opt0"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Quiz option', desc: 'A 44px option, 1px #e6e6e7 border, radius 10, SF Pro 14/20, over a visually hidden radio. Hover fills it #f3f3f3; keyboard focus draws Astryx\'s 2px #0064e0 ring 3px out.', sel: 'canvas quiz option' }, { noScroll: true, focusLoc: q('[data-m="quiz"] input').first() });
+    // Answering the check-in is the one way to see the lesson's feedback colours. It is a practice question in a
+    // signed-out lesson: one option is picked, nothing is typed, and nothing of the visitor's is sent or kept.
+    const opts = q('[data-m="quiz"] input');
+    const nOpt = await opts.count();
+    await opts.nth(nOpt - 1).locator('xpath=..').click().catch(() => opts.nth(nOpt - 1).click({ force: true }).catch(() => {}));
+    // the check-in leaves the dock and comes back as a result card in the notes ("Quick check · Needs review")
+    let verdict = { found: false };
+    for (let i = 0; i < 12 && !verdict.found; i++) {
+      await page.waitForTimeout(1000);
+      verdict = await page.evaluate(() => {
+        const area = (e) => { const r = e.getBoundingClientRect(); return r.width * r.height; };
+        const label = [...document.querySelectorAll('body *')].filter((e) => /^quick check/i.test((e.innerText || '').trim()) && e.getBoundingClientRect().height > 0 && e.getBoundingClientRect().height < 40).sort((a, b) => area(a) - area(b))[0];
+        if (!label) return { found: false };
+        let card = label; while (card && !(card.getBoundingClientRect().height > 100 && getComputedStyle(card).backgroundColor !== 'rgba(0, 0, 0, 0)')) card = card.parentElement;
+        label.setAttribute('data-m', 'quiz-result-label');
+        if (card) card.setAttribute('data-m', 'quiz-result');
+        return { found: !!card, label: label.innerText.trim().slice(0, 60), right: !/review|missed|incorrect/i.test(card?.innerText || '') };
+      });
+    }
+    out._meta.quizVerdict = verdict;
+    log('  quiz answered:', JSON.stringify(verdict));
+    const st = verdict.right ? 'answered-correct' : 'answered-wrong';
+    const why = { [st]: async () => 'picked the last option of the practice check-in (nothing of the visitor\'s sent)' };
+    await S('quiz-result', q('[data-m="quiz-result"]'), [st], { group: g, title: 'Quiz result card', desc: 'After an option is picked the check-in leaves the dock and comes back as a card in the notes: a status line with an icon ("Quick check · Needs review" when wrong), the question, Your answer beside Correct answer, and why the answer missed. Wrong answers paint it in the lesson\'s wrong colours.', sel: 'canvas result card' }, { before: why });
+    await S('quiz-result-label', q('[data-m="quiz-result-label"]'), [st], { group: g, title: 'Quiz result status line', sel: 'canvas result card status line' }, { crop: false, before: why });
   }
   await page.close();
 }
@@ -505,10 +551,19 @@ async function atlas() {
   await S('atlas-title', q(M('atlas-landing_start-project-title')), ['default'], { group: g, title: 'Atlas title', desc: '"Turn any topic into a visual story" in Libre Baskerville 40/48 700, the first letter filled with a red gradient.', sel: M('atlas-landing_start-project-title') }, { noScroll: true });
   await S('atlas-composer', q(M('atlas-landing_composer')).first(), ['default', 'hover', 'focused', 'filled'], { group: g, title: 'Atlas prompt box', desc: 'A 920 x 148 white box, 1px #e4e6eb border, radius 20, a peach glow (0 6 20 rgba(255,215,199,.4)) that deepens on focus, a Search toggle pill and a round send button. Sample text was typed and deleted; nothing was sent.', sel: M('atlas-landing_composer') }, { noScroll: true, fieldLoc: q(M('atlas-landing_input-container') + ' textarea'), fillText: 'The water cycle' });
   await S('search-toggle', q(M('atlas-landing_search-toggle')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Search toggle pill', desc: 'The web-search switch, on: a near-black #171410 pill, radius 20, with a 0 5 12 shadow; hover lightens it to #2a2d34. Not toggled.', sel: M('atlas-landing_search-toggle') }, { noScroll: true });
-  await S('send-button', q(M('atlas-landing_send-button')).first(), ['default', 'hover'], { group: g, title: 'Send button', desc: 'Grey #eef0f3 disc while the box is empty. Never pressed.', sel: M('atlas-landing_send-button') }, { noScroll: true });
+  await S('send-button', q(M('atlas-landing_send-button')).first(), ['default', 'hover', 'disabled', 'enabled'], { group: g, title: 'Send button', desc: 'Grey #eef0f3 disc while the box is empty, when it carries the disabled attribute; typing into the box enables it. Never pressed.', sel: M('atlas-landing_send-button') }, {
+    noScroll: true,
+    before: {
+      disabled: async (l) => `empty box; disabled=${await l.evaluate((e) => e.disabled || e.getAttribute('aria-disabled') === 'true')}`,
+      enabled: async (l) => { await q(M('atlas-landing_composer') + ' textarea').first().click(); await page.keyboard.type('The Silk Road', { delay: 10 }); await page.waitForTimeout(500); return `typed "The Silk Road" into the box (deleted after); disabled=${await l.evaluate((e) => e.disabled)}`; },
+    },
+    after: { enabled: async () => { await q(M('atlas-landing_composer') + ' textarea').first().focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); } },
+  });
+  await S('atlas-textarea', q(M('atlas-landing_composer') + ' textarea').first(), ['default', 'focus-visible', 'filled'], { group: g, title: 'Text area (Atlas prompt)', desc: 'The multi-line field inside the prompt box: an Ant Design textarea with no border of its own; the box around it draws the frame. Sample text was typed and deleted.', sel: M('atlas-landing_composer') + ' textarea' }, { noScroll: true, fillText: 'The Silk Road', crop: false });
   await S('recommendation-chip', q(M('atlas-landing_recommendation-chip')).first(), ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Recommendation chip', desc: 'A white chip, 1px #dcdcdc border, radius 10, SF Pro 13/19.5 black; hover lifts it 1px onto #f5f5f7 with a soft shadow. Pressing one would start a story, so it was only hovered, focused and forced.', sel: M('atlas-landing_recommendation-chip') }, { noScroll: true });
   await S('stories-title', q(M('user-cases_title')).first(), ['default'], { group: g, title: 'Popular Stories heading', sel: M('user-cases_title') });
-  const card = q(M('user-cases_card')).filter({ has: q(M('user-cases_videoBadge')) }).first();
+  // a card with a Video badge when one is listed, else the first card
+  const card = q(M('user-cases_card')).filter({ has: q(M('user-cases_videoBadge')) }).first().or(q(M('user-cases_card')).first()).first();
   await S('story-card', card, ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Story card', desc: 'A 339px white card, 1px rgba(0,0,0,.08) border, radius 16, a 0 6 18 shadow at 4%: a radius-12 thumbnail (video or image) and a 16/24 600 title. Hover lifts it 4px with a 0 18 42 shadow at 10%.', sel: M('user-cases_card') });
   await S('video-badge', q(M('user-cases_videoBadge')).first(), ['default'], { group: g, title: 'Video badge', desc: 'A dark translucent radius-8 label over the thumbnail.', sel: M('user-cases_videoBadge') });
   await S('new-badge', q(M('user-cases_newBadge')).first(), ['default'], { group: g, title: 'New badge', desc: 'A red #ff013e radius-8 label.', sel: M('user-cases_newBadge') });
@@ -584,7 +639,104 @@ async function mobile() {
   await page.close();
 }
 
-const PAGES = { promo, home, academy, create: createDialog, unit, science, math, history, atlas, story, news, mobile };
+// ---------- added on the 2026-10-17 refresh: overlays, select, table, link, avatar, pagination ----------
+
+// The Sign in dialog: opened from the top bar and closed again. The email field gets a throwaway string that is
+// deleted; the Sign in button is disabled while the field is empty and is never pressed; no social sign-in is used.
+async function signin() {
+  await newPage('home');
+  const g = G.overlay;
+  const openIt = async () => { await q(M('pc-header_loginEntry')).first().click(); await page.waitForTimeout(2500); };
+  await openIt();
+  const ctx = q(M('modal-container_modal-context')).filter({ has: q(M('pc-login-modal-view_login')) });
+  await S('signin-dialog', ctx, ['default'], { group: g, title: 'Sign in dialog', desc: 'A 460px white sheet over a dark scrim: a 36px bold "Welcome", a grey line with a red Sign up link, three outlined social buttons, an OR rule, an email field and a full-width Sign in button in the brand red, pale while disabled. Opened and closed; nothing was submitted.', sel: M('modal-container_modal-context') }, { noScroll: true });
+  await S('signin-scrim', q(M('modal-container_modal-container')).filter({ has: q(M('pc-login-modal-view_login')) }), ['default'], { group: g, title: 'Dialog scrim', desc: 'The full-window layer behind Gauth\'s own dialogs.', sel: M('modal-container_modal-container') }, { noScroll: true, crop: false });
+  await S('signin-social', q(M('third-auth_facebook')), ['default', 'hover'], { group: g, title: 'Social sign-in button', desc: 'A 400 x 54 outlined pill: 1px border, radius 9999, a brand mark and a 16px label. Hovered only.', sel: M('third-auth_facebook') }, { noScroll: true });
+  await S('signin-email', q(M('pc-login-modal-view_login-input')).filter({ has: q('input[placeholder="E-mail address"]') }), ['default', 'hover', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'A 400 x 48 grey field, radius 12, a mail icon and a clear button once text is typed. A throwaway string was typed and deleted; Gauth shows no inline error on blur, it only keeps Sign in disabled.', sel: M('pc-login-modal-view_login-input') }, { noScroll: true, fieldLoc: q('input[placeholder="E-mail address"]'), fillText: 'abc' });
+  await S('signin-submit', q(M('pc-login-modal-view_account-btn')), ['disabled', 'hover'], { group: g, title: 'Primary button, disabled (Sign in)', desc: 'The dialog\'s Sign in button while the email field is empty: Gauth\'s button_btn-primary in its disabled skin (button_btn-disabled). Never pressed.', sel: M('pc-login-modal-view_account-btn') }, {
+    noScroll: true,
+    before: { disabled: async (l) => `empty field; classes ${await l.evaluate((e) => [...e.classList].map((c) => c.replace(/__[\w-]{5,6}$/, '')).filter((c) => /disabled/.test(c)).join(' '))}` },
+  });
+  await S('signup-link', q('[data-e2e="auth-open-signup"]'), ['default', 'hover'], { group: g, title: 'Inline link (Sign up)', desc: 'A red text link inside a grey line. Hovered only.', sel: '[data-e2e="auth-open-signup"]' }, { noScroll: true });
+  await S('terms-link', q(M('pc-login-modal-view_account-desc') + ' a').first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Inline link (Terms of Service)', desc: 'A darker, medium-weight link inside the 14px grey terms line.', sel: M('pc-login-modal-view_account-desc') + ' a' }, { noScroll: true });
+  await S('modal-close', q(M('modal-container_modal-close')).filter({ visible: true }), ['default', 'hover'], { group: g, title: 'Dialog close button (Gauth)', sel: M('modal-container_modal-close') }, { noScroll: true });
+  await page.close();
+}
+
+// The Gauth PLUS dialog the sidebar card opens. Looked at only: no plan card is chosen, the email field is not
+// typed into, and Join is never pressed.
+async function trial() {
+  await newPage('home');
+  const g = G.overlay;
+  await q(M('side-menu-small-cards_btn')).first().click();
+  await page.waitForTimeout(3000);
+  await S('plus-dialog', q(M('new-subscription-modal_new-subscription-modal')), ['default'], { group: g, title: 'Gauth PLUS dialog', desc: 'A 1060 x 580 two-panel dialog: a warm gradient panel with an italic title and the benefits table at the left, the email field, three plan cards and a dark Join button at the right. Opened and closed; nothing chosen or bought.', sel: M('new-subscription-modal_new-subscription-modal') }, { noScroll: true });
+  await S('benefits-table', q(M('subscription-modal-parts_desc-table')).first(), ['default'], { group: g, title: 'Table (benefits)', desc: 'A three-column comparison inside a 2px gold-bordered card at radius 24: a 600 header row (All Benefits, Gauth PLUS in gold, Free), then 24px rows split into label, a green check or value, and a grey dash.', sel: M('subscription-modal-parts_desc-table') }, { noScroll: true });
+  await S('benefits-row', q(M('subscription-modal-parts_desc-table-content-row')).first(), ['default'], { group: g, title: 'Table row (benefits)', sel: M('subscription-modal-parts_desc-table-content-row') }, { noScroll: true });
+  const cards = q(M('new-subscription-modal_plus-sku-card'));
+  await page.evaluate(() => { const cs = [...document.querySelectorAll('[class*="new-subscription-modal_plus-sku-card__"]')]; const off = cs.find((c) => !/sku-card-active/.test(c.className)); if (off) off.setAttribute('data-m', 'plan-off'); });
+  await S('plan-card', q('[data-m="plan-off"]'), ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Plan card (single choice)', desc: 'One of three 147 x 160 cards that behave as a single-choice group: 2px border, radius 16, a grey 20px period, a bold price. Hovered, focused and pressed by DevTools only, so the choice never changed.', sel: M('new-subscription-modal_plus-sku-card') }, { noScroll: true });
+  await S('plan-card-selected', q(M('new-subscription-modal_plus-sku-card-active')), ['selected'], { group: g, title: 'Plan card, selected', desc: 'The preselected 12 Months card: a gold border and a gold corner tag.', sel: M('new-subscription-modal_plus-sku-card-active') }, { noScroll: true, before: { selected: async () => 'preselected by Gauth' } });
+  await page.evaluate(() => { const t = [...document.querySelectorAll('[class*="new-subscription-modal"] *')].filter((e) => e.children.length === 0 && /^-?\d+%$|Free Trial$/.test((e.textContent || '').trim())).pop(); let n = t; while (n && n.getBoundingClientRect().height < 14) n = n.parentElement; if (n) n.setAttribute('data-m', 'plan-tag'); });
+  await S('plan-tag', q('[data-m="plan-tag"]'), ['default'], { group: g, title: 'Badge (plan tag)', desc: 'The gold tag on a plan card\'s top edge.', sel: 'plan card tag' }, { noScroll: true });
+  await page.evaluate(() => { const b = [...document.querySelectorAll('button, div, a')].filter((e) => /^Join Gauth PLUS Now/.test((e.innerText || '').trim()) && e.getBoundingClientRect().height < 80).sort((a, b) => a.getBoundingClientRect().width - b.getBoundingClientRect().width).pop(); if (b) b.setAttribute('data-m', 'join'); });
+  await S('join-button', q('[data-m="join"]'), ['default', 'hover'], { group: g, title: 'Join Gauth PLUS button', desc: 'A dark brown full-width pill with gold text and an arrow. Hovered only; never pressed.', sel: 'button "Join Gauth PLUS Now"' }, { noScroll: true });
+  await S('plus-email', q(M('subscription-modal-parts_email-input-inline-shell')), ['default', 'hover'], { group: g, title: 'Email field (PLUS dialog)', desc: 'Not typed into.', sel: M('subscription-modal-parts_email-input-inline-shell') }, { noScroll: true });
+  await page.close();
+}
+
+// /plus: the plans page. Read only; no button on it is pressed.
+async function plus() {
+  await newPage('plus');
+  const g = G.plus;
+  await S('plan-table', q('table').first(), ['default'], { group: g, title: 'Table (features by plan)', desc: 'A real <table> in a white card, 1px border, radius 24: a header row with the two plans and their buttons, then label, Free and PLUS cells, the PLUS column tinted cream.', sel: 'table' });
+  await S('plan-table-header', q('table th, table thead td').first(), ['default'], { group: g, title: 'Table header cell', sel: 'table th' }, { crop: false });
+  await S('plan-table-row', q('table tbody tr').nth(1), ['default', 'hover'], { group: g, title: 'Table row', sel: 'table tbody tr' });
+  await S('plan-table-cell', q('table tbody tr td').nth(1), ['default'], { group: g, title: 'Table cell', sel: 'table tbody td' }, { crop: false });
+  await page.evaluate(() => { const t = [...document.querySelectorAll('main *, body *')].find((e) => e.children.length === 0 && (e.textContent || '').trim() === 'Free Plan' && !e.closest('table')); let n = t; while (n && !(n.getBoundingClientRect().width > 300 && parseFloat(getComputedStyle(n).borderTopLeftRadius) > 0)) n = n.parentElement; if (n) n.setAttribute('data-m', 'plan-box'); });
+  await S('plan-box', q('[data-m="plan-box"]'), ['default'], { group: g, title: 'Plan card (plans page)', desc: 'A white radius-24 card: plan name, price, a full-width button and a benefits list with green checks.', sel: 'Free Plan card' });
+  await page.evaluate(() => { const b = [...document.querySelectorAll('body *')].filter((e) => (e.innerText || '').trim() === 'Start for free' && e.getBoundingClientRect().height >= 40 && !e.closest('table')).sort((a, b) => b.getBoundingClientRect().height - a.getBoundingClientRect().height)[0]; if (b) b.setAttribute('data-m', 'start-free'); });
+  await S('start-free-button', q('[data-m="start-free"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Secondary button (Start for free)', desc: 'A pale periwinkle 56px button at radius 16. Never pressed.', sel: 'button "Start for free"' });
+  await page.close();
+}
+
+// The footer's language select (Ant Design), the inline and footer links, and a review card's avatar, on home.
+async function footer() {
+  await newPage('home');
+  const g = G.home;
+  const sel = q(M('styles_select') + ' .ant-select').first();
+  await S('language-select', sel, ['default', 'hover', 'focus-visible'], { group: g, title: 'Select (language)', desc: 'The footer\'s language picker: an Ant Design select drawn as a blue underlined value and a chevron after a grey "Language" label.', sel: M('styles_select') + ' .ant-select' }, { focusLoc: q(M('styles_select') + ' input.ant-select-input').first() });
+  await S('language-list', q('.ant-select-dropdown').filter({ visible: true }), ['opened'], { group: g, title: 'Select list (language)', desc: 'The list the select opens upward: a 182px white popup, radius 8, a soft three-layer shadow, 16px rows, the current one on a grey fill. Opened and closed; no language chosen.', sel: '.ant-select-dropdown' }, {
+    noReset: true,
+    open: async () => { await centre(sel); await sel.click(); await page.waitForTimeout(1200); },
+    before: { opened: async () => 'clicked the select (opens its list)' },
+  });
+  // S() resets focus after each component, which closes the list, so each option entry opens it again
+  const reopen = async () => { if (!(await q('.ant-select-dropdown').filter({ visible: true }).count())) { await centre(sel); await sel.click(); await page.waitForTimeout(1200); } };
+  await S('language-option-selected', q('.ant-select-dropdown .ant-select-item-option-selected').filter({ visible: true }), ['selected'], { group: g, title: 'Select option, current', sel: '.ant-select-item-option-selected' }, { noScroll: true, noReset: true, open: reopen, before: { selected: async () => 'current language' } });
+  await S('language-option', q('.ant-select-dropdown .ant-select-item-option').filter({ hasText: 'Deutsch' }), ['default', 'hover'], { group: g, title: 'Select option', desc: 'Hovered only.', sel: '.ant-select-item-option' }, { noScroll: true, noReset: true, open: reopen });
+  await page.keyboard.press('Escape').catch(() => {});
+  await page.waitForTimeout(500);
+  await S('inline-link', page.getByText('Learn More', { exact: true }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Inline link (Learn More)', desc: 'The blue link closing the honor-code line above the footer. Hovered and focused, never followed.', sel: 'a "Learn More"' });
+  await S('footer-link', q(M('pc-footer-view_footer-wrap') + ' a').filter({ hasText: 'About Us' }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Footer link', sel: M('pc-footer-view_footer-wrap') + ' a' });
+  await page.evaluate(() => { const i = [...document.querySelectorAll('img')].find((e) => { const r = e.getBoundingClientRect(); return r.width >= 36 && r.width <= 48 && Math.abs(r.width - r.height) < 2 && r.top + scrollY > 1500; }); if (!i) return; let w = i; while (w.parentElement && w.parentElement.getBoundingClientRect().width <= 48) w = w.parentElement; w.setAttribute('data-m', 'avatar'); let c = i; while (c && !(c.getBoundingClientRect().width > 300 && parseFloat(getComputedStyle(c).borderTopLeftRadius) > 0)) c = c.parentElement; if (c) c.setAttribute('data-m', 'review'); });
+  await S('review-avatar', q('[data-m="avatar"]'), ['default'], { group: g, title: 'Avatar (review)', desc: 'A reviewer\'s 40px picture beside their name and star rating; Gauth uses mascot illustrations, square, with no radius or ring.', sel: 'review card image' });
+  await S('review-card', q('[data-m="review"]'), ['default'], { group: g, title: 'Review card', desc: 'A 392 x 320 tinted card at radius 32 (pale lilac, the active slide pale pink) with the avatar, name, a 5.0 star row and the quote.', sel: 'review card' });
+  await page.close();
+}
+
+// Blog list pagination (Ant Design): the disabled Previous, the current page and a page link.
+async function blog() {
+  await newPage('blog');
+  const g = G.news;
+  await S('pagination', q('.ant-pagination').first(), ['default'], { group: g, title: 'Pagination', desc: 'Ant Design pagination under the blog list: 32px square page items at radius 6.', sel: '.ant-pagination' });
+  await S('pagination-prev', q('.ant-pagination-prev').first(), ['disabled'], { group: g, title: 'Pagination arrow, disabled', desc: 'Previous on the first page.', sel: '.ant-pagination-prev.ant-pagination-disabled' }, { before: { disabled: async (l) => `first page; aria-disabled=${await l.getAttribute('aria-disabled')}` } });
+  await S('pagination-item-active', q('.ant-pagination-item-active').first(), ['selected'], { group: g, title: 'Pagination item, current', sel: '.ant-pagination-item-active' }, { before: { selected: async () => 'page 1' } });
+  await S('pagination-item', q('.ant-pagination-item-2').first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Pagination item', desc: 'Hovered and focused, never followed.', sel: '.ant-pagination-item' }, { focusLoc: q('.ant-pagination-item-2 a').first() });
+  await page.close();
+}
+
+const PAGES = { promo, home, academy, create: createDialog, unit, science, math, history, atlas, story, news, mobile, signin, trial, plus, footer, blog };
 const want = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(PAGES);
 const done = new Set(); // pages whose capture ran to the end
 for (const k of want) {
