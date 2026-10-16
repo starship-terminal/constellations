@@ -34,27 +34,42 @@ for (const label of LABELS) {
     const labelOf = (u) => {
       const c = u.closest && u.closest('button, a, [role=button], [role=menuitem], [role=menuitemradio], [role=tab], [role=option], [role=switch]');
       if (!c) return '';
-      if (c.closest('.markdown, [data-message-author-role]')) return '';
+      if (c.closest('.markdown, [data-message-author-role], [class*="MarkdownRoot"], [data-chatgpt-search-unit-key]')) return '';
       const t = (c.getAttribute('aria-label') || (c.innerText || '').trim().split('\n')[0] || '').split(/[,.]/)[0].trim();
       return t.length <= 32 ? t : '';
+    };
+    // The role an icon plays where it is drawn: in a sidebar destination or link (navigation), a
+    // menu item, a tab, the composer, a header or toolbar action, a status or decoration.
+    const kindOf = (u) => {
+      const c = u.closest && u.closest('button, a, [role=button], [role=menuitem], [role=menuitemradio], [role=menuitemcheckbox], [role=tab], [role=option], [role=switch]');
+      if (!c) return u.closest && u.closest('[class*="MarkdownRoot"]') ? 'content' : 'decoration';
+      const r = c.getAttribute('role') || '';
+      if (r.startsWith('menuitem') || r === 'option') return 'menu item';
+      if (r === 'tab') return 'tab';
+      if (c.closest('form') || c.closest('[data-composer-navigation-target]') || c.hasAttribute('data-composer-navigation-target')) return 'composer action';
+      if (c.matches('[data-sidebar-destination], a[data-interactive-row-link]') || (c.tagName === 'A' && c.closest('aside, nav'))) return 'navigation';
+      if (c.closest('header')) return 'header action';
+      if (c.closest('[class*="MarkdownRoot"], [data-chatgpt-search-unit-key], [class*="CodeSurface"]')) return 'message action';
+      return 'action';
     };
     const uses = [...document.querySelectorAll('use')];
     return syms.map((s) => {
       const id = s.id;
       const u = uses.filter((x) => x.getAttribute('href') === '#' + id);
       const seen = u.find((x) => { const r = x.closest('svg').getBoundingClientRect(); return r.width > 0 && r.height > 0; });
-      return { id, viewBox: s.getAttribute('viewBox'), inner: s.innerHTML, uses: u.length, label: labelOf(seen || u[0] || s), size: seen ? Math.round(seen.closest('svg').getBoundingClientRect().width) : null };
+      return { id, viewBox: s.getAttribute('viewBox'), inner: s.innerHTML, uses: u.length, label: labelOf(seen || u[0] || s), kinds: u.map(kindOf), size: seen ? Math.round(seen.closest('svg').getBoundingClientRect().width) : null };
     });
   });
   for (const f of found) {
     const key = crypto.createHash('sha1').update(f.viewBox + f.inner).digest('hex').slice(0, 12);
-    if (!icons.has(key)) icons.set(key, { ids: new Set(), viewBox: f.viewBox, inner: f.inner, pages: new Set(), uses: 0, labels: new Map(), sizes: new Set() });
+    if (!icons.has(key)) icons.set(key, { ids: new Set(), viewBox: f.viewBox, inner: f.inner, pages: new Set(), uses: 0, labels: new Map(), sizes: new Set(), kinds: new Map() });
     const e = icons.get(key);
     e.ids.add(f.id.replace(/^spr\d+-/, ''));
     e.pages.add(label);
     e.uses += f.uses;
     if (f.label) e.labels.set(f.label, (e.labels.get(f.label) || 0) + 1);
     if (f.size) e.sizes.add(f.size);
+    for (const k of f.kinds) e.kinds.set(k, (e.kinds.get(k) || 0) + 1);
   }
   await ctx.close();
 }
@@ -75,14 +90,16 @@ for (const [key, e] of [...icons.entries()].sort((a, b) => [...a[1].ids].sort()[
   used.add(name);
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${e.viewBox}" fill="currentColor">${e.inner.replace(/\s+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/g, '')}</svg>\n`;
   fs.writeFileSync(path.join(OUT, `${name}.svg`), svg);
-  rows.push([name + '.svg', [...e.ids].sort().join(' '), e.viewBox, [...e.sizes].sort((a, b) => a - b).join(' '), e.uses, [...e.pages].sort().join(' '), topLabel ? topLabel[0].replace(/\t/g, ' ') : '']);
+  const roles = [...e.kinds.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map((x) => x[0]);
+  rows.push([name + '.svg', roles[0] || 'decoration', roles.join(', '), [...e.ids].sort().join(' '), e.viewBox, [...e.sizes].sort((a, b) => a - b).join(' '), e.uses, [...e.pages].sort().join(' '), topLabel ? topLabel[0].replace(/\t/g, ' ') : '']);
 }
-rows.sort((a, b) => a[0].localeCompare(b[0]));
+const ROLE_ORDER = ['navigation', 'header action', 'composer action', 'message action', 'menu item', 'tab', 'action', 'content', 'decoration'];
+rows.sort((a, b) => ROLE_ORDER.indexOf(a[1]) - ROLE_ORDER.indexOf(b[1]) || a[0].localeCompare(b[0]));
 const head = [
   '# Icons lifted from the inlined sprite symbols of the ChatGPT page copies (tools/capture/icons.mjs).',
-  '# file, sprite id(s) without the spr<N>- prefix, viewBox, rendered size(s) in CSS px, <use> count over all copies, page copies, the label of the nearest control where it was used',
+  '# file, role (where it is drawn most: navigation, header action, composer action, message action, menu item, tab, action, content, decoration), every role it plays, sprite id(s) without the spr<N>- prefix, viewBox, rendered size(s) in CSS px, <use> count over all copies, page copies, the label of the nearest control where it was used. Sorted by role.',
   "# OpenAI's icons, kept for reference only.",
-  ['file', 'sprite_id', 'viewbox', 'sizes', 'uses', 'pages', 'used_in'].join('\t'),
+  ['file', 'role', 'roles', 'sprite_id', 'viewbox', 'sizes', 'uses', 'pages', 'used_in'].join('\t'),
 ];
 fs.writeFileSync(path.join(OUT, 'INDEX.tsv'), head.concat(rows.map((r) => r.join('\t'))).join('\n') + '\n');
 console.log(`${rows.length} icons -> icons/`);

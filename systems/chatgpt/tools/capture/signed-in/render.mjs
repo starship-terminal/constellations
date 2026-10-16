@@ -1,9 +1,10 @@
 // Screenshot a page copy written by unsnap.py: node render.mjs <dir> <label> [full] [light] [scroll=<top>|scroll=max]
 // 'full' unrolls the fixed layout and its inner scroller so the whole page is captured.
-// 'light' removes every `dark` class and writes <label-with-dark-swapped-for-light>.png: ChatGPT
-// paints its light palette from `html, .light, .dark .light` and its dark one from `.dark`, with
-// `dark` on <html> and again on each message's markdown body, so the same static copy renders both
-// themes and no account setting is touched.
+// 'light' sets every data-theme="dark" to light (and removes any `dark` class) and writes
+// <label-with-dark-swapped-for-light>.png. Since the 2026-10 redesign ChatGPT paints its palettes
+// from `.chatgpt-theme[data-theme="light"|"dark"]` on <html> (and `[data-theme]` on nested
+// scopes); before it, from a `dark` class on <html> and on each markdown body. Either way the same
+// static copy renders both themes and no account setting is touched.
 import fs from 'fs';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
@@ -20,7 +21,7 @@ const p = await ctx.newPage();
 await p.goto('file://' + dir + '/' + label + '.html', { waitUntil: 'load', timeout: 60000 });
 // Light: every `dark` class goes (and, for a copy from a kit that marks themes with data-mode, that
 // attribute is set to light), so one copy renders both themes and no account setting changes.
-if (light) await p.evaluate(() => { const h = document.documentElement; document.querySelectorAll('.dark').forEach((n) => n.classList.remove('dark')); document.querySelectorAll('[data-mode]').forEach((n) => n.setAttribute('data-mode', 'light')); h.style.colorScheme = 'light'; });
+if (light) await p.evaluate(() => { const h = document.documentElement; document.querySelectorAll('.dark').forEach((n) => n.classList.remove('dark')); document.querySelectorAll('[data-mode]').forEach((n) => n.setAttribute('data-mode', 'light')); document.querySelectorAll('[data-theme="dark"]').forEach((n) => n.setAttribute('data-theme', 'light')); h.style.colorScheme = 'light'; });
 await p.waitForTimeout(2500);
 if (meta.scrollY) await p.evaluate(y => scrollTo(0, y), meta.scrollY);
 // Restore inner scrollers: from the data-snap-scroll marks snapshot.js leaves on scrolled elements

@@ -6,13 +6,13 @@ The input may be the raw string or a tool-result JSON array of {text} parts wrap
 
 Refuses the snapshot, writing nothing, if any pattern in the redaction file still matches or
 any URL still carries a signing parameter. The redaction file names the learner, so it lives
-outside the repository: $SNAP_REDACT, default ~/.self-learn/chatgpt-redact.json, shaped like
+outside the repository: $SNAP_REDACT, default ~/.design-systems/chatgpt-redact.json, shaped like
 redact.example.json beside this script.
 """
 import json, os, pathlib, re, sys
 
 src, outdir = sys.argv[1], sys.argv[2]
-redact_path = pathlib.Path(os.environ.get("SNAP_REDACT", "~/.self-learn/chatgpt-redact.json")).expanduser()
+redact_path = pathlib.Path(os.environ.get("SNAP_REDACT", "~/.design-systems/chatgpt-redact.json")).expanduser()
 redact = json.loads(redact_path.read_text())
 
 raw = open(src).read()
@@ -33,7 +33,12 @@ for pattern, flags, _ in redact["replace"]:
 # load the photo again whenever it is rendered.
 if re.search(r"<img[^>]*backend-api/estuary/public_content/", html):
     leaks.append("account photo URL (backend-api/estuary/public_content)")
-leaks += sorted(set(re.findall(r"[?&](?:amp;)?(X-Amz-Signature|X-Amz-Security-Token|Key-Pair-Id|Signature)=", html)))
+# Chat, project, account and user ids (snapshot.js cuts them; a survivor means it was bypassed).
+if re.search(r"\b(?!00000000-)[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b", html):
+    leaks.append("a chat or account uuid")
+if re.search(r"\bg-p-(?!sample)[0-9a-f]{32}|\b(?:user|account)-(?!sample)[A-Za-z0-9]{16,}|\blibfile_(?!sample)[0-9a-f]{16,}|\bfile[-_](?!sample)[A-Za-z0-9]{16,}", html):
+    leaks.append("a project, file, user or account id")
+leaks += sorted(set(re.findall(r"[?&](?:amp;)?(X-Amz-Signature|X-Amz-Security-Token|Key-Pair-Id|Signature|sig)=", html)))
 if leaks:
     sys.exit(f"LEAK {leaks}")
 

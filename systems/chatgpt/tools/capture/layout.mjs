@@ -1,8 +1,8 @@
 // Reads page geometry from the static signed-in page copies (the 1440 x 900 ones and the 390 x 844
-// mobile-* ones) and writes raw/layout.json: the sidebar and the tiny rail, the main column and its
+// mobile-* ones) and writes raw/layout.json: the sidebar and the rail, the main column and its
 // header, the composer, the h1, the thread column and the user bubble, every grid and max-width
 // container, fixed and sticky layers, dialogs and popovers, inner scrollers, and a few
-// page-specific measures (Library rows, Images cards, Plugins rows, project chat rows).
+// page-specific measures (the Library's masonry grid, Images cards, settings rows).
 // raw/pages.md is written by hand from it.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs SNAPS=<dir of page copies> node tools/capture/layout.mjs
@@ -22,31 +22,33 @@ function measure() {
   const painted = (e) => { for (let n = e; n && n !== document.body; n = n.parentElement) if (getComputedStyle(n).backgroundColor !== 'rgba(0, 0, 0, 0)') return n; return null; };
   const all = [...document.querySelectorAll('body *')].filter((e) => !e.closest('svg') && vis(e));
   const out = { vw: innerWidth, vh: innerHeight };
-  const side = document.querySelector('#stage-slideover-sidebar') || document.querySelector('#stage-popover-sidebar [role=dialog]');
-  out.sidebar = side && vis(side) ? { el: tag(side), ...R(side), bg: getComputedStyle(side).backgroundColor, borderEnd: `${getComputedStyle(side).borderRightWidth} ${getComputedStyle(side).borderRightColor}`, transform: getComputedStyle(side).transform } : null;
-  const rail = document.querySelector('#stage-sidebar-tiny-bar');
-  out.rail = rail && vis(rail) && inVp(rail) ? { ...R(rail), bg: getComputedStyle(rail).backgroundColor, buttons: [...rail.querySelectorAll('a, button, [role=button]')].filter((b) => vis(b) && inVp(b)).map((b) => ({ label: b.getAttribute('aria-label') || (b.innerText || '').trim().slice(0, 20), ...R(b) })) } : null;
-  if (side && vis(side)) {
-    const rows = [...side.querySelectorAll('.__menu-item')].filter((e) => vis(e) && inVp(e) && !e.closest('#stage-sidebar-tiny-bar'));
-    out.sidebarRows = { first: R(rows[0]), second: R(rows[1]), count: rows.length, labels: [...side.querySelectorAll('h2.__menu-label')].filter(vis).map((h) => ({ text: h.innerText.trim(), ...R(h) })), header: R([...side.querySelectorAll('#sidebar-header')].find((e) => !e.closest('#stage-sidebar-tiny-bar'))), account: R([...side.querySelectorAll('[data-testid=accounts-profile-button]')].find((e) => !e.closest('#stage-sidebar-tiny-bar'))) };
+  // The 2026-10 shell: the sidebar is aside.LeftPanel (52 wide when collapsed to the rail), the
+  // header is <header>, the composer a ProseMirror field, turns carry data-turn-key.
+  const asides = [...document.querySelectorAll('aside[class*="LeftPanel"]')].filter(vis);
+  const side = asides.find((a) => R(a).w > 100) || [...document.querySelectorAll('[role=dialog]')].find((d) => vis(d) && d.querySelector('[data-sidebar-destination]'));
+  out.sidebar = side ? { el: tag(side), ...R(side), bg: getComputedStyle(side).backgroundColor, borderEnd: `${getComputedStyle(side).borderRightWidth} ${getComputedStyle(side).borderRightColor}`, transform: getComputedStyle(side).transform } : null;
+  const rail = asides.find((a) => R(a).w <= 100);
+  out.rail = rail && inVp(rail) ? { ...R(rail), bg: getComputedStyle(rail).backgroundColor, buttons: [...rail.querySelectorAll('a, button, [role=button]')].filter((b) => vis(b) && inVp(b)).map((b) => ({ label: b.getAttribute('aria-label') || (b.innerText || '').trim().slice(0, 20), ...R(b) })) } : null;
+  if (side) {
+    const rows = [...side.querySelectorAll('button[data-sidebar-destination], a[data-interactive-row-link]')].filter((e) => vis(e) && inVp(e));
+    out.sidebarRows = { first: R(rows[0]), second: R(rows[1]), count: rows.length, labels: [...side.querySelectorAll('button[data-app-action-sidebar-section-toggle]')].filter(vis).map((h) => ({ text: h.innerText.trim(), ...R(h) })), account: R(side.querySelector('button[aria-label="Open profile menu"]')) };
   }
-  const main = document.querySelector('main#main') || document.querySelector('main');
+  const main = document.querySelector('main');
   out.main = main && vis(main) ? { ...R(main), bg: getComputedStyle(main).backgroundColor } : null;
-  const head = document.querySelector('#page-header') || (main && main.parentElement.querySelector('header'));
+  const head = document.querySelector('header');
   out.header = head && vis(head) ? { el: tag(head), ...R(head), position: getComputedStyle(head).position, items: [...head.querySelectorAll('button, a')].filter((b) => vis(b) && inVp(b)).map((b) => ({ label: b.getAttribute('aria-label') || (b.innerText || '').trim().slice(0, 20), ...R(b) })) } : null;
-  const h1 = [...document.querySelectorAll('main h1, h1')].find((e) => vis(e) && inVp(e));
+  const h1 = [...document.querySelectorAll('main h1, h1')].find((e) => vis(e) && inVp(e) && e.innerText.trim());
   out.h1 = h1 && { text: h1.innerText.slice(0, 50), font: getComputedStyle(h1).font.slice(0, 140), ...R(h1) };
-  const pm = document.querySelector('#prompt-textarea');
+  const pm = document.querySelector('.ProseMirror');
   if (pm && vis(pm)) {
-    const box = painted(pm);
-    const st = pm.closest('.sticky');
-    out.composer = { box: R(box), radius: box && getComputedStyle(box).borderRadius, bg: box && getComputedStyle(box).backgroundColor, shadow: box && getComputedStyle(box).boxShadow, editor: R(pm), buttons: [...box.querySelectorAll('button')].filter((b) => vis(b)).map((b) => ({ label: b.getAttribute('aria-label') || (b.innerText || '').trim().slice(0, 20), ...R(b) })), sticky: st ? { ...R(st), bottom: getComputedStyle(st).bottom } : null };
+    const box = painted(pm.parentElement) || pm;
+    out.composer = { box: R(box), radius: getComputedStyle(box).borderRadius, bg: getComputedStyle(box).backgroundColor, shadow: getComputedStyle(box).boxShadow, editor: R(pm), buttons: [...(box.closest('form') || box).querySelectorAll('button')].filter((b) => vis(b)).map((b) => ({ label: b.getAttribute('aria-label') || (b.innerText || '').trim().slice(0, 20), ...R(b) })) };
   }
-  const turns = [...document.querySelectorAll('section[data-testid^=conversation-turn]')];
+  const turns = [...document.querySelectorAll('[data-turn-key]')];
   if (turns.length) {
-    const md = [...document.querySelectorAll('.markdown')].find((e) => vis(e));
-    const bubble = [...document.querySelectorAll('[data-message-author-role=user] .whitespace-pre-wrap')].map((e) => painted(e)).find((e) => e && vis(e));
-    out.thread = { turns: turns.length, renderedTurns: turns.filter((t) => t.getBoundingClientRect().height > 40).length, turn: R(turns.find((t) => inVp(t)) || turns[0]), markdown: R(md), markdownFont: md && getComputedStyle(md).font.slice(0, 120), userBubble: bubble ? { ...R(bubble), radius: getComputedStyle(bubble).borderRadius, padding: getComputedStyle(bubble).padding, bg: getComputedStyle(bubble).backgroundColor, maxWidth: getComputedStyle(bubble).maxWidth } : null };
+    const md = [...document.querySelectorAll('[class*="MarkdownRoot"]')].find((e) => vis(e));
+    const bubble = [...document.querySelectorAll('[data-user-message-bubble]')].find((e) => vis(e));
+    out.thread = { turns: turns.length, turn: R(turns.find((t) => inVp(t)) || turns[0]), markdown: R(md), markdownFont: md && getComputedStyle(md).font.slice(0, 120), userBubble: bubble ? { ...R(bubble), radius: getComputedStyle(bubble).borderRadius, padding: getComputedStyle(bubble).padding, bg: getComputedStyle(bubble).backgroundColor, maxWidth: getComputedStyle(bubble).maxWidth } : null };
   }
   const seen = new Set();
   out.maxWidths = all.filter((e) => { const m = getComputedStyle(e).maxWidth; return /px$/.test(m) && parseFloat(m) >= 300 && parseFloat(m) <= 1800 && inVp(e); })
@@ -59,12 +61,10 @@ function measure() {
   out.body = { font: getComputedStyle(document.body).fontFamily.slice(0, 160), size: getComputedStyle(document.body).fontSize, bg: getComputedStyle(document.body).backgroundColor, color: getComputedStyle(document.body).color };
 
   // Page-specific measures.
-  const lh = document.querySelector('[data-testid=artifacts-surface-library-list-header]');
-  if (lh) {
-    const names = [...document.querySelectorAll('main button.min-w-0')].filter((e) => vis(e) && /\.\w{2,4}$/.test(e.innerText.trim()));
-    const rowOf = (e) => { for (let n = e; n; n = n.parentElement) if (n.getBoundingClientRect().width >= 1000) return n; return null; };
-    const r0 = names[0] && rowOf(names[0]);
-    out.libraryRows = { header: R(lh), headerCols: getComputedStyle(lh).gridTemplateColumns, row: R(r0), pitch: names[1] ? Math.round((R(names[1]).y - R(names[0]).y) * 10) / 10 : null, name: R(names[0]), icon: r0 && R(r0.querySelector('img, svg')), count: names.length, toolbar: R(document.querySelector('[data-testid=page-table-toolbar-shell]')) };
+  const masonry = document.querySelector('[data-masonry-item]');
+  if (masonry) {
+    const grid = masonry.parentElement; const items = [...grid.children].filter(vis);
+    out.libraryGrid = { grid: R(grid), columns: getComputedStyle(grid).getPropertyValue('--masonry-columns').trim() || null, gridTemplateColumns: getComputedStyle(grid).gridTemplateColumns, first: R(items[0]), second: R(items[1]), count: items.length };
   }
   const aerial = [...document.querySelectorAll('main *')].find((e) => e.children.length === 0 && (e.innerText || '').trim() === 'Aerial view');
   if (aerial) {
@@ -72,16 +72,8 @@ function measure() {
     const next = card && card.nextElementSibling;
     out.imageCards = { card: R(card), radius: card && getComputedStyle(card).borderRadius, next: R(next), gapX: next ? Math.round((R(next).x - R(card).x - R(card).w) * 10) / 10 : null };
   }
-  const gmail = document.querySelector('a[aria-label="Open Gmail"]');
-  if (gmail) {
-    const row = gmail.parentElement; const health = document.querySelector('a[aria-label="Open Health"]').parentElement; const drive = document.querySelector('a[aria-label="Open Google Drive"]').parentElement;
-    out.pluginRows = { row: R(row), radius: getComputedStyle(row).borderRadius, gapX: Math.round((R(health).x - R(row).x - R(row).w) * 10) / 10, pitchY: Math.round((R(drive).y - R(row).y) * 10) / 10, icon: R(row.querySelector('[data-testid=plugin-icon-wrapper]')), search: R(document.querySelector('input[placeholder="Search plugins"]')) };
-  }
-  const pc = document.querySelector('[data-testid=project-conversation-overflow-date]');
-  if (pc) {
-    let row = pc; while (row && row.getBoundingClientRect().width < 740) row = row.parentElement;
-    out.projectRows = { row: R(row), date: R(pc), title: h1 && R(h1) };
-  }
+  const row = document.querySelector('main [class*="settings-row"]');
+  if (row) out.settingsRow = { row: R(row), padding: getComputedStyle(row).padding, next: R(row.nextElementSibling) };
   return out;
 }
 

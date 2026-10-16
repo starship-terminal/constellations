@@ -63,11 +63,41 @@ function spriteFix(clone) {
   });
   if (keep.size) clone.querySelector('body').insertAdjacentHTML('beforeend', '<svg xmlns="http://www.w3.org/2000/svg" style="display:none" data-sprites="">' + [...keep.values()].join('') + '</svg>');
 }
+// Chat ids (/c/<uuid>), project ids (g-p-<hex>), GPT ids (g-<id>), Library file ids, account and user ids.
+function cutIds(h) {
+  return h.replace(/\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b/gi, '00000000-0000-0000-0000-000000000000')
+    .replace(/\bg-p-[0-9a-f]{32}(-[a-z0-9-]+)?/g, 'g-p-sample').replace(/\bg-[A-Za-z0-9]{9,}(-[a-z0-9-]+)?/g, 'g-sample')
+    .replace(/\blibfile_[0-9a-f]{16,}/g, 'libfile_sample').replace(/\bfile[-_][A-Za-z0-9]{16,}/g, 'file-sample')
+    .replace(/\b(user|account|org)-[A-Za-z0-9]{16,}/g, '$1-sample');
+}
+// Every title the sidebar, project list, Library and search show, longest first, so a title that
+// contains another is replaced whole.
+function scrubTitles() {
+  const out = new Set();
+  const add = (v) => { v = (v || '').trim(); if (v.length >= 3) out.add(v); };
+  document.querySelectorAll('a[href*="/c/"], a[href^="/g/"], a[href*="/project"]').forEach((a) => { add(a.textContent); add(a.getAttribute('aria-label')); a.querySelectorAll('[title],[aria-label]').forEach((x) => { add(x.getAttribute('title')); add(x.getAttribute('aria-label')); }); const p = a.closest('[aria-label]'); if (p && p !== a && p.querySelector('a') === a) add(p.getAttribute('aria-label')); });
+  document.querySelectorAll('[aria-label]').forEach((e) => { const m = e.getAttribute('aria-label').match(/^(?:Project actions for|New chat in|Open conversation options for|More options for) (.+)$/); if (m) add(m[1]); });
+  for (const sel of window.__titleSel || []) document.querySelectorAll(sel).forEach((e) => add(e.textContent));
+  const ui = new Set(['New chat', 'Images', 'Library', 'Search', 'Projects', 'Chats', 'Codex', 'Plugins', 'Explore', 'Scheduled', 'Recents', 'Research', 'Others']);
+  return [...out].filter((t) => !ui.has(t)).sort((a, b) => b.length - a.length);
+}
+// Same-length neutral words: each word keeps its length and case, digits stay.
+const LOREM = 'the of and to in is it on as at by we or an be so up if no do my me us go am he ok'.split(' ').concat('one two way day see use new now for are was not but can all any had how man out say she too old get yes yet ago act add age air'.split(' '), 'that with this have from they will what when make like time just know take into year good some them than then look only come over work also back give most very even want well each much'.split(' '), 'about there their which would other these first could after think where being every great might shall still those under while sound place small large'.split(' '), 'little number people always should around before become follow letter mother answer animal father simple island'.split(' '), 'example between picture another without country sentence thought program problem against through'.split(' '));
+function filler(text) {
+  let k = 0;
+  return text.replace(/[A-Za-z\u00C0-\u024F\u0400-\u04FF]+/g, (w) => {
+    const pool = LOREM.filter((x) => x.length === Math.min(w.length, 8));
+    let r = pool.length ? pool[(k++ * 7 + w.length) % pool.length] : 'x'.repeat(w.length);
+    while (r.length < w.length) r += r;
+    r = r.slice(0, w.length);
+    return /^[A-Z]/.test(w) ? r[0].toUpperCase() + r.slice(1) : r;
+  }).replace(/[\u3040-\u9FFF\uAC00-\uD7AF]/g, '\u25A1');
+}
 window.__snap = function (label, REDACT) {
   if (!REDACT || !Array.isArray(REDACT.replace)) throw new Error('pass the redaction file as the second argument');
   // A presigned URL (S3, CloudFront) carries a credential that works until it expires, so
   // any URL with a signing parameter loses its whole query string.
-  const SIGNED = /[?&](X-Amz-[A-Za-z-]+|Signature|Key-Pair-Id|Policy|Expires|token|access_token|auth)=/i;
+  const SIGNED = /[?&](X-Amz-[A-Za-z-]+|Signature|Key-Pair-Id|Policy|Expires|token|access_token|auth|sig)=/i;
   const abs = (u) => { let h; try { h = new URL(u, location.href).href; } catch { return u; } return SIGNED.test(h) ? h.split('?')[0] : h; };
   const parts = [];
   for (const ss of document.styleSheets) {
@@ -145,10 +175,15 @@ window.__snap = function (label, REDACT) {
   // ChatGPT serves the account photo from backend-api/estuary/public_content with alt="" and no
   // "avatar" in the URL, so the profile button's <img> and every public_content image are matched
   // too (Library thumbnails come from estuary/content and are inlined by __inline instead).
-  clone.querySelectorAll('img[src*="googleusercontent.com"], img[src*="gravatar.com"], img[src*="avatar"], img[alt="Profile image"], [data-testid="accounts-profile-button"] img, img[src*="/backend-api/estuary/public_content/"]').forEach((img) => {
+  // Since the 2026-10 redesign the account photo is an inline data:image/jpeg in a rounded-full
+  // <img> (alt="") in the account row, so every data: JPEG and every round image goes too.
+  clone.querySelectorAll('img[src*="googleusercontent.com"], img[src*="gravatar.com"], img[src*="avatar"], img[alt="Profile image"], [data-testid="accounts-profile-button"] img, [aria-label="Open profile menu"] img, img[src*="/backend-api/estuary/public_content/"], img[src^="data:image/jpeg"], img.rounded-full').forEach((img) => {
     const d = document.createElement('div');
     d.className = img.className;
-    d.setAttribute('style', 'display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:9999px;background:#8a8a8a;color:#fff;font-weight:600;font-size:12px');
+    // A Tailwind size-N image keeps its size: in the 2026-10 account row the photo's parent is an
+    // inline-flex span with no width, so a 100% disc collapses.
+    const sz = (img.className.match(/\bsize-(\d+)/) || [])[1]; const px = sz ? sz * 4 + 'px' : '100%';
+    d.setAttribute('style', 'display:flex;flex:none;align-items:center;justify-content:center;width:' + px + ';height:' + px + ';border-radius:9999px;background:#8a8a8a;color:#fff;font-weight:600;font-size:12px');
     d.textContent = 'L';
     img.replaceWith(d);
   });
@@ -163,12 +198,50 @@ window.__snap = function (label, REDACT) {
   clone.querySelector('head').insertAdjacentHTML('beforeend', parts.map((p) => (p.href
     ? '<link rel="stylesheet" href="' + p.href + '">'
     : '<style' + (p.media ? ' media="' + p.media + '"' : '') + '>' + p.css.replace(/<\/style/gi, '<\\/style') + '</style>')).join('\n'));
+  // ChatGPT (adapt, 2026-10-17): titles are scrubbed in the copy before it is serialised, so a
+  // chat, project, file or GPT title never leaves the browser even when the redaction file does not
+  // name it. scrubTitles() collects every title the live page shows (chat and project links, the
+  // "Project actions for X" labels) and replaces each one everywhere in the copy, attributes
+  // included; REDACT.scrub then replaces the text inside each [selector, kind] match: "filler" keeps
+  // each word's length with neutral words (message text, so the layout holds), anything else
+  // becomes "<kind> <n>". The ids on <html> and every chat and project id in a URL are cut too.
+  const titles = scrubTitles();
+  const keep = new Set(REDACT.keep || []);
+  for (const [sel, kind] of REDACT.scrub || []) {
+    let n = 0;
+    clone.querySelectorAll(sel).forEach((el) => {
+      const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      const texts = [];
+      while (w.nextNode()) texts.push(w.currentNode);
+      for (const t of texts) {
+        const v = t.nodeValue.trim();
+        if (!v || keep.has(v) || /^[\d%.,:·\s/$+()-]+$/.test(v)) continue;
+        if (t.parentElement && t.parentElement.closest('[data-scrub-done]')) continue;
+        t.nodeValue = kind === 'filler' ? filler(t.nodeValue) : kind + ' ' + (++n);
+      }
+      // A message's links and images say what was researched (the cited sites, their favicons).
+      el.querySelectorAll('a[href]').forEach((x) => x.setAttribute('href', 'https://example.com/'));
+      el.querySelectorAll('img[src]').forEach((x) => { if (!x.getAttribute('src').startsWith('data:')) x.setAttribute('src', 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'); x.removeAttribute('srcset'); });
+      for (const a of ['aria-label', 'title', 'alt']) {
+        if (el.hasAttribute(a) && !keep.has(el.getAttribute(a))) el.setAttribute(a, kind === 'filler' ? '' : kind);
+        el.querySelectorAll('[' + a + ']').forEach((x) => { if (!keep.has(x.getAttribute(a))) x.setAttribute(a, ''); });
+      }
+    });
+  }
+  for (const a of ['data-theme-account-id', 'data-theme-user-id', 'data-page-load-id']) clone.removeAttribute(a);
   let html = '<!doctype html>\n' + clone.outerHTML;
+  const esc = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const htmlEsc = (x) => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  titles.forEach((t, i) => { for (const f of new Set([t, htmlEsc(t)])) html = html.split(f).join('Sample title ' + (i + 1)); });
   for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
+  html = cutIds(html);
+  const left = titles.filter((t) => html.includes(t) || html.includes(htmlEsc(t)));
+  if (left.length) throw new Error(left.length + ' title(s) survived the scrub');
   // Inner scrollers (the task thread is a virtualised list inside one) keep their position only
   // as a property, so each scrolled element is recorded by its child-index path for render.mjs.
   const pathOf = (el) => { const out = []; for (let n = el; n && n !== document.documentElement; n = n.parentElement) out.unshift([...n.parentElement.children].indexOf(n)); return out; };
   const scrolls = [...document.querySelectorAll('*')].filter((e) => e.scrollTop > 0).map((e) => ({ path: pathOf(e), top: e.scrollTop, left: e.scrollLeft, max: e.scrollHeight - e.clientHeight }));
-  const meta = { label, url: location.href, title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
+  // ChatGPT (adapt): the URL holds the chat or project id and the document title the chat's title.
+  const meta = { label, url: cutIds(location.origin + location.pathname), title: '', scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
   return 'SNAPSTART' + JSON.stringify(meta) + 'SNAPMETA' + html + 'SNAPEND';
 };

@@ -8,10 +8,10 @@
 // and state into components/crops/<component>-<state>.png (2x, 256 colours, halved when wider than
 // 1600px). raw/measurements.md is then built from the JSON by build-measurements.mjs.
 //
-// Themes: ChatGPT declares its light palette on `html, .light, .dark .light` and its dark one on
-// `.dark`, and puts `dark` on <html> and again on each message's markdown body, so each copy
-// (captured in dark) is measured once as captured and once with every `dark` class removed, which
-// is what render.mjs does for the light screenshots. Dark states keep their plain names
+// Themes: since the 2026-10 redesign ChatGPT paints its palettes from `data-theme` on <html>
+// (`.chatgpt-theme[data-theme="dark"|"light"]`), so each copy (captured in dark) is measured once as
+// captured and once with every data-theme="dark" set to light, which is what render.mjs does for
+// the light screenshots. Dark states keep their plain names
 // (`default`, `hover`, ...); light states are `light`, `light-hover`, `light-focus-visible`, ...
 // and every state records `theme`.
 //
@@ -23,6 +23,7 @@
 //                  on the element or its first focusable descendant; ChatGPT draws most focus
 //                  rings from `keyboard-focused:` variants that its script switches on, so many
 //                  record the plain :focus-visible look only
+//   pressed        the mouse button held down on the element for 300ms (:active), then released
 //   anything else  another element, or another copy, captured in that state: `active` (the
 //                  current page or chat), `selected`, `checked`, `open`, `typed`, ...
 // No click is dispatched anywhere; the copies have no scripts and every request off the asset
@@ -95,12 +96,16 @@ const HELPERS = () => {
     at: (x, y) => document.elementFromPoint(x, y),
     P: (el) => { for (let n = el; n && n !== document.documentElement; n = n.parentElement) if (paints(n)) return n; return null; },
     D: () => { const d = [...document.querySelectorAll('[role=dialog]')].filter(vis); return d[d.length - 1] || null; },
-    M: () => document.querySelector('main#main') || document.querySelector('main'),
+    M: () => document.querySelector('main'),
     // The expanded sidebar (the phone drawer on the 390 copies) and the tiny rail behind it.
-    S: () => document.querySelector('#stage-slideover-sidebar') || document.querySelector('#stage-popover-sidebar'),
-    RAIL: () => document.querySelector('#stage-sidebar-tiny-bar'),
+    S: () => [...document.querySelectorAll('aside[class*="LeftPanel"]')].find((e) => e.getBoundingClientRect().width > 1) || null,
+    RAIL: () => [...document.querySelectorAll('aside[class*="LeftPanel"]')].find((e) => e.getBoundingClientRect().width > 1) || null,
     // el's first ancestor at least `w` wide that paints a fill, border or shadow (a popover panel).
     PW: (el, w) => { for (let n = el; n && n !== document.documentElement; n = n.parentElement) if (n.getBoundingClientRect().width >= w - 0.5 && paints(n)) return n; return null; },
+    // The visible button, link or [role=button] whose text (innerText, aria-label or textContent)
+    // is exactly `text`; QA(sel, i) the i-th match of a selector, visible or not (hover-only controls).
+    B: (text, root = document) => [...root.querySelectorAll('button, a, [role=button], [role=tab], [role=menuitem]')].find((e) => vis(e) && [e.innerText, e.getAttribute('aria-label'), e.textContent].some((t) => (t || '').trim() === text)) || null,
+    QA: (sel, i = 0, root = document) => root.querySelectorAll(sel)[i] || null,
     painted: (list) => [...list].find((e) => vis(e) && paints(e)) || null,
     unpainted: (list) => [...list].find((e) => vis(e) && !paints(e)) || null,
   });
@@ -162,7 +167,7 @@ function styleOf(el, props) {
     rect: { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
     style: pick(cs),
   };
-  for (const a of ['role', 'aria-label', 'data-state', 'data-active', 'aria-checked', 'aria-selected', 'data-context-menu']) if (el.hasAttribute(a)) (out.attrs ||= {})[a] = el.getAttribute(a);
+  for (const a of ['role', 'aria-label', 'data-state', 'data-active', 'aria-checked', 'aria-selected', 'aria-expanded', 'aria-disabled', 'disabled', 'data-color', 'data-variant', 'data-size', 'data-context-menu']) if (el.hasAttribute(a)) (out.attrs ||= {})[a] = el.getAttribute(a);
   for (const pe of ['::before', '::after']) {
     const p = getComputedStyle(el, pe);
     if (p.content && p.content !== 'none' && p.content !== 'normal') {
@@ -198,6 +203,13 @@ function styleOf(el, props) {
     if (fill || c.boxShadow !== 'none' || (c.outlineStyle !== 'none' && parseFloat(c.outlineWidth) > 0 && c.outlineColor !== 'rgba(0, 0, 0, 0)')) anc.push({ up: i + 1, node: short(n), shadow: c.boxShadow !== 'none' ? c.boxShadow : undefined, outline: c.outlineStyle !== 'none' ? `${c.outlineWidth} ${c.outlineStyle} ${c.outlineColor}` : undefined, radius: c.borderRadius, bg: c.backgroundColor });
   }
   if (anc.length) out.ancestors = anc;
+  // The stacking: the element's own z-index, else the nearest positioned ancestors that set one.
+  const za = [];
+  for (let n = el; n && n !== document.documentElement && za.length < 3; n = n.parentElement) {
+    const c = getComputedStyle(n);
+    if (c.zIndex !== 'auto' && c.position !== 'static') za.push({ node: short(n), z: +c.zIndex, position: c.position });
+  }
+  if (za.length) out.zAncestors = za;
   const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, { acceptNode: (t) => (t.textContent.trim() && t.parentElement && t.parentElement.getBoundingClientRect().width > 1 && getComputedStyle(t.parentElement).visibility === 'visible' ? 1 : 3) });
   const tn = walker.nextNode();
   if (tn && tn.parentElement !== el) {
@@ -251,151 +263,161 @@ function styleOf(el, props) {
 // that state (they are measured at rest, then with their own `states` if given). `pad` is the crop
 // padding (8 by default); `crop: false` skips the crop.
 const ALL = ['default', 'hover', 'focus-visible'];
+const ALLP = ['default', 'hover', 'focus-visible', 'pressed'];
 const HV = ['default', 'hover'];
 const R = ['default'];
 
+// Captured 2026-10-17 from the redesigned shell: components are CSS-module classes (`Button-*`,
+// `itemBase-*`, `Table-*`, `Badge-*`) with data-color / data-variant / data-size attributes, the
+// sidebar is `aside[class*=LeftPanel]` and the page header `[data-testid=app-shell-head]`.
 const SPECS = [
   // ---------------- Sidebar
-  { key: 'sidebar', group: 'Sidebar', title: 'Sidebar (expanded)', snap: 'home-dark', find: () => S(), states: R, pad: 0, desc: '`#stage-slideover-sidebar`, 260 wide (`--sidebar-width`), `--sidebar-surface-primary` fill and a 1px `--border-extra-light` rule at the inline end. The header and the account row are sticky inside it.' },
-  { key: 'sidebar-header', group: 'Sidebar', title: 'Sidebar header row', snap: 'home-dark', find: () => Q('#sidebar-header', 0, S()), states: R, desc: '52 tall (`--header-height`): the ChatGPT wordmark at the start, search and close icon buttons at the end.' },
-  { key: 'sidebar-wordmark', group: 'Sidebar', title: 'Wordmark link (ChatGPT)', snap: 'home-dark', find: () => C(T('ChatGPT', S()), 'a'), states: ALL, desc: 'The only place the UI sets OpenAI Sans: `.header-wordmark`, 600 weight, -0.015em tracking.' },
-  { key: 'sidebar-icon-button', group: 'Sidebar', title: 'Sidebar icon button (Search)', snap: 'home-dark', find: () => Q('button[aria-label="Search"]', 0, S()), states: ALL, desc: '36x36, radius 8, `--text-tertiary` icon; hover fills with `--surface-hover`.' },
-  { key: 'sidebar-close-button', group: 'Sidebar', title: 'Close sidebar button', snap: 'home-dark', find: () => Q('[data-testid=close-sidebar-button]', 0, S()), states: HV },
+  { key: 'sidebar', group: 'Sidebar', title: 'Sidebar (expanded)', snap: 'home-dark', find: () => S(), states: R, pad: 0, desc: '`aside.LeftPanel`, 340 wide at 1440 (`--spacing-token-sidebar`, clamp(240px, 340px, ...)); header row, nav rows, then the Pinned, Projects and Recents sections and the account row.' },
+  { key: 'sidebar-icon-button', group: 'Sidebar', title: 'Icon button (sidebar Search)', snap: 'home-dark', find: () => Q('button[aria-label="Search"]', 0, S()), states: ALLP, desc: '`Button` with data-color=secondary, data-variant=ghost, data-size=xl: 36x36.' },
   {
-    key: 'nav-row', group: 'Sidebar', title: 'Nav row (Images)', snap: 'home-dark', find: () => Q('[data-testid=sidebar-item-library]', 0, S()), states: ALL,
-    desc: 'A `.__menu-item` row, 36 tall, radius 10, 20px icon and 14/20 text, inset 6px from the sidebar edges. Its fills come from inline `--menu-item-*` variables pointing at `--interactive-bg-secondary-*`. The current page gets the selected fill (`active`).',
-    extra: { active: { find: () => Q('[data-testid=create-new-chat-button]', 0, S()), states: ['hover'] }, 'active-library': { snap: 'library-dark', find: () => Q('[data-testid=sidebar-item-recall]', 0, S()) } },
+    key: 'nav-row', group: 'Sidebar', title: 'Nav row (Images)', snap: 'home-dark', find: () => Q('button[data-sidebar-destination="builtin:images"]', 0, S()), states: ALLP,
+    desc: 'A 36 tall row with a 20px icon and 14px label. The current destination is filled (`active`).',
+    extra: { active: { find: () => C(T('New chat', S()), 'button') }, 'active-library': { snap: 'library-dark', find: () => Q('button[data-sidebar-destination="builtin:library"]', 0, S()) } },
   },
-  { key: 'nav-row-icon', group: 'Sidebar', title: 'Nav row icon', snap: 'home-dark', find: () => Q('[data-testid=sidebar-item-library] svg', 0, S()), states: R, desc: 'A sprite `<use>` icon, drawn in currentColor.' },
-  { key: 'section-label', group: 'Sidebar', title: 'Section label (Pinned)', snap: 'home-dark', find: () => C(T('Pinned', S()), 'button'), states: ALL, desc: 'A collapsible header: `.__menu-label` text in `--text-tertiary`; the row shows a chevron on hover.' },
-  { key: 'section-label-text', group: 'Sidebar', title: 'Section label text', snap: 'home-dark', find: () => Q('h2.__menu-label', 0, S()), states: R },
+  { key: 'section-toggle', group: 'Sidebar', title: 'Section header (Pinned)', snap: 'home-dark', find: () => Q('button[data-app-action-sidebar-section-toggle]', 0, S()), states: ALL, desc: 'Collapsible section label in tertiary text.' },
   {
-    key: 'chat-row', group: 'Sidebar', title: 'Chat row (pinned)', snap: 'home-dark', find: () => [...S().querySelectorAll('a.__menu-item')].find((a) => a.getBoundingClientRect().top >= C(T('Pinned', S()), 'button').getBoundingClientRect().bottom), states: ALL,
-    desc: 'Pinned chats carry a speech-bubble icon; plain history rows (Chats) have none. Hover reveals the options button at the end. The open chat gets the selected fill (`active`).',
-    extra: { active: { snap: 'thread-dark-table', find: () => [...S().querySelectorAll('a.__menu-item')].find((a) => a.innerText.trim() === document.title) } },
+    key: 'chat-row', group: 'Sidebar', title: 'List row (sidebar chat)', snap: 'home-dark', find: () => H(Q('a[data-interactive-row-link]', 2, S()), 30), hoverOn: () => Q('a[data-interactive-row-link]', 2, S()), states: ['default', 'hover'],
+    desc: 'A chat in Recents: 36 tall, full radius (`--radius-token-row`), the title truncated; hover fills it and shows Chat actions and Pin. The open chat is filled (`active`).',
+    extra: { active: { snap: 'thread-dark-code', find: () => P(QA('a[aria-current=page]', 0, S())) } },
   },
-  { key: 'history-row', group: 'Sidebar', title: 'History row (Chats)', snap: 'home-dark', find: () => C(S().querySelector('[data-testid=history-item-0-options]'), 'a'), states: HV },
-  { key: 'chat-row-options', group: 'Sidebar', title: 'Chat row options button', snap: 'home-dark', find: () => S().querySelector('[data-testid=history-item-0-options]'), hoverOn: () => C(S().querySelector('[data-testid=history-item-0-options]'), 'a'), states: ['hover'], desc: 'Hidden until its row is hovered; measured while the row is hovered.' },
-  { key: 'project-row', group: 'Sidebar', title: 'Project row', snap: 'home-dark', find: () => C(T('A project', S()), '[role=button]'), states: ALL, desc: 'Each project keeps its own icon and colour; hover reveals "Open project home" and options.', extra: { active: { snap: 'project-dark', find: () => C(T('A third project', S()), '[role=button]') } } },
-  { key: 'account-row', group: 'Sidebar', title: 'Account row', snap: 'home-dark', find: () => Q('[data-testid=accounts-profile-button]', 0, S()), states: HV, desc: '52 tall: a 24px avatar, the name over the plan in `--text-tertiary`, and the Upgrade pill at the end; sticky at the bottom over a hairline.', extra: { open: { snap: 'home-dark-user-menu', find: () => Q('[data-testid=accounts-profile-button]', 0, S()) } } },
-  { key: 'avatar', group: 'Sidebar', title: 'Avatar', snap: 'home-dark', find: () => Q('[data-testid=accounts-profile-button] .rounded-full', 0, S()), states: R, desc: 'Redacted to a grey disc with an L; the real one is the account photo at 24px.' },
-  { key: 'sidebar-upgrade', group: 'Sidebar', title: 'Upgrade pill (account row)', snap: 'home-dark', find: () => C(T('Upgrade', S()), 'button'), states: ALL, desc: 'An outline pill: a `--border-default` ring, 13px 500 text.' },
-  { key: 'sidebar-rail', group: 'Sidebar', title: 'Sidebar collapsed to the tiny rail', snap: 'home-dark-sidebar-collapsed', find: () => RAIL(), states: R, pad: 0, desc: '`#stage-sidebar-tiny-bar`, 52 wide (`--sidebar-rail-width`, 13 spacing units): open sidebar, new chat, search, images, library, then the avatar at the bottom.' },
-  { key: 'rail-button', group: 'Sidebar', title: 'Rail button (New chat)', snap: 'home-dark-sidebar-collapsed', find: () => Q('[data-testid=create-new-chat-button]', 0, RAIL()), states: ALL },
-  { key: 'rail-open-sidebar', group: 'Sidebar', title: 'Rail open-sidebar button', snap: 'home-dark-sidebar-collapsed', find: () => Q('button[aria-label="Open sidebar"]', 0, RAIL()), states: HV },
+  { key: 'chat-row-link', group: 'Sidebar', title: 'Chat row link (keyboard focus)', snap: 'home-dark', find: () => Q('a[data-interactive-row-link]', 2, S()), states: ['focus-visible'], desc: 'The row\'s own link, focused from the keyboard.' },
+  { key: 'chat-row-actions', group: 'Sidebar', title: 'Chat actions button', snap: 'home-dark', find: () => QA('button[aria-label="Chat actions"]', 2, S()), hoverOn: () => Q('a[data-interactive-row-link]', 2, S()), states: ['hover'], desc: 'A 20x20 `Button` (size 3xs, transparent, pill), shown when its row is hovered; measured while the row is hovered.' },
+  { key: 'project-row', group: 'Sidebar', title: 'Project row', snap: 'home-dark', find: () => Q('[data-app-action-sidebar-project-row]', 0, S()), states: ALL, desc: 'Each project with its own icon; hover reveals project actions and a new-chat button.' },
+  { key: 'account-row', group: 'Sidebar', title: 'Account row', snap: 'home-dark', find: () => Q('button[aria-label="Open profile menu"]', 0, S()), states: ALLP, desc: '`Button` primary ghost size 4xl: the 24px avatar, the name over the plan.', extra: { open: { snap: 'home-dark-user-menu', find: () => Q('button[aria-label="Open profile menu"]', 0, S()) } } },
+  { key: 'avatar', group: 'Sidebar', title: 'Avatar', snap: 'home-dark', find: () => Q('button[aria-label="Open profile menu"] .rounded-full', 0, S()), states: R, desc: 'Redacted to a grey disc with an L; the real one is the account photo at 24px.' },
+  { key: 'sidebar-upgrade', group: 'Sidebar', title: 'Outline pill button (account Upgrade)', snap: 'home-dark', find: () => C(T('Upgrade', S()), 'button'), states: ALLP },
+  { key: 'sidebar-rail', group: 'Sidebar', title: 'Sidebar collapsed to the rail', snap: 'home-dark-sidebar-collapsed', find: () => S(), states: R, pad: 0, desc: '52 wide: show sidebar, new chat, search, pinned, recents, library, then the avatar.' },
+  { key: 'rail-button', group: 'Sidebar', title: 'Rail button (New chat)', snap: 'home-dark-sidebar-collapsed', find: () => C(T('New chat', S()), 'button') || Q('button[data-sidebar-cycle-item]', 0, S()), states: ALL },
 
   // ---------------- Top bar
-  { key: 'page-header', group: 'Top bar', title: 'Page header', snap: 'home-dark', find: () => Q('#page-header'), states: R, pad: 0, desc: '52 tall, sticky, 8px padding; the mode toggle centred, actions at the end.' },
-  { key: 'mode-toggle', group: 'Top bar', title: 'Chat / Work segmented toggle', snap: 'home-dark', find: () => P(Q('#page-header [role=radio]').parentElement), states: R, desc: 'A pill track with two 130x36 radio segments; the selected one carries a filled thumb.' },
-  { key: 'mode-segment', group: 'Top bar', title: 'Mode segment (Work, not selected)', snap: 'home-dark', find: () => Q('#page-header [role=radio][aria-checked=false]'), states: ALL, desc: 'Work is drawn in the accent blue with a sparkle.', extra: { selected: { find: () => Q('#page-header [role=radio][aria-checked=true]'), states: ['hover'] } } },
-  { key: 'header-upgrade', group: 'Top bar', title: 'Upgrade button (header)', snap: 'home-dark', find: () => Q('#page-header .button-glimmer-cta'), states: ALL, desc: 'Transparent pill, accent-blue sparkle and label (`.button-glimmer-cta`).' },
-  { key: 'header-icon-button', group: 'Top bar', title: 'Header icon button (Temporary chat)', snap: 'home-dark', find: () => Q('#page-header button[aria-label="Temporary chat"]'), states: ALL },
-  { key: 'share-button', group: 'Top bar', title: 'Share button (thread)', snap: 'thread-dark-table', find: () => Q('[data-testid=share-chat-button]'), states: ALL },
-  { key: 'conversation-options', group: 'Top bar', title: 'Conversation options (…) button', snap: 'thread-dark-table', find: () => Q('[data-testid=conversation-options-button]'), states: HV },
+  { key: 'page-header', group: 'Top bar', title: 'Page header', snap: 'home-dark', find: () => QA('[data-testid=app-shell-header-context-menu-surface]') || W(B('Temporary chat'), 1000), states: R, pad: 0, desc: '52 tall: the Chat / Work toggle centred, Upgrade and temporary chat at the end.' },
+  { key: 'mode-toggle', group: 'Top bar', title: 'Chat / Work segmented toggle', snap: 'home-dark', find: () => P(C(T('Chat', M()), 'button').parentElement), states: R, desc: 'A pill track with two 112x36 segments; the selected one carries a filled thumb.' },
+  { key: 'mode-segment', group: 'Top bar', title: 'Mode segment (Work, not selected)', snap: 'home-dark', find: () => C(TS('Work', M()), 'button'), states: ALLP, extra: { selected: { find: () => C(T('Chat', M()), 'button'), states: ['hover'] } } },
+  { key: 'header-upgrade', group: 'Top bar', title: 'Link-style button (header Upgrade)', snap: 'home-dark', find: () => B('Upgrade', QA('header') || document), states: ALLP, desc: 'Transparent pill, accent sparkle and label in `--color-text-header-upgrade`.' },
+  { key: 'header-icon-button', group: 'Top bar', title: 'Icon button (Temporary chat)', snap: 'home-dark', find: () => Q('button[aria-label="Temporary chat"]'), states: ALLP },
+  { key: 'share-button', group: 'Top bar', title: 'Secondary button (Share)', snap: 'thread-dark-code', find: () => B('Share'), states: ALLP },
+  { key: 'more-button', group: 'Top bar', title: 'Icon button (More, thread)', snap: 'thread-dark-code', find: () => Q('button[aria-label="More"]'), states: ALLP },
 
-  // ---------------- Home and composer
-  { key: 'home-heading', group: 'Home', title: 'Home heading', snap: 'home-dark', find: () => Q('h1', 0, M()), states: R, desc: '`text-heading-2` at 400 weight (28/34 here), centred over the composer.' },
+  // ---------------- Home
+  { key: 'home-heading', group: 'Home', title: 'Home heading', snap: 'home-dark', find: () => T('Ready when you are.'), states: R },
+  { key: 'suggestion-row', group: 'Home', title: 'Suggestion row', snap: 'home-dark', find: () => C(T('Write or edit'), 'button'), states: ALLP, desc: '768x52, icon and 16px tertiary text; hover fills with `--color-background-home-suggestion-hover`.' },
+  { key: 'promo-card', group: 'Home', title: 'Card (Plus nudge)', snap: 'home-dark', find: () => Q('aside[class*="surface-"]'), states: R, desc: '768x74 card pinned under the suggestions: icon, title and line, a filled Get Plus button and a dismiss button.' },
+  { key: 'promo-button', group: 'Home', title: 'Primary button (Get Plus)', snap: 'home-dark', find: () => B('Get Plus'), states: ALLP },
+  { key: 'promo-dismiss', group: 'Home', title: 'Dismiss button', snap: 'home-dark', find: () => Q('button[class*="dismissButton"]'), states: ALL },
+
+  // ---------------- Composer
   {
-    key: 'composer', group: 'Composer', title: 'Composer', snap: 'home-dark', find: () => P(Q('#prompt-textarea')), focusOn: () => Q('#prompt-textarea'), states: ['default', 'focus-visible'],
-    desc: 'A pill on the home page (radius 28, 768 wide, `--composer-bar_width`), one row: + button, the ProseMirror field, Think chip, dictation, voice. `--bg-primary` fill (#212121 dark) with a hairline shadow.',
-    extra: { typed: { snap: 'home-dark-composer-typed', find: () => P(Q('#prompt-textarea')) }, thread: { snap: 'thread-dark-bottom', find: () => P(Q('#prompt-textarea')) }, project: { snap: 'project-dark', find: () => P(Q('#prompt-textarea')) }, images: { snap: 'images-dark', find: () => P(Q('#prompt-textarea')) } },
+    key: 'composer', group: 'Composer', title: 'Text area (composer)', snap: 'home-dark', find: () => P(Q('.ProseMirror').parentElement), focusOn: () => Q('.ProseMirror'), states: ['default', 'focus-visible'],
+    desc: 'A pill on the home page, 768 wide: + button, the ProseMirror field, Think, dictate, voice.',
+    extra: { typed: { snap: 'home-dark-composer-typed', find: () => P(Q('.ProseMirror').parentElement) }, thread: { snap: 'thread-dark-code', find: () => P(Q('.ProseMirror').parentElement) } },
   },
-  { key: 'composer-placeholder', group: 'Composer', title: 'Composer placeholder', snap: 'home-dark', find: () => Q('#prompt-textarea p'), states: R, desc: '"Ask anything", drawn by `p[data-placeholder]::before`.' },
-  { key: 'composer-plus', group: 'Composer', title: 'Composer + button', snap: 'home-dark', find: () => Q('#composer-plus-btn'), states: ALL, desc: '36x36 round `.composer-btn`.' },
-  { key: 'think-chip', group: 'Composer', title: 'Think chip', snap: 'home-dark', find: () => Q('.__composer-pill'), states: ALL, desc: '`.__composer-pill--neutral`: 36 tall, full radius, brain icon and 16px label.', extra: { thread: { snap: 'thread-dark-bottom', find: () => Q('.__composer-pill') } } },
-  { key: 'dictation-button', group: 'Composer', title: 'Dictation button', snap: 'home-dark', find: () => Q('button[aria-label="Start dictation"]'), states: HV },
-  { key: 'voice-button', group: 'Composer', title: 'Voice button', snap: 'home-dark', find: () => Q('button[aria-label="Start Voice"]'), states: ALL, desc: '36x36 circle in `--theme-submit-btn-bg`, the accent (blue-500 dark, blue-400 light).' },
-  { key: 'send-button', group: 'Composer', title: 'Send button (typed)', snap: 'home-dark-composer-typed', find: () => Q('[data-testid=send-button]'), states: ALL, desc: 'Replaces the voice button once there is text: same circle and accent, an up arrow.' },
-  { key: 'suggestion-row', group: 'Home', title: 'Suggestion row', snap: 'home-dark', find: () => C(T('Create an image or sticker'), 'button'), states: ALL, desc: '768x52 rows under the composer, icon and 16px secondary text; hover fills with `text-primary` at 3%.' },
+  { key: 'composer-placeholder', group: 'Composer', title: 'Composer placeholder', snap: 'home-dark', find: () => Q('.ProseMirror p'), states: R },
+  { key: 'composer-plus', group: 'Composer', title: 'Icon button (composer +)', snap: 'home-dark', find: () => Q('button[aria-label="Add files and more"]'), states: ALLP },
+  { key: 'think-chip', group: 'Composer', title: 'Think chip', snap: 'home-dark', find: () => C(T('Think'), 'button'), states: ALLP },
+  { key: 'dictate-button', group: 'Composer', title: 'Icon button (Dictate)', snap: 'home-dark', find: () => Q('button[aria-label="Dictate"]'), states: ALLP },
+  { key: 'voice-button', group: 'Composer', title: 'Accent icon button (Start Voice)', snap: 'home-dark', find: () => Q('button[aria-label="Start Voice"]'), states: ALLP, desc: 'A 36px circle in `--color-background-composer-primary`, the accent.' },
+  { key: 'send-button', group: 'Composer', title: 'Accent icon button (Send, typed)', snap: 'home-dark-composer-typed', find: () => Q('button[aria-label="Send"]'), states: ALLP },
+  { key: 'tooltip', group: 'Composer', title: 'Tooltip (Dictate)', snap: 'home-dark-tooltip', find: () => Q('[role=tooltip]'), states: R, desc: 'Opened by keyboard focus on the Dictate button: `--color-background-tooltip` fill, rounded, 14px text.' },
 
   // ---------------- Thread
-  { key: 'user-bubble', group: 'Thread', title: 'User message bubble', snap: 'thread-dark-user-turn', find: () => K('user-message-bubble-color', 0), states: R, desc: 'Right-aligned, max 70% (`--user-chat-width`), radius 22, padding 10/16, with `--theme-user-msg-bg` / `--theme-user-msg-text`: the blue accent paints it blue-700 on blue-25 dark, blue-50 on blue-900 light. `data-ds-colored-user-message-bubbles` on <html> switches the colouring on.' },
-  { key: 'markdown', group: 'Thread', title: 'Assistant markdown body', snap: 'thread-dark-table', find: () => Q('.markdown'), states: R, pad: 0, desc: 'The `.markdown.prose` block, 768 wide, 16/28 body.' },
-  { key: 'md-paragraph', group: 'Thread', title: 'Markdown paragraph', snap: 'thread-dark-table', find: () => Q('.markdown p'), states: R },
-  { key: 'md-h3', group: 'Thread', title: 'Markdown h3', snap: 'thread-dark-table', find: () => Q('.markdown h3'), states: R },
-  { key: 'md-strong', group: 'Thread', title: 'Markdown strong', snap: 'thread-dark-table', find: () => Q('.markdown strong'), states: R },
-  { key: 'md-table', group: 'Thread', title: 'Markdown table', snap: 'thread-dark-table', find: () => Q('.markdown table'), states: R },
-  { key: 'md-th', group: 'Thread', title: 'Table header cell', snap: 'thread-dark-table', find: () => Q('.markdown th'), states: R },
-  { key: 'md-td', group: 'Thread', title: 'Table cell', snap: 'thread-dark-table', find: () => Q('.markdown td'), states: R },
-  { key: 'citation-pill', group: 'Thread', title: 'Citation pill', snap: 'thread-dark-table', find: () => Q('[data-testid=webpage-citation-pill]'), states: HV, desc: 'Inline source chip after a sentence: favicon, domain and a +n count.' },
-  { key: 'worked-for', group: 'Thread', title: '"Worked for 22s" disclosure', snap: 'thread-dark-user-turn', find: () => C(TS('Worked for'), 'button') || TS('Worked for'), states: HV, desc: 'The collapsed reasoning header above an answer, secondary text and a chevron.' },
-  { key: 'map-widget', group: 'Thread', title: 'Map widget (iframe, kept as a box)', snap: 'thread-dark-user-turn', find: () => Q('[data-testid=businesses-map-widget]'), states: R, desc: 'An iframe in the product; the copy keeps a same-size dark box. Its frame and radius are real, its contents are not.' },
-  { key: 'turn-action', group: 'Thread', title: 'Turn action button (Copy)', snap: 'thread-dark-bottom', find: () => document.querySelector('[data-testid=copy-turn-action-button]'), hoverOn: () => C(document.querySelector('[data-testid=copy-turn-action-button]'), 'section'), states: ['hover'], desc: 'Copy, read aloud, share and more sit under an answer at opacity 0 and appear when the turn is hovered; measured while the turn is hovered.' },
-  { key: 'thread-disclaimer', group: 'Thread', title: 'Thread disclaimer', snap: 'thread-dark-bottom', find: () => Q('[data-testid=thread-disclaimer]'), states: R },
+  { key: 'user-bubble', group: 'Thread', title: 'User message bubble', snap: 'thread-dark-user-turn', find: () => Q('[data-user-message-bubble]'), states: R, desc: '`--color-background-user-message` / `--color-text-user-message`; right-aligned, rounded.' },
+  { key: 'markdown', group: 'Thread', title: 'Assistant markdown body', snap: 'thread-dark-table', find: () => Q('[class*="MarkdownRoot"]'), states: R, pad: 0 },
+  { key: 'md-paragraph', group: 'Thread', title: 'Markdown paragraph', snap: 'thread-dark-table', find: () => Q('[class*="MarkdownRoot"] p'), states: R },
+  { key: 'md-heading', group: 'Thread', title: 'Markdown heading', snap: 'thread-dark-table', find: () => Q('[class*="MarkdownRoot"] h1, [class*="MarkdownRoot"] h2, [class*="MarkdownRoot"] h3'), states: R },
+  { key: 'md-strong', group: 'Thread', title: 'Markdown strong', snap: 'thread-dark-table', find: () => Q('[class*="MarkdownRoot"] strong'), states: R },
+  { key: 'md-inline-code', group: 'Thread', title: 'Inline code', snap: 'thread-dark-code', find: () => [...document.querySelectorAll('[class*="MarkdownRoot"] code')].find((c) => !c.closest('pre') && c.getBoundingClientRect().width > 1 && c.getBoundingClientRect().top > 0), states: R },
+  { key: 'md-link', group: 'Thread', title: 'Link (citation in an answer)', snap: 'thread-dark-table', find: () => Q('[class*="MarkdownRoot"] a[href]'), states: ALL },
+  { key: 'code-block', group: 'Thread', title: 'Code block', snap: 'thread-dark-code', find: () => Q('[class*="CodeSurface"]'), states: R },
+  { key: 'code-block-button', group: 'Thread', title: 'Code block icon button', snap: 'thread-dark-code', find: () => Q('[class*="CodeSurface"] button'), states: ALLP },
+  { key: 'md-table', group: 'Thread', title: 'Table', snap: 'thread-dark-table', find: () => Q('table'), states: R },
+  { key: 'md-th', group: 'Thread', title: 'Table header cell', snap: 'thread-dark-table', find: () => Q('table th'), states: R },
+  { key: 'md-td', group: 'Thread', title: 'Table cell', snap: 'thread-dark-table', find: () => Q('table td'), states: R },
+  { key: 'turn-action', group: 'Thread', title: 'Turn action button (Copy)', snap: 'thread-dark-code', find: () => { const mds = [...document.querySelectorAll('[class*="MarkdownRoot"]')]; const md = mds[mds.length - 1]; let n = md; for (let i = 0; i < 10 && n; i++) { n = n.parentElement; const bs = [...n.querySelectorAll('button')].filter((b) => !md.contains(b) && Math.round(b.getBoundingClientRect().width) === 32 && !/Scroll/.test(b.getAttribute('aria-label') || '')); if (bs.length >= 3) return bs[0]; } return null; }, states: ALLP },
+  { key: 'scroll-button', group: 'Thread', title: 'Scroll to bottom button', snap: 'thread-dark-user-turn', find: () => Q('button[aria-label="Scroll to bottom"]'), states: ALLP },
+  { key: 'thread-disclaimer', group: 'Thread', title: 'Thread disclaimer', snap: 'thread-dark-code', find: () => TS('ChatGPT can make mistakes'), states: R },
 
   // ---------------- Menus
-  { key: 'plus-menu', group: 'Menus', title: 'Composer + menu', snap: 'home-dark-plus-menu', find: () => C(T('Add photos & files'), '.popover'), states: R, desc: 'Opens below the composer at its full width: a row per action with a title and a grey hint, then the installed plugins, then "Type to search…".' },
-  { key: 'plus-menu-item', group: 'Menus', title: '+ menu item', snap: 'home-dark-plus-menu', find: () => C(T('Add from library'), '.__menu-item'), states: HV, desc: '36 tall, radius 12, inset 8px; the first row opens highlighted with the `--interactive-bg-secondary-hover` fill.', extra: { highlighted: { find: () => C(T('Add photos & files'), '.__menu-item') } } },
-  { key: 'chat-menu', group: 'Menus', title: 'Chat row menu', snap: 'home-dark-chat-menu', find: () => Q('[role=menu]'), states: R, desc: '`.popover`, `--main-surface-primary` fill (#353535 in dark), radius 16; Share, Rename, Pin chat, Archive, Delete (danger), Move to project.' },
-  { key: 'menu-item', group: 'Menus', title: 'Menu item', snap: 'home-dark-chat-menu', find: () => Q('[role=menu] [role=menuitem]', 1), states: HV, desc: '`.__menu-item`, 36 tall, radius 10, icon and 14px label.' },
-  { key: 'menu-item-danger', group: 'Menus', title: 'Menu item (danger)', snap: 'home-dark-chat-menu', find: () => Q('[data-testid=delete-chat-menu-item]'), states: HV },
-  { key: 'menu-separator', group: 'Menus', title: 'Menu separator', snap: 'home-dark-chat-menu', find: () => Q('[role=menu] [role=separator]'), states: R },
-  { key: 'user-menu', group: 'Menus', title: 'User menu', snap: 'home-dark-user-menu', find: () => Q('[role=menu]'), states: R, desc: 'Opens upward over the account row at its width: the account, Upgrade plan, Personalization, Profile, Settings, Help, Log out.' },
-  { key: 'accent-menu', group: 'Menus', title: 'Accent colour menu', snap: 'settings-dark-accent-menu', find: () => C(T('Purple'), '[role=menu],[role=listbox]'), states: R, desc: 'Default, Blue, Green, Yellow, Pink, Orange, Purple, White (`data-chat-theme="black"`), each with a 10px dot.' },
-  { key: 'accent-option', group: 'Menus', title: 'Accent option', snap: 'settings-dark-accent-menu', find: () => C(T('Green'), '[role=menuitemradio],[role=option],[role=menuitem]'), states: HV, extra: { checked: { find: () => C(T('Blue', C(T('Purple'), '[role=menu],[role=listbox]')), '[role=menuitemradio],[role=option],[role=menuitem]') } } },
-  { key: 'model-menu', group: 'Menus', title: 'Model menu (phone)', snap: 'mobile-thread-dark-model-menu', find: () => C(T('ChatGPT Plus'), '[role=menu]'), states: R, desc: 'ChatGPT Plus with an Upgrade pill, and ChatGPT (checked).' },
+  { key: 'chat-menu', group: 'Menus', title: 'Menu (chat row)', snap: 'home-dark-chat-menu', find: () => Q('[role=menu]'), states: R, desc: 'Rename, Pin, Share, Archive, Delete (danger), Move to project; hairline separators between groups.' },
+  { key: 'menu-item', group: 'Menus', title: 'Menu item', snap: 'home-dark-chat-menu', find: () => Q('[role=menu] [role=menuitem]', 0), states: ['default', 'hover', 'pressed'] },
+  { key: 'menu-item-danger', group: 'Menus', title: 'Menu item (Delete, danger)', snap: 'home-dark-chat-menu', find: () => C(T('Delete', Q('[role=menu]')), '[role=menuitem]'), states: HV },
+  { key: 'plus-menu', group: 'Menus', title: 'Menu (composer +)', snap: 'home-dark-plus-menu', find: () => PW(TS('Add photos'), 500), states: R, desc: 'Not a role=menu: a popover of buttons at the composer\'s width, each with a title and a grey hint.' },
+  { key: 'plus-menu-item', group: 'Menus', title: 'Menu item with hint (composer +)', snap: 'home-dark-plus-menu', find: () => C(TS('Add from library'), 'button'), states: HV, extra: { highlighted: { find: () => C(TS('Add photos'), 'button') } } },
+  { key: 'user-menu', group: 'Menus', title: 'Menu (account)', snap: 'home-dark-user-menu', find: () => Q('[role=menu]'), states: R },
+  { key: 'checkbox-menu-item', group: 'Menus', title: 'Checkbox menu item (checked)', snap: 'settings-dark-notifications-menu', find: () => Q('[role=menuitemcheckbox]'), states: HV, desc: '`menuitemcheckbox`, aria-checked=true, a trailing check.' },
+  { key: 'accent-menu', group: 'Menus', title: 'Select listbox (accent colour)', snap: 'settings-dark-accent-menu', find: () => Q('[role=menu]'), states: R, desc: 'Default, Blue (checked), Green, Yellow, Pink, Orange, Purple, White, Custom; each with a colour dot.' },
+  { key: 'accent-item', group: 'Menus', title: 'Select option (accent)', snap: 'settings-dark-accent-menu', find: () => Q('[role=menu] [role=menuitem], [role=menu] [role=menuitemradio]', 2), states: HV, extra: { checked: { find: () => Q('[role=menu] [aria-checked=true]') || C(T('Blue', Q('[role=menu]')), '[role^=menuitem]') } } },
 
-  // ---------------- Search dialog
-  { key: 'search-dialog', group: 'Search', title: 'Search dialog', snap: 'home-dark-search', find: () => C(Q('#global-search-modal-input'), '.popover'), states: R, desc: 'A centred 718 wide panel: the input row, then "Recent chats" rows.' },
-  { key: 'search-input', group: 'Search', title: 'Search input', snap: 'home-dark-search', find: () => Q('#global-search-modal-input'), states: R },
-  { key: 'search-section-title', group: 'Search', title: 'Search section title', snap: 'home-dark-search', find: () => Q('[data-testid=modal-global-search] h3'), states: R },
-  { key: 'search-result', group: 'Search', title: 'Search result row', snap: 'home-dark-search', find: () => Q('[data-testid=modal-global-search] a', 1), states: HV, extra: { first: { find: () => Q('[data-testid=modal-global-search] a', 0) } } },
-
-  // ---------------- Settings
-  { key: 'settings-dialog', group: 'Settings', title: 'Settings dialog', snap: 'settings-dark-general', find: () => C(T('Appearance'), '[role=dialog]'), states: R, desc: 'Centred, radius 16 (`--radius-2xl`), `--bg-elevated-primary` fill: a left nav column and the pane.' },
-  { key: 'settings-close', group: 'Settings', title: 'Settings close button', snap: 'settings-dark-general', find: () => C(Q('[data-testid=modal-settings] [data-testid=close-button]'), 'button') || Q('[data-testid=modal-settings] [data-testid=close-button]'), states: HV },
-  { key: 'settings-search', group: 'Settings', title: 'Settings search field', snap: 'settings-dark-general', find: () => P(Q('[data-testid=modal-settings] input')), focusOn: () => Q('[data-testid=modal-settings] input'), states: ['default', 'focus-visible'] },
-  { key: 'settings-tab', group: 'Settings', title: 'Settings nav tab', snap: 'settings-dark-general', find: () => Q('[data-testid=notifications-tab]') || C(T('Notifications', D()), '[role=tab],button'), states: ALL, extra: { selected: { find: () => C(T('General', Q('[data-testid=modal-settings] [role=tablist]')), '[role=tab],button') } } },
-  { key: 'settings-pane-title', group: 'Settings', title: 'Settings pane title', snap: 'settings-dark-general', find: () => [...document.querySelectorAll('[data-testid=modal-settings] h3, [data-testid=modal-settings] h2')].find((e) => e.innerText.trim() === 'General'), states: R },
-  { key: 'settings-row', group: 'Settings', title: 'Settings row (Appearance)', snap: 'settings-dark-general', find: () => CK(T('Appearance'), 'min-h-15'), states: R, desc: 'A label at the start and a control at the end, divided by a hairline.' },
-  { key: 'settings-select', group: 'Settings', title: 'Settings select button', snap: 'settings-dark-general', find: () => C(T('System', CK(T('Appearance'), 'min-h-15')), 'button'), states: ALL, extra: { open: { snap: 'settings-dark-accent-menu', find: () => C(T('Blue', CK(T('Accent color'), 'min-h-15')), 'button') } } },
-  { key: 'settings-toggle', group: 'Settings', title: 'Settings toggle (on)', snap: 'settings-dark-general', find: () => Q('[data-testid=modal-settings] [role=switch]'), states: ALL, desc: 'Accent-filled track when on, white thumb.' },
-  { key: 'settings-description', group: 'Settings', title: 'Settings row description', snap: 'settings-dark-general', find: () => T('Use dictation in the chat composer.'), states: R },
+  // ---------------- Dialogs and search
+  { key: 'confirm-dialog', group: 'Dialogs', title: 'Dialog (delete confirmation)', snap: 'home-dark-delete-confirm', find: () => Q('[role=dialog]'), states: R, desc: '420 wide: title, body naming the chat, Cancel and a danger Delete chat, close in the corner.' },
+  { key: 'dialog-backdrop', group: 'Dialogs', title: 'Dialog backdrop', snap: 'home-dark-delete-confirm', find: () => [...document.querySelectorAll('body *')].find((e) => { const c = getComputedStyle(e); const r = e.getBoundingClientRect(); return (c.position === 'fixed' || c.position === 'absolute') && r.width >= innerWidth - 1 && r.height >= innerHeight - 1 && (c.backgroundColor !== 'rgba(0, 0, 0, 0)' || c.backdropFilter !== 'none'); }), states: R, crop: false },
+  { key: 'button-danger', group: 'Dialogs', title: 'Danger button (Delete chat)', snap: 'home-dark-delete-confirm', find: () => B('Delete chat'), states: ALLP },
+  { key: 'button-secondary', group: 'Dialogs', title: 'Secondary button (Cancel)', snap: 'home-dark-delete-confirm', find: () => B('Cancel'), states: ALLP },
+  { key: 'dialog-close', group: 'Dialogs', title: 'Dialog close button', snap: 'home-dark-delete-confirm', find: () => B('Close dialog', D() || document), states: ALLP },
+  { key: 'search-dialog', group: 'Dialogs', title: 'Dialog (global search)', snap: 'home-dark-search', find: () => Q('[role=dialog]'), states: R },
+  { key: 'search-field', group: 'Dialogs', title: 'Text field (search)', snap: 'home-dark-search', find: () => Q('[role=dialog] input'), states: ['default', 'focus-visible'], extra: { typed: { snap: 'home-dark-search-empty', find: () => Q('[role=dialog] input') } } },
+  { key: 'search-result', group: 'Dialogs', title: 'List row (search result)', snap: 'home-dark-search', find: () => { const t = TS('Sample title', D()); return t && (C(t, 'button,a,[role=option],li') || W(t, 600)); }, states: ALL },
+  { key: 'search-tab', group: 'Dialogs', title: 'Tab (search filter)', snap: 'home-dark-search-empty', find: () => Q('[role=dialog] [role=tab][aria-selected=false]'), states: ALLP, extra: { selected: { find: () => Q('[role=dialog] [role=tab][aria-selected=true]') } } },
+  { key: 'search-empty', group: 'Dialogs', title: 'Empty state (no results)', snap: 'home-dark-search-empty', find: () => W(T('No results', D()), 200), states: R },
 
   // ---------------- Library
-  { key: 'library-title', group: 'Library', title: 'Library page title', snap: 'library-dark', find: () => T('Library', M()), states: R },
-  { key: 'library-tab', group: 'Library', title: 'Library tab', snap: 'library-dark', find: () => C(T('Favorites', M()), 'button,[role=tab],a'), states: ALL, desc: 'Pill tabs; the selected one is filled with `--bg-secondary`.', extra: { selected: { find: () => C(T('Suggested', M()), 'button,[role=tab],a') } } },
-  { key: 'library-icon-button', group: 'Library', title: 'Library toolbar icon button (grid view)', snap: 'library-dark', find: () => Q('button[aria-label="Grid view"]', 0, M()), states: ALL, desc: '36x36, radius full; the current view (List) is filled with `--bg-secondary`.', extra: { selected: { find: () => Q('button[aria-label="List view"]', 0, M()) } } },
-  { key: 'library-search', group: 'Library', title: 'Library search field', snap: 'library-dark', find: () => P(Q('input[placeholder="Search library"]')), focusOn: () => Q('input[placeholder="Search library"]'), states: ['default', 'focus-visible'] },
-  { key: 'library-new', group: 'Library', title: 'New button (Library)', snap: 'library-dark', find: () => C(T('New', M()), 'button'), states: ALL, desc: 'The one inverted control on the page: `--interactive-bg-primary-default` (white in dark) with a chevron.' },
-  { key: 'library-list-header', group: 'Library', title: 'Library list header', snap: 'library-dark', find: () => Q('[data-testid=artifacts-surface-library-list-header]'), states: R },
-  { key: 'library-row', group: 'Library', title: 'Library row', snap: 'library-dark', find: () => K('artifacts-surface-library-selectable-row', 0, M()), states: HV, desc: 'Grid row: a 32px tile (thumbnail or type icon), the file name, the last activity; a hairline between rows.' },
-  // Row 10 (the eleventh) is the pasted text file in the captured library.
-  { key: 'library-row-icon', group: 'Library', title: 'Library row type icon (text file)', snap: 'library-dark', find: () => P(Q('svg', 0, K('artifacts-surface-library-selectable-row', 10, M()))), states: R },
-  { key: 'library-row-date', group: 'Library', title: 'Library row date', snap: 'library-dark', find: () => TS('Modified 3w ago', M()), states: R },
+  { key: 'library-title', group: 'Library', title: 'Page title (Library)', snap: 'library-dark', find: () => Q('main h1'), states: R },
+  { key: 'library-icon-button', group: 'Library', title: 'Icon button (List view)', snap: 'library-dark', find: () => Q('button[aria-label="List view"]'), states: ALLP, extra: { selected: { find: () => Q('button[aria-label="Grid view"]') } } },
+  { key: 'library-search', group: 'Library', title: 'Text field (Search library)', snap: 'library-dark', find: () => P(Q('input[id^="library-search"]').parentElement), focusOn: () => Q('input[id^="library-search"]'), states: ['default', 'hover', 'focus-visible'] },
+  { key: 'library-new', group: 'Library', title: 'Inverted button (New)', snap: 'library-dark', find: () => C(T('New', M()), 'button'), states: ALLP },
+  { key: 'library-tab', group: 'Library', title: 'Tab (Library)', snap: 'library-dark', find: () => Q('main [role=tab][aria-selected=false]'), states: ALLP, extra: { selected: { find: () => Q('main [role=tab][aria-selected=true]') } } },
+  { key: 'library-card', group: 'Library', title: 'Card (Library file)', snap: 'library-dark', find: () => P(Q('[data-library-item] button')), hoverOn: () => Q('[data-library-item] button'), states: ['default', 'hover'], desc: 'Masonry grid cards (5 columns at 1440): a thumbnail (blanked in the copies) over the file name.' },
+  { key: 'checkbox', group: 'Library', title: 'Checkbox (select a file)', snap: 'library-dark', find: () => QA('[data-library-item] [role=checkbox]'), hoverOn: () => QA('[data-library-item] button'), states: ['hover', 'focus-visible'], desc: 'A 20x20 `role=checkbox` button on each card, shown on hover.' },
+  { key: 'library-error', group: 'Library', title: 'Error state (Failed to load files)', snap: 'library-dark-error', find: () => B('Try again') && B('Try again').parentElement, states: R, desc: 'Shown when the file list request fails (the capture guard refused it); a centred line and a Try again button.' },
+  { key: 'retry-button', group: 'Library', title: 'Small button (Try again)', snap: 'library-dark-error', find: () => B('Try again'), states: ALLP },
+  { key: 'inline-error', group: 'Library', title: 'Inline error (partial search results)', snap: 'library-dark-search-error', find: () => W(TS('Some search results'), 300), states: R },
 
-  // ---------------- Images
-  { key: 'images-title', group: 'Images', title: 'Images page title', snap: 'images-dark', find: () => T('Images', M()), states: R },
-  { key: 'images-tab', group: 'Images', title: 'Images tab', snap: 'images-dark', find: () => C(T('Templates', M()), 'button,[role=tab],a'), states: ALL, extra: { selected: { find: () => C(T('Trending', M()), 'button,[role=tab],a') } } },
-  { key: 'template-card', group: 'Images', title: 'Template card', snap: 'images-dark', find: () => C(T('Aerial view', M()), 'button,a,[role=button]'), states: ALL, desc: 'A tall tile with radius 24, a photo, and a label over a dark gradient at the bottom.', extra: { blank: { find: () => C(T('Caricature', M()), 'button,a,[role=button]') } } },
+  // ---------------- Images and Plugins
+  { key: 'images-tab', group: 'Images', title: 'Tab (Images)', snap: 'images-dark', find: () => Q('main [role=tab][aria-selected=false]'), states: ALLP, extra: { selected: { find: () => Q('main [role=tab][aria-selected=true]') } } },
+  { key: 'image-card', group: 'Images', title: 'Card (image template)', snap: 'images-dark', find: () => P(Q('main img').parentElement) || W(Q('main img'), 100), states: HV },
+  { key: 'plugins-search', group: 'Plugins', title: 'Text field (Search plugins)', snap: 'plugins-dark', find: () => P(Q('#plugins-store-page-search').parentElement), focusOn: () => Q('#plugins-store-page-search'), states: ['default', 'hover', 'focus-visible'] },
+  { key: 'plugins-tab', group: 'Plugins', title: 'Tab (Plugins / Skills)', snap: 'plugins-dark', find: () => Q('[role=tab][aria-selected=false]'), states: ALL, extra: { selected: { find: () => Q('[role=tab][aria-selected=true]') } } },
+  { key: 'plugin-row', group: 'Plugins', title: 'List row (plugin)', snap: 'plugins-dark', find: () => { const t = T('Gmail'); return t && (C(t, 'a,button,[role=button]') || W(t, 300)); }, states: ALL },
 
-  // ---------------- Plugins
-  { key: 'plugins-title', group: 'Plugins', title: 'Plugins page title', snap: 'plugins-dark', find: () => Q('h1', 0, M()), states: R, desc: '`text-heading-app` (28/34), 500.' },
-  { key: 'plugins-subtitle', group: 'Plugins', title: 'Plugins subtitle', snap: 'plugins-dark', find: () => T('Work with ChatGPT across your favorite tools.'), states: R },
-  { key: 'plugins-search', group: 'Plugins', title: 'Plugins search field', snap: 'plugins-dark', find: () => P(Q('input[placeholder="Search plugins"]')), focusOn: () => Q('input[placeholder="Search plugins"]'), states: ['default', 'focus-visible'] },
-  { key: 'plugins-add', group: 'Plugins', title: 'Round + button (beside search)', snap: 'plugins-dark', find: () => Q('button[aria-label="Add plugin"]', 0, M()), states: ALL },
-  { key: 'plugins-section', group: 'Plugins', title: 'Plugins section title (Popular)', snap: 'plugins-dark', find: () => T('Popular', M()), states: R },
-  { key: 'plugin-row', group: 'Plugins', title: 'Plugin row', snap: 'plugins-dark', find: () => Q('a[aria-label="Open Gmail"]').parentElement, states: ALL, desc: '384x56 (two columns): a 40px icon tile, name over a one-line description, a + at the end; the whole row is a link.' },
-  { key: 'plugin-icon', group: 'Plugins', title: 'Plugin icon tile', snap: 'plugins-dark', find: () => Q('[data-testid=plugin-icon-wrapper]', 0, Q('a[aria-label="Open Gmail"]').parentElement), states: R },
-  { key: 'plugin-add', group: 'Plugins', title: 'Plugin row + button', snap: 'plugins-dark', find: () => Q('button', 0, Q('a[aria-label="Open Gmail"]').parentElement), states: ALL },
-  { key: 'plugins-see-more', group: 'Plugins', title: '"See Outlook Email, Notion, and more" link', snap: 'plugins-dark', find: () => C(TS('See Outlook'), 'a'), states: ALL },
+  // ---------------- Settings
+  { key: 'settings-nav-item', group: 'Settings', title: 'Settings nav item', snap: 'settings-dark-appearance', find: () => C(T('General'), 'a,button'), states: ALLP, extra: { selected: { find: () => C(T('Appearance', Q('nav') || document), 'a,button') } } },
+  { key: 'settings-row', group: 'Settings', title: 'Settings row', snap: 'settings-dark-data-controls', find: () => H(T('Archive all chats'), 56), states: R },
+  { key: 'switch-on', group: 'Settings', title: 'Switch (on)', snap: 'settings-dark-data-controls', find: () => Q('[role=switch][aria-checked=true]'), states: ALLP },
+  { key: 'switch-off', group: 'Settings', title: 'Switch (off)', snap: 'settings-dark-data-controls', find: () => Q('[role=switch][aria-checked=false]'), states: ALLP },
+  { key: 'button-outline', group: 'Settings', title: 'Outline button (Archive all)', snap: 'settings-dark-data-controls', find: () => B('Archive all'), states: ALLP },
+  { key: 'button-danger-outline', group: 'Settings', title: 'Danger outline button (Delete all)', snap: 'settings-dark-data-controls', find: () => B('Delete all'), states: ALLP },
+  { key: 'button-disabled', group: 'Settings', title: 'Button (disabled, Restore defaults)', snap: 'settings-dark-keyboard', find: () => B('Restore defaults'), states: ['default', 'hover'] },
+  { key: 'keyboard-switch', group: 'Settings', title: 'Switch (keyboard shortcut on)', snap: 'settings-dark-keyboard', find: () => Q('[role=switch]'), states: R },
+  { key: 'select', group: 'Settings', title: 'Select (notification channel)', snap: 'settings-dark-notifications-menu', find: () => Q('main button[aria-haspopup=menu]', 1), states: ALLP, extra: { open: { find: () => Q('main button[aria-expanded=true]') } } },
+  { key: 'code-theme-select', group: 'Settings', title: 'Select (code theme)', snap: 'settings-dark-appearance', find: () => Q('button[aria-label="Dark code theme"]'), states: ALLP },
+  { key: 'color-field', group: 'Settings', title: 'Text field (colour hex)', snap: 'settings-dark-appearance', find: () => Q('input[aria-label="Dark background color"]'), states: ['default', 'hover', 'focus-visible'] },
+  { key: 'archived-search', group: 'Settings', title: 'Text field (Search archived chats)', snap: 'settings-dark-archived', find: () => P(Q('#archived-tasks-search').parentElement), focusOn: () => Q('#archived-tasks-search'), states: ['default', 'hover', 'focus-visible'] },
+  { key: 'archived-row', group: 'Settings', title: 'List row (archived chat)', snap: 'settings-dark-archived', find: () => C(Q('button[data-archived-chat-unarchive]'), '[class*="settings-row"]') || H(Q('button[data-archived-chat-unarchive]'), 56), states: HV },
+  { key: 'archived-link', group: 'Settings', title: 'Link (archived chat title)', snap: 'settings-dark-archived', find: () => Q('main a[href*="/c/"]'), states: ALLP },
+  { key: 'unarchive-button', group: 'Settings', title: 'Outline button (Unarchive)', snap: 'settings-dark-archived', find: () => Q('button[data-archived-chat-unarchive]'), states: ALLP },
+  { key: 'text-link', group: 'Settings', title: 'Link (Manage tasks)', snap: 'settings-dark-notifications-menu', find: () => C(T('Manage tasks'), 'a'), states: ALLP },
 
-  // ---------------- Project
-  { key: 'project-title', group: 'Project', title: 'Project title', snap: 'project-dark', find: () => Q('h1', 0, M()), states: R },
-  { key: 'project-share', group: 'Project', title: 'Project Share button', snap: 'project-dark', find: () => C(T('Share', M()), 'button'), states: ALL },
-  { key: 'project-more', group: 'Project', title: 'Project details (…) button', snap: 'project-dark', find: () => Q('button[aria-label="Show project details"]', 0, M()), states: ALL },
-  { key: 'project-tab', group: 'Project', title: 'Project tab (Sources)', snap: 'project-dark', find: () => C(T('Sources', M()), 'button,[role=tab],a'), states: ALL, extra: { selected: { find: () => C(T('Chats', M()), 'button,[role=tab],a') } } },
-  { key: 'project-chat-row', group: 'Project', title: 'Project chat row', snap: 'project-dark', find: () => W(Q('[data-testid=project-conversation-overflow-date]', 0, M()), 740), states: HV, desc: 'Title over a one-line preview of the last message, a date at the end, hairlines between rows.' },
-  { key: 'project-chat-date', group: 'Project', title: 'Project chat date', snap: 'project-dark', find: () => Q('[data-testid=project-conversation-overflow-date]'), states: R },
+  // ---------------- Pricing
+  { key: 'pricing-dialog', group: 'Pricing', title: 'Full-screen dialog (pricing)', snap: 'pricing-dark', find: () => Q('[role=dialog]'), states: R, pad: 0, crop: false },
+  { key: 'segmented-radio', group: 'Pricing', title: 'Radio segment (Business, not checked)', snap: 'pricing-dark', find: () => Q('[role=dialog] [role=radio][aria-checked=false]'), states: ALLP, extra: { checked: { find: () => Q('[role=dialog] [role=radio][aria-checked=true]') } } },
+  { key: 'pricing-card', group: 'Pricing', title: 'Card (Free plan)', snap: 'pricing-dark', find: () => P(Q('[data-pricing-plan-type=free]')) || Q('[data-pricing-plan-type=free]'), states: R },
+  { key: 'pricing-card-plus', group: 'Pricing', title: 'Card (Plus plan, recommended)', snap: 'pricing-dark', find: () => { const b = T('RECOMMENDED') || TS('Recommended'); let n = b; while (n && n.getBoundingClientRect().width < 300) n = n.parentElement; return P(n) || n; }, states: R },
+  { key: 'badge', group: 'Pricing', title: 'Badge (RECOMMENDED)', snap: 'pricing-dark', find: () => T('RECOMMENDED') || TS('Recommended'), states: R },
+  { key: 'button-disabled-plan', group: 'Pricing', title: 'Button (disabled, Your current plan)', snap: 'pricing-dark', find: () => B('Your current plan'), states: R },
+  { key: 'pricing-primary', group: 'Pricing', title: 'Accent button (Rejoin Plus)', snap: 'pricing-dark', find: () => B('Rejoin Plus'), states: ALLP },
+  { key: 'pricing-close', group: 'Pricing', title: 'Icon button (Close pricing)', snap: 'pricing-dark', find: () => Q('button[aria-label="Close pricing"]'), states: ALLP },
 
-  // ---------------- Mobile
-  { key: 'm-header', group: 'Mobile', title: 'Phone header', snap: 'mobile-home-dark', find: () => Q('#page-header') || Q('header'), states: R, pad: 0, desc: 'Menu button, the ChatGPT model switcher with a chevron, Upgrade and the temporary-chat button.' },
-  { key: 'm-open-sidebar', group: 'Mobile', title: 'Phone open-sidebar button', snap: 'mobile-home-dark', find: () => Q('[data-testid=open-sidebar-button]'), states: R },
-  { key: 'm-model-switcher', group: 'Mobile', title: 'Phone model switcher', snap: 'mobile-home-dark', find: () => Q('[data-testid=model-switcher-dropdown-button]'), states: R, extra: { open: { snap: 'mobile-thread-dark-model-menu', find: () => Q('[data-testid=model-switcher-dropdown-button]') } } },
-  { key: 'm-composer', group: 'Mobile', title: 'Phone composer', snap: 'mobile-home-dark', find: () => P(Q('#prompt-textarea')), states: R, desc: 'Two rows on a phone: the field over the tool row (+, dictation, voice), radius 28.' },
-  { key: 'm-drawer', group: 'Mobile', title: 'Phone drawer', snap: 'mobile-home-dark-drawer', find: () => C(Q('[data-testid=create-new-chat-button]', 0, Q('#stage-popover-sidebar')), '[role=dialog]'), states: R, pad: 0, desc: 'The same sidebar in `#stage-popover-sidebar`, sliding over the page; the slide-in transform was set to its end state by hand before the copy.' },
-  { key: 'm-drawer-row', group: 'Mobile', title: 'Phone drawer row', snap: 'mobile-home-dark-drawer', find: () => Q('[data-testid=create-new-chat-button]', 0, Q('#stage-popover-sidebar')), states: R },
-  { key: 'm-user-bubble', group: 'Mobile', title: 'Phone user bubble', snap: 'mobile-thread-dark', find: () => K('user-message-bubble-color', 0), states: R },
+  // ---------------- Phone (390)
+  { key: 'm-header', group: 'Phone', title: 'Phone header', snap: 'mobile-home-dark', find: () => QA('header'), states: R, pad: 0 },
+  { key: 'm-composer', group: 'Phone', title: 'Phone composer', snap: 'mobile-home-dark', find: () => P(Q('.ProseMirror').parentElement), states: R },
+  { key: 'm-drawer', group: 'Phone', title: 'Phone drawer', snap: 'mobile-home-dark-drawer', find: () => S() || D(), states: R, pad: 0 },
+  { key: 'm-drawer-row', group: 'Phone', title: 'Phone drawer row', snap: 'mobile-home-dark-drawer', find: () => Q('button[data-sidebar-destination="builtin:images"]'), states: R },
+  { key: 'm-user-bubble', group: 'Phone', title: 'Phone user bubble', snap: 'mobile-thread-dark', find: () => Q('[data-user-message-bubble]'), states: R },
+  { key: 'm-code-block', group: 'Phone', title: 'Phone code block', snap: 'mobile-thread-dark-bottom', find: () => Q('[class*="CodeSurface"]'), states: R },
 ];
 
 // ---------------------------------------------------------------- jobs
@@ -498,7 +520,16 @@ async function measureSnap(browser, label, specs, out) {
         await ensureVisible(loc);
         let via = job.variant && job.base === 'default' ? `at rest, captured ${job.state}` : 'at rest';
         let focus;
-        if (job.base === 'hover') {
+        let pressed = false;
+        if (job.base === 'pressed') {
+          const p = await pointOf(loc);
+          await page.mouse.move(p.x, p.y, { steps: 4 });
+          await page.waitForTimeout(250);
+          await page.mouse.down();
+          await page.waitForTimeout(300);
+          pressed = true;
+          via = 'mouse button held down on it (:hover:active)';
+        } else if (job.base === 'hover') {
           const hl = (job.hoverOn && (await tag(job.hoverOn, 'hv'))) || loc;
           const p = await pointOf(hl);
           await page.mouse.move(p.x, p.y, { steps: 4 });
@@ -540,6 +571,7 @@ async function measureSnap(browser, label, specs, out) {
         c.states[state] = { theme, snapshot: label, error: String(e.message || e).slice(0, 200) };
         log('  !', name, String(e.message || e).slice(0, 120));
       } finally {
+        await page.mouse.up().catch(() => {});
         await page.mouse.move(rest.x, rest.y).catch(() => {});
         await untag().catch(() => {});
       }
@@ -558,10 +590,11 @@ out._meta = {
   read: process.env.READ_DATE || (() => { const t = new Date(Math.min(...labels.map((l) => fs.statSync(path.join(SNAPS, `${l}.html`)).mtimeMs))); return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`; })(),
   source: 'Static, redacted page copies of the signed-in chatgpt.com app (tools/capture/signed-in/snapshot.js), loaded from file:// in headless Chromium; the stylesheets and icon sprites are inlined in each copy, fonts and a few images come from OpenAI\'s asset hosts through a local cache. Nothing was requested from chatgpt.com itself.',
   viewport: '1440x900 (the mobile-* snapshots 390x844), deviceScaleFactor 2',
-  themes: 'Each copy was captured in the dark theme with the blue accent. Dark states have plain names; light states (`light`, `light-<state>`) were read from the same DOM with every `dark` class removed (on <html> and on each markdown body). Every state records `theme` and `snapshot`.',
+  themes: 'Each copy was captured in the dark theme with the blue accent. Dark states have plain names; light states (`light`, `light-<state>`) were read from the same DOM with every data-theme="dark" set to light. Every state records `theme` and `snapshot`.',
   states: {
     default: 'at rest, as captured',
     hover: 'real mouse hover (page.mouse.move), 450ms settle; not measured on the 390 snapshots',
+    pressed: 'the mouse button held down on the element (page.mouse.down) for 300ms, so :active applies; released after the reading',
     'focus-visible': 'real keyboard focus (focus, Shift+Tab, Tab) on the element or its first focusable descendant; recorded as skipped where the element cannot take focus',
     other: 'active / selected / checked / open / typed / enabled / ... are other elements or snapshots captured in that state',
   },

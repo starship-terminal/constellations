@@ -412,7 +412,7 @@
       "name": "ChatGPT",
       "url": "https://chatgpt.com",
       "category": "ai-chat",
-      "goodFor": "The baseline chat UI: thread, composer, sidebar history, model menu, settings dialog",
+      "goodFor": "The baseline chat UI: thread, composer, sidebar history, menus, dialogs, search, settings pages",
       "tags": [
         "web",
         "ai",
@@ -422,7 +422,7 @@
         "sidebar"
       ],
       "shape": "reference",
-      "captured": "2026-10-04",
+      "captured": "2026-10-17",
       "access": "signed in, Free plan",
       "themes": [
         "light",
@@ -439,20 +439,20 @@
         "cover": "systems/chatgpt/screenshots/home-light.png",
         "swatches": {
           "light": {
-            "page": "light.bg.primary",
-            "surface": "light.bg.secondary-surface",
-            "text": "light.text.primary",
-            "muted": "light.text.secondary",
-            "accent": "light.accent.blue",
-            "border": "light.border.default"
+            "page": "light.role.bg.page",
+            "surface": "light.role.bg.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
           },
           "dark": {
-            "page": "dark.bg.primary",
-            "surface": "dark.bg.secondary-surface",
-            "text": "dark.text.primary",
-            "muted": "dark.text.secondary",
-            "accent": "dark.accent.blue",
-            "border": "dark.border.default"
+            "page": "dark.role.bg.page",
+            "surface": "dark.role.bg.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
           }
         },
         "fonts": [
