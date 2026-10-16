@@ -129,8 +129,26 @@ class ExportTest(unittest.TestCase):
         out = catalog.export_tokens(tokens, ["light", "dark"])
         self.assertNotIn("--ring", out["themes"]["light"])
         self.assertNotIn("--ring", out["themes"]["dark"])
-        self.assertEqual(out["skipped"], ["core.ring", "core.gone"])
+        self.assertEqual(out["unresolved"], ["core.ring", "core.gone"])
+        self.assertEqual(out["skipped"], [])
         self.assertNotIn("--ring:", catalog.export_css(out))
+
+    def test_broken_reference_is_unresolved_not_composite(self):
+        tokens = {
+            "core": {"gray": {"0": {"$value": "#ffffff"}},
+                     "type": {"body": {"$value": {"fontFamily": "Inter", "fontSize": "14px"}}}},
+            "light": {"text": {"$value": "{gray.missing}"},
+                      "shadow": {"$value": {"offsetX": "0", "offsetY": "1px", "blur": "2px", "color": "{gray.nope}"}},
+                      "ok": {"$value": "{gray.0}"}},
+        }
+        out = catalog.export_tokens(tokens, ["light"])
+        self.assertEqual(out["unresolved"], ["light.text", "light.shadow"])
+        self.assertEqual(out["skipped"], ["core.type.body"])
+        self.assertEqual(out["themes"]["light"], {"--ok": "#ffffff"})
+        css = catalog.export_css(out)
+        self.assertIn("2 tokens not exported because a reference points at nothing: light.text, light.shadow", css)
+        self.assertIn("1 composite tokens", css)
+        self.assertNotIn("None", css)
 
     def test_theme_own_token_wins_over_shared_core_token(self):
         tokens = {
@@ -151,7 +169,8 @@ class ExportTest(unittest.TestCase):
         out = catalog.export_tokens(tokens, ["light", "dark"])
         self.assertNotIn("--ring", out["themes"]["light"])
         self.assertEqual(out["themes"]["dark"]["--ring"], "#ffffff")
-        self.assertEqual(out["skipped"], ["light.ring"])
+        self.assertEqual(out["unresolved"], ["light.ring"])
+        self.assertEqual(out["skipped"], [])
 
     def test_theme_token_with_the_same_css_name_wins_whatever_the_set_order(self):
         tokens = {
