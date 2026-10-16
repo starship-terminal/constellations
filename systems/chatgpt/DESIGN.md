@@ -758,8 +758,8 @@ typography:
     letterSpacing: "-1.5px"
   code:
     fontFamily: "ui-monospace"
-    fontSize: "14px"
-    fontWeight: 500
+    fontSize: "12px"
+    fontWeight: 400
     lineHeight: "20px"
     letterSpacing: "0px"
 rounded:
@@ -1064,7 +1064,7 @@ How ChatGPT combines its components for the common jobs, as captured.
 
 **Search and filtering.** Global search is a 720 wide dialog with the field at the top and Clear and close at the end; empty, it lists recent chats; typed, it adds filter tabs (All, Chats, Images, Documents, Projects) and the results or the empty state. The Library has its own field in the page header with a filter button beside it; Archived chats and Plugins put a field at the top of the list. See [home-dark-search](screenshots/home-dark-search.png), [home-dark-search-empty](screenshots/home-dark-search-empty.png) and [settings-dark-archived](screenshots/settings-dark-archived.png).
 
-**Data display.** Lists are rows on the page ground divided by hairlines (`border.subtle`) or by nothing: sidebar chats, archived chats (title link, date, Unarchive and Delete at the end), plugin rows in two columns. Files are a masonry grid of cards (4 columns at 1440; its classes step from 1 to 6 columns with the container width) with a hover checkbox for selection. Tables appear inside answers only, ruled by horizontal hairlines, with bold first-column cells. See [settings-dark-archived](screenshots/settings-dark-archived.png), [library-dark](screenshots/library-dark.png) and [thread-dark-table](screenshots/thread-dark-table.png).
+**Data display.** Lists are rows on the page ground divided by hairlines (`border.subtle`) or by nothing: sidebar chats, archived chats (title link, date, Unarchive and Delete at the end), plugin cards in two columns (a bordered card with one link laid over all of it). Files are a masonry grid of cards (4 columns at 1440; its classes step from 1 to 6 columns with the container width) with a hover checkbox for selection. Tables appear inside answers only, ruled by horizontal hairlines, with bold first-column cells. See [settings-dark-archived](screenshots/settings-dark-archived.png), [library-dark](screenshots/library-dark.png) and [thread-dark-table](screenshots/thread-dark-table.png).
 
 **Onboarding.** Not captured: the account is past its first run. The stylesheets declare `--text-onboarding-*` styles (title 20, body 14, label 16), which are in `core.typography`.
 

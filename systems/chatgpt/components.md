@@ -2,13 +2,13 @@
 
 The discovery list of every page and state captured, the checklist coverage, the shared values, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from chatgpt.com on 2026-10-17, signed in to the owner's account (Free plan, dark theme, blue accent), as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Phone group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account; the only actions were hovering, keyboard focus, opening menus and dialogs and closing them, and typing into the composer and the search fields without sending.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (112 components, 584 states). Page geometry is in [raw/layout.json](raw/layout.json).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (114 components, 588 states). Page geometry is in [raw/layout.json](raw/layout.json).
 
 How to read an entry:
 
 - Values are written as tokens from [tokens.json](tokens.json): a colour is the token in that theme's set whose value is the same (`role.text.primary`, `surface.card`, `variant.primary.soft.bg-hover`), a padding, radius or control height the core token that holds it (`spacing.2`, `radius.2xl`, `size.control.lg`). Text is the typography style with the same size, line height and weight (`typography.text-sm`), that style at another weight, or a `fontSize` token with its line height and a `fontWeight` token, then its colour. A raw value is written only where no token holds it.
 - Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example "default (same: pressed)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (578 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (584 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -47,7 +47,7 @@ The 19 components of the checklist in [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-
 | Dialog | [confirm-dialog](#confirm-dialog), [search-dialog](#search-dialog), [pricing-dialog](#pricing-dialog), [dialog-backdrop](#dialog-backdrop) | default |
 | Toast | not captured: ChatGPT shows a toast only after an action (copying, archiving, sharing), and the capture took no action | - |
 | Card | [promo-card](#promo-card), [library-card](#library-card), [pricing-card](#pricing-card), [image-card](#image-card) | default, hover |
-| List row | [chat-row](#chat-row), [nav-row](#nav-row), [search-result](#search-result), [archived-row](#archived-row), [plugin-row](#plugin-row), [settings-row](#settings-row) | default, hover, focus-visible, pressed, active, active-library |
+| List row | [chat-row](#chat-row), [nav-row](#nav-row), [search-result](#search-result), [archived-row](#archived-row), [plugin-row](#plugin-row), [plugin-row-link](#plugin-row-link), [settings-row](#settings-row) | default, hover, focus-visible, pressed, active, active-library |
 | Table | [md-table](#md-table), [md-th](#md-th), [md-td](#md-td) | default |
 | Avatar | [avatar](#avatar) | default |
 | Badge | [badge](#badge) | default |
@@ -56,13 +56,13 @@ The 19 components of the checklist in [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-
 
 Values that apply across entries, tallied from the measurement file.
 
-**Radius.** `radius.full` (260), `radius.lg` (90), `radius.xl` (50), `radius.2xl` (36), `radius.sm` (12), `radius.3xl` (11), 26px (8), `radius.md` (6), `radius.token-composer-single-line` (4), 3.72px (2).
+**Radius.** `radius.full` (260), `radius.lg` (90), `radius.xl` (50), `radius.2xl` (44), `radius.sm` (12), `radius.3xl` (11), 26px (8), `radius.md` (6), `radius.token-composer-single-line` (4), 3.72px (2).
 
-**Hover.** Dark: no change on the element (26), transparent to `variant.primary.soft.bg-hover` (18), transparent to `token.border-light` (3), opacity 1 to 0.8 (2), `surface.elevated-secondary` to `variant.primary.soft.bg-hover` (2), `component.button-danger.bg` to `component.button-danger.bg-hover` (2). Light: no change on the element (26), transparent to `variant.primary.soft.bg-hover` (18), transparent to rgba(0, 0, 0, 0.03) (3), text `role.text.secondary` to `role.text.primary` (2), opacity 1 to 0.8 (2), `bg.user-message-compact` to `variant.primary.soft.bg-hover` (2). Ghost buttons, menu items, rows and tabs all hover to `variant.primary.soft.bg-hover` (white at 10% in dark, black at 5% in light); solid neutral buttons drop to 80% opacity instead; the accent send and voice buttons do not change.
+**Hover.** Dark: no change on the element (25), transparent to `variant.primary.soft.bg-hover` (18), transparent to `token.border-light` (3), opacity 1 to 0.8 (2), `surface.elevated-secondary` to `variant.primary.soft.bg-hover` (2), `component.button-danger.bg` to `component.button-danger.bg-hover` (2). Light: no change on the element (25), transparent to `variant.primary.soft.bg-hover` (18), transparent to rgba(0, 0, 0, 0.03) (3), text `role.text.secondary` to `role.text.primary` (2), opacity 1 to 0.8 (2), `bg.user-message-compact` to `variant.primary.soft.bg-hover` (2). Ghost buttons, menu items, rows and tabs all hover to `variant.primary.soft.bg-hover` (white at 10% in dark, black at 5% in light); solid neutral buttons drop to 80% opacity instead; the accent send and voice buttons do not change.
 
-**Pressed.** 41 of 42 pressed readings (the mouse button held down) look the same as hover. The product's `Button` styles pressed through a data attribute its script sets, so with scripts gone `:active` changes nothing; the pressed colours exist only as tokens (`variant.*.*.bg-active`).
+**Pressed.** 42 of 43 pressed readings (the mouse button held down) look the same as hover. The product's `Button` styles pressed through a data attribute its script sets, so with scripts gone `:active` changes nothing; the pressed colours exist only as tokens (`variant.*.*.bg-active`).
 
-**Focus.** Of 56 elements given a real keyboard focus in dark: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (7), no ring on the element (6), a 2px outline in `role.border.focus`, offset -2px (4), a 2px box-shadow ring (inset) in `role.border.focus` (4), a 2px outline on ::after, offset -1px (3), a 2px outline in `text.info`, offset 0px (2), a 2px outline on ::after, offset 0px (1). In light: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (7), no ring on the element (6), a 2px outline in `role.border.focus`, offset -2px (4), a 2px box-shadow ring (inset) in `role.border.focus` (4), a 2px outline in `role.border.focus`, offset 0px (3), a 2px outline on ::after, offset -1px (3), a 2px outline on ::after, offset 0px (1). The ring is `ring.default` (#3a83f7) at `size.focusRing.width` (2px) with no offset; rows draw it as an inset outline, ghost buttons on their ::after, links and segments fall back to the browser's outline.
+**Focus.** Of 57 elements given a real keyboard focus in dark: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (7), no ring on the element (6), a 2px box-shadow ring (inset) in `role.border.focus` (5), a 2px outline in `role.border.focus`, offset -2px (4), a 2px outline on ::after, offset -1px (3), a 2px outline in `text.info`, offset 0px (2), a 2px outline on ::after, offset 0px (1). In light: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (7), no ring on the element (6), a 2px box-shadow ring (inset) in `role.border.focus` (5), a 2px outline in `role.border.focus`, offset -2px (4), a 2px outline in `role.border.focus`, offset 0px (3), a 2px outline on ::after, offset -1px (3), a 2px outline on ::after, offset 0px (1). The ring is `ring.default` (#3a83f7) at `size.focusRing.width` (2px) with no offset; rows draw it as an inset outline, ghost buttons on their ::after, links and segments fall back to the browser's outline.
 
 **Disabled.** A disabled button keeps its variant's colours at 40% opacity (`component.button-disabled.opacity`): Restore defaults in Keyboard settings and Your current plan in the pricing dialog.
 
@@ -645,6 +645,17 @@ Child layers: th 128x33 border 1px solid `role.border.strong`; th 448x33 border 
 | default | size 768 x 262; border 1px solid `role.border.subtle`; radius `radius.3xl`; background `surface.elevated-secondary`; image linear-gradient(`variant.primary.soft.bg-hover`, `variant.primary.soft.bg-hover`); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
 | light | size 768 x 262; border 1px solid `role.border.subtle`; radius `radius.3xl`; background `bg.user-message-compact`; image linear-gradient(`variant.primary.soft.bg-hover`, `variant.primary.soft.bg-hover`); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
 
+#### Code text (inside a code block)
+
+<a id="code-text"></a>`code-text`, on thread-dark-code. The `code` element itself, not the language label in the block header; `typography.code` is read from it.
+
+<img src="components/crops/code-text-default.png" alt="Code text (inside a code block), default" height="120"> <img src="components/crops/code-text-light.png" alt="Code text (inside a code block), light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 462.45 x 194; background transparent; text `typography.code`, #f8a6c8 |
+| light | size 462.45 x 194; background transparent; text `typography.code`, #ab4f7a |
+
 #### Code block icon button
 
 <a id="code-block-button"></a>`code-block-button`, on thread-dark-code.
@@ -1215,16 +1226,31 @@ The plugin store: Plugins / Skills tabs, a search field and plugin rows. The ins
 | light-focus-visible | focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
 | light-selected | size 82.39 x `size.control.lg`; background `variant.primary.soft.bg-hover`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
 
-#### List row (plugin)
+#### List row (plugin card)
 
-<a id="plugin-row"></a>`plugin-row`, on plugins-dark.
+<a id="plugin-row"></a>`plugin-row`, on plugins-dark. A bordered card with a link laid over the whole of it; hover fills the card, keyboard focus rings the link (see the next row).
 
-<img src="components/crops/plugin-row-default.png" alt="List row (plugin), default" height="24"> <img src="components/crops/plugin-row-hover.png" alt="List row (plugin), hover" height="24"> <img src="components/crops/plugin-row-light.png" alt="List row (plugin), light" height="24"> <img src="components/crops/plugin-row-light-hover.png" alt="List row (plugin), light-hover" height="24"> 
+<img src="components/crops/plugin-row-default.png" alt="List row (plugin card), default" height="65"> <img src="components/crops/plugin-row-hover.png" alt="List row (plugin card), hover" height="65"> <img src="components/crops/plugin-row-pressed.png" alt="List row (plugin card), pressed" height="65"> <img src="components/crops/plugin-row-light.png" alt="List row (plugin card), light" height="65"> <img src="components/crops/plugin-row-light-hover.png" alt="List row (plugin card), light-hover" height="65"> <img src="components/crops/plugin-row-light-pressed.png" alt="List row (plugin card), light-pressed" height="65"> 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 336 x `size.control.2xs`; background transparent; text `typography.text-md` at `fontWeight.medium`, `role.text.primary` |
-| light (same: light-hover) | size 336 x `size.control.2xs`; background transparent; text `typography.text-md` at `fontWeight.medium`, `role.text.primary` |
+| default | size 448 x 64.75; padding `spacing.2`; radius `radius.2xl`; background transparent; text `typography.text-md` at `fontWeight.medium`, `role.text.primary`; icon 18 x 18, `role.text.disabled` |
+| hover, pressed | background `bg.disabled` |
+| light | size 448 x 64.75; padding `spacing.2`; radius `radius.2xl`; background transparent; text `typography.text-md` at `fontWeight.medium`, `role.text.primary`; icon 18 x 18, `role.text.disabled` |
+| light-hover, light-pressed | background `bg.disabled` |
+
+Child layers: span 36x36 background `role.bg.page` border 1px solid `role.border.default` radius 8px
+
+#### List row link (plugin card, focus ring)
+
+<a id="plugin-row-link"></a>`plugin-row-link`, on plugins-dark.
+
+<img src="components/crops/plugin-row-link-focus-visible.png" alt="List row link (plugin card, focus ring), focus-visible" height="65"> <img src="components/crops/plugin-row-link-light-focus-visible.png" alt="List row link (plugin card, focus ring), light-focus-visible" height="65"> 
+
+| State | Values |
+|---|---|
+| focus-visible | size 448 x 64.75; radius `radius.2xl`; background transparent; focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
+| light-focus-visible | size 448 x 64.75; radius `radius.2xl`; background transparent; focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
 
 ### Settings
 

@@ -6,21 +6,21 @@ Every component has one table per theme: a column per state, a row per property.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab), skipped where the element cannot take focus. ChatGPT draws most focus rings from `keyboard-focused:` variants that its own script turns on, so with scripts gone many focused states look like the rest state. The rest (`active`, `selected`, `checked`, `open`, `typed`, `highlighted`, ...) are other elements or copies captured in that state. Light states are prefixed `light`. The 390 wide copies are measured at rest only.
 
-112 components, 584 states (582 measured, 2 skipped, 0 not found).
+114 components, 588 states (588 measured, 0 skipped, 0 not found).
 
 ## Shared values
 
 Tallied over every measured state by the build script.
 
-- **Radius scale** (element radius, times seen): 9999px (260), 8px (90), 12px (50), 16px (36), 4px (12), 24px (11), 26px (8), 6px (6), 22px (4), 3.72px (2), 32px (2), 28px (2).
+- **Radius scale** (element radius, times seen): 9999px (260), 8px (90), 12px (50), 16px (44), 4px (12), 24px (11), 26px (8), 6px (6), 22px (4), 3.72px (2), 32px (2), 28px (2).
 - **Transitions**: `opacity, color 0.15s ease` (38), `opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (24), `color 0.075s ease` (8), `background-color, border-color, box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (4), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0, 0, 0.2, 1)` (3), `height 0.3s cubic-bezier(0.23, 1, 0.32, 1)` (2), `transform, translate, scale, rotate 0.2s cubic-bezier(0, 0, 0.2, 1)` (2).
-- **Font families**: -apple-system-body (792), -apple-system (18), ui-monospace (2).
-- **Type sizes** (size/line-height weight of the first text): 14px/20px 500 (116), 14px/20px 400 (114), 14px/18px 400 (72), 16px/24px 400 (64), 16px/26px 400 (50), 16px/18px 400 (28), 14px/14px 500 (26), 12px/12px 600 (22), 12px/16px 400 (16), 14px/20px 510 (10), 12px/16px 500 (8), 16px/16px 400 (8), 14px/18px 500 (6), 9px/9px 500 (6).
-- **Shadows**: `#ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px` (92); `#ffffff @ 0.2 0px 0px 1px 0px inset` (22); `#000000 @ 0.08 0px 1px 2px -1px` (20); `#ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset` (16); `#000000 @ 0.05 0px 4px 16px 0px` (14); `#3a83f7 0px 0px 0px 2px` (12).
-- **Focus-visible, dark** (56 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); outline 2px solid #3a83f7 offset -2px (4); outline 1px auto #99c8ff offset 1px (4); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (4); outline 1px auto #99c8ff offset 0px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); outline 2px solid #2c67c5 offset 0px (2); outline 2px solid #3a83f7 offset 0px (1); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #ffffff @ 0.2 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1).
-- **Focus-visible, light** (56 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); outline 2px solid #3a83f7 offset -2px (4); outline 1px auto #005fcc offset 1px (4); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (4); outline 2px solid #3a83f7 offset 0px (3); outline 1px auto #005fcc offset 0px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #000000 @ 0.15 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1).
-- **Hover changes, dark** (63 hovered components, 22 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #ffffff @ 0.1 (18); inner layer #ffffff @ 0.1 → #ffffff @ 0.1 (3); backgroundColor #000000 @ 0 → #ffffff @ 0.0509804 (3); backgroundColor #303030 → #ffffff @ 0.1 (2); backgroundColor #ff6764 @ 0.1 → #ff6764 @ 0.2 (2); backgroundColor #ededed → #ededed @ 0.8 (2); backgroundColor #ededed @ 0.05 → #ededed @ 0.1 (2); backgroundColor #212121 → #2f2f2f (1).
-- **Hover changes, light** (63 hovered components, 22 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #000000 @ 0.05 (18); inner layer #000000 @ 0.05 → #000000 @ 0.05 (3); backgroundColor #000000 @ 0 → #000000 @ 0.0254902 (3); backgroundColor #f3f3f3 → #000000 @ 0.05 (2); backgroundColor #e02e2a @ 0.1 → #e02e2a @ 0.2 (2); backgroundColor #0d0d0d → #0d0d0d @ 0.8 (2); backgroundColor #0d0d0d @ 0.05 → #0d0d0d @ 0.1 (2); backgroundColor #ffffff → #f9f9f9 (1).
+- **Font families**: -apple-system-body (798), -apple-system (18), ui-monospace (6).
+- **Type sizes** (size/line-height weight of the first text): 14px/20px 500 (116), 14px/20px 400 (114), 14px/18px 400 (72), 16px/24px 400 (66), 16px/26px 400 (50), 16px/18px 400 (28), 14px/14px 500 (26), 12px/12px 600 (22), 12px/16px 400 (16), 14px/20px 510 (10), 12px/16px 500 (8), 16px/16px 400 (8), 14px/18px 500 (6), 9px/9px 500 (6).
+- **Shadows**: `#ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px` (92); `#ffffff @ 0.2 0px 0px 1px 0px inset` (22); `#ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset` (20); `#000000 @ 0.08 0px 1px 2px -1px` (20); `#000000 @ 0.05 0px 4px 16px 0px` (14); `#3a83f7 0px 0px 0px 2px` (12).
+- **Focus-visible, dark** (57 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (5); outline 2px solid #3a83f7 offset -2px (4); outline 1px auto #99c8ff offset 1px (4); outline 1px auto #99c8ff offset 0px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); outline 2px solid #2c67c5 offset 0px (2); outline 2px solid #3a83f7 offset 0px (1); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #ffffff @ 0.2 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1).
+- **Focus-visible, light** (57 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (5); outline 2px solid #3a83f7 offset -2px (4); outline 1px auto #005fcc offset 1px (4); outline 2px solid #3a83f7 offset 0px (3); outline 1px auto #005fcc offset 0px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #000000 @ 0.15 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1).
+- **Hover changes, dark** (63 hovered components, 21 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #ffffff @ 0.1 (18); inner layer #ffffff @ 0.1 → #ffffff @ 0.1 (3); backgroundColor #000000 @ 0 → #ffffff @ 0.0509804 (3); backgroundColor #303030 → #ffffff @ 0.1 (2); backgroundColor #ff6764 @ 0.1 → #ff6764 @ 0.2 (2); backgroundColor #ededed → #ededed @ 0.8 (2); backgroundColor #ededed @ 0.05 → #ededed @ 0.1 (2); backgroundColor #212121 → #2f2f2f (1).
+- **Hover changes, light** (63 hovered components, 21 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #000000 @ 0.05 (18); inner layer #000000 @ 0.05 → #000000 @ 0.05 (3); backgroundColor #000000 @ 0 → #000000 @ 0.0254902 (3); backgroundColor #f3f3f3 → #000000 @ 0.05 (2); backgroundColor #e02e2a @ 0.1 → #e02e2a @ 0.2 (2); backgroundColor #0d0d0d → #0d0d0d @ 0.8 (2); backgroundColor #0d0d0d @ 0.05 → #0d0d0d @ 0.1 (2); backgroundColor #ffffff → #f9f9f9 (1).
 
 ### Tokens the measured components use
 
@@ -2185,6 +2185,52 @@ Light theme.
 
 Crops: `code-block-default.png`, `code-block-light.png`.
 
+#### code-text
+
+Code text (inside a code block). The `code` element itself, not the language label in the block header; `typography.code` is read from it.
+
+Page copy: `thread-dark-code`. Finder: `() => Q('[class*="CodeSurface"] pre code')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 462.45 x 194 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | ui-monospace 12px/20px 400 |
+| Letter spacing | normal |
+| Colour | #ededed |
+| Text node | span.text-codex-syntax-keyword: ui-monospace 12px/20px 400, #f8a6c8 |
+| Transition | none |
+| Cursor | text |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 462.45 x 194 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | ui-monospace 12px/20px 400 |
+| Letter spacing | normal |
+| Colour | #0d0d0d |
+| Text node | span.text-codex-syntax-keyword: ui-monospace 12px/20px 400, #ab4f7a |
+| Transition | none |
+| Cursor | text |
+| How | at rest |
+
+Crops: `code-text-default.png`, `code-text-light.png`.
+
 #### code-block-button
 
 Code block icon button.
@@ -4183,53 +4229,101 @@ Crops: `plugins-tab-default.png`, `plugins-tab-hover.png`, `plugins-tab-focus-vi
 
 #### plugin-row
 
-List row (plugin).
+List row (plugin card). A bordered card with a link laid over the whole of it; hover fills the card, keyboard focus rings the link (see the next row).
 
-Page copy: `plugins-dark`. Finder: `() => { const t = T('Gmail'); return t && (C(t, 'a,button,[role=button]') // W(t, 300)); }`.
+Page copy: `plugins-dark`. Finder: `() => CK(T('Gmail'), 'rounded-2xl border p-2')`.
 
 Dark theme.
 
-| Property | default | hover | focus-visible |
+| Property | default | hover | pressed |
 |---|---|---|---|
-| Size (w x h) | 336 x 24 | = | - |
-| Padding | 0px | = | - |
-| Gap | 8px | = | - |
-| Border | none | = | - |
-| Radius | 0px | = | - |
-| Background | transparent | = | - |
-| Box shadow | none | = | - |
-| Outline | none | = | - |
-| Font | -apple-system-body 16px/24px 400 | = | - |
-| Letter spacing | normal | = | - |
-| Colour | #ededed | = | - |
-| Text node | span.truncate: -apple-system-body 16px/24px 500, #ededed | = | - |
-| Transition | none | = | - |
-| Cursor | pointer | = | - |
-| How | at rest | mouse hover | - |
-| Skipped | - | = | not focusable in the static copy (no tabindex) |
+| Size (w x h) | 448 x 64.75 | = | = |
+| Padding | 8px | = | = |
+| Gap | 10px | = | = |
+| Border | none | = | = |
+| Radius | 16px | = | = |
+| Background | transparent | #ededed @ 0.05 | #ededed @ 0.05 |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system-body 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #ededed | = | = |
+| Text node | span.truncate: -apple-system-body 16px/24px 500, #ededed | = | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Icon | 18 x 18, colour #afafaf | = | = |
+| Painted layers | span.flex.size-9.shrink-0 36.0x36.0 bg #000000 border T:1px solid #ffffff @ 0.15 / R:1px solid #ffffff @ 0.15 / B:1px solid #ffffff @ 0.15 / L:1px solid #ffffff @ 0.15 r 8px | div.flex.flex-col.gap-2.5 448.0x64.8 bg #ededed @ 0.05 r 16px; span.flex.size-9.shrink-0 36.0x36.0 bg #000000 border T:1px solid #ffffff @ 0.15 / R:1px solid #ffffff @ 0.15 / B:1px solid #ffffff @ 0.15 / L:1px solid #ffffff @ 0.15 r 8px | div.flex.flex-col.gap-2.5 448.0x64.8 bg #ededed @ 0.05 r 16px; span.flex.size-9.shrink-0 36.0x36.0 bg #000000 border T:1px solid #ffffff @ 0.15 / R:1px solid #ffffff @ 0.15 / B:1px solid #ffffff @ 0.15 / L:1px solid #ffffff @ 0.15 r 8px |
+| How | at rest | mouse hover | mouse button held down on it (:hover:active) |
 
 Light theme.
 
-| Property | light | light-hover | light-focus-visible |
+| Property | light | light-hover | light-pressed |
 |---|---|---|---|
-| Size (w x h) | 336 x 24 | = | - |
-| Padding | 0px | = | - |
-| Gap | 8px | = | - |
-| Border | none | = | - |
-| Radius | 0px | = | - |
-| Background | transparent | = | - |
-| Box shadow | none | = | - |
-| Outline | none | = | - |
-| Font | -apple-system-body 16px/24px 400 | = | - |
-| Letter spacing | normal | = | - |
-| Colour | #0d0d0d | = | - |
-| Text node | span.truncate: -apple-system-body 16px/24px 500, #0d0d0d | = | - |
-| Transition | none | = | - |
-| Cursor | pointer | = | - |
-| How | at rest | mouse hover | - |
-| Skipped | - | = | not focusable in the static copy (no tabindex) |
+| Size (w x h) | 448 x 64.75 | = | = |
+| Padding | 8px | = | = |
+| Gap | 10px | = | = |
+| Border | none | = | = |
+| Radius | 16px | = | = |
+| Background | transparent | #0d0d0d @ 0.05 | #0d0d0d @ 0.05 |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system-body 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0d0d0d | = | = |
+| Text node | span.truncate: -apple-system-body 16px/24px 500, #0d0d0d | = | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Icon | 18 x 18, colour #8f8f8f | = | = |
+| Painted layers | span.flex.size-9.shrink-0 36.0x36.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 8px | div.flex.flex-col.gap-2.5 448.0x64.8 bg #0d0d0d @ 0.05 r 16px; span.flex.size-9.shrink-0 36.0x36.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 8px | div.flex.flex-col.gap-2.5 448.0x64.8 bg #0d0d0d @ 0.05 r 16px; span.flex.size-9.shrink-0 36.0x36.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 8px |
+| How | at rest | mouse hover | mouse button held down on it (:hover:active) |
 
-Crops: `plugin-row-default.png`, `plugin-row-hover.png`, `plugin-row-light.png`, `plugin-row-light-hover.png`.
+Crops: `plugin-row-default.png`, `plugin-row-hover.png`, `plugin-row-pressed.png`, `plugin-row-light.png`, `plugin-row-light-hover.png`, `plugin-row-light-pressed.png`.
+
+#### plugin-row-link
+
+List row link (plugin card, focus ring).
+
+Page copy: `plugins-dark`. Finder: `() => { const c = CK(T('Gmail'), 'rounded-2xl border p-2'); return c && c.querySelector('a'); }`.
+
+Dark theme.
+
+| Property | focus-visible |
+|---|---|
+| Size (w x h) | 448 x 64.75 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | transparent |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #ededed |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | a.absolute.inset-0.cursor-interaction 448.0x64.8 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px |
+| How | keyboard: focus(), Shift+Tab, Tab |
+
+Light theme.
+
+| Property | light-focus-visible |
+|---|---|
+| Size (w x h) | 448 x 64.75 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | transparent |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0d0d0d |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | a.absolute.inset-0.cursor-interaction 448.0x64.8 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px |
+| How | keyboard: focus(), Shift+Tab, Tab |
+
+Crops: `plugin-row-link-focus-visible.png`, `plugin-row-link-light-focus-visible.png`.
 
 ### Settings
 

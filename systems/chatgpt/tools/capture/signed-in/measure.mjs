@@ -333,6 +333,7 @@ const SPECS = [
   { key: 'md-inline-code', group: 'Thread', title: 'Inline code', snap: 'thread-dark-code', find: () => [...document.querySelectorAll('[class*="MarkdownRoot"] code')].find((c) => !c.closest('pre') && c.getBoundingClientRect().width > 1 && c.getBoundingClientRect().top > 0), states: R },
   { key: 'md-link', group: 'Thread', title: 'Link (citation in an answer)', snap: 'thread-dark-table', find: () => Q('[class*="MarkdownRoot"] a[href]'), states: ALL },
   { key: 'code-block', group: 'Thread', title: 'Code block', snap: 'thread-dark-code', find: () => Q('[class*="CodeSurface"]'), states: R },
+  { key: 'code-text', group: 'Thread', title: 'Code text (inside a code block)', snap: 'thread-dark-code', find: () => Q('[class*="CodeSurface"] pre code'), states: R, desc: 'The `code` element itself, not the language label in the block header; `typography.code` is read from it.' },
   { key: 'code-block-button', group: 'Thread', title: 'Code block icon button', snap: 'thread-dark-code', find: () => Q('[class*="CodeSurface"] button'), states: ALLP },
   { key: 'md-table', group: 'Thread', title: 'Table', snap: 'thread-dark-table', find: () => Q('table'), states: R },
   { key: 'md-th', group: 'Thread', title: 'Table header cell', snap: 'thread-dark-table', find: () => Q('table th'), states: R },
@@ -381,7 +382,10 @@ const SPECS = [
   { key: 'image-card', group: 'Images', title: 'Card (image template)', snap: 'images-dark', find: () => P(Q('main img').parentElement) || W(Q('main img'), 100), states: HV },
   { key: 'plugins-search', group: 'Plugins', title: 'Text field (Search plugins)', snap: 'plugins-dark', find: () => P(Q('#plugins-store-page-search').parentElement), focusOn: () => Q('#plugins-store-page-search'), states: ['default', 'hover', 'focus-visible'] },
   { key: 'plugins-tab', group: 'Plugins', title: 'Tab (Plugins / Skills)', snap: 'plugins-dark', find: () => Q('[role=tab][aria-selected=false]'), states: ALL, extra: { selected: { find: () => Q('[role=tab][aria-selected=true]') } } },
-  { key: 'plugin-row', group: 'Plugins', title: 'List row (plugin)', snap: 'plugins-dark', find: () => { const t = T('Gmail'); return t && (C(t, 'a,button,[role=button]') || W(t, 300)); }, states: ALL },
+  // The card is a bordered box with an absolutely placed link over it (inset-0, rounded-[inherit]);
+  // the card paints the border, padding and hover fill, the link paints the focus ring.
+  { key: 'plugin-row', group: 'Plugins', title: 'List row (plugin card)', snap: 'plugins-dark', find: () => CK(T('Gmail'), 'rounded-2xl border p-2'), states: ['default', 'hover', 'pressed'], desc: 'A bordered card with a link laid over the whole of it; hover fills the card, keyboard focus rings the link (see the next row).' },
+  { key: 'plugin-row-link', group: 'Plugins', title: 'List row link (plugin card, focus ring)', snap: 'plugins-dark', find: () => { const c = CK(T('Gmail'), 'rounded-2xl border p-2'); return c && c.querySelector('a'); }, states: ['focus-visible'] },
 
   // ---------------- Settings
   { key: 'settings-nav-item', group: 'Settings', title: 'Settings nav item', snap: 'settings-dark-appearance', find: () => C(T('General'), 'a,button'), states: ALLP, extra: { selected: { find: () => C(T('Appearance', Q('nav') || document), 'a,button') } } },

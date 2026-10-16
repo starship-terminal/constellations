@@ -215,12 +215,12 @@ for key in ("card-title", "control-label", "form-title", "form-body", "onboardin
     if trk:
         v["letterSpacing"] = em_px(trk, float(size[:-2])) if trk.endswith("em") else (dim(n + "--letter-spacing") or "0px")
     put(core, f"typography.{key}", tok(v, "typography", f"Measured: css-var {n} with its --line-height, --font-weight and --letter-spacing where declared ({PROBE}, {READ}); a missing line height is the size, a missing weight 400 (Derived)"))
-# Code: the mono stack at the markdown code size, measured on the code block.
-cb = MEAS.get("code-block", {}).get("states", {}).get("default", {})
-ts = cb.get("textStyle")
+# Code: read on the `code` element inside the code block (not the block's header label).
+cb = MEAS.get("code-text", {}).get("states", {}).get("default", {})
+ts = cb.get("style")
 if ts:
     put(core, "typography.code", tok({"fontFamily": "{fontFamily.mono}", "fontSize": ts["fontSize"], "lineHeight": ts["lineHeight"] if ts["lineHeight"].endswith("px") else ts["fontSize"], "fontWeight": int(ts["fontWeight"]), "letterSpacing": "0px"}, "typography",
-        f"Measured: computed style of the code in the thread's code block ({cb.get('snapshot')}, dark)"))
+        f"Measured: computed style of the `code` element in the thread's code block ({cb.get('snapshot')}, dark)"))
 NOT["core"] += [{"name": n, "value": raw(n), "why": "tracking keyword the stylesheets set to `normal`"} for n in names(r"^--font-tracking-")]
 
 # ---------------------------------------------------------------- spacing

@@ -395,7 +395,7 @@ CHECKLIST = [
     ("Dialog", ["confirm-dialog", "search-dialog", "pricing-dialog", "dialog-backdrop"]),
     ("Toast", []),
     ("Card", ["promo-card", "library-card", "pricing-card", "image-card"]),
-    ("List row", ["chat-row", "nav-row", "search-result", "archived-row", "plugin-row", "settings-row"]),
+    ("List row", ["chat-row", "nav-row", "search-result", "archived-row", "plugin-row", "plugin-row-link", "settings-row"]),
     ("Table", ["md-table", "md-th", "md-td"]),
     ("Avatar", ["avatar"]),
     ("Badge", ["badge"]),
