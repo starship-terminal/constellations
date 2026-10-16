@@ -57,132 +57,55 @@ Every page, view and overlay found, with what was captured. D is dark, L is ligh
 
 ### Core components
 
-#### Button3d
+The 2026-09 entries for components the 2026-10 specs above do not cover, rewritten in token names (`size.*`, `spacing.*`, `radius.*`, `borderWidth.*` are paths in `core`). Flat button, text input, switch, segmented control, tabs, badge, dropdown menu, tooltip, modal and card were superseded by the specs above; their 2026-09 crops stay listed under More crops.
 
-The main call to action everywhere: a pill face lifted 4px over a same-hue lip. `data-slot=button3d` wrapping `button3d-face`.
+#### Button3d colour variants
 
-| Part | Value | Token |
-|---|---|---|
-| Size | h48, full width or 272–367 wide in context | `size.button-height` |
-| Face | radius 60, padding 14 24, gap 8 | `radius.full` |
-| Label | CoFo Brilliant 16/20 500 | `typography.ui.actions.base` |
-| Lift | face `translateY(-4px)`, `box-shadow: 0 4px 0 0 <lip>` | `component.button3d.*` |
-| Press | lift and shadow go 4px → 0, `transform .1s ease-out, box-shadow .1s ease-out` | `duration.instant` (100ms), `easing.ease-out` |
-| Focus | `0 0 0 3px border.select` on the outer button | `shadow.outline` |
-| Disabled | outer opacity .85, face `bg.disabled`, text `text.disabled`, no lift | `component.button3d.disabled-face`, `disabled-text` |
-
-Colour variants (face / lip, dark theme): primary gray.200 / gray.400 (light: black / gray.800), secondary fill `bg.tertiary` / whiteAlpha, green green.500 / green.600, blue blue.500 / blue.600, yellow yellow.500 with yellow.900 text / yellow.700, plus red, purple, orange, teal, pink, pear, papaya and mint in the same pattern. All are in `component.button3d`.
-
-Premium variant: flat, no lift, face `gradient.iridescent-frame`, text `text.iridescent-primary`, `box-shadow: inset 0 -4px 0 0 rgba(20,37,99,.3)`, hover opacity .85.
-
-Hover changes nothing in Chrome: the tint (`--button3d-hover-tint`) is scoped to Safari.
+Face and lip per variant (`component.button3d.*`, both themes): primary `primary-face` over `primary-lip`; secondary `secondary-face` over `secondary-lip`; green, blue, yellow (with `yellow-text`), red, purple, orange, teal, pink, pear, papaya and mint each pair a 500-step face with its `*-lip`. Disabled is `disabled-face` with `disabled-text` and no lift; the button keeps `opacity.disabled-button3d`. The lift is `size.button3d-lift`, and pressing removes it over `duration.instant` with `easing.ease-out`. Premium is flat: `gradient.iridescent-frame` face, `text.iridescent-primary` label, `component.button3d.premium-inset` inner edge, `opacity.hover-premium` on hover.
 
 ![button3d primary, dark](components/crops/button3d-primary-dark.png)
-![button3d disabled, dark](components/crops/button3d-disabled-dark.png)
 ![lesson footer: secondary and green button3d](components/crops/lesson-footer-correct-dark.png)
 ![lesson footer: secondary and yellow button3d](components/crops/lesson-footer-retry-dark.png)
 ![premium variant in the keys popover, light](components/crops/popover-keys-light.png)
 
-#### Flat button
-
-`data-slot=button`. h48, padding 12 22, radius 54, border 2px, `ui.actions.base`.
-
-| Variant | Background | Text | Hover |
-|---|---|---|---|
-| primary (inverse) | `bg.inverse-primary` (#f2f2f2 D / #000 L) | `text.inverse` | opacity .78 |
-| outline | transparent, border `border.primary` | `text.primary` | `bg.hover` |
-| ghost | transparent | `text.secondary` or `text.tertiary` | `bg.hover` |
-| danger ghost | transparent | `text.danger-primary` | `bg.danger-secondary-hover` |
-| disabled | `bg.disabled` | `text.disabled` | none, cursor not-allowed |
-| danger disabled | `bg.danger-disabled` | `text.danger-disabled` | none |
-
-The public header uses a green sign-up variant (`bg.green-primary`, white text) and a compact h40 outline "Sign in".
-
-![primary button hover and outline "Send verification", dark](components/crops/button-primary-hover-dark.png)
-![email row with outline button, light](components/crops/settings-email-badges-light.png)
-![quit dialog: danger ghost button on hover](components/crops/modal-quit-danger-hover-dark.png)
-
 #### Hue-shift pill
 
-`data-slot=hue-shift-button`, used for quick answers (No / Maybe / Yes). h52, min-w 96, padding 16 24, radius full, `ui.actions.base`, background `gradient.hue-shift-action-gray`. Has a hidden loading layer with a spinner.
+`data-slot=hue-shift-button`, for quick answers (No / Maybe / Yes): `size.button-height-pill` high, at least `spacing.24` wide, padding `spacing.4` `spacing.6`, `radius.full`, `typography.ui.actions.base`, fill `gradient.hue-shift-action-gray`. A hidden loading layer holds a spinner.
 
 ![hue-shift pills, dark](components/crops/hue-shift-pills-dark.png)
 
-#### Icon button and glass button
+#### Glass button
 
-Icon button (`data-slot=icon-button`): 44–48 square, padding 12, border 2px transparent, radius 6 or full. Play-sample variant sits on `bg.hover`. Focus is `shadow.outline` plus `bg.hover`.
-
-Glass button (`data-slot=glass-button`, lesson rail): 48x48, radius 54, `backdrop-filter: blur(20px) saturate(1.8)`, icon `text.disabled`. The Koji dock pairs two as a split pill (60x52 each, radii 9999 0 0 9999 and 0 9999 9999 0).
+`data-slot=glass-button` on the lesson rail: `size.icon-button` square, `radius.button`, `borderWidth.hairline` transparent edge, backdrop `blur.glass` (saturate 1.8), icon in `text.disabled`. The Koji dock joins two into a split pill whose halves round only their outer ends.
 
 ![lesson top bar with close icon button, dark](components/crops/lesson-topbar-dark.png)
 ![Koji dock with split glass pill, dark](components/crops/lesson-koji-dock-dark.png)
 
-#### Text input
-
-`data-slot=form-input` inside `data-slot=field`.
-
-| State | Value |
-|---|---|
-| Default | h52, padding 12 16, radius 8, border 2px `border.primary`, transparent bg, `typography.body.base` |
-| Placeholder | `text.disabled` |
-| Focus | border 2px `border.active` plus `inset 0 0 0 1px` the same colour (reads as a 3px ring), no outline |
-| Disabled | `bg.secondary`, no border, `text.secondary`, field opacity .5 |
-| Invalid | label and message `text.danger-primary` (read from CSS; no live error was triggered) |
-
-Label is 16/20 500 `text.primary`, 8px above the input.
-
-![inputs, light](components/crops/settings-inputs-light.png)
-![inputs, dark](components/crops/settings-inputs-dark.png)
-![input focus, dark](components/crops/input-focus-dark.png)
-![login form, light](components/crops/login-form-light.png)
-
 #### Chat input and ask pill
 
-Chat input (tutor panel): h53, radius 24, bg `autoflip.black.100`, border .5px `autoflip.black.200`, auto-resizing textarea, send button 32 round inside it. The send button is transparent when empty and fills with `gradient.koji-send-button` once there is text.
+Tutor chat input: `radius.home-card`, fill `autoflip.black.100`, `borderWidth.hairline` `autoflip.black.200`, an auto-growing text area and a `size.icon-button-xs` round send button that is transparent when empty and fills with `gradient.koji-send-button` once there is text. Keycaps under it use `radius.tile` with a `borderWidth.thin` edge and a `borderWidth.default` bottom.
 
-Ask pill (home, fixed bottom): 552x68, radius 32, border 2px `border.secondary`, `shadow.base`, translucent fill, idle opacity .65, focused adds `blur(24px)` and opacity 1, `150ms ease`.
-
-Keycaps (`kbd`) under the chat input: h21, padding 0 6 2, radius 5, 1px border with a 2px bottom.
+Ask pill on Home: the same frosted pill as the Koji prompt (`text-area-pill` above): `radius.3xl`, `borderWidth.default` `border.secondary`, `shadow.base`, `opacity.ask-pill-idle` until focused, then `blur.ask-pill` and full opacity over `duration.fast`.
 
 ![tutor input with text, dark](components/crops/tutor-input-filled-dark.png)
 ![ask pill, light](components/crops/home-ask-pill-light.png)
 ![ask pill, dark](components/crops/home-ask-pill-dark.png)
 
-#### Search field (catalog)
+#### Search field (2026-09 catalog)
 
-A button styled as a field that opens Koji: 340x52, radius full, border 2px `border.primary`, padding 4 4 4 16, search icon 16, trailing disabled-look "Ask" pill. Hover `border.hover`; focus `border.active` plus `shadow.outline`.
+A button styled as a field that opens Koji: `size.control-lg` high, `radius.full`, `borderWidth.default` `border.primary`, a `size.icon-sm` search icon and a trailing "Ask" pill. Hover `border.hover`; focus `border.active` plus `shadow.outline`. The 2026-10 Topics page shows the same field.
 
 ![search field, light](components/crops/courses-search-light.png)
 ![search field, dark](components/crops/courses-search-dark.png)
 
-#### Switch
-
-`data-slot=switch`: 48x32 track, padding 4, radius full; thumb 24 white. Off `bg.disabled`, on `bg.green-primary`, thumb moves 16px with `transform .15s ease`. Focus ring 3px. Disabled plus checked uses `bg.disabled` with a `bg.primary` thumb. The onboarding voice switch uses a teal gradient in place of green. Tokens: `component.switch.*`.
-
-![preferences: segmented controls and switches, light](components/crops/preferences-light.png)
-![switches off, dark](components/crops/preferences-switches-off-dark.png)
-![onboarding teal switch, dark](components/crops/switch-onboarding-dark.png)
-
-#### Segmented control
-
-Two sizes, same pattern: a `bg.secondary` track (radius full, padding 4–6, gap 4) with pill segments. Checked segment is `bg.primary`, `border.primary` 1px, `text.primary`, `shadow.base`; unchecked is `text.tertiary`. `transition: background-color, border-color, box-shadow, color .15s ease-out`.
-
-| Where | Track | Segment | Type |
-|---|---|---|---|
-| Preferences (`data-slot=segment`) | h44, padding 6 | h32, padding 0 10 | `ui.nav.selected` 16/24 500 |
-| You page time range | padding 4 | min-w 60, padding 8 12 | `body.sm` 14/21 |
-
-![segmented control and stat cards, light](components/crops/segmented-and-stats-light.png)
-![segmented control and switches, dark](components/crops/preferences-segmented-switch-dark.png)
-
 #### Choice card
 
-A card that acts as a radio (onboarding voice, subject and level). 158–178 wide, h228, radius 16, padding 32 24 24, bg `gradient.hue-shift-action-gray`, label `ui.actions.base` in `text.secondary`.
+A card that acts as a radio (onboarding voice, subject and level): `size.choice-card-height` high, `radius.xl`, padding `spacing.8` `spacing.6` `spacing.6`, fill `gradient.hue-shift-action-gray`, label `typography.ui.actions.base` in `text.secondary`.
 
 | State | Change |
 |---|---|
-| Hover | bg `bg.hover`, gradient removed |
-| Selected (`data-checked`) | label `text.primary`; `::before` paints a hue-shift gradient (teal or blue); subject cards add `shadow.outline` |
+| Hover | fill `bg.hover`, gradient removed |
+| Selected (`data-checked`) | label `text.primary`; a hue-shift gradient (`gradient.hue-shift-color-teal-primary` or `-blue-primary`) paints over it; subject cards add `shadow.outline` |
 
 ![choice cards, default](components/crops/choice-card-states-dark.png)
 ![choice card hover](components/crops/choice-card-hover-dark.png)
@@ -190,45 +113,9 @@ A card that acts as a radio (onboarding voice, subject and level). 158–178 wid
 ![subject card selected](components/crops/subject-card-selected-dark.png)
 ![level option cards](components/crops/level-option-cards-dark.png)
 
-#### Tabs and navigation
-
-App header nav tabs: `a` h63, `ui.nav.default` 16/24 in `text.secondary`; selected is `text.primary`, weight 500 and a 2px underline that slides up with `transform 100ms linear`.
-
-Settings side menu: `bg.primary` panel, 1px `border.primary`, radius 12, padding 16; items h40, radius 8; selected `bg.tertiary` with `ui.nav.selected`.
-
-Pricing billing tabs (Base UI): 48 tall, 16/24; active is 500 `text.purple-primary` with an underline. Feature tabs (vertical) are 56 tall, radius 8, active `gray.100` light or `bg.hover` dark.
-
-![app header, light](components/crops/app-header-light.png)
-![app header, dark](components/crops/app-header-dark.png)
-![settings side menu, light](components/crops/settings-sidenav-light.png)
-![settings side menu, dark](components/crops/settings-sidenav-dark.png)
-
-#### Badge
-
-`.panda-badge`, recipe with `colorPalette` and `variant`. Text is `ui.actions.sm`: 12/13.2 700, uppercase, tracking .48px.
-
-| Variant | Padding / radius | Example |
-|---|---|---|
-| subtle | 4 8, full | "RECOMMENDED" blue (L blue.200 on blue.700 text; D blue.900 with blue.200), "UNVERIFIED" yellow, "PRIMARY" blue |
-| solid | 4 8, 12 | "NEW" green.600 with white, "SAVE xx%" purple.500 |
-| minimal | none | grade eyebrows "GR 4–5" in `text.tertiary` |
-| premium solid | 6 20, 12 | pink.300 → yellow.400 gradient, black text |
-
-![badges in the email row, dark](components/crops/settings-email-badges-dark.png)
-![RECOMMENDED badge, light](components/crops/home-recommended-card-light.png)
-![premium badge over a display headline](components/crops/promo-badge-headline-dark.png)
-
 #### Progress
 
-`.panda-progress`, track radius full, indicator `bg.green-primary`.
-
-| Size | Height | Where |
-|---|---|---|
-| sm | 4 | not seen in use |
-| default | 8 | onboarding, 696 wide, indicator `width 200ms ease` |
-| lg | 12 | lesson top bar, 592 wide, followed by 16x12 upcoming-section dots |
-
-The learning-plan intro splits the bar into 3 segments with 4px gaps.
+`.panda-progress`: track `radius.full`, indicator `bg.green-primary`. Heights `size.progress-sm`, `size.progress-default` (onboarding, indicator width animates over `duration.normal`) and `size.progress-lg` (lesson top bar, followed by upcoming-section dots). The learning-plan intro splits the bar into three segments with `spacing.1` gaps.
 
 ![onboarding progress](components/crops/progress-onboarding-dark.png)
 ![segmented progress and eyebrow](components/crops/segmented-progress-eyebrow-dark.png)
@@ -236,52 +123,45 @@ The learning-plan intro splits the bar into 3 segments with 4px gaps.
 
 #### Spinner
 
-`data-slot=spinner`: 16x16, 2px border, top in currentColor and the other sides at 25%, `spin 600ms linear infinite`. Seen inside hue-shift pills and the plan loader (`plan-dark-creating-plan-loading.png`).
-
-#### Dropdown menu
-
-`data-slot=dropdown-menu-content`: 280 wide, `bg.elevated`, radius 8, `shadow.base`, no padding. Items h48, padding 12 16, `body.base`; highlighted `bg.hover`. 1px `border.secondary` separators. Opens from scale .95 and opacity 0 with `opacity 150ms ease-in-out, transform 150ms ease-in-out`.
-
-![dropdown menu, light](components/crops/dropdown-menu-light.png)
-![dropdown menu with item hover, dark](components/crops/dropdown-menu-dark.png)
+`data-slot=spinner`: `size.icon-sm` square, `borderWidth.default`, the top edge in currentColor and the others at 25%, spinning over `duration.spinner` linear. Seen inside hue-shift pills and the plan loader (`plan-dark-creating-plan-loading.png`).
 
 #### Popover
 
-`data-slot=popover-content`: 353 (keys) or 384 (streak) wide, `bg.elevated`, radius 8, `shadow.base`, 20x10 arrow in `bg.elevated`. Same 150ms scale-and-fade as the menu.
+`data-slot=popover-content` (keys and streak): `bg.elevated`, `radius.md`, `shadow.base`, an arrow in `bg.elevated`, and the menu's scale-and-fade over `duration.fast` with `easing.ease-in-out`.
 
 ![keys popover, dark](components/crops/popover-keys-dark.png)
 ![streak popover, light](components/crops/popover-streak-light.png)
 ![streak popover, dark](components/crops/popover-streak-dark.png)
 
-#### Tooltip
+#### More crops (2026-09)
 
-`data-slot=tooltip-content`: max-w 280, padding 12 16, radius 12, `bg.elevated`, `shadow.base`; title `heading.sm`, body `body.sm` `text.secondary`; arrow is a 10px square rotated 45°. Same 150ms open transition.
-
+![button3d disabled, dark](components/crops/button3d-disabled-dark.png)
+![primary button hover and outline "Send verification", dark](components/crops/button-primary-hover-dark.png)
+![email row with outline button, light](components/crops/settings-email-badges-light.png)
+![quit dialog: danger ghost button on hover](components/crops/modal-quit-danger-hover-dark.png)
+![input focus, dark](components/crops/input-focus-dark.png)
+![settings inputs, light](components/crops/settings-inputs-light.png)
+![settings inputs, dark](components/crops/settings-inputs-dark.png)
+![preferences switches off](components/crops/preferences-switches-off-dark.png)
+![switch in onboarding](components/crops/switch-onboarding-dark.png)
+![segmented control and stats, light](components/crops/segmented-and-stats-light.png)
+![segmented switch in preferences](components/crops/preferences-segmented-switch-dark.png)
+![app header, light](components/crops/app-header-light.png)
+![app header, dark](components/crops/app-header-dark.png)
+![settings side menu, light](components/crops/settings-sidenav-light.png)
+![settings side menu, dark](components/crops/settings-sidenav-dark.png)
+![badges in the email row, dark](components/crops/settings-email-badges-dark.png)
+![dropdown menu, light](components/crops/dropdown-menu-light.png)
+![dropdown menu with item hover, dark](components/crops/dropdown-menu-dark.png)
 ![bar chart with tooltip, dark](components/crops/bar-chart-and-tooltip-dark.png)
-
-#### Modal
-
-Overlay `special.overlay.default` (rgba(11,11,11,.8) dark), `opacity 150ms`. Content max-w 448, `bg.elevated`, radius 20, `shadow.md`, padding 32 20 16, gap 24; title `heading.md`, body `body.base`; full-width button3d plus a danger ghost button. Opacity and transform 150ms.
-
 ![quit dialog, dark](components/crops/modal-quit-dark.png)
-
-#### Card
-
-Several shells share one pattern: `bg.primary`, 2px `border.primary` or `border.solid`, large radius, no shadow.
-
-| Card | Radius | Padding | Notes |
-|---|---|---|---|
-| Course hero | 20 | 32 | 487 wide at xl |
-| Stat card | 20 | 16 24 | label `body.sm`, value `heading.xl` |
-| Home recommended | 24 | 24 | height `clamp(320px, 50dvh + banner, 500px)` |
-| Home gamification | 32 | 0 | premium upsell footer strip |
-| Figure card | 32 | 24 | `bg.elevated`, 1px border, `shadow.base` |
-| Setting row | 16 | 18 16 | 1px border |
-| Fixed footer card (course) | 40 | 24 16 16 | `bg.elevated`, `border.solid` |
-
 ![course hero card, light](components/crops/course-hero-card-light.png)
 ![course hero card, dark](components/crops/course-hero-card-dark.png)
 ![figure card, dark](components/crops/figure-card-dark.png)
+![login form, light](components/crops/login-form-light.png)
+![preferences, light](components/crops/preferences-light.png)
+![RECOMMENDED badge, light](components/crops/home-recommended-card-light.png)
+![premium badge over a display headline](components/crops/promo-badge-headline-dark.png)
 
 ### Product components
 
@@ -291,15 +171,15 @@ Under the app header: min-h 48, centred `body.sm` → `body.base` 500 with an un
 
 #### Premium header button and stat pills
 
-"Go Premium" (`data-slot=premium-button`): h41, padding 8 16, radius full, 2px iridescent gradient border via `padding-box`/`border-box`, 14/21 500 `text.iridescent-secondary`.
+"Go Premium" (`data-slot=premium-button`): `size.premium-button` high, padding `spacing.2` `spacing.4`, `radius.full`, a `borderWidth.default` iridescent border (`gradient.iridescent-frame` via `padding-box`/`border-box`), 14/21 500 in `text.iridescent-secondary`.
 
-Stat pills (keys, streak): h47, padding 9 20, radius 54, 2px `border.primary`, `ui.actions.base`, icon 24. They open the keys and streak popovers.
+Stat pills (keys, streak): 47px high (no token), `radius.button`, `borderWidth.default` `border.primary`, `typography.ui.actions.base`, `size.icon-lg` icon. They open the keys and streak popovers.
 
 ![header right side](components/crops/app-header-light.png)
 
 #### Course tile
 
-`data-inner-course-card`: 176 square at 2xl (152–218 by breakpoint), padding 22.72%, radius 20, 2px `border.solid`, lifted 4px with a `border.solid` lip. Hover changes the border and lip to `border.hover`. `transform .1s ease-out, box-shadow .1s ease-out, border-color .2s`. Grade badge top-left, "NEW" badge top-right, label below. Tiles on a shelf (`bg.secondary`, radius 12) are joined by 2px connectors.
+`data-inner-course-card`: `size.course-tile` square at 2xl (152 to 218 by breakpoint), padding 22.72%, `radius.2xl`, `borderWidth.default` `border.solid`, lifted `size.button3d-lift` over a `border.solid` lip (`shadow.tile3d`). Hover changes the border and lip to `border.hover`; transform and lip move over `duration.instant` `easing.ease-out`, the border over `duration.normal`. Grade badge top-left, "NEW" badge top-right, label below. Tiles on a shelf (`bg.secondary`, `radius.lg`) are joined by `borderWidth.default` connectors. The 2026-10 Topics cards are the 150px `card-course` spec above.
 
 ![course shelf, light](components/crops/courses-shelf-light.png)
 ![course tile hover, dark](components/crops/course-tile-hover-dark.png)
@@ -335,16 +215,16 @@ Opened from the ask pill. Cards slide out, "Hey, Learner! How can I help?" (`bod
 
 #### Lesson frame and interactive
 
-The lesson panel is inset 34px, radius 24, `bg.primary`, with a 2px border that turns to the evaluation colour. The interactive (`<custom-interactive>`, CoFo Semi Mono) has tappy tiles, wells, a tray, answer slots and algebra tiles; every colour is in `component.lesson.*` for both themes.
+The lesson panel is inset `size.lesson-frame-radius-inset`, `radius.lesson-frame`, `bg.primary`, with a `borderWidth.default` border that turns to the evaluation colour (`component.lesson.frame-correct`, `frame-retry`). The interactive (`<custom-interactive>`, CoFo Semi Mono) has tappy tiles, wells, a tray, answer slots and algebra tiles; every colour is in `component.lesson.*` for both themes.
 
-| Part | Dark | Light |
-|---|---|---|
-| Tile face / edge | #141414 / gray.600 | white / gray.300 |
-| Stacked lip | gray.900 over #666 | gray.200 |
-| Tray | whiteAlpha 10% | blackAlpha 2.4% |
-| Empty slot | gray.900, 2px dashed #666 | gray.50, 2px dashed gray.300 |
-| Variable chip | #381d66, border #5a2ea3 | purple.100, border purple.200 |
-| Algebra bar | pink.600 → pink.400 | pink.300 → pink.400 |
+| Part | Token (resolves per theme) |
+|---|---|
+| Tile face / edge | `component.lesson.tile-face` / `tile-edge` |
+| Stacked lip | `component.lesson.tile-stack` |
+| Well / tray | `component.lesson.tile-well` / `tile-tray` |
+| Empty slot | `component.lesson.tile-slot`, `borderWidth.default` dashed `tile-slot-dash` |
+| Variable chip | `component.lesson.variable-chip`, border `variable-chip-border` |
+| Algebra bar | `component.lesson.algebra-bar`; unit tiles `unit-tile-from` to `unit-tile-to` |
 
 ![lesson frame, light](components/crops/lesson-frame-light.png)
 ![interactive, light](components/crops/lesson-interactive-light.png)

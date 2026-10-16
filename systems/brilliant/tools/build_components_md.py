@@ -105,7 +105,21 @@ ROLE_ORDER = {
 DIM_PREF = ["size.control", "size.button", "size.icon", "radius", "spacing", "borderWidth", "focusRing", "opacity", "size", "layout"]
 
 
-def pick(names, role=None):
+HINTS = []  # words of the spec being written (switch, radio, avatar, button3d); a token named for the component wins
+
+
+def pick(names, role=None, prefer=None):
+    """Choose among tokens holding the same value: one the other theme also uses (prefer), then one
+    named for this component, then the role order."""
+    if prefer:
+        both = [n for n in names if n in prefer]
+        names = both or names
+    if role is None:  # sizes, radii, opacities: a token named for this component wins
+        hinted = [n for n in names if any(h in n for h in HINTS)]
+        names = hinted or names
+    else:  # colours: a component token for this component (component.switch.thumb) wins
+        hinted = [n for n in names if n.startswith("component.") and any(h in n.split(".")[1] for h in HINTS)]
+        names = hinted or names
     if role:
         order = ROLE_ORDER[role]
         names = [n for n in names if n.split(".")[0] in order] or names
@@ -117,14 +131,19 @@ IDX = {th: build_index(th) for th in ("light", "dark")}
 STATS = {"named": 0, "raw": 0}
 
 
-def name_color(v, th, role="fill"):
+OTHER = {"dark": "light", "light": "dark"}
+
+
+def name_color(v, th, role="fill", other=None):
+    """other: the same property in the other theme, so one element gets one role name in both."""
     c = rgba(v)
     if c is None:
         return None
     if c[3] == 0:
         return "transparent"
     n = IDX[th][0].get(c)
-    n = pick(n, role) if n else None
+    prefer = IDX[OTHER[th]][0].get(rgba(other)) if other and rgba(other) else None
+    n = pick(n, role, prefer) if n else None
     STATS["named" if n else "raw"] += 1
     return f"`{n}`" if n else f"{v} (no token)"
 
@@ -141,15 +160,15 @@ def name_dim(v, th, kind):
     return f"`{n}`" if n else f"{v} (no token)"
 
 
-def name_shadow(v, th):
+def name_shadow(v, th, other=None):
     if v == "none":
         return "none"
     m = re.fullmatch(r"(rgba?\([^)]*\)) 0px 0px 0px 3px", v)
     if m:
-        return f"`focusRing.width` in {name_color(m.group(1), th, 'ring')}"
+        return f"`focusRing.width` in {name_color(m.group(1), th, 'ring', re.sub(r' 0px.*', '', other or ''))}"
     m = re.fullmatch(r"(rgba?\([^)]*\)) 0px 4px 0px 0px", v)
     if m:
-        return f"lip 0 4px 0 in {name_color(m.group(1), th, 'ring')}"
+        return f"lip 0 4px 0 in {name_color(m.group(1), th, 'ring', re.sub(r' 0px.*', '', other or ''))}"
     m = re.fullmatch(r"(rgba?\([^)]*\)) 0px 0px (\d+)px 0px", v)
     if m:
         lvl = {"15": "shadow.base", "25": "shadow.md"}.get(m.group(2))
@@ -169,20 +188,20 @@ def name_typo(s, th):
     return f"`{n}`" if n else f"{s['font-size']}/{s['line-height']} {s['font-weight']} (no style)"
 
 
-def describe(s, th, base=None):
+def describe(s, th, base=None, o=None):
     """The properties worth stating for one element in one state, as token names."""
     out = []
     keep = lambda p: base is None or s[p] != base[p]
     if keep("background-color") and s["background-color"] not in ("rgba(0, 0, 0, 0)",):
-        out.append(("fill", name_color(s["background-color"], th)))
+        out.append(("fill", name_color(s["background-color"], th, "fill", o and o["background-color"])))
     if keep("background-image") and s["background-image"] != "none":
         out.append(("fill", "gradient (see crop)"))
     if keep("color"):
-        out.append(("text", name_color(s["color"], th, "text")))
+        out.append(("text", name_color(s["color"], th, "text", o and o["color"])))
     if keep("border-top-color") and s["border-top-width"] not in ("0px",) and s["border-top-style"] != "none":
-        out.append(("border", f"{name_dim(s['border-top-width'], th, 'border')} {name_color(s['border-top-color'], th, 'border')}"))
+        out.append(("border", f"{name_dim(s['border-top-width'], th, 'border')} {name_color(s['border-top-color'], th, 'border', o and o['border-top-color'])}"))
     if keep("box-shadow"):
-        out.append(("shadow", name_shadow(s["box-shadow"], th)))
+        out.append(("shadow", name_shadow(s["box-shadow"], th, o and o["box-shadow"])))
     if keep("outline-style") or keep("outline-color") or keep("outline-width"):
         if s["outline-style"] == "auto":
             out.append(("focus", "browser default ring (no product style)"))
@@ -223,6 +242,7 @@ STATE_LABEL = {"default": "default", "hover": "hover", "focus-visible": "focus-v
 
 def spec_table(name):
     rec = C[name]
+    HINTS[:] = [w for w in re.split(r"-", name) if w not in ("button", "dark", "light", "on", "off", "selected", "default", "text", "setting", "row", "card")] + [name]
     rows = []
     for st in ("default", "hover", "focus-visible", "active"):
         if st not in rec["dark"]:
@@ -231,12 +251,13 @@ def spec_table(name):
         for th in ("dark", "light"):
             r = rec[th]
             base = None if st == "default" else r["default"]["self"]
-            items = describe(r[st]["self"], th, base)
+            o = rec[OTHER[th]][st]
+            items = describe(r[st]["self"], th, base, o["self"])
             if "part" in r[st] and st == "default":
                 items = [i for i in items if i[0] not in ("text", "type", "shadow")]
             if "part" in r[st]:
                 pb = None if st == "default" else r["default"]["part"]
-                pi = describe(r[st]["part"], th, pb)
+                pi = describe(r[st]["part"], th, pb, o.get("part"))
                 if pi:
                     items = items + [("face: " + k, v) for k, v in pi]
             cells.append(fmt(items))
@@ -261,7 +282,7 @@ CHECKLIST = [
     ("Checkbox", None, "Not present as a visible control: every `type=checkbox` in the app is the hidden input behind a switch. The stylesheet carries `checkbox` and `checkbox-indicator` slots that no reached screen rendered."),
     ("Radio", ["radio", "segment-selected", "segment", "segment-track"], "A real radio (`data-slot=radio`, 20px) in the account's connected-accounts list, and the segmented control, which is a Base UI radio group (`role=radiogroup`) of pill segments."),
     ("Switch", ["switch-on", "switch-off"], "`data-slot=switch`, 48x32 track, 24px thumb; focus is a 3px outline in `border.select`."),
-    ("Tabs", ["nav-tab-selected", "nav-tab", "settings-tab-selected", "settings-tab"], "Two tab sets: the app header (Home, Topics, You; selected has an underline bar and `text.primary`) and the settings side menu (selected gets `bg.active`)."),
+    ("Tabs", ["nav-tab-selected", "nav-tab", "settings-tab-selected", "settings-tab"], "Two tab sets: the app header (Home, Topics, You; selected has an underline bar and `text.primary`) and the settings side menu (selected gets `bg.tertiary`)."),
     ("Menu", ["menu", "menu-item", "menu-item-highlighted"], "Base UI dropdown (`role=menu`). Hover and keyboard focus both set `data-highlighted`, which paints `bg.hover`; the item itself draws no ring."),
     ("Tooltip", ["tooltip", "tooltip-trigger"], "Base UI tooltip on hover or focus of a 12px info icon; `bg.elevated`, `shadow.base`, `typography.body.sm` in `text.secondary`."),
     ("Dialog", ["dialog", "dialog-scrim"], "Base UI dialog (`modal-content`), `shadow.md`, max `size.modal-max`; the scrim is `special.overlay.default`. Used for the destructive quit confirmation."),

@@ -205,7 +205,7 @@ core["size"] = {
     "path-tile": tok("176px", "dimension", "computed learning-path course tile artwork"),
     "koji-dock": tok("84px", "dimension", "computed lesson Koji mascot"),
     "icon-sm": tok("16px", "dimension", "computed nav and meta icons"),
-    "icon-md": tok("20px", "dimension", "computed header stat icons (estimated from screenshot)"),
+    "icon-md": tok("20px", "dimension", "estimated from screenshot: header stat icons"),
     "icon-lg": tok("24px", "dimension", "computed lesson top bar and rail icons"),
     "premium-button": tok(comp_val("premium-button", "dark", "default", "height"), "dimension", "computed 2026-10 header 'Go Premium' pill"),
     "badge-height": tok("21.2px", "dimension", "computed .panda-badge (12/13.2 + 4px padding)"),

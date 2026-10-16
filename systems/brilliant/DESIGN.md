@@ -5,7 +5,7 @@ version: "alpha"
 name: "Brilliant"
 description: "Interactive problem-solving lessons, course paths, a calm editorial learning UI (Panda CSS tokens)"
 colors:
-  primary: "#29cc57"
+  primary: "#456dff"
   neutral: "#ffffff"
   surface: "#f8f8f8"
   on-surface: "#000000"
@@ -633,7 +633,7 @@ A token set, component reference and pattern guide for Brilliant's web app, for 
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#29cc57):** `light.bg.green-primary`
+- **primary (#456dff):** `light.accent.default`
 - **neutral (#ffffff):** `light.bg.primary`
 - **surface (#f8f8f8):** `light.bg.secondary`
 - **on-surface (#000000):** `light.text.primary`

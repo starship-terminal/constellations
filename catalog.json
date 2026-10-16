@@ -106,7 +106,7 @@
             "surface": "light.bg.secondary",
             "text": "light.text.primary",
             "muted": "light.text.secondary",
-            "accent": "light.bg.green-primary",
+            "accent": "light.accent.default",
             "border": "light.border.primary"
           },
           "dark": {
@@ -114,7 +114,7 @@
             "surface": "dark.bg.secondary",
             "text": "dark.text.primary",
             "muted": "dark.text.secondary",
-            "accent": "dark.bg.green-primary",
+            "accent": "dark.accent.default",
             "border": "dark.border.primary"
           }
         },
