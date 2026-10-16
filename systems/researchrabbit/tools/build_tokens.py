@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw readings.
 
-Sources, all read from app.researchrabbit.ai on 2026-10-04:
-  raw/css-vars.json        the app's :root custom properties ("root"), and every styled-component's
-                           CSS rules ("components"), read from the DOM and CSSOM
+Sources, read from app.researchrabbit.ai on 2026-10-04 and in the 2026-10-17 refresh:
+  raw/css-vars.json        the app's :root custom properties ("root"), every styled-component's
+                           CSS rules ("components"), the rules on bare elements ("globals") and the
+                           @media conditions ("media"), read from the DOM and CSSOM
+  raw/components-computed.json  computed styles per component and state, read headless from the
+                           redacted snapshots (measure.mjs)
   raw/graph-tokens.json    the graph engine's constants, transcribed from raw/graph-code-notes.md
   raw/graph-code-notes.md  the reverse-engineered Canvas 2D engine (Litmaps' map engine)
 
@@ -15,6 +18,10 @@ Every token carries $extensions.source, one of:
                                             no rule names the colour
   "graph engine: <identifier> (...)"        a constant from the engine; the builder checks the
                                             identifier is quoted in raw/graph-code-notes.md
+  "css rule <element selector>: <decl>"     a rule on a bare element (body, h2, button:focus)
+  "css @media <condition>"                  a media query the stylesheets declare
+  "computed <component> <state>: <prop>"    a computed style from raw/components-computed.json; the
+                                            builder checks the value against the file
 
 ResearchRabbit paints one light theme: no page offers a dark switch. So there is a light set and no
 dark set; the engine's dark and print edge and label colours ride along as $extensions on the tokens.
@@ -32,6 +39,9 @@ CSS = json.loads((RAW / "css-vars.json").read_text())
 ROOT = CSS["root"]
 RULES = CSS["components"]
 GRAPH = json.loads((RAW / "graph-tokens.json").read_text())
+GLOBALS = CSS.get("globals", [])
+MEDIA = CSS.get("media", {})
+COMPUTED = json.loads((RAW / "components-computed.json").read_text())["components"]
 NOTES = (RAW / "graph-code-notes.md").read_text()
 
 SHOT = "screenshots/search-split-light-default.png"
@@ -141,13 +151,26 @@ def R(ty, value, comp, decl, desc=None):
     return {"type": ty, "value": value, "rule": (comp, decl), "description": desc}
 
 
+def G(ty, value, sel, decl, desc=None):
+    return {"type": ty, "value": value, "global": (sel, decl), "description": desc}
+
+
+def M(ty, value, comp, state, prop, desc=None):
+    return {"type": ty, "value": value, "computed": (comp, state, prop), "description": desc}
+
+
+def Q(value, cond, desc=None):
+    return {"type": "dimension", "value": value, "media": cond, "description": desc}
+
+
 def S(value, xy, desc=None, shot=SHOT):
     return {"type": "color", "value": value, "sample": (shot, xy), "description": desc}
 
 
 TY = lambda fam, size, weight, lh: {"fontFamily": fam, "fontSize": size, "fontWeight": weight,
                                     "lineHeight": lh, "letterSpacing": "0px"}
-LH = "Line height is not set in the rules; this value is assumed."
+LH = ("Line height measured, not set by the component's rule: every text line read computes to 1.5 times its "
+      "size (14/21, 16/24, 24/36, 32/48 in raw/components-computed.json), the html default.")
 
 SPEC_CORE = {
     "palette": {
@@ -182,12 +205,15 @@ SPEC_CORE = {
             "white-90": R("color", "rgba(255, 255, 255, 0.9)", "StickerButton__Button", "background-color: rgba(255, 255, 255, 0.9)"),
             "amber-20": R("color", "rgba(240, 125, 89, 0.2)", "ArticleFolders__FolderContainer", "background-color: rgba(240, 125, 89, 0.2)", "Folder chip tint"),
             "violet-20": R("color", "rgba(221, 204, 255, 0.2)", "ExploreBuilder__Container", "background-color: rgba(221, 204, 255, 0.2)"),
+            "scrim": R("color", "rgba(48, 85, 94, 0.3)", "Modal__Overlay", "background-color: rgba(48, 85, 94, 0.3)", "The teal-grey overlay behind every dialog"),
         },
         "literal": {
             "charcoal": R("color", "rgb(51, 51, 51)", "HintContainer__Content", "background-color: rgb(51, 51, 51)", "Tooltip fill and the black button's hover"),
             "link-hover": R("color", "rgb(116, 111, 163)", "ArticleTitle__Title", "color: rgb(116, 111, 163)"),
             "toast": R("color", "rgb(255, 238, 138)", "Commander__Container", "background-color: rgb(255, 238, 138)"),
             "drawer-button": S("#86878c", (2690, 1745), "The drawer's Search button while there is nothing new to search; the rule was not captured"),
+            "drawer-row": R("color", "rgb(53, 53, 53)", "ExploreFilters__ItemContainer", "background-color: rgb(53, 53, 53)", "A settings row on the black drawer"),
+            "drawer-row-on": R("color", "rgb(77, 76, 91)", "ExploreFilters__ItemContainer", "background-color: rgb(77, 76, 91)", "A drawer row whose filter is set"),
         },
     },
     "fontFamily": {
@@ -209,22 +235,30 @@ SPEC_CORE = {
         "16": R("dimension", "16px", "ArticleDetailsDisplay__Nickname", "font-size: 16px"),
         "18": R("dimension", "18px", "GraphControls__StyledButton", "font-size: 18px"),
         "20": R("dimension", "20px", "DashboardSearch__Subtitle", "font-size: 20px"),
+        "24": R("dimension", "24px", "Modal__Title", "font-size: 24px", "Dialog titles; also the h3 default"),
+        "28": G("dimension", "28px", "h2", "font-size: 28px", "The h2 default"),
         "32": R("dimension", "32px", "DashboardSearch__Title", "font-size: 32px"),
     },
     "typography": {
-        "display": R("typography", TY("{fontFamily.ui}", "{fontSize.32}", "{fontWeight.semibold}", 1.25), "DashboardSearch__Title", "font-size: 32px; font-weight: 600", LH),
-        "title": R("typography", TY("{fontFamily.ui}", "{fontSize.20}", "{fontWeight.semibold}", 1.3), "LibraryStyles__LibraryHeaderName", "font-size: 20px; font-weight: 600", LH),
-        "subtitle": R("typography", TY("{fontFamily.ui}", "{fontSize.20}", "{fontWeight.medium}", 1.3), "DashboardSearch__Subtitle", "font-size: 20px; font-weight: 500", LH),
-        "nickname": R("typography", TY("{fontFamily.ui}", "{fontSize.16}", "{fontWeight.medium}", 1.4), "ArticleDetailsDisplay__Nickname", "font-size: 16px; font-weight: 500", LH),
-        "folder": R("typography", TY("{fontFamily.ui}", "{fontSize.16}", "{fontWeight.medium}", 1.4), "DashboardFolders__Label", "font-size: 16px; font-weight: 500", LH),
-        "label": R("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.semibold}", 1.4), "SearchSummary__Label", "font-size: 14px; font-weight: 600", LH),
-        "nav": R("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.bold}", 1.4), "Navigation__LinkContainer", "font-weight: 700", "The rule sets the weight only; 14px fits the measured text width in the screenshots. " + LH),
-        "drawer-title": R("typography", TY("{fontFamily.ui}", "{fontSize.16}", "{fontWeight.semibold}", 1.3), "FilterableSearchActions__Title", "font-weight: 600", "The rule sets the weight only; 16px fits the measured text width in the screenshots. " + LH),
-        "summary": R("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.light}", 1.4), "ExploreActionsMain__Summary", "font-weight: 300", "Light running copy, with ExploreActionsMain__SummaryEmph at 600 for the counts. 14px fits the measured text width. " + LH),
+        "display": R("typography", TY("{fontFamily.ui}", "{fontSize.32}", "{fontWeight.semibold}", 1.5), "DashboardSearch__Title", "font-size: 32px; font-weight: 600", LH),
+        "title": R("typography", TY("{fontFamily.ui}", "{fontSize.20}", "{fontWeight.semibold}", 1.5), "LibraryStyles__LibraryHeaderName", "font-size: 20px; font-weight: 600", LH),
+        "subtitle": R("typography", TY("{fontFamily.ui}", "{fontSize.20}", "{fontWeight.medium}", 1.5), "DashboardSearch__Subtitle", "font-size: 20px; font-weight: 500", LH),
+        "nickname": R("typography", TY("{fontFamily.ui}", "{fontSize.16}", "{fontWeight.medium}", 1.5), "ArticleDetailsDisplay__Nickname", "font-size: 16px; font-weight: 500", LH),
+        "folder": R("typography", TY("{fontFamily.ui}", "{fontSize.16}", "{fontWeight.medium}", 1.5), "DashboardFolders__Label", "font-size: 16px; font-weight: 500", LH),
+        "label": R("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.semibold}", 1.5), "SearchSummary__Label", "font-size: 14px; font-weight: 600", LH),
+        "nav": R("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.bold}", 1.5), "Navigation__LinkContainer", "font-weight: 700", "The rule sets the weight only; 14px fits the measured text width in the screenshots. " + LH),
+        "drawer-title": R("typography", TY("{fontFamily.ui}", "{fontSize.16}", "{fontWeight.semibold}", 1.5), "FilterableSearchActions__Title", "font-weight: 600", "The rule sets the weight only; 16px fits the measured text width in the screenshots. " + LH),
+        "summary": R("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.light}", 1.5), "ExploreActionsMain__Summary", "font-weight: 300", "Light running copy, with ExploreActionsMain__SummaryEmph at 600 for the counts. 14px fits the measured text width. " + LH),
         "body": R("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.regular}", 1.5), "SearchSummary__With", "font-size: 14px; font-weight: 400", "The app's running text size: nav links, list titles, journals and option titles all measure 14px in the screenshots. " + LH),
         "small": R("typography", TY("{fontFamily.ui}", "{fontSize.12}", "{fontWeight.regular}", 1.5), "GraphAxes__AxisLabel", "font-size: 12px", LH),
         "small-strong": R("typography", TY("{fontFamily.ui}", "{fontSize.12}", "{fontWeight.semibold}", 1.5), "ArticleDetailsDisplay__LibraryButton", "font-weight: 600; font-size: 12px", LH),
         "abstract": R("typography", TY("{fontFamily.ui}", "{fontSize.12}", "{fontWeight.light}", 1.5), "ArticleAbstract__AbstractParagraph", "font-weight: 300; font-size: 12px", LH),
+        "heading-2": G("typography", TY("{fontFamily.ui}", "{fontSize.28}", "{fontWeight.regular}", 1.5), "h2", "font-size: 28px", "The page's h2 default; the 'Screen too small' heading. " + LH),
+        "heading-3": R("typography", TY("{fontFamily.ui}", "{fontSize.24}", "{fontWeight.regular}", 1.5), "Modal__Title", "font-size: 24px", "Dialog titles. " + LH),
+        "heading-4": G("typography", TY("{fontFamily.ui}", "{fontSize.16}", "{fontWeight.medium}", 1.5), "h4", "font-size: 16px; font-weight: 500", "The h4 default. " + LH),
+        "heading-5": G("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.semibold}", 1.5), "h5", "font-size: 14px; font-weight: 600", "The h5 default. " + LH),
+        "form-label": G("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.medium}", 1.5), "label", "font-size: 14px; font-weight: 500", "Field labels in dialogs. " + LH),
+        "caption": R("typography", TY("{fontFamily.ui}", "{fontSize.12}", "{fontWeight.regular}", 1.5), "DashboardSearch__Tip", "font-size: 12px", "Hints under a field and dates in lists. " + LH),
     },
     "spacing": {},  # filled from --neg2..--16 below
     "radius": {
@@ -239,6 +273,11 @@ SPEC_CORE = {
         "pill": R("dimension", "48px", "SearchSummary__Container", "border-radius: 48px", "Every pill button"),
         "drawer": R("dimension", "{spacing.8}", "FilterableSearchActions__Container", "border-radius: var(--8) var(--8) var(--4) var(--4)", "Top corners of the black Search settings drawer"),
     },
+    "borderWidth": {
+        "default": R("dimension", "1px", "Modal__HeadContainer", "border-bottom: 1px solid var(--grey-2)", "Every drawn border and rule is 1px; the app has no other border width"),
+        "ring": R("dimension", "2px", "Select__Trigger", "&:focus { box-shadow: black 0px 0px 0px 2px", "The black ring a focused select draws"),
+        "thumb-ring": R("dimension", "4px", "Slider__Thumb", "box-shadow: 0 0 0 4px var(--lavender)", "The lavender ring round a slider thumb (5px when focused)"),
+    },
     "size": {
         "header": V("--h-header", "Panel header height"),
         "nav": R("dimension", "48px", "Scaffold__Nav", "height: 48px"),
@@ -251,6 +290,31 @@ SPEC_CORE = {
         "actions-min": R("dimension", "290px", "Scaffold__Actions", "min-width: 290px", "The right-hand Next search column"),
         "actions-max": R("dimension", "390px", "Scaffold__Actions", "max-width: 390px"),
         "root-max": R("dimension", "1400px", "Dashboard__StyledRoot", "max-width: 1400px", "Home page width"),
+        "control-sm": M("dimension", "24px", "button-link", "default", "height", "Small text buttons (Link Zotero)"),
+        "control-md": R("dimension", "32px", "ExploreSession__NavButton", "height: 32px", "Top-bar pills, the account button, session buttons"),
+        "control-lg": M("dimension", "40px", "settings-tab", "current", "height", "Tab rows and the typed-phrase input"),
+        "control-xl": M("dimension", "56px", "button-primary", "default", "height", "Dialog action buttons (Done, Cancel, Permanently Delete My Account)"),
+        "field": M("dimension", "37px", "text-field", "filled", "height", "A dialog text field"),
+        "icon": G("dimension", "16px", "button svg", "font-size: 16px", "The default icon in a button"),
+        "icon-sm": R("dimension", "14px", "ListItemSideButton__StyledButton", "& svg { font-size: 14px", "List side buttons, the lock in a notice"),
+        "icon-md": R("dimension", "18px", "ListItemSideButton__StyledButton", "& svg { font-size: 18px", "Larger side-button icons, graph toolbar"),
+        "icon-lg": R("dimension", "24px", "Modal__CloseButton", "font-size: 24px", "The dialog close cross"),
+        "focus-ring-width": M("dimension", "1px", "button-primary", "focus-visible", "outlineWidth", "The browser's auto outline, 1px, recoloured by button:focus and input:focus"),
+        "focus-ring-offset": M("dimension", "0px", "button-primary", "focus-visible", "outlineOffset"),
+        "dialog-width": R("dimension", "650px", "Account__StyledModal", "width: 650px; height: 600px", "Account Settings; form and confirm dialogs fit their content between 500 and 800px"),
+        "dialog-min": R("dimension", "500px", "Confirm__StyledModal", "min-width: 500px"),
+        "dialog-max": R("dimension", "800px", "Confirm__StyledModal", "max-width: 800px"),
+        "menu-min": R("dimension", "220px", "Dropdown__Content", "min-width: 220px"),
+        "menu-max": R("dimension", "500px", "Dropdown__Content", "max-width: 500px"),
+        "settings-tabs": R("dimension", "180px", "TabbedContent__Sidebar", "width: 180px", "The tab column in Account Settings"),
+    },
+    "breakpoint": {
+        "too-small": Q("640px", "(max-width: 640px)", "At this width or less every page is covered by the Screen too small notice; there is no phone layout"),
+    },
+    "zIndex": {
+        "raised": R("number", 1, "ArticleAuthors__AuthorButton", "z-index: 1", "Author chips and the note composer over their neighbours"),
+        "toast": R("number", 2, "ToastManager__Container", "z-index: 2", "The toast stack (mounted empty in every capture)"),
+        "commander": R("number", 3, "Commander__Container", "z-index: 3", "The command bar"),
     },
     "duration": {
         "fast": R("duration", "150ms", "Commander__Container", "transition: transform 150ms, opacity 150ms"),
@@ -258,6 +322,8 @@ SPEC_CORE = {
         "slow": R("duration", "300ms", "DashboardFolders__StyledArrowRight", "transition: transform 300ms, opacity 300ms"),
         "popup": R("duration", "400ms", "Popup__Content", "animation-duration: 400ms"),
         "chevron": R("duration", "500ms", "FilterableSearchActions__Chevron", "transition: transform 500ms", "The drawer chevron and the nav logo width"),
+        "dialog": R("duration", "400ms", "Modal__Content", "animation: 400ms cubic-bezier(0.16, 1, 0.3, 1)", "Dialog and scrim entrance"),
+        "spinner": R("duration", "1100ms", "LoadWheel__StyledIcon", "animation: 1.1s linear 0s infinite", "One turn of the loading wheel"),
     },
     "easing": {
         "popup": R("cubicBezier", [0.16, 1, 0.3, 1], "Popup__Content", "animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1)", "Popups, dropdowns and hints slide in on this"),
@@ -266,7 +332,11 @@ SPEC_CORE = {
 
 SPEC_LIGHT = {
     "background": {
-        "page": S("{palette.grey.bg2}", (5, 5), "Inferred. The base under the corner glows; the glows cover every pixel, so the base is never seen bare (#edeef2 at the corner, nearest to --grey-bg2)"),
+        "page": G("color", "{palette.grey.bg2}", "body", "background-color: rgb(238, 240, 241)", "The body colour under the corner glows; the glows cover every pixel, so it is never seen bare"),
+        "surface": R("color", "{palette.base.white}", "ArticleTable__Container", "background-color: white", "Cards, the table, list rows"),
+        "raised": R("color", "{palette.base.white}", "Modal__Content", "background-color: white", "Dialogs"),
+        "overlay": R("color", "{palette.base.white}", "Dropdown__Content", "background-color: white", "Menus, select lists, popovers"),
+        "scrim": R("color", "{palette.alpha.scrim}", "Modal__Overlay", "background-color: rgba(48, 85, 94, 0.3)", "Behind every dialog; a second dialog stacks a second scrim"),
         "panel": R("color", "{palette.base.white}", "Scaffold__Header", "background-color: white", "Panel headers, list cards, the settings panel"),
         "panel-glass": R("color", "{palette.alpha.white-50}", "ExploreStep__StyledScaffoldMain", "background-color: rgba(255, 255, 255, 0.5)", "The body of the results panel, graph included"),
         "section": R("color", "{palette.alpha.white-40}", "DashboardFolders__StyledSection", "background-color: rgba(255, 255, 255, 0.4)"),
@@ -283,8 +353,13 @@ SPEC_LIGHT = {
         "tertiary": R("color", "{palette.grey.tertiary}", "GraphAxes__AxisIcon", "color: var(--grey-tertiary)"),
         "inverse": R("color", "{palette.base.white}", "SearchSummary__InfoContainer", "color: white"),
         "link-hover": R("color", "{palette.literal.link-hover}", "ArticleTitle__Title", "color: rgb(116, 111, 163)"),
+        "link": M("color", "{palette.base.black}", "empty-state-link", "default", "color", "Links keep the text colour and are told apart by weight 600 (a { font-weight: 600 }) and an underline"),
+        "disabled": R("color", "{palette.grey.3}", "Select__SelectItem", "&[data-disabled] { color: var(--grey-3)", "Disabled options; disabled buttons instead drop to 30 or 50 percent opacity"),
+        "on-accent": R("color", "{palette.base.black}", "ExploreFiltersStyles__ExploreFiltersButton", "background-color: var(--lavender-25); color: black", "Text on the lavender accent"),
     },
     "border": {
+        "default": R("color", "{palette.grey.2}", "Modal__HeadContainer", "border-bottom: 1px solid var(--grey-2)", "Dialog head rule, field outlines"),
+        "strong": R("color", "{palette.base.black}", "Popup__Content", "border: 1px solid black", "The bordered popup, the current filter pill's inset ring"),
         "line": V("--line", "Settings option cards"),
         "field": R("color", "{palette.grey.2}", "Input__form", "inset var(--grey-2)"),
         "rule": R("color", "{palette.grey.1}", "InspectorStyles__Header", "border-bottom: 1px solid var(--grey-1)"),
@@ -295,20 +370,40 @@ SPEC_LIGHT = {
         "primary": R("color", "{palette.base.black}", "ExploreBuilder__AutosaveFolderButton", "background-color: black"),
         "primary-text": R("color", "{palette.base.white}", "ExploreBuilder__AutosaveFolderButton", "color: white"),
         "primary-hover": R("color", "{palette.literal.charcoal}", "ViewSelection__Button", "&:hover { background-color: rgb(51, 51, 51)"),
+        "primary-pressed": M("color", "{palette.literal.charcoal}", "button-primary", "pressed", "backgroundColor", "Pressed keeps the hover fill: no captured rule styles :active"),
+        "focus-ring": G("color", "{palette.turq.50}", "button:focus, input:focus", "outline-color: var(--turq-50)", "The 1px outline every focused button and input draws; links keep the browser's blue"),
+        "danger": M("color", "{palette.peach.base}", "button-danger", "disabled", "backgroundColor", "The destructive button, seen only disabled"),
         "accent": R("color", "{palette.lavender.50}", "SearchBar__SearchButton", "background-color: var(--lavender-50)", "The lavender Search button and search pill"),
         "accent-soft": R("color", "{palette.lavender.25}", "ExploreActionsMain__StyledExploreFurtherButton", "background-color: var(--lavender-25)"),
         "quiet": R("color", "{palette.alpha.black-05}", "ViewSelection__Button", "background-color: rgba(0, 0, 0, 0.05)"),
         "quiet-hover": R("color", "{palette.alpha.black-10}", "ViewSelection__Button", "&:hover { background-color: rgba(0, 0, 0, 0.1)"),
-        "upgrade": S("{palette.green.base}", (2310, 70), "The Upgrade pill; sampled #8adc8b, which is --green"),
+        "upgrade": M("color", "{palette.green.base}", "nav-upgrade", "default", "backgroundColor", "The Upgrade pill and the Upgrade badges"),
         "highlighted": R("color", "{palette.selection.base}", "Dropdown__Item", "&[data-highlighted] { background-color: var(--selection)"),
     },
     "elevation": {
         "s": V("--shadow-s"), "m": V("--shadow-m"), "l": V("--shadow-l", "Toasts"),
         "s-dark": V("--shadow-s-dark", "Declared beside the light ones; no captured surface paints it"),
         "m-dark": V("--shadow-m-dark"), "l-dark": V("--shadow-l-dark"),
+        "menu": {"type": "shadow", "rule": ("Dropdown__Content", "box-shadow: rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px"),
+                 "value": "rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px",
+                 "description": "Menus and select lists"},
+        "dialog": {"type": "shadow", "rule": ("Modal__Content", "box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 12px"),
+                   "value": "rgba(0, 0, 0, 0.5) 3px 3px 12px", "description": "Dialogs, over the scrim"},
         "popup": {"type": "shadow", "rule": ("Popup__Content", "box-shadow: rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px"),
                   "value": "rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px",
                   "description": "Popups, hints and dropdowns (dropdowns use 22, 23, 24)"},
+    },
+    "status": {
+        "success": {"fill": V("--activity-success-bg"), "text": V("--activity-success-dark"),
+                    "border": V("--activity-success", "No captured surface draws a status border; this is the status's strong step")},
+        "warning": {"fill": R("color", "{palette.activity.important-bg}", "Confirm__SafeguardContainer", "background-color: var(--activity-important-bg)", "The typed-phrase box in a destructive confirmation"),
+                    "text": V("--activity-important-dark"),
+                    "border": R("color", "{palette.activity.important}", "GraphBrokenAxes__BrokenAxesDropdown", "background-color: var(--activity-important)", "Also the Positions moved pill and the account alert dot")},
+        "danger": {"fill": V("--activity-error-bg"), "text": V("--activity-error-dark"),
+                   "border": V("--activity-error", "No captured surface draws a status border; this is the status's strong step")},
+        "info": {"fill": R("color", "{palette.green.25}", "PaywallIndicator__VerboseContainer", "background-color: var(--green-25)", "The notice banner (previewing a paid setting)"),
+                 "text": R("color", "{palette.grey.primary}", "PaywallIndicator__VerboseContainer", "color: var(--grey-primary)"),
+                 "border": R("color", "{palette.green.base}", "PaywallIndicator__Container", "background-color: var(--green)", "The notice draws no border; this is its badge's fill, the hue's strong step")},
     },
     "component": {
         "nav-link-active": R("color", "{palette.base.white}", "Navigation__LinkContainer", "background-color: white"),
@@ -333,6 +428,11 @@ SPEC_LIGHT = {
         "positions-moved": R("color", "{palette.activity.important}", "GraphBrokenAxes__BrokenAxesDropdown", "background-color: var(--activity-important)"),
         "folder-tint": R("color", "{palette.alpha.amber-20}", "ArticleFolders__FolderContainer", "background-color: rgba(240, 125, 89, 0.2)"),
         "tooltip": R("color", "{palette.literal.charcoal}", "HintContainer__Content", "background-color: rgb(51, 51, 51)"),
+        "drawer-row": R("color", "{palette.literal.drawer-row}", "ExploreFilters__ItemContainer", "background-color: rgb(53, 53, 53)"),
+        "drawer-row-on": R("color", "{palette.literal.drawer-row-on}", "ExploreFilters__ItemContainer", "background-color: rgb(77, 76, 91)"),
+        "tab-current": R("color", "{palette.grey.bg2}", "TabbedContent__Option", "background-color: var(--grey-bg2)", "The current vertical tab in Account Settings"),
+        "tab-hover": R("color", "{palette.grey.bg1}", "TabbedContent__Option", "&:hover { background-color: var(--grey-bg1)"),
+        "table-row-hover": M("color", "{palette.grey.bg2}", "table-row", "hover", "backgroundColor"),
     },
 }
 
@@ -382,6 +482,33 @@ def leaf(path, spec):
         find_rule(comp, decl)
         val = spec["value"]
         src = f"css rule {comp}: {decl}"
+    elif "global" in spec:
+        sel, decl = spec["global"]
+        rules = [g for g in GLOBALS if g.startswith(sel + " {")]
+        flat = " ".join(rules)
+        for piece in [x.strip() for x in decl.split(";")]:
+            if not rules or (piece and piece not in flat):
+                raise KeyError(f"{path}: {sel} {{ {piece} }} is not in raw/css-vars.json globals")
+        val, src = spec["value"], f"css rule {sel}: {decl}"
+    elif "media" in spec:
+        if spec["media"] not in MEDIA:
+            raise KeyError(f"{path}: @media {spec['media']} is not in raw/css-vars.json")
+        val, src = spec["value"], f"css @media {spec['media']}"
+    elif "computed" in spec:
+        comp, state, prop = spec["computed"]
+        got = COMPUTED[comp]["states"][state]
+        raw = f"{got['rect']['h']:g}px" if prop == "height" else got["style"][prop]
+        val = spec["value"]
+        want = val
+        if is_alias(val):
+            want = ALL_PRE.get(val[1:-1])
+        if ty == "color":
+            same = norm_color(raw) == norm_color(want)
+        else:
+            same = raw == want
+        if not same:
+            raise ValueError(f"{path}: {comp} {state} {prop} is {raw}, not {want}")
+        src = f"computed {comp} {state}: {prop} {raw} (raw/components-computed.json)"
     elif "sample" in spec:
         shot, (x, y) = spec["sample"]
         val, src = spec["value"], f"sampled {shot} at ({x}, {y})"
@@ -455,10 +582,22 @@ for name in ROOT:
 SPEC_CORE["spacing"] = spacing
 
 core = {}
-for group in ("palette", "spacing", "fontFamily", "fontWeight", "fontSize", "typography", "radius", "size", "duration", "easing"):
+for group in ("palette", "spacing", "fontFamily", "fontWeight", "fontSize", "typography", "radius", "borderWidth", "size", "breakpoint", "zIndex", "duration", "easing"):
     core[group] = build(SPEC_CORE[group], group)
 core = {k: core[k] for k in SPEC_CORE}  # keep the SPEC's order in the file
 core["graph"] = build_graph(GRAPH, "graph")
+ALL_PRE = {}
+def _flat(tree, prefix=""):
+    for k, v in tree.items():
+        if isinstance(v, dict) and "$value" in v:
+            ALL_PRE[prefix + k] = v["$value"]
+        elif isinstance(v, dict):
+            _flat(v, prefix + k + ".")
+_flat(core)
+for _ in range(3):  # resolve aliases among primitives
+    for k, v in ALL_PRE.items():
+        if is_alias(v) and v[1:-1] in ALL_PRE:
+            ALL_PRE[k] = ALL_PRE[v[1:-1]]
 light = build(SPEC_LIGHT)
 
 # ---------------------------------------------------------------------------------------------------

@@ -3,10 +3,10 @@
 
 Reads raw/components-computed.json (every component and state, measured by
 tools/capture/measure.mjs), raw/css-vars.json (the :root custom properties and the per-component CSS
-rules), components/crops/, screenshots/ and icons/INDEX.tsv, and writes components.md next to them.
-Every value is a cell of the measurement file, condensed: a colour is hex followed by the :root custom
-property with the same value, a state row shows only what differs from the row it belongs to, and a
-state with the same values as its base is named in the base row's label.
+rules), tokens.json, components/crops/, screenshots/ and icons/INDEX.tsv, and writes components.md next
+to them. Every value is a cell of the measurement file, condensed: a colour, shadow or radius is its
+value followed by the tokens.json token with the same value, a state row shows only what differs from
+the row it belongs to, and a state with the same values as its base is named in the base row's label.
 
 Deterministic: re-running it on the same inputs reproduces components.md byte for byte.
 Run from anywhere: python3 tools/build_components_md.py
@@ -47,22 +47,73 @@ for k in BY_COLOR:
     BY_COLOR[k].sort(key=lambda n: (len(n), n))
 
 
+TOK = json.load(open("tokens.json"))
+
+
+def _leaves(tree, prefix=""):
+    for k, v in tree.items():
+        if k.startswith("$"):
+            continue
+        if isinstance(v, dict) and "$value" in v:
+            yield prefix + k, v
+        elif isinstance(v, dict):
+            yield from _leaves(v, prefix + k + ".")
+
+
+LEAF = {n: t for n, t in _leaves({k: v for k, v in TOK["core"].items() if k != "graph"})}
+LEAF.update(_leaves(TOK["light"]))
+
+
+def resolve(v, depth=0):
+    if isinstance(v, str) and v.startswith("{") and v.endswith("}") and depth < 8:
+        return resolve(LEAF[v[1:-1]]["$value"], depth + 1)
+    return v
+
+
+def _rank(path):
+    """Primitive palette tokens first, literals and alphas last among them; then semantic sets."""
+    order = ("palette.base.", "palette.grey.", "palette.lavender.", "palette.turq.", "palette.green.", "palette.peach.",
+             "palette.selection.", "palette.activity.", "palette.ugc.", "palette.ui.", "palette.alpha.", "palette.literal.")
+    for i, o in enumerate(order):
+        if path.startswith(o):
+            return (i, len(path), path)
+    return (len(order), len(path), path)
+
+
+TOK_COLOR = {}
+for n, t in sorted(LEAF.items(), key=lambda kv: _rank(kv[0])):
+    if t["$type"] == "color":
+        TOK_COLOR.setdefault(resolve(t["$value"]), n)
+TOK_RADIUS = {}
+for n, t in sorted(LEAF.items(), key=lambda kv: (len(kv[0]), kv[0])):
+    if n.startswith("radius."):
+        v = resolve(t["$value"])
+        v = f"{float(v[:-3]) * 16:g}px" if v.endswith("rem") else v
+        TOK_RADIUS.setdefault(v, n)
+
+
+def radius_tok(r):
+    return f"{r} `{{{TOK_RADIUS[r]}}}`" if r in TOK_RADIUS else r
+
+
 def to_hex(r, g, b):
     return "#%02x%02x%02x" % (int(round(float(r))), int(round(float(g))), int(round(float(b))))
 
 
 def colour(c, tokens=True):
-    """rgb()/rgba() inside any string -> '#hex `--token`' or 'rgba(...)'."""
+    """rgb()/rgba() inside any string -> '#hex `{token.path}`' or 'rgba(...) `{token.path}`'."""
     def one(m):
         r, g, b = m.group(1), m.group(2), m.group(3)
         a = m.group(4)
         if a is not None and float(a) == 0:
             return "transparent"
-        if a is not None and float(a) != 1:
-            return "rgba(%d, %d, %d, %g)" % (round(float(r)), round(float(g)), round(float(b)), round(float(a), 3))
         h = to_hex(r, g, b)
-        tok = BY_COLOR.get(h) if tokens else None
-        return f"{h} `{tok[0]}`" if tok else h
+        if a is not None and float(a) != 1:
+            txt = "rgba(%d, %d, %d, %g)" % (round(float(r)), round(float(g)), round(float(b)), round(float(a), 3))
+            tok = TOK_COLOR.get(h + "%02x" % round(float(a) * 255)) if tokens else None
+            return f"{txt} `{{{tok}}}`" if tok else txt
+        tok = TOK_COLOR.get(h) if tokens else None
+        return f"{h} `{{{tok}}}`" if tok else h
     return re.sub(r"rgba?\(\s*([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\s*\)", one, c)
 
 
@@ -124,6 +175,12 @@ for name, val in ROOTV.items():
         SHADOW_TOK[tuple(map(lambda t: (tuple(t[0][:3]),) + t[1:], shadow_layers(val)))] = name
 
 
+for n, t in LEAF.items():
+    if t["$type"] == "shadow":
+        val = ", ".join(f"{l['color']} {l['offsetX']} {l['offsetY']} {l['blur']} {l['spread']}" for l in t["$value"])
+        SHADOW_TOK.setdefault(tuple(map(lambda t_: (tuple(t_[0][:3]),) + t_[1:], shadow_layers(val))), "{" + n + "}")
+
+
 def shadow_token(s):
     key = tuple((tuple(t[0][:3]),) + t[1:] for t in shadow_layers(s))
     # the computed form has the spread as a 4th number; the root vars have none
@@ -167,7 +224,7 @@ def props(v):
         o["border"] = bds[0] if len(set(bds)) == 1 else "; ".join(f"{'TRBL'[i]}: {b}" for i, b in enumerate(bds) if b != "none")
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
-        o["radius"] = rad
+        o["radius"] = radius_tok(rad)
     o["background"] = colour(s["backgroundColor"])
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
@@ -224,7 +281,7 @@ def diff(p, base):
 def groups_of_states(c):
     """[(base_label, base_value, [(variant_label, value)])] from the states in file order.
 
-    A base state is read at rest; a hover or focus-visible state belongs to the base it was read
+    A base state is read at rest; a hover, focus-visible or pressed state belongs to the base it was read
     with (same label with the suffix removed)."""
     bases = OrderedDict()
     variants = []
@@ -236,6 +293,8 @@ def groups_of_states(c):
             variants.append((lab[: -len("hover")].rstrip("-") or "default", "hover", v))
         elif via.startswith("keyboard"):
             variants.append((lab[: -len("focus-visible")].rstrip("-") or "default", "focus-visible", v))
+        elif via == "mouse held down":
+            variants.append((lab[: -len("pressed")].rstrip("-") or "default", "pressed", v))
         else:
             bases[lab] = v
     out = []
@@ -309,6 +368,14 @@ PAGE_NAME = {
     "sm-size": "search map view (layout settings, Size)", "sm-adv": "search map view (layout settings, Advanced)", "sm-filter": "search map view (filter popover open)",
     "sl": "search list view", "lm": "library map view", "lm-hover": "library map view (hover)", "lm-moved": "library map view (positions moved)",
     "lm-reset": "library map view (reset menu open)", "ll": "library list view", "home": "home page",
+    "home2": "home page (2026-10-17)", "home-typed": "home page (a query typed, not sent)", "menu-ws": "home page (workspace menu open)",
+    "menu-acc": "home page (account menu open)", "acc-profile": "Account Settings dialog (Profile)", "acc-edit": "Update profile dialog",
+    "acc-delete": "Delete Account confirmation", "acc-prefs": "Account Settings dialog (Preferences)", "acc-subs": "Account Settings dialog (Subscription, empty)",
+    "kw": "keyword search results (list view)", "kw-loading": "keyword search results (next page loading)", "kw-updating": "keyword search results (updating dialog)",
+    "kw-selected": "keyword search results (one article selected)", "st-open": "Search Settings drawer (open)", "st-select": "Search Settings drawer (select open)",
+    "st-checked": "Search Settings drawer (Open Access checked)", "lib-all": "library, All Articles", "lib-table": "library, All Articles in table view",
+    "lib-reading": "library, Reading List (empty)", "mobile-warn": "library at 390px (Screen too small)", "mobile-lib": "library at 390px (after Continue anyway)",
+    "search-start": "Search start page (recent searches)", "lib-notes": "library, article Notes tab (empty)", "lib-selected": "library, All Articles (one selected)",
 }
 
 GROUP_INTRO = {
@@ -321,15 +388,31 @@ GROUP_INTRO = {
     "Layout settings": "The right panel the graph toolbar opens: four tabs for how the map is laid out (X Axis, Y Axis, Size, Advanced).",
     "Library": "The Library page: a sidebar of lists and collections, a collection header, a selection bar, and the same list, split and map views as search.",
     "Home": "The home page: a hero with a search field, then three white cards (recent articles, collections, getting started).",
+    "Dialogs": "Read on 2026-10-17. Account Settings, a form dialog stacked on it, the destructive confirmation and the loading dialog all use one modal: a white sheet over a teal-grey scrim.",
+    "Buttons": "Read on 2026-10-17. The button kinds outside the search chrome: the black primary, the text-only secondary, the pale red destructive button, disabled buttons, and text buttons. Pressed is the mouse held down; no captured rule styles `:active`, so a pressed button keeps its hover fill.",
+    "Form controls": "Read on 2026-10-17. Fields, the checkbox, single- and multi-choice pills, the select, the range slider and the note composer. The light controls live in dialogs; the dark ones on the black Search Settings drawer.",
+    "Tabs and navigation": "Read on 2026-10-17. The vertical tabs of Account Settings and the filter pills above the Reading List.",
+    "Menus": "Read on 2026-10-17. The workspace menu (Radix dropdown) and the account popover.",
+    "Avatar and badges": "Read on 2026-10-17. The placeholder avatar, the green Upgrade badge and the notice banner.",
+    "Feedback and loading": "Read on 2026-10-17. The spinner, the selection circle and its Clear link. No toast appeared during the capture.",
+    "Data display": "Read on 2026-10-17. The library table and the recent-search rows.",
+    "Empty states": "Read on 2026-10-17. Each empty list or tab has its own line of copy; the Reading List and Notes add an illustration or a heading.",
+    "Phone width": "Read on 2026-10-17 at 390 x 844. The app has no phone layout; this is what it shows instead.",
 }
 
 SHOTS = [
     ("search-split", "Search, split view. The list of result cards beside the graph, Next Search at the right. Default, a search input node hovered, a result node hovered, a list card hovered (it stays tinted), the two legend chips hovered, and a node inspected.", "/search/<id>/0"),
     ("search-map", "Search, map view. The graph fills the main card. Default, zoomed in, a node inspected, the four layout settings tabs, and the filter popover.", "/search/<id>/0"),
-    ("search-list", "Search, list view. The result cards at full width.", "/search/<id>/0"),
+    ("search-list", "Search, list view. The result cards at full width; on 2026-10-17 a keyword search: results, the next page loading, the updating dialog, one article selected, and the Search Settings drawer open, with its select open and a checkbox checked.", "/search/<id>/0"),
+    ("search-start", "Search start page (2026-10-17): the search field, the BibTeX drop zone and the recent searches.", "/search"),
     ("library-map", "Library, map view of one collection. Default, hovering, after a node was dragged (Positions moved), and the Reset menu open.", "/library/<id>"),
     ("library-list", "Library, list view of one collection, with the sidebar and the collection header.", "/library/<id>"),
-    ("home", "Home. Hero with the search field, recent articles, collections and guides.", "/"),
+    ("home", "Home. Hero with the search field, recent articles, collections and guides; on 2026-10-17 again, with a query typed and the workspace and account menus open.", "/"),
+    ("account", "Account Settings dialog (2026-10-17), opened from the account menu: Profile, Preferences, an empty Subscription tab, the Update profile dialog stacked on it, and the Delete Account confirmation (cancelled).", "/?account=<tab>"),
+    ("library-all", "Library, All Articles (2026-10-17): the list, one article selected, and an article's empty Notes tab.", "/library"),
+    ("library-table", "Library, All Articles in the table view (2026-10-17).", "/library"),
+    ("library-reading", "Library, the empty Reading List (2026-10-17).", "/library/reading"),
+    ("library-mobile", "Library at 390 x 844 (2026-10-17): the Screen too small notice, and the clipped desktop layout after Continue anyway.", "/library"),
 ]
 
 OVER = [
@@ -341,6 +424,12 @@ OVER = [
     ("Filter popover", "search map view", "the filter button", "[search-map-light-filter-popover](screenshots/search-map-light-filter-popover.png), [filter popover](#filter-popover)"),
     ("Positions moved and Reset menu", "library map view", "a node dragged, then the pill pressed", "[library-map-light-positions-moved](screenshots/library-map-light-positions-moved.png), [library-map-light-positions-reset-menu](screenshots/library-map-light-positions-reset-menu.png), [positions moved pill](#positions-moved-pill)"),
     ("Zoomed graph", "search map view", "scroll or zoom button; the canvas is redrawn at a larger scale", "[search-map-light-zoomed-in](screenshots/search-map-light-zoomed-in.png)"),
+    ("Workspace and account menus", "home page", "the top-bar buttons, one item under the pointer", "[home-light-workspace-menu](screenshots/home-light-workspace-menu.png), [home-light-account-menu](screenshots/home-light-account-menu.png), [menu](#menu), [account menu](#account-menu)"),
+    ("Dialogs, stacked", "Account Settings", "account menu, then Preferences or Profile, then Update Profile", "[account-light-profile](screenshots/account-light-profile.png), [account-light-edit-profile-dialog](screenshots/account-light-edit-profile-dialog.png), [dialog](#dialog)"),
+    ("Destructive confirmation", "Account Settings, Profile", "Delete Account, then Cancel; nothing typed", "[account-light-delete-confirm](screenshots/account-light-delete-confirm.png), [destructive confirmation](#destructive-confirmation)"),
+    ("Loading", "keyword search results", "the copy was taken by a script the moment the spinner or loading dialog mounted", "[search-list-light-loading](screenshots/search-list-light-loading.png), [search-list-light-updating-dialog](screenshots/search-list-light-updating-dialog.png), [spinner](#spinner)"),
+    ("Selected article", "keyword search results, All Articles", "the selection circle clicked, then Clear", "[search-list-light-selected](screenshots/search-list-light-selected.png), [library-all-light-selected](screenshots/library-all-light-selected.png), [selection circle](#selection-circle)"),
+    ("Select list, checked checkbox", "Search Settings drawer", "the Retractions select opened; Open Access checked, then unchecked", "[search-list-light-settings-select-open](screenshots/search-list-light-settings-select-open.png), [search-list-light-settings-checked](screenshots/search-list-light-settings-checked.png)"),
 ]
 
 SHAPES = ["main-card", "side-panel", "list-card", "search-summary", "view-toggle", "filter-popover", "graph-tooltip", "tip-banner", "drawer", "inspector", "layout-option", "layout-select", "positions-moved", "reset-menu", "library-sidebar", "collection-header", "home-section", "home-guide-card"]
@@ -375,15 +464,15 @@ icons = [r for r in csv.reader(open("icons/INDEX.tsv"), delimiter="\t")][1:]
 # ------------------------------------------------ head
 W("# ResearchRabbit components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Read on {J['_meta']['read']} from static, redacted snapshots of signed-in pages on app.researchrabbit.ai, rendered in headless Chromium at 1440 x 900 (2x), with computed styles read from the rendered page. The workspace name in the snapshots is redacted to \"My workspace\". Nothing was created, sent or changed.")
+W("The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Read on 2026-10-04 and again on 2026-10-17 (the dialogs, menus, forms, table, empty and loading states, pressed states and the phone width) from static, redacted snapshots of signed-in pages on app.researchrabbit.ai, rendered in headless Chromium at 1440 x 900 (2x; the phone pages at 390 x 844), with computed styles read from the rendered page. The workspace, account and collection names in the snapshots are redacted. Nothing was created, sent or changed; one keyword search was run, an article was selected and cleared, and a filter was checked and unchecked.")
 W()
 W(f"The machine-readable copy is [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). Custom properties and per-component CSS rules are in [raw/css-vars.json](raw/css-vars.json); how the graph engine draws is in [raw/graph-code-notes.md](raw/graph-code-notes.md).")
 W()
 W("How to read an entry:")
 W()
 W("- A component is found by its styled-components display name (`GraphControls__StyledButton`), so `generateVariantComponent__default`, which many unrelated buttons share, is found by text or position instead. The entry's heading is the product's name for the part, and the key in backticks is the key in the JSON.")
-W("- A colour is its value followed by the :root custom property with the same value (`--grey-primary`), when there is one. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 `--primary``, and is read from the first text node inside the component.")
-W("- The state table has one row per element or snapshot state read at rest. A hover or focus-visible row lists only what changes from the row above it; a state with the same values is named in the row's label, for example \"default (same: hover)\". Hover is a real mouse hover and focus-visible a real keyboard focus; where a snapshot state could not be reached it says so.")
+W("- A colour, shadow or radius is its value followed by the [tokens.json](tokens.json) token with the same value (`{palette.grey.primary}`, `{elevation.menu}`, `{radius.lg}`), when there is one; a palette token is named before a semantic one, so look the role up in tokens.json. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 {palette.base.black}`, and is read from the first text node inside the component.")
+W("- The state table has one row per element or snapshot state read at rest. A hover, focus-visible or pressed row lists only what changes from the row above it; a state with the same values is named in the row's label, for example \"default (same: hover)\". Hover is a real mouse hover, focus-visible a real keyboard focus and pressed the mouse held down (2026-10-17 pages only); where a snapshot state could not be reached it says so.")
 W("- \"Parts\" lists the pieces inside the component, with sizes and offsets measured from the component's corner.")
 W(f"- Crops are images of the component read from the rendered snapshot, in [components/crops/](components/crops) ({len(crop_files)} files, named `{{component}}-{{state}}.png`, at 2x, 256 colours). A crop wider than 1600px was halved. A state that paints the same pixels as its default has no file of its own. Screenshots are in [screenshots/](screenshots).")
 W()
@@ -391,7 +480,7 @@ W()
 # ------------------------------------------------ discovery list
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-light-{state}.png` (the captured theme is light; no dark theme was reached). They are 1440 x 900 at 2x, 256 colours. The graph canvas in every one of them is a bitmap, frozen exactly as captured.")
+W("Screenshots are named `{page}-light-{state}.png` (the captured theme is light; the product has no dark theme). They are 1440 x 900 at 2x (the two `library-mobile` ones 390 x 844), 256 colours. The graph canvas in every one of them is a bitmap, frozen exactly as captured.")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -465,7 +554,7 @@ def rkey(r):
 for r, ks in sorted(rad.items(), key=lambda kv: (rkey(kv[0]), kv[0])):
     W(f"| {r} | {len(ks)} | {', '.join('`' + x[0] + '`' for x in sorted(ks)[:7])}{' and more' if len(ks) > 7 else ''} |")
 W()
-pills = sorted(k for k, v in first_state.items() if float(v["style"]["borderTopLeftRadius"].replace("px", "") or 0) >= v["rect"]["h"] / 2 and v["rect"]["h"] >= 20 and v["style"]["borderTopLeftRadius"] == v["style"]["borderBottomRightRadius"])
+pills = sorted(k for k, v in first_state.items() if v["style"]["borderTopLeftRadius"].endswith("px") and float(v["style"]["borderTopLeftRadius"].replace("px", "") or 0) >= v["rect"]["h"] / 2 and v["rect"]["h"] >= 20 and v["style"]["borderTopLeftRadius"] == v["style"]["borderBottomRightRadius"])
 r48 = sum(1 for k in pills if first_state[k]["style"]["borderTopLeftRadius"] == "48px")
 W(f"**Pill shape.** A component is a pill when its radius is at least half its height. {len(pills)} are: {', '.join('`' + k + '`' for k in pills)}. {r48} of them use `48px` whatever their height ({min(first_state[k]['rect']['h'] for k in pills if first_state[k]['style']['borderTopLeftRadius'] == '48px')} to {max(first_state[k]['rect']['h'] for k in pills if first_state[k]['style']['borderTopLeftRadius'] == '48px')}px), so `48px` reads as fully round. Cards, panels and menus use `6px` to `16px`; the drawer's top corners are `32px`.")
 W()
@@ -480,7 +569,7 @@ for k, c in C.items():
         if s != "none":
             sh[shadow_text(s)].append(k)
 used_tok = {shadow_token(s_) for s_ in sh if s_} - {None}
-W("**Shadows.** Every box shadow read on a component, with the :root token it equals where there is one. " + ("The :root shadow tokens (" + ", ".join(f"`{n}`" for n in sorted(set(SHADOW_TOK.values()))) + ") are not used by any measured component, so cards and panels are flat; the shadows below are focus-like rings and the popover, tooltip and menu drop shadows." if not used_tok else ""))
+W("**Shadows.** Every box shadow read on a component, with the token it equals where there is one. " + ("The :root shadow tokens (" + ", ".join(f"`{n}`" for n in sorted(set(SHADOW_TOK.values()))) + ") are not used by any measured component, so cards and panels are flat; the shadows below are focus-like rings and the popover, tooltip and menu drop shadows." if not used_tok else ""))
 W()
 W("| Shadow | Where |")
 W("|---|---|")
@@ -604,7 +693,7 @@ for (a_, b_), n in sorted(hv_bg.items(), key=lambda kv: (-kv[1], kv[0]))[:12]:
 W()
 
 # layout
-W("**Layout regions.** The page's main regions at 1440 x 900, from the DOM ([raw/components-computed.json](raw/components-computed.json), `pages`). Pages with the same region are listed together.")
+W("**Layout regions.** The page's main regions at the captured size, from the DOM ([raw/components-computed.json](raw/components-computed.json), `pages`). Pages with the same region are listed together.")
 W()
 W("| Region | x | y | width | height | Background | Radius | Pages |")
 W("|---|---|---|---|---|---|---|---|")
@@ -702,7 +791,7 @@ for g in group_order:
             W(f"**Values ({rows[0][0].split(' (')[0]}).** {rows[0][1]}.")
             W()
         else:
-            W("| State | Values (a hover or focus-visible row lists only what changes) |")
+            W("| State | Values (a hover, focus-visible or pressed row lists only what changes) |")
             W("|---|---|")
             for lab, val in rows:
                 W(f"| {lab} | {val} |")
@@ -780,11 +869,11 @@ W("- **One screenshot disagrees with a fresh render.** In [library-map-light-pos
 W()
 W("### States")
 W()
-W("- **Pressed** was not measured. The authored `:active` rules, where the CSS has any, are listed in the entry's state rules.")
+W("- **Pressed** was measured only on the 2026-10-17 pages (and the top-bar, view toggle, Auto-save and home controls read again there). No captured rule styles `:active` except the slider thumb's cursor, so every pressed state keeps the hover fill.")
 W("- **Hover states of the canvas** (a node, an edge) are only in the three hover snapshots; the DOM tooltip is measured, the title box on the canvas is not.")
 W("- **Components that did not take focus** (legend chips, the disabled pager and drawer Search button, text tabs that are divs) are named in each entry.")
-W("- **Anything script-driven is missing**: the workspace menu, the account menu, the Sort select list, the Collection and Reading List menus, the share dialog, dialogs, toasts and loading spinners, typing in a field, list scrolling and paging, the drawer opening and closing, and every transition between panels. Only the states captured are measured.")
-W("- **Disabled and error states** appear only where a snapshot happens to hold one (the greyed selection bar, the pager).")
+W("- **Still missing**: toasts (the toast container is mounted empty; no action taken during the capture raised one), the Sort select list, the Collection and Reading List menus, the share dialog, list scrolling, the drawer opening and closing, and every transition between panels. Only the states captured are measured.")
+W("- **Error states** were not reached: the only forms edit the account, and the capture did not submit or empty them. Disabled is measured on Reset Tutorials, the selection actions, the danger button and the disabled pager.")
 W()
 W("### Themes")
 W()
@@ -792,8 +881,8 @@ W("Only the light theme was captured. The stylesheets declare dark values (the `
 W()
 W("### Pages and widths")
 W()
-W("- **One width.** Everything was read at 1440 x 900. There are no tablet or phone layouts.")
-W("- **Not captured:** sign-in and onboarding, settings and billing, the share dialog, the import (BibTeX, Zotero) flows, the authors view, the Recently Found, All Articles and Reading List lists with content, the PDF reader, and empty states other than Next Search.")
+W("- **Widths.** Pages were read at 1440 x 900. At 640px or less the app covers every page with the Screen too small notice (captured at 390 x 844); there is no tablet or phone layout to capture.")
+W("- **Not captured:** sign-in and first-run onboarding (the account is not new, and Reset Tutorials is disabled), billing and plans (paid), the share dialog, the import (BibTeX, Zotero) flows, the authors view, the Reading List with content, and the PDF reader.")
 W()
 W("### Screenshots and crops")
 W()
