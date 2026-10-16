@@ -602,5 +602,24 @@ class RepositoryTest(unittest.TestCase):
                          ["light", "mobile"])
 
 
+
+class RepoFileTest(unittest.TestCase):
+    def test_allowed_paths_map_into_the_checkout(self):
+        self.assertEqual(catalog.repo_file("/catalog.json"), (catalog.ROOT / "catalog.json").resolve())
+        self.assertEqual(catalog.repo_file("/systems/claude/README.md?x=1"),
+                         (catalog.ROOT / "systems/claude/README.md").resolve())
+
+    def test_parent_segments_cannot_leave_the_allowed_folders(self):
+        for path in ("/tools/../../../../etc/passwd", "/tools/%2e%2e/%2e%2e/etc/passwd",
+                     "/systems/../AGENTS.md", "/systems/..%2f..%2fetc/passwd"):
+            target = catalog.repo_file(path)
+            self.assertTrue(target is None or catalog.ROOT.resolve() in target.parents, path)
+            self.assertNotEqual(target, (catalog.ROOT / "AGENTS.md").resolve(), path)
+
+    def test_other_paths_are_left_to_the_built_site(self):
+        self.assertIsNone(catalog.repo_file("/gallery/index.html"))
+        self.assertIsNone(catalog.repo_file("/"))
+
+
 if __name__ == "__main__":
     unittest.main()

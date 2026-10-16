@@ -7,7 +7,7 @@
 
 const app = document.getElementById('app');
 const qInput = document.getElementById('q');
-const UP = '../'; // data paths are relative to the repository root; this page lives in site/
+const UP = '../'; // data paths are relative to the docs site's root; this page lives in gallery/
 const PAGE = 60;
 
 let DATA = null;
@@ -27,7 +27,7 @@ fetch('data.json', { cache: 'no-store' })
   .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then((d) => { DATA = d; route(); })
   .catch(() => {
-    app.innerHTML = '<p class="empty">Could not load <code>site/data.json</code>. Run <code>make serve</code> from the repository root.</p>';
+    app.innerHTML = '<p class="empty">Could not load <code>gallery/data.json</code>. Run <code>make serve</code> from the repository root.</p>';
   });
 window.addEventListener('hashchange', route);
 

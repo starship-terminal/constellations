@@ -125,7 +125,7 @@ from one of two rules the export cannot satisfy without inventing data:
 2. Label every value ([EVIDENCE.md](EVIDENCE.md)) and fill the Gaps section.
 3. Run the three builders and open `style-guide.html` in both themes.
 4. Add an entry to [catalog.json](../catalog.json) and a row to the catalog
-   table in [README.md](../README.md). The entry needs `tags` and a `preview`:
+   table in [README.md](https://github.com/c-wenlong/design-systems/blob/main/README.md). The entry needs `tags` and a `preview`:
    a cover screenshot and the token paths for its swatches (`page`,
    `surface`, `text`, `muted`, `accent`, `border` per theme) and fonts. Copy
    an existing entry, then run `make design-md` and `make check`, which

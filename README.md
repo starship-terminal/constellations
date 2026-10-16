@@ -11,17 +11,35 @@ and screenshots of the real product, and says where each value came from.
 
 ## Browse it
 
+Everything is one [Zensical](https://zensical.org) docs site: the gallery, the
+scorecard and the library docs under `docs/`.
+
+```bash
+make setup
+```
+
 ```bash
 make serve
 ```
 
-That builds the gallery and serves it at http://127.0.0.1:8800/site/: one
-card per package with a cover screenshot, its colour roles and fonts, and a
-detail page with every screenshot, component crop and rendered README. Search
-matches names, uses, tags and themes; press `/` to focus it. "Copy agent
-prompt" on a detail page copies instructions that point an agent at that
-package. It needs only `python3`; `make help` lists the other targets
-(`make check` validates [catalog.json](catalog.json) against the packages).
+`make setup` installs the pinned Zensical into `.venv` once. `make serve` builds
+the site and serves it at http://127.0.0.1:8800/:
+
+- **Gallery**: one card per package with a cover screenshot, its colour roles and
+  fonts, and a detail page with every screenshot, component crop and rendered
+  README. Search matches names, uses, tags and themes; press `/` to focus it.
+  "Copy agent prompt" copies instructions that point an agent at that package.
+- **Scorecard**: every package graded against the checklist in
+  [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md), as a heatmap with the evidence
+  behind each grade. It is generated from [scorecard/](scorecard) by
+  [tools/scorecard.py](tools/scorecard.py).
+- **Docs**: the files under [docs/](docs), rendered.
+
+The same site, minus the gallery, is published to GitHub Pages at
+https://c-wenlong.github.io/design-systems/ with every page encrypted by
+StatiCrypt, so it needs the password in the `STATICRYPT_PASSWORD` repository
+secret. `make help` lists the other targets (`make check` validates
+[catalog.json](catalog.json) against the packages).
 
 ## Catalog
 
@@ -73,11 +91,13 @@ Studio) and Style Dictionary both read.
 |---|---|
 | [systems/](systems) | One folder per product. Every package has `README.md` and `style-guide.html` at its top; [docs/PACKAGE.md](docs/PACKAGE.md) describes the rest |
 | [catalog.json](catalog.json) | The machine-readable index, and the source the gallery is built from |
-| [Makefile](Makefile) | `make serve`, `make check`, `make test`, `make build`, `make clean` |
+| [Makefile](Makefile) | `make setup`, `make serve`, `make docs`, `make check`, `make test`, `make clean` and more (`make help`) |
 | [tools/catalog.py](tools/catalog.py) | Checks the catalog, builds the gallery, ranks packages for a query (`find`), exports any token file as CSS variables (`export`), checks WCAG contrast between token pairs (`contrast`), finds private text left in a package (`scan`), and writes each package's generated `DESIGN.md` (`design-md`) |
 | [tools/redact_images.py](tools/redact_images.py) | Paints private regions out of finished screenshots and crops from a rectangle table per screenshot family, then OCR-checks every image against the redaction patterns. Rules live in [tools/redact-rules/](tools/redact-rules) |
 | [tools/kit/](tools/kit) | The capture kit a new package starts from: web (public and signed-in), native iOS through iPhone Mirroring, and the token and style-guide builders |
-| [site/](site) | The gallery page. `site/data.json` and `site/thumbs/` are generated and gitignored |
+| [docs/](docs) | The docs site's source: the library docs below, the home page, [docs/gallery/](docs/gallery) (the gallery app; its `data.json` and `thumbs/` are generated and gitignored) and the scorecard pages (generated into `docs/scorecard/`, gitignored) |
+| [scorecard/](scorecard) | The scorecard's rubric (`criteria.json`) and one dated file per audit (`audits/<date>.json`) |
+| [tools/scorecard.py](tools/scorecard.py) | Writes the scorecard pages and the site's `zensical.toml` from [scorecard/](scorecard) |
 | [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | What a complete design system for your own app contains, layer by layer |
 | [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |

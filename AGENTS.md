@@ -87,10 +87,20 @@ illustrations or brand colours into something that ships
   the result with the change; `make check` fails on a stale one.
   [docs/PACKAGE.md](docs/PACKAGE.md#designmd) has the mapping and the lint
   rules it is allowed to fail.
-- **The gallery is generated.** [site/](site) holds the page;
-  [tools/catalog.py](tools/catalog.py) writes `site/data.json` and
-  `site/thumbs/` from [catalog.json](catalog.json), and both are gitignored.
-  Never hand-edit them, and never list a package in the gallery any other way.
+- **The docs site is generated.** It is one Zensical site built from
+  [docs/](docs) into `site/` (gitignored). [docs/gallery/](docs/gallery) holds
+  the gallery app; [tools/catalog.py](tools/catalog.py) writes its `data.json`
+  and `thumbs/` from [catalog.json](catalog.json). [tools/scorecard.py](tools/scorecard.py)
+  writes `docs/scorecard/` and `zensical.toml` from [scorecard/](scorecard). All
+  of those are gitignored; never hand-edit them, and never list a package in
+  the gallery any other way. A new audit is a new
+  `scorecard/audits/<YYYY-MM-DD>.json`; `make scorecard` validates it.
+- **The published site never includes the gallery.** The Pages workflow
+  removes `site/gallery/` and encrypts every page with StatiCrypt before it
+  deploys, and fails if readable text or a search index entry remains. Search
+  and instant navigation stay off for that reason. Never publish `systems/`,
+  screenshots or the gallery, and never commit `.env` (it holds the site
+  password).
 - **Private material never enters the repo**: raw page copies, redaction
   lists, account names, signed URLs, proprietary fonts. `systems/*/fonts/`
   is gitignored for this reason.
