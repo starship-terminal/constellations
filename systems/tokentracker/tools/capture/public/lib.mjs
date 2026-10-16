@@ -75,12 +75,25 @@ export async function mask(page) {
 
 // The dashboard follows prefers-color-scheme until a theme is chosen, so the
 // emulated colour scheme picks the theme (ThemeProvider adds .dark to <html>).
-export async function launch({ width = 1440, height = 900, mobile = false, theme = 'dark' } = {}) {
+export async function launch({ width = 1440, height = 900, mobile = false, theme = 'dark', reducedMotion = 'no-preference' } = {}) {
   const browser = await chromium.launch();
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US', colorScheme: theme, timezoneId: 'Asia/Singapore' }
-    : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference', colorScheme: theme, timezoneId: 'Asia/Singapore' });
+    : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion, colorScheme: theme, timezoneId: 'Asia/Singapore' });
+  await guard(context);
   return { browser, context };
+}
+
+// Look, don't act: every request that is not a read (GET, HEAD, OPTIONS) is aborted before it
+// leaves the browser, so no click in a capture can save, sync, remove or send anything.
+export const blocked = [];
+export async function guard(context) {
+  await context.route('**/*', (route) => {
+    const req = route.request();
+    if (['GET', 'HEAD', 'OPTIONS'].includes(req.method())) return route.continue();
+    blocked.push(`${req.method()} ${req.url().replace(/\?.*/, '')}`);
+    return route.abort();
+  });
 }
 
 export async function closePromo() { return false; }

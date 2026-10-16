@@ -1,11 +1,12 @@
 {
- "_note": "Rules for systems/coursera. Course titles, career goal, weekly target, dates and due times of the owner's enrolment are painted out by the OCR net (patterns read from a file outside the repo); crops that are only a goal, a calendar or an enrolled-course card are deleted.",
+ "_note": "Rules for systems/coursera. Course titles, career goal, weekly target, dates and due times of the owner's enrolment are painted out by the OCR net (patterns read from a file outside the repo); crops that are only a goal, a calendar or an enrolled-course card are deleted. The log-in field's placeholder, name@email.com, is public UI text and is allowed.",
  "ocr": {
   "net": true,
   "emails": true,
   "email_allow": [
    "@example\\.(com|org)$",
-   "@coursera\\.org$"
+   "@coursera\\.org$",
+   "^name@email\\.com$"
   ],
   "delete_if_covered": 0.3,
   "boost": [

@@ -171,7 +171,7 @@ for (const r of ok) {
 const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
   readAt: new Date().toLocaleDateString('en-CA'),
-  source: "TokenTracker v1.3.5's dashboard CSS bundle, fetched from the local server at http://127.0.0.1:7680/assets/ (one Vite bundle)",
+  source: "TokenTracker v1.4.3's dashboard CSS bundle, fetched from the local server at http://127.0.0.1:7680/assets/ (one Vite bundle)",
   sheets: sheets.map(({ name, media, bytes }) => ({ name, media, bytes })),
   counts: {
     rules: ok.length,

@@ -105,6 +105,18 @@ const ckey = (c) => (c ? c.join(',') : '');
 const PALETTE = /^--cds-color-(grey|blue|purple|green|red|yellow|pink|darken|lighten|white|black|neutral-white|neutral-black)(-\d+)?$/;
 
 const colorIdx = new Map();
+// The same index for the dark side of each light-dark() pair: a state measured in the
+// learner's dark theme is named by the variable that paints that colour in dark.
+const colorIdxDark = new Map();
+let THEME = 'light';
+for (const [name, raw] of Object.entries(VARS.resolved)) {
+  if (!name.startsWith('--cds-color')) continue;
+  const m = /^light-dark\((.*)\)$/s.exec(raw.trim());
+  const c = parseColor(m ? splitTop(m[1])[1] : raw.trim());
+  if (!c) continue;
+  if (!colorIdxDark.has(ckey(c))) colorIdxDark.set(ckey(c), []);
+  colorIdxDark.get(ckey(c)).push(name);
+}
 const pxIdx = { spacing: new Map(), radius: new Map(), size: new Map(), lh: new Map() };
 const typoIdx = new Map();
 for (const [name, raw] of Object.entries(VARS.resolved)) {
@@ -131,7 +143,7 @@ for (const [name, raw] of Object.entries(VARS.resolved)) {
     typoIdx.get(k).push(name);
   }
 }
-for (const list of [...colorIdx.values(), ...typoIdx.values(), ...Object.values(pxIdx).flatMap((m) => [...m.values()])]) {
+for (const list of [...colorIdx.values(), ...colorIdxDark.values(), ...typoIdx.values(), ...Object.values(pxIdx).flatMap((m) => [...m.values()])]) {
   list.sort((a, b) => a.length - b.length || a.localeCompare(b));
 }
 
@@ -141,7 +153,7 @@ for (const list of [...colorIdx.values(), ...typoIdx.values(), ...Object.values(
 function colorTokens(value, prop = 'color') {
   const c = parseColor(value);
   if (!c || c[3] === 0) return [];
-  const names = colorIdx.get(ckey(c)) || [];
+  const names = (THEME === 'dark' ? colorIdxDark : colorIdx).get(ckey(c)) || [];
   const want = prop === 'bg' ? /background/ : prop === 'border' ? /stroke|border|divider/ : /^(?!.*(background|stroke)).*$/;
   const sem = names.filter((n) => !PALETTE.test(n));
   const pal = names.filter((n) => PALETTE.test(n));
@@ -957,6 +969,10 @@ function rows(st) {
     'Painted layers': paintCell(st),
     Font: fontCell(s),
     Colour: colorCell(s.color, 'color'),
+    // The 2026-10-17 measurements also record the element that carries the first visible
+    // text (textStyle), since a wrapper often only inherits the body style.
+    'Label font': st.textStyle ? `${st.textStyle.node.split('.')[0]}: ${fontCell(st.textStyle)}` : '',
+    'Label colour': st.textStyle ? colorCell(st.textStyle.color, 'color') : '',
     'Text decoration': s.textDecorationLine === 'none' ? 'none' : `${s.textDecorationLine} ${s.textDecorationThickness} offset ${s.textUnderlineOffset}`,
     Opacity: s.opacity,
     Transform: s.transform,
@@ -974,7 +990,7 @@ function buildMd(out) {
   L.push('');
   L.push('Read from the 11 redacted static snapshots in `raw/snapshots/` (stylesheets inlined from the CSSOM, scripts stripped), rendered by `tools/capture/signed-in/measure.mjs` in headless Chromium at 1440x900 @2x, light theme. The full per-state data, including every painted child layer, the authored state rules that match each element and the `extra` sub-measurements, is in `raw/components-signed-in.json`; crops are in `components/crops/signed-in/<component>-<state>.png` (256 colours).');
   L.push('');
-  L.push('Colours are written as hex and mapped to `--cds-color-*` tokens by matching the light value of `light-dark()` in `raw/css-vars.json` (semantic names first, the palette name last; the `--cds-color-` prefix is dropped in the tables). "no token" means no token has that light value. Spacing, radius, font size and typography tokens are matched the same way.');
+  L.push('Colours are written as hex and mapped to `--cds-color-*` tokens by matching the light value of `light-dark()` in `raw/css-vars.json` (semantic names first, the palette name last; the `--cds-color-` prefix is dropped in the tables). A state whose name says dark is matched against the dark value instead, so its names are the variables that paint that colour in dark. "no token" means no token has that light value. Spacing, radius, font size and typography tokens are matched the same way.');
   L.push('');
   L.push('## States');
   L.push('');
@@ -988,6 +1004,12 @@ function buildMd(out) {
   L.push('');
   L.push(INTRO.trim());
   L.push('');
+  if (out._meta.refresh) {
+    L.push('## 2026-10-17 refresh');
+    L.push('');
+    L.push('A second pass copied seven more states from the same account with `snapshot.js` and measured them with `tools/capture/signed-in/refresh.mjs`: the course overflow menu and its tooltip on My Learning, the course review dialog, the share dialog, and Account settings (the colour theme select, the switches, a warning callout) in light and in the dark theme the learner chose in Appearance for the pass (set back to Light afterwards). Those copies hold the learner\'s current course list, so they stay outside the repository. Keyboard states were reached with real keys in the live tab before the copy, so the CDS focus classes in them are the product\'s own; their state is written `focus-visible (as captured)`. Nothing was rated, submitted, toggled or deleted. Their components are under "Menus, dialogs and settings" at the end, plus one state on the My Learning overflow button.');
+    L.push('');
+  }
   const groups = [
     ['Page shells and grid', /^shell-/],
     ['Top bar', /^topbar-/],
@@ -1002,10 +1024,11 @@ function buildMd(out) {
     ['Reading item', /^(reading-|item-feedback-text|item-footer)/],
     ['Assignment item', /^assignment-/],
     ['My Learning', /^(ml-|mlc-)/],
+    ['Menus, dialogs and settings (2026-10-17 refresh)', (k) => out.components[k].refresh],
   ];
   const seen = new Set();
   for (const [title, re] of groups) {
-    const keys = Object.keys(out.components).filter((k) => re.test(k) && !seen.has(k));
+    const keys = Object.keys(out.components).filter((k) => (typeof re === 'function' ? re(k) : re.test(k)) && !seen.has(k));
     if (!keys.length) continue;
     L.push(`## ${title}`);
     L.push('');
@@ -1018,11 +1041,13 @@ function buildMd(out) {
       L.push('');
       if (c.description) L.push(c.description);
       L.push('');
-      L.push(`Key \`${key}\`. Read from ${Object.entries(c.selectors || {}).map(([p, s]) => `\`${esc(s)}\` on ${out._meta.pages[p] ? out._meta.pages[p].label : p}`).join('; ')}.`);
+      const fromRefresh = [...new Set(Object.values(c.states).map((v) => v.snapshot).filter(Boolean))];
+      const fromSel = Object.entries(c.selectors || {}).map(([p, s]) => `\`${esc(s)}\` on ${out._meta.pages[p] ? out._meta.pages[p].label : p}`);
+      L.push(`Key \`${key}\`. Read from ${[...fromSel, ...(fromRefresh.length ? [`the 2026-10-17 copies ${fromRefresh.map((x) => `\`${x}\``).join(', ')} (tools/capture/signed-in/refresh.mjs)`] : [])].join('; ')}.`);
       L.push('');
       if (!names.length) { L.push(`Not measured: ${errs.map(([s, v]) => `${s}: ${v.error}`).join('; ')}`); L.push(''); continue; }
       const base = c.states.default ? rows(c.states.default) : null;
-      const table = names.map((n) => rows(c.states[n]));
+      const table = names.map((n) => { THEME = /\bdark\b/.test(n) ? 'dark' : 'light'; const r = rows(c.states[n]); THEME = 'light'; return r; });
       const labels = Object.keys(table[0]).filter((lab) => table.some((t) => t[lab] && t[lab] !== 'none' && t[lab] !== '0' && t[lab] !== '1' && !(lab === 'Cursor' && t[lab] === 'auto') && !(lab === 'Transform' && t[lab] === 'none')));
       L.push(`| Property | ${names.join(' | ')} |`);
       L.push(`| --- | ${names.map(() => '---').join(' | ')} |`);

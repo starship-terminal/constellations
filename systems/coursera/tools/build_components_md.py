@@ -105,7 +105,7 @@ def parse_public():
 
 SI_SECTIONS = {'Page shells and grid', 'Top bar', 'Course sidebar', 'Module page', 'Right rail',
                'Grades', 'Course info', 'Item outline panel', 'Video item', 'Transcript',
-               'Reading item', 'Assignment item', 'My Learning'}
+               'Reading item', 'Assignment item', 'My Learning', 'Menus, dialogs and settings (2026-10-17 refresh)'}
 
 
 def parse_si():
@@ -150,6 +150,7 @@ def parse_si():
 
 import json
 SIJSON = json.load(open('raw/components-signed-in.json'))['components']
+PUBJSON = json.load(open('raw/components-computed.json'))['components']
 PUB = parse_public()
 SI = parse_si()
 LOOK = {('p', e['id']): e for e in PUB}
@@ -219,6 +220,32 @@ def cond(c):
     if len(tk) > 1 and (len(set(tk)) == 1 or all(('--cds-spacing-' in t or '--cds-border-radius' in t) for t in tk)):
         c = re.sub(r' ?`--cds-[^`]+`', '', c) + ' (' + ', '.join(dict.fromkeys(tk)) + ')'
     c = re.sub(r'\s+', ' ', c).strip()
+    return pkg_tokens(c)
+
+
+# Values with no --cds variable that the package's own tokens.json names, and values that are
+# not colours at all, so "no token" is left only where nothing names the value.
+PKG = [
+    (r'fill none, no token', 'fill none'),
+    (r'1px solid transparent, no token offset (\d+px)', r'1px solid transparent offset \1 (forced-colours only)'),
+    (r'(1px solid transparent), no token', r'\1 (forced-colours only)'),
+    (r'(\d+px) auto (#[0-9a-f]{6}), no token offset (\d+px)', r'\1 auto \2 offset \3 (the browser default focus outline)'),
+    (r'2px solid transparent, no token', '2px solid transparent'),
+    (r'(#ffffff 0px 0px 0px 2px, #[0-9a-f]{6} 0px 0px 0px 3px, #[0-9a-f]{6} 0px 0px 0px 4px), no token', r'\1 (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons)'),
+    (r'transparent 0px 0px 0px 1px inset, no token', 'transparent 0px 0px 0px 1px inset (no edge)'),
+    (r'#804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token', '#804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`)'),
+    (r'(#[0-9a-f]{6}) 0px 0px 0px 1px inset, no token', r'\1 0px 0px 0px 1px inset (a `core.borderWidth.default` edge drawn as an inset shadow)'),
+    (r'#e9eef7 0px 0px 4px 0px, #0f1114 @ 0\.1 0px 4px 12px 4px, no token', '#e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`)'),
+    (r'#0f1114 @ 0\.2 0px 8px 16px 0px, no token', '#0f1114 @ 0.2 0px 8px 16px 0px (`component.stats-card.shadow`)'),
+    (r'#000000 @ 0\.24 0px 2px 12px 0px, no token', '#000000 @ 0.24 0px 2px 12px 0px (`component.sticky-nav.shadow`)'),
+    (r'#0056d2 @ 0\.05, no token', '#0056d2 @ 0.05 (`component.hero.band`)'),
+    (r'(\d+px) auto (#[0-9a-f]{6}), no token', r'\1 auto \2 (the browser default focus outline)'),
+]
+
+
+def pkg_tokens(c):
+    for pat, rep in PKG:
+        c = re.sub(pat, rep, c)
     return c
 
 
@@ -231,8 +258,8 @@ def tn_clean(c):
 
 
 PROP_ORDER = ['Size', 'Padding', 'Gap', 'Border', 'Radius', 'Background', 'Box shadow', 'Outline',
-              'Font', 'Colour', 'Text decoration', 'Transition', 'Transform', 'Opacity', 'Icon',
-              'Placeholder']
+              'Font', 'Colour', 'Label font', 'Label colour', 'Text decoration', 'Transition', 'Transform', 'Opacity', 'Icon',
+              'Placeholder', 'Painted']
 PROP_ALIAS = {'Size (w x h)': 'Size', 'Size (w×h)': 'Size'}
 SAME = ('same', '=', '')
 NOISE_OUTLINE = re.compile(r'^(none|1px solid transparent offset 2px)$')
@@ -303,7 +330,48 @@ def diff_table(e):
         if not any(vals):
             continue
         res[p] = vals
+    # A state can change only what a child or pseudo-element paints (a switch's track, a ring
+    # on ::before), so the painted layers join the table whenever they differ between states.
+    pc = painted_cells(e)
+    if pc and len(set(pc)) > 1:
+        res['Painted'] = pc
     return states, res, b
+
+
+def condense_layers(raw, limit=4):
+    layers = [l.strip() for l in raw.split('; ') if l.strip() and not l.strip().startswith('ancestor')]
+    out = []
+    for l in layers[:limit]:
+        l = re.sub(r'^([a-z0-9]+(?:::(?:before|after))?)(?:[.:#][^\s,]*)*', r'\1', l)
+        l = cond(l)
+        l = re.sub(r'\.0(?=[x ,;]|$)', '', l)
+        out.append(l.replace(' r ', ' radius ').replace(' bg ', ' background '))
+    return ', '.join(out)
+
+
+def painted_cells(e):
+    """The painted layers per state, condensed, or None when the entry has none."""
+    if e['src'] == 'p':
+        pd = e.get('painted') or {}
+        if not pd:
+            return None
+        # measurements.md writes a state's painted line only when it differs from the last state
+        # written, and skips states that paint nothing. The JSON says which of the two it was.
+        js = PUBJSON.get(e['id'], {}).get('states', {})
+        cells, last = [], ''
+        for st in e['states']:
+            if not (js.get(st) or {}).get('paint'):
+                cells.append('')
+                continue
+            last = pd.get(st, last)
+            cells.append(condense_layers(last) if last else '')
+        return cells
+    for r in e['table'][1] if e['table'] else []:
+        if r[0] == 'Painted layers':
+            raw = (r[1:] + [''] * len(e['states']))[:len(e['states'])]
+            first = raw[0]
+            return [condense_layers(first if c in SAME else c) if (first if c in SAME else c) else '' for c in raw]
+    return None
 
 
 def esc(c):
@@ -312,8 +380,9 @@ def esc(c):
 
 LABEL = {'Size': 'size', 'Padding': 'padding', 'Gap': 'gap', 'Border': 'border', 'Radius': 'radius',
          'Background': 'background', 'Box shadow': 'shadow', 'Outline': 'outline', 'Font': 'font',
-         'Colour': 'colour', 'Text decoration': 'decoration', 'Transition': 'transition',
-         'Transform': 'transform', 'Opacity': 'opacity', 'Icon': 'icon', 'Placeholder': 'placeholder'}
+         'Colour': 'colour', 'Label font': 'label font', 'Label colour': 'label colour', 'Text decoration': 'decoration', 'Transition': 'transition',
+         'Transform': 'transform', 'Opacity': 'opacity', 'Icon': 'icon', 'Placeholder': 'placeholder',
+         'Painted': 'painted by children'}
 
 
 def render_state_rows(e):
@@ -372,8 +441,9 @@ def part_values(e):
         c = first('Colour')
         if c:
             bits.append('colour %s' % c)
-    if tn and tn[0] not in SAME and first('Colour') and False:
-        pass
+    lf, lc = first('Label font'), first('Label colour')
+    if lf:
+        bits.append('label font %s%s' % (lf, (', ' + lc) if lc else ''))
     ic = first('Icon')
     if ic:
         bits.append('icon %s' % ic)
@@ -744,6 +814,31 @@ G('Feedback and overlays',
          desc='"Top Instructor" badge in the hero: light blue fill, dark blue text.'),
   ])
 
+G('Forms, menus, settings and states',
+  'Added on 2026-10-17. Public: the log-in dialog with its email field, its error notification (reached with every request aborted, so nothing was sent) and its buttons; the AI coach panel with its privacy notification, chat text area and send button; and the 404 page. Signed in, from copies of the live tab: the course overflow menu and the tooltip on its button, the course review dialog (a CDS multiline text field and a disabled Submit), the share dialog, and on Account settings the colour theme select, the switches, a warning notification and Delete account, in light and in the dark theme the learner can choose. Nothing was rated, submitted, toggled or deleted.',
+  [
+      E_('Text field', P('text-field')),
+      E_('Log-in dialog', P('login-dialog')),
+      E_('Large primary button', P('button-primary-large')),
+      E_('Social sign-in button', P('button-social')),
+      E_('Error notification', P('callout-error')),
+      E_('Info notification', P('callout-info')),
+      E_('Warning notification', S('callout-warning')),
+      E_('Chat text area', P('text-area'), [P('coach-panel')]),
+      E_('Chat send button', P('icon-button-send')),
+      E_('Text area', S('text-area-cds')),
+      E_('Switch', S('switch')),
+      E_('Overflow menu', S('overflow-menu')),
+      E_('Overflow menu item', S('overflow-menu-item')),
+      E_('Tooltip, signed in', S('tooltip-signed-in')),
+      E_('Select, signed in', S('select-signed-in'), [S('select-menu-signed-in')]),
+      E_('Select option, signed in', S('select-option-signed-in')),
+      E_('Review dialog', S('rate-dialog'), [S('button-disabled-legacy')]),
+      E_('Share dialog', S('share-dialog'), [S('share-copy-button')]),
+      E_('Delete account button', S('button-secondary-destructive')),
+      E_('404 page', P('error-page')),
+  ])
+
 G('Footer',
   'Full width, about 1745px tall on course pages: column headings, then Coursera, Community and More with app store badges, social icons and the copyright line.',
   [
@@ -764,7 +859,7 @@ NOTES = {
     'Enroll button': 'The label is 16/24 600 over a 12.8/16 600 "Starts <date>" line, both white, with padding 11px 80px 13px. The compact sticky-nav copy is 180x60 with 32px side padding.',
     'Secondary button': 'The 1px edge is an inset box shadow in the label colour; the CSS border is 0.',
     'Product card': 'Four per row at 1440 with a 12px gutter. Tags are 20px tall and 14/18 600: Free trial is `#0d2f60` on `#f0f6ff`, Top AI program is `#2c0b65` on `#e8d6ff`.',
-    'Course hero': 'The tint is a full-bleed 2880x524 layer at `rgba(0,86,210,.05)` (sampled `#f2f6fd` on white, no token) with a 566x465 decorative Coursera C in `#e3eeff` and `#6d7c99`. Partner logos are 36px tall, split by a 2x32 `#a7b4c9` rule.',
+    'Course hero': 'The tint is a full-bleed 2880x524 layer at `rgba(0,86,210,.05)` (sampled `#f2f6fd` on white; no --cds variable, `component.hero.band` in tokens.json) with a 566x465 decorative Coursera C in `#e3eeff` and `#6d7c99`. Partner logos are 36px tall, split by a 2x32 `#a7b4c9` rule.',
     'Stats card': 'It overlaps the bottom of the hero with `margin-top: -76px`. Cells are split by 1px `#e9eef7` left borders; values are 20/24 600 and sub-lines 14/20 `#48546e`.',
     'Top Instructor badge': 'The fill and radius sit on a wrapper: 16/20 600 `#0d2f60` on `#cfe2ff`, radius 4, padding 1px 5px.',
     'Module list': 'Module headers are full-width 76px ghost buttons (hover `#f0f6ff`); items are split by 2px `#e9eef7` rules.',
@@ -774,6 +869,17 @@ NOTES = {
     'Sidebar module row': 'A 16px ring (1px `#8495b0`) sits in a 20px box before the label, which is 400 14/20. Module rows are 268x36 and 2px apart; the selected row is 268x40 and its label steps up to 600 16/24.',
     'Tab (My Learning)': 'Tabs are 48px tall, padding 12/0 and 24px apart, label 400 16/24 `#404b5e`. The selected tab is 600 16/24 `#0d0f12` with 0.16px tracking over a 4px `#0d0f12` indicator (radius 2 2 0 0) on a full-width 1px `#c1cbdb` rule. Hover darkens the label to `#232b3a` and draws a 4px `#c1cbdb` bar with the same radius.',
     'Outline item row': 'Each row is a 344px-wide wrapper with radius 8 inside a full-width link; the current row gets the `#f0f6ff` tint and its title steps from 400 14/20 to 600 16/24.',
+    'Text field': 'Hover tints the field `#f0f6ff` and darkens the outline to `#0b408b`; focus adds the two-ring `::before`. An invalid submit does not mark the field: `aria-invalid` stays false and the outline stays grey, and the message appears as an [error notification](#error-notification) above it.',
+    'Large primary button': 'The log-in buttons are not CDS buttons: 700 weight on 14/24 where CDS uses 600, a 0.25s ease-out transition where CDS buttons have none, and a focus ring with a white gap plus a 2px outline. Pressed goes to `#2c0b65`.',
+    'Social sign-in button': 'Same non-CDS button family as Continue: 1px `#0d0f12` border, 8 radius, 18px brand icon at the left.',
+    'Error notification': 'Red-tint fill `#fad2d8` (`--cds-color-feedback-error-invert-weak`), 8 radius, no border, a 24px error icon filled `#b21836` and one line of 16/24 text. It sits between the dialog intro and the field.',
+    'Chat send button': 'Disabled while the field is empty: `#a7b4c9` fill (`--cds-color-neutral-disabled-strong`) with a `#dae1ed` arrow (`--cds-color-neutral-disabled`). With text it is a 36px primary icon button: `#0056d2`, hover `#0b408b`, pressed `#3c0f8a`.',
+    'Switch': 'Never toggled for the capture: the on switch (Sound effects) and the off switch (Two factor authentication) were read as they were. In dark the on track is `#87b8ff` and the knob turns black.',
+    'Select option, signed in': 'Enter on the closed select opens the list with the selected option focused; it carries `cds-selectOption-focusVisible`, the two-ring focus and a `#f0f6ff` fill, and a check at the right.',
+    'Review dialog': 'A legacy modal (rc-Modal), not CDS: 3px radius and a 2px-radius Submit, unlike the 16 and 8 of CDS dialogs and buttons. Submit stays disabled until a star is chosen.',
+    'Share dialog': 'Five round share targets and a COPY text button. After COPY the label read "COPIED!" in the live page; no toast appears anywhere in the capture.',
+    'Delete account button': 'The one destructive action captured is an ordinary secondary button; there is no red danger style and no confirmation was opened.',
+    '404 page': 'The 404 page loads without CDS: its message falls back to a light Open Sans weight, links are `#4a90e2`, and the ground is `#f5f5f5`. See [notfound-light-default](screenshots/notfound-light-default.png).',
     'Resume button (course home)': 'The medium primary button is 36px tall with 600 14/20 and 0.14px tracking; the large variant (reading, assignment) is 48px tall, padding 12/24, 600 16/24 with 0.16px tracking. No transition.',
 }
 
@@ -860,13 +966,13 @@ def count_shots():
 
 W('# Coursera components')
 W('')
-W('The discovery list of every page and view captured, then one inventory entry per component with crops of the real product, the icon summary and the Gaps. Public pages were captured on 2026-09-29, signed out, in headless Chromium at 1440x900 (mobile 390x844) with computed styles read from the running page. The learner pages (course home, grades, course info, video, reading, assignment, My Learning) were captured the same day from 11 static DOM snapshots of a signed-in session with the learner\'s name replaced, and measured in headless Chromium at 1440x900. On the public pages nothing was signed into, enrolled in or submitted.')
+W('The discovery list of every page and view captured, then one inventory entry per component with crops of the real product, the icon summary and the Gaps. A 2026-10-17 pass added the log-in dialog, the AI coach text area, the 404 page and, signed in, the overflow menu, review and share dialogs and Account settings in light and dark; their entries are under [Forms, menus, settings and states](#forms-menus-settings-and-states). Public pages were captured on 2026-09-29, signed out, in headless Chromium at 1440x900 (mobile 390x844) with computed styles read from the running page. The learner pages (course home, grades, course info, video, reading, assignment, My Learning) were captured the same day from 11 static DOM snapshots of a signed-in session with the learner\'s name replaced, and measured in headless Chromium at 1440x900. On the public pages nothing was signed into, enrolled in or submitted.')
 W('')
 W('The full per-state readings are in [raw/measurements.md](raw/measurements.md) (public) and [raw/measurements-signed-in.md](raw/measurements-signed-in.md) (learner pages), with machine-readable copies in [raw/components-computed.json](raw/components-computed.json) and [raw/components-signed-in.json](raw/components-signed-in.json). The page layouts are described in [raw/pages.md](raw/pages.md).')
 W('')
 W('How to read an entry:')
 W('')
-W('- Values are condensed from those files. A colour is the hex followed by the `--cds-*` token whose light value matches it (the semantic name, not the palette name); "no token" means nothing in the dump matches. Fonts are Source Sans Pro unless a value names another family, and are written size/line-height weight, for example `16/24 400`.')
+W('- Values are condensed from those files. A colour is the hex followed by the `--cds-*` token whose light value matches it (the semantic name, not the palette name). A value CDS has no variable for but this package\'s [tokens.json](tokens.json) names (the focus ring, the card and sticky-nav shadows, the hero band) is followed by that token path; "no token" means neither names it. Fonts are Source Sans Pro unless a value names another family, and are written size/line-height weight, for example `16/24 400`.')
 W('- The state table has one row per state that differs. The first row lists every value; later rows list only what changes from it. A state with the same values as the first row is named in its label, for example "default (same: pressed)".')
 W('- Entries that name several measured parts (a card and its logo, title and metadata) list each part as a row with its default values. "Measured as" gives the id in the raw files.')
 W('- Crops are images of the component read from the live page: public crops are in [components/crops/](components/crops), learner-page crops in [components/crops/signed-in/](components/crops/signed-in). Screenshots are in [screenshots/](screenshots).')
@@ -890,6 +996,8 @@ pubpages = [
     ('Explore topic', 'explore', '/explore/generative-ai', 'Bands of heading column, chip row and four compact cards, a dark band with an arrow link and a scrolling row, degrees, articles, FAQ. Card hover captured; the chip and card states are crops and measurements.'),
     ('Specialization', 'specialization', '/specializations/machine-learning-introduction', 'Same hero and stats card; the course list replaces Modules; Course details opens a panel.'),
     ('Professional certificate', 'certificate', '/professional-certificates/google-data-analytics', 'Adds a dismissible promo banner and nine course rows.'),
+    ('Log-in dialog (2026-10-17)', 'login', '/?authMode=login', 'The CDS dialog over the home page, in its error state after an invalid address (every request aborted first).'),
+    ('404 page (2026-10-17)', 'notfound', '/learn/no-such-course-refresh-404', 'Logo bar, illustration and links on a grey ground; no CDS.'),
 ]
 for name, page, url, note in pubpages:
     nfull = 'desktop'
@@ -902,7 +1010,7 @@ W('|---|---|')
 for name, page in [('Home', 'mobile-home'), ('Search results', 'mobile-search'), ('Explore topic', 'mobile-explore'), ('Course landing', 'mobile-course'), ('Specialization', 'mobile-specialization')]:
     W('| %s | %s |' % (name, shot_links(page, 'light')))
 W('')
-W('### Signed-in learner pages (light only, 1440x900)')
+W('### Signed-in learner pages (1440x900)')
 W('')
 W('Course `machine-learning-duke` and the learner\'s My Learning page. The `Read on` label is the id the measurement file uses for that view.')
 W('')
@@ -926,6 +1034,11 @@ for name, url, label, page, state in si_views:
     ff = 'screenshots/%s-light-%s-full.png' % (page, state)
     assert os.path.exists(f) and os.path.exists(ff), f
     W('| %s | `%s` | `%s` | [view](%s), [full](%s) |' % (name, url, label, f, ff))
+assert os.path.exists('screenshots/my-learning-dark-default.png')
+W('| My Learning, In Progress, in the Dark mode the learner can choose (2026-10-17) | `/my-learning?myLearningTab=IN_PROGRESS` | `my-learning-dark` | [view](screenshots/my-learning-dark-default.png) |')
+W('| Account settings, Appearance and switches, light and dark (2026-10-17) | `/account-settings` | `settings-switch-focus`, `settings-dark` | crops only: [Switch](#switch), [Warning notification](#warning-notification), [Select, signed in](#select-signed-in) |')
+W('')
+W('The 2026-10-17 copies come from a later enrolment on the same account, so their course names are replaced with "Example Course" and "Another Course"; they stay outside the repository.')
 W('')
 W('### Overlays and transient states')
 W('')
@@ -948,7 +1061,13 @@ ov = [
     ('Learning objectives shown', 'course home', 'L screenshot `learn-home-light-objectives-expanded`', 'screenshots/learn-home-light-objectives-expanded.png'),
     ('Submitted assignment banner', 'assignment item', 'L screenshot `learn-assignment-light-submitted`', 'screenshots/learn-assignment-light-submitted.png'),
     ('Mobile sheet for a week or course', 'mobile course and specialization', 'L screenshots `mobile-course-light-modules-expanded`, `mobile-specialization-light-courses-expanded`', 'screenshots/mobile-course-light-modules-expanded.png'),
-    ('Empty and error states', '-', 'none captured; see Gaps', None),
+    ('Log-in validation error', 'home, log-in dialog', 'L screenshot `login-light-error`; entries [Text field](#text-field) and [Error notification](#error-notification)', 'screenshots/login-light-error.png'),
+    ('404 page', 'any unknown URL', 'L screenshot `notfound-light-default`; entry [404 page](#404-page)', 'screenshots/notfound-light-default.png'),
+    ('AI coach text area and send button', 'course, AI coach panel', 'crops and measurements; entries [Chat text area](#chat-text-area) and [Chat send button](#chat-send-button)', None),
+    ('Course overflow menu and tooltip', 'My Learning, course row', 'crops and measurements; entries [Overflow menu](#overflow-menu) and [Tooltip, signed in](#tooltip-signed-in)', None),
+    ('Review and share dialogs', 'My Learning, overflow menu', 'crops and measurements; entries [Review dialog](#review-dialog) and [Share dialog](#share-dialog)', None),
+    ('Search with no match', 'search, `?query=zqxjvkwpq`', 'L screenshot `search-light-no-match`: fallback results under "Results for", no empty state', 'screenshots/search-light-no-match.png'),
+    ('Toast', '-', 'not present: no toast appeared on any page; see Gaps', None),
 ]
 for a, b, c, f in ov:
     if f:
@@ -1114,32 +1233,32 @@ W('### Public pages')
 W('')
 W('- **Left filter panel:** none exists on the search page. Filters are pill dropdowns (Topic, Duration, Learning Product, Language, Level, AI topic pills) plus the Filter and sort sheet, and sort is the "Sort by" radio group (Best Match, Newest) in that sheet, not a dropdown.')
 W('- **Pill hover:** the home page partner pills sit in a horizontal carousel that Playwright reports as outside the viewport, so only default and focus-visible were read.')
-W('- **Select option focus-visible:** after ArrowDown in the open select no option carried focus, so that state is missing. Selected and hover are measured.')
+W('- **Select option focus-visible:** after ArrowDown in the open public select no option carried focus. The 2026-10-17 pass caught it on the signed-in colour theme select ([Select option, signed in](#select-option-signed-in)).')
 W('- **Tab bar overflow chevron:** not reported visible at 1440, so it has no entry. Its two gradient fades are in the `tab-bar` paint list.')
 W('- **Help (i):** opens a modal dialog, not a hover tooltip. Both are measured (`help-dialog`, `tooltip`, `tooltip-icon`).')
-W('- **Disabled primary button:** none appeared. Disabled ghost and disabled secondary were measured in the filter popover and sheet.')
-W('- **Not measured on purpose:** the AI coach panel contents, the cookie banner (OneTrust is in the DOM but showed nothing in a fresh context, so nothing was declined), sign-in and enrolment flows.')
+W('- **Disabled primary button:** none appeared. Disabled ghost and disabled secondary were measured in the filter popover and sheet, the disabled chat send button on the course page, and the legacy disabled Submit in the review dialog.')
+W('- **Not measured on purpose:** the AI coach\'s replies (nothing was sent), the cookie banner (OneTrust is in the DOM but showed nothing in a fresh context, so nothing was declined), sign-in and enrolment flows past the first log-in step.')
 W('- **Footer link lists:** the link lists under the footer headings did not render in the headless captures, so the footer screenshots show headings over empty space. The footer link entry was measured on the home page.')
 W('- **Explore page:** only the first light band (Trusted AI Learning) and the dark certificates band were measured. Selecting a chip was not tried, so what it does to the row is not recorded; the degrees band, the articles grid, the role tiles and the FAQ were not measured. The "AI courses by leading organizations" chips carry a logo and are 34 tall; they were not measured. Previous exists only after the row has scrolled (measured after one click on Next). Dark screenshots were not taken.')
-W('- **Empty and error states, toasts:** none appeared on any captured page.')
+W('- **Empty, loading and error states, toasts:** a search with no match shows fallback results under the query, not an empty state. The one error page is the 404, which loads without CDS. The log-in field\'s error is a notification above the field. No toast appeared: copying a share link swaps the button label to COPIED! instead. The one loading screen seen was a course-home modal ("Extending and personalizing your target dates") that the site raised on its own and closed before it could be copied; the CDS loader is known from its stylesheet rules only (spin, and a 1.5s pulse under reduced motion).')
 W('')
 W('### Signed-in pages')
 W('')
 W('The learner pages were measured from static snapshots with scripts stripped, so anything that needs JavaScript is missing:')
 W('')
-W('- every menu: app switcher, help, language, notifications, avatar, the Explore mega menu on signed-in pages, and the course overflow menu')
-W('- the Coursera AI chat panel')
+W('- every menu: app switcher, help, language, notifications, avatar and the Explore mega menu on signed-in pages. The course overflow menu on My Learning was copied open with keyboard focus on 2026-10-17 ([Overflow menu](#overflow-menu))')
+W('- the Coursera AI chat panel on learner pages (its public copy on the course page is measured: [Chat text area](#chat-text-area))')
 W('- opening or closing any accordion or disclosure: only the states captured are measured (Course Material open and closed, objectives shown and hidden, outline modules open and closed)')
-W('- "Show more" expansions, the language select list, calendar month paging, tooltips, the Save note dialog')
+W('- "Show more" expansions, the language select list, calendar month paging, tooltips (one, on the overflow button, was copied on 2026-10-17), the Save note dialog')
 W('- video playback: the player is a poster frame, the control bar\'s show and hide is scripted, and the transcript highlight does not move')
-W('- CDS keyboard focus rings are emulated (`focus-visible-cds`), because CDS adds its focus class from JavaScript')
+W('- CDS keyboard focus rings are emulated (`focus-visible-cds`), because CDS adds its focus class from JavaScript. The 2026-10-17 copies were taken after real key presses, so their `focus-visible (as captured)` states carry the classes CDS set itself')
 W('- the reading in the snapshot has no subheadings, lists, code or tables; their styles come from a probe block the script inserted into the reading viewer, marked as such in [raw/measurements-signed-in.md](raw/measurements-signed-in.md)')
 W('')
 W('### Themes')
 W('')
-W('- **Dark is a forced flip, not a shipped theme.** Coursera has no dark setting and ignores `prefers-color-scheme` (a dark-scheme context still loads with `data-color-theme="light"`). Setting `data-color-theme="dark"` and `color-scheme: dark` on the root after load re-renders every page, because each colour token is a `light-dark()` pair. Learners are never offered it.')
+W('- **Dark is shipped to signed-in learners.** Account settings > Appearance offers Light mode, Dark mode and System default. Dark mode sets `data-color-theme="dark"` on `<html>`, and on 2026-10-17 every `--cds-color-*` variable on a learner page then equalled the dark side of its `light-dark()` pair ([raw/css-vars-dark-shipped.json](raw/css-vars-dark-shipped.json)), the same values the first capture got by forcing the attribute. Signed-out pages ignore `prefers-color-scheme` and stay light; the public dark screenshots set the attribute by hand.')
 W('- **Dark quirks:** partner logos and some art keep their light look (logos gain a white pill), the audience strip is black in both themes, and the tab bar overflow fade stays light.')
-W('- **Dark screenshots** exist only for the search and course pages. No component was measured in dark, and the signed-in pages are light only.')
+W('- **Dark screenshots** exist for the search and course pages (attribute set by hand) and My Learning (the learner\'s own Dark mode). The switch, warning notification and theme select were measured in dark on Account settings; the dark course home was copied but not published, because its text names the enrolled course.')
 W('')
 W('### Screenshots')
 W('')
