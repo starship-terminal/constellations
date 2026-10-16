@@ -95,6 +95,12 @@ illustrations or brand colours into something that ships
   of those are gitignored; never hand-edit them, and never list a package in
   the gallery any other way. A new audit is a new
   `scorecard/audits/<YYYY-MM-DD>.json`; `make scorecard` validates it.
+  After changing a package, run `make grade`: it re-grades the criteria a
+  script can check (F15 contrast, F16 provenance, K2 Do and don't, K3
+  DESIGN.md) into a new snapshot and carries every reviewed grade over
+  unchanged. Criteria marked `capture` in `scorecard/criteria.json` (C5, V1,
+  V2) are not applicable to a captured package; never grade them from a
+  capture.
 - **The published site never includes the gallery.** The Pages workflow
   removes `site/gallery/` and encrypts every page with StatiCrypt before it
   deploys, and fails if readable text or a search index entry remains. Search

@@ -96,7 +96,7 @@ Studio) and Style Dictionary both read.
 | [tools/redact_images.py](tools/redact_images.py) | Paints private regions out of finished screenshots and crops from a rectangle table per screenshot family, then OCR-checks every image against the redaction patterns. Rules live in [tools/redact-rules/](tools/redact-rules) |
 | [tools/kit/](tools/kit) | The capture kit a new package starts from: web (public and signed-in), native iOS through iPhone Mirroring, and the token and style-guide builders |
 | [docs/](docs) | The docs site's source: the library docs below, the home page, [docs/gallery/](docs/gallery) (the gallery app; its `data.json` and `thumbs/` are generated and gitignored) and the scorecard pages (generated into `docs/scorecard/`, gitignored) |
-| [scorecard/](scorecard) | The scorecard's rubric (`criteria.json`) and one dated file per audit (`audits/<date>.json`) |
+| [scorecard/](scorecard) | The scorecard's rubric (`criteria.json`) and one dated file per audit (`audits/<date>.json`, `<date>-2.json` for a second run that day). `make grade` writes a new one with the scripted criteria re-checked ([tools/grade.py](tools/grade.py)) |
 | [tools/scorecard.py](tools/scorecard.py) | Writes the scorecard pages and the site's `zensical.toml` from [scorecard/](scorecard) |
 | [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | What a complete design system for your own app contains, layer by layer |
 | [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |

@@ -5,7 +5,7 @@
 PYTHON ?= python3
 PORT ?= 8800
 
-.PHONY: help setup serve build docs scorecard check test design-md lint-design-md clean
+.PHONY: help setup serve build docs scorecard grade check test design-md lint-design-md clean
 
 help: ## List the targets
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-14s %s\n", $$1, $$2}'
@@ -24,6 +24,9 @@ docs: ## Generate the scorecard pages and build the docs site into site/ (strict
 
 scorecard: ## Validate the scorecard's audit data
 	@$(PYTHON) tools/scorecard.py --check
+
+grade: ## Re-grade the scripted criteria (contrast, provenance, Do and don't, DESIGN.md) into a new audit snapshot
+	@$(PYTHON) tools/grade.py --write && $(PYTHON) tools/scorecard.py --check
 
 check: ## Validate catalog.json against the packages on disk, including that every DESIGN.md is current
 	@$(PYTHON) tools/catalog.py check

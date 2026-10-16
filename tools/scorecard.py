@@ -44,9 +44,22 @@ def esc(text: str) -> str:
     return html.escape(str(text), quote=True)
 
 
+def _seq(path: Path) -> int:
+    """`2026-10-16.json` is run 1 of that day, `2026-10-16-2.json` run 2."""
+    tail = path.stem[len("YYYY-MM-DD"):].lstrip("-")
+    return int(tail) if tail.isdigit() else 1
+
+
+def audit_title(audit: dict) -> str:
+    if audit.get("base"):
+        return f"{audit['date']}, scripted re-grade of the {audit['base']} review"
+    return audit["date"]
+
+
 def load() -> tuple[dict, list[dict]]:
     criteria = json.loads((DATA / "criteria.json").read_text())
-    audits = [json.loads(p.read_text()) for p in sorted((DATA / "audits").glob("*.json"))]
+    audits = sorted((json.loads(p.read_text()) | {"_seq": _seq(p)} for p in (DATA / "audits").glob("*.json")),
+                    key=lambda a: (a["date"], a["_seq"]))
     if not audits:
         sys.exit("no audit snapshots in scorecard/audits/")
     return criteria, audits
@@ -207,13 +220,15 @@ def criteria_page(criteria: dict, audit: dict) -> str:
     md += f"| {badge('meets')} | The done-when rule is fully met |\n"
     md += f"| {badge('partly')} | Some of it is there; the evidence says what is missing |\n"
     md += f"| {badge('missing')} | Absent |\n"
-    md += f"| {badge('na')} | The product has no such thing, for example a dark theme on a light-only product |\n\n"
+    md += (f"| {badge('na')} | The product has no such thing (a dark theme on a light-only product), or the "
+           "criterion cannot be met by a capture (marked below) |\n\n")
     md += f"## How the audit was run\n\n{esc(audit['method'])}\n\n"
     for layer in criteria["layers"].values():
         md += f"## {layer}\n\n| | Criterion | Done when |\n|---|---|---|\n"
         for c in criteria["criteria"]:
             if c["layer"] == layer:
-                md += f'| <span id="{c["id"].lower()}"></span>**{c["id"]}** | {esc(c["title"])} | {esc(c["doneWhen"])} |\n'
+                capture = f"<br>*Not applicable to a capture:* {esc(c['capture'])}" if c.get("capture") else ""
+                md += f'| <span id="{c["id"].lower()}"></span>**{c["id"]}** | {esc(c["title"])} | {esc(c["doneWhen"])}{capture} |\n'
         md += "\n"
     return md
 
@@ -223,7 +238,7 @@ def changelog_page(criteria: dict, audits: list[dict]) -> str:
     titles = {c["id"]: c["title"] for c in criteria["criteria"]}
     for i in range(len(audits) - 1, -1, -1):
         audit = audits[i]
-        md += f"## {audit['date']}\n\n"
+        md += f"## {audit_title(audit)}\n\n"
         if i == 0:
             md += f"First audit: {len(audit['systems'])} systems against {len(criteria['criteria'])} criteria.\n\n"
             continue

@@ -1065,11 +1065,30 @@ def design_md_problems(system: dict) -> list[str]:
     return []
 
 
+def latest_scores() -> dict[str, dict]:
+    """Each package's grade counts from the newest scorecard audit, plus its contrast
+    result when that criterion is not met, for the gallery cards and detail pages."""
+    import scorecard  # tools/ is on the path; imported here so `check` never needs it
+    _, audits = scorecard.load()
+    audit = audits[-1]
+    out = {}
+    for s in audit["systems"]:
+        counts = {g: 0 for g in scorecard.GRADES}
+        for g in s["grades"].values():
+            counts[g["grade"]] += 1
+        f15 = s["grades"].get("F15", {})
+        out[s["slug"]] = {**counts, "applicable": len(s["grades"]) - counts["na"], "date": audit["date"],
+                          "contrast": None if f15.get("grade") in (None, "meets", "na")
+                          else f15["evidence"].removeprefix("Script: ")}
+    return out
+
+
 def build() -> Path:
     problems = check()
     if problems:
         sys.exit("catalog check failed:\n  " + "\n  ".join(problems))
     catalog = load_catalog()
+    scores = latest_scores()
     systems = []
     all_shots = []
     for s in catalog["systems"]:
@@ -1088,6 +1107,7 @@ def build() -> Path:
             "tokenGroups": [k for k in json.loads((ROOT / s["tokens"]).read_text())
                             if not k.startswith("$")],
             "fonts": fonts(s),
+            "score": scores.get(s["slug"]),
             "screenshots": shots,
             "components": list_images(s, "components", COMPONENT_EXT),
             "docs": sorted(p.relative_to(ROOT).as_posix()
