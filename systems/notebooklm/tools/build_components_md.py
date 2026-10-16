@@ -134,6 +134,13 @@ def len_cell(v, table):
     p = table.get(v)
     return tok(p) if p else raw(v)
 
+def radius_cell(st):
+    """CSS order (top-left top-right bottom-right bottom-left), one value when all corners match."""
+    cs = [st.get(f"border{k}Radius", "0px") for k in ("TopLeft", "TopRight", "BottomRight", "BottomLeft")]
+    if len(set(cs)) == 1:
+        return len_cell(cs[0], RADIUS)
+    return " ".join(len_cell(c, RADIUS) for c in cs)
+
 def pad_cell(st):
     """CSS order (top right bottom left), shortened only where sides match."""
     t, r, b, l = st["paddingTop"], st["paddingRight"], st["paddingBottom"], st["paddingLeft"]
@@ -233,7 +240,7 @@ def size_cell(s):
     return f"{round(w)} x " + (tok(p) if p else f"{hh}")
 
 ROWS = [("Size (w x h)", lambda s, th: size_cell(s)), ("Fill", fill_cell), ("Text", lambda s, th: color_cell((s.get("textStyle") or {}).get("color") or s["style"]["color"], th)),
-        ("Type", lambda s, th: type_cell(s)), ("Border", border_cell), ("Radius", lambda s, th: len_cell(s["style"]["borderTopLeftRadius"], RADIUS)),
+        ("Type", lambda s, th: type_cell(s)), ("Border", border_cell), ("Radius", lambda s, th: radius_cell(s["style"])),
         ("Padding", lambda s, th: pad_cell(s["style"])), ("Shadow", lambda s, th: shadow_cell(s["style"]["boxShadow"], th)),
         ("State layer", layer_cell), ("Focus ring", focus_cell)]
 

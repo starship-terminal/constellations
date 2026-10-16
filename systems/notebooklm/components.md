@@ -327,6 +327,7 @@ A cdk-autosize <textarea> inside the rounded composer.
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
 | Type | Google Sans Flex 14px/24px 400 (raw) | Google Sans Flex 14px/24px 400 (raw) | Google Sans Flex 14px/24px 400 (raw) | Google Sans Flex 16px/20px 400 (raw) | Google Sans Flex 16px/20px 400 (raw) | Google Sans Flex 16px/20px 400 (raw) | Google Sans Flex 16px/20px 400 (raw) |
 | Border | none | none | none | `borderWidth.field-focus` #c2e7ff (raw) (mat-pseudo-checkbox) / `borderWidth.field-focus` #004a77 (raw) (mat-pseudo-checkbox) | none | none | `borderWidth.field-focus` #c2e7ff (raw) (mat-pseudo-checkbox) / `borderWidth.field-focus` #004a77 (raw) (mat-pseudo-checkbox) |
+| Radius | 0 | 0 | 0 | 0 0 `radius.xs` `radius.xs` | 0 | 0 | 0 |
 | Padding | 0 | 0 | 0 | `spacing.8` 0 | 0 `spacing.16` | 0 `spacing.16` | 0 `spacing.16` |
 | Shadow | none | none | none | `shadow.select` | none | none | none |
 
@@ -960,4 +961,4 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 - **Avatar**: the photo was replaced by a grey disc in the copy, so only its size and shape are the product's.
 - **Studio outputs** (Audio and Video Overviews, mind map, flashcards, quiz) open player or iframe views that were not recaptured on 2026-10-17; the 2026-09-25 package measured some from screenshots and those readings are not carried over.
 
-Token coverage: 1704 cells name a token, 224 are raw values.
+Token coverage: 1708 cells name a token, 224 are raw values.

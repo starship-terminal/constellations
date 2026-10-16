@@ -589,9 +589,10 @@
 
 /* Font stacks: product families first, public stand-ins after */
 :root {
-  --ff-display: "Google Sans", "Google Sans Flex", "Product Sans", Roboto, system-ui, sans-serif;
-  --ff-text: "Google Sans Text", "Google Sans", "Google Sans Flex", Roboto, system-ui, sans-serif;
-  --ff-code: "Google Sans Code", ui-monospace, "SF Mono", Menlo, monospace;
+  /* Stacks come from core.fontFamily (generated above), which ends in a generic family. */
+  --ff-display: var(--fontFamily-display);
+  --ff-text: var(--fontFamily-text);
+  --ff-code: var(--fontFamily-code);
   --ff-icon: "Google Symbols", "Material Symbols Outlined";
 }
 /* re-point typography tokens at the stacks */
