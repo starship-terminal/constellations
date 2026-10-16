@@ -213,6 +213,10 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
         wrong = sorted(set(grades) - reviewable)
         if wrong:
             raise SystemExit(f"review for {slug} sets {', '.join(wrong)}, which are scripted or capture rules")
+        # A review dates the whole package, so it must grade every reviewed criterion.
+        missing = sorted(reviewable - set(grades), key=lambda c: (c[0], int(c[1:]) if c[1:].isdigit() else 0))
+        if missing:
+            raise SystemExit(f"review for {slug} is incomplete; it also needs {', '.join(missing)}")
     for system in out["systems"]:
         source = by_slug.get(system["slug"])
         if not source:
@@ -242,12 +246,17 @@ def stale(criteria: dict, audit: dict, catalog_systems: list[dict], categories: 
             problems.append(f"{system['slug']}: in the scorecard but not in catalog.json")
             continue
         for cid, fresh in scripted(source).items():
-            if system["grades"].get(cid, {}).get("grade") != fresh["grade"]:
-                problems.append(f"{system['slug']} {cid}: scorecard says "
-                                f"{system['grades'].get(cid, {}).get('grade')}, the package now grades {fresh['grade']}")
+            saved = system["grades"].get(cid, {})
+            if saved != fresh:
+                problems.append(f"{system['slug']} {cid}: scorecard has {saved.get('grade')} "
+                                f"({saved.get('evidence', '')!r}), the package now gives {fresh['grade']} "
+                                f"({fresh['evidence']!r})")
         for key in META:
             if system.get(key) != source.get(key):
                 problems.append(f"{system['slug']}: scorecard {key} {system.get(key)!r} differs from catalog.json")
+        label = categories.get(source.get("category"))
+        if label and system.get("category") != label:
+            problems.append(f"{system['slug']}: scorecard category {system.get('category')!r} differs from {label!r}")
         reviewed = system.get("reviewed", audit.get("base", audit["date"]))
         if source.get("captured", "") > reviewed:
             warnings.append(f"{system['slug']}: captured {source['captured']}, reviewed grades date from {reviewed}; "
