@@ -6,13 +6,13 @@ The input may be the raw string or a tool-result JSON array of {text} parts wrap
 
 Refuses the snapshot, writing nothing, if any pattern in the redaction file still matches or
 any URL still carries a signing parameter. The redaction file names the learner, so it lives
-outside the repository: $SNAP_REDACT, default ~/.self-learn/manus-redact.json, shaped like
+outside the repository: $SNAP_REDACT, default ~/.design-systems/manus-redact.json, shaped like
 redact.example.json beside this script.
 """
 import json, os, pathlib, re, sys
 
 src, outdir = sys.argv[1], sys.argv[2]
-redact_path = pathlib.Path(os.environ.get("SNAP_REDACT", "~/.self-learn/manus-redact.json")).expanduser()
+redact_path = pathlib.Path(os.environ.get("SNAP_REDACT", "~/.design-systems/manus-redact.json")).expanduser()
 redact = json.loads(redact_path.read_text())
 
 raw = open(src).read()
@@ -30,6 +30,11 @@ for pattern, flags, _ in redact["replace"]:
     if re.search(pattern, html, re.I if "i" in flags else 0):
         leaks.append(f"redaction pattern {len(leaks) + 1}")
 leaks += sorted(set(re.findall(r"[?&](?:amp;)?(X-Amz-Signature|X-Amz-Security-Token|Key-Pair-Id|Signature)=", html)))
+# A task or project id in a path (manus.im/app/<id>) names the account's own work.
+leaks += ["task id"] * bool(re.search(r"/app/[A-Za-z0-9_-]{16,}", html))
+for a in redact.get("stripAttrs", []):
+    if f" {a}=" in html:
+        leaks.append(a)
 if leaks:
     sys.exit(f"LEAK {leaks}")
 

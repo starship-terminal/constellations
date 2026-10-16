@@ -235,6 +235,11 @@ function styleOf(el, props) {
 const ALL = ['default', 'hover', 'focus-visible'];
 const HV = ['default', 'hover'];
 const R = ['default'];
+// Pressed (added on the 2026-10-17 refresh): the pointer held down on the element (page.mouse.down),
+// so Tailwind's active: variants apply; released after the reading. The copies have no scripts, so
+// the release clicks nothing.
+const AP = ['default', 'hover', 'focus-visible', 'pressed'];
+const HP = ['default', 'hover', 'pressed'];
 
 const SPECS = [
   // ---------------- Sidebar
@@ -482,6 +487,43 @@ const SPECS = [
   { key: 'file-tree-item', group: 'Task', title: 'Files tab tree item', snap: 'task-dark-files-tab', find: () => Q('[data-context-menu=file-preview-sidebar-file]'), states: ALL },
   { key: 'preview-empty', group: 'Task', title: 'Select a file to preview', snap: 'task-dark-files-tab', find: () => T('Select a file to preview').parentElement, states: R },
 
+
+  // ---------------- Settings, forms and feedback (2026-10-17 refresh)
+  { key: 'settings-nav-row', group: 'Settings and forms', title: 'Settings nav item, pressed and selected (Developers pane)', snap: 'settings-dark-developers-table', find: () => C(T('Shortcuts', D()), 'button,.clickable'), states: HP, desc: 'A row in the Settings dialog\'s left nav: 16px icon, 14px label; the current pane is filled.', extra: { selected: { find: () => C(T('Developers', D()), 'button,.clickable') } } },
+  { key: 'tabs-underline', group: 'Settings and forms', title: 'Underline tab (API keys | Webhooks)', snap: 'settings-dark-developers-table', find: () => C(T('Webhooks', D()), 'li'), states: HV, desc: 'Text tabs over a 1px rule; the active one is 500 weight in --text-primary with a 2px --Button-black underline that slides between tabs.', extra: { selected: { find: () => C(T('API keys', D()), 'li') } } },
+  { key: 'info-banner', group: 'Settings and forms', title: 'Info banner (Manage API Keys …)', snap: 'settings-dark-developers-table', find: () => P(TS('Manage API Keys', D())), states: R },
+  { key: 'button-outline', group: 'Settings and forms', title: 'Outline button (+ Create new)', snap: 'settings-dark-developers-table', find: () => C(T('Create new', D()), 'button'), states: AP },
+  { key: 'table', group: 'Settings and forms', title: 'Table (API keys)', snap: 'settings-dark-developers-table', find: () => Q('table'), states: R, desc: 'A plain <table>: a 13px --text-tertiary header row and 14px body rows divided by 1px --border-main rules, no zebra, no outer border; the last column is a 28px more button.' },
+  { key: 'table-header-cell', group: 'Settings and forms', title: 'Table header cell', snap: 'settings-dark-developers-table', find: () => Q('table th'), states: R },
+  { key: 'table-row', group: 'Settings and forms', title: 'Table row', snap: 'settings-dark-developers-table', find: () => Q('table tbody tr'), states: HV },
+  { key: 'table-row-more', group: 'Settings and forms', title: 'Table row more button', snap: 'settings-dark-developers-table', find: () => Q('table tbody tr button[aria-label=More]'), states: AP, desc: '28x28, radius 6; hover fills with --fill-tsp-white-main.', extra: { open: { snap: 'settings-dark-key-menu', find: () => Q('table tbody tr button[aria-expanded=true]') } } },
+  { key: 'popover-menu', group: 'Settings and forms', title: 'Row popover menu', snap: 'settings-dark-key-menu', find: () => P(T('Delete', D())), states: R, desc: 'A one-item popover under the more button.' },
+  { key: 'menu-item-danger', group: 'Settings and forms', title: 'Menu item, destructive (Delete)', snap: 'settings-dark-key-menu', find: () => C(T('Delete', D()), '[class*="function-error"]'), states: HP, desc: 'Text and trash icon in --function-error; the hover fill is the neutral menu hover, not a red one.' },
+  { key: 'confirm-dialog', group: 'Settings and forms', title: 'Destructive confirmation dialog', snap: 'settings-dark-delete-confirm', find: () => P(TS('Are you sure', D())), states: R, desc: 'A small dialog over a scrim: a 16px 500 question, a 14px "This action cannot be undone." line, Cancel and a red Delete at the end, and a close button.' },
+  { key: 'button-danger', group: 'Settings and forms', title: 'Danger button (Delete)', snap: 'settings-dark-delete-confirm', find: () => C(T('Delete', D()), 'button'), states: AP },
+  { key: 'button-secondary', group: 'Settings and forms', title: 'Secondary button (Cancel)', snap: 'settings-dark-delete-confirm', find: () => C(T('Cancel', D()), 'button'), states: AP },
+  { key: 'confirm-dialog-close', group: 'Settings and forms', title: 'Dialog close button', snap: 'settings-dark-delete-confirm', find: () => K('cursor-pointer rounded-md', 0, D()) || [...D().querySelectorAll('svg')].map((v) => v.parentElement).find((b) => !b.innerText.trim()), states: AP },
+  { key: 'form-dialog', group: 'Settings and forms', title: 'Form dialog (Create API Key)', snap: 'settings-dark-create-key', find: () => P(T('Create API Key', D())), states: R, desc: 'Labelled fields stacked with 8px between label and field; Cancel and Create at the end. Create stays disabled until the name has text; there is no inline validation message.' },
+  { key: 'field-label', group: 'Settings and forms', title: 'Field label', snap: 'settings-dark-create-key', find: () => T('Name your key', D()), states: R },
+  { key: 'text-field', group: 'Settings and forms', title: 'Text field', snap: 'settings-dark-create-key', find: () => Q('input[placeholder="my-secret-key"]'), states: ALL, desc: 'Placeholder in --text-disable; the value in --text-primary; a clear (×) button appears inside once it has text.', extra: { typed: { snap: 'settings-dark-create-key-typed', find: () => Q('input[placeholder="my-secret-key"]'), states: ['focus-visible'] } } },
+  { key: 'text-field-wrapper', group: 'Settings and forms', title: 'Text field frame', snap: 'settings-dark-create-key', find: () => P(Q('input[placeholder="my-secret-key"]').parentElement), focusOn: () => Q('input[placeholder="my-secret-key"]'), states: ALL, desc: 'The painted frame around the input; focus-visible is read with keyboard focus on the input inside.', extra: { typed: { snap: 'settings-dark-create-key-typed', find: () => P(Q('input[placeholder="my-secret-key"]').parentElement) } } },
+  { key: 'select-trigger', group: 'Settings and forms', title: 'Select trigger (Expiration)', snap: 'settings-dark-create-key', find: () => P(T('Never', D())), states: AP, extra: { open: { snap: 'settings-dark-select-open', find: () => P(T('Never', [...document.querySelectorAll('[role=dialog]')].find((d) => /Create API Key/.test(d.innerText)))) } } },
+  { key: 'select-listbox', group: 'Settings and forms', title: 'Select listbox', snap: 'settings-dark-select-open', find: () => P(C(T('In 7 days'), '.cursor-pointer').parentElement), states: R },
+  { key: 'select-option', group: 'Settings and forms', title: 'Select option', snap: 'settings-dark-select-open', find: () => C(T('In 7 days'), '.cursor-pointer'), states: HP, extra: { selected: { find: () => [...document.querySelectorAll('.cursor-pointer')].find((e) => (e.innerText || '').trim() === 'Never' && e.querySelector('svg')) } } },
+  { key: 'button-primary', group: 'Settings and forms', title: 'Primary button (Create)', snap: 'settings-dark-create-key', find: () => C(T('Create', D()), 'button'), states: R, desc: 'Black on light, white on dark (--Button-black / --text-onblack); hover opacity 0.9, pressed 0.8. Disabled while the form is incomplete (`default`), enabled once a name is typed.', extra: { enabled: { snap: 'settings-dark-create-key-typed', find: () => C(T('Create', D()), 'button'), states: ['hover', 'focus-visible', 'pressed'] } } },
+  { key: 'text-area', group: 'Settings and forms', title: 'Text area (More about you)', snap: 'settings-dark-personalization', find: () => Q('textarea'), states: ALL },
+  { key: 'text-field-settings', group: 'Settings and forms', title: 'Settings text field (Nickname)', snap: 'settings-dark-personalization', find: () => Q('input[placeholder="Jane"]'), states: ALL },
+  { key: 'settings-card-row', group: 'Settings and forms', title: 'Settings link card (Import memory)', snap: 'settings-dark-personalization', find: () => C(TS('Import memory from another AI', D()), 'button,.clickable,[role=button]') || P(TS('Import memory from another AI', D())), states: AP },
+  { key: 'spinner', group: 'Settings and forms', title: 'Loading spinner', snap: 'settings-dark-usage-loading', find: () => Q('[role=dialog] .animate-spin'), states: R, desc: 'The only loading indicator in the Settings dialog: a ring under "Credits history" while the list loads.' },
+  { key: 'button-white', group: 'Settings and forms', title: 'Upgrade button (Usage)', snap: 'settings-dark-usage-loading', find: () => C(T('Upgrade', D()), 'button'), states: AP },
+  { key: 'plan-card', group: 'Settings and forms', title: 'Plan card (Free)', snap: 'settings-dark-usage-loading', find: () => P(C(T('Upgrade', D()), 'button').parentElement.parentElement), states: R },
+  { key: 'invite-dialog', group: 'Settings and forms', title: 'Invite dialog', snap: 'invite-dark-dialog', find: () => P(T('Invite to get credits')), states: R },
+  { key: 'segmented', group: 'Settings and forms', title: 'Segmented control (Share on web | mobile)', snap: 'invite-dark-dialog', find: () => C(T('Share on web'), 'ul,div.relative,div'), states: R, extra: { item: { find: () => [...document.querySelectorAll('button')].find((b) => b.innerText.trim() === 'Share on mobile'), states: ['hover', 'focus-visible'] }, selected: { find: () => C(T('Share on web'), 'li') } } },
+  { key: 'button-black-wide', group: 'Settings and forms', title: 'Full-width black button (Copy invitation link)', snap: 'invite-dark-dialog', find: () => C(T('Copy invitation link'), 'button'), states: AP },
+  { key: 'button-blue', group: 'Settings and forms', title: 'Blue button (Invite Facebook friends)', snap: 'invite-dark-dialog', find: () => C(T('Invite Facebook friends'), 'button'), states: AP, desc: 'Facebook\'s own blue as a literal (#2167e8 in both themes), not a Manus token; Manus\'s blue is button.blue. Kept for its states, which match the black buttons (hover and pressed at opacity 0.9).' },
+  { key: 'email-field', group: 'Settings and forms', title: 'Email field', snap: 'invite-dark-dialog', find: () => Q('input[placeholder="Enter email address"]'), states: ALL, extra: { typed: { snap: 'invite-dark-email-typed', find: () => Q('input[placeholder="Enter email address"]') } } },
+  { key: 'send-button', group: 'Settings and forms', title: 'Send button (disabled, then enabled)', snap: 'invite-dark-dialog', find: () => C(T('Send', D()), 'button'), states: R, desc: 'Disabled while the field is empty; any text enables it (no format check before submit).', extra: { enabled: { snap: 'invite-dark-email-typed', find: () => C(T('Send', D()), 'button'), states: ['hover', 'pressed'] } } },
+
   // ---------------- Mobile
   { key: 'm-app-banner', group: 'Mobile', title: 'App banner', snap: 'mobile-home-dark', find: () => CK(T('Manus app'), 'fixed'), states: R },
   { key: 'm-open-app', group: 'Mobile', title: 'Open app button', snap: 'mobile-home-dark', find: () => C(T('Open app'), 'button'), states: R },
@@ -614,6 +656,13 @@ async function measureSnap(browser, label, specs, out) {
           await page.mouse.move(p.x + 0.5, p.y);
           await page.waitForTimeout(450);
           via = job.hoverOn ? 'mouse hover on its row' : 'mouse hover';
+        } else if (job.base === 'pressed') {
+          const p = await pointOf(loc);
+          await page.mouse.move(p.x, p.y, { steps: 4 });
+          await page.waitForTimeout(80);
+          await page.mouse.down();
+          await page.waitForTimeout(300);
+          via = 'mouse held down (:active)';
         } else if (job.base === 'focus-visible') {
           let fl = job.focusOn ? await tag(job.focusOn, 'fo') : null;
           if (!fl) {
@@ -646,6 +695,7 @@ async function measureSnap(browser, label, specs, out) {
         c.states[state] = { theme, snapshot: label, error: String(e.message || e).slice(0, 200) };
         log('  !', name, String(e.message || e).slice(0, 120));
       } finally {
+        if (job.base === 'pressed') await page.mouse.up().catch(() => {});
         await page.mouse.move(rest.x, rest.y).catch(() => {});
         await untag().catch(() => {});
       }
@@ -666,6 +716,7 @@ out._meta = {
   states: {
     default: 'at rest, as captured',
     hover: 'real mouse hover (page.mouse.move), 450ms settle; not measured on the 390 snapshots',
+    pressed: 'the pointer held down on the element (page.mouse.down), 300ms settle, so active: variants apply',
     'focus-visible': 'real keyboard focus (focus, Shift+Tab, Tab) on the element or its first focusable descendant; recorded as skipped where the element cannot take focus',
     other: 'active / selected / checked / open / typed / enabled / ... are other elements or snapshots captured in that state',
   },

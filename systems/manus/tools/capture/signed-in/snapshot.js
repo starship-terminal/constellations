@@ -89,10 +89,15 @@ window.__snap = function (label, REDACT) {
   });
   clone.querySelectorAll('script,noscript,link[rel="stylesheet"],link[rel="preload"],link[rel="modulepreload"],link[rel="prefetch"],style,base').forEach((n) => n.remove());
   const INL = window.__inl || {};
+  // REDACT.blankSrc is a regex for image URLs that show the account's own content (slide
+  // screenshots, uploaded files). It is tested against the original URL, before an inlined
+  // thumbnail (window.__inl) replaces it, and a match becomes a 1x1 transparent GIF.
+  const BLANK = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA=';
+  const bl = REDACT.blankSrc ? new RegExp(REDACT.blankSrc) : null;
   clone.querySelectorAll('[src]').forEach((n) => {
     const v = n.getAttribute('src');
     let full; try { full = new URL(v, location.href).href; } catch { full = v; }
-    n.setAttribute('src', INL[full] || abs(v));
+    n.setAttribute('src', bl && (bl.test(full) || bl.test(v)) ? BLANK : INL[full] || abs(v));
   });
   clone.querySelectorAll('[href]').forEach((n) => n.setAttribute('href', abs(n.getAttribute('href'))));
   clone.querySelectorAll('[srcset]').forEach((n) => n.setAttribute('srcset', n.getAttribute('srcset').split(',').map((p) => {
@@ -119,12 +124,44 @@ window.__snap = function (label, REDACT) {
   clone.querySelector('head').insertAdjacentHTML('beforeend', parts.map((p) => (p.href
     ? '<link rel="stylesheet" href="' + p.href + '">'
     : '<style' + (p.media ? ' media="' + p.media + '"' : '') + '>' + p.css.replace(/<\/style/gi, '<\\/style') + '</style>')).join('\n'));
+  // REDACT.scrub lists [selector, replacement] pairs (ported from the Linear kit on the 2026-10-17
+  // refresh). Every text node inside a match that is not in REDACT.keep becomes the replacement
+  // numbered in order ("Sample task 1", ...), so task, project and file titles never reach the copy
+  // even when the redaction file does not name them; title-like attributes inside a match are
+  // emptied. REDACT.stripAttrs names attributes that carry private ids (data-session-id and the
+  // like); they are removed everywhere, and every /app/<id> path in an href loses its id.
+  const keep = new Set(REDACT.keep || []);
+  const keepRe = new RegExp(REDACT.keepPattern || '(?!)');
+  for (const [sel, rep] of REDACT.scrub || []) {
+    let n = 0;
+    clone.querySelectorAll(sel).forEach((el) => {
+      for (const a of ['aria-label', 'title', 'alt', 'data-tooltip']) if (el.hasAttribute(a)) el.setAttribute(a, '');
+      el.querySelectorAll('[aria-label],[title],[alt]').forEach((x) => { for (const a of ['aria-label', 'title', 'alt']) if (x.hasAttribute(a) && !keep.has(x.getAttribute(a))) x.setAttribute(a, ''); });
+      const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      const texts = [];
+      while (w.nextNode()) texts.push(w.currentNode);
+      for (const t of texts) {
+        const v = t.nodeValue.trim();
+        if (!v || keep.has(v) || keepRe.test(v) || /^[\d%.,:·\s/-]+$/.test(v)) continue;
+        t.nodeValue = rep + (/\s$/.test(rep) ? '' : ' ') + (++n);
+      }
+    });
+  }
+  // The <title> is the task's name.
+  clone.querySelectorAll('title').forEach((t) => { t.textContent = 'Manus'; });
+  for (const a of REDACT.stripAttrs || []) clone.querySelectorAll('[' + a + ']').forEach((x) => x.removeAttribute(a));
+  clone.querySelectorAll('[href*="/app/"]').forEach((x) => x.setAttribute('href', x.getAttribute('href').replace(/\/app\/[A-Za-z0-9_-]{12,}/g, '/app/ID')));
   let html = '<!doctype html>\n' + clone.outerHTML;
   for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
+  html = html.replace(/\/app\/[A-Za-z0-9_-]{16,}/g, '/app/ID');
   // Inner scrollers (the task thread is a virtualised list inside one) keep their position only
   // as a property, so each scrolled element is recorded by its child-index path for render.mjs.
   const pathOf = (el) => { const out = []; for (let n = el; n && n !== document.documentElement; n = n.parentElement) out.unshift([...n.parentElement.children].indexOf(n)); return out; };
   const scrolls = [...document.querySelectorAll('*')].filter((e) => e.scrollTop > 0).map((e) => ({ path: pathOf(e), top: e.scrollTop, left: e.scrollLeft, max: e.scrollHeight - e.clientHeight }));
-  const meta = { label, url: location.href, title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
+  // The URL holds the task or project id and the title the task's name, so the URL goes through the
+  // same redaction (ids cut) and the title is left out.
+  let url = location.href.replace(/\/app\/[A-Za-z0-9_-]{12,}/g, '/app/ID');
+  for (const [pattern, flags, rep] of REDACT.replace) url = url.replace(new RegExp(pattern, flags), rep);
+  const meta = { label, url, title: '', scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
   return 'SNAPSTART' + JSON.stringify(meta) + 'SNAPMETA' + html + 'SNAPEND';
 };
