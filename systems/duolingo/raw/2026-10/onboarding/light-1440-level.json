@@ -1,0 +1,249 @@
+{
+ "url": "/welcome",
+ "theme": "light",
+ "w": 1440,
+ "headings": [],
+ "items": [
+  {
+   "tag": "BUTTON",
+   "dt": "",
+   "role": "",
+   "text": "",
+   "rect": [
+    202,
+    41,
+    18,
+    18
+   ],
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "border-top-color": "rgb(0, 0, 0)",
+    "border-top-width": "0px",
+    "border-bottom-width": "0px",
+    "border-radius": "0px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "400",
+    "line-height": "19.55px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "18px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   },
+   "before": null
+  },
+  {
+   "tag": "DIV",
+   "dt": "",
+   "role": "radio",
+   "text": "I’m new to Spanish",
+   "rect": [
+    478,
+    269,
+    484,
+    62
+   ],
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(60, 60, 60)",
+    "border-top-color": "rgba(0, 0, 0, 0)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "12px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "500",
+    "line-height": "20px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "62px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   },
+   "before": {
+    "bg": "rgb(255, 255, 255)",
+    "border": "rgb(229, 229, 229) 2px",
+    "shadow": "rgb(229, 229, 229) 0px 2px 0px 0px",
+    "radius": "12px"
+   }
+  },
+  {
+   "tag": "DIV",
+   "dt": "",
+   "role": "radio",
+   "text": "I know some common words",
+   "rect": [
+    478,
+    347,
+    484,
+    62
+   ],
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(60, 60, 60)",
+    "border-top-color": "rgba(0, 0, 0, 0)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "12px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "500",
+    "line-height": "20px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "62px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   },
+   "before": {
+    "bg": "rgb(255, 255, 255)",
+    "border": "rgb(229, 229, 229) 2px",
+    "shadow": "rgb(229, 229, 229) 0px 2px 0px 0px",
+    "radius": "12px"
+   }
+  },
+  {
+   "tag": "DIV",
+   "dt": "",
+   "role": "radio",
+   "text": "I can have basic conversations",
+   "rect": [
+    478,
+    425,
+    484,
+    62
+   ],
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(60, 60, 60)",
+    "border-top-color": "rgba(0, 0, 0, 0)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "12px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "500",
+    "line-height": "20px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "62px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   },
+   "before": {
+    "bg": "rgb(255, 255, 255)",
+    "border": "rgb(229, 229, 229) 2px",
+    "shadow": "rgb(229, 229, 229) 0px 2px 0px 0px",
+    "radius": "12px"
+   }
+  },
+  {
+   "tag": "DIV",
+   "dt": "",
+   "role": "radio",
+   "text": "I can talk about various topics",
+   "rect": [
+    478,
+    503,
+    484,
+    62
+   ],
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(60, 60, 60)",
+    "border-top-color": "rgba(0, 0, 0, 0)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "12px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "500",
+    "line-height": "20px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "62px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   },
+   "before": {
+    "bg": "rgb(255, 255, 255)",
+    "border": "rgb(229, 229, 229) 2px",
+    "shadow": "rgb(229, 229, 229) 0px 2px 0px 0px",
+    "radius": "12px"
+   }
+  },
+  {
+   "tag": "DIV",
+   "dt": "",
+   "role": "radio",
+   "text": "I can discuss most topics in detail",
+   "rect": [
+    478,
+    581,
+    484,
+    62
+   ],
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(60, 60, 60)",
+    "border-top-color": "rgba(0, 0, 0, 0)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "12px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "500",
+    "line-height": "20px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "62px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   },
+   "before": {
+    "bg": "rgb(255, 255, 255)",
+    "border": "rgb(229, 229, 229) 2px",
+    "shadow": "rgb(229, 229, 229) 0px 2px 0px 0px",
+    "radius": "12px"
+   }
+  },
+  {
+   "tag": "BUTTON",
+   "dt": "funboarding-continue-button",
+   "role": "",
+   "text": "Continue",
+   "rect": [
+    1107,
+    806,
+    159,
+    50
+   ],
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(175, 175, 175)",
+    "border-top-color": "rgba(0, 0, 0, 0)",
+    "border-top-width": "0px",
+    "border-bottom-width": "4px",
+    "border-radius": "16px",
+    "box-shadow": "none",
+    "font-size": "15px",
+    "font-weight": "700",
+    "line-height": "18px",
+    "letter-spacing": "0.8px",
+    "text-transform": "uppercase",
+    "height": "50px",
+    "padding-top": "0px",
+    "padding-left": "44px"
+   },
+   "before": {
+    "bg": "rgb(229, 229, 229)",
+    "border": "rgb(88, 167, 0) 0px",
+    "shadow": "none",
+    "radius": "16px"
+   }
+  }
+ ],
+ "inputs": []
+}

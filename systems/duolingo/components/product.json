@@ -144,67 +144,67 @@
      {
       "part": "container",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "learn-dark-default #3; css:9071-d035f2e5.css ._3P5E_"
      },
      {
       "part": "container",
       "property": "border-right",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default #3"
      },
      {
       "part": "label (default)",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "learn-dark-default cl=_1AZJt (#19)"
      },
      {
       "part": "label (selected)",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "learn-dark-default #13; css:9071-d035f2e5.css ._3glZ0 ._1AZJt"
      },
      {
       "part": "item (selected)",
       "property": "background",
-      "value": "#202F36 (iguana, dark)",
+      "value": "`surface.selected` #202F36 (iguana, dark)",
       "source": "learn-dark-default cl=_348_2 (#10)"
      },
      {
       "part": "item (selected)",
       "property": "border",
-      "value": "2px #3F85A7 (blue-jay, dark)",
+      "value": "2px `border.selected` #3F85A7 (blue-jay, dark)",
       "source": "learn-dark-default cl=_348_2 (#10)"
      },
      {
       "part": "item (hover)",
       "property": "background",
-      "value": "#202F36 (polar, dark), same hex as iguana in dark, so selected differs from hover only by the blue-jay border",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark), same hex as iguana in dark, so selected differs from hover only by the blue-jay border",
       "source": "captured:learn-dark-nav-hover #35"
      },
      {
       "part": "notification dot",
       "property": "fill / ring",
-      "value": "#EE5555 (cardinal, dark) / 2px #131F24 (snow, dark)",
+      "value": "`accent.danger.text` #EE5555 (cardinal, dark) / 2px `text.onPrimary` #131F24 (snow, dark)",
       "source": "learn-dark-default #25"
      },
      {
       "part": "MORE popover",
       "property": "surface / border / row hover",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark) / #202F36 (polar, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark) / `gamification.league.demotedRow` #202F36 (polar, dark)",
       "source": "learn-dark-more-menu #59; captured:learn-dark-more-menu-item-hover #68"
      },
      {
       "part": "MORE popover",
       "property": "row text",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "learn-dark-more-menu #61"
      },
      {
       "part": "promo card",
       "property": "border / title / body / CTA",
-      "value": "#37464F (swan) / #F1F7FB (eel, from CSS; equal to the dump default) / #DCE6EC (wolf) / #49C0F8 (macaw), dark",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.primary` #F1F7FB (eel, from CSS; equal to the dump default) / `text.secondary` #DCE6EC (wolf) / `text.link` #49C0F8 (macaw), dark",
       "source": "learn-dark-default #58-#63; css:4243-a8d324a8.css ._332av"
      }
     ],
@@ -212,61 +212,61 @@
      {
       "part": "container",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "learn-light-default #3"
      },
      {
       "part": "container",
       "property": "border-right",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-default #3"
      },
      {
       "part": "label (default)",
       "property": "color",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "learn-light-default #19"
      },
      {
       "part": "label (selected)",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "learn-light-default #13"
      },
      {
       "part": "item (selected)",
       "property": "background",
-      "value": "#DDF4FF (iguana, light)",
+      "value": "`surface.selected` #DDF4FF (iguana, light)",
       "source": "learn-light-default cl=_348_2 (#10)"
      },
      {
       "part": "item (selected)",
       "property": "border",
-      "value": "2px #84D8FF (blue-jay, light)",
+      "value": "2px `border.selected` #84D8FF (blue-jay, light)",
       "source": "learn-light-default #10"
      },
      {
       "part": "item (hover)",
       "property": "background",
-      "value": "#F7F7F7 (polar, light)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light)",
       "source": "css:9071-d035f2e5.css ._3Dchg:hover; captured:learn-light-more-menu #54"
      },
      {
       "part": "notification dot",
       "property": "fill / ring",
-      "value": "#FF4B4B (cardinal, light) / 2px #FFFFFF (snow, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light) / 2px `text.onPrimary` #FFFFFF (snow, light)",
       "source": "learn-light-default #25"
      },
      {
       "part": "MORE popover",
       "property": "surface / border / row text",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #777777 (wolf), light",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `text.secondary` #777777 (wolf), light",
       "source": "learn-light-more-menu #59; css:4779-c36ad395.css ._36bu_; css:9071-d035f2e5.css .GHXZL"
      },
      {
       "part": "promo card",
       "property": "border / title / body / CTA",
-      "value": "#E5E5E5 (swan) / #4B4B4B (eel) / #777777 (wolf) / #1CB0F6 (macaw), light",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.primary` #4B4B4B (eel) / `text.secondary` #777777 (wolf) / `text.link` #1CB0F6 (macaw), light",
       "source": "learn-light-default #58-#63"
      }
     ],
@@ -480,37 +480,37 @@
      {
       "part": "flag",
       "property": "outline",
-      "value": "2px #FFFFFF (snow-always-light, dark)",
+      "value": "2px `text.onColor` #FFFFFF (snow-always-light, dark)",
       "source": "css:5275-8898b509.css .jNMwi"
      },
      {
       "part": "streak count (0 days)",
       "property": "color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default dt=streak-stat cl=_2HAQo (#78)"
      },
      {
       "part": "streak count (active)",
       "property": "color",
-      "value": "#FFAB33 (fox, dark), from CSS; desktop dark was only captured at streak 0 (the dark mobile bar shows the same token)",
+      "value": "`status.warningText` #FFAB33 (fox, dark), from CSS; desktop dark was only captured at streak 0 (the dark mobile bar shows the same token)",
       "source": "css:5275-8898b509.css ._2ABdc; learn-dark-mobile dt=streak-stat (#14)"
      },
      {
       "part": "gems count",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "learn-dark-default dt=lingot-stat (#82)"
      },
      {
       "part": "hearts count",
       "property": "color",
-      "value": "#EE5555 (cardinal, dark)",
+      "value": "`accent.danger.text` #EE5555 (cardinal, dark)",
       "source": "learn-dark-default cl=xb7v_ (#86)"
      },
      {
       "part": "trigger hover / open",
       "property": "background",
-      "value": "#202F36 (polar, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark)",
       "source": "captured:learn-dark-streak-dropdown #75"
      }
     ],
@@ -518,43 +518,43 @@
      {
       "part": "flag",
       "property": "outline",
-      "value": "2px #FFFFFF (snow-always-light, light); invisible on the white page",
+      "value": "2px `text.onColor` #FFFFFF (snow-always-light, light); invisible on the white page",
       "source": "css:5275-8898b509.css .jNMwi"
      },
      {
       "part": "course number",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "learn-light-default cl=_2pjbW (#74)"
      },
      {
       "part": "streak count (0 days)",
       "property": "color",
-      "value": "#E5E5E5 (swan, light), from CSS (light was captured at streak 1)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), from CSS (light was captured at streak 1)",
       "source": "css:5275-8898b509.css ._2HAQo"
      },
      {
       "part": "streak count (active)",
       "property": "color",
-      "value": "#FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "learn-light-default dt=streak-stat cl=_2ABdc (#79)"
      },
      {
       "part": "gems count",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "learn-light-default dt=lingot-stat (#83)"
      },
      {
       "part": "hearts count",
       "property": "color",
-      "value": "#FF4B4B (cardinal, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
       "source": "learn-light-default cl=xb7v_ (#87)"
      },
      {
       "part": "trigger hover / open",
       "property": "background",
-      "value": "#F7F7F7 (polar, light)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light)",
       "source": "captured:learn-light-streak-dropdown #76"
      }
     ],
@@ -763,13 +763,13 @@
      {
       "part": "card shell",
       "property": "background / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default #95"
      },
      {
       "part": "footer links",
       "property": "color",
-      "value": "#52656D (hare, dark); hover #49C0F8 (macaw, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark); hover `text.link` #49C0F8 (macaw, dark)",
       "source": "learn-dark-default #136; css:5275-8898b509.css ._1oCct:hover"
      }
     ],
@@ -777,13 +777,13 @@
      {
       "part": "card shell",
       "property": "background / border",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-default #97"
      },
      {
       "part": "footer links",
       "property": "color",
-      "value": "#AFAFAF (hare, light); hover #1CB0F6 (macaw, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light); hover `text.link` #1CB0F6 (macaw, light)",
       "source": "learn-light-default #145; css:5275-8898b509.css ._1oCct:hover"
      }
     ],
@@ -913,37 +913,37 @@
      {
       "part": "bar",
       "property": "background",
-      "value": "#131F24 (snow, dark), overridable by --web-ui_topbar-background-color",
+      "value": "`text.onPrimary` #131F24 (snow, dark), overridable by --web-ui_topbar-background-color",
       "source": "learn-dark-mobile #3; css:5275-8898b509.css ._3sbzq"
      },
      {
       "part": "bar",
       "property": "text colour",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "learn-dark-mobile #3"
      },
      {
       "part": "course number",
       "property": "color",
-      "value": "#F1F7FB (eel, dark), from CSS (equals the dump default)",
+      "value": "`text.primary` #F1F7FB (eel, dark), from CSS (equals the dump default)",
       "source": "css:5275-8898b509.css ._2DN_i"
      },
      {
       "part": "streak count",
       "property": "color",
-      "value": "#FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "learn-dark-mobile dt=streak-stat cl=iFJ2Z (#14)"
      },
      {
       "part": "gems count",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "learn-dark-mobile dt=lingot-stat (#18)"
      },
      {
       "part": "hearts count",
       "property": "color",
-      "value": "#EE5555 (cardinal, dark)",
+      "value": "`accent.danger.text` #EE5555 (cardinal, dark)",
       "source": "learn-dark-mobile cl=IYCa_ (#23)"
      }
     ],
@@ -951,37 +951,37 @@
      {
       "part": "bar",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "learn-light-mobile #3"
      },
      {
       "part": "bar",
       "property": "text colour",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "learn-light-mobile #3"
      },
      {
       "part": "course number",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "learn-light-mobile #9"
      },
      {
       "part": "streak count",
       "property": "color",
-      "value": "#FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "learn-light-mobile #14"
      },
      {
       "part": "gems count",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "learn-light-mobile #18"
      },
      {
       "part": "hearts count",
       "property": "color",
-      "value": "#FF4B4B (cardinal, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
       "source": "learn-light-mobile #23"
      }
     ],
@@ -1113,19 +1113,19 @@
      {
       "part": "bar",
       "property": "background / top border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-mobile #27"
      },
      {
       "part": "active chip",
       "property": "background",
-      "value": "#202F36 (iguana, dark)",
+      "value": "`surface.selected` #202F36 (iguana, dark)",
       "source": "learn-dark-mobile #28"
      },
      {
       "part": "active chip",
       "property": "border",
-      "value": "2px #3F85A7 (blue-jay, dark)",
+      "value": "2px `border.selected` #3F85A7 (blue-jay, dark)",
       "source": "learn-dark-mobile #28"
      }
     ],
@@ -1133,19 +1133,19 @@
      {
       "part": "bar",
       "property": "background / top border",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-mobile #27"
      },
      {
       "part": "active chip",
       "property": "background",
-      "value": "#DDF4FF (iguana, light)",
+      "value": "`surface.selected` #DDF4FF (iguana, light)",
       "source": "learn-light-mobile #28"
      },
      {
       "part": "active chip",
       "property": "border",
-      "value": "2px #84D8FF (blue-jay, light)",
+      "value": "2px `border.selected` #84D8FF (blue-jay, light)",
       "source": "learn-light-mobile #28"
      }
     ],
@@ -1305,7 +1305,7 @@
      {
       "part": "page",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "css:app-f2ef02f8.css body {background:rgb(var(--color-snow))}"
      }
     ],
@@ -1313,7 +1313,7 @@
      {
       "part": "page",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "css:app-f2ef02f8.css body {background:rgb(var(--color-snow))}"
      }
     ],
@@ -1550,37 +1550,37 @@
      {
       "part": "banner (unit 81, owl)",
       "property": "background",
-      "value": "#58CC02 (owl-always-light, dark)",
+      "value": "`unitColors.green` #58CC02 (owl-always-light, dark)",
       "source": "learn-dark-default PsNCe LJB6r (#154)"
      },
      {
       "part": "banner (unit 80, starfish)",
       "property": "background",
-      "value": "#FF86D0 (starfish, dark)",
+      "value": "`unitColors.pink` #FF86D0 (starfish, dark)",
       "source": "learn-dark-completed-unit PsNCe _1p2Lt (#154)"
      },
      {
       "part": "banner",
       "property": "text colour",
-      "value": "#FFFFFF (snow-always-light, dark)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light, dark)",
       "source": "learn-dark-default (#154); css:path-e50cab6b.css .LJB6r"
      },
      {
       "part": "label",
       "property": "colour",
-      "value": "#FFFFFF (snow-always-light) at opacity 0.7",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) at opacity 0.7",
       "source": "learn-dark-default _3WYpp (#157)"
      },
      {
       "part": "GUIDEBOOK button",
       "property": "face",
-      "value": "transparent (header colour shows through); ::before border and 2px lip #000000 @0.20 (black)",
+      "value": "transparent (header colour shows through); ::before border and 2px lip `border.onColor` #000000 @0.20 (black)",
       "source": "learn-dark-default dt=guidebook-button-82 (#159) ::before"
      },
      {
       "part": "GUIDEBOOK label",
       "property": "colour",
-      "value": "#FFFFFF (snow-always-light, dark)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light, dark)",
       "source": "learn-dark-default _30k3d (#161)"
      }
     ],
@@ -1588,25 +1588,25 @@
      {
       "part": "banner (unit 81, owl)",
       "property": "background",
-      "value": "#58CC02 (owl-always-light, light)",
+      "value": "`unitColors.green` #58CC02 (owl-always-light, light)",
       "source": "learn-light-default PsNCe LJB6r (#163)"
      },
      {
       "part": "banner (unit 80, starfish)",
       "property": "background",
-      "value": "#FF86D0 (starfish, light)",
+      "value": "`unitColors.pink` #FF86D0 (starfish, light)",
       "source": "learn-light-completed-unit PsNCe _1p2Lt (#163)"
      },
      {
       "part": "banner",
       "property": "text colour",
-      "value": "#FFFFFF (snow-always-light, light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light, light)",
       "source": "css:path-e50cab6b.css .LJB6r"
      },
      {
       "part": "GUIDEBOOK button",
       "property": "face / lip",
-      "value": "transparent; ::before border and lip #000000 @0.20 (black)",
+      "value": "transparent; ::before border and lip `border.onColor` #000000 @0.20 (black)",
       "source": "learn-light-default dt=guidebook-button-82"
      }
     ],
@@ -1640,61 +1640,61 @@
      {
       "part": "owl",
       "property": "banner class / colour",
-      "value": "LJB6r: owl-always-light #58CC02 (both themes)",
+      "value": "LJB6r: `unitColors.green` owl-always-light #58CC02 (both themes)",
       "source": "captured: learn-dark-default #154, learn-light-default #163; css:path-e50cab6b.css .LJB6r"
      },
      {
       "part": "starfish",
       "property": "banner class / colour",
-      "value": "_1p2Lt: starfish #FF86D0 (both themes)",
+      "value": "_1p2Lt: `unitColors.pink` starfish #FF86D0 (both themes)",
       "source": "captured: learn-dark-completed-unit #154, learn-light-completed-unit #163; css:path-e50cab6b.css ._1p2Lt"
      },
      {
       "part": "macaw",
       "property": "banner class / colour",
-      "value": "_1yHHi or _3cANP: macaw-always-light #1CB0F6",
+      "value": "_1yHHi or _3cANP: `unitColors.blue` macaw-always-light #1CB0F6",
       "source": "css only on desktop: css:path-e50cab6b.css ._1yHHi, ._3cANP; seen visually on the mobile screenshot (learn-dark-mobile, unit 1)"
      },
      {
       "part": "cardinal",
       "property": "banner class / colour",
-      "value": "_1g6lo: cardinal-always-light #FF4B4B",
+      "value": "_1g6lo: `unitColors.red` cardinal-always-light #FF4B4B",
       "source": "css only: css:path-e50cab6b.css ._1g6lo (unit 128 is cardinal in learn-*-path-end, but its header was not on screen)"
      },
      {
       "part": "fox",
       "property": "banner class / colour",
-      "value": "_2DiMj / _2Iw0k: fox-always-light #FF9600",
+      "value": "_2DiMj / _2Iw0k: `unitColors.orange` fox-always-light #FF9600",
       "source": "css only: css:path-e50cab6b.css"
      },
      {
       "part": "grizzly-lite",
       "property": "banner class / colour",
-      "value": "_3JOb1: grizzly-lite #DC8F47",
+      "value": "_3JOb1: `unitColors.brown` grizzly-lite #DC8F47",
       "source": "css only: css:path-e50cab6b.css"
      },
      {
       "part": "beetle",
       "property": "banner class / colour",
-      "value": "M7Jo3: beetle #CE82FF",
+      "value": "M7Jo3: `dataViz.avatar.purple` beetle #CE82FF",
       "source": "css only: css:path-e50cab6b.css"
      },
      {
       "part": "peacock",
       "property": "banner class / colour",
-      "value": "_2bAvg: peacock #00CD9C",
+      "value": "_2bAvg: `unitColors.teal` peacock #00CD9C",
       "source": "css only: css:path-e50cab6b.css"
      },
      {
       "part": "dragon",
       "property": "banner class / colour",
-      "value": "_14qwu: dragon #CC348D",
+      "value": "_14qwu: `unitColors.magenta` dragon #CC348D",
       "source": "css only: css:path-e50cab6b.css"
      },
      {
       "part": "legendary (gold)",
       "property": "banner vars",
-      "value": "jTeoa / _13YX7._1Bwfb: bee #FFC800 L / #FFC700 D with gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text guinea-pig-always-light #CD7900",
+      "value": "jTeoa / _13YX7._1Bwfb: `gamification.xp` bee #FFC800 L / #FFC700 D with `palette.light.gold-shine` gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900",
       "source": "css only: css:path-e50cab6b.css .jTeoa, ._13YX7._1Bwfb"
      }
     ]
@@ -1725,7 +1725,7 @@
     "button: secondary (GUIDEBOOK, desktop)",
     "button: unit-coloured split button (mobile)"
    ],
-   "desktop_vs_mobile": "Mobile (<700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face owl-always-light #58CC02, 4px lip tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.",
+   "desktop_vs_mobile": "Mobile (<700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face `unitColors.green` owl-always-light #58CC02, 4px lip `palette.light.tree-frog-always-light` tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.",
    "screenshots": [
     {
      "dump": "learn-dark-default",
@@ -1778,7 +1778,7 @@
     "GUIDEBOOK hover/active not captured (CSS only).",
     "Mobile screenshots do not match the mobile dumps (screenshot shows unit 1 macaw, dump shows unit 12 owl); mobile colours are taken from the dump only."
    ],
-   "notes": "Dark theme rules (html[data-duo-theme=dark] .EDeQe:not(._1Bwfb) etc.) switch --path-unit-background-color to polar-always-dark #202F36 inside the path sections, but the banner uses its own colour class (LJB6r) so it stays saturated.",
+   "notes": "Dark theme rules (html[data-duo-theme=dark] .EDeQe:not(._1Bwfb) etc.) switch --path-unit-background-color to `palette.dark.polar-always-dark` polar-always-dark #202F36 inside the path sections, but the banner uses its own colour class (LJB6r) so it stays saturated.",
    "part": "path"
   },
   {
@@ -1822,13 +1822,13 @@
      {
       "part": "rule",
       "property": "colour",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default _1JA0o (#1183)"
      },
      {
       "part": "title",
       "property": "colour",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "learn-dark-default _3qGKs (#1184)"
      }
     ],
@@ -1836,13 +1836,13 @@
      {
       "part": "rule",
       "property": "colour",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-default _1JA0o (#175)"
      },
      {
       "part": "title",
       "property": "colour",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "learn-light-default _3qGKs (#176)"
      }
     ],
@@ -2004,31 +2004,31 @@
      {
       "part": "current / completed face",
       "property": "background",
-      "value": "unit colour: #58CC02 (owl-always-light), #1CB0F6 (macaw-always-light), #FF86D0 (starfish), #FF9600 (fox-always-light) in the captured units",
+      "value": "unit colour: `unitColors.green` #58CC02 (owl-always-light), `unitColors.blue` #1CB0F6 (macaw-always-light), `unitColors.pink` #FF86D0 (starfish), `unitColors.orange` #FF9600 (fox-always-light) in the captured units",
       "source": "learn-dark-default ::after of #1236 (owl), #572 (macaw), #1036 (starfish), #1319 (fox)"
      },
      {
       "part": "lip",
       "property": "colour",
-      "value": "face colour with #000000 @0.20 (black) laid over it",
+      "value": "face colour with `border.onColor` #000000 @0.20 (black) laid over it",
       "source": "learn-dark-default (#1236) ::after box-shadow"
      },
      {
       "part": "locked face",
       "property": "background",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default G_Z0K ::after (#1245); css:path-e50cab6b.css .G_Z0K"
      },
      {
       "part": "progress ring track",
       "property": "fill",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default svg path (#1233)"
      },
      {
       "part": "progress ring end cap",
       "property": "fill",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "learn-dark-default circle (#1234)"
      },
      {
@@ -2040,25 +2040,25 @@
      {
       "part": "shine overlay",
       "property": "colour",
-      "value": "macaw units #43BEF8 (bea-junior-shine); starfish units #FF9ED9 (zari-shine)",
+      "value": "macaw units `palette.dark.bea-junior-shine` #43BEF8 (bea-junior-shine); starfish units `palette.dark.zari-shine` #FF9ED9 (zari-shine)",
       "source": "learn-dark-default _25i8d (#573), _3aYNQ (#1037)"
      },
      {
       "part": "radio icon (completed)",
       "property": "colour",
-      "value": "macaw units #147BAC (bea-radio); starfish #B35E92 (zari-radio); owl #3E8F01 (duo-radio)",
+      "value": "macaw units `palette.dark.bea-radio` #147BAC (bea-radio); starfish `palette.dark.zari-radio` #B35E92 (zari-radio); owl `palette.dark.duo-radio` #3E8F01 (duo-radio)",
       "source": "learn-dark-default _1-7MG (#595), _2GiEE; learn-dark-completed-unit _3y0yK"
      },
      {
       "part": "START bubble",
       "property": "bg / border / text",
-      "value": "#131F24 (snow) / #37464F (swan) / unit colour #58CC02 (owl-always-light)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / unit colour `unitColors.green` #58CC02 (owl-always-light)",
       "source": "learn-dark-default _27IMa (#1239)"
      },
      {
       "part": "jump tooltip",
       "property": "bg / border / text",
-      "value": "#131F24 (snow) / #37464F (swan) / #FF9600 (fox-always-light, next unit colour)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / `unitColors.orange` #FF9600 (fox-always-light, next unit colour)",
       "source": "learn-dark-default TOHdU (#1322)"
      }
     ],
@@ -2066,43 +2066,43 @@
      {
       "part": "current / completed face",
       "property": "background",
-      "value": "same unit colours as dark (*-always-light names): owl #58CC02, macaw #1CB0F6, starfish #FF86D0, fox #FF9600",
+      "value": "same unit colours as dark (*-always-light names): `unitColors.green` owl #58CC02, `unitColors.blue` macaw #1CB0F6, `unitColors.pink` starfish #FF86D0, `unitColors.orange` fox #FF9600",
       "source": "learn-light-default ::after of #1258, #581, #1045, #1341"
      },
      {
       "part": "locked face",
       "property": "background",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-default G_Z0K ::after (#1267)"
      },
      {
       "part": "progress ring track",
       "property": "fill",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-default svg path (#1254)"
      },
      {
       "part": "progress ring arc",
       "property": "fill",
-      "value": "#58CC02 (owl, light) = unit colour; arc covers about a third at \"Lesson 3 of 6\"",
+      "value": "`accent.primary.face` #58CC02 (owl, light) = unit colour; arc covers about a third at \"Lesson 3 of 6\"",
       "source": "learn-light-default path (#1256) r=[612,303,49,68]"
      },
      {
       "part": "progress ring end cap",
       "property": "fill",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "learn-light-default circle (#1255)"
      },
      {
       "part": "START bubble",
       "property": "bg / border / text",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #58CC02 (owl)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `accent.primary.face` #58CC02 (owl)",
       "source": "learn-light-default _27IMa; css:path-e50cab6b.css ._27IMa"
      },
      {
       "part": "jump tooltip",
       "property": "bg / border / text",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #FF9600 (fox)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `status.warningText` #FF9600 (fox)",
       "source": "learn-light-default TOHdU (#1344)"
      }
     ],
@@ -2204,7 +2204,7 @@
      {
       "part": "per unit colour",
       "property": "face / shine / radio icon / mobile-header lip",
-      "value": "macaw: #1CB0F6 / bea-junior-shine #43BEF8 / bea-radio #147BAC / bea-secondary #1899D6; owl: #58CC02 / duo-shine #72D627 / duo-radio #3E8F01 / tree-frog-always-light #58A700; cardinal: #FF4B4B / eddy-shine #FF6969 / eddy-radio #B33535 / eddy-secondary #EA2B2B; grizzly-lite: #DC8F47 / falstaff-shine #E3A56C / falstaff-radio #834F33 / falstaff-secondary #965A3A; beetle: #CE82FF / lily-shine #D696FF / lily-radio #905BB3 / lily-secondary #A568CC; fox: #FF9600 / lin-lucy-shine #FFA82C / lin-lucy-radio #B36900 / guinea-pig-always-light #CD7900; peacock: #00CD9C / oscar-shine #3FD9B5 / oscar-radio #00906D / oscar-secondary #00A47D; dragon: #CC348D / vikram-shine #D65AA2 / vikram-radio #8F2463 / vikram-secondary #A32A71; starfish: #FF86D0 / zari-shine #FF9ED9 / zari-radio #B35E92 / zari-secondary #CC6BA6",
+      "value": "`unitColors.blue` macaw: #1CB0F6 / `palette.light.bea-junior-shine` bea-junior-shine #43BEF8 / `palette.light.bea-radio` bea-radio #147BAC / `text.selected` bea-secondary #1899D6; `unitColors.green` owl: #58CC02 / `palette.light.duo-shine` duo-shine #72D627 / `palette.light.duo-radio` duo-radio #3E8F01 / `palette.light.tree-frog-always-light` tree-frog-always-light #58A700; `accent.danger.text` cardinal: #FF4B4B / `palette.light.eddy-shine` eddy-shine #FF6969 / `palette.light.eddy-radio` eddy-radio #B33535 / `palette.light.eddy-secondary` eddy-secondary #EA2B2B; `unitColors.brown` grizzly-lite: #DC8F47 / `palette.light.falstaff-shine` falstaff-shine #E3A56C / `palette.light.falstaff-radio` falstaff-radio #834F33 / `palette.light.falstaff-secondary` falstaff-secondary #965A3A; `dataViz.avatar.purple` beetle: #CE82FF / `palette.light.lily-shine` lily-shine #D696FF / `palette.light.lily-radio` lily-radio #905BB3 / `palette.light.lily-secondary` lily-secondary #A568CC; `status.warningText` fox: #FF9600 / `palette.light.lin-lucy-shine` lin-lucy-shine #FFA82C / `palette.light.lin-lucy-radio` lin-lucy-radio #B36900 / `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900; `unitColors.teal` peacock: #00CD9C / `palette.light.oscar-shine` oscar-shine #3FD9B5 / `palette.light.oscar-radio` oscar-radio #00906D / `palette.light.oscar-secondary` oscar-secondary #00A47D; `unitColors.magenta` dragon: #CC348D / `palette.light.vikram-shine` vikram-shine #D65AA2 / `palette.light.vikram-radio` vikram-radio #8F2463 / `palette.light.vikram-secondary` vikram-secondary #A32A71; `unitColors.pink` starfish: #FF86D0 / `palette.light.zari-shine` zari-shine #FF9ED9 / `palette.light.zari-radio` zari-radio #B35E92 / `palette.light.zari-secondary` zari-secondary #CC6BA6",
       "source": "css:path-e50cab6b.css: unit classes (._2hQt4 ... ._2_zd7), shine classes (.nboUl ... ._3aYNQ), radio classes (._7lILJ ... ._2GiEE), secondary classes (._3TE__ ... ._43NnU). Pairing inferred from matching rule order; captured pairs: macaw/_25i8d/_1-7MG, starfish/_3aYNQ/_2GiEE, owl/_3y0yK"
      }
     ]
@@ -2247,7 +2247,7 @@
     },
     {
      "state": "legendary",
-     "changes": "class _2ucCV: face bee (#FFC800 light / #FFC700 dark), lip and band guinea-pig-always-light #CD7900 @0.5",
+     "changes": "class _2ucCV: face bee (#FFC800 light / #FFC700 dark), lip and band `palette.light.guinea-pig-always-light` guinea-pig-always-light #CD7900 @0.5",
      "source": "css:path-e50cab6b.css ._2ucCV, ._2ucCV:before, ._2ucCV:after (not captured)"
     },
     {
@@ -2372,37 +2372,37 @@
      {
       "part": "current shell + arrow",
       "property": "background",
-      "value": "#58CC02 (owl-always-light) = unit colour; no border (_1Fbw- border 0)",
+      "value": "`unitColors.green` #58CC02 (owl-always-light) = unit colour; no border (_1Fbw- border 0)",
       "source": "learn-dark-node-popover (#1239, #1246); css:path-e50cab6b.css ._1Fbw-"
      },
      {
       "part": "completed shell",
       "property": "background",
-      "value": "#FF86D0 (starfish) = unit colour",
+      "value": "`unitColors.pink` #FF86D0 (starfish) = unit colour",
       "source": "learn-dark-completed-popover (#1429)"
      },
      {
       "part": "shell text",
       "property": "colour",
-      "value": "#FFFFFF (snow-always-light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light)",
       "source": "learn-dark-node-popover (#1239)"
      },
      {
       "part": "START / REVIEW button",
       "property": "face / text / lip",
-      "value": "face #FFFFFF (snow-always-light); text = unit colour (#58CC02 owl / #FF86D0 starfish); lip #FFFFFF @0.70",
+      "value": "face `text.onColor` #FFFFFF (snow-always-light); text = unit colour (#58CC02 owl / #FF86D0 starfish); lip #FFFFFF @0.70",
       "source": "learn-dark-node-popover (#1244) ::before; learn-dark-completed-popover (#1434); css:app-f2ef02f8.css ._19ped; css:path-e50cab6b.css ._2yBgn .PbV1v"
      },
      {
       "part": "locked shell + arrow",
       "property": "bg / border / text",
-      "value": "#202F36 (polar, dark) / 2px #37464F (swan) / #52656D (hare)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark) / 2px `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "learn-dark-locked-popover _2txMY (#1270, #1278); css:path-e50cab6b.css ._2txMY"
      },
      {
       "part": "LOCKED button",
       "property": "face / text",
-      "value": "#37464F (swan) / #52656D (hare); no lip (pushed down 4px)",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare); no lip (pushed down 4px)",
       "source": "learn-dark-locked-popover dt=skill-path-level-locked-button (#1275)"
      }
     ],
@@ -2410,19 +2410,19 @@
      {
       "part": "current shell + arrow",
       "property": "background",
-      "value": "#58CC02 (owl, light)",
+      "value": "`accent.primary.face` #58CC02 (owl, light)",
       "source": "learn-light-node-popover (#1249, #1256)"
      },
      {
       "part": "completed shell",
       "property": "background",
-      "value": "#FF86D0 (starfish, light)",
+      "value": "`unitColors.pink` #FF86D0 (starfish, light)",
       "source": "learn-light-completed-popover (#1438)"
      },
      {
       "part": "shell text",
       "property": "colour",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "learn-light-node-popover (#1249)"
      },
      {
@@ -2434,13 +2434,13 @@
      {
       "part": "locked shell + arrow",
       "property": "bg / border / text",
-      "value": "#F7F7F7 (polar, light) / 2px #E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light) / 2px `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "learn-light-locked-popover (#1268, #1276)"
      },
      {
       "part": "LOCKED button",
       "property": "face / text",
-      "value": "#E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "learn-light-locked-popover (#1273)"
      }
     ],
@@ -2687,13 +2687,13 @@
      {
       "part": "face",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "learn-dark-completed-unit (#1668) ::before"
      },
      {
       "part": "border + lip",
       "property": "colour",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-completed-unit (#1668) ::before"
      },
      {
@@ -2707,13 +2707,13 @@
      {
       "part": "face",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "learn-light-completed-unit (#1659) ::before"
      },
      {
       "part": "border + lip",
       "property": "colour",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-completed-unit (#1659) ::before"
      },
      {
@@ -2856,31 +2856,31 @@
      {
       "part": "card",
       "property": "border",
-      "value": "#37464F (swan, dark); background transparent",
+      "value": "`gamification.streakInactive` #37464F (swan, dark); background transparent",
       "source": "learn-dark-path-end (#468)"
      },
      {
       "part": "UP NEXT pill (locked)",
       "property": "bg / text",
-      "value": "#37464F (swan) / #52656D (hare)",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "learn-dark-path-end (#470); css:path-e50cab6b.css ._1Qswf"
      },
      {
       "part": "title",
       "property": "colour",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "learn-dark-path-end _1YutV (#473)"
      },
      {
       "part": "description",
       "property": "colour",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "learn-dark-path-end _3czy6 (#474)"
      },
      {
       "part": "button",
       "property": "face / border+lip / text",
-      "value": "#131F24 (snow) / #37464F (swan) / #49C0F8 (macaw, dark)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / `text.link` #49C0F8 (macaw, dark)",
       "source": "learn-dark-path-end (#475) ::before"
      },
      {
@@ -2894,31 +2894,31 @@
      {
       "part": "card",
       "property": "border",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-path-end (#478)"
      },
      {
       "part": "UP NEXT pill (locked)",
       "property": "bg / text",
-      "value": "#E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "learn-light-path-end (#480)"
      },
      {
       "part": "title",
       "property": "colour",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "learn-light-path-end (#483)"
      },
      {
       "part": "description",
       "property": "colour",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "learn-light-path-end (#484)"
      },
      {
       "part": "button",
       "property": "face / border+lip / text",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #1CB0F6 (macaw, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `text.link` #1CB0F6 (macaw, light)",
       "source": "learn-light-path-end (#485) ::before"
      },
      {
@@ -2930,7 +2930,7 @@
      {
       "part": "UP NEXT pill (unlocked, CSS)",
       "property": "bg / text",
-      "value": "#DDF4FF (iguana-always-light) / macaw #1CB0F6 L, #49C0F8 D",
+      "value": "`palette.light.iguana-always-light` #DDF4FF (iguana-always-light) / `text.link` macaw #1CB0F6 L, #49C0F8 D",
       "source": "css:path-e50cab6b.css ._3LDH7 (not captured)"
      }
     ],
@@ -3126,73 +3126,73 @@
      {
       "part": "completed card",
       "property": "background",
-      "value": "#131F24 (snow) with diagonal stripes #202F36 (polar) at 136deg, bands 10-40% and 53-71%",
+      "value": "`text.onPrimary` #131F24 (snow) with diagonal stripes `gamification.league.demotedRow` #202F36 (polar) at 136deg, bands 10-40% and 53-71%",
       "source": "sections-dark-default (#158); css:pathSections-c1a583d8.css ._2UWvP"
      },
      {
       "part": "completed card",
       "property": "border",
-      "value": "2px #37464F (swan, dark)",
+      "value": "2px `gamification.streakInactive` #37464F (swan, dark)",
       "source": "sections-dark-default (#158)"
      },
      {
       "part": "COMPLETED! label",
       "property": "colour",
-      "value": "#58CC02 (owl-always-light), opacity 1",
+      "value": "`unitColors.green` #58CC02 (owl-always-light), opacity 1",
       "source": "sections-dark-default _1tBwZ (#165)"
      },
      {
       "part": "SEE DETAILS / REVIEW text",
       "property": "colour",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "sections-dark-default (#160, #167)"
      },
      {
       "part": "REVIEW button",
       "property": "face / border+lip",
-      "value": "#131F24 (snow) / #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan)",
       "source": "sections-dark-default (#167) ::before"
      },
      {
       "part": "in-progress card",
       "property": "background",
-      "value": "#202F36 (iguana, dark); no border",
+      "value": "`surface.selected` #202F36 (iguana, dark); no border",
       "source": "sections-dark-default (#191); css:pathSections-c1a583d8.css ._1pT8b"
      },
      {
       "part": "progress bar",
       "property": "track / fill",
-      "value": "#131F24 (snow) / #93D333 (owl, dark); label #AFAFAF (hare-always-light) on track, #131F24 on fill",
+      "value": "`text.onPrimary` #131F24 (snow) / `accent.primary.face` #93D333 (owl, dark); label `dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light) on track, #131F24 on fill",
       "source": "sections-dark-default (#198, #200, #199, #203)"
      },
      {
       "part": "trophy",
       "property": "colour",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "sections-dark-default _320PF (#205); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._320PF"
      },
      {
       "part": "CONTINUE button",
       "property": "face / lip / text",
-      "value": "#1CB0F6 (macaw-always-light) / #1CB0F6 @0.70 / #FFFFFF",
+      "value": "`unitColors.blue` #1CB0F6 (macaw-always-light) / #1CB0F6 @0.70 / #FFFFFF",
       "source": "sections-dark-default (#210) ::before; css:pathSections-c1a583d8.css ._3_XLT"
      },
      {
       "part": "speech bubble",
       "property": "bg / text / furigana",
-      "value": "#131F24 (snow) / eel #F1F7FB (css) / #52656D (hare)",
+      "value": "`text.onPrimary` #131F24 (snow) / `text.primary` eel #F1F7FB (css) / `text.tertiary` #52656D (hare)",
       "source": "sections-dark-default _2NZrx (#214), rt (#218); css:pathSections-c1a583d8.css .O93KC"
      },
      {
       "part": "locked card",
       "property": "bg / text",
-      "value": "#202F36 (polar) / #52656D (dark-mode-locked-path-section-text-color)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar) / `palette.dark.dark-mode-locked-path-section-text-color` #52656D (dark-mode-locked-path-section-text-color)",
       "source": "sections-dark-default _36wSS (#234); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._36wSS"
      },
      {
       "part": "locked JUMP TO SECTION button",
       "property": "face / border / text",
-      "value": "#131F24 / #37464F / #49C0F8 (macaw)",
+      "value": "#131F24 / #37464F / `text.link` #49C0F8 (macaw)",
       "source": "sections-dark-default (#241)"
      }
     ],
@@ -3200,25 +3200,25 @@
      {
       "part": "completed card",
       "property": "background",
-      "value": "#FFFFFF (snow) with stripes #F7F7F7 (polar)",
+      "value": "`text.onPrimary` #FFFFFF (snow) with stripes `surface.subtle` #F7F7F7 (polar)",
       "source": "sections-light-default (#167)"
      },
      {
       "part": "completed card",
       "property": "border",
-      "value": "2px #E5E5E5 (swan, light)",
+      "value": "2px `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "sections-light-default (#167)"
      },
      {
       "part": "COMPLETED! label",
       "property": "colour",
-      "value": "#58CC02 (owl, light)",
+      "value": "`accent.primary.face` #58CC02 (owl, light)",
       "source": "sections-light-default (#174)"
      },
      {
       "part": "SEE DETAILS / REVIEW text",
       "property": "colour",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "sections-light-default (#169, #176)"
      },
      {
@@ -3230,13 +3230,13 @@
      {
       "part": "in-progress card",
       "property": "background",
-      "value": "#DDF4FF (iguana, light)",
+      "value": "`surface.selected` #DDF4FF (iguana, light)",
       "source": "sections-light-default (#200)"
      },
      {
       "part": "progress bar",
       "property": "track / fill",
-      "value": "#FFFFFF (snow) / #58CC02 (owl); label #AFAFAF on track, #FFFFFF on fill",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `accent.primary.face` #58CC02 (owl); label #AFAFAF on track, #FFFFFF on fill",
       "source": "sections-light-default (#207, #209, #208, #212)"
      },
      {
@@ -3254,7 +3254,7 @@
      {
       "part": "locked card",
       "property": "bg / text",
-      "value": "#F7F7F7 (polar) / #777777 (wolf)",
+      "value": "`surface.subtle` #F7F7F7 (polar) / `text.secondary` #777777 (wolf)",
       "source": "sections-light-default (#245)"
      }
     ],
@@ -3292,7 +3292,7 @@
      {
       "part": "title colour (completed, in progress)",
       "property": "colour",
-      "value": "inherits body text (black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump",
+      "value": "inherits body text (`text.body` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump",
       "source": "css:app-f2ef02f8.css body",
       "estimated": true
      }
@@ -3439,43 +3439,43 @@
      {
       "part": "track",
       "property": "background",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-choice-default cl=_3yKMC (#11)"
      },
      {
       "part": "fill (default)",
       "property": "background",
-      "value": "#93D333 (owl, dark)",
+      "value": "`accent.primary.face` #93D333 (owl, dark)",
       "source": "lesson-dark-choice-default cl=_27NV6 (#12)"
      },
      {
       "part": "fill (combo streak)",
       "property": "background",
-      "value": "#FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "lesson-dark-listen-default cl=_27NV6 (#12); also lesson-dark-dialogue-default, lesson-dark-previous-mistake"
      },
      {
       "part": "fill (bee)",
       "property": "background",
-      "value": "#FFC700 (bee, dark)",
+      "value": "`gamification.xp` #FFC700 (bee, dark)",
       "source": "lesson-dark-match-default cl=_27NV6 (#12); css:4358-6896adab.css ._1YnbS {--web-ui_progress-bar-color: bee}"
      },
      {
       "part": "secondary inner fill",
       "property": "background",
-      "value": "#FFC700 (bee, dark), clipped to inner value (0 in every capture)",
+      "value": "`gamification.xp` #FFC700 (bee, dark), clipped to inner value (0 in every capture)",
       "source": "lesson-dark-challenge-default cl=_1qzJe _27NV6 (#13)"
      },
      {
       "part": "highlight stripe",
       "property": "background",
-      "value": "#FFFFFF (snow-always-light) @ opacity 0.2",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) @ opacity 0.2",
       "source": "lesson-dark-choice-default cl=_1EFTr (#14)"
      },
      {
       "part": "hearts count",
       "property": "color",
-      "value": "#EE5555 (cardinal, dark)",
+      "value": "`accent.danger.text` #EE5555 (cardinal, dark)",
       "source": "lesson-dark-challenge-default cl=_28aeG (#25)"
      },
      {
@@ -3489,37 +3489,37 @@
      {
       "part": "track",
       "property": "background",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-challenge-default cl=_3yKMC (#11)"
      },
      {
       "part": "fill (default)",
       "property": "background",
-      "value": "#58CC02 (owl, light)",
+      "value": "`accent.primary.face` #58CC02 (owl, light)",
       "source": "lesson-light-challenge-default cl=_27NV6 (#12)"
      },
      {
       "part": "fill (combo streak)",
       "property": "background",
-      "value": "#FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "lesson-light-match-default cl=_27NV6 (#12)"
      },
      {
       "part": "secondary inner fill",
       "property": "background",
-      "value": "#FFC800 (bee, light)",
+      "value": "`gamification.xp` #FFC800 (bee, light)",
       "source": "lesson-light-challenge-default cl=_1qzJe _27NV6 (#13)"
      },
      {
       "part": "highlight stripe",
       "property": "background",
-      "value": "#FFFFFF (snow-always-light) @ opacity 0.2",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) @ opacity 0.2",
       "source": "lesson-light-challenge-default cl=_1EFTr (#14)"
      },
      {
       "part": "hearts count",
       "property": "color",
-      "value": "#FF4B4B (cardinal, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
       "source": "lesson-light-challenge-default cl=_28aeG (#18)"
      },
      {
@@ -3676,19 +3676,19 @@
      {
       "part": "title",
       "property": "color",
-      "value": "#F1F7FB (black-text, dark), body colour",
+      "value": "`text.body` #F1F7FB (black-text, dark), body colour",
       "source": "lesson-dark-choice-default dt=challenge-header (#25) has no own colour; css:app-f2ef02f8.css body {color:black-text}"
      },
      {
       "part": "NEW WORD label + icon",
       "property": "color / fill",
-      "value": "#CE82FF (beetle, dark)",
+      "value": "`dataViz.avatar.purple` #CE82FF (beetle, dark)",
       "source": "lesson-dark-tile-hover cl=w2K8w (#32); lesson-dark-challenge-tiles-partial #32"
      },
      {
       "part": "PREVIOUS MISTAKE label + icon",
       "property": "color / fill",
-      "value": "#FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "lesson-dark-previous-mistake cl=w2K8w (#25), path (#28)"
      }
     ],
@@ -3696,19 +3696,19 @@
      {
       "part": "title",
       "property": "color",
-      "value": "#3C3C3C (black-text, light), body colour",
+      "value": "`text.body` #3C3C3C (black-text, light), body colour",
       "source": "lesson-light-challenge-default dt=challenge-header (#25); css:app-f2ef02f8.css body"
      },
      {
       "part": "NEW WORD label + icon",
       "property": "color / fill",
-      "value": "#CE82FF (beetle, light)",
+      "value": "`dataViz.avatar.purple` #CE82FF (beetle, light)",
       "source": "lesson-light-select-default cl=w2K8w (#32), path (#35)"
      },
      {
       "part": "PREVIOUS MISTAKE label",
       "property": "color",
-      "value": "#FF9600 (fox, light), derived, not captured: badge colour is inline, fox resolved in light",
+      "value": "`status.warningText` #FF9600 (fox, light), derived, not captured: badge colour is inline, fox resolved in light",
       "source": "lesson-dark-previous-mistake #25 (dark only)"
      }
     ],
@@ -3878,37 +3878,37 @@
      {
       "part": "bubble",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-challenge-default cl=_20npu (#42)"
      },
      {
       "part": "bubble",
       "property": "border",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-challenge-default #42"
      },
      {
       "part": "bubble text",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "css:4358-6896adab.css ._20npu {color:eel}"
      },
      {
       "part": "tail",
       "property": "fill",
-      "value": "#131F24 (snow) over #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) over `gamification.streakInactive` #37464F (swan)",
       "source": "lesson-dark-challenge-default path cl=_3q-cX (#78), _1Ps8f (#79)"
      },
      {
       "part": "speaker",
       "property": "fill",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "lesson-dark-challenge-default path cl=animated-speaker-icon-lottie (#51)"
      },
      {
       "part": "rt",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "lesson-dark-challenge-default rt cl=_5qxJi (#64)"
      },
      {
@@ -3920,7 +3920,7 @@
      {
       "part": "new-word text + sparkles",
       "property": "color",
-      "value": "#CE82FF (beetle), 700; underline images/af821b2d9d7e2fd3cbfce2ed8a0264da.svg",
+      "value": "`dataViz.avatar.purple` #CE82FF (beetle), 700; underline images/af821b2d9d7e2fd3cbfce2ed8a0264da.svg",
       "source": "lesson-dark-challenge-tiles-partial cl=_1ELE3 (#66, #75); css:1327-4028784b.css ._1ELE3"
      }
     ],
@@ -3928,37 +3928,37 @@
      {
       "part": "bubble",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-challenge-default cl=_20npu (#35)"
      },
      {
       "part": "bubble",
       "property": "border",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-challenge-default #35"
      },
      {
       "part": "bubble text",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-challenge-default #35"
      },
      {
       "part": "tail",
       "property": "fill",
-      "value": "#FFFFFF (snow) over #E5E5E5 (swan)",
+      "value": "`text.onPrimary` #FFFFFF (snow) over `gamification.streakInactive` #E5E5E5 (swan)",
       "source": "lesson-light-challenge-default path (#87, #88)"
      },
      {
       "part": "speaker",
       "property": "fill",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "lesson-light-challenge-default speaker paths under #40"
      },
      {
       "part": "rt",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "lesson-light-challenge-default rt (#57)"
      },
      {
@@ -3970,7 +3970,7 @@
      {
       "part": "new-word text + sparkles",
       "property": "color",
-      "value": "#CE82FF (beetle), same rule both themes",
+      "value": "`dataViz.avatar.purple` #CE82FF (beetle), same rule both themes",
       "source": "css:1327-4028784b.css ._1ELE3, .P77qm:before"
      }
     ],
@@ -4097,7 +4097,7 @@
      {
       "part": "rules",
       "property": "color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-challenge-default #82, #87"
      }
     ],
@@ -4105,7 +4105,7 @@
      {
       "part": "rules",
       "property": "color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-challenge-default #91, #96"
      }
     ],
@@ -4214,25 +4214,25 @@
      {
       "part": "face",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-challenge-default #96 ::before"
      },
      {
       "part": "face border + lip",
       "property": "color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-challenge-default #96 ::before"
      },
      {
       "part": "label",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "css:1008-b4d34396.css ._2O7Ua {--web-ui_button-color:eel}"
      },
      {
       "part": "placeholder face + border",
       "property": "background / border",
-      "value": "#37464F (swan, dark), no lip",
+      "value": "`gamification.streakInactive` #37464F (swan, dark), no lip",
       "source": "lesson-dark-challenge-tiles-partial #105 ::before"
      },
      {
@@ -4246,25 +4246,25 @@
      {
       "part": "face",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-challenge-default #105 ::before"
      },
      {
       "part": "face border + lip",
       "property": "color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-challenge-default #105 ::before"
      },
      {
       "part": "label",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-challenge-default #105"
      },
      {
       "part": "placeholder face + border",
       "property": "background / border",
-      "value": "#E5E5E5 (swan, light), no lip",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), no lip",
       "source": "lesson-light-challenge-tiles-partial #121 ::before"
      },
      {
@@ -4414,43 +4414,43 @@
      {
       "part": "face",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-choice-default #40 ::before"
      },
      {
       "part": "border + lip",
       "property": "color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-choice-default #40 ::before"
      },
      {
       "part": "label",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "css:1327-4028784b.css ._1G3d- {color:eel}"
      },
      {
       "part": "badge",
       "property": "border / text",
-      "value": "#37464F (swan) / #52656D (hare)",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-choice-default #41"
      },
      {
       "part": "selected face",
       "property": "background",
-      "value": "#202F36 (iguana, dark)",
+      "value": "`surface.selected` #202F36 (iguana, dark)",
       "source": "lesson-dark-choice-selected #59 ::before"
      },
      {
       "part": "selected border + lip",
       "property": "color",
-      "value": "#3F85A7 (blue-jay, dark)",
+      "value": "`border.selected` #3F85A7 (blue-jay, dark)",
       "source": "lesson-dark-choice-selected #59 ::before"
      },
      {
       "part": "selected label + badge text",
       "property": "color",
-      "value": "#1899D6 (whale)",
+      "value": "`text.selected` #1899D6 (whale)",
       "source": "lesson-dark-choice-selected #59, #60"
      }
     ],
@@ -4458,49 +4458,49 @@
      {
       "part": "face",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-choice-selected #59 ::before"
      },
      {
       "part": "border + lip",
       "property": "color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-choice-selected #59 ::before"
      },
      {
       "part": "label",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-choice-selected #59"
      },
      {
       "part": "badge",
       "property": "border / text",
-      "value": "#E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-choice-selected #60"
      },
      {
       "part": "hover face",
       "property": "background",
-      "value": "#F7F7F7 (polar, light)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light)",
       "source": "lesson-light-choice-selected #40 ::before"
      },
      {
       "part": "selected face",
       "property": "background",
-      "value": "#DDF4FF (iguana, light)",
+      "value": "`surface.selected` #DDF4FF (iguana, light)",
       "source": "lesson-light-choice-selected #72 ::before"
      },
      {
       "part": "selected border + lip",
       "property": "color",
-      "value": "#84D8FF (blue-jay, light)",
+      "value": "`border.selected` #84D8FF (blue-jay, light)",
       "source": "lesson-light-choice-selected #72 ::before"
      },
      {
       "part": "selected label + badge text",
       "property": "color",
-      "value": "#1899D6 (whale)",
+      "value": "`text.selected` #1899D6 (whale)",
       "source": "lesson-light-choice-selected #72, #73"
      }
     ],
@@ -4658,37 +4658,37 @@
      {
       "part": "face",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-select-default #40 ::before"
      },
      {
       "part": "border + lip",
       "property": "color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-select-default #40 ::before"
      },
      {
       "part": "label",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-select-default #40"
      },
      {
       "part": "hover face",
       "property": "background",
-      "value": "#F7F7F7 (polar, light)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light)",
       "source": "lesson-light-select-default #78 ::before"
      },
      {
       "part": "selected face / border / text",
       "property": "colours",
-      "value": "#DDF4FF (iguana) / #84D8FF (blue-jay) / #1899D6 (whale)",
+      "value": "`surface.selected` #DDF4FF (iguana) / `border.selected` #84D8FF (blue-jay) / `text.selected` #1899D6 (whale)",
       "source": "lesson-light-select-selected #40, #53"
      },
      {
       "part": "correct face / border / text",
       "property": "colours",
-      "value": "#D7FFB8 (sea-sponge) / #A5ED6E (turtle) / #58A700 (tree-frog)",
+      "value": "`gamification.league.promotedRow` #D7FFB8 (sea-sponge) / `status.successBorder` #A5ED6E (turtle) / `status.successText` #58A700 (tree-frog)",
       "source": "lesson-light-feedback-correct #41, #54"
      }
     ],
@@ -4829,37 +4829,37 @@
      {
       "part": "face / border + lip",
       "property": "colours",
-      "value": "#131F24 (snow) / #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan)",
       "source": "lesson-dark-match-default #30 ::before"
      },
      {
       "part": "label",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "css:1008-b4d34396.css ._2O7Ua"
      },
      {
       "part": "badge",
       "property": "border / text",
-      "value": "#37464F (swan) / #52656D (hare)",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-match-default #31"
      },
      {
       "part": "selected",
       "property": "border + lip / text + badge text / inner fill",
-      "value": "#3F85A7 (blue-jay) / #1899D6 (whale) / #202F36 (iguana, dark)",
+      "value": "`border.selected` #3F85A7 (blue-jay) / `text.selected` #1899D6 (whale) / `surface.selected` #202F36 (iguana, dark)",
       "source": "lesson-dark-match-selected #30, #31, #32"
      },
      {
       "part": "matched",
       "property": "label + badge",
-      "value": "#37464F (swan), face and lip unchanged",
+      "value": "`gamification.streakInactive` #37464F (swan), face and lip unchanged",
       "source": "lesson-dark-match-pair-matched #30"
      },
      {
       "part": "wrong",
       "property": "border + lip / text / inner fill",
-      "value": "#945151 (flamingo, dark) / #D84848 (fire-ant, dark) / #202F36",
+      "value": "`status.dangerBorder` #945151 (flamingo, dark) / `status.dangerText` #D84848 (fire-ant, dark) / #202F36",
       "source": "lesson-dark-match-pair-wrong #41, #42, #43"
      }
     ],
@@ -4867,31 +4867,31 @@
      {
       "part": "face / border + lip",
       "property": "colours",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan)",
       "source": "lesson-light-match-default #30 ::before"
      },
      {
       "part": "label",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-match-default #30"
      },
      {
       "part": "badge",
       "property": "border / text",
-      "value": "#E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-match-default #31"
      },
      {
       "part": "selected",
       "property": "border + lip / text / inner fill",
-      "value": "#84D8FF (blue-jay) / #1899D6 (whale) / #DDF4FF (iguana, light)",
+      "value": "`border.selected` #84D8FF (blue-jay) / `text.selected` #1899D6 (whale) / `surface.selected` #DDF4FF (iguana, light)",
       "source": "lesson-light-match-selected #30, #31"
      },
      {
       "part": "matched",
       "property": "label + badge",
-      "value": "#E5E5E5 (swan), face and lip unchanged",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan), face and lip unchanged",
       "source": "lesson-light-match-pair-matched #30"
      }
     ],
@@ -5070,19 +5070,19 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "#131F24 (snow) / #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan)",
       "source": "lesson-dark-dialogue-default #34"
      },
      {
       "part": "blank",
       "property": "rule",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "lesson-dark-dialogue-default #83"
      },
      {
       "part": "speaker",
       "property": "fill",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "lesson-dark-dialogue-default #37 subtree"
      }
     ],
@@ -5090,7 +5090,7 @@
      {
       "part": "blank",
       "property": "rule",
-      "value": "#AFAFAF (hare, light), derived, not captured",
+      "value": "`text.tertiary` #AFAFAF (hare, light), derived, not captured",
       "source": "css:4358-6896adab.css ._3AISd"
      }
     ],
@@ -5215,37 +5215,37 @@
      {
       "part": "speaker face (::after)",
       "property": "background",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "lesson-dark-listen-default #31 ::after; css:app-f2ef02f8.css ._3TlAm:after"
      },
      {
       "part": "speaker lip (button bg)",
       "property": "background",
-      "value": "#1899D6 (whale)",
+      "value": "`text.selected` #1899D6 (whale)",
       "source": "lesson-dark-listen-default #31; css:app-f2ef02f8.css ._3TlAm"
      },
      {
       "part": "speaker icon",
       "property": "fill",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-listen-default #33 paths"
      },
      {
       "part": "small speaker ring",
       "property": "border",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-listen-default #46 ::before"
      },
      {
       "part": "Can't listen now label",
       "property": "color",
-      "value": "#52656D (hare, dark), SKIP button styling",
+      "value": "`text.tertiary` #52656D (hare, dark), SKIP button styling",
       "source": "lesson-dark-listen-default #139"
      },
      {
       "part": "Use keyboard label",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "lesson-dark-listen-default #144"
      }
     ],
@@ -5253,19 +5253,19 @@
      {
       "part": "speaker face",
       "property": "background",
-      "value": "#1CB0F6 (macaw, light), derived, not captured",
+      "value": "`text.link` #1CB0F6 (macaw, light), derived, not captured",
       "source": "css:app-f2ef02f8.css ._3TlAm:after"
      },
      {
       "part": "speaker lip",
       "property": "background",
-      "value": "#1899D6 (whale), derived, not captured",
+      "value": "`text.selected` #1899D6 (whale), derived, not captured",
       "source": "css:app-f2ef02f8.css ._3TlAm"
      },
      {
       "part": "speaker icon / ring",
       "property": "fill / border",
-      "value": "#FFFFFF (snow, light), derived, not captured",
+      "value": "`text.onPrimary` #FFFFFF (snow, light), derived, not captured",
       "source": "css:app-f2ef02f8.css ._3TlAm color; css:1327-4028784b.css ._37SfF:before"
      }
     ],
@@ -5387,25 +5387,25 @@
      {
       "part": "bar",
       "property": "background / top rule",
-      "value": "#131F24 (snow) / #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan)",
       "source": "lesson-dark-challenge-default #146"
      },
      {
       "part": "SKIP",
       "property": "face / border + lip / label",
-      "value": "#131F24 (snow) / #37464F (swan) / #52656D (hare)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-challenge-default #149"
      },
      {
       "part": "CHECK disabled",
       "property": "face / label",
-      "value": "#37464F (swan) / #52656D (hare)",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-challenge-default #152"
      },
      {
       "part": "CHECK enabled",
       "property": "face / lip / label",
-      "value": "#93D333 (owl) / #79B933 (tree-frog) / #131F24 (snow)",
+      "value": "`accent.primary.face` #93D333 (owl) / `status.successText` #79B933 (tree-frog) / `text.onPrimary` #131F24 (snow)",
       "source": "lesson-dark-challenge-check-enabled #178"
      }
     ],
@@ -5413,25 +5413,25 @@
      {
       "part": "bar",
       "property": "background / top rule",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan)",
       "source": "lesson-light-challenge-default #150"
      },
      {
       "part": "SKIP",
       "property": "face / border + lip / label",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-challenge-default #153"
      },
      {
       "part": "CHECK disabled",
       "property": "face / label",
-      "value": "#E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-challenge-default #156"
      },
      {
       "part": "CHECK enabled",
       "property": "face / lip / label",
-      "value": "#58CC02 (owl) / #58A700 (tree-frog) / #FFFFFF (snow)",
+      "value": "`accent.primary.face` #58CC02 (owl) / `status.successText` #58A700 (tree-frog) / `text.onPrimary` #FFFFFF (snow)",
       "source": "lesson-light-choice-selected #95"
      }
     ],
@@ -5613,37 +5613,37 @@
      {
       "part": "correct bar",
       "property": "background",
-      "value": "#202F36 (sea-sponge, dark)",
+      "value": "`gamification.league.promotedRow` #202F36 (sea-sponge, dark)",
       "source": "lesson-dark-feedback-correct #139; css:1008-b4d34396.css ._3FB5S._3yMvO"
      },
      {
       "part": "correct title + actions",
       "property": "color",
-      "value": "#79B933 (tree-frog, dark)",
+      "value": "`status.successText` #79B933 (tree-frog, dark)",
       "source": "lesson-dark-feedback-correct #148, #151"
      },
      {
       "part": "incorrect bar",
       "property": "background",
-      "value": "#202F36 (walking-fish, dark)",
+      "value": "`status.dangerBackground` #202F36 (walking-fish, dark)",
       "source": "lesson-dark-feedback-incorrect #123; css:1008-b4d34396.css ._3FB5S._2cfV0"
      },
      {
       "part": "incorrect title, solution, actions",
       "property": "color",
-      "value": "#D84848 (fire-ant, dark)",
+      "value": "`status.dangerText` #D84848 (fire-ant, dark)",
       "source": "lesson-dark-feedback-incorrect #132, #133, #136"
      },
      {
       "part": "icon circle",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-feedback-correct #143, lesson-dark-feedback-incorrect #127"
      },
      {
       "part": "neutral bar / title / CONTINUE",
       "property": "colours",
-      "value": "#202F36 (canary, dark) / #D79433 (guinea-pig, dark) / face #FFC700 (bee), lip #E7A601 (camel)",
+      "value": "`status.warningBackground` #202F36 (canary, dark) / `feedback.neutral.text` #D79433 (guinea-pig, dark) / face `gamification.xp` #FFC700 (bee), lip `palette.dark.camel` #E7A601 (camel)",
       "source": "lesson-dark-cant-listen #144, #153, #174"
      }
     ],
@@ -5651,31 +5651,31 @@
      {
       "part": "correct bar",
       "property": "background",
-      "value": "#D7FFB8 (sea-sponge, light)",
+      "value": "`gamification.league.promotedRow` #D7FFB8 (sea-sponge, light)",
       "source": "lesson-light-feedback-correct #103"
      },
      {
       "part": "correct title + actions",
       "property": "color",
-      "value": "#58A700 (tree-frog, light)",
+      "value": "`status.successText` #58A700 (tree-frog, light)",
       "source": "lesson-light-feedback-correct #112, #115"
      },
      {
       "part": "incorrect bar",
       "property": "background",
-      "value": "#FFDFE0 (walking-fish, light), derived, not captured",
+      "value": "`gamification.league.demotedRow` #FFDFE0 (walking-fish, light), derived, not captured",
       "source": "css:1008-b4d34396.css ._3FB5S._2cfV0 @media (min-width:700px)"
      },
      {
       "part": "incorrect title, solution, actions",
       "property": "color",
-      "value": "#EA2B2B (fire-ant, light), derived, not captured",
+      "value": "`status.dangerText` #EA2B2B (fire-ant, light), derived, not captured",
       "source": "css:1008-b4d34396.css .o-3Ru, ._1CCAE, ._3Q4Uw"
      },
      {
       "part": "icon circle",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-feedback-correct #107"
      }
     ],
@@ -5789,7 +5789,7 @@
      "theme": "dark",
      "state": "correct",
      "element": "bar background",
-     "value": "#202F36 (sea-sponge, dark)",
+     "value": "`gamification.league.promotedRow` #202F36 (sea-sponge, dark)",
      "source": "lesson-dark-feedback-correct cl=_3FB5S _3yMvO (#139)",
      "status": "captured"
     },
@@ -5797,7 +5797,7 @@
      "theme": "dark",
      "state": "correct",
      "element": "title colour",
-     "value": "#79B933 (tree-frog, dark)",
+     "value": "`status.successText` #79B933 (tree-frog, dark)",
      "source": "lesson-dark-feedback-correct h2 cl=_2U7Gm WXwlk (#148)",
      "status": "captured"
     },
@@ -5805,7 +5805,7 @@
      "theme": "dark",
      "state": "correct",
      "element": "icon circle",
-     "value": "#131F24 (snow, dark)",
+     "value": "`text.onPrimary` #131F24 (snow, dark)",
      "source": "lesson-dark-feedback-correct cl=fwpkb (#143)",
      "status": "captured"
     },
@@ -5813,7 +5813,7 @@
      "theme": "dark",
      "state": "correct",
      "element": "CONTINUE face (::before bg)",
-     "value": "#93D333 (owl, dark)",
+     "value": "`accent.primary.face` #93D333 (owl, dark)",
      "source": "lesson-dark-feedback-correct dt=player-next cl=_2oGJR (#168) ::before",
      "status": "captured"
     },
@@ -5821,7 +5821,7 @@
      "theme": "dark",
      "state": "correct",
      "element": "CONTINUE lip (::before box-shadow 0 4px 0)",
-     "value": "#79B933 (tree-frog, dark)",
+     "value": "`status.successText` #79B933 (tree-frog, dark)",
      "source": "lesson-dark-feedback-correct #168 ::before",
      "status": "captured"
     },
@@ -5829,7 +5829,7 @@
      "theme": "dark",
      "state": "correct",
      "element": "CONTINUE label",
-     "value": "#131F24 (snow, dark)",
+     "value": "`text.onPrimary` #131F24 (snow, dark)",
      "source": "lesson-dark-feedback-correct #168",
      "status": "captured"
     },
@@ -5837,7 +5837,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "bar background",
-     "value": "#202F36 (walking-fish, dark)",
+     "value": "`status.dangerBackground` #202F36 (walking-fish, dark)",
      "source": "lesson-dark-feedback-incorrect cl=_3FB5S _2cfV0 (#123)",
      "status": "captured"
     },
@@ -5845,7 +5845,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "title colour",
-     "value": "#D84848 (fire-ant, dark)",
+     "value": "`status.dangerText` #D84848 (fire-ant, dark)",
      "source": "lesson-dark-feedback-incorrect h2 cl=_2U7Gm o-3Ru (#132)",
      "status": "captured"
     },
@@ -5853,7 +5853,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "solution text",
-     "value": "#D84848 (fire-ant, dark)",
+     "value": "`status.dangerText` #D84848 (fire-ant, dark)",
      "source": "lesson-dark-feedback-incorrect cl=_2jz5U o-3Ru (#133)",
      "status": "captured"
     },
@@ -5861,7 +5861,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "icon circle",
-     "value": "#131F24 (snow, dark)",
+     "value": "`text.onPrimary` #131F24 (snow, dark)",
      "source": "lesson-dark-feedback-incorrect cl=fwpkb (#127)",
      "status": "captured"
     },
@@ -5869,7 +5869,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "CONTINUE face (::before bg)",
-     "value": "#EE5555 (cardinal, dark)",
+     "value": "`accent.danger.text` #EE5555 (cardinal, dark)",
      "source": "lesson-dark-feedback-incorrect dt=player-next cl=_3S8jJ (#153) ::before",
      "status": "captured"
     },
@@ -5877,7 +5877,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "CONTINUE lip (::before box-shadow 0 4px 0)",
-     "value": "#D84848 (fire-ant, dark)",
+     "value": "`status.dangerText` #D84848 (fire-ant, dark)",
      "source": "lesson-dark-feedback-incorrect #153 ::before",
      "status": "captured"
     },
@@ -5885,7 +5885,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "CONTINUE label",
-     "value": "#131F24 (snow, dark)",
+     "value": "`text.onPrimary` #131F24 (snow, dark)",
      "source": "lesson-dark-feedback-incorrect #153",
      "status": "captured"
     },
@@ -5893,7 +5893,7 @@
      "theme": "light",
      "state": "correct",
      "element": "bar background",
-     "value": "#D7FFB8 (sea-sponge, light)",
+     "value": "`gamification.league.promotedRow` #D7FFB8 (sea-sponge, light)",
      "source": "lesson-light-feedback-correct cl=_3FB5S _3yMvO (#103)",
      "status": "captured"
     },
@@ -5901,7 +5901,7 @@
      "theme": "light",
      "state": "correct",
      "element": "title colour",
-     "value": "#58A700 (tree-frog, light)",
+     "value": "`status.successText` #58A700 (tree-frog, light)",
      "source": "lesson-light-feedback-correct h2 cl=_2U7Gm WXwlk (#112)",
      "status": "captured"
     },
@@ -5909,7 +5909,7 @@
      "theme": "light",
      "state": "correct",
      "element": "icon circle",
-     "value": "#FFFFFF (snow, light)",
+     "value": "`text.onPrimary` #FFFFFF (snow, light)",
      "source": "lesson-light-feedback-correct cl=fwpkb (#107)",
      "status": "captured"
     },
@@ -5917,7 +5917,7 @@
      "theme": "light",
      "state": "correct",
      "element": "CONTINUE face (::before bg)",
-     "value": "#58CC02 (owl, light)",
+     "value": "`accent.primary.face` #58CC02 (owl, light)",
      "source": "lesson-light-feedback-correct dt=player-next cl=_2oGJR (#132) ::before",
      "status": "captured"
     },
@@ -5925,7 +5925,7 @@
      "theme": "light",
      "state": "correct",
      "element": "CONTINUE lip (::before box-shadow 0 4px 0)",
-     "value": "#58A700 (tree-frog, light)",
+     "value": "`status.successText` #58A700 (tree-frog, light)",
      "source": "lesson-light-feedback-correct #132 ::before",
      "status": "captured"
     },
@@ -5933,7 +5933,7 @@
      "theme": "light",
      "state": "correct",
      "element": "CONTINUE label",
-     "value": "#FFFFFF (snow, light)",
+     "value": "`text.onPrimary` #FFFFFF (snow, light)",
      "source": "lesson-light-feedback-correct #132",
      "status": "captured"
     },
@@ -5941,7 +5941,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "bar background",
-     "value": "#FFDFE0 (walking-fish, light)",
+     "value": "`gamification.league.demotedRow` #FFDFE0 (walking-fish, light)",
      "source": "css:1008-b4d34396.css ._3FB5S._2cfV0 @media (min-width:700px) {background-color: rgb(var(--color-walking-fish))}",
      "status": "derived, not captured"
     },
@@ -5949,7 +5949,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "title colour",
-     "value": "#EA2B2B (fire-ant, light)",
+     "value": "`status.dangerText` #EA2B2B (fire-ant, light)",
      "source": "css:1008-b4d34396.css .o-3Ru {color: rgb(var(--color-fire-ant))}",
      "status": "derived, not captured"
     },
@@ -5957,7 +5957,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "solution text",
-     "value": "#EA2B2B (fire-ant, light)",
+     "value": "`status.dangerText` #EA2B2B (fire-ant, light)",
      "source": "css:1008-b4d34396.css .o-3Ru (on ._2jz5U)",
      "status": "derived, not captured"
     },
@@ -5965,7 +5965,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "icon circle",
-     "value": "#FFFFFF (snow, light)",
+     "value": "`text.onPrimary` #FFFFFF (snow, light)",
      "source": "css:1008-b4d34396.css .fwpkb @media (min-width:700px) {background: rgb(var(--color-snow))}",
      "status": "derived, not captured"
     },
@@ -5973,7 +5973,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "CONTINUE face (::before bg)",
-     "value": "#FF4B4B (cardinal, light)",
+     "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
      "source": "css:app-f2ef02f8.css ._3S8jJ {--web-ui_button-background-color: rgb(var(--color-cardinal))} via css:4779-c36ad395.css ._1VYyp:before",
      "status": "derived, not captured"
     },
@@ -5981,7 +5981,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "CONTINUE lip (::before box-shadow 0 4px 0)",
-     "value": "#EA2B2B (fire-ant, light)",
+     "value": "`status.dangerText` #EA2B2B (fire-ant, light)",
      "source": "css:app-f2ef02f8.css ._3S8jJ {--web-ui_button-border-color: rgb(var(--color-fire-ant))} via css:4779-c36ad395.css ._1VYyp:before {box-shadow:0 var(--__internal__lip-width) 0; color: border-color}",
      "status": "derived, not captured"
     },
@@ -5989,7 +5989,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "CONTINUE label",
-     "value": "#FFFFFF (snow, light)",
+     "value": "`text.onPrimary` #FFFFFF (snow, light)",
      "source": "css:app-f2ef02f8.css ._3S8jJ {--web-ui_button-color: rgb(var(--color-snow))}",
      "status": "derived, not captured"
     },
@@ -5997,7 +5997,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "TOO EASY / TOO DIFFICULT / REPORT colour",
-     "value": "#EA2B2B (fire-ant, light)",
+     "value": "`status.dangerText` #EA2B2B (fire-ant, light)",
      "source": "css:1008-b4d34396.css ._1CCAE, ._3Q4Uw",
      "status": "derived, not captured"
     }
@@ -6088,37 +6088,37 @@
      {
       "part": "bubble",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-review-interstitial #129"
      },
      {
       "part": "bubble",
       "property": "border",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-review-interstitial #129"
      },
      {
       "part": "bubble",
       "property": "text",
-      "value": "#F1F7FB (black-text, dark), inherited body colour so not recorded on the node",
+      "value": "`text.body` #F1F7FB (black-text, dark), inherited body colour so not recorded on the node",
       "source": "css:app-f2ef02f8.css body { color:rgb(var(--color-black-text)) }"
      },
      {
       "part": "caret",
       "property": "fill / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-review-interstitial #131"
      },
      {
       "part": "footer",
       "property": "background / top border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-review-interstitial #134"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "#93D333 (owl, dark) / #79B933 (tree-frog, dark) / #131F24 (snow, dark)",
+      "value": "`accent.primary.face` #93D333 (owl, dark) / `status.successText` #79B933 (tree-frog, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-review-interstitial dt=player-next (#137) ::before"
      },
      {
@@ -6132,25 +6132,25 @@
      {
       "part": "bubble",
       "property": "background",
-      "value": "#FFFFFF (snow, light), derived, not captured",
+      "value": "`text.onPrimary` #FFFFFF (snow, light), derived, not captured",
       "source": "css:4779-c36ad395.css ._36bu_ (palette:snow)"
      },
      {
       "part": "bubble",
       "property": "border",
-      "value": "#E5E5E5 (swan, light), derived, not captured",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), derived, not captured",
       "source": "css:4779-c36ad395.css ._36bu_ (palette:swan)"
      },
      {
       "part": "bubble",
       "property": "text",
-      "value": "#3C3C3C (black-text, light), derived, not captured",
+      "value": "`text.body` #3C3C3C (black-text, light), derived, not captured",
       "source": "css:app-f2ef02f8.css body (palette:black-text)"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "#58CC02 (owl, light) / #58A700 (tree-frog, light) / #FFFFFF (snow, light)",
+      "value": "`accent.primary.face` #58CC02 (owl, light) / `status.successText` #58A700 (tree-frog, light) / `text.onPrimary` #FFFFFF (snow, light)",
       "source": "captured on the same footer button in lesson-light-combo-interstitial dt=player-next (#43) ::before"
      }
     ],
@@ -6251,19 +6251,19 @@
      {
       "part": "caption",
       "property": "colour",
-      "value": "#FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "lesson-light-combo-interstitial cl=_1xB7m (#37)"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "#58CC02 (owl, light) / #58A700 (tree-frog, light) / #FFFFFF (snow, light)",
+      "value": "`accent.primary.face` #58CC02 (owl, light) / `status.successText` #58A700 (tree-frog, light) / `text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-combo-interstitial dt=player-next (#43) ::before"
      },
      {
       "part": "footer",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-combo-interstitial #40"
      }
     ],
@@ -6271,13 +6271,13 @@
      {
       "part": "caption",
       "property": "colour",
-      "value": "#FFAB33 (fox, dark), derived, not captured",
+      "value": "`status.warningText` #FFAB33 (fox, dark), derived, not captured",
       "source": "css:4358-6896adab.css ._1xB7m (palette:fox)"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "#93D333 (owl, dark) / #79B933 (tree-frog, dark) / #131F24 (snow, dark)",
+      "value": "`accent.primary.face` #93D333 (owl, dark) / `status.successText` #79B933 (tree-frog, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "captured on the same button in lesson-dark-review-interstitial (#137)"
      }
     ],
@@ -6377,19 +6377,19 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-quit-modal #132"
      },
      {
       "part": "bubble",
       "property": "text",
-      "value": "#3C3C3C (black-text, light), inherited",
+      "value": "`text.body` #3C3C3C (black-text, light), inherited",
       "source": "css:app-f2ef02f8.css body"
      },
      {
       "part": "Duo lottie",
       "property": "fills",
-      "value": "#58CC02 (owl), #89E219 (mask-green), #FF4B4B (cardinal), #4B4B4B (eel), #FFFFFF plus illustration colours #14C3FB, #4AAE00, #A15803, #F49000, #FFB0E4, #FFC200 (NO PALETTE MATCH)",
+      "value": "`accent.primary.face` #58CC02 (owl), `palette.light.mask-green` #89E219 (mask-green), `accent.danger.text` #FF4B4B (cardinal), `text.primary` #4B4B4B (eel), #FFFFFF plus illustration colours #14C3FB, #4AAE00, #A15803, #F49000, #FFB0E4, #FFC200 (NO PALETTE MATCH)",
       "source": "lesson-light-quit-modal svg (#32) descendants"
      }
     ],
@@ -6397,7 +6397,7 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark), derived, not captured",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark), derived, not captured",
       "source": "css:4779-c36ad395.css ._36bu_ (palette:snow, swan)"
      }
     ],
@@ -6502,31 +6502,31 @@
      {
       "part": "backdrop",
       "property": "background",
-      "value": "#000000 @0.40 (black)",
+      "value": "`background.scrim` #000000 @0.40 (black)",
       "source": "lesson-dark-quit-modal dt=drawer-backdrop (#127)"
      },
      {
       "part": "card",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-quit-modal #132"
      },
      {
       "part": "title",
       "property": "colour",
-      "value": "#F1F7FB (eel, dark); equals body colour so not on the node",
+      "value": "`text.primary` #F1F7FB (eel, dark); equals body colour so not on the node",
       "source": "css:1060-a4cddb41.css ._3r1YP { color:rgb(var(--color-eel)) }"
      },
      {
       "part": "KEEP LEARNING",
       "property": "face / lip / text",
-      "value": "#49C0F8 (macaw, dark) / #1899D6 (whale) / #131F24 (snow, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-quit-modal dt=notification-button (#137) ::before"
      },
      {
       "part": "END SESSION",
       "property": "text",
-      "value": "#EE5555 (cardinal, dark)",
+      "value": "`accent.danger.text` #EE5555 (cardinal, dark)",
       "source": "lesson-dark-quit-modal #139; css:app-f2ef02f8.css ._27kss { --web-ui_button-color:cardinal }"
      }
     ],
@@ -6534,31 +6534,31 @@
      {
       "part": "backdrop",
       "property": "background",
-      "value": "#000000 @0.40 (black)",
+      "value": "`background.scrim` #000000 @0.40 (black)",
       "source": "lesson-light-quit-modal dt=drawer-backdrop (#143)"
      },
      {
       "part": "card",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-quit-modal #148"
      },
      {
       "part": "title",
       "property": "colour",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-quit-modal cl=_3r1YP (#152)"
      },
      {
       "part": "KEEP LEARNING",
       "property": "face / lip / text",
-      "value": "#1CB0F6 (macaw, light) / #1899D6 (whale) / #FFFFFF (snow, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light) / `text.selected` #1899D6 (whale) / `text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-quit-modal dt=notification-button (#153) ::before"
      },
      {
       "part": "END SESSION",
       "property": "text",
-      "value": "#FF4B4B (cardinal, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
       "source": "lesson-light-quit-modal #155"
      }
     ],
@@ -6717,43 +6717,43 @@
      {
       "part": "title",
       "property": "colour",
-      "value": "#FFC700 (bee, dark)",
+      "value": "`gamification.xp` #FFC700 (bee, dark)",
       "source": "lesson-dark-complete #11"
      },
      {
       "part": "card",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-complete #13"
      },
      {
       "part": "card: bee variant",
       "property": "frame / label text / value border / value text",
-      "value": "#FFC700 (bee, dark) / #131F24 (snow, dark) / #FFC700 / #FFC700",
+      "value": "`gamification.xp` #FFC700 (bee, dark) / `text.onPrimary` #131F24 (snow, dark) / #FFC700 / #FFC700",
       "source": "lesson-dark-complete #14, #15, #16"
      },
      {
       "part": "value box",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-complete #16"
      },
      {
       "part": "card: owl variant (accuracy, \"GREAT!\")",
       "property": "frame / border / value text",
-      "value": "#93D333 (owl, dark), derived from CSS, not captured in the dump",
+      "value": "`accent.primary.face` #93D333 (owl, dark), derived from CSS, not captured in the dump",
       "source": "css:1008-b4d34396.css ._52uc9, .uiOhM (palette:owl)"
      },
      {
       "part": "card: macaw variant",
       "property": "frame / border / value text",
-      "value": "#49C0F8 (macaw, dark), derived",
+      "value": "`text.link` #49C0F8 (macaw, dark), derived",
       "source": "css:1008-b4d34396.css ._27CoB/._2f4A8, ._36aXx/._2c6u3"
      },
      {
       "part": "card: beetle variant",
       "property": "frame / border / value text",
-      "value": "#CE82FF (beetle), derived",
+      "value": "`dataViz.avatar.purple` #CE82FF (beetle), derived",
       "source": "css:1008-b4d34396.css ._2IhSJ, ._2_GKE"
      },
      {
@@ -6765,13 +6765,13 @@
      {
       "part": "REVIEW LESSON",
       "property": "face / border+lip / text",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark) / #52656D (hare, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark)",
       "source": "lesson-dark-complete #46 ::before"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "#93D333 (owl, dark) / #79B933 (tree-frog, dark) / #131F24 (snow, dark)",
+      "value": "`accent.primary.face` #93D333 (owl, dark) / `status.successText` #79B933 (tree-frog, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-complete dt=player-next (#49) ::before"
      }
     ],
@@ -6779,37 +6779,37 @@
      {
       "part": "title",
       "property": "colour",
-      "value": "#FFC800 (bee, light), derived, not captured",
+      "value": "`gamification.xp` #FFC800 (bee, light), derived, not captured",
       "source": "css:1008-b4d34396.css ._3z6AH (palette:bee)"
      },
      {
       "part": "card / value box",
       "property": "background",
-      "value": "#FFFFFF (snow, light), derived",
+      "value": "`text.onPrimary` #FFFFFF (snow, light), derived",
       "source": "css:1008-b4d34396.css ._23WOw, ._5KPRI"
      },
      {
       "part": "card: bee variant",
       "property": "frame / border / value text",
-      "value": "#FFC800 (bee, light); label text #FFFFFF (snow, light), derived",
+      "value": "`gamification.xp` #FFC800 (bee, light); label text `text.onPrimary` #FFFFFF (snow, light), derived",
       "source": "css:1008-b4d34396.css ._3IRrf, ._5KPRI, .d8ITn"
      },
      {
       "part": "card: owl variant",
       "property": "frame / border / value text",
-      "value": "#58CC02 (owl, light), derived",
+      "value": "`accent.primary.face` #58CC02 (owl, light), derived",
       "source": "css:1008-b4d34396.css ._52uc9, .uiOhM"
      },
      {
       "part": "REVIEW LESSON",
       "property": "face / border+lip / text",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "captured on the same end-screen footer in lesson-light-video-ad (#9) ::before"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "#58CC02 (owl) / #58A700 (tree-frog) / #FFFFFF (snow)",
+      "value": "`accent.primary.face` #58CC02 (owl) / `status.successText` #58A700 (tree-frog) / `text.onPrimary` #FFFFFF (snow)",
       "source": "lesson-light-video-ad dt=player-next (#12) ::before"
      }
     ],
@@ -7032,85 +7032,85 @@
      {
       "part": "\"day streak\"",
       "property": "colour",
-      "value": "#FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "lesson-dark-streak-celebration #16"
      },
      {
       "part": "week card",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-streak-celebration #17"
      },
      {
       "part": "week card",
       "property": "border",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-streak-celebration #18, #37"
      },
      {
       "part": "divider",
       "property": "background",
-      "value": "#202F36 (polar, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark)",
       "source": "lesson-dark-streak-celebration #18 ::after"
      },
      {
       "part": "day label (today)",
       "property": "colour",
-      "value": "#FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "lesson-dark-streak-celebration cl=K2FC_ (#21)"
      },
      {
       "part": "day label (other)",
       "property": "colour",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "lesson-dark-streak-celebration #26"
      },
      {
       "part": "day circle (future)",
       "property": "background",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-streak-celebration cl=Rewuq (#27)"
      },
      {
       "part": "day circle (completed)",
       "property": "fill / check stroke",
-      "value": "#FFAB33 (fox, dark) / #131F24 (snow, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-streak-calendar svg paths (#23, #27, #30, #33) and check (#36)"
      },
      {
       "part": "day circle (next-day target)",
       "property": "background / dashed border",
-      "value": "#131F24 (snow, dark) / #FFAB33 (fox, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `status.warningText` #FFAB33 (fox, dark)",
       "source": "lesson-dark-streak-calendar cl=_3g_6k (#39)"
      },
      {
       "part": "caret",
       "property": "background / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-streak-calendar #40"
      },
      {
       "part": "message / tip text",
       "property": "colour",
-      "value": "#DCE6EC (wolf, dark); highlighted spans fox",
+      "value": "`text.secondary` #DCE6EC (wolf, dark); highlighted spans fox",
       "source": "lesson-dark-streak-celebration #37; css:1008-b4d34396.css ._36njd>span>span"
      },
      {
       "part": "calendar heading",
       "property": "colour",
-      "value": "#F1F7FB (black-text, dark), inherited",
+      "value": "`text.body` #F1F7FB (black-text, dark), inherited",
       "source": "css:app-f2ef02f8.css body"
      },
      {
       "part": "CONTINUE (celebration)",
       "property": "face / lip / text",
-      "value": "#49C0F8 (macaw, dark) / #1899D6 (whale) / #131F24 (snow, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-streak-celebration dt=player-next (#45) ::before"
      },
      {
       "part": "CONTINUE (calendar)",
       "property": "face / lip / text",
-      "value": "#93D333 (owl, dark) / #79B933 (tree-frog, dark) / #131F24",
+      "value": "`accent.primary.face` #93D333 (owl, dark) / `status.successText` #79B933 (tree-frog, dark) / #131F24",
       "source": "lesson-dark-streak-calendar dt=player-next (#64)"
      }
     ],
@@ -7118,37 +7118,37 @@
      {
       "part": "\"day streak\", today label, completed day, target dashed border",
       "property": "colour",
-      "value": "#FF9600 (fox, light), derived, not captured",
+      "value": "`status.warningText` #FF9600 (fox, light), derived, not captured",
       "source": "css:1008-b4d34396.css .Ikkcc, .K2FC_, ._3g_6k (palette:fox)"
      },
      {
       "part": "week card / message border, future circle",
       "property": "colour",
-      "value": "#E5E5E5 (swan, light), derived",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), derived",
       "source": "css:1008-b4d34396.css ._2k21Q, .Rewuq; css:2634-6b22725c.css .uxKQj"
      },
      {
       "part": "divider",
       "property": "background",
-      "value": "#F7F7F7 (polar, light), derived",
+      "value": "`surface.subtle` #F7F7F7 (polar, light), derived",
       "source": "css:1008-b4d34396.css ._2k21Q:after"
      },
      {
       "part": "day labels",
       "property": "colour",
-      "value": "#AFAFAF (hare, light), derived",
+      "value": "`text.tertiary` #AFAFAF (hare, light), derived",
       "source": "css:1008-b4d34396.css ._2z97y"
      },
      {
       "part": "message text",
       "property": "colour",
-      "value": "#777777 (wolf, light), derived",
+      "value": "`text.secondary` #777777 (wolf, light), derived",
       "source": "css:2634-6b22725c.css .uxKQj"
      },
      {
       "part": "card / target circle background",
       "property": "colour",
-      "value": "#FFFFFF (snow, light), derived",
+      "value": "`text.onPrimary` #FFFFFF (snow, light), derived",
       "source": "css:1008-b4d34396.css ._3kddW, ._3g_6k"
      }
     ],
@@ -7358,37 +7358,37 @@
      {
       "part": "row face",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-streak-goal-default #245 ::before"
      },
      {
       "part": "row border + lip",
       "property": "colour",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-streak-goal-default #245 ::before"
      },
      {
       "part": "row text",
       "property": "colour",
-      "value": "#F1F7FB (black-text, dark), inherited",
+      "value": "`text.body` #F1F7FB (black-text, dark), inherited",
       "source": "css:app-f2ef02f8.css body"
      },
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-streak-goal-default #15"
      },
      {
       "part": "numeral",
       "property": "colour",
-      "value": "#FF4B4B (cardinal-always-light)",
+      "value": "`unitColors.red` #FF4B4B (cardinal-always-light)",
       "source": "lesson-dark-streak-goal-default cl=G8vvg (#243)"
      },
      {
       "part": "CTA disabled",
       "property": "face / text",
-      "value": "#37464F (swan, dark) / #52656D (hare, dark), no lip",
+      "value": "`gamification.streakInactive` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark), no lip",
       "source": "lesson-dark-streak-goal-default dt=player-next (#261) ::before"
      }
     ],
@@ -7396,19 +7396,19 @@
      {
       "part": "row face",
       "property": "background",
-      "value": "#FFFFFF (snow, light), derived, not captured",
+      "value": "`text.onPrimary` #FFFFFF (snow, light), derived, not captured",
       "source": "css:4779-c36ad395.css ._8dMUn:before (--web-ui_card-background-color default snow)"
      },
      {
       "part": "row border + lip",
       "property": "colour",
-      "value": "#E5E5E5 (swan, light), derived",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), derived",
       "source": "css:4779-c36ad395.css ._8dMUn (--web-ui_card-border-color default swan)"
      },
      {
       "part": "row hover face",
       "property": "background",
-      "value": "#F7F7F7 (polar, light), derived",
+      "value": "`surface.subtle` #F7F7F7 (polar, light), derived",
       "source": "css:4779-c36ad395.css ._8dMUn:hover...:before"
      },
      {
@@ -7444,12 +7444,12 @@
    "states": [
     {
      "state": "row hover",
-     "changes": "::before background #131F24 to #202F36 (polar, dark); border and lip unchanged",
+     "changes": "::before background #131F24 to `surface.subtle` #202F36 (polar, dark); border and lip unchanged",
      "source": "captured: lesson-dark-streak-goal-row-hover cl=_8dMUn (#242) diff vs lesson-dark-streak-goal-default (#245); css:4779-c36ad395.css ._8dMUn:hover:not(:active):not(._1pRZ7):not(._3neHb):before @media (hover:hover)"
     },
     {
      "state": "row active",
-     "changes": "translateY(2px), ::before lip removed, border blue-jay (#84D8FF L / #3F85A7 D), face iguana (#DDF4FF L / #202F36 D), text whale #1899D6",
+     "changes": "translateY(2px), ::before lip removed, border blue-jay (#84D8FF L / #3F85A7 D), face iguana (#DDF4FF L / #202F36 D), text `text.selected` whale #1899D6",
      "source": "css:4779-c36ad395.css ._8dMUn:active:not(._3neHb), ...:before"
     },
     {
@@ -7624,37 +7624,37 @@
      {
       "part": "header",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-friend-streak-invite #11"
      },
      {
       "part": "heading",
       "property": "colour",
-      "value": "#F1F7FB (black-text, dark), inherited",
+      "value": "`text.body` #F1F7FB (black-text, dark), inherited",
       "source": "css:app-f2ef02f8.css body"
      },
      {
       "part": "count",
       "property": "colour",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "lesson-dark-friend-streak-invite #15"
      },
      {
       "part": "table border, row dividers, header divider",
       "property": "colour",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-friend-streak-invite #17, #18, #16"
      },
      {
       "part": "INVITE",
       "property": "face / lip / text",
-      "value": "#49C0F8 (macaw, dark) / #1899D6 (whale) / #131F24 (snow, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-friend-streak-invite #22 ::before"
      },
      {
       "part": "CONTINUE / REVIEW LESSON",
       "property": "colours",
-      "value": "owl #93D333 + tree-frog #79B933 / snow + swan + hare, as on lesson complete",
+      "value": "`accent.primary.face` owl #93D333 + `status.successText` tree-frog #79B933 / snow + swan + hare, as on lesson complete",
       "source": "lesson-dark-friend-streak-invite dt=player-next (#73), #70"
      }
     ],
@@ -7662,25 +7662,25 @@
      {
       "part": "header",
       "property": "background",
-      "value": "#FFFFFF (snow, light), derived, not captured",
+      "value": "`text.onPrimary` #FFFFFF (snow, light), derived, not captured",
       "source": "css:1008-b4d34396.css ._3-LZT"
      },
      {
       "part": "count",
       "property": "colour",
-      "value": "#AFAFAF (hare, light), derived",
+      "value": "`text.tertiary` #AFAFAF (hare, light), derived",
       "source": "css:1008-b4d34396.css ._1k4BL"
      },
      {
       "part": "table border, dividers",
       "property": "colour",
-      "value": "#E5E5E5 (swan, light), derived (overridable by --friend-streak-table-border-color)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), derived (overridable by --friend-streak-table-border-color)",
       "source": "css:2634-6b22725c.css ._1pa14, ._2OBb8"
      },
      {
       "part": "INVITE",
       "property": "face / lip / text",
-      "value": "#1CB0F6 (macaw, light) / #1899D6 (whale) / #FFFFFF, derived",
+      "value": "`text.link` #1CB0F6 (macaw, light) / `text.selected` #1899D6 (whale) / #FFFFFF, derived",
       "source": "palette:macaw, whale, snow"
      }
     ],
@@ -7856,19 +7856,19 @@
      {
       "part": "ad: background (screen and footer)",
       "property": "colour",
-      "value": "#000437 (eclipse, same both themes)",
+      "value": "`gamification.super.surface` #000437 (eclipse, same both themes)",
       "source": "lesson-dark-super-upsell cl=_2hhqt (#6), _3KWA6 (#14)"
      },
      {
       "part": "ad: text",
       "property": "colour",
-      "value": "#FFFFFF (snow-always-light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light)",
       "source": "lesson-dark-super-upsell #12; css:4358-6896adab.css ._2hhqt"
      },
      {
       "part": "ad: footer top border",
       "property": "colour",
-      "value": "#FFFFFF @0.40 (snow-always-light)",
+      "value": "`palette.dark.snow-always-light` #FFFFFF @0.40 (snow-always-light)",
       "source": "lesson-dark-super-upsell #13"
      },
      {
@@ -7880,7 +7880,7 @@
      {
       "part": "ad: GET STARTED",
       "property": "face / lip / text",
-      "value": "#FFFFFF / #FFFFFF @0.50 / #000437 (eclipse)",
+      "value": "#FFFFFF / #FFFFFF @0.50 / `gamification.super.surface` #000437 (eclipse)",
       "source": "lesson-dark-super-upsell #17 ::before; css:app-f2ef02f8.css ._19taU"
      }
     ],
@@ -7888,55 +7888,55 @@
      {
       "part": "trial: background",
       "property": "gradient",
-      "value": "linear-gradient(172deg, #000437 (unknown-000437/eclipse) 0, #061B4B (half-branded-background-blue-middle) 38.31%, #16378C (half-branded-background-blue-end) 69.3%, #8C3DBA (half-branded-background-purple-end) 100%)",
+      "value": "linear-gradient(172deg, #000437 (unknown-000437/eclipse) 0, `palette.light.half-branded-background-blue-middle` #061B4B (half-branded-background-blue-middle) 38.31%, `palette.light.half-branded-background-blue-end` #16378C (half-branded-background-blue-end) 69.3%, `palette.light.half-branded-background-purple-end` #8C3DBA (half-branded-background-purple-end) 100%)",
       "source": "lesson-light-trial-upsell cl=_3YO3u (#18); css:3406-0039e405.css ._3YO3u"
      },
      {
       "part": "trial: h1 / top text",
       "property": "colour",
-      "value": "#FFFFFF (snow-always-light); highlighted spans #26F663 (gamma)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light); highlighted spans `palette.light.gamma` #26F663 (gamma)",
       "source": "lesson-light-trial-upsell #29; css:3406-0039e405.css ._3ifZ6>span>span"
      },
      {
       "part": "trial: lower panel",
       "property": "background / text",
-      "value": "#FAFAFA (unknown-fafafa) / #4B4B4B (eel, light)",
+      "value": "`palette.light.unknown-fafafa` #FAFAFA (unknown-fafafa) / `text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-trial-upsell cl=_3XsPC (#34)"
      },
      {
       "part": "trial: option row",
       "property": "background / border / text",
-      "value": "#FFFFFF (snow-always-light) / #E5E5E5 (swan, light) / #4B4B4B (eel, light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) / `gamification.streakInactive` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-trial-upsell #36"
      },
      {
       "part": "trial: disclaimer",
       "property": "colour",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "lesson-light-trial-upsell cl=_1-Pul (#43)"
      },
      {
       "part": "trial: CTA enabled",
       "property": "face / lip / text",
-      "value": "#3C4DFF (cosmos) / #3F22EC (nebula) / #FFFFFF, from CSS vars",
+      "value": "`gamification.super.face` #3C4DFF (cosmos) / `gamification.super.lip` #3F22EC (nebula) / #FFFFFF, from CSS vars",
       "source": "css:app-f2ef02f8.css ._3b8r8"
      },
      {
       "part": "trial: CTA disabled",
       "property": "face / text",
-      "value": "#E5E5E5 (swan-always-light) / #AFAFAF (hare-always-light)",
+      "value": "`palette.light.swan-always-light` #E5E5E5 (swan-always-light) / `dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light)",
       "source": "lesson-light-trial-upsell dt=plus-continue (#47) ::before"
      },
      {
       "part": "trial: NO THANKS",
       "property": "text",
-      "value": "#3C4DFF (cosmos)",
+      "value": "`gamification.super.face` #3C4DFF (cosmos)",
       "source": "lesson-light-trial-upsell dt=plus-no-thanks (#49); css:app-f2ef02f8.css ._2h7HV"
      },
      {
       "part": "video: background",
       "property": "colour",
-      "value": "#000000 (black)",
+      "value": "`palette.light.black` #000000 (black)",
       "source": "lesson-light-video-ad cl=_3BWKN (#18)"
      }
     ],
@@ -8236,91 +8236,91 @@
      {
       "part": "panel (unextended, 0 day)",
       "property": "background",
-      "value": "#202F36 (streak-panel-unextended-heading-background, dark)",
+      "value": "`palette.dark.streak-panel-unextended-heading-background` #202F36 (streak-panel-unextended-heading-background, dark)",
       "source": "learn-dark-streak-dropdown cl=_36bu_ (#80); css:5275-8898b509.css ._37-_J"
      },
      {
       "part": "panel",
       "property": "border",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-streak-dropdown (#80)"
      },
      {
       "part": "title (unextended)",
       "property": "color",
-      "value": "#52656D (streak-panel-unextended-heading-text, dark)",
+      "value": "`palette.dark.streak-panel-unextended-heading-text` #52656D (streak-panel-unextended-heading-text, dark)",
       "source": "learn-dark-streak-dropdown dt=streak-panel-header (#85); css:5275-8898b509.css .TKyEy"
      },
      {
       "part": "subtitle",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "learn-dark-streak-dropdown cl=a2LqX (#86)"
      },
      {
       "part": "calendar card",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "learn-dark-streak-dropdown cl=_8ECdA (#89)"
      },
      {
       "part": "day letter",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "learn-dark-streak-dropdown cl=_3u3Eq (#92)"
      },
      {
       "part": "day letter, today",
       "property": "color",
-      "value": "#FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "learn-dark-streak-dropdown cl=_1tnkE (#96)"
      },
      {
       "part": "day circle (not done)",
       "property": "background",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-streak-dropdown cl=_1DNjG (#101)"
      },
      {
       "part": "lower sections",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "learn-dark-streak-dropdown cl=yFj8x (#114), cl=K9wl2 (#122)"
      },
      {
       "part": "friend card",
       "property": "background / text",
-      "value": "#FF5F00 (streak-panel-friend-background, dark) / #FFFFFF (snow-always-light)",
+      "value": "`palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) / `text.onColor` #FFFFFF (snow-always-light)",
       "source": "learn-dark-streak-dropdown cl=_3TU61 (#115)"
      },
      {
       "part": "VIEW LIST",
       "property": "face / lip / text",
-      "value": "#FFFFFF (snow-always-light) / #FFFFFF @0.60 / #FF5F00 (streak-panel-friend-background)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) / #FFFFFF @0.60 / `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background)",
       "source": "learn-dark-streak-dropdown cl=_2loTO (#120) ::before"
      },
      {
       "part": "society card",
       "property": "background / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-streak-dropdown cl=_1T_BQ (#123)"
      },
      {
       "part": "society title",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "learn-dark-streak-dropdown cl=_2udKW (#126) unlisted = body black-text; css:458-86426c1c.css ._2udKW {color:eel}"
      },
      {
       "part": "society body",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "learn-dark-streak-dropdown cl=_3mY3Q (#127)"
      },
      {
       "part": "VIEW MORE",
       "property": "face / lip / text",
-      "value": "#49C0F8 (macaw, dark) / #1899D6 (whale, dark) / #131F24 (snow, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "learn-dark-streak-dropdown cl=_1i82L (#128) ::before"
      }
     ],
@@ -8328,61 +8328,61 @@
      {
       "part": "panel (extended, streak done today)",
       "property": "background",
-      "value": "#FF9600 (streak-panel-extended-background, light)",
+      "value": "`palette.light.streak-panel-extended-background` #FF9600 (streak-panel-extended-background, light)",
       "source": "learn-light-streak-dropdown cl=_36bu_ (#81); css:5275-8898b509.css ._28-a0"
      },
      {
       "part": "panel",
       "property": "border",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-streak-dropdown (#81)"
      },
      {
       "part": "title and subtitle (extended)",
       "property": "color",
-      "value": "#FFFFFF (snow-always-light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light)",
       "source": "learn-light-streak-dropdown cl=_2u6EE (#86, #87)"
      },
      {
       "part": "calendar card",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "learn-light-streak-dropdown cl=_8ECdA (#90)"
      },
      {
       "part": "day letter",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "learn-light-streak-dropdown cl=_3u3Eq (#93)"
      },
      {
       "part": "day letter, today",
       "property": "color",
-      "value": "#FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "learn-light-streak-dropdown cl=_374yM (#97)"
      },
      {
       "part": "day circle (not done)",
       "property": "background",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-streak-dropdown cl=_1DNjG (#102)"
      },
      {
       "part": "day circle (done)",
       "property": "fill / check stroke",
-      "value": "#FF9600 (fox, light) / #FFFFFF (snow), stroke-width 8 in svg units",
+      "value": "`status.warningText` #FF9600 (fox, light) / `text.onPrimary` #FFFFFF (snow), stroke-width 8 in svg units",
       "source": "learn-light-streak-dropdown svg path (#116), path (#129)"
      },
      {
       "part": "lower sections",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "learn-light-streak-dropdown cl=yFj8x (#134), cl=K9wl2 (#142)"
      },
      {
       "part": "friend card",
       "property": "background / text",
-      "value": "#FF5F00 (streak-panel-friend-background, light) / #FFFFFF",
+      "value": "`palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light) / #FFFFFF",
       "source": "learn-light-streak-dropdown cl=_3TU61 (#135)"
      },
      {
@@ -8394,25 +8394,25 @@
      {
       "part": "society card",
       "property": "background / border",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-streak-dropdown cl=_1T_BQ (#143)"
      },
      {
       "part": "society title",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "learn-light-streak-dropdown cl=_2udKW (#146)"
      },
      {
       "part": "society body",
       "property": "color",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "learn-light-streak-dropdown cl=_3mY3Q (#147)"
      },
      {
       "part": "VIEW MORE",
       "property": "face / lip / text",
-      "value": "#1CB0F6 (macaw, light) / #1899D6 (whale, light) / #FFFFFF (snow, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light) / `text.selected` #1899D6 (whale, light) / `text.onPrimary` #FFFFFF (snow, light)",
       "source": "learn-light-streak-dropdown cl=_1i82L (#148) ::before"
      }
     ],
@@ -8467,7 +8467,7 @@
     },
     {
      "state": "header: extended (lesson done today)",
-     "changes": "popover bg streak-panel-extended-background #FF9600 light (#CD7900 dark from css), title/subtitle white",
+     "changes": "popover bg `unitColors.orange` streak-panel-extended-background #FF9600 light (#CD7900 dark from css), title/subtitle white",
      "source": "captured:learn-light-streak-dropdown cl=_28-a0 (#80)"
     },
     {
@@ -8482,7 +8482,7 @@
     },
     {
      "state": "header: milestone",
-     "changes": "background linear-gradient(133deg, streak-panel-milestone-gradient-start #FF933A, fox-always-light #FF9600 51.31%, ...); dark: solid #CD7900 (guinea-pig-always-light)",
+     "changes": "background linear-gradient(133deg, `palette.light.streak-panel-milestone-gradient-start` streak-panel-milestone-gradient-start #FF933A, `unitColors.orange` fox-always-light #FF9600 51.31%, ...); dark: solid `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light)",
      "source": "css:5275-8898b509.css ._5caAA, html[data-duo-theme=dark] ._5caAA"
     },
     {
@@ -8604,25 +8604,25 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-gems-dropdown (#84)"
      },
      {
       "part": "title",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "learn-dark-gems-dropdown h2 (#88) unlisted; css:5275-8898b509.css ._3cG-N h2"
      },
      {
       "part": "balance",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "learn-dark-gems-dropdown p (#89)"
      },
      {
       "part": "GO TO SHOP",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "learn-dark-gems-dropdown dt=shop-nav (#90)"
      }
     ],
@@ -8630,25 +8630,25 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-gems-dropdown (#85)"
      },
      {
       "part": "title",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "learn-light-gems-dropdown h2 (#89)"
      },
      {
       "part": "balance",
       "property": "color",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "learn-light-gems-dropdown p (#90)"
      },
      {
       "part": "GO TO SHOP",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "learn-light-gems-dropdown dt=shop-nav (#91)"
      }
     ],
@@ -8809,49 +8809,49 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-hearts-dropdown (#88)"
      },
      {
       "part": "title / status",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "learn-dark-hearts-dropdown (#90, #102) unlisted; css:4769-628e48ee.css ._1XkbC, ._2u5pt"
      },
      {
       "part": "subtext",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "learn-dark-hearts-dropdown cl=vp1gi (#103)"
      },
      {
       "part": "row (enabled)",
       "property": "face / border+lip",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark), lip box-shadow 0 2px",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark), lip box-shadow 0 2px",
       "source": "learn-dark-hearts-dropdown (#105) ::before"
      },
      {
       "part": "row label (enabled)",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "learn-dark-hearts-dropdown cl=_3Kmn9 (#110)"
      },
      {
       "part": "row label (disabled)",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "learn-dark-hearts-dropdown cl=_3Kmn9 _2OfiD (#118)"
      },
      {
       "part": "FREE TRIAL",
       "property": "color",
-      "value": "#CF17C8 (nova)",
+      "value": "`gamification.super.label` #CF17C8 (nova)",
       "source": "learn-dark-hearts-dropdown cl=_2vZsg (#112)"
      },
      {
       "part": "gem price",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark), shown grayscale(1) when disabled",
+      "value": "`text.link` #49C0F8 (macaw, dark), shown grayscale(1) when disabled",
       "source": "learn-dark-hearts-dropdown cl=_1xgBw (#123), cl=_2ZlmU (#120)"
      }
     ],
@@ -8859,49 +8859,49 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-hearts-dropdown (#89)"
      },
      {
       "part": "title / status",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "learn-light-hearts-dropdown cl=_1XkbC (#91), cl=_2u5pt (#119)"
      },
      {
       "part": "status time",
       "property": "color",
-      "value": "#FF4B4B (cardinal, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
       "source": "learn-light-hearts-dropdown span (#121); css:4769-628e48ee.css ._2u5pt>span>span"
      },
      {
       "part": "subtext",
       "property": "color",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "learn-light-hearts-dropdown cl=vp1gi (#122)"
      },
      {
       "part": "row",
       "property": "face / border+lip",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-hearts-dropdown (#124) ::before"
      },
      {
       "part": "row label",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "learn-light-hearts-dropdown cl=_3Kmn9 (#129, #137)"
      },
      {
       "part": "FREE TRIAL",
       "property": "color",
-      "value": "#CF17C8 (nova)",
+      "value": "`gamification.super.label` #CF17C8 (nova)",
       "source": "learn-light-hearts-dropdown (#131)"
      },
      {
       "part": "gem price",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "learn-light-hearts-dropdown cl=_1xgBw (#142)"
      }
     ],
@@ -9064,37 +9064,37 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-courses-dropdown (#75)"
      },
      {
       "part": "header",
       "property": "text / rule",
-      "value": "#52656D (hare, dark) / #37464F (swan, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-courses-dropdown cl=_34_P_ (#77)"
      },
      {
       "part": "course row",
       "property": "text",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "learn-dark-courses-dropdown cl=_1aVVk (#82) unlisted; css:5275-8898b509.css ._2xxCs ._1aVVk"
      },
      {
       "part": "current course row",
       "property": "background / text",
-      "value": "#202F36 (iguana, dark) / #1899D6 (whale)",
+      "value": "`surface.selected` #202F36 (iguana, dark) / `text.selected` #1899D6 (whale)",
       "source": "learn-dark-courses-dropdown cl=_1aVVk _1WRXX (#79)"
      },
      {
       "part": "add row",
       "property": "rule / text",
-      "value": "#37464F (swan, dark) / #F1F7FB (eel, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark) / `text.primary` #F1F7FB (eel, dark)",
       "source": "learn-dark-courses-dropdown dt=add-new-course (#94)"
      },
      {
       "part": "flag",
       "property": "outline",
-      "value": "#FFFFFF (snow-always-light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light)",
       "source": "learn-dark-courses-dropdown (#81)"
      }
     ],
@@ -9102,31 +9102,31 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-courses-dropdown (#76)"
      },
      {
       "part": "header",
       "property": "text / rule",
-      "value": "#AFAFAF (hare, light) / #E5E5E5 (swan, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-courses-dropdown cl=_34_P_ (#78)"
      },
      {
       "part": "course row",
       "property": "text",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "learn-light-courses-dropdown cl=_1aVVk (#83)"
      },
      {
       "part": "current course row",
       "property": "background / text",
-      "value": "#DDF4FF (iguana, light) / #1899D6 (whale)",
+      "value": "`surface.selected` #DDF4FF (iguana, light) / `text.selected` #1899D6 (whale)",
       "source": "learn-light-courses-dropdown cl=_1aVVk _1WRXX (#80)"
      },
      {
       "part": "add row",
       "property": "rule / text",
-      "value": "#E5E5E5 (swan, light) / #4B4B4B (eel, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)",
       "source": "learn-light-courses-dropdown dt=add-new-course (#95)"
      }
     ],
@@ -9367,97 +9367,97 @@
      {
       "part": "header",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "leaderboard-dark-top cl=_15B39 (#144)"
      },
      {
       "part": "league name / names / rank outside zone",
       "property": "color",
-      "value": "#F1F7FB (black-text, dark)",
+      "value": "`text.body` #F1F7FB (black-text, dark)",
       "source": "leaderboard-dark-top (#158, #171, #270) unlisted = body colour"
      },
      {
       "part": "subtitle",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "leaderboard-dark-top cl=_1Zr5T (#159)"
      },
      {
       "part": "time left",
       "property": "color",
-      "value": "#FFC700 (bee, dark)",
+      "value": "`gamification.xp` #FFC700 (bee, dark)",
       "source": "leaderboard-dark-top cl=_3nMro (#161)"
      },
      {
       "part": "rule",
       "property": "color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-top hr (#163)"
      },
      {
       "part": "rank in promotion zone",
       "property": "color",
-      "value": "#79B933 (tree-frog, dark)",
+      "value": "`status.successText` #79B933 (tree-frog, dark)",
       "source": "leaderboard-dark-top cl=_1kz8P (#190)"
      },
      {
       "part": "XP",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "leaderboard-dark-top cl=_1OKd4 (#172)"
      },
      {
       "part": "online dot",
       "property": "fill / ring",
-      "value": "#93D333 (owl, dark) / #131F24 (snow, dark)",
+      "value": "`accent.primary.face` #93D333 (owl, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "leaderboard-dark-top cl=_2NNBf (#169)"
      },
      {
       "part": "status bubble",
       "property": "fill / ring",
-      "value": "#FFFFFF (snow-always-light) / #37464F (swan, dark)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-top cl=_2R_e4 (#194)"
      },
      {
       "part": "letter avatar",
       "property": "fill / letter",
-      "value": "fox #FFAB33, beetle #CE82FF / #131F24 (snow, dark)",
+      "value": "`status.warningText` fox #FFAB33, `dataViz.avatar.purple` beetle #CE82FF / `text.onPrimary` #131F24 (snow, dark)",
       "source": "leaderboard-dark-top cl=_1a-Dv (#184), cl=_1gexH (#226)"
      },
      {
       "part": "row hover",
       "property": "background",
-      "value": "#202F36 (polar, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark)",
       "source": "captured:leaderboard-dark-row-hover (#165)"
      },
      {
       "part": "current user row",
       "property": "background / dot ring",
-      "value": "#37464F (swan, dark) / #37464F",
+      "value": "`gamification.streakInactive` #37464F (swan, dark) / #37464F",
       "source": "leaderboard-dark-top cl=MytTp (#259, #263)"
      },
      {
       "part": "current user in promotion zone",
       "property": "background / text",
-      "value": "#202F36 (sea-sponge, dark) / #79B933 (tree-frog, dark)",
+      "value": "`gamification.league.promotedRow` #202F36 (sea-sponge, dark) / `status.successText` #79B933 (tree-frog, dark)",
       "source": "leaderboard-dark-mobile cl=MytTp _27HUw (#125)"
      },
      {
       "part": "promotion divider",
       "property": "color",
-      "value": "#79B933 (tree-frog, dark)",
+      "value": "`status.successText` #79B933 (tree-frog, dark)",
       "source": "leaderboard-dark-top cl=KWJR3 (#255)"
      },
      {
       "part": "not joined: START A LESSON",
       "property": "face / lip / text",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark) / #49C0F8 (macaw, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark) / `text.link` #49C0F8 (macaw, dark)",
       "source": "leaderboard-dark-default cl=_3FuEB _2V6ug (#160)"
      },
      {
       "part": "not joined: user bar",
       "property": "background / text",
-      "value": "#202F36 (polar, dark) / #52656D (hare, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark) / `text.tertiary` #52656D (hare, dark)",
       "source": "leaderboard-dark-default cl=_11XmH (#166)"
      }
     ],
@@ -9465,79 +9465,79 @@
      {
       "part": "header",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "leaderboard-light-default cl=_15B39 (#145)"
      },
      {
       "part": "league name / names / rank outside zone",
       "property": "color",
-      "value": "#3C3C3C (black-text, light)",
+      "value": "`text.body` #3C3C3C (black-text, light)",
       "source": "leaderboard-light-default (#159, #174, #264) unlisted = body colour"
      },
      {
       "part": "subtitle",
       "property": "color",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "leaderboard-light-default cl=_1Zr5T (#160)"
      },
      {
       "part": "time left",
       "property": "color",
-      "value": "#FFC800 (bee, light)",
+      "value": "`gamification.xp` #FFC800 (bee, light)",
       "source": "leaderboard-light-default cl=_3nMro (#162)"
      },
      {
       "part": "rule",
       "property": "color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "leaderboard-light-default hr (#164)"
      },
      {
       "part": "rank in promotion zone",
       "property": "color",
-      "value": "#58A700 (tree-frog, light)",
+      "value": "`status.successText` #58A700 (tree-frog, light)",
       "source": "leaderboard-light-default cl=_1kz8P (#193)"
      },
      {
       "part": "XP",
       "property": "color",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "leaderboard-light-default cl=_1OKd4 (#175)"
      },
      {
       "part": "online dot",
       "property": "fill / ring",
-      "value": "#58CC02 (owl, light) / #FFFFFF (snow, light)",
+      "value": "`accent.primary.face` #58CC02 (owl, light) / `text.onPrimary` #FFFFFF (snow, light)",
       "source": "leaderboard-light-default cl=_2NNBf (#170)"
      },
      {
       "part": "letter avatar",
       "property": "fill / letter",
-      "value": "beetle #CE82FF, fox #FF9600, cardinal #FF4B4B / #FFFFFF (snow, light)",
+      "value": "`dataViz.avatar.purple` beetle #CE82FF, `status.warningText` fox #FF9600, `accent.danger.text` cardinal #FF4B4B / `text.onPrimary` #FFFFFF (snow, light)",
       "source": "leaderboard-light-default (#187, #223, #213)"
      },
      {
       "part": "row hover",
       "property": "background",
-      "value": "#F7F7F7 (polar, light)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light)",
       "source": "captured:leaderboard-light-default (#192)"
      },
      {
       "part": "current user row",
       "property": "background",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "leaderboard-light-default cl=MytTp (#272)"
      },
      {
       "part": "current user in promotion zone",
       "property": "background / text",
-      "value": "#D7FFB8 (sea-sponge, light) / #58A700 (tree-frog, light)",
+      "value": "`gamification.league.promotedRow` #D7FFB8 (sea-sponge, light) / `status.successText` #58A700 (tree-frog, light)",
       "source": "leaderboard-light-mobile cl=MytTp _27HUw (#137)"
      },
      {
       "part": "promotion divider",
       "property": "color",
-      "value": "#58A700 (tree-frog, light)",
+      "value": "`status.successText` #58A700 (tree-frog, light)",
       "source": "leaderboard-light-default cl=KWJR3 (#260)"
      }
     ],
@@ -9602,7 +9602,7 @@
     },
     {
      "state": "demotion zone row",
-     "changes": "current user: background walking-fish (L #FFDFE0; dark uses polar #202F36), text fire-ant (L #EA2B2B, D #D84848); rank colour fire-ant",
+     "changes": "current user: background walking-fish (L #FFDFE0; dark uses `surface.subtle` polar #202F36), text fire-ant (L #EA2B2B, D #D84848); rank colour fire-ant",
      "source": "css:1008-b4d34396.css .MytTp._1XTsS, ._1XTsS ._1kz8P, html[data-duo-theme=dark] .MytTp._1XTsS (not captured)"
     },
     {
@@ -9612,7 +9612,7 @@
     },
     {
      "state": "diamond / top league current user",
-     "changes": "background diamond-highlight #E7FBFB (dark polar), text diamond #38D0D0; another variant uses a background image with betta #9069CD text",
+     "changes": "background `palette.dark.diamond-highlight` diamond-highlight #E7FBFB (dark polar), text `gamification.league.diamond` diamond #38D0D0; another variant uses a background image with `palette.dark.betta` betta #9069CD text",
      "source": "css:1008-b4d34396.css .MytTp._7trGg, .MytTp.zGzKm (not captured)"
     },
     {
@@ -9788,49 +9788,49 @@
      {
       "part": "card",
       "property": "background / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-default (#86)"
      },
      {
       "part": "title",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "leaderboard-dark-default h2 (#88) unlisted; css:7607-21dedb14.css ._1d_-b"
      },
      {
       "part": "CLEAR",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "leaderboard-dark-default (#89)"
      },
      {
       "part": "tile",
       "property": "face / border+lip",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-default (#102) ::before"
      },
      {
       "part": "owl tiles",
       "property": "face",
-      "value": "#93D333 (owl, dark)",
+      "value": "`accent.primary.face` #93D333 (owl, dark)",
       "source": "leaderboard-dark-default cl=_3cwVc (#113)"
      },
      {
       "part": "selected tile",
       "property": "border+lip",
-      "value": "#3F85A7 (blue-jay, dark)",
+      "value": "`border.selected` #3F85A7 (blue-jay, dark)",
       "source": "leaderboard-dark-default cl=_333Yq (#100)"
      },
      {
       "part": "bubble",
       "property": "fill / ring",
-      "value": "#FFFFFF (snow-always-light), owl status #93D333 (owl) / #37464F (swan, dark)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light), owl status `palette.dark.owl` #93D333 (owl) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-default (#94, #96)"
      },
      {
       "part": "online dot",
       "property": "fill / ring",
-      "value": "#93D333 (owl, dark) / #131F24 (snow, dark)",
+      "value": "`accent.primary.face` #93D333 (owl, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "leaderboard-dark-default (#98)"
      }
     ],
@@ -9838,37 +9838,37 @@
      {
       "part": "card",
       "property": "background / border",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "leaderboard-light-default cl=_1Queb _2cnFr _1T_BQ (#87)"
      },
      {
       "part": "title",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "leaderboard-light-default h2 (#89)"
      },
      {
       "part": "CLEAR",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "leaderboard-light-default (#91)"
      },
      {
       "part": "tile",
       "property": "face / border+lip",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "leaderboard-light-default (#103) ::before"
      },
      {
       "part": "owl tiles",
       "property": "face",
-      "value": "#58CC02 (owl, light)",
+      "value": "`accent.primary.face` #58CC02 (owl, light)",
       "source": "leaderboard-light-default cl=_3cwVc (#114)"
      },
      {
       "part": "selected tile",
       "property": "border+lip",
-      "value": "#84D8FF (blue-jay, light)",
+      "value": "`border.selected` #84D8FF (blue-jay, light)",
       "source": "leaderboard-light-default cl=_333Yq (#101)"
      }
     ],
@@ -10059,61 +10059,61 @@
      {
       "part": "card",
       "property": "background / border",
-      "value": "#131F24 (snow, dark) / #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "quests-dark-default (#158)"
      },
      {
       "part": "section title / quest title",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "quests-dark-default (#149, #163) unlisted; css:1327-4028784b.css ._1LC6x"
      },
      {
       "part": "timer",
       "property": "color",
-      "value": "#FFAB33 (fox, dark); #FFC700 (bee, dark) on mobile",
+      "value": "`status.warningText` #FFAB33 (fox, dark); `gamification.xp` #FFC700 (bee, dark) on mobile",
       "source": "quests-dark-default cl=_9ozg3 (#150); quests-dark-mobile cl=_3nMro (#43)"
      },
      {
       "part": "bar track",
       "property": "background",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "quests-dark-default cl=_3yKMC (#166)"
      },
      {
       "part": "bar fill",
       "property": "background",
-      "value": "#FFC700 (bee, dark)",
+      "value": "`gamification.xp` #FFC700 (bee, dark)",
       "source": "quests-dark-mobile cl=_3jkB9 _1qzJe (#62)"
      },
      {
       "part": "shine",
       "property": "fill",
-      "value": "#FFFFFF (snow-always-light) @0.2",
+      "value": "`palette.dark.snow-always-light` #FFFFFF (snow-always-light) @0.2",
       "source": "quests-dark-mobile cl=wg2yg _1EFTr (#63)"
      },
      {
       "part": "label on track",
       "property": "color",
-      "value": "#AFAFAF (hare-always-light)",
+      "value": "`dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light)",
       "source": "quests-dark-default cl=_3a7rM (#167)"
      },
      {
       "part": "label on fill",
       "property": "color",
-      "value": "#CD7900 (guinea-pig-always-light)",
+      "value": "`dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light)",
       "source": "quests-dark-default cl=_2spfn (#170); css:1327-4028784b.css ._2nasW"
      },
      {
       "part": "locked card",
       "property": "background / text / border",
-      "value": "#202F36 (polar, dark) / #52656D (hare, dark) / #37464F (swan, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark) / `text.tertiary` #52656D (hare, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "quests-dark-default cl=_3nvey (#173)"
      },
      {
       "part": "VIEW ALL (rail)",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "learn-dark-default (#107)"
      }
     ],
@@ -10121,31 +10121,31 @@
      {
       "part": "card",
       "property": "background / border",
-      "value": "#FFFFFF (snow, light) / #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "quests-light-default (#159)"
      },
      {
       "part": "section title / quest title",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "quests-light-default (#150, #164)"
      },
      {
       "part": "timer",
       "property": "color",
-      "value": "#FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "quests-light-default cl=_9ozg3 (#151)"
      },
      {
       "part": "bar track",
       "property": "background",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "quests-light-default (#167)"
      },
      {
       "part": "bar fill",
       "property": "background",
-      "value": "#FFC800 (bee, light)",
+      "value": "`gamification.xp` #FFC800 (bee, light)",
       "source": "quests-light-default cl=_3jkB9 _1qzJe (#170)"
      },
      {
@@ -10157,25 +10157,25 @@
      {
       "part": "label on track",
       "property": "color",
-      "value": "#AFAFAF (hare-always-light)",
+      "value": "`dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light)",
       "source": "quests-light-default (#168)"
      },
      {
       "part": "label on fill",
       "property": "color",
-      "value": "#CD7900 (guinea-pig-always-light)",
+      "value": "`dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light)",
       "source": "quests-light-default (#172)"
      },
      {
       "part": "locked card",
       "property": "background / text / border",
-      "value": "#F7F7F7 (polar, light) / #AFAFAF (hare, light) / #E5E5E5 (swan, light)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light) / `text.tertiary` #AFAFAF (hare, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "quests-light-default (#175)"
      },
      {
       "part": "VIEW ALL (rail)",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "learn-light-default (#115)"
      }
     ],
@@ -10354,25 +10354,25 @@
      {
       "part": "card",
       "property": "background / border",
-      "value": "none (page #131F24 shows through) / #37464F (swan, dark)",
+      "value": "none (page #131F24 shows through) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "quests-dark-default (#86)"
      },
      {
       "part": "title / badge name",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "quests-dark-default (#88, #97) unlisted; css:4243-a8d324a8.css ._2zTBh"
      },
      {
       "part": "date",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "quests-dark-default cl=_7jKSO (#98)"
      },
      {
       "part": "VIEW ALL",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "quests-dark-default (#89)"
      }
     ],
@@ -10380,31 +10380,31 @@
      {
       "part": "card",
       "property": "border",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "quests-light-default (#87)"
      },
      {
       "part": "title",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "quests-light-default (#89)"
      },
      {
       "part": "badge name",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "quests-light-default cl=_2zTBh (#98)"
      },
      {
       "part": "date",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "quests-light-default cl=_7jKSO (#99)"
      },
      {
       "part": "VIEW ALL",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "quests-light-default (#90)"
      }
     ],
@@ -10578,55 +10578,55 @@
      {
       "part": "list border + row rule",
       "property": "border-color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #309, #310"
      },
      {
       "part": "title",
       "property": "color",
-      "value": "#F1F7FB (black-text, dark)",
+      "value": "`text.body` #F1F7FB (black-text, dark)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #317"
      },
      {
       "part": "counter \"238/250\"",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "profile-dark-default #318; css:5515 ._8oTbo"
      },
      {
       "part": "description",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "profile-dark-default #328; css:5515 ._7Cbsk"
      },
      {
       "part": "progress track",
       "property": "background",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #323; css:4779 ._3yKMC"
      },
      {
       "part": "progress fill",
       "property": "background",
-      "value": "#FFC700 (bee, dark)",
+      "value": "`gamification.xp` #FFC700 (bee, dark)",
       "source": "profile-dark-default #324, #325"
      },
      {
       "part": "progress shine",
       "property": "background",
-      "value": "#FFFFFF (snow-always-light) @0.2 opacity",
+      "value": "`palette.dark.snow-always-light` #FFFFFF (snow-always-light) @0.2 opacity",
       "source": "profile-dark-default #326; css:4779 ._1EFTr"
      },
      {
       "part": "level label (red/purple tiles)",
       "property": "color",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "profile-dark-default #313, #341; css:4243 ._1sF2c"
      },
      {
       "part": "level label (gold tile, Sage)",
       "property": "color",
-      "value": "#D79433 (guinea-pig, dark)",
+      "value": "`feedback.neutral.text` #D79433 (guinea-pig, dark)",
       "source": "profile-dark-default #332; css:4243 ._1K2bC"
      },
      {
@@ -10640,55 +10640,55 @@
      {
       "part": "list border + row rule",
       "property": "border-color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default ul cl=_1dDcV (#320), li (#321)"
      },
      {
       "part": "title",
       "property": "color",
-      "value": "#3C3C3C (black-text, light)",
+      "value": "`text.body` #3C3C3C (black-text, light)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #328"
      },
      {
       "part": "counter",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "profile-light-default cl=_8oTbo (#329)"
      },
      {
       "part": "description",
       "property": "color",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "profile-light-default cl=_7Cbsk (#339)"
      },
      {
       "part": "progress track",
       "property": "background",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default cl=_3yKMC (#334)"
      },
      {
       "part": "progress fill",
       "property": "background",
-      "value": "#FFC800 (bee, light)",
+      "value": "`gamification.xp` #FFC800 (bee, light)",
       "source": "profile-light-default cl=_27NV6 (#335)"
      },
      {
       "part": "progress shine",
       "property": "background",
-      "value": "#FFFFFF (snow-always-light) @0.2 opacity",
+      "value": "`palette.light.snow-always-light` #FFFFFF (snow-always-light) @0.2 opacity",
       "source": "profile-light-default cl=_1EFTr (#337)"
      },
      {
       "part": "level label (red/purple tiles)",
       "property": "color",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "profile-light-default #324, #352"
      },
      {
       "part": "level label (gold tile)",
       "property": "color",
-      "value": "#CD7900 (guinea-pig, light)",
+      "value": "`feedback.neutral.text` #CD7900 (guinea-pig, light)",
       "source": "profile-light-default #343"
      }
     ],
@@ -10850,55 +10850,55 @@
      {
       "part": "banner",
       "property": "background",
-      "value": "#8CE31B (NO PALETTE MATCH: user avatar colour from --avatars-background-color; fallback snow #131F24)",
+      "value": "#8CE31B (NO PALETTE MATCH: user avatar colour from --avatars-background-color; fallback `text.onPrimary` snow #131F24)",
       "source": "profile-dark-default #205; css:5515 .eGQis"
      },
      {
       "part": "edit button face",
       "property": "background",
-      "value": "#8CE31B (same avatar colour) with border #000000 @0.30 (black) and 2px lip shadow black @0.30",
+      "value": "#8CE31B (same avatar colour) with border `palette.dark.black` #000000 @0.30 (black) and 2px lip shadow black @0.30",
       "source": "profile-dark-default #206 ::before; css:5515 ._3Y-wy"
      },
      {
       "part": "edit icon",
       "property": "fill",
-      "value": "#4B4B4B (eel-always-light, dark)",
+      "value": "`palette.dark.eel-always-light` #4B4B4B (eel-always-light, dark)",
       "source": "profile-dark-default #209"
      },
      {
       "part": "name",
       "property": "color",
-      "value": "#F1F7FB (black-text, dark)",
+      "value": "`text.body` #F1F7FB (black-text, dark)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #217"
      },
      {
       "part": "handle",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "profile-dark-default #218; css:5515 ._1Fdxc"
      },
      {
       "part": "joined",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "profile-dark-default #221; css:5515 ._3QM8N"
      },
      {
       "part": "following / followers",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "profile-dark-default #224, #226; css:5515 ._7V_nj"
      },
      {
       "part": "\"+N\" chip",
       "property": "border / text",
-      "value": "border #37464F (swan, dark), text #52656D (hare, dark)",
+      "value": "border `border.default` #37464F (swan, dark), text `text.tertiary` #52656D (hare, dark)",
       "source": "profile-dark-default #232"
      },
      {
       "part": "bottom rule",
       "property": "border-color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #213"
      }
     ],
@@ -10906,55 +10906,55 @@
      {
       "part": "banner",
       "property": "background",
-      "value": "#8CE31B (NO PALETTE MATCH, avatar colour; fallback snow #FFFFFF)",
+      "value": "#8CE31B (NO PALETTE MATCH, avatar colour; fallback `text.onPrimary` snow #FFFFFF)",
       "source": "profile-light-default cl=eGQis (#206)"
      },
      {
       "part": "edit button face",
       "property": "background",
-      "value": "#8CE31B with border #000000 @0.30 (black)",
+      "value": "#8CE31B with border `palette.light.black` #000000 @0.30 (black)",
       "source": "profile-light-default #207"
      },
      {
       "part": "edit icon",
       "property": "fill",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "profile-light-default #210"
      },
      {
       "part": "name",
       "property": "color",
-      "value": "#3C3C3C (black-text, light)",
+      "value": "`text.body` #3C3C3C (black-text, light)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #218"
      },
      {
       "part": "handle",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "profile-light-default #219"
      },
      {
       "part": "joined",
       "property": "color",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "profile-light-default #222"
      },
      {
       "part": "following / followers",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "profile-light-default #225, #227"
      },
      {
       "part": "\"+N\" chip",
       "property": "border / text",
-      "value": "border #E5E5E5 (swan, light), text #AFAFAF (hare, light)",
+      "value": "border `border.default` #E5E5E5 (swan, light), text `text.tertiary` #AFAFAF (hare, light)",
       "source": "profile-light-default #233"
      },
      {
       "part": "bottom rule",
       "property": "border-color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default #214"
      }
     ],
@@ -11112,31 +11112,31 @@
      {
       "part": "tile",
       "property": "border-color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #239"
      },
      {
       "part": "value (active)",
       "property": "color",
-      "value": "#F1F7FB (black-text, dark)",
+      "value": "`text.body` #F1F7FB (black-text, dark)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #248"
      },
      {
       "part": "value (inactive streak)",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "profile-dark-default #242; css:5515 ._1kcT_ h4"
      },
      {
       "part": "label",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "profile-dark-default #243; css:5515 ._3oUUc"
      },
      {
       "part": "week badge",
       "property": "background / text / border",
-      "value": "bg #CD7900 (guinea-pig-always-light), text + border #131F24 (snow, dark)",
+      "value": "bg `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light), text + border `text.onPrimary` #131F24 (snow, dark)",
       "source": "profile-dark-mobile #92; css:5515 ._1eerR, ._3qbFZ"
      },
      {
@@ -11150,25 +11150,25 @@
      {
       "part": "tile",
       "property": "border-color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default #249"
      },
      {
       "part": "value",
       "property": "color",
-      "value": "#3C3C3C (black-text, light)",
+      "value": "`text.body` #3C3C3C (black-text, light)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #252"
      },
      {
       "part": "label",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "profile-light-default #253"
      },
      {
       "part": "week badge",
       "property": "background / text / border",
-      "value": "bg #CD7900 (guinea-pig-always-light), text + border #FFFFFF (snow, light)",
+      "value": "bg `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light), text + border `text.onPrimary` #FFFFFF (snow, light)",
       "source": "profile-light-default #261"
      },
      {
@@ -11319,37 +11319,37 @@
      {
       "part": "card",
       "property": "border-color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #269"
      },
      {
       "part": "name",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "profile-dark-default #274; css:1081 .Euydo"
      },
      {
       "part": "reason",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "profile-dark-default #275; css:1081 .LH3xS"
      },
      {
       "part": "FOLLOW face (::after)",
       "property": "background",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "profile-dark-default #276 ::after; css:app ._11FQZ:after"
      },
      {
       "part": "FOLLOW lip (host bg)",
       "property": "background",
-      "value": "#1899D6 (whale, dark)",
+      "value": "`text.selected` #1899D6 (whale, dark)",
       "source": "profile-dark-default #276; css:app ._11FQZ"
      },
      {
       "part": "FOLLOW label",
       "property": "color",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "profile-dark-default #277"
      },
      {
@@ -11363,37 +11363,37 @@
      {
       "part": "card",
       "property": "border-color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default #280"
      },
      {
       "part": "name",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "profile-light-default #285"
      },
      {
       "part": "reason",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "profile-light-default #286"
      },
      {
       "part": "FOLLOW face (::after)",
       "property": "background",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "profile-light-default #287 ::after"
      },
      {
       "part": "FOLLOW lip (host bg)",
       "property": "background",
-      "value": "#1899D6 (whale, light)",
+      "value": "`text.selected` #1899D6 (whale, light)",
       "source": "profile-light-default #287"
      },
      {
       "part": "FOLLOW label",
       "property": "color",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "profile-light-default #288"
      },
      {
@@ -11550,55 +11550,55 @@
      {
       "part": "panel border + item rule",
       "property": "border-color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #87, #88"
      },
      {
       "part": "name",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "css:5515 ._1C9lp; profile-dark-default #96"
      },
      {
       "part": "time",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "profile-dark-default #97"
      },
      {
       "part": "event text",
       "property": "color",
-      "value": "#F1F7FB (black-text, dark)",
+      "value": "`text.body` #F1F7FB (black-text, dark)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #98"
      },
      {
       "part": "event art",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "profile-dark-default #100; css:5515 ._18A1Y"
      },
      {
       "part": "CELEBRATE",
       "property": "face / border / label",
-      "value": "face #131F24 (snow), border + 2px lip #37464F (swan), label #F1F7FB (eel)",
+      "value": "face `text.onPrimary` #131F24 (snow), border + 2px lip `border.default` #37464F (swan), label `text.primary` #F1F7FB (eel)",
       "source": "profile-dark-default #103 ::before; css:4779 ._2ZO5y"
      },
      {
       "part": "reaction ring",
       "property": "outer / inner",
-      "value": "outer bg + border #131F24 (snow), inner border #37464F (swan)",
+      "value": "outer bg + border `text.onPrimary` #131F24 (snow), inner border `border.default` #37464F (swan)",
       "source": "profile-dark-default #109, #110"
      },
      {
       "part": "reaction count",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "profile-dark-default #112"
      },
      {
       "part": "View all",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "css:5515 ._1eHsP"
      }
     ],
@@ -11606,49 +11606,49 @@
      {
       "part": "panel border + item rule",
       "property": "border-color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default #88, #89"
      },
      {
       "part": "name",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "profile-light-default #97"
      },
      {
       "part": "time",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "profile-light-default #98"
      },
      {
       "part": "event text",
       "property": "color",
-      "value": "#3C3C3C (black-text, light)",
+      "value": "`text.body` #3C3C3C (black-text, light)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #99"
      },
      {
       "part": "CELEBRATE",
       "property": "face / border / label",
-      "value": "face #FFFFFF (snow), border + lip #E5E5E5 (swan), label #4B4B4B (eel)",
+      "value": "face `text.onPrimary` #FFFFFF (snow), border + lip `border.default` #E5E5E5 (swan), label `text.primary` #4B4B4B (eel)",
       "source": "profile-light-default #104, #106"
      },
      {
       "part": "reaction ring",
       "property": "outer / inner",
-      "value": "outer #FFFFFF (snow), inner border #E5E5E5 (swan)",
+      "value": "outer `text.onPrimary` #FFFFFF (snow), inner border `border.default` #E5E5E5 (swan)",
       "source": "profile-light-default #110, #111"
      },
      {
       "part": "reaction count",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "profile-light-default #113"
      },
      {
       "part": "View all",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "profile-light-default #139"
      }
     ],
@@ -11803,43 +11803,43 @@
      {
       "part": "face",
       "property": "background",
-      "value": "#131F24 (snow, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark)",
       "source": "characters-dark-default #173 ::before"
      },
      {
       "part": "border + lip",
       "property": "color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "characters-dark-default #173 ::before"
      },
      {
       "part": "glyph",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "css:9416 .IxPSK; characters-dark-default #175"
      },
      {
       "part": "romaji",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "characters-dark-default #176; css:9416 ._3UqmZ"
      },
      {
       "part": "bar track",
       "property": "background",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "characters-dark-default #178"
      },
      {
       "part": "bar fill",
       "property": "background",
-      "value": "#FFC700 (bee, dark), opacity 0 at value 0",
+      "value": "`gamification.xp` #FFC700 (bee, dark), opacity 0 at value 0",
       "source": "characters-dark-default #179, #181"
      },
      {
       "part": "disabled face/border",
       "property": "background / border",
-      "value": "#202F36 (polar, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark)",
       "source": "css:9416 ._3Dsa- (--web-ui_button-*-disabled)"
      }
     ],
@@ -11847,43 +11847,43 @@
      {
       "part": "face",
       "property": "background",
-      "value": "#FFFFFF (snow, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light)",
       "source": "characters-light-default #181 ::before"
      },
      {
       "part": "border + lip",
       "property": "color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "characters-light-default #181 ::before"
      },
      {
       "part": "glyph",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "characters-light-default #183"
      },
      {
       "part": "romaji",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "characters-light-default #184"
      },
      {
       "part": "bar track",
       "property": "background",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "characters-light-default #186"
      },
      {
       "part": "bar fill",
       "property": "background",
-      "value": "#FFC800 (bee, light), opacity 0 at value 0",
+      "value": "`gamification.xp` #FFC800 (bee, light), opacity 0 at value 0",
       "source": "characters-light-default #187"
      },
      {
       "part": "disabled face/border",
       "property": "background / border",
-      "value": "#F7F7F7 (polar, light)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light)",
       "source": "css:9416 ._3Dsa-"
      }
     ],
@@ -11993,19 +11993,19 @@
      {
       "part": "selected label + rule",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "characters-dark-default #155; css:9416 ._1H-vp"
      },
      {
       "part": "unselected label",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "characters-dark-default #157"
      },
      {
       "part": "unselected rule",
       "property": "border-color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "characters-dark-default #157"
      }
     ],
@@ -12013,19 +12013,19 @@
      {
       "part": "selected label + rule",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "characters-light-default #163"
      },
      {
       "part": "unselected label",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "characters-light-default #165"
      },
      {
       "part": "unselected rule",
       "property": "border-color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "characters-light-default #165"
      }
     ],
@@ -12154,19 +12154,19 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "bg #131F24 (snow, dark), border #37464F (swan, dark)",
+      "value": "bg `text.onPrimary` #131F24 (snow, dark), border `border.default` #37464F (swan, dark)",
       "source": "guidebook-dark-default #177; css:4779 ._36bu_"
      },
      {
       "part": "speaker",
       "property": "fill",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "guidebook-dark-default path #186, #188, #192"
      },
      {
       "part": "JP text",
       "property": "color",
-      "value": "#F1F7FB (black-text, dark)",
+      "value": "`text.body` #F1F7FB (black-text, dark)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); guidebook-dark-default #195"
      },
      {
@@ -12178,13 +12178,13 @@
      {
       "part": "translation",
       "property": "color",
-      "value": "#52656D (hare, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark)",
       "source": "guidebook-dark-default #230"
      },
      {
       "part": "section label",
       "property": "color",
-      "value": "#49C0F8 (macaw, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark)",
       "source": "guidebook-dark-default #171"
      }
     ],
@@ -12192,19 +12192,19 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "bg #FFFFFF (snow, light), border #E5E5E5 (swan, light)",
+      "value": "bg `text.onPrimary` #FFFFFF (snow, light), border `border.default` #E5E5E5 (swan, light)",
       "source": "guidebook-light-default #186"
      },
      {
       "part": "speaker",
       "property": "fill",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "guidebook-light-default path #195, #197, #201"
      },
      {
       "part": "JP text",
       "property": "color",
-      "value": "#3C3C3C (black-text, light)",
+      "value": "`text.body` #3C3C3C (black-text, light)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); guidebook-light-default #204"
      },
      {
@@ -12216,13 +12216,13 @@
      {
       "part": "translation",
       "property": "color",
-      "value": "#AFAFAF (hare, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light)",
       "source": "guidebook-light-default #239"
      },
      {
       "part": "section label",
       "property": "color",
-      "value": "#1CB0F6 (macaw, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light)",
       "source": "guidebook-light-default #180"
      }
     ],
@@ -12364,49 +12364,49 @@
      {
       "part": "row rule",
       "property": "border-color",
-      "value": "#37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "shop-dark-default #157"
      },
      {
       "part": "title",
       "property": "color",
-      "value": "#F1F7FB (black-text, dark)",
+      "value": "`text.body` #F1F7FB (black-text, dark)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); shop-dark-default #161"
      },
      {
       "part": "description",
       "property": "color",
-      "value": "#DCE6EC (wolf, dark)",
+      "value": "`text.secondary` #DCE6EC (wolf, dark)",
       "source": "shop-dark-default #162; css:8566 ._23KGP"
      },
      {
       "part": "price button",
       "property": "face / border / label",
-      "value": "face #131F24 (snow), border + lip #37464F (swan), label #49C0F8 (macaw)",
+      "value": "face `text.onPrimary` #131F24 (snow), border + lip `border.default` #37464F (swan), label `text.link` #49C0F8 (macaw)",
       "source": "shop-dark-default #173; css:4779 ._3xDVI"
      },
      {
       "part": "FREE TRIAL label",
       "property": "color",
-      "value": "#CF17C8 (nova)",
+      "value": "`gamification.super.label` #CF17C8 (nova)",
       "source": "shop-dark-default #165; css:8566 ._2eqoY"
      },
      {
       "part": "disabled (FULL / EQUIPPED)",
       "property": "face / border / label",
-      "value": "face #131F24 (snow), border #37464F (swan), label #37464F (swan), no lip",
+      "value": "face `text.onPrimary` #131F24 (snow), border `border.default` #37464F (swan), label `gamification.streakInactive` #37464F (swan), no lip",
       "source": "shop-dark-default #159; css:app ._3U5_i"
      },
      {
       "part": "pill (not equipped)",
       "property": "bg / text",
-      "value": "bg #37464F (swan), text #52656D (hare)",
+      "value": "bg `gamification.streakInactive` #37464F (swan), text `text.tertiary` #52656D (hare)",
       "source": "shop-dark-default #177; css:8566 ._2tJ-w"
      },
      {
       "part": "pill (equipped)",
       "property": "bg / text",
-      "value": "bg #202F36 (sea-sponge, dark), text #93D333 (owl, dark)",
+      "value": "bg `gamification.league.promotedRow` #202F36 (sea-sponge, dark), text `accent.primary.face` #93D333 (owl, dark)",
       "source": "css:8566 ._1-6PO; captured in shop-dark-mobile #83"
      },
      {
@@ -12420,43 +12420,43 @@
      {
       "part": "row rule",
       "property": "border-color",
-      "value": "#E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "shop-light-default #167"
      },
      {
       "part": "title",
       "property": "color",
-      "value": "#3C3C3C (black-text, light)",
+      "value": "`text.body` #3C3C3C (black-text, light)",
       "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); shop-light-default #171"
      },
      {
       "part": "description",
       "property": "color",
-      "value": "#777777 (wolf, light)",
+      "value": "`text.secondary` #777777 (wolf, light)",
       "source": "shop-light-default #172"
      },
      {
       "part": "price button",
       "property": "face / border / label",
-      "value": "face #FFFFFF (snow), border + lip #E5E5E5 (swan), label #1CB0F6 (macaw)",
+      "value": "face `text.onPrimary` #FFFFFF (snow), border + lip `border.default` #E5E5E5 (swan), label `text.link` #1CB0F6 (macaw)",
       "source": "shop-light-default #169"
      },
      {
       "part": "FREE TRIAL label",
       "property": "color",
-      "value": "#CF17C8 (nova)",
+      "value": "`gamification.super.label` #CF17C8 (nova)",
       "source": "shop-light-default #175"
      },
      {
       "part": "disabled (EQUIPPED)",
       "property": "face / border / label",
-      "value": "face #FFFFFF (snow), border #E5E5E5 (swan), label #E5E5E5 (swan)",
+      "value": "face `text.onPrimary` #FFFFFF (snow), border `border.default` #E5E5E5 (swan), label `gamification.streakInactive` #E5E5E5 (swan)",
       "source": "shop-light-default #183, #184"
      },
      {
       "part": "pill (equipped)",
       "property": "bg / text",
-      "value": "bg #D7FFB8 (sea-sponge, light), text #58CC02 (owl, light)",
+      "value": "bg `gamification.league.promotedRow` #D7FFB8 (sea-sponge, light), text `accent.primary.face` #58CC02 (owl, light)",
       "source": "shop-light-default cl=_1-6PO _2I6Qk (#187)"
      }
     ],
@@ -12659,37 +12659,37 @@
      {
       "part": "A card",
       "property": "bg / border / body text",
-      "value": "bg #131F24 (snow), border #37464F (swan), body #DCE6EC (wolf)",
+      "value": "bg `text.onPrimary` #131F24 (snow), border `border.default` #37464F (swan), body `text.secondary` #DCE6EC (wolf)",
       "source": "learn-dark-default #87, #92; css:7668 ._16rRh"
      },
      {
       "part": "A title",
       "property": "color",
-      "value": "#F1F7FB (eel, dark)",
+      "value": "`text.primary` #F1F7FB (eel, dark)",
       "source": "css:7668 ._3f4H2; learn-dark-default #91"
      },
      {
       "part": "A button",
       "property": "face / lip / label",
-      "value": "face #3C4DFF (cosmos), lip #3F22EC (nebula), label #FFFFFF (snow-always-light)",
+      "value": "face `gamification.super.face` #3C4DFF (cosmos), lip `gamification.super.lip` #3F22EC (nebula), label `text.onColor` #FFFFFF (snow-always-light)",
       "source": "learn-dark-default #93 ::before; css:app-f2ef02f8.css ._3b8r8"
      },
      {
       "part": "B/C banner",
       "property": "background",
-      "value": "radial-gradient(216% 106% at 6% 3%, #26F663 (gamma) @0.3 0, #268AFF (starlight) @0.3 52%, #FC55FF (quasar) @0.3 100%) over #000437 (eclipse); text #FFFFFF (snow-always-light)",
+      "value": "radial-gradient(216% 106% at 6% 3%, `palette.dark.gamma` #26F663 (gamma) @0.3 0, `palette.dark.starlight` #268AFF (starlight) @0.3 52%, `palette.dark.quasar` #FC55FF (quasar) @0.3 100%) over `gamification.super.surface` #000437 (eclipse); text `text.onColor` #FFFFFF (snow-always-light)",
       "source": "shop-dark-default #145; css:8566 .MGk8p"
      },
      {
       "part": "B/C button",
       "property": "face / lip / label",
-      "value": "face #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label #000437 (eclipse)",
+      "value": "face `text.onColor` #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-dark-default #152 ::before; css:app ._19taU"
      },
      {
       "part": "C body emphasis",
       "property": "color",
-      "value": "\"Super Duolingo\" #FFFFFF (snow-always-light, !important via .EryQo) bold",
+      "value": "\"Super Duolingo\" `text.onColor` #FFFFFF (snow-always-light, !important via .EryQo) bold",
       "source": "settings-super-dark-default #108; css:7668 .EryQo>span>span"
      }
     ],
@@ -12697,31 +12697,31 @@
      {
       "part": "A card",
       "property": "bg / border / body text",
-      "value": "bg #FFFFFF (snow), border #E5E5E5 (swan), body #777777 (wolf)",
+      "value": "bg `text.onPrimary` #FFFFFF (snow), border `border.default` #E5E5E5 (swan), body `text.secondary` #777777 (wolf)",
       "source": "learn-light-default #88, #93"
      },
      {
       "part": "A title",
       "property": "color",
-      "value": "#4B4B4B (eel, light)",
+      "value": "`text.primary` #4B4B4B (eel, light)",
       "source": "learn-light-default #92"
      },
      {
       "part": "A button",
       "property": "face / lip / label",
-      "value": "face #3C4DFF (cosmos), lip #3F22EC (nebula), label #FFFFFF",
+      "value": "face `gamification.super.face` #3C4DFF (cosmos), lip `gamification.super.lip` #3F22EC (nebula), label #FFFFFF",
       "source": "learn-light-default #94"
      },
      {
       "part": "B/C banner",
       "property": "background",
-      "value": "same gradient over #000437 (eclipse): theme-independent",
+      "value": "same gradient over `gamification.super.surface` #000437 (eclipse): theme-independent",
       "source": "shop-light-default #154; settings-super-light-default #102"
      },
      {
       "part": "B/C button",
       "property": "face / lip / label",
-      "value": "face #FFFFFF, lip #FFFFFF @0.5, label #000437 (eclipse)",
+      "value": "face #FFFFFF, lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-light-default #163"
      }
     ],
@@ -12892,19 +12892,19 @@
      {
       "part": "card",
       "property": "background",
-      "value": "radial-gradient(216% 106% at 6% 3%, #26F663 (gamma) @0.3 0, #268AFF (starlight) @0.3 52%, #FC55FF (quasar) @0.3 100%) over #000437 (eclipse)",
+      "value": "radial-gradient(216% 106% at 6% 3%, `palette.dark.gamma` #26F663 (gamma) @0.3 0, `palette.dark.starlight` #268AFF (starlight) @0.3 52%, `palette.dark.quasar` #FC55FF (quasar) @0.3 100%) over `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-dark-default #114; css:1327 ._3Mmv9"
      },
      {
       "part": "title / body / link",
       "property": "color",
-      "value": "#FFFFFF (snow-always-light); body opacity 0.8",
+      "value": "`text.onColor` #FFFFFF (snow-always-light); body opacity 0.8",
       "source": "shop-dark-default #117, #118, #124; css:1327 ._3IB6P, ._yQL7, ._1d5x2 a"
      },
      {
       "part": "button",
       "property": "face / lip / label",
-      "value": "face #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label #000437 (eclipse)",
+      "value": "face `text.onColor` #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-dark-default #120 ::before; css:app ._19taU"
      }
     ],
@@ -12918,13 +12918,13 @@
      {
       "part": "title / body / link",
       "property": "color",
-      "value": "#FFFFFF (snow-always-light); body opacity 0.8",
+      "value": "`text.onColor` #FFFFFF (snow-always-light); body opacity 0.8",
       "source": "learn-light-default #135, #136"
      },
      {
       "part": "button",
       "property": "face / lip / label",
-      "value": "face #FFFFFF, lip #FFFFFF @0.5, label #000437 (eclipse)",
+      "value": "face #FFFFFF, lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
       "source": "learn-light-default #138"
      }
     ],

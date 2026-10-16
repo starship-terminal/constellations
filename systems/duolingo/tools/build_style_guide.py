@@ -80,7 +80,10 @@ SEM_THEMES = {"light": LIGHT, "dark": DARK}
 
 
 def resolve_ref(ref, theme):
-    """'{palette.light.owl}' -> ('owl', '#58cc02'); '{accent.primary.lip}' -> semantic var."""
+    """'{palette.light.owl}' -> ('owl', '#58cc02'); '{accent.primary.lip}' -> semantic var.
+    A literal hex (a Derived value such as accent.primary.hover) resolves to itself."""
+    if not ref.startswith("{"):
+        return ("literal", ref, ref)
     path = ref.strip("{}").split(".")
     if path[0] == "palette":
         name = path[2]
@@ -98,6 +101,8 @@ def sem_css_value(tok, theme):
     if mod and mod.get("type") == "alpha":
         r, g, b = hex_rgb(val)
         return f"rgb({r} {g} {b} / {mod['value']})"
+    if kind == "literal":
+        return val
     return f"var(--palette-{theme}-{name})"
 
 
@@ -129,7 +134,7 @@ def css_val(t):
         items = v if isinstance(v, list) else [v]
         return ", ".join(f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {color_css(s["color"])}' for s in items)
     if ty == "fontFamily":
-        return f'"{v}"'
+        return ", ".join(f'"{f}"' if f not in ("sans-serif", "serif", "monospace") else f for f in (v if isinstance(v, list) else [v]))
     return str(v)
 
 

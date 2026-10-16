@@ -288,6 +288,34 @@
      660
     ]
    ]
+  },
+  {
+   "name": "profile following list: a name cut at the image edge (missed by the 2026-10-11 pass, painted 2026-10-17)",
+   "files": [
+    "screenshots/profile-dark-default.png"
+   ],
+   "rects": [
+    [
+     1760,
+     1538,
+     2010,
+     -1
+    ]
+   ]
+  },
+  {
+   "name": "profile, light, scrolled: a following-list name cut at the top edge (painted 2026-10-17)",
+   "files": [
+    "screenshots/profile-light-scrolled.png"
+   ],
+   "rects": [
+    [
+     2060,
+     0,
+     2300,
+     28
+    ]
+   ]
   }
  ]
 }

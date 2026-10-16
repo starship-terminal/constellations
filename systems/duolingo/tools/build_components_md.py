@@ -26,7 +26,7 @@ def first_anatomy(c):
     return '; '.join(str(x) for x in a[:3])[:220]
 L=[]
 L.append('# Duolingo: component reference\n')
-L.append('Captured from www.duolingo.com on 2026-09-25, signed in (free account, Japanese course), in both themes. Every measurement is a computed style read from the running app, or a CSS rule from its own stylesheets where a state could not be held live; each spec row names its source. Token names refer to [tokens.json](tokens.json); the rendered versions are in [style-guide.html](style-guide.html).\n')
+L.append('Captured from www.duolingo.com on 2026-09-25, signed in (free account, Japanese course), in both themes. Every measurement is a computed style read from the running app, or a CSS rule from its own stylesheets where a state could not be held live; each spec row names its source. Token names refer to [tokens.json](tokens.json); the rendered versions are in [style-guide.html](style-guide.html). Refreshed on 2026-10-17: every colour in the specs now leads with its token, focus states were measured live with the keyboard ([components/focus.md](components/focus.md)), and the patterns are written up in [patterns.md](patterns.md).\n')
 L.append('This file is the inventory: the discovery list, one entry per component with its crops, and the Gaps. The full specs (anatomy, measurement tables, state tables with sources, tokens per theme) are in [components/core.md](components/core.md) (generic components) and [components/product.md](components/product.md) (Duolingo-specific components), with machine-readable copies in `components/*.json`.\n')
 L.append('Screenshots are named `{page}-{theme}-{state}.png` and are 2x. Desktop captures are 1200x797 CSS px (early dark captures) or 1384x797 (later dark lesson captures and all light captures, after the browser sidebar collapsed); mobile captures are 570px wide, inside Duolingo\'s `max-width: 699px` layout. The viewport edges carry a faint orange glow and some shots show an orange-outlined pointer: both come from the browser automation, not from Duolingo.\n')
 L.append(disc.strip()+'\n')
@@ -63,14 +63,14 @@ L.append('The per-icon table (file, source, where used, rendered size, fill or s
 # gaps
 L.append('## Gaps\n')
 L.append('### Capture\n')
-L.append('''- **Log-in and sign-up flow:** not captured. Opening it needs a logged-out session, and the only logged-out browser available could not save screenshots or reach the local capture sink. The landing page has computed values only ([raw/landing-light-values.json](raw/landing-light-values.json)).
-- **Toasts:** none appeared in any flow. The one transient confirmation is the inline "Copy link" to "Copied" label swap in the invite modal.
+L.append('''- **Log-in and sign-up flow:** the onboarding questions were captured logged out on 2026-10-17 (see [patterns.md](patterns.md#onboarding)); the sign-up steps after the first lesson ask for an age, a name and an email and were not captured. The landing page has computed values only ([raw/landing-light-values.json](raw/landing-light-values.json)).
+- **Toasts:** none appeared in any flow, in either capture. The one transient confirmation is the inline "Copy link" to "Copied" label swap in the invite modal.
 - **Out-of-hearts screen:** not captured, because reaching it would have spent the account's last heart.
 - **Light lesson complete:** the screen was covered by a video ad before it could be captured. The dark version is complete, and the light colours follow from the same rules.
 - **Light incorrect-answer bar:** not captured, to keep the last heart. It is derived from the CSS rules plus the light palette and marked `derived, not captured` in the spec.
 - **Native select menu:** the open state is drawn by the OS, not the DOM.
-- **Mobile:** the viewport was 570px (Chrome's minimum window width with the tab sidebar), not a phone width. The 360 to 375px rules come from `@media` rules only. Mobile popovers, menus, modals and sheets were not captured.
-- **Tablet range 700 to 1159px:** the compact 88px icon-only sidebar was never on screen, so it comes from CSS only.
+- **Mobile:** the 2026-09 viewport was 570px (Chrome's minimum window width with the tab sidebar). The 2026-10 refresh added 390px renders of learn and quests and of the onboarding flow; the 360 to 375px rules still come from `@media` rules only, and mobile popovers, menus, modals and sheets were not captured.
+- **Tablet range 700 to 1159px:** captured on 2026-10-17 at 1000px ([learn-light-tablet](screenshots/learn-light-tablet.png)): the 88px icon-only sidebar and both columns.
 - **Screenshot vs dump mismatches:** some dark lesson and leaderboard screenshots were retaken during a second lesson while their dumps come from the first, and `leaderboard-dark-mobile` differs too. The component crops from those were offset and checked by eye. See `SHOT_MISMATCH` in the product spec.
 - **Pressed / active states:** a static dump cannot hold a mouse press, so every pressed value comes from CSS `:active` rules.
 - **Personal data:** the email field in the four `settings-profile-*` screenshots is blurred. Other users' names and avatars appear in leaderboard, profile and search captures as they did on screen.
