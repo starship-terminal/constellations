@@ -570,8 +570,10 @@ async function skills() {
     await page.evaluate(() => { const d = [...document.querySelectorAll('[role=dialog], [role=alertdialog]')].find((e) => e.getBoundingClientRect().width > 0); if (!d) return; d.setAttribute('data-m', 'confirm-dialog'); const b = [...d.querySelectorAll('button')].filter((x) => /^remove/i.test(x.innerText.trim())).pop(); if (b) b.setAttribute('data-m', 'danger-button'); const c = [...d.querySelectorAll('button')].find((x) => /^cancel/i.test(x.innerText.trim())); if (c) c.setAttribute('data-m', 'cancel-button'); });
     if (await m('confirm-dialog').count()) {
       await S('confirm-dialog', m('confirm-dialog'), ['open'], { group: G.feedback, title: 'Confirmation dialog (destructive)', desc: 'Bulk Remove on Skills asks first. Cancelled with Escape.', sel: '[role=dialog] after bulk Remove' }, { noScroll: true, noReset: true });
-      await S('danger-button', m('danger-button'), ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Danger button', desc: 'The confirm action in the remove dialog. Hovered and focused only, never pressed.', sel: 'last "Remove" button in the dialog' }, { noScroll: true, noReset: true });
-      if (await m('cancel-button').count()) await S('cancel-button', m('cancel-button'), ['default', 'hover'], { group: G.control, title: 'Cancel button', sel: '"Cancel" in the dialog' }, { noScroll: true, noReset: true });
+      // reset() between states moves the pointer off the button and blurs it, so focus-visible is not
+      // read with the hover still applied. It only moves the pointer; the dialog stays open.
+      await S('danger-button', m('danger-button'), ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Danger button', desc: 'The confirm action in the remove dialog. Hovered and focused only, never pressed.', sel: 'last "Remove" button in the dialog' }, { noScroll: true });
+      if (await m('cancel-button').count()) await S('cancel-button', m('cancel-button'), ['default', 'hover'], { group: G.control, title: 'Cancel button', sel: '"Cancel" in the dialog' }, { noScroll: true });
       if (await tagScrim('confirm-scrim')) await S('confirm-scrim', m('confirm-scrim'), ['open'], { group: G.feedback, title: 'Confirmation scrim', sel: 'fixed full-window layer behind the dialog' }, { noScroll: true, noReset: true, crop: false });
       await layers('confirm');
       await page.mouse.move(2, 2);

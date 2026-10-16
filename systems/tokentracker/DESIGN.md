@@ -64,6 +64,7 @@ colors:
   status-success: "#10b981"
   status-warning: "#f59e0b"
   status-error: "#ef4444"
+  status-successText: "#059669"
   status-danger-fill: "#dc2626"
   status-danger-text: "#ffffff"
   control-switchOn: "#10b981"

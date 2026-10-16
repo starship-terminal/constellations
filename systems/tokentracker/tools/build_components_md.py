@@ -75,11 +75,14 @@ for group in ("radius", "space.scale", "size.icon", "size", "focusRing", "border
     for name, t in CORE.items():
         if name.startswith(group + ".") and t["$type"] == "dimension":
             DIM.setdefault((group, t["$value"]), name)
-TYPE = {}
+TYPE, TYPE_LOOSE = {}, {}
 for name, t in CORE.items():
     if name.startswith("typography."):
         v = t["$value"]
-        TYPE.setdefault((_resolve(v["fontSize"]), _resolve(v["lineHeight"]), str(_resolve(v["fontWeight"]))), name)
+        size, lh, w = _resolve(v["fontSize"]), _resolve(v["lineHeight"]), str(_resolve(v["fontWeight"]))
+        mono = "mono" in v["fontFamily"]
+        TYPE.setdefault((size, lh, w, _resolve(v["letterSpacing"]), mono), name)
+        TYPE_LOOSE.setdefault((size, lh, w, mono), (name, _resolve(v["letterSpacing"])))
 SHADOW = {}
 for name, t in CORE.items():
     if t["$type"] == "shadow":
@@ -149,8 +152,17 @@ def row(v, theme, key, state="default"):
         border = f"bottom {dtok(s['borderBottomWidth'], 'border.width')} {ctok(s['borderBottomColor'], theme, key, state)}"
     layers = tuple(_shadow(s["boxShadow"]))
     shadow = "none" if not layers else (f"`{SHADOW[layers]}`" if layers in SHADOW else "; ".join(" ".join(l) for l in layers) + f" ({UNTOK})")
-    font = TYPE.get((f["fontSize"], f["lineHeight"], str(f["fontWeight"])))
-    font = f"`{font}`" if font else f"{f['fontSize']}/{f['lineHeight']} {f['fontWeight']} ({UNTOK})"
+    # Matched on size, line height, weight, letter spacing and family (mono or not). When only the
+    # spacing differs, the nearest role is named with the captured spacing beside it.
+    ls = "0px" if f.get("letterSpacing", "normal") == "normal" else f["letterSpacing"]
+    mono = "mono" in f.get("fontFamily", "").lower() or "menlo" in f.get("fontFamily", "").lower()
+    key3 = (f["fontSize"], f["lineHeight"], str(f["fontWeight"]))
+    if (*key3, ls, mono) in TYPE:
+        font = f"`{TYPE[(*key3, ls, mono)]}`"
+    elif (*key3, mono) in TYPE_LOOSE:
+        font = f"`{TYPE_LOOSE[(*key3, mono)][0]}` with letter-spacing {ls}"
+    else:
+        font = f"{f['fontSize']}/{f['lineHeight']} {f['fontWeight']}" + (f", letter-spacing {ls}" if ls != "0px" else "") + f" ({UNTOK})"
     if f.get("textTransform", "none") != "none":
         font += f", {f['textTransform']}"
     ol = ""

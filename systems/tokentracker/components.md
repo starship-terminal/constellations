@@ -507,7 +507,7 @@ Crops: [share-button.light-default](components/crops/share-button.light-default.
 | fill | `button.primary.bg` | `button.primary.hover` | = | `button.primary.pressed` |
 | border | none | = | = | = |
 | radius | `radius.xl` | = | = | = |
-| text | `typography.sectionTitle`, `text.onPrimary` | = | = | = |
+| text | `typography.rowTitle`, `text.onPrimary` | = | = | = |
 | shadow | none | = | = | = |
 | icon | `size.icon.control` | = | = | = |
 | transition | color, background-color, border-color, t `motion.duration.fast` | = | = | = |
@@ -521,7 +521,7 @@ Crops: [primary-button-default](components/crops/primary-button-default.png), [p
 | fill | `button.primary.bg` | `button.primary.hover` | = | `button.primary.pressed` |
 | border | none | = | = | = |
 | radius | `radius.xl` | = | = | = |
-| text | `typography.sectionTitle`, `text.onPrimary` | = | = | = |
+| text | `typography.rowTitle`, `text.onPrimary` | = | = | = |
 | shadow | none | = | = | = |
 | icon | `size.icon.control` | = | = | = |
 | transition | color, background-color, border-color, t `motion.duration.fast` | = | = | = |
@@ -758,10 +758,10 @@ Crops: [link.light-default](components/crops/link.light-default.png), [link.ligh
 |---|---|---|---|
 | size | 78.14 x 32 | = | = |
 | padding | 0px `space.scale.3` | = | = |
-| fill | `button.danger.bg` | `button.danger.hover` | `button.danger.hover` |
+| fill | `button.danger.bg` | `button.danger.hover` | = |
 | border | `border.width.default` transparent | = | = |
 | radius | `radius.lg` | = | = |
-| text | `typography.sectionTitle`, `button.danger.fg` | = | = |
+| text | `typography.rowTitle`, `button.danger.fg` | = | = |
 | shadow | none | = | = |
 | transition | color, background-color, border-color, t `motion.duration.base` | = | = |
 
@@ -771,10 +771,10 @@ Crops: [danger-button-default](components/crops/danger-button-default.png), [dan
 |---|---|---|---|
 | size | 78.14 x 32 | = | = |
 | padding | 0px `space.scale.3` | = | = |
-| fill | `button.danger.bg` | `button.danger.hover` | `button.danger.hover` |
+| fill | `button.danger.bg` | `button.danger.hover` | = |
 | border | `border.width.default` transparent | = | = |
 | radius | `radius.lg` | = | = |
-| text | `typography.sectionTitle`, `button.danger.fg` | = | = |
+| text | `typography.rowTitle`, `button.danger.fg` | = | = |
 | shadow | none | = | = |
 | transition | color, background-color, border-color, t `motion.duration.base` | = | = |
 
@@ -792,7 +792,7 @@ Crops: [danger-button.light-default](components/crops/danger-button.light-defaul
 | fill | `bg.panel` | = |
 | border | `border.width.default` `border.strong` | = |
 | radius | `radius.lg` | = |
-| text | `typography.sectionTitle`, `text.primary` | = |
+| text | `typography.rowTitle`, `text.primary` | = |
 | shadow | none | = |
 | transition | color, background-color, border-color, t `motion.duration.base` | = |
 
@@ -805,7 +805,7 @@ Crops: [cancel-button-default](components/crops/cancel-button-default.png), [can
 | fill | `bg.panel` | = |
 | border | `border.width.default` `border.strong` | `border.width.default` `accent.default` |
 | radius | `radius.lg` | = |
-| text | `typography.sectionTitle`, `text.primary` | `typography.sectionTitle`, `accent.default` |
+| text | `typography.rowTitle`, `text.primary` | `typography.rowTitle`, `accent.default` |
 | shadow | none | = |
 | transition | color, background-color, border-color, t `motion.duration.base` | = |
 
@@ -916,7 +916,7 @@ Crops: [button-disabled.light-disabled](components/crops/button-disabled.light-d
 | fill | `bg.panel` | = | = |
 | border | `border.width.default` `border.strong` | `border.width.default` `color.neutral.300` | = |
 | radius | `radius.lg` | = | = |
-| text | `typography.sectionTitle`, `text.primary` | `typography.sectionTitle`, `color.neutral.100` | = |
+| text | `typography.rowTitle`, `text.primary` | `typography.rowTitle`, `color.neutral.100` | = |
 | shadow | none | = | = |
 | focus ring | - | = | `focusRing.width` `color.neutral.100`, offset `focusRing.width` |
 | transition | color, background-color, border-color, t `motion.duration.base` | = | = |
@@ -930,7 +930,7 @@ Crops: [cloud-button-default](components/crops/cloud-button-default.png), [cloud
 | fill | `bg.panel` | = | = |
 | border | `border.width.default` `border.strong` | `border.width.default` `text.nav` | = |
 | radius | `radius.lg` | = | = |
-| text | `typography.sectionTitle`, `text.primary` | `typography.sectionTitle`, `text.label` | = |
+| text | `typography.rowTitle`, `text.primary` | `typography.rowTitle`, `text.label` | = |
 | shadow | none | = | = |
 | focus ring | - | = | `focusRing.width` `text.label`, offset `focusRing.width` |
 | transition | color, background-color, border-color, t `motion.duration.base` | = | = |
@@ -951,7 +951,7 @@ Crops: [cloud-button.light-default](components/crops/cloud-button.light-default.
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.caption`, uppercase, `color.neutral.300` |
+| text | `typography.eyebrow`, uppercase, `color.neutral.300` |
 | shadow | none |
 | transition | none |
 
@@ -964,7 +964,7 @@ Crops: [hero-label-default](components/crops/hero-label-default.png).
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.caption`, uppercase, `text.secondary` |
+| text | `typography.eyebrow`, uppercase, `text.secondary` |
 | shadow | none |
 | transition | none |
 
@@ -1046,7 +1046,7 @@ Crops: [hero-cost.light-default](components/crops/hero-cost.light-default.png).
 | fill | transparent | = |
 | border | `border.width.default` `color.neutral.700` | `border.width.default` `color.neutral.600` |
 | radius | `radius.xl` | = |
-| text | `typography.sectionTitle`, `text.primary` | = |
+| text | `typography.rowTitle`, `text.primary` | = |
 | shadow | none | = |
 | transition | color, background-color, border-color, t `motion.duration.base` | = |
 
@@ -1059,7 +1059,7 @@ Crops: [provider-tile-default](components/crops/provider-tile-default.png), [pro
 | fill | transparent | = |
 | border | `border.width.default` `border.default` | `border.width.default` `border.strong` |
 | radius | `radius.xl` | = |
-| text | `typography.sectionTitle`, `text.primary` | = |
+| text | `typography.rowTitle`, `text.primary` | = |
 | shadow | none | = |
 | transition | color, background-color, border-color, t `motion.duration.base` | = |
 
@@ -1077,7 +1077,7 @@ Crops: [provider-tile.light-default](components/crops/provider-tile.light-defaul
 | fill | transparent |
 | border | `border.width.default` `border.strong` |
 | radius | `radius.xl` |
-| text | `typography.sectionTitle`, `text.primary` |
+| text | `typography.rowTitle`, `text.primary` |
 | shadow | none |
 | icon | `size.icon.nav` |
 | transition | color, background-color, border-color, t `motion.duration.base` |
@@ -1091,7 +1091,7 @@ Crops: [provider-tile-all-default](components/crops/provider-tile-all-default.pn
 | fill | transparent |
 | border | `border.width.default` `border.default` |
 | radius | `radius.xl` |
-| text | `typography.sectionTitle`, `text.primary` |
+| text | `typography.rowTitle`, `text.primary` |
 | shadow | none |
 | icon | `size.icon.nav` |
 | transition | color, background-color, border-color, t `motion.duration.base` |
@@ -1550,7 +1550,7 @@ Crops: [list-header.light-default](components/crops/list-header.light-default.pn
 | fill | transparent | = |
 | border | `border.width.default` `bg.subtle` | = |
 | radius | 0px | = |
-| text | `typography.sectionTitle`, `text.strong` | = |
+| text | `typography.rowTitle`, `text.strong` | = |
 | shadow | none | = |
 | icon | `size.icon.control` | = |
 | transition | none | = |
@@ -1564,7 +1564,7 @@ Crops: [list-row-default](components/crops/list-row-default.png), [list-row-hove
 | fill | transparent | = |
 | border | `border.width.default` `border.default` | = |
 | radius | 0px | = |
-| text | `typography.sectionTitle`, `text.primary` | = |
+| text | `typography.rowTitle`, `text.primary` | = |
 | shadow | none | = |
 | icon | `size.icon.control` | = |
 | transition | none | = |
@@ -1583,7 +1583,7 @@ Crops: [list-row.light-default](components/crops/list-row.light-default.png), [l
 | fill | transparent | = | = |
 | border | none | = | = |
 | radius | `radius.sm` | = | = |
-| text | `typography.sectionTitle`, `text.strong` | = | = |
+| text | `typography.rowTitle`, `text.strong` | = | = |
 | shadow | none | = | = |
 | transition | none | = | = |
 
@@ -1596,7 +1596,7 @@ Crops: [list-row-title-default](components/crops/list-row-title-default.png), [l
 | fill | transparent | = | = |
 | border | none | = | = |
 | radius | `radius.sm` | = | = |
-| text | `typography.sectionTitle`, `text.primary` | = | = |
+| text | `typography.rowTitle`, `text.primary` | = | = |
 | shadow | none | = | = |
 | transition | none | = | = |
 
@@ -1614,7 +1614,7 @@ Crops: [list-row-title.light-default](components/crops/list-row-title.light-defa
 | fill | transparent |
 | border | `border.width.default` `bg.subtle` |
 | radius | `radius.2xl` |
-| text | `typography.sectionTitle`, `text.strong` |
+| text | `typography.rowTitle`, `text.strong` |
 | shadow | none |
 | transition | none |
 
@@ -1627,7 +1627,7 @@ Crops: [empty-state-default](components/crops/empty-state-default.png).
 | fill | transparent |
 | border | `border.width.default` `border.default` |
 | radius | `radius.2xl` |
-| text | `typography.sectionTitle`, `text.primary` |
+| text | `typography.rowTitle`, `text.primary` |
 | shadow | none |
 | transition | none |
 
@@ -1678,7 +1678,7 @@ Crops: [loading-state.light-loading](components/crops/loading-state.light-loadin
 | fill | transparent |
 | border | `border.width.default` `button.danger.hover` @ 0.4 |
 | radius | `radius.2xl` |
-| text | `typography.sectionTitle`, `text.strong` |
+| text | `typography.rowTitle`, `text.strong` |
 | shadow | none |
 | transition | none |
 
@@ -1691,7 +1691,7 @@ Crops: [error-state-error](components/crops/error-state-error.png).
 | fill | transparent |
 | border | `border.width.default` `color.red.300` |
 | radius | `radius.2xl` |
-| text | `typography.sectionTitle`, `text.primary` |
+| text | `typography.rowTitle`, `text.primary` |
 | shadow | none |
 | transition | none |
 
@@ -1711,7 +1711,7 @@ Crops: [error-state.light-error](components/crops/error-state.light-error.png).
 | fill | `bg.dialog` |
 | border | none |
 | radius | `radius.2xl` |
-| text | 11px/14.3px 600 (untokenised), uppercase, `text.secondary` |
+| text | 11px/14.3px 600, letter-spacing 1.32px (untokenised), uppercase, `text.secondary` |
 | shadow | `shadow.dialog.dark` |
 | icon | `size.icon.control` |
 | transition | opacity, transform `motion.duration.fade` |
@@ -1725,7 +1725,7 @@ Crops: [dialog-open](components/crops/dialog-open.png).
 | fill | `bg.dialog` |
 | border | none |
 | radius | `radius.2xl` |
-| text | 11px/14.3px 600 (untokenised), uppercase, `text.secondary` |
+| text | 11px/14.3px 600, letter-spacing 1.32px (untokenised), uppercase, `text.secondary` |
 | shadow | `shadow.dialog.light` |
 | icon | `size.icon.control` |
 | transition | opacity, transform `motion.duration.fade` |
@@ -1744,7 +1744,7 @@ Crops: [dialog.light-open](components/crops/dialog.light-open.png).
 | fill | `bg.subtle` |
 | border | `border.width.default` `border.strong` @ 0.6 |
 | radius | `radius.full` |
-| text | 9px/13.5px 600 (untokenised), uppercase, `text.secondary` |
+| text | 9px/13.5px 600, letter-spacing 0.45px (untokenised), uppercase, `text.secondary` |
 | shadow | none |
 | transition | none |
 
@@ -1757,7 +1757,7 @@ Crops: [status-badge-default](components/crops/status-badge-default.png).
 | fill | `bg.panel` |
 | border | `border.width.default` `border.default` @ 0.6 |
 | radius | `radius.full` |
-| text | 9px/13.5px 600 (untokenised), uppercase, `text.secondary` |
+| text | 9px/13.5px 600, letter-spacing 0.45px (untokenised), uppercase, `text.secondary` |
 | shadow | none |
 | transition | none |
 
@@ -1988,7 +1988,7 @@ Crops: [confirm-dialog.light-open](components/crops/confirm-dialog.light-open.pn
 | fill | `bg.subtle` |
 | border | `border.width.default` `border.strong` |
 | radius | `radius.lg` |
-| text | `typography.groupLabel`, `text.strong` |
+| text | `typography.groupLabel` with letter-spacing 0px, `text.strong` |
 | shadow | `shadow.lgBare` |
 | transition | all `motion.duration.base` |
 
@@ -2001,7 +2001,7 @@ Crops: [hint-tooltip-open](components/crops/hint-tooltip-open.png).
 | fill | `text.label` |
 | border | `border.width.default` `button.primary.hover` |
 | radius | `radius.lg` |
-| text | `typography.groupLabel`, `bg.card` |
+| text | `typography.groupLabel` with letter-spacing 0px, `bg.card` |
 | shadow | `shadow.lgBare` |
 | transition | all `motion.duration.base` |
 
@@ -2339,7 +2339,7 @@ Crops: [checkbox.light-default](components/crops/checkbox.light-default.png), [c
 | fill | `bg.panel` |
 | border | `border.width.default` `bg.subtle` |
 | radius | `radius.xl` |
-| text | `typography.sectionTitle`, `text.strong` |
+| text | `typography.rowTitle`, `text.strong` |
 | shadow | none |
 | icon | `size.icon.small` |
 | transition | color, background-color, border-color, t `motion.duration.fast` |
@@ -2353,7 +2353,7 @@ Crops: [select-disabled-disabled](components/crops/select-disabled-disabled.png)
 | fill | `bg.card` |
 | border | `border.width.default` `border.default` |
 | radius | `radius.xl` |
-| text | `typography.sectionTitle`, `text.primary` |
+| text | `typography.rowTitle`, `text.primary` |
 | shadow | none |
 | icon | `size.icon.small` |
 | transition | color, background-color, border-color, t `motion.duration.fast` |
@@ -2653,7 +2653,7 @@ Crops: [code-block.light-default](components/crops/code-block.light-default.png)
 | fill | `bg.subtle` |
 | border | none |
 | radius | `radius.lg` |
-| text | `typography.sectionTitle`, `text.strong` |
+| text | `typography.rowTitle`, `text.strong` |
 | shadow | none |
 | icon | `size.icon.control` |
 | transition | color, background-color, border-color, t `motion.duration.fast` |
@@ -2667,7 +2667,7 @@ Crops: [subnav-item-active-default](components/crops/subnav-item-active-default.
 | fill | `bg.wash` |
 | border | none |
 | radius | `radius.lg` |
-| text | `typography.sectionTitle`, `text.primary` |
+| text | `typography.rowTitle`, `text.primary` |
 | shadow | none |
 | icon | `size.icon.control` |
 | transition | color, background-color, border-color, t `motion.duration.fast` |
@@ -2686,7 +2686,7 @@ Crops: [subnav-item-active.light-default](components/crops/subnav-item-active.li
 | fill | transparent | `bg.panel` | = |
 | border | none | = | = |
 | radius | `radius.lg` | = | = |
-| text | `typography.sectionTitle`, `text.secondary` | `typography.sectionTitle`, `text.label` | = |
+| text | `typography.rowTitle`, `text.secondary` | `typography.rowTitle`, `text.label` | = |
 | shadow | none | = | = |
 | icon | `size.icon.control` | = | = |
 | transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
@@ -2700,7 +2700,7 @@ Crops: [subnav-item-default](components/crops/subnav-item-default.png), [subnav-
 | fill | transparent | `bg.panel` | = |
 | border | none | = | = |
 | radius | `radius.lg` | = | = |
-| text | `typography.sectionTitle`, `text.secondary` | `typography.sectionTitle`, `text.label` | = |
+| text | `typography.rowTitle`, `text.secondary` | `typography.rowTitle`, `text.label` | = |
 | shadow | none | = | = |
 | icon | `size.icon.control` | = | = |
 | transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
@@ -2719,7 +2719,7 @@ Crops: [subnav-item.light-default](components/crops/subnav-item.light-default.pn
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.badge`, uppercase, `text.muted` |
+| text | `typography.badge` with letter-spacing 1.6px, uppercase, `text.muted` |
 | shadow | none |
 | transition | none |
 
@@ -2732,7 +2732,7 @@ Crops: [subnav-group-label-default](components/crops/subnav-group-label-default.
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.badge`, uppercase, `text.disabled` |
+| text | `typography.badge` with letter-spacing 1.6px, uppercase, `text.disabled` |
 | shadow | none |
 | transition | none |
 

@@ -449,7 +449,7 @@ def themed(theme):
     for k in ["success", "warning", "error"]:
         P(f"status.{k}", tok(f"{{color.status.{k}.{theme}}}", "color", f"Derived: alias of color.status.{k}.{theme}"))
     v, src = census(theme, "text", "text-emerald-600")
-    P("status.success.text", tok(hexa(v), "color", src, "\"Operational\" on Service Status."))
+    P("status.successText", tok(hexa(v), "color", src, "\"Operational\" on Service Status."))
     P("status.danger.fill", color("toast", "backgroundColor", theme, "open", desc="The error toast and the danger button."))
     P("status.danger.text", color("toast", "color", theme, "open", desc="Text on the danger fill."))
     P("control.switchOn", tok(hexa(reading("switch-on", theme, "disabled")["paint"][0]["bg"]), "color",

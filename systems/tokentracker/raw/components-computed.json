@@ -28071,7 +28071,7 @@
       "borderTopRightRadius": "8px",
       "borderBottomRightRadius": "8px",
       "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgb(239, 68, 68)",
+      "backgroundColor": "rgb(220, 38, 38)",
       "backgroundImage": "none",
       "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
@@ -28106,7 +28106,7 @@
        "node": "button.inline-flex.items-center",
        "size": "78.1x32.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
-       "bg": "rgb(239, 68, 68)",
+       "bg": "rgb(220, 38, 38)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "8px"
       }
@@ -32330,7 +32330,7 @@
       "borderTopRightRadius": "8px",
       "borderBottomRightRadius": "8px",
       "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgb(185, 28, 28)",
+      "backgroundColor": "rgb(220, 38, 38)",
       "backgroundImage": "none",
       "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
@@ -32365,7 +32365,7 @@
        "node": "button.inline-flex.items-center",
        "size": "78.1x32.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
-       "bg": "rgb(185, 28, 28)",
+       "bg": "rgb(220, 38, 38)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "8px"
       }
