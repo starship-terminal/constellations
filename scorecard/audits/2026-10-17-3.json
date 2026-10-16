@@ -263,7 +263,7 @@
    "category": "AI chat",
    "goodFor": "A quiet chat shell with a serif model voice: composer, thread, Artifacts, Projects, settings (cds tokens)",
    "url": "https://claude.ai",
-   "captured": "2026-10-04",
+   "captured": "2026-10-17",
    "themes": [
     "light",
     "dark"
@@ -271,59 +271,59 @@
    "grades": {
     "F1": {
      "grade": "meets",
-     "evidence": "core.color: nine 35-step ramps, gray first"
+     "evidence": "core.color has nine 35-step ramps (gray, red, orange, yellow, green, aqua, blue, violet, magenta), gray first, plus brand pigments and role scales"
     },
     "F2": {
      "grade": "meets",
-     "evidence": "surface.page, 0-3, panel, popover, backdrop"
+     "evidence": "surface.page, surface.0 to 3 (surface, raised), surface.popover (overlay), surface.backdrop (scrim, 40%/50% black) in light and dark"
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "primary/secondary/muted/disabled, on.accent; no link token"
+     "grade": "meets",
+     "evidence": "text.primary, text.secondary, text.disabled, on.accent, text.link (measured TextLink, aliases text.accent) in both themes"
     },
     "F4": {
      "grade": "meets",
-     "evidence": "border.default/strong/stronger, shadow.focus ring"
+     "evidence": "border.default, border.strong, border.stronger; focus is shadow.focus (1px fill.accent ring), all sourced to cds vars"
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "fill.accent, fill.accent-hover; no pressed token"
+     "grade": "meets",
+     "evidence": "fill.accent, fill.accent-hover, fill.accent-pressed (hover fill held, plus the squish in core.press.button-scale 0.975), sourced to css-rules and measurements"
     },
     "F6": {
      "grade": "partly",
-     "evidence": "success/warning/danger fill, bg, text, border; no info"
+     "evidence": "success, warning, danger each have fill, bg, text and border; no info role in either theme (accent stands in)"
     },
     "F7": {
      "grade": "meets",
-     "evidence": "light and dark both 368 tokens, same keys"
+     "evidence": "light and dark each hold 373 tokens with identical key sets, including text.link and fill.*-pressed"
     },
     "F8": {
      "grade": "meets",
-     "evidence": "24 composites, 10 sizes, 4 weights, fallback stacks"
+     "evidence": "Fallback stacks; 8 distinct sizes; 4 weights; line heights; roles display, page-title, title, heading, body, label (measured on field-label), caption, code"
     },
     "F9": {
-     "grade": "partly",
-     "evidence": "pad/gap steps, tailwind.spacing 4px; 6/10/14/22 off-grid"
+     "grade": "meets",
+     "evidence": "core.space 2 to 56px on Tailwind's 4px --spacing with its half steps, each step derived and counted against measured paddings"
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "core.radius 10 named uses; no border-width tokens"
+     "grade": "meets",
+     "evidence": "core.radius named uses plus core.borderWidth hairline 0.5, default 1, strong 1.5, thick 2, focus-outline 2, sourced to css-rules"
     },
     "F11": {
      "grade": "meets",
-     "evidence": "density.h-control 24-40, icon 16-24, shadow.focus"
+     "evidence": "density.h-control xs/sm/default/lg, density.icon xs/sm/lg, size.*; shadow.focus gives 1px ring over a 1px inset gap"
     },
     "F12": {
      "grade": "meets",
-     "evidence": "shadow sm/md/lg/popover, frame card/float/pop, dialog-shadow"
+     "evidence": "shadow.sm/md/lg/popover plus component.composer-shadow, panel-shadow (menus), dialog-shadow and frame.shadow-card tie levels to uses"
     },
     "F13": {
-     "grade": "partly",
-     "evidence": "duration 7, easing 6; reduced-motion not documented"
+     "grade": "meets",
+     "evidence": "core.duration 7, core.easing 6, duration.reduced-motion 0.01ms and $extensions.reducedMotion listing triggers, 125 rules and what changes"
     },
     "F14": {
-     "grade": "partly",
-     "evidence": "zIndex 5, layout widths, containers; no breakpoints, grid"
+     "grade": "meets",
+     "evidence": "core.breakpoint sm to 2xl (css-rules), core.layout widths (page 960, transcript 768), core.grid columns and gaps, core.zIndex 5 layers"
     },
     "F15": {
      "grade": "meets",
@@ -331,23 +331,23 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 1469 of 1469 tokens name their source"
+     "evidence": "Script: 1516 of 1516 tokens name their source"
     },
     "C1": {
-     "grade": "partly",
-     "evidence": "14/19; no link, checkbox, radio, tooltip, toast"
+     "grade": "meets",
+     "evidence": "18/19 in components.md: all but toast (region empty); radio is theme-option and filter-menu-item, link is text-link"
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "hover, focus-visible, selected, checked; no pressed, disabled, error"
+     "grade": "meets",
+     "evidence": "hover, focus-visible, pressed (10), selected, checked, disabled (button, switch), error (text-field-invalid), loading (skeleton); button loading absent"
     },
     "C3": {
-     "grade": "meets",
-     "evidence": "shadow.focus on 25 of 35 focused; 60 focus-visible states"
+     "grade": "partly",
+     "evidence": "40 focus-visible states, mostly shadow.focus; tab and nav rows paint none; chat-row-more, code-copy, menu items, search button never focused"
     },
     "C4": {
      "grade": "partly",
-     "evidence": "raw values with value-matched token labels"
+     "evidence": "74% of values (3679/4986) name a token, opacity.disabled fixed; still raw: 62 text styles, 338 sizes, 83 Tailwind curves, 37 shadows"
     },
     "C5": {
      "grade": "na",
@@ -355,7 +355,7 @@
     },
     "P1": {
      "grade": "partly",
-     "evidence": "README surfaces: shell, Artifacts lists; no forms, confirm, feedback"
+     "evidence": "README Patterns writes 7 of 8; onboarding not captured, error state unreached, toast feedback unseen"
     },
     "V1": {
      "grade": "na",
@@ -366,12 +366,12 @@
      "evidence": "Not applicable to a capture: voice guidelines (tone, vocabulary, message formula) are a team's own rules; a capture holds the product's copy, not the guideline behind it."
     },
     "A1": {
-     "grade": "partly",
-     "evidence": "74 icons in INDEX.tsv; fonts proprietary; no pairing rules, logo"
+     "grade": "meets",
+     "evidence": "icons/INDEX.tsv lists 72 SVGs by role name with sizes and labels; README Fonts gives each face's licence and its real fallback stack"
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README states what, how, 'Two things to read with care'"
+     "evidence": "README: what was captured (both days), How the values were read, Three things to read with care, the 256-colour PNG caveat, Coverage table"
     },
     "K2": {
      "grade": "meets",
@@ -382,7 +382,8 @@
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "short": "Claude"
+   "short": "Claude",
+   "reviewed": "2026-10-17"
   },
   {
    "slug": "coursera",
@@ -1025,67 +1026,67 @@
    "category": "AI agents",
    "goodFor": "Agent app shell: multi-section sidebar, a Library of agent outputs by type and by day, task threads with deliverables",
    "url": "https://manus.im/app",
-   "captured": "2026-10-17",
+   "captured": "2026-10-04",
    "themes": [
     "light",
     "dark"
    ],
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "core.palette Derived: neutral 24, 7 accent ramps; no red ramp, and text.blue, function.* values sit on no ramp"
+     "grade": "missing",
+     "evidence": "core has no colour primitives, only semantic sets"
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "role.background page/surface/raised/overlay/scrim in both themes; Derived mapping from measured components"
+     "grade": "partly",
+     "evidence": "gray-main, card, menu-white, dialog-mask; no page/raised/overlay naming"
     },
     "F3": {
      "grade": "meets",
-     "evidence": "role.text primary/secondary/disabled/on-accent(text.onblack)/link(text.blue), both themes"
+     "evidence": "text.primary/secondary/disable, text.white, text.blue (link)"
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "role.border default(border.main)/strong(border.dark)/focus(border.input-active, stylesheet), both themes"
+     "grade": "partly",
+     "evidence": "border.main, border.dark; no focus border token"
     },
     "F5": {
-     "grade": "meets",
-     "evidence": "role.accent.default button.black; hover/pressed Derived 90% composite; pressed opacity 0.9 measured on 3 buttons"
+     "grade": "partly",
+     "evidence": "accent.blue.primary only; hover is opacity 0.9, no pressed"
     },
     "F6": {
      "grade": "partly",
-     "evidence": "role.status danger fill/text/border; success, warning fill/text only; no info"
+     "evidence": "function.error/success/warning, -tsp fills; no info, no border"
     },
     "F7": {
      "grade": "meets",
-     "evidence": "light and dark each 704 tokens, identical key sets, role and elevation in both"
+     "evidence": "light and dark both 282 tokens, same keys"
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "fallback stacks, 9 sizes, 4 weights, line heights; typography.role display/heading/body/label/caption/code"
+     "grade": "partly",
+     "evidence": "9 sizes, 14 composites; no display, caption, code roles"
     },
     "F9": {
-     "grade": "partly",
-     "evidence": "core.space measured counts but includes 1, 7, 10, 14, 6px; a usage list, not one-base scale"
+     "grade": "missing",
+     "evidence": "No spacing scale; DESIGN.md omits spacing"
     },
     "F10": {
-     "grade": "meets",
-     "evidence": "core.radius via density 8/10/12/22 plus dialog 16 in README; core.borderWidth 0.5/1/2px and 1.2px illustrations"
+     "grade": "partly",
+     "evidence": "core.radius row/small/card/composer; no border-width tokens"
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "size.row-small 32, row 36, control-large 40; nav-icon 18, file-icon 32; focusRing 2px offset 2px, input 1px"
+     "grade": "partly",
+     "evidence": "core.size.row 36/32/40, icons; focus ring width untokenised"
     },
     "F12": {
-     "grade": "meets",
-     "evidence": "elevation card/raised/composer/layer/menu/panel per theme, each tied to a use; dialogs share menu (17 measured)"
+     "grade": "missing",
+     "evidence": "light.shadow.XS-L are alpha colours only"
     },
     "F13": {
-     "grade": "meets",
-     "evidence": "core.duration 6, core.easing 3; reducedMotion note plus 51 rules in raw/css-rules.json say what stops"
+     "grade": "partly",
+     "evidence": "core.duration 5, core.easing 3; no reduced-motion rule"
     },
     "F14": {
-     "grade": "meets",
-     "evidence": "breakpoint 4, layout widths, layout.grid per page, zIndex content/raised/sticky/overlay/tooltip 999/toast 1050"
+     "grade": "partly",
+     "evidence": "core.breakpoint sm-xl, layout widths; no z-index, grid"
     },
     "F15": {
      "grade": "meets",
@@ -1093,23 +1094,23 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 1672 of 1672 tokens name their source"
+     "evidence": "Script: 678 of 678 tokens name their source"
     },
     "C1": {
      "grade": "partly",
-     "evidence": "16/19 measured on elements; toast seen only, checkbox stylesheet-only, radio absent"
+     "evidence": "15/19; no checkbox, radio, toast, table"
     },
     "C2": {
      "grade": "partly",
-     "evidence": "hover, focus, selected, open, disabled, loading, typed; pressed only on 2026-10-17 parts; no error state"
+     "evidence": "hover, focus-visible, selected only; no pressed, disabled, error"
     },
     "C3": {
      "grade": "partly",
-     "evidence": "faithful no-ring capture still fails it, as Linear: ~11 of 66 focus states change ring/border (live check agrees)"
+     "evidence": "37 of 51 focused elements draw no ring"
     },
     "C4": {
      "grade": "partly",
-     "evidence": "component.* names class tokens, colour only, 222 entries; components.md specs raw px/hex with labels"
+     "evidence": "raw values with value-matched token labels, some coincidental"
     },
     "C5": {
      "grade": "na",
@@ -1117,7 +1118,7 @@
     },
     "P1": {
      "grade": "partly",
-     "evidence": "README Patterns covers all 8 rows; error not seen, onboarding app gate only, toast not captured"
+     "evidence": "README surfaces: shell, Library only; no forms, confirm, feedback"
     },
     "V1": {
      "grade": "na",
@@ -1129,11 +1130,11 @@
     },
     "A1": {
      "grade": "partly",
-     "evidence": "161 SVGs, 76 named by role, 67 by hash, 18 Lucide; fonts table with fallbacks, licence only 'open source'"
+     "evidence": "84 icons named in INDEX.tsv; fonts noted; no pairing rules, logo"
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README: How the values were read, What to distrust list, Coverage table, Rebuild"
+     "evidence": "README states what, how, limits; no distrust heading"
     },
     "K2": {
      "grade": "meets",
@@ -1144,8 +1145,7 @@
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "short": "Manus",
-   "reviewed": "2026-10-17"
+   "short": "Manus"
   },
   {
    "slug": "notebooklm",
