@@ -34,7 +34,7 @@ for th in ("light", "dark"):
     walk(T[th], [], th)
 
 ROLE = [  # (words in the spec's role text, path patterns preferred, in order)
-    (r"border|lip|stroke|divider|outline|ring|rule|edge|underline", [r"^border\.", r"^accent\.[a-z]+\.(lip|border)$", r"^status\.\w*Border$", r"^feedback\.tile\.\w*Border$", r"^gamification\.super\.lip$"]),
+    (r"border|lip|shadow|stroke|divider|outline|ring|rule|edge|underline", [r"^border\.", r"^accent\.[a-z]+\.(lip|border)$", r"^status\.\w*Border$", r"^feedback\.tile\.\w*Border$", r"^gamification\.super\.lip$"]),
     (r"text|label|title|body|value|placeholder|caret|count|colou?r|icon|link|heading|caption|glyph|chevron|number|name|copy|word", [r"^text\.", r"^accent\.[a-z]+\.text$", r"^status\.\w*Text$", r"^feedback\.\w+\.text$", r"^feedback\.tile\.\w*Text$", r"^gamification\."]),
     (r"fill|background|bg|face|surface|track|shell|card|container|dot|item|tile|banner|scrim|backdrop|row|bar|panel|bubble|button", [r"^surface\.", r"^background\.", r"^accent\.[a-z]+\.face$", r"^status\.\w*Background$", r"^feedback\.\w+\.(background|buttonFace)$", r"^dataViz\.", r"^gamification\.", r"^unitColors\."]),
 ]
@@ -106,14 +106,15 @@ def inline_role(text):
     # outside a table the role is the text since the last list separator before the colour
     return lambda i: text[max(text.rfind(s, 0, i) for s in (";", "\n", ":", "<br>", "(")) + 1:i]
 
-def tokenize(text):
+def tokenize(text, context=""):
     """Markdown or a JSON string. In a table row the role is the row's first cell plus the
     column header (the button table names its columns Face, Lip, Border, Label)."""
     lines, header = text.split("\n"), None
     for n, line in enumerate(lines):
         if not line.startswith("|"):
             header = None
-            lines[n] = tokenize_segment(line, inline_role(line))
+            role = inline_role(line)
+            lines[n] = tokenize_segment(line, lambda i, role=role: context + " " + role(i))
             continue
         cells = line.split("|")
         if header is None:
@@ -172,13 +173,16 @@ def tokenize_lengths(line, header):
         cells[i] = PX.sub(sub, cell)
     return "|".join(cells)
 
-def tokenize_json(v):
+def tokenize_json(v, key=""):
+    """The JSON twins name the role in the field path ('face', '::before border color',
+    'lip_box_shadow'), so the path of field names is part of the role text, and the Markdown and
+    JSON pick the same token."""
     if isinstance(v, str):
-        return tokenize(v)
+        return tokenize(v, key)
     if isinstance(v, list):
-        return [tokenize_json(x) for x in v]
+        return [tokenize_json(x, key) for x in v]
     if isinstance(v, dict):
-        return {k: tokenize_json(x) for k, x in v.items()}
+        return {k: tokenize_json(x, (key + " " + k).strip()) for k, x in v.items()}
     return v
 
 # This script's own output: a token path in backticks followed by a space, in front of a colour

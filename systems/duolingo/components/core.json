@@ -180,11 +180,11 @@
     "captured": true,
     "node": "lesson-light-quit-modal#153",
     "label": "Keep learning",
-    "face": "`text.link` #1CB0F6 (macaw, light)",
-    "lip": "`text.selected` #1899D6 (whale, light)",
+    "face": "`accent.secondary.face` #1CB0F6 (macaw, light)",
+    "lip": "`accent.secondary.lip` #1899D6 (whale, light)",
     "border": "none",
     "text": "`text.onPrimary` #FFFFFF (snow, light)",
-    "lip_box_shadow": "`text.selected` #1899D6 (whale, light) 0px 4px 0px 0px",
+    "lip_box_shadow": "`accent.secondary.lip` #1899D6 (whale, light) 0px 4px 0px 0px",
     "measured": {
      "trace": "lesson-light-quit-modal#153 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _1V1Gt vSCTx' dt='notification-button'",
      "rect": {
@@ -211,8 +211,8 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.link` #1CB0F6 (macaw, light)",
-      "box_shadow": "`text.selected` #1899D6 (whale, light) 0px 4px 0px 0px",
+      "fill": "`accent.secondary.face` #1CB0F6 (macaw, light)",
+      "box_shadow": "`accent.secondary.lip` #1899D6 (whale, light) 0px 4px 0px 0px",
       "radius": "16px"
      },
      "label": {
@@ -242,11 +242,11 @@
     "captured": true,
     "node": "learn-dark-modal-notifications#477",
     "label": "Allow notifications",
-    "face": "`text.link` #49C0F8 (macaw, dark)",
-    "lip": "`text.selected` #1899D6 (whale, dark)",
+    "face": "`accent.secondary.face` #49C0F8 (macaw, dark)",
+    "lip": "`accent.secondary.lip` #1899D6 (whale, dark)",
     "border": "none",
     "text": "`text.onPrimary` #131F24 (snow, dark)",
-    "lip_box_shadow": "`text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px",
+    "lip_box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
     "measured": {
      "trace": "learn-dark-modal-notifications#477 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _1V1Gt vSCTx' dt='notification-button'",
      "rect": {
@@ -273,8 +273,8 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.link` #49C0F8 (macaw, dark)",
-      "box_shadow": "`text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px",
+      "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
+      "box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
       "radius": "16px"
      },
      "label": {
@@ -321,11 +321,11 @@
     "captured": true,
     "node": "characters-light-default#176",
     "label": "Learn the characters",
-    "face": "`text.link` #1CB0F6 (macaw, light)",
-    "lip": "`text.selected` #1899D6 (whale, light)",
+    "face": "`accent.secondary.face` #1CB0F6 (macaw, light)",
+    "lip": "`accent.secondary.lip` #1899D6 (whale, light)",
     "border": "none",
     "text": "`text.onPrimary` #FFFFFF (snow, light)",
-    "lip_box_shadow": "`text.selected` #1899D6 (whale, light) 0px 4px 0px 0px",
+    "lip_box_shadow": "`accent.secondary.lip` #1899D6 (whale, light) 0px 4px 0px 0px",
     "measured": {
      "trace": "characters-light-default#176 <a> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t'",
      "rect": {
@@ -351,8 +351,8 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.link` #1CB0F6 (macaw, light)",
-      "box_shadow": "`text.selected` #1899D6 (whale, light) 0px 4px 0px 0px",
+      "fill": "`accent.secondary.face` #1CB0F6 (macaw, light)",
+      "box_shadow": "`accent.secondary.lip` #1899D6 (whale, light) 0px 4px 0px 0px",
       "radius": "16px"
      },
      "label": {
@@ -382,11 +382,11 @@
     "captured": true,
     "node": "characters-dark-default#168",
     "label": "Learn the characters",
-    "face": "`text.link` #49C0F8 (macaw, dark)",
-    "lip": "`text.selected` #1899D6 (whale, dark)",
+    "face": "`accent.secondary.face` #49C0F8 (macaw, dark)",
+    "lip": "`accent.secondary.lip` #1899D6 (whale, dark)",
     "border": "none",
     "text": "`text.onPrimary` #131F24 (snow, dark)",
-    "lip_box_shadow": "`text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px",
+    "lip_box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
     "measured": {
      "trace": "characters-dark-default#168 <a> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t'",
      "rect": {
@@ -412,8 +412,8 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.link` #49C0F8 (macaw, dark)",
-      "box_shadow": "`text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px",
+      "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
+      "box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
       "radius": "16px"
      },
      "label": {
@@ -460,7 +460,7 @@
     "captured": true,
     "node": "lesson-light-challenge-tiles-partial#164",
     "label": "Skip",
-    "face": "`text.onPrimary` #FFFFFF (snow, light)",
+    "face": "`surface.default` #FFFFFF (snow, light)",
     "lip": "`border.default` #E5E5E5 (swan, light)",
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.tertiary` #AFAFAF (hare, light)",
@@ -491,7 +491,7 @@
      },
      "min_width": "150px",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -526,7 +526,7 @@
     "captured": true,
     "node": "lesson-dark-challenge-tiles-partial#133",
     "label": "Skip",
-    "face": "`text.onPrimary` #131F24 (snow, dark)",
+    "face": "`surface.default` #131F24 (snow, dark)",
     "lip": "`border.default` #37464F (swan, dark)",
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.tertiary` #52656D (hare, dark)",
@@ -557,7 +557,7 @@
      },
      "min_width": "150px",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -609,7 +609,7 @@
     "captured": true,
     "node": "learn-light-path-end#485",
     "label": "Jump here?",
-    "face": "`text.onPrimary` #FFFFFF (snow, light)",
+    "face": "`surface.default` #FFFFFF (snow, light)",
     "lip": "`border.default` #E5E5E5 (swan, light)",
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.link` #1CB0F6 (macaw, light)",
@@ -640,7 +640,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -675,7 +675,7 @@
     "captured": true,
     "node": "learn-dark-path-end#475",
     "label": "Jump here?",
-    "face": "`text.onPrimary` #131F24 (snow, dark)",
+    "face": "`surface.default` #131F24 (snow, dark)",
     "lip": "`border.default` #37464F (swan, dark)",
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.link` #49C0F8 (macaw, dark)",
@@ -706,7 +706,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -758,7 +758,7 @@
     "captured": true,
     "node": "profile-light-default#104",
     "label": "CELEBRATE",
-    "face": "`text.onPrimary` #FFFFFF (snow, light)",
+    "face": "`surface.default` #FFFFFF (snow, light)",
     "lip": "`border.default` #E5E5E5 (swan, light)",
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.primary` #4B4B4B (eel, light)",
@@ -788,7 +788,7 @@
       "transform": "uppercase"
      },
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -829,7 +829,7 @@
     "captured": true,
     "node": "profile-dark-default#103",
     "label": "CELEBRATE",
-    "face": "`text.onPrimary` #131F24 (snow, dark)",
+    "face": "`surface.default` #131F24 (snow, dark)",
     "lip": "`border.default` #37464F (swan, dark)",
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.primary` #F1F7FB (eel, dark)",
@@ -859,7 +859,7 @@
       "transform": "uppercase"
      },
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -916,7 +916,7 @@
     "captured": true,
     "node": "characters-light-default#174",
     "label": "Tips",
-    "face": "`text.onPrimary` #FFFFFF (snow, light)",
+    "face": "`surface.default` #FFFFFF (snow, light)",
     "lip": "`border.default` #E5E5E5 (swan, light)",
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.link` #1CB0F6 (macaw, light)",
@@ -947,7 +947,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "1px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -982,7 +982,7 @@
     "captured": true,
     "node": "characters-dark-default#166",
     "label": "Tips",
-    "face": "`text.onPrimary` #131F24 (snow, dark)",
+    "face": "`surface.default` #131F24 (snow, dark)",
     "lip": "`border.default` #37464F (swan, dark)",
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.link` #49C0F8 (macaw, dark)",
@@ -1013,7 +1013,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "1px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -1202,7 +1202,7 @@
     "captured": true,
     "node": "settings-super-light-default#109",
     "label": "Start my free 7 days",
-    "face": "`text.onColor` #FFFFFF (snow-always-light, light)",
+    "face": "`dataViz.progress.shine` #FFFFFF (snow-always-light, light)",
     "lip": "`palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.5 alpha",
     "border": "none",
     "text": "`gamification.super.surface` #000437 (eclipse, light)",
@@ -1233,7 +1233,7 @@
      },
      "z_index": "2",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.5 alpha 0px 4px 0px 0px",
       "radius": "12px"
      },
@@ -1264,7 +1264,7 @@
     "captured": true,
     "node": "settings-super-dark-default#109",
     "label": "Learn more",
-    "face": "`text.onColor` #FFFFFF (snow-always-light, dark)",
+    "face": "`dataViz.progress.shine` #FFFFFF (snow-always-light, dark)",
     "lip": "`palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.5 alpha",
     "border": "none",
     "text": "`gamification.super.surface` #000437 (eclipse, dark)",
@@ -1482,7 +1482,7 @@
     "captured": true,
     "node": "learn-light-node-popover#1254",
     "label": "Start +10 XP",
-    "face": "`text.onColor` #FFFFFF (snow-always-light, light)",
+    "face": "`dataViz.progress.shine` #FFFFFF (snow-always-light, light)",
     "lip": "`palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.7 alpha",
     "border": "none",
     "text": "`unitColors.green` #58CC02 (owl-always-light, light)",
@@ -1512,7 +1512,7 @@
       "transform": "uppercase"
      },
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.7 alpha 0px 4px 0px 0px",
       "radius": "16px"
      },
@@ -1525,7 +1525,7 @@
     "captured": true,
     "node": "learn-dark-node-popover#1244",
     "label": "Start +10 XP",
-    "face": "`text.onColor` #FFFFFF (snow-always-light, dark)",
+    "face": "`dataViz.progress.shine` #FFFFFF (snow-always-light, dark)",
     "lip": "`palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.7 alpha",
     "border": "none",
     "text": "`unitColors.green` #58CC02 (owl-always-light, dark)",
@@ -1584,7 +1584,7 @@
     "captured": true,
     "node": "learn-light-streak-dropdown#140",
     "label": "View List",
-    "face": "`text.onColor` #FFFFFF (snow-always-light, light)",
+    "face": "`dataViz.progress.shine` #FFFFFF (snow-always-light, light)",
     "lip": "`palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.6 alpha",
     "border": "none",
     "text": "`palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light)",
@@ -1614,7 +1614,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.6 alpha 0px 4px 0px 0px",
       "radius": "8px"
      },
@@ -1645,7 +1645,7 @@
     "captured": true,
     "node": "learn-dark-streak-dropdown#120",
     "label": "View List",
-    "face": "`text.onColor` #FFFFFF (snow-always-light, dark)",
+    "face": "`dataViz.progress.shine` #FFFFFF (snow-always-light, dark)",
     "lip": "`palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.6 alpha",
     "border": "none",
     "text": "`palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark)",
@@ -1986,7 +1986,7 @@
     "face": "none",
     "lip": "none",
     "border": "none",
-    "text": "`accent.danger.face` #FF4B4B (cardinal, light)",
+    "text": "`accent.danger.text` #FF4B4B (cardinal, light)",
     "lip_box_shadow": "none",
     "measured": {
      "trace": "lesson-light-quit-modal#155 <button> cl='_3fmUm c1Mv- _1ursp _7jW2t _3GC5C _2xxrg vSCTx _27kss' dt='notification-drawer-no-thanks-button'",
@@ -1998,7 +1998,7 @@
      },
      "padding": "0px 16px 0px 16px",
      "margin": "16px 0px 0px 0px",
-     "text_color": "`accent.danger.face` #FF4B4B (cardinal, light)",
+     "text_color": "`accent.danger.text` #FF4B4B (cardinal, light)",
      "font": {
       "family": "duolingo-sans",
       "size": "15px",
@@ -2025,7 +2025,7 @@
        "letter_spacing": "0.8px",
        "transform": "uppercase"
       },
-      "color": "`accent.danger.face` #FF4B4B (cardinal, light)"
+      "color": "`accent.danger.text` #FF4B4B (cardinal, light)"
      }
     },
     "crop": "crops/button-text-cardinal-light.png",
@@ -2038,7 +2038,7 @@
     "face": "none",
     "lip": "none",
     "border": "none",
-    "text": "`accent.danger.face` #EE5555 (cardinal, dark)",
+    "text": "`accent.danger.text` #EE5555 (cardinal, dark)",
     "lip_box_shadow": "none",
     "measured": {
      "trace": "lesson-dark-quit-modal#139 <button> cl='_3fmUm c1Mv- _1ursp _7jW2t _3GC5C _2xxrg vSCTx _27kss' dt='notification-drawer-no-thanks-button'",
@@ -2050,7 +2050,7 @@
      },
      "padding": "0px 16px 0px 16px",
      "margin": "16px 0px 0px 0px",
-     "text_color": "`accent.danger.face` #EE5555 (cardinal, dark)",
+     "text_color": "`accent.danger.text` #EE5555 (cardinal, dark)",
      "font": {
       "family": "duolingo-sans",
       "size": "15px",
@@ -2077,7 +2077,7 @@
        "letter_spacing": "0.8px",
        "transform": "uppercase"
       },
-      "color": "`accent.danger.face` #EE5555 (cardinal, dark)"
+      "color": "`accent.danger.text` #EE5555 (cardinal, dark)"
      }
     },
     "crop": "crops/button-text-cardinal-dark.png",
@@ -2107,7 +2107,7 @@
     "face": "none",
     "lip": "none",
     "border": "none",
-    "text": "`accent.danger.face` #FF4B4B (cardinal, light)",
+    "text": "`accent.danger.text` #FF4B4B (cardinal, light)",
     "lip_box_shadow": "none",
     "measured": {
      "trace": "settings-courses-light-default#107 <button> cl='_2rQ98 _1GQxS _1ursp _7jW2t _4ViGC' dt='reset'",
@@ -2123,7 +2123,7 @@
       "width": "1px 1px 5px 1px",
       "color": "transparent"
      },
-     "text_color": "`accent.danger.face` #FF4B4B (cardinal, light)",
+     "text_color": "`accent.danger.text` #FF4B4B (cardinal, light)",
      "font": {
       "family": "duolingo-sans",
       "size": "16px",
@@ -2150,7 +2150,7 @@
        "letter_spacing": "0.64px",
        "transform": "uppercase"
       },
-      "color": "`accent.danger.face` #FF4B4B (cardinal, light)"
+      "color": "`accent.danger.text` #FF4B4B (cardinal, light)"
      }
     },
     "crop": "crops/button-link-juicy-cardinal-light.png",
@@ -2163,7 +2163,7 @@
     "face": "none",
     "lip": "none",
     "border": "none",
-    "text": "`accent.danger.face` #EE5555 (cardinal, dark)",
+    "text": "`accent.danger.text` #EE5555 (cardinal, dark)",
     "lip_box_shadow": "none",
     "measured": {
      "trace": "settings-courses-dark-default#105 <button> cl='_2rQ98 _1GQxS _1ursp _7jW2t _4ViGC' dt='reset'",
@@ -2179,7 +2179,7 @@
       "width": "1px 1px 5px 1px",
       "color": "transparent"
      },
-     "text_color": "`accent.danger.face` #EE5555 (cardinal, dark)",
+     "text_color": "`accent.danger.text` #EE5555 (cardinal, dark)",
      "font": {
       "family": "duolingo-sans",
       "size": "16px",
@@ -2206,7 +2206,7 @@
        "letter_spacing": "0.64px",
        "transform": "uppercase"
       },
-      "color": "`accent.danger.face` #EE5555 (cardinal, dark)"
+      "color": "`accent.danger.text` #EE5555 (cardinal, dark)"
      }
     },
     "crop": "crops/button-link-juicy-cardinal-dark.png",
@@ -2355,7 +2355,7 @@
     "captured": true,
     "node": "lesson-light-challenge-default#156",
     "label": "Check",
-    "face": "`border.default` #E5E5E5 (swan, light)",
+    "face": "`surface.disabled` #E5E5E5 (swan, light)",
     "lip": "none",
     "border": "none",
     "text": "`text.tertiary` #AFAFAF (hare, light)",
@@ -2386,7 +2386,7 @@
      "min_width": "150px",
      "transform": "matrix(1, 0, 0, 1, 0, 4)",
      "::before": {
-      "fill": "`border.default` #E5E5E5 (swan, light)",
+      "fill": "`surface.disabled` #E5E5E5 (swan, light)",
       "radius": "16px"
      },
      "label": {
@@ -2416,7 +2416,7 @@
     "captured": true,
     "node": "lesson-dark-challenge-default#152",
     "label": "Check",
-    "face": "`border.default` #37464F (swan, dark)",
+    "face": "`surface.disabled` #37464F (swan, dark)",
     "lip": "none",
     "border": "none",
     "text": "`text.tertiary` #52656D (hare, dark)",
@@ -2447,7 +2447,7 @@
      "min_width": "150px",
      "transform": "matrix(1, 0, 0, 1, 0, 4)",
      "::before": {
-      "fill": "`border.default` #37464F (swan, dark)",
+      "fill": "`surface.disabled` #37464F (swan, dark)",
       "radius": "16px"
      },
      "label": {
@@ -2494,10 +2494,10 @@
     "captured": true,
     "node": "shop-light-default#183",
     "label": "Equipped",
-    "face": "`text.onPrimary` #FFFFFF (snow, light)",
+    "face": "`surface.default` #FFFFFF (snow, light)",
     "lip": "none",
     "border": "`border.default` #E5E5E5 (swan, light)",
-    "text": "`border.default` #E5E5E5 (swan, light)",
+    "text": "`gamification.streakInactive` #E5E5E5 (swan, light)",
     "lip_box_shadow": "none",
     "border_width": "2px",
     "measured": {
@@ -2515,7 +2515,7 @@
       "color": "transparent"
      },
      "radius": "16px",
-     "text_color": "`border.default` #E5E5E5 (swan, light)",
+     "text_color": "`gamification.streakInactive` #E5E5E5 (swan, light)",
      "font": {
       "family": "duolingo-sans",
       "size": "15px",
@@ -2527,7 +2527,7 @@
      "min_width": "150px",
      "transform": "matrix(1, 0, 0, 1, 0, 2)",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -2551,7 +2551,7 @@
        "letter_spacing": "0.8px",
        "transform": "uppercase"
       },
-      "color": "`border.default` #E5E5E5 (swan, light)"
+      "color": "`gamification.streakInactive` #E5E5E5 (swan, light)"
      }
     },
     "crop": "crops/button-disabled-stroke-light.png",
@@ -2561,10 +2561,10 @@
     "captured": true,
     "node": "shop-dark-default#159",
     "label": "Full",
-    "face": "`text.onPrimary` #131F24 (snow, dark)",
+    "face": "`surface.default` #131F24 (snow, dark)",
     "lip": "none",
     "border": "`border.default` #37464F (swan, dark)",
-    "text": "`border.default` #37464F (swan, dark)",
+    "text": "`gamification.streakInactive` #37464F (swan, dark)",
     "lip_box_shadow": "none",
     "border_width": "2px",
     "measured": {
@@ -2582,7 +2582,7 @@
       "color": "transparent"
      },
      "radius": "16px",
-     "text_color": "`border.default` #37464F (swan, dark)",
+     "text_color": "`gamification.streakInactive` #37464F (swan, dark)",
      "font": {
       "family": "duolingo-sans",
       "size": "15px",
@@ -2594,7 +2594,7 @@
      "min_width": "150px",
      "transform": "matrix(1, 0, 0, 1, 0, 2)",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -2618,7 +2618,7 @@
        "letter_spacing": "0.8px",
        "transform": "uppercase"
       },
-      "color": "`border.default` #37464F (swan, dark)"
+      "color": "`gamification.streakInactive` #37464F (swan, dark)"
      }
     },
     "crop": "crops/button-disabled-stroke-dark.png",
@@ -2647,8 +2647,8 @@
     "captured": true,
     "node": "user-search-light-results#85",
     "label": "Follow",
-    "face": "`text.link` #1CB0F6 (macaw, light)",
-    "lip": "`text.selected` #1899D6 (whale, light)",
+    "face": "`accent.secondary.face` #1CB0F6 (macaw, light)",
+    "lip": "`accent.secondary.lip` #1899D6 (whale, light)",
     "border": "none",
     "text": "`text.onPrimary` #FFFFFF (snow, light)",
     "measured": {
@@ -2677,7 +2677,7 @@
      },
      "min_width": "auto",
      "::after": {
-      "fill": "`text.link` #1CB0F6 (macaw, light)",
+      "fill": "`accent.secondary.face` #1CB0F6 (macaw, light)",
       "border": {
        "width": "0px 0px 4px 0px",
        "color": "transparent"
@@ -2717,8 +2717,8 @@
     "captured": true,
     "node": "user-search-dark-results#85",
     "label": "Follow",
-    "face": "`text.link` #49C0F8 (macaw, dark)",
-    "lip": "`text.selected` #1899D6 (whale, dark)",
+    "face": "`accent.secondary.face` #49C0F8 (macaw, dark)",
+    "lip": "`accent.secondary.lip` #1899D6 (whale, dark)",
     "border": "none",
     "text": "`text.onPrimary` #131F24 (snow, dark)",
     "measured": {
@@ -2747,7 +2747,7 @@
      },
      "min_width": "auto",
      "::after": {
-      "fill": "`text.link` #49C0F8 (macaw, dark)",
+      "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
       "border": {
        "width": "0px 0px 4px 0px",
        "color": "transparent"
@@ -2807,11 +2807,11 @@
     "captured": true,
     "node": "lesson-dark-friend-streak-invite#22",
     "label": "INVITE",
-    "face": "`text.link` #49C0F8 (macaw, dark)",
-    "lip": "`text.selected` #1899D6 (whale, dark)",
+    "face": "`accent.secondary.face` #49C0F8 (macaw, dark)",
+    "lip": "`accent.secondary.lip` #1899D6 (whale, dark)",
     "border": "none",
     "text": "`text.onPrimary` #131F24 (snow, dark)",
-    "lip_box_shadow": "`text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px",
+    "lip_box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
     "measured": {
      "trace": "lesson-dark-friend-streak-invite#22 <button> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t _1W_p8 _2bkKc _38OE1'",
      "rect": {
@@ -2837,8 +2837,8 @@
      },
      "min_width": "60px",
      "::before": {
-      "fill": "`text.link` #49C0F8 (macaw, dark)",
-      "box_shadow": "`text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px",
+      "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
+      "box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
       "radius": "8px"
      },
      "label": {
@@ -2886,7 +2886,7 @@
     "captured": true,
     "node": "leaderboard-light-default#103",
     "label": "",
-    "face": "`text.onPrimary` #FFFFFF (snow, light)",
+    "face": "`surface.default` #FFFFFF (snow, light)",
     "lip": "`border.default` #E5E5E5 (swan, light)",
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.tertiary` #AFAFAF (hare, light)",
@@ -2916,7 +2916,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -2938,7 +2938,7 @@
     "captured": true,
     "node": "leaderboard-dark-default#102",
     "label": "",
-    "face": "`text.onPrimary` #131F24 (snow, dark)",
+    "face": "`surface.default` #131F24 (snow, dark)",
     "lip": "`border.default` #37464F (swan, dark)",
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.tertiary` #52656D (hare, dark)",
@@ -2968,7 +2968,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -3128,7 +3128,7 @@
     "captured": true,
     "node": "learn-light-completed-popover#1674",
     "label": "",
-    "face": "`text.onPrimary` #FFFFFF (snow, light)",
+    "face": "`surface.default` #FFFFFF (snow, light)",
     "lip": "`border.default` #E5E5E5 (swan, light)",
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.tertiary` #AFAFAF (hare, light)",
@@ -3161,7 +3161,7 @@
      "min_width": "auto",
      "z_index": "1",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -3183,7 +3183,7 @@
     "captured": true,
     "node": "learn-dark-completed-popover#1664",
     "label": "",
-    "face": "`text.onPrimary` #131F24 (snow, dark)",
+    "face": "`surface.default` #131F24 (snow, dark)",
     "lip": "`border.default` #37464F (swan, dark)",
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.tertiary` #52656D (hare, dark)",
@@ -3216,7 +3216,7 @@
      "min_width": "auto",
      "z_index": "1",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -3571,7 +3571,7 @@
      },
      "min_width": "150px",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -3625,8 +3625,8 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.link` #49C0F8 (macaw, dark)",
-      "box_shadow": "`text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px",
+      "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
+      "box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
       "radius": "16px"
      },
      "label": {
@@ -3675,8 +3675,8 @@
      },
      "min_width": "60px",
      "::before": {
-      "fill": "`text.link` #49C0F8 (macaw, dark)",
-      "box_shadow": "`text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px",
+      "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
+      "box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
       "radius": "8px"
      },
      "label": {
@@ -3766,7 +3766,7 @@
     "light": {
      "field fill": "`surface.subtle` #F7F7F7 (polar, light)",
      "field border": "`border.default` #E5E5E5 (swan, light)",
-     "focus border": "`text.link` #1CB0F6 (macaw, light)",
+     "focus border": "`border.focus` #1CB0F6 (macaw, light)",
      "error border": "`accent.danger.lip` #EA2B2B (fire-ant, light)",
      "disabled border": "`surface.subtle` #F7F7F7 (polar, light)",
      "text": "`text.primary` #4B4B4B (eel, light)",
@@ -3780,7 +3780,7 @@
     "dark": {
      "field fill": "`surface.subtle` #202F36 (polar, dark)",
      "field border": "`border.default` #37464F (swan, dark)",
-     "focus border": "`text.link` #49C0F8 (macaw, dark)",
+     "focus border": "`border.focus` #49C0F8 (macaw, dark)",
      "error border": "`accent.danger.lip` #D84848 (fire-ant, dark)",
      "disabled border": "`surface.subtle` #202F36 (polar, dark)",
      "text": "`text.primary` #F1F7FB (eel, dark)",
@@ -3854,7 +3854,7 @@
      },
      "border": {
       "width": "2px",
-      "color": "`text.link` #49C0F8 (macaw, dark)"
+      "color": "`border.focus` #49C0F8 (macaw, dark)"
      },
      "radius": "12px",
      "background": "`surface.subtle` #202F36 (polar, dark)",
@@ -4292,19 +4292,19 @@
    },
    "tokens": {
     "light": {
-     "face": "`text.onPrimary` #FFFFFF (snow, light)",
+     "face": "`surface.default` #FFFFFF (snow, light)",
      "border + lip": "`border.default` #E5E5E5 (swan, light)",
      "value": "`text.secondary` #777777 (wolf, light)",
      "chevron": "`text.tertiary` #AFAFAF (hare, light)",
-     "disabled face": "`border.default` #E5E5E5 (swan, light)",
+     "disabled face": "`surface.disabled` #E5E5E5 (swan, light)",
      "disabled value": "`text.tertiary` #AFAFAF (hare, light)"
     },
     "dark": {
-     "face": "`text.onPrimary` #131F24 (snow, dark)",
+     "face": "`surface.default` #131F24 (snow, dark)",
      "border + lip": "`border.default` #37464F (swan, dark)",
      "value": "`text.secondary` #DCE6EC (wolf, dark)",
      "chevron": "`text.tertiary` #52656D (hare, dark)",
-     "disabled face": "`border.default` #37464F (swan, dark)",
+     "disabled face": "`surface.disabled` #37464F (swan, dark)",
      "disabled value": "`text.tertiary` #52656D (hare, dark)"
     }
    },
@@ -4381,7 +4381,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -4481,7 +4481,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -4542,7 +4542,7 @@
      "min_width": "auto",
      "transform": "matrix(1, 0, 0, 1, 0, 2)",
      "::before": {
-      "fill": "`border.default` #E5E5E5 (swan, light)",
+      "fill": "`surface.disabled` #E5E5E5 (swan, light)",
       "border": {
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -4602,7 +4602,7 @@
      "min_width": "auto",
      "transform": "matrix(1, 0, 0, 1, 0, 2)",
      "::before": {
-      "fill": "`border.default` #37464F (swan, dark)",
+      "fill": "`surface.disabled` #37464F (swan, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -4661,18 +4661,18 @@
    "tokens": {
     "light": {
      "border": "`border.default` #E5E5E5 (swan, light)",
-     "checked fill + border": "`text.link` #1CB0F6 (macaw, light)",
+     "checked fill + border": "`border.focus` #1CB0F6 (macaw, light)",
      "check glyph": "`text.onPrimary` #FFFFFF (snow, light)",
      "disabled fill": "`surface.subtle` #F7F7F7 (polar, light)",
-     "disabled checked fill": "`border.default` #E5E5E5 (swan, light)",
+     "disabled checked fill": "`surface.disabled` #E5E5E5 (swan, light)",
      "disabled glyph": "`text.tertiary` #AFAFAF (hare, light)"
     },
     "dark": {
      "border": "`border.default` #37464F (swan, dark)",
-     "checked fill + border": "`text.link` #49C0F8 (macaw, dark)",
+     "checked fill + border": "`border.focus` #49C0F8 (macaw, dark)",
      "check glyph": "`text.onPrimary` #131F24 (snow, dark)",
      "disabled fill": "`surface.subtle` #202F36 (polar, dark)",
-     "disabled checked fill": "`border.default` #37464F (swan, dark)",
+     "disabled checked fill": "`surface.disabled` #37464F (swan, dark)",
      "disabled glyph": "`text.tertiary` #52656D (hare, dark)"
     }
    },
@@ -4763,10 +4763,10 @@
      },
      "border": {
       "width": "2px",
-      "color": "`text.link` #49C0F8 (macaw, dark)"
+      "color": "`border.focus` #49C0F8 (macaw, dark)"
      },
      "radius": "8px",
-     "background": "`text.link` #49C0F8 (macaw, dark)",
+     "background": "`accent.secondary.face` #49C0F8 (macaw, dark)",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -4820,10 +4820,10 @@
      },
      "border": {
       "width": "2px",
-      "color": "`text.link` #1CB0F6 (macaw, light)"
+      "color": "`border.focus` #1CB0F6 (macaw, light)"
      },
      "radius": "8px",
-     "background": "`text.link` #1CB0F6 (macaw, light)",
+     "background": "`accent.secondary.face` #1CB0F6 (macaw, light)",
      "text_color": "`text.link` #1CB0F6 (macaw, light)",
      "font": {
       "family": "duolingo-sans",
@@ -4873,22 +4873,22 @@
    },
    "tokens": {
     "light": {
-     "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+     "fill": "`surface.default` #FFFFFF (snow, light)",
      "border + lip": "`border.default` #E5E5E5 (swan, light)",
      "hover fill": "`surface.subtle` #F7F7F7 (polar, light)",
      "checked fill": "`surface.selected` #DDF4FF (iguana, light)",
      "checked border + lip": "`border.selected` #84D8FF (blue-jay, light)",
      "checked text": "`text.selected` #1899D6 (whale, light)",
-     "disabled text": "`border.default` #E5E5E5 (swan, light)"
+     "disabled text": "`gamification.streakInactive` #E5E5E5 (swan, light)"
     },
     "dark": {
-     "fill": "`text.onPrimary` #131F24 (snow, dark)",
+     "fill": "`surface.default` #131F24 (snow, dark)",
      "border + lip": "`border.default` #37464F (swan, dark)",
      "hover fill": "`surface.subtle` #202F36 (polar, dark)",
      "checked fill": "`surface.selected` #202F36 (iguana, dark)",
      "checked border + lip": "`border.selected` #3F85A7 (blue-jay, dark)",
      "checked text": "`text.selected` #1899D6 (whale, dark)",
-     "disabled text": "`border.default` #37464F (swan, dark)"
+     "disabled text": "`gamification.streakInactive` #37464F (swan, dark)"
     }
    },
    "type_style": "Title body-spacious bold (700, 20px/32px here); caption 500 16px/24px.",
@@ -4964,7 +4964,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -5130,7 +5130,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -5308,7 +5308,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -5369,19 +5369,19 @@
    },
    "tokens": {
     "light": {
-     "track on side": "`text.link` #1CB0F6 (macaw, light)",
-     "track off side": "`border.default` #E5E5E5 (swan, light)",
-     "knob fill": "`text.onPrimary` #FFFFFF (snow, light)",
+     "track on side": "`accent.secondary.face` #1CB0F6 (macaw, light)",
+     "track off side": "`surface.disabled` #E5E5E5 (swan, light)",
+     "knob fill": "`surface.default` #FFFFFF (snow, light)",
      "knob border off": "`border.default` #E5E5E5 (swan, light)",
-     "knob border on": "`text.link` #1CB0F6 (macaw, light)",
+     "knob border on": "`border.focus` #1CB0F6 (macaw, light)",
      "disabled track + knob border": "`surface.subtle` #F7F7F7 (polar, light)"
     },
     "dark": {
-     "track on side": "`text.link` #49C0F8 (macaw, dark)",
-     "track off side": "`border.default` #37464F (swan, dark)",
-     "knob fill": "`text.onPrimary` #131F24 (snow, dark)",
+     "track on side": "`accent.secondary.face` #49C0F8 (macaw, dark)",
+     "track off side": "`surface.disabled` #37464F (swan, dark)",
+     "knob fill": "`surface.default` #131F24 (snow, dark)",
      "knob border off": "`border.default` #37464F (swan, dark)",
-     "knob border on": "`text.link` #49C0F8 (macaw, dark)",
+     "knob border on": "`border.focus` #49C0F8 (macaw, dark)",
      "disabled track + knob border": "`surface.subtle` #202F36 (polar, dark)"
     }
    },
@@ -5458,7 +5458,7 @@
       "h": 24
      },
      "radius": "12px",
-     "background_image": "linear-gradient(to left, `border.default` #37464F (swan, dark) 50%, `text.link` #49C0F8 (macaw, dark) 50%)",
+     "background_image": "linear-gradient(to left, `surface.disabled` #37464F (swan, dark) 50%, `accent.secondary.face` #49C0F8 (macaw, dark) 50%)",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -5470,10 +5470,10 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px 2px 4px 2px",
-       "color": "`text.link` #49C0F8 (macaw, dark)"
+       "color": "`border.focus` #49C0F8 (macaw, dark)"
       },
       "radius": "8px",
       "transform": "matrix(1, 0, 0, 1, 26, 0)"
@@ -5509,7 +5509,7 @@
       "h": 24
      },
      "radius": "12px",
-     "background_image": "linear-gradient(to left, `border.default` #37464F (swan, dark) 50%, `text.link` #49C0F8 (macaw, dark) 50%)",
+     "background_image": "linear-gradient(to left, `surface.disabled` #37464F (swan, dark) 50%, `accent.secondary.face` #49C0F8 (macaw, dark) 50%)",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -5521,7 +5521,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px 2px 4px 2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -5579,7 +5579,7 @@
       "h": 24
      },
      "radius": "12px",
-     "background_image": "linear-gradient(to left, `border.default` #E5E5E5 (swan, light) 50%, `text.link` #1CB0F6 (macaw, light) 50%)",
+     "background_image": "linear-gradient(to left, `surface.disabled` #E5E5E5 (swan, light) 50%, `accent.secondary.face` #1CB0F6 (macaw, light) 50%)",
      "text_color": "`text.link` #1CB0F6 (macaw, light)",
      "font": {
       "family": "duolingo-sans",
@@ -5591,7 +5591,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "2px 2px 4px 2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -5624,12 +5624,12 @@
     "light": {
      "label": "`text.tertiary` #AFAFAF (hare, light)",
      "rule": "`border.default` #E5E5E5 (swan, light)",
-     "selected/hover label + rule": "`text.link` #1CB0F6 (macaw, light)"
+     "selected/hover label + rule": "`border.focus` #1CB0F6 (macaw, light)"
     },
     "dark": {
      "label": "`text.tertiary` #52656D (hare, dark)",
      "rule": "`border.default` #37464F (swan, dark)",
-     "selected/hover label + rule": "`text.link` #49C0F8 (macaw, dark)"
+     "selected/hover label + rule": "`border.focus` #49C0F8 (macaw, dark)"
     }
    },
    "type_style": "700 17px/20px uppercase, 0.03em tracking.",
@@ -5690,7 +5690,7 @@
      "padding": "15px 0px 15px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
-      "color": "`text.link` #49C0F8 (macaw, dark)"
+      "color": "`border.focus` #49C0F8 (macaw, dark)"
      },
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
@@ -5740,7 +5740,7 @@
      "padding": "15px 0px 15px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
-      "color": "`text.link` #49C0F8 (macaw, dark)"
+      "color": "`border.focus` #49C0F8 (macaw, dark)"
      },
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
@@ -5765,7 +5765,7 @@
      "padding": "15px 0px 15px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
-      "color": "`text.link` #1CB0F6 (macaw, light)"
+      "color": "`border.focus` #1CB0F6 (macaw, light)"
      },
      "text_color": "`text.link` #1CB0F6 (macaw, light)",
      "font": {
@@ -5887,7 +5887,7 @@
      "margin": "0px 0px -2px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
-      "color": "`text.link` #49C0F8 (macaw, dark)"
+      "color": "`border.focus` #49C0F8 (macaw, dark)"
      },
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
@@ -6017,7 +6017,7 @@
      "margin": "0px 0px -2px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
-      "color": "`text.link` #1CB0F6 (macaw, light)"
+      "color": "`border.focus` #1CB0F6 (macaw, light)"
      },
      "text_color": "`text.link` #1CB0F6 (macaw, light)",
      "font": {
@@ -6282,7 +6282,7 @@
       "transform": "uppercase"
      },
      "::after": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "radius": "2px"
      },
      "label": {
@@ -6377,20 +6377,20 @@
    },
    "tokens": {
     "light": {
-     "up next fill": "`border.default` #E5E5E5 (swan, light)",
+     "up next fill": "`surface.disabled` #E5E5E5 (swan, light)",
      "up next text": "`text.tertiary` #AFAFAF (hare, light)",
-     "count fill": "`accent.danger.face` #FF4B4B (cardinal, light)",
+     "count fill": "`accent.danger.text` #FF4B4B (cardinal, light)",
      "count text": "`text.onColor` #FFFFFF (snow-always-light, light)",
-     "equipped empty fill/text": "`border.default` #E5E5E5 (swan, light) / `text.tertiary` #AFAFAF (hare, light)",
-     "equipped full fill/text": "`status.successBackground` #D7FFB8 (sea-sponge, light) / `accent.primary.face` #58CC02 (owl, light)"
+     "equipped empty fill/text": "`gamification.streakInactive` #E5E5E5 (swan, light) / `text.tertiary` #AFAFAF (hare, light)",
+     "equipped full fill/text": "`gamification.league.promotedRow` #D7FFB8 (sea-sponge, light) / `accent.primary.face` #58CC02 (owl, light)"
     },
     "dark": {
-     "up next fill": "`border.default` #37464F (swan, dark)",
+     "up next fill": "`surface.disabled` #37464F (swan, dark)",
      "up next text": "`text.tertiary` #52656D (hare, dark)",
-     "count fill": "`accent.danger.face` #EE5555 (cardinal, dark)",
+     "count fill": "`accent.danger.text` #EE5555 (cardinal, dark)",
      "count text": "`text.onColor` #FFFFFF (snow-always-light, dark)",
-     "equipped empty fill/text": "`border.default` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark)",
-     "equipped full fill/text": "`status.successBackground` #202F36 (sea-sponge, dark) / `accent.primary.face` #93D333 (owl, dark)"
+     "equipped empty fill/text": "`gamification.streakInactive` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark)",
+     "equipped full fill/text": "`gamification.league.promotedRow` #202F36 (sea-sponge, dark) / `accent.primary.face` #93D333 (owl, dark)"
     }
    },
    "type_style": "700 15px uppercase (all three CSS pills).",
@@ -6442,7 +6442,7 @@
      "padding": "4px 8px 4px 8px",
      "margin": "0px 0px 16px 0px",
      "radius": "6px",
-     "background": "`border.default` #37464F (swan, dark)",
+     "background": "`surface.disabled` #37464F (swan, dark)",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -6466,7 +6466,7 @@
      "padding": "4px 8px 4px 8px",
      "margin": "0px 0px 16px 0px",
      "radius": "6px",
-     "background": "`border.default` #E5E5E5 (swan, light)",
+     "background": "`surface.disabled` #E5E5E5 (swan, light)",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
      "font": {
       "family": "duolingo-sans",
@@ -6535,7 +6535,7 @@
      },
      "padding": "8px",
      "radius": "16px",
-     "background": "`border.default` #37464F (swan, dark)",
+     "background": "`surface.disabled` #37464F (swan, dark)",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -6646,14 +6646,14 @@
      "letter colours (by user id % 5)": "beetle, cardinal, fox, macaw, tree-frog",
      "letter text": "`text.onPrimary` #FFFFFF (snow, light)",
      "online dot": "`accent.primary.face` #58CC02 (owl, light)",
-     "dot border": "`text.onPrimary` #FFFFFF (snow, light) (swan/sea-sponge/etc inside highlighted leaderboard rows)",
+     "dot border": "`surface.default` #FFFFFF (snow, light) (swan/sea-sponge/etc inside highlighted leaderboard rows)",
      "ghost border": "`text.tertiary` #AFAFAF (hare, light)"
     },
     "dark": {
      "letter colours (by user id % 5)": "beetle, cardinal, fox, macaw, tree-frog",
      "letter text": "`text.onPrimary` #131F24 (snow, dark) (dark text on colour in dark theme)",
      "online dot": "`accent.primary.face` #93D333 (owl, dark)",
-     "dot border": "`text.onPrimary` #131F24 (snow, dark)",
+     "dot border": "`surface.default` #131F24 (snow, dark)",
      "ghost border": "`text.tertiary` #52656D (hare, dark)"
     }
    },
@@ -6719,7 +6719,7 @@
       "h": 48
      },
      "radius": "50%",
-     "background": "`status.warning` #FFAB33 (fox, dark)",
+     "background": "`dataViz.avatar.orange` #FFAB33 (fox, dark)",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -6837,7 +6837,7 @@
       "color": "`text.onPrimary` #131F24 (snow, dark)"
      },
      "radius": "50%",
-     "background": "`text.link` #49C0F8 (macaw, dark)",
+     "background": "`accent.secondary.face` #49C0F8 (macaw, dark)",
      "text_color": "#0000EE (browser default, not painted)",
      "font": {
       "family": "duolingo-sans",
@@ -6886,13 +6886,13 @@
    },
    "tokens": {
     "light": {
-     "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+     "fill": "`surface.default` #FFFFFF (snow, light)",
      "border": "`border.default` #E5E5E5 (swan, light)",
      "title": "`text.primary` #4B4B4B (eel, light)",
      "body": "`text.secondary` #777777 (wolf, light)"
     },
     "dark": {
-     "fill": "`text.onPrimary` #131F24 (snow, dark)",
+     "fill": "`surface.default` #131F24 (snow, dark)",
      "border": "`border.default` #37464F (swan, dark)",
      "title": "`text.primary` #F1F7FB (eel, dark)",
      "body": "`text.secondary` #DCE6EC (wolf, dark)"
@@ -6955,7 +6955,7 @@
       "color": "`border.default` #37464F (swan, dark)"
      },
      "radius": "15px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -7046,7 +7046,7 @@
       "color": "`border.default` #37464F (swan, dark)"
      },
      "radius": "2px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -7072,7 +7072,7 @@
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
      "radius": "15px",
-     "background": "`text.onPrimary` #FFFFFF (snow, light)",
+     "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -7215,12 +7215,12 @@
    },
    "tokens": {
     "light": {
-     "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+     "fill": "`surface.default` #FFFFFF (snow, light)",
      "border": "`border.default` #E5E5E5 (swan, light)",
      "text": "--path-unit-character-color (captured #58CC02 owl-always-light)"
     },
     "dark": {
-     "fill": "`text.onPrimary` #131F24 (snow, dark)",
+     "fill": "`surface.default` #131F24 (snow, dark)",
      "border": "`border.default` #37464F (swan, dark)",
      "text": "--path-unit-character-color (captured #58CC02 owl-always-light)"
     }
@@ -7271,7 +7271,7 @@
       "color": "`border.default` #37464F (swan, dark)"
      },
      "radius": "10px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`unitColors.green` #58CC02 (owl-always-light, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -7298,7 +7298,7 @@
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
      "radius": "10px",
-     "background": "`text.onPrimary` #FFFFFF (snow, light)",
+     "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`accent.primary.face` #58CC02 (owl, light)",
      "font": {
       "family": "duolingo-sans",
@@ -7324,7 +7324,7 @@
       "color": "`border.default` #37464F (swan, dark)"
      },
      "radius": "2px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -7368,7 +7368,7 @@
    },
    "tokens": {
     "light": {
-     "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+     "fill": "`surface.default` #FFFFFF (snow, light)",
      "border": "`border.default` #E5E5E5 (swan, light)",
      "row label": "`text.secondary` #777777 (wolf, light)",
      "hover row fill": "`surface.subtle` #F7F7F7 (polar, light)",
@@ -7377,7 +7377,7 @@
      "header": "`text.tertiary` #AFAFAF (hare, light)"
     },
     "dark": {
-     "fill": "`text.onPrimary` #131F24 (snow, dark)",
+     "fill": "`surface.default` #131F24 (snow, dark)",
      "border": "`border.default` #37464F (swan, dark)",
      "row label": "`text.secondary` #DCE6EC (wolf, dark)",
      "hover row fill": "`surface.subtle` #202F36 (polar, dark)",
@@ -7443,7 +7443,7 @@
       "color": "`border.default` #37464F (swan, dark)"
      },
      "radius": "15px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -7620,7 +7620,7 @@
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
      "radius": "15px",
-     "background": "`text.onPrimary` #FFFFFF (snow, light)",
+     "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
      "font": {
       "family": "duolingo-sans",
@@ -7789,21 +7789,21 @@
    },
    "tokens": {
     "light": {
-     "dialog fill": "`text.onPrimary` #FFFFFF (snow, light)",
+     "dialog fill": "`surface.default` #FFFFFF (snow, light)",
      "title": "`text.primary` #4B4B4B (eel, light)",
      "body": "`text.secondary` #777777 (wolf, light)",
-     "close fill": "`text.onPrimary` #FFFFFF (snow, light)",
+     "close fill": "`surface.default` #FFFFFF (snow, light)",
      "close border": "`border.default` #E5E5E5 (swan, light)",
-     "close hover fill": "`border.default` #E5E5E5 (swan, light)",
+     "close hover fill": "`surface.disabled` #E5E5E5 (swan, light)",
      "field border": "`border.default` #E5E5E5 (swan, light)"
     },
     "dark": {
-     "dialog fill": "`text.onPrimary` #131F24 (snow, dark)",
+     "dialog fill": "`surface.default` #131F24 (snow, dark)",
      "title": "`text.primary` #F1F7FB (eel, dark)",
      "body": "`text.secondary` #DCE6EC (wolf, dark)",
-     "close fill": "`text.onPrimary` #131F24 (snow, dark)",
+     "close fill": "`surface.default` #131F24 (snow, dark)",
      "close border": "`border.default` #37464F (swan, dark)",
-     "close hover fill": "`border.default` #37464F (swan, dark)",
+     "close hover fill": "`surface.disabled` #37464F (swan, dark)",
      "field border": "`border.default` #37464F (swan, dark)"
     },
     "backdrop": "rgb(var(--color-black)) @ 0.4 = #000000 @ 0.4 alpha in both themes (css:4779 ._1ATOC)"
@@ -7858,7 +7858,7 @@
      "padding": "24px",
      "margin": "24px",
      "radius": "16px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -7970,7 +7970,7 @@
      "padding": "30px",
      "margin": "24px",
      "radius": "16px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8019,7 +8019,7 @@
       "color": "`border.default` #37464F (swan, dark)"
      },
      "radius": "98px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8053,7 +8053,7 @@
       "color": "`border.default` #37464F (swan, dark)"
      },
      "radius": "16px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8095,7 +8095,7 @@
      "padding": "30px",
      "margin": "24px",
      "radius": "16px",
-     "background": "`text.onPrimary` #FFFFFF (snow, light)",
+     "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8142,7 +8142,7 @@
      "padding": "24px",
      "margin": "24px",
      "radius": "16px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8189,7 +8189,7 @@
      "padding": "24px",
      "margin": "24px",
      "radius": "16px",
-     "background": "`text.onPrimary` #FFFFFF (snow, light)",
+     "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8258,12 +8258,12 @@
    },
    "tokens": {
     "light": {
-     "sheet fill": "`text.onPrimary` #FFFFFF (snow, light)",
+     "sheet fill": "`surface.default` #FFFFFF (snow, light)",
      "title": "`text.primary` #4B4B4B (eel, light)",
      "description": "`text.secondary` #777777 (wolf, light)"
     },
     "dark": {
-     "sheet fill": "`text.onPrimary` #131F24 (snow, dark)",
+     "sheet fill": "`surface.default` #131F24 (snow, dark)",
      "title": "`text.primary` #F1F7FB (eel, dark)",
      "description": "`text.secondary` #DCE6EC (wolf, dark)"
     },
@@ -8309,7 +8309,7 @@
       "w": 1200,
       "h": 195
      },
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8499,7 +8499,7 @@
       "transform": "uppercase"
      },
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -8536,7 +8536,7 @@
       "w": 1384,
       "h": 195
      },
-     "background": "`text.onPrimary` #FFFFFF (snow, light)",
+     "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8601,12 +8601,12 @@
    "tokens": {
     "light": {
      "label": "`text.primary` #4B4B4B (eel, light)",
-     "hover fill": "`border.default` #E5E5E5 (swan, light)",
+     "hover fill": "`surface.disabled` #E5E5E5 (swan, light)",
      "section title": "`text.secondary` #777777 (wolf, light)"
     },
     "dark": {
      "label": "`text.primary` #F1F7FB (eel, dark)",
-     "hover fill": "`border.default` #37464F (swan, dark)",
+     "hover fill": "`surface.disabled` #37464F (swan, dark)",
      "section title": "`text.secondary` #DCE6EC (wolf, dark)"
     }
    },
@@ -8716,7 +8716,7 @@
       "h": 40
      },
      "radius": "12px",
-     "background": "`border.default` #37464F (swan, dark)",
+     "background": "`surface.disabled` #37464F (swan, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8796,7 +8796,7 @@
       "h": 40
      },
      "radius": "12px",
-     "background": "`border.default` #E5E5E5 (swan, light)",
+     "background": "`surface.disabled` #E5E5E5 (swan, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -9346,7 +9346,7 @@
    },
    "tokens": {
     "light": {
-     "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+     "fill": "`surface.default` #FFFFFF (snow, light)",
      "border": "`border.default` #E5E5E5 (swan, light)",
      "title": "`text.primary` #4B4B4B (eel, light)",
      "body": "`text.secondary` #777777 (wolf, light)",
@@ -9355,7 +9355,7 @@
      "super card fill": "`gamification.super.surface` #000437 (eclipse, light)"
     },
     "dark": {
-     "fill": "`text.onPrimary` #131F24 (snow, dark)",
+     "fill": "`surface.default` #131F24 (snow, dark)",
      "border": "`border.default` #37464F (swan, dark)",
      "title": "`text.primary` #F1F7FB (eel, dark)",
      "body": "`text.secondary` #DCE6EC (wolf, dark)",
@@ -9413,7 +9413,7 @@
       "color": "`border.default` #37464F (swan, dark)"
      },
      "radius": "16px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -9526,7 +9526,7 @@
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
      "radius": "16px",
-     "background": "`text.onPrimary` #FFFFFF (snow, light)",
+     "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -9576,7 +9576,7 @@
       "color": "`border.default` #37464F (swan, dark)"
      },
      "radius": "16px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -10028,16 +10028,16 @@
    },
    "tokens": {
     "light": {
-     "track": "`border.default` #E5E5E5 (swan, light)",
+     "track": "`surface.disabled` #E5E5E5 (swan, light)",
      "fill (default)": "`accent.primary.face` #58CC02 (owl, light)",
-     "secondary fill": "`gamification.xp` #FFC800 (bee, light)",
+     "secondary fill": "`dataViz.progress.fillSecondary` #FFC800 (bee, light)",
      "shine": "`text.onColor` #FFFFFF (snow-always-light, light)",
      "inner text on fill": "`text.onPrimary` #FFFFFF (snow, light)"
     },
     "dark": {
-     "track": "`border.default` #37464F (swan, dark)",
+     "track": "`surface.disabled` #37464F (swan, dark)",
      "fill (default)": "`accent.primary.face` #93D333 (owl, dark)",
-     "secondary fill": "`gamification.xp` #FFC700 (bee, dark)",
+     "secondary fill": "`dataViz.progress.fillSecondary` #FFC700 (bee, dark)",
      "shine": "`text.onColor` #FFFFFF (snow-always-light, dark)",
      "inner text on fill": "`text.onPrimary` #131F24 (snow, dark)"
     },
@@ -10127,7 +10127,7 @@
       "h": 18
      },
      "radius": "9px",
-     "background": "`text.onPrimary` #131F24 (snow, dark)",
+     "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -10268,7 +10268,7 @@
       "h": 18
      },
      "radius": "9px 0px 0px 9px",
-     "background": "`border.default` #37464F (swan, dark)",
+     "background": "`surface.disabled` #37464F (swan, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -10328,12 +10328,12 @@
     "light": {
      "primary link": "`text.link` #1CB0F6 (macaw, light)",
      "muted link": "`text.tertiary` #AFAFAF (hare, light)",
-     "destructive link": "`accent.danger.face` #FF4B4B (cardinal, light)"
+     "destructive link": "`accent.danger.text` #FF4B4B (cardinal, light)"
     },
     "dark": {
      "primary link": "`text.link` #49C0F8 (macaw, dark)",
      "muted link": "`text.tertiary` #52656D (hare, dark)",
-     "destructive link": "`accent.danger.face` #EE5555 (cardinal, dark)"
+     "destructive link": "`accent.danger.text` #EE5555 (cardinal, dark)"
     }
    },
    "type_style": "700 uppercase; see sizes.",
@@ -10480,7 +10480,7 @@
       "w": 153,
       "h": 16
      },
-     "text_color": "`accent.danger.face` #EE5555 (cardinal, dark)",
+     "text_color": "`accent.danger.text` #EE5555 (cardinal, dark)",
      "font": {
       "family": "duolingo-sans",
       "size": "16px",
@@ -10559,12 +10559,12 @@
    },
    "tokens": {
     "light": {
-     "framed face": "`text.onPrimary` #FFFFFF (snow, light)",
+     "framed face": "`surface.default` #FFFFFF (snow, light)",
      "framed border + lip": "`border.default` #E5E5E5 (swan, light)",
      "glyph (quit X)": "`text.tertiary` #AFAFAF (hare, light)"
     },
     "dark": {
-     "framed face": "`text.onPrimary` #131F24 (snow, dark)",
+     "framed face": "`surface.default` #131F24 (snow, dark)",
      "framed border + lip": "`border.default` #37464F (swan, dark)",
      "glyph (quit X)": "`text.tertiary` #52656D (hare, dark)"
     }
@@ -10776,7 +10776,7 @@
      "min_width": "auto",
      "z_index": "1",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -10819,7 +10819,7 @@
      "min_width": "auto",
      "z_index": "1",
      "::before": {
-      "fill": "`text.onPrimary` #FFFFFF (snow, light)",
+      "fill": "`surface.default` #FFFFFF (snow, light)",
       "border": {
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
@@ -10859,7 +10859,7 @@
      },
      "min_width": "auto",
      "::before": {
-      "fill": "`text.onPrimary` #131F24 (snow, dark)",
+      "fill": "`surface.default` #131F24 (snow, dark)",
       "border": {
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
@@ -10894,14 +10894,14 @@
    },
    "tokens": {
     "light": {
-     "table fill": "`text.onPrimary` #FFFFFF (snow, light)",
-     "header cell fill (at 0.3 alpha)": "`text.link` #1CB0F6 (macaw, light)",
+     "table fill": "`surface.default` #FFFFFF (snow, light)",
+     "header cell fill (at 0.3 alpha)": "`palette.light.macaw` #1CB0F6 (macaw, light)",
      "grid line border": "`border.selected` #84D8FF (blue-jay, light)",
      "cell text": "`text.body` #3C3C3C (black-text, light)"
     },
     "dark": {
-     "table fill": "`text.onPrimary` #131F24 (snow, dark)",
-     "header cell fill (at 0.3 alpha)": "`text.link` #49C0F8 (macaw, dark)",
+     "table fill": "`surface.default` #131F24 (snow, dark)",
+     "header cell fill (at 0.3 alpha)": "`palette.dark.macaw` #49C0F8 (macaw, dark)",
      "grid line border": "`border.selected` #3F85A7 (blue-jay, dark)",
      "cell text": "`text.body` #F1F7FB (black-text, dark)"
     }

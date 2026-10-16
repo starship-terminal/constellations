@@ -150,7 +150,7 @@
      {
       "part": "container",
       "property": "border-right",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default #3"
      },
      {
@@ -180,19 +180,19 @@
      {
       "part": "item (hover)",
       "property": "background",
-      "value": "`surface.subtle` #202F36 (polar, dark), same hex as iguana in dark, so selected differs from hover only by the blue-jay border",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark), same hex as iguana in dark, so selected differs from hover only by the blue-jay border",
       "source": "captured:learn-dark-nav-hover #35"
      },
      {
       "part": "notification dot",
       "property": "fill / ring",
-      "value": "`accent.danger.face` #EE5555 (cardinal, dark) / 2px `surface.default` #131F24 (snow, dark)",
+      "value": "`accent.danger.text` #EE5555 (cardinal, dark) / 2px `text.onPrimary` #131F24 (snow, dark)",
       "source": "learn-dark-default #25"
      },
      {
       "part": "MORE popover",
       "property": "surface / border / row hover",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) / `surface.subtle` #202F36 (polar, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark) / `gamification.league.demotedRow` #202F36 (polar, dark)",
       "source": "learn-dark-more-menu #59; captured:learn-dark-more-menu-item-hover #68"
      },
      {
@@ -204,7 +204,7 @@
      {
       "part": "promo card",
       "property": "border / title / body / CTA",
-      "value": "`border.default` #37464F (swan) / `text.primary` #F1F7FB (eel, from CSS; equal to the dump default) / `text.secondary` #DCE6EC (wolf) / `text.link` #49C0F8 (macaw), dark",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.primary` #F1F7FB (eel, from CSS; equal to the dump default) / `text.secondary` #DCE6EC (wolf) / `text.link` #49C0F8 (macaw), dark",
       "source": "learn-dark-default #58-#63; css:4243-a8d324a8.css ._332av"
      }
     ],
@@ -218,7 +218,7 @@
      {
       "part": "container",
       "property": "border-right",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-default #3"
      },
      {
@@ -254,19 +254,19 @@
      {
       "part": "notification dot",
       "property": "fill / ring",
-      "value": "`accent.danger.face` #FF4B4B (cardinal, light) / 2px `surface.default` #FFFFFF (snow, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light) / 2px `text.onPrimary` #FFFFFF (snow, light)",
       "source": "learn-light-default #25"
      },
      {
       "part": "MORE popover",
       "property": "surface / border / row text",
-      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.secondary` #777777 (wolf), light",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `text.secondary` #777777 (wolf), light",
       "source": "learn-light-more-menu #59; css:4779-c36ad395.css ._36bu_; css:9071-d035f2e5.css .GHXZL"
      },
      {
       "part": "promo card",
       "property": "border / title / body / CTA",
-      "value": "`border.default` #E5E5E5 (swan) / `text.primary` #4B4B4B (eel) / `text.secondary` #777777 (wolf) / `text.link` #1CB0F6 (macaw), light",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.primary` #4B4B4B (eel) / `text.secondary` #777777 (wolf) / `text.link` #1CB0F6 (macaw), light",
       "source": "learn-light-default #58-#63"
      }
     ],
@@ -486,13 +486,13 @@
      {
       "part": "streak count (0 days)",
       "property": "color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default dt=streak-stat cl=_2HAQo (#78)"
      },
      {
       "part": "streak count (active)",
       "property": "color",
-      "value": "`status.warning` #FFAB33 (fox, dark), from CSS; desktop dark was only captured at streak 0 (the dark mobile bar shows the same token)",
+      "value": "`status.warningText` #FFAB33 (fox, dark), from CSS; desktop dark was only captured at streak 0 (the dark mobile bar shows the same token)",
       "source": "css:5275-8898b509.css ._2ABdc; learn-dark-mobile dt=streak-stat (#14)"
      },
      {
@@ -504,13 +504,13 @@
      {
       "part": "hearts count",
       "property": "color",
-      "value": "`accent.danger.face` #EE5555 (cardinal, dark)",
+      "value": "`accent.danger.text` #EE5555 (cardinal, dark)",
       "source": "learn-dark-default cl=xb7v_ (#86)"
      },
      {
       "part": "trigger hover / open",
       "property": "background",
-      "value": "`surface.subtle` #202F36 (polar, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark)",
       "source": "captured:learn-dark-streak-dropdown #75"
      }
     ],
@@ -530,13 +530,13 @@
      {
       "part": "streak count (0 days)",
       "property": "color",
-      "value": "`border.default` #E5E5E5 (swan, light), from CSS (light was captured at streak 1)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), from CSS (light was captured at streak 1)",
       "source": "css:5275-8898b509.css ._2HAQo"
      },
      {
       "part": "streak count (active)",
       "property": "color",
-      "value": "`status.warning` #FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "learn-light-default dt=streak-stat cl=_2ABdc (#79)"
      },
      {
@@ -548,7 +548,7 @@
      {
       "part": "hearts count",
       "property": "color",
-      "value": "`accent.danger.face` #FF4B4B (cardinal, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
       "source": "learn-light-default cl=xb7v_ (#87)"
      },
      {
@@ -763,7 +763,7 @@
      {
       "part": "card shell",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default #95"
      },
      {
@@ -777,7 +777,7 @@
      {
       "part": "card shell",
       "property": "background / border",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-default #97"
      },
      {
@@ -931,7 +931,7 @@
      {
       "part": "streak count",
       "property": "color",
-      "value": "`status.warning` #FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "learn-dark-mobile dt=streak-stat cl=iFJ2Z (#14)"
      },
      {
@@ -943,7 +943,7 @@
      {
       "part": "hearts count",
       "property": "color",
-      "value": "`accent.danger.face` #EE5555 (cardinal, dark)",
+      "value": "`accent.danger.text` #EE5555 (cardinal, dark)",
       "source": "learn-dark-mobile cl=IYCa_ (#23)"
      }
     ],
@@ -969,7 +969,7 @@
      {
       "part": "streak count",
       "property": "color",
-      "value": "`status.warning` #FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "learn-light-mobile #14"
      },
      {
@@ -981,7 +981,7 @@
      {
       "part": "hearts count",
       "property": "color",
-      "value": "`accent.danger.face` #FF4B4B (cardinal, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
       "source": "learn-light-mobile #23"
      }
     ],
@@ -1113,7 +1113,7 @@
      {
       "part": "bar",
       "property": "background / top border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-mobile #27"
      },
      {
@@ -1133,7 +1133,7 @@
      {
       "part": "bar",
       "property": "background / top border",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-mobile #27"
      },
      {
@@ -1822,7 +1822,7 @@
      {
       "part": "rule",
       "property": "colour",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default _1JA0o (#1183)"
      },
      {
@@ -1836,7 +1836,7 @@
      {
       "part": "rule",
       "property": "colour",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-default _1JA0o (#175)"
      },
      {
@@ -2016,13 +2016,13 @@
      {
       "part": "locked face",
       "property": "background",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default G_Z0K ::after (#1245); css:path-e50cab6b.css .G_Z0K"
      },
      {
       "part": "progress ring track",
       "property": "fill",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-default svg path (#1233)"
      },
      {
@@ -2052,13 +2052,13 @@
      {
       "part": "START bubble",
       "property": "bg / border / text",
-      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan) / unit colour `unitColors.green` #58CC02 (owl-always-light)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / unit colour `unitColors.green` #58CC02 (owl-always-light)",
       "source": "learn-dark-default _27IMa (#1239)"
      },
      {
       "part": "jump tooltip",
       "property": "bg / border / text",
-      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan) / `unitColors.orange` #FF9600 (fox-always-light, next unit colour)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / `unitColors.orange` #FF9600 (fox-always-light, next unit colour)",
       "source": "learn-dark-default TOHdU (#1322)"
      }
     ],
@@ -2066,19 +2066,19 @@
      {
       "part": "current / completed face",
       "property": "background",
-      "value": "same unit colours as dark (*-always-light names): `accent.primary.face` owl #58CC02, `text.link` macaw #1CB0F6, `unitColors.pink` starfish #FF86D0, `status.warning` fox #FF9600",
+      "value": "same unit colours as dark (*-always-light names): `accent.primary.face` owl #58CC02, `text.link` macaw #1CB0F6, `unitColors.pink` starfish #FF86D0, `status.warningText` fox #FF9600",
       "source": "learn-light-default ::after of #1258, #581, #1045, #1341"
      },
      {
       "part": "locked face",
       "property": "background",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-default G_Z0K ::after (#1267)"
      },
      {
       "part": "progress ring track",
       "property": "fill",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-default svg path (#1254)"
      },
      {
@@ -2096,13 +2096,13 @@
      {
       "part": "START bubble",
       "property": "bg / border / text",
-      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `accent.primary.face` #58CC02 (owl)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `accent.primary.face` #58CC02 (owl)",
       "source": "learn-light-default _27IMa; css:path-e50cab6b.css ._27IMa"
      },
      {
       "part": "jump tooltip",
       "property": "bg / border / text",
-      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `status.warning` #FF9600 (fox)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `status.warningText` #FF9600 (fox)",
       "source": "learn-light-default TOHdU (#1344)"
      }
     ],
@@ -2204,7 +2204,7 @@
      {
       "part": "per unit colour",
       "property": "face / shine / radio icon / mobile-header lip",
-      "value": "`text.link` macaw: #1CB0F6 / `palette.light.bea-junior-shine` bea-junior-shine #43BEF8 / `palette.light.bea-radio` bea-radio #147BAC / `palette.light.bea-secondary` bea-secondary #1899D6; `accent.primary.face` owl: #58CC02 / `palette.light.duo-shine` duo-shine #72D627 / `palette.light.duo-radio` duo-radio #3E8F01 / `palette.light.tree-frog-always-light` tree-frog-always-light #58A700; `accent.danger.face` cardinal: #FF4B4B / `palette.light.eddy-shine` eddy-shine #FF6969 / `palette.light.eddy-radio` eddy-radio #B33535 / `palette.light.eddy-secondary` eddy-secondary #EA2B2B; `unitColors.brown` grizzly-lite: #DC8F47 / `palette.light.falstaff-shine` falstaff-shine #E3A56C / `palette.light.falstaff-radio` falstaff-radio #834F33 / `palette.light.falstaff-secondary` falstaff-secondary #965A3A; `dataViz.avatar.purple` beetle: #CE82FF / `palette.light.lily-shine` lily-shine #D696FF / `palette.light.lily-radio` lily-radio #905BB3 / `palette.light.lily-secondary` lily-secondary #A568CC; `status.warning` fox: #FF9600 / `palette.light.lin-lucy-shine` lin-lucy-shine #FFA82C / `palette.light.lin-lucy-radio` lin-lucy-radio #B36900 / `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900; `unitColors.teal` peacock: #00CD9C / `palette.light.oscar-shine` oscar-shine #3FD9B5 / `palette.light.oscar-radio` oscar-radio #00906D / `palette.light.oscar-secondary` oscar-secondary #00A47D; `unitColors.magenta` dragon: #CC348D / `palette.light.vikram-shine` vikram-shine #D65AA2 / `palette.light.vikram-radio` vikram-radio #8F2463 / `palette.light.vikram-secondary` vikram-secondary #A32A71; `unitColors.pink` starfish: #FF86D0 / `palette.light.zari-shine` zari-shine #FF9ED9 / `palette.light.zari-radio` zari-radio #B35E92 / `palette.light.zari-secondary` zari-secondary #CC6BA6",
+      "value": "`text.link` macaw: #1CB0F6 / `palette.light.bea-junior-shine` bea-junior-shine #43BEF8 / `palette.light.bea-radio` bea-radio #147BAC / `palette.light.bea-secondary` bea-secondary #1899D6; `accent.primary.face` owl: #58CC02 / `palette.light.duo-shine` duo-shine #72D627 / `palette.light.duo-radio` duo-radio #3E8F01 / `palette.light.tree-frog-always-light` tree-frog-always-light #58A700; `accent.danger.text` cardinal: #FF4B4B / `palette.light.eddy-shine` eddy-shine #FF6969 / `palette.light.eddy-radio` eddy-radio #B33535 / `palette.light.eddy-secondary` eddy-secondary #EA2B2B; `unitColors.brown` grizzly-lite: #DC8F47 / `palette.light.falstaff-shine` falstaff-shine #E3A56C / `palette.light.falstaff-radio` falstaff-radio #834F33 / `palette.light.falstaff-secondary` falstaff-secondary #965A3A; `dataViz.avatar.purple` beetle: #CE82FF / `palette.light.lily-shine` lily-shine #D696FF / `palette.light.lily-radio` lily-radio #905BB3 / `palette.light.lily-secondary` lily-secondary #A568CC; `status.warningText` fox: #FF9600 / `palette.light.lin-lucy-shine` lin-lucy-shine #FFA82C / `palette.light.lin-lucy-radio` lin-lucy-radio #B36900 / `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900; `unitColors.teal` peacock: #00CD9C / `palette.light.oscar-shine` oscar-shine #3FD9B5 / `palette.light.oscar-radio` oscar-radio #00906D / `palette.light.oscar-secondary` oscar-secondary #00A47D; `unitColors.magenta` dragon: #CC348D / `palette.light.vikram-shine` vikram-shine #D65AA2 / `palette.light.vikram-radio` vikram-radio #8F2463 / `palette.light.vikram-secondary` vikram-secondary #A32A71; `unitColors.pink` starfish: #FF86D0 / `palette.light.zari-shine` zari-shine #FF9ED9 / `palette.light.zari-radio` zari-radio #B35E92 / `palette.light.zari-secondary` zari-secondary #CC6BA6",
       "source": "css:path-e50cab6b.css: unit classes (._2hQt4 ... ._2_zd7), shine classes (.nboUl ... ._3aYNQ), radio classes (._7lILJ ... ._2GiEE), secondary classes (._3TE__ ... ._43NnU). Pairing inferred from matching rule order; captured pairs: macaw/_25i8d/_1-7MG, starfish/_3aYNQ/_2GiEE, owl/_3y0yK"
      }
     ]
@@ -2390,19 +2390,19 @@
      {
       "part": "START / REVIEW button",
       "property": "face / text / lip",
-      "value": "face `dataViz.progress.shine` #FFFFFF (snow-always-light); text = unit colour (#58CC02 owl / #FF86D0 starfish); lip #FFFFFF @0.70",
+      "value": "face `text.onColor` #FFFFFF (snow-always-light); text = unit colour (#58CC02 owl / #FF86D0 starfish); lip #FFFFFF @0.70",
       "source": "learn-dark-node-popover (#1244) ::before; learn-dark-completed-popover (#1434); css:app-f2ef02f8.css ._19ped; css:path-e50cab6b.css ._2yBgn .PbV1v"
      },
      {
       "part": "locked shell + arrow",
       "property": "bg / border / text",
-      "value": "`surface.subtle` #202F36 (polar, dark) / 2px `border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark) / 2px `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "learn-dark-locked-popover _2txMY (#1270, #1278); css:path-e50cab6b.css ._2txMY"
      },
      {
       "part": "LOCKED button",
       "property": "face / text",
-      "value": "`border.default` #37464F (swan) / `text.tertiary` #52656D (hare); no lip (pushed down 4px)",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare); no lip (pushed down 4px)",
       "source": "learn-dark-locked-popover dt=skill-path-level-locked-button (#1275)"
      }
     ],
@@ -2434,13 +2434,13 @@
      {
       "part": "locked shell + arrow",
       "property": "bg / border / text",
-      "value": "`surface.subtle` #F7F7F7 (polar, light) / 2px `border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light) / 2px `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "learn-light-locked-popover (#1268, #1276)"
      },
      {
       "part": "LOCKED button",
       "property": "face / text",
-      "value": "`border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "learn-light-locked-popover (#1273)"
      }
     ],
@@ -2693,7 +2693,7 @@
      {
       "part": "border + lip",
       "property": "colour",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-completed-unit (#1668) ::before"
      },
      {
@@ -2713,7 +2713,7 @@
      {
       "part": "border + lip",
       "property": "colour",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-completed-unit (#1659) ::before"
      },
      {
@@ -2856,13 +2856,13 @@
      {
       "part": "card",
       "property": "border",
-      "value": "`border.default` #37464F (swan, dark); background transparent",
+      "value": "`gamification.streakInactive` #37464F (swan, dark); background transparent",
       "source": "learn-dark-path-end (#468)"
      },
      {
       "part": "UP NEXT pill (locked)",
       "property": "bg / text",
-      "value": "`border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "learn-dark-path-end (#470); css:path-e50cab6b.css ._1Qswf"
      },
      {
@@ -2880,7 +2880,7 @@
      {
       "part": "button",
       "property": "face / border+lip / text",
-      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan) / `text.link` #49C0F8 (macaw, dark)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / `text.link` #49C0F8 (macaw, dark)",
       "source": "learn-dark-path-end (#475) ::before"
      },
      {
@@ -2894,13 +2894,13 @@
      {
       "part": "card",
       "property": "border",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-path-end (#478)"
      },
      {
       "part": "UP NEXT pill (locked)",
       "property": "bg / text",
-      "value": "`border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "learn-light-path-end (#480)"
      },
      {
@@ -2918,7 +2918,7 @@
      {
       "part": "button",
       "property": "face / border+lip / text",
-      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.link` #1CB0F6 (macaw, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `text.link` #1CB0F6 (macaw, light)",
       "source": "learn-light-path-end (#485) ::before"
      },
      {
@@ -3126,13 +3126,13 @@
      {
       "part": "completed card",
       "property": "background",
-      "value": "`text.onPrimary` #131F24 (snow) with diagonal stripes `surface.subtle` #202F36 (polar) at 136deg, bands 10-40% and 53-71%",
+      "value": "`text.onPrimary` #131F24 (snow) with diagonal stripes `gamification.league.demotedRow` #202F36 (polar) at 136deg, bands 10-40% and 53-71%",
       "source": "sections-dark-default (#158); css:pathSections-c1a583d8.css ._2UWvP"
      },
      {
       "part": "completed card",
       "property": "border",
-      "value": "2px `border.default` #37464F (swan, dark)",
+      "value": "2px `gamification.streakInactive` #37464F (swan, dark)",
       "source": "sections-dark-default (#158)"
      },
      {
@@ -3150,7 +3150,7 @@
      {
       "part": "REVIEW button",
       "property": "face / border+lip",
-      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan)",
       "source": "sections-dark-default (#167) ::before"
      },
      {
@@ -3168,7 +3168,7 @@
      {
       "part": "trophy",
       "property": "colour",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "sections-dark-default _320PF (#205); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._320PF"
      },
      {
@@ -3186,7 +3186,7 @@
      {
       "part": "locked card",
       "property": "bg / text",
-      "value": "`surface.subtle` #202F36 (polar) / `palette.light.dark-mode-locked-path-section-text-color` #52656D (dark-mode-locked-path-section-text-color)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar) / `palette.light.dark-mode-locked-path-section-text-color` #52656D (dark-mode-locked-path-section-text-color)",
       "source": "sections-dark-default _36wSS (#234); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._36wSS"
      },
      {
@@ -3206,7 +3206,7 @@
      {
       "part": "completed card",
       "property": "border",
-      "value": "2px `border.default` #E5E5E5 (swan, light)",
+      "value": "2px `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "sections-light-default (#167)"
      },
      {
@@ -3439,7 +3439,7 @@
      {
       "part": "track",
       "property": "background",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-choice-default cl=_3yKMC (#11)"
      },
      {
@@ -3451,7 +3451,7 @@
      {
       "part": "fill (combo streak)",
       "property": "background",
-      "value": "`status.warning` #FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "lesson-dark-listen-default cl=_27NV6 (#12); also lesson-dark-dialogue-default, lesson-dark-previous-mistake"
      },
      {
@@ -3475,7 +3475,7 @@
      {
       "part": "hearts count",
       "property": "color",
-      "value": "`accent.danger.face` #EE5555 (cardinal, dark)",
+      "value": "`accent.danger.text` #EE5555 (cardinal, dark)",
       "source": "lesson-dark-challenge-default cl=_28aeG (#25)"
      },
      {
@@ -3489,7 +3489,7 @@
      {
       "part": "track",
       "property": "background",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-challenge-default cl=_3yKMC (#11)"
      },
      {
@@ -3501,7 +3501,7 @@
      {
       "part": "fill (combo streak)",
       "property": "background",
-      "value": "`status.warning` #FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "lesson-light-match-default cl=_27NV6 (#12)"
      },
      {
@@ -3519,7 +3519,7 @@
      {
       "part": "hearts count",
       "property": "color",
-      "value": "`accent.danger.face` #FF4B4B (cardinal, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
       "source": "lesson-light-challenge-default cl=_28aeG (#18)"
      },
      {
@@ -3688,7 +3688,7 @@
      {
       "part": "PREVIOUS MISTAKE label + icon",
       "property": "color / fill",
-      "value": "`status.warning` #FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "lesson-dark-previous-mistake cl=w2K8w (#25), path (#28)"
      }
     ],
@@ -3708,7 +3708,7 @@
      {
       "part": "PREVIOUS MISTAKE label",
       "property": "color",
-      "value": "`status.warning` #FF9600 (fox, light), derived, not captured: badge colour is inline, fox resolved in light",
+      "value": "`status.warningText` #FF9600 (fox, light), derived, not captured: badge colour is inline, fox resolved in light",
       "source": "lesson-dark-previous-mistake #25 (dark only)"
      }
     ],
@@ -3884,7 +3884,7 @@
      {
       "part": "bubble",
       "property": "border",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-challenge-default #42"
      },
      {
@@ -3896,7 +3896,7 @@
      {
       "part": "tail",
       "property": "fill",
-      "value": "`text.onPrimary` #131F24 (snow) over `border.default` #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) over `gamification.streakInactive` #37464F (swan)",
       "source": "lesson-dark-challenge-default path cl=_3q-cX (#78), _1Ps8f (#79)"
      },
      {
@@ -3934,7 +3934,7 @@
      {
       "part": "bubble",
       "property": "border",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-challenge-default #35"
      },
      {
@@ -3946,7 +3946,7 @@
      {
       "part": "tail",
       "property": "fill",
-      "value": "`text.onPrimary` #FFFFFF (snow) over `border.default` #E5E5E5 (swan)",
+      "value": "`text.onPrimary` #FFFFFF (snow) over `gamification.streakInactive` #E5E5E5 (swan)",
       "source": "lesson-light-challenge-default path (#87, #88)"
      },
      {
@@ -4097,7 +4097,7 @@
      {
       "part": "rules",
       "property": "color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-challenge-default #82, #87"
      }
     ],
@@ -4105,7 +4105,7 @@
      {
       "part": "rules",
       "property": "color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-challenge-default #91, #96"
      }
     ],
@@ -4220,7 +4220,7 @@
      {
       "part": "face border + lip",
       "property": "color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-challenge-default #96 ::before"
      },
      {
@@ -4232,7 +4232,7 @@
      {
       "part": "placeholder face + border",
       "property": "background / border",
-      "value": "`border.default` #37464F (swan, dark), no lip",
+      "value": "`gamification.streakInactive` #37464F (swan, dark), no lip",
       "source": "lesson-dark-challenge-tiles-partial #105 ::before"
      },
      {
@@ -4252,7 +4252,7 @@
      {
       "part": "face border + lip",
       "property": "color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-challenge-default #105 ::before"
      },
      {
@@ -4264,7 +4264,7 @@
      {
       "part": "placeholder face + border",
       "property": "background / border",
-      "value": "`border.default` #E5E5E5 (swan, light), no lip",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), no lip",
       "source": "lesson-light-challenge-tiles-partial #121 ::before"
      },
      {
@@ -4420,7 +4420,7 @@
      {
       "part": "border + lip",
       "property": "color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-choice-default #40 ::before"
      },
      {
@@ -4432,7 +4432,7 @@
      {
       "part": "badge",
       "property": "border / text",
-      "value": "`border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-choice-default #41"
      },
      {
@@ -4464,7 +4464,7 @@
      {
       "part": "border + lip",
       "property": "color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-choice-selected #59 ::before"
      },
      {
@@ -4476,7 +4476,7 @@
      {
       "part": "badge",
       "property": "border / text",
-      "value": "`border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-choice-selected #60"
      },
      {
@@ -4664,7 +4664,7 @@
      {
       "part": "border + lip",
       "property": "color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-select-default #40 ::before"
      },
      {
@@ -4688,7 +4688,7 @@
      {
       "part": "correct face / border / text",
       "property": "colours",
-      "value": "`status.successBackground` #D7FFB8 (sea-sponge) / `status.successBorder` #A5ED6E (turtle) / `accent.primary.lip` #58A700 (tree-frog)",
+      "value": "`gamification.league.promotedRow` #D7FFB8 (sea-sponge) / `status.successBorder` #A5ED6E (turtle) / `status.successText` #58A700 (tree-frog)",
       "source": "lesson-light-feedback-correct #41, #54"
      }
     ],
@@ -4829,7 +4829,7 @@
      {
       "part": "face / border + lip",
       "property": "colours",
-      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan)",
       "source": "lesson-dark-match-default #30 ::before"
      },
      {
@@ -4841,7 +4841,7 @@
      {
       "part": "badge",
       "property": "border / text",
-      "value": "`border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-match-default #31"
      },
      {
@@ -4853,13 +4853,13 @@
      {
       "part": "matched",
       "property": "label + badge",
-      "value": "`border.default` #37464F (swan), face and lip unchanged",
+      "value": "`gamification.streakInactive` #37464F (swan), face and lip unchanged",
       "source": "lesson-dark-match-pair-matched #30"
      },
      {
       "part": "wrong",
       "property": "border + lip / text / inner fill",
-      "value": "`status.dangerBorder` #945151 (flamingo, dark) / `accent.danger.lip` #D84848 (fire-ant, dark) / #202F36",
+      "value": "`status.dangerBorder` #945151 (flamingo, dark) / `status.dangerText` #D84848 (fire-ant, dark) / #202F36",
       "source": "lesson-dark-match-pair-wrong #41, #42, #43"
      }
     ],
@@ -4867,7 +4867,7 @@
      {
       "part": "face / border + lip",
       "property": "colours",
-      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan)",
       "source": "lesson-light-match-default #30 ::before"
      },
      {
@@ -4879,7 +4879,7 @@
      {
       "part": "badge",
       "property": "border / text",
-      "value": "`border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-match-default #31"
      },
      {
@@ -4891,7 +4891,7 @@
      {
       "part": "matched",
       "property": "label + badge",
-      "value": "`border.default` #E5E5E5 (swan), face and lip unchanged",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan), face and lip unchanged",
       "source": "lesson-light-match-pair-matched #30"
      }
     ],
@@ -5070,7 +5070,7 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan)",
       "source": "lesson-dark-dialogue-default #34"
      },
      {
@@ -5387,25 +5387,25 @@
      {
       "part": "bar",
       "property": "background / top rule",
-      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan)",
       "source": "lesson-dark-challenge-default #146"
      },
      {
       "part": "SKIP",
       "property": "face / border + lip / label",
-      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
+      "value": "`text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-challenge-default #149"
      },
      {
       "part": "CHECK disabled",
       "property": "face / label",
-      "value": "`border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
+      "value": "`gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-challenge-default #152"
      },
      {
       "part": "CHECK enabled",
       "property": "face / lip / label",
-      "value": "`accent.primary.face` #93D333 (owl) / `accent.primary.lip` #79B933 (tree-frog) / `text.onPrimary` #131F24 (snow)",
+      "value": "`accent.primary.face` #93D333 (owl) / `status.successText` #79B933 (tree-frog) / `text.onPrimary` #131F24 (snow)",
       "source": "lesson-dark-challenge-check-enabled #178"
      }
     ],
@@ -5413,25 +5413,25 @@
      {
       "part": "bar",
       "property": "background / top rule",
-      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan)",
       "source": "lesson-light-challenge-default #150"
      },
      {
       "part": "SKIP",
       "property": "face / border + lip / label",
-      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-challenge-default #153"
      },
      {
       "part": "CHECK disabled",
       "property": "face / label",
-      "value": "`border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-challenge-default #156"
      },
      {
       "part": "CHECK enabled",
       "property": "face / lip / label",
-      "value": "`accent.primary.face` #58CC02 (owl) / `accent.primary.lip` #58A700 (tree-frog) / `text.onPrimary` #FFFFFF (snow)",
+      "value": "`accent.primary.face` #58CC02 (owl) / `status.successText` #58A700 (tree-frog) / `text.onPrimary` #FFFFFF (snow)",
       "source": "lesson-light-choice-selected #95"
      }
     ],
@@ -5613,13 +5613,13 @@
      {
       "part": "correct bar",
       "property": "background",
-      "value": "`status.successBackground` #202F36 (sea-sponge, dark)",
+      "value": "`gamification.league.promotedRow` #202F36 (sea-sponge, dark)",
       "source": "lesson-dark-feedback-correct #139; css:1008-b4d34396.css ._3FB5S._3yMvO"
      },
      {
       "part": "correct title + actions",
       "property": "color",
-      "value": "`accent.primary.lip` #79B933 (tree-frog, dark)",
+      "value": "`status.successText` #79B933 (tree-frog, dark)",
       "source": "lesson-dark-feedback-correct #148, #151"
      },
      {
@@ -5631,7 +5631,7 @@
      {
       "part": "incorrect title, solution, actions",
       "property": "color",
-      "value": "`accent.danger.lip` #D84848 (fire-ant, dark)",
+      "value": "`status.dangerText` #D84848 (fire-ant, dark)",
       "source": "lesson-dark-feedback-incorrect #132, #133, #136"
      },
      {
@@ -5643,7 +5643,7 @@
      {
       "part": "neutral bar / title / CONTINUE",
       "property": "colours",
-      "value": "`status.warningBackground` #202F36 (canary, dark) / `status.warningBorder` #D79433 (guinea-pig, dark) / face `dataViz.progress.fillSecondary` #FFC700 (bee), lip `palette.light.camel` #E7A601 (camel)",
+      "value": "`status.warningBackground` #202F36 (canary, dark) / `feedback.neutral.text` #D79433 (guinea-pig, dark) / face `gamification.xp` #FFC700 (bee), lip `palette.light.camel` #E7A601 (camel)",
       "source": "lesson-dark-cant-listen #144, #153, #174"
      }
     ],
@@ -5651,25 +5651,25 @@
      {
       "part": "correct bar",
       "property": "background",
-      "value": "`status.successBackground` #D7FFB8 (sea-sponge, light)",
+      "value": "`gamification.league.promotedRow` #D7FFB8 (sea-sponge, light)",
       "source": "lesson-light-feedback-correct #103"
      },
      {
       "part": "correct title + actions",
       "property": "color",
-      "value": "`accent.primary.lip` #58A700 (tree-frog, light)",
+      "value": "`status.successText` #58A700 (tree-frog, light)",
       "source": "lesson-light-feedback-correct #112, #115"
      },
      {
       "part": "incorrect bar",
       "property": "background",
-      "value": "`status.dangerBackground` #FFDFE0 (walking-fish, light), derived, not captured",
+      "value": "`gamification.league.demotedRow` #FFDFE0 (walking-fish, light), derived, not captured",
       "source": "css:1008-b4d34396.css ._3FB5S._2cfV0 @media (min-width:700px)"
      },
      {
       "part": "incorrect title, solution, actions",
       "property": "color",
-      "value": "`accent.danger.lip` #EA2B2B (fire-ant, light), derived, not captured",
+      "value": "`status.dangerText` #EA2B2B (fire-ant, light), derived, not captured",
       "source": "css:1008-b4d34396.css .o-3Ru, ._1CCAE, ._3Q4Uw"
      },
      {
@@ -5789,7 +5789,7 @@
      "theme": "dark",
      "state": "correct",
      "element": "bar background",
-     "value": "`status.successBackground` #202F36 (sea-sponge, dark)",
+     "value": "`gamification.league.promotedRow` #202F36 (sea-sponge, dark)",
      "source": "lesson-dark-feedback-correct cl=_3FB5S _3yMvO (#139)",
      "status": "captured"
     },
@@ -5797,7 +5797,7 @@
      "theme": "dark",
      "state": "correct",
      "element": "title colour",
-     "value": "`accent.primary.lip` #79B933 (tree-frog, dark)",
+     "value": "`status.successText` #79B933 (tree-frog, dark)",
      "source": "lesson-dark-feedback-correct h2 cl=_2U7Gm WXwlk (#148)",
      "status": "captured"
     },
@@ -5821,7 +5821,7 @@
      "theme": "dark",
      "state": "correct",
      "element": "CONTINUE lip (::before box-shadow 0 4px 0)",
-     "value": "`accent.primary.lip` #79B933 (tree-frog, dark)",
+     "value": "`status.successText` #79B933 (tree-frog, dark)",
      "source": "lesson-dark-feedback-correct #168 ::before",
      "status": "captured"
     },
@@ -5845,7 +5845,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "title colour",
-     "value": "`accent.danger.lip` #D84848 (fire-ant, dark)",
+     "value": "`status.dangerText` #D84848 (fire-ant, dark)",
      "source": "lesson-dark-feedback-incorrect h2 cl=_2U7Gm o-3Ru (#132)",
      "status": "captured"
     },
@@ -5853,7 +5853,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "solution text",
-     "value": "`accent.danger.lip` #D84848 (fire-ant, dark)",
+     "value": "`status.dangerText` #D84848 (fire-ant, dark)",
      "source": "lesson-dark-feedback-incorrect cl=_2jz5U o-3Ru (#133)",
      "status": "captured"
     },
@@ -5869,7 +5869,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "CONTINUE face (::before bg)",
-     "value": "`accent.danger.face` #EE5555 (cardinal, dark)",
+     "value": "`accent.danger.text` #EE5555 (cardinal, dark)",
      "source": "lesson-dark-feedback-incorrect dt=player-next cl=_3S8jJ (#153) ::before",
      "status": "captured"
     },
@@ -5877,7 +5877,7 @@
      "theme": "dark",
      "state": "incorrect",
      "element": "CONTINUE lip (::before box-shadow 0 4px 0)",
-     "value": "`accent.danger.lip` #D84848 (fire-ant, dark)",
+     "value": "`status.dangerText` #D84848 (fire-ant, dark)",
      "source": "lesson-dark-feedback-incorrect #153 ::before",
      "status": "captured"
     },
@@ -5893,7 +5893,7 @@
      "theme": "light",
      "state": "correct",
      "element": "bar background",
-     "value": "`status.successBackground` #D7FFB8 (sea-sponge, light)",
+     "value": "`gamification.league.promotedRow` #D7FFB8 (sea-sponge, light)",
      "source": "lesson-light-feedback-correct cl=_3FB5S _3yMvO (#103)",
      "status": "captured"
     },
@@ -5901,7 +5901,7 @@
      "theme": "light",
      "state": "correct",
      "element": "title colour",
-     "value": "`accent.primary.lip` #58A700 (tree-frog, light)",
+     "value": "`status.successText` #58A700 (tree-frog, light)",
      "source": "lesson-light-feedback-correct h2 cl=_2U7Gm WXwlk (#112)",
      "status": "captured"
     },
@@ -5925,7 +5925,7 @@
      "theme": "light",
      "state": "correct",
      "element": "CONTINUE lip (::before box-shadow 0 4px 0)",
-     "value": "`accent.primary.lip` #58A700 (tree-frog, light)",
+     "value": "`status.successText` #58A700 (tree-frog, light)",
      "source": "lesson-light-feedback-correct #132 ::before",
      "status": "captured"
     },
@@ -5941,7 +5941,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "bar background",
-     "value": "`status.dangerBackground` #FFDFE0 (walking-fish, light)",
+     "value": "`gamification.league.demotedRow` #FFDFE0 (walking-fish, light)",
      "source": "css:1008-b4d34396.css ._3FB5S._2cfV0 @media (min-width:700px) {background-color: rgb(var(--color-walking-fish))}",
      "status": "derived, not captured"
     },
@@ -5949,7 +5949,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "title colour",
-     "value": "`accent.danger.lip` #EA2B2B (fire-ant, light)",
+     "value": "`status.dangerText` #EA2B2B (fire-ant, light)",
      "source": "css:1008-b4d34396.css .o-3Ru {color: rgb(var(--color-fire-ant))}",
      "status": "derived, not captured"
     },
@@ -5957,7 +5957,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "solution text",
-     "value": "`accent.danger.lip` #EA2B2B (fire-ant, light)",
+     "value": "`status.dangerText` #EA2B2B (fire-ant, light)",
      "source": "css:1008-b4d34396.css .o-3Ru (on ._2jz5U)",
      "status": "derived, not captured"
     },
@@ -5973,7 +5973,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "CONTINUE face (::before bg)",
-     "value": "`accent.danger.face` #FF4B4B (cardinal, light)",
+     "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
      "source": "css:app-f2ef02f8.css ._3S8jJ {--web-ui_button-background-color: rgb(var(--color-cardinal))} via css:4779-c36ad395.css ._1VYyp:before",
      "status": "derived, not captured"
     },
@@ -5981,7 +5981,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "CONTINUE lip (::before box-shadow 0 4px 0)",
-     "value": "`accent.danger.lip` #EA2B2B (fire-ant, light)",
+     "value": "`status.dangerText` #EA2B2B (fire-ant, light)",
      "source": "css:app-f2ef02f8.css ._3S8jJ {--web-ui_button-border-color: rgb(var(--color-fire-ant))} via css:4779-c36ad395.css ._1VYyp:before {box-shadow:0 var(--__internal__lip-width) 0; color: border-color}",
      "status": "derived, not captured"
     },
@@ -5997,7 +5997,7 @@
      "theme": "light",
      "state": "incorrect",
      "element": "TOO EASY / TOO DIFFICULT / REPORT colour",
-     "value": "`accent.danger.lip` #EA2B2B (fire-ant, light)",
+     "value": "`status.dangerText` #EA2B2B (fire-ant, light)",
      "source": "css:1008-b4d34396.css ._1CCAE, ._3Q4Uw",
      "status": "derived, not captured"
     }
@@ -6094,7 +6094,7 @@
      {
       "part": "bubble",
       "property": "border",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-review-interstitial #129"
      },
      {
@@ -6106,19 +6106,19 @@
      {
       "part": "caret",
       "property": "fill / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-review-interstitial #131"
      },
      {
       "part": "footer",
       "property": "background / top border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-review-interstitial #134"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "`accent.primary.face` #93D333 (owl, dark) / `accent.primary.lip` #79B933 (tree-frog, dark) / `text.onPrimary` #131F24 (snow, dark)",
+      "value": "`accent.primary.face` #93D333 (owl, dark) / `status.successText` #79B933 (tree-frog, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-review-interstitial dt=player-next (#137) ::before"
      },
      {
@@ -6138,7 +6138,7 @@
      {
       "part": "bubble",
       "property": "border",
-      "value": "`border.default` #E5E5E5 (swan, light), derived, not captured",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), derived, not captured",
       "source": "css:4779-c36ad395.css ._36bu_ (palette:swan)"
      },
      {
@@ -6150,7 +6150,7 @@
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "`accent.primary.face` #58CC02 (owl, light) / `accent.primary.lip` #58A700 (tree-frog, light) / `text.onPrimary` #FFFFFF (snow, light)",
+      "value": "`accent.primary.face` #58CC02 (owl, light) / `status.successText` #58A700 (tree-frog, light) / `text.onPrimary` #FFFFFF (snow, light)",
       "source": "captured on the same footer button in lesson-light-combo-interstitial dt=player-next (#43) ::before"
      }
     ],
@@ -6251,13 +6251,13 @@
      {
       "part": "caption",
       "property": "colour",
-      "value": "`status.warning` #FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "lesson-light-combo-interstitial cl=_1xB7m (#37)"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "`accent.primary.face` #58CC02 (owl, light) / `accent.primary.lip` #58A700 (tree-frog, light) / `text.onPrimary` #FFFFFF (snow, light)",
+      "value": "`accent.primary.face` #58CC02 (owl, light) / `status.successText` #58A700 (tree-frog, light) / `text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-combo-interstitial dt=player-next (#43) ::before"
      },
      {
@@ -6271,13 +6271,13 @@
      {
       "part": "caption",
       "property": "colour",
-      "value": "`status.warning` #FFAB33 (fox, dark), derived, not captured",
+      "value": "`status.warningText` #FFAB33 (fox, dark), derived, not captured",
       "source": "css:4358-6896adab.css ._1xB7m (palette:fox)"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "`accent.primary.face` #93D333 (owl, dark) / `accent.primary.lip` #79B933 (tree-frog, dark) / `text.onPrimary` #131F24 (snow, dark)",
+      "value": "`accent.primary.face` #93D333 (owl, dark) / `status.successText` #79B933 (tree-frog, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "captured on the same button in lesson-dark-review-interstitial (#137)"
      }
     ],
@@ -6377,7 +6377,7 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "lesson-light-quit-modal #132"
      },
      {
@@ -6389,7 +6389,7 @@
      {
       "part": "Duo lottie",
       "property": "fills",
-      "value": "`accent.primary.face` #58CC02 (owl), `palette.light.mask-green` #89E219 (mask-green), `accent.danger.face` #FF4B4B (cardinal), `text.primary` #4B4B4B (eel), #FFFFFF plus illustration colours #14C3FB, #4AAE00, #A15803, #F49000, #FFB0E4, #FFC200 (NO PALETTE MATCH)",
+      "value": "`accent.primary.face` #58CC02 (owl), `palette.light.mask-green` #89E219 (mask-green), `accent.danger.text` #FF4B4B (cardinal), `text.primary` #4B4B4B (eel), #FFFFFF plus illustration colours #14C3FB, #4AAE00, #A15803, #F49000, #FFB0E4, #FFC200 (NO PALETTE MATCH)",
       "source": "lesson-light-quit-modal svg (#32) descendants"
      }
     ],
@@ -6397,7 +6397,7 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark), derived, not captured",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark), derived, not captured",
       "source": "css:4779-c36ad395.css ._36bu_ (palette:snow, swan)"
      }
     ],
@@ -6526,7 +6526,7 @@
      {
       "part": "END SESSION",
       "property": "text",
-      "value": "`accent.danger.face` #EE5555 (cardinal, dark)",
+      "value": "`accent.danger.text` #EE5555 (cardinal, dark)",
       "source": "lesson-dark-quit-modal #139; css:app-f2ef02f8.css ._27kss { --web-ui_button-color:cardinal }"
      }
     ],
@@ -6558,7 +6558,7 @@
      {
       "part": "END SESSION",
       "property": "text",
-      "value": "`accent.danger.face` #FF4B4B (cardinal, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
       "source": "lesson-light-quit-modal #155"
      }
     ],
@@ -6765,13 +6765,13 @@
      {
       "part": "REVIEW LESSON",
       "property": "face / border+lip / text",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark)",
       "source": "lesson-dark-complete #46 ::before"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "`accent.primary.face` #93D333 (owl, dark) / `accent.primary.lip` #79B933 (tree-frog, dark) / `text.onPrimary` #131F24 (snow, dark)",
+      "value": "`accent.primary.face` #93D333 (owl, dark) / `status.successText` #79B933 (tree-frog, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-complete dt=player-next (#49) ::before"
      }
     ],
@@ -6803,13 +6803,13 @@
      {
       "part": "REVIEW LESSON",
       "property": "face / border+lip / text",
-      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "captured on the same end-screen footer in lesson-light-video-ad (#9) ::before"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "`accent.primary.face` #58CC02 (owl) / `accent.primary.lip` #58A700 (tree-frog) / `text.onPrimary` #FFFFFF (snow)",
+      "value": "`accent.primary.face` #58CC02 (owl) / `status.successText` #58A700 (tree-frog) / `text.onPrimary` #FFFFFF (snow)",
       "source": "lesson-light-video-ad dt=player-next (#12) ::before"
      }
     ],
@@ -7032,7 +7032,7 @@
      {
       "part": "\"day streak\"",
       "property": "colour",
-      "value": "`status.warning` #FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "lesson-dark-streak-celebration #16"
      },
      {
@@ -7044,19 +7044,19 @@
      {
       "part": "week card",
       "property": "border",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-streak-celebration #18, #37"
      },
      {
       "part": "divider",
       "property": "background",
-      "value": "`surface.subtle` #202F36 (polar, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark)",
       "source": "lesson-dark-streak-celebration #18 ::after"
      },
      {
       "part": "day label (today)",
       "property": "colour",
-      "value": "`status.warning` #FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "lesson-dark-streak-celebration cl=K2FC_ (#21)"
      },
      {
@@ -7068,25 +7068,25 @@
      {
       "part": "day circle (future)",
       "property": "background",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-streak-celebration cl=Rewuq (#27)"
      },
      {
       "part": "day circle (completed)",
       "property": "fill / check stroke",
-      "value": "`status.warning` #FFAB33 (fox, dark) / `text.onPrimary` #131F24 (snow, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-streak-calendar svg paths (#23, #27, #30, #33) and check (#36)"
      },
      {
       "part": "day circle (next-day target)",
       "property": "background / dashed border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `status.warning` #FFAB33 (fox, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `status.warningText` #FFAB33 (fox, dark)",
       "source": "lesson-dark-streak-calendar cl=_3g_6k (#39)"
      },
      {
       "part": "caret",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-streak-calendar #40"
      },
      {
@@ -7110,7 +7110,7 @@
      {
       "part": "CONTINUE (calendar)",
       "property": "face / lip / text",
-      "value": "`accent.primary.face` #93D333 (owl, dark) / `accent.primary.lip` #79B933 (tree-frog, dark) / #131F24",
+      "value": "`accent.primary.face` #93D333 (owl, dark) / `status.successText` #79B933 (tree-frog, dark) / #131F24",
       "source": "lesson-dark-streak-calendar dt=player-next (#64)"
      }
     ],
@@ -7118,13 +7118,13 @@
      {
       "part": "\"day streak\", today label, completed day, target dashed border",
       "property": "colour",
-      "value": "`status.warning` #FF9600 (fox, light), derived, not captured",
+      "value": "`status.warningText` #FF9600 (fox, light), derived, not captured",
       "source": "css:1008-b4d34396.css .Ikkcc, .K2FC_, ._3g_6k (palette:fox)"
      },
      {
       "part": "week card / message border, future circle",
       "property": "colour",
-      "value": "`border.default` #E5E5E5 (swan, light), derived",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), derived",
       "source": "css:1008-b4d34396.css ._2k21Q, .Rewuq; css:2634-6b22725c.css .uxKQj"
      },
      {
@@ -7364,7 +7364,7 @@
      {
       "part": "row border + lip",
       "property": "colour",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-streak-goal-default #245 ::before"
      },
      {
@@ -7376,7 +7376,7 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-streak-goal-default #15"
      },
      {
@@ -7388,7 +7388,7 @@
      {
       "part": "CTA disabled",
       "property": "face / text",
-      "value": "`border.default` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark), no lip",
+      "value": "`gamification.streakInactive` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark), no lip",
       "source": "lesson-dark-streak-goal-default dt=player-next (#261) ::before"
      }
     ],
@@ -7402,7 +7402,7 @@
      {
       "part": "row border + lip",
       "property": "colour",
-      "value": "`border.default` #E5E5E5 (swan, light), derived",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), derived",
       "source": "css:4779-c36ad395.css ._8dMUn (--web-ui_card-border-color default swan)"
      },
      {
@@ -7642,7 +7642,7 @@
      {
       "part": "table border, row dividers, header divider",
       "property": "colour",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "lesson-dark-friend-streak-invite #17, #18, #16"
      },
      {
@@ -7654,7 +7654,7 @@
      {
       "part": "CONTINUE / REVIEW LESSON",
       "property": "colours",
-      "value": "`accent.primary.face` owl #93D333 + `accent.primary.lip` tree-frog #79B933 / snow + swan + hare, as on lesson complete",
+      "value": "`accent.primary.face` owl #93D333 + `status.successText` tree-frog #79B933 / snow + swan + hare, as on lesson complete",
       "source": "lesson-dark-friend-streak-invite dt=player-next (#73), #70"
      }
     ],
@@ -7674,7 +7674,7 @@
      {
       "part": "table border, dividers",
       "property": "colour",
-      "value": "`border.default` #E5E5E5 (swan, light), derived (overridable by --friend-streak-table-border-color)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light), derived (overridable by --friend-streak-table-border-color)",
       "source": "css:2634-6b22725c.css ._1pa14, ._2OBb8"
      },
      {
@@ -7906,7 +7906,7 @@
      {
       "part": "trial: option row",
       "property": "background / border / text",
-      "value": "`text.onColor` #FFFFFF (snow-always-light) / `border.default` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) / `gamification.streakInactive` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-trial-upsell #36"
      },
      {
@@ -8242,7 +8242,7 @@
      {
       "part": "panel",
       "property": "border",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-streak-dropdown (#80)"
      },
      {
@@ -8272,13 +8272,13 @@
      {
       "part": "day letter, today",
       "property": "color",
-      "value": "`status.warning` #FFAB33 (fox, dark)",
+      "value": "`status.warningText` #FFAB33 (fox, dark)",
       "source": "learn-dark-streak-dropdown cl=_1tnkE (#96)"
      },
      {
       "part": "day circle (not done)",
       "property": "background",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-streak-dropdown cl=_1DNjG (#101)"
      },
      {
@@ -8290,7 +8290,7 @@
      {
       "part": "friend card",
       "property": "background / text",
-      "value": "`palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) / `dataViz.progress.shine` #FFFFFF (snow-always-light)",
+      "value": "`palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) / `text.onColor` #FFFFFF (snow-always-light)",
       "source": "learn-dark-streak-dropdown cl=_3TU61 (#115)"
      },
      {
@@ -8302,7 +8302,7 @@
      {
       "part": "society card",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-streak-dropdown cl=_1T_BQ (#123)"
      },
      {
@@ -8334,7 +8334,7 @@
      {
       "part": "panel",
       "property": "border",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-streak-dropdown (#81)"
      },
      {
@@ -8358,19 +8358,19 @@
      {
       "part": "day letter, today",
       "property": "color",
-      "value": "`status.warning` #FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "learn-light-streak-dropdown cl=_374yM (#97)"
      },
      {
       "part": "day circle (not done)",
       "property": "background",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-streak-dropdown cl=_1DNjG (#102)"
      },
      {
       "part": "day circle (done)",
       "property": "fill / check stroke",
-      "value": "`status.warning` #FF9600 (fox, light) / `text.onPrimary` #FFFFFF (snow), stroke-width 8 in svg units",
+      "value": "`status.warningText` #FF9600 (fox, light) / `text.onPrimary` #FFFFFF (snow), stroke-width 8 in svg units",
       "source": "learn-light-streak-dropdown svg path (#116), path (#129)"
      },
      {
@@ -8394,7 +8394,7 @@
      {
       "part": "society card",
       "property": "background / border",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-streak-dropdown cl=_1T_BQ (#143)"
      },
      {
@@ -8604,7 +8604,7 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-gems-dropdown (#84)"
      },
      {
@@ -8630,7 +8630,7 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-gems-dropdown (#85)"
      },
      {
@@ -8809,7 +8809,7 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-hearts-dropdown (#88)"
      },
      {
@@ -8827,7 +8827,7 @@
      {
       "part": "row (enabled)",
       "property": "face / border+lip",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark), lip box-shadow 0 2px",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark), lip box-shadow 0 2px",
       "source": "learn-dark-hearts-dropdown (#105) ::before"
      },
      {
@@ -8859,7 +8859,7 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-hearts-dropdown (#89)"
      },
      {
@@ -8871,7 +8871,7 @@
      {
       "part": "status time",
       "property": "color",
-      "value": "`accent.danger.face` #FF4B4B (cardinal, light)",
+      "value": "`accent.danger.text` #FF4B4B (cardinal, light)",
       "source": "learn-light-hearts-dropdown span (#121); css:4769-628e48ee.css ._2u5pt>span>span"
      },
      {
@@ -8883,7 +8883,7 @@
      {
       "part": "row",
       "property": "face / border+lip",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-hearts-dropdown (#124) ::before"
      },
      {
@@ -9064,13 +9064,13 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-courses-dropdown (#75)"
      },
      {
       "part": "header",
       "property": "text / rule",
-      "value": "`text.tertiary` #52656D (hare, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.tertiary` #52656D (hare, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "learn-dark-courses-dropdown cl=_34_P_ (#77)"
      },
      {
@@ -9088,7 +9088,7 @@
      {
       "part": "add row",
       "property": "rule / text",
-      "value": "`border.default` #37464F (swan, dark) / `text.primary` #F1F7FB (eel, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark) / `text.primary` #F1F7FB (eel, dark)",
       "source": "learn-dark-courses-dropdown dt=add-new-course (#94)"
      },
      {
@@ -9102,13 +9102,13 @@
      {
       "part": "panel",
       "property": "background / border",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-courses-dropdown (#76)"
      },
      {
       "part": "header",
       "property": "text / rule",
-      "value": "`text.tertiary` #AFAFAF (hare, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.tertiary` #AFAFAF (hare, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "learn-light-courses-dropdown cl=_34_P_ (#78)"
      },
      {
@@ -9126,7 +9126,7 @@
      {
       "part": "add row",
       "property": "rule / text",
-      "value": "`border.default` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)",
       "source": "learn-light-courses-dropdown dt=add-new-course (#95)"
      }
     ],
@@ -9391,13 +9391,13 @@
      {
       "part": "rule",
       "property": "color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-top hr (#163)"
      },
      {
       "part": "rank in promotion zone",
       "property": "color",
-      "value": "`accent.primary.lip` #79B933 (tree-frog, dark)",
+      "value": "`status.successText` #79B933 (tree-frog, dark)",
       "source": "leaderboard-dark-top cl=_1kz8P (#190)"
      },
      {
@@ -9415,49 +9415,49 @@
      {
       "part": "status bubble",
       "property": "fill / ring",
-      "value": "`text.onColor` #FFFFFF (snow-always-light) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-top cl=_2R_e4 (#194)"
      },
      {
       "part": "letter avatar",
       "property": "fill / letter",
-      "value": "`status.warning` fox #FFAB33, `dataViz.avatar.purple` beetle #CE82FF / `text.onPrimary` #131F24 (snow, dark)",
+      "value": "`status.warningText` fox #FFAB33, `dataViz.avatar.purple` beetle #CE82FF / `text.onPrimary` #131F24 (snow, dark)",
       "source": "leaderboard-dark-top cl=_1a-Dv (#184), cl=_1gexH (#226)"
      },
      {
       "part": "row hover",
       "property": "background",
-      "value": "`surface.subtle` #202F36 (polar, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark)",
       "source": "captured:leaderboard-dark-row-hover (#165)"
      },
      {
       "part": "current user row",
       "property": "background / dot ring",
-      "value": "`border.default` #37464F (swan, dark) / #37464F",
+      "value": "`gamification.streakInactive` #37464F (swan, dark) / #37464F",
       "source": "leaderboard-dark-top cl=MytTp (#259, #263)"
      },
      {
       "part": "current user in promotion zone",
       "property": "background / text",
-      "value": "`status.successBackground` #202F36 (sea-sponge, dark) / `accent.primary.lip` #79B933 (tree-frog, dark)",
+      "value": "`gamification.league.promotedRow` #202F36 (sea-sponge, dark) / `status.successText` #79B933 (tree-frog, dark)",
       "source": "leaderboard-dark-mobile cl=MytTp _27HUw (#125)"
      },
      {
       "part": "promotion divider",
       "property": "color",
-      "value": "`accent.primary.lip` #79B933 (tree-frog, dark)",
+      "value": "`status.successText` #79B933 (tree-frog, dark)",
       "source": "leaderboard-dark-top cl=KWJR3 (#255)"
      },
      {
       "part": "not joined: START A LESSON",
       "property": "face / lip / text",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) / `text.link` #49C0F8 (macaw, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark) / `text.link` #49C0F8 (macaw, dark)",
       "source": "leaderboard-dark-default cl=_3FuEB _2V6ug (#160)"
      },
      {
       "part": "not joined: user bar",
       "property": "background / text",
-      "value": "`surface.subtle` #202F36 (polar, dark) / `text.tertiary` #52656D (hare, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark) / `text.tertiary` #52656D (hare, dark)",
       "source": "leaderboard-dark-default cl=_11XmH (#166)"
      }
     ],
@@ -9489,13 +9489,13 @@
      {
       "part": "rule",
       "property": "color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "leaderboard-light-default hr (#164)"
      },
      {
       "part": "rank in promotion zone",
       "property": "color",
-      "value": "`accent.primary.lip` #58A700 (tree-frog, light)",
+      "value": "`status.successText` #58A700 (tree-frog, light)",
       "source": "leaderboard-light-default cl=_1kz8P (#193)"
      },
      {
@@ -9513,7 +9513,7 @@
      {
       "part": "letter avatar",
       "property": "fill / letter",
-      "value": "`dataViz.avatar.purple` beetle #CE82FF, `status.warning` fox #FF9600, `accent.danger.face` cardinal #FF4B4B / `surface.default` #FFFFFF (snow, light)",
+      "value": "`dataViz.avatar.purple` beetle #CE82FF, `status.warningText` fox #FF9600, `accent.danger.text` cardinal #FF4B4B / `text.onPrimary` #FFFFFF (snow, light)",
       "source": "leaderboard-light-default (#187, #223, #213)"
      },
      {
@@ -9525,19 +9525,19 @@
      {
       "part": "current user row",
       "property": "background",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "leaderboard-light-default cl=MytTp (#272)"
      },
      {
       "part": "current user in promotion zone",
       "property": "background / text",
-      "value": "`status.successBackground` #D7FFB8 (sea-sponge, light) / `accent.primary.lip` #58A700 (tree-frog, light)",
+      "value": "`gamification.league.promotedRow` #D7FFB8 (sea-sponge, light) / `status.successText` #58A700 (tree-frog, light)",
       "source": "leaderboard-light-mobile cl=MytTp _27HUw (#137)"
      },
      {
       "part": "promotion divider",
       "property": "color",
-      "value": "`accent.primary.lip` #58A700 (tree-frog, light)",
+      "value": "`status.successText` #58A700 (tree-frog, light)",
       "source": "leaderboard-light-default cl=KWJR3 (#260)"
      }
     ],
@@ -9788,7 +9788,7 @@
      {
       "part": "card",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-default (#86)"
      },
      {
@@ -9806,7 +9806,7 @@
      {
       "part": "tile",
       "property": "face / border+lip",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-default (#102) ::before"
      },
      {
@@ -9824,7 +9824,7 @@
      {
       "part": "bubble",
       "property": "fill / ring",
-      "value": "`text.onColor` #FFFFFF (snow-always-light), owl status `accent.primary.face` #93D333 (owl) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light), owl status `accent.primary.face` #93D333 (owl) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-default (#94, #96)"
      },
      {
@@ -9838,7 +9838,7 @@
      {
       "part": "card",
       "property": "background / border",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "leaderboard-light-default cl=_1Queb _2cnFr _1T_BQ (#87)"
      },
      {
@@ -9856,7 +9856,7 @@
      {
       "part": "tile",
       "property": "face / border+lip",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "leaderboard-light-default (#103) ::before"
      },
      {
@@ -10059,7 +10059,7 @@
      {
       "part": "card",
       "property": "background / border",
-      "value": "`text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onPrimary` #131F24 (snow, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "quests-dark-default (#158)"
      },
      {
@@ -10071,13 +10071,13 @@
      {
       "part": "timer",
       "property": "color",
-      "value": "`status.warning` #FFAB33 (fox, dark); `gamification.xp` #FFC700 (bee, dark) on mobile",
+      "value": "`status.warningText` #FFAB33 (fox, dark); `gamification.xp` #FFC700 (bee, dark) on mobile",
       "source": "quests-dark-default cl=_9ozg3 (#150); quests-dark-mobile cl=_3nMro (#43)"
      },
      {
       "part": "bar track",
       "property": "background",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "quests-dark-default cl=_3yKMC (#166)"
      },
      {
@@ -10107,7 +10107,7 @@
      {
       "part": "locked card",
       "property": "background / text / border",
-      "value": "`surface.subtle` #202F36 (polar, dark) / `text.tertiary` #52656D (hare, dark) / `border.default` #37464F (swan, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark) / `text.tertiary` #52656D (hare, dark) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "quests-dark-default cl=_3nvey (#173)"
      },
      {
@@ -10121,7 +10121,7 @@
      {
       "part": "card",
       "property": "background / border",
-      "value": "`text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "quests-light-default (#159)"
      },
      {
@@ -10133,13 +10133,13 @@
      {
       "part": "timer",
       "property": "color",
-      "value": "`status.warning` #FF9600 (fox, light)",
+      "value": "`status.warningText` #FF9600 (fox, light)",
       "source": "quests-light-default cl=_9ozg3 (#151)"
      },
      {
       "part": "bar track",
       "property": "background",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "quests-light-default (#167)"
      },
      {
@@ -10169,7 +10169,7 @@
      {
       "part": "locked card",
       "property": "background / text / border",
-      "value": "`surface.subtle` #F7F7F7 (polar, light) / `text.tertiary` #AFAFAF (hare, light) / `border.default` #E5E5E5 (swan, light)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light) / `text.tertiary` #AFAFAF (hare, light) / `gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "quests-light-default (#175)"
      },
      {
@@ -10354,7 +10354,7 @@
      {
       "part": "card",
       "property": "background / border",
-      "value": "none (page #131F24 shows through) / `border.default` #37464F (swan, dark)",
+      "value": "none (page #131F24 shows through) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "quests-dark-default (#86)"
      },
      {
@@ -10380,7 +10380,7 @@
      {
       "part": "card",
       "property": "border",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "quests-light-default (#87)"
      },
      {
@@ -10578,7 +10578,7 @@
      {
       "part": "list border + row rule",
       "property": "border-color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #309, #310"
      },
      {
@@ -10602,7 +10602,7 @@
      {
       "part": "progress track",
       "property": "background",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #323; css:4779 ._3yKMC"
      },
      {
@@ -10626,7 +10626,7 @@
      {
       "part": "level label (gold tile, Sage)",
       "property": "color",
-      "value": "`status.warningBorder` #D79433 (guinea-pig, dark)",
+      "value": "`feedback.neutral.text` #D79433 (guinea-pig, dark)",
       "source": "profile-dark-default #332; css:4243 ._1K2bC"
      },
      {
@@ -10640,7 +10640,7 @@
      {
       "part": "list border + row rule",
       "property": "border-color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default ul cl=_1dDcV (#320), li (#321)"
      },
      {
@@ -10664,7 +10664,7 @@
      {
       "part": "progress track",
       "property": "background",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default cl=_3yKMC (#334)"
      },
      {
@@ -10688,7 +10688,7 @@
      {
       "part": "level label (gold tile)",
       "property": "color",
-      "value": "`status.warningBorder` #CD7900 (guinea-pig, light)",
+      "value": "`feedback.neutral.text` #CD7900 (guinea-pig, light)",
       "source": "profile-light-default #343"
      }
     ],
@@ -10898,7 +10898,7 @@
      {
       "part": "bottom rule",
       "property": "border-color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #213"
      }
     ],
@@ -10954,7 +10954,7 @@
      {
       "part": "bottom rule",
       "property": "border-color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default #214"
      }
     ],
@@ -11112,7 +11112,7 @@
      {
       "part": "tile",
       "property": "border-color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #239"
      },
      {
@@ -11150,7 +11150,7 @@
      {
       "part": "tile",
       "property": "border-color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default #249"
      },
      {
@@ -11319,7 +11319,7 @@
      {
       "part": "card",
       "property": "border-color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #269"
      },
      {
@@ -11363,7 +11363,7 @@
      {
       "part": "card",
       "property": "border-color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default #280"
      },
      {
@@ -11550,7 +11550,7 @@
      {
       "part": "panel border + item rule",
       "property": "border-color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "profile-dark-default #87, #88"
      },
      {
@@ -11580,13 +11580,13 @@
      {
       "part": "CELEBRATE",
       "property": "face / border / label",
-      "value": "face `surface.default` #131F24 (snow), border + 2px lip `border.default` #37464F (swan), label `text.primary` #F1F7FB (eel)",
+      "value": "face `text.onPrimary` #131F24 (snow), border + 2px lip `border.default` #37464F (swan), label `text.primary` #F1F7FB (eel)",
       "source": "profile-dark-default #103 ::before; css:4779 ._2ZO5y"
      },
      {
       "part": "reaction ring",
       "property": "outer / inner",
-      "value": "outer bg + border `surface.default` #131F24 (snow), inner border `border.default` #37464F (swan)",
+      "value": "outer bg + border `text.onPrimary` #131F24 (snow), inner border `border.default` #37464F (swan)",
       "source": "profile-dark-default #109, #110"
      },
      {
@@ -11606,7 +11606,7 @@
      {
       "part": "panel border + item rule",
       "property": "border-color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "profile-light-default #88, #89"
      },
      {
@@ -11630,7 +11630,7 @@
      {
       "part": "CELEBRATE",
       "property": "face / border / label",
-      "value": "face `surface.default` #FFFFFF (snow), border + lip `border.default` #E5E5E5 (swan), label `text.primary` #4B4B4B (eel)",
+      "value": "face `text.onPrimary` #FFFFFF (snow), border + lip `border.default` #E5E5E5 (swan), label `text.primary` #4B4B4B (eel)",
       "source": "profile-light-default #104, #106"
      },
      {
@@ -11809,7 +11809,7 @@
      {
       "part": "border + lip",
       "property": "color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "characters-dark-default #173 ::before"
      },
      {
@@ -11827,7 +11827,7 @@
      {
       "part": "bar track",
       "property": "background",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "characters-dark-default #178"
      },
      {
@@ -11839,7 +11839,7 @@
      {
       "part": "disabled face/border",
       "property": "background / border",
-      "value": "`surface.subtle` #202F36 (polar, dark)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar, dark)",
       "source": "css:9416 ._3Dsa- (--web-ui_button-*-disabled)"
      }
     ],
@@ -11853,7 +11853,7 @@
      {
       "part": "border + lip",
       "property": "color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "characters-light-default #181 ::before"
      },
      {
@@ -11871,7 +11871,7 @@
      {
       "part": "bar track",
       "property": "background",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "characters-light-default #186"
      },
      {
@@ -12005,7 +12005,7 @@
      {
       "part": "unselected rule",
       "property": "border-color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "characters-dark-default #157"
      }
     ],
@@ -12025,7 +12025,7 @@
      {
       "part": "unselected rule",
       "property": "border-color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "characters-light-default #165"
      }
     ],
@@ -12154,7 +12154,7 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "bg `surface.default` #131F24 (snow, dark), border `border.default` #37464F (swan, dark)",
+      "value": "bg `text.onPrimary` #131F24 (snow, dark), border `border.default` #37464F (swan, dark)",
       "source": "guidebook-dark-default #177; css:4779 ._36bu_"
      },
      {
@@ -12192,7 +12192,7 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "bg `surface.default` #FFFFFF (snow, light), border `border.default` #E5E5E5 (swan, light)",
+      "value": "bg `text.onPrimary` #FFFFFF (snow, light), border `border.default` #E5E5E5 (swan, light)",
       "source": "guidebook-light-default #186"
      },
      {
@@ -12364,7 +12364,7 @@
      {
       "part": "row rule",
       "property": "border-color",
-      "value": "`border.default` #37464F (swan, dark)",
+      "value": "`gamification.streakInactive` #37464F (swan, dark)",
       "source": "shop-dark-default #157"
      },
      {
@@ -12382,7 +12382,7 @@
      {
       "part": "price button",
       "property": "face / border / label",
-      "value": "face `surface.default` #131F24 (snow), border + lip `border.default` #37464F (swan), label `text.link` #49C0F8 (macaw)",
+      "value": "face `text.onPrimary` #131F24 (snow), border + lip `border.default` #37464F (swan), label `text.link` #49C0F8 (macaw)",
       "source": "shop-dark-default #173; css:4779 ._3xDVI"
      },
      {
@@ -12394,19 +12394,19 @@
      {
       "part": "disabled (FULL / EQUIPPED)",
       "property": "face / border / label",
-      "value": "face `surface.default` #131F24 (snow), border `border.default` #37464F (swan), label `gamification.streakInactive` #37464F (swan), no lip",
+      "value": "face `text.onPrimary` #131F24 (snow), border `border.default` #37464F (swan), label `gamification.streakInactive` #37464F (swan), no lip",
       "source": "shop-dark-default #159; css:app ._3U5_i"
      },
      {
       "part": "pill (not equipped)",
       "property": "bg / text",
-      "value": "bg `surface.disabled` #37464F (swan), text `text.tertiary` #52656D (hare)",
+      "value": "bg `gamification.streakInactive` #37464F (swan), text `text.tertiary` #52656D (hare)",
       "source": "shop-dark-default #177; css:8566 ._2tJ-w"
      },
      {
       "part": "pill (equipped)",
       "property": "bg / text",
-      "value": "bg `status.successBackground` #202F36 (sea-sponge, dark), text `accent.primary.face` #93D333 (owl, dark)",
+      "value": "bg `gamification.league.promotedRow` #202F36 (sea-sponge, dark), text `accent.primary.face` #93D333 (owl, dark)",
       "source": "css:8566 ._1-6PO; captured in shop-dark-mobile #83"
      },
      {
@@ -12420,7 +12420,7 @@
      {
       "part": "row rule",
       "property": "border-color",
-      "value": "`border.default` #E5E5E5 (swan, light)",
+      "value": "`gamification.streakInactive` #E5E5E5 (swan, light)",
       "source": "shop-light-default #167"
      },
      {
@@ -12438,7 +12438,7 @@
      {
       "part": "price button",
       "property": "face / border / label",
-      "value": "face `surface.default` #FFFFFF (snow), border + lip `border.default` #E5E5E5 (swan), label `text.link` #1CB0F6 (macaw)",
+      "value": "face `text.onPrimary` #FFFFFF (snow), border + lip `border.default` #E5E5E5 (swan), label `text.link` #1CB0F6 (macaw)",
       "source": "shop-light-default #169"
      },
      {
@@ -12450,13 +12450,13 @@
      {
       "part": "disabled (EQUIPPED)",
       "property": "face / border / label",
-      "value": "face `surface.default` #FFFFFF (snow), border `border.default` #E5E5E5 (swan), label `gamification.streakInactive` #E5E5E5 (swan)",
+      "value": "face `text.onPrimary` #FFFFFF (snow), border `border.default` #E5E5E5 (swan), label `gamification.streakInactive` #E5E5E5 (swan)",
       "source": "shop-light-default #183, #184"
      },
      {
       "part": "pill (equipped)",
       "property": "bg / text",
-      "value": "bg `status.successBackground` #D7FFB8 (sea-sponge, light), text `accent.primary.face` #58CC02 (owl, light)",
+      "value": "bg `gamification.league.promotedRow` #D7FFB8 (sea-sponge, light), text `accent.primary.face` #58CC02 (owl, light)",
       "source": "shop-light-default cl=_1-6PO _2I6Qk (#187)"
      }
     ],
@@ -12659,7 +12659,7 @@
      {
       "part": "A card",
       "property": "bg / border / body text",
-      "value": "bg `surface.default` #131F24 (snow), border `border.default` #37464F (swan), body `text.secondary` #DCE6EC (wolf)",
+      "value": "bg `text.onPrimary` #131F24 (snow), border `border.default` #37464F (swan), body `text.secondary` #DCE6EC (wolf)",
       "source": "learn-dark-default #87, #92; css:7668 ._16rRh"
      },
      {
@@ -12683,7 +12683,7 @@
      {
       "part": "B/C button",
       "property": "face / lip / label",
-      "value": "face `dataViz.progress.shine` #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
+      "value": "face `text.onColor` #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-dark-default #152 ::before; css:app ._19taU"
      },
      {
@@ -12697,7 +12697,7 @@
      {
       "part": "A card",
       "property": "bg / border / body text",
-      "value": "bg `surface.default` #FFFFFF (snow), border `border.default` #E5E5E5 (swan), body `text.secondary` #777777 (wolf)",
+      "value": "bg `text.onPrimary` #FFFFFF (snow), border `border.default` #E5E5E5 (swan), body `text.secondary` #777777 (wolf)",
       "source": "learn-light-default #88, #93"
      },
      {
@@ -12904,7 +12904,7 @@
      {
       "part": "button",
       "property": "face / lip / label",
-      "value": "face `dataViz.progress.shine` #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
+      "value": "face `text.onColor` #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-dark-default #120 ::before; css:app ._19taU"
      }
     ],

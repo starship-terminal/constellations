@@ -4,9 +4,12 @@
 // so the light and dark copies were taken by switching the browser's colour scheme, not the
 // account), so each copy renders once, as captured.
 import fs from 'fs';
+import path from 'path';
+import { pathToFileURL } from 'url';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const [,, dir, label, ...flags] = process.argv;
+const [,, dirArg, label, ...flags] = process.argv;
+const dir = path.resolve(dirArg);
 // lib.mjs keeps its CDN cache beside the copies (<SNAPS>-cdn-cache); the positional directory is
 // the copies, so it stands in for SNAPS when that is not set.
 process.env.SNAPS ||= dir;
@@ -16,7 +19,7 @@ const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: meta.w, height: meta.h }, deviceScaleFactor: 2, colorScheme: /-light(?=-|$)/.test(label) ? 'light' : 'dark' });
 await routeCdn(ctx);
 const p = await ctx.newPage();
-await p.goto('file://' + dir + '/' + label + '.html', { waitUntil: 'load', timeout: 60000 });
+await p.goto(pathToFileURL(path.join(dir, label + '.html')).href, { waitUntil: 'load', timeout: 60000 });
 await p.addStyleTag({ content: FONTS });
 await p.evaluate(() => document.fonts.ready);
 await p.waitForTimeout(2000);
