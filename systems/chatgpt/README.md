@@ -1,51 +1,155 @@
 # ChatGPT design reference
 
-A token set and component reference for ChatGPT's web app (chatgpt.com), for self-learn's chat surfaces: the concept tutor's thread and composer, the sidebar with its chat history, the Library and the settings. ChatGPT is the product most learners already know a chat by, so its sizes and states are the baseline a tutor chat gets compared with. It was read on 2026-10-04 from the owner's signed-in account (Free plan), captured dark with the blue accent, at 1440 wide and 390 wide: the home (at rest, with the + menu, a chat row's menu, the user menu, the search dialog, a typed composer and the collapsed sidebar), a thread (a table answer, a user turn with the reasoning disclosure and a map, the bottom), the Library, Images, Plugins, a project page, the settings dialog with its accent listbox, and the phone layout (home, drawer, thread, model menu).
+A token set and component reference for ChatGPT's web app (chatgpt.com): the shell and sidebar, the thread and composer, menus and dialogs, the Library, Images, Plugins, the settings pages and the Upgrade dialog. ChatGPT is the chat most people already know, so its sizes and states are the baseline any chat product gets compared with.
 
-The earlier references cover learning products (Duolingo, Brilliant, NotebookLM, Coursera, Gauth) and an agent product (Manus). ChatGPT is the plain chat they all borrow from.
+It was read on 2026-10-17 from the owner's signed-in account (Free plan), in the built-in browser pane of the Claude desktop app, captured dark with the Blue accent and rendered in both themes, at 1440 x 900 and 390 x 844. This is a refresh: between the first capture (2026-10-04) and this one ChatGPT shipped a redesigned shell. The theme now switches on `data-theme` on `<html>` (it was a `dark` class), the palette is a new semantic system (`--color-text-*`, `--color-background-*`, `--color-surface-*`, a variant matrix per colour), and components come from a CSS-module library (`Button-*`, `itemBase-*`, `Table-*`) with `data-color`, `data-variant` and `data-size` attributes. Every page was captured again and every value read again; nothing here comes from the first capture.
 
 | File | What it is |
 |---|---|
-| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (313: the primitive grey and hue scales, font families and weights, Tailwind's size scale and ChatGPT's 32 named text styles as composite typography, spacing, radii, shadows, blur, containers, breakpoints, durations, easings, and the layout variables with the measured sizes), `light` (751) and `dark` (754): ChatGPT's two palettes by role (bg, text, icon, border, surface, theme, accent, chart, misc, interactive, component) and `chatTheme`, the accent palette, one group per `data-chat-theme` value, plus `$themes`. Every token carries `$extensions.source`; display-p3 values, the high-contrast override and coarse-pointer sizes sit in `$extensions`; a value DTCG cannot carry is listed under the set's `$extensions.notTokenised`. |
-| [style-guide.html](style-guide.html) | One self-contained page that renders every token and the main components (the shell, the rail, buttons, the composer and its states, the thread with a bubble, markdown, a table and pills, the menus, search and settings, the Library, Images, Plugins and project page, the phone) with the real values, states side by side. Its Dark toggle flips the `dark` class and its Accent picker sets `data-chat-theme`, which is how ChatGPT switches both. |
-| [components.md](components.md) | The discovery list of every page and state captured, one entry per component with crops of the real product, the shared values (hover fills, radii, motion, focus), the icon index and the Gaps. |
-| [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png`, at 2x. |
-| [icons/](icons) | 77 SVGs lifted from the sprite symbols inlined in the page copies, named by sprite id, with [icons/INDEX.tsv](icons/INDEX.tsv). They are OpenAI's icons, kept for reference only. |
-| [screenshots/](screenshots) | 43 `{page}-{theme}-{state}.png` captures. Desktop shots are 1440 x 900 at 2x, `-full` shots whole pages at 2x of the dark home, Library and Plugins only, `mobile-*` shots 390 x 844 at 2x. Every other state exists in both themes. |
-| [raw/](raw) | The unprocessed readings: every custom property the stylesheets declare, by sheet, selector and condition, with the font faces and the value each root-level name computes to in both themes and every accent (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the measured values the token builder reads (`component-tokens.json`); page geometry (`layout.json`) and the layout notes written from it (`pages.md`). |
+| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout. `core` (theme-independent): the fixed colour ramps, font families and weights, the type scale and 30 named type styles, spacing (the 4px unit and the 17 steps the pages use), radii, border widths, control and icon sizes, the focus ring, durations, easings (and what reduced motion changes), breakpoints, containers, layout widths and z-index layers. `light` and `dark`: the semantic palette (`bg`, `surface`, `text`, `border`, `ring`, `variant`, `status` by way of `role`, `chatAccent`, `scrim`), the theme-flipping grey ramp, shadows, `elevation` by use, `role` (the checklist's roles pointed at ChatGPT's names) and `component` (measured component values, aliased to a token wherever one holds the value). Every token carries `$extensions.source`. |
+| [style-guide.html](style-guide.html) | One self-contained page that renders every token and the main components from the token file, in both themes. |
+| [components.md](components.md) | The discovery list of every page and state captured, the checklist coverage, the shared values (hover, pressed, focus, disabled, motion, layout), one entry per component with crops and its values written in tokens, the icon index and the Gaps. |
+| [components/crops/](components/crops) | 578 element screenshots, `{component}-{state}.png`, at 2x. |
+| [icons/](icons) | 66 SVGs lifted from the sprite symbols inlined in the page copies, with [icons/INDEX.tsv](icons/INDEX.tsv) indexing each by role. OpenAI's icons, kept for reference only. |
+| [screenshots/](screenshots) | 63 `{page}-{theme}-{state}.png` captures: desktop at 1440 x 900 and 2x, `-full` whole pages of the dark home, Library and Plugins, `mobile-*` at 390 x 844 and 2x. Every state exists in both themes. |
+| [raw/](raw) | The unprocessed readings: every custom property the stylesheets declare and the value each root-level name computes to in both themes (`css-vars.json`, with the reduced-motion rules, z-index and grid declarations and the Tailwind utility counts), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), and page geometry (`layout.json`). |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild. |
 
 ## How the values were read
 
-ChatGPT is a React app styled with Tailwind 4 over CSS variables. A class reads `bg-token-main-surface-primary` (a Tailwind theme key for `--main-surface-primary`), `bg-(--sidebar-surface-primary)` or `[--code-block-surface:var(--bg-elevated-secondary)]`, and the palette is declared on `html, .light, .dark .light` (light) and `.dark` (dark), so a `.light` box inside a dark page renders light. The declarations are spread over several cascade layers and most are var() chains into a primitive scale (`--gray-*`, `--blue-*` and so on). So [vars.mjs](tools/capture/vars.mjs) records two things: every declaration, by sheet, selector and enclosing condition, and the value each root-level name actually computes to on `<html>` in each theme and under each of the eight `data-chat-theme` values. The token builder takes each value from the computed reading and writes it as an alias only where the name's own declaration points at another token with the same value. Display-p3 overrides for the accent hues are read separately and kept beside the sRGB value.
+The owner was already signed in to chatgpt.com in the browser pane; nothing was typed for them. Each page state (a menu open, a dialog, a tooltip, a typed composer, the phone drawer) was copied with [snapshot.js](tools/capture/signed-in/snapshot.js), which inlines every same-origin stylesheet from the CSSOM (chatgpt.com serves its CSS from its own origin, so all of it was readable), copies the icon sprite symbols into the page, and removes scripts. The same script scrubs private text before the copy leaves the browser: every chat, project and file title the page shows is collected and replaced everywhere in the copy (attributes included) by "Sample title N", message text and Library file names become same-length neutral words (numbers stay), links and images inside messages become example.com and a blank image, the account's name becomes "Learner" and its photo a grey disc, the ids on `<html>` and every chat, project, file and account id in a URL are cut, and URLs carrying a signing parameter lose their query. [unsnap.py](tools/capture/signed-in/unsnap.py) refused any copy in which a redacted string, a signing parameter or an id survived. The redaction file and the copies stay outside the repository.
 
-The pages were captured without handing the account to a headless browser. In the signed-in built-in browser pane, [snapshot.js](tools/capture/signed-in/snapshot.js) copied each page state's DOM with every same-origin stylesheet inlined from the CSSOM (chatgpt.com serves its CSS from its own origin, so all of it was readable), copied the symbols of the external icon sprites into a hidden `<svg data-sprites>` at the end of `<body>` and pointed each `<use>` at them, replaced the account's name with "Learner" and its photo with a grey disc, cut every signed URL back to its path, and inlined the Library's thumbnails (the account's own files) as small JPEG data URLs, leaving out the thumbnails of a screenshot and of two agreements, whose titles the redaction also shortened. The redaction file lives outside the repository, shaped like [redact.example.json](tools/capture/signed-in/redact.example.json); the emoji the account's display name begins with is removed by a rule of its own, and the page copies themselves stay outside the repository too. [unsnap.py](tools/capture/signed-in/unsnap.py) refuses a copy in which a redacted string, a signing parameter or the account photo's URL survived.
+Headless Chromium then read the copies offline. [vars.mjs](tools/capture/vars.mjs) parsed every stylesheet and read each root-level custom property on `<html>` in dark (as captured) and light (every `data-theme="dark"` set to light, which is all ChatGPT's own switch does), letting the browser resolve the `var()` chains, `color-mix()` and relative colours into one sRGB value per theme. [measure.mjs](tools/capture/signed-in/measure.mjs) read 114 components in 588 states: at rest, with a real pointer hover, with real keyboard focus (focus-visible), with the mouse button held down (pressed), and in the states the copies were captured in (selected, active, checked, open, typed, highlighted, disabled). [layout.mjs](tools/capture/layout.mjs) read page geometry and [icons.mjs](tools/capture/icons.mjs) the icon set.
 
-[render.mjs](tools/capture/signed-in/render.mjs) renders each copy at 2x, refusing any `backend-api` request, and renders the light theme by removing `dark` from every element (ChatGPT puts it on `<html>` and again on each message's markdown body), so no account setting changed. Component values are computed styles read per state with Playwright from the rendered copies ([measure.mjs](tools/capture/signed-in/measure.mjs)): hover with the pointer, focus-visible with a real keyboard focus, both themes by removing the class. States that need script (an open menu, the dialogs, the typed composer, the collapsed sidebar, the drawer) were each captured as their own copy, so they are measured in the state they were captured in.
+Nothing was sent, created or deleted. The capture hovered, focused, opened menus and dialogs and closed them, and typed into the composer and two search fields without sending. The delete confirmation was opened with a guard in the page that refused any request that could delete, archive or rename, then closed with Escape. The same guard briefly refused the Library's file-list request, which is how its error state was captured; the guard was then narrowed and the list loaded.
 
-The pane was hidden during capture, so no animation frame ran. Entrance animations froze where they started: modal backdrops render undimmed, the phone drawer's slide-in transform was set to its end state by hand before the copy, and the collapsed sidebar kept its 260 wide container with the rail drawn inside it. The thread is a virtualised list and only the last turns were rendered, so there is no shot of a thread's top. The map widget is an iframe, kept as a dark box, and lazy template thumbnails on Images stayed blank. No code block appeared in any of the account's threads, so code-block styling comes from its CSS only. Nothing was sent, created or deleted: a line was typed into the composer and deleted, menus were opened and closed, and the sidebar was collapsed and reopened. The screenshots and crops were rendered again on 2026-10-11 from copies of the page copies with every chat, project, file and image title and all message text replaced by neutral placeholders (a thread's words become same-length filler, its numbers stay), and the Library's and Images' own thumbnails replaced by flat grey, so no title, name or message shows in pixels; the placeholders are why a few measured widths and heights differ slightly from the first read.
+Screenshots and crops are stored as 256-colour PNGs. Flat UI colours are exact; read values from the tokens, not the images.
 
-Screenshots and crops are stored as 256-colour PNGs to keep the folder small. Flat UI colours are exact; read values from the tokens, not the images.
+### What to distrust
+
+- Pressed: ChatGPT switches its pressed styles from script (a data attribute set on press), so with scripts gone the pressed readings equal hover. The pressed colours exist as tokens (`variant.<colour>.<variant>.bg-active`) but no element was seen in that state.
+- Hover and focus are real pointer and keyboard events on static copies. Anything ChatGPT changes on hover through script (Radix menu highlighting, the sidebar row actions) shows only as far as the CSS draws it.
+- Light was read by flipping `data-theme`, not by changing the account's appearance; only the Blue accent was captured (the accent is an account setting). The other accents' text colours are in `chatAccent`, their fills are not.
+- Message text, titles and Library file names are filler of the same length, so widths that depend on text are the filler's. Library thumbnails, the installed plugins and one Images template (round, so it matched the avatar rule) were blanked in the copies; the plugin store's own icons are served with a signed URL, which the capture cuts, so they render as broken images.
+- Elevation `tooltip` and `dialog` are the measured layers; no single shadow token holds them (`--shadow-tooltip` declares the same shadow, its alpha rounds differently).
 
 ## Fonts
 
 | Family | Weights | Used for |
 |---|---|---|
-| System stack (`-apple-system-body, ui-sans-serif, -apple-system, system-ui, Segoe UI, Helvetica, Arial`) | 400, 500, 600 | Everything in the interface. `--font-sans` is this stack unless `body[data-type-stack="openaisans"]` is set, which it was not on the captured account. |
-| OpenAI Sans | 600 | The sidebar's "ChatGPT" wordmark only (`.header-wordmark`, `.font-oai`). OpenAI's own face, served from cdn.openai.com in 300 to 700 with Greek, Cyrillic, Arabic and other script files. |
-| ui-monospace stack | 400 | Code (`--font-mono`). |
-| OpenDyslexic | 400, 700 | An accessibility option the stylesheet declares (`body[data-type-stack="open-dyslexic"]`). |
+| System stack (`-apple-system-body, ui-sans-serif, -apple-system, system-ui, Segoe UI, Helvetica, Arial`) | 400, 500, 510, 590, 600 | Everything measured, including the sidebar wordmark (600). `core.fontFamily.sans`. |
+| ui-monospace stack (`ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas`) | 400, 500 | Code blocks and inline code (`core.fontFamily.mono`, `core.typography.code`). |
+| OpenAI Sans | 300 to 700 | Declared with `@font-face` (and an "OpenAI Sans Fallback" metric face), served by OpenAI; no measured element used it. Proprietary, so no file is committed or needed. |
+| KaTeX faces | 400, 700 | Maths in answers; declared, not seen. |
 
-OpenAI Sans is proprietary, so the style guide falls back to the system face and no font file is committed or needed.
+The type styles are ChatGPT's own `--font-heading-*`, `--font-text-*` and `--font-small-caps-*` sets: headings 16 to 72 at 600 with -0.025em tracking from 32 up, body 14/20, 16/24 and 18/29 at 400, small caps 11 and 13 at 600. Answers are 16/26 (`markdown` in [components.md](components.md#markdown)). The checklist's type roles map onto them as display (heading-3xl to 5xl), headings (heading-xs to 2xl; the home heading is 28), body (text-md, text-sm), label (control-label, small-caps), caption (text-xs, text-2xs) and code (code); the mapping is in `core.typography.$extensions.roles`.
+
+## Colours
+
+The checklist roles, as `role.*` in each theme set:
+
+| Role | Dark | Light | ChatGPT name |
+|---|---|---|---|
+| Page | #000000 | #fcfcfc | `--color-token-main-surface-primary` |
+| Surface | #212121 | #f9f9f9 | `--color-surface-tertiary` |
+| Raised | #1b1b1b | #ffffff | `--color-surface-elevated` |
+| Overlay (menus) | #303030 at 90% | #ffffff at 90% | measured on the menus, over a 16px backdrop blur |
+| Scrim | black at 13% | black at 13% | measured on the dialog overlay |
+| Text primary, secondary, tertiary | #ededed, #cdcdcd, #afafaf | #0d0d0d, #5d5d5d, #8f8f8f | `--color-text-primary`, `-secondary`, `-tertiary` |
+| Text disabled | #afafaf | #8f8f8f | `--color-text-disabled` |
+| On accent, link | #ffffff, #2c67c5 | #ffffff, #2c67c5 | `--color-text-accent-action`, `--color-token-text-link-foreground` |
+| Border default, subtle, strong | white at 15%, 5%, 20% | black at 10%, 5%, 15% | `--color-token-border-default`, `--color-border-subtle`, `--color-border-strong` |
+| Focus | #3a83f7 | #3a83f7 | `--color-ring` |
+| Accent default, hover, pressed | #3a83f7, #0169cc, #0169cc | the same | `--color-background-info-solid` and its `-hover`, `-active` |
+| Accent action (send, voice) | #2c67c5 | #3a83f7 | `--color-background-accent-action` |
+| Success, warning, danger, info: fill | #011c0b, #281105, #280b0a, #133463 | #edfaf2, #fff5f0, #fff0f0, #e8f3fe | `--color-background-<status>-surface` |
+| Status text | #04b84c, #ff8549, #fa423e, #339cff | #008635, #b9480d, #ba2623, #004f99 | `--color-text-<status>-surface` |
+| Status border | each hue at 13 to 16% | each hue at 4 to 8% | `--color-border-<status>-surface` |
+
+Every status and the primary and secondary neutrals also come in `soft`, `outline`, `ghost` and `solid` variants with hover and active, under `variant` in each theme set. The grey ramp (`gray.0` to `gray.1000`) flips with the theme; the fixed ramps (`core.color.gray-fixed`, `blue`, `green`, `red`, `orange`, `yellow`, `purple`, `pink`, ...) do not.
+
+## Patterns
+
+How ChatGPT combines its components for the common jobs, as captured.
+
+**App shell and navigation.** A 340 wide sidebar (at 1440; it clamps between 240 and 520) on the page ground: search and hide at the top, destination rows (New chat, Images, Scheduled, Library, Plugins, Explore), then collapsible Pinned, Projects and Recents sections, and the account row at the bottom. The fixed 52 tall header carries the Chat / Work toggle centred and Upgrade at the end. Hiding the sidebar leaves a 52 wide rail of icon buttons; on a phone the sidebar is a 260 wide drawer over the page, opened from the header. Settings is a page of its own with its own left nav and a Back to app row. See [home-dark](screenshots/home-dark.png), [home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png) and [settings-dark-keyboard](screenshots/settings-dark-keyboard.png).
+
+**Forms and validation.** Settings rows put the label (and a secondary line) at the start and one control at the end: a switch, a select button that opens a checkbox or radio menu, an outline button, or a hex field. Changes apply at once; there is no Save button and no inline validation on any captured row. A disabled control keeps its colours at 40% opacity. No form that validates was reachable without submitting it. See [settings-dark-data-controls](screenshots/settings-dark-data-controls.png), [settings-dark-notifications-menu](screenshots/settings-dark-notifications-menu.png) and [settings-dark-appearance](screenshots/settings-dark-appearance.png).
+
+**Empty, loading and error states.** Empty is one centred line with a small icon in tertiary text, inside the surface that would hold the results ("No results" in search). A failed load replaces the content with one centred line and a small Try again button ("Failed to load files." in the Library); a partial failure is a one-line banner above the results with its own Try again ("Some search results could not be loaded"). No loading skeleton was on screen in any copy. See [home-dark-search-empty](screenshots/home-dark-search-empty.png), [library-dark-error](screenshots/library-dark-error.png) and [library-dark-search-error](screenshots/library-dark-search-error.png).
+
+**Destructive confirmation.** A small dialog (420 wide, `radius.3xl`) on a light scrim: a bold title as a question ("Delete chat?"), one line that names the thing and says it cannot be undone, then Cancel (secondary) and the action named in full ("Delete chat") as a danger pill: red text on a red tint, not a solid red button. Bulk actions in settings use the same danger pill ("Delete all"). See [home-dark-delete-confirm](screenshots/home-dark-delete-confirm.png) and [settings-dark-data-controls](screenshots/settings-dark-data-controls.png).
+
+**Feedback after an action.** Not captured: ChatGPT confirms copying, archiving and sharing with a transient toast or an icon swap, and the capture took no action. What was captured is feedback while composing: the voice button turns into Send as soon as there is text, and a tooltip names an icon button on focus or hover. See [home-dark-composer-typed](screenshots/home-dark-composer-typed.png) and [home-dark-tooltip](screenshots/home-dark-tooltip.png).
+
+**Search and filtering.** Global search is a 720 wide dialog with the field at the top and Clear and close at the end; empty, it lists recent chats; typed, it adds filter tabs (All, Chats, Images, Documents, Projects) and the results or the empty state. The Library has its own field in the page header with a filter button beside it; Archived chats and Plugins put a field at the top of the list. See [home-dark-search](screenshots/home-dark-search.png), [home-dark-search-empty](screenshots/home-dark-search-empty.png) and [settings-dark-archived](screenshots/settings-dark-archived.png).
+
+**Data display.** Lists are rows on the page ground divided by hairlines (`border.subtle`) or by nothing: sidebar chats, archived chats (title link, date, Unarchive and Delete at the end), plugin cards in two columns (a bordered card with one link laid over all of it). Files are a masonry grid of cards (4 columns at 1440; its classes step from 1 to 6 columns with the container width) with a hover checkbox for selection. Tables appear inside answers only, ruled by horizontal hairlines, with bold first-column cells. See [settings-dark-archived](screenshots/settings-dark-archived.png), [library-dark](screenshots/library-dark.png) and [thread-dark-table](screenshots/thread-dark-table.png).
+
+**Onboarding.** Not captured: the account is past its first run. The stylesheets declare `--text-onboarding-*` styles (title 20, body 14, label 16), which are in `core.typography`.
 
 ## Do and don't
 
-1. **Do keep the accent for the learner's message, the send button and whatever is switched on.** The user bubble (#173e76 dark, #e8f3fe light), the round voice and send button, the settings toggle and the Think chip once it is on (accent text on a muted accent fill) are blue. Apart from blue text on the Upgrade link and the Work segment, the answer, the sidebar, the tabs and every other control stay grey. See [thread-light-user-turn](screenshots/thread-light-user-turn.png), [thread-dark-table](screenshots/thread-dark-table.png) and [settings-dark-general](screenshots/settings-dark-general.png).
-2. **Do mark the current item with a grey fill alone.** The open chat and the current page in the sidebar rest on white at 10% (black at 5% in light), the same fill as hover; the selected Library tab and the list-view button use `bg.tertiary` (#414141, light #f3f3f3) and the selected settings tab a similar neutral fill, all with primary text. See [library-dark](screenshots/library-dark.png), [settings-light-general](screenshots/settings-light-general.png) and [library-tab-light-selected](components/crops/library-tab-light-selected.png).
-3. **Do leave the answer on the page ground, unboxed.** The assistant turn has no bubble, avatar or card: 16/26 markdown in the 768 column, bold for emphasis, tables ruled only by horizontal hairlines, and citations as 18 tall grey pills inside the sentence. Only the learner's turn sits in a shape. See [thread-dark-table](screenshots/thread-dark-table.png) and [mobile-thread-dark](screenshots/mobile-thread-dark.png).
-4. **Do separate list rows with a hairline or with nothing.** Library rows and settings rows (both 60 tall) and the project's chat rows sit on the ground with a 1px bottom border of white or black at 5%; sidebar rows and plugin rows have no border at all and only fill on hover. See [library-light](screenshots/library-light.png), [settings-dark-general](screenshots/settings-dark-general.png), [project-dark](screenshots/project-dark.png) and [plugins-light](screenshots/plugins-light.png).
-5. **Do lift menus and the composer with a lighter fill in dark and a soft shadow in light.** In dark the menus are #353535 (the + menu and the composer #212121) on the #000000 page with only a 1px inset ring of white at 20%. In light the same surfaces are white with a 1px ring of black at 4% and two faint layers, `0 2px 8px` at 4% and `0 4px 80px 8px` at 2%. See [home-dark-chat-menu](screenshots/home-dark-chat-menu.png), [home-light-chat-menu](screenshots/home-light-chat-menu.png) and [home-light-plus-menu](screenshots/home-light-plus-menu.png).
-6. **Do keep secondary actions outlined or bare, with one inverted button at most.** Share and the Plugins + are pills or circles with a 1px border and no fill; the header icon buttons, the settings selects and the Upgrade link have no box at rest. The Library's New (near-white in dark, #0d0d0d in light) is the only filled neutral button captured. See [project-dark](screenshots/project-dark.png), [plugins-dark](screenshots/plugins-dark.png) and [library-new-light](components/crops/library-new-light.png).
+1. **Do keep the accent for the composer's primary action, the user's own message and what is switched on.** The send and voice button, the user bubble, a switch that is on and the Upgrade label are blue; answers, the sidebar, tabs and every other control are grey. See [thread-dark-user-turn](screenshots/thread-dark-user-turn.png), [home-dark-composer-typed](screenshots/home-dark-composer-typed.png) and [settings-dark-data-controls](screenshots/settings-dark-data-controls.png).
+2. **Do mark the current item with the same translucent grey as hover.** The current destination, the open chat and the selected tab rest on `variant.primary.soft.bg-hover` (white at 10% in dark, black at 5% in light), with primary text and no accent, border or bar. See [nav-row-active](components/crops/nav-row-active.png), [chat-row-active](components/crops/chat-row-active.png) and [library-tab-selected](components/crops/library-tab-selected.png).
+3. **Do leave the answer on the page ground, unboxed.** An assistant turn has no bubble, card or avatar; only code blocks get a surface (`radius.3xl`) and tables only hairlines. Only the user's turn sits in a shape. See [thread-dark-code](screenshots/thread-dark-code.png) and [thread-dark-table](screenshots/thread-dark-table.png).
+4. **Do draw keyboard focus as one blue ring.** Buttons, tabs, switches and fields take a 2px `ring.default` ring with no offset, rows an inset 2px outline; nothing else changes. See [header-icon-button-focus-visible](components/crops/header-icon-button-focus-visible.png), [button-danger-focus-visible](components/crops/button-danger-focus-visible.png) and [switch-on-focus-visible](components/crops/switch-on-focus-visible.png).
+5. **Don't use a solid red button for a destructive action.** Delete is red text on a 10% red pill, behind a confirmation dialog that names what goes. See [home-dark-delete-confirm](screenshots/home-dark-delete-confirm.png) and [settings-dark-data-controls](screenshots/settings-dark-data-controls.png).
+6. **Do float menus and dialogs as translucent surfaces with a hairline, not heavy shadows.** Menus are the elevated grey at 90% over a 16px blur with a 0.5px ring and one soft drop (`elevation.menu`); the dialog scrim is only 13% black. See [home-dark-chat-menu](screenshots/home-dark-chat-menu.png) and [home-light-chat-menu](screenshots/home-light-chat-menu.png).
+
+## Coverage
+
+Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Captured on 2026-10-17 on the Free plan. Component entries are in [components.md](components.md).
+
+| Item | Status | Where |
+|---|---|---|
+| Colour ramps | Captured | `core.color` (fixed ramps), `gray` per theme |
+| Background roles: page, surface, raised, overlay, scrim | Captured | `role.bg` |
+| Text roles: primary, secondary, disabled, on-accent, link | Captured | `role.text` |
+| Border roles: default, strong, focus | Captured | `role.border` |
+| Accent: default, hover, pressed | Captured as tokens; pressed never seen on an element (script-driven) | `role.accent` |
+| Status: fill, text and border for success, warning, danger, info | Captured | `role.status`, `variant` |
+| Theme parity | Captured: the same names in both themes (light adds `app.background-recovery` and one shadow) | `light`, `dark` |
+| Type | Captured | `core.fontFamily`, `core.fontSize`, `core.lineHeight`, `core.fontWeight`, `core.typography` |
+| Spacing | Captured: the 4px unit, and the 17 steps the pages use with their counts (Derived) | `core.spacing` |
+| Radii, border widths | Captured | `core.radius`, `core.borderWidth` |
+| Sizing and focus ring | Captured | `core.size.control`, `core.size.icon`, `core.size.focusRing` |
+| Elevation | Captured: shadow levels and the shadow each surface uses | `shadow`, `elevation` |
+| Motion | Captured, with what reduced motion changes | `core.duration` (and its `reducedMotion`), `core.easing` |
+| Layout: breakpoints, widths, grid, z-index | Captured | `core.breakpoint`, `core.container`, `core.layout` (grid columns in its `$extensions`), `core.zIndex` |
+| Button | Captured: default, hover, focus-visible, pressed, disabled | [button-secondary](components.md#button-secondary), [button-danger](components.md#button-danger), [promo-button](components.md#promo-button), [button-disabled](components.md#button-disabled) |
+| Icon button | Captured: default, hover, focus-visible, pressed | [header-icon-button](components.md#header-icon-button), [send-button](components.md#send-button) |
+| Link | Captured: default, hover, focus-visible, pressed | [md-link](components.md#md-link), [archived-link](components.md#archived-link), [text-link](components.md#text-link) |
+| Text field | Captured: default, hover, focus-visible, typed | [search-field](components.md#search-field), [library-search](components.md#library-search) |
+| Text area | Captured: default, focus-visible, typed | [composer](components.md#composer) |
+| Select | Captured: default, hover, focus-visible, pressed, open | [select](components.md#select), [accent-menu](components.md#accent-menu) |
+| Checkbox | Captured: hover, focus-visible; checked as a menu item | [checkbox](components.md#checkbox), [checkbox-menu-item](components.md#checkbox-menu-item) |
+| Radio | Captured: default, hover, focus-visible, checked | [segmented-radio](components.md#segmented-radio) |
+| Switch | Captured: on, off, hover, focus-visible | [switch-on](components.md#switch-on), [switch-off](components.md#switch-off) |
+| Tabs | Captured: default, hover, focus-visible, selected | [library-tab](components.md#library-tab), [search-tab](components.md#search-tab) |
+| Menu | Captured: open, item hover, danger item | [chat-menu](components.md#chat-menu), [menu-item](components.md#menu-item) |
+| Tooltip | Captured | [tooltip](components.md#tooltip) |
+| Dialog | Captured, with its scrim | [confirm-dialog](components.md#confirm-dialog), [search-dialog](components.md#search-dialog) |
+| Toast | Not captured: appears only after an action, and the capture took none | |
+| Card | Captured: default, hover | [library-card](components.md#library-card), [promo-card](components.md#promo-card), [pricing-card](components.md#pricing-card) |
+| List row | Captured: default, hover, focus-visible, active | [chat-row](components.md#chat-row), [archived-row](components.md#archived-row) |
+| Table | Captured | [md-table](components.md#md-table) |
+| Avatar | Captured size and shape; the photo was replaced for privacy | [avatar](components.md#avatar) |
+| Badge | Captured | [badge](components.md#badge) |
+| App shell and navigation | Captured | [home-dark](screenshots/home-dark.png), [home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png) |
+| Form with a validation error | Not captured: no form in reach validates without submitting | |
+| Empty, loading and error states | Empty and error captured; loading not captured (nothing was loading in any copy) | [home-dark-search-empty](screenshots/home-dark-search-empty.png), [library-dark-error](screenshots/library-dark-error.png) |
+| Destructive confirmation | Captured (opened and cancelled) | [home-dark-delete-confirm](screenshots/home-dark-delete-confirm.png) |
+| Feedback after an action | Not captured: needs an action | |
+| Search and filtering | Captured | [home-dark-search-empty](screenshots/home-dark-search-empty.png), [library-dark-search-error](screenshots/library-dark-search-error.png) |
+| List or table | Captured | [settings-dark-archived](screenshots/settings-dark-archived.png), [thread-dark-table](screenshots/thread-dark-table.png) |
+| Onboarding | Not captured: the account is past its first run | |
+| Light and dark | Captured | every copy in both themes |
+| Desktop and phone widths | Captured | 1440 everywhere; 390 for the home, the drawer and a thread |
+
+Totals over 43 rows: 39 captured (states that were not reachable are named in their row), 0 not present, 4 not captured.
+
+Also not captured: a streaming answer, voice mode, Work mode, Codex, Scheduled, a project page, the share dialog, and the Account, Billing and Personalization settings, since each either sends something, spends quota or shows account details.
 
 ## Rebuild
 
@@ -61,20 +165,24 @@ python3 tools/build_style_guide.py
 python3 tools/build_components_md.py
 ```
 
-`build_tokens.py` reads `raw/css-vars.json` and `raw/component-tokens.json` and writes `tokens.json`; it refuses an alias that points at nothing, an alias whose type differs, and a dimension that is not one px or rem length. `build_style_guide.py` renders `style-guide.html` from `tokens.json` and `tools/style-guide.template.html`, turning every token into a CSS variable so the page cannot drift from the file. `build_components_md.py` writes `components.md` from `raw/components-computed.json`, `raw/layout.json`, `tokens.json`, the screenshots and `icons/INDEX.tsv`. All three are deterministic.
+`build_tokens.py` reads `raw/css-vars.json` and `raw/components-computed.json` and writes `tokens.json`; it refuses an alias that points at nothing and a dimension that is not one px or rem length. `build_style_guide.py` renders `style-guide.html` from `tokens.json` and `tools/style-guide.template.html`. `build_components_md.py` writes `components.md` from the measurements, the tokens, the screenshots and `icons/INDEX.tsv`. All three are deterministic.
 
-`tools/capture/` holds the kit the captures came from. The Playwright scripts take `PLAYWRIGHT` as the path to a Playwright install's `index.mjs` (this repository has one under `tools/tldrawkc/node_modules/playwright/`) and `SNAPS` as the directory of page copies, which are not committed since they hold the owner's content.
-
-```bash
-PLAYWRIGHT=$PWD/../../../../tools/tldrawkc/node_modules/playwright/index.mjs SNAPS=<dir> node tools/capture/vars.mjs
-```
+`tools/capture/` holds the kit the captures came from. The Playwright scripts take `PLAYWRIGHT` as the path to a Playwright install's `index.mjs` and `SNAPS` as the directory of page copies, which are not committed since they hold the owner's content. The crop step needs Pillow on the `python3` in `PATH`.
 
 ```bash
 PLAYWRIGHT=... SNAPS=<dir> tools/capture/signed-in/render-all.sh [label ...]
 ```
 
 ```bash
-PLAYWRIGHT=... SNAPS=<dir> node tools/capture/signed-in/measure.mjs [label ...]
+python3 tools/capture/quantize.py <dir>/renders
+```
+
+```bash
+PLAYWRIGHT=... SNAPS=<dir> node tools/capture/vars.mjs
+```
+
+```bash
+PLAYWRIGHT=... SNAPS=<dir> READ_DATE=2026-10-17 node tools/capture/signed-in/measure.mjs [label ...]
 ```
 
 ```bash
@@ -89,22 +197,12 @@ PLAYWRIGHT=... SNAPS=<dir> node tools/capture/layout.mjs
 PLAYWRIGHT=... SNAPS=<dir> node tools/capture/icons.mjs
 ```
 
-`python3 tools/capture/quantize.py <dir of renders>` stores renders into `screenshots/`. To take a new page copy: open the page in a signed-in tab, paste `snapshot.js` into its console, `await __sprites()` (and `await __inline()` on a page with thumbnails), then `__snap('<page>-dark-<state>', REDACT)` with the redaction file's contents, save the returned string to a file and run `unsnap.py <file> <dir>`. Labels and their scroll positions are in [shots.tsv](tools/capture/signed-in/shots.tsv).
+To take a new page copy: open the page in a signed-in tab, paste `snapshot.js` into its console, `await __sprites()`, then `__snap('<page>-dark-<state>', REDACT)` with the redaction file's contents (it needs `replace`, and `scrub` as `[selector, "filler"]` pairs for message text), save the returned string to a file and run `unsnap.py <file> <dir>`. Labels and their render flags are in [shots.tsv](tools/capture/signed-in/shots.tsv).
 
 ## Use in Figma
 
-Import `tokens.json` with Tokens Studio and choose the Light or Dark theme. Set the UI font to SF Pro or Inter (the system face ChatGPT relies on is not a web font). The accent palette is the `chatTheme` group of each set; pick the accent's group for the bubble and send button.
-
-## ChatGPT's surfaces and self-learn's
-
-| ChatGPT | Layout | self-learn |
-|---|---|---|
-| Sidebar | 260 px: the wordmark with search and close, nav rows (New chat, Images, Library, Scheduled, Plugins, Codex, More), collapsible Pinned, Projects and Chats sections, the account row with an Upgrade pill. Closes to a 52 px rail; on a phone the same column is a drawer. | The sidebar in [AppSidebar.tsx](../../../../apps/web/src/components/shell/AppSidebar.tsx), whose list is `DESTINATIONS` in [nav.ts](../../../../apps/web/src/lib/nav.ts) (Home, Courses, Learn, Library) under New chat, with the studio's conversations where ChatGPT puts its chat history |
-| Thread and composer | A 768 wide column: the user bubble in the accent colour (radius 22, 70% max), the answer as 16/26 markdown with tables and citation pills, a "Worked for" disclosure, actions under a turn on hover, and the pill composer (radius 28) with +, Think, dictation and voice or send. | The concept tutor at `/learn/<concept>` |
-| Library | A title with filter, grid and list buttons, search and New; pill tabs (Suggested, Favorites, Folders, Images, All); a list of files with a type tile or thumbnail and the last activity, 60 tall rows. | `/library` |
-| Project page | The project's icon and title, Share and details, its own composer ("New chat in <project>"), Chats and Sources tabs, and its chats with a preview line and date. | A course page |
-| Settings dialog | A 680 x 600 dialog: close, a search field and a left nav of tabs, then a pane of rows with select buttons and toggles (Appearance, Contrast, Accent color, Language, Dictation). | `/settings` |
+Import `tokens.json` with Tokens Studio and choose the Light or Dark theme. Set the UI font to SF Pro or Inter (the system face ChatGPT relies on is not a web font). Use `role.*` for colour decisions and `component.*` for the measured component values.
 
 ## The screen to get right
 
-The thread. Everything else in ChatGPT is a frame around one 768 wide column where a grey-on-black (or black-on-white) answer at 16/26 sits under a single coloured bubble, with the composer pinned under both at the same width. The colour is spent only on the learner's own words and the send button; the answer, the sidebar and every control stay grey, and hover is a 5 to 10% fill. A tutor chat that adds colour, cards or chrome to the answer side reads as busier than the thing learners compare it with, so `/learn/<concept>` should match this column, bubble and composer first and add its own pieces (checks, diagrams, the review card) inside that frame.
+The thread. Everything else is a frame around one 768 wide column where the answer sits on the page ground at 16/26 under the user's single coloured bubble, with the composer pill pinned under both at the same width. Colour is spent on the user's words, the send button and what is switched on; the answer, the sidebar and every control stay grey, hover and selection are one translucent fill, and focus is one blue ring.

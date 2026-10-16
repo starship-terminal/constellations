@@ -1,21 +1,31 @@
-# label	render flags (both themes are always rendered; "full" adds a whole-page shot)
+# label	render flags (both themes are always rendered; "full" adds a whole-page shot). Captured 2026-10-17.
 home-dark	full
+home-dark-tooltip	
 home-dark-composer-typed	
 home-dark-plus-menu	
 home-dark-user-menu	
 home-dark-chat-menu	
+home-dark-delete-confirm	
 home-dark-search	
+home-dark-search-empty	
 home-dark-sidebar-collapsed	
-thread-dark-table	scroll=2150
-thread-dark-user-turn	scroll=2750
-thread-dark-bottom	scroll=max
+thread-dark-code	
+thread-dark-user-turn	
+thread-dark-table	
 library-dark	full
+library-dark-error	
+library-dark-search-error	
 images-dark	
-project-dark	
 plugins-dark	full
 settings-dark-general	
+settings-dark-appearance	
 settings-dark-accent-menu	
+settings-dark-keyboard	
+settings-dark-data-controls	
+settings-dark-archived	
+settings-dark-notifications-menu	
+pricing-dark	
 mobile-home-dark	
 mobile-home-dark-drawer	
-mobile-thread-dark	scroll=4400
-mobile-thread-dark-model-menu	scroll=4400
+mobile-thread-dark	
+mobile-thread-dark-bottom	

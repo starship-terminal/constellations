@@ -60,10 +60,11 @@ export async function routeCdn(ctx) {
   });
 }
 
-// The light theme, exactly as render.mjs makes it: ChatGPT paints dark from a `dark` class on
-// <html> and on each message's markdown body, so every `dark` class is removed and color-scheme set.
+// The light theme, exactly as render.mjs makes it: every data-theme="dark" becomes light (the
+// 2026-10 shell), every `dark` class goes (the older one), and color-scheme is set.
 export const toLight = (page) => page.evaluate(() => {
   document.querySelectorAll('.dark').forEach((n) => n.classList.remove('dark'));
+  document.querySelectorAll('[data-theme="dark"]').forEach((n) => n.setAttribute('data-theme', 'light'));
   document.documentElement.style.colorScheme = 'light';
 });
 

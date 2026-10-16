@@ -1,263 +1,201 @@
 # ChatGPT components
 
-The discovery list of every page and state captured, then one entry per component with crops of the real product, the shared values, the icon index and the Gaps. Captured from chatgpt.com on 2026-10-04, signed in to the owner's account (Free plan, dark theme, blue accent), as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account; the only changes were opening menus and closing them, typing a line into the composer and deleting it, and collapsing the sidebar and reopening it.
+The discovery list of every page and state captured, the checklist coverage, the shared values, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from chatgpt.com on 2026-10-17, signed in to the owner's account (Free plan, dark theme, blue accent), as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Phone group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account; the only actions were hovering, keyboard focus, opening menus and dialogs and closing them, and typing into the composer and the search fields without sending.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (105 components, 426 states). The page layouts are described in [raw/pages.md](raw/pages.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (114 components, 588 states). Page geometry is in [raw/layout.json](raw/layout.json).
 
 How to read an entry:
 
-- A colour is its value followed by the token in [tokens.json](tokens.json) whose value in that theme is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `System 14/20 400, #ffffff`, and is read from the first text node inside the component. System is the `-apple-system-body` stack.
-- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (426 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Values are written as tokens from [tokens.json](tokens.json): a colour is the token in that theme's set whose value is the same (`role.text.primary`, `surface.card`, `variant.primary.soft.bg-hover`), a padding, radius or control height the core token that holds it (`spacing.2`, `radius.2xl`, `size.control.lg`). Text is the typography style with the same size, line height and weight (`typography.text-sm`), that style at another weight, or a `fontSize` token with its line height and a `fontWeight` token, then its colour. A raw value is written only where no token holds it.
+- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example "default (same: pressed)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
+- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (584 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
-Screenshots are named `{page}-{theme}-{state}.png`. Desktop shots are 1440 x 900 at 2x; `-full` shots are whole pages at 2x, kept for the home, Library and Plugins; mobile shots are `mobile-{page}-{theme}-{state}.png`, 390 x 844 at 2x. Every state exists in both themes.
+Screenshots are named `{page}-{theme}-{state}.png`, 1440 x 900 at 2x; `-full` shots are whole pages of the dark home, Library and Plugins; phone shots are `mobile-{page}-{theme}-{state}.png`, 390 x 844 at 2x. Every state exists in both themes.
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home. The heading, composer and suggestion rows. Captured at rest, with the + menu, a chat row's menu, the user menu and the search dialog open, with a line typed in the composer, and with the sidebar collapsed. | `/` | [chat-menu (dark)](screenshots/home-dark-chat-menu.png), [composer-typed (dark)](screenshots/home-dark-composer-typed.png), [full (dark)](screenshots/home-dark-full.png), [plus-menu (dark)](screenshots/home-dark-plus-menu.png), [search (dark)](screenshots/home-dark-search.png), [sidebar-collapsed (dark)](screenshots/home-dark-sidebar-collapsed.png), [user-menu (dark)](screenshots/home-dark-user-menu.png), [default (dark)](screenshots/home-dark.png), [chat-menu (light)](screenshots/home-light-chat-menu.png), [composer-typed (light)](screenshots/home-light-composer-typed.png), [plus-menu (light)](screenshots/home-light-plus-menu.png), [search (light)](screenshots/home-light-search.png), [sidebar-collapsed (light)](screenshots/home-light-sidebar-collapsed.png), [user-menu (light)](screenshots/home-light-user-menu.png), [default (light)](screenshots/home-light.png) |
-| A thread (a long answer with a table and citation pills, its text replaced by filler). Captured at the table answer, at the user turn with the "Worked for" disclosure and the map widget, and at the bottom. | `/c/<id>` | [bottom (dark)](screenshots/thread-dark-bottom.png), [table (dark)](screenshots/thread-dark-table.png), [user-turn (dark)](screenshots/thread-dark-user-turn.png), [bottom (light)](screenshots/thread-light-bottom.png), [table (light)](screenshots/thread-light-table.png), [user-turn (light)](screenshots/thread-light-user-turn.png) |
-| Library, list view, Suggested tab. | `/library` | [full (dark)](screenshots/library-dark-full.png), [default (dark)](screenshots/library-dark.png), [default (light)](screenshots/library-light.png) |
+| Home. Captured at rest, with a tooltip, the + menu, a chat row's menu, the account menu, the delete confirmation, the search dialog (empty and with no results), a line typed in the composer, and with the sidebar hidden. | `/` | [chat-menu (dark)](screenshots/home-dark-chat-menu.png), [composer-typed (dark)](screenshots/home-dark-composer-typed.png), [delete-confirm (dark)](screenshots/home-dark-delete-confirm.png), [full (dark)](screenshots/home-dark-full.png), [plus-menu (dark)](screenshots/home-dark-plus-menu.png), [search-empty (dark)](screenshots/home-dark-search-empty.png), [search (dark)](screenshots/home-dark-search.png), [sidebar-collapsed (dark)](screenshots/home-dark-sidebar-collapsed.png), [tooltip (dark)](screenshots/home-dark-tooltip.png), [user-menu (dark)](screenshots/home-dark-user-menu.png), [default (dark)](screenshots/home-dark.png), [chat-menu (light)](screenshots/home-light-chat-menu.png), [composer-typed (light)](screenshots/home-light-composer-typed.png), [delete-confirm (light)](screenshots/home-light-delete-confirm.png), [plus-menu (light)](screenshots/home-light-plus-menu.png), [search-empty (light)](screenshots/home-light-search-empty.png), [search (light)](screenshots/home-light-search.png), [sidebar-collapsed (light)](screenshots/home-light-sidebar-collapsed.png), [tooltip (light)](screenshots/home-light-tooltip.png), [user-menu (light)](screenshots/home-light-user-menu.png), [default (light)](screenshots/home-light.png) |
+| Two threads, their text replaced by same-length filler: one with code blocks (at the bottom, and at its user turn), one with a table and citations. | `/c/<id>` | [code (dark)](screenshots/thread-dark-code.png), [table (dark)](screenshots/thread-dark-table.png), [user-turn (dark)](screenshots/thread-dark-user-turn.png), [code (light)](screenshots/thread-light-code.png), [table (light)](screenshots/thread-light-table.png), [user-turn (light)](screenshots/thread-light-user-turn.png) |
+| Library, grid view, Suggested tab; the error state (the capture guard refused the file list request) and a search with a partial-results banner. | `/library` | [error (dark)](screenshots/library-dark-error.png), [full (dark)](screenshots/library-dark-full.png), [search-error (dark)](screenshots/library-dark-search-error.png), [default (dark)](screenshots/library-dark.png), [error (light)](screenshots/library-light-error.png), [search-error (light)](screenshots/library-light-search-error.png), [default (light)](screenshots/library-light.png) |
 | Images, Trending tab. | `/images` | [default (dark)](screenshots/images-dark.png), [default (light)](screenshots/images-light.png) |
 | Plugins. | `/plugins` | [full (dark)](screenshots/plugins-dark-full.png), [default (dark)](screenshots/plugins-dark.png), [default (light)](screenshots/plugins-light.png) |
-| A project page, Chats tab. | `/g/<project>/project` | [default (dark)](screenshots/project-dark.png), [default (light)](screenshots/project-light.png) |
-| Settings dialog, General pane, at rest and with the accent colour listbox open. | `/#settings` | [accent-menu (dark)](screenshots/settings-dark-accent-menu.png), [general (dark)](screenshots/settings-dark-general.png), [accent-menu (light)](screenshots/settings-light-accent-menu.png), [general (light)](screenshots/settings-light-general.png) |
+| Settings: General, Appearance (and its accent listbox), Keyboard, Data controls, Archived chats, Notifications (with a channel menu open). | `/settings/...` | [accent-menu (dark)](screenshots/settings-dark-accent-menu.png), [appearance (dark)](screenshots/settings-dark-appearance.png), [archived (dark)](screenshots/settings-dark-archived.png), [data-controls (dark)](screenshots/settings-dark-data-controls.png), [general (dark)](screenshots/settings-dark-general.png), [keyboard (dark)](screenshots/settings-dark-keyboard.png), [notifications-menu (dark)](screenshots/settings-dark-notifications-menu.png), [accent-menu (light)](screenshots/settings-light-accent-menu.png), [appearance (light)](screenshots/settings-light-appearance.png), [archived (light)](screenshots/settings-light-archived.png), [data-controls (light)](screenshots/settings-light-data-controls.png), [general (light)](screenshots/settings-light-general.png), [keyboard (light)](screenshots/settings-light-keyboard.png), [notifications-menu (light)](screenshots/settings-light-notifications-menu.png) |
+| The Upgrade dialog over the home. | `/#pricing` | [default (dark)](screenshots/pricing-dark.png), [default (light)](screenshots/pricing-light.png) |
 | Home at 390, and the drawer. | `/` | [drawer (dark)](screenshots/mobile-home-dark-drawer.png), [default (dark)](screenshots/mobile-home-dark.png), [drawer (light)](screenshots/mobile-home-light-drawer.png), [default (light)](screenshots/mobile-home-light.png) |
-| The thread at 390, and the model menu. | `/c/<id>` | [model-menu (dark)](screenshots/mobile-thread-dark-model-menu.png), [default (dark)](screenshots/mobile-thread-dark.png), [model-menu (light)](screenshots/mobile-thread-light-model-menu.png), [default (light)](screenshots/mobile-thread-light.png) |
+| The code thread at 390, top and bottom. | `/c/<id>` | [bottom (dark)](screenshots/mobile-thread-dark-bottom.png), [default (dark)](screenshots/mobile-thread-dark.png), [bottom (light)](screenshots/mobile-thread-light-bottom.png), [default (light)](screenshots/mobile-thread-light.png) |
 
-### Overlays and transient states
+## Checklist coverage
 
-| State | Where | How it was reached | Captured |
-|---|---|---|---|
-| Composer + menu | home | the composer's + button | [home-dark-plus-menu](screenshots/home-dark-plus-menu.png), [plus-menu](#plus-menu) |
-| Composer with text | home | a line typed, then deleted | [home-dark-composer-typed](screenshots/home-dark-composer-typed.png), [send-button](#send-button) |
-| Chat row menu | home | the options button on a hovered history row | [home-dark-chat-menu](screenshots/home-dark-chat-menu.png), [chat-menu](#chat-menu) |
-| User menu | home | the account row | [home-dark-user-menu](screenshots/home-dark-user-menu.png), [user-menu](#user-menu) |
-| Search dialog | home | the sidebar's search button | [home-dark-search](screenshots/home-dark-search.png), [search-dialog](#search-dialog) |
-| Collapsed sidebar | home | the close-sidebar button, then reopened | [home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [sidebar-rail](#sidebar-rail) |
-| Settings dialog | home | Settings in the user menu; closed with Escape | [settings-dark-general](screenshots/settings-dark-general.png), [settings-dialog](#settings-dialog) |
-| Accent colour listbox | settings | the Accent color select; closed with Escape, nothing chosen | [settings-dark-accent-menu](screenshots/settings-dark-accent-menu.png), [accent-menu](#accent-menu) |
-| Phone drawer | home at 390 | the menu button | [mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png), [m-drawer](#m-drawer) |
-| Phone model menu | thread at 390 | the model switcher | [mobile-thread-dark-model-menu](screenshots/mobile-thread-dark-model-menu.png), [model-menu](#model-menu) |
+The 19 components of the checklist in [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md), with the entries below that show each one and the states measured across them.
+
+| Component | Entries | States measured |
+|---|---|---|
+| Button | [promo-button](#promo-button), [button-secondary](#button-secondary), [button-danger](#button-danger), [button-outline](#button-outline), [library-new](#library-new), [pricing-primary](#pricing-primary), [button-disabled](#button-disabled) | default, hover, focus-visible, pressed, disabled |
+| Icon button | [header-icon-button](#header-icon-button), [sidebar-icon-button](#sidebar-icon-button), [composer-plus](#composer-plus), [voice-button](#voice-button), [send-button](#send-button), [code-block-button](#code-block-button) | default, hover, focus-visible, pressed |
+| Link | [md-link](#md-link), [text-link](#text-link), [archived-link](#archived-link), [header-upgrade](#header-upgrade) | default, hover, focus-visible, pressed |
+| Text field | [search-field](#search-field), [library-search](#library-search), [plugins-search](#plugins-search), [archived-search](#archived-search), [color-field](#color-field) | default, hover, focus-visible, typed |
+| Text area | [composer](#composer) | default, focus-visible, typed, thread |
+| Select | [select](#select), [code-theme-select](#code-theme-select), [accent-menu](#accent-menu) | default, hover, focus-visible, pressed, open |
+| Checkbox | [checkbox](#checkbox), [checkbox-menu-item](#checkbox-menu-item) | default, hover, focus-visible |
+| Radio | [segmented-radio](#segmented-radio), [mode-segment](#mode-segment) | default, hover, focus-visible, pressed, selected, checked, selected-hover |
+| Switch | [switch-on](#switch-on), [switch-off](#switch-off), [keyboard-switch](#keyboard-switch) | default, hover, focus-visible, pressed |
+| Tabs | [library-tab](#library-tab), [search-tab](#search-tab), [images-tab](#images-tab), [plugins-tab](#plugins-tab) | default, hover, focus-visible, pressed, selected |
+| Menu | [chat-menu](#chat-menu), [menu-item](#menu-item), [menu-item-danger](#menu-item-danger), [plus-menu](#plus-menu), [user-menu](#user-menu) | default, hover, pressed |
+| Tooltip | [tooltip](#tooltip) | default |
+| Dialog | [confirm-dialog](#confirm-dialog), [search-dialog](#search-dialog), [pricing-dialog](#pricing-dialog), [dialog-backdrop](#dialog-backdrop) | default |
+| Toast | not captured: ChatGPT shows a toast only after an action (copying, archiving, sharing), and the capture took no action | - |
+| Card | [promo-card](#promo-card), [library-card](#library-card), [pricing-card](#pricing-card), [image-card](#image-card) | default, hover |
+| List row | [chat-row](#chat-row), [nav-row](#nav-row), [search-result](#search-result), [archived-row](#archived-row), [plugin-row](#plugin-row), [plugin-row-link](#plugin-row-link), [settings-row](#settings-row) | default, hover, focus-visible, pressed, active, active-library |
+| Table | [md-table](#md-table), [md-th](#md-th), [md-td](#md-td) | default |
+| Avatar | [avatar](#avatar) | default |
+| Badge | [badge](#badge) | default |
 
 ## Shared values
 
 Values that apply across entries, tallied from the measurement file.
 
-**Radius.** full (130), 8px (64), 10px (60), 16px (26), 12px (22), 28px (12), 20px (8), 22px (4), 26px (2). Rows and settings tabs are 10, controls (icon buttons, Share, the header Upgrade, select buttons) 8, menu items 12, popovers 20, dialogs and the accent listbox 16, the composer 28 (26 on a phone), the user bubble 22. Pills, round buttons, the mode toggle, tabs, search fields and the toggle track are fully round (`rounded-full`, read as `full`).
+**Radius.** `radius.full` (260), `radius.lg` (90), `radius.xl` (50), `radius.2xl` (44), `radius.sm` (12), `radius.3xl` (11), 26px (8), `radius.md` (6), `radius.token-composer-single-line` (4), 3.72px (2).
 
-**Hover.** ChatGPT hovers with a translucent fill. Dark: no change on the element (15), transparent to rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` (13), transparent to rgba(255, 255, 255, 0.15) `surface.surface-hover` (5), text #cdcdcd `text.secondary` to #ffffff `text.primary` (5), transparent to rgba(255, 255, 255, 0.06) `interactive.bg-inactive-danger-soft` (2), text #afafaf `text.tertiary` to rgba(255, 255, 255, 0.9) `interactive.label-hover-secondary` (1). Light: no change on the element (13), transparent to rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` (13), transparent to rgba(0, 0, 0, 0.07) `surface.surface-hover` (6), text #5d5d5d `text.secondary` to #0d0d0d `text.primary` (4), #ffffff `bg.primary` to #f9f9f9 `bg.secondary-surface` (2), text #8f8f8f `text.tertiary` to rgba(0, 0, 0, 0.9) `interactive.label-hover-secondary` (1). The row fill is `interactive.bg-secondary-hover` (white at 10% in dark, black at 5% in light) and the current page or chat rests on `interactive.bg-secondary-selected`, the same value, so a current row does not change on hover. Icon buttons in the sidebar use `surface.surface-hover` (white at 15%, black at 7%). Menu items show no hover here: Radix highlights them with `data-highlighted`, which its script sets, so only the captured highlighted row is filled.
+**Hover.** Dark: no change on the element (25), transparent to `variant.primary.soft.bg-hover` (18), transparent to `token.border-light` (3), opacity 1 to 0.8 (2), `surface.elevated-secondary` to `variant.primary.soft.bg-hover` (2), `component.button-danger.bg` to `component.button-danger.bg-hover` (2). Light: no change on the element (25), transparent to `variant.primary.soft.bg-hover` (18), transparent to rgba(0, 0, 0, 0.03) (3), text `role.text.secondary` to `role.text.primary` (2), opacity 1 to 0.8 (2), `bg.user-message-compact` to `variant.primary.soft.bg-hover` (2). Ghost buttons, menu items, rows and tabs all hover to `variant.primary.soft.bg-hover` (white at 10% in dark, black at 5% in light); solid neutral buttons drop to 80% opacity instead; the accent send and voice buttons do not change.
 
-**Focus.** Of 36 elements given a real keyboard focus in dark: no ring on the element (20), 1px auto #99c8ff offset 0px (13), 1px solid #ffffff `interactive.border-focus` offset 2px (1), 1px auto #63a8f8 `text.accent` offset 4px (1), 1px solid rgba(255, 255, 255, 0.16) `interactive.focus-ring-secondary` offset 2px (1). In light: no ring on the element (20), 1px auto #005fcc offset 0px (13), 1px solid #0d0d0d `interactive.border-focus` offset 2px (1), 1px auto #3a83f7 `bg.accent-static` offset 4px (1), 1px solid rgba(13, 13, 13, 0.12) `interactive.focus-ring-secondary` offset 2px (1). With scripts gone the `keyboard-focused:` rings ChatGPT draws do not switch on, so most focused states show the browser's own outline (`auto`, the platform blue), and a few controls show their own ring: the settings toggle a 2px gap and a 4px ring in `interactive.border-focus`, the project tabs a 3px ring in the text colour, the settings tabs a 1px outline offset 2.
+**Pressed.** 42 of 43 pressed readings (the mouse button held down) look the same as hover. The product's `Button` styles pressed through a data attribute its script sets, so with scripts gone `:active` changes nothing; the pressed colours exist only as tokens (`variant.*.*.bg-active`).
 
-**Motion.** 0.15s cubic-bezier(0.4, 0, 0.2, 1) (84), 0.2s cubic-bezier(0.4, 0, 0.2, 1) (14), 0.15s steps(1, start) (2). Nearly every transition is Tailwind's `transition-colors` at 150 ms on cubic-bezier(0.4, 0, 0.2, 1) (`duration.default`, `easing.default`); larger moves (the sidebar, popovers, page transitions) use the spring curves listed under the core set's notTokenised, at 667 ms and up. The code block's full-screen view cross-fades at 220 ms ease-out.
+**Focus.** Of 57 elements given a real keyboard focus in dark: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (7), no ring on the element (6), a 2px box-shadow ring (inset) in `role.border.focus` (5), a 2px outline in `role.border.focus`, offset -2px (4), a 2px outline on ::after, offset -1px (3), a 2px outline in `text.info`, offset 0px (2), a 2px outline on ::after, offset 0px (1). In light: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (7), no ring on the element (6), a 2px box-shadow ring (inset) in `role.border.focus` (5), a 2px outline in `role.border.focus`, offset -2px (4), a 2px outline in `role.border.focus`, offset 0px (3), a 2px outline on ::after, offset -1px (3), a 2px outline on ::after, offset 0px (1). The ring is `ring.default` (#3a83f7) at `size.focusRing.width` (2px) with no offset; rows draw it as an inset outline, ghost buttons on their ::after, links and segments fall back to the browser's outline.
 
-**Layout grid.** The sidebar is 260 wide (the rail 52), the page header 52 tall, and the composer and thread share one 768 wide centred column (x 466 at 1440 with the sidebar open). Images, Plugins and the project page sit in an 800 wide `max-w-app-content` box with 16 padding; the Library uses a wider 1092 column. On a phone the sidebar is a 260 wide drawer over the page and the column is 358 wide at x 16. The numbers per page are in [raw/pages.md](raw/pages.md).
+**Disabled.** A disabled button keeps its variant's colours at 40% opacity (`component.button-disabled.opacity`): Restore defaults in Keyboard settings and Your current plan in the pricing dialog.
 
-**Accent.** The account's accent (blue) paints only the user bubble (`chatTheme.blue.user-msg-bg`, #173e76 dark, #e8f3fe light), the voice and send button (`chatTheme.blue.submit-btn-bg`), the Work segment, the header Upgrade, the toggle and selection. Everything else is grey, which is why the eight accents in [tokens.json](tokens.json) differ only in the `chatTheme` group.
+**Motion.** 0.15s ease (38), 0.15s cubic-bezier(0.4, 0, 0.2, 1) (28), 0.075s ease (8), 0.2s cubic-bezier(0, 0, 0.2, 1) (5), 0.3s cubic-bezier(0.23, 1, 0.32, 1) (2). Colour and opacity changes run at `duration.basic` (150 ms) on `easing.basic` or `easing.in-out`; the reduced-motion rules are listed under `core.duration.$extensions.reducedMotion` in [tokens.json](tokens.json).
+
+**Layout.** The sidebar is 340 wide at 1440 (`--spacing-token-sidebar` clamps it between 240 and 520), the rail 52, the header 52 tall. The composer and thread share one 768 wide centred column. Settings panes are 768 wide. The Library is a masonry grid of 4 columns at 1440 (`core.layout.grid-columns-library`; `--masonry-columns` steps from 1 to 6 with the container width), Images a 5 column grid and the plugin store 2 columns. On a phone the sidebar is a 260 wide drawer over the page and the column is 358 wide at x 16.
 
 ## Components
 
 ### Sidebar
 
-The 260px sidebar every page shares (`#stage-slideover-sidebar`): a 52px header with the wordmark, search and close, the nav rows (New chat, Images, Library, Scheduled, Plugins, Codex, More), then three collapsible sections, Pinned, Projects and Chats, and the account row with its Upgrade pill pinned at the bottom. Every row is a `.__menu-item`, 36 tall with radius 10, whose fills come from inline `--menu-item-*` variables. Closing it leaves the 52px tiny rail.
+The sidebar every page shares (`aside.LeftPanel`, 340 wide at 1440): a 52px header with search and hide, the destination rows (New chat, Images, Scheduled, Library, Plugins, Explore), then the Pinned, Projects and Recents sections and the account row. Rows are 36 tall and fully round; hover and the current row rest on the same translucent fill. Hiding it leaves the 52 wide rail.
 
 #### Sidebar (expanded)
 
-<a id="sidebar"></a>`sidebar`, on home-dark. `#stage-slideover-sidebar`, 260 wide (`--sidebar-width`), `--sidebar-surface-primary` fill and a 1px `--border-extra-light` rule at the inline end. The header and the account row are sticky inside it.
+<a id="sidebar"></a>`sidebar`, on home-dark. `aside.LeftPanel`, 340 wide at 1440 (`--spacing-token-sidebar`, clamp(240px, 340px, ...)); header row, nav rows, then the Pinned, Projects and Recents sections and the account row.
 
 <img src="components/crops/sidebar-default.png" alt="Sidebar (expanded), default" height="120"> <img src="components/crops/sidebar-light.png" alt="Sidebar (expanded), light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 260 x 900; border R: 1px solid rgba(255, 255, 255, 0.1) `border.extra-light`; background #000000 `bg.secondary-surface`; text System 12/17.14 600, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| light | size 260 x 900; border R: 1px solid rgba(0, 0, 0, 0.05) `border.light`; background #fcfcfc `surface.sidebar-surface`; text System 12/17.14 600, #ffffff `text.inverted`; icon 20 x 20, #0d0d0d `icon.primary` |
+| default | size 340 x 900; background `role.bg.page`; text `typography.text-sm`, `role.text.primary`; icon 77.13 x 18, `role.text.primary` |
+| light | size 340 x 900; background `role.bg.page`; text `typography.text-sm`, `role.text.primary`; icon 77.13 x 18, `role.text.primary` |
 
-Tokens named in its classes: `--bg-tertiary`, `--border-extra-light`, `--sidebar-rail-width`, `--sidebar-section-first-margin-top`, `--sidebar-surface-primary`, `--sidebar-width`, `--surface-hover`, `--text-primary`, `--text-tertiary`.
+#### Icon button (sidebar Search)
 
-#### Sidebar header row
+<a id="sidebar-icon-button"></a>`sidebar-icon-button`, on home-dark. `Button` with data-color=secondary, data-variant=ghost, data-size=xl: 36x36.
 
-<a id="sidebar-header"></a>`sidebar-header`, on home-dark. 52 tall (`--header-height`): the ChatGPT wordmark at the start, search and close icon buttons at the end.
-
-<img src="components/crops/sidebar-header-default.png" alt="Sidebar header row, default" height="52"> <img src="components/crops/sidebar-header-light.png" alt="Sidebar header row, light" height="52"> 
+<img src="components/crops/sidebar-icon-button-default.png" alt="Icon button (sidebar Search), default" height="36"> <img src="components/crops/sidebar-icon-button-hover.png" alt="Icon button (sidebar Search), hover" height="36"> <img src="components/crops/sidebar-icon-button-focus-visible.png" alt="Icon button (sidebar Search), focus-visible" height="36"> <img src="components/crops/sidebar-icon-button-pressed.png" alt="Icon button (sidebar Search), pressed" height="36"> <img src="components/crops/sidebar-icon-button-light.png" alt="Icon button (sidebar Search), light" height="36"> <img src="components/crops/sidebar-icon-button-light-hover.png" alt="Icon button (sidebar Search), light-hover" height="36"> <img src="components/crops/sidebar-icon-button-light-focus-visible.png" alt="Icon button (sidebar Search), light-focus-visible" height="36"> <img src="components/crops/sidebar-icon-button-light-pressed.png" alt="Icon button (sidebar Search), light-pressed" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 244 x 52; background transparent; text OpenAI Sans 18/26 600, #ffffff `text.primary`; icon 20 x 20, #afafaf `icon.tertiary` |
-| light | size 244 x 52; background transparent; text OpenAI Sans 18/26 600, #0d0d0d `text.primary`; icon 20 x 20, #8f8f8f `icon.tertiary` |
+| default (same: hover, focus-visible, pressed) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.disabled`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.disabled` |
+| light (same: light-hover, light-focus-visible, light-pressed) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.disabled`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.disabled` |
 
-Tokens named in its classes: `--surface-hover`, `--text-primary`, `--text-tertiary`.
-
-#### Wordmark link (ChatGPT)
-
-<a id="sidebar-wordmark"></a>`sidebar-wordmark`, on home-dark. The only place the UI sets OpenAI Sans: `.header-wordmark`, 600 weight, -0.015em tracking.
-
-<img src="components/crops/sidebar-wordmark-default.png" alt="Wordmark link (ChatGPT), default" height="36"> <img src="components/crops/sidebar-wordmark-hover.png" alt="Wordmark link (ChatGPT), hover" height="36"> <img src="components/crops/sidebar-wordmark-light.png" alt="Wordmark link (ChatGPT), light" height="36"> <img src="components/crops/sidebar-wordmark-light-hover.png" alt="Wordmark link (ChatGPT), light-hover" height="36"> <img src="components/crops/sidebar-wordmark-focus-visible.png" alt="Wordmark link (ChatGPT), focus-visible" height="36"> <img src="components/crops/sidebar-wordmark-light-focus-visible.png" alt="Wordmark link (ChatGPT), light-focus-visible" height="36"> 
-
-| State | Values |
-|---|---|
-| default (same: hover, focus-visible) | size 95.23 x 36; padding 0px 10px; radius 8px; background transparent; text OpenAI Sans 18/26 600, #ffffff `text.primary` |
-| light (same: light-hover, light-focus-visible) | size 95.23 x 36; padding 0px 10px; radius 8px; background transparent; text OpenAI Sans 18/26 600, #0d0d0d `text.primary` |
-
-Tokens named in its classes: `--surface-hover`, `--text-primary`.
-
-#### Sidebar icon button (Search)
-
-<a id="sidebar-icon-button"></a>`sidebar-icon-button`, on home-dark. 36x36, radius 8, `--text-tertiary` icon; hover fills with `--surface-hover`.
-
-<img src="components/crops/sidebar-icon-button-default.png" alt="Sidebar icon button (Search), default" height="36"> <img src="components/crops/sidebar-icon-button-hover.png" alt="Sidebar icon button (Search), hover" height="36"> <img src="components/crops/sidebar-icon-button-light.png" alt="Sidebar icon button (Search), light" height="36"> <img src="components/crops/sidebar-icon-button-light-hover.png" alt="Sidebar icon button (Search), light-hover" height="36"> <img src="components/crops/sidebar-icon-button-focus-visible.png" alt="Sidebar icon button (Search), focus-visible" height="36"> <img src="components/crops/sidebar-icon-button-light-focus-visible.png" alt="Sidebar icon button (Search), light-focus-visible" height="36"> 
-
-| State | Values |
-|---|---|
-| default (same: focus-visible) | size 36 x 36; radius 8px; background transparent; text System 16/24 400, #afafaf `text.tertiary`; icon 20 x 20, #afafaf `icon.tertiary` |
-| hover | background rgba(255, 255, 255, 0.15) `surface.surface-hover` |
-| light (same: light-focus-visible) | size 36 x 36; radius 8px; background transparent; text System 16/24 400, #8f8f8f `text.tertiary`; icon 20 x 20, #8f8f8f `icon.tertiary` |
-| light-hover | background rgba(0, 0, 0, 0.07) `surface.surface-hover` |
-
-Tokens named in its classes: `--surface-hover`, `--text-tertiary`.
-
-#### Close sidebar button
-
-<a id="sidebar-close-button"></a>`sidebar-close-button`, on home-dark.
-
-<img src="components/crops/sidebar-close-button-default.png" alt="Close sidebar button, default" height="36"> <img src="components/crops/sidebar-close-button-hover.png" alt="Close sidebar button, hover" height="36"> <img src="components/crops/sidebar-close-button-light.png" alt="Close sidebar button, light" height="36"> <img src="components/crops/sidebar-close-button-light-hover.png" alt="Close sidebar button, light-hover" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 36 x 36; radius 8px; background transparent; text System 16/24 400, #afafaf `text.tertiary`; icon 20 x 20, #afafaf `icon.tertiary` |
-| hover | background rgba(255, 255, 255, 0.15) `surface.surface-hover` |
-| light | size 36 x 36; radius 8px; background transparent; text System 16/24 400, #8f8f8f `text.tertiary`; icon 20 x 20, #8f8f8f `icon.tertiary` |
-| light-hover | background rgba(0, 0, 0, 0.07) `surface.surface-hover` |
-
-Tokens named in its classes: `--surface-hover`, `--text-tertiary`.
+Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius 8px
 
 #### Nav row (Images)
 
-<a id="nav-row"></a>`nav-row`, on home-dark, library-dark. A `.__menu-item` row, 36 tall, radius 10, 20px icon and 14/20 text, inset 6px from the sidebar edges. Its fills come from inline `--menu-item-*` variables pointing at `--interactive-bg-secondary-*`. The current page gets the selected fill (`active`).
+<a id="nav-row"></a>`nav-row`, on home-dark, library-dark. A 36 tall row with a 20px icon and 14px label. The current destination is filled (`active`).
 
-<img src="components/crops/nav-row-default.png" alt="Nav row (Images), default" height="36"> <img src="components/crops/nav-row-hover.png" alt="Nav row (Images), hover" height="36"> <img src="components/crops/nav-row-light.png" alt="Nav row (Images), light" height="36"> <img src="components/crops/nav-row-light-hover.png" alt="Nav row (Images), light-hover" height="36"> <img src="components/crops/nav-row-active.png" alt="Nav row (Images), active" height="36"> <img src="components/crops/nav-row-focus-visible.png" alt="Nav row (Images), focus-visible" height="36"> <img src="components/crops/nav-row-active-hover.png" alt="Nav row (Images), active-hover" height="36"> <img src="components/crops/nav-row-active-library.png" alt="Nav row (Images), active-library" height="36"> <img src="components/crops/nav-row-light-active.png" alt="Nav row (Images), light-active" height="36"> <img src="components/crops/nav-row-light-active-hover.png" alt="Nav row (Images), light-active-hover" height="36"> <img src="components/crops/nav-row-light-active-library.png" alt="Nav row (Images), light-active-library" height="36"> <img src="components/crops/nav-row-light-focus-visible.png" alt="Nav row (Images), light-focus-visible" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 248 x 36; padding 6px 10px; border B: 1px solid transparent; radius 10px; background transparent; text System 14/20 400, #ffffff `text.primary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `icon.primary` |
-| hover, focus-visible, active, active-hover, active-library | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| light | size 248 x 36; padding 6px 10px; border B: 1px solid transparent; radius 10px; background transparent; text System 14/20 400, #0d0d0d `text.primary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover, light-focus-visible, light-active, light-active-hover, light-active-library | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
-
-Tokens named in its classes: `--menu-item-active`, `--menu-item-background`, `--menu-item-highlighted`, `--menu-item-icon-opacity`, `--menu-item-open`, `--menu-item-pressed`.
-
-#### Nav row icon
-
-<a id="nav-row-icon"></a>`nav-row-icon`, on home-dark. A sprite `<use>` icon, drawn in currentColor.
-
-<img src="components/crops/nav-row-icon-default.png" alt="Nav row icon, default" height="24"> <img src="components/crops/nav-row-icon-light.png" alt="Nav row icon, light" height="24"> 
+<img src="components/crops/nav-row-default.png" alt="Nav row (Images), default" height="35"> <img src="components/crops/nav-row-hover.png" alt="Nav row (Images), hover" height="35"> <img src="components/crops/nav-row-focus-visible.png" alt="Nav row (Images), focus-visible" height="35"> <img src="components/crops/nav-row-pressed.png" alt="Nav row (Images), pressed" height="35"> <img src="components/crops/nav-row-light.png" alt="Nav row (Images), light" height="35"> <img src="components/crops/nav-row-light-hover.png" alt="Nav row (Images), light-hover" height="35"> <img src="components/crops/nav-row-active.png" alt="Nav row (Images), active" height="35"> <img src="components/crops/nav-row-active-library.png" alt="Nav row (Images), active-library" height="35"> <img src="components/crops/nav-row-light-active.png" alt="Nav row (Images), light-active" height="35"> <img src="components/crops/nav-row-light-active-library.png" alt="Nav row (Images), light-active-library" height="35"> <img src="components/crops/nav-row-light-focus-visible.png" alt="Nav row (Images), light-focus-visible" height="35"> <img src="components/crops/nav-row-light-pressed.png" alt="Nav row (Images), light-pressed" height="35"> 
 
 | State | Values |
 |---|---|
-| default | size 20 x 20; background transparent; icon 20 x 20, #ffffff `icon.primary` |
-| light | size 20 x 20; background transparent; icon 20 x 20, #0d0d0d `icon.primary` |
+| default | size 328 x 35; padding `spacing.1_5` `spacing.2_5`; radius `radius.lg`; background transparent; text `typography.text-sm`, rgba(237, 237, 237, 0.85); icon 20 x 20, rgba(237, 237, 237, 0.85) |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | outline 2px solid `role.border.focus`, offset -2px |
+| pressed | background `variant.primary.soft.bg-hover` |
+| active, active-library | background `variant.primary.soft.bg-hover`; text `typography.text-sm`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light | size 328 x 35; padding `spacing.1_5` `spacing.2_5`; radius `radius.lg`; background transparent; text `typography.text-sm`, rgba(13, 13, 13, 0.85); icon 20 x 20, rgba(13, 13, 13, 0.85) |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | outline 2px solid `role.border.focus`, offset -2px |
+| light-pressed | background `variant.primary.soft.bg-hover` |
+| light-active, light-active-library | background `variant.primary.soft.bg-hover`; text `typography.text-sm`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
 
-#### Section label (Pinned)
+#### Section header (Pinned)
 
-<a id="section-label"></a>`section-label`, on home-dark. A collapsible header: `.__menu-label` text in `--text-tertiary`; the row shows a chevron on hover.
+<a id="section-toggle"></a>`section-toggle`, on home-dark. Collapsible section label in tertiary text.
 
-<img src="components/crops/section-label-default.png" alt="Section label (Pinned), default" height="32"> <img src="components/crops/section-label-hover.png" alt="Section label (Pinned), hover" height="32"> <img src="components/crops/section-label-light.png" alt="Section label (Pinned), light" height="32"> <img src="components/crops/section-label-light-hover.png" alt="Section label (Pinned), light-hover" height="32"> <img src="components/crops/section-label-focus-visible.png" alt="Section label (Pinned), focus-visible" height="32"> <img src="components/crops/section-label-light-focus-visible.png" alt="Section label (Pinned), light-focus-visible" height="32"> 
-
-| State | Values |
-|---|---|
-| default (same: hover) | size 254 x 32; padding 6px 16px; background transparent; text System 14/20 500, #afafaf `text.tertiary`; icon 12 x 12, #afafaf `icon.tertiary` |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| light (same: light-hover) | size 254 x 32; padding 6px 16px; background transparent; text System 14/20 500, #8f8f8f `text.tertiary`; icon 12 x 12, #8f8f8f `icon.tertiary` |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
-
-Tokens named in its classes: `--text-tertiary`.
-
-#### Section label text
-
-<a id="section-label-text"></a>`section-label-text`, on home-dark.
-
-<img src="components/crops/section-label-text-default.png" alt="Section label text, default" height="24"> <img src="components/crops/section-label-text-light.png" alt="Section label text, light" height="24"> 
+<img src="components/crops/section-toggle-default.png" alt="Section header (Pinned), default" height="36"> <img src="components/crops/section-toggle-hover.png" alt="Section header (Pinned), hover" height="36"> <img src="components/crops/section-toggle-focus-visible.png" alt="Section header (Pinned), focus-visible" height="36"> <img src="components/crops/section-toggle-light.png" alt="Section header (Pinned), light" height="36"> <img src="components/crops/section-toggle-light-hover.png" alt="Section header (Pinned), light-hover" height="36"> <img src="components/crops/section-toggle-light-focus-visible.png" alt="Section header (Pinned), light-focus-visible" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 45.47 x 20; background transparent; text System 14/20 500, #afafaf `text.tertiary` |
-| light | size 45.47 x 20; background transparent; text System 14/20 500, #8f8f8f `text.tertiary` |
+| default (same: hover) | size 316 x `size.control.lg`; padding `spacing.0_5` `spacing.1`; radius `radius.md`; background transparent; text `fontSize.sm`/18 `fontWeight.medium`, `role.text.disabled`; icon 12 x 12, `role.text.disabled` |
+| focus-visible | outline 2px solid `role.border.focus`, offset 0px |
+| light (same: light-hover) | size 316 x `size.control.lg`; padding `spacing.0_5` `spacing.1`; radius `radius.md`; background transparent; text `fontSize.sm`/18 `fontWeight.medium`, `role.text.disabled`; icon 12 x 12, `role.text.disabled` |
+| light-focus-visible | outline 2px solid `role.border.focus`, offset 0px |
 
-#### Chat row (pinned)
+#### List row (sidebar chat)
 
-<a id="chat-row"></a>`chat-row`, on home-dark, thread-dark-table. Pinned chats carry a speech-bubble icon; plain history rows (Chats) have none. Hover reveals the options button at the end. The open chat gets the selected fill (`active`).
+<a id="chat-row"></a>`chat-row`, on home-dark, thread-dark-code. A chat in Recents: 36 tall, full radius (`--radius-token-row`), the title truncated; hover fills it and shows Chat actions and Pin. The open chat is filled (`active`).
 
-<img src="components/crops/chat-row-default.png" alt="Chat row (pinned), default" height="36"> <img src="components/crops/chat-row-hover.png" alt="Chat row (pinned), hover" height="36"> <img src="components/crops/chat-row-light.png" alt="Chat row (pinned), light" height="36"> <img src="components/crops/chat-row-light-hover.png" alt="Chat row (pinned), light-hover" height="36"> <img src="components/crops/chat-row-active.png" alt="Chat row (pinned), active" height="36"> <img src="components/crops/chat-row-focus-visible.png" alt="Chat row (pinned), focus-visible" height="36"> <img src="components/crops/chat-row-light-active.png" alt="Chat row (pinned), light-active" height="36"> <img src="components/crops/chat-row-light-focus-visible.png" alt="Chat row (pinned), light-focus-visible" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 248 x 36; padding 6px 10px; border B: 1px solid transparent; radius 10px; background transparent; text System 14/20 400, #ffffff `text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `icon.primary` |
-| hover, focus-visible, active | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| light | size 248 x 36; padding 6px 10px; border B: 1px solid transparent; radius 10px; background transparent; text System 14/20 400, #0d0d0d `text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover, light-focus-visible, light-active | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
-
-Tokens named in its classes: `--interactive-label-hover-secondary`, `--menu-item-active`, `--menu-item-background`, `--menu-item-highlighted`, `--menu-item-icon-opacity`, `--menu-item-open`, `--menu-item-pressed`, `--text-tertiary`.
-
-#### History row (Chats)
-
-<a id="history-row"></a>`history-row`, on home-dark.
-
-<img src="components/crops/history-row-default.png" alt="History row (Chats), default" height="36"> <img src="components/crops/history-row-hover.png" alt="History row (Chats), hover" height="36"> <img src="components/crops/history-row-light.png" alt="History row (Chats), light" height="36"> <img src="components/crops/history-row-light-hover.png" alt="History row (Chats), light-hover" height="36"> 
+<img src="components/crops/chat-row-default.png" alt="List row (sidebar chat), default" height="36"> <img src="components/crops/chat-row-hover.png" alt="List row (sidebar chat), hover" height="36"> <img src="components/crops/chat-row-light.png" alt="List row (sidebar chat), light" height="36"> <img src="components/crops/chat-row-light-hover.png" alt="List row (sidebar chat), light-hover" height="36"> <img src="components/crops/chat-row-active.png" alt="List row (sidebar chat), active" height="36"> <img src="components/crops/chat-row-light-active.png" alt="List row (sidebar chat), light-active" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 248 x 36; padding 6px 10px; border B: 1px solid transparent; radius 10px; background transparent; text System 14/20 400, #ffffff `text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #afafaf `icon.tertiary` |
-| hover | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| light | size 248 x 36; padding 6px 10px; border B: 1px solid transparent; radius 10px; background transparent; text System 14/20 400, #0d0d0d `text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #8f8f8f `icon.tertiary` |
-| light-hover | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
+| default | size 328 x `size.control.lg`; padding `spacing.1_5` `spacing.1_5` `spacing.1_5` `spacing.2_5`; radius `radius.lg`; background transparent; text `typography.text-sm`, rgba(237, 237, 237, 0.85); icon 14 x 14, `role.text.secondary` |
+| hover, active | background `variant.primary.soft.bg-hover` |
+| light | size 328 x `size.control.lg`; padding `spacing.1_5` `spacing.1_5` `spacing.1_5` `spacing.2_5`; radius `radius.lg`; background transparent; text `typography.text-sm`, rgba(13, 13, 13, 0.85); icon 14 x 14, `role.text.secondary` |
+| light-hover, light-active | background `variant.primary.soft.bg-hover` |
 
-Tokens named in its classes: `--interactive-label-hover-secondary`, `--menu-item-active`, `--menu-item-background`, `--menu-item-highlighted`, `--menu-item-open`, `--menu-item-pressed`, `--text-tertiary`.
+#### Chat row link (keyboard focus)
 
-#### Chat row options button
+<a id="chat-row-link"></a>`chat-row-link`, on home-dark. The row's own link, focused from the keyboard.
 
-<a id="chat-row-options"></a>`chat-row-options`, on home-dark. Hidden until its row is hovered; measured while the row is hovered.
-
-<img src="components/crops/chat-row-options-hover.png" alt="Chat row options button, hover" height="36"> <img src="components/crops/chat-row-options-light-hover.png" alt="Chat row options button, light-hover" height="36"> 
+<img src="components/crops/chat-row-link-focus-visible.png" alt="Chat row link (keyboard focus), focus-visible" height="24"> <img src="components/crops/chat-row-link-light-focus-visible.png" alt="Chat row link (keyboard focus), light-focus-visible" height="24"> 
 
 | State | Values |
 |---|---|
-| hover | size 34 x 36; padding 0px 6px 0px 4px; radius 0px 10px 10px 0px; background transparent; text System 14/20 400, #afafaf `text.tertiary`; icon 16 x 16, #afafaf `icon.tertiary` |
-| light-hover | size 34 x 36; padding 0px 6px 0px 4px; radius 0px 10px 10px 0px; background transparent; text System 14/20 400, #8f8f8f `text.tertiary`; icon 16 x 16, #8f8f8f `icon.tertiary` |
+| focus-visible | size 253 x `size.control.4xs`; background transparent; outline 1px auto #99c8ff, offset 1px; text `typography.text-sm`, rgba(237, 237, 237, 0.85) |
+| light-focus-visible | size 253 x `size.control.4xs`; background transparent; outline 1px auto #005fcc, offset 1px; text `typography.text-sm`, rgba(13, 13, 13, 0.85) |
 
-Tokens named in its classes: `--interactive-label-hover-secondary`, `--text-tertiary`.
+Child layers: a 253x20; a 328pxx36px
+
+#### Chat actions button
+
+<a id="chat-row-actions"></a>`chat-row-actions`, on home-dark. A 20x20 `Button` (size 3xs, transparent, pill), shown when its row is hovered; measured while the row is hovered.
+
+<img src="components/crops/chat-row-actions-hover.png" alt="Chat actions button, hover" height="24"> <img src="components/crops/chat-row-actions-light-hover.png" alt="Chat actions button, light-hover" height="24"> 
+
+| State | Values |
+|---|---|
+| hover | size 20 x `size.control.4xs`; radius `radius.full`; background transparent; text `fontSize.xs`/12 `fontWeight.medium`, `role.text.secondary`; transition opacity 0.15s ease, color 0.15s ease; icon 14 x 14, `role.text.secondary` |
+| light-hover | size 20 x `size.control.4xs`; radius `radius.full`; background transparent; text `fontSize.xs`/12 `fontWeight.medium`, `role.text.secondary`; transition opacity 0.15s ease, color 0.15s ease; icon 14 x 14, `role.text.secondary` |
 
 #### Project row
 
-<a id="project-row"></a>`project-row`, on home-dark, project-dark. Each project keeps its own icon and colour; hover reveals "Open project home" and options.
+<a id="project-row"></a>`project-row`, on home-dark. Each project with its own icon; hover reveals project actions and a new-chat button.
 
-<img src="components/crops/project-row-default.png" alt="Project row, default" height="36"> <img src="components/crops/project-row-hover.png" alt="Project row, hover" height="36"> <img src="components/crops/project-row-light.png" alt="Project row, light" height="36"> <img src="components/crops/project-row-light-hover.png" alt="Project row, light-hover" height="36"> <img src="components/crops/project-row-active.png" alt="Project row, active" height="36"> <img src="components/crops/project-row-focus-visible.png" alt="Project row, focus-visible" height="36"> <img src="components/crops/project-row-light-active.png" alt="Project row, light-active" height="36"> <img src="components/crops/project-row-light-focus-visible.png" alt="Project row, light-focus-visible" height="36"> 
+<img src="components/crops/project-row-default.png" alt="Project row, default" height="36"> <img src="components/crops/project-row-hover.png" alt="Project row, hover" height="36"> <img src="components/crops/project-row-focus-visible.png" alt="Project row, focus-visible" height="36"> <img src="components/crops/project-row-light.png" alt="Project row, light" height="36"> <img src="components/crops/project-row-light-hover.png" alt="Project row, light-hover" height="36"> <img src="components/crops/project-row-light-focus-visible.png" alt="Project row, light-focus-visible" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 248 x 36; padding 6px 10px; border B: 1px solid transparent; radius 10px; background transparent; text System 14/20 400, #ffffff `text.primary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `icon.primary` |
-| hover, focus-visible | padding 6px 64px 6px 10px; background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| active | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| light | size 248 x 36; padding 6px 10px; border B: 1px solid transparent; radius 10px; background transparent; text System 14/20 400, #0d0d0d `text.primary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover, light-focus-visible | padding 6px 64px 6px 10px; background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
-| light-active | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
-
-Tokens named in its classes: `--menu-item-active`, `--menu-item-background`, `--menu-item-highlighted`, `--menu-item-icon-opacity`, `--menu-item-open`, `--menu-item-pressed`.
+| default | size 328 x `size.control.lg`; radius `radius.lg`; background transparent; text `typography.text-sm`, rgba(237, 237, 237, 0.85); icon 19.5 x 19.5, `role.text.primary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | outline 2px solid `role.border.focus`, offset -2px |
+| light | size 328 x `size.control.lg`; radius `radius.lg`; background transparent; text `typography.text-sm`, rgba(13, 13, 13, 0.85); icon 19.5 x 19.5, `role.text.primary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | outline 2px solid `role.border.focus`, offset -2px |
 
 #### Account row
 
-<a id="account-row"></a>`account-row`, on home-dark, home-dark-user-menu. 52 tall: a 24px avatar, the name over the plan in `--text-tertiary`, and the Upgrade pill at the end; sticky at the bottom over a hairline.
+<a id="account-row"></a>`account-row`, on home-dark, home-dark-user-menu. `Button` primary ghost size 4xl: the 24px avatar, the name over the plan.
 
-<img src="components/crops/account-row-default.png" alt="Account row, default" height="52"> <img src="components/crops/account-row-hover.png" alt="Account row, hover" height="52"> <img src="components/crops/account-row-light.png" alt="Account row, light" height="52"> <img src="components/crops/account-row-light-hover.png" alt="Account row, light-hover" height="52"> <img src="components/crops/account-row-open.png" alt="Account row, open" height="52"> <img src="components/crops/account-row-light-open.png" alt="Account row, light-open" height="52"> 
+<img src="components/crops/account-row-default.png" alt="Account row, default" height="48"> <img src="components/crops/account-row-hover.png" alt="Account row, hover" height="48"> <img src="components/crops/account-row-focus-visible.png" alt="Account row, focus-visible" height="48"> <img src="components/crops/account-row-pressed.png" alt="Account row, pressed" height="48"> <img src="components/crops/account-row-light.png" alt="Account row, light" height="48"> <img src="components/crops/account-row-light-hover.png" alt="Account row, light-hover" height="48"> <img src="components/crops/account-row-open.png" alt="Account row, open" height="48"> <img src="components/crops/account-row-light-focus-visible.png" alt="Account row, light-focus-visible" height="48"> <img src="components/crops/account-row-light-open.png" alt="Account row, light-open" height="48"> <img src="components/crops/account-row-light-pressed.png" alt="Account row, light-pressed" height="48"> 
 
 | State | Values |
 |---|---|
-| default (same: open) | size 248 x 52.14; padding 6px 10px 6px 8px; border B: 1px solid transparent; radius 10px; background transparent; text System 12/17.14 600, #ffffff `text.primary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| light (same: light-open) | size 248 x 52.14; padding 6px 10px 6px 8px; border B: 1px solid transparent; radius 10px; background transparent; text System 12/17.14 600, #ffffff `text.inverted`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
+| default (same: hover, focus-visible, pressed, open) | size 248.11 x `size.control.3xl`; padding 0 `spacing.2`; radius `radius.xl`; background transparent; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.on-accent`; transition opacity 0.15s ease, color 0.15s ease |
+| light (same: light-hover, light-focus-visible, light-pressed, light-open) | size 248.11 x `size.control.3xl`; padding 0 `spacing.2`; radius `radius.xl`; background transparent; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.inverse`; transition opacity 0.15s ease, color 0.15s ease |
 
-Tokens named in its classes: `--bg-tertiary`, `--interactive-label-hover-secondary`, `--menu-item-active`, `--menu-item-background`, `--menu-item-highlighted`, `--menu-item-icon-opacity`, `--menu-item-open`, `--menu-item-pressed`, `--text-secondary`, `--text-tertiary`.
+Child layers: button 248.109pxx48px background `variant.primary.soft.bg-hover` radius 12px; div 24x24 background #8a8a8a radius 9999px
 
 #### Avatar
 
@@ -267,364 +205,397 @@ Tokens named in its classes: `--bg-tertiary`, `--interactive-label-hover-seconda
 
 | State | Values |
 |---|---|
-| default | size 24 x 24; radius full; background #414141 `bg.tertiary`; text System 12/17.14 600, #ffffff `text.primary` |
-| light | size 24 x 24; radius full; background #f3f3f3 `bg.tertiary`; text System 12/17.14 600, #ffffff `text.inverted` |
+| default | size 24 x `size.control.2xs`; radius `radius.full`; background #8a8a8a; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.on-accent` |
+| light | size 24 x `size.control.2xs`; radius `radius.full`; background #8a8a8a; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.inverse` |
 
-Tokens named in its classes: `--bg-tertiary`.
+#### Outline pill button (account Upgrade)
 
-#### Upgrade pill (account row)
+<a id="sidebar-upgrade"></a>`sidebar-upgrade`, on home-dark.
 
-<a id="sidebar-upgrade"></a>`sidebar-upgrade`, on home-dark. An outline pill: a `--border-default` ring, 13px 500 text.
-
-<img src="components/crops/sidebar-upgrade-default.png" alt="Upgrade pill (account row), default" height="51"> <img src="components/crops/sidebar-upgrade-hover.png" alt="Upgrade pill (account row), hover" height="51"> <img src="components/crops/sidebar-upgrade-light.png" alt="Upgrade pill (account row), light" height="51"> <img src="components/crops/sidebar-upgrade-light-hover.png" alt="Upgrade pill (account row), light-hover" height="51"> <img src="components/crops/sidebar-upgrade-focus-visible.png" alt="Upgrade pill (account row), focus-visible" height="51"> <img src="components/crops/sidebar-upgrade-light-focus-visible.png" alt="Upgrade pill (account row), light-focus-visible" height="51"> 
+<img src="components/crops/sidebar-upgrade-default.png" alt="Outline pill button (account Upgrade), default" height="28"> <img src="components/crops/sidebar-upgrade-hover.png" alt="Outline pill button (account Upgrade), hover" height="28"> <img src="components/crops/sidebar-upgrade-focus-visible.png" alt="Outline pill button (account Upgrade), focus-visible" height="28"> <img src="components/crops/sidebar-upgrade-pressed.png" alt="Outline pill button (account Upgrade), pressed" height="28"> <img src="components/crops/sidebar-upgrade-light.png" alt="Outline pill button (account Upgrade), light" height="28"> <img src="components/crops/sidebar-upgrade-light-hover.png" alt="Outline pill button (account Upgrade), light-hover" height="28"> <img src="components/crops/sidebar-upgrade-light-focus-visible.png" alt="Outline pill button (account Upgrade), light-focus-visible" height="28"> <img src="components/crops/sidebar-upgrade-light-pressed.png" alt="Outline pill button (account Upgrade), light-pressed" height="28"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible) | size 97.89 x 51.14; padding 6px 10px 6px 8px; radius 0px 10px 10px 0px; background transparent; text System 12/16 500, #ffffff `text.primary` |
-| light (same: light-hover, light-focus-visible) | size 97.89 x 51.14; padding 6px 10px 6px 8px; radius 0px 10px 10px 0px; background transparent; text System 12/16 500, #0d0d0d `text.primary` |
+| default | size 71.89 x `size.control.sm`; padding 0 `spacing.2_5`; border 1px solid `role.border.default`; radius `radius.full`; background `role.bg.surface`; text `fontSize.xs`/16 `fontWeight.medium`, `role.text.on-accent` |
+| hover | background #2f2f2f |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background #2f2f2f; opacity 0.8 |
+| light | size 71.89 x `size.control.sm`; padding 0 `spacing.2_5`; border 1px solid `role.border.strong`; radius `radius.full`; background `role.bg.raised`; text `fontSize.xs`/16 `fontWeight.medium`, `role.text.primary` |
+| light-hover | background `role.bg.surface` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `role.bg.surface`; opacity 0.8 |
 
-Child layers: span 71.9x28 background #212121 `bg.primary` border 1px solid rgba(255, 255, 255, 0.15) `border.medium` radius full
+#### Sidebar collapsed to the rail
 
-Tokens named in its classes: `--interactive-label-hover-secondary`, `--text-tertiary`.
+<a id="sidebar-rail"></a>`sidebar-rail`, on home-dark-sidebar-collapsed. 52 wide: show sidebar, new chat, search, pinned, recents, library, then the avatar.
 
-#### Sidebar collapsed to the tiny rail
-
-<a id="sidebar-rail"></a>`sidebar-rail`, on home-dark-sidebar-collapsed. `#stage-sidebar-tiny-bar`, 52 wide (`--sidebar-rail-width`, 13 spacing units): open sidebar, new chat, search, images, library, then the avatar at the bottom.
-
-<img src="components/crops/sidebar-rail-default.png" alt="Sidebar collapsed to the tiny rail, default" height="120"> <img src="components/crops/sidebar-rail-light.png" alt="Sidebar collapsed to the tiny rail, light" height="120"> 
+<img src="components/crops/sidebar-rail-default.png" alt="Sidebar collapsed to the rail, default" height="120"> <img src="components/crops/sidebar-rail-light.png" alt="Sidebar collapsed to the rail, light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 52 x 900; padding 0px 0px 6px 0px; background transparent; text System 12/17.14 600, #ffffff `text.primary`; transition opacity 0.15s steps(1, start); icon 20 x 20, #ffffff `icon.primary` |
-| light | size 52 x 900; padding 0px 0px 6px 0px; background transparent; text System 12/17.14 600, #ffffff `text.inverted`; transition opacity 0.15s steps(1, start); icon 20 x 20, #0d0d0d `icon.primary` |
-
-Child layers: a 36x36 background transparent border 1px solid transparent radius 10px; button 40x36 background transparent border 1px solid transparent radius 10px; button 40x36 background transparent border 1px solid transparent radius 10px
-
-Tokens named in its classes: `--bg-tertiary`, `--sidebar-rail-width`, `--sidebar-section-first-margin-top`, `--surface-hover`, `--text-primary`.
+| default | size 52 x 900; background `role.bg.page`; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.on-accent`; icon 24 x 24, `role.text.primary` |
+| light | size 52 x 900; background `role.bg.page`; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.inverse`; icon 24 x 24, `role.text.primary` |
 
 #### Rail button (New chat)
 
 <a id="rail-button"></a>`rail-button`, on home-dark-sidebar-collapsed.
 
-<img src="components/crops/rail-button-default.png" alt="Rail button (New chat), default" height="36"> <img src="components/crops/rail-button-hover.png" alt="Rail button (New chat), hover" height="36"> <img src="components/crops/rail-button-light.png" alt="Rail button (New chat), light" height="36"> <img src="components/crops/rail-button-light-hover.png" alt="Rail button (New chat), light-hover" height="36"> <img src="components/crops/rail-button-focus-visible.png" alt="Rail button (New chat), focus-visible" height="36"> <img src="components/crops/rail-button-light-focus-visible.png" alt="Rail button (New chat), light-focus-visible" height="36"> 
+<img src="components/crops/rail-button-default.png" alt="Rail button (New chat), default" height="35"> <img src="components/crops/rail-button-hover.png" alt="Rail button (New chat), hover" height="35"> <img src="components/crops/rail-button-focus-visible.png" alt="Rail button (New chat), focus-visible" height="35"> <img src="components/crops/rail-button-light.png" alt="Rail button (New chat), light" height="35"> <img src="components/crops/rail-button-light-hover.png" alt="Rail button (New chat), light-hover" height="35"> <img src="components/crops/rail-button-light-focus-visible.png" alt="Rail button (New chat), light-focus-visible" height="35"> 
 
 | State | Values |
 |---|---|
-| default | size 36 x 36; border B: 1px solid transparent; radius 10px; background transparent; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `icon.primary` |
-| hover, focus-visible | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| light | size 36 x 36; border B: 1px solid transparent; radius 10px; background transparent; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover, light-focus-visible | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
-
-Tokens named in its classes: `--menu-item-active`, `--menu-item-background`, `--menu-item-highlighted`, `--menu-item-icon-opacity`, `--menu-item-open`, `--menu-item-pressed`.
-
-#### Rail open-sidebar button
-
-<a id="rail-open-sidebar"></a>`rail-open-sidebar`, on home-dark-sidebar-collapsed.
-
-<img src="components/crops/rail-open-sidebar-default.png" alt="Rail open-sidebar button, default" height="36"> <img src="components/crops/rail-open-sidebar-hover.png" alt="Rail open-sidebar button, hover" height="36"> <img src="components/crops/rail-open-sidebar-light.png" alt="Rail open-sidebar button, light" height="36"> <img src="components/crops/rail-open-sidebar-light-hover.png" alt="Rail open-sidebar button, light-hover" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 36 x 36; radius 8px; background transparent; text System 16/24 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| hover | background rgba(255, 255, 255, 0.15) `surface.surface-hover` |
-| light | size 36 x 36; radius 8px; background transparent; text System 16/24 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background rgba(0, 0, 0, 0.07) `surface.surface-hover` |
-
-Tokens named in its classes: `--surface-hover`, `--text-primary`.
+| default (same: hover) | size 36 x 35; padding 5px `spacing.2`; radius `radius.lg`; background `variant.primary.soft.bg-hover`; text `typography.text-sm`, `role.text.primary`; icon 19.5 x 19.5, `role.text.primary` |
+| focus-visible | outline 2px solid `role.border.focus`, offset -2px |
+| light (same: light-hover) | size 36 x 35; padding 5px `spacing.2`; radius `radius.lg`; background `variant.primary.soft.bg-hover`; text `typography.text-sm`, `role.text.primary`; icon 19.5 x 19.5, `role.text.primary` |
+| light-focus-visible | outline 2px solid `role.border.focus`, offset -2px |
 
 ### Top bar
 
-The 52px page header: on the home and a project, the Chat / Work segmented toggle in the middle and Upgrade and the temporary-chat button at the end; in a thread, Upgrade, Share and the conversation options.
+The 52px page header (`<header>`, fixed, z-index 30): the Chat / Work toggle centred on the home, Upgrade and the temporary-chat button at the end; in a thread Upgrade, Share and More.
 
 #### Page header
 
-<a id="page-header"></a>`page-header`, on home-dark. 52 tall, sticky, 8px padding; the mode toggle centred, actions at the end.
+<a id="page-header"></a>`page-header`, on home-dark. 52 tall: the Chat / Work toggle centred, Upgrade and temporary chat at the end.
 
 <img src="components/crops/page-header-default.png" alt="Page header, default" height="52"> <img src="components/crops/page-header-light.png" alt="Page header, light" height="52"> 
 
 | State | Values |
 |---|---|
-| default | size 1180 x 52; padding 8px; background transparent; text System 14/20 500, #ffffff `text.primary`; icon 12 x 12, #63a8f8 `icon.accent` |
-| light | size 1180 x 52; padding 8px; background transparent; text System 14/20 500, #0d0d0d `text.primary`; icon 12 x 12, #3a83f7 `icon.accent` |
+| default | size 1100 x `size.height.height-toolbar`; padding 0 `spacing.2`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `text.header-upgrade`; icon 20 x 20, `text.header-upgrade` |
+| light | size 1100 x `size.height.height-toolbar`; padding 0 `spacing.2`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `text.tip`; icon 20 x 20, `text.tip` |
 
-Tokens named in its classes: `--bg-elevated-primary`, `--bg-primary`, `--icon-accent`, `--interactive-label-accent-default`, `--surface-hover`, `--text-primary`, `--text-secondary`.
+Child layers: button 106.2x34 border 1px solid transparent radius 8px; button 36x36 border 1px solid transparent radius 8px
 
 #### Chat / Work segmented toggle
 
-<a id="mode-toggle"></a>`mode-toggle`, on home-dark. A pill track with two 130x36 radio segments; the selected one carries a filled thumb.
+<a id="mode-toggle"></a>`mode-toggle`, on home-dark. A pill track with two 112x36 segments; the selected one carries a filled thumb.
 
-<img src="components/crops/mode-toggle-default.png" alt="Chat / Work segmented toggle, default" height="36"> <img src="components/crops/mode-toggle-light.png" alt="Chat / Work segmented toggle, light" height="36"> 
+<img src="components/crops/mode-toggle-default.png" alt="Chat / Work segmented toggle, default" height="120"> <img src="components/crops/mode-toggle-light.png" alt="Chat / Work segmented toggle, light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 260.56 x 36; radius full; background #212121 `bg.primary`; text System 14/20 500, #ffffff `text.primary`; icon 12 x 12, #63a8f8 `icon.accent` |
-| light | size 260.56 x 36; radius full; background #ffffff `bg.primary`; text System 14/20 500, #0d0d0d `text.primary`; icon 12 x 12, #3a83f7 `icon.accent` |
-
-Tokens named in its classes: `--bg-elevated-primary`, `--bg-primary`, `--interactive-label-accent-default`, `--text-primary`, `--text-secondary`.
+| default | size 1100 x 900; border L: 1px solid `role.border.default`; background `role.bg.page`; text `typography.text-sm` at `fontWeight.medium`, `text.header-upgrade`; icon 20 x 20, `text.header-upgrade`; placeholder `role.text.disabled` |
+| light | size 1100 x 900; border L: 1px solid `role.border.default`; background `role.bg.page`; text `typography.text-sm` at `fontWeight.medium`, `text.tip`; icon 20 x 20, `text.tip`; placeholder `role.text.disabled` |
 
 #### Mode segment (Work, not selected)
 
-<a id="mode-segment"></a>`mode-segment`, on home-dark. Work is drawn in the accent blue with a sparkle.
+<a id="mode-segment"></a>`mode-segment`, on home-dark.
 
-<img src="components/crops/mode-segment-default.png" alt="Mode segment (Work, not selected), default" height="36"> <img src="components/crops/mode-segment-hover.png" alt="Mode segment (Work, not selected), hover" height="36"> <img src="components/crops/mode-segment-light.png" alt="Mode segment (Work, not selected), light" height="36"> <img src="components/crops/mode-segment-light-hover.png" alt="Mode segment (Work, not selected), light-hover" height="36"> <img src="components/crops/mode-segment-selected.png" alt="Mode segment (Work, not selected), selected" height="36"> <img src="components/crops/mode-segment-focus-visible.png" alt="Mode segment (Work, not selected), focus-visible" height="36"> <img src="components/crops/mode-segment-light-focus-visible.png" alt="Mode segment (Work, not selected), light-focus-visible" height="36"> <img src="components/crops/mode-segment-light-selected.png" alt="Mode segment (Work, not selected), light-selected" height="36"> <img src="components/crops/mode-segment-light-selected-hover.png" alt="Mode segment (Work, not selected), light-selected-hover" height="36"> <img src="components/crops/mode-segment-selected-hover.png" alt="Mode segment (Work, not selected), selected-hover" height="36"> 
+<img src="components/crops/mode-segment-default.png" alt="Mode segment (Work, not selected), default" height="36"> <img src="components/crops/mode-segment-hover.png" alt="Mode segment (Work, not selected), hover" height="36"> <img src="components/crops/mode-segment-focus-visible.png" alt="Mode segment (Work, not selected), focus-visible" height="36"> <img src="components/crops/mode-segment-pressed.png" alt="Mode segment (Work, not selected), pressed" height="36"> <img src="components/crops/mode-segment-light.png" alt="Mode segment (Work, not selected), light" height="36"> <img src="components/crops/mode-segment-light-hover.png" alt="Mode segment (Work, not selected), light-hover" height="36"> <img src="components/crops/mode-segment-selected.png" alt="Mode segment (Work, not selected), selected" height="36"> <img src="components/crops/mode-segment-light-focus-visible.png" alt="Mode segment (Work, not selected), light-focus-visible" height="36"> <img src="components/crops/mode-segment-light-pressed.png" alt="Mode segment (Work, not selected), light-pressed" height="36"> <img src="components/crops/mode-segment-light-selected.png" alt="Mode segment (Work, not selected), light-selected" height="36"> <img src="components/crops/mode-segment-light-selected-hover.png" alt="Mode segment (Work, not selected), light-selected-hover" height="36"> <img src="components/crops/mode-segment-selected-hover.png" alt="Mode segment (Work, not selected), selected-hover" height="36"> 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 130.28 x 36; padding 8px 44px 8px 36px; radius full; background transparent; text System 14/20 500, #63a8f8 `text.accent`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, #63a8f8 `icon.accent` |
+| default (same: hover, pressed) | size 112 x `size.control.lg`; padding 0 `spacing.3_5` 0 `spacing.1_5`; radius `radius.full`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.on-accent`; icon 12 x 12, `role.text.on-accent` |
 | focus-visible | outline 1px auto #99c8ff, offset 0px |
-| selected, selected-hover | padding 8px 36px 8px 44px; text System 14/20 500, #ffffff `text.primary`; icon none |
-| light (same: light-hover) | size 130.28 x 36; padding 8px 44px 8px 36px; radius full; background transparent; text System 14/20 500, #3a83f7 `text.accent`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, #3a83f7 `icon.accent` |
+| selected, selected-hover | padding 0 `spacing.1_5` 0 `spacing.3_5`; icon none |
+| light (same: light-hover, light-pressed) | size 112 x `size.control.lg`; padding 0 `spacing.3_5` 0 `spacing.1_5`; radius `radius.full`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 12 x 12, `role.text.primary` |
 | light-focus-visible | outline 1px auto #005fcc, offset 0px |
-| light-selected, light-selected-hover | padding 8px 36px 8px 44px; text System 14/20 500, #0d0d0d `text.primary`; icon none |
+| light-selected, light-selected-hover | padding 0 `spacing.1_5` 0 `spacing.3_5`; icon none |
 
-Tokens named in its classes: `--interactive-label-accent-default`, `--text-primary`, `--text-secondary`.
+#### Link-style button (header Upgrade)
 
-#### Upgrade button (header)
+<a id="header-upgrade"></a>`header-upgrade`, on home-dark. Transparent pill, accent sparkle and label in `--color-text-header-upgrade`.
 
-<a id="header-upgrade"></a>`header-upgrade`, on home-dark. Transparent pill, accent-blue sparkle and label (`.button-glimmer-cta`).
-
-<img src="components/crops/header-upgrade-default.png" alt="Upgrade button (header), default" height="34"> <img src="components/crops/header-upgrade-hover.png" alt="Upgrade button (header), hover" height="34"> <img src="components/crops/header-upgrade-light.png" alt="Upgrade button (header), light" height="34"> <img src="components/crops/header-upgrade-light-hover.png" alt="Upgrade button (header), light-hover" height="34"> <img src="components/crops/header-upgrade-focus-visible.png" alt="Upgrade button (header), focus-visible" height="34"> <img src="components/crops/header-upgrade-light-focus-visible.png" alt="Upgrade button (header), light-focus-visible" height="34"> 
+<img src="components/crops/header-upgrade-default.png" alt="Link-style button (header Upgrade), default" height="34"> <img src="components/crops/header-upgrade-hover.png" alt="Link-style button (header Upgrade), hover" height="34"> <img src="components/crops/header-upgrade-focus-visible.png" alt="Link-style button (header Upgrade), focus-visible" height="34"> <img src="components/crops/header-upgrade-pressed.png" alt="Link-style button (header Upgrade), pressed" height="34"> <img src="components/crops/header-upgrade-light.png" alt="Link-style button (header Upgrade), light" height="34"> <img src="components/crops/header-upgrade-light-hover.png" alt="Link-style button (header Upgrade), light-hover" height="34"> <img src="components/crops/header-upgrade-light-focus-visible.png" alt="Link-style button (header Upgrade), light-focus-visible" height="34"> <img src="components/crops/header-upgrade-light-pressed.png" alt="Link-style button (header Upgrade), light-pressed" height="34"> 
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 106.16 x 34; padding 0px 12px; border 1px solid transparent; radius 8px; background transparent; text System 14/20 500, #63a8f8 `text.accent`; icon 20 x 20, #63a8f8 `icon.accent` |
-| hover | border 1px solid rgba(58, 131, 247, 0.01); background rgba(164, 205, 251, 0.2); backdrop blur(38.571px) |
-| light (same: light-focus-visible) | size 106.16 x 34; padding 0px 12px; border 1px solid transparent; radius 8px; background transparent; text System 14/20 500, #3a83f7 `text.accent`; icon 20 x 20, #3a83f7 `icon.accent` |
-| light-hover | border 1px solid rgba(58, 131, 247, 0.01); background rgba(58, 131, 247, 0.09); backdrop blur(38.571px) |
+| default | size 106.16 x `size.height.nav-row`; padding 0 `spacing.3`; border 1px solid transparent; radius `radius.lg`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `text.header-upgrade`; icon 20 x 20, `text.header-upgrade` |
+| hover | background rgba(164, 205, 251, 0.2) |
+| focus-visible | background rgba(164, 205, 251, 0.2); focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background rgba(164, 205, 251, 0.2) |
+| light | size 106.16 x `size.height.nav-row`; padding 0 `spacing.3`; border 1px solid transparent; radius `radius.lg`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `text.tip`; icon 20 x 20, `text.tip` |
+| light-hover | background `component.badge.bg` |
+| light-focus-visible | background `component.badge.bg`; focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `component.badge.bg` |
 
-#### Header icon button (Temporary chat)
+#### Icon button (Temporary chat)
 
 <a id="header-icon-button"></a>`header-icon-button`, on home-dark.
 
-<img src="components/crops/header-icon-button-default.png" alt="Header icon button (Temporary chat), default" height="36"> <img src="components/crops/header-icon-button-hover.png" alt="Header icon button (Temporary chat), hover" height="36"> <img src="components/crops/header-icon-button-light.png" alt="Header icon button (Temporary chat), light" height="36"> <img src="components/crops/header-icon-button-light-hover.png" alt="Header icon button (Temporary chat), light-hover" height="36"> <img src="components/crops/header-icon-button-focus-visible.png" alt="Header icon button (Temporary chat), focus-visible" height="36"> <img src="components/crops/header-icon-button-light-focus-visible.png" alt="Header icon button (Temporary chat), light-focus-visible" height="36"> 
+<img src="components/crops/header-icon-button-default.png" alt="Icon button (Temporary chat), default" height="36"> <img src="components/crops/header-icon-button-hover.png" alt="Icon button (Temporary chat), hover" height="36"> <img src="components/crops/header-icon-button-focus-visible.png" alt="Icon button (Temporary chat), focus-visible" height="36"> <img src="components/crops/header-icon-button-pressed.png" alt="Icon button (Temporary chat), pressed" height="36"> <img src="components/crops/header-icon-button-light.png" alt="Icon button (Temporary chat), light" height="36"> <img src="components/crops/header-icon-button-light-hover.png" alt="Icon button (Temporary chat), light-hover" height="36"> <img src="components/crops/header-icon-button-light-focus-visible.png" alt="Icon button (Temporary chat), light-focus-visible" height="36"> <img src="components/crops/header-icon-button-light-pressed.png" alt="Icon button (Temporary chat), light-pressed" height="36"> 
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius full; background transparent; text System 16/24 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| hover | background rgba(255, 255, 255, 0.15) `surface.surface-hover` |
-| light (same: light-focus-visible) | size 36 x 36; radius full; background transparent; text System 16/24 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background rgba(0, 0, 0, 0.07) `surface.surface-hover` |
+| default | size 36 x `size.control.lg`; border 1px solid transparent; radius `radius.lg`; background transparent; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 36 x `size.control.lg`; border 1px solid transparent; radius `radius.lg`; background transparent; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
 
-Tokens named in its classes: `--surface-hover`, `--text-primary`.
+#### Secondary button (Share)
 
-#### Share button (thread)
+<a id="share-button"></a>`share-button`, on thread-dark-code.
 
-<a id="share-button"></a>`share-button`, on thread-dark-table.
-
-<img src="components/crops/share-button-default.png" alt="Share button (thread), default" height="36"> <img src="components/crops/share-button-hover.png" alt="Share button (thread), hover" height="36"> <img src="components/crops/share-button-light.png" alt="Share button (thread), light" height="36"> <img src="components/crops/share-button-light-hover.png" alt="Share button (thread), light-hover" height="36"> <img src="components/crops/share-button-focus-visible.png" alt="Share button (thread), focus-visible" height="36"> <img src="components/crops/share-button-light-focus-visible.png" alt="Share button (thread), light-focus-visible" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 88.22 x 36; padding 0px 12px; border 1px solid transparent; radius 8px; background transparent; text System 14/20 500, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| hover | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| light | size 88.22 x 36; padding 0px 12px; border 1px solid transparent; radius 8px; background transparent; text System 14/20 500, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
-
-Tokens named in its classes: `--surface-hover`, `--text-primary`.
-
-#### Conversation options (…) button
-
-<a id="conversation-options"></a>`conversation-options`, on thread-dark-table.
-
-<img src="components/crops/conversation-options-default.png" alt="Conversation options (…) button, default" height="36"> <img src="components/crops/conversation-options-hover.png" alt="Conversation options (…) button, hover" height="36"> <img src="components/crops/conversation-options-light.png" alt="Conversation options (…) button, light" height="36"> <img src="components/crops/conversation-options-light-hover.png" alt="Conversation options (…) button, light-hover" height="36"> 
+<img src="components/crops/share-button-default.png" alt="Secondary button (Share), default" height="36"> <img src="components/crops/share-button-hover.png" alt="Secondary button (Share), hover" height="36"> <img src="components/crops/share-button-focus-visible.png" alt="Secondary button (Share), focus-visible" height="36"> <img src="components/crops/share-button-pressed.png" alt="Secondary button (Share), pressed" height="36"> <img src="components/crops/share-button-light.png" alt="Secondary button (Share), light" height="36"> <img src="components/crops/share-button-light-hover.png" alt="Secondary button (Share), light-hover" height="36"> <img src="components/crops/share-button-light-focus-visible.png" alt="Secondary button (Share), light-focus-visible" height="36"> <img src="components/crops/share-button-light-pressed.png" alt="Secondary button (Share), light-pressed" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 36 x 36; radius 8px; background transparent; text System 16/24 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| hover | background rgba(255, 255, 255, 0.15) `surface.surface-hover` |
-| light | size 36 x 36; radius 8px; background transparent; text System 16/24 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background rgba(0, 0, 0, 0.07) `surface.surface-hover` |
+| default | size 87.27 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid transparent; radius `radius.lg`; background transparent; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 87.27 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid transparent; radius `radius.lg`; background transparent; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
 
-Tokens named in its classes: `--surface-hover`, `--text-primary`.
+#### Icon button (More, thread)
+
+<a id="more-button"></a>`more-button`, on thread-dark-code.
+
+<img src="components/crops/more-button-default.png" alt="Icon button (More, thread), default" height="36"> <img src="components/crops/more-button-hover.png" alt="Icon button (More, thread), hover" height="36"> <img src="components/crops/more-button-focus-visible.png" alt="Icon button (More, thread), focus-visible" height="36"> <img src="components/crops/more-button-pressed.png" alt="Icon button (More, thread), pressed" height="36"> <img src="components/crops/more-button-light.png" alt="Icon button (More, thread), light" height="36"> <img src="components/crops/more-button-light-hover.png" alt="Icon button (More, thread), light-hover" height="36"> <img src="components/crops/more-button-light-focus-visible.png" alt="Icon button (More, thread), light-focus-visible" height="36"> <img src="components/crops/more-button-light-pressed.png" alt="Icon button (More, thread), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, focus-visible, pressed) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.primary` |
+| light (same: light-hover, light-focus-visible, light-pressed) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.primary` |
+
+Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius 8px
 
 ### Home
 
-The new-chat page: one heading centred over the composer, then three suggestion rows.
+The new-chat page: one heading over the composer, three suggestion rows, and the Plus nudge card at the bottom.
 
 #### Home heading
 
-<a id="home-heading"></a>`home-heading`, on home-dark. `text-heading-2` at 400 weight (28/34 here), centred over the composer.
+<a id="home-heading"></a>`home-heading`, on home-dark.
 
-<img src="components/crops/home-heading-default.png" alt="Home heading, default" height="42"> <img src="components/crops/home-heading-light.png" alt="Home heading, light" height="42"> 
+<img src="components/crops/home-heading-default.png" alt="Home heading, default" height="28"> <img src="components/crops/home-heading-light.png" alt="Home heading, light" height="28"> 
 
 | State | Values |
 |---|---|
-| default | size 306.97 x 42; background transparent; text System 24/28 400, #ffffff `text.primary` |
-| light | size 306.97 x 42; background transparent; text System 24/28 400, #0d0d0d `text.primary` |
+| default | size 212.8 x `size.control.sm`; background transparent; text `fontSize.2xl`/28.8 `fontWeight.normal`, `role.text.primary` |
+| light | size 212.8 x `size.control.sm`; background transparent; text `fontSize.2xl`/28.8 `fontWeight.normal`, `role.text.primary` |
 
 #### Suggestion row
 
-<a id="suggestion-row"></a>`suggestion-row`, on home-dark. 768x52 rows under the composer, icon and 16px secondary text; hover fills with `text-primary` at 3%.
+<a id="suggestion-row"></a>`suggestion-row`, on home-dark. 768x52, icon and 16px tertiary text; hover fills with `--color-background-home-suggestion-hover`.
 
-<img src="components/crops/suggestion-row-default.png" alt="Suggestion row, default" height="52"> <img src="components/crops/suggestion-row-hover.png" alt="Suggestion row, hover" height="52"> <img src="components/crops/suggestion-row-light.png" alt="Suggestion row, light" height="52"> <img src="components/crops/suggestion-row-light-hover.png" alt="Suggestion row, light-hover" height="52"> <img src="components/crops/suggestion-row-focus-visible.png" alt="Suggestion row, focus-visible" height="52"> <img src="components/crops/suggestion-row-light-focus-visible.png" alt="Suggestion row, light-focus-visible" height="52"> 
+<img src="components/crops/suggestion-row-default.png" alt="Suggestion row, default" height="52"> <img src="components/crops/suggestion-row-hover.png" alt="Suggestion row, hover" height="52"> <img src="components/crops/suggestion-row-focus-visible.png" alt="Suggestion row, focus-visible" height="52"> <img src="components/crops/suggestion-row-pressed.png" alt="Suggestion row, pressed" height="52"> <img src="components/crops/suggestion-row-light.png" alt="Suggestion row, light" height="52"> <img src="components/crops/suggestion-row-light-hover.png" alt="Suggestion row, light-hover" height="52"> <img src="components/crops/suggestion-row-light-focus-visible.png" alt="Suggestion row, light-focus-visible" height="52"> <img src="components/crops/suggestion-row-light-pressed.png" alt="Suggestion row, light-pressed" height="52"> 
 
 | State | Values |
 |---|---|
-| default | size 768 x 52; padding 0px 44px 0px 9px; radius 8px; background transparent; text System 16/26 400, #afafaf `text.tertiary`; icon 20 x 20, #afafaf `icon.tertiary` |
-| hover | background rgba(255, 255, 255, 0.06) `interactive.bg-inactive-danger-soft`; text System 16/26 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| light | size 768 x 52; padding 0px 44px 0px 9px; radius 8px; background transparent; text System 16/26 400, #8f8f8f `text.tertiary`; icon 20 x 20, #8f8f8f `icon.tertiary` |
-| light-hover | background rgba(13, 13, 13, 0.03); text System 16/26 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
+| default | size 768 x `size.height.height-toolbar`; padding 0 `spacing.11` 0 `spacing.2`; radius `radius.2xl`; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.disabled`; transition color 0.075s ease |
+| hover | text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus`; text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary` |
+| pressed | text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary` |
+| light | size 768 x `size.height.height-toolbar`; padding 0 `spacing.11` 0 `spacing.2`; radius `radius.2xl`; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.disabled`; transition color 0.075s ease |
+| light-hover | text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus`; text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary` |
+| light-pressed | text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary` |
 
-Tokens named in its classes: `--icon-tertiary`, `--text-primary`, `--text-tertiary`.
+#### Card (Plus nudge)
+
+<a id="promo-card"></a>`promo-card`, on home-dark. 768x74 card pinned under the suggestions: icon, title and line, a filled Get Plus button and a dismiss button.
+
+<img src="components/crops/promo-card-default.png" alt="Card (Plus nudge), default" height="74"> <img src="components/crops/promo-card-light.png" alt="Card (Plus nudge), light" height="74"> 
+
+| State | Values |
+|---|---|
+| default | size 768 x 74; padding `spacing.4`; radius `radius.3xl`; background `role.bg.raised`; shadow rgba(0, 0, 0, 0.05) 0px 4px 16px 0px; outline 1px solid `role.border.subtle`, offset -0.5px; text `typography.text-sm` at 510, `role.text.primary`; icon 20 x 20, `role.text.disabled` |
+| light | size 768 x 74; padding `spacing.4`; radius `radius.3xl`; background `role.bg.raised`; shadow rgba(0, 0, 0, 0.05) 0px 4px 16px 0px; outline 1px solid `variant.primary.surface.bg`, offset -0.5px; text `typography.text-sm` at 510, `role.text.primary`; icon 20 x 20, `role.text.disabled` |
+
+#### Primary button (Get Plus)
+
+<a id="promo-button"></a>`promo-button`, on home-dark.
+
+<img src="components/crops/promo-button-default.png" alt="Primary button (Get Plus), default" height="36"> <img src="components/crops/promo-button-hover.png" alt="Primary button (Get Plus), hover" height="36"> <img src="components/crops/promo-button-focus-visible.png" alt="Primary button (Get Plus), focus-visible" height="36"> <img src="components/crops/promo-button-pressed.png" alt="Primary button (Get Plus), pressed" height="36"> <img src="components/crops/promo-button-light.png" alt="Primary button (Get Plus), light" height="36"> <img src="components/crops/promo-button-light-hover.png" alt="Primary button (Get Plus), light-hover" height="36"> <img src="components/crops/promo-button-light-focus-visible.png" alt="Primary button (Get Plus), light-focus-visible" height="36"> <img src="components/crops/promo-button-light-pressed.png" alt="Primary button (Get Plus), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default | size 85.98 x `size.control.lg`; padding 0 `spacing.4`; radius `radius.full`; background `variant.primary.solid.bg`; text `typography.text-sm` at 510, `role.text.inverse` |
+| hover | opacity 0.8 |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | opacity 0.8 |
+| light | size 85.98 x `size.control.lg`; padding 0 `spacing.4`; radius `radius.full`; background `variant.primary.solid.bg`; text `typography.text-sm` at 510, `role.text.inverse` |
+| light-hover | opacity 0.8 |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | opacity 0.8 |
+
+#### Dismiss button
+
+<a id="promo-dismiss"></a>`promo-dismiss`, on home-dark.
+
+<img src="components/crops/promo-dismiss-default.png" alt="Dismiss button, default" height="24"> <img src="components/crops/promo-dismiss-hover.png" alt="Dismiss button, hover" height="24"> <img src="components/crops/promo-dismiss-focus-visible.png" alt="Dismiss button, focus-visible" height="24"> <img src="components/crops/promo-dismiss-light.png" alt="Dismiss button, light" height="24"> <img src="components/crops/promo-dismiss-light-hover.png" alt="Dismiss button, light-hover" height="24"> <img src="components/crops/promo-dismiss-light-focus-visible.png" alt="Dismiss button, light-focus-visible" height="24"> 
+
+| State | Values |
+|---|---|
+| default | size 20 x `size.control.4xs`; radius `radius.full`; background transparent; text `typography.text-sm`, `role.text.disabled`; icon 20 x 20, `role.text.disabled` |
+| hover | opacity 0.8 |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light | size 20 x `size.control.4xs`; radius `radius.full`; background transparent; text `typography.text-sm`, `role.text.disabled`; icon 20 x 20, `role.text.disabled` |
+| light-hover | opacity 0.8 |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
 
 ### Composer
 
-The composer shared by the home, a thread, a project and Images: a 768 wide pill (radius 28) with the + button, the ProseMirror field, the Think chip, dictation and the voice button, which becomes send once there is text. On a phone it takes two rows.
+The composer shared by the home and a thread: a 768 wide pill with the + button, the ProseMirror field, Think, Dictate and the voice button, which becomes Send once there is text.
 
-#### Composer
+#### Text area (composer)
 
-<a id="composer"></a>`composer`, on home-dark, home-dark-composer-typed, thread-dark-bottom, project-dark, images-dark. A pill on the home page (radius 28, 768 wide, `--composer-bar_width`), one row: + button, the ProseMirror field, Think chip, dictation, voice. `--bg-primary` fill (#212121 dark) with a hairline shadow.
+<a id="composer"></a>`composer`, on home-dark, home-dark-composer-typed, thread-dark-code. A pill on the home page, 768 wide: + button, the ProseMirror field, Think, dictate, voice.
 
-<img src="components/crops/composer-default.png" alt="Composer, default" height="52"> <img src="components/crops/composer-light.png" alt="Composer, light" height="52"> <img src="components/crops/composer-typed.png" alt="Composer, typed" height="52"> <img src="components/crops/composer-focus-visible.png" alt="Composer, focus-visible" height="52"> <img src="components/crops/composer-images.png" alt="Composer, images" height="52"> <img src="components/crops/composer-light-focus-visible.png" alt="Composer, light-focus-visible" height="52"> <img src="components/crops/composer-light-images.png" alt="Composer, light-images" height="52"> <img src="components/crops/composer-light-project.png" alt="Composer, light-project" height="52"> <img src="components/crops/composer-light-thread.png" alt="Composer, light-thread" height="52"> <img src="components/crops/composer-light-typed.png" alt="Composer, light-typed" height="52"> <img src="components/crops/composer-project.png" alt="Composer, project" height="52"> <img src="components/crops/composer-thread.png" alt="Composer, thread" height="52"> 
+<img src="components/crops/composer-default.png" alt="Text area (composer), default" height="52"> <img src="components/crops/composer-focus-visible.png" alt="Text area (composer), focus-visible" height="52"> <img src="components/crops/composer-light.png" alt="Text area (composer), light" height="52"> <img src="components/crops/composer-typed.png" alt="Text area (composer), typed" height="52"> <img src="components/crops/composer-light-focus-visible.png" alt="Text area (composer), light-focus-visible" height="52"> <img src="components/crops/composer-light-thread.png" alt="Text area (composer), light-thread" height="52"> <img src="components/crops/composer-light-typed.png" alt="Text area (composer), light-typed" height="52"> <img src="components/crops/composer-thread.png" alt="Text area (composer), thread" height="52"> 
 
 | State | Values |
 |---|---|
-| default (same: focus-visible, project, images) | size 768 x 52; radius 28px; background #212121 `bg.primary`; shadow rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset; text System 16/26 400, #afafaf `text.tertiary`; transition color and 9 more 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `icon.primary`; placeholder #ffffff `text.primary` |
-| typed | text System 16/26 400, #ffffff `text.primary`; placeholder none |
-| thread | text System 16/26 400, #63a8f8 `text.accent` |
-| light (same: light-focus-visible, light-project, light-images) | size 768 x 52; radius 28px; background #ffffff `bg.primary`; shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 8px 0px, rgba(0, 0, 0, 0.02) 0px 4px 80px 8px; text System 16/26 400, #8f8f8f `text.tertiary`; transition color and 9 more 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #0d0d0d `icon.primary`; placeholder #0d0d0d `text.primary` |
-| light-typed | text System 16/26 400, #0d0d0d `text.primary`; placeholder none |
-| light-thread | text System 16/26 400, #3a83f7 `text.accent` |
-
-Tokens named in its classes: `--composer-surface-primary`, `--spacing`, `--text-primary`.
+| default (same: focus-visible, thread) | size 768 x `size.height.height-toolbar`; radius 26px; background `role.bg.raised`; shadow rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset; text `fontSize.base`/26 `fontWeight.normal`, `role.text.disabled`; icon 20 x 20, `role.text.primary`; placeholder `role.text.disabled` |
+| typed | text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary`; placeholder none |
+| light (same: light-focus-visible, light-thread) | size 768 x `size.height.height-toolbar`; radius 26px; background `role.bg.raised`; shadow rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset; text `fontSize.base`/26 `fontWeight.normal`, `role.text.disabled`; icon 20 x 20, `role.text.primary`; placeholder `role.text.disabled` |
+| light-typed | text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary`; placeholder none |
 
 #### Composer placeholder
 
-<a id="composer-placeholder"></a>`composer-placeholder`, on home-dark. "Ask anything", drawn by `p[data-placeholder]::before`.
+<a id="composer-placeholder"></a>`composer-placeholder`, on home-dark.
 
 <img src="components/crops/composer-placeholder-default.png" alt="Composer placeholder, default" height="26"> <img src="components/crops/composer-placeholder-light.png" alt="Composer placeholder, light" height="26"> 
 
 | State | Values |
 |---|---|
-| default | size 523.03 x 26; background transparent; placeholder #ffffff `text.primary` |
-| light | size 523.03 x 26; background transparent; placeholder #0d0d0d `text.primary` |
+| default | size 528.03 x `size.control.xs`; background transparent; placeholder `role.text.disabled` |
+| light | size 528.03 x `size.control.xs`; background transparent; placeholder `role.text.disabled` |
 
-#### Composer + button
+#### Icon button (composer +)
 
-<a id="composer-plus"></a>`composer-plus`, on home-dark. 36x36 round `.composer-btn`.
+<a id="composer-plus"></a>`composer-plus`, on home-dark.
 
-<img src="components/crops/composer-plus-default.png" alt="Composer + button, default" height="36"> <img src="components/crops/composer-plus-hover.png" alt="Composer + button, hover" height="36"> <img src="components/crops/composer-plus-light.png" alt="Composer + button, light" height="36"> <img src="components/crops/composer-plus-light-hover.png" alt="Composer + button, light-hover" height="36"> <img src="components/crops/composer-plus-focus-visible.png" alt="Composer + button, focus-visible" height="36"> <img src="components/crops/composer-plus-light-focus-visible.png" alt="Composer + button, light-focus-visible" height="36"> 
+<img src="components/crops/composer-plus-default.png" alt="Icon button (composer +), default" height="36"> <img src="components/crops/composer-plus-hover.png" alt="Icon button (composer +), hover" height="36"> <img src="components/crops/composer-plus-focus-visible.png" alt="Icon button (composer +), focus-visible" height="36"> <img src="components/crops/composer-plus-pressed.png" alt="Icon button (composer +), pressed" height="36"> <img src="components/crops/composer-plus-light.png" alt="Icon button (composer +), light" height="36"> <img src="components/crops/composer-plus-light-hover.png" alt="Icon button (composer +), light-hover" height="36"> <img src="components/crops/composer-plus-light-focus-visible.png" alt="Icon button (composer +), light-focus-visible" height="36"> <img src="components/crops/composer-plus-light-pressed.png" alt="Icon button (composer +), light-pressed" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 36 x 36; radius full; background transparent; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| hover | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| light | size 36 x 36; radius full; background transparent; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
+| default | size 36 x `size.control.lg`; border 1px solid transparent; radius `radius.full`; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.disabled`; icon 20 x 20, `role.text.primary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 36 x `size.control.lg`; border 1px solid transparent; radius `radius.full`; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.disabled`; icon 20 x 20, `role.text.primary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
 
 #### Think chip
 
-<a id="think-chip"></a>`think-chip`, on home-dark, thread-dark-bottom. `.__composer-pill--neutral`: 36 tall, full radius, brain icon and 16px label.
+<a id="think-chip"></a>`think-chip`, on home-dark.
 
-<img src="components/crops/think-chip-default.png" alt="Think chip, default" height="36"> <img src="components/crops/think-chip-hover.png" alt="Think chip, hover" height="36"> <img src="components/crops/think-chip-light.png" alt="Think chip, light" height="36"> <img src="components/crops/think-chip-light-hover.png" alt="Think chip, light-hover" height="36"> <img src="components/crops/think-chip-focus-visible.png" alt="Think chip, focus-visible" height="36"> <img src="components/crops/think-chip-light-focus-visible.png" alt="Think chip, light-focus-visible" height="36"> <img src="components/crops/think-chip-light-thread.png" alt="Think chip, light-thread" height="36"> <img src="components/crops/think-chip-thread.png" alt="Think chip, thread" height="36"> 
-
-| State | Values |
-|---|---|
-| default (same: focus-visible) | size 91.97 x 36; padding 0px 14px 0px 12px; radius full; background transparent; text System 16/26 400, #afafaf `text.tertiary`; icon 20 x 20, #afafaf `icon.tertiary` |
-| hover | background #303030 `bg.secondary` |
-| thread | background rgba(57, 74, 91, 0.5) `interactive.bg-accent-muted-context`; text System 16/26 400, #63a8f8 `text.accent`; icon 20 x 20, #63a8f8 `icon.accent` |
-| light (same: light-focus-visible) | size 91.97 x 36; padding 0px 14px 0px 12px; radius full; background transparent; text System 16/26 400, #8f8f8f `text.tertiary`; icon 20 x 20, #8f8f8f `icon.tertiary` |
-| light-hover | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
-| light-thread | background rgba(235, 244, 255, 0.5) `interactive.bg-accent-muted-context`; text System 16/26 400, #3a83f7 `text.accent`; icon 20 x 20, #3a83f7 `icon.accent` |
-
-#### Dictation button
-
-<a id="dictation-button"></a>`dictation-button`, on home-dark.
-
-<img src="components/crops/dictation-button-default.png" alt="Dictation button, default" height="36"> <img src="components/crops/dictation-button-hover.png" alt="Dictation button, hover" height="36"> <img src="components/crops/dictation-button-light.png" alt="Dictation button, light" height="36"> <img src="components/crops/dictation-button-light-hover.png" alt="Dictation button, light-hover" height="36"> 
+<img src="components/crops/think-chip-default.png" alt="Think chip, default" height="36"> <img src="components/crops/think-chip-hover.png" alt="Think chip, hover" height="36"> <img src="components/crops/think-chip-focus-visible.png" alt="Think chip, focus-visible" height="36"> <img src="components/crops/think-chip-pressed.png" alt="Think chip, pressed" height="36"> <img src="components/crops/think-chip-light.png" alt="Think chip, light" height="36"> <img src="components/crops/think-chip-light-hover.png" alt="Think chip, light-hover" height="36"> <img src="components/crops/think-chip-light-focus-visible.png" alt="Think chip, light-focus-visible" height="36"> <img src="components/crops/think-chip-light-pressed.png" alt="Think chip, light-pressed" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 36 x 36; radius full; background transparent; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| hover | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| light | size 36 x 36; radius full; background transparent; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
+| default | size 91.97 x `size.control.lg`; padding 0 `spacing.3_5` 0 `spacing.3`; radius `radius.full`; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.disabled`; icon 20 x 20, `role.text.disabled` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 91.97 x `size.control.lg`; padding 0 `spacing.3_5` 0 `spacing.3`; radius `radius.full`; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.disabled`; icon 20 x 20, `role.text.disabled` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
 
-#### Voice button
+#### Icon button (Dictate)
 
-<a id="voice-button"></a>`voice-button`, on home-dark. 36x36 circle in `--theme-submit-btn-bg`, the accent (blue-500 dark, blue-400 light).
+<a id="dictate-button"></a>`dictate-button`, on home-dark.
 
-<img src="components/crops/voice-button-default.png" alt="Voice button, default" height="36"> <img src="components/crops/voice-button-hover.png" alt="Voice button, hover" height="36"> <img src="components/crops/voice-button-light.png" alt="Voice button, light" height="36"> <img src="components/crops/voice-button-light-hover.png" alt="Voice button, light-hover" height="36"> <img src="components/crops/voice-button-focus-visible.png" alt="Voice button, focus-visible" height="36"> <img src="components/crops/voice-button-light-focus-visible.png" alt="Voice button, light-focus-visible" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 36 x 36; radius full; background #2c67c5 `theme.blue.text`; text System 16/24 400, #ffffff `text.primary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `icon.primary` |
-| hover | opacity 0.7 |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| light | size 36 x 36; radius full; background #3a83f7 `bg.accent-static`; text System 16/24 400, #ffffff `text.inverted`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `icon.inverted` |
-| light-hover | opacity 0.7 |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
-
-#### Send button (typed)
-
-<a id="send-button"></a>`send-button`, on home-dark-composer-typed. Replaces the voice button once there is text: same circle and accent, an up arrow.
-
-<img src="components/crops/send-button-default.png" alt="Send button (typed), default" height="36"> <img src="components/crops/send-button-hover.png" alt="Send button (typed), hover" height="36"> <img src="components/crops/send-button-light.png" alt="Send button (typed), light" height="36"> <img src="components/crops/send-button-light-hover.png" alt="Send button (typed), light-hover" height="36"> <img src="components/crops/send-button-focus-visible.png" alt="Send button (typed), focus-visible" height="36"> <img src="components/crops/send-button-light-focus-visible.png" alt="Send button (typed), light-focus-visible" height="36"> 
+<img src="components/crops/dictate-button-default.png" alt="Icon button (Dictate), default" height="36"> <img src="components/crops/dictate-button-hover.png" alt="Icon button (Dictate), hover" height="36"> <img src="components/crops/dictate-button-focus-visible.png" alt="Icon button (Dictate), focus-visible" height="36"> <img src="components/crops/dictate-button-pressed.png" alt="Icon button (Dictate), pressed" height="36"> <img src="components/crops/dictate-button-light.png" alt="Icon button (Dictate), light" height="36"> <img src="components/crops/dictate-button-light-hover.png" alt="Icon button (Dictate), light-hover" height="36"> <img src="components/crops/dictate-button-light-focus-visible.png" alt="Icon button (Dictate), light-focus-visible" height="36"> <img src="components/crops/dictate-button-light-pressed.png" alt="Icon button (Dictate), light-pressed" height="36"> 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 36 x 36; radius full; background #2c67c5 `theme.blue.text`; text System 16/24 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| light (same: light-hover) | size 36 x 36; radius full; background #3a83f7 `bg.accent-static`; text System 16/24 400, #ffffff `text.inverted`; icon 20 x 20, #ffffff `icon.inverted` |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
+| default | size 36 x `size.control.lg`; border 1px solid transparent; radius `radius.full`; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.disabled`; icon 20 x 20, `role.text.primary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 36 x `size.control.lg`; border 1px solid transparent; radius `radius.full`; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.disabled`; icon 20 x 20, `role.text.primary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
+
+#### Accent icon button (Start Voice)
+
+<a id="voice-button"></a>`voice-button`, on home-dark. A 36px circle in `--color-background-composer-primary`, the accent.
+
+<img src="components/crops/voice-button-default.png" alt="Accent icon button (Start Voice), default" height="36"> <img src="components/crops/voice-button-hover.png" alt="Accent icon button (Start Voice), hover" height="36"> <img src="components/crops/voice-button-focus-visible.png" alt="Accent icon button (Start Voice), focus-visible" height="36"> <img src="components/crops/voice-button-pressed.png" alt="Accent icon button (Start Voice), pressed" height="36"> <img src="components/crops/voice-button-light.png" alt="Accent icon button (Start Voice), light" height="36"> <img src="components/crops/voice-button-light-hover.png" alt="Accent icon button (Start Voice), light-hover" height="36"> <img src="components/crops/voice-button-light-focus-visible.png" alt="Accent icon button (Start Voice), light-focus-visible" height="36"> <img src="components/crops/voice-button-light-pressed.png" alt="Accent icon button (Start Voice), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 36 x `size.control.lg`; padding `spacing.0_5`; radius `radius.full`; background `bg.accent-action`; text `typography.text-md`, `role.text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, `role.text.on-accent` |
+| focus-visible | outline 2px solid `text.info`, offset 0px |
+| light (same: light-hover, light-pressed) | size 36 x `size.control.lg`; padding `spacing.0_5`; radius `radius.full`; background `bg.accent-action`; text `typography.text-md`, `role.text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, `role.text.inverse` |
+| light-focus-visible | outline 2px solid `role.border.focus`, offset 0px |
+
+#### Accent icon button (Send, typed)
+
+<a id="send-button"></a>`send-button`, on home-dark-composer-typed.
+
+<img src="components/crops/send-button-default.png" alt="Accent icon button (Send, typed), default" height="36"> <img src="components/crops/send-button-hover.png" alt="Accent icon button (Send, typed), hover" height="36"> <img src="components/crops/send-button-focus-visible.png" alt="Accent icon button (Send, typed), focus-visible" height="36"> <img src="components/crops/send-button-pressed.png" alt="Accent icon button (Send, typed), pressed" height="36"> <img src="components/crops/send-button-light.png" alt="Accent icon button (Send, typed), light" height="36"> <img src="components/crops/send-button-light-hover.png" alt="Accent icon button (Send, typed), light-hover" height="36"> <img src="components/crops/send-button-light-focus-visible.png" alt="Accent icon button (Send, typed), light-focus-visible" height="36"> <img src="components/crops/send-button-light-pressed.png" alt="Accent icon button (Send, typed), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 36 x `size.control.lg`; padding `spacing.0_5`; radius `radius.full`; background `bg.accent-action`; text `typography.text-md`, `role.text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, `role.text.on-accent` |
+| focus-visible | outline 2px solid `text.info`, offset 0px |
+| light (same: light-hover, light-pressed) | size 36 x `size.control.lg`; padding `spacing.0_5`; radius `radius.full`; background `bg.accent-action`; text `typography.text-md`, `role.text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, `role.text.inverse` |
+| light-focus-visible | outline 2px solid `role.border.focus`, offset 0px |
+
+#### Tooltip (Dictate)
+
+<a id="tooltip"></a>`tooltip`, on home-dark-tooltip. Opened by keyboard focus on the Dictate button: `--color-background-tooltip` fill, rounded, 14px text.
+
+<img src="components/crops/tooltip-default.png" alt="Tooltip (Dictate), default" height="30"> <img src="components/crops/tooltip-light.png" alt="Tooltip (Dictate), light" height="30"> 
+
+| State | Values |
+|---|---|
+| default | size 73.66 x 30; padding 5px `spacing.3`; border 1px solid `border.tooltip`; radius `radius.2xl`; background `surface.elevated-secondary`; shadow rgba(15, 23, 42, 0.2) 0px 8px 18px 0px; text `fontSize.sm`/18 `fontWeight.semibold`, `role.text.primary`; transform translate(1167.5px, 428px) |
+| light | size 73.66 x 30; padding 5px `spacing.3`; border 1px solid `border.tooltip`; radius `radius.2xl`; background `variant.primary.solid.bg`; shadow rgba(15, 23, 42, 0.2) 0px 8px 18px 0px; text `fontSize.sm`/18 `fontWeight.semibold`, `role.text.inverse`; transform translate(1167.5px, 428px) |
 
 ### Thread
 
-A conversation: the user bubble in the accent colour, the "Worked for" disclosure, the assistant's markdown (paragraphs, headings, strong, tables, citation pills), widgets, and the actions under a turn.
+A conversation: the user bubble in the accent colour, the assistant's markdown (paragraphs, headings, strong, inline code, code blocks, tables, links), the actions under a turn and the scroll-to-bottom button. Message text in the copies is same-length filler.
 
 #### User message bubble
 
-<a id="user-bubble"></a>`user-bubble`, on thread-dark-user-turn. Right-aligned, max 70% (`--user-chat-width`), radius 22, padding 10/16, with `--theme-user-msg-bg` / `--theme-user-msg-text`: the blue accent paints it blue-700 on blue-25 dark, blue-50 on blue-900 light. `data-ds-colored-user-message-bubbles` on <html> switches the colouring on.
+<a id="user-bubble"></a>`user-bubble`, on thread-dark-user-turn. `--color-background-user-message` / `--color-text-user-message`; right-aligned, rounded.
 
-<img src="components/crops/user-bubble-default.png" alt="User message bubble, default" height="116"> <img src="components/crops/user-bubble-light.png" alt="User message bubble, light" height="116"> 
+<img src="components/crops/user-bubble-default.png" alt="User message bubble, default" height="120"> <img src="components/crops/user-bubble-light.png" alt="User message bubble, light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 537.59 x 116; padding 10px 16px; radius 22px; background #173e76 `chatTheme.blue.user-msg-bg`; text System 16/24 400, #f6fafe `chatTheme.blue.user-msg-text` |
-| light | size 537.59 x 116; padding 10px 16px; radius 22px; background #e8f3fe `theme.blue.background`; text System 16/24 400, #0c274a `chatTheme.blue.user-msg-text` |
+| default | size 537.59 x 462; padding `spacing.2_5` `spacing.4`; radius `radius.token-composer-single-line`; background `bg.user-message`; text `fontSize.base`/26 `fontWeight.normal`, `text.user-message` |
+| light | size 537.59 x 462; padding `spacing.2_5` `spacing.4`; radius `radius.token-composer-single-line`; background `bg.user-message`; text `fontSize.base`/26 `fontWeight.normal`, `text.user-message` |
 
 #### Assistant markdown body
 
-<a id="markdown"></a>`markdown`, on thread-dark-table. The `.markdown.prose` block, 768 wide, 16/28 body.
+<a id="markdown"></a>`markdown`, on thread-dark-table.
 
 <img src="components/crops/markdown-default.png" alt="Assistant markdown body, default" height="120"> <img src="components/crops/markdown-light.png" alt="Assistant markdown body, light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 768 x 636; background transparent; text System 16/26 400, #ffffff `text.primary`; icon 20 x 20, #cdcdcd `icon.secondary` |
-| light | size 768 x 636; background transparent; text System 16/26 400, #0d0d0d `text.primary`; icon 20 x 20, #5d5d5d `icon.secondary` |
+| default | size 768 x 2695; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary`; icon 12 x 12, `role.text.secondary` |
+| light | size 768 x 2695; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary`; icon 12 x 12, `role.text.secondary` |
 
-Child layers: thead 836.4x33 border 1px solid #4a5565; th 192x33 border 1px solid rgba(255, 255, 255, 0.15) `border.medium`; th 128x33 border 1px solid rgba(255, 255, 255, 0.15) `border.medium`
-
-Tokens named in its classes: `--bg-tertiary`, `--text-secondary`.
+Child layers: th 128x33 border 1px solid `role.border.strong`; th 448x33 border 1px solid `role.border.strong`; th 128x33 border 1px solid `role.border.strong`
 
 #### Markdown paragraph
 
 <a id="md-paragraph"></a>`md-paragraph`, on thread-dark-table.
 
-<img src="components/crops/md-paragraph-default.png" alt="Markdown paragraph, default" height="26"> <img src="components/crops/md-paragraph-light.png" alt="Markdown paragraph, light" height="26"> 
+<img src="components/crops/md-paragraph-default.png" alt="Markdown paragraph, default" height="78"> <img src="components/crops/md-paragraph-light.png" alt="Markdown paragraph, light" height="78"> 
 
 | State | Values |
 |---|---|
-| default | size 768 x 26; background transparent; text System 16/26 400, #ffffff `text.primary` |
-| light | size 768 x 26; background transparent; text System 16/26 400, #0d0d0d `text.primary` |
+| default | size 768 x 78; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary` |
+| light | size 768 x 78; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary` |
 
-#### Markdown h3
+#### Markdown heading
 
-<a id="md-h3"></a>`md-h3`, on thread-dark-table.
+<a id="md-heading"></a>`md-heading`, on thread-dark-table.
 
-<img src="components/crops/md-h3-default.png" alt="Markdown h3, default" height="28"> <img src="components/crops/md-h3-light.png" alt="Markdown h3, light" height="28"> 
+<img src="components/crops/md-heading-default.png" alt="Markdown heading, default" height="28"> <img src="components/crops/md-heading-light.png" alt="Markdown heading, light" height="28"> 
 
 | State | Values |
 |---|---|
-| default | size 768 x 28; background transparent; text System 18/28 600, #ffffff `text.primary` |
-| light | size 768 x 28; background transparent; text System 18/28 600, #0d0d0d `text.primary` |
+| default | size 768 x `size.control.sm`; background transparent; text `fontSize.lg`/28 `fontWeight.semibold`, `role.text.primary` |
+| light | size 768 x `size.control.sm`; background transparent; text `fontSize.lg`/28 `fontWeight.semibold`, `role.text.primary` |
 
 #### Markdown strong
 
@@ -634,23 +605,86 @@ Tokens named in its classes: `--bg-tertiary`, `--text-secondary`.
 
 | State | Values |
 |---|---|
-| default | size 333.89 x 18; background transparent; text System 16/26 600, #ffffff `text.primary` |
-| light | size 333.89 x 18; background transparent; text System 16/26 600, #0d0d0d `text.primary` |
+| default | size 357.2 x `size.icon.md`; background transparent; text `fontSize.base`/26 `fontWeight.semibold`, `role.text.primary` |
+| light | size 357.2 x `size.icon.md`; background transparent; text `fontSize.base`/26 `fontWeight.semibold`, `role.text.primary` |
 
-#### Markdown table
+#### Inline code
 
-<a id="md-table"></a>`md-table`, on thread-dark-table.
+<a id="md-inline-code"></a>`md-inline-code`, on thread-dark-code.
 
-<img src="components/crops/md-table-default.png" alt="Markdown table, default" height="120"> <img src="components/crops/md-table-light.png" alt="Markdown table, light" height="120"> 
+<img src="components/crops/md-inline-code-default.png" alt="Inline code, default" height="24"> <img src="components/crops/md-inline-code-light.png" alt="Inline code, light" height="24"> 
 
 | State | Values |
 |---|---|
-| default | size 836.41 x 184; background transparent; text System 14/16 600, #ffffff `text.primary` |
-| light | size 836.41 x 184; background transparent; text System 14/16 600, #0d0d0d `text.primary` |
+| default | size 17.28 x 19.47; padding 0.744px 4.1664px; radius 3.72px; background rgba(33, 33, 33, 0.82); text Mono 14.88/26 500, `role.text.primary` |
+| light | size 17.28 x 19.47; padding 0.744px 4.1664px; radius 3.72px; background rgba(243, 243, 243, 0.82); text Mono 14.88/26 500, `role.text.primary` |
 
-Child layers: thead 836.4x33 border 1px solid #4a5565; th 192x33 border 1px solid rgba(255, 255, 255, 0.15) `border.medium`; th 128x33 border 1px solid rgba(255, 255, 255, 0.15) `border.medium`
+#### Link (citation in an answer)
 
-Tokens named in its classes: `--thread-content-width`.
+<a id="md-link"></a>`md-link`, on thread-dark-table.
+
+<img src="components/crops/md-link-default.png" alt="Link (citation in an answer), default" height="24"> <img src="components/crops/md-link-hover.png" alt="Link (citation in an answer), hover" height="24"> <img src="components/crops/md-link-focus-visible.png" alt="Link (citation in an answer), focus-visible" height="24"> <img src="components/crops/md-link-light.png" alt="Link (citation in an answer), light" height="24"> <img src="components/crops/md-link-light-hover.png" alt="Link (citation in an answer), light-hover" height="24"> <img src="components/crops/md-link-light-focus-visible.png" alt="Link (citation in an answer), light-focus-visible" height="24"> 
+
+| State | Values |
+|---|---|
+| default | size 129.94 x `size.icon.md`; padding 0 `spacing.2` 0 `spacing.1`; radius `radius.xl`; background `surface.elevated-secondary`; text System 9/9 500, `role.text.secondary`; icon 12 x 12, `role.text.secondary` |
+| hover | background `variant.primary.soft.bg-hover`; text System 9/9 500, `role.text.primary`; icon 12 x 12, `role.text.primary` |
+| focus-visible | outline 1px auto #99c8ff, offset 1px |
+| light | size 129.94 x `size.icon.md`; padding 0 `spacing.2` 0 `spacing.1`; radius `radius.xl`; background `bg.user-message-compact`; text System 9/9 500, `role.text.secondary`; icon 12 x 12, `role.text.secondary` |
+| light-hover | background `variant.primary.soft.bg-hover`; text System 9/9 500, `role.text.primary`; icon 12 x 12, `role.text.primary` |
+| light-focus-visible | outline 1px auto #005fcc, offset 1px |
+
+#### Code block
+
+<a id="code-block"></a>`code-block`, on thread-dark-code.
+
+<img src="components/crops/code-block-default.png" alt="Code block, default" height="120"> <img src="components/crops/code-block-light.png" alt="Code block, light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 768 x 262; border 1px solid `role.border.subtle`; radius `radius.3xl`; background `surface.elevated-secondary`; image linear-gradient(`variant.primary.soft.bg-hover`, `variant.primary.soft.bg-hover`); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light | size 768 x 262; border 1px solid `role.border.subtle`; radius `radius.3xl`; background `bg.user-message-compact`; image linear-gradient(`variant.primary.soft.bg-hover`, `variant.primary.soft.bg-hover`); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+
+#### Code text (inside a code block)
+
+<a id="code-text"></a>`code-text`, on thread-dark-code. The `code` element itself, not the language label in the block header; `typography.code` is read from it.
+
+<img src="components/crops/code-text-default.png" alt="Code text (inside a code block), default" height="120"> <img src="components/crops/code-text-light.png" alt="Code text (inside a code block), light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 462.45 x 194; background transparent; text `typography.code`, #f8a6c8 |
+| light | size 462.45 x 194; background transparent; text `typography.code`, #ab4f7a |
+
+#### Code block icon button
+
+<a id="code-block-button"></a>`code-block-button`, on thread-dark-code.
+
+<img src="components/crops/code-block-button-default.png" alt="Code block icon button, default" height="36"> <img src="components/crops/code-block-button-hover.png" alt="Code block icon button, hover" height="36"> <img src="components/crops/code-block-button-focus-visible.png" alt="Code block icon button, focus-visible" height="36"> <img src="components/crops/code-block-button-pressed.png" alt="Code block icon button, pressed" height="36"> <img src="components/crops/code-block-button-light.png" alt="Code block icon button, light" height="36"> <img src="components/crops/code-block-button-light-hover.png" alt="Code block icon button, light-hover" height="36"> <img src="components/crops/code-block-button-light-focus-visible.png" alt="Code block icon button, light-focus-visible" height="36"> <img src="components/crops/code-block-button-light-pressed.png" alt="Code block icon button, light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default | size 36 x `size.control.lg`; radius `radius.full`; background transparent; icon 20 x 20, `role.text.primary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 36 x `size.control.lg`; radius `radius.full`; background transparent; icon 20 x 20, `role.text.primary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
+
+#### Table
+
+<a id="md-table"></a>`md-table`, on thread-dark-table.
+
+<img src="components/crops/md-table-default.png" alt="Table, default" height="120"> <img src="components/crops/md-table-light.png" alt="Table, light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 1408 x 447; background transparent; text `fontSize.sm`/16 `fontWeight.semibold`, `role.text.primary`; icon 12 x 12, `role.text.secondary` |
+| light | size 1408 x 447; background transparent; text `fontSize.sm`/16 `fontWeight.semibold`, `role.text.primary`; icon 12 x 12, `role.text.secondary` |
+
+Child layers: th 128x33 border 1px solid `role.border.strong`; th 448x33 border 1px solid `role.border.strong`; th 128x33 border 1px solid `role.border.strong`
 
 #### Table header cell
 
@@ -660,932 +694,949 @@ Tokens named in its classes: `--thread-content-width`.
 
 | State | Values |
 |---|---|
-| default | size 192 x 33; padding 8px 24px 8px 0px; border B: 1px solid rgba(255, 255, 255, 0.15) `border.medium`; background transparent; text System 14/16 600, #ffffff `text.primary` |
-| light | size 192 x 33; padding 8px 24px 8px 0px; border B: 1px solid rgba(0, 0, 0, 0.15) `border.heavy`; background transparent; text System 14/16 600, #0d0d0d `text.primary` |
+| default | size 128 x 33; padding `spacing.2` `spacing.6` `spacing.2` 0; border B: 1px solid `role.border.strong`; background transparent; text `fontSize.sm`/16 `fontWeight.semibold`, `role.text.primary` |
+| light | size 128 x 33; padding `spacing.2` `spacing.6` `spacing.2` 0; border B: 1px solid `role.border.strong`; background transparent; text `fontSize.sm`/16 `fontWeight.semibold`, `role.text.primary` |
 
-Child layers: th 192x33 border 1px solid rgba(255, 255, 255, 0.15) `border.medium`
+Child layers: th 128x33 border 1px solid `role.border.strong`
 
 #### Table cell
 
 <a id="md-td"></a>`md-td`, on thread-dark-table.
 
-<img src="components/crops/md-td-default.png" alt="Table cell, default" height="69"> <img src="components/crops/md-td-light.png" alt="Table cell, light" height="69"> 
+<img src="components/crops/md-td-default.png" alt="Table cell, default" height="120"> <img src="components/crops/md-td-light.png" alt="Table cell, light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 192 x 69; padding 10px 24px 10px 0px; border B: 1px solid rgba(255, 255, 255, 0.05) `border.light`; background transparent; text System 14/24.00 600, #ffffff `text.primary` |
-| light | size 192 x 69; padding 10px 24px 10px 0px; border B: 1px solid rgba(0, 0, 0, 0.05) `border.light`; background transparent; text System 14/24.00 600, #0d0d0d `text.primary` |
+| default | size 128 x 125; padding `spacing.2_5` `spacing.6` `spacing.2_5` 0; border B: 1px solid `role.border.subtle`; background transparent; text `fontSize.sm`/26 `fontWeight.semibold`, `role.text.primary` |
+| light | size 128 x 125; padding `spacing.2_5` `spacing.6` `spacing.2_5` 0; border B: 1px solid `role.border.subtle`; background transparent; text `fontSize.sm`/26 `fontWeight.semibold`, `role.text.primary` |
 
-Child layers: td 192x69 border 1px solid rgba(255, 255, 255, 0.05) `border.light`
-
-#### Citation pill
-
-<a id="citation-pill"></a>`citation-pill`, on thread-dark-table. Inline source chip after a sentence: favicon, domain and a +n count.
-
-<img src="components/crops/citation-pill-default.png" alt="Citation pill, default" height="24"> <img src="components/crops/citation-pill-hover.png" alt="Citation pill, hover" height="24"> <img src="components/crops/citation-pill-light.png" alt="Citation pill, light" height="24"> <img src="components/crops/citation-pill-light-hover.png" alt="Citation pill, light-hover" height="24"> 
-
-| State | Values |
-|---|---|
-| default (same: hover) | size 97.78 x 18; background transparent; text System 9/26 400, #cdcdcd `text.secondary` |
-| light (same: light-hover) | size 97.78 x 18; background transparent; text System 9/26 400, #5d5d5d `text.secondary` |
-
-Child layers: a 97.8x18 background #303030 `bg.secondary` radius 12px
-
-Tokens named in its classes: `--text-secondary`.
-
-#### "Worked for 22s" disclosure
-
-<a id="worked-for"></a>`worked-for`, on thread-dark-user-turn. The collapsed reasoning header above an answer, secondary text and a chevron.
-
-<img src="components/crops/worked-for-default.png" alt=""Worked for 22s" disclosure, default" height="24"> <img src="components/crops/worked-for-hover.png" alt=""Worked for 22s" disclosure, hover" height="24"> <img src="components/crops/worked-for-light.png" alt=""Worked for 22s" disclosure, light" height="24"> <img src="components/crops/worked-for-light-hover.png" alt=""Worked for 22s" disclosure, light-hover" height="24"> 
-
-| State | Values |
-|---|---|
-| default | size 130.81 x 24; background transparent; text System 16/24 400, #cdcdcd `text.secondary`; icon 16 x 16, #cdcdcd `icon.secondary` |
-| hover | text System 16/24 400, #ffffff `text.primary`; icon 16 x 16, #ffffff `icon.primary` |
-| light | size 130.81 x 24; background transparent; text System 16/24 400, #8f8f8f `text.tertiary`; icon 16 x 16, #8f8f8f `icon.tertiary` |
-| light-hover | text System 16/24 400, #0d0d0d `text.primary`; icon 16 x 16, #0d0d0d `icon.primary` |
-
-Tokens named in its classes: `--interactive-label-tertiary-default`, `--text-primary`, `--text-tertiary`.
-
-#### Map widget (iframe, kept as a box)
-
-<a id="map-widget"></a>`map-widget`, on thread-dark-user-turn. An iframe in the product; the copy keeps a same-size dark box. Its frame and radius are real, its contents are not.
-
-<img src="components/crops/map-widget-default.png" alt="Map widget (iframe, kept as a box), default" height="120"> <img src="components/crops/map-widget-light.png" alt="Map widget (iframe, kept as a box), light" height="120"> 
-
-| State | Values |
-|---|---|
-| default | size 768 x 416; background transparent |
-| light | size 768 x 416; background transparent |
-
-Child layers: div 768x400 background rgba(38, 43, 61, 0.5) radius 30px
+Child layers: td 128x125 border 1px solid `role.border.subtle`
 
 #### Turn action button (Copy)
 
-<a id="turn-action"></a>`turn-action`, on thread-dark-bottom. Copy, read aloud, share and more sit under an answer at opacity 0 and appear when the turn is hovered; measured while the turn is hovered.
+<a id="turn-action"></a>`turn-action`, on thread-dark-code.
 
-<img src="components/crops/turn-action-hover.png" alt="Turn action button (Copy), hover" height="32"> <img src="components/crops/turn-action-light-hover.png" alt="Turn action button (Copy), light-hover" height="32"> 
+<img src="components/crops/turn-action-default.png" alt="Turn action button (Copy), default" height="32"> <img src="components/crops/turn-action-hover.png" alt="Turn action button (Copy), hover" height="32"> <img src="components/crops/turn-action-focus-visible.png" alt="Turn action button (Copy), focus-visible" height="32"> <img src="components/crops/turn-action-pressed.png" alt="Turn action button (Copy), pressed" height="32"> <img src="components/crops/turn-action-light.png" alt="Turn action button (Copy), light" height="32"> <img src="components/crops/turn-action-light-hover.png" alt="Turn action button (Copy), light-hover" height="32"> <img src="components/crops/turn-action-light-focus-visible.png" alt="Turn action button (Copy), light-focus-visible" height="32"> <img src="components/crops/turn-action-light-pressed.png" alt="Turn action button (Copy), light-pressed" height="32"> 
 
 | State | Values |
 |---|---|
-| hover | size 32 x 32; radius 8px; background transparent; text System 16/24 400, #cdcdcd `text.secondary`; icon 20 x 20, #cdcdcd `icon.secondary` |
-| light-hover | size 32 x 32; radius 8px; background transparent; text System 16/24 400, #5d5d5d `text.secondary`; icon 20 x 20, #5d5d5d `icon.secondary` |
+| default | size 32 x `size.control.md`; border 1px solid transparent; radius `radius.lg`; background transparent; icon 20 x 20, `role.text.disabled` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 32 x `size.control.md`; border 1px solid transparent; radius `radius.lg`; background transparent; icon 20 x 20, `role.text.disabled` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
 
-Tokens named in its classes: `--surface-hover`, `--text-secondary`.
+#### Scroll to bottom button
+
+<a id="scroll-button"></a>`scroll-button`, on thread-dark-user-turn.
+
+<img src="components/crops/scroll-button-default.png" alt="Scroll to bottom button, default" height="32"> <img src="components/crops/scroll-button-hover.png" alt="Scroll to bottom button, hover" height="32"> <img src="components/crops/scroll-button-focus-visible.png" alt="Scroll to bottom button, focus-visible" height="32"> <img src="components/crops/scroll-button-pressed.png" alt="Scroll to bottom button, pressed" height="32"> <img src="components/crops/scroll-button-light.png" alt="Scroll to bottom button, light" height="32"> <img src="components/crops/scroll-button-light-hover.png" alt="Scroll to bottom button, light-hover" height="32"> <img src="components/crops/scroll-button-light-focus-visible.png" alt="Scroll to bottom button, light-focus-visible" height="32"> <img src="components/crops/scroll-button-light-pressed.png" alt="Scroll to bottom button, light-pressed" height="32"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 32 x `size.control.md`; border 1px solid `role.border.default`; radius `radius.full`; background `role.bg.page`; text `typography.text-md`, `role.text.secondary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, `role.text.primary` |
+| focus-visible | outline 1px auto #99c8ff, offset 0px |
+| light (same: light-hover, light-pressed) | size 32 x `size.control.md`; border 1px solid `role.border.default`; radius `radius.full`; background `role.bg.page`; text `typography.text-md`, `role.text.secondary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, `role.text.primary` |
+| light-focus-visible | outline 1px auto #005fcc, offset 0px |
 
 #### Thread disclaimer
 
-<a id="thread-disclaimer"></a>`thread-disclaimer`, on thread-dark-bottom.
+<a id="thread-disclaimer"></a>`thread-disclaimer`, on thread-dark-code.
 
-<img src="components/crops/thread-disclaimer-default.png" alt="Thread disclaimer, default" height="40"> <img src="components/crops/thread-disclaimer-light.png" alt="Thread disclaimer, light" height="40"> 
+<img src="components/crops/thread-disclaimer-default.png" alt="Thread disclaimer, default" height="24"> <img src="components/crops/thread-disclaimer-light.png" alt="Thread disclaimer, light" height="24"> 
 
 | State | Values |
 |---|---|
-| default | size 1180 x 40; background transparent; text System 12/16 400, #afafaf `text.tertiary` |
-| light | size 1180 x 40; background transparent; text System 12/16 400, #8f8f8f `text.tertiary` |
-
-Child layers: div 290.3x16 background #000000 `bg.secondary-surface` radius full shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #000000 `bg.secondary-surface` 0px 0px 8px 8px
-
-Tokens named in its classes: `--main-surface-primary`, `--spacing`, `--text-tertiary`.
+| default | size 1067 x `size.icon.sm`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `role.text.disabled` |
+| light | size 1067 x `size.icon.sm`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `role.text.disabled` |
 
 ### Menus
 
-The popovers: the composer's + menu, the chat row menu, the user menu, the accent listbox and the phone's model menu. All are `.popover` on #353535 in dark (white in light), radius 20 (16 for the listbox), with 36 tall `.__menu-item` rows.
+The popovers: the chat row menu, the composer + menu (a popover of buttons, not a role=menu), the account menu, a notification channel's checkbox menu and the accent colour listbox. Menus are 90% surfaces with a 16px backdrop blur.
 
-#### Composer + menu
+#### Menu (chat row)
 
-<a id="plus-menu"></a>`plus-menu`, on home-dark-plus-menu. Opens below the composer at its full width: a row per action with a title and a grey hint, then the installed plugins, then "Type to search…".
+<a id="chat-menu"></a>`chat-menu`, on home-dark-chat-menu. Rename, Pin, Share, Archive, Delete (danger), Move to project; hairline separators between groups.
 
-<img src="components/crops/plus-menu-default.png" alt="Composer + menu, default" height="120"> <img src="components/crops/plus-menu-light.png" alt="Composer + menu, light" height="120"> 
-
-| State | Values |
-|---|---|
-| default | size 768 x 376; padding 8px 0px; radius 20px; background #212121 `bg.primary`; shadow rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset; text System 14/20 400, #ffffff `text.primary`; transform translate(0px, 60px); icon 20 x 20, #ffffff `icon.primary` |
-| light | size 768 x 376; padding 8px 0px; radius 20px; background #ffffff `bg.primary`; shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 8px 0px, rgba(0, 0, 0, 0.02) 0px 4px 80px 8px; text System 14/20 400, #0d0d0d `text.primary`; transform translate(0px, 60px); icon 20 x 20, #0d0d0d `icon.primary` |
-
-Tokens named in its classes: `--bg-primary`, `--main-surface-primary`, `--menu-item-height`, `--radix-popper-available-height`, `--radix-popper-available-width`, `--text-primary`, `--text-tertiary`.
-
-#### + menu item
-
-<a id="plus-menu-item"></a>`plus-menu-item`, on home-dark-plus-menu. 36 tall, radius 12, inset 8px; the first row opens highlighted with the `--interactive-bg-secondary-hover` fill.
-
-<img src="components/crops/plus-menu-item-default.png" alt="+ menu item, default" height="36"> <img src="components/crops/plus-menu-item-hover.png" alt="+ menu item, hover" height="36"> <img src="components/crops/plus-menu-item-light.png" alt="+ menu item, light" height="36"> <img src="components/crops/plus-menu-item-light-hover.png" alt="+ menu item, light-hover" height="36"> <img src="components/crops/plus-menu-item-highlighted.png" alt="+ menu item, highlighted" height="36"> <img src="components/crops/plus-menu-item-light-highlighted.png" alt="+ menu item, light-highlighted" height="36"> 
+<img src="components/crops/chat-menu-default.png" alt="Menu (chat row), default" height="120"> <img src="components/crops/chat-menu-light.png" alt="Menu (chat row), light" height="120"> 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 752 x 36; padding 6px 8px; radius 12px; background transparent; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| highlighted | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| light (same: light-hover) | size 752 x 36; padding 6px 8px; radius 12px; background transparent; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-highlighted | background rgba(0, 0, 0, 0.04) `component.popover-shadow-ring` |
-
-Tokens named in its classes: `--menu-item-icon-opacity`, `--text-primary`, `--text-tertiary`.
-
-#### Chat row menu
-
-<a id="chat-menu"></a>`chat-menu`, on home-dark-chat-menu. `.popover`, `--main-surface-primary` fill (#353535 in dark), radius 16; Share, Rename, Pin chat, Archive, Delete (danger), Move to project.
-
-<img src="components/crops/chat-menu-default.png" alt="Chat row menu, default" height="120"> <img src="components/crops/chat-menu-light.png" alt="Chat row menu, light" height="120"> 
-
-| State | Values |
-|---|---|
-| default | size 205.88 x 270; padding 10px 0px; radius 20px; background #353535 `component.popover-bg`; shadow rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| light | size 205.88 x 270; padding 10px 0px; radius 20px; background #ffffff `bg.primary`; shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 8px 0px, rgba(0, 0, 0, 0.02) 0px 4px 80px 8px; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-
-Tokens named in its classes: `--border-default`, `--main-surface-primary`, `--radix-align-offset`, `--radix-dropdown-menu-content-available-height`, `--radix-dropdown-menu-content-available-width`, `--radix-dropdown-menu-content-transform-origin`, `--radix-dropdown-menu-trigger-height`, `--radix-dropdown-menu-trigger-width`, `--trigger-width`.
+| default | size 188.88 x 287; padding `spacing.2_5`; radius `radius.2xl`; background `role.bg.overlay`; shadow rgba(255, 255, 255, 0.15) 0px 0px 0px 0.5px, rgba(255, 255, 255, 0.15) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.12) 0px 8px 16px -4px; backdrop blur(8px); text `typography.text-sm`, `role.text.primary`; icon 16 x 16, `role.text.primary` |
+| light | size 188.88 x 287; padding `spacing.2_5`; radius `radius.2xl`; background `role.bg.overlay`; shadow rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.12) 0px 8px 16px -4px; backdrop blur(8px); text `typography.text-sm`, `role.text.primary`; icon 16 x 16, `role.text.primary` |
 
 #### Menu item
 
-<a id="menu-item"></a>`menu-item`, on home-dark-chat-menu. `.__menu-item`, 36 tall, radius 10, icon and 14px label.
+<a id="menu-item"></a>`menu-item`, on home-dark-chat-menu.
 
-<img src="components/crops/menu-item-default.png" alt="Menu item, default" height="36"> <img src="components/crops/menu-item-hover.png" alt="Menu item, hover" height="36"> <img src="components/crops/menu-item-light.png" alt="Menu item, light" height="36"> <img src="components/crops/menu-item-light-hover.png" alt="Menu item, light-hover" height="36"> 
+<img src="components/crops/menu-item-default.png" alt="Menu item, default" height="36"> <img src="components/crops/menu-item-hover.png" alt="Menu item, hover" height="36"> <img src="components/crops/menu-item-pressed.png" alt="Menu item, pressed" height="36"> <img src="components/crops/menu-item-light.png" alt="Menu item, light" height="36"> <img src="components/crops/menu-item-light-hover.png" alt="Menu item, light-hover" height="36"> <img src="components/crops/menu-item-light-pressed.png" alt="Menu item, light-pressed" height="36"> 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 185.88 x 36; padding 6px 32px 6px 10px; radius 12px; background transparent; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| light (same: light-hover) | size 185.88 x 36; padding 6px 32px 6px 10px; radius 12px; background transparent; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
+| default | size 168.88 x `size.control.lg`; padding `spacing.1_5` `spacing.2_5`; radius `radius.xl`; background transparent; text `typography.text-sm`, `role.text.primary` |
+| hover, pressed | background `variant.primary.soft.bg-hover` |
+| light | size 168.88 x `size.control.lg`; padding `spacing.1_5` `spacing.2_5`; radius `radius.xl`; background transparent; text `typography.text-sm`, `role.text.primary` |
+| light-hover, light-pressed | background `variant.primary.soft.bg-hover` |
 
-Tokens named in its classes: `--menu-item-icon-opacity`.
+Child layers: span 18x18 background `variant.primary.solid.bg`
 
-#### Menu item (danger)
+#### Menu item (Delete, danger)
 
 <a id="menu-item-danger"></a>`menu-item-danger`, on home-dark-chat-menu.
 
-<img src="components/crops/menu-item-danger-default.png" alt="Menu item (danger), default" height="36"> <img src="components/crops/menu-item-danger-hover.png" alt="Menu item (danger), hover" height="36"> <img src="components/crops/menu-item-danger-light.png" alt="Menu item (danger), light" height="36"> <img src="components/crops/menu-item-danger-light-hover.png" alt="Menu item (danger), light-hover" height="36"> 
+<img src="components/crops/menu-item-danger-default.png" alt="Menu item (Delete, danger), default" height="36"> <img src="components/crops/menu-item-danger-hover.png" alt="Menu item (Delete, danger), hover" height="36"> <img src="components/crops/menu-item-danger-light.png" alt="Menu item (Delete, danger), light" height="36"> <img src="components/crops/menu-item-danger-light-hover.png" alt="Menu item (Delete, danger), light-hover" height="36"> 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 185.88 x 36; padding 6px 32px 6px 10px; radius 12px; background transparent; text System 14/20 400, #fa423e `interactive.label-hover-danger-ghost`; icon 20 x 20, #fa423e `interactive.icon-hover-danger-ghost` |
-| light (same: light-hover) | size 185.88 x 36; padding 6px 32px 6px 10px; radius 12px; background transparent; text System 14/20 400, #ff002a `text.danger`; icon 20 x 20, #ff002a `icon.status-error` |
+| default | size 168.88 x `size.control.lg`; padding `spacing.1_5` `spacing.2_5`; radius `radius.xl`; background transparent; text `typography.text-sm`, `text.danger` |
+| hover | background `variant.primary.soft.bg-hover` |
+| light | size 168.88 x `size.control.lg`; padding `spacing.1_5` `spacing.2_5`; radius `radius.xl`; background transparent; text `typography.text-sm`, `text.danger` |
+| light-hover | background `variant.primary.soft.bg-hover` |
 
-Tokens named in its classes: `--menu-item-icon-opacity`.
+Child layers: span 18x18 background `variant.danger.soft.text`
 
-#### Menu separator
+#### Menu (composer +)
 
-<a id="menu-separator"></a>`menu-separator`, on home-dark-chat-menu.
+<a id="plus-menu"></a>`plus-menu`, on home-dark-plus-menu. Not a role=menu: a popover of buttons at the composer's width, each with a title and a grey hint.
 
-<img src="components/crops/menu-separator-default.png" alt="Menu separator, default" height="24"> <img src="components/crops/menu-separator-light.png" alt="Menu separator, light" height="24"> 
-
-| State | Values |
-|---|---|
-| default | size 173.88 x 1; background rgba(255, 255, 255, 0.15) `surface.surface-hover` |
-| light | size 173.88 x 1; background rgba(0, 0, 0, 0.1) `surface.main-surface-secondary-selected` |
-
-Tokens named in its classes: `--border-default`.
-
-#### User menu
-
-<a id="user-menu"></a>`user-menu`, on home-dark-user-menu. Opens upward over the account row at its width: the account, Upgrade plan, Personalization, Profile, Settings, Help, Log out.
-
-<img src="components/crops/user-menu-default.png" alt="User menu, default" height="120"> <img src="components/crops/user-menu-light.png" alt="User menu, light" height="120"> 
+<img src="components/crops/plus-menu-default.png" alt="Menu (composer +), default" height="36"> <img src="components/crops/plus-menu-light.png" alt="Menu (composer +), light" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 248 x 321.14; padding 10px 0px; radius 20px; background #353535 `component.popover-bg`; shadow rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset; text System 12/17.14 600, #ffffff `text.primary`; icon 16 x 16, #ffffff `icon.primary` |
-| light | size 248 x 321.14; padding 10px 0px; radius 20px; background #ffffff `bg.primary`; shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 8px 0px, rgba(0, 0, 0, 0.02) 0px 4px 80px 8px; text System 12/17.14 600, #ffffff `text.inverted`; icon 16 x 16, #0d0d0d `icon.primary` |
+| default | size 750 x `size.control.lg`; padding `spacing.1_5` `spacing.2`; radius `radius.xl`; background `variant.primary.soft.bg-hover`; text `typography.text-sm`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light | size 750 x `size.control.lg`; padding `spacing.1_5` `spacing.2`; radius `radius.xl`; background `variant.primary.soft.bg-hover`; text `typography.text-sm`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
 
-Tokens named in its classes: `--border-default`, `--interactive-bg-secondary-selected`, `--main-surface-primary`, `--radix-align-offset`, `--radix-dropdown-menu-content-available-height`, `--radix-dropdown-menu-content-available-width`, `--radix-dropdown-menu-content-transform-origin`, `--radix-dropdown-menu-trigger-height`, `--radix-dropdown-menu-trigger-width`, `--sidebar-width`, `--text-secondary`, `--text-tertiary`, `--trigger-width`.
+#### Menu item with hint (composer +)
 
-#### Accent colour menu
+<a id="plus-menu-item"></a>`plus-menu-item`, on home-dark-plus-menu.
 
-<a id="accent-menu"></a>`accent-menu`, on settings-dark-accent-menu. Default, Blue, Green, Yellow, Pink, Orange, Purple, White (`data-chat-theme="black"`), each with a 10px dot.
-
-<img src="components/crops/accent-menu-default.png" alt="Accent colour menu, default" height="120"> <img src="components/crops/accent-menu-light.png" alt="Accent colour menu, light" height="120"> 
+<img src="components/crops/plus-menu-item-default.png" alt="Menu item with hint (composer +), default" height="36"> <img src="components/crops/plus-menu-item-hover.png" alt="Menu item with hint (composer +), hover" height="36"> <img src="components/crops/plus-menu-item-light.png" alt="Menu item with hint (composer +), light" height="36"> <img src="components/crops/plus-menu-item-light-hover.png" alt="Menu item with hint (composer +), light-hover" height="36"> <img src="components/crops/plus-menu-item-highlighted.png" alt="Menu item with hint (composer +), highlighted" height="36"> <img src="components/crops/plus-menu-item-light-highlighted.png" alt="Menu item with hint (composer +), light-highlighted" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 220 x 300; padding 6px 0px; radius 16px; background #353535 `component.popover-bg`; shadow rgba(0, 0, 0, 0.32) 0px 8px 16px 0px, rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset, rgba(0, 0, 0, 0.62) 0px 0px 1px 0px; text System 14/20 400, #ffffff `text.primary`; icon 16 x 16, #ffffff `icon.primary` |
-| light | size 220 x 300; padding 6px 0px; radius 16px; background #ffffff `bg.primary`; shadow rgba(0, 0, 0, 0.08) 0px 8px 12px 0px, rgba(0, 0, 0, 0.62) 0px 0px 1px 0px; text System 14/20 400, #0d0d0d `text.primary`; icon 16 x 16, #0d0d0d `icon.primary` |
+| default (same: hover) | size 750 x `size.control.lg`; padding `spacing.1_5` `spacing.2`; radius `radius.xl`; background transparent; text `typography.text-sm`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| highlighted | background `variant.primary.soft.bg-hover` |
+| light (same: light-hover) | size 750 x `size.control.lg`; padding `spacing.1_5` `spacing.2`; radius `radius.xl`; background transparent; text `typography.text-sm`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light-highlighted | background `variant.primary.soft.bg-hover` |
 
-Tokens named in its classes: `--main-surface-primary`, `--radix-select-content-available-height`, `--radix-select-content-available-width`, `--radix-select-content-transform-origin`, `--radix-select-trigger-height`, `--radix-select-trigger-width`, `--theme-submit-btn-bg`.
+#### Menu (account)
 
-#### Accent option
+<a id="user-menu"></a>`user-menu`, on home-dark-user-menu.
 
-<a id="accent-option"></a>`accent-option`, on settings-dark-accent-menu.
-
-<img src="components/crops/accent-option-default.png" alt="Accent option, default" height="36"> <img src="components/crops/accent-option-hover.png" alt="Accent option, hover" height="36"> <img src="components/crops/accent-option-light.png" alt="Accent option, light" height="36"> <img src="components/crops/accent-option-light-hover.png" alt="Accent option, light-hover" height="36"> <img src="components/crops/accent-option-checked.png" alt="Accent option, checked" height="36"> <img src="components/crops/accent-option-light-checked.png" alt="Accent option, light-checked" height="36"> 
-
-| State | Values |
-|---|---|
-| default (same: hover) | size 208 x 36; padding 6px 32px 6px 10px; radius 10px; background transparent; text System 14/20 400, #ffffff `text.primary` |
-| checked | padding 6px 10px; icon 16 x 16, #ffffff `icon.primary` |
-| light (same: light-hover) | size 208 x 36; padding 6px 32px 6px 10px; radius 10px; background transparent; text System 14/20 400, #0d0d0d `text.primary` |
-| light-checked | padding 6px 10px; icon 16 x 16, #0d0d0d `icon.primary` |
-
-Child layers: div 10x10 background #48a04c `theme.green.text` radius full
-
-Tokens named in its classes: `--theme-submit-btn-bg`.
-
-#### Model menu (phone)
-
-<a id="model-menu"></a>`model-menu`, on mobile-thread-dark-model-menu. ChatGPT Plus with an Upgrade pill, and ChatGPT (checked).
-
-<img src="components/crops/model-menu-default.png" alt="Model menu (phone), default" height="120"> <img src="components/crops/model-menu-light.png" alt="Model menu (phone), light" height="120"> 
+<img src="components/crops/user-menu-default.png" alt="Menu (account), default" height="120"> <img src="components/crops/user-menu-light.png" alt="Menu (account), light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 318.08 x 122.28; padding 10px 0px; radius 20px; background #353535 `component.popover-bg`; shadow rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| light | size 318.08 x 122.28; padding 10px 0px; radius 20px; background #ffffff `bg.primary`; shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 8px 0px, rgba(0, 0, 0, 0.02) 0px 4px 80px 8px; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
+| default | size 324 x 316; padding `spacing.2_5`; radius `radius.2xl`; background `role.bg.overlay`; shadow rgba(255, 255, 255, 0.15) 0px 0px 0px 0.5px, rgba(255, 255, 255, 0.15) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.12) 0px 8px 16px -4px; backdrop blur(8px); text `fontSize.xs`/17.14 `fontWeight.semibold`, `role.text.on-accent`; icon 16 x 16, `role.text.disabled` |
+| light | size 324 x 316; padding `spacing.2_5`; radius `radius.2xl`; background `role.bg.overlay`; shadow rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.12) 0px 8px 16px -4px; backdrop blur(8px); text `fontSize.xs`/17.14 `fontWeight.semibold`, `role.text.inverse`; icon 16 x 16, `role.text.disabled` |
 
-Tokens named in its classes: `--main-surface-primary`, `--radix-align-offset`, `--radix-dropdown-menu-content-available-height`, `--radix-dropdown-menu-content-available-width`, `--radix-dropdown-menu-content-transform-origin`, `--radix-dropdown-menu-trigger-height`, `--radix-dropdown-menu-trigger-width`, `--text-primary`, `--text-secondary`, `--text-tertiary`, `--trigger-width`.
+#### Checkbox menu item (checked)
 
-### Search
+<a id="checkbox-menu-item"></a>`checkbox-menu-item`, on settings-dark-notifications-menu. `menuitemcheckbox`, aria-checked=true, a trailing check.
 
-The search dialog the sidebar's search button opens: an input row and recent chats.
-
-#### Search dialog
-
-<a id="search-dialog"></a>`search-dialog`, on home-dark-search. A centred 718 wide panel: the input row, then "Recent chats" rows.
-
-<img src="components/crops/search-dialog-default.png" alt="Search dialog, default" height="120"> <img src="components/crops/search-dialog-light.png" alt="Search dialog, light" height="120"> 
+<img src="components/crops/checkbox-menu-item-default.png" alt="Checkbox menu item (checked), default" height="36"> <img src="components/crops/checkbox-menu-item-hover.png" alt="Checkbox menu item (checked), hover" height="36"> <img src="components/crops/checkbox-menu-item-light.png" alt="Checkbox menu item (checked), light" height="36"> <img src="components/crops/checkbox-menu-item-light-hover.png" alt="Checkbox menu item (checked), light-hover" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 720 x 462; border 1px solid rgba(255, 255, 255, 0.15) `border.medium`; radius 16px; background #212121 `bg.primary`; shadow rgba(0, 0, 0, 0.25) 0px 14px 62px 0px; text System 14/20 400, #cdcdcd `text.secondary`; icon 20 x 20, #ffffff `icon.primary`; placeholder #afafaf `text.tertiary` |
-| light | size 720 x 462; border 1px solid rgba(0, 0, 0, 0.1) `border.default`; radius 16px; background #ffffff `bg.primary`; shadow rgba(0, 0, 0, 0.25) 0px 14px 62px 0px; text System 14/20 400, #5d5d5d `text.secondary`; icon 20 x 20, #0d0d0d `icon.primary`; placeholder #8f8f8f `text.tertiary` |
+| default | size 220 x `size.control.lg`; padding `spacing.1_5` `spacing.2_5`; radius `radius.xl`; background transparent; text `typography.text-sm`, `role.text.primary`; icon 16 x 16, `role.text.primary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| light | size 220 x `size.control.lg`; padding `spacing.1_5` `spacing.2_5`; radius `radius.xl`; background transparent; text `typography.text-sm`, `role.text.primary`; icon 16 x 16, `role.text.primary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
 
-Tokens named in its classes: `--spacing`.
+#### Select listbox (accent colour)
 
-#### Search input
+<a id="accent-menu"></a>`accent-menu`, on settings-dark-accent-menu. Default, Blue (checked), Green, Yellow, Pink, Orange, Purple, White, Custom; each with a colour dot.
 
-<a id="search-input"></a>`search-input`, on home-dark-search.
-
-<img src="components/crops/search-input-default.png" alt="Search input, default" height="24"> <img src="components/crops/search-input-light.png" alt="Search input, light" height="24"> 
-
-| State | Values |
-|---|---|
-| default | size 642 x 24; background transparent; text System 16/24 400, #ffffff `text.primary`; placeholder #afafaf `text.tertiary` |
-| light | size 642 x 24; background transparent; text System 16/24 400, #0d0d0d `text.primary`; placeholder #8f8f8f `text.tertiary` |
-
-#### Search section title
-
-<a id="search-section-title"></a>`search-section-title`, on home-dark-search.
-
-<img src="components/crops/search-section-title-default.png" alt="Search section title, default" height="36"> <img src="components/crops/search-section-title-light.png" alt="Search section title, light" height="36"> 
+<img src="components/crops/accent-menu-default.png" alt="Select listbox (accent colour), default" height="120"> <img src="components/crops/accent-menu-light.png" alt="Select listbox (accent colour), light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 718 x 36; padding 8px 24px; background transparent; text System 14/20 400, #cdcdcd `text.secondary` |
-| light | size 718 x 36; padding 8px 24px; background transparent; text System 14/20 400, #5d5d5d `text.secondary` |
+| default | size 240 x 344; padding `spacing.2_5`; radius `radius.2xl`; background `role.bg.overlay`; shadow rgba(255, 255, 255, 0.15) 0px 0px 0px 0.5px, rgba(255, 255, 255, 0.15) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.12) 0px 8px 16px -4px; backdrop blur(8px); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 18 x 18, `role.text.primary` |
+| light | size 240 x 344; padding `spacing.2_5`; radius `radius.2xl`; background `role.bg.overlay`; shadow rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.12) 0px 8px 16px -4px; backdrop blur(8px); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 18 x 18, `role.text.primary` |
 
-#### Search result row
+#### Select option (accent)
+
+<a id="accent-item"></a>`accent-item`, on settings-dark-accent-menu.
+
+<img src="components/crops/accent-item-default.png" alt="Select option (accent), default" height="36"> <img src="components/crops/accent-item-hover.png" alt="Select option (accent), hover" height="36"> <img src="components/crops/accent-item-light.png" alt="Select option (accent), light" height="36"> <img src="components/crops/accent-item-light-hover.png" alt="Select option (accent), light-hover" height="36"> <img src="components/crops/accent-item-checked.png" alt="Select option (accent), checked" height="36"> <img src="components/crops/accent-item-light-checked.png" alt="Select option (accent), light-checked" height="36"> 
+
+| State | Values |
+|---|---|
+| default | size 220 x `size.control.lg`; padding `spacing.1_5` `spacing.2_5`; radius `radius.xl`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| checked | icon 18 x 18, `role.text.primary` |
+| light | size 220 x `size.control.lg`; padding `spacing.1_5` `spacing.2_5`; radius `radius.xl`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-checked | icon 18 x 18, `role.text.primary` |
+
+Child layers: span 12x12 background #04bb9f border 1px solid `role.border.default` radius 9999px
+
+### Dialogs
+
+The delete confirmation (420 wide, a danger action and Cancel) and the global search dialog with its filter tabs and empty state.
+
+#### Dialog (delete confirmation)
+
+<a id="confirm-dialog"></a>`confirm-dialog`, on home-dark-delete-confirm. 420 wide: title, body naming the chat, Cancel and a danger Delete chat, close in the corner.
+
+<img src="components/crops/confirm-dialog-default.png" alt="Dialog (delete confirmation), default" height="120"> <img src="components/crops/confirm-dialog-light.png" alt="Dialog (delete confirmation), light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 420 x 164; radius `radius.3xl`; background `role.bg.overlay`; shadow rgba(255, 255, 255, 0.15) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.1) 0px 4px 8px -2px; backdrop blur(24px); text `fontSize.xl`/28 `fontWeight.semibold`, `role.text.primary`; transition height 0.3s cubic-bezier(0.23, 1, 0.32, 1); icon 16 x 16, `text.tooltip-tertiary` |
+| light | size 420 x 164; radius `radius.3xl`; background `role.bg.overlay`; shadow rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.1) 0px 4px 8px -2px; backdrop blur(24px); text `fontSize.xl`/28 `fontWeight.semibold`, `role.text.primary`; transition height 0.3s cubic-bezier(0.23, 1, 0.32, 1); icon 16 x 16, rgba(13, 13, 13, 0.8) |
+
+#### Dialog backdrop
+
+<a id="dialog-backdrop"></a>`dialog-backdrop`, on home-dark-delete-confirm.
+
+| State | Values |
+|---|---|
+| default | size 1440 x 900; background `role.bg.scrim` |
+| light | size 1440 x 900; background `role.bg.scrim` |
+
+#### Danger button (Delete chat)
+
+<a id="button-danger"></a>`button-danger`, on home-dark-delete-confirm.
+
+<img src="components/crops/button-danger-default.png" alt="Danger button (Delete chat), default" height="32"> <img src="components/crops/button-danger-hover.png" alt="Danger button (Delete chat), hover" height="32"> <img src="components/crops/button-danger-focus-visible.png" alt="Danger button (Delete chat), focus-visible" height="32"> <img src="components/crops/button-danger-pressed.png" alt="Danger button (Delete chat), pressed" height="32"> <img src="components/crops/button-danger-light.png" alt="Danger button (Delete chat), light" height="32"> <img src="components/crops/button-danger-light-hover.png" alt="Danger button (Delete chat), light-hover" height="32"> <img src="components/crops/button-danger-light-focus-visible.png" alt="Danger button (Delete chat), light-focus-visible" height="32"> <img src="components/crops/button-danger-light-pressed.png" alt="Danger button (Delete chat), light-pressed" height="32"> 
+
+| State | Values |
+|---|---|
+| default | size 116.86 x `size.control.md`; padding `spacing.1_5` `spacing.4`; border 1px solid transparent; radius `radius.full`; background `component.button-danger.bg`; text `fontSize.base`/18 `fontWeight.normal`, `text.danger` |
+| hover | background `component.button-danger.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `component.button-danger.bg-hover` |
+| light | size 116.86 x `size.control.md`; padding `spacing.1_5` `spacing.4`; border 1px solid transparent; radius `radius.full`; background `component.button-danger.bg`; text `fontSize.base`/18 `fontWeight.normal`, `text.danger` |
+| light-hover | background `component.button-danger.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `component.button-danger.bg-hover` |
+
+#### Secondary button (Cancel)
+
+<a id="button-secondary"></a>`button-secondary`, on home-dark-delete-confirm.
+
+<img src="components/crops/button-secondary-default.png" alt="Secondary button (Cancel), default" height="32"> <img src="components/crops/button-secondary-hover.png" alt="Secondary button (Cancel), hover" height="32"> <img src="components/crops/button-secondary-focus-visible.png" alt="Secondary button (Cancel), focus-visible" height="32"> <img src="components/crops/button-secondary-pressed.png" alt="Secondary button (Cancel), pressed" height="32"> <img src="components/crops/button-secondary-light.png" alt="Secondary button (Cancel), light" height="32"> <img src="components/crops/button-secondary-light-hover.png" alt="Secondary button (Cancel), light-hover" height="32"> <img src="components/crops/button-secondary-light-focus-visible.png" alt="Secondary button (Cancel), light-focus-visible" height="32"> <img src="components/crops/button-secondary-light-pressed.png" alt="Secondary button (Cancel), light-pressed" height="32"> 
+
+| State | Values |
+|---|---|
+| default | size 83.89 x `size.control.md`; padding `spacing.1_5` `spacing.4`; border 1px solid `role.border.default`; radius `radius.full`; background `surface.elevated-secondary`; text `fontSize.base`/18 `fontWeight.normal`, `role.text.primary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 83.89 x `size.control.md`; padding `spacing.1_5` `spacing.4`; border 1px solid `role.border.default`; radius `radius.full`; background `bg.user-message-compact`; text `fontSize.base`/18 `fontWeight.normal`, `role.text.primary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
+
+#### Dialog close button
+
+<a id="dialog-close"></a>`dialog-close`, on home-dark-delete-confirm.
+
+<img src="components/crops/dialog-close-default.png" alt="Dialog close button, default" height="24"> <img src="components/crops/dialog-close-hover.png" alt="Dialog close button, hover" height="24"> <img src="components/crops/dialog-close-focus-visible.png" alt="Dialog close button, focus-visible" height="24"> <img src="components/crops/dialog-close-pressed.png" alt="Dialog close button, pressed" height="24"> <img src="components/crops/dialog-close-light.png" alt="Dialog close button, light" height="24"> <img src="components/crops/dialog-close-light-hover.png" alt="Dialog close button, light-hover" height="24"> <img src="components/crops/dialog-close-light-focus-visible.png" alt="Dialog close button, light-focus-visible" height="24"> <img src="components/crops/dialog-close-light-pressed.png" alt="Dialog close button, light-pressed" height="24"> 
+
+| State | Values |
+|---|---|
+| default | size 24 x `size.control.2xs`; padding `spacing.1`; radius `radius.sm`; background transparent; text `typography.onboarding-label`, `text.tooltip-tertiary`; icon 16 x 16, `text.tooltip-tertiary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 24 x `size.control.2xs`; padding `spacing.1`; radius `radius.sm`; background transparent; text `typography.onboarding-label`, rgba(13, 13, 13, 0.8); icon 16 x 16, rgba(13, 13, 13, 0.8) |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
+
+#### Dialog (global search)
+
+<a id="search-dialog"></a>`search-dialog`, on home-dark-search.
+
+<img src="components/crops/search-dialog-default.png" alt="Dialog (global search), default" height="120"> <img src="components/crops/search-dialog-light.png" alt="Dialog (global search), light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 720 x 460; border 1px solid `role.border.default`; radius `radius.2xl`; background `role.bg.surface`; shadow rgba(0, 0, 0, 0.19) 0px 16px 32px -8px; text `typography.text-sm`, `role.text.secondary`; transform translate(-360px, -230px); icon 20 x 20, `role.text.secondary`; placeholder `role.text.disabled` |
+| light | size 720 x 460; border 1px solid `role.border.default`; radius `radius.2xl`; background `role.bg.raised`; shadow rgba(0, 0, 0, 0.19) 0px 16px 32px -8px; text `typography.text-sm`, `role.text.secondary`; transform translate(-360px, -230px); icon 20 x 20, `role.text.secondary`; placeholder `role.text.disabled` |
+
+#### Text field (search)
+
+<a id="search-field"></a>`search-field`, on home-dark-search, home-dark-search-empty.
+
+<img src="components/crops/search-field-default.png" alt="Text field (search), default" height="24"> <img src="components/crops/search-field-focus-visible.png" alt="Text field (search), focus-visible" height="24"> <img src="components/crops/search-field-light.png" alt="Text field (search), light" height="24"> <img src="components/crops/search-field-typed.png" alt="Text field (search), typed" height="24"> <img src="components/crops/search-field-light-focus-visible.png" alt="Text field (search), light-focus-visible" height="24"> <img src="components/crops/search-field-light-typed.png" alt="Text field (search), light-typed" height="24"> 
+
+| State | Values |
+|---|---|
+| default (same: focus-visible) | size 642 x `size.control.2xs`; background transparent; text `typography.text-md`, `role.text.primary`; placeholder `role.text.disabled` |
+| typed | size 565.13 x `size.control.2xs` |
+| light (same: light-focus-visible) | size 642 x `size.control.2xs`; background transparent; text `typography.text-md`, `role.text.primary`; placeholder `role.text.disabled` |
+| light-typed | size 565.13 x `size.control.2xs` |
+
+#### List row (search result)
 
 <a id="search-result"></a>`search-result`, on home-dark-search.
 
-<img src="components/crops/search-result-default.png" alt="Search result row, default" height="48"> <img src="components/crops/search-result-hover.png" alt="Search result row, hover" height="48"> <img src="components/crops/search-result-light.png" alt="Search result row, light" height="48"> <img src="components/crops/search-result-light-hover.png" alt="Search result row, light-hover" height="48"> <img src="components/crops/search-result-first.png" alt="Search result row, first" height="48"> <img src="components/crops/search-result-light-first.png" alt="Search result row, light-first" height="48"> 
+<img src="components/crops/search-result-default.png" alt="List row (search result), default" height="48"> <img src="components/crops/search-result-hover.png" alt="List row (search result), hover" height="48"> <img src="components/crops/search-result-focus-visible.png" alt="List row (search result), focus-visible" height="48"> <img src="components/crops/search-result-light.png" alt="List row (search result), light" height="48"> <img src="components/crops/search-result-light-hover.png" alt="List row (search result), light-hover" height="48"> <img src="components/crops/search-result-light-focus-visible.png" alt="List row (search result), light-focus-visible" height="48"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, first) | size 694 x 48; padding 8px 12px; radius 12px; background transparent; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| light (same: light-hover, light-first) | size 694 x 48; padding 8px 12px; radius 12px; background transparent; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
+| default (same: hover) | size 694 x `size.control.3xl`; padding `spacing.2` `spacing.3`; radius `radius.xl`; background transparent; text `typography.text-sm`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| focus-visible | outline 2px solid `role.border.strong`, offset -2px |
+| light (same: light-hover) | size 694 x `size.control.3xl`; padding `spacing.2` `spacing.3`; radius `radius.xl`; background transparent; text `typography.text-sm`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light-focus-visible | outline 2px solid `role.border.strong`, offset -2px |
 
-### Settings
+#### Tab (search filter)
 
-The settings dialog: a close button, a search field and a left nav of tabs, then the General pane of rows with select buttons and a toggle.
+<a id="search-tab"></a>`search-tab`, on home-dark-search-empty.
 
-#### Settings dialog
-
-<a id="settings-dialog"></a>`settings-dialog`, on settings-dark-general. Centred, radius 16 (`--radius-2xl`), `--bg-elevated-primary` fill: a left nav column and the pane.
-
-<img src="components/crops/settings-dialog-default.png" alt="Settings dialog, default" height="120"> <img src="components/crops/settings-dialog-light.png" alt="Settings dialog, light" height="120"> 
+<img src="components/crops/search-tab-default.png" alt="Tab (search filter), default" height="36"> <img src="components/crops/search-tab-hover.png" alt="Tab (search filter), hover" height="36"> <img src="components/crops/search-tab-focus-visible.png" alt="Tab (search filter), focus-visible" height="36"> <img src="components/crops/search-tab-pressed.png" alt="Tab (search filter), pressed" height="36"> <img src="components/crops/search-tab-light.png" alt="Tab (search filter), light" height="36"> <img src="components/crops/search-tab-light-hover.png" alt="Tab (search filter), light-hover" height="36"> <img src="components/crops/search-tab-selected.png" alt="Tab (search filter), selected" height="36"> <img src="components/crops/search-tab-light-focus-visible.png" alt="Tab (search filter), light-focus-visible" height="36"> <img src="components/crops/search-tab-light-pressed.png" alt="Tab (search filter), light-pressed" height="36"> <img src="components/crops/search-tab-light-selected.png" alt="Tab (search filter), light-selected" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 680 x 600; radius 16px; background #212121 `bg.primary`; shadow rgba(0, 0, 0, 0.32) 0px 8px 16px 0px, rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset, rgba(0, 0, 0, 0.62) 0px 0px 1px 0px; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary`; placeholder #afafaf `text.tertiary` |
-| light | size 680 x 600; radius 16px; background #ffffff `bg.primary`; shadow rgba(0, 0, 0, 0.08) 0px 8px 12px 0px, rgba(0, 0, 0, 0.62) 0px 0px 1px 0px; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary`; placeholder #8f8f8f `text.tertiary` |
+| default | size 61.52 x `size.control.lg`; padding 0 `spacing.3`; radius `radius.full`; background transparent; text `typography.text-sm`, `role.text.secondary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| selected | size 40.08 x `size.control.lg`; background `bg.disabled`; text `typography.text-sm`, `role.text.primary` |
+| light | size 61.52 x `size.control.lg`; padding 0 `spacing.3`; radius `radius.full`; background transparent; text `typography.text-sm`, `role.text.secondary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
+| light-selected | size 40.08 x `size.control.lg`; background `bg.disabled`; text `typography.text-sm`, `role.text.primary` |
 
-Tokens named in its classes: `--bg-primary`, `--bg-secondary`, `--border-default`, `--border-extra-light`, `--border-heavy`, `--border-light`, `--end`, `--icon-tertiary`, `--main-surface-tertiary`, `--surface-hover`, `--text-primary`, `--text-tertiary`.
+#### Empty state (no results)
 
-#### Settings close button
+<a id="search-empty"></a>`search-empty`, on home-dark-search-empty.
 
-<a id="settings-close"></a>`settings-close`, on settings-dark-general.
-
-<img src="components/crops/settings-close-default.png" alt="Settings close button, default" height="36"> <img src="components/crops/settings-close-hover.png" alt="Settings close button, hover" height="36"> <img src="components/crops/settings-close-light.png" alt="Settings close button, light" height="36"> <img src="components/crops/settings-close-light-hover.png" alt="Settings close button, light-hover" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 36 x 36; radius 8px; background #303030 `bg.secondary`; text System 16/24 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| hover | background #676767 `interactive.bg-control-default` |
-| light | size 36 x 36; radius 8px; background transparent; text System 16/24 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background rgba(0, 0, 0, 0.07) `surface.surface-hover` |
-
-Tokens named in its classes: `--bg-secondary`, `--main-surface-tertiary`, `--surface-hover`.
-
-#### Settings search field
-
-<a id="settings-search"></a>`settings-search`, on settings-dark-general.
-
-<img src="components/crops/settings-search-default.png" alt="Settings search field, default" height="36"> <img src="components/crops/settings-search-light.png" alt="Settings search field, light" height="36"> <img src="components/crops/settings-search-focus-visible.png" alt="Settings search field, focus-visible" height="36"> <img src="components/crops/settings-search-light-focus-visible.png" alt="Settings search field, light-focus-visible" height="36"> 
+<img src="components/crops/search-empty-default.png" alt="Empty state (no results), default" height="120"> <img src="components/crops/search-empty-light.png" alt="Empty state (no results), light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 189 x 36; padding 8px 12px 8px 36px; border 1px solid rgba(255, 255, 255, 0.15) `border.medium`; radius full; background #212121 `bg.primary`; text System 14/20 400, #ffffff `text.primary`; placeholder #afafaf `text.tertiary` |
-| focus-visible | border 1px solid rgba(255, 255, 255, 0.2) `border.heavy`; shadow #ffffff 0px 0px 0px 0px, #1f4e94 0px 0px 0px 0px |
-| light | size 189 x 36; padding 8px 12px 8px 36px; border 1px solid rgba(0, 0, 0, 0.1) `border.default`; radius full; background #ffffff `bg.primary`; text System 14/20 400, #0d0d0d `text.primary`; placeholder #8f8f8f `text.tertiary` |
-| light-focus-visible | border 1px solid rgba(0, 0, 0, 0.15) `border.heavy`; shadow #ffffff 0px 0px 0px 0px, #1f4e94 0px 0px 0px 0px |
-
-Tokens named in its classes: `--bg-primary`, `--border-default`, `--border-heavy`, `--text-primary`, `--text-tertiary`.
-
-#### Settings nav tab
-
-<a id="settings-tab"></a>`settings-tab`, on settings-dark-general.
-
-<img src="components/crops/settings-tab-default.png" alt="Settings nav tab, default" height="36"> <img src="components/crops/settings-tab-hover.png" alt="Settings nav tab, hover" height="36"> <img src="components/crops/settings-tab-light.png" alt="Settings nav tab, light" height="36"> <img src="components/crops/settings-tab-light-hover.png" alt="Settings nav tab, light-hover" height="36"> <img src="components/crops/settings-tab-selected.png" alt="Settings nav tab, selected" height="36"> <img src="components/crops/settings-tab-focus-visible.png" alt="Settings nav tab, focus-visible" height="36"> <img src="components/crops/settings-tab-light-focus-visible.png" alt="Settings nav tab, light-focus-visible" height="36"> <img src="components/crops/settings-tab-light-selected.png" alt="Settings nav tab, light-selected" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 197 x 36; padding 6px 10px; radius 10px; background transparent; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| hover | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| focus-visible | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover`; outline 1px solid #ffffff `interactive.border-focus`, offset 2px |
-| selected | background #303030 `bg.secondary` |
-| light | size 197 x 36; padding 6px 10px; radius 10px; background transparent; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background rgba(0, 0, 0, 0.04) `component.popover-shadow-ring` |
-| light-focus-visible | background rgba(0, 0, 0, 0.04) `component.popover-shadow-ring`; outline 1px solid #0d0d0d `interactive.border-focus`, offset 2px |
-| light-selected | background rgba(0, 0, 0, 0.04) `component.popover-shadow-ring` |
-
-Tokens named in its classes: `--bg-secondary`, `--menu-item-icon-opacity`.
-
-#### Settings pane title
-
-<a id="settings-pane-title"></a>`settings-pane-title`, on settings-dark-general.
-
-<img src="components/crops/settings-pane-title-default.png" alt="Settings pane title, default" height="28"> <img src="components/crops/settings-pane-title-light.png" alt="Settings pane title, light" height="28"> 
-
-| State | Values |
-|---|---|
-| default | size 62.44 x 28; background transparent; text System 18/28 400, #ffffff `text.primary` |
-| light | size 62.44 x 28; background transparent; text System 18/28 400, #0d0d0d `text.primary` |
-
-#### Settings row (Appearance)
-
-<a id="settings-row"></a>`settings-row`, on settings-dark-general. A label at the start and a control at the end, divided by a hairline.
-
-<img src="components/crops/settings-row-default.png" alt="Settings row (Appearance), default" height="60"> <img src="components/crops/settings-row-light.png" alt="Settings row (Appearance), light" height="60"> 
-
-| State | Values |
-|---|---|
-| default | size 438 x 60; padding 8px 0px; border B: 1px solid rgba(255, 255, 255, 0.05) `border.light`; background transparent; text System 14/20 400, #ffffff `text.primary`; icon 16 x 16, #ffffff `icon.primary` |
-| light | size 438 x 60; padding 8px 0px; border B: 1px solid rgba(0, 0, 0, 0.05) `border.light`; background transparent; text System 14/20 400, #0d0d0d `text.primary`; icon 16 x 16, #0d0d0d `icon.primary` |
-
-Child layers: div 438x60 border 1px solid rgba(255, 255, 255, 0.05) `border.light`; button 93.8x36 border 1px solid transparent radius 8px
-
-Tokens named in its classes: `--border-light`, `--main-surface-secondary`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
-
-#### Settings select button
-
-<a id="settings-select"></a>`settings-select`, on settings-dark-general, settings-dark-accent-menu.
-
-<img src="components/crops/settings-select-default.png" alt="Settings select button, default" height="36"> <img src="components/crops/settings-select-hover.png" alt="Settings select button, hover" height="36"> <img src="components/crops/settings-select-light.png" alt="Settings select button, light" height="36"> <img src="components/crops/settings-select-light-hover.png" alt="Settings select button, light-hover" height="36"> <img src="components/crops/settings-select-open.png" alt="Settings select button, open" height="36"> <img src="components/crops/settings-select-focus-visible.png" alt="Settings select button, focus-visible" height="36"> <img src="components/crops/settings-select-light-focus-visible.png" alt="Settings select button, light-focus-visible" height="36"> <img src="components/crops/settings-select-light-open.png" alt="Settings select button, light-open" height="36"> 
-
-| State | Values |
-|---|---|
-| default (same: focus-visible) | size 93.84 x 36; padding 0px 12px; border 1px solid transparent; radius 8px; background transparent; text System 14/14 400, #ffffff `text.primary`; icon 16 x 16, #ffffff `icon.primary` |
-| hover | background #424242 |
-| open | size 94.31 x 36 |
-| light (same: light-focus-visible) | size 93.84 x 36; padding 0px 12px; border 1px solid transparent; radius 8px; background #ffffff `bg.primary`; text System 14/14 400, #0d0d0d `text.primary`; icon 16 x 16, #0d0d0d `icon.primary` |
-| light-hover | background #ececec `surface.main-surface-tertiary` |
-| light-open | size 94.31 x 36 |
-
-Tokens named in its classes: `--main-surface-secondary`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
-
-#### Settings toggle (on)
-
-<a id="settings-toggle"></a>`settings-toggle`, on settings-dark-general. Accent-filled track when on, white thumb.
-
-<img src="components/crops/settings-toggle-default.png" alt="Settings toggle (on), default" height="24"> <img src="components/crops/settings-toggle-hover.png" alt="Settings toggle (on), hover" height="24"> <img src="components/crops/settings-toggle-light.png" alt="Settings toggle (on), light" height="24"> <img src="components/crops/settings-toggle-light-hover.png" alt="Settings toggle (on), light-hover" height="24"> <img src="components/crops/settings-toggle-focus-visible.png" alt="Settings toggle (on), focus-visible" height="24"> <img src="components/crops/settings-toggle-light-focus-visible.png" alt="Settings toggle (on), light-focus-visible" height="24"> 
-
-| State | Values |
-|---|---|
-| default (same: hover) | size 32 x 20; padding 2px; radius full; background #3a83f7 `bg.accent-static` |
-| focus-visible | shadow #ffffff 0px 0px 0px 2px, #ffffff 0px 0px 0px 4px |
-| light (same: light-hover) | size 32 x 20; padding 2px; radius full; background #3a83f7 `bg.accent-static` |
-| light-focus-visible | shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px |
-
-Tokens named in its classes: `--text-primary`, `--to-end-unit`.
-
-#### Settings row description
-
-<a id="settings-description"></a>`settings-description`, on settings-dark-general.
-
-<img src="components/crops/settings-description-default.png" alt="Settings row description, default" height="24"> <img src="components/crops/settings-description-light.png" alt="Settings row description, light" height="24"> 
-
-| State | Values |
-|---|---|
-| default | size 398 x 16; padding 0px 48px 0px 0px; background transparent; text System 12/16 400, #afafaf `text.tertiary` |
-| light | size 398 x 16; padding 0px 48px 0px 0px; background transparent; text System 12/16 400, #8f8f8f `text.tertiary` |
-
-Tokens named in its classes: `--text-tertiary`.
+| default | size 718 x 333; padding `spacing.5` `spacing.6`; background transparent; text `typography.text-md`, `role.text.disabled`; icon 20 x 20, `role.text.disabled` |
+| light | size 718 x 333; padding `spacing.5` `spacing.6`; background transparent; text `typography.text-md`, `role.text.disabled`; icon 20 x 20, `role.text.disabled` |
 
 ### Library
 
-The file library: a title with filter, grid and list buttons, search and the New button, pill tabs, then a list of files with a type tile or thumbnail and the last activity.
+The file library: title, filter, grid and list view buttons, search, New, pill tabs, then a masonry grid of file cards with a hover checkbox. Also its error state and a partial-results banner.
 
-#### Library page title
+#### Page title (Library)
 
 <a id="library-title"></a>`library-title`, on library-dark.
 
-<img src="components/crops/library-title-default.png" alt="Library page title, default" height="36"> <img src="components/crops/library-title-light.png" alt="Library page title, light" height="36"> 
+<img src="components/crops/library-title-default.png" alt="Page title (Library), default" height="36"> <img src="components/crops/library-title-light.png" alt="Page title (Library), light" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 74.11 x 36; background transparent; text System 24/28 500, #ffffff `text.primary` |
-| light | size 74.11 x 36; background transparent; text System 24/28 500, #0d0d0d `text.primary` |
+| default | size 74.11 x `size.control.lg`; background transparent; text `fontSize.2xl`/28.8 `fontWeight.medium`, `role.text.primary` |
+| light | size 74.11 x `size.control.lg`; background transparent; text `fontSize.2xl`/28.8 `fontWeight.medium`, `role.text.primary` |
 
-Tokens named in its classes: `--text-primary`.
+#### Icon button (List view)
 
-#### Library tab
+<a id="library-icon-button"></a>`library-icon-button`, on library-dark.
 
-<a id="library-tab"></a>`library-tab`, on library-dark. Pill tabs; the selected one is filled with `--bg-secondary`.
-
-<img src="components/crops/library-tab-default.png" alt="Library tab, default" height="36"> <img src="components/crops/library-tab-hover.png" alt="Library tab, hover" height="36"> <img src="components/crops/library-tab-light.png" alt="Library tab, light" height="36"> <img src="components/crops/library-tab-light-hover.png" alt="Library tab, light-hover" height="36"> <img src="components/crops/library-tab-selected.png" alt="Library tab, selected" height="36"> <img src="components/crops/library-tab-focus-visible.png" alt="Library tab, focus-visible" height="36"> <img src="components/crops/library-tab-light-focus-visible.png" alt="Library tab, light-focus-visible" height="36"> <img src="components/crops/library-tab-light-selected.png" alt="Library tab, light-selected" height="36"> 
+<img src="components/crops/library-icon-button-default.png" alt="Icon button (List view), default" height="36"> <img src="components/crops/library-icon-button-hover.png" alt="Icon button (List view), hover" height="36"> <img src="components/crops/library-icon-button-focus-visible.png" alt="Icon button (List view), focus-visible" height="36"> <img src="components/crops/library-icon-button-pressed.png" alt="Icon button (List view), pressed" height="36"> <img src="components/crops/library-icon-button-light.png" alt="Icon button (List view), light" height="36"> <img src="components/crops/library-icon-button-light-hover.png" alt="Icon button (List view), light-hover" height="36"> <img src="components/crops/library-icon-button-selected.png" alt="Icon button (List view), selected" height="36"> <img src="components/crops/library-icon-button-light-focus-visible.png" alt="Icon button (List view), light-focus-visible" height="36"> <img src="components/crops/library-icon-button-light-pressed.png" alt="Icon button (List view), light-pressed" height="36"> <img src="components/crops/library-icon-button-light-selected.png" alt="Icon button (List view), light-selected" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 94.03 x 36; padding 0px 16px; border 1px solid transparent; radius full; background transparent; text System 14/20 500, #cdcdcd `text.secondary` |
-| hover | text System 14/20 500, #ffffff `text.primary` |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| selected | size 105.28 x 36; background #414141 `bg.tertiary`; text System 14/20 500, #ffffff `text.primary` |
-| light | size 94.03 x 36; padding 0px 16px; border 1px solid transparent; radius full; background transparent; text System 14/20 500, #5d5d5d `text.secondary` |
-| light-hover | text System 14/20 500, #0d0d0d `text.primary` |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
-| light-selected | size 105.28 x 36; background #f3f3f3 `bg.tertiary`; text System 14/20 500, #0d0d0d `text.primary` |
+| default (same: focus-visible) | size 36 x `size.control.lg`; radius `radius.full`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.secondary`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.secondary` |
+| hover, pressed, selected | text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light (same: light-focus-visible) | size 36 x `size.control.lg`; radius `radius.full`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.secondary`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.secondary` |
+| light-hover, light-pressed, light-selected | text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
 
-Tokens named in its classes: `--text-primary`, `--text-secondary`.
+Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius 9999px
 
-#### Library toolbar icon button (grid view)
-
-<a id="library-icon-button"></a>`library-icon-button`, on library-dark. 36x36, radius full; the current view (List) is filled with `--bg-secondary`.
-
-<img src="components/crops/library-icon-button-default.png" alt="Library toolbar icon button (grid view), default" height="36"> <img src="components/crops/library-icon-button-hover.png" alt="Library toolbar icon button (grid view), hover" height="36"> <img src="components/crops/library-icon-button-light.png" alt="Library toolbar icon button (grid view), light" height="36"> <img src="components/crops/library-icon-button-light-hover.png" alt="Library toolbar icon button (grid view), light-hover" height="36"> <img src="components/crops/library-icon-button-selected.png" alt="Library toolbar icon button (grid view), selected" height="36"> <img src="components/crops/library-icon-button-focus-visible.png" alt="Library toolbar icon button (grid view), focus-visible" height="36"> <img src="components/crops/library-icon-button-light-focus-visible.png" alt="Library toolbar icon button (grid view), light-focus-visible" height="36"> <img src="components/crops/library-icon-button-light-selected.png" alt="Library toolbar icon button (grid view), light-selected" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 36 x 36; radius full; background transparent; text System 14/20 500, #afafaf `text.tertiary`; icon 20 x 20, #afafaf `icon.tertiary` |
-| hover | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| focus-visible | shadow #afafaf 0px 0px 0px 2px |
-| selected | background #414141 `bg.tertiary`; text System 14/20 500, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| light | size 36 x 36; radius full; background transparent; text System 14/20 500, #8f8f8f `text.tertiary`; icon 20 x 20, #8f8f8f `icon.tertiary` |
-| light-hover | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
-| light-focus-visible | shadow #8f8f8f 0px 0px 0px 2px |
-| light-selected | background #f3f3f3 `bg.tertiary`; text System 14/20 500, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-
-Tokens named in its classes: `--icon-tertiary`, `--text-primary`.
-
-#### Library search field
+#### Text field (Search library)
 
 <a id="library-search"></a>`library-search`, on library-dark.
 
-<img src="components/crops/library-search-default.png" alt="Library search field, default" height="36"> <img src="components/crops/library-search-light.png" alt="Library search field, light" height="36"> <img src="components/crops/library-search-focus-visible.png" alt="Library search field, focus-visible" height="36"> <img src="components/crops/library-search-light-focus-visible.png" alt="Library search field, light-focus-visible" height="36"> 
+<img src="components/crops/library-search-default.png" alt="Text field (Search library), default" height="36"> <img src="components/crops/library-search-hover.png" alt="Text field (Search library), hover" height="36"> <img src="components/crops/library-search-focus-visible.png" alt="Text field (Search library), focus-visible" height="36"> <img src="components/crops/library-search-light.png" alt="Text field (Search library), light" height="36"> <img src="components/crops/library-search-light-hover.png" alt="Text field (Search library), light-hover" height="36"> <img src="components/crops/library-search-light-focus-visible.png" alt="Text field (Search library), light-focus-visible" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 240 x 36; padding 8px 12px 8px 36px; border 1px solid rgba(255, 255, 255, 0.15) `border.medium`; radius full; background #212121 `bg.primary`; text System 14/20 400, #ffffff `text.primary`; placeholder #afafaf `text.tertiary` |
-| focus-visible | border 1px solid rgba(255, 255, 255, 0.2) `border.heavy`; shadow #ffffff 0px 0px 0px 0px, #1f4e94 0px 0px 0px 0px |
-| light | size 240 x 36; padding 8px 12px 8px 36px; border 1px solid rgba(0, 0, 0, 0.1) `border.default`; radius full; background #ffffff `bg.primary`; text System 14/20 400, #0d0d0d `text.primary`; placeholder #8f8f8f `text.tertiary` |
-| light-focus-visible | border 1px solid rgba(0, 0, 0, 0.15) `border.heavy`; shadow #ffffff 0px 0px 0px 0px, #1f4e94 0px 0px 0px 0px |
+| default (same: hover, focus-visible) | size 240 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid `role.border.strong`; radius `radius.full`; background transparent; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary`; icon 20 x 20, `role.text.secondary`; placeholder `role.text.disabled` |
+| light (same: light-hover, light-focus-visible) | size 240 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid `role.border.strong`; radius `radius.full`; background transparent; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary`; icon 20 x 20, `role.text.secondary`; placeholder `role.text.disabled` |
 
-Tokens named in its classes: `--bg-primary`, `--border-default`, `--border-heavy`, `--text-primary`, `--text-tertiary`.
+#### Inverted button (New)
 
-#### New button (Library)
+<a id="library-new"></a>`library-new`, on library-dark.
 
-<a id="library-new"></a>`library-new`, on library-dark. The one inverted control on the page: `--interactive-bg-primary-default` (white in dark) with a chevron.
-
-<img src="components/crops/library-new-default.png" alt="New button (Library), default" height="36"> <img src="components/crops/library-new-hover.png" alt="New button (Library), hover" height="36"> <img src="components/crops/library-new-light.png" alt="New button (Library), light" height="36"> <img src="components/crops/library-new-light-hover.png" alt="New button (Library), light-hover" height="36"> <img src="components/crops/library-new-focus-visible.png" alt="New button (Library), focus-visible" height="36"> <img src="components/crops/library-new-light-focus-visible.png" alt="New button (Library), light-focus-visible" height="36"> 
+<img src="components/crops/library-new-default.png" alt="Inverted button (New), default" height="36"> <img src="components/crops/library-new-hover.png" alt="Inverted button (New), hover" height="36"> <img src="components/crops/library-new-focus-visible.png" alt="Inverted button (New), focus-visible" height="36"> <img src="components/crops/library-new-pressed.png" alt="Inverted button (New), pressed" height="36"> <img src="components/crops/library-new-light.png" alt="Inverted button (New), light" height="36"> <img src="components/crops/library-new-light-hover.png" alt="Inverted button (New), light-hover" height="36"> <img src="components/crops/library-new-light-focus-visible.png" alt="Inverted button (New), light-focus-visible" height="36"> <img src="components/crops/library-new-light-pressed.png" alt="Inverted button (New), light-pressed" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 77.34 x 36; padding 0px 12px; border 1px solid transparent; radius full; background #f9f9f9; text System 14/20 500, #0d0d0d `text.inverted`; icon 16 x 16, #0d0d0d `icon.inverted` |
-| hover | background #ececec |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| light | size 77.34 x 36; padding 0px 12px; border 1px solid transparent; radius full; background #0d0d0d `surface.sidebar-body-primary`; text System 14/20 500, #ffffff `text.inverted`; icon 16 x 16, #ffffff `icon.inverted` |
-| light-hover | background #212121 `surface.main-surface-primary-inverse` |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
+| default | size 74.78 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid `role.border.default`; radius `radius.full`; background `variant.primary.solid.bg`; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.inverse`; icon 16 x 16, `role.text.inverse` |
+| hover | background `text.tooltip-tertiary` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `text.tooltip-tertiary` |
+| light | size 74.78 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid `role.border.default`; radius `radius.full`; background `variant.primary.solid.bg`; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.inverse`; icon 16 x 16, `role.text.inverse` |
+| light-hover | background rgba(13, 13, 13, 0.8) |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background rgba(13, 13, 13, 0.8) |
 
-Tokens named in its classes: `--text-primary`.
+#### Tab (Library)
 
-#### Library list header
+<a id="library-tab"></a>`library-tab`, on library-dark.
 
-<a id="library-list-header"></a>`library-list-header`, on library-dark.
-
-<img src="components/crops/library-list-header-default.png" alt="Library list header, default" height="42"> <img src="components/crops/library-list-header-light.png" alt="Library list header, light" height="42"> 
-
-| State | Values |
-|---|---|
-| default | size 1078 x 42; padding 12px 8px 12px 0px; border B: 1px solid rgba(255, 255, 255, 0.05) `border.light`; background transparent; text System 13/20 400, #cdcdcd `text.secondary`; placeholder #1f4e94 `chatTheme.blue.chart-color` |
-| light | size 1078 x 42; padding 12px 8px 12px 0px; border B: 1px solid rgba(0, 0, 0, 0.05) `border.light`; background transparent; text System 13/20 400, #5d5d5d `text.secondary`; placeholder #1f4e94 `chatTheme.blue.chart-sequential-4` |
-
-Child layers: div 1078x42 border 1px solid rgba(255, 255, 255, 0.05) `border.light`; input 18x18 background #212121 `bg.primary` border 1px solid rgba(205, 205, 205, 0.2) radius 4px
-
-Tokens named in its classes: `--bg-primary`, `--icon-secondary`, `--page-table-checkbox-inset`, `--text-secondary`.
-
-#### Library row
-
-<a id="library-row"></a>`library-row`, on library-dark. Grid row: a 32px tile (thumbnail or type icon), the file name, the last activity; a hairline between rows.
-
-<img src="components/crops/library-row-default.png" alt="Library row, default" height="60"> <img src="components/crops/library-row-hover.png" alt="Library row, hover" height="60"> <img src="components/crops/library-row-light.png" alt="Library row, light" height="60"> <img src="components/crops/library-row-light-hover.png" alt="Library row, light-hover" height="60"> 
+<img src="components/crops/library-tab-default.png" alt="Tab (Library), default" height="36"> <img src="components/crops/library-tab-hover.png" alt="Tab (Library), hover" height="36"> <img src="components/crops/library-tab-focus-visible.png" alt="Tab (Library), focus-visible" height="36"> <img src="components/crops/library-tab-pressed.png" alt="Tab (Library), pressed" height="36"> <img src="components/crops/library-tab-light.png" alt="Tab (Library), light" height="36"> <img src="components/crops/library-tab-light-hover.png" alt="Tab (Library), light-hover" height="36"> <img src="components/crops/library-tab-selected.png" alt="Tab (Library), selected" height="36"> <img src="components/crops/library-tab-light-focus-visible.png" alt="Tab (Library), light-focus-visible" height="36"> <img src="components/crops/library-tab-light-pressed.png" alt="Tab (Library), light-pressed" height="36"> <img src="components/crops/library-tab-light-selected.png" alt="Tab (Library), light-selected" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 1078 x 60; padding 10px 8px 10px 0px; border B: 1px solid rgba(255, 255, 255, 0.05) `border.light`; background transparent; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #afafaf `icon.tertiary`; placeholder #1f4e94 `chatTheme.blue.chart-color` |
-| hover | border B: 1px solid transparent |
-| light | size 1078 x 60; padding 10px 8px 10px 0px; border B: 1px solid rgba(0, 0, 0, 0.05) `border.light`; background transparent; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #8f8f8f `icon.tertiary`; placeholder #1f4e94 `chatTheme.blue.chart-sequential-4` |
-| light-hover | border B: 1px solid transparent |
+| default | size 94.03 x `size.control.lg`; padding 0 `spacing.4`; border 1px solid transparent; radius `radius.full`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.secondary` |
+| hover | background `token.border-light`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
+| pressed | background `token.border-light`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| selected | size 105.28 x `size.control.lg`; background `variant.primary.soft.bg-hover`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light | size 94.03 x `size.control.lg`; padding 0 `spacing.4`; border 1px solid transparent; radius `radius.full`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.secondary` |
+| light-hover | background rgba(0, 0, 0, 0.03); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
+| light-pressed | background rgba(0, 0, 0, 0.03); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light-selected | size 105.28 x `size.control.lg`; background `variant.primary.soft.bg-hover`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
 
-Child layers: div 1078x60 border 1px solid rgba(255, 255, 255, 0.05) `border.light`; div 1102pxx61px background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` radius 16px; div 1102pxx61px border 2px solid #ffffff `interactive.border-focus` radius 16px
+#### Card (Library file)
 
-Tokens named in its classes: `--bg-primary`, `--bg-tertiary`, `--border-default`, `--icon-secondary`, `--icon-tertiary`, `--page-table-checkbox-inset`, `--text-primary`, `--text-secondary`.
+<a id="library-card"></a>`library-card`, on library-dark. Masonry grid cards (5 columns at 1440): a thumbnail (blanked in the copies) over the file name.
 
-#### Library row type icon (text file)
-
-<a id="library-row-icon"></a>`library-row-icon`, on library-dark.
-
-<img src="components/crops/library-row-icon-default.png" alt="Library row type icon (text file), default" height="32"> <img src="components/crops/library-row-icon-light.png" alt="Library row type icon (text file), light" height="32"> 
-
-| State | Values |
-|---|---|
-| default | size 32 x 32; border 1px solid rgba(255, 255, 255, 0.15) `border.medium`; radius 8px; background #212121 `bg.primary`; icon 20 x 20, #0285ff |
-| light | size 32 x 32; border 1px solid rgba(0, 0, 0, 0.1) `border.default`; radius 8px; background #ffffff `bg.primary`; icon 20 x 20, #0285ff |
-
-Tokens named in its classes: `--bg-primary`, `--border-default`.
-
-#### Library row date
-
-<a id="library-row-date"></a>`library-row-date`, on library-dark.
-
-<img src="components/crops/library-row-date-default.png" alt="Library row date, default" height="24"> <img src="components/crops/library-row-date-light.png" alt="Library row date, light" height="24"> 
+<img src="components/crops/library-card-default.png" alt="Card (Library file), default" height="120"> <img src="components/crops/library-card-hover.png" alt="Card (Library file), hover" height="120"> <img src="components/crops/library-card-light.png" alt="Card (Library file), light" height="120"> <img src="components/crops/library-card-light-hover.png" alt="Card (Library file), light-hover" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 160 x 20; background transparent; text System 14/20 400, #cdcdcd `text.secondary` |
-| light | size 160 x 20; background transparent; text System 14/20 400, #5d5d5d `text.secondary` |
+| default (same: hover) | size 238.75 x 159.83; border 1px solid `role.border.subtle`; radius `radius.2xl`; background `role.bg.raised`; shadow rgba(0, 0, 0, 0.05) 0px 4px 16px 0px; icon 20 x 20, `role.text.on-accent` |
+| light (same: light-hover) | size 238.75 x 159.83; border 1px solid `role.border.subtle`; radius `radius.2xl`; background `role.bg.raised`; shadow rgba(0, 0, 0, 0.05) 0px 4px 16px 0px; icon 20 x 20, `role.text.inverse` |
 
-Tokens named in its classes: `--text-secondary`.
+#### Checkbox (select a file)
+
+<a id="checkbox"></a>`checkbox`, on library-dark. A 20x20 `role=checkbox` button on each card, shown on hover.
+
+<img src="components/crops/checkbox-hover.png" alt="Checkbox (select a file), hover" height="24"> <img src="components/crops/checkbox-focus-visible.png" alt="Checkbox (select a file), focus-visible" height="24"> <img src="components/crops/checkbox-light-hover.png" alt="Checkbox (select a file), light-hover" height="24"> <img src="components/crops/checkbox-light-focus-visible.png" alt="Checkbox (select a file), light-focus-visible" height="24"> 
+
+| State | Values |
+|---|---|
+| hover | size 20 x `size.control.4xs`; border 1px solid `role.border.default`; radius `radius.sm`; background `role.bg.page`; shadow rgba(0, 0, 0, 0.13) 0px 2px 4px -1px; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| focus-visible | border 1px solid `role.border.focus`; focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-hover | size 20 x `size.control.4xs`; border 1px solid `role.border.default`; radius `radius.sm`; background `role.bg.page`; shadow rgba(0, 0, 0, 0.13) 0px 2px 4px -1px; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| light-focus-visible | border 1px solid `role.border.focus`; focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+
+#### Error state (Failed to load files)
+
+<a id="library-error"></a>`library-error`, on library-dark-error. Shown when the file list request fails (the capture guard refused it); a centred line and a Try again button.
+
+<img src="components/crops/library-error-default.png" alt="Error state (Failed to load files), default" height="120"> <img src="components/crops/library-error-light.png" alt="Error state (Failed to load files), light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 1003 x 160; padding 48px 0; background transparent; text `typography.text-md`, `role.text.primary` |
+| light | size 1003 x 160; padding 48px 0; background transparent; text `typography.text-md`, `role.text.primary` |
+
+Child layers: button 77x24 background `variant.primary.solid.bg` border 1px solid `role.border.default` radius 9999px
+
+#### Small button (Try again)
+
+<a id="retry-button"></a>`retry-button`, on library-dark-error.
+
+<img src="components/crops/retry-button-default.png" alt="Small button (Try again), default" height="24"> <img src="components/crops/retry-button-hover.png" alt="Small button (Try again), hover" height="24"> <img src="components/crops/retry-button-focus-visible.png" alt="Small button (Try again), focus-visible" height="24"> <img src="components/crops/retry-button-pressed.png" alt="Small button (Try again), pressed" height="24"> <img src="components/crops/retry-button-light.png" alt="Small button (Try again), light" height="24"> <img src="components/crops/retry-button-light-hover.png" alt="Small button (Try again), light-hover" height="24"> <img src="components/crops/retry-button-light-focus-visible.png" alt="Small button (Try again), light-focus-visible" height="24"> <img src="components/crops/retry-button-light-pressed.png" alt="Small button (Try again), light-pressed" height="24"> 
+
+| State | Values |
+|---|---|
+| default | size 77.05 x `size.control.2xs`; padding `spacing.0_5` `spacing.2`; border 1px solid `role.border.default`; radius `radius.full`; background `variant.primary.solid.bg`; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.inverse` |
+| hover | background `text.tooltip-tertiary` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `text.tooltip-tertiary` |
+| light | size 77.05 x `size.control.2xs`; padding `spacing.0_5` `spacing.2`; border 1px solid `role.border.default`; radius `radius.full`; background `variant.primary.solid.bg`; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.inverse` |
+| light-hover | background rgba(13, 13, 13, 0.8) |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background rgba(13, 13, 13, 0.8) |
+
+#### Inline error (partial search results)
+
+<a id="inline-error"></a>`inline-error`, on library-dark-search-error.
+
+<img src="components/crops/inline-error-default.png" alt="Inline error (partial search results), default" height="56"> <img src="components/crops/inline-error-light.png" alt="Inline error (partial search results), light" height="56"> 
+
+| State | Values |
+|---|---|
+| default | size 1003 x 56; padding `spacing.4` 0; background transparent; text `typography.text-md`, `role.text.primary` |
+| light | size 1003 x 56; padding `spacing.4` 0; background transparent; text `typography.text-md`, `role.text.primary` |
+
+Child layers: button 77x24 background `variant.primary.solid.bg` border 1px solid `role.border.default` radius 9999px
 
 ### Images
 
-The Images page: a title, the composer, Trending and Templates tabs, and tall template cards.
+The Images page: Trending and Templates tabs over a grid of template cards (OpenAI's own sample images).
 
-#### Images page title
-
-<a id="images-title"></a>`images-title`, on images-dark.
-
-<img src="components/crops/images-title-default.png" alt="Images page title, default" height="24"> <img src="components/crops/images-title-light.png" alt="Images page title, light" height="24"> 
-
-| State | Values |
-|---|---|
-| default | size 119.88 x 19.73; padding 0px 16px; background transparent; text System 28/34 400, #ffffff `text.primary` |
-| light | size 119.88 x 19.73; padding 0px 16px; background transparent; text System 28/34 400, #0d0d0d `text.primary` |
-
-Tokens named in its classes: `--images-app-padding`, `--text-primary`.
-
-#### Images tab
+#### Tab (Images)
 
 <a id="images-tab"></a>`images-tab`, on images-dark.
 
-<img src="components/crops/images-tab-default.png" alt="Images tab, default" height="36"> <img src="components/crops/images-tab-hover.png" alt="Images tab, hover" height="36"> <img src="components/crops/images-tab-light.png" alt="Images tab, light" height="36"> <img src="components/crops/images-tab-light-hover.png" alt="Images tab, light-hover" height="36"> <img src="components/crops/images-tab-selected.png" alt="Images tab, selected" height="36"> <img src="components/crops/images-tab-focus-visible.png" alt="Images tab, focus-visible" height="36"> <img src="components/crops/images-tab-light-focus-visible.png" alt="Images tab, light-focus-visible" height="36"> <img src="components/crops/images-tab-light-selected.png" alt="Images tab, light-selected" height="36"> 
+<img src="components/crops/images-tab-default.png" alt="Tab (Images), default" height="36"> <img src="components/crops/images-tab-hover.png" alt="Tab (Images), hover" height="36"> <img src="components/crops/images-tab-focus-visible.png" alt="Tab (Images), focus-visible" height="36"> <img src="components/crops/images-tab-pressed.png" alt="Tab (Images), pressed" height="36"> <img src="components/crops/images-tab-light.png" alt="Tab (Images), light" height="36"> <img src="components/crops/images-tab-light-hover.png" alt="Tab (Images), light-hover" height="36"> <img src="components/crops/images-tab-selected.png" alt="Tab (Images), selected" height="36"> <img src="components/crops/images-tab-light-focus-visible.png" alt="Tab (Images), light-focus-visible" height="36"> <img src="components/crops/images-tab-light-pressed.png" alt="Tab (Images), light-pressed" height="36"> <img src="components/crops/images-tab-light-selected.png" alt="Tab (Images), light-selected" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 102.16 x 36; padding 0px 16px; border 1px solid transparent; radius full; background transparent; text System 14/20 500, #cdcdcd `text.secondary` |
-| hover | text System 14/20 500, #ffffff `text.primary` |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| selected | size 92.25 x 36; background #414141 `bg.tertiary`; text System 14/20 500, #ffffff `text.primary` |
-| light | size 102.16 x 36; padding 0px 16px; border 1px solid transparent; radius full; background transparent; text System 14/20 500, #5d5d5d `text.secondary` |
-| light-hover | text System 14/20 500, #0d0d0d `text.primary` |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
-| light-selected | size 92.25 x 36; background #f3f3f3 `bg.tertiary`; text System 14/20 500, #0d0d0d `text.primary` |
+| default | size 102.16 x `size.control.lg`; padding 0 `spacing.4`; border 1px solid transparent; radius `radius.full`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.secondary` |
+| hover | background `token.border-light`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
+| pressed | background `token.border-light`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| selected | size 92.25 x `size.control.lg`; background `variant.primary.soft.bg-hover`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light | size 102.16 x `size.control.lg`; padding 0 `spacing.4`; border 1px solid transparent; radius `radius.full`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.secondary` |
+| light-hover | background rgba(0, 0, 0, 0.03); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
+| light-pressed | background rgba(0, 0, 0, 0.03); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light-selected | size 92.25 x `size.control.lg`; background `variant.primary.soft.bg-hover`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
 
-Tokens named in its classes: `--text-primary`, `--text-secondary`.
+#### Card (image template)
 
-#### Template card
+<a id="image-card"></a>`image-card`, on images-dark.
 
-<a id="template-card"></a>`template-card`, on images-dark. A tall tile with radius 24, a photo, and a label over a dark gradient at the bottom.
-
-<img src="components/crops/template-card-default.png" alt="Template card, default" height="120"> <img src="components/crops/template-card-hover.png" alt="Template card, hover" height="120"> <img src="components/crops/template-card-light.png" alt="Template card, light" height="120"> <img src="components/crops/template-card-light-hover.png" alt="Template card, light-hover" height="120"> <img src="components/crops/template-card-focus-visible.png" alt="Template card, focus-visible" height="120"> <img src="components/crops/template-card-blank.png" alt="Template card, blank" height="120"> <img src="components/crops/template-card-light-blank.png" alt="Template card, light-blank" height="120"> <img src="components/crops/template-card-light-focus-visible.png" alt="Template card, light-focus-visible" height="120"> 
+<img src="components/crops/image-card-default.png" alt="Card (image template), default" height="120"> <img src="components/crops/image-card-hover.png" alt="Card (image template), hover" height="120"> <img src="components/crops/image-card-light.png" alt="Card (image template), light" height="120"> <img src="components/crops/image-card-light-hover.png" alt="Card (image template), light-hover" height="120"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, blank) | size 186 x 232.5; radius 16px; background transparent; text System 14/20 500, #ffffff `text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| focus-visible | outline 1px auto #63a8f8 `text.accent`, offset 4px |
-| light (same: light-hover, light-blank) | size 186 x 232.5; radius 16px; background transparent; text System 14/20 500, #ffffff `text.inverted`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-focus-visible | outline 1px auto #3a83f7 `bg.accent-static`, offset 4px |
-
-Child layers: div 186x232.5 background #181818 `interactive.bg-tertiary-hover` radius 24px; div 186x61
-
-Tokens named in its classes: `--bg-primary-inverted`, `--interactive-bg-tertiary-hover`, `--interactive-bg-tertiary-press`, `--spacing`, `--text-secondary`.
+| default (same: hover) | size 139.19 x 173.98; radius `radius.2xl`; background `role.bg.page`; text `typography.text-sm` at `fontWeight.medium`, `role.text.on-accent` |
+| light (same: light-hover) | size 139.19 x 173.98; radius `radius.2xl`; background `role.bg.page`; text `typography.text-sm` at `fontWeight.medium`, `role.text.inverse` |
 
 ### Plugins
 
-The plugin gallery: a title and subtitle, search and an add button, then sections of two-column plugin rows.
+The plugin store: Plugins / Skills tabs, a search field and plugin rows. The installed plugins were blanked in the copy.
 
-#### Plugins page title
-
-<a id="plugins-title"></a>`plugins-title`, on plugins-dark. `text-heading-app` (28/34), 500.
-
-<img src="components/crops/plugins-title-default.png" alt="Plugins page title, default" height="36"> <img src="components/crops/plugins-title-light.png" alt="Plugins page title, light" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 464 x 36; background transparent; text System 28/36 500, #ffffff `text.primary` |
-| light | size 464 x 36; background transparent; text System 28/36 500, #0d0d0d `text.primary` |
-
-Tokens named in its classes: `--text-primary`.
-
-#### Plugins subtitle
-
-<a id="plugins-subtitle"></a>`plugins-subtitle`, on plugins-dark.
-
-<img src="components/crops/plugins-subtitle-default.png" alt="Plugins subtitle, default" height="24"> <img src="components/crops/plugins-subtitle-light.png" alt="Plugins subtitle, light" height="24"> 
-
-| State | Values |
-|---|---|
-| default | size 464 x 24; background transparent; text System 16/24 400, #cdcdcd `text.secondary` |
-| light | size 464 x 24; background transparent; text System 16/24 400, #5d5d5d `text.secondary` |
-
-Tokens named in its classes: `--text-secondary`.
-
-#### Plugins search field
+#### Text field (Search plugins)
 
 <a id="plugins-search"></a>`plugins-search`, on plugins-dark.
 
-<img src="components/crops/plugins-search-default.png" alt="Plugins search field, default" height="36"> <img src="components/crops/plugins-search-light.png" alt="Plugins search field, light" height="36"> <img src="components/crops/plugins-search-focus-visible.png" alt="Plugins search field, focus-visible" height="36"> <img src="components/crops/plugins-search-light-focus-visible.png" alt="Plugins search field, light-focus-visible" height="36"> 
+<img src="components/crops/plugins-search-default.png" alt="Text field (Search plugins), default" height="44"> <img src="components/crops/plugins-search-hover.png" alt="Text field (Search plugins), hover" height="44"> <img src="components/crops/plugins-search-focus-visible.png" alt="Text field (Search plugins), focus-visible" height="44"> <img src="components/crops/plugins-search-light.png" alt="Text field (Search plugins), light" height="44"> <img src="components/crops/plugins-search-light-hover.png" alt="Text field (Search plugins), light-hover" height="44"> <img src="components/crops/plugins-search-light-focus-visible.png" alt="Text field (Search plugins), light-focus-visible" height="44"> 
 
 | State | Values |
 |---|---|
-| default | size 240 x 36; padding 8px 12px 8px 36px; border 1px solid rgba(255, 255, 255, 0.15) `border.medium`; radius full; background #212121 `bg.primary`; text System 14/20 400, #ffffff `text.primary`; placeholder #afafaf `text.tertiary` |
-| focus-visible | border 1px solid rgba(255, 255, 255, 0.2) `border.heavy`; shadow #ffffff 0px 0px 0px 0px, #1f4e94 0px 0px 0px 0px |
-| light | size 240 x 36; padding 8px 12px 8px 36px; border 1px solid rgba(0, 0, 0, 0.1) `border.default`; radius full; background #ffffff `bg.primary`; text System 14/20 400, #0d0d0d `text.primary`; placeholder #8f8f8f `text.tertiary` |
-| light-focus-visible | border 1px solid rgba(0, 0, 0, 0.15) `border.heavy`; shadow #ffffff 0px 0px 0px 0px, #1f4e94 0px 0px 0px 0px |
+| default (same: hover, focus-visible) | size 920 x `size.control.2xl`; padding 0 `spacing.2_5`; border 1px solid `role.border.strong`; radius `radius.full`; background `role.bg.raised`; text `fontSize.base`/18 `fontWeight.normal`, `role.text.primary`; icon 18 x 18, `role.text.secondary`; placeholder `role.text.disabled` |
+| light (same: light-hover, light-focus-visible) | size 920 x `size.control.2xl`; padding 0 `spacing.2_5`; border 1px solid `role.border.strong`; radius `radius.full`; background `role.bg.raised`; text `fontSize.base`/18 `fontWeight.normal`, `role.text.primary`; icon 18 x 18, `role.text.secondary`; placeholder `role.text.disabled` |
 
-Tokens named in its classes: `--bg-primary`, `--border-default`, `--border-heavy`, `--text-primary`, `--text-tertiary`.
+#### Tab (Plugins / Skills)
 
-#### Round + button (beside search)
+<a id="plugins-tab"></a>`plugins-tab`, on plugins-dark.
 
-<a id="plugins-add"></a>`plugins-add`, on plugins-dark.
-
-<img src="components/crops/plugins-add-default.png" alt="Round + button (beside search), default" height="36"> <img src="components/crops/plugins-add-hover.png" alt="Round + button (beside search), hover" height="36"> <img src="components/crops/plugins-add-light.png" alt="Round + button (beside search), light" height="36"> <img src="components/crops/plugins-add-light-hover.png" alt="Round + button (beside search), light-hover" height="36"> <img src="components/crops/plugins-add-focus-visible.png" alt="Round + button (beside search), focus-visible" height="36"> <img src="components/crops/plugins-add-light-focus-visible.png" alt="Round + button (beside search), light-focus-visible" height="36"> 
+<img src="components/crops/plugins-tab-default.png" alt="Tab (Plugins / Skills), default" height="36"> <img src="components/crops/plugins-tab-hover.png" alt="Tab (Plugins / Skills), hover" height="36"> <img src="components/crops/plugins-tab-focus-visible.png" alt="Tab (Plugins / Skills), focus-visible" height="36"> <img src="components/crops/plugins-tab-light.png" alt="Tab (Plugins / Skills), light" height="36"> <img src="components/crops/plugins-tab-light-hover.png" alt="Tab (Plugins / Skills), light-hover" height="36"> <img src="components/crops/plugins-tab-selected.png" alt="Tab (Plugins / Skills), selected" height="36"> <img src="components/crops/plugins-tab-light-focus-visible.png" alt="Tab (Plugins / Skills), light-focus-visible" height="36"> <img src="components/crops/plugins-tab-light-selected.png" alt="Tab (Plugins / Skills), light-selected" height="36"> 
 
 | State | Values |
 |---|---|
-| default | size 36 x 36; border 1px solid rgba(255, 255, 255, 0.15) `border.medium`; radius full; background transparent; outline 1px solid transparent, offset 2px; text System 16/24 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| hover | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover`; text System 16/24 400, rgba(255, 255, 255, 0.9) `interactive.label-hover-secondary`; icon 20 x 20, rgba(255, 255, 255, 0.9) `interactive.icon-hover-secondary` |
-| focus-visible | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover`; outline 1px solid rgba(255, 255, 255, 0.16) `interactive.focus-ring-secondary`, offset 2px; text System 16/24 400, rgba(255, 255, 255, 0.9) `interactive.label-hover-secondary`; icon 20 x 20, rgba(255, 255, 255, 0.9) `interactive.icon-hover-secondary` |
-| light | size 36 x 36; border 1px solid rgba(0, 0, 0, 0.1) `border.default`; radius full; background transparent; outline 1px solid transparent, offset 2px; text System 16/24 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | border 1px solid rgba(0, 0, 0, 0.05) `border.light`; background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover`; text System 16/24 400, rgba(0, 0, 0, 0.9) `interactive.label-hover-secondary`; icon 20 x 20, rgba(0, 0, 0, 0.9) `interactive.icon-hover-secondary` |
-| light-focus-visible | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover`; outline 1px solid rgba(13, 13, 13, 0.12) `interactive.focus-ring-secondary`, offset 2px; text System 16/24 400, rgba(0, 0, 0, 0.9) `interactive.label-hover-secondary`; icon 20 x 20, rgba(0, 0, 0, 0.9) `interactive.icon-hover-secondary` |
+| default | size 68.73 x `size.control.lg`; padding 0 `spacing.4`; border 1px solid transparent; radius `radius.full`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.secondary` |
+| hover | background `token.border-light`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
+| selected | size 82.39 x `size.control.lg`; background `variant.primary.soft.bg-hover`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light | size 68.73 x `size.control.lg`; padding 0 `spacing.4`; border 1px solid transparent; radius `radius.full`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.secondary` |
+| light-hover | background rgba(0, 0, 0, 0.03); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
+| light-selected | size 82.39 x `size.control.lg`; background `variant.primary.soft.bg-hover`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
 
-#### Plugins section title (Popular)
+#### List row (plugin card)
 
-<a id="plugins-section"></a>`plugins-section`, on plugins-dark.
+<a id="plugin-row"></a>`plugin-row`, on plugins-dark. A bordered card with a link laid over the whole of it; hover fills the card, keyboard focus rings the link (see the next row).
 
-<img src="components/crops/plugins-section-default.png" alt="Plugins section title (Popular), default" height="24"> <img src="components/crops/plugins-section-light.png" alt="Plugins section title (Popular), light" height="24"> 
-
-| State | Values |
-|---|---|
-| default | size 50.55 x 20; background transparent; text System 14/20 500, #ffffff `text.primary` |
-| light | size 50.55 x 20; background transparent; text System 14/20 500, #0d0d0d `text.primary` |
-
-Tokens named in its classes: `--text-primary`.
-
-#### Plugin row
-
-<a id="plugin-row"></a>`plugin-row`, on plugins-dark. 384x56 (two columns): a 40px icon tile, name over a one-line description, a + at the end; the whole row is a link.
-
-<img src="components/crops/plugin-row-default.png" alt="Plugin row, default" height="56"> <img src="components/crops/plugin-row-hover.png" alt="Plugin row, hover" height="56"> <img src="components/crops/plugin-row-light.png" alt="Plugin row, light" height="56"> <img src="components/crops/plugin-row-light-hover.png" alt="Plugin row, light-hover" height="56"> <img src="components/crops/plugin-row-focus-visible.png" alt="Plugin row, focus-visible" height="56"> <img src="components/crops/plugin-row-light-focus-visible.png" alt="Plugin row, light-focus-visible" height="56"> 
+<img src="components/crops/plugin-row-default.png" alt="List row (plugin card), default" height="65"> <img src="components/crops/plugin-row-hover.png" alt="List row (plugin card), hover" height="65"> <img src="components/crops/plugin-row-pressed.png" alt="List row (plugin card), pressed" height="65"> <img src="components/crops/plugin-row-light.png" alt="List row (plugin card), light" height="65"> <img src="components/crops/plugin-row-light-hover.png" alt="List row (plugin card), light-hover" height="65"> <img src="components/crops/plugin-row-light-pressed.png" alt="List row (plugin card), light-pressed" height="65"> 
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 384 x 56; padding 8px; radius 16px; background transparent; text System 14/18 400, #ffffff `text.primary`; icon 12 x 12, #007aff `misc.selection` |
-| hover | background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover` |
-| light (same: light-focus-visible) | size 384 x 56; padding 8px; radius 16px; background transparent; text System 14/18 400, #0d0d0d `text.primary`; icon 12 x 12, #3a83f7 `icon.accent` |
-| light-hover | background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover` |
+| default | size 448 x 64.75; padding `spacing.2`; radius `radius.2xl`; background transparent; text `typography.text-md` at `fontWeight.medium`, `role.text.primary`; icon 18 x 18, `role.text.disabled` |
+| hover, pressed | background `bg.disabled` |
+| light | size 448 x 64.75; padding `spacing.2`; radius `radius.2xl`; background transparent; text `typography.text-md` at `fontWeight.medium`, `role.text.primary`; icon 18 x 18, `role.text.disabled` |
+| light-hover, light-pressed | background `bg.disabled` |
 
-Child layers: div 40x40 background #212121 `bg.primary` border 1px solid rgba(0, 0, 0, 0.1) radius 12px; span 20x20 background #ddedff border 1px solid rgba(164, 205, 251, 0.35) radius full
+Child layers: span 36x36 background `role.bg.page` border 1px solid `role.border.default` radius 8px
 
-Tokens named in its classes: `--bg-primary`, `--interactive-bg-secondary-hover`, `--text-accent`, `--text-primary`, `--text-tertiary`, `--theme-blue-background`.
+#### List row link (plugin card, focus ring)
 
-#### Plugin icon tile
+<a id="plugin-row-link"></a>`plugin-row-link`, on plugins-dark.
 
-<a id="plugin-icon"></a>`plugin-icon`, on plugins-dark.
-
-<img src="components/crops/plugin-icon-default.png" alt="Plugin icon tile, default" height="40"> <img src="components/crops/plugin-icon-light.png" alt="Plugin icon tile, light" height="40"> 
+<img src="components/crops/plugin-row-link-focus-visible.png" alt="List row link (plugin card, focus ring), focus-visible" height="65"> <img src="components/crops/plugin-row-link-light-focus-visible.png" alt="List row link (plugin card, focus ring), light-focus-visible" height="65"> 
 
 | State | Values |
 |---|---|
-| default | size 40 x 40; border 1px solid rgba(0, 0, 0, 0.1); radius 12px; background #212121 `bg.primary` |
-| light | size 40 x 40; border 1px solid rgba(0, 0, 0, 0.1) `border.default`; radius 12px; background #ffffff `bg.primary` |
+| focus-visible | size 448 x 64.75; radius `radius.2xl`; background transparent; focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
+| light-focus-visible | size 448 x 64.75; radius `radius.2xl`; background transparent; focus ring `size.focusRing.width` box-shadow ring (inset) in `role.border.focus` |
 
-Tokens named in its classes: `--bg-primary`.
+### Settings
 
-#### Plugin row + button
+The settings page (a full page since the redesign, not a dialog): a left nav, then panes of 60 to 64 tall rows with switches, select buttons, outline buttons and danger buttons.
 
-<a id="plugin-add"></a>`plugin-add`, on plugins-dark.
+#### Settings nav item
 
-<img src="components/crops/plugin-add-default.png" alt="Plugin row + button, default" height="32"> <img src="components/crops/plugin-add-hover.png" alt="Plugin row + button, hover" height="32"> <img src="components/crops/plugin-add-light.png" alt="Plugin row + button, light" height="32"> <img src="components/crops/plugin-add-light-hover.png" alt="Plugin row + button, light-hover" height="32"> <img src="components/crops/plugin-add-focus-visible.png" alt="Plugin row + button, focus-visible" height="32"> <img src="components/crops/plugin-add-light-focus-visible.png" alt="Plugin row + button, light-focus-visible" height="32"> 
+<a id="settings-nav-item"></a>`settings-nav-item`, on settings-dark-appearance.
+
+<img src="components/crops/settings-nav-item-default.png" alt="Settings nav item, default" height="35"> <img src="components/crops/settings-nav-item-hover.png" alt="Settings nav item, hover" height="35"> <img src="components/crops/settings-nav-item-focus-visible.png" alt="Settings nav item, focus-visible" height="35"> <img src="components/crops/settings-nav-item-pressed.png" alt="Settings nav item, pressed" height="35"> <img src="components/crops/settings-nav-item-light.png" alt="Settings nav item, light" height="35"> <img src="components/crops/settings-nav-item-light-hover.png" alt="Settings nav item, light-hover" height="35"> <img src="components/crops/settings-nav-item-selected.png" alt="Settings nav item, selected" height="35"> <img src="components/crops/settings-nav-item-light-focus-visible.png" alt="Settings nav item, light-focus-visible" height="35"> <img src="components/crops/settings-nav-item-light-pressed.png" alt="Settings nav item, light-pressed" height="35"> <img src="components/crops/settings-nav-item-light-selected.png" alt="Settings nav item, light-selected" height="35"> 
 
 | State | Values |
 |---|---|
-| default | size 32 x 32; radius full; background transparent; text System 16/24 400, #ffffff `text.primary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `icon.primary` |
-| hover | background #212121 `bg.primary` |
+| default | size 328 x 35; padding `spacing.1_5` `spacing.2_5`; radius `radius.lg`; background transparent; text `typography.text-sm`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | outline 2px solid `role.border.focus`, offset -2px |
+| pressed, selected | background `variant.primary.soft.bg-hover` |
+| light | size 328 x 35; padding `spacing.1_5` `spacing.2_5`; radius `radius.lg`; background transparent; text `typography.text-sm`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | outline 2px solid `role.border.focus`, offset -2px |
+| light-pressed, light-selected | background `variant.primary.soft.bg-hover` |
+
+#### Settings row
+
+<a id="settings-row"></a>`settings-row`, on settings-dark-data-controls.
+
+<img src="components/crops/settings-row-default.png" alt="Settings row, default" height="60"> <img src="components/crops/settings-row-light.png" alt="Settings row, light" height="60"> 
+
+| State | Values |
+|---|---|
+| default | size 766 x 60; padding `spacing.3` `spacing.4`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light | size 766 x 60; padding `spacing.3` `spacing.4`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+
+Child layers: div 734pxx1px background `token.border`; button 92.5x36 background `bg.disabled` border 1px solid transparent radius 9999px
+
+#### Switch (on)
+
+<a id="switch-on"></a>`switch-on`, on settings-dark-data-controls.
+
+<img src="components/crops/switch-on-default.png" alt="Switch (on), default" height="24"> <img src="components/crops/switch-on-hover.png" alt="Switch (on), hover" height="24"> <img src="components/crops/switch-on-focus-visible.png" alt="Switch (on), focus-visible" height="24"> <img src="components/crops/switch-on-pressed.png" alt="Switch (on), pressed" height="24"> <img src="components/crops/switch-on-light.png" alt="Switch (on), light" height="24"> <img src="components/crops/switch-on-light-hover.png" alt="Switch (on), light-hover" height="24"> <img src="components/crops/switch-on-light-focus-visible.png" alt="Switch (on), light-focus-visible" height="24"> <img src="components/crops/switch-on-light-pressed.png" alt="Switch (on), light-pressed" height="24"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 32 x `size.control.4xs`; background transparent; text `typography.text-sm`, `role.text.primary` |
+| focus-visible | radius `radius.full`; focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light (same: light-hover, light-pressed) | size 32 x `size.control.4xs`; background transparent; text `typography.text-sm`, `role.text.primary` |
+| light-focus-visible | radius `radius.full`; focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+
+Child layers: span 32x20 background `variant.primary.soft.ring` radius 9999px; span 16x16 background `variant.danger.solid.text` border 1px solid `variant.danger.solid.text` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px
+
+#### Switch (off)
+
+<a id="switch-off"></a>`switch-off`, on settings-dark-data-controls.
+
+<img src="components/crops/switch-off-default.png" alt="Switch (off), default" height="24"> <img src="components/crops/switch-off-hover.png" alt="Switch (off), hover" height="24"> <img src="components/crops/switch-off-focus-visible.png" alt="Switch (off), focus-visible" height="24"> <img src="components/crops/switch-off-pressed.png" alt="Switch (off), pressed" height="24"> <img src="components/crops/switch-off-light.png" alt="Switch (off), light" height="24"> <img src="components/crops/switch-off-light-hover.png" alt="Switch (off), light-hover" height="24"> <img src="components/crops/switch-off-light-focus-visible.png" alt="Switch (off), light-focus-visible" height="24"> <img src="components/crops/switch-off-light-pressed.png" alt="Switch (off), light-pressed" height="24"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 32 x `size.control.4xs`; background transparent; text `typography.text-sm`, `role.text.primary` |
+| focus-visible | radius `radius.full`; focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light (same: light-hover, light-pressed) | size 32 x `size.control.4xs`; background transparent; text `typography.text-sm`, `role.text.primary` |
+| light-focus-visible | radius `radius.full`; focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+
+Child layers: span 32x20 background `bg.segmented-selected` radius 9999px; span 16x16 background `variant.danger.solid.text` border 1px solid `variant.danger.solid.text` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px
+
+#### Outline button (Archive all)
+
+<a id="button-outline"></a>`button-outline`, on settings-dark-data-controls.
+
+<img src="components/crops/button-outline-default.png" alt="Outline button (Archive all), default" height="36"> <img src="components/crops/button-outline-hover.png" alt="Outline button (Archive all), hover" height="36"> <img src="components/crops/button-outline-focus-visible.png" alt="Outline button (Archive all), focus-visible" height="36"> <img src="components/crops/button-outline-pressed.png" alt="Outline button (Archive all), pressed" height="36"> <img src="components/crops/button-outline-light.png" alt="Outline button (Archive all), light" height="36"> <img src="components/crops/button-outline-light-hover.png" alt="Outline button (Archive all), light-hover" height="36"> <img src="components/crops/button-outline-light-focus-visible.png" alt="Outline button (Archive all), light-focus-visible" height="36"> <img src="components/crops/button-outline-light-pressed.png" alt="Outline button (Archive all), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default | size 92.5 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid transparent; radius `radius.full`; background `bg.disabled`; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary` |
+| hover | background `bg.segmented-selected` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `bg.segmented-selected` |
+| light | size 92.5 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid transparent; radius `radius.full`; background `bg.disabled`; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary` |
+| light-hover | background `bg.segmented-selected` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `bg.segmented-selected` |
+
+#### Danger outline button (Delete all)
+
+<a id="button-danger-outline"></a>`button-danger-outline`, on settings-dark-data-controls.
+
+<img src="components/crops/button-danger-outline-default.png" alt="Danger outline button (Delete all), default" height="36"> <img src="components/crops/button-danger-outline-hover.png" alt="Danger outline button (Delete all), hover" height="36"> <img src="components/crops/button-danger-outline-focus-visible.png" alt="Danger outline button (Delete all), focus-visible" height="36"> <img src="components/crops/button-danger-outline-pressed.png" alt="Danger outline button (Delete all), pressed" height="36"> <img src="components/crops/button-danger-outline-light.png" alt="Danger outline button (Delete all), light" height="36"> <img src="components/crops/button-danger-outline-light-hover.png" alt="Danger outline button (Delete all), light-hover" height="36"> <img src="components/crops/button-danger-outline-light-focus-visible.png" alt="Danger outline button (Delete all), light-focus-visible" height="36"> <img src="components/crops/button-danger-outline-light-pressed.png" alt="Danger outline button (Delete all), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default | size 85.94 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid transparent; radius `radius.full`; background `component.button-danger.bg`; text `fontSize.sm`/18 `fontWeight.normal`, `text.danger` |
+| hover | background `component.button-danger.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `component.button-danger.bg-hover` |
+| light | size 85.94 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid transparent; radius `radius.full`; background `component.button-danger.bg`; text `fontSize.sm`/18 `fontWeight.normal`, `text.danger` |
+| light-hover | background `component.button-danger.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `component.button-danger.bg-hover` |
+
+#### Button (disabled, Restore defaults)
+
+<a id="button-disabled"></a>`button-disabled`, on settings-dark-keyboard.
+
+<img src="components/crops/button-disabled-default.png" alt="Button (disabled, Restore defaults), default" height="36"> <img src="components/crops/button-disabled-hover.png" alt="Button (disabled, Restore defaults), hover" height="36"> <img src="components/crops/button-disabled-light.png" alt="Button (disabled, Restore defaults), light" height="36"> <img src="components/crops/button-disabled-light-hover.png" alt="Button (disabled, Restore defaults), light-hover" height="36"> 
+
+| State | Values |
+|---|---|
+| default (same: hover) | size 142.05 x `size.control.lg`; padding 0 `spacing.4`; border 1px solid `role.border.default`; radius `radius.full`; background `variant.primary.solid.bg`; text `typography.text-sm` at `fontWeight.medium`, `role.text.inverse`; opacity 0.4 |
+| light (same: light-hover) | size 142.05 x `size.control.lg`; padding 0 `spacing.4`; border 1px solid `role.border.default`; radius `radius.full`; background `variant.primary.solid.bg`; text `typography.text-sm` at `fontWeight.medium`, `role.text.inverse`; opacity 0.4 |
+
+#### Switch (keyboard shortcut on)
+
+<a id="keyboard-switch"></a>`keyboard-switch`, on settings-dark-keyboard.
+
+<img src="components/crops/keyboard-switch-default.png" alt="Switch (keyboard shortcut on), default" height="24"> <img src="components/crops/keyboard-switch-light.png" alt="Switch (keyboard shortcut on), light" height="24"> 
+
+| State | Values |
+|---|---|
+| default | size 32 x `size.control.4xs`; background transparent |
+| light | size 32 x `size.control.4xs`; background transparent |
+
+Child layers: span 32x20 background `variant.primary.soft.ring` radius 9999px; span 16x16 background `variant.danger.solid.text` border 1px solid `variant.danger.solid.text` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px
+
+#### Select (notification channel)
+
+<a id="select"></a>`select`, on settings-dark-notifications-menu.
+
+<img src="components/crops/select-default.png" alt="Select (notification channel), default" height="36"> <img src="components/crops/select-hover.png" alt="Select (notification channel), hover" height="36"> <img src="components/crops/select-focus-visible.png" alt="Select (notification channel), focus-visible" height="36"> <img src="components/crops/select-pressed.png" alt="Select (notification channel), pressed" height="36"> <img src="components/crops/select-light.png" alt="Select (notification channel), light" height="36"> <img src="components/crops/select-light-hover.png" alt="Select (notification channel), light-hover" height="36"> <img src="components/crops/select-open.png" alt="Select (notification channel), open" height="36"> <img src="components/crops/select-light-focus-visible.png" alt="Select (notification channel), light-focus-visible" height="36"> <img src="components/crops/select-light-open.png" alt="Select (notification channel), light-open" height="36"> <img src="components/crops/select-light-pressed.png" alt="Select (notification channel), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 78.03 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid `role.border.default`; radius `radius.full`; background `surface.elevated-secondary`; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary`; icon 16 x 16, `role.text.disabled` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| open | background `variant.primary.soft.bg-hover` |
+| light (same: light-hover, light-pressed) | size 78.03 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid `role.border.default`; radius `radius.full`; background `bg.user-message-compact`; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary`; icon 16 x 16, `role.text.disabled` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-open | background `variant.primary.soft.bg-hover` |
+
+#### Select (code theme)
+
+<a id="code-theme-select"></a>`code-theme-select`, on settings-dark-appearance.
+
+<img src="components/crops/code-theme-select-default.png" alt="Select (code theme), default" height="36"> <img src="components/crops/code-theme-select-hover.png" alt="Select (code theme), hover" height="36"> <img src="components/crops/code-theme-select-focus-visible.png" alt="Select (code theme), focus-visible" height="36"> <img src="components/crops/code-theme-select-pressed.png" alt="Select (code theme), pressed" height="36"> <img src="components/crops/code-theme-select-light.png" alt="Select (code theme), light" height="36"> <img src="components/crops/code-theme-select-light-hover.png" alt="Select (code theme), light-hover" height="36"> <img src="components/crops/code-theme-select-light-focus-visible.png" alt="Select (code theme), light-focus-visible" height="36"> <img src="components/crops/code-theme-select-light-pressed.png" alt="Select (code theme), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default | size 176 x `size.control.lg`; padding 0 `spacing.3` 0 7px; border 1px solid `role.border.default`; radius `radius.full`; background `role.bg.page`; text `fontSize.xs`/12 `fontWeight.semibold`, `variant.info.solid.bg`; icon 16 x 16, `role.text.disabled` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 176 x `size.control.lg`; padding 0 `spacing.3` 0 7px; border 1px solid `role.border.default`; radius `radius.full`; background `role.bg.page`; text `fontSize.xs`/12 `fontWeight.semibold`, `text.tip`; icon 16 x 16, `role.text.disabled` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
+
+#### Text field (colour hex)
+
+<a id="color-field"></a>`color-field`, on settings-dark-appearance.
+
+<img src="components/crops/color-field-default.png" alt="Text field (colour hex), default" height="24"> <img src="components/crops/color-field-hover.png" alt="Text field (colour hex), hover" height="24"> <img src="components/crops/color-field-focus-visible.png" alt="Text field (colour hex), focus-visible" height="24"> <img src="components/crops/color-field-light.png" alt="Text field (colour hex), light" height="24"> <img src="components/crops/color-field-light-hover.png" alt="Text field (colour hex), light-hover" height="24"> <img src="components/crops/color-field-light-focus-visible.png" alt="Text field (colour hex), light-focus-visible" height="24"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, focus-visible) | size 56 x `size.icon.sm`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `role.text.primary`; placeholder `role.text.primary` |
+| light (same: light-hover, light-focus-visible) | size 56 x `size.icon.sm`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `role.text.primary`; placeholder `role.text.primary` |
+
+#### Text field (Search archived chats)
+
+<a id="archived-search"></a>`archived-search`, on settings-dark-archived.
+
+<img src="components/crops/archived-search-default.png" alt="Text field (Search archived chats), default" height="44"> <img src="components/crops/archived-search-hover.png" alt="Text field (Search archived chats), hover" height="44"> <img src="components/crops/archived-search-focus-visible.png" alt="Text field (Search archived chats), focus-visible" height="44"> <img src="components/crops/archived-search-light.png" alt="Text field (Search archived chats), light" height="44"> <img src="components/crops/archived-search-light-hover.png" alt="Text field (Search archived chats), light-hover" height="44"> <img src="components/crops/archived-search-light-focus-visible.png" alt="Text field (Search archived chats), light-focus-visible" height="44"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, focus-visible) | size 432 x `size.control.2xl`; padding 0 `spacing.2_5`; border 1px solid `role.border.strong`; radius `radius.full`; background `role.bg.raised`; text `fontSize.base`/18 `fontWeight.normal`, `role.text.primary`; icon 18 x 18, `role.text.secondary`; placeholder `role.text.disabled` |
+| light (same: light-hover, light-focus-visible) | size 432 x `size.control.2xl`; padding 0 `spacing.2_5`; border 1px solid `role.border.strong`; radius `radius.full`; background `role.bg.raised`; text `fontSize.base`/18 `fontWeight.normal`, `role.text.primary`; icon 18 x 18, `role.text.secondary`; placeholder `role.text.disabled` |
+
+#### List row (archived chat)
+
+<a id="archived-row"></a>`archived-row`, on settings-dark-archived.
+
+<img src="components/crops/archived-row-default.png" alt="List row (archived chat), default" height="62"> <img src="components/crops/archived-row-hover.png" alt="List row (archived chat), hover" height="62"> <img src="components/crops/archived-row-light.png" alt="List row (archived chat), light" height="62"> <img src="components/crops/archived-row-light-hover.png" alt="List row (archived chat), light-hover" height="62"> 
+
+| State | Values |
+|---|---|
+| default (same: hover) | size 766 x 62; padding `spacing.3` `spacing.4`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.link`; icon 18 x 18, `role.text.primary` |
+| light (same: light-hover) | size 766 x 62; padding `spacing.3` `spacing.4`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.link`; icon 18 x 18, `role.text.primary` |
+
+Child layers: div 734pxx1px background `token.border`; button 90.8x36 background `bg.disabled` border 1px solid transparent radius 9999px; button 67.8x36 background `component.button-danger.bg` border 1px solid transparent radius 9999px
+
+#### Link (archived chat title)
+
+<a id="archived-link"></a>`archived-link`, on settings-dark-archived.
+
+<img src="components/crops/archived-link-default.png" alt="Link (archived chat title), default" height="24"> <img src="components/crops/archived-link-hover.png" alt="Link (archived chat title), hover" height="24"> <img src="components/crops/archived-link-focus-visible.png" alt="Link (archived chat title), focus-visible" height="24"> <img src="components/crops/archived-link-pressed.png" alt="Link (archived chat title), pressed" height="24"> <img src="components/crops/archived-link-light.png" alt="Link (archived chat title), light" height="24"> <img src="components/crops/archived-link-light-hover.png" alt="Link (archived chat title), light-hover" height="24"> <img src="components/crops/archived-link-light-focus-visible.png" alt="Link (archived chat title), light-focus-visible" height="24"> <img src="components/crops/archived-link-light-pressed.png" alt="Link (archived chat title), light-pressed" height="24"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 90.61 x `size.control.4xs`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.link` |
+| focus-visible | outline 1px auto #99c8ff, offset 1px |
+| light (same: light-hover, light-pressed) | size 90.61 x `size.control.4xs`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.link` |
+| light-focus-visible | outline 1px auto #005fcc, offset 1px |
+
+#### Outline button (Unarchive)
+
+<a id="unarchive-button"></a>`unarchive-button`, on settings-dark-archived.
+
+<img src="components/crops/unarchive-button-default.png" alt="Outline button (Unarchive), default" height="36"> <img src="components/crops/unarchive-button-hover.png" alt="Outline button (Unarchive), hover" height="36"> <img src="components/crops/unarchive-button-focus-visible.png" alt="Outline button (Unarchive), focus-visible" height="36"> <img src="components/crops/unarchive-button-pressed.png" alt="Outline button (Unarchive), pressed" height="36"> <img src="components/crops/unarchive-button-light.png" alt="Outline button (Unarchive), light" height="36"> <img src="components/crops/unarchive-button-light-hover.png" alt="Outline button (Unarchive), light-hover" height="36"> <img src="components/crops/unarchive-button-light-focus-visible.png" alt="Outline button (Unarchive), light-focus-visible" height="36"> <img src="components/crops/unarchive-button-light-pressed.png" alt="Outline button (Unarchive), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default | size 90.84 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid transparent; radius `radius.full`; background `bg.disabled`; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary` |
+| hover | background `bg.segmented-selected` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `bg.segmented-selected` |
+| light | size 90.84 x `size.control.lg`; padding 0 `spacing.3`; border 1px solid transparent; radius `radius.full`; background `bg.disabled`; text `fontSize.sm`/18 `fontWeight.normal`, `role.text.primary` |
+| light-hover | background `bg.segmented-selected` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `bg.segmented-selected` |
+
+#### Link (Manage tasks)
+
+<a id="text-link"></a>`text-link`, on settings-dark-notifications-menu.
+
+<img src="components/crops/text-link-default.png" alt="Link (Manage tasks), default" height="24"> <img src="components/crops/text-link-hover.png" alt="Link (Manage tasks), hover" height="24"> <img src="components/crops/text-link-focus-visible.png" alt="Link (Manage tasks), focus-visible" height="24"> <img src="components/crops/text-link-pressed.png" alt="Link (Manage tasks), pressed" height="24"> <img src="components/crops/text-link-light.png" alt="Link (Manage tasks), light" height="24"> <img src="components/crops/text-link-light-hover.png" alt="Link (Manage tasks), light-hover" height="24"> <img src="components/crops/text-link-light-focus-visible.png" alt="Link (Manage tasks), light-focus-visible" height="24"> <img src="components/crops/text-link-light-pressed.png" alt="Link (Manage tasks), light-pressed" height="24"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 78.11 x 15; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `role.text.secondary` |
+| focus-visible | outline 1px auto #99c8ff, offset 1px |
+| light (same: light-hover, light-pressed) | size 78.11 x 15; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `role.text.secondary` |
+| light-focus-visible | outline 1px auto #005fcc, offset 1px |
+
+### Pricing
+
+The Upgrade dialog: a full-screen sheet with a Personal / Business radio segment and plan cards.
+
+#### Full-screen dialog (pricing)
+
+<a id="pricing-dialog"></a>`pricing-dialog`, on pricing-dark.
+
+| State | Values |
+|---|---|
+| default | size 1440 x 900; background transparent; text `fontSize.4xl`/40 `fontWeight.semibold`, `role.text.on-accent`; icon 20 x 20, `role.text.secondary` |
+| light | size 1440 x 900; background transparent; text `fontSize.4xl`/40 `fontWeight.semibold`, `role.text.primary`; icon 20 x 20, `role.text.secondary` |
+
+Child layers: main 1440x900 background `role.bg.surface`; button 32x32 border 1px solid transparent radius 9999px; div 352x44 background #424242 radius 20px
+
+#### Radio segment (Business, not checked)
+
+<a id="segmented-radio"></a>`segmented-radio`, on pricing-dark.
+
+<img src="components/crops/segmented-radio-default.png" alt="Radio segment (Business, not checked), default" height="36"> <img src="components/crops/segmented-radio-hover.png" alt="Radio segment (Business, not checked), hover" height="36"> <img src="components/crops/segmented-radio-focus-visible.png" alt="Radio segment (Business, not checked), focus-visible" height="36"> <img src="components/crops/segmented-radio-pressed.png" alt="Radio segment (Business, not checked), pressed" height="36"> <img src="components/crops/segmented-radio-light.png" alt="Radio segment (Business, not checked), light" height="36"> <img src="components/crops/segmented-radio-light-hover.png" alt="Radio segment (Business, not checked), light-hover" height="36"> <img src="components/crops/segmented-radio-checked.png" alt="Radio segment (Business, not checked), checked" height="36"> <img src="components/crops/segmented-radio-light-checked.png" alt="Radio segment (Business, not checked), light-checked" height="36"> <img src="components/crops/segmented-radio-light-focus-visible.png" alt="Radio segment (Business, not checked), light-focus-visible" height="36"> <img src="components/crops/segmented-radio-light-pressed.png" alt="Radio segment (Business, not checked), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 170 x `size.control.lg`; padding `spacing.2` `spacing.5`; radius `radius.2xl`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.disabled` |
 | focus-visible | outline 1px auto #99c8ff, offset 0px |
-| light | size 32 x 32; radius full; background transparent; text System 16/24 400, #0d0d0d `text.primary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background #ffffff `bg.primary` |
+| checked | text `typography.text-sm` at `fontWeight.medium`, `role.text.on-accent` |
+| light (same: light-hover, light-pressed) | size 170 x `size.control.lg`; padding `spacing.2` `spacing.5`; radius `radius.2xl`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.disabled` |
 | light-focus-visible | outline 1px auto #005fcc, offset 0px |
+| light-checked | text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
 
-Tokens named in its classes: `--bg-primary`, `--text-primary`.
+#### Card (Free plan)
 
-#### "See Outlook Email, Notion, and more" link
+<a id="pricing-card"></a>`pricing-card`, on pricing-dark.
 
-<a id="plugins-see-more"></a>`plugins-see-more`, on plugins-dark.
-
-<img src="components/crops/plugins-see-more-default.png" alt=""See Outlook Email, Notion, and more" link, default" height="48"> <img src="components/crops/plugins-see-more-hover.png" alt=""See Outlook Email, Notion, and more" link, hover" height="48"> <img src="components/crops/plugins-see-more-light.png" alt=""See Outlook Email, Notion, and more" link, light" height="48"> <img src="components/crops/plugins-see-more-light-hover.png" alt=""See Outlook Email, Notion, and more" link, light-hover" height="48"> <img src="components/crops/plugins-see-more-focus-visible.png" alt=""See Outlook Email, Notion, and more" link, focus-visible" height="48"> <img src="components/crops/plugins-see-more-light-focus-visible.png" alt=""See Outlook Email, Notion, and more" link, light-focus-visible" height="48"> 
-
-| State | Values |
-|---|---|
-| default | size 768 x 48; padding 8px; radius 16px; background transparent; text System 14/20 400, #cdcdcd `text.secondary` |
-| hover | text System 14/20 400, #ffffff `text.primary` |
-| focus-visible | shadow #ffffff 0px 0px 0px 1px, #ffffff 0px 0px 0px 2px |
-| light | size 768 x 48; padding 8px; radius 16px; background transparent; text System 14/20 400, #5d5d5d `text.secondary` |
-| light-hover | text System 14/20 400, #0d0d0d `text.primary` |
-| light-focus-visible | shadow #ffffff 0px 0px 0px 1px, #0d0d0d 0px 0px 0px 2px |
-
-Child layers: div 24x24 background #212121 `bg.primary` border 1px solid rgba(0, 0, 0, 0.1) radius 6px; div 24x24 background #212121 `bg.primary` border 1px solid rgba(0, 0, 0, 0.1) radius 6px; div 24x24 background #212121 `bg.primary` border 1px solid rgba(0, 0, 0, 0.1) radius 6px
-
-Tokens named in its classes: `--bg-primary`, `--text-primary`, `--text-secondary`.
-
-### Project
-
-A project page: the icon and title, Share and details, the composer, Chats and Sources tabs, and the project's chats with a preview line and date.
-
-#### Project title
-
-<a id="project-title"></a>`project-title`, on project-dark.
-
-<img src="components/crops/project-title-default.png" alt="Project title, default" height="36"> <img src="components/crops/project-title-light.png" alt="Project title, light" height="36"> 
+<img src="components/crops/pricing-card-default.png" alt="Card (Free plan), default" height="120"> <img src="components/crops/pricing-card-light.png" alt="Card (Free plan), light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 577.78 x 36; background transparent; text System 28/34 500, #ffffff `text.primary` |
-| light | size 577.78 x 36; background transparent; text System 28/34 500, #0d0d0d `text.primary` |
+| default | size 384 x 736; padding 23px 23px 25px 23px; border 1px solid `role.border.default`; radius `radius.3xl`; background `role.bg.surface`; shadow rgba(0, 0, 0, 0.05) 0px 4px 8px 0px; text `fontSize.lg`/32 `fontWeight.semibold`, `role.text.on-accent`; transition color and 9 more 0.2s cubic-bezier(0, 0, 0.2, 1); icon 20 x 20, `role.text.on-accent` |
+| light | size 336 x 294; background `role.bg.page`; text `fontSize.lg`/32 `fontWeight.semibold`, `role.text.primary` |
 
-Tokens named in its classes: `--text-primary`.
+#### Card (Plus plan, recommended)
 
-#### Project Share button
+<a id="pricing-card-plus"></a>`pricing-card-plus`, on pricing-dark.
 
-<a id="project-share"></a>`project-share`, on project-dark.
-
-<img src="components/crops/project-share-default.png" alt="Project Share button, default" height="36"> <img src="components/crops/project-share-hover.png" alt="Project Share button, hover" height="36"> <img src="components/crops/project-share-light.png" alt="Project Share button, light" height="36"> <img src="components/crops/project-share-light-hover.png" alt="Project Share button, light-hover" height="36"> <img src="components/crops/project-share-focus-visible.png" alt="Project Share button, focus-visible" height="36"> <img src="components/crops/project-share-light-focus-visible.png" alt="Project Share button, light-focus-visible" height="36"> 
+<img src="components/crops/pricing-card-plus-default.png" alt="Card (Plus plan, recommended), default" height="120"> <img src="components/crops/pricing-card-plus-light.png" alt="Card (Plus plan, recommended), light" height="120"> 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 88.22 x 36; padding 0px 12px; border 1px solid rgba(255, 255, 255, 0.15) `border.medium`; radius full; background #212121 `bg.primary`; text System 14/20 500, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| light | size 88.22 x 36; padding 0px 12px; border 1px solid rgba(0, 0, 0, 0.15) `border.heavy`; radius full; background #ffffff `bg.primary`; text System 14/20 500, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background #f9f9f9 `bg.secondary-surface` |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
+| default | size 384 x 736; padding 23px 23px 25px 23px; border 1px solid rgba(58, 131, 247, 0.5); radius `radius.3xl`; background transparent; image linear-gradient(`role.bg.surface` 0%, #274b72 100%); shadow rgba(0, 0, 0, 0.05) 0px 4px 8px 0px; text `fontSize.lg`/32 `fontWeight.semibold`, `role.text.on-accent`; transition color and 9 more 0.2s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, `role.text.on-accent` |
+| light | size 384 x 736; padding 23px 23px 25px 23px; border 1px solid rgba(58, 131, 247, 0.5); radius `radius.3xl`; background transparent; image linear-gradient(`role.bg.raised` 0%, #eef6ff 100%); shadow rgba(0, 0, 0, 0.05) 0px 4px 8px 0px; text `fontSize.lg`/32 `fontWeight.semibold`, `role.text.primary`; transition color and 9 more 0.2s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, `role.text.inverse` |
 
-Tokens named in its classes: `--text-primary`.
+#### Badge (RECOMMENDED)
 
-#### Project details (…) button
+<a id="badge"></a>`badge`, on pricing-dark.
 
-<a id="project-more"></a>`project-more`, on project-dark.
-
-<img src="components/crops/project-more-default.png" alt="Project details (…) button, default" height="36"> <img src="components/crops/project-more-hover.png" alt="Project details (…) button, hover" height="36"> <img src="components/crops/project-more-light.png" alt="Project details (…) button, light" height="36"> <img src="components/crops/project-more-light-hover.png" alt="Project details (…) button, light-hover" height="36"> <img src="components/crops/project-more-focus-visible.png" alt="Project details (…) button, focus-visible" height="36"> <img src="components/crops/project-more-light-focus-visible.png" alt="Project details (…) button, light-focus-visible" height="36"> 
+<img src="components/crops/badge-default.png" alt="Badge (RECOMMENDED), default" height="27"> <img src="components/crops/badge-light.png" alt="Badge (RECOMMENDED), light" height="27"> 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 36 x 36; border 1px solid rgba(255, 255, 255, 0.15) `border.medium`; radius full; background #212121 `bg.primary`; text System 14/20 500, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| focus-visible | outline 1px auto #99c8ff, offset 0px |
-| light | size 36 x 36; border 1px solid rgba(0, 0, 0, 0.15) `border.heavy`; radius full; background #ffffff `bg.primary`; text System 14/20 500, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-| light-hover | background #f9f9f9 `bg.secondary-surface` |
-| light-focus-visible | outline 1px auto #005fcc, offset 0px |
+| default | size 103.45 x 27; padding `spacing.1_5` `spacing.2` 5px `spacing.2`; radius `radius.4xl`; background `component.badge.bg`; text System 11/16 600, `component.badge.text` |
+| light | size 103.45 x 27; padding `spacing.1_5` `spacing.2` 5px `spacing.2`; radius `radius.4xl`; background `component.badge.bg`; text System 11/16 600, `role.text.link` |
 
-Tokens named in its classes: `--text-primary`.
+#### Button (disabled, Your current plan)
 
-#### Project tab (Sources)
+<a id="button-disabled-plan"></a>`button-disabled-plan`, on pricing-dark.
 
-<a id="project-tab"></a>`project-tab`, on project-dark.
-
-<img src="components/crops/project-tab-default.png" alt="Project tab (Sources), default" height="38"> <img src="components/crops/project-tab-hover.png" alt="Project tab (Sources), hover" height="38"> <img src="components/crops/project-tab-light.png" alt="Project tab (Sources), light" height="38"> <img src="components/crops/project-tab-light-hover.png" alt="Project tab (Sources), light-hover" height="38"> <img src="components/crops/project-tab-selected.png" alt="Project tab (Sources), selected" height="38"> <img src="components/crops/project-tab-focus-visible.png" alt="Project tab (Sources), focus-visible" height="38"> <img src="components/crops/project-tab-light-focus-visible.png" alt="Project tab (Sources), light-focus-visible" height="38"> <img src="components/crops/project-tab-light-selected.png" alt="Project tab (Sources), light-selected" height="38"> 
+<img src="components/crops/button-disabled-plan-default.png" alt="Button (disabled, Your current plan), default" height="44"> <img src="components/crops/button-disabled-plan-light.png" alt="Button (disabled, Your current plan), light" height="44"> 
 
 | State | Values |
 |---|---|
-| default | size 85.86 x 38; padding 9px 16px; radius full; background transparent; text System 14/20 500, #afafaf `text.tertiary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.06) `interactive.bg-inactive-danger-soft` |
-| focus-visible | shadow #afafaf 0px 0px 0px 3px |
-| selected | size 70.47 x 38; background rgba(255, 255, 255, 0.05) `interactive.bg-press-secondary`; shadow rgba(255, 255, 255, 0.2) 0px 0px 0px 1px; text System 14/20 500, #ffffff `text.primary` |
-| light | size 85.86 x 38; padding 9px 16px; radius full; background transparent; text System 14/20 500, #8f8f8f `text.tertiary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(0, 0, 0, 0.03) |
-| light-focus-visible | shadow #8f8f8f 0px 0px 0px 3px |
-| light-selected | size 70.47 x 38; background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover`; shadow rgba(0, 0, 0, 0.15) 0px 0px 0px 1px; text System 14/20 500, #0d0d0d `text.primary` |
+| default | size 336 x `size.control.2xl`; padding 0 `spacing.4`; border 1px solid `role.border.default`; radius `radius.full`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.on-accent`; opacity 0.4 |
+| light | size 336 x `size.control.2xl`; padding 0 `spacing.4`; border 1px solid `role.border.default`; radius `radius.full`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; opacity 0.4 |
 
-Tokens named in its classes: `--border-heavy`, `--interactive-bg-secondary-hover`, `--interactive-bg-secondary-press`, `--interactive-label-secondary-default`, `--text-tertiary`.
+#### Accent button (Rejoin Plus)
 
-#### Project chat row
+<a id="pricing-primary"></a>`pricing-primary`, on pricing-dark.
 
-<a id="project-chat-row"></a>`project-chat-row`, on project-dark. Title over a one-line preview of the last message, a date at the end, hairlines between rows.
-
-<img src="components/crops/project-chat-row-default.png" alt="Project chat row, default" height="40"> <img src="components/crops/project-chat-row-hover.png" alt="Project chat row, hover" height="40"> <img src="components/crops/project-chat-row-light.png" alt="Project chat row, light" height="40"> <img src="components/crops/project-chat-row-light-hover.png" alt="Project chat row, light-hover" height="40"> 
+<img src="components/crops/pricing-primary-default.png" alt="Accent button (Rejoin Plus), default" height="44"> <img src="components/crops/pricing-primary-hover.png" alt="Accent button (Rejoin Plus), hover" height="44"> <img src="components/crops/pricing-primary-focus-visible.png" alt="Accent button (Rejoin Plus), focus-visible" height="44"> <img src="components/crops/pricing-primary-pressed.png" alt="Accent button (Rejoin Plus), pressed" height="44"> <img src="components/crops/pricing-primary-light.png" alt="Accent button (Rejoin Plus), light" height="44"> <img src="components/crops/pricing-primary-light-hover.png" alt="Accent button (Rejoin Plus), light-hover" height="44"> <img src="components/crops/pricing-primary-light-focus-visible.png" alt="Accent button (Rejoin Plus), light-focus-visible" height="44"> <img src="components/crops/pricing-primary-light-pressed.png" alt="Accent button (Rejoin Plus), light-pressed" height="44"> 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 744 x 40; background transparent; text System 14/20 500, #ffffff `text.primary`; icon 16 x 16, #ffffff `icon.primary` |
-| light (same: light-hover) | size 744 x 40; background transparent; text System 14/20 500, #0d0d0d `text.primary`; icon 16 x 16, #0d0d0d `icon.primary` |
+| default (same: hover, pressed) | size 336 x `size.control.2xl`; padding 0 `spacing.4`; border 1px solid transparent; radius `radius.full`; background `variant.primary.soft.ring`; text `typography.text-sm` at `fontWeight.medium`, `role.text.on-accent`; icon 16 x 16, `role.text.on-accent` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light (same: light-hover, light-pressed) | size 336 x `size.control.2xl`; padding 0 `spacing.4`; border 1px solid transparent; radius `radius.full`; background `bg.accent-action`; text `typography.text-sm` at `fontWeight.medium`, `role.text.inverse`; icon 16 x 16, `role.text.inverse` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
 
-Tokens named in its classes: `--text-primary`, `--text-secondary`, `--text-tertiary`.
+#### Icon button (Close pricing)
 
-#### Project chat date
+<a id="pricing-close"></a>`pricing-close`, on pricing-dark.
 
-<a id="project-chat-date"></a>`project-chat-date`, on project-dark.
-
-<img src="components/crops/project-chat-date-default.png" alt="Project chat date, default" height="24"> <img src="components/crops/project-chat-date-light.png" alt="Project chat date, light" height="24"> 
+<img src="components/crops/pricing-close-default.png" alt="Icon button (Close pricing), default" height="32"> <img src="components/crops/pricing-close-hover.png" alt="Icon button (Close pricing), hover" height="32"> <img src="components/crops/pricing-close-focus-visible.png" alt="Icon button (Close pricing), focus-visible" height="32"> <img src="components/crops/pricing-close-pressed.png" alt="Icon button (Close pricing), pressed" height="32"> <img src="components/crops/pricing-close-light.png" alt="Icon button (Close pricing), light" height="32"> <img src="components/crops/pricing-close-light-hover.png" alt="Icon button (Close pricing), light-hover" height="32"> <img src="components/crops/pricing-close-light-focus-visible.png" alt="Icon button (Close pricing), light-focus-visible" height="32"> <img src="components/crops/pricing-close-light-pressed.png" alt="Icon button (Close pricing), light-pressed" height="32"> 
 
 | State | Values |
 |---|---|
-| default | size 37.8 x 20; background transparent; text System 14/20 400, #afafaf `text.tertiary` |
-| light | size 37.8 x 20; background transparent; text System 14/20 400, #8f8f8f `text.tertiary` |
+| default | size 32 x `size.control.md`; border 1px solid transparent; radius `radius.full`; background transparent; text `typography.text-md`, `role.text.secondary`; icon 20 x 20, `role.text.secondary` |
+| hover | background `variant.primary.soft.bg-hover` |
+| focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| pressed | background `variant.primary.soft.bg-hover` |
+| light | size 32 x `size.control.md`; border 1px solid transparent; radius `radius.full`; background transparent; text `typography.text-md`, `role.text.secondary`; icon 20 x 20, `role.text.secondary` |
+| light-hover | background `variant.primary.soft.bg-hover` |
+| light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
+| light-pressed | background `variant.primary.soft.bg-hover` |
 
-### Mobile
+### Phone
 
-The same app at 390 wide: the header with the menu button and model switcher, the two-row composer, the drawer and the user bubble.
+The same app at 390 wide: the header, the two-row composer, the drawer, the user bubble and a code block.
 
 #### Phone header
 
-<a id="m-header"></a>`m-header`, on mobile-home-dark. Menu button, the ChatGPT model switcher with a chevron, Upgrade and the temporary-chat button.
+<a id="m-header"></a>`m-header`, on mobile-home-dark.
 
 <img src="components/crops/m-header-default.png" alt="Phone header, default" height="52"> <img src="components/crops/m-header-light.png" alt="Phone header, light" height="52"> 
 
 | State | Values |
 |---|---|
-| default | size 390 x 52; padding 8px; background transparent; text OpenAI Sans 18/28 600, #ffffff `text.primary`; icon 24 x 24, #cdcdcd `icon.secondary` |
-| light | size 390 x 52; padding 8px; background transparent; text OpenAI Sans 18/28 600, #0d0d0d `text.primary`; icon 24 x 24, #5d5d5d `icon.secondary` |
+| default | size 390 x `size.height.height-toolbar`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.on-accent`; icon 20 x 20, `role.text.disabled` |
+| light | size 390 x `size.height.height-toolbar`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.disabled` |
 
-Tokens named in its classes: `--icon-accent`, `--surface-hover`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
-
-#### Phone open-sidebar button
-
-<a id="m-open-sidebar"></a>`m-open-sidebar`, on mobile-home-dark.
-
-<img src="components/crops/m-open-sidebar-default.png" alt="Phone open-sidebar button, default" height="36"> <img src="components/crops/m-open-sidebar-light.png" alt="Phone open-sidebar button, light" height="36"> 
-
-| State | Values |
-|---|---|
-| default | size 36 x 36; radius 8px; background transparent; icon 24 x 24, #cdcdcd `icon.secondary` |
-| light | size 36 x 36; radius 8px; background transparent; icon 24 x 24, #5d5d5d `icon.secondary` |
-
-Tokens named in its classes: `--surface-hover`, `--text-primary`, `--text-secondary`.
-
-#### Phone model switcher
-
-<a id="m-model-switcher"></a>`m-model-switcher`, on mobile-home-dark, mobile-thread-dark-model-menu.
-
-<img src="components/crops/m-model-switcher-default.png" alt="Phone model switcher, default" height="36"> <img src="components/crops/m-model-switcher-light.png" alt="Phone model switcher, light" height="36"> <img src="components/crops/m-model-switcher-open.png" alt="Phone model switcher, open" height="36"> <img src="components/crops/m-model-switcher-light-open.png" alt="Phone model switcher, light-open" height="36"> 
-
-| State | Values |
-|---|---|
-| default (same: open) | size 115.23 x 36; padding 0px 10px; radius 8px; background transparent; text OpenAI Sans 18/28 600, #ffffff `text.primary`; icon 16 x 16, #afafaf `icon.tertiary` |
-| light (same: light-open) | size 115.23 x 36; padding 0px 10px; radius 8px; background transparent; text OpenAI Sans 18/28 600, #0d0d0d `text.primary`; icon 16 x 16, #8f8f8f `icon.tertiary` |
-
-Tokens named in its classes: `--surface-hover`, `--text-tertiary`.
+Child layers: div 36x36 background `role.bg.page` radius 8px; button 36pxx36px background `variant.primary.soft.bg-hover` radius 8px; button 36x36 border 1px solid transparent radius 8px
 
 #### Phone composer
 
-<a id="m-composer"></a>`m-composer`, on mobile-home-dark. Two rows on a phone: the field over the tool row (+, dictation, voice), radius 28.
+<a id="m-composer"></a>`m-composer`, on mobile-home-dark.
 
 <img src="components/crops/m-composer-default.png" alt="Phone composer, default" height="87"> <img src="components/crops/m-composer-light.png" alt="Phone composer, light" height="87"> 
 
 | State | Values |
 |---|---|
-| default | size 358 x 87; radius 26px; background #212121 `bg.primary`; shadow rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset; transition color and 9 more 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `icon.primary`; placeholder #ffffff `text.primary` |
-| light | size 358 x 87; radius 26px; background #ffffff `bg.primary`; shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 8px 0px, rgba(0, 0, 0, 0.02) 0px 4px 40px 8px; transition color and 9 more 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #0d0d0d `icon.primary`; placeholder #0d0d0d `text.primary` |
-
-Tokens named in its classes: `--composer-surface-primary`, `--spacing`, `--text-primary`.
+| default | size 358 x 87; radius 28px; background `role.bg.raised`; shadow rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset; icon 20 x 20, `role.text.primary`; placeholder `role.text.disabled` |
+| light | size 358 x 87; radius 28px; background `role.bg.raised`; shadow rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset; icon 20 x 20, `role.text.primary`; placeholder `role.text.disabled` |
 
 #### Phone drawer
 
-<a id="m-drawer"></a>`m-drawer`, on mobile-home-dark-drawer. The same sidebar in `#stage-popover-sidebar`, sliding over the page; the slide-in transform was set to its end state by hand before the copy.
+<a id="m-drawer"></a>`m-drawer`, on mobile-home-dark-drawer.
 
 <img src="components/crops/m-drawer-default.png" alt="Phone drawer, default" height="120"> <img src="components/crops/m-drawer-light.png" alt="Phone drawer, light" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 260 x 844; border R: 1px solid rgba(255, 255, 255, 0.1) `border.extra-light`; background #000000 `bg.secondary-surface`; shadow rgba(0, 0, 0, 0.07) 0px 0px 64px 0px; text System 14/20 400, #ffffff `text.primary`; icon 20 x 20, #ffffff `icon.primary` |
-| light | size 260 x 844; border R: 1px solid rgba(0, 0, 0, 0.05) `border.light`; background #fcfcfc `surface.sidebar-surface`; shadow rgba(0, 0, 0, 0.07) 0px 0px 64px 0px; text System 14/20 400, #0d0d0d `text.primary`; icon 20 x 20, #0d0d0d `icon.primary` |
-
-Tokens named in its classes: `--border-extra-light`, `--sharp-edge-top-shadow`, `--sharp-edge-top-shadow-placeholder`, `--sidebar-section-first-margin-top`, `--sidebar-surface-primary`, `--sidebar-width`, `--surface-hover`, `--text-primary`, `--text-tertiary`.
+| default | size 260 x 844; border R: 1px solid `role.border.default`; background `role.bg.page`; shadow rgba(0, 0, 0, 0.1) 0px 4px 8px -2px; text `typography.text-sm`, `role.text.primary`; transition transform and 3 more 0.2s cubic-bezier(0, 0, 0.2, 1); icon 77.13 x 18, `role.text.primary` |
+| light | size 260 x 844; border R: 1px solid `role.border.default`; background `role.bg.page`; shadow rgba(0, 0, 0, 0.1) 0px 4px 8px -2px; text `typography.text-sm`, `role.text.primary`; transition transform and 3 more 0.2s cubic-bezier(0, 0, 0.2, 1); icon 77.13 x 18, `role.text.primary` |
 
 #### Phone drawer row
 
 <a id="m-drawer-row"></a>`m-drawer-row`, on mobile-home-dark-drawer.
 
-<img src="components/crops/m-drawer-row-default.png" alt="Phone drawer row, default" height="36"> <img src="components/crops/m-drawer-row-light.png" alt="Phone drawer row, light" height="36"> 
+<img src="components/crops/m-drawer-row-default.png" alt="Phone drawer row, default" height="35"> <img src="components/crops/m-drawer-row-light.png" alt="Phone drawer row, light" height="35"> 
 
 | State | Values |
 |---|---|
-| default | size 248 x 36; padding 6px 10px; border B: 1px solid transparent; radius 10px; background rgba(255, 255, 255, 0.1) `interactive.bg-secondary-hover`; text System 14/20 400, #ffffff `text.primary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `icon.primary` |
-| light | size 248 x 36; padding 6px 10px; border B: 1px solid transparent; radius 10px; background rgba(0, 0, 0, 0.05) `interactive.bg-secondary-hover`; text System 14/20 400, #0d0d0d `text.primary`; transition color and 9 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #0d0d0d `icon.primary` |
-
-Tokens named in its classes: `--menu-item-active`, `--menu-item-background`, `--menu-item-highlighted`, `--menu-item-icon-opacity`, `--menu-item-open`, `--menu-item-pressed`, `--text-tertiary`.
+| default | size 247 x 35; padding `spacing.1_5` `spacing.2_5`; radius `radius.lg`; background transparent; text `typography.text-sm`, rgba(237, 237, 237, 0.85); icon 20 x 20, rgba(237, 237, 237, 0.85) |
+| light | size 247 x 35; padding `spacing.1_5` `spacing.2_5`; radius `radius.lg`; background transparent; text `typography.text-sm`, rgba(13, 13, 13, 0.85); icon 20 x 20, rgba(13, 13, 13, 0.85) |
 
 #### Phone user bubble
 
@@ -1595,100 +1646,102 @@ Tokens named in its classes: `--menu-item-active`, `--menu-item-background`, `--
 
 | State | Values |
 |---|---|
-| default | size 250.59 x 260; padding 10px 16px; radius 22px; background #173e76 `chatTheme.blue.user-msg-bg`; text System 16/24 400, #f6fafe `chatTheme.blue.user-msg-text` |
-| light | size 250.59 x 260; padding 10px 16px; radius 22px; background #e8f3fe `theme.blue.background`; text System 16/24 400, #0c274a `chatTheme.blue.user-msg-text` |
+| default | size 250.59 x 574; padding `spacing.2_5` `spacing.4`; radius `radius.token-composer-single-line`; background `bg.user-message`; text `fontSize.base`/26 `fontWeight.normal`, `text.user-message`; icon 16 x 16, `text.user-message` |
+| light | size 250.59 x 574; padding `spacing.2_5` `spacing.4`; radius `radius.token-composer-single-line`; background `bg.user-message`; text `fontSize.base`/26 `fontWeight.normal`, `text.user-message`; icon 16 x 16, `text.user-message` |
+
+#### Phone code block
+
+<a id="m-code-block"></a>`m-code-block`, on mobile-thread-dark-bottom.
+
+<img src="components/crops/m-code-block-default.png" alt="Phone code block, default" height="120"> <img src="components/crops/m-code-block-light.png" alt="Phone code block, light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 358 x 250.25; border 1px solid `role.border.subtle`; radius `radius.3xl`; background `surface.elevated-secondary`; image linear-gradient(`variant.primary.soft.bg-hover`, `variant.primary.soft.bg-hover`); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light | size 358 x 250.25; border 1px solid `role.border.subtle`; radius `radius.3xl`; background `bg.user-message-compact`; image linear-gradient(`variant.primary.soft.bg-hover`, `variant.primary.soft.bg-hover`); text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
 
 ## Icon index
 
-77 icons were lifted from the sprite symbols inlined in the page copies into [icons/](icons), named by their sprite id; the ones whose id is a content hash are named from the label of the control they sit in, with the hash kept. [icons/INDEX.tsv](icons/INDEX.tsv) lists each file's sprite id, viewBox, the sizes it was drawn at, how often and where. ChatGPT draws them through `<use href="sprites-core-*.svg#name">` at 20px (`icon`), 16px (`icon-sm`) or 12px, filled in currentColor. A few glyphs are inline SVG rather than sprite symbols (the Think chip's brain, the mode toggle's sparkle, the composer's voice wave) and are not in the folder. The icons are OpenAI's property, kept for reference only.
+66 icons were lifted from the sprite symbols inlined in the page copies into [icons/](icons), named by their sprite id. [icons/INDEX.tsv](icons/INDEX.tsv) indexes each by role, where it is drawn most (action 34, header action 11, message action 7, composer action 6, menu item 6, navigation 1, content 1), with every role it plays, its sprite id, viewBox, the sizes it was drawn at and the control it labels. ChatGPT draws them through `<use href="sprites-core-*.svg#name">` at 20px (`size.icon.lg`), 16px (`size.icon.sm`) or 12px, filled in currentColor, paired with 14px labels in rows and menus and alone (with an aria-label) in 36px icon buttons. A few glyphs are CSS masks or inline SVG and are not in the folder. The icons are OpenAI's property, kept for reference only.
 
-| Icon | Sizes | Where it was used |
-|---|---|---|
-| `a-project-a1bba7` | 20 | A project |
-| `a-third-project-86811d` | 20 | A third project |
-| `another-project-7cd510` | 20 | Another project |
-| `archive-de4c4d` | 20 | Archive |
-| `arrow-top-right-sm` | 16 | Codex |
-| `avatar` | 20 | Account |
-| `blossom` | 20 | Open sidebar |
-| `chat-bubble-light-20` | 20 | Recents |
-| `chat-temp-checked` | 20 | Temporary chat |
-| `chat-temp` | 20 | Temporary chat |
-| `chat` | 20 | A pinned conversation |
-| `check-sm` | 16 | Blue |
-| `chevron-down-sm` | 12 16 | Pinned |
-| `chevron-right-sm` | 16 | Installed |
-| `clock` | 20 | Scheduled |
-| `compose` | 20 | New chat |
-| `create-image-plugin` | 20 | - |
-| `cross` | 16 18 | Close sidebar |
-| `data-controls` | 20 | Data controls |
-| `dots-horizontal` | 20 | - |
-| `drive` | 20 | Storage |
-| `exit` | 20 | Log out |
-| `face` | 20 | Personalization |
-| `globe` | 20 | Search the web |
-| `grid-view-a6ce99` | 20 | Grid view |
-| `health` | 20 | A fourth project |
-| `help` | 20 | Trusted contact |
-| `icon-03424d` | 14 | - |
-| `icon-3e6253` | 12 | - |
-| `icon-50f34b` | 16 | - |
-| `icon-7fccfb` | 20 | - |
-| `icon-9efea5` | 12 | - |
-| `icon-c28710` | 20 | - |
-| `image-square` | 20 | Create an image or sticker |
-| `keys` | 20 | Security and login |
-| `library` | 20 | - |
-| `list-view-a881c2` | 20 | List view |
-| `menu` | 24 | - |
-| `microphone-regular-24` | 20 | Start dictation |
-| `more-623957` | 20 | More |
-| `move-to-project-f7cf8e` | 20 | Move to project |
-| `new-2192c7` | 16 | New |
-| `open-filters-60ccb6` | 20 | Open filters |
-| `paperclip` | 20 | - |
-| `pencil` | 20 | Write or edit |
-| `pin-sm` | 16 | Pin Another conversation |
-| `pin` | 20 | Pin chat |
-| `plus-regular-20` | 20 | Add files and more |
-| `plus` | 16 20 | New project |
-| `send-prompt-style-thin` | 20 | Send prompt |
-| `settings-analytics` | 20 | Analytics |
-| `settings-billing` | 20 | Billing |
-| `settings-cog` | 20 | General |
-| `settings-notifications` | 20 | Notifications |
-| `settings-plugins` | 20 | Plugins |
-| `settings-usage` | 20 | Usage |
-| `settings-voice` | 20 | Voice |
-| `share-8768d3` | 20 | Share |
-| `shield-check` | 20 | Safety |
-| `shortcuts` | 20 | Keyboard |
-| `show-next-assistant-response-98b8ee` | 20 | Show next assistant response |
-| `show-previous-assistant-response-a860e6` | 20 | Show previous assistant response |
-| `sidebar-codex` | 20 | Codex |
-| `sidebar-images` | 20 | Images |
-| `sidebar-library` | 20 | Library |
-| `sidebar-search` | 20 | Search |
-| `sidebar` | 20 | Open sidebar |
-| `sketch` | 20 | - |
-| `skill-deep-research-dark` | 20 | - |
-| `skill-globe-dark` | 20 | - |
-| `sparkle-filled` | 12 20 | Upgrade |
-| `sparkle` | 16 | Upgrade plan |
-| `switch-model-ec66f0` | 20 | Switch model |
-| `unpin-sm` | 16 | Unpin A pinned conversation |
-| `user-lock` | 20 | Parental controls |
-| `voice-regular-24` | 20 | Start Voice |
-| `worked-for-07889e` | 16 | Worked for 22s |
+| Icon | Role | Sizes | Where it was used |
+|---|---|---|---|
+| `books-light-20` | navigation | 20 | Library |
+| `chat-bubble-dashed-light-20` | header action | 20 | Temporary chat |
+| `chevron-down-md-light-20` | header action | 20 | Add |
+| `drag-light-16` | header action |  | Dock Chat |
+| `gear-light-16` | header action |  | Manage |
+| `gear-light-20` | header action | 20 | Manage |
+| `minus-sm-light-20` | header action |  | Minimize chat |
+| `sidebar-hidden-light-16` | header action |  | Show sidebar |
+| `sidebar-hidden-light-20` | header action | 20 | Show sidebar |
+| `sparkle-fill-light-12` | header action | 12 | Work |
+| `sparkle-fill-light-20` | header action | 20 | Upgrade |
+| `xmark-md-light-16` | header action | 16 | Dismiss upgrade reminder |
+| `brain-regular-20` | composer action | 20 | Think |
+| `microphone-light-16` | composer action |  | Dictate |
+| `microphone-light-20` | composer action | 20 | Dictate |
+| `plus-lg-regular-16` | composer action |  | Add files and more |
+| `plus-lg-regular-20` | composer action | 20 | Add files and more |
+| `voice-regular-20` | composer action | 20 | Start Voice |
+| `arrow-down-lg-light-20` | message action | 20 | Scroll to bottom |
+| `arrow-up-right-arrow-down-left-md-light-16` | message action |  | - |
+| `arrow-up-right-arrow-down-left-sm-light-20` | message action | 20 | - |
+| `globe-light-12` | message action | 12 | - |
+| `square-on-square-light-16` | message action |  | - |
+| `square-on-square-light-20` | message action | 20 | Copy Dark theme |
+| `text-overflow-light-20` | message action | 20 | - |
+| `chat-bubble-light-20` | menu item | 20 | Sample title 11 |
+| `help-light-20` | menu item | 20 | Help |
+| `open-base-arrow-forward-light-16` | menu item |  | Log out |
+| `open-base-arrow-forward-light-20` | menu item | 20 | Log out |
+| `personalization-light-20` | menu item | 20 | Personalization |
+| `sparkles-light-20` | menu item | 20 | Upgrade plan |
+| `arrow-down-open-base-light-20` | action | 20 | Import Dark theme |
+| `arrow-left-lg-light-16` | action |  | Back to app |
+| `arrow-left-lg-light-20` | action | 20 | Back to app |
+| `arrow-up-open-base-light-20` | action | 20 | Share |
+| `arrows-clockwise-rotate-lg-light-16` | action | 16 | - |
+| `brain-light-16` | action |  | Thinking |
+| `brain-light-20` | action | 20 | Thinking |
+| `chevron-down-md-light-16` | action | 16 | New |
+| `chevron-right-md-light-16` | action | 16 | Advanced |
+| `credit-card-light-20` | action | 20 | Billing |
+| `ellipsis-horizontal-light-16` | action | 14 16 | Chat actions |
+| `ellipsis-horizontal-light-20` | action | 20 | More |
+| `filter-light-16` | action | 16 | Filter chats and work |
+| `filter-light-20` | action | 20 | Open filters |
+| `folder-light-16` | action | 16 | Filter archived chats by project |
+| `folder-light-20` | action | 20 | Storage |
+| `laptop-light-20` | action | 20 | - |
+| `list-bullet-light-20` | action | 20 | List view |
+| `magnifying-glass-lg-light-16` | action | 16 | Search |
+| `magnifying-glass-lg-light-20` | action | 20 | Search |
+| `person-circle-light-16` | action |  | Parental controls |
+| `person-circle-light-20` | action | 20 | Parental controls |
+| `pin-fill-light-16` | action | 14 | Unpin chat |
+| `pin-light-16` | action | 14 | Pin chat |
+| `plus-lg-light-20` | action | 20 | Install Health |
+| `plus-md-light-16` | action | 16 | Add new project |
+| `shield-light-16` | action |  | Data controls |
+| `shield-light-20` | action | 20 | Data controls |
+| `sidebar-light-16` | action |  | Hide sidebar |
+| `sidebar-light-20` | action | 20 | Hide sidebar |
+| `sliders-light-20` | action | 20 | Settings |
+| `square-grid-2x2-light-20` | action | 20 | Grid view |
+| `xmark-circle-fill-regular-16` | action | 16 | Clear search |
+| `xmark-md-light-20` | action | 20 | Dismiss suggestion |
+| `code-light-20` | content | 20 | - |
 
 ## Gaps
 
-- The copies were taken in the built-in browser pane while it was hidden, so no animation frame ran: entrance animations froze where they started. Modal backdrops render undimmed (the settings dialog's blur is there, its dim is not), the phone drawer's slide-in transform was set to its end state by hand before the copy, and the collapsed sidebar kept its 260 wide container (its width is driven by script frames) with the 52 wide rail drawn inside it, so the main column did not move.
-- The thread is a virtualised list. Only the last turns were rendered (turns 1 to 5 of the conversation are empty placeholders), so there is no shot of the top of a thread and no first-turn spacing.
-- The map widget in the thread is an iframe, kept as a same-size dark box; its frame is real, its contents are not. Lazy template thumbnails on Images were never requested, so only the first card has its picture.
-- No code block appeared in any of the account's threads. Its look in the style guide comes from the code-block CSS only (`--code-block-surface`, the fade timings), not from a measured element.
-- Hover and focus on the 390 wide copies were not measured (a phone has neither). Radix menu items highlight through script, so their hover is not measured either; the + menu's highlighted row is the captured state.
-- The light theme was read by removing every `dark` class from the copies (ChatGPT also puts `dark` on each message's markdown body), not by changing the account's appearance. Every colour is a var() of the two palette blocks, so the readings match what Light shows, but anything ChatGPT swaps per theme through script would not have swapped. The accent was only ever blue in the copies; the other seven come from the CSS, read with `data-chat-theme` set on the probe page.
-- Not captured: a streaming answer, voice mode, the Work mode, Codex, Scheduled, the Library's grid view and folders, the image editor, a plugin's detail page, the share dialog, and the Account, Billing and Data controls settings panes, since each either sends something, spends quota or shows account details.
+- Toast: ChatGPT shows one only after an action (copy, archive, share, delete), and the capture took none.
+- Pressed: the product switches its pressed styles from script, so the pressed readings equal hover; the `-active` colours are in the tokens only.
+- Loading: no skeleton or spinner was on screen in any copy; the streaming text speed (`duration.animation-duration-streaming-text`, 700 ms) is from the CSS only.
+- Forms with a validation error: no form in reach validates without submitting it.
+- Onboarding: the account is past its first run.
+- Message text, chat, project and file titles, Library thumbnails and the installed plugins were replaced or blanked in the copies before they left the browser, so widths that depend on text are those of the filler.
+- Hover and focus on the 390 wide copies were not measured (a phone has neither).
+- The light theme was read by setting every `data-theme="dark"` to light in the copies, not by changing the account's appearance. Only the Blue accent was captured; switching it is an account setting.
+- Not captured: a streaming answer, voice mode, Work mode, Codex, Scheduled, a project page, the share dialog, the Account, Billing and Personalization panes, since each either sends something, spends quota or shows account details.
 

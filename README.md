@@ -52,7 +52,7 @@ secret. `make help` lists the other targets (`make check` validates
 | [gauth](systems/gauth) | AI tutor app, lesson players with a tutor panel | 2026-10-17 | light | [README](systems/gauth/README.md) |
 | [researchrabbit](systems/researchrabbit) | Interactive graph beside a list | 2026-10-17 | light | [README](systems/researchrabbit/README.md), [graph.md](systems/researchrabbit/graph.md), [patterns.md](systems/researchrabbit/patterns.md) |
 | [manus](systems/manus) | Agent app shell, sidebar, a Library of agent outputs | 2026-10-17 | light, dark | [README](systems/manus/README.md) |
-| [chatgpt](systems/chatgpt) | The baseline chat UI: thread, composer, history | 2026-10-04 | light, dark | [README](systems/chatgpt/README.md) |
+| [chatgpt](systems/chatgpt) | The baseline chat UI: thread, composer, history | 2026-10-17 | light, dark | [README](systems/chatgpt/README.md) |
 | [claude](systems/claude) | A quiet chat shell, Artifacts, Projects | 2026-10-04 | light, dark | [README](systems/claude/README.md) |
 | [hevy](systems/hevy) | Native iOS workout logging, dense set table, one accent, iOS 26 glass chrome | 2026-10-10 | light, dark | [README](systems/hevy/README.md) |
 | [tokentracker](systems/tokentracker) | Local AI usage dashboard: borderless sidebar, rounded panel, hairline cards, one green accent | 2026-10-17 | light, dark | [README](systems/tokentracker/README.md) |

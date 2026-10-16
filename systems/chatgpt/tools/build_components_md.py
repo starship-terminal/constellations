@@ -3,9 +3,10 @@
 
 Reads raw/components-computed.json (every component and state, measured in both themes),
 raw/layout.json, tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to
-them. Every value is a cell of the measurement file, condensed: colours are hex followed by the token
-in the matching theme's set whose value is the same, the font family is named once per value, and a
-state row shows only what differs from the first state. Dark states come first (the pages were
+them. Every value is a cell of the measurement file, condensed and written in tokens: a colour is the
+token in the matching theme's set whose value is the same, a radius, padding or size the core token
+that holds it; the raw value is written only where no token holds it. A state row shows only what
+differs from the first state. Dark states come first (the pages were
 captured dark); the light reading of the same state follows as `light`, `light-hover` and so on.
 Adapted from the Manus kit's builder.
 
@@ -65,11 +66,13 @@ for theme in ("dark", "light"):
 # Which token a colour is named after depends on what it paints: a fill prefers the interactive and
 # surface names, a border the border names, text the text names. The captured accent is blue.
 PREFER = {
-    "bg": ["interactive.bg-secondary-hover", "interactive.bg-secondary-selected", "surface.surface-hover", "bg.", "surface.", "component.", "interactive.bg-", "theme.", "accent.", "chatTheme.blue.", "border.", "text.", "icon."],
-    "border": ["border.", "interactive.border-", "interactive.focus-ring", "surface.", "bg.", "text."],
-    "text": ["text.", "icon.", "interactive.label-", "theme.", "accent.", "chatTheme.blue.", "surface.", "bg."],
-    "icon": ["icon.", "text.", "interactive.icon-", "theme.", "accent."],
+    "bg": ["role.bg.", "surface.", "bg.", "variant.primary.", "variant.secondary.", "variant.", "scrim.", "token.", "gray.", "component."],
+    "border": ["role.border.", "border.", "ring.", "token.border", "variant.", "gray."],
+    "text": ["role.text.", "text.", "variant.", "token.text", "gray."],
+    "icon": ["role.text.", "text.", "variant.", "token.text", "gray."],
 }
+# Names that hold a value for one specific place: chosen only when no general token holds the value.
+SPECIFIC = re.compile(r"tooltip|mode-toggle|home-suggestion|other-user-message|activity|coachmark|composer-action|control-opaque|recovery|execution|attribution|internal-badge|business|viewer|artifact|codex|usage|file|avatar|media|device|chatgpt-blue|discovery|caution|unread|message-reaction|charts")
 
 
 def pick(names, role):
@@ -77,8 +80,8 @@ def pick(names, role):
     def rank(n):
         for i, pre in enumerate(order):
             if n == pre or (pre.endswith((".", "-")) and n.startswith(pre)):
-                return (i, len(n), n)
-        return (len(order), len(n), n)
+                return (bool(SPECIFIC.search(n)), i, len(n), n)
+        return (True, len(order), len(n), n)
     return sorted(names, key=rank)[0]
 
 THEME = ["dark"]  # the theme the colour() helper looks tokens up in; set per state
@@ -125,6 +128,28 @@ def unlab(c):
     return re.sub(r"(ok)?lab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: / ([\d.]+))?\)", f, c)
 
 
+# Core dimensions by value, so a padding, radius or height is written as the token that holds it.
+BY_DIM = {}
+for n, t in flat(T["core"]):
+    if t["$type"] == "dimension" and isinstance(t["$value"], str) and t["$value"].endswith("px"):
+        BY_DIM.setdefault(n.split(".")[0], {}).setdefault(t["$value"], []).append(n)
+
+
+def dtok(v, group, prefer=()):
+    """'8px' -> '`spacing.2`' when a core token in `group` holds it, else the value."""
+    if v in ("0px", "0", "full"):
+        return "0" if v != "full" else "`radius.full`"
+    names = BY_DIM.get(group, {}).get(v)
+    if not names:
+        return v
+    names = sorted(names, key=lambda n: (not any(n.startswith(p) for p in prefer), "named" in n or "-base" in n, len(n), n))
+    return f"`{names[0]}`"
+
+
+def dims(v, group, prefer=()):
+    return " ".join(dtok(x, group, prefer) for x in v.split())
+
+
 def full(r):
     """rounded-full is calc(infinity * 1px), which computes to 33554400px."""
     return re.sub(r"[\d.e+]+px", lambda m: "full" if float(m.group(0)[:-2]) >= 10000 else m.group(0), r)
@@ -136,7 +161,7 @@ def colour(c, tokens=True, role="bg"):
         if re.fullmatch(r"rgba\(\d+, \d+, \d+, 0\)", v):
             return "transparent"
         names = BY_COLOR[THEME[0]].get(v) if tokens else None
-        return f"{v} `{pick(names, role)}`" if names else v
+        return f"`{pick(names, role)}`" if names else v
 
     c = unlab(c)
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
@@ -161,18 +186,42 @@ def num(x):
     return re.sub(r"(\d+\.\d\d)\d+", r"\1", str(x))
 
 
+TYPE = {}
+for n, t in flat(T["core"]):
+    if t["$type"] == "typography":
+        v = t["$value"]
+        fam_ = "mono" if "mono" in str(v["fontFamily"]) else "sans"
+        TYPE.setdefault((fam_, v["fontSize"], v["lineHeight"], str(v["fontWeight"])), []).append(n)
+
+
 def font(fz, lh, fw, f):
-    lh = lh.replace("px", "") if lh != "normal" else "normal"
-    return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
+    """A text style as the core typography token with the same family, size, line height and
+    weight, else family size/line-height weight."""
+    fam_ = "mono" if fam(f) == "Mono" else "sans"
+    rank = lambda n: (not n.startswith("typography.text-") and not n.startswith("typography.heading-"), len(n), n)
+    names = TYPE.get((fam_, fz, lh, str(fw)))
+    if names:
+        return f"`{sorted(names, key=rank)[0]}`"
+    wt = next((f"`{n}`" for n, t in flat(T["core"]) if n.startswith("fontWeight.") and str(t["$value"]) == str(fw)), fw)
+    same = sorted((n for (fm, z, l, w), ns in TYPE.items() for n in ns if fm == fam_ and z == fz and l == lh and re.match(r"typography\.(text|heading)-", n)), key=rank)
+    if same:
+        return f"`{same[0]}` at {wt}"
+    size = next((f"`{n}`" for n, t in flat(T["core"]) if n.startswith("fontSize.") and t["$value"] == fz), None)
+    lh_ = lh.replace("px", "") if lh != "normal" else "normal"
+    if size:
+        return f"{size}/{num(lh_)} {wt}" + (" mono" if fam_ == "mono" else "")
+    return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh_)} {fw}"
 
 
 def props(v):
     s = v["style"]
     o = {}
-    o["size"] = f"{num(v['rect']['w'])} x {num(v['rect']['h'])}"
+    h = "%gpx" % round(v["rect"]["h"], 2)
+    ht = dtok(h, "size", ("size.control.",))
+    o["size"] = f"{num(v['rect']['w'])} x {ht if ht.startswith('`') else num(v['rect']['h'])}"
     pad = sides(s["paddingTop"], s["paddingRight"], s["paddingBottom"], s["paddingLeft"])
     if pad != "0px":
-        o["padding"] = pad
+        o["padding"] = dims(pad, "spacing", ("spacing.",))
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
@@ -183,7 +232,7 @@ def props(v):
         o["border"] = bds[0] if len(set(bds)) == 1 else "; ".join(f"{'TRBL'[i]}: {b}" for i, b in enumerate(bds) if b != "none")
     rad = full(sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"]))
     if rad != "0px":
-        o["radius"] = rad
+        o["radius"] = dims(rad, "radius", ("radius.",))
     o["background"] = colour(s["backgroundColor"])
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
@@ -191,13 +240,16 @@ def props(v):
     if s["boxShadow"] != "none":
         sh = colour(s["boxShadow"], tokens=False)
         layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
-        layers = [x for x in layers if not x.startswith("transparent")]
+        layers = [x for x in layers if not x.startswith("transparent") and not re.search(r" 0px 0px 0px [1-9]", x) and not re.fullmatch(r"#ffffff 0px 0px 0px 0px( inset)?", x)]
         if layers:
             o["shadow"] = ", ".join(layers)
     if s.get("backdropFilter", "none") != "none":
         o["backdrop"] = s["backdropFilter"]
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
         o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], role='border')}, offset {s['outlineOffset']}"
+    ring = re.search(r"(rgb\([^)]*\)) 0px 0px 0px ([1-9][\d.]*px)( inset)?", s["boxShadow"])
+    if ring:
+        o["focus ring"] = f"`size.focusRing.width` box-shadow ring{' (inset)' if ring.group(3) else ''} in {colour(ring.group(1), role='border')}" if ring.group(2) == "2px" else f"{ring.group(2)} ring in {colour(ring.group(1), role='border')}"
     t = v.get("textStyle")
     if t:
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], role='text')}"
@@ -233,7 +285,7 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "focus ring", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
@@ -297,33 +349,56 @@ def child_layers(c):
 # --------------------------------------------------------------------------- page and group text
 
 GROUP_INTRO = {
-    "Sidebar": "The 260px sidebar every page shares (`#stage-slideover-sidebar`): a 52px header with the wordmark, search and close, the nav rows (New chat, Images, Library, Scheduled, Plugins, Codex, More), then three collapsible sections, Pinned, Projects and Chats, and the account row with its Upgrade pill pinned at the bottom. Every row is a `.__menu-item`, 36 tall with radius 10, whose fills come from inline `--menu-item-*` variables. Closing it leaves the 52px tiny rail.",
-    "Top bar": "The 52px page header: on the home and a project, the Chat / Work segmented toggle in the middle and Upgrade and the temporary-chat button at the end; in a thread, Upgrade, Share and the conversation options.",
-    "Home": "The new-chat page: one heading centred over the composer, then three suggestion rows.",
-    "Composer": "The composer shared by the home, a thread, a project and Images: a 768 wide pill (radius 28) with the + button, the ProseMirror field, the Think chip, dictation and the voice button, which becomes send once there is text. On a phone it takes two rows.",
-    "Thread": "A conversation: the user bubble in the accent colour, the \"Worked for\" disclosure, the assistant's markdown (paragraphs, headings, strong, tables, citation pills), widgets, and the actions under a turn.",
-    "Menus": "The popovers: the composer's + menu, the chat row menu, the user menu, the accent listbox and the phone's model menu. All are `.popover` on #353535 in dark (white in light), radius 20 (16 for the listbox), with 36 tall `.__menu-item` rows.",
-    "Search": "The search dialog the sidebar's search button opens: an input row and recent chats.",
-    "Settings": "The settings dialog: a close button, a search field and a left nav of tabs, then the General pane of rows with select buttons and a toggle.",
-    "Library": "The file library: a title with filter, grid and list buttons, search and the New button, pill tabs, then a list of files with a type tile or thumbnail and the last activity.",
-    "Images": "The Images page: a title, the composer, Trending and Templates tabs, and tall template cards.",
-    "Plugins": "The plugin gallery: a title and subtitle, search and an add button, then sections of two-column plugin rows.",
-    "Project": "A project page: the icon and title, Share and details, the composer, Chats and Sources tabs, and the project's chats with a preview line and date.",
-    "Mobile": "The same app at 390 wide: the header with the menu button and model switcher, the two-row composer, the drawer and the user bubble.",
+    "Sidebar": "The sidebar every page shares (`aside.LeftPanel`, 340 wide at 1440): a 52px header with search and hide, the destination rows (New chat, Images, Scheduled, Library, Plugins, Explore), then the Pinned, Projects and Recents sections and the account row. Rows are 36 tall and fully round; hover and the current row rest on the same translucent fill. Hiding it leaves the 52 wide rail.",
+    "Top bar": "The 52px page header (`<header>`, fixed, z-index 30): the Chat / Work toggle centred on the home, Upgrade and the temporary-chat button at the end; in a thread Upgrade, Share and More.",
+    "Home": "The new-chat page: one heading over the composer, three suggestion rows, and the Plus nudge card at the bottom.",
+    "Composer": "The composer shared by the home and a thread: a 768 wide pill with the + button, the ProseMirror field, Think, Dictate and the voice button, which becomes Send once there is text.",
+    "Thread": "A conversation: the user bubble in the accent colour, the assistant's markdown (paragraphs, headings, strong, inline code, code blocks, tables, links), the actions under a turn and the scroll-to-bottom button. Message text in the copies is same-length filler.",
+    "Menus": "The popovers: the chat row menu, the composer + menu (a popover of buttons, not a role=menu), the account menu, a notification channel's checkbox menu and the accent colour listbox. Menus are 90% surfaces with a 16px backdrop blur.",
+    "Dialogs": "The delete confirmation (420 wide, a danger action and Cancel) and the global search dialog with its filter tabs and empty state.",
+    "Library": "The file library: title, filter, grid and list view buttons, search, New, pill tabs, then a masonry grid of file cards with a hover checkbox. Also its error state and a partial-results banner.",
+    "Images": "The Images page: Trending and Templates tabs over a grid of template cards (OpenAI's own sample images).",
+    "Plugins": "The plugin store: Plugins / Skills tabs, a search field and plugin rows. The installed plugins were blanked in the copy.",
+    "Settings": "The settings page (a full page since the redesign, not a dialog): a left nav, then panes of 60 to 64 tall rows with switches, select buttons, outline buttons and danger buttons.",
+    "Pricing": "The Upgrade dialog: a full-screen sheet with a Personal / Business radio segment and plan cards.",
+    "Phone": "The same app at 390 wide: the header, the two-row composer, the drawer, the user bubble and a code block.",
 }
 
 PAGE_DESC = [
-    ("home", "Home. The heading, composer and suggestion rows. Captured at rest, with the + menu, a chat row's menu, the user menu and the search dialog open, with a line typed in the composer, and with the sidebar collapsed.", "/"),
-    ("thread", "A thread (a long answer with a table and citation pills, its text replaced by filler). Captured at the table answer, at the user turn with the \"Worked for\" disclosure and the map widget, and at the bottom.", "/c/<id>"),
-    ("library", "Library, list view, Suggested tab.", "/library"),
+    ("home", "Home. Captured at rest, with a tooltip, the + menu, a chat row's menu, the account menu, the delete confirmation, the search dialog (empty and with no results), a line typed in the composer, and with the sidebar hidden.", "/"),
+    ("thread", "Two threads, their text replaced by same-length filler: one with code blocks (at the bottom, and at its user turn), one with a table and citations.", "/c/<id>"),
+    ("library", "Library, grid view, Suggested tab; the error state (the capture guard refused the file list request) and a search with a partial-results banner.", "/library"),
     ("images", "Images, Trending tab.", "/images"),
     ("plugins", "Plugins.", "/plugins"),
-    ("project", "A project page, Chats tab.", "/g/<project>/project"),
-    ("settings", "Settings dialog, General pane, at rest and with the accent colour listbox open.", "/#settings"),
+    ("settings", "Settings: General, Appearance (and its accent listbox), Keyboard, Data controls, Archived chats, Notifications (with a channel menu open).", "/settings/..."),
+    ("pricing", "The Upgrade dialog over the home.", "/#pricing"),
 ]
 MOBILE_DESC = [
     ("mobile-home", "Home at 390, and the drawer.", "/"),
-    ("mobile-thread", "The thread at 390, and the model menu.", "/c/<id>"),
+    ("mobile-thread", "The code thread at 390, top and bottom.", "/c/<id>"),
+]
+
+# Which measured entries show each component of the checklist in docs/DESIGN-SYSTEM.md.
+CHECKLIST = [
+    ("Button", ["promo-button", "button-secondary", "button-danger", "button-outline", "library-new", "pricing-primary", "button-disabled"]),
+    ("Icon button", ["header-icon-button", "sidebar-icon-button", "composer-plus", "voice-button", "send-button", "code-block-button"]),
+    ("Link", ["md-link", "text-link", "archived-link", "header-upgrade"]),
+    ("Text field", ["search-field", "library-search", "plugins-search", "archived-search", "color-field"]),
+    ("Text area", ["composer"]),
+    ("Select", ["select", "code-theme-select", "accent-menu"]),
+    ("Checkbox", ["checkbox", "checkbox-menu-item"]),
+    ("Radio", ["segmented-radio", "mode-segment"]),
+    ("Switch", ["switch-on", "switch-off", "keyboard-switch"]),
+    ("Tabs", ["library-tab", "search-tab", "images-tab", "plugins-tab"]),
+    ("Menu", ["chat-menu", "menu-item", "menu-item-danger", "plus-menu", "user-menu"]),
+    ("Tooltip", ["tooltip"]),
+    ("Dialog", ["confirm-dialog", "search-dialog", "pricing-dialog", "dialog-backdrop"]),
+    ("Toast", []),
+    ("Card", ["promo-card", "library-card", "pricing-card", "image-card"]),
+    ("List row", ["chat-row", "nav-row", "search-result", "archived-row", "plugin-row", "plugin-row-link", "settings-row"]),
+    ("Table", ["md-table", "md-th", "md-td"]),
+    ("Avatar", ["avatar"]),
+    ("Badge", ["badge"]),
 ]
 
 
@@ -341,7 +416,7 @@ def links(prefix):
     out = []
     for f in shots:
         m = re.fullmatch(re.escape(prefix) + r"-(dark|light)-(.+)\.png", f)
-        if m:
+        if m and not (prefix == "home" and f.startswith("home-") and False):
             out.append(f"[{m.group(2)} ({m.group(1)})](screenshots/{f})")
         elif re.fullmatch(re.escape(prefix) + r"-(dark|light)\.png", f):
             out.append(f"[default ({f.split('-')[-1][:-4]})](screenshots/{f})")
@@ -350,53 +425,48 @@ def links(prefix):
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
-icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n")[1:]]
-
-n_crops = len(list(Path("components/crops").glob("*.png")))
-n_states = sum(len(c["states"]) for c in C.values())
 icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n") if not r.startswith("#")][1:]
 
 W("# ChatGPT components")
 W()
-W(f"The discovery list of every page and state captured, then one entry per component with crops of the real product, the shared values, the icon index and the Gaps. Captured from chatgpt.com on {META['read']}, signed in to the owner's account (Free plan, dark theme, blue accent), as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account; the only changes were opening menus and closing them, typing a line into the composer and deleting it, and collapsing the sidebar and reopening it.")
+W(f"The discovery list of every page and state captured, the checklist coverage, the shared values, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from chatgpt.com on {META['read']}, signed in to the owner's account (Free plan, dark theme, blue accent), as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Phone group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account; the only actions were hovering, keyboard focus, opening menus and dialogs and closing them, and typing into the composer and the search fields without sending.")
 W()
-W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
+W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). Page geometry is in [raw/layout.json](raw/layout.json).")
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the token in [tokens.json](tokens.json) whose value in that theme is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `System 14/20 400, #ffffff`, and is read from the first text node inside the component. System is the `-apple-system-body` stack.")
-W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
+W("- Values are written as tokens from [tokens.json](tokens.json): a colour is the token in that theme's set whose value is the same (`role.text.primary`, `surface.card`, `variant.primary.soft.bg-hover`), a padding, radius or control height the core token that holds it (`spacing.2`, `radius.2xl`, `size.control.lg`). Text is the typography style with the same size, line height and weight (`typography.text-sm`), that style at another weight, or a `fontSize` token with its line height and a `fontWeight` token, then its colour. A raw value is written only where no token holds it.")
+W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: pressed)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-{theme}-{state}.png`. Desktop shots are 1440 x 900 at 2x; `-full` shots are whole pages at 2x, kept for the home, Library and Plugins; mobile shots are `mobile-{page}-{theme}-{state}.png`, 390 x 844 at 2x. Every state exists in both themes.")
+W("Screenshots are named `{page}-{theme}-{state}.png`, 1440 x 900 at 2x; `-full` shots are whole pages of the dark home, Library and Plugins; phone shots are `mobile-{page}-{theme}-{state}.png`, 390 x 844 at 2x. Every state exists in both themes.")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
 for p, desc, url in PAGE_DESC + MOBILE_DESC:
     W(f"| {desc} | `{url}` | {links(p)} |")
 W()
-W("### Overlays and transient states")
-W()
-W("| State | Where | How it was reached | Captured |")
-W("|---|---|---|---|")
-OVER = [
-    ("Composer + menu", "home", "the composer's + button", "[home-dark-plus-menu](screenshots/home-dark-plus-menu.png), [plus-menu](#plus-menu)"),
-    ("Composer with text", "home", "a line typed, then deleted", "[home-dark-composer-typed](screenshots/home-dark-composer-typed.png), [send-button](#send-button)"),
-    ("Chat row menu", "home", "the options button on a hovered history row", "[home-dark-chat-menu](screenshots/home-dark-chat-menu.png), [chat-menu](#chat-menu)"),
-    ("User menu", "home", "the account row", "[home-dark-user-menu](screenshots/home-dark-user-menu.png), [user-menu](#user-menu)"),
-    ("Search dialog", "home", "the sidebar's search button", "[home-dark-search](screenshots/home-dark-search.png), [search-dialog](#search-dialog)"),
-    ("Collapsed sidebar", "home", "the close-sidebar button, then reopened", "[home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [sidebar-rail](#sidebar-rail)"),
-    ("Settings dialog", "home", "Settings in the user menu; closed with Escape", "[settings-dark-general](screenshots/settings-dark-general.png), [settings-dialog](#settings-dialog)"),
-    ("Accent colour listbox", "settings", "the Accent color select; closed with Escape, nothing chosen", "[settings-dark-accent-menu](screenshots/settings-dark-accent-menu.png), [accent-menu](#accent-menu)"),
-    ("Phone drawer", "home at 390", "the menu button", "[mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png), [m-drawer](#m-drawer)"),
-    ("Phone model menu", "thread at 390", "the model switcher", "[mobile-thread-dark-model-menu](screenshots/mobile-thread-dark-model-menu.png), [model-menu](#model-menu)"),
-]
-for row in OVER:
-    W("| " + " | ".join(row) + " |")
-W()
 
+# --------------------------------------------------------------------------- checklist
+
+W("## Checklist coverage")
+W()
+W("The 19 components of the checklist in [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md), with the entries below that show each one and the states measured across them.")
+W()
+W("| Component | Entries | States measured |")
+W("|---|---|---|")
+for name, keys in CHECKLIST:
+    have = [k for k in keys if k in C]
+    if not have:
+        W(f"| {name} | not captured: ChatGPT shows a toast only after an action (copying, archiving, sharing), and the capture took no action | - |")
+        continue
+    states = sorted({re.sub(r"^light-?", "", s) or "default" for k in have for s, v in C[k]["states"].items() if "style" in v}, key=lambda x: ["default", "hover", "focus-visible", "pressed", "selected", "active", "checked", "open", "typed", "highlighted"].index(x) if x in ["default", "hover", "focus-visible", "pressed", "selected", "active", "checked", "open", "typed", "highlighted"] else 99)
+    if any("disabled" in C[k]["title"].lower() for k in have):
+        states.append("disabled")
+    W(f"| {name} | {', '.join(f'[{k}](#{k})' for k in have)} | {', '.join(states)} |")
+W()
 
 # --------------------------------------------------------------------------- shared values
 
@@ -417,17 +487,24 @@ for cid, c in C.items():
         st = s["style"]
         r = full(st["borderTopLeftRadius"])
         if r != "0px" and s["rect"]["w"] > 4:
-            radii[r] += 1
+            radii[dtok(r, "radius", ("radius.",))] += 1
         if st["transitionDuration"] not in ("0s", ""):
-            # the first duration and the first timing function; a cubic-bezier() carries commas of its own
             tf = re.findall(r"cubic-bezier\([^)]*\)|steps\([^)]*\)|[a-z-]+", st["transitionTimingFunction"])
             trans[f"{st['transitionDuration'].split(',')[0].strip()} {tf[0] if tf else st['transitionTimingFunction']}"] += 1
         if sname.endswith("focus-visible"):
             th = s["theme"]
             focus_n[th] += 1
-            if st["outlineStyle"] != "none" and float(st["outlineWidth"].replace("px", "")) > 0:
-                THEME[0] = th
-                focus[th][f"{st['outlineWidth']} {st['outlineStyle']} {colour(st['outlineColor'], role='border')} offset {st['outlineOffset']}"] += 1
+            THEME[0] = th
+            ring = re.search(r"(rgb\([^)]*\)) 0px 0px 0px ([1-9][\d.]*px)( inset)?", st["boxShadow"])
+            after = next((p["outline"] for p in s.get("paint") or [] if p.get("outline") and p["node"].endswith("::after")), None)
+            if ring:
+                focus[th][f"a {ring.group(2)} box-shadow ring{' (inset)' if ring.group(3) else ''} in {colour(ring.group(1), role='border')}"] += 1
+            elif st["outlineStyle"] == "solid" and float(st["outlineWidth"].replace("px", "")) > 0:
+                focus[th][f"a {st['outlineWidth']} outline in {colour(st['outlineColor'], role='border')}, offset {st['outlineOffset']}"] += 1
+            elif after:
+                focus[th][f"a {after.split(' ')[0]} outline on ::after, offset {after.split('offset ')[-1]}"] += 1
+            elif st["outlineStyle"] == "auto":
+                focus[th]["the browser's own outline (auto)"] += 1
             else:
                 focus[th]["no ring on the element"] += 1
 for cid, c in C.items():
@@ -444,25 +521,28 @@ for cid, c in C.items():
             ctr[f"opacity {a['style']['opacity']} to {b['style']['opacity']}"] += 1
         else:
             ctr["no change on the element"] += 1
+pressed_same = sum(1 for c in C.values() for n, s in c["states"].items() if n == "pressed" and "style" in s and c["states"].get("hover", {}).get("style") == s["style"])
+pressed_all = sum(1 for c in C.values() for n, s in c["states"].items() if n == "pressed" and "style" in s)
 
 
 def top(ctr, n):
     return ", ".join(f"{k} ({v})" for k, v in ctr.most_common(n))
 
 
-W(f"**Radius.** {top(radii, 10)}. Rows and settings tabs are 10, controls (icon buttons, Share, the header Upgrade, select buttons) 8, menu items 12, popovers 20, dialogs and the accent listbox 16, the composer 28 (26 on a phone), the user bubble 22. Pills, round buttons, the mode toggle, tabs, search fields and the toggle track are fully round (`rounded-full`, read as `full`).")
+W(f"**Radius.** {top(radii, 10)}.")
 W()
-W(f"**Hover.** ChatGPT hovers with a translucent fill. Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. The row fill is `interactive.bg-secondary-hover` (white at 10% in dark, black at 5% in light) and the current page or chat rests on `interactive.bg-secondary-selected`, the same value, so a current row does not change on hover. Icon buttons in the sidebar use `surface.surface-hover` (white at 15%, black at 7%). Menu items show no hover here: Radix highlights them with `data-highlighted`, which its script sets, so only the captured highlighted row is filled.")
+W(f"**Hover.** Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. Ghost buttons, menu items, rows and tabs all hover to `variant.primary.soft.bg-hover` (white at 10% in dark, black at 5% in light); solid neutral buttons drop to 80% opacity instead; the accent send and voice buttons do not change.")
 W()
-W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 6)}. In light: {top(focus['light'], 6)}. With scripts gone the `keyboard-focused:` rings ChatGPT draws do not switch on, so most focused states show the browser's own outline (`auto`, the platform blue), and a few controls show their own ring: the settings toggle a 2px gap and a 4px ring in `interactive.border-focus`, the project tabs a 3px ring in the text colour, the settings tabs a 1px outline offset 2.")
+W(f"**Pressed.** {pressed_same} of {pressed_all} pressed readings (the mouse button held down) look the same as hover. The product's `Button` styles pressed through a data attribute its script sets, so with scripts gone `:active` changes nothing; the pressed colours exist only as tokens (`variant.*.*.bg-active`).")
 W()
-W(f"**Motion.** {top(trans, 6)}. Nearly every transition is Tailwind's `transition-colors` at 150 ms on cubic-bezier(0.4, 0, 0.2, 1) (`duration.default`, `easing.default`); larger moves (the sidebar, popovers, page transitions) use the spring curves listed under the core set's notTokenised, at 667 ms and up. The code block's full-screen view cross-fades at 220 ms ease-out.")
+W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 8)}. In light: {top(focus['light'], 8)}. The ring is `ring.default` (#3a83f7) at `size.focusRing.width` (2px) with no offset; rows draw it as an inset outline, ghost buttons on their ::after, links and segments fall back to the browser's outline.")
 W()
-W("**Layout grid.** The sidebar is 260 wide (the rail 52), the page header 52 tall, and the composer and thread share one 768 wide centred column (x 466 at 1440 with the sidebar open). Images, Plugins and the project page sit in an 800 wide `max-w-app-content` box with 16 padding; the Library uses a wider 1092 column. On a phone the sidebar is a 260 wide drawer over the page and the column is 358 wide at x 16. The numbers per page are in [raw/pages.md](raw/pages.md).")
+W("**Disabled.** A disabled button keeps its variant's colours at 40% opacity (`component.button-disabled.opacity`): Restore defaults in Keyboard settings and Your current plan in the pricing dialog.")
 W()
-W("**Accent.** The account's accent (blue) paints only the user bubble (`chatTheme.blue.user-msg-bg`, #173e76 dark, #e8f3fe light), the voice and send button (`chatTheme.blue.submit-btn-bg`), the Work segment, the header Upgrade, the toggle and selection. Everything else is grey, which is why the eight accents in [tokens.json](tokens.json) differ only in the `chatTheme` group.")
+W(f"**Motion.** {top(trans, 6)}. Colour and opacity changes run at `duration.basic` (150 ms) on `easing.basic` or `easing.in-out`; the reduced-motion rules are listed under `core.duration.$extensions.reducedMotion` in [tokens.json](tokens.json).")
 W()
-
+W("**Layout.** The sidebar is 340 wide at 1440 (`--spacing-token-sidebar` clamps it between 240 and 520), the rail 52, the header 52 tall. The composer and thread share one 768 wide centred column. Settings panes are 768 wide. The Library is a masonry grid of 4 columns at 1440 (`core.layout.grid-columns-library`; `--masonry-columns` steps from 1 to 6 with the container width), Images a 5 column grid and the plugin store 2 columns. On a phone the sidebar is a 260 wide drawer over the page and the column is 358 wide at x 16.")
+W()
 
 # --------------------------------------------------------------------------- components
 
@@ -481,11 +561,10 @@ for g, ids in groups.items():
         c = C[cid]
         W(f"#### {c['title']}")
         W()
-        W(f"<a id=\"{cid}\"></a>`{cid}`, on {', '.join(c.get('pages') or [c['page']])}. {c.get('desc', '')}".rstrip())
+        W(f"<a id=\"{cid}\"></a>`{cid}`, on {', '.join(c.get('pages') or [c['page']])}. {c.get('desc', '') or ''}".rstrip())
         W()
         crops = []
-        # The usual states first, then every other state that has a crop, so no captured image is left out.
-        order = ("default", "hover", "light", "light-hover", "active", "selected", "checked", "open", "typed", "focus-visible")
+        order = ("default", "hover", "focus-visible", "pressed", "light", "light-hover", "active", "selected", "checked", "open", "typed")
         for sname in [n for n in order if n in c["states"]] + sorted(n for n in c["states"] if n not in order):
             s = c["states"].get(sname)
             if s and s.get("crop") and Path(s["crop"]).exists():
@@ -504,38 +583,34 @@ for g, ids in groups.items():
         if cl:
             W(f"Child layers: {cl}")
             W()
-        vars_ = next((s.get("vars") for s in c["states"].values() if s.get("vars")), None)
-        if vars_:
-            W("Tokens named in its classes: " + ", ".join(f"`{k}`" for k in sorted(vars_)) + ".")
-            W()
 
 # --------------------------------------------------------------------------- icons
 
-# --------------------------------------------------------------------------- icons
-
+by_role = collections.Counter(r[1] for r in icons)
 W("## Icon index")
 W()
-W(f"{len(icons)} icons were lifted from the sprite symbols inlined in the page copies into [icons/](icons), named by their sprite id; the ones whose id is a content hash are named from the label of the control they sit in, with the hash kept. [icons/INDEX.tsv](icons/INDEX.tsv) lists each file's sprite id, viewBox, the sizes it was drawn at, how often and where. ChatGPT draws them through `<use href=\"sprites-core-*.svg#name\">` at 20px (`icon`), 16px (`icon-sm`) or 12px, filled in currentColor. A few glyphs are inline SVG rather than sprite symbols (the Think chip's brain, the mode toggle's sparkle, the composer's voice wave) and are not in the folder. The icons are OpenAI's property, kept for reference only.")
+W(f"{len(icons)} icons were lifted from the sprite symbols inlined in the page copies into [icons/](icons), named by their sprite id. [icons/INDEX.tsv](icons/INDEX.tsv) indexes each by role, where it is drawn most ({', '.join(f'{k} {v}' for k, v in by_role.most_common())}), with every role it plays, its sprite id, viewBox, the sizes it was drawn at and the control it labels. ChatGPT draws them through `<use href=\"sprites-core-*.svg#name\">` at 20px (`size.icon.lg`), 16px (`size.icon.sm`) or 12px, filled in currentColor, paired with 14px labels in rows and menus and alone (with an aria-label) in 36px icon buttons. A few glyphs are CSS masks or inline SVG and are not in the folder. The icons are OpenAI's property, kept for reference only.")
 W()
-W("| Icon | Sizes | Where it was used |")
-W("|---|---|---|")
+W("| Icon | Role | Sizes | Where it was used |")
+W("|---|---|---|---|")
 for r in icons:
-    W(f"| `{r[0].replace('.svg', '')}` | {r[3]} | {(r[6] if len(r) > 6 and r[6] else '-')[:60].replace('|', '/')} |")
+    W(f"| `{r[0].replace('.svg', '')}` | {r[1]} | {r[5]} | {(r[8] if len(r) > 8 and r[8] else '-')[:60].replace('|', '/')} |")
 W()
 
 # --------------------------------------------------------------------------- gaps
 
 W("## Gaps")
 W()
-W("- The copies were taken in the built-in browser pane while it was hidden, so no animation frame ran: entrance animations froze where they started. Modal backdrops render undimmed (the settings dialog's blur is there, its dim is not), the phone drawer's slide-in transform was set to its end state by hand before the copy, and the collapsed sidebar kept its 260 wide container (its width is driven by script frames) with the 52 wide rail drawn inside it, so the main column did not move.")
-W("- The thread is a virtualised list. Only the last turns were rendered (turns 1 to 5 of the conversation are empty placeholders), so there is no shot of the top of a thread and no first-turn spacing.")
-W("- The map widget in the thread is an iframe, kept as a same-size dark box; its frame is real, its contents are not. Lazy template thumbnails on Images were never requested, so only the first card has its picture.")
-W("- No code block appeared in any of the account's threads. Its look in the style guide comes from the code-block CSS only (`--code-block-surface`, the fade timings), not from a measured element.")
-W("- Hover and focus on the 390 wide copies were not measured (a phone has neither). Radix menu items highlight through script, so their hover is not measured either; the + menu's highlighted row is the captured state.")
-W("- The light theme was read by removing every `dark` class from the copies (ChatGPT also puts `dark` on each message's markdown body), not by changing the account's appearance. Every colour is a var() of the two palette blocks, so the readings match what Light shows, but anything ChatGPT swaps per theme through script would not have swapped. The accent was only ever blue in the copies; the other seven come from the CSS, read with `data-chat-theme` set on the probe page.")
-W("- Not captured: a streaming answer, voice mode, the Work mode, Codex, Scheduled, the Library's grid view and folders, the image editor, a plugin's detail page, the share dialog, and the Account, Billing and Data controls settings panes, since each either sends something, spends quota or shows account details.")
+W("- Toast: ChatGPT shows one only after an action (copy, archive, share, delete), and the capture took none.")
+W("- Pressed: the product switches its pressed styles from script, so the pressed readings equal hover; the `-active` colours are in the tokens only.")
+W("- Loading: no skeleton or spinner was on screen in any copy; the streaming text speed (`duration.animation-duration-streaming-text`, 700 ms) is from the CSS only.")
+W("- Forms with a validation error: no form in reach validates without submitting it.")
+W("- Onboarding: the account is past its first run.")
+W("- Message text, chat, project and file titles, Library thumbnails and the installed plugins were replaced or blanked in the copies before they left the browser, so widths that depend on text are those of the filler.")
+W("- Hover and focus on the 390 wide copies were not measured (a phone has neither).")
+W("- The light theme was read by setting every `data-theme=\"dark\"` to light in the copies, not by changing the account's appearance. Only the Blue accent was captured; switching it is an account setting.")
+W("- Not captured: a streaming answer, voice mode, Work mode, Codex, Scheduled, a project page, the share dialog, the Account, Billing and Personalization panes, since each either sends something, spends quota or shows account details.")
 W()
 
 open("components.md", "w").write("\n".join(L) + "\n")
 print(f"components.md: {len(C)} components, {n_states} states, {n_crops} crops, {len(L)} lines")
-
