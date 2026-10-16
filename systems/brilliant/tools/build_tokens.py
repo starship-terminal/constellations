@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
 
-Sources, all read from brilliant.org on 2026-09-25:
-  raw/css-vars-public.json  every Panda custom property on :root (light) and under [data-theme="dark"]
-  raw/text-styles.tsv       every Panda textStyle rule in the main stylesheet
-  raw/measurements.md       computed styles per component (signed-in app and public pages)
+Sources, read from brilliant.org on 2026-09-25 and (marked 2026-10) on 2026-10-17:
+  raw/css-vars-public.json      every Panda custom property on :root (light) and under [data-theme="dark"]
+  raw/text-styles.tsv           every Panda textStyle rule in the main stylesheet
+  raw/measurements.md           computed styles per component (signed-in app and public pages, 2026-09)
+  raw/css-rules.json            2026-10: font stacks, reduced-motion, focus and button3d rules from the stylesheet
+  raw/components-computed.json  2026-10: computed styles per component and forced state, both themes
+  raw/layout.json               2026-10: grids and content columns of the signed-in pages, 1440 and 390
 Every token carries $extensions.source: "css-var <name>", "css <rule>", "computed <where>" or "estimated ...".
 """
 import csv, json, pathlib, re
@@ -12,6 +15,14 @@ import csv, json, pathlib, re
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars-public.json").read_text())
+RULES = json.loads((RAW / "css-rules.json").read_text())
+COMP = json.loads((RAW / "components-computed.json").read_text())
+LAYOUT = json.loads((RAW / "layout.json").read_text())
+
+
+def comp_val(name, theme, state, prop, part=False):
+    """One computed value from raw/components-computed.json (2026-10 page copies)."""
+    return COMP[name][theme][state]["part" if part else "self"][prop]
 ROOT, DARK = V["root"], {**V["root"], **V["dark"]}
 P = "--panda-"
 
@@ -77,16 +88,26 @@ def color_value(raw, env):
 # ---------- core ----------
 core = {"palette": palette}
 
+FS = RULES["fonts"]  # the stacks the production stylesheet declares (raw/css-rules.json)
+
+
+def stack(css):
+    """'CoFo Brilliant, sans-serif' -> "'CoFo Brilliant', sans-serif" (generic families stay bare)."""
+    generic = {"serif", "sans-serif", "monospace", "system-ui", "cursive"}
+    return ", ".join(f if f in generic else f"'{f}'" for f in (x.strip() for x in css.split(",")))
+
+
 core["fontFamily"] = {
-    "brilliant": tok("CoFo Brilliant", "fontFamily", "css-var --panda-fonts-brilliant; @font-face cofo-brilliant-{regular,medium,bold,italic}.woff2",
-                     "All UI text: body, headings, buttons, nav. Weights 400/500/700 + italics. Proprietary (Contrast Foundry)."),
-    "robert": tok("CoFo Robert", "fontFamily", "css-var --panda-fonts-robert; @font-face cofo-robert-medium(.italic).woff2",
-                  "Serif display face, weight 500 only: onboarding promos, paywall and marketing headlines (display.* styles). Fallback Georgia."),
-    "semiMono": tok("CoFo Semi Mono", "fontFamily", "css-var --panda-fonts-semi-mono; computed <custom-interactive> tiles",
+    "brilliant": tok(stack(FS["brilliant"]), "fontFamily", "css-var --panda-fonts-brilliant (stack read 2026-10, raw/css-rules.json); @font-face cofo-brilliant-{regular,medium,bold,italic}.woff2",
+                     "All UI text: body, headings, buttons, nav. Weights 400/500/700 + italics. Proprietary (Contrast Foundry); the product falls back to the generic sans-serif."),
+    "robert": tok(stack(FS["robert"]), "fontFamily", "css-var --panda-fonts-robert (stack read 2026-10); @font-face cofo-robert-medium(.italic).woff2",
+                  "Serif display face, weight 500 only: onboarding promos, paywall and marketing headlines (display.* styles). The product's own fallback is sans-serif; the style guide substitutes Georgia to keep a serif."),
+    "semiMono": tok(stack(FS["semi-mono"]), "fontFamily", "css-var --panda-fonts-semi-mono (stack read 2026-10); computed <custom-interactive> tiles",
                     "Inside lesson interactives (tiles, numbers). 400/500/700."),
-    "code": tok("Source Code Pro", "fontFamily", "css-var --panda-fonts-code", "Code interactives and code blocks. 400/500/700 + italics."),
-    "math": tok("KaTeX_Main", "fontFamily", "css-var --panda-fonts-math; @font-face KaTeX_* (size-adjust 93%)", "Rendered maths."),
-    "legacy": tok("Soleil", "fontFamily", "@font-face Soleil 400/600/700 in the shared stylesheet", "Legacy Django pages (404, /account/settings/). Not used by the current app."),
+    "code": tok(stack(FS["code"]), "fontFamily", "css-var --panda-fonts-code (stack read 2026-10)", "Code interactives and code blocks. 400/500/700 + italics."),
+    "math": tok(stack(FS["math"]), "fontFamily", "css-var --panda-fonts-math (stack read 2026-10); @font-face KaTeX_* (size-adjust 93%)", "Rendered maths."),
+    "legacy": tok("'Soleil', sans-serif", "fontFamily", "@font-face Soleil 400/600/700 in the shared stylesheet; its rules declare font-family: Soleil with no fallback, so sans-serif is the browser default it lands on",
+                  "Legacy Django pages only. Not used by the current app: the 404 page now computes 'CoFo Brilliant', Arial, sans-serif."),
 }
 core["fontWeight"] = {
     "regular": tok(400, "fontWeight", "css textStyle body.*"),
@@ -156,6 +177,13 @@ core["size"] = {
     "modal-max": tok("448px", "dimension", "css modal-content max-w 448px"),
     "menu-width": tok("280px", "dimension", "computed dropdown-menu-content"),
     "tooltip-max": tok("280px", "dimension", "computed tooltip-content max-w"),
+    "control-sm": tok(comp_val("button-outline", "dark", "default", "height"), "dimension", "computed 2026-10 settings 'Send verification' outline button (raw/components-computed.json)", "Small control: outline and secondary buttons inside settings rows"),
+    "control-md": tok(comp_val("button3d-blue", "dark", "default", "height"), "dimension", "computed 2026-10 button3d 'Start', flat 'Add another email', menu item (48px each)", "Default control height: every main button and menu item"),
+    "control-lg": tok(comp_val("text-field", "dark", "default", "height"), "dimension", "computed 2026-10 settings text field (52px); hue-shift pills are also 52", "Large control: text fields and onboarding pills"),
+    "segment-track": tok(comp_val("segment-track", "dark", "default", "height"), "dimension", "computed 2026-10 preferences segmented control track (padding 6, segments 32)"),
+    "radio": tok(comp_val("radio", "dark", "default", "height"), "dimension", "computed 2026-10 settings 'Select account to remove' radio"),
+    "avatar": tok(comp_val("avatar", "dark", "default", "height"), "dimension", "computed 2026-10 You page (390 wide) initials avatar"),
+    "tooltip-trigger": tok(comp_val("tooltip-trigger", "dark", "default", "height"), "dimension", "computed 2026-10 You page info icon"),
     "button-height": tok("48px", "dimension", "computed button3d, flat button, ghost button"),
     "button-height-pill": tok("52px", "dimension", "computed hue-shift button, iridescent CTA"),
     "button3d-lift": tok("4px", "dimension", "css --button3d-shadow-y / --button3d-translate-y default 4px"),
@@ -179,6 +207,7 @@ core["size"] = {
     "icon-sm": tok("16px", "dimension", "computed nav and meta icons"),
     "icon-md": tok("20px", "dimension", "computed header stat icons (estimated from screenshot)"),
     "icon-lg": tok("24px", "dimension", "computed lesson top bar and rail icons"),
+    "premium-button": tok(comp_val("premium-button", "dark", "default", "height"), "dimension", "computed 2026-10 header 'Go Premium' pill"),
     "badge-height": tok("21.2px", "dimension", "computed .panda-badge (12/13.2 + 4px padding)"),
 }
 core["breakpoint"] = {k: tok(ROOT[P + "breakpoints-" + k], "dimension", f"css-var {P}breakpoints-{k}")
@@ -200,6 +229,7 @@ core["radius"].update({
     "footer-card": tok("40px", "dimension", "computed course fixed footer card"),
     "button": tok("54px", "dimension", "computed flat buttons, stat pills, glass buttons"),
     "button3d": tok("56px", "dimension", "css button3d bdr calc(56px / --button3d-x-scale) / 56px (face 60px)"),
+    "button3d-face": tok(comp_val("button3d-blue", "dark", "default", "border-radius", part=True), "dimension", "computed 2026-10 button3d-face border-radius"),
     "chat-bubble": tok("16px 16px 16px 4px", "other", "computed tutor message bubble"),
     "tile": tok("5px", "dimension", "computed interactive tile"),
 })
@@ -208,6 +238,49 @@ core["borderWidth"] = {
     "thin": tok("1px", "dimension", "computed header bottom, settings rows, popover email box, strength chip"),
     "default": tok("2px", "dimension", "computed cards, inputs, buttons (transparent), stat pills", "Brilliant's standard border weight"),
     "focus-ring": tok("3px", "dimension", "css shadows.elevation.outline 0 0 0 3px; switch ring 3px"),
+}
+
+
+# Focus ring (2026-10). Every Panda control uses focusVisible: elevation.outline, a 3px ring with no
+# gap; a few use a gap ring (1px or 2px of bg.primary, then the ring). Read from raw/css-rules.json
+# and confirmed on 13 components with forced :focus-visible (raw/components-computed.json).
+FOCUS = {d["value"]: d["rules"] for d in RULES["focus"]["declarations"]}
+core["focusRing"] = {
+    "width": tok("3px", "dimension", f"css shadows.elevation.outline 0 0 0 3px border.select ({FOCUS['box-shadow: var(--panda-shadows-elevation-outline)']} focus-visible rules); computed 2026-10 on button3d, buttons, links, icon buttons, radio, settings tabs, tooltip trigger, premium button"),
+    "offset": tok("0px", "dimension", "css elevation.outline has no spread gap; computed 2026-10 box-shadow 0 0 0 3px on every measured control", "The ring sits directly on the control's edge"),
+    "offset-gap-sm": tok("1px", "dimension", "css focus-visible box-shadow 0 0 0 1px bg.primary, 0 0 0 3px border.select (2 rules)", "Gap variant: 1px of page colour, then a 2px ring"),
+    "offset-gap-md": tok("2px", "dimension", "css focus-visible box-shadow 0 0 0 2px bg.primary, 0 0 0 5px border.select (1 rule)", "Gap variant: 2px of page colour, then a 3px ring"),
+    "switch-outline": tok("3px", "dimension", "computed 2026-10 switch: outline 3px solid border.select on focus-visible (transparent at rest)"),
+}
+
+# Layout (2026-10): the page grids the signed-in app uses, read from raw/layout.json. Brilliant has
+# no global column grid; each page sets its own columns inside the 1216px container.
+L = LAYOUT
+grid_home = next(g for g in L["home-dark-default"]["grids"] if g["count"] == 2)
+grid_settings = next(g for g in L["settings-dark-account"]["grids"] if g["count"] == 3)
+phone_col = next(c for c in L["mobile-home-dark-default"]["contentColumns"] if c["el"] == "hstack")
+core["layout"] = {
+    "container": tok("1216px", "dimension", "computed 2026-10 content column max-width 1216px (= sizes.container-lg) on home, topics, you, settings at 1440", "Centred, so the side margin is 112px at a 1440 viewport"),
+    "gutter-desktop": tok("112px", "dimension", "computed 2026-10 content column x=112 at 1440 (derived: (1440 - 1216) / 2)"),
+    "gutter-phone": tok(f"{phone_col['x']}px", "dimension", f"computed 2026-10 content column x={phone_col['x']}, width {phone_col['width']} at 390"),
+    "grid-home": tok(grid_home["columns"], "other", f"computed 2026-10 home grid-template-columns, gap {grid_home['gap']} (column / row)", "Two columns at lg+: progress card 384 beside the course card 592; one column below lg"),
+    "grid-home-gap": tok(grid_home["gap"].split(" / ")[0], "dimension", "computed 2026-10 home column gap"),
+    "grid-settings": tok(grid_settings["columns"], "other", "computed 2026-10 settings grid-template-columns at 1440", "Three columns: side menu, 592px form, empty balancing column"),
+    "grid-phone": tok("1fr", "other", f"computed 2026-10 every page is one column at 390 ({phone_col['width']}px wide between {phone_col['x']}px gutters)"),
+    "settings-form": tok("592px", "dimension", "computed 2026-10 settings middle column (= size.settings-form)"),
+}
+
+# Reduced motion (2026-10). Two switches, both read from the stylesheet (raw/css-rules.json): the
+# app's Preferences > Reduce motion (On / Off / Auto) sets <html data-reduced-motion>, and every
+# entrance, shake and height animation is written under Panda's allowMotion condition, so it only
+# runs when that attribute is "false"; the OS setting additionally applies motionReduce rules.
+RM = RULES["reducedMotion"]
+core["motion"] = {
+    "reduced-duration": tok("0s", "duration", f"css @media (prefers-reduced-motion: reduce) motionReduce:panda-trs-dur_0s and transition: none ({RM['mediaRules']} rules)",
+                            "Under reduced motion, transitions take no time"),
+    "reduced-animations": tok(", ".join(dict.fromkeys(a["value"].split(",")[0].split(" ")[0] for a in RM["allowMotionAnimations"])), "other",
+                              f"css {RM['allowMotionRules']} rules gated by [data-reduced-motion=\"false\"] (allowMotion)",
+                              "Animations that run only when motion is allowed: lesson answer shake (shakeX), sheet slide-in and out, fade and reveal, slide-up, the dashboard blur-in, and spring height and layout transitions. With Reduce motion on they are skipped and the end state shows at once."),
 }
 
 
@@ -272,6 +345,8 @@ core["easing-linear"] = {
 core["opacity"] = {
     "disabled-button3d": tok(0.85, "number", "computed button3d[data-disabled] opacity .85"),
     "hover-flat-button": tok(0.78, "number", "css button hover opacity .78"),
+    "pressed-flat-button": tok(float(comp_val("button-inverse", "dark", "active", "opacity")), "number", "computed 2026-10 inverse flat button :active opacity"),
+    "hover-button3d": tok(float(comp_val("button3d-blue", "dark", "hover", "opacity")), "number", "computed 2026-10 button3d :hover and :active opacity (class hover:panda-op_0.85; Safari keeps 1 and tints instead)"),
     "hover-premium": tok(0.85, "number", "css iridescent button3d hover opacity .85"),
     "chat-history": tok(0.5, "number", "css older lesson messages opacity .5"),
     "ask-pill-idle": tok(0.65, "number", "computed home ask-Koji pill"),
@@ -318,9 +393,13 @@ def theme(env, dark):
         put(["gradient", name], tok(resolve(raw, env), "color", f"css-var {k}" + (" ([data-theme=dark])" if dark and k in V["dark"] else ""),
                                     "CSS gradient string (Tokens Studio accepts linear-gradient in colour tokens)"))
     # shadows
+    use = {"subtle": "Level 1: the sticky app bar (with its 1px bottom border)",
+           "base": "Level 2: menus, tooltips, the selected segment, home cards, the ask-Koji pill, lesson footer card",
+           "md": "Level 3: dialogs (modal-content) and the Premium 'Explore' pill",
+           "outline": "Not a level: the 3px focus ring (focusRing.width)"}
     for k in ("base", "md", "outline", "subtle"):
         raw = ROOT[P + "shadows-elevation-" + k]
-        put(["shadow", k], tok(parse_shadow(raw), "shadow", f"css-var {P}shadows-elevation-{k}"))
+        put(["shadow", k], tok(parse_shadow(raw), "shadow", f"css-var {P}shadows-elevation-{k}; uses counted 2026-10 from the page copies' bx-sh_elevation.{k} classes", use[k]))
     put(["shadow", "plan-card"], tok(parse_shadow(ROOT[P + "shadows-plan-card-base"]), "shadow", f"css-var {P}shadows-plan-card-base"))
     put(["shadow", "button3d"], tok([{"offsetX": "0px", "offsetY": "4px", "blur": "0px", "spread": "0px", "color": "{shadowColor.cta-default}", "type": "dropShadow"}],
                                     "shadow", "computed button3d-face box-shadow 0 var(--button3d-shadow-y, 4px) 0 0 var(--button3d-shadow-color)",
@@ -330,6 +409,56 @@ def theme(env, dark):
     put(["shadow", "input-focus"], tok([{"offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "1px", "color": "{border.active}", "type": "innerShadow"}], "shadow",
                                        "computed form-input:focus inset 0 0 0 1px + 2px border.active"))
     return t
+
+
+
+
+def hexrgb(css):
+    m = re.match(r"rgba?\(([\d.]+), ([\d.]+), ([\d.]+)(?:, ([\d.]+))?\)", css)
+    return [float(x) for x in m.groups()[:3]] + [float(m.group(4)) if m.group(4) else 1.0]
+
+
+def over(fg, alpha, bg):
+    """Composite fg at alpha over an opaque bg; used only for Derived accent states."""
+    f, b = hexrgb(fg), hexrgb(bg)
+    return "#" + "".join(f"{round(f[i] * alpha + b[i] * (1 - alpha)):02x}" for i in range(3))
+
+
+def accent_feedback(theme_name):
+    """Accent and feedback roles (2026-10). The accent is the blue button3d ('Start')."""
+    L = theme_name == "light"
+    page = "rgb(255, 255, 255)" if L else "rgb(20, 20, 20)"
+    face = comp_val("button3d-blue", theme_name, "default", "background-color", part=True)
+    op = float(comp_val("button3d-blue", theme_name, "hover", "opacity"))
+    c = lambda v, src, d=None: tok(v, "color", src, d)
+    acc = {
+        "default": c("{bg.blue-primary}", f"computed 2026-10 button3d 'Start' face {face} = bg.blue-primary (palette.blue.500)", "Accent fill: the button that starts a course or lesson"),
+        "hover": c(over(face, op, page), f"Derived: computed 2026-10 hover sets the button's opacity to {op} (class hover:panda-op_0.85) over the face {face}; composited over bg.primary {page}",
+                   "Chrome and Firefox. Safari keeps opacity 1 and paints --button3d-hover-tint (autoflip.white.200) over the face instead"),
+        "pressed": c(over(face, op, page), "Derived: computed 2026-10 :active keeps opacity .85 and drops the face onto its lip (transform none, box-shadow none); composited as hover",
+                     "Pressing does not change the colour: the 4px lip disappears and the face moves down 4px over 100ms"),
+        "lip": c("{palette.blue.600}", "computed 2026-10 face box-shadow 0 4px 0 0 rgb(55, 92, 227) = blue.600", "The 3D lip under the accent face; removed while pressed"),
+        "on-accent": c("{palette.white}", "computed 2026-10 face color rgb(255, 255, 255) in both themes"),
+        "focus": c("{border.select}", "computed 2026-10 focus-visible box-shadow 0 0 0 3px border.select"),
+    }
+    fb = {}
+    for status, panda in (("success", "success"), ("warning", "warning"), ("danger", "danger")):
+        fb[status] = {
+            "fill": c("{bg.%s-primary}" % panda, f"css-var --panda-colors-bg-{panda}-primary", "Solid fill (button, chip)"),
+            "fill-subtle": c("{bg.%s-secondary}" % panda, f"css-var --panda-colors-bg-{panda}-secondary", "Tinted background"),
+            "text": c("{text.%s-primary}" % panda, f"css-var --panda-colors-text-{panda}-primary"),
+            "border": c("{border.%s-primary}" % panda, f"css-var --panda-colors-border-{panda}-primary"),
+        }
+    b = lambda prop: comp_val("badge-primary", theme_name, "default", prop)
+    hx = lambda css: over(css, 1.0, css)
+    fb["info"] = {
+        "fill-subtle": c(hx(b("background-color")), f"Derived: computed 2026-10 blue subtle badge ('PRIMARY', .panda-badge--colorPalette_blue) background {b('background-color')}",
+                         "Brilliant defines no info role; its only neutral-information colour is the blue subtle badge"),
+        "text": c(hx(b("color")), f"Derived: computed 2026-10 blue subtle badge text {b('color')}"),
+        "fill": c("{bg.blue-primary}", "Derived: Panda bg.blue-primary, the solid blue the badge palette pairs with"),
+        "border": c("{border.blue-primary}", "Derived: Panda border.blue-primary (no info border is used in the app)"),
+    }
+    return {"accent": acc, "feedback": fb}
 
 
 light, dark = theme(ROOT, False), theme(DARK, True)
@@ -392,6 +521,7 @@ def comp(i):
 
 for i, t in enumerate((light, dark)):
     t.update(comp(i))
+    t.update(accent_feedback("light" if i == 0 else "dark"))
 
 out = {
     "core": core,

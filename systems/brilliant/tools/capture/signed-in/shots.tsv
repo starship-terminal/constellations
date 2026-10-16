@@ -1,0 +1,17 @@
+# label	flags (full = also a full-page render; scroll=<top|max> for the inner scroller)
+# Every copy was taken in dark at 1440x900 (mobile-* at 390x844) on 2026-10-17; render-all.sh renders each in dark and light.
+settings-dark-account	full
+settings-dark-premium	full
+settings-dark-preferences	full
+you-dark-empty
+you-dark-tooltip
+home-dark-default
+home-dark-menu-keyboard
+koji-dark-default
+koji-dark-textarea-filled
+courses-dark-default
+lesson-dark-quit-dialog
+mobile-home-dark-default
+mobile-courses-dark-default
+mobile-you-dark-empty	full
+mobile-settings-dark-account	full

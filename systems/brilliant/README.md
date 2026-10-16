@@ -1,17 +1,18 @@
 # Brilliant design reference
 
-A token set and component reference for Brilliant's web app, for building mockups in Figma or Paper that match the product. It was extracted from brilliant.org on 2026-09-25, signed in to a new free account on the Math path, in the app's light and dark themes, at desktop width and (for public pages) at a 390px mobile width.
+A token set, component reference and pattern guide for Brilliant's web app, for building mockups in Figma or Paper that match the product. It was extracted from brilliant.org on 2026-09-25, signed in to a new free account on the Math path, in the app's light and dark themes, at desktop width and (for public pages) at a 390px mobile width. It was refreshed on 2026-10-17 on a second free account: settings, You, Topics, Koji, the header menu and the lesson quit dialog were copied from the signed-in app and measured headless in both themes at 1440 and 390, every component state was forced and read, and the stylesheet was read for font stacks, focus rings and reduced motion.
 
 | File | What it is |
 |---|---|
-| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (174-step palette, 6 font families, 33 type styles, spacing, sizes, breakpoints, radii, border widths, blur, z-index, durations, easings, opacity) plus `light` and `dark` sets of 351 tokens each (semantic colour roles, gradients, shadows and component colours), and a `$themes` list. Every token carries `$extensions.source` naming where it was read. Import with Tokens Studio → Load from file. |
+| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (174-step palette, 6 font families with their fallback stacks, 33 type styles, spacing, sizes with control heights, focus ring, layout grids, breakpoints, radii, border widths, blur, z-index, durations, easings, reduced motion, opacity) plus `light` and `dark` sets of 373 tokens each (semantic colour roles, accent states, feedback colours, gradients, shadows and component colours), and a `$themes` list. Every token carries `$extensions.source` naming where it was read. Import with Tokens Studio → Load from file. |
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and component with the real values, in both themes (toggle top right, defaults to the system theme). Open it in a browser, or paste sections into Paper. |
-| [components.md](components.md) | The discovery list of every page, view and overlay, one inventory entry per component with crops of the real product, the icon summary, and the Gaps. |
-| [components/crops/](components/crops) | 82 per-component crops cut from the screenshots, in both themes where both were captured. |
+| [components.md](components.md) | Token-based specs for the 19 checklist components, state by state in both themes (generated), then the 2026-09 discovery list, product components, the icon index and the Gaps. |
+| [patterns.md](patterns.md) | The eight checklist patterns (app shell, forms, empty and loading states, destructive confirmation, feedback, search, data display, onboarding), each tied to screenshots. |
+| [components/crops/](components/crops) | 82 per-component crops from 2026-09, plus [2026-10/](components/crops/2026-10): 175 crops of every measured component in each forced state that changed something, dark and light. |
 | [icons/](icons) | 15 app glyphs saved from the signed-in pages (`icons/app/`, named by role and size) and 32 SVGs pulled from the public pages (`icons/public/`, named by hash, indexed in [components.md](components.md#icons)). Brilliant's property, kept for reference only. |
-| [screenshots/](screenshots) | 73 `{page}-{theme}-{state}.png` captures of the real product at 2x, `mobile-*` at 390x844. |
-| [raw/](raw) | The unprocessed readings: every Panda CSS variable in both themes (`css-vars-public.json`), all 432 colour variables resolved per theme (`colors.tsv`), the 33 text styles (`text-styles.tsv`), per-surface computed styles (`measurements.md`) and the headless dumps of the public and pricing pages. |
-| [tools/](tools) | The two builders and the capture kit. See Rebuild. |
+| [screenshots/](screenshots) | 73 `{page}-{theme}-{state}.png` captures of the real product at 2x, `mobile-*` at 390x844, from 2026-09; [app-2026-10/](screenshots/app-2026-10) holds 38 more from the refresh (15 page copies rendered in dark and light, 5 full-page renders, 3 Help Center search states). |
+| [raw/](raw) | The unprocessed readings: every Panda CSS variable in both themes (`css-vars-public.json`), all 432 colour variables resolved per theme (`colors.tsv`), the 33 text styles (`text-styles.tsv`), per-surface computed styles (`measurements.md`) and the headless dumps of the public and pricing pages; from 2026-10, per-component computed styles in every forced state (`components-computed.json`), stylesheet rules for fonts, focus, motion and button states (`css-rules.json`), page grids (`layout.json`) and the readings taken live in the browser (`live-readings.json`). |
+| [tools/](tools) | The three builders and the capture kits. See Rebuild. |
 
 ## How the values were read
 
@@ -19,22 +20,86 @@ Brilliant styles its app with Panda CSS, which writes every token onto `:root` a
 
 Component measurements are computed styles read live in Chrome for each state: hover and focus were held with the pointer or keyboard, selected and disabled states were reached in the product, and pressed states were caught mid-transition. The theme was switched by setting `data-theme` on the page, never in account settings. Values that could only be sampled from a screenshot are marked "estimated from screenshot"; in the token file that is one token, `size.icon-md`, and in the specs it is the canvas-drawn Koji suggestion cards and the iridescent frames on the pricing page.
 
+The 2026-10 refresh read the app a second way. The signed-in pages were opened in the built-in browser pane, signed in by the owner, and each state was saved as a static copy (`tools/capture/signed-in/snapshot.js`, which inlines every stylesheet and replaces the learner's name, email and account id before the copy leaves the page). The copies were then rendered and measured headless: `measure.mjs` finds 39 component instances by `data-slot`, role or label and reads their computed styles at rest and with hover, focus-visible and pressed forced through the DevTools protocol, in dark and again with `<html data-theme="light">`. `css-rules.mjs` reads the production stylesheet for the font stacks, the reduced-motion rules, every focus rule and the button3d hover rules, and `layout.mjs` reads the page grids. Accent hover and pressed are the only Derived colours: the product changes the button's opacity, not its colour, so those two tokens are the face composited at .85 over the page.
+
 Panda defines no duration tokens that survive to production (`trs-dur_fast` compiles to invalid CSS), so `core.duration` lists the durations the app's transitions actually use, each with the rule it was read from. Springs are real variables: `--spring-smooth` is `cubic-bezier(.2,1.1,.36,1)` over .833s, with a `linear()` version in `easing-linear`.
 
-The screenshots were converted from the display profile (Display P3 or the external monitor's) to sRGB and stored as 256-colour PNGs to keep the repo small. Flat UI colours are exact, but gradients can band slightly, so read exact values from the tokens, not from the images. The signed-in account's name and email were replaced with "Learner", "Example" and learner@example.com before every capture.
+The screenshots were converted from the display profile (Display P3 or the external monitor's) to sRGB and stored as 256-colour PNGs to keep the repo small. Flat UI colours are exact, but gradients can band slightly, so read exact values from the tokens, not from the images. The signed-in account's name and email were replaced with "Learner", "Example" and learner@example.com before every capture, and in 2026-10 the initials avatar shows "L".
+
+What to distrust: lesson copies from 2026-10 show an empty lesson frame, because the interactive renders in a shadow root that a DOM copy does not carry (the 2026-09 lesson screenshots stand in). The 390 copies were taken from the pane at its phone emulation, whose layout viewport came out 406 wide, and re-rendered at 390, so the header's right edge clips at 390 as it would on a narrow phone. `feedback.info` is Derived from the blue badge: Brilliant defines no info role.
 
 ## Fonts
 
 | Family | Weights | Used for |
 |---|---|---|
 | CoFo Brilliant | 400, 500, 700, with italics | All UI text |
-| CoFo Robert | 500, with italic | Display headlines (`display.*` styles), fallback Georgia |
+| CoFo Robert | 500, with italic | Display headlines (`display.*` styles) |
 | CoFo Semi Mono | 500, 700 | Lesson interactive tiles |
 | Source Code Pro | 400, 500, 700, with italics | Code |
 | KaTeX_Main | 400, 700, with italics | Maths |
 | Soleil | 400, 600, 700, 400 italic | Legacy Django pages only |
 
-No `font-feature-settings` are set anywhere. The CoFo families are proprietary and are not committed. The style guide looks for them in a local `fonts/` folder next to it (gitignored) and falls back to Figtree and Georgia, showing a notice when it does.
+Each family's stack is the one the production stylesheet declares (`--panda-fonts-*`, read 2026-10): `'CoFo Brilliant', sans-serif`; `'CoFo Robert', sans-serif`; `'CoFo Semi Mono', monospace`; `'Source Code Pro', monospace`; `'KaTeX_Main', serif`. So if CoFo Robert fails to load, the product's display headlines fall back to a sans, not a serif. No `font-feature-settings` are set anywhere. The CoFo families are proprietary and are not committed. The style guide looks for them in a local `fonts/` folder next to it (gitignored) and falls back to Figtree and Georgia (its own choice, to keep the display serif), showing a notice when it does.
+
+## Motion and reduced motion
+
+Durations and easings are in `core.duration` and `core.easing`: 100ms for presses and the nav underline, 150ms for menus, popovers, tooltips, dialogs and switches, 200ms for progress and bubbles, and an overshooting spring (`easing.spring-smooth` over `duration.spring`, 833ms) for the tutor panel and lesson transitions.
+
+Preferences has a Reduce motion setting (On, Off, Auto). It sets `<html data-reduced-motion>`, and Brilliant writes every entrance, shake and height animation under Panda's `allowMotion` condition, so those 46 rules run only when the attribute is `false`: the wrong-answer shake, sheet slide-in and out, fade and reveal, slide-up, the You page blur-in and the spring height transitions. With it on, the end state appears at once. The operating system's reduce-motion setting additionally applies six `motionReduce` rules that set transitions to none or 0s. Both are recorded in `core.motion` and counted in [raw/css-rules.json](raw/css-rules.json).
+
+## Layout
+
+Breakpoints are Panda's (`core.breakpoint`, `lg` at 769px is the desktop switch). Content sits in one centred `layout.container` (1216px, 112px margins at 1440; 24px gutters at 390). There is no global column grid: Home is two columns (`layout.grid-home`, 384 and 592 with a 24px gap), Settings three (`layout.grid-settings`: side menu, 592px form, balancing column), and every page is one column on a phone. Layers are in `core.zIndex` (`app-bar`, `overlay`, `modal` and the lesson layers).
+
+## Coverage
+
+Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). App items were captured on the free plan, on 2026-09-25 and (marked 2026-10) on 2026-10-17. Component rows name the spec in [components.md](components.md); state crops are in [components/crops/2026-10/](components/crops/2026-10).
+
+| Item | Status | Where |
+|---|---|---|
+| Colour ramps | Captured: 14 hues plus black and white alpha ramps | `core.palette` |
+| Background, text, border roles | Captured, both themes | `bg.*`, `text.*`, `border.*` |
+| Accent default, hover, pressed | Captured 2026-10; hover and pressed are Derived (the product changes opacity, not colour) | `accent.*` |
+| Status: success, warning, danger, info | Success, warning, danger captured with fill, subtle fill, text and border; info Derived from the blue badge (no info role exists) | `feedback.*` |
+| Theme parity | Captured: 373 identical keys in light and dark | `light`, `dark` |
+| Type families and roles | Captured, with the product's fallback stacks (2026-10) | `core.fontFamily`, `core.typography` |
+| Spacing | Captured | `core.spacing` (0.25rem base) |
+| Radii, border widths | Captured | `core.radius`, `core.borderWidth` |
+| Sizing and focus ring | Captured 2026-10: control heights sm/md/lg, icon sizes, ring width and offsets | `core.size`, `core.focusRing` |
+| Elevation | Captured: three levels tied to the app bar, menus and tooltips, and dialogs | `shadow.subtle`, `shadow.base`, `shadow.md` |
+| Motion and reduced motion | Captured: durations, easings, springs, and what the Reduce motion setting turns off (2026-10) | `core.duration`, `core.easing`, `core.motion` |
+| Layout: breakpoints, widths, grids, z-index | Captured; grids are per page (2026-10) | `core.breakpoint`, `core.layout`, `core.zIndex` |
+| Button | Captured: default, hover, focus-visible, pressed, disabled for button3d and flat buttons; loading seen only as the spinner slot | `button3d-*`, `button-*`, `premium-button` |
+| Icon button | Captured: default, hover, focus-visible, pressed, disabled, toggled | `icon-button*` |
+| Link | Captured: default, hover, focus-visible, pressed | `link` |
+| Text field | Captured: default, focus-visible; error not captured (needs a submit) | `text-field` |
+| Text area | Captured: filled, focused (no focus style) | `text-area`, `text-area-pill` |
+| Select | Not present: no reached screen renders one | |
+| Checkbox | Not present: every checkbox input is the hidden half of a switch | |
+| Radio | Captured: radio and the segmented control's radio group, default, hover, focus-visible, pressed, selected | `radio`, `segment*` |
+| Switch | Captured: on, off, focus-visible | `switch-on`, `switch-off` |
+| Tabs | Captured: header tabs and settings tabs, default, hover, focus-visible, pressed, selected | `nav-tab*`, `settings-tab*` |
+| Menu | Captured: open, item, highlighted item (keyboard) | `menu*` |
+| Tooltip | Captured, with its trigger's states | `tooltip`, `tooltip-trigger` |
+| Dialog | Captured, both themes (2026-10) | `dialog`, `dialog-scrim` |
+| Toast | Not captured: no look-only action fires one | |
+| Card | Captured: course card (3D) and summary card | `card-course`, `weekly-summary-card` |
+| List row | Captured: settings row | `list-row-setting` |
+| Table | Captured 2026-09: Free vs Premium comparison, both themes; a screen-reader-only data table on You | [premium-comparison-dark](components/crops/premium-comparison-dark.png) |
+| Avatar | Captured: initials tile at phone width | `avatar` |
+| Badge | Captured | `badge-unverified`, `badge-primary` |
+| App shell and navigation | Captured, 1440 and 390 | [patterns.md](patterns.md#app-shell-and-navigation) |
+| Form with a validation error | Form captured; the error not captured (needs a submit); its CSS is recorded | [patterns.md](patterns.md#forms-and-validation) |
+| Empty, loading, error states | Empty captured (You, Help search); loading captured 2026-09; error is the 404 page | [patterns.md](patterns.md#empty-loading-and-error-states) |
+| Destructive confirmation | Captured: quit-lesson dialog, both themes | [patterns.md](patterns.md#destructive-confirmation) |
+| Feedback after an action | Captured: lesson evaluation; toast not captured | [patterns.md](patterns.md#feedback-after-an-action) |
+| Search and filtering | Captured: Topics ask box, Help Center live search, You period filter | [patterns.md](patterns.md#search-and-filtering) |
+| List or table | Captured | [patterns.md](patterns.md#data-display) |
+| Onboarding | Captured 2026-09, dark | [patterns.md](patterns.md#onboarding-and-first-run) |
+| Light and dark | Captured: every 2026-10 copy in both themes; onboarding dark only | [screenshots/app-2026-10/](screenshots/app-2026-10) |
+| Desktop and phone widths | Captured: 1440 everywhere; 390 for home, topics, you and settings (2026-10) and the public pages | `mobile-*` |
+
+Totals over 41 rows: 37 captured (states that were not reachable are named in their row), 2 not present (select, checkbox), 2 not captured (toast, and the validation error inside the form row). Why these cannot be closed by a recapture: Brilliant renders no select or checkbox on any screen a free account reaches; a toast and a validation error each need an action this capture does not take (changing the account or submitting a form).
 
 ## Do and don't
 
@@ -55,12 +120,32 @@ python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
 ```
 
-`build_tokens.py` reads `raw/css-vars-public.json` and `raw/text-styles.tsv` and writes `tokens.json`; component colours and their sources are listed in its `comp()` block. `build_style_guide.py` renders `style-guide.html` from `tokens.json` and `tools/style-guide.template.html`, turning every token into a CSS variable so the page cannot drift from the file. Both are deterministic: re-running them on this commit reproduces both files byte for byte. Edit the raw inputs or the builders, never the generated files.
+```bash
+python3 tools/build_components_md.py
+```
 
-`tools/capture/` holds the kit the captures came from: the in-page helpers (`helpers.js`), the window screenshot cropper (`shot.sh`, with `wins.swift` to find the Chrome window), the sRGB converter (`srgb.py RAW_DIR SRGB_DIR`, which also writes the 256-colour screenshots), the crop list (`crops.py [SRGB_DIR]`, which writes `components/crops/`), and headless Playwright scripts for the variable dump (`vars.mjs`), public pages (`public.mjs`), pricing (`pricing.mjs`), icons (`icons.mjs`) and the style guide check (`sg.mjs`). They were written for one session: the Playwright scripts write next to this folder and take `PLAYWRIGHT` as the path to a Playwright install when `playwright` is not resolvable, and `shot.sh` needs `SP` pointing at the compiled window lister.
+`build_tokens.py` reads `raw/css-vars-public.json`, `raw/text-styles.tsv` and the 2026-10 readings (`raw/css-rules.json`, `raw/components-computed.json`, `raw/layout.json`) and writes `tokens.json`; component colours and their sources are listed in its `comp()` block, accent and feedback roles in `accent_feedback()`. `build_style_guide.py` renders `style-guide.html` from `tokens.json` and `tools/style-guide.template.html`, turning every token into a CSS variable so the page cannot drift from the file. `build_components_md.py` writes `components.md` from `raw/components-computed.json`, naming each value by its token, followed by `tools/components-2026-09.md` and `tools/components-gaps.md`. All three are deterministic: re-running them on this commit reproduces their files byte for byte. Edit the raw inputs or the builders, never the generated files. [patterns.md](patterns.md) is written by hand from the screenshots it links.
+
+To capture again (2026-10 route): the owner signs in to brilliant.org in a browser pane; paste `tools/capture/signed-in/snapshot.js` into the page and call `__snap('<page>-dark-<state>', REDACT)` with the account's redaction rules from `~/.design-systems/brilliant-redact.json`; write each copy with `unsnap.py <spill> ~/.design-systems/snaps/brilliant` (it refuses a copy that still holds a redacted string); list it in `shots.tsv`. Then, with `PLAYWRIGHT` and `SNAPS` set:
+
+```bash
+tools/capture/signed-in/render-all.sh
+```
+
+```bash
+node tools/capture/signed-in/measure.mjs && node tools/capture/signed-in/layout.mjs && node tools/capture/css-rules.mjs
+```
+
+```bash
+python3 tools/capture/quantize.py "$SNAPS/renders" app-2026-10 && python3 tools/capture/quantize.py "$SNAPS/crops" components/crops/2026-10
+```
+
+`OUT=<dir> node tools/capture/public-help.mjs` captures the Help Center search states. `render.mjs` switches a dark copy to light by setting `data-theme="light"` on `<html>` only, so the lesson's Koji areas stay dark as they do in the product.
+
+`tools/capture/` also holds the 2026-09 kit: the in-page helpers (`helpers.js`), the window screenshot cropper (`shot.sh`, with `wins.swift` to find the Chrome window), the sRGB converter (`srgb.py RAW_DIR SRGB_DIR`, which also writes the 256-colour screenshots), the crop list (`crops.py [SRGB_DIR]`, which writes `components/crops/`), and headless Playwright scripts for the variable dump (`vars.mjs`), public pages (`public.mjs`), pricing (`pricing.mjs`), icons (`icons.mjs`) and the style guide check (`sg.mjs`). They were written for one session: the Playwright scripts write next to this folder and take `PLAYWRIGHT` as the path to a Playwright install when `playwright` is not resolvable, and `shot.sh` needs `SP` pointing at the compiled window lister.
 
 ## Use in Figma
 
-Import `tokens.json` with Tokens Studio and choose the Light or Dark theme. Set fonts to CoFo Brilliant (or Figtree as a stand-in) and CoFo Robert (or Georgia) for display headlines.
+Import `tokens.json` with Tokens Studio and choose the Light or Dark theme. Set fonts to CoFo Brilliant (or Figtree as a stand-in) and CoFo Robert (or Georgia, if a serif stand-in matters more than matching the product's own sans-serif fallback) for display headlines.
 
 The component to get right is the 3D button: a pill face lifted 4px over a same-hue darker lip, which drops to 0 on press over 100ms. Cards are flat with a 2px border and large radii (20 to 40). Elevation is a soft, unoffset black glow: `shadow.base` is `0 0 15px` in 10% black on light and 80% black on dark. The lesson's Koji areas stay dark in the light theme. Anything the capture could not reach is listed under Gaps in [components.md](components.md#gaps).

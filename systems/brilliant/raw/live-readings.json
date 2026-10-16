@@ -1,0 +1,50 @@
+{
+ "_meta": {
+  "source": "Computed styles read live in the signed-in app (built-in browser pane, 1440x900, dark theme), 2026-10-17. States reached with the real keyboard or pointer.",
+  "account": "free"
+ },
+ "menu-item-focus-visible": {
+  "how": "header Menu button focused, Enter, ArrowDown",
+  "element": "a[role=menuitem][data-slot=dropdown-menu-item][data-highlighted] (About)",
+  ":focus-visible": true,
+  "background-color": "rgba(255, 255, 255, 0.1)",
+  "box-shadow": "none",
+  "outline": "rgba(0, 0, 0, 0) solid 2px"
+ },
+ "button3d-blue-hover": {
+  "how": "real pointer over the home 'Start' button (Chrome)",
+  "element": "[data-slot=button3d] > [data-slot=button3d-face]",
+  ":hover": true,
+  "button opacity": "0.85 (class hover:panda-op_0.85; safari:hover:panda-op_1)",
+  "face background-color": "rgb(69, 109, 255)",
+  "face box-shadow": "rgb(55, 92, 227) 0px 4px 0px 0px",
+  "face transform": "matrix(1, 0, 0, 1, 0, -4)",
+  "--button3d-hover-tint": "(unset in Chrome; Safari paints var(--button3d-hover-tint) on ::after instead of the opacity)"
+ },
+ "button3d-blue-default": {
+  "element": "home 'Start'",
+  "size": "548x48",
+  "face background-color": "rgb(69, 109, 255)",
+  "face color": "rgb(255, 255, 255)",
+  "face box-shadow": "rgb(55, 92, 227) 0px 4px 0px 0px",
+  "face transform": "matrix(1, 0, 0, 1, 0, -4)"
+ },
+ "text-area-koji-focused-filled": {
+  "how": "clicked the /koji/ prompt and typed a question (not sent)",
+  "element": "textarea (placeholder 'Something else\u2026') in the glass prompt pill",
+  ":focus-visible": true,
+  "textarea font": "16px / 24px \"CoFo Brilliant\", sans-serif",
+  "textarea color": "rgb(255, 255, 255)",
+  "placeholder color": "rgba(255, 255, 255, 0.6)",
+  "textarea height": "24px (grows with content)",
+  "pill": {
+   "size": "552x68",
+   "background-color": "color(srgb 1 1 1 / 0.15)",
+   "border": "2px solid rgba(255, 255, 255, 0.05)",
+   "border-radius": "32px",
+   "box-shadow": "rgba(0, 0, 0, 0.7) 0px 0px 15px 0px",
+   "backdrop-filter": "blur(24px)"
+  },
+  "focus ring": "none on the textarea or pill (outline style none); focus is shown by the caret only"
+ }
+}

@@ -600,7 +600,7 @@ function drawRamps() {
 }
 function drawSemantic() {
   const t = TOKENS[getTheme()], host = $('#semantic-groups'); host.innerHTML = '';
-  const groups = [['bg', 'Background and surface'], ['text', 'Text'], ['icon', 'Icon'], ['border', 'Border'], ['status', 'Status'], ['shadowColor', 'Shadow colours'], ['special', 'Special (lesson, end state, overlay)'], ['autoflip', 'Autoflip (inverts between themes)'], ['component', 'Component colours']];
+  const groups = [['bg', 'Background and surface'], ['text', 'Text'], ['icon', 'Icon'], ['border', 'Border'], ['accent', 'Accent (default, hover, pressed)'], ['status', 'Status'], ['feedback', 'Feedback (success, warning, danger, info: fill, text, border)'], ['shadowColor', 'Shadow colours'], ['special', 'Special (lesson, end state, overlay)'], ['autoflip', 'Autoflip (inverts between themes)'], ['component', 'Component colours']];
   for (const [g, title] of groups) {
     const items = walk(t[g], g + '.', []); if (!items.length) continue;
     const h = document.createElement('h3'); h.className = 'sub'; h.textContent = `${title} (${items.length})`; host.appendChild(h);
@@ -630,7 +630,7 @@ function drawType() {
 function table(sel, head, rows) { $(sel).innerHTML = `<tr>${head.map(h => `<th>${h}</th>`).join('')}</tr>` + rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join(''); }
 function drawSpace() {
   const sp = $('#spacing'); for (const [k, tk] of Object.entries(TOKENS.core.spacing)) { if (parseFloat(tk.v) > 4) continue; sp.insertAdjacentHTML('beforeend', `<div class="cell" title="${tk.s}"><div class="b" style="width:${tk.v};height:${tk.v};min-width:1px;min-height:1px"></div><div class="cap">${k}<br>${parseFloat(tk.v) * 16}px</div></div>`); }
-  table('#sizes', ['Token', 'Value', 'Source'], walk(TOKENS.core.size, 'size.', []).map(([n, tk]) => [`<code>${n}</code>`, tk.v, `<span class="src">${tk.s}${tk.d ? ' · ' + tk.d : ''}</span>`]));
+  table('#sizes', ['Token', 'Value', 'Source'], walk(TOKENS.core.size, 'size.', []).concat(walk(TOKENS.core.focusRing, 'focusRing.', []), walk(TOKENS.core.layout, 'layout.', [])).map(([n, tk]) => [`<code>${n}</code>`, tk.v, `<span class="src">${tk.s}${tk.d ? ' · ' + tk.d : ''}</span>`]));
   table('#bps', ['Breakpoint', 'Min width', 'Note'], walk(TOKENS.core.breakpoint, '', []).map(([n, tk]) => [n, tk.v, `<span class="src">${tk.d || ''}</span>`]));
   table('#zidx', ['Layer', 'z-index'], walk(TOKENS.core.zIndex, '', []).filter(([n]) => !n.startsWith('in-content') && !n.startsWith('lesson') && !n.includes('debug')).map(([n, tk]) => [n, tk.v]));
   const r = $('#radii'); for (const [n, tk] of walk(TOKENS.core.radius, '', [])) r.insertAdjacentHTML('beforeend', `<div class="cell" title="${tk.s}${tk.d ? '\n' + tk.d : ''}"><div style="width:72px;height:72px;border:2px solid var(--border-active);border-radius:${tk.v};background:var(--bg-secondary)"></div><div class="cap">${n}<br>${tk.v}</div></div>`);
@@ -643,7 +643,7 @@ function drawMotion() {
     const el = document.createElement('div'); el.innerHTML = `<div class="track" style="cursor:pointer"><div class="motion-dot" style="transition:left var(--duration-spring) var(--${n.replace(/\./g, '-')})"></div></div><div class="src">${n} · ${tk.t === 'cubicBezier' ? 'cubic-bezier(' + tk.v.join(', ') + ')' : 'linear(…)'} · ${tk.s}</div>`;
     el.querySelector('.track').addEventListener('click', e => e.currentTarget.classList.toggle('go')); host.appendChild(el);
   }
-  table('#durations', ['Duration', 'Value', 'Used for'], walk(TOKENS.core.duration, 'duration.', []).map(([n, tk]) => [n, tk.v, `<span class="src">${tk.s}</span>`]));
+  table('#durations', ['Duration', 'Value', 'Used for'], walk(TOKENS.core.duration, 'duration.', []).concat(walk(TOKENS.core.motion, 'motion.', [])).map(([n, tk]) => [n, tk.v, `<span class="src">${tk.s}${tk.d ? ' · ' + tk.d : ''}</span>`]));
 }
 function drawB3d() {
   const host = $('#b3d-variants');
