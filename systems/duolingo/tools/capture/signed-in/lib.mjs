@@ -27,6 +27,7 @@ export const FONTS = `
 *{caret-color:transparent!important}`;
 
 export async function routeCdn(ctx) {
+  if (!CACHE) throw new Error('set SNAPS (the directory of page copies) or CDN_CACHE');
   fs.mkdirSync(CACHE, { recursive: true });
   await ctx.route('**/*', async (route) => {
     const url = route.request().url();

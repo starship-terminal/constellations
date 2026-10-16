@@ -6,8 +6,11 @@
 import fs from 'fs';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const { routeCdn, FONTS } = await import('./lib.mjs');
 const [,, dir, label, ...flags] = process.argv;
+// lib.mjs keeps its CDN cache beside the copies (<SNAPS>-cdn-cache); the positional directory is
+// the copies, so it stands in for SNAPS when that is not set.
+process.env.SNAPS ||= dir;
+const { routeCdn, FONTS } = await import('./lib.mjs');
 const meta = JSON.parse(fs.readFileSync(`${dir}/${label}.json`));
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: meta.w, height: meta.h }, deviceScaleFactor: 2, colorScheme: /-light(?=-|$)/.test(label) ? 'light' : 'dark' });

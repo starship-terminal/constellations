@@ -1203,10 +1203,10 @@
     "node": "settings-super-light-default#109",
     "label": "Start my free 7 days",
     "face": "`text.onColor` #FFFFFF (snow-always-light, light)",
-    "lip": "`text.onColor` #FFFFFF (snow-always-light, light) @ 0.5 alpha",
+    "lip": "`palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.5 alpha",
     "border": "none",
     "text": "`gamification.super.surface` #000437 (eclipse, light)",
-    "lip_box_shadow": "`text.onPrimary` #FFFFFF (snow, light) @ 0.5 alpha 0px 4px 0px 0px",
+    "lip_box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.5 alpha 0px 4px 0px 0px",
     "measured": {
      "trace": "settings-super-light-default#109 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _3LkfO _19taU' dt='plus-offer-button'",
      "rect": {
@@ -1234,7 +1234,7 @@
      "z_index": "2",
      "::before": {
       "fill": "`text.onPrimary` #FFFFFF (snow, light)",
-      "box_shadow": "`text.onPrimary` #FFFFFF (snow, light) @ 0.5 alpha 0px 4px 0px 0px",
+      "box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.5 alpha 0px 4px 0px 0px",
       "radius": "12px"
      },
      "label": {
@@ -1265,7 +1265,7 @@
     "node": "settings-super-dark-default#109",
     "label": "Learn more",
     "face": "`text.onColor` #FFFFFF (snow-always-light, dark)",
-    "lip": "`text.onColor` #FFFFFF (snow-always-light, dark) @ 0.5 alpha",
+    "lip": "`palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.5 alpha",
     "border": "none",
     "text": "`gamification.super.surface` #000437 (eclipse, dark)",
     "lip_box_shadow": "`palette.dark.celestia` #FFFFFF (celestia, dark) @ 0.5 alpha 0px 4px 0px 0px",
@@ -1483,10 +1483,10 @@
     "node": "learn-light-node-popover#1254",
     "label": "Start +10 XP",
     "face": "`text.onColor` #FFFFFF (snow-always-light, light)",
-    "lip": "`text.onColor` #FFFFFF (snow-always-light, light) @ 0.7 alpha",
+    "lip": "`palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.7 alpha",
     "border": "none",
     "text": "`unitColors.green` #58CC02 (owl-always-light, light)",
-    "lip_box_shadow": "`text.onPrimary` #FFFFFF (snow, light) @ 0.7 alpha 0px 4px 0px 0px",
+    "lip_box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.7 alpha 0px 4px 0px 0px",
     "measured": {
      "trace": "learn-light-node-popover#1254 <a> cl='_1rcV8 _1VYyp _1ursp _7jW2t PbV1v _2sYfM _19ped' dt='skill-path-state-active skill-path-unit-test-81'",
      "rect": {
@@ -1513,7 +1513,7 @@
      },
      "::before": {
       "fill": "`text.onPrimary` #FFFFFF (snow, light)",
-      "box_shadow": "`text.onPrimary` #FFFFFF (snow, light) @ 0.7 alpha 0px 4px 0px 0px",
+      "box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.7 alpha 0px 4px 0px 0px",
       "radius": "16px"
      },
      "text": "Start +10 XP"
@@ -1526,7 +1526,7 @@
     "node": "learn-dark-node-popover#1244",
     "label": "Start +10 XP",
     "face": "`text.onColor` #FFFFFF (snow-always-light, dark)",
-    "lip": "`text.onColor` #FFFFFF (snow-always-light, dark) @ 0.7 alpha",
+    "lip": "`palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.7 alpha",
     "border": "none",
     "text": "`unitColors.green` #58CC02 (owl-always-light, dark)",
     "lip_box_shadow": "`palette.dark.celestia` #FFFFFF (celestia, dark) @ 0.7 alpha 0px 4px 0px 0px",
@@ -1585,10 +1585,10 @@
     "node": "learn-light-streak-dropdown#140",
     "label": "View List",
     "face": "`text.onColor` #FFFFFF (snow-always-light, light)",
-    "lip": "`text.onColor` #FFFFFF (snow-always-light, light) @ 0.6 alpha",
+    "lip": "`palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.6 alpha",
     "border": "none",
     "text": "`palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light)",
-    "lip_box_shadow": "`text.onPrimary` #FFFFFF (snow, light) @ 0.6 alpha 0px 4px 0px 0px",
+    "lip_box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.6 alpha 0px 4px 0px 0px",
     "measured": {
      "trace": "learn-light-streak-dropdown#140 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _2loTO'",
      "rect": {
@@ -1615,7 +1615,7 @@
      "min_width": "auto",
      "::before": {
       "fill": "`text.onPrimary` #FFFFFF (snow, light)",
-      "box_shadow": "`text.onPrimary` #FFFFFF (snow, light) @ 0.6 alpha 0px 4px 0px 0px",
+      "box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.6 alpha 0px 4px 0px 0px",
       "radius": "8px"
      },
      "label": {
@@ -1646,7 +1646,7 @@
     "node": "learn-dark-streak-dropdown#120",
     "label": "View List",
     "face": "`text.onColor` #FFFFFF (snow-always-light, dark)",
-    "lip": "`text.onColor` #FFFFFF (snow-always-light, dark) @ 0.6 alpha",
+    "lip": "`palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.6 alpha",
     "border": "none",
     "text": "`palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark)",
     "lip_box_shadow": "`palette.dark.celestia` #FFFFFF (celestia, dark) @ 0.6 alpha 0px 4px 0px 0px",
@@ -3905,7 +3905,7 @@
       "h": 24
      },
      "margin": "0px 6px 0px -6px",
-     "text_color": "`border.onColor` #000000 (black, dark)",
+     "text_color": "`palette.dark.black` #000000 (black, dark)",
      "font": {
       "family": "duolingo-sans",
       "size": "17px",
@@ -3964,7 +3964,7 @@
       "h": 24
      },
      "margin": "0px 6px 0px -6px",
-     "text_color": "`border.onColor` #000000 (black, dark)",
+     "text_color": "`palette.dark.black` #000000 (black, dark)",
      "font": {
       "family": "duolingo-sans",
       "size": "17px",
@@ -7902,7 +7902,7 @@
       "w": 1200,
       "h": 797
      },
-     "background": "`border.onColor` #000000 (black, dark) @ 0.4 alpha",
+     "background": "`background.scrim` #000000 (black, dark) @ 0.4 alpha",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -10628,7 +10628,7 @@
       "w": 18,
       "h": 18
      },
-     "text_color": "`border.onColor` #000000 (black, dark)",
+     "text_color": "`palette.dark.black` #000000 (black, dark)",
      "font": {
       "family": "duolingo-sans",
       "size": "17px",
@@ -10642,7 +10642,7 @@
       "trace": "lesson-dark-challenge-default#8 <img>",
       "w": 18,
       "h": 18,
-      "color": "`border.onColor` #000000 (black, dark)"
+      "color": "`palette.dark.black` #000000 (black, dark)"
      },
      "instance": "quit X (dark)"
     },
@@ -10654,7 +10654,7 @@
       "w": 18,
       "h": 18
      },
-     "text_color": "`border.onColor` #000000 (black, light)",
+     "text_color": "`palette.light.black` #000000 (black, light)",
      "font": {
       "family": "duolingo-sans",
       "size": "17px",
@@ -10668,7 +10668,7 @@
       "trace": "lesson-light-challenge-default#8 <img>",
       "w": 18,
       "h": 18,
-      "color": "`border.onColor` #000000 (black, light)"
+      "color": "`palette.light.black` #000000 (black, light)"
      },
      "instance": "quit X (light)"
     },
@@ -10680,7 +10680,7 @@
       "w": 19,
       "h": 19
      },
-     "text_color": "`border.onColor` #000000 (black, light)",
+     "text_color": "`palette.light.black` #000000 (black, light)",
      "font": {
       "family": "duolingo-sans",
       "size": "17px",
@@ -10706,7 +10706,7 @@
       "h": 24
      },
      "margin": "0px 6px 0px -6px",
-     "text_color": "`border.onColor` #000000 (black, light)",
+     "text_color": "`palette.light.black` #000000 (black, light)",
      "font": {
       "family": "duolingo-sans",
       "size": "17px",
@@ -10732,7 +10732,7 @@
       "w": 12,
       "h": 12
      },
-     "text_color": "`border.onColor` #000000 (black, dark)",
+     "text_color": "`palette.dark.black` #000000 (black, dark)",
      "font": {
       "family": "duolingo-sans",
       "size": "17px",
@@ -10745,7 +10745,7 @@
       "trace": "profile-dark-scrolled#279 <img>",
       "w": 12,
       "h": 12,
-      "color": "`border.onColor` #000000 (black, dark)"
+      "color": "`palette.dark.black` #000000 (black, dark)"
      },
      "instance": "suggestion dismiss (dark)"
     },

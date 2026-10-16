@@ -37,14 +37,14 @@ Face = `::before` fill (legacy FOLLOW: `::after`). Lip = `::before` box-shadow c
 | secondary-juicy-macaw | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.link` #49C0F8 (macaw, dark) | 264x48, 16px | characters-dark-default#166 | [dark](crops/button-secondary-juicy-macaw-dark.png) |
 | super | light | `gamification.super.face` #3C4DFF (cosmos, light) | `gamification.super.lip` #3F22EC (nebula, light) | none | `text.onColor` #FFFFFF (snow-always-light, light) | 328x50, 16px | characters-light-default#93 | [light](crops/button-super-light.png) |
 | super | dark | `gamification.super.face` #3C4DFF (cosmos, dark) | `gamification.super.lip` #3F22EC (nebula, dark) | none | `text.onColor` #FFFFFF (snow-always-light, dark) | 328x50, 16px | characters-dark-default#93 | [dark](crops/button-super-dark.png) |
-| super-inverse | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `text.onColor` #FFFFFF (snow-always-light, light) @ 0.5 alpha | none | `gamification.super.surface` #000437 (eclipse, light) | 552x50, 12px | settings-super-light-default#109 | [light](crops/button-super-inverse-light.png) |
-| super-inverse | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `text.onColor` #FFFFFF (snow-always-light, dark) @ 0.5 alpha | none | `gamification.super.surface` #000437 (eclipse, dark) | 260x50, 12px | settings-super-dark-default#109 | [dark](crops/button-super-inverse-dark.png) |
+| super-inverse | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.5 alpha | none | `gamification.super.surface` #000437 (eclipse, light) | 552x50, 12px | settings-super-light-default#109 | [light](crops/button-super-inverse-light.png) |
+| super-inverse | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.5 alpha | none | `gamification.super.surface` #000437 (eclipse, dark) | 260x50, 12px | settings-super-dark-default#109 | [dark](crops/button-super-inverse-dark.png) |
 | danger | light | `accent.danger.face` #FF4B4B (cardinal, light) | `accent.danger.lip` #EA2B2B (fire-ant, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 184x50, 16px | settings-courses-light-remove-confirm#144 | [light](crops/button-danger-light.png) |
 | danger | dark | `accent.danger.face` #EE5555 (cardinal, dark) | `accent.danger.lip` #D84848 (fire-ant, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 184x50, 16px | settings-courses-dark-remove-confirm#142 | [dark](crops/button-danger-dark.png) |
-| popover-cta | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `text.onColor` #FFFFFF (snow-always-light, light) @ 0.7 alpha | none | `unitColors.green` #58CC02 (owl-always-light, light) | 263x50, 16px | learn-light-node-popover#1254 | [light](crops/button-popover-cta-light.png) |
-| popover-cta | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `text.onColor` #FFFFFF (snow-always-light, dark) @ 0.7 alpha | none | `unitColors.green` #58CC02 (owl-always-light, dark) | 263x50, 16px | learn-dark-node-popover#1244 | [dark](crops/button-popover-cta-dark.png) |
-| streak-cta | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `text.onColor` #FFFFFF (snow-always-light, light) @ 0.6 alpha | none | `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light) | 196x36, 8px | learn-light-streak-dropdown#140 | [light](crops/button-streak-cta-light.png) |
-| streak-cta | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `text.onColor` #FFFFFF (snow-always-light, dark) @ 0.6 alpha | none | `palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) | 196x36, 8px | learn-dark-streak-dropdown#120 | [dark](crops/button-streak-cta-dark.png) |
+| popover-cta | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.7 alpha | none | `unitColors.green` #58CC02 (owl-always-light, light) | 263x50, 16px | learn-light-node-popover#1254 | [light](crops/button-popover-cta-light.png) |
+| popover-cta | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.7 alpha | none | `unitColors.green` #58CC02 (owl-always-light, dark) | 263x50, 16px | learn-dark-node-popover#1244 | [dark](crops/button-popover-cta-dark.png) |
+| streak-cta | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.6 alpha | none | `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light) | 196x36, 8px | learn-light-streak-dropdown#140 | [light](crops/button-streak-cta-light.png) |
+| streak-cta | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.6 alpha | none | `palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) | 196x36, 8px | learn-dark-streak-dropdown#120 | [dark](crops/button-streak-cta-dark.png) |
 | outline-on-colour | light | none | `border.onColor` #000000 (black, light) @ 0.2 alpha | `border.onColor` #000000 (black, light) @ 0.2 alpha | `text.onPrimary` #FFFFFF (snow, light) | 148x54, 16px | learn-light-completed-popover#168 | [light](crops/button-outline-on-colour-light.png) |
 | outline-on-colour | dark | none | `border.onColor` #000000 (black, dark) @ 0.2 alpha | `border.onColor` #000000 (black, dark) @ 0.2 alpha | `text.onPrimary` #131F24 (snow, dark) (label renders `palette.dark.celestia` #FFFFFF (celestia, dark)) | 148x54, 16px | learn-dark-completed-popover#159 | [dark](crops/button-outline-on-colour-dark.png) |
 | text-macaw | light | none | none | none | `text.link` #1CB0F6 (macaw, light) | 65x18, - | characters-light-default#114 | [light](crops/button-text-macaw-light.png) |
@@ -193,7 +193,7 @@ Notes: Transition: css:4779 ._1VYyp declares "filter .2s, transform var(--web-ui
 | radius | `radius.12` 12px |
 | font | body: 500 20px/28px (var(--text-body-*) = 1.25rem/1.75rem) |
 | label | 700 20px/24px (heading-small), 24px tall, 4px gap to the field (_3zSI5 gap) |
-| trailing_icon_button | 24x24, margin 0 6px 0 -6px (rQJD2); eye glyph 24x17, clear glyph 18x18 |
+| trailing_icon_button | 24x24, margin 0 `space.6` 6px 0 -6px (rQJD2); eye glyph 24x17, clear glyph 18x18 |
 | CSS source | css:4779-c36ad395.css ._1Um2j { background:rgb(var(--color-polar)); border:2px solid rgb(var(--color-swan)); border-radius:12px; display:flex; overflow:hidden }<br>css:4779-c36ad395.css ._298F2 { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; -webkit-appearance:none; -moz-appearance:none; appearance:none; background:none; border:none; box-sizing:border-box; caret-color:rgb(var(--color-macaw)); color:rgb(var(--color-eel)); font:var(--text-body-weight) var(--text-body-size) /var(--text-body-line-height) duolingo-sans,sans-serif; font-size:var(--__internal__input-font-size,var(--text-body-size)); letter-spacing:var(--text-body-letter-spacing); line-height:var(--__internal__input-line-height,var(--text-body-line-height)); min-width:0; outline:none; padding:var(--__internal__input-padding,8px 14px); text-transform:var(--text-body-casing); width:100% }<br>css:4779-c36ad395.css .rQJD2 { align-self:center; margin-left:-6px; margin-right:6px }<br>css:4779-c36ad395.css ._3zSI5 { display:inline-flex; flex-direction:column; gap:4px }<br>css:4779-c36ad395.css ._17QjI { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; color:rgb(var(--color-eel)); font:var(--text-heading-weight-small) var(--text-heading-size-small) /var(--text-heading-line-height-small) duolingo-sans,sans-serif; letter-spacing:var(--text-heading-letter-spacing-small); text-transform:var(--text-heading-casing-small) } |
 
 Measured instances:
@@ -202,9 +202,9 @@ Measured instances:
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | text (dark, focused) | settings-profile-dark-input-focus#109 <div> cl='_1Um2j' | 480x48 |  | 12px | 2px `border.focus` #49C0F8 (macaw, dark) | `gamification.league.demotedRow` #202F36 (polar, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
 | input (dark) | settings-profile-dark-input-focus#110 <input> cl='_298F2' | 452x44 | 8px 14px 8px 14px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 20px/28px |
-| clear button (dark, focus only) | settings-profile-dark-input-focus#111 <button> cl='ypJiL _1gEmM _7jW2t _3as_M rQJD2' | 24x24 |  |  |  |  | `background.scrim` #000000 (black, dark) | 400 17px/19.55px |
+| clear button (dark, focus only) | settings-profile-dark-input-focus#111 <button> cl='ypJiL _1gEmM _7jW2t _3as_M rQJD2' | 24x24 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
 | password field (dark) | settings-profile-dark-input-focus#124 <div> cl='_1Um2j' | 480x48 |  | 12px | 2px `border.default` #37464F (swan, dark) | `gamification.league.demotedRow` #202F36 (polar, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| eye toggle (dark) | settings-profile-dark-input-focus#126 <button> cl='ypJiL _1gEmM _7jW2t rQJD2' | 24x24 |  |  |  |  | `border.onColor` #000000 (black, dark) | 400 17px/19.55px |
+| eye toggle (dark) | settings-profile-dark-input-focus#126 <button> cl='ypJiL _1gEmM _7jW2t rQJD2' | 24x24 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
 | text (light, default) | settings-profile-light-default#111 <div> cl='_1Um2j' | 592x48 |  | 12px | 2px `border.default` #E5E5E5 (swan, light) | `surface.subtle` #F7F7F7 (polar, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
 | input (light) | settings-profile-light-default#112 <input> cl='_298F2' | 588x44 | 8px 14px 8px 14px |  |  |  | `text.primary` #4B4B4B (eel, light) | 500 20px/28px |
 | label (dark) | settings-profile-dark-default#108 <label> cl='_17QjI' | 480x24 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 20px/24px |
@@ -262,7 +262,7 @@ Crops: [dark: text-input-dark.png](crops/text-input-dark.png) [light: text-input
 
 | Property | Value |
 | --- | --- |
-| height | 63px (27px input + 16px padding x2 + 2px border x2) |
+| height | 63px (27px input + 16px padding x2 + `space.2` 2px border x2) |
 | padding | `space.16` 16px `space.20` 20px |
 | border | `borderWidth.2` 2px |
 | radius | `radius.12` 12px |
@@ -523,8 +523,8 @@ Notes: Lesson multiple-choice options use the same _8dMUn card and belong to the
 | Property | Value |
 | --- | --- |
 | button | 56x32 |
-| track | 56x24, radius 12px |
-| knob | 30x32, border 2px 2px 4px, radius 8px |
+| track | 56x24, radius `radius.12` 12px |
+| knob | 30x32, border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px, radius `radius.8` 8px |
 | travel | 26px |
 | transition | transform .2s |
 | CSS source | css:4243-a8d324a8.css ._2mkWS { --web-ui_button-filter-hover:none; color:rgb(var(--color-macaw)); height:32px }<br>css:4243-a8d324a8.css ._1gwYP { align-items:center; width:56px }<br>css:4243-a8d324a8.css ._1gwYP:before { background:rgb(var(--color-snow)); border-color:rgb(var(--color-swan)); border-radius:8px; border-style:solid; border-width:2px 2px 4px; box-sizing:border-box; content:""; height:32px; position:absolute; transition:transform .2s; width:30px }<br>css:4243-a8d324a8.css ._1gwYP.XIyeO:before { border-color:rgb(var(--color-macaw)); transform:translateX(26px) } |
@@ -643,7 +643,7 @@ Crops: [dark: tabs-underline-dark.png](crops/tabs-underline-dark.png) [light: ta
 
 | Property | Value |
 | --- | --- |
-| tab_height | 48px (16px top padding + 34px label box - 2px overlap) |
+| tab_height | 48px (16px top padding + 34px label box - `space.2` 2px overlap) |
 | label | 700 16px, 0.8px, uppercase |
 | indicator | 2px bottom border |
 | CSS source | css:3014-2a6e31d6.css ._36qf- { flex:1 1 0; padding-top:16px }<br>css:3014-2a6e31d6.css .bsF09 { display:block; margin-bottom:-2px; text-align:center }<br>css:3014-2a6e31d6.css ._3Jy0n { border-bottom:2px solid rgb(var(--color-swan)); position:relative }<br>css:3014-2a6e31d6.css ._3o5O9>.bsF09 { border-bottom-color:rgb(var(--color-macaw)); color:rgb(var(--color-macaw)) } |
@@ -756,9 +756,9 @@ Crops: [dark: tabs-segmented-dark.png](crops/tabs-segmented-dark.png) [light: ta
 
 | Property | Value |
 | --- | --- |
-| up_next | 74x26, padding 4px 8px, radius 6px, 700 15px/18px, 0.04em (dump 0.6px), uppercase |
-| count | 42x25, padding 4px 8px, radius 16px, 700 15px/17.25px, 0.8px, uppercase |
-| equipped | 110x25, padding 8px, radius 16px, 700 15px uppercase |
+| up_next | 74x26, padding `space.4` 4px `space.8` 8px, radius 6px, 700 15px/18px, 0.04em (dump 0.6px), uppercase |
+| count | 42x25, padding `space.4` 4px `space.8` 8px, radius `radius.16` 16px, 700 15px/17.25px, 0.8px, uppercase |
+| equipped | 110x25, padding `space.8` 8px, radius `radius.16` 16px, 700 15px uppercase |
 | super_logo | 78x21 image |
 | CSS source | css:path-e50cab6b.css ._3LDH7 { background:rgb(var(--color-iguana-always-light)); border-radius:6px; color:rgb(var(--color-macaw)); display:inline-block; font-size:15px; font-weight:700; letter-spacing:.04em; line-height:18px; margin-bottom:16px; padding:4px 8px; text-transform:uppercase }<br>css:path-e50cab6b.css ._1Qswf { background:rgb(var(--color-swan)); color:rgb(var(--color-hare)) }<br>css:2820-18cf65ab.css ._2TZCt { align-items:center; background:rgb(var(--color-cardinal)); color:rgb(var(--color-snow-always-light)); padding:4px 8px; position:absolute; right:-12px; top:-12px }<br>css:8566-1e4d7a6c.css ._2I6Qk { align-items:center; border-radius:16px; border-width:0; display:flex; font-size:15px; font-weight:700; height:25px; justify-content:center; padding:8px; text-transform:uppercase; white-space:nowrap; width:-moz-min-content; width:min-content }<br>css:8566-1e4d7a6c.css ._2tJ-w { background:rgb(var(--color-swan)); color:rgb(var(--color-hare)) }<br>css:8566-1e4d7a6c.css ._1-6PO { background:rgb(var(--color-sea-sponge)); color:rgb(var(--color-owl)) } |
 
@@ -824,7 +824,7 @@ Notes: Super logo src: https://d35aaqx5ub95lt.cloudfront.net/images/super/2e50c3
 | sizes | web-ui avatar: small 30, medium 48 (default), large 63, xlarge 77, xxlarge 90 (letter avatar small is 36); captured: 48 (lists, leaderboard), 70 (search results) |
 | letter_font | 700, 0.46 x size (22.08px at 48) |
 | online_dot | 12x12, 2px border |
-| ring | no ring on list avatars; edit badge border 3px snow |
+| ring | no ring on list avatars; edit badge border `borderWidth.3` 3px snow |
 | CSS source | css:4779-c36ad395.css ._1N32S { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; align-items:center; border-radius:50%; box-sizing:border-box; color:rgb(var(--color-snow)); display:inline-flex; font:700 17px/25px duolingo-sans,sans-serif; justify-content:center; vertical-align:middle }<br>css:1008-b4d34396.css ._2NNBf { background-color:rgb(var(--color-owl)); border:2px solid rgb(var(--color-snow)); border-radius:50%; bottom:1px; height:12px; position:absolute; right:3px; width:12px }<br>css:4779-c36ad395.css ._1wd57 { border-style:dashed; border-width:2px; color:rgb(var(--color-hare)) }<br>css:settingsPage-f3f7f16a.css ._1VC2W { background:rgb(var(--color-macaw)); border:3px solid rgb(var(--color-snow)); border-radius:50%; display:flex; height:31px; justify-content:center; position:absolute; right:-11px; top:0; width:31px }<br>js/4779-9b5aed3c.js module 80645 sizes {large:63,medium:48,small:30,xlarge:77,xxlarge:90}; module 30254 letter avatar {large:63,medium:48,small:36,xlarge:77}, fontSize .46*size |
 
 Measured instances:
@@ -885,8 +885,8 @@ Crops: [dark: avatar-dark.png](crops/avatar-dark.png) [dark: avatar-edit-dark.pn
 | radius | `radius.15` 15px (var --web-ui_popover-border-radius; `radius.10` 10px on path tooltips, 5px on progress-bar popover) |
 | offset | `space.8` 8px from trigger (margin on direction class); path node popover `space.12` 12px |
 | stem | 20x10 visible, square 14.14px CSS (20px rendered bbox) rotated 45deg |
-| gems_content | 380x148, padding 24px 12px; 100px illustration + 12px gap; title 700 24px/26px; body wolf |
-| path_popover | 295px wide, padding 16px, 700 19px/1.4, centered, no border |
+| gems_content | 380x148, padding `space.24` 24px `space.12` 12px; 100px illustration + 12px gap; title 700 24px/26px; body wolf |
+| path_popover | 295px wide, padding `space.16` 16px, 700 19px/1.4, centered, no border |
 | CSS source | css:4779-c36ad395.css ._36bu_ { background-color:var(--web-ui_popover-background-color,rgb(var(--color-snow))); border:2px solid var(--web-ui_popover-border-color,rgb(var(--color-swan))); border-radius:var(--web-ui_popover-border-radius,15px); box-sizing:border-box; overflow:hidden; transform:translateZ(0) }<br>css:4779-c36ad395.css ._1TMn5 { background-color:var(--web-ui_popover-background-color,rgb(var(--color-snow))); border:2px solid var(--web-ui_popover-border-color,rgb(var(--color-swan))); border-radius:2px; content:""; height:14.14427157px; left:50%; transform:translateZ(0) rotate(45deg); transform-origin:top left; width:14.14427157px }<br>css:4779-c36ad395.css ._3T97b { box-sizing:border-box; position:absolute }<br>css:4779-c36ad395.css ._3OfAS { margin-top:8px }<br>css:5275-8898b509.css ._3cG-N { align-items:center; box-sizing:border-box; display:flex; padding:24px 12px; width:380px }<br>css:path-e50cab6b.css ._3RP1Q { font-size:19px; font-weight:700; line-height:1.4; padding:16px; text-align:center }<br>css:path-e50cab6b.css ._1Fbw- { background-color:var(--path-unit-character-color); border:0; color:rgb(var(--color-snow-always-light)) } |
 
 Measured instances:
@@ -1077,7 +1077,7 @@ Crops: [dark: menu-dark.png](crops/menu-dark.png) [dark: menu-hover-dark.png](cr
 | shadow | none |
 | title | 700 24px/32px (heading-medium), 12px top margin |
 | body | 500 16px/24px caption, wolf, 12px top margin |
-| button_stack | primary 50px, margin-top 32px; secondary text 32px, margin-top 16px |
+| button_stack | primary 50px, margin-top `space.32` 32px; secondary text 32px, margin-top `space.16` 16px |
 | close | 35x35, 2px border, radius 98px, 16px icon |
 | CSS source | css:app-f2ef02f8.css ._1yFTM { border-radius:var(--modal-border-radius,16px); margin:var(--modal-margin,24px) }<br>css:app-f2ef02f8.css .FohH5 { --modal-padding:30px; background:rgb(var(--color-snow)) }<br>css:1527-94387874.css ._3tUNa { --modal-padding:24px; width:384px }<br>css:4779-c36ad395.css ._1ATOC { background:rgb(var(--color-black),.4); bottom:0; left:0; position:fixed; right:0; top:0 }<br>css:app-f2ef02f8.css .rXoiv { align-items:center; background:rgb(var(--color-snow)); cursor:pointer; display:flex; height:35px; justify-content:center; position:absolute; right:4px; top:4px; width:35px; z-index:10 }<br>css:app-f2ef02f8.css @media (min-width:700px) .rXoiv { backface-visibility:hidden; border:2px solid rgb(var(--color-swan)); border-radius:98px; right:0; top:0; transform:translateX(50%) translateY(-50%) }<br>css:1060-a4cddb41.css ._3r1YP { color:rgb(var(--color-eel)) }<br>css:1060-a4cddb41.css ._3WCnS { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; color:rgb(var(--color-wolf)); font:var(--text-caption-weight) var(--text-caption-size) /var(--text-caption-line-height) duolingo-sans,sans-serif; letter-spacing:var(--text-caption-letter-spacing); margin-top:12px; text-transform:var(--text-caption-casing) } |
 
@@ -1269,9 +1269,9 @@ Crops: [dark: list-settings-nav-dark.png](crops/list-settings-nav-dark.png) [lig
 
 | Property | Value |
 | --- | --- |
-| course_row | 64px, gap 16px |
-| search_row | 113px, padding 18px 24px, avatar 70, text margin 0 16px |
-| following_row | 85px, padding 16px, avatar 48 |
+| course_row | 64px, gap `space.16` 16px |
+| search_row | 113px, padding `space.18` 18px `space.24` 24px, avatar 70, text margin 0 `space.16` 16px |
+| following_row | 85px, padding `space.16` 16px, avatar 48 |
 | divider | `borderWidth.2` 2px swan |
 | container | 2px swan border, 16px radius |
 | CSS source | css:settingsPage-f3f7f16a.css .Ej0kW { align-items:center; box-sizing:content-box; display:flex; gap:16px; height:64px; padding:0 16px }<br>css:settingsPage-f3f7f16a.css ._3hY-r { border-bottom:2px solid rgb(var(--color-swan)) }<br>css:1081-5a510dac.css .nAD2k { padding:18px 24px }<br>css:1081-5a510dac.css ._39QMj { align-items:center; border-bottom:2px solid rgb(var(--color-swan)); display:flex }<br>css:1081-5a510dac.css ._1xR2j { padding:16px }<br>css:1081-5a510dac.css ._2G9SS { border:2px solid rgb(var(--color-swan)); border-radius:16px }<br>css:5515-e83f96c1.css ._3jvnF { border-top:2px solid rgb(var(--color-swan)); color:rgb(var(--color-eel)); display:flex; font-weight:700; justify-content:space-between; padding:16px; width:100% }<br>css:settingsPage-f3f7f16a.css ._2R7tY { align-items:center; display:flex; gap:48px; justify-content:space-between } |
@@ -1332,9 +1332,9 @@ Crops: [dark: list-rows-courses-dark.png](crops/list-rows-courses-dark.png) [dar
 
 | Property | Value |
 | --- | --- |
-| rail_card | 368px wide, padding 18px, border 2px, radius 16px, 16px vertical gap between cards |
-| settings_card | padding 24px 16px |
-| stat_tile | 234x78 (desktop 480 column), padding 15px 24px, gap 12px between tiles |
+| rail_card | 368px wide, padding `space.18` 18px, border `borderWidth.2` 2px, radius `radius.16` 16px, 16px vertical gap between cards |
+| settings_card | padding `space.24` 24px `space.16` 16px |
+| stat_tile | 234x78 (desktop 480 column), padding `space.15` 15px `space.24` 24px, gap `space.12` 12px between tiles |
 | CSS source | css:1008-b4d34396.css ._1T_BQ { background:rgb(var(--color-snow)); border:2px solid rgb(var(--color-swan)); border-radius:16px }<br>css:settingsPage-f3f7f16a.css ._1uIIO { padding:24px 16px }<br>css:5515-e83f96c1.css ._2uSOC { border:2px solid rgb(var(--color-swan)); border-radius:16px; display:flex; overflow:hidden; padding:15px 24px }<br>css:5515-e83f96c1.css @media (max-width:699px) ._2uSOC { padding:12px 14px 10px }<br>css:5515-e83f96c1.css ._1kcT_ { color:rgb(var(--color-hare)) }<br>css:5515-e83f96c1.css .-TMd4 { font-size:20px; margin-bottom:4px } |
 
 Measured instances:
@@ -1580,11 +1580,11 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| quit X (dark) | lesson-dark-challenge-default#7 <button> cl='_1gEmM _7jW2t _3X5b9' dt='quit-button' | 18x18 |  |  |  |  | `border.onColor` #000000 (black, dark) | 400 17px/19.55px |
-| quit X (light) | lesson-light-challenge-default#7 <button> cl='_1gEmM _7jW2t _3X5b9' dt='quit-button' | 18x18 |  |  |  |  | `border.onColor` #000000 (black, light) | 400 17px/19.55px |
-| close X on upsell (light) | lesson-light-trial-upsell#21 <button> cl='_1gEmM _7jW2t GEQ3b _2pYm_ bafGS _2LoNU VzbUl _1saKQ _1AgKJ' dt='plus-close-x' | 19x19 |  |  |  |  | `border.onColor` #000000 (black, light) | 400 17px/0px |
-| password eye (light) | settings-profile-light-default#125 <button> cl='ypJiL _1gEmM _7jW2t rQJD2' | 24x24 |  |  |  |  | `border.onColor` #000000 (black, light) | 400 17px/19.55px |
-| suggestion dismiss (dark) | profile-dark-scrolled#278 <button> cl='_1gEmM _7jW2t _2FpYw' | 12x12 |  |  |  |  | `border.onColor` #000000 (black, dark) | 400 17px/19.55px |
+| quit X (dark) | lesson-dark-challenge-default#7 <button> cl='_1gEmM _7jW2t _3X5b9' dt='quit-button' | 18x18 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
+| quit X (light) | lesson-light-challenge-default#7 <button> cl='_1gEmM _7jW2t _3X5b9' dt='quit-button' | 18x18 |  |  |  |  | `palette.light.black` #000000 (black, light) | 400 17px/19.55px |
+| close X on upsell (light) | lesson-light-trial-upsell#21 <button> cl='_1gEmM _7jW2t GEQ3b _2pYm_ bafGS _2LoNU VzbUl _1saKQ _1AgKJ' dt='plus-close-x' | 19x19 |  |  |  |  | `palette.light.black` #000000 (black, light) | 400 17px/0px |
+| password eye (light) | settings-profile-light-default#125 <button> cl='ypJiL _1gEmM _7jW2t rQJD2' | 24x24 |  |  |  |  | `palette.light.black` #000000 (black, light) | 400 17px/19.55px |
+| suggestion dismiss (dark) | profile-dark-scrolled#278 <button> cl='_1gEmM _7jW2t _2FpYw' | 12x12 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
 | fab 52 (dark) | learn-dark-completed-popover#1664 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR' | 52x52 |  | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | 700 15px/18px |
 | fab 52 (light) | learn-light-completed-popover#1674 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR' | 52x52 |  | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #FFFFFF (snow, light); lip `surface.disabled` #E5E5E5 (swan, light) 0px 2px 0px 0px | `text.tertiary` #AFAFAF (hare, light) | 700 15px/18px |
 | tile 48 (dark) | leaderboard-dark-default#102 <button> cl='_2V6ug _1ursp _7jW2t _5Keb0 _2FxcQ' | 48x48 |  | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | 700 15px/18px |
@@ -1651,7 +1651,7 @@ Crops: [dark: icon-button-dark.png](crops/icon-button-dark.png) [dark: icon-butt
 | Role | Light | Dark |
 | --- | --- | --- |
 | table fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
-| header cell fill (at 0.3 alpha) | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.face` #49C0F8 (macaw, dark) |
+| header cell fill (at 0.3 alpha) | `palette.light.macaw` #1CB0F6 (macaw, light) | `palette.dark.macaw` #49C0F8 (macaw, dark) |
 | grid line border | `border.selected` #84D8FF (blue-jay, light) | `border.selected` #3F85A7 (blue-jay, dark) |
 | cell text | `text.body` #3C3C3C (black-text, light) | `text.body` #F1F7FB (black-text, dark) |
 

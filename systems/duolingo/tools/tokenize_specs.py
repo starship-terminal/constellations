@@ -7,7 +7,7 @@ tokens.json that aliases that palette entry in that theme, chosen by what the sp
 colour is for (a border, a fill, a label), or the core palette token when no semantic role
 uses the colour. '#E5E5E5 (swan, light)' in a 'field border' row becomes
 '`border.default` #E5E5E5 (swan, light)'. The raw value stays beside the token as the evidence.
-Idempotent: a colour that already has a token in front of it is left alone.
+Re-runnable: it first strips its own earlier output, so a rule change regenerates every spec, and a second run changes nothing.
 
     python3 tools/tokenize_specs.py && python3 tools/build_components_md.py
 """
@@ -25,7 +25,9 @@ def walk(node, path, th):
         if isinstance(v, dict) and "$value" in v:
             m = re.fullmatch(r"\{palette\.(light|dark)\.([a-z0-9-]+)\}", str(v["$value"]))
             if m and not path[:1] == ["ramp"]:
-                ALIAS[th].setdefault(m.group(2), []).append(".".join(path + [k]))
+                mod = v.get("$extensions", {}).get("studio.tokens", {}).get("modify") or {}
+                alpha = float(mod["value"]) if mod.get("type") == "alpha" else None
+                ALIAS[th].setdefault(m.group(2), []).append((".".join(path + [k]), alpha))
         elif isinstance(v, dict):
             walk(v, path + [k], th)
 for th in ("light", "dark"):
@@ -38,8 +40,13 @@ ROLE = [  # (words in the spec's role text, path patterns preferred, in order)
 ]
 ORDER = ["text.", "border.", "surface.", "background.", "accent.", "status.", "feedback.", "gamification.", "dataViz.", "unitColors."]
 
-def pick(name, theme, role):
-    cands = ALIAS[theme].get(name, [])
+def pick(name, theme, role, alpha=None):
+    """A token that aliases this palette entry at the same opacity: a colour written with no alpha
+    never takes a token that applies one (border.onColor is black at 20%), and '@ 0.4' only takes
+    a token at 40% (background.scrim). With no such token the core palette token is used."""
+    cands = [c for c, a in ALIAS[theme].get(name, []) if (a is None and alpha is None) or (a is not None and alpha is not None and abs(a - alpha) < 1e-6)]
+    if alpha is not None and not cands:
+        return f"palette.{theme}.{name}"
     role = role.lower()
     for words, pats in ROLE:
         if re.search(words, role):
@@ -71,21 +78,26 @@ HEX_ALPHA = re.compile(r"(?<!` )(#[0-9A-Fa-f]{6}) @ ?[\d.]+%? \(([a-z0-9-]+)\)")
 
 def tokenize_segment(text, role_of):
     hits = []  # (start, name, hex, stated theme)
+    def alpha_after(end):
+        a = re.match(r"\)?\s*@\s*([\d.]+)(%?)", text[end:end + 16])
+        return (float(a.group(1)) / (100 if a.group(2) else 1)) if a else None
+    role_alpha = lambda i: (lambda a: float(a.group(1)) if a else None)(re.search(r"at ([\d.]+) alpha", role_of(i)))
     for m in HEX.finditer(text):
-        hits.append((m.start(), m.group(2), m.group(1), m.group(3)))
+        hits.append((m.start(), m.group(2), m.group(1), m.group(3), alpha_after(m.end()) or role_alpha(m.start())))
     for m in HEX_ALPHA.finditer(text):
-        hits.append((m.start(), m.group(2), m.group(1), None))
+        a = re.search(r"@ ?([\d.]+)(%?)", m.group(0))
+        hits.append((m.start(), m.group(2), m.group(1), None, float(a.group(1)) / (100 if a.group(2) else 1)))
     for m in NAME_HEX.finditer(text):
         if text[max(0, m.start() - 2):m.start()] != "` ":
-            hits.append((m.start(), m.group(1), m.group(2), None))
+            hits.append((m.start(), m.group(1), m.group(2), None, alpha_after(m.end())))
     out, last = [], 0
-    for start, name, hex_, stated in sorted(set(hits)):
+    for start, name, hex_, stated, alpha in sorted(set(hits), key=lambda h: h[0]):
         if start < last:
             continue
         th = theme_of(hex_, name, stated)
         if th is None or name not in PAL[th]:
             continue
-        out.append(text[last:start] + f"`{pick(name, th, role_of(start))}` ")
+        out.append(text[last:start] + f"`{pick(name, th, role_of(start), alpha)}` ")
         last = start
     out.append(text[last:])
     return "".join(out)
@@ -128,25 +140,37 @@ SCALES = [
 PX = re.compile(r"(?<![`\w.-])(?<!` )(\d+)px\b")
 
 def tokenize_lengths(line, header):
-    """Only in measurement tables (a 'Property' column), and never inside a quoted CSS rule or a source cell."""
+    """Only in measurement tables (a 'Property' column), never inside a quoted CSS rule or a source
+    cell. Each px value takes the group named nearest before it in its own clause ('padding 4px 8px;
+    border 2px' gives space, space, borderWidth); a clause that names no group takes the row
+    property's group only when the property names exactly one. Anything else stays raw."""
     if not header or not any(h.strip() == "Property" for h in header) or not line.startswith("|") or set(line) <= set("|- :"):
         return line
     cells = line.split("|")
     pcol = [h.strip() for h in header].index("Property")
     prop = " ".join(cells[1:pcol + 1]).lower()
-    for words, group in SCALES:
-        if re.search(words, prop) and "css" not in prop:
+    if "css" in prop:
+        return line
+    def groups_in(text):
+        return [(m.start(), g) for words, g in SCALES for m in re.finditer(words, text.lower())]
+    prop_groups = {g for _, g in groups_in(prop)}
+    row_group = prop_groups.pop() if len(prop_groups) == 1 else None
+    for i in range(pcol + 1, len(cells)):
+        head = header[i].strip() if i < len(header) else ""
+        cell = cells[i]
+        if head == "Source" or "css:" in cell or "{" in cell or "captured" in cell:
+            continue
+        def sub(m, cell=cell):
+            clause_start = max(cell.rfind(sep, 0, m.start()) for sep in (";", ",", "(", "/")) + 1
+            named = [g for pos, g in groups_in(cell[clause_start:m.start()])]
+            group = named[-1] if named else row_group
+            if not group:
+                return m.group(0)
             values = {v["$value"]: k for k, v in CORE[group].items() if isinstance(v, dict) and "$value" in v}
-            def sub(m, group=group, values=values):
-                k = values.get(m.group(0))
-                return f"`{group}.{k}` {m.group(0)}" if k else m.group(0)
-            for i in range(pcol + 1, len(cells)):
-                head = header[i].strip() if i < len(header) else ""
-                if head == "Source" or "css:" in cells[i] or "{" in cells[i] or "captured" in cells[i]:
-                    continue
-                cells[i] = PX.sub(sub, cells[i])
-            return "|".join(cells)
-    return line
+            k = values.get(m.group(0))
+            return f"`{group}.{k}` {m.group(0)}" if k else m.group(0)
+        cells[i] = PX.sub(sub, cell)
+    return "|".join(cells)
 
 def tokenize_json(v):
     if isinstance(v, str):
@@ -157,16 +181,29 @@ def tokenize_json(v):
         return {k: tokenize_json(x) for k, x in v.items()}
     return v
 
+# This script's own output: a token path in backticks followed by a space, in front of a colour
+# or a length. Stripped first, so a change to the rules above regenerates every spec.
+OWN = re.compile(r"`(?:palette\.(?:light|dark)|text|border|surface|background|accent|status|feedback|gamification|dataViz|unitColors|radius|space|borderWidth)\.[\w.-]+` (?=#|\d|[a-z][a-z0-9-]*:? #)")
+
+def strip(v):
+    if isinstance(v, str):
+        return OWN.sub("", v)
+    if isinstance(v, list):
+        return [strip(x) for x in v]
+    if isinstance(v, dict):
+        return {k: strip(x) for k, x in v.items()}
+    return v
+
 n = 0
 for md in ("components/core.md", "components/product.md"):
     p = PKG / md
     before = p.read_text()
-    after = tokenize(before)
+    after = tokenize(strip(before))
     tokref = re.compile(r"`[a-zA-Z]+\.[\w.-]+` (?=#|\d)")
     n += len(tokref.findall(after)) - len(tokref.findall(before))
     p.write_text(after)
 for js in ("components/core.json", "components/product.json"):
     p = PKG / js
     d = json.loads(p.read_text())
-    p.write_text(json.dumps(tokenize_json(d), indent=1, ensure_ascii=False))
+    p.write_text(json.dumps(tokenize_json(strip(d)), indent=1, ensure_ascii=False))
 print("tokens placed in front of", n, "values")

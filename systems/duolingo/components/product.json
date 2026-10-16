@@ -2010,7 +2010,7 @@
      {
       "part": "lip",
       "property": "colour",
-      "value": "face colour with `background.scrim` #000000 @0.20 (black) laid over it",
+      "value": "face colour with `border.onColor` #000000 @0.20 (black) laid over it",
       "source": "learn-dark-default (#1236) ::after box-shadow"
      },
      {
@@ -2247,7 +2247,7 @@
     },
     {
      "state": "legendary",
-     "changes": "class _2ucCV: face bee (#FFC800 light / #FFC700 dark), lip and band `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900 @0.5",
+     "changes": "class _2ucCV: face bee (#FFC800 light / #FFC700 dark), lip and band `palette.light.guinea-pig-always-light` guinea-pig-always-light #CD7900 @0.5",
      "source": "css:path-e50cab6b.css ._2ucCV, ._2ucCV:before, ._2ucCV:after (not captured)"
     },
     {
@@ -6502,7 +6502,7 @@
      {
       "part": "backdrop",
       "property": "background",
-      "value": "`border.onColor` #000000 @0.40 (black)",
+      "value": "`background.scrim` #000000 @0.40 (black)",
       "source": "lesson-dark-quit-modal dt=drawer-backdrop (#127)"
      },
      {
@@ -6534,7 +6534,7 @@
      {
       "part": "backdrop",
       "property": "background",
-      "value": "`border.onColor` #000000 @0.40 (black)",
+      "value": "`background.scrim` #000000 @0.40 (black)",
       "source": "lesson-light-quit-modal dt=drawer-backdrop (#143)"
      },
      {
@@ -7868,7 +7868,7 @@
      {
       "part": "ad: footer top border",
       "property": "colour",
-      "value": "`text.onColor` #FFFFFF @0.40 (snow-always-light)",
+      "value": "`palette.light.snow-always-light` #FFFFFF @0.40 (snow-always-light)",
       "source": "lesson-dark-super-upsell #13"
      },
      {
@@ -7936,7 +7936,7 @@
      {
       "part": "video: background",
       "property": "colour",
-      "value": "`border.onColor` #000000 (black)",
+      "value": "`palette.light.black` #000000 (black)",
       "source": "lesson-light-video-ad cl=_3BWKN (#18)"
      }
     ],
@@ -10089,7 +10089,7 @@
      {
       "part": "shine",
       "property": "fill",
-      "value": "`text.onColor` #FFFFFF (snow-always-light) @0.2",
+      "value": "`palette.light.snow-always-light` #FFFFFF (snow-always-light) @0.2",
       "source": "quests-dark-mobile cl=wg2yg _1EFTr (#63)"
      },
      {
@@ -10614,7 +10614,7 @@
      {
       "part": "progress shine",
       "property": "background",
-      "value": "`text.onColor` #FFFFFF (snow-always-light) @0.2 opacity",
+      "value": "`palette.light.snow-always-light` #FFFFFF (snow-always-light) @0.2 opacity",
       "source": "profile-dark-default #326; css:4779 ._1EFTr"
      },
      {
@@ -10676,7 +10676,7 @@
      {
       "part": "progress shine",
       "property": "background",
-      "value": "`text.onColor` #FFFFFF (snow-always-light) @0.2 opacity",
+      "value": "`palette.light.snow-always-light` #FFFFFF (snow-always-light) @0.2 opacity",
       "source": "profile-light-default cl=_1EFTr (#337)"
      },
      {
@@ -10856,7 +10856,7 @@
      {
       "part": "edit button face",
       "property": "background",
-      "value": "#8CE31B (same avatar colour) with border `border.onColor` #000000 @0.30 (black) and 2px lip shadow black @0.30",
+      "value": "#8CE31B (same avatar colour) with border `palette.light.black` #000000 @0.30 (black) and 2px lip shadow black @0.30",
       "source": "profile-dark-default #206 ::before; css:5515 ._3Y-wy"
      },
      {
@@ -10912,7 +10912,7 @@
      {
       "part": "edit button face",
       "property": "background",
-      "value": "#8CE31B with border `border.onColor` #000000 @0.30 (black)",
+      "value": "#8CE31B with border `palette.light.black` #000000 @0.30 (black)",
       "source": "profile-light-default #207"
      },
      {
