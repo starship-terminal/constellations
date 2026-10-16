@@ -208,7 +208,15 @@ function styleOf(el, props) {
   }
   if (anc.length) out.ancestors = anc;
   const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, { acceptNode: (t) => (t.textContent.trim() && t.parentElement && t.parentElement.getBoundingClientRect().width > 1 && getComputedStyle(t.parentElement).visibility === 'visible' ? 1 : 3) });
-  const tn = walker.nextNode();
+  // Icon fonts render ligatures as text ("add", "description"); read the label first and fall
+  // back to the icon glyph only when the element has no other text (icon buttons).
+  const isIcon = (t) => !!t.parentElement.closest('mat-icon, .material-symbols-outlined, .material-symbols-rounded, .google-symbols, [class*="symbols"]') || /Symbols/.test(getComputedStyle(t.parentElement).fontFamily);
+  let tn = null, iconTn = null;
+  for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+    if (!isIcon(t)) { tn = t; break; }
+    iconTn = iconTn || t;
+  }
+  tn = tn || iconTn;
   if (tn && tn.parentElement !== el) {
     const t = tn.parentElement;
     const tc = getComputedStyle(t);

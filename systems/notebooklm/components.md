@@ -42,7 +42,7 @@ nb-button type accent: the one filled page action.
 | Size (w x h) | 147 x `size.control-compact` | 147 x `size.control-compact` | 147 x `size.control-compact` | 147 x `size.control-compact` |
 | Fill | `accent.default` / `surface.accent` | `accent.default` / `surface.accent` | `accent.default` / `surface.accent` | `accent.default` / `surface.accent` |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
-| Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
+| Type | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.12` 0 `spacing.8` | 0 `spacing.12` 0 `spacing.8` | 0 `spacing.12` 0 `spacing.8` | 0 `spacing.12` 0 `spacing.8` |
 | State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
@@ -60,7 +60,7 @@ mat-tonal-button, full panel width.
 | Size (w x h) | 336 x `size.control-compact` | 336 x `size.control-compact` | 336 x `size.control-compact` | 336 x `size.control-compact` |
 | Fill | `surface.card` | `surface.card` | `surface.card` | `surface.card` |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
-| Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
+| Type | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.12` 0 `spacing.8` | 0 `spacing.12` 0 `spacing.8` | 0 `spacing.12` 0 `spacing.8` | 0 `spacing.12` 0 `spacing.8` |
 | State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
@@ -76,7 +76,7 @@ mat-tonal-button, full panel width.
 | Size (w x h) | 171 x `size.control-compact` | 171 x `size.control-compact` | 171 x `size.control-compact` | 171 x `size.control-compact` |
 | Fill | none | none | none | none |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
-| Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
+| Type | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.16` 0 `spacing.12` | 0 `spacing.16` 0 `spacing.12` | 0 `spacing.16` 0 `spacing.12` | 0 `spacing.16` 0 `spacing.12` |
 | State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
@@ -91,8 +91,8 @@ mat-tonal-button, full panel width.
 |---|---|---|---|---|
 | Size (w x h) | 140 x `size.control-dialog` | 140 x `size.control-dialog` | 140 x `size.control-dialog` | 140 x `size.control-dialog` |
 | Fill | none | `state.hover-on-surface` / `surface.badge` | none | `state.hover-on-surface` / `surface.badge` |
-| Text | `text.secondary` | `text.secondary` | `text.secondary` | `text.secondary` |
-| Type | icon glyph 18px (raw) | icon glyph 18px (raw) | icon glyph 18px (raw) | icon glyph 18px (raw) |
+| Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
+| Type | `typography.label-large` | `typography.label-large` | `typography.label-large` | `typography.label-large` |
 | Border | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 6px (raw) 14px (raw) | 6px (raw) 14px (raw) | 6px (raw) 14px (raw) | 6px (raw) 14px (raw) |
@@ -193,7 +193,7 @@ The destructive action is a tonal button; it was never clicked.
 | Size (w x h) | 256 x `size.control-compact` | 256 x `size.control-compact` | 256 x `size.control-compact` | 256 x `size.control-compact` |
 | Fill | none | none | none | none |
 | Text | `text.secondary` | `text.secondary` | `text.secondary` | `text.secondary` |
-| Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
+| Type | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` |
 | Border | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.12` 0 `spacing.8` | 0 `spacing.12` 0 `spacing.8` | 0 `spacing.12` 0 `spacing.8` | 0 `spacing.12` 0 `spacing.8` |
@@ -238,7 +238,7 @@ The destructive action is a tonal button; it was never clicked.
 |---|---|---|---|
 | Size (w x h) | 386 x `size.field` | 386 x `size.field` | 386 x `size.field` |
 | Fill | none | none | none |
-| Text | `text.primary` / rgba(0,0,0,0.92) (raw) | `text.primary` | `text.primary` |
+| Text | rgba(233,233,233,0.92) (raw) / `text.primary` | `text.primary` | `text.primary` |
 | Type | Google Sans Flex 17px/normal 400 (raw) | Google Sans Flex 17px/normal 400 (raw) | Google Sans Flex 17px/normal 400 (raw) |
 | Border | `borderWidth.hairline` `border.subtle` (div) | `borderWidth.hairline` `border.field` (div) | `borderWidth.field-focus` `border.field` (div) |
 | Focus ring | none | none | outline thickens to `borderWidth.field-focus` `border.field` |
@@ -340,7 +340,7 @@ A cdk-autosize <textarea> inside the rounded composer.
 | Size (w x h) | 102 x `size.control-compact` | 102 x `size.control-compact` | 102 x `size.control-compact` | 102 x `size.control-compact` |
 | Fill | `surface.panel` | `surface.panel` | `surface.panel` | `surface.panel` |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
-| Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
+| Type | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.12` | 0 `spacing.12` | 0 `spacing.12` | 0 `spacing.12` |
 | State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
@@ -469,7 +469,7 @@ nb-buttons: the selected one is tonal, the rest text.
 | Size (w x h) | 206 x 160px | 190 x `size.control-compact` | 190 x `size.control-compact` | 190 x `size.control-compact` | 190 x `size.control-compact` |
 | Fill | `surface.panel` | `surface.panel` (on parent) | `surface.panel` (on parent) | `state.hover-on-surface` / `surface.badge` | `state.hover-on-surface` / `surface.badge` |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
-| Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
+| Type | `typography.body-small` | `typography.body-small` | `typography.body-small` | `typography.body-small` | `typography.body-small` |
 | Radius | `radius.lg-increased` | `radius.md` | `radius.md` | `radius.md` | `radius.md` |
 | Padding | 0 | `spacing.8` | `spacing.8` | `spacing.8` | `spacing.8` |
 | Shadow | `shadow.level1` | none | none | none | none |
@@ -485,7 +485,7 @@ nb-buttons: the selected one is tonal, the rest text.
 | Size (w x h) | 211 x 393px | 129 x 124px |
 | Fill | `surface.panel` | `surface.panel` |
 | Text | `text.primary` | `text.primary` |
-| Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
+| Type | `typography.body-small` | `typography.body-small` |
 | Border | `borderWidth.hairline` `border.divider-material` (mat-divider) | none |
 | Radius | `radius.lg-increased` | `radius.lg-increased` |
 | Shadow | `shadow.level1` | `shadow.level1` |
@@ -539,8 +539,8 @@ Its text was scrubbed, since tooltips repeat titles; the live one read "Audio Ov
 |---|---|
 | Size (w x h) | 1000 x 543px |
 | Fill | `surface.dialog` |
-| Text | `text.primary` |
-| Type | icon glyph `size.icon-l` |
+| Text | `text.title` |
+| Type | Google Sans Flex 24px/32px 400 (raw) |
 | Border | `borderWidth.hairline` `border.subtle` (div) |
 | Radius | `radius.xl` |
 | State layer | `surface.inverse` at `opacity.pressed` |
@@ -598,8 +598,8 @@ The clipboard is blocked in the capture browser, so the copy action reported a f
 |---|---|---|---|---|
 | Size (w x h) | 164 x `size.control-medium` | 162 x 47px | 164 x `size.control-medium` | 159 x 47px |
 | Fill | `surface.card` (inner) / `surface.panel` (inner) | `surface.card` (inner) / `surface.panel` (inner) | `surface.card` (inner) / `surface.panel` (inner) | `surface.card` (inner) / `surface.panel` (inner) |
-| Text | `studio.blue` | `studio.blue` | `studio.blue` | `studio.blue` |
-| Type | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` |
+| Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
+| Type | `typography.body-small` | `typography.body-small` | `typography.body-small` | `typography.body-small` |
 | Border | none / `borderWidth.hairline` `border.default` (inset shadow) | none / `borderWidth.hairline` `border.default` (inset shadow) | none / `borderWidth.hairline` `border.default` (inset shadow) | none / `borderWidth.hairline` `border.default` (inset shadow) |
 | Radius | `radius.lg-increased` | `radius.lg-increased` | `radius.lg-increased` | `radius.lg-increased` |
 | Padding | `spacing.4` `spacing.12` `spacing.4` `spacing.8` | `spacing.4` `spacing.12` `spacing.4` `spacing.8` | `spacing.4` `spacing.12` `spacing.4` `spacing.8` | `spacing.4` `spacing.12` `spacing.4` `spacing.8` |
@@ -615,8 +615,8 @@ The clipboard is blocked in the capture browser, so the copy action reported a f
 |---|---|---|---|---|
 | Size (w x h) | 336 x `size.control-compact` | 336 x `size.control-compact` | 336 x `size.control-compact` | 336 x `size.control-compact` |
 | Fill | none | `surface.card` | none | `surface.card` |
-| Text | `icon.source-pdf` | `icon.source-pdf` | `icon.source-pdf` | `icon.source-pdf` |
-| Type | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` |
+| Text | `text.title` | `text.title` | `text.title` | `text.title` |
+| Type | Google Sans Flex 14px/24px 400 (raw) | Google Sans Flex 14px/24px 400 (raw) | Google Sans Flex 14px/24px 400 (raw) | Google Sans Flex 14px/24px 400 (raw) |
 | Radius | `radius.sm` | `radius.sm` | `radius.sm` | `radius.sm` |
 | Padding | 0 `spacing.8` | 0 `spacing.8` | 0 `spacing.8` | 0 `spacing.8` |
 | Focus ring | none | none | browser default ring on button (outline auto), no product ring | none |
@@ -630,8 +630,8 @@ The clipboard is blocked in the capture browser, so the copy action reported a f
 |---|---|---|---|---|
 | Size (w x h) | 336 x `size.list-row-output` | 336 x `size.list-row-output` | 336 x `size.list-row-output` | 336 x `size.list-row-output` |
 | Fill | none | none | none | none |
-| Text | `studio.green` | `studio.green` | `studio.green` | `studio.green` |
-| Type | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` |
+| Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
+| Type | `typography.body-small` | `typography.body-small` | `typography.body-small` | `typography.body-small` |
 | Radius | `radius.lg-increased` | `radius.lg-increased` | `radius.lg-increased` | `radius.lg-increased` |
 | State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
 | Focus ring | none | none | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) | none |
@@ -759,7 +759,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 | Size (w x h) | 163 x `size.tab-mobile` |
 | Fill | `status.danger.fill` |
 | Text | `status.danger.text` |
-| Type | icon glyph `size.icon-s` |
+| Type | Google Sans Flex 12px/20px 400 (raw) |
 | Radius | `radius.lg` |
 | Padding | `spacing.4` `spacing.12` |
 
@@ -800,8 +800,8 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 |---|---|---|---|---|
 | Size (w x h) | 1392 x 320px | 134 x `size.control-dialog` | 134 x `size.control-dialog` | 134 x `size.control-dialog` |
 | Fill | `surface.empty` | `surface.empty` (on parent) | `surface.empty` (on parent) | `surface.empty` (on parent) |
-| Text | `text.secondary` | `text.title` | `text.title` | `text.title` |
-| Type | icon glyph 48px (raw) | Google Sans Flex 15px/normal 370 (raw) | Google Sans Flex 15px/normal 370 (raw) | Google Sans Flex 15px/normal 370 (raw) |
+| Text | `text.primary` | `text.title` | `text.title` | `text.title` |
+| Type | Google Sans Flex 24px/32px 400 (raw) | Google Sans Flex 15px/normal 370 (raw) | Google Sans Flex 15px/normal 370 (raw) | Google Sans Flex 15px/normal 370 (raw) |
 | Border | `borderWidth.hairline` `border.subtle` (button) | `borderWidth.hairline` `border.subtle` | `borderWidth.hairline` `border.subtle` | `borderWidth.hairline` `border.subtle` |
 | Radius | `radius.lg` | 100px (raw) | 100px (raw) | 100px (raw) |
 | Padding | 64px (raw) `spacing.16` | 0 `spacing.24` | 0 `spacing.24` | 0 `spacing.24` |
@@ -839,8 +839,8 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 |---|---|
 | Size (w x h) | 680 x 836px |
 | Fill | `surface.dialog` |
-| Text | `surface.badge` |
-| Type | icon glyph 192px (raw) |
+| Text | `text.primary` |
+| Type | Times 40px/40px 400 (raw) |
 
 <a id="panel-studio"></a>
 ### Studio panel
@@ -960,4 +960,4 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 - **Avatar**: the photo was replaced by a grey disc in the copy, so only its size and shape are the product's.
 - **Studio outputs** (Audio and Video Overviews, mind map, flashcards, quiz) open player or iframe views that were not recaptured on 2026-10-17; the 2026-09-25 package measured some from screenshots and those readings are not carried over.
 
-Token coverage: 1707 cells name a token, 221 are raw values.
+Token coverage: 1703 cells name a token, 225 are raw values.

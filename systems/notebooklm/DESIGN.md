@@ -135,7 +135,7 @@ colors:
   skeleton-loading-highlight: "#edeffa"
   icon-default: "#000000"
   icon-secondary: "rgba(0,0,0,0.55)"
-  icon-source-pdf: "#db372d"
+  icon-source-pdf: "#1b1b1c"
   studio-blue: "#2e64de"
   studio-green: "#0aac6e"
   studio-pink: "#c43d92"
