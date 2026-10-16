@@ -279,6 +279,9 @@ colors:
   fill-success-hover: "#0ca30c"
   fill-warning: "#fab219"
   fill-warning-hover: "#eda100"
+  fill-accent-pressed: "#2a78d6"
+  fill-primary-pressed: "#0b0b0b"
+  fill-danger-pressed: "#d03b3b"
   shadow-ring-color: "rgba(11, 11, 11, 0.1)"
   shadow-color: "rgba(11, 11, 11, 0.08)"
   neutral-0: "#ffffff"
@@ -345,6 +348,8 @@ colors:
   text-tint-violet: "#4a3aa7"
   text-tint-yellow: "#734500"
   text-warning: "#734500"
+  text-link: "#184f95"
+  text-link-underline: "#184f95"
   frame-bg-page: "#fcfcfb"
   frame-hover: "#f0efec"
   frame-selected: "#edece8"
@@ -557,9 +562,9 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: A quiet chat shell with a serif model voice: composer, thread, Artifacts, Projects, settings (cds tokens).
 
-Captured 2026-10-04, signed in, Max plan. Themes: light, dark.
+Captured 2026-10-17, signed in, Max plan (2026-10-04; refreshed 2026-10-17 for forms, feedback and states). Themes: light, dark.
 
-A token set and component reference for the Claude web app (claude.ai), for self-learn's chat surfaces: the tutor chat on a concept, the sidebar, the library of things the agent made, courses as projects, and settings. It was read on 2026-10-04 from the owner's signed-in account (Max plan), in both themes, at 1440 wide and 390 wide: the home page with its greeting and composer, a chat (the user bubble, Claude's reply with a code block and a table, the message actions), Artifacts, Chats and tasks, Projects and a project page, the Settings dialog, search, every composer and sidebar menu, the hidden sidebar, and the phone layout (home, the drawer sheet, a chat).
+A token set and component reference for the Claude web app (claude.ai), for self-learn's chat surfaces: the tutor chat on a concept, the sidebar, the library of things the agent made, courses as projects, and settings. It was read on 2026-10-04 from the owner's signed-in account (Max plan), in both themes, at 1440 wide and 390 wide: the home page with its greeting and composer, a chat (the user bubble, Claude's reply with a code block and a table, the message actions), Artifacts, Chats and tasks, Projects and a project page, the Settings dialog, search, every composer and sidebar menu, the hidden sidebar, and the phone layout (home, the drawer sheet, a chat). It was refreshed on 2026-10-17 from the same account, at 1440 wide, to fill the gaps the scorecard found: a tooltip, the checkbox in the Chats page's Select mode, the delete confirmation dialog, the Create a project form, the Chats filter menu and an empty search, a loading skeleton, the Account and Capabilities settings panes (text link, disabled button and switch), every pressed state, and the rules the stylesheets apply under breakpoints and reduced motion.
 
 The earlier references cover learning products (Duolingo, Brilliant, NotebookLM, Coursera, Gauth) and one agent product (Manus). self-learn's tutor is a chat with a model, and claude.ai is the chat it is most often compared with: a quiet shell, a serif voice for the model and a sans for the interface, one composer that travels between the home page, a chat and a project. This is the reference for getting those surfaces to feel finished.
 
@@ -580,17 +585,17 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ### Fonts (from README.md)
 
-| Family | Used for |
-|---|---|
-| Anthropic Sans (`anthropic-sans`) | Everything in the interface, at the cds type roles: caption 12, footnote 13, body 14, heading 15, title 22 (comfortable). Semibold is 580, bold 600. |
-| Anthropic Serif (`anthropic-serif`, `--cds-font-voice`) | The "Claude" wordmark, the home greeting (38/47.5 at weight 300 with the opsz 48 axis), page titles (24/32, 500), and Claude's replies at 16/24, the chat font's default. |
-| Anthropic Mono (`anthropic-mono`) | Code blocks and code spans. |
-| Anthropicons-Variable | Every icon: one character per glyph, its weight thinned as the size grows. |
-| System, OpenDyslexic | The other chat font options in Settings > Appearance (System, Dyslexic friendly); `data-font="system"` swaps the UI sans for the platform face. |
+| Family | Used for | Licence | Use instead |
+|---|---|---|---|
+| Anthropic Sans (`anthropic-sans`) | Everything in the interface, at the cds type roles: caption 12, footnote 13, body 14, heading 15, title 22 (comfortable). Semibold is 580, bold 600. | Anthropic's own face, served from assets-proxy.anthropic.com; no licence for reuse | The stack's own fallback, `ui-sans-serif, system-ui` (`fontFamily.sans`); Inter or SF Pro in Figma |
+| Anthropic Serif (`anthropic-serif`, `--cds-font-voice`) | The "Claude" wordmark, the home greeting (38/47.5 at weight 300 with the opsz 48 axis), page titles (24/32, 500), and Claude's replies at 16/24, the chat font's default. | Anthropic's own face; no licence for reuse | Georgia, the stack's fallback; the style guide uses Source Serif 4 from Google Fonts as a stand-in |
+| Anthropic Mono (`anthropic-mono`) | Code blocks and code spans. | Anthropic's own face; no licence for reuse | `ui-monospace`, the stack's fallback |
+| Anthropicons-Variable | Every icon: one character per glyph, its weight thinned as the size grows. | Anthropic's own icon font; the 72 drawings in [icons/](icons) are kept for reference only | An open icon set of your choice, at the sizes and roles [icons/INDEX.tsv](icons/INDEX.tsv) lists |
+| System, OpenDyslexic | The other chat font options in Settings > Appearance (System, Dyslexic friendly); `data-font="system"` swaps the UI sans for the platform face. | The platform's own face; OpenDyslexic is an open font under its own licence | The same |
 
 In dark mode the variable faces are drawn lighter: each weight also sets `font-variation-settings` to a lower `wght` (regular 360, medium 460, semibold 540, bold 560), recorded on each `fontWeight` token as `$extensions.darkVariationAxis`.
 
-All four are Anthropic's own faces. No font file is committed or needed: the style guide falls back to the system sans, to Source Serif 4 from Google Fonts as a stand-in for the serif (named as such on the page), and to ui-monospace.
+Anthropic's four faces are not in the repository and must not be shipped. No font file is committed or needed: the style guide falls back to the system sans, to Source Serif 4 from Google Fonts as a stand-in for the serif (named as such on the page), and to ui-monospace.
 
 ## Layout
 
@@ -631,6 +636,21 @@ Corner radii from `core.radius`: `composer` 20px, `card` 12px, `bubble` 12px, `r
 1 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
+
+### Patterns (from README.md)
+
+How Claude's components combine for the common jobs, read from the captures. Each row names the screen to look at.
+
+| Pattern | How Claude does it | Components | Example |
+|---|---|---|---|
+| App shell and navigation | A 288px sidebar on its own ground (wordmark, Home/Code, New, Artifacts, More, Pinned, Chats and tasks, the account row) beside one content column with a 48px header; list pages centre a 960 column, a chat a 768 transcript. The sidebar can be hidden to one button, and on a phone it is a full-screen sheet. | `sidebar`, `nav-row`, `chat-row`, `pane-header`, `page-header` | [home-dark](screenshots/home-dark.png), [home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png) |
+| Forms and validation | Forms live in a dialog: a title, labelled fields stacked with the label above (sentence-case question, 14px medium), then Cancel and the primary action at the end. The action stays enabled while the field is empty. An invalid field keeps its fill and swaps its hairline for a 1px `fill.danger` ring, and its focus ring for `shadow.focus-danger`; the message text that goes with it was not seen. | `form-dialog`, `field-label`, `text-field`, `text-field-invalid`, `text-area`, `button-primary`, `button-secondary` | [projects-dark-create](screenshots/projects-dark-create.png) |
+| Empty, loading and error states | Empty is one centred `text.muted` line that quotes the query, with no picture and no action. Loading draws the page's real layout in `cds Skeleton` bars and cards that shimmer every 2 s (no shimmer under reduced motion). No error state was reachable. | `empty-state`, `skeleton`, `skeleton-card` | [chats-dark-search-empty](screenshots/chats-dark-search-empty.png), [artifacts-dark-loading](screenshots/artifacts-dark-loading.png) |
+| Destructive confirmation | A small `ConfirmationDialog` (role alertdialog, 400 wide): a question as the title ("Delete chat?"), one sentence, then Cancel (secondary) and the action in `fill.danger`. The red menu item that opens it is the only other red. Bulk delete in Select mode uses the same red button in the page header. | `confirm-dialog`, `button-danger`, `button-secondary`, `chat-menu-item-danger`, `selection-bar` | [chats-dark-delete-confirm](screenshots/chats-dark-delete-confirm.png), [home-dark-chat-menu](screenshots/home-dark-chat-menu.png) |
+| Feedback after an action | Selection answers in place: ticking a row fills its checkbox with `fill.accent`, and the header swaps Select and New for a muted count, Select all and Delete. Pressing any cds button squishes it to 97.5% for 60 ms. A toast was not seen: the toast region is mounted on every page but stayed empty, and copying a message raised none. | `checkbox`, `selection-bar`, `button-primary` (pressed) | [chats-dark-select](screenshots/chats-dark-select.png) |
+| Search and filtering | Global search is a 672 dialog over a dimmed page (Shift Cmd K); list pages put a search icon in the header that opens an inline field with a clear button, and a filter icon that opens a menu of mutually exclusive filters (All, Chat, Shared, Cowork, Archived) with a tick on the current one. | `search-dialog`, `search-field`, `search-input`, `filter-menu`, `filter-menu-item` | [home-dark-search](screenshots/home-dark-search.png), [chats-dark-filter-menu](screenshots/chats-dark-filter-menu.png) |
+| Data display | Lists are full-width rows with the title at the start and a muted time at the end, hairlines between, a hover wash and the row's actions shown on hover; Chats is a table of such rows, Artifacts and Projects grids of cards (three and two columns, 24 gaps). Chats has a Sort by button beside its filter; tables inside a reply use the chat serif. No pagination was seen: lists scroll. | `chats-row`, `artifact-row`, `project-card`, `table`, `table-th` | [chats-dark](screenshots/chats-dark.png), [projects-dark](screenshots/projects-dark.png), [thread-dark-table](screenshots/thread-dark-table.png) |
+| Onboarding and first run | Not captured: the account is past onboarding, and the only first-run surface left is the home greeting, which is the empty state of a new chat. | `greeting`, `composer` | [home-dark](screenshots/home-dark.png) |
 
 ### The screen to get right (from README.md)
 

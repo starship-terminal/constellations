@@ -3,8 +3,10 @@
 
 Reads raw/components-computed.json (every component and state, measured in both themes),
 raw/layout.json, tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to
-them. Every value is a cell of the measurement file, condensed: colours are hex followed by the token
-in the matching theme's set whose value is the same, the font family is named once per value, and a
+them. Every value is a cell of the measurement file, condensed and written in tokens: a colour, shadow,
+radius, padding, opacity, duration or easing is named by the token in tokens.json that holds it (the
+token the element's own utility classes name, when there is one), with the measured value after it in
+brackets; a value no token holds is written raw. The font family is named once per value, and a
 state row shows only what differs from the first state. Dark states come first (the pages were
 captured dark); the light reading of the same state follows as `light`, `light-hover` and so on.
 Adapted from the Manus kit's builder.
@@ -36,7 +38,7 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
-BY_COLOR = {"dark": {}, "light": {}}
+BY_COLOR = {"dark": {}, "light": {}}  # value -> every token holding it, role groups first
 
 
 def resolve(theme, v, depth=0):
@@ -62,9 +64,91 @@ for theme in ("dark", "light"):
             v = resolve(theme, t["$value"])
             # computed styles round alpha to two places
             key = re.sub(r"(\d+\.\d+)\)", lambda m: f"{round(float(m.group(1)), 2):g})", v)
-            BY_COLOR[theme].setdefault(key, n)
+            BY_COLOR[theme].setdefault(key, [])
+            if n not in BY_COLOR[theme][key]:
+                BY_COLOR[theme][key].append(n)
+
+
+def css_shadow(layers):
+    """A shadow token's value written the way getComputedStyle writes a box-shadow."""
+    out = []
+    for ly in layers if isinstance(layers, list) else [layers]:
+        c = ly["color"]
+        if c.startswith("#"):
+            c = "rgb(%d, %d, %d)" % tuple(int(c[i:i + 2], 16) for i in (1, 3, 5))
+        out.append(f"{c} {ly['offsetX']} {ly['offsetY']} {ly['blur']} {ly['spread']}" + (" inset" if ly.get("inset") else ""))
+    return out
+
+
+BY_SHADOW = {"dark": {}, "light": {}}
+for theme in ("dark", "light"):
+    for n, t in flat(T[theme]):
+        if t["$type"] == "shadow":
+            v = t["$value"]
+            if isinstance(v, str):
+                v = resolve(theme, v)
+            if isinstance(v, (list, dict)):
+                BY_SHADOW[theme].setdefault(tuple(css_shadow(v)), n)
+
+# Dimensions, durations and curves by value, from core; the first group listed wins.
+BY_DIM = {}
+for grp in ("radius", "density", "size", "layout"):
+    for n, t in flat(T["core"][grp], grp + "."):
+        if t["$type"] == "dimension" and "--" not in n and not n.startswith(("density.avatar", "density.checkbox", "density.icon")):
+            if n.startswith("density.gap"):
+                continue
+            BY_DIM.setdefault((grp if grp == "radius" or n.startswith("density.radius") else "pad" if n.startswith("density.pad") else "size", t["$value"]), n)
+BY_DUR = {}
+for n, t in flat(T["core"]["duration"], "duration."):
+    ms = float(t["$value"].replace("ms", ""))
+    BY_DUR.setdefault(f"{ms / 1000:g}s", n)
+BY_EASE = {}
+for n, t in flat(T["core"]["easing"], "easing."):
+    if isinstance(t["$value"], list):
+        BY_EASE.setdefault("cubic-bezier(%s)" % ", ".join(f"{x:g}" for x in t["$value"]), n)
+BY_OPACITY = {str(t["$value"]): n for n, t in flat(T["core"]["opacity"], "opacity.")}
+
+# Counts of what the entries name: every colour, shadow and dimension written, and how many name a token.
+NAMED = collections.Counter()
 
 THEME = ["dark"]  # the theme the colour() helper looks tokens up in; set per state
+HINTS = [set()]  # tokens the current element's utility classes name; set per state
+
+# Which token groups a colour is looked for in first, by the property it paints.
+ROLE = {
+    "text": ("text", "on", "fill", "alpha", "surface"),
+    "background": ("fill", "surface", "bg", "alpha", "frame", "control", "on", "text"),
+    "border": ("border", "alpha", "fill"),
+}
+UTIL = re.compile(r"(?<![\w-])(?:[\w\[\]&=/-]*:)*(bg|text|border|ring|shadow|fill|outline|placeholder|decoration)-([a-z][a-z0-9-]*)")
+
+
+def hints_of(classes):
+    """Token names an element's Tailwind utilities point at: bg-fill-danger -> fill.danger,
+    text-on-primary -> on.primary, text-muted -> text.muted, border-strong -> border.strong."""
+    out = set()
+    for pre, rest in UTIL.findall(classes or ""):
+        out.add(rest.replace("-", ".", 1))
+        out.add(f"{'text' if pre == 'placeholder' else pre}.{rest}")
+    return out
+
+
+def pick(cands, role):
+    if not cands:
+        return None
+    for c in cands:
+        if c in HINTS[0]:
+            return c
+    for g in ROLE.get(role, ()):
+        for c in cands:
+            if c.split(".")[0] == g:
+                return c
+    return cands[0]
+
+
+def tok(name, value):
+    NAMED["token" if name else "raw"] += 1
+    return f"`{name}` ({value})" if name else value
 
 
 def norm(r, g, b, a=None):
@@ -73,14 +157,16 @@ def norm(r, g, b, a=None):
     return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), round(float(a), 2))
 
 
-def colour(c, tokens=True):
-    """rgb()/rgba()/color(srgb)/oklab() -> '#hex `token`' or 'rgba(...) `token`'. Every form is first
-    rewritten as rgb()/rgba() text, then labelled in one pass, so no value is labelled twice."""
+def colour(c, tokens=True, role=None):
+    """rgb()/rgba()/color(srgb)/oklab() -> '`token` (#hex)', or the bare value when no token holds it.
+    Every form is first rewritten as rgb()/rgba() text, then labelled in one pass, so no value is
+    labelled twice."""
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
-        tok = BY_COLOR[THEME[0]].get(v) if tokens else None
-        return f"{v} `{tok}`" if tok else v
+        if not tokens:
+            return v
+        return tok(pick(BY_COLOR[THEME[0]].get(v), role), v)
 
     def as_rgb(rgb, a):
         return "rgb(%d, %d, %d)" % tuple(rgb) if a is None or float(a) == 1 else "rgba(%d, %d, %d, %s)" % (*rgb, a)
@@ -120,43 +206,70 @@ def font(fz, lh, fw, f):
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
 
 
+def dim(kind, value):
+    return tok(BY_DIM.get((kind, value)), value)
+
+
+def shadow(raw):
+    """A box-shadow, named by the shadow token it equals; the focus rings match whatever surface
+    their inset sits on, since that first layer takes the page colour."""
+    sh = colour(raw, tokens=False)
+    layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
+    layers = [x for x in layers if not x.startswith("transparent") and not re.match(r"rgba\(0, 0, 0, 0\) 0px 0px 0px 0px", x)]
+    if not layers:
+        return None
+    rgb = [re.sub(r"#([0-9a-f]{6})", lambda m: "rgb(%d, %d, %d)" % tuple(int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4)), x) for x in layers]
+    name = BY_SHADOW[THEME[0]].get(tuple(rgb))
+    rings = [re.fullmatch(r"(.+) 0px 0px 0px ([\d.]+px)( inset)?", x) for x in rgb]
+    if not name and all(rings):
+        # a hairline drawn as a box-shadow: name its colour as a border
+        return ", ".join(f"{m.group(2)} ring{' inset' if m.group(3) else ''} {colour(m.group(1), role='border')}" for m in rings)
+    if not name and rgb[0].endswith(" 0px 0px 0px 1px inset"):
+        for k, n in BY_SHADOW[THEME[0]].items():
+            if len(k) == len(rgb) > 1 and k[0].endswith(" 0px 0px 0px 1px inset") and list(k[1:]) == rgb[1:]:
+                name = n + " on this surface"
+                break
+    return tok(name, ", ".join(layers))
+
+
 def props(v):
     s = v["style"]
     o = {}
+    HINTS[0] = hints_of(v.get("classes"))
     o["size"] = f"{num(v['rect']['w'])} x {num(v['rect']['h'])}"
     pad = sides(s["paddingTop"], s["paddingRight"], s["paddingBottom"], s["paddingLeft"])
     if pad != "0px":
-        o["padding"] = pad
+        o["padding"] = " ".join(dim("pad", x) if x != "0px" else x for x in pad.split(" "))
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'])}")
+            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role='border')}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
         o["border"] = bds[0] if len(set(bds)) == 1 else "; ".join(f"{'TRBL'[i]}: {b}" for i, b in enumerate(bds) if b != "none")
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
-        o["radius"] = rad
-    o["background"] = colour(s["backgroundColor"])
+        o["radius"] = dim("radius", rad) if " " not in rad else rad
+    o["background"] = colour(s["backgroundColor"], role="background")
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
         o["image"] = colour(img)[:200]
     if s["boxShadow"] != "none":
-        sh = colour(s["boxShadow"], tokens=False)
-        layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
-        layers = [x for x in layers if not x.startswith("transparent") and not re.match(r"rgba\(0, 0, 0, 0\) 0px 0px 0px 0px", x)]
-        if layers:
-            o["shadow"] = ", ".join(layers)
+        sh = shadow(s["boxShadow"])
+        if sh:
+            o["shadow"] = sh
     if s.get("backdropFilter", "none") != "none":
         o["backdrop"] = s["backdropFilter"]
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
+        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], role='border')}, offset {s['outlineOffset']}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
+        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], role='text')}"
     elif v.get("text"):
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], role='text')}"
+    if s["textDecorationLine"] not in ("none", "") and v.get("text"):
+        o["underline"] = f"{colour(s['textDecorationColor'], role='text')}, offset {s['textUnderlineOffset']}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -166,7 +279,8 @@ def props(v):
             d = durs[i % len(durs)]
             if d == "0s":
                 continue
-            parts.append(f"{p} {d} {tf[i % len(tf)] if tf else ''}".strip())
+            e = tf[i % len(tf)] if tf else ""
+            parts.append(f"{p} {tok(BY_DUR.get(d), d)} {tok(BY_EASE.get(e), e) if e.startswith('cubic') else e}".strip())
         if parts:
             o["transition"] = ", ".join(parts) if len(parts) < 4 else f"{parts[0].split(' ')[0]} and {len(parts) - 1} more {' '.join(parts[0].split(' ')[1:])}"
     if s["transform"] not in ("none", "matrix(1, 0, 0, 1, 0, 0)"):
@@ -177,17 +291,21 @@ def props(v):
             o["transform"] = f"translate({m.group(3)}px, {m.group(4)}px)"
         else:
             o["transform"] = s["transform"]
+    sq = (v.get("squish") or {}).get("transform", "none")
+    m = re.fullmatch(r"matrix\(([\d.]+), 0, 0, ([\d.]+), 0, 0\)", sq)
+    if m and m.group(1) == m.group(2) and abs(float(m.group(1)) - 1) > 0.001:
+        o["press"] = f"paint layer scale({m.group(1)})"
     if s["opacity"] != "1":
-        o["opacity"] = s["opacity"]
+        o["opacity"] = tok(BY_OPACITY.get(s["opacity"]), s["opacity"])
     ic = v.get("icon")
     if ic and ic.get("w", 0) > 0 and ic["w"] < 120:
-        o["icon"] = f"{num(ic['w'])} x {num(ic['h'])}, {colour(ic.get('color') or ic.get('stroke') or ic.get('fill'))}"
+        o["icon"] = f"{num(ic['w'])} x {num(ic['h'])}, {colour(ic.get('color') or ic.get('stroke') or ic.get('fill'), role='text')}"
     if v.get("placeholder"):
-        o["placeholder"] = colour(v["placeholder"]["color"])
+        o["placeholder"] = colour(v["placeholder"]["color"], role="text")
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "underline", "transition", "transform", "press", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
@@ -233,17 +351,18 @@ def child_layers(c):
     if s["backgroundColor"] != "rgba(0, 0, 0, 0)" or s["boxShadow"] != "none" or s["borderTopWidth"] != "0px" or s["backgroundImage"] != "none":
         return None
     THEME[0] = "dark"
+    HINTS[0] = set()
     out = []
     for p in st["paint"][:3]:
         bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
         if p.get("bg"):
-            bits.append("background " + colour(p["bg"]))
+            bits.append("background " + colour(p["bg"], role="background"))
         if p.get("border"):
-            bits.append("border " + colour(p["border"].split(" | ")[0][2:]))
+            bits.append("border " + colour(p["border"].split(" | ")[0][2:], role="border"))
         if p.get("radius"):
-            bits.append("radius " + p["radius"])
+            bits.append("radius " + (dim("radius", p["radius"]) if " " not in p["radius"] else p["radius"]))
         if p.get("shadow"):
-            bits.append("shadow " + colour(p["shadow"]))
+            bits.append("shadow " + (shadow(p["shadow"]) or "none"))
         out.append(" ".join(bits))
     return "; ".join(out).replace("|", "/")
 
@@ -258,17 +377,18 @@ GROUP_INTRO = {
     "Settings": "The settings dialog: a 192px nav with a search field and two groups (Settings, Customize), and the General pane: section titles, rows with a title, an optional description and a control (the System/Light/Dark theme picker, selects, segmented controls, switches), split by hairlines.",
     "Thread": "A chat: the 768px transcript, the user's bubble, \"Thought for 6s\", Claude's reply in the chat font (Anthropic Serif by default) with a code block and a table, the message actions, and the dock that holds the composer.",
     "Pages": "The list pages share one 960px page column with a serif page title: Artifacts (tabs, a notice card, the Make something new tiles, month groups of rows), Chats and tasks (a table of rows with times), Projects (a two-column grid of cards) and a project page (breadcrumb, title, composer, Recents, the Instructions, Memory and Context cards).",
+    "Forms and feedback": "Added on 2026-10-17 from nine new copies: the tooltip, the text link, the checkbox, the confirmation and form dialogs with their primary, secondary, danger and disabled buttons, the text field (with its error state) and text area, the list search, empty result, filter menu, loading skeleton and the two page grids. Every button here was also read pressed, with the pointer held down: cds squishes the paint layer to 97.5% (`core.press.button-scale`) and keeps its colour.",
     "Mobile": "The same app at 390 wide: a Show sidebar button, the greeting and the pinned composer whose segments drop to icons, the sidebar as a full-screen drawer sheet with 44px rows, and a chat.",
 }
 
 PAGE_DESC = [
-    ("home", "Home (new chat). The greeting and the composer. Captured at rest, with the plus menu, the model menu, the account menu, a chat row's menu, the search dialog, a line typed in the composer, and with the sidebar hidden (the account's own setting).", "/new"),
+    ("home", "Home (new chat). The greeting and the composer. Captured at rest, with the plus menu, the model menu, the account menu, a chat row's menu, the search dialog, a line typed in the composer, and with the sidebar hidden (the account's own setting); on 2026-10-17 also with the Search button's tooltip open.", "/new"),
     ("thread", "A chat, one copy read at three scroll positions: the top (user message, Thought for 6s, the code block), the table (scroll 1150) and the follow-up (scroll 1780).", "/chat/<id>"),
-    ("artifacts", "Artifacts. Tabs, the notice card, Make something new, month groups of rows; also with the sidebar's More menu open.", "/artifacts"),
-    ("chats", "Chats and tasks. The table of chats and tasks with their times.", "/chats"),
-    ("projects", "Projects. The two project cards.", "/projects"),
+    ("artifacts", "Artifacts. Tabs, the notice card, Make something new, month groups of rows; also with the sidebar's More menu open. On 2026-10-17 the page had become a grid of cards, captured while loading (skeletons).", "/artifacts"),
+    ("chats", "Chats and tasks. The table of chats and tasks with their times; on 2026-10-17 also in Select mode with one row ticked, with the filter menu open, with a search that matches nothing, and with a chat's delete confirmation open.", "/chats"),
+    ("projects", "Projects. The two project cards; on 2026-10-17 also with the Create a project dialog open.", "/projects"),
     ("project", "A project page.", "/project/<id>"),
-    ("settings", "Settings dialog, General pane.", "/settings/general"),
+    ("settings", "Settings dialog: the General pane; on 2026-10-17 also the Account pane (text fields, a text area, a disabled button, links) and the Capabilities pane (a disabled switch, inline links).", "/settings/general"),
 ]
 MOBILE_DESC = [
     ("mobile-home", "Home at 390 wide, and the drawer.", "/new"),
@@ -302,13 +422,14 @@ icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n
 
 W("# Claude components")
 W()
-W(f"The discovery list of every page and state captured, then one entry per component with crops of the real product, the shared values, the icon index and the Gaps. Captured from claude.ai on {META['read']}, signed in, as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account: a line was typed into the composer and deleted, menus were opened and closed, and the sidebar was shown for the captures and hidden again.")
+W(f"The discovery list of every page and state captured, then one entry per component with crops of the real product, the shared values, the icon index and the Gaps. Captured from claude.ai on {META['read']} and refreshed on 2026-10-17, signed in, as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account: a line was typed into the composer and deleted, menus and dialogs were opened and closed (the delete confirmation with Escape, Create a project with Cancel), a checkbox was ticked in Select mode and the mode left, and the sidebar was shown for the captures and hidden again.")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the token in [tokens.json](tokens.json) whose value in that theme is the same, when there is one (a role name such as `text.primary` before a ramp step). Text is written family size/line-height weight, then its colour, for example `Anthropic Sans 14/20 400, #f0efec`, and is read from the first text node inside the component. A glyph from the icon font reads `Anthropicons`.")
+W("- Values are written as tokens: a colour, shadow, radius, padding, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A value no token holds is written raw: Tailwind's default curve `cubic-bezier(0.4, 0, 0.2, 1)`, odd paddings, most drop shadows inside components. @@NAMED@@")
+W("- Text is Text is written family size/line-height weight, then its colour, for example `Anthropic Sans 14/20 400, #f0efec`, and is read from the first text node inside the component. A glyph from the icon font reads `Anthropicons`.")
 W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do: a cds Button paints its fill on an inner span, so its hover shows there.")
 W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
@@ -335,6 +456,13 @@ OVER = [
     ("Sidebar hidden", "home", "the account's own state; the sidebar was shown for every other capture and hidden again after", "[home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [sidebar-collapsed](#sidebar-collapsed)"),
     ("More menu", "Artifacts", "the sidebar's More row", "[artifacts-dark-more-menu](screenshots/artifacts-dark-more-menu.png), [more-menu](#more-menu)"),
     ("Settings dialog", "any page", "Settings in the account menu; closed with Escape", "[settings-dark-general](screenshots/settings-dark-general.png), [settings-dialog](#settings-dialog)"),
+    ("Tooltip", "home", "synthetic pointer events on the sidebar Search button (2026-10-17)", "[home-dark-tooltip](screenshots/home-dark-tooltip.png), [tooltip](#tooltip)"),
+    ("Select mode", "Chats", "the Select button, then one row's checkbox; left with the exit button (2026-10-17)", "[chats-dark-select](screenshots/chats-dark-select.png), [checkbox](#checkbox)"),
+    ("Filter menu", "Chats", "the header's filter button (2026-10-17)", "[chats-dark-filter-menu](screenshots/chats-dark-filter-menu.png), [filter-menu](#filter-menu)"),
+    ("Empty search", "Chats", "the header's search button, then a word that matches nothing, cleared after (2026-10-17)", "[chats-dark-search-empty](screenshots/chats-dark-search-empty.png), [empty-state](#empty-state)"),
+    ("Delete confirmation", "Chats", "a sidebar chat row's menu, Delete; dismissed with Escape (2026-10-17)", "[chats-dark-delete-confirm](screenshots/chats-dark-delete-confirm.png), [confirm-dialog](#confirm-dialog)"),
+    ("Create a project", "Projects", "New project; closed with Cancel (2026-10-17)", "[projects-dark-create](screenshots/projects-dark-create.png), [form-dialog](#form-dialog)"),
+    ("Loading", "Artifacts", "the snapshot taken 120 ms after clicking Artifacts in the sidebar (2026-10-17)", "[artifacts-dark-loading](screenshots/artifacts-dark-loading.png), [skeleton](#skeleton)"),
     ("Drawer sheet", "home at 390", "the Show sidebar button; it could not be closed in the copy, so it was hidden by hand before the phone chat copy", "[mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png), [m-drawer](#m-drawer)"),
 ]
 for row in OVER:
@@ -478,9 +606,13 @@ W("- Syntax-highlighted code keeps the dark theme's inline colours, so code colo
 W("- The thread is not virtualised: one copy rendered at three scroll positions (`thread-dark`, `-table` at 1150, `-followup` at 1780). Its replies hold a code block, a table and paragraphs but no visible heading or list; the prose heading sizes are in [raw/css-vars.json](raw/css-vars.json) (`--_prose-h*`), not measured. The user message carries the only list.")
 W("- Artifact previews are iframes and render as dark boxes where present.")
 W("- Hover and focus on the 390 wide copies were not measured (a phone has neither). The segmented controls' radio spans take no focus in a static copy, so their focus-visible state is skipped.")
-W("- Streaming (a reply being written, the stop button), the artifact panel beside a chat, the Code mode, Cowork, the share sheet, and the other settings panes (Account, Privacy, Billing, Usage, Capabilities) were not captured: each would need sending a message or shows account and billing details.")
+W("- Refreshed 2026-10-17 with nine more copies (Forms and feedback, and the overlays marked with that date). The 2026-10-04 screenshots and crops were not retaken, so the two days sit side by side: the Artifacts page is a list in the first and a grid of cards in the second.")
+W("- A toast was not captured: the toast region is mounted on every page but stayed empty, and the actions that raise one change the account. The text field's error state was read by setting `data-invalid` on the copy, so its ring is Claude's own CSS but the message under the field was never seen. A button's loading state needs a sent message.")
+W("- Streaming (a reply being written, the stop button), the artifact panel beside a chat, the Code mode, Cowork, the share sheet, and the Privacy, Billing and Usage settings panes were not captured: each would need sending a message or shows account and billing details.")
 W("- Chat and artifact titles are the owner's own. The account's name was replaced with \"Learner\" and its email with an example address, and two health-related titles were replaced with neutral ones, by the redaction file, which lives outside the repository.")
 W()
 
-open("components.md", "w").write("\n".join(L) + "\n")
+out = "\n".join(L) + "\n"
+out = out.replace("@@NAMED@@", f"Of the {sum(NAMED.values())} colours, shadows and dimensions written in the entries, {NAMED['token']} ({round(100 * NAMED['token'] / sum(NAMED.values()))}%) name a token.")
+open("components.md", "w").write(out)
 print(f"components.md: {len(C)} components, {n_states} states, {n_crops} crops, {len(L)} lines")

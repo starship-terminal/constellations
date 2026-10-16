@@ -8,6 +8,12 @@ Sources, read from claude.ai on 2026-10-04:
   raw/component-tokens.json  values that are not one variable: measured on the real elements, each
                              with the measurement it came from ("source")
 
+and, from the 2026-10-17 refresh:
+  raw/css-rules.json         ordinary declarations under conditions and states: @media widths,
+                             reduced motion, :active, border widths, link rules (tools/capture/rules.py)
+  raw/components-computed.json  the measured paddings and gaps (counted for the spacing scale), the
+                             press scale read with the pointer held down, and the page grids
+
 Claude's design system ("cds") layers three things. Nine 35-step colour ramps (gray, red, orange,
 yellow, green, aqua, blue, violet, magenta) and the `--cds-role-*` names over them are declared once
 on `:where(:root, :host)`; they become the `core` set's `color` group. The semantic names (surface,
@@ -489,6 +495,105 @@ for k, v in build(SPEC.get("core", {})).items():
 for setname, tree in (("light", light), ("dark", dark)):
     for k, v in build(SPEC.get(setname, {})).items():
         tree[k] = {**tree.get(k, {}), **v}
+
+# ---------------------------------------------------------------- the 2026-10-17 refresh
+
+CR = json.loads((RAW / "css-rules.json").read_text())
+CC = json.loads((RAW / "components-computed.json").read_text())["components"]
+
+
+def state(key, name="default"):
+    return CC[key]["states"][name]
+
+
+# breakpoints: the @media widths Claude's layout changes at; Tailwind's five named screens carry
+# nearly every rule, the rest are one component each and stay in raw/css-rules.json
+bp = {b["px"]: b for b in CR["breakpoints"]}
+core["breakpoint"] = {}
+for name, w in (("sm", 640), ("md", 768), ("lg", 1024), ("xl", 1280), ("2xl", 1536)):
+    core["breakpoint"][name] = tok(px("%dpx" % w), "dimension", "css-rules: @media (width >= %grem), %d rules (raw/css-rules.json breakpoints)" % (w / 16, bp[w]["rules"]), rules=bp[w]["rules"])
+others = [b for b in CR["breakpoints"] if b["px"] not in (640, 768, 1024, 1280, 1536)]
+core["breakpoint"]["$description"] = ("Tailwind's screens, min-width, which carry %d of the %d width-conditioned rules. The other %d widths (%s) each serve one component and are listed in raw/css-rules.json." % (sum(bp[w]["rules"] for w in (640, 768, 1024, 1280, 1536)), sum(b["rules"] for b in CR["breakpoints"]), len(others), ", ".join(str(b["px"]) for b in others)))
+
+# grid columns: the page grids, measured
+core["grid"] = {}
+for key, name in (("artifacts-grid", "artifacts"), ("projects-grid", "projects")):
+    st = state(key)["style"]
+    cols = st["gridTemplateColumns"].split()
+    core["grid"][name + "-columns"] = tok(len(cols), "number", "measured: %s, grid-template-columns %s (%s copy)" % (key, st["gridTemplateColumns"], state(key)["snapshot"]))
+    core["grid"][name + "-gap"] = tok(px(st["columnGap"]), "dimension", "measured: %s column-gap (%s copy)" % (key, state(key)["snapshot"]))
+core["grid"]["$description"] = "Card grids inside the 960 page column (layout.page-width): Artifacts in three 304px columns, Projects in two 468px columns, both with a 24px gap. Lists are one column."
+
+# border widths: every border and outline width declared, counted
+bw = {}
+for e in CR["borderWidths"]:
+    v = e["value"].replace(" !important", "")
+    v = "0.5px" if v == ".5px" else v
+    if re.fullmatch(r"[\d.]+px", v):
+        bw[v] = bw.get(v, 0) + e["count"]
+ow = {e["value"]: e["count"] for e in CR["outlineWidths"] if re.fullmatch(r"[\d.]+px", e["value"])}
+core["borderWidth"] = {
+    "hairline": tok(px("0.5px"), "dimension", "css-rules: border width 0.5px, %d declarations (toolbar and panel lines, max(var(--cds-toolbar-line,0px), .5px))" % bw.get("0.5px", 0), count=bw.get("0.5px", 0)),
+    "default": tok(px("1px"), "dimension", "css-rules: border width 1px, %d declarations; also the ring width (--cds-ring-inner / --cds-ring-outer, 1px)" % bw.get("1px", 0), count=bw.get("1px", 0)),
+    "strong": tok(px("1.5px"), "dimension", "css-rules: border width 1.5px, %d declarations" % bw.get("1.5px", 0), count=bw.get("1.5px", 0)),
+    "thick": tok(px("2px"), "dimension", "css-rules: border width 2px, %d declarations" % bw.get("2px", 0), count=bw.get("2px", 0)),
+    "focus-outline": tok(px("2px"), "dimension", "css-rules: outline width 2px, %d declarations (the transparent 2px outline buttons keep for forced colours; the visible ring is shadow.focus)" % ow.get("2px", 0), count=ow.get("2px", 0)),
+    "$description": "Claude draws most edges as 1px box-shadow rings (shadow tokens and the ring widths), not borders. Where it does use a border it is 1px, a 0.5px hairline on toolbars and panels, or 1.5px and 2px on a few controls.",
+}
+
+# spacing: Tailwind's 4px unit, at the steps Claude's classes use (half steps included), counted in the measurements
+pads = {}
+for comp in CC.values():
+    v = comp["states"].get("default")
+    if not v or "style" not in v:
+        continue
+    for prop in ("paddingTop", "paddingRight", "paddingBottom", "paddingLeft", "rowGap", "columnGap"):
+        x = v["style"].get(prop)
+        if x and x not in ("0px", "normal"):
+            pads[x] = pads.get(x, 0) + 1
+core["space"] = {}
+for step in (0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 10, 12, 14):
+    v = "%gpx" % (step * 4)
+    core["space"][("%g" % step).replace(".", "-")] = tok(px(v), "dimension", "derived: Tailwind --spacing (core.tailwind.spacing, 4px) x %g; %d of the measured paddings and gaps are %s" % (step, pads.get(v, 0), v), count=pads.get(v, 0))
+total = sum(pads.values())
+on4 = sum(n for v, n in pads.items() if float(v[:-2]) % 4 == 0)
+on2 = sum(n for v, n in pads.items() if float(v[:-2]) % 2 == 0)
+core["space"]["$description"] = ("One base unit, Tailwind's --spacing of 4px; Claude's classes use its half steps too (p-1.5 is 6px, gap-2.5 is 10px), so the scale moves in 2px below 16. "
+                                 "Of %d padding and gap values measured on components at rest, %d (%d%%) sit on the 4px grid and %d (%d%%) on the 2px half grid; 6px alone is %d. "
+                                 "The cds density steps (density.pad-*, density.gap-*) name the same values by role." % (total, on4, round(100 * on4 / total), on2, round(100 * on2 / total), pads.get("6px", 0)))
+
+# pressed: cds buttons and cards squish their paint layer while the pointer is down
+sq = {e["selector"]: e["declarations"] for e in CR["pressed"]["squish"]}
+btn = next(d for sel, d in sq.items() if sel == ".cds-root .cds-btn-squish")
+card = next(d for sel, d in sq.items() if sel == ".cds-root")
+measured = state("button-primary-page", "pressed")["squish"]["transform"]
+core["press"] = {
+    "button-scale": tok(float(btn["--cds-btn-press-sx"]), "number", "css-rules: .cds-root .cds-btn-squish --cds-btn-press-sx; measured %s on button-primary-page while held down" % measured),
+    "icon-button-scale": tok(0.9375, "number", "measured: --cds-btn-press-sx 0.9375 set inline on the paint span of an icon-only cds Button (the message Copy button, read in the live page)"),
+    "card-scale": tok(float(card["--cds-card-press-sx"]), "number", "css-rules: .cds-root --cds-card-press-sx; a pressed CardLink scales its card fill"),
+    "card-inset": tok(px(card["--cds-card-press-d"]), "dimension", "css-rules: .cds-root --cds-card-press-d; the card body clips in by this much while pressed"),
+    "duration": tok("{duration.fast}", "duration", "css-rules: :active .cds-btn-squish transition transform var(--cds-dur-fast) ease-out"),
+    "release-duration": tok("{duration.slow}", "duration", "css-rules: .cds-btn-squish transition transform var(--cds-dur-slow) var(--cds-btn-spring) (the spring is a linear() curve, listed as not tokenised)"),
+    "$description": "Pressed is a squish, not a colour: while the pointer is down a cds Button scales its paint layer to 97.5% (93.75% for icon-only buttons) in 60 ms and springs back over 450 ms; a Card scales to 99% and clips its body 2px. The fill keeps its rest colour, so fill.*-pressed tokens alias the rest fill.",
+}
+
+# reduced motion: what changes, from the rules
+rm = CR["reducedMotion"]
+core["duration"]["reduced-motion"] = tok("0.01ms", "duration", "css-rules: @media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important } }")
+core["duration"]["$extensions"] = {"reducedMotion": {
+    "triggers": ["@media (prefers-reduced-motion: reduce)", '[data-reduce-motion="true"] (Settings > General > Motion > Reduced)', "Tailwind motion-reduce: variants"],
+    "rules": rm["mediaRules"],
+    "changes": [e["value"] for e in rm["mediaDeclarations"][:8]],
+    "summary": "Every animation is cut to 0.01ms and one iteration; transitions on popups, dialogs, tooltips and cards are removed (transition: none), entrance scales and translates are dropped (transform: none, scale-100), the skeleton shimmer is hidden, and shimmer text is shown plain in text.muted or text.secondary. Colour and opacity changes still happen, instantly.",
+}}
+
+# themed: the link role and the pressed accent
+for setname, tree in (("light", light), ("dark", dark)):
+    put(tree, ["text", "link"], tok("{text.accent}", "color", "measured: cds TextLink (`a, .prose-link`: color var(--cds-text-accent), underline 3px below at 40%% of the colour, full on hover and focus), text-link on settings-dark-capabilities reads %s" % state("text-link", "default" if setname == "dark" else "light")["style"]["color"]))
+    put(tree, ["text", "link-underline"], tok("{text.accent}", "color", "css-rules: --_text-link-line color-mix(in srgb, currentColor, transparent 60%) at rest, currentColor on hover and focus-visible; 40% of text.link at rest (a mix DTCG cannot carry, so the token is the full colour)"))
+    put(tree, ["fill", "accent-pressed"], tok("{fill.accent}", "color", "css-rules + measured: :active keeps the fill and scales the paint layer (core.press.button-scale); checkbox-pressed and button-primary-pressed keep their rest fill"))
+    put(tree, ["fill", "primary-pressed"], tok("{fill.primary}", "color", "measured: button-primary-page pressed keeps fill.primary and scales to core.press.button-scale"))
+    put(tree, ["fill", "danger-pressed"], tok("{fill.danger}", "color", "measured: button-danger pressed keeps fill.danger and scales to core.press.button-scale"))
 
 light["$extensions"] = {"notTokenised": light_skipped}
 dark["$extensions"] = {"notTokenised": dark_skipped}

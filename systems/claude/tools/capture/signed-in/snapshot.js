@@ -166,6 +166,6 @@ window.__snap = function (label, REDACT) {
   // as a property, so each scrolled element is recorded by its child-index path for render.mjs.
   const pathOf = (el) => { const out = []; for (let n = el; n && n !== document.documentElement; n = n.parentElement) out.unshift([...n.parentElement.children].indexOf(n)); return out; };
   const scrolls = [...document.querySelectorAll('*')].filter((e) => e.scrollTop > 0).map((e) => ({ path: pathOf(e), top: e.scrollTop, left: e.scrollLeft, max: e.scrollHeight - e.clientHeight }));
-  const meta = { label, url: location.href, title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
+  const meta = { label, url: location.href.replace(/\/(chat|project|artifact)\/[^/?#]+/, '/$1/<id>'), title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
   return 'SNAPSTART' + JSON.stringify(meta) + 'SNAPMETA' + html + 'SNAPEND';
 };

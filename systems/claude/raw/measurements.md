@@ -6,21 +6,21 @@ Every component has one table per theme: a column per state, a row per property.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab), skipped where the element (a radio span of a segmented control) cannot take focus; the rest (`active`, `selected`, `checked`, `open`, `typed`, `enabled`, ...) are other elements or snapshots captured in that state. Light states are prefixed `light`. The 390 wide copies are measured at rest only.
 
-132 components, 508 states (504 measured, 4 skipped, 0 not found).
+156 components, 622 states (618 measured, 4 skipped, 0 not found).
 
 ## Shared values
 
 Tallied over every measured state by the build script.
 
-- **Radius scale** (element radius, times seen): 8px (194), 7px (40), 6px (30), 9999px (22), 12px (22), 20px (12), 5px (8), 14px (6), 4px (2), 5.5px (2), 16px (2), 10px (2).
-- **Transitions**: `box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (98), `outline 0.2s ease` (48), `background-color, border-color, box-shadow, opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (12), `box-shadow 0.06s ease` (8), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (8), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (6), `transform, translate, scale, rotate 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (4), `background-color 0.3s cubic-bezier(0.32, 0.72, 0, 1)` (2), `filter 0.12s ease-out` (2), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (2).
-- **Font families**: anthropic-sans (622), Anthropicons-Variable (220), anthropic-serif (48), anthropic-mono (6).
-- **Type sizes** (size/line-height weight of the first text): 20px/20px 433.25 (154), 14px/20px 400 (92), 16px/16px 533.25 (52), 14px/20px 500 (40), 14px/21px 400 (38), 15px/20px 400 (26), 16px/16px 700 (14), 13px/17px 400 (12), 13px/17px 500 (10), 24px/32px 500 (8), 13px/16px 400 (6), 16px/24px 400 (6), 12px/12px 400 (4), 12px/16px 400 (4).
-- **Shadows**: `#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px` (44); `#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px` (44); `#151515 0px 0px 0px 1px inset` (16); `#fcfcfb 0px 0px 0px 1px inset` (16); `#0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px` (14); `#2a78d6 0px 0px 0px 1px inset, #2a78d6 @ 0.2 0px 0px 6px 0px` (12).
-- **Focus-visible, dark** (35 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px (20); nothing painted on the element (6); outline 2px solid #5598e7 offset 2px (4); outline 2px solid #5598e7 @ 0 offset 2px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.075 0px 4px 20px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset, #ffffff @ 0.2 0px 0px 0px 0px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px (1).
-- **Focus-visible, light** (35 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px (20); nothing painted on the element (6); outline 2px solid #256abf offset 2px (4); outline 2px solid #256abf @ 0 offset 2px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.075 0px 4px 20px 0px, #0b0b0b @ 0.2 0px 0px 0px 0px inset, #0b0b0b @ 0.2 0px 0px 0px 1px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px (1).
-- **Hover changes, dark** (56 hovered components, 14 with no change on the element or its first painted layer): inner layer none → #ffffff @ 0.075 (12); backgroundColor #000000 @ 0 → #ffffff @ 0.075 (6); inner layer undefined → #ffffff @ 0.075 (3); inner layer #ffffff @ 0.1 → #ffffff @ 0.14 (2); inner layer #898781 → #898781 (1); backgroundColor #000000 @ 0 → #ffffff @ 0.1 (1); inner layer #c6613f → #d97757 (1); inner layer #ffffff @ 0.05 → #ffffff @ 0.05 (1).
-- **Hover changes, light** (56 hovered components, 14 with no change on the element or its first painted layer): inner layer none → #0b0b0b @ 0.05 (12); backgroundColor #000000 @ 0 → #f0efec (4); inner layer undefined → #0b0b0b @ 0.05 (3); inner layer #ffffff @ 0.1 → #0b0b0b @ 0.05 (2); backgroundColor #000000 @ 0 → #0b0b0b @ 0.05 (2); inner layer #898781 → #898781 (1); backgroundColor #000000 @ 0 → #0b0b0b @ 0.1 (1); inner layer #c6613f → #d97757 (1).
+- **Radius scale** (element radius, times seen): 8px (262), 7px (40), 6px (32), 12px (28), 9999px (26), 4px (14), 20px (12), 2px (12), 5px (8), 14px (6), 5.5px (2), 16px (2), 10px (2).
+- **Transitions**: `box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (128), `outline 0.2s ease` (56), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (28), `background-color, border-color, box-shadow, opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (12), `color, text-decoration-color, box-shadow 0.06s cubic-bezier(0.165, 0.84, 0.44, 1)` (10), `box-shadow 0.06s ease` (8), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (8), `transform, translate, scale, rotate 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (4), `opacity, scale, filter 0.2s cubic-bezier(0.165, 0.84, 0.44, 1)` (4), `background-color 0.3s cubic-bezier(0.32, 0.72, 0, 1)` (2).
+- **Font families**: anthropic-sans (790), Anthropicons-Variable (236), anthropic-serif (48), anthropic-mono (6).
+- **Type sizes** (size/line-height weight of the first text): 20px/20px 433.25 (154), 14px/20px 400 (146), 14px/20px 500 (70), 16px/16px 533.25 (56), 14px/21px 400 (42), 16px/16px 700 (26), 15px/20px 400 (26), 13px/17px 400 (12), 13px/17px 500 (10), 24px/32px 500 (8), 13px/16px 400 (6), 16px/24px 400 (6), 12px/17px 400 (6), 12px/12px 400 (4).
+- **Shadows**: `#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px` (50); `#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px` (50); `#0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px` (20); `#151515 0px 0px 0px 1px inset` (16); `#fcfcfb 0px 0px 0px 1px inset` (16); `#000000 @ 0.05 0px 1px 2px 0px` (15).
+- **Focus-visible, dark** (44 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px (22); nothing painted on the element (6); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px (5); outline 2px solid #5598e7 offset 2px (4); outline 2px solid #5598e7 @ 0 offset 2px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #8e2626 @ 0.6 0px 0px 6px 1px (2); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.075 0px 4px 20px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset, #ffffff @ 0.2 0px 0px 0px 0px (1); outline 2px solid #000000 @ 0 offset 2px (1).
+- **Focus-visible, light** (44 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px (22); nothing painted on the element (6); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px (5); outline 2px solid #256abf offset 2px (4); outline 2px solid #256abf @ 0 offset 2px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px (2); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.075 0px 4px 20px 0px, #0b0b0b @ 0.2 0px 0px 0px 0px inset, #0b0b0b @ 0.2 0px 0px 0px 1px (1); outline 2px solid #000000 @ 0 offset 2px (1).
+- **Hover changes, dark** (68 hovered components, 19 with no change on the element or its first painted layer): inner layer none → #ffffff @ 0.075 (12); backgroundColor #000000 @ 0 → #ffffff @ 0.075 (6); inner layer #ffffff @ 0.1 → #ffffff @ 0.14 (3); inner layer undefined → #ffffff @ 0.075 (3); inner layer #ffffff → #e1e0d9 (3); inner layer #898781 → #898781 (1); backgroundColor #000000 @ 0 → #ffffff @ 0.1 (1); inner layer #c6613f → #d97757 (1).
+- **Hover changes, light** (68 hovered components, 19 with no change on the element or its first painted layer): inner layer none → #0b0b0b @ 0.05 (12); backgroundColor #000000 @ 0 → #f0efec (4); inner layer #ffffff @ 0.1 → #0b0b0b @ 0.05 (3); inner layer undefined → #0b0b0b @ 0.05 (3); inner layer #0b0b0b → #2c2c2a (3); backgroundColor #000000 @ 0 → #0b0b0b @ 0.05 (2); inner layer #898781 → #898781 (1); backgroundColor #000000 @ 0 → #0b0b0b @ 0.1 (1).
 
 ### Tokens the measured components use
 
@@ -29,7 +29,7 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | Token | Dark | Light |
 |---|---|---|
 | `--app-visual-viewport-height` | - | - |
-| `--available-height` | 412.5px, 422.5px, 849px, 397px, 890px | 412.5px, 422.5px, 849px, 397px, 890px |
+| `--available-height` | 412.5px, 422.5px, 849px, 397px, 890px, 801px | 412.5px, 422.5px, 849px, 397px, 890px, 801px |
 | `--available-width` | 1440px | 1440px |
 | `--band-slot-lift` | - | - |
 | `--cds-alpha-1` | hsl(from #fff h s l / 5%) | hsl(from #0b0b0b h s l / 5%) |
@@ -37,21 +37,24 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | `--cds-bg-user-message` | hsl(from #fff h s l / 5%) | hsl(from #0b0b0b h s l / 5%) |
 | `--cds-black` | #000 | #000 |
 | `--cds-border` | hsl(from #fff h s l / 10%) | hsl(from #0b0b0b h s l / 10%) |
-| `--cds-checkbox` | calc(1.25rem * 1) | calc(1.25rem * 1) |
-| `--cds-checkbox-radius` | calc(.3125rem * 1) | calc(.3125rem * 1) |
+| `--cds-checkbox` | calc(1.25rem * 1), calc(1rem * 1) | calc(1.25rem * 1), calc(1rem * 1) |
+| `--cds-checkbox-radius` | calc(.3125rem * 1), calc(.25rem * 1) | calc(.3125rem * 1), calc(.25rem * 1) |
 | `--cds-cursor-interactive` | pointer, default | pointer, default |
 | `--cds-fill-accent` | #2a78d6 | #2a78d6 |
 | `--cds-font-size-body` | calc(.875rem * 1) | calc(.875rem * 1) |
 | `--cds-font-size-footnote` | calc(.8125rem * 1) | calc(.8125rem * 1) |
 | `--cds-h-control` | calc(2rem * 1) | calc(2rem * 1) |
 | `--cds-h-control--xs` | calc(1.5rem * 1) | calc(1.5rem * 1) |
+| `--cds-h-control-nested` | calc(1.375rem * 1) | calc(1.375rem * 1) |
 | `--cds-leading-body` | calc(1.25rem * 1) | calc(1.25rem * 1) |
 | `--cds-leading-footnote` | calc(1.0625rem * 1) | calc(1.0625rem * 1) |
+| `--cds-menu-gutter` | - | - |
 | `--cds-message-bubble-measure` | , 85% | , 85% |
 | `--cds-message-bubble-pad-x` | , calc(1rem * 1) | , calc(1rem * 1) |
 | `--cds-message-bubble-pad-y` | , calc(.75rem * 1) | , calc(.75rem * 1) |
 | `--cds-message-bubble-radius` | , calc(calc(.5rem * 1) + calc(.25rem * 1)) | , calc(calc(.5rem * 1) + calc(.25rem * 1)) |
 | `--cds-pad-md` | calc(.75rem * 1) | calc(.75rem * 1) |
+| `--cds-pad-sm` | calc(.5rem * 1) | calc(.5rem * 1) |
 | `--cds-page-bg` | #151515, #20201f | #fcfcfb, #fff |
 | `--cds-page-header-title-leading` | calc(2rem * 1) | calc(2rem * 1) |
 | `--cds-page-header-title-size` | calc(1.5rem * 1) | calc(1.5rem * 1) |
@@ -63,16 +66,22 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | `--cds-segmented-control-thumb` | hsl(from #fff h s l / 10%) | #fff |
 | `--cds-segmented-control-track` | hsl(from #fff h s l / 5%) | #f6f6f4, hsl(from #0b0b0b h s l / 5%) |
 | `--cds-shortcut-cap-ink` | #a5a49a, currentColor, #898781 | #6d6b67, currentColor, #898781 |
+| `--cds-skeleton-base` | hsl(from #fff h s l / 7.5%) | hsl(from #0b0b0b h s l / 5%) |
+| `--cds-skeleton-sheen` | hsl(from #fff h s l / 7.5%) | hsl(from #0b0b0b h s l / 5%) |
 | `--cds-switch-h` | calc(1.25rem * 1) | calc(1.25rem * 1) |
 | `--cds-switch-knob` | #fff | #fff |
 | `--cds-switch-track` | hsl(from #fff h s l / 10%) | hsl(from #0b0b0b h s l / 20%) |
 | `--cds-switch-track-hover` | hsl(from #fff h s l / 20%) | hsl(from #0b0b0b h s l / 35%) |
 | `--cds-text-muted` | #898781 | #898781 |
+| `--cds-text-stays-secondary` | - | - |
+| `--cds-tooltip-bg` | #20201f | #0b0b0b |
+| `--cds-tooltip-fg` | #f0efec | #fff |
 | `--chat-list-inset` | - | - |
 | `--chorus-composer-lift` | - | - |
 | `--composer-banners-h` | calc(0px + 0px) | calc(0px + 0px) |
 | `--cp-top` | 25vh | 25vh |
 | `--cp-visible-h` | - | - |
+| `--desktop-titlebar-inset` | 0px | 0px |
 | `--df-ceded-gutter` | 0px, 8px | 0px, 8px |
 | `--df-footer-btn-size` | 32px | 32px |
 | `--df-header-start-inset` | - | - |
@@ -88,6 +97,9 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | `--df-row-px` | 2px | 2px |
 | `--df-selected` | hsl(from #fff h s l / 15%) | #edece8 |
 | `--df-surface-primary` | 0 0% 14.9% | 0 0% 100% |
+| `--fh` | - | - |
+| `--fhn` | - | - |
+| `--fr` | - | - |
 | `--hue` | - | - |
 | `--ink` | - | - |
 | `--list-header-scroll-offset` | 168px, 136px | 168px, 136px |
@@ -104,6 +116,7 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | `--prerender-activation-viewport-height` | - | - |
 | `--tile-ring` | - | - |
 | `--transcript-width` | - | - |
+| `--transform-origin` | 50.5px -4px | 50.5px -4px |
 
 ## Components
 
@@ -6654,3 +6667,1207 @@ Light theme.
 | How | at rest |
 
 Crops: `m-user-message-default.png`, `m-user-message-light.png`.
+
+### Forms and feedback
+
+#### text-link
+
+Text link. cds TextLink (`a, .prose-link` in the base layer): text.accent, underlined 3px below in the link colour at 40% (--_text-link-line), the full colour on hover and focus; colour and line change on --cds-dur-fast with ease-out.
+
+Copy: `settings-dark-capabilities`, `settings-dark-account`. Finder: `() => T('security risks')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed | learn-more | learn-more-hover |
+|---|---|---|---|---|---|---|
+| Size (w x h) | 671.34 x 38 | = | = | = | 144.86 x 18 | 144.86 x 18 |
+| Padding | 0px | = | = | = | = | = |
+| Border | none | = | = | = | = | = |
+| Radius | 2px | = | = | = | = | = |
+| Background | transparent | = | = | = | = | = |
+| Box shadow | none | = | #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px | = | = | = |
+| Outline | 2px solid #5598e7 @ 0 offset 2px | = | 2px solid #000000 @ 0 offset 2px | = | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = | = | = | = |
+| Letter spacing | normal | = | = | = | = | = |
+| Colour | #6da7ec | = | = | = | #898781 | #898781 |
+| Transition | color, text-decoration-color, box-shadow 0.06s cubic-bezier(0.165, 0.84, 0.44, 1) | = | outline 0.2s ease | = | = | = |
+| Cursor | pointer | = | = | = | = | = |
+| Painted layers | a.cds-reset.cds-text-link.cds-text-link-underline 671.3x38.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px | = | a.cds-reset.cds-text-link.cds-text-link-underline 671.3x38.0 r 2px shadow #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px outline 2px solid #000000 @ 0 offset 2px | = | a.cds-reset.cds-text-link.cds-text-link-underline 144.9x18.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px | a.cds-reset.cds-text-link.cds-text-link-underline 144.9x18.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) | at rest, captured learn-more | mouse hover |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed | light-learn-more | light-learn-more-hover |
+|---|---|---|---|---|---|---|
+| Size (w x h) | 676.75 x 38 | = | = | = | 146.08 x 18 | 146.08 x 18 |
+| Padding | 0px | = | = | = | = | = |
+| Border | none | = | = | = | = | = |
+| Radius | 2px | = | = | = | = | = |
+| Background | transparent | = | = | = | = | = |
+| Box shadow | none | = | #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px | = | = | = |
+| Outline | 2px solid #256abf @ 0 offset 2px | = | 2px solid #000000 @ 0 offset 2px | = | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = | = | = | = |
+| Letter spacing | normal | = | = | = | = | = |
+| Colour | #184f95 | = | = | = | #898781 | #898781 |
+| Transition | color, text-decoration-color, box-shadow 0.06s cubic-bezier(0.165, 0.84, 0.44, 1) | = | outline 0.2s ease | = | = | = |
+| Cursor | pointer | = | = | = | = | = |
+| Painted layers | a.cds-reset.cds-text-link.cds-text-link-underline 676.8x38.0 r 2px outline 2px solid #256abf @ 0 offset 2px | = | a.cds-reset.cds-text-link.cds-text-link-underline 676.8x38.0 r 2px shadow #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px outline 2px solid #000000 @ 0 offset 2px | = | a.cds-reset.cds-text-link.cds-text-link-underline 146.1x18.0 r 2px outline 2px solid #256abf @ 0 offset 2px | a.cds-reset.cds-text-link.cds-text-link-underline 146.1x18.0 r 2px outline 2px solid #256abf @ 0 offset 2px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) | at rest, captured learn-more | mouse hover |
+
+Other finders: learn-more: `() => Q('[data-cds=TextLink]')`; learn-more-hover: `() => Q('[data-cds=TextLink]')`; light-learn-more: `() => Q('[data-cds=TextLink]')`; light-learn-more-hover: `() => Q('[data-cds=TextLink]')`.
+
+Crops: `text-link-default.png`, `text-link-hover.png`, `text-link-focus-visible.png`, `text-link-pressed.png`, `text-link-learn-more.png`, `text-link-learn-more-hover.png`, `text-link-light.png`, `text-link-light-hover.png`, `text-link-light-focus-visible.png`, `text-link-light-pressed.png`, `text-link-light-learn-more.png`, `text-link-light-learn-more-hover.png`.
+
+#### tooltip
+
+Tooltip. Base UI tooltip on the sidebar Search button: --cds-tooltip-bg / --cds-tooltip-fg, radius 6, 13/18 text, the shortcut keys inside; opens on the snap curve (--cds-dur-snap) from 98% scale, no transition under reduced motion.
+
+Copy: `home-dark-tooltip`. Finder: `() => Q('[role=tooltip]')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 100.61 x 24 |
+| Padding | 3px 8px |
+| Gap | 8px |
+| Border | none |
+| Radius | 6px |
+| Background | #20201f |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #000000 @ 0.24 0px 2px 8px 0px |
+| Outline | none |
+| Font | anthropic-sans 13px/18px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Text node | span.min-w-0.break-words: anthropic-sans 13px/18px 400, #f0efec |
+| Transition | opacity, scale 0.12s cubic-bezier(0.32, 0.72, 0, 1) |
+| Painted layers | div.px-2.shadow-sm.font-normal 100.6x24.0 bg #20201f r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #000000 @ 0.24 0px 2px 8px 0px |
+| Tokens | --cds-rem-scale (unset); --cds-shortcut-cap-ink #a5a49a; --cds-text-muted #898781; --cds-tooltip-bg #20201f; --cds-tooltip-fg #f0efec; --transform-origin 50.5px -4px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 101.09 x 24 |
+| Padding | 3px 8px |
+| Gap | 8px |
+| Border | none |
+| Radius | 6px |
+| Background | #0b0b0b |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #0b0b0b @ 0.08 0px 2px 8px 0px |
+| Outline | none |
+| Font | anthropic-sans 13px/18px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | span.min-w-0.break-words: anthropic-sans 13px/18px 400, #ffffff |
+| Transition | opacity, scale 0.12s cubic-bezier(0.32, 0.72, 0, 1) |
+| Painted layers | div.px-2.shadow-sm.font-normal 101.1x24.0 bg #0b0b0b r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #0b0b0b @ 0.08 0px 2px 8px 0px |
+| Tokens | --cds-rem-scale (unset); --cds-shortcut-cap-ink #6d6b67; --cds-text-muted #898781; --cds-tooltip-bg #0b0b0b; --cds-tooltip-fg #fff; --transform-origin 50.5px -4px |
+| How | at rest |
+
+Crops: `tooltip-default.png`, `tooltip-light.png`.
+
+#### checkbox
+
+Checkbox. cds Checkbox, size xs, in the Chats table once Select is on: a --cds-checkbox square with --cds-checkbox-radius and a border-strong edge, filled with the accent and a check glyph when checked.
+
+Copy: `chats-dark-select`. Finder: `() => Q('[data-cds=Checkbox][aria-checked=false] > span')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed | checked | checked-hover |
+|---|---|---|---|---|---|---|
+| Size (w x h) | 16 x 16 | = | = | = | = | = |
+| Padding | 0px | = | = | = | = | = |
+| Border | 1px solid #ffffff @ 0.2 | 1px solid #ffffff @ 0.4 | = | 1px solid #ffffff @ 0.4 | 1px solid #000000 @ 0 | 1px solid #000000 @ 0 |
+| Radius | 4px | = | = | = | = | = |
+| Background | transparent | = | = | = | #2a78d6 | #3987e5 |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px | = | = | = |
+| Outline | none | = | = | = | = | = |
+| Font | anthropic-sans 13px/19px 400 | = | = | = | = | = |
+| Letter spacing | normal | = | = | = | = | = |
+| Colour | #f0efec | = | = | = | = | = |
+| Text node | span: Anthropicons-Variable 16px/16px 700, #ffffff | = | = | = | = | = |
+| Transition | none | = | = | = | = | = |
+| Cursor | default | = | = | = | = | = |
+| Painted layers | span.flex.shrink-0.items-center 16.0x16.0 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 4px | span.flex.shrink-0.items-center 16.0x16.0 border T:1px solid #ffffff @ 0.4 / R:1px solid #ffffff @ 0.4 / B:1px solid #ffffff @ 0.4 / L:1px solid #ffffff @ 0.4 r 4px | span.flex.shrink-0.items-center 16.0x16.0 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px | span.flex.shrink-0.items-center 16.0x16.0 border T:1px solid #ffffff @ 0.4 / R:1px solid #ffffff @ 0.4 / B:1px solid #ffffff @ 0.4 / L:1px solid #ffffff @ 0.4 r 4px | span.flex.shrink-0.items-center 16.0x16.0 bg #2a78d6 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px | span.flex.shrink-0.items-center 16.0x16.0 bg #3987e5 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px |
+| Tokens | --cds-checkbox calc(1rem * 1); --cds-checkbox-radius calc(.25rem * 1) | = | = | = | = | = |
+| How | at rest | mouse hover on its row | keyboard: focus(), Shift+Tab, Tab (on the field inside) | pointer held down (:active) | at rest, captured checked | mouse hover |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed | light-checked | light-checked-hover |
+|---|---|---|---|---|---|---|
+| Size (w x h) | 16 x 16 | = | = | = | = | = |
+| Padding | 0px | = | = | = | = | = |
+| Border | 1px solid #0b0b0b @ 0.2 | 1px solid #0b0b0b @ 0.4 | = | 1px solid #0b0b0b @ 0.4 | 1px solid #000000 @ 0 | 1px solid #000000 @ 0 |
+| Radius | 4px | = | = | = | = | = |
+| Background | transparent | = | = | = | #2a78d6 | #3987e5 |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px | = | = | = |
+| Outline | none | = | = | = | = | = |
+| Font | anthropic-sans 13px/19px 400 | = | = | = | = | = |
+| Letter spacing | normal | = | = | = | = | = |
+| Colour | #0b0b0b | = | = | = | = | = |
+| Text node | span: Anthropicons-Variable 16px/16px 700, #ffffff | = | = | = | = | = |
+| Transition | none | = | = | = | = | = |
+| Cursor | default | = | = | = | = | = |
+| Painted layers | span.flex.shrink-0.items-center 16.0x16.0 border T:1px solid #0b0b0b @ 0.2 / R:1px solid #0b0b0b @ 0.2 / B:1px solid #0b0b0b @ 0.2 / L:1px solid #0b0b0b @ 0.2 r 4px | span.flex.shrink-0.items-center 16.0x16.0 border T:1px solid #0b0b0b @ 0.4 / R:1px solid #0b0b0b @ 0.4 / B:1px solid #0b0b0b @ 0.4 / L:1px solid #0b0b0b @ 0.4 r 4px | span.flex.shrink-0.items-center 16.0x16.0 border T:1px solid #0b0b0b @ 0.2 / R:1px solid #0b0b0b @ 0.2 / B:1px solid #0b0b0b @ 0.2 / L:1px solid #0b0b0b @ 0.2 r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px | span.flex.shrink-0.items-center 16.0x16.0 border T:1px solid #0b0b0b @ 0.4 / R:1px solid #0b0b0b @ 0.4 / B:1px solid #0b0b0b @ 0.4 / L:1px solid #0b0b0b @ 0.4 r 4px | span.flex.shrink-0.items-center 16.0x16.0 bg #2a78d6 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px | span.flex.shrink-0.items-center 16.0x16.0 bg #3987e5 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px |
+| Tokens | --cds-checkbox calc(1rem * 1); --cds-checkbox-radius calc(.25rem * 1) | = | = | = | = | = |
+| How | at rest | mouse hover on its row | keyboard: focus(), Shift+Tab, Tab (on the field inside) | pointer held down (:active) | at rest, captured checked | mouse hover |
+
+Other finders: checked: `() => Q('[data-cds=Checkbox][aria-checked=true] > span')`; checked-hover: `() => Q('[data-cds=Checkbox][aria-checked=true] > span')`; light-checked: `() => Q('[data-cds=Checkbox][aria-checked=true] > span')`; light-checked-hover: `() => Q('[data-cds=Checkbox][aria-checked=true] > span')`.
+
+Crops: `checkbox-default.png`, `checkbox-hover.png`, `checkbox-focus-visible.png`, `checkbox-pressed.png`, `checkbox-checked.png`, `checkbox-checked-hover.png`, `checkbox-light.png`, `checkbox-light-hover.png`, `checkbox-light-focus-visible.png`, `checkbox-light-pressed.png`, `checkbox-light-checked.png`, `checkbox-light-checked-hover.png`.
+
+#### selection-bar
+
+Selection actions (Select mode). Replaces Select and New in the page header: a muted count, Select all (secondary), Delete (danger, filled) and an exit button.
+
+Copy: `chats-dark-select`. Finder: `() => C(T('1 selected'), 'div')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 283.5 x 32 |
+| Padding | 0px |
+| Gap | 8px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Text node | span.text-body.text-muted-as-secondary.me-2: anthropic-sans 14px/20px 400, #898781 |
+| Transition | none |
+| ::before | 0px x 0px, static, bg #000000 @ 0, radius 0px |
+| Painted layers | span.absolute.inset-0.duration-fast 82.7x32.0 bg #ffffff @ 0.1 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px; span.absolute.inset-0.duration-fast 67.0x31.0 bg #d03b3b r 8px |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #151515; --cds-page-header-title-size calc(1.5rem * 1) |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 284.73 x 32 |
+| Padding | 0px |
+| Gap | 8px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Text node | span.text-body.text-muted-as-secondary.me-2: anthropic-sans 14px/20px 400, #898781 |
+| Transition | none |
+| ::before | 0px x 0px, static, bg #000000 @ 0, radius 0px |
+| Painted layers | span.absolute.inset-0.duration-fast 83.3x32.0 bg #ffffff @ 0.1 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px; span.absolute.inset-0.duration-fast 67.2x31.0 bg #d03b3b r 8px |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #fcfcfb; --cds-page-header-title-size calc(1.5rem * 1) |
+| How | at rest |
+
+Crops: `selection-bar-default.png`, `selection-bar-light.png`.
+
+#### button-danger
+
+Danger button. fill.danger with on.danger text; the only red control, used for the confirming action of a destructive dialog and the bulk Delete.
+
+Copy: `chats-dark-delete-confirm`. Finder: `() => [...document.querySelectorAll('[data-cds=ConfirmationDialog] button')].find((b) => b.innerText.trim() === 'Delete')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 67.95 x 32 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #8e2626 @ 0.6 0px 0px 6px 1px | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #8e2626 @ 0.6 0px 0px 6px 1px |
+| Outline | none | = | = | = |
+| Font | anthropic-sans 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 14px/20px 500, #ffffff | = | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | outline 0.2s ease | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 67.0x31.0 bg #d03b3b r 8px | span.absolute.inset-0.duration-fast 67.0x31.0 bg #e34948 r 8px | button.cds-reset.group/btn.relative 68.0x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #8e2626 @ 0.6 0px 0px 6px 1px; span.absolute.inset-0.duration-fast 67.0x31.0 bg #d03b3b r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset | button.cds-reset.group/btn.relative 68.0x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #8e2626 @ 0.6 0px 0px 6px 1px; span.absolute.inset-0.duration-fast 65.3x30.2 bg #e34948 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset |
+| Ancestor paint | 3 up div.draggable-none.fixed.left-1/2 bg #20201f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #0b0b0b @ 0.08 0px 4px 8px 0px, #000000 @ 0.24 0px 12px 28px -2px | = | = | = |
+| Tokens | --cds-cursor-interactive pointer; --cds-page-bg #20201f | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 68.16 x 32 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px |
+| Outline | none | = | = | = |
+| Font | anthropic-sans 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 14px/20px 500, #ffffff | = | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | outline 0.2s ease | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 67.2x31.0 bg #d03b3b r 8px | span.absolute.inset-0.duration-fast 67.2x31.0 bg #e34948 r 8px | button.cds-reset.group/btn.relative 68.2x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px; span.absolute.inset-0.duration-fast 67.2x31.0 bg #d03b3b r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset | button.cds-reset.group/btn.relative 68.2x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px; span.absolute.inset-0.duration-fast 65.5x30.2 bg #e34948 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset |
+| Ancestor paint | 3 up div.draggable-none.fixed.left-1/2 bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px, #0b0b0b @ 0.08 0px 4px 8px 0px, #0b0b0b @ 0.08 0px 12px 28px -2px | = | = | = |
+| Tokens | --cds-cursor-interactive pointer; --cds-page-bg #fff | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) |
+
+Crops: `button-danger-default.png`, `button-danger-hover.png`, `button-danger-focus-visible.png`, `button-danger-pressed.png`, `button-danger-light.png`, `button-danger-light-hover.png`, `button-danger-light-focus-visible.png`, `button-danger-light-pressed.png`.
+
+#### button-secondary
+
+Secondary button. fill.secondary with a 1px ring (fill.secondary-ring); takes the focus when the dialog opens, so the safe choice is the default.
+
+Copy: `chats-dark-delete-confirm`. Finder: `() => [...document.querySelectorAll('[data-cds=ConfirmationDialog] button')].find((b) => b.innerText.trim() === 'Cancel')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 69.7 x 32 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px | = |
+| Outline | none | = | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #f0efec | = | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 14px/20px 400, #f0efec | = | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | outline 0.2s ease | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 69.7x32.0 bg #ffffff @ 0.1 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px | span.absolute.inset-0.duration-fast 69.7x32.0 bg #ffffff @ 0.14 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px | button.cds-reset.group/btn.relative 69.7x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px; span.absolute.inset-0.duration-fast 69.7x32.0 bg #ffffff @ 0.1 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset | span.absolute.inset-0.duration-fast 68.0x31.2 bg #ffffff @ 0.14 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px |
+| Ancestor paint | 3 up div.draggable-none.fixed.left-1/2 bg #20201f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #0b0b0b @ 0.08 0px 4px 8px 0px, #000000 @ 0.24 0px 12px 28px -2px | = | = | = |
+| Tokens | --cds-cursor-interactive pointer; --cds-page-bg #20201f | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 70.05 x 32 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px | = |
+| Outline | none | = | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #0b0b0b | = | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 14px/20px 400, #0b0b0b | = | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | outline 0.2s ease | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 70.0x32.0 bg #ffffff @ 0.1 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px | span.absolute.inset-0.duration-fast 70.0x32.0 bg #0b0b0b @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px | button.cds-reset.group/btn.relative 70.0x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px; span.absolute.inset-0.duration-fast 70.0x32.0 bg #ffffff @ 0.1 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset | span.absolute.inset-0.duration-fast 68.3x31.2 bg #0b0b0b @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px |
+| Ancestor paint | 3 up div.draggable-none.fixed.left-1/2 bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px, #0b0b0b @ 0.08 0px 4px 8px 0px, #0b0b0b @ 0.08 0px 12px 28px -2px | = | = | = |
+| Tokens | --cds-cursor-interactive pointer; --cds-page-bg #fff | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) |
+
+Crops: `button-secondary-default.png`, `button-secondary-hover.png`, `button-secondary-focus-visible.png`, `button-secondary-pressed.png`, `button-secondary-light.png`, `button-secondary-light-hover.png`, `button-secondary-light-focus-visible.png`, `button-secondary-light-pressed.png`.
+
+#### confirm-dialog
+
+Confirmation dialog. cds ConfirmationDialog (role=alertdialog), at most 400 wide: a heading, one sentence, then Cancel and the action at the end; surface-3, radius card, shadow-panel-lg, over the page backdrop.
+
+Copy: `chats-dark-delete-confirm`. Finder: `() => Q('[data-cds=ConfirmationDialog]')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 400 x 138 |
+| Padding | 0px |
+| Border | none |
+| Radius | 12px |
+| Background | #20201f |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #0b0b0b @ 0.08 0px 4px 8px 0px, #000000 @ 0.24 0px 12px 28px -2px |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Text node | h2.-mt-0.5.text-heading.font-medium: anthropic-sans 15px/20px 500, #f0efec |
+| Transition | opacity, scale, filter 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) |
+| ::after | 400px x 138px, absolute, bg #000000 @ 0.5, radius 12px |
+| Painted layers | div.draggable-none.fixed.left-1/2 400.0x138.0 bg #20201f r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #0b0b0b @ 0.08 0px 4px 8px 0px, #000000 @ 0.24 0px 12px 28px -2px; div.draggable-none.fixed.left-1/2::after 400pxx138px bg #000000 @ 0.5 r 12px opacity 0; span.absolute.inset-0.duration-fast 69.8x32.0 bg #ffffff @ 0.1 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px; span.absolute.inset-0.duration-fast 67.0x31.0 bg #d03b3b r 8px |
+| Tokens | --cds-cursor-interactive pointer; --cds-page-bg #20201f; --desktop-titlebar-inset 0px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 400 x 138 |
+| Padding | 0px |
+| Border | none |
+| Radius | 12px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px, #0b0b0b @ 0.08 0px 4px 8px 0px, #0b0b0b @ 0.08 0px 12px 28px -2px |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Text node | h2.-mt-0.5.text-heading.font-medium: anthropic-sans 15px/20px 500, #0b0b0b |
+| Transition | opacity, scale, filter 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) |
+| ::after | 400px x 138px, absolute, bg #000000 @ 0.4, radius 12px |
+| Painted layers | div.draggable-none.fixed.left-1/2 400.0x138.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px, #0b0b0b @ 0.08 0px 4px 8px 0px, #0b0b0b @ 0.08 0px 12px 28px -2px; div.draggable-none.fixed.left-1/2::after 400pxx138px bg #000000 @ 0.4 r 12px opacity 0; span.absolute.inset-0.duration-fast 70.1x32.0 bg #ffffff @ 0.1 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px; span.absolute.inset-0.duration-fast 67.2x31.0 bg #d03b3b r 8px |
+| Tokens | --cds-cursor-interactive pointer; --cds-page-bg #fff; --desktop-titlebar-inset 0px |
+| How | at rest |
+
+Crops: `confirm-dialog-default.png`, `confirm-dialog-light.png`.
+
+#### form-dialog
+
+Form dialog (Create a project). A cds Dialog with a title, two labelled fields, and Cancel / Create project at the end.
+
+Copy: `projects-dark-create`. Finder: `() => Q('[data-cds=Dialog]')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 520 x 348 |
+| Padding | 0px |
+| Border | none |
+| Radius | 12px |
+| Background | #20201f |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #0b0b0b @ 0.08 0px 4px 8px 0px, #000000 @ 0.24 0px 12px 28px -2px |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Text node | h2.text-primary.text-title.font-semibold: anthropic-sans 22px/28px 580, #f0efec |
+| Transition | opacity, scale, filter 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) |
+| Placeholder | "Name your project" #898781, opacity 1, 14px |
+| ::after | 520px x 348px, absolute, bg #000000 @ 0.5, radius 12px |
+| Painted layers | div.draggable-none.fixed.left-1/2 520.0x348.0 bg #20201f r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #0b0b0b @ 0.08 0px 4px 8px 0px, #000000 @ 0.24 0px 12px 28px -2px; div.draggable-none.fixed.left-1/2::after 520pxx348px bg #000000 @ 0.5 r 12px opacity 0; input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset; textarea.cds-reset.w-full.cds-input 472.0x80.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset; span.absolute.inset-0.duration-fast 69.7x32.0 bg #ffffff @ 0.1 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px; span.absolute.inset-0.duration-fast 120.0x31.0 bg #ffffff r 8px |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #20201f; --desktop-titlebar-inset 0px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 520 x 348 |
+| Padding | 0px |
+| Border | none |
+| Radius | 12px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px, #0b0b0b @ 0.08 0px 4px 8px 0px, #0b0b0b @ 0.08 0px 12px 28px -2px |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Text node | h2.text-primary.text-title.font-semibold: anthropic-sans 22px/28px 580, #0b0b0b |
+| Transition | opacity, scale, filter 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) |
+| Placeholder | "Name your project" #898781, opacity 1, 14px |
+| ::after | 520px x 348px, absolute, bg #000000 @ 0.4, radius 12px |
+| Painted layers | div.draggable-none.fixed.left-1/2 520.0x348.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px, #0b0b0b @ 0.08 0px 4px 8px 0px, #0b0b0b @ 0.08 0px 12px 28px -2px; div.draggable-none.fixed.left-1/2::after 520pxx348px bg #000000 @ 0.4 r 12px opacity 0; input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset; textarea.cds-reset.w-full.cds-input 472.0x80.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset; span.absolute.inset-0.duration-fast 70.0x32.0 bg #ffffff @ 0.1 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px; span.absolute.inset-0.duration-fast 120.5x31.0 bg #0b0b0b r 8px |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #fff; --desktop-titlebar-inset 0px |
+| How | at rest |
+
+Crops: `form-dialog-default.png`, `form-dialog-light.png`.
+
+#### field-label
+
+Field label.
+
+Copy: `projects-dark-create`. Finder: `() => T('What are you working on?')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 472 x 14 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/14px 500 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Transition | none |
+| Cursor | default |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 472 x 14 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/14px 500 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Transition | none |
+| Cursor | default |
+| How | at rest |
+
+Crops: `field-label-default.png`, `field-label-light.png`.
+
+#### text-field
+
+Text field. cds TextInput: control height, fill.field with a 1px fill.field-ring, border-strong on hover, the focus ring on focus.
+
+Copy: `projects-dark-create`. Finder: `() => Q('[data-cds=TextInput]')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 472 x 32 | = | = |
+| Padding | 0px 12px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | #ffffff @ 0.05 | = | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #f0efec | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | text | = | = |
+| Placeholder | "Name your project" #898781, opacity 1, 14px | = | = |
+| Painted layers | input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset | input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset | input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible |
+|---|---|---|---|
+| Size (w x h) | 472 x 32 | = | = |
+| Padding | 0px 12px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | #ffffff @ 0.5 | = | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.2 0px 0px 0px 1px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0b0b0b | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | text | = | = |
+| Placeholder | "Name your project" #898781, opacity 1, 14px | = | = |
+| Painted layers | input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset | input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.2 0px 0px 0px 1px inset | input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+
+Crops: `text-field-default.png`, `text-field-hover.png`, `text-field-focus-visible.png`, `text-field-light.png`, `text-field-light-hover.png`, `text-field-light-focus-visible.png`.
+
+#### text-field-invalid
+
+Text field, invalid. The error state, read by setting data-invalid on the field in the copy, which is what cds Field does when validation fails: Claude's own `data-[invalid]:` rules then draw a 1px fill.danger ring, keep it on hover, and switch the focus ring to shadow.focus-danger. The live form was never submitted, so the message text cds shows under the field was not seen.
+
+Copy: `projects-dark-create`. Finder: `() => Q('[data-cds=TextInput]')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 472 x 32 | = | = |
+| Padding | 0px 12px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | #ffffff @ 0.05 | = | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #d03b3b 0px 0px 0px 1px inset | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #8e2626 @ 0.6 0px 0px 6px 1px |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #f0efec | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | text | = | = |
+| Placeholder | "Name your project" #898781, opacity 1, 14px | = | = |
+| Painted layers | input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #d03b3b 0px 0px 0px 1px inset | = | input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #8e2626 @ 0.6 0px 0px 6px 1px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible |
+|---|---|---|---|
+| Size (w x h) | 472 x 32 | = | = |
+| Padding | 0px 12px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | #ffffff @ 0.5 | = | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #d03b3b 0px 0px 0px 1px inset | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0b0b0b | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | text | = | = |
+| Placeholder | "Name your project" #898781, opacity 1, 14px | = | = |
+| Painted layers | input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #d03b3b 0px 0px 0px 1px inset | = | input.cds-input.cds-reset.h-control 472.0x32.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+
+Crops: `text-field-invalid-default.png`, `text-field-invalid-hover.png`, `text-field-invalid-focus-visible.png`, `text-field-invalid-light.png`, `text-field-invalid-light-hover.png`, `text-field-invalid-light-focus-visible.png`.
+
+#### text-area
+
+Text area. cds TextArea: the text field's fill, ring and focus, several lines tall, resizable.
+
+Copy: `projects-dark-create`. Finder: `() => Q('[data-cds=TextArea]')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 472 x 80 | = | = |
+| Padding | 8px 12px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | #ffffff @ 0.05 | = | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #f0efec | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | text | = | = |
+| Placeholder | "Describe your project, goals, subject, e" #898781, opacity 1, 14px | = | = |
+| Painted layers | textarea.cds-reset.w-full.cds-input 472.0x80.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset | textarea.cds-reset.w-full.cds-input 472.0x80.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset | textarea.cds-reset.w-full.cds-input 472.0x80.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible |
+|---|---|---|---|
+| Size (w x h) | 472 x 80 | = | = |
+| Padding | 8px 12px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | #ffffff @ 0.5 | = | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.2 0px 0px 0px 1px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0b0b0b | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | text | = | = |
+| Placeholder | "Describe your project, goals, subject, e" #898781, opacity 1, 14px | = | = |
+| Painted layers | textarea.cds-reset.w-full.cds-input 472.0x80.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset | textarea.cds-reset.w-full.cds-input 472.0x80.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.2 0px 0px 0px 1px inset | textarea.cds-reset.w-full.cds-input 472.0x80.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+
+Crops: `text-area-default.png`, `text-area-hover.png`, `text-area-focus-visible.png`, `text-area-light.png`, `text-area-light-hover.png`, `text-area-light-focus-visible.png`.
+
+#### button-primary
+
+Primary button. fill.primary (ink: white in dark, black in light) with on.primary text.
+
+Copy: `projects-dark-create`. Finder: `() => [...document.querySelectorAll('[data-cds=Dialog] button')].find((b) => b.innerText.trim() === 'Create project')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 120.98 x 32 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px | = |
+| Outline | none | = | = | = |
+| Font | anthropic-sans 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #0b0b0b | = | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 14px/20px 500, #0b0b0b | = | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | outline 0.2s ease | = |
+| Cursor | default | = | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 120.0x31.0 bg #ffffff r 8px | span.absolute.inset-0.duration-fast 120.0x31.0 bg #e1e0d9 r 8px | button.cds-reset.group/btn.relative 121.0x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px; span.absolute.inset-0.duration-fast 120.0x31.0 bg #ffffff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset | span.absolute.inset-0.duration-fast 117.0x30.2 bg #e1e0d9 r 8px |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #20201f | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 121.45 x 32 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px | = |
+| Outline | none | = | = | = |
+| Font | anthropic-sans 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 14px/20px 500, #ffffff | = | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | outline 0.2s ease | = |
+| Cursor | default | = | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 120.5x31.0 bg #0b0b0b r 8px | span.absolute.inset-0.duration-fast 120.5x31.0 bg #2c2c2a r 8px | button.cds-reset.group/btn.relative 121.5x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px; span.absolute.inset-0.duration-fast 120.5x31.0 bg #0b0b0b r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset | span.absolute.inset-0.duration-fast 117.4x30.2 bg #2c2c2a r 8px |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #fff | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) |
+
+Crops: `button-primary-default.png`, `button-primary-hover.png`, `button-primary-focus-visible.png`, `button-primary-pressed.png`, `button-primary-light.png`, `button-primary-light-hover.png`, `button-primary-light-focus-visible.png`, `button-primary-light-pressed.png`.
+
+#### button-disabled
+
+Disabled button. Delete account while a paid plan is active: the secondary button at the disabled opacity; hover and press change nothing.
+
+Copy: `settings-dark-account`. Finder: `() => [...document.querySelectorAll('[data-cds=Dialog] button')].find((b) => b.innerText.trim() === 'Delete account')`.
+
+Dark theme.
+
+| Property | default | hover | pressed |
+|---|---|---|---|
+| Size (w x h) | 124.64 x 32 | = | = |
+| Padding | 0px 12px | = | = |
+| Gap | 6px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0b0b0b | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 14px/20px 500, #0b0b0b | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Opacity | 0.4 | = | = |
+| Cursor | default | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 123.6x31.0 bg #ffffff r 8px | = | = |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #151515 | = | = |
+| How | at rest | mouse hover | pointer held down (:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-pressed |
+|---|---|---|---|
+| Size (w x h) | 125.09 x 32 | = | = |
+| Padding | 0px 12px | = | = |
+| Gap | 6px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #ffffff | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 14px/20px 500, #ffffff | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Opacity | 0.4 | = | = |
+| Cursor | default | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 124.1x31.0 bg #0b0b0b r 8px | = | = |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #fcfcfb | = | = |
+| How | at rest | mouse hover | pointer held down (:active) |
+
+Crops: `button-disabled-default.png`, `button-disabled-hover.png`, `button-disabled-pressed.png`, `button-disabled-light.png`, `button-disabled-light-hover.png`, `button-disabled-light-pressed.png`.
+
+#### switch-disabled
+
+Disabled switch. Artifacts, on and locked while another setting needs it: the switch at the disabled opacity.
+
+Copy: `settings-dark-capabilities`. Finder: `() => Q('[role=switch][data-disabled]') // Q('[role=switch][aria-disabled=true]')`.
+
+Dark theme.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 36 x 20 | = |
+| Padding | 2px | = |
+| Border | none | = |
+| Radius | 3.35544e+07px | = |
+| Background | #2a78d6 | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | anthropic-sans 14px/20px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #f0efec | = |
+| Transition | none | = |
+| Opacity | 0.4 | = |
+| Cursor | default | = |
+| Painted layers | span.cds-reset.relative.inline-flex 36.0x20.0 bg #2a78d6 r 3.35544e+07px opacity 0.4; span.block.rounded-full.shadow-sm 16.0x16.0 bg #ffffff r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #000000 @ 0.24 0px 2px 8px 0px | = |
+| Tokens | --cds-switch-h calc(1.25rem * 1); --cds-switch-knob #fff; --cds-switch-track hsl(from #fff h s l / 10%); --cds-switch-track-hover hsl(from #fff h s l / 20%) | = |
+| How | at rest | mouse hover |
+
+Light theme.
+
+| Property | light | light-hover |
+|---|---|---|
+| Size (w x h) | 36 x 20 | = |
+| Padding | 2px | = |
+| Border | none | = |
+| Radius | 3.35544e+07px | = |
+| Background | #2a78d6 | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | anthropic-sans 14px/20px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #0b0b0b | = |
+| Transition | none | = |
+| Opacity | 0.4 | = |
+| Cursor | default | = |
+| Painted layers | span.cds-reset.relative.inline-flex 36.0x20.0 bg #2a78d6 r 3.35544e+07px opacity 0.4; span.block.rounded-full.shadow-sm 16.0x16.0 bg #ffffff r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #0b0b0b @ 0.08 0px 2px 8px 0px | = |
+| Tokens | --cds-switch-h calc(1.25rem * 1); --cds-switch-knob #fff; --cds-switch-track hsl(from #0b0b0b h s l / 20%); --cds-switch-track-hover hsl(from #0b0b0b h s l / 35%) | = |
+| How | at rest | mouse hover |
+
+Crops: `switch-disabled-default.png`, `switch-disabled-hover.png`, `switch-disabled-light.png`, `switch-disabled-light-hover.png`.
+
+#### search-input
+
+List search field. Chats and tasks search, opened from the header icon: a text field with a leading glyph and a clear button.
+
+Copy: `chats-dark-search-empty`. Finder: `() => Q('[data-cds=TextInput]')`.
+
+Dark theme.
+
+| Property | default | focus-visible |
+|---|---|---|
+| Size (w x h) | 384 x 32 | = |
+| Padding | 0px 5px 0px 12px | = |
+| Gap | 8px | = |
+| Border | none | = |
+| Radius | 8px | = |
+| Background | #ffffff @ 0.05 | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px |
+| Outline | none | = |
+| Font | anthropic-sans 14px/20px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #f0efec | = |
+| Text node | span: Anthropicons-Variable 16px/16px 533.25, #898781 | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Cursor | text | = |
+| Placeholder | "Search chats and tasks..." #898781, opacity 1, 14px | = |
+| Painted layers | div.h-control.ps-md.rounded 384.0x32.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset | div.h-control.ps-md.rounded 384.0x32.0 bg #ffffff @ 0.05 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px; input.cds-input.cds-reset.min-w-0 313.0x32.0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Tokens | --cds-cursor-interactive default; --cds-h-control calc(2rem * 1); --cds-h-control-nested calc(1.375rem * 1); --cds-pad-sm calc(.5rem * 1); --cds-page-bg #151515; --cds-radius calc(.5rem * 1); --cds-text-muted #898781; --cds-text-stays-secondary (unset); --fh (unset); --fhn (unset) | = |
+| How | at rest | keyboard: focus(), Shift+Tab, Tab (on the field inside) |
+
+Light theme.
+
+| Property | light | light-focus-visible |
+|---|---|---|
+| Size (w x h) | 384 x 32 | = |
+| Padding | 0px 5px 0px 12px | = |
+| Gap | 8px | = |
+| Border | none | = |
+| Radius | 8px | = |
+| Background | #ffffff @ 0.5 | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px |
+| Outline | none | = |
+| Font | anthropic-sans 14px/20px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #0b0b0b | = |
+| Text node | span: Anthropicons-Variable 16px/16px 533.25, #898781 | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Cursor | text | = |
+| Placeholder | "Search chats and tasks..." #898781, opacity 1, 14px | = |
+| Painted layers | div.h-control.ps-md.rounded 384.0x32.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset | div.h-control.ps-md.rounded 384.0x32.0 bg #ffffff @ 0.5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px; input.cds-input.cds-reset.min-w-0 313.0x32.0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Tokens | --cds-cursor-interactive default; --cds-h-control calc(2rem * 1); --cds-h-control-nested calc(1.375rem * 1); --cds-pad-sm calc(.5rem * 1); --cds-page-bg #fcfcfb; --cds-radius calc(.5rem * 1); --cds-text-muted #898781; --cds-text-stays-secondary (unset); --fh (unset); --fhn (unset) | = |
+| How | at rest | keyboard: focus(), Shift+Tab, Tab (on the field inside) |
+
+Crops: `search-input-default.png`, `search-input-focus-visible.png`, `search-input-light.png`, `search-input-light-focus-visible.png`.
+
+#### empty-state
+
+Empty result. One centred muted line quoting the query; no illustration, no action.
+
+Copy: `chats-dark-search-empty`. Finder: `() => TS('Nothing matches')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 960 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #898781 |
+| Transition | none |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 960 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #898781 |
+| Transition | none |
+| How | at rest |
+
+Crops: `empty-state-default.png`, `empty-state-light.png`.
+
+#### filter-menu
+
+Filter menu. The Chats filter: All, Chat, Shared, Cowork, Archived, the current one ticked in the accent.
+
+Copy: `chats-dark-filter-menu`. Finder: `() => MN()`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 128 x 169 |
+| Padding | 0px |
+| Border | none |
+| Radius | 12px |
+| Background | #20201f |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #000000 @ 0.32 0px 8px 24px 0px, #000000 @ 0.2 0px 2px 6px 0px |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Text node | span.min-w-0.flex-1.truncate: anthropic-sans 14px/20px 400, #f0efec |
+| Transition | none |
+| Painted layers | div.cds-reset.draggable-none.group/menu-popup 128.0x169.0 bg #20201f r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #000000 @ 0.32 0px 8px 24px 0px, #000000 @ 0.2 0px 2px 6px 0px; div.relative.min-h-0.overflow-y-auto 128.0x169.0 border B:1px solid #000000 @ 0 r 12px |
+| Tokens | --available-height 801px; --cds-h-control calc(2rem * 1); --cds-leading-body calc(1.25rem * 1); --cds-menu-gutter (unset); --cds-radius calc(.5rem * 1); --cds-rem-scale (unset); --cds-ring-inner 1px; --cds-text-muted #898781 |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 128 x 168 |
+| Padding | 0px |
+| Border | none |
+| Radius | 12px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px, #000000 @ 0.12 0px 8px 24px 0px, #000000 @ 0.08 0px 2px 6px 0px |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Text node | span.min-w-0.flex-1.truncate: anthropic-sans 14px/20px 400, #0b0b0b |
+| Transition | none |
+| Painted layers | div.cds-reset.draggable-none.group/menu-popup 128.0x168.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px, #000000 @ 0.12 0px 8px 24px 0px, #000000 @ 0.08 0px 2px 6px 0px |
+| Tokens | --available-height 801px; --cds-h-control calc(2rem * 1); --cds-leading-body calc(1.25rem * 1); --cds-menu-gutter (unset); --cds-radius calc(.5rem * 1); --cds-rem-scale (unset); --cds-ring-inner 0px; --cds-text-muted #898781 |
+| How | at rest |
+
+Crops: `filter-menu-default.png`, `filter-menu-light.png`.
+
+#### filter-menu-item
+
+Filter menu item.
+
+Copy: `chats-dark-filter-menu`. Finder: `() => [...MN().querySelectorAll('[role^=menuitem]')][1]`.
+
+Dark theme.
+
+| Property | default | hover | checked |
+|---|---|---|---|
+| Size (w x h) | 120 x 32 | = | = |
+| Padding | 6px 10px | = | = |
+| Gap | 8px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #f0efec | = | = |
+| Text node | span.min-w-0.flex-1.truncate: anthropic-sans 14px/20px 400, #f0efec | = | = |
+| Transition | none | = | = |
+| Cursor | default | = | = |
+| Ancestor paint | 2 up div.cds-reset.draggable-none.group/menu-popup bg #20201f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px, #000000 @ 0.32 0px 8px 24px 0px, #000000 @ 0.2 0px 2px 6px 0px | = | = |
+| Tokens | --cds-h-control calc(2rem * 1); --cds-leading-body calc(1.25rem * 1); --cds-text-muted #898781 | = | = |
+| How | at rest | mouse hover | at rest, captured checked |
+
+Light theme.
+
+| Property | light | light-hover | light-checked |
+|---|---|---|---|
+| Size (w x h) | 120 x 32 | = | = |
+| Padding | 6px 10px | = | = |
+| Gap | 8px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0b0b0b | = | = |
+| Text node | span.min-w-0.flex-1.truncate: anthropic-sans 14px/20px 400, #0b0b0b | = | = |
+| Transition | none | = | = |
+| Cursor | default | = | = |
+| Ancestor paint | 2 up div.cds-reset.draggable-none.group/menu-popup bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px, #000000 @ 0.12 0px 8px 24px 0px, #000000 @ 0.08 0px 2px 6px 0px | = | = |
+| Tokens | --cds-h-control calc(2rem * 1); --cds-leading-body calc(1.25rem * 1); --cds-text-muted #898781 | = | = |
+| How | at rest | mouse hover | at rest, captured checked |
+
+Other finders: checked: `() => [...MN().querySelectorAll('[role^=menuitem]')][0]`; light-checked: `() => [...MN().querySelectorAll('[role^=menuitem]')][0]`.
+
+Crops: `filter-menu-item-default.png`, `filter-menu-item-hover.png`, `filter-menu-item-checked.png`, `filter-menu-item-light.png`, `filter-menu-item-light-hover.png`, `filter-menu-item-light-checked.png`.
+
+#### skeleton
+
+Loading skeleton. cds Skeleton: a --cds-skeleton-base bar with a --cds-skeleton-sheen band sweeping across every 2s (cds-shimmer); the sheen is hidden under reduced motion.
+
+Copy: `artifacts-dark-loading`. Finder: `() => Q('[data-cds=Skeleton]')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 960 x 148 |
+| Padding | 0px |
+| Border | none |
+| Radius | 8px |
+| Background | #ffffff @ 0.075 |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Transition | none |
+| ::after | 960px x 148px, absolute, bg #000000 @ 0 linear-gradient(90deg, #000000 @ 0, #ffffff @ 0.075, #000000 @ 0), radius 0px |
+| Painted layers | div.relative.max-w-full.overflow-hidden 960.0x148.0 bg #ffffff @ 0.075 r 8px; div.relative.max-w-full.overflow-hidden::after 960pxx148px image linear-gradient(90deg, #000000 @ 0, #ffffff @ 0.075, #000000 @ 0) |
+| Tokens | --cds-skeleton-base hsl(from #fff h s l / 7.5%); --cds-skeleton-sheen hsl(from #fff h s l / 7.5%) |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 960 x 148 |
+| Padding | 0px |
+| Border | none |
+| Radius | 8px |
+| Background | #0b0b0b @ 0.05 |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Transition | none |
+| ::after | 960px x 148px, absolute, bg #000000 @ 0 linear-gradient(90deg, #000000 @ 0, #0b0b0b @ 0.05, #000000 @ 0), radius 0px |
+| Painted layers | div.relative.max-w-full.overflow-hidden 960.0x148.0 bg #0b0b0b @ 0.05 r 8px; div.relative.max-w-full.overflow-hidden::after 960pxx148px image linear-gradient(90deg, #000000 @ 0, #0b0b0b @ 0.05, #000000 @ 0) |
+| Tokens | --cds-skeleton-base hsl(from #0b0b0b h s l / 5%); --cds-skeleton-sheen hsl(from #0b0b0b h s l / 5%) |
+| How | at rest |
+
+Crops: `skeleton-default.png`, `skeleton-light.png`.
+
+#### skeleton-card
+
+Loading card.
+
+Copy: `artifacts-dark-loading`. Finder: `() => C(Q('[data-cds=Skeleton]', 2), '[class*=rounded]')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 138 x 11 |
+| Padding | 0px |
+| Border | none |
+| Radius | 8px |
+| Background | #ffffff @ 0.075 |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 12px/17px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Transition | none |
+| ::after | 138px x 11px, absolute, bg #000000 @ 0 linear-gradient(90deg, #000000 @ 0, #ffffff @ 0.075, #000000 @ 0), radius 0px |
+| Painted layers | div.relative.max-w-full.overflow-hidden 138.0x11.0 bg #ffffff @ 0.075 r 8px; div.relative.max-w-full.overflow-hidden::after 138pxx11px image linear-gradient(90deg, #000000 @ 0, #ffffff @ 0.075, #000000 @ 0) |
+| Ancestor paint | 3 up div.flex.h-full.flex-col bg #1a1a19 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px |
+| Tokens | --cds-skeleton-base hsl(from #fff h s l / 7.5%); --cds-skeleton-sheen hsl(from #fff h s l / 7.5%) |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 138 x 11 |
+| Padding | 0px |
+| Border | none |
+| Radius | 8px |
+| Background | #0b0b0b @ 0.05 |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 12px/17px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Transition | none |
+| ::after | 138px x 11px, absolute, bg #000000 @ 0 linear-gradient(90deg, #000000 @ 0, #0b0b0b @ 0.05, #000000 @ 0), radius 0px |
+| Painted layers | div.relative.max-w-full.overflow-hidden 138.0x11.0 bg #0b0b0b @ 0.05 r 8px; div.relative.max-w-full.overflow-hidden::after 138pxx11px image linear-gradient(90deg, #000000 @ 0, #0b0b0b @ 0.05, #000000 @ 0) |
+| Ancestor paint | 3 up div.flex.h-full.flex-col bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset, #0b0b0b @ 0.1 0px 0px 0px 0px |
+| Tokens | --cds-skeleton-base hsl(from #0b0b0b h s l / 5%); --cds-skeleton-sheen hsl(from #0b0b0b h s l / 5%) |
+| How | at rest |
+
+Crops: `skeleton-card-default.png`, `skeleton-card-light.png`.
+
+#### artifacts-grid
+
+Artifacts card grid. The Artifacts page as a grid of cards (loading), read for its column count and gap.
+
+Copy: `artifacts-dark-loading`. Finder: `() => [...M().querySelectorAll('*')].find((e) => getComputedStyle(e).display === 'grid' && getComputedStyle(e).gridTemplateColumns.split(' ').length >= 3)`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 960 x 492 |
+| Padding | 0px |
+| Gap | 24px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Transition | none |
+| Painted layers | div.flex.h-full.flex-col 304.0x234.0 bg #1a1a19 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px; div.mx-px.border-t.border-alpha-1 302.0x1.0 border T:1px solid #ffffff @ 0.05; div.relative.max-w-full.overflow-hidden 193.2x14.0 bg #ffffff @ 0.075 r 8px; div.relative.max-w-full.overflow-hidden::after 193.188pxx14px image linear-gradient(90deg, #000000 @ 0, #ffffff @ 0.075, #000000 @ 0); div.relative.max-w-full.overflow-hidden 138.0x11.0 bg #ffffff @ 0.075 r 8px; div.relative.max-w-full.overflow-hidden::after 138pxx11px image linear-gradient(90deg, #000000 @ 0, #ffffff @ 0.075, #000000 @ 0) |
+| Tokens | --cds-skeleton-base hsl(from #fff h s l / 7.5%); --cds-skeleton-sheen hsl(from #fff h s l / 7.5%) |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 960 x 492 |
+| Padding | 0px |
+| Gap | 24px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Transition | none |
+| Painted layers | div.flex.h-full.flex-col 304.0x234.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset, #0b0b0b @ 0.1 0px 0px 0px 0px; div.mx-px.border-t.border-alpha-1 302.0x1.0 border T:1px solid #0b0b0b @ 0.05; div.relative.max-w-full.overflow-hidden 193.2x14.0 bg #0b0b0b @ 0.05 r 8px; div.relative.max-w-full.overflow-hidden::after 193.188pxx14px image linear-gradient(90deg, #000000 @ 0, #0b0b0b @ 0.05, #000000 @ 0); div.relative.max-w-full.overflow-hidden 138.0x11.0 bg #0b0b0b @ 0.05 r 8px; div.relative.max-w-full.overflow-hidden::after 138pxx11px image linear-gradient(90deg, #000000 @ 0, #0b0b0b @ 0.05, #000000 @ 0) |
+| Tokens | --cds-skeleton-base hsl(from #0b0b0b h s l / 5%); --cds-skeleton-sheen hsl(from #0b0b0b h s l / 5%) |
+| How | at rest |
+
+Crops: none.
+
+#### projects-grid
+
+Projects card grid. The Projects page grid of cards, read for its column count and gap.
+
+Copy: `projects-dark-2`. Finder: `() => [...M().querySelectorAll('*')].find((e) => getComputedStyle(e).display === 'grid' && getComputedStyle(e).gridTemplateColumns.split(' ').length >= 2)`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 960 x 161 |
+| Padding | 0px |
+| Gap | 24px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Text node | a.min-w-0.truncate.text-body: anthropic-sans 14px/20px 500, #f0efec |
+| Transition | none |
+| Painted layers | div.group.relative.flex 468.0x161.0 bg #151515 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px; span.inline-flex.items-center.gap-1 108.9x20.0 bg #ffffff @ 0.05 r 5.5px; div.group.relative.flex 468.0x161.0 bg #151515 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #151515; --list-header-scroll-offset 136px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 960 x 161 |
+| Padding | 0px |
+| Gap | 24px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Text node | a.min-w-0.truncate.text-body: anthropic-sans 14px/20px 500, #0b0b0b |
+| Transition | none |
+| Painted layers | div.group.relative.flex 468.0x161.0 bg #fcfcfb r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset, #0b0b0b @ 0.1 0px 0px 0px 0px; span.inline-flex.items-center.gap-1 109.4x20.0 bg #0b0b0b @ 0.05 r 5.5px; div.group.relative.flex 468.0x161.0 bg #fcfcfb r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 1px inset, #0b0b0b @ 0.1 0px 0px 0px 0px |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #fcfcfb; --list-header-scroll-offset 136px |
+| How | at rest |
+
+Crops: none.
+
+#### button-primary-page
+
+Primary button on a page (New project).
+
+Copy: `projects-dark-2`. Finder: `() => [...M().querySelectorAll('button')].find((b) => b.innerText.trim() === 'New project')`.
+
+Dark theme.
+
+| Property | default | hover | pressed |
+|---|---|---|---|
+| Size (w x h) | 105.56 x 32 | = | = |
+| Padding | 0px 12px | = | = |
+| Gap | 6px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0b0b0b | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 14px/20px 500, #0b0b0b | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | default | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 104.6x31.0 bg #ffffff r 8px | span.absolute.inset-0.duration-fast 104.6x31.0 bg #e1e0d9 r 8px | span.absolute.inset-0.duration-fast 101.9x30.2 bg #e1e0d9 r 8px |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #151515 | = | = |
+| How | at rest | mouse hover | pointer held down (:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-pressed |
+|---|---|---|---|
+| Size (w x h) | 105.92 x 32 | = | = |
+| Padding | 0px 12px | = | = |
+| Gap | 6px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #ffffff | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 14px/20px 500, #ffffff | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | default | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 104.9x31.0 bg #0b0b0b r 8px | span.absolute.inset-0.duration-fast 104.9x31.0 bg #2c2c2a r 8px | span.absolute.inset-0.duration-fast 102.3x30.2 bg #2c2c2a r 8px |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #fcfcfb | = | = |
+| How | at rest | mouse hover | pointer held down (:active) |
+
+Crops: `button-primary-page-default.png`, `button-primary-page-hover.png`, `button-primary-page-pressed.png`, `button-primary-page-light.png`, `button-primary-page-light-hover.png`, `button-primary-page-light-pressed.png`.

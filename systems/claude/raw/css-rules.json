@@ -1,0 +1,1925 @@
+{
+ "readAt": "2026-10-17",
+ "source": "the <style> blocks snapshot.js inlined into each 2026-10-17 page copy (claude.ai's CSS from assets-proxy.anthropic.com), deduplicated by content",
+ "rules": 16835,
+ "breakpoints": [
+  {
+   "px": 350,
+   "rules": 2,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 350px)"
+   ]
+  },
+  {
+   "px": 359,
+   "rules": 1,
+   "tailwind": null,
+   "queries": [
+    "@media not all and (width >= 359px)"
+   ]
+  },
+  {
+   "px": 480,
+   "rules": 6,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 480px)"
+   ]
+  },
+  {
+   "px": 500,
+   "rules": 4,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 500px)",
+    "@media not all and (width >= 500px)"
+   ]
+  },
+  {
+   "px": 600,
+   "rules": 2,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 600px)"
+   ]
+  },
+  {
+   "px": 640,
+   "rules": 360,
+   "tailwind": "sm (40rem)",
+   "queries": [
+    "@media (width >= 40rem)",
+    "@media not all and (width >= 40rem)",
+    "@media (width < 40rem)"
+   ]
+  },
+  {
+   "px": 700,
+   "rules": 1,
+   "tailwind": null,
+   "queries": [
+    "@media (max-width: 700px)"
+   ]
+  },
+  {
+   "px": 701,
+   "rules": 14,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 701px)",
+    "@media (min-width: 701px)",
+    "@media not all and (width >= 701px)"
+   ]
+  },
+  {
+   "px": 768,
+   "rules": 525,
+   "tailwind": "md (48rem)",
+   "queries": [
+    "@media (width >= 48rem)",
+    "@media not all and (width >= 48rem)",
+    "@media screen and (width < 48rem)"
+   ]
+  },
+  {
+   "px": 816,
+   "rules": 1,
+   "tailwind": null,
+   "queries": [
+    "@media not all and (width >= 816px)"
+   ]
+  },
+  {
+   "px": 840,
+   "rules": 8,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 840px)"
+   ]
+  },
+  {
+   "px": 900,
+   "rules": 4,
+   "tailwind": null,
+   "queries": [
+    "@media (height <= 680px) and (width >= 900px)"
+   ]
+  },
+  {
+   "px": 1000,
+   "rules": 10,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 1000px)",
+    "@media (width >= 62.5rem)"
+   ]
+  },
+  {
+   "px": 1024,
+   "rules": 195,
+   "tailwind": "lg (64rem)",
+   "queries": [
+    "@media (width >= 64rem)",
+    "@media not all and (width >= 64rem)",
+    "@media (min-width: 1024px)"
+   ]
+  },
+  {
+   "px": 1100,
+   "rules": 14,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 1100px)"
+   ]
+  },
+  {
+   "px": 1104,
+   "rules": 5,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 69rem)"
+   ]
+  },
+  {
+   "px": 1200,
+   "rules": 1,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 1200px)"
+   ]
+  },
+  {
+   "px": 1280,
+   "rules": 67,
+   "tailwind": "xl (80rem)",
+   "queries": [
+    "@media (width >= 80rem)",
+    "@media not all and (width >= 80rem)"
+   ]
+  },
+  {
+   "px": 1400,
+   "rules": 1,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 1400px)"
+   ]
+  },
+  {
+   "px": 1536,
+   "rules": 2,
+   "tailwind": "2xl (96rem)",
+   "queries": [
+    "@media (width >= 96rem)"
+   ]
+  },
+  {
+   "px": 1562,
+   "rules": 1,
+   "tailwind": null,
+   "queries": [
+    "@media (width >= 1562px)"
+   ]
+  }
+ ],
+ "containerWidths": [
+  {
+   "px": 52,
+   "rules": 1
+  },
+  {
+   "px": 56,
+   "rules": 5
+  },
+  {
+   "px": 96,
+   "rules": 1
+  },
+  {
+   "px": 112,
+   "rules": 1
+  },
+  {
+   "px": 116,
+   "rules": 2
+  },
+  {
+   "px": 128,
+   "rules": 1
+  },
+  {
+   "px": 143,
+   "rules": 1
+  },
+  {
+   "px": 144,
+   "rules": 4
+  },
+  {
+   "px": 145,
+   "rules": 1
+  },
+  {
+   "px": 180,
+   "rules": 3
+  },
+  {
+   "px": 184,
+   "rules": 6
+  },
+  {
+   "px": 192,
+   "rules": 6
+  },
+  {
+   "px": 224,
+   "rules": 1
+  },
+  {
+   "px": 232,
+   "rules": 6
+  },
+  {
+   "px": 254,
+   "rules": 3
+  },
+  {
+   "px": 256,
+   "rules": 23
+  },
+  {
+   "px": 257,
+   "rules": 1
+  },
+  {
+   "px": 269,
+   "rules": 3
+  },
+  {
+   "px": 278,
+   "rules": 1
+  },
+  {
+   "px": 280,
+   "rules": 5
+  },
+  {
+   "px": 286,
+   "rules": 1
+  },
+  {
+   "px": 288,
+   "rules": 3
+  },
+  {
+   "px": 290,
+   "rules": 1
+  },
+  {
+   "px": 294,
+   "rules": 1
+  },
+  {
+   "px": 296,
+   "rules": 5
+  },
+  {
+   "px": 300,
+   "rules": 1
+  },
+  {
+   "px": 312,
+   "rules": 3
+  },
+  {
+   "px": 318,
+   "rules": 4
+  },
+  {
+   "px": 319,
+   "rules": 1
+  },
+  {
+   "px": 320,
+   "rules": 15
+  },
+  {
+   "px": 328,
+   "rules": 1
+  },
+  {
+   "px": 340,
+   "rules": 3
+  },
+  {
+   "px": 345,
+   "rules": 1
+  },
+  {
+   "px": 352,
+   "rules": 2
+  },
+  {
+   "px": 353,
+   "rules": 1
+  },
+  {
+   "px": 356,
+   "rules": 5
+  },
+  {
+   "px": 359,
+   "rules": 1
+  },
+  {
+   "px": 360,
+   "rules": 5
+  },
+  {
+   "px": 361,
+   "rules": 1
+  },
+  {
+   "px": 365,
+   "rules": 1
+  },
+  {
+   "px": 376,
+   "rules": 6
+  },
+  {
+   "px": 382,
+   "rules": 1
+  },
+  {
+   "px": 384,
+   "rules": 33
+  },
+  {
+   "px": 400,
+   "rules": 8
+  },
+  {
+   "px": 416,
+   "rules": 15
+  },
+  {
+   "px": 420,
+   "rules": 11
+  },
+  {
+   "px": 427,
+   "rules": 1
+  },
+  {
+   "px": 432,
+   "rules": 2
+  },
+  {
+   "px": 433,
+   "rules": 1
+  },
+  {
+   "px": 440,
+   "rules": 2
+  },
+  {
+   "px": 448,
+   "rules": 79
+  },
+  {
+   "px": 450,
+   "rules": 1
+  },
+  {
+   "px": 451,
+   "rules": 1
+  },
+  {
+   "px": 456,
+   "rules": 1
+  },
+  {
+   "px": 460,
+   "rules": 13
+  },
+  {
+   "px": 480,
+   "rules": 54
+  },
+  {
+   "px": 496,
+   "rules": 1
+  },
+  {
+   "px": 498,
+   "rules": 1
+  },
+  {
+   "px": 500,
+   "rules": 1
+  },
+  {
+   "px": 512,
+   "rules": 43
+  },
+  {
+   "px": 520,
+   "rules": 3
+  },
+  {
+   "px": 527,
+   "rules": 1
+  },
+  {
+   "px": 540,
+   "rules": 6
+  },
+  {
+   "px": 544,
+   "rules": 10
+  },
+  {
+   "px": 560,
+   "rules": 22
+  },
+  {
+   "px": 576,
+   "rules": 75
+  },
+  {
+   "px": 580,
+   "rules": 1
+  },
+  {
+   "px": 600,
+   "rules": 3
+  },
+  {
+   "px": 606,
+   "rules": 1
+  },
+  {
+   "px": 608,
+   "rules": 2
+  },
+  {
+   "px": 626,
+   "rules": 1
+  },
+  {
+   "px": 632,
+   "rules": 1
+  },
+  {
+   "px": 640,
+   "rules": 48
+  },
+  {
+   "px": 656,
+   "rules": 2
+  },
+  {
+   "px": 660,
+   "rules": 2
+  },
+  {
+   "px": 672,
+   "rules": 40
+  },
+  {
+   "px": 699,
+   "rules": 1
+  },
+  {
+   "px": 700,
+   "rules": 7
+  },
+  {
+   "px": 704,
+   "rules": 2
+  },
+  {
+   "px": 720,
+   "rules": 1
+  },
+  {
+   "px": 740,
+   "rules": 1
+  },
+  {
+   "px": 760,
+   "rules": 1
+  },
+  {
+   "px": 767,
+   "rules": 2
+  },
+  {
+   "px": 768,
+   "rules": 35
+  },
+  {
+   "px": 800,
+   "rules": 8
+  },
+  {
+   "px": 816,
+   "rules": 1
+  },
+  {
+   "px": 832,
+   "rules": 5
+  },
+  {
+   "px": 840,
+   "rules": 1
+  },
+  {
+   "px": 864,
+   "rules": 10
+  },
+  {
+   "px": 896,
+   "rules": 48
+  },
+  {
+   "px": 900,
+   "rules": 8
+  },
+  {
+   "px": 920,
+   "rules": 1
+  },
+  {
+   "px": 960,
+   "rules": 1
+  },
+  {
+   "px": 1024,
+   "rules": 22
+  },
+  {
+   "px": 1056,
+   "rules": 7
+  },
+  {
+   "px": 1072,
+   "rules": 7
+  },
+  {
+   "px": 1100,
+   "rules": 1
+  }
+ ],
+ "reducedMotion": {
+  "mediaRules": 127,
+  "mediaDeclarations": [
+   {
+    "value": "animation: auto ease 0s 1 normal none running none",
+    "count": 40
+   },
+   {
+    "value": "transition: none",
+    "count": 15
+   },
+   {
+    "value": "transform: none",
+    "count": 7
+   },
+   {
+    "value": "display: none",
+    "count": 7
+   },
+   {
+    "value": "transition-property: none",
+    "count": 7
+   },
+   {
+    "value": "opacity: 1",
+    "count": 5
+   },
+   {
+    "value": "background-image: none",
+    "count": 4
+   },
+   {
+    "value": "color: var(--cds-text-muted)",
+    "count": 4
+   },
+   {
+    "value": "color: var(--cds-text-secondary)",
+    "count": 4
+   },
+   {
+    "value": "translate: none",
+    "count": 3
+   },
+   {
+    "value": "opacity: 0.6",
+    "count": 3
+   },
+   {
+    "value": "clip-path: inset(0px)",
+    "count": 3
+   },
+   {
+    "value": "content: var(--tw-content)",
+    "count": 3
+   },
+   {
+    "value": "animation-duration: 0.01ms !important",
+    "count": 2
+   },
+   {
+    "value": "animation-iteration-count: 1 !important",
+    "count": 2
+   },
+   {
+    "value": "filter: none",
+    "count": 2
+   },
+   {
+    "value": "--tw-scale-x: 100%",
+    "count": 2
+   },
+   {
+    "value": "--tw-scale-y: 100%",
+    "count": 2
+   },
+   {
+    "value": "--tw-scale-z: 100%",
+    "count": 2
+   },
+   {
+    "value": "scale: var(--tw-scale-x) var(--tw-scale-y)",
+    "count": 2
+   },
+   {
+    "value": "transition-property: none !important",
+    "count": 2
+   },
+   {
+    "value": "--tile-overlay-duration: 0s",
+    "count": 1
+   },
+   {
+    "value": "opacity: 0",
+    "count": 1
+   },
+   {
+    "value": "--sheet-card-light-angle: 165deg",
+    "count": 1
+   },
+   {
+    "value": "--sheet-card-light-reach: 55%",
+    "count": 1
+   },
+   {
+    "value": "transition: opacity 80ms linear 0.2s",
+    "count": 1
+   },
+   {
+    "value": "animation-duration: 0s",
+    "count": 1
+   },
+   {
+    "value": "background-color: hsl(from var(--cds-fill-accent) h s l / 20%)",
+    "count": 1
+   },
+   {
+    "value": "transform: translate(0px)",
+    "count": 1
+   },
+   {
+    "value": "text-decoration-line: underline",
+    "count": 1
+   },
+   {
+    "value": "text-decoration-thickness: 2px",
+    "count": 1
+   },
+   {
+    "value": "text-decoration-color: var(--cds-border-editor-comment)",
+    "count": 1
+   },
+   {
+    "value": "text-underline-offset: 3px",
+    "count": 1
+   },
+   {
+    "value": "visibility: hidden",
+    "count": 1
+   },
+   {
+    "value": "display: inline",
+    "count": 1
+   },
+   {
+    "value": "--tw-translate-y: 0px",
+    "count": 1
+   },
+   {
+    "value": "translate: var(--tw-translate-x) var(--tw-translate-y)",
+    "count": 1
+   },
+   {
+    "value": "transform: var(--still)",
+    "count": 1
+   },
+   {
+    "value": "animation: fade-in var(--cds-dur-snap) ease-out",
+    "count": 1
+   },
+   {
+    "value": "animation: 0.65s ease-out 0s 1 normal both running fade-out",
+    "count": 1
+   }
+  ],
+  "mediaSelectors": [
+   {
+    "value": "*, ::before, ::after",
+    "count": 2
+   },
+   {
+    "value": ".status-dot[data-kind=\"clay\"]",
+    "count": 2
+   },
+   {
+    "value": ".tiles-shell",
+    "count": 1
+   },
+   {
+    "value": ".tiles-overlay-shell, .tiles-under-overlay, :root[dir=\"rtl\"] .tiles-overlay-shell:dir(rtl)",
+    "count": 1
+   },
+   {
+    "value": ".ucoub-enter, .ucoub-rise, .ucoub-float, .ucoub-fade",
+    "count": 1
+   },
+   {
+    "value": ".ucoub-arc, .ucoub-bar",
+    "count": 1
+   },
+   {
+    "value": ".memory-panel-in, .memory-stagger",
+    "count": 1
+   },
+   {
+    "value": ".dframe-dot, .status-dot[data-kind=\"running\"], .df-tab-dot-running",
+    "count": 1
+   },
+   {
+    "value": ".file-thumbnail-fade-in, .file-thumbnail-grow-in, .file-thumbnail-upload-pulse",
+    "count": 1
+   },
+   {
+    "value": ".idle-activity-bar-ripple",
+    "count": 1
+   },
+   {
+    "value": "0%",
+    "count": 1
+   },
+   {
+    "value": "100%",
+    "count": 1
+   },
+   {
+    "value": ".timeline-status-enter, .timeline-status-enter-after-spark",
+    "count": 1
+   },
+   {
+    "value": ".timeline-status-layer.timeline-status-exit, .timeline-status-layer.timeline-spark-depart",
+    "count": 1
+   },
+   {
+    "value": ".timeline-expand-enter",
+    "count": 1
+   },
+   {
+    "value": ".sheet-card-under, .sheet-card-marks",
+    "count": 1
+   },
+   {
+    "value": "[data-sheet-kind]:hover .sheet-card-page",
+    "count": 1
+   },
+   {
+    "value": "[data-sheet-kind=\"code\"]:hover .sheet-card-glyph",
+    "count": 1
+   },
+   {
+    "value": ".df-pill-indicator, .df-pill-indicator[data-snap]",
+    "count": 1
+   },
+   {
+    "value": ".product-switch-pending .df-pill-indicator",
+    "count": 1
+   },
+   {
+    "value": ".df-sidebar-edit-scrim, [data-sidebar-edit-outside]",
+    "count": 1
+   },
+   {
+    "value": ".df-sidebar-hover-reveal",
+    "count": 1
+   },
+   {
+    "value": ".df-placeholder-rows, [data-static-composer-boot] .df-placeholder-rows",
+    "count": 1
+   },
+   {
+    "value": ".df-body-fade-in",
+    "count": 1
+   },
+   {
+    "value": ".dframe-dot, .status-dot[data-kind=\"running\"]",
+    "count": 1
+   }
+  ],
+  "appSetting": {
+   "selector": "[data-reduce-motion=\"true\"]",
+   "declarations": [
+    {
+     "value": "animation: auto ease 0s 1 normal none running none",
+     "count": 19
+    },
+    {
+     "value": "transition: none",
+     "count": 14
+    },
+    {
+     "value": "transition-timing-function: var(--tw-ease,var(--default-transition-timing-function))",
+     "count": 10
+    },
+    {
+     "value": "transition-duration: var(--tw-duration,var(--default-transition-duration))",
+     "count": 10
+    },
+    {
+     "value": "transition-property: none",
+     "count": 8
+    },
+    {
+     "value": "display: none",
+     "count": 7
+    },
+    {
+     "value": "transform: none",
+     "count": 5
+    },
+    {
+     "value": "background-image: none",
+     "count": 4
+    },
+    {
+     "value": "color: var(--cds-text-muted)",
+     "count": 4
+    },
+    {
+     "value": "color: var(--cds-text-secondary)",
+     "count": 4
+    },
+    {
+     "value": "translate: none",
+     "count": 3
+    },
+    {
+     "value": "animation: 0.3s ease-out 0s 1 normal none running fade-in-to-current",
+     "count": 3
+    },
+    {
+     "value": "translate: var(--tw-translate-x) var(--tw-translate-y)",
+     "count": 3
+    },
+    {
+     "value": "content: var(--tw-content)",
+     "count": 3
+    },
+    {
+     "value": "background-image: linear-gradient(240deg,var(--cds-text-muted) 37.5%,color-mix(in srgb,var(--cds-text-muted) 30%,white) 50%,var(--cds-text-muted) 62.5%)",
+     "count": 3
+    },
+    {
+     "value": "clip-path: inset(0px)",
+     "count": 2
+    },
+    {
+     "value": "animation: 0.2s ease-out 0s 1 normal none running cds-slide-in-end",
+     "count": 2
+    },
+    {
+     "value": "animation: 0.2s ease-out 0s 1 normal none running cds-slide-in-start",
+     "count": 2
+    },
+    {
+     "value": "animation: 0.2s ease-out 0s 1 normal none running expand-rows, 0.2s ease-out 0s 1 normal none running expand-rows-clip, 0.2s ease-out 0s 1 normal none running fade-in-to-current",
+     "count": 2
+    },
+    {
+     "value": "--tw-ease: var(--cds-ease-out)",
+     "count": 2
+    },
+    {
+     "value": "transition-timing-function: var(--cds-ease-out)",
+     "count": 2
+    },
+    {
+     "value": "rotate: var(--clk-hold)",
+     "count": 2
+    },
+    {
+     "value": "rotate: 30deg",
+     "count": 2
+    },
+    {
+     "value": "display: inline-block",
+     "count": 2
+    },
+    {
+     "value": "animation: overflow-scroll var(--overflow-scroll-duration,6s) linear infinite",
+     "count": 2
+    },
+    {
+     "value": "mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 1rem, rgb(0, 0, 0) calc(100% - 1.5rem), rgba(0, 0, 0, 0))",
+     "count": 2
+    },
+    {
+     "value": "--tw-scale-x: 100%",
+     "count": 2
+    },
+    {
+     "value": "--tw-scale-y: 100%",
+     "count": 2
+    },
+    {
+     "value": "--tw-scale-z: 100%",
+     "count": 2
+    },
+    {
+     "value": "scale: var(--tw-scale-x) var(--tw-scale-y)",
+     "count": 2
+    }
+   ]
+  },
+  "tailwindMotionReduce": [
+   {
+    "value": "transition-property: none",
+    "count": 12
+   },
+   {
+    "value": "animation: auto ease 0s 1 normal none running none",
+    "count": 8
+   },
+   {
+    "value": "background-image: none",
+    "count": 8
+   },
+   {
+    "value": "color: var(--cds-text-muted)",
+    "count": 8
+   },
+   {
+    "value": "color: var(--cds-text-secondary)",
+    "count": 8
+   },
+   {
+    "value": "content: var(--tw-content)",
+    "count": 6
+   },
+   {
+    "value": "display: none",
+    "count": 4
+   },
+   {
+    "value": "translate: none",
+    "count": 4
+   },
+   {
+    "value": "--tw-scale-x: 100%",
+    "count": 4
+   },
+   {
+    "value": "--tw-scale-y: 100%",
+    "count": 4
+   },
+   {
+    "value": "--tw-scale-z: 100%",
+    "count": 4
+   },
+   {
+    "value": "scale: var(--tw-scale-x) var(--tw-scale-y)",
+    "count": 4
+   },
+   {
+    "value": "opacity: 1",
+    "count": 4
+   },
+   {
+    "value": "transition-property: none !important",
+    "count": 4
+   },
+   {
+    "value": "visibility: hidden",
+    "count": 2
+   },
+   {
+    "value": "display: inline",
+    "count": 2
+   },
+   {
+    "value": "--tw-translate-y: 0px",
+    "count": 2
+   },
+   {
+    "value": "translate: var(--tw-translate-x) var(--tw-translate-y)",
+    "count": 2
+   },
+   {
+    "value": "transform: var(--still)",
+    "count": 2
+   },
+   {
+    "value": "transform: none",
+    "count": 2
+   }
+  ],
+  "tailwindMotionSafeRules": 112
+ },
+ "pressed": {
+  "declarations": [
+   {
+    "value": "background-color: var(--cds-fill-ghost-hover)",
+    "count": 8
+   },
+   {
+    "value": "background-color: var(--cds-fill-ghost-selected)",
+    "count": 7
+   },
+   {
+    "value": "color: var(--cds-text-primary)",
+    "count": 5
+   },
+   {
+    "value": "translate: var(--tw-translate-x) var(--tw-translate-y)",
+    "count": 4
+   },
+   {
+    "value": "box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)",
+    "count": 4
+   },
+   {
+    "value": "background-image: linear-gradient(var(--cds-fill-ghost-hover) 0 0)",
+    "count": 4
+   },
+   {
+    "value": "background-image: linear-gradient(var(--cds-bg-danger-layer) 0 0), linear-gradient(var(--cds-bg-danger-layer) 0 0)",
+    "count": 4
+   },
+   {
+    "value": "background-image: linear-gradient(var(--cds-fill-secondary-layer) 0 0), linear-gradient(var(--cds-fill-secondary-layer) 0 0)",
+    "count": 4
+   },
+   {
+    "value": "scale: var(--tw-scale-x) var(--tw-scale-y)",
+    "count": 3
+   },
+   {
+    "value": "color: var(--cds-text-secondary)",
+    "count": 3
+   },
+   {
+    "value": "color: var(--cds-text-accent)",
+    "count": 3
+   },
+   {
+    "value": "opacity: 0",
+    "count": 3
+   },
+   {
+    "value": "scale: 0.98",
+    "count": 3
+   },
+   {
+    "value": "background-color: var(--cds-fill-primary-hover)",
+    "count": 3
+   },
+   {
+    "value": "background-image: linear-gradient(var(--cds-fill-primary-layer) 0 0)",
+    "count": 3
+   },
+   {
+    "value": "background-image: linear-gradient(var(--cds-bg-accent-layer) 0 0), linear-gradient(var(--cds-bg-accent-layer) 0 0)",
+    "count": 3
+   },
+   {
+    "value": "background-color: var(--cds-bg-danger)",
+    "count": 3
+   },
+   {
+    "value": "background: var(--cds-surface-0)",
+    "count": 2
+   },
+   {
+    "value": "background-color: var(--cds-bg-accent)",
+    "count": 2
+   },
+   {
+    "value": "opacity: 1",
+    "count": 2
+   },
+   {
+    "value": "scale: 0.92",
+    "count": 2
+   },
+   {
+    "value": "background-color: var(--cds-alpha-2)",
+    "count": 2
+   },
+   {
+    "value": "background-color: var(--cds-neutral-50)",
+    "count": 2
+   },
+   {
+    "value": "opacity: 0.6",
+    "count": 2
+   },
+   {
+    "value": "background-color: var(--cds-fill-secondary)",
+    "count": 2
+   },
+   {
+    "value": "transition: transform var(--cds-dur-fast) ease-out",
+    "count": 2
+   },
+   {
+    "value": "transition: none",
+    "count": 2
+   },
+   {
+    "value": "animation-duration: 0.18s",
+    "count": 2
+   },
+   {
+    "value": "animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)",
+    "count": 2
+   },
+   {
+    "value": "background-color: var(--cds-fizzy-lake-color-selected-hover)",
+    "count": 1
+   },
+   {
+    "value": "transform: none",
+    "count": 1
+   },
+   {
+    "value": "clip-path: inset(0 round calc(var(--cds-radius) + calc(.25rem * var(--cds-rem-scale,1))))",
+    "count": 1
+   },
+   {
+    "value": "background: var(--df-selected)",
+    "count": 1
+   },
+   {
+    "value": "--tw-translate-x: 0px",
+    "count": 1
+   },
+   {
+    "value": "--tw-translate-y: 0px",
+    "count": 1
+   },
+   {
+    "value": "--tw-scale-x: 90%",
+    "count": 1
+   },
+   {
+    "value": "--tw-scale-y: 90%",
+    "count": 1
+   },
+   {
+    "value": "--tw-scale-z: 90%",
+    "count": 1
+   },
+   {
+    "value": "rotate: 0deg",
+    "count": 1
+   },
+   {
+    "value": "animation: auto ease 0s 1 normal none running none",
+    "count": 1
+   }
+  ],
+  "squish": [
+   {
+    "selector": ".\\[\\&_\\.cds-btn-squish\\]\\:transform-none\\! .cds-btn-squish",
+    "declarations": {
+     "transform": "none !important"
+    }
+   },
+   {
+    "selector": ".\\[\\&_button\\:enabled\\:active_\\.cds-btn-squish\\>\\.absolute\\]\\:bg-alpha-2\\! button:enabled:active .cds-btn-squish > .absolute",
+    "declarations": {
+     "background-color": "var(--cds-alpha-2) !important"
+    }
+   },
+   {
+    "selector": ".cds-root",
+    "declarations": {
+     "--cds-card-press-sx": ".99",
+     "--cds-card-press-sy": ".99",
+     "--cds-card-press-d": "2px"
+    }
+   },
+   {
+    "selector": ".cds-root .cds-card-body",
+    "declarations": {
+     "--cds-card-press-sx": ".99",
+     "--cds-card-press-sy": ".99"
+    }
+   },
+   {
+    "selector": ".cds-root .group\\/btn:has(> .cds-btn-squish)",
+    "declarations": {
+     "isolation": "isolate"
+    }
+   },
+   {
+    "selector": ".cds-root .cds-btn-squish",
+    "declarations": {
+     "--cds-btn-press-sx": ".975",
+     "--cds-btn-press-sy": ".975",
+     "transform-origin": "50% center",
+     "transition": "transform var(--cds-dur-slow) var(--cds-btn-spring)"
+    }
+   },
+   {
+    "selector": ".cds-root .group\\/btn:not([disabled]):active .cds-btn-squish, .cds-root .group\\/btn:not([disabled]):has(:active) .cds-btn-squish",
+    "declarations": {
+     "transform": "scale(var(--cds-btn-press-sx), var(--cds-btn-press-sy))",
+     "transition": "transform var(--cds-dur-fast) ease-out"
+    }
+   },
+   {
+    "selector": ".cds-root [data-cds=\"Card\"]:has([data-cds=\"CardLink\"]:active) > .cds-card-fill, .cds-root [data-cds=\"Card\"]:has([data-cds=\"CardLink\"]:active)::after",
+    "declarations": {
+     "transform": "scale(var(--cds-card-press-sx), var(--cds-card-press-sy))",
+     "transition": "transform var(--cds-dur-fast) ease-out"
+    }
+   },
+   {
+    "selector": ".cds-root [data-cds=\"Card\"]:has([data-cds=\"CardLink\"]:active) > .cds-card-body",
+    "declarations": {
+     "clip-path": "inset(var(--cds-card-press-d) round calc(var(--cds-radius) + calc(.25rem * var(--cds-rem-scale,1))))",
+     "transition": "clip-path var(--cds-dur-fast) ease-out"
+    }
+   },
+   {
+    "selector": ".cds-root [data-cds=\"Card\"] > .cds-card-fill, .cds-root [data-cds=\"Card\"]::after, .cds-root [data-cds=\"Card\"]:has([data-cds=\"CardLink\"]:active) > .cds-card-fill, .cds-root [data-cds=\"Card\"]:has([data-",
+    "declarations": {
+     "transition": "none"
+    }
+   },
+   {
+    "selector": ".cds-root:where([data-reduce-motion=\"true\"], [data-reduce-motion=\"true\"] *) [data-cds=\"Card\"] > .cds-card-fill, .cds-root:where([data-reduce-motion=\"true\"], [data-reduce-motion=\"true\"] *) [data-cds=\"C",
+    "declarations": {
+     "transition": "none"
+    }
+   }
+  ],
+  "buttonRules": [
+   {
+    "selector": "html[data-cds-fizzy-lake~=\"color\"]:not([data-cds-theme])[data-mode=\"dark\"] .dframe-root[data-variant=\"web\"] .df-invite-btn:active",
+    "declarations": {
+     "background": "var(--cds-surface-0)"
+    }
+   },
+   {
+    "selector": ".cds-root [data-cds=\"Card\"][data-file-row-card]:has([data-cds=\"CardLink\"]:active) > .cds-card-fill, .cds-root [data-cds=\"Card\"][data-file-row-card]:has([data-cds=\"CardLink\"]:active)::after",
+    "declarations": {
+     "transform": "none"
+    }
+   },
+   {
+    "selector": ".cds-root [data-cds=\"Card\"][data-file-row-card]:has([data-cds=\"CardLink\"]:active) > .cds-card-body",
+    "declarations": {
+     "clip-path": "inset(0 round calc(var(--cds-radius) + calc(.25rem * var(--cds-rem-scale,1))))"
+    }
+   },
+   {
+    "selector": ".dframe-root[data-variant=\"web\"] .df-invite-btn:active",
+    "declarations": {
+     "background": "var(--cds-surface-0)"
+    }
+   },
+   {
+    "selector": ".stacks\\:group-active\\/btn\\:bg-fill-ghost-hover:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-cds-theme] *)):is(:where(.group\\/btn):active ",
+    "declarations": {
+     "background-color": "var(--cds-fill-ghost-hover)"
+    }
+   },
+   {
+    "selector": ".stacks\\:group-active\\/btn\\:bg-fill-primary-hover:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-cds-theme] *)):is(:where(.group\\/btn):activ",
+    "declarations": {
+     "background-color": "var(--cds-fill-primary-hover)"
+    }
+   },
+   {
+    "selector": ".stacks\\:group-active\\/btn\\:layers-1-fill-ghost-hover:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-cds-theme] *)):is(:where(.group\\/btn):a",
+    "declarations": {
+     "background-image": "linear-gradient(var(--cds-fill-ghost-hover) 0 0)"
+    }
+   },
+   {
+    "selector": ".stacks\\:group-active\\/btn\\:layers-1-fill-primary-layer:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-cds-theme] *)):is(:where(.group\\/btn)",
+    "declarations": {
+     "background-image": "linear-gradient(var(--cds-fill-primary-layer) 0 0)"
+    }
+   },
+   {
+    "selector": ".stacks\\:group-active\\/btn\\:layers-2-accent-layer:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-cds-theme] *)):is(:where(.group\\/btn):activ",
+    "declarations": {
+     "background-image": "linear-gradient(var(--cds-bg-accent-layer) 0 0), linear-gradient(var(--cds-bg-accent-layer) 0 0)"
+    }
+   },
+   {
+    "selector": ".stacks\\:group-active\\/btn\\:layers-2-danger-layer:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-cds-theme] *)):is(:where(.group\\/btn):activ",
+    "declarations": {
+     "background-image": "linear-gradient(var(--cds-bg-danger-layer) 0 0), linear-gradient(var(--cds-bg-danger-layer) 0 0)"
+    }
+   },
+   {
+    "selector": ".stacks\\:group-active\\/btn\\:layers-2-fill-secondary-layer:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-cds-theme] *)):is(:where(.group\\/bt",
+    "declarations": {
+     "background-image": "linear-gradient(var(--cds-fill-secondary-layer) 0 0), linear-gradient(var(--cds-fill-secondary-layer) 0 0)"
+    }
+   },
+   {
+    "selector": ":where(.group\\/btn):has(:active) .stacks\\:group-has-\\[\\:active\\]\\/btn\\:bg-fill-ghost-hover:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-cd",
+    "declarations": {
+     "background-color": "var(--cds-fill-ghost-hover)"
+    }
+   },
+   {
+    "selector": ":where(.group\\/btn):has(:active) .stacks\\:group-has-\\[\\:active\\]\\/btn\\:bg-fill-primary-hover:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-",
+    "declarations": {
+     "background-color": "var(--cds-fill-primary-hover)"
+    }
+   },
+   {
+    "selector": ":where(.group\\/btn):has(:active) .stacks\\:group-has-\\[\\:active\\]\\/btn\\:layers-1-fill-ghost-hover:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [d",
+    "declarations": {
+     "background-image": "linear-gradient(var(--cds-fill-ghost-hover) 0 0)"
+    }
+   },
+   {
+    "selector": ":where(.group\\/btn):has(:active) .stacks\\:group-has-\\[\\:active\\]\\/btn\\:layers-1-fill-primary-layer:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], ",
+    "declarations": {
+     "background-image": "linear-gradient(var(--cds-fill-primary-layer) 0 0)"
+    }
+   },
+   {
+    "selector": ":where(.group\\/btn):has(:active) .stacks\\:group-has-\\[\\:active\\]\\/btn\\:layers-2-accent-layer:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-",
+    "declarations": {
+     "background-image": "linear-gradient(var(--cds-bg-accent-layer) 0 0), linear-gradient(var(--cds-bg-accent-layer) 0 0)"
+    }
+   },
+   {
+    "selector": ":where(.group\\/btn):has(:active) .stacks\\:group-has-\\[\\:active\\]\\/btn\\:layers-2-danger-layer:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme], [data-",
+    "declarations": {
+     "background-image": "linear-gradient(var(--cds-bg-danger-layer) 0 0), linear-gradient(var(--cds-bg-danger-layer) 0 0)"
+    }
+   },
+   {
+    "selector": ":where(.group\\/btn):has(:active) .stacks\\:group-has-\\[\\:active\\]\\/btn\\:layers-2-fill-secondary-layer:where([data-cds-fizzy-lake~=\"color\"], [data-cds-fizzy-lake~=\"color\"] *):not(:where([data-cds-theme]",
+    "declarations": {
+     "background-image": "linear-gradient(var(--cds-fill-secondary-layer) 0 0), linear-gradient(var(--cds-fill-secondary-layer) 0 0)"
+    }
+   },
+   {
+    "selector": ".\\[\\&_button\\:enabled\\:active_\\.cds-btn-squish\\>\\.absolute\\]\\:bg-alpha-2\\! button:enabled:active .cds-btn-squish > .absolute",
+    "declarations": {
+     "background-color": "var(--cds-alpha-2) !important"
+    }
+   },
+   {
+    "selector": ".cds-root .group\\/btn:not([disabled]):active .cds-btn-squish, .cds-root .group\\/btn:not([disabled]):has(:active) .cds-btn-squish",
+    "declarations": {
+     "transform": "scale(var(--cds-btn-press-sx), var(--cds-btn-press-sy))",
+     "transition": "transform var(--cds-dur-fast) ease-out"
+    }
+   }
+  ]
+ },
+ "borderWidths": [
+  {
+   "value": "1px",
+   "count": 94
+  },
+  {
+   "value": "0px",
+   "count": 93
+  },
+  {
+   "value": "0.5px",
+   "count": 23
+  },
+  {
+   "value": ".5px",
+   "count": 12
+  },
+  {
+   "value": "2px",
+   "count": 8
+  },
+  {
+   "value": "0px !important",
+   "count": 8
+  },
+  {
+   "value": "medium",
+   "count": 7
+  },
+  {
+   "value": "0",
+   "count": 6
+  },
+  {
+   "value": "1.5px",
+   "count": 6
+  },
+  {
+   "value": "var(--tile-line)",
+   "count": 4
+  },
+  {
+   "value": "",
+   "count": 3
+  },
+  {
+   "value": "4px",
+   "count": 3
+  },
+  {
+   "value": "inherit",
+   "count": 3
+  },
+  {
+   "value": "calc(0px * var(--tw-divide-y-reverse))",
+   "count": 3
+  },
+  {
+   "value": "calc(0px * calc(1 - var(--tw-divide-y-reverse)))",
+   "count": 3
+  },
+  {
+   "value": "3px",
+   "count": 3
+  },
+  {
+   "value": "max(var(--cds-toolbar-line,0px), .5px)",
+   "count": 3
+  },
+  {
+   "value": "var(--cds-toolbar-line,0px)",
+   "count": 3
+  },
+  {
+   "value": "var(--PhoneInputCountrySelectArrow-borderWidth)",
+   "count": 2
+  },
+  {
+   "value": "0.5px !important",
+   "count": 2
+  }
+ ],
+ "outlineWidths": [
+  {
+   "value": "2px",
+   "count": 21
+  },
+  {
+   "value": "1px",
+   "count": 15
+  },
+  {
+   "value": "1.5px",
+   "count": 2
+  },
+  {
+   "value": "0px",
+   "count": 1
+  },
+  {
+   "value": "var(--pl-focus-w)",
+   "count": 1
+  }
+ ],
+ "gridColumns": [
+  {
+   "value": "repeat(2, minmax(0px, 1fr))",
+   "count": 18
+  },
+  {
+   "value": "repeat(3, minmax(0px, 1fr))",
+   "count": 18
+  },
+  {
+   "value": "repeat(4, minmax(0px, 1fr))",
+   "count": 12
+  },
+  {
+   "value": "repeat(1, minmax(0px, 1fr))",
+   "count": 9
+  },
+  {
+   "value": "minmax(0px, 2fr) minmax(0px, 3fr)",
+   "count": 6
+  },
+  {
+   "value": "repeat(12, minmax(0px, 1fr))",
+   "count": 5
+  },
+  {
+   "value": "minmax(0px, 1fr)",
+   "count": 5
+  },
+  {
+   "value": "repeat(5, minmax(0px, 1fr))",
+   "count": 4
+  },
+  {
+   "value": "repeat(10, minmax(0px, 1fr))",
+   "count": 4
+  },
+  {
+   "value": "auto 1fr",
+   "count": 4
+  },
+  {
+   "value": "auto minmax(0px, 1fr)",
+   "count": 4
+  },
+  {
+   "value": "subgrid",
+   "count": 4
+  },
+  {
+   "value": "minmax(0px, 1fr) auto",
+   "count": 3
+  },
+  {
+   "value": "minmax(0px, max-content) auto minmax(0px, max-content)",
+   "count": 2
+  },
+  {
+   "value": "var(--family-columns)",
+   "count": 2
+  },
+  {
+   "value": "repeat(6, minmax(0px, 1fr))",
+   "count": 2
+  },
+  {
+   "value": "3fr 2fr",
+   "count": 2
+  },
+  {
+   "value": "12.5rem minmax(0px, 1fr)",
+   "count": 2
+  },
+  {
+   "value": "auto auto 1fr",
+   "count": 2
+  },
+  {
+   "value": "auto minmax(0px, 1fr) auto",
+   "count": 2
+  },
+  {
+   "value": "auto minmax(0px, 1fr) auto auto",
+   "count": 2
+  },
+  {
+   "value": "fit-content(40%) minmax(0px, 1fr)",
+   "count": 2
+  },
+  {
+   "value": "max-content 1fr",
+   "count": 2
+  },
+  {
+   "value": "minmax(0px, 1fr) auto minmax(0px, 1fr)",
+   "count": 2
+  },
+  {
+   "value": "minmax(0px, 1fr) minmax(0px, 1fr)",
+   "count": 2
+  },
+  {
+   "value": "16rem minmax(0px, 1fr)",
+   "count": 2
+  },
+  {
+   "value": "var(--messages-rail-col) minmax(0,1fr)",
+   "count": 2
+  },
+  {
+   "value": "minmax(0px, 2fr) minmax(0px, 1fr)",
+   "count": 2
+  },
+  {
+   "value": "calc(.75rem * var(--cds-rem-scale,1)) minmax(auto,1fr) minmax(0,max-content) minmax(3.5rem,max-content)",
+   "count": 2
+  },
+  {
+   "value": "var(--df-col-tracks,minmax(0, 1fr))",
+   "count": 1
+  }
+ ],
+ "links": [
+  {
+   "selector": "a",
+   "conditions": [
+    "@layer base"
+   ],
+   "declarations": {
+    "color": "inherit",
+    "text-decoration": "inherit"
+   }
+  },
+  {
+   "selector": "a",
+   "conditions": [
+    "@layer base"
+   ],
+   "declarations": {
+    "color": "inherit",
+    "text-decoration": "none"
+   }
+  },
+  {
+   "selector": "#static-composer-korea-disclosure a",
+   "conditions": [],
+   "declarations": {
+    "color": "inherit",
+    "text-decoration-line": "underline",
+    "text-underline-offset": "3px",
+    "text-decoration-color": "color-mix(in srgb, currentcolor 40%, transparent)"
+   }
+  },
+  {
+   "selector": "._viewer_14nmu_22 .ckv-unhidden a, ._viewer_14nmu_22 .ckv-unhidden code",
+   "conditions": [],
+   "declarations": {
+    "color": "inherit"
+   }
+  },
+  {
+   "selector": "._viewer_14nmu_22 del a, ._viewer_14nmu_22 del code",
+   "conditions": [],
+   "declarations": {
+    "color": "inherit"
+   }
+  },
+  {
+   "selector": "html[data-cds-fizzy-lake~=\"color\"]:not([data-cds-theme]) [data-disclaimer] a[href*=\"8525154-claude-is-providing\"]:not(:hover, :focus-visible)",
+   "conditions": [],
+   "declarations": {
+    "color": "var(--cds-fizzy-lake-color-tertiary)"
+   }
+  },
+  {
+   "selector": ".epitaxy-root .ProseMirror a",
+   "conditions": [],
+   "declarations": {
+    "font-weight": "inherit",
+    "color": "var(--cds-text-accent)"
+   }
+  },
+  {
+   "selector": ".epitaxy-root .ProseMirror a:hover",
+   "conditions": [],
+   "declarations": {
+    "text-decoration": "underline"
+   }
+  },
+  {
+   "selector": "a",
+   "conditions": [
+    "@layer base"
+   ],
+   "declarations": {
+    "color": "inherit",
+    "text-decoration": "inherit"
+   }
+  },
+  {
+   "selector": "a",
+   "conditions": [
+    "@layer base"
+   ],
+   "declarations": {
+    "color": "inherit",
+    "text-decoration": "none"
+   }
+  },
+  {
+   "selector": "div.ProseMirror a",
+   "conditions": [
+    "@layer base"
+   ],
+   "declarations": {
+    "cursor": "pointer",
+    "color": "hsl(var(--accent-000))",
+    "font-weight": "500"
+   }
+  },
+  {
+   "selector": "div.ProseMirror a:hover",
+   "conditions": [
+    "@layer base"
+   ],
+   "declarations": {
+    "color": "hsl(var(--accent-100))"
+   }
+  },
+  {
+   "selector": ".ReactMarkdown a",
+   "conditions": [
+    "@layer base"
+   ],
+   "declarations": {
+    "cursor": "pointer",
+    "color": "hsl(var(--accent-000))",
+    "font-weight": "500"
+   }
+  },
+  {
+   "selector": ".ReactMarkdown a:hover",
+   "conditions": [
+    "@layer base"
+   ],
+   "declarations": {
+    "color": "hsl(var(--accent-100))"
+   }
+  },
+  {
+   "selector": ".tiptap.ProseMirror a",
+   "conditions": [
+    "@layer components"
+   ],
+   "declarations": {
+    "cursor": "pointer",
+    "--cds-font-axis-wght": "initial",
+    "font-variation-settings": "var(--font-opsz-axis,) var(--cds-font-axis-wght,) \"GRAD\" var(--cds-font-grad,0)",
+    "color": "var(--cds-text-accent)",
+    "font-weight": "500"
+   }
+  },
+  {
+   "selector": ".tiptap.ProseMirror a:hover",
+   "conditions": [
+    "@layer components"
+   ],
+   "declarations": {
+    "color": "var(--cds-fill-accent)"
+   }
+  },
+  {
+   "selector": "a, :where(.prose-link)",
+   "conditions": [
+    "@scope (.prose) to (.not-prose, [data-not-prose])"
+   ],
+   "declarations": {
+    "color": "var(--cds-text-accent)",
+    "--_text-link-line": "color-mix(in srgb, currentColor, transparent 60%)",
+    "transition-property": "color, text-decoration-color, box-shadow",
+    "transition-duration": "var(--cds-dur-fast,60ms)",
+    "transition-timing-function": "var(--cds-ease-out)",
+    "text-underline-offset": "3px",
+    "text-decoration-line": "underline",
+    "text-decoration-color": "var(--_text-link-line,currentColor)",
+    "border-radius": "2px"
+   }
+  },
+  {
+   "selector": ":is(a, :where(.prose-link)):is(:hover, :focus-visible)",
+   "conditions": [
+    "@scope (.prose) to (.not-prose, [data-not-prose])"
+   ],
+   "declarations": {
+    "--_text-link-line": "currentColor"
+   }
+  },
+  {
+   "selector": ".has-\\[a\\:focus-visible\\]\\:text-primary:has(:is(a:focus-visible)), .has-\\[a\\:hover\\]\\:text-primary:has(:is(a:hover))",
+   "conditions": [
+    "@layer utilities"
+   ],
+   "declarations": {
+    "color": "var(--cds-text-primary)"
+   }
+  },
+  {
+   "selector": ":where(.group\\/titem):has(a:focus-visible) .group-has-\\[a\\:focus-visible\\]\\/titem\\:text-secondary, :where(.group\\/titem):has(a:focus-visible) .group-has-\\[a\\:focus-visible\\]\\/titem\\:cds-Icon\\:text-sec",
+   "conditions": [
+    "@layer utilities"
+   ],
+   "declarations": {
+    "color": "var(--cds-text-secondary)"
+   }
+  },
+  {
+   "selector": ":where(.group\\/titem):has(a:hover) .group-has-\\[a\\:hover\\]\\/titem\\:text-secondary, :where(.group\\/titem):has(a:hover) .group-has-\\[a\\:hover\\]\\/titem\\:cds-Icon\\:text-secondary [data-cds=\"Icon\"]",
+   "conditions": [
+    "@layer utilities"
+   ],
+   "declarations": {
+    "color": "var(--cds-text-secondary)"
+   }
+  },
+  {
+   "selector": ".group-focus-visible\\/row\\:\\[\\&_\\.tool-row-glyph\\]\\:text-secondary:is(:where(.group\\/row):focus-visible :where(.group-focus-visible\\/row\\:\\[\\&_\\.tool-row-glyph\\]\\:text-secondary)) .tool-row-glyph, :wh",
+   "conditions": [
+    "@layer utilities"
+   ],
+   "declarations": {
+    "color": "var(--cds-text-secondary)"
+   }
+  },
+  {
+   "selector": ".\\[\\&_a\\]\\:text-\\[hsl\\(214_72\\%_34\\%\\)\\] a",
+   "conditions": [
+    "@layer utilities"
+   ],
+   "declarations": {
+    "color": "rgb(24, 78, 149)"
+   }
+  },
+  {
+   "selector": ".\\[\\&_a\\]\\:text-inherit a",
+   "conditions": [
+    "@layer utilities"
+   ],
+   "declarations": {
+    "color": "inherit"
+   }
+  },
+  {
+   "selector": ".\\[\\&_a\\]\\:underline a",
+   "conditions": [
+    "@layer utilities"
+   ],
+   "declarations": {
+    "text-decoration-line": "underline"
+   }
+  },
+  {
+   "selector": ".\\[\\&_a\\]\\:underline-offset-\\[3px\\] a",
+   "conditions": [
+    "@layer utilities"
+   ],
+   "declarations": {
+    "text-underline-offset": "3px"
+   }
+  },
+  {
+   "selector": ".\\[\\&_a\\]\\:hover\\:underline a:hover",
+   "conditions": [
+    "@media (hover: hover)"
+   ],
+   "declarations": {
+    "text-decoration-line": "underline"
+   }
+  },
+  {
+   "selector": ".dark\\:\\[\\&_a\\]\\:text-\\[hsl\\(213_80\\%_79\\%\\)\\]:where([data-mode=\"dark\"], [data-mode=\"dark\"] *) a",
+   "conditions": [
+    "@media screen"
+   ],
+   "declarations": {
+    "color": "rgb(159, 197, 244)"
+   }
+  },
+  {
+   "selector": ".dark\\:\\[\\&_a\\]\\:text-\\[hsl\\(213_80\\%_79\\%\\)\\]:where([data-mode=\"system\"], [data-mode=\"system\"] *):not(:where([data-mode=\"system\"] :is([data-mode=\"light\"], [data-mode=\"dark\"]), [data-mode=\"system\"] :i",
+   "conditions": [
+    "@media screen and (prefers-color-scheme: dark)"
+   ],
+   "declarations": {
+    "color": "rgb(159, 197, 244)"
+   }
+  },
+  {
+   "selector": ".\\[\\&_a\\:hover\\]\\:text-\\[hsl\\(213_68\\%_45\\%\\)\\] a:hover",
+   "conditions": [
+    "@layer utilities"
+   ],
+   "declarations": {
+    "color": "rgb(37, 107, 193)"
+   }
+  }
+ ]
+}
