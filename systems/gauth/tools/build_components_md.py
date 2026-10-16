@@ -252,7 +252,7 @@ def props(v):
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{dim(s[f'border{d}Width'], 'borderWidth')} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role='line')}")
+            bds.append(f"{dim_named(s[f'border{d}Width'], ['borderWidth.hairline', 'borderWidth.strong', 'borderWidth.choice', 'borderWidth.indicator'])} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role='line')}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
@@ -357,7 +357,7 @@ def child_layers(c):
             bits.append("image " + colour(p["bgImage"])[:90])
         if p.get("border"):
             bw, _, bc = p["border"].split(" | ")[0][2:].partition(" solid ")
-            bits.append("border " + (f"{dim(bw, 'borderWidth')} solid {colour(bc, role='line')}" if bc else colour(p["border"].split(" | ")[0][2:], role="line")))
+            bits.append("border " + (f"{dim_named(bw, ['borderWidth.hairline', 'borderWidth.strong', 'borderWidth.choice', 'borderWidth.indicator'])} solid {colour(bc, role='line')}" if bc else colour(p["border"].split(" | ")[0][2:], role="line")))
         if p.get("radius"):
             bits.append("radius " + dims(p["radius"], "radius"))
         if p.get("shadow"):

@@ -324,10 +324,10 @@ The 680 x 64 pill the home page is built around: a faint indigo tint, a 2px indi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 680 x 64; padding `spacing-offgrid.10` `spacing.12` `spacing-offgrid.10` 30px; border `borderWidth.focus` solid `component.question-field.border`; radius `radius.38`; background `component.question-field.background`; text -apple-system 16/normal 400, `palette.ink.black`; icon 29 x 28, `palette.ink.black` |
-| hover, focused, filled | border `borderWidth.focus` solid `component.question-field.border-hover` |
+| default | size 680 x 64; padding `spacing-offgrid.10` `spacing.12` `spacing-offgrid.10` 30px; border `borderWidth.strong` solid `component.question-field.border`; radius `radius.38`; background `component.question-field.background`; text -apple-system 16/normal 400, `palette.ink.black`; icon 29 x 28, `palette.ink.black` |
+| hover, focused, filled | border `borderWidth.strong` solid `component.question-field.border-hover` |
 
-**Tokens.** `borderWidth.focus`, `component.question-field.background`, `component.question-field.border`, `component.question-field.border-hover`, `palette.ink.black`, `radius.38`, `spacing-offgrid.10`, `spacing.12`.
+**Tokens.** `borderWidth.strong`, `component.question-field.background`, `component.question-field.border`, `component.question-field.border-hover`, `palette.ink.black`, `radius.38`, `spacing-offgrid.10`, `spacing.12`.
 
 ![Question field default](components/crops/question-box-default.png) ![Question field hover](components/crops/question-box-hover.png) ![Question field focused](components/crops/question-box-focused.png) ![Question field filled](components/crops/question-box-filled.png)
 
@@ -359,10 +359,10 @@ The dashed drop zone under the field. Hovered only; no file was chosen. Read as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 680 x 207; border `borderWidth.focus` dashed `component.question-field.border`; radius `radius.24`; background rgba(255, 255, 255, 0.4); text -apple-system 18/27 400, `palette.indigo.upload-text`; icon 30 x 30, `palette.ink.black` |
-| hover | border `borderWidth.focus` dashed `palette.indigo.line-strong` |
+| default | size 680 x 207; border `borderWidth.strong` dashed `component.question-field.border`; radius `radius.24`; background rgba(255, 255, 255, 0.4); text -apple-system 18/27 400, `palette.indigo.upload-text`; icon 30 x 30, `palette.ink.black` |
+| hover | border `borderWidth.strong` dashed `palette.indigo.line-strong` |
 
-**Tokens.** `borderWidth.focus`, `component.question-field.border`, `palette.indigo.line-strong`, `palette.indigo.upload-text`, `palette.ink.black`, `radius.24`.
+**Tokens.** `borderWidth.strong`, `component.question-field.border`, `palette.indigo.line-strong`, `palette.indigo.upload-text`, `palette.ink.black`, `radius.24`.
 
 ![Upload panel default](components/crops/upload-panel-default.png) ![Upload panel hover](components/crops/upload-panel-hover.png)
 
@@ -1561,9 +1561,9 @@ The story image in a radius-20 frame, hotspot rings over places in it, a "Conten
 
 **Values (default).** size 1034 x 581.63; background transparent; text Libre Baskerville 12/normal 400, rgba(156, 162, 172, 0.5); icon 18 x 18, `palette.ink.black`.
 
-Child layers that carry the look: span 18x18 background `palette.atlas.hotspot` border `borderWidth.focus` solid rgba(255, 255, 255, 0.94) radius 999px shadow 0px 0px 0px 5px rgba(122, 92, 255, 0.16), 0px 8px 18px 0px rgba(80, 41, 255, 0.2); span 18x18 background `palette.atlas.hotspot` border `borderWidth.focus` solid rgba(255, 255, 255, 0.94) radius 999px shadow 0px 0px 0px 5px rgba(122, 92, 255, 0.16), 0px 8px 18px 0px rgba(80, 41, 255, 0.2); span 18x18 background `palette.atlas.hotspot` border `borderWidth.focus` solid rgba(255, 255, 255, 0.94) radius 999px shadow 0px 0px 0px 5px rgba(122, 92, 255, 0.16), 0px 8px 18px 0px rgba(80, 41, 255, 0.2).
+Child layers that carry the look: span 18x18 background `palette.atlas.hotspot` border `borderWidth.strong` solid rgba(255, 255, 255, 0.94) radius 999px shadow 0px 0px 0px 5px rgba(122, 92, 255, 0.16), 0px 8px 18px 0px rgba(80, 41, 255, 0.2); span 18x18 background `palette.atlas.hotspot` border `borderWidth.strong` solid rgba(255, 255, 255, 0.94) radius 999px shadow 0px 0px 0px 5px rgba(122, 92, 255, 0.16), 0px 8px 18px 0px rgba(80, 41, 255, 0.2); span 18x18 background `palette.atlas.hotspot` border `borderWidth.strong` solid rgba(255, 255, 255, 0.94) radius 999px shadow 0px 0px 0px 5px rgba(122, 92, 255, 0.16), 0px 8px 18px 0px rgba(80, 41, 255, 0.2).
 
-**Tokens.** `borderWidth.focus`, `palette.atlas.hotspot`, `palette.ink.black`.
+**Tokens.** `borderWidth.strong`, `palette.atlas.hotspot`, `palette.ink.black`.
 
 ![Story canvas default](components/crops/story-stage-default.png)
 
@@ -1755,20 +1755,20 @@ Hovered and focused, never followed. Read as `pagination-item` on the Blog page.
 #### Table (features by plan)
 A real <table> in a white card, 1px border, radius 24: a header row with the two plans and their buttons, then label, Free and PLUS cells, the PLUS column tinted cream. Read as `plan-table` on the Gauth PLUS plans page.
 
-**Values (default).** size 1000 x 485; border `borderWidth.focus` solid `palette.paper.table-line`; radius `radius.32`; background transparent; text -apple-system 26/34 500, `palette.ink.800`; icon 118 x 28, `text.primary`.
+**Values (default).** size 1000 x 485; border `borderWidth.strong` solid `palette.paper.table-line`; radius `radius.32`; background transparent; text -apple-system 26/34 500, `palette.ink.800`; icon 118 x 28, `text.primary`.
 
-**Tokens.** `borderWidth.focus`, `palette.ink.800`, `palette.paper.table-line`, `radius.32`, `text.primary`.
+**Tokens.** `borderWidth.strong`, `palette.ink.800`, `palette.paper.table-line`, `radius.32`, `text.primary`.
 
 ![Table (features by plan) default](components/crops/plan-table-default.png)
 
 #### Table header cell
 Read as `plan-table-header` on the Gauth PLUS plans page.
 
-**Values (default).** size 378.5 x 154; padding 0px 0px 0px `spacing.40`; border B: `borderWidth.focus` solid `palette.paper.table-line`; background transparent; text -apple-system 26/34 500, `palette.ink.800`.
+**Values (default).** size 378.5 x 154; padding 0px 0px 0px `spacing.40`; border B: `borderWidth.strong` solid `palette.paper.table-line`; background transparent; text -apple-system 26/34 500, `palette.ink.800`.
 
-Child layers that carry the look: td 378.5x154 border `borderWidth.focus` solid `palette.paper.table-line`.
+Child layers that carry the look: td 378.5x154 border `borderWidth.strong` solid `palette.paper.table-line`.
 
-**Tokens.** `borderWidth.focus`, `palette.ink.800`, `palette.paper.table-line`, `spacing.40`.
+**Tokens.** `borderWidth.strong`, `palette.ink.800`, `palette.paper.table-line`, `spacing.40`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -1779,18 +1779,18 @@ Read as `plan-table-row` on the Gauth PLUS plans page.
 |---|---|
 | default (same: hover) | size 996 x 52; background transparent; text `typography.label`, `text.tab`; icon 21 x 21, `text.tab` |
 
-Child layers that carry the look: td 378.5x52 background `action.secondary`; td 308.8x52 background `action.secondary` border `borderWidth.focus` solid `palette.paper.table-line`; td 308.8x52 background #fef9ee border `borderWidth.focus` solid `palette.paper.table-line`.
+Child layers that carry the look: td 378.5x52 background `action.secondary`; td 308.8x52 background `action.secondary` border `borderWidth.strong` solid `palette.paper.table-line`; td 308.8x52 background #fef9ee border `borderWidth.strong` solid `palette.paper.table-line`.
 
-**Tokens.** `action.secondary`, `borderWidth.focus`, `palette.paper.table-line`, `text.tab`, `typography.label`.
+**Tokens.** `action.secondary`, `borderWidth.strong`, `palette.paper.table-line`, `text.tab`, `typography.label`.
 
 ![Table row default](components/crops/plan-table-row-default.png) ![Table row hover](components/crops/plan-table-row-hover.png)
 
 #### Table cell
 Read as `plan-table-cell` on the Gauth PLUS plans page.
 
-**Values (default).** size 308.75 x 72; padding 33px `spacing.40` 13px `spacing.40`; border L: `borderWidth.focus` solid `palette.paper.table-line`; background `action.secondary`; text `typography.label`, `text.tab`.
+**Values (default).** size 308.75 x 72; padding 33px `spacing.40` 13px `spacing.40`; border L: `borderWidth.strong` solid `palette.paper.table-line`; background `action.secondary`; text `typography.label`, `text.tab`.
 
-**Tokens.** `action.secondary`, `borderWidth.focus`, `palette.paper.table-line`, `spacing.40`, `text.tab`, `typography.label`.
+**Tokens.** `action.secondary`, `borderWidth.strong`, `palette.paper.table-line`, `spacing.40`, `text.tab`, `typography.label`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -2093,9 +2093,9 @@ A 1060 x 580 two-panel dialog: a warm gradient panel with an italic title and th
 #### Table (benefits)
 A three-column comparison inside a 2px gold-bordered card at radius 24: a 600 header row (All Benefits, Gauth PLUS in gold, Free), then 24px rows split into label, a green check or value, and a grey dash. Read as `benefits-table` on the Homework home page.
 
-**Values (default).** size 460 x 347; padding 22px `spacing.20`; border `borderWidth.focus` solid #ffb94d; radius `radius.20`; background transparent; image linear-gradient(107.49deg, rgba(255, 196, 106, 0.3) -2.04%, rgba(255, 196, 106, 0.15) 69.72%); text SF Pro 16/24 700, `text.primary`; icon 41 x 35, `text.primary`.
+**Values (default).** size 460 x 347; padding 22px `spacing.20`; border `borderWidth.strong` solid #ffb94d; radius `radius.20`; background transparent; image linear-gradient(107.49deg, rgba(255, 196, 106, 0.3) -2.04%, rgba(255, 196, 106, 0.15) 69.72%); text SF Pro 16/24 700, `text.primary`; icon 41 x 35, `text.primary`.
 
-**Tokens.** `borderWidth.focus`, `radius.20`, `spacing.20`, `text.primary`.
+**Tokens.** `borderWidth.strong`, `radius.20`, `spacing.20`, `text.primary`.
 
 ![Table (benefits) default](components/crops/benefits-table-default.png)
 
