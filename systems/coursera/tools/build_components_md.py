@@ -234,7 +234,7 @@ PKG = [
     (r'(#ffffff 0px 0px 0px 2px, #[0-9a-f]{6} 0px 0px 0px 3px, #[0-9a-f]{6} 0px 0px 0px 4px), no token', r'\1 (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons)'),
     (r'transparent 0px 0px 0px 1px inset, no token', 'transparent 0px 0px 0px 1px inset (no edge)'),
     (r'#804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token', '#804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`)'),
-    (r'(#[0-9a-f]{6}) 0px 0px 0px 1px inset, no token', r'\1 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour)'),
+    (r'(#[0-9a-f]{6}) 0px 0px 0px 1px inset, no token', r'\1 0px 0px 0px 1px inset (a `core.borderWidth.default` edge drawn as an inset shadow)'),
     (r'#e9eef7 0px 0px 4px 0px, #0f1114 @ 0\.1 0px 4px 12px 4px, no token', '#e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`)'),
     (r'#0f1114 @ 0\.2 0px 8px 16px 0px, no token', '#0f1114 @ 0.2 0px 8px 16px 0px (`component.stats-card.shadow`)'),
     (r'#000000 @ 0\.24 0px 2px 12px 0px, no token', '#000000 @ 0.24 0px 2px 12px 0px (`component.sticky-nav.shadow`)'),
@@ -258,7 +258,7 @@ def tn_clean(c):
 
 
 PROP_ORDER = ['Size', 'Padding', 'Gap', 'Border', 'Radius', 'Background', 'Box shadow', 'Outline',
-              'Font', 'Colour', 'Text decoration', 'Transition', 'Transform', 'Opacity', 'Icon',
+              'Font', 'Colour', 'Label font', 'Label colour', 'Text decoration', 'Transition', 'Transform', 'Opacity', 'Icon',
               'Placeholder', 'Painted']
 PROP_ALIAS = {'Size (w x h)': 'Size', 'Size (w×h)': 'Size'}
 SAME = ('same', '=', '')
@@ -380,7 +380,7 @@ def esc(c):
 
 LABEL = {'Size': 'size', 'Padding': 'padding', 'Gap': 'gap', 'Border': 'border', 'Radius': 'radius',
          'Background': 'background', 'Box shadow': 'shadow', 'Outline': 'outline', 'Font': 'font',
-         'Colour': 'colour', 'Text decoration': 'decoration', 'Transition': 'transition',
+         'Colour': 'colour', 'Label font': 'label font', 'Label colour': 'label colour', 'Text decoration': 'decoration', 'Transition': 'transition',
          'Transform': 'transform', 'Opacity': 'opacity', 'Icon': 'icon', 'Placeholder': 'placeholder',
          'Painted': 'painted by children'}
 
@@ -441,8 +441,9 @@ def part_values(e):
         c = first('Colour')
         if c:
             bits.append('colour %s' % c)
-    if tn and tn[0] not in SAME and first('Colour') and False:
-        pass
+    lf, lc = first('Label font'), first('Label colour')
+    if lf:
+        bits.append('label font %s%s' % (lf, (', ' + lc) if lc else ''))
     ic = first('Icon')
     if ic:
         bits.append('icon %s' % ic)

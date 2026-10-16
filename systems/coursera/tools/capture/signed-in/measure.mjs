@@ -969,6 +969,10 @@ function rows(st) {
     'Painted layers': paintCell(st),
     Font: fontCell(s),
     Colour: colorCell(s.color, 'color'),
+    // The 2026-10-17 measurements also record the element that carries the first visible
+    // text (textStyle), since a wrapper often only inherits the body style.
+    'Label font': st.textStyle ? `${st.textStyle.node.split('.')[0]}: ${fontCell(st.textStyle)}` : '',
+    'Label colour': st.textStyle ? colorCell(st.textStyle.color, 'color') : '',
     'Text decoration': s.textDecorationLine === 'none' ? 'none' : `${s.textDecorationLine} ${s.textDecorationThickness} offset ${s.textUnderlineOffset}`,
     Opacity: s.opacity,
     Transform: s.transform,

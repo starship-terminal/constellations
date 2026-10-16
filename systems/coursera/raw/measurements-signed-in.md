@@ -3787,6 +3787,8 @@ Key `tooltip-signed-in`. Read from the 2026-10-17 copies `ml-overflow-tooltip` (
 | Painted layers | div.cds-159.cds-Tooltip-tooltip 45.4x28.0 bg #002457 (callouts-background-primary-strong, emphasis-primary-background-xxstrong, blue-950) r 4px; span::before.cds-161.cds-Tooltip-arrow 20pxx8px bg #002457 (callouts-background-primary-strong, emphasis-primary-background-xxstrong, blue-950) r 3px 0px |
 | Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
 | Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) |
+| Label font | div: Source Sans Pro 400 14px/20px (typography-body2, typography-body-secondary) |
+| Label colour | #ffffff (neutral-primary-invert, neutral-background-primary, white-0) |
 | Transform | matrix(1, 0, 0, 1, 869, 1197) |
 | Crop | [png](../components/crops/signed-in/tooltip-signed-in-opened.png) |
 
@@ -3808,6 +3810,8 @@ Key `overflow-menu`. Read from the 2026-10-17 copies `ml-menu-open` (tools/captu
 | Painted layers | div.cds-322.cds-172 78.7x106.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 16px shadow rgba(15, 17, 20, 0.1) 0px 0px 4px 0px, rgba(15, 17, 20, 0.1) 0px 4px 12px 4px; ul.cds-actionOverflowMenu-menu 62.7x90.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0); button.cds-113.cds-actionOverflowMenu-menuItem 54.7x40.0 bg #f2f5fa (neutral-background-primary-weak, emphasis-neutral-background-xweak, grey-25) r 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px; button::after.cds-113.cds-actionOverflowMenu-menuItem 58.6562pxx44px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
 | Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
 | Colour | rgba(0,0,0,0.87) (no token) |
+| Label font | button: Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
+| Label colour | #232b3a (interactive-secondary-hover, emphasis-neutral-background-xstrong, grey-900) |
 | Crop | [png](../components/crops/signed-in/overflow-menu-opened.png) |
 
 How: opened: as captured.
@@ -3850,6 +3854,8 @@ Key `rate-dialog`. Read from the 2026-10-17 copies `ml-rate-dialog` (tools/captu
 | Painted layers | div.c-modal-content 720.0x410.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 3px; span.cds-113.cds-365 24.0x24.0 r 50% shadow rgb(128, 78, 228) 0px 0px 0px 1px inset, rgb(240, 246, 255) 0px 0px 0px 1px outline 1px solid rgba(0, 0, 0, 0) offset 2px; div.cds-131.cds-116 664.0x48.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px; fieldset.cds-167.cds-125 664.0x53.0 border T:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| R:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| B:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| L:1px solid #8495b0 (neutral-stroke-primary, grey-400) r 8px |
 | Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
 | Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) |
+| Label font | h3: HelveticaNeue-Light 600 30px/36px, -0.15px (typography-title-small) |
+| Label colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) |
 | Transform | matrix(1, 0, 0, 1, -360, -205) |
 | Cursor | default |
 | Crop | [png](../components/crops/signed-in/rate-dialog-opened.png) |
@@ -3893,6 +3899,8 @@ Key `button-disabled-legacy`. Read from the 2026-10-17 copies `ml-rate-dialog` (
 | Painted layers | button._hy276lt.submit_button 116.1x48.0 bg #c1cbdb (neutral-stroke-primary-weak, grey-200) border T:1px solid #c1cbdb (neutral-stroke-primary-weak, grey-200) \| R:1px solid #c1cbdb (neutral-stroke-primary-weak, grey-200) \| B:1px solid #c1cbdb (neutral-stroke-primary-weak, grey-200) \| L:1px solid #c1cbdb (neutral-stroke-primary-weak, grey-200) r 2px |
 | Font | Source Sans Pro 600 16px/16px |
 | Colour | #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) |
+| Label font | span: Source Sans Pro 600 16px/16px |
+| Label colour | #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) |
 | Transition | all 0.45s cubic-bezier(0.23 |
 | Cursor | not-allowed |
 | Crop | [png](../components/crops/signed-in/button-disabled-legacy-disabled.png) |
@@ -3913,6 +3921,8 @@ Key `select-signed-in`. Read from the 2026-10-17 copies `settings-theme-select-o
 | Painted layers | div.cds-142.cds-127 186.7x48.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px; input.cds-220 186.7x25.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) border T:2px inset #767676 (no token) \| R:2px inset #767676 (no token) \| B:2px inset #767676 (no token) \| L:2px inset #767676 (no token); fieldset.cds-167.cds-136 186.7x53.0 border T:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) \| R:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) \| B:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) \| L:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) r 8px | div.cds-142.cds-127 186.7x48.0 bg #000000 (neutral-background-primary, neutral-primary-invert, white-0) r 8px; input.cds-220 186.7x25.0 bg #3b3b3b (no token) border T:2px inset #858585 (no token) \| R:2px inset #858585 (no token) \| B:2px inset #858585 (no token) \| L:2px inset #858585 (no token); fieldset.cds-167.cds-136 186.7x53.0 border T:1px solid #48546e (neutral-stroke-primary, grey-400) \| R:1px solid #48546e (neutral-stroke-primary, grey-400) \| B:1px solid #48546e (neutral-stroke-primary, grey-400) \| L:1px solid #48546e (neutral-stroke-primary, grey-400) r 8px |
 | Font | Source Sans Pro 400 16px/19.0016px | Source Sans Pro 400 16px/19.0016px |
 | Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) | #f2f5fa (neutral-primary, interactive-secondary, grey-975) |
+| Label font | div: Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | div: Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
+| Label colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) | #f2f5fa (neutral-primary, interactive-secondary, grey-975) |
 | Cursor | text | text |
 | Icon | 24×24, fill none (no token), color #0d0f12 (neutral-primary, interactive-secondary, grey-975) | 24×24, fill none (no token), color #f2f5fa (neutral-primary, interactive-secondary, grey-975) |
 | Crop | [png](../components/crops/signed-in/select-signed-in-opened.png) | [png](../components/crops/signed-in/select-signed-in-dark.png) |
@@ -3934,6 +3944,8 @@ Key `select-menu-signed-in`. Read from the 2026-10-17 copies `settings-theme-sel
 | Painted layers | div.cds-238.cds-221 187.0x160.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 16px shadow rgba(15, 17, 20, 0.1) 0px 0px 4px 0px, rgba(15, 17, 20, 0.1) 0px 4px 12px 4px; li::before.cds-124.cds-274 155pxx36px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px; div.cds-selectOption-container 155.0x32.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 7px; li.cds-124.cds-274 155.0x40.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px |
 | Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
 | Colour | rgba(0,0,0,0.87) (no token) |
+| Label font | div: Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
+| Label colour | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
 | Icon | 20×20, fill none (no token), color #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
 | Crop | [png](../components/crops/signed-in/select-menu-signed-in-opened.png) |
 
@@ -3955,6 +3967,8 @@ Key `select-option-signed-in`. Read from the 2026-10-17 copies `settings-theme-s
 | Painted layers | li.cds-124.cds-274 155.0x40.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px | li.cds-124.cds-274 155.0x40.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 8px; div.cds-selectOption-container 155.0x32.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 7px | li::before.cds-124.cds-274 155pxx36px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px; div.cds-selectOption-container 155.0x32.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 7px |
 | Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | = | = |
 | Colour | rgba(0,0,0,0.87) (no token) | = | = |
+| Label font | div: Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | = | = |
+| Label colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
 | Cursor | pointer | = | = |
 | Icon |  | = | 20×20, fill none (no token), color #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
 | Crop | [png](../components/crops/signed-in/select-option-signed-in-default.png) | [png](../components/crops/signed-in/select-option-signed-in-hover.png) | [png](../components/crops/signed-in/select-option-signed-in-selected-focus-visible-as-captured.png) |
@@ -3994,6 +4008,8 @@ Key `callout-warning`. Read from the 2026-10-17 copies `settings-switch-focus`, 
 | Painted layers | div 592.0x48.0 bg #ffeac9 (feedback-background-warning-weak, emphasis-tertiary-background-weak, yellow-50) r 16px | div 592.0x48.0 bg #3a1703 (feedback-background-warning-weak, emphasis-tertiary-background-weak, yellow-50) r 16px |
 | Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | = |
 | Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) | #f2f5fa (neutral-primary, interactive-secondary, grey-975) |
+| Label font | div: Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | = |
+| Label colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) | #f2f5fa (neutral-primary, interactive-secondary, grey-975) |
 | Icon | 20×20, fill none (no token), color #8e4209 (feedback-warning, emphasis-tertiary-background-strong, yellow-750) | 20×20, fill none (no token), color #f28100 (feedback-warning, emphasis-tertiary-background-strong, yellow-750) |
 | Crop | [png](../components/crops/signed-in/callout-warning-default.png) | [png](../components/crops/signed-in/callout-warning-dark.png) |
 
@@ -4015,6 +4031,8 @@ Key `button-secondary-destructive`. Read from the 2026-10-17 copies `settings-sw
 | Painted layers | button.cds-124.cds-button-disableElevation 152.1x48.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset | button.cds-124.cds-button-disableElevation 152.1x48.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 8px shadow rgb(11, 64, 139) 0px 0px 0px 1px inset |
 | Font | Source Sans Pro 600 16px/24px, 0.16px (typography-title3, typography-action-primary) | = |
 | Colour | #0056d2 (interactive-primary, feedback-informative, blue-800) | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
+| Label font | span: Source Sans Pro 600 16px/24px, 0.16px (typography-title3, typography-action-primary) | = |
+| Label colour | #0056d2 (interactive-primary, feedback-informative, blue-800) | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
 | Cursor | pointer | = |
 | Crop | [png](../components/crops/signed-in/button-secondary-destructive-default.png) | [png](../components/crops/signed-in/button-secondary-destructive-hover.png) |
 
@@ -4034,6 +4052,8 @@ Key `share-dialog`. Read from the 2026-10-17 copies `ml-share-copied` (tools/cap
 | Painted layers | div 460.0x290.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0); svg 50.0x50.0 bg #0056d2 (interactive-primary, feedback-informative, blue-800) r 32px; input.rc-CopyItem__input 430.0x46.0 bg #f2f5fa (neutral-background-primary-weak, emphasis-neutral-background-xweak, grey-25) border T:1px solid #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) \| R:1px solid #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) \| B:1px solid #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) \| L:1px solid #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25); div 78.0x40.0 |
 | Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
 | Colour | #1f1f1f (no token) |
+| Label font | h3: Source Sans Pro 600 30px/36px, -0.15px (typography-title-small) |
+| Label colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) |
 | Crop | [png](../components/crops/signed-in/share-dialog-default.png) |
 
 How: default: as captured.
@@ -4052,6 +4072,8 @@ Key `share-copy-button`. Read from the 2026-10-17 copies `ml-share-copied` (tool
 | Painted layers | div 78.0x40.0 |
 | Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
 | Colour | #1f1f1f (no token) |
+| Label font | span: Source Sans Pro 600 16px/20px, -0.048px (typography-subtitle-medium) |
+| Label colour | #136ef0 (callouts-background-primary, blue-700) |
 | Cursor | pointer |
 | Crop | [png](../components/crops/signed-in/share-copy-button-default.png) |
 
