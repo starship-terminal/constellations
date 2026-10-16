@@ -224,8 +224,10 @@ def describe(s, th, base=None, o=None):
         op = float(s["opacity"])
         n = next((pick(k) for (kind, v), k in IDX[th][1].items() if kind == "opacity" and v == op), None)
         out.append(("opacity", f"`{n}`" if n else s["opacity"]))
-    if keep("transform") and base is not None:
-        out.append(("transform", "none (face drops onto its lip)" if s["transform"] == "none" else s["transform"]))
+    if keep("transform"):
+        tr = describe_transform(s, base is not None)
+        if base is not None or tr != "none":
+            out.append(("transform", tr))
     if keep("text-decoration-line") and s["text-decoration-line"] != "none":
         out.append(("decoration", s["text-decoration-line"]))
     if base is None and px(s["height"]) == 63:
@@ -242,6 +244,24 @@ def describe(s, th, base=None, o=None):
             out.append(("padding", " ".join(pad)))
         out.append(("type", name_typo(s, th)))
     return out
+
+
+def describe_transform(s, changed):
+    """A translate-only matrix as the lift or shift it is; anything else as written."""
+    t = s["transform"]
+    if t == "none":
+        return "none (face drops onto its lip)" if changed else "none"
+    m = re.fullmatch(r"matrix\(1, 0, 0, 1, (-?[\d.]+), (-?[\d.]+)\)", t)
+    if not m:
+        return t
+    x, y = float(m.group(1)), float(m.group(2))
+    w, h = px(s["width"]) or 0, px(s["height"]) or 0
+    if x and y and abs(x + w / 2) < 1 and abs(y + h / 2) < 1:
+        return "translate(-50%, -50%) (centred on its anchor)"
+    if x == 0 and y == -4:
+        return "translateY(-4px) (`size.button3d-lift`: the face rests above its lip)"
+    parts = ([f"translateX({x:g}px)"] if x else []) + ([f"translateY({y:g}px)"] if y else [])
+    return " ".join(parts) or "none"
 
 
 def fmt(items):
