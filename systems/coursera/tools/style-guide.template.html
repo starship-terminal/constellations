@@ -1,5 +1,5 @@
 <title>Coursera style guide</title>
-<meta name="description" content="Coursera (coursera.org, CDS) design tokens and course-page components, rendered from tokens.json with the measured values, in light and a forced dark.">
+<meta name="description" content="Coursera (coursera.org, CDS) design tokens and course-page components, rendered from tokens.json with the measured values, in light and dark.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
@@ -442,8 +442,8 @@ a.btn.primary:hover, a.btn.primary.is-hover, a.btn.primary.is-focus, a.btn.prima
 <div class="wrap">
 <section class="s" id="intro">
   <h2 class="sh">Coursera, measured</h2>
-  <p class="lead">A reference built from coursera.org as it rendered on 2026-09-29: the public search, course and specialization pages, and a learner's signed-in course home, grades, item pages and My Learning. Every colour, radius, shadow and type style on this page is a CSS custom property generated from <code>tokens.json</code>, which is itself generated from the computed styles in <code>raw/</code>. Hover any swatch or row for the source of its value.</p>
-  <p class="lead">Coursera's design system (CDS) writes every colour as a <code>light-dark()</code> pair, but learners are never offered a dark theme on the captured pages. The dark theme here is a forced flip of those pairs. Component colours that no CDS token covers were measured in light only, so they keep their light value in dark. The theme button at the top right cycles auto, light and dark; auto follows the system.</p>
+  <p class="lead">A reference built from coursera.org as it rendered on 2026-09-29 and 2026-10-17: the public search, course and specialization pages, and a learner's signed-in course home, grades, item pages and My Learning. Every colour, radius, shadow and type style on this page is a CSS custom property generated from <code>tokens.json</code>, which is itself generated from the computed styles in <code>raw/</code>. Hover any swatch or row for the source of its value.</p>
+  <p class="lead">Coursera's design system (CDS) writes every colour as a <code>light-dark()</code> pair. Signed-in learners can choose Dark mode in Account settings, and it paints exactly the dark side of those pairs, which is the dark theme here. The few component colours no CDS token covers were read again in dark on 2026-10-17. The theme button at the top right cycles auto, light and dark; auto follows the system.</p>
   <p class="note">Type is Source Sans Pro, which Coursera serves under that name from the open-licence Source Sans 3; this page loads Source Sans 3 from Google Fonts. Values not captured are marked in place. Components follow the measurement files; the notes under each say what was read from a crop rather than from computed style.</p>
 </section>
 
@@ -618,7 +618,7 @@ a.btn.primary:hover, a.btn.primary.is-hover, a.btn.primary.is-focus, a.btn.prima
       <div class="cell"><span class="tag due">Due in 3 days</span><span class="cap">Rail due tag, one line</span></div>
       <div class="cell"><span class="tag due two">Due tomorrow by 11:59 PM +00</span><span class="cap">Rail due tag, wrapping</span></div>
     </div>
-    <p class="note">In the forced dark, the Top Instructor and Top AI program fills keep their light value (CDS has no token, so no dark pair) while their text colour flips, so both lose contrast there. That is a gap in what was captured, not a design.</p>
+    <p class="note">In dark, the Top Instructor and Top AI program fills flip to blue.900 and purple.900, read with <code>data-color-theme="dark"</code> on 2026-10-17.</p>
   </div>
 
   <h3 class="sub">Search field</h3>

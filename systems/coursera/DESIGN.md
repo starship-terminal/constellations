@@ -98,6 +98,40 @@ colors:
   interactive-secondary-selected: "#1c2026"
   interactive-stroke-primary-focus: "#804ee4"
   interactive-stroke-primary-focus-invert: "#f0f6ff"
+  role-background-page: "#ffffff"
+  role-background-page-learner: "#f2f5fa"
+  role-background-surface: "#ffffff"
+  role-background-raised: "#ffffff"
+  role-background-overlay: "#ffffff"
+  role-background-scrim: "rgba(99, 99, 99, 0.5)"
+  role-background-selected: "#f0f6ff"
+  role-text-primary: "#0d0f12"
+  role-text-secondary: "#48546e"
+  role-text-disabled: "#a7b4c9"
+  role-text-on-accent: "#ffffff"
+  role-text-link: "#0056d2"
+  role-text-link-hover: "#0b408b"
+  role-text-placeholder: "#48546e"
+  role-border-default: "#c1cbdb"
+  role-border-strong: "#8495b0"
+  role-border-hover: "#0b408b"
+  role-border-focus: "#804ee4"
+  role-border-divider: "#e9eef7"
+  role-accent-default: "#0056d2"
+  role-accent-hover: "#0b408b"
+  role-accent-pressed: "#3c0f8a"
+  role-status-info-fill: "#e3eeff"
+  role-status-info-text: "#0056d2"
+  role-status-info-border: "#0056d2"
+  role-status-success-fill: "#e0f4dc"
+  role-status-success-text: "#197d12"
+  role-status-success-border: "#197d12"
+  role-status-warning-fill: "#ffeac9"
+  role-status-warning-text: "#8e4209"
+  role-status-warning-border: "#8e4209"
+  role-status-danger-fill: "#fad2d8"
+  role-status-danger-text: "#c51e37"
+  role-status-danger-border: "#c51e37"
   component-hero-band: "rgba(0, 86, 210, 0.05)"
   component-hero-art-fill: "#e3eeff"
   component-hero-art-stroke: "#6d7c99"
@@ -273,6 +307,12 @@ typography:
     fontWeight: 700
     lineHeight: "1.25rem"
     letterSpacing: "-0.1px"
+  code:
+    fontFamily: "monospace"
+    fontSize: "0.875rem"
+    fontWeight: 400
+    lineHeight: "16px"
+    letterSpacing: "0px"
 rounded:
   max: "50px"
   "25": "2px"
@@ -312,9 +352,9 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: Course catalogue, course and module pages, course cards, a mature enterprise design system (386 --cds-* variables).
 
-Captured 2026-09-29, public pages signed out, learner pages signed in. Themes: light, dark.
+Captured 2026-10-17, public pages signed out, learner pages signed in. Themes: light, dark.
 
-A token set and component reference for Coursera's web product, for rebuilding our course list and course detail pages in the style of a real course platform. It was read from coursera.org on 2026-09-29: the public catalogue pages headless (home, search, browse, course, specialization, certificate and the Explore topic page with its compact course cards, chip rows and scrolling card rows), and the signed-in learner pages from one learner's account with one enrolled course, all at 1440 wide and (for public pages) 390 wide.
+A token set and component reference for Coursera's web product, for rebuilding our course list and course detail pages in the style of a real course platform. It was read from coursera.org on 2026-09-29: the public catalogue pages headless (home, search, browse, course, specialization, certificate and the Explore topic page with its compact course cards, chip rows and scrolling card rows), and the signed-in learner pages from one learner's account with one enrolled course, all at 1440 wide and (for public pages) 390 wide. A refresh on 2026-10-17 added the log-in dialog and its validation error, the AI coach text area, the 404 page, the z-index layers and reduced-motion rules, and, signed in, the course overflow menu, the review and share dialogs, and Account settings (switches, the colour theme select, a warning notification) in light and in the dark theme learners can now choose. It also added written [patterns](patterns.md) and a coverage table.
 
 The earlier references (Duolingo, Brilliant, NotebookLM) are learning apps. Coursera is the one built around courses: a catalogue of product cards, a course landing page with modules and outcomes, and a course home where a learner works through modules, lessons and items with deadlines and grades. Those last screens map onto our `/courses` and course pages most directly.
 
@@ -331,7 +371,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-28 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Source Sans Pro.
+29 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Source Sans Pro, monospace.
 
 ### Fonts (from README.md)
 
@@ -339,6 +379,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 |---|---|---|
 | Source Sans Pro | 400, 600, 700, with italics | Every UI string. Coursera serves Source Sans 3 under this family name |
 | Boutros Coursera | | Arabic script only |
+| Browser monospace | 400 | Code in readings. The reading rule sets 14px on a 16px line but no family, so the browser default renders (Menlo on macOS); `core.typography.code` |
 
 Source Sans 3 is open source, so the style guide loads it from Google Fonts and needs no local font folder. Letter-spacing is 0 on the type tokens CDS uses today; the older `title*` and `display*` styles carry -0.1px and -0.2px, and the tracking some components add is in `core.tracking`.
 
