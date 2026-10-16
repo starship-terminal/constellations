@@ -617,7 +617,7 @@ for (const [n, t] of flat(T.core.spacing)) sp.insertAdjacentHTML('beforeend', `<
 const rd = document.getElementById('radius');
 for (const [n, t] of flat(T.core.radius)) rd.insertAdjacentHTML('beforeend', `<div class="bx" title="${esc(t.s)}" style="border-radius:var(--radius-${n})">${esc(n)}</div>`);
 const sz = document.querySelector('#sizes tbody');
-for (const grp of ['size', 'layout', 'breakpoint', 'fontSize', 'lineHeight', 'fontWeight', 'focus', 'scale']) for (const [n, t] of flat(T.core[grp])) sz.insertAdjacentHTML('beforeend', `<tr><td><code>${grp}.${esc(n)}</code></td><td>${esc(show(t.v))}</td><td class="src">${esc(t.s)}${t.d ? '. ' + esc(t.d) : ''}</td></tr>`);
+for (const grp of ['spacing-offgrid', 'borderWidth', 'size', 'layout', 'grid', 'breakpoint', 'zIndex', 'fontSize', 'lineHeight', 'fontWeight', 'focus', 'scale']) for (const [n, t] of flat(T.core[grp])) sz.insertAdjacentHTML('beforeend', `<tr><td><code>${grp}.${esc(n)}</code></td><td>${esc(show(t.v))}</td><td class="src">${esc(t.s)}${t.d ? '. ' + esc(t.d) : ''}</td></tr>`);
 // shadows
 const sh = document.getElementById('shadows');
 for (const [n, t] of flat(T.light.elevation)) sh.insertAdjacentHTML('beforeend', `<div><div class="box" style="box-shadow:var(--elevation-${n})"></div><div class="cap"><b>${esc(n)}</b> · ${esc(t.s.replace(/^measured raw\/measurements.md/, ''))}</div></div>`);
