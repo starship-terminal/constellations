@@ -219,6 +219,9 @@ def describe(s, th, base=None, o=None):
         out.append(("size", "`size.appBar` less its 1px border (calc(100% - 1px))"))
     elif base is None and (px(s["height"]) or 999) <= 64:
         out.append(("size", f"{name_dim(s['height'], th, 'size')} high"))
+    elif base is None:  # content-sized boxes (menus, dialogs, cards): the height is the content's, not a spec
+        out.append(("size", "content height"))
+    if base is None:
         if s["border-radius"] != "0px":
             out.append(("radius", name_dim(s["border-radius"], th, "radius")))
         pad = [name_dim(p, th, "space") for p in s["padding"].split()]

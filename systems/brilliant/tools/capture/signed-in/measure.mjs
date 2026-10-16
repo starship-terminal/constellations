@@ -38,7 +38,8 @@ const SPECS = [
   S('radio', 'settings-dark-account', '[data-slot=radio]', { part: '[data-slot=radio-indicator]' }),
   S('text-field', 'settings-dark-account', 'input[type=text]'),
   S('text-area', 'koji-dark-textarea-filled', 'textarea', { states: ['default', 'focus-visible'] }),
-  S('text-area-pill', 'koji-dark-textarea-filled', 'textarea', { up: 4, states: ['default', 'focus-visible'] }),
+  // The painted pill is the textarea's nearest rounded ancestor; focus is forced on the textarea itself (forceOn), as a user focuses it.
+  S('text-area-pill', 'koji-dark-textarea-filled', 'textarea', { pick: (els) => { let e = els[0]; while (e && getComputedStyle(e).borderTopLeftRadius === '0px') e = e.parentElement; return e; }, forceOn: 'textarea', states: ['default', 'focus-visible'] }),
   S('menu-item', 'home-dark-menu-keyboard', '[data-slot=dropdown-menu-item]:not([data-highlighted])'),
   S('menu-item-highlighted', 'home-dark-menu-keyboard', '[data-slot=dropdown-menu-item][data-highlighted]', { states: ['default', 'focus-visible'] }),
   S('menu', 'home-dark-menu-keyboard', '[role=menu]', { states: ['default'] }),
@@ -86,7 +87,7 @@ for (const [copy, specs] of Object.entries(byCopy)) {
       if (found.text === undefined) { rec.error = 'not found in copy'; (out[s.name] ||= {})[theme] = rec; continue; }
       rec.label = found.text;
       const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
-      const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: `[data-m="${s.name}"]` });
+      const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: s.forceOn ? `[data-m="${s.name}"] ${s.forceOn}` : `[data-m="${s.name}"]` });
       for (const st of s.states) {
         await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: FORCE[st] || [] });
         await page.waitForTimeout(st === 'default' ? 50 : 450); // let transitions settle

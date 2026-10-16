@@ -6,7 +6,7 @@ Read a row as: what changes from the default in that state. "browser default rin
 
 ## Component specs (2026-10)
 
-557 of 563 values in these specs are named by a token; the 6 others are printed raw and marked "no token".
+609 of 615 values in these specs are named by a token; the 6 others are printed raw and marked "no token".
 
 16 of 19 checklist components are captured; select and checkbox are not present, and toast was never fired.
 
@@ -116,7 +116,7 @@ The 3D button (`data-slot=button3d`: a face lifted 4px over a same-hue lip) is t
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | text `text.secondary`; shadow none | text `text.secondary`; shadow none | [dark](components/crops/2026-10/link-dark-default.png) [light](components/crops/2026-10/link-light-default.png) |
+| default | text `text.secondary`; shadow none; size content height; padding 0 `spacing.1`; type `typography.body.base` | text `text.secondary`; shadow none; size content height; padding 0 `spacing.1`; type `typography.body.base` | [dark](components/crops/2026-10/link-dark-default.png) [light](components/crops/2026-10/link-light-default.png) |
 | hover | text `text.link`; decoration underline | text `text.link`; decoration underline | [dark](components/crops/2026-10/link-dark-hover.png) [light](components/crops/2026-10/link-light-hover.png) |
 | focus-visible | fill `bg.primary`; shadow `focusRing.width` in `border.select` | fill `bg.primary`; shadow `focusRing.width` in `border.select` | [dark](components/crops/2026-10/link-dark-focus-visible.png) [light](components/crops/2026-10/link-light-focus-visible.png) |
 | pressed | text `text.link`; decoration underline | text `text.link`; decoration underline | [dark](components/crops/2026-10/link-dark-active.png) [light](components/crops/2026-10/link-light-active.png) |
@@ -146,8 +146,7 @@ The Koji prompt: a borderless auto-growing textarea inside a frosted pill (`blur
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | text `text.primary`; shadow none; size 36px (no token) high; type `typography.body.base` | text `text.primary`; shadow none; size 36px (no token) high; type `typography.body.base` | [dark](components/crops/2026-10/text-area-pill-dark-default.png) [light](components/crops/2026-10/text-area-pill-light-default.png) |
-| focus-visible | focus browser default ring (no product style) | focus browser default ring (no product style) | [dark](components/crops/2026-10/text-area-pill-dark-focus-visible.png) [light](components/crops/2026-10/text-area-pill-light-focus-visible.png) |
+| default | fill color(srgb 1 1 1 / 0.15) (no token); text `text.primary`; border `borderWidth.default` `border.secondary`; shadow `shadow.base`; size content height; radius `radius.3xl`; padding `spacing.3.5`; type `typography.body.base` | fill color(srgb 1 1 1 / 0.95) (no token); text `text.primary`; border `borderWidth.default` `border.secondary`; shadow `shadow.base`; size content height; radius `radius.3xl`; padding `spacing.3.5`; type `typography.body.base` | [dark](components/crops/2026-10/text-area-pill-dark-default.png) [light](components/crops/2026-10/text-area-pill-light-default.png) |
 
 ### Select
 
@@ -216,14 +215,14 @@ Two tab sets: the app header (Home, Topics, You; selected has an underline bar a
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | text `text.primary`; shadow none; size `size.appBar` less its 1px border (calc(100% - 1px)) | text `text.primary`; shadow none; size `size.appBar` less its 1px border (calc(100% - 1px)) | [dark](components/crops/2026-10/nav-tab-selected-dark-default.png) [light](components/crops/2026-10/nav-tab-selected-light-default.png) |
+| default | text `text.primary`; shadow none; size `size.appBar` less its 1px border (calc(100% - 1px)); type `typography.body.base` | text `text.primary`; shadow none; size `size.appBar` less its 1px border (calc(100% - 1px)); type `typography.body.base` | [dark](components/crops/2026-10/nav-tab-selected-dark-default.png) [light](components/crops/2026-10/nav-tab-selected-light-default.png) |
 | focus-visible | focus browser default ring (no product style) | focus browser default ring (no product style) | [dark](components/crops/2026-10/nav-tab-selected-dark-focus-visible.png) [light](components/crops/2026-10/nav-tab-selected-light-focus-visible.png) |
 
 **nav-tab** (Topics; `a[data-selected="false"]`)
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | text `text.secondary`; shadow none; size `size.appBar` less its 1px border (calc(100% - 1px)) | text `text.secondary`; shadow none; size `size.appBar` less its 1px border (calc(100% - 1px)) | [dark](components/crops/2026-10/nav-tab-dark-default.png) [light](components/crops/2026-10/nav-tab-light-default.png) |
+| default | text `text.secondary`; shadow none; size `size.appBar` less its 1px border (calc(100% - 1px)); type `typography.body.base` | text `text.secondary`; shadow none; size `size.appBar` less its 1px border (calc(100% - 1px)); type `typography.body.base` | [dark](components/crops/2026-10/nav-tab-dark-default.png) [light](components/crops/2026-10/nav-tab-light-default.png) |
 | hover | text `text.primary` | text `text.primary` | [dark](components/crops/2026-10/nav-tab-dark-hover.png) [light](components/crops/2026-10/nav-tab-light-hover.png) |
 | focus-visible | focus browser default ring (no product style) | focus browser default ring (no product style) | [dark](components/crops/2026-10/nav-tab-dark-focus-visible.png) [light](components/crops/2026-10/nav-tab-light-focus-visible.png) |
 | pressed | text `text.primary` | text `text.primary` | [dark](components/crops/2026-10/nav-tab-dark-active.png) [light](components/crops/2026-10/nav-tab-light-active.png) |
@@ -253,7 +252,7 @@ Base UI dropdown (`role=menu`). Hover and keyboard focus both set `data-highligh
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | fill `bg.elevated`; text `text.primary`; shadow `shadow.base` | fill `bg.elevated`; text `text.primary`; shadow `shadow.base` | [dark](components/crops/2026-10/menu-dark-default.png) [light](components/crops/2026-10/menu-light-default.png) |
+| default | fill `bg.elevated`; text `text.primary`; shadow `shadow.base`; size content height; radius `radius.md`; type `typography.body.base` | fill `bg.elevated`; text `text.primary`; shadow `shadow.base`; size content height; radius `radius.md`; type `typography.body.base` | [dark](components/crops/2026-10/menu-dark-default.png) [light](components/crops/2026-10/menu-light-default.png) |
 
 **menu-item** (Settings; `[data-slot=dropdown-menu-item]:not([data-highlighted])`)
 
@@ -275,7 +274,7 @@ Base UI tooltip on hover or focus of a 12px info icon; `bg.elevated`, `shadow.ba
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | fill `bg.elevated`; text `text.secondary`; shadow `shadow.base` | fill `bg.elevated`; text `text.secondary`; shadow `shadow.base` | [dark](components/crops/2026-10/tooltip-dark-default.png) [light](components/crops/2026-10/tooltip-light-default.png) |
+| default | fill `bg.elevated`; text `text.secondary`; shadow `shadow.base`; size content height; radius `radius.lg`; padding `spacing.3` `spacing.4`; type `typography.body.sm` | fill `bg.elevated`; text `text.secondary`; shadow `shadow.base`; size content height; radius `radius.lg`; padding `spacing.3` `spacing.4`; type `typography.body.sm` | [dark](components/crops/2026-10/tooltip-dark-default.png) [light](components/crops/2026-10/tooltip-light-default.png) |
 
 **tooltip-trigger** (no label; `[data-slot=tooltip-trigger]`)
 
@@ -294,13 +293,13 @@ Base UI dialog (`modal-content`), `shadow.md`, max `size.modal-max`; the scrim i
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | fill `bg.elevated`; text `text.primary`; shadow `shadow.md` | fill `bg.elevated`; text `text.primary`; shadow `shadow.md` | [dark](components/crops/2026-10/dialog-dark-default.png) [light](components/crops/2026-10/dialog-light-default.png) |
+| default | fill `bg.elevated`; text `text.primary`; shadow `shadow.md`; size content height; radius `radius.2xl`; padding `spacing.8` `spacing.5` `spacing.4`; type `typography.body.base` | fill `bg.elevated`; text `text.primary`; shadow `shadow.md`; size content height; radius `radius.2xl`; padding `spacing.8` `spacing.5` `spacing.4`; type `typography.body.base` | [dark](components/crops/2026-10/dialog-dark-default.png) [light](components/crops/2026-10/dialog-light-default.png) |
 
 **dialog-scrim** (no label; `[data-slot=modal-overlay]`)
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | fill `special.overlay.default`; text `text.primary`; shadow none | fill `special.overlay.default`; text `text.primary`; shadow none | [dark](components/crops/2026-10/dialog-scrim-dark-default.png) [light](components/crops/2026-10/dialog-scrim-light-default.png) |
+| default | fill `special.overlay.default`; text `text.primary`; shadow none; size content height; type `typography.body.base` | fill `special.overlay.default`; text `text.primary`; shadow none; size content height; type `typography.body.base` | [dark](components/crops/2026-10/dialog-scrim-dark-default.png) [light](components/crops/2026-10/dialog-scrim-light-default.png) |
 
 ### Toast
 
@@ -314,14 +313,14 @@ Course cards are 3D like the button (2px `border.solid` edge plus a 4px lip); su
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | fill `bg.primary`; text `text.primary`; border `borderWidth.default` `border.solid`; shadow lip 0 4px 0 in `border.solid` | fill `bg.primary`; text `text.primary`; border `borderWidth.default` `border.solid`; shadow lip 0 4px 0 in `border.solid` | [dark](components/crops/2026-10/card-course-dark-default.png) [light](components/crops/2026-10/card-course-light-default.png) |
+| default | fill `bg.primary`; text `text.primary`; border `borderWidth.default` `border.solid`; shadow lip 0 4px 0 in `border.solid`; size content height; radius `radius.xl`; type `typography.body.base` | fill `bg.primary`; text `text.primary`; border `borderWidth.default` `border.solid`; shadow lip 0 4px 0 in `border.solid`; size content height; radius `radius.xl`; type `typography.body.base` | [dark](components/crops/2026-10/card-course-dark-default.png) [light](components/crops/2026-10/card-course-light-default.png) |
 | focus-visible | focus browser default ring (no product style) | focus browser default ring (no product style) | [dark](components/crops/2026-10/card-course-dark-focus-visible.png) [light](components/crops/2026-10/card-course-light-focus-visible.png) |
 
 **weekly-summary-card** (Weekly summaryOct 12 – Oct 17, 2026No pr; `section, [data-slot=box]`)
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | fill gradient (see crop); text `text.primary`; border `borderWidth.default` `border.primary`; shadow none | fill gradient (see crop); text `text.primary`; border `borderWidth.default` `border.primary`; shadow none | [dark](components/crops/2026-10/weekly-summary-card-dark-default.png) [light](components/crops/2026-10/weekly-summary-card-light-default.png) |
+| default | fill gradient (see crop); text `text.primary`; border `borderWidth.default` `border.primary`; shadow none; size content height; radius `radius.2xl`; padding `spacing.9`; type `typography.body.base` | fill gradient (see crop); text `text.primary`; border `borderWidth.default` `border.primary`; shadow none; size content height; radius `radius.2xl`; padding `spacing.9`; type `typography.body.base` | [dark](components/crops/2026-10/weekly-summary-card-dark-default.png) [light](components/crops/2026-10/weekly-summary-card-light-default.png) |
 
 ### List row
 

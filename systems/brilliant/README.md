@@ -8,7 +8,7 @@ A token set, component reference and pattern guide for Brilliant's web app, for 
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and component with the real values, in both themes (toggle top right, defaults to the system theme). Open it in a browser, or paste sections into Paper. |
 | [components.md](components.md) | Token-based specs for the 19 checklist components, state by state in both themes (generated), then the 2026-09 discovery list, product components, the icon index and the Gaps. |
 | [patterns.md](patterns.md) | The eight checklist patterns (app shell, forms, empty and loading states, destructive confirmation, feedback, search, data display, onboarding), each tied to screenshots. |
-| [components/crops/](components/crops) | 82 per-component crops from 2026-09, plus [2026-10/](components/crops/2026-10): 175 crops of every measured component in each forced state that changed something, dark and light. |
+| [components/crops/](components/crops) | 82 per-component crops from 2026-09, plus [2026-10/](components/crops/2026-10): 173 crops of every measured component in each forced state that changed something, dark and light. |
 | [icons/](icons) | 15 app glyphs saved from the signed-in pages (`icons/app/`, named by role and size) and 32 SVGs pulled from the public pages (`icons/public/`, named by hash, indexed in [components.md](components.md#icons)). Brilliant's property, kept for reference only. |
 | [screenshots/](screenshots) | 73 `{page}-{theme}-{state}.png` captures of the real product at 2x, `mobile-*` at 390x844, from 2026-09; [app-2026-10/](screenshots/app-2026-10) holds 38 more from the refresh (15 page copies rendered in dark and light, 5 full-page renders, 3 Help Center search states). |
 | [raw/](raw) | The unprocessed readings: every Panda CSS variable in both themes (`css-vars-public.json`), all 432 colour variables resolved per theme (`colors.tsv`), the 33 text styles (`text-styles.tsv`), per-surface computed styles (`measurements.md`) and the headless dumps of the public and pricing pages; from 2026-10, per-component computed styles in every forced state (`components-computed.json`), stylesheet rules for fonts, focus, motion and button states (`css-rules.json`), page grids (`layout.json`) and the readings taken live in the browser (`live-readings.json`). |
@@ -126,7 +126,13 @@ python3 tools/build_components_md.py
 
 `build_tokens.py` reads `raw/css-vars-public.json`, `raw/text-styles.tsv` and the 2026-10 readings (`raw/css-rules.json`, `raw/components-computed.json`, `raw/layout.json`) and writes `tokens.json`; component colours and their sources are listed in its `comp()` block, accent and feedback roles in `accent_feedback()`. `build_style_guide.py` renders `style-guide.html` from `tokens.json` and `tools/style-guide.template.html`, turning every token into a CSS variable so the page cannot drift from the file. `build_components_md.py` writes `components.md` from `raw/components-computed.json`, naming each value by its token, followed by `tools/components-2026-09.md` and `tools/components-gaps.md`. All three are deterministic: re-running them on this commit reproduces their files byte for byte. Edit the raw inputs or the builders, never the generated files. [patterns.md](patterns.md) is written by hand from the screenshots it links.
 
-To capture again (2026-10 route): the owner signs in to brilliant.org in a browser pane; paste `tools/capture/signed-in/snapshot.js` into the page and call `__snap('<page>-dark-<state>', REDACT)` with the account's redaction rules from `~/.design-systems/brilliant-redact.json`; write each copy with `unsnap.py <spill> ~/.design-systems/snaps/brilliant` (it refuses a copy that still holds a redacted string); list it in `shots.tsv`. Then, with `PLAYWRIGHT` and `SNAPS` set:
+To capture again (2026-10 route): the owner signs in to brilliant.org in a browser pane; paste `tools/capture/signed-in/snapshot.js` into the page and call `__snap('<page>-dark-<state>', REDACT)` with the account's redaction rules from `~/.design-systems/brilliant-redact.json`; write each copy with `unsnap.py` (it refuses a copy that still holds a redacted string, and needs `SNAP_REDACT` naming the same rules file); list it in `shots.tsv`.
+
+```bash
+SNAP_REDACT=~/.design-systems/brilliant-redact.json python3 tools/capture/signed-in/unsnap.py <spill file> ~/.design-systems/snaps/brilliant
+```
+
+Then, with `PLAYWRIGHT` and `SNAPS` set:
 
 ```bash
 tools/capture/signed-in/render-all.sh
