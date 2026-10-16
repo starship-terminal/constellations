@@ -495,7 +495,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Light warning and light wrong-answer colours** come from CSS and the palette, not from a light capture (no wrong answer was given, to keep the account's hearts).
 - **The 2026-10 screenshots are renders of page copies**, not window captures: scripts are removed, so animated illustrations are frozen where the snapshot caught them, and the fonts are the same CDN files the app loads, declared again by [lib.mjs](tools/capture/signed-in/lib.mjs). The 2026-09 screenshots carry the capture tool's orange edge glow and pointer.
 - **Gem and XP totals** in the 2026-10 renders were replaced with round numbers by the redaction file; other learners' avatars are shown, their names are not.
-- **Onboarding** was taken from a logged-out session in a headless browser in Singapore; the answer lists (for example "How did you hear about Duolingo?") are localised and ordered differently per session.
+- **Onboarding** was taken from a logged-out session in a headless browser; the answer lists (for example "How did you hear about Duolingo?") are localised by region and shuffled per session.
 
 ### Do and don't (from README.md)
 
