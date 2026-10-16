@@ -168,8 +168,17 @@ def row(v, theme, key, state="default"):
     ol = ""
     if s.get("outlineStyle") not in (None, "none") and s.get("outlineWidth") not in ("0px", None) and not s["outlineColor"].endswith(", 0)"):
         ol = f"{dtok(s['outlineWidth'], 'focusRing')} {ctok(s['outlineColor'], theme, key, state)}, offset {dtok(s['outlineOffset'], 'focusRing')}"
-    dur = s["transitionDuration"].split(",")[0].strip()
-    ms = f"{round(float(dur[:-1]) * 1000)}ms" if dur.endswith("s") and not dur.endswith("ms") else dur
+    def _ms(d):
+        d = d.strip()
+        return f"{round(float(d[:-1]) * 1000)}ms" if d.endswith("s") and not d.endswith("ms") else d
+    # Every property with its own duration, each as its token (CSS repeats the duration list
+    # when there are more properties than durations).
+    props = [x.strip() for x in s["transitionProperty"].split(",")]
+    durs = [_ms(d) for d in s["transitionDuration"].split(",")]
+    by = {}
+    for i, prop in enumerate(props):
+        by.setdefault(durs[i % len(durs)], []).append(prop)
+    trans = "; ".join(f"{', '.join(ps) if len(ps) <= 2 else ', '.join(ps[:2]) + ' +' + str(len(ps) - 2)} " + (f"`{DUR[d]}`" if d in DUR else f"{d} ({UNTOK})") for d, ps in by.items())
     out = {
         "size": f"{v['rect']['w']:g} x {v['rect']['h']:g}" + (f", scale {scale}" if (scale := _scale(s["transform"])) else ""),
         "padding": pad,
@@ -178,7 +187,7 @@ def row(v, theme, key, state="default"):
         "radius": dtok(s["borderTopLeftRadius"], "radius"),
         "text": f"{font}, {ctok(f['color'], theme, key, state)}",
         "shadow": shadow,
-        "transition": "none" if s["transitionDuration"] in ("0s", "") else f"{s['transitionProperty'][:40]} " + (f"`{DUR[ms]}`" if ms in DUR else f"{ms} ({UNTOK})"),
+        "transition": "none" if s["transitionDuration"] in ("0s", "") else trans,
     }
     if ol:
         out["focus ring"] = ol

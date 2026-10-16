@@ -6,7 +6,7 @@ It is the reference for Quiver's macOS app, which takes TokenTracker's look and 
 
 | File | What it is |
 |---|---|
-| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (261: neutral, brand, red, amber, orange, sky and blue ramps, status and heatmap colours, the font stacks, a 9-step size scale (`font.scale`, every size at least 10 rendered elements use), 17 named type roles plus 9 more type styles counted from the rendered text, a 2px-step spacing scale, radii, border width, sizes, the focus ring, shadows for each use, z-index layers, breakpoints, content widths, durations, easings) and `light` and `dark` (63 each: wash, panel, card, raised, overlay and scrim fills, text roles including disabled and link, borders including focus, the focus ring colour, accent default/hover/pressed, primary, danger and disabled buttons, switch tracks, status and heatmap aliases), plus `$themes`. Every token carries `$extensions.source`. |
+| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (261: neutral, brand, red, amber, orange, sky and blue ramps, status and heatmap colours, the font stacks, a 9-step size scale (`font.scale`, every size at least 10 rendered elements use), 17 named type roles plus 9 more type styles counted from the rendered text, a 2px-step spacing scale, radii, border width, sizes, the focus ring, shadows for each use, z-index layers, breakpoints, content widths, durations, easings) and `light` and `dark` (64 each: wash, panel, card, raised, overlay and scrim fills, text roles including disabled and link, borders including focus, the focus ring colour, accent default/hover/pressed, primary, danger and disabled buttons, switch tracks, status and heatmap aliases), plus `$themes`. Every token carries `$extensions.source`. |
 | [style-guide.html](style-guide.html) | One self-contained page that rebuilds the shell, controls, lists and tables from the tokens, with a light and dark toggle, and lists every colour role, ramp, type role, radius, size and duration with its source. Open it from disk. |
 | [components.md](components.md) | The pages captured, the shared values (hover, focus, pressed, disabled, motion, radii), one entry per component with dark and light state tables written in token names, crops, the icon index and the Gaps. |
 | [patterns.md](patterns.md) | The app shell, page header, forms and validation, empty/loading/error states, destructive confirmation, feedback, search and filtering, data display and first run, each with its components, layout and screenshots. |
@@ -121,7 +121,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md).
 | Layout (widths, breakpoints, columns, layers) | Captured | `core.breakpoint` and `core.zIndex` measured; `core.layout` Derived from the source |
 | Button | Captured | `primary-button`, `share-button`, `danger-button`, `cancel-button`, `retry-button`, `button-disabled` |
 | Icon button | Captured | `icon-button`, `sidebar-toggle`, `theme-toggle` |
-| Link | Captured | `link`, `footer-link`, `cost-button` |
+| Link | Captured | `link` (underlined text link), `icon-link`, `footer-link`, `cost-button` |
 | Text field | Captured | `search-input`, `text-field` (default, hover, focused, error), `field-error` |
 | Text area | Not present | No page in v1.4.3 renders one |
 | Select | Captured | `select`, `select-menu`, `select-option`, `select-disabled` |

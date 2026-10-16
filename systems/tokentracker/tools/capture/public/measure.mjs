@@ -3,7 +3,7 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: dashboard sessions sessionsLoading sessionsError limits settings status skills widgets pet cloud. Phone layouts come from the screenshots only. Every page runs in dark (the default)
+// Pages: dashboard sessions sessionsLoading sessionsError limits settings status skills widgets pet cloud achievements. Phone layouts come from the screenshots only. Every page runs in dark (the default)
 // and light; light entries are keyed `<name>.light`. Writes raw/components-computed.json (merged,
 // so a subset of pages can be re-run) and one crop per component and state into components/crops/.
 // raw/measurements.md is then built from the JSON by build-measurements.mjs.
@@ -46,6 +46,7 @@ const URLS = {
   widgets: '/widgets',
   pet: '/pet-settings',
   cloud: '/cloud',
+  achievements: '/achievements',
   sessionsLoading: '/sessions',
   sessionsError: '/sessions',
   mobile: '/dashboard',
@@ -484,7 +485,7 @@ async function limits() {
     await reset();
   }
   await T('code-block', { sel: 'main pre' }, ['default'], { group: g, title: 'Code block', sel: 'main pre' });
-  await T('link', { sel: 'main a[href^="/settings"]' }, ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Text link', desc: '"Display settings" on Limits: an in-app link set as quiet text.', sel: 'main a[href^=/settings]' });
+  await T('icon-link', { sel: 'main a[href^="/settings"]' }, ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Icon link', desc: 'The gear on Limits ("Display settings" is its accessible label): an icon-only link to Settings.', sel: 'main a[href^=/settings]' });
   await page.close();
 }
 
@@ -603,6 +604,13 @@ async function pet() {
   await page.close();
 }
 
+// Achievements: the one underlined text link in the app's own copy. Hovered and focused, never followed.
+async function achievements() {
+  await newPage('achievements', { wait: 3500 });
+  await T('link', { role: 'a', text: 'Suggest it on GitHub' }, ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Text link', desc: '"Suggest it on GitHub" under the badges: secondary text with a light underline. Never followed.', sel: 'a "Suggest it on GitHub"' });
+  await page.close();
+}
+
 // Cloud (signed out): its own focus outline, 2px in the ink colour at a 3px offset.
 async function cloud() {
   await newPage('cloud', { wait: 4000 });
@@ -617,7 +625,7 @@ async function status() {
   await page.close();
 }
 
-const PAGES = { dashboard, sessions, sessionsLoading, sessionsError, limits, settings, status, skills, widgets, pet, cloud };
+const PAGES = { dashboard, sessions, sessionsLoading, sessionsError, limits, settings, status, skills, widgets, pet, cloud, achievements };
 const want = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(PAGES);
 const done = new Set();
 for (const theme of ['dark', 'light']) {

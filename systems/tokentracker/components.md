@@ -51,7 +51,7 @@ States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.text13w500`, `color.neutral.300` |
+| text | `typography.text13w500`, `text.linkHover` |
 | shadow | none |
 | icon | `size.icon.control` |
 | transition | width `motion.duration.base` |
@@ -65,7 +65,7 @@ Crops: [sidebar-default](components/crops/sidebar-default.png).
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.text13w500`, `color.neutral.700` |
+| text | `typography.text13w500`, `text.linkHover` |
 | shadow | none |
 | icon | `size.icon.control` |
 | transition | width `motion.duration.base` |
@@ -118,7 +118,7 @@ Crops: [sidebar-group-label.light-default](components/crops/sidebar-group-label.
 | text | `typography.text13w500`, `text.strong` | = |
 | shadow | none | = |
 | icon | `size.icon.nav` | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [nav-item-active-default](components/crops/nav-item-active-default.png), [nav-item-active-focus-visible](components/crops/nav-item-active-focus-visible.png).
 
@@ -132,7 +132,7 @@ Crops: [nav-item-active-default](components/crops/nav-item-active-default.png), 
 | text | `typography.text13w500`, `text.primary` | = |
 | shadow | none | = |
 | icon | `size.icon.nav` | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [nav-item-active.light-default](components/crops/nav-item-active.light-default.png), [nav-item-active.light-focus-visible](components/crops/nav-item-active.light-focus-visible.png).
 
@@ -151,7 +151,7 @@ Crops: [nav-item-active.light-default](components/crops/nav-item-active.light-de
 | text | `typography.nav`, `text.nav` | `typography.nav`, `text.strong` | = | `typography.nav`, `text.strong` |
 | shadow | none | = | = | = |
 | icon | `size.icon.nav` | = | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = | = |
 
 Crops: [nav-item-default](components/crops/nav-item-default.png), [nav-item-hover](components/crops/nav-item-hover.png), [nav-item-focus-visible](components/crops/nav-item-focus-visible.png), [nav-item-pressed](components/crops/nav-item-pressed.png).
 
@@ -165,7 +165,7 @@ Crops: [nav-item-default](components/crops/nav-item-default.png), [nav-item-hove
 | text | `typography.nav`, `text.nav` | `typography.nav`, `text.primary` | = | `typography.nav`, `text.primary` |
 | shadow | none | = | = | = |
 | icon | `size.icon.nav` | = | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = | = |
 
 Crops: [nav-item.light-default](components/crops/nav-item.light-default.png), [nav-item.light-hover](components/crops/nav-item.light-hover.png), [nav-item.light-focus-visible](components/crops/nav-item.light-focus-visible.png), [nav-item.light-pressed](components/crops/nav-item.light-pressed.png).
 
@@ -317,7 +317,7 @@ Crops: [star-pill.light-default](components/crops/star-pill.light-default.png), 
 | shadow | none | = | = |
 | focus ring | - | = | `focusRing.width` `text.muted`, offset `focusRing.width` |
 | icon | `size.icon.control` | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [sidebar-toggle-default](components/crops/sidebar-toggle-default.png), [sidebar-toggle-hover](components/crops/sidebar-toggle-hover.png), [sidebar-toggle-focus-visible](components/crops/sidebar-toggle-focus-visible.png).
 
@@ -332,7 +332,7 @@ Crops: [sidebar-toggle-default](components/crops/sidebar-toggle-default.png), [s
 | shadow | none | = | = |
 | focus ring | - | = | `focusRing.width` `text.secondary`, offset `focusRing.width` |
 | icon | `size.icon.control` | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [sidebar-toggle.light-default](components/crops/sidebar-toggle.light-default.png), [sidebar-toggle.light-hover](components/crops/sidebar-toggle.light-hover.png), [sidebar-toggle.light-focus-visible](components/crops/sidebar-toggle.light-focus-visible.png).
 
@@ -348,9 +348,9 @@ Crops: [sidebar-toggle.light-default](components/crops/sidebar-toggle.light-defa
 | fill | transparent | `bg.subtle` | = |
 | border | none | = | = |
 | radius | `radius.lg` | = | = |
-| text | `typography.text13w500`, `color.neutral.300` | `typography.text13w500`, `text.strong` | = |
+| text | `typography.text13w500`, `text.linkHover` | `typography.text13w500`, `text.strong` | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [account-control-default](components/crops/account-control-default.png), [account-control-hover](components/crops/account-control-hover.png), [account-control-focus-visible](components/crops/account-control-focus-visible.png).
 
@@ -361,9 +361,9 @@ Crops: [account-control-default](components/crops/account-control-default.png), 
 | fill | transparent | `border.default` @ 0.6 | = |
 | border | none | = | = |
 | radius | `radius.lg` | = | = |
-| text | `typography.text13w500`, `color.neutral.700` | `typography.text13w500`, `text.primary` | = |
+| text | `typography.text13w500`, `text.linkHover` | `typography.text13w500`, `text.primary` | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [account-control.light-default](components/crops/account-control.light-default.png), [account-control.light-hover](components/crops/account-control.light-hover.png), [account-control.light-focus-visible](components/crops/account-control.light-focus-visible.png).
 
@@ -381,7 +381,7 @@ Crops: [account-control.light-default](components/crops/account-control.light-de
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.control`, `color.neutral.300` |
+| text | `typography.control`, `text.linkHover` |
 | shadow | none |
 | transition | none |
 
@@ -414,7 +414,7 @@ Crops: [period-tabs.light-default](components/crops/period-tabs.light-default.pn
 | radius | `radius.lg` | = |
 | text | `typography.control`, `text.primary` | = |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [period-tab-selected-default](components/crops/period-tab-selected-default.png), [period-tab-selected-focus-visible](components/crops/period-tab-selected-focus-visible.png).
 
@@ -427,7 +427,7 @@ Crops: [period-tab-selected-default](components/crops/period-tab-selected-defaul
 | radius | `radius.lg` | = |
 | text | `typography.control`, `text.primary` | = |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [period-tab-selected.light-default](components/crops/period-tab-selected.light-default.png), [period-tab-selected.light-focus-visible](components/crops/period-tab-selected.light-focus-visible.png).
 
@@ -443,9 +443,9 @@ Crops: [period-tab-selected.light-default](components/crops/period-tab-selected.
 | fill | transparent | `bg.subtle` | = |
 | border | none | = | = |
 | radius | `radius.lg` | = | = |
-| text | `typography.control`, `color.neutral.300` | `typography.control`, `text.primary` | = |
+| text | `typography.control`, `text.linkHover` | `typography.control`, `text.primary` | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [period-tab-default](components/crops/period-tab-default.png), [period-tab-hover](components/crops/period-tab-hover.png), [period-tab-focus-visible](components/crops/period-tab-focus-visible.png).
 
@@ -458,7 +458,7 @@ Crops: [period-tab-default](components/crops/period-tab-default.png), [period-ta
 | radius | `radius.lg` | = | = |
 | text | `typography.control`, `text.secondary` | `typography.control`, `text.primary` | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [period-tab.light-default](components/crops/period-tab.light-default.png), [period-tab.light-hover](components/crops/period-tab.light-hover.png), [period-tab.light-focus-visible](components/crops/period-tab.light-focus-visible.png).
 
@@ -477,7 +477,7 @@ Crops: [period-tab.light-default](components/crops/period-tab.light-default.png)
 | text | `typography.control`, `button.secondary.hoverFg` | = | = | = |
 | shadow | none | = | = | = |
 | icon | `size.icon.small` | = | = | = |
-| transition | color, background-color, border-color, t `motion.duration.base` | = | = | = |
+| transition | color, background-color +4 `motion.duration.base` | = | = | = |
 
 Crops: [share-button-default](components/crops/share-button-default.png), [share-button-hover](components/crops/share-button-hover.png), [share-button-focus-visible](components/crops/share-button-focus-visible.png), [share-button-pressed](components/crops/share-button-pressed.png).
 
@@ -491,7 +491,7 @@ Crops: [share-button-default](components/crops/share-button-default.png), [share
 | text | `typography.control`, `text.primary` | `typography.control`, `button.secondary.hoverFg` | = | `typography.control`, `button.secondary.hoverFg` |
 | shadow | none | = | = | = |
 | icon | `size.icon.small` | = | = | = |
-| transition | color, background-color, border-color, t `motion.duration.base` | = | = | = |
+| transition | color, background-color +4 `motion.duration.base` | = | = | = |
 
 Crops: [share-button.light-default](components/crops/share-button.light-default.png), [share-button.light-hover](components/crops/share-button.light-hover.png), [share-button.light-focus-visible](components/crops/share-button.light-focus-visible.png), [share-button.light-pressed](components/crops/share-button.light-pressed.png).
 
@@ -510,7 +510,7 @@ Crops: [share-button.light-default](components/crops/share-button.light-default.
 | text | `typography.rowTitle`, `text.onPrimary` | = | = | = |
 | shadow | none | = | = | = |
 | icon | `size.icon.control` | = | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = | = |
 
 Crops: [primary-button-default](components/crops/primary-button-default.png), [primary-button-hover](components/crops/primary-button-hover.png), [primary-button-focus-visible](components/crops/primary-button-focus-visible.png), [primary-button-pressed](components/crops/primary-button-pressed.png).
 
@@ -524,7 +524,7 @@ Crops: [primary-button-default](components/crops/primary-button-default.png), [p
 | text | `typography.rowTitle`, `text.onPrimary` | = | = | = |
 | shadow | none | = | = | = |
 | icon | `size.icon.control` | = | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = | = |
 
 Crops: [primary-button.light-default](components/crops/primary-button.light-default.png), [primary-button.light-hover](components/crops/primary-button.light-hover.png), [primary-button.light-focus-visible](components/crops/primary-button.light-focus-visible.png), [primary-button.light-pressed](components/crops/primary-button.light-pressed.png).
 
@@ -574,7 +574,7 @@ Crops: [segmented-2d.light-default](components/crops/segmented-2d.light-default.
 | text | `typography.body`, `text.secondary` | `typography.body`, `text.strong` | = | `typography.body`, `text.strong` |
 | shadow | none | = | = | = |
 | icon | `size.icon.control` | = | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = | = |
 
 Crops: [icon-button-default](components/crops/icon-button-default.png), [icon-button-hover](components/crops/icon-button-hover.png), [icon-button-focus-visible](components/crops/icon-button-focus-visible.png), [icon-button-pressed](components/crops/icon-button-pressed.png).
 
@@ -588,7 +588,7 @@ Crops: [icon-button-default](components/crops/icon-button-default.png), [icon-bu
 | text | `typography.body`, `text.nav` | `typography.body`, `text.primary` | = | `typography.body`, `text.primary` |
 | shadow | none | = | = | = |
 | icon | `size.icon.control` | = | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = | = |
 
 Crops: [icon-button.light-default](components/crops/icon-button.light-default.png), [icon-button.light-hover](components/crops/icon-button.light-hover.png), [icon-button.light-focus-visible](components/crops/icon-button.light-focus-visible.png), [icon-button.light-pressed](components/crops/icon-button.light-pressed.png).
 
@@ -637,7 +637,7 @@ Crops: [segmented.light-default](components/crops/segmented.light-default.png).
 | radius | `radius.lg` | = |
 | text | `typography.control`, `text.strong` | = |
 | shadow | `shadow.sm` | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [segment-selected-default](components/crops/segment-selected-default.png), [segment-selected-focus-visible](components/crops/segment-selected-focus-visible.png).
 
@@ -650,7 +650,7 @@ Crops: [segment-selected-default](components/crops/segment-selected-default.png)
 | radius | `radius.lg` | = |
 | text | `typography.control`, `text.primary` | = |
 | shadow | `shadow.sm` | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [segment-selected.light-default](components/crops/segment-selected.light-default.png), [segment-selected.light-focus-visible](components/crops/segment-selected.light-focus-visible.png).
 
@@ -668,7 +668,7 @@ Crops: [segment-selected.light-default](components/crops/segment-selected.light-
 | radius | `radius.lg` | = | = |
 | text | `typography.control`, `text.secondary` | `typography.control`, `text.strong` | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [segment-default](components/crops/segment-default.png), [segment-hover](components/crops/segment-hover.png), [segment-focus-visible](components/crops/segment-focus-visible.png).
 
@@ -681,7 +681,7 @@ Crops: [segment-default](components/crops/segment-default.png), [segment-hover](
 | radius | `radius.lg` | = | = |
 | text | `typography.control`, `text.secondary` | `typography.control`, `text.primary` | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [segment.light-default](components/crops/segment.light-default.png), [segment.light-hover](components/crops/segment.light-hover.png), [segment.light-focus-visible](components/crops/segment.light-focus-visible.png).
 
@@ -699,7 +699,7 @@ Crops: [segment.light-default](components/crops/segment.light-default.png), [seg
 | radius | `radius.lg` | = | = |
 | text | `typography.control`, `text.label` | `typography.control`, `text.strong` | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [retry-button-default](components/crops/retry-button-default.png), [retry-button-hover](components/crops/retry-button-hover.png), [retry-button-focus-visible](components/crops/retry-button-focus-visible.png).
 
@@ -710,42 +710,40 @@ Crops: [retry-button-default](components/crops/retry-button-default.png), [retry
 | fill | transparent | `bg.wash` | = |
 | border | `border.width.default` `border.default` | = | = |
 | radius | `radius.lg` | = | = |
-| text | `typography.control`, `color.neutral.700` | `typography.control`, `text.primary` | = |
+| text | `typography.control`, `text.linkHover` | `typography.control`, `text.primary` | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [retry-button.light-default](components/crops/retry-button.light-default.png), [retry-button.light-hover](components/crops/retry-button.light-hover.png), [retry-button.light-focus-visible](components/crops/retry-button.light-focus-visible.png).
 
 
 #### Text link
 
-`link` on /limits, found by `main a[href^=/settings]`. "Display settings" on Limits: an in-app link set as quiet text.
+`link` on /achievements, found by `a "Suggest it on GitHub"`. "Suggest it on GitHub" under the badges: secondary text with a light underline. Never followed.
 
 | dark | default | hover | focus-visible |
 |---|---|---|---|
-| size | 36 x 36 | = | = |
+| size | 117.83 x 15 | = | = |
 | padding | 0px | = | = |
-| fill | transparent | `bg.subtle` | = |
-| border | `border.width.default` `bg.subtle` | = | = |
-| radius | `radius.xl` | = | = |
-| text | `typography.body`, `text.link` | `typography.body`, `text.linkHover` | = |
+| fill | transparent | = | = |
+| border | none | = | = |
+| radius | 0px | = | = |
+| text | `typography.caption`, `text.link` | `typography.caption`, `text.linkHover` | = |
 | shadow | none | = | = |
-| icon | `size.icon.control` | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [link-default](components/crops/link-default.png), [link-hover](components/crops/link-hover.png), [link-focus-visible](components/crops/link-focus-visible.png).
 
 | light | default | hover | focus-visible |
 |---|---|---|---|
-| size | 36 x 36 | = | = |
+| size | 117.83 x 15 | = | = |
 | padding | 0px | = | = |
-| fill | transparent | `bg.wash` | = |
-| border | `border.width.default` `border.default` | = | = |
-| radius | `radius.xl` | = | = |
-| text | `typography.body`, `text.link` | `typography.body`, `text.linkHover` | = |
+| fill | transparent | = | = |
+| border | none | = | = |
+| radius | 0px | = | = |
+| text | `typography.caption`, `text.link` | `typography.caption`, `text.linkHover` | = |
 | shadow | none | = | = |
-| icon | `size.icon.control` | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [link.light-default](components/crops/link.light-default.png), [link.light-hover](components/crops/link.light-hover.png), [link.light-focus-visible](components/crops/link.light-focus-visible.png).
 
@@ -763,7 +761,7 @@ Crops: [link.light-default](components/crops/link.light-default.png), [link.ligh
 | radius | `radius.lg` | = | = |
 | text | `typography.rowTitle`, `button.danger.fg` | = | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.base` | = | = |
+| transition | color, background-color +4 `motion.duration.base` | = | = |
 
 Crops: [danger-button-default](components/crops/danger-button-default.png), [danger-button-hover](components/crops/danger-button-hover.png), [danger-button-focus-visible](components/crops/danger-button-focus-visible.png).
 
@@ -776,7 +774,7 @@ Crops: [danger-button-default](components/crops/danger-button-default.png), [dan
 | radius | `radius.lg` | = | = |
 | text | `typography.rowTitle`, `button.danger.fg` | = | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.base` | = | = |
+| transition | color, background-color +4 `motion.duration.base` | = | = |
 
 Crops: [danger-button.light-default](components/crops/danger-button.light-default.png), [danger-button.light-hover](components/crops/danger-button.light-hover.png), [danger-button.light-focus-visible](components/crops/danger-button.light-focus-visible.png).
 
@@ -794,7 +792,7 @@ Crops: [danger-button.light-default](components/crops/danger-button.light-defaul
 | radius | `radius.lg` | = |
 | text | `typography.rowTitle`, `text.primary` | = |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.base` | = |
+| transition | color, background-color +4 `motion.duration.base` | = |
 
 Crops: [cancel-button-default](components/crops/cancel-button-default.png), [cancel-button-hover](components/crops/cancel-button-hover.png).
 
@@ -803,11 +801,11 @@ Crops: [cancel-button-default](components/crops/cancel-button-default.png), [can
 | size | 69.59 x 32 | = |
 | padding | 0px `space.scale.3` | = |
 | fill | `bg.panel` | = |
-| border | `border.width.default` `border.strong` | `border.width.default` `accent.default` |
+| border | `border.width.default` `link.underline` | `border.width.default` `accent.default` |
 | radius | `radius.lg` | = |
 | text | `typography.rowTitle`, `text.primary` | `typography.rowTitle`, `accent.default` |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.base` | = |
+| transition | color, background-color +4 `motion.duration.base` | = |
 
 Crops: [cancel-button.light-default](components/crops/cancel-button.light-default.png), [cancel-button.light-hover](components/crops/cancel-button.light-hover.png).
 
@@ -887,7 +885,7 @@ Crops: [switch-off.light-disabled](components/crops/switch-off.light-disabled.pn
 | radius | `radius.xl` |
 | text | 12px/16px 600 (untokenised), `text.disabled` |
 | shadow | none |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [button-disabled-disabled](components/crops/button-disabled-disabled.png).
 
@@ -900,7 +898,7 @@ Crops: [button-disabled-disabled](components/crops/button-disabled-disabled.png)
 | radius | `radius.xl` |
 | text | 12px/16px 600 (untokenised), `text.disabled` |
 | shadow | none |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [button-disabled.light-disabled](components/crops/button-disabled.light-disabled.png).
 
@@ -914,12 +912,12 @@ Crops: [button-disabled.light-disabled](components/crops/button-disabled.light-d
 | size | 418 x 44 | = | = |
 | padding | 0px `space.scale.4` | = | = |
 | fill | `bg.panel` | = | = |
-| border | `border.width.default` `border.strong` | `border.width.default` `color.neutral.300` | = |
+| border | `border.width.default` `border.strong` | `border.width.default` `text.linkHover` | = |
 | radius | `radius.lg` | = | = |
 | text | `typography.rowTitle`, `text.primary` | `typography.rowTitle`, `color.neutral.100` | = |
 | shadow | none | = | = |
 | focus ring | - | = | `focusRing.width` `color.neutral.100`, offset `focusRing.width` |
-| transition | color, background-color, border-color, t `motion.duration.base` | = | = |
+| transition | color, background-color +4 `motion.duration.base` | = | = |
 
 Crops: [cloud-button-default](components/crops/cloud-button-default.png), [cloud-button-hover](components/crops/cloud-button-hover.png), [cloud-button-focus-visible](components/crops/cloud-button-focus-visible.png).
 
@@ -928,14 +926,47 @@ Crops: [cloud-button-default](components/crops/cloud-button-default.png), [cloud
 | size | 418 x 44 | = | = |
 | padding | 0px `space.scale.4` | = | = |
 | fill | `bg.panel` | = | = |
-| border | `border.width.default` `border.strong` | `border.width.default` `text.nav` | = |
+| border | `border.width.default` `link.underline` | `border.width.default` `text.nav` | = |
 | radius | `radius.lg` | = | = |
 | text | `typography.rowTitle`, `text.primary` | `typography.rowTitle`, `text.label` | = |
 | shadow | none | = | = |
 | focus ring | - | = | `focusRing.width` `text.label`, offset `focusRing.width` |
-| transition | color, background-color, border-color, t `motion.duration.base` | = | = |
+| transition | color, background-color +4 `motion.duration.base` | = | = |
 
 Crops: [cloud-button.light-default](components/crops/cloud-button.light-default.png), [cloud-button.light-hover](components/crops/cloud-button.light-hover.png), [cloud-button.light-focus-visible](components/crops/cloud-button.light-focus-visible.png).
+
+
+#### Icon link
+
+`icon-link` on /limits, found by `main a[href^=/settings]`. The gear on Limits ("Display settings" is its accessible label): an icon-only link to Settings.
+
+| dark | default | hover | focus-visible |
+|---|---|---|---|
+| size | 36 x 36 | = | = |
+| padding | 0px | = | = |
+| fill | transparent | `bg.subtle` | = |
+| border | `border.width.default` `bg.subtle` | = | = |
+| radius | `radius.xl` | = | = |
+| text | `typography.body`, `text.secondary` | `typography.body`, `text.strong` | = |
+| shadow | none | = | = |
+| icon | `size.icon.control` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
+
+Crops: [icon-link-default](components/crops/icon-link-default.png), [icon-link-hover](components/crops/icon-link-hover.png), [icon-link-focus-visible](components/crops/icon-link-focus-visible.png).
+
+| light | default | hover | focus-visible |
+|---|---|---|---|
+| size | 36 x 36 | = | = |
+| padding | 0px | = | = |
+| fill | transparent | `bg.wash` | = |
+| border | `border.width.default` `border.default` | = | = |
+| radius | `radius.xl` | = | = |
+| text | `typography.body`, `text.nav` | `typography.body`, `text.primary` | = |
+| shadow | none | = | = |
+| icon | `size.icon.control` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
+
+Crops: [icon-link.light-default](components/crops/icon-link.light-default.png), [icon-link.light-hover](components/crops/icon-link.light-hover.png), [icon-link.light-focus-visible](components/crops/icon-link.light-focus-visible.png).
 
 
 ### Tokens page
@@ -951,7 +982,7 @@ Crops: [cloud-button.light-default](components/crops/cloud-button.light-default.
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.eyebrow`, uppercase, `color.neutral.300` |
+| text | `typography.eyebrow`, uppercase, `text.linkHover` |
 | shadow | none |
 | transition | none |
 
@@ -1016,7 +1047,7 @@ Crops: [hero-metric.light-default](components/crops/hero-metric.light-default.pn
 | text | `typography.figure`, `accent.default` |
 | shadow | none |
 | icon | `size.icon.control` |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [hero-cost-default](components/crops/hero-cost-default.png).
 
@@ -1030,7 +1061,7 @@ Crops: [hero-cost-default](components/crops/hero-cost-default.png).
 | text | `typography.figure`, `accent.default` |
 | shadow | none |
 | icon | `size.icon.control` |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [hero-cost.light-default](components/crops/hero-cost.light-default.png).
 
@@ -1044,11 +1075,11 @@ Crops: [hero-cost.light-default](components/crops/hero-cost.light-default.png).
 | size | 172.17 x 96.5 | = |
 | padding | `space.scale.3` | = |
 | fill | transparent | = |
-| border | `border.width.default` `color.neutral.700` | `border.width.default` `color.neutral.600` |
+| border | `border.width.default` `color.neutral.700` | `border.width.default` `link.underline` |
 | radius | `radius.xl` | = |
 | text | `typography.rowTitle`, `text.primary` | = |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.base` | = |
+| transition | color, background-color +4 `motion.duration.base` | = |
 
 Crops: [provider-tile-default](components/crops/provider-tile-default.png), [provider-tile-hover](components/crops/provider-tile-hover.png).
 
@@ -1057,11 +1088,11 @@ Crops: [provider-tile-default](components/crops/provider-tile-default.png), [pro
 | size | 172.17 x 96.5 | = |
 | padding | `space.scale.3` | = |
 | fill | transparent | = |
-| border | `border.width.default` `border.default` | `border.width.default` `border.strong` |
+| border | `border.width.default` `border.default` | `border.width.default` `link.underline` |
 | radius | `radius.xl` | = |
 | text | `typography.rowTitle`, `text.primary` | = |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.base` | = |
+| transition | color, background-color +4 `motion.duration.base` | = |
 
 Crops: [provider-tile.light-default](components/crops/provider-tile.light-default.png), [provider-tile.light-hover](components/crops/provider-tile.light-hover.png).
 
@@ -1080,7 +1111,7 @@ Crops: [provider-tile.light-default](components/crops/provider-tile.light-defaul
 | text | `typography.rowTitle`, `text.primary` |
 | shadow | none |
 | icon | `size.icon.nav` |
-| transition | color, background-color, border-color, t `motion.duration.base` |
+| transition | color, background-color +4 `motion.duration.base` |
 
 Crops: [provider-tile-all-default](components/crops/provider-tile-all-default.png).
 
@@ -1094,7 +1125,7 @@ Crops: [provider-tile-all-default](components/crops/provider-tile-all-default.pn
 | text | `typography.rowTitle`, `text.primary` |
 | shadow | none |
 | icon | `size.icon.nav` |
-| transition | color, background-color, border-color, t `motion.duration.base` |
+| transition | color, background-color +4 `motion.duration.base` |
 
 Crops: [provider-tile-all.light-default](components/crops/provider-tile-all.light-default.png).
 
@@ -1141,7 +1172,7 @@ Crops: [stat-chip.light-default](components/crops/stat-chip.light-default.png).
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.sectionTitle`, uppercase, `color.neutral.300` |
+| text | `typography.sectionTitle`, uppercase, `text.linkHover` |
 | shadow | none |
 | transition | none |
 
@@ -1237,7 +1268,7 @@ Crops: [heatmap-cell-empty.light-default](components/crops/heatmap-cell-empty.li
 | text | `typography.figure`, `accent.default` | `typography.figure`, `accent.hover` | = | `typography.figure`, `accent.pressed` |
 | shadow | none | = | = | = |
 | icon | `size.icon.control` | = | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = | = |
 
 Crops: [cost-button-default](components/crops/cost-button-default.png), [cost-button-hover](components/crops/cost-button-hover.png), [cost-button-focus-visible](components/crops/cost-button-focus-visible.png), [cost-button-pressed](components/crops/cost-button-pressed.png).
 
@@ -1251,7 +1282,7 @@ Crops: [cost-button-default](components/crops/cost-button-default.png), [cost-bu
 | text | `typography.figure`, `accent.default` | `typography.figure`, `accent.hover` | = | `typography.figure`, `accent.pressed` |
 | shadow | none | = | = | = |
 | icon | `size.icon.control` | = | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = | = |
 
 Crops: [cost-button.light-default](components/crops/cost-button.light-default.png), [cost-button.light-hover](components/crops/cost-button.light-hover.png), [cost-button.light-focus-visible](components/crops/cost-button.light-focus-visible.png), [cost-button.light-pressed](components/crops/cost-button.light-pressed.png).
 
@@ -1267,7 +1298,7 @@ Crops: [cost-button.light-default](components/crops/cost-button.light-default.pn
 | fill | `bg.card` |
 | border | `border.width.default` `border.default` |
 | radius | `radius.2xl` |
-| text | `typography.sectionTitle`, uppercase, `color.neutral.300` |
+| text | `typography.sectionTitle`, uppercase, `text.linkHover` |
 | shadow | none |
 | transition | none |
 
@@ -1302,7 +1333,7 @@ Crops: [card.light-default](components/crops/card.light-default.png).
 | radius | `radius.sm` |
 | text | `typography.control`, `text.primary` |
 | shadow | none |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [table-tab-selected-default](components/crops/table-tab-selected-default.png).
 
@@ -1315,7 +1346,7 @@ Crops: [table-tab-selected-default](components/crops/table-tab-selected-default.
 | radius | `radius.sm` |
 | text | `typography.control`, `text.primary` |
 | shadow | none |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [table-tab-selected.light-default](components/crops/table-tab-selected.light-default.png).
 
@@ -1331,9 +1362,9 @@ Crops: [table-tab-selected.light-default](components/crops/table-tab-selected.li
 | fill | transparent | `bg.rowHover` |
 | border | none | = |
 | radius | `radius.sm` | = |
-| text | `typography.control`, `color.neutral.300` | `typography.control`, `text.primary` |
+| text | `typography.control`, `text.linkHover` | `typography.control`, `text.primary` |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [table-tab-default](components/crops/table-tab-default.png), [table-tab-hover](components/crops/table-tab-hover.png).
 
@@ -1346,7 +1377,7 @@ Crops: [table-tab-default](components/crops/table-tab-default.png), [table-tab-h
 | radius | `radius.sm` | = |
 | text | `typography.control`, `text.secondary` | `typography.control`, `text.primary` |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [table-tab.light-default](components/crops/table-tab.light-default.png), [table-tab.light-hover](components/crops/table-tab.light-hover.png).
 
@@ -1362,7 +1393,7 @@ Crops: [table-tab.light-default](components/crops/table-tab.light-default.png), 
 | fill | `bg.panel` |
 | border | none |
 | radius | 0px |
-| text | `typography.tableHeader`, `color.neutral.300` |
+| text | `typography.tableHeader`, `text.linkHover` |
 | shadow | none |
 | transition | none |
 
@@ -1424,9 +1455,9 @@ Crops: [table-cell.light-default](components/crops/table-cell.light-default.png)
 | fill | transparent | `bg.rowHover` |
 | border | bottom `border.width.default` `bg.subtle` | = |
 | radius | 0px | = |
-| text | `typography.text14w400`, `color.neutral.300` | = |
+| text | `typography.text14w400`, `text.linkHover` | = |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [table-row-default](components/crops/table-row-default.png), [table-row-hover](components/crops/table-row-hover.png).
 
@@ -1439,7 +1470,7 @@ Crops: [table-row-default](components/crops/table-row-default.png), [table-row-h
 | radius | 0px | = |
 | text | `typography.text14w400`, `text.secondary` | = |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [table-row.light-default](components/crops/table-row.light-default.png), [table-row.light-hover](components/crops/table-row.light-hover.png).
 
@@ -1714,7 +1745,7 @@ Crops: [error-state.light-error](components/crops/error-state.light-error.png).
 | text | 11px/14.3px 600, letter-spacing 1.32px (untokenised), uppercase, `text.secondary` |
 | shadow | `shadow.dialog.dark` |
 | icon | `size.icon.control` |
-| transition | opacity, transform `motion.duration.fade` |
+| transition | opacity `motion.duration.fade`; transform `motion.duration.dialog` |
 
 Crops: [dialog-open](components/crops/dialog-open.png).
 
@@ -1728,7 +1759,7 @@ Crops: [dialog-open](components/crops/dialog-open.png).
 | text | 11px/14.3px 600, letter-spacing 1.32px (untokenised), uppercase, `text.secondary` |
 | shadow | `shadow.dialog.light` |
 | icon | `size.icon.control` |
-| transition | opacity, transform `motion.duration.fade` |
+| transition | opacity `motion.duration.fade`; transform `motion.duration.dialog` |
 
 Crops: [dialog.light-open](components/crops/dialog.light-open.png).
 
@@ -1778,7 +1809,7 @@ Crops: [status-badge.light-default](components/crops/status-badge.light-default.
 | text | 16px/24px 500 (untokenised), `text.primary` | = |
 | shadow | none | = |
 | icon | `size.icon.control` | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [status-row-default](components/crops/status-row-default.png), [status-row-hover](components/crops/status-row-hover.png).
 
@@ -1787,12 +1818,12 @@ Crops: [status-row-default](components/crops/status-row-default.png), [status-ro
 | size | 544 x 106 | = |
 | padding | `space.scale.5` | = |
 | fill | `bg.card` | `bg.panel` |
-| border | `border.width.default` `border.default` | `border.width.default` `border.strong` |
+| border | `border.width.default` `border.default` | `border.width.default` `link.underline` |
 | radius | `radius.2xl` | = |
 | text | 16px/24px 500 (untokenised), `text.primary` | = |
 | shadow | none | = |
 | icon | `size.icon.control` | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [status-row.light-default](components/crops/status-row.light-default.png), [status-row.light-hover](components/crops/status-row.light-hover.png).
 
@@ -2019,7 +2050,7 @@ Crops: [hint-tooltip.light-open](components/crops/hint-tooltip.light-open.png).
 | fill | `bg.subtle` |
 | border | none |
 | radius | `radius.full` |
-| text | `typography.badge`, `color.neutral.300` |
+| text | `typography.badge`, `text.linkHover` |
 | shadow | `shadow.ring.dark` |
 | transition | none |
 
@@ -2181,7 +2212,7 @@ Crops: [search-input.light-default](components/crops/search-input.light-default.
 | text | `typography.bodySmall`, `text.strong` | = | = |
 | shadow | none | = | = |
 | icon | `size.icon.small` | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [select-default](components/crops/select-default.png), [select-hover](components/crops/select-hover.png), [select-focus-visible](components/crops/select-focus-visible.png).
 
@@ -2195,7 +2226,7 @@ Crops: [select-default](components/crops/select-default.png), [select-hover](com
 | text | `typography.bodySmall`, `text.primary` | = | = |
 | shadow | none | = | = |
 | icon | `size.icon.small` | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [select.light-default](components/crops/select.light-default.png), [select.light-hover](components/crops/select.light-hover.png), [select.light-focus-visible](components/crops/select.light-focus-visible.png).
 
@@ -2247,7 +2278,7 @@ Crops: [select-menu.light-open](components/crops/select-menu.light-open.png).
 | text | `typography.caption`, `text.strong` |
 | shadow | none |
 | icon | 12px (untokenised) |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [select-option-selected-open](components/crops/select-option-selected-open.png).
 
@@ -2261,7 +2292,7 @@ Crops: [select-option-selected-open](components/crops/select-option-selected-ope
 | text | `typography.caption`, `text.primary` |
 | shadow | none |
 | icon | 12px (untokenised) |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [select-option-selected.light-open](components/crops/select-option-selected.light-open.png).
 
@@ -2277,9 +2308,9 @@ Crops: [select-option-selected.light-open](components/crops/select-option-select
 | fill | transparent | `bg.hover` |
 | border | none | = |
 | radius | `radius.xl` | = |
-| text | `typography.caption`, `color.neutral.300` | = |
+| text | `typography.caption`, `text.linkHover` | = |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [select-option-open](components/crops/select-option-open.png), [select-option-hover](components/crops/select-option-hover.png).
 
@@ -2292,7 +2323,7 @@ Crops: [select-option-open](components/crops/select-option-open.png), [select-op
 | radius | `radius.xl` | = |
 | text | `typography.caption`, `text.nav` | = |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [select-option.light-open](components/crops/select-option.light-open.png), [select-option.light-hover](components/crops/select-option.light-hover.png).
 
@@ -2342,7 +2373,7 @@ Crops: [checkbox.light-default](components/crops/checkbox.light-default.png), [c
 | text | `typography.rowTitle`, `text.strong` |
 | shadow | none |
 | icon | `size.icon.small` |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [select-disabled-disabled](components/crops/select-disabled-disabled.png).
 
@@ -2356,7 +2387,7 @@ Crops: [select-disabled-disabled](components/crops/select-disabled-disabled.png)
 | text | `typography.rowTitle`, `text.primary` |
 | shadow | none |
 | icon | `size.icon.small` |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [select-disabled.light-disabled](components/crops/select-disabled.light-disabled.png).
 
@@ -2374,7 +2405,7 @@ Crops: [select-disabled.light-disabled](components/crops/select-disabled.light-d
 | radius | `radius.lg` | = | = |
 | text | `typography.bodySmall`, `text.strong` | = | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [text-field-default](components/crops/text-field-default.png), [text-field-hover](components/crops/text-field-hover.png), [text-field-focused](components/crops/text-field-focused.png).
 
@@ -2383,11 +2414,11 @@ Crops: [text-field-default](components/crops/text-field-default.png), [text-fiel
 | size | 176 x 34 | = | = |
 | padding | `space.scale.1_5` `space.scale.2_5` | = | = |
 | fill | transparent | = | = |
-| border | `border.width.default` `border.strong` | = | `border.width.default` `border.focus` |
+| border | `border.width.default` `link.underline` | = | `border.width.default` `border.focus` |
 | radius | `radius.lg` | = | = |
 | text | `typography.bodySmall`, `text.primary` | = | = |
 | shadow | none | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [text-field.light-default](components/crops/text-field.light-default.png), [text-field.light-hover](components/crops/text-field.light-hover.png), [text-field.light-focused](components/crops/text-field.light-focused.png).
 
@@ -2436,7 +2467,7 @@ Crops: [field-error.light-default](components/crops/field-error.light-default.pn
 | radius | `radius.lg` |
 | text | `typography.bodySmall`, `text.strong` |
 | shadow | none |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [text-field-error-error](components/crops/text-field-error-error.png).
 
@@ -2445,11 +2476,11 @@ Crops: [text-field-error-error](components/crops/text-field-error-error.png).
 | size | 176 x 34 |
 | padding | `space.scale.1_5` `space.scale.2_5` |
 | fill | transparent |
-| border | `border.width.default` `border.strong` |
+| border | `border.width.default` `link.underline` |
 | radius | `radius.lg` |
 | text | `typography.bodySmall`, `text.primary` |
 | shadow | none |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [text-field-error.light-error](components/crops/text-field-error.light-error.png).
 
@@ -2467,10 +2498,10 @@ Crops: [text-field-error.light-error](components/crops/text-field-error.light-er
 | fill | `bg.panel` |
 | border | `border.width.default` `bg.subtle` |
 | radius | `radius.2xl` |
-| text | `typography.sectionTitle`, uppercase, `color.neutral.300` |
+| text | `typography.sectionTitle`, uppercase, `text.linkHover` |
 | shadow | none |
 | icon | `size.icon.small` |
-| transition | color, background-color, border-color, t `motion.duration.base` |
+| transition | color, background-color +4 `motion.duration.base` |
 
 | light | default |
 |---|---|
@@ -2482,7 +2513,7 @@ Crops: [text-field-error.light-error](components/crops/text-field-error.light-er
 | text | `typography.sectionTitle`, uppercase, `text.secondary` |
 | shadow | none |
 | icon | `size.icon.small` |
-| transition | color, background-color, border-color, t `motion.duration.base` |
+| transition | color, background-color +4 `motion.duration.base` |
 
 
 #### Limits card title
@@ -2496,7 +2527,7 @@ Crops: [text-field-error.light-error](components/crops/text-field-error.light-er
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.sectionTitle`, uppercase, `color.neutral.300` |
+| text | `typography.sectionTitle`, uppercase, `text.linkHover` |
 | shadow | none |
 | transition | none |
 
@@ -2540,7 +2571,7 @@ Crops: [usage-row-default](components/crops/usage-row-default.png).
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | 10.5px/14.4375px 400 (untokenised), `color.neutral.700` |
+| text | 10.5px/14.4375px 400 (untokenised), `text.linkHover` |
 | shadow | none |
 | transition | none |
 
@@ -2584,7 +2615,7 @@ Crops: [usage-track.light-default](components/crops/usage-track.light-default.pn
 
 | dark | default |
 |---|---|
-| size | 232.75 x 6 |
+| size | 335.16 x 6 |
 | padding | 0px |
 | fill | `accent.fill` |
 | border | none |
@@ -2597,7 +2628,7 @@ Crops: [usage-fill-default](components/crops/usage-fill-default.png).
 
 | light | default |
 |---|---|
-| size | 232.75 x 6 |
+| size | 335.16 x 6 |
 | padding | 0px |
 | fill | `accent.fill` |
 | border | none |
@@ -2620,7 +2651,7 @@ Crops: [usage-fill.light-default](components/crops/usage-fill.light-default.png)
 | fill | `bg.code` |
 | border | none |
 | radius | `radius.sm` |
-| text | `typography.code`, `color.neutral.300` |
+| text | `typography.code`, `text.linkHover` |
 | shadow | none |
 | transition | none |
 
@@ -2656,7 +2687,7 @@ Crops: [code-block.light-default](components/crops/code-block.light-default.png)
 | text | `typography.rowTitle`, `text.strong` |
 | shadow | none |
 | icon | `size.icon.control` |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [subnav-item-active-default](components/crops/subnav-item-active-default.png).
 
@@ -2670,7 +2701,7 @@ Crops: [subnav-item-active-default](components/crops/subnav-item-active-default.
 | text | `typography.rowTitle`, `text.primary` |
 | shadow | none |
 | icon | `size.icon.control` |
-| transition | color, background-color, border-color, t `motion.duration.fast` |
+| transition | color, background-color +4 `motion.duration.fast` |
 
 Crops: [subnav-item-active.light-default](components/crops/subnav-item-active.light-default.png).
 
@@ -2689,7 +2720,7 @@ Crops: [subnav-item-active.light-default](components/crops/subnav-item-active.li
 | text | `typography.rowTitle`, `text.secondary` | `typography.rowTitle`, `text.label` | = |
 | shadow | none | = | = |
 | icon | `size.icon.control` | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [subnav-item-default](components/crops/subnav-item-default.png), [subnav-item-hover](components/crops/subnav-item-hover.png), [subnav-item-focus-visible](components/crops/subnav-item-focus-visible.png).
 
@@ -2703,7 +2734,7 @@ Crops: [subnav-item-default](components/crops/subnav-item-default.png), [subnav-
 | text | `typography.rowTitle`, `text.secondary` | `typography.rowTitle`, `text.label` | = |
 | shadow | none | = | = |
 | icon | `size.icon.control` | = | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = | = |
+| transition | color, background-color +4 `motion.duration.fast` | = | = |
 
 Crops: [subnav-item.light-default](components/crops/subnav-item.light-default.png), [subnav-item.light-hover](components/crops/subnav-item.light-hover.png), [subnav-item.light-focus-visible](components/crops/subnav-item.light-focus-visible.png).
 
@@ -2750,7 +2781,7 @@ Crops: [subnav-group-label.light-default](components/crops/subnav-group-label.li
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.sectionTitle`, uppercase, `color.neutral.300` |
+| text | `typography.sectionTitle`, uppercase, `text.linkHover` |
 | shadow | none |
 | transition | none |
 
@@ -2872,9 +2903,9 @@ Crops: [setting-description.light-default](components/crops/setting-description.
 | fill | transparent | = |
 | border | none | = |
 | radius | 0px | = |
-| text | `typography.caption`, `text.muted` | `typography.caption`, `color.neutral.300` |
+| text | `typography.caption`, `text.muted` | `typography.caption`, `text.linkHover` |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [footer-link-default](components/crops/footer-link-default.png), [footer-link-hover](components/crops/footer-link-hover.png).
 
@@ -2885,9 +2916,9 @@ Crops: [footer-link-default](components/crops/footer-link-default.png), [footer-
 | fill | transparent | = |
 | border | none | = |
 | radius | 0px | = |
-| text | `typography.caption`, `text.secondary` | `typography.caption`, `color.neutral.700` |
+| text | `typography.caption`, `text.secondary` | `typography.caption`, `text.linkHover` |
 | shadow | none | = |
-| transition | color, background-color, border-color, t `motion.duration.fast` | = |
+| transition | color, background-color +4 `motion.duration.fast` | = |
 
 Crops: [footer-link.light-default](components/crops/footer-link.light-default.png), [footer-link.light-hover](components/crops/footer-link.light-hover.png).
 
