@@ -150,6 +150,12 @@ class ExportTest(unittest.TestCase):
         self.assertIn("1 composite tokens", css)
         self.assertNotIn("None", css)
 
+    def test_unresolved_path_cannot_close_the_css_comment(self):
+        out = catalog.export_tokens({"light": {"x*/y": {"$value": "{nowhere}"}}}, ["light"])
+        css = catalog.export_css(out)
+        self.assertEqual(out["unresolved"], ["light.x*/y"])
+        self.assertEqual(css.count("*/"), css.count("/*"))
+
     def test_theme_own_token_wins_over_shared_core_token(self):
         tokens = {
             "core": {"ring": {"$value": "{focus}"}},

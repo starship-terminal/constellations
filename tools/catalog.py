@@ -305,7 +305,7 @@ def export_css(exported: dict) -> str:
         css += "\n" + block(f'[data-theme="{theme}"]', exported["themes"][theme])
     if exported.get("unresolved"):
         css += (f"\n/* {len(exported['unresolved'])} tokens not exported because a reference points at nothing: "
-                + ", ".join(exported["unresolved"]) + " */\n")
+                + ", ".join(exported["unresolved"]).replace("*/", "* /") + " */\n")
     if exported["skipped"]:
         css += f"\n/* {len(exported['skipped'])} composite tokens (typography objects and other values with no single CSS form) not exported */\n"
     return css
