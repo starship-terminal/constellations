@@ -445,8 +445,8 @@ const SPECS = [
     targets: [T('lib-notes', sc('ArticleNotes__EmptyContainer'), { states: D })] },
   { key: 'recent-search-row', group: 'Data display', name: 'Recent search row', desc: 'One past search on the Search start page: the inputs as chips, the date in 12px grey, and a remove cross.',
     targets: [T('search-start', sc('DashboardRecentSessions__ItemContainer'), { states: ALLP, extra: sub({ main: 'DashboardRecentSessions__ItemMain', date: 'DashboardRecentSessions__DateLabel' }) })] },
-  { key: 'drop-zone', group: 'Form controls', name: 'BibTeX drop zone', desc: 'A tinted strip on the Search start page: "Drag and drop a BibTeX file to search from".',
-    targets: [T('search-start', sc('DropZone__Zone'), { states: D })] },
+  { key: 'drop-zone', group: 'Form controls', name: 'BibTeX drop zone', desc: 'A 30% white strip with 16px corners on the Search start page: "Drag and drop a BibTeX file to search from".',
+    targets: [T('search-start', sc('ExploreEmpty__DropInstructionContainer'), { states: D })] },
 ];
 
 // Pressed states and new views of components first read on 2026-10-04, added in the 2026-10-17

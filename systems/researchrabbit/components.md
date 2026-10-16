@@ -65,8 +65,8 @@ Values that apply across entries, from the measurement file. Counts are componen
 | Plus Jakarta Sans 12/12 400 | 8: `collection-share`, `graph-axis-x`, `graph-axis-y`, `graph-canvas`, `graph-legend`, `graph-legend-item` and more |
 | Plus Jakarta Sans 14/14 600 | 7: `drawer-search-button`, `home-browse-library`, `layout-panel`, `layout-tab`, `layout-tabs`, `table` and more |
 | Plus Jakarta Sans 12/18 400 | 6: `drawer-input`, `filter-toggle`, `inspector-folder-chip`, `list-state-chip`, `quartile-chip`, `segmented` |
+| Plus Jakarta Sans 14/14 500 | 5: `button-link`, `drop-zone`, `library-footer-button`, `nav-workspace`, `positions-moved` |
 | Plus Jakarta Sans 14/21 500 | 5: `filter-go`, `layout-close`, `layout-reset`, `list-pager`, `table-row` |
-| Plus Jakarta Sans 14/14 500 | 4: `button-link`, `library-footer-button`, `nav-workspace`, `positions-moved` |
 | Plus Jakarta Sans 16/24 600 | 4: `drawer`, `drawer-head`, `home-section`, `library-collections-title` |
 | Plus Jakarta Sans 18/27 400 | 4: `checkbox`, `graph-control-button`, `inspector-close`, `layout-toggle` |
 | Plus Jakarta Sans 24/36 400 | 4: `confirm-destructive`, `dialog`, `dialog-close`, `empty-state` |
@@ -74,7 +74,6 @@ Values that apply across entries, from the measurement file. Counts are componen
 | Plus Jakarta Sans 12/12 600 | 2: `notice`, `paywall-badge` |
 | Plus Jakarta Sans 12/18 600 | 2: `collection-search-button`, `inspector-icon-button` |
 | Plus Jakarta Sans 14/21 700 | 2: `nav-bar`, `nav-tab` |
-| Plus Jakarta Sans 32/48 600 | 2: `drop-zone`, `home-hero` |
 
 **Radii.**
 
@@ -143,10 +142,10 @@ Values that apply across entries, from the measurement file. Counts are componen
 | background | #f5c751 `{palette.activity.important}` | 1 |
 | background | #fef1c5 `{palette.activity.important-bg}` | 1 |
 | background | rgba(221, 204, 255, 0.2) `{palette.alpha.violet-20}` | 1 |
+| background | rgba(255, 255, 255, 0.3) `{palette.alpha.white-30}` | 1 |
 | background | rgba(255, 255, 255, 0.4) `{palette.alpha.white-40}` | 1 |
 | background | rgba(255, 255, 255, 0.9) `{palette.alpha.white-90}` | 1 |
 | background | rgba(48, 85, 94, 0.3) `{palette.alpha.scrim}` | 1 |
-| text | #333333 `{palette.base.secondary}` | 1 |
 
 **Motion.** Transitions in the page's CSS (every styled component's rules, in [raw/css-vars.json](raw/css-vars.json)) and on the measured elements. The CSS defines no transition on a hover or focus colour except the scrollbar thumb; the rest are opacity, transform and width changes on panels, the drawer and overlays.
 
@@ -2017,11 +2016,9 @@ The multi-line field at the foot of the Notes tab: a contenteditable rich-text b
 ![Note composer default](components/crops/note-composer-default.png) ![Note composer focus-visible](components/crops/note-composer-focus-visible.png)
 
 #### BibTeX drop zone
-A tinted strip on the Search start page: "Drag and drop a BibTeX file to search from". Read as `drop-zone` on the Search start page (recent searches).
+A 30% white strip with 16px corners on the Search start page: "Drag and drop a BibTeX file to search from". Read as `drop-zone` on the Search start page (recent searches).
 
-**Values (default).** size 1320 x 263; padding 16px `{spacing.4}`; radius 16px `{radius.2xl}`; background transparent; text Plus Jakarta Sans 32/48 600, #000000 `{palette.base.black}`; icon 20 x 20, #ffffff `{palette.base.white}`.
-
-Child layers that carry the look: form 1099.5x53 background #000000 `{palette.base.black}` radius 36px; button 71.4x37 background #d1ceed `{palette.lavender.50}` radius 48px; button 142.5x34 background #ffffff `{palette.base.white}` border 1px solid #686d79 `{palette.grey.secondary}` radius 48px.
+**Values (default).** size 1288 x 78; padding 32px `{spacing.8}`; gap 16px `{spacing.4}`; radius 16px `{radius.2xl}`; background rgba(255, 255, 255, 0.3) `{palette.alpha.white-30}`; text Plus Jakarta Sans 14/14 500, #000000 `{palette.base.black}`; icon 14 x 14, #000000 `{palette.base.black}`.
 
 ![BibTeX drop zone default](components/crops/drop-zone-default.png)
 

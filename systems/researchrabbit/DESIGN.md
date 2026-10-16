@@ -200,7 +200,7 @@ typography:
     fontFamily: "Plus Jakarta Sans"
     fontSize: "12px"
     fontWeight: 400
-    lineHeight: 1.5
+    lineHeight: 1
     letterSpacing: "0px"
 rounded:
   xs: "3px"

@@ -258,7 +258,7 @@ SPEC_CORE = {
         "heading-4": G("typography", TY("{fontFamily.ui}", "{fontSize.16}", "{fontWeight.medium}", 1.5), "h4", "font-size: 16px; font-weight: 500", "The h4 default. " + LH),
         "heading-5": G("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.semibold}", 1.5), "h5", "font-size: 14px; font-weight: 600", "The h5 default. " + LH),
         "form-label": G("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.medium}", 1.5), "label", "font-size: 14px; font-weight: 500", "Field labels in dialogs. " + LH),
-        "caption": R("typography", TY("{fontFamily.ui}", "{fontSize.12}", "{fontWeight.regular}", 1.5), "DashboardSearch__Tip", "font-size: 12px", "Hints under a field and dates in lists. " + LH),
+        "caption": R("typography", TY("{fontFamily.ui}", "{fontSize.12}", "{fontWeight.regular}", 1), "DashboardSearch__Tip", "font-size: 12px", "The one-line hint under the home search field. Line height measured 12/12 on that tip (home-hero, a span, in raw/components-computed.json), unlike the 1.5 of running text."),
     },
     "spacing": {},  # filled from --neg2..--16 below
     "radius": {

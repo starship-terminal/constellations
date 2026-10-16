@@ -65228,44 +65228,44 @@
   "drop-zone": {
    "group": "Form controls",
    "name": "BibTeX drop zone",
-   "description": "A tinted strip on the Search start page: \"Drag and drop a BibTeX file to search from\".",
+   "description": "A 30% white strip with 16px corners on the Search start page: \"Drag and drop a BibTeX file to search from\".",
    "pages": [
     "search-start"
    ],
    "states": {
     "default": {
      "tag": "div",
-     "component": "DropZone__Zone",
-     "text": "Get started Search Search for new articles using keywords / titles or Browse Lib",
+     "component": "ExploreEmpty__DropInstructionContainer",
+     "text": "Drag and drop a BibTeX file to search from",
      "rect": {
-      "x": 60,
-      "y": 153.5,
-      "w": 1320,
-      "h": 263
+      "x": 76,
+      "y": 245.5,
+      "w": 1288,
+      "h": 78
      },
      "style": {
       "display": "flex",
-      "position": "relative",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "1320px",
-      "height": "263px",
+      "width": "1288px",
+      "height": "78px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "maxHeight": "none",
-      "paddingTop": "16px",
-      "paddingRight": "16px",
-      "paddingBottom": "16px",
-      "paddingLeft": "16px",
+      "paddingTop": "32px",
+      "paddingRight": "32px",
+      "paddingBottom": "32px",
+      "paddingLeft": "32px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "column",
-      "alignItems": "normal",
+      "gap": "16px",
+      "rowGap": "16px",
+      "columnGap": "16px",
+      "flexDirection": "row",
+      "alignItems": "center",
       "justifyContent": "center",
       "flexWrap": "nowrap",
       "gridTemplateColumns": "none",
@@ -65285,7 +65285,7 @@
       "borderTopRightRadius": "16px",
       "borderBottomRightRadius": "16px",
       "borderBottomLeftRadius": "16px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgba(255, 255, 255, 0.3)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -65321,46 +65321,19 @@
      },
      "paint": [
       {
-       "node": "form.SearchBar__Container",
-       "size": "1099.5x53.0",
-       "bg": "rgb(0, 0, 0)",
-       "radius": "36px"
-      },
-      {
-       "node": "button.SearchBar__SearchButton",
-       "size": "71.4x37.0",
-       "bg": "rgb(209, 206, 237)",
-       "radius": "48px"
-      },
-      {
-       "node": "button.generateVariantComponent__default",
-       "size": "142.5x34.0",
-       "border": "T:1px solid rgb(104, 109, 121) | R:1px solid rgb(104, 109, 121) | B:1px solid rgb(104, 109, 121) | L:1px solid rgb(104, 109, 121)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "48px"
-      },
-      {
        "node": "div.ExploreEmpty__DropInstructionContainer",
        "size": "1288.0x78.0",
        "bg": "rgba(255, 255, 255, 0.3)",
        "radius": "16px"
       }
      ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "div.GradientBackground__Container",
-       "radius": "16px",
-       "bg": "rgb(215, 246, 248)"
-      }
-     ],
      "textStyle": {
-      "node": "h2.DashboardSearch__Title",
-      "text": "Get started",
+      "node": "span",
+      "text": "Drag and drop a BibTeX file to search fr",
       "fontFamily": "\"Plus Jakarta Sans\", sans-serif",
-      "fontSize": "32px",
-      "lineHeight": "48px",
-      "fontWeight": "600",
+      "fontSize": "14px",
+      "lineHeight": "14px",
+      "fontWeight": "500",
       "fontStyle": "normal",
       "letterSpacing": "normal",
       "color": "rgb(0, 0, 0)",
@@ -65368,11 +65341,11 @@
       "textTransform": "none"
      },
      "icon": {
-      "w": 20,
-      "h": 20,
+      "w": 14,
+      "h": 14,
       "fill": "none",
       "stroke": "none",
-      "color": "rgb(255, 255, 255)"
+      "color": "rgb(0, 0, 0)"
      },
      "rules": [],
      "crop": "components/crops/drop-zone-default.png",
