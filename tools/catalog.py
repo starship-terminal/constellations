@@ -463,7 +463,7 @@ COMPONENT_PROPS = {"bg": "backgroundColor", "background": "backgroundColor", "fa
 README_SECTIONS = (("Colors", r"\bcolou?rs?\b"), ("Typography", r"\bfonts?\b|typograph"),
                    ("Layout", r"layout|geometry|spacing"),
                    ("Components", r"button|component|badge|patterns|screen to get right"),
-                   ("Do's and Don'ts", r"distrust|limits|gaps"))
+                   ("Do's and Don'ts", r"\bdo'?s? and don|distrust|limits|gaps"))
 FUNCTIONAL_COLOUR = re.compile(r"(rgba?|hsla?|hwb|oklch|oklab|lch|lab|color-mix)\(.+\)", re.I)
 
 

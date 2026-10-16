@@ -266,3 +266,11 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Focus states.** TokenTracker removes every focus ring, so the focus-visible readings equal the defaults. That is a gap in the product, not a token.
 - **Provider colours** (Claude orange, Codex blue, OpenCode purple) come from a JavaScript map, not CSS. They are not tokenised; the style guide's share bar uses illustrative values.
 - **The status badge** (`STALE`, `RE-AUTH`) reading is its wrapper. Use the crops and screenshots for it.
+
+### Do and don't (from README.md)
+
+1. **Do let the surfaces carry the structure.** Wash, panel and card differ by one neutral step plus a hairline; the only resting shadow is `0 1px 2px` at 5%. See [dashboard-dark-default](screenshots/dashboard-dark-default.png) and [settings-light-default](screenshots/settings-light-default.png).
+2. **Do keep green for money and "on".** Cost figures, the usage fill and the heatmap are green. The primary button is black in light and near-white in dark, never green. See [dashboard-light-default](screenshots/dashboard-light-default.png) and [limits-dark-default](screenshots/limits-dark-default.png).
+3. **Do keep controls small and quiet.** Tabs, segments and buttons are 12/16 medium on 28 to 32px, 8px radius; hover changes colour only. See [settings-dark-segment-hover](screenshots/settings-dark-segment-hover.png).
+4. **Don't copy the uppercase labels.** The older cards ("ACTIVITY HEATMAP", "USAGE LIMITS"), the hero label, sidebar group labels and Settings card titles use small tracked uppercase. TokenTracker's newer cards title themselves in sentence case at 14/500 primary. Use sentence case everywhere. See [dashboard-dark-full](screenshots/dashboard-dark-full.png).
+5. **Don't copy the missing focus ring.** Add a visible 2px accent ring.
