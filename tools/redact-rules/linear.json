@@ -1,0 +1,11 @@
+{
+  "_note": "Linear: no rectangles; the signed-in renders and crops come from copies redacted before they left the browser. The OCR email net is kept, with the public addresses it finds allowed: Linear's own (linear.app), the placeholder in the redacted members table (example.com), and the demo addresses in Linear's marketing screenshots (acme.inc, encom.com).",
+  "ocr": {
+    "email_allow": [
+      "@linear\\.app\\b",
+      "@example\\.com\\b",
+      "@acme\\.inc\\b",
+      "@encom\\.com\\b"
+    ]
+  }
+}

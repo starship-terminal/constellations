@@ -1,42 +1,100 @@
 # Linear styling reference
 
-Captured 23 September 2026. Independent visual study, not an official Linear library.
+Public site captured 23 September 2026; signed-in app refreshed 17 October 2026. Independent visual study, not an official Linear library.
 
 ## What this package contains
 
-A local HTML guide, full-page public-site screenshots, accessibility snapshots of the signed-in desktop app, computed-style evidence, design tokens, editable SVG sheets, individual component SVGs, and public-demo reference icons. Open `style-guide.html` to browse everything. The signed-in app screenshots were captured from a real workspace and have been removed from the package (2026-10-11); the app is documented by its anonymised accessibility snapshots and the colours sampled from it. The reconstructed components use fictional content.
+A local HTML guide, full-page public-site screenshots, design tokens for the signed-in app in dark and light, computed styles and crops of 47 app components in every state that could be reached, redacted screenshots of the app, accessibility snapshots from the first capture, public-site computed-style evidence, editable SVG sheets, individual component SVGs and public-demo reference icons. Open `style-guide.html` to browse everything.
 
-The study separates three systems: the authenticated desktop app, public marketing/product pages, and brand assets. The current app is more neutral and dense than the blue-gray public product examples. Using one palette for all three would lose that distinction.
+The study separates three systems: the signed-in app, the public marketing site, and brand assets. The app is more neutral and dense than the blue-gray public product examples. Using one palette for all three would lose that distinction.
+
+The 2026-10-17 refresh re-read the app from its own CSS, in both themes, from redacted static copies of the signed-in pages. Every app colour that was a screenshot sample before is now a measured value; the table under Colors lists each change. The SVG redraws in `components/` and `boards/` are from the first capture and are still reconstructions; the measured crops are in `components/crops/`.
 
 ## Evidence and limits
 
 | Label | Meaning |
 | --- | --- |
-| Measured CSS | Computed styles read from visible DOM elements on public pages. Exact for the captured page and viewport. |
-| Sampled pixels | Dominant flat colors sampled from signed-in app screenshots taken before they were removed. A displayed sRGB pixel, not proof of the underlying CSS token. |
-| Observed | A component or state is visible in a saved public screenshot or recorded in an app accessibility snapshot. |
-| Reconstruction | A practical redraw or suggested token. Dimensions and interaction behavior may differ from Linear's implementation. |
-| Not inspected | Not accessible, not enabled, not reached, or deliberately outside the capture. |
+| Measured | Read from a CSS variable or a computed style on a real element, in a stated state, theme and width. App values: signed-in copies, 2026-10-17. Public values: signed-out pages, 2026-09-23 |
+| Derived | Worked out from a measured value (`--font-size-micro` is `round(up, .6875rem, 2px)`, so 12px) |
+| Sampled pixels | A flat colour read off a screenshot. No app value in the tokens is sampled any more |
+| Observed | A component or state is visible in a capture, with no values read from it |
+| Reconstruction | A redraw or a suggested value: the SVG components and boards, and the 4px spacing scale |
+| Not captured | Out of reach, not enabled, or deliberately left alone; listed in the coverage table with the reason |
 
-This is broad page-type coverage, not a claim that every Linear route, workspace record, historical article, responsive breakpoint, permission state, or experiment has been captured. Native app captures showed the viewport, not every scroll position. Public screenshots are full-page but video, lazy-loading and scroll-triggered animation can leave inactive regions. See `coverage.json` for exact captured URLs and exclusions. App theme was System preference with Dark selected for the dark system appearance; font size was Default. No theme, workflow, issue, project or account setting was changed.
+Every token in `tokens/linear.tokens.json` carries `$extensions.source` (where it was read) and `$extensions.evidence` (the label above).
+
+### How the app values were read
+
+The owner signed in to linear.app in the Claude desktop app's browser pane; nothing was typed for them. Each state (a page, a menu open, a tooltip shown, a toast after "Copy issue URL") was copied with `tools/capture/signed-in/snapshot.js`, which inlines every stylesheet, scripts removed. Linear keeps its theme in a constructed stylesheet (`document.adoptedStyleSheets`), which the kit's snapshot did not copy, so this package's copy of the script inlines it too. The same script scrubs private text before the copy leaves the browser: issue, project and description text become "Sample issue N", "Sample project N" and "Sample text N", identifiers become CORE-N, and avatar and workspace images become a grey disc. `unsnap.py` refused any copy in which a redacted string survived. The copies stay outside the repository.
+
+Headless Chromium then read the copies offline: `tools/capture/vars.mjs` read every CSS variable with getComputedStyle on `<main>`, and `tools/capture/signed-in/measure.mjs` read 47 components with real pointer hover, real keyboard focus (focus-visible) and the mouse held down (pressed). Results: `raw/css-vars.json`, `raw/components-computed.json`, `raw/measurements.md`, crops in `components/crops/`.
+
+Linear applies its theme on `.theme-provider-<hash>` wrappers; `:root` only carries dark fallback values. Reading `:root` in a light page returns dark colours, so every theme value here was read inside the provider. Linear computes its palette in `lch()`; the builder converts to sRGB hex with the CSS Color 4 formulas, so a channel can differ by one from a hex Linear declares elsewhere (the focus ring computes to #5e6ad2, Linear's fallback hex is #5e69d1).
+
+The account theme was Dark. For the light copies the Interface theme setting was switched to Light with the owner's agreement and set back to Dark afterwards; no other setting, issue or record was changed. Widths: 1440 for every page, 390 for the board and an empty state. Font size: Default.
+
+What to distrust: status colours depend on the team's workflow; feedback.warning is the "At risk" health label, a muted text colour, not a warning banner (none appeared); the checkbox is invisible in the copies (script shows it on row hover), so only its 12px box was read; avatar fills are this package's grey disc, only their size and shape are Linear's.
 
 ## Colors
 
-### Authenticated app: sampled dark surfaces
+### Signed-in app, measured (2026-10-17)
 
-| Role | Value | Evidence |
-| --- | --- | --- |
-| Outer canvas / navigation | #09090B | Flat pixels across issue list and detail |
-| Main content | #121214 | Flat pixels across issue list and detail |
-| Raised card / dialog | #1A1A1C | Properties and issue composer |
-| Popover surface | #212123 | Status menu |
-| Menu selection | #323234 | Status menu |
-| Main text | #FFFFFF | Reconstruction value informed by text pixels |
-| Secondary text | #969699 | Approximate reconstruction |
-| Subtle border | #2B2B2E | Approximate reconstruction |
-| Action accent | #5E6AD2 | Measured public accent, reused in reconstructed app controls |
+| Role | Dark | Light | Source |
+| --- | --- | --- | --- |
+| Page (outer canvas, sidebar) | #09090A | #EFEFF0 | `--content-bg-color`; also `<meta name="theme-color">` |
+| Panel (inset main area, header) | #121213 | #F9F9FA | `--color-bg-primary` |
+| Raised (cards, fields, dialog) | #1A1A1B | #FFFFFF | card background, equals `--color-bg-quaternary` |
+| Control (tabs, secondary buttons) | #1C1C1D | #FFFFFF | view tab at rest |
+| Control hover | #232424 | #F0F0F1 | view tab on hover |
+| Selected (tab, sidebar item) | #29292B | #ECECED | selected view tab |
+| Overlay (menus, tooltips, toasts) | #212122 | #FFFFFF | toast and menu surfaces |
+| Overlay, strong (select list) | #28292B | #FFFFFF | open select |
+| Highlight (active menu option) | #313234 | #F1F1F1 | menu highlight box |
+| Scrim | black 40% | black 25% | composer dialog backdrop |
+| Text primary | #FFFFFF | #1B1B1B | `--color-text-primary` |
+| Text secondary | #E3E4E6 | #2F2F31 | `--color-text-secondary` |
+| Text tertiary (muted) | #959597 | #5C5C5E | `--color-text-tertiary` |
+| Text quaternary (faint, disabled) | #565759 | #9C9D9F | `--color-text-quaternary` |
+| Link | #707FFE | #4061DA | `--sx-1xaoi8i`, named `--changelog-label-link` in Linear's bundle |
+| On accent | #FFFEFF | #FFFEFF | primary button label |
+| Border primary / secondary / tertiary | #1A1B1D / #232426 / #28282B | #F1F1F1 / #DEDEDE / #D3D3D3 | `--color-border-*` |
+| Field border, hover | #48494C, #3E424D | #D8D8D8, #C2C2C2 | text field |
+| Focus ring | #5E6AD2 | #6D78D5 | `--focus-ring-color` |
+| Accent, hover, pressed | #5E6AD2, #6975E2, #6975E2 | #6D78D5, #5E6AC1, #5E6AC1 | primary button |
+| Danger text, danger hover fill | #FF8683, #361D1E | #E2253B, #FDE9E9 | Delete workspace button |
+| Success | #27A644 | #43BC58 | Online presence dot (same as In Review) |
 
-These values describe the captured dark appearance. A complete light-theme token set is not included because the account theme was not changed. The public Switch guide provides a light editorial reference, not a verified light app theme.
+Status icons (from the status menu): Backlog #BEC2C8 / #A2A6AC, Todo #E2E2E2 / #A6A6A6, In Progress #F0BF00, In Review #27A644 / #43BC58, Done #5E6AD2, Canceled and Duplicate #95A2B3. Project health labels: On track #527A58 / #4C8055, At risk #9D854C / #9D8242. No info colour appeared on the screens reached.
+
+### What moved from Sampled to Measured
+
+The first capture sampled five dark app surfaces from screenshots and filled text, border and accent with reconstruction values. Each is now read from CSS:
+
+| Old token (2026-09-23) | Old value, label | New token | New value (dark) |
+| --- | --- | --- | --- |
+| app.canvas | #09090B, sampled | dark.color.bg.page | #09090A |
+| app.surface | #121214, sampled | dark.color.bg.panel | #121213 |
+| app.raised | #1A1A1C, sampled | dark.color.bg.raised | #1A1A1B |
+| app.popover | #212123, sampled | dark.color.bg.overlay | #212122 |
+| app.selected | #323234, sampled | dark.color.bg.highlight | #313234 |
+| app.text | #FFFFFF, reconstruction | dark.color.text.primary | #FFFFFF |
+| app.muted | #969699, reconstruction | dark.color.text.tertiary | #959597 |
+| app.border | #2B2B2E, reconstruction | dark.color.border.tertiary | #28282B |
+| app.accent | #5E6AD2, public site | dark.color.accent.default | #5E6AD2 |
+| semantic.* | reconstruction | dark.color.status.*, feedback.* | see above |
+
+The samples were within one or two steps of the CSS values. The old `app` and `semantic` groups are gone; every light value is new.
+
+### Elevation
+
+| Level | Dark | Light | Used on |
+| --- | --- | --- | --- |
+| shadow.low | 0 0.5px 1px 1px black 30% | 0 3px 6px -2px black 2%, 0 1px 1px black 4% | buttons, tabs, cards |
+| shadow.medium | three layers, 1-8px blur, black 12.5% | three layers, 1-18px blur, black 2-4% | menus, toasts, select lists |
+| shadow.high | five layers up to 40px blur | three layers up to 48px blur | dialog |
+| shadow.card | low plus a 0.5px white 8% ring | low plus a 0.5px black 9% ring | board cards |
+
+Surfaces in dark draw their edge as a 0.5px translucent white ring inside the shadow, not a border.
 
 ### Public website: measured computed CSS
 
@@ -61,7 +119,28 @@ Mercury White is #F4F5F8. Nordic Gray is displayed as #222326. The brand page's 
 
 Status and label colors depend on workflow and configuration. The semantic tokens supplied here are reconstruction choices, not universal Linear assignments. Pair status color with icon shape and a text label.
 
+### Official brand colors
+
+Mercury White is #F4F5F8. Nordic Gray is displayed as #222326. The brand page's RGB prose for Nordic Gray says 35, 35, 38, which does not exactly match that hex; this package preserves the displayed hex and records the inconsistency instead of silently correcting it. Brand colors are not substitutes for UI text and surface tokens. Source: https://linear.app/brand.
+
 ## Fonts and typography
+
+The app's stacks are CSS variables: `--font-regular` is `"Inter Variable", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", "Linear Thai", sans-serif`; `--font-monospace` is `"Berkeley Mono", "SFMono Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace`. Both faces are served by the app as variable fonts (@font-face weight 100 to 900).
+
+The app's type scale is `--font-size-*`: micro 12 (Derived from `round(up, .6875rem, 2px)`), mini 12, small 13, regular 15, large 18, title3 20, title2 24, title1 36. Weights are `--font-weight-*`: light 300, normal 450, medium 500, semibold 600, bold 700. Regular text is 450, not 400.
+
+| Role | Size / line height | Weight | Letter spacing | Where read |
+| --- | --- | --- | --- | --- |
+| Issue title | 24 / 32px | 600 | -0.16px | issue detail |
+| Page title | 24 / 32px | 500 | -0.16px | settings page |
+| Description heading | 19 / 28px | 600 | 0.05px | h2 in a description |
+| Body | 15 / 24px | 450 | -0.1px | description paragraph (`--editor-line-height` 1.6) |
+| Sidebar label | 13px | 500 | normal | sidebar item |
+| Control label | 12px | 500 | normal | view tabs, small buttons |
+| Caption | 12px | 450 | normal | card meta line |
+| Code | 14.06 / 18.28px | 450 | -0.1px | inline code, Berkeley Mono |
+
+These are `core.typography.*` in the tokens. The public site's type follows.
 
 | Family | Verified use | Evidence |
 | --- | --- | --- |
@@ -92,29 +171,37 @@ The component redraws use 12–14px UI text and 20–24px detail titles as recon
 
 ## Geometry, spacing and layout
 
-| Element | Observed or reconstructed geometry |
-| --- | --- |
-| Public navigation / sign-up | 32px tall, 12px horizontal padding, pill radius |
-| Demo icon buttons | 28 × 28px, circular/pill |
-| Demo sidebar rows | 28px tall, 8px radius, 7px horizontal padding |
-| Demo workspace label | 24px tall, 12px text, 8px radius |
-| Public logo link | 6px radius |
-| Cards / panels | 9, 12, 16 and 22px radii occur in public DOM; context matters |
-| App tabs | Observed pills; redraw uses 28px height and half-height radius |
-| App main pane | Large rounded container inset from outer canvas |
-| App properties | Stacked rounded panels with thin borders and close vertical spacing |
-| Menus | Rounded surface, search at top, compact rows, selected fill, shortcuts on right |
-| Issue rows | One-line, aligned metadata columns, subtle horizontal dividers |
+| Element | Value | Source |
+| --- | --- | --- |
+| Control radius | 8px | `--control-border-radius` |
+| Buttons, tabs, icon buttons | pill (9999px) | `--radius-rounded`, computed |
+| Cards | 8px | board card |
+| Settings groups | 10px | `--settings-list-view-item-radius` |
+| Menus, toasts, select lists | 12px | computed |
+| Dialog | 21px | composer |
+| Badge, keyboard key | 3px, 4px | computed |
+| Control height | 28px (buttons, tabs, icon buttons), 32px (fields, header buttons) | computed |
+| Rows | sidebar item 28px, menu option 32px, sub-issue row 36px, table row 48px | computed |
+| Sidebar width, header height | 244px, 43.5px | `--sidebar-width`, `--header-height` |
+| Main panel | inset 8px from the window, 12px radius | computed |
+| Border width | 1px; 0.5px hairline rings | text field; `--editor-hairline` |
+| Breakpoints | 640px (88 rules), 1024px (47), 768px (23), 480px (9), 375px (6); min-width 1400px and 1800px | `@media` rules in the app bundle |
+| z-index | dialog 300, toast 580, menu 600 | computed stacking ancestors |
 
-The 4, 8, 12, 16, 24, 32, 48, 64px spacing scale in the tokens is a reconstruction convenience, not an extracted official spacing system. Desktop app screenshots were captured at 3024 × 1898 device pixels on this machine; approximate logical dimensions use a 2× assumption. Browser zoom/device scaling was not independently measured. Public CSS measurements use the actual capture viewport in each JSON file.
+The 4, 8, 12, 16, 24, 32, 48, 64px spacing scale in the tokens is a reconstruction convenience. Linear declares no spacing variables; its stylex classes carry literal paddings, which are listed per component in `raw/measurements.md`.
 
 ## Buttons, fields and interaction states
 
-Public primary actions are pale filled pills with dark text, 32px high and 13px text at weight 510. Public navigation is transparent with muted labels. The embedded demo has subtle icon buttons using 2% white fill and an inset 1px line at 5% white. Read raw border style as well as border color: computed border color alone does not imply a visible border.
+Measured in both themes (crops in `components/crops/`, values in `raw/measurements.md`):
 
-The authenticated issue composer shows an accent primary action, compact metadata chips, a quiet close affordance, and a footer separated by a hairline. Tabs use filled pills. Property controls often look like text-and-icon rows until opened.
+- **Focus-visible** is a 1px solid outline in the focus colour, drawn in plain CSS. Its offset depends on the control: 2px outside buttons, 0 on icon buttons, 1px on links, -1px inside fields and tabs.
+- **Hover** lightens the fill one step (accent #5E6AD2 to #6975E2 in dark; in light the accent darkens, #6D78D5 to #5E6AC1). Transitions are 0.15s ease on border, background, colour and opacity.
+- **Pressed** (:active) equals hover on every button measured.
+- **Selected** tabs and sidebar items take a filled pill one step above the control fill.
+- **Disabled** never appeared: the composer's Create issue button stays enabled with an empty title.
+- Motion variables: `--speed-quickTransition` 100ms, `--speed-highlightFadeOut` 150ms, `--speed-regularTransition` 250ms, `--speed-slowTransition` 350ms, `--speed-highlightFadeIn` 0ms; easings `--ease-out-quad`, `--ease-out-cubic` and others. 14 rules respond to `prefers-reduced-motion: reduce`.
 
-The library includes default, hover, focus, disabled and destructive button variants; default/focus/error fields; checkbox and switch pairs; and tooltip/toast examples. The hover, focus, validation error, switch, tooltip and toast redraws are proposals for a usable library, not claims that those precise Linear states were captured. Actual menus, the date picker, composer, filters and display settings were observed. Checkboxes are visible in settings. No destructive confirmation or error was deliberately triggered.
+The public site's primary actions are pale filled pills with dark text, 32px high, 13px at weight 510; the embedded demo's icon buttons use a 2% white fill and an inset 1px line at 5% white.
 
 ## Icons
 
@@ -126,20 +213,65 @@ Reference SVGs remain proprietary/reference material and are not offered as a ne
 
 ## Component inventory and evidence
 
-| Family | Included | Primary screenshot evidence | Status |
-| --- | --- | --- | --- |
-| Navigation | Selected sidebar row, pills, circular action | App My issues / project overview; public demo | Observed, redrawn |
-| Buttons | Primary, secondary, ghost, icon, web CTA | Issue composer; public homepage | Observed bases, proposed extra states |
-| Forms | Text fields, checkbox, switch | Preferences; issue composer | Mixed, switches/error state reconstructed |
-| Metadata | Labels, avatars, keyboard shortcut | Issue list, menus | Observed, redrawn |
-| Lists | Issue row, board card | My issues; public board example | Observed, redrawn |
-| Menus | Status selector | App status picker | Observed, redrawn |
-| Calendar | Month grid and input | App date picker | Observed, simplified |
-| Composition | Issue composer, properties, empty state | App composer / project / views | Observed, redrawn |
-| Feedback | Tooltip and success toast | No dedicated live capture | Proposed reconstruction |
-| Icons | 39 source SVGs | Public homepage buttons | Extracted reference |
+| Family | Measured (2026-10-17) | Redrawn (2026-09-23) |
+| --- | --- | --- |
+| Buttons | primary, primary small, secondary, destructive, icon, property chip | primary states, secondary, ghost, danger, icon, web CTA |
+| Links | inline link, breadcrumb | none |
+| Inputs | text field (and read-only), search field, text area (description editor), select (trigger, open list, option), switch on and off, checkbox geometry | field states, checkbox, switch |
+| Navigation | view tab (pill), sidebar item | selected sidebar row, pill tabs |
+| Overlays | menu with highlighted option, tooltip with keyboard keys, dialog and scrim, toast | status menu, tooltip, toast |
+| Lists and tables | board card, board column header, sub-issue row, projects table row, members table header, row and group header | issue row, board card |
+| Display | avatar, Admin badge, label chip, keyboard key, presence dot, project health labels | label badge, avatar, shortcut |
+| Shell | inset main panel, page header, empty state | empty state, composer, properties, date picker |
 
-Other documented components include breadcrumbs, search, grouped list headers, project progress graphs, property chips, dense settings tables, empty states, billing/feature upgrade notices, code blocks and diff colors, avatar lists, footer navigation, pricing comparison tables, editorial cards and mobile illustrations. They are visible in the screenshot collection; not every one has a standalone SVG redraw.
+## Coverage
+
+Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). App items were captured on 2026-10-17 on the free plan.
+
+| Item | Status | Where |
+|---|---|---|
+| Colour roles, dark and light | Captured; info not captured (no info message appeared) | `dark.color`, `light.color` |
+| Type roles | Captured | `core.typography`, `core.font` |
+| Spacing | Reconstruction | `core.space`; literal paddings per component in `raw/measurements.md` |
+| Radii, border widths | Captured | `core.radius`, `core.borderWidth` |
+| Elevation | Captured | `dark.shadow`, `light.shadow` |
+| Motion | Captured | `core.duration`, `core.easing` |
+| Sizing and focus ring | Captured | `core.size`, `core.focusRing` |
+| Layout: breakpoints, widths | Captured | `core.breakpoint`, `core.layout` |
+| z-index | Captured for dialog, toast, menu; tooltip not captured (no z-index on its stack) | `core.zIndex` |
+| Button | Captured: default, hover, focus-visible, pressed; disabled not captured (none appeared) | `button-primary`, `button-primary-small`, `button-secondary`, `button-danger` |
+| Icon button | Captured: default, hover, focus-visible, pressed | `icon-button` |
+| Link | Captured: default, hover, focus-visible | `link`, `breadcrumb-link` |
+| Text field | Captured: default, hover, focus-visible, read-only; error not captured (no form submitted) | `text-field`, `search-field` |
+| Text area | Captured: default, focus-visible | `text-area` (composer description) |
+| Select | Captured: trigger default, hover, focus-visible, pressed; open list; option | `select` |
+| Checkbox | Not captured: Linear shows the row checkbox by script on hover; the copies only hold its 12px box | `checkbox` |
+| Radio | Not present: none on the 20 settings pages and views scanned | |
+| Switch | Captured: on, off, hover, focus-visible | `switch` |
+| Tabs | Captured: default, hover, focus-visible, pressed, selected | `tab` |
+| Menu | Captured: open, highlighted option | `menu` |
+| Tooltip | Captured | `tooltip`, `kbd` |
+| Dialog | Captured | `dialog`, `dialog-scrim` |
+| Toast | Captured | `toast` |
+| Card | Captured: default, hover, focus-visible | `card` |
+| List row | Captured: default, hover, focus-visible; selected sidebar item | `list-row`, `nav-item` |
+| Table | Captured: row hover, sortable header, group header | `table-row`, `table-header`, `table-member-row`, `table-group-header` |
+| Avatar | Captured size and shape; fill not captured (photos replaced for privacy) | `avatar` |
+| Badge | Captured | `badge`, `label-chip`, `presence-online` |
+| App shell and navigation | Captured | `app-shell-main`, `page-header`, `nav-item`; [issues-board-dark](screenshots/app-2026-10/issues-board-dark.png) |
+| Form with a validation error | Not captured: needs a submit, which this capture does not do | |
+| Empty, loading, error states | Empty captured; loading and error not captured (not reachable without breaking the session) | `empty-state`; [empty-dark](screenshots/app-2026-10/empty-dark.png) |
+| Destructive confirmation | Not captured: needs clicking Delete workspace | |
+| Feedback after an action | Captured | toast after Copy issue URL; [issue-dark-toast](screenshots/app-2026-10/issue-dark-toast.png) |
+| Search and filtering | Search field captured; filter menu not opened | `search-field` |
+| List or table | Captured | [projects-dark](screenshots/app-2026-10/projects-dark.png), [settings-members-dark](screenshots/app-2026-10/settings-members-dark.png) |
+| Onboarding | Not captured: the account is past onboarding | |
+| Light and dark | Captured | every 1440 app copy in both themes; the two 390 copies in dark only |
+| Desktop and phone widths | Captured | 1440 everywhere; 390 for the board and an empty state |
+
+Totals over 38 rows: 32 captured (states that were not reachable are named in their row), 1 reconstruction, 1 not present, 4 not captured.
+
+Also not captured: an issue list in list layout (this workspace's views are boards, and switching layout saves a view preference), the command menu (Cmd+K did not open in the browser pane), cycles and triage (disabled for the team), security, API and billing pages (left alone on purpose), and nested marketing pages.
 
 ## Do and don't
 
@@ -148,6 +280,7 @@ Other documented components include breadcrumbs, search, grouped list headers, p
 3. **Don't use one rounded rectangle for everything.** Pill actions, modestly rounded sidebar items, squared list rows and more rounded floating surfaces serve different roles. The homepage shows all four at once: the Sign up pill, the 8px selected sidebar row, flat issue rows and the floating agent panel. See [01-home](screenshots/01-home.png).
 4. **Don't carry marketing scale into dense screens.** Public pages use large whitespace, narrow text measures and oversized editorial titles (64px homepage hero, 128px Tiempos on Method) that do not belong in a dense issue table. The product demos on the same pages keep 13px sidebar text and one-line issue rows. See [01-home](screenshots/01-home.png) and [method](screenshots/method.png).
 5. **Don't replace mixed filled and outlined glyphs with a uniform arbitrary stroke.** The demo sidebar sets outlined glyphs (Inbox, Projects) beside filled ones (the Agent Insights bars, the solid arrow inside Initiatives) and a half-filled status circle. See [01-home](screenshots/01-home.png).
+6. **Do draw focus as a 1px outline in the focus colour.** Every focus-visible state measured is `1px solid` #5E6AD2 (dark) or #6D78D5 (light), offset 2px outside buttons and -1px inside fields, with the control's own shadow unchanged. See [button-primary-focus-visible](components/crops/button-primary-focus-visible.png) and [text-field-focus-visible](components/crops/text-field-focus-visible.png).
 
 ## Import into Figma, Paper or another vector editor
 
@@ -155,20 +288,40 @@ Import any `boards/*.svg` file for a full reference sheet, or `components/*.svg`
 
 These are vector assets, not a native `.fig` library. Import does not automatically create component variants, auto-layout, variable bindings or prototype interactions; text editability depends on the importer. Convert the imported groups to components and configure variants in the destination tool if needed. `components/manifest.json` gives intended names and bounds.
 
-`tokens/linear.tokens.json` uses DTCG-style `$type`/`$value` objects, including sRGB color components. `tokens/tokens-studio.json` provides a separate hex-value Tokens Studio structure. Import with a token-aware plugin/tool that supports that format; neither file is claimed to be a native Figma variables import. `tokens/linear.css` supplies CSS custom properties. Preserve evidence descriptions when promoting tokens into a production design system.
+`tokens/linear.tokens.json` uses DTCG `$type`/`$value` tokens in five sets (`core`, `dark`, `light`, `web`, `brand`), colours as sRGB hex, each with `$extensions.source` and `$extensions.evidence`. `tokens/tokens-studio.json` has the same sets with plain values for Tokens Studio. Import with a token-aware plugin/tool that supports that format; neither file is claimed to be a native Figma variables import. `tokens/linear.css` supplies CSS custom properties, dark on `:root` and light under `[data-theme="light"]`. Preserve the evidence fields when promoting tokens into a production design system.
 
 The SVG syntax and browser rendering are checked locally. Import into Paper/Figma itself is unverified. Font installation and commercial font licenses are not included.
 
-## Coverage and remaining gaps
+## Rebuild
 
-Captured public page families: homepage; Brand; Pricing; Intake; Plan; AI; Build; Asks; Agents; Coding Sessions; Customer Requests; Insights; Mobile; Integrations; Changelog; About; Customers; Careers; Now; Method; Quality; Switch; Download; Docs; Developers; Enterprise; Startups; Security; Contact; Privacy; Terms; DPA; AUP; login and signup entry screens.
+From the library root, with the page copies in `~/.design-systems/snaps/linear` (they hold the account's data and are never committed) and any Playwright install:
 
-Captured app families (accessibility snapshots only; no screenshots remain) include agent, inbox, assigned issues, issue detail, selectors, projects, project overview/activity/issues, reviews, saved views, team home/issues/projects/views/documents/members, workspace menu, issue composer, date/filter/display menus, and settings pages listed in the evidence index. Repeated issues and project records were not individually captured because they reuse these page structures.
+```bash
+export PKG=systems/linear SNAPS=~/.design-systems/snaps/linear SNAP_REDACT=~/.design-systems/linear-redact.json
+export PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs
+node $PKG/tools/capture/vars.mjs
+node $PKG/tools/capture/signed-in/measure.mjs
+node $PKG/tools/capture/signed-in/build-measurements.mjs
+python3 $PKG/tools/build_tokens.py
+python3 $PKG/tools/build_library.py
+python3 $PKG/tools/build_guide.py
+```
 
-Not completed: all nested marketing articles/customer stories/docs pages; mobile authenticated UI; light authenticated theme; board/timeline layout after a preference change; enabled cycles/triage (disabled for this team); every settings subpage; security/API/credential pages; destructive dialogs; every interaction state and breakpoint; exact authenticated computed typography, radii and shadows. These remain explicit gaps rather than inferred verification.
+Before committing images, from the library root:
+
+```bash
+python3 tools/catalog.py scan systems/linear --redact ~/.design-systems/linear-redact.json
+python3 tools/redact_images.py check systems/linear --patterns ~/.design-systems/linear-redact.json --rules tools/redact-rules/linear.json
+```
+
+`build_library.py` and `build_guide.py` need Pillow and Markdown (`pip install pillow markdown`). `build_tokens.py` needs only the standard library. A new capture starts with `tools/capture/signed-in/snapshot.js` pasted into the signed-in page and `unsnap.py` on each result; `shots.tsv` lists the copies.
 
 ## Source files and provenance
 
-Each public `evidence/styles/*-styles.json` contains URL, title, viewport and visible-element computed properties. `evidence/pages/*-page.txt` preserves public page text/structure. The app accessibility snapshots in `screenshots/app/` are the only app evidence kept; early captures contain diffs, later ones contain full trees. Their workspace, team, project, people, issue titles and ids were replaced with neutral values (workspace Acme, teams Core and Research, Teammate A to D, Sample issue N) on 2026-10-11; the screenshots themselves were not changed. `evidence/coverage.json` is the final index, and `evidence/capture-manifest.json` is an earlier collection log that may include first-pass titles. `tools/build_library.py` rebuilds SVG assets and tokens; `tools/build_guide.py` rebuilds the gallery (`style-guide.html`) and validation report. Both need Pillow and Markdown (`pip install pillow markdown`) and run from any directory.
+App, 2026-10-17: `raw/css-vars.json` (theme variables per theme, the bundle's media queries, z-index, motion, font faces, status colours, overlay stacks), `raw/components-computed.json` and `raw/measurements.md` (47 components), `components/crops/` (2x crops per state), `screenshots/app-2026-10/` (renders of the redacted copies, 256 colours).
 
-Primary sources: Linear's live pages and signed-in workspace, captured 2026-09-23; https://linear.app/brand; https://rsms.me/inter/; https://usgraphics.com/products/berkeley-mono; https://klim.co.nz/fonts/tiempos-headline/.
+App, 2026-09-23: the accessibility snapshots in `screenshots/app/` are the only evidence kept from the first capture. Early captures contain diffs, later ones full trees. Their workspace, team, project, people, issue titles and ids were replaced with neutral values (workspace Acme, teams Core and Research, Teammate A to D, Sample issue N) on 2026-10-11.
+
+Public site, 2026-09-23: each `evidence/styles/*-styles.json` contains URL, title, viewport and visible-element computed properties; `evidence/pages/*-page.txt` preserves page text. `evidence/coverage.json` is the index, and `evidence/capture-manifest.json` is an earlier collection log.
+
+Primary sources: Linear's live pages and signed-in workspace; https://linear.app/brand; https://rsms.me/inter/; https://usgraphics.com/products/berkeley-mono; https://klim.co.nz/fonts/tiempos-headline/.

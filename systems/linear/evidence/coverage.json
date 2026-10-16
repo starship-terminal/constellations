@@ -1,6 +1,7 @@
 {
   "date": "2026-09-23",
-  "scope": "Page types and primary public navigation, not all nested routes or records",
+  "refreshed": "2026-10-17",
+  "scope": "Page types and primary public navigation, not all nested routes or records; the signed-in app re-measured in dark and light on 2026-10-17 (README coverage table)",
   "public": [
     {
       "name": "01-home",
@@ -628,6 +629,30 @@
       "evidence": "screenshots/app/settings-workspace.txt"
     }
   ],
+  "appMeasured": [
+    "screenshots/app-2026-10/composer-dark.png",
+    "screenshots/app-2026-10/composer-light.png",
+    "screenshots/app-2026-10/empty-dark.png",
+    "screenshots/app-2026-10/empty-light.png",
+    "screenshots/app-2026-10/issue-dark-menu.png",
+    "screenshots/app-2026-10/issue-dark-toast.png",
+    "screenshots/app-2026-10/issue-dark-tooltip.png",
+    "screenshots/app-2026-10/issue-dark.png",
+    "screenshots/app-2026-10/issue-light-menu.png",
+    "screenshots/app-2026-10/issue-light.png",
+    "screenshots/app-2026-10/issues-board-dark.png",
+    "screenshots/app-2026-10/issues-board-light.png",
+    "screenshots/app-2026-10/mobile-empty-dark.png",
+    "screenshots/app-2026-10/mobile-issues-board-dark.png",
+    "screenshots/app-2026-10/projects-dark.png",
+    "screenshots/app-2026-10/projects-light.png",
+    "screenshots/app-2026-10/settings-members-dark.png",
+    "screenshots/app-2026-10/settings-members-light.png",
+    "screenshots/app-2026-10/settings-prefs-dark.png",
+    "screenshots/app-2026-10/settings-prefs-light.png",
+    "screenshots/app-2026-10/settings-workspace-dark.png",
+    "screenshots/app-2026-10/settings-workspace-light.png"
+  ],
   "excluded": [
     {
       "name": "settings-import-export",
@@ -646,11 +671,15 @@
     }
   ],
   "gaps": [
-    "Authenticated light/mobile themes",
+    "Checkbox visible state (shown by script only)",
+    "Radio (not present on the screens scanned)",
+    "Disabled controls (none appeared)",
+    "Validation error, destructive confirmation, loading and error states (need actions this capture does not take)",
+    "Onboarding",
+    "Issue list layout and the command menu",
     "All nested public articles and documentation",
     "Credential/security settings",
     "Enabled cycles and triage",
-    "All scroll positions and UI states",
     "Native Figma/Paper import verification"
   ]
 }

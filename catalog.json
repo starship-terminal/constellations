@@ -643,23 +643,26 @@
       "name": "Linear",
       "url": "https://linear.app",
       "category": "productivity",
-      "goodFor": "Dense, dark, keyboard-first product UI: issue lists, issue detail, menus; plus the public marketing site",
+      "goodFor": "Dense, keyboard-first product UI in dark and light: issue boards, issue detail, menus, settings tables; plus the public marketing site",
       "tags": [
         "web",
         "dark",
+        "light",
         "dense",
         "keyboard-first",
         "issue-tracker",
         "marketing-site"
       ],
       "shape": "audit",
-      "captured": "2026-09-23",
-      "access": "public site measured signed out; desktop app captured signed in, kept only as anonymised accessibility snapshots",
+      "captured": "2026-10-17",
+      "access": "public site measured signed out (2026-09-23); signed-in app measured from redacted page copies on the free plan (2026-10-17), owner signed in",
       "themes": [
-        "dark"
+        "dark",
+        "light"
       ],
       "widths": [
-        1440
+        1440,
+        390
       ],
       "entry": "systems/linear/README.md",
       "tokens": "systems/linear/tokens/linear.tokens.json",
@@ -668,24 +671,32 @@
         "cover": "systems/linear/screenshots/01-home.png",
         "swatches": {
           "dark": {
-            "page": "app.canvas",
-            "surface": "app.surface",
-            "text": "app.text",
-            "muted": "app.muted",
-            "accent": "app.accent",
-            "border": "app.border"
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.panel",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.tertiary",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.secondary"
+          },
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.panel",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.tertiary",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.secondary"
           }
         },
         "fonts": [
-          "font.ui",
-          "font.mono",
-          "font.editorial"
+          "core.font.family.ui",
+          "core.font.family.mono",
+          "core.font.family.editorial"
         ],
         "exclude": [
           "app"
         ]
       },
-      "notes": "App colours are sampled pixels, not CSS. No light app theme was captured. The signed-in app screenshots were removed; only anonymised accessibility snapshots remain.",
+      "notes": "App colours, type, radii, shadows, motion, breakpoints and z-index are measured from the app's CSS in dark and light (2026-10-17). The spacing scale and the SVG redraws are reconstructions. App screenshots are renders of redacted copies.",
       "source": {
         "path": "a private work project (path not recorded)",
         "excluded": [
@@ -695,11 +706,10 @@
       },
       "designMd": {
         "colors": [
-          "app.",
-          "semantic."
+          "light.color."
         ],
-        "rounded": "radius.",
-        "spacing": "space."
+        "rounded": "core.radius.",
+        "spacing": "core.space."
       }
     },
     {

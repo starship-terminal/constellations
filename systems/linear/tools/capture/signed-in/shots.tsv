@@ -1,0 +1,29 @@
+# label	render flags: "full" adds a whole-page shot; scroll=<selector>:<px> records an inner scroll
+# One row per page copy, named <page>-<theme>-<state>. Linear copies keep the theme they were taken
+# in, so dark and light states are separate copies (the account theme was switched for the light ones).
+issues-board-dark
+composer-dark
+composer-light
+empty-dark
+empty-light
+issue-dark-menu
+issue-dark-toast
+issue-dark-tooltip
+issue-dark
+issue-light-menu
+issue-light-toast
+issue-light-tooltip
+issue-light
+issues-board-light
+mobile-empty-dark
+mobile-issues-board-dark
+projects-dark
+projects-light
+settings-members-dark
+settings-members-light
+settings-prefs-dark-select
+settings-prefs-dark
+settings-prefs-light-select
+settings-prefs-light
+settings-workspace-dark
+settings-workspace-light
