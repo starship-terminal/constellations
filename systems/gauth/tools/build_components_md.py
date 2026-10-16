@@ -3,9 +3,11 @@
 
 Reads raw/components-computed.json (every component and state, measured), raw/layout.json,
 tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to them. Every value
-is a cell of the measurement file, condensed: colours are hex followed by the palette token whose
-value matches, the font family is named once per value, and a state row shows only what differs
-from the first state. Adapted from the Coursera kit's builder, which read markdown; this one reads
+is a cell of the measurement file, written as the token in tokens.json that holds it: a colour is its
+semantic token (light.*) or palette token, a radius, padding, border width, shadow, duration or press
+scale its core or elevation token, and a text style its typography token when one matches exactly.
+A value no token holds stays raw and is counted, so the share written in tokens is reported. A state
+row shows only what differs from the first state. Adapted from the Coursera kit's builder, which read markdown; this one reads
 the JSON directly.
 
 Deterministic: re-running it on the same inputs reproduces components.md byte for byte.
@@ -34,10 +36,85 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
+TOK = {}  # every token: name -> resolved value
+
+
+def resolve(v, depth=0):
+    if isinstance(v, str):
+        m = re.fullmatch(r"\{([^{}]+)\}", v)
+        if m and depth < 8:
+            return resolve(TOK_RAW[m.group(1)], depth + 1)
+        return v
+    if isinstance(v, list):
+        return [resolve(x, depth) for x in v]
+    if isinstance(v, dict):
+        return {k: resolve(x, depth) for k, x in v.items()}
+    return v
+
+
+TOK_RAW = {}
+for set_ in ("core", "light"):
+    for n, t in flat(T[set_]):
+        TOK_RAW[n] = t["$value"]
+TYPES = {n: t["$type"] for set_ in ("core", "light") for n, t in flat(T[set_])}
+for n in TOK_RAW:
+    TOK[n] = resolve(TOK_RAW[n])
+
+# Which token names a value. Semantic roles first, then component colours, then the palette, so a
+# colour reads as what it is for wherever Gauth gives it a role.
+COLOR_ORDER = ["background.", "text.", "border.", "action.", "status.", "component.", "palette."]
+
+
+STATEFUL = ("hover", "pressed", "link", "disabled", "on-accent", "selected", "surface", "raised", "overlay", "focus", "strong", "default")
+
+
+def _rank(n):
+    """Group order, then a plain role before a state- or use-specific one (text.meta before text.link-hover)."""
+    leaf = n.rsplit(".", 1)[-1]
+    return next((i for i, p in enumerate(COLOR_ORDER) if n.startswith(p)), 99), any(w in leaf for w in STATEFUL), n
+
+
 BY_COLOR = {}
-for n, t in flat(T["core"]["palette"]):
-    if t["$type"] == "color":
-        BY_COLOR.setdefault(t["$value"], n)
+for n in sorted((n for n in TOK if TYPES[n] == "color"), key=_rank):
+    BY_COLOR.setdefault(TOK[n], n)
+BY_DIM = {}
+for grp in ("radius", "spacing", "spacing-offgrid", "borderWidth", "focus", "size"):
+    for n in sorted(n for n in TOK if n.startswith(grp + ".") and TYPES[n] == "dimension"):
+        BY_DIM.setdefault((grp, TOK[n]), n)
+BY_DUR = {}
+for n in sorted(n for n in TOK if n.startswith("duration.")):
+    BY_DUR.setdefault(TOK[n], n)
+BY_SCALE = {str(TOK[n]): n for n in sorted(n for n in TOK if n.startswith("scale."))}
+
+
+def shadow_key(layers):
+    return " | ".join(f"{l['color']} {l['offsetX']} {l['offsetY']} {l['blur']} {l['spread']}{' inset' if l.get('inset') else ''}" for l in layers)
+
+
+BY_SHADOW = {}
+for n in sorted((n for n in TOK if TYPES[n] == "shadow" and not n.startswith("elevation.level-")), key=lambda n: n):
+    BY_SHADOW.setdefault(shadow_key(TOK[n]), n)
+for n in sorted(n for n in TOK if n.startswith("elevation.level-")):
+    BY_SHADOW[shadow_key(TOK[n])] = n  # a level names the shadow when one matches
+BY_TYPE = {}
+for n in sorted(n for n in TOK if TYPES[n] == "typography"):
+    v = TOK[n]
+    BY_TYPE.setdefault((v["fontFamily"].split(",")[0].replace('"', "").strip(), v["fontSize"], v["lineHeight"], str(v["fontWeight"])), n)
+
+USED = {}  # component -> tokens it cites
+_cur = [None]
+
+
+# Values are marked while the file is written (\x03token\x04, \x01raw\x02) so the entries can be counted;
+# the marks become backticks and plain text before the file is saved.
+def cite(name):
+    if _cur[0]:
+        USED.setdefault(_cur[0], set()).add(name)
+    return f"\x03{name}\x04"
+
+
+def raw(v):
+    return f"\x01{v}\x02"
 
 
 def norm(r, g, b, a=None):
@@ -47,16 +124,61 @@ def norm(r, g, b, a=None):
 
 
 def colour(c, tokens=True):
-    """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)'."""
+    """rgb()/rgba()/color(srgb) -> '`token`' (or the raw value when no token holds it)."""
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
-        tok = BY_COLOR.get(v) if tokens else None
-        return f"{v} `{tok}`" if tok else v
+        if not tokens:
+            return v
+        tok = BY_COLOR.get(v)
+        return cite(tok) if tok else raw(v)
 
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
     return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
+
+
+def dim(v, *groups):
+    """'12px' -> '`radius.12`' from the first group that holds it, else the raw value."""
+    if v in ("0px", "auto", "normal", "none"):
+        return v
+    for g in groups:
+        n = BY_DIM.get((g, v))
+        if n:
+            return cite(n)
+    return raw(v)
+
+
+def dims(v, *groups):
+    return " ".join(dim(x, *groups) for x in v.split())
+
+
+def shadow(css):
+    """A computed box-shadow -> its elevation token, else the raw layers."""
+    layers = []
+    for part in re.split(r",(?![^(]*\))", css):
+        m = re.match(r"\s*(rgba?\([^)]*\))\s+(-?[\d.]+px)\s+(-?[\d.]+px)\s+(-?[\d.]+px)\s+(-?[\d.]+px)(\s+inset)?", part)
+        if not m:
+            return None
+        col = colour(m.group(1), tokens=False)
+        if col == "transparent":
+            continue
+        layers.append({"color": col, "offsetX": m.group(2), "offsetY": m.group(3), "blur": m.group(4), "spread": m.group(5), "inset": bool(m.group(6))})
+    if not layers:
+        return ""
+    n = BY_SHADOW.get(shadow_key(layers))
+    if n:
+        return cite(n)
+    return raw(", ".join(f"{l['offsetX']} {l['offsetY']} {l['blur']} {l['spread']} {l['color']}{' inset' if l['inset'] else ''}" for l in layers))
+
+
+def typeset(fz, lh, fw, f):
+    n = BY_TYPE.get((fam(f), fz, lh, str(fw)))
+    return cite(n) if n else raw(font(fz, lh, fw, f))
+
+
+def dur_ms(d):
+    return float(d[:-1]) * 1000 if d.endswith("s") and not d.endswith("ms") else float(d[:-2])
 
 
 def sides(t, r, b, l):
@@ -87,35 +209,37 @@ def props(v):
     o["size"] = f"{num(v['rect']['w'])} x {num(v['rect']['h'])}"
     pad = sides(s["paddingTop"], s["paddingRight"], s["paddingBottom"], s["paddingLeft"])
     if pad != "0px":
-        o["padding"] = pad
+        o["padding"] = dims(pad, "spacing", "spacing-offgrid")
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'])}")
+            bds.append(f"{dim(s[f'border{d}Width'], 'borderWidth')} {s[f'border{d}Style']} {colour(s[f'border{d}Color'])}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
         o["border"] = bds[0] if len(set(bds)) == 1 else "; ".join(f"{'TRBL'[i]}: {b}" for i, b in enumerate(bds) if b != "none")
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
-        o["radius"] = rad
+        o["radius"] = dims(rad, "radius")
     o["background"] = colour(s["backgroundColor"])
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
         o["image"] = colour(img)[:200]
     if s["boxShadow"] != "none":
-        sh = colour(s["boxShadow"], tokens=False)
-        layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
-        layers = [x for x in layers if not x.startswith("transparent")]
-        if layers:
-            o["shadow"] = ", ".join(layers)
+        sh = shadow(s["boxShadow"])
+        if sh is None:
+            sh = colour(s["boxShadow"], tokens=False)
+            layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
+            sh = raw(", ".join(x for x in layers if not x.startswith("transparent")))
+        if sh:
+            o["shadow"] = sh
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
+        o["outline"] = f"{dim(s['outlineWidth'], 'focus', 'borderWidth')} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {dim(s['outlineOffset'], 'focus') if s['outlineOffset'] != '0px' else '0px'}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
+        o["text"] = f"{typeset(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
     else:
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+        o["text"] = f"{typeset(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -125,13 +249,14 @@ def props(v):
             d = durs[i % len(durs)]
             if d == "0s":
                 continue
-            parts.append(f"{p} {d} {tf[i % len(tf)] if tf else ''}".strip())
+            ms = f"{round(dur_ms(d))}ms"
+            parts.append(f"{p} {cite(BY_DUR[ms]) if ms in BY_DUR else raw(d)} {tf[i % len(tf)] if tf else ''}".strip())
         if parts:
             o["transition"] = ", ".join(parts)
     if s["transform"] not in ("none", "matrix(1, 0, 0, 1, 0, 0)"):
         m = re.fullmatch(r"matrix\(([\d.]+), 0, 0, ([\d.]+), (-?[\d.]+), (-?[\d.]+)\)", s["transform"])
         if m and m.group(1) == m.group(2) and m.group(3) == m.group(4) == "0":
-            o["transform"] = f"scale({m.group(1)})"
+            o["transform"] = f"scale {cite(BY_SCALE[m.group(1)])}" if m.group(1) in BY_SCALE else f"scale({raw(m.group(1))})"
         elif m and m.group(1) == m.group(2) == "1":
             o["transform"] = f"translate({m.group(3)}px, {m.group(4)}px)"
         else:
@@ -205,7 +330,8 @@ def child_layers(c):
 
 PAGE_NAME = {"home": "Homework home", "science": "Academy (Science Labs)", "math": "Academy (Math Curriculum)", "history": "Academy (History Signature)",
              "my": "Academy (My Course)", "unit": "unit", "lesson-science": "science lesson", "lesson-math": "math lesson",
-             "lesson-history": "history lesson", "atlas": "Atlas", "story": "Atlas story", "news": "Insights"}
+             "lesson-history": "history lesson", "atlas": "Atlas", "story": "Atlas story", "news": "Insights",
+             "plus": "Gauth PLUS plans", "blog": "Blog"}
 
 GROUP_INTRO = {
     "Shell and navigation": "The app shell shared by Homework, Academy and Insights: a fixed 220px sidebar and a 60px top bar over the content. The sidebar is white with a cool grey current item on Homework and Insights, and takes the warm `#faf9f5` ground with a beige current item on Academy. Atlas and the lesson players have shells of their own (their groups below).",
@@ -216,8 +342,9 @@ GROUP_INTRO = {
     "Lesson player: math": "The math player puts a tutor column at the left and the slide in a white frame at the right, on the warm ground.",
     "Lesson player: history": "The history player is immersive: chapter pills at the top, the scene in the middle, a play disc and a caption line.",
     "Atlas": "Atlas has its own shell (a 56px header and a 230px drawer), a prompt box, recommendation chips and a grid of story cards. A story opens as a video preview, then a story page.",
-    "Insights": "The news and blog list in the app shell.",
-    "Dialogs and overlays": "The promo dialog every page opens with, the Create a Course dialog, the science player's audio dialog, the math player's audio gate and the Atlas story preview. The promo's overlay is `rgba(15, 17, 20, 0.45)`.",
+    "Insights": "The news and blog list in the app shell, and the blog's pagination.",
+    "Plans page": "`/plus`, the plans page the top bar's Upgrade opens: two plan cards and a real `<table>` comparing them. Read only; no button on it was pressed.",
+    "Dialogs and overlays": "The promo dialog every page opens with, the Sign in dialog, the Gauth PLUS dialog, the Create a Course dialog, the science player's audio dialog, the math player's audio gate and the Atlas story preview. The promo's overlay is `rgba(15, 17, 20, 0.45)`; Gauth's own dialogs sit on `rgba(31, 35, 43, 0.7)`. Dialogs were opened and closed again: nothing in them was submitted, chosen or bought.",
     "Mobile (390 wide)": "A few components as a phone draws them, at 390 x 844 with an iPhone user agent.",
 }
 
@@ -228,11 +355,16 @@ SHOTS = [
     ("academy-history", "Academy, History Signature. Illustrated lesson cards.", "/course/history"),
     ("academy-my", "Academy, My Course. The signed-out empty state, and the Create a Course dialog.", "/course/my"),
     ("unit", "Unit page (Algebra 1). Banner, unit rail, topic path, Start panel; scrolled down the path; Unit 2 chosen in the rail.", "/course/math/algebra-1?unit=real-numbers-and-sets"),
-    ("lesson-science", "Science lesson. The audio dialog, the first chapter, Settings open, Ask Tutor opened, a figure with its callout and list, and a quiz.", "/course/science/how-things-work-1/learn"),
+    ("lesson-science", "Science lesson. The audio dialog, the first chapter, Settings open, the Playback speed menu, a tooltip, Ask Tutor opened, a figure with its callout and list, a quiz, and the quiz answered (its result card).", "/course/science/how-things-work-1/learn"),
     ("lesson-math", "Math lesson. The audio gate, the playing slide with the tutor column, the chapters panel.", "/course/math/algebra-1/fundamentals-of-set-theory/learn"),
     ("lesson-history", "History lesson. The opening scene, the chapter panel.", "/course/history/crossing-the-ocean-wall/learn"),
     ("atlas", "Atlas. Landing, prompt box, chips, Popular Stories, FAQ; a story card's video preview; the Apollo 11 story page, and its Video Settings popover.", "/atlas"),
     ("news", "Insights. Breadcrumb, News and Blog tabs, featured article, article rows.", "/news"),
+    ("blog", "Blog. The article list and its pagination.", "/blog"),
+    ("signin", "Sign in dialog, opened from the top bar.", "/"),
+    ("plus-dialog", "Gauth PLUS dialog, opened from the sidebar card's Start Free Trial.", "/"),
+    ("plus", "Plans page. Two plan cards and the features-by-plan table.", "/plus"),
+    ("footer", "Footer language select, opened.", "/"),
 ]
 MOBILE = [
     ("mobile-home", "Homework home at 390: the promo dialog, the hero, the full page with the app banner.", "/"),
@@ -273,7 +405,7 @@ W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.")
+W("- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as its semantic role (`text.primary`, `border.card`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). {{TOKEN_SHARE}}. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
@@ -297,7 +429,13 @@ OVER = [
     ("Audio gate", "math lesson", "on load; Continue pressed to start playback", "[lesson-math-light-audio-gate](screenshots/lesson-math-light-audio-gate.png)"),
     ("Settings popover", "science lesson", "the lesson's Settings button", "[lesson-science-light-settings](screenshots/lesson-science-light-settings.png)"),
     ("Ask Tutor, opened", "science lesson", "clicked into the bar; sample text typed and deleted, nothing sent", "[lesson-science-light-ask-tutor](screenshots/lesson-science-light-ask-tutor.png)"),
-    ("Quiz", "science lesson", "reached by letting the lesson play about three minutes; no option chosen", "[lesson-science-light-quiz](screenshots/lesson-science-light-quiz.png)"),
+    ("Quiz", "science lesson", "reached by letting the lesson play about three minutes", "[lesson-science-light-quiz](screenshots/lesson-science-light-quiz.png)"),
+    ("Quiz answered", "science lesson", "the last option of the practice check-in picked; the check-in comes back as a result card in the notes", "[lesson-science-light-quiz-answered](screenshots/lesson-science-light-quiz-answered.png), [quiz-result-card](#quiz-result-card)"),
+    ("Playback speed menu", "science lesson", "Settings, then its Speed row; no speed chosen", "[lesson-science-light-speed-menu](screenshots/lesson-science-light-speed-menu.png), [playback-speed-menu](#playback-speed-menu)"),
+    ("Tooltip", "science lesson", "hovering a header control", "[lesson-science-light-tooltip](screenshots/lesson-science-light-tooltip.png), [tooltip](#tooltip)"),
+    ("Sign in dialog", "every page with the top bar", "the top bar's Sign in; a throwaway string typed into the email field and deleted, nothing submitted", "[signin-light-dialog](screenshots/signin-light-dialog.png), [sign-in-dialog](#sign-in-dialog)"),
+    ("Gauth PLUS dialog", "every page with the sidebar", "the sidebar card's Start Free Trial; nothing chosen, typed or bought", "[plus-dialog-light-default](screenshots/plus-dialog-light-default.png), [gauth-plus-dialog](#gauth-plus-dialog)"),
+    ("Language list", "footer", "the footer's language select; no language chosen", "[footer-light-language-open](screenshots/footer-light-language-open.png), [select-list-language](#select-list-language)"),
     ("Chapters panel", "math and history lessons", "the chapters button", "[lesson-math-light-chapters](screenshots/lesson-math-light-chapters.png), [lesson-history-light-chapters](screenshots/lesson-history-light-chapters.png)"),
     ("Show more", "Math Curriculum", "the Show 14 more button", "[academy-math-light-show-more](screenshots/academy-math-light-show-more.png)"),
     ("Folded sidebar", "Homework home", "the sidebar's collapse button", "[home-light-sidebar-folded](screenshots/home-light-sidebar-folded.png)"),
@@ -307,6 +445,58 @@ OVER = [
 ]
 for r in OVER:
     W("| " + " | ".join(r) + " |")
+W()
+
+# ------------------------------------------------ checklist coverage
+CHECKLIST = [
+    ("Button", ["start-button", "create-button", "audio-not-now", "start-free-button", "join-button", "signin-submit"]),
+    ("Icon button", ["canvas-control", "canvas-exit", "header-round-button", "page-nav", "modal-close"]),
+    ("Link", ["inline-link", "footer-link", "terms-link", "signup-link", "back-link"]),
+    ("Text field", ["signin-email", "question-box", "atlas-search", "header-question", "tutor-input"]),
+    ("Text area", ["atlas-textarea", "atlas-composer", "create-prompt"]),
+    ("Select", ["language-select", "language-list", "language-option-selected", "language-option"]),
+    ("Checkbox", []),
+    ("Radio", ["quiz-option", "plan-card", "plan-card-selected"]),
+    ("Switch", ["switch", "search-toggle"]),
+    ("Tabs", ["category-tab", "category-tab-active", "pill-tab", "pill-tab-active"]),
+    ("Menu", ["settings-popover", "speed-menu", "menu-item", "menu-item-selected"]),
+    ("Tooltip", ["tooltip"]),
+    ("Dialog", ["signin-dialog", "plus-dialog", "create-dialog", "audio-dialog", "promo-dialog"]),
+    ("Toast", []),
+    ("Card", ["lesson-card", "unit-card", "story-card", "plan-box", "review-card"]),
+    ("List row", ["article-row", "chapter-option", "chapter-panel-item", "unit-button", "benefits-row"]),
+    ("Table", ["plan-table", "plan-table-row", "benefits-table"]),
+    ("Avatar", ["review-avatar"]),
+    ("Badge", ["new-badge", "plan-tag", "video-badge"]),
+]
+WHY_NOT = {
+    "Checkbox": "not present on any public page; no public form has one",
+    "Toast": "not seen: no toast appeared after any action the capture took signed out",
+}
+
+
+def anchor(c):
+    return re.sub(r"[^a-z0-9 -]", "", c["title"].lower()).replace(" ", "-")
+
+
+W("## Checklist coverage")
+W()
+present = [n for n, ks in CHECKLIST if any(k in C and not C[k].get("missing") for k in ks)]
+W(f"The 19 components of the library's checklist ([docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md)), each with the entries below that show it and the states captured across them. {len(present)} of 19 are captured.")
+W()
+W("| Component | Entries | States captured |")
+W("|---|---|---|")
+for name, keys in CHECKLIST:
+    ks = [k for k in keys if k in C and not C[k].get("missing")]
+    if not ks:
+        W(f"| {name} | not captured: {WHY_NOT[name]} | - |")
+        continue
+    sts = []
+    for k in ks:
+        for st, v in C[k]["states"].items():
+            if "style" in v and st not in sts:
+                sts.append(st)
+    W(f"| {name} | " + ", ".join(f"[{C[k]['title']}](#{anchor(C[k])})" for k in ks) + " | " + ", ".join(sts) + " |")
 W()
 
 # ------------------------------------------------ shared values
@@ -354,10 +544,6 @@ for k, c in C.items():
         break
 
 
-def dur_ms(d):
-    return float(d[:-1]) * 1000 if d.endswith("s") and not d.endswith("ms") else float(d[:-2])
-
-
 for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
     W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
 W()
@@ -400,6 +586,7 @@ W()
 
 # ------------------------------------------------ entries
 W("## Components")
+ENTRY_START = len(L)
 groups = [g for g in GROUP_INTRO if any(c["group"] == g for c in C.values())]
 for c in C.values():
     if c["group"] not in groups:
@@ -412,6 +599,7 @@ for g in groups:
     for k, c in C.items():
         if c["group"] != g:
             continue
+        _cur[0] = k
         W()
         W(f"#### {c['title']}")
         desc = (c.get("desc") or "").strip()
@@ -437,8 +625,15 @@ for g in groups:
         if cl:
             W(f"Child layers that carry the look: {cl}.")
             W()
+        used = sorted(USED.get(k, ()))
+        if used:
+            W("**Tokens.** " + ", ".join(f"`{u}`" for u in used) + ".")
+            W()
         imgs = [f"![{c['title']} {st}](components/crops/{os.path.basename(c['states'][st]['crop'])})" for st in states if c["states"][st].get("crop")]
         W(" ".join(imgs) if imgs else "No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.")
+
+ENTRY_END = len(L)
+_cur[0] = None
 
 # ------------------------------------------------ icons
 W()
@@ -459,7 +654,8 @@ W()
 W("### Pages")
 W()
 W("- **Signed-in pages.** Nothing behind sign-in was captured: a learner's own My Course list, course progress, history, the homework answer page, Atlas topics a learner made, account settings and the subscription checkout. The kit never signs in.")
-W("- **Anything that sends or creates.** No homework question was submitted (so the answer and step-by-step pages are missing), no course was generated from Create a Course, no tutor message or voice question was sent, no Atlas story was generated, no file was uploaded, no quiz option was chosen.")
+W("- **Anything that sends or creates.** No homework question was submitted (so the answer and step-by-step pages are missing), no course was generated from Create a Course, no tutor message or voice question was sent, no Atlas story was generated, no file was uploaded, and no dialog was submitted. The one answer given is to the science lesson's practice check-in, which a signed-out visitor answers as part of the lesson.")
+W("- **Toast and checkbox.** Neither was seen. No toast appeared after any action the capture took, and no public form has a checkbox; the Sign in dialog states its terms in a line of text instead.")
 W("- **Study Resources.** `/study-resources/*` redirects to gauthmath.com, which answers a headless browser with Access Denied.")
 W("- **The science lesson's Completed screen** (a cover, a laurel \"Completed\" title, Share and View Canvas) was seen while exploring, after a lesson played to its end, but the kit does not wait the several minutes it takes, so there is no crop or measurement.")
 W("- **Mobile science lessons.** A phone is redirected from `/course/science` to `/course/math`; Science Labs is not offered on a phone.")
@@ -470,7 +666,8 @@ W()
 W("- **Pressed** was forced with DevTools on every control except toggles, so a state a script adds on mousedown (if any) is missing.")
 W("- **Hover on the feature cards, the article rows, the Share button and the play disc** changed nothing measurable; their entries read 'same'.")
 W("- **The tutor transcript** held only the status line during the 25 seconds of playback the kit waits; transcript text was not captured.")
-W("- **Disabled states** were not seen on any public control.")
+W("- **Disabled states** were found on four controls: the Sign in dialog's Sign in button (brand red at low strength), the Atlas Send button while the box is empty, the blog's Previous arrow on page 1, and the Atlas Send button turning dark once text is typed. Gauth shows no inline error under a field: the Sign in dialog keeps its button disabled instead.")
+W("- **Loading states.** The pages render on the server, so the skeletons in Gauth's CSS (`catalog_mathSkeleton*`, `math-course-detail_detailSkeletonBanner`) never showed, even with the data request held back. The one loading state captured is the math tutor's status line, which shimmers while it narrates ([tutor-status-line](#tutor-status-line)).")
 W()
 W("### Themes")
 W()
@@ -492,5 +689,11 @@ W()
 W("- Lesson content (slides, canvas drawings, formulas, narration) was not transcribed; only the frames around it were measured.")
 W("- No personal data was captured: the pages were read signed out, and the Atlas drawer was empty.")
 
-Path("components.md").write_text("\n".join(L) + "\n")
+# count the values in the entries, then turn the marks into Markdown
+body = "\n".join(L[ENTRY_START:ENTRY_END])
+n_tok, n_raw = body.count("\x03"), body.count("\x01")
+share = f"{n_tok} of {n_tok + n_raw} values in the entries ({round(100 * n_tok / max(1, n_tok + n_raw))}%) are written as tokens; the other {n_raw} are values Gauth gives no token (a one-off padding, a third-party library's colour, a type size used once) and stay raw"
+text = "\n".join(L).replace("{{TOKEN_SHARE}}", share)
+text = re.sub("\x03([^\x04]*)\x04", r"`\1`", text).replace("\x01", "").replace("\x02", "")
+Path("components.md").write_text(text + "\n")
 print("components.md:", len(L), "lines,", len(C), "entries,", n_crops, "crops,", len(icons), "icons")

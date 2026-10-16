@@ -6,8 +6,9 @@
 // is no dark run. Desktop shots are 1440x900 at 1x, mobile shots 390x844 at 2x, `*-full` shots 1x. A page
 // taller than one GPU texture is saved as name.partN.png tiles, which quantize.py stitches back together.
 // Nothing is sent, created or signed into: the only presses are dialog dismissals, tabs, Show more, the
-// lesson's own Not now, Continue (the audio gate), Pause, Settings and chapters, and a story card's
-// Explore, which opens a published story.
+// lesson's own Not now, Continue (the audio gate), Pause, Settings, Speed and chapters, a story card's
+// Explore, which opens a published story, the buttons that open the Sign in and Gauth PLUS dialogs, the
+// footer's language select (opened, nothing chosen), and one option of the science lesson's practice check-in.
 import fs from 'fs';
 import { M, closePromo, openStory, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
@@ -77,6 +78,8 @@ const desktop = {
     await notNow(p);
     await S.view('default');
     await step('settings', async () => { await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await S.view('settings'); await p.keyboard.press('Escape'); await wait(p, 500); });
+    await step('speed-menu', async () => { await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await p.getByRole('dialog').filter({ hasText: 'Narration' }).getByText('Speed', { exact: true }).click(); await wait(p, 1000); await S.view('speed-menu'); await p.keyboard.press('Escape'); await wait(p, 500); await p.mouse.click(700, 600); await wait(p, 400); });
+    await step('tooltip', async () => { await p.getByRole('button', { name: 'Reset view' }).hover(); await wait(p, 1400); await S.view('tooltip'); await p.mouse.move(700, 600); await wait(p, 400); });
     await step('ask-tutor', async () => { await pause(p); await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1500); await S.view('ask-tutor'); await p.keyboard.press('Escape'); await p.mouse.click(700, 500); await wait(p, 500); });
     await step('figure', async () => {
       const play = p.getByRole('button', { name: 'Play' }); if (await play.count()) await play.click();
@@ -87,6 +90,15 @@ const desktop = {
     await step('quiz', async () => {
       for (let i = 0; i < 110; i++) { if (await p.locator('[aria-label="Close quiz and continue"]').count()) break; await wait(p, 2000); }
       await S.view('quiz');
+    });
+    // the practice check-in, answered: one option picked, nothing of the visitor's sent (see measure.mjs)
+    await step('quiz-answered', async () => {
+      const opts = p.locator('[aria-label="Close quiz and continue"]').locator('xpath=ancestor::*[.//input][1]').locator('input');
+      const n = await opts.count();
+      if (!n) throw new Error('no quiz options');
+      await opts.nth(n - 1).locator('xpath=..').click().catch(() => opts.nth(n - 1).click({ force: true }));
+      await wait(p, 2500);
+      await S.view('quiz-answered');
     });
   } },
   'lesson-math': { path: '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', wait: 8000, run: async (p, S) => {
@@ -115,6 +127,12 @@ const desktop = {
     });
   } },
   news: { path: '/news', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  // added on the 2026-10-17 refresh. Dialogs are opened and closed; nothing in them is chosen, typed or pressed.
+  signin: { path: '/', run: async (p, S) => { await p.locator(M('pc-header_loginEntry')).first().click(); await wait(p, 2500); await S.view('dialog'); } },
+  'plus-dialog': { path: '/', run: async (p, S) => { await p.locator(M('side-menu-small-cards_btn')).first().click(); await wait(p, 3000); await S.view('default'); } },
+  plus: { path: '/plus', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  footer: { path: '/', run: async (p, S) => { const sel = p.locator(M('styles_select') + ' .ant-select').first(); await sel.scrollIntoViewIfNeeded(); await wait(p, 600); await sel.click(); await wait(p, 1200); await S.view('language-open'); } },
+  blog: { path: '/blog', run: async (p, S) => { await S.view('default'); await step('pagination', async () => { await p.locator('.ant-pagination').first().evaluate((e) => e.scrollIntoView({ block: 'center' })); await wait(p, 800); await S.view('pagination'); }); } },
 };
 
 const mobile = {
