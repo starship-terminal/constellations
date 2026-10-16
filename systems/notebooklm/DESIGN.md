@@ -3,80 +3,88 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Gemini Notebook (NotebookLM)"
-description: "Source-grounded AI workspace: sources panel, chat, generated studio outputs (Material 3 flavour)"
+description: "Source-grounded AI workspace: sources panel, chat, studio outputs; near-monochrome surfaces with pill buttons (luminous UI)"
 omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
-  primary: "#4259ff"
-  neutral: "#edeffa"
+  primary: "#9dd2ff"
+  neutral: "#faf9f9"
   surface: "#ffffff"
-  on-surface: "#1f1f1f"
-  on-surface-variant: "#5e5e5e"
-  outline: "#dde1eb"
-  bg-page: "#edeffa"
-  bg-page-grey: "#f9f9f9"
-  bg-landing: "#ffffff"
+  on-surface: "#000000"
+  on-surface-variant: "rgba(0,0,0,0.55)"
+  outline: "rgba(0,0,0,0.08)"
+  bg-page: "#faf9f9"
+  bg-background: "#fdfcfc"
   bg-scrim: "rgba(0,0,0,0.32)"
   surface-panel: "#ffffff"
-  surface-card: "#fafafd"
-  surface-panel-70: "rgba(255,255,255,0.7)"
-  surface-panel-80: "rgba(255,255,255,0.8)"
-  surface-dialog: "#ffffff"
-  surface-tint-blue: "#edeffa"
-  surface-subtle: "#f9f9f9"
-  surface-muted: "#f2f2f2"
-  surface-selected: "#edeffa"
-  surface-caution: "#fef7e0"
-  surface-select-panel: "#f0f4f9"
-  surface-inverse: "#303030"
+  surface-card: "#f2f0f0"
+  surface-raised: "#ffffff"
+  surface-dialog: "#faf9f9"
+  surface-overlay: "#ffffff"
+  surface-selected: "#f2f0f0"
+  surface-hover: "#f2f0f0"
+  surface-inverse: "#000000"
   surface-toast: "#000000"
-  surface-flashcard-front: "#303030"
-  border-default: "#dde1eb"
-  border-strong: "#919191"
-  border-outline-variant: "#c4c7c5"
-  border-outline: "#747775"
-  border-focus-ring: "#4259ff"
-  border-field-focus: "#0b57d0"
+  surface-empty: "#f8fafd"
+  surface-badge: "rgba(0,0,0,0.08)"
+  surface-accent: "#9dd2ff"
+  surface-legacy-panel: "#ffffff"
+  surface-legacy-page: "#edeffa"
+  text-primary: "#000000"
+  text-secondary: "rgba(0,0,0,0.55)"
   text-title: "#1b1b1c"
   text-body: "#303030"
-  text-secondary: "#5e5e5e"
-  text-ghost: "#777777"
-  text-on-surface: "#1f1f1f"
-  text-on-surface-variant: "#444746"
-  text-warning: "#b06000"
+  text-disabled: "rgba(0,0,0,0.38)"
+  text-disabled-button: "#5e5e5e"
+  text-on-accent: "#000000"
+  text-on-brand: "#ffffff"
   text-link: "#4259ff"
-  text-on-accent: "#ffffff"
-  text-on-inverse: "#f2f2f2"
-  text-meta: "#535559"
-  accent-primary: "#4259ff"
-  accent-on-primary: "#ffffff"
-  accent-secondary: "#000000"
-  accent-on-secondary: "#ffffff"
-  accent-m3-primary: "#0b57d0"
-  accent-m3-on-primary: "#ffffff"
-  accent-pill: "#edeffa"
+  text-inverse: "#f2f0f0"
+  text-on-toast: "#f2f2f2"
+  text-ghost: "#777777"
+  text-warning: "#b06000"
+  text-error: "#b3261e"
+  text-placeholder: "#5e5e5e"
+  border-default: "rgba(0,0,0,0.08)"
+  border-divider: "#c4c7c5"
+  border-strong: "#919191"
+  border-subtle: "#dde1eb"
+  border-field: "#000000"
+  border-focus: "#000000"
+  border-focus-strong: "#4259ff"
+  border-error: "#b3261e"
+  border-divider-material: "#e1e3e1"
+  accent-default: "#9dd2ff"
+  accent-hover: "#90c1eb"
+  accent-pressed: "#8ab9e0"
+  accent-on-accent: "#000000"
+  accent-container: "#dcf1ff"
+  accent-fixed: "#3186ff"
+  accent-brand: "#4259ff"
+  accent-brand-hover: "#5166ff"
+  accent-brand-pressed: "#596dff"
+  accent-chip-selected: "#4259ff"
   state-hover-on-surface: "rgba(0,0,0,0.08)"
-  state-focus-on-surface: "rgba(0,0,0,0.12)"
-  state-hover-on-accent: "rgba(255,255,255,0.08)"
-  state-hover-tertiary: "rgba(66,89,255,0.08)"
-  state-menu-hover: "rgba(66,89,255,0.08)"
-  state-drag-over: "rgba(66,89,255,0.08)"
-  state-tile-edit-hover: "rgba(0,0,0,0.16)"
-  state-disabled-container: "rgba(31,31,31,0.12)"
+  state-focus-on-surface: "rgba(0,0,0,0.08)"
+  state-pressed-on-surface: "rgba(0,0,0,0.12)"
+  state-disabled-container: "rgba(0,0,0,0.12)"
   state-disabled-content: "#5e5e5e"
-  status-error: "#b3261e"
-  status-error-container: "#f9dedc"
-  status-on-error-container: "#8c1d18"
-  status-success: "#006c35"
-  status-success-container: "#beefbb"
-  status-on-success-container: "#00522c"
-  status-warning: "#8f4e06"
-  status-warning-container: "#ffe07c"
-  status-on-warning-container: "#6d3a01"
-  status-info: "#1157ce"
-  status-info-container: "#d0e4ff"
-  status-on-info-container: "#04409f"
+  state-drag-over: "rgba(66,89,255,0.08)"
+  state-brand-layer: "#ffffff"
+  status-danger-fill: "#fce8e6"
+  status-danger-text: "#c5221f"
+  status-danger-border: "#b3261e"
+  status-danger-solid: "#de2d29"
+  status-success-fill: "#daf9d4"
+  status-success-text: "#009954"
+  status-success-border: "#008052"
+  status-warning-fill: "#fef7e0"
+  status-warning-text: "#b06000"
+  status-warning-border: "#8f4e06"
+  status-info-fill: "#d0e4ff"
+  status-info-text: "#04409f"
+  status-info-border: "#1157ce"
   tile-blue-bg: "#edeffa"
   tile-blue-fg: "#224484"
   tile-blue-hover: "rgba(34,68,132,0.08)"
@@ -122,115 +130,148 @@ colors:
   dataviz-cyan-container: "#acedff"
   dataviz-grey: "#5e5e5e"
   dataviz-grey-container: "#e3e3e3"
-  dataviz-mindmap-root: "#c3cafc"
-  dataviz-mindmap-node: "#c2d3eb"
-  dataviz-mindmap-edge: "#7c8bf3"
   skeleton-base: "#f2f2f2"
   skeleton-highlight: "#ffffff"
   skeleton-loading-highlight: "#edeffa"
-  icon-default: "#1b1b1c"
+  icon-default: "#000000"
+  icon-secondary: "rgba(0,0,0,0.55)"
+  icon-source-pdf: "#db372d"
+  studio-blue: "#2e64de"
+  studio-green: "#0aac6e"
+  studio-pink: "#c43d92"
+  studio-purple: "#6858c7"
+  studio-teal: "#167f9b"
+  studio-warm: "#ff8104"
+  studio-new-dot: "#3186ff"
+  code-background: "#141414"
+  code-text: "#ffffff"
+  code-blue: "#4fa0ff"
+  code-green: "#60d673"
+  code-pink: "#ff96da"
+  code-purple: "#969dff"
+  code-red: "#ff5a59"
+  code-yellow: "#ffdb0f"
+  code-grey: "#808080"
 typography:
   display-large:
-    fontFamily: "Google Sans"
-    fontSize: "57px"
-    fontWeight: 400
-    lineHeight: "64px"
+    fontFamily: "Google Sans Flex"
+    fontSize: "42px"
+    fontWeight: 280
+    lineHeight: "48px"
     letterSpacing: "0px"
   display-medium:
-    fontFamily: "Google Sans"
-    fontSize: "45px"
-    fontWeight: 400
-    lineHeight: "52px"
-    letterSpacing: "0px"
-  display-small:
-    fontFamily: "Google Sans"
+    fontFamily: "Google Sans Flex"
     fontSize: "36px"
-    fontWeight: 400
+    fontWeight: 320
     lineHeight: "44px"
     letterSpacing: "0px"
-  headline-large:
-    fontFamily: "Google Sans"
+  display-small:
+    fontFamily: "Google Sans Flex"
     fontSize: "32px"
-    fontWeight: 400
-    lineHeight: "40px"
+    fontWeight: 360
+    lineHeight: "38px"
     letterSpacing: "0px"
-  headline-medium:
-    fontFamily: "Google Sans"
+  headline-large:
+    fontFamily: "Google Sans Flex"
     fontSize: "28px"
-    fontWeight: 400
+    fontWeight: 350
     lineHeight: "36px"
     letterSpacing: "0px"
-  headline-small:
-    fontFamily: "Google Sans"
+  headline-medium:
+    fontFamily: "Google Sans Flex"
     fontSize: "24px"
-    fontWeight: 400
-    lineHeight: "32px"
+    fontWeight: 380
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  headline-small:
+    fontFamily: "Google Sans Flex"
+    fontSize: "20px"
+    fontWeight: 470
+    lineHeight: "24px"
     letterSpacing: "0px"
   title-large:
-    fontFamily: "Google Sans"
+    fontFamily: "Google Sans Flex"
     fontSize: "22px"
     fontWeight: 400
     lineHeight: "28px"
     letterSpacing: "0px"
   title-medium:
-    fontFamily: "Google Sans Text"
+    fontFamily: "Google Sans Flex"
     fontSize: "16px"
     fontWeight: 500
     lineHeight: "24px"
-    letterSpacing: "0px"
+    letterSpacing: "0.15px"
   title-small:
-    fontFamily: "Google Sans Text"
+    fontFamily: "Google Sans Flex"
     fontSize: "14px"
     fontWeight: 500
-    lineHeight: "20px"
+    lineHeight: "24px"
     letterSpacing: "0px"
   body-large:
-    fontFamily: "Google Sans Text"
-    fontSize: "16px"
+    fontFamily: "Google Sans Flex"
+    fontSize: "17px"
     fontWeight: 400
     lineHeight: "24px"
     letterSpacing: "0px"
   body-medium:
-    fontFamily: "Google Sans Text"
-    fontSize: "14px"
+    fontFamily: "Google Sans Flex"
+    fontSize: "15px"
     fontWeight: 400
     lineHeight: "20px"
     letterSpacing: "0px"
   body-small:
-    fontFamily: "Google Sans Text"
-    fontSize: "12px"
+    fontFamily: "Google Sans Flex"
+    fontSize: "13px"
     fontWeight: 400
-    lineHeight: "16px"
-    letterSpacing: "0.096px"
+    lineHeight: "17px"
+    letterSpacing: "0px"
   label-large:
-    fontFamily: "Google Sans Text"
-    fontSize: "14px"
-    fontWeight: 500
-    lineHeight: "20px"
+    fontFamily: "Google Sans Flex"
+    fontSize: "17px"
+    fontWeight: 370
+    lineHeight: "24px"
     letterSpacing: "0px"
   label-medium:
-    fontFamily: "Google Sans Text"
-    fontSize: "12px"
-    fontWeight: 500
-    lineHeight: "16px"
-    letterSpacing: "0.096px"
+    fontFamily: "Google Sans Flex"
+    fontSize: "15px"
+    fontWeight: 370
+    lineHeight: "20px"
+    letterSpacing: "0px"
   label-small:
-    fontFamily: "Google Sans Text"
-    fontSize: "11px"
-    fontWeight: 500
-    lineHeight: "16px"
-    letterSpacing: "0.096px"
-  panel-header:
-    fontFamily: "Google Sans"
-    fontSize: "16px"
+    fontFamily: "Google Sans Flex"
+    fontSize: "13px"
+    fontWeight: 370
+    lineHeight: "20px"
+    letterSpacing: "0px"
+  body-medium-strong:
+    fontFamily: "Google Sans Flex"
+    fontSize: "15px"
+    fontWeight: 540
+    lineHeight: "20px"
+    letterSpacing: "0px"
+  caption:
+    fontFamily: "Google Sans Code"
+    fontSize: "13px"
     fontWeight: 400
-    lineHeight: "52px"
+    lineHeight: "20px"
     letterSpacing: "0px"
   code-inline:
     fontFamily: "Google Sans Code"
-    fontSize: "14px"
-    fontWeight: 500
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: "20px"
+    letterSpacing: "0px"
+  answer-heading:
+    fontFamily: "Google Sans Flex"
+    fontSize: "20px"
+    fontWeight: 470
     lineHeight: "24px"
+    letterSpacing: "0px"
+  panel-header:
+    fontFamily: "Google Sans Flex"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: "20px"
     letterSpacing: "0px"
 rounded:
   none: "0px"
@@ -238,56 +279,96 @@ rounded:
   sm: "8px"
   md: "12px"
   lg: "16px"
-  chat-bubble: "20px"
-  chip: "24px"
+  lg-increased: "20px"
+  lg-max: "24px"
   xl: "28px"
-  button: "96px"
+  xl-increased: "32px"
+  xl-max: "40px"
+  xxl: "48px"
+  xxl-increased: "56px"
   full: "9999px"
+  button: "9999px"
+  card: "40px"
+  panel: "32px"
+  dialog: "28px"
+  menu: "20px"
+  menu-item: "12px"
+  tooltip: "12px"
+  toast: "16px"
+  chat-bubble: "40px"
+  list-row: "8px"
+  dialog-button: "96px"
+  composer: "32px"
 spacing:
   "2": "2px"
   "4": "4px"
-  "6": "6px"
   "8": "8px"
   "12": "12px"
   "16": "16px"
   "20": "20px"
   "24": "24px"
-  "32": "32px"
-  "48": "48px"
+  "28": "28px"
+  container-padding-small: "16px"
+  container-padding-medium: "24px"
+  container-padding-large: "32px"
+  widget-gap: "40px"
+  space-above: "40px"
 ---
 
 # Gemini Notebook (NotebookLM)
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 4 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 7 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Source-grounded AI workspace: sources panel, chat, generated studio outputs (Material 3 flavour).
+Good for: Source-grounded AI workspace: sources panel, chat, studio outputs; near-monochrome surfaces with pill buttons (luminous UI).
 
-Captured 2026-09-25, signed in. Themes: light, dark.
+Captured 2026-10-17, signed in. Themes: light, dark.
 
-A token set and component reference for Google's Gemini Notebook (formerly NotebookLM), for building mockups in Figma or Paper that match the product. It was extracted from notebook.google.com on 2026-09-25 while signed in, and covers the UI generation that is live for this account.
+A token set, component reference and pattern notes for Google's Gemini Notebook (formerly NotebookLM), for building mockups that match the product. Recaptured from notebook.google.com on 2026-10-17 while signed in, in the UI generation Google ships as "luminous": near-black and off-white surfaces, one variable family (Google Sans Flex) and pill buttons. The 2026-09-25 capture of the earlier lavender UI is replaced, not merged; the product no longer paints those values.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#4259ff):** `light.accent.primary`
-- **neutral (#edeffa):** `light.bg.page`
+- **primary (#9dd2ff):** `light.accent.default`
+- **neutral (#faf9f9):** `light.bg.page`
 - **surface (#ffffff):** `light.surface.panel`
-- **on-surface (#1f1f1f):** `light.text.on-surface`
-- **on-surface-variant (#5e5e5e):** `light.text.secondary`
-- **outline (#dde1eb):** `light.border.default`
+- **on-surface (#000000):** `light.text.primary`
+- **on-surface-variant (rgba(0,0,0,0.55)):** `light.text.secondary`
+- **outline (rgba(0,0,0,0.08)):** `light.border.default`
+
+### Colors (from README.md)
+
+The luminous UI is nearly monochrome. Dark: page `#0f0f0f` (`bg.page`), cards and selected pills `#171717` (`surface.card`, `surface.selected`), panels, menus and dialog bodies `#1f1f1f` (`surface.panel`, `surface.overlay`, `surface.raised`), text `#e6e6e6` and 55% white (`text.primary`, `text.secondary`). Light: `#faf9f9`, `#f2f0f0`, `#ffffff`, black and 55% black. The one accent fill is the sky/navy pair on New notebook (`accent.default`: `#9dd2ff` light, `#1f3b9b` dark); dialog confirms and links still use the older brand blue `#4259ff` (`accent.brand`, `text.link`) in both themes. Borders are translucent on-surface (`border.default`: 8% black, 12% white). Colour otherwise comes from content: red PDF icons and one accent per Studio output type (`studio.*`).
 
 ## Typography
 
-17 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Google Sans, Google Sans Code, Google Sans Text.
+20 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Google Sans Code, Google Sans Flex.
+
+### Fonts (from README.md)
+
+| Role | Family | Licence | Stack (the product's own) |
+|---|---|---|---|
+| Everything | Google Sans Flex, variable (wght, wdth, opsz, ROND) | SIL OFL 1.1 (google/fonts `ofl/googlesansflex`) | "Google Sans Flex", "Google Sans", "Roboto", sans-serif |
+| Material text roles | Google Sans Flex, then Google Sans Text | Google Sans: OFL (`ofl/googlesans`); Google Sans Text: not published, falls back | Google Sans Flex, Google Sans Text, Google Sans, sans-serif |
+| Code, extended caption | Google Sans Code | SIL OFL 1.1 (`ofl/googlesanscode`) | "Google Sans Code", then the code stack in `core.fontFamily.code` |
+| Icons | Luminous Symbols | Not published; licence unknown | "Luminous Symbols", "Google Symbols", "Material Symbols Outlined" (Apache 2.0, google/material-design-icons) |
+| Maths | KaTeX | MIT | KaTeX_Main, serif |
+
+Licences were read from the google/fonts and google/material-design-icons repositories on 2026-10-17. The type scale is the product's `--nb-sys-typography-*`: sizes 13, 15, 17, 20, 22, 24, 28, 32, 36, 42px, weights from 280 (display) to 540 (emphasised body), and per-role width and optical-size axes (`$extensions.fontVariationSettings`). Labels are 15px at weight 370.
 
 ## Layout
 
-Spacing from `core.spacing`: `2` 2px, `4` 4px, `6` 6px, `8` 8px, `12` 12px, `16` 16px, `20` 20px, `24` 24px, `32` 32px, `48` 48px.
+Spacing from `core.spacing`: `2` 2px, `4` 4px, `8` 8px, `12` 12px, `16` 16px, `20` 20px, `24` 24px, `28` 28px, `container-padding-small` 16px, `container-padding-medium` 24px, `container-padding-large` 32px, `widget-gap` 40px, `space-above` 40px.
+
+### Layout and geometry (from README.md)
+
+Spacing is `--nb-sys-spacing`: 2, 4, 8, 12, 16, 20, 24, 28px (`spacing.*`), plus container paddings of 16, 24 and 32. Radii are the `--nb-sys-shape` scale (4 to 56px and full), and the product leans on large ones: pills for every button (`radius.button`), 40px cards, 32px panels and composer, 28px dialogs, 20px menus. Controls are 36px (header, small) or 48px (dialog actions); dialog buttons from Material are 40px. Breakpoints: the product's most used is `599.98px` (15 rules), then 600-959.98 and 1024; the notebook grid is `repeat(auto-fill, minmax(var(--project-card-min-width), 1fr))`, five columns at 1440, three at 1024, two at 800. Every overlay (dialog, menu, select, tooltip, toast) mounts in one container at z-index 1000; the Google bar sits at 999 and card actions at 10.
+
+Elevation is three tied levels plus none: cards, panels and dialogs have no shadow (`shadow.none`); menus, the composer and the Studio banner share `shadow.level1` (a 20px blur at 28% black in dark, 4% in light); the select panel and the toast use Material's level 3 (`shadow.select`, `shadow.toast`). Focus is a 3px outline in `border.focus` 2px outside each pill (`focusRing.*`); Material controls (checkbox, toggle chips, menu items) draw a 3px ring in `border.focus-strong` instead, and outlined fields thicken their outline to 2px. Motion is Material's: 150-500ms with the standard curve `cubic-bezier(0.4, 0, 0.2, 1)` most common (34 declarations); under reduced motion the backdrop fade drops to 1ms and the segmented slider, search field and card entrance stop animating (`core.reducedMotion`).
 
 ## Elevation & Depth
 
@@ -295,23 +376,30 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `core.shadow.level1` | `0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)` |
-| `core.shadow.menu` | `0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)` |
-| `core.shadow.level2` | `0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12)` |
-| `core.shadow.level3` | `0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)` |
-| `core.shadow.level4` | `0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)` |
-| `core.shadow.level5` | `0px 7px 8px -4px rgba(0,0,0,0.2), 0px 12px 17px 2px rgba(0,0,0,0.14), 0px 5px 22px 4px rgba(0,0,0,0.12)` |
-| `core.shadow.popover` | `0px 1px 2px 0px rgba(60,64,67,0.3), 0px 1px 3px 1px rgba(60,64,67,0.15)` |
+| `core.shadow.m3-level1` | `0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)` |
+| `core.shadow.m3-level2` | `0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12)` |
+| `core.shadow.m3-level3` | `0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)` |
+| `core.shadow.m3-level4` | `0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)` |
+| `core.shadow.m3-level5` | `0px 7px 8px -4px rgba(0,0,0,0.2), 0px 12px 17px 2px rgba(0,0,0,0.14), 0px 5px 22px 4px rgba(0,0,0,0.12)` |
+| `light.shadow.none` | `0px 0px 0px 0px rgba(0,0,0,0)` |
+| `light.shadow.level1` | `0px 0px 20px 0px rgba(0,0,0,0.04)` |
+| `light.shadow.level2` | `0px 0px 20px 0px rgba(0,0,0,0.11)` |
+| `light.shadow.select` | `0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)` |
+| `light.shadow.toast` | `0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `none` 0px, `xs` 4px, `sm` 8px, `md` 12px, `lg` 16px, `chat-bubble` 20px, `chip` 24px, `xl` 28px, `button` 96px, `full` 9999px.
+Corner radii from `core.radius`: `none` 0px, `xs` 4px, `sm` 8px, `md` 12px, `lg` 16px, `lg-increased` 20px, `lg-max` 24px, `xl` 28px, `xl-increased` 32px, `xl-max` 40px, `xxl` 48px, `xxl-increased` 56px, `full` 9999px, `button` 9999px, `card` 40px, `panel` 32px, `dialog` 28px, `menu` 20px, `menu-item` 12px, `tooltip` 12px, `toast` 16px, `chat-bubble` 40px, `list-row` 8px, `dialog-button` 96px, `composer` 32px.
 
 ## Components
 
 No component tokens map onto DESIGN.md's component properties.
 
-Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
+Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
+
+### Components (from README.md)
+
+The 19 checklist components are all present; [components.md](components.md) has each one's states as tokens. The product's own nb-buttons come in accent (filled sky), tonal (grey fill), text and outlined variants, all pills. Hover and press add a state layer of the label colour at 8% and 12% (`opacity.hover`, `opacity.pressed`), never a colour change. Radio groups are drawn as toggle chips (Configure Chat); select is Material's outlined select; tabs are pills in the header and a segmented bar at 390.
 
 ## Do's and Don'ts
 
@@ -321,10 +409,23 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
 
+### What to distrust (from README.md)
+
+- **Two UI generations live in the CSS.** The legacy `--nlm-*` palette (lavender page `#edeffa`, blue `#4259ff`) is still declared and still paints a few things: the dialog Save button, links, the checked toggle chip, the lavender focus ring. Everything else is the newer `--nb-sys-*` set. Tokens named `legacy-*` are declared but no longer painted.
+- **`--nlm-green-0` to `-40` and `-90` to `-99` are declared as `undefined`.** Only five green steps exist. The `neutral` (18 steps), `sky` (6), `red` (9), `green-status` (9), `amber` (7) and `info` (4) palettes are assembled from every value the product declares for that hue; the product itself declares no such ramps, and no further steps exist to read. The Studio and data-viz hues have one colour and one container each, so they have no ramp.
+- **The scrim** is 32% black in both themes as painted, although `--nlm-fills-scrim` still says 60% in dark.
+- **Success, warning and info** colours are the declared variables; no such message appeared, so their use as fill, text and border is the product's naming, not an observed screen. Danger was observed (the "Blocked by browser" chip and the URL field error).
+- **Studio outputs** (audio and video players, mind map, flashcards, quiz, reports) were not opened; they render in other views and iframes. Their tile colours (`studio.*`, `tile.*`) are declared variables.
+- **The list-view table header** read "Sample notebook 1" in its copy because the title-column scrub caught the header cell too; that one cell was set back to "Title" (the live wording) by hand before rendering.
+- **The tooltip's text** is scrubbed in every image, since tooltips repeat titles. The measured one read "Audio Overview - Generate an AI podcast based on your sources".
+- **Hover is not measured at 390**, and the 390 copies are measured at rest only.
+- **The switch** is the only one in the product and is disabled (the browser blocks notifications), so no enabled or on state was seen.
+
 ### Do and don't (from README.md)
 
-1. **Do separate regions by fill alone.** The workspace is three white panels (radius 16, no border, no shadow) on the pale lavender `#edeffa` page with a 16px gutter, and the header has no fill at all; in dark the panels are `#22262b` on `#1a1d22`. Notebook cards and dialogs have no shadow either; only menus, popovers and the toast float. See [notebook-light-default](screenshots/notebook-light-default.png), [notebook-dark-flashcards-front](screenshots/notebook-dark-flashcards-front.png) and [home-light-sort-menu](screenshots/home-light-sort-menu.png).
-2. **Do split filled buttons by job: black for creating, blue for confirming.** Page-level create actions ("Create new", "Create notebook", "Add note", "Try it") are black pills that turn white in dark. The blue `#4259ff` fill is kept for the last button of a dialog or step (Create, Save, Delete, the quiz's "Next") and stays the same blue in both themes. Everything else is an outlined pill with a 1px `#dde1eb` hairline, or plain text. See [home-light-default](screenshots/home-light-default.png), [home-dark-default](screenshots/home-dark-default.png), [notebook-light-configure-chat-dialog](screenshots/notebook-light-configure-chat-dialog.png) and [mobile-dark-configure-chat-dialog](screenshots/mobile-dark-configure-chat-dialog.png).
-3. **Do show "selected" with the pale lavender fill.** The current section tab, the checked view-toggle segment, the Source guide pill, the user's chat bubble and the create card's plus circle all use `surface.selected` (`#edeffa`, dark `#2f334b`) rather than the accent. The one exception is the choice chips in dialogs, which fill blue with a leading check. See [home-light-collections-empty](screenshots/home-light-collections-empty.png), [notebook-light-flashcards-front](screenshots/notebook-light-flashcards-front.png) and [chip-toggle-light-states](screenshots/chip-toggle-light-states.png).
-4. **Do keep colour in the content and the chrome neutral.** Colour comes from the pastel notebook cards, the pastel Studio tiles (one colour pair per output type) and the red and blue file-type icons. Icon buttons, panel titles and toolbars are black or grey, and ticked source checkboxes are grey, not blue, so a long list stays quiet. See [notebook-light-default](screenshots/notebook-light-default.png), [home-light-grid](screenshots/home-light-grid.png) and [studio-light-tile-hover](screenshots/studio-light-tile-hover.png).
-5. **Don't colour destructive actions red.** The delete confirmation's "Delete" is the same blue filled button as any other confirm, beside an outlined "Cancel", and "Delete" in the card menu has the same grey outlined icon as the other items. See [home-light-delete-confirm-dialog](screenshots/home-light-delete-confirm-dialog.png) and [home-light-card-menu](screenshots/home-light-card-menu.png).
+1. **Do separate regions by fill, not shadow.** Cards (`surface.card`), panels (`surface.panel`) and dialogs sit on `bg.page` with no border and no shadow; only floating things (menus, the composer, the Studio banner) cast `shadow.level1`. See [home-dark](screenshots/home-dark.png) and [notebook-dark](screenshots/notebook-dark.png).
+2. **Do keep one accent-filled button per screen.** On home only New notebook is filled (`accent.default`); tabs, Add sources and Create notebook are grey tonal or text pills. Dialog confirms are the one exception and use the older brand blue. See [home-light](screenshots/home-light.png) and [notebook-dark-configure-chat](screenshots/notebook-dark-configure-chat.png).
+3. **Do show selection with a quiet grey fill.** The selected header tab and the active 390 tab use `surface.selected`, not the accent; only Configure Chat's toggle chips fill blue with a leading check. See [tab-selected](components/crops/tab-selected.png) and [radio-selected](components/crops/radio-selected.png).
+4. **Don't colour destructive actions red.** Delete in the confirmation is the same grey tonal pill as any other action, beside a text Cancel, and it takes focus. See [home-dark-delete-confirm](screenshots/home-dark-delete-confirm.png).
+5. **Do draw keyboard focus as a thick outline around the whole pill.** A 3px `border.focus` outline 2px outside the control, following its radius; fields thicken their own outline instead. See [button-accent-focus-visible](components/crops/button-accent-focus-visible.png) and [text-area-outlined-focus-visible](components/crops/text-area-outlined-focus-visible.png).
+6. **Don't put colour in the chrome.** Header, panel and menu icons are `text.primary`; colour is kept for content type: red PDF icons on sources and one accent per Studio output type. See [notebook-dark](screenshots/notebook-dark.png) and [mobile-notebook-dark-studio](screenshots/mobile-notebook-dark-studio.png).

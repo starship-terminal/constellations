@@ -136,7 +136,7 @@
       "name": "Gemini Notebook (NotebookLM)",
       "url": "https://notebook.google.com",
       "category": "ai-research",
-      "goodFor": "Source-grounded AI workspace: sources panel, chat, generated studio outputs (Material 3 flavour)",
+      "goodFor": "Source-grounded AI workspace: sources panel, chat, studio outputs; near-monochrome surfaces with pill buttons (luminous UI)",
       "tags": [
         "web",
         "ai",
@@ -146,33 +146,36 @@
         "sources"
       ],
       "shape": "reference",
-      "captured": "2026-09-25",
+      "captured": "2026-10-17",
       "access": "signed in",
       "themes": [
         "light",
         "dark"
       ],
-      "widths": [],
+      "widths": [
+        1440,
+        390
+      ],
       "entry": "systems/notebooklm/README.md",
       "tokens": "systems/notebooklm/tokens.json",
       "styleGuide": "systems/notebooklm/style-guide.html",
       "preview": {
-        "cover": "systems/notebooklm/screenshots/home-light-default.png",
+        "cover": "systems/notebooklm/screenshots/home-light.png",
         "swatches": {
           "light": {
             "page": "light.bg.page",
             "surface": "light.surface.panel",
-            "text": "light.text.on-surface",
+            "text": "light.text.primary",
             "muted": "light.text.secondary",
-            "accent": "light.accent.primary",
+            "accent": "light.accent.default",
             "border": "light.border.default"
           },
           "dark": {
             "page": "dark.bg.page",
             "surface": "dark.surface.panel",
-            "text": "dark.text.on-surface",
+            "text": "dark.text.primary",
             "muted": "dark.text.secondary",
-            "accent": "dark.accent.primary",
+            "accent": "dark.accent.default",
             "border": "dark.border.default"
           }
         },

@@ -1,0 +1,15 @@
+{
+  "_source": "Read on 2026-10-17 from notebook.google.com: <meta name=theme-color> tags and /_/static/branding/v6/manifest.json",
+  "themeColor": {
+    "(prefers-color-scheme: light)": "#000000",
+    "(prefers-color-scheme: dark)": "#ffffff"
+  },
+  "manifest": {
+    "name": "Gemini Notebook",
+    "display": "minimal-ui",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+  },
+  "favicon": "gstatic.com/tailwind/_/static/branding/v6/{light_mode,dark_mode}/favicon/favicon.svg, one per colour scheme",
+  "maskIcon": null
+}

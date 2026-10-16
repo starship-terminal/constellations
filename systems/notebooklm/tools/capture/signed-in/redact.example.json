@@ -1,0 +1,17 @@
+{
+ "replace": [
+  ["Account Holder", "gi", "Teammate A"],
+  ["account\\.holder(@|%40)example\\.com", "gi", "learner@example.com"],
+  ["\\bABC-(\\d+)", "g", "CORE-$1"]
+ ],
+ "badges": [],
+ "scrub": [
+  ["a[href*='/issue/']", "Sample issue"],
+  ["[data-board-item]", "Sample issue"],
+  ["a[href*='/project/']", "Sample project"],
+  [".ProseMirror", "Sample text"],
+  ["[aria-live], [role=status]", "Sample status"]
+ ],
+ "keep": ["Backlog", "Todo", "In Progress", "In Review", "Done", "Canceled", "Duplicate", "No priority", "Urgent", "High", "Medium", "Low", "On track", "At risk", "Copied issue link to clipboard"],
+ "keepPattern": "^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)( \\d{1,2})?(,? \\d{4})?$|^(Q[1-4]|\\d+(mo|[dwmy])|\\d+ (days?|weeks?|months?) ago)$"
+}

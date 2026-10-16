@@ -1,0 +1,66 @@
+# ligature	role (the control it labels)	where	sizes	fill	font	seen in
+add_2	New notebook; New collection; Create notebook; Add source	page, header, Sources panel	20px	0	Luminous Symbols	home-dark, home-dark-card-menu, home-dark-collections-empty
+approval	Remove watermarks	menu	20px	0	Google Symbols	home-dark-settings-menu, home-dark-theme-submenu
+arrow_back	Back; Back to homepage	dialog, page	20px, 24px	0	Luminous Symbols	notebook-dark-website-dialog, notebook-dark-website-dialog-error, notebook-dark-website-dialog-typed
+arrow_drop_down	arrow_drop_down All; More copy options	header, dialog	18px, 20px	0	Google Symbols	mobile-home-dark, notebook-dark-share-dialog, notebook-dark-share-select-open
+arrow_forward	Submit	Sources panel, dialog	20px	0	Luminous Symbols	notebook-dark, notebook-dark-add-sources, notebook-dark-announcement
+arrow_upward	Submit	page, Chat	20px	0	Luminous Symbols	mobile-notebook-dark-chat, notebook-dark, notebook-dark-add-sources
+article	article Add note	page, Studio panel	20px	0	Luminous Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
+audio_spark	Studio output type (row)	page, Studio panel	24px	0	Luminous Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
+auto_tab_group	Studio output type (row)	page, Studio panel	22px	0	Google Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
+block	(decorative)	dialog	16px	0	Google Symbols	home-dark-notifications-dialog
+brush	Customize notebook	menu	20px	0	Luminous Symbols	notebook-dark-config-menu
+category	Add to collection	menu	20px	0	Google Symbols	home-dark-card-menu
+chevron_right	View all featured notebooks	page	20px	0	Luminous Symbols	mobile-home-dark
+close	Close dialog; Cancel; Dismiss banner; Close	dialog, header, page, Studio panel	20px, 24px	0	Luminous Symbols	home-dark-notifications-dialog, home-dark-search-typed, mobile-notebook-dark-studio
+content_paste	Copied text	dialog	18px	0	Google Symbols	notebook-dark-add-sources
+copy	Copy summary; Copy model response to clipboard; Studio output type (row); Copy notebook	page, Chat, Studio panel, menu	20px, 24px	0	Luminous Symbols	mobile-notebook-dark-chat, mobile-notebook-dark-studio, notebook-dark
+dark_mode	Dark mode	menu	20px	0	Google Symbols	home-dark-theme-submenu
+data_usage	Show usage dialog	menu	20px	0	Google Symbols	home-dark-settings-menu, home-dark-theme-submenu
+delete	Delete; Delete chat history Chat history is private to you; Remove source	menu	20px	0	Luminous Symbols	home-dark-card-menu, notebook-dark-config-menu, notebook-dark-source-menu
+docs	(decorative)	page	26px	0	Google Symbols	mobile-notebook-dark-chat
+drive	Drive	dialog	18px	0	Luminous Symbols	notebook-dark-add-sources
+drive_pdf	source type (row)	Sources panel	24px	0	Luminous Symbols	notebook-dark, notebook-dark-add-sources, notebook-dark-announcement
+edit	Edit title; Manage subscription; Rename source	menu	20px	0	Luminous Symbols	home-dark-card-menu, home-dark-settings-menu, home-dark-theme-submenu
+feedback	Send feedback	menu	20px	0	Google Symbols	home-dark-settings-menu, home-dark-theme-submenu
+flowchart	Studio output type (row)	page, Studio panel	22px	0	Google Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
+format_list_bulleted	(decorative)	page, Studio panel	24px	0	Luminous Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
+forum	Discord	menu	20px	0	Google Symbols	home-dark-settings-menu, home-dark-theme-submenu
+grid_view	Grid view	header	20px	0	Google Symbols	home-dark, home-dark-card-menu, home-dark-collections-empty
+help	Gemini Notebook help	menu	20px	0	Luminous Symbols	home-dark-settings-menu, home-dark-theme-submenu
+info	(decorative)	dialog	18px	0	Luminous Symbols	home-dark-notifications-dialog
+keep_pin	Save to note; Save message to a note; keep_pin Save to note	page, Chat	20px	0	Google Symbols	mobile-notebook-dark-chat, notebook-dark, notebook-dark-add-sources
+keyboard_arrow_down	Web; Fast Research	Sources panel, dialog	20px	0	Luminous Symbols	notebook-dark, notebook-dark-add-sources, notebook-dark-announcement
+keyboard_return	All search results for “zzqzzq”	header	24px	0	Google Symbols	home-dark-search-typed
+label_auto	Auto-label your sources by topic	Sources panel	18px	0	Google Symbols	notebook-dark, notebook-dark-add-sources, notebook-dark-announcement
+landscape_2	(decorative)	page, Chat	128px, 192px	0	Google Symbols	mobile-notebook-dark-chat, notebook-dark, notebook-dark-add-sources
+language	Output language; Web	menu, Sources panel, dialog	20px	0	Luminous Symbols	home-dark-settings-menu, home-dark-theme-submenu, notebook-dark
+license	Licenses	menu	20px	0	Google Symbols	home-dark-settings-menu, home-dark-theme-submenu
+light_mode	Light mode	menu	20px	0	Google Symbols	home-dark-theme-submenu
+link_2	Websites; Copy link	dialog	18px	0	Luminous Symbols	notebook-dark-add-sources, notebook-dark-share-dialog, notebook-dark-share-select-open
+lock	(decorative)	dialog	20px	0	Luminous Symbols	notebook-dark-share-dialog, notebook-dark-share-select-open
+more_vert	notebook row; Project Actions Menu; Notebook configuration; Studio output type (row)	page, header, Studio panel, Sources panel	18px, 20px	0	Luminous Symbols	home-dark, home-dark-card-menu, home-dark-delete-confirm
+notifications	Notifications	menu	20px	0	Google Symbols	home-dark-settings-menu, home-dark-theme-submenu
+play_arrow	Studio output type (row)	page, Studio panel	20px	0	Luminous Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
+public	public Discover	header	20px	0	Luminous Symbols	home-dark, home-dark-card-menu, home-dark-collections-empty
+push_pin	Pin to top	menu	20px	0	Luminous Symbols	home-dark-card-menu
+quiz	Studio output type (row)	page, Studio panel	24px	0	Luminous Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
+routine	Theme; Device	menu	20px	0	Google Symbols	home-dark-settings-menu, home-dark-theme-submenu
+search	Search notebooks; All search results for “zzqzzq”	header, page	20px, 24px, 28px, 48px	0	Luminous Symbols	home-dark, home-dark-card-menu, home-dark-delete-confirm
+search_spark	Fast Research	Sources panel, dialog	20px	0	Luminous Symbols	notebook-dark, notebook-dark-add-sources, notebook-dark-announcement
+settings	Settings	header	20px	0	Luminous Symbols	home-dark, home-dark-card-menu, home-dark-collections-empty
+share	(decorative)	dialog	24px	0	Google Symbols	notebook-dark-share-dialog, notebook-dark-share-select-open
+share_1	Share notebook	header	20px	0	Luminous Symbols	mobile-notebook-dark-chat, mobile-notebook-dark-studio, notebook-dark
+side_nav	Collapse source panel; Collapse studio panel	Sources panel, Studio panel	20px	0	Luminous Symbols	notebook-dark, notebook-dark-add-sources, notebook-dark-announcement
+sort	Sort sources	Sources panel	18px	0	Luminous Symbols	notebook-dark, notebook-dark-add-sources, notebook-dark-announcement
+stacked_bar_chart	Studio output type (row)	page, Studio panel	22px	0	Google Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
+tablet	Studio output type (row)	page, Studio panel	22px	0	Google Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
+thumb_down	Bad summary; Rate response as bad	page, Chat	20px	0	Luminous Symbols	mobile-notebook-dark-chat, notebook-dark, notebook-dark-add-sources
+thumb_up	Good summary; Rate response as good	page, Chat	20px	0	Luminous Symbols	mobile-notebook-dark-chat, notebook-dark, notebook-dark-add-sources
+trending_up	Analytics	menu	20px	0	Google Symbols	notebook-dark-config-menu
+tune	Configure Chat	menu	20px	0	Luminous Symbols	notebook-dark-config-menu
+upload	Upload files	dialog	18px, 24px	0	Luminous Symbols	notebook-dark-add-sources
+video_youtube	Websites	dialog	18px	0	Google Symbols	notebook-dark-add-sources
+videocam	Studio output type (row)	page, Studio panel	24px	0	Luminous Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
+view_headline	List view	header	20px	0	Google Symbols	home-dark, home-dark-card-menu, home-dark-collections-empty
+waving_hand	Studio output type (row)	page, Studio panel	20px	0	Google Symbols	mobile-notebook-dark-studio, notebook-dark, notebook-dark-add-sources
