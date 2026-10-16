@@ -6,7 +6,7 @@ It is the reference for Quiver's macOS app, which takes TokenTracker's look and 
 
 | File | What it is |
 |---|---|
-| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (249: neutral, brand, red, amber, orange, sky and blue ramps, status and heatmap colours, the font stacks, 17 named type roles plus 9 more type styles counted from the rendered text, a 2px-step spacing scale, radii, border width, sizes, the focus ring, eight shadows, z-index layers, breakpoints, content widths, durations, easings) and `light` and `dark` (61 each: wash, panel, card, raised, overlay and scrim fills, text roles including disabled and link, borders including focus, the focus ring colour, accent default/hover/pressed, primary, danger and disabled buttons, switch tracks, status and heatmap aliases), plus `$themes`. Every token carries `$extensions.source`. |
+| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (261: neutral, brand, red, amber, orange, sky and blue ramps, status and heatmap colours, the font stacks, a 9-step size scale (`font.scale`, every size at least 10 rendered elements use), 17 named type roles plus 9 more type styles counted from the rendered text, a 2px-step spacing scale, radii, border width, sizes, the focus ring, shadows for each use, z-index layers, breakpoints, content widths, durations, easings) and `light` and `dark` (62 each: wash, panel, card, raised, overlay and scrim fills, text roles including disabled and link, borders including focus, the focus ring colour, accent default/hover/pressed, primary, danger and disabled buttons, switch tracks, status and heatmap aliases), plus `$themes`. Every token carries `$extensions.source`. |
 | [style-guide.html](style-guide.html) | One self-contained page that rebuilds the shell, controls, lists and tables from the tokens, with a light and dark toggle, and lists every colour role, ramp, type role, radius, size and duration with its source. Open it from disk. |
 | [components.md](components.md) | The pages captured, the shared values (hover, focus, pressed, disabled, motion, radii), one entry per component with dark and light state tables written in token names, crops, the icon index and the Gaps. |
 | [patterns.md](patterns.md) | The app shell, page header, forms and validation, empty/loading/error states, destructive confirmation, feedback, search and filtering, data display and first run, each with its components, layout and screenshots. |
@@ -111,10 +111,10 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md).
 | Border roles | Captured | `border.default`, `strong`, `hover`, `focus` (light changes on focus; dark does not) |
 | Accent states | Captured | `accent.default`, `hover`, `pressed` (pressed equals hover); `button.primary.*` |
 | Status colours | Partly captured | Success text and danger fill and text; warning renders only once in light, info never. See What to distrust |
-| Type roles | Captured | `core.typography`: 17 named roles (display, headings, body, label, caption, code in the mono stack) and 9 styles counted from rendered text |
+| Type roles | Captured | `core.font.scale` (10, 11, 12, 13, 14, 16, 18, 36, 72px); `core.typography`: 17 named roles (display, headings, body, label, caption, code in the mono stack) and 9 styles counted from rendered text |
 | Spacing | Captured | `core.space.scale` (counted from every rendered padding and gap) |
 | Radii, borders | Captured | `core.radius`, `core.border` |
-| Elevation | Captured | `core.shadow`: `sm` panel, `md` toast, `lg` menu, `lgBare` hint tooltip, `xl` heatmap tooltip, `dialog` and `confirm` per theme |
+| Elevation | Captured | `core.shadow`: `ring` (1px, pills and marks), `sm` panel, `md` toast, `lg` menu, `lgBare` hint tooltip, `xl` heatmap tooltip, `dialog` and `confirm` per theme |
 | Motion and reduced motion | Captured | `core.motion`; Motion and reduced motion above |
 | Sizing (controls, icons) | Captured | `core.size` |
 | Focus ring | Captured where it exists | `core.focusRing`, `focus.ring`: four sidebar and Cloud controls; the rest of the product draws none |

@@ -221,6 +221,15 @@ for v, x in K["totals"]["dark"]["type"].items():
     put(core, f"typography.{name}", tok({"fontFamily": "{font.family.sans}", "fontSize": size, "fontWeight": w, "lineHeight": lh, "letterSpacing": "0px"},
         "typography", f"Measured: computed font of {x['n']} rendered text elements such as {x['where'][0]} ({', '.join(sorted(set(x['pages']))[:4])}, dark), raw/census.json totals.dark.type"))
 
+# The size scale: every font size that at least 10 rendered text elements use (dark, all pages).
+from collections import Counter
+sizes = Counter()
+for v, x in K["totals"]["dark"]["type"].items():
+    sizes[v.split("/")[0]] += x["n"]
+for i, (size, n) in enumerate(sorted(((sz, n) for sz, n in sizes.items() if n >= 10), key=lambda kv: float(kv[0][:-2]))):
+    put(core, f"font.scale.{size[:-2]}", tok(size, "dimension",
+        f"Measured: font size of {n} rendered text elements across the ten pages (dark), raw/census.json totals.dark.type"))
+
 # Radii, each from the component that shows it
 RADII = [
     ("xs", "heatmap-cell", "Heatmap cells."),
@@ -253,6 +262,8 @@ put(core, "size.icon.nav", tok(f"{reading('nav-icon', 'dark')['icon']['w']:g}px"
     "Measured: rendered size of the Lucide icon in a[href=/sessions], raw/components-computed.json", "Lucide, default stroke 2."))
 put(core, "size.icon.control", tok(f"{reading('icon-button', 'dark')['icon']['w']:g}px", "dimension",
     "Measured: rendered size of the icon in the Refresh icon button, raw/components-computed.json"))
+put(core, "size.icon.small", tok(f"{reading('share-button', 'dark')['icon']['w']:g}px", "dimension",
+    "Measured: rendered size of the icon in the Share button, raw/components-computed.json", "Icons inside buttons, selects and the theme toggle."))
 put(core, "size.sidebar.collapsedWidth", tok("72px", "dimension",
     "Derived: read from the dashboard source (the collapsed sidebar's w-[72px]); not rendered at capture time"))
 
@@ -300,6 +311,9 @@ v, s = meas("hint-tooltip", "boxShadow", "dark", "open")
 put(core, "shadow.lgBare", tok(shadow_layers(v), "shadow", s, "Tailwind shadow-lg without the ring: the hint tooltip on Limits."))
 v, s = meas("tooltip", "boxShadow", "dark", "open")
 put(core, "shadow.xl", tok(shadow_layers(v), "shadow", s, "The heatmap tooltip (Tailwind shadow-xl)."))
+for theme in ["dark", "light"]:
+    v, src = census(theme, "shadow", "span.inline-flex.shrink-0.rounded-full")
+    put(core, f"shadow.ring.{theme}", tok(shadow_layers(v), "shadow", src, "A 1px ring drawn as a shadow: provider and agent marks, pills." if theme == "dark" else None))
 v, s = meas("confirm-dialog", "boxShadow", "dark", "open")
 put(core, "shadow.confirm.dark", tok(shadow_layers(v), "shadow", s, "Confirmation dialogs: a 1px ring and a deep drop."))
 v, s = meas("confirm-dialog", "boxShadow", "light", "open")
@@ -445,6 +459,7 @@ def themed(theme):
     for i in range(5):
         P(f"heatmap.{i}", tok(f"{{color.heatmap.{theme}.{i}}}", "color", f"Derived: alias of color.heatmap.{theme}.{i}"))
     P("elevation.dialog", tok(f"{{shadow.dialog.{theme}}}", "shadow", f"Derived: alias of shadow.dialog.{theme}"))
+    P("elevation.ring", tok(f"{{shadow.ring.{theme}}}", "shadow", f"Derived: alias of shadow.ring.{theme}"))
     P("elevation.confirm", tok(f"{{shadow.confirm.{theme}}}", "shadow", f"Derived: alias of shadow.confirm.{theme}"))
     return t
 

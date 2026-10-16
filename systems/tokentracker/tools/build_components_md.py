@@ -71,7 +71,7 @@ for theme in ("light", "dark"):
             idx.setdefault(t["$value"], []).append((name, t["$extensions"]["source"]))
     COLOUR[theme] = idx
 DIM = {}
-for group in ("radius", "space.scale", "size", "focusRing", "border.width"):
+for group in ("radius", "space.scale", "size.icon", "size", "focusRing", "border.width"):
     for name, t in CORE.items():
         if name.startswith(group + ".") and t["$type"] == "dimension":
             DIM.setdefault((group, t["$value"]), name)
@@ -148,7 +148,7 @@ def row(v, theme, key, state="default"):
     if border == "none" and s["borderBottomWidth"] != "0px" and s["borderBottomStyle"] != "none":
         border = f"bottom {dtok(s['borderBottomWidth'], 'border.width')} {ctok(s['borderBottomColor'], theme, key, state)}"
     layers = tuple(_shadow(s["boxShadow"]))
-    shadow = "none" if not layers else (f"`{SHADOW[layers]}`" if layers in SHADOW else f"{s['boxShadow'][-60:]} ({UNTOK})")
+    shadow = "none" if not layers else (f"`{SHADOW[layers]}`" if layers in SHADOW else "; ".join(" ".join(l) for l in layers) + f" ({UNTOK})")
     font = TYPE.get((f["fontSize"], f["lineHeight"], str(f["fontWeight"])))
     font = f"`{font}`" if font else f"{f['fontSize']}/{f['lineHeight']} {f['fontWeight']} ({UNTOK})"
     if f.get("textTransform", "none") != "none":
@@ -171,7 +171,7 @@ def row(v, theme, key, state="default"):
     if ol:
         out["focus ring"] = ol
     if v.get("icon"):
-        out["icon"] = f"{v['icon']['w']:g}px"
+        out["icon"] = dtok(f"{v['icon']['w']:g}px", "size.icon")
     return out
 
 
