@@ -105,6 +105,17 @@ for n, t in sorted(flat(T["core"]["space"], "space."), key=lambda nt: float(nt[1
 BY_ICON = {}
 for step in ("icon", "icon--sm", "icon--lg"):
     BY_ICON.setdefault(T["core"]["density"][step]["$value"], "density." + step)
+# Box sizes: a height is named by the control-height, size or layout token that holds it; a width
+# only by a layout width token, or by the height's token when the box is square (an icon button).
+# Content-driven widths stay raw.
+BY_HEIGHT, BY_WIDTH = {}, {}
+for n, t in flat(T["core"]["density"], "density."):
+    if n.startswith("density.h-control") and t["$type"] == "dimension":
+        BY_HEIGHT.setdefault(t["$value"], n)
+for grp in ("size", "layout"):
+    for n, t in flat(T["core"][grp], grp + "."):
+        if t["$type"] == "dimension":
+            (BY_WIDTH if n.endswith("width") else BY_HEIGHT).setdefault(t["$value"], n)
 BY_DUR = {}
 for n, t in flat(T["core"]["duration"], "duration."):
     ms = float(t["$value"].replace("ms", ""))
@@ -184,8 +195,8 @@ def colour(c, tokens=True, role=None):
     Every form is first rewritten as rgb()/rgba() text, then labelled in one pass, so no value is
     labelled twice."""
     def label(v):
-        if v == "rgba(0, 0, 0, 0)":
-            return "transparent"
+        if v == "rgba(0, 0, 0, 0)" or v.endswith(", 0)"):
+            return "transparent" if v == "rgba(0, 0, 0, 0)" else f"transparent ({v})"
         if not tokens:
             return v
         return tok(pick(BY_COLOR[THEME[0]].get(v), role), v)
@@ -251,7 +262,8 @@ def shadow(raw):
     their inset sits on, since that first layer takes the page colour."""
     sh = colour(raw, tokens=False)
     layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
-    layers = [x for x in layers if not x.startswith("transparent") and not re.match(r"rgba\(0, 0, 0, 0\) 0px 0px 0px 0px", x)]
+    # layers that paint nothing: a transparent colour, or no offset, blur or spread (Tailwind's ring placeholders)
+    layers = [x for x in layers if not x.startswith("transparent") and not re.match(r"rgba\([^)]*, 0\) ", x) and not re.search(r" 0px 0px 0px 0px( inset)?$", x)]
     if not layers:
         return None
     rgb = [re.sub(r"#([0-9a-f]{6})", lambda m: "rgb(%d, %d, %d)" % tuple(int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4)), x) for x in layers]
@@ -272,7 +284,10 @@ def props(v):
     s = v["style"]
     o = {}
     HINTS[0] = hints_of(v.get("classes"))
-    o["size"] = f"{num(v['rect']['w'])} x {num(v['rect']['h'])}"
+    w, h = num(v["rect"]["w"]), num(v["rect"]["h"])
+    wt = BY_WIDTH.get(w + "px") or (BY_HEIGHT.get(h + "px") if w == h else None)
+    # a width no token holds is the instance's content width, written raw and not counted as a spec value
+    o["size"] = f"{tok(wt, w) if wt else w} x {tok(BY_HEIGHT.get(h + 'px'), h)}"
     pad = sides(s["paddingTop"], s["paddingRight"], s["paddingBottom"], s["paddingLeft"])
     if pad != "0px":
         o["padding"] = " ".join(dim("pad", x) if x != "0px" else x for x in pad.split(" "))
@@ -295,6 +310,14 @@ def props(v):
         sh = shadow(s["boxShadow"])
         if sh:
             o["shadow"] = sh
+    # cds often draws the focus ring on an inner layer (the button inside a row, a tab's own button,
+    # a row's link overlay); name it, with the layer it sits on
+    if "focus" not in (o.get("shadow") or ""):
+        for ly in (v.get("paint") or [])[:4]:
+            lab = shadow(ly["shadow"]) if ly.get("shadow") else None
+            if lab and "`shadow.focus" in lab:
+                o["focus ring"] = f"on the inner {ly['node'].split('.')[0]}: {lab}"
+                break
     if s.get("backdropFilter", "none") != "none":
         o["backdrop"] = s["backdropFilter"]
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
@@ -341,7 +364,7 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "underline", "transition", "transform", "press", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "focus ring", "backdrop", "outline", "text", "underline", "transition", "transform", "press", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
@@ -464,7 +487,7 @@ W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md
 W()
 W("How to read an entry:")
 W()
-W("- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A value no token holds is written raw: Tailwind's default curve `cubic-bezier(0.4, 0, 0.2, 1)`, odd paddings, most drop shadows inside components. @@NAMED@@")
+W("- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A height is named by the control-height, size or layout token that holds it; a width only when a layout width token holds it or the box is square, and otherwise it is the instance's content width, written raw and not counted below. A colour with zero alpha reads `transparent`. A value no token holds is written raw: a few line heights (14/21), odd paddings and some drop shadows inside components. @@NAMED@@")
 W("- Text is written as its typography token, then family size/line-height weight in brackets, then its colour, for example `` `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) ``, and is read from the first text node inside the component. A glyph from the icon font reads `Anthropicons` with its icon size step and weight.")
 W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do: a cds Button paints its fill on an inner span, so its hover shows there.")
 W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
@@ -532,16 +555,24 @@ for cid, c in C.items():
         if sname.endswith("focus-visible"):
             th = s["theme"]
             focus_n[th] += 1
-            if st["outlineStyle"] != "none" and float(st["outlineWidth"].replace("px", "")) > 0:
-                THEME[0] = th
-                focus[th][f"{st['outlineWidth']} {st['outlineStyle']} {colour(st['outlineColor'])} offset {st['outlineOffset']}"] += 1
+            THEME[0] = th
+            rest = c["states"].get(sname[: -len("focus-visible")].rstrip("-") or "default") or {}
+            rest = rest.get("style") or {}
+            visible = lambda col: not re.search(r"(, 0\)|/ 0\))$", col) and col != "rgba(0, 0, 0, 0)"
+            shs = [st["boxShadow"]] + [ly.get("shadow") or "" for ly in (s.get("paint") or [])[:4]]
+            outs = [ly.get("outline") or "" for ly in (s.get("paint") or [])[:4]]
+            if st["outlineStyle"] != "none" and float(st["outlineWidth"].replace("px", "")) > 0 and visible(st["outlineColor"]):
+                focus[th][f"a {st['outlineWidth']} {st['outlineStyle']} outline in {colour(st['outlineColor'], role='border')}, offset {st['outlineOffset']}"] += 1
+            elif any(re.search(r"42, 120, 214|0\.164706 0\.470588 0\.839216|208, 59, 59|0\.815686 0\.231373 0\.231373", x) for x in shs):
+                focus[th]["the shadow.focus ring (or shadow.focus-danger), on the element or an inner layer"] += 1
+            elif any(o and not o.split(" offset")[0].endswith(", 0)") for o in outs):
+                focus[th]["a 2px outline on an inner layer"] += 1
+            elif rest and st["boxShadow"] != rest.get("boxShadow"):
+                focus[th]["its own ring turns border.strong (the composer, a field that holds the caret)"] += 1
+            elif rest and st["backgroundColor"] != rest.get("backgroundColor"):
+                focus[th]["the hover wash, no ring"] += 1
             else:
-                # cds draws focus as a box-shadow (shadow.focus), on the element or on its first painted layer
-                shs = [st["boxShadow"]] + [ly.get("shadow") or "" for ly in (s.get("paint") or [])[:3]]
-                if any("42, 120, 214" in x or "0.164706 0.470588 0.839216" in x for x in shs):
-                    focus[th]["the shadow.focus ring (a 1px page-colour inset, a 1px fill.accent ring, a 6px glow)"] += 1
-                else:
-                    focus[th]["no ring painted on the element or its first layers"] += 1
+                focus[th]["nothing visible on the element or its first layers"] += 1
 for cid, c in C.items():
     for th, base, hov, ctr in (("dark", "default", "hover", hover_dark), ("light", "light", "light-hover", hover_light)):
         a, b = c["states"].get(base), c["states"].get(hov)
@@ -566,7 +597,7 @@ W(f"**Radius.** {top(radii, 10)}. Most of the interface is 8 (rows, icon buttons
 W()
 W(f"**Hover.** Claude hovers with a translucent wash of the text colour. Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. The wash is `fill.ghost-hover` (`rgba(255, 255, 255, 0.075)` in dark, `rgba(11, 11, 11, 0.05)` in light) on buttons, menu items and list rows; sidebar rows use `frame.hover`, the same wash in dark and a solid `#f0efec` in light; a selected row is `frame.selected` (15% white, or `#edece8`). A cds Button paints that fill on its inner `.cds-btn-squish` span, so the button itself reads \"no change\".")
 W()
-W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 4)}. In light: {top(focus['light'], 4)}. The common ring is `shadow.focus`: a 1px inset of the page colour, a 1px `fill.accent` blue (`#2a78d6`) ring and a 6px blue glow, so focus reads as a blue outline with a halo. Plain links and the composer's own buttons fall back to a 2px blue outline offset 2.")
+W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 4)}. In light: {top(focus['light'], 4)}. The common ring is `shadow.focus`: a 1px inset of the page colour, a 1px `fill.accent` blue (`#2a78d6`) ring and a 6px blue glow, so focus reads as a blue outline with a halo. The composer's mic and voice buttons, the Thought for N s pill and the message actions use a 2px blue outline offset 2 instead. A row (sidebar row, Chats row, settings nav item) puts the ring on its inner link or button and the sidebar rows add the hover wash; a tab puts it on its inner button. Menu items take no ring: keyboard focus in a cds Menu is the same `fill.ghost-hover` wash as the pointer ([menu-item-keyboard](#menu-item-keyboard)). The one element that shows nothing is the search dialog's field row, whose focus is the caret in its text area. States named `refresh-focus-visible` were read on the 2026-10-17 copies for components whose 2026-10-04 copy had no focus reading.")
 W()
 W(f"**Motion.** {top(trans, 5)}. Buttons press on `duration.fast` (60 ms) and colour changes run 200 ms on the standard curve; the cds tokens name five durations (60, 120, 200, 300, 450 ms) and three curves (out, snap, overshoot), plus a `linear()` spring for button presses that DTCG cannot carry.")
 W()
@@ -643,6 +674,7 @@ W("- The thread is not virtualised: one copy rendered at three scroll positions 
 W("- Artifact previews are iframes and render as dark boxes where present.")
 W("- Hover and focus on the 390 wide copies were not measured (a phone has neither). The segmented controls' radio spans take no focus in a static copy, so their focus-visible state is skipped.")
 W("- Refreshed 2026-10-17 with nine more copies (Forms and feedback, and the overlays marked with that date). The 2026-10-04 screenshots and crops were not retaken, so the two days sit side by side: the Artifacts page is a list in the first and a grid of cards in the second.")
+W("- Focus was not read on the code block's copy button, the chat title's more button, search results, Artifacts list rows and a project's recent rows: their 2026-10-04 copies are gone and no 2026-10-17 copy shows them. The search dialog's field row shows no ring when its text area takes focus; the caret is the only sign.")
 W("- A toast was not captured: the toast region is mounted on every page but stayed empty, and the actions that raise one change the account. The text field's error state was read by setting `data-invalid` on the copy, so its ring is Claude's own CSS but the message under the field was never seen. A button's loading state needs a sent message.")
 W("- Streaming (a reply being written, the stop button), the artifact panel beside a chat, the Code mode, Cowork, the share sheet, and the Privacy, Billing and Usage settings panes were not captured: each would need sending a message or shows account and billing details.")
 W("- Chat and artifact titles are the owner's own. The account's name was replaced with \"Learner\" and its email with an example address, and two health-related titles were replaced with neutral ones, by the redaction file, which lives outside the repository.")

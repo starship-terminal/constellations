@@ -384,6 +384,12 @@ for name in sorted(RES["light"]):
 tw["$description"] = "The Tailwind v4 theme the utility classes read: a 4px spacing unit, the container widths (max-w-2xl is the 672 home composer, the transcript is 48rem) and the radius scale."
 core["tailwind"] = tw
 
+# Tailwind's default transition: every `transition` utility without its own duration or ease uses it
+TW_THEME = {n: v for r in V["tailwind"] if r.get("selector") == ":root, :host" and r.get("context") == ["@layer theme"] for n, v in r["properties"].items()}
+core["easing"]["tailwind-default"] = tok(bezier(TW_THEME["--default-transition-timing-function"]), "cubicBezier", "css-var --default-transition-timing-function (Tailwind v4 theme layer); the curve of every transition utility that names none")
+core["easing"]["tailwind-in"] = tok(bezier(TW_THEME["--ease-in"]), "cubicBezier", "css-var --ease-in (Tailwind v4 theme layer)")
+core["duration"]["tailwind-default"] = tok(ms(TW_THEME["--default-transition-duration"]), "duration", "css-var --default-transition-duration (Tailwind v4 theme layer); the duration of every transition utility that names none")
+
 # ---------------------------------------------------------------- themed sets
 
 GROUPS = [
