@@ -287,7 +287,7 @@
     },
     "F5": {
      "grade": "meets",
-     "evidence": "fill.accent, fill.accent-hover, fill.accent-pressed (keeps the fill, squish in core.press.button-scale 0.975), sourced to css-rules"
+     "evidence": "fill.accent, fill.accent-hover, fill.accent-pressed (hover fill held, plus the squish in core.press.button-scale 0.975), sourced to css-rules and measurements"
     },
     "F6": {
      "grade": "partly",
@@ -319,7 +319,7 @@
     },
     "F13": {
      "grade": "meets",
-     "evidence": "core.duration 7, core.easing 6, duration.reduced-motion 0.01ms and $extensions.reducedMotion listing triggers, 127 rules and what changes"
+     "evidence": "core.duration 7, core.easing 6, duration.reduced-motion 0.01ms and $extensions.reducedMotion listing triggers, 125 rules and what changes"
     },
     "F14": {
      "grade": "meets",

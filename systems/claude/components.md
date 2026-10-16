@@ -1929,7 +1929,7 @@ Tokens named in its classes: `--cds-bg-user-message`, `--cds-cursor-interactive`
 
 ### Forms and feedback
 
-Added on 2026-10-17 from nine new copies: the tooltip, the text link, the checkbox, the confirmation and form dialogs with their primary, secondary, danger and disabled buttons, the text field (with its error state) and text area, the list search, empty result, filter menu, loading skeleton and the two page grids. Every button here was also read pressed, with the pointer held down: cds squishes the paint layer to 97.5% (`core.press.button-scale`) and keeps its colour.
+Added on 2026-10-17 from nine new copies: the tooltip, the text link, the checkbox, the confirmation and form dialogs with their primary, secondary, danger and disabled buttons, the text field (with its error state) and text area, the list search, empty result, filter menu, loading skeleton and the two page grids. Every button here was also read pressed, with the pointer held down: cds keeps the hover fill and squishes the paint layer to 97.5% (`core.press.button-scale`).
 
 #### Text link
 

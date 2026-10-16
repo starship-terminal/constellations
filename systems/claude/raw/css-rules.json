@@ -1,7 +1,7 @@
 {
  "readAt": "2026-10-17",
  "source": "the <style> blocks snapshot.js inlined into each 2026-10-17 page copy (claude.ai's CSS from assets-proxy.anthropic.com), deduplicated by content",
- "rules": 16835,
+ "rules": 16453,
  "breakpoints": [
   {
    "px": 350,
@@ -574,7 +574,7 @@
   }
  ],
  "reducedMotion": {
-  "mediaRules": 127,
+  "mediaRules": 125,
   "mediaDeclarations": [
    {
     "value": "animation: auto ease 0s 1 normal none running none",
@@ -597,10 +597,6 @@
     "count": 7
    },
    {
-    "value": "opacity: 1",
-    "count": 5
-   },
-   {
     "value": "background-image: none",
     "count": 4
    },
@@ -610,6 +606,10 @@
    },
    {
     "value": "color: var(--cds-text-secondary)",
+    "count": 4
+   },
+   {
+    "value": "opacity: 1",
     "count": 4
    },
    {
@@ -662,10 +662,6 @@
    },
    {
     "value": "--tile-overlay-duration: 0s",
-    "count": 1
-   },
-   {
-    "value": "opacity: 0",
     "count": 1
    },
    {
@@ -735,6 +731,10 @@
    {
     "value": "animation: 0.65s ease-out 0s 1 normal both running fade-out",
     "count": 1
+   },
+   {
+    "value": "grid-template-rows: 1fr",
+    "count": 1
    }
   ],
   "mediaSelectors": [
@@ -776,14 +776,6 @@
    },
    {
     "value": ".idle-activity-bar-ripple",
-    "count": 1
-   },
-   {
-    "value": "0%",
-    "count": 1
-   },
-   {
-    "value": "100%",
     "count": 1
    },
    {
@@ -836,6 +828,14 @@
    },
    {
     "value": ".dframe-dot, .status-dot[data-kind=\"running\"]",
+    "count": 1
+   },
+   {
+    "value": ".dframe-root[data-wco][data-collapsed][data-peeked] [data-chrome-switcher], .dframe-root[data-wco][data-collapsed][data-",
+    "count": 1
+   },
+   {
+    "value": ".dframe-pane-extra",
     "count": 1
    }
   ],

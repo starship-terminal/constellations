@@ -574,7 +574,7 @@ core["press"] = {
     "card-inset": tok(px(card["--cds-card-press-d"]), "dimension", "css-rules: .cds-root --cds-card-press-d; the card body clips in by this much while pressed"),
     "duration": tok("{duration.fast}", "duration", "css-rules: :active .cds-btn-squish transition transform var(--cds-dur-fast) ease-out"),
     "release-duration": tok("{duration.slow}", "duration", "css-rules: .cds-btn-squish transition transform var(--cds-dur-slow) var(--cds-btn-spring) (the spring is a linear() curve, listed as not tokenised)"),
-    "$description": "Pressed is a squish, not a colour: while the pointer is down a cds Button scales its paint layer to 97.5% (93.75% for icon-only buttons) in 60 ms and springs back over 450 ms; a Card scales to 99% and clips its body 2px. The fill keeps its rest colour, so fill.*-pressed tokens alias the rest fill.",
+    "$description": "Pressed is a squish on top of the hover fill: while the pointer is down a cds Button keeps its hover fill and scales its paint layer to 97.5% (93.75% for icon-only buttons) in 60 ms, then springs back over 450 ms; a Card scales to 99% and clips its body 2px. So fill.*-pressed tokens alias the hover fills.",
 }
 
 # reduced motion: what changes, from the rules
@@ -597,9 +597,11 @@ core["typography"]["label"] = tok({"fontFamily": "{fontFamily.sans}", "fontSize"
 for setname, tree in (("light", light), ("dark", dark)):
     put(tree, ["text", "link"], tok("{text.accent}", "color", "measured: cds TextLink (`a, .prose-link`: color var(--cds-text-accent), underline 3px below at 40%% of the colour, full on hover and focus), text-link on settings-dark-capabilities reads %s" % state("text-link", "default" if setname == "dark" else "light")["style"]["color"]))
     put(tree, ["text", "link-underline"], tok("{text.accent}", "color", "css-rules: --_text-link-line color-mix(in srgb, currentColor, transparent 60%) at rest, currentColor on hover and focus-visible; 40% of text.link at rest (a mix DTCG cannot carry, so the token is the full colour)"))
-    put(tree, ["fill", "accent-pressed"], tok("{fill.accent}", "color", "css-rules + measured: :active keeps the fill and scales the paint layer (core.press.button-scale); checkbox-pressed and button-primary-pressed keep their rest fill"))
-    put(tree, ["fill", "primary-pressed"], tok("{fill.primary}", "color", "measured: button-primary-page pressed keeps fill.primary and scales to core.press.button-scale"))
-    put(tree, ["fill", "danger-pressed"], tok("{fill.danger}", "color", "measured: button-danger pressed keeps fill.danger and scales to core.press.button-scale"))
+    pp = state("button-primary-page", "pressed" if setname == "dark" else "light-pressed")["paint"][0]["bg"]
+    dp = next(x["bg"] for x in state("button-danger", "pressed" if setname == "dark" else "light-pressed")["paint"] if x.get("bg"))
+    put(tree, ["fill", "accent-pressed"], tok("{fill.accent-hover}", "color", "derived: cds Buttons keep their hover fill while held (measured on the primary and danger buttons) and squish (core.press.button-scale); no accent-filled button was on the captured pages"))
+    put(tree, ["fill", "primary-pressed"], tok("{fill.primary-hover}", "color", "measured: button-primary-page pressed, paint layer %s (the hover fill) scaled to core.press.button-scale" % pp))
+    put(tree, ["fill", "danger-pressed"], tok("{fill.danger-hover}", "color", "measured: button-danger pressed, paint layer %s (the hover fill) scaled to core.press.button-scale" % dp))
 
 light["$extensions"] = {"notTokenised": light_skipped}
 dark["$extensions"] = {"notTokenised": dark_skipped}
