@@ -177,12 +177,12 @@ core["palette"]["icon"] = {k: T(var(f"--nlm-icons-{v}"), "color", M(f"css-var --
 
 stack_sans = [s.strip().strip('"') for s in var("--nlm-font-family-sans").split(",")]
 stack_text = [s.strip().strip('"') for s in var("--mat-sys-body-medium-font").split(",")]
-code_stack = [s.strip().strip('"') for s in FACTS["fonts"]["stacks"]["code"].split(",")]
+code_stack = [s.strip().strip('"') for s in re.split(r",\s*", comp("type-code")["style"]["fontFamily"])]
 icon_stack = [s.strip().strip('"') for s in re.split(r",\s*", comp("menu")["textStyle"]["fontFamily"])]
 core["fontFamily"] = {
     "display": T(stack_sans, "fontFamily", M("css-var --nlm-font-family-sans"), "Google Sans Flex, a variable font (wght 100-1000, wdth, opsz, ROND axes), loaded from fonts.gstatic.com. The stack is the product's own."),
     "text": T(stack_text, "fontFamily", M("css-var --mat-sys-body-medium-font"), "Material's text roles name Google Sans Text second."),
-    "code": T(code_stack, "fontFamily", M("computed font-family of code.code"), "Google Sans Code from Google Fonts."),
+    "code": T(code_stack, "fontFamily", M("computed font-family of inline code in a chat answer (code.code)"), "Google Sans Code from Google Fonts."),
     "icon": T(icon_stack, "fontFamily", M("computed font-family of a mat-icon in the card menu"), "Luminous Symbols first, then Google Symbols and Material Symbols Outlined, all ligature icon fonts."),
     "math": T(["KaTeX_Main", "Times New Roman", "serif"], "fontFamily", M("@font-face KaTeX_* from www.gstatic.com; serif fallback is KaTeX's own"), "Formulae in answers."),
 }

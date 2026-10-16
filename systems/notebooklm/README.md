@@ -29,7 +29,7 @@ The brand evidence (`<meta name="theme-color">` is black in light, white in dark
 ## What to distrust
 
 - **Two UI generations live in the CSS.** The legacy `--nlm-*` palette (lavender page `#edeffa`, blue `#4259ff`) is still declared and still paints a few things: the dialog Save button, links, the checked toggle chip, the lavender focus ring. Everything else is the newer `--nb-sys-*` set. Tokens named `legacy-*` are declared but no longer painted.
-- **`--nlm-green-0` to `-40` and `-90` to `-99` are declared as `undefined`.** Only five green steps exist. The `neutral`, `sky`, `red`, `green-status`, `amber` and `info` palettes are assembled from every value the product declares for that hue; the product itself declares no such ramps.
+- **`--nlm-green-0` to `-40` and `-90` to `-99` are declared as `undefined`.** Only five green steps exist. The `neutral` (18 steps), `sky` (6), `red` (9), `green-status` (10), `amber` (7) and `info` (4) palettes are assembled from every value the product declares for that hue; the product itself declares no such ramps, and no further steps exist to read. The Studio and data-viz hues have one colour and one container each, so they have no ramp.
 - **The scrim** is 32% black in both themes as painted, although `--nlm-fills-scrim` still says 60% in dark.
 - **Success, warning and info** colours are the declared variables; no such message appeared, so their use as fill, text and border is the product's naming, not an observed screen. Danger was observed (the "Blocked by browser" chip and the URL field error).
 - **Studio outputs** (audio and video players, mind map, flashcards, quiz, reports) were not opened; they render in other views and iframes. Their tile colours (`studio.*`, `tile.*`) are declared variables.

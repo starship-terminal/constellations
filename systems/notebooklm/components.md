@@ -45,8 +45,8 @@ nb-button type accent: the one filled page action.
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.8` | 0 `spacing.8` | 0 `spacing.8` | 0 `spacing.8` |
-| State layer | none | `text.primary` at `opacity.hover` | none | `text.primary` at `opacity.pressed` |
-| Focus ring | none painted | none painted | `focusRing.width` `text.primary` offset `focusRing.offset` / 3px solid `text.primary` on button | none painted |
+| State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
+| Focus ring | none painted | none painted | `focusRing.width` `border.field` offset `focusRing.offset` / 3px solid `border.field` on button | none painted |
 
 <a id="button-tonal"></a>
 ### Tonal button (Add sources)
@@ -58,13 +58,13 @@ mat-tonal-button, full panel width.
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
 | Size (w x h) | 336 x `size.control-compact` | 336 x `size.control-compact` | 336 x `size.control-compact` | 336 x `size.control-compact` |
-| Fill | `text.inverse` | `text.inverse` | `text.inverse` | `text.inverse` |
+| Fill | `surface.card` | `surface.card` | `surface.card` | `surface.card` |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.8` | 0 `spacing.8` | 0 `spacing.8` | 0 `spacing.8` |
-| State layer | none | `text.primary` at `opacity.hover` | none | `text.primary` at `opacity.pressed` |
-| Focus ring | none painted | none painted | `focusRing.width` `text.primary` offset `focusRing.offset` / 3px solid `text.primary` on button | none painted |
+| State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
+| Focus ring | none painted | none painted | `focusRing.width` `border.field` offset `focusRing.offset` / 3px solid `border.field` on button | none painted |
 
 <a id="button-text"></a>
 ### Text button (Create notebook, header)
@@ -79,8 +79,8 @@ mat-tonal-button, full panel width.
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.12` | 0 `spacing.12` | 0 `spacing.12` | 0 `spacing.12` |
-| State layer | none | `text.primary` at `opacity.hover` | none | `text.primary` at `opacity.pressed` |
-| Focus ring | none painted | none painted | `focusRing.width` `text.primary` offset `focusRing.offset` / 3px solid `text.primary` on button | none painted |
+| State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
+| Focus ring | none painted | none painted | `focusRing.width` `border.field` offset `focusRing.offset` / 3px solid `border.field` on button | none painted |
 
 <a id="button-outlined"></a>
 ### Outlined button (Upload files)
@@ -93,11 +93,11 @@ mat-tonal-button, full panel width.
 | Fill | none | `state.hover-on-surface` / `surface.badge` | none | `state.hover-on-surface` / `surface.badge` |
 | Text | `text.secondary` | `text.secondary` | `text.secondary` | `text.secondary` |
 | Type | icon glyph 18px (raw) | icon glyph 18px (raw) | icon glyph 18px (raw) | icon glyph 18px (raw) |
-| Border | `borderWidth.hairline` `surface.badge` | `borderWidth.hairline` `surface.badge` | `borderWidth.hairline` `surface.badge` | `borderWidth.hairline` `surface.badge` |
+| Border | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 6px (raw) 14px (raw) | 6px (raw) 14px (raw) | 6px (raw) 14px (raw) | 6px (raw) 14px (raw) |
-| State layer | none | `text.primary` at `opacity.hover` | none | `text.primary` at `opacity.pressed` |
-| Focus ring | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) / `focusRing.checkbox-width` ring `text.link` (.mat-focus-indicator) | none painted |
+| State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
+| Focus ring | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) | none painted |
 
 <a id="button-dialog-primary"></a>
 ### Dialog confirm button (Save, Configure Chat)
@@ -109,13 +109,13 @@ Disabled while the Custom prompt is empty.
 | Property | default | hover | focus-visible | pressed | disabled |
 |---|---|---|---|---|---|
 | Size (w x h) | 80 x `size.control-dialog` | 80 x `size.control-dialog` | 80 x `size.control-dialog` | 80 x `size.control-dialog` | 80 x `size.control-dialog` |
-| Fill | `text.link` | `text.link` | `text.link` | `text.link` | `state.pressed-on-surface` |
+| Fill | `accent.brand` | `accent.brand` | `accent.brand` | `accent.brand` | `state.pressed-on-surface` |
 | Text | `text.on-brand` | `text.on-brand` | `text.on-brand` | `text.on-brand` | `text.disabled-button` |
 | Type | `typography.label-medium` | `typography.label-medium` | `typography.label-medium` | `typography.label-medium` | `typography.label-medium` |
 | Radius | `radius.dialog-button` | `radius.dialog-button` | `radius.dialog-button` | `radius.dialog-button` | `radius.dialog-button` |
 | Padding | 0 `spacing.24` | 0 `spacing.24` | 0 `spacing.24` | 0 `spacing.24` | 0 `spacing.24` |
-| State layer | none | `state.brand-layer` at `opacity.hover` / `text.on-brand` at `opacity.hover` | none | `state.brand-layer` at `opacity.pressed` / `text.on-brand` at `opacity.pressed` | none |
-| Focus ring | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) / `focusRing.checkbox-width` ring `text.link` (.mat-focus-indicator) | none painted | none painted |
+| State layer | none | `state.brand-layer` at `opacity.hover` / `surface.panel` at `opacity.hover` | none | `state.brand-layer` at `opacity.pressed` / `surface.panel` at `opacity.pressed` | none |
+| Focus ring | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) | none painted | none painted |
 
 <a id="button-disabled"></a>
 ### Disabled filled button (Insert)
@@ -143,13 +143,13 @@ The destructive action is a tonal button; it was never clicked.
 | Property | default | hover | focus-visible | pressed | cancel | cancel-focus-visible | cancel-hover |
 |---|---|---|---|---|---|---|---|
 | Size (w x h) | 76 x `size.control-medium` | 76 x `size.control-medium` | 76 x `size.control-medium` | 76 x `size.control-medium` | 79 x `size.control-medium` | 79 x `size.control-medium` | 79 x `size.control-medium` |
-| Fill | `text.inverse` | `text.inverse` | `text.inverse` | `text.inverse` | none | none | none |
+| Fill | `surface.card` | `surface.card` | `surface.card` | `surface.card` | none | none | none |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
 | Type | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` | `typography.body-medium` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.16` | 0 `spacing.16` | 0 `spacing.16` | 0 `spacing.16` | 0 `spacing.16` | 0 `spacing.16` | 0 `spacing.16` |
-| State layer | none | none | none | `text.primary` at `opacity.pressed` | none | none | `text.primary` at `opacity.hover` |
-| Focus ring | none painted | none painted | `focusRing.width` `text.primary` offset `focusRing.offset` / 3px solid `text.primary` on button | none painted | none painted | `focusRing.width` `text.primary` offset `focusRing.offset` / 3px solid `text.primary` on button | none painted |
+| State layer | none | none | none | `surface.inverse` at `opacity.pressed` | none | none | `surface.inverse` at `opacity.hover` |
+| Focus ring | none painted | none painted | `focusRing.width` `border.field` offset `focusRing.offset` / 3px solid `border.field` on button | none painted | none painted | `focusRing.width` `border.field` offset `focusRing.offset` / 3px solid `border.field` on button | none painted |
 
 <a id="icon-button"></a>
 ### Icon button (Settings, 36px)
@@ -164,8 +164,8 @@ The destructive action is a tonal button; it was never clicked.
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 6px (raw) 6px (raw) | 6px (raw) 6px (raw) | 6px (raw) 6px (raw) | 6px (raw) 6px (raw) |
-| State layer | none | `text.primary` at `opacity.hover` | none | `text.primary` at `opacity.pressed` |
-| Focus ring | none painted | none painted | `focusRing.width` `text.primary` offset `focusRing.offset` / 3px solid `text.primary` on button | none painted |
+| State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
+| Focus ring | none painted | none painted | `focusRing.width` `border.field` offset `focusRing.offset` / 3px solid `border.field` on button | none painted |
 
 <a id="icon-button-small"></a>
 ### Icon button, small (card actions, 28px)
@@ -174,14 +174,14 @@ The destructive action is a tonal button; it was never clicked.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 28 x `size.icon-button-small` | 28 x `size.icon-button-small` | 28 x `size.icon-button-small` | 28 x `size.icon-button-small` |
+| Size (w x h) | 28 x `size.tab-mobile` | 28 x `size.tab-mobile` | 28 x `size.tab-mobile` | 28 x `size.tab-mobile` |
 | Fill | none | none | none | none |
 | Text | `text.disabled-button` | `text.disabled-button` | `text.disabled-button` | `text.disabled-button` |
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | `spacing.2` `spacing.2` | `spacing.2` `spacing.2` | `spacing.2` `spacing.2` | `spacing.2` `spacing.2` |
-| State layer | none | `text.disabled-button` at `opacity.hover` | none | `text.disabled-button` at `opacity.pressed` |
-| Focus ring | none painted | none painted | `focusRing.width` `text.primary` offset `focusRing.offset` / 3px solid `text.primary` on button | none painted |
+| State layer | none | `state.disabled-content` at `opacity.hover` | none | `state.disabled-content` at `opacity.pressed` |
+| Focus ring | none painted | none painted | `focusRing.width` `border.field` offset `focusRing.offset` / 3px solid `border.field` on button | none painted |
 
 <a id="search-pill"></a>
 ### Search pill (outlined button that opens search)
@@ -194,10 +194,10 @@ The destructive action is a tonal button; it was never clicked.
 | Fill | none | none | none | none |
 | Text | `text.secondary` | `text.secondary` | `text.secondary` | `text.secondary` |
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
-| Border | `borderWidth.hairline` `surface.badge` | `borderWidth.hairline` `surface.badge` | `borderWidth.hairline` `surface.badge` | `borderWidth.hairline` `surface.badge` |
+| Border | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` | `borderWidth.hairline` `border.default` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.8` | 0 `spacing.8` | 0 `spacing.8` | 0 `spacing.8` |
-| Focus ring | none painted | none painted | `focusRing.width` `text.primary` offset `focusRing.offset` / 3px solid `text.primary` on button | none painted |
+| Focus ring | none painted | none painted | `focusRing.width` `border.field` offset `focusRing.offset` / 3px solid `border.field` on button | none painted |
 
 ## Links
 
@@ -240,8 +240,8 @@ The destructive action is a tonal button; it was never clicked.
 | Fill | none | none | none |
 | Text | `text.primary` | `text.primary` | `text.primary` |
 | Type | `typography.body-large` | `typography.body-large` | `typography.body-large` |
-| Border | `borderWidth.field-focus` `text.primary` (div) | `borderWidth.field-focus` `text.primary` (div) | `borderWidth.field-focus` `text.primary` (div) |
-| Focus ring | outline thickens to `borderWidth.field-focus` `text.primary` | outline thickens to `borderWidth.field-focus` `text.primary` | outline thickens to `borderWidth.field-focus` `text.primary` |
+| Border | `borderWidth.field-focus` `border.field` (div) | `borderWidth.field-focus` `border.field` (div) | `borderWidth.field-focus` `border.field` (div) |
+| Focus ring | outline thickens to `borderWidth.field-focus` `border.field` | outline thickens to `borderWidth.field-focus` `border.field` | outline thickens to `borderWidth.field-focus` `border.field` |
 
 <a id="search-field"></a>
 ### Search field (expanded header search)
@@ -251,7 +251,7 @@ The destructive action is a tonal button; it was never clicked.
 | Property | default | hover | focus-visible | typed |
 |---|---|---|---|---|
 | Size (w x h) | 650 x 44px | 650 x 44px | 650 x 44px | 650 x 44px |
-| Fill | `surface.panel` (inner) / `text.on-brand` (inner) | `surface.panel` (inner) / `text.on-brand` (inner) | `surface.panel` (inner) / `text.on-brand` (inner) | `surface.panel` / `text.on-brand` |
+| Fill | `surface.panel` (inner) | `surface.panel` (inner) | `surface.panel` (inner) | `surface.panel` |
 | Text | `text.secondary` | `text.secondary` | `text.secondary` | `text.secondary` |
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
 | Radius | 0 | 0 | 0 | `radius.full` |
@@ -268,7 +268,7 @@ A cdk-autosize <textarea> inside the rounded composer.
 | Property | default | hover | focus-visible | typed |
 |---|---|---|---|---|
 | Size (w x h) | 628 x `size.composer` | 628 x `size.composer` | 628 x `size.composer` | 628 x `size.composer` |
-| Fill | `surface.panel` / `text.on-brand` | `surface.panel` / `text.on-brand` | `surface.panel` / `text.on-brand` | `surface.panel` / `text.on-brand` |
+| Fill | `surface.panel` | `surface.panel` | `surface.panel` | `surface.panel` |
 | Text | `text.disabled-button` | `text.disabled-button` | `text.disabled-button` | `text.body` |
 | Type | `typography.body-small` | `typography.body-small` | `typography.body-small` | 16px/24px 400 (raw) |
 | Radius | `radius.xl-increased` | `radius.xl-increased` | `radius.xl-increased` | `radius.xl-increased` |
@@ -286,8 +286,8 @@ A cdk-autosize <textarea> inside the rounded composer.
 | Fill | none | none | none | none | none |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
 | Type | `typography.body-large` | `typography.body-large` | `typography.body-large` | `typography.body-large` | `typography.body-large` |
-| Border | `borderWidth.field-focus` `text.primary` (div) | `borderWidth.field-focus` `text.primary` (div) | `borderWidth.field-focus` `text.primary` (div) | `borderWidth.hairline` `text.error` (div) | `borderWidth.field-focus` `text.primary` (div) |
-| Focus ring | outline thickens to `borderWidth.field-focus` `text.primary` | outline thickens to `borderWidth.field-focus` `text.primary` | outline thickens to `borderWidth.field-focus` `text.primary` | outline thickens to 1px (raw) `text.error` | outline thickens to `borderWidth.field-focus` `text.primary` |
+| Border | `borderWidth.field-focus` `border.field` (div) | `borderWidth.field-focus` `border.field` (div) | `borderWidth.field-focus` `border.field` (div) | `borderWidth.hairline` `border.error` (div) | `borderWidth.field-focus` `border.field` (div) |
+| Focus ring | outline thickens to `borderWidth.field-focus` `border.field` | outline thickens to `borderWidth.field-focus` `border.field` | outline thickens to `borderWidth.field-focus` `border.field` | outline thickens to `borderWidth.field` `border.error` | outline thickens to `borderWidth.field-focus` `border.field` |
 
 <a id="error-text"></a>
 ### Field error message
@@ -296,7 +296,7 @@ A cdk-autosize <textarea> inside the rounded composer.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 594 x `size.icon-m` |
+| Size (w x h) | 594 x 20px |
 | Fill | none |
 | Text | `text.error` |
 | Type | `typography.body-small` |
@@ -312,8 +312,8 @@ A cdk-autosize <textarea> inside the rounded composer.
 | Fill | none | none | none |
 | Text | `text.body` | `text.body` | `text.body` |
 | Type | `typography.body-small` | `typography.body-small` | `typography.body-small` |
-| Border | `borderWidth.hairline` `border.subtle` (div) | `borderWidth.hairline` `text.primary` (div) | `borderWidth.hairline` `border.subtle` (div) |
-| Focus ring | outline thickens to 1px (raw) `border.subtle` | outline thickens to 1px (raw) `text.primary` | outline thickens to 1px (raw) `border.subtle` |
+| Border | `borderWidth.hairline` `border.subtle` (div) | `borderWidth.hairline` `border.field` (div) | `borderWidth.hairline` `border.subtle` (div) |
+| Focus ring | outline thickens to `borderWidth.field` `border.subtle` | outline thickens to `borderWidth.field` `border.field` | outline thickens to `borderWidth.field` `border.subtle` |
 
 <a id="select"></a>
 ### Select (Notebook access)
@@ -322,14 +322,14 @@ A cdk-autosize <textarea> inside the rounded composer.
 
 | Property | default | hover | focus-visible | open | option | option-hover | option-selected |
 |---|---|---|---|---|---|---|---|
-| Size (w x h) | 212 x `size.icon-l` | 212 x `size.icon-l` | 212 x `size.icon-l` | 212 x 160px | 212 x `size.control-medium` | 212 x `size.control-medium` | 212 x `size.control-medium` |
-| Fill | none | none | none | `surface.panel` / `text.on-brand` | `surface.panel` (on parent) / `text.on-brand` (on parent) | `state.hover-on-surface` / `surface.badge` | `state.pressed-on-surface` |
+| Size (w x h) | 212 x 24px | 212 x 24px | 212 x 24px | 212 x 160px | 212 x `size.control-medium` | 212 x `size.control-medium` | 212 x `size.control-medium` |
+| Fill | none | none | none | `surface.panel` | `surface.panel` (on parent) | `state.hover-on-surface` / `surface.badge` | `state.pressed-on-surface` |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
 | Type | 14px/24px 400 (raw) | 14px/24px 400 (raw) | 14px/24px 400 (raw) | 16px/20px 400 (raw) | 16px/20px 400 (raw) | 16px/20px 400 (raw) | 16px/20px 400 (raw) |
 | Border | none | none | none | `borderWidth.field-focus` #c2e7ff (raw) (mat-pseudo-checkbox) / `borderWidth.field-focus` #004a77 (raw) (mat-pseudo-checkbox) | none | none | `borderWidth.field-focus` #c2e7ff (raw) (mat-pseudo-checkbox) / `borderWidth.field-focus` #004a77 (raw) (mat-pseudo-checkbox) |
 | Padding | 0 | 0 | 0 | `spacing.8` 0 | 0 `spacing.16` | 0 `spacing.16` | 0 `spacing.16` |
 | Shadow | none | none | none | `shadow.select` | none | none | none |
-| Focus ring | none painted | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) / `focusRing.checkbox-width` ring `text.link` (.mat-focus-indicator) | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) / `focusRing.checkbox-width` ring `text.link` (.mat-focus-indicator) |
+| Focus ring | none painted | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) |
 
 <a id="menu-trigger"></a>
 ### Menu trigger (Web source type)
@@ -339,13 +339,13 @@ A cdk-autosize <textarea> inside the rounded composer.
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
 | Size (w x h) | 102 x `size.control-compact` | 102 x `size.control-compact` | 102 x `size.control-compact` | 102 x `size.control-compact` |
-| Fill | `surface.panel` / `text.on-brand` | `surface.panel` / `text.on-brand` | `surface.panel` / `text.on-brand` | `surface.panel` / `text.on-brand` |
+| Fill | `surface.panel` | `surface.panel` | `surface.panel` | `surface.panel` |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.12` | 0 `spacing.12` | 0 `spacing.12` | 0 `spacing.12` |
-| State layer | none | `text.primary` at `opacity.hover` | none | `text.primary` at `opacity.pressed` |
-| Focus ring | none painted | none painted | `focusRing.width` `text.primary` offset `focusRing.offset` / 3px solid `text.primary` on button | none painted |
+| State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
+| Focus ring | none painted | none painted | `focusRing.width` `border.field` offset `focusRing.offset` / 3px solid `border.field` on button | none painted |
 
 <a id="checkbox"></a>
 ### Checkbox (source row, checked)
@@ -358,7 +358,7 @@ A cdk-autosize <textarea> inside the rounded composer.
 | Fill | none | none | none | none |
 | Text | `text.body` | `text.body` | `text.body` | `text.body` |
 | Type | 16px/normal 400 (raw) | 16px/normal 400 (raw) | 16px/normal 400 (raw) | 16px/normal 400 (raw) |
-| State layer | none | `text.primary` at `opacity.hover` | `text.primary` at `opacity.pressed` | none |
+| State layer | none | `surface.inverse` at `opacity.hover` | `surface.inverse` at `opacity.pressed` | none |
 | Focus ring | none painted | none painted | browser default ring on input (outline auto), no product ring | none painted |
 
 <a id="radio"></a>
@@ -371,13 +371,13 @@ mat-button-toggle-group with role radiogroup; each chip is a role=radio button. 
 | Property | default | hover | focus-visible | pressed | group | selected |
 |---|---|---|---|---|---|---|
 | Size (w x h) | 127 x `size.control-dialog` | 127 x `size.control-dialog` | 127 x `size.control-dialog` | 127 x `size.control-dialog` | 816 x 50px | 103 x `size.control-dialog` |
-| Fill | none | none | none | none | `text.link` (inner) | `text.link` (on parent) |
+| Fill | none | none | none | none | `accent.brand` (inner) | `accent.brand` (on parent) |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.on-brand` | `text.on-brand` |
 | Type | `typography.label-medium` | `typography.label-medium` | `typography.label-medium` | `typography.label-medium` | `typography.label-medium` | `typography.label-medium` |
-| Border | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) | `borderWidth.hairline` `border.subtle` (mat-button-toggle) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) |
+| Border | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) / `borderWidth.field-focus` `state.brand-layer` (mat-pseudo-checkbox) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) / `borderWidth.field-focus` `state.brand-layer` (mat-pseudo-checkbox) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) / `borderWidth.field-focus` `state.brand-layer` (mat-pseudo-checkbox) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) / `borderWidth.field-focus` `state.brand-layer` (mat-pseudo-checkbox) | `borderWidth.hairline` `border.subtle` (mat-button-toggle) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) / `borderWidth.field-focus` `state.brand-layer` (mat-pseudo-checkbox) |
 | Radius | 0 | 0 | 0 | 0 | `radius.lg-max` | 0 |
 | Padding | 0 | 0 | 0 | 0 | 0 | 0 30px (raw) |
-| Focus ring | 2px `text.on-brand` on mat-pseudo-checkbox | 2px `text.on-brand` on mat-pseudo-checkbox | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) / `focusRing.checkbox-width` ring `text.link` (.mat-focus-indicator) | 2px `text.on-brand` on mat-pseudo-checkbox | 1px `border.subtle` on mat-button-toggle | 2px `text.on-brand` on mat-pseudo-checkbox |
+| Focus ring | 2px `text.on-brand` on mat-pseudo-checkbox / 2px `state.brand-layer` on mat-pseudo-checkbox | 2px `text.on-brand` on mat-pseudo-checkbox / 2px `state.brand-layer` on mat-pseudo-checkbox | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) | 2px `text.on-brand` on mat-pseudo-checkbox / 2px `state.brand-layer` on mat-pseudo-checkbox | 1px `border.subtle` on mat-button-toggle | 2px `text.on-brand` on mat-pseudo-checkbox / 2px `state.brand-layer` on mat-pseudo-checkbox |
 
 <a id="switch"></a>
 ### Switch (Web notifications, off and disabled)
@@ -392,8 +392,8 @@ Disabled because the browser blocks notifications; no enabled switch appeared.
 | Fill | `border.divider-material` (inner) | `border.divider-material` (inner) |
 | Text | rgba(255,255,255,0.3) (raw) / rgba(16,16,16,0.3) (raw) | rgba(255,255,255,0.3) (raw) / rgba(16,16,16,0.3) (raw) |
 | Type | 13.3333px/normal 400 (raw) | 13.3333px/normal 400 (raw) |
-| Border | `borderWidth.field-focus` `text.primary` (span) | `borderWidth.field-focus` `text.primary` (span) |
-| Focus ring | 2px `text.primary` on span | 2px `text.primary` on span |
+| Border | `borderWidth.field-focus` `border.field` (span) | `borderWidth.field-focus` `border.field` (span) |
+| Focus ring | 2px `border.field` on span | 2px `border.field` on span |
 
 <a id="progress"></a>
 ### Progress bar (source limit)
@@ -402,11 +402,11 @@ Disabled because the browser blocks notifications; no enabled switch appeared.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 600 x `size.icon-s` |
+| Size (w x h) | 600 x 16px |
 | Fill | rgba(163,163,163,0.2) (raw) (inner) |
 | Text | `text.primary` |
 | Type | `typography.body-medium` |
-| Border | 16px (raw) `text.primary` (span) |
+| Border | 16px (raw) `border.field` (span) |
 | Radius | `radius.lg` |
 | Focus ring | 1px solid none on mat-progress-bar |
 
@@ -422,13 +422,13 @@ nb-buttons: the selected one is tonal, the rest text.
 | Property | default | hover | focus-visible | pressed | selected |
 |---|---|---|---|---|---|
 | Size (w x h) | 44 x `size.control-compact` | 44 x `size.control-compact` | 44 x `size.control-compact` | 44 x `size.control-compact` | 110 x `size.control-compact` |
-| Fill | none | none | none | none | `text.inverse` |
+| Fill | none | none | none | none | `surface.card` |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
 | Type | `typography.body-small` | `typography.body-small` | `typography.body-small` | `typography.body-small` | `typography.body-small` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
 | Padding | 0 `spacing.12` | 0 `spacing.12` | 0 `spacing.12` | 0 `spacing.12` | 0 `spacing.12` |
-| State layer | none | `text.primary` at `opacity.hover` | none | `text.primary` at `opacity.pressed` | none |
-| Focus ring | none painted | none painted | `focusRing.width` `text.primary` offset `focusRing.offset` / 3px solid `text.primary` on button | none painted | none painted |
+| State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` | none |
+| Focus ring | none painted | none painted | `focusRing.width` `border.field` offset `focusRing.offset` / 3px solid `border.field` on button | none painted | none painted |
 
 <a id="segmented"></a>
 ### Segmented control (Grid view, List view)
@@ -438,7 +438,7 @@ nb-buttons: the selected one is tonal, the rest text.
 | Property | default | hover | focus-visible | pressed | group | selected |
 |---|---|---|---|---|---|---|
 | Size (w x h) | 36 x `size.checkbox-target` | 36 x `size.checkbox-target` | 36 x `size.checkbox-target` | 36 x `size.checkbox-target` | 76 x `size.control-compact` | 36 x `size.checkbox-target` |
-| Fill | none | none | none | none | `text.inverse` | none |
+| Fill | none | none | none | none | `surface.card` | none |
 | Text | `text.secondary` | `text.secondary` | `text.secondary` | `text.secondary` | `text.primary` | `text.primary` |
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
@@ -452,8 +452,8 @@ nb-buttons: the selected one is tonal, the rest text.
 
 | Property | default | focus-visible | pressed | bar | selected |
 |---|---|---|---|---|---|
-| Size (w x h) | 118 x `size.icon-button-small` | 118 x `size.icon-button-small` | 118 x `size.icon-button-small` | 358 x `size.checkbox-target` | 118 x `size.icon-button-small` |
-| Fill | `text.inverse` (on parent) | `text.inverse` (on parent) | `text.inverse` (on parent) | `text.inverse` | `text.inverse` (on parent) |
+| Size (w x h) | 118 x `size.tab-mobile` | 118 x `size.tab-mobile` | 118 x `size.tab-mobile` | 358 x `size.checkbox-target` | 118 x `size.tab-mobile` |
+| Fill | `surface.card` (on parent) | `surface.card` (on parent) | `surface.card` (on parent) | `surface.card` | `surface.card` (on parent) |
 | Text | `text.secondary` | `text.secondary` | `text.primary` | `text.secondary` | `text.primary` |
 | Type | `typography.title-small` | `typography.title-small` | `typography.title-small` | `typography.title-small` | `typography.title-small` |
 | Radius | `radius.full` | `radius.full` | `radius.full` | `radius.full` | `radius.full` |
@@ -470,13 +470,13 @@ nb-buttons: the selected one is tonal, the rest text.
 | Property | default | item | item-focus-visible | item-hover | item-pressed |
 |---|---|---|---|---|---|
 | Size (w x h) | 206 x 160px | 190 x `size.control-compact` | 190 x `size.control-compact` | 190 x `size.control-compact` | 190 x `size.control-compact` |
-| Fill | `surface.panel` / `text.on-brand` | `surface.panel` (on parent) / `text.on-brand` (on parent) | `surface.panel` (on parent) / `text.on-brand` (on parent) | `state.hover-on-surface` / `surface.badge` | `state.hover-on-surface` / `surface.badge` |
+| Fill | `surface.panel` | `surface.panel` (on parent) | `surface.panel` (on parent) | `state.hover-on-surface` / `surface.badge` | `state.hover-on-surface` / `surface.badge` |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
 | Radius | `radius.lg-increased` | `radius.md` | `radius.md` | `radius.md` | `radius.md` |
 | Padding | 0 | `spacing.8` `spacing.8` | `spacing.8` `spacing.8` | `spacing.8` `spacing.8` | `spacing.8` `spacing.8` |
 | Shadow | `shadow.level1` | none | none | none | none |
-| Focus ring | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) / `focusRing.checkbox-width` ring `text.link` (.mat-focus-indicator) | none painted | none painted |
+| Focus ring | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) | none painted | none painted |
 
 <a id="menu-settings"></a>
 ### Menu (Settings) and its Theme submenu
@@ -486,7 +486,7 @@ nb-buttons: the selected one is tonal, the rest text.
 | Property | default | submenu |
 |---|---|---|
 | Size (w x h) | 211 x 393px | 129 x 124px |
-| Fill | `surface.panel` / `text.on-brand` | `surface.panel` / `text.on-brand` |
+| Fill | `surface.panel` | `surface.panel` |
 | Text | `text.primary` | `text.primary` |
 | Type | icon glyph `size.icon-m` | icon glyph `size.icon-m` |
 | Border | `borderWidth.hairline` `border.divider-material` (mat-divider) | none |
@@ -504,7 +504,7 @@ Its text was scrubbed, since tooltips repeat titles; the live one read "Audio Ov
 | Property | default |
 |---|---|
 | Size (w x h) | 111 x 33px |
-| Fill | `text.primary` |
+| Fill | `surface.inverse` |
 | Text | `text.inverse` |
 | Type | `typography.body-small` |
 | Radius | `radius.md` |
@@ -534,7 +534,7 @@ Its text was scrubbed, since tooltips repeat titles; the live one read "Audio Ov
 | Type | `typography.title-large` |
 | Border | `borderWidth.hairline` `border.subtle` (div) |
 | Radius | `radius.xl` |
-| State layer | `text.primary` at `opacity.pressed` |
+| State layer | `surface.inverse` at `opacity.pressed` |
 | Focus ring | 1px `border.subtle` on div |
 
 <a id="dialog-announcement"></a>
@@ -548,7 +548,7 @@ Its text was scrubbed, since tooltips repeat titles; the live one read "Audio Ov
 | Type | icon glyph `size.icon-l` |
 | Border | `borderWidth.hairline` `border.subtle` (div) |
 | Radius | `radius.xl` |
-| State layer | `text.primary` at `opacity.pressed` |
+| State layer | `surface.inverse` at `opacity.pressed` |
 | Focus ring | 1px `border.subtle` on div |
 
 <a id="scrim"></a>
@@ -571,7 +571,7 @@ The clipboard is blocked in the capture browser, so the copy action reported a f
 | Property | default |
 |---|---|
 | Size (w x h) | 344 x `size.control-medium` |
-| Fill | `text.on-brand` / `text.primary` |
+| Fill | `surface.toast` / `surface.inverse` |
 | Text | `text.on-toast` |
 | Type | `typography.body-medium` |
 | Radius | `radius.lg` |
@@ -587,7 +587,7 @@ The clipboard is blocked in the capture browser, so the copy action reported a f
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
 | Size (w x h) | 272 x `size.card-height` | 272 x `size.card-height` | 272 x `size.card-height` | 272 x `size.card-height` |
-| Fill | `text.inverse` | none | `text.inverse` | none |
+| Fill | `surface.card` | none | `surface.card` | none |
 | Text | `text.body` | `text.body` | `text.body` | `text.body` |
 | Type | 36px/36px 400 (raw) | 36px/36px 400 (raw) | 36px/36px 400 (raw) | 36px/36px 400 (raw) |
 | Radius | `radius.xl-max` | `radius.xl-max` | `radius.xl-max` | `radius.xl-max` |
@@ -602,14 +602,14 @@ The clipboard is blocked in the capture browser, so the copy action reported a f
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
 | Size (w x h) | 164 x `size.control-medium` | 162 x 47px | 164 x `size.control-medium` | 159 x 47px |
-| Fill | `text.inverse` (inner) / `text.on-brand` (inner) | `text.inverse` (inner) / `text.on-brand` (inner) | `text.inverse` (inner) / `text.on-brand` (inner) | `text.inverse` (inner) / `text.on-brand` (inner) |
+| Fill | `surface.card` (inner) / `surface.panel` (inner) | `surface.card` (inner) / `surface.panel` (inner) | `surface.card` (inner) / `surface.panel` (inner) | `surface.card` (inner) / `surface.panel` (inner) |
 | Text | `studio.blue` | `studio.blue` | `studio.blue` | `studio.blue` |
 | Type | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` |
-| Border | none / `borderWidth.hairline` `surface.badge` (inset shadow) | none / `borderWidth.hairline` `surface.badge` (inset shadow) | none / `borderWidth.hairline` `surface.badge` (inset shadow) | none / `borderWidth.hairline` `surface.badge` (inset shadow) |
+| Border | none / `borderWidth.hairline` `border.default` (inset shadow) | none / `borderWidth.hairline` `border.default` (inset shadow) | none / `borderWidth.hairline` `border.default` (inset shadow) | none / `borderWidth.hairline` `border.default` (inset shadow) |
 | Radius | `radius.lg-increased` | `radius.lg-increased` | `radius.lg-increased` | `radius.lg-increased` |
 | Padding | `spacing.4` `spacing.8` | `spacing.4` `spacing.8` | `spacing.4` `spacing.8` | `spacing.4` `spacing.8` |
 | Shadow | rgba(0, 0, 0, 0) 0px 0px 0px 1px inset (raw) / rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset (raw) | rgba(0, 0, 0, 0) 0px 0px 0px 1px inset (raw) / rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset (raw) | rgba(0, 0, 0, 0) 0px 0px 0px 1px inset (raw) / rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset (raw) | rgba(0, 0, 0, 0) 0px 0px 0px 1px inset (raw) / rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset (raw) |
-| Focus ring | none painted | none painted | `borderWidth.field-focus` `text.primary` offset `focusRing.offset` / 2px solid `text.primary` on div | none painted |
+| Focus ring | none painted | none painted | `borderWidth.field-focus` `border.field` offset `focusRing.offset` / 2px solid `border.field` on div | none painted |
 
 <a id="list-row"></a>
 ### List row (source)
@@ -619,7 +619,7 @@ The clipboard is blocked in the capture browser, so the copy action reported a f
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
 | Size (w x h) | 336 x `size.control-compact` | 336 x `size.control-compact` | 336 x `size.control-compact` | 336 x `size.control-compact` |
-| Fill | none | `text.inverse` | none | `text.inverse` |
+| Fill | none | `surface.card` | none | `surface.card` |
 | Text | `icon.source-pdf` | `icon.source-pdf` | `icon.source-pdf` | `icon.source-pdf` |
 | Type | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` |
 | Radius | `radius.sm` | `radius.sm` | `radius.sm` | `radius.sm` |
@@ -638,8 +638,8 @@ The clipboard is blocked in the capture browser, so the copy action reported a f
 | Text | `studio.green` | `studio.green` | `studio.green` | `studio.green` |
 | Type | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` | icon glyph `size.icon-l` |
 | Radius | `radius.lg-increased` | `radius.lg-increased` | `radius.lg-increased` | `radius.lg-increased` |
-| State layer | none | `text.primary` at `opacity.hover` | none | `text.primary` at `opacity.pressed` |
-| Focus ring | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) / `focusRing.checkbox-width` ring `text.link` (.mat-focus-indicator) | none painted |
+| State layer | none | `surface.inverse` at `opacity.hover` | none | `surface.inverse` at `opacity.pressed` |
+| Focus ring | none painted | none painted | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) | none painted |
 
 <a id="chat-bubble"></a>
 ### User chat bubble
@@ -649,7 +649,7 @@ The clipboard is blocked in the capture browser, so the copy action reported a f
 | Property | default |
 |---|---|
 | Size (w x h) | 162 x `size.composer` |
-| Fill | `text.inverse` |
+| Fill | `surface.card` |
 | Text | `text.body` |
 | Type | 16px/24px 400 (raw) |
 | Radius | `radius.xl-max` |
@@ -662,7 +662,7 @@ The clipboard is blocked in the capture browser, so the copy action reported a f
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
 | Size (w x h) | 22 x 22px | 22 x 22px | 22 x 22px | 22 x 22px |
-| Fill | `text.inverse` | `text.inverse` | `text.inverse` | `text.inverse` |
+| Fill | `surface.card` | `surface.card` | `surface.card` | `surface.card` |
 | Text | `text.disabled-button` | `text.disabled-button` | `text.disabled-button` | `text.disabled-button` |
 | Type | 11.008px/16px 500 (raw) | 11.008px/16px 500 (raw) | 11.008px/16px 500 (raw) | 11.008px/16px 500 (raw) |
 | Radius | `radius.circle` | `radius.circle` | `radius.circle` | `radius.circle` |
@@ -737,7 +737,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 
 | Property | default |
 |---|---|
-| Size (w x h) | 40 x `size.icon-l` |
+| Size (w x h) | 40 x 24px |
 | Fill | `surface.badge` |
 | Text | `text.secondary` |
 | Type | 11px/16px 500 (raw) |
@@ -751,7 +751,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 
 | Property | default |
 |---|---|
-| Size (w x h) | 47 x `size.icon-l` |
+| Size (w x h) | 47 x 24px |
 | Fill | `surface.badge` |
 | Text | `text.primary` |
 | Type | `typography.body-small` |
@@ -765,7 +765,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 
 | Property | default |
 |---|---|
-| Size (w x h) | 163 x `size.icon-button-small` |
+| Size (w x h) | 163 x `size.tab-mobile` |
 | Fill | `status.danger.fill` |
 | Text | `status.danger.text` |
 | Type | icon glyph `size.icon-s` |
@@ -780,7 +780,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 | Property | default |
 |---|---|
 | Size (w x h) | 336 x `size.list-row-output` |
-| Fill | `surface.panel` / `text.on-brand` |
+| Fill | `surface.panel` |
 | Text | `text.primary` |
 | Type | `typography.title-medium` |
 | Radius | `radius.lg` |
@@ -814,8 +814,8 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 | Border | `borderWidth.hairline` `border.subtle` (button) | `borderWidth.hairline` `border.subtle` | `borderWidth.hairline` `border.subtle` | `borderWidth.hairline` `border.subtle` |
 | Radius | `radius.lg` | 100px (raw) | 100px (raw) | 100px (raw) |
 | Padding | 64px (raw) `spacing.16` | 0 `spacing.24` | 0 `spacing.24` | 0 `spacing.24` |
-| State layer | none | none | none | `text.primary` at `opacity.hover` |
-| Focus ring | 1px `border.subtle` on button | 1px `border.subtle` on button | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) / `focusRing.checkbox-width` ring `text.link` (.mat-focus-indicator) | 1px `border.subtle` on button |
+| State layer | none | none | none | `surface.inverse` at `opacity.hover` |
+| Focus ring | 1px `border.subtle` on button | 1px `border.subtle` on button | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) | 1px `border.subtle` on button |
 
 ## Shell
 
@@ -835,7 +835,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 | Property | default |
 |---|---|
 | Size (w x h) | 354 x 824px |
-| Fill | `surface.panel` / `text.on-brand` |
+| Fill | `surface.panel` |
 | Text | `text.primary` |
 | Type | `typography.body-medium` |
 | Radius | `radius.xl-increased` |
@@ -857,7 +857,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 | Property | default |
 |---|---|
 | Size (w x h) | 354 x 824px |
-| Fill | `surface.panel` / `text.on-brand` |
+| Fill | `surface.panel` |
 | Text | `text.primary` |
 | Type | `typography.body-medium` |
 | Radius | `radius.xl-increased` |
@@ -890,7 +890,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 
 | Property | default |
 |---|---|
-| Size (w x h) | 296 x `size.icon-m` |
+| Size (w x h) | 296 x 20px |
 | Fill | none |
 | Text | `text.primary` |
 | Type | `typography.body-medium` |
@@ -911,7 +911,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 
 | Property | default |
 |---|---|
-| Size (w x h) | 550 x `size.icon-l` |
+| Size (w x h) | 550 x 24px |
 | Fill | none |
 | Text | `text.body` |
 | Type | `typography.headline-small` |
@@ -921,7 +921,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 
 | Property | default |
 |---|---|
-| Size (w x h) | 550 x `size.icon-l` |
+| Size (w x h) | 550 x 24px |
 | Fill | none |
 | Text | `text.body` |
 | Type | `typography.body-large` |
@@ -942,7 +942,7 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 | Property | default |
 |---|---|
 | Size (w x h) | 147 x 22px |
-| Fill | `text.inverse` |
+| Fill | `surface.card` |
 | Text | `text.secondary` |
 | Type | `typography.body-medium` |
 | Radius | `radius.full` |
@@ -969,4 +969,4 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 - **Avatar**: the photo was replaced by a grey disc in the copy, so only its size and shape are the product's.
 - **Studio outputs** (Audio and Video Overviews, mind map, flashcards, quiz) open player or iframe views that were not recaptured on 2026-10-17; the 2026-09-25 package measured some from screenshots and those readings are not carried over.
 
-Token coverage: 1848 cells name a token, 176 are raw values.
+Token coverage: 1836 cells name a token, 168 are raw values.

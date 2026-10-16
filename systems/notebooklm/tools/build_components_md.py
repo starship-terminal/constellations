@@ -46,17 +46,23 @@ def norm_color(c):
 
 # Reverse maps: value -> token path, in priority order.
 PRIORITY = ["text", "surface", "bg", "accent", "border", "state", "status", "icon", "skeleton", "tile", "code", "pastel", "dataviz"]
-def color_map(theme):
+# Each property looks a colour up in the groups whose role fits it first, so a fill is named by a
+# surface token and a label by a text token even where two roles share a value.
+ROLE = {"fill": ["surface", "bg", "accent", "state", "status", "skeleton", "tile"],
+        "text": ["text", "icon", "accent", "status", "studio", "code"],
+        "border": ["border", "status", "state"]}
+def color_map(theme, role):
     m = {}
+    order = ROLE[role] + [g for g in PRIORITY if g not in ROLE[role]]
     items = list(flat(TOK[theme]))
-    items.sort(key=lambda kv: PRIORITY.index(kv[0].split(".")[0]) if kv[0].split(".")[0] in PRIORITY else 99)
+    items.sort(key=lambda kv: order.index(kv[0].split(".")[0]) if kv[0].split(".")[0] in order else 99)
     for k, t in items:
         if t["$type"] == "color":
             m.setdefault(norm_color(t["$value"]), f"{k}")
     for k, t in flat(TOK["core"]["palette"], "palette."):
         m.setdefault(norm_color(t["$value"]), f"core.{k}")
     return m
-CMAP = {"dark": color_map("dark"), "light": color_map("light")}
+CMAP = {(th, r): color_map(th, r) for th in ("dark", "light") for r in ROLE}
 
 def dim_map(group, prefer=()):
     m = {}
@@ -68,7 +74,10 @@ def dim_map(group, prefer=()):
     return m
 RADIUS = dim_map("radius", prefer=("full", "xs", "sm", "md", "lg", "lg-increased", "lg-max", "xl", "xl-increased", "xl-max", "xxl"))
 SPACE = dim_map("spacing")
-SIZE = dim_map("size")
+SIZE = {v: k for v, k in dim_map("size").items() if not k.startswith("size.icon-")}
+for _k, _t in flat(TOK["core"]["size"]):
+    if not _k.startswith("icon-"):
+        SIZE.setdefault(str(_t["$value"]), f"size.{_k}")
 TYPE = {}
 for k, t in flat(TOK["core"]["typography"]):
     v = t["$value"]
@@ -88,11 +97,11 @@ def raw(v):
     RAW_COUNT["n"] += 1
     return f"{v} (raw)"
 
-def color_cell(c, theme):
+def color_cell(c, theme, role="text"):
     n = norm_color(c)
     if n in (None, "transparent"):
         return "none"
-    p = CMAP[theme].get(n)
+    p = CMAP[(theme, role)].get(n)
     return tok(p) if p else raw(n)
 
 def both(fn, d, l):
@@ -152,26 +161,26 @@ def focus_cell(s, theme):
     if st["outlineStyle"] == "auto":
         return "browser default ring (outline auto), no product ring"
     if st["outlineStyle"] != "none" and st["outlineWidth"] != "0px" and not st["outlineColor"].endswith(", 0)"):
-        return f'{len_cell(st["outlineWidth"], {"3px": "focusRing.width", "2px": "borderWidth.field-focus", "1px": "borderWidth.hairline"})} {color_cell(st["outlineColor"], theme)} offset {len_cell(st["outlineOffset"], {"2px": "focusRing.offset"})}'
+        return f'{len_cell(st["outlineWidth"], {"3px": "focusRing.width", "2px": "borderWidth.field-focus", "1px": "borderWidth.hairline"})} {color_cell(st["outlineColor"], theme, "border")} offset {len_cell(st["outlineOffset"], {"2px": "focusRing.offset"})}'
     for p in s.get("paint", []):
         if "focus-indicator" in p["node"] and p.get("border"):
             m = re.search(r"(\d+px) solid (rgba?\([^)]*\))", p["border"])
             if m:
-                return f'{len_cell(m.group(1), {"3px": "focusRing.checkbox-width", "2px": "focusRing.field-width"})} ring {color_cell(m.group(2), theme)} (.mat-focus-indicator)'
+                return f'{len_cell(m.group(1), {"3px": "focusRing.checkbox-width", "2px": "focusRing.field-width"})} ring {color_cell(m.group(2), theme, "border")} (.mat-focus-indicator)'
         if p.get("outline"):
             m = re.match(r"(\S+) (\S+) (rgba?\([^)]*\)) offset (\S+)", p["outline"])
             if m and m.group(2) == "auto":
                 return f"browser default ring on {p['node'].split('.')[0]} (outline auto), no product ring"
             if m and m.group(2) != "none":
-                return f"{m.group(1)} {m.group(2)} {color_cell(m.group(3), theme)} on {p['node'].split('.')[0]}"
+                return f"{m.group(1)} {m.group(2)} {color_cell(m.group(3), theme, 'border')} on {p['node'].split('.')[0]}"
         if p.get("border") and "notch" in p["node"]:
             m = re.search(r"(\d+px) solid (rgba?\([^)]*\))", p["border"])
             if m:
-                return f"outline thickens to {len_cell(m.group(1), {"2px": "borderWidth.field-focus", "1px": "borderWidth.field"})} {color_cell(m.group(2), theme)}'
+                return 'outline thickens to ' + len_cell(m.group(1), {"2px": "borderWidth.field-focus", "1px": "borderWidth.field"}) + ' ' + color_cell(m.group(2), theme, "border")
     for p in s.get("paint", []):
         if p.get("border") and re.search(r"(\d+px) solid (rgb\(\d+, \d+, \d+\))", p["border"]):
             m = re.search(r"(\d+px) solid (rgb\(\d+, \d+, \d+\))", p["border"])
-            return f'{m.group(1)} {color_cell(m.group(2), theme)} on {p["node"].split(".")[0]}'
+            return f'{m.group(1)} {color_cell(m.group(2), theme, "border")} on {p["node"].split(".")[0]}'
     return "none painted"
 
 def fill_cell(s, theme):
@@ -180,33 +189,33 @@ def fill_cell(s, theme):
     if norm_color(bg) == "transparent":
         for p in s.get("paint", [])[:3]:
             if p.get("bg") and p.get("opacity") in (None, "1") and "ripple" not in p["node"] and "focus" not in p["node"]:
-                return color_cell(p["bg"], theme) + " (inner)"
+                return color_cell(p["bg"], theme, "fill") + " (inner)"
         for a in s.get("ancestors", [])[:1]:
             if a.get("bg") and norm_color(a["bg"]) != "transparent":
-                return color_cell(a["bg"], theme) + " (on parent)"
+                return color_cell(a["bg"], theme, "fill") + " (on parent)"
         return "none"
-    return color_cell(bg, theme)
+    return color_cell(bg, theme, "fill")
 
 def border_cell(s, theme):
     st = s["style"]
     if st["borderTopWidth"] != "0px" and st["borderTopStyle"] != "none" and norm_color(st["borderTopColor"]) != "transparent":
-        return f'{len_cell(st["borderTopWidth"], {"1px": "borderWidth.hairline", "2px": "borderWidth.field-focus"})} {color_cell(st["borderTopColor"], theme)}'
+        return f'{len_cell(st["borderTopWidth"], {"1px": "borderWidth.hairline", "2px": "borderWidth.field-focus"})} {color_cell(st["borderTopColor"], theme, "border")}'
     for p in s.get("paint", [])[:4]:
         if p.get("border"):
             m = re.search(r"(\d+px) solid (rgba?\([^)]*\))", p["border"])
             if m and norm_color(m.group(2)) != "transparent" and "focus" not in p["node"]:
-                return f'{len_cell(m.group(1), {"1px": "borderWidth.hairline", "2px": "borderWidth.field-focus"})} {color_cell(m.group(2), theme)} ({p["node"].split(".")[0]})'
+                return f'{len_cell(m.group(1), {"1px": "borderWidth.hairline", "2px": "borderWidth.field-focus"})} {color_cell(m.group(2), theme, "border")} ({p["node"].split(".")[0]})'
         if p.get("shadow") and "inset" in p["shadow"]:
             m = re.match(r"(rgba?\([^)]*\)) 0px 0px 0px (\d+px) inset", p["shadow"])
             if m and norm_color(m.group(1)) != "transparent":
-                return f"{len_cell(m.group(2), {'1px': 'borderWidth.hairline'})} {color_cell(m.group(1), theme)} (inset shadow)"
+                return f"{len_cell(m.group(2), {'1px': 'borderWidth.hairline'})} {color_cell(m.group(1), theme, "border")} (inset shadow)"
     return "none"
 
 def layer_cell(s, theme):
     bg, op = inner_layer(s)
     if not bg:
         return "none"
-    return f"{color_cell(bg, theme)} at `opacity.{ {'0.08': 'hover', '0.12': 'pressed', '0.16': 'dragged'}.get(op, op) }`"
+    return f"{color_cell(bg, theme, "fill")} at `opacity.{ {'0.08': 'hover', '0.12': 'pressed', '0.16': 'dragged'}.get(op, op) }`"
 
 def size_cell(s):
     w, h = s["rect"]["w"], s["rect"]["h"]
