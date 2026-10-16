@@ -131,7 +131,7 @@ no code role.
 | Borders | default, strong, rule, field, line, focus, drawer; widths in `core.borderWidth` (1px everywhere, a 2px select ring, a 4px slider ring) | Rules |
 | Actions | primary black with hover and pressed `#333333`, the lavender accent, quiet fills, the focus ring colour, the peach danger fill | Rules and computed pressed states |
 | Status | success, warning, danger and info, each with fill, text and border | The `--activity-*` properties, the typed-phrase box and the notice banner |
-| Sizing | controls 24, 32, 40 and 56px, the 37px field, icons 14, 16, 18 and 24px, a 1px focus ring at offset 0 | Rules and computed heights |
+| Sizing | controls 24, 32, 40 and 56px, the 37px field, icons 14, 16, 18 and 20px, a 1px focus ring at offset 0 | Rules, computed heights and icon sizes |
 | Elevation | `light.elevation`: menu, popup (popovers, tooltips) and dialog shadows; the declared `--shadow-s/m/l` are unused | Rules |
 | Motion | 150 to 500ms transitions, 400ms dialog and popover entrances on `cubic-bezier(0.16, 1, 0.3, 1)`, a 1.1s spinner | Rules |
 | Layout | the 640px Screen too small breakpoint, 1400px home column, 650px Account Settings, 500 to 800px dialogs, 220 to 500px menus, 290 to 390px right panel, z-index 1 to 3 | Rules and `@media` |

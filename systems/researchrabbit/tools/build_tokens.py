@@ -298,7 +298,7 @@ SPEC_CORE = {
         "icon": G("dimension", "16px", "button svg", "font-size: 16px", "The default icon in a button"),
         "icon-sm": R("dimension", "14px", "ListItemSideButton__StyledButton", "& svg { font-size: 14px", "List side buttons, the lock in a notice"),
         "icon-md": R("dimension", "18px", "ListItemSideButton__StyledButton", "& svg { font-size: 18px", "Larger side-button icons, graph toolbar"),
-        "icon-lg": R("dimension", "24px", "Modal__CloseButton", "font-size: 24px", "The dialog close cross"),
+        "icon-lg": M("dimension", "20px", "drawer-head", "search-settings", "iconWidth", "The drawer chevron; the largest UI icon measured (the dialog close cross is 16px)"),
         "focus-ring-width": M("dimension", "1px", "button-primary", "focus-visible", "outlineWidth", "The browser's auto outline, 1px, recoloured by button:focus and input:focus"),
         "focus-ring-offset": M("dimension", "0px", "button-primary", "focus-visible", "outlineOffset"),
         "dialog-width": R("dimension", "650px", "Account__StyledModal", "width: 650px; height: 600px", "Account Settings; form and confirm dialogs fit their content between 500 and 800px"),
@@ -497,7 +497,8 @@ def leaf(path, spec):
     elif "computed" in spec:
         comp, state, prop = spec["computed"]
         got = COMPUTED[comp]["states"][state]
-        raw = f"{got['rect']['h']:g}px" if prop == "height" else got["style"][prop]
+        raw = (f"{got['rect']['h']:g}px" if prop == "height" else f"{got['icon']['w']:g}px" if prop == "iconWidth"
+               else got["style"][prop])
         val = spec["value"]
         want = val
         if is_alias(val):

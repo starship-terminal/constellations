@@ -366,7 +366,7 @@ const SPECS = [
     targets: [T('acc-delete', sc('Confirm__SafeguardContainer'), { states: D }), T('acc-delete', `${sc('Confirm__SafeguardContainer')}.querySelector('input')`, { as: 'input', states: ALL, crop: sc('Confirm__SafeguardContainer') })] },
   // Buttons
   { key: 'button-primary', group: 'Buttons', name: 'Primary button', desc: 'Black rectangle with white text and 8px corners ("Done" in a dialog, "Search for Articles" in an empty state).',
-    targets: [T('acc-edit', btn('Done'), { states: ALLP }), T('lib-reading', btn('Search for Articles'), { as: 'empty-state', states: ALLP })] },
+    targets: [T('acc-edit', btn('Done'), { states: ALLP }), T('lib-reading', `[...document.querySelectorAll('button')].find((b) => b.innerText.trim() === 'Search for Articles')`, { as: 'empty-state', states: ALLP })] },
   { key: 'button-secondary', group: 'Buttons', name: 'Secondary button', desc: 'Text only, the same height as the primary beside it ("Cancel").',
     targets: [T('acc-edit', btn('Cancel'), { states: ALLP }), T('acc-delete', btn('Cancel'), { as: 'confirm', states: ALLP })] },
   { key: 'button-danger', group: 'Buttons', name: 'Danger button', desc: 'The destructive action in the confirmation. Seen only disabled: the phrase was never typed.',

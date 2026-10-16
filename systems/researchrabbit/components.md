@@ -158,14 +158,14 @@ Values that apply across entries, from the measurement file. Counts are componen
 | 350ms | `ease` | opacity, transform | AnimatedContainer__Container |
 | 500ms | `ease` | max-height, transform, width | FilterableSearchActions__Chevron, Navigation__AnimatedWidth, `drawer` |
 
-**Focus.** Real keyboard focus was given to every component that could take it. 61 draw an outline ring, in 3 styles: 1px auto #b0edf0 `{palette.turq.50}`, offset 0px on `account-menu`, `autosave-button`, `button-link`, `button-primary`, `button-secondary` and more; 1px auto #005fcc, offset 1px on `button-primary`, `empty-state-link`, `home-guide-card`, `inspector-title`, `nav-logo` and more; 1px auto #005fcc, offset 0px on `note-composer`. 1 change something other than an outline: `slider`. 13 could not take focus (a div, or disabled): `drawer-search-button`, `graph-legend-item`, `inspector-authors`, `inspector-nav`, `layout-reset`, `layout-tab`, `library-list-row`, `list-pager`, `recent-search-row`, `selection-bar`, `selection-tick`, `table-header`, `table-row`.
+**Focus.** Real keyboard focus was given to every component that could take it. 61 draw an outline ring, in 3 styles: 1px auto #b0edf0 `{palette.turq.50}`, offset 0px on `account-menu`, `autosave-button`, `button-link`, `button-primary`, `button-secondary` and more; 1px auto #005fcc, offset 1px on `empty-state-link`, `home-guide-card`, `inspector-title`, `nav-logo`, `nav-tab`; 1px auto #005fcc, offset 0px on `note-composer`. 1 change something other than an outline: `slider`. 13 could not take focus (a div, or disabled): `drawer-search-button`, `graph-legend-item`, `inspector-authors`, `inspector-nav`, `layout-reset`, `layout-tab`, `library-list-row`, `list-pager`, `recent-search-row`, `selection-bar`, `selection-tick`, `table-header`, `table-row`.
 
-**Hover.** 68 hovered states differ from their rest state in computed style and 60 do not (they change something drawn on the canvas, or nothing). Background changes on hover, most common first:
+**Hover.** 69 hovered states differ from their rest state in computed style and 59 do not (they change something drawn on the canvas, or nothing). Background changes on hover, most common first:
 
 | From | To | Count |
 |---|---|---|
 | transparent | rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` | 23 |
-| #000000 `{palette.base.black}` | #333333 `{palette.base.secondary}` | 5 |
+| #000000 `{palette.base.black}` | #333333 `{palette.base.secondary}` | 6 |
 | rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` | rgba(0, 0, 0, 0.07) `{palette.alpha.black-07}` | 5 |
 | transparent | #ffffff `{palette.base.white}` | 3 |
 | rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` | rgba(0, 0, 0, 0.08) | 2 |
@@ -222,7 +222,7 @@ Values that apply across entries, from the measurement file. Counts are componen
 | [Article detail panel](#article-detail-panel) | 390 x 772 | - | 16px `{radius.2xl}` | #ffffff `{palette.base.white}` | #a7d4ff 0px 0px 0px 1px inset | 0 |
 | [Layout option card](#layout-option-card) | 374 x 190 | 1px solid #8a92a1 `{palette.grey.tertiary}` | 6px `{radius.md}` | #e9f5fe `{palette.selection.light}` | none | 12px `{spacing.3}` |
 | [Layout select](#layout-select) | 119.59 x 29 | - | 4px `{radius.sm}` | rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` | none | 4px 8px `{spacing.1} {spacing.2}` |
-| [Positions moved pill](#positions-moved-pill) | 150.33 x 24 | - | 48px `{radius.pill}` | #f5c751 `{palette.activity.important}` | none | 4px 8px `{spacing.1} {spacing.2}` |
+| [Positions moved pill](#positions-moved-pill) | 150.33 x 24 (height `{size.control-sm}`) | - | 48px `{radius.pill}` | #f5c751 `{palette.activity.important}` | none | 4px 8px `{spacing.1} {spacing.2}` |
 | [Reset positions menu](#reset-positions-menu) | 220 x 38 | - | 6px `{radius.md}` | #ffffff `{palette.base.white}` | rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px (`{elevation.menu}`) | 4px `{spacing.1}` |
 | [Library sidebar](#library-sidebar) | 250 x 812 | - | 8px | #ffffff `{palette.base.white}` | none | 0px 16px 0px 0px `{spacing.0} {spacing.4} {spacing.0} {spacing.0}` |
 | [Collection header](#collection-header) | 1142 x 92 | - | 8px `{radius.lg}` | #ffffff `{palette.base.white}` | none | 0 |
@@ -717,7 +717,7 @@ Replaces the axes captions once a node has been dragged: a peach pill with an ic
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default (same: hover) | size 150.33 x 24; padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background #f5c751 `{palette.activity.important}`; text Plus Jakarta Sans 14/14 500, #201d1d `{palette.grey.primary}`; cursor pointer; icon 16 x 16, #201d1d `{palette.grey.primary}` |
+| default (same: hover) | size 150.33 x 24 (height `{size.control-sm}`); padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background #f5c751 `{palette.activity.important}`; text Plus Jakarta Sans 14/14 500, #201d1d `{palette.grey.primary}`; cursor pointer; icon 16 x 16, #201d1d `{palette.grey.primary}` |
 | focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 | open (same as the first row) | same values |
 
@@ -817,7 +817,7 @@ Previous and next chevrons around a "1 - 20 of 686" label at the foot of the lis
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| prev | size 32 x 24; padding 4px 8px `{spacing.1} {spacing.2}`; radius 4px `{radius.sm}`; background transparent; text Plus Jakarta Sans 14/21 500, #000000 `{palette.base.black}`; opacity 0.4; icon 16 x 16, #000000 `{palette.base.black}` |
+| prev | size 32 x 24 (height `{size.control-sm}`); padding 4px 8px `{spacing.1} {spacing.2}`; radius 4px `{radius.sm}`; background transparent; text Plus Jakarta Sans 14/21 500, #000000 `{palette.base.black}`; opacity 0.4; icon 16 x 16, #000000 `{palette.base.black}` |
 | prev, hover | background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` |
 | next (as the first row, except) | opacity none; cursor pointer |
 | next, hover | background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` |
@@ -1051,7 +1051,7 @@ Authored state rules (from the page's CSS): `.x:hover { background-color: white;
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default | size 24 x 24; padding 4px `{spacing.1}`; radius 36px `{radius.search}`; background #f2f2f2 `{palette.ui.bg}`; text Plus Jakarta Sans 18/27 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
+| default | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 36px `{radius.search}`; background #f2f2f2 `{palette.ui.bg}`; text Plus Jakarta Sans 18/27 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
 | hover | background #e8e8e8 `{palette.ui.bg-hover}` |
 | focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 
@@ -1096,10 +1096,10 @@ Parts:
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| first | size 24 x 24; padding 4px `{spacing.1}`; gap 4px `{spacing.1}`; radius 48px `{radius.pill}`; background transparent; text Plus Jakarta Sans 12/18 600, #333333 `{palette.base.secondary}`; cursor pointer; icon 16 x 16, #333333 `{palette.base.secondary}` |
+| first | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; gap 4px `{spacing.1}`; radius 48px `{radius.pill}`; background transparent; text Plus Jakarta Sans 12/18 600, #333333 `{palette.base.secondary}`; cursor pointer; icon 16 x 16, #333333 `{palette.base.secondary}` |
 | first, hover | background #e8e8e8 `{palette.ui.bg-hover}` |
 | first, focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
-| second | size 24 x 24; padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background transparent; text Plus Jakarta Sans 16/24 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
+| second | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background transparent; text Plus Jakarta Sans 16/24 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
 | second, hover | background rgba(0, 0, 0, 0.08) |
 | second, focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 
@@ -1184,7 +1184,7 @@ The collection the article is already in, with a remove button. Read as `inspect
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default (same: hover) | size 144.47 x 26; padding 4px 0px 4px 8px `{spacing.1} {spacing.0} {spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 4px `{radius.sm}`; background rgba(240, 125, 89, 0.2) `{palette.alpha.amber-20}`; text Plus Jakarta Sans 12/18 400, #000000 `{palette.base.black}`; icon 16 x 16, #f07d59 `{palette.ugc.amber}` |
-| remove | size 24 x 24; padding 4px `{spacing.1}`; background transparent; text Plus Jakarta Sans 14/21 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
+| remove | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; background transparent; text Plus Jakarta Sans 14/21 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
 | remove, hover | background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` |
 | remove, focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 
@@ -1291,7 +1291,7 @@ X at the top right of the panel. Read as `layout-close` on the search map view (
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default | size 32 x 24; padding 4px 8px `{spacing.1} {spacing.2}`; radius 4px `{radius.sm}`; background transparent; text Plus Jakarta Sans 14/21 500, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
+| default | size 32 x 24 (height `{size.control-sm}`); padding 4px 8px `{spacing.1} {spacing.2}`; radius 4px `{radius.sm}`; background transparent; text Plus Jakarta Sans 14/21 500, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
 | hover | background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` |
 | focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 
@@ -1413,11 +1413,11 @@ The "Collections" heading with three 24px tool buttons (sort, filter, add). Read
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default | size 88.44 x 24; background transparent; text Plus Jakarta Sans 16/24 600, #000000 `{palette.base.black}` |
-| tool-sort | size 24 x 24; padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}`; text Plus Jakarta Sans 16/24 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
+| default | size 88.44 x 24 (height `{size.control-sm}`); background transparent; text Plus Jakarta Sans 16/24 600, #000000 `{palette.base.black}` |
+| tool-sort | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}`; text Plus Jakarta Sans 16/24 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
 | tool-sort, hover | background rgba(0, 0, 0, 0.08) |
 | tool-sort, focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
-| tool-add | size 24 x 24; padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}`; text Plus Jakarta Sans 16/24 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
+| tool-add | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}`; text Plus Jakarta Sans 16/24 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
 | tool-add, hover | background rgba(0, 0, 0, 0.08) |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover { background-color: rgba(0, 0, 0, 0.08); }`.
@@ -1481,7 +1481,7 @@ Peach pill button with a people icon. Read as `collection-share` on the library 
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default (same: hover) | size 72.94 x 24; padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background rgba(240, 125, 89, 0.2) `{palette.alpha.amber-20}`; text Plus Jakarta Sans 12/12 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
+| default (same: hover) | size 72.94 x 24 (height `{size.control-sm}`); padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background rgba(240, 125, 89, 0.2) `{palette.alpha.amber-20}`; text Plus Jakarta Sans 12/12 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
 | focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`.
@@ -1493,7 +1493,7 @@ Authored state rules (from the page's CSS): `button:focus, input:focus { outline
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| settings (same: hover) | size 24 x 24; padding 4px `{spacing.1}`; radius 48px `{radius.pill}`; background rgba(240, 125, 89, 0.2) `{palette.alpha.amber-20}`; text Plus Jakarta Sans 14/21 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
+| settings (same: hover) | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 48px `{radius.pill}`; background rgba(240, 125, 89, 0.2) `{palette.alpha.amber-20}`; text Plus Jakarta Sans 14/21 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
 | settings, focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 | add (same: hover) (same as the first row) | same values |
 
@@ -1550,7 +1550,7 @@ Grey row inside the list card: "Showing 9 Articles" at the left, then sort, filt
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default | size 1126 x 24; gap 8px `{spacing.2}`; background transparent; text Plus Jakarta Sans 12/18 400 italic, #686d79 `{palette.grey.secondary}`; icon 16 x 16, #000000 `{palette.base.black}` |
+| default | size 1126 x 24 (height `{size.control-sm}`); gap 8px `{spacing.2}`; background transparent; text Plus Jakarta Sans 12/18 400 italic, #686d79 `{palette.grey.secondary}`; icon 16 x 16, #000000 `{palette.base.black}` |
 | map (same as the first row) | same values |
 
 Child layers that carry the look: button 24x24 background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` radius 48px; button 24x24 background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` radius 48px; input 24x24 background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` radius 48px.
@@ -1576,15 +1576,15 @@ The sort select, the filter button, the search field and the view buttons (curre
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| sort | size 24 x 24; padding 4px `{spacing.1}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}`; text Plus Jakarta Sans 14/14 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
+| sort | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}`; text Plus Jakarta Sans 14/14 400, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
 | sort, hover | background rgba(0, 0, 0, 0.07) `{palette.alpha.black-07}` |
 | sort, focus-visible | shadow #000000 0px 0px 0px 2px; outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 | filter | size 156.97 x 26; padding 4px 12px `{spacing.1} {spacing.3}`; radius 48px `{radius.pill}`; background #000000 `{palette.base.black}`; text Plus Jakarta Sans 12/18 600, #ffffff `{palette.base.white}`; cursor pointer |
 | filter, hover | background #333333 `{palette.base.secondary}` |
 | filter, focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
-| search (same: hover) | size 24 x 24; padding 4px 12px `{spacing.1} {spacing.3}`; radius 48px `{radius.pill}`; background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}`; text Plus Jakarta Sans 14/14 400, #000000 `{palette.base.black}`; cursor text; placeholder oklab(0 0 0 / 0.5) |
-| search, focus-visible | size 200 x 24; padding 4px 12px 4px 24px `{spacing.1} {spacing.3} {spacing.1} {spacing.6}`; outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
-| view-current | size 24 x 24; padding 4px `{spacing.1}`; background #000000 `{palette.base.black}`; text Plus Jakarta Sans 16/24 400, #ffffff `{palette.base.white}`; cursor pointer; icon 16 x 16, #ffffff `{palette.base.white}` |
+| search (same: hover) | size 24 x 24 (height `{size.control-sm}`); padding 4px 12px `{spacing.1} {spacing.3}`; radius 48px `{radius.pill}`; background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}`; text Plus Jakarta Sans 14/14 400, #000000 `{palette.base.black}`; cursor text; placeholder oklab(0 0 0 / 0.5) |
+| search, focus-visible | size 200 x 24 (height `{size.control-sm}`); padding 4px 12px 4px 24px `{spacing.1} {spacing.3} {spacing.1} {spacing.6}`; outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
+| view-current | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; background #000000 `{palette.base.black}`; text Plus Jakarta Sans 16/24 400, #ffffff `{palette.base.white}`; cursor pointer; icon 16 x 16, #ffffff `{palette.base.white}` |
 | view-current, hover | background #333333 `{palette.base.secondary}` |
 | view-current, focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 | view-other (as the first row, except) | gap none; radius none; text Plus Jakarta Sans 16/24 400, #000000 `{palette.base.black}` |
@@ -1815,8 +1815,10 @@ Black rectangle with white text and 8px corners ("Done" in a dialog, "Search for
 | hover | background #333333 `{palette.base.secondary}` |
 | focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 | pressed | background #333333 `{palette.base.secondary}` |
-| empty-state (same: hover, pressed) | size 179.28 x 56 (height `{size.control-xl}`); background transparent; text Plus Jakarta Sans 16/24 500, #ffffff `{palette.base.white}`; cursor pointer |
-| empty-state, focus-visible | outline 1px auto #005fcc, offset 1px |
+| empty-state (as the first row, except) | size 179.28 x 56 (height `{size.control-xl}`) |
+| empty-state, hover | background #333333 `{palette.base.secondary}` |
+| empty-state, focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
+| empty-state, pressed | background #333333 `{palette.base.secondary}` |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover { background-color: #333333; }`.
 
@@ -1883,7 +1885,7 @@ Small text button with a leading plus ("Link Zotero"). Read as `button-link` on 
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default | size 114.27 x 24; padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 4px `{radius.sm}`; background transparent; text Plus Jakarta Sans 14/14 500, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
+| default | size 114.27 x 24 (height `{size.control-sm}`); padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 4px `{radius.sm}`; background transparent; text Plus Jakarta Sans 14/14 500, #000000 `{palette.base.black}`; cursor pointer; icon 16 x 16, #000000 `{palette.base.black}` |
 | hover | background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` |
 | focus-visible | outline 1px auto #b0edf0 `{palette.turq.50}`, offset 0px |
 | pressed | background rgba(0, 0, 0, 0.05) `{palette.alpha.black-05}` |
