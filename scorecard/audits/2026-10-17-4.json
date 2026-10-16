@@ -724,7 +724,7 @@
     },
     "C3": {
      "grade": "partly",
-     "evidence": "57 controls keyboard-focused and recorded, but only 11 draw a visible ring; Upgrade and Sign in cannot take focus"
+     "evidence": "57 controls keyboard-focused and recorded, but only 15 show a visible change; Upgrade and Sign in cannot take focus"
     },
     "C4": {
      "grade": "partly",

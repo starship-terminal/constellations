@@ -6,7 +6,7 @@ The full per-state readings are in [raw/measurements.md](raw/measurements.md), w
 
 How to read an entry:
 
-- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as the role token for what it paints (a fill as `action.*` or `background.*`, text as `text.*`, a border or outline as `border.*`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). 1126 of 1481 values in the entries (76%) are written as tokens; the other 355 are values Gauth gives no token (a one-off padding, a third-party library's colour, a type size used once) and stay raw. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.
+- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as the role token for what it paints (a fill as `action.*` or `background.*`, text as `text.*`, a border or outline as `border.*`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). 1124 of 1482 values in the entries (76%) are written as tokens; the other 358 are values Gauth gives no token (a one-off padding, a third-party library's colour, a type size used once) and stay raw. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
 - Crops are images of the component read from the live page, in [components/crops/](components/crops) (362 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
@@ -92,7 +92,7 @@ The 19 components of the library's checklist ([docs/DESIGN-SYSTEM.md](../../docs
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 57 components were given a real keyboard focus. 11 draw a ring: `canvas-exit` (2px solid `border.focus`, offset 3px), `canvas-control` (2px solid `border.focus`, offset 3px), `outline-item` (2px solid `border.focus`, offset 3px), `ask-tutor-mic` (2px solid `palette.ink.black`, offset 2px), `switch` (2px solid `palette.blue.focus-2`, offset -2px), `quiz-option` (2px solid `border.focus`, offset 3px), `search-toggle` (2px solid rgba(23, 20, 16, 0.18), offset 2px), `pill-tab-active` (2px solid #f0023a, offset 2px), `pill-tab` (2px solid #f0023a, offset 2px), `featured-article` (2px solid `text.brand`, offset 4px), `menu-item` (2px solid `palette.blue.focus-2`, offset -2px). The other 46 draw none, so a keyboard user sees no change: `promo-confirm`, `promo-close`, `side-menu-link`, `side-menu-collapse`, `question-input`, `subject-chip`, `atlas-cta`, `create-course-button`, `category-tab-active`, `category-tab`, `lesson-card`, `unit-card`, `show-more`, `unit-row`, `create-button`, `create-suggestion`, `create-close`, `back-link`, `unit-button-active`, `topic-node-current`, `topic-node`, `start-button`, `audio-not-now`, `audio-enable`, `page-nav`, `header-round-button`, `chapter-option`, `chapter-pill`, `play-button`, `chapter-panel-item`, `new-topic`, `recommendation-chip`, `story-card`, `explore-button`, `share-button`, `generate-video-button`, `rail-item`, `continue-button`, `terms-link`, `plan-card`, `start-free-button`, `language-select`, `inline-link`, `footer-link`, `pagination-item`, `atlas-textarea`. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.
+**Focus.** 57 components were given a real keyboard focus. 15 show a visible change (an outline on the element, a child or a parent, a shadow ring, a border or a fill): `canvas-exit` (outline `focus.width` solid `border.focus`, offset `focus.offset-astryx`), `canvas-control` (outline `focus.width` solid `border.focus`, offset `focus.offset-astryx`), `outline-item` (outline `focus.width` solid `border.focus`, offset `focus.offset-astryx`), `ask-tutor-mic` (outline `focus.width` solid `palette.ink.black`, offset `focus.offset`), `switch` (outline `focus.width` solid `palette.blue.focus-2`, offset -2px; fill `background.hover`), `quiz-option` (outline `focus.width` solid `border.focus`, offset `focus.offset-astryx`), `chapter-option` (fill `background.selected`), `chapter-panel-item` (fill `palette.ink.a04`), `search-toggle` (outline `focus.width` solid rgba(23, 20, 16, 0.18), offset `focus.offset`), `pill-tab-active` (outline `focus.width` solid #f0023a, offset `focus.offset`), `pill-tab` (outline `focus.width` solid #f0023a, offset `focus.offset`), `featured-article` (outline `focus.width` solid `component.news-tab.current-text`, offset 4px), `language-select` (shadow ring 0px 0px 0px 2px rgba(5, 145, 255, 0.1); border `borderWidth.hairline` solid #1677ff), `pagination-item` (outline on a: 3px solid #91caff offset 1px), `menu-item` (outline `focus.width` solid `palette.blue.focus-2`, offset -2px; fill `background.hover`). The other 42 change nothing, so a keyboard user sees no focus: `promo-confirm`, `promo-close`, `side-menu-link`, `side-menu-collapse`, `question-input`, `subject-chip`, `atlas-cta`, `create-course-button`, `category-tab-active`, `category-tab`, `lesson-card`, `unit-card`, `show-more`, `unit-row`, `create-button`, `create-suggestion`, `create-close`, `back-link`, `unit-button-active`, `topic-node-current`, `topic-node`, `start-button`, `audio-not-now`, `audio-enable`, `page-nav`, `header-round-button`, `chapter-pill`, `play-button`, `new-topic`, `recommendation-chip`, `story-card`, `explore-button`, `share-button`, `generate-video-button`, `rail-item`, `continue-button`, `terms-link`, `plan-card`, `start-free-button`, `inline-link`, `footer-link`, `atlas-textarea`. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.
 
 **Pressed.** Gauth's primary buttons shrink when pressed instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.
 
@@ -289,7 +289,7 @@ On inner pages the question field moves into the top bar: 640 x 40, white at 84%
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focused, filled) | size 640 x 40; background transparent; text -apple-system 18/27 400, `palette.indigo.upload-text`; icon 24 x 24, #333333 |
+| default (same: hover, focused, filled) | size 640 x 40; background transparent; text -apple-system 18/27 400, letter spacing 0.12px, `palette.indigo.upload-text`; icon 24 x 24, #333333 |
 
 Child layers that carry the look: div 640x40 background rgba(255, 255, 255, 0.84) border `borderWidth.hairline` solid `border.field` radius 30px; div 1x14 background #c7c7cc; div 30x30 background `background.selected` radius 15px.
 
@@ -359,7 +359,7 @@ The dashed drop zone under the field. Hovered only; no file was chosen. Read as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 680 x 207; border `borderWidth.strong` dashed `component.question-field.border`; radius `radius.24`; background rgba(255, 255, 255, 0.4); text -apple-system 18/27 400, `palette.indigo.upload-text`; icon 30 x 30, `palette.ink.black` |
+| default | size 680 x 207; border `borderWidth.strong` dashed `component.question-field.border`; radius `radius.24`; background rgba(255, 255, 255, 0.4); text -apple-system 18/27 400, letter spacing 0.12px, `palette.indigo.upload-text`; icon 30 x 30, `palette.ink.black` |
 | hover | border `borderWidth.strong` dashed `palette.indigo.line-strong` |
 
 **Tokens.** `borderWidth.strong`, `component.question-field.border`, `palette.indigo.line-strong`, `palette.indigo.upload-text`, `palette.ink.black`, `radius.24`.
@@ -524,10 +524,10 @@ Read as `footer-link` on the Homework home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 113.22 x 21; background transparent; text `typography.nav`, `text.primary` |
-| hover | text `typography.nav`, `text.link` |
+| default (same: focus-visible) | size 113.22 x 21; background transparent; text -apple-system 14/21 400, letter spacing 0.09px, `text.primary` |
+| hover | text -apple-system 14/21 400, letter spacing 0.09px, `text.link` |
 
-**Tokens.** `text.link`, `text.primary`, `typography.nav`.
+**Tokens.** `text.link`, `text.primary`.
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png)
 
@@ -1168,7 +1168,7 @@ Hovering a header control shows Astryx's tooltip: a small dark label under the b
 #### Quiz result card
 After an option is picked the check-in leaves the dock and comes back as a card in the notes: a status line with an icon ("Quick check · Needs review" when wrong), the question, Your answer beside Correct answer, and why the answer missed. Wrong answers paint it in the lesson's wrong colours. Read as `quiz-result` on the science lesson page.
 
-**Values (answered-wrong).** size 416 x 405; padding `spacing.16` 18px 18px `spacing.24`; border `borderWidth.hairline` solid `status.danger.border`; radius `radius.20`; background `status.danger.fill`; shadow 0px 8px 24px 0px rgba(0, 0, 0, 0.05); text Canvas Print 11/18 700, `status.danger.text`; icon 20 x 20, `status.danger.text`.
+**Values (answered-wrong).** size 416 x 405; padding `spacing.16` 18px 18px `spacing.24`; border `borderWidth.hairline` solid `status.danger.border`; radius `radius.20`; background `status.danger.fill`; shadow 0px 8px 24px 0px rgba(0, 0, 0, 0.05); text Canvas Print 11/18 700, letter spacing 0.88px, `status.danger.text`; icon 20 x 20, `status.danger.text`.
 
 **Tokens.** `borderWidth.hairline`, `radius.20`, `spacing.16`, `spacing.24`, `status.danger.border`, `status.danger.fill`, `status.danger.text`.
 
@@ -1177,7 +1177,7 @@ After an option is picked the check-in leaves the dock and comes back as a card 
 #### Quiz result status line
 Read as `quiz-result-label` on the science lesson page.
 
-**Values (answered-wrong).** size 187.11 x 18; background transparent; text Canvas Print 11/18 700, `status.danger.text`.
+**Values (answered-wrong).** size 187.11 x 18; background transparent; text Canvas Print 11/18 700, letter spacing 0.88px, `status.danger.text`.
 
 **Tokens.** `status.danger.text`.
 
@@ -1460,7 +1460,7 @@ Read as `atlas-search` on the Atlas page.
 #### Atlas title
 "Turn any topic into a visual story" in Libre Baskerville 40/48 700, the first letter filled with a red gradient. Read as `atlas-title` on the Atlas page.
 
-**Values (default).** size 682.92 x 48; background `action.primary`; image an image (data URI); text Libre Baskerville 40/48 700, `palette.ink.black`.
+**Values (default).** size 682.92 x 48; background `action.primary`; image an image (data URI); text Libre Baskerville 40/48 700, letter spacing -0.4px, `palette.ink.black`.
 
 **Tokens.** `action.primary`, `palette.ink.black`.
 
@@ -1530,7 +1530,7 @@ A 339px white card, 1px rgba(0,0,0,.08) border, radius 16, a 0 6 18 shadow at 4%
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 338.66 x 313.5; padding `spacing-offgrid.14` `spacing-offgrid.14` 18px `spacing-offgrid.14`; border `borderWidth.hairline` solid `border.card`; radius `radius.16`; background `background.card`; shadow `elevation.story-card`; text Rubik 15/18 600, `text.inverse`; transition transform `duration.story-card` ease, box-shadow `duration.story-card` ease, border-color `duration.story-card` ease |
+| default (same: focus-visible) | size 338.66 x 313.5; padding `spacing-offgrid.14` `spacing-offgrid.14` 18px `spacing-offgrid.14`; border `borderWidth.hairline` solid `border.card`; radius `radius.16`; background `background.card`; shadow `elevation.story-card`; text Rubik 15/18 600, letter spacing 0.45px, `text.inverse`; transition transform `duration.story-card` ease, box-shadow `duration.story-card` ease, border-color `duration.story-card` ease |
 | hover, pressed | border `borderWidth.hairline` solid rgba(0, 0, 0, 0.12); shadow `elevation.story-card-hover`; transform translate(0px, -4px) |
 
 **Tokens.** `background.card`, `border.card`, `borderWidth.hairline`, `duration.story-card`, `elevation.story-card`, `elevation.story-card-hover`, `radius.16`, `spacing-offgrid.14`, `text.inverse`.
@@ -1545,7 +1545,7 @@ Not on the page when it was captured.
 #### New badge
 A red #ff013e radius-8 label. Read as `new-badge` on the Atlas page.
 
-**Values (default).** size 40.8 x 20; radius `radius.8`; background `component.atlas.new`; text Rubik 15/18 600, `text.inverse`; transform scale(0.8).
+**Values (default).** size 40.8 x 20; radius `radius.8`; background `component.atlas.new`; text Rubik 15/18 600, letter spacing 0.45px, `text.inverse`; transform scale(0.8).
 
 **Tokens.** `component.atlas.new`, `radius.8`, `text.inverse`.
 
@@ -1625,7 +1625,7 @@ The current story under the canvas: thumbnail and a 600 title on a #f5f6f9 radiu
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 289 x 62; padding `spacing.8`; radius 11px; background `palette.atlas.strip`; text Rubik 12/15.6 510, #1f2021 |
+| default (same: hover) | size 289 x 62; padding `spacing.8`; radius 11px; background `palette.atlas.strip`; text Rubik 12/15.6 510, letter spacing -0.12px, #1f2021 |
 
 **Tokens.** `palette.atlas.strip`, `spacing.8`.
 
@@ -1741,8 +1741,9 @@ Hovered and focused, never followed. Read as `pagination-item` on the Blog page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; border `borderWidth.hairline` solid `border.field`; radius 18px; background `action.secondary`; text -apple-system 14/32 400, rgba(0, 0, 0, 0.88) |
+| default | size 36 x 36; border `borderWidth.hairline` solid `border.field`; radius 18px; background `action.secondary`; text -apple-system 14/32 400, rgba(0, 0, 0, 0.88) |
 | hover | background rgba(0, 0, 0, 0.06); transition all `duration.composer` ease |
+| focus-visible | outline on a: 3px solid #91caff offset 1px |
 
 **Tokens.** `action.secondary`, `border.field`, `borderWidth.hairline`, `duration.composer`.
 
@@ -2192,7 +2193,7 @@ Read as `m-menu-button` on the Homework home page at 390 wide.
 #### Mobile question field
 Read as `m-question-box` on the Homework home page at 390 wide.
 
-**Values (default).** size 322 x 36; radius 6px; background transparent; text -apple-system 13/18 400, rgba(0, 0, 0, 0.88); transition all `duration.popover` ease; placeholder `text.tertiary`.
+**Values (default).** size 322 x 36; radius 6px; background transparent; text -apple-system 13/18 400, letter spacing 0.12px, rgba(0, 0, 0, 0.88); transition all `duration.popover` ease; placeholder `text.tertiary`.
 
 **Tokens.** `duration.popover`, `text.tertiary`.
 

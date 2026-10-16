@@ -128,7 +128,7 @@ for n in sorted(n for n in TOK if n.startswith("elevation.level-")):
 BY_TYPE = {}
 for n in sorted(n for n in TOK if TYPES[n] == "typography"):
     v = TOK[n]
-    BY_TYPE.setdefault((v["fontFamily"].split(",")[0].replace('"', "").strip(), v["fontSize"], v["lineHeight"], str(v["fontWeight"])), n)
+    BY_TYPE.setdefault((v["fontFamily"].split(",")[0].replace('"', "").strip(), v["fontSize"], v["lineHeight"], str(v["fontWeight"]), v.get("letterSpacing", "0px")), n)
 
 USED = {}  # component -> tokens it cites
 _cur = [None]
@@ -211,9 +211,12 @@ def shadow(css):
     return raw(", ".join(f"{l['offsetX']} {l['offsetY']} {l['blur']} {l['spread']} {l['color']}{' inset' if l['inset'] else ''}" for l in layers))
 
 
-def typeset(fz, lh, fw, f):
-    n = BY_TYPE.get((fam(f), fz, lh, str(fw)))
-    return cite(n) if n else raw(font(fz, lh, fw, f))
+def typeset(fz, lh, fw, f, ls="normal"):
+    """A text style -> its typography token when family, size, line height, weight and letter spacing all
+    match; otherwise the measured style, with its letter spacing when it is not zero."""
+    ls = "0px" if ls in ("normal", "0px", "") else num(ls)
+    n = BY_TYPE.get((fam(f), fz, lh, str(fw), ls))
+    return cite(n) if n else raw(font(fz, lh, fw, f) + (f", letter spacing {ls}" if ls != "0px" else ""))
 
 
 def dur_ms(d):
@@ -274,11 +277,20 @@ def props(v):
             o["shadow"] = sh
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
         o["outline"] = f"{dim_named(s['outlineWidth'], ['focus.width', 'borderWidth.focus'])} {s['outlineStyle']} {colour(s['outlineColor'], role='line')}, offset {dim_named(s['outlineOffset'], ['focus.offset', 'focus.offset-astryx']) if s['outlineOffset'] != '0px' else '0px'}"
+    if "outline" not in o:
+        # a focus ring drawn by a child (the link inside a pagination item) or by a parent
+        ring = next((p for p in v.get("paint", [])[1:] if p.get("outline")), None)
+        if ring:
+            o["outline"] = f"on {re.sub(r'[.].*$', '', ring['node'])}: {colour(ring['outline'], role='line')}"
+        else:
+            anc = next((a for a in v.get("ancestors", []) if a.get("outline") and not a["outline"].startswith(("0px", "medium none")) and "none" not in a["outline"]), None)
+            if anc:
+                o["outline"] = f"on its parent: {colour(anc['outline'], role='line')}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{typeset(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], role='text')}"
+        o["text"] = f"{typeset(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('letterSpacing', 'normal'))}, {colour(t['color'], role='text')}"
     else:
-        o["text"] = f"{typeset(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], role='text')}"
+        o["text"] = f"{typeset(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'], s.get('letterSpacing', 'normal'))}, {colour(s['color'], role='text')}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -545,17 +557,33 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
+def focus_change(c):
+    """What keyboard focus changes against the first state: an outline (on the element, a child or a
+    parent), a shadow ring, the border colour or the fill. None when it changes nothing visible."""
+    st = c["states"].get("focus-visible")
+    first = next((v for v in c["states"].values() if "style" in v), None)
+    if not st or "style" not in st or first is st:
+        return None
+    a, b = props(first), props(st)
+    bits = []
+    if b.get("outline") and b.get("outline") != a.get("outline"):
+        bits.append("outline " + b["outline"])
+    for key, label in (("shadow", "shadow ring"), ("border", "border"), ("background", "fill")):
+        if b.get(key) and b.get(key) != a.get(key):
+            bits.append(f"{label} {b[key]}")
+    return "; ".join(bits) or None
+
+
+_cur[0] = None
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
         continue
-    s = st["style"]
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
+    foc.append((k, focus_change(c)))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} show a visible change (an outline on the element, a child or a parent, a shadow ring, a border or a fill): {', '.join(with_ring)}. The other {len(without)} change nothing, so a keyboard user sees no focus: {', '.join(without)}. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
 W()
 W("**Pressed.** Gauth's primary buttons shrink when pressed instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.")
 W()
