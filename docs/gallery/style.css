@@ -249,3 +249,10 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
   .lightbox { grid-template-columns: 36px 1fr 36px; padding: 16px 2px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* ---------- scorecard */
+.score { font-variant-numeric: tabular-nums; color: var(--muted); }
+.meta .faint { color: var(--faint); }
+.meta .warn { color: #b4541c; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .meta .warn { color: #f0a46b; } }
+:root[data-theme="dark"] .meta .warn { color: #f0a46b; }

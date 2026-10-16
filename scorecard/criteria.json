@@ -1,4 +1,5 @@
 {
+ "version": "2",
  "layers": {
   "F": "Foundations",
   "C": "Components",
@@ -132,7 +133,8 @@
    "id": "C5",
    "layer": "Components",
    "title": "Behaviour",
-   "doneWhen": "Keyboard and screen-reader behaviour, and do and don't, per component."
+   "doneWhen": "Keyboard and screen-reader behaviour, and do and don't, per component.",
+   "capture": "keyboard and screen-reader behaviour and per-component misuses are decisions a product team writes down; a capture can record what it saw, but cannot read the spec off the interface."
   },
   {
    "id": "P1",
@@ -144,13 +146,15 @@
    "id": "V1",
    "layer": "Principles and voice",
    "title": "Principles",
-   "doneWhen": "3 to 5 principles that decide real trade-offs, each with an example."
+   "doneWhen": "3 to 5 principles that decide real trade-offs, each with an example.",
+   "capture": "principles are the reasons behind a product's choices; a capture sees the choices, not the reasons. The package's Do and don't list (K2) records the rules it can observe."
   },
   {
    "id": "V2",
    "layer": "Principles and voice",
    "title": "Voice",
-   "doneWhen": "Tone, capitalisation, vocabulary and a formula for messages."
+   "doneWhen": "Tone, capitalisation, vocabulary and a formula for messages.",
+   "capture": "voice guidelines (tone, vocabulary, message formula) are a team's own rules; a capture holds the product's copy, not the guideline behind it."
   },
   {
    "id": "A1",

@@ -63,12 +63,17 @@ function themeBadges(s) {
     .map((t) => `<span class="badge ${isDark(t) ? 'dark' : ''}">${esc(isDark(t) ? 'Dark' : 'Light')}</span>`).join('');
 }
 
+// The newest scorecard audit for a package: "16/25 met", or nothing when it has not
+// been graded yet. Pages live beside the gallery in the docs site.
+const scoreText = (s) => (s.score ? `${s.score.meets}/${s.score.applicable} met` : '');
+const scoreHref = (s) => `../scorecard/systems/${encodeURIComponent(s.slug)}/`;
+
 function card(s) {
   const strips = Object.values(s.swatches).map(strip).join('');
   return `<a class="card" href="#/${esc(s.slug)}">
     <div class="cover ${portrait(s) ? 'portrait' : ''}"><img loading="lazy" src="${url(s.cover.thumb)}" alt="${esc(s.name)} screenshot"><div class="badges">${themeBadges(s)}</div></div>
     <div class="card-body">
-      <div class="card-title"><h2>${esc(s.name)}</h2><span class="cat">${esc(DATA.categories[s.category] || s.category)}</span></div>
+      <div class="card-title"><h2>${esc(s.name)}</h2><span class="cat">${s.score ? `<span class="score" title="Scorecard, ${esc(s.score.date)}: ${s.score.partly} partly, ${s.score.missing} missing">${scoreText(s)}</span> · ` : ''}${esc(DATA.categories[s.category] || s.category)}</span></div>
       <p class="good">${esc(s.goodFor)}</p>
       <div class="card-foot"><span class="fontline">${esc(s.fonts.map((f) => f.family).join(' · ') || '—')}</span><div class="strips">${strips}</div></div>
     </div></a>`;
@@ -83,6 +88,7 @@ function row(s) {
     <td class="gf">${esc(s.goodFor)}</td>
     <td>${strip(first)}</td>
     <td>${esc(s.themes.map(themeLabel).join(', '))}</td>
+    <td class="dt">${esc(scoreText(s))}</td>
     <td class="dt">${esc(s.captured)}</td></tr>`;
 }
 
@@ -102,7 +108,7 @@ function renderIndex() {
     </div>
     ${!list.length ? '<p class="empty">No style matches. Clear the search or filters.</p>'
       : state.view === 'list'
-        ? `<div class="table-wrap"><table class="list"><thead><tr><th></th><th>Name</th><th>Category</th><th>Good for</th><th>Palette</th><th>Themes</th><th>Captured</th></tr></thead><tbody>${list.map(row).join('')}</tbody></table></div>`
+        ? `<div class="table-wrap"><table class="list"><thead><tr><th></th><th>Name</th><th>Category</th><th>Good for</th><th>Palette</th><th>Themes</th><th>Score</th><th>Captured</th></tr></thead><tbody>${list.map(row).join('')}</tbody></table></div>`
         : `<div class="grid">${list.map(card).join('')}</div>`}`;
   app.querySelectorAll('[data-cat]').forEach((b) => b.onclick = () => { state.cat = b.dataset.cat; save(); renderIndex(); });
   app.querySelectorAll('[data-platform]').forEach((b) => b.onclick = () => { state.platform = state.platform === b.dataset.platform ? 'all' : b.dataset.platform; save(); renderIndex(); });
@@ -173,6 +179,8 @@ function renderDetail(s, tab, docPath) {
           <dt>Package</dt><dd><code>${esc(s.dir)}/</code> · ${esc(s.shape)} shape</dd>
           <dt>Tags</dt><dd class="tags">${s.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</dd>
           ${s.notes ? `<dt>Note</dt><dd>${esc(s.notes)}</dd>` : ''}
+          ${s.score ? `<dt>Scorecard</dt><dd><a href="${scoreHref(s)}">${s.score.meets} of ${s.score.applicable} met</a> · ${s.score.partly} partly · ${s.score.missing} missing <span class="faint">(${esc(s.score.date)})</span></dd>` : ''}
+          ${s.score && s.score.contrast ? `<dt>Contrast</dt><dd class="warn">${esc(s.score.contrast)}</dd>` : ''}
         </dl>
       </div>
       <div class="hero-shot ${portrait(s) ? 'portrait' : ''}" data-lb="cover"><img src="${url(s.cover.thumb)}" alt="${esc(s.name)} screenshot"></div>

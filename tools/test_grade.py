@@ -1,0 +1,172 @@
+"""Tests for tools/grade.py. Run with `make test`."""
+import json
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+from unittest import mock
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import grade  # noqa: E402
+import scorecard  # noqa: E402
+
+ROLES = {"page": "light.bg", "surface": "light.card", "text": "light.ink", "muted": "light.soft",
+         "accent": "light.ink", "border": "light.ink"}
+
+
+def system_with(tokens: dict, readme: str = "# X\n", swatches=None) -> tuple[dict, tempfile.TemporaryDirectory]:
+    tmp = tempfile.TemporaryDirectory()
+    root = Path(tmp.name)
+    (root / "tokens.json").write_text(json.dumps(tokens))
+    (root / "README.md").write_text(readme)
+    system = {"slug": "x", "tokens": "tokens.json", "entry": "README.md",
+              "preview": {"swatches": swatches or {"light": ROLES}}}
+    return system, tmp
+
+
+def colours(**values):
+    return {"light": {k: {"$value": v, "$extensions": {"source": "m"}} for k, v in values.items()}}
+
+
+class ContrastTest(unittest.TestCase):
+    def run_grade(self, **values):
+        system, tmp = system_with(colours(**values))
+        with tmp, mock.patch.object(grade, "ROOT", Path(tmp.name)):
+            return grade.grade_contrast(system)
+
+    def test_all_pairs_pass(self):
+        g, why = self.run_grade(bg="#ffffff", card="#fafafa", ink="#111111", soft="#555555")
+        self.assertEqual(g, "meets")
+        self.assertIn("all 4 pairs", why)
+
+    def test_secondary_failing_is_partly_and_names_the_worst_pair(self):
+        g, why = self.run_grade(bg="#ffffff", card="#f7f7f7", ink="#111111", soft="#777777")
+        self.assertEqual(g, "partly")
+        self.assertIn("secondary fails 2 pairs", why)
+        self.assertIn("light.soft", why)
+
+    def test_primary_failing_is_missing(self):
+        g, _ = self.run_grade(bg="#ffffff", card="#ffffff", ink="#bbbbbb", soft="#555555")
+        self.assertEqual(g, "missing")
+
+    def test_theme_without_a_palette_borrows_the_paths_or_is_reported(self):
+        tokens = {**colours(bg="#ffffff", card="#fafafa", ink="#111111", soft="#555555"),
+                  "mobile": {k: {"$value": v} for k, v in
+                             dict(bg="#ffffff", card="#ffffff", ink="#111111", soft="#999999").items()}}
+        system, tmp = system_with(tokens)
+        system["themes"] = ["light", "mobile", "contrast"]
+        with tmp, mock.patch.object(grade, "ROOT", Path(tmp.name)):
+            g, why = grade.grade_contrast(system)
+        self.assertEqual(g, "partly")
+        self.assertIn("mobile muted (mobile.soft)", why)
+        self.assertIn("contrast not checked (no palette)", why)
+
+    def test_translucent_surface_is_blended_over_the_page(self):
+        g, why = self.run_grade(bg="#000000", card="rgba(255,255,255,0.05)", ink="#ffffff", soft="#cccccc")
+        self.assertEqual(g, "meets", why)
+
+
+class ProvenanceTest(unittest.TestCase):
+    def run_grade(self, tokens):
+        system, tmp = system_with(tokens)
+        with tmp, mock.patch.object(grade, "ROOT", Path(tmp.name)):
+            return grade.grade_provenance(system)
+
+    def test_every_label_style_counts(self):
+        tokens = {"a": {"$value": "1", "$extensions": {"source": "m"}}, "b": {"$value": "2", "$description": "d"},
+                  "c": {"value": "3", "description": "d"}}
+        self.assertEqual(self.run_grade(tokens), ("meets", "Script: 3 of 3 tokens name their source"))
+
+    def test_mostly_labelled_is_partly_and_few_is_missing(self):
+        labelled = {f"t{i}": {"$value": "1", "$description": "d"} for i in range(9)}
+        self.assertEqual(self.run_grade({**labelled, "x": {"$value": "1"}})[0], "partly")
+        self.assertEqual(self.run_grade({"x": {"$value": "1"}, "y": {"$value": "2"}})[0], "missing")
+
+
+class DoAndDontTest(unittest.TestCase):
+    def run_grade(self, readme):
+        system, tmp = system_with({}, readme)
+        with tmp, mock.patch.object(grade, "ROOT", Path(tmp.name)):
+            return grade.grade_do_and_dont(system)
+
+    def test_three_linked_rules_meet(self):
+        rules = "\n".join(f"{i}. **Do {i}.** See [shot](screenshots/a-{i}.png)." for i in range(1, 4))
+        self.assertEqual(self.run_grade(f"# X\n\n## Do and don't\n\n{rules}\n\n## Next\n\n- [x](b.png)\n")[0], "meets")
+
+    def test_rule_without_an_image_is_partly(self):
+        readme = "## Do and don't\n\n- Do a. [s](a.png)\n- Do b. [s](b.png)\n- Don't c.\n"
+        self.assertEqual(self.run_grade(readme), ("partly", "Script: 3 rules, 2 linking an image (needs 3+, all linked)"))
+
+    def test_link_on_a_wrapped_line_counts(self):
+        readme = ("## Do and don't\n\n1. **Do a.** Long rule that wraps,\n   see [s](a.png).\n"
+                  "2. **Do b.**\n   [s](b.png)\n3. Do c. [s](c.png)\n\nA closing paragraph [x](d.png).\n")
+        self.assertEqual(self.run_grade(readme), ("meets", "Script: 3 rules, each linking a screenshot or crop"))
+
+    def test_introduction_and_heading_suffix_are_skipped(self):
+        rules = "\n".join(f"- Do {i}. [s](s{i}.png)" for i in range(3))
+        readme = f"## Do and don't (observed)\n\nFollow these rules:\n\n{rules}\n"
+        self.assertEqual(self.run_grade(readme)[0], "meets")
+
+    def test_no_section_is_missing(self):
+        self.assertEqual(self.run_grade("# X\n\nSome text.\n")[0], "missing")
+
+    def test_section_ends_at_the_next_heading_of_its_level(self):
+        readme = "## Do and don't\n\n- Do a. [s](a.png)\n\n## Other\n\n- not a rule\n- nor this\n"
+        self.assertIn("1 rules", self.run_grade(readme)[1])
+
+
+class SnapshotTest(unittest.TestCase):
+    CRITERIA = {"version": "2", "layers": {"F": "Foundations"}, "criteria": [
+        {"id": "F15", "layer": "Foundations", "title": "Contrast", "doneWhen": "x"},
+        {"id": "V1", "layer": "Foundations", "title": "Principles", "doneWhen": "y", "capture": "not visible"},
+        {"id": "C1", "layer": "Foundations", "title": "Coverage", "doneWhen": "z"}]}
+    BASE = {"date": "2026-10-16", "rubric": "1", "method": "Review.", "_seq": 1, "systems": [
+        {"slug": "x", "grades": {"F15": {"grade": "meets", "evidence": "old"},
+                                 "V1": {"grade": "missing", "evidence": "none"},
+                                 "C1": {"grade": "partly", "evidence": "11/19"}}}]}
+
+    def test_scripted_grades_replace_capture_rules_apply_and_reviews_carry_over(self):
+        fresh = {"F15": {"grade": "partly", "evidence": "Script: new"}}
+        with mock.patch.object(grade, "scripted", return_value=fresh):
+            out = grade.snapshot(self.CRITERIA, self.BASE, [{"slug": "x"}], "2026-10-17")
+        g = out["systems"][0]["grades"]
+        self.assertEqual(g["F15"], fresh["F15"])
+        self.assertEqual(g["V1"]["grade"], "na")
+        self.assertEqual(g["C1"], {"grade": "partly", "evidence": "11/19"})
+        self.assertEqual((out["date"], out["base"], out["rubric"]), ("2026-10-17", "2026-10-16", "2"))
+        self.assertNotIn("_seq", out)
+        self.assertTrue(out["method"].endswith("Review."))
+
+    def test_regrading_a_scripted_snapshot_still_credits_the_review(self):
+        with mock.patch.object(grade, "scripted", return_value={}):
+            first = grade.snapshot(self.CRITERIA, self.BASE, [{"slug": "x"}], "2026-10-17")
+            second = grade.snapshot(self.CRITERIA, first, [{"slug": "x"}], "2026-10-18")
+        self.assertEqual(second["base"], "2026-10-16")
+        self.assertEqual(second["method"].count("Review."), 1)
+
+
+class OrderTest(unittest.TestCase):
+    def test_same_day_snapshots_load_in_run_order(self):
+        with tempfile.TemporaryDirectory() as d:
+            audits = Path(d) / "audits"
+            audits.mkdir()
+            (Path(d) / "criteria.json").write_text(json.dumps({"layers": {}, "criteria": []}))
+            for name, method in (("2026-10-16.json", "first"), ("2026-10-16-2.json", "second"),
+                                 ("2026-10-15.json", "zeroth")):
+                (audits / name).write_text(json.dumps({"date": name[:10], "method": method, "systems": []}))
+            with mock.patch.object(scorecard, "DATA", Path(d)):
+                _, loaded = scorecard.load()
+            self.assertEqual([a["method"] for a in loaded], ["zeroth", "first", "second"])
+
+
+class RealLibraryTest(unittest.TestCase):
+    def test_every_package_gets_all_scripted_grades(self):
+        for s in grade.catalog.load_catalog()["systems"]:
+            got = grade.scripted(s)
+            self.assertEqual(sorted(got), sorted(grade.SCRIPTED), s["slug"])
+            for g in got.values():
+                self.assertIn(g["grade"], scorecard.GRADES)
+
+
+if __name__ == "__main__":
+    unittest.main()
