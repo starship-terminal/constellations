@@ -1,0 +1,1921 @@
+{
+ "url": "https://www.gauth.com",
+ "read": "2026-10-17",
+ "pages": {
+  "home": "/",
+  "academy": "/course/science",
+  "unit": "/course/math/algebra-1?unit=real-numbers-and-sets",
+  "lesson-science": "/course/science/how-things-work-1/learn?entry_source=start&from=science",
+  "lesson-math": "/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail",
+  "atlas": "/atlas",
+  "news": "/news",
+  "plus": "/plus"
+ },
+ "reducedMotion": {
+  "home": [
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_playerFrameIncorrect",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_tutorLoading span",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.55; transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_closeButton, .shared_headerActions button, .shared_pageNavigationButton, .shared_playerFrame, .shared_progressDot, .shared_progressValue, .share",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_progressDotEntering",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_primaryButton, .shared_secondaryButton",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_prompt button",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_details, .shared_titleMotion h1",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running shared_quiz-intro-fade-only__fYmaWQ;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion h1",
+    "declarations": "transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_playerElement",
+    "declarations": "scroll-behavior: auto;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_quizIntroOverlay",
+    "declarations": "animation-duration: 1ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_completed, .LessonResultPage_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_confetti",
+    "declarations": "display: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-share-modal_action::before, .course-share-modal_closeButton, .course-share-modal_dialog, .course-share-modal_loadingShimmer, .course-share-modal_overlay",
+    "declarations": "animation-duration: 0.01ms; transition-duration: 0.01ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_text",
+    "declarations": "color: rgb(100, 106, 119); -webkit-text-fill-color: currentcolor; animation: auto ease 0s 1 normal none running none; background: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_stageQuizIntro > [data-lesson-stage=\"1\"]",
+    "declarations": "animation-duration: 0.12s;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_ugcLessonView [data-quiz-intro-action=\"true\"] [data-lesson-action-area=\"true\"] button:first-child",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running ugc_quiz-intro-action-fade-only__XjKHAu; transform: none;"
+   }
+  ],
+  "academy": [
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-create-modal_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.5;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".math-course-detail_bottomGlow, .math-course-detail_detailSkeletonBanner, .math-course-detail_detailSkeletonHeader, .math-course-detail_detailSkeletonRail > span, .math",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 1;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".math-course-detail_topicButtonInProgress.math-course-detail_topicButtonAnimated .math-course-detail_topicNodeSlot svg > path:first-child, .math-course-detail_topicCompletedGlo",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 1; transform: none;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".math-course-detail_topicButtonInProgress .math-course-detail_topicNodeSlot .math-course-detail_topicNodeInProgress, .math-course-detail_topicButtonInProgress .math-cou",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".catalog_mathSkeletonAction, .catalog_mathSkeletonCover, .catalog_mathSkeletonSubtitle, .catalog_mathSkeletonTitle, .catalog_mathSkeletonUnit, .catalog_skeleton",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".catalog_premiumCoverGeneratingImage, .catalog_premiumCoverGenerating",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_playerFrameIncorrect",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_tutorLoading span",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.55; transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_closeButton, .shared_headerActions button, .shared_pageNavigationButton, .shared_playerFrame, .shared_progressDot, .shared_progressValue, .share",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_progressDotEntering",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_primaryButton, .shared_secondaryButton",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_prompt button",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_details, .shared_titleMotion h1",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running shared_quiz-intro-fade-only__fYmaWQ;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion h1",
+    "declarations": "transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_playerElement",
+    "declarations": "scroll-behavior: auto;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_quizIntroOverlay",
+    "declarations": "animation-duration: 1ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_completed, .LessonResultPage_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_confetti",
+    "declarations": "display: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-share-modal_action::before, .course-share-modal_closeButton, .course-share-modal_dialog, .course-share-modal_loadingShimmer, .course-share-modal_overlay",
+    "declarations": "animation-duration: 0.01ms; transition-duration: 0.01ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_text",
+    "declarations": "color: rgb(100, 106, 119); -webkit-text-fill-color: currentcolor; animation: auto ease 0s 1 normal none running none; background: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_stageQuizIntro > [data-lesson-stage=\"1\"]",
+    "declarations": "animation-duration: 0.12s;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_ugcLessonView [data-quiz-intro-action=\"true\"] [data-lesson-action-area=\"true\"] button:first-child",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running ugc_quiz-intro-action-fade-only__XjKHAu; transform: none;"
+   }
+  ],
+  "unit": [
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-create-modal_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.5;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".math-course-detail_bottomGlow, .math-course-detail_detailSkeletonBanner, .math-course-detail_detailSkeletonHeader, .math-course-detail_detailSkeletonRail > span, .math",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 1;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".math-course-detail_topicButtonInProgress.math-course-detail_topicButtonAnimated .math-course-detail_topicNodeSlot svg > path:first-child, .math-course-detail_topicCompletedGlo",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 1; transform: none;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".math-course-detail_topicButtonInProgress .math-course-detail_topicNodeSlot .math-course-detail_topicNodeInProgress, .math-course-detail_topicButtonInProgress .math-cou",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".catalog_mathSkeletonAction, .catalog_mathSkeletonCover, .catalog_mathSkeletonSubtitle, .catalog_mathSkeletonTitle, .catalog_mathSkeletonUnit, .catalog_skeleton",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".catalog_premiumCoverGeneratingImage, .catalog_premiumCoverGenerating",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_playerFrameIncorrect",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_tutorLoading span",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.55; transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_closeButton, .shared_headerActions button, .shared_pageNavigationButton, .shared_playerFrame, .shared_progressDot, .shared_progressValue, .share",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_progressDotEntering",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_primaryButton, .shared_secondaryButton",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_prompt button",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_details, .shared_titleMotion h1",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running shared_quiz-intro-fade-only__fYmaWQ;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion h1",
+    "declarations": "transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_playerElement",
+    "declarations": "scroll-behavior: auto;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_quizIntroOverlay",
+    "declarations": "animation-duration: 1ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_completed, .LessonResultPage_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_confetti",
+    "declarations": "display: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-share-modal_action::before, .course-share-modal_closeButton, .course-share-modal_dialog, .course-share-modal_loadingShimmer, .course-share-modal_overlay",
+    "declarations": "animation-duration: 0.01ms; transition-duration: 0.01ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_text",
+    "declarations": "color: rgb(100, 106, 119); -webkit-text-fill-color: currentcolor; animation: auto ease 0s 1 normal none running none; background: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_stageQuizIntro > [data-lesson-stage=\"1\"]",
+    "declarations": "animation-duration: 0.12s;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_ugcLessonView [data-quiz-intro-action=\"true\"] [data-lesson-action-area=\"true\"] button:first-child",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running ugc_quiz-intro-action-fade-only__XjKHAu; transform: none;"
+   }
+  ],
+  "lesson-science": [
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_playerFrameIncorrect",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_tutorLoading span",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.55; transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_closeButton, .shared_headerActions button, .shared_pageNavigationButton, .shared_playerFrame, .shared_progressDot, .shared_progressValue, .share",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_progressDotEntering",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_primaryButton, .shared_secondaryButton",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_prompt button",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_details, .shared_titleMotion h1",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running shared_quiz-intro-fade-only__fYmaWQ;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion h1",
+    "declarations": "transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_playerElement",
+    "declarations": "scroll-behavior: auto;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_quizIntroOverlay",
+    "declarations": "animation-duration: 1ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_completed, .LessonResultPage_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_confetti",
+    "declarations": "display: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-share-modal_action::before, .course-share-modal_closeButton, .course-share-modal_dialog, .course-share-modal_loadingShimmer, .course-share-modal_overlay",
+    "declarations": "animation-duration: 0.01ms; transition-duration: 0.01ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_text",
+    "declarations": "color: rgb(100, 106, 119); -webkit-text-fill-color: currentcolor; animation: auto ease 0s 1 normal none running none; background: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_stageQuizIntro > [data-lesson-stage=\"1\"]",
+    "declarations": "animation-duration: 0.12s;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_ugcLessonView [data-quiz-intro-action=\"true\"] [data-lesson-action-area=\"true\"] button:first-child",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running ugc_quiz-intro-action-fade-only__XjKHAu; transform: none;"
+   },
+   {
+    "sheet": "css/async/(region$)/__course/course/science/(lessonSlug)/learn/page.a476f789f3.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_grid[data-camera-motion=\"follow\"]",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/async/(region$)/__course/course/science/(lessonSlug)/learn/page.a476f789f3.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_title",
+    "declarations": "animation: auto ease 0s 1 normal none running none; background-image: none;"
+   },
+   {
+    "sheet": "css/async/(region$)/__course/course/science/(lessonSlug)/learn/page.a476f789f3.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_board[data-camera-motion=\"follow\"]",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".x9kvfbb.x9kvfbb:not(#\\#):not(#\\#)",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".x14q22ui.x14q22ui:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "animation-delay: 0s;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".xnh0sag.xnh0sag:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "animation-duration: 3s;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".x1aquc0h.x1aquc0h:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "animation-name: none;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".xg83hb1.xg83hb1:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "scroll-behavior: auto;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".xwgk2z2.xwgk2z2:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "transition-delay: var(--_reveal-delay-reduced,0s,0s);"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".xsagj69.xsagj69:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "transition-duration: 0.01ms;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".xzg1mie.xzg1mie:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "transition-duration: 0.01s;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".xsr0bmt.xsr0bmt:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "transition-duration: 0s, 0s;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".x12w9bfk.x12w9bfk:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "transition-duration: 0s;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".x4wkmsb.x4wkmsb:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "transition-property: none;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".xk3h8ob.xk3h8ob.xk3h8ob:not(#\\#):not(#\\#):not(#\\#)",
+    "declarations": "animation-name: xuvekqa-B;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".xhhm9v0.xhhm9v0:not(#\\#):not(#\\#):not(#\\#):not(#\\#):not(#\\#):not(#\\#):not(#\\#)::before",
+    "declarations": "transition-delay: 0s;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".x1viac0w.x1viac0w:not(#\\#):not(#\\#):not(#\\#):not(#\\#):not(#\\#):not(#\\#):not(#\\#)::backdrop",
+    "declarations": "transition-duration: 0.01s;"
+   },
+   {
+    "sheet": "css/async/1865.e025fd4652.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".x13sdc92.x13sdc92:not(#\\#):not(#\\#):not(#\\#):not(#\\#):not(#\\#):not(#\\#):not(#\\#)::before",
+    "declarations": "transition-duration: 0s;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_stepper",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_image",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_graph",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_list",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_block",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_result",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_tutorLoading",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_stroke",
+    "declarations": "animation: auto ease 0s 1 normal none running none; stroke-dasharray: none; stroke-dashoffset: 0;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_swipe",
+    "declarations": "animation: auto ease 0s 1 normal none running none; transform: none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_spinner",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_microphone svg > rect",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_button svg > rect:first-child",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/async/8982.29c73ee1c0.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_shell",
+    "declarations": "transition: none;"
+   }
+  ],
+  "lesson-math": [
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_playerFrameIncorrect",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_tutorLoading span",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.55; transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_closeButton, .shared_headerActions button, .shared_pageNavigationButton, .shared_playerFrame, .shared_progressDot, .shared_progressValue, .share",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_progressDotEntering",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_primaryButton, .shared_secondaryButton",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_prompt button",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_details, .shared_titleMotion h1",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running shared_quiz-intro-fade-only__fYmaWQ;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion h1",
+    "declarations": "transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_playerElement",
+    "declarations": "scroll-behavior: auto;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_quizIntroOverlay",
+    "declarations": "animation-duration: 1ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_completed, .LessonResultPage_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_confetti",
+    "declarations": "display: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-share-modal_action::before, .course-share-modal_closeButton, .course-share-modal_dialog, .course-share-modal_loadingShimmer, .course-share-modal_overlay",
+    "declarations": "animation-duration: 0.01ms; transition-duration: 0.01ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_text",
+    "declarations": "color: rgb(100, 106, 119); -webkit-text-fill-color: currentcolor; animation: auto ease 0s 1 normal none running none; background: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_stageQuizIntro > [data-lesson-stage=\"1\"]",
+    "declarations": "animation-duration: 0.12s;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_ugcLessonView [data-quiz-intro-action=\"true\"] [data-lesson-action-area=\"true\"] button:first-child",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running ugc_quiz-intro-action-fade-only__XjKHAu; transform: none;"
+   },
+   {
+    "sheet": "css/async/(region$)/__course/course/math/(courseSlug)/(lessonSlug)/learn/page.a476f789f3.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_grid[data-camera-motion=\"follow\"]",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/async/(region$)/__course/course/math/(courseSlug)/(lessonSlug)/learn/page.a476f789f3.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_title",
+    "declarations": "animation: auto ease 0s 1 normal none running none; background-image: none;"
+   },
+   {
+    "sheet": "css/async/(region$)/__course/course/math/(courseSlug)/(lessonSlug)/learn/page.a476f789f3.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".canvas_board[data-camera-motion=\"follow\"]",
+    "declarations": "transition: none;"
+   }
+  ],
+  "atlas": [
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_playerFrameIncorrect",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_tutorLoading span",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.55; transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_closeButton, .shared_headerActions button, .shared_pageNavigationButton, .shared_playerFrame, .shared_progressDot, .shared_progressValue, .share",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_progressDotEntering",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_primaryButton, .shared_secondaryButton",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_prompt button",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_details, .shared_titleMotion h1",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running shared_quiz-intro-fade-only__fYmaWQ;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion h1",
+    "declarations": "transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_playerElement",
+    "declarations": "scroll-behavior: auto;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_quizIntroOverlay",
+    "declarations": "animation-duration: 1ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_completed, .LessonResultPage_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_confetti",
+    "declarations": "display: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-share-modal_action::before, .course-share-modal_closeButton, .course-share-modal_dialog, .course-share-modal_loadingShimmer, .course-share-modal_overlay",
+    "declarations": "animation-duration: 0.01ms; transition-duration: 0.01ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_text",
+    "declarations": "color: rgb(100, 106, 119); -webkit-text-fill-color: currentcolor; animation: auto ease 0s 1 normal none running none; background: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_stageQuizIntro > [data-lesson-stage=\"1\"]",
+    "declarations": "animation-duration: 0.12s;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_ugcLessonView [data-quiz-intro-action=\"true\"] [data-lesson-action-area=\"true\"] button:first-child",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running ugc_quiz-intro-action-fade-only__XjKHAu; transform: none;"
+   }
+  ],
+  "news": [
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_playerFrameIncorrect",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_tutorLoading span",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.55; transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_closeButton, .shared_headerActions button, .shared_pageNavigationButton, .shared_playerFrame, .shared_progressDot, .shared_progressValue, .share",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_progressDotEntering",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_primaryButton, .shared_secondaryButton",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_prompt button",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_details, .shared_titleMotion h1",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running shared_quiz-intro-fade-only__fYmaWQ;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion h1",
+    "declarations": "transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_playerElement",
+    "declarations": "scroll-behavior: auto;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_quizIntroOverlay",
+    "declarations": "animation-duration: 1ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_completed, .LessonResultPage_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_confetti",
+    "declarations": "display: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-share-modal_action::before, .course-share-modal_closeButton, .course-share-modal_dialog, .course-share-modal_loadingShimmer, .course-share-modal_overlay",
+    "declarations": "animation-duration: 0.01ms; transition-duration: 0.01ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_text",
+    "declarations": "color: rgb(100, 106, 119); -webkit-text-fill-color: currentcolor; animation: auto ease 0s 1 normal none running none; background: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_stageQuizIntro > [data-lesson-stage=\"1\"]",
+    "declarations": "animation-duration: 0.12s;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_ugcLessonView [data-quiz-intro-action=\"true\"] [data-lesson-action-area=\"true\"] button:first-child",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running ugc_quiz-intro-action-fade-only__XjKHAu; transform: none;"
+   }
+  ],
+  "plus": [
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_playerFrameIncorrect",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_tutorLoading span",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.55; transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_closeButton, .shared_headerActions button, .shared_pageNavigationButton, .shared_playerFrame, .shared_progressDot, .shared_progressValue, .share",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_progressDotEntering",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_primaryButton, .shared_secondaryButton",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_prompt button",
+    "declarations": "transition: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_details, .shared_titleMotion h1",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running shared_quiz-intro-fade-only__fYmaWQ;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_titleMotion h1",
+    "declarations": "transform: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_playerElement",
+    "declarations": "scroll-behavior: auto;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".pgc_quizIntroOverlay",
+    "declarations": "animation-duration: 1ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_completed, .LessonResultPage_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".LessonResultPage_confetti",
+    "declarations": "display: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-share-modal_action::before, .course-share-modal_closeButton, .course-share-modal_dialog, .course-share-modal_loadingShimmer, .course-share-modal_overlay",
+    "declarations": "animation-duration: 0.01ms; transition-duration: 0.01ms;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".shared_text",
+    "declarations": "color: rgb(100, 106, 119); -webkit-text-fill-color: currentcolor; animation: auto ease 0s 1 normal none running none; background: none;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_stageQuizIntro > [data-lesson-stage=\"1\"]",
+    "declarations": "animation-duration: 0.12s;"
+   },
+   {
+    "sheet": "css/main.1d799576e4.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".ugc_ugcLessonView [data-quiz-intro-action=\"true\"] [data-lesson-action-area=\"true\"] button:first-child",
+    "declarations": "animation: 0.16s ease-out 0s 1 normal both running ugc_quiz-intro-action-fade-only__XjKHAu; transform: none;"
+   }
+  ]
+ },
+ "reducedMotionPaint": {
+  "home": {
+   "sidebar item": {
+    "normal": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": false
+   },
+   "subject chip": {
+    "normal": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": false
+   }
+  },
+  "academy": {
+   "lesson card": {
+    "normal": {
+     "transitionProperty": "box-shadow",
+     "transitionDuration": "0.16s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "box-shadow",
+     "transitionDuration": "0.16s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": false
+   },
+   "category tab": {
+    "normal": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": false
+   },
+   "Create Course": {
+    "normal": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": false
+   }
+  },
+  "unit": {
+   "Start button": {
+    "normal": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": false
+   },
+   "topic node": {
+    "normal": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "all",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": false
+   }
+  },
+  "lesson-science": {
+   "transport button": {
+    "normal": {
+     "transitionProperty": "background-image, background-color, color, opacity, transform",
+     "transitionDuration": "0.125s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "background-image, background-color, color, opacity, transform",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": true
+   },
+   "Ask Tutor bar": {
+    "normal": {
+     "transitionProperty": "width",
+     "transitionDuration": "0.26s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "none",
+     "transitionDuration": "0s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": true
+   }
+  },
+  "atlas": {
+   "story card": {
+    "normal": {
+     "transitionProperty": "transform, box-shadow, border-color",
+     "transitionDuration": "0.25s, 0.25s, 0.25s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "transform, box-shadow, border-color",
+     "transitionDuration": "0.25s, 0.25s, 0.25s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": false
+   },
+   "recommendation chip": {
+    "normal": {
+     "transitionProperty": "box-shadow, transform, border-color",
+     "transitionDuration": "0.18s, 0.18s, 0.18s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "reduced": {
+     "transitionProperty": "box-shadow, transform, border-color",
+     "transitionDuration": "0.18s, 0.18s, 0.18s",
+     "animationName": "none",
+     "animationDuration": "0s"
+    },
+    "changed": false
+   }
+  }
+ },
+ "zIndex": {
+  "home": [
+   {
+    "el": "div.side-menu_side-menu.shell-layout_side-menu-wrap",
+    "z": 101,
+    "position": "fixed",
+    "w": 220,
+    "h": 900
+   },
+   {
+    "el": "header.pc-header_header",
+    "z": 99,
+    "position": "fixed",
+    "w": 1440,
+    "h": 60
+   },
+   {
+    "el": "footer.pc-footer-view_footer-wrap",
+    "z": 10,
+    "position": "relative",
+    "w": 1220,
+    "h": 244
+   },
+   {
+    "el": "div.pc_search-input",
+    "z": 2,
+    "position": "relative",
+    "w": 564,
+    "h": 52
+   },
+   {
+    "el": "button.demo-video_soundButton",
+    "z": 2,
+    "position": "absolute",
+    "w": 34,
+    "h": 34
+   },
+   {
+    "el": "div.slogan_slogan-content",
+    "z": 1,
+    "position": "relative",
+    "w": 1220,
+    "h": 603
+   },
+   {
+    "el": "div.atlas-intro_copy",
+    "z": 1,
+    "position": "relative",
+    "w": 323,
+    "h": 218
+   },
+   {
+    "el": "div.demo-video_preview.atlas-intro_preview",
+    "z": 1,
+    "position": "relative",
+    "w": 507,
+    "h": 285
+   },
+   {
+    "el": "div.student-comment_swiper-container",
+    "z": 1,
+    "position": "relative",
+    "w": 1220,
+    "h": 320
+   },
+   {
+    "el": "div",
+    "z": 1,
+    "position": "relative",
+    "w": 1220,
+    "h": 320
+   }
+  ],
+  "home: Sign in dialog open": [
+   {
+    "el": "div.modal-container_modal-container",
+    "z": 1084,
+    "position": "fixed",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "el": "div.side-menu_side-menu.shell-layout_side-menu-wrap",
+    "z": 101,
+    "position": "fixed",
+    "w": 220,
+    "h": 900
+   },
+   {
+    "el": "header.pc-header_header",
+    "z": 99,
+    "position": "fixed",
+    "w": 1440,
+    "h": 60
+   },
+   {
+    "el": "footer.pc-footer-view_footer-wrap",
+    "z": 10,
+    "position": "relative",
+    "w": 1220,
+    "h": 244
+   },
+   {
+    "el": "div.pc_search-input",
+    "z": 2,
+    "position": "relative",
+    "w": 564,
+    "h": 52
+   },
+   {
+    "el": "button.demo-video_soundButton",
+    "z": 2,
+    "position": "absolute",
+    "w": 34,
+    "h": 34
+   },
+   {
+    "el": "div.slogan_slogan-content",
+    "z": 1,
+    "position": "relative",
+    "w": 1220,
+    "h": 603
+   },
+   {
+    "el": "div.atlas-intro_copy",
+    "z": 1,
+    "position": "relative",
+    "w": 323,
+    "h": 218
+   },
+   {
+    "el": "div.demo-video_preview.atlas-intro_preview",
+    "z": 1,
+    "position": "relative",
+    "w": 507,
+    "h": 285
+   },
+   {
+    "el": "div.student-comment_swiper-container",
+    "z": 1,
+    "position": "relative",
+    "w": 1220,
+    "h": 320
+   },
+   {
+    "el": "div",
+    "z": 1,
+    "position": "relative",
+    "w": 1220,
+    "h": 320
+   }
+  ],
+  "home: PLUS dialog open": [
+   {
+    "el": "div.modal-container_modal-container.subscription-modal-parts_subscription-modal",
+    "z": 1082,
+    "position": "fixed",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "el": "div.side-menu_side-menu.shell-layout_side-menu-wrap",
+    "z": 101,
+    "position": "fixed",
+    "w": 220,
+    "h": 900
+   },
+   {
+    "el": "header.pc-header_header",
+    "z": 99,
+    "position": "fixed",
+    "w": 1440,
+    "h": 60
+   },
+   {
+    "el": "div.modal-container_modal-title.modal-container_icon-flex-end",
+    "z": 99,
+    "position": "absolute",
+    "w": 1060,
+    "h": 48
+   },
+   {
+    "el": "footer.pc-footer-view_footer-wrap",
+    "z": 10,
+    "position": "relative",
+    "w": 1220,
+    "h": 244
+   },
+   {
+    "el": "div.pc_search-input",
+    "z": 2,
+    "position": "relative",
+    "w": 564,
+    "h": 52
+   },
+   {
+    "el": "button.demo-video_soundButton",
+    "z": 2,
+    "position": "absolute",
+    "w": 34,
+    "h": 34
+   },
+   {
+    "el": "div.slogan_slogan-content",
+    "z": 1,
+    "position": "relative",
+    "w": 1220,
+    "h": 603
+   },
+   {
+    "el": "div.atlas-intro_copy",
+    "z": 1,
+    "position": "relative",
+    "w": 323,
+    "h": 218
+   },
+   {
+    "el": "div.demo-video_preview.atlas-intro_preview",
+    "z": 1,
+    "position": "relative",
+    "w": 507,
+    "h": 285
+   },
+   {
+    "el": "div.student-comment_swiper-container",
+    "z": 1,
+    "position": "relative",
+    "w": 1220,
+    "h": 320
+   },
+   {
+    "el": "div",
+    "z": 1,
+    "position": "relative",
+    "w": 1220,
+    "h": 320
+   }
+  ],
+  "academy": [
+   {
+    "el": "div.side-menu_side-menu.side-menu_side-menu-warm",
+    "z": 100,
+    "position": "fixed",
+    "w": 220,
+    "h": 900
+   },
+   {
+    "el": "header.pc-header_header.pc-header_transparent",
+    "z": 30,
+    "position": "fixed",
+    "w": 1440,
+    "h": 60
+   },
+   {
+    "el": "div.catalog_stickyToolbar",
+    "z": 20,
+    "position": "sticky",
+    "w": 1025,
+    "h": 75
+   },
+   {
+    "el": "button.catalog_createButton",
+    "z": 2,
+    "position": "relative",
+    "w": 141,
+    "h": 37
+   },
+   {
+    "el": "div.catalog_stickyToolbarContent",
+    "z": 1,
+    "position": "relative",
+    "w": 1025,
+    "h": 36
+   },
+   {
+    "el": "div.catalog_premiumInfo",
+    "z": 1,
+    "position": "relative",
+    "w": 308,
+    "h": 110
+   }
+  ],
+  "unit": [
+   {
+    "el": "div.side-menu_side-menu.side-menu_side-menu-warm",
+    "z": 100,
+    "position": "fixed",
+    "w": 220,
+    "h": 900
+   },
+   {
+    "el": "div.math-course-detail_learningPanelLayer",
+    "z": 19,
+    "position": "fixed",
+    "w": 1220,
+    "h": 146
+   },
+   {
+    "el": "header.pc-header_header.pc-header_transparent",
+    "z": 11,
+    "position": "fixed",
+    "w": 1440,
+    "h": 60
+   },
+   {
+    "el": "div.math-course-detail_backBar",
+    "z": 10,
+    "position": "sticky",
+    "w": 1025,
+    "h": 86
+   },
+   {
+    "el": "aside.math-course-detail_unitRail",
+    "z": 3,
+    "position": "sticky",
+    "w": 310,
+    "h": 632
+   },
+   {
+    "el": "div.math-course-detail_courseBannerCopy",
+    "z": 2,
+    "position": "relative",
+    "w": 301,
+    "h": 56
+   },
+   {
+    "el": "h3.math-course-detail_topicStop",
+    "z": 1,
+    "position": "absolute",
+    "w": 319,
+    "h": 104
+   },
+   {
+    "el": "section.math-course-detail_learningPanel",
+    "z": 1,
+    "position": "relative",
+    "w": 460,
+    "h": 146
+   },
+   {
+    "el": "span.math-course-detail_topicConnectorSegment",
+    "z": 0,
+    "position": "absolute",
+    "w": 220,
+    "h": 499
+   },
+   {
+    "el": "div.math-course-detail_bottomGlow",
+    "z": 0,
+    "position": "absolute",
+    "w": 643,
+    "h": 753
+   }
+  ],
+  "lesson-science": [
+   {
+    "el": "header.canvas_header",
+    "z": 3,
+    "position": "absolute",
+    "w": 1396,
+    "h": 40
+   },
+   {
+    "el": "div.canvas_bottomSlot",
+    "z": 3,
+    "position": "absolute",
+    "w": 820,
+    "h": 52
+   },
+   {
+    "el": "nav.astryx-outline.canvas_outline",
+    "z": 2,
+    "position": "absolute",
+    "w": 240,
+    "h": 118
+   },
+   {
+    "el": "div.canvas_rightMask",
+    "z": 1,
+    "position": "absolute",
+    "w": 420,
+    "h": 900
+   },
+   {
+    "el": "div.canvas_viewport",
+    "z": 0,
+    "position": "absolute",
+    "w": 1440,
+    "h": 900
+   }
+  ],
+  "lesson-math": [
+   {
+    "el": "div.shared_lessonPage",
+    "z": 1000,
+    "position": "fixed",
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "el": "button.shared_closeButton",
+    "z": 40,
+    "position": "fixed",
+    "w": 40,
+    "h": 40
+   },
+   {
+    "el": "aside.tutor_tutorControls",
+    "z": 20,
+    "position": "relative",
+    "w": 296,
+    "h": 48
+   },
+   {
+    "el": "header.shared_header",
+    "z": 20,
+    "position": "relative",
+    "w": 1080,
+    "h": 66
+   },
+   {
+    "el": "div.shared_tutorInputDock",
+    "z": 6,
+    "position": "absolute",
+    "w": 296,
+    "h": 48
+   },
+   {
+    "el": "aside.shared_tutorPanel",
+    "z": 5,
+    "position": "relative",
+    "w": 360,
+    "h": 900
+   },
+   {
+    "el": "div.shared_tutorAvatar",
+    "z": 3,
+    "position": "absolute",
+    "w": 53,
+    "h": 53
+   },
+   {
+    "el": "div.shared_prompt",
+    "z": 3,
+    "position": "absolute",
+    "w": 1046,
+    "h": 818
+   },
+   {
+    "el": "div.shared_tutorTopMask",
+    "z": 2,
+    "position": "absolute",
+    "w": 360,
+    "h": 140
+   },
+   {
+    "el": "div.shared_tutorTranscript",
+    "z": 1,
+    "position": "absolute",
+    "w": 296,
+    "h": 748
+   },
+   {
+    "el": "section.shared_playerFrame.shared_playerFrameWithAction",
+    "z": 1,
+    "position": "relative",
+    "w": 1048,
+    "h": 820
+   }
+  ],
+  "atlas": [
+   {
+    "el": "button.atlas-landing_send-button",
+    "z": 1000,
+    "position": "absolute",
+    "w": 36,
+    "h": 36
+   },
+   {
+    "el": "div.header_drawer",
+    "z": 101,
+    "position": "fixed",
+    "w": 230,
+    "h": 844
+   },
+   {
+    "el": "header.header_header",
+    "z": 99,
+    "position": "fixed",
+    "w": 1440,
+    "h": 56
+   },
+   {
+    "el": "footer.pc-footer-view_footer-wrap",
+    "z": 10,
+    "position": "relative",
+    "w": 1210,
+    "h": 302
+   },
+   {
+    "el": "div.atlas-landing_composer-toolbar",
+    "z": 4,
+    "position": "absolute",
+    "w": 834,
+    "h": 30
+   },
+   {
+    "el": "span.user-cases_newBadge",
+    "z": 3,
+    "position": "absolute",
+    "w": 41,
+    "h": 20
+   },
+   {
+    "el": "textarea.ant-input.ant-input-borderless",
+    "z": 2,
+    "position": "relative",
+    "w": 894,
+    "h": 78
+   },
+   {
+    "el": "div.atlas-landing_placeholder-container",
+    "z": 1,
+    "position": "absolute",
+    "w": 822,
+    "h": 22
+   },
+   {
+    "el": "span.atlas-faq-video-list_playIcon",
+    "z": 1,
+    "position": "absolute",
+    "w": 48,
+    "h": 48
+   },
+   {
+    "el": "span.atlas-faq-video-list_duration",
+    "z": 1,
+    "position": "absolute",
+    "w": 45,
+    "h": 22
+   }
+  ],
+  "news": [
+   {
+    "el": "div.side-menu_side-menu.shell-layout_side-menu-wrap",
+    "z": 101,
+    "position": "fixed",
+    "w": 220,
+    "h": 900
+   },
+   {
+    "el": "header.pc-header_header",
+    "z": 99,
+    "position": "fixed",
+    "w": 1440,
+    "h": 60
+   },
+   {
+    "el": "footer.pc-footer-view_footer-wrap",
+    "z": 10,
+    "position": "relative",
+    "w": 1220,
+    "h": 244
+   }
+  ],
+  "plus": [
+   {
+    "el": "div.side-menu_side-menu.shell-layout_side-menu-wrap",
+    "z": 101,
+    "position": "fixed",
+    "w": 220,
+    "h": 900
+   },
+   {
+    "el": "header.pc-header_header",
+    "z": 99,
+    "position": "fixed",
+    "w": 1440,
+    "h": 60
+   },
+   {
+    "el": "footer.pc-footer-view_footer-wrap",
+    "z": 10,
+    "position": "relative",
+    "w": 1220,
+    "h": 244
+   },
+   {
+    "el": "div.product-card_content",
+    "z": 1,
+    "position": "relative",
+    "w": 313,
+    "h": 409
+   },
+   {
+    "el": "div.plus-page_swiperContainer",
+    "z": 1,
+    "position": "relative",
+    "w": 742,
+    "h": 434
+   },
+   {
+    "el": "div",
+    "z": 1,
+    "position": "relative",
+    "w": 742,
+    "h": 434
+   }
+  ]
+ },
+ "brand": {
+  "themeColor": [
+   {
+    "content": "#ffffff",
+    "media": null
+   }
+  ],
+  "maskIcon": [],
+  "manifest": null
+ }
+}

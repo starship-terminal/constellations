@@ -44,6 +44,8 @@ def typo(v):
 
 def css_val(name, t):
     v, ty = t["$value"], t["$type"]
+    if isinstance(v, str) and v.startswith("{"):
+        return alias(v)
     if ty == "cubicBezier":
         return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
     if ty == "shadow":
