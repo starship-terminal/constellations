@@ -105,6 +105,19 @@ ROLE_ORDER = {
 DIM_PREF = ["size.control", "size.button", "size.icon", "radius", "spacing", "borderWidth", "focusRing", "opacity", "size", "layout"]
 
 
+# Components whose measured height is not a size to copy: say what decides it instead.
+SIZE_NOTE = {
+    "menu": "content height, `size.menu-width` wide",
+    "tooltip": "content height, at most `size.tooltip-max` wide",
+    "dialog": "content height, at most `size.modal-max` wide",
+    "dialog-scrim": "the whole viewport (fixed, inset 0)",
+    "weekly-summary-card": "content height, full content width",
+    "text-area-pill": "68px with one line (no token), grows with the text",
+    "link": "inline, the line height of its text",
+    "text-area": "one line of `typography.body.base` (24px), grows with the text",
+    "card-course": "150px square on Topics (no token; `size.course-tile` on the 2xl course shelf)",
+}
+SPEC = [""]  # the spec being written
 HINTS = []  # words of the spec being written (switch, radio, avatar, button3d); a token named for the component wins
 
 
@@ -217,10 +230,10 @@ def describe(s, th, base=None, o=None):
         out.append(("decoration", s["text-decoration-line"]))
     if base is None and px(s["height"]) == 63:
         out.append(("size", "`size.appBar` less its 1px border (calc(100% - 1px))"))
-    elif base is None and (px(s["height"]) or 999) <= 64:
+    elif base is None and SPEC[0] in SIZE_NOTE:
+        out.append(("size", SIZE_NOTE[SPEC[0]]))
+    elif base is None:
         out.append(("size", f"{name_dim(s['height'], th, 'size')} high"))
-    elif base is None:  # content-sized boxes (menus, dialogs, cards): the height is the content's, not a spec
-        out.append(("size", "content height"))
     if base is None:
         if s["border-radius"] != "0px":
             out.append(("radius", name_dim(s["border-radius"], th, "radius")))
@@ -245,6 +258,7 @@ STATE_LABEL = {"default": "default", "hover": "hover", "focus-visible": "focus-v
 
 def spec_table(name):
     rec = C[name]
+    SPEC[0] = name
     HINTS[:] = [w for w in re.split(r"-", name) if w not in ("button", "dark", "light", "on", "off", "selected", "default", "text", "setting", "row", "card")] + [name]
     rows = []
     for st in ("default", "hover", "focus-visible", "active"):
