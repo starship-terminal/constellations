@@ -76,6 +76,7 @@ def css_shadow(layers):
         c = ly["color"]
         if c.startswith("#"):
             c = "rgb(%d, %d, %d)" % tuple(int(c[i:i + 2], 16) for i in (1, 3, 5))
+        c = re.sub(r"(\d+\.\d+)\)", lambda m: f"{round(float(m.group(1)), 2):g})", c)  # computed styles round alpha to two places
         out.append(f"{c} {ly['offsetX']} {ly['offsetY']} {ly['blur']} {ly['spread']}" + (" inset" if ly.get("inset") else ""))
     return out
 
@@ -88,7 +89,8 @@ for theme in ("dark", "light"):
             if isinstance(v, str):
                 v = resolve(theme, v)
             if isinstance(v, (list, dict)):
-                BY_SHADOW[theme].setdefault(tuple(css_shadow(v)), n)
+                layers = [{**ly, "color": resolve(theme, ly["color"])} for ly in (v if isinstance(v, list) else [v])]
+                BY_SHADOW[theme].setdefault(tuple(css_shadow(layers)), n)
 
 # Dimensions, durations and curves by value, from core; the first group listed wins.
 BY_DIM = {}
@@ -105,6 +107,24 @@ for n, t in sorted(flat(T["core"]["space"], "space."), key=lambda nt: float(nt[1
 BY_ICON = {}
 for step in ("icon", "icon--sm", "icon--lg"):
     BY_ICON.setdefault(T["core"]["density"][step]["$value"], "density." + step)
+# Box sizes: a height is named by the control-height, size or layout token that holds it; a width
+# only by a layout width token, or by the height's token when the box is square (an icon button).
+# Content-driven widths stay raw.
+BY_HEIGHT, BY_WIDTH = {}, {}
+for n, t in flat(T["core"]["density"], "density."):
+    if n.startswith("density.h-control") and t["$type"] == "dimension":
+        BY_HEIGHT.setdefault(t["$value"], n)
+for grp in ("size", "layout"):
+    for n, t in flat(T["core"][grp], grp + "."):
+        if t["$type"] == "dimension":
+            (BY_WIDTH if n.endswith("width") else BY_HEIGHT).setdefault(t["$value"], n)
+BY_BW = {}
+for n, t in flat(T["core"]["borderWidth"], "borderWidth."):
+    if not n.endswith("focus-outline"):
+        BY_BW.setdefault(t["$value"], n)
+BY_BW.setdefault("2px", "borderWidth.focus-outline")
+BY_PRESS = {t["$value"]: "press." + n for n, t in T["core"]["press"].items() if not n.startswith("$") and t["$type"] == "number"}
+BY_OFFSET = {T["core"]["focusRing"]["outline-offset"]["$value"]: "focusRing.outline-offset"}
 BY_DUR = {}
 for n, t in flat(T["core"]["duration"], "duration."):
     ms = float(t["$value"].replace("ms", ""))
@@ -184,7 +204,7 @@ def colour(c, tokens=True, role=None):
     Every form is first rewritten as rgb()/rgba() text, then labelled in one pass, so no value is
     labelled twice."""
     def label(v):
-        if v == "rgba(0, 0, 0, 0)":
+        if v == "rgba(0, 0, 0, 0)" or v.endswith(", 0)"):
             return "transparent"
         if not tokens:
             return v
@@ -223,6 +243,12 @@ def num(x):
     return re.sub(r"(\d+\.\d\d)\d+", r"\1", str(x))
 
 
+BY_ROLE = {}
+for role, t in T["core"]["fontSize"].items():
+    lh_ = T["core"]["lineHeight"].get(role)
+    if not role.startswith("$") and lh_ and not str(t["$value"]).startswith("{"):
+        BY_ROLE.setdefault((t["$value"], lh_["$value"]), role)
+BY_WEIGHT = {str(t["$value"]): "fontWeight." + n for n, t in T["core"]["fontWeight"].items() if not n.startswith("$")}
 # Type by (family, size, line height, weight), from the composite typography tokens; the plain
 # role names (body-regular) before the measured ones that share a value.
 BY_TYPE = {}
@@ -238,8 +264,15 @@ def font(fz, lh, fw, f):
     lh = lh.replace("px", "") if lh != "normal" else "normal"
     raw = f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
     if fam(f) == "Anthropicons":  # an icon glyph: its size is an icon step, not a type role
-        return f"Anthropicons {tok(BY_ICON.get(fz), fz)} at weight {fw}"
-    return tok(BY_TYPE.get((fam(f), num(fz.replace("px", "")), num(lh), str(fw))), raw)
+        # cds sets the glyph's weight from its size (thinner as it grows), so the size token carries both
+        return f"Anthropicons {tok(BY_ICON.get(fz), f'{fz}, weight {fw}') if BY_ICON.get(fz) else f'{fz} at weight {fw}'}"
+    name = BY_TYPE.get((fam(f), num(fz.replace("px", "")), num(lh), str(fw)))
+    if not name and fam(f) == "Anthropic Sans" and (fz, lh + "px") in BY_ROLE and str(fw) in BY_WEIGHT:
+        # no composite style for this weight: name the role's size and line height and the weight
+        role = BY_ROLE[(fz, lh + "px")]
+        NAMED["token"] += 1
+        return f"`fontSize.{role}` / `lineHeight.{role}` at `{BY_WEIGHT[str(fw)]}` ({raw})"
+    return tok(name, raw)
 
 
 def dim(kind, value):
@@ -251,7 +284,8 @@ def shadow(raw):
     their inset sits on, since that first layer takes the page colour."""
     sh = colour(raw, tokens=False)
     layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
-    layers = [x for x in layers if not x.startswith("transparent") and not re.match(r"rgba\(0, 0, 0, 0\) 0px 0px 0px 0px", x)]
+    # layers that paint nothing: a transparent colour, or no offset, blur or spread (Tailwind's ring placeholders)
+    layers = [x for x in layers if not x.startswith("transparent") and not re.match(r"rgba\([^)]*, 0\) ", x) and not re.search(r" 0px 0px 0px 0px( inset)?$", x)]
     if not layers:
         return None
     rgb = [re.sub(r"#([0-9a-f]{6})", lambda m: "rgb(%d, %d, %d)" % tuple(int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4)), x) for x in layers]
@@ -259,12 +293,19 @@ def shadow(raw):
     rings = [re.fullmatch(r"(.+) 0px 0px 0px ([\d.]+px)( inset)?", x) for x in rgb]
     if not name and all(rings):
         # a hairline drawn as a box-shadow: name its colour as a border
-        return ", ".join(f"{m.group(2)} ring{' inset' if m.group(3) else ''} {colour(m.group(1), role='border')}" for m in rings)
+        return ", ".join(f"{tok(BY_BW.get(m.group(2)), m.group(2))} ring{' inset' if m.group(3) else ''} {colour(m.group(1), role='border')}" for m in rings)
     if not name and rgb[0].endswith(" 0px 0px 0px 1px inset"):
         for k, n in BY_SHADOW[THEME[0]].items():
             if len(k) == len(rgb) > 1 and k[0].endswith(" 0px 0px 0px 1px inset") and list(k[1:]) == rgb[1:]:
                 name = n + " on this surface"
                 break
+    if not name and len(rgb) > 1:
+        # a hairline ring layered with a shadow token: name both parts
+        for i in (0, len(rgb) - 1):
+            ring, others = rings[i], tuple(rgb[:i] + rgb[i + 1:])
+            if ring and others in BY_SHADOW[THEME[0]]:
+                part = tok(BY_SHADOW[THEME[0]][others], ", ".join(others))
+                return f"{tok(BY_BW.get(ring.group(2)), ring.group(2))} ring{' inset' if ring.group(3) else ''} {colour(ring.group(1), role='border')} + {part}"
     return tok(name, ", ".join(layers))
 
 
@@ -272,14 +313,17 @@ def props(v):
     s = v["style"]
     o = {}
     HINTS[0] = hints_of(v.get("classes"))
-    o["size"] = f"{num(v['rect']['w'])} x {num(v['rect']['h'])}"
+    w, h = num(v["rect"]["w"]), num(v["rect"]["h"])
+    wt = BY_WIDTH.get(w + "px") or (BY_HEIGHT.get(h + "px") if w == h else None)
+    # a width no token holds is the instance's content width, written raw and not counted as a spec value
+    o["size"] = f"{tok(wt, w) if wt else w} x {tok(BY_HEIGHT.get(h + 'px'), h)}"
     pad = sides(s["paddingTop"], s["paddingRight"], s["paddingBottom"], s["paddingLeft"])
     if pad != "0px":
-        o["padding"] = " ".join(dim("pad", x) if x != "0px" else x for x in pad.split(" "))
+        o["padding"] = " ".join(dim("pad", x) if x != "0px" else "0" for x in pad.split(" "))
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role='border')}")
+            bds.append(f"{tok(BY_BW.get(s[f'border{d}Width']), s[f'border{d}Width'])} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role='border')}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
@@ -295,17 +339,30 @@ def props(v):
         sh = shadow(s["boxShadow"])
         if sh:
             o["shadow"] = sh
+    # cds often draws the focus ring on an inner layer (the button inside a row, a tab's own button,
+    # a row's link overlay); name it, with the layer it sits on
+    if "focus" not in (o.get("shadow") or ""):
+        for ly in (v.get("paint") or [])[:4]:
+            if ly.get("shadow") == s["boxShadow"]:
+                continue  # the element itself, whose shadow the row already gives
+            lab = shadow(ly["shadow"]) if ly.get("shadow") else None
+            # a shadow.focus ring, or any other ring drawn in the accent or danger colour (the sidebar
+            # row's link draws a 1px inset accent ring with a 6px glow, which no token holds)
+            if lab and ("`shadow.focus" in lab or re.search(r"#2a78d6|#d03b3b|42, 120, 214|208, 59, 59", lab)):
+                o["focus ring"] = f"on the inner {ly['node'].split('.')[0]}: {lab}"
+                break
     if s.get("backdropFilter", "none") != "none":
         o["backdrop"] = s["backdropFilter"]
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], role='border')}, offset {s['outlineOffset']}"
+        o["outline"] = f"{tok(BY_BW.get(s['outlineWidth']), s['outlineWidth'])} {s['outlineStyle']} {colour(s['outlineColor'], role='border')}, offset {tok(BY_OFFSET.get(s['outlineOffset']), s['outlineOffset']) if s['outlineOffset'] != '0px' else '0'}"
     t = v.get("textStyle")
     if t:
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], role='text')}"
     elif v.get("text"):
         o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], role='text')}"
     if s["textDecorationLine"] not in ("none", "") and v.get("text"):
-        o["underline"] = f"{colour(s['textDecorationColor'], role='text')}, offset {s['textUnderlineOffset']}"
+        uo = s["textUnderlineOffset"]
+        o["underline"] = f"{colour(s['textDecorationColor'], role='text')}, offset {tok('link.underline-offset' if uo == T['core']['link']['underline-offset']['$value'] else None, uo)}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -330,18 +387,20 @@ def props(v):
     sq = (v.get("squish") or {}).get("transform", "none")
     m = re.fullmatch(r"matrix\(([\d.]+), 0, 0, ([\d.]+), 0, 0\)", sq)
     if m and m.group(1) == m.group(2) and abs(float(m.group(1)) - 1) > 0.001:
-        o["press"] = f"paint layer scale({m.group(1)})"
+        o["press"] = f"paint layer {tok(BY_PRESS.get(float(m.group(1))), 'scale(' + m.group(1) + ')')}"
     if s["opacity"] != "1":
         o["opacity"] = tok(BY_OPACITY.get(s["opacity"]), s["opacity"])
     ic = v.get("icon")
     if ic and ic.get("w", 0) > 0 and ic["w"] < 120:
-        o["icon"] = f"{num(ic['w'])} x {num(ic['h'])}, {colour(ic.get('color') or ic.get('stroke') or ic.get('fill'), role='text')}"
+        iw, ih = num(ic["w"]), num(ic["h"])
+        it = BY_ICON.get(ih + "px")
+        o["icon"] = f"{tok(it, iw) if iw == ih and it else iw} x {tok(it, ih) if it else ih}, {colour(ic.get('color') or ic.get('stroke') or ic.get('fill'), role='text')}"
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"], role="text")
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "underline", "transition", "transform", "press", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "focus ring", "backdrop", "outline", "text", "underline", "transition", "transform", "press", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
@@ -361,7 +420,7 @@ def state_rows(c):
             diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
             for k in ORDER:
                 if k in base and k not in p:
-                    diff[k] = "none"
+                    diff[k] = "1" if k == "opacity" else "none"
             if not diff:
                 same.append(st)
                 continue
@@ -394,9 +453,11 @@ def child_layers(c):
         if p.get("bg"):
             bits.append("background " + colour(p["bg"], role="background"))
         if p.get("border"):
-            bits.append("border " + colour(p["border"].split(" | ")[0][2:], role="border"))
+            bw_, rest_ = p["border"].split(" | ")[0][2:].split(" ", 1)
+            bits.append("border " + tok(BY_BW.get(bw_), bw_) + " " + colour(rest_, role="border"))
         if p.get("radius"):
-            bits.append("radius " + (dim("radius", p["radius"]) if " " not in p["radius"] else p["radius"]))
+            r = "9999px" if re.fullmatch(r"[\d.]+e\+\d+px", p["radius"]) else p["radius"]
+            bits.append("radius " + (dim("radius", r) if " " not in r else r))
         if p.get("shadow"):
             bits.append("shadow " + (shadow(p["shadow"]) or "none"))
         out.append(" ".join(bits))
@@ -464,7 +525,7 @@ W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md
 W()
 W("How to read an entry:")
 W()
-W("- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A value no token holds is written raw: Tailwind's default curve `cubic-bezier(0.4, 0, 0.2, 1)`, odd paddings, most drop shadows inside components. @@NAMED@@")
+W("- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A height is named by the control-height, size or layout token that holds it; a width only when a layout width token holds it or the box is square, and otherwise it is the instance's content width, written raw and not counted below. A colour with zero alpha reads `transparent`. A value no token holds is written raw: a few line heights (14/21), odd paddings and some drop shadows inside components. @@NAMED@@")
 W("- Text is written as its typography token, then family size/line-height weight in brackets, then its colour, for example `` `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) ``, and is read from the first text node inside the component. A glyph from the icon font reads `Anthropicons` with its icon size step and weight.")
 W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do: a cds Button paints its fill on an inner span, so its hover shows there.")
 W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
@@ -532,16 +593,24 @@ for cid, c in C.items():
         if sname.endswith("focus-visible"):
             th = s["theme"]
             focus_n[th] += 1
-            if st["outlineStyle"] != "none" and float(st["outlineWidth"].replace("px", "")) > 0:
-                THEME[0] = th
-                focus[th][f"{st['outlineWidth']} {st['outlineStyle']} {colour(st['outlineColor'])} offset {st['outlineOffset']}"] += 1
+            THEME[0] = th
+            rest = c["states"].get(sname[: -len("focus-visible")].rstrip("-") or "default") or {}
+            rest = rest.get("style") or {}
+            visible = lambda col: not re.search(r"(, 0\)|/ 0\))$", col) and col != "rgba(0, 0, 0, 0)"
+            shs = [st["boxShadow"]] + [ly.get("shadow") or "" for ly in (s.get("paint") or [])[:4]]
+            outs = [ly.get("outline") or "" for ly in (s.get("paint") or [])[:4]]
+            if st["outlineStyle"] != "none" and float(st["outlineWidth"].replace("px", "")) > 0 and visible(st["outlineColor"]):
+                focus[th][f"a {st['outlineWidth']} {st['outlineStyle']} outline in {colour(st['outlineColor'], role='border')}, offset {st['outlineOffset']}"] += 1
+            elif any(re.search(r"42, 120, 214|0\.164706 0\.470588 0\.839216|208, 59, 59|0\.815686 0\.231373 0\.231373", x) for x in shs):
+                focus[th]["the shadow.focus ring (or shadow.focus-danger), on the element or an inner layer"] += 1
+            elif any(o and not o.split(" offset")[0].endswith(", 0)") for o in outs):
+                focus[th]["a 2px outline on an inner layer"] += 1
+            elif rest and st["boxShadow"] != rest.get("boxShadow"):
+                focus[th]["its own ring turns border.strong (the composer, a field that holds the caret)"] += 1
+            elif rest and st["backgroundColor"] != rest.get("backgroundColor"):
+                focus[th]["the hover wash, no ring"] += 1
             else:
-                # cds draws focus as a box-shadow (shadow.focus), on the element or on its first painted layer
-                shs = [st["boxShadow"]] + [ly.get("shadow") or "" for ly in (s.get("paint") or [])[:3]]
-                if any("42, 120, 214" in x or "0.164706 0.470588 0.839216" in x for x in shs):
-                    focus[th]["the shadow.focus ring (a 1px page-colour inset, a 1px fill.accent ring, a 6px glow)"] += 1
-                else:
-                    focus[th]["no ring painted on the element or its first layers"] += 1
+                focus[th]["nothing visible on the element or its first layers"] += 1
 for cid, c in C.items():
     for th, base, hov, ctr in (("dark", "default", "hover", hover_dark), ("light", "light", "light-hover", hover_light)):
         a, b = c["states"].get(base), c["states"].get(hov)
@@ -566,7 +635,7 @@ W(f"**Radius.** {top(radii, 10)}. Most of the interface is 8 (rows, icon buttons
 W()
 W(f"**Hover.** Claude hovers with a translucent wash of the text colour. Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. The wash is `fill.ghost-hover` (`rgba(255, 255, 255, 0.075)` in dark, `rgba(11, 11, 11, 0.05)` in light) on buttons, menu items and list rows; sidebar rows use `frame.hover`, the same wash in dark and a solid `#f0efec` in light; a selected row is `frame.selected` (15% white, or `#edece8`). A cds Button paints that fill on its inner `.cds-btn-squish` span, so the button itself reads \"no change\".")
 W()
-W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 4)}. In light: {top(focus['light'], 4)}. The common ring is `shadow.focus`: a 1px inset of the page colour, a 1px `fill.accent` blue (`#2a78d6`) ring and a 6px blue glow, so focus reads as a blue outline with a halo. Plain links and the composer's own buttons fall back to a 2px blue outline offset 2.")
+W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 4)}. In light: {top(focus['light'], 4)}. The common ring is `shadow.focus`: a 1px inset of the page colour, a 1px `fill.accent` blue (`#2a78d6`) ring and a 6px blue glow, so focus reads as a blue outline with a halo. The composer's mic and voice buttons, the Thought for N s pill and the message actions use a 2px blue outline offset 2 instead. A row (sidebar row, Chats row, settings nav item) puts the ring on its inner link or button and the sidebar rows add the hover wash; a tab puts it on its inner button. The segmented controls (Chat/Cowork, the Theme picker) are radio groups whose checked radio takes the ring. Menu items take no ring: keyboard focus in a cds Menu is the same `fill.ghost-hover` wash as the pointer ([menu-item-keyboard](#menu-item-keyboard)). The one element that shows nothing is the search dialog's field row, whose focus is the caret in its text area. States named `refresh-focus-visible` were read on the 2026-10-17 copies for components whose 2026-10-04 copy had no focus reading.")
 W()
 W(f"**Motion.** {top(trans, 5)}. Buttons press on `duration.fast` (60 ms) and colour changes run 200 ms on the standard curve; the cds tokens name five durations (60, 120, 200, 300, 450 ms) and three curves (out, snap, overshoot), plus a `linear()` spring for button presses that DTCG cannot carry.")
 W()
@@ -643,12 +712,27 @@ W("- The thread is not virtualised: one copy rendered at three scroll positions 
 W("- Artifact previews are iframes and render as dark boxes where present.")
 W("- Hover and focus on the 390 wide copies were not measured (a phone has neither). The segmented controls' radio spans take no focus in a static copy, so their focus-visible state is skipped.")
 W("- Refreshed 2026-10-17 with nine more copies (Forms and feedback, and the overlays marked with that date). The 2026-10-04 screenshots and crops were not retaken, so the two days sit side by side: the Artifacts page is a list in the first and a grid of cards in the second.")
+W("- Focus was not read on the code block's copy button, the chat title's more button, search results, Artifacts list rows and a project's recent rows: their 2026-10-04 copies are gone and no 2026-10-17 copy shows them. The search dialog's field row shows no ring when its text area takes focus; the caret is the only sign.")
 W("- A toast was not captured: the toast region is mounted on every page but stayed empty, and the actions that raise one change the account. The text field's error state was read by setting `data-invalid` on the copy, so its ring is Claude's own CSS but the message under the field was never seen. A button's loading state needs a sent message.")
 W("- Streaming (a reply being written, the stop button), the artifact panel beside a chat, the Code mode, Cowork, the share sheet, and the Privacy, Billing and Usage settings panes were not captured: each would need sending a message or shows account and billing details.")
 W("- Chat and artifact titles are the owner's own. The account's name was replaced with \"Learner\" and its email with an example address, and two health-related titles were replaced with neutral ones, by the redaction file, which lives outside the repository.")
 W()
 
 out = "\n".join(L) + "\n"
-out = out.replace("@@NAMED@@", f"Of the {sum(NAMED.values())} colours, shadows and dimensions written in the entries, {NAMED['token']} ({round(100 * NAMED['token'] / sum(NAMED.values()))}%) name a token.")
+# The share is counted over what the entries actually say: every value written in a state row or a
+# child-layer line, named (a backticked token with its value in brackets) or raw. Zeros need no token and
+# a box's width is the instance's content width, so neither is counted.
+entries = out[out.index("## Components"):out.index("## Icon index")]
+written = "\n".join(l.split("|", 2)[2] for l in entries.split("\n") if l.startswith("| ") and not l.startswith("| State")) + "\n" + "\n".join(l for l in entries.split("\n") if l.startswith("Child layers"))
+TOKEN = re.compile(r"`[a-z][\w.-]*(?: on this surface)?` \((?:[^()]|\([^()]*\))*\)|`fontSize\.[^(]*\((?:[^()]|\([^()]*\))*\)")
+named = len(TOKEN.findall(written))
+rest = re.sub(r"`[^`]*`", "", TOKEN.sub("TOKEN", written))
+rest = re.sub(r"(?<![\w.])\d+(?:\.\d+)? x ", "", rest)  # content widths
+rest = re.sub(r"and \d+ more", "", rest)
+# a shadow no token holds is one raw value, however many layers it has
+rest = re.sub(r"shadow (?!TOKEN)[^;|\n]*", "shadow RAWSHADOW", rest)
+raw_shadows = rest.count("RAWSHADOW")
+raw = [m.group(0) for m in re.finditer(r"#[0-9a-f]{6}|rgba?\([^)]*\)|cubic-bezier\([^)]*\)|[A-Z][a-z]+ [A-Z]?[a-z]* ?\d+/[\d.]+ \d+|(?<![\w.])\d+(?:\.\d+)?(?:px|ms|s)?(?![\w.])", rest) if not re.fullmatch(r"0(px|s)?", m.group(0))] + ["shadow"] * raw_shadows
+out = out.replace("@@NAMED@@", f"Of the {named + len(raw)} values written in the state rows and child-layer lines below (zeros and content widths aside), {named} ({round(100 * named / (named + len(raw)))}%) name a token.")
 open("components.md", "w").write(out)
 print(f"components.md: {len(C)} components, {n_states} states, {n_crops} crops, {len(L)} lines")

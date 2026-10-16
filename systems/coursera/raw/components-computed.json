@@ -6410,6 +6410,772 @@
      ]
     }
    }
+  },
+  "reducedMotion": {
+   "search": [
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-amuahx.cds-ProductCard-base",
+     "component": "cds-ProductCard-base cds-ProductCard-grid",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-amuahx.cds-ProductCard-base:hover",
+     "component": "cds-ProductCard-base cds-ProductCard-grid",
+     "style": "transform: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-8wjfhv",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-8wjfhv:hover",
+     "style": "transform: none;"
+    }
+   ],
+   "course": [
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-112k3na",
+     "component": "cds-ContextualHelpIcon-customHelpIcon",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-112k3na .cds-ContextualHelpIcon-background, .css-112k3na .cds-ContextualHelpIcon-neck, .css-112k3na .cds-ContextualHelpIcon-dot, .css-112k3na .cds-ContextualHelpIcon-crosspath",
+     "component": "cds-ContextualHelpIcon-customHelpIcon",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-11g2uo0 .cds-ShowMoreList-ctaIcon",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-8129rc .cds-AccordionHeader-chevron",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-4cqb4a .cds-Loader-container .cds-Loader-fillCircle",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-4cqb4a .cds-Loader-container .cds-Loader-imageContainer",
+     "style": "animation: 1.5s ease-in-out 0s infinite normal none running loading-section-pulse;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-4cqb4a .cds-Loader-container .cds-Loader-mainCircle, .css-4cqb4a .cds-Loader-container .cds-Loader-secondaryCircle, .css-4cqb4a .cds-Loader-container .cds-Loader-tertiaryCircle",
+     "style": "animation: auto ease 0s 1 normal none running none; stroke-dashoffset: 0;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-sy8qzk .cds-ShowMoreContainer-ctaIcon",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-amuahx.cds-ProductCard-base",
+     "component": "cds-ProductCard-base cds-ProductCard-list",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-amuahx.cds-ProductCard-base:hover",
+     "component": "cds-ProductCard-base cds-ProductCard-list",
+     "style": "transform: none;"
+    }
+   ],
+   "home": [
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-piugqk.cds-ProductCard-base",
+     "component": "cds-ProductCard-base cds-ProductCard-list",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-piugqk.cds-ProductCard-base:hover",
+     "component": "cds-ProductCard-base cds-ProductCard-list",
+     "style": "transform: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-e95jwj.cds-ProductCard-base",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-e95jwj.cds-ProductCard-base:hover",
+     "style": "transform: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-ahw6eu .cds-ShowMoreList-ctaIcon",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-14bn4wa .cds-AccordionHeader-chevron",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-amuahx.cds-ProductCard-base",
+     "component": "cds-ProductCard-base cds-ProductCard-grid",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-amuahx.cds-ProductCard-base:hover",
+     "component": "cds-ProductCard-base cds-ProductCard-grid",
+     "style": "transform: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-4hi3m8.cds-ProductCard-base",
+     "component": "cds-ProductCard-base cds-ProductCard-grid",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-4hi3m8.cds-ProductCard-base:hover",
+     "component": "cds-ProductCard-base cds-ProductCard-grid",
+     "style": "transform: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-dlalbg.cds-ProductCard-base",
+     "component": "cds-ProductCard-base cds-ProductCard-grid",
+     "style": "transition: none;"
+    },
+    {
+     "media": "(prefers-reduced-motion: reduce)",
+     "selector": ".css-dlalbg.cds-ProductCard-base:hover",
+     "component": "cds-ProductCard-base cds-ProductCard-grid",
+     "style": "transform: none;"
+    }
+   ],
+   "productCardHoverReduce": {
+    "transition": "none",
+    "transform": "none",
+    "boxShadow": "rgb(233, 238, 247) 0px 0px 4px 0px, rgba(15, 17, 20, 0.1) 0px 4px 12px 4px"
+   }
+  },
+  "zIndex": {
+   "home": [
+    {
+     "zIndex": 3000,
+     "position": "sticky",
+     "node": "div.rc-GlobalPageHeaderContainer",
+     "size": "1440x105"
+    },
+    {
+     "zIndex": 1001,
+     "position": "relative",
+     "node": "div.cds-Search-base.cds-Search-default",
+     "testid": "search-autocomplete",
+     "size": "480x44"
+    },
+    {
+     "zIndex": 999,
+     "position": "relative",
+     "node": "div.",
+     "size": "1440x40"
+    },
+    {
+     "zIndex": 1,
+     "position": "absolute",
+     "node": "button.cds-149",
+     "size": "24x314"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "118x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "63x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "63x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "50x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "76x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "44x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "153x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "101x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "144x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "absolute",
+     "node": "button.cds-149",
+     "size": "24x42"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "175x24"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "175x24"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "175x24"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "175x24"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "76x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "44x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "151x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "44x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "76x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "76x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "44x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "44x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "76x20"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "button.cds-149.cds-button-disableElevation.cds-button-secondary",
+     "size": "179x36"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "63x24"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "44x24"
+    }
+   ],
+   "search": [
+    {
+     "zIndex": 10000,
+     "position": "fixed",
+     "node": "div.cds-207.cds-popoverDropdown-default",
+     "testid": "presentation",
+     "size": "1440x900"
+    },
+    {
+     "zIndex": 3000,
+     "position": "sticky",
+     "node": "div.rc-GlobalPageHeaderContainer",
+     "size": "1440x105"
+    },
+    {
+     "zIndex": 1001,
+     "position": "relative",
+     "node": "div.cds-Search-base.cds-Search-default",
+     "testid": "search-autocomplete",
+     "size": "480x44"
+    },
+    {
+     "zIndex": 999,
+     "position": "relative",
+     "node": "div.",
+     "size": "1440x40"
+    },
+    {
+     "zIndex": 2,
+     "position": "relative",
+     "node": "div.",
+     "testid": "sticky-filter-wrapper",
+     "size": "1376x52"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "208x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "67x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "67x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "152x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "205x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "67x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "208x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "152x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "67x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "152x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "147x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "89x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "67x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "187x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "152x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "217x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "152x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "67x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "147x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "180x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "104x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "102x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "187x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "102x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "132x38"
+    }
+   ],
+   "course": [
+    {
+     "zIndex": 11000,
+     "position": "absolute",
+     "node": "div.cds-192.cds-193.cds-194",
+     "testid": "tooltip",
+     "size": "127x41"
+    },
+    {
+     "zIndex": 3100,
+     "position": "absolute",
+     "node": "div.",
+     "testid": "ai-coach-chat-container",
+     "size": "415x795"
+    },
+    {
+     "zIndex": 3001,
+     "position": "fixed",
+     "node": "aside.",
+     "size": "416x795"
+    },
+    {
+     "zIndex": 3000,
+     "position": "sticky",
+     "node": "div.rc-GlobalPageHeaderContainer",
+     "size": "1440x105"
+    },
+    {
+     "zIndex": 1001,
+     "position": "relative",
+     "node": "div.cds-Search-base.cds-Search-default",
+     "testid": "search-autocomplete",
+     "size": "480x44"
+    },
+    {
+     "zIndex": 999,
+     "position": "relative",
+     "node": "div.",
+     "size": "1440x40"
+    },
+    {
+     "zIndex": 10,
+     "position": "relative",
+     "node": "div.coach-conversation-container",
+     "size": "415x795"
+    },
+    {
+     "zIndex": 10,
+     "position": "absolute",
+     "node": "button.cds-149.cds-button-disableElevation.cds-button-ghost",
+     "testid": "earlier-messages-button",
+     "size": "159x36"
+    },
+    {
+     "zIndex": 10,
+     "position": "absolute",
+     "node": "div.",
+     "size": "36x36"
+    },
+    {
+     "zIndex": 10,
+     "position": "absolute",
+     "node": "div.",
+     "size": "36x36"
+    },
+    {
+     "zIndex": 1,
+     "position": "absolute",
+     "node": "button.cds-149",
+     "size": "24x68"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "152x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "div.cds-CommonCard-interactiveArea",
+     "size": "152x38"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "button.cds-149.cds-button-disableElevation.cds-button-ghostInvert",
+     "size": "83x36"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "button.cds-149.cds-button-disableElevation.cds-button-ghost",
+     "size": "101x56"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "button.cds-149.cds-button-disableElevation.cds-button-ghostInvert",
+     "size": "94x36"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "button.cds-149.cds-AccordionHeader-button",
+     "size": "542x56"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "button.cds-149.cds-AccordionHeader-button",
+     "size": "542x56"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "button.cds-149.cds-AccordionHeader-button",
+     "size": "542x56"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "button.cds-149.cds-button-disableElevation.cds-button-secondary",
+     "testid": "chat-welcome-state-pill",
+     "size": "232x36"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "button.cds-149.cds-button-disableElevation.cds-button-secondary",
+     "testid": "chat-welcome-state-pill",
+     "size": "192x36"
+    },
+    {
+     "zIndex": 1,
+     "position": "relative",
+     "node": "button.cds-149.cds-button-disableElevation.cds-button-secondary",
+     "testid": "chat-welcome-state-pill",
+     "size": "282x36"
+    },
+    {
+     "zIndex": -1,
+     "position": "absolute",
+     "node": "div.",
+     "size": "2880x576"
+    }
+   ]
+  },
+  "darkParity": {
+   "course": {
+    "theme": "dark",
+    "heroBand": "rgba(0, 86, 210, 0.05)",
+    "heroBadge": "rgb(13, 47, 96)",
+    "statsCardShadow": "rgba(255, 255, 255, 0.2) 0px 8px 16px 0px",
+    "stickyNavShadow": "rgba(0, 0, 0, 0.24) 0px 2px 12px 0px",
+    "modalScrim": "rgba(99, 99, 99, 0.5)",
+    "modalScrimNode": "cds-222 cds-Modal-backdrop"
+   },
+   "search": {
+    "theme": "dark",
+    "tagTopAi": "rgb(60, 15, 138)"
+   }
+  },
+  "elevationRules": {
+   "home": [
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 3,
+     "selector": ":root"
+    }
+   ],
+   "search": [
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 2,
+     "selector": ".css-1imdok9 .cds-popoverDropdown-paper"
+    }
+   ],
+   "course": [
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 3,
+     "selector": ":root"
+    },
+    {
+     "level": 1,
+     "selector": ".css-a3e33x"
+    },
+    {
+     "level": 1,
+     "selector": ".css-m6ljsa"
+    },
+    {
+     "level": 1,
+     "selector": ".css-1u88u7m"
+    }
+   ]
+  },
+  "noMatch": {
+   "heading": "Results for \"zqxjvkwpq\"",
+   "results": 13,
+   "text": null
   }
  },
  "components": {
@@ -52071,6 +52837,3559 @@
    "url": "https://www.coursera.org/explore/generative-ai",
    "description": "Below 600 the h2 collapses to 0x0 and the heading is shown as a link: the same 600 20/24 text with a chevron icon (4px margin) after it, on the band's own link. Read in the 390 context only.",
    "selector": "block .cds-grid-item a (below 600)"
+  },
+  "login-dialog": {
+   "states": {
+    "opened": {
+     "tag": "div",
+     "classes": "cds-Dialog-dialog",
+     "emotion": "",
+     "text": "Log in or create account\n\nLearn on your own time from top universities and busin",
+     "rect": {
+      "x": 508,
+      "y": 126.5,
+      "w": 424,
+      "h": 647
+     },
+     "style": {
+      "display": "grid",
+      "position": "fixed",
+      "boxSizing": "border-box",
+      "width": "424px",
+      "height": "647px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "424px 0px",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, -212, -323.5)",
+      "overflow": "auto",
+      "zIndex": "auto",
+      "top": "450px"
+     },
+     "paint": [
+      {
+       "node": "div.cds-Dialog-dialog",
+       "size": "424.0x647.0",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "16px"
+      },
+      {
+       "node": "div",
+       "size": "0.0x0.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "header",
+       "size": "0.0x0.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(15, 17, 20, 0.1) 0px 2px 2px 0px"
+      },
+      {
+       "node": "button.cds-149.cds-iconButton-small",
+       "size": "36.0x36.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px inset",
+       "radius": "50%"
+      },
+      {
+       "node": "div.cds-167.cds-152",
+       "size": "368.0x48.0",
+       "bg": "rgb(255, 255, 255)",
+       "outline": "1px solid rgba(0, 0, 0, 0) offset 2px",
+       "radius": "8px"
+      },
+      {
+       "node": "div::before.cds-167.cds-152",
+       "size": "372pxx52px",
+       "shadow": "rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px",
+       "radius": "8px",
+       "inset": "-2px -2px -2px -2px"
+      },
+      {
+       "node": "fieldset.cds-203.cds-161",
+       "size": "368.0x53.0",
+       "border": "T:1px solid rgb(132, 149, 176) | R:1px solid rgb(132, 149, 176) | B:1px solid rgb(132, 149, 176) | L:1px solid rgb(132, 149, 176)",
+       "radius": "8px"
+      },
+      {
+       "node": "button",
+       "size": "368.0x48.0",
+       "bg": "rgb(0, 86, 210)",
+       "radius": "8px"
+      },
+      {
+       "node": "hr._1qzhthsv",
+       "size": "166.7x1.0",
+       "bg": "rgb(242, 245, 250)"
+      },
+      {
+       "node": "div",
+       "size": "34.7x18.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "hr._1qzhthsv",
+       "size": "166.7x1.0",
+       "bg": "rgb(242, 245, 250)"
+      },
+      {
+       "node": "button",
+       "size": "368.0x50.0",
+       "border": "T:1px solid rgb(13, 15, 18) | R:1px solid rgb(13, 15, 18) | B:1px solid rgb(13, 15, 18) | L:1px solid rgb(13, 15, 18)",
+       "radius": "8px"
+      },
+      {
+       "node": "button.FacebookAlternative",
+       "size": "368.0x50.0",
+       "border": "T:1px solid rgb(13, 15, 18) | R:1px solid rgb(13, 15, 18) | B:1px solid rgb(13, 15, 18) | L:1px solid rgb(13, 15, 18)",
+       "radius": "8px"
+      },
+      {
+       "node": "button",
+       "size": "368.0x50.0",
+       "border": "T:1px solid rgb(13, 15, 18) | R:1px solid rgb(13, 15, 18) | B:1px solid rgb(13, 15, 18) | L:1px solid rgb(13, 15, 18)",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "h2.cds-Typography-alignLeft",
+      "text": "Log in or create account",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "24px",
+      "lineHeight": "28px",
+      "fontWeight": "600",
+      "letterSpacing": "-0.12px",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(13, 15, 18)"
+     },
+     "crop": "components/crops/login-dialog-opened.png",
+     "extra": {
+      "scrim": {
+       "tag": "div",
+       "cls": "cds-222 cds-Modal-backdrop",
+       "backgroundColor": "rgba(99, 99, 99, 0.5)",
+       "backgroundImage": "none"
+      },
+      "layers": [
+       {
+        "node": "div.",
+        "zIndex": "10000",
+        "position": "fixed",
+        "bg": "rgba(0, 0, 0, 0)"
+       }
+      ]
+     }
+    }
+   },
+   "page": "login",
+   "url": "https://www.coursera.org/?authMode=login",
+   "description": "Log in or create account: the CDS dialog over a dimmed page, with the email field, a large primary Continue and three outlined social buttons.",
+   "selector": "[role=dialog]"
+  },
+  "text-field": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "cds-167 cds-152 cds-input-root cds-text-field-root cds-input-onLight cds-177 cds-168",
+     "emotion": "css-7uw4jt",
+     "text": "​",
+     "rect": {
+      "x": 536,
+      "y": 282.5,
+      "w": 368,
+      "h": 48
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "19.0016px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "text",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "div.cds-167.cds-152",
+       "size": "368.0x48.0",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "8px"
+      },
+      {
+       "node": "fieldset.cds-203.cds-161",
+       "size": "368.0x53.0",
+       "border": "T:1px solid rgb(132, 149, 176) | R:1px solid rgb(132, 149, 176) | B:1px solid rgb(132, 149, 176) | L:1px solid rgb(132, 149, 176)",
+       "radius": "8px"
+      }
+     ],
+     "crop": "components/crops/text-field-default.png",
+     "via": "at rest",
+     "extra": {
+      "fieldset": {
+       "border": "1px solid rgb(132, 149, 176)",
+       "radius": "8px",
+       "boxShadow": "none",
+       "outline": "rgb(13, 15, 18) none 0px"
+      },
+      "input": {
+       "font": "16px / 24px \"Source Sans Pro\", Arial, sans-serif",
+       "color": "rgb(13, 15, 18)",
+       "padding": "12px",
+       "ariaInvalid": "false"
+      },
+      "label": {
+       "font": "16px/20px 600",
+       "color": "rgb(13, 15, 18)"
+      },
+      "message": [],
+      "icon": null
+     }
+    },
+    "hover": {
+     "tag": "div",
+     "classes": "cds-167 cds-152 cds-input-root cds-text-field-root cds-input-onLight cds-177 cds-168",
+     "emotion": "css-7uw4jt",
+     "text": "​",
+     "rect": {
+      "x": 536,
+      "y": 282.5,
+      "w": 368,
+      "h": 48
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(240, 246, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "19.0016px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "text",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "div.cds-167.cds-152",
+       "size": "368.0x48.0",
+       "bg": "rgb(240, 246, 255)",
+       "radius": "8px"
+      },
+      {
+       "node": "fieldset.cds-203.cds-161",
+       "size": "368.0x53.0",
+       "border": "T:1px solid rgb(11, 64, 139) | R:1px solid rgb(11, 64, 139) | B:1px solid rgb(11, 64, 139) | L:1px solid rgb(11, 64, 139)",
+       "radius": "8px"
+      }
+     ],
+     "crop": "components/crops/text-field-hover.png",
+     "via": "mouse hover",
+     "extra": {
+      "fieldset": {
+       "border": "1px solid rgb(11, 64, 139)",
+       "radius": "8px",
+       "boxShadow": "none",
+       "outline": "rgb(13, 15, 18) none 0px"
+      },
+      "input": {
+       "font": "16px / 24px \"Source Sans Pro\", Arial, sans-serif",
+       "color": "rgb(13, 15, 18)",
+       "padding": "12px",
+       "ariaInvalid": "false"
+      },
+      "label": {
+       "font": "16px/20px 600",
+       "color": "rgb(13, 15, 18)"
+      },
+      "message": [],
+      "icon": null
+     }
+    },
+    "focus-visible": {
+     "tag": "div",
+     "classes": "cds-167 cds-152 cds-input-root cds-text-field-root cds-input-onLight cds-177 cds-169 cds-154 cds-input-focused cds-text-field-focused cds-168",
+     "emotion": "css-7uw4jt",
+     "text": "​",
+     "rect": {
+      "x": 536,
+      "y": 282.5,
+      "w": 368,
+      "h": 48
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "1px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgba(0, 0, 0, 0)",
+      "outlineOffset": "2px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "19.0016px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "text",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "::before": {
+      "content": "\"\"",
+      "width": "372px",
+      "height": "52px",
+      "position": "absolute",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "boxShadow": "rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRadius": "8px",
+      "outline": "rgb(13, 15, 18) none 0px",
+      "inset": "-2px -2px -2px -2px",
+      "opacity": "1",
+      "transition": "all"
+     },
+     "paint": [
+      {
+       "node": "div.cds-167.cds-152",
+       "size": "368.0x48.0",
+       "bg": "rgb(255, 255, 255)",
+       "outline": "1px solid rgba(0, 0, 0, 0) offset 2px",
+       "radius": "8px"
+      },
+      {
+       "node": "div::before.cds-167.cds-152",
+       "size": "372pxx52px",
+       "shadow": "rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px",
+       "radius": "8px",
+       "inset": "-2px -2px -2px -2px"
+      },
+      {
+       "node": "fieldset.cds-203.cds-161",
+       "size": "368.0x53.0",
+       "border": "T:1px solid rgb(132, 149, 176) | R:1px solid rgb(132, 149, 176) | B:1px solid rgb(132, 149, 176) | L:1px solid rgb(132, 149, 176)",
+       "radius": "8px"
+      }
+     ],
+     "crop": "components/crops/text-field-focus-visible.png",
+     "via": "Shift+Tab, Tab",
+     "extra": {
+      "fieldset": {
+       "border": "1px solid rgb(132, 149, 176)",
+       "radius": "8px",
+       "boxShadow": "none",
+       "outline": "rgb(13, 15, 18) none 0px"
+      },
+      "input": {
+       "font": "16px / 24px \"Source Sans Pro\", Arial, sans-serif",
+       "color": "rgb(13, 15, 18)",
+       "padding": "12px",
+       "ariaInvalid": "false"
+      },
+      "label": {
+       "font": "16px/20px 600",
+       "color": "rgb(13, 15, 18)"
+      },
+      "message": [],
+      "icon": null
+     }
+    },
+    "filled": {
+     "tag": "div",
+     "classes": "cds-167 cds-152 cds-input-root cds-text-field-root cds-input-onLight cds-177 cds-169 cds-154 cds-input-focused cds-text-field-focused cds-168",
+     "emotion": "css-7uw4jt",
+     "text": "​",
+     "rect": {
+      "x": 536,
+      "y": 282.5,
+      "w": 368,
+      "h": 48
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "1px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgba(0, 0, 0, 0)",
+      "outlineOffset": "2px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "19.0016px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "text",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "::before": {
+      "content": "\"\"",
+      "width": "372px",
+      "height": "52px",
+      "position": "absolute",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "boxShadow": "rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRadius": "8px",
+      "outline": "rgb(13, 15, 18) none 0px",
+      "inset": "-2px -2px -2px -2px",
+      "opacity": "1",
+      "transition": "all"
+     },
+     "paint": [
+      {
+       "node": "div.cds-167.cds-152",
+       "size": "368.0x48.0",
+       "bg": "rgb(255, 255, 255)",
+       "outline": "1px solid rgba(0, 0, 0, 0) offset 2px",
+       "radius": "8px"
+      },
+      {
+       "node": "div::before.cds-167.cds-152",
+       "size": "372pxx52px",
+       "shadow": "rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px",
+       "radius": "8px",
+       "inset": "-2px -2px -2px -2px"
+      },
+      {
+       "node": "fieldset.cds-203.cds-161",
+       "size": "368.0x53.0",
+       "border": "T:1px solid rgb(132, 149, 176) | R:1px solid rgb(132, 149, 176) | B:1px solid rgb(132, 149, 176) | L:1px solid rgb(132, 149, 176)",
+       "radius": "8px"
+      }
+     ],
+     "crop": "components/crops/text-field-filled.png",
+     "via": "typed \"not-an-email\", focus kept",
+     "extra": {
+      "fieldset": {
+       "border": "1px solid rgb(132, 149, 176)",
+       "radius": "8px",
+       "boxShadow": "none",
+       "outline": "rgb(13, 15, 18) none 0px"
+      },
+      "input": {
+       "font": "16px / 24px \"Source Sans Pro\", Arial, sans-serif",
+       "color": "rgb(13, 15, 18)",
+       "padding": "12px",
+       "ariaInvalid": "false"
+      },
+      "label": {
+       "font": "16px/20px 600",
+       "color": "rgb(13, 15, 18)"
+      },
+      "message": [],
+      "icon": null
+     }
+    },
+    "error": {
+     "tag": "div",
+     "classes": "cds-167 cds-152 cds-input-root cds-text-field-root cds-input-onLight cds-177 cds-169 cds-154 cds-input-focused cds-text-field-focused cds-168",
+     "emotion": "css-7uw4jt",
+     "text": "​",
+     "rect": {
+      "x": 536,
+      "y": 313.1,
+      "w": 368,
+      "h": 48
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "1px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgba(0, 0, 0, 0)",
+      "outlineOffset": "2px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "19.0016px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "text",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "::before": {
+      "content": "\"\"",
+      "width": "372px",
+      "height": "52px",
+      "position": "absolute",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "boxShadow": "rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRadius": "8px",
+      "outline": "rgb(13, 15, 18) none 0px",
+      "inset": "-2px -2px -2px -2px",
+      "opacity": "1",
+      "transition": "all"
+     },
+     "paint": [
+      {
+       "node": "div.cds-167.cds-152",
+       "size": "368.0x48.0",
+       "bg": "rgb(255, 255, 255)",
+       "outline": "1px solid rgba(0, 0, 0, 0) offset 2px",
+       "radius": "8px"
+      },
+      {
+       "node": "div::before.cds-167.cds-152",
+       "size": "372pxx52px",
+       "shadow": "rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px",
+       "radius": "8px",
+       "inset": "-2px -2px -2px -2px"
+      },
+      {
+       "node": "fieldset.cds-203.cds-161",
+       "size": "368.0x53.0",
+       "border": "T:1px solid rgb(132, 149, 176) | R:1px solid rgb(132, 149, 176) | B:1px solid rgb(132, 149, 176) | L:1px solid rgb(132, 149, 176)",
+       "radius": "8px"
+      }
+     ],
+     "crop": "components/crops/text-field-error.png",
+     "via": "Enter with \"not-an-email\", every request aborted",
+     "extra": {
+      "fieldset": {
+       "border": "1px solid rgb(132, 149, 176)",
+       "radius": "8px",
+       "boxShadow": "none",
+       "outline": "rgb(13, 15, 18) none 0px"
+      },
+      "input": {
+       "font": "16px / 24px \"Source Sans Pro\", Arial, sans-serif",
+       "color": "rgb(13, 15, 18)",
+       "padding": "12px",
+       "ariaInvalid": "false"
+      },
+      "label": {
+       "font": "16px/20px 600",
+       "color": "rgb(13, 15, 18)"
+      },
+      "message": [],
+      "icon": null
+     }
+    },
+    "error-dialog": {
+     "tag": "div",
+     "classes": "cds-Dialog-dialog",
+     "emotion": "",
+     "text": "Log in or create account\n\nLearn on your own time from top universities and busin",
+     "rect": {
+      "x": 508,
+      "y": 95.9,
+      "w": 424,
+      "h": 708.11
+     },
+     "style": {
+      "display": "grid",
+      "position": "fixed",
+      "boxSizing": "border-box",
+      "width": "424px",
+      "height": "708.109px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "424px 0px",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, -212, -354.055)",
+      "overflow": "auto",
+      "zIndex": "auto",
+      "top": "450px"
+     },
+     "paint": [
+      {
+       "node": "div.cds-Dialog-dialog",
+       "size": "424.0x708.1",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "16px"
+      },
+      {
+       "node": "div",
+       "size": "0.0x0.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "header",
+       "size": "0.0x0.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(15, 17, 20, 0.1) 0px 2px 2px 0px"
+      },
+      {
+       "node": "button.cds-149.cds-iconButton-small",
+       "size": "36.0x36.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px inset",
+       "radius": "50%"
+      },
+      {
+       "node": "div",
+       "size": "368.0x61.1",
+       "bg": "rgb(250, 210, 216)",
+       "radius": "8px"
+      },
+      {
+       "node": "div.cds-167.cds-152",
+       "size": "368.0x48.0",
+       "bg": "rgb(255, 255, 255)",
+       "outline": "1px solid rgba(0, 0, 0, 0) offset 2px",
+       "radius": "8px"
+      },
+      {
+       "node": "div::before.cds-167.cds-152",
+       "size": "372pxx52px",
+       "shadow": "rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px",
+       "radius": "8px",
+       "inset": "-2px -2px -2px -2px"
+      },
+      {
+       "node": "fieldset.cds-203.cds-161",
+       "size": "368.0x53.0",
+       "border": "T:1px solid rgb(132, 149, 176) | R:1px solid rgb(132, 149, 176) | B:1px solid rgb(132, 149, 176) | L:1px solid rgb(132, 149, 176)",
+       "radius": "8px"
+      },
+      {
+       "node": "button",
+       "size": "368.0x48.0",
+       "bg": "rgb(0, 86, 210)",
+       "radius": "8px"
+      },
+      {
+       "node": "hr._1qzhthsv",
+       "size": "166.7x1.0",
+       "bg": "rgb(242, 245, 250)"
+      },
+      {
+       "node": "div",
+       "size": "34.7x18.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "hr._1qzhthsv",
+       "size": "166.7x1.0",
+       "bg": "rgb(242, 245, 250)"
+      },
+      {
+       "node": "button",
+       "size": "368.0x50.0",
+       "border": "T:1px solid rgb(13, 15, 18) | R:1px solid rgb(13, 15, 18) | B:1px solid rgb(13, 15, 18) | L:1px solid rgb(13, 15, 18)",
+       "radius": "8px"
+      },
+      {
+       "node": "button.FacebookAlternative",
+       "size": "368.0x50.0",
+       "border": "T:1px solid rgb(13, 15, 18) | R:1px solid rgb(13, 15, 18) | B:1px solid rgb(13, 15, 18) | L:1px solid rgb(13, 15, 18)",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "h2.cds-Typography-alignLeft",
+      "text": "Log in or create account",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "24px",
+      "lineHeight": "28px",
+      "fontWeight": "600",
+      "letterSpacing": "-0.12px",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(13, 15, 18)"
+     },
+     "crop": "components/crops/text-field-error-dialog.png",
+     "via": "the whole dialog in its error state"
+    }
+   },
+   "page": "login",
+   "url": "https://www.coursera.org/?authMode=login",
+   "description": "CDS text field (the email field in the log-in dialog): cds-input-root with a notched-outline fieldset, label above with a red required star.",
+   "selector": "[role=dialog] .cds-input-root"
+  },
+  "button-primary-large": {
+   "states": {
+    "default": {
+     "tag": "button",
+     "classes": "",
+     "emotion": "css-lsq3gn",
+     "text": "Continue",
+     "rect": {
+      "x": 536,
+      "y": 346.5,
+      "w": 368,
+      "h": 48
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "12px",
+      "paddingRight": "32px",
+      "paddingBottom": "12px",
+      "paddingLeft": "32px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(0, 86, 210)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "background-color, box-shadow, color",
+      "transitionDuration": "0.25s, 0.25s, 0.25s",
+      "transitionTimingFunction": "ease-out, ease-out, ease-out",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button",
+       "size": "368.0x48.0",
+       "bg": "rgb(0, 86, 210)",
+       "radius": "8px"
+      }
+     ],
+     "crop": "components/crops/button-primary-large-default.png",
+     "via": "at rest"
+    },
+    "hover": {
+     "tag": "button",
+     "classes": "",
+     "emotion": "css-lsq3gn",
+     "text": "Continue",
+     "rect": {
+      "x": 536,
+      "y": 346.5,
+      "w": 368,
+      "h": 48
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "12px",
+      "paddingRight": "32px",
+      "paddingBottom": "12px",
+      "paddingLeft": "32px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(11, 64, 139)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "background-color, box-shadow, color",
+      "transitionDuration": "0.25s, 0.25s, 0.25s",
+      "transitionTimingFunction": "ease-out, ease-out, ease-out",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button",
+       "size": "368.0x48.0",
+       "bg": "rgb(11, 64, 139)",
+       "radius": "8px"
+      }
+     ],
+     "crop": "components/crops/button-primary-large-hover.png",
+     "via": "mouse hover"
+    },
+    "focus-visible": {
+     "tag": "button",
+     "classes": "",
+     "emotion": "css-lsq3gn",
+     "text": "Continue",
+     "rect": {
+      "x": 536,
+      "y": 346.5,
+      "w": 368,
+      "h": 48
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "12px",
+      "paddingRight": "32px",
+      "paddingBottom": "12px",
+      "paddingLeft": "32px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(0, 86, 210)",
+      "backgroundImage": "none",
+      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px, rgb(121, 58, 228) 0px 0px 0px 3px, rgb(240, 246, 255) 0px 0px 0px 4px",
+      "outlineWidth": "2px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgb(121, 58, 228)",
+      "outlineOffset": "2px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "background-color, box-shadow, color",
+      "transitionDuration": "0.25s, 0.25s, 0.25s",
+      "transitionTimingFunction": "ease-out, ease-out, ease-out",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button",
+       "size": "368.0x48.0",
+       "bg": "rgb(0, 86, 210)",
+       "shadow": "rgb(255, 255, 255) 0px 0px 0px 2px, rgb(121, 58, 228) 0px 0px 0px 3px, rgb(240, 246, 255) 0px 0px 0px 4px",
+       "outline": "2px solid rgb(121, 58, 228) offset 2px",
+       "radius": "8px"
+      }
+     ],
+     "crop": "components/crops/button-primary-large-focus-visible.png",
+     "via": "Shift+Tab, Tab"
+    },
+    "pressed": {
+     "tag": "button",
+     "classes": "",
+     "emotion": "css-lsq3gn",
+     "text": "Continue",
+     "rect": {
+      "x": 536,
+      "y": 346.5,
+      "w": 368,
+      "h": 48
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "12px",
+      "paddingRight": "32px",
+      "paddingBottom": "12px",
+      "paddingLeft": "32px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(44, 11, 101)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "background-color, box-shadow, color",
+      "transitionDuration": "0.25s, 0.25s, 0.25s",
+      "transitionTimingFunction": "ease-out, ease-out, ease-out",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button",
+       "size": "368.0x48.0",
+       "bg": "rgb(44, 11, 101)",
+       "radius": "8px"
+      }
+     ],
+     "crop": "components/crops/button-primary-large-pressed.png",
+     "via": "CDP forcePseudoState :active:hover"
+    }
+   },
+   "page": "login",
+   "url": "https://www.coursera.org/?authMode=login",
+   "description": "Large primary button (Continue in the log-in dialog), full width, 48px.",
+   "selector": "[role=dialog] button[type=submit]"
+  },
+  "button-social": {
+   "states": {
+    "default": {
+     "tag": "button",
+     "classes": "",
+     "emotion": "css-1rrv7fh",
+     "text": "Continue with Google",
+     "rect": {
+      "x": 536,
+      "y": 439.5,
+      "w": 368,
+      "h": 50
+     },
+     "style": {
+      "display": "block",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "50px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "12px",
+      "paddingRight": "16px",
+      "paddingBottom": "12px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "background-color, box-shadow, color",
+      "transitionDuration": "0.25s, 0.25s, 0.25s",
+      "transitionTimingFunction": "ease-out, ease-out, ease-out",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "button",
+       "size": "368.0x50.0",
+       "border": "T:1px solid rgb(13, 15, 18) | R:1px solid rgb(13, 15, 18) | B:1px solid rgb(13, 15, 18) | L:1px solid rgb(13, 15, 18)",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "span",
+      "text": "Continue with Google",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "letterSpacing": "0.14px",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 18,
+      "h": 18,
+      "fill": "rgb(35, 43, 58)",
+      "color": "rgb(35, 43, 58)"
+     },
+     "crop": "components/crops/button-social-default.png",
+     "via": "at rest"
+    },
+    "hover": {
+     "tag": "button",
+     "classes": "",
+     "emotion": "css-1rrv7fh",
+     "text": "Continue with Google",
+     "rect": {
+      "x": 536,
+      "y": 439.5,
+      "w": 368,
+      "h": 50
+     },
+     "style": {
+      "display": "block",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "50px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "12px",
+      "paddingRight": "16px",
+      "paddingBottom": "12px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(240, 246, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(11, 64, 139)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(11, 64, 139)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(11, 64, 139)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "background-color, box-shadow, color",
+      "transitionDuration": "0.25s, 0.25s, 0.25s",
+      "transitionTimingFunction": "ease-out, ease-out, ease-out",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "button",
+       "size": "368.0x50.0",
+       "border": "T:1px solid rgb(13, 15, 18) | R:1px solid rgb(13, 15, 18) | B:1px solid rgb(13, 15, 18) | L:1px solid rgb(13, 15, 18)",
+       "bg": "rgb(240, 246, 255)",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "span",
+      "text": "Continue with Google",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "letterSpacing": "0.14px",
+      "color": "rgb(11, 64, 139)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 18,
+      "h": 18,
+      "fill": "rgb(35, 43, 58)",
+      "color": "rgb(35, 43, 58)"
+     },
+     "crop": "components/crops/button-social-hover.png",
+     "via": "mouse hover"
+    },
+    "focus-visible": {
+     "tag": "button",
+     "classes": "",
+     "emotion": "css-1rrv7fh",
+     "text": "Continue with Google",
+     "rect": {
+      "x": 536,
+      "y": 439.5,
+      "w": 368,
+      "h": 50
+     },
+     "style": {
+      "display": "block",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "50px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "12px",
+      "paddingRight": "16px",
+      "paddingBottom": "12px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(240, 246, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px, rgb(121, 58, 228) 0px 0px 0px 3px, rgb(240, 246, 255) 0px 0px 0px 4px",
+      "outlineWidth": "2px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgb(0, 86, 210)",
+      "outlineOffset": "2px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "background-color, box-shadow, color",
+      "transitionDuration": "0.25s, 0.25s, 0.25s",
+      "transitionTimingFunction": "ease-out, ease-out, ease-out",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "button",
+       "size": "368.0x50.0",
+       "border": "T:1px solid rgb(13, 15, 18) | R:1px solid rgb(13, 15, 18) | B:1px solid rgb(13, 15, 18) | L:1px solid rgb(13, 15, 18)",
+       "bg": "rgb(240, 246, 255)",
+       "shadow": "rgb(255, 255, 255) 0px 0px 0px 2px, rgb(121, 58, 228) 0px 0px 0px 3px, rgb(240, 246, 255) 0px 0px 0px 4px",
+       "outline": "2px solid rgb(0, 86, 210) offset 2px",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "span",
+      "text": "Continue with Google",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "letterSpacing": "0.14px",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 18,
+      "h": 18,
+      "fill": "rgb(35, 43, 58)",
+      "color": "rgb(35, 43, 58)"
+     },
+     "crop": "components/crops/button-social-focus-visible.png",
+     "via": "Shift+Tab, Tab"
+    },
+    "pressed": {
+     "tag": "button",
+     "classes": "",
+     "emotion": "css-1rrv7fh",
+     "text": "Continue with Google",
+     "rect": {
+      "x": 536,
+      "y": 439.5,
+      "w": 368,
+      "h": 50
+     },
+     "style": {
+      "display": "block",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "50px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "12px",
+      "paddingRight": "16px",
+      "paddingBottom": "12px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(240, 246, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(44, 11, 101)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(44, 11, 101)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(44, 11, 101)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "background-color, box-shadow, color",
+      "transitionDuration": "0.25s, 0.25s, 0.25s",
+      "transitionTimingFunction": "ease-out, ease-out, ease-out",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "button",
+       "size": "368.0x50.0",
+       "border": "T:1px solid rgb(13, 15, 18) | R:1px solid rgb(13, 15, 18) | B:1px solid rgb(13, 15, 18) | L:1px solid rgb(13, 15, 18)",
+       "bg": "rgb(240, 246, 255)",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "span",
+      "text": "Continue with Google",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "letterSpacing": "0.14px",
+      "color": "rgb(44, 11, 101)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 18,
+      "h": 18,
+      "fill": "rgb(35, 43, 58)",
+      "color": "rgb(35, 43, 58)"
+     },
+     "crop": "components/crops/button-social-pressed.png",
+     "via": "CDP forcePseudoState :active:hover"
+    }
+   },
+   "page": "login",
+   "url": "https://www.coursera.org/?authMode=login",
+   "description": "Outlined social sign-in button (Continue with Google): white, 1px dark border, 48px.",
+   "selector": "[role=dialog] button:has-text(\"Continue with Google\")"
+  },
+  "coach-panel": {
+   "states": {
+    "opened": {
+     "tag": "div",
+     "classes": "coach-conversation-container",
+     "emotion": "css-ukj65i",
+     "text": "Your privacy and this chat\nYour chat history may be temporarily saved to persona",
+     "rect": {
+      "x": 1025,
+      "y": 105,
+      "w": 415,
+      "h": 795
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "415px",
+      "height": "795px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "auto hidden",
+      "zIndex": "10",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "div.coach-conversation-container",
+       "size": "415.0x795.0",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "16px"
+      },
+      {
+       "node": "div.cds-localNotification-hasActions",
+       "size": "383.0x192.0",
+       "bg": "rgb(227, 238, 255)",
+       "radius": "16px"
+      },
+      {
+       "node": "button.cds-149.cds-button-disableElevation",
+       "size": "65.6x36.0",
+       "bg": "rgb(0, 86, 210)",
+       "shadow": "rgb(0, 86, 210) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      },
+      {
+       "node": "button.cds-149.cds-button-disableElevation",
+       "size": "159.2x36.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(15, 17, 20, 0.2) 0px 0px 4px 0px",
+       "outline": "1px solid rgb(242, 245, 250) offset 0px",
+       "radius": "8px"
+      },
+      {
+       "node": "span",
+       "size": "194.5x28.0",
+       "bgImage": "linear-gradient(279deg, rgb(36, 219, 231) -5.78%, rgb(105, 35, 222) 12%)"
+      },
+      {
+       "node": "button.cds-149.cds-button-disableElevation",
+       "size": "191.8x36.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgb(193, 203, 219) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      },
+      {
+       "node": "button::before.cds-149.cds-button-disableElevation",
+       "size": "189.844pxx34px",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "7px",
+       "inset": "1px 1px 1px 1px"
+      },
+      {
+       "node": "button.cds-149.cds-button-disableElevation",
+       "size": "282.0x36.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgb(193, 203, 219) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      },
+      {
+       "node": "button::before.cds-149.cds-button-disableElevation",
+       "size": "279.984pxx34px",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "7px",
+       "inset": "1px 1px 1px 1px"
+      },
+      {
+       "node": "button.cds-149.cds-button-disableElevation",
+       "size": "231.8x36.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgb(193, 203, 219) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      },
+      {
+       "node": "button::before.cds-149.cds-button-disableElevation",
+       "size": "229.766pxx34px",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "7px",
+       "inset": "1px 1px 1px 1px"
+      },
+      {
+       "node": "button.cds-149.cds-iconButton-small",
+       "size": "36.0x36.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(15, 17, 20, 0.1) 0px 0px 4px 0px, rgba(15, 17, 20, 0.1) 0px 2px 12px 2px",
+       "radius": "50%"
+      },
+      {
+       "node": "button.cds-149.cds-iconButton-small",
+       "size": "36.0x36.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(15, 17, 20, 0.1) 0px 0px 4px 0px, rgba(15, 17, 20, 0.1) 0px 2px 12px 2px",
+       "radius": "50%"
+      },
+      {
+       "node": "form.cds-ChatResponseField-root",
+       "size": "383.0x56.0",
+       "bg": "rgb(242, 245, 250)",
+       "radius": "16px"
+      }
+     ],
+     "textStyle": {
+      "node": "h2.cds-inlineNotification-inlineNotificationTitle",
+      "text": "Your privacy and this chat",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "letterSpacing": "-0.048px",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 24,
+      "h": 24,
+      "fill": "none",
+      "color": "rgb(13, 15, 18)"
+     },
+     "crop": "components/crops/coach-panel-opened.png",
+     "extra": [
+      {
+       "node": "div.coach-conversation-container",
+       "zIndex": "10",
+       "position": "relative",
+       "borderLeft": "0px none rgb(13, 15, 18)"
+      },
+      {
+       "node": "div.",
+       "zIndex": "3100",
+       "position": "absolute",
+       "borderLeft": "0px none rgb(13, 15, 18)"
+      },
+      {
+       "node": "aside.",
+       "zIndex": "3001",
+       "position": "fixed",
+       "borderLeft": "1px solid rgb(193, 203, 219)"
+      }
+     ]
+    }
+   },
+   "page": "chat",
+   "url": "https://www.coursera.org/learn/machine-learning",
+   "description": "The AI coach side panel: white, 1px left rule, fixed beside <main>.",
+   "selector": "aside holding the chat"
+  },
+  "callout-info": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "cds-localNotification-hasActions",
+     "emotion": "css-1ni421v",
+     "text": "Your privacy and this chat\nYour chat history may be temporarily saved to persona",
+     "rect": {
+      "x": 1041,
+      "y": 157,
+      "w": 383,
+      "h": 192
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "383px",
+      "height": "192px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "12px",
+      "paddingRight": "16px",
+      "paddingBottom": "12px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(227, 238, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.cds-localNotification-hasActions",
+       "size": "383.0x192.0",
+       "bg": "rgb(227, 238, 255)",
+       "radius": "16px"
+      },
+      {
+       "node": "button.cds-149.cds-button-disableElevation",
+       "size": "65.6x36.0",
+       "bg": "rgb(0, 86, 210)",
+       "shadow": "rgb(0, 86, 210) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "h2.cds-inlineNotification-inlineNotificationTitle",
+      "text": "Your privacy and this chat",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "letterSpacing": "-0.048px",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(0, 86, 210)"
+     },
+     "crop": "components/crops/callout-info-default.png"
+    }
+   },
+   "page": "chat",
+   "url": "https://www.coursera.org/learn/machine-learning",
+   "description": "Informative callout (Your privacy and this chat): blue-tint fill, info icon, title, body, primary button.",
+   "selector": "coach privacy notice"
+  },
+  "text-area": {
+   "states": {
+    "default": {
+     "tag": "form",
+     "classes": "cds-ChatResponseField-root",
+     "emotion": "css-1976kn",
+     "text": "",
+     "rect": {
+      "x": 1041,
+      "y": 789,
+      "w": 383,
+      "h": 56
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "383px",
+      "height": "56px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "8px",
+      "paddingRight": "8px",
+      "paddingBottom": "8px",
+      "paddingLeft": "8px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(242, 245, 250)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "form.cds-ChatResponseField-root",
+       "size": "383.0x56.0",
+       "bg": "rgb(242, 245, 250)",
+       "radius": "16px"
+      },
+      {
+       "node": "div.cds-ChatResponseField-focusRing",
+       "size": "0.0x0.0",
+       "border": "T:1px solid rgb(240, 246, 255) | R:1px solid rgb(240, 246, 255) | B:1px solid rgb(240, 246, 255) | L:1px solid rgb(240, 246, 255)",
+       "radius": "11px"
+      },
+      {
+       "node": "div::after.cds-ChatResponseField-focusRing",
+       "size": "autoxauto",
+       "border": "T:1px solid rgb(128, 78, 228) | R:1px solid rgb(128, 78, 228) | B:1px solid rgb(128, 78, 228) | L:1px solid rgb(128, 78, 228)",
+       "radius": "9px",
+       "inset": "2px 2px 2px 2px"
+      },
+      {
+       "node": "span.cds-149.cds-ChatResponseField-sendButton",
+       "size": "36.0x36.0",
+       "bg": "rgb(167, 180, 201)",
+       "shadow": "rgb(167, 180, 201) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      }
+     ],
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(218, 225, 237)"
+     },
+     "crop": "components/crops/text-area-default.png",
+     "via": "at rest",
+     "extra": {
+      "textarea": {
+       "size": "331x40",
+       "font": "16px/24px 400",
+       "color": "rgb(13, 15, 18)",
+       "padding": "8px",
+       "rows": 1,
+       "resize": "none",
+       "placeholder": "rgb(72, 84, 110)"
+      },
+      "send": null
+     }
+    },
+    "hover": {
+     "tag": "form",
+     "classes": "cds-ChatResponseField-root",
+     "emotion": "css-1976kn",
+     "text": "",
+     "rect": {
+      "x": 1041,
+      "y": 789,
+      "w": 383,
+      "h": 56
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "383px",
+      "height": "56px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "8px",
+      "paddingRight": "8px",
+      "paddingBottom": "8px",
+      "paddingLeft": "8px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(242, 245, 250)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "form.cds-ChatResponseField-root",
+       "size": "383.0x56.0",
+       "bg": "rgb(242, 245, 250)",
+       "radius": "16px"
+      },
+      {
+       "node": "div.cds-ChatResponseField-focusRing",
+       "size": "0.0x0.0",
+       "border": "T:1px solid rgb(240, 246, 255) | R:1px solid rgb(240, 246, 255) | B:1px solid rgb(240, 246, 255) | L:1px solid rgb(240, 246, 255)",
+       "radius": "11px"
+      },
+      {
+       "node": "div::after.cds-ChatResponseField-focusRing",
+       "size": "autoxauto",
+       "border": "T:1px solid rgb(128, 78, 228) | R:1px solid rgb(128, 78, 228) | B:1px solid rgb(128, 78, 228) | L:1px solid rgb(128, 78, 228)",
+       "radius": "9px",
+       "inset": "2px 2px 2px 2px"
+      },
+      {
+       "node": "span.cds-149.cds-ChatResponseField-sendButton",
+       "size": "36.0x36.0",
+       "bg": "rgb(167, 180, 201)",
+       "shadow": "rgb(167, 180, 201) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      }
+     ],
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(218, 225, 237)"
+     },
+     "crop": "components/crops/text-area-hover.png",
+     "via": "mouse hover",
+     "extra": {
+      "textarea": {
+       "size": "331x40",
+       "font": "16px/24px 400",
+       "color": "rgb(13, 15, 18)",
+       "padding": "8px",
+       "rows": 1,
+       "resize": "none",
+       "placeholder": "rgb(72, 84, 110)"
+      },
+      "send": null
+     }
+    },
+    "focus-visible": {
+     "tag": "form",
+     "classes": "cds-ChatResponseField-root",
+     "emotion": "css-1976kn",
+     "text": "",
+     "rect": {
+      "x": 1041,
+      "y": 789,
+      "w": 383,
+      "h": 56
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "383px",
+      "height": "56px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "8px",
+      "paddingRight": "8px",
+      "paddingBottom": "8px",
+      "paddingLeft": "8px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(242, 245, 250)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "form.cds-ChatResponseField-root",
+       "size": "383.0x56.0",
+       "bg": "rgb(242, 245, 250)",
+       "radius": "16px"
+      },
+      {
+       "node": "div.cds-ChatResponseField-focusRing",
+       "size": "391.0x64.0",
+       "border": "T:1px solid rgb(240, 246, 255) | R:1px solid rgb(240, 246, 255) | B:1px solid rgb(240, 246, 255) | L:1px solid rgb(240, 246, 255)",
+       "radius": "11px"
+      },
+      {
+       "node": "div::after.cds-ChatResponseField-focusRing",
+       "size": "385pxx58px",
+       "border": "T:1px solid rgb(128, 78, 228) | R:1px solid rgb(128, 78, 228) | B:1px solid rgb(128, 78, 228) | L:1px solid rgb(128, 78, 228)",
+       "radius": "9px",
+       "inset": "2px 2px 2px 2px"
+      },
+      {
+       "node": "span.cds-149.cds-ChatResponseField-sendButton",
+       "size": "36.0x36.0",
+       "bg": "rgb(167, 180, 201)",
+       "shadow": "rgb(167, 180, 201) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      }
+     ],
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(218, 225, 237)"
+     },
+     "crop": "components/crops/text-area-focus-visible.png",
+     "via": "Shift+Tab, Tab",
+     "extra": {
+      "textarea": {
+       "size": "331x40",
+       "font": "16px/24px 400",
+       "color": "rgb(13, 15, 18)",
+       "padding": "8px",
+       "rows": 1,
+       "resize": "none",
+       "placeholder": "rgb(72, 84, 110)"
+      },
+      "send": null
+     }
+    },
+    "filled": {
+     "tag": "form",
+     "classes": "cds-ChatResponseField-root",
+     "emotion": "css-1976kn",
+     "text": "",
+     "rect": {
+      "x": 1041,
+      "y": 789,
+      "w": 383,
+      "h": 56
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "383px",
+      "height": "56px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "8px",
+      "paddingRight": "8px",
+      "paddingBottom": "8px",
+      "paddingLeft": "8px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(242, 245, 250)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "form.cds-ChatResponseField-root",
+       "size": "383.0x56.0",
+       "bg": "rgb(242, 245, 250)",
+       "radius": "16px"
+      },
+      {
+       "node": "div.cds-ChatResponseField-focusRing",
+       "size": "391.0x64.0",
+       "border": "T:1px solid rgb(240, 246, 255) | R:1px solid rgb(240, 246, 255) | B:1px solid rgb(240, 246, 255) | L:1px solid rgb(240, 246, 255)",
+       "radius": "11px"
+      },
+      {
+       "node": "div::after.cds-ChatResponseField-focusRing",
+       "size": "385pxx58px",
+       "border": "T:1px solid rgb(128, 78, 228) | R:1px solid rgb(128, 78, 228) | B:1px solid rgb(128, 78, 228) | L:1px solid rgb(128, 78, 228)",
+       "radius": "9px",
+       "inset": "2px 2px 2px 2px"
+      },
+      {
+       "node": "button.cds-149.cds-ChatResponseField-sendButton",
+       "size": "36.0x36.0",
+       "bg": "rgb(0, 86, 210)",
+       "shadow": "rgb(0, 86, 210) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "textarea.cds-ChatResponseField-textarea",
+      "text": "What will I be able to build after this ",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/text-area-filled.png",
+     "via": "typed, never sent",
+     "extra": {
+      "textarea": {
+       "size": "331x40",
+       "font": "16px/24px 400",
+       "color": "rgb(13, 15, 18)",
+       "padding": "8px",
+       "rows": 1,
+       "resize": "none",
+       "placeholder": "rgb(72, 84, 110)"
+      },
+      "send": {
+       "label": "Send message",
+       "disabled": null,
+       "size": "36x36",
+       "bg": "rgb(0, 86, 210)",
+       "color": "rgb(255, 255, 255)",
+       "radius": "8px"
+      }
+     }
+    }
+   },
+   "page": "chat",
+   "url": "https://www.coursera.org/learn/machine-learning",
+   "description": "CDS chat text area (\"Ask anything...\"): a grey 16-radius form with an auto-growing textarea and a round send button.",
+   "selector": "form.cds-ChatResponseField-root"
+  },
+  "icon-button-send": {
+   "states": {
+    "disabled": {
+     "tag": "span",
+     "classes": "cds-149 cds-ChatResponseField-sendButton cds-iconButton-small cds-iconButton-primary cds-iconButton-disabled cds-150",
+     "emotion": "css-9jkubm",
+     "text": "Send message",
+     "rect": {
+      "x": 1380,
+      "y": 799,
+      "w": 36,
+      "h": 36
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "36px",
+      "height": "36px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(218, 225, 237)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(218, 225, 237)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(218, 225, 237)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(218, 225, 237)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(167, 180, 201)",
+      "backgroundImage": "none",
+      "boxShadow": "rgb(167, 180, 201) 0px 0px 0px 1px inset",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(218, 225, 237)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(218, 225, 237)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(218, 225, 237)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "default",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "span.cds-149.cds-ChatResponseField-sendButton",
+       "size": "36.0x36.0",
+       "bg": "rgb(167, 180, 201)",
+       "shadow": "rgb(167, 180, 201) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      }
+     ],
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(218, 225, 237)"
+     },
+     "crop": "components/crops/icon-button-send-disabled.png",
+     "via": "field empty"
+    },
+    "default": {
+     "tag": "button",
+     "classes": "cds-149 cds-ChatResponseField-sendButton cds-iconButton-small cds-iconButton-primary",
+     "emotion": "css-9jkubm",
+     "text": "Send message",
+     "rect": {
+      "x": 1380,
+      "y": 799,
+      "w": 36,
+      "h": 36
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "36px",
+      "height": "36px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(0, 86, 210)",
+      "backgroundImage": "none",
+      "boxShadow": "rgb(0, 86, 210) 0px 0px 0px 1px inset",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "button.cds-149.cds-ChatResponseField-sendButton",
+       "size": "36.0x36.0",
+       "bg": "rgb(0, 86, 210)",
+       "shadow": "rgb(0, 86, 210) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      }
+     ],
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/icon-button-send-default.png",
+     "via": "at rest"
+    },
+    "hover": {
+     "tag": "button",
+     "classes": "cds-149 cds-ChatResponseField-sendButton cds-iconButton-small cds-iconButton-primary",
+     "emotion": "css-9jkubm",
+     "text": "Send message",
+     "rect": {
+      "x": 1380,
+      "y": 799,
+      "w": 36,
+      "h": 36
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "36px",
+      "height": "36px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(11, 64, 139)",
+      "backgroundImage": "none",
+      "boxShadow": "rgb(11, 64, 139) 0px 0px 0px 1px inset",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "button.cds-149.cds-ChatResponseField-sendButton",
+       "size": "36.0x36.0",
+       "bg": "rgb(11, 64, 139)",
+       "shadow": "rgb(11, 64, 139) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      }
+     ],
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/icon-button-send-hover.png",
+     "via": "mouse hover"
+    },
+    "focus-visible": {
+     "tag": "button",
+     "classes": "cds-149 cds-ChatResponseField-sendButton cds-iconButton-small cds-iconButton-primary cds-151 cds-buttonBase-focusVisible",
+     "emotion": "css-9jkubm",
+     "text": "Send message",
+     "rect": {
+      "x": 1380,
+      "y": 799,
+      "w": 36,
+      "h": 36
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "36px",
+      "height": "36px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(11, 64, 139)",
+      "backgroundImage": "none",
+      "boxShadow": "rgb(11, 64, 139) 0px 0px 0px 1px inset",
+      "outlineWidth": "1px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgba(0, 0, 0, 0)",
+      "outlineOffset": "2px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "::after": {
+      "content": "\"\"",
+      "width": "40px",
+      "height": "40px",
+      "position": "absolute",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "boxShadow": "rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRadius": "8px",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "inset": "-2px -2px -2px -2px",
+      "opacity": "1",
+      "transition": "all"
+     },
+     "paint": [
+      {
+       "node": "button.cds-149.cds-ChatResponseField-sendButton",
+       "size": "36.0x36.0",
+       "bg": "rgb(11, 64, 139)",
+       "shadow": "rgb(11, 64, 139) 0px 0px 0px 1px inset",
+       "outline": "1px solid rgba(0, 0, 0, 0) offset 2px",
+       "radius": "8px"
+      },
+      {
+       "node": "button::after.cds-149.cds-ChatResponseField-sendButton",
+       "size": "40pxx40px",
+       "shadow": "rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px",
+       "radius": "8px",
+       "inset": "-2px -2px -2px -2px"
+      }
+     ],
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/icon-button-send-focus-visible.png",
+     "via": "Shift+Tab, Tab"
+    },
+    "pressed": {
+     "tag": "button",
+     "classes": "cds-149 cds-ChatResponseField-sendButton cds-iconButton-small cds-iconButton-primary",
+     "emotion": "css-9jkubm",
+     "text": "Send message",
+     "rect": {
+      "x": 1380,
+      "y": 799,
+      "w": 36,
+      "h": 36
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "36px",
+      "height": "36px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(60, 15, 138)",
+      "backgroundImage": "none",
+      "boxShadow": "rgb(60, 15, 138) 0px 0px 0px 1px inset",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "button.cds-149.cds-ChatResponseField-sendButton",
+       "size": "36.0x36.0",
+       "bg": "rgb(60, 15, 138)",
+       "shadow": "rgb(60, 15, 138) 0px 0px 0px 1px inset",
+       "radius": "8px"
+      }
+     ],
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/icon-button-send-pressed.png",
+     "via": "CDP forcePseudoState :active:hover"
+    }
+   },
+   "page": "chat",
+   "url": "https://www.coursera.org/learn/machine-learning",
+   "description": "Round send button in the chat field: filled primary when there is text, grey disabled when empty.",
+   "selector": "form.cds-ChatResponseField-root button"
+  },
+  "error-page": {
+   "states": {
+    "default": {
+     "tag": "body",
+     "classes": "",
+     "emotion": "",
+     "text": "We were not able to find the page you're looking for. Try browsing our course ca",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 900
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "content-box",
+      "width": "1440px",
+      "height": "900px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 0)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(0, 0, 0)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgb(245, 245, 245)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "Opensans-Light",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "body",
+       "size": "1440.0x900.0",
+       "bg": "rgb(245, 245, 245)"
+      },
+      {
+       "node": "div",
+       "size": "1440.0x65.0",
+       "bg": "rgb(255, 255, 255)"
+      }
+     ],
+     "textStyle": {
+      "node": "p",
+      "text": "We were not able to find the page you're",
+      "fontFamily": "Opensans-Light",
+      "fontSize": "20px",
+      "lineHeight": "normal",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 780,
+      "h": 350,
+      "fill": "rgb(0, 0, 0)",
+      "color": "rgb(0, 0, 0)"
+     },
+     "extra": {
+      "status": 404,
+      "message": {
+       "font": "16px Opensans-Light",
+       "color": "rgb(0, 0, 0)"
+      },
+      "link": {
+       "font": "20px Opensans-Light",
+       "color": "rgb(74, 144, 226)"
+      },
+      "ground": "rgb(245, 245, 245)",
+      "cdsVars": "none"
+     }
+    }
+   },
+   "page": "notfound",
+   "url": "https://www.coursera.org/learn/no-such-course-refresh-404",
+   "description": "The 404 page: logo bar, grey ground, an abstract illustration, one sentence with two links, three helpful links. It loads without CDS, so text falls back to the browser serif.",
+   "selector": "body"
+  },
+  "callout-error": {
+   "states": {
+    "error": {
+     "tag": "div",
+     "classes": "",
+     "emotion": "css-5vxwz0",
+     "text": "Invalid email. Please enter email as name@email.com",
+     "rect": {
+      "x": 536,
+      "y": 215.9,
+      "w": 368,
+      "h": 61.11
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "368px",
+      "height": "61.1094px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "18px",
+      "paddingRight": "22px",
+      "paddingBottom": "18px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(13, 15, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(13, 15, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(13, 15, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(13, 15, 18)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(250, 210, 216)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(13, 15, 18)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(13, 15, 18)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div",
+       "size": "368.0x61.1",
+       "bg": "rgb(250, 210, 216)",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "li",
+      "text": "Invalid email. Please enter email as nam",
+      "fontFamily": "\"Source Sans Pro\", Arial, sans-serif",
+      "fontSize": "12px",
+      "lineHeight": "18px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(13, 15, 18)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 24,
+      "h": 24,
+      "fill": "rgb(178, 24, 54)",
+      "color": "rgb(35, 43, 58)"
+     },
+     "crop": "components/crops/callout-error-error.png",
+     "extra": {
+      "role": "img",
+      "icon": {
+       "w": 24,
+       "color": "rgb(35, 43, 58)",
+       "fill": "rgb(178, 24, 54)"
+      },
+      "text": {
+       "font": "16px/24px 400",
+       "color": "rgb(35, 43, 58)"
+      }
+     }
+    }
+   },
+   "page": "login",
+   "url": "https://www.coursera.org/?authMode=login",
+   "description": "Error notification the log-in dialog shows above the field after an invalid submit: red-tint fill, outlined error icon, one line of text. The field itself is not marked invalid.",
+   "selector": "[role=dialog] error notification"
   }
  }
 }

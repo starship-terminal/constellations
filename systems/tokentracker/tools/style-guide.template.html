@@ -124,7 +124,7 @@ table.t td.src { color: var(--text-secondary); font-size: 12px; max-width: 420px
 
 <section class="s" id="intro">
   <h2 class="sh">What this page is</h2>
-  <p class="lead">Every value here is a CSS custom property generated from <code>tokens.json</code>, which was read from TokenTracker v1.3.5's dashboard: its CSS bundle and the computed styles of 70 components in dark and light. The drawings below are rebuilt from those tokens; the real pixels are in <code>screenshots/</code> and <code>components/crops/</code>. The toggle sets <code>data-mode</code> on this page; TokenTracker itself switches with a <code>.dark</code> class on <code>&lt;html&gt;</code>.</p>
+  <p class="lead">Every value here is a CSS custom property generated from <code>tokens.json</code>, which was read from TokenTracker v1.4.3's dashboard: its CSS bundle and the computed styles of 90 components in dark and light. The drawings below are rebuilt from those tokens; the real pixels are in <code>screenshots/</code> and <code>components/crops/</code>. The toggle sets <code>data-mode</code> on this page; TokenTracker itself switches with a <code>.dark</code> class on <code>&lt;html&gt;</code>.</p>
 </section>
 
 <section class="s" id="shell">
@@ -263,8 +263,8 @@ function ramps() {
   row(TOK.core.color.neutral, $('#neutral')); row(TOK.core.color.brand, $('#brand'));
   $('#rampsrc').innerHTML = [...walk(TOK.core.color.neutral, 'neutral.', []), ...walk(TOK.core.color.brand, 'brand.', [])].map(([n, t]) => `<tr><td><code>color.${esc(n)}</code></td><td>${esc(t.v)}</td><td class="src">${esc(t.s)}</td></tr>`).join('');
   $('#typespecs').innerHTML = walk(TOK.core.typography, '', []).map(([n, t]) => {
-    const css = `font:var(--typography-${n});letter-spacing:var(--font-letterSpacing-${n});text-transform:${t.textTransform || 'none'}`;
-    const sz = get('core', 'font.size.' + n).v, w = get('core', 'font.weight.' + n).v, lh = get('core', 'font.lineHeight.' + n).v;
+    const css = `font:var(--typography-${n});letter-spacing:var(--font-letterSpacing-${n}, 0px);text-transform:${t.textTransform || 'none'}`;
+    const sz = resolve(t.v.fontSize), w = resolve(t.v.fontWeight), lh = resolve(t.v.lineHeight);
     const sample = n === 'display' ? '12.9B' : n === 'figure' ? '$4,840.32' : n === 'pageTitle' ? 'Sessions' : n === 'tableHeader' ? 'Cached' : 'Local sessions, usage and estimated cost';
     return `<div class="spec"><div class="lab">${esc(n)}<code>${sz} / ${lh} / ${w}</code></div><div><div style="${css}">${esc(sample)}</div><span class="srcline">${esc(t.s)}</span></div></div>`;
   }).join('');

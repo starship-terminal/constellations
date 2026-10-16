@@ -21,9 +21,9 @@ const INTRO = `# Raw measurements (computed styles, CSS px), coursera.org, captu
 
 ## How it was read
 
-- Pages: \`/search?query=machine%20learning\`, \`/learn/machine-learning\`, \`/specializations/machine-learning-introduction\`, \`/\` (header, mega menu, footer), \`/explore/generative-ai\` (the compact course card, chip row, carousel and band headings; also read in a 390x844 mobile context, and in a 390 window with the desktop user agent for the arrow buttons).
+- Pages: \`/search?query=machine%20learning\`, \`/learn/machine-learning\`, \`/specializations/machine-learning-introduction\`, \`/\` (header, mega menu, footer), \`/explore/generative-ai\` (the compact course card, chip row, carousel and band headings; also read in a 390x844 mobile context, and in a 390 window with the desktop user agent for the arrow buttons). A 2026-10-17 pass added \`/?authMode=login\` (the log-in dialog), the AI coach panel the course page opens, a 404 URL, and the z-index and reduced-motion reads below.
 - Headless Chromium (Playwright 1.63), desktop Chrome user agent, 1440x900 at deviceScaleFactor 2, 6.5s settle after \`domcontentloaded\`, one slow scroll through each page so lazy sections mount. The cookie banner is removed and the AI coach side panel is closed with its own close button (it opens by default and squeezes \`<main>\` to 1024px).
-- States: \`hover\` is a real mouse hover with a 450ms settle. \`focus-visible\` is a real keyboard focus (focus, Shift+Tab, Tab), so CDS's \`cds-buttonBase-focusVisible\` class and the browser's \`:focus-visible\` both apply. \`pressed\` is \`:active:hover\` forced with the DevTools protocol (\`CSS.forcePseudoState\`); no mouse button is ever pressed, so no link, submit or Enroll button fires. \`expanded\`, \`opened\`, \`checked\` and \`selected\` come from clicking UI toggles only (accordions, the Explore menu, a filter checkbox with View never pressed, the select, the (i) help button). Nothing was signed into, enrolled in or submitted.
+- States: \`hover\` is a real mouse hover with a 450ms settle. \`focus-visible\` is a real keyboard focus (focus, Shift+Tab, Tab), so CDS's \`cds-buttonBase-focusVisible\` class and the browser's \`:focus-visible\` both apply. \`pressed\` is \`:active:hover\` forced with the DevTools protocol (\`CSS.forcePseudoState\`); no mouse button is ever pressed, so no link, submit or Enroll button fires. \`expanded\`, \`opened\`, \`checked\` and \`selected\` come from clicking UI toggles only (accordions, the Explore menu, a filter checkbox with View never pressed, the select, the (i) help button). Nothing was signed into, enrolled in or submitted. The log-in field's error was reached by pressing Enter on "not-an-email" after every network request had been set to abort, so the address never left the browser; the chat field was typed into and never sent.
 - Scripts: [tools/capture/measure.mjs](../tools/capture/measure.mjs) (measure and crop), [tools/capture/lib.mjs](../tools/capture/lib.mjs) (computed-style reader, crop and quantize), [tools/capture/build-measurements.mjs](../tools/capture/build-measurements.mjs) (this file), [tools/capture/explore.mjs](../tools/capture/explore.mjs) (class inventory pass).
 - Hooks: most sections carry \`data-testid\`; the hero, its title, the Enroll button and the stats slot carry \`data-e2e\` instead (\`[data-e2e=hero-module]\`, \`[data-e2e=hero-title]\`, \`[data-e2e=enroll-button]\`, \`[data-e2e=key-information]\`). Several blocks exist twice in the DOM (a hidden mobile copy at 0x0 and the visible one); every measurement takes the visible one.
 
@@ -44,10 +44,10 @@ const INTRO = `# Raw measurements (computed styles, CSS px), coursera.org, captu
 
 - No left filter panel exists on the search page any more. Filters are pill dropdowns in a sticky bar (Topic, Duration, Learning Product, Language, Level, AI topic pills) opening a checkbox popover, plus a Filter & Sort side sheet. There is no sort dropdown: sort is the "Sort by" radio group (Best Match / Newest) at the top of that sheet, measured as \`radio\` and \`filter-accordion\`.
 - \`pill\` hover: the home-page partner pills sit in a horizontal carousel and Playwright reports the pill outside the viewport even when centred, so only default and focus-visible were read.
-- \`select-option\` focus-visible: after ArrowDown in the open select no option carried \`:focus\`, \`data-focus-visible\` or \`data-focused\`, so that state is missing; selected and hover are measured.
+- \`select-option\` focus-visible: after ArrowDown in the open select no option carried \`:focus\`, \`data-focus-visible\` or \`data-focused\`, so that state is missing here; selected and hover are measured. The 2026-10-17 pass caught it on the signed-in colour theme select instead (\`select-option-signed-in\` in [measurements-signed-in.md](measurements-signed-in.md)).
 - The overflow chevron at the end of the in-page tab bar is not reported visible to Playwright at 1440, so it has no entry; its two gradient fades are in the \`tab-bar\` paint list.
 - The contextual (i) next to "Recommended experience" opens a modal dialog, not a hover tooltip; both are measured (\`help-dialog\`, \`tooltip\`, \`tooltip-icon\`).
-- No disabled primary button appeared on these pages; disabled ghost and disabled secondary were measured in the filter popover and sheet.
+- No disabled primary button appeared on these pages; disabled ghost and disabled secondary were measured in the filter popover and sheet, and the chat send icon button while its field is empty (\`icon-button-send\`).
 - The AI coach panel, cookie banner, sign-in and enrollment flows were deliberately not measured.
 `;
 
@@ -327,6 +327,7 @@ const GROUPS = [
   ['Modules and course list', /^(module|spec-course-accordion|credits)/],
   ['Instructors, testimonials, reviews, FAQ', /^(instructor|testimonial|ratings|review|faq|more-questions|promo-band)/],
   ['Footer', /^(footer)/],
+  ['Log-in dialog, AI chat panel and error page (2026-10-17 refresh)', /^(login-|text-field|field-error|callout-|coach-panel|text-area|icon-button-send|error-page)/],
 ];
 const placed = new Set();
 const groups = GROUPS.map(([g, re]) => {
@@ -435,6 +436,45 @@ for (const [kk, v] of Object.entries(sheetMotion).sort()) {
   md += `| ${d} | ${esc(e)} | ${[...v].slice(0, 6).map(esc).join('<br>')} |\n`;
 }
 
+// Layers and reduced motion, read by measure.mjs `layers` and `motion` (2026-10-17).
+if (data._meta.zIndex) {
+  md += '\n## Layers (z-index)\n\nEvery positioned element with a z-index above 0 on three pages (`measure.mjs layers`): home at rest, search with the Topic filter popover open, course with the AI coach open and the page scrolled. Highest first; repeated card hit areas are folded into one row.\n\n| z-index | Position | Element | Page |\n|---|---|---|---|\n';
+  const seenZ = new Set();
+  for (const [pg, list] of Object.entries(data._meta.zIndex)) {
+    for (const z of list) {
+      const k = `${z.zIndex}|${z.node}`;
+      if (seenZ.has(k)) continue;
+      seenZ.add(k);
+      md += `| ${z.zIndex} | ${z.position} | \`${z.node}\`${z.testid ? ` (${z.testid})` : ''} ${z.size} | ${pg} |\n`;
+    }
+  }
+}
+if (data._meta.reducedMotion) {
+  md += '\n## Reduced motion\n\nEvery rule inside `@media (prefers-reduced-motion: reduce)` in the stylesheets of three pages (`measure.mjs motion`), and the search product card hovered in a context that emulates `reducedMotion: reduce`.\n\n| Page | Component | Selector | Declaration |\n|---|---|---|---|\n';
+  const seenR = new Set();
+  for (const [pg, list] of Object.entries(data._meta.reducedMotion)) {
+    if (!Array.isArray(list)) continue;
+    for (const r of list) {
+      const k = r.selector.replace(/\.css-[a-z0-9]+/g, '') + r.style;
+      if (seenR.has(k)) continue;
+      seenR.add(k);
+      md += `| ${pg} | ${r.component || '-'} | \`${esc(r.selector.slice(0, 140))}\` | \`${esc(r.style)}\` |\n`;
+    }
+  }
+  const h = data._meta.reducedMotion.productCardHoverReduce;
+  if (h) md += `\nProduct card on hover with reduced motion: transition \`${h.transition}\`, transform \`${h.transform}\`, shadow \`${hex(h.boxShadow)}\`. The hover shadow still appears, without its 0.3s transition. The rule also sets \`transform: none\` on hover, though the measured grid card does not move on hover with motion allowed either (its hover transform is the identity matrix).\n`;
+}
+if (data._meta.darkParity) {
+  const d = data._meta.darkParity;
+  md += '\n## Dark parity\n\nThe six component colours that sit outside the CDS semantic tokens, read again after setting `data-color-theme="dark"` on `<html>` (`measure.mjs darkparity`). That attribute is what the signed-in Appearance setting sets; on 2026-10-17 a learner page with Dark mode chosen computed every `--cds-color-*` variable to the dark side of its `light-dark()` pair ([css-vars-dark-shipped.json](css-vars-dark-shipped.json)).\n\n| Value | Dark |\n|---|---|\n';
+  const c = d.course || {};
+  const rows = [['Course hero band', c.heroBand], ['Top Instructor badge fill', c.heroBadge], ['Stats card shadow', c.statsCardShadow], ['Sticky nav shadow', c.stickyNavShadow], ['Dialog scrim (cds-Modal-backdrop)', c.modalScrim], ['Top AI program tag fill', (d.search || {}).tagTopAi]];
+  for (const [k, v] of rows) md += `| ${k} | \`${v ? hex(v) : 'not read'}\` |\n`;
+}
+if (data._meta.elevationRules) {
+  md += '\n## Elevation in use\n\nStylesheet rules that paint an `--cds-elevation-*` level by name (`measure.mjs elevation`). Emotion often writes the resolved shadow instead of the variable, so the computed shadows in the component tables below are the fuller record: level2 is on the filter popover, search suggestions, select list, catalogue cards on hover and, signed in, the overflow menu and select list; level1 on the round jump buttons in the AI coach panel. The `:root` rule that declares the three levels is left out; no rule found uses level3.\n\n| Level | Selector | Component | Page |\n|---|---|---|---|\n';
+  for (const [pg, list] of Object.entries(data._meta.elevationRules)) for (const r of list.filter((x) => x.selector !== ':root')) md += `| ${r.level} | \`${esc(r.selector.slice(0, 120))}\` | ${r.component || '-'} | ${pg} |\n`;
+}
 md += '\n## Layout grid\n\nRead on the course page (`.xdp-page-grid-container` > `.cds-9` row > `.cds-grid-item` columns) and the search grid, in fresh headless windows at each width.\n\n' + layoutTable() + '\n';
 
 md += '\n## Components\n\nEach table has one column per state. "same" means unchanged from the first state. Colours are hex, then the `--cds-*` token whose light value matches (semantic first, palette second); "no token" means nothing in the dump matches. Fonts are family size/line-height weight, with the matching `--cds-typography-*` tokens. The "Painted" lines list every node inside the component that draws a background, border, shadow or outline, because CDS often paints borders on a child or pseudo-element.\n';

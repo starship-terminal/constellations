@@ -384,6 +384,12 @@ for name in sorted(RES["light"]):
 tw["$description"] = "The Tailwind v4 theme the utility classes read: a 4px spacing unit, the container widths (max-w-2xl is the 672 home composer, the transcript is 48rem) and the radius scale."
 core["tailwind"] = tw
 
+# Tailwind's default transition: every `transition` utility without its own duration or ease uses it
+TW_THEME = {n: v for r in V["tailwind"] if r.get("selector") == ":root, :host" and r.get("context") == ["@layer theme"] for n, v in r["properties"].items()}
+core["easing"]["tailwind-default"] = tok(bezier(TW_THEME["--default-transition-timing-function"]), "cubicBezier", "css-var --default-transition-timing-function (Tailwind v4 theme layer); the curve of every transition utility that names none")
+core["easing"]["tailwind-in"] = tok(bezier(TW_THEME["--ease-in"]), "cubicBezier", "css-var --ease-in (Tailwind v4 theme layer)")
+core["duration"]["tailwind-default"] = tok(ms(TW_THEME["--default-transition-duration"]), "duration", "css-var --default-transition-duration (Tailwind v4 theme layer); the duration of every transition utility that names none")
+
 # ---------------------------------------------------------------- themed sets
 
 GROUPS = [
@@ -541,6 +547,28 @@ core["borderWidth"] = {
     "$description": "Claude draws most edges as 1px box-shadow rings (shadow tokens and the ring widths), not borders. Where it does use a border it is 1px, a 0.5px hairline on toolbars and panels, or 1.5px and 2px on a few controls.",
 }
 
+# the focus ring: shadow.focus is a 1px inset of the page, a 1px accent ring and a 6px glow; the
+# controls that fall back to an outline draw it 2px wide, 2px out. Counted over every focus reading.
+offs = {}
+for comp in CC.values():
+    for name, st in comp["states"].items():
+        if name.endswith("focus-visible") and st.get("theme") == "dark" and "style" in st:
+            sty = st["style"]
+            if sty["outlineStyle"] != "none" and not sty["outlineColor"].endswith(", 0)"):
+                offs[sty["outlineOffset"]] = offs.get(sty["outlineOffset"], 0) + 1
+            for ly in st.get("paint") or []:
+                m = re.search(r"offset ([\d.]+px)$", ly.get("outline") or "")
+                if m and ", 0) offset" not in ly["outline"]:
+                    offs[m.group(1)] = offs.get(m.group(1), 0) + 1
+off = max(offs, key=offs.get)
+core["focusRing"] = {
+    "ring-width": tok(px("1px"), "dimension", "css-var --cds-shadow-focus: the 1px accent ring (and the 1px inset of the page colour inside it)"),
+    "glow": tok(px("6px"), "dimension", "css-var --cds-shadow-focus: the 6px blur of the accent glow"),
+    "outline-width": tok("{borderWidth.focus-outline}", "dimension", "measured: the 2px outline the composer's buttons, the thinking pill and the message actions draw on focus"),
+    "outline-offset": tok(px(off), "dimension", "measured: outline-offset on %d of %d focus readings that draw an outline" % (offs[off], sum(offs.values())), count=offs[off]),
+    "$description": "Focus is `shadow.focus` on nearly every control (a ring, not an outline, so it follows the radius); a few controls draw a 2px outline 2px out instead. Rows and tabs put the ring on their inner link or button.",
+}
+
 # spacing: Tailwind's 4px unit, at the steps Claude's classes use (half steps included), counted in the measurements
 pads = {}
 for comp in CC.values():
@@ -592,6 +620,30 @@ fl = state("field-label")["style"]
 assert fl["fontSize"] == "14px" and fl["fontWeight"] == "500", fl
 core["typography"]["label"] = tok({"fontFamily": "{fontFamily.sans}", "fontSize": "{fontSize.body}", "lineHeight": px(fl["lineHeight"]), "fontWeight": "{fontWeight.medium}", "letterSpacing": "0px"}, "typography",
                                   "measured: field-label on projects-dark-create (What are you working on?): %s %s/%s %s; body size and medium weight, set solid (line height = size)" % (fl["fontFamily"].split(",")[0], fl["fontSize"], fl["lineHeight"], fl["fontWeight"]))
+
+# the link's underline, from the cds base rule for `a, .prose-link`
+LINK = next(l["declarations"] for l in CR["links"] if l["selector"] == "a, :where(.prose-link)")
+core["link"] = {
+    "underline-offset": tok(px(LINK["text-underline-offset"]), "dimension", "css-rules: a, :where(.prose-link) text-underline-offset"),
+    "underline-mix": tok(60, "number", "css-rules: a, :where(.prose-link) --_text-link-line: color-mix(in srgb, currentColor, transparent 60%), so the line is the link colour at 40% until hover or focus-visible sets it to currentColor"),
+}
+
+# Tailwind's field drop (shadow-field-drop), the same in both themes: under fields and secondary buttons
+fd = re.fullmatch(r"0 (\S+) (\S+) (\S+) #([0-9a-f]{8})", TW_THEME["--shadow-field-drop"])
+fd_rgba = "rgba(%d, %d, %d, %g)" % (int(fd.group(4)[0:2], 16), int(fd.group(4)[2:4], 16), int(fd.group(4)[4:6], 16), round(int(fd.group(4)[6:8], 16) / 255, 2))
+for tree in (light, dark):
+    put(tree, ["shadow", "field-drop"], tok([{"color": fd_rgba, "offsetX": "0px", "offsetY": px(fd.group(1)), "blur": px(fd.group(2)), "spread": px(fd.group(3) if fd.group(3) != "0" else "0px"), "inset": False}], "shadow",
+                                             "css-var --shadow-field-drop %s (Tailwind v4 theme layer, theme-independent)" % TW_THEME["--shadow-field-drop"]))
+
+# the sidebar row's own focus ring: a one-off utility on its link
+# (focus-visible:shadow-[inset_0_0_0_1px_var(--cds-fill-accent),0_0_6px_0_color-mix(in_srgb,var(--cds-fill-accent)_20%,transparent)])
+for setname, tree in (("light", light), ("dark", dark)):
+    st = state("chat-row", "refresh-focus-visible" if setname == "dark" else "light-refresh-focus-visible")
+    ring = next(ly["shadow"] for ly in st["paint"] if "0px 0px 6px 0px" in (ly.get("shadow") or ""))
+    assert "rgb(42, 120, 214) 0px 0px 0px 1px inset" in ring and "0.164706 0.470588 0.839216 / 0.2" in ring, ring
+    put(tree, ["component", "sidebar-row-focus"], tok([{"color": "{fill.accent}", "offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "1px", "inset": True},
+                                                       {"color": "rgba(42, 120, 214, 0.2)", "offsetX": "0px", "offsetY": "0px", "blur": "6px", "spread": "0px", "inset": False}], "shadow",
+                                                      "measured: chat-row %s, the inner link (%s copy); the utility focus-visible:shadow-[inset_0_0_0_1px_var(--cds-fill-accent),0_0_6px_0_color-mix(in_srgb,var(--cds-fill-accent)_20%%,transparent)]" % ("refresh-focus-visible" if setname == "dark" else "light-refresh-focus-visible", st["snapshot"])))
 
 # themed: the link role and the pressed accent
 for setname, tree in (("light", light), ("dark", dark)):

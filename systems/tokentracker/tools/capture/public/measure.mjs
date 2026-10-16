@@ -3,7 +3,7 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: dashboard sessions limits settings status. Phone layouts come from the screenshots only. Every page runs in dark (the default)
+// Pages: dashboard sessions sessionsLoading sessionsError limits settings status skills widgets pet cloud achievements. Phone layouts come from the screenshots only. Every page runs in dark (the default)
 // and light; light entries are keyed `<name>.light`. Writes raw/components-computed.json (merged,
 // so a subset of pages can be re-run) and one crop per component and state into components/crops/.
 // raw/measurements.md is then built from the JSON by build-measurements.mjs.
@@ -42,6 +42,13 @@ const URLS = {
   limits: '/limits',
   settings: '/settings',
   status: '/service-status',
+  skills: '/skills',
+  widgets: '/widgets',
+  pet: '/pet-settings',
+  cloud: '/cloud',
+  achievements: '/achievements',
+  sessionsLoading: '/sessions',
+  sessionsError: '/sessions',
   mobile: '/dashboard',
 };
 let THEME = 'dark';
@@ -51,10 +58,11 @@ const touched = new Set();
 
 // ---------- helpers ----------
 
-async function newPage(key, { wait = 3500 } = {}) {
+async function newPage(key, { wait = 3500, routes } = {}) {
   current = key;
   page = await context.newPage();
   page.setDefaultTimeout(8000);
+  if (routes) await routes(page);
   cdp = await context.newCDPSession(page);
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
@@ -184,6 +192,55 @@ async function S(key, target, list, meta = {}, opts = {}) {
 }
 
 const q = (sel) => page.locator(sel);
+
+// Popups (tooltips, toasts, menus, dialogs) mount new nodes. markBefore() flags every node that
+// exists now; tagNew() then tags the outermost visible node that appeared since and whose text
+// matches, so a popup is found by appearing, not by a guessed class name.
+async function markBefore() {
+  await page.evaluate(() => document.querySelectorAll('body *').forEach((e) => e.setAttribute('data-pre', '')));
+}
+async function tagNew(name, re) {
+  const ok = await page.evaluate(({ name, src }) => {
+    const re = src ? new RegExp(src, 'i') : null;
+    document.querySelectorAll(`[data-m="${name}"]`).forEach((n) => n.removeAttribute('data-m'));
+    const fresh = [...document.querySelectorAll('body *:not([data-pre])')].filter((e) => {
+      const r = e.getBoundingClientRect();
+      return r.width > 4 && r.height > 4 && (!re || re.test(e.innerText || ''));
+    });
+    const top = fresh.filter((e) => !fresh.some((o) => o !== e && o.contains(e)));
+    const el = top.sort((a, b) => (b.innerText || '').length - (a.innerText || '').length)[0];
+    document.querySelectorAll('[data-pre]').forEach((e) => e.removeAttribute('data-pre'));
+    if (!el) return false;
+    el.setAttribute('data-m', name);
+    return true;
+  }, { name, src: re ? re.source : null });
+  return ok;
+}
+// The full-window layer behind an open dialog: the scrim.
+async function tagScrim(name) {
+  return page.evaluate((name) => {
+    const vw = innerWidth, vh = innerHeight;
+    const el = [...document.querySelectorAll('body *')].find((e) => {
+      const c = getComputedStyle(e), r = e.getBoundingClientRect();
+      return c.position === 'fixed' && c.zIndex !== 'auto' && +c.zIndex > 0 && r.width >= vw - 1 && r.height >= vh - 1 && c.backgroundColor !== 'rgba(0, 0, 0, 0)' && !e.querySelector('[role=dialog]');
+    });
+    if (el) el.setAttribute('data-m', name);
+    return !!el;
+  }, name);
+}
+// Stacking order of every positioned layer on screen right now, by what it holds.
+async function layers(label) {
+  const l = await page.evaluate(() => [...document.querySelectorAll('body *')].map((e) => {
+    const c = getComputedStyle(e);
+    if (c.position === 'static' || c.zIndex === 'auto') return null;
+    const r = e.getBoundingClientRect();
+    if (r.width < 2 || r.height < 2) return null;
+    const role = e.getAttribute('role') || (e.querySelector('[role=dialog]') ? 'holds dialog' : '');
+    return { z: +c.zIndex, position: c.position, role, cls: [...e.classList].filter((x) => !x.includes(':')).slice(0, 4).join('.'), size: `${Math.round(r.width)}x${Math.round(r.height)}` };
+  }).filter(Boolean));
+  out._meta.layers ??= {};
+  out._meta.layers[`${label}.${THEME}`] = l;
+}
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
 
 // Transitions and animations declared in every readable sheet, by selector.
@@ -266,8 +323,10 @@ async function dashboard() {
     if (panel) panel.setAttribute('data-m', 'content-panel');
   });
   await S('content-panel', m('content-panel'), ['default'], { group: g, title: 'Content panel', desc: 'The rounded panel the pages sit in, inset from the window edge on the page wash.', sel: 'first rounded, filled ancestor of main' }, { noScroll: true, crop: false });
-  await T('theme-toggle', { sel: 'button[aria-label*="theme" i], button[title*="theme" i]' }, ['default', 'hover'], { group: g, title: 'Theme toggle', sel: 'button[aria-label*=theme]' }, { noScroll: true });
-  await T('star-pill', { sel: 'a[href*="github.com"]' }, ['default', 'hover'], { group: g, title: 'GitHub star pill', sel: 'a[href*=github]' }, { noScroll: true });
+  await T('theme-toggle', { sel: 'button[aria-label*="theme" i], button[title*="theme" i]' }, ['default', 'hover', 'focus-visible'], { group: g, title: 'Theme toggle', desc: 'One of the few controls that keeps a focus outline (.tt-sidebar-theme:focus-visible).', sel: 'button[aria-label*=theme]' }, { noScroll: true });
+  await T('sidebar-toggle', { sel: 'button.tt-sidebar-toggle' }, ['default', 'hover', 'focus-visible'], { group: g, title: 'Sidebar collapse button', desc: 'Chevron in the sidebar header; keeps a focus outline.', sel: 'button.tt-sidebar-toggle' }, { noScroll: true });
+  await T('account-control', { sel: 'aside button:has(> span.truncate)' }, ['default', 'hover', 'focus-visible'], { group: g, title: 'Account control (signed out)', desc: 'Top of the sidebar: the app mark and "Sign in", where a signed-in account shows its avatar. Measured only; never pressed.', sel: '.tt-sidebar-account-control' }, { noScroll: true });
+  await T('star-pill', { sel: 'a[href*="github.com"]' }, ['default', 'hover', 'focus-visible'], { group: g, title: 'GitHub star pill', sel: 'a[href*=github]' }, { noScroll: true });
 
   const d = G.dash;
   await T('period-tabs', { role: 'tablist', sel: '[role="tablist"][aria-label="Time period"]' }, ['default'], { group: G.control, title: 'Period tabs', sel: '[role=tablist][aria-label="Time period"]' }, { noScroll: true });
@@ -284,7 +343,6 @@ async function dashboard() {
   await S('hero-metric', m('hero-metric'), ['default'], { group: d, title: 'Hero metric', desc: 'The one giant number: total tokens for the period.', sel: 'largest text in main' }, { noScroll: true });
   await S('hero-cost', m('hero-cost'), ['default'], { group: d, title: 'Hero cost', desc: 'Cost under the hero number, in the brand green.', sel: 'text matching $n.nn' }, { noScroll: true });
   await T('share-button', { role: 'button', text: 'Share' }, ['default', 'hover', 'focus-visible', 'pressed'], { group: G.control, title: 'Secondary button', desc: 'Outlined, as on Share. Measured, never pressed.', sel: 'button "Share"' }, { noScroll: true });
-  await T('primary-button', { role: 'button', text: 'Open in Mac app' }, ['default', 'hover', 'focus-visible', 'pressed'], { group: G.control, title: 'Primary button', desc: 'Solid near-black in light, near-white in dark. Measured, never pressed.', sel: 'button "Open in Mac app"' }, { noScroll: true });
   await T('provider-tile', { text: 'CLAUDE', up: 2 }, ['default', 'hover'], { group: d, title: 'Provider share tile', sel: 'tile holding "CLAUDE"' }, { noScroll: true });
   await T('provider-tile-all', { text: 'All', up: 2 }, ['default'], { group: d, title: 'Provider share tile, all', sel: 'tile holding "All"' }, { noScroll: true });
   await T('stat-chip', { text: '7d', up: 1 }, ['default'], { group: d, title: 'Stat chip', desc: 'A small filled tile: value over a caption (7d, 30d, avg, convs).', sel: 'parent of "7d"' }, { noScroll: true });
@@ -310,20 +368,55 @@ async function dashboard() {
   out._meta.heatmap[THEME] = await page.evaluate(() => window.__heat);
   await S('heatmap-cell', m('heatmap-cell'), ['default', 'hover'], { group: d, title: 'Heatmap cell, busiest', sel: 'span.rounded-[2px] whose fill is farthest from the empty fill' }, { pad: 6 });
   await S('heatmap-cell-empty', m('heatmap-cell-empty'), ['default'], { group: d, title: 'Heatmap cell, empty', sel: 'span.rounded-[2px] with the least saturated fill' }, { pad: 6 });
+  // Tooltip: hovering the busiest heatmap cell mounts a tooltip with the day and its tokens.
+  if (await m('heatmap-cell').count()) {
+    await reset(); await centre(m('heatmap-cell'));
+    await markBefore();
+    await m('heatmap-cell').first().hover(); await page.waitForTimeout(700);
+    await mask(page);
+    if (await tagNew('tooltip', /token/)) {
+      await S('tooltip', m('tooltip'), ['open'], { group: G.feedback, title: 'Tooltip', desc: 'Hovering a heatmap cell: the day, its tokens and the timezone.', sel: 'node that appears on hovering the busiest heatmap cell' }, { noScroll: true, noReset: true });
+      await layers('tooltip');
+    } else log('  ! tooltip did not appear');
+    await reset();
+  }
   await T('segmented-2d', { role: 'button', text: '2D', up: 1 }, ['default'], { group: G.control, title: 'Small segmented control', desc: '2D / 3D switch on the heatmap.', sel: 'parent of button "2D"' });
-  await T('beta-badge', { text: 'BETA' }, ['default'], { group: G.feedback, title: 'Badge', sel: 'leaf "BETA"' }, { noScroll: true });
   await T('table-tab-selected', { role: 'button', text: 'Daily Breakdown' }, ['default'], { group: G.table, title: 'Table tab, selected', sel: 'button "Daily Breakdown"' });
   await T('table-tab', { role: 'button', text: 'Project Usage' }, ['default', 'hover'], { group: G.table, title: 'Table tab', sel: 'button "Project Usage"' });
   await T('table-header', { sel: 'main table thead th', nth: 1 }, ['default'], { group: G.table, title: 'Table header cell', sel: 'thead th:nth(1)' });
   await T('table-cell', { sel: 'main table tbody td', nth: 1 }, ['default'], { group: G.table, title: 'Table cell (numeric)', sel: 'tbody td:nth(1)' });
   await T('table-row', { sel: 'main table tbody tr', nth: 1 }, ['default', 'hover'], { group: G.table, title: 'Table row', sel: 'tbody tr:nth(1)' });
-  await T('cost-button', { sel: 'main button[aria-label="View cost breakdown"]' }, ['default', 'hover', 'focus-visible'], { group: d, title: 'Hero cost button', desc: 'The cost under the hero number is a button that opens the cost breakdown.', sel: 'button[aria-label="View cost breakdown"]' }, { noScroll: true });
+  await T('cost-button', { sel: 'main button[aria-label="View cost breakdown"]' }, ['default', 'hover', 'focus-visible', 'pressed'], { group: d, title: 'Hero cost button', desc: 'The cost under the hero number is a button that opens the cost breakdown.', sel: 'button[aria-label="View cost breakdown"]' }, { noScroll: true });
   if (await m('cost-button').count()) {
     await m('cost-button').first().click(); await page.waitForTimeout(900);
     await page.evaluate(() => { const t = [...document.querySelectorAll('[role="tooltip"], .tooltip, [data-radix-popper-content-wrapper] > *')].find((e) => e.getBoundingClientRect().width > 0) || [...document.querySelectorAll('body *')].filter((e) => { const c = getComputedStyle(e); return (c.position === 'absolute' || c.position === 'fixed') && e.getBoundingClientRect().width > 80 && e.getBoundingClientRect().width < 420 && (e.innerText || '').length > 10 && parseFloat(c.zIndex) > 10; })[0]; if (t) t.setAttribute('data-m', 'tooltip'); });
     await page.evaluate(() => { const dlg = document.querySelector('[role="dialog"]'); if (dlg) dlg.setAttribute('data-m', 'dialog'); });
     await S('dialog', m('dialog'), ['open'], { group: G.feedback, title: 'Dialog (cost breakdown)', desc: 'Opened by the hero cost button, closed with Escape.', sel: '[role=dialog]' }, { noScroll: true, noReset: true });
+    if (await tagScrim('dialog-scrim')) await S('dialog-scrim', m('dialog-scrim'), ['open'], { group: G.feedback, title: 'Dialog scrim', desc: 'The full-window layer behind the open dialog.', sel: 'fixed full-window layer behind [role=dialog]' }, { noScroll: true, noReset: true, crop: false });
+    await layers('dialog');
     await page.keyboard.press('Escape'); await page.waitForTimeout(500);
+  }
+  // Toast: Share opens the share card; its Copy button draws the card in this headless browser
+  // and copies it to that browser's own clipboard (never the machine's), which raises a toast.
+  // Nothing is uploaded: the card is drawn locally, and non-GET requests are blocked anyway.
+  await reset();
+  const share = q('main button').filter({ hasText: /^Share$/ }).first();
+  if (await share.count()) {
+    await share.click(); await page.waitForTimeout(1500); await mask(page);
+    await page.evaluate(() => { const d = [...document.querySelectorAll('[role=dialog]')].find((e) => e.getBoundingClientRect().width > 0); if (d) d.setAttribute('data-m', 'share-dialog'); });
+    await S('share-dialog', m('share-dialog'), ['open'], { group: G.feedback, title: 'Dialog (share card)', desc: 'Opened by Share; the image is drawn in the browser.', sel: '[role=dialog] after Share' }, { noScroll: true, noReset: true });
+    const copy = m('share-dialog').locator('button').filter({ hasText: /^Copy/i }).first();
+    if (await copy.count()) {
+      await markBefore();
+      await copy.click(); await page.waitForTimeout(1200);
+      if (await tagNew('toast', /image|generat|copied|saved|couldn/)) {
+        // The new node may be a wrapper; the toast is the first node inside it that paints a fill.
+        await page.evaluate(() => { const w = document.querySelector('[data-m="toast"]'); const f = [w, ...w.querySelectorAll('*')].find((e) => getComputedStyle(e).backgroundColor !== 'rgba(0, 0, 0, 0)'); if (f && f !== w) { w.removeAttribute('data-m'); f.setAttribute('data-m', 'toast'); } });
+        await S('toast', m('toast'), ['open'], { group: G.feedback, title: 'Toast', desc: 'Feedback after Copy on the share card.', sel: 'node that appears after Copy' }, { noScroll: true, noReset: true });
+        await layers('toast');
+      } else log('  ! toast did not appear');
+    } else log('  ! share card has no Copy button');
+    await page.keyboard.press('Escape'); await page.waitForTimeout(600);
   }
   await page.close();
 }
@@ -344,7 +437,15 @@ async function sessions() {
   await S('select-menu', m('select-menu'), ['open'], { group: f, title: 'Select menu', sel: '[role=listbox]' }, { noScroll: true, noReset: true });
   await S('select-option-selected', m('select-option-selected'), ['open'], { group: f, title: 'Select option, selected', sel: 'first option' }, { noScroll: true, noReset: true });
   await S('select-option', m('select-option'), ['open', 'hover'], { group: f, title: 'Select option', sel: 'second option' }, { noScroll: true, noReset: true });
+  await layers('menu');
   await page.keyboard.press('Escape'); await page.waitForTimeout(400);
+  // Empty result: a search nothing matches. Typed, measured, cleared; nothing is sent.
+  await reset();
+  const search = q('main input[placeholder^="Search"]').first();
+  await search.click(); await page.keyboard.type('zzqx-no-match', { delay: 10 }); await page.waitForTimeout(1200);
+  await page.evaluate(() => { const t = [...document.querySelectorAll('main *')].find((e) => e.childElementCount === 0 && /^No matching sessions$/.test(e.textContent.trim())); if (!t) return; let n = t.parentElement; while (n && n.getBoundingClientRect().height < 60) n = n.parentElement; (n || t).setAttribute('data-m', 'empty-state'); t.setAttribute('data-m-t', '1'); });
+  await S('empty-state', m('empty-state'), ['default'], { group: G.table, title: 'Empty state (no match)', desc: 'Sessions searched for text nothing matches: a title and a hint, no illustration.', sel: 'block around "No matching sessions"' }, { noScroll: true, noReset: true });
+  await search.click(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(500);
   await T('summary-strip', { text: 'Matching sessions', up: 2 }, ['default'], { group: G.table, title: 'Summary strip', desc: 'Four figures in one bordered box, split by rules.', sel: 'box around "Matching sessions"' }, { noScroll: true });
   await T('summary-label', { text: 'Matching sessions' }, ['default'], { group: G.table, title: 'Summary label', sel: 'leaf "Matching sessions"' }, { noScroll: true });
   await T('list-header', { text: 'Session / project' }, ['default'], { group: G.table, title: 'List column header', sel: 'leaf "Session / project"' }, { noScroll: true });
@@ -368,14 +469,23 @@ async function limits() {
     const bars = [...document.querySelectorAll('main div')].filter((e) => { const r = e.getBoundingClientRect(); return r.height >= 3 && r.height <= 8 && r.width > 300 && e.children.length >= 1; });
     if (bars[0]) { bars[0].setAttribute('data-m', 'usage-track'); const fill = [...bars[0].querySelectorAll('div')].find((c) => c.getBoundingClientRect().width > 20); if (fill) fill.setAttribute('data-m', 'usage-fill'); }
     const row = bars[0] && bars[0].parentElement; if (row) row.setAttribute('data-m', 'usage-row');
-    const badge = [...document.querySelectorAll('main *')].find((e) => /^(STALE|RE-AUTH|LIVE)\b/i.test((e.innerText || '').trim()) && e.getBoundingClientRect().height < 26 && e.getBoundingClientRect().height > 10);
+    const badge = [...document.querySelectorAll('main *')].find((e) => e.tagName === 'SPAN' && /^(STALE|RE-AUTH|LIVE|CACHED)\b/i.test((e.innerText || '').trim()) && e.getBoundingClientRect().height < 26 && e.getBoundingClientRect().height > 10);
     if (badge) badge.setAttribute('data-m', 'status-badge');
   });
   await S('usage-row', m('usage-row'), ['default'], { group: g, title: 'Usage row', desc: 'Window label, a thin track with a pace tick, percent and time left.', sel: 'row around the first track' });
   await S('usage-track', m('usage-track'), ['default'], { group: g, title: 'Usage track', sel: 'first track' }, { pad: 4 });
   await S('usage-fill', m('usage-fill'), ['default'], { group: g, title: 'Usage fill', sel: 'its fill' }, { pad: 4 });
-  await S('status-badge', m('status-badge'), ['default'], { group: G.feedback, title: 'Status badge', desc: 'STALE / RE-AUTH pill with a coloured dot.', sel: 'pill reading STALE' });
+  await S('status-badge', m('status-badge'), ['default'], { group: G.feedback, title: 'Status badge', desc: 'CACHED / STALE / RE-AUTH pill beside a limit.', sel: 'pill reading CACHED, STALE or RE-AUTH' });
+  // Its hover tooltip explains where the cached limits come from.
+  if (await m('status-badge').count()) {
+    await reset(); await centre(m('status-badge'));
+    await m('status-badge').first().hover(); await page.waitForTimeout(500);
+    await page.evaluate(() => { const t = [...document.querySelectorAll('main span')].find((e) => getComputedStyle(e).position === 'absolute' && /^Cached limits|^Real-time|^Sign-in expired/.test(e.textContent.trim()) && e.getBoundingClientRect().width > 0); if (t) t.setAttribute('data-m', 'hint-tooltip'); });
+    if (await m('hint-tooltip').count()) await S('hint-tooltip', m('hint-tooltip'), ['open'], { group: G.feedback, title: 'Tooltip (hint)', desc: 'Hovering the CACHED pill on Limits.', sel: 'absolute span that appears on hovering the pill' }, { noScroll: true, noReset: true });
+    await reset();
+  }
   await T('code-block', { sel: 'main pre' }, ['default'], { group: g, title: 'Code block', sel: 'main pre' });
+  await T('icon-link', { sel: 'main a[href^="/settings"]' }, ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Icon link', desc: 'The gear on Limits ("Display settings" is its accessible label): an icon-only link to Settings.', sel: 'main a[href^=/settings]' });
   await page.close();
 }
 
@@ -393,6 +503,119 @@ async function settings() {
   await T('segment-selected', { role: 'button', text: 'Compact' }, ['default', 'focus-visible'], { group: G.control, title: 'Segment, selected', sel: 'button "Compact"' }, { noScroll: true });
   await T('segment', { role: 'button', text: 'Full' }, ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Segment', desc: 'Hovered and focused only; never pressed, so the setting is unchanged.', sel: 'button "Full"' }, { noScroll: true });
   await T('footer-link', { role: 'button', text: 'Check for updates' }, ['default', 'hover'], { group: g, title: 'Footer link', sel: 'button "Check for updates"' });
+  // Network: an invalid proxy host is typed and checked with Test connection, read, then cleared;
+  // the section is never saved (and a save is a POST, which the capture blocks).
+  await toggle(q('main button').filter({ hasText: /^Network$/ }));
+  await page.waitForTimeout(900);
+  // The proxy fields show only for Manual. Choosing it stays in this page: saving it is a POST,
+  // which the capture blocks, and System is chosen again before the page closes.
+  await toggle(q('main button').filter({ hasText: /^Manual$/ }));
+  await page.waitForTimeout(900);
+  const field = q('main input[type="text"][placeholder]').filter({ visible: true }).first();
+  if (await field.count()) {
+    await field.evaluate((el) => el.setAttribute('data-m', 'text-field'));
+    await S('text-field', m('text-field'), ['default', 'hover', 'focused'], { group: G.form, title: 'Text field', desc: 'Settings, Network: proxy host. Focus changes the border only.', sel: 'first text input in Network settings' }, { noScroll: true });
+    const before = await field.inputValue();
+    await field.click(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.type('http://proxy.example/path', { delay: 10 }); await page.keyboard.press('Tab');
+    // Errors show on Test connection (or Save). With an invalid host the check fails before any request
+    // is made; the test itself would be a POST, which the capture blocks. Save is never pressed.
+    await page.locator('main button').filter({ hasText: /^Test connection$/ }).first().click({ timeout: 4000 }); await page.waitForTimeout(700);
+    await page.evaluate(() => { const t = [...document.querySelectorAll('main *')].find((e) => e.childElementCount === 0 && /^Enter a host/.test(e.textContent.trim())); if (t) t.setAttribute('data-m', 'field-error'); });
+    if (await m('field-error').count()) {
+      await S('field-error', m('field-error'), ['default'], { group: G.form, title: 'Field error message', desc: 'Replaces the field hint when Test connection finds an invalid host.', sel: 'leaf "Enter a host ..."' }, { noScroll: true, noReset: true });
+      await S('text-field-error', m('text-field'), ['error'], { group: G.form, title: 'Text field, invalid', sel: 'the same input holding an invalid host' }, { noScroll: true, noReset: true });
+    } else log('  ! no field error appeared');
+    await field.click(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace');
+    if (before) await page.keyboard.type(before, { delay: 5 });
+    await page.keyboard.press('Tab'); await page.waitForTimeout(400);
+  } else log('  ! Network section has no text field');
+  await toggle(q('main button').filter({ hasText: /^System$/ })).catch(() => {});
+  await page.close();
+}
+
+// Sessions while its data is on the way: the sessions request is held for 20s.
+async function sessionsLoading() {
+  await newPage('sessionsLoading', { wait: 1800, routes: (p) => p.route('**/functions/tokentracker-sessions**', (r) => setTimeout(() => r.continue().catch(() => {}), 20000)) });
+  await page.evaluate(() => { const t = [...document.querySelectorAll('main *')].find((e) => e.childElementCount <= 2 && /^Loading sessions/.test(e.textContent.trim())); if (!t) return; let n = t.parentElement; while (n && n.getBoundingClientRect().height < 40) n = n.parentElement; (n || t).setAttribute('data-m', 'loading-state'); });
+  await S('loading-state', m('loading-state'), ['loading'], { group: G.table, title: 'Loading state', desc: 'Sessions with its request held back: one quiet line where the list goes.', sel: 'block around "Loading sessions…"' }, { noScroll: true, noReset: true });
+  await page.close();
+}
+
+// Sessions when its request fails: the sessions request is aborted.
+async function sessionsError() {
+  await newPage('sessionsError', { wait: 3500, routes: (p) => p.route('**/functions/tokentracker-sessions**', (r) => r.abort()) });
+  await page.evaluate(() => { const t = [...document.querySelectorAll('main *')].find((e) => e.childElementCount === 0 && /^Could not load sessions$/.test(e.textContent.trim())); if (!t) return; let n = t.parentElement; while (n && n.getBoundingClientRect().height < 60) n = n.parentElement; (n || t).setAttribute('data-m', 'error-state'); });
+  await S('error-state', m('error-state'), ['error'], { group: G.table, title: 'Error state', desc: 'Sessions with its request aborted: a title, the reason and Try again.', sel: 'block around "Could not load sessions"' }, { noScroll: true, noReset: true });
+  await T('retry-button', { role: 'button', text: 'Try again' }, ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Retry button', desc: 'Measured, never pressed.', sel: 'button "Try again"' }, { noScroll: true });
+  await page.close();
+}
+
+// Skills: row checkboxes and the bulk remove confirmation. A row is ticked to show the bulk bar,
+// Remove opens the confirmation, Escape cancels it and the tick is cleared. The confirm button is
+// hovered and focused only, never pressed, and every non-GET request is blocked regardless.
+async function skills() {
+  await newPage('skills', { wait: 4500 });
+  const g = G.form;
+  const box = q('main input[type="checkbox"]').first();
+  if (!(await box.count())) { log('  ! no checkbox on Skills'); await page.close(); return; }
+  await box.evaluate((el) => { el.setAttribute('data-m', 'checkbox'); const l = el.closest('label') || el.parentElement; l.setAttribute('data-m', 'checkbox-box'); });
+  await T('badge', { text: 'Plugin' }, ['default'], { group: G.feedback, title: 'Badge', desc: 'The neutral pill on a skill row ("Plugin").', sel: 'leaf "Plugin"' });
+  await box.evaluate((el) => { el.setAttribute('data-m', 'checkbox'); const l = el.closest('label') || el.parentElement; l.setAttribute('data-m', 'checkbox-box'); });
+  await S('checkbox', m('checkbox'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Checkbox', desc: 'Selects a skill row for bulk actions.', sel: 'first input[type=checkbox] on Skills' }, { cropLoc: m('checkbox-box'), hoverLoc: m('checkbox-box') });
+  await box.check(); await page.waitForTimeout(700); await mask(page);
+  await S('checkbox', m('checkbox'), ['checked'], { group: g, title: 'Checkbox', sel: 'first input[type=checkbox] on Skills' }, { cropLoc: m('checkbox-box'), noReset: true });
+  const bulk = q('main button').filter({ hasText: /^Remove$/ }).filter({ visible: true }).first();
+  if (await bulk.count()) {
+    await markBefore();
+    await bulk.click(); await page.waitForTimeout(900); await mask(page);
+    await page.evaluate(() => { const d = [...document.querySelectorAll('[role=dialog], [role=alertdialog]')].find((e) => e.getBoundingClientRect().width > 0); if (!d) return; d.setAttribute('data-m', 'confirm-dialog'); const b = [...d.querySelectorAll('button')].filter((x) => /^remove/i.test(x.innerText.trim())).pop(); if (b) b.setAttribute('data-m', 'danger-button'); const c = [...d.querySelectorAll('button')].find((x) => /^cancel/i.test(x.innerText.trim())); if (c) c.setAttribute('data-m', 'cancel-button'); });
+    if (await m('confirm-dialog').count()) {
+      await S('confirm-dialog', m('confirm-dialog'), ['open'], { group: G.feedback, title: 'Confirmation dialog (destructive)', desc: 'Bulk Remove on Skills asks first. Cancelled with Escape.', sel: '[role=dialog] after bulk Remove' }, { noScroll: true, noReset: true });
+      // reset() between states moves the pointer off the button and blurs it, so focus-visible is not
+      // read with the hover still applied. It only moves the pointer; the dialog stays open.
+      await S('danger-button', m('danger-button'), ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Danger button', desc: 'The confirm action in the remove dialog. Hovered and focused only, never pressed.', sel: 'last "Remove" button in the dialog' }, { noScroll: true });
+      if (await m('cancel-button').count()) await S('cancel-button', m('cancel-button'), ['default', 'hover'], { group: G.control, title: 'Cancel button', sel: '"Cancel" in the dialog' }, { noScroll: true });
+      if (await tagScrim('confirm-scrim')) await S('confirm-scrim', m('confirm-scrim'), ['open'], { group: G.feedback, title: 'Confirmation scrim', sel: 'fixed full-window layer behind the dialog' }, { noScroll: true, noReset: true, crop: false });
+      await layers('confirm');
+      await page.mouse.move(2, 2);
+      await page.keyboard.press('Escape'); await page.waitForTimeout(700);
+      if (await q('[role=dialog]').filter({ visible: true }).count()) throw new Error('confirmation did not close on Escape; stopping before anything else');
+    } else log('  ! bulk Remove opened no dialog');
+  } else log('  ! no bulk Remove button');
+  await box.uncheck(); await page.waitForTimeout(400);
+  await page.close();
+}
+
+// Menu Bar & Widgets: switches (disabled until the Mac app is connected) and a disabled select.
+async function widgets() {
+  await newPage('widgets', { wait: 3500 });
+  const g = G.control;
+  await T('switch-on', { sel: 'main [role="switch"][aria-checked="true"]' }, ['disabled', 'hover'], { group: g, title: 'Switch, on', desc: 'Disabled here: the switches only work with the Mac app connected.', sel: '[role=switch][aria-checked=true]' });
+  await T('primary-button', { role: 'a', text: 'Download Mac App' }, ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Primary button', desc: '"Download Mac App": solid near-black in light, near-white in dark. Measured, never pressed.', sel: 'a "Download Mac App"' });
+  await T('select-disabled', { sel: 'main button[role="combobox"][disabled]' }, ['disabled'], { group: G.form, title: 'Select, disabled', sel: 'button[role=combobox][disabled]' });
+  await page.close();
+}
+
+// Pet: a URL field with its Add button disabled until something is typed.
+async function pet() {
+  await newPage('pet', { wait: 3500 });
+  await T('switch-off', { sel: 'main [role="switch"][aria-checked="false"]' }, ['disabled', 'hover'], { group: G.control, title: 'Switch, off', sel: '[role=switch][aria-checked=false]' });
+  await T('button-disabled', { sel: 'main button[type="submit"][disabled]' }, ['disabled'], { group: G.control, title: 'Button, disabled', desc: '"Add" before a pet URL is typed.', sel: 'button[type=submit][disabled]' });
+  await page.close();
+}
+
+// Achievements: the one underlined text link in the app's own copy. Hovered and focused, never followed.
+async function achievements() {
+  await newPage('achievements', { wait: 3500 });
+  await T('link', { role: 'a', text: 'Suggest it on GitHub' }, ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Text link', desc: '"Suggest it on GitHub" under the badges: secondary text with a light underline. Never followed.', sel: 'a "Suggest it on GitHub"' });
+  await page.close();
+}
+
+// Cloud (signed out): its own focus outline, 2px in the ink colour at a 3px offset.
+async function cloud() {
+  await newPage('cloud', { wait: 4000 });
+  await page.evaluate(() => { const b = [...document.querySelectorAll('.tt-cloud-theme button, .tt-cloud-theme a')].find((e) => { const r = e.getBoundingClientRect(); return r.width > 40 && r.height > 20 && r.top > 0 && r.top < innerHeight; }); if (b) b.setAttribute('data-m', 'cloud-button'); });
+  await S('cloud-button', m('cloud-button'), ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Cloud page button', desc: 'First button on the signed-out Cloud page; the Cloud page draws focus outlines. Never pressed.', sel: 'first button in .tt-cloud-theme' }, { noScroll: true });
   await page.close();
 }
 
@@ -402,7 +625,7 @@ async function status() {
   await page.close();
 }
 
-const PAGES = { dashboard, sessions, limits, settings, status };
+const PAGES = { dashboard, sessions, sessionsLoading, sessionsError, limits, settings, status, skills, widgets, pet, cloud, achievements };
 const want = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(PAGES);
 const done = new Set();
 for (const theme of ['dark', 'light']) {
@@ -418,7 +641,7 @@ for (const theme of ['dark', 'light']) {
 for (const [key, c] of Object.entries(out.components)) if (done.has(c.run) && !touched.has(key)) { delete out.components[key]; log('dropped stale', key); }
 if (!failures.length) {
   out._meta.read = new Date().toLocaleDateString('en-CA');
-  out._meta.source = 'TokenTracker v1.3.5 dashboard served by the local CLI at 127.0.0.1:7680, measured headless in Chromium (Playwright) at 1440x900, 2x';
+  out._meta.source = 'TokenTracker v1.4.3 dashboard served by the local CLI at 127.0.0.1:7680, measured headless in Chromium (Playwright) at 1440x900, 2x';
 }
 save();
 if (failures.length) {

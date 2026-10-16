@@ -18,7 +18,7 @@
 //                  that navigates, submits or enrolls is clicked
 import fs from 'node:fs';
 import path from 'node:path';
-import { UA, launch, open, styleOf, crop, centre, RAW } from './lib.mjs';
+import { UA, launch, open, styleOf, crop, centre, quantize, RAW, REF } from './lib.mjs';
 
 const URLS = {
   home: 'https://www.coursera.org/',
@@ -1180,6 +1180,203 @@ async function explore() {
   await page.close();
 }
 
+// ---------- 2026-10-17 refresh: states the first pass could not reach ----------
+//
+// login     the log-in dialog's email field: default, hover, focus-visible,
+//           filled, and the error CDS shows after Continue. Every request is
+//           aborted before Continue is pressed, so nothing leaves the browser.
+// chat      the AI coach panel the course page opens by default: its privacy
+//           callout, the "Ask anything" text area (typed into, never sent) and
+//           the send button, disabled while the field is empty.
+// notfound  the 404 page, and a search with no match.
+// motion    every prefers-reduced-motion rule in the stylesheets.
+// layers    the z-index of every layered element on four pages.
+URLS.login = 'https://www.coursera.org/?authMode=login';
+URLS.chat = URLS.course;
+URLS.notfound = 'https://www.coursera.org/learn/no-such-course-refresh-404';
+
+async function login() {
+  await newPage('login');
+  const dlg = page.locator('[role=dialog]').filter({ visible: true }).first();
+  await dlg.waitFor({ timeout: 15000 });
+  comp('login-dialog', { description: 'Log in or create account: the CDS dialog over a dimmed page, with the email field, a large primary Continue and three outlined social buttons.', selector: '[role=dialog]' });
+  await measure('login-dialog', 'opened', dlg, { pad: 0, extra: async (l) => ({ scrim: await bgAt(60, 860), layers: await l.evaluate((el) => { const o = []; for (let n = el; n; n = n.parentElement) { const c = getComputedStyle(n); if (c.zIndex !== 'auto') o.push({ node: n.tagName.toLowerCase() + '.' + [...n.classList].filter((x) => !/^css-/.test(x)).join('.'), zIndex: c.zIndex, position: c.position, bg: c.backgroundColor }); } return o; }) }) });
+  const input = dlg.locator('input[type=email]').first();
+  const root = await mark('login-field', (el) => { let n = document.querySelector('[role=dialog] input[type=email]'); for (let i = 0; i < 4 && n; i++) { n = n.parentElement; if (n.classList.contains('cds-input-root') || n.querySelector('fieldset')) return n; } return document.querySelector('[role=dialog] input[type=email]').parentElement; });
+  comp('text-field', { description: 'CDS text field (the email field in the log-in dialog): cds-input-root with a notched-outline fieldset, label above with a red required star.', selector: '[role=dialog] .cds-input-root' });
+  const fieldExtra = (l) => l.evaluate((el) => { const fs = el.querySelector('fieldset'); const i = el.querySelector('input'); const fc = el.closest('.cds-formControl-root') || el.parentElement.parentElement; const lab = fc.querySelector('label'); const help = [...fc.querySelectorAll('[id], div, span, p')].filter((n) => n.innerText && /valid|required|enter/i.test(n.innerText) && n.children.length <= 3).map((n) => { const c = getComputedStyle(n); return { text: n.innerText.trim().slice(0, 60), font: `${c.fontSize}/${c.lineHeight} ${c.fontWeight}`, color: c.color }; }).slice(0, 3); const sv = fc.querySelector('svg'); return { fieldset: fs && { border: getComputedStyle(fs).border, radius: getComputedStyle(fs).borderRadius, boxShadow: getComputedStyle(fs).boxShadow, outline: getComputedStyle(fs).outline }, input: { font: getComputedStyle(i).font, color: getComputedStyle(i).color, padding: getComputedStyle(i).padding, ariaInvalid: i.getAttribute('aria-invalid') }, label: lab && { font: `${getComputedStyle(lab).fontSize}/${getComputedStyle(lab).lineHeight} ${getComputedStyle(lab).fontWeight}`, color: getComputedStyle(lab).color }, message: help, icon: sv && { w: sv.getBoundingClientRect().width, color: getComputedStyle(sv).color, fill: getComputedStyle(sv).fill } }; });
+  await states('text-field', root, ['default', 'hover', 'focus-visible'], { focusLoc: input, pad: 6, extra: fieldExtra });
+  await input.focus();
+  await page.keyboard.type('not-an-email');
+  await page.waitForTimeout(400);
+  await measure('text-field', 'filled', root, { via: 'typed "not-an-email", focus kept', pad: 6, extra: fieldExtra });
+  comp('button-primary-large', { description: 'Large primary button (Continue in the log-in dialog), full width, 48px.', selector: '[role=dialog] button[type=submit]' });
+  const cont = dlg.locator('button[type=submit]').first();
+  await states('button-primary-large', cont, ['default', 'hover', 'focus-visible', 'pressed']);
+  comp('button-social', { description: 'Outlined social sign-in button (Continue with Google): white, 1px dark border, 48px.', selector: '[role=dialog] button:has-text("Continue with Google")' });
+  await states('button-social', dlg.locator('button:has-text("Continue with Google")'), ['default', 'hover', 'focus-visible', 'pressed']);
+  // Error: abort every request, then submit the invalid address.
+  await page.route('**/*', (r) => r.abort());
+  await input.focus();
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(1500);
+  await measure('text-field', 'error', root, { via: 'Enter with "not-an-email", every request aborted', pad: 6, extra: fieldExtra });
+  await measure('text-field', 'error-dialog', dlg, { via: 'the whole dialog in its error state', pad: 0, crop: true });
+  const banner = await mark('login-error', () => { const t = [...document.querySelectorAll('[role=dialog] *')].find((n) => n.children.length === 0 && /Invalid email/.test(n.textContent)); let n = t; for (let i = 0; i < 6 && n; i++) { n = n.parentElement; if (getComputedStyle(n).backgroundColor !== 'rgba(0, 0, 0, 0)') return n; } return t; }).catch(() => null);
+  if (banner) { comp('callout-error', { description: 'Error notification the log-in dialog shows above the field after an invalid submit: red-tint fill, outlined error icon, one line of text. The field itself is not marked invalid.', selector: '[role=dialog] error notification' }); await measure('callout-error', 'error', banner, { pad: 6, extra: (l) => l.evaluate((el) => { const sv = el.querySelector('svg'); const t = [...el.querySelectorAll('*')].find((n) => n.children.length === 0 && n.textContent.trim()); return { role: el.getAttribute('role') || el.querySelector('[role]')?.getAttribute('role'), icon: sv && { w: sv.getBoundingClientRect().width, color: getComputedStyle(sv).color, fill: getComputedStyle(sv).fill }, text: t && { font: `${getComputedStyle(t).fontSize}/${getComputedStyle(t).lineHeight} ${getComputedStyle(t).fontWeight}`, color: getComputedStyle(t).color } }; }) }); }
+  await page.screenshot({ path: path.join(REF, 'screenshots', 'login-light-error.png') });
+  quantize(path.join(REF, 'screenshots', 'login-light-error.png'));
+  await page.unroute('**/*');
+  await page.close();
+}
+
+async function chat() {
+  await newPage('chat');
+  const ask = page.locator('button[aria-label="Ask Coursera"], button:has-text("Ask Coursera")').first();
+  if (!(await page.locator('textarea.cds-ChatResponseField-textarea').first().isVisible().catch(() => false))) { await toggle(ask); await page.waitForTimeout(2500); }
+  const panel = await mark('coach-panel', () => { let n = document.querySelector('textarea.cds-ChatResponseField-textarea'); while (n && n.getBoundingClientRect().height < 600) n = n.parentElement; return n; });
+  comp('coach-panel', { description: 'The AI coach side panel: white, 1px left rule, fixed beside <main>.', selector: 'aside holding the chat' });
+  await measure('coach-panel', 'opened', panel, { pad: 0, extra: (l) => l.evaluate((el) => { const o = []; for (let n = el; n; n = n.parentElement) { const c = getComputedStyle(n); if (c.zIndex !== 'auto' || c.position === 'fixed') o.push({ node: n.tagName.toLowerCase() + '.' + [...n.classList].filter((x) => !/^css-/.test(x)).join('.'), zIndex: c.zIndex, position: c.position, borderLeft: c.borderLeft }); } return o; }) });
+  const note = await mark('coach-callout', () => { const t = [...document.querySelectorAll('*')].find((n) => n.children.length === 0 && /Your privacy and this chat/.test(n.textContent)); let n = t; for (let i = 0; i < 8 && n; i++) { n = n.parentElement; if (getComputedStyle(n).backgroundColor !== 'rgba(0, 0, 0, 0)') return n; } return null; }).catch(() => null);
+  if (note) { comp('callout-info', { description: 'Informative callout (Your privacy and this chat): blue-tint fill, info icon, title, body, primary button.', selector: 'coach privacy notice' }); await measure('callout-info', 'default', note, { pad: 6 }); }
+  const form = page.locator('form.cds-ChatResponseField-root').first();
+  const ta = page.locator('textarea.cds-ChatResponseField-textarea').first();
+  comp('text-area', { description: 'CDS chat text area ("Ask anything..."): a grey 16-radius form with an auto-growing textarea and a round send button.', selector: 'form.cds-ChatResponseField-root' });
+  const taExtra = (l) => l.evaluate((el) => { const t = el.querySelector('textarea'); const c = getComputedStyle(t); const ph = getComputedStyle(t, '::placeholder'); const b = el.querySelector('button'); return { textarea: { size: `${t.getBoundingClientRect().width}x${t.getBoundingClientRect().height}`, font: `${c.fontSize}/${c.lineHeight} ${c.fontWeight}`, color: c.color, padding: c.padding, rows: t.rows, resize: c.resize, placeholder: ph.color }, send: b && { label: b.getAttribute('aria-label'), disabled: b.disabled || b.getAttribute('aria-disabled'), size: `${b.getBoundingClientRect().width}x${b.getBoundingClientRect().height}`, bg: getComputedStyle(b).backgroundColor, color: getComputedStyle(b).color, radius: getComputedStyle(b).borderRadius } }; });
+  await states('text-area', form, ['default', 'hover', 'focus-visible'], { focusLoc: ta, extra: taExtra });
+  const send = page.locator('[aria-label="Send message"]').first();
+  comp('icon-button-send', { description: 'Round send button in the chat field: filled primary when there is text, grey disabled when empty.', selector: 'form.cds-ChatResponseField-root button' });
+  await measure('icon-button-send', 'disabled', send, { via: 'field empty' });
+  await ta.focus();
+  await page.keyboard.type('What will I be able to build after this course?');
+  await page.waitForTimeout(500);
+  await measure('text-area', 'filled', form, { via: 'typed, never sent', extra: taExtra });
+  await states('icon-button-send', send, ['default', 'hover', 'focus-visible', 'pressed']);
+  await ta.fill('');
+  await page.keyboard.press('Shift+Tab');
+  await page.close();
+}
+
+async function notfound() {
+  current = 'notfound';
+  page = await ctx.newPage();
+  const r = await page.goto(URLS.notfound, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(5000);
+  await page.screenshot({ path: path.join(REF, 'screenshots', 'notfound-light-default.png') });
+  quantize(path.join(REF, 'screenshots', 'notfound-light-default.png'));
+  comp('error-page', { description: 'The 404 page: logo bar, grey ground, an abstract illustration, one sentence with two links, three helpful links. It loads without CDS, so text falls back to the browser serif.', selector: 'body' });
+  await measure('error-page', 'default', page.locator('body'), { crop: false, extra: async () => ({ status: r.status(), ...(await page.evaluate(() => { const p = [...document.querySelectorAll('p, h1, h2, div')].find((n) => /not able to find/.test(n.textContent) && n.children.length < 6); const a = document.querySelector('a[href*="browse"]') || document.querySelector('main a, body a'); const pick = (n) => n && { font: getComputedStyle(n).font, color: getComputedStyle(n).color }; return { message: pick(p), link: pick(a), ground: getComputedStyle(document.body).backgroundColor, cdsVars: getComputedStyle(document.documentElement).getPropertyValue('--cds-color-interactive-primary') || 'none' }; })) }) });
+  // A search with no match: Coursera shows fallback results, not an empty state.
+  await open(page, 'https://www.coursera.org/search?query=zqxjvkwpq', 6000);
+  await page.screenshot({ path: path.join(REF, 'screenshots', 'search-light-no-match.png') });
+  quantize(path.join(REF, 'screenshots', 'search-light-no-match.png'));
+  out._meta.noMatch = await page.evaluate(() => ({ heading: document.querySelector('h1, h2')?.innerText.slice(0, 80), results: document.querySelectorAll('#searchResults li').length, text: (document.querySelector('main')?.innerText.match(/No results[^\n]*/) || [null])[0] }));
+  await page.close();
+}
+
+async function motion() {
+  out._meta.reducedMotion = {};
+  for (const k of ['search', 'course', 'home']) {
+    await newPage(k);
+    out._meta.reducedMotion[k] = await page.evaluate(() => {
+      const o = [];
+      const emo = {};
+      for (const el of document.querySelectorAll('[class*="cds-"]')) { const cds = [...el.classList].filter((c) => c.startsWith('cds-') && !/^cds-\d+$/.test(c)); for (const c of el.classList) if (c.startsWith('css-') && cds.length) emo[c] ??= cds.slice(0, 2).join(' '); }
+      const walk = (rules, media) => { for (const r of rules) { if (r.media) walk(r.cssRules, r.media.mediaText); else if (r.style && media && /reduced-motion/.test(media)) { const css = (r.selectorText.match(/css-[a-z0-9]+/) || [])[0]; o.push({ media, selector: r.selectorText.slice(0, 220), component: css ? emo[css] : undefined, style: r.style.cssText.slice(0, 200) }); } } };
+      for (const s of document.styleSheets) { try { walk(s.cssRules, ''); } catch {} }
+      return o;
+    });
+    await page.close();
+  }
+  // The product card under reduced motion: hover keeps the shadow, drops the lift.
+  const { browser: b2, context: c2 } = await launch();
+  await c2.close();
+  const c3 = await b2.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'reduce' });
+  const p = await c3.newPage();
+  await open(p, URLS.search, 6500);
+  const card = p.locator('.cds-ProductCard-base').filter({ visible: true }).first();
+  await card.scrollIntoViewIfNeeded();
+  await card.hover();
+  await p.waitForTimeout(500);
+  out._meta.reducedMotion.productCardHoverReduce = await card.evaluate((el) => { const c = getComputedStyle(el); return { transition: c.transition, transform: c.transform, boxShadow: c.boxShadow }; });
+  await b2.close();
+}
+
+async function layers() {
+  out._meta.zIndex = {};
+  for (const k of ['home', 'search', 'course']) {
+    await newPage(k);
+    if (k === 'search') { await toggle(page.locator('button:has-text("Topic")').filter({ visible: true }).first()).catch(() => {}); await page.waitForTimeout(1200); }
+    if (k === 'course') { await page.evaluate(() => window.scrollTo(0, 1400)); await page.waitForTimeout(1500); await page.locator('button[aria-label="Ask Coursera"]').first().click().catch(() => {}); await page.waitForTimeout(2000); }
+    out._meta.zIndex[k] = await page.evaluate(() => [...document.querySelectorAll('body *')].map((e) => [e, getComputedStyle(e)]).filter(([e, c]) => c.zIndex !== 'auto' && c.zIndex !== '0' && c.position !== 'static' && e.getBoundingClientRect().width > 0).map(([e, c]) => { const r = e.getBoundingClientRect(); return { zIndex: +c.zIndex, position: c.position, node: e.tagName.toLowerCase() + '.' + [...e.classList].filter((x) => !/^css-/.test(x)).slice(0, 3).join('.'), testid: e.getAttribute('data-testid') || e.getAttribute('role') || undefined, size: `${r.width.toFixed(0)}x${r.height.toFixed(0)}` }; }).sort((a, b) => b.zIndex - a.zIndex).slice(0, 30));
+    await page.close();
+  }
+}
+
+// darkparity  the six component colours the light set holds outside CDS's
+//             semantic tokens, read again with data-color-theme="dark", the
+//             attribute Coursera's own Appearance setting puts on <html>.
+// elevation   every stylesheet rule that paints an --cds-elevation level, with
+//             the CDS component it styles.
+async function darkparity() {
+  out._meta.darkParity = {};
+  const read = async (k) => page.evaluate(() => {
+    const vis = (sel) => [...document.querySelectorAll(sel)].find((e) => e.getBoundingClientRect().width > 0);
+    const band = [...document.querySelectorAll('div')].find((d) => getComputedStyle(d).zIndex === '-1' && d.getBoundingClientRect().width > 2000);
+    const top = [...document.querySelectorAll('div, span')].find((e) => e.children.length === 0 && e.textContent.trim() === 'Top Instructor');
+    const slot = vis('.xdp-key-information-slot');
+    const stats = slot && [...slot.querySelectorAll('div')].find((d) => getComputedStyle(d).boxShadow !== 'none');
+    const tag = vis('span[data-testid=tag-root].cds-tag-status:not(.cds-tag-highlight1)');
+    return {
+      theme: document.documentElement.getAttribute('data-color-theme'),
+      heroBand: band && getComputedStyle(band).backgroundColor,
+      heroBadge: top && getComputedStyle(top.parentElement).backgroundColor,
+      statsCardShadow: stats && getComputedStyle(stats).boxShadow,
+      tagTopAi: tag && getComputedStyle(tag).backgroundColor,
+    };
+  });
+  const dark = () => page.evaluate(() => { document.documentElement.setAttribute('data-color-theme', 'dark'); });
+  for (const k of ['course', 'search']) {
+    await newPage(k);
+    await dark();
+    await page.waitForTimeout(800);
+    const r = await read(k);
+    if (k === 'course') {
+      await page.evaluate(() => window.scrollTo(0, 1600));
+      await page.waitForTimeout(1500);
+      r.stickyNavShadow = await page.evaluate(() => { const n = document.querySelector('[data-testid=fixed-page-navigation]'); if (!n) return null; const e = [n, ...n.querySelectorAll('*')].find((x) => getComputedStyle(x).boxShadow !== 'none'); return e && getComputedStyle(e).boxShadow; });
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.waitForTimeout(800);
+      const help = page.locator('.cds-ContextualHelp-helpToggleButton').filter({ visible: true }).first();
+      await centre(help);
+      await toggle(help).catch(() => {});
+      await page.waitForTimeout(1200);
+      r.modalScrim = (await bgAt(20, 880))?.backgroundColor;
+      r.modalScrimNode = (await bgAt(20, 880))?.cls;
+      await page.keyboard.press('Escape');
+    }
+    out._meta.darkParity[k] = r;
+    await page.close();
+  }
+  log('darkparity', JSON.stringify(out._meta.darkParity));
+}
+
+async function elevation() {
+  out._meta.elevationRules = {};
+  for (const k of ['home', 'search', 'course']) {
+    await newPage(k);
+    out._meta.elevationRules[k] = await page.evaluate(() => {
+      const emo = {};
+      for (const el of document.querySelectorAll('[class*="cds-"]')) { const cds = [...el.classList].filter((c) => c.startsWith('cds-') && !/^cds-\d+$/.test(c)); for (const c of el.classList) if (c.startsWith('css-') && cds.length) emo[c] ??= cds.slice(0, 2).join(' '); }
+      const o = [];
+      const walk = (rules, media) => { for (const r of rules) { if (r.cssRules && !r.selectorText) walk(r.cssRules, r.media ? r.media.mediaText : media); else if (r.style) { const t = r.style.cssText; const m = t.match(/--cds-elevation-level(\d)/); if (m) { const css = ((r.selectorText || '').match(/css-[a-z0-9]+/) || [])[0]; o.push({ level: +m[1], selector: (r.selectorText || '').slice(0, 200), component: css ? emo[css] : undefined, media: media || undefined }); } } } };
+      for (const s of document.styleSheets) { try { walk(s.cssRules, ''); } catch {} }
+      return o;
+    });
+    await page.close();
+  }
+}
+
 // Layout grid at several widths.
 async function layout() {
   out._meta.layout = {};
@@ -1207,7 +1404,7 @@ async function layout() {
 
 // ---------- run ----------
 const which = process.argv.slice(2);
-const run = which.length ? which : ['home', 'search', 'course', 'spec', 'explore', 'layout'];
+const run = which.length ? which : ['home', 'search', 'course', 'spec', 'explore', 'layout', 'login', 'chat', 'notfound', 'motion', 'layers', 'darkparity', 'elevation'];
 const { browser, context: ctx } = await launch();
 // A subset run (for example only `explore`) keeps the capture stamp of the full run.
 if (!which.length || !out._meta.capturedAt) out._meta.capturedAt = new Date().toISOString();
@@ -1221,6 +1418,13 @@ for (const k of run) {
     if (k === 'spec') await spec();
     if (k === 'explore') await explore();
     if (k === 'layout') await layout();
+    if (k === 'login') await login();
+    if (k === 'chat') await chat();
+    if (k === 'notfound') await notfound();
+    if (k === 'motion') await motion();
+    if (k === 'layers') await layers();
+    if (k === 'darkparity') await darkparity();
+    if (k === 'elevation') await elevation();
   } catch (e) {
     log('PAGE FAILED', k, e.stack?.slice(0, 600));
   }

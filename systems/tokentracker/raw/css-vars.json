@@ -1,19 +1,19 @@
 {
- "readAt": "2026-10-11",
- "source": "TokenTracker v1.3.5's dashboard CSS bundle, fetched from the local server at http://127.0.0.1:7680/assets/ (one Vite bundle)",
+ "readAt": "2026-10-17",
+ "source": "TokenTracker v1.4.3's dashboard CSS bundle, fetched from the local server at http://127.0.0.1:7680/assets/ (one Vite bundle)",
  "sheets": [
   {
-   "name": "block-1e8532a1b6",
+   "name": "block-017d03d0e3",
    "media": "",
-   "bytes": 260168
+   "bytes": 260756
   }
  ],
  "counts": {
-  "rules": 610,
+  "rules": 611,
   "fonts": 24,
   "names": {
-   "oai": 98,
-   "app": 15,
+   "oai": 99,
+   "app": 17,
    "utility": 0,
    "tailwind": 65
   },
@@ -276,7 +276,7 @@
    "[tailwind] .backdrop-blur-sm": 1,
    "[tailwind] .backdrop-blur-xl": 1,
    "[tailwind] .backdrop-saturate-150": 1,
-   "[oai] :root": 94,
+   "[oai] :root": 95,
    "[oai] :root.dark": 26,
    "[tailwind] :focus, :focus-visible": 2,
    "[app] html.native-app": 1,
@@ -285,7 +285,8 @@
    "[oai] .tt-cloud-theme": 8,
    "[app] .tt-cloud-settings": 5,
    "[app] .tt-cloud-figure": 6,
-   "[app] .dark .tt-cloud-figure": 5,
+   "[app] .tt-cloud-electric": 2,
+   "[app] .tt-cloud-electric.is-dark": 2,
    "[tailwind] .tt-sidebar-pro-fallback": 1,
    "[tailwind] .dark .tt-sidebar-pro-fallback": 1,
    "[oai] .dark .tt-cloud-theme": 8,
@@ -317,7 +318,6 @@
    "[tailwind] .hover\\:\\!bg-red-700:hover": 1,
    "[tailwind] .hover\\:bg-amber-100:hover": 1,
    "[tailwind] .hover\\:bg-emerald-500:hover": 1,
-   "[tailwind] .hover\\:bg-oai-brand-600:hover": 1,
    "[tailwind] .hover\\:bg-oai-brand-700:hover": 1,
    "[tailwind] .hover\\:bg-oai-gray-100:hover": 1,
    "[tailwind] .hover\\:bg-oai-gray-200:hover": 1,
@@ -459,6 +459,7 @@
    "[tailwind] .dark\\:border-t-oai-gray-800:is(.dark *)": 1,
    "[tailwind] .dark\\:\\!bg-oai-gray-900:is(.dark *)": 1,
    "[tailwind] .dark\\:\\!bg-red-600:is(.dark *)": 1,
+   "[tailwind] .dark\\:bg-emerald-400:is(.dark *)": 1,
    "[tailwind] .dark\\:bg-oai-black:is(.dark *)": 1,
    "[tailwind] .dark\\:bg-oai-brand-400:is(.dark *)": 1,
    "[tailwind] .dark\\:bg-oai-gray-100:is(.dark *)": 1,
@@ -633,7 +634,7 @@
  "errors": [],
  "oai": [
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -689,6 +690,7 @@
     "--community-kimi": "#a78bfa",
     "--community-zcode": "#14b8a6",
     "--community-mimo": "#ff6900",
+    "--community-dumate": "#2563eb",
     "--community-droid": "#ef4444",
     "--community-workbuddy": "#0ea5e9",
     "--community-copilot": "#6366f1",
@@ -735,7 +737,7 @@
    "bin": "oai"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ":root.dark",
    "context": [],
    "properties": {
@@ -769,7 +771,7 @@
    "bin": "oai"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ":root",
    "context": [
     "@supports (color: oklch(0% 0 0))"
@@ -790,7 +792,7 @@
    "bin": "oai"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ":root.dark",
    "context": [
     "@supports (color: oklch(0% 0 0))"
@@ -811,7 +813,7 @@
    "bin": "oai"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".tt-cloud-theme",
    "context": [],
    "properties": {
@@ -827,7 +829,7 @@
    "bin": "oai"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark .tt-cloud-theme",
    "context": [],
    "properties": {
@@ -845,7 +847,7 @@
  ],
  "app": [
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": "html.native-app",
    "context": [],
    "properties": {
@@ -854,7 +856,7 @@
    "bin": "app"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".tt-cloud-settings",
    "context": [],
    "properties": {
@@ -867,7 +869,7 @@
    "bin": "app"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".tt-cloud-figure",
    "context": [],
    "properties": {
@@ -881,20 +883,27 @@
    "bin": "app"
   },
   {
-   "file": "block-1e8532a1b6",
-   "selector": ".dark .tt-cloud-figure",
+   "file": "block-017d03d0e3",
+   "selector": ".tt-cloud-electric",
    "context": [],
    "properties": {
-    "--hairline-plate": "#171717",
-    "--hairline-hi": "#e5e5e5",
-    "--hairline-edge": "#d4d4d4",
-    "--hairline-mid": "#a3a3a3",
-    "--hairline-lo": "#404040"
+    "--tt-electric-core": "#5b21b6",
+    "--tt-electric-glow": "#8b5cf6"
    },
    "bin": "app"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
+   "selector": ".tt-cloud-electric.is-dark",
+   "context": [],
+   "properties": {
+    "--tt-electric-core": "#cffafe",
+    "--tt-electric-glow": "#8b5cf6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "block-017d03d0e3",
    "selector": ".tt-pro-period-control",
    "context": [],
    "properties": {
@@ -904,7 +913,7 @@
    "bin": "app"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".tt-plan-card",
    "context": [],
    "properties": {
@@ -913,7 +922,7 @@
    "bin": "app"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark .tt-plan-card",
    "context": [],
    "properties": {
@@ -922,7 +931,7 @@
    "bin": "app"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark .tt-pro-period-control",
    "context": [],
    "properties": {
@@ -934,7 +943,7 @@
  "utility": [],
  "tailwind": [
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": "*, ::before, ::after",
    "context": [],
    "properties": {
@@ -993,7 +1002,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": "::backdrop",
    "context": [],
    "properties": {
@@ -1052,7 +1061,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": "::before, ::after",
    "context": [],
    "properties": {
@@ -1061,7 +1070,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".-translate-x-1\\/2",
    "context": [],
    "properties": {
@@ -1070,7 +1079,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".-translate-y-1\\/2",
    "context": [],
    "properties": {
@@ -1079,7 +1088,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-x-1",
    "context": [],
    "properties": {
@@ -1088,7 +1097,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-x-1\\/2",
    "context": [],
    "properties": {
@@ -1097,7 +1106,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-x-8",
    "context": [],
    "properties": {
@@ -1106,7 +1115,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-x-\\[18px\\]",
    "context": [],
    "properties": {
@@ -1115,7 +1124,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-x-\\[19px\\]",
    "context": [],
    "properties": {
@@ -1124,7 +1133,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-x-\\[3px\\]",
    "context": [],
    "properties": {
@@ -1133,7 +1142,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-y-1",
    "context": [],
    "properties": {
@@ -1142,7 +1151,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-y-1\\/2",
    "context": [],
    "properties": {
@@ -1151,7 +1160,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-y-2",
    "context": [],
    "properties": {
@@ -1160,7 +1169,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-y-\\[0\\.5px\\]",
    "context": [],
    "properties": {
@@ -1169,7 +1178,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".translate-y-px",
    "context": [],
    "properties": {
@@ -1178,7 +1187,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".rotate-180",
    "context": [],
    "properties": {
@@ -1187,7 +1196,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".rotate-45",
    "context": [],
    "properties": {
@@ -1196,7 +1205,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".rotate-90",
    "context": [],
    "properties": {
@@ -1205,7 +1214,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".scale-100",
    "context": [],
    "properties": {
@@ -1215,7 +1224,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".scale-110",
    "context": [],
    "properties": {
@@ -1225,7 +1234,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".scale-125",
    "context": [],
    "properties": {
@@ -1235,7 +1244,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".scale-90",
    "context": [],
    "properties": {
@@ -1245,7 +1254,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".scale-95",
    "context": [],
    "properties": {
@@ -1255,7 +1264,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".scale-y-0",
    "context": [],
    "properties": {
@@ -1264,7 +1273,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".\\!space-y-0 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1273,7 +1282,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-0\\.5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1282,7 +1291,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-1 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1291,7 +1300,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-1\\.5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1300,7 +1309,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-10 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1309,7 +1318,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-2 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1318,7 +1327,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-2\\.5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1327,7 +1336,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-3 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1336,7 +1345,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-3\\.5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1345,7 +1354,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-4 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1354,7 +1363,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1363,7 +1372,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-6 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1372,7 +1381,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-8 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1381,7 +1390,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-9 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1390,7 +1399,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".space-y-\\[2px\\] > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1399,7 +1408,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".divide-x > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1408,7 +1417,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".divide-y > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1417,7 +1426,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".divide-oai-gray-100 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1426,7 +1435,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".divide-oai-gray-200 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1435,7 +1444,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".\\!border-oai-gray-200",
    "context": [],
    "properties": {
@@ -1444,7 +1453,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-amber-200",
    "context": [],
    "properties": {
@@ -1453,7 +1462,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-emerald-200",
    "context": [],
    "properties": {
@@ -1462,7 +1471,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-black",
    "context": [],
    "properties": {
@@ -1471,7 +1480,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-brand-500",
    "context": [],
    "properties": {
@@ -1480,7 +1489,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-error",
    "context": [],
    "properties": {
@@ -1489,7 +1498,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-gray-100",
    "context": [],
    "properties": {
@@ -1498,7 +1507,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-gray-200",
    "context": [],
    "properties": {
@@ -1507,7 +1516,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-gray-300",
    "context": [],
    "properties": {
@@ -1516,7 +1525,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-gray-50",
    "context": [],
    "properties": {
@@ -1525,7 +1534,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-gray-600",
    "context": [],
    "properties": {
@@ -1534,7 +1543,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-gray-700",
    "context": [],
    "properties": {
@@ -1543,7 +1552,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-gray-800",
    "context": [],
    "properties": {
@@ -1552,7 +1561,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-oai-gray-900",
    "context": [],
    "properties": {
@@ -1561,7 +1570,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-red-200",
    "context": [],
    "properties": {
@@ -1570,7 +1579,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-red-300",
    "context": [],
    "properties": {
@@ -1579,7 +1588,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-zinc-200",
    "context": [],
    "properties": {
@@ -1588,7 +1597,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-t-oai-gray-900",
    "context": [],
    "properties": {
@@ -1597,7 +1606,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".border-t-white",
    "context": [],
    "properties": {
@@ -1606,7 +1615,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".\\!bg-black",
    "context": [],
    "properties": {
@@ -1615,7 +1624,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".\\!bg-red-600",
    "context": [],
    "properties": {
@@ -1624,7 +1633,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".\\!bg-white",
    "context": [],
    "properties": {
@@ -1633,7 +1642,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-\\[\\#080808\\]",
    "context": [],
    "properties": {
@@ -1642,7 +1651,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-\\[\\#10b981\\]",
    "context": [],
    "properties": {
@@ -1651,7 +1660,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-\\[\\#3b82f6\\]",
    "context": [],
    "properties": {
@@ -1660,7 +1669,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-\\[\\#a855f7\\]",
    "context": [],
    "properties": {
@@ -1669,7 +1678,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-\\[\\#f59e0b\\]",
    "context": [],
    "properties": {
@@ -1678,7 +1687,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-amber-400",
    "context": [],
    "properties": {
@@ -1687,7 +1696,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-amber-50",
    "context": [],
    "properties": {
@@ -1696,7 +1705,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-amber-500",
    "context": [],
    "properties": {
@@ -1705,7 +1714,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-black",
    "context": [],
    "properties": {
@@ -1714,7 +1723,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-blue-50",
    "context": [],
    "properties": {
@@ -1723,7 +1732,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-blue-500",
    "context": [],
    "properties": {
@@ -1732,7 +1741,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-emerald-400",
    "context": [],
    "properties": {
@@ -1741,7 +1750,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-emerald-50",
    "context": [],
    "properties": {
@@ -1750,7 +1759,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-emerald-500",
    "context": [],
    "properties": {
@@ -1759,7 +1768,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-emerald-600",
    "context": [],
    "properties": {
@@ -1768,7 +1777,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-gray-50",
    "context": [],
    "properties": {
@@ -1777,7 +1786,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-amber-50",
    "context": [],
    "properties": {
@@ -1786,7 +1795,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-black",
    "context": [],
    "properties": {
@@ -1795,7 +1804,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-brand",
    "context": [],
    "properties": {
@@ -1804,7 +1813,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-brand-100",
    "context": [],
    "properties": {
@@ -1813,7 +1822,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-brand-50",
    "context": [],
    "properties": {
@@ -1822,7 +1831,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-brand-500",
    "context": [],
    "properties": {
@@ -1831,7 +1840,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-brand-600",
    "context": [],
    "properties": {
@@ -1840,7 +1849,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-gray-100",
    "context": [],
    "properties": {
@@ -1849,7 +1858,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-gray-200",
    "context": [],
    "properties": {
@@ -1858,7 +1867,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-gray-300",
    "context": [],
    "properties": {
@@ -1867,7 +1876,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-gray-400",
    "context": [],
    "properties": {
@@ -1876,7 +1885,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-gray-50",
    "context": [],
    "properties": {
@@ -1885,7 +1894,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-gray-700",
    "context": [],
    "properties": {
@@ -1894,7 +1903,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-gray-800",
    "context": [],
    "properties": {
@@ -1903,7 +1912,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-gray-900",
    "context": [],
    "properties": {
@@ -1912,7 +1921,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-gray-950",
    "context": [],
    "properties": {
@@ -1921,7 +1930,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-oai-white",
    "context": [],
    "properties": {
@@ -1930,7 +1939,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-orange-50",
    "context": [],
    "properties": {
@@ -1939,7 +1948,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-orange-500",
    "context": [],
    "properties": {
@@ -1948,7 +1957,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-red-400",
    "context": [],
    "properties": {
@@ -1957,7 +1966,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-red-50",
    "context": [],
    "properties": {
@@ -1966,7 +1975,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-red-500",
    "context": [],
    "properties": {
@@ -1975,7 +1984,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-red-600",
    "context": [],
    "properties": {
@@ -1984,7 +1993,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-sky-50",
    "context": [],
    "properties": {
@@ -1993,7 +2002,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-sky-600",
    "context": [],
    "properties": {
@@ -2002,7 +2011,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-slate-800",
    "context": [],
    "properties": {
@@ -2011,7 +2020,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-slate-950",
    "context": [],
    "properties": {
@@ -2020,7 +2029,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-white",
    "context": [],
    "properties": {
@@ -2029,7 +2038,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-yellow-500",
    "context": [],
    "properties": {
@@ -2038,7 +2047,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".bg-zinc-100",
    "context": [],
    "properties": {
@@ -2047,7 +2056,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-\\[color\\:var\\(--lv3-accent-soft\\)\\]",
    "context": [],
    "properties": {
@@ -2058,7 +2067,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-emerald-50",
    "context": [],
    "properties": {
@@ -2069,7 +2078,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-oai-amber-50",
    "context": [],
    "properties": {
@@ -2080,7 +2089,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-oai-black",
    "context": [],
    "properties": {
@@ -2091,7 +2100,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-oai-brand-100",
    "context": [],
    "properties": {
@@ -2102,7 +2111,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-oai-brand-50",
    "context": [],
    "properties": {
@@ -2113,7 +2122,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-oai-gray-100",
    "context": [],
    "properties": {
@@ -2124,7 +2133,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-oai-gray-200",
    "context": [],
    "properties": {
@@ -2135,7 +2144,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-oai-gray-200\\/80",
    "context": [],
    "properties": {
@@ -2146,7 +2155,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-oai-gray-900\\/5",
    "context": [],
    "properties": {
@@ -2157,7 +2166,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-oai-white",
    "context": [],
    "properties": {
@@ -2168,7 +2177,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-orange-100",
    "context": [],
    "properties": {
@@ -2179,7 +2188,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-white",
    "context": [],
    "properties": {
@@ -2190,7 +2199,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-white\\/10",
    "context": [],
    "properties": {
@@ -2201,7 +2210,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".from-white\\/30",
    "context": [],
    "properties": {
@@ -2212,7 +2221,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".via-\\[color\\:var\\(--lv3-accent-soft\\)\\]",
    "context": [],
    "properties": {
@@ -2222,7 +2231,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".to-\\[color\\:var\\(--lv3-accent\\)\\]",
    "context": [],
    "properties": {
@@ -2231,7 +2240,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".to-cyan-50",
    "context": [],
    "properties": {
@@ -2240,7 +2249,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".to-oai-gray-200",
    "context": [],
    "properties": {
@@ -2249,7 +2258,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".to-oai-gray-50",
    "context": [],
    "properties": {
@@ -2258,7 +2267,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".to-oai-gray-600",
    "context": [],
    "properties": {
@@ -2267,7 +2276,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".to-transparent",
    "context": [],
    "properties": {
@@ -2276,7 +2285,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".tabular-nums",
    "context": [],
    "properties": {
@@ -2285,7 +2294,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".\\!text-oai-black",
    "context": [],
    "properties": {
@@ -2294,7 +2303,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".\\!text-red-600",
    "context": [],
    "properties": {
@@ -2303,7 +2312,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-amber-500",
    "context": [],
    "properties": {
@@ -2312,7 +2321,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-amber-600",
    "context": [],
    "properties": {
@@ -2321,7 +2330,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-amber-700",
    "context": [],
    "properties": {
@@ -2330,7 +2339,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-amber-800",
    "context": [],
    "properties": {
@@ -2339,7 +2348,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-blue-500",
    "context": [],
    "properties": {
@@ -2348,7 +2357,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-blue-600",
    "context": [],
    "properties": {
@@ -2357,7 +2366,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-blue-700",
    "context": [],
    "properties": {
@@ -2366,7 +2375,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-emerald-500",
    "context": [],
    "properties": {
@@ -2375,7 +2384,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-emerald-600",
    "context": [],
    "properties": {
@@ -2384,7 +2393,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-emerald-700",
    "context": [],
    "properties": {
@@ -2393,7 +2402,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-gray-500",
    "context": [],
    "properties": {
@@ -2402,7 +2411,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-green-400",
    "context": [],
    "properties": {
@@ -2411,7 +2420,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-indigo-500",
    "context": [],
    "properties": {
@@ -2420,7 +2429,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-amber-dark",
    "context": [],
    "properties": {
@@ -2429,7 +2438,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-black",
    "context": [],
    "properties": {
@@ -2438,7 +2447,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-brand, .text-oai-brand-600",
    "context": [],
    "properties": {
@@ -2447,7 +2456,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-brand-700",
    "context": [],
    "properties": {
@@ -2456,7 +2465,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-error",
    "context": [],
    "properties": {
@@ -2465,7 +2474,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-gray-100",
    "context": [],
    "properties": {
@@ -2474,7 +2483,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-gray-200",
    "context": [],
    "properties": {
@@ -2483,7 +2492,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-gray-300",
    "context": [],
    "properties": {
@@ -2492,7 +2501,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-gray-400",
    "context": [],
    "properties": {
@@ -2501,7 +2510,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-gray-500",
    "context": [],
    "properties": {
@@ -2510,7 +2519,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-gray-600",
    "context": [],
    "properties": {
@@ -2519,7 +2528,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-gray-700",
    "context": [],
    "properties": {
@@ -2528,7 +2537,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-gray-800",
    "context": [],
    "properties": {
@@ -2537,7 +2546,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-gray-900",
    "context": [],
    "properties": {
@@ -2546,7 +2555,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-gray-950",
    "context": [],
    "properties": {
@@ -2555,7 +2564,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-oai-white",
    "context": [],
    "properties": {
@@ -2564,7 +2573,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-orange-500",
    "context": [],
    "properties": {
@@ -2573,7 +2582,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-orange-600",
    "context": [],
    "properties": {
@@ -2582,7 +2591,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-orange-700",
    "context": [],
    "properties": {
@@ -2591,7 +2600,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-purple-500",
    "context": [],
    "properties": {
@@ -2600,7 +2609,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-red-500",
    "context": [],
    "properties": {
@@ -2609,7 +2618,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-red-600",
    "context": [],
    "properties": {
@@ -2618,7 +2627,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-red-700",
    "context": [],
    "properties": {
@@ -2627,7 +2636,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-red-800",
    "context": [],
    "properties": {
@@ -2636,7 +2645,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-rose-500",
    "context": [],
    "properties": {
@@ -2645,7 +2654,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-rose-600",
    "context": [],
    "properties": {
@@ -2654,7 +2663,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-sky-600",
    "context": [],
    "properties": {
@@ -2663,7 +2672,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-sky-700",
    "context": [],
    "properties": {
@@ -2672,7 +2681,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-sky-800",
    "context": [],
    "properties": {
@@ -2681,7 +2690,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-slate-400",
    "context": [],
    "properties": {
@@ -2690,7 +2699,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-slate-500",
    "context": [],
    "properties": {
@@ -2699,7 +2708,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-slate-600",
    "context": [],
    "properties": {
@@ -2708,7 +2717,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-violet-600",
    "context": [],
    "properties": {
@@ -2717,7 +2726,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-white",
    "context": [],
    "properties": {
@@ -2726,7 +2735,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-yellow-600",
    "context": [],
    "properties": {
@@ -2735,7 +2744,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-zinc-400",
    "context": [],
    "properties": {
@@ -2744,7 +2753,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-zinc-500",
    "context": [],
    "properties": {
@@ -2753,7 +2762,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-zinc-600",
    "context": [],
    "properties": {
@@ -2762,7 +2771,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-zinc-700",
    "context": [],
    "properties": {
@@ -2771,7 +2780,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".text-zinc-900",
    "context": [],
    "properties": {
@@ -2780,7 +2789,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".placeholder-oai-gray-400::placeholder",
    "context": [],
    "properties": {
@@ -2789,7 +2798,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow",
    "context": [],
    "properties": {
@@ -2799,7 +2808,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-2xl",
    "context": [],
    "properties": {
@@ -2809,7 +2818,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-\\[0_0_8px_rgba\\(148\\,163\\,184\\,0\\.2\\)\\]",
    "context": [],
    "properties": {
@@ -2819,7 +2828,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-\\[0_0_8px_rgba\\(245\\,158\\,11\\,0\\.25\\)\\]",
    "context": [],
    "properties": {
@@ -2829,7 +2838,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-\\[0_0_8px_rgba\\(249\\,115\\,22\\,0\\.25\\)\\]",
    "context": [],
    "properties": {
@@ -2839,7 +2848,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-\\[0_12px_28px_-14px_rgba\\(15\\,23\\,42\\,0\\.22\\)\\]",
    "context": [],
    "properties": {
@@ -2849,7 +2858,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-\\[0_12px_32px_-12px_rgba\\(0\\,0\\,0\\,0\\.18\\)\\]",
    "context": [],
    "properties": {
@@ -2859,7 +2868,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-\\[0_1px_3px_rgba\\(0\\,0\\,0\\,0\\.18\\)\\]",
    "context": [],
    "properties": {
@@ -2869,7 +2878,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-\\[0_20px_60px_-20px_rgba\\(0\\,0\\,0\\,0\\.25\\)\\]",
    "context": [],
    "properties": {
@@ -2879,7 +2888,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-\\[0_24px_60px_-20px_rgba\\(15\\,23\\,42\\,0\\.25\\)\\]",
    "context": [],
    "properties": {
@@ -2889,7 +2898,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-\\[0_2px_6px_rgba\\(0\\,0\\,0\\,0\\.15\\)\\]",
    "context": [],
    "properties": {
@@ -2899,7 +2908,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-\\[0_8px_30px_rgb\\(0\\,0\\,0\\,0\\.04\\)\\]",
    "context": [],
    "properties": {
@@ -2909,7 +2918,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-lg",
    "context": [],
    "properties": {
@@ -2919,7 +2928,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-md",
    "context": [],
    "properties": {
@@ -2929,7 +2938,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-oai-lg",
    "context": [],
    "properties": {
@@ -2939,7 +2948,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-oai-md",
    "context": [],
    "properties": {
@@ -2949,7 +2958,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-sm",
    "context": [],
    "properties": {
@@ -2959,7 +2968,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-xl",
    "context": [],
    "properties": {
@@ -2969,7 +2978,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-black\\/10",
    "context": [],
    "properties": {
@@ -2979,7 +2988,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-black\\/30",
    "context": [],
    "properties": {
@@ -2989,7 +2998,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-black\\/40",
    "context": [],
    "properties": {
@@ -2999,7 +3008,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-black\\/50",
    "context": [],
    "properties": {
@@ -3009,7 +3018,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".shadow-black\\/60",
    "context": [],
    "properties": {
@@ -3019,7 +3028,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring",
    "context": [],
    "properties": {
@@ -3029,7 +3038,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-1",
    "context": [],
    "properties": {
@@ -3039,7 +3048,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-2",
    "context": [],
    "properties": {
@@ -3049,7 +3058,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-\\[1\\.5px\\]",
    "context": [],
    "properties": {
@@ -3059,7 +3068,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-inset",
    "context": [],
    "properties": {
@@ -3068,7 +3077,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-amber-400",
    "context": [],
    "properties": {
@@ -3078,7 +3087,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-black\\/10",
    "context": [],
    "properties": {
@@ -3087,7 +3096,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-black\\/5",
    "context": [],
    "properties": {
@@ -3096,7 +3105,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-black\\/\\[0\\.04\\]",
    "context": [],
    "properties": {
@@ -3105,7 +3114,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-oai-brand-500\\/50",
    "context": [],
    "properties": {
@@ -3114,7 +3123,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-oai-gray-200",
    "context": [],
    "properties": {
@@ -3124,7 +3133,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-oai-gray-300",
    "context": [],
    "properties": {
@@ -3134,7 +3143,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-oai-gray-300\\/30",
    "context": [],
    "properties": {
@@ -3143,7 +3152,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-oai-gray-700",
    "context": [],
    "properties": {
@@ -3153,7 +3162,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-oai-gray-900",
    "context": [],
    "properties": {
@@ -3163,7 +3172,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-oai-white",
    "context": [],
    "properties": {
@@ -3173,7 +3182,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-orange-400",
    "context": [],
    "properties": {
@@ -3183,7 +3192,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-sky-200",
    "context": [],
    "properties": {
@@ -3193,7 +3202,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-white",
    "context": [],
    "properties": {
@@ -3203,7 +3212,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-white\\/10",
    "context": [],
    "properties": {
@@ -3212,7 +3221,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-white\\/\\[0\\.06\\]",
    "context": [],
    "properties": {
@@ -3221,7 +3230,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-offset-1",
    "context": [],
    "properties": {
@@ -3230,7 +3239,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".ring-offset-white",
    "context": [],
    "properties": {
@@ -3239,7 +3248,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".blur",
    "context": [],
    "properties": {
@@ -3248,7 +3257,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".blur-3xl",
    "context": [],
    "properties": {
@@ -3257,7 +3266,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".blur-\\[120px\\]",
    "context": [],
    "properties": {
@@ -3266,7 +3275,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".blur-\\[130px\\]",
    "context": [],
    "properties": {
@@ -3275,7 +3284,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".blur-\\[2px\\]",
    "context": [],
    "properties": {
@@ -3284,7 +3293,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".blur-md",
    "context": [],
    "properties": {
@@ -3293,7 +3302,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".brightness-0",
    "context": [],
    "properties": {
@@ -3302,7 +3311,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".brightness-105",
    "context": [],
    "properties": {
@@ -3311,7 +3320,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".drop-shadow",
    "context": [],
    "properties": {
@@ -3320,7 +3329,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".grayscale",
    "context": [],
    "properties": {
@@ -3329,7 +3338,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".grayscale-\\[15\\%\\]",
    "context": [],
    "properties": {
@@ -3338,7 +3347,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".invert",
    "context": [],
    "properties": {
@@ -3347,7 +3356,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".saturate-\\[1\\.08\\]",
    "context": [],
    "properties": {
@@ -3356,7 +3365,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".backdrop-blur",
    "context": [],
    "properties": {
@@ -3365,7 +3374,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".backdrop-blur-2xl",
    "context": [],
    "properties": {
@@ -3374,7 +3383,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".backdrop-blur-\\[2px\\]",
    "context": [],
    "properties": {
@@ -3383,7 +3392,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".backdrop-blur-\\[3px\\]",
    "context": [],
    "properties": {
@@ -3392,7 +3401,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".backdrop-blur-md",
    "context": [],
    "properties": {
@@ -3401,7 +3410,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".backdrop-blur-sm",
    "context": [],
    "properties": {
@@ -3410,7 +3419,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".backdrop-blur-xl",
    "context": [],
    "properties": {
@@ -3419,7 +3428,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".backdrop-saturate-150",
    "context": [],
    "properties": {
@@ -3428,7 +3437,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ":focus, :focus-visible",
    "context": [],
    "properties": {
@@ -3438,7 +3447,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".tt-sidebar-pro-fallback",
    "context": [],
    "properties": {
@@ -3447,7 +3456,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark .tt-sidebar-pro-fallback",
    "context": [],
    "properties": {
@@ -3456,7 +3465,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".tt-cloud-theme [class~=\"bg-oai-brand-600\"], .tt-cloud-theme [class~=\"bg-oai-brand-600/30\"]",
    "context": [],
    "properties": {
@@ -3465,7 +3474,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".tt-cloud-theme :focus-visible",
    "context": [],
    "properties": {
@@ -3474,7 +3483,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".tt-cloud-sync-control [role=\"switch\"]:focus-visible",
    "context": [],
    "properties": {
@@ -3483,7 +3492,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".placeholder\\:\\!text-oai-gray-500::placeholder",
    "context": [],
    "properties": {
@@ -3492,7 +3501,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".placeholder\\:text-oai-gray-400::placeholder",
    "context": [],
    "properties": {
@@ -3501,7 +3510,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".before\\:bg-oai-gray-500::before",
    "context": [],
    "properties": {
@@ -3510,7 +3519,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".before\\:content-\\[\\'\\'\\]::before",
    "context": [],
    "properties": {
@@ -3519,7 +3528,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:-translate-y-1:hover",
    "context": [],
    "properties": {
@@ -3528,7 +3537,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:rotate-90:hover",
    "context": [],
    "properties": {
@@ -3537,7 +3546,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:scale-105:hover",
    "context": [],
    "properties": {
@@ -3547,7 +3556,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:scale-110:hover",
    "context": [],
    "properties": {
@@ -3557,7 +3566,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:scale-125:hover",
    "context": [],
    "properties": {
@@ -3567,7 +3576,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:\\!border-oai-gray-300:hover",
    "context": [],
    "properties": {
@@ -3576,7 +3585,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:border-oai-brand:hover",
    "context": [],
    "properties": {
@@ -3585,7 +3594,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:border-oai-gray-200:hover",
    "context": [],
    "properties": {
@@ -3594,7 +3603,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:border-oai-gray-300:hover",
    "context": [],
    "properties": {
@@ -3603,7 +3612,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:border-oai-gray-400:hover",
    "context": [],
    "properties": {
@@ -3612,7 +3621,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:border-oai-gray-500:hover",
    "context": [],
    "properties": {
@@ -3621,7 +3630,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:border-red-300:hover",
    "context": [],
    "properties": {
@@ -3630,7 +3639,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:border-rose-200:hover",
    "context": [],
    "properties": {
@@ -3639,7 +3648,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:\\!bg-oai-gray-100:hover",
    "context": [],
    "properties": {
@@ -3648,7 +3657,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:\\!bg-red-700:hover",
    "context": [],
    "properties": {
@@ -3657,7 +3666,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:bg-amber-100:hover",
    "context": [],
    "properties": {
@@ -3666,7 +3675,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:bg-emerald-500:hover",
    "context": [],
    "properties": {
@@ -3675,16 +3684,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
-   "selector": ".hover\\:bg-oai-brand-600:hover",
-   "context": [],
-   "properties": {
-    "--tw-bg-opacity": "1"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:bg-oai-brand-700:hover",
    "context": [],
    "properties": {
@@ -3693,7 +3693,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:bg-oai-gray-100:hover",
    "context": [],
    "properties": {
@@ -3702,7 +3702,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:bg-oai-gray-200:hover",
    "context": [],
    "properties": {
@@ -3711,7 +3711,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:bg-oai-gray-50:hover",
    "context": [],
    "properties": {
@@ -3720,7 +3720,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:bg-oai-gray-700:hover",
    "context": [],
    "properties": {
@@ -3729,7 +3729,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:bg-oai-gray-800:hover",
    "context": [],
    "properties": {
@@ -3738,7 +3738,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:bg-red-50:hover",
    "context": [],
    "properties": {
@@ -3747,7 +3747,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:bg-sky-700:hover",
    "context": [],
    "properties": {
@@ -3756,7 +3756,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:\\!text-oai-black:hover",
    "context": [],
    "properties": {
@@ -3765,7 +3765,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-oai-black:hover",
    "context": [],
    "properties": {
@@ -3774,7 +3774,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-oai-brand:hover",
    "context": [],
    "properties": {
@@ -3783,7 +3783,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-oai-brand-300:hover",
    "context": [],
    "properties": {
@@ -3792,7 +3792,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-oai-brand-dark:hover",
    "context": [],
    "properties": {
@@ -3801,7 +3801,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-oai-gray-600:hover",
    "context": [],
    "properties": {
@@ -3810,7 +3810,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-oai-gray-700:hover",
    "context": [],
    "properties": {
@@ -3819,7 +3819,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-oai-gray-800:hover",
    "context": [],
    "properties": {
@@ -3828,7 +3828,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-oai-gray-900:hover",
    "context": [],
    "properties": {
@@ -3837,7 +3837,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-oai-gray-950:hover",
    "context": [],
    "properties": {
@@ -3846,7 +3846,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-red-600:hover",
    "context": [],
    "properties": {
@@ -3855,7 +3855,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-rose-500:hover",
    "context": [],
    "properties": {
@@ -3864,7 +3864,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:text-white:hover",
    "context": [],
    "properties": {
@@ -3873,7 +3873,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:shadow-\\[0_0_20px_-3px_rgba\\(16\\,185\\,129\\,0\\.15\\)\\]:hover",
    "context": [],
    "properties": {
@@ -3883,7 +3883,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:shadow-\\[0_0_20px_-3px_rgba\\(168\\,85\\,247\\,0\\.15\\)\\]:hover",
    "context": [],
    "properties": {
@@ -3893,7 +3893,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:shadow-\\[0_0_20px_-3px_rgba\\(245\\,158\\,11\\,0\\.15\\)\\]:hover",
    "context": [],
    "properties": {
@@ -3903,7 +3903,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:shadow-\\[0_0_20px_-3px_rgba\\(59\\,130\\,246\\,0\\.15\\)\\]:hover",
    "context": [],
    "properties": {
@@ -3913,7 +3913,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:\\!border-oai-gray-400:focus",
    "context": [],
    "properties": {
@@ -3922,7 +3922,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:border-oai-brand:focus",
    "context": [],
    "properties": {
@@ -3931,7 +3931,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:border-oai-brand-500:focus",
    "context": [],
    "properties": {
@@ -3940,7 +3940,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:border-oai-error:focus",
    "context": [],
    "properties": {
@@ -3949,7 +3949,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:border-oai-gray-400:focus",
    "context": [],
    "properties": {
@@ -3958,7 +3958,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-1:focus",
    "context": [],
    "properties": {
@@ -3968,7 +3968,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-2:focus",
    "context": [],
    "properties": {
@@ -3978,7 +3978,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-inset:focus",
    "context": [],
    "properties": {
@@ -3987,7 +3987,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:\\!ring-oai-gray-400\\/20:focus",
    "context": [],
    "properties": {
@@ -3996,7 +3996,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:\\!ring-oai-gray-400\\/30:focus",
    "context": [],
    "properties": {
@@ -4005,7 +4005,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:\\!ring-oai-gray-500\\/40:focus",
    "context": [],
    "properties": {
@@ -4014,7 +4014,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-emerald-600:focus",
    "context": [],
    "properties": {
@@ -4024,7 +4024,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-oai-blue\\/30:focus",
    "context": [],
    "properties": {
@@ -4033,7 +4033,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-oai-brand:focus",
    "context": [],
    "properties": {
@@ -4043,7 +4043,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-oai-brand-500:focus",
    "context": [],
    "properties": {
@@ -4053,7 +4053,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-oai-brand\\/30:focus",
    "context": [],
    "properties": {
@@ -4062,7 +4062,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-oai-error\\/30:focus",
    "context": [],
    "properties": {
@@ -4071,7 +4071,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-oai-gray-400:focus",
    "context": [],
    "properties": {
@@ -4081,7 +4081,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-oai-gray-400\\/30:focus",
    "context": [],
    "properties": {
@@ -4090,7 +4090,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-oai-gray-400\\/40:focus",
    "context": [],
    "properties": {
@@ -4099,7 +4099,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-oai-gray-500\\/40:focus",
    "context": [],
    "properties": {
@@ -4108,7 +4108,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-red-400\\/30:focus",
    "context": [],
    "properties": {
@@ -4117,7 +4117,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus\\:ring-sky-400\\/40:focus",
    "context": [],
    "properties": {
@@ -4126,7 +4126,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-1:focus-visible",
    "context": [],
    "properties": {
@@ -4136,7 +4136,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-2:focus-visible",
    "context": [],
    "properties": {
@@ -4146,7 +4146,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-inset:focus-visible",
    "context": [],
    "properties": {
@@ -4155,7 +4155,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-amber-500\\/60:focus-visible",
    "context": [],
    "properties": {
@@ -4164,7 +4164,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-indigo-500:focus-visible",
    "context": [],
    "properties": {
@@ -4174,7 +4174,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-oai-brand:focus-visible",
    "context": [],
    "properties": {
@@ -4184,7 +4184,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-oai-brand-500:focus-visible",
    "context": [],
    "properties": {
@@ -4194,7 +4194,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-oai-brand\\/40:focus-visible",
    "context": [],
    "properties": {
@@ -4203,7 +4203,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-oai-brand\\/50:focus-visible",
    "context": [],
    "properties": {
@@ -4212,7 +4212,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-oai-brand\\/60:focus-visible",
    "context": [],
    "properties": {
@@ -4221,7 +4221,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-oai-gray-300:focus-visible",
    "context": [],
    "properties": {
@@ -4231,7 +4231,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-oai-gray-400\\/40:focus-visible",
    "context": [],
    "properties": {
@@ -4240,7 +4240,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-oai-gray-500:focus-visible",
    "context": [],
    "properties": {
@@ -4250,7 +4250,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-oai-gray-500\\/40:focus-visible",
    "context": [],
    "properties": {
@@ -4259,7 +4259,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-oai-gray-500\\/60:focus-visible",
    "context": [],
    "properties": {
@@ -4268,7 +4268,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-rose-500\\/50:focus-visible",
    "context": [],
    "properties": {
@@ -4277,7 +4277,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-offset-1:focus-visible",
    "context": [],
    "properties": {
@@ -4286,7 +4286,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-offset-2:focus-visible",
    "context": [],
    "properties": {
@@ -4295,7 +4295,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".focus-visible\\:ring-offset-transparent:focus-visible",
    "context": [],
    "properties": {
@@ -4304,7 +4304,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:\\!scale-100:active",
    "context": [],
    "properties": {
@@ -4314,7 +4314,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:scale-110:active",
    "context": [],
    "properties": {
@@ -4324,7 +4324,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:scale-95:active",
    "context": [],
    "properties": {
@@ -4334,7 +4334,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:scale-\\[0\\.97\\]:active",
    "context": [],
    "properties": {
@@ -4344,7 +4344,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:scale-\\[0\\.985\\]:active",
    "context": [],
    "properties": {
@@ -4354,7 +4354,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:scale-\\[0\\.98\\]:active",
    "context": [],
    "properties": {
@@ -4364,7 +4364,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:border-oai-brand-dark:active",
    "context": [],
    "properties": {
@@ -4373,7 +4373,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:bg-oai-brand-50:active",
    "context": [],
    "properties": {
@@ -4382,7 +4382,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:bg-oai-gray-100:active",
    "context": [],
    "properties": {
@@ -4391,7 +4391,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:bg-oai-gray-50:active",
    "context": [],
    "properties": {
@@ -4400,7 +4400,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:bg-oai-gray-900:active",
    "context": [],
    "properties": {
@@ -4409,7 +4409,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".active\\:bg-oai-gray-950:active",
    "context": [],
    "properties": {
@@ -4418,7 +4418,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".disabled\\:border-oai-gray-200:disabled",
    "context": [],
    "properties": {
@@ -4427,7 +4427,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".disabled\\:bg-oai-gray-200:disabled",
    "context": [],
    "properties": {
@@ -4436,7 +4436,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".disabled\\:bg-oai-gray-300:disabled",
    "context": [],
    "properties": {
@@ -4445,7 +4445,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".disabled\\:text-oai-gray-400:disabled",
    "context": [],
    "properties": {
@@ -4454,7 +4454,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".disabled\\:text-oai-gray-500:disabled",
    "context": [],
    "properties": {
@@ -4463,7 +4463,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group[open] .group-open\\:rotate-180",
    "context": [],
    "properties": {
@@ -4472,7 +4472,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:-translate-y-0\\.5",
    "context": [],
    "properties": {
@@ -4481,7 +4481,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:-translate-y-\\[1px\\]",
    "context": [],
    "properties": {
@@ -4490,7 +4490,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:translate-x-0\\.5",
    "context": [],
    "properties": {
@@ -4499,7 +4499,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:translate-y-0",
    "context": [],
    "properties": {
@@ -4508,7 +4508,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:translate-y-0\\.5",
    "context": [],
    "properties": {
@@ -4517,7 +4517,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:rotate-6",
    "context": [],
    "properties": {
@@ -4526,7 +4526,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:rotate-90",
    "context": [],
    "properties": {
@@ -4535,7 +4535,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:scale-100",
    "context": [],
    "properties": {
@@ -4545,7 +4545,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:scale-105",
    "context": [],
    "properties": {
@@ -4555,7 +4555,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:scale-110",
    "context": [],
    "properties": {
@@ -4565,7 +4565,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:bg-oai-gray-50",
    "context": [],
    "properties": {
@@ -4574,7 +4574,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:text-oai-black",
    "context": [],
    "properties": {
@@ -4583,7 +4583,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:text-oai-gray-600",
    "context": [],
    "properties": {
@@ -4592,7 +4592,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:text-oai-gray-700",
    "context": [],
    "properties": {
@@ -4601,7 +4601,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:text-oai-gray-800",
    "context": [],
    "properties": {
@@ -4610,7 +4610,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:text-white",
    "context": [],
    "properties": {
@@ -4619,7 +4619,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:shadow-md",
    "context": [],
    "properties": {
@@ -4629,7 +4629,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .group-hover\\:brightness-110",
    "context": [],
    "properties": {
@@ -4638,7 +4638,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:active .group-active\\:scale-90",
    "context": [],
    "properties": {
@@ -4648,7 +4648,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".peer:checked ~ .peer-checked\\:translate-x-4",
    "context": [],
    "properties": {
@@ -4657,7 +4657,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".peer:checked ~ .peer-checked\\:bg-oai-brand-500",
    "context": [],
    "properties": {
@@ -4666,7 +4666,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".peer:hover ~ .peer-hover\\:shadow-\\[0_12px_28px_-14px_rgba\\(15\\,23\\,42\\,0\\.22\\)\\]",
    "context": [],
    "properties": {
@@ -4676,7 +4676,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".peer:focus-visible ~ .peer-focus-visible\\:shadow-\\[0_12px_28px_-14px_rgba\\(15\\,23\\,42\\,0\\.22\\)\\]",
    "context": [],
    "properties": {
@@ -4686,7 +4686,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".aria-expanded\\:bg-oai-gray-50[aria-expanded=\"true\"]",
    "context": [],
    "properties": {
@@ -4695,7 +4695,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[ending-style\\]\\:-translate-y-3[data-ending-style]",
    "context": [],
    "properties": {
@@ -4704,7 +4704,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[ending-style\\]\\:translate-y-2[data-ending-style]",
    "context": [],
    "properties": {
@@ -4713,7 +4713,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[ending-style\\]\\:translate-y-3[data-ending-style]",
    "context": [],
    "properties": {
@@ -4722,7 +4722,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[starting-style\\]\\:-translate-y-3[data-starting-style]",
    "context": [],
    "properties": {
@@ -4731,7 +4731,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[starting-style\\]\\:translate-y-2[data-starting-style]",
    "context": [],
    "properties": {
@@ -4740,7 +4740,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[starting-style\\]\\:translate-y-3[data-starting-style]",
    "context": [],
    "properties": {
@@ -4749,7 +4749,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[ending-style\\]\\:scale-95[data-ending-style], .data-\\[ending-style\\]\\:scale-\\[0\\.95\\][data-ending-style]",
    "context": [],
    "properties": {
@@ -4759,7 +4759,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[ending-style\\]\\:scale-\\[0\\.96\\][data-ending-style]",
    "context": [],
    "properties": {
@@ -4769,7 +4769,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[ending-style\\]\\:scale-\\[0\\.97\\][data-ending-style]",
    "context": [],
    "properties": {
@@ -4779,7 +4779,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[ending-style\\]\\:scale-\\[0\\.98\\][data-ending-style]",
    "context": [],
    "properties": {
@@ -4789,7 +4789,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[starting-style\\]\\:scale-95[data-starting-style], .data-\\[starting-style\\]\\:scale-\\[0\\.95\\][data-starting-style]",
    "context": [],
    "properties": {
@@ -4799,7 +4799,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[starting-style\\]\\:scale-\\[0\\.96\\][data-starting-style]",
    "context": [],
    "properties": {
@@ -4809,7 +4809,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[starting-style\\]\\:scale-\\[0\\.97\\][data-starting-style]",
    "context": [],
    "properties": {
@@ -4819,7 +4819,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[starting-style\\]\\:scale-\\[0\\.98\\][data-starting-style]",
    "context": [],
    "properties": {
@@ -4829,7 +4829,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[checked\\]\\:border-oai-black[data-checked]",
    "context": [],
    "properties": {
@@ -4838,7 +4838,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[popup-open\\]\\:border-oai-gray-300[data-popup-open]",
    "context": [],
    "properties": {
@@ -4847,7 +4847,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[checked\\]\\:bg-oai-black[data-checked]",
    "context": [],
    "properties": {
@@ -4856,7 +4856,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".data-\\[highlighted\\]\\:bg-oai-gray-100[data-highlighted]",
    "context": [],
    "properties": {
@@ -4865,7 +4865,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:divide-oai-gray-800:is(.dark *) > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -4874,7 +4874,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:\\!border-oai-gray-800:is(.dark *)",
    "context": [],
    "properties": {
@@ -4883,7 +4883,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:border-amber-800:is(.dark *)",
    "context": [],
    "properties": {
@@ -4892,7 +4892,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:border-emerald-800:is(.dark *)",
    "context": [],
    "properties": {
@@ -4901,7 +4901,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:border-oai-gray-600:is(.dark *)",
    "context": [],
    "properties": {
@@ -4910,7 +4910,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:border-oai-gray-700:is(.dark *)",
    "context": [],
    "properties": {
@@ -4919,7 +4919,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:border-oai-gray-800:is(.dark *)",
    "context": [],
    "properties": {
@@ -4928,7 +4928,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:border-oai-gray-900:is(.dark *)",
    "context": [],
    "properties": {
@@ -4937,7 +4937,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:border-oai-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -4946,7 +4946,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:border-red-800:is(.dark *)",
    "context": [],
    "properties": {
@@ -4955,7 +4955,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:border-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -4964,7 +4964,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:border-t-oai-gray-800:is(.dark *)",
    "context": [],
    "properties": {
@@ -4973,7 +4973,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:\\!bg-oai-gray-900:is(.dark *)",
    "context": [],
    "properties": {
@@ -4982,7 +4982,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:\\!bg-red-600:is(.dark *)",
    "context": [],
    "properties": {
@@ -4991,7 +4991,16 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
+   "selector": ".dark\\:bg-emerald-400:is(.dark *)",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-oai-black:is(.dark *)",
    "context": [],
    "properties": {
@@ -5000,7 +5009,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-oai-brand-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5009,7 +5018,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-oai-gray-100:is(.dark *)",
    "context": [],
    "properties": {
@@ -5018,7 +5027,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-oai-gray-500:is(.dark *)",
    "context": [],
    "properties": {
@@ -5027,7 +5036,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-oai-gray-600:is(.dark *)",
    "context": [],
    "properties": {
@@ -5036,7 +5045,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-oai-gray-700:is(.dark *)",
    "context": [],
    "properties": {
@@ -5045,7 +5054,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-oai-gray-800:is(.dark *)",
    "context": [],
    "properties": {
@@ -5054,7 +5063,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-oai-gray-900:is(.dark *)",
    "context": [],
    "properties": {
@@ -5063,7 +5072,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-oai-gray-950:is(.dark *)",
    "context": [],
    "properties": {
@@ -5072,7 +5081,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-oai-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -5081,7 +5090,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-sky-500:is(.dark *)",
    "context": [],
    "properties": {
@@ -5090,7 +5099,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -5099,7 +5108,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:bg-zinc-950:is(.dark *)",
    "context": [],
    "properties": {
@@ -5108,7 +5117,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-emerald-900\\/30:is(.dark *)",
    "context": [],
    "properties": {
@@ -5119,7 +5128,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-emerald-950\\/70:is(.dark *)",
    "context": [],
    "properties": {
@@ -5130,7 +5139,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-oai-gray-800\\/70:is(.dark *)",
    "context": [],
    "properties": {
@@ -5141,7 +5150,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-oai-gray-900:is(.dark *)",
    "context": [],
    "properties": {
@@ -5152,7 +5161,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-oai-gray-950:is(.dark *)",
    "context": [],
    "properties": {
@@ -5163,7 +5172,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-oai-gray-950\\/80:is(.dark *)",
    "context": [],
    "properties": {
@@ -5174,7 +5183,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-orange-950\\/70:is(.dark *)",
    "context": [],
    "properties": {
@@ -5185,7 +5194,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-orange-950\\/80:is(.dark *)",
    "context": [],
    "properties": {
@@ -5196,7 +5205,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-slate-800\\/70:is(.dark *)",
    "context": [],
    "properties": {
@@ -5207,7 +5216,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-teal-950\\/70:is(.dark *)",
    "context": [],
    "properties": {
@@ -5218,7 +5227,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -5229,7 +5238,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-white\\/5:is(.dark *)",
    "context": [],
    "properties": {
@@ -5240,7 +5249,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:from-white\\/\\[0\\.04\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5251,7 +5260,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:to-cyan-900\\/30:is(.dark *)",
    "context": [],
    "properties": {
@@ -5260,7 +5269,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:to-oai-gray-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5269,7 +5278,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:to-oai-gray-900:is(.dark *)",
    "context": [],
    "properties": {
@@ -5278,7 +5287,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:to-oai-gray-900\\/80:is(.dark *)",
    "context": [],
    "properties": {
@@ -5287,7 +5296,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:\\!text-oai-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -5296,7 +5305,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:\\!text-red-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5305,7 +5314,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:\\!text-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -5314,7 +5323,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-amber-200:is(.dark *)",
    "context": [],
    "properties": {
@@ -5323,7 +5332,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-amber-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5332,7 +5341,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-amber-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5341,7 +5350,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-black:is(.dark *)",
    "context": [],
    "properties": {
@@ -5350,7 +5359,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-blue-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5359,7 +5368,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-blue-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5368,7 +5377,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-emerald-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5377,7 +5386,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-emerald-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5386,7 +5395,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-gray-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5395,7 +5404,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-indigo-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5404,7 +5413,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-black:is(.dark *)",
    "context": [],
    "properties": {
@@ -5413,7 +5422,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-brand-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5422,7 +5431,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-brand-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5431,7 +5440,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-gray-100:is(.dark *)",
    "context": [],
    "properties": {
@@ -5440,7 +5449,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-gray-200:is(.dark *)",
    "context": [],
    "properties": {
@@ -5449,7 +5458,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-gray-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5458,7 +5467,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-gray-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5467,7 +5476,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-gray-500:is(.dark *)",
    "context": [],
    "properties": {
@@ -5476,7 +5485,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-gray-600:is(.dark *)",
    "context": [],
    "properties": {
@@ -5485,7 +5494,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-gray-800:is(.dark *)",
    "context": [],
    "properties": {
@@ -5494,7 +5503,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-gray-900:is(.dark *)",
    "context": [],
    "properties": {
@@ -5503,7 +5512,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-gray-950:is(.dark *)",
    "context": [],
    "properties": {
@@ -5512,7 +5521,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-oai-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -5521,7 +5530,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-orange-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5530,7 +5539,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-orange-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5539,7 +5548,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-purple-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5548,7 +5557,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-red-200:is(.dark *)",
    "context": [],
    "properties": {
@@ -5557,7 +5566,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-red-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5566,7 +5575,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-red-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5575,7 +5584,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-rose-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5584,7 +5593,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-sky-200:is(.dark *)",
    "context": [],
    "properties": {
@@ -5593,7 +5602,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-sky-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5602,7 +5611,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-slate-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5611,7 +5620,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-slate-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5620,7 +5629,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-violet-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -5629,7 +5638,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -5638,7 +5647,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-yellow-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5647,7 +5656,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-zinc-200:is(.dark *)",
    "context": [],
    "properties": {
@@ -5656,7 +5665,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-zinc-400:is(.dark *)",
    "context": [],
    "properties": {
@@ -5665,7 +5674,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-zinc-50:is(.dark *)",
    "context": [],
    "properties": {
@@ -5674,7 +5683,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:text-zinc-500:is(.dark *)",
    "context": [],
    "properties": {
@@ -5683,7 +5692,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:placeholder-oai-gray-500:is(.dark *)::placeholder",
    "context": [],
    "properties": {
@@ -5692,7 +5701,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:placeholder-oai-gray-600:is(.dark *)::placeholder",
    "context": [],
    "properties": {
@@ -5701,7 +5710,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:shadow-\\[0_12px_28px_-12px_rgba\\(0\\,0\\,0\\,0\\.6\\)\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5711,7 +5720,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:shadow-\\[0_12px_32px_-12px_rgba\\(0\\,0\\,0\\,0\\.6\\)\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5721,7 +5730,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:shadow-\\[0_20px_60px_-10px_rgba\\(0\\,0\\,0\\,0\\.65\\)\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5731,7 +5740,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:shadow-\\[0_24px_60px_-20px_rgba\\(0\\,0\\,0\\,0\\.7\\)\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5741,7 +5750,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:shadow-\\[0_2px_4px_rgba\\(0\\,0\\,0\\,0\\.4\\)\\,0_8px_24px_rgba\\(0\\,0\\,0\\,0\\.5\\)\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5751,7 +5760,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:shadow-\\[0_2px_6px_rgba\\(0\\,0\\,0\\,0\\.4\\)\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5761,7 +5770,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:shadow-\\[0_8px_30px_rgb\\(0\\,0\\,0\\,0\\.3\\)\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5771,7 +5780,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:shadow-none:is(.dark *)",
    "context": [],
    "properties": {
@@ -5781,7 +5790,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:shadow-black\\/30:is(.dark *)",
    "context": [],
    "properties": {
@@ -5791,7 +5800,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-1:is(.dark *)",
    "context": [],
    "properties": {
@@ -5801,7 +5810,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-amber-500\\/80:is(.dark *)",
    "context": [],
    "properties": {
@@ -5810,7 +5819,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-oai-gray-600:is(.dark *)",
    "context": [],
    "properties": {
@@ -5820,7 +5829,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-oai-gray-600\\/30:is(.dark *)",
    "context": [],
    "properties": {
@@ -5829,7 +5838,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-oai-gray-700:is(.dark *)",
    "context": [],
    "properties": {
@@ -5839,7 +5848,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-oai-gray-800:is(.dark *)",
    "context": [],
    "properties": {
@@ -5849,7 +5858,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-oai-gray-800\\/80:is(.dark *)",
    "context": [],
    "properties": {
@@ -5858,7 +5867,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-oai-gray-900:is(.dark *)",
    "context": [],
    "properties": {
@@ -5868,7 +5877,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-oai-gray-950:is(.dark *)",
    "context": [],
    "properties": {
@@ -5878,7 +5887,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-orange-500\\/70:is(.dark *)",
    "context": [],
    "properties": {
@@ -5887,7 +5896,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-sky-800\\/60:is(.dark *)",
    "context": [],
    "properties": {
@@ -5896,7 +5905,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -5906,7 +5915,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-white\\/10:is(.dark *)",
    "context": [],
    "properties": {
@@ -5915,7 +5924,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-white\\/\\[0\\.02\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5924,7 +5933,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-white\\/\\[0\\.04\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5933,7 +5942,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-white\\/\\[0\\.05\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -5942,7 +5951,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-offset-oai-gray-900:is(.dark *)",
    "context": [],
    "properties": {
@@ -5951,7 +5960,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:ring-offset-oai-gray-950:is(.dark *)",
    "context": [],
    "properties": {
@@ -5960,7 +5969,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:brightness-100:is(.dark *)",
    "context": [],
    "properties": {
@@ -5969,7 +5978,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:invert:is(.dark *)",
    "context": [],
    "properties": {
@@ -5978,7 +5987,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:placeholder\\:\\!text-oai-gray-400:is(.dark *)::placeholder",
    "context": [],
    "properties": {
@@ -5987,7 +5996,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:placeholder\\:text-oai-gray-600:is(.dark *)::placeholder",
    "context": [],
    "properties": {
@@ -5996,7 +6005,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:before\\:bg-oai-gray-400:is(.dark *)::before",
    "context": [],
    "properties": {
@@ -6005,7 +6014,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:\\!border-oai-gray-700:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6014,7 +6023,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:border-oai-gray-400:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6023,7 +6032,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:border-oai-gray-600:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6032,7 +6041,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:border-oai-gray-700:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6041,7 +6050,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:border-oai-gray-800:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6050,7 +6059,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:border-red-800:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6059,7 +6068,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:\\!bg-oai-gray-800:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6068,7 +6077,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:\\!bg-red-500:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6077,7 +6086,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:bg-oai-gray-100:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6086,7 +6095,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:bg-oai-gray-200:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6095,7 +6104,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:bg-oai-gray-700:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6104,7 +6113,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:bg-oai-gray-800:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6113,7 +6122,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:bg-oai-gray-900:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6122,7 +6131,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:bg-sky-400:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6131,7 +6140,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:\\!text-oai-white:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6140,7 +6149,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:\\!text-white:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6149,7 +6158,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:text-oai-brand-light:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6158,7 +6167,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:text-oai-gray-100:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6167,7 +6176,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:text-oai-gray-200:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6176,7 +6185,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:text-oai-gray-300:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6185,7 +6194,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:text-oai-white:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6194,7 +6203,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:text-red-400:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6203,7 +6212,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:text-rose-400:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6212,7 +6221,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:text-white:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6221,7 +6230,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:dark\\:shadow-\\[0_0_20px_-3px_rgba\\(192\\,132\\,252\\,0\\.25\\)\\]:is(.dark *):hover",
    "context": [],
    "properties": {
@@ -6231,7 +6240,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:dark\\:shadow-\\[0_0_20px_-3px_rgba\\(245\\,158\\,11\\,0\\.25\\)\\]:is(.dark *):hover",
    "context": [],
    "properties": {
@@ -6241,7 +6250,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:dark\\:shadow-\\[0_0_20px_-3px_rgba\\(52\\,211\\,153\\,0\\.25\\)\\]:is(.dark *):hover",
    "context": [],
    "properties": {
@@ -6251,7 +6260,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:dark\\:shadow-\\[0_0_20px_-3px_rgba\\(96\\,165\\,250\\,0\\.25\\)\\]:is(.dark *):hover",
    "context": [],
    "properties": {
@@ -6261,7 +6270,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:hover\\:ring-white\\/\\[0\\.08\\]:hover:is(.dark *)",
    "context": [],
    "properties": {
@@ -6270,7 +6279,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:focus\\:\\!border-oai-gray-500:focus:is(.dark *)",
    "context": [],
    "properties": {
@@ -6279,7 +6288,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:focus\\:border-oai-brand:focus:is(.dark *)",
    "context": [],
    "properties": {
@@ -6288,7 +6297,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:focus\\:border-oai-gray-500:focus:is(.dark *)",
    "context": [],
    "properties": {
@@ -6297,7 +6306,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:focus\\:\\!ring-oai-gray-500\\/20:focus:is(.dark *)",
    "context": [],
    "properties": {
@@ -6306,7 +6315,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:focus-visible\\:ring-oai-gray-600:focus-visible:is(.dark *)",
    "context": [],
    "properties": {
@@ -6316,7 +6325,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:focus-visible\\:ring-offset-oai-gray-950:focus-visible:is(.dark *)",
    "context": [],
    "properties": {
@@ -6325,7 +6334,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:active\\:bg-oai-gray-200:active:is(.dark *)",
    "context": [],
    "properties": {
@@ -6334,7 +6343,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:active\\:bg-oai-gray-300:active:is(.dark *)",
    "context": [],
    "properties": {
@@ -6343,7 +6352,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:active\\:bg-oai-gray-800:active:is(.dark *)",
    "context": [],
    "properties": {
@@ -6352,7 +6361,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:disabled\\:border-oai-gray-700:disabled:is(.dark *)",
    "context": [],
    "properties": {
@@ -6361,7 +6370,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:disabled\\:bg-oai-gray-700:disabled:is(.dark *)",
    "context": [],
    "properties": {
@@ -6370,7 +6379,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:disabled\\:bg-oai-gray-800:disabled:is(.dark *)",
    "context": [],
    "properties": {
@@ -6379,7 +6388,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:disabled\\:text-oai-gray-400:disabled:is(.dark *)",
    "context": [],
    "properties": {
@@ -6388,7 +6397,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:disabled\\:text-oai-gray-500:disabled:is(.dark *)",
    "context": [],
    "properties": {
@@ -6397,7 +6406,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .dark\\:group-hover\\:bg-oai-gray-900:is(.dark *)",
    "context": [],
    "properties": {
@@ -6406,7 +6415,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .dark\\:group-hover\\:text-oai-gray-100:is(.dark *)",
    "context": [],
    "properties": {
@@ -6415,7 +6424,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .dark\\:group-hover\\:text-oai-gray-200:is(.dark *)",
    "context": [],
    "properties": {
@@ -6424,7 +6433,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .dark\\:group-hover\\:text-oai-gray-300:is(.dark *)",
    "context": [],
    "properties": {
@@ -6433,7 +6442,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".group:hover .dark\\:group-hover\\:text-white:is(.dark *)",
    "context": [],
    "properties": {
@@ -6442,7 +6451,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".peer:hover ~ .dark\\:peer-hover\\:shadow-\\[0_12px_28px_-12px_rgba\\(0\\,0\\,0\\,0\\.6\\)\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -6452,7 +6461,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".peer:focus-visible ~ .dark\\:peer-focus-visible\\:shadow-\\[0_12px_28px_-12px_rgba\\(0\\,0\\,0\\,0\\.6\\)\\]:is(.dark *)",
    "context": [],
    "properties": {
@@ -6462,7 +6471,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:data-\\[checked\\]\\:border-white[data-checked]:is(.dark *)",
    "context": [],
    "properties": {
@@ -6471,7 +6480,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:data-\\[popup-open\\]\\:border-oai-gray-700[data-popup-open]:is(.dark *)",
    "context": [],
    "properties": {
@@ -6480,7 +6489,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:data-\\[checked\\]\\:bg-white[data-checked]:is(.dark *)",
    "context": [],
    "properties": {
@@ -6489,7 +6498,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:data-\\[highlighted\\]\\:bg-oai-gray-800[data-highlighted]:is(.dark *)",
    "context": [],
    "properties": {
@@ -6498,7 +6507,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".sm\\:border-oai-gray-200",
    "context": [
     "@media (min-width: 640px)"
@@ -6509,7 +6518,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".sm\\:active\\:scale-100:active",
    "context": [
     "@media (min-width: 640px)"
@@ -6521,7 +6530,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".sm\\:dark\\:border-oai-gray-800:is(.dark *)",
    "context": [
     "@media (min-width: 640px)"
@@ -6532,7 +6541,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".lg\\:scale-\\[1\\.18\\]",
    "context": [
     "@media (min-width: 1024px)"
@@ -6544,7 +6553,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".\\[\\&\\>svg\\]\\:\\!text-oai-gray-500 > svg",
    "context": [],
    "properties": {
@@ -6553,7 +6562,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".dark\\:\\[\\&\\>svg\\]\\:\\!text-oai-gray-400 > svg:is(.dark *)",
    "context": [],
    "properties": {
@@ -6562,7 +6571,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "selector": ".hover\\:\\[\\&_svg\\]\\:text-oai-brand svg:hover",
    "context": [],
    "properties": {
@@ -6573,7 +6582,7 @@
  ],
  "fonts": [
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6582,7 +6591,7 @@
    "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6591,7 +6600,7 @@
    "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6600,7 +6609,7 @@
    "unicode-range": "U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6609,7 +6618,7 @@
    "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6618,7 +6627,7 @@
    "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6627,7 +6636,7 @@
    "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6636,7 +6645,7 @@
    "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6645,7 +6654,7 @@
    "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6654,7 +6663,7 @@
    "unicode-range": "U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6663,7 +6672,7 @@
    "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6672,7 +6681,7 @@
    "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6681,7 +6690,7 @@
    "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6690,7 +6699,7 @@
    "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6699,7 +6708,7 @@
    "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6708,7 +6717,7 @@
    "unicode-range": "U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6717,7 +6726,7 @@
    "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6726,7 +6735,7 @@
    "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6735,7 +6744,7 @@
    "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6744,7 +6753,7 @@
    "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6753,7 +6762,7 @@
    "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6762,7 +6771,7 @@
    "unicode-range": "U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6771,7 +6780,7 @@
    "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6780,7 +6789,7 @@
    "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
   },
   {
-   "file": "block-1e8532a1b6",
+   "file": "block-017d03d0e3",
    "font-family": "\"Geist Mono\"",
    "font-style": "normal",
    "font-display": "swap",
@@ -6905,6 +6914,11 @@
     "raw": "#ef4444",
     "kind": "color",
     "value": "#ef4444"
+   },
+   "--community-dumate": {
+    "raw": "#2563eb",
+    "kind": "color",
+    "value": "#2563eb"
    },
    "--community-gemini": {
     "raw": "#2196f3",
@@ -7377,6 +7391,11 @@
     "raw": "#ef4444",
     "kind": "color",
     "value": "#ef4444"
+   },
+   "--community-dumate": {
+    "raw": "#2563eb",
+    "kind": "color",
+    "value": "#2563eb"
    },
    "--community-gemini": {
     "raw": "#2196f3",
