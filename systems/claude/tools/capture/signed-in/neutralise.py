@@ -42,6 +42,17 @@ For complex work and everyday tasks|For your toughest challenges|General|Get API
 Most efficient for simpler tasks|Motion|Move to group|New project|Notifications|Only you|Open menu|Past month|Past week|Paused|Pin|Plugins|Privacy|Recents|Reduced|Rename|Response completions
 Scheduled tasks|Show more|Sonnet 5.5|Speed|Style|System|Theme|Today|Voice|View all plans|View memory|Web search|on Claude Platform|Show message actions|Thought for 6s
 Emails from Claude Code cloud sessions|Add PDFs, documents, or other text to reference in this project.|Set up recurring tasks for this project.
+High|Loading|Task|Delete chat?|Are you sure you want to delete this chat?|Cancel|Shared|Archived|1 selected|Select all|Create a project
+What are you working on?|What are you trying to achieve?|Create project|Platform|API keys|Profile|Profile photo|PNG, JPEG, or WebP, up to 10MB.|Full name
+What should Claude call you?|What best describes your work?|Instructions for Claude|Anthropic’s guidelines|(opens in new tab)|e.g. keep explanations brief and to the point
+Log out of all devices|To delete your account, please cancel your Claude Max subscription first.|Delete account|Organization ID|Trusted devices
+Devices that can control your local machine through remote sessions.|Device|Added|Active sessions|Location|Updated|Current|Tool access mode
+Controls how connector tools are loaded in new conversations.|Load tools when needed|Connector search|Let Claude search the connector directory and surface ones relevant to your conversation.
+Switch models when a message is flagged|Visuals|Generate code, documents, and designs in a dedicated window alongside your conversation.|AI-powered artifacts
+Build apps and interactive documents that use Claude inside the artifact.|Inline visualizations|Allow Claude to generate interactive visualizations, charts, and diagrams directly in the conversation.
+Code execution and file creation|Cloud code execution and file creation|Allow network egress|security risks|Domain allowlist|Choose which domains the sandbox can access
+Package managers only|Claude can access common package managers plus any additional domains you specify below.|View package manager domains|Additional allowed domains|Add
+Skills have moved to|New Slides and Design projects are created as artifacts.|Nothing matches “qzxv”|Artifacts - Claude|Projects - Claude
 Claude can choose to notify you about important updates from a Code session.
 Get a push notification on your phone when Claude messages you in Dispatch.
 Get a push notification when Claude needs your approval to run a command in a Code session.
@@ -61,6 +72,10 @@ KEEP |= {
     'We’ve migrated to a new memory system. You have 2 days left if you’d like to',
     'export this project’s legacy memory',
     'Anthropic PBC | 사업자등록번호 86-1969045 (미국 델라웨어) | 다리오 아모데이',
+    'When safeguards flag a message, automatically switch to a different model to keep chatting. When off, your chat will pause instead.',
+    'Claude can execute code on a server and create and edit docs, spreadsheets, presentations, PDFs, and data reports. Required for skills.',
+    'Claude will keep these in mind for this and any of your associated accounts across chats and Cowork within',
+    'Give Claude network access to install packages and libraries in order to perform advanced data analysis, custom visualizations, and specialized file processing. Monitor chats closely as this comes with',
 }
 # interface labels that only occur in attributes (aria-label, title, placeholder, value); a prefix such as
 # "More options for " is stripped before the rest is looked up
@@ -71,6 +86,8 @@ Model: Opus 5.5 Medium|More navigation items|New from a template|Pin project|Pre
 Scroll to bottom|Search chats and projects|Search mode|Search projects|Search results|Search settings|Search your activity|Search your artifacts|Send message|Shared with your organization
 Slides, Beta|Show sidebar|Sidebar|Sort projects|Surface|Turn on microphone|Upload files|Use incognito|Use voice mode|Write a message…|Write your prompt to Claude
 auto|chat|cowork|dark|fast|light|mellow|reduce|serif|system|markdown code|Learner, Learner|Search|Claude|New chat - Claude
+List view|Search chats and tasks...|Clear search|Sort by|Exit selection|Name your project|Describe your project, goals, subject, etc...|Display name
+Copy organization ID|example.com or *.example.com|package_managers|qzxv|Sample project|Loading
 '''.replace('\n', '|').split('|') if k.strip()}
 ATTR_PREFIX = ('More options for ', 'Select ', 'Open standalone version of ', 'Show message actions for ', 'Rename ')
 DATE = re.compile(r'^((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2}(, \d{4})?|(January|February|March|April|May|June|July|August|September|October|November|December)( \d{4})?|\d+ (runs|hours ago|days ago)|\d+ ?(h|d) ago)$')

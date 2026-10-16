@@ -1,0 +1,8 @@
+{
+  "_note": "Claude: no rectangles; every render and crop comes from page copies redacted in the browser and then neutralised (tools/capture/signed-in/neutralise.py). The OCR email net is kept, with the placeholder the redaction writes in place of the account's address allowed (learner@example.com in the account menu).",
+  "ocr": {
+    "email_allow": [
+      "@example\\.com\\b"
+    ]
+  }
+}

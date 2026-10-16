@@ -21,6 +21,9 @@
 //                  (inside @media (hover: hover)) are plain CSS, so they apply on the static copy
 //   focus-visible  real keyboard focus: focus(), Shift+Tab, Tab (or a Shift keydown then focus()),
 //                  on the element or its first focusable descendant
+//   pressed        the pointer held down on the element (page.mouse.down) for 250ms, so :active and
+//                  the cds squish (`.cds-btn-squish`, scale --cds-btn-press-sx) apply; released after
+//                  the reading. The copies have no scripts, so nothing is activated.
 //   anything else  another element, or another copy, captured in that state: `active`, `selected`,
 //                  `checked`, `open`, `typed`, `on`, ...
 // No click is dispatched anywhere; the copies have no scripts and every navigation away from the
@@ -163,6 +166,9 @@ function styleOf(el, props) {
     style: pick(cs),
   };
   for (const a of ['role', 'aria-label', 'data-cds', 'data-state', 'data-active', 'aria-checked', 'aria-selected', 'data-variant']) if (el.hasAttribute(a)) (out.attrs ||= {})[a] = el.getAttribute(a);
+  // A cds Button presses by scaling its paint layer (.cds-btn-squish), not the element itself.
+  const sq = el.querySelector('.cds-btn-squish');
+  if (sq) out.squish = { transform: getComputedStyle(sq).transform, transition: getComputedStyle(sq).transition.slice(0, 120) };
   for (const pe of ['::before', '::after']) {
     const p = getComputedStyle(el, pe);
     if (p.content && p.content !== 'none' && p.content !== 'normal') {
@@ -242,6 +248,11 @@ function styleOf(el, props) {
 const ALL = ['default', 'hover', 'focus-visible'];
 const HV = ['default', 'hover'];
 const R = ['default'];
+const ALLP = ['default', 'hover', 'focus-visible', 'pressed'];
+const HVP = ['default', 'hover', 'pressed'];
+// The create-project copy is read with and without data-invalid on its name field; every other reading
+// of that copy clears it first, so the error ring never leaks into them.
+const VALID = () => Q('[data-cds=TextInput]').removeAttribute('data-invalid');
 
 const SPECS = [
   // ---------------- Sidebar
@@ -391,6 +402,32 @@ const SPECS = [
   { key: 'm-drawer-row', group: 'Mobile', title: 'Drawer row', snap: 'mobile-home-dark-drawer', find: () => C(T('Artifacts', Q('[role=dialog]')), 'div.group'), states: R },
   { key: 'm-thread-header', group: 'Mobile', title: 'Phone chat header', snap: 'mobile-thread-dark', find: () => Q('[data-testid=chat-header]'), states: R },
   { key: 'm-user-message', group: 'Mobile', title: 'Phone user message', snap: 'mobile-thread-dark', find: () => P(Q('[data-testid=user-message]')), states: R },
+
+  // ---------------- Forms, feedback and states (copies taken 2026-10-17)
+  { key: 'text-link', group: 'Forms and feedback', title: 'Text link', snap: 'settings-dark-capabilities', find: () => T('security risks'), states: ALLP, desc: 'cds TextLink (`a, .prose-link` in the base layer): text.accent, underlined 3px below in the link colour at 40% (--_text-link-line), the full colour on hover and focus; colour and line change on --cds-dur-fast with ease-out.', extra: { 'learn-more': { snap: 'settings-dark-account', find: () => Q('[data-cds=TextLink]'), states: ['hover'] } } },
+  { key: 'tooltip', group: 'Forms and feedback', title: 'Tooltip', snap: 'home-dark-tooltip', find: () => Q('[role=tooltip]'), states: R, desc: 'Base UI tooltip on the sidebar Search button: --cds-tooltip-bg / --cds-tooltip-fg, radius 6, 13/18 text, the shortcut keys inside; opens on the snap curve (--cds-dur-snap) from 98% scale, no transition under reduced motion.' },
+  { key: 'checkbox', group: 'Forms and feedback', title: 'Checkbox', snap: 'chats-dark-select', find: () => Q('[data-cds=Checkbox][aria-checked=false] > span'), hoverOn: () => Q('[data-cds=Checkbox][aria-checked=false]'), focusOn: () => Q('[data-cds=Checkbox][aria-checked=false]'), states: ALLP, desc: 'cds Checkbox, size xs, in the Chats table once Select is on: a --cds-checkbox square with --cds-checkbox-radius and a border-strong edge, filled with the accent and a check glyph when checked.', extra: { checked: { find: () => Q('[data-cds=Checkbox][aria-checked=true] > span'), states: ['hover'] } } },
+  { key: 'selection-bar', group: 'Forms and feedback', title: 'Selection actions (Select mode)', snap: 'chats-dark-select', find: () => C(T('1 selected'), 'div'), states: R, desc: 'Replaces Select and New in the page header: a muted count, Select all (secondary), Delete (danger, filled) and an exit button.' },
+  { key: 'button-danger', group: 'Forms and feedback', title: 'Danger button', snap: 'chats-dark-delete-confirm', find: () => [...document.querySelectorAll('[data-cds=ConfirmationDialog] button')].find((b) => b.innerText.trim() === 'Delete'), states: ALLP, desc: 'fill.danger with on.danger text; the only red control, used for the confirming action of a destructive dialog and the bulk Delete.' },
+  { key: 'button-secondary', group: 'Forms and feedback', title: 'Secondary button', snap: 'chats-dark-delete-confirm', find: () => [...document.querySelectorAll('[data-cds=ConfirmationDialog] button')].find((b) => b.innerText.trim() === 'Cancel'), states: ALLP, desc: 'fill.secondary with a 1px ring (fill.secondary-ring); takes the focus when the dialog opens, so the safe choice is the default.' },
+  { key: 'confirm-dialog', group: 'Forms and feedback', title: 'Confirmation dialog', snap: 'chats-dark-delete-confirm', find: () => Q('[data-cds=ConfirmationDialog]'), states: R, desc: 'cds ConfirmationDialog (role=alertdialog), at most 400 wide: a heading, one sentence, then Cancel and the action at the end; surface-3, radius card, shadow-panel-lg, over the page backdrop.' },
+  { key: 'form-dialog', group: 'Forms and feedback', title: 'Form dialog (Create a project)', snap: 'projects-dark-create', prep: VALID, find: () => Q('[data-cds=Dialog]'), states: R, desc: 'A cds Dialog with a title, two labelled fields, and Cancel / Create project at the end.' },
+  { key: 'field-label', group: 'Forms and feedback', title: 'Field label', snap: 'projects-dark-create', prep: VALID, find: () => T('What are you working on?'), states: R },
+  { key: 'text-field', group: 'Forms and feedback', title: 'Text field', snap: 'projects-dark-create', prep: VALID, find: () => Q('[data-cds=TextInput]'), focusOn: () => Q('[data-cds=TextInput] input') || Q('input[placeholder="Name your project"]'), states: ALL, desc: 'cds TextInput: control height, fill.field with a 1px fill.field-ring, border-strong on hover, the focus ring on focus.' },
+  { key: 'text-field-invalid', group: 'Forms and feedback', title: 'Text field, invalid', snap: 'projects-dark-create', prep: () => Q('[data-cds=TextInput]').setAttribute('data-invalid', ''), find: () => Q('[data-cds=TextInput]'), focusOn: () => Q('[data-cds=TextInput]'), states: ['default', 'hover', 'focus-visible'], desc: 'The error state, read by setting data-invalid on the field in the copy, which is what cds Field does when validation fails: Claude\'s own `data-[invalid]:` rules then draw a 1px fill.danger ring, keep it on hover, and switch the focus ring to shadow.focus-danger. The live form was never submitted, so the message text cds shows under the field was not seen.' },
+  { key: 'text-area', group: 'Forms and feedback', title: 'Text area', snap: 'projects-dark-create', prep: VALID, find: () => Q('[data-cds=TextArea]'), focusOn: () => Q('textarea'), states: ALL, desc: 'cds TextArea: the text field\'s fill, ring and focus, several lines tall, resizable.' },
+  { key: 'button-primary', group: 'Forms and feedback', title: 'Primary button', snap: 'projects-dark-create', prep: VALID, find: () => [...document.querySelectorAll('[data-cds=Dialog] button')].find((b) => b.innerText.trim() === 'Create project'), states: ALLP, desc: 'fill.primary (ink: white in dark, black in light) with on.primary text.' },
+  { key: 'button-disabled', group: 'Forms and feedback', title: 'Disabled button', snap: 'settings-dark-account', find: () => [...document.querySelectorAll('[data-cds=Dialog] button')].find((b) => b.innerText.trim() === 'Delete account'), states: HVP, desc: 'Delete account while a paid plan is active: the secondary button at the disabled opacity; hover and press change nothing.' },
+  { key: 'switch-disabled', group: 'Forms and feedback', title: 'Disabled switch', snap: 'settings-dark-capabilities', find: () => Q('[role=switch][data-disabled]') || Q('[role=switch][aria-disabled=true]'), states: HV, desc: 'Artifacts, on and locked while another setting needs it: the switch at the disabled opacity.' },
+  { key: 'search-input', group: 'Forms and feedback', title: 'List search field', snap: 'chats-dark-search-empty', find: () => Q('[data-cds=TextInput]'), focusOn: () => Q('input[type=search]'), states: ['default', 'focus-visible'], desc: 'Chats and tasks search, opened from the header icon: a text field with a leading glyph and a clear button.' },
+  { key: 'empty-state', group: 'Forms and feedback', title: 'Empty result', snap: 'chats-dark-search-empty', find: () => TS('Nothing matches'), states: R, desc: 'One centred muted line quoting the query; no illustration, no action.' },
+  { key: 'filter-menu', group: 'Forms and feedback', title: 'Filter menu', snap: 'chats-dark-filter-menu', find: () => MN(), states: R, desc: 'The Chats filter: All, Chat, Shared, Cowork, Archived, the current one ticked in the accent.' },
+  { key: 'filter-menu-item', group: 'Forms and feedback', title: 'Filter menu item', snap: 'chats-dark-filter-menu', find: () => [...MN().querySelectorAll('[role^=menuitem]')][1], states: HV, extra: { checked: { find: () => [...MN().querySelectorAll('[role^=menuitem]')][0] } } },
+  { key: 'skeleton', group: 'Forms and feedback', title: 'Loading skeleton', snap: 'artifacts-dark-loading', find: () => Q('[data-cds=Skeleton]'), states: R, desc: 'cds Skeleton: a --cds-skeleton-base bar with a --cds-skeleton-sheen band sweeping across every 2s (cds-shimmer); the sheen is hidden under reduced motion.' },
+  { key: 'skeleton-card', group: 'Forms and feedback', title: 'Loading card', snap: 'artifacts-dark-loading', find: () => C(Q('[data-cds=Skeleton]', 2), '[class*=rounded]'), states: R },
+  { key: 'artifacts-grid', group: 'Forms and feedback', title: 'Artifacts card grid', snap: 'artifacts-dark-loading', find: () => [...M().querySelectorAll('*')].find((e) => getComputedStyle(e).display === 'grid' && getComputedStyle(e).gridTemplateColumns.split(' ').length >= 3), states: R, crop: false, desc: 'The Artifacts page as a grid of cards (loading), read for its column count and gap.' },
+  { key: 'projects-grid', group: 'Forms and feedback', title: 'Projects card grid', snap: 'projects-dark-2', find: () => [...M().querySelectorAll('*')].find((e) => getComputedStyle(e).display === 'grid' && getComputedStyle(e).gridTemplateColumns.split(' ').length >= 2), states: R, crop: false, desc: 'The Projects page grid of cards, read for its column count and gap.' },
+  { key: 'button-primary-page', group: 'Forms and feedback', title: 'Primary button on a page (New project)', snap: 'projects-dark-2', find: () => [...M().querySelectorAll('button')].find((b) => b.innerText.trim() === 'New project'), states: HVP },
 ];
 
 // ---------------------------------------------------------------- jobs
@@ -503,6 +540,20 @@ async function measureSnap(browser, label, specs, out) {
           await page.mouse.move(p.x + 0.5, p.y);
           await page.waitForTimeout(450);
           via = job.hoverOn ? 'mouse hover on its row' : 'mouse hover';
+        } else if (job.base === 'pressed') {
+          // A click on the empty edge first, so the press that follows is a pointer interaction and
+          // the browser does not carry an earlier keyboard focus-visible over to it.
+          await page.mouse.click(rest.x, rest.y);
+          await resetPage();
+          const p = await pointOf(loc);
+          await page.mouse.move(p.x, p.y, { steps: 4 });
+          await page.waitForTimeout(150);
+          await page.mouse.down();
+          // A dialog's buttons can keep focus-visible from the dialog's own initial focus; drop it
+          // so the reading is the press alone (:active outlives the blur while the button is held).
+          await loc.evaluate((el) => { const a = document.activeElement; if (a && a !== document.body && a.matches(':focus-visible')) a.blur(); });
+          await page.waitForTimeout(250);
+          via = 'pointer held down (:active)';
         } else if (job.base === 'focus-visible') {
           let fl = job.focusOn ? await tag(job.focusOn, 'fo') : null;
           if (!fl) {
@@ -535,6 +586,7 @@ async function measureSnap(browser, label, specs, out) {
         c.states[state] = { theme, snapshot: label, error: String(e.message || e).slice(0, 200) };
         log('  !', name, String(e.message || e).slice(0, 120));
       } finally {
+        await page.mouse.up().catch(() => {});
         await page.mouse.move(rest.x, rest.y).catch(() => {});
         await untag().catch(() => {});
       }
@@ -545,6 +597,8 @@ async function measureSnap(browser, label, specs, out) {
 
 // ---------------------------------------------------------------- main
 
+// The copies taken on 2026-10-17 for the refresh; every other copy is from 2026-10-04.
+const READ = Object.fromEntries(['home-dark-tooltip', 'settings-dark-account', 'settings-dark-capabilities', 'chats-dark-select', 'chats-dark-search-empty', 'chats-dark-filter-menu', 'chats-dark-delete-confirm', 'projects-dark-create', 'projects-dark-2', 'artifacts-dark-loading'].map((l) => [l, '2026-10-17']));
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 const labels = [...new Set(SPECS.flatMap((s) => jobsFor(s).map((j) => j.snap)))].filter((l) => !ONLY.length || ONLY.includes(l));
 out._meta = {
@@ -556,10 +610,12 @@ out._meta = {
     default: 'at rest, as captured',
     hover: 'real mouse hover (page.mouse.move), 450ms settle; not measured on the 390 copies',
     'focus-visible': 'real keyboard focus (focus, Shift+Tab, Tab) on the element or its first focusable descendant; recorded as skipped where the element cannot take focus',
+    pressed: 'the pointer held down on the element for 250ms (:active), read before release',
     other: 'active / selected / checked / open / typed / enabled / ... are other elements or snapshots captured in that state',
   },
   tokens: '`vars` lists every var(--x) named in the classes of the element and its first descendants, resolved in that state\'s theme.',
-  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url.replace(/\/(chat|project|artifact|cowork)\/[\w-]+/, '/$1/<id>'), title: m.title, w: m.w, h: m.h, ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
+  refreshed: '2026-10-17: new copies for forms, feedback and states (see READ); the 2026-10-04 readings are kept as they were',
+  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url.replace(/\/(chat|project|artifact|cowork)\/[\w-]+/, '/$1/<id>'), title: m.title, w: m.w, h: m.h, read: READ[l] || '2026-10-04', ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
 };
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });

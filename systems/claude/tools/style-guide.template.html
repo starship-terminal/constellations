@@ -273,8 +273,13 @@ table.t th { color: var(--text-muted); font-weight: 500; }
   <h2 class="sh">Density, space and shape</h2>
   <p class="lead">Claude sizes its controls through the <code>--cds-*</code> density scale rather than a plain spacing scale: radius, control heights, icon size, five paddings and five gaps. The value is the comfortable density; the faded number after it is compact, which Claude falls back to when no density is set and forces on some dense components.</p>
   <div id="density-out"></div>
+  <h3 class="sub">Space</h3>
+  <p class="lead">One base unit, Tailwind's 4 px, with the half steps Claude's classes use (6, 10, 14). The count is how many measured paddings and gaps take that value.</p>
+  <div id="space-out"></div>
   <h3 class="sub">Radius</h3>
   <div class="boxes" id="radius-out"></div>
+  <h3 class="sub">Border widths</h3>
+  <div class="boxes" id="border-out"></div>
 </section>
 
 <section class="s" id="elevation">
@@ -287,6 +292,11 @@ table.t th { color: var(--text-muted); font-weight: 500; }
   <h2 class="sh">Motion</h2>
   <p class="lead">Fast and springy: buttons press in 60 ms, most UI answers in 120 ms on a snap curve, sheets take 300 ms. Click a track to play it on its own curve.</p>
   <div class="motion-rows" id="motion-out"></div>
+  <h3 class="sub">Press</h3>
+  <p class="lead">Pressed is the hover fill plus a squish: hold the pointer on a button below and its paint layer scales to <code>press.button-scale</code> in 60 ms, then springs back.</p>
+  <div id="press-out" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"></div>
+  <h3 class="sub">Reduced motion</h3>
+  <p class="lead">Under <code>prefers-reduced-motion: reduce</code>, and under Claude's own Settings &gt; Motion &gt; Reduced (<code>data-reduce-motion</code>), every animation is cut to <code>duration.reduced-motion</code> and one iteration, popups, dialogs, tooltips and cards lose their transitions and entrance scales, the skeleton shimmer is hidden, and colour and opacity changes happen at once.</p>
 </section>
 
 <section class="s" id="layout">
@@ -300,6 +310,8 @@ table.t th { color: var(--text-muted); font-weight: 500; }
     <div class="r card" style="left:37%;top:138px;width:46.7%;height:80px;border-radius:14px">composer 672 · radius 20</div>
     <div class="r" style="left:34%;top:236px;width:53.3%;height:40px;box-shadow:inset 0 0 0 1px var(--border-strong)"><span class="dim">transcript 768 on a chat · page column 960 on lists</span></div>
   </div></div>
+  <h3 class="sub">Breakpoints, grids and layers</h3>
+  <div id="layout-out"></div>
 </section>
 
 <section class="s" id="components">
@@ -467,6 +479,19 @@ function roles() {
   let r = '';
   for (const [n, t] of flat(TOK.core.radius, 'radius.')) r += `<div class="bx" style="border-radius:min(var(${cssname(n)}), 42px)">${esc(n.replace('radius.', ''))}<br>${esc(t.v)}</div>`;
   $('#radius-out').innerHTML = r;
+})();
+
+(function space() {
+  let h = '<div class="bars">';
+  for (const [n, t] of flat(TOK.core.space, 'space.').sort((x, y) => parseFloat(x[1].v) - parseFloat(y[1].v))) h += `<div class="b"><span>${esc(n)} <b>${t.v}</b> <span style="opacity:.6">${esc((t.s.match(/(\d+) of the measured/) || [, '?'])[1])} uses</span></span><i style="width:${Math.min(100, parseFloat(t.v) / 0.6)}%"></i></div>`;
+  $('#space-out').innerHTML = h + '</div>';
+  $('#border-out').innerHTML = flat(TOK.core.borderWidth, 'borderWidth.').map(([n, t]) => `<div class="bx" style="box-shadow:none;border:${t.v} solid var(--text-primary)">${esc(n.replace('borderWidth.', ''))}<br>${esc(t.v)}</div>`).join('');
+  const rows = [...flat(TOK.core.breakpoint, 'breakpoint.'), ...flat(TOK.core.grid, 'grid.'), ...flat(TOK.core.zIndex, 'zIndex.')];
+  $('#layout-out').innerHTML = '<div class="bars">' + rows.map(([n, t]) => `<div class="b"><span>${esc(n)} <b>${esc(String(t.v))}</b></span><i style="width:${t.t === 'dimension' ? Math.min(100, parseFloat(t.v) / 16) : Math.min(100, Number(t.v) * 1.5)}%"></i></div>`).join('') + '</div>';
+  $('#press-out').innerHTML = ['fill-primary', 'fill-accent', 'fill-danger'].map((f) => `<button class="sg-press" style="border:0;cursor:pointer;padding:0;background:none;--rest:var(--${f});--held:var(--${f}-pressed)"><span style="display:inline-block;padding:6px 12px;border-radius:var(--radius-row);background:var(--rest);color:var(--on-${f.replace('fill-', '')});font:500 14px/20px var(--sg-sans);transition:transform var(--duration-slow) ease">${f.replace('fill-', '')}</span></button>`).join('') + `<span class="cap">press.button-scale ${TOK.core.press['button-scale'].v} · icon ${TOK.core.press['icon-button-scale'].v} · card ${TOK.core.press['card-scale'].v}</span>`;
+  const st = document.createElement('style');
+  st.textContent = `.sg-press:active span{background:var(--held)!important;transform:scale(var(--press-button-scale));transition:transform var(--duration-fast) ease-out!important}`;
+  document.head.appendChild(st);
 })();
 
 (function elevation() {
