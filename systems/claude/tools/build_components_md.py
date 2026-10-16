@@ -343,6 +343,8 @@ def props(v):
     # a row's link overlay); name it, with the layer it sits on
     if "focus" not in (o.get("shadow") or ""):
         for ly in (v.get("paint") or [])[:4]:
+            if ly.get("shadow") == s["boxShadow"]:
+                continue  # the element itself, whose shadow the row already gives
             lab = shadow(ly["shadow"]) if ly.get("shadow") else None
             # a shadow.focus ring, or any other ring drawn in the accent or danger colour (the sidebar
             # row's link draws a 1px inset accent ring with a 6px glow, which no token holds)
