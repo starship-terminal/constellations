@@ -76,6 +76,7 @@ def css_shadow(layers):
         c = ly["color"]
         if c.startswith("#"):
             c = "rgb(%d, %d, %d)" % tuple(int(c[i:i + 2], 16) for i in (1, 3, 5))
+        c = re.sub(r"(\d+\.\d+)\)", lambda m: f"{round(float(m.group(1)), 2):g})", c)  # computed styles round alpha to two places
         out.append(f"{c} {ly['offsetX']} {ly['offsetY']} {ly['blur']} {ly['spread']}" + (" inset" if ly.get("inset") else ""))
     return out
 
@@ -116,6 +117,13 @@ for grp in ("size", "layout"):
     for n, t in flat(T["core"][grp], grp + "."):
         if t["$type"] == "dimension":
             (BY_WIDTH if n.endswith("width") else BY_HEIGHT).setdefault(t["$value"], n)
+BY_BW = {}
+for n, t in flat(T["core"]["borderWidth"], "borderWidth."):
+    if not n.endswith("focus-outline"):
+        BY_BW.setdefault(t["$value"], n)
+BY_BW.setdefault("2px", "borderWidth.focus-outline")
+BY_PRESS = {t["$value"]: "press." + n for n, t in T["core"]["press"].items() if not n.startswith("$") and t["$type"] == "number"}
+BY_OFFSET = {T["core"]["focusRing"]["outline-offset"]["$value"]: "focusRing.outline-offset"}
 BY_DUR = {}
 for n, t in flat(T["core"]["duration"], "duration."):
     ms = float(t["$value"].replace("ms", ""))
@@ -196,7 +204,7 @@ def colour(c, tokens=True, role=None):
     labelled twice."""
     def label(v):
         if v == "rgba(0, 0, 0, 0)" or v.endswith(", 0)"):
-            return "transparent" if v == "rgba(0, 0, 0, 0)" else f"transparent ({v})"
+            return "transparent"
         if not tokens:
             return v
         return tok(pick(BY_COLOR[THEME[0]].get(v), role), v)
@@ -234,6 +242,12 @@ def num(x):
     return re.sub(r"(\d+\.\d\d)\d+", r"\1", str(x))
 
 
+BY_ROLE = {}
+for role, t in T["core"]["fontSize"].items():
+    lh_ = T["core"]["lineHeight"].get(role)
+    if not role.startswith("$") and lh_ and not str(t["$value"]).startswith("{"):
+        BY_ROLE.setdefault((t["$value"], lh_["$value"]), role)
+BY_WEIGHT = {str(t["$value"]): "fontWeight." + n for n, t in T["core"]["fontWeight"].items() if not n.startswith("$")}
 # Type by (family, size, line height, weight), from the composite typography tokens; the plain
 # role names (body-regular) before the measured ones that share a value.
 BY_TYPE = {}
@@ -249,8 +263,15 @@ def font(fz, lh, fw, f):
     lh = lh.replace("px", "") if lh != "normal" else "normal"
     raw = f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
     if fam(f) == "Anthropicons":  # an icon glyph: its size is an icon step, not a type role
-        return f"Anthropicons {tok(BY_ICON.get(fz), fz)} at weight {fw}"
-    return tok(BY_TYPE.get((fam(f), num(fz.replace("px", "")), num(lh), str(fw))), raw)
+        # cds sets the glyph's weight from its size (thinner as it grows), so the size token carries both
+        return f"Anthropicons {tok(BY_ICON.get(fz), f'{fz}, weight {fw}') if BY_ICON.get(fz) else f'{fz} at weight {fw}'}"
+    name = BY_TYPE.get((fam(f), num(fz.replace("px", "")), num(lh), str(fw)))
+    if not name and fam(f) == "Anthropic Sans" and (fz, lh + "px") in BY_ROLE and str(fw) in BY_WEIGHT:
+        # no composite style for this weight: name the role's size and line height and the weight
+        role = BY_ROLE[(fz, lh + "px")]
+        NAMED["token"] += 1
+        return f"`fontSize.{role}` / `lineHeight.{role}` at `{BY_WEIGHT[str(fw)]}` ({raw})"
+    return tok(name, raw)
 
 
 def dim(kind, value):
@@ -271,12 +292,19 @@ def shadow(raw):
     rings = [re.fullmatch(r"(.+) 0px 0px 0px ([\d.]+px)( inset)?", x) for x in rgb]
     if not name and all(rings):
         # a hairline drawn as a box-shadow: name its colour as a border
-        return ", ".join(f"{m.group(2)} ring{' inset' if m.group(3) else ''} {colour(m.group(1), role='border')}" for m in rings)
+        return ", ".join(f"{tok(BY_BW.get(m.group(2)), m.group(2))} ring{' inset' if m.group(3) else ''} {colour(m.group(1), role='border')}" for m in rings)
     if not name and rgb[0].endswith(" 0px 0px 0px 1px inset"):
         for k, n in BY_SHADOW[THEME[0]].items():
             if len(k) == len(rgb) > 1 and k[0].endswith(" 0px 0px 0px 1px inset") and list(k[1:]) == rgb[1:]:
                 name = n + " on this surface"
                 break
+    if not name and len(rgb) > 1:
+        # a hairline ring layered with a shadow token: name both parts
+        for i in (0, len(rgb) - 1):
+            ring, others = rings[i], tuple(rgb[:i] + rgb[i + 1:])
+            if ring and others in BY_SHADOW[THEME[0]]:
+                part = tok(BY_SHADOW[THEME[0]][others], ", ".join(others))
+                return f"{tok(BY_BW.get(ring.group(2)), ring.group(2))} ring{' inset' if ring.group(3) else ''} {colour(ring.group(1), role='border')} + {part}"
     return tok(name, ", ".join(layers))
 
 
@@ -290,11 +318,11 @@ def props(v):
     o["size"] = f"{tok(wt, w) if wt else w} x {tok(BY_HEIGHT.get(h + 'px'), h)}"
     pad = sides(s["paddingTop"], s["paddingRight"], s["paddingBottom"], s["paddingLeft"])
     if pad != "0px":
-        o["padding"] = " ".join(dim("pad", x) if x != "0px" else x for x in pad.split(" "))
+        o["padding"] = " ".join(dim("pad", x) if x != "0px" else "0" for x in pad.split(" "))
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role='border')}")
+            bds.append(f"{tok(BY_BW.get(s[f'border{d}Width']), s[f'border{d}Width'])} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role='border')}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
@@ -321,14 +349,15 @@ def props(v):
     if s.get("backdropFilter", "none") != "none":
         o["backdrop"] = s["backdropFilter"]
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], role='border')}, offset {s['outlineOffset']}"
+        o["outline"] = f"{tok(BY_BW.get(s['outlineWidth']), s['outlineWidth'])} {s['outlineStyle']} {colour(s['outlineColor'], role='border')}, offset {tok(BY_OFFSET.get(s['outlineOffset']), s['outlineOffset']) if s['outlineOffset'] != '0px' else '0'}"
     t = v.get("textStyle")
     if t:
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], role='text')}"
     elif v.get("text"):
         o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], role='text')}"
     if s["textDecorationLine"] not in ("none", "") and v.get("text"):
-        o["underline"] = f"{colour(s['textDecorationColor'], role='text')}, offset {s['textUnderlineOffset']}"
+        uo = s["textUnderlineOffset"]
+        o["underline"] = f"{colour(s['textDecorationColor'], role='text')}, offset {tok('link.underline-offset' if uo == T['core']['link']['underline-offset']['$value'] else None, uo)}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -353,12 +382,14 @@ def props(v):
     sq = (v.get("squish") or {}).get("transform", "none")
     m = re.fullmatch(r"matrix\(([\d.]+), 0, 0, ([\d.]+), 0, 0\)", sq)
     if m and m.group(1) == m.group(2) and abs(float(m.group(1)) - 1) > 0.001:
-        o["press"] = f"paint layer scale({m.group(1)})"
+        o["press"] = f"paint layer {tok(BY_PRESS.get(float(m.group(1))), 'scale(' + m.group(1) + ')')}"
     if s["opacity"] != "1":
         o["opacity"] = tok(BY_OPACITY.get(s["opacity"]), s["opacity"])
     ic = v.get("icon")
     if ic and ic.get("w", 0) > 0 and ic["w"] < 120:
-        o["icon"] = f"{num(ic['w'])} x {num(ic['h'])}, {colour(ic.get('color') or ic.get('stroke') or ic.get('fill'), role='text')}"
+        iw, ih = num(ic["w"]), num(ic["h"])
+        it = BY_ICON.get(ih + "px")
+        o["icon"] = f"{tok(it, iw) if iw == ih and it else iw} x {tok(it, ih) if it else ih}, {colour(ic.get('color') or ic.get('stroke') or ic.get('fill'), role='text')}"
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"], role="text")
     return o
@@ -384,7 +415,7 @@ def state_rows(c):
             diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
             for k in ORDER:
                 if k in base and k not in p:
-                    diff[k] = "none"
+                    diff[k] = "1" if k == "opacity" else "none"
             if not diff:
                 same.append(st)
                 continue
@@ -417,9 +448,11 @@ def child_layers(c):
         if p.get("bg"):
             bits.append("background " + colour(p["bg"], role="background"))
         if p.get("border"):
-            bits.append("border " + colour(p["border"].split(" | ")[0][2:], role="border"))
+            bw_, rest_ = p["border"].split(" | ")[0][2:].split(" ", 1)
+            bits.append("border " + tok(BY_BW.get(bw_), bw_) + " " + colour(rest_, role="border"))
         if p.get("radius"):
-            bits.append("radius " + (dim("radius", p["radius"]) if " " not in p["radius"] else p["radius"]))
+            r = "9999px" if re.fullmatch(r"[\d.]+e\+\d+px", p["radius"]) else p["radius"]
+            bits.append("radius " + (dim("radius", r) if " " not in r else r))
         if p.get("shadow"):
             bits.append("shadow " + (shadow(p["shadow"]) or "none"))
         out.append(" ".join(bits))
@@ -597,7 +630,7 @@ W(f"**Radius.** {top(radii, 10)}. Most of the interface is 8 (rows, icon buttons
 W()
 W(f"**Hover.** Claude hovers with a translucent wash of the text colour. Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. The wash is `fill.ghost-hover` (`rgba(255, 255, 255, 0.075)` in dark, `rgba(11, 11, 11, 0.05)` in light) on buttons, menu items and list rows; sidebar rows use `frame.hover`, the same wash in dark and a solid `#f0efec` in light; a selected row is `frame.selected` (15% white, or `#edece8`). A cds Button paints that fill on its inner `.cds-btn-squish` span, so the button itself reads \"no change\".")
 W()
-W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 4)}. In light: {top(focus['light'], 4)}. The common ring is `shadow.focus`: a 1px inset of the page colour, a 1px `fill.accent` blue (`#2a78d6`) ring and a 6px blue glow, so focus reads as a blue outline with a halo. The composer's mic and voice buttons, the Thought for N s pill and the message actions use a 2px blue outline offset 2 instead. A row (sidebar row, Chats row, settings nav item) puts the ring on its inner link or button and the sidebar rows add the hover wash; a tab puts it on its inner button. Menu items take no ring: keyboard focus in a cds Menu is the same `fill.ghost-hover` wash as the pointer ([menu-item-keyboard](#menu-item-keyboard)). The one element that shows nothing is the search dialog's field row, whose focus is the caret in its text area. States named `refresh-focus-visible` were read on the 2026-10-17 copies for components whose 2026-10-04 copy had no focus reading.")
+W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 4)}. In light: {top(focus['light'], 4)}. The common ring is `shadow.focus`: a 1px inset of the page colour, a 1px `fill.accent` blue (`#2a78d6`) ring and a 6px blue glow, so focus reads as a blue outline with a halo. The composer's mic and voice buttons, the Thought for N s pill and the message actions use a 2px blue outline offset 2 instead. A row (sidebar row, Chats row, settings nav item) puts the ring on its inner link or button and the sidebar rows add the hover wash; a tab puts it on its inner button. The segmented controls (Chat/Cowork, the Theme picker) are radio groups whose checked radio takes the ring. Menu items take no ring: keyboard focus in a cds Menu is the same `fill.ghost-hover` wash as the pointer ([menu-item-keyboard](#menu-item-keyboard)). The one element that shows nothing is the search dialog's field row, whose focus is the caret in its text area. States named `refresh-focus-visible` were read on the 2026-10-17 copies for components whose 2026-10-04 copy had no focus reading.")
 W()
 W(f"**Motion.** {top(trans, 5)}. Buttons press on `duration.fast` (60 ms) and colour changes run 200 ms on the standard curve; the cds tokens name five durations (60, 120, 200, 300, 450 ms) and three curves (out, snap, overshoot), plus a `linear()` spring for button presses that DTCG cannot carry.")
 W()
@@ -681,6 +714,20 @@ W("- Chat and artifact titles are the owner's own. The account's name was replac
 W()
 
 out = "\n".join(L) + "\n"
-out = out.replace("@@NAMED@@", f"Of the {sum(NAMED.values())} colours, shadows and dimensions written in the entries, {NAMED['token']} ({round(100 * NAMED['token'] / sum(NAMED.values()))}%) name a token.")
+# The share is counted over what the entries actually say: every value written in a state row or a
+# child-layer line, named (a backticked token with its value in brackets) or raw. Zeros need no token and
+# a box's width is the instance's content width, so neither is counted.
+entries = out[out.index("## Components"):out.index("## Icon index")]
+written = "\n".join(l.split("|", 2)[2] for l in entries.split("\n") if l.startswith("| ") and not l.startswith("| State")) + "\n" + "\n".join(l for l in entries.split("\n") if l.startswith("Child layers"))
+TOKEN = re.compile(r"`[a-z][\w.-]*(?: on this surface)?` \((?:[^()]|\([^()]*\))*\)|`fontSize\.[^(]*\((?:[^()]|\([^()]*\))*\)")
+named = len(TOKEN.findall(written))
+rest = re.sub(r"`[^`]*`", "", TOKEN.sub("TOKEN", written))
+rest = re.sub(r"(?<![\w.])\d+(?:\.\d+)? x ", "", rest)  # content widths
+rest = re.sub(r"and \d+ more", "", rest)
+# a shadow no token holds is one raw value, however many layers it has
+rest = re.sub(r"shadow (?!TOKEN)[^;|\n]*", "shadow RAWSHADOW", rest)
+raw_shadows = rest.count("RAWSHADOW")
+raw = [m.group(0) for m in re.finditer(r"#[0-9a-f]{6}|rgba?\([^)]*\)|cubic-bezier\([^)]*\)|[A-Z][a-z]+ [A-Z]?[a-z]* ?\d+/[\d.]+ \d+|(?<![\w.])\d+(?:\.\d+)?(?:px|ms|s)?(?![\w.])", rest) if not re.fullmatch(r"0(px|s)?", m.group(0))] + ["shadow"] * raw_shadows
+out = out.replace("@@NAMED@@", f"Of the {named + len(raw)} values written in the state rows and child-layer lines below (zeros and content widths aside), {named} ({round(100 * named / (named + len(raw)))}%) name a token.")
 open("components.md", "w").write(out)
 print(f"components.md: {len(C)} components, {n_states} states, {n_crops} crops, {len(L)} lines")
