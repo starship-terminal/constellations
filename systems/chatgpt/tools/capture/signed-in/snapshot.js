@@ -81,17 +81,29 @@ function scrubTitles() {
   const ui = new Set(['New chat', 'Images', 'Library', 'Search', 'Projects', 'Chats', 'Codex', 'Plugins', 'Explore', 'Scheduled', 'Recents', 'Research', 'Others']);
   return [...out].filter((t) => !ui.has(t)).sort((a, b) => b.length - a.length);
 }
-// Same-length neutral words: each word keeps its length and case, digits stay.
+// Same-length neutral words: each word keeps its length and case, digits stay. Letters of every
+// script are replaced: Han, kana and Hangul (written without spaces) become one box per character,
+// any other run of letters (Latin, Cyrillic, Greek, Hebrew, Arabic, Devanagari, Thai, ...) a word.
 const LOREM = 'the of and to in is it on as at by we or an be so up if no do my me us go am he ok'.split(' ').concat('one two way day see use new now for are was not but can all any had how man out say she too old get yes yet ago act add age air'.split(' '), 'that with this have from they will what when make like time just know take into year good some them than then look only come over work also back give most very even want well each much'.split(' '), 'about there their which would other these first could after think where being every great might shall still those under while sound place small large'.split(' '), 'little number people always should around before become follow letter mother answer animal father simple island'.split(' '), 'example between picture another without country sentence thought program problem against through'.split(' '));
 function filler(text) {
   let k = 0;
-  return text.replace(/[A-Za-z\u00C0-\u024F\u0400-\u04FF]+/g, (w) => {
+  return text.replace(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/gu, '\u25A1').replace(/\p{L}[\p{L}\p{M}]*/gu, (w) => {
     const pool = LOREM.filter((x) => x.length === Math.min(w.length, 8));
     let r = pool.length ? pool[(k++ * 7 + w.length) % pool.length] : 'x'.repeat(w.length);
     while (r.length < w.length) r += r;
     r = r.slice(0, w.length);
-    return /^[A-Z]/.test(w) ? r[0].toUpperCase() + r.slice(1) : r;
-  }).replace(/[\u3040-\u9FFF\uAC00-\uD7AF]/g, '\u25A1');
+    return /^\p{Lu}/u.test(w) ? r[0].toUpperCase() + r.slice(1) : r;
+  });
+}
+// Title replacement walks the copy's text and attribute values, never its <style> text or class
+// names, so a one-word title such as "border" cannot rewrite the inlined CSS.
+function eachString(root, fn) {
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_COMMENT);
+  while (w.nextNode()) { const p = w.currentNode.parentElement; if (!p || !p.closest('style, script')) fn(w.currentNode, 'nodeValue'); }
+  for (const el of [root, ...root.querySelectorAll('*')]) {
+    if (el.tagName === 'STYLE' || el.tagName === 'SCRIPT') continue;
+    for (const a of [...el.attributes]) if (a.name !== 'class' && a.name !== 'style') fn(a, 'value');
+  }
 }
 window.__snap = function (label, REDACT) {
   if (!REDACT || !Array.isArray(REDACT.replace)) throw new Error('pass the redaction file as the second argument');
@@ -201,8 +213,8 @@ window.__snap = function (label, REDACT) {
   // ChatGPT (adapt, 2026-10-17): titles are scrubbed in the copy before it is serialised, so a
   // chat, project, file or GPT title never leaves the browser even when the redaction file does not
   // name it. scrubTitles() collects every title the live page shows (chat and project links, the
-  // "Project actions for X" labels) and replaces each one everywhere in the copy, attributes
-  // included; REDACT.scrub then replaces the text inside each [selector, kind] match: "filler" keeps
+  // "Project actions for X" labels) and replaces each one in the copy's text and attribute
+  // values (not its CSS or class names); REDACT.scrub then replaces the text inside each [selector, kind] match: "filler" keeps
   // each word's length with neutral words (message text, so the layout holds), anything else
   // becomes "<kind> <n>". The ids on <html> and every chat and project id in a URL are cut too.
   const titles = scrubTitles();
@@ -229,14 +241,13 @@ window.__snap = function (label, REDACT) {
     });
   }
   for (const a of ['data-theme-account-id', 'data-theme-user-id', 'data-page-load-id']) clone.removeAttribute(a);
+  eachString(clone, (o, k) => { let v = o[k]; titles.forEach((t, i) => { if (v.includes(t)) v = v.split(t).join('Sample title ' + (i + 1)); }); if (v !== o[k]) o[k] = v; });
+  const left = new Set();
+  eachString(clone, (o, k) => titles.forEach((t) => { if (o[k].includes(t)) left.add(t); }));
+  if (left.size) throw new Error(left.size + ' title(s) survived the scrub');
   let html = '<!doctype html>\n' + clone.outerHTML;
-  const esc = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const htmlEsc = (x) => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-  titles.forEach((t, i) => { for (const f of new Set([t, htmlEsc(t)])) html = html.split(f).join('Sample title ' + (i + 1)); });
   for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
   html = cutIds(html);
-  const left = titles.filter((t) => html.includes(t) || html.includes(htmlEsc(t)));
-  if (left.length) throw new Error(left.length + ' title(s) survived the scrub');
   // Inner scrollers (the task thread is a virtualised list inside one) keep their position only
   // as a property, so each scrolled element is recorded by its child-index path for render.mjs.
   const pathOf = (el) => { const out = []; for (let n = el; n && n !== document.documentElement; n = n.parentElement) out.unshift([...n.parentElement.children].indexOf(n)); return out; };
