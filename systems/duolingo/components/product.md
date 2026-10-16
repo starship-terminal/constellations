@@ -18,20 +18,20 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | container | width x height | 256 x 797 (100vh); width = calc(var(--web-ui_navbar-width,224px) + 32px) at >=1160px, calc(var(--web-ui_navbar-width-no-labels,56px) + 32px) = 88px below | learn-dark-default cl=_3P5E_ (#3); css:9071-d035f2e5.css ._3P5E_ and ._3P5E_ @media (min-width:1160px) |
-| container | padding / border | 0 16px; border-right 2px solid; box-sizing border-box, so the content column is 222px | learn-dark-default cl=_3P5E_ (#3) |
+| container | padding / border | 0 `space.16` 16px; border-right `space.2` 2px solid; box-sizing border-box, so the content column is 222px | learn-dark-default cl=_3P5E_ (#3) |
 | container | position / z-index / overflow | position fixed, top var(--web-ui_topbar-top,0), left 0; z-index 210; overflow-y auto with the scrollbar hidden | learn-dark-default cl=_3P5E_ _14v8V (#3); css:4243-a8d324a8.css ._14v8V |
 | logo block | box | 222 x 92: padding 32px 0 30px 16px, height 30px (>=1160); below 1160: height 39px, padding 36px 0 25px 10px | learn-dark-default cl=_3vxyy (#4); css:9071-d035f2e5.css ._3vxyy |
 | logo | size | wordmark img 128 x 30 at x32 y32 (cl=sOuBs, shown >=1160); collapsed mark cl=_1C091 40 x 40 (shown <1160, not captured) | learn-dark-default cl=sOuBs (#6); css:9071-d035f2e5.css .sOuBs, ._1C091 |
 | nav list | layout | flex column, gap 8px; 222 wide (width 56px below 1160) | learn-dark-default cl=_2uLXp (#7); css:9071-d035f2e5.css ._2uLXp |
 | nav item | width x height | 222 x 52 (inner height 40px + 4px padding x2 + 2px border x2); 48px tall and padding 0 below 1160 | learn-dark-default dt=home-nav span cl=_22Pme _33YLo p3liX YAEPa (#10); css:9071-d035f2e5.css .p3liX, .YAEPa |
-| nav item | padding / border / radius | padding var(--web-ui_tab-padding,4px 8px); border 2px solid transparent; radius 12px (applied by the selected and hover rules) | css:9071-d035f2e5.css .YAEPa, ._348_2, ._3Dchg:hover |
+| nav item | padding / border / radius | padding var(--web-ui_tab-padding,`radius.4` 4px `radius.8` 8px); border `radius.2` 2px solid transparent; radius `radius.12` 12px (applied by the selected and hover rules) | css:9071-d035f2e5.css .YAEPa, ._348_2, ._3Dchg:hover |
 | nav item | pitch | 60px (52 item + 8 gap): items at y 92, 152, 212, 272, 332, 392, 452, 512 | learn-dark-default dt=*-nav (#9,#15,#21,#28,#34,#40,#46,#52) |
 | nav item | alignment | flex row, align-items center; justify-content flex-start (center below 1160) | css:9071-d035f2e5.css ._33YLo, ._22Pme |
-| icon | size / offset | 32 x 32 img, margin-left 6px (0 below 1160) inside a 38 x 32 wrapper with margin-right 20px (0 below 1160); icon x=32, label x=84 | learn-dark-default cl=_4fxfA (#11), cl=_101n8 (#12); css:9071-d035f2e5.css ._4fxfA, ._101n8 |
+| icon | size / offset | 32 x 32 img, margin-left `space.6` 6px (0 below 1160) inside a 38 x 32 wrapper with margin-right `space.20` 20px (0 below 1160); icon x=32, label x=84 | learn-dark-default cl=_4fxfA (#11), cl=_101n8 (#12); css:9071-d035f2e5.css ._4fxfA, ._101n8 |
 | avatar icon | size | 32 x 32, radius 50% | learn-dark-default dt=profile-tab img cl=_1eYjP _2eox0 (#49); css:9071-d035f2e5.css ._1eYjP |
 | notification dot | size / position | 8 x 8 plus 2px ring = 12 x 12 rendered; absolute top 0 right 0 of the 32px icon (x52 y222) | learn-dark-default cl=_3niSR _2O71O _3MaD6 (#25); css:9071-d035f2e5.css ._3niSR, ._2O71O, ._3MaD6 |
 | label | size | text box 25px tall (line-height 25px from the container font 500 17px/25px); hidden (display none) below 1160 | learn-dark-default cl=_1AZJt (#13); css:9071-d035f2e5.css ._1AZJt |
-| MORE popover | rect / offset | 291 x 262 at x246 y502: position fixed, 8px (margin-left) right of the 238px item edge; z-index 220; surface radius 15px, 2px border; rows 52px (link rows) and 40px (Settings, Help, Log out) with padding 0 40px 0 20px, 2px divider after the link group | learn-dark-more-menu cl=_3zpnU D0iFS _1o3g5 xw9u1 (#58), cl=_36bu_ (#59), cl=_1fv9a (#60), dt=det-nav (#61), dt=settings-button (#68); css:4779-c36ad395.css ._36bu_; css:9071-d035f2e5.css .GHXZL, ._2ifes |
+| MORE popover | rect / offset | 291 x 262 at x246 y502: position fixed, `space.8` 8px (margin-left) right of the 238px item edge; z-index 220; surface radius `space.15` 15px, `space.2` 2px border; rows 52px (link rows) and `space.40` 40px (Settings, Help, Log out) with padding 0 `space.40` 40px 0 `space.20` 20px, `space.2` 2px divider after the link group | learn-dark-more-menu cl=_3zpnU D0iFS _1o3g5 xw9u1 (#58), cl=_36bu_ (#59), cl=_1fv9a (#60), dt=det-nav (#61), dt=settings-button (#68); css:4779-c36ad395.css ._36bu_; css:9071-d035f2e5.css .GHXZL, ._2ifes |
 | MORE hover bridge | ::after | 10px wide invisible strip to the right of the item (right -10px) so the pointer can travel to the popover | learn-dark-more-menu cl=_3tK_c (#53) ::after; css:9071-d035f2e5.css ._3tK_c:hover:after |
 | promo card | box | 222 x 199, margin 12px 0, padding 24px 12px 16px, gap 8px, border 2px, radius 12px, text-align center; display none below 1160 | learn-dark-default cl=_2cabz (#58); css:4243-a8d324a8.css ._2cabz @media (min-width:1160px) |
 | promo card | content | image 55 x 47; title 20/24 700; body 16/24; CTA "TRY CHESS" 14px/28px 700 uppercase, 83 x 32 | learn-dark-default cl=_1vDVl (#59), _332av (#60), _2WGIW (#61), _2rQ98 (#62) |
@@ -76,15 +76,15 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| row | width x height / spacing | 368 x 44, flex row, justify-content space-between, align-items center; margin-bottom 8px (so the first card sits 8 + 16 gap below) | learn-dark-default cl=_2gxqo (#69); css:5275-8898b509.css ._2gxqo |
-| trigger | height / radius | 44px (height 100%), border-radius 12px, flex centred | learn-dark-default cl=_1LP0k (#71,#75,#80,#84); css:5275-8898b509.css ._1LP0k |
+| row | width x height / spacing | 368 x 44, flex row, justify-content space-between, align-items center; margin-bottom `space.8` 8px (so the first card sits 8 + 16 gap below) | learn-dark-default cl=_2gxqo (#69); css:5275-8898b509.css ._2gxqo |
+| trigger | height / radius | 44px (height 100%), border-radius `radius.12` 12px, flex centred | learn-dark-default cl=_1LP0k (#71,#75,#80,#84); css:5275-8898b509.css ._1LP0k |
 | course trigger | size | flag only: 64 x 44 (width 64px, cl=_3gO6p) in dark dumps; flag + number: 90 x 44 (min-width 80px, padding 0 16px 0 13px, gap 14px) in light dumps | learn-dark-default dt=courses-menu (#70,#71); learn-light-default dt=courses-menu cl=_2cstC (#70), cl=_310Fd (#71), cl=IBL62 (#72); css:5275-8898b509.css ._3gO6p, ._2cstC, ._310Fd, .IBL62 |
 | flag | size / shape | 31 x 24, radius 18%, 2px outline | learn-dark-default cl=jNMwi (#73); css:5275-8898b509.css .jNMwi |
-| streak trigger | size / padding | 68 x 44 (67 light), padding 0 16px 0 10px; icon wrapper 34 x 28 | learn-dark-default dt=streak-menu (#74,#75), cl=_1BpZv (#76); css:5275-8898b509.css ._3KUWP |
+| streak trigger | size / padding | 68 x 44 (67 light), padding 0 `space.16` 16px 0 `space.10` 10px; icon wrapper 34 x 28 | learn-dark-default dt=streak-menu (#74,#75), cl=_1BpZv (#76); css:5275-8898b509.css ._3KUWP |
 | streak icon | size | 23 x 28, margin-right 11px | learn-dark-default cl=_1CQ4X (#77); css:5275-8898b509.css ._1CQ4X |
-| gems trigger | size / padding | 89 x 44, padding 0 16px 0 10px | learn-dark-default dt=lingot-menu (#79,#80); css:5275-8898b509.css ._3w8he |
+| gems trigger | size / padding | 89 x 44, padding 0 `space.16` 16px 0 `space.10` 10px | learn-dark-default dt=lingot-menu (#79,#80); css:5275-8898b509.css ._3w8he |
 | gem icon | size | 22 x 28, margin-right 10px | learn-dark-default cl=_2Jf7o (#81); css:5275-8898b509.css ._2Jf7o |
-| hearts trigger | size / padding | 72 x 44 (width 72px), padding 0 16px 0 10px, justify space-between | learn-dark-default dt=hearts-menu (#83,#84); css:5275-8898b509.css .hCZR9 |
+| hearts trigger | size / padding | 72 x 44 (width 72px), padding 0 `space.16` 16px 0 `space.10` 10px, justify space-between | learn-dark-default dt=hearts-menu (#83,#84); css:5275-8898b509.css .hCZR9 |
 | heart icon | size | 28 x 28 | learn-dark-default cl=_1LRS8 (#85); css:5275-8898b509.css ._1LRS8 |
 | count | box | text box 20px tall (body line-height 20px) | learn-dark-default dt=streak-stat (#78), dt=lingot-stat (#82), cl=xb7v_ (#86) |
 | hover bridge | ::after | absolute, top 44px, left 0, right 0, height 10px (bottom -10px): keeps hover while moving into the dropdown | captured:learn-dark-streak-dropdown #75 ::after; css:5275-8898b509.css ._1LP0k:not(._1cy5G):hover:after |
@@ -128,7 +128,7 @@ Anatomy:
 | rail | position (sticky variant) | outer: position sticky, bottom 24px, align-self flex-end, flex-direction column-reverse; inner: position sticky, top calc(var(--app-offset) + 24px), min-height calc(100vh - var(--app-offset) - 48px) = 749px at 797 tall | learn-dark-default #67, cl=_74gJE _1GhPE (#68); css:5275-8898b509.css ._2SBm1, ._74gJE |
 | rail | scroll spacer | ::before height calc(var(--sidebar-offset) - var(--app-offset) - 24px); measured outer 14427 = inner 1174 + 13253, where scroll offset meta.sy = 13252.5, so the rail stays pinned while the page scrolls and releases at its bottom | learn-dark-default #67 rect vs #68 rect; learn-light-default #67 14809 = 1122 + 13687 (sy 13686.5); css:5275-8898b509.css ._2SBm1:before |
 | rail | position (static variant) | cl=_3hqQW: flex column, width 368, not sticky (used on /quests and /profile) | quests-dark-default cl=_3hqQW _1UT5d _2YNyh (#66); profile-dark-default (#66); css:5275-8898b509.css ._3hqQW |
-| stack | gap | 16px between cards; the stat bar adds its own 8px margin-bottom, so the first card starts 68px below the rail top (y 92) | learn-dark-default cl=_1GhPE (#68), _2gxqo (#69); css:5275-8898b509.css ._1GhPE |
+| stack | gap | `space.16` 16px between cards; the stat bar adds its own `space.8` 8px margin-bottom, so the first card starts 68px below the rail top (y 92) | learn-dark-default cl=_1GhPE (#68), _2gxqo (#69); css:5275-8898b509.css ._1GhPE |
 | rail | z-index | 1 (main column z-index 0) | css:5275-8898b509.css ._2YNyh, ._2HEhk |
 | cards | common shell | 368 wide, padding 18px, 2px border, radius 16px (card class _2cnFr _1T_BQ) | learn-dark-default #95; css:1008-b4d34396.css ._2cnFr, ._1T_BQ |
 | footer links | box | 348 wide, margin 16px 10px 4px, flex wrap centred; each li margin 0 10px 12px; link 13px/16px 700 uppercase | learn-dark-default dt=footer-links (#134), cl=pQQIb (#135), cl=_1oCct (#136); css:5275-8898b509.css ._3mfHU, .pQQIb, ._1oCct |
@@ -172,8 +172,8 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | bar | width x height | 570 x 58 (height 58px), position fixed top var(--web-ui_topbar-top,0), z-index 210 | learn-dark-mobile cl=_3sbzq _1lHE4 hJZ_L (#3); css:5275-8898b509.css ._3sbzq, ._1lHE4 |
-| bar | padding | 0 10px; inner row 550 wide, flex, justify-content space-between, height 100% | learn-dark-mobile #3, cl=qs_bd (#4); css:5275-8898b509.css ._3sbzq .qs_bd |
-| bar | bottom border | 2px solid swan by default (._1lHE4); removed with border-bottom 0 !important on /learn and /shop (cl=hJZ_L) | css:5275-8898b509.css ._1lHE4; css:4769-628e48ee.css .hJZ_L |
+| bar | padding | 0 `space.10` 10px; inner row 550 wide, flex, justify-content space-between, height 100% | learn-dark-mobile #3, cl=qs_bd (#4); css:5275-8898b509.css ._3sbzq .qs_bd |
+| bar | bottom border | `borderWidth.2` 2px solid swan by default (._1lHE4); removed with border-bottom 0 !important on /learn and /shop (cl=hJZ_L) | css:5275-8898b509.css ._1lHE4; css:4769-628e48ee.css .hJZ_L |
 | trigger | hit area | full bar height (58px), no padding: course 54, streak 39, gems 64, hearts 46 wide at x 10, 180, 334, 514 | learn-dark-mobile dt=courses-menu (#5), streak-menu (#10), lingot-menu (#15), hearts-menu (#19) |
 | course | flag + number | flag 32 x 25, gap 6px, number 16 x 24 | learn-dark-mobile cl=_2Zkly (#7), img (#8), cl=_2DN_i (#9); css:5275-8898b509.css ._2Zkly |
 | streak | icon | 25 x 30, margin-right 6px | learn-dark-mobile dt=imageStreak cl=_1s1SW (#13); css:5275-8898b509.css ._1s1SW |
@@ -213,11 +213,11 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | bar | width x height | 570 x 82 (height 82px), position fixed bottom 0, width 100%, z-index 210 | learn-dark-mobile cl=_1p0jQ (#24), cl=_2zdkO (#27); css:5275-8898b509.css ._1p0jQ, ._2zdkO |
-| bar | padding / gap | padding 16px; flex, align-items center, justify-content space-between, gap 12px; box-sizing border-box | learn-dark-mobile #27; css:5275-8898b509.css ._2zdkO |
-| bar | top border | 2px solid | learn-dark-mobile #27 |
+| bar | padding / gap | padding `space.16` 16px; flex, align-items center, justify-content space-between, gap `space.12` 12px; box-sizing border-box | learn-dark-mobile #27; css:5275-8898b509.css ._2zdkO |
+| bar | top border | `borderWidth.2` 2px solid | learn-dark-mobile #27 |
 | tab | size | 48 x 48, flex centred; at 570 wide the tabs sit at x 16, 114, 212, 310, 408, 506 (98px pitch) | learn-dark-mobile cl=_3UCzw (#28,#31,#34,#37,#40,#43); css:5275-8898b509.css ._3UCzw |
 | icon | size | 40 x 40 (no label) | learn-dark-mobile cl=_3J4we (#30); css:5275-8898b509.css ._3J4we |
-| active chip | border / radius | 2px solid border, radius 8px (on the 48x48 tab) | learn-dark-mobile cl=_2-WjO (#28); css:5275-8898b509.css ._2-WjO |
+| active chip | border / radius | `radius.2` 2px solid border, radius `radius.8` 8px (on the 48x48 tab) | learn-dark-mobile cl=_2-WjO (#28); css:5275-8898b509.css ._2-WjO |
 | page spacer | height | 82px spacer at the end of /learn (cl=_1uwk5, 0 at >=700) so content clears the bar | learn-dark-mobile cl=_1uwk5 (#1293); css:path-e50cab6b.css ._1uwk5 |
 | scrim | layer | fixed full-screen, black at 0.3, opacity 0, transition opacity 0.3s, z-index -1 inside the bar | learn-dark-mobile cl=_1gNU8 (#26); css:5275-8898b509.css ._1gNU8 |
 
@@ -251,7 +251,7 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| app wrapper | min-width / top padding | >=700px: min-width 900px, margin 0 auto, padding-top calc(var(--app-offset) + 24px); below: padding-top var(--app-offset) | learn-dark-default cl=_3Cy6o _2kkzG (#1); css:4243-a8d324a8.css ._2kkzG |
+| app wrapper | min-width / top padding | >=700px: min-width 900px, margin 0 auto, padding-top calc(var(--app-offset) + `space.24` 24px); below: padding-top var(--app-offset) | learn-dark-default cl=_3Cy6o _2kkzG (#1); css:4243-a8d324a8.css ._2kkzG |
 | sidebar offset | padding-left | 256px at >=1160, 88px below (the fixed sidebar width) | learn-dark-default cl=_19E80 (#2); css:4243-a8d324a8.css ._19E80 |
 | content wrapper | max-width | 1056px, margin 0 auto, width 100%, padding-top 24px | learn-dark-default cl=AkzqY (#65); css:4243-a8d324a8.css .AkzqY |
 | row | flex | flex-direction row-reverse (>=700) / column (<700); gap 48px; padding 0 24px 24px (>=700 only) | learn-dark-default dt=home cl=wl71D (#66); css:4819-8f413e73.css .wl71D |
@@ -314,17 +314,17 @@ Anatomy:
 | sticky wrapper | position / top / z-index | sticky, top 0 (>=700px), z-index 210, min-height 82px | learn-dark-default cl=_1g8jV (#152); css:path-e50cab6b.css ._1g8jV |
 | spacer above banner | height | 24px (desktop), 0 (mobile) | learn-dark-default cl=_3LueZ (#153) r=[280,0,480,24]; css:path-e50cab6b.css ._3LueZ |
 | banner | width x height | 480 x 90px at 1200 viewport; 592 x 90px at 1384 viewport (fills the path column) | learn-dark-default cl=PsNCe LJB6r (#154); learn-light-default (#163) |
-| banner | padding | 16px | learn-dark-default PsNCe (#154) |
-| banner | gap (row / column) | 6px / 16px (row-gap 3px below 700px) | learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe |
-| banner | border-radius | 13px (>=700px only; 0 on mobile) | learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe @media (min-width:700px) |
+| banner | padding | `space.16` 16px | learn-dark-default PsNCe (#154) |
+| banner | gap (row / column) | `space.6` 6px / `space.16` 16px (row-gap 3px below 700px) | learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe |
+| banner | border-radius | `radius.13` 13px (>=700px only; 0 on mobile) | learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe @media (min-width:700px) |
 | back link | layout | flex, gap 8px; arrow img 16x16; r=[296,40,284,24] | learn-dark-default cl=_3HqVu (#155), img (#156) |
 | section/unit label | size | 127 x 24px, opacity 0.7 | learn-dark-default h1 cl=_3WYpp (#157) |
 | title | size | 284 x 28px, max-width 100% | learn-dark-default span cl=U_xpg (#158) |
 | GUIDEBOOK button | width x height | 148 x 54px | learn-dark-default dt=guidebook-button-82 (#159) |
-| GUIDEBOOK button | padding | 12px 14px 12px 12px | learn-dark-default (#159); css:path-e50cab6b.css ._1ORKS |
-| GUIDEBOOK button | border width / radius | 2px sides and top, 4px bottom (lip); radius 16px | learn-dark-default (#159) |
+| GUIDEBOOK button | padding | `space.12` 12px `space.14` 14px `space.12` 12px `space.12` 12px | learn-dark-default (#159); css:path-e50cab6b.css ._1ORKS |
+| GUIDEBOOK button | border width / radius | `radius.2` 2px sides and top, `radius.4` 4px bottom (lip); radius `radius.16` 16px | learn-dark-default (#159) |
 | GUIDEBOOK icon | size | 24 x 24px | learn-dark-default img cl=uGhFr (#160) |
-| GUIDEBOOK label | margin-left / display | 12px; display none below 1100px viewport | learn-dark-default span cl=_30k3d (#161); css:path-e50cab6b.css ._30k3d @media (min-width:1100px) |
+| GUIDEBOOK label | margin-left / display | `space.12` 12px; display none below 1100px viewport | learn-dark-default span cl=_30k3d (#161); css:path-e50cab6b.css ._30k3d @media (min-width:1100px) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -393,10 +393,10 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| divider | height / margins | 82px tall; margin 8px 0 | learn-dark-default header cl=_10Xfk (#1182) r=[280,146,480,82] |
-| rule | thickness / length | 2px top border; flex-basis 48px grow 1 (115px each at 480 column, 176px at 592, 165px at 570 mobile) | learn-dark-default hr cl=_1JA0o (#1183,#1185); learn-light-default (#175); learn-dark-mobile (#60) |
-| rule | vertical margin | 40px top and bottom (centres the rule) | learn-dark-default (#1183) |
-| title | margin | 0 16px | learn-dark-default h2 cl=_3qGKs (#1184); css:path-e50cab6b.css ._3qGKs |
+| divider | height / margins | 82px tall; margin `space.8` 8px 0 | learn-dark-default header cl=_10Xfk (#1182) r=[280,146,480,82] |
+| rule | thickness / length | `borderWidth.2` 2px top border; flex-basis 48px grow 1 (115px each at 480 column, 176px at 592, 165px at 570 mobile) | learn-dark-default hr cl=_1JA0o (#1183,#1185); learn-light-default (#175); learn-dark-mobile (#60) |
+| rule | vertical margin | `space.40` 40px top and bottom (centres the rule) | learn-dark-default (#1183) |
+| title | margin | 0 `space.16` 16px | learn-dark-default h2 cl=_3qGKs (#1184); css:path-e50cab6b.css ._3qGKs |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -444,7 +444,7 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | button | width x height | 70 x 65px (face 57 + lip 8) | learn-dark-default dt=skill-path-level-0 (#1236) r=[485,317,70,65] |
-| face (::after) | size / radius | 70 x 57px (top 0, bottom 8px), border-radius 50% | learn-dark-default (#1236) ::after; css:path-e50cab6b.css ._3Jm09:after |
+| face (::after) | size / radius | 70 x 57px (top 0, bottom `radius.8` 8px), border-radius 50% | learn-dark-default (#1236) ::after; css:path-e50cab6b.css ._3Jm09:after |
 | lip | depth | 8px: box-shadow 0 8px 0 rgb(black/.2), 0 8px 0 var(--path-level-color) | learn-dark-default (#1236) ::after; css:path-e50cab6b.css ._3Jm09:after |
 | side band (::before) | size | 70 x 8px at top 28.5px, same colour stack as the lip | learn-dark-default (#1236) ::before; css:path-e50cab6b.css ._3Jm09:before |
 | icon | size / position | 42 x 34px at left 14px, top 11.5px | learn-dark-default img cl=_1B6UH (#1237); css:path-e50cab6b.css ._1B6UH |
@@ -453,7 +453,7 @@ Anatomy:
 | progress ring | stroke | outer radius 50, inner 42 in a 100 viewBox = 8 units, about 7.8px rendered; arc ends rounded (r 4) | dumps/icons-_learn.json svg._2FMGJ |
 | zig-zag | horizontal offsets (wrapper left) | 0, +44.884, +70, +44.884, 0, -44.884, -70, -44.884, 0 ... (px from column centre); the sign of the first swing alternates per unit (unit 79 and 81 start +, unit 80 and 82 start -) | learn-dark-default div.R7x3_ wrappers of #572-#729 (unit 79), #1036-#1175 (unit 80), #1236-#1303 (unit 81) |
 | zig-zag | vertical gap (wrapper margin-top) | 11.853px between rows at offset 0 and 44.884; 20.383px between 44.884 and 70; so centre-to-centre pitch 76.9px or 85.4px | learn-dark-default R7x3_ wrappers (e.g. parent of #1245 mt 11.8533, parent of #1250 mt 20.3826) |
-| zig-zag | first node / unit review margin-top | 24px for the first node of a unit and for the unit-review node; 67px for the current unit first node (room for START bubble) | learn-dark-default wrappers of #572, #729, #1229 (67px); css:path-e50cab6b.css ._1_rYF |
+| zig-zag | first node / unit review margin-top | `space.24` 24px for the first node of a unit and for the unit-review node; 67px for the current unit first node (room for START bubble) | learn-dark-default wrappers of #572, #729, #1229 (67px); css:path-e50cab6b.css ._1_rYF |
 | chest | size | 80 x 90px, placed on the zig-zag like a node | learn-dark-default button aria=Chest (#1258) r=[480,656,80,90] |
 | START bubble | size / position | 80 x 45px (min-width 80), radius 10px, border 2px, padding 12px; above the ring (top -43px), arrow 20x10 pointing down | learn-dark-default cl=_3zpnU _37pE2 _1o3g5 _kJVz (#1238), _36bu_ _27IMa (#1239), _3T97b (#1240); css:path-e50cab6b.css ._kJVz, ._27IMa |
 | jump tooltip | size | 126 x 45px, radius 10px, border 2px, padding 12px, arrow 20x10 | learn-dark-default dt=skill-path-tooltip-unit-test (#1321), TOHdU (#1322) |
@@ -550,9 +550,9 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | shell | width x height | 295 x 151px (current, completed); 295 x 182px (locked) | learn-dark-node-popover cl=_36bu_ _3RP1Q _1Fbw- (#1239); learn-dark-locked-popover (#1270) |
-| shell | padding / radius | 16px / 15px | learn-dark-node-popover (#1239); css:path-e50cab6b.css ._3RP1Q |
-| shell | offset from node | margin-top 12px below the node (arrow overlaps 8px); horizontal translate centres the shell on the column (-147.5px for the centre node, -192.384px for the node at +44.884, -102.616px for a node at -44.884) | learn-dark-node-popover (#1238); learn-dark-locked-popover (#1269); learn-dark-completed-popover (#1428) |
-| arrow | size / radius | 20 x 10px clip, inner square 20x20 rotated 45deg, radius 2px; margin 0 15px (popover radius var) | learn-dark-node-popover _3T97b (#1245), _1TMn5 (#1246); css:4779-c36ad395.css ._37pE2>._3T97b |
+| shell | padding / radius | `radius.16` 16px / `radius.15` 15px | learn-dark-node-popover (#1239); css:path-e50cab6b.css ._3RP1Q |
+| shell | offset from node | margin-top `space.12` 12px below the node (arrow overlaps `space.8` 8px); horizontal translate centres the shell on the column (-147.5px for the centre node, -192.384px for the node at +44.884, -102.616px for a node at -44.884) | learn-dark-node-popover (#1238); learn-dark-locked-popover (#1269); learn-dark-completed-popover (#1428) |
+| arrow | size / radius | 20 x `radius.10` 10px clip, inner square 20x20 rotated 45deg, radius `radius.2` 2px; margin 0 `radius.15` 15px (popover radius var) | learn-dark-node-popover _3T97b (#1245), _1TMn5 (#1246); css:4779-c36ad395.css ._37pE2>._3T97b |
 | title | box | 263 x 27px | learn-dark-node-popover QPQgr (#1242) |
 | button | width x height | 263 x 50px (min-height 50), margin-top 16px (8px in locked), padding 8px 16px, radius 16px, border-bottom 4px lip | learn-dark-node-popover dt="skill-path-state-active skill-path-unit-test-81" (#1244); css:path-e50cab6b.css ._2sYfM |
 
@@ -573,7 +573,7 @@ Tokens (dark):
 | completed shell | background | #FF86D0 (starfish) = unit colour | learn-dark-completed-popover (#1429) |
 | shell text | colour | #FFFFFF (snow-always-light) | learn-dark-node-popover (#1239) |
 | START / REVIEW button | face / text / lip | face #FFFFFF (snow-always-light); text = unit colour (#58CC02 owl / #FF86D0 starfish); lip #FFFFFF @0.70 | learn-dark-node-popover (#1244) ::before; learn-dark-completed-popover (#1434); css:app-f2ef02f8.css ._19ped; css:path-e50cab6b.css ._2yBgn .PbV1v |
-| locked shell + arrow | bg / border / text | `gamification.league.demotedRow` #202F36 (polar, dark) / 2px #37464F (swan) / #52656D (hare) | learn-dark-locked-popover _2txMY (#1270, #1278); css:path-e50cab6b.css ._2txMY |
+| locked shell + arrow | bg / border / text | `gamification.league.demotedRow` #202F36 (polar, dark) / `borderWidth.2` 2px #37464F (swan) / #52656D (hare) | learn-dark-locked-popover _2txMY (#1270, #1278); css:path-e50cab6b.css ._2txMY |
 | LOCKED button | face / text | #37464F (swan) / #52656D (hare); no lip (pushed down 4px) | learn-dark-locked-popover dt=skill-path-level-locked-button (#1275) |
 
 Tokens (light):
@@ -584,7 +584,7 @@ Tokens (light):
 | completed shell | background | `unitColors.pink` #FF86D0 (starfish, light) | learn-light-completed-popover (#1438) |
 | shell text | colour | `text.onPrimary` #FFFFFF (snow, light) | learn-light-node-popover (#1249) |
 | START / REVIEW button | face / text / lip | #FFFFFF / unit colour / #FFFFFF @0.70 | learn-light-node-popover (#1254); learn-light-completed-popover (#1443) |
-| locked shell + arrow | bg / border / text | `surface.subtle` #F7F7F7 (polar, light) / 2px #E5E5E5 (swan) / #AFAFAF (hare) | learn-light-locked-popover (#1268, #1276) |
+| locked shell + arrow | bg / border / text | `surface.subtle` #F7F7F7 (polar, light) / `borderWidth.2` 2px #E5E5E5 (swan) / #AFAFAF (hare) | learn-light-locked-popover (#1268, #1276) |
 | LOCKED button | face / text | #E5E5E5 (swan) / #AFAFAF (hare) | learn-light-locked-popover (#1273) |
 
 Type:
@@ -648,7 +648,7 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | button | width x height | 52 x 52px | learn-dark-completed-unit (#1668); css:path-e50cab6b.css ._2dnkd |
-| button | border / radius | 2px sides and top, 4px bottom; radius 16px; ::before inset -2px with 2px border and 0 2px lip | learn-dark-completed-unit (#1668) |
+| button | border / radius | `radius.2` 2px sides and top, `radius.4` 4px bottom; radius `radius.16` 16px; ::before inset -2px with `radius.2` 2px border and 0 `radius.2` 2px lip | learn-dark-completed-unit (#1668) |
 | button | position | sticky, bottom 24px (>=700px; 98px on mobile), right edge on the column edge (x 708-760 in a 280-760 column) | learn-dark-completed-unit (#1668); css:path-e50cab6b.css ._2El3L |
 | icon | size | 18 x 20px | learn-dark-completed-unit img cl=_3wVBw _1FKvm (#1669); css:path-e50cab6b.css ._1FKvm |
 
@@ -693,14 +693,14 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | card | width x height | 480 x 295px (592 at 1384 viewport) | learn-dark-path-end cl=_1wgqa (#468); learn-light-path-end (#478) |
-| card | padding / margin-top | 36px 30px / 80px | learn-dark-path-end (#468) |
-| card | border / radius | 2px / 16px | learn-dark-path-end (#468) |
+| card | padding / margin-top | 36px `space.30` 30px / 80px | learn-dark-path-end (#468) |
+| card | border / radius | `radius.2` 2px / `radius.16` 16px | learn-dark-path-end (#468) |
 | content | max-width | 310px, centred | learn-dark-path-end cl=_3M4Dc (#469) |
-| UP NEXT pill | size / padding / radius | 74 x 26px, padding 4px 8px, radius 6px, margin-bottom 16px | learn-dark-path-end cl=_1Qswf _3LDH7 (#470) |
+| UP NEXT pill | size / padding / radius | 74 x 26px, padding `radius.4` 4px `radius.8` 8px, radius 6px, margin-bottom `radius.16` 16px | learn-dark-path-end cl=_1Qswf _3LDH7 (#470) |
 | lock icon | size | 21 x 25px, margin-right 12px | learn-dark-path-end img cl=_3kRS5 (#472) |
 | title row | margin-bottom | 13px | learn-dark-path-end cl=_3iRHZ (#471) |
-| description | margin-bottom | 24px | learn-dark-path-end cl=_3czy6 (#474) |
-| button | width x height / radius | 416 x 50px (528 at 592 card), radius 16px, border 2/4px | learn-dark-path-end cl=_3xDVI _2V6ug _1jUqO (#475) |
+| description | margin-bottom | `space.24` 24px | learn-dark-path-end cl=_3czy6 (#474) |
+| button | width x height / radius | 416 x 50px (528 at 592 card), radius `radius.16` 16px, border 2/`radius.4` 4px | learn-dark-path-end cl=_3xDVI _2V6ug _1jUqO (#475) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -758,20 +758,20 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| list | gap | 16px | sections-dark-default cl=JTQLF (#153); css:pathSections-c1a583d8.css .JTQLF |
+| list | gap | `space.16` 16px | sections-dark-default cl=JTQLF (#153); css:pathSections-c1a583d8.css .JTQLF |
 | completed card | width x height | 516 x 161px (592 wide at 1384) | sections-dark-default cl=_2UWvP _3AIkT (#158); sections-light-default (#167) |
 | in-progress card | width x height | 516 x 311px | sections-dark-default cl=_1pT8b _2E1uv _3AIkT (#191) |
 | locked card | width x height | 516 x 265-346px (content dependent) | sections-dark-default #234-#403 |
-| card | radius / padding | 16px / 0 24px; two-column cards: columns 1fr 1fr, gap 26px | sections-dark-default (#158, #191); css:pathSections-c1a583d8.css ._3AIkT, ._2E1uv |
+| card | radius / padding | `radius.16` 16px / 0 24px; two-column cards: columns 1fr 1fr, gap 26px | sections-dark-default (#158, #191); css:pathSections-c1a583d8.css ._3AIkT, ._2E1uv |
 | left column | padding | 21px 0 | sections-dark-default cl=CQzMM (#159) |
 | SEE DETAILS button | height | 48px (line-height 44, border 1/5px) | sections-dark-default cl=_2rQ98 _1GQxS (#160) |
-| title | margin-bottom | 15px | sections-dark-default h1 cl=_39RQh (#162) |
+| title | margin-bottom | `space.15` 15px | sections-dark-default h1 cl=_39RQh (#162) |
 | status icon | size | 16 x 17px (check), 13 x 16px (lock); margin-right 8px / 5px | sections-dark-default _6wAz8 (#164), _2cmY1 (#238) |
-| REVIEW button | width x height / radius | 90 x 50px / 12px | sections-dark-default cl=_3xDVI _2V6ug _2izhP (#167) |
-| progress bar | width x height / radius | 178 x 18px (254 at 1384), radius 9px; top highlight strip 3px tall, inset 5px, radius 9999, white @0.2 | sections-dark-default role=progressbar (#197), _3yKMC (#198), _1EFTr (#202) |
+| REVIEW button | width x height / radius | 90 x 50px / `radius.12` 12px | sections-dark-default cl=_3xDVI _2V6ug _2izhP (#167) |
+| progress bar | width x height / radius | 178 x 18px (254 at 1384), radius `radius.9` 9px; top highlight strip 3px tall, inset 5px, radius 9999, white @0.2 | sections-dark-default role=progressbar (#197), _3yKMC (#198), _1EFTr (#202) |
 | trophy | size | 37 x 36px, overlapping the bar end (left calc(100% - 30px), top -8px) | sections-dark-default _320PF (#205); css:pathSections-c1a583d8.css ._320PF |
-| CONTINUE button | width x height / margin-top | 178 x 50px, radius 12px, margin-top 24px | sections-dark-default cl=_3_XLT _3RMj4 (#210) |
-| speech bubble | width / radius / padding | 264px, radius 16px, padding 28px 16px 16px; tail img 23 x 24px | sections-dark-default _2NZrx (#214), O93KC (#215), _3moA6 (#232) |
+| CONTINUE button | width x height / margin-top | 178 x 50px, radius `space.12` 12px, margin-top `space.24` 24px | sections-dark-default cl=_3_XLT _3RMj4 (#210) |
+| speech bubble | width / radius / padding | 264px, radius `radius.16` 16px, padding 28px `radius.16` 16px `radius.16` 16px; tail img 23 x 24px | sections-dark-default _2NZrx (#214), O93KC (#215), _3moA6 (#232) |
 | character | size | 128 x 136px (varies per section, e.g. 139x146, 170x200) | sections-dark-default img _1XMGl (#233), OjEbD (#264), oNIUa (#413) |
 
 | State | What changes | Source |
@@ -786,7 +786,7 @@ Tokens (dark):
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | completed card | background | #131F24 (snow) with diagonal stripes #202F36 (polar) at 136deg, bands 10-40% and 53-71% | sections-dark-default (#158); css:pathSections-c1a583d8.css ._2UWvP |
-| completed card | border | 2px `gamification.streakInactive` #37464F (swan, dark) | sections-dark-default (#158) |
+| completed card | border | `borderWidth.2` 2px `gamification.streakInactive` #37464F (swan, dark) | sections-dark-default (#158) |
 | COMPLETED! label | colour | #58CC02 (owl-always-light), opacity 1 | sections-dark-default _1tBwZ (#165) |
 | SEE DETAILS / REVIEW text | colour | `text.link` #49C0F8 (macaw, dark) | sections-dark-default (#160, #167) |
 | REVIEW button | face / border+lip | #131F24 (snow) / #37464F (swan) | sections-dark-default (#167) ::before |
@@ -803,14 +803,14 @@ Tokens (light):
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | completed card | background | #FFFFFF (snow) with stripes #F7F7F7 (polar) | sections-light-default (#167) |
-| completed card | border | 2px `gamification.streakInactive` #E5E5E5 (swan, light) | sections-light-default (#167) |
+| completed card | border | `borderWidth.2` 2px `gamification.streakInactive` #E5E5E5 (swan, light) | sections-light-default (#167) |
 | COMPLETED! label | colour | `accent.primary.face` #58CC02 (owl, light) | sections-light-default (#174) |
 | SEE DETAILS / REVIEW text | colour | `text.link` #1CB0F6 (macaw, light) | sections-light-default (#169, #176) |
 | REVIEW button | face / border+lip | #FFFFFF / #E5E5E5 | sections-light-default (#176) ::before |
 | in-progress card | background | `surface.selected` #DDF4FF (iguana, light) | sections-light-default (#200) |
 | progress bar | track / fill | #FFFFFF (snow) / #58CC02 (owl); label #AFAFAF on track, #FFFFFF on fill | sections-light-default (#207, #209, #208, #212) |
 | CONTINUE button | face / lip / text | #1CB0F6 / #1CB0F6 @0.70 / #FFFFFF | sections-light-default (#221) |
-| speech bubble | bg / border | #FFFFFF; locked cards add 2px #E5E5E5 border (Un2ta) | sections-light-default (#225, #256) |
+| speech bubble | bg / border | #FFFFFF; locked cards add `borderWidth.2` 2px #E5E5E5 border (Un2ta) | sections-light-default (#225, #256) |
 | locked card | bg / text | #F7F7F7 (polar) / #777777 (wolf) | sections-light-default (#245) |
 
 Type:
@@ -845,14 +845,14 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | header row | height | 100px (grid-template-rows 100px 1fr 140px) | css:1584-b289a3ce.css ._29gfw @media (min-width:700px) |
-| header inner | padding / max-width | 50px 40px 0 / 1080px, centred | lesson-light-challenge-default cl=_3v4ux (#5); css:1584-b289a3ce.css ._3v4ux |
-| row | width x height, gap | 1000 x 32px, column gap 24px | lesson-light-challenge-default cl=_18N2Q _1zcW8 (#6) |
+| header inner | padding / max-width | 50px `space.40` 40px 0 / 1080px, centred | lesson-light-challenge-default cl=_3v4ux (#5); css:1584-b289a3ce.css ._3v4ux |
+| row | width x height, gap | 1000 x `space.32` 32px, column gap `space.24` 24px | lesson-light-challenge-default cl=_18N2Q _1zcW8 (#6) |
 | close X | size | 18 x 18px (img src images/df223d5b9feb8017b323ed21103eb5ac.svg) | lesson-dark-challenge-default dt=quit-button (#7, #8) |
 | settings gear | size | 22 x 22px, background-size cover | lesson-light-challenge-default cl=_2VEsk (#9); css:1584-b289a3ce.css ._2VEsk |
-| progress track | width x height, radius | 840 x 16px, radius 8px (height/2) | lesson-light-challenge-default cl=_3yKMC (#11) |
+| progress track | width x height, radius | 840 x `radius.16` 16px, radius `radius.8` 8px (height/2) | lesson-light-challenge-default cl=_3yKMC (#11) |
 | progress fill | min width | 24px (1.5 x bar height); visible width = value, e.g. 98px at LCD | lesson-light-challenge-default cl=_27NV6 (#12), cl=_345XU (#15) |
 | progress fill | mechanism | full-width layer clipped by clip-path inset(0 calc(100% - value) 0 0 round 8px); transition background, color, opacity, clip-path 0.4s | css:4779-c36ad395.css ._27NV6 |
-| highlight stripe | size / offset | height 3px (30% of bar), top 25% (4px), left 4px (height/4), width = value - 8px, radius 9999px | lesson-light-challenge-default cl=_1EFTr (#14) r=[284,62,90,3]; css:4779-c36ad395.css ._1EFTr |
+| highlight stripe | size / offset | height 3px (30% of bar), top 25% (`space.4` 4px), left `space.4` 4px (height/4), width = value - `space.8` 8px, radius 9999px | lesson-light-challenge-default cl=_1EFTr (#14) r=[284,62,90,3]; css:4779-c36ad395.css ._1EFTr |
 | hearts | layout | flex, gap 5px; img 32 x 32px; count 8 x 20px, margin-left 3px | lesson-light-challenge-default cl=_3ww7z (#16), _14S2e (#17), _28aeG _c4M- (#18) |
 
 | State | What changes | Source |
@@ -910,11 +910,11 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| stack | gap | 8px between badge and title | lesson-dark-tile-hover cl=U41Ye (#31); css:4358-6896adab.css .U41Ye |
+| stack | gap | `space.8` 8px between badge and title | lesson-dark-tile-hover cl=U41Ye (#31); css:4358-6896adab.css .U41Ye |
 | badge | width x height | 600 x 32px (inline-flex, align center) | lesson-dark-tile-hover cl=w2K8w (#32) |
 | badge icon | box / glyph | 32 x 32px span, margin-inline-end 4px; svg path 24 x 24px | lesson-light-select-default cl=_1dTNB (#33), path (#35); css:4358-6896adab.css ._1dTNB |
 | title | width x height | 600 x 40px, text-align left | lesson-dark-tile-hover dt=challenge-header (#36) |
-| header to body | gap | 24px (16px below 700px, 8px when max-height 500px) | css:4358-6896adab.css .K3vbJ |
+| header to body | gap | `space.24` 24px (`space.16` 16px below 700px, `space.8` 8px when max-height 500px) | css:4358-6896adab.css .K3vbJ |
 | challenge column | width / min-height | 600px / 450px (700px+) | css:4358-6896adab.css ._2n5fx @media (min-width:700px) |
 
 | State | What changes | Source |
@@ -968,13 +968,13 @@ Anatomy:
 | --- | --- | --- | --- |
 | row | layout | flex, align-items center, gap 0; wrapper padding-left 10px, margin-top -24px | lesson-light-challenge-default cl=_31yjb (#29), _2w0y3 _1dtTU (#28) |
 | character | size | 118 x 175px max (width 30%, aspect 118/175), align-self flex-end | lesson-light-challenge-default cl=_2qg6J (#30); css:4358-6896adab.css ._2qg6J |
-| bubble container | margin / gap | 12px 0 / 8px | lesson-light-challenge-default cl=_1tbN5 _44BHt (#33) |
-| bubble | padding | 10px 14px 0 (bottom 0 when furigana, line-height 55.5px) | lesson-light-challenge-default cl=_1BU-- _20npu (#35); css:4358-6896adab.css ._1BU-- |
+| bubble container | margin / gap | `space.12` 12px 0 / `space.8` 8px | lesson-light-challenge-default cl=_1tbN5 _44BHt (#33) |
+| bubble | padding | `space.10` 10px `space.14` 14px 0 (bottom 0 when furigana, line-height 55.5px) | lesson-light-challenge-default cl=_1BU-- _20npu (#35); css:4358-6896adab.css ._1BU-- |
 | bubble | size examples | 272 x 70px (light), 182 x 70px (dark), height fixed by 55.5px line | lesson-light-challenge-default #35; lesson-dark-challenge-default #42 |
-| bubble | border / radius | 2px solid / 12px | lesson-light-challenge-default #35; css:4358-6896adab.css ._20npu |
-| bubble, text-only | padding / line-height | 10px 14px / 32px (e.g. 69 x 56px) | lesson-dark-choice-default cl=_20npu (#35) |
+| bubble | border / radius | `radius.2` 2px solid / `radius.12` 12px | lesson-light-challenge-default #35; css:4358-6896adab.css ._20npu |
+| bubble, text-only | padding / line-height | `space.10` 10px `space.14` 14px / `space.32` 32px (e.g. 69 x 56px) | lesson-dark-choice-default cl=_20npu (#35) |
 | tail | size / position | 18 x 20px svg, left -16px, top = clamp(alignment - 18px, 12px, 100% - 32px) | lesson-light-challenge-default cl=_2PgN7 _3tTXW _3PLLp (#86); css:4358-6896adab.css ._3PLLp, ._3tTXW._3PLLp |
-| speaker | size / gap | 29 x 22px, margin-inline-end 8px | lesson-light-challenge-default cl=_1GJVt _3DAip (#38); css:1327-4028784b.css ._3DAip ._1OCYa; css:4358-6896adab.css ._3Lwjs |
+| speaker | size / gap | 29 x 22px, margin-inline-end `space.8` 8px | lesson-light-challenge-default cl=_1GJVt _3DAip (#38); css:1327-4028784b.css ._3DAip ._1OCYa; css:4358-6896adab.css ._3Lwjs |
 | rt (furigana) | height | 19px box above 28px glyph box | lesson-light-challenge-default rt cl=_271_n (#57) |
 | hint token | underline | padding-bottom 4px; dashed-line background image repeat-x at 0 100% | lesson-light-challenge-default dt=hint-token (#81); css:1327-4028784b.css ._2IGwo, .XxgPa |
 | new-word sparkle | size | 6px squares (8px for the larger one), radius 2px, 48x48 area rotated 45deg | lesson-dark-challenge-tiles-partial cl=_1kMJb P77qm (#76-#78); css:1327-4028784b.css .P77qm, ._1kMJb |
@@ -1033,9 +1033,9 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | area | width x height | 600 x 120px visible (2 rows); rows beyond are clipped (overflow hidden) | lesson-light-challenge-default cl=eWdJ5 (#92), _1arte (#95) |
-| top rule | border-top | 2px solid | lesson-light-challenge-default cl=MvChQ v1KUv fUvcy (#91); css:4358-6896adab.css .fUvcy |
-| row | height / rule | 60px, border-bottom 2px solid (74px when tokens carry furigana, +14px) | lesson-light-challenge-default cl=_3gJ3o D0fy9 (#96); lesson-dark-listen-default cl=D0fy9 C67H0 (#65); css:1008-b4d34396.css .D0fy9, .D0fy9.C67H0 |
-| area to word bank | gap | 32px row gap | css:4358-6896adab.css .MvChQ |
+| top rule | border-top | `borderWidth.2` 2px solid | lesson-light-challenge-default cl=MvChQ v1KUv fUvcy (#91); css:4358-6896adab.css .fUvcy |
+| row | height / rule | 60px, border-bottom `borderWidth.2` 2px solid (74px when tokens carry furigana, +14px) | lesson-light-challenge-default cl=_3gJ3o D0fy9 (#96); lesson-dark-listen-default cl=D0fy9 C67H0 (#65); css:1008-b4d34396.css .D0fy9, .D0fy9.C67H0 |
+| area to word bank | gap | `space.32` 32px row gap | css:4358-6896adab.css .MvChQ |
 | whole answer + bank block | min-height | 170px (87px below 700px) | css:4358-6896adab.css ._3hg-V |
 | answer tiles | layout | absolute top 0, flex wrap, tile slots 60px tall with 4px side margins | lesson-dark-challenge-tiles-partial cl=_2-F7v (#95); css:1008-b4d34396.css ._2-F7v |
 
@@ -1075,11 +1075,11 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| slot | height / margin | 60px (74px with furigana), margin 0 4px | lesson-light-challenge-default cl=_1uV0Q _DVHp (#103); css:1008-b4d34396.css ._1uV0Q |
+| slot | height / margin | 60px (74px with furigana), margin 0 `space.4` 4px | lesson-light-challenge-default cl=_1uV0Q _DVHp (#103); css:1008-b4d34396.css ._1uV0Q |
 | tile | height | 52px (68px with furigana); width hugs text, e.g. "movie" 84px, "is" 49px | lesson-light-challenge-default dt=is-challenge-tap-token (#120); lesson-dark-challenge-default #101; lesson-dark-listen-default #74 |
-| tile | padding | 12px 16px | lesson-light-challenge-default #105; css:1008-b4d34396.css ._3ZtW_ {--web-ui_button-padding:12px 16px} |
-| tile | border (layout) | 2px 2px 4px transparent | lesson-light-challenge-default #105; css:4779-c36ad395.css ._2V6ug |
-| face (::before) | inset / border / radius | -2px all sides, 2px solid, radius 12px | lesson-light-challenge-default #105 ::before; css:4779-c36ad395.css ._2V6ug:before; css:1008-b4d34396.css ._2O7Ua {--web-ui_button-border-radius:12px} |
+| tile | padding | `space.12` 12px `space.16` 16px | lesson-light-challenge-default #105; css:1008-b4d34396.css ._3ZtW_ {--web-ui_button-padding:12px 16px} |
+| tile | border (layout) | `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px transparent | lesson-light-challenge-default #105; css:4779-c36ad395.css ._2V6ug |
+| face (::before) | inset / border / radius | -2px all sides, `radius.2` 2px solid, radius `radius.12` 12px | lesson-light-challenge-default #105 ::before; css:4779-c36ad395.css ._2V6ug:before; css:1008-b4d34396.css ._2O7Ua {--web-ui_button-border-radius:12px} |
 | lip | box-shadow | 0 2px 0 (border colour) | lesson-light-challenge-default #105 ::before |
 | bank | layout | flex-wrap, justify-content center, 600px wide | lesson-light-challenge-default dt=word-bank (#102); css:1008-b4d34396.css .eSgkc |
 
@@ -1136,11 +1136,11 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | row | width x height | 600 x 70px with furigana (600 x 60px without) | lesson-dark-choice-default dt=challenge-choice (#40); lesson-dark-dialogue-default #90 |
-| row | padding | 12px 16px | lesson-dark-choice-default #40; css:1327-4028784b.css ._1G3d- |
-| row | radius / border | 12px; 2px 2px 4px transparent, face ::before inset -2px, 2px border, lip 0 2px 0 | lesson-dark-choice-default #40; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
-| list | gap | 8px | lesson-dark-choice-default cl=PaKCO _1vQbM (#39); css:1327-4028784b.css ._1vQbM |
-| number badge | size / border / radius | 30 x 30px, 2px, radius 8px | lesson-dark-choice-default cl=_3zbIX _20AkF (#41) |
-| label | margin | 0 14px 0 12px, centred, flex 1 | lesson-dark-choice-default cl=CwCwj _1FXPg (#42) |
+| row | padding | `space.12` 12px `space.16` 16px | lesson-dark-choice-default #40; css:1327-4028784b.css ._1G3d- |
+| row | radius / border | `radius.12` 12px; `radius.2` 2px `radius.2` 2px `radius.4` 4px transparent, face ::before inset -2px, `radius.2` 2px border, lip 0 `radius.2` 2px 0 | lesson-dark-choice-default #40; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
+| list | gap | `space.8` 8px | lesson-dark-choice-default cl=PaKCO _1vQbM (#39); css:1327-4028784b.css ._1vQbM |
+| number badge | size / border / radius | 30 x 30px, `radius.2` 2px, radius `radius.8` 8px | lesson-dark-choice-default cl=_3zbIX _20AkF (#41) |
+| label | margin | 0 `space.14` 14px 0 `space.12` 12px, centred, flex 1 | lesson-dark-choice-default cl=CwCwj _1FXPg (#42) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -1198,8 +1198,8 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | card | width x height | 195 x 261px, 3 across with 8px gap | lesson-light-select-default dt=challenge-choice (#40, #59, #78); cl=HsVVL (#39) |
-| card | padding | 24px (12px below 700px) | lesson-light-select-default #40; css:1327-4028784b.css ._2_Y8r |
-| card | radius / lip | 12px; 2px lip | lesson-light-select-default #40 ::before |
+| card | padding | `space.24` 24px (`space.12` 12px below 700px) | lesson-light-select-default #40; css:1327-4028784b.css ._2_Y8r |
+| card | radius / lip | `radius.12` 12px; `radius.2` 2px lip | lesson-light-select-default #40 ::before |
 | illustration | size | 143 x 160px, margin-bottom 10px | lesson-light-select-selected cl=fRsqg (#43) |
 | footer | height | 37px, word left, badge right (justify flex-end) | lesson-light-select-selected cl=_2Y0B7 (#44); css:1327-4028784b.css ._2Y0B7 |
 | badge | size | 30 x 30px, radius 8px, 2px border | lesson-light-select-selected #53 |
@@ -1247,12 +1247,12 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| grid | columns / gap | 2 x 255px, gap 10px 30px, rows 1fr | lesson-dark-match-default cl=_1bmNz _3rat3 (#28); css:4358-6896adab.css ._1bmNz @media (min-width:700px) |
+| grid | columns / gap | 2 x 255px, gap `space.10` 10px `space.30` 30px, rows 1fr | lesson-dark-match-default cl=_1bmNz _3rat3 (#28); css:4358-6896adab.css ._1bmNz @media (min-width:700px) |
 | tile | width x height | 255 x 68px | lesson-dark-match-default dt=tall-challenge-tap-token (#30) |
-| tile | padding | 12px 30px 12px 58px | lesson-dark-match-default #30; css:1008-b4d34396.css ._3ZtW_._1YHBP |
-| tile | radius / lip | 12px, 2px lip, lip transition 100ms linear | lesson-dark-match-default #30; css:1008-b4d34396.css ._2O7Ua._3Ymqr |
+| tile | padding | `space.12` 12px `space.30` 30px `space.12` 12px 58px | lesson-dark-match-default #30; css:1008-b4d34396.css ._3ZtW_._1YHBP |
+| tile | radius / lip | `radius.12` 12px, `radius.2` 2px lip, lip transition 100ms linear | lesson-dark-match-default #30; css:1008-b4d34396.css ._2O7Ua._3Ymqr |
 | badge | size / position | 30 x 30px, radius 8px, absolute left 16px | lesson-dark-match-default cl=_3zbIX _20AkF _2MhQB (#31); css:1008-b4d34396.css ._3ZtW_._1YHBP ._2MhQB |
-| inner fill | inset / radius | 251 x 62px (2px inset), radius 10px | lesson-dark-match-selected cl=_12ozk (#31); css:1008-b4d34396.css ._12ozk |
+| inner fill | inset / radius | 251 x 62px (`radius.2` 2px inset), radius `radius.10` 10px | lesson-dark-match-selected cl=_12ozk (#31); css:1008-b4d34396.css ._12ozk |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -1304,13 +1304,13 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| messages | gap | 8px between messages; 24px to the choices | lesson-dark-dialogue-default cl=_3fGax (#28), _3wqGX f7WE2 (#27) |
+| messages | gap | `space.8` 8px between messages; `space.24` 24px to the choices | lesson-dark-dialogue-default cl=_3fGax (#28), _3wqGX f7WE2 (#27) |
 | left message | width / margin | 480px, margin-right 120px (20%) | lesson-dark-dialogue-default cl=_1j5TQ (#29); css:4358-6896adab.css ._1j5TQ |
 | right message | width / margin | 480px, margin-left 120px (20%), justify flex-end | lesson-dark-dialogue-default cl=hOemH (#78), _2c7Ih (#79) |
-| avatar | size / gap | 64 x 67px, 16px to the bubble | lesson-dark-dialogue-default cl=_3L4wm _1etlE (#31), _2kufX (#87) |
-| bubble | padding / radius / border | 10px 14px / 12px / 2px, line-height 32px, e.g. 307 x 56px | lesson-dark-dialogue-default cl=_20npu (#34) |
+| avatar | size / gap | 64 x 67px, `space.16` 16px to the bubble | lesson-dark-dialogue-default cl=_3L4wm _1etlE (#31), _2kufX (#87) |
+| bubble | padding / radius / border | `radius.10` 10px 14px / `radius.12` 12px / `radius.2` 2px, line-height 32px, e.g. 307 x 56px | lesson-dark-dialogue-default cl=_20npu (#34) |
 | tail | position | 18 x 20px, top 12px; left -16px (left bubble), right -16px mirrored (right bubble) | lesson-dark-dialogue-default cl=_2PgN7 _1v78f _3PLLp (#75), tyghN (#84); css:4358-6896adab.css ._1v78f._3PLLp, .tyghN |
-| blank | size / rule | 70 x 2px, border-bottom 2px, margin 0 3px -2px | lesson-dark-dialogue-default cl=_3AISd (#83) |
+| blank | size / rule | 70 x `borderWidth.2` 2px, border-bottom `borderWidth.2` 2px, margin 0 `borderWidth.3` 3px -2px | lesson-dark-dialogue-default cl=_3AISd (#83) |
 | choice rows | size | 600 x 60px, gap 8px | lesson-dark-dialogue-default dt=challenge-choice (#90, #98) |
 
 | State | What changes | Source |
@@ -1353,9 +1353,9 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| large speaker | size / radius | 100 x 100px, radius 25%, bottom border 4px (lip) | lesson-dark-listen-default cl=yJbco _23274 _3TlAm (#31); css:1327-4028784b.css .yJbco, ._25RRr |
+| large speaker | size / radius | 100 x 100px, radius 25%, bottom border `radius.4` 4px (lip) | lesson-dark-listen-default cl=yJbco _23274 _3TlAm (#31); css:1327-4028784b.css .yJbco, ._25RRr |
 | large speaker icon | size | 50 x 39px (50% width) | lesson-dark-listen-default #32; css:1327-4028784b.css .yJbco ._1OCYa |
-| small speaker | size / gap | 70 x 70px, margin-left 16px, icon 42 x 23px (60%) | lesson-dark-listen-default cl=rnwSx (#46), g8o0T (#44) |
+| small speaker | size / gap | 70 x 70px, margin-left `space.16` 16px, icon 42 x 23px (60%) | lesson-dark-listen-default cl=rnwSx (#46), g8o0T (#44) |
 | small speaker ring | ::before | 4px solid border, radius calc(25% + 4px), inset -4px (bottom -8px) | lesson-dark-listen-default #46 ::before; css:1327-4028784b.css ._37SfF:before |
 | speakers row | layout | flex, align-items flex-end, centred | lesson-dark-listen-default cl=_3qAs- (#29), _3C4MQ (#28) |
 | answer rows | height | 74px (60 + 14 furigana) | lesson-dark-listen-default cl=_3gJ3o D0fy9 C67H0 (#65) |
@@ -1411,14 +1411,14 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| bar | height / top border | 140px (min-height, max-height 140px), border-top 2px solid | lesson-dark-challenge-default cl=_3rB4d _1VTif _2HXQ9 (#146); css:1008-b4d34396.css ._3rB4d @media (min-width:700px) |
-| inner | max-width / padding | 1000px, padding 0 40px, margin-left calc(50% - 500px); grid repeat(5,1fr), gap 8px 16px | lesson-dark-challenge-default cl=U8jH3 jHbiF (#147); css:1008-b4d34396.css .jHbiF, .U8jH3 |
+| bar | height / top border | 140px (min-height, max-height 140px), border-top `borderWidth.2` 2px solid | lesson-dark-challenge-default cl=_3rB4d _1VTif _2HXQ9 (#146); css:1008-b4d34396.css ._3rB4d @media (min-width:700px) |
+| inner | max-width / padding | 1000px, padding 0 `space.40` 40px, margin-left calc(50% - 500px); grid repeat(5,1fr), gap `space.8` 8px `space.16` 16px | lesson-dark-challenge-default cl=U8jH3 jHbiF (#147); css:1008-b4d34396.css .jHbiF, .U8jH3 |
 | buttons | vertical position | y = bar top + 47px (centred) | lesson-dark-challenge-default #149 r=[140,704,...] |
-| SKIP | size / padding / radius | 150 x 50px min, padding 0 16px, radius 16px, border 2px 2px 4px | lesson-dark-challenge-default dt=player-skip (#149); css:app-f2ef02f8.css :root {--web-ui_button-border-radius:16px} |
+| SKIP | size / padding / radius | 150 x 50px min, padding 0 `radius.16` 16px, radius `radius.16` 16px, border `radius.2` 2px `radius.2` 2px `radius.4` 4px | lesson-dark-challenge-default dt=player-skip (#149); css:app-f2ef02f8.css :root {--web-ui_button-border-radius:16px} |
 | SKIP lip | box-shadow | 0 2px 0 (swan) | lesson-dark-challenge-default #149 ::before |
-| CHECK | size / radius | 150 x 50px, radius 16px, border-bottom 4px (lip width) | lesson-dark-challenge-check-enabled dt=player-next (#178); css:4779-c36ad395.css ._1VYyp |
+| CHECK | size / radius | 150 x 50px, radius `radius.16` 16px, border-bottom `radius.4` 4px (lip width) | lesson-dark-challenge-check-enabled dt=player-next (#178); css:4779-c36ad395.css ._1VYyp |
 | CHECK lip | box-shadow | 0 4px 0 (tree-frog) | lesson-dark-challenge-check-enabled #178 ::before |
-| CHECK disabled | offset | translateY(4px), no lip (y 708 vs 704) | lesson-dark-challenge-default #152 |
+| CHECK disabled | offset | translateY(`space.4` 4px), no lip (y 708 vs 704) | lesson-dark-challenge-default #152 |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -1471,16 +1471,16 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | bar | height | 140px min, full width, no border-top | lesson-dark-feedback-correct cl=_3FB5S _1VTif _3yMvO _2HXQ9 (#139) |
-| content | padding / columns | 16px 0; spans grid columns 1-4 (733px wide at 1000px inner) | lesson-dark-feedback-correct cl=AXBVw _2Ycbe _8wIx- (#141); css:1008-b4d34396.css ._8wIx- @media (min-width:700px) |
+| content | padding / columns | `space.16` 16px 0; spans grid columns 1-4 (733px wide at 1000px inner) | lesson-dark-feedback-correct cl=AXBVw _2Ycbe _8wIx- (#141); css:1008-b4d34396.css ._8wIx- @media (min-width:700px) |
 | blame | layout | grid min-content \| 1fr, gap 16px; 80px tall (93px with solution) | lesson-dark-feedback-correct dt=blame blame-correct (#142); lesson-dark-feedback-incorrect #126 |
 | icon circle | size / radius | 80 x 80px, radius 98px, float left | lesson-dark-feedback-correct cl=_31ixh HJdJI fwpkb (#143); css:1008-b4d34396.css .fwpkb |
-| check image | size / margin | 41 x 31px, margin 27px 0 0 20px | lesson-dark-feedback-correct cl=_3oCTd (#144) |
+| check image | size / margin | 41 x 31px, margin 27px 0 0 `space.20` 20px | lesson-dark-feedback-correct cl=_3oCTd (#144) |
 | cross image | size / margin | 31 x 31px, margin 26px 0 0 25px | lesson-dark-feedback-incorrect cl=_1gpzD (#128) |
 | text column | max / min width | 400px / 320px (350px rendered), gap 16px to the actions row | lesson-dark-feedback-correct cl=_3LKiy (#146) |
 | title | height | 30px | lesson-dark-feedback-correct h2 (#148) |
 | solution | height | 26px | lesson-dark-feedback-incorrect cl=_2jz5U (#133) |
-| actions row | gap / height | 24px between items, 21px tall; icon 20 x 20px + 5px + label | lesson-dark-feedback-correct cl=_2yBiG (#149), _2YKKH (#152), _2-7I9 (#153) |
-| CONTINUE | size / radius / lip | 150 x 50px, radius 16px, lip 4px (box-shadow 0 4px 0) | lesson-dark-feedback-correct dt=player-next (#168) |
+| actions row | gap / height | `space.24` 24px between items, 21px tall; icon 20 x `space.20` 20px + `space.5` 5px + label | lesson-dark-feedback-correct cl=_2yBiG (#149), _2YKKH (#152), _2-7I9 (#153) |
+| CONTINUE | size / radius / lip | 150 x 50px, radius `radius.16` 16px, lip `radius.4` 4px (box-shadow 0 `radius.4` 4px 0) | lesson-dark-feedback-correct dt=player-next (#168) |
 | entry | animation | slide up translateY(100%) > 0 in 0.2s cubic-bezier(.35,1.8,.35,.83) | css:app-f2ef02f8.css ._2Ycbe, @keyframes gTkFz |
 
 Feedback colours (required record):
@@ -1572,12 +1572,12 @@ Anatomy:
 | duo wrapper | width x height, position | 600px max-width row, absolute bottom 0, centred with translateX(-50%) | lesson-dark-review-interstitial cl=_2GMvD En_6d _2OFAQ (#30); css:4358-6896adab.css .En_6d { bottom:0; left:50%; max-width:600px; transform:translateX(-50%) } |
 | Duo | width x height | 200 x 123px (--duo-width:200px, --duo-height:123px, --popover-offset:-25px) | lesson-dark-review-interstitial dt=session-duo cl=_1UGd5 _1JaQ9 (#31); css:4358-6896adab.css ._2GMvD |
 | bubble | width x height | 343 x 55px (content width, max-width 400px) | lesson-dark-review-interstitial cl=_36bu_ _2GMvD _2ka0w _1K3po (#129) |
-| bubble | padding | 12px 24px | lesson-dark-review-interstitial #129; css:4358-6896adab.css ._1K3po { padding:12px 24px } |
-| bubble | border / radius | 2px solid / 15px (--web-ui_popover-border-radius) | lesson-dark-review-interstitial #129; css:4779-c36ad395.css ._36bu_ |
-| bubble | gap to Duo | 8px margin-left on the popover wrapper (D0iFS); the bubble starts 32px inside the Duo box (bubble x=560, Duo box right edge x=592); _2GMvD also sets --popover-offset:-25px | lesson-dark-review-interstitial cl=_3zpnU D0iFS (#128); css:4779-c36ad395.css .D0iFS { margin-left:8px } |
+| bubble | padding | `space.12` 12px `space.24` 24px | lesson-dark-review-interstitial #129; css:4358-6896adab.css ._1K3po { padding:12px 24px } |
+| bubble | border / radius | `radius.2` 2px solid / `radius.15` 15px (--web-ui_popover-border-radius) | lesson-dark-review-interstitial #129; css:4779-c36ad395.css ._36bu_ |
+| bubble | gap to Duo | `space.8` 8px margin-left on the popover wrapper (D0iFS); the bubble starts `space.32` 32px inside the Duo box (bubble x=560, Duo box right edge x=592); _2GMvD also sets --popover-offset:-25px | lesson-dark-review-interstitial cl=_3zpnU D0iFS (#128); css:4779-c36ad395.css .D0iFS { margin-left:8px } |
 | caret | box | 20 x 10px clip box rotated -90deg at left:-13px, inner square 14.14px rotated 45deg, 2px border, radius 2px | lesson-dark-review-interstitial cl=_3T97b (#130), cl=_1TMn5 (#131); css:4779-c36ad395.css .D0iFS>._3T97b, ._1TMn5 |
-| caret | vertical offset | margin: 15px 0 (border radius) from the bubble top | css:4779-c36ad395.css .D0iFS>._3T97b { margin:var(--web-ui_popover-border-radius,15px) 0 } |
-| footer | height / top border | 140px / 2px solid | lesson-dark-review-interstitial cl=_3rB4d _1VTif _2HXQ9 (#134) |
+| caret | vertical offset | margin: `space.15` 15px 0 (border radius) from the bubble top | css:4779-c36ad395.css .D0iFS>._3T97b { margin:var(--web-ui_popover-border-radius,15px) 0 } |
+| footer | height / top border | 140px / `borderWidth.2` 2px solid | lesson-dark-review-interstitial cl=_3rB4d _1VTif _2HXQ9 (#134) |
 | CONTINUE | width x height | 150 x 50px (min-width 150px), radius 16px, lip 4px | lesson-dark-review-interstitial dt=player-next (#137) |
 
 | State | What changes | Source |
@@ -1667,8 +1667,8 @@ Anatomy:
 | Duo lottie | width x height | 320 x 418px (var(--lottie-width) x var(--lottie-height)) | lesson-light-quit-modal cl=_1Oj8V (#31), svg (#32); css:4358-6896adab.css ._1Oj8V |
 | bubble anchor | position | absolute, centred on Duo (left 50%, translateX(-50%)), max-width 75% | lesson-light-quit-modal cl=_2B4y0 _382wv (#130); css:4358-6896adab.css ._2B4y0, ._382wv |
 | bubble | width x height | 240 x 76px (width max-content) | lesson-light-quit-modal cl=_36bu_ _1TmO0 (#132); css:4358-6896adab.css ._3k7HD |
-| bubble | padding / border / radius | 16px / 2px solid / 15px | lesson-light-quit-modal #132; css:4358-6896adab.css ._1TmO0 { padding:16px } |
-| bubble | gap below | 8px (caret sits in it) | lesson-light-quit-modal cl=_3zpnU _37pE2 (#131); css:4779-c36ad395.css ._37pE2 { margin-bottom:8px } |
+| bubble | padding / border / radius | `radius.16` 16px / `radius.2` 2px solid / `radius.15` 15px | lesson-light-quit-modal #132; css:4358-6896adab.css ._1TmO0 { padding:16px } |
+| bubble | gap below | `space.8` 8px (caret sits in it) | lesson-light-quit-modal cl=_3zpnU _37pE2 (#131); css:4779-c36ad395.css ._37pE2 { margin-bottom:8px } |
 | caret | box | 20 x 10px, top: calc(100% - 2px), rotated 180deg, 15px from the bubble edge | lesson-light-quit-modal cl=_3T97b (#133); css:4779-c36ad395.css ._37pE2>._3T97b |
 
 | State | What changes | Source |
@@ -1708,7 +1708,7 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | card | width x height | 384 x 387px | lesson-dark-quit-modal cl=_1yFTM _3fFQQ FohH5 _3Dms8 (#132); lesson-light-quit-modal (#148) |
-| card | padding / margin / radius | 24px / 24px / 16px | lesson-dark-quit-modal #132; css:app-f2ef02f8.css ._1yFTM, css:4243-a8d324a8.css ._3Dms8 { --modal-padding:24px; width:384px } |
+| card | padding / margin / radius | 24px / 24px / `radius.16` 16px | lesson-dark-quit-modal #132; css:app-f2ef02f8.css ._1yFTM, css:4243-a8d324a8.css ._3Dms8 { --modal-padding:24px; width:384px } |
 | card | position | centred both axes in a flex wrapper, min-height = viewport, z-index 310 | lesson-dark-quit-modal cl=_3Mzt6 (#131); css:app-f2ef02f8.css ._3Mzt6 |
 | content | width | 336px (card minus padding), flex column centred, text centred | lesson-dark-quit-modal cl=_2d-gN (#133) |
 | art | width x height | 120 x 120px, margin-top 8px (wrapper 120 x 133) | lesson-dark-quit-modal cl=_2g5dx (#135), V9gXn (#134) |
@@ -1764,14 +1764,14 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| title | height / margins | line box 20px (inherits body line-height 20px), margin 44px top and bottom when viewport height >=750px (20px otherwise) | lesson-dark-complete cl=_3z6AH (#11), _3dwfW (#10); css:1008-b4d34396.css ._3dwfW |
-| cards row | gap | 16px (10px below 350px) | lesson-dark-complete cl=_21KAg (#12); css:1008-b4d34396.css ._21KAg |
+| title | height / margins | line box `space.20` 20px (inherits body line-height `space.20` 20px), margin 44px top and bottom when viewport height >=750px (`space.20` 20px otherwise) | lesson-dark-complete cl=_3z6AH (#11), _3dwfW (#10); css:1008-b4d34396.css ._3dwfW |
+| cards row | gap | `space.16` 16px (`space.10` 10px below 350px) | lesson-dark-complete cl=_21KAg (#12); css:1008-b4d34396.css ._21KAg |
 | card | width x height | 163 x 94px (118px base, 130px >=300px, 163px >=380px) | lesson-dark-complete cl=_23WOw (#13); css:1008-b4d34396.css ._23WOw |
-| card | radius / overflow | 16px / hidden | lesson-dark-complete #13 |
+| card | radius / overflow | `radius.16` 16px / hidden | lesson-dark-complete #13 |
 | outer frame (strip) | size | absolute, 100% x 100% of the card, radius 16px, z-index -1 | lesson-dark-complete cl=_3IRrf (#14); css:1008-b4d34396.css ._3IRrf |
-| label strip | height / padding | 24px (4px + 16px line + 4px) | lesson-dark-complete cl=d8ITn (#15) |
+| label strip | height / padding | `space.24` 24px (`space.4` 4px + `space.16` 16px line + `space.4` 4px) | lesson-dark-complete cl=d8ITn (#15) |
 | value box | width x height | 163 x 70px (height:70px), border 2px, radius 16px | lesson-dark-complete cl=_5KPRI (#16); css:1008-b4d34396.css ._5KPRI |
-| value icon | width x height, gap | 18 x 23px, margin-right 8px | lesson-dark-complete cl=_35hcT _3DJ9E (#17) |
+| value icon | width x height, gap | 18 x 23px, margin-right `space.8` 8px | lesson-dark-complete cl=_35hcT _3DJ9E (#17) |
 | counter digit | width x height | 11 x 20px per digit column (--counter-digit-height 20px, 4px vertical padding) | lesson-dark-complete cl=_3lEig (#19); css:2634-6b22725c.css ._3lEig |
 | footer buttons | width x height | REVIEW LESSON 163 x 50 (min 150), CONTINUE 150 x 50 | lesson-dark-complete #46, dt=player-next (#49) |
 
@@ -1834,21 +1834,21 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| flame canvas | size / margins | max-width 340px square (width calc(100vw - 32px)), margin -140px auto 14px | lesson-dark-streak-celebration cl=_3XxHw _2Ylex (#11); css:1008-b4d34396.css ._3XxHw |
+| flame canvas | size / margins | max-width 340px square (width calc(100vw - `space.32` 32px)), margin -140px auto `space.14` 14px | lesson-dark-streak-celebration cl=_3XxHw _2Ylex (#11); css:1008-b4d34396.css ._3XxHw |
 | count canvas | size / margins | 340 x 340px, margin -124px auto -44px | lesson-dark-streak-celebration cl=_1PSwR zWgl3 (#13); css:1008-b4d34396.css ._1PSwR |
-| "day streak" | width x height, offset | 340 x 28px box, margin-top -110px (overlaps the count canvas) | lesson-dark-streak-celebration cl=Ikkcc _33hhf (#16) |
+| "day streak" | width x height, offset | 340 x `space.28` 28px box, margin-top -110px (overlaps the count canvas) | lesson-dark-streak-celebration cl=Ikkcc _33hhf (#16) |
 | week card | width x height | 340 x 168px, radius 12px | lesson-dark-streak-celebration cl=_3kddW tuVG5 _36i3u (#17) |
-| week card top | padding / border | 12px / 2px on top and sides, radius 12 12 0 0; a 2px divider (::after, bottom -4px) | lesson-dark-streak-celebration cl=_2k21Q (#18); css:1008-b4d34396.css ._2k21Q, ._2k21Q:after |
+| week card top | padding / border | `space.12` 12px / `space.2` 2px on top and sides, radius 12 12 0 0; a `space.2` 2px divider (::after, bottom -4px) | lesson-dark-streak-celebration cl=_2k21Q (#18); css:1008-b4d34396.css ._2k21Q, ._2k21Q:after |
 | day row | max-width | 280px (5 days) / 392px (7 days, calendar) | lesson-dark-streak-celebration cl=_3Ja2a (#19); lesson-dark-streak-calendar cl=_3LUJ9 (#14) |
-| day column | width x height, spacing | 34 x 63px, margin 0 6px (first/last 0) | lesson-dark-streak-celebration cl=_3ahcA (#20); css:1008-b4d34396.css ._3ahcA |
-| day label | height / gap | 25px line, 4px below | lesson-dark-streak-celebration cl=_2z97y (#21) |
+| day column | width x height, spacing | 34 x 63px, margin 0 `space.6` 6px (first/last 0) | lesson-dark-streak-celebration cl=_3ahcA (#20); css:1008-b4d34396.css ._3ahcA |
+| day label | height / gap | 25px line, `space.4` 4px below | lesson-dark-streak-celebration cl=_2z97y (#21) |
 | day circle | width x height / radius | 34 x 34px / 18px | lesson-dark-streak-celebration cl=Rewuq OfNk6 (#22); css:1008-b4d34396.css .OfNk6 |
 | completed-day icon | size | flame/check svg 49 x 64 at margin -29px 0 0 -9px (celebration); 45 x 110 at margin -79px -5px 0, scale 1.05 (calendar) | lesson-dark-streak-celebration cl=_3pSE6 (#23); lesson-dark-streak-calendar cl=_2sjiM (#18) |
-| message box | width x height / padding | 340 x 79px / 12px, border 0 2px 2px, radius 0 0 12px 12px | lesson-dark-streak-celebration cl=_36njd uxKQj (#37); css:2634-6b22725c.css .uxKQj |
-| calendar heading | max-width / margin | 500px / 0 auto 40px | lesson-dark-streak-calendar cl=SAnU5 (#11) |
+| message box | width x height / padding | 340 x 79px / `space.12` 12px, border 0 `space.2` 2px `space.2` 2px, radius 0 0 `space.12` 12px `space.12` 12px | lesson-dark-streak-celebration cl=_36njd uxKQj (#37); css:2634-6b22725c.css .uxKQj |
+| calendar heading | max-width / margin | 500px / 0 auto `space.40` 40px | lesson-dark-streak-calendar cl=SAnU5 (#11) |
 | calendar illustration | width x height | 294 x 160px (250 x 136 below 700px) | lesson-dark-streak-calendar cl=_2WyQU (#12); css:1008-b4d34396.css ._2WyQU |
-| calendar week card | width x height / padding / margin-top | 340 x 95px / 12px 12px 16px / 40px, border 2px, radius 12 12 0 0 | lesson-dark-streak-calendar cl=_1FNhm (#13); css:1008-b4d34396.css ._1FNhm |
-| next-day target circle | border | 2px dashed | lesson-dark-streak-calendar cl=_3g_6k OfNk6 (#39) |
+| calendar week card | width x height / padding / margin-top | 340 x 95px / `space.12` 12px `space.12` 12px `space.16` 16px / `space.40` 40px, border `space.2` 2px, radius 12 12 0 0 | lesson-dark-streak-calendar cl=_1FNhm (#13); css:1008-b4d34396.css ._1FNhm |
+| next-day target circle | border | `borderWidth.2` 2px dashed | lesson-dark-streak-calendar cl=_3g_6k OfNk6 (#39) |
 | caret under target | size | 38 x 26px box rotated 45deg (rect 45 x 45), 2px border, radius 2px, margin-top 6px, top 100% | lesson-dark-streak-calendar cl=_2OXpp _2CoFd (#40); css:1008-b4d34396.css ._2OXpp |
 | tip box | width x height | 340 x 79px, same uxKQj box as the message | lesson-dark-streak-calendar cl=uZOTl _2CoFd uxKQj (#56) |
 
@@ -1913,14 +1913,14 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | column | max-width | 640px centred, grid rows 1fr auto 1fr | lesson-dark-streak-goal-default cl=_3pl7T (#9); css:1008-b4d34396.css ._3pl7T |
-| bubble block | width / margin | 254px / 0 auto 32px | lesson-dark-streak-goal-default cl=_2VMB2 (#11) |
-| bubble | width x height / padding / border / radius | 254 x 76px / 12px 16px / 2px / 12px | lesson-dark-streak-goal-default cl=_10CrR (#15); css:app-f2ef02f8.css ._10CrR |
-| bubble caret | size / offset | 31 x 20px image, 40px right of centre (--duo-speech-bubble-caret-offset), bottom 5.5px | lesson-dark-streak-goal-default cl=_1D9cQ (#16); css:app-f2ef02f8.css ._1D9cQ; css:1008-b4d34396.css ._2VMB2 |
+| bubble block | width / margin | 254px / 0 auto `space.32` 32px | lesson-dark-streak-goal-default cl=_2VMB2 (#11) |
+| bubble | width x height / padding / border / radius | 254 x 76px / `radius.12` 12px `radius.16` 16px / `radius.2` 2px / `radius.12` 12px | lesson-dark-streak-goal-default cl=_10CrR (#15); css:app-f2ef02f8.css ._10CrR |
+| bubble caret | size / offset | 31 x `space.20` 20px image, `space.40` 40px right of centre (--duo-speech-bubble-caret-offset), bottom 5.5px | lesson-dark-streak-goal-default cl=_1D9cQ (#16); css:app-f2ef02f8.css ._1D9cQ; css:1008-b4d34396.css ._2VMB2 |
 | illustration | height | 204px (overlaps bubble by margin-bottom -32px on the bubble grid) | lesson-dark-streak-goal-default cl=_38xtY (#106); css:1008-b4d34396.css ._38xtY, .M6NLh |
-| list | width / gap | 480px max / 12px | lesson-dark-streak-goal-default cl=_13-RH (#244) |
+| list | width / gap | 480px max / `space.12` 12px | lesson-dark-streak-goal-default cl=_13-RH (#244) |
 | row | width x height | 480 x 54px | lesson-dark-streak-goal-default cl=_8dMUn a3yOs (#245) |
-| row | padding | 8px 16px, space-between | lesson-dark-streak-goal-default #245; css:1008-b4d34396.css .a3yOs |
-| row | border / lip / radius | transparent 2px 2px 4px on the element; visible 2px border + 2px lip (box-shadow 0 2px) on ::before inset -2px; radius 12px | lesson-dark-streak-goal-default #245 ::before; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
+| row | padding | `space.8` 8px `space.16` 16px, space-between | lesson-dark-streak-goal-default #245; css:1008-b4d34396.css .a3yOs |
+| row | border / lip / radius | transparent `radius.2` 2px `radius.2` 2px `radius.4` 4px on the element; visible `radius.2` 2px border + `radius.2` 2px lip (box-shadow 0 `radius.2` 2px) on ::before inset -2px; radius `radius.12` 12px | lesson-dark-streak-goal-default #245 ::before; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
 | row label | width x height | 103 x 32px (auto) | lesson-dark-streak-goal-default cl=WMgCJ (#246) |
 | grade | height | 24px | lesson-dark-streak-goal-default dt=streak-goal-option cl=g4E00 (#247) |
 | numeral overlay | position | absolute, left 38%, bottom 18%, translate(-50%,-50%) | lesson-dark-streak-goal-default cl=G8vvg (#243); css:1008-b4d34396.css .G8vvg |
@@ -1974,17 +1974,17 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| scroll area | margin | 32px (16px below 700px) | lesson-dark-friend-streak-invite cl=QuvtB _2Yntw (#9); css:1008-b4d34396.css .QuvtB |
+| scroll area | margin | `space.32` 32px (`space.16` 16px below 700px) | lesson-dark-friend-streak-invite cl=QuvtB _2Yntw (#9); css:1008-b4d34396.css .QuvtB |
 | column | max-width | 400px | lesson-dark-friend-streak-invite cl=_1oVn_ (#10) |
 | header | position | sticky, top 0, z-index 1 | lesson-dark-friend-streak-invite cl=_3-LZT (#11); css:1008-b4d34396.css ._3-LZT |
 | illustration | width x height | 214 x 199px (height 213px >=700px, max-height calc(50vh - 200px)), margin-bottom 16px | lesson-dark-friend-streak-invite cl=_3-dw5 (#13); css:1008-b4d34396.css ._3-dw5 |
-| heading | width / margin | 368px / 0 16px 8px | lesson-dark-friend-streak-invite cl=_3-rnE (#14) |
-| count | margin | 0 16px 16px | lesson-dark-friend-streak-invite cl=_1k4BL (#15) |
-| header divider | size | 2px bottom border, margin 0 -16px (432 wide), opacity 0 | lesson-dark-friend-streak-invite cl=TzE33 (#16) |
-| table | border / radius | 2px / 16px | lesson-dark-friend-streak-invite cl=_1pa14 (#17) |
+| heading | width / margin | 368px / 0 `space.16` 16px `space.8` 8px | lesson-dark-friend-streak-invite cl=_3-rnE (#14) |
+| count | margin | 0 `space.16` 16px `space.16` 16px | lesson-dark-friend-streak-invite cl=_1k4BL (#15) |
+| header divider | size | `borderWidth.2` 2px bottom border, margin 0 -16px (432 wide), opacity 0 | lesson-dark-friend-streak-invite cl=TzE33 (#16) |
+| table | border / radius | `radius.2` 2px / `radius.16` 16px | lesson-dark-friend-streak-invite cl=_1pa14 (#17) |
 | row | width x height | 396 x 76px (min-height 76px) | lesson-dark-friend-streak-invite cl=_2OBb8 (#18) |
-| row | padding / gap / columns | 12px 16px / 12px / min-content 1fr max-content | lesson-dark-friend-streak-invite #18; css:2634-6b22725c.css ._2OBb8 |
-| row divider | border | 2px bottom on every row but the last | css:2634-6b22725c.css ._2OBb8:not(:last-child) |
+| row | padding / gap / columns | `space.12` 12px `space.16` 16px / `space.12` 12px / min-content 1fr max-content | lesson-dark-friend-streak-invite #18; css:2634-6b22725c.css ._2OBb8 |
+| row divider | border | `borderWidth.2` 2px bottom on every row but the last | css:2634-6b22725c.css ._2OBb8:not(:last-child) |
 | avatar | size / radius | 40 x 40px / 50% | lesson-dark-friend-streak-invite cl=_1yM9n (#19) |
 | name | width x height | 240 x 28px, single line with ellipsis | lesson-dark-friend-streak-invite cl=_3FnZP (#20) |
 | INVITE | width x height | 60 x 32px (min-width 60px), padding 0 8px, radius 8px, lip 4px | lesson-dark-friend-streak-invite cl=_3q--f _20olS _1W_p8 _38OE1 (#22); css:4779-c36ad395.css ._20olS._1W_p8 |
@@ -2038,13 +2038,13 @@ Anatomy:
 | ad: logo | width x height / position | 87 x 23px / top 40px, right 40px (10px below 700px) | lesson-dark-super-upsell dt=plus-offer-logo cl=UhDGm (#9); css:4358-6896adab.css .UhDGm |
 | ad: hero | width x height | 400 x 428px (250px wide below 700px) | lesson-dark-super-upsell cl=_3ZLZ_ (#10); css:4358-6896adab.css ._3ZLZ_ |
 | ad: text block | width / margin-top | 350px max (300px below 700px) / -24px | lesson-dark-super-upsell cl=_3TDCm (#11) |
-| ad: footer | height / top border | 140px / 1px | lesson-dark-super-upsell cl=_2iHAQ (#13), _3KWA6 (#14) |
+| ad: footer | height / top border | 140px / `borderWidth.1` 1px | lesson-dark-super-upsell cl=_2iHAQ (#13), _3KWA6 (#14) |
 | ad: buttons | width x height | 250 x 50px each (min-width 250px, width 100% at >=700px), radius 16px | lesson-dark-super-upsell dt=practice-hub-ad-no-thanks-button (#15), dt=practice-hub-ad-continue-button (#17) |
 | trial: close / logo | position / size | top 24px left 24px (19 x 19 X) / top 24px right 34px (103 x 27 logo) | lesson-light-trial-upsell dt=plus-close-x (#21), dt=plus-offer-logo cl=_1OBpI (#25) |
-| trial: h1 | width x height / padding / margin | 500 x 76px / 0 16px / 16px auto | lesson-light-trial-upsell dt=trial-reminder cl=_3ifZ6 (#29) |
+| trial: h1 | width x height / padding / margin | 500 x 76px / 0 `space.16` 16px / `space.16` 16px auto | lesson-light-trial-upsell dt=trial-reminder cl=_3ifZ6 (#29) |
 | trial: art band | height | 239px (30vh, min 200, max 250); lottie canvas 800 x 800 centred; cloud svg repeat-x at bottom, background-size 1800px | lesson-light-trial-upsell cl=JPT4U (#30), _2KpHg (#31), _3KggR (#33); css:3406-0039e405.css .JPT4U, ._3KggR |
-| trial: options | width / gap / padding | 500px max / 12px / 8px 16px 0 | lesson-light-trial-upsell role=radiogroup cl=_3tMdg (#35) |
-| trial: option row | width x height / padding / border / radius | 468 x 58px / 12px 16px / 2px 2px 4px / 12px | lesson-light-trial-upsell role=radio cl=_2u2n_ (#36) |
+| trial: options | width / gap / padding | 500px max / `space.12` 12px / `space.8` 8px `space.16` 16px 0 | lesson-light-trial-upsell role=radiogroup cl=_3tMdg (#35) |
+| trial: option row | width x height / padding / border / radius | 468 x 58px / `radius.12` 12px `radius.16` 16px / `radius.2` 2px `radius.2` 2px `radius.4` 4px / `radius.12` 12px | lesson-light-trial-upsell role=radio cl=_2u2n_ (#36) |
 | trial: CTA | width x height | 600 x 50px (max-width 600px), radius 16px | lesson-light-trial-upsell dt=plus-continue (#47) |
 | trial: NO THANKS | width x height | 112 x 48px (text button) | lesson-light-trial-upsell dt=plus-no-thanks (#49) |
 | video: close / mute | size | 68 x 68 (20px icon + 24px padding) / 78 x 71 (30 x 23 icon + 24px padding) | lesson-light-video-ad cl=_1Udkq (#19), _32yet (#21) |
@@ -2110,30 +2110,30 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | panel | width x height | 388 x 651px (incl. 2px border); inner column 384px wide | learn-dark-streak-dropdown dt=streak-panel (#79); css:5275-8898b509.css ._1n_9- {width:384px} |
-| panel | offset below trigger | margin-top 8px | learn-dark-streak-dropdown dt=streak-panel (#79) |
-| panel | border / radius | 2px / 15px | learn-dark-streak-dropdown cl=_36bu_ (#80) |
-| header section | padding | 24px 20px 20px | learn-dark-streak-dropdown cl=FmvNo (#82) |
-| header grid | columns / gap / margin-bottom | 248px 1fr / 22px / 24px | css:5275-8898b509.css ._2yWjv; learn-dark-streak-dropdown cl=_2yWjv (#83) |
+| panel | offset below trigger | margin-top `space.8` 8px | learn-dark-streak-dropdown dt=streak-panel (#79) |
+| panel | border / radius | `radius.2` 2px / `radius.15` 15px | learn-dark-streak-dropdown cl=_36bu_ (#80) |
+| header section | padding | `space.24` 24px `space.20` 20px `space.20` 20px | learn-dark-streak-dropdown cl=FmvNo (#82) |
+| header grid | columns / gap / margin-bottom | 248px 1fr / 22px / `space.24` 24px | css:5275-8898b509.css ._2yWjv; learn-dark-streak-dropdown cl=_2yWjv (#83) |
 | title block | min-height | 85px | learn-dark-streak-dropdown cl=_2gGD_ (#84) |
-| title | margin-bottom | 8px | learn-dark-streak-dropdown dt=streak-panel-header (#85) |
+| title | margin-bottom | `space.8` 8px | learn-dark-streak-dropdown dt=streak-panel-header (#85) |
 | flame illustration | size / top | 64 x 77px / 12px | learn-dark-streak-dropdown cl=_4YzW2 (#88) |
-| calendar card | width x height / padding / radius | 344 x 87px / 12px 16px / 12px | learn-dark-streak-dropdown cl=_8ECdA (#89) |
-| day letter | cell width / margin-bottom | 45px / 4px | learn-dark-streak-dropdown cl=_3u3Eq (#92) |
+| calendar card | width x height / padding / radius | 344 x 87px / `radius.12` 12px `radius.16` 16px / `radius.12` 12px | learn-dark-streak-dropdown cl=_8ECdA (#89) |
+| day letter | cell width / margin-bottom | 45px / `space.4` 4px | learn-dark-streak-dropdown cl=_3u3Eq (#92) |
 | day circle | size / radius | 34 x 34px / 18px | learn-dark-streak-dropdown cl=_1DNjG _2pdFv _2LCuE (#101) |
-| day circle cell | horizontal margin | 4px each side (2px under 360px) | learn-dark-streak-dropdown cl=_1asXw (#100); css:5275-8898b509.css ._1asXw @media (min-width:360px) |
+| day circle cell | horizontal margin | `space.4` 4px each side (`space.2` 2px under 360px) | learn-dark-streak-dropdown cl=_1asXw (#100); css:5275-8898b509.css ._1asXw @media (min-width:360px) |
 | done-day check svg | box | 46 x 116px, margin -79px -5px 0, scale 1.05 (animated svg) | learn-light-streak-dropdown cl=u_TP- i9nlH (#111) |
-| friend section | padding | 20px 20px 0 | learn-dark-streak-dropdown cl=yFj8x (#114) |
-| friend card | width x height / radius / min-height | 344 x 136px / 16px / 50px | learn-dark-streak-dropdown cl=_3TU61 (#115) |
+| friend section | padding | `space.20` 20px `space.20` 20px 0 | learn-dark-streak-dropdown cl=yFj8x (#114) |
+| friend card | width x height / radius / min-height | 344 x 136px / `radius.16` 16px / 50px | learn-dark-streak-dropdown cl=_3TU61 (#115) |
 | friend illustration | size / position | 142 x 136px, absolute left 2px bottom 0 | learn-dark-streak-dropdown cl=_3UmsK (#116) |
-| friend content | padding | 20px 20px 20px 128px | learn-dark-streak-dropdown cl=_3btoA (#117) |
-| friend title | margin-bottom | 4px | learn-dark-streak-dropdown cl=_1Rhg2 (#118) |
-| friend caption | margin-bottom | 12px | learn-dark-streak-dropdown cl=_3Ymcg (#119) |
-| VIEW LIST button | width x height / radius / lip | 196 x 36px / 8px / border-bottom 4px, lip box-shadow 0 4px | learn-dark-streak-dropdown cl=_2loTO (#120); css:5275-8898b509.css ._2loTO {--web-ui_button-height:36px; --web-ui_button-border-radius:8px} |
-| society section | padding / gap | 20px / 16px | learn-dark-streak-dropdown cl=K9wl2 (#122) |
-| society card | width x height / padding / border / radius | 344 x 140px / 16px 18px / 2px / 16px | learn-dark-streak-dropdown cl=_1l3c4 _13qJ6 _1T_BQ (#123) |
-| society lock image | size / margin-top | 60 x 60px / 8px | learn-light-streak-dropdown cl=_2TgZn (#144); css:458-86426c1c.css ._2TgZn |
-| society text column | margin-left / gap | 24px / 8px | learn-dark-streak-dropdown cl=_2QLYz (#125) |
-| VIEW MORE button | width x height / radius / lip | 344 x 50px / 12px / border-bottom 4px, lip box-shadow 0 4px | learn-dark-streak-dropdown cl=_1i82L ... oXbqr (#128) |
+| friend content | padding | `space.20` 20px `space.20` 20px `space.20` 20px 128px | learn-dark-streak-dropdown cl=_3btoA (#117) |
+| friend title | margin-bottom | `space.4` 4px | learn-dark-streak-dropdown cl=_1Rhg2 (#118) |
+| friend caption | margin-bottom | `space.12` 12px | learn-dark-streak-dropdown cl=_3Ymcg (#119) |
+| VIEW LIST button | width x height / radius / lip | 196 x 36px / `radius.8` 8px / border-bottom `radius.4` 4px, lip box-shadow 0 `radius.4` 4px | learn-dark-streak-dropdown cl=_2loTO (#120); css:5275-8898b509.css ._2loTO {--web-ui_button-height:36px; --web-ui_button-border-radius:8px} |
+| society section | padding / gap | `space.20` 20px / `space.16` 16px | learn-dark-streak-dropdown cl=K9wl2 (#122) |
+| society card | width x height / padding / border / radius | 344 x 140px / `radius.16` 16px 18px / `radius.2` 2px / `radius.16` 16px | learn-dark-streak-dropdown cl=_1l3c4 _13qJ6 _1T_BQ (#123) |
+| society lock image | size / margin-top | 60 x 60px / `space.8` 8px | learn-light-streak-dropdown cl=_2TgZn (#144); css:458-86426c1c.css ._2TgZn |
+| society text column | margin-left / gap | `space.24` 24px / `space.8` 8px | learn-dark-streak-dropdown cl=_2QLYz (#125) |
+| VIEW MORE button | width x height / radius / lip | 344 x 50px / `radius.12` 12px / border-bottom `radius.4` 4px, lip box-shadow 0 `radius.4` 4px | learn-dark-streak-dropdown cl=_1i82L ... oXbqr (#128) |
 | caret | size | 20 x 10px box, 14.14px rotated square, 2px border | learn-dark-streak-dropdown cl=_3T97b (#130), cl=_1TMn5 (#131) |
 
 | State | What changes | Source |
@@ -2174,11 +2174,11 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | panel | width x height | 384 x 152px (incl. 2px border) | learn-dark-gems-dropdown cl=_36bu_ (#84) |
-| content | width / padding / layout | 380px / 24px 12px / flex row, align-items center | learn-dark-gems-dropdown dt=lingots-menu-content (#85); css:5275-8898b509.css ._3cG-N |
+| content | width / padding / layout | 380px / `space.24` 24px `space.12` 12px / flex row, align-items center | learn-dark-gems-dropdown dt=lingots-menu-content (#85); css:5275-8898b509.css ._3cG-N |
 | chest image | height / offset | 100px (100 x 100 rendered) / translateY(-5px) | learn-dark-gems-dropdown cl=_3m2qa (#86) |
-| text column | margin-left | 12px | learn-dark-gems-dropdown cl=_2UqMT (#87) |
-| balance line | margin-top | 10px | learn-dark-gems-dropdown p (#89) |
-| GO TO SHOP | margin-top / height | 12px / 18px (text button, no padding) | learn-dark-gems-dropdown dt=shop-nav cl=_1PQJw (#90) |
+| text column | margin-left | `space.12` 12px | learn-dark-gems-dropdown cl=_2UqMT (#87) |
+| balance line | margin-top | `space.10` 10px | learn-dark-gems-dropdown p (#89) |
+| GO TO SHOP | margin-top / height | `space.12` 12px / `space.18` 18px (text button, no padding) | learn-dark-gems-dropdown dt=shop-nav cl=_1PQJw (#90) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -2213,15 +2213,15 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | panel | width x height | 404 x 399px (full) / 404 x 403px (refilling) | learn-dark-hearts-dropdown cl=_36bu_ (#88); learn-light-hearts-dropdown (#89) |
-| content | padding / min-width / layout | 26px 20px / 380px / column, centred | learn-dark-hearts-dropdown cl=_2wpqL (#89) |
-| title | margin-bottom | 16px | learn-dark-hearts-dropdown cl=_1XkbC (#90) |
-| heart | size / gap | 32 x 32px (--heart-size) / 8px | learn-dark-hearts-dropdown cl=_1mypE (#93), cl=QZL78 (#92) |
+| content | padding / min-width / layout | 26px `space.20` 20px / 380px / column, centred | learn-dark-hearts-dropdown cl=_2wpqL (#89) |
+| title | margin-bottom | `space.16` 16px | learn-dark-hearts-dropdown cl=_1XkbC (#90) |
+| heart | size / gap | 32 x `space.32` 32px (--heart-size) / `space.8` 8px | learn-dark-hearts-dropdown cl=_1mypE (#93), cl=QZL78 (#92) |
 | refilling heart | size | 36 x 36px animated svg (heart-size + 4px) | learn-light-hearts-dropdown cl=_1YXWQ (#96) |
-| status line | margin | 12px 0 | learn-dark-hearts-dropdown cl=_2u5pt (#102) |
-| option list | margin-top / row gap | 16px / 8px | learn-dark-hearts-dropdown cl=_2uJd1 (#104); css:4769-628e48ee.css ._2uJd1>:not(:last-child) |
-| option row | width x height / padding / border / radius | 360 x 54px / 6px 16px / 2px 2px 4px (2px lip) / 16px | learn-dark-hearts-dropdown cl=_2V6ug ... uapW2 (#105) |
+| status line | margin | `space.12` 12px 0 | learn-dark-hearts-dropdown cl=_2u5pt (#102) |
+| option list | margin-top / row gap | `space.16` 16px / `space.8` 8px | learn-dark-hearts-dropdown cl=_2uJd1 (#104); css:4769-628e48ee.css ._2uJd1>:not(:last-child) |
+| option row | width x height / padding / border / radius | 360 x 54px / 6px `radius.16` 16px / `radius.2` 2px `radius.2` 2px `radius.4` 4px (`radius.2` 2px lip) / `radius.16` 16px | learn-dark-hearts-dropdown cl=_2V6ug ... uapW2 (#105) |
 | row icon | size | 36 x 36px (practice icon padding 7px) | learn-dark-hearts-dropdown img (#108), cl=QrCkl (#127) |
-| row label | margin-left / min-width | 8px / 180px (150px under 530, 130px under 360) | learn-dark-hearts-dropdown cl=_2uCBj (#109); css:4769-628e48ee.css ._2uCBj |
+| row label | margin-left / min-width | `space.8` 8px / 180px (150px under 530, 130px under 360) | learn-dark-hearts-dropdown cl=_2uCBj (#109); css:4769-628e48ee.css ._2uCBj |
 | FREE TRIAL label | width | 100px (80px under 530), right aligned | learn-dark-hearts-dropdown cl=zfGJk (#112) |
 | gem price | icon / text | gem 24 x 24px + "350" 15px | learn-dark-hearts-dropdown img (#122), cl=_1xgBw (#123) |
 
@@ -2259,14 +2259,14 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | panel | width x height | 244 x 364px (incl. 2px border) | learn-dark-courses-dropdown cl=_36bu_ _2xxCs (#75) |
-| header | height / padding / bottom border | 48px / 13px 20px / 2px | learn-dark-courses-dropdown cl=_34_P_ (#77) |
+| header | height / padding / bottom border | `space.48` 48px / 13px `space.20` 20px / `space.2` 2px | learn-dark-courses-dropdown cl=_34_P_ (#77) |
 | list | width / max-height | 240px / 256px, overflow-y auto | learn-dark-courses-dropdown cl=_3BhSk (#78); css:5275-8898b509.css ._2xxCs ._3BhSk |
-| course row | height / padding | 55px / 10px 12px 10px 20px | learn-dark-courses-dropdown cl=_1aVVk (#79) |
-| flag | size / radius / outline / scale | 32 x 25px / 18% / 2px white outline / scale(.8) from center-left | learn-dark-courses-dropdown cl=_1ZBbO (#81) |
+| course row | height / padding | 55px / `space.10` 10px `space.12` 12px `space.10` 10px `space.20` 20px | learn-dark-courses-dropdown cl=_1aVVk (#79) |
+| flag | size / radius / outline / scale | 32 x 25px / 18% / `radius.2` 2px white outline / scale(.8) from center-left | learn-dark-courses-dropdown cl=_1ZBbO (#81) |
 | flag wrapper | width | 52px (name starts 52px after row padding) | learn-dark-courses-dropdown cl=_17UWM (#80) |
-| add row | height / padding / top border | 56px / 12px 12px 12px 14px / 2px | learn-dark-courses-dropdown dt=add-new-course (#94) |
+| add row | height / padding / top border | 56px / `space.12` 12px `space.12` 12px `space.12` 12px `space.14` 14px / `space.2` 2px | learn-dark-courses-dropdown dt=add-new-course (#94) |
 | add icon | size | 44 x 30px | learn-dark-courses-dropdown cl=_3zsrC (#95) |
-| add label | margin-left | 15px | learn-dark-courses-dropdown cl=_313qL (#96) |
+| add label | margin-left | `space.15` 15px | learn-dark-courses-dropdown cl=_313qL (#96) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -2302,30 +2302,30 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | column | width | 480px at 1200 viewport, 592px at 1384 (max-width 592px) | leaderboard-dark-top cl=_2A6iC (#143); leaderboard-light-default (#145) |
-| header | padding-top / height | 24px / 248px (joined), 315px (not joined) | leaderboard-dark-top cl=_15B39 (#144); leaderboard-dark-default (#144) |
-| badge row | height / gap | 91px / 28px | leaderboard-dark-top cl=_38ZPp (#145), cl=_3Utw2 (#146) |
+| header | padding-top / height | `space.24` 24px / 248px (joined), 315px (not joined) | leaderboard-dark-top cl=_15B39 (#144); leaderboard-dark-default (#144) |
+| badge row | height / gap | 91px / `space.28` 28px | leaderboard-dark-top cl=_38ZPp (#145), cl=_3Utw2 (#146) |
 | current league badge | size | 80 x 91px | leaderboard-dark-top cl=_3UJ8x (#147) |
 | locked league badge | size | 52 x 58px | leaderboard-dark-top cl=MJoIS (#149) |
-| league name | margin | 24px top, 20px bottom | leaderboard-dark-top cl=_2V2Er (#158) |
-| subtitle | padding / margin-bottom | 0 12px / 5px | leaderboard-dark-top cl=_1Zr5T (#159) |
-| time left row | height / margin-bottom | 26px / 16px | leaderboard-dark-top cl=_3S3VJ (#160) |
-| rule | border-top | 2px | leaderboard-dark-top hr cl=_1c5Wu (#163); css:app-f2ef02f8.css hr |
-| row | height / padding / radius | 64px / 8px 24px 8px 16px / 16px (only at min-width 700px) | leaderboard-dark-top cl=_3kvGS (#165); css:1008-b4d34396.css ._3kvGS |
+| league name | margin | `space.24` 24px top, `space.20` 20px bottom | leaderboard-dark-top cl=_2V2Er (#158) |
+| subtitle | padding / margin-bottom | 0 `space.12` 12px / `space.5` 5px | leaderboard-dark-top cl=_1Zr5T (#159) |
+| time left row | height / margin-bottom | 26px / `space.16` 16px | leaderboard-dark-top cl=_3S3VJ (#160) |
+| rule | border-top | `borderWidth.2` 2px | leaderboard-dark-top hr cl=_1c5Wu (#163); css:app-f2ef02f8.css hr |
+| row | height / padding / radius | 64px / `radius.8` 8px 24px `radius.8` 8px `radius.16` 16px / `radius.16` 16px (only at min-width 700px) | leaderboard-dark-top cl=_3kvGS (#165); css:1008-b4d34396.css ._3kvGS |
 | rank medal | size | 41 x 42px | leaderboard-dark-top cl=_33f2x (#166) |
 | rank number | width | 41px, centred | leaderboard-dark-top cl=_1kz8P (#190) |
-| avatar | size / margin | 48 x 48px / 0 28px 0 12px | leaderboard-dark-top cl=_2vxUc (#167) |
-| online dot | size / border / position | 12 x 12px / 2px / right 3px bottom 1px | leaderboard-dark-top cl=_2NNBf (#169) |
-| status bubble on avatar | size / radius / position | 28 x 28px, 2px border, radius 50% 50% 50% 16% / top -6px right -16px; icon 26px | leaderboard-dark-top cl=_2R_e4 (#194), cl=_m6h6 (#195) |
+| avatar | size / margin | 48 x `space.48` 48px / 0 `space.28` 28px 0 `space.12` 12px | leaderboard-dark-top cl=_2vxUc (#167) |
+| online dot | size / border / position | 12 x 12px / `borderWidth.2` 2px / right `borderWidth.3` 3px bottom `borderWidth.1` 1px | leaderboard-dark-top cl=_2NNBf (#169) |
+| status bubble on avatar | size / radius / position | 28 x 28px, `radius.2` 2px border, radius 50% 50% 50% 16% / top -6px right -16px; icon 26px | leaderboard-dark-top cl=_2R_e4 (#194), cl=_m6h6 (#195) |
 | letter avatar | font | 700 22.08px/25px | leaderboard-dark-top cl=_1a-Dv _1N32S (#184) |
-| name column | margin-right | 10px, flex-grow 1 | leaderboard-dark-top cl=_3SKx_ (#170) |
-| XP | margin-right | 10px | leaderboard-dark-top cl=_1OKd4 (#172) |
-| promotion divider | height / padding / margin-bottom | 54px / 15px 0 / 10px | leaderboard-dark-top cl=KWJR3 EXnGF (#255) |
-| promotion arrows | size / margin | 24 x 24px / 0 15px | leaderboard-dark-top cl=W8zCX (#256) |
-| not joined: START A LESSON | width x height / margin | 256 x 48px / 15px top, 48px bottom | leaderboard-dark-default cl=_3FuEB (#160) |
-| skeleton area | grid / padding | min-content 1fr min-content / 0 24px 0 28px | leaderboard-dark-default cl=_3Z6WZ (#162) |
+| name column | margin-right | `space.10` 10px, flex-grow 1 | leaderboard-dark-top cl=_3SKx_ (#170) |
+| XP | margin-right | `space.10` 10px | leaderboard-dark-top cl=_1OKd4 (#172) |
+| promotion divider | height / padding / margin-bottom | 54px / `space.15` 15px 0 / `space.10` 10px | leaderboard-dark-top cl=KWJR3 EXnGF (#255) |
+| promotion arrows | size / margin | 24 x `space.24` 24px / 0 `space.15` 15px | leaderboard-dark-top cl=W8zCX (#256) |
+| not joined: START A LESSON | width x height / margin | 256 x `space.48` 48px / `space.15` 15px top, `space.48` 48px bottom | leaderboard-dark-default cl=_3FuEB (#160) |
+| skeleton area | grid / padding | min-content 1fr min-content / 0 `space.24` 24px 0 `space.28` 28px | leaderboard-dark-default cl=_3Z6WZ (#162) |
 | skeleton columns | size | rank dots 16 x 464 (padding-top 16, margin-right 24); avatars+names 208 x 480; XP bars 48 x 462 (padding-top 18) | leaderboard-dark-default cl=_2Tlkh (#163), cl=_1jPFl (#164), cl=_1NQzo (#165) |
 | skeleton fade | overlay | linear-gradient(0deg, snow, snow @0), height 360px | leaderboard-dark-default cl=_2kacL ::after (#161); css:7607-21dedb14.css ._2kacL:after |
-| current-user bar (not joined) | size / padding / radius | 480 x 72px / 12px 24px 12px 30px / 16px | leaderboard-dark-default cl=_11XmH (#166) |
+| current-user bar (not joined) | size / padding / radius | 480 x 72px / `radius.12` 12px 24px `radius.12` 12px 30px / `radius.16` 16px | leaderboard-dark-default cl=_11XmH (#166) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -2365,15 +2365,15 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| card | width x height / padding / gap / border / radius | 368 x 320px / 20px / 10px / 2px / 16px | leaderboard-dark-default cl=_1Queb _2cnFr _1T_BQ (#86) |
-| header | margin-bottom | 15px | leaderboard-dark-default cl=_1_rLa (#87) |
-| preview | size / margin-bottom | 80 x 85px, centred (left calc(50% - 40px)) / 22px | leaderboard-dark-default cl=ZgBN6 (#92) |
+| card | width x height / padding / gap / border / radius | 368 x 320px / 20px / `radius.10` 10px / `radius.2` 2px / `radius.16` 16px | leaderboard-dark-default cl=_1Queb _2cnFr _1T_BQ (#86) |
+| header | margin-bottom | `space.15` 15px | leaderboard-dark-default cl=_1_rLa (#87) |
+| preview | size / margin-bottom | 80 x 85px, centred (left calc(50% - `space.40` 40px)) / 22px | leaderboard-dark-default cl=ZgBN6 (#92) |
 | preview avatar | size | 80 x 80px, radius 50% | leaderboard-dark-default cl=_1yM9n (#93) |
-| status bubble | size / offset / radius / border | 46 x 46px / left 66px top -12px / 50% 50% 50% 16% / 2px | leaderboard-dark-default cl=_3mRSn _2R_e4 (#94) |
+| status bubble | size / offset / radius / border | 46 x 46px / left 66px top -12px / 50% 50% 50% 16% / `radius.2` 2px | leaderboard-dark-default cl=_3mRSn _2R_e4 (#94) |
 | bubble art | size | 36 x 36px (owl status 40 x 40px) | leaderboard-dark-default cl=_1ZPDZ (#95), cl=_2XrTN (#97) |
-| preview online dot | size / border | 17 x 17px / 2px | leaderboard-dark-default cl=_2yc73 (#98) |
-| grid | row gap / tile gap | 10px / 8px | leaderboard-dark-default cl=_2LvZa (#91), cl=_2LYFC (#99) |
-| tile | size / border / radius | 48 x 48px / 2px 2px 4px (2px lip) / 12px, padding 0 | leaderboard-dark-default cl=_2FxcQ (#100); css:app-f2ef02f8.css ._2FxcQ |
+| preview online dot | size / border | 17 x 17px / `borderWidth.2` 2px | leaderboard-dark-default cl=_2yc73 (#98) |
+| grid | row gap / tile gap | `space.10` 10px / `space.8` 8px | leaderboard-dark-default cl=_2LvZa (#91), cl=_2LYFC (#99) |
+| tile | size / border / radius | 48 x 48px / `radius.2` 2px `radius.2` 2px `radius.4` 4px (`radius.2` 2px lip) / `radius.12` 12px, padding 0 | leaderboard-dark-default cl=_2FxcQ (#100); css:app-f2ef02f8.css ._2FxcQ |
 | tile art | size | 44 x 42px (flag tile 32 x 25px, radius 18%, 2px white outline, right 6px top 9px) | leaderboard-dark-default cl=_3-Vxu (#101), cl=_2hLBo (#111) |
 
 | State | What changes | Source |
@@ -2409,21 +2409,21 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| page header | margin-bottom | 12px | quests-dark-default cl=_1owP7 (#148) |
-| timer icon | size / gap | 16 x 16px / margin-right 5px | quests-dark-default cl=_1kZ3q (#151) |
-| page card | width x height / padding / gap / border / radius | 480 x 113px at 1200 (592 at 1384) / 20px 25px / 20px / 2px / 16px | quests-dark-default cl=_1RuTi _1T_BQ (#158) |
+| page header | margin-bottom | `space.12` 12px | quests-dark-default cl=_1owP7 (#148) |
+| timer icon | size / gap | 16 x `space.16` 16px / margin-right `space.5` 5px | quests-dark-default cl=_1kZ3q (#151) |
+| page card | width x height / padding / gap / border / radius | 480 x 113px at 1200 (592 at 1384) / 20px 25px / 20px / `radius.2` 2px / `radius.16` 16px | quests-dark-default cl=_1RuTi _1T_BQ (#158) |
 | quest icon | size / margin-right | 60 x 60px / 22px | quests-dark-default cl=_3d6BP (#161) |
-| title-to-bar | gap | 8px (page), 4px (rail) | quests-dark-default cl=H8Z2d (#162); learn-dark-default cl=_3KsFs (#111) |
-| progress row | height / margin-right | 35px / 4px | quests-dark-default cl=_1XsWM (#164) |
-| bar (page) | height / radius / margin-bottom | 20px / 10px / -4px | quests-dark-default cl=_3yKMC (#166), cl=_2nasW (#165) |
-| bar (rail) | height / radius | 18px / 9px | learn-dark-default cl=_3yKMC (#115) |
+| title-to-bar | gap | `space.8` 8px (page), `space.4` 4px (rail) | quests-dark-default cl=H8Z2d (#162); learn-dark-default cl=_3KsFs (#111) |
+| progress row | height / margin-right | 35px / `space.4` 4px | quests-dark-default cl=_1XsWM (#164) |
+| bar (page) | height / radius / margin-bottom | 20px / `radius.10` 10px / -4px | quests-dark-default cl=_3yKMC (#166), cl=_2nasW (#165) |
+| bar (rail) | height / radius | 18px / `radius.9` 9px | learn-dark-default cl=_3yKMC (#115) |
 | fill | min-width | 30px page / 27px rail (1.5 x height) | quests-dark-default cl=_27NV6 (#168); learn-dark-default (#117) |
-| shine | height / inset / radius / opacity | 3px (30% of bar) / top 25%, left height/4, width value - height/2 / 9999px / 0.2 | quests-light-default cl=wg2yg _1EFTr (#171); css:4779-c36ad395.css ._1EFTr |
-| chest | size / padding-left | 35 x 35px / 2px | quests-dark-default cl=_3_MbI (#172) |
-| locked card | height / padding / margin-top / border / radius | 100px / 18px / 16px / 2px / 16px | quests-dark-default cl=_3nvey _2cnFr _1T_BQ (#173) |
-| rail card | width x height / padding / border / radius | 368 x 165px / 18px 18px 8px / 2px / 16px | learn-dark-default cl=OT1WS _2cnFr _1T_BQ (#104) |
-| rail header | margin-bottom | 4px | learn-dark-default cl=afnnb (#105) |
-| rail quest row | padding | 20px 0 | learn-dark-default cl=_1VUBr (#109) |
+| shine | height / inset / radius / opacity | 3px (30% of bar) / top 25%, left height/4, width value - height/2 / `radius.pill` 9999px / 0.2 | quests-light-default cl=wg2yg _1EFTr (#171); css:4779-c36ad395.css ._1EFTr |
+| chest | size / padding-left | 35 x 35px / `space.2` 2px | quests-dark-default cl=_3_MbI (#172) |
+| locked card | height / padding / margin-top / border / radius | 100px / 18px / `radius.16` 16px / `radius.2` 2px / `radius.16` 16px | quests-dark-default cl=_3nvey _2cnFr _1T_BQ (#173) |
+| rail card | width x height / padding / border / radius | 368 x 165px / 18px 18px `radius.8` 8px / `radius.2` 2px / `radius.16` 16px | learn-dark-default cl=OT1WS _2cnFr _1T_BQ (#104) |
+| rail header | margin-bottom | `space.4` 4px | learn-dark-default cl=afnnb (#105) |
+| rail quest row | padding | `space.20` 20px 0 | learn-dark-default cl=_1VUBr (#109) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -2457,11 +2457,11 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| card | width x height / padding / border / radius | 368 x 524px / 20px 20px 8px / 2px / 16px | quests-dark-default cl=_3Ek2T (#86) |
-| header | margin-bottom | 4px | quests-dark-default cl=_2r4xI (#87) |
-| row | padding / gap | 20px 0 / 26px, align-items center (88px tall for one-line names, 108px for two) | quests-dark-default cl=s0T0f (#94, #112) |
+| card | width x height / padding / border / radius | 368 x 524px / 20px 20px `radius.8` 8px / `radius.2` 2px / `radius.16` 16px | quests-dark-default cl=_3Ek2T (#86) |
+| header | margin-bottom | `space.4` 4px | quests-dark-default cl=_2r4xI (#87) |
+| row | padding / gap | `space.20` 20px 0 / 26px, align-items center (88px tall for one-line names, 108px for two) | quests-dark-default cl=s0T0f (#94, #112) |
 | badge image | size | 45 x 45px | quests-dark-default cl=_1CieF (#95) |
-| name | margin-bottom | 8px | quests-dark-default cl=_2zTBh (#97) |
+| name | margin-bottom | `space.8` 8px | quests-dark-default cl=_2zTBh (#97) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -2496,16 +2496,16 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| list | width x border / radius | 480px wide (desktop column), 2px border, radius 16px | profile-dark-default ul cl=_1dDcV (#309); css:5515-e83f96c1.css ._1dDcV |
-| row | padding / height | 20px all sides; 138px tall with bar (136 last row, no bottom rule); flex row, align-items stretch | profile-dark-default li cl=m_b-V _27zqm (#310, #338); css:5515-e83f96c1.css ._27zqm, .m_b-V |
-| row | divider | 2px solid bottom border, removed on :last-child | css:5515-e83f96c1.css .m_b-V / .m_b-V:last-child |
+| list | width x border / radius | 480px wide (desktop column), `radius.2` 2px border, radius `radius.16` 16px | profile-dark-default ul cl=_1dDcV (#309); css:5515-e83f96c1.css ._1dDcV |
+| row | padding / height | `space.20` 20px all sides; 138px tall with bar (136 last row, no bottom rule); flex row, align-items stretch | profile-dark-default li cl=m_b-V _27zqm (#310, #338); css:5515-e83f96c1.css ._27zqm, .m_b-V |
+| row | divider | `borderWidth.2` 2px solid bottom border, removed on :last-child | css:5515-e83f96c1.css .m_b-V / .m_b-V:last-child |
 | badge tile | width x height | 77 x 96px (padding-bottom 124.5% of width, min-width 77px) | profile-dark-default cl=_1hfyC bvEQe (#312); css:4243-a8d324a8.css ._1hfyC; css:5515 ._2ymEQ |
 | level label | position / size | absolute, bottom 10% of tile (9.6px), centred; 36 x 20px ("LEVEL 9"), 41 x 20px ("LEVEL 10") | profile-dark-default cl=_1sF2c _36H8N (#313, #332); css:4243 ._36H8N |
 | spacer | width | 30px (flex-shrink 0) | profile-dark-default cl=_1h4Du (#314); css:5515 ._1h4Du |
 | text column | width | 329px at 480 column (441px light at 592 column); flex column, justify center | profile-dark-default cl=_2xtgD (#315); profile-light-default (#326) |
-| title | height / margin | 29px line box, margin-bottom 6px, ellipsis | profile-dark-default h3 cl=-Zgv1 (#317); css:5515 .-Zgv1 |
-| counter | gap from title | margin-left 12px, right-aligned | profile-dark-default cl=_8oTbo (#318) |
-| progress block | margin | margin-top 10px; bar wrapper margin-bottom 15px | profile-dark-default cl=jX2vW (#319), cl=_3H4Dc (#320) |
+| title | height / margin | 29px line box, margin-bottom `space.6` 6px, ellipsis | profile-dark-default h3 cl=-Zgv1 (#317); css:5515 .-Zgv1 |
+| counter | gap from title | margin-left `space.12` 12px, right-aligned | profile-dark-default cl=_8oTbo (#318) |
+| progress block | margin | margin-top `space.10` 10px; bar wrapper margin-bottom `space.15` 15px | profile-dark-default cl=jX2vW (#319), cl=_3H4Dc (#320) |
 | progress bar | height / radius | 14px tall, radius 7px (height/2); fill min-width 21px (1.5 x height) | profile-dark-default cl=_3yKMC (#323), cl=_27NV6 (#324), cl=_345XU (#327); css:4779-c36ad395.css ._27NV6 |
 | progress shine | geometry | absolute, top 3.5px left 3.5px, 3px tall (30% of height), radius 9999px, opacity 0.2 | profile-dark-default cl=_1EFTr (#326); css:4779 ._1EFTr |
 | description | height | 20px line | profile-dark-default cl=_7Cbsk (#328) |
@@ -2574,14 +2574,14 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| banner | width x height / radius | 480 x 224px (100% of column), radius 15px, margin-bottom -12px, overflow hidden | profile-dark-default cl=eGQis (#205); css:5515-e83f96c1.css .eGQis |
+| banner | width x height / radius | 480 x 224px (100% of column), radius `radius.15` 15px, margin-bottom -12px, overflow hidden | profile-dark-default cl=eGQis (#205); css:5515-e83f96c1.css .eGQis |
 | edit button | size / position | 48 x 48px, absolute top 16px right 16px, radius 16px, border 2px 2px 4px (lip) | profile-dark-default button cl=_2V6ug _3Y-wy (#206); css:5515 ._3Y-wy |
 | edit icon | size | 18 x 18px svg pencil | profile-dark-default #208 |
 | avatar hit area | width | 220px, full banner height, centred (translateX -50%), z-index 1 | profile-dark-default cl=_2Sqqq role=button (#210) |
-| info block | margin / padding | margin-top 8px; padding-bottom 16px (._3byCv sets 0 0 32px at min-width 700px, ._2C8UD overrides to 0 0 16px); 150px tall total | profile-dark-default cl=_3byCv _2C8UD (#213); css:5515 ._3byCv, ._2C8UD |
+| info block | margin / padding | margin-top `space.8` 8px; padding-bottom `space.16` 16px (._3byCv sets 0 0 `space.32` 32px at min-width 700px, ._2C8UD overrides to 0 0 `space.16` 16px); 150px tall total | profile-dark-default cl=_3byCv _2C8UD (#213); css:5515 ._3byCv, ._2C8UD |
 | name block | height | h1 54px (name 34px line + handle 20px), margin-bottom 6px | profile-dark-default h1 dt=profile-username (#216) |
-| joined row | margin | margin-bottom 12px | profile-dark-default cl=xk0If (#220) |
-| follow links row | height / gap | 24px tall buttons, gap 16px, margin-bottom 16px, padding 0 | profile-dark-default cl=_7V_nj (#222); css:5515 ._7V_nj |
+| joined row | margin | margin-bottom `space.12` 12px | profile-dark-default cl=xk0If (#220) |
+| follow links row | height / gap | `space.24` 24px tall buttons, gap `space.16` 16px, margin-bottom `space.16` 16px, padding 0 | profile-dark-default cl=_7V_nj (#222); css:5515 ._7V_nj |
 | flags button | size | 156 x 48px, padding 10px 0; flag img 31 x 24 with 4px side margins | profile-dark-default button cl=_36U8q (#228), img cl=_2WKNC (#229) |
 | "+N" chip | size | 31 x 28px, border 2px, radius 5px, padding 2px 3px | profile-dark-default cl=_1ZEoN (#232); css:5515 ._1ZEoN |
 
@@ -2647,12 +2647,12 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| grid | columns / gap | repeat(2, 1fr), gap 12px | profile-dark-default cl=_37tLJ (#237); css:5515 ._37tLJ |
+| grid | columns / gap | repeat(2, 1fr), gap `space.12` 12px | profile-dark-default cl=_37tLJ (#237); css:5515 ._37tLJ |
 | tile | width x height | 234 x 78px at 480 column (290 x 78 light at 592) | profile-dark-default cl=_2uSOC (#239); profile-light-default (#249) |
-| tile | padding / border / radius | 15px 24px; 2px; 16px | css:5515 ._2uSOC |
-| icon | size / gap | width 21px (heights 25 to 29 by art; league icon 24 x 27), margin-right 15px (14px league), align-self start | profile-dark-default #240, #246, #252; css:5515 .-AVDu, ._2aR6Z |
-| value | margin | margin-bottom 4px; 20px line | profile-dark-default h4 cl=-TMd4 (#242) |
-| section title | size / gap | "Statistics" h2 24px/26px, 12px below | profile-dark-default h2 cl=_347iz (#235), cl=_2Nu7i (#234) |
+| tile | padding / border / radius | `radius.15` 15px 24px; `radius.2` 2px; `radius.16` 16px | css:5515 ._2uSOC |
+| icon | size / gap | width 21px (heights 25 to 29 by art; league icon 24 x 27), margin-right `space.15` 15px (`space.14` 14px league), align-self start | profile-dark-default #240, #246, #252; css:5515 .-AVDu, ._2aR6Z |
+| value | margin | margin-bottom `space.4` 4px; `space.20` 20px line | profile-dark-default h4 cl=-TMd4 (#242) |
+| section title | size / gap | "Statistics" h2 `space.24` 24px/26px, `space.12` 12px below | profile-dark-default h2 cl=_347iz (#235), cl=_2Nu7i (#234) |
 | week badge | size / position | 53 x 24px, absolute top -8px right -6px, radius 7px, 2px border, padding 3px 5px 3px 6px | profile-light-default cl=_1eerR _3qbFZ (#261); css:5515 ._3qbFZ |
 
 | State | What changes | Source |
@@ -2709,13 +2709,13 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| row | gap | 16px between cards (3 cards at 149px in a 480 column; 187px at 592) | profile-dark-default cl=_3tDH0 (#268); profile-light-default cl=_18ikm (#280) |
-| card | width x height / padding | 149 x 239px (dark, text wraps) / 187 x 217 (light); padding 20px 16px | profile-dark-default cl=_18ikm (#269); css:1081-5a510dac.css ._18ikm |
+| row | gap | `space.16` 16px between cards (3 cards at 149px in a 480 column; 187px at 592) | profile-dark-default cl=_3tDH0 (#268); profile-light-default cl=_18ikm (#280) |
+| card | width x height / padding | 149 x 239px (dark, text wraps) / 187 x 217 (light); padding `space.20` 20px `space.16` 16px | profile-dark-default cl=_18ikm (#269); css:1081-5a510dac.css ._18ikm |
 | avatar | size | 48 x 48px, radius 50% | profile-dark-default img cl=_1yM9n (#272) |
-| name | margin / line | margin-top 8px, 24px line | profile-dark-default h3 cl=WDFdx _2jQO8 (#274) |
+| name | margin / line | margin-top `space.8` 8px, `space.24` 24px line | profile-dark-default h3 cl=WDFdx _2jQO8 (#274) |
 | reason | line | 22px line, wraps to 2 lines at 113px text width | profile-dark-default cl=_142Ad LH3xS (#275) |
-| entry block | margin | margin-bottom 30px above the button | profile-dark-default a dt=friend-entry cl=-rEIl (#270) |
-| FOLLOW button | size / padding / radius | 113 x 36px (100% width), padding 6px 18px, radius 8px, bottom border 4px transparent + ::after face extending 4px below | profile-dark-default dt=friend-add-button (#276); css:1081 .eiTQu, .DCN49; css:app-f2ef02f8.css ._3XEA0 |
+| entry block | margin | margin-bottom `space.30` 30px above the button | profile-dark-default a dt=friend-entry cl=-rEIl (#270) |
+| FOLLOW button | size / padding / radius | 113 x 36px (100% width), padding 6px 18px, radius `radius.8` 8px, bottom border `radius.4` 4px transparent + ::after face extending `radius.4` 4px below | profile-dark-default dt=friend-add-button (#276); css:1081 .eiTQu, .DCN49; css:app-f2ef02f8.css ._3XEA0 |
 | dismiss | size / position | 12 x 12px icon, absolute top 18px right 16px | profile-dark-default button cl=_2FpYw (#278); css:1081 ._2FpYw, ._2B7Zf |
 
 | State | What changes | Source |
@@ -2778,13 +2778,13 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | panel | width | 368px right rail, 2px border, radius 16px | profile-dark-default cl=_2G9SS (#87) |
-| update item | padding / height | padding 0 0 16px 16px; 222px tall | profile-dark-default cl=_2tJ8I (#88); css:5515 ._2tJ8I |
-| header row | margin | margin-top 16px; avatar 50 x 50; name block margin-left 10px, max-width 158px | profile-dark-default cl=_3NHGm (#91), img (#93), cl=_3uy9e (#94) |
-| event text | size / margin | 218px max width, margin 16px 0 20px, ellipsis | profile-dark-default cl=Vbl7C _3Umux (#98) |
+| update item | padding / height | padding 0 0 `space.16` 16px `space.16` 16px; 222px tall | profile-dark-default cl=_2tJ8I (#88); css:5515 ._2tJ8I |
+| header row | margin | margin-top `space.16` 16px; avatar 50 x 50; name block margin-left `space.10` 10px, max-width 158px | profile-dark-default cl=_3NHGm (#91), img (#93), cl=_3uy9e (#94) |
+| event text | size / margin | 218px max width, margin `space.16` 16px 0 `space.20` 20px, ellipsis | profile-dark-default cl=Vbl7C _3Umux (#98) |
 | event art | size | 130 x 130px, margin-top 10px (104px under 360px) | profile-dark-default img cl=_18A1Y (#100); css:5515 ._18A1Y |
 | CELEBRATE | size | 149 x 50px, radius 16px, border 2px 2px 4px; icon 26 x 20, label margin-left 7px | profile-dark-default button cl=_2ZO5y _2V6ug (#103), img (#104), span (#105) |
 | reaction counter | size | outer ring 34 x 34 (2px snow border), inner ring 30 x 30 (2px swan border, padding 4px), icon 18 x 18, radius 16; count margin-left 8px; group margin-right 16px | profile-dark-default #108-#112; css:5515 ._1aIia, ._34nUQ |
-| View all row | padding / height | padding 16px 25px 13px 18px; 51px; chevron 10 x 20 | profile-dark-default a cl=_1eHsP (#138), #139 |
+| View all row | padding / height | padding `space.16` 16px 25px 13px `space.18` 18px; 51px; chevron 10 x 20 | profile-dark-default a cl=_1eHsP (#138), #139 |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -2801,7 +2801,7 @@ Tokens (dark):
 | time | color | `text.tertiary` #52656D (hare, dark) | profile-dark-default #97 |
 | event text | color | `text.body` #F1F7FB (black-text, dark) | baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #98 |
 | event art | background | `text.onPrimary` #131F24 (snow, dark) | profile-dark-default #100; css:5515 ._18A1Y |
-| CELEBRATE | face / border / label | face #131F24 (snow), border + 2px lip #37464F (swan), label #F1F7FB (eel) | profile-dark-default #103 ::before; css:4779 ._2ZO5y |
+| CELEBRATE | face / border / label | face #131F24 (snow), border + `borderWidth.2` 2px lip #37464F (swan), label #F1F7FB (eel) | profile-dark-default #103 ::before; css:4779 ._2ZO5y |
 | reaction ring | outer / inner | outer bg + border #131F24 (snow), inner border #37464F (swan) | profile-dark-default #109, #110 |
 | reaction count | color | `text.tertiary` #52656D (hare, dark) | profile-dark-default #112 |
 | View all | color | `text.primary` #F1F7FB (eel, dark) | css:5515 ._1eHsP |
@@ -2846,11 +2846,11 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| grid | gaps | rows: row-gap 8px; columns: column-gap 8px, 5 cells per kana row (combo rows use 3) | characters-dark-default cl=_22vCj (#171), cl=_11ETR (#172); css:9416-975668fa.css ._22vCj, ._11ETR |
+| grid | gaps | rows: row-gap `space.8` 8px; columns: column-gap `space.8` 8px, 5 cells per kana row (combo rows use 3) | characters-dark-default cl=_22vCj (#171), cl=_11ETR (#172); css:9416-975668fa.css ._22vCj, ._11ETR |
 | cell | width x height | 82 x 68px at 480 column (86 x 68 light) | characters-dark-default #173; characters-light-default #181 |
-| cell | padding / radius / border | padding 10px 0 5px, height auto, line-height 1; radius 16px; border 2px 2px 4px transparent with ::before face (2px border, 2px box-shadow lip) | characters-dark-default #173; css:9416 ._3Dsa- |
+| cell | padding / radius / border | padding `radius.10` 10px 0 5px, height auto, line-height 1; radius `radius.16` 16px; border `radius.2` 2px `radius.2` 2px `radius.4` 4px transparent with ::before face (`radius.2` 2px border, `radius.2` 2px box-shadow lip) | characters-dark-default #173; css:9416 ._3Dsa- |
 | glyph | line | 19px line box | characters-dark-default span cl=IxPSK (#175) |
-| romaji | line / margin | 15px line, margin-bottom 5px | characters-dark-default cl=_3UqmZ (#176) |
+| romaji | line / margin | `space.15` 15px line, margin-bottom `space.5` 5px | characters-dark-default cl=_3UqmZ (#176) |
 | mastery bar | size | 40 x 8px (width 60%, max 40px), radius 4px, centred; fill min-width 12px | characters-dark-default role=progressbar cl=oCRfA QhZ1x (#177), #178, #181; css:9416 .QhZ1x |
 
 | State | What changes | Source |
@@ -2907,7 +2907,7 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | tab | width x height | 158 x 52px at 480 column (195 x 52 light) | characters-dark-default #154-#159; characters-light-default #162-#167 |
-| tab | padding / rule | padding 15px 0; border-bottom 2px | characters-dark-default cl=_3ugho (#155); css:9416-975668fa.css ._3ugho |
+| tab | padding / rule | padding `space.15` 15px 0; border-bottom `space.2` 2px | characters-dark-default cl=_3ugho (#155); css:9416-975668fa.css ._3ugho |
 | row | margins | margin 0 (desktop), 0 -16px under 700px | css:9416 ._7WPBm |
 
 | State | What changes | Source |
@@ -2956,7 +2956,7 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | bubble | size | content-sized width (245 to 379px seen), 91px tall; offset 8px right of the column edge to make room for the arrow | guidebook-dark-default cl=_36bu_ _1KdWa (#177), cl=_3zpnU D0iFS (#176); css:4779-c36ad395.css .D0iFS |
-| bubble | padding / border / radius | padding 8px 16px 16px (12px sides under 700px); border 2px; radius 15px | guidebook-dark-default #177; css:1327-4028784b.css ._1KdWa; css:4779 ._36bu_ |
+| bubble | padding / border / radius | padding `radius.8` 8px `radius.16` 16px `radius.16` 16px (`radius.12` 12px sides under 700px); border `radius.2` 2px; radius `radius.15` 15px | guidebook-dark-default #177; css:1327-4028784b.css ._1KdWa; css:4779 ._36bu_ |
 | arrow | size / position | 20 x 10px, rotated -90deg, left -13px, 15px below the top radius | guidebook-dark-default cl=_3T97b (#231); css:4779 .D0iFS>._3T97b |
 | grid | layout | 2-column grid: speaker (col 1, 39px tall, margin-right 10px) + text (col 2); translation in row 2 | guidebook-dark-default cl=iS2Dl (#178), cl=fEd5_ (#179); css:1327 .fEd5_, ._3X015, .ihYGQ |
 | speaker | size | 29 x 22px svg | guidebook-dark-default button (#180), span cl=_1OCYa (#181); css:1327 ._3DAip ._1OCYa |
@@ -3018,13 +3018,13 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| section heading | size / margin | 24px / 26px, margin-top 40px, 25px gap to the list | shop-dark-default h2 cl=_21GJ- (#155) |
-| row | padding / min-height | padding 20px 0 20px 110px, min-height 120px (138px with 2-line text; 166 power-up with pill) | shop-dark-default li cl=_3-o-j (#157, #171); css:8566-1e4d7a6c.css ._3-o-j @media (min-width:700px) |
+| section heading | size / margin | `space.24` 24px / 26px, margin-top `space.40` 40px, 25px gap to the list | shop-dark-default h2 cl=_21GJ- (#155) |
+| row | padding / min-height | padding `space.20` 20px 0 `space.20` 20px 110px, min-height 120px (138px with 2-line text; 166 power-up with pill) | shop-dark-default li cl=_3-o-j (#157, #171); css:8566-1e4d7a6c.css ._3-o-j @media (min-width:700px) |
 | icon | size / offset | 100 x 100px, margin -5px 0 -20px -110px, float left | shop-dark-default img cl=_3ywWe (#158); css:8566 ._3ywWe |
-| title | padding | padding 8px 0, 36px tall | shop-dark-default cl=_32enP (#161) |
+| title | padding | padding `space.8` 8px 0, 36px tall | shop-dark-default cl=_32enP (#161) |
 | description | line | line-height 1.75 (29.75px) | shop-dark-default p cl=_23KGP (#162) |
 | price button | size / position | min-width 150px (158 with price), 50px tall, float right, margin-left 18px, radius 16px, border 2px 2px 4px | shop-dark-default dt=purchase-button (#159, #173); css:8566 .kbxOW |
-| gem icon | size / margin | 24 x 26px, margin -8px 4px -6px 6px | shop-dark-default cl=_235HK (#174); css:8566 ._235HK |
+| gem icon | size / margin | 24 x 26px, margin -8px `space.4` 4px -6px `space.6` 6px | shop-dark-default cl=_235HK (#174); css:8566 ._235HK |
 | equipped pill | size | height 25px, padding 8px, radius 16px; gap 20px from title (row-gap 3px) | shop-dark-default cl=_2tJ-w _2I6Qk (#177), cl=_2Q29c (#175); css:8566 ._2I6Qk |
 
 | State | What changes | Source |
@@ -3086,15 +3086,15 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| A card | width x height / padding | 368 x 233px, padding 18px, radius 16px, border 2px | learn-dark-default cl=_16rRh _2cnFr _1T_BQ (#87); css:1008-b4d34396.css ._2cnFr, ._1T_BQ |
-| A title | width / margin | 220px, margin 8px 0 | learn-dark-default h2 cl=_3f4H2 WyfrO (#91); css:7668-84c050df.css .WyfrO |
-| A body | width / margin | calc(100% - 83px) = 245px, margin 8px 0 24px | learn-dark-default cl=_3GCbg (#92) |
+| A card | width x height / padding | 368 x 233px, padding `space.18` 18px, radius `space.16` 16px, border `space.2` 2px | learn-dark-default cl=_16rRh _2cnFr _1T_BQ (#87); css:1008-b4d34396.css ._2cnFr, ._1T_BQ |
+| A title | width / margin | 220px, margin `space.8` 8px 0 | learn-dark-default h2 cl=_3f4H2 WyfrO (#91); css:7668-84c050df.css .WyfrO |
+| A body | width / margin | calc(100% - 83px) = 245px, margin `space.8` 8px 0 `space.24` 24px | learn-dark-default cl=_3GCbg (#92) |
 | A button | size | 328 x 50px (100%), radius 16px, 4px lip (box-shadow 0 4px nebula) | learn-dark-default button cl=_1VYyp _3b8r8 (#93) |
 | A art | size / position | 98 x 94px, absolute top 24px right 24px | learn-dark-default img cl=zYUV0 (#89) |
-| B/C banner | padding / radius / margin | padding 20px (20px 10px 10px under 530px), radius 16px, margin-bottom 32px | shop-dark-default cl=MGk8p (#145); css:8566-1e4d7a6c.css .MGk8p |
+| B/C banner | padding / radius / margin | padding 20px (20px `radius.10` 10px `radius.10` 10px under 530px), radius `radius.16` 16px, margin-bottom 32px | shop-dark-default cl=MGk8p (#145); css:8566-1e4d7a6c.css .MGk8p |
 | B banner | size | 480 x 227px | shop-dark-default #145 |
 | B art + headline | size | art 90 x 113px, margin-right 24px; headline block margin-top 24px | shop-dark-default img cl=_22aYT (#147), cl=_1iadG (#148) |
-| B/C button | size / margin | height 50, margin-top 24px, width 100% of its column (440 B; 260 C dark; 369 C light), radius 16px (12px on settings-super), 4px lip | shop-dark-default dt=plus-offer-button (#152); settings-super-dark-default #109; css:7668 ._3LkfO |
+| B/C button | size / margin | height 50, margin-top `space.24` 24px, width 100% of its column (440 B; 260 C dark; 369 C light), radius `space.16` 16px (`space.12` 12px on settings-super), `space.4` 4px lip | shop-dark-default dt=plus-offer-button (#152); settings-super-dark-default #109; css:7668 ._3LkfO |
 | B logo | size / position | 86 x 23px, absolute top 0 right 0 with 16px margin | shop-dark-default dt=plus-offer-logo (#154); css:7668 .ZEFkS, ._24WQp |
 | C banner | size | 480 x 222 (settings-super dark), 592 x 227 (settings-super light), 592 x 197 (shop light) | settings-super-dark-default cl=_3_cT8 MGk8p (#100); settings-super-light-default #102; shop-light-default #154 |
 | C illustration | clip | max-width 200px, margin -20px -20px -65px 0, image max-height 230px; hidden under 530px | settings-super-dark-default cl=_2o8pO (#102), img cl=_2hygw (#103); css:7668 ._2o8pO, ._2hygw |
@@ -3154,12 +3154,12 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| card | width x height / padding / radius | 368 x 330px, padding 0 24px, radius 16px, overflow hidden; flex column, space-between | shop-dark-default cl=_3D_HB (#113), cl=_3Mmv9 (#114); css:1327-4028784b.css ._3Mmv9 |
+| card | width x height / padding / radius | 368 x 330px, padding 0 24px, radius `radius.16` 16px, overflow hidden; flex column, space-between | shop-dark-default cl=_3D_HB (#113), cl=_3Mmv9 (#114); css:1327-4028784b.css ._3Mmv9 |
 | art | size | 368 x 91px, margin 0 -24px (bleeds to card edges), max-height 91px | shop-dark-default img cl=_1PyGQ (#115); css:1327 ._1PyGQ |
-| title | margin | margin-bottom 12px; 30px line | shop-dark-default h2 cl=_3IB6P (#117) |
-| body | margin | margin-top -8px; 2 lines of 24px | shop-dark-default cl=_yQL7 (#118) |
+| title | margin | margin-bottom `space.12` 12px; `space.30` 30px line | shop-dark-default h2 cl=_3IB6P (#117) |
+| body | margin | margin-top -8px; 2 lines of `space.24` 24px | shop-dark-default cl=_yQL7 (#118) |
 | button | size | 320 x 50px, radius 16px, 4px lip | shop-dark-default button cl=_1VYyp _19taU (#120) |
-| link block | margin | margin-bottom 15px; link 20px line | shop-dark-default cl=_1d5x2 (#123), a (#124) |
+| link block | margin | margin-bottom `space.15` 15px; link `space.20` 20px line | shop-dark-default cl=_1d5x2 (#123), a (#124) |
 
 | State | What changes | Source |
 | --- | --- | --- |

@@ -86,8 +86,40 @@ def tokenize(text):
             col = line.count("|", 0, i) 
             head = header[col] if col < len(header) else ""
             return cells[1] + " " + head + " " + inline_role(cells[col] if col < len(cells) else "")(len(cells[col]) if col < len(cells) else 0)
-        lines[n] = tokenize_segment(line, role_of)
+        lines[n] = tokenize_lengths(tokenize_segment(line, role_of), header)
     return "\n".join(lines)
+
+# Lengths: in a table row about radius, spacing or border width, a px value that equals a core
+# token of that group gets the token in front ('16px' in a radius row becomes '`radius.16` 16px').
+# Heights and widths stay raw: several size tokens share a value and the row does not say which.
+CORE = T["core"]
+SCALES = [
+    (r"radius|corner", "radius"),
+    (r"padding|gap|margin|offset|spacing|inset", "space"),
+    (r"border(?!-?radius)|stroke|rule|divider|grid line", "borderWidth"),
+]
+PX = re.compile(r"(?<![`\w.-])(?<!` )(\d+)px\b")
+
+def tokenize_lengths(line, header):
+    """Only in measurement tables (a 'Property' column), and never inside a quoted CSS rule or a source cell."""
+    if not header or not any(h.strip() == "Property" for h in header) or not line.startswith("|") or set(line) <= set("|- :"):
+        return line
+    cells = line.split("|")
+    pcol = [h.strip() for h in header].index("Property")
+    prop = " ".join(cells[1:pcol + 1]).lower()
+    for words, group in SCALES:
+        if re.search(words, prop) and "css" not in prop:
+            values = {v["$value"]: k for k, v in CORE[group].items() if isinstance(v, dict) and "$value" in v}
+            def sub(m, group=group, values=values):
+                k = values.get(m.group(0))
+                return f"`{group}.{k}` {m.group(0)}" if k else m.group(0)
+            for i in range(pcol + 1, len(cells)):
+                head = header[i].strip() if i < len(header) else ""
+                if head == "Source" or "css:" in cells[i] or "{" in cells[i] or "captured" in cells[i]:
+                    continue
+                cells[i] = PX.sub(sub, cells[i])
+            return "|".join(cells)
+    return line
 
 def tokenize_json(v):
     if isinstance(v, str):
@@ -103,10 +135,11 @@ for md in ("components/core.md", "components/product.md"):
     p = PKG / md
     before = p.read_text()
     after = tokenize(before)
-    n += after.count("`") // 2 - before.count("`") // 2
+    tokref = re.compile(r"`[a-zA-Z]+\.[\w.-]+` (?=#|\d)")
+    n += len(tokref.findall(after)) - len(tokref.findall(before))
     p.write_text(after)
 for js in ("components/core.json", "components/product.json"):
     p = PKG / js
     d = json.loads(p.read_text())
     p.write_text(json.dumps(tokenize_json(d), indent=1, ensure_ascii=False))
-print("tokens placed in front of", n, "colour values")
+print("tokens placed in front of", n, "values")

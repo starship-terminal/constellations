@@ -1,6 +1,6 @@
 # Duolingo design reference
 
-A token set and component reference for Duolingo's web app, for building mockups in Figma or Paper that match the product. It was extracted from www.duolingo.com on 2026-09-25, signed in to a free account on the Japanese course, in both of the app's themes, at desktop width and at a 570px mobile width. It was refreshed on 2026-10-17 against the library scorecard: the same free account, both themes, at 1440, 1000 and 390px, plus the logged-out onboarding flow, a live keyboard-focus pass, and new tokens for ramps, overlay surfaces, accent hover and pressed, status borders, icon sizes, the focus ring, layout columns and reduced motion.
+A token set and component reference for Duolingo's web app, for building mockups in Figma or Paper that match the product. It was extracted from www.duolingo.com on 2026-09-25, signed in to a free account on the Japanese course, in both of the app's themes, at desktop width and at a 570px mobile width. It was refreshed on 2026-10-17 against the library scorecard: the same free account, both themes, at 1440, 1000 and 390px, plus the logged-out onboarding flow, the Guidebook table, a live keyboard-focus pass, and new tokens for ramps, overlay surfaces, accent hover and pressed, status borders, icon sizes, the focus ring, layout columns and reduced motion.
 
 | File | What it is |
 |---|---|
@@ -32,6 +32,7 @@ The screenshots were converted from the display's P3 profile to sRGB and stored 
 - **Light warning and light wrong-answer colours** come from CSS and the palette, not from a light capture (no wrong answer was given, to keep the account's hearts).
 - **The 2026-10 screenshots are renders of page copies**, not window captures: scripts are removed, so animated illustrations are frozen where the snapshot caught them, and the fonts are the same CDN files the app loads, declared again by [lib.mjs](tools/capture/signed-in/lib.mjs). The 2026-09 screenshots carry the capture tool's orange edge glow and pointer.
 - **Gem and XP totals** in the 2026-10 renders were replaced with round numbers by the redaction file; other learners' avatars are shown, their names are not.
+- **The Guidebook renders show an "Using an ad blocker?" card** in the right rail where other pages show the Super promotion. Duolingo showed it because ad requests did not load in the capture browser; it is the product's own UI, but a session with ads loading shows the Super card there.
 - **Onboarding** was taken from a logged-out session in a headless browser; the answer lists (for example "How did you hear about Duolingo?") are localised by region and shuffled per session.
 
 ## Fonts
@@ -47,7 +48,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Free plan, 
 | Colour ramps | Derived: 6 ramps of 3 to 6 steps from the palette's own names; Duolingo has no ramps of its own | `light.ramp`, `dark.ramp`; the 300-colour `core.palette` |
 | Background roles | Captured: page, surface, raised (popover), overlay (dialog), scrim | `background.*`, `surface.*` |
 | Text roles | Captured | `text.*` |
-| Border roles | Default and focus captured; strong not present (every neutral border in the CSS is swan, 117 rules) | `border.*`; [raw/2026-10/css-evidence.json](raw/2026-10/css-evidence.json) |
+| Border roles | Default and focus captured; strong not present: resting neutral borders are all swan (117 rules); hare appears only on one hover border and one 40%-opacity divider | `border.*`; [raw/2026-10/css-evidence.json](raw/2026-10/css-evidence.json) |
 | Accent states | Default and pressed captured; hover derived from the button's brightness filter | `accent.*.face`, `.hover`, `.pressed` |
 | Status colours | Captured fill, text and background; borders derived from the components that draw them | `status.*` |
 | Theme parity | Captured: light and dark hold the same keys | `light`, `dark` |
@@ -74,7 +75,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Free plan, 
 | Toast | Not present: none appeared in either capture and the CSS has no toast class; confirmations swap a label in place | [components/core.md](components/core.md#toast--snackbar) |
 | Card | Captured | [components/core.md](components/core.md#cards-right-rail-cards-settings-side-cards-stat-tiles) |
 | List row | Captured: default, hover | [components/core.md](components/core.md#list-rows-courses-list-search-results-following-list-settings-rows) |
-| Table | Not present: rankings and lists are rows, not tables | |
+| Table | Captured: the Guidebook phrase table, both themes (static, no states) | [components/core.md](components/core.md#table-guidebook-phrase-table), [guidebook-light-table](screenshots/guidebook-light-table.png) |
 | Avatar | Captured | [components/core.md](components/core.md#avatar) |
 | Badge | Captured | [components/core.md](components/core.md#badges-and-pills) |
 | App shell and navigation | Captured at 1440, 1000 and 390 | [patterns.md](patterns.md#app-shell-and-navigation) |
@@ -83,12 +84,12 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Free plan, 
 | Destructive confirmation | Captured: remove-course sheet, quit dialog | [patterns.md](patterns.md#destructive-confirmation) |
 | Feedback after an action | Captured: lesson verdict footer, celebrations; no toast exists | [patterns.md](patterns.md#feedback-after-an-action) |
 | Search and filtering | Search captured; filtering not present | [patterns.md](patterns.md#search-and-filtering) |
-| List or table | Captured: leaderboard, quests, profile tiles | [patterns.md](patterns.md#data-display) |
+| List or table | Captured: leaderboard, quests, profile tiles, the Guidebook table | [patterns.md](patterns.md#data-display) |
 | Onboarding | Captured logged out: course picker to start choice, both themes, 1440 and 390; sign-up steps not captured (they ask for an age, a name and an email) | [patterns.md](patterns.md#onboarding) |
 | Light and dark | Captured | every page in both themes except the 2026-09 gaps listed in [components.md](components.md#gaps) |
 | Desktop and phone widths | Captured: 1440 (refresh), 1200 and 1384 (2026-09), 1000, 390 (refresh) and 570 (2026-09) | `screenshots/*-tablet.png`, `*-phone.png`, `*-mobile.png` |
 
-Totals over 43 rows: 37 captured (a missing part is named in its row: the strong border, a code type role, filtering, the in-app error, the sign-up steps), 1 derived, 4 not present, 1 not captured. Two of those cannot be closed by a recapture: a validation error needs a submit, and the sign-up steps need personal details.
+Totals over 43 rows: 38 captured (a missing part is named in its row: the strong border, a code type role, filtering, the in-app error, the sign-up steps), 1 derived, 3 not present, 1 not captured. Two of those cannot be closed by a recapture: a validation error needs a submit, and the sign-up steps need personal details.
 
 ## Do and don't
 

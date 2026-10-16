@@ -430,7 +430,7 @@ Good for: Gamified learning: lesson flow, streaks, leaderboards, chunky 3D butto
 
 Captured 2026-10-17, signed in, free account. Themes: light, dark.
 
-A token set and component reference for Duolingo's web app, for building mockups in Figma or Paper that match the product. It was extracted from www.duolingo.com on 2026-09-25, signed in to a free account on the Japanese course, in both of the app's themes, at desktop width and at a 570px mobile width. It was refreshed on 2026-10-17 against the library scorecard: the same free account, both themes, at 1440, 1000 and 390px, plus the logged-out onboarding flow, a live keyboard-focus pass, and new tokens for ramps, overlay surfaces, accent hover and pressed, status borders, icon sizes, the focus ring, layout columns and reduced motion.
+A token set and component reference for Duolingo's web app, for building mockups in Figma or Paper that match the product. It was extracted from www.duolingo.com on 2026-09-25, signed in to a free account on the Japanese course, in both of the app's themes, at desktop width and at a 570px mobile width. It was refreshed on 2026-10-17 against the library scorecard: the same free account, both themes, at 1440, 1000 and 390px, plus the logged-out onboarding flow, the Guidebook table, a live keyboard-focus pass, and new tokens for ramps, overlay surfaces, accent hover and pressed, status borders, icon sizes, the focus ring, layout columns and reduced motion.
 
 ## Colors
 
@@ -495,6 +495,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Light warning and light wrong-answer colours** come from CSS and the palette, not from a light capture (no wrong answer was given, to keep the account's hearts).
 - **The 2026-10 screenshots are renders of page copies**, not window captures: scripts are removed, so animated illustrations are frozen where the snapshot caught them, and the fonts are the same CDN files the app loads, declared again by [lib.mjs](tools/capture/signed-in/lib.mjs). The 2026-09 screenshots carry the capture tool's orange edge glow and pointer.
 - **Gem and XP totals** in the 2026-10 renders were replaced with round numbers by the redaction file; other learners' avatars are shown, their names are not.
+- **The Guidebook renders show an "Using an ad blocker?" card** in the right rail where other pages show the Super promotion. Duolingo showed it because ad requests did not load in the capture browser; it is the product's own UI, but a session with ads loading shows the Super card there.
 - **Onboarding** was taken from a logged-out session in a headless browser; the answer lists (for example "How did you hear about Duolingo?") are localised by region and shuffled per session.
 
 ### Do and don't (from README.md)

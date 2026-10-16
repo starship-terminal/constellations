@@ -120,7 +120,7 @@ Face = `::before` fill (legacy FOLLOW: `::after`). Lip = `::before` box-shadow c
 | size: text no-padding (_1nf6U) | height: auto (18px measured); padding: 0<br>css:4779-c36ad395.css ._1nf6U { --__internal__height:var(--web-ui_button-height,auto); --__internal__padding:var(--web-ui_button-padding,0) } |
 | size: streak CTA (_2loTO) | height: 36px; radius: 8px<br>css:5275-8898b509.css ._2loTO { --web-ui_button-background-color:rgb(var(--color-snow-always-light)); --web-ui_button-border-color:rgb(var(--color-snow-always-light),0.6); --web-ui_button-border-radius:8px; --web-ui_button-color:rgb(var(--color-streak-panel-friend-background)); --web-ui_button-height:36px } |
 | size: full-width player button (_3DbUj) | width: 100% below 700px, auto with min-width 150px at >=700px<br>css:1008-b4d34396.css ._3DbUj { min-width:150px; width:100% }<br>css:1008-b4d34396.css @media (min-width:700px) ._3DbUj { --web-ui_button-font-size:17px; width:auto } |
-| label_icon_gap | FOLLOW: 8px (margin-left on label, user-search-dark-results#87 _2NaX_); web-ui buttons have no built-in gap, icons are laid out by the caller |
+| label_icon_gap | FOLLOW: `space.8` 8px (margin-left on label, user-search-dark-results#87 _2NaX_); web-ui buttons have no built-in gap, icons are laid out by the caller |
 
 Measured instances:
 
@@ -188,9 +188,9 @@ Notes: Transition: css:4779 ._1VYyp declares "filter .2s, transform var(--web-ui
 | Property | Value |
 | --- | --- |
 | height | 48px (44px input + 2px border top/bottom) |
-| input_padding | 8px 14px |
-| border | 2px |
-| radius | 12px |
+| input_padding | `space.8` 8px `space.14` 14px |
+| border | `borderWidth.2` 2px |
+| radius | `radius.12` 12px |
 | font | body: 500 20px/28px (var(--text-body-*) = 1.25rem/1.75rem) |
 | label | 700 20px/24px (heading-small), 24px tall, 4px gap to the field (_3zSI5 gap) |
 | trailing_icon_button | 24x24, margin 0 6px 0 -6px (rQJD2); eye glyph 24x17, clear glyph 18x18 |
@@ -263,9 +263,9 @@ Crops: [dark: text-input-dark.png](crops/text-input-dark.png) [light: text-input
 | Property | Value |
 | --- | --- |
 | height | 63px (27px input + 16px padding x2 + 2px border x2) |
-| padding | 16px 20px |
-| border | 2px |
-| radius | 12px |
+| padding | `space.16` 16px `space.20` 20px |
+| border | `borderWidth.2` 2px |
+| radius | `radius.12` 12px |
 | font | 400 22px / 25.3px |
 | icon | search 20x21 rendered, clear 20x20 |
 | CSS source | css:2173-53849902.css .JW88y { align-items:center; background-color:rgb(var(--color-polar)); border:2px solid rgb(var(--color-swan)); border-radius:12px; color:rgb(var(--color-eel)); display:flex; font-size:22px; margin-bottom:48px; padding:16px 20px }<br>css:2173-53849902.css .t40Pr { background-color:transparent; border:0; color:rgb(var(--color-eel)); flex:1 1 auto }<br>css:2173-53849902.css ._1QdIO { margin-right:17px; transform:scale(1.4); transform-origin:50% 50% }<br>css:2173-53849902.css ._36I3w { cursor:pointer; flex:0 0 auto } |
@@ -326,10 +326,10 @@ Notes: The web-ui input (_298F2) also has a type=search mode (RPjiw search icon,
 | Property | Value |
 | --- | --- |
 | height | 50px |
-| padding | 0 41px 0 12px |
-| border | 2px 2px 4px (transparent) + ::before 2px border |
+| padding | 0 41px 0 `space.12` 12px |
+| border | `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px (transparent) + ::before `borderWidth.2` 2px border |
 | lip | 2px box-shadow (4px visual) |
-| radius | 12px |
+| radius | `radius.12` 12px |
 | font | 700 15px/18px, 0.8px, uppercase (value); face font 500 17px/25px |
 | chevron | 15x9 |
 | CSS source | css:2833-494f8efd.css ._3QwUP { border:solid transparent; border-radius:12px; border-width:2px 2px 4px; color:rgb(var(--color-wolf)); height:50px; padding:0 41px 0 12px }<br>css:2833-494f8efd.css ._3QwUP:before { background:rgb(var(--color-snow)); border:2px solid rgb(var(--color-swan)); border-radius:12px; bottom:-2px; box-shadow:0 2px 0 rgb(var(--color-swan)); content:""; left:-2px; position:absolute; right:-2px; top:-2px }<br>css:2833-494f8efd.css ._3xxe1 { position:relative }<br>css:2833-494f8efd.css ._3QwUP ._3N2pE { color:rgb(var(--color-hare)); position:absolute; right:16px } |
@@ -391,8 +391,8 @@ Crops: [dark: select-dark.png](crops/select-dark.png) [light: select-light.png](
 | Property | Value |
 | --- | --- |
 | size | 30x30 inside a 32x32 box |
-| border | 2px |
-| radius | 8px |
+| border | `borderWidth.2` 2px |
+| radius | `radius.8` 8px |
 | icon | 24x24 box, 13x10 glyph |
 | CSS source | css:4779-c36ad395.css .Ug-rb { --web-ui_button-filter-hover:none; align-items:center; border:2px solid rgb(var(--color-swan))!important; border-radius:8px; box-sizing:border-box; color:rgb(var(--color-macaw)); height:30px; justify-content:center; width:30px }<br>css:4779-c36ad395.css .Ug-rb._2u5BZ { background:rgb(var(--color-macaw))!important; border-color:rgb(var(--color-macaw))!important }<br>css:4779-c36ad395.css ._31gfP { align-items:center; display:inline-flex; height:32px; justify-content:center; width:32px } |
 
@@ -452,12 +452,12 @@ Crops: [dark: checkbox-dark.png](crops/checkbox-dark.png) [light: checkbox-light
 | Property | Value |
 | --- | --- |
 | row_height | 54px (streak goal) |
-| row_padding | 8px 16px (a3yOs) |
-| row_gap | 12px |
-| card_padding | 30px desktop / 15px below 700px (_8YNCv) |
-| border | 2px, bottom 4px space for the lip |
+| row_padding | `space.8` 8px `space.16` 16px (a3yOs) |
+| row_gap | `space.12` 12px |
+| card_padding | `space.30` 30px desktop / `space.15` 15px below 700px (_8YNCv) |
+| border | `borderWidth.2` 2px, bottom `borderWidth.4` 4px space for the lip |
 | lip | 0 2px 0 (4px visual) |
-| radius | 12px |
+| radius | `radius.12` 12px |
 | title_font | 700 20px/32px (streak goal, body-spacious-bold via .WMgCJ) |
 | caption_font | 500 16px/24px (caption) |
 | CSS source | css:4779-c36ad395.css ._8dMUn { --__internal__border-color:var(     --web-ui_card-border-color,rgb(var(--color-swan))   ); border:solid transparent; border-radius:var(--web-ui_card-border-radius,12px); border-width:2px 2px 4px; cursor:pointer; display:inline-flex; outline:0; position:relative; touch-action:manipulation; transform:translateZ(0); -webkit-user-select:none; -moz-user-select:none; user-select:none }<br>css:4779-c36ad395.css ._8dMUn:before { background-color:var(--web-ui_card-background-color,rgb(var(--color-snow))); border:2px solid var(--__internal__border-color); border-radius:var(--web-ui_card-border-radius,12px); bottom:-2px; box-shadow:0 2px 0 var(--__internal__border-color); content:""; left:-2px; position:absolute; right:-2px; top:-2px; z-index:-1 }<br>css:1008-b4d34396.css .a3yOs { align-items:center; display:flex; justify-content:space-between; padding:8px 16px }<br>css:1008-b4d34396.css ._13-RH { display:flex; flex-direction:column; gap:12px; justify-content:center; margin:0 auto; max-width:480px; opacity:calc(1 - var(--streak-goal-before-slide-up, 1)); transition:opacity .35s ease-in-out; width:100% }<br>css:4243-a8d324a8.css ._8YNCv { color:rgb(var(--color-eel)); padding:15px } |
@@ -585,8 +585,8 @@ Crops: [dark: toggle-dark.png](crops/toggle-dark.png) [dark: toggle-off-dark.png
 | Property | Value |
 | --- | --- |
 | height | 52px |
-| padding | 15px 0 |
-| border_bottom | 2px |
+| padding | `space.15` 15px 0 |
+| border_bottom | `borderWidth.2` 2px |
 | font | 700 17px/20px, letter-spacing .03em (0.51px), uppercase |
 | width | 158px each at 480px column (dark), 195px at 592px (light) |
 | CSS source | css:9416-975668fa.css ._3ugho { border-bottom:2px solid rgb(var(--color-swan)); color:rgb(var(--color-hare)); font-size:17px; letter-spacing:.03em; padding:15px 0; text-transform:uppercase } |
@@ -699,9 +699,9 @@ Crops: [dark: tabs-list-dark.png](crops/tabs-list-dark.png) [light: tabs-list-li
 | Property | Value |
 | --- | --- |
 | height | 48px |
-| padding | 0 16px |
+| padding | 0 `space.16` 16px |
 | indicator | 4px bar (::after), 2px radius |
-| rule | 2px |
+| rule | `borderWidth.2` 2px |
 | font | label-medium: 700 16px/16px, 0.04em, uppercase |
 | CSS source | css:5823-96f39733.css ._3Ji0r { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; --web-ui_button-filter-hover:none; align-items:center; border-bottom:2px solid rgb(var(--color-swan))!important; border-top:2px solid transparent!important; box-sizing:border-box; color:rgb(var(--color-eel)); flex:1; font:var(--text-label-weight-medium) var(--text-label-size-medium) /var(--text-label-line-height-medium) duolingo-sans,sans-serif; height:48px; justify-content:center; letter-spacing:var(--text-label-letter-spacing-medium); min-width:0; padding:0 16px!important; text-transform:var(--text-label-casing-medium) }<br>css:5823-96f39733.css ._2d5P5:after { background:rgb(var(--color-whale)); border-radius:2px; bottom:-2px; content:""; height:4px; position:absolute; width:100% }<br>css:5823-96f39733.css ._1L0JB ._3Ji0r { border-bottom:2px solid rgb(var(--color-snow-always-light))!important; color:rgb(var(--color-snow-always-light)) } |
 
@@ -881,9 +881,9 @@ Crops: [dark: avatar-dark.png](crops/avatar-dark.png) [dark: avatar-edit-dark.pn
 
 | Property | Value |
 | --- | --- |
-| border | 2px |
-| radius | 15px (var --web-ui_popover-border-radius; 10px on path tooltips, 5px on progress-bar popover) |
-| offset | 8px from trigger (margin on direction class); path node popover 12px |
+| border | `borderWidth.2` 2px |
+| radius | `radius.15` 15px (var --web-ui_popover-border-radius; `radius.10` 10px on path tooltips, 5px on progress-bar popover) |
+| offset | `space.8` 8px from trigger (margin on direction class); path node popover `space.12` 12px |
 | stem | 20x10 visible, square 14.14px CSS (20px rendered bbox) rotated 45deg |
 | gems_content | 380x148, padding 24px 12px; 100px illustration + 12px gap; title 700 24px/26px; body wolf |
 | path_popover | 295px wide, padding 16px, 700 19px/1.4, centered, no border |
@@ -943,9 +943,9 @@ Crops: [dark: popover-dark.png](crops/popover-dark.png) [dark: popover-path-dark
 | Property | Value |
 | --- | --- |
 | size | 80x45 (min-width 80px) |
-| padding | 12px |
-| radius | 10px |
-| border | 2px |
+| padding | `space.12` 12px |
+| radius | `radius.10` 10px |
+| border | `borderWidth.2` 2px |
 | font | 700 17px, line-height 1, 0.03em, uppercase |
 | CSS source | css:path-e50cab6b.css ._27IMa { background:rgb(var(--color-snow)); border-color:rgb(var(--color-swan)); color:var(--path-unit-character-color); font-size:17px; font-weight:700; letter-spacing:.03em; line-height:1; padding:12px; text-align:center; text-transform:uppercase; white-space:nowrap }<br>css:path-e50cab6b.css ._kJVz { --web-ui_popover-border-radius:10px; margin-bottom:-2px; min-width:80px }<br>css:path-e50cab6b.css .YxHCU { background:rgb(var(--color-snow)); border-color:rgb(var(--color-swan)) } |
 
@@ -1002,11 +1002,11 @@ Notes: No hover tooltips on icons/buttons were found; these path bubbles are the
 | --- | --- |
 | width | 291px bubble (fit-content) |
 | row_heights | 52px (icon rows), 40px (text rows), 55-56px (courses) |
-| row_padding | 0 40px 0 20px |
+| row_padding | 0 `space.40` 40px 0 `space.20` 20px |
 | icon | 32x32, 20px right margin |
 | font | 700 15px/16px, 0.8px, uppercase |
-| section_padding | 8px 0 |
-| divider | 2px swan |
+| section_padding | `space.8` 8px 0 |
+| divider | `borderWidth.2` 2px swan |
 | CSS source | css:9071-d035f2e5.css .GHXZL { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; --web-ui_button-filter-hover:none; align-items:center; box-sizing:border-box; color:rgb(var(--color-wolf)); display:flex; font:700 15px/16px duolingo-sans,sans-serif; min-width:100px; padding:0 40px 0 20px; text-transform:uppercase; white-space:nowrap; width:100% }<br>css:9071-d035f2e5.css ._2ifes { height:52px }<br>css:9071-d035f2e5.css ._3QrGV { height:40px }<br>css:9071-d035f2e5.css ._1fv9a { border-bottom:2px solid rgb(var(--color-swan)) }<br>css:5275-8898b509.css ._2xxCs ._1aVVk { align-items:center; display:flex; flex-direction:row } |
 
 Measured instances:
@@ -1070,9 +1070,9 @@ Crops: [dark: menu-dark.png](crops/menu-dark.png) [dark: menu-hover-dark.png](cr
 | Property | Value |
 | --- | --- |
 | width | 384px (notifications, quit) / 480px (invite) |
-| padding | 24px (notifications, quit) / 30px (invite) |
-| radius | 16px |
-| margin | 24px |
+| padding | `space.24` 24px (notifications, quit) / `space.30` 30px (invite) |
+| radius | `radius.16` 16px |
+| margin | `space.24` 24px |
 | border | none |
 | shadow | none |
 | title | 700 24px/32px (heading-medium), 12px top margin |
@@ -1144,8 +1144,8 @@ Crops: [dark: modal-dark.png](crops/modal-dark.png) [dark: modal-invite-dark.png
 | Property | Value |
 | --- | --- |
 | height | 195px (content-driven) |
-| padding | 40px 24px |
-| grid_gap | 16px 40px |
+| padding | `space.40` 40px `space.24` 24px |
+| grid_gap | `space.16` 16px `space.40` 40px |
 | radius | none |
 | title | 700 24px/32px heading-medium |
 | description | 19px/24px wolf |
@@ -1209,9 +1209,9 @@ Notes: Same drawer classes (rs95t) are shared across 40+ CSS chunks (lesson feed
 | Property | Value |
 | --- | --- |
 | row_height | 40px |
-| row_gap | 4px |
-| padding | 8px 30px |
-| radius | 12px |
+| row_gap | `space.4` 4px |
+| padding | `space.8` 8px `space.30` 30px |
+| radius | `radius.12` 12px |
 | font | 700 20px/24px (heading-small) |
 | title | 700 24px/32px wolf |
 | CSS source | css:settingsPage-f3f7f16a.css .bigAx { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; color:rgb(var(--color-eel)); display:block; font:var(--text-heading-weight-small) var(--text-heading-size-small) /var(--text-heading-line-height-small) duolingo-sans,sans-serif; letter-spacing:var(--text-heading-letter-spacing-small); padding:8px 30px; text-transform:var(--text-heading-casing-small) }<br>css:settingsPage-f3f7f16a.css .wgPZT { border-radius:12px }<br>css:settingsPage-f3f7f16a.css ._1lpXi { display:grid; gap:4px }<br>css:settingsPage-f3f7f16a.css ._7yUNn { -webkit-font-smoothing:antialiased; font:var(--text-heading-weight-medium) var(--text-heading-size-medium) /var(--text-heading-line-height-medium) duolingo-sans,sans-serif; letter-spacing:var(--text-heading-letter-spacing-medium); margin:0 30px 16px; text-transform:var(--text-heading-casing-medium) } |
@@ -1272,7 +1272,7 @@ Crops: [dark: list-settings-nav-dark.png](crops/list-settings-nav-dark.png) [lig
 | course_row | 64px, gap 16px |
 | search_row | 113px, padding 18px 24px, avatar 70, text margin 0 16px |
 | following_row | 85px, padding 16px, avatar 48 |
-| divider | 2px swan |
+| divider | `borderWidth.2` 2px swan |
 | container | 2px swan border, 16px radius |
 | CSS source | css:settingsPage-f3f7f16a.css .Ej0kW { align-items:center; box-sizing:content-box; display:flex; gap:16px; height:64px; padding:0 16px }<br>css:settingsPage-f3f7f16a.css ._3hY-r { border-bottom:2px solid rgb(var(--color-swan)) }<br>css:1081-5a510dac.css .nAD2k { padding:18px 24px }<br>css:1081-5a510dac.css ._39QMj { align-items:center; border-bottom:2px solid rgb(var(--color-swan)); display:flex }<br>css:1081-5a510dac.css ._1xR2j { padding:16px }<br>css:1081-5a510dac.css ._2G9SS { border:2px solid rgb(var(--color-swan)); border-radius:16px }<br>css:5515-e83f96c1.css ._3jvnF { border-top:2px solid rgb(var(--color-swan)); color:rgb(var(--color-eel)); display:flex; font-weight:700; justify-content:space-between; padding:16px; width:100% }<br>css:settingsPage-f3f7f16a.css ._2R7tY { align-items:center; display:flex; gap:48px; justify-content:space-between } |
 
@@ -1573,7 +1573,7 @@ Crops: [dark: link-dark.png](crops/link-dark.png) [light: link-light.png](crops/
 | Property | Value |
 | --- | --- |
 | sizes | 12, 18, 24 (unstyled glyph boxes); 35 (round close); 48 (square tile); 52 (floating) |
-| radius | 12px (tile, _2FxcQ); 16px (fab, root button radius); 50% (close) |
+| radius | `radius.12` 12px (tile, _2FxcQ); `radius.16` 16px (fab, root button radius); 50% (close) |
 | CSS source | css:4779-c36ad395.css ._1gEmM { background:none; border:none; padding:0; transition:filter .2s }<br>css:4779-c36ad395.css @media (hover:hover) ._1gEmM:hover:not(._2wryV):not(.ypJiL) { filter:var(--web-ui_button-filter-hover,brightness(1.1)) }<br>css:app-f2ef02f8.css ._2FxcQ { --web-ui_button-height:48px; --web-ui_button-padding:0; --web-ui_button-border-radius:12px; width:48px }<br>css:path-e50cab6b.css ._2dnkd { --web-ui_button-height:52px; --web-ui_button-padding:0; width:52px }<br>css:4779-c36ad395.css .GEQ3b { --web-ui_button-filter-hover:none; align-items:center; border-radius:12px; height:48px; justify-content:center; width:48px } |
 
 Measured instances:
@@ -1618,6 +1618,53 @@ Crops: [dark: icon-button-dark.png](crops/icon-button-dark.png) [dark: icon-butt
 
 ![icon-button light](crops/icon-button-light.png)
 ![icon-button dark](crops/icon-button-dark.png)
+
+## Table (Guidebook phrase table)
+
+**Anatomy**
+
+- `<table>` cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card
+- header cells (`td` cl=GK0kS DLX_3): tinted fill, 2px border on every side, the outer top corners rounded 16px
+- body cells (`td` cl=GK0kS): no fill, 2px right and bottom borders (2px left on the first column), so the grid is drawn by the cells, not by the table (`border-collapse: separate`, spacing 0)
+
+**Measurements**
+
+| Property | Value |
+| --- | --- |
+| table | 544 x 210 at 1440 (432 wide at 1200); no border of its own |
+| table radius | `radius.16` 16px |
+| header row | 66px tall; header labels bold (Observed) |
+| cell padding | `space.10` 10px `space.16` 16px |
+| body row | 48px tall; 500 17px/22px |
+| grid line border | `borderWidth.2` 2px |
+| source | computed styles from the 2026-10-17 page copies (raw/2026-10/copy-measurements.json guidebook-*-table) and the 2026-09-25 dumps (guidebook-light-default#491-525, guidebook-dark-default#482-516) |
+
+**States**
+
+| State | What changes | Source |
+| --- | --- | --- |
+| default | as above | captured: guidebook-light-table, guidebook-dark-table (2026-10-17) |
+| hover / focus / selected | none: the table is static reading content with no interactive cells | not interactive |
+
+**Tokens**
+
+| Role | Light | Dark |
+| --- | --- | --- |
+| table fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| header cell fill (at 0.3 alpha) | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.face` #49C0F8 (macaw, dark) |
+| grid line border | `border.selected` #84D8FF (blue-jay, light) | `border.selected` #3F85A7 (blue-jay, dark) |
+| cell text | `text.body` #3C3C3C (black-text, light) | `text.body` #F1F7FB (black-text, dark) |
+
+Type style: body (500, 17px/22px).
+
+Responsive (570px): no phone capture of the Guidebook.
+
+Screenshots: light: `../screenshots/guidebook-light-table.png`; dark: `../screenshots/guidebook-dark-table.png`
+
+Crops: [light: table-light.png](crops/table-light.png) [dark: table-dark.png](crops/table-dark.png)
+
+![table light](crops/table-light.png)
+![table dark](crops/table-dark.png)
 
 ## Toast / snackbar
 

@@ -147,7 +147,7 @@ Applied by [tools/refresh_tokens_2026_10.py](tools/refresh_tokens_2026_10.py); e
 | `core.layout.columns.*` | Measured | 2 columns at 1440 and 1000, 1 at 390 |
 | `core.duration.reducedMotion` | Measured | What `html[reduced-motion]` switches off |
 
-Not present, so not tokenised: a strong border (every neutral border is swan), a code font, blurred elevation.
+Not present, so not tokenised: a strong border (resting neutral borders are all swan; hare appears only on one hover border, `._3ahVn:hover`, and on a 40%-opacity divider, `.uzb3k`), a code font, blurred elevation.
 
 ## Gaps
 

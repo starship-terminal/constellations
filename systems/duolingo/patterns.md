@@ -1,6 +1,6 @@
 # Duolingo: patterns
 
-How Duolingo puts its components together for the eight patterns in [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Written from the captures in [screenshots/](screenshots) (2026-09-25, and the 2026-10-17 refresh for onboarding, empty and no-results search, the lesson report form, the friend-streak dialog and the 1000px and 390px layouts). Token names are from [tokens.json](tokens.json); component specs are in [components/core.md](components/core.md) and [components/product.md](components/product.md). Each pattern ends with what was not captured.
+How Duolingo puts its components together for the eight patterns in [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Written from the captures in [screenshots/](screenshots) (2026-09-25, and the 2026-10-17 refresh for onboarding, empty and no-results search, the lesson report form, the friend-streak dialog, the Guidebook table and the 1000px and 390px layouts). Token names are from [tokens.json](tokens.json); component specs are in [components/core.md](components/core.md) and [components/product.md](components/product.md). Each pattern ends with what was not captured.
 
 ## App shell and navigation
 
@@ -57,9 +57,9 @@ Not captured: filtering. The free web app has no filter controls on the screens 
 
 ## Data display
 
-Lists, not tables. The leaderboard is a ranked list of 64px rows (rank, avatar, name, XP) where the learner's own row is filled `gamification.league.currentUserRow` and the promotion and demotion zones are marked by colour ([leaderboard-light-default](screenshots/leaderboard-light-default.png)). Quests are cards of rows with a progress bar (`dataViz.progress.*`) and a chest ([quests-light-default](screenshots/quests-light-default.png)); profile statistics are 2px-bordered tiles in a two-column grid ([profile-light-scrolled](screenshots/profile-light-scrolled.png)).
+Lists, mostly. The leaderboard is a ranked list of 64px rows (rank, avatar, name, XP) where the learner's own row is filled `gamification.league.currentUserRow` and the promotion and demotion zones are marked by colour ([leaderboard-light-default](screenshots/leaderboard-light-default.png)). Quests are cards of rows with a progress bar (`dataViz.progress.*`) and a chest ([quests-light-default](screenshots/quests-light-default.png)); profile statistics are 2px-bordered tiles in a two-column grid ([profile-light-scrolled](screenshots/profile-light-scrolled.png)).
 
-Not present: tables and charts.
+Tables appear only in the Guidebook, as static two-column phrase tables with a tinted header row and a 2px `border.selected` grid ([guidebook-light-table](screenshots/guidebook-light-table.png)). Not present: charts.
 
 ## Onboarding
 

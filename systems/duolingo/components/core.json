@@ -10879,6 +10879,59 @@
    "notes": null
   },
   {
+   "id": "table",
+   "name": "Table (Guidebook phrase table)",
+   "anatomy": [
+    "<table> cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card",
+    "header cells: tinted fill, 2px border on every side, outer top corners rounded 16px",
+    "body cells: no fill, 2px right and bottom borders; the grid is drawn by the cells (border-collapse separate, spacing 0)"
+   ],
+   "measurements": {
+    "table": "544 x 210 at 1440, radius 16px",
+    "header_row": "66px, padding 10px 16px",
+    "body_row": "48px, padding 10px 16px, 500 17px/22px",
+    "grid_line": "2px"
+   },
+   "tokens": {
+    "light": {
+     "table fill": "`text.onPrimary` #FFFFFF (snow, light)",
+     "header cell fill (at 0.3 alpha)": "`text.link` #1CB0F6 (macaw, light)",
+     "grid line border": "`border.selected` #84D8FF (blue-jay, light)",
+     "cell text": "`text.body` #3C3C3C (black-text, light)"
+    },
+    "dark": {
+     "table fill": "`text.onPrimary` #131F24 (snow, dark)",
+     "header cell fill (at 0.3 alpha)": "`text.link` #49C0F8 (macaw, dark)",
+     "grid line border": "`border.selected` #3F85A7 (blue-jay, dark)",
+     "cell text": "`text.body` #F1F7FB (black-text, dark)"
+    }
+   },
+   "type_style": "body (500, 17px/22px)",
+   "states": [
+    {
+     "state": "default",
+     "change": "as specified",
+     "source": "captured: guidebook-light-table, guidebook-dark-table (2026-10-17); dumps guidebook-*-default"
+    },
+    {
+     "state": "hover / focus / selected",
+     "change": "none; static reading content",
+     "source": "not interactive"
+    }
+   ],
+   "responsive": "no phone capture of the Guidebook",
+   "screenshots": {
+    "light": "../screenshots/guidebook-light-table.png",
+    "dark": "../screenshots/guidebook-dark-table.png"
+   },
+   "crops": [
+    "crops/table-light.png",
+    "crops/table-dark.png"
+   ],
+   "instances": [],
+   "notes": "Found by the 2026-10 review in the 2026-09 Guidebook dumps (below the fold in those screenshots) and captured on 2026-10-17."
+  },
+  {
    "id": "toast",
    "name": "Toast / snackbar",
    "anatomy": [
