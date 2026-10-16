@@ -5,7 +5,7 @@ version: "alpha"
 name: "Brilliant"
 description: "Interactive problem-solving lessons, course paths, a calm editorial learning UI (Panda CSS tokens)"
 colors:
-  primary: "#29cc57"
+  primary: "#456dff"
   neutral: "#ffffff"
   surface: "#f8f8f8"
   on-surface: "#000000"
@@ -316,6 +316,28 @@ colors:
   component-chart-bar: "#456dff"
   component-skeleton-from: "#f2f2f2"
   component-skeleton-to: "#e5e5e5"
+  accent-default: "#456dff"
+  accent-hover: "#6183ff"
+  accent-pressed: "#6183ff"
+  accent-lip: "#375ce3"
+  accent-on-accent: "#ffffff"
+  accent-focus: "#456dff"
+  feedback-success-fill: "#29cc57"
+  feedback-success-fill-subtle: "#d4f5dd"
+  feedback-success-text: "#009b2b"
+  feedback-success-border: "#29cc57"
+  feedback-warning-fill: "#f7c325"
+  feedback-warning-fill-subtle: "#fdf3d3"
+  feedback-warning-text: "#b78900"
+  feedback-warning-border: "#f7c325"
+  feedback-danger-fill: "#ff5d5d"
+  feedback-danger-fill-subtle: "#ffdfdf"
+  feedback-danger-text: "#c43939"
+  feedback-danger-border: "#ff5d5d"
+  feedback-info-fill-subtle: "#ecf0ff"
+  feedback-info-text: "#294bc6"
+  feedback-info-fill: "#456dff"
+  feedback-info-border: "#7491ff"
 typography:
   heading-sm:
     fontFamily: "CoFo Brilliant"
@@ -532,6 +554,7 @@ rounded:
   footer-card: "40px"
   button: "54px"
   button3d: "56px"
+  button3d-face: "60px"
   tile: "5px"
 spacing:
   "0": "0rem"
@@ -602,15 +625,15 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: Interactive problem-solving lessons, course paths, a calm editorial learning UI (Panda CSS tokens).
 
-Captured 2026-09-25, signed in, free account. Themes: light, dark.
+Captured 2026-10-17, signed in, free account. Themes: light, dark.
 
-A token set and component reference for Brilliant's web app, for building mockups in Figma or Paper that match the product. It was extracted from brilliant.org on 2026-09-25, signed in to a new free account on the Math path, in the app's light and dark themes, at desktop width and (for public pages) at a 390px mobile width.
+A token set, component reference and pattern guide for Brilliant's web app, for building mockups in Figma or Paper that match the product. It was extracted from brilliant.org on 2026-09-25, signed in to a new free account on the Math path, in the app's light and dark themes, at desktop width and (for public pages) at a 390px mobile width. It was refreshed on 2026-10-17 on a second free account: settings, You, Topics, Koji, the header menu and the lesson quit dialog were copied from the signed-in app and measured headless in both themes at 1440 and 390, every component state was forced and read, and the stylesheet was read for font stacks, focus rings and reduced motion.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#29cc57):** `light.bg.green-primary`
+- **primary (#456dff):** `light.accent.default`
 - **neutral (#ffffff):** `light.bg.primary`
 - **surface (#f8f8f8):** `light.bg.secondary`
 - **on-surface (#000000):** `light.text.primary`
@@ -626,17 +649,21 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 | Family | Weights | Used for |
 |---|---|---|
 | CoFo Brilliant | 400, 500, 700, with italics | All UI text |
-| CoFo Robert | 500, with italic | Display headlines (`display.*` styles), fallback Georgia |
+| CoFo Robert | 500, with italic | Display headlines (`display.*` styles) |
 | CoFo Semi Mono | 500, 700 | Lesson interactive tiles |
 | Source Code Pro | 400, 500, 700, with italics | Code |
 | KaTeX_Main | 400, 700, with italics | Maths |
 | Soleil | 400, 600, 700, 400 italic | Legacy Django pages only |
 
-No `font-feature-settings` are set anywhere. The CoFo families are proprietary and are not committed. The style guide looks for them in a local `fonts/` folder next to it (gitignored) and falls back to Figtree and Georgia, showing a notice when it does.
+Each family's stack is the one the production stylesheet declares (`--panda-fonts-*`, read 2026-10): `'CoFo Brilliant', sans-serif`; `'CoFo Robert', sans-serif`; `'CoFo Semi Mono', monospace`; `'Source Code Pro', monospace`; `'KaTeX_Main', serif`. So if CoFo Robert fails to load, the product's display headlines fall back to a sans, not a serif. No `font-feature-settings` are set anywhere. The CoFo families are proprietary and are not committed. The style guide looks for them in a local `fonts/` folder next to it (gitignored) and falls back to Figtree and Georgia (its own choice, to keep the display serif), showing a notice when it does.
 
 ## Layout
 
 Spacing from `core.spacing`: `0` 0rem, `0-5` 0.125rem, `1` 0.25rem, `1-5` 0.375rem, `2` 0.5rem, `2-5` 0.625rem, `3` 0.75rem, `3-5` 0.875rem, `4` 1rem, `4-5` 1.125rem, `5` 1.25rem, `5-5` 1.375rem, `6` 1.5rem, `7` 1.75rem, `8` 2rem, `9` 2.25rem, `10` 2.5rem, `11` 2.75rem, `12` 3rem, `14` 3.5rem, `16` 4rem, `20` 5rem, `24` 6rem, `28` 7rem, `32` 8rem, `36` 9rem, `40` 10rem, `44` 11rem, `48` 12rem, `52` 13rem, `56` 14rem, `60` 15rem, `64` 16rem, `72` 18rem, `80` 20rem, `96` 24rem.
+
+### Layout (from README.md)
+
+Breakpoints are Panda's (`core.breakpoint`, `lg` at 769px is the desktop switch). Content sits in one centred `layout.container` (1216px, 112px margins at 1440; 24px gutters at 390). There is no global column grid: Home is two columns (`layout.grid-home`, 384 and 592 with a 24px gap), Settings three (`layout.grid-settings`: side menu, 592px form, balancing column), and every page is one column on a phone. Layers are in `core.zIndex` (`app-bar`, `overlay`, `modal` and the lesson layers).
 
 ## Elevation & Depth
 
@@ -655,7 +682,7 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `none` 0px, `sm` 0.125rem, `base` 0.25rem, `xs` 0.375rem, `md` 0.5rem, `lg` 0.75rem, `xl` 1rem, `2xl` 1.25rem, `3xl` 2rem, `full` 9999px, `lesson-frame` 24px, `home-card` 24px, `path-artwork` 36px, `footer-card` 40px, `button` 54px, `button3d` 56px, `tile` 5px.
+Corner radii from `core.radius`: `none` 0px, `sm` 0.125rem, `base` 0.25rem, `xs` 0.375rem, `md` 0.5rem, `lg` 0.75rem, `xl` 1rem, `2xl` 1.25rem, `3xl` 2rem, `full` 9999px, `lesson-frame` 24px, `home-card` 24px, `path-artwork` 36px, `footer-card` 40px, `button` 54px, `button3d` 56px, `button3d-face` 60px, `tile` 5px.
 
 ## Components
 

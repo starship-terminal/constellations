@@ -1,0 +1,461 @@
+{
+ "_meta": {
+  "source": "Computed layout of the 2026-10-17 page copies, headless, at the captured viewport (1440x900; mobile-* 390x844)."
+ },
+ "home-dark-default": {
+  "viewport": "1440x900",
+  "header": [],
+  "contentColumns": [
+   {
+    "el": "hstack",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   },
+   {
+    "el": "vstack",
+    "maxWidth": "1440px",
+    "width": 1440,
+    "x": 0
+   },
+   {
+    "el": "box",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   },
+   {
+    "el": "vstack",
+    "maxWidth": "600px",
+    "width": 592,
+    "x": 628
+   },
+   {
+    "el": "box",
+    "maxWidth": "552px",
+    "width": 552,
+    "x": 444
+   }
+  ],
+  "grids": [
+   {
+    "el": "premium-button[Go Premium]",
+    "x": 970,
+    "width": 120,
+    "columns": "83.7344px",
+    "count": 1,
+    "gap": "normal / normal"
+   },
+   {
+    "el": "box",
+    "x": 112,
+    "width": 1216,
+    "columns": "384px 592px",
+    "count": 2,
+    "gap": "24px / 32px"
+   }
+  ]
+ },
+ "courses-dark-default": {
+  "viewport": "1440x900",
+  "header": [],
+  "contentColumns": [
+   {
+    "el": "hstack",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   },
+   {
+    "el": "vstack",
+    "maxWidth": "1440px",
+    "width": 1216,
+    "x": 112
+   },
+   {
+    "el": "box",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   },
+   {
+    "el": "flex",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   },
+   {
+    "el": "flex",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   },
+   {
+    "el": "box",
+    "maxWidth": "580px",
+    "width": 536,
+    "x": 256
+   }
+  ],
+  "grids": [
+   {
+    "el": "premium-button[Go Premium]",
+    "x": 970,
+    "width": 120,
+    "columns": "83.7344px",
+    "count": 1,
+    "gap": "normal / normal"
+   }
+  ]
+ },
+ "you-dark-empty": {
+  "viewport": "1440x900",
+  "header": [],
+  "contentColumns": [
+   {
+    "el": "hstack",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   },
+   {
+    "el": "vstack",
+    "maxWidth": "1440px",
+    "width": 1440,
+    "x": 0
+   },
+   {
+    "el": "box",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   }
+  ],
+  "grids": [
+   {
+    "el": "premium-button[Go Premium]",
+    "x": 970,
+    "width": 120,
+    "columns": "83.7344px",
+    "count": 1,
+    "gap": "normal / normal"
+   },
+   {
+    "el": "grid[Bar chart of problems solved. A data table follows.]",
+    "x": 178,
+    "width": 1084,
+    "columns": "9.96875px 1066.03px",
+    "count": 2,
+    "gap": "8px / 8px"
+   }
+  ]
+ },
+ "settings-dark-account": {
+  "viewport": "1440x900",
+  "header": [],
+  "contentColumns": [
+   {
+    "el": "hstack",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   }
+  ],
+  "grids": [
+   {
+    "el": "premium-button[Go Premium]",
+    "x": 970,
+    "width": 120,
+    "columns": "83.7344px",
+    "count": 1,
+    "gap": "normal / normal"
+   },
+   {
+    "el": "box",
+    "x": 0,
+    "width": 1440,
+    "columns": "424px 592px 424px",
+    "count": 3,
+    "gap": "0px / 0px"
+   }
+  ]
+ },
+ "settings-dark-preferences": {
+  "viewport": "1440x900",
+  "header": [],
+  "contentColumns": [
+   {
+    "el": "hstack",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   }
+  ],
+  "grids": [
+   {
+    "el": "premium-button[Go Premium]",
+    "x": 970,
+    "width": 120,
+    "columns": "83.7344px",
+    "count": 1,
+    "gap": "normal / normal"
+   },
+   {
+    "el": "box",
+    "x": 0,
+    "width": 1440,
+    "columns": "424px 592px 424px",
+    "count": 3,
+    "gap": "0px / 0px"
+   },
+   {
+    "el": "span",
+    "x": 951,
+    "width": 48,
+    "columns": "48px",
+    "count": 1,
+    "gap": "normal / normal"
+   },
+   {
+    "el": "span",
+    "x": 951,
+    "width": 48,
+    "columns": "48px",
+    "count": 1,
+    "gap": "normal / normal"
+   }
+  ]
+ },
+ "koji-dark-default": {
+  "viewport": "1440x900",
+  "header": [],
+  "contentColumns": [
+   {
+    "el": "hstack",
+    "maxWidth": "1216px",
+    "width": 1216,
+    "x": 112
+   },
+   {
+    "el": "vstack",
+    "maxWidth": "552px",
+    "width": 552,
+    "x": 444
+   },
+   {
+    "el": "box",
+    "maxWidth": "584px",
+    "width": 584,
+    "x": 428
+   }
+  ],
+  "grids": [
+   {
+    "el": "premium-button[Go Premium]",
+    "x": 970,
+    "width": 120,
+    "columns": "83.7344px",
+    "count": 1,
+    "gap": "normal / normal"
+   },
+   {
+    "el": "router-koji-opening-orbit",
+    "x": 444,
+    "width": 552,
+    "columns": "552px",
+    "count": 1,
+    "gap": "normal / normal"
+   }
+  ]
+ },
+ "mobile-home-dark-default": {
+  "viewport": "390x844",
+  "header": [],
+  "contentColumns": [
+   {
+    "el": "hstack",
+    "maxWidth": "1216px",
+    "width": 342,
+    "x": 24
+   },
+   {
+    "el": "vstack",
+    "maxWidth": "390px",
+    "width": 390,
+    "x": 0
+   },
+   {
+    "el": "box",
+    "maxWidth": "432px",
+    "width": 342,
+    "x": 24
+   },
+   {
+    "el": "heading",
+    "maxWidth": "90%",
+    "width": 315,
+    "x": 428
+   },
+   {
+    "el": "heading",
+    "maxWidth": "90%",
+    "width": 315,
+    "x": 428
+   }
+  ],
+  "grids": [
+   {
+    "el": "box",
+    "x": 24,
+    "width": 342,
+    "columns": "342px",
+    "count": 1,
+    "gap": "24px / 0px"
+   },
+   {
+    "el": "card-body",
+    "x": 0,
+    "width": 390,
+    "columns": "390px",
+    "count": 1,
+    "gap": "normal / normal"
+   },
+   {
+    "el": "card-body",
+    "x": 390,
+    "width": 390,
+    "columns": "390px",
+    "count": 1,
+    "gap": "normal / normal"
+   },
+   {
+    "el": "card-body",
+    "x": 390,
+    "width": 390,
+    "columns": "390px",
+    "count": 1,
+    "gap": "normal / normal"
+   },
+   {
+    "el": "card-body",
+    "x": 390,
+    "width": 390,
+    "columns": "390px",
+    "count": 1,
+    "gap": "normal / normal"
+   },
+   {
+    "el": "card-body",
+    "x": 390,
+    "width": 390,
+    "columns": "390px",
+    "count": 1,
+    "gap": "normal / normal"
+   }
+  ]
+ },
+ "mobile-courses-dark-default": {
+  "viewport": "390x844",
+  "header": [
+   {
+    "el": "nav[Learning plans]",
+    "height": 109,
+    "position": "sticky",
+    "top": 65,
+    "width": 390
+   }
+  ],
+  "contentColumns": [
+   {
+    "el": "hstack",
+    "maxWidth": "1216px",
+    "width": 342,
+    "x": 24
+   },
+   {
+    "el": "vstack",
+    "maxWidth": "390px",
+    "width": 390,
+    "x": 0
+   },
+   {
+    "el": "box",
+    "maxWidth": "100%",
+    "width": 390,
+    "x": 0
+   },
+   {
+    "el": "flex",
+    "maxWidth": "1216px",
+    "width": 390,
+    "x": 0
+   },
+   {
+    "el": "flex",
+    "maxWidth": "1216px",
+    "width": 390,
+    "x": 0
+   },
+   {
+    "el": "flex",
+    "maxWidth": "1216px",
+    "width": 390,
+    "x": 0
+   }
+  ],
+  "grids": []
+ },
+ "mobile-you-dark-empty": {
+  "viewport": "390x844",
+  "header": [],
+  "contentColumns": [
+   {
+    "el": "hstack",
+    "maxWidth": "1216px",
+    "width": 342,
+    "x": 24
+   },
+   {
+    "el": "vstack",
+    "maxWidth": "390px",
+    "width": 390,
+    "x": 0
+   },
+   {
+    "el": "box",
+    "maxWidth": "100%",
+    "width": 390,
+    "x": 0
+   }
+  ],
+  "grids": [
+   {
+    "el": "grid[Bar chart of problems solved. A data table follows.]",
+    "x": 50,
+    "width": 290,
+    "columns": "9.96875px 272.031px",
+    "count": 2,
+    "gap": "8px / 8px"
+   }
+  ]
+ },
+ "mobile-settings-dark-account": {
+  "viewport": "390x844",
+  "header": [],
+  "contentColumns": [
+   {
+    "el": "hstack",
+    "maxWidth": "1216px",
+    "width": 342,
+    "x": 24
+   },
+   {
+    "el": "vstack",
+    "maxWidth": "640px",
+    "width": 326,
+    "x": 32
+   }
+  ],
+  "grids": []
+ }
+}
