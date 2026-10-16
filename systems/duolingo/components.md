@@ -193,7 +193,7 @@ radiogroup container (column gap 12px for streak goal; 2-col grid gap 16px in se
 
 ### Toggle / switch
 
-<button aria-pressed class="_2mkWS"> 56x32, macaw; track span _1gwYP 56x24, 12px radius, background linear-gradient(to left, swan 50%, macaw 50%); knob = track ::before 30x32, snow fill, 2/2/4 border, 8px radius; transla. [Full spec](components/core.md#toggle--switch)
+`<button aria-pressed class="_2mkWS">` 56x32, macaw; track span _1gwYP 56x24, 12px radius, background linear-gradient(to left, swan 50%, macaw 50%); knob = track ::before 30x32, snow fill, 2/2/4 border, 8px radius; trans. [Full spec](components/core.md#toggle--switch)
 
 ![toggle light](components/crops/toggle-light.png) ![toggle dark](components/crops/toggle-dark.png)
 
