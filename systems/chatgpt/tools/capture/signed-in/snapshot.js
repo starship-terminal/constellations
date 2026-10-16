@@ -241,9 +241,15 @@ window.__snap = function (label, REDACT) {
     });
   }
   for (const a of ['data-theme-account-id', 'data-theme-user-id', 'data-page-load-id']) clone.removeAttribute(a);
-  eachString(clone, (o, k) => { let v = o[k]; titles.forEach((t, i) => { if (v.includes(t)) v = v.split(t).join('Sample title ' + (i + 1)); }); if (v !== o[k]) o[k] = v; });
+  // One pass over each string with every title in one alternation (longest first), so a
+  // replacement is never scanned again: a title such as "title" cannot rewrite "Sample title 1".
+  // The survival check blanks the placeholders before it looks, for the same reason.
+  const esc = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const TITLE_RE = titles.length ? new RegExp(titles.map(esc).join('|'), 'g') : null;
+  const PLACEHOLDER = /Sample title \d+/g;
+  if (TITLE_RE) eachString(clone, (o, k) => { const v = o[k].replace(TITLE_RE, (m) => 'Sample title ' + (titles.indexOf(m) + 1)); if (v !== o[k]) o[k] = v; });
   const left = new Set();
-  eachString(clone, (o, k) => titles.forEach((t) => { if (o[k].includes(t)) left.add(t); }));
+  eachString(clone, (o, k) => { const v = o[k].replace(PLACEHOLDER, '\u0000'); titles.forEach((t) => { if (v.includes(t)) left.add(t); }); });
   if (left.size) throw new Error(left.size + ' title(s) survived the scrub');
   let html = '<!doctype html>\n' + clone.outerHTML;
   for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
