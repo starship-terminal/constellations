@@ -185,9 +185,17 @@ def scripted(system: dict) -> dict[str, dict]:
 # ---------------------------------------------------------------- the snapshot
 
 
-def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str) -> dict:
-    """The newest audit with scripted grades replaced and capture rules applied. A package
-    in the catalog but not in the base audit is left out: it has no reviewed grades yet."""
+META = ("name", "goodFor", "url", "captured", "themes")
+
+
+def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
+             categories: dict | None = None, reviews: dict[str, dict] | None = None) -> dict:
+    """The newest audit with each package's details refreshed from the catalog, any fresh
+    reviews merged in, scripted grades replaced and capture rules applied. A package in
+    the catalog but not in the base audit is left out: it has no reviewed grades yet.
+
+    `reviews` maps a slug to {criterion: {grade, evidence}} from a new review of that
+    package; it may only set reviewed criteria, and the package records the review date."""
     out = copy.deepcopy(base)
     out.pop("_seq", None)
     out["date"] = date
@@ -198,14 +206,64 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str)
     out["method"] = METHOD.format(base=out["base"]) + out["reviewMethod"]
     by_slug = {s["slug"]: s for s in catalog_systems}
     capture_rules = {c["id"]: c["capture"] for c in criteria["criteria"] if c.get("capture")}
+    reviewable = {c["id"] for c in criteria["criteria"]} - set(SCRIPTED) - set(capture_rules)
+    for slug, grades in (reviews or {}).items():
+        if slug not in {s["slug"] for s in out["systems"]}:
+            raise SystemExit(f"review for {slug}: not in the newest audit")
+        wrong = sorted(set(grades) - reviewable)
+        if wrong:
+            raise SystemExit(f"review for {slug} sets {', '.join(wrong)}, which are scripted or capture rules")
+        # A review dates the whole package, so it must grade every reviewed criterion.
+        missing = sorted(reviewable - set(grades), key=lambda c: (c[0], int(c[1:]) if c[1:].isdigit() else 0))
+        if missing:
+            raise SystemExit(f"review for {slug} is incomplete; it also needs {', '.join(missing)}")
     for system in out["systems"]:
         source = by_slug.get(system["slug"])
         if not source:
             continue
+        for key in META:
+            if key in source:
+                system[key] = source[key]
+        if categories and source.get("category") in categories:
+            system["category"] = categories[source["category"]]
+        if system["slug"] in (reviews or {}):
+            system["grades"].update(reviews[system["slug"]])
+            system["reviewed"] = date
         system["grades"].update(scripted(source))
         for cid, reason in capture_rules.items():
             system["grades"][cid] = {"grade": "na", "evidence": f"Not applicable to a capture: {reason}"}
     return out
+
+
+def stale(criteria: dict, audit: dict, catalog_systems: list[dict], categories: dict) -> tuple[list, list]:
+    """Problems (scripted grades or package details that no longer match the packages)
+    and warnings (a package captured after its reviewed grades were last set)."""
+    problems, warnings = [], []
+    by_slug = {s["slug"]: s for s in catalog_systems}
+    for system in audit["systems"]:
+        source = by_slug.get(system["slug"])
+        if not source:
+            problems.append(f"{system['slug']}: in the scorecard but not in catalog.json")
+            continue
+        for cid, fresh in scripted(source).items():
+            saved = system["grades"].get(cid, {})
+            if saved != fresh:
+                problems.append(f"{system['slug']} {cid}: scorecard has {saved.get('grade')} "
+                                f"({saved.get('evidence', '')!r}), the package now gives {fresh['grade']} "
+                                f"({fresh['evidence']!r})")
+        for key in META:
+            if system.get(key) != source.get(key):
+                problems.append(f"{system['slug']}: scorecard {key} {system.get(key)!r} differs from catalog.json")
+        label = categories.get(source.get("category"))
+        if label and system.get("category") != label:
+            problems.append(f"{system['slug']}: scorecard category {system.get('category')!r} differs from {label!r}")
+        reviewed = system.get("reviewed", audit.get("base", audit["date"]))
+        if source.get("captured", "") > reviewed:
+            warnings.append(f"{system['slug']}: captured {source['captured']}, reviewed grades date from {reviewed}; "
+                            "re-review it and pass --review")
+    for slug in sorted(set(by_slug) - {s["slug"] for s in audit["systems"]}):
+        warnings.append(f"{slug}: in catalog.json but never reviewed for the scorecard")
+    return problems, warnings
 
 
 def next_path(date: str) -> Path:
@@ -220,16 +278,33 @@ def next_path(date: str) -> Path:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--write", action="store_true", help="write a new audit snapshot")
+    parser.add_argument("--check", action="store_true", help="fail if the newest snapshot is stale")
+    parser.add_argument("--review", action="append", default=[], metavar="SLUG=FILE",
+                        help="with --write, merge a fresh review of one package (JSON {criterion: {grade, evidence}})")
     parser.add_argument("--date", default=dt.date.today().isoformat(), help=argparse.SUPPRESS)
     args = parser.parse_args()
-    systems = catalog.load_catalog()["systems"]
+    cat = catalog.load_catalog()
+    systems, categories = cat["systems"], cat.get("categories", {})
+    if args.check:
+        criteria, audits = scorecard.load()
+        problems, warnings = stale(criteria, audits[-1], systems, categories)
+        for w in warnings:
+            print(f"warning: {w}")
+        if problems:
+            sys.exit("scorecard is stale; run `make grade`:\n  " + "\n  ".join(problems))
+        print("scorecard current")
+        return
     if not args.write:
         for s in systems:
             for cid, g in scripted(s).items():
                 print(f"{s['slug']:<16} {cid:<4} {g['grade']:<8} {g['evidence']}")
         return
     criteria, audits = scorecard.load()
-    out = snapshot(criteria, audits[-1], systems, args.date)
+    reviews = {}
+    for spec in args.review:
+        slug, _, path = spec.partition("=")
+        reviews[slug] = json.loads(Path(path).read_text())
+    out = snapshot(criteria, audits[-1], systems, args.date, categories, reviews)
     problems = scorecard.check(criteria, audits + [out])
     if problems:
         sys.exit("snapshot problems:\n  " + "\n  ".join(problems))

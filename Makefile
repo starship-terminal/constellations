@@ -30,6 +30,7 @@ grade: ## Re-grade the scripted criteria (contrast, provenance, Do and don't, DE
 
 check: ## Validate catalog.json against the packages on disk, including that every DESIGN.md is current
 	@$(PYTHON) tools/catalog.py check
+	@$(PYTHON) tools/grade.py --check
 
 design-md: ## Regenerate every package's DESIGN.md from its tokens and README
 	@$(PYTHON) tools/catalog.py design-md

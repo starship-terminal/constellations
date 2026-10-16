@@ -226,11 +226,7 @@ Also observed: white overlays at 2%, 5%, 7% and 8%; green and red translucent co
 
 Mercury White is #F4F5F8. Nordic Gray is displayed as #222326. The brand page's RGB prose for Nordic Gray says 35, 35, 38, which does not exactly match that hex; this package preserves the displayed hex and records the inconsistency instead of silently correcting it. Brand colors are not substitutes for UI text and surface tokens. Source: https://linear.app/brand.
 
-Status and label colors depend on workflow and configuration. The semantic tokens supplied here are reconstruction choices, not universal Linear assignments. Pair status color with icon shape and a text label.
-
-#### Official brand colors
-
-Mercury White is #F4F5F8. Nordic Gray is displayed as #222326. The brand page's RGB prose for Nordic Gray says 35, 35, 38, which does not exactly match that hex; this package preserves the displayed hex and records the inconsistency instead of silently correcting it. Brand colors are not substitutes for UI text and surface tokens. Source: https://linear.app/brand.
+Status colors (`dark.color.status.*`, `light.color.status.*`) are measured from this workspace's status menu icons. Workflows and labels are configurable, so another workspace can show different ones; pair status color with icon shape and a text label.
 
 ## Typography
 
@@ -262,7 +258,7 @@ These are `core.typography.*` in the tokens. The public site's type follows.
 | Tiempos Headline | Editorial display heading on Linear Method | `method-styles.json`: 128px / 128px, weight 400 |
 | Linear Thai | Fallback name present in authentication font stack | Presence in stack only; actual Thai glyph rendering not tested |
 
-The authenticated app visually resembles Inter, but its exact computed text and code font families were not inspected. Preferences explicitly showed code Font: 12px, Regular, Default. Do not treat the public Berkeley Mono declaration as proof of the account's configured code font.
+The 2026-10-17 refresh read the signed-in app's font stacks from its CSS: `--font-regular` starts with Inter Variable and `--font-monospace` with Berkeley Mono (`core.font.family.ui`, `core.font.family.mono`). Which face renders depends on what is installed; the account's code font preference showed 12px, Regular, Default.
 
 The public Inter stack is `"Inter Variable", "SF Pro Display", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`. The mono stack is `"Berkeley Mono", ui-monospace, "SF Mono", Menlo, monospace`. Tiempos falls back to a system serif/Georgia family.
 

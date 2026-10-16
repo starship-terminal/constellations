@@ -145,6 +145,66 @@ class SnapshotTest(unittest.TestCase):
         self.assertEqual(second["method"].count("Review."), 1)
 
 
+class RefreshAndReviewTest(unittest.TestCase):
+    CRITERIA = SnapshotTest.CRITERIA
+    BASE = {"date": "2026-10-16", "method": "Review.", "systems": [
+        {"slug": "x", "name": "Old", "goodFor": "old", "url": "u", "captured": "2026-09-01", "themes": ["dark"],
+         "category": "Learning", "grades": {"F15": {"grade": "meets", "evidence": "e"},
+                                            "V1": {"grade": "na", "evidence": "n"},
+                                            "C1": {"grade": "partly", "evidence": "11/19"}}}]}
+    SOURCE = {"slug": "x", "name": "New", "goodFor": "new", "url": "u", "captured": "2026-10-17",
+              "themes": ["dark", "light"], "category": "productivity"}
+
+    def make(self, reviews=None):
+        with mock.patch.object(grade, "scripted", return_value={"F15": {"grade": "meets", "evidence": "s"}}):
+            return grade.snapshot(self.CRITERIA, self.BASE, [self.SOURCE], "2026-10-17",
+                                  {"productivity": "Productivity"}, reviews)
+
+    def test_package_details_come_from_the_catalog(self):
+        s = self.make()["systems"][0]
+        self.assertEqual((s["name"], s["themes"], s["captured"], s["category"]),
+                         ("New", ["dark", "light"], "2026-10-17", "Productivity"))
+
+    def test_a_review_replaces_reviewed_grades_and_records_its_date(self):
+        s = self.make({"x": {"C1": {"grade": "meets", "evidence": "17/19"}}})["systems"][0]
+        self.assertEqual(s["grades"]["C1"]["grade"], "meets")
+        self.assertEqual(s["reviewed"], "2026-10-17")
+
+    def test_a_review_cannot_set_scripted_or_capture_criteria(self):
+        for cid in ("F15", "V1"):
+            with self.assertRaises(SystemExit):
+                self.make({"x": {cid: {"grade": "meets", "evidence": "x"}}})
+
+    def test_an_incomplete_review_is_refused(self):
+        criteria = {**self.CRITERIA, "criteria": self.CRITERIA["criteria"] + [
+            {"id": "C2", "layer": "Foundations", "title": "States", "doneWhen": "w"}]}
+        with mock.patch.object(grade, "scripted", return_value={}), self.assertRaises(SystemExit) as e:
+            grade.snapshot(criteria, self.BASE, [self.SOURCE], "2026-10-17", {},
+                           {"x": {"C1": {"grade": "meets", "evidence": "17/19"}}})
+        self.assertIn("C2", str(e.exception))
+
+    def test_stale_catches_new_measurements_and_categories_within_a_grade(self):
+        fresh = self.make({"x": {"C1": {"grade": "meets", "evidence": "17/19"}}})
+        moved = {"F15": {"grade": "meets", "evidence": "a different ratio"}}
+        with mock.patch.object(grade, "scripted", return_value=moved):
+            problems, _ = grade.stale(self.CRITERIA, fresh, [self.SOURCE], {"productivity": "Productivity"})
+        self.assertTrue(any("F15" in p for p in problems))
+        with mock.patch.object(grade, "scripted", return_value={"F15": {"grade": "meets", "evidence": "s"}}):
+            problems, _ = grade.stale(self.CRITERIA, fresh, [self.SOURCE], {"productivity": "Tools"})
+        self.assertTrue(any("category" in p for p in problems))
+
+    def test_stale_reports_changed_details_and_old_reviews(self):
+        with mock.patch.object(grade, "scripted", return_value={"F15": {"grade": "partly", "evidence": "s"}}):
+            problems, warnings = grade.stale(self.CRITERIA, self.BASE, [self.SOURCE], {})
+        self.assertTrue(any("F15" in p for p in problems))
+        self.assertTrue(any("themes" in p for p in problems))
+        self.assertTrue(any("captured 2026-10-17" in w for w in warnings))
+        fresh = self.make({"x": {"C1": {"grade": "meets", "evidence": "17/19"}}})
+        with mock.patch.object(grade, "scripted", return_value={"F15": {"grade": "meets", "evidence": "s"}}):
+            problems, warnings = grade.stale(self.CRITERIA, fresh, [self.SOURCE], {"productivity": "Productivity"})
+        self.assertEqual((problems, warnings), ([], []))
+
+
 class OrderTest(unittest.TestCase):
     def test_same_day_snapshots_load_in_run_order(self):
         with tempfile.TemporaryDirectory() as d:
