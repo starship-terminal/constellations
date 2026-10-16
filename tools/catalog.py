@@ -24,8 +24,10 @@ import json
 import math
 import re
 import shutil
+import posixpath
 import subprocess
 import sys
+import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -1105,6 +1107,24 @@ def build() -> Path:
 REPO_PATHS = ("/systems/", "/tools/", "/example/", "/catalog.json", "/README.md")
 
 
+def repo_file(url_path: str) -> Path | None:
+    """The checkout file a request under REPO_PATHS maps to, or None.
+
+    The path is unquoted and normalised before the prefix check, so `..` segments
+    (plain or percent-encoded) can never climb out of the allowed folders, and the
+    resolved file must still sit inside the checkout, so a symlink cannot either."""
+    clean = urllib.parse.unquote(url_path.split("?", 1)[0].split("#", 1)[0])
+    norm = posixpath.normpath(clean)
+    if not any(norm == p.rstrip("/") or norm.startswith(p) for p in REPO_PATHS):
+        return None
+    root = ROOT.resolve()
+    target = (root / norm.lstrip("/")).resolve()
+    allowed = [(root / p.strip("/")).resolve() for p in REPO_PATHS]
+    if not any(target == a or a in target.parents for a in allowed):
+        return None
+    return target
+
+
 def build_docs() -> None:
     """Generate the scorecard pages, then build the whole docs site into site/."""
     subprocess.run([sys.executable, str(ROOT / "tools" / "scorecard.py")], check=True)
@@ -1122,10 +1142,8 @@ def serve(port: int) -> None:
 
     class Handler(http.server.SimpleHTTPRequestHandler):
         def translate_path(self, path):
-            clean = path.split("?", 1)[0].split("#", 1)[0]
-            if any(clean == p or clean.startswith(p) for p in REPO_PATHS):
-                return str(ROOT) + clean
-            return super().translate_path(path)
+            target = repo_file(path)
+            return str(target) if target else super().translate_path(path)
 
         def log_message(self, *args):
             pass
