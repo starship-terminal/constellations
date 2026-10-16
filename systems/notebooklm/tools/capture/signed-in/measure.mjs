@@ -216,6 +216,10 @@ function styleOf(el, props) {
     if (!isIcon(t)) { tn = t; break; }
     iconTn = iconTn || t;
   }
+  if (iconTn) {
+    const ic = getComputedStyle(iconTn.parentElement);
+    out.iconStyle = { node: short(iconTn.parentElement), text: iconTn.textContent.trim().slice(0, 40), fontFamily: ic.fontFamily, fontSize: ic.fontSize, fontVariationSettings: ic.fontVariationSettings, color: ic.color };
+  }
   tn = tn || iconTn;
   if (tn && tn.parentElement !== el) {
     const t = tn.parentElement;
@@ -454,6 +458,8 @@ async function measureSnap(browser, label, specs, out) {
               f.querySelectorAll('.mdc-text-field').forEach((t) => t.classList.toggle('mdc-text-field--focused', mine));
             }
           }, job.base === 'focus-visible');
+          // The label and outline animate between focused and resting colours; read after they settle.
+          await page.waitForTimeout(400);
         }
         await ensureVisible(loc);
         let via = job.variant && job.base === 'default' ? `at rest, captured ${job.state}` : 'at rest';

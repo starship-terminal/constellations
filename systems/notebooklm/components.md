@@ -238,7 +238,7 @@ The destructive action is a tonal button; it was never clicked.
 |---|---|---|---|
 | Size (w x h) | 386 x `size.field` | 386 x `size.field` | 386 x `size.field` |
 | Fill | none | none | none |
-| Text | rgba(233,233,233,0.92) (raw) / `text.primary` | `text.primary` | `text.primary` |
+| Text | `text.secondary` | `text.primary` | `text.primary` |
 | Type | Google Sans Flex 17px/normal 400 (raw) | Google Sans Flex 17px/normal 400 (raw) | Google Sans Flex 17px/normal 400 (raw) |
 | Border | `borderWidth.hairline` `border.subtle` (div) | `borderWidth.hairline` `border.field` (div) | `borderWidth.field-focus` `border.field` (div) |
 | Focus ring | none | none | outline thickens to `borderWidth.field-focus` `border.field` |
@@ -960,4 +960,4 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 - **Avatar**: the photo was replaced by a grey disc in the copy, so only its size and shape are the product's.
 - **Studio outputs** (Audio and Video Overviews, mind map, flashcards, quiz) open player or iframe views that were not recaptured on 2026-10-17; the 2026-09-25 package measured some from screenshots and those readings are not carried over.
 
-Token coverage: 1703 cells name a token, 225 are raw values.
+Token coverage: 1704 cells name a token, 224 are raw values.

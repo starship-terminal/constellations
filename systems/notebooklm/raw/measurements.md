@@ -54,6 +54,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #e6e6e6 | = | = | = |
 | Text node | span: Google Sans Flex 15px/20px 400, #e6e6e6 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "add_2": Luminous Symbols 20px, #e6e6e6 | = | = | = |
 | Transition | box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | default | pointer | = | pointer |
 | Painted layers | button.mdc-button.mat-mdc-button-base.mat-badge 147.1x36.0 bg #1f3b9b r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 147.094pxx36px bg #e6e6e6 r 9999px opacity 0 | button.mdc-button.mat-mdc-button-base.mat-badge 147.1x36.0 bg #1f3b9b r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 147.094pxx36px bg #e6e6e6 r 9999px opacity 0.08 | button.mdc-button.mat-mdc-button-base.mat-badge 147.1x36.0 bg #1f3b9b r 9999px outline 3px solid #e6e6e6 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 147.094pxx36px bg #e6e6e6 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #e6e6e6 / R:3px solid #e6e6e6 / B:3px solid #e6e6e6 / L:3px solid #e6e6e6 r 9999px | button.mdc-button.mat-mdc-button-base.mat-badge 147.1x36.0 bg #1f3b9b r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 147.094pxx36px bg #e6e6e6 r 9999px opacity 0.12 |
@@ -74,6 +75,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
 | Text node | span: Google Sans Flex 15px/20px 400, #000000 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "add_2": Luminous Symbols 20px, #000000 | = | = | = |
 | Transition | box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | default | pointer | = | pointer |
 | Painted layers | button.mdc-button.mat-mdc-button-base.mat-badge 147.1x36.0 bg #9dd2ff r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 147.094pxx36px bg #000000 r 9999px opacity 0 | button.mdc-button.mat-mdc-button-base.mat-badge 147.1x36.0 bg #9dd2ff r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 147.094pxx36px bg #000000 r 9999px opacity 0.08 | button.mdc-button.mat-mdc-button-base.mat-badge 147.1x36.0 bg #9dd2ff r 9999px outline 3px solid #000000 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 147.094pxx36px bg #000000 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #000000 / R:3px solid #000000 / B:3px solid #000000 / L:3px solid #000000 r 9999px | button.mdc-button.mat-mdc-button-base.mat-badge 147.1x36.0 bg #9dd2ff r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 147.094pxx36px bg #000000 r 9999px opacity 0.12 |
@@ -102,6 +104,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #e6e6e6 | = | = | = |
 | Text node | span: Google Sans Flex 15px/20px 400, #e6e6e6 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "add_2": Luminous Symbols 20px, #e6e6e6 | = | = | = |
 | Transition | box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | default | pointer | = | pointer |
 | Painted layers | button.mdc-button.mat-mdc-button-base.mat-badge 336.0x36.0 bg #171717 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx36px bg #e6e6e6 r 9999px opacity 0 | button.mdc-button.mat-mdc-button-base.mat-badge 336.0x36.0 bg #171717 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx36px bg #e6e6e6 r 9999px opacity 0.08 | button.mdc-button.mat-mdc-button-base.mat-badge 336.0x36.0 bg #171717 r 9999px outline 3px solid #e6e6e6 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx36px bg #e6e6e6 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #e6e6e6 / R:3px solid #e6e6e6 / B:3px solid #e6e6e6 / L:3px solid #e6e6e6 r 9999px | button.mdc-button.mat-mdc-button-base.mat-badge 336.0x36.0 bg #171717 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx36px bg #e6e6e6 r 9999px opacity 0.12 |
@@ -122,6 +125,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
 | Text node | span: Google Sans Flex 15px/20px 400, #000000 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "add_2": Luminous Symbols 20px, #000000 | = | = | = |
 | Transition | box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | default | pointer | = | pointer |
 | Painted layers | button.mdc-button.mat-mdc-button-base.mat-badge 336.0x36.0 bg #f2f0f0 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx36px bg #000000 r 9999px opacity 0 | button.mdc-button.mat-mdc-button-base.mat-badge 336.0x36.0 bg #f2f0f0 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx36px bg #000000 r 9999px opacity 0.08 | button.mdc-button.mat-mdc-button-base.mat-badge 336.0x36.0 bg #f2f0f0 r 9999px outline 3px solid #000000 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx36px bg #000000 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #000000 / R:3px solid #000000 / B:3px solid #000000 / L:3px solid #000000 r 9999px | button.mdc-button.mat-mdc-button-base.mat-badge 336.0x36.0 bg #f2f0f0 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx36px bg #000000 r 9999px opacity 0.12 |
@@ -150,6 +154,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #e6e6e6 | = | = | = |
 | Text node | span: Google Sans Flex 15px/20px 400, #e6e6e6 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "add_2": Luminous Symbols 20px, #e6e6e6 | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | default | pointer | = | pointer |
 | Painted layers | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 170.875pxx36px bg #e6e6e6 r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 170.875pxx36px bg #e6e6e6 r 9999px opacity 0.08 | button.mdc-button.mat-mdc-button-base.mat-badge 170.9x36.0 r 9999px outline 3px solid #e6e6e6 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 170.875pxx36px bg #e6e6e6 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #e6e6e6 / R:3px solid #e6e6e6 / B:3px solid #e6e6e6 / L:3px solid #e6e6e6 r 9999px | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 170.875pxx36px bg #e6e6e6 r 9999px opacity 0.12 |
@@ -170,6 +175,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
 | Text node | span: Google Sans Flex 15px/20px 400, #000000 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "add_2": Luminous Symbols 20px, #000000 | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | default | pointer | = | pointer |
 | Painted layers | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 170.875pxx36px bg #000000 r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 170.875pxx36px bg #000000 r 9999px opacity 0.08 | button.mdc-button.mat-mdc-button-base.mat-badge 170.9x36.0 r 9999px outline 3px solid #000000 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 170.875pxx36px bg #000000 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #000000 / R:3px solid #000000 / B:3px solid #000000 / L:3px solid #000000 r 9999px | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 170.875pxx36px bg #000000 r 9999px opacity 0.12 |
@@ -199,6 +205,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #e6e6e6 | = | = | = |
 | Text node | span: Google Sans Flex 17px/24px 370, #e6e6e6 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.google-symbols "upload": Luminous Symbols 18px, #ffffff @ 0.55 | = | = | = |
 | Transition | background-color, border-color 0.2s, 0.2s ease-in-out, ease-in-out delay 0s, 0s | = | = | = |
 | Cursor | default | pointer | = | pointer |
 | Painted layers | button.mdc-button.mat-mdc-button-base.source-action-button 140.5x40.0 border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 140.453pxx40px bg #e6e6e6 r 9999px opacity 0 | button.mdc-button.mat-mdc-button-base.source-action-button 140.5x40.0 bg #e6e6e6 @ 0.08 border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 140.453pxx40px bg #e6e6e6 r 9999px opacity 0.08 | button.mdc-button.mat-mdc-button-base.source-action-button 140.5x40.0 border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 140.453pxx40px bg #e6e6e6 r 9999px opacity 0; span.mat-focus-indicator::before 150.453pxx50px border T:3px solid #c3cafc / R:3px solid #c3cafc / B:3px solid #c3cafc / L:3px solid #c3cafc r 9999px | button.mdc-button.mat-mdc-button-base.source-action-button 140.5x40.0 bg #e6e6e6 @ 0.08 border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 140.453pxx40px bg #e6e6e6 r 9999px opacity 0.12 |
@@ -220,6 +227,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
 | Text node | span: Google Sans Flex 17px/24px 370, #000000 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.google-symbols "upload": Luminous Symbols 18px, #000000 @ 0.55 | = | = | = |
 | Transition | background-color, border-color 0.2s, 0.2s ease-in-out, ease-in-out delay 0s, 0s | = | = | = |
 | Cursor | default | pointer | = | pointer |
 | Painted layers | button.mdc-button.mat-mdc-button-base.source-action-button 140.5x40.0 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 140.453pxx40px bg #000000 r 9999px opacity 0 | button.mdc-button.mat-mdc-button-base.source-action-button 140.5x40.0 bg #000000 @ 0.08 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 140.453pxx40px bg #000000 r 9999px opacity 0.08 | button.mdc-button.mat-mdc-button-base.source-action-button 140.5x40.0 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 140.453pxx40px bg #000000 r 9999px opacity 0; span.mat-focus-indicator::before 150.453pxx50px border T:3px solid #4259ff / R:3px solid #4259ff / B:3px solid #4259ff / L:3px solid #4259ff r 9999px | button.mdc-button.mat-mdc-button-base.source-action-button 140.5x40.0 bg #000000 @ 0.08 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 140.453pxx40px bg #000000 r 9999px opacity 0.12 |
@@ -396,6 +404,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #e6e6e6 | = | = | = |
 | Text node | mat-icon.mat-icon.notranslate.nb-icon-size-large: Luminous Symbols 20px/20px 400, #e6e6e6 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "settings": Luminous Symbols 20px, #e6e6e6 | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | Painted layers | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #e6e6e6 r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #e6e6e6 r 9999px opacity 0.08 | button.mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base 36.0x36.0 r 9999px outline 3px solid #e6e6e6 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #e6e6e6 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #e6e6e6 / R:3px solid #e6e6e6 / B:3px solid #e6e6e6 / L:3px solid #e6e6e6 r 9999px | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #e6e6e6 r 9999px opacity 0.12 |
@@ -416,6 +425,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
 | Text node | mat-icon.mat-icon.notranslate.nb-icon-size-large: Luminous Symbols 20px/20px 400, #000000 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "settings": Luminous Symbols 20px, #000000 | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | Painted layers | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #000000 r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #000000 r 9999px opacity 0.08 | button.mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base 36.0x36.0 r 9999px outline 3px solid #000000 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #000000 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #000000 / R:3px solid #000000 / B:3px solid #000000 / L:3px solid #000000 r 9999px | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #000000 r 9999px opacity 0.12 |
@@ -444,6 +454,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #ababab | = | = | = |
 | Text node | mat-icon.mat-icon.notranslate.nb-icon-size-large: Luminous Symbols 20px/20px 400, #ababab | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "more_vert": Luminous Symbols 20px, #ababab | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | Painted layers | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 28pxx28px bg #ababab r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 28pxx28px bg #ababab r 9999px opacity 0.08 | button.mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base 28.0x28.0 r 9999px outline 3px solid #e6e6e6 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 28pxx28px bg #ababab r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #e6e6e6 / R:3px solid #e6e6e6 / B:3px solid #e6e6e6 / L:3px solid #e6e6e6 r 9999px | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 28pxx28px bg #ababab r 9999px opacity 0.12 |
@@ -464,6 +475,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #5e5e5e | = | = | = |
 | Text node | mat-icon.mat-icon.notranslate.nb-icon-size-large: Luminous Symbols 20px/20px 400, #5e5e5e | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "more_vert": Luminous Symbols 20px, #5e5e5e | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | Painted layers | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 28pxx28px bg #5e5e5e r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 28pxx28px bg #5e5e5e r 9999px opacity 0.08 | button.mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base 28.0x28.0 r 9999px outline 3px solid #000000 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 28pxx28px bg #5e5e5e r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #000000 / R:3px solid #000000 / B:3px solid #000000 / L:3px solid #000000 r 9999px | span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 28pxx28px bg #5e5e5e r 9999px opacity 0.12 |
@@ -492,6 +504,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #e6e6e6 | = | = | = |
 | Text node | span.search-pill-label: Google Sans Flex 15px/20px 400, #ffffff @ 0.55 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "search": Luminous Symbols 20px, #ffffff @ 0.55 | = | = | = |
 | Transition | border 0.28s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | text | = | = | = |
 | Painted layers | button.mdc-button.mat-mdc-button-base.mat-badge 256.0x36.0 border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 256pxx36px bg #e6e6e6 r 9999px opacity 0 | button.mdc-button.mat-mdc-button-base.mat-badge 256.0x36.0 border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 256pxx36px bg #171717 r 9999px | button.mdc-button.mat-mdc-button-base.mat-badge 256.0x36.0 border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 9999px outline 3px solid #e6e6e6 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 256pxx36px bg #e6e6e6 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #e6e6e6 / R:3px solid #e6e6e6 / B:3px solid #e6e6e6 / L:3px solid #e6e6e6 r 9999px | button.mdc-button.mat-mdc-button-base.mat-badge 256.0x36.0 border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 256pxx36px bg #171717 r 9999px |
@@ -512,6 +525,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
 | Text node | span.search-pill-label: Google Sans Flex 15px/20px 400, #000000 @ 0.55 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.nb-icon-size-large "search": Luminous Symbols 20px, #000000 @ 0.55 | = | = | = |
 | Transition | border 0.28s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | text | = | = | = |
 | Painted layers | button.mdc-button.mat-mdc-button-base.mat-badge 256.0x36.0 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 256pxx36px bg #000000 r 9999px opacity 0 | button.mdc-button.mat-mdc-button-base.mat-badge 256.0x36.0 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 256pxx36px bg #f2f0f0 r 9999px | button.mdc-button.mat-mdc-button-base.mat-badge 256.0x36.0 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 9999px outline 3px solid #000000 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 256pxx36px bg #000000 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #000000 / R:3px solid #000000 / B:3px solid #000000 / L:3px solid #000000 r 9999px | button.mdc-button.mat-mdc-button-base.mat-badge 256.0x36.0 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 256pxx36px bg #f2f0f0 r 9999px |
@@ -635,7 +649,7 @@ Dark theme.
 | Font | Google Sans Flex 17px/24px 400 | = | = |
 | Letter spacing | normal | = | = |
 | Colour | #c7c7c7 | = | = |
-| Text node | mat-label: Google Sans Flex 17px/normal 400, #e9e9e9 @ 0.92 | mat-label: Google Sans Flex 17px/normal 400, #e6e6e6 | mat-label: Google Sans Flex 17px/normal 400, #e6e6e6 |
+| Text node | mat-label: Google Sans Flex 17px/normal 400, #ffffff @ 0.55 | mat-label: Google Sans Flex 17px/normal 400, #e6e6e6 | mat-label: Google Sans Flex 17px/normal 400, #e6e6e6 |
 | Transition | none | = | = |
 | Placeholder | "" #e6e6e6, opacity 1, 17px | = | = |
 | Painted layers | div.mat-mdc-notch-piece.mdc-notched-outline__leading 16.0x56.0 border T:1px solid #37383b / B:1px solid #37383b / L:1px solid #37383b r 16px 0px 0px 16px; div.mat-mdc-notch-piece.mdc-notched-outline__notch 138.8x56.0 border B:1px solid #37383b / L:1px solid #000000 @ 0; div.mat-mdc-notch-piece.mdc-notched-outline__trailing 232.3x56.0 border T:1px solid #37383b / R:1px solid #37383b / B:1px solid #37383b r 0px 16px 16px 0px | div.mat-mdc-notch-piece.mdc-notched-outline__leading 16.0x56.0 border T:1px solid #e6e6e6 / B:1px solid #e6e6e6 / L:1px solid #e6e6e6 r 16px 0px 0px 16px; div.mat-mdc-notch-piece.mdc-notched-outline__notch 138.8x56.0 border B:1px solid #e6e6e6 / L:1px solid #000000 @ 0; div.mat-mdc-notch-piece.mdc-notched-outline__trailing 232.3x56.0 border T:1px solid #e6e6e6 / R:1px solid #e6e6e6 / B:1px solid #e6e6e6 r 0px 16px 16px 0px | div.mat-mdc-notch-piece.mdc-notched-outline__leading 16.0x56.0 border T:2px solid #e6e6e6 / B:2px solid #e6e6e6 / L:2px solid #e6e6e6 r 16px 0px 0px 16px; div.mat-mdc-notch-piece.mdc-notched-outline__notch 138.8x56.0 border B:2px solid #e6e6e6 / L:1px solid #000000 @ 0; div.mat-mdc-notch-piece.mdc-notched-outline__trailing 232.3x56.0 border T:2px solid #e6e6e6 / R:2px solid #e6e6e6 / B:2px solid #e6e6e6 r 0px 16px 16px 0px |
@@ -655,7 +669,7 @@ Light theme.
 | Font | Google Sans Flex 17px/24px 400 | = | = |
 | Letter spacing | normal | = | = |
 | Colour | #303030 | = | = |
-| Text node | mat-label: Google Sans Flex 17px/normal 400, #000000 | = | = |
+| Text node | mat-label: Google Sans Flex 17px/normal 400, #000000 @ 0.55 | mat-label: Google Sans Flex 17px/normal 400, #000000 | mat-label: Google Sans Flex 17px/normal 400, #000000 |
 | Transition | none | = | = |
 | Placeholder | "" #000000, opacity 1, 17px | = | = |
 | Painted layers | div.mat-mdc-notch-piece.mdc-notched-outline__leading 16.0x56.0 border T:1px solid #dde1eb / B:1px solid #dde1eb / L:1px solid #dde1eb r 16px 0px 0px 16px; div.mat-mdc-notch-piece.mdc-notched-outline__notch 138.8x56.0 border B:1px solid #dde1eb / L:1px solid #000000 @ 0; div.mat-mdc-notch-piece.mdc-notched-outline__trailing 232.3x56.0 border T:1px solid #dde1eb / R:1px solid #dde1eb / B:1px solid #dde1eb r 0px 16px 16px 0px | div.mat-mdc-notch-piece.mdc-notched-outline__leading 16.0x56.0 border T:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 r 16px 0px 0px 16px; div.mat-mdc-notch-piece.mdc-notched-outline__notch 138.8x56.0 border B:1px solid #000000 / L:1px solid #000000 @ 0; div.mat-mdc-notch-piece.mdc-notched-outline__trailing 232.3x56.0 border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 r 0px 16px 16px 0px | div.mat-mdc-notch-piece.mdc-notched-outline__leading 16.0x56.0 border T:2px solid #000000 / B:2px solid #000000 / L:2px solid #000000 r 16px 0px 0px 16px; div.mat-mdc-notch-piece.mdc-notched-outline__notch 138.8x56.0 border B:2px solid #000000 / L:1px solid #000000 @ 0; div.mat-mdc-notch-piece.mdc-notched-outline__trailing 232.3x56.0 border T:2px solid #000000 / R:2px solid #000000 / B:2px solid #000000 r 0px 16px 16px 0px |
@@ -684,6 +698,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #c7c7c7 | = | = | = |
 | Text node | mat-icon.mat-icon.notranslate.search-icon: Luminous Symbols 20px/20px 400, #ffffff @ 0.55 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.search-icon "search": Luminous Symbols 20px, #ffffff @ 0.55 | = | = | = |
 | Transition | none | = | = | = |
 | Placeholder | "Search notebooks by keywords or topics.." #ffffff @ 0.55, opacity 1, 17px | = | = | = |
 | Painted layers | div.mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--outlined 650.0x44.0 bg #1f1f1f r 9999px shadow #000000 @ 0.28 0px 0px 20px 0px; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #ababab r 9999px opacity 0 | = | = | = |
@@ -704,6 +719,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #303030 | = | = | = |
 | Text node | mat-icon.mat-icon.notranslate.search-icon: Luminous Symbols 20px/20px 400, #000000 @ 0.55 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.search-icon "search": Luminous Symbols 20px, #000000 @ 0.55 | = | = | = |
 | Transition | none | = | = | = |
 | Placeholder | "Search notebooks by keywords or topics.." #000000 @ 0.55, opacity 1, 17px | = | = | = |
 | Painted layers | div.mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--outlined 650.0x44.0 bg #ffffff r 9999px shadow #000000 @ 0.04 0px 0px 20px 0px; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #5e5e5e r 9999px opacity 0 | = | = | = |
@@ -978,6 +994,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #e6e6e6 | = | = | = |
 | Text node | span.corpus-select-label: Google Sans Flex 15px/20px 400, #e6e6e6 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.corpus-select-icon "language": Luminous Symbols 20px, #e6e6e6 | = | = | = |
 | Transition | box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | default | pointer | = | pointer |
 | Painted layers | button.mdc-button.mat-mdc-button-base.mat-badge 102.5x36.0 bg #1f1f1f r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 102.453pxx36px bg #e6e6e6 r 9999px opacity 0 | button.mdc-button.mat-mdc-button-base.mat-badge 102.5x36.0 bg #1f1f1f r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 102.453pxx36px bg #e6e6e6 r 9999px opacity 0.08 | button.mdc-button.mat-mdc-button-base.mat-badge 102.5x36.0 bg #1f1f1f r 9999px outline 3px solid #e6e6e6 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 102.453pxx36px bg #e6e6e6 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #e6e6e6 / R:3px solid #e6e6e6 / B:3px solid #e6e6e6 / L:3px solid #e6e6e6 r 9999px | button.mdc-button.mat-mdc-button-base.mat-badge 102.5x36.0 bg #1f1f1f r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 102.453pxx36px bg #e6e6e6 r 9999px opacity 0.12 |
@@ -998,6 +1015,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
 | Text node | span.corpus-select-label: Google Sans Flex 15px/20px 400, #000000 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.corpus-select-icon "language": Luminous Symbols 20px, #000000 | = | = | = |
 | Transition | box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | default | pointer | = | pointer |
 | Painted layers | button.mdc-button.mat-mdc-button-base.mat-badge 102.5x36.0 bg #ffffff r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 102.453pxx36px bg #000000 r 9999px opacity 0 | button.mdc-button.mat-mdc-button-base.mat-badge 102.5x36.0 bg #ffffff r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 102.453pxx36px bg #000000 r 9999px opacity 0.08 | button.mdc-button.mat-mdc-button-base.mat-badge 102.5x36.0 bg #ffffff r 9999px outline 3px solid #000000 offset 2px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 102.453pxx36px bg #000000 r 9999px opacity 0; span.mat-focus-indicator::before autoxauto border T:3px solid #000000 / R:3px solid #000000 / B:3px solid #000000 / L:3px solid #000000 r 9999px | button.mdc-button.mat-mdc-button-base.mat-badge 102.5x36.0 bg #ffffff r 9999px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 102.453pxx36px bg #000000 r 9999px opacity 0.12 |
@@ -1278,6 +1296,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = | = | = |
 | Colour | #ffffff @ 0.55 | = | = | = | #e6e6e6 | #c7c7c7 |
 | Text node | mat-icon.mat-icon.notranslate.google-symbols: Google Symbols 20px/20px 400, #ffffff @ 0.55 | = | = | = | mat-icon.mat-icon.notranslate.google-symbols: Google Symbols 20px/20px 400, #e6e6e6 | mat-icon.mat-icon.notranslate.google-symbols: Google Symbols 20px/20px 400, #e6e6e6 |
+| Icon glyph | mat-icon.mat-icon.notranslate.google-symbols "view_headline": Google Symbols 20px, #ffffff @ 0.55 | = | = | = | mat-icon.mat-icon.notranslate.google-symbols "grid_view": Google Symbols 20px, #e6e6e6 | mat-icon.mat-icon.notranslate.google-symbols "grid_view": Google Symbols 20px, #e6e6e6 |
 | Transition | color 0.2s ease | = | = | = | = | none |
 | Cursor | pointer | = | = | = | = | - |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse hover, then held down | at rest, captured selected | at rest, captured group |
@@ -1298,6 +1317,7 @@ Light theme.
 | Letter spacing | normal | = | = | = | = | = |
 | Colour | #000000 @ 0.55 | = | = | = | #000000 | #303030 |
 | Text node | mat-icon.mat-icon.notranslate.google-symbols: Google Symbols 20px/20px 400, #000000 @ 0.55 | = | = | = | mat-icon.mat-icon.notranslate.google-symbols: Google Symbols 20px/20px 400, #000000 | mat-icon.mat-icon.notranslate.google-symbols: Google Symbols 20px/20px 400, #000000 |
+| Icon glyph | mat-icon.mat-icon.notranslate.google-symbols "view_headline": Google Symbols 20px, #000000 @ 0.55 | = | = | = | mat-icon.mat-icon.notranslate.google-symbols "grid_view": Google Symbols 20px, #000000 | mat-icon.mat-icon.notranslate.google-symbols "grid_view": Google Symbols 20px, #000000 |
 | Transition | color 0.2s ease | = | = | = | = | none |
 | Cursor | pointer | = | = | = | = | - |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse hover, then held down | at rest, captured selected | at rest, captured group |
@@ -1382,6 +1402,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = | = |
 | Colour | #c7c7c7 | #e6e6e6 | #e6e6e6 | #e6e6e6 | #e6e6e6 |
 | Text node | span.mat-mdc-menu-item-text: Google Sans Flex 13px/17px 400, #e6e6e6 | span: Google Sans Flex 13px/17px 400, #e6e6e6 | span: Google Sans Flex 13px/17px 400, #e6e6e6 | span: Google Sans Flex 13px/17px 400, #e6e6e6 | span: Google Sans Flex 13px/17px 400, #e6e6e6 |
+| Icon glyph | mat-icon.mat-icon.notranslate.google-symbols "edit": Luminous Symbols 20px, #e6e6e6 | mat-icon.mat-icon.notranslate.google-symbols "category": Google Symbols 20px, #e6e6e6 | mat-icon.mat-icon.notranslate.google-symbols "category": Google Symbols 20px, #e6e6e6 | mat-icon.mat-icon.notranslate.google-symbols "category": Google Symbols 20px, #e6e6e6 | mat-icon.mat-icon.notranslate.google-symbols "category": Google Symbols 20px, #e6e6e6 |
 | Transition | none | = | = | = | = |
 | Painted layers | div.mat-mdc-menu-panel.mat-menu-after.mat-menu-below 206.0x160.0 bg #1f1f1f r 20px shadow #000000 @ 0.28 0px 0px 20px 0px; button.mat-mdc-menu-item.mat-focus-indicator.project-button-hamburger-menu-action 190.0x36.0 bg #e6e6e6 @ 0.08 r 12px | - | button.mat-mdc-menu-item.mat-focus-indicator.project-button-hamburger-menu-action 190.0x36.0 bg #e6e6e6 @ 0.08 r 12px | button.mat-mdc-menu-item.mat-focus-indicator.project-button-hamburger-menu-action::before 190pxx36px border T:3px solid #c3cafc / R:3px solid #c3cafc / B:3px solid #c3cafc / L:3px solid #c3cafc r 4px | button.mat-mdc-menu-item.mat-focus-indicator.project-button-hamburger-menu-action 190.0x36.0 bg #e6e6e6 @ 0.08 r 12px |
 | How | at rest | at rest, captured item | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse hover, then held down |
@@ -1405,6 +1426,7 @@ Light theme.
 | Letter spacing | normal | = | = | = | = |
 | Colour | #303030 | #000000 | #000000 | #000000 | #000000 |
 | Text node | span.mat-mdc-menu-item-text: Google Sans Flex 13px/17px 400, #000000 | span: Google Sans Flex 13px/17px 400, #000000 | span: Google Sans Flex 13px/17px 400, #000000 | span: Google Sans Flex 13px/17px 400, #000000 | span: Google Sans Flex 13px/17px 400, #000000 |
+| Icon glyph | mat-icon.mat-icon.notranslate.google-symbols "edit": Luminous Symbols 20px, #000000 | mat-icon.mat-icon.notranslate.google-symbols "category": Google Symbols 20px, #000000 | mat-icon.mat-icon.notranslate.google-symbols "category": Google Symbols 20px, #000000 | mat-icon.mat-icon.notranslate.google-symbols "category": Google Symbols 20px, #000000 | mat-icon.mat-icon.notranslate.google-symbols "category": Google Symbols 20px, #000000 |
 | Transition | none | = | = | = | = |
 | Painted layers | div.mat-mdc-menu-panel.mat-menu-after.mat-menu-below 206.0x160.0 bg #ffffff r 20px shadow #000000 @ 0.04 0px 0px 20px 0px; button.mat-mdc-menu-item.mat-focus-indicator.project-button-hamburger-menu-action 190.0x36.0 bg #000000 @ 0.08 r 12px | - | button.mat-mdc-menu-item.mat-focus-indicator.project-button-hamburger-menu-action 190.0x36.0 bg #000000 @ 0.08 r 12px | button.mat-mdc-menu-item.mat-focus-indicator.project-button-hamburger-menu-action::before 190pxx36px border T:3px solid #4259ff / R:3px solid #4259ff / B:3px solid #4259ff / L:3px solid #4259ff r 4px | button.mat-mdc-menu-item.mat-focus-indicator.project-button-hamburger-menu-action 190.0x36.0 bg #000000 @ 0.08 r 12px |
 | How | at rest | at rest, captured item | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse hover, then held down |
@@ -1438,6 +1460,7 @@ Dark theme.
 | Letter spacing | normal | = |
 | Colour | #c7c7c7 | = |
 | Text node | span.mat-mdc-menu-item-text: Google Sans Flex 13px/17px 400, #e6e6e6 | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.google-symbols "help": Luminous Symbols 20px, #e6e6e6 | mat-icon.mat-icon.notranslate.google-symbols "light_mode": Google Symbols 20px, #e6e6e6 |
 | Transition | none | = |
 | Icon | 36 x 10, colour #e6e6e6 | - |
 | Painted layers | div.mat-mdc-menu-panel.mat-menu-below.mat-menu-before 210.7x393.0 bg #1f1f1f r 20px shadow #000000 @ 0.28 0px 0px 20px 0px; button.mat-mdc-menu-item.mat-focus-indicator.cdk-focused 194.7x36.0 bg #e6e6e6 @ 0.08 r 12px; mat-divider.mat-divider.mat-divider-horizontal 194.7x1.0 border T:1px solid #444746 | div.mat-mdc-menu-panel.mat-menu-after.mat-menu-below 128.5x124.0 bg #1f1f1f r 20px shadow #000000 @ 0.28 0px 0px 20px 0px; button.mat-mdc-menu-item.mat-focus-indicator.cdk-focused 112.5x36.0 bg #e6e6e6 @ 0.08 r 12px |
@@ -1458,6 +1481,7 @@ Light theme.
 | Letter spacing | normal | = |
 | Colour | #303030 | = |
 | Text node | span.mat-mdc-menu-item-text: Google Sans Flex 13px/17px 400, #000000 | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.google-symbols "help": Luminous Symbols 20px, #000000 | mat-icon.mat-icon.notranslate.google-symbols "light_mode": Google Symbols 20px, #000000 |
 | Transition | none | = |
 | Icon | 36 x 10, colour #000000 | - |
 | Painted layers | div.mat-mdc-menu-panel.mat-menu-below.mat-menu-before 210.7x393.0 bg #ffffff r 20px shadow #000000 @ 0.04 0px 0px 20px 0px; button.mat-mdc-menu-item.mat-focus-indicator.cdk-focused 194.7x36.0 bg #000000 @ 0.08 r 12px; mat-divider.mat-divider.mat-divider-horizontal 194.7x1.0 border T:1px solid #e1e3e1 | div.mat-mdc-menu-panel.mat-menu-after.mat-menu-below 128.5x124.0 bg #ffffff r 20px shadow #000000 @ 0.04 0px 0px 20px 0px; button.mat-mdc-menu-item.mat-focus-indicator.cdk-focused 112.5x36.0 bg #000000 @ 0.08 r 12px |
@@ -1630,6 +1654,7 @@ Dark theme.
 | Letter spacing | normal |
 | Colour | #c7c7c7 |
 | Text node | p.mat-headline-small: Google Sans Flex 24px/32px 400, #f2f2f2 |
+| Icon glyph | mat-icon.mat-icon.notranslate.google-symbols "close": Luminous Symbols 24px, #e6e6e6 |
 | Transition | transform 0.15s cubic-bezier(0, 0, 0.2, 1) |
 | ::before | 1000px x 542.594px, absolute, bg #000000 @ 0, radius 28px |
 | Painted layers | div.mat-mdc-dialog-surface.mdc-dialog__surface 1000.0x542.6 bg #0f0f0f r 28px; div.mat-mdc-dialog-surface.mdc-dialog__surface::before 1000pxx542.594px border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 28px; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 40pxx40px bg #e6e6e6 r 9999px opacity 0.12; div.header-text 952.0x74.6 border B:1px solid #37383b |
@@ -1650,6 +1675,7 @@ Light theme.
 | Letter spacing | normal |
 | Colour | #303030 |
 | Text node | p.mat-headline-small: Google Sans Flex 24px/32px 400, #1b1b1c |
+| Icon glyph | mat-icon.mat-icon.notranslate.google-symbols "close": Luminous Symbols 24px, #000000 |
 | Transition | transform 0.15s cubic-bezier(0, 0, 0.2, 1) |
 | ::before | 1000px x 542.594px, absolute, bg #000000 @ 0, radius 28px |
 | Painted layers | div.mat-mdc-dialog-surface.mdc-dialog__surface 1000.0x542.6 bg #faf9f9 r 28px; div.mat-mdc-dialog-surface.mdc-dialog__surface::before 1000pxx542.594px border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 28px; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 40pxx40px bg #000000 r 9999px opacity 0.12; div.header-text 952.0x74.6 border B:1px solid #dde1eb |
@@ -1822,6 +1848,7 @@ Dark theme.
 | Letter spacing | 0.096px | = | = | = |
 | Colour | #c7c7c7 | = | = | = |
 | Text node | span.create-label-container.mat-label-medium: Google Sans Flex 13px/17px 400, #e6e6e6 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.artifact-icon "audio_spark": Luminous Symbols 24px, #76a0ff | = | = | = |
 | Transition | transform, -webkit-transform 0.2s, 0.2s cubic-bezier(0.05, 0.7, 0.1, 1), cubic-bezier(0.05, 0.7, 0.1, 1) delay 0s, 0s | = | = | transform, -webkit-transform 0.1s, 0.1s cubic-bezier(0.3, 0, 0.8, 0.15), cubic-bezier(0.3, 0, 0.8, 0.15) delay 0s, 0s |
 | Transform | matrix(1, 0, 0, 1, 0, 0) | matrix(0.985, 0, 0, 0.985, 0, 0) | = | matrix(0.97, 0, 0, 0.97, 0, 0) |
 | Cursor | pointer | = | = | = |
@@ -1845,6 +1872,7 @@ Light theme.
 | Letter spacing | 0.096px | = | = | = |
 | Colour | #303030 | = | = | = |
 | Text node | span.create-label-container.mat-label-medium: Google Sans Flex 13px/17px 400, #000000 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.artifact-icon "audio_spark": Luminous Symbols 24px, #2e64de | = | = | = |
 | Transition | transform, -webkit-transform 0.2s, 0.2s cubic-bezier(0.05, 0.7, 0.1, 1), cubic-bezier(0.05, 0.7, 0.1, 1) delay 0s, 0s | = | = | transform, -webkit-transform 0.1s, 0.1s cubic-bezier(0.3, 0, 0.8, 0.15), cubic-bezier(0.3, 0, 0.8, 0.15) delay 0s, 0s |
 | Transform | matrix(1, 0, 0, 1, 0, 0) | matrix(0.985, 0, 0, 0.985, 0, 0) | = | matrix(0.97, 0, 0, 0.97, 0, 0) |
 | Cursor | pointer | = | = | = |
@@ -1877,6 +1905,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #c7c7c7 | = | = | = |
 | Text node | span: Google Sans Flex 14px/24px 400, #f2f2f2 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.source-item-source-icon "drive_pdf": Luminous Symbols 24px, #db372d | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | Placeholder | "" #ffffff, opacity 1, 13.3333px | = | = | = |
@@ -1899,6 +1928,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #303030 | = | = | = |
 | Text node | span: Google Sans Flex 14px/24px 400, #1b1b1c | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.source-item-source-icon "drive_pdf": Luminous Symbols 24px, #db372d | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | Placeholder | "" #000000, opacity 1, 13.3333px | = | = | = |
@@ -1928,6 +1958,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #c7c7c7 | = | = | = |
 | Text node | span.mat-mdc-tooltip-trigger.artifact-title.mat-title-small: Google Sans Flex 13px/17px 400, #e6e6e6 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.artifact-icon "videocam": Luminous Symbols 24px, #3fdda0 | = | = | = |
 | Transition | none | = | = | = |
 | Painted layers | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx60px bg #e6e6e6 r 20px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #e6e6e6 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #e6e6e6 r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx60px bg #e6e6e6 r 20px opacity 0.08; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #e6e6e6 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #e6e6e6 r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx60px bg #e6e6e6 r 20px opacity 0; span.mat-focus-indicator::before 336pxx60px border T:3px solid #c3cafc / R:3px solid #c3cafc / B:3px solid #c3cafc / L:3px solid #c3cafc r 20px; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #e6e6e6 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #e6e6e6 r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx60px bg #e6e6e6 r 20px opacity 0.12; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #e6e6e6 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #e6e6e6 r 9999px opacity 0 |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab (on the field inside) | mouse hover, then held down |
@@ -1947,6 +1978,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #303030 | = | = | = |
 | Text node | span.mat-mdc-tooltip-trigger.artifact-title.mat-title-small: Google Sans Flex 13px/17px 400, #000000 | = | = | = |
+| Icon glyph | mat-icon.mat-icon.notranslate.artifact-icon "videocam": Luminous Symbols 24px, #0aac6e | = | = | = |
 | Transition | none | = | = | = |
 | Painted layers | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx60px bg #000000 r 20px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #000000 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #000000 r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx60px bg #000000 r 20px opacity 0.08; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #000000 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #000000 r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx60px bg #000000 r 20px opacity 0; span.mat-focus-indicator::before 336pxx60px border T:3px solid #4259ff / R:3px solid #4259ff / B:3px solid #4259ff / L:3px solid #4259ff r 20px; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #000000 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #000000 r 9999px opacity 0 | span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 336pxx60px bg #000000 r 20px opacity 0.12; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #000000 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 32pxx32px bg #000000 r 9999px opacity 0 |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab (on the field inside) | mouse hover, then held down |
@@ -2361,6 +2393,7 @@ Dark theme.
 | Letter spacing | 0.096px |
 | Colour | #f28b82 |
 | Text node | span: Google Sans Flex 12px/20px 400, #f28b82, ls 0.096px |
+| Icon glyph | mat-icon.mat-icon.notranslate.status-icon "block": Google Symbols 16px, #f28b82 |
 | Transition | none |
 | Painted layers | div.status-pill.status-blocked 162.5x28.0 bg #ea4335 @ 0.15 r 16px |
 | How | at rest |
@@ -2381,6 +2414,7 @@ Light theme.
 | Letter spacing | 0.096px |
 | Colour | #c5221f |
 | Text node | span: Google Sans Flex 12px/20px 400, #c5221f, ls 0.096px |
+| Icon glyph | mat-icon.mat-icon.notranslate.status-icon "block": Google Symbols 16px, #c5221f |
 | Transition | none |
 | Painted layers | div.status-pill.status-blocked 162.5x28.0 bg #fce8e6 r 16px |
 | How | at rest |
@@ -2505,6 +2539,7 @@ Dark theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #c7c7c7 | #f2f2f2 | #f2f2f2 | #f2f2f2 |
 | Text node | h2.no-results-heading.mat-headline-small: Google Sans Flex 24px/32px 400, #e6e6e6 | span.mdc-button__label: Google Sans Flex 15px/normal 370, #f2f2f2 | span.mdc-button__label: Google Sans Flex 15px/normal 370, #f2f2f2 | span.mdc-button__label: Google Sans Flex 15px/normal 370, #f2f2f2 |
+| Icon glyph | mat-icon.mat-icon.notranslate.no-results-icon "search": Luminous Symbols 48px, #ffffff @ 0.55 | - | - | - |
 | Transition | none | border 0.28s cubic-bezier(0.4, 0, 0.2, 1) | border 0.28s cubic-bezier(0.4, 0, 0.2, 1) | border 0.28s cubic-bezier(0.4, 0, 0.2, 1) |
 | Painted layers | div.no-results-container 1392.0x320.0 bg #1b1b1b r 16px; button.mdc-button.mat-mdc-button-base.no-results-clear-button 134.2x40.0 border T:1px solid #37383b / R:1px solid #37383b / B:1px solid #37383b / L:1px solid #37383b r 100px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 134.188pxx40px bg #e6e6e6 r 100px opacity 0 | button.mdc-button.mat-mdc-button-base.no-results-clear-button 134.2x40.0 border T:1px solid #37383b / R:1px solid #37383b / B:1px solid #37383b / L:1px solid #37383b r 100px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 134.188pxx40px bg #e6e6e6 r 100px opacity 0 | button.mdc-button.mat-mdc-button-base.no-results-clear-button 134.2x40.0 border T:1px solid #37383b / R:1px solid #37383b / B:1px solid #37383b / L:1px solid #37383b r 100px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 134.188pxx40px bg #e6e6e6 r 100px opacity 0.08 | button.mdc-button.mat-mdc-button-base.no-results-clear-button 134.2x40.0 border T:1px solid #37383b / R:1px solid #37383b / B:1px solid #37383b / L:1px solid #37383b r 100px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 134.188pxx40px bg #e6e6e6 r 100px opacity 0; span.mat-focus-indicator::before 144.188pxx50px border T:3px solid #c3cafc / R:3px solid #c3cafc / B:3px solid #c3cafc / L:3px solid #c3cafc r 100px |
 | How | at rest | at rest, captured action | mouse hover | keyboard: focus(), Shift+Tab, Tab |
@@ -2527,6 +2562,7 @@ Light theme.
 | Letter spacing | normal | = | = | = |
 | Colour | #303030 | #1b1b1c | #1b1b1c | #1b1b1c |
 | Text node | h2.no-results-heading.mat-headline-small: Google Sans Flex 24px/32px 400, #000000 | span.mdc-button__label: Google Sans Flex 15px/normal 370, #1b1b1c | span.mdc-button__label: Google Sans Flex 15px/normal 370, #1b1b1c | span.mdc-button__label: Google Sans Flex 15px/normal 370, #1b1b1c |
+| Icon glyph | mat-icon.mat-icon.notranslate.no-results-icon "search": Luminous Symbols 48px, #000000 @ 0.55 | - | - | - |
 | Transition | none | border 0.28s cubic-bezier(0.4, 0, 0.2, 1) | border 0.28s cubic-bezier(0.4, 0, 0.2, 1) | border 0.28s cubic-bezier(0.4, 0, 0.2, 1) |
 | Painted layers | div.no-results-container 1392.0x320.0 bg #f8fafd r 16px; button.mdc-button.mat-mdc-button-base.no-results-clear-button 134.2x40.0 border T:1px solid #dde1eb / R:1px solid #dde1eb / B:1px solid #dde1eb / L:1px solid #dde1eb r 100px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 134.188pxx40px bg #000000 r 100px opacity 0 | button.mdc-button.mat-mdc-button-base.no-results-clear-button 134.2x40.0 border T:1px solid #dde1eb / R:1px solid #dde1eb / B:1px solid #dde1eb / L:1px solid #dde1eb r 100px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 134.188pxx40px bg #000000 r 100px opacity 0 | button.mdc-button.mat-mdc-button-base.no-results-clear-button 134.2x40.0 border T:1px solid #dde1eb / R:1px solid #dde1eb / B:1px solid #dde1eb / L:1px solid #dde1eb r 100px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 134.188pxx40px bg #000000 r 100px opacity 0.08 | button.mdc-button.mat-mdc-button-base.no-results-clear-button 134.2x40.0 border T:1px solid #dde1eb / R:1px solid #dde1eb / B:1px solid #dde1eb / L:1px solid #dde1eb r 100px; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 134.188pxx40px bg #000000 r 100px opacity 0; span.mat-focus-indicator::before 144.188pxx50px border T:3px solid #4259ff / R:3px solid #4259ff / B:3px solid #4259ff / L:3px solid #4259ff r 100px |
 | How | at rest | at rest, captured action | mouse hover | keyboard: focus(), Shift+Tab, Tab |
@@ -2658,6 +2694,7 @@ Dark theme.
 | Letter spacing | normal |
 | Colour | #c7c7c7 |
 | Text node | span.xap-emoji-picker-trigger.cover-emoji.cover-emoji-editable: Times 40px/40px 400, #e6e6e6 |
+| Icon glyph | mat-icon.mat-icon.notranslate.cover-image-empty-icon "landscape_2": Google Symbols 192px, #ffffff @ 0.12 |
 | Transition | none |
 | Placeholder | "Search" #e6e6e6, opacity 1, 12px |
 | Painted layers | section.chat-panel 679.7x836.0 bg #0f0f0f; div.chat-panel-top-fade.is-visible 679.7x28.0 image linear-gradient(#0f0f0f 0px, #0f0f0f @ 0.98 10%, #0f0f0f @ 0.88 22%, #0f0f0f @ 0.68 38%, c; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 131.922pxx36px bg #e6e6e6 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #e6e6e6 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #e6e6e6 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #e6e6e6 r 9999px opacity 0 |
@@ -2678,6 +2715,7 @@ Light theme.
 | Letter spacing | normal |
 | Colour | #303030 |
 | Text node | span.xap-emoji-picker-trigger.cover-emoji.cover-emoji-editable: Times 40px/40px 400, #000000 |
+| Icon glyph | mat-icon.mat-icon.notranslate.cover-image-empty-icon "landscape_2": Google Symbols 192px, #000000 @ 0.08 |
 | Transition | none |
 | Placeholder | "Search" #e6e6e6, opacity 1, 12px |
 | Painted layers | section.chat-panel 679.7x836.0 bg #faf9f9; div.chat-panel-top-fade.is-visible 679.7x28.0 image linear-gradient(#faf9f9 0px, #faf9f9 @ 0.98 10%, #faf9f9 @ 0.88 22%, #faf9f9 @ 0.68 38%, c; span.mat-mdc-button-persistent-ripple.mdc-button__ripple::before 131.922pxx36px bg #000000 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #000000 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #000000 r 9999px opacity 0; span.mat-mdc-button-persistent-ripple.mdc-icon-button__ripple::before 36pxx36px bg #000000 r 9999px opacity 0 |

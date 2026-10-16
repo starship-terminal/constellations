@@ -69,6 +69,7 @@ function props(v) {
   o['Letter spacing'] = s.letterSpacing;
   o.Colour = hex(s.color);
   if (v.textStyle) o['Text node'] = `${v.textStyle.node}: ${fam(v.textStyle.fontFamily)} ${v.textStyle.fontSize}/${v.textStyle.lineHeight} ${v.textStyle.fontWeight}, ${hex(v.textStyle.color)}${v.textStyle.letterSpacing !== 'normal' ? ', ls ' + v.textStyle.letterSpacing : ''}`;
+  if (v.iconStyle) o['Icon glyph'] = `${v.iconStyle.node} "${v.iconStyle.text}": ${fam(v.iconStyle.fontFamily)} ${v.iconStyle.fontSize}, ${hex(v.iconStyle.color)}`;
   o.Transition = s.transitionDuration === '0s' || !s.transitionDuration ? 'none' : `${s.transitionProperty} ${s.transitionDuration} ${s.transitionTimingFunction}${s.transitionDelay !== '0s' ? ' delay ' + s.transitionDelay : ''}`;
   if (s.transform && s.transform !== 'none') o.Transform = s.transform;
   if (s.opacity !== '1') o.Opacity = s.opacity;

@@ -178,7 +178,7 @@ core["palette"]["icon"] = {k: T(var(f"--nlm-icons-{v}"), "color", M(f"css-var --
 stack_sans = [s.strip().strip('"') for s in var("--nlm-font-family-sans").split(",")]
 stack_text = [s.strip().strip('"') for s in var("--mat-sys-body-medium-font").split(",")]
 code_stack = [s.strip().strip('"') for s in re.split(r",\s*", comp("type-code")["style"]["fontFamily"])]
-icon_stack = [s.strip().strip('"') for s in re.split(r",\s*", comp("menu")["textStyle"]["fontFamily"])]
+icon_stack = [s.strip().strip('"') for s in re.split(r",\s*", comp("menu")["iconStyle"]["fontFamily"])]
 core["fontFamily"] = {
     "display": T(stack_sans, "fontFamily", M("css-var --nlm-font-family-sans"), "Google Sans Flex, a variable font (wght 100-1000, wdth, opsz, ROND axes), loaded from fonts.gstatic.com. The stack is the product's own."),
     "text": T(stack_text, "fontFamily", M("css-var --mat-sys-body-medium-font"), "Material's text roles name Google Sans Text second."),
@@ -513,7 +513,7 @@ def theme_set(theme):
     o["icon"] = {
         "default": T(vt("--nb-sys-color--on-surface"), "color", M("computed colour of header and menu icons (on-surface)")),
         "secondary": T(vt("--nb-sys-color--on-surface-variant"), "color", M("computed colour of inactive segmented-control icons")),
-        "source-pdf": T(hexa(comp("list-row", st)["textStyle"]["color"]), "color", M("computed colour of the PDF icon in a source row (= --nlm-icons-red)")),
+        "source-pdf": T(hexa(comp("list-row", st)["iconStyle"]["color"]), "color", M("computed colour of the PDF icon in a source row (= --nlm-icons-red)")),
     }
     o["studio"] = {c: T(vt(f"--nb-studio-accent-{c}"), "color", M(f"css-var --nb-studio-accent-{c}"), "Icon colour of one Studio output type (the tile and its list row).") for c in ("blue", "green", "pink", "purple", "teal", "warm")}
     o["studio"]["new-dot"] = T(vt("--nb-studio-new-dot"), "color", M("css-var --nb-studio-new-dot"))

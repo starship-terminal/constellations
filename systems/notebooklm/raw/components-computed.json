@@ -245,6 +245,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "New notebook",
@@ -362,6 +370,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "New notebook",
@@ -486,6 +502,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "New notebook",
@@ -608,6 +632,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "New notebook",
@@ -725,6 +757,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "New notebook",
@@ -842,6 +882,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "New notebook",
@@ -966,6 +1014,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "New notebook",
@@ -1088,6 +1144,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "New notebook",
@@ -1217,6 +1281,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add sources",
@@ -1334,6 +1406,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add sources",
@@ -1458,6 +1538,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add sources",
@@ -1580,6 +1668,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add sources",
@@ -1697,6 +1793,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add sources",
@@ -1814,6 +1918,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add sources",
@@ -1938,6 +2050,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add sources",
@@ -2060,6 +2180,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add sources",
@@ -2183,6 +2311,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Create notebook",
@@ -2294,6 +2430,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Create notebook",
@@ -2417,6 +2561,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Create notebook",
@@ -2533,6 +2685,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Create notebook",
@@ -2644,6 +2804,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Create notebook",
@@ -2755,6 +2923,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Create notebook",
@@ -2878,6 +3054,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Create notebook",
@@ -2994,6 +3178,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "add_2",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Create notebook",
@@ -3119,6 +3311,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "upload",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "18px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Upload files",
@@ -3234,6 +3434,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "upload",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "18px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Upload files",
@@ -3354,6 +3562,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "upload",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "18px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Upload files",
@@ -3474,6 +3690,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "upload",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "18px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Upload files",
@@ -3588,6 +3812,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "upload",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "18px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Upload files",
@@ -3703,6 +3935,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "upload",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "18px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Upload files",
@@ -3823,6 +4063,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "upload",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "18px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Upload files",
@@ -3943,6 +4191,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "upload",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "18px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Upload files",
@@ -7194,6 +7450,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "settings",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "settings",
@@ -7305,6 +7569,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "settings",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "settings",
@@ -7428,6 +7700,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "settings",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "settings",
@@ -7544,6 +7824,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "settings",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "settings",
@@ -7655,6 +7943,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "settings",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "settings",
@@ -7766,6 +8062,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "settings",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "settings",
@@ -7889,6 +8193,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "settings",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "settings",
@@ -8005,6 +8317,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "settings",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "settings",
@@ -8127,6 +8447,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "more_vert",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(171, 171, 171)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "more_vert",
@@ -8238,6 +8566,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "more_vert",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(171, 171, 171)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "more_vert",
@@ -8361,6 +8697,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "more_vert",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(171, 171, 171)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "more_vert",
@@ -8477,6 +8821,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "more_vert",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(171, 171, 171)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "more_vert",
@@ -8588,6 +8940,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "more_vert",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(94, 94, 94)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "more_vert",
@@ -8699,6 +9059,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "more_vert",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(94, 94, 94)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "more_vert",
@@ -8822,6 +9190,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "more_vert",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(94, 94, 94)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "more_vert",
@@ -8938,6 +9314,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "more_vert",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(94, 94, 94)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
       "text": "more_vert",
@@ -9066,6 +9450,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "span.search-pill-label",
       "text": "Search notebooks",
@@ -9182,6 +9574,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "span.search-pill-label",
       "text": "Search notebooks",
@@ -9306,6 +9706,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "span.search-pill-label",
       "text": "Search notebooks",
@@ -9427,6 +9835,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "span.search-pill-label",
       "text": "Search notebooks",
@@ -9544,6 +9960,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "span.search-pill-label",
       "text": "Search notebooks",
@@ -9660,6 +10084,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "span.search-pill-label",
       "text": "Search notebooks",
@@ -9784,6 +10216,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "span.search-pill-label",
       "text": "Search notebooks",
@@ -9905,6 +10345,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.nb-icon-size-large",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "span.search-pill-label",
       "text": "Search notebooks",
@@ -11174,7 +11622,7 @@
       "lineHeight": "normal",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgba(233, 233, 233, 0.92)",
+      "color": "rgba(255, 255, 255, 0.55)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -11554,7 +12002,7 @@
       "lineHeight": "normal",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.55)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -11934,6 +12382,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.search-icon",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.search-icon",
       "text": "search",
@@ -12056,6 +12512,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.search-icon",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.search-icon",
       "text": "search",
@@ -12178,6 +12642,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.search-icon",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.search-icon",
       "text": "search",
@@ -12305,6 +12777,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.search-icon",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.search-icon",
       "text": "search",
@@ -12427,6 +12907,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.search-icon",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.search-icon",
       "text": "search",
@@ -12549,6 +13037,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.search-icon",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.search-icon",
       "text": "search",
@@ -12671,6 +13167,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.search-icon",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.search-icon",
       "text": "search",
@@ -12798,6 +13302,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.search-icon",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.search-icon",
       "text": "search",
@@ -17646,6 +18158,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.corpus-select-icon",
+      "text": "language",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span.corpus-select-label",
       "text": "Web",
@@ -17763,6 +18283,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.corpus-select-icon",
+      "text": "language",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span.corpus-select-label",
       "text": "Web",
@@ -17887,6 +18415,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.corpus-select-icon",
+      "text": "language",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span.corpus-select-label",
       "text": "Web",
@@ -18009,6 +18545,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.corpus-select-icon",
+      "text": "language",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span.corpus-select-label",
       "text": "Web",
@@ -18126,6 +18670,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.corpus-select-icon",
+      "text": "language",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span.corpus-select-label",
       "text": "Web",
@@ -18243,6 +18795,14 @@
        "opacity": "0.08"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.corpus-select-icon",
+      "text": "language",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span.corpus-select-label",
       "text": "Web",
@@ -18367,6 +18927,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.corpus-select-icon",
+      "text": "language",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span.corpus-select-label",
       "text": "Web",
@@ -18489,6 +19057,14 @@
        "opacity": "0.12"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.corpus-select-icon",
+      "text": "language",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span.corpus-select-label",
       "text": "Web",
@@ -22895,6 +23471,14 @@
      "attrs": {
       "aria-label": "List view"
      },
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "view_headline",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
       "text": "view_headline",
@@ -22996,6 +23580,14 @@
      },
      "attrs": {
       "aria-label": "List view"
+     },
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "view_headline",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
      },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
@@ -23107,6 +23699,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "view_headline",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
       "text": "view_headline",
@@ -23214,6 +23814,14 @@
      "attrs": {
       "aria-label": "List view"
      },
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "view_headline",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
       "text": "view_headline",
@@ -23315,6 +23923,14 @@
      },
      "attrs": {
       "aria-label": "Grid view"
+     },
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "grid_view",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
      },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
@@ -23433,6 +24049,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "grid_view",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
       "text": "grid_view",
@@ -23535,6 +24159,14 @@
      "attrs": {
       "aria-label": "List view"
      },
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "view_headline",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
       "text": "view_headline",
@@ -23636,6 +24268,14 @@
      },
      "attrs": {
       "aria-label": "List view"
+     },
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "view_headline",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
      },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
@@ -23747,6 +24387,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "view_headline",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
       "text": "view_headline",
@@ -23854,6 +24502,14 @@
      "attrs": {
       "aria-label": "List view"
      },
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "view_headline",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
       "text": "view_headline",
@@ -23955,6 +24611,14 @@
      },
      "attrs": {
       "aria-label": "Grid view"
+     },
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "grid_view",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
      },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
@@ -24073,6 +24737,14 @@
        "radius": "9999px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "grid_view",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "mat-icon.mat-icon.notranslate.google-symbols",
       "text": "grid_view",
@@ -25334,6 +26006,14 @@
        "radius": "12px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "edit",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-menu-item-text",
       "text": "Edit title",
@@ -25445,6 +26125,14 @@
        "bg": "rgb(31, 31, 31)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "category",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add to collection",
@@ -25564,6 +26252,14 @@
        "bg": "rgb(31, 31, 31)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "category",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add to collection",
@@ -25699,6 +26395,14 @@
        "bg": "rgb(31, 31, 31)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "category",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add to collection",
@@ -25823,6 +26527,14 @@
        "bg": "rgb(31, 31, 31)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "category",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add to collection",
@@ -25940,6 +26652,14 @@
        "radius": "12px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "edit",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-menu-item-text",
       "text": "Edit title",
@@ -26051,6 +26771,14 @@
        "bg": "rgb(255, 255, 255)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "category",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add to collection",
@@ -26170,6 +26898,14 @@
        "bg": "rgb(255, 255, 255)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "category",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add to collection",
@@ -26305,6 +27041,14 @@
        "bg": "rgb(255, 255, 255)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "category",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add to collection",
@@ -26429,6 +27173,14 @@
        "bg": "rgb(255, 255, 255)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "category",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Add to collection",
@@ -26572,6 +27324,14 @@
        "border": "T:1px solid rgb(68, 71, 70)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "help",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-menu-item-text",
       "text": "Gemini Notebook help",
@@ -26698,6 +27458,14 @@
        "radius": "12px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "light_mode",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-menu-item-text",
       "text": "Light mode",
@@ -26820,6 +27588,14 @@
        "border": "T:1px solid rgb(225, 227, 225)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "help",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-menu-item-text",
       "text": "Gemini Notebook help",
@@ -26946,6 +27722,14 @@
        "radius": "12px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "light_mode",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "20px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-menu-item-text",
       "text": "Light mode",
@@ -28085,6 +28869,14 @@
        "border": "B:1px solid rgb(55, 56, 59)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "close",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(230, 230, 230)"
+     },
      "textStyle": {
       "node": "p.mat-headline-small",
       "text": "We're giving you more flexibility and co",
@@ -28225,6 +29017,14 @@
        "border": "B:1px solid rgb(221, 225, 235)"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.google-symbols",
+      "text": "close",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(0, 0, 0)"
+     },
      "textStyle": {
       "node": "p.mat-headline-small",
       "text": "We're giving you more flexibility and co",
@@ -29940,6 +30740,14 @@
        "radius": "20px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "audio_spark",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(118, 160, 255)"
+     },
      "textStyle": {
       "node": "span.create-label-container.mat-label-medium",
       "text": "Audio Overview",
@@ -30097,6 +30905,14 @@
        "radius": "20px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "audio_spark",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(118, 160, 255)"
+     },
      "textStyle": {
       "node": "span.create-label-container.mat-label-medium",
       "text": "Audio Overview",
@@ -30255,6 +31071,14 @@
        "radius": "20px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "audio_spark",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(118, 160, 255)"
+     },
      "textStyle": {
       "node": "span.create-label-container.mat-label-medium",
       "text": "Audio Overview",
@@ -30417,6 +31241,14 @@
        "radius": "20px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "audio_spark",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(118, 160, 255)"
+     },
      "textStyle": {
       "node": "span.create-label-container.mat-label-medium",
       "text": "Audio Overview",
@@ -30574,6 +31406,14 @@
        "radius": "20px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "audio_spark",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(46, 100, 222)"
+     },
      "textStyle": {
       "node": "span.create-label-container.mat-label-medium",
       "text": "Audio Overview",
@@ -30731,6 +31571,14 @@
        "radius": "20px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "audio_spark",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(46, 100, 222)"
+     },
      "textStyle": {
       "node": "span.create-label-container.mat-label-medium",
       "text": "Audio Overview",
@@ -30889,6 +31737,14 @@
        "radius": "20px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "audio_spark",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(46, 100, 222)"
+     },
      "textStyle": {
       "node": "span.create-label-container.mat-label-medium",
       "text": "Audio Overview",
@@ -31051,6 +31907,14 @@
        "radius": "20px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "audio_spark",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(46, 100, 222)"
+     },
      "textStyle": {
       "node": "span.create-label-container.mat-label-medium",
       "text": "Audio Overview",
@@ -31170,6 +32034,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.source-item-source-icon",
+      "text": "drive_pdf",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(219, 55, 45)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Sample source 2",
@@ -31291,6 +32163,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.source-item-source-icon",
+      "text": "drive_pdf",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(219, 55, 45)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Sample source 2",
@@ -31412,6 +32292,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.source-item-source-icon",
+      "text": "drive_pdf",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(219, 55, 45)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Sample source 2",
@@ -31538,6 +32426,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.source-item-source-icon",
+      "text": "drive_pdf",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(219, 55, 45)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Sample source 2",
@@ -31653,6 +32549,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.source-item-source-icon",
+      "text": "drive_pdf",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(219, 55, 45)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Sample source 2",
@@ -31774,6 +32678,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.source-item-source-icon",
+      "text": "drive_pdf",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(219, 55, 45)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Sample source 2",
@@ -31895,6 +32807,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.source-item-source-icon",
+      "text": "drive_pdf",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(219, 55, 45)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Sample source 2",
@@ -32021,6 +32941,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.source-item-source-icon",
+      "text": "drive_pdf",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(219, 55, 45)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Sample source 2",
@@ -32161,6 +33089,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "videocam",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(63, 221, 160)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-tooltip-trigger.artifact-title.mat-title-small",
       "text": "Sample output 2",
@@ -32283,6 +33219,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "videocam",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(63, 221, 160)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-tooltip-trigger.artifact-title.mat-title-small",
       "text": "Sample output 2",
@@ -32411,6 +33355,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "videocam",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(63, 221, 160)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-tooltip-trigger.artifact-title.mat-title-small",
       "text": "Sample output 2",
@@ -32538,6 +33490,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "videocam",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(63, 221, 160)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-tooltip-trigger.artifact-title.mat-title-small",
       "text": "Sample output 2",
@@ -32660,6 +33620,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "videocam",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(10, 172, 110)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-tooltip-trigger.artifact-title.mat-title-small",
       "text": "Sample output 2",
@@ -32782,6 +33750,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "videocam",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(10, 172, 110)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-tooltip-trigger.artifact-title.mat-title-small",
       "text": "Sample output 2",
@@ -32910,6 +33886,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "videocam",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(10, 172, 110)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-tooltip-trigger.artifact-title.mat-title-small",
       "text": "Sample output 2",
@@ -33037,6 +34021,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.artifact-icon",
+      "text": "videocam",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "24px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(10, 172, 110)"
+     },
      "textStyle": {
       "node": "span.mat-mdc-tooltip-trigger.artifact-title.mat-title-small",
       "text": "Sample output 2",
@@ -36166,6 +37158,14 @@
        "radius": "16px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.status-icon",
+      "text": "block",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "16px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(242, 139, 130)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Blocked by browser",
@@ -36273,6 +37273,14 @@
        "radius": "16px"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.status-icon",
+      "text": "block",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "16px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgb(197, 34, 31)"
+     },
      "textStyle": {
       "node": "span",
       "text": "Blocked by browser",
@@ -36874,6 +37882,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.no-results-icon",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "48px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.55)"
+     },
      "textStyle": {
       "node": "h2.no-results-heading.mat-headline-small",
       "text": "No notebooks found",
@@ -37380,6 +38396,14 @@
        "opacity": "0"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.no-results-icon",
+      "text": "search",
+      "fontFamily": "\"Luminous Symbols\", \"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "48px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.55)"
+     },
      "textStyle": {
       "node": "h2.no-results-heading.mat-headline-small",
       "text": "No notebooks found",
@@ -38764,6 +39788,14 @@
        "radius": "50%"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.cover-image-empty-icon",
+      "text": "landscape_2",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "192px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(255, 255, 255, 0.12)"
+     },
      "textStyle": {
       "node": "span.xap-emoji-picker-trigger.cover-emoji.cover-emoji-editable",
       "text": "💻",
@@ -38955,6 +39987,14 @@
        "radius": "50%"
       }
      ],
+     "iconStyle": {
+      "node": "mat-icon.mat-icon.notranslate.cover-image-empty-icon",
+      "text": "landscape_2",
+      "fontFamily": "\"Google Symbols\", \"Material Symbols Outlined\", sans-serif",
+      "fontSize": "192px",
+      "fontVariationSettings": "\"FILL\" 0, \"GRAD\" 0, \"ROND\" 100, \"opsz\" 24, \"wght\" 300",
+      "color": "rgba(0, 0, 0, 0.08)"
+     },
      "textStyle": {
       "node": "span.xap-emoji-picker-trigger.cover-emoji.cover-emoji-editable",
       "text": "💻",
