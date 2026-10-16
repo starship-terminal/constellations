@@ -635,6 +635,16 @@ for tree in (light, dark):
     put(tree, ["shadow", "field-drop"], tok([{"color": fd_rgba, "offsetX": "0px", "offsetY": px(fd.group(1)), "blur": px(fd.group(2)), "spread": px(fd.group(3) if fd.group(3) != "0" else "0px"), "inset": False}], "shadow",
                                              "css-var --shadow-field-drop %s (Tailwind v4 theme layer, theme-independent)" % TW_THEME["--shadow-field-drop"]))
 
+# the sidebar row's own focus ring: a one-off utility on its link
+# (focus-visible:shadow-[inset_0_0_0_1px_var(--cds-fill-accent),0_0_6px_0_color-mix(in_srgb,var(--cds-fill-accent)_20%,transparent)])
+for setname, tree in (("light", light), ("dark", dark)):
+    st = state("chat-row", "refresh-focus-visible" if setname == "dark" else "light-refresh-focus-visible")
+    ring = next(ly["shadow"] for ly in st["paint"] if "0px 0px 6px 0px" in (ly.get("shadow") or ""))
+    assert "rgb(42, 120, 214) 0px 0px 0px 1px inset" in ring and "0.164706 0.470588 0.839216 / 0.2" in ring, ring
+    put(tree, ["component", "sidebar-row-focus"], tok([{"color": "{fill.accent}", "offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "1px", "inset": True},
+                                                       {"color": "rgba(42, 120, 214, 0.2)", "offsetX": "0px", "offsetY": "0px", "blur": "6px", "spread": "0px", "inset": False}], "shadow",
+                                                      "measured: chat-row %s, the inner link (%s copy); the utility focus-visible:shadow-[inset_0_0_0_1px_var(--cds-fill-accent),0_0_6px_0_color-mix(in_srgb,var(--cds-fill-accent)_20%%,transparent)]" % ("refresh-focus-visible" if setname == "dark" else "light-refresh-focus-visible", st["snapshot"])))
+
 # themed: the link role and the pressed accent
 for setname, tree in (("light", light), ("dark", dark)):
     put(tree, ["text", "link"], tok("{text.accent}", "color", "measured: cds TextLink (`a, .prose-link`: color var(--cds-text-accent), underline 3px below at 40%% of the colour, full on hover and focus), text-link on settings-dark-capabilities reads %s" % state("text-link", "default" if setname == "dark" else "light")["style"]["color"]))

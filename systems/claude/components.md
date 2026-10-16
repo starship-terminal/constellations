@@ -6,7 +6,7 @@ The full per-state readings are in [raw/measurements.md](raw/measurements.md), w
 
 How to read an entry:
 
-- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A height is named by the control-height, size or layout token that holds it; a width only when a layout width token holds it or the box is square, and otherwise it is the instance's content width, written raw and not counted below. A colour with zero alpha reads `transparent`. A value no token holds is written raw: a few line heights (14/21), odd paddings and some drop shadows inside components. Of the 2556 values written in the state rows and child-layer lines below (zeros and content widths aside), 2293 (90%) name a token.
+- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A height is named by the control-height, size or layout token that holds it; a width only when a layout width token holds it or the box is square, and otherwise it is the instance's content width, written raw and not counted below. A colour with zero alpha reads `transparent`. A value no token holds is written raw: a few line heights (14/21), odd paddings and some drop shadows inside components. Of the 2570 values written in the state rows and child-layer lines below (zeros and content widths aside), 2311 (90%) name a token.
 - Text is written as its typography token, then family size/line-height weight in brackets, then its colour, for example `` `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) ``, and is read from the first text node inside the component. A glyph from the icon font reads `Anthropicons` with its icon size step and weight.
 - Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do: a cds Button paints its fill on an inner span, so its hover shows there.
 - Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (644 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
@@ -195,8 +195,10 @@ Child layers: button 132.9x30 radius `radius.segment-thumb` (6px)
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible) | size 271 x `density.h-control` (32); padding 0 0 0 `space.0-5` (2px); radius `radius.row` (8px); background `fill.ghost-selected` (rgba(255, 255, 255, 0.15)); text Anthropicons `density.icon--sm` (16px, weight 700), `text.primary` (#f0efec) |
-| light (same: light-hover, light-focus-visible) | size 271 x `density.h-control` (32); padding 0 0 0 `space.0-5` (2px); radius `radius.row` (8px); background `frame.selected` (#edece8); text Anthropicons `density.icon--sm` (16px, weight 700), `text.primary` (#0b0b0b) |
+| default (same: hover) | size 271 x `density.h-control` (32); padding 0 0 0 `space.0-5` (2px); radius `radius.row` (8px); background `fill.ghost-selected` (rgba(255, 255, 255, 0.15)); text Anthropicons `density.icon--sm` (16px, weight 700), `text.primary` (#f0efec) |
+| focus-visible | focus ring on the inner a: `component.sidebar-row-focus` (#2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px) |
+| light (same: light-hover) | size 271 x `density.h-control` (32); padding 0 0 0 `space.0-5` (2px); radius `radius.row` (8px); background `frame.selected` (#edece8); text Anthropicons `density.icon--sm` (16px, weight 700), `text.primary` (#0b0b0b) |
+| light-focus-visible | focus ring on the inner a: `component.sidebar-row-focus` (#2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px) |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-fill-accent`, `--cds-page-bg`, `--cds-shortcut-cap-ink`, `--df-hover`, `--df-radius-pill`, `--df-row-ctl`, `--df-row-font`, `--df-row-gap`, `--df-row-h`, `--df-row-px`, `--df-selected`.
 
@@ -235,9 +237,11 @@ Tokens named in its classes: `--cds-shortcut-cap-ink`, `--df-radius-pill`.
 | State | Values |
 |---|---|
 | default | size 271 x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#c3c2b7) |
-| hover, focus-visible | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
+| hover | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
+| focus-visible | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); focus ring on the inner a: `component.sidebar-row-focus` (#2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px) |
 | light | size 271 x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#52514e) |
-| light-hover, light-focus-visible | background `frame.hover` (#f0efec) |
+| light-hover | background `frame.hover` (#f0efec) |
+| light-focus-visible | background `frame.hover` (#f0efec); focus ring on the inner a: `component.sidebar-row-focus` (#2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px) |
 
 Child layers: a 271x32 radius `radius.row` (8px)
 
@@ -253,11 +257,11 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-fill-accent`, `-
 |---|---|
 | default | size 271 x `density.h-control` (32); padding 0 `space.0-5` (2px); radius `radius.row` (8px); background transparent; outline `borderWidth.thick` (2px) solid transparent, offset `focusRing.outline-offset` (2px); text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#c3c2b7) |
 | hover | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
-| focus-visible | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); shadow #2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px |
+| focus-visible | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); shadow `component.sidebar-row-focus` (#2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px) |
 | open | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | light | size 271 x `density.h-control` (32); padding 0 `space.0-5` (2px); radius `radius.row` (8px); background transparent; outline `borderWidth.thick` (2px) solid transparent, offset `focusRing.outline-offset` (2px); text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#52514e) |
 | light-hover | background `frame.hover` (#f0efec) |
-| light-focus-visible | background `frame.hover` (#f0efec); shadow #2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px |
+| light-focus-visible | background `frame.hover` (#f0efec); shadow `component.sidebar-row-focus` (#2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px) |
 | light-open | background `frame.hover` (#f0efec) |
 
 Child layers: button 271x32 radius `radius.row` (8px)
@@ -274,10 +278,10 @@ Tokens named in its classes: `--cds-fill-accent`, `--df-hover`, `--df-radius-pil
 |---|---|
 | default | size 265 x `density.h-control--xs` (24); padding `space.1` (4px) 0 `space.1` (4px) `space.1` (4px); radius `radius.row` (8px); background transparent; outline `borderWidth.thick` (2px) solid transparent, offset `focusRing.outline-offset` (2px); text Anthropic Sans 13/16 400, `text.muted` (#898781) |
 | hover | text Anthropic Sans 13/16 400, `text.secondary` (#c3c2b7) |
-| focus-visible | shadow #2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px |
+| focus-visible | shadow `component.sidebar-row-focus` (#2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px) |
 | light | size 265 x `density.h-control--xs` (24); padding `space.1` (4px) 0 `space.1` (4px) `space.1` (4px); radius `radius.row` (8px); background transparent; outline `borderWidth.thick` (2px) solid transparent, offset `focusRing.outline-offset` (2px); text Anthropic Sans 13/16 400, `text.muted` (#898781) |
 | light-hover | text Anthropic Sans 13/16 400, `text.secondary` (#52514e) |
-| light-focus-visible | shadow #2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px |
+| light-focus-visible | shadow `component.sidebar-row-focus` (#2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px) |
 
 Child layers: button 265x24 radius `radius.row` (8px)
 
@@ -307,10 +311,12 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 | State | Values |
 |---|---|
 | default (same: refresh, pinned) | size 271 x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropic Sans 14/21 400, `text.secondary` (#c3c2b7) |
-| hover, refresh-focus-visible | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
+| hover | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
+| refresh-focus-visible | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); focus ring on the inner a: `component.sidebar-row-focus` (#2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px) |
 | selected | background `fill.ghost-selected` (rgba(255, 255, 255, 0.15)); text Anthropic Sans 14/21 400, `text.primary` (#f0efec) |
 | light (same: light-refresh, light-pinned) | size 271 x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropic Sans 14/21 400, `text.secondary` (#52514e) |
-| light-hover, light-refresh-focus-visible | background `frame.hover` (#f0efec) |
+| light-hover | background `frame.hover` (#f0efec) |
+| light-refresh-focus-visible | background `frame.hover` (#f0efec); focus ring on the inner a: `component.sidebar-row-focus` (#2a78d6 0px 0px 0px 1px inset, rgba(42, 120, 214, 0.2) 0px 0px 6px 0px) |
 | light-selected | background `frame.selected` (#edece8); text Anthropic Sans 14/21 400, `text.primary` (#0b0b0b) |
 
 Child layers: a 271x32 radius `radius.row` (8px); span 6x6 border `borderWidth.default` (1px) solid `text.muted` (#898781) radius `radius.full` (9999px)
@@ -2121,10 +2127,10 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`, `--des
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 472 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background `fill.field` (rgba(255, 255, 255, 0.05)); shadow `borderWidth.default` (1px) ring inset `fill.danger` (#d03b3b); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition color and 22 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); placeholder `text.muted` (#898781) |
-| focus-visible | shadow `shadow.focus-danger on this surface` (#20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, rgba(142, 38, 38, 0.6) 0px 0px 6px 1px) |
-| light (same: light-hover) | size 472 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background `fill.field` (rgba(255, 255, 255, 0.5)); shadow `borderWidth.default` (1px) ring inset `fill.danger` (#d03b3b); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition color and 22 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); placeholder `text.muted` (#898781) |
-| light-focus-visible | shadow `shadow.focus-danger on this surface` (#ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px) |
+| default (same: hover) | size 472 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background `fill.field` (rgba(255, 255, 255, 0.05)); shadow `borderWidth.default` (1px) ring inset `fill.danger` (#d03b3b); focus ring on the inner input: `borderWidth.default` (1px) ring inset `fill.danger` (#d03b3b); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition color and 22 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); placeholder `text.muted` (#898781) |
+| focus-visible | shadow `shadow.focus-danger on this surface` (#20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, rgba(142, 38, 38, 0.6) 0px 0px 6px 1px); focus ring none |
+| light (same: light-hover) | size 472 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background `fill.field` (rgba(255, 255, 255, 0.5)); shadow `borderWidth.default` (1px) ring inset `fill.danger` (#d03b3b); focus ring on the inner input: `borderWidth.default` (1px) ring inset `fill.danger` (#d03b3b); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition color and 22 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); placeholder `text.muted` (#898781) |
+| light-focus-visible | shadow `shadow.focus-danger on this surface` (#ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px); focus ring none |
 
 #### Text area
 

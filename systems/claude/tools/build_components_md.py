@@ -89,7 +89,8 @@ for theme in ("dark", "light"):
             if isinstance(v, str):
                 v = resolve(theme, v)
             if isinstance(v, (list, dict)):
-                BY_SHADOW[theme].setdefault(tuple(css_shadow(v)), n)
+                layers = [{**ly, "color": resolve(theme, ly["color"])} for ly in (v if isinstance(v, list) else [v])]
+                BY_SHADOW[theme].setdefault(tuple(css_shadow(layers)), n)
 
 # Dimensions, durations and curves by value, from core; the first group listed wins.
 BY_DIM = {}
@@ -343,7 +344,9 @@ def props(v):
     if "focus" not in (o.get("shadow") or ""):
         for ly in (v.get("paint") or [])[:4]:
             lab = shadow(ly["shadow"]) if ly.get("shadow") else None
-            if lab and "`shadow.focus" in lab:
+            # a shadow.focus ring, or any other ring drawn in the accent or danger colour (the sidebar
+            # row's link draws a 1px inset accent ring with a 6px glow, which no token holds)
+            if lab and ("`shadow.focus" in lab or re.search(r"#2a78d6|#d03b3b|42, 120, 214|208, 59, 59", lab)):
                 o["focus ring"] = f"on the inner {ly['node'].split('.')[0]}: {lab}"
                 break
     if s.get("backdropFilter", "none") != "none":
