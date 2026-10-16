@@ -1,18 +1,18 @@
 # Manus design reference
 
-A token set and component reference for Manus's web app (manus.im/app), for rethinking self-learn's shell and its content management: the multi-section sidebar that replaces a top bar, and the Library that organises every kind of file an agent made by type and by the day it was made. It was read on 2026-10-04 from the owner's signed-in account, in both themes, at 1440 wide and 390 wide: the home, the Library (list, grid, grouped by task, each type tab, the row menu, the view options, the document previewer), Creations, Computers, Agents, Automations, Plugins, a project page, a finished task (the thread, the deliverable card, the files dialog, the split view with its Files tab), the user menu, Settings (General and Shortcuts), search, notifications, every sidebar menu, and the phone layout (app gate, home, drawer, Library, task).
+A token set and component reference for Manus's web app (manus.im/app), for rethinking self-learn's shell and its content management: the multi-section sidebar that replaces a top bar, and the Library that organises every kind of file an agent made by type and by the day it was made. It was read on 2026-10-04 from the owner's signed-in account, in both themes, at 1440 wide and 390 wide: the home, the Library (list, grid, grouped by task, each type tab, the row menu, the view options, the document previewer), Creations, Computers, Agents, Automations, Plugins, a project page, a finished task (the thread, the deliverable card, the files dialog, the split view with its Files tab), the user menu, Settings (General and Shortcuts), search, notifications, every sidebar menu, and the phone layout (app gate, home, drawer, Library, task). It was refreshed on 2026-10-17 on the same free account, at 1440 wide in both themes, against the library scorecard: Settings' Developers pane (the API key table, its row menu, the delete confirmation, the Create API Key form empty and filled, its select open), Personalization (text fields and text areas), Usage & Billing while its history loads, and the invite dialog with its email field; the stylesheets were read again for the values Manus keeps in utility classes (named shadows, spacing, z-index, border widths, focus and reduced-motion rules).
 
 The earlier references cover learning products (Duolingo, Brilliant, NotebookLM, Coursera, Gauth). Manus is an agent product whose output is files, which is what self-learn has become too: notes, diagrams, videos, sessions and courses that pile up with no date to hang them on. Its Library is the model for that problem.
 
 | File | What it is |
 |---|---|
-| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (114: font families and weights, the `--ui-*` type scale as sizes, line heights and 14 composite type styles, the `--ui-density-*` scale with its Compact override, radii, sizes, durations, easings, breakpoints and the measured layout), `light` (282) and `dark` (282): Manus's two palettes, grouped by role (text, icon, background, border, fill, function, button, tab, shadow, gradient, overlay, activity-indicator, illustration, game, accent), plus `$themes`. Every token carries `$extensions.source`; a value DTCG cannot carry is listed under the set's `$extensions.notTokenised` rather than dropped. |
+| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (260: font families and weights, the `--ui-*` type scale as sizes, line heights and 14 composite type styles plus seven named type roles, the `--ui-density-*` scale with its Compact override, colour ramps assembled from the palettes, a spacing scale, radii, border widths, the focus ring, sizes, durations, easings, z-index layers, breakpoints, page grids and the measured layout), `light` (704) and `dark` (704): Manus's two palettes, grouped by role (text, icon, background, border, fill, function, button, tab, shadow, gradient, overlay, activity-indicator, illustration, game, accent), plus the checklist roles mapped onto them (`role`), six elevation levels (`elevation`) and one entry per measured component naming the tokens its classes use (`component`), and `$themes`. Every token carries `$extensions.source`; a value DTCG cannot carry is listed under the set's `$extensions.notTokenised` rather than dropped. |
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and the main components (the shell, the collapsed rail, buttons and chips, the Library with its tabs, rows, grid card and menus, the task thread with its deliverable card and composer, settings controls, the phone layout) with the real values, states side by side, with a Light/Dark toggle that flips the same `dark` class Manus does. |
 | [components.md](components.md) | The discovery list of every page and state captured, one entry per component with crops of the real product, the shared values (hover fills, radii, motion, focus) and the Gaps. |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png`, at 2x. |
 | [icons/](icons) | 161 SVGs lifted from the pages, named by role in [icons/INDEX.tsv](icons/INDEX.tsv) (76 by role, the rest by their Lucide name or a hash), and the eight task-type glyphs Manus serves as images under `icons/session/`. Manus's marks are its property, kept for reference only. |
-| [screenshots/](screenshots) | 89 `{page}-{theme}-{state}.png` captures. Desktop shots are 1440 x 900 at 2x, `-full` shots whole pages at 2x for the base pages only, `mobile-*` shots 390 x 844 at 2x. Every state exists in both themes. |
-| [raw/](raw) | The unprocessed readings: every custom property the stylesheets declare, by file, selector and condition, with the font faces (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the measured values the token builder reads (`component-tokens.json`); page geometry (`layout.json`) and the layout notes written from it (`pages.md`). |
+| [screenshots/](screenshots) | 109 `{page}-{theme}-{state}.png` captures (89 from 2026-10-04, 20 from the 2026-10-17 refresh: `settings-*-developers-table`, `-key-menu`, `-delete-confirm`, `-create-key`, `-create-key-typed`, `-select-open`, `-personalization`, `-usage-loading`, `invite-*`). Desktop shots are 1440 x 900 at 2x, `-full` shots whole pages at 2x for the base pages only, `mobile-*` shots 390 x 844 at 2x. Every state exists in both themes. |
+| [raw/](raw) | The unprocessed readings: every custom property the stylesheets declare, by file, selector and condition, with the font faces (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the measured values the token builder reads (`component-tokens.json`); page geometry (`layout.json`) and the layout notes written from it (`pages.md`); the utility-class readings of the refresh (`css-rules.json`, from [rules.py](tools/capture/rules.py)); and the live keyboard-focus check (`focus-live.md`). |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild. |
 
 ## How the values were read
@@ -23,9 +23,79 @@ The pages were captured without handing the account to a headless browser. In th
 
 Two things a static copy cannot do. The task thread is a virtualised list inside its own scroller: only the turns near the live scroll position exist in the copy, so the renderer restores that position (or scrolls to the first rendered turn), and a `-full` shot of a task page would be mostly empty, so there is none. And the slide preview inside a deliverable card is an iframe, which the copy keeps as a same-size dark box; the card's chrome is real, its contents are not.
 
-Component values are computed styles read per state with Playwright from the rendered copies ([measure.mjs](tools/capture/signed-in/measure.mjs)): hover with the pointer, focus-visible with a real keyboard focus, both themes by toggling the class. States that need JavaScript (an open menu, the files dialog, the typed composer, the collapsed rail, the grid view, the group-by-task view) were each captured as their own copy in the live tab, so they are measured in the state they were captured in. The task titles and document titles in the screenshots are the owner's own; nothing was created, sent, deleted or changed in the account beyond opening menus, switching the Library's view options (and switching them back), typing a line into the composer and deleting it, and toggling the sidebar.
+Component values are computed styles read per state with Playwright from the rendered copies ([measure.mjs](tools/capture/signed-in/measure.mjs)): hover with the pointer, focus-visible with a real keyboard focus, both themes by toggling the class. States that need JavaScript (an open menu, the files dialog, the typed composer, the collapsed rail, the grid view, the group-by-task view) were each captured as their own copy in the live tab, so they are measured in the state they were captured in. The task titles and document titles in the screenshots are the owner's own; nothing was created, sent, deleted or changed in the account beyond opening menus, switching the Library's view options (and switching them back), typing a line into the composer and deleting it, and toggling the sidebar. On the 2026-10-17 refresh nothing was sent, saved or deleted either: the forms were typed into and cancelled. One click there landed on a popover's "Continue in new task" by mistake and branched an existing task; the owner was told and the branch is theirs to remove.
+
+The 2026-10-17 refresh used the same route. The owner's session was already signed in to the browser pane; the copies went through the same snapshot, now ported from the Linear kit to scrub task, project, file and key names by selector (each becomes "Sample task 1" and so on), strip the session and project ids, blank the account's own slide images and drop the page title. The stylesheet chunk names had all changed since 2026-10-04, so [vars.mjs](tools/capture/vars.mjs) reads the new list: no variable changed value, 24 were added and 2 removed. Pressed is now measured too (the pointer held down on the element), for the new components only, since the 2026-10-04 copies no longer exist.
 
 Screenshots are stored as 256-colour PNGs to keep the folder small. Flat UI colours are exact; read values from the tokens, not the images.
+
+## Colour roles, ramps and elevation
+
+Manus names colours by what they do (`text.primary`, `background.menu-white`, `fill.tsp-white-main`, `function.error`), so the checklist roles are a mapping, kept in each theme under `role` as aliases:
+
+| Role | Token | Where it was measured |
+|---|---|---|
+| Page | `background.gray-main` | every page's main column, and the Settings and other modal dialogs |
+| Surface | `background.nav` | the sidebar |
+| Raised | `background.menu-white` | the composer, Library grid cards, the Computers bands |
+| Overlay | `background.menu-white` | menus, popovers, the select listbox, the search dialog |
+| Scrim | `background.dialog-mask` | behind every dialog, with a 4px backdrop blur |
+| Text: primary, secondary, tertiary, disabled | `text.primary`, `text.secondary`, `text.tertiary`, `text.disable` | placeholders are `text.disable` |
+| Text on accent, link | `text.onblack`, `text.blue` | the primary button's label; Upgrade and Documentation |
+| Border: subtle, default, strong, focus | `border.light`, `border.main`, `border.dark`, `border.input-active` | table rules, dividers, control outlines, focused fields |
+| Accent: default, hover, pressed | `button.black`, then 90% opacity | Create, Copy invitation link, Upgrade |
+| Danger: fill, text, border | `function.error-tsp`, `function.error`, `button.border-error` | the Delete menu item and the danger button |
+| Success, warning: fill, text | `function.success(-tsp)`, `function.warning(-tsp)` | no border token for either |
+
+The primary action is black in light and near-white in dark, not blue. Hover is `opacity: 0.9`; the button's classes also ask for `active:opacity-80`, but `hover:opacity-90` comes later in the stylesheet and wins, so a pressed button reads 0.9 too (measured on button-primary, button-danger and button-blue). `role.accent.hover` and `role.accent.pressed` are that 90% composited over the page colour (Derived). Blue is the link and selection colour and the one a user can swap for green, yellow, pink, orange, purple or black in Settings.
+
+Manus declares no colour ramps: Tailwind's palette is not shipped and every variable is semantic. `core.palette` assembles them from the declared values (Derived): `neutral` is the 24 greys that at least two variables share, lightest to darkest, and each accent palette is a ramp from its user-bubble tint to its dark-theme bubble: 13 steps for blue, green, orange, pink and purple, 15 for yellow, 8 for black. There is no red ramp: the danger red (`function.error`) is two declared values, not a palette. Each step names the variables that hold it.
+
+Elevation is six levels, each tied to its use, in each theme under `elevation`. Three are Manus's own named utilities:
+
+| Level | Value (light) | Used on |
+|---|---|---|
+| `card` | `shadow-card`: 1px highlight ring, 1px ring, 0 1px 2px, 0 2px 4px | the stylesheet's card style; not on a captured element |
+| `raised` | 0 3px 10px `shadow.S` | the Computers bands |
+| `composer` | 0 12px 32px rgba(0,0,0,0.02) | the composer on home, a project and a task |
+| `layer` | `shadow-layer`: rings plus 0 24px 24px -12px, 0 3px 3px -1.5px, 0 10px 20px 1px | a Library grid card on hover |
+| `menu` | `shadow-menu`: as `layer` with a 1px ring | every menu, popover, listbox and dialog (17 measured) |
+| `panel` | 1px ring plus 0 4px 32px `shadow.S` | the notifications panel |
+
+Dialogs do not get a deeper shadow than menus; the scrim sets them apart. In dark the shadow colours are stronger and `shadow.Highlight` adds a white 14% ring.
+
+## Spacing, shape and layout
+
+Spacing is Tailwind's 4px scale, read from the classes on the elements of the refresh's copies (`raw/css-rules.json`, `spacing`): 8px (632 elements), 4px (525), 2px (425), 12px (327) and 10px (216) lead, with 16, 24, 6 and 20 after them. Steps on fewer than 20 elements are left out of `core.space`. The density variables (`core.density`) hold the paddings that sit off the scale, such as the 9px nav item.
+
+Border widths are 0.5px (the share banner, the grid card ring), 1px (59 measured components) and 2px (the active underline tab), in `core.borderWidth`; illustrations draw their frames at 1.2px. Radii are in `core.radius`; dialogs are 16, cards and menus 12, rows 10, buttons and icon buttons 8.
+
+z-index (`core.zIndex`): 1 to 5 inside components, 10, 20 and 30 for raised, sticky and overlaid rows, 999 for tooltips (Manus's named `z-tooltip`), 1050 for the toast viewport and the status notice. Dialogs, menus and popovers carry no z-index: they mount in portals and stack in the order they open.
+
+Pages sit on fixed column widths inside a centred box, not a 12-column grid (`core.layout.grid`): home's 490 + 270 cards, Computers' three 312 columns, Plugins' two 378 columns, a project's 740 column and 320 rail. Breakpoints are Tailwind's 640, 768, 1024 and 1280.
+
+## Focus, states and motion
+
+Focus is mostly invisible. Of 64 components given a real keyboard focus, 51 change nothing, 10 change their outline, ring or border (the composer, the Build and setup cards, the search and settings fields) and 3 cannot take focus; [components.md](components.md) tallies the same readings by element (50 of 66 draw no outline at all, most of the rest keep a resting 1px hairline), and the blue 2px ring appears only on the send button and the theme cards. That was checked in the live app, not only in the copies: eight Tab stops on the home page all matched `:focus-visible` and none drew an outline ([raw/focus-live.md](raw/focus-live.md)). Where Manus does draw one it is a 2px outline 2px out (`core.focusRing`), or on fields a 1px ring in `border.dark`; the composer swaps its border to `border.dark`.
+
+States captured, beyond hover and focus: pressed (new: buttons, menu items, select, table row button), disabled (the Create button until a name is typed, the Send button while the email field is empty, the disabled toggle), selected (nav tab, type tab, theme card, settings nav item, underline tab, segmented control, select option), open (menus, select, row button), loading (the Usage spinner, the sidebar skeleton) and typed. An error state was not seen: Manus checks forms on submit, and submitting was out of bounds. The stylesheets do carry one, a 1px `button.border-error` ring on focus (`focus-within:shadow-[0px_0px_0px_1px_var(--Button-border-error)]`).
+
+Motion is short: colour transitions 150ms, the sidebar 200ms, resizes 300ms on `cubic-bezier(.22, 1, .36, 1)`. Under reduced motion, every animation and hover lift is a `motion-safe:` variant and does not run (spinners, pulses, fades, slide-ins, hover scale and lift), `motion-reduce:` variants hide marquees and stop transforms, and the resize transition is cut to none; colour transitions stay. The 51 rules are listed in `raw/css-rules.json` under `reducedMotion`.
+
+## Patterns
+
+| Pattern | What Manus does | See |
+|---|---|---|
+| App shell and navigation | A 300px sidebar holds everything: nav tabs, Projects, Tasks, a share banner and the account row; it folds to a 52px rail and becomes a drawer on a phone. There is no top navigation, only a 48px bar with the model picker and plan. | [home-dark](screenshots/home-dark.png), [home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png) |
+| Forms and validation | Fields stack under 14px labels in a small dialog; the primary button stays disabled until the required field has text, and nothing explains why. The invite email enables Send for any text: the format is checked only on submit. | [settings-dark-create-key](screenshots/settings-dark-create-key.png), [settings-dark-create-key-typed](screenshots/settings-dark-create-key-typed.png), [invite-dark-email-typed](screenshots/invite-dark-email-typed.png) |
+| Empty | An empty page offers starting points rather than an illustration: Automations shows three example cards and one Get started button. | [automations-dark](screenshots/automations-dark.png) |
+| Loading | Lists load behind pulsing grey rows (the sidebar's task list); a pane that fetches shows one small ring where the content will be. | [settings-dark-usage-loading](screenshots/settings-dark-usage-loading.png), [nav-skeleton-default](components/crops/nav-skeleton-default.png) |
+| Error | Not seen; no failed request or invalid submit was triggered. | |
+| Destructive confirmation | Delete sits alone in the row's popover, in red with a trash icon. Choosing it opens a small dialog: the question, "This action cannot be undone.", then Cancel (outlined) and Delete (red, filled) at the end. | [settings-dark-key-menu](screenshots/settings-dark-key-menu.png), [settings-dark-delete-confirm](screenshots/settings-dark-delete-confirm.png) |
+| Feedback after an action | Toasts mount in a fixed list at the top centre (`top 28px`, z-index 1050). One was seen live, "Creating new task…" with a spinner, while a branch task was created; it was not copied, so its look is not measured. Copy buttons gave no toast. | the toast viewport is in every 2026-10-17 copy |
+| Search and filtering | Search is a dialog (Cmd+K) over everything; the Library filters by type with a strip of tabs and switches list or grid and grouping from a view-options menu. | [home-dark-search](screenshots/home-dark-search.png), [library-dark-slides](screenshots/library-dark-slides.png), [library-dark-images-grid-view-options](screenshots/library-dark-images-grid-view-options.png) |
+| Lists and tables | Lists are rows split by 1px rules and grouped by day; the one table (API keys) is a plain table with grey 13px headers, row rules, no zebra and a more button per row. | [library-dark](screenshots/library-dark.png), [settings-dark-developers-table](screenshots/settings-dark-developers-table.png) |
+| Onboarding | Only the phone's app gate was captured (download the app or continue on the web); the first-run flow of a new account was not, since the account is not new. | [mobile-home-dark-app-gate](screenshots/mobile-home-dark-app-gate.png) |
 
 ## Fonts
 
@@ -44,6 +114,8 @@ The captures came from the owner's account, so the screenshots and crops showed 
 
 138 of the 834 crops were deleted rather than painted, because each was only a title or a row of content: the project and task rows, search results, file rows and chips, grid card titles, group headings, the previewer and its headings, user and agent messages, steps, deliverable and creation cards, the file tree. [components.md](components.md) shows no image for them; their measured values are still in it and in [raw/measurements.md](raw/measurements.md). 696 crops remain. `screenshots/` still holds all 89 shots.
 
+The 20 screenshots and the crops added on 2026-10-17 were rendered from copies that were redacted before they left the browser, so they need no painting: task, project, file and key names read "Sample task 1", "Sample key 1" and so on.
+
 Limits: the values in `raw/` and the text of this folder were redacted separately; the sidebar's project name still appears in them. A shot where a modal dims the page behind it can keep a few unreadable fragments of text. Run `python3 tools/redact_images.py check systems/manus --patterns ~/.design-systems/cleanup-redact.json` before committing any new image.
 
 ## Do and don't
@@ -53,7 +125,62 @@ Limits: the values in `raw/` and the text of this folder were redacted separatel
 3. **Do keep the filled button for the main action of a block and outline the rest.** Each creation card has one black "Locate in task" beside two 1px outlined buttons, and Automations ends in a single "Get started"; header actions, even Plugins' Create, are outlined, and the project rail's Add buttons are too. The filled button is black in light and near-white in dark; Agents' two download buttons are the only pair seen side by side. See [creations-light](screenshots/creations-light.png), [automations-light](screenshots/automations-light.png), [plugins-dark](screenshots/plugins-dark.png), [project-light](screenshots/project-light.png) and [agents-light](screenshots/agents-light.png).
 4. **Do separate surfaces on the page with hairlines and fill steps, and save shadow for what floats.** Cards and plugin rows rest on a 1px border at 6 to 14% or a 4% fill with no shadow, and Library rows are split by a single 1px rule. Menus and popovers get the layered shadow and a 1px ring; a grid card gains it only on hover. See [library-dark](screenshots/library-dark.png), [computers-dark](screenshots/computers-dark.png), [home-light-model-menu](screenshots/home-light-model-menu.png) and [plugins-light-more-menu](screenshots/plugins-light-more-menu.png).
 5. **Do label sections with small grey text in normal case.** Projects, Tasks and the settings groups (Account, Capabilities, Assets) are 13/18 in `text.tertiary` and never uppercase; the Library's date headings are 14/20 regular with the count in grey beside them. See [home-light](screenshots/home-light.png), [settings-light-general](screenshots/settings-light-general.png) and [library-light](screenshots/library-light.png).
-6. **Do put a line icon before every nav and menu label.** Nav tabs carry an 18px icon, settings nav items and row menu items a 16px one, and menus split their groups with a 1px divider at 6%. See [library-dark-row-menu](screenshots/library-dark-row-menu.png), [row-menu-light](components/crops/row-menu-light.png) and [plugins-light-more-menu](screenshots/plugins-light-more-menu.png).
+6. **Do confirm a destructive action in a small dialog, with the red button last.** Delete sits alone in the row's popover in `function.error` with a trash icon; the dialog that follows asks the question, says "This action cannot be undone.", and ends with an outlined Cancel and a red filled Delete. Red appears nowhere else in Settings. See [settings-dark-key-menu](screenshots/settings-dark-key-menu.png), [settings-light-delete-confirm](screenshots/settings-light-delete-confirm.png) and [button-danger-default](components/crops/button-danger-default.png).
+
+## What to distrust
+
+- `core.palette` is assembled, not declared: Manus has no ramps, and the step numbers are this package's.
+- `role.*` is this package's mapping of checklist roles onto Manus's tokens, chosen from where each token is used; the values are Manus's.
+- `role.accent.hover` and `.pressed` are computed (90% over the page colour); the opacity is measured.
+- Pressed was measured only on the components added on 2026-10-17. The older copies are gone.
+- The toast was seen, not measured; the checkbox exists only as stylesheet rules (antd checkboxes in the website builder's data tables, checked fill `icon.blue`), not on a captured page.
+- Values from 2026-10-04 were not re-measured; the 2026-10-17 stylesheets declare the same values for every variable that existed then.
+- Avatar fills are this package's grey disc; only their size and shape are Manus's.
+
+## Coverage
+
+Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Free plan; captured 2026-10-04, refreshed 2026-10-17.
+
+| Item | Status | Where |
+|---|---|---|
+| Colour roles, light and dark | Captured; info not present (Manus has no info status); success and warning have no border token | `role`, `background`, `text`, `border`, `function` in `light` and `dark` |
+| Colour ramps | Derived from the declared values; Manus declares none | `core.palette` |
+| Type families and roles | Captured: display, heading, body, body-long, label, caption, code | `core.typography.role`, `core.fontFamily` |
+| Spacing | Captured: Tailwind 4px scale with element counts | `core.space`, `core.density`, `raw/css-rules.json` |
+| Radii, border widths | Captured | `core.radius`, `core.borderWidth` |
+| Elevation | Captured: six levels tied to use | `elevation` in `light` and `dark` |
+| Motion and reduced motion | Captured | `core.duration`, `core.easing`, `raw/css-rules.json` |
+| Sizing and focus ring | Captured | `core.size`, `core.density`, `core.focusRing` |
+| Layout: breakpoints, widths, grid, z-index | Captured | `core.breakpoint`, `core.layout`, `core.zIndex` |
+| Button | Captured: default, hover, focus-visible, pressed, disabled | `button-primary`, `button-secondary`, `button-danger`, `button-outline`, `button-blue`, `button-white` |
+| Icon button | Captured: default, hover, focus-visible, pressed, open | `table-row-more`, `sidebar-search-button`, `confirm-dialog-close` |
+| Link | Captured: default, hover, focus-visible | `upgrade-link` |
+| Text field | Captured: default, hover, focus-visible, typed | `text-field`, `text-field-wrapper`, `email-field`, `search-input` |
+| Text area | Captured: default, hover, focus-visible | `text-area` |
+| Select | Captured: default, hover, pressed, open, option hover and selected | `select-trigger`, `select-listbox`, `select-option`, `language-select` |
+| Checkbox | Not captured on an element: only in the website builder's data tables, which the account has none of; stylesheet rules read | `raw/css-rules.json` |
+| Radio | Not present: no radio in the stylesheets or on any captured page | |
+| Switch | Captured: default, hover, focus-visible, on, disabled | `toggle` |
+| Tabs | Captured: default, hover, selected (type tabs, underline tabs, segmented control) | `type-tab`, `tabs-underline`, `segmented`, `category-tab` |
+| Menu | Captured: menus, menu items, destructive item | `model-menu`, `row-menu`, `popover-menu`, `menu-item-danger` |
+| Tooltip | Captured: default | `tooltip` |
+| Dialog | Captured: settings, files, search, invite, form, destructive confirm | `settings-dialog`, `confirm-dialog`, `form-dialog`, `invite-dialog` |
+| Toast | Seen, not measured: the viewport is in the copies, the one toast was not copied | Patterns, above |
+| Card | Captured: default, hover, focus-visible | `build-card`, `grid-card`, `automation-card`, `plan-card` |
+| List row | Captured: default, hover, focus-visible, active | `nav-task-row`, `file-row`, `table-row` |
+| Table | Captured: table, header cell, row hover, row button | `table`, `table-header-cell`, `table-row`, `table-row-more` |
+| Avatar | Captured (this package's disc in place of the photo) | `sidebar-avatar` |
+| Badge | Captured | `nav-badge-cue`, `studio-only-badge` |
+| App shell and navigation | Captured | Patterns |
+| Form with a validation error | Not captured: validation runs on submit, and nothing was submitted | Patterns |
+| Empty, loading, error | Empty and loading captured; error not seen | Patterns |
+| Destructive confirmation | Captured | Patterns |
+| Feedback after an action | Seen once, not copied | Patterns |
+| Search and filtering | Captured | Patterns |
+| List or table | Captured | Patterns |
+| Onboarding | Partly: the phone app gate only | Patterns |
+| Light and dark | Captured, every state | |
+| Desktop 1440 and phone 390 | Captured; the refresh's states at 1440 only | |
 
 ## Rebuild
 
@@ -69,7 +196,7 @@ python3 tools/build_style_guide.py
 python3 tools/build_components_md.py
 ```
 
-`build_tokens.py` reads `raw/css-vars.json` and `raw/component-tokens.json` and writes `tokens.json`; it refuses an alias that points at nothing. `build_style_guide.py` renders `style-guide.html` from `tokens.json` and `tools/style-guide.template.html`, turning every token into a CSS variable so the page cannot drift from the file. `build_components_md.py` writes `components.md` from `raw/components-computed.json`, `raw/layout.json`, `tokens.json`, the screenshots and `icons/INDEX.tsv`. All three are deterministic.
+`build_tokens.py` reads `raw/css-vars.json`, `raw/css-rules.json`, `raw/components-computed.json` and `raw/component-tokens.json` and writes `tokens.json`; it refuses an alias that points at nothing. `build_style_guide.py` renders `style-guide.html` from `tokens.json` and `tools/style-guide.template.html`, turning every token into a CSS variable so the page cannot drift from the file. `build_components_md.py` writes `components.md` from `raw/components-computed.json`, `raw/layout.json`, `tokens.json`, the screenshots and `icons/INDEX.tsv`. All three are deterministic.
 
 `tools/capture/` holds the kit the captures came from. The Playwright scripts take `PLAYWRIGHT` as the path to a Playwright install's `index.mjs` (this repository has one under `tools/tldrawkc/node_modules/playwright/`), and the signed-in scripts take `SNAPS` as the directory of page copies, which are not committed since they hold the owner's content.
 
@@ -87,6 +214,10 @@ PLAYWRIGHT=... SNAPS=<dir> node tools/capture/signed-in/measure.mjs
 
 ```bash
 SNAPS=<dir> node tools/capture/icons.mjs
+```
+
+```bash
+python3 tools/capture/rules.py <dir of the .css chunks> <dir of page copies>
 ```
 
 `python3 tools/capture/quantize.py <dir of renders>` stores renders into `screenshots/`. To take a new page copy: open the page in a signed-in tab, paste `snapshot.js` into its console, call `await __inline()` on a page with thumbnails, then `__snap('<page>-dark-<state>', REDACT)` with the redaction file's contents, save the returned string to a file and run `unsnap.py <file> <dir>`.

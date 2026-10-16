@@ -4,11 +4,6 @@
 version: "alpha"
 name: "Manus"
 description: "Agent app shell: multi-section sidebar, a Library of agent outputs by type and by day, task threads with deliverables"
-omitted:
-  - section: "spacing"
-    reason: "tokens.json has no spacing tokens under `core.spacing`"
-  - section: "components"
-    reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#2f83e4"
   neutral: "#f8f8f7"
@@ -16,9 +11,12 @@ colors:
   on-surface: "#1a1a1a"
   on-surface-variant: "#4d4d4d"
   outline: "rgba(79, 89, 102, 0.122)"
-  background-video-composer: "rgba(36, 36, 36, 0.6)"
+  background-video-campaign-artwork: "#141414"
+  background-video-campaign-preview: "#1f1f1f"
+  background-live-events-end: "#ededed"
   background-agents-invite: "#ebebeb"
   background-invitation: "#f5f5f5"
+  background-image-preview-toolbar: "rgba(51, 51, 51, 0.851)"
   background-chat-reaction: "#ececeb"
   background-studio-only-badge: "#000000"
   background-gray-login: "#f8f8f7"
@@ -46,20 +44,22 @@ colors:
   background-file-previewer-image: "#575756"
   background-dialog-mask: "rgba(0, 0, 0, 0.302)"
   background-menu-tooltips: "rgba(0, 0, 0, 0.902)"
-  text-remote-computer-access: "#34322d"
-  text-primary: "#1a1a1a"
-  text-secondary: "#4d4d4d"
-  text-tertiary: "#737373"
-  text-disable: "#a6a6a6"
-  text-blue: "#0081f2"
-  text-onblack: "#ffffff"
-  text-white: "#ffffff"
-  text-white-tsp: "rgba(255, 255, 255, 0.6)"
-  text-theme-primary: "#262626"
-  text-quaternary: "#8c8c8c"
-  text-logo: "#34322d"
-  text-shining: "#e5e5e5"
-  text-blue-dark: "#005fb3"
+  border-video-campaign-artwork: "rgba(0, 0, 0, 0.322)"
+  border-image-preview-toolbar: "rgba(255, 255, 255, 0.122)"
+  border-menu-arrow: "rgba(0, 0, 0, 0.059)"
+  border-event-visual-kit: "#eadfcb"
+  border-main: "rgba(0, 0, 0, 0.059)"
+  border-blue: "rgba(0, 129, 242, 0.278)"
+  border-white: "rgba(255, 255, 255, 0.2)"
+  border-input-active: "rgba(0, 0, 0, 0.302)"
+  border-light: "rgba(0, 0, 0, 0.039)"
+  border-dark: "rgba(0, 0, 0, 0.141)"
+  border-light-opaque: "#f5f5f5"
+  border-dark-opaque: "#dbdbdb"
+  border-primary: "rgba(79, 89, 102, 0.122)"
+  misc-ring-video-campaign-artwork: "rgba(254, 254, 254, 0.322)"
+  misc-slides-stage-ink: "#34322d"
+  fill-tsp-white-surface: "rgba(55, 53, 47, 0.031)"
   fill-remote-computer-action: "rgba(0, 0, 0, 0.302)"
   fill-on-dark-surface-hover: "rgba(255, 255, 255, 0.102)"
   fill-progress-success: "#66b175"
@@ -77,6 +77,37 @@ colors:
   fill-gray: "#f8f8f7"
   fill-overlay-white: "rgba(255, 255, 255, 0.349)"
   fill-overlay-white-border: "rgba(255, 255, 255, 0.2)"
+  text-live-event-entry-primary: "#34322d"
+  text-live-event-entry-tertiary: "#858481"
+  text-live-event-entry-disable: "#b9b9b7"
+  text-features-primary: "#34322d"
+  text-features-secondary: "#5e5e5b"
+  text-features-tertiary: "#858481"
+  text-remote-computer-access: "#34322d"
+  text-event-visual-kit-accent: "#a2453a"
+  text-primary: "#1a1a1a"
+  text-secondary: "#4d4d4d"
+  text-tertiary: "#737373"
+  text-disable: "#a6a6a6"
+  text-blue: "#0081f2"
+  text-onblack: "#ffffff"
+  text-white: "#ffffff"
+  text-white-tsp: "rgba(255, 255, 255, 0.6)"
+  text-theme-primary: "#262626"
+  text-quaternary: "#8c8c8c"
+  text-logo: "#34322d"
+  text-shining: "#e5e5e5"
+  text-blue-dark: "#005fb3"
+  icon-live-event-entry-secondary: "#5e5e5b"
+  icon-primary: "#1a1a1a"
+  icon-secondary: "#4d4d4d"
+  icon-tertiary: "#737373"
+  icon-disable: "#a6a6a6"
+  icon-blue: "#0081f2"
+  icon-onblack: "#ffffff"
+  icon-white: "#ffffff"
+  icon-white-tsp: "rgba(255, 255, 255, 0.376)"
+  icon-video-play: "#34322d"
   illustration-app-download-logo: "#ffffff"
   illustration-app-download-phone-screen: "#f8f8f7"
   illustration-app-download-studio: "#d3d3d3"
@@ -92,18 +123,10 @@ colors:
   game-promo: "#1a1a19"
   game-promo-preview: "rgba(143, 143, 143, 0.31)"
   game-gallery: "rgba(0, 0, 0, 0.078)"
-  game-template-badge: "rgba(73, 119, 255, 0.788)"
+  game-category-badge: "rgba(0, 0, 0, 0.561)"
   game-tab-active: "rgba(20, 20, 20, 0.851)"
   game-tab-inactive: "rgba(20, 20, 20, 0.4)"
   game-header-muted: "#acacac"
-  border-menu-arrow: "rgba(0, 0, 0, 0.059)"
-  border-main: "rgba(0, 0, 0, 0.059)"
-  border-blue: "rgba(0, 129, 242, 0.278)"
-  border-white: "rgba(255, 255, 255, 0.2)"
-  border-input-active: "rgba(0, 0, 0, 0.302)"
-  border-light: "rgba(0, 0, 0, 0.039)"
-  border-dark: "rgba(0, 0, 0, 0.141)"
-  border-primary: "rgba(79, 89, 102, 0.122)"
   ansi-magenta: "#a855c7"
   ansi-cyan: "#0f9aa8"
   brand-android: "#418377"
@@ -127,15 +150,6 @@ colors:
   shadow-danger-2: "#ee3a3a"
   shadow-card-border: "rgba(22, 25, 29, 0.122)"
   shadow-card-border-2: "rgba(22, 25, 29, 0.122)"
-  icon-primary: "#1a1a1a"
-  icon-secondary: "#4d4d4d"
-  icon-tertiary: "#737373"
-  icon-disable: "#a6a6a6"
-  icon-blue: "#0081f2"
-  icon-onblack: "#ffffff"
-  icon-white: "#ffffff"
-  icon-white-tsp: "rgba(255, 255, 255, 0.376)"
-  icon-video-play: "#34322d"
   function-error: "#fb494f"
   function-success: "#25ba3b"
   function-warning: "#efa201"
@@ -286,6 +300,403 @@ colors:
   accent-yellow-bubble-border-light: "#eed9a7"
   accent-yellow-bubble-dark: "#4a3a18"
   accent-yellow-bubble-border-dark: "#6a5528"
+  role-background-page: "#f8f8f7"
+  role-background-surface: "#f0f0f0"
+  role-background-raised: "#ffffff"
+  role-background-overlay: "#ffffff"
+  role-background-dialog: "#f8f8f7"
+  role-background-scrim: "rgba(0, 0, 0, 0.302)"
+  role-text-primary: "#1a1a1a"
+  role-text-secondary: "#4d4d4d"
+  role-text-tertiary: "#737373"
+  role-text-disabled: "#a6a6a6"
+  role-text-on-accent: "#ffffff"
+  role-text-link: "#0081f2"
+  role-border-subtle: "rgba(0, 0, 0, 0.039)"
+  role-border-default: "rgba(0, 0, 0, 0.059)"
+  role-border-strong: "rgba(0, 0, 0, 0.141)"
+  role-border-focus: "rgba(0, 0, 0, 0.302)"
+  role-accent-default: "#1a1a19"
+  role-accent-hover: "#30302f"
+  role-accent-pressed: "#30302f"
+  role-accent-on-accent: "#ffffff"
+  role-accent-brand: "#0081f2"
+  role-status-danger-fill: "rgba(242, 90, 90, 0.078)"
+  role-status-danger-text: "#fb494f"
+  role-status-danger-border: "rgba(242, 90, 90, 0.502)"
+  role-status-success-fill: "rgba(37, 186, 59, 0.078)"
+  role-status-success-text: "#25ba3b"
+  role-status-warning-fill: "rgba(239, 162, 1, 0.122)"
+  role-status-warning-text: "#efa201"
+  component-assistant-text-default-text: "#1a1a1a"
+  component-attach-menu-default-bg: "#ffffff"
+  component-automation-card-default-border: "rgba(0, 0, 0, 0.059)"
+  component-automation-card-default-bg: "#ffffff"
+  component-automation-card-title-default-text: "#1a1a1a"
+  component-automations-heading-default-text: "#1a1a1a"
+  component-build-card-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-build-card-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-build-card-focus-visible-ring: "rgba(0, 0, 0, 0.141)"
+  component-button-black-wide-default-bg: "#1a1a19"
+  component-button-black-wide-default-text: "#ffffff"
+  component-button-blue-default-text: "#ffffff"
+  component-button-danger-default-bg: "#fb494f"
+  component-button-danger-default-text: "#ffffff"
+  component-button-outline-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-button-outline-default-text: "#1a1a1a"
+  component-button-primary-default-bg: "#1a1a19"
+  component-button-primary-default-text: "#ffffff"
+  component-button-secondary-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-button-secondary-default-text: "#1a1a1a"
+  component-button-white-default-bg: "#1a1a19"
+  component-button-white-default-text: "#ffffff"
+  component-carousel-forward-default-bg: "#ffffff"
+  component-carousel-forward-default-border: "rgba(0, 0, 0, 0.059)"
+  component-carousel-forward-hover-bg: "#f8f8f7"
+  component-category-tab-default-text: "#737373"
+  component-category-tab-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-composer-default-bg: "#ffffff"
+  component-composer-connectors-default-text: "#1a1a1a"
+  component-composer-connectors-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-composer-desktop-chip-default-text: "#4d4d4d"
+  component-composer-desktop-chip-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-composer-mic-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-composer-plus-default-border: "rgba(0, 0, 0, 0.059)"
+  component-composer-plus-default-text: "#4d4d4d"
+  component-composer-plus-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-composer-send-default-text: "#ffffff"
+  component-composer-send-default-bg: "#1a1a19"
+  component-composer-send-disabled-bg: "rgba(55, 53, 47, 0.078)"
+  component-composer-skill-button-default-text: "#4d4d4d"
+  component-composer-skill-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-computers-connect-default-border: "rgba(0, 0, 0, 0.059)"
+  component-computers-connect-default-bg: "#ffffff"
+  component-computers-cta-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-computers-cta-default-text: "#1a1a1a"
+  component-computers-customize-default-border: "rgba(0, 0, 0, 0.059)"
+  component-computers-customize-default-bg: "#ffffff"
+  component-computers-customize-hover-bg: "#f8f8f7"
+  component-computers-heading-default-text: "#1a1a1a"
+  component-computers-small-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-computers-small-button-default-text: "#1a1a1a"
+  component-confirm-dialog-default-bg: "#f8f8f7"
+  component-confirm-dialog-close-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-context-menu-default-bg: "#ffffff"
+  component-context-menu-item-danger-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-context-menu-item-danger-default-text: "#fb494f"
+  component-create-card-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-create-card-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-create-card-focus-visible-ring: "rgba(0, 0, 0, 0.141)"
+  component-creation-action-default-text: "#1a1a1a"
+  component-creation-action-default-border: "rgba(0, 0, 0, 0.122)"
+  component-creation-action-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-creation-action-primary-default-bg: "#1a1a19"
+  component-creation-action-primary-default-text: "#ffffff"
+  component-creation-card-default-border: "rgba(0, 0, 0, 0.141)"
+  component-creation-card-default-bg: "#ffffff"
+  component-creation-star-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-creation-thumb-default-bg: "rgba(55, 53, 47, 0.059)"
+  component-creation-url-default-bg: "rgba(55, 53, 47, 0.059)"
+  component-creation-url-default-text: "#737373"
+  component-creation-url-hover-text: "#1a1a1a"
+  component-creations-search-default-text: "#1a1a1a"
+  component-creations-search-default-border: "rgba(0, 0, 0, 0.122)"
+  component-credits-pill-default-border: "rgba(0, 0, 0, 0.059)"
+  component-credits-pill-default-text: "#1a1a1a"
+  component-credits-pill-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-cue-download-default-bg: "#1a1a19"
+  component-cue-download-default-text: "#ffffff"
+  component-cue-link-default-text: "#4d4d4d"
+  component-cue-mobile-default-bg: "#1a1a19"
+  component-cue-mobile-default-text: "#ffffff"
+  component-cue-play-default-bg: "rgba(0, 0, 0, 0.302)"
+  component-cue-play-default-text: "#ffffff"
+  component-cue-title-default-text: "#1a1a1a"
+  component-date-heading-default-text: "#1a1a1a"
+  component-deliverable-card-default-bg: "#ffffff"
+  component-deliverable-card-default-border: "rgba(0, 0, 0, 0.141)"
+  component-deliverable-doc-default-bg: "#ffffff"
+  component-deliverable-doc-default-border: "rgba(0, 0, 0, 0.141)"
+  component-deliverable-header-default-border: "rgba(0, 0, 0, 0.059)"
+  component-deliverable-menu-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-dialog-close-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-dialog-mask-default-bg: "rgba(0, 0, 0, 0.302)"
+  component-disclaimer-default-text: "#737373"
+  component-doc-rule-default-bg: "rgba(0, 0, 0, 0.059)"
+  component-field-label-default-text: "#1a1a1a"
+  component-file-chip-default-border: "rgba(0, 0, 0, 0.141)"
+  component-file-chip-default-bg: "#ffffff"
+  component-file-chip-hover-bg: "rgba(255, 255, 255, 0.078)"
+  component-file-row-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-file-row-menu-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-file-row-source-default-text: "#737373"
+  component-file-row-time-default-text: "#737373"
+  component-file-tree-default-bg: "#f8f8f7"
+  component-file-tree-header-default-text: "#1a1a1a"
+  component-file-tree-header-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-file-tree-item-default-text: "#1a1a1a"
+  component-file-tree-item-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-files-dialog-default-bg: "#f8f8f7"
+  component-files-dialog-row-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-form-dialog-default-bg: "#f8f8f7"
+  component-get-started-default-bg: "#1a1a19"
+  component-get-started-default-text: "#ffffff"
+  component-grid-card-default-border: "rgba(0, 0, 0, 0.141)"
+  component-grid-card-default-bg: "#ffffff"
+  component-info-banner-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-invite-dialog-default-bg: "#f8f8f7"
+  component-keycap-default-border: "rgba(0, 0, 0, 0.059)"
+  component-keycap-default-bg: "#fafafa"
+  component-keycap-default-text: "#4d4d4d"
+  component-language-select-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-language-select-default-border: "rgba(255, 255, 255, 0.2)"
+  component-language-select-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-library-search-default-text: "#1a1a1a"
+  component-library-search-default-border: "rgba(0, 0, 0, 0.122)"
+  component-lite-tag-default-text: "#737373"
+  component-lite-tag-default-border: "rgba(0, 0, 0, 0.141)"
+  component-local-file-card-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-local-file-card-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-local-file-card-focus-visible-ring: "rgba(0, 0, 0, 0.141)"
+  component-m-app-banner-default-border: "rgba(0, 0, 0, 0.059)"
+  component-m-app-banner-default-bg: "#f8f8f7"
+  component-m-app-gate-default-bg: "#f8f8f7"
+  component-m-carousel-card-default-text: "#737373"
+  component-m-carousel-card-default-bg: "rgba(55, 53, 47, 0.059)"
+  component-m-carousel-card-hover-bg: "rgba(55, 53, 47, 0.078)"
+  component-m-carousel-dot-default-bg: "rgba(55, 53, 47, 0.078)"
+  component-m-carousel-dot-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-m-chip-default-border: "rgba(0, 0, 0, 0.059)"
+  component-m-chip-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-m-composer-default-bg: "#ffffff"
+  component-m-drawer-default-bg: "#f0f0f0"
+  component-m-drawer-scrim-default-bg: "rgba(0, 0, 0, 0.651)"
+  component-m-file-row-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-m-gate-continue-default-text: "#737373"
+  component-m-gate-download-default-bg: "#1a1a19"
+  component-m-gate-download-default-text: "#ffffff"
+  component-m-header-default-bg: "#f8f8f7"
+  component-m-hero-title-default-text: "#1a1a1a"
+  component-m-library-header-default-bg: "#f8f8f7"
+  component-m-open-app-default-bg: "#1a1a19"
+  component-m-open-app-default-text: "#ffffff"
+  component-m-task-deliverable-default-bg: "#ffffff"
+  component-m-task-deliverable-default-border: "rgba(0, 0, 0, 0.141)"
+  component-m-type-dropdown-default-border: "rgba(0, 0, 0, 0.122)"
+  component-m-type-dropdown-default-text: "#4d4d4d"
+  component-m-type-dropdown-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-m-type-menu-default-bg: "#ffffff"
+  component-m-type-menu-item-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-m-type-menu-item-default-text: "#1a1a1a"
+  component-menu-divider-default-bg: "rgba(0, 0, 0, 0.059)"
+  component-menu-item-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-menu-item-default-text: "#1a1a1a"
+  component-menu-item-danger-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-menu-item-danger-default-text: "#fb494f"
+  component-message-action-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-model-menu-default-bg: "#ffffff"
+  component-model-menu-beta-badge-default-border: "rgba(0, 0, 0, 0.141)"
+  component-model-menu-beta-badge-default-text: "#737373"
+  component-model-menu-item-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-model-menu-item-focus-visible-ring: "rgba(0, 0, 0, 0.141)"
+  component-model-menu-pro-badge-default-bg: "rgba(55, 53, 47, 0.059)"
+  component-model-menu-pro-badge-default-text: "#1a1a1a"
+  component-model-picker-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-more-menu-default-bg: "#f8f8f7"
+  component-more-menu-item-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-more-menu-item-default-text: "#1a1a1a"
+  component-nav-badge-cue-default-bg: "rgba(55, 53, 47, 0.078)"
+  component-nav-badge-cue-default-text: "#1a1a1a"
+  component-nav-project-row-default-bg: "#f0f0f0"
+  component-nav-section-header-default-bg: "#f0f0f0"
+  component-nav-section-header-tasks-default-bg: "#f0f0f0"
+  component-nav-skeleton-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-nav-tab-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-nav-task-row-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-notification-item-default-border: "rgba(0, 0, 0, 0.059)"
+  component-notifications-panel-default-border: "rgba(0, 0, 0, 0.141)"
+  component-notifications-panel-default-bg: "#ffffff"
+  component-page-title-default-text: "#1a1a1a"
+  component-panel-toggle-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-plan-card-default-border: "rgba(0, 0, 0, 0.141)"
+  component-plan-chip-default-border: "rgba(0, 0, 0, 0.059)"
+  component-plugin-add-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-plugin-add-default-border: "rgba(0, 0, 0, 0.059)"
+  component-plugin-icon-default-bg: "#ffffff"
+  component-plugin-icon-default-border: "rgba(0, 0, 0, 0.059)"
+  component-plugin-promo-default-border: "rgba(0, 0, 0, 0.059)"
+  component-plugin-promo-default-bg: "#fafafa"
+  component-plugin-promo-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-plugin-row-default-border: "rgba(0, 0, 0, 0.059)"
+  component-plugin-row-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-plugins-header-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-plugins-header-button-default-text: "#1a1a1a"
+  component-plugins-header-primary-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-plugins-header-primary-default-text: "#1a1a1a"
+  component-plugins-search-default-border: "rgba(0, 0, 0, 0.122)"
+  component-plugins-search-focus-within-border: "rgba(0, 0, 0, 0.302)"
+  component-popover-menu-default-bg: "#ffffff"
+  component-previewer-default-bg: "#f8f8f7"
+  component-previewer-header-default-border: "rgba(0, 0, 0, 0.059)"
+  component-previewer-header-default-bg: "#f8f8f7"
+  component-previewer-title-default-text: "#1a1a1a"
+  component-previewer-tool-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-project-add-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-project-add-button-default-text: "#1a1a1a"
+  component-project-composer-default-bg: "#ffffff"
+  component-project-connectors-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-project-connectors-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-project-icon-default-bg: "rgba(55, 53, 47, 0.059)"
+  component-project-icon-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-project-meta-default-text: "#737373"
+  component-project-rail-card-default-border: "rgba(0, 0, 0, 0.059)"
+  component-project-rail-section-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-project-recent-label-default-text: "#737373"
+  component-project-session-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-project-session-focus-visible-bg: "rgba(55, 53, 47, 0.039)"
+  component-project-title-default-text: "#1a1a1a"
+  component-promo-card-default-bg: "#1a1a19"
+  component-promo-card-default-text: "#ffffff"
+  component-reset-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-reset-button-default-text: "#1a1a1a"
+  component-resize-handle-default-bg: "rgba(0, 0, 0, 0.059)"
+  component-resize-handle-group-hover-bg: "#0081f2"
+  component-row-menu-default-bg: "#ffffff"
+  component-row-menu-default-text: "#1a1a1a"
+  component-row-menu-item-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-row-menu-item-default-text: "#1a1a1a"
+  component-search-dialog-default-bg: "#ffffff"
+  component-search-group-label-default-text: "#737373"
+  component-search-input-default-border: "rgba(0, 0, 0, 0.059)"
+  component-search-result-default-text: "#1a1a1a"
+  component-search-result-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-segmented-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-select-listbox-default-bg: "#ffffff"
+  component-select-option-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-select-option-default-text: "#1a1a1a"
+  component-select-trigger-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-send-button-default-bg: "#1a1a19"
+  component-send-button-default-text: "#ffffff"
+  component-settings-card-row-default-border: "rgba(0, 0, 0, 0.059)"
+  component-settings-card-row-default-bg: "#fafafa"
+  component-settings-close-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-settings-dialog-default-bg: "#f8f8f7"
+  component-settings-nav-item-default-text: "#1a1a1a"
+  component-settings-nav-item-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-settings-nav-item-hover-pressed-bg: "rgba(55, 53, 47, 0.078)"
+  component-settings-nav-label-default-text: "#737373"
+  component-settings-nav-row-default-text: "#1a1a1a"
+  component-settings-nav-row-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-settings-nav-row-hover-pressed-bg: "rgba(55, 53, 47, 0.078)"
+  component-settings-row-desc-default-text: "#737373"
+  component-settings-row-title-default-text: "#1a1a1a"
+  component-settings-rule-default-bg: "rgba(0, 0, 0, 0.059)"
+  component-settings-search-default-border: "rgba(0, 0, 0, 0.122)"
+  component-settings-search-focus-within-border: "rgba(0, 0, 0, 0.302)"
+  component-settings-section-title-default-text: "#1a1a1a"
+  component-settings-select-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-settings-title-default-text: "#1a1a1a"
+  component-setup-badge-default-bg: "rgba(55, 53, 47, 0.059)"
+  component-setup-card-default-border: "rgba(0, 0, 0, 0.059)"
+  component-setup-card-default-bg: "#ffffff"
+  component-setup-card-hover-border: "rgba(0, 0, 0, 0.141)"
+  component-setup-card-hover-bg: "#fafafa"
+  component-share-banner-default-border: "rgba(0, 0, 0, 0.141)"
+  component-share-banner-default-bg: "rgba(255, 255, 255, 0.651)"
+  component-share-banner-default-text: "#1a1a1a"
+  component-share-button-default-text: "#1a1a1a"
+  component-share-button-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-shortcut-clear-default-text: "#737373"
+  component-shortcut-clear-hover-text: "#1a1a1a"
+  component-shortcut-field-default-border: "rgba(0, 0, 0, 0.141)"
+  component-shortcut-field-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-side-panel-launcher-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-side-panel-tab-default-bg: "rgba(55, 53, 47, 0.059)"
+  component-side-panel-tab-default-text: "#1a1a1a"
+  component-side-panel-tabbar-default-border: "rgba(0, 0, 0, 0.059)"
+  component-side-panel-tabbar-default-bg: "#f8f8f7"
+  component-sidebar-default-bg: "#f0f0f0"
+  component-sidebar-account-default-text: "#1a1a1a"
+  component-sidebar-bell-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-sidebar-collapse-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-sidebar-collapsed-default-bg: "#f0f0f0"
+  component-sidebar-collapsed-tab-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-sidebar-desktop-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-sidebar-search-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-start-tile-default-text: "#1a1a1a"
+  component-start-tile-default-border: "rgba(0, 0, 0, 0.059)"
+  component-start-tile-default-bg: "#ffffff"
+  component-start-tile-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-step-dot-default-bg: "rgba(55, 53, 47, 0.078)"
+  component-step-footer-default-border: "rgba(0, 0, 0, 0.059)"
+  component-step-footer-default-bg: "#fafafa"
+  component-step-footer-count-default-text: "#737373"
+  component-step-row-default-text: "#4d4d4d"
+  component-step-row-hover-text: "#1a1a1a"
+  component-studio-only-badge-default-bg: "rgba(55, 53, 47, 0.059)"
+  component-studio-only-badge-default-text: "#4d4d4d"
+  component-suggestion-row-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-table-row-default-border: "rgba(0, 0, 0, 0.039)"
+  component-table-row-more-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-tabs-underline-default-text: "#737373"
+  component-tabs-underline-hover-text: "#4d4d4d"
+  component-tabs-underline-selected-text: "#1a1a1a"
+  component-task-completed-default-text: "#25ba3b"
+  component-task-group-link-default-text: "#1a1a1a"
+  component-task-menu-default-bg: "#ffffff"
+  component-task-menu-item-danger-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-task-menu-item-danger-default-text: "#fb494f"
+  component-text-area-default-text: "#1a1a1a"
+  component-text-area-disabled-text: "#737373"
+  component-text-area-disabled-bg: "rgba(55, 53, 47, 0.039)"
+  component-text-area-focus-ring: "rgba(0, 0, 0, 0.141)"
+  component-text-field-settings-default-text: "#1a1a1a"
+  component-text-field-settings-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-text-field-settings-focus-ring: "rgba(0, 0, 0, 0.141)"
+  component-text-field-wrapper-default-text: "#1a1a1a"
+  component-text-field-wrapper-default-bg: "rgba(55, 53, 47, 0.059)"
+  component-text-field-wrapper-focus-within-ring: "rgba(0, 0, 0, 0.141)"
+  component-theme-card-default-border: "rgba(0, 0, 0, 0.122)"
+  component-theme-card-default-text: "#4d4d4d"
+  component-theme-card-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-theme-card-hover-text: "#1a1a1a"
+  component-theme-card-hover-pressed-bg: "rgba(55, 53, 47, 0.059)"
+  component-tooltip-default-bg: "rgba(0, 0, 0, 0.902)"
+  component-tooltip-default-text: "#ffffff"
+  component-topbar-more-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-type-tab-default-text: "#737373"
+  component-type-tab-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-upgrade-button-task-default-text: "#1a1a1a"
+  component-upgrade-link-default-text: "#0081f2"
+  component-user-attachment-default-border: "rgba(0, 0, 0, 0.141)"
+  component-user-attachment-default-bg: "#ffffff"
+  component-user-attachment-hover-bg: "rgba(255, 255, 255, 0.078)"
+  component-user-menu-default-bg: "#ffffff"
+  component-user-menu-header-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-user-menu-item-default-text: "#1a1a1a"
+  component-user-menu-item-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-user-menu-plan-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-user-menu-upgrade-default-bg: "#1a1a19"
+  component-user-menu-upgrade-default-text: "#ffffff"
+  component-view-all-files-default-border: "rgba(0, 0, 0, 0.141)"
+  component-view-all-files-default-bg: "#ffffff"
+  component-view-all-files-hover-bg: "rgba(255, 255, 255, 0.078)"
+  component-view-options-button-default-border: "rgba(0, 0, 0, 0.122)"
+  component-view-options-button-default-text: "#4d4d4d"
+  component-view-options-button-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-view-options-item-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-view-options-item-default-text: "#1a1a1a"
+  component-view-options-menu-default-bg: "#ffffff"
+  component-view-toggle-default-border: "rgba(0, 0, 0, 0.059)"
+  component-view-toggle-default-bg: "rgba(55, 53, 47, 0.039)"
+  component-view-toggle-option-default-text: "#737373"
+  component-view-toggle-option-hover-text: "#4d4d4d"
+  component-view-toggle-option-selected-text: "#1a1a1a"
+  component-view-toggle-thumb-default-bg: "#ffffff"
+  component-waitlist-banner-default-border: "rgba(0, 0, 0, 0.141)"
+  component-waitlist-banner-default-bg: "#ffffff"
+  component-waitlist-button-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-waitlist-button-default-text: "#1a1a1a"
 typography:
   xs:
     fontFamily: "-apple-system"
@@ -371,6 +782,48 @@ typography:
     fontWeight: 400
     lineHeight: "36px"
     letterSpacing: "0px"
+  role-display:
+    fontFamily: "LibreBaskerville"
+    fontSize: "30px"
+    fontWeight: 600
+    lineHeight: "39px"
+    letterSpacing: "0px"
+  role-heading:
+    fontFamily: "-apple-system"
+    fontSize: "18px"
+    fontWeight: 600
+    lineHeight: "24px"
+    letterSpacing: "0px"
+  role-body:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20px"
+    letterSpacing: "0px"
+  role-body-long:
+    fontFamily: "-apple-system"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "24px"
+    letterSpacing: "0px"
+  role-label:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: "20px"
+    letterSpacing: "0px"
+  role-caption:
+    fontFamily: "-apple-system"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: "16px"
+    letterSpacing: "0px"
+  role-code:
+    fontFamily: "ui-monospace"
+    fontSize: "13.6px"
+    fontWeight: 400
+    lineHeight: "24px"
+    letterSpacing: "0px"
 rounded:
   row: "10px"
   small: "8px"
@@ -378,21 +831,624 @@ rounded:
   composer: "22px"
   segment-thumb: "6px"
   avatar: "9999px"
+  dialog: "16px"
+spacing:
+  "1": "1px"
+  "2": "2px"
+  "4": "4px"
+  "6": "6px"
+  "7": "7px"
+  "8": "8px"
+  "10": "10px"
+  "12": "12px"
+  "14": "14px"
+  "16": "16px"
+  "20": "20px"
+  "24": "24px"
+components:
+  assistant-text-default:
+    textColor: "{colors.component-assistant-text-default-text}"
+  attach-menu-default:
+    backgroundColor: "{colors.component-attach-menu-default-bg}"
+  automation-card-default:
+    backgroundColor: "{colors.component-automation-card-default-bg}"
+  automation-card-title-default:
+    textColor: "{colors.component-automation-card-title-default-text}"
+  automations-heading-default:
+    textColor: "{colors.component-automations-heading-default-text}"
+  build-card-default:
+    backgroundColor: "{colors.component-build-card-default-bg}"
+  build-card-hover:
+    backgroundColor: "{colors.component-build-card-hover-bg}"
+  button-black-wide-default:
+    backgroundColor: "{colors.component-button-black-wide-default-bg}"
+    textColor: "{colors.component-button-black-wide-default-text}"
+  button-blue-default:
+    textColor: "{colors.component-button-blue-default-text}"
+  button-danger-default:
+    backgroundColor: "{colors.component-button-danger-default-bg}"
+    textColor: "{colors.component-button-danger-default-text}"
+  button-outline-hover:
+    backgroundColor: "{colors.component-button-outline-hover-bg}"
+  button-outline-default:
+    textColor: "{colors.component-button-outline-default-text}"
+  button-primary-default:
+    backgroundColor: "{colors.component-button-primary-default-bg}"
+    textColor: "{colors.component-button-primary-default-text}"
+  button-secondary-hover:
+    backgroundColor: "{colors.component-button-secondary-hover-bg}"
+  button-secondary-default:
+    textColor: "{colors.component-button-secondary-default-text}"
+  button-white-default:
+    backgroundColor: "{colors.component-button-white-default-bg}"
+    textColor: "{colors.component-button-white-default-text}"
+  carousel-forward-default:
+    backgroundColor: "{colors.component-carousel-forward-default-bg}"
+  carousel-forward-hover:
+    backgroundColor: "{colors.component-carousel-forward-hover-bg}"
+  category-tab-default:
+    textColor: "{colors.component-category-tab-default-text}"
+  category-tab-hover:
+    backgroundColor: "{colors.component-category-tab-hover-bg}"
+  composer-default:
+    backgroundColor: "{colors.component-composer-default-bg}"
+  composer-connectors-default:
+    textColor: "{colors.component-composer-connectors-default-text}"
+  composer-connectors-hover:
+    backgroundColor: "{colors.component-composer-connectors-hover-bg}"
+  composer-desktop-chip-default:
+    textColor: "{colors.component-composer-desktop-chip-default-text}"
+  composer-desktop-chip-hover:
+    backgroundColor: "{colors.component-composer-desktop-chip-hover-bg}"
+  composer-mic-hover:
+    backgroundColor: "{colors.component-composer-mic-hover-bg}"
+  composer-plus-default:
+    textColor: "{colors.component-composer-plus-default-text}"
+  composer-plus-hover:
+    backgroundColor: "{colors.component-composer-plus-hover-bg}"
+  composer-send-default:
+    textColor: "{colors.component-composer-send-default-text}"
+    backgroundColor: "{colors.component-composer-send-default-bg}"
+  composer-send-disabled:
+    backgroundColor: "{colors.component-composer-send-disabled-bg}"
+  composer-skill-button-default:
+    textColor: "{colors.component-composer-skill-button-default-text}"
+  composer-skill-button-hover:
+    backgroundColor: "{colors.component-composer-skill-button-hover-bg}"
+  computers-connect-default:
+    backgroundColor: "{colors.component-computers-connect-default-bg}"
+  computers-cta-hover:
+    backgroundColor: "{colors.component-computers-cta-hover-bg}"
+  computers-cta-default:
+    textColor: "{colors.component-computers-cta-default-text}"
+  computers-customize-default:
+    backgroundColor: "{colors.component-computers-customize-default-bg}"
+  computers-customize-hover:
+    backgroundColor: "{colors.component-computers-customize-hover-bg}"
+  computers-heading-default:
+    textColor: "{colors.component-computers-heading-default-text}"
+  computers-small-button-hover:
+    backgroundColor: "{colors.component-computers-small-button-hover-bg}"
+  computers-small-button-default:
+    textColor: "{colors.component-computers-small-button-default-text}"
+  confirm-dialog-default:
+    backgroundColor: "{colors.component-confirm-dialog-default-bg}"
+  confirm-dialog-close-hover:
+    backgroundColor: "{colors.component-confirm-dialog-close-hover-bg}"
+  context-menu-default:
+    backgroundColor: "{colors.component-context-menu-default-bg}"
+  context-menu-item-danger-hover:
+    backgroundColor: "{colors.component-context-menu-item-danger-hover-bg}"
+  context-menu-item-danger-default:
+    textColor: "{colors.component-context-menu-item-danger-default-text}"
+  create-card-default:
+    backgroundColor: "{colors.component-create-card-default-bg}"
+  create-card-hover:
+    backgroundColor: "{colors.component-create-card-hover-bg}"
+  creation-action-default:
+    textColor: "{colors.component-creation-action-default-text}"
+  creation-action-hover:
+    backgroundColor: "{colors.component-creation-action-hover-bg}"
+  creation-action-primary-default:
+    backgroundColor: "{colors.component-creation-action-primary-default-bg}"
+    textColor: "{colors.component-creation-action-primary-default-text}"
+  creation-card-default:
+    backgroundColor: "{colors.component-creation-card-default-bg}"
+  creation-star-hover:
+    backgroundColor: "{colors.component-creation-star-hover-bg}"
+  creation-thumb-default:
+    backgroundColor: "{colors.component-creation-thumb-default-bg}"
+  creation-url-default:
+    backgroundColor: "{colors.component-creation-url-default-bg}"
+    textColor: "{colors.component-creation-url-default-text}"
+  creation-url-hover:
+    textColor: "{colors.component-creation-url-hover-text}"
+  creations-search-default:
+    textColor: "{colors.component-creations-search-default-text}"
+  credits-pill-default:
+    textColor: "{colors.component-credits-pill-default-text}"
+  credits-pill-hover:
+    backgroundColor: "{colors.component-credits-pill-hover-bg}"
+  cue-download-default:
+    backgroundColor: "{colors.component-cue-download-default-bg}"
+    textColor: "{colors.component-cue-download-default-text}"
+  cue-link-default:
+    textColor: "{colors.component-cue-link-default-text}"
+  cue-mobile-default:
+    backgroundColor: "{colors.component-cue-mobile-default-bg}"
+    textColor: "{colors.component-cue-mobile-default-text}"
+  cue-play-default:
+    backgroundColor: "{colors.component-cue-play-default-bg}"
+    textColor: "{colors.component-cue-play-default-text}"
+  cue-title-default:
+    textColor: "{colors.component-cue-title-default-text}"
+  date-heading-default:
+    textColor: "{colors.component-date-heading-default-text}"
+  deliverable-card-default:
+    backgroundColor: "{colors.component-deliverable-card-default-bg}"
+  deliverable-doc-default:
+    backgroundColor: "{colors.component-deliverable-doc-default-bg}"
+  deliverable-menu-hover:
+    backgroundColor: "{colors.component-deliverable-menu-hover-bg}"
+  dialog-close-hover:
+    backgroundColor: "{colors.component-dialog-close-hover-bg}"
+  dialog-mask-default:
+    backgroundColor: "{colors.component-dialog-mask-default-bg}"
+  disclaimer-default:
+    textColor: "{colors.component-disclaimer-default-text}"
+  doc-rule-default:
+    backgroundColor: "{colors.component-doc-rule-default-bg}"
+  field-label-default:
+    textColor: "{colors.component-field-label-default-text}"
+  file-chip-default:
+    backgroundColor: "{colors.component-file-chip-default-bg}"
+  file-chip-hover:
+    backgroundColor: "{colors.component-file-chip-hover-bg}"
+  file-row-hover:
+    backgroundColor: "{colors.component-file-row-hover-bg}"
+  file-row-menu-hover:
+    backgroundColor: "{colors.component-file-row-menu-hover-bg}"
+  file-row-source-default:
+    textColor: "{colors.component-file-row-source-default-text}"
+  file-row-time-default:
+    textColor: "{colors.component-file-row-time-default-text}"
+  file-tree-default:
+    backgroundColor: "{colors.component-file-tree-default-bg}"
+  file-tree-header-default:
+    textColor: "{colors.component-file-tree-header-default-text}"
+  file-tree-header-hover:
+    backgroundColor: "{colors.component-file-tree-header-hover-bg}"
+  file-tree-item-default:
+    textColor: "{colors.component-file-tree-item-default-text}"
+  file-tree-item-hover:
+    backgroundColor: "{colors.component-file-tree-item-hover-bg}"
+  files-dialog-default:
+    backgroundColor: "{colors.component-files-dialog-default-bg}"
+  files-dialog-row-hover:
+    backgroundColor: "{colors.component-files-dialog-row-hover-bg}"
+  form-dialog-default:
+    backgroundColor: "{colors.component-form-dialog-default-bg}"
+  get-started-default:
+    backgroundColor: "{colors.component-get-started-default-bg}"
+    textColor: "{colors.component-get-started-default-text}"
+  grid-card-default:
+    backgroundColor: "{colors.component-grid-card-default-bg}"
+  info-banner-default:
+    backgroundColor: "{colors.component-info-banner-default-bg}"
+  invite-dialog-default:
+    backgroundColor: "{colors.component-invite-dialog-default-bg}"
+  keycap-default:
+    backgroundColor: "{colors.component-keycap-default-bg}"
+    textColor: "{colors.component-keycap-default-text}"
+  language-select-default:
+    backgroundColor: "{colors.component-language-select-default-bg}"
+  language-select-hover:
+    backgroundColor: "{colors.component-language-select-hover-bg}"
+  library-search-default:
+    textColor: "{colors.component-library-search-default-text}"
+  lite-tag-default:
+    textColor: "{colors.component-lite-tag-default-text}"
+  local-file-card-default:
+    backgroundColor: "{colors.component-local-file-card-default-bg}"
+  local-file-card-hover:
+    backgroundColor: "{colors.component-local-file-card-hover-bg}"
+  m-app-banner-default:
+    backgroundColor: "{colors.component-m-app-banner-default-bg}"
+  m-app-gate-default:
+    backgroundColor: "{colors.component-m-app-gate-default-bg}"
+  m-carousel-card-default:
+    textColor: "{colors.component-m-carousel-card-default-text}"
+    backgroundColor: "{colors.component-m-carousel-card-default-bg}"
+  m-carousel-card-hover:
+    backgroundColor: "{colors.component-m-carousel-card-hover-bg}"
+  m-carousel-dot-default:
+    backgroundColor: "{colors.component-m-carousel-dot-default-bg}"
+  m-carousel-dot-hover:
+    backgroundColor: "{colors.component-m-carousel-dot-hover-bg}"
+  m-chip-hover:
+    backgroundColor: "{colors.component-m-chip-hover-bg}"
+  m-composer-default:
+    backgroundColor: "{colors.component-m-composer-default-bg}"
+  m-drawer-default:
+    backgroundColor: "{colors.component-m-drawer-default-bg}"
+  m-drawer-scrim-default:
+    backgroundColor: "{colors.component-m-drawer-scrim-default-bg}"
+  m-file-row-hover:
+    backgroundColor: "{colors.component-m-file-row-hover-bg}"
+  m-gate-continue-default:
+    textColor: "{colors.component-m-gate-continue-default-text}"
+  m-gate-download-default:
+    backgroundColor: "{colors.component-m-gate-download-default-bg}"
+    textColor: "{colors.component-m-gate-download-default-text}"
+  m-header-default:
+    backgroundColor: "{colors.component-m-header-default-bg}"
+  m-hero-title-default:
+    textColor: "{colors.component-m-hero-title-default-text}"
+  m-library-header-default:
+    backgroundColor: "{colors.component-m-library-header-default-bg}"
+  m-open-app-default:
+    backgroundColor: "{colors.component-m-open-app-default-bg}"
+    textColor: "{colors.component-m-open-app-default-text}"
+  m-task-deliverable-default:
+    backgroundColor: "{colors.component-m-task-deliverable-default-bg}"
+  m-type-dropdown-default:
+    textColor: "{colors.component-m-type-dropdown-default-text}"
+  m-type-dropdown-hover:
+    backgroundColor: "{colors.component-m-type-dropdown-hover-bg}"
+  m-type-menu-default:
+    backgroundColor: "{colors.component-m-type-menu-default-bg}"
+  m-type-menu-item-hover:
+    backgroundColor: "{colors.component-m-type-menu-item-hover-bg}"
+  m-type-menu-item-default:
+    textColor: "{colors.component-m-type-menu-item-default-text}"
+  menu-divider-default:
+    backgroundColor: "{colors.component-menu-divider-default-bg}"
+  menu-item-hover:
+    backgroundColor: "{colors.component-menu-item-hover-bg}"
+  menu-item-default:
+    textColor: "{colors.component-menu-item-default-text}"
+  menu-item-danger-hover:
+    backgroundColor: "{colors.component-menu-item-danger-hover-bg}"
+  menu-item-danger-default:
+    textColor: "{colors.component-menu-item-danger-default-text}"
+  message-action-hover:
+    backgroundColor: "{colors.component-message-action-hover-bg}"
+  model-menu-default:
+    backgroundColor: "{colors.component-model-menu-default-bg}"
+  model-menu-beta-badge-default:
+    textColor: "{colors.component-model-menu-beta-badge-default-text}"
+  model-menu-item-hover:
+    backgroundColor: "{colors.component-model-menu-item-hover-bg}"
+  model-menu-pro-badge-default:
+    backgroundColor: "{colors.component-model-menu-pro-badge-default-bg}"
+    textColor: "{colors.component-model-menu-pro-badge-default-text}"
+  model-picker-hover:
+    backgroundColor: "{colors.component-model-picker-hover-bg}"
+  more-menu-default:
+    backgroundColor: "{colors.component-more-menu-default-bg}"
+  more-menu-item-hover:
+    backgroundColor: "{colors.component-more-menu-item-hover-bg}"
+  more-menu-item-default:
+    textColor: "{colors.component-more-menu-item-default-text}"
+  nav-badge-cue-default:
+    backgroundColor: "{colors.component-nav-badge-cue-default-bg}"
+    textColor: "{colors.component-nav-badge-cue-default-text}"
+  nav-project-row-default:
+    backgroundColor: "{colors.component-nav-project-row-default-bg}"
+  nav-section-header-default:
+    backgroundColor: "{colors.component-nav-section-header-default-bg}"
+  nav-section-header-tasks-default:
+    backgroundColor: "{colors.component-nav-section-header-tasks-default-bg}"
+  nav-skeleton-default:
+    backgroundColor: "{colors.component-nav-skeleton-default-bg}"
+  nav-tab-hover:
+    backgroundColor: "{colors.component-nav-tab-hover-bg}"
+  nav-task-row-hover:
+    backgroundColor: "{colors.component-nav-task-row-hover-bg}"
+  notifications-panel-default:
+    backgroundColor: "{colors.component-notifications-panel-default-bg}"
+  page-title-default:
+    textColor: "{colors.component-page-title-default-text}"
+  panel-toggle-hover:
+    backgroundColor: "{colors.component-panel-toggle-hover-bg}"
+  plugin-add-hover:
+    backgroundColor: "{colors.component-plugin-add-hover-bg}"
+  plugin-icon-default:
+    backgroundColor: "{colors.component-plugin-icon-default-bg}"
+  plugin-promo-default:
+    backgroundColor: "{colors.component-plugin-promo-default-bg}"
+  plugin-promo-hover:
+    backgroundColor: "{colors.component-plugin-promo-hover-bg}"
+  plugin-row-hover:
+    backgroundColor: "{colors.component-plugin-row-hover-bg}"
+  plugins-header-button-hover:
+    backgroundColor: "{colors.component-plugins-header-button-hover-bg}"
+  plugins-header-button-default:
+    textColor: "{colors.component-plugins-header-button-default-text}"
+  plugins-header-primary-hover:
+    backgroundColor: "{colors.component-plugins-header-primary-hover-bg}"
+  plugins-header-primary-default:
+    textColor: "{colors.component-plugins-header-primary-default-text}"
+  popover-menu-default:
+    backgroundColor: "{colors.component-popover-menu-default-bg}"
+  previewer-default:
+    backgroundColor: "{colors.component-previewer-default-bg}"
+  previewer-header-default:
+    backgroundColor: "{colors.component-previewer-header-default-bg}"
+  previewer-title-default:
+    textColor: "{colors.component-previewer-title-default-text}"
+  previewer-tool-hover:
+    backgroundColor: "{colors.component-previewer-tool-hover-bg}"
+  project-add-button-hover:
+    backgroundColor: "{colors.component-project-add-button-hover-bg}"
+  project-add-button-default:
+    textColor: "{colors.component-project-add-button-default-text}"
+  project-composer-default:
+    backgroundColor: "{colors.component-project-composer-default-bg}"
+  project-connectors-default:
+    backgroundColor: "{colors.component-project-connectors-default-bg}"
+  project-connectors-hover:
+    backgroundColor: "{colors.component-project-connectors-hover-bg}"
+  project-icon-default:
+    backgroundColor: "{colors.component-project-icon-default-bg}"
+  project-icon-hover:
+    backgroundColor: "{colors.component-project-icon-hover-bg}"
+  project-meta-default:
+    textColor: "{colors.component-project-meta-default-text}"
+  project-rail-section-hover:
+    backgroundColor: "{colors.component-project-rail-section-hover-bg}"
+  project-recent-label-default:
+    textColor: "{colors.component-project-recent-label-default-text}"
+  project-session-hover:
+    backgroundColor: "{colors.component-project-session-hover-bg}"
+  project-session-focus-visible:
+    backgroundColor: "{colors.component-project-session-focus-visible-bg}"
+  project-title-default:
+    textColor: "{colors.component-project-title-default-text}"
+  promo-card-default:
+    backgroundColor: "{colors.component-promo-card-default-bg}"
+    textColor: "{colors.component-promo-card-default-text}"
+  reset-button-hover:
+    backgroundColor: "{colors.component-reset-button-hover-bg}"
+  reset-button-default:
+    textColor: "{colors.component-reset-button-default-text}"
+  resize-handle-default:
+    backgroundColor: "{colors.component-resize-handle-default-bg}"
+  resize-handle-group-hover:
+    backgroundColor: "{colors.component-resize-handle-group-hover-bg}"
+  row-menu-default:
+    backgroundColor: "{colors.component-row-menu-default-bg}"
+    textColor: "{colors.component-row-menu-default-text}"
+  row-menu-item-hover:
+    backgroundColor: "{colors.component-row-menu-item-hover-bg}"
+  row-menu-item-default:
+    textColor: "{colors.component-row-menu-item-default-text}"
+  search-dialog-default:
+    backgroundColor: "{colors.component-search-dialog-default-bg}"
+  search-group-label-default:
+    textColor: "{colors.component-search-group-label-default-text}"
+  search-result-default:
+    textColor: "{colors.component-search-result-default-text}"
+  search-result-hover:
+    backgroundColor: "{colors.component-search-result-hover-bg}"
+  segmented-default:
+    backgroundColor: "{colors.component-segmented-default-bg}"
+  select-listbox-default:
+    backgroundColor: "{colors.component-select-listbox-default-bg}"
+  select-option-hover:
+    backgroundColor: "{colors.component-select-option-hover-bg}"
+  select-option-default:
+    textColor: "{colors.component-select-option-default-text}"
+  select-trigger-default:
+    backgroundColor: "{colors.component-select-trigger-default-bg}"
+  send-button-default:
+    backgroundColor: "{colors.component-send-button-default-bg}"
+    textColor: "{colors.component-send-button-default-text}"
+  settings-card-row-default:
+    backgroundColor: "{colors.component-settings-card-row-default-bg}"
+  settings-close-hover:
+    backgroundColor: "{colors.component-settings-close-hover-bg}"
+  settings-dialog-default:
+    backgroundColor: "{colors.component-settings-dialog-default-bg}"
+  settings-nav-item-default:
+    textColor: "{colors.component-settings-nav-item-default-text}"
+  settings-nav-item-hover:
+    backgroundColor: "{colors.component-settings-nav-item-hover-bg}"
+  settings-nav-item-hover-pressed:
+    backgroundColor: "{colors.component-settings-nav-item-hover-pressed-bg}"
+  settings-nav-label-default:
+    textColor: "{colors.component-settings-nav-label-default-text}"
+  settings-nav-row-default:
+    textColor: "{colors.component-settings-nav-row-default-text}"
+  settings-nav-row-hover:
+    backgroundColor: "{colors.component-settings-nav-row-hover-bg}"
+  settings-nav-row-hover-pressed:
+    backgroundColor: "{colors.component-settings-nav-row-hover-pressed-bg}"
+  settings-row-desc-default:
+    textColor: "{colors.component-settings-row-desc-default-text}"
+  settings-row-title-default:
+    textColor: "{colors.component-settings-row-title-default-text}"
+  settings-rule-default:
+    backgroundColor: "{colors.component-settings-rule-default-bg}"
+  settings-section-title-default:
+    textColor: "{colors.component-settings-section-title-default-text}"
+  settings-select-default:
+    backgroundColor: "{colors.component-settings-select-default-bg}"
+  settings-title-default:
+    textColor: "{colors.component-settings-title-default-text}"
+  setup-badge-default:
+    backgroundColor: "{colors.component-setup-badge-default-bg}"
+  setup-card-default:
+    backgroundColor: "{colors.component-setup-card-default-bg}"
+  setup-card-hover:
+    backgroundColor: "{colors.component-setup-card-hover-bg}"
+  share-banner-default:
+    backgroundColor: "{colors.component-share-banner-default-bg}"
+    textColor: "{colors.component-share-banner-default-text}"
+  share-button-default:
+    textColor: "{colors.component-share-button-default-text}"
+  share-button-hover:
+    backgroundColor: "{colors.component-share-button-hover-bg}"
+  shortcut-clear-default:
+    textColor: "{colors.component-shortcut-clear-default-text}"
+  shortcut-clear-hover:
+    textColor: "{colors.component-shortcut-clear-hover-text}"
+  shortcut-field-hover:
+    backgroundColor: "{colors.component-shortcut-field-hover-bg}"
+  side-panel-launcher-hover:
+    backgroundColor: "{colors.component-side-panel-launcher-hover-bg}"
+  side-panel-tab-default:
+    backgroundColor: "{colors.component-side-panel-tab-default-bg}"
+    textColor: "{colors.component-side-panel-tab-default-text}"
+  side-panel-tabbar-default:
+    backgroundColor: "{colors.component-side-panel-tabbar-default-bg}"
+  sidebar-default:
+    backgroundColor: "{colors.component-sidebar-default-bg}"
+  sidebar-account-default:
+    textColor: "{colors.component-sidebar-account-default-text}"
+  sidebar-bell-button-hover:
+    backgroundColor: "{colors.component-sidebar-bell-button-hover-bg}"
+  sidebar-collapse-button-hover:
+    backgroundColor: "{colors.component-sidebar-collapse-button-hover-bg}"
+  sidebar-collapsed-default:
+    backgroundColor: "{colors.component-sidebar-collapsed-default-bg}"
+  sidebar-collapsed-tab-hover:
+    backgroundColor: "{colors.component-sidebar-collapsed-tab-hover-bg}"
+  sidebar-desktop-button-hover:
+    backgroundColor: "{colors.component-sidebar-desktop-button-hover-bg}"
+  sidebar-search-button-hover:
+    backgroundColor: "{colors.component-sidebar-search-button-hover-bg}"
+  start-tile-default:
+    textColor: "{colors.component-start-tile-default-text}"
+    backgroundColor: "{colors.component-start-tile-default-bg}"
+  start-tile-hover:
+    backgroundColor: "{colors.component-start-tile-hover-bg}"
+  step-dot-default:
+    backgroundColor: "{colors.component-step-dot-default-bg}"
+  step-footer-default:
+    backgroundColor: "{colors.component-step-footer-default-bg}"
+  step-footer-count-default:
+    textColor: "{colors.component-step-footer-count-default-text}"
+  step-row-default:
+    textColor: "{colors.component-step-row-default-text}"
+  step-row-hover:
+    textColor: "{colors.component-step-row-hover-text}"
+  studio-only-badge-default:
+    backgroundColor: "{colors.component-studio-only-badge-default-bg}"
+    textColor: "{colors.component-studio-only-badge-default-text}"
+  suggestion-row-hover:
+    backgroundColor: "{colors.component-suggestion-row-hover-bg}"
+  table-row-more-hover:
+    backgroundColor: "{colors.component-table-row-more-hover-bg}"
+  tabs-underline-default:
+    textColor: "{colors.component-tabs-underline-default-text}"
+  tabs-underline-hover:
+    textColor: "{colors.component-tabs-underline-hover-text}"
+  tabs-underline-selected:
+    textColor: "{colors.component-tabs-underline-selected-text}"
+  task-completed-default:
+    textColor: "{colors.component-task-completed-default-text}"
+  task-group-link-default:
+    textColor: "{colors.component-task-group-link-default-text}"
+  task-menu-default:
+    backgroundColor: "{colors.component-task-menu-default-bg}"
+  task-menu-item-danger-hover:
+    backgroundColor: "{colors.component-task-menu-item-danger-hover-bg}"
+  task-menu-item-danger-default:
+    textColor: "{colors.component-task-menu-item-danger-default-text}"
+  text-area-default:
+    textColor: "{colors.component-text-area-default-text}"
+  text-area-disabled:
+    textColor: "{colors.component-text-area-disabled-text}"
+    backgroundColor: "{colors.component-text-area-disabled-bg}"
+  text-field-settings-default:
+    textColor: "{colors.component-text-field-settings-default-text}"
+    backgroundColor: "{colors.component-text-field-settings-default-bg}"
+  text-field-wrapper-default:
+    textColor: "{colors.component-text-field-wrapper-default-text}"
+    backgroundColor: "{colors.component-text-field-wrapper-default-bg}"
+  theme-card-default:
+    textColor: "{colors.component-theme-card-default-text}"
+  theme-card-hover:
+    backgroundColor: "{colors.component-theme-card-hover-bg}"
+    textColor: "{colors.component-theme-card-hover-text}"
+  theme-card-hover-pressed:
+    backgroundColor: "{colors.component-theme-card-hover-pressed-bg}"
+  tooltip-default:
+    backgroundColor: "{colors.component-tooltip-default-bg}"
+    textColor: "{colors.component-tooltip-default-text}"
+  topbar-more-button-hover:
+    backgroundColor: "{colors.component-topbar-more-button-hover-bg}"
+  type-tab-default:
+    textColor: "{colors.component-type-tab-default-text}"
+  type-tab-hover:
+    backgroundColor: "{colors.component-type-tab-hover-bg}"
+  upgrade-button-task-default:
+    textColor: "{colors.component-upgrade-button-task-default-text}"
+  upgrade-link-default:
+    textColor: "{colors.component-upgrade-link-default-text}"
+  user-attachment-default:
+    backgroundColor: "{colors.component-user-attachment-default-bg}"
+  user-attachment-hover:
+    backgroundColor: "{colors.component-user-attachment-hover-bg}"
+  user-menu-default:
+    backgroundColor: "{colors.component-user-menu-default-bg}"
+  user-menu-header-hover:
+    backgroundColor: "{colors.component-user-menu-header-hover-bg}"
+  user-menu-item-default:
+    textColor: "{colors.component-user-menu-item-default-text}"
+  user-menu-item-hover:
+    backgroundColor: "{colors.component-user-menu-item-hover-bg}"
+  user-menu-plan-default:
+    backgroundColor: "{colors.component-user-menu-plan-default-bg}"
+  user-menu-upgrade-default:
+    backgroundColor: "{colors.component-user-menu-upgrade-default-bg}"
+    textColor: "{colors.component-user-menu-upgrade-default-text}"
+  view-all-files-default:
+    backgroundColor: "{colors.component-view-all-files-default-bg}"
+  view-all-files-hover:
+    backgroundColor: "{colors.component-view-all-files-hover-bg}"
+  view-options-button-default:
+    textColor: "{colors.component-view-options-button-default-text}"
+  view-options-button-hover:
+    backgroundColor: "{colors.component-view-options-button-hover-bg}"
+  view-options-item-hover:
+    backgroundColor: "{colors.component-view-options-item-hover-bg}"
+  view-options-item-default:
+    textColor: "{colors.component-view-options-item-default-text}"
+  view-options-menu-default:
+    backgroundColor: "{colors.component-view-options-menu-default-bg}"
+  view-toggle-default:
+    backgroundColor: "{colors.component-view-toggle-default-bg}"
+  view-toggle-option-default:
+    textColor: "{colors.component-view-toggle-option-default-text}"
+  view-toggle-option-hover:
+    textColor: "{colors.component-view-toggle-option-hover-text}"
+  view-toggle-option-selected:
+    textColor: "{colors.component-view-toggle-option-selected-text}"
+  view-toggle-thumb-default:
+    backgroundColor: "{colors.component-view-toggle-thumb-default-bg}"
+  waitlist-banner-default:
+    backgroundColor: "{colors.component-waitlist-banner-default-bg}"
+  waitlist-button-hover:
+    backgroundColor: "{colors.component-waitlist-button-hover-bg}"
+  waitlist-button-default:
+    textColor: "{colors.component-waitlist-button-default-text}"
 ---
 
 # Manus
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 12 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 20 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
 Good for: Agent app shell: multi-section sidebar, a Library of agent outputs by type and by day, task threads with deliverables.
 
-Captured 2026-10-04, signed in. Themes: light, dark.
+Captured 2026-10-17, signed in. Themes: light, dark.
 
-A token set and component reference for Manus's web app (manus.im/app), for rethinking self-learn's shell and its content management: the multi-section sidebar that replaces a top bar, and the Library that organises every kind of file an agent made by type and by the day it was made. It was read on 2026-10-04 from the owner's signed-in account, in both themes, at 1440 wide and 390 wide: the home, the Library (list, grid, grouped by task, each type tab, the row menu, the view options, the document previewer), Creations, Computers, Agents, Automations, Plugins, a project page, a finished task (the thread, the deliverable card, the files dialog, the split view with its Files tab), the user menu, Settings (General and Shortcuts), search, notifications, every sidebar menu, and the phone layout (app gate, home, drawer, Library, task).
+A token set and component reference for Manus's web app (manus.im/app), for rethinking self-learn's shell and its content management: the multi-section sidebar that replaces a top bar, and the Library that organises every kind of file an agent made by type and by the day it was made. It was read on 2026-10-04 from the owner's signed-in account, in both themes, at 1440 wide and 390 wide: the home, the Library (list, grid, grouped by task, each type tab, the row menu, the view options, the document previewer), Creations, Computers, Agents, Automations, Plugins, a project page, a finished task (the thread, the deliverable card, the files dialog, the split view with its Files tab), the user menu, Settings (General and Shortcuts), search, notifications, every sidebar menu, and the phone layout (app gate, home, drawer, Library, task). It was refreshed on 2026-10-17 on the same free account, at 1440 wide in both themes, against the library scorecard: Settings' Developers pane (the API key table, its row menu, the delete confirmation, the Create API Key form empty and filled, its select open), Personalization (text fields and text areas), Usage & Billing while its history loads, and the invite dialog with its email field; the stylesheets were read again for the values Manus keeps in utility classes (named shadows, spacing, z-index, border widths, focus and reduced-motion rules).
 
 The earlier references cover learning products (Duolingo, Brilliant, NotebookLM, Coursera, Gauth). Manus is an agent product whose output is files, which is what self-learn has become too: notes, diagrams, videos, sessions and courses that pile up with no date to hang them on. Its Library is the model for that problem.
 
@@ -407,9 +1463,44 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 - **on-surface-variant (#4d4d4d):** `light.text.secondary`
 - **outline (rgba(79, 89, 102, 0.122)):** `light.border.primary`
 
+### Colour roles, ramps and elevation (from README.md)
+
+Manus names colours by what they do (`text.primary`, `background.menu-white`, `fill.tsp-white-main`, `function.error`), so the checklist roles are a mapping, kept in each theme under `role` as aliases:
+
+| Role | Token | Where it was measured |
+|---|---|---|
+| Page | `background.gray-main` | every page's main column, and the Settings and other modal dialogs |
+| Surface | `background.nav` | the sidebar |
+| Raised | `background.menu-white` | the composer, Library grid cards, the Computers bands |
+| Overlay | `background.menu-white` | menus, popovers, the select listbox, the search dialog |
+| Scrim | `background.dialog-mask` | behind every dialog, with a 4px backdrop blur |
+| Text: primary, secondary, tertiary, disabled | `text.primary`, `text.secondary`, `text.tertiary`, `text.disable` | placeholders are `text.disable` |
+| Text on accent, link | `text.onblack`, `text.blue` | the primary button's label; Upgrade and Documentation |
+| Border: subtle, default, strong, focus | `border.light`, `border.main`, `border.dark`, `border.input-active` | table rules, dividers, control outlines, focused fields |
+| Accent: default, hover, pressed | `button.black`, then 90% opacity | Create, Copy invitation link, Upgrade |
+| Danger: fill, text, border | `function.error-tsp`, `function.error`, `button.border-error` | the Delete menu item and the danger button |
+| Success, warning: fill, text | `function.success(-tsp)`, `function.warning(-tsp)` | no border token for either |
+
+The primary action is black in light and near-white in dark, not blue. Hover is `opacity: 0.9`; the button's classes also ask for `active:opacity-80`, but `hover:opacity-90` comes later in the stylesheet and wins, so a pressed button reads 0.9 too (measured on button-primary, button-danger and button-blue). `role.accent.hover` and `role.accent.pressed` are that 90% composited over the page colour (Derived). Blue is the link and selection colour and the one a user can swap for green, yellow, pink, orange, purple or black in Settings.
+
+Manus declares no colour ramps: Tailwind's palette is not shipped and every variable is semantic. `core.palette` assembles them from the declared values (Derived): `neutral` is the 24 greys that at least two variables share, lightest to darkest, and each accent palette is a ramp from its user-bubble tint to its dark-theme bubble: 13 steps for blue, green, orange, pink and purple, 15 for yellow, 8 for black. There is no red ramp: the danger red (`function.error`) is two declared values, not a palette. Each step names the variables that hold it.
+
+Elevation is six levels, each tied to its use, in each theme under `elevation`. Three are Manus's own named utilities:
+
+| Level | Value (light) | Used on |
+|---|---|---|
+| `card` | `shadow-card`: 1px highlight ring, 1px ring, 0 1px 2px, 0 2px 4px | the stylesheet's card style; not on a captured element |
+| `raised` | 0 3px 10px `shadow.S` | the Computers bands |
+| `composer` | 0 12px 32px rgba(0,0,0,0.02) | the composer on home, a project and a task |
+| `layer` | `shadow-layer`: rings plus 0 24px 24px -12px, 0 3px 3px -1.5px, 0 10px 20px 1px | a Library grid card on hover |
+| `menu` | `shadow-menu`: as `layer` with a 1px ring | every menu, popover, listbox and dialog (17 measured) |
+| `panel` | 1px ring plus 0 4px 32px `shadow.S` | the notifications panel |
+
+Dialogs do not get a deeper shadow than menus; the scrim sets them apart. In dark the shadow colours are stronger and `shadow.Highlight` adds a white 14% ring.
+
 ## Typography
 
-14 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system.
+21 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, LibreBaskerville, ui-monospace.
 
 ### Fonts (from README.md)
 
@@ -424,7 +1515,17 @@ Libre Baskerville is open source, so the style guide loads it from Google Fonts;
 
 ## Layout
 
-No spacing scale in tokens.json.
+Spacing from `core.space`: `1` 1px, `2` 2px, `4` 4px, `6` 6px, `7` 7px, `8` 8px, `10` 10px, `12` 12px, `14` 14px, `16` 16px, `20` 20px, `24` 24px.
+
+### Spacing, shape and layout (from README.md)
+
+Spacing is Tailwind's 4px scale, read from the classes on the elements of the refresh's copies (`raw/css-rules.json`, `spacing`): 8px (632 elements), 4px (525), 2px (425), 12px (327) and 10px (216) lead, with 16, 24, 6 and 20 after them. Steps on fewer than 20 elements are left out of `core.space`. The density variables (`core.density`) hold the paddings that sit off the scale, such as the 9px nav item.
+
+Border widths are 0.5px (the share banner, the grid card ring), 1px (59 measured components) and 2px (the active underline tab), in `core.borderWidth`; illustrations draw their frames at 1.2px. Radii are in `core.radius`; dialogs are 16, cards and menus 12, rows 10, buttons and icon buttons 8.
+
+z-index (`core.zIndex`): 1 to 5 inside components, 10, 20 and 30 for raised, sticky and overlaid rows, 999 for tooltips (Manus's named `z-tooltip`), 1050 for the toast viewport and the status notice. Dialogs, menus and popovers carry no z-index: they mount in portals and stack in the order they open.
+
+Pages sit on fixed column widths inside a centred box, not a 12-column grid (`core.layout.grid`): home's 490 + 270 cards, Computers' three 312 columns, Plugins' two 378 columns, a project's 740 column and 320 rail. Breakpoints are Tailwind's 640, 768, 1024 and 1280.
 
 ## Elevation & Depth
 
@@ -434,16 +1535,37 @@ Shadows, resolved to CSS:
 |---|---|
 | `light.shadow.game-tab-active` | `inset 0px -3px 7.1px 0px rgba(255, 255, 255, 0.161), inset 0px 0.6px 1px 0px rgba(255, 255, 255, 0.451)` |
 | `light.shadow.game-tab-inactive` | `inset 0px -1px 1px 0px rgba(255, 255, 255, 0.031), inset 0px 0.6px 1px 0px rgba(255, 255, 255, 0.122)` |
+| `light.elevation.card` | `0px 0px 0px 1px rgba(0, 0, 0, 0), 0px 0px 0px 1px rgba(0, 0, 0, 0.059), 0px 1px 2px 0px rgba(0, 0, 0, 0.039), 0px 2px 4px 0px rgba(0, 0, 0, 0.039)` |
+| `light.elevation.raised` | `0px 3px 10px 0px rgba(0, 0, 0, 0.039)` |
+| `light.elevation.composer` | `0px 12px 32px 0px rgba(0, 0, 0, 0.02)` |
+| `light.elevation.layer` | `0px 0px 0px 1px rgba(0, 0, 0, 0), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.059), 0px 24px 24px -12px rgba(0, 0, 0, 0.039), 0px 3px 3px -1.5px rgba(0, 0, 0, 0.059), 0px 10px 20px 1px rgba(0, 0, 0, 0.039)` |
+| `light.elevation.menu` | `0px 0px 0px 1px rgba(0, 0, 0, 0), 0px 0px 0px 1px rgba(0, 0, 0, 0.059), 0px 24px 24px -12px rgba(0, 0, 0, 0.039), 0px 3px 3px -1.5px rgba(0, 0, 0, 0.059), 0px 10px 20px 1px rgba(0, 0, 0, 0.039)` |
+| `light.elevation.panel` | `0px 0px 0px 1px rgba(0, 0, 0, 0.02), 0px 4px 32px 0px rgba(0, 0, 0, 0.039)` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `row` 10px, `small` 8px, `card` 12px, `composer` 22px, `segment-thumb` 6px, `avatar` 9999px.
+Corner radii from `core.radius`: `row` 10px, `small` 8px, `card` 12px, `composer` 22px, `segment-thumb` 6px, `avatar` 9999px, `dialog` 16px.
 
 ## Components
 
-No component tokens map onto DESIGN.md's component properties.
+279 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
+
+### Patterns (from README.md)
+
+| Pattern | What Manus does | See |
+|---|---|---|
+| App shell and navigation | A 300px sidebar holds everything: nav tabs, Projects, Tasks, a share banner and the account row; it folds to a 52px rail and becomes a drawer on a phone. There is no top navigation, only a 48px bar with the model picker and plan. | [home-dark](screenshots/home-dark.png), [home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png) |
+| Forms and validation | Fields stack under 14px labels in a small dialog; the primary button stays disabled until the required field has text, and nothing explains why. The invite email enables Send for any text: the format is checked only on submit. | [settings-dark-create-key](screenshots/settings-dark-create-key.png), [settings-dark-create-key-typed](screenshots/settings-dark-create-key-typed.png), [invite-dark-email-typed](screenshots/invite-dark-email-typed.png) |
+| Empty | An empty page offers starting points rather than an illustration: Automations shows three example cards and one Get started button. | [automations-dark](screenshots/automations-dark.png) |
+| Loading | Lists load behind pulsing grey rows (the sidebar's task list); a pane that fetches shows one small ring where the content will be. | [settings-dark-usage-loading](screenshots/settings-dark-usage-loading.png), [nav-skeleton-default](components/crops/nav-skeleton-default.png) |
+| Error | Not seen; no failed request or invalid submit was triggered. | |
+| Destructive confirmation | Delete sits alone in the row's popover, in red with a trash icon. Choosing it opens a small dialog: the question, "This action cannot be undone.", then Cancel (outlined) and Delete (red, filled) at the end. | [settings-dark-key-menu](screenshots/settings-dark-key-menu.png), [settings-dark-delete-confirm](screenshots/settings-dark-delete-confirm.png) |
+| Feedback after an action | Toasts mount in a fixed list at the top centre (`top 28px`, z-index 1050). One was seen live, "Creating new task…" with a spinner, while a branch task was created; it was not copied, so its look is not measured. Copy buttons gave no toast. | the toast viewport is in every 2026-10-17 copy |
+| Search and filtering | Search is a dialog (Cmd+K) over everything; the Library filters by type with a strip of tabs and switches list or grid and grouping from a view-options menu. | [home-dark-search](screenshots/home-dark-search.png), [library-dark-slides](screenshots/library-dark-slides.png), [library-dark-images-grid-view-options](screenshots/library-dark-images-grid-view-options.png) |
+| Lists and tables | Lists are rows split by 1px rules and grouped by day; the one table (API keys) is a plain table with grey 13px headers, row rules, no zebra and a more button per row. | [library-dark](screenshots/library-dark.png), [settings-dark-developers-table](screenshots/settings-dark-developers-table.png) |
+| Onboarding | Only the phone's app gate was captured (download the app or continue on the web); the first-run flow of a new account was not, since the account is not new. | [mobile-home-dark-app-gate](screenshots/mobile-home-dark-app-gate.png) |
 
 ## Do's and Don'ts
 
@@ -460,4 +1582,14 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 3. **Do keep the filled button for the main action of a block and outline the rest.** Each creation card has one black "Locate in task" beside two 1px outlined buttons, and Automations ends in a single "Get started"; header actions, even Plugins' Create, are outlined, and the project rail's Add buttons are too. The filled button is black in light and near-white in dark; Agents' two download buttons are the only pair seen side by side. See [creations-light](screenshots/creations-light.png), [automations-light](screenshots/automations-light.png), [plugins-dark](screenshots/plugins-dark.png), [project-light](screenshots/project-light.png) and [agents-light](screenshots/agents-light.png).
 4. **Do separate surfaces on the page with hairlines and fill steps, and save shadow for what floats.** Cards and plugin rows rest on a 1px border at 6 to 14% or a 4% fill with no shadow, and Library rows are split by a single 1px rule. Menus and popovers get the layered shadow and a 1px ring; a grid card gains it only on hover. See [library-dark](screenshots/library-dark.png), [computers-dark](screenshots/computers-dark.png), [home-light-model-menu](screenshots/home-light-model-menu.png) and [plugins-light-more-menu](screenshots/plugins-light-more-menu.png).
 5. **Do label sections with small grey text in normal case.** Projects, Tasks and the settings groups (Account, Capabilities, Assets) are 13/18 in `text.tertiary` and never uppercase; the Library's date headings are 14/20 regular with the count in grey beside them. See [home-light](screenshots/home-light.png), [settings-light-general](screenshots/settings-light-general.png) and [library-light](screenshots/library-light.png).
-6. **Do put a line icon before every nav and menu label.** Nav tabs carry an 18px icon, settings nav items and row menu items a 16px one, and menus split their groups with a 1px divider at 6%. See [library-dark-row-menu](screenshots/library-dark-row-menu.png), [row-menu-light](components/crops/row-menu-light.png) and [plugins-light-more-menu](screenshots/plugins-light-more-menu.png).
+6. **Do confirm a destructive action in a small dialog, with the red button last.** Delete sits alone in the row's popover in `function.error` with a trash icon; the dialog that follows asks the question, says "This action cannot be undone.", and ends with an outlined Cancel and a red filled Delete. Red appears nowhere else in Settings. See [settings-dark-key-menu](screenshots/settings-dark-key-menu.png), [settings-light-delete-confirm](screenshots/settings-light-delete-confirm.png) and [button-danger-default](components/crops/button-danger-default.png).
+
+### What to distrust (from README.md)
+
+- `core.palette` is assembled, not declared: Manus has no ramps, and the step numbers are this package's.
+- `role.*` is this package's mapping of checklist roles onto Manus's tokens, chosen from where each token is used; the values are Manus's.
+- `role.accent.hover` and `.pressed` are computed (90% over the page colour); the opacity is measured.
+- Pressed was measured only on the components added on 2026-10-17. The older copies are gone.
+- The toast was seen, not measured; the checkbox exists only as stylesheet rules (antd checkboxes in the website builder's data tables, checked fill `icon.blue`), not on a captured page.
+- Values from 2026-10-04 were not re-measured; the 2026-10-17 stylesheets declare the same values for every variable that existed then.
+- Avatar fills are this package's grey disc; only their size and shape are Manus's.

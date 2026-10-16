@@ -7,13 +7,13 @@ The input may be the raw string, a JSON string literal of it, or a tool-result J
 
 Stops at the first snapshot in which any pattern in the redaction file still matches or
 any URL still carries a signing parameter, writing nothing for it. The redaction file names the account, so it lives
-outside the repository: $SNAP_REDACT, default ~/.self-learn/researchrabbit-redact.json, shaped like
+outside the repository: $SNAP_REDACT, default ~/.design-systems/researchrabbit-redact.json, shaped like
 redact.example.json beside this script.
 """
 import json, os, pathlib, re, sys
 
 src, outdir = sys.argv[1], sys.argv[2]
-redact_path = pathlib.Path(os.environ.get("SNAP_REDACT", "~/.self-learn/researchrabbit-redact.json")).expanduser()
+redact_path = pathlib.Path(os.environ.get("SNAP_REDACT", "~/.design-systems/researchrabbit-redact.json")).expanduser()
 redact = json.loads(redact_path.read_text())
 
 raw = open(src).read()
