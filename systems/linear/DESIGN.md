@@ -169,8 +169,6 @@ Spacing from `space`: `1` 4px, `2` 8px, `3` 12px, `4` 16px, `6` 24px, `8` 32px, 
 
 The 4, 8, 12, 16, 24, 32, 48, 64px spacing scale in the tokens is a reconstruction convenience, not an extracted official spacing system. Desktop app screenshots were captured at 3024 × 1898 device pixels on this machine; approximate logical dimensions use a 2× assumption. Browser zoom/device scaling was not independently measured. Public CSS measurements use the actual capture viewport in each JSON file.
 
-Avoid indiscriminate rounded rectangles: pill actions, modestly rounded sidebar items, squared list rows, and more rounded floating surfaces serve different roles. Public marketing pages also use large whitespace, narrow text measures and oversized editorial titles that do not belong in a dense issue table.
-
 ## Elevation & Depth
 
 No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
@@ -229,6 +227,14 @@ Other documented components include breadcrumbs, search, grouped list headers, p
 | Not inspected | Not accessible, not enabled, not reached, or deliberately outside the capture. |
 
 This is broad page-type coverage, not a claim that every Linear route, workspace record, historical article, responsive breakpoint, permission state, or experiment has been captured. Native app captures showed the viewport, not every scroll position. Public screenshots are full-page but video, lazy-loading and scroll-triggered animation can leave inactive regions. See `coverage.json` for exact captured URLs and exclusions. App theme was System preference with Dark selected for the dark system appearance; font size was Default. No theme, workflow, issue, project or account setting was changed.
+
+### Do and don't (from README.md)
+
+1. **Do keep the pale filled pill for the one main action.** The header's Sign up and a single hero or plan action (Get started, Talk to sales, Watch example) are pale #E5E5E6 pills with dark text; the action beside them is a dark pill, and section links are muted text with an arrow or plus ("Learn more →", "Projects +"). See [01-home](screenshots/01-home.png), [pricing](screenshots/pricing.png) and [startups](screenshots/startups.png).
+2. **Do keep color in small marks.** In the product demos, status, priority and label color sits in a small icon, dot or short health word, while issue titles, ids and row backgrounds stay white or gray. The #5E6AD2 accent appears only in demo details (the composer send button, the @mention, the billing toggle, chart fills); the site's own buttons and links in these screenshots never use it. See [01-home](screenshots/01-home.png), [enterprise](screenshots/enterprise.png), [plan](screenshots/plan.png) and [pricing](screenshots/pricing.png).
+3. **Don't use one rounded rectangle for everything.** Pill actions, modestly rounded sidebar items, squared list rows and more rounded floating surfaces serve different roles. The homepage shows all four at once: the Sign up pill, the 8px selected sidebar row, flat issue rows and the floating agent panel. See [01-home](screenshots/01-home.png).
+4. **Don't carry marketing scale into dense screens.** Public pages use large whitespace, narrow text measures and oversized editorial titles (64px homepage hero, 128px Tiempos on Method) that do not belong in a dense issue table. The product demos on the same pages keep 13px sidebar text and one-line issue rows. See [01-home](screenshots/01-home.png) and [method](screenshots/method.png).
+5. **Don't replace mixed filled and outlined glyphs with a uniform arbitrary stroke.** The demo sidebar sets outlined glyphs (Inbox, Projects) beside filled ones (the Agent Insights bars, the solid arrow inside Initiatives) and a half-filled status circle. See [01-home](screenshots/01-home.png).
 
 ### Coverage and remaining gaps (from README.md)
 

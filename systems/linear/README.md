@@ -108,8 +108,6 @@ The component redraws use 12–14px UI text and 20–24px detail titles as recon
 
 The 4, 8, 12, 16, 24, 32, 48, 64px spacing scale in the tokens is a reconstruction convenience, not an extracted official spacing system. Desktop app screenshots were captured at 3024 × 1898 device pixels on this machine; approximate logical dimensions use a 2× assumption. Browser zoom/device scaling was not independently measured. Public CSS measurements use the actual capture viewport in each JSON file.
 
-Avoid indiscriminate rounded rectangles: pill actions, modestly rounded sidebar items, squared list rows, and more rounded floating surfaces serve different roles. Public marketing pages also use large whitespace, narrow text measures and oversized editorial titles that do not belong in a dense issue table.
-
 ## Buttons, fields and interaction states
 
 Public primary actions are pale filled pills with dark text, 32px high and 13px text at weight 510. Public navigation is transparent with muted labels. The embedded demo has subtle icon buttons using 2% white fill and an inset 1px line at 5% white. Read raw border style as well as border color: computed border color alone does not imply a visible border.
@@ -122,7 +120,7 @@ The library includes default, hover, focus, disabled and destructive button vari
 
 The reference atlas contains 39 SVG extracts from visible buttons in Linear's public homepage demos, including navigation, search, issue creation, priority-related controls, copy actions, attachments and communication actions. A button can contain more than one SVG; the named extract is the first encountered, so names describe source controls rather than guaranteed canonical icon names. Some examples depict third-party integration UI.
 
-Use the supplied source SVG paths for visual study. Preserve viewBox and aspect ratio; `currentColor` lets monochrome icons inherit foreground color. Many UI icons sit on a 16px design scale within 28px controls, but individual source viewBoxes differ. Do not replace mixed filled/outlined glyphs with a uniform arbitrary stroke. Do not assume Linear uses Lucide, Heroicons or SF Symbols: no upstream icon library was established.
+Use the supplied source SVG paths for visual study. Preserve viewBox and aspect ratio; `currentColor` lets monochrome icons inherit foreground color. Many UI icons sit on a 16px design scale within 28px controls, but individual source viewBoxes differ. Do not assume Linear uses Lucide, Heroicons or SF Symbols: no upstream icon library was established.
 
 Reference SVGs remain proprietary/reference material and are not offered as a newly licensed icon pack. Brand assets should be taken from https://linear.app/brand and used according to its guidance. The component redraws are separate from extracted icons and do not bundle a Linear wordmark.
 
@@ -142,6 +140,14 @@ Reference SVGs remain proprietary/reference material and are not offered as a ne
 | Icons | 39 source SVGs | Public homepage buttons | Extracted reference |
 
 Other documented components include breadcrumbs, search, grouped list headers, project progress graphs, property chips, dense settings tables, empty states, billing/feature upgrade notices, code blocks and diff colors, avatar lists, footer navigation, pricing comparison tables, editorial cards and mobile illustrations. They are visible in the screenshot collection; not every one has a standalone SVG redraw.
+
+## Do and don't
+
+1. **Do keep the pale filled pill for the one main action.** The header's Sign up and a single hero or plan action (Get started, Talk to sales, Watch example) are pale #E5E5E6 pills with dark text; the action beside them is a dark pill, and section links are muted text with an arrow or plus ("Learn more →", "Projects +"). See [01-home](screenshots/01-home.png), [pricing](screenshots/pricing.png) and [startups](screenshots/startups.png).
+2. **Do keep color in small marks.** In the product demos, status, priority and label color sits in a small icon, dot or short health word, while issue titles, ids and row backgrounds stay white or gray. The #5E6AD2 accent appears only in demo details (the composer send button, the @mention, the billing toggle, chart fills); the site's own buttons and links in these screenshots never use it. See [01-home](screenshots/01-home.png), [enterprise](screenshots/enterprise.png), [plan](screenshots/plan.png) and [pricing](screenshots/pricing.png).
+3. **Don't use one rounded rectangle for everything.** Pill actions, modestly rounded sidebar items, squared list rows and more rounded floating surfaces serve different roles. The homepage shows all four at once: the Sign up pill, the 8px selected sidebar row, flat issue rows and the floating agent panel. See [01-home](screenshots/01-home.png).
+4. **Don't carry marketing scale into dense screens.** Public pages use large whitespace, narrow text measures and oversized editorial titles (64px homepage hero, 128px Tiempos on Method) that do not belong in a dense issue table. The product demos on the same pages keep 13px sidebar text and one-line issue rows. See [01-home](screenshots/01-home.png) and [method](screenshots/method.png).
+5. **Don't replace mixed filled and outlined glyphs with a uniform arbitrary stroke.** The demo sidebar sets outlined glyphs (Inbox, Projects) beside filled ones (the Agent Insights bars, the solid arrow inside Initiatives) and a half-filled status circle. See [01-home](screenshots/01-home.png).
 
 ## Import into Figma, Paper or another vector editor
 

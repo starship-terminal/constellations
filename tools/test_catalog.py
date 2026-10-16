@@ -468,6 +468,11 @@ class DesignMdDocumentTest(unittest.TestCase):
         self.assertEqual(intro, "Intro.")
         self.assertEqual(parts, [("Fonts", "#### Sans\n\n```bash\n# comment\n```")])
 
+    def test_readme_do_and_dont_list_goes_under_dos_and_donts(self):
+        _, parts = catalog.readme_parts("# T\n\n## Do and don't\n\n1. **Do one thing.**\n")
+        self.assertEqual(catalog._readme_for("Do's and Don'ts", parts),
+                         "### Do and don't (from README.md)\n\n1. **Do one thing.**")
+
     def test_every_package_has_the_spec_sections_in_order_and_points_at_its_tokens(self):
         for s in catalog.load_catalog()["systems"]:
             with self.subTest(s["slug"]):

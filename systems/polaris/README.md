@@ -18,9 +18,9 @@ For changes, from `tools/`: `npm ci --ignore-scripts --no-audit --no-fund`, then
 
 ## Color
 
-Use semantic tokens rather than choosing raw RGB values by appearance. Surface tokens are large containers, fill tokens are controls and compact status areas, text/icon tokens pair with their intended backgrounds, and border tokens separate regions. Hover, active, selected and disabled are different states; do not replace them with arbitrary opacity.
+Use semantic tokens rather than choosing raw RGB values by appearance. Surface tokens are large containers, fill tokens are controls and compact status areas, text/icon tokens pair with their intended backgrounds, and border tokens separate regions.
 
-The light canvas is `color-bg` (`#F1F1F1`), primary surface is `color-bg-surface` (`#FFFFFF`), primary text is `color-text` (`#303030`). The catalog retains original RGBA strings and transparent colors. Critical, warning, caution, info, success and magic have separate families. Badge attention uses caution tokens. Primary actions use brand fill, not a generic Shopify green.
+The light canvas is `color-bg` (`#F1F1F1`), primary surface is `color-bg-surface` (`#FFFFFF`), primary text is `color-text` (`#303030`). The catalog retains original RGBA strings and transparent colors. Critical, warning, caution, info, success and magic have separate families. Badge attention uses caution tokens.
 
 Every color is searchable on the Colors page. `tokens/polaris-themes.raw.json` preserves all values grouped by theme and type; `tokens/polaris-metadata.json` preserves source metadata. `tokens/light.css` provides `--p-*` custom properties. At a 16px root, all displayed rem-to-pixel conversions are arithmetic conversions, not a recommendation to hard-code pixels.
 
@@ -42,7 +42,7 @@ Breakpoints: xs 0, sm 490, md 768, lg 1040, xl 1440px. Use these for responsive 
 
 ## Buttons
 
-Secondary is the default variant; primary, tertiary, plain and monochromePlain express other hierarchy. Success and critical are tone overrides. Use only one dominant primary action per local decision. Loading preserves the button label's width while hiding its normal content and announcing progress. Disabled suppresses activation, not merely a color change.
+Secondary is the default variant; primary, tertiary, plain and monochromePlain express other hierarchy. Success and critical are tone overrides. Loading preserves the button label's width while hiding its normal content and announcing progress. Disabled suppresses activation, not merely a color change.
 
 Micro, slim, medium and large have responsive minimum heights. At desktop the primary size minima are 24/28/32px; slim and medium share their authored minimum and padding. Text-only medium examples have 12px inline padding on each side. Icon-bearing buttons intentionally adjust the icon edge independently. Use content sizing, not a fixed width inferred from a specimen frame.
 
@@ -50,7 +50,7 @@ Primary and secondary buttons use compound inset/drop shadows and state-dependen
 
 ## Badges, tags and forms
 
-Badges communicate status and are not buttons. Use tone plus words; do not rely on color alone. Progress badges represent incomplete, partially complete or complete status. Tags represent removable choices and give their remove control a separate accessible name. Keep text content-sized and account for the remove target at the end.
+Progress badges represent incomplete, partially complete or complete status. Tags represent removable choices and give their remove control a separate accessible name. Keep text content-sized and account for the remove target at the end.
 
 TextField and Select have distinct default, hover, focus, invalid, read-only and disabled treatments. Labels remain visible; helper text supplies context; errors explain recovery. Text fields use prefix/suffix regions for units without turning them into value text. Native select, checkbox and radio semantics remain intact under custom visual layers. Indeterminate checkbox state is semantically mixed.
 
@@ -62,11 +62,20 @@ The live guide includes card, banner, tabs, pagination, popover, modal, tooltip,
 
 ## Icons
 
-All **534 original SVGs** and their YAML metadata are bundled in `icons/`. The searchable Icons page links directly to downloads. Preserve each source viewBox; most are 20 × 20. Use semantic icon colors and standard Icon components in code. Decorative icons are hidden from assistive technology; icon-only actions need accessible labels. Do not use icon size as a substitute for adequate pointer/touch targets.
+All **534 original SVGs** and their YAML metadata are bundled in `icons/`. The searchable Icons page links directly to downloads. Preserve each source viewBox; most are 20 × 20. Use semantic icon colors and standard Icon components in code. Decorative icons are hidden from assistive technology; icon-only actions need accessible labels.
 
 ## Theme coverage
 
 All four sets are retained: `light`, `light-mobile`, `light-high-contrast-experimental`, `dark-experimental`. The live gallery defaults to light; dark/high-contrast token exports are reference material, not validated complete production themes. Tokens alone do not establish accessible contrast across every composite state.
+
+## Do and don't
+
+1. **Do keep the interface neutral and spend color on status.** The canvas, surfaces, secondary buttons, selected tabs and pressed buttons are white and greys; the primary button and checked checkboxes, radios and the slider use the dark brand fill `#303030`. Hue goes to status (badges, banners, the critical and success buttons, the invalid field) and to links. See [05-buttons](screenshots/05-buttons.png), [07-forms](screenshots/07-forms.png), [08-feedback](screenshots/08-feedback.png) and [09-navigation](screenshots/09-navigation.png).
+2. **Do give each decision one dark primary button.** The modal pairs a dark "Archive product" with a white, bordered "Cancel", and the empty state has a single dark "Add product". Other actions stay secondary (white with a border), tertiary (text only) or plain (blue link text). See [14-modal-open](screenshots/14-modal-open.png), [11-data](screenshots/11-data.png) and [05-buttons](screenshots/05-buttons.png).
+3. **Do keep critical red for destructive actions.** "Delete product" is a filled red button and "Remove" a white button with red text. In the action menu only "Delete" is red; "Duplicate" and "Archive" stay neutral. See [05-buttons](screenshots/05-buttons.png) and [15-popover-open](screenshots/15-popover-open.png).
+4. **Do pair every badge tone with words.** Badges communicate status and are not buttons: they are flat tinted chips with no border or shadow, unlike the bordered, bevelled buttons. Each tone carries a label ("Paid", "Overdue", "Unfulfilled"), and progress badges add an empty, partial or filled pip, so color is never the only signal. See [06-badges-tags](screenshots/06-badges-tags.png) and [01-overview](screenshots/01-overview.png).
+5. **Don't fake states with opacity.** Hover, active, selected and disabled each have their own tokens. The disabled secondary button drops its border and bevel and turns pale grey with grey text, the disabled primary turns light grey with white text rather than a faded dark button, and pressed "Selected" and the selected "Day" segment take a darker grey fill. The disabled field loses its border and takes a grey fill. See [05-buttons](screenshots/05-buttons.png), [07-forms](screenshots/07-forms.png) and [02-colors](screenshots/02-colors.png).
+6. **Do put icons inside full-size buttons.** A leading icon sits left of the label ("Add product", "Open") and the disclosure chevron sits right ("More actions"). The icon-only search button and the pagination arrows keep the same height as the text buttons, with their own border or fill around the icon, so icon size never stands in for the pointer or touch target. See [05-buttons](screenshots/05-buttons.png) and [09-navigation](screenshots/09-navigation.png).
 
 ## Import into Figma, Paper or similar
 
