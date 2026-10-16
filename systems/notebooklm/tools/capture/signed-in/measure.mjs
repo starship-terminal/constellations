@@ -513,7 +513,7 @@ out._meta = {
     pressed: 'mouse hover, then the button held down for 250ms (:active)',
     other: 'selected / open / readonly / off / option-highlighted are other elements or copies captured in that state',
   },
-  tokens: '`vars` lists every var(--x) named in the classes of the element and its first descendants (NotebookLM\'s classes name none, so this is usually empty; the theme variables are read by tools/capture/vars.mjs).',
+  tokens: '`vars` lists every var(--x) named in the classes of the element and its first descendants (NotebookLM\'s classes name none, so this is usually empty; the theme variables are read by tools/capture/read-css.mjs).',
   snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.filter((l) => !l.endsWith('#light')).map((l) => { const m = metaOf(l); return [l, { url: m.url, w: m.w, h: m.h }]; })) },
 };
 out.components ??= {};
