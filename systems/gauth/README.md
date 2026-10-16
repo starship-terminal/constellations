@@ -51,21 +51,21 @@ Against the library's checklist ([docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTE
 | Background roles | captured | `light.background.page`, `.surface`, `.raised`, `.overlay`, `.scrim` and `.scrim-dialog` |
 | Text roles | captured | `light.text.primary`, `.secondary`, `.disabled`, `.on-accent`, `.link` |
 | Border roles | captured | `light.border.default`, `.strong`, `.focus` |
-| Accent states | captured | `light.action.primary`, `.primary-hover`, `.primary-pressed` (the hover fill plus `scale.press`), `.primary-disabled` |
+| Accent states | partly | `light.action.primary`, `.primary-hover`, `.primary-disabled`. Gauth has no pressed colour: pressed keeps the hover fill and scales to `scale.press` (0.98), recorded as `.primary-pressed`. A recapture cannot add a colour the product does not paint. |
 | Status colours | partly | danger painted, success and info declared, each with fill, text and border (`light.status`). Warning is not present: no warning colour is declared or painted on any page captured. |
 | Theme parity | not present | Gauth ships one light theme; its dark declarations are applied on no page (`themeChecks` in [raw/css-vars.json](raw/css-vars.json)) |
 | Type | partly | nine families with stacks, the `--lesson-font-size-*` scale, weights, line heights and 40 composite styles (`core.typography`). No code role: no page captured paints code, and the only code font declared is Astryx's, unused. |
 | Spacing | captured | `core.spacing` on a 4px base (`core.spacing.base`), off-grid values in `core.spacing-offgrid`; see What to distrust |
 | Shape | captured | `core.radius`, `core.borderWidth` |
-| Sizing | captured | `core.size` (control heights 30 to 48, icons 20, 24 and 32), `core.focus` |
+| Sizing | captured | `core.size` (control heights 30 to 48, icons 20 and 24, the 32px lesson control), `core.focus` |
 | Elevation | captured | `light.elevation.level-1` to `level-4`, each with its use, over the 17 measured shadows |
 | Motion | captured | `core.duration`, `core.easing`, `core.scale`, and `core.duration.reduced` with what reduced motion changes ([raw/foundations.json](raw/foundations.json)) |
 | Layout | captured | `core.breakpoint`, `core.layout`, `core.grid` (column counts and gaps), `core.zIndex` |
 | Button, icon button, link, text field, text area, select, radio, switch, tabs, menu, tooltip, dialog, card, list row, table, avatar, badge | captured | 17 of 19; [components.md, Checklist coverage](components.md#checklist-coverage) maps each to its entries and states |
 | Checkbox | not present | no public page or form has one; the Sign in dialog states its terms as text |
 | Toast | not captured | none appeared after any action the capture took signed out |
-| States | captured | hover, focus-visible, pressed (forced), selected, opened, disabled (Sign in, Atlas Send, pagination), loading (the tutor's status line) and error (the answered check-in) |
-| Focus | captured | every keyboard-focused control records its ring or the lack of one ([components.md, Shared values](components.md#shared-values)) |
+| States | captured | hover, focus-visible, pressed (forced), selected, opened, disabled (Sign in, Atlas Send, pagination) and error (the answered check-in). Loading only as the math tutor's shimmering status line, read at rest: the pages render on the server, so the skeletons Gauth's CSS declares never showed. The switch was not toggled on. |
+| Focus | partly | all 57 keyboard-focused controls record their ring or the lack of one, but only 11 draw a visible ring, the product's own gap ([components.md, Shared values](components.md#shared-values)) |
 | App shell and navigation, forms and validation, empty, loading and error states, feedback, search and filtering, data display, onboarding | captured | [patterns.md](patterns.md) |
 | Destructive confirmation | not present | a signed-out visitor has nothing to delete, leave or cancel |
 | Signed-in pages | not captured | the capture never signs in (a learner's own courses, history, settings, checkout) |

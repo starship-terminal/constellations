@@ -77,6 +77,35 @@ def _rank(n):
 BY_COLOR = {}
 for n in sorted((n for n in TOK if TYPES[n] == "color"), key=_rank):
     BY_COLOR.setdefault(TOK[n], n)
+
+# The same colour can hold several roles (#21252e is both text.primary and action.primary), so a value is
+# looked up by what it paints: a fill prefers background, action and status roles, text the text roles,
+# a border or outline the border roles. Each falls back to the general order above.
+ROLE_ORDER = {
+    "fill": ["background.", "action.", "status.", "component.", "palette."],
+    "fill-control": ["action.", "background.", "status.", "component.", "palette."],
+    "text": ["text.", "status.", "action.", "component.", "palette."],
+    "line": ["border.", "action.", "status.", "component.", "palette."],
+}
+
+
+def by_role(v, role):
+    if role not in ROLE_ORDER:
+        return BY_COLOR.get(v)
+    names = [n for n in TOK if TYPES[n] == "color" and TOK[n] == v]
+    if not names:
+        return None
+    if role == "fill" and _control[0]:
+        role = "fill-control"
+    order = ROLE_ORDER[role]
+    # a token named for another job (action.primary-text is a label colour, not a fill) ranks last
+    other = {"fill": ("text", "border", "line"), "fill-control": ("text", "border", "line"), "text": ("border", "line", "fill", "background", "bg"), "line": ("text", "fill", "background", "bg")}[role]
+
+    def rank(n):
+        leaf = n.rsplit(".", 1)[-1]
+        wrong = any(w in leaf for w in other) or (role != "text" and n.startswith("text.")) or (role == "text" and n.startswith(("background.", "border.")))
+        return wrong, next((i for i, p in enumerate(order) if n.startswith(p)), 99), any(w in leaf for w in STATEFUL), n
+    return min(names, key=rank)
 BY_DIM = {}
 for grp in ("radius", "spacing", "spacing-offgrid", "borderWidth", "focus", "size"):
     for n in sorted(n for n in TOK if n.startswith(grp + ".") and TYPES[n] == "dimension"):
@@ -103,6 +132,7 @@ for n in sorted(n for n in TOK if TYPES[n] == "typography"):
 
 USED = {}  # component -> tokens it cites
 _cur = [None]
+_control = [False]  # the entry being written is a button or link, so a fill reads as an action colour first
 
 
 # Values are marked while the file is written (\x03token\x04, \x01raw\x02) so the entries can be counted;
@@ -123,14 +153,15 @@ def norm(r, g, b, a=None):
     return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
 
 
-def colour(c, tokens=True):
-    """rgb()/rgba()/color(srgb) -> '`token`' (or the raw value when no token holds it)."""
+def colour(c, tokens=True, role=None):
+    """rgb()/rgba()/color(srgb) -> '`token`' (or the raw value when no token holds it). `role` (fill, text,
+    line) picks the token for what the colour paints."""
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
         if not tokens:
             return v
-        tok = BY_COLOR.get(v)
+        tok = by_role(v, role)
         return cite(tok) if tok else raw(v)
 
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
@@ -147,6 +178,14 @@ def dim(v, *groups):
         if n:
             return cite(n)
     return raw(v)
+
+
+def dim_named(v, names):
+    """'2px' -> the first of `names` whose value it is (outline width is focus.width, not focus.offset)."""
+    for n in names:
+        if TOK.get(n) == v:
+            return cite(n)
+    return dim(v, "focus", "borderWidth")
 
 
 def dims(v, *groups):
@@ -213,7 +252,7 @@ def props(v):
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{dim(s[f'border{d}Width'], 'borderWidth')} {s[f'border{d}Style']} {colour(s[f'border{d}Color'])}")
+            bds.append(f"{dim(s[f'border{d}Width'], 'borderWidth')} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role='line')}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
@@ -221,7 +260,7 @@ def props(v):
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
         o["radius"] = dims(rad, "radius")
-    o["background"] = colour(s["backgroundColor"])
+    o["background"] = colour(s["backgroundColor"], role="fill")
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
         o["image"] = colour(img)[:200]
@@ -234,12 +273,12 @@ def props(v):
         if sh:
             o["shadow"] = sh
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{dim(s['outlineWidth'], 'focus', 'borderWidth')} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {dim(s['outlineOffset'], 'focus') if s['outlineOffset'] != '0px' else '0px'}"
+        o["outline"] = f"{dim_named(s['outlineWidth'], ['focus.width', 'borderWidth.focus'])} {s['outlineStyle']} {colour(s['outlineColor'], role='line')}, offset {dim_named(s['outlineOffset'], ['focus.offset', 'focus.offset-astryx']) if s['outlineOffset'] != '0px' else '0px'}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{typeset(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
+        o["text"] = f"{typeset(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], role='text')}"
     else:
-        o["text"] = f"{typeset(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+        o["text"] = f"{typeset(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], role='text')}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -264,9 +303,9 @@ def props(v):
     if s["opacity"] != "1":
         o["opacity"] = s["opacity"]
     if v.get("icon") and v["icon"]["w"] > 0 and v["icon"]["w"] < 120:
-        o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
+        o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'], role='text')}"
     if v.get("placeholder"):
-        o["placeholder"] = colour(v["placeholder"]["color"])
+        o["placeholder"] = colour(v["placeholder"]["color"], role="text")
     return o
 
 
@@ -313,15 +352,17 @@ def child_layers(c):
     for p in st["paint"][:3]:
         bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
         if p.get("bg"):
-            bits.append("background " + colour(p["bg"]))
+            bits.append("background " + colour(p["bg"], role="fill"))
         if p.get("bgImage"):
             bits.append("image " + colour(p["bgImage"])[:90])
         if p.get("border"):
-            bits.append("border " + colour(p["border"].split(" | ")[0][2:]))
+            bw, _, bc = p["border"].split(" | ")[0][2:].partition(" solid ")
+            bits.append("border " + (f"{dim(bw, 'borderWidth')} solid {colour(bc, role='line')}" if bc else colour(p["border"].split(" | ")[0][2:], role="line")))
         if p.get("radius"):
-            bits.append("radius " + p["radius"])
+            bits.append("radius " + dims(p["radius"], "radius"))
         if p.get("shadow"):
-            bits.append("shadow " + colour(p["shadow"]))
+            sh = shadow(p["shadow"])
+            bits.append("shadow " + (sh if sh is not None else colour(p["shadow"], tokens=False)))
         out.append(" ".join(bits))
     return "; ".join(out).replace("|", "/")
 
@@ -405,7 +446,7 @@ W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md
 W()
 W("How to read an entry:")
 W()
-W("- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as its semantic role (`text.primary`, `border.card`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). {{TOKEN_SHARE}}. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.")
+W("- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as the role token for what it paints (a fill as `action.*` or `background.*`, text as `text.*`, a border or outline as `border.*`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). {{TOKEN_SHARE}}. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
@@ -600,6 +641,7 @@ for g in groups:
         if c["group"] != g:
             continue
         _cur[0] = k
+        _control[0] = bool(re.search(r"button|link|chip|tab|toggle|arrow|pagination item|option|close", c["title"], re.I))
         W()
         W(f"#### {c['title']}")
         desc = (c.get("desc") or "").strip()
@@ -666,8 +708,8 @@ W()
 W("- **Pressed** was forced with DevTools on every control except toggles, so a state a script adds on mousedown (if any) is missing.")
 W("- **Hover on the feature cards, the article rows, the Share button and the play disc** changed nothing measurable; their entries read 'same'.")
 W("- **The tutor transcript** held only the status line during the 25 seconds of playback the kit waits; transcript text was not captured.")
-W("- **Disabled states** were found on four controls: the Sign in dialog's Sign in button (brand red at low strength), the Atlas Send button while the box is empty, the blog's Previous arrow on page 1, and the Atlas Send button turning dark once text is typed. Gauth shows no inline error under a field: the Sign in dialog keeps its button disabled instead.")
-W("- **Loading states.** The pages render on the server, so the skeletons in Gauth's CSS (`catalog_mathSkeleton*`, `math-course-detail_detailSkeletonBanner`) never showed, even with the data request held back. The one loading state captured is the math tutor's status line, which shimmers while it narrates ([tutor-status-line](#tutor-status-line)).")
+W("- **Disabled states** were found on three controls: the Sign in dialog's Sign in button (brand red at low strength), the Atlas Send button while the box is empty (it turns dark, enabled, once text is typed), and the blog's Previous arrow on page 1. Gauth shows no inline error under a field: the Sign in dialog keeps its button disabled instead.")
+W("- **Loading states.** The pages render on the server, so the skeletons in Gauth's CSS (`catalog_mathSkeleton*`, `math-course-detail_detailSkeletonBanner`) never showed, even with the data request held back. The nearest to a loading state is the math tutor's status line, which shimmers while it narrates; it was read at rest, as its default state ([tutor-status-line](#tutor-status-line)).")
 W()
 W("### Themes")
 W()

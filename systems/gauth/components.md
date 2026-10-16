@@ -6,7 +6,7 @@ The full per-state readings are in [raw/measurements.md](raw/measurements.md), w
 
 How to read an entry:
 
-- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as its semantic role (`text.primary`, `border.card`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). 1096 of 1442 values in the entries (76%) are written as tokens; the other 346 are values Gauth gives no token (a one-off padding, a third-party library's colour, a type size used once) and stay raw. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.
+- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as the role token for what it paints (a fill as `action.*` or `background.*`, text as `text.*`, a border or outline as `border.*`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). 1126 of 1481 values in the entries (76%) are written as tokens; the other 355 are values Gauth gives no token (a one-off padding, a third-party library's colour, a type size used once) and stay raw. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
 - Crops are images of the component read from the live page, in [components/crops/](components/crops) (362 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
@@ -176,10 +176,10 @@ The near-black primary button in the top bar. A span in a div, so it takes no ke
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 70 x 30; padding 0px `spacing-offgrid.6`; radius `radius.10`; background `text.primary`; text -apple-system 14/normal 600, `background.card` |
+| default | size 70 x 30; padding 0px `spacing-offgrid.6`; radius `radius.10`; background `action.primary`; text -apple-system 14/normal 600, `text.inverse` |
 | hover, pressed | background `palette.ink.800` |
 
-**Tokens.** `background.card`, `palette.ink.800`, `radius.10`, `spacing-offgrid.6`, `text.primary`.
+**Tokens.** `action.primary`, `palette.ink.800`, `radius.10`, `spacing-offgrid.6`, `text.inverse`.
 
 ![Sign in button default](components/crops/sign-in-button-default.png) ![Sign in button hover](components/crops/sign-in-button-hover.png) ![Sign in button pressed](components/crops/sign-in-button-pressed.png)
 
@@ -291,9 +291,9 @@ On inner pages the question field moves into the top bar: 640 x 40, white at 84%
 |---|---|
 | default (same: hover, focused, filled) | size 640 x 40; background transparent; text -apple-system 18/27 400, `palette.indigo.upload-text`; icon 24 x 24, #333333 |
 
-Child layers that carry the look: div 640x40 background rgba(255, 255, 255, 0.84) border 1px solid `border.field` radius 30px; div 1x14 background #c7c7cc; div 30x30 background `background.selected` radius 15px.
+Child layers that carry the look: div 640x40 background rgba(255, 255, 255, 0.84) border `borderWidth.hairline` solid `border.field` radius 30px; div 1x14 background #c7c7cc; div 30x30 background `background.selected` radius 15px.
 
-**Tokens.** `background.selected`, `border.field`, `palette.indigo.upload-text`.
+**Tokens.** `background.selected`, `border.field`, `borderWidth.hairline`, `palette.indigo.upload-text`.
 
 ![Top bar question field default](components/crops/header-question-default.png) ![Top bar question field hover](components/crops/header-question-hover.png) ![Top bar question field focused](components/crops/header-question-focused.png) ![Top bar question field filled](components/crops/header-question-filled.png)
 
@@ -313,9 +313,9 @@ The first band of the home page: a pale lilac gradient ground, the two-line seri
 #### Hero title
 "Your AI Study Helper / Gauth it, Ace it!" in Gauth Home Libre Baskerville; the second line is filled with a gradient through background-clip. Read as `home-title` on the Homework home page.
 
-**Values (default).** size 680 x 104; background `text.primary`; image an image (data URI); text `typography.hero`, `text.primary`.
+**Values (default).** size 680 x 104; background `action.primary`; image an image (data URI); text `typography.hero`, `text.primary`.
 
-**Tokens.** `text.primary`, `typography.hero`.
+**Tokens.** `action.primary`, `text.primary`, `typography.hero`.
 
 ![Hero title default](components/crops/home-title-default.png)
 
@@ -347,10 +347,10 @@ The round white arrow button; measured, never pressed. Read as `question-submit`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; radius `radius.24`; background `background.card`; text Arial 13.33/normal 400, `palette.ink.black`; icon 29 x 28, `palette.ink.black` |
+| default | size 44 x 44; radius `radius.24`; background `action.secondary`; text Arial 13.33/normal 400, `palette.ink.black`; icon 29 x 28, `palette.ink.black` |
 | hover | background `palette.indigo.tint-hover` |
 
-**Tokens.** `background.card`, `palette.indigo.tint-hover`, `palette.ink.black`, `radius.24`.
+**Tokens.** `action.secondary`, `palette.indigo.tint-hover`, `palette.ink.black`, `radius.24`.
 
 ![Question submit button default](components/crops/question-submit-default.png) ![Question submit button hover](components/crops/question-submit-hover.png)
 
@@ -417,10 +417,10 @@ A dark radius-14 link button. Measured, never followed. Read as `atlas-cta` on t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 160 x 44; radius `radius.14`; background `text.primary`; text `typography.nav-strong`, `background.card`; icon 16 x 16, `background.card` |
+| default (same: focus-visible) | size 160 x 44; radius `radius.14`; background `action.primary`; text `typography.nav-strong`, `text.inverse`; icon 16 x 16, `text.inverse` |
 | hover, pressed | background `palette.ink.hover-2` |
 
-**Tokens.** `background.card`, `palette.ink.hover-2`, `radius.14`, `text.primary`, `typography.nav-strong`.
+**Tokens.** `action.primary`, `palette.ink.hover-2`, `radius.14`, `text.inverse`, `typography.nav-strong`.
 
 ![Start Exploring button default](components/crops/atlas-cta-default.png) ![Start Exploring button hover](components/crops/atlas-cta-hover.png) ![Start Exploring button focus-visible](components/crops/atlas-cta-focus-visible.png) ![Start Exploring button pressed](components/crops/atlas-cta-pressed.png)
 
@@ -440,9 +440,9 @@ A radius-20 row with an icon, a 16/22 600 title and a 14/22 description. The row
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 369.81 x 102; padding `spacing.16` `spacing.24` `spacing.16` `spacing.20`; radius `radius.20`; background `component.atlas.new`; shadow 0px 7px 14px 0px rgba(168, 0, 0, 0.1); text -apple-system 16/22 600, `background.card`; icon 24 x 24, `palette.ink.black` |
+| default (same: hover) | size 369.81 x 102; padding `spacing.16` `spacing.24` `spacing.16` `spacing.20`; radius `radius.20`; background `component.atlas.new`; shadow 0px 7px 14px 0px rgba(168, 0, 0, 0.1); text -apple-system 16/22 600, `text.inverse`; icon 24 x 24, `palette.ink.black` |
 
-**Tokens.** `background.card`, `component.atlas.new`, `palette.ink.black`, `radius.20`, `spacing.16`, `spacing.20`, `spacing.24`.
+**Tokens.** `component.atlas.new`, `palette.ink.black`, `radius.20`, `spacing.16`, `spacing.20`, `spacing.24`, `text.inverse`.
 
 ![Solution option row default](components/crops/solution-option-default.png) ![Solution option row hover](components/crops/solution-option-hover.png)
 
@@ -458,9 +458,9 @@ A pink block with one oversized corner radius (54 54 200 54). Read as `live-tuto
 #### Footer
 White with a 1px #f5f5f7 top rule: brand line, email, socials and a language select, then Company, Legal and Download App columns. Read as `footer` on the Homework home page.
 
-**Values (default).** size 1220 x 244; border T: `borderWidth.hairline` solid `background.selected`; background `background.card`; text -apple-system 20/26 600, `text.primary`; icon 24 x 24, `text.primary`.
+**Values (default).** size 1220 x 244; border T: `borderWidth.hairline` solid `component.progress.track`; background `background.card`; text -apple-system 20/26 600, `text.primary`; icon 24 x 24, `text.primary`.
 
-**Tokens.** `background.card`, `background.selected`, `borderWidth.hairline`, `text.primary`.
+**Tokens.** `background.card`, `borderWidth.hairline`, `component.progress.track`, `text.primary`.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -489,9 +489,9 @@ The list the select opens upward: a 182px white popup, radius 8, a soft three-la
 #### Select option, current
 Read as `language-option-selected` on the Homework home page.
 
-**Values (selected).** size 174 x 40; padding 5px `spacing.12`; radius `radius.8`; background `border.sidebar`; text -apple-system 14/40 600, rgba(0, 0, 0, 0.88); transition background-color `duration.popover` ease.
+**Values (selected).** size 174 x 40; padding 5px `spacing.12`; radius `radius.8`; background `palette.slate.divider`; text -apple-system 14/40 600, rgba(0, 0, 0, 0.88); transition background-color `duration.popover` ease.
 
-**Tokens.** `border.sidebar`, `duration.popover`, `radius.8`, `spacing.12`.
+**Tokens.** `duration.popover`, `palette.slate.divider`, `radius.8`, `spacing.12`.
 
 ![Select option, current selected](components/crops/language-option-selected-selected.png)
 
@@ -501,9 +501,9 @@ Hovered only. Read as `language-option` on the Homework home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 174 x 40; padding 5px `spacing.12`; radius `radius.8`; background transparent; text -apple-system 14/40 400, rgba(0, 0, 0, 0.88); transition background-color `duration.popover` ease |
-| hover | background `border.hairline` |
+| hover | background `palette.paper.hairline` |
 
-**Tokens.** `border.hairline`, `duration.popover`, `radius.8`, `spacing.12`.
+**Tokens.** `duration.popover`, `palette.paper.hairline`, `radius.8`, `spacing.12`.
 
 ![Select option default](components/crops/language-option-default.png) ![Select option hover](components/crops/language-option-hover.png)
 
@@ -621,9 +621,9 @@ One course: its heading and a three-column card grid, closed by a 1px #e7e6e3 ru
 
 **Values (default).** size 1025 x 464.09; padding 29px 0px 36px 0px; border B: `borderWidth.hairline` solid `border.rule`; background transparent; text `typography.section-heading`, `text.primary`.
 
-Child layers that carry the look: section 1025x464.1 border 1px solid `border.rule`; a 325.7x294.1 background `background.card` border 1px solid `border.card` radius 16px shadow `border.hairline` 0px 4px 7px 0px; div 283.7x6 background `background.selected` radius 4px.
+Child layers that carry the look: section 1025x464.1 border `borderWidth.hairline` solid `border.rule`; a 325.7x294.1 background `background.card` border `borderWidth.hairline` solid `border.card` radius `radius.16` shadow `elevation.level-1`; div 283.7x6 background `background.selected` radius `radius.4`.
 
-**Tokens.** `background.card`, `background.selected`, `border.card`, `border.hairline`, `border.rule`, `borderWidth.hairline`, `text.primary`, `typography.section-heading`.
+**Tokens.** `background.card`, `background.selected`, `border.card`, `border.rule`, `borderWidth.hairline`, `elevation.level-1`, `radius.16`, `radius.4`, `text.primary`, `typography.section-heading`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -760,9 +760,9 @@ A fan of three course cards, a 20px 600 title, a grey line and a dark Create but
 
 **Values (default).** size 1025 x 557; padding 36px 0px; background transparent; text `typography.empty-title`, `palette.ink.black`.
 
-Child layers that carry the look: button 120x44 background `text.primary` radius 12px.
+Child layers that carry the look: button 120x44 background `action.primary` radius `radius.12`.
 
-**Tokens.** `palette.ink.black`, `text.primary`, `typography.empty-title`.
+**Tokens.** `action.primary`, `palette.ink.black`, `radius.12`, `typography.empty-title`.
 
 ![My Course empty state default](components/crops/my-empty-default.png)
 
@@ -771,11 +771,11 @@ The dark primary button: #21252e, radius 12, 44px, white 16/22.4 500. Hover ligh
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 120 x 44; padding 0px 18px; radius `radius.12`; background `text.primary`; text Arial 16/22.4 500, `background.card` |
+| default (same: focus-visible) | size 120 x 44; padding 0px 18px; radius `radius.12`; background `action.primary`; text Arial 16/22.4 500, `text.inverse` |
 | hover | background `action.primary-hover` |
 | pressed | size 117.6 x 43.12; background `action.primary-hover`; transform scale `scale.press` |
 
-**Tokens.** `action.primary-hover`, `background.card`, `radius.12`, `scale.press`, `text.primary`.
+**Tokens.** `action.primary`, `action.primary-hover`, `radius.12`, `scale.press`, `text.inverse`.
 
 ![Create button (empty state) default](components/crops/create-button-default.png) ![Create button (empty state) hover](components/crops/create-button-hover.png) ![Create button (empty state) focus-visible](components/crops/create-button-focus-visible.png) ![Create button (empty state) pressed](components/crops/create-button-pressed.png)
 
@@ -894,10 +894,10 @@ The primary button: #21252e, radius 12, 48px, white 16/24 700, with a moving lig
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 410 x 48; radius `radius.12`; background `text.primary`; text SF Pro 16/24 700, `background.card` |
+| default (same: hover, focus-visible) | size 410 x 48; radius `radius.12`; background `action.primary`; text SF Pro 16/24 700, `text.inverse` |
 | pressed | size 401.8 x 47.04; transform scale `scale.press` |
 
-**Tokens.** `background.card`, `radius.12`, `scale.press`, `text.primary`.
+**Tokens.** `action.primary`, `radius.12`, `scale.press`, `text.inverse`.
 
 ![Start button default](components/crops/start-button-default.png) ![Start button hover](components/crops/start-button-hover.png) ![Start button focus-visible](components/crops/start-button-focus-visible.png) ![Start button pressed](components/crops/start-button-pressed.png)
 
@@ -910,9 +910,9 @@ Exit button and the lesson title in Playfair Display 16/21 600 at the left; the 
 
 **Values (default).** size 1396 x 40; background transparent; text `typography.lesson-title`, `text.primary`; icon 40 x 40, `component.section-rail.indicator`.
 
-Child layers that carry the look: div 0x0 background `component.section-rail.indicator` radius 12px; div 0x0 background `component.section-rail.indicator` radius 12px; div 0x0 background `component.section-rail.indicator` radius 12px.
+Child layers that carry the look: div 0x0 background `component.section-rail.indicator` radius `radius.12`; div 0x0 background `component.section-rail.indicator` radius `radius.12`; div 0x0 background `component.section-rail.indicator` radius `radius.12`.
 
-**Tokens.** `component.section-rail.indicator`, `text.primary`, `typography.lesson-title`.
+**Tokens.** `component.section-rail.indicator`, `radius.12`, `text.primary`, `typography.lesson-title`.
 
 ![Lesson header default](components/crops/canvas-header-default.png)
 
@@ -923,10 +923,10 @@ Read as `canvas-exit` on the science lesson page.
 |---|---|
 | default | size 40 x 40; radius `radius.pill`; background transparent; text Canvas Print 14/20.00 500, `component.section-rail.indicator`; transition background-image `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), background-color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), opacity `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), transform `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1); icon 40 x 40, `component.section-rail.indicator` |
 | hover | image linear-gradient(`action.ghost-hover`, `action.ghost-hover`) |
-| focus-visible | outline `focus.offset` solid `border.focus`, offset `focus.offset-astryx` |
+| focus-visible | outline `focus.width` solid `border.focus`, offset `focus.offset-astryx` |
 | pressed | size 39.2 x 39.2; image linear-gradient(`action.ghost-pressed`, `action.ghost-pressed`); transform scale `scale.press`; icon 39.2 x 39.2, `component.section-rail.indicator` |
 
-**Tokens.** `action.ghost-hover`, `action.ghost-pressed`, `border.focus`, `component.section-rail.indicator`, `duration.astryx`, `focus.offset`, `focus.offset-astryx`, `radius.pill`, `scale.press`.
+**Tokens.** `action.ghost-hover`, `action.ghost-pressed`, `border.focus`, `component.section-rail.indicator`, `duration.astryx`, `focus.offset-astryx`, `focus.width`, `radius.pill`, `scale.press`.
 
 ![Exit button default](components/crops/canvas-exit-default.png) ![Exit button hover](components/crops/canvas-exit-hover.png) ![Exit button focus-visible](components/crops/canvas-exit-focus-visible.png) ![Exit button pressed](components/crops/canvas-exit-pressed.png)
 
@@ -937,10 +937,10 @@ A 32px round ghost button holding a 32px icon. Hover lays a 5% ink film over it,
 |---|---|
 | default | size 32 x 32; radius `radius.pill`; background transparent; text Canvas Print 14/20.00 500, `component.section-rail.indicator`; transition background-image `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), background-color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), opacity `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), transform `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1); icon 32 x 32, `component.section-rail.indicator` |
 | hover | image linear-gradient(`action.ghost-hover`, `action.ghost-hover`) |
-| focus-visible | outline `focus.offset` solid `border.focus`, offset `focus.offset-astryx` |
+| focus-visible | outline `focus.width` solid `border.focus`, offset `focus.offset-astryx` |
 | pressed | size 31.36 x 31.36; image linear-gradient(`action.ghost-pressed`, `action.ghost-pressed`); transform scale `scale.press`; icon 31.36 x 31.36, `component.section-rail.indicator` |
 
-**Tokens.** `action.ghost-hover`, `action.ghost-pressed`, `border.focus`, `component.section-rail.indicator`, `duration.astryx`, `focus.offset`, `focus.offset-astryx`, `radius.pill`, `scale.press`.
+**Tokens.** `action.ghost-hover`, `action.ghost-pressed`, `border.focus`, `component.section-rail.indicator`, `duration.astryx`, `focus.offset-astryx`, `focus.width`, `radius.pill`, `scale.press`.
 
 ![Transport and view buttons default](components/crops/canvas-control-default.png) ![Transport and view buttons hover](components/crops/canvas-control-hover.png) ![Transport and view buttons focus-visible](components/crops/canvas-control-focus-visible.png) ![Transport and view buttons pressed](components/crops/canvas-control-pressed.png)
 
@@ -949,9 +949,9 @@ The right-hand outline: right-aligned 14/20 section names beside a 2px track who
 
 **Values (default).** size 240 x 118; background transparent; text Canvas Print 14/20.00 600, `component.section-rail.indicator`; transform translate(0px, -59px).
 
-Child layers that carry the look: span 2x118 background `component.ask-tutor.border` radius 9999px; span 2x28 background `component.section-rail.indicator` radius 9999px.
+Child layers that carry the look: span 2x118 background `component.section-rail.track` radius `radius.pill`; span 2x28 background `component.section-rail.indicator` radius `radius.pill`.
 
-**Tokens.** `component.ask-tutor.border`, `component.section-rail.indicator`.
+**Tokens.** `component.section-rail.indicator`, `component.section-rail.track`, `radius.pill`.
 
 ![Section rail default](components/crops/canvas-outline-default.png)
 
@@ -971,9 +971,9 @@ Read as `outline-item` on the science lesson page.
 |---|---|
 | default | size 236 x 28; padding `spacing.4` `spacing.12` `spacing.4` `spacing.8`; radius `radius.8`; background transparent; text Canvas Print 14/20.00 400, `component.section-rail.text`; transition background-color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1) |
 | hover | background `action.ghost-hover`; text Canvas Print 14/20.00 400, `component.section-rail.indicator` |
-| focus-visible | outline `focus.offset` solid `border.focus`, offset `focus.offset-astryx` |
+| focus-visible | outline `focus.width` solid `border.focus`, offset `focus.offset-astryx` |
 
-**Tokens.** `action.ghost-hover`, `border.focus`, `component.section-rail.indicator`, `component.section-rail.text`, `duration.astryx`, `focus.offset`, `focus.offset-astryx`, `radius.8`, `spacing.12`, `spacing.4`, `spacing.8`.
+**Tokens.** `action.ghost-hover`, `border.focus`, `component.section-rail.indicator`, `component.section-rail.text`, `duration.astryx`, `focus.offset-astryx`, `focus.width`, `radius.8`, `spacing.12`, `spacing.4`, `spacing.8`.
 
 ![Section rail item default](components/crops/outline-item-default.png) ![Section rail item hover](components/crops/outline-item-hover.png) ![Section rail item focus-visible](components/crops/outline-item-focus-visible.png)
 
@@ -994,9 +994,9 @@ Measured, never pressed. Read as `ask-tutor-mic` on the science lesson page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 40 x 40; radius 50%; background transparent; text Arial 13.33/normal 400, `palette.ink.black`; icon 40 x 40, `palette.ink.black` |
-| focus-visible | outline `focus.offset` solid `palette.ink.black`, offset `focus.offset` |
+| focus-visible | outline `focus.width` solid `palette.ink.black`, offset `focus.offset` |
 
-**Tokens.** `focus.offset`, `palette.ink.black`.
+**Tokens.** `focus.offset`, `focus.width`, `palette.ink.black`.
 
 ![Ask Tutor microphone button default](components/crops/ask-tutor-mic-default.png) ![Ask Tutor microphone button hover](components/crops/ask-tutor-mic-hover.png) ![Ask Tutor microphone button focus-visible](components/crops/ask-tutor-mic-focus-visible.png)
 
@@ -1017,9 +1017,9 @@ Speed, Narration and Captions switches, a Zoom stepper and Export PDF (not press
 
 **Values (opened).** size 298 x 246; radius `radius.24`; background transparent; text SF Pro 14/21 400, `palette.astryx.menu-ink`; icon 20 x 20, `palette.astryx.menu-ink`.
 
-Child layers that carry the look: section 298x246 background `background.card` border 1px solid #f2f2f2 radius 24px shadow rgba(0, 0, 0, 0.09) 0px 8px 14px 0px; button 119x32 background rgba(37, 37, 42, 0.06) radius 9999px.
+Child layers that carry the look: section 298x246 background `background.card` border `borderWidth.hairline` solid #f2f2f2 radius `radius.24` shadow `elevation.level-3`; button 119x32 background rgba(37, 37, 42, 0.06) radius `radius.pill`.
 
-**Tokens.** `background.card`, `palette.astryx.menu-ink`, `radius.24`.
+**Tokens.** `background.card`, `borderWidth.hairline`, `elevation.level-3`, `palette.astryx.menu-ink`, `radius.24`, `radius.pill`.
 
 ![Settings popover opened](components/crops/settings-popover-opened.png)
 
@@ -1030,9 +1030,9 @@ A Settings row holding the Narration toggle, off: 44px, radius 12; hover fills i
 |---|---|
 | default | size 264 x 44; padding 0px `spacing.8`; radius `radius.12`; background transparent; text SF Pro 14/21 400, `palette.astryx.menu-ink`; icon 36 x 36, `palette.astryx.menu-ink` |
 | hover | background `background.hover` |
-| focus-visible | background `background.hover`; outline `focus.offset` solid `palette.blue.focus-2`, offset -2px |
+| focus-visible | background `background.hover`; outline `focus.width` solid `palette.blue.focus-2`, offset -2px |
 
-**Tokens.** `background.hover`, `focus.offset`, `palette.astryx.menu-ink`, `palette.blue.focus-2`, `radius.12`, `spacing.8`.
+**Tokens.** `background.hover`, `focus.width`, `palette.astryx.menu-ink`, `palette.blue.focus-2`, `radius.12`, `spacing.8`.
 
 ![Switch default](components/crops/switch-default.png) ![Switch hover](components/crops/switch-hover.png) ![Switch focus-visible](components/crops/switch-focus-visible.png)
 
@@ -1115,11 +1115,11 @@ A 44px option, 1px #e6e6e7 border, radius 10, SF Pro 14/20, over a visually hidd
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 518 x 44; padding 0px `spacing.12`; border `borderWidth.hairline` solid `component.quiz.option-border`; radius `radius.10`; background `background.card`; text SF Pro 14/20 400, #2c323d; transition box-shadow `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), border-color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1) |
+| default | size 518 x 44; padding 0px `spacing.12`; border `borderWidth.hairline` solid `component.quiz.option-border`; radius `radius.10`; background `action.secondary`; text SF Pro 14/20 400, #2c323d; transition box-shadow `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), border-color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1) |
 | hover | background `background.hover` |
-| focus-visible | outline `focus.offset` solid `border.focus`, offset `focus.offset-astryx` |
+| focus-visible | outline `focus.width` solid `border.focus`, offset `focus.offset-astryx` |
 
-**Tokens.** `background.card`, `background.hover`, `border.focus`, `borderWidth.hairline`, `component.quiz.option-border`, `duration.astryx`, `focus.offset`, `focus.offset-astryx`, `radius.10`, `spacing.12`.
+**Tokens.** `action.secondary`, `background.hover`, `border.focus`, `borderWidth.hairline`, `component.quiz.option-border`, `duration.astryx`, `focus.offset-astryx`, `focus.width`, `radius.10`, `spacing.12`.
 
 ![Quiz option default](components/crops/quiz-option-default.png) ![Quiz option hover](components/crops/quiz-option-hover.png) ![Quiz option focus-visible](components/crops/quiz-option-focus-visible.png)
 
@@ -1128,9 +1128,9 @@ The Speed row swaps the Settings popover for a submenu: a back row on a #f3f3f3 
 
 **Values (opened).** size 298 x 290; radius `radius.24`; background transparent; text SF Pro 14/21 400, `palette.astryx.menu-ink`; icon 16 x 16, `palette.astryx.menu-ink`.
 
-Child layers that carry the look: section 298x290 background `background.card` border 1px solid #f2f2f2 radius 24px shadow rgba(0, 0, 0, 0.09) 0px 8px 14px 0px; button 264x44 background `background.hover` radius 12px; button 119x32 background rgba(37, 37, 42, 0.06) radius 9999px.
+Child layers that carry the look: section 298x290 background `background.card` border `borderWidth.hairline` solid #f2f2f2 radius `radius.24` shadow `elevation.level-3`; button 264x44 background `background.hover` radius `radius.12`; button 119x32 background rgba(37, 37, 42, 0.06) radius `radius.pill`.
 
-**Tokens.** `background.card`, `background.hover`, `palette.astryx.menu-ink`, `radius.24`.
+**Tokens.** `background.card`, `background.hover`, `borderWidth.hairline`, `elevation.level-3`, `palette.astryx.menu-ink`, `radius.12`, `radius.24`, `radius.pill`.
 
 ![Playback speed menu opened](components/crops/speed-menu-opened.png)
 
@@ -1150,18 +1150,18 @@ A 44px submenu row, radius 12; hovered and focused only, never chosen. Read as `
 |---|---|
 | default | size 264 x 44; padding 0px `spacing.12` 0px `spacing.8`; radius `radius.12`; background transparent; text SF Pro 14/21 400, `palette.astryx.menu-ink` |
 | hover | background `background.hover` |
-| focus-visible | background `background.hover`; outline `focus.offset` solid `palette.blue.focus-2`, offset -2px |
+| focus-visible | background `background.hover`; outline `focus.width` solid `palette.blue.focus-2`, offset -2px |
 
-**Tokens.** `background.hover`, `focus.offset`, `palette.astryx.menu-ink`, `palette.blue.focus-2`, `radius.12`, `spacing.12`, `spacing.8`.
+**Tokens.** `background.hover`, `focus.width`, `palette.astryx.menu-ink`, `palette.blue.focus-2`, `radius.12`, `spacing.12`, `spacing.8`.
 
 ![Menu item default](components/crops/menu-item-default.png) ![Menu item hover](components/crops/menu-item-hover.png) ![Menu item focus-visible](components/crops/menu-item-focus-visible.png)
 
 #### Tooltip
 Hovering a header control shows Astryx's tooltip: a small dark label under the button. Read as `tooltip` on the science lesson page.
 
-**Values (opened).** size 74.06 x 28; radius `radius.12`; background `component.section-rail.indicator`; text Figtree 14/20.00 400, `background.card`.
+**Values (opened).** size 74.06 x 28; radius `radius.12`; background `component.section-rail.indicator`; text Figtree 14/20.00 400, `text.inverse`.
 
-**Tokens.** `background.card`, `component.section-rail.indicator`, `radius.12`.
+**Tokens.** `component.section-rail.indicator`, `radius.12`, `text.inverse`.
 
 ![Tooltip opened](components/crops/tooltip-opened.png)
 
@@ -1418,9 +1418,9 @@ Atlas has its own shell (a 56px header and a 230px drawer), a prompt box, recomm
 #### Atlas top bar
 Atlas has its own 56px shell: logo and a menu button at the left, Sign in at the right. Read as `atlas-header` on the Atlas page.
 
-**Values (default).** size 1440 x 56; padding 0px `spacing.20`; background `background.card`; text -apple-system 14/normal 600, `background.card`; icon 24 x 24, `palette.indigo.heading`.
+**Values (default).** size 1440 x 56; padding 0px `spacing.20`; background `background.card`; text -apple-system 14/normal 600, `text.inverse`; icon 24 x 24, `palette.indigo.heading`.
 
-**Tokens.** `background.card`, `palette.indigo.heading`, `spacing.20`.
+**Tokens.** `background.card`, `palette.indigo.heading`, `spacing.20`, `text.inverse`.
 
 ![Atlas top bar default](components/crops/atlas-header-default.png)
 
@@ -1460,9 +1460,9 @@ Read as `atlas-search` on the Atlas page.
 #### Atlas title
 "Turn any topic into a visual story" in Libre Baskerville 40/48 700, the first letter filled with a red gradient. Read as `atlas-title` on the Atlas page.
 
-**Values (default).** size 682.92 x 48; background `text.primary`; image an image (data URI); text Libre Baskerville 40/48 700, `palette.ink.black`.
+**Values (default).** size 682.92 x 48; background `action.primary`; image an image (data URI); text Libre Baskerville 40/48 700, `palette.ink.black`.
 
-**Tokens.** `palette.ink.black`, `text.primary`.
+**Tokens.** `action.primary`, `palette.ink.black`.
 
 ![Atlas title default](components/crops/atlas-title-default.png)
 
@@ -1471,11 +1471,11 @@ A 920 x 148 white box, 1px #e4e6eb border, radius 20, a peach glow (0 6 20 rgba(
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 920 x 148; padding `spacing.12` `spacing.12` `spacing-offgrid.10` `spacing.12`; border `borderWidth.hairline` solid `border.field`; radius `radius.20`; background `background.card`; shadow `elevation.composer`; text SF Pro 15/22 400, `text.tertiary`; transition border-color `duration.composer` ease, box-shadow `duration.composer` ease, background `duration.composer` ease; icon 13 x 13, `background.card` |
+| default (same: hover) | size 920 x 148; padding `spacing.12` `spacing.12` `spacing-offgrid.10` `spacing.12`; border `borderWidth.hairline` solid `border.field`; radius `radius.20`; background `background.card`; shadow `elevation.composer`; text SF Pro 15/22 400, `text.tertiary`; transition border-color `duration.composer` ease, box-shadow `duration.composer` ease, background `duration.composer` ease; icon 13 x 13, `text.inverse` |
 | focused | border `borderWidth.hairline` solid `palette.atlas.line-focus`; shadow `elevation.composer-focus` |
 | filled | border `borderWidth.hairline` solid `palette.atlas.line-focus`; shadow `elevation.composer-focus`; text -apple-system 15/23.57 400, `text.primary` |
 
-**Tokens.** `background.card`, `border.field`, `borderWidth.hairline`, `duration.composer`, `elevation.composer`, `elevation.composer-focus`, `palette.atlas.line-focus`, `radius.20`, `spacing-offgrid.10`, `spacing.12`, `text.primary`, `text.tertiary`.
+**Tokens.** `background.card`, `border.field`, `borderWidth.hairline`, `duration.composer`, `elevation.composer`, `elevation.composer-focus`, `palette.atlas.line-focus`, `radius.20`, `spacing-offgrid.10`, `spacing.12`, `text.inverse`, `text.primary`, `text.tertiary`.
 
 ![Atlas prompt box default](components/crops/atlas-composer-default.png) ![Atlas prompt box hover](components/crops/atlas-composer-hover.png) ![Atlas prompt box focused](components/crops/atlas-composer-focused.png) ![Atlas prompt box filled](components/crops/atlas-composer-filled.png)
 
@@ -1484,11 +1484,11 @@ The web-search switch, on: a near-black #171410 pill, radius 20, with a 0 5 12 s
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 85.17 x 30; padding 0px `spacing.12`; border `borderWidth.hairline` solid `component.atlas.toggle`; radius `radius.20`; background `component.atlas.toggle`; shadow `elevation.toggle`; text -apple-system 12/12 600, `background.card`; transition background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform `duration.press` ease; icon 13 x 13, `background.card` |
+| default | size 85.17 x 30; padding 0px `spacing.12`; border `borderWidth.hairline` solid `component.atlas.toggle`; radius `radius.20`; background `component.atlas.toggle`; shadow `elevation.toggle`; text -apple-system 12/12 600, `text.inverse`; transition background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform `duration.press` ease; icon 13 x 13, `text.inverse` |
 | hover | border `borderWidth.hairline` solid `palette.atlas.toggle-hover`; background `palette.atlas.toggle-hover`; shadow 0px 6px 14px 0px rgba(17, 20, 16, 0.18) |
-| focus-visible | outline `focus.offset` solid rgba(23, 20, 16, 0.18), offset `focus.offset` |
+| focus-visible | outline `focus.width` solid rgba(23, 20, 16, 0.18), offset `focus.offset` |
 
-**Tokens.** `background.card`, `borderWidth.hairline`, `component.atlas.toggle`, `duration.press`, `elevation.toggle`, `focus.offset`, `palette.atlas.toggle-hover`, `radius.20`, `spacing.12`.
+**Tokens.** `borderWidth.hairline`, `component.atlas.toggle`, `duration.press`, `elevation.toggle`, `focus.offset`, `focus.width`, `palette.atlas.toggle-hover`, `radius.20`, `spacing.12`, `text.inverse`.
 
 ![Search toggle pill default](components/crops/search-toggle-default.png) ![Search toggle pill hover](components/crops/search-toggle-hover.png) ![Search toggle pill focus-visible](components/crops/search-toggle-focus-visible.png)
 
@@ -1498,9 +1498,9 @@ Grey #eef0f3 disc while the box is empty, when it carries the disabled attribute
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, disabled) | size 36 x 36; radius 50%; background `component.atlas.send`; text Arial 13.33/normal 400, `text.tertiary`; transition background `duration.atlas` ease, color `duration.atlas` ease, transform `duration.atlas` ease; icon 18 x 18, `text.tertiary` |
-| enabled | background `component.atlas.toggle`; text Arial 13.33/normal 400, `background.card`; icon 18 x 18, `background.card` |
+| enabled | background `component.atlas.toggle`; text Arial 13.33/normal 400, `text.inverse`; icon 18 x 18, `text.inverse` |
 
-**Tokens.** `background.card`, `component.atlas.send`, `component.atlas.toggle`, `duration.atlas`, `text.tertiary`.
+**Tokens.** `component.atlas.send`, `component.atlas.toggle`, `duration.atlas`, `text.inverse`, `text.tertiary`.
 
 ![Send button default](components/crops/send-button-default.png) ![Send button hover](components/crops/send-button-hover.png) ![Send button disabled](components/crops/send-button-disabled.png) ![Send button enabled](components/crops/send-button-enabled.png)
 
@@ -1509,10 +1509,10 @@ A white chip, 1px #dcdcdc border, radius 10, SF Pro 13/19.5 black; hover lifts i
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 170.5 x 41.5; padding `spacing-offgrid.10` `spacing.16`; border `borderWidth.hairline` solid `component.atlas.chip-border`; radius `radius.10`; background `background.card`; text SF Pro 13/19.5 400, `palette.ink.black`; transition box-shadow `duration.atlas` ease, transform `duration.atlas` ease, border-color `duration.atlas` ease |
+| default (same: focus-visible) | size 170.5 x 41.5; padding `spacing-offgrid.10` `spacing.16`; border `borderWidth.hairline` solid `component.atlas.chip-border`; radius `radius.10`; background `action.secondary`; text SF Pro 13/19.5 400, `palette.ink.black`; transition box-shadow `duration.atlas` ease, transform `duration.atlas` ease, border-color `duration.atlas` ease |
 | hover, pressed | border `borderWidth.hairline` solid `palette.atlas.chip-line-hover`; background `background.selected`; shadow 0px 4px 14px 0px rgba(0, 0, 0, 0.04); transform translate(0px, -1px) |
 
-**Tokens.** `background.card`, `background.selected`, `borderWidth.hairline`, `component.atlas.chip-border`, `duration.atlas`, `palette.atlas.chip-line-hover`, `palette.ink.black`, `radius.10`, `spacing-offgrid.10`, `spacing.16`.
+**Tokens.** `action.secondary`, `background.selected`, `borderWidth.hairline`, `component.atlas.chip-border`, `duration.atlas`, `palette.atlas.chip-line-hover`, `palette.ink.black`, `radius.10`, `spacing-offgrid.10`, `spacing.16`.
 
 ![Recommendation chip default](components/crops/recommendation-chip-default.png) ![Recommendation chip hover](components/crops/recommendation-chip-hover.png) ![Recommendation chip focus-visible](components/crops/recommendation-chip-focus-visible.png) ![Recommendation chip pressed](components/crops/recommendation-chip-pressed.png)
 
@@ -1530,10 +1530,10 @@ A 339px white card, 1px rgba(0,0,0,.08) border, radius 16, a 0 6 18 shadow at 4%
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 338.66 x 313.5; padding `spacing-offgrid.14` `spacing-offgrid.14` 18px `spacing-offgrid.14`; border `borderWidth.hairline` solid `border.card`; radius `radius.16`; background `background.card`; shadow `elevation.story-card`; text Rubik 15/18 600, `background.card`; transition transform `duration.story-card` ease, box-shadow `duration.story-card` ease, border-color `duration.story-card` ease |
+| default (same: focus-visible) | size 338.66 x 313.5; padding `spacing-offgrid.14` `spacing-offgrid.14` 18px `spacing-offgrid.14`; border `borderWidth.hairline` solid `border.card`; radius `radius.16`; background `background.card`; shadow `elevation.story-card`; text Rubik 15/18 600, `text.inverse`; transition transform `duration.story-card` ease, box-shadow `duration.story-card` ease, border-color `duration.story-card` ease |
 | hover, pressed | border `borderWidth.hairline` solid rgba(0, 0, 0, 0.12); shadow `elevation.story-card-hover`; transform translate(0px, -4px) |
 
-**Tokens.** `background.card`, `border.card`, `borderWidth.hairline`, `duration.story-card`, `elevation.story-card`, `elevation.story-card-hover`, `radius.16`, `spacing-offgrid.14`.
+**Tokens.** `background.card`, `border.card`, `borderWidth.hairline`, `duration.story-card`, `elevation.story-card`, `elevation.story-card-hover`, `radius.16`, `spacing-offgrid.14`, `text.inverse`.
 
 ![Story card default](components/crops/story-card-default.png) ![Story card hover](components/crops/story-card-hover.png) ![Story card focus-visible](components/crops/story-card-focus-visible.png) ![Story card pressed](components/crops/story-card-pressed.png)
 
@@ -1545,9 +1545,9 @@ Not on the page when it was captured.
 #### New badge
 A red #ff013e radius-8 label. Read as `new-badge` on the Atlas page.
 
-**Values (default).** size 40.8 x 20; radius `radius.8`; background `component.atlas.new`; text Rubik 15/18 600, `background.card`; transform scale(0.8).
+**Values (default).** size 40.8 x 20; radius `radius.8`; background `component.atlas.new`; text Rubik 15/18 600, `text.inverse`; transform scale(0.8).
 
-**Tokens.** `background.card`, `component.atlas.new`, `radius.8`.
+**Tokens.** `component.atlas.new`, `radius.8`, `text.inverse`.
 
 ![New badge default](components/crops/new-badge-default.png)
 
@@ -1561,9 +1561,9 @@ The story image in a radius-20 frame, hotspot rings over places in it, a "Conten
 
 **Values (default).** size 1034 x 581.63; background transparent; text Libre Baskerville 12/normal 400, rgba(156, 162, 172, 0.5); icon 18 x 18, `palette.ink.black`.
 
-Child layers that carry the look: span 18x18 background `palette.atlas.hotspot` border 2px solid rgba(255, 255, 255, 0.94) radius 999px shadow rgba(122, 92, 255, 0.16) 0px 0px 0px 5px, rgba(80, 41, 255, 0.2) 0px 8px 18px 0px; span 18x18 background `palette.atlas.hotspot` border 2px solid rgba(255, 255, 255, 0.94) radius 999px shadow rgba(122, 92, 255, 0.16) 0px 0px 0px 5px, rgba(80, 41, 255, 0.2) 0px 8px 18px 0px; span 18x18 background `palette.atlas.hotspot` border 2px solid rgba(255, 255, 255, 0.94) radius 999px shadow rgba(122, 92, 255, 0.16) 0px 0px 0px 5px, rgba(80, 41, 255, 0.2) 0px 8px 18px 0px.
+Child layers that carry the look: span 18x18 background `palette.atlas.hotspot` border `borderWidth.focus` solid rgba(255, 255, 255, 0.94) radius 999px shadow 0px 0px 0px 5px rgba(122, 92, 255, 0.16), 0px 8px 18px 0px rgba(80, 41, 255, 0.2); span 18x18 background `palette.atlas.hotspot` border `borderWidth.focus` solid rgba(255, 255, 255, 0.94) radius 999px shadow 0px 0px 0px 5px rgba(122, 92, 255, 0.16), 0px 8px 18px 0px rgba(80, 41, 255, 0.2); span 18x18 background `palette.atlas.hotspot` border `borderWidth.focus` solid rgba(255, 255, 255, 0.94) radius 999px shadow 0px 0px 0px 5px rgba(122, 92, 255, 0.16), 0px 8px 18px 0px rgba(80, 41, 255, 0.2).
 
-**Tokens.** `palette.atlas.hotspot`, `palette.ink.black`.
+**Tokens.** `borderWidth.focus`, `palette.atlas.hotspot`, `palette.ink.black`.
 
 ![Story canvas default](components/crops/story-stage-default.png)
 
@@ -1572,9 +1572,9 @@ The dark #21252e radius-8 button, Rubik 12/20 600. It shows no hover, focus or p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 70 x 30; padding 0px `spacing-offgrid.6`; border `borderWidth.hairline` solid `text.primary`; radius `radius.8`; background `text.primary`; text `typography.atlas-label`, `background.card` |
+| default (same: hover, focus-visible, pressed) | size 70 x 30; padding 0px `spacing-offgrid.6`; border `borderWidth.hairline` solid `action.primary`; radius `radius.8`; background `action.primary`; text `typography.atlas-label`, `text.inverse` |
 
-**Tokens.** `background.card`, `borderWidth.hairline`, `radius.8`, `spacing-offgrid.6`, `text.primary`, `typography.atlas-label`.
+**Tokens.** `action.primary`, `borderWidth.hairline`, `radius.8`, `spacing-offgrid.6`, `text.inverse`, `typography.atlas-label`.
 
 ![Share button default](components/crops/share-button-default.png) ![Share button hover](components/crops/share-button-hover.png) ![Share button focus-visible](components/crops/share-button-focus-visible.png) ![Share button pressed](components/crops/share-button-pressed.png)
 
@@ -1583,10 +1583,10 @@ A white button, 1px #dfe3ea border, radius 8, Rubik 12/20 600, a red guide dot; 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 141.83 x 34; padding 0px `spacing-offgrid.14`; border `borderWidth.hairline` solid `palette.atlas.button-line`; radius `radius.8`; background `background.card`; shadow 0px 1px 2px 0px rgba(16, 24, 40, 0.02); text `typography.atlas-label`, `palette.atlas.button-ink`; transition border-color `duration.atlas` ease, background-color `duration.atlas` ease, color `duration.atlas` ease, box-shadow `duration.atlas` ease; icon 16 x 16, `palette.atlas.button-ink` |
+| default (same: focus-visible) | size 141.83 x 34; padding 0px `spacing-offgrid.14`; border `borderWidth.hairline` solid `palette.atlas.button-line`; radius `radius.8`; background `action.secondary`; shadow 0px 1px 2px 0px rgba(16, 24, 40, 0.02); text `typography.atlas-label`, `palette.atlas.button-ink`; transition border-color `duration.atlas` ease, background-color `duration.atlas` ease, color `duration.atlas` ease, box-shadow `duration.atlas` ease; icon 16 x 16, `palette.atlas.button-ink` |
 | hover | border `borderWidth.hairline` solid #cbd5e1; background #f9fafb; text `typography.atlas-label`, #111827; icon 16 x 16, #111827 |
 
-**Tokens.** `background.card`, `borderWidth.hairline`, `duration.atlas`, `palette.atlas.button-ink`, `palette.atlas.button-line`, `radius.8`, `spacing-offgrid.14`, `typography.atlas-label`.
+**Tokens.** `action.secondary`, `borderWidth.hairline`, `duration.atlas`, `palette.atlas.button-ink`, `palette.atlas.button-line`, `radius.8`, `spacing-offgrid.14`, `typography.atlas-label`.
 
 ![Generate Video button default](components/crops/generate-video-button-default.png) ![Generate Video button hover](components/crops/generate-video-button-hover.png) ![Generate Video button focus-visible](components/crops/generate-video-button-focus-visible.png)
 
@@ -1661,9 +1661,9 @@ News: pink #fff0f3 fill, 1px #ffe5ec border, red #f00039 label, radius 100. Keyb
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 70.52 x 37; padding 0px `spacing.16`; border `borderWidth.hairline` solid `component.news-tab.current-border`; radius 100px; background `component.news-tab.current`; text `typography.label`, `text.brand` |
-| focus-visible | outline `focus.offset` solid #f0023a, offset `focus.offset` |
+| focus-visible | outline `focus.width` solid #f0023a, offset `focus.offset` |
 
-**Tokens.** `borderWidth.hairline`, `component.news-tab.current`, `component.news-tab.current-border`, `focus.offset`, `spacing.16`, `text.brand`, `typography.label`.
+**Tokens.** `borderWidth.hairline`, `component.news-tab.current`, `component.news-tab.current-border`, `focus.offset`, `focus.width`, `spacing.16`, `text.brand`, `typography.label`.
 
 ![Pill tab, current default](components/crops/pill-tab-active-default.png) ![Pill tab, current focus-visible](components/crops/pill-tab-active-focus-visible.png)
 
@@ -1672,11 +1672,11 @@ White, 1px #e4e6eb border, radius 100, 14/21 500; pressed fills it #f5f5f7. Read
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 63.63 x 37; padding 0px `spacing.16`; border `borderWidth.hairline` solid `border.field`; radius 100px; background `background.card`; text `typography.label`, `text.primary` |
-| focus-visible | outline `focus.offset` solid #f0023a, offset `focus.offset` |
+| default (same: hover) | size 63.63 x 37; padding 0px `spacing.16`; border `borderWidth.hairline` solid `border.field`; radius 100px; background `action.secondary`; text `typography.label`, `text.primary` |
+| focus-visible | outline `focus.width` solid #f0023a, offset `focus.offset` |
 | pressed | background `background.selected`; opacity 0.8 |
 
-**Tokens.** `background.card`, `background.selected`, `border.field`, `borderWidth.hairline`, `focus.offset`, `spacing.16`, `text.primary`, `typography.label`.
+**Tokens.** `action.secondary`, `background.selected`, `border.field`, `borderWidth.hairline`, `focus.offset`, `focus.width`, `spacing.16`, `text.primary`, `typography.label`.
 
 ![Pill tab default](components/crops/pill-tab-default.png) ![Pill tab hover](components/crops/pill-tab-hover.png) ![Pill tab focus-visible](components/crops/pill-tab-focus-visible.png) ![Pill tab pressed](components/crops/pill-tab-pressed.png)
 
@@ -1686,11 +1686,11 @@ A 26/36 700 title and a 16/24 description beside a 333 x 200 radius-12 image. Re
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 720 x 200; background transparent; text `typography.featured-title`, `text.primary` |
-| focus-visible | radius `radius.12`; outline `focus.offset` solid `text.brand`, offset 4px |
+| focus-visible | radius `radius.12`; outline `focus.width` solid `component.news-tab.current-text`, offset 4px |
 
 Child layers that carry the look: span::after 333pxx200px background `palette.lesson-math.film`.
 
-**Tokens.** `focus.offset`, `palette.lesson-math.film`, `radius.12`, `text.brand`, `text.primary`, `typography.featured-title`.
+**Tokens.** `component.news-tab.current-text`, `focus.width`, `palette.lesson-math.film`, `radius.12`, `text.primary`, `typography.featured-title`.
 
 ![Featured article default](components/crops/featured-article-default.png) ![Featured article hover](components/crops/featured-article-hover.png) ![Featured article focus-visible](components/crops/featured-article-focus-visible.png)
 
@@ -1710,11 +1710,11 @@ Child layers that carry the look: li::after 720pxx1px background `background.sel
 #### Pagination
 Ant Design pagination under the blog list: 32px square page items at radius 6. Read as `pagination` on the Blog page.
 
-**Values (default).** size 752 x 36; background transparent; text -apple-system 16/32 600, `background.card`; icon 16 x 17, rgba(0, 0, 0, 0.25).
+**Values (default).** size 752 x 36; background transparent; text -apple-system 16/32 600, `text.inverse`; icon 16 x 17, rgba(0, 0, 0, 0.25).
 
-Child layers that carry the look: li 36x36 background `background.selected` border 1px solid `border.field` radius 18px; button 34x34 border 1px solid transparent radius 16px; li 36x36 background `text.primary` border 1px solid `text.primary` radius 18px.
+Child layers that carry the look: li 36x36 background `background.selected` border `borderWidth.hairline` solid `border.field` radius 18px; button 34x34 border `borderWidth.hairline` solid transparent radius `radius.16`; li 36x36 background `action.primary` border `borderWidth.hairline` solid `action.primary` radius 18px.
 
-**Tokens.** `background.card`, `background.selected`, `border.field`, `text.primary`.
+**Tokens.** `action.primary`, `background.selected`, `border.field`, `borderWidth.hairline`, `radius.16`, `text.inverse`.
 
 ![Pagination default](components/crops/pagination-default.png)
 
@@ -1730,9 +1730,9 @@ Previous on the first page. Read as `pagination-prev` on the Blog page.
 #### Pagination item, current
 Read as `pagination-item-active` on the Blog page.
 
-**Values (selected).** size 36 x 36; border `borderWidth.hairline` solid `text.primary`; radius 18px; background `text.primary`; text -apple-system 16/32 600, `background.card`.
+**Values (selected).** size 36 x 36; border `borderWidth.hairline` solid `action.primary`; radius 18px; background `action.primary`; text -apple-system 16/32 600, `text.inverse`.
 
-**Tokens.** `background.card`, `borderWidth.hairline`, `text.primary`.
+**Tokens.** `action.primary`, `borderWidth.hairline`, `text.inverse`.
 
 ![Pagination item, current selected](components/crops/pagination-item-active-selected.png)
 
@@ -1741,10 +1741,10 @@ Hovered and focused, never followed. Read as `pagination-item` on the Blog page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; border `borderWidth.hairline` solid `border.field`; radius 18px; background `background.card`; text -apple-system 14/32 400, rgba(0, 0, 0, 0.88) |
+| default (same: focus-visible) | size 36 x 36; border `borderWidth.hairline` solid `border.field`; radius 18px; background `action.secondary`; text -apple-system 14/32 400, rgba(0, 0, 0, 0.88) |
 | hover | background rgba(0, 0, 0, 0.06); transition all `duration.composer` ease |
 
-**Tokens.** `background.card`, `border.field`, `borderWidth.hairline`, `duration.composer`.
+**Tokens.** `action.secondary`, `border.field`, `borderWidth.hairline`, `duration.composer`.
 
 ![Pagination item default](components/crops/pagination-item-default.png) ![Pagination item hover](components/crops/pagination-item-hover.png) ![Pagination item focus-visible](components/crops/pagination-item-focus-visible.png)
 
@@ -1766,7 +1766,7 @@ Read as `plan-table-header` on the Gauth PLUS plans page.
 
 **Values (default).** size 378.5 x 154; padding 0px 0px 0px `spacing.40`; border B: `borderWidth.focus` solid `palette.paper.table-line`; background transparent; text -apple-system 26/34 500, `palette.ink.800`.
 
-Child layers that carry the look: td 378.5x154 border 2px solid `palette.paper.table-line`.
+Child layers that carry the look: td 378.5x154 border `borderWidth.focus` solid `palette.paper.table-line`.
 
 **Tokens.** `borderWidth.focus`, `palette.ink.800`, `palette.paper.table-line`, `spacing.40`.
 
@@ -1779,18 +1779,18 @@ Read as `plan-table-row` on the Gauth PLUS plans page.
 |---|---|
 | default (same: hover) | size 996 x 52; background transparent; text `typography.label`, `text.tab`; icon 21 x 21, `text.tab` |
 
-Child layers that carry the look: td 378.5x52 background `background.card`; td 308.8x52 background `background.card` border 2px solid `palette.paper.table-line`; td 308.8x52 background #fef9ee border 2px solid `palette.paper.table-line`.
+Child layers that carry the look: td 378.5x52 background `action.secondary`; td 308.8x52 background `action.secondary` border `borderWidth.focus` solid `palette.paper.table-line`; td 308.8x52 background #fef9ee border `borderWidth.focus` solid `palette.paper.table-line`.
 
-**Tokens.** `background.card`, `palette.paper.table-line`, `text.tab`, `typography.label`.
+**Tokens.** `action.secondary`, `borderWidth.focus`, `palette.paper.table-line`, `text.tab`, `typography.label`.
 
 ![Table row default](components/crops/plan-table-row-default.png) ![Table row hover](components/crops/plan-table-row-hover.png)
 
 #### Table cell
 Read as `plan-table-cell` on the Gauth PLUS plans page.
 
-**Values (default).** size 308.75 x 72; padding 33px `spacing.40` 13px `spacing.40`; border L: `borderWidth.focus` solid `palette.paper.table-line`; background `background.card`; text `typography.label`, `text.tab`.
+**Values (default).** size 308.75 x 72; padding 33px `spacing.40` 13px `spacing.40`; border L: `borderWidth.focus` solid `palette.paper.table-line`; background `action.secondary`; text `typography.label`, `text.tab`.
 
-**Tokens.** `background.card`, `borderWidth.focus`, `palette.paper.table-line`, `spacing.40`, `text.tab`, `typography.label`.
+**Tokens.** `action.secondary`, `borderWidth.focus`, `palette.paper.table-line`, `spacing.40`, `text.tab`, `typography.label`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -1851,11 +1851,11 @@ Read as `promo-subtitle` on the Homework home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 540 x 48; padding 10.5px `spacing.16`; radius `radius.14`; background `palette.ink.black`; text Playfair Display 18/27 600, `background.card`; transition background-color `duration.fast` ease, transform `duration.fast` ease |
-| hover | background `text.primary` |
-| pressed | size 534.6 x 47.52; background `text.primary`; transform scale `scale.press-promo` |
+| default (same: focus-visible) | size 540 x 48; padding 10.5px `spacing.16`; radius `radius.14`; background `palette.ink.black`; text Playfair Display 18/27 600, `text.inverse`; transition background-color `duration.fast` ease, transform `duration.fast` ease |
+| hover | background `action.primary` |
+| pressed | size 534.6 x 47.52; background `action.primary`; transform scale `scale.press-promo` |
 
-**Tokens.** `background.card`, `duration.fast`, `palette.ink.black`, `radius.14`, `scale.press-promo`, `spacing.16`, `text.primary`.
+**Tokens.** `action.primary`, `duration.fast`, `palette.ink.black`, `radius.14`, `scale.press-promo`, `spacing.16`, `text.inverse`.
 
 ![Promo dialog button default](components/crops/promo-confirm-default.png) ![Promo dialog button hover](components/crops/promo-confirm-hover.png) ![Promo dialog button focus-visible](components/crops/promo-confirm-focus-visible.png) ![Promo dialog button pressed](components/crops/promo-confirm-pressed.png)
 
@@ -1885,10 +1885,10 @@ A white chip with a 600 label and an arrow; pressing one would start a course, s
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 310 x 54; padding `spacing-offgrid.14` `spacing.20`; border `borderWidth.hairline` solid `palette.paper.line-light`; radius `radius.16`; background `background.card`; text `typography.nav-strong`, `text.primary`; icon 13 x 12, `text.primary` |
+| default (same: focus-visible) | size 310 x 54; padding `spacing-offgrid.14` `spacing.20`; border `borderWidth.hairline` solid `palette.paper.line-light`; radius `radius.16`; background `action.secondary`; text `typography.nav-strong`, `text.primary`; icon 13 x 12, `text.primary` |
 | hover | border `borderWidth.hairline` solid #d9ddd9; background #fcfdfc |
 
-**Tokens.** `background.card`, `borderWidth.hairline`, `palette.paper.line-light`, `radius.16`, `spacing-offgrid.14`, `spacing.20`, `text.primary`, `typography.nav-strong`.
+**Tokens.** `action.secondary`, `borderWidth.hairline`, `palette.paper.line-light`, `radius.16`, `spacing-offgrid.14`, `spacing.20`, `text.primary`, `typography.nav-strong`.
 
 ![Course suggestion chip default](components/crops/create-suggestion-default.png) ![Course suggestion chip hover](components/crops/create-suggestion-hover.png) ![Course suggestion chip focus-visible](components/crops/create-suggestion-focus-visible.png)
 
@@ -1897,10 +1897,10 @@ The white radius-16 prompt field at the foot of the dialog with a round send but
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 648 x 60; padding 13px `spacing-offgrid.10` 13px `spacing.16`; border `borderWidth.hairline` solid `border.field`; radius `radius.16`; background `background.card`; text SF Pro 16/normal 400, `text.primary`; icon 20 x 20, `background.card` |
+| default (same: focused) | size 648 x 60; padding 13px `spacing-offgrid.10` 13px `spacing.16`; border `borderWidth.hairline` solid `border.field`; radius `radius.16`; background `background.card`; text SF Pro 16/normal 400, `text.primary`; icon 20 x 20, `text.inverse` |
 | filled | text SF Pro 16/24 400, `text.primary` |
 
-**Tokens.** `background.card`, `border.field`, `borderWidth.hairline`, `radius.16`, `spacing-offgrid.10`, `spacing.16`, `text.primary`.
+**Tokens.** `background.card`, `border.field`, `borderWidth.hairline`, `radius.16`, `spacing-offgrid.10`, `spacing.16`, `text.inverse`, `text.primary`.
 
 ![Course prompt field default](components/crops/create-prompt-default.png) ![Course prompt field focused](components/crops/create-prompt-focused.png) ![Course prompt field filled](components/crops/create-prompt-filled.png)
 
@@ -1930,10 +1930,10 @@ White, 1px #d0d5dd border, radius 16, Inter 15/20 500. Pressed scales it to 0.98
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 165 x 48; border `borderWidth.hairline` solid `action.secondary-border`; radius `radius.16`; background `background.card`; text `typography.button`, `palette.astryx.dialog-ink`; transition background-image `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), background-color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), opacity `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), transform `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1) |
+| default (same: hover, focus-visible) | size 165 x 48; border `borderWidth.hairline` solid `action.secondary-border`; radius `radius.16`; background `action.secondary`; text `typography.button`, `palette.astryx.dialog-ink`; transition background-image `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), background-color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), opacity `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), transform `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1) |
 | pressed | size 161.7 x 47.04; transform scale `scale.press` |
 
-**Tokens.** `action.secondary-border`, `background.card`, `borderWidth.hairline`, `duration.astryx`, `palette.astryx.dialog-ink`, `radius.16`, `scale.press`, `typography.button`.
+**Tokens.** `action.secondary`, `action.secondary-border`, `borderWidth.hairline`, `duration.astryx`, `palette.astryx.dialog-ink`, `radius.16`, `scale.press`, `typography.button`.
 
 ![Secondary button (Not now) default](components/crops/audio-not-now-default.png) ![Secondary button (Not now) hover](components/crops/audio-not-now-hover.png) ![Secondary button (Not now) focus-visible](components/crops/audio-not-now-focus-visible.png) ![Secondary button (Not now) pressed](components/crops/audio-not-now-pressed.png)
 
@@ -1942,21 +1942,21 @@ Near-black #1f232b, radius 16, white Inter 15/20 500. Measured, never pressed. R
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 163 x 48; radius `radius.16`; background `palette.astryx.dialog-ink`; text `typography.button`, `background.card`; transition background-image `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), background-color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), opacity `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), transform `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1) |
+| default (same: hover, focus-visible) | size 163 x 48; radius `radius.16`; background `palette.astryx.dialog-ink`; text `typography.button`, `text.inverse`; transition background-image `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), background-color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), color `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), opacity `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1), transform `duration.astryx` cubic-bezier(0.24, 1, 0.4, 1) |
 | pressed | size 159.74 x 47.04; transform scale `scale.press` |
 
-**Tokens.** `background.card`, `duration.astryx`, `palette.astryx.dialog-ink`, `radius.16`, `scale.press`, `typography.button`.
+**Tokens.** `duration.astryx`, `palette.astryx.dialog-ink`, `radius.16`, `scale.press`, `text.inverse`, `typography.button`.
 
 ![Primary button (Enable audio) default](components/crops/audio-enable-default.png) ![Primary button (Enable audio) hover](components/crops/audio-enable-hover.png) ![Primary button (Enable audio) focus-visible](components/crops/audio-enable-focus-visible.png) ![Primary button (Enable audio) pressed](components/crops/audio-enable-pressed.png)
 
 #### Story preview
 A story card opens a video preview over a dark scrim, with a white Explore pill under it. Read as `story-preview` on the Atlas page.
 
-**Values (default).** size 960 x 620; background transparent; text -apple-system 20/30 600, `background.card`; icon 32 x 32, `palette.ink.black`.
+**Values (default).** size 960 x 620; background transparent; text -apple-system 20/30 600, `text.inverse`; icon 32 x 32, `palette.ink.black`.
 
-Child layers that carry the look: div 960x540 background `palette.ink.black` radius 18px shadow rgba(0, 0, 0, 0.48) 0px 28px 80px 0px; div 960x540 background `palette.ink.black`; video 960x540 background `palette.ink.black`.
+Child layers that carry the look: div 960x540 background `palette.ink.black` radius 18px shadow 0px 28px 80px 0px rgba(0, 0, 0, 0.48); div 960x540 background `palette.ink.black`; video 960x540 background `palette.ink.black`.
 
-**Tokens.** `background.card`, `palette.ink.black`.
+**Tokens.** `palette.ink.black`, `text.inverse`.
 
 ![Story preview default](components/crops/story-preview-default.png)
 
@@ -1965,10 +1965,10 @@ Read as `explore-button` on the Atlas page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 116 x 44; padding 0px `spacing.20`; radius 999px; background `background.card`; shadow 0px 10px 28px 0px rgba(255, 255, 255, 0.08); text Arial 14/44 700, `palette.ink.black`; transition transform `duration.fast` ease, background `duration.fast` ease |
+| default (same: focus-visible) | size 116 x 44; padding 0px `spacing.20`; radius 999px; background `action.secondary`; shadow 0px 10px 28px 0px rgba(255, 255, 255, 0.08); text Arial 14/44 700, `palette.ink.black`; transition transform `duration.fast` ease, background `duration.fast` ease |
 | hover | background #f4f4f4; transform translate(0px, -1px) |
 
-**Tokens.** `background.card`, `duration.fast`, `palette.ink.black`, `spacing.20`.
+**Tokens.** `action.secondary`, `duration.fast`, `palette.ink.black`, `spacing.20`.
 
 ![Explore button default](components/crops/explore-button-default.png) ![Explore button hover](components/crops/explore-button-hover.png) ![Explore button focus-visible](components/crops/explore-button-focus-visible.png)
 
@@ -1986,11 +1986,11 @@ Read as `continue-button` on the math lesson page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 180 x 48; padding 0px `spacing.24`; radius `radius.16`; background `text.primary`; text -apple-system 16/normal 700, `background.card`; transition transform `duration.press` ease, background `duration.fast` ease |
+| default (same: focus-visible) | size 180 x 48; padding 0px `spacing.24`; radius `radius.16`; background `action.primary`; text -apple-system 16/normal 700, `text.inverse`; transition transform `duration.press` ease, background `duration.fast` ease |
 | hover | background #343943 |
 | pressed | size 176.4 x 47.04; background #343943; transform scale `scale.press` |
 
-**Tokens.** `background.card`, `duration.fast`, `duration.press`, `radius.16`, `scale.press`, `spacing.24`, `text.primary`.
+**Tokens.** `action.primary`, `duration.fast`, `duration.press`, `radius.16`, `scale.press`, `spacing.24`, `text.inverse`.
 
 ![Continue button default](components/crops/continue-button-default.png) ![Continue button hover](components/crops/continue-button-hover.png) ![Continue button focus-visible](components/crops/continue-button-focus-visible.png) ![Continue button pressed](components/crops/continue-button-pressed.png)
 
@@ -2041,9 +2041,9 @@ The dialog's Sign in button while the email field is empty: Gauth's button_btn-p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| disabled (same: hover) | size 400 x 54; border `borderWidth.hairline` solid transparent; radius `radius.14`; background `action.primary-disabled`; text -apple-system 18/48 600, `background.card` |
+| disabled (same: hover) | size 400 x 54; border `borderWidth.hairline` solid transparent; radius `radius.14`; background `action.primary-disabled`; text -apple-system 18/48 600, `text.inverse` |
 
-**Tokens.** `action.primary-disabled`, `background.card`, `borderWidth.hairline`, `radius.14`.
+**Tokens.** `action.primary-disabled`, `borderWidth.hairline`, `radius.14`, `text.inverse`.
 
 ![Primary button, disabled (Sign in) disabled](components/crops/signin-submit-disabled.png) ![Primary button, disabled (Sign in) hover](components/crops/signin-submit-hover.png)
 
@@ -2121,18 +2121,18 @@ One of three 147 x 160 cards that behave as a single-choice group: 2px border, r
 #### Plan card, selected
 The preselected 12 Months card: a gold border and a gold corner tag. Read as `plan-card-selected` on the Homework home page.
 
-**Values (selected).** size 146.67 x 160; padding 30px `spacing.12` `spacing.16` `spacing.12`; border `borderWidth.choice` solid #d38906; radius `radius.16`; background `background.card`; text Arial 12/16.8 700, `background.card`.
+**Values (selected).** size 146.67 x 160; padding 30px `spacing.12` `spacing.16` `spacing.12`; border `borderWidth.choice` solid #d38906; radius `radius.16`; background `background.card`; text Arial 12/16.8 700, `text.inverse`.
 
-**Tokens.** `background.card`, `borderWidth.choice`, `radius.16`, `spacing.12`, `spacing.16`.
+**Tokens.** `background.card`, `borderWidth.choice`, `radius.16`, `spacing.12`, `spacing.16`, `text.inverse`.
 
 ![Plan card, selected selected](components/crops/plan-card-selected-selected.png)
 
 #### Badge (plan tag)
 The gold tag on a plan card's top edge. Read as `plan-tag` on the Homework home page.
 
-**Values (default).** size 50 x 21; padding `spacing-offgrid.2` `spacing.8`; radius 0px `radius.16` 0px `radius.10`; background #d38906; text Arial 12/16.8 700, `background.card`.
+**Values (default).** size 50 x 21; padding `spacing-offgrid.2` `spacing.8`; radius 0px `radius.16` 0px `radius.10`; background #d38906; text Arial 12/16.8 700, `text.inverse`.
 
-**Tokens.** `background.card`, `radius.10`, `radius.16`, `spacing-offgrid.2`, `spacing.8`.
+**Tokens.** `radius.10`, `radius.16`, `spacing-offgrid.2`, `spacing.8`, `text.inverse`.
 
 ![Badge (plan tag) default](components/crops/plan-tag-default.png)
 
@@ -2201,9 +2201,9 @@ Read as `m-question-box` on the Homework home page at 390 wide.
 #### App banner (mobile)
 A bottom banner with the app icon, rating and an Open pill. Open was not pressed. Read as `m-app-banner` on the Homework home page at 390 wide.
 
-**Values (default).** size 390 x 64; padding `spacing-offgrid.14` `spacing.12` `spacing-offgrid.14` `spacing-offgrid.14`; radius `radius.16` `radius.16` 0px 0px; background `background.card`; shadow 0px -4px 16px 0px rgba(0, 0, 0, 0.12); text -apple-system 14/19.6 600, `text.primary`; icon 12 x 13, `background.card`.
+**Values (default).** size 390 x 64; padding `spacing-offgrid.14` `spacing.12` `spacing-offgrid.14` `spacing-offgrid.14`; radius `radius.16` `radius.16` 0px 0px; background `background.card`; shadow 0px -4px 16px 0px rgba(0, 0, 0, 0.12); text -apple-system 14/19.6 600, `text.primary`; icon 12 x 13, `text.inverse`.
 
-**Tokens.** `background.card`, `radius.16`, `spacing-offgrid.14`, `spacing.12`, `text.primary`.
+**Tokens.** `background.card`, `radius.16`, `spacing-offgrid.14`, `spacing.12`, `text.inverse`, `text.primary`.
 
 ![App banner (mobile) default](components/crops/m-app-banner-default.png)
 
@@ -2357,8 +2357,8 @@ On a phone Create Course shrinks to "+ Create" on a #f4f2e6 pill. Read as `m-cre
 - **Pressed** was forced with DevTools on every control except toggles, so a state a script adds on mousedown (if any) is missing.
 - **Hover on the feature cards, the article rows, the Share button and the play disc** changed nothing measurable; their entries read 'same'.
 - **The tutor transcript** held only the status line during the 25 seconds of playback the kit waits; transcript text was not captured.
-- **Disabled states** were found on four controls: the Sign in dialog's Sign in button (brand red at low strength), the Atlas Send button while the box is empty, the blog's Previous arrow on page 1, and the Atlas Send button turning dark once text is typed. Gauth shows no inline error under a field: the Sign in dialog keeps its button disabled instead.
-- **Loading states.** The pages render on the server, so the skeletons in Gauth's CSS (`catalog_mathSkeleton*`, `math-course-detail_detailSkeletonBanner`) never showed, even with the data request held back. The one loading state captured is the math tutor's status line, which shimmers while it narrates ([tutor-status-line](#tutor-status-line)).
+- **Disabled states** were found on three controls: the Sign in dialog's Sign in button (brand red at low strength), the Atlas Send button while the box is empty (it turns dark, enabled, once text is typed), and the blog's Previous arrow on page 1. Gauth shows no inline error under a field: the Sign in dialog keeps its button disabled instead.
+- **Loading states.** The pages render on the server, so the skeletons in Gauth's CSS (`catalog_mathSkeleton*`, `math-course-detail_detailSkeletonBanner`) never showed, even with the data request held back. The nearest to a loading state is the math tutor's status line, which shimmers while it narrates; it was read at rest, as its default state ([tutor-status-line](#tutor-status-line)).
 
 ### Themes
 
