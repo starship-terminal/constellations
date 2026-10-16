@@ -92,6 +92,30 @@ for n, t in sorted(LEAF.items(), key=lambda kv: (len(kv[0]), kv[0])):
         TOK_RADIUS.setdefault(v, n)
 
 
+TOK_SPACE = {}
+for n, t in sorted(LEAF.items(), key=lambda kv: (len(kv[0]), kv[0])):
+    if n.startswith("spacing.") and not n.startswith("spacing.neg"):
+        v = resolve(t["$value"])
+        TOK_SPACE.setdefault(f"{float(v[:-3]) * 16:g}px" if v.endswith("rem") else v, n)
+TOK_SIZE = {}
+for n, t in sorted(LEAF.items(), key=lambda kv: (len(kv[0]), kv[0])):
+    if n.startswith("size.") and t["$type"] == "dimension":
+        TOK_SIZE.setdefault(resolve(t["$value"]), n)
+
+
+def space_tok(v):
+    """'8px 12px' -> '8px 12px `{spacing.2} {spacing.3}`' when every part is a spacing step."""
+    parts = v.split()
+    toks = [TOK_SPACE.get(x) for x in parts]
+    return f"{v} `{' '.join('{' + t + '}' for t in toks)}`" if parts and all(toks) and v != "0px" else v
+
+
+def size_tok(w, h):
+    """Name the control-height token a component's height equals, when there is one."""
+    t = TOK_SIZE.get(f"{h}px") if isinstance(h, (int, float)) and float(h).is_integer() else None
+    return f" (height `{{{t}}}`)" if t and (t.startswith("size.control") or t == "size.field") else ""
+
+
 def radius_tok(r):
     return f"{r} `{{{TOK_RADIUS[r]}}}`" if r in TOK_RADIUS else r
 
@@ -208,12 +232,12 @@ def shadow_text(s):
 def props(v):
     s = v["style"]
     o = OrderedDict()
-    o["size"] = f"{px(v['rect']['w'])} x {px(v['rect']['h'])}"
+    o["size"] = f"{px(v['rect']['w'])} x {px(v['rect']['h'])}" + size_tok(v["rect"]["w"], v["rect"]["h"])
     pad = sides(s["paddingTop"], s["paddingRight"], s["paddingBottom"], s["paddingLeft"])
     if pad != "0px":
-        o["padding"] = pad
+        o["padding"] = space_tok(pad)
     if s["display"] in ("flex", "inline-flex", "grid") and s["gap"] not in ("normal", "0px"):
-        o["gap"] = s["gap"]
+        o["gap"] = space_tok(s["gap"])
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
@@ -471,7 +495,7 @@ W()
 W("How to read an entry:")
 W()
 W("- A component is found by its styled-components display name (`GraphControls__StyledButton`), so `generateVariantComponent__default`, which many unrelated buttons share, is found by text or position instead. The entry's heading is the product's name for the part, and the key in backticks is the key in the JSON.")
-W("- A colour, shadow or radius is its value followed by the [tokens.json](tokens.json) token with the same value (`{palette.grey.primary}`, `{elevation.menu}`, `{radius.lg}`), when there is one; a palette token is named before a semantic one, so look the role up in tokens.json. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 {palette.base.black}`, and is read from the first text node inside the component.")
+W("- A colour, shadow, radius, padding, gap or control height is its value followed by the [tokens.json](tokens.json) token with the same value (`{palette.grey.primary}`, `{elevation.menu}`, `{radius.lg}`, `{spacing.2}`, `{size.control-md}`), when there is one; a palette token is named before a semantic one, so look the role up in tokens.json. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 {palette.base.black}`, and is read from the first text node inside the component.")
 W("- The state table has one row per element or snapshot state read at rest. A hover, focus-visible or pressed row lists only what changes from the row above it; a state with the same values is named in the row's label, for example \"default (same: hover)\". Hover is a real mouse hover, focus-visible a real keyboard focus and pressed the mouse held down (2026-10-17 pages only); where a snapshot state could not be reached it says so.")
 W("- \"Parts\" lists the pieces inside the component, with sizes and offsets measured from the component's corner.")
 W(f"- Crops are images of the component read from the rendered snapshot, in [components/crops/](components/crops) ({len(crop_files)} files, named `{{component}}-{{state}}.png`, at 2x, 256 colours). A crop wider than 1600px was halved. A state that paints the same pixels as its default has no file of its own. Screenshots are in [screenshots/](screenshots).")
