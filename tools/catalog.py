@@ -223,6 +223,17 @@ def css_value(raw) -> str | None:
     return None
 
 
+def _unresolved(raw) -> bool:
+    """True when an alias somewhere in a resolved value pointed at nothing."""
+    if raw is None:
+        return True
+    if isinstance(raw, dict):
+        return any(_unresolved(v) for v in raw.values())
+    if isinstance(raw, list):
+        return any(_unresolved(v) for v in raw)
+    return False
+
+
 def _css_name(path: list[str]) -> str:
     return "--" + "-".join(re.sub(r"[^A-Za-z0-9_-]+", "-", part) for part in path).strip("-")
 
@@ -230,36 +241,45 @@ def _css_name(path: list[str]) -> str:
 def export_tokens(tokens: dict, themes: list[str]) -> dict:
     """Resolve a token file into flat name -> value maps.
 
-    Returns {"base": {...}, "themes": {theme: {...}}, "skipped": [paths]}. Sets named
+    Returns {"base": {...}, "themes": {theme: {...}}, "skipped": [paths],
+    "unresolved": [paths]}. Sets named
     after a theme become per-theme maps with the set name dropped; `core` is merged
     into base with its name dropped; any other set (an audit package's `app`, `web`)
     goes into base under its own name. Shadows, cubic-bezier easings, font stacks and
     {value, unit} dimensions become CSS; values with no single CSS form (typography
-    objects) are listed in `skipped`.
+    objects) are listed in `skipped`. A token with a `{reference}` that points at
+    nothing, anywhere inside it, is listed in `unresolved` instead and never exported.
 
     A `core` token whose aliases only resolve inside a theme set (Duolingo's lip
     shadows point at each theme's colours) goes into each theme's map, unless that
     theme defines a token with the same CSS name itself. It must resolve in every theme;
     otherwise a light-only value on :root would leak into the other themes, so it
-    is skipped.
+    is unresolved.
     """
     res = Resolver(tokens)
     theme_sets = [t for t in themes if t in tokens]
-    out: dict = {"base": {}, "themes": {t: {} for t in theme_sets}, "skipped": []}
+    out: dict = {"base": {}, "themes": {t: {} for t in theme_sets}, "skipped": [], "unresolved": []}
     # Names each theme defines itself, whether or not they resolve, so a shared value
     # never replaces one (`light.foo-bar` and `core.foo.bar` are both --foo-bar).
     own = {t: {_css_name(p.split(".")[1:]) for p in res.flat if p.split(".")[0] == t} for t in theme_sets}
     for path in res.flat:
         parts = path.split(".")
-        value = css_value(res.final(path))
+        raw = res.final(path)
+        broken = _unresolved(raw)
+        value = None if broken else css_value(raw)
         if value is None and parts[0] == "core" and theme_sets:
-            per_theme = {t: css_value(res.final(path, theme=t)) for t in theme_sets}
-            if all(v is not None for v in per_theme.values()):
+            per_raw = {t: res.final(path, theme=t) for t in theme_sets}
+            broken = any(_unresolved(r) for r in per_raw.values())
+            per_theme = {t: None if broken else css_value(r) for t, r in per_raw.items()}
+            if not broken and all(v is not None for v in per_theme.values()):
                 name = _css_name(parts[1:])
                 for theme, themed in per_theme.items():
                     if name not in own[theme]:
                         out["themes"][theme][name] = str(themed)
                 continue
+        if broken:
+            out["unresolved"].append(path)
+            continue
         if value is None:
             out["skipped"].append(path)
             continue
@@ -283,6 +303,9 @@ def export_css(exported: dict) -> str:
     css = block(":root", root)
     for theme in themes[1:]:
         css += "\n" + block(f'[data-theme="{theme}"]', exported["themes"][theme])
+    if exported.get("unresolved"):
+        css += (f"\n/* {len(exported['unresolved'])} tokens not exported because a reference points at nothing: "
+                + ", ".join(exported["unresolved"]).replace("*/", "* /") + " */\n")
     if exported["skipped"]:
         css += f"\n/* {len(exported['skipped'])} composite tokens (typography objects and other values with no single CSS form) not exported */\n"
     return css
@@ -1194,6 +1217,9 @@ def main() -> None:
             tokens_path, themes = ROOT / system["tokens"], system["themes"]
         exported = export_tokens(json.loads(Path(tokens_path).read_text()), themes)
         print(export_css(exported) if args.format == "css" else json.dumps(exported, indent=2))
+        if exported["unresolved"]:
+            print(f"warning: {len(exported['unresolved'])} tokens have a reference that points at nothing "
+                  f"and were not exported: {', '.join(exported['unresolved'])}", file=sys.stderr)
 
 
 if __name__ == "__main__":
