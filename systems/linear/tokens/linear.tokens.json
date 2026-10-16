@@ -1,547 +1,1978 @@
 {
-  "app": {
-    "canvas": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.03529411764705882,
-          0.03529411764705882,
-          0.043137254901960784
-        ],
-        "alpha": 1
+  "core": {
+    "font": {
+      "family": {
+        "ui": {
+          "$value": [
+            "Inter Variable",
+            "SF Pro Display",
+            "-apple-system",
+            "BlinkMacSystemFont",
+            "Segoe UI",
+            "Roboto",
+            "Oxygen",
+            "Ubuntu",
+            "Cantarell",
+            "Open Sans",
+            "Helvetica Neue",
+            "Linear Thai",
+            "sans-serif"
+          ],
+          "$type": "fontFamily",
+          "$extensions": {
+            "source": "css-var --font-regular, getComputedStyle on <main>, copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "mono": {
+          "$value": [
+            "Berkeley Mono",
+            "SFMono Regular",
+            "Consolas",
+            "Liberation Mono",
+            "Menlo",
+            "Courier",
+            "monospace"
+          ],
+          "$type": "fontFamily",
+          "$extensions": {
+            "source": "css-var --font-monospace, getComputedStyle on <main>, copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "emoji": {
+          "$value": [
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Segoe UI",
+            "Twemoji Mozilla",
+            "Noto Color Emoji",
+            "Android Emoji"
+          ],
+          "$type": "fontFamily",
+          "$extensions": {
+            "source": "css-var --font-emoji, getComputedStyle on <main>, copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "editorial": {
+          "$value": [
+            "Tiempos Headline",
+            "Georgia",
+            "serif"
+          ],
+          "$type": "fontFamily",
+          "$extensions": {
+            "source": "public site computed font-family of the Linear Method heading, evidence/styles/method-styles.json, 2026-09-23; Georgia and serif are this package's fallbacks",
+            "evidence": "Measured (public site)"
+          }
+        }
       },
-      "$description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-    },
-    "surface": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.07058823529411765,
-          0.07058823529411765,
-          0.0784313725490196
-        ],
-        "alpha": 1
+      "size": {
+        "micro": {
+          "$value": "12px",
+          "$type": "dimension",
+          "$extensions": {
+            "source": "css-var --font-size-micro (round(up, .6875rem, 2px)), worked out at 16px",
+            "evidence": "Derived"
+          }
+        },
+        "mini": {
+          "$value": "12px",
+          "$type": "dimension",
+          "$extensions": {
+            "source": "css-var --font-size-mini (.75rem at 16px), copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "small": {
+          "$value": "13px",
+          "$type": "dimension",
+          "$extensions": {
+            "source": "css-var --font-size-small (.8125rem at 16px), copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "regular": {
+          "$value": "15px",
+          "$type": "dimension",
+          "$extensions": {
+            "source": "css-var --font-size-regular (.9375rem at 16px), copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "large": {
+          "$value": "18px",
+          "$type": "dimension",
+          "$extensions": {
+            "source": "css-var --font-size-large (1.125rem at 16px), copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "title3": {
+          "$value": "20px",
+          "$type": "dimension",
+          "$extensions": {
+            "source": "css-var --font-size-title3 (1.25rem at 16px), copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "title2": {
+          "$value": "24px",
+          "$type": "dimension",
+          "$extensions": {
+            "source": "css-var --font-size-title2 (1.5rem at 16px), copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "title1": {
+          "$value": "36px",
+          "$type": "dimension",
+          "$extensions": {
+            "source": "css-var --font-size-title1 (2.25rem at 16px), copy issue-dark",
+            "evidence": "Measured"
+          }
+        }
       },
-      "$description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-    },
-    "raised": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.10196078431372549,
-          0.10196078431372549,
-          0.10980392156862745
-        ],
-        "alpha": 1
+      "weight": {
+        "light": {
+          "$value": 300,
+          "$type": "fontWeight",
+          "$extensions": {
+            "source": "css-var --font-weight-light, copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "normal": {
+          "$value": 450,
+          "$type": "fontWeight",
+          "$extensions": {
+            "source": "css-var --font-weight-normal, copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "medium": {
+          "$value": 500,
+          "$type": "fontWeight",
+          "$extensions": {
+            "source": "css-var --font-weight-medium, copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "semibold": {
+          "$value": 600,
+          "$type": "fontWeight",
+          "$extensions": {
+            "source": "css-var --font-weight-semibold, copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "bold": {
+          "$value": 700,
+          "$type": "fontWeight",
+          "$extensions": {
+            "source": "css-var --font-weight-bold, copy issue-dark",
+            "evidence": "Measured"
+          }
+        }
       },
-      "$description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
+      "lineHeight": {
+        "editor": {
+          "$value": 1.6,
+          "$type": "number",
+          "$extensions": {
+            "source": "css-var --editor-line-height, copy issue-dark",
+            "evidence": "Measured"
+          }
+        }
+      }
     },
-    "popover": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.12941176470588237,
-          0.12941176470588237,
-          0.13725490196078433
-        ],
-        "alpha": 1
+    "typography": {
+      "issue-title": {
+        "$value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "24px",
+          "fontWeight": 600,
+          "lineHeight": 1.333,
+          "letterSpacing": "-0.16px"
+        },
+        "$type": "typography",
+        "$extensions": {
+          "source": "computed text node style of Issue title (detail), copy issue-dark; the issue detail title",
+          "evidence": "Measured"
+        }
       },
-      "$description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-    },
-    "selected": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.19607843137254902,
-          0.19607843137254902,
-          0.20392156862745098
-        ],
-        "alpha": 1
+      "heading": {
+        "$value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "19px",
+          "fontWeight": 600,
+          "lineHeight": 1.474,
+          "letterSpacing": "0.05px"
+        },
+        "$type": "typography",
+        "$extensions": {
+          "source": "computed text node style of Description heading (h2), copy issue-dark; an h2 in an issue description",
+          "evidence": "Measured"
+        }
       },
-      "$description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
+      "body": {
+        "$value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "15px",
+          "fontWeight": 450,
+          "lineHeight": 1.6,
+          "letterSpacing": "-0.1px"
+        },
+        "$type": "typography",
+        "$extensions": {
+          "source": "computed text node style of Description body paragraph, copy issue-dark; a description paragraph (--editor-font-size, --editor-line-height)",
+          "evidence": "Measured"
+        }
+      },
+      "page-title": {
+        "$value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "24px",
+          "fontWeight": 500,
+          "lineHeight": 1.333,
+          "letterSpacing": "-0.16px"
+        },
+        "$type": "typography",
+        "$extensions": {
+          "source": "computed text node style of Settings page title, copy settings-members-dark; a settings page title",
+          "evidence": "Measured"
+        }
+      },
+      "label": {
+        "$value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "13px",
+          "fontWeight": 500
+        },
+        "$type": "typography",
+        "$extensions": {
+          "source": "computed text node style of Sidebar item, copy issues-board-dark; sidebar item label",
+          "evidence": "Measured"
+        }
+      },
+      "control": {
+        "$value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "12px",
+          "fontWeight": 500
+        },
+        "$type": "typography",
+        "$extensions": {
+          "source": "computed text node style of View tab (pill), copy issues-board-dark; view tab and small control label",
+          "evidence": "Measured"
+        }
+      },
+      "caption": {
+        "$value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "12px",
+          "fontWeight": 450
+        },
+        "$type": "typography",
+        "$extensions": {
+          "source": "computed element style of Card meta line, copy issues-board-dark; card meta line",
+          "evidence": "Measured"
+        }
+      },
+      "section-label": {
+        "$value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "12px",
+          "fontWeight": 500
+        },
+        "$type": "typography",
+        "$extensions": {
+          "source": "computed element style of Sidebar section label (Workspace), copy issues-board-dark; sidebar section label",
+          "evidence": "Measured"
+        }
+      },
+      "code": {
+        "$value": {
+          "fontFamily": [
+            "Berkeley Mono",
+            "monospace"
+          ],
+          "fontSize": "14.062px",
+          "fontWeight": 450,
+          "lineHeight": 1.3,
+          "letterSpacing": "-0.1px"
+        },
+        "$type": "typography",
+        "$extensions": {
+          "source": "computed text node style of Inline code, copy issue-dark; inline code in a description",
+          "evidence": "Measured"
+        }
+      }
     },
-    "text": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          1.0,
-          1.0,
+    "radius": {
+      "control": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "css-var --control-border-radius (control radius), copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "settings-group": {
+        "$value": "10px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "css-var --settings-list-view-item-radius (settings list group), copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "editor-block": {
+        "$value": "6px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "css-var --editor-block-radius (editor blocks), copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "pill": {
+        "$value": "9999px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "css-var --radius-rounded (pills, tabs, buttons), copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "card": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed border-radius of the board card, copy issues-board-dark",
+          "evidence": "Measured"
+        }
+      },
+      "menu": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed border-radius of the toast, menu and select surfaces (12px on each), copy issue-dark-toast",
+          "evidence": "Measured"
+        }
+      },
+      "dialog": {
+        "$value": "21px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed border-radius of the composer dialog, copy composer-dark",
+          "evidence": "Measured"
+        }
+      },
+      "badge": {
+        "$value": "3px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed border-radius of the Admin badge, copy settings-members-dark",
+          "evidence": "Measured"
+        }
+      },
+      "kbd": {
+        "$value": "4px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed border-radius of the keyboard key in a tooltip, copy issue-dark-tooltip",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "space": {
+      "1": {
+        "$value": "4px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings",
+          "evidence": "Reconstruction"
+        }
+      },
+      "2": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings",
+          "evidence": "Reconstruction"
+        }
+      },
+      "3": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings",
+          "evidence": "Reconstruction"
+        }
+      },
+      "4": {
+        "$value": "16px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings",
+          "evidence": "Reconstruction"
+        }
+      },
+      "6": {
+        "$value": "24px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings",
+          "evidence": "Reconstruction"
+        }
+      },
+      "8": {
+        "$value": "32px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings",
+          "evidence": "Reconstruction"
+        }
+      },
+      "12": {
+        "$value": "48px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings",
+          "evidence": "Reconstruction"
+        }
+      },
+      "16": {
+        "$value": "64px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings",
+          "evidence": "Reconstruction"
+        }
+      }
+    },
+    "size": {
+      "control": {
+        "$value": "28px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured height of the primary button, tabs and icon buttons, copy composer-dark",
+          "evidence": "Measured"
+        }
+      },
+      "control-large": {
+        "$value": "32px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured height of the text fields, search and page-header buttons, copy settings-workspace-dark",
+          "evidence": "Measured"
+        }
+      },
+      "sidebar-item": {
+        "$value": "28px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured height of the sidebar items, copy issues-board-dark",
+          "evidence": "Measured"
+        }
+      },
+      "menu-option": {
+        "$value": "32px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured height of the menu and select options, copy issue-dark-menu",
+          "evidence": "Measured"
+        }
+      },
+      "list-row": {
+        "$value": "36px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured height of the sub-issue rows, copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "table-row": {
+        "$value": "48px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured height of the projects table rows, copy projects-dark",
+          "evidence": "Measured"
+        }
+      },
+      "avatar": {
+        "$value": "24px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured width of the avatars in tables, copy settings-members-dark",
+          "evidence": "Measured"
+        }
+      },
+      "switch-width": {
+        "$value": "30px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured width of the switch track, copy settings-prefs-dark",
+          "evidence": "Measured"
+        }
+      },
+      "switch-height": {
+        "$value": "20px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured height of the switch track, copy settings-prefs-dark",
+          "evidence": "Measured"
+        }
+      },
+      "icon": {
+        "$value": "14px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured icon width inside the icon button, copy issue-dark",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "layout": {
+      "sidebar-width": {
+        "$value": "244px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "css-var --sidebar-width, copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "header-height": {
+        "$value": "43.5px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "css-var --header-height, copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "desktop-tabs-height": {
+        "$value": "40px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "css-var --desktop-tabs-height, copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "content-inset": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "measured gap between the window edge and the inset main panel, copy issues-board-dark",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "borderWidth": {
+      "default": {
+        "$value": "1px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed border width of a text field, copy settings-workspace-dark",
+          "evidence": "Measured"
+        }
+      },
+      "hairline": {
+        "$value": "0.5px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "css-var --editor-hairline; the 0.5px rings in Linear's surface shadows use the same width",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "focusRing": {
+      "width": {
+        "$value": "1px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "css-var --focus-ring-width, and the measured outline width on every focus-visible state",
+          "evidence": "Measured"
+        }
+      },
+      "offset-button": {
+        "$value": "2px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed outline-offset of Primary button (Create issue) at focus-visible (real keyboard focus), copy composer-dark",
+          "evidence": "Measured"
+        }
+      },
+      "offset-field": {
+        "$value": "-1px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed outline-offset of Text field (workspace name) at focus-visible (real keyboard focus), copy settings-workspace-dark",
+          "evidence": "Measured"
+        }
+      },
+      "offset-icon": {
+        "$value": "0px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed outline-offset of Icon button (Copy issue URL) at focus-visible (real keyboard focus), copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "offset-link": {
+        "$value": "1px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed outline-offset of Inline link (Read more) at focus-visible (real keyboard focus), copy settings-workspace-dark",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "duration": {
+      "highlightFadeIn": {
+        "$value": "0ms",
+        "$type": "duration",
+        "$extensions": {
+          "source": "css-var --speed-highlightFadeIn, copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "quickTransition": {
+        "$value": "100ms",
+        "$type": "duration",
+        "$extensions": {
+          "source": "css-var --speed-quickTransition, copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "highlightFadeOut": {
+        "$value": "150ms",
+        "$type": "duration",
+        "$extensions": {
+          "source": "css-var --speed-highlightFadeOut, copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "regularTransition": {
+        "$value": "250ms",
+        "$type": "duration",
+        "$extensions": {
+          "source": "css-var --speed-regularTransition, copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "slowTransition": {
+        "$value": "350ms",
+        "$type": "duration",
+        "$extensions": {
+          "source": "css-var --speed-slowTransition, copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "hover": {
+        "$value": "150ms",
+        "$type": "duration",
+        "$extensions": {
+          "source": "the most common transition on measured components (border, background-color, color, opacity 0.15s ease; 29 states, raw/measurements.md)",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "easing": {
+      "out-quad": {
+        "$value": [
+          0.25,
+          0.46,
+          0.45,
+          0.94
+        ],
+        "$type": "cubicBezier",
+        "$extensions": {
+          "source": "css-var --ease-out-quad, copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "out-cubic": {
+        "$value": [
+          0.215,
+          0.61,
+          0.355,
           1.0
         ],
-        "alpha": 1
+        "$type": "cubicBezier",
+        "$extensions": {
+          "source": "css-var --ease-out-cubic, copy issue-dark",
+          "evidence": "Measured"
+        }
       },
-      "$description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-    },
-    "muted": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.5882352941176471,
-          0.5882352941176471,
-          0.6
+      "in-out-cubic": {
+        "$value": [
+          0.645,
+          0.045,
+          0.355,
+          1.0
         ],
-        "alpha": 1
+        "$type": "cubicBezier",
+        "$extensions": {
+          "source": "css-var --ease-in-out-cubic, copy issue-dark",
+          "evidence": "Measured"
+        }
       },
-      "$description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-    },
-    "accent": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.3686274509803922,
-          0.41568627450980394,
-          0.8235294117647058
+      "out-quart": {
+        "$value": [
+          0.165,
+          0.84,
+          0.44,
+          1.0
         ],
-        "alpha": 1
+        "$type": "cubicBezier",
+        "$extensions": {
+          "source": "css-var --ease-out-quart, copy issue-dark",
+          "evidence": "Measured"
+        }
       },
-      "$description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-    },
-    "border": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.16862745098039217,
-          0.16862745098039217,
-          0.1803921568627451
+      "out-expo": {
+        "$value": [
+          0.19,
+          1.0,
+          0.22,
+          1.0
         ],
-        "alpha": 1
+        "$type": "cubicBezier",
+        "$extensions": {
+          "source": "css-var --ease-out-expo, copy issue-dark",
+          "evidence": "Measured"
+        }
       },
-      "$description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
+      "default": {
+        "$value": [
+          0.25,
+          0.1,
+          0.25,
+          1
+        ],
+        "$type": "cubicBezier",
+        "$extensions": {
+          "source": "the CSS keyword ease, the timing function on 106 rules in the bundle (raw/css-vars.json easings)",
+          "evidence": "Measured"
+        }
+      },
+      "out": {
+        "$value": [
+          0,
+          0,
+          0.58,
+          1
+        ],
+        "$type": "cubicBezier",
+        "$extensions": {
+          "source": "the CSS keyword ease-out, on 47 rules in the bundle",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "breakpoint": {
+      "phone-small": {
+        "$value": "375px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "@media (max-width: 375px) in the app bundle (6 rules)",
+          "evidence": "Measured"
+        }
+      },
+      "phone": {
+        "$value": "640px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "@media (max-width: 640px) in the app bundle (88 rules)",
+          "evidence": "Measured"
+        }
+      },
+      "tablet": {
+        "$value": "768px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "@media (max-width: 768px) in the app bundle (23 rules)",
+          "evidence": "Measured"
+        }
+      },
+      "laptop": {
+        "$value": "1024px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "@media (max-width: 1024px) in the app bundle (47 rules)",
+          "evidence": "Measured"
+        }
+      },
+      "wide": {
+        "$value": "1400px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "@media (min-width: 1400px) in the app bundle (3 rules)",
+          "evidence": "Measured"
+        }
+      },
+      "ultrawide": {
+        "$value": "1800px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "@media (min-width: 1800px) in the app bundle (4 rules)",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "zIndex": {
+      "dialog": {
+        "$value": 300,
+        "$type": "number",
+        "$extensions": {
+          "source": "computed z-index of the dialog's outermost stacking ancestor, copy composer-dark; the same in light",
+          "evidence": "Measured"
+        }
+      },
+      "toast": {
+        "$value": 580,
+        "$type": "number",
+        "$extensions": {
+          "source": "computed z-index of the toast's outermost stacking ancestor, copy issue-dark-toast; the same in light",
+          "evidence": "Measured"
+        }
+      },
+      "menu": {
+        "$value": 600,
+        "$type": "number",
+        "$extensions": {
+          "source": "computed z-index of the menu's outermost stacking ancestor, copy issue-dark-menu; the same in light",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "$extensions": {
+      "notTokenised": [
+        {
+          "role": "zIndex.tooltip",
+          "reason": "Not captured: no ancestor of the tooltip sets a z-index in the copy (it stacks by order in <body>)"
+        },
+        {
+          "role": "font.letterSpacing.editor",
+          "value": "-.00666667em",
+          "reason": "an em length; DTCG dimensions are px or rem"
+        },
+        {
+          "role": "font.size.*Plus",
+          "reason": "--font-size-microPlus ... --font-size-regularPlus equal their base sizes in this account's Default font size; left out"
+        }
+      ]
+    }
+  },
+  "dark": {
+    "color": {
+      "bg": {
+        "page": {
+          "$value": "#09090a",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --content-bg-color, getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "panel": {
+          "$value": "#121213",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-bg-primary, getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "raised": {
+          "$value": "#1a1a1b",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Board card, state default, copy issues-board-dark; equals --color-bg-quaternary, --sx-1gxylln",
+            "evidence": "Measured"
+          }
+        },
+        "control": {
+          "$value": "#1c1c1d",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of View tab (pill), state default, copy issues-board-dark; equals --loading-error-secondary-bg, --loading-error-secondary-bg-dark",
+            "evidence": "Measured"
+          }
+        },
+        "control-hover": {
+          "$value": "#232424",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of View tab (pill), state hover, copy issues-board-dark; equals --sx-629164",
+            "evidence": "Measured"
+          }
+        },
+        "selected": {
+          "$value": "#29292b",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of View tab (pill), state selected, copy issues-board-dark; equals --sx-1edn6di, --sx-ljw4h1",
+            "evidence": "Measured"
+          }
+        },
+        "overlay": {
+          "$value": "#212122",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Toast, state default, copy issue-dark-toast",
+            "evidence": "Measured"
+          }
+        },
+        "overlay-strong": {
+          "$value": "#28292b",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Select trigger (First day of the week), state open, copy settings-prefs-dark-select",
+            "evidence": "Measured"
+          }
+        },
+        "highlight": {
+          "$value": "#313234",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Menu (status picker), state option-highlighted, copy issue-dark-menu; equals --sx-138kmyo",
+            "evidence": "Measured"
+          }
+        },
+        "scrim": {
+          "$value": "rgba(0, 0, 0, 0.4)",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Dialog scrim, state default, copy composer-dark; equals --sx-1qdowq0",
+            "evidence": "Measured"
+          }
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "#ffffff",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-text-primary, getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "secondary": {
+          "$value": "#e3e4e6",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-text-secondary, getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "tertiary": {
+          "$value": "#959597",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-text-tertiary, getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "quaternary": {
+          "$value": "#565759",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-text-quaternary, getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "link": {
+          "$value": "#707ffe",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --sx-1xaoi8i (named --changelog-label-link, --integration-cms-link-color in Linear's bundle), getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "on-accent": {
+          "$value": "#fffeff",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed color of Primary button (Create issue), state default, copy composer-dark; equals --sx-ickszr",
+            "evidence": "Measured"
+          }
+        }
+      },
+      "border": {
+        "primary": {
+          "$value": "#1a1b1d",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-border-primary, getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "secondary": {
+          "$value": "#232426",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-border-secondary, getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "tertiary": {
+          "$value": "#28282b",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-border-tertiary, getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        },
+        "field": {
+          "$value": "#48494c",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed borderTopColor of Text field (workspace name), state default, copy settings-workspace-dark",
+            "evidence": "Measured"
+          }
+        },
+        "field-hover": {
+          "$value": "#3e424d",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed borderTopColor of Text field (workspace name), state hover, copy settings-workspace-dark",
+            "evidence": "Measured"
+          }
+        },
+        "focus": {
+          "$value": "#5e6ad2",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --focus-ring-color, getComputedStyle on <main> in the dark copy issue-dark",
+            "evidence": "Measured"
+          }
+        }
+      },
+      "accent": {
+        "default": {
+          "$value": "#5e6ad2",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Primary button (Create issue), state default, copy composer-dark; equals --focus-ring-color, --sx-1yxqotz",
+            "evidence": "Measured"
+          }
+        },
+        "hover": {
+          "$value": "#6975e2",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Primary button (Create issue), state hover, copy composer-dark; equals --sx-1jffjrl",
+            "evidence": "Measured"
+          }
+        },
+        "pressed": {
+          "$value": "#6975e2",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Primary button (Create issue), state pressed, copy composer-dark; equals --sx-1jffjrl",
+            "evidence": "Measured"
+          }
+        }
+      },
+      "feedback": {
+        "danger": {
+          "$value": "#ff8683",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed text colour of Destructive button (Delete workspace), state default, copy settings-workspace-dark; equals --sx-1bu05id",
+            "evidence": "Measured"
+          }
+        },
+        "danger-hover-bg": {
+          "$value": "#361d1e",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed paint colour of Destructive button (Delete workspace), state hover, copy settings-workspace-dark",
+            "evidence": "Measured"
+          }
+        },
+        "success": {
+          "$value": "#27a644",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Presence dot (Online), state default, copy settings-members-dark; equals --sx-wsz0k3",
+            "evidence": "Measured"
+          }
+        },
+        "warning": {
+          "$value": "#9d854c",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed color of Project health, At risk, state default, copy projects-dark",
+            "evidence": "Measured"
+          }
+        },
+        "on-track": {
+          "$value": "#527a58",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed color of Project health, On track, state default, copy projects-dark",
+            "evidence": "Measured"
+          }
+        }
+      },
+      "status": {
+        "backlog": {
+          "$value": "#bec2c8",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the Backlog icon in the status menu, copy issue-dark-menu",
+            "evidence": "Measured"
+          }
+        },
+        "todo": {
+          "$value": "#e2e2e2",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the Todo icon in the status menu, copy issue-dark-menu",
+            "evidence": "Measured"
+          }
+        },
+        "in-progress": {
+          "$value": "#f0bf00",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the In Progress icon in the status menu, copy issue-dark-menu",
+            "evidence": "Measured"
+          }
+        },
+        "in-review": {
+          "$value": "#27a644",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the In Review icon in the status menu, copy issue-dark-menu",
+            "evidence": "Measured"
+          }
+        },
+        "done": {
+          "$value": "#5e6ad2",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the Done icon in the status menu, copy issue-dark-menu",
+            "evidence": "Measured"
+          }
+        },
+        "canceled": {
+          "$value": "#95a2b3",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the Canceled icon in the status menu, copy issue-dark-menu",
+            "evidence": "Measured"
+          }
+        },
+        "duplicate": {
+          "$value": "#95a2b3",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the Duplicate icon in the status menu, copy issue-dark-menu",
+            "evidence": "Measured"
+          }
+        }
+      }
+    },
+    "shadow": {
+      "low": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.3)",
+            "offsetX": "0px",
+            "offsetY": "0.5px",
+            "blur": "1px",
+            "spread": "1px",
+            "inset": false
+          }
+        ],
+        "$type": "shadow",
+        "$extensions": {
+          "source": "css-var --sx-10lzhmx, getComputedStyle on <main> in the dark copy issue-dark; matches the computed box-shadow of buttons, tabs and cards",
+          "evidence": "Measured"
+        }
+      },
+      "medium": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "8px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "5px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "$type": "shadow",
+        "$extensions": {
+          "source": "css-var --sx-1dhg814 (named --changelog-shadow-medium in Linear's bundle), getComputedStyle on <main> in the dark copy issue-dark; matches the computed box-shadow of menus, toasts and select lists",
+          "evidence": "Measured"
+        }
+      },
+      "high": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "40px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "20px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "12px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "8px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "$type": "shadow",
+        "$extensions": {
+          "source": "css-var --sx-1k7v50d, getComputedStyle on <main> in the dark copy issue-dark; matches the computed box-shadow of the composer dialog",
+          "evidence": "Measured"
+        }
+      },
+      "inset": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "3px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "5px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "$type": "shadow",
+        "$extensions": {
+          "source": "css-var --sx-umgfby, getComputedStyle on <main> in the dark copy issue-dark",
+          "evidence": "Measured"
+        }
+      },
+      "card": {
+        "$value": [
+          {
+            "color": "rgba(255, 255, 255, 0.083)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.3)",
+            "offsetX": "0px",
+            "offsetY": "0.5px",
+            "blur": "1px",
+            "spread": "1px",
+            "inset": false
+          }
+        ],
+        "$type": "shadow",
+        "$extensions": {
+          "source": "computed box-shadow of a board card, copy issues-board-dark (a 0.5px ring plus the low shadow)",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "$extensions": {
+      "notTokenised": [
+        {
+          "role": "color.feedback.info",
+          "reason": "Not captured: no info banner or info-coloured message appeared on the screens reached"
+        }
+      ]
+    }
+  },
+  "light": {
+    "color": {
+      "bg": {
+        "page": {
+          "$value": "#efeff0",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --content-bg-color, getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        },
+        "panel": {
+          "$value": "#f9f9fa",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-bg-primary, getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        },
+        "raised": {
+          "$value": "#ffffff",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Board card, state default, copy issues-board-light; equals --content-highlight-color-dark, --sx-1fphd1n",
+            "evidence": "Measured"
+          }
+        },
+        "control": {
+          "$value": "#ffffff",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of View tab (pill), state default, copy issues-board-light; equals --content-highlight-color-dark, --sx-1fphd1n",
+            "evidence": "Measured"
+          }
+        },
+        "control-hover": {
+          "$value": "#f0f0f1",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of View tab (pill), state hover, copy issues-board-light; equals --sx-629164",
+            "evidence": "Measured"
+          }
+        },
+        "selected": {
+          "$value": "#ececed",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of View tab (pill), state selected, copy issues-board-light; equals --sx-ljw4h1",
+            "evidence": "Measured"
+          }
+        },
+        "overlay": {
+          "$value": "#ffffff",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Toast, state default, copy issue-light-toast; equals --content-highlight-color-dark, --sx-1fphd1n",
+            "evidence": "Measured"
+          }
+        },
+        "overlay-strong": {
+          "$value": "#ffffff",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Select trigger (First day of the week), state open, copy settings-prefs-light-select; equals --content-highlight-color-dark, --sx-1fphd1n",
+            "evidence": "Measured"
+          }
+        },
+        "highlight": {
+          "$value": "#f1f1f1",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Menu (status picker), state option-highlighted, copy issue-light-menu; equals --color-border-primary, --sx-d29rh7",
+            "evidence": "Measured"
+          }
+        },
+        "scrim": {
+          "$value": "rgba(0, 0, 0, 0.25)",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Dialog scrim, state default, copy composer-light; equals --sx-1qdowq0",
+            "evidence": "Measured"
+          }
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "#1b1b1b",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-text-primary, getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        },
+        "secondary": {
+          "$value": "#2f2f31",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-text-secondary, getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        },
+        "tertiary": {
+          "$value": "#5c5c5e",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-text-tertiary, getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        },
+        "quaternary": {
+          "$value": "#9c9d9f",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-text-quaternary, getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        },
+        "link": {
+          "$value": "#4061da",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --sx-1xaoi8i (named --changelog-label-link, --integration-cms-link-color in Linear's bundle), getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        },
+        "on-accent": {
+          "$value": "#fffeff",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed color of Primary button (Create issue), state default, copy composer-light; equals --sx-ickszr",
+            "evidence": "Measured"
+          }
+        }
+      },
+      "border": {
+        "primary": {
+          "$value": "#f1f1f1",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-border-primary, getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        },
+        "secondary": {
+          "$value": "#dedede",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-border-secondary, getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        },
+        "tertiary": {
+          "$value": "#d3d3d3",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --color-border-tertiary, getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        },
+        "field": {
+          "$value": "#d8d8d8",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed borderTopColor of Text field (workspace name), state default, copy settings-workspace-light",
+            "evidence": "Measured"
+          }
+        },
+        "field-hover": {
+          "$value": "#c2c2c2",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed borderTopColor of Text field (workspace name), state hover, copy settings-workspace-light",
+            "evidence": "Measured"
+          }
+        },
+        "focus": {
+          "$value": "#6d78d5",
+          "$type": "color",
+          "$extensions": {
+            "source": "css-var --focus-ring-color, getComputedStyle on <main> in the light copy issue-light",
+            "evidence": "Measured"
+          }
+        }
+      },
+      "accent": {
+        "default": {
+          "$value": "#6d78d5",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Primary button (Create issue), state default, copy composer-light; equals --focus-ring-color, --sx-ch85qk",
+            "evidence": "Measured"
+          }
+        },
+        "hover": {
+          "$value": "#5e6ac1",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Primary button (Create issue), state hover, copy composer-light; equals --sx-1jffjrl",
+            "evidence": "Measured"
+          }
+        },
+        "pressed": {
+          "$value": "#5e6ac1",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Primary button (Create issue), state pressed, copy composer-light; equals --sx-1jffjrl",
+            "evidence": "Measured"
+          }
+        }
+      },
+      "feedback": {
+        "danger": {
+          "$value": "#e2253b",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed text colour of Destructive button (Delete workspace), state default, copy settings-workspace-light; equals --sx-1bu05id",
+            "evidence": "Measured"
+          }
+        },
+        "danger-hover-bg": {
+          "$value": "#fde9e9",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed paint colour of Destructive button (Delete workspace), state hover, copy settings-workspace-light",
+            "evidence": "Measured"
+          }
+        },
+        "success": {
+          "$value": "#43bc58",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed backgroundColor of Presence dot (Online), state default, copy settings-members-light; equals --sx-wsz0k3",
+            "evidence": "Measured"
+          }
+        },
+        "warning": {
+          "$value": "#9d8242",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed color of Project health, At risk, state default, copy projects-light",
+            "evidence": "Measured"
+          }
+        },
+        "on-track": {
+          "$value": "#4c8055",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed color of Project health, On track, state default, copy projects-light",
+            "evidence": "Measured"
+          }
+        }
+      },
+      "status": {
+        "backlog": {
+          "$value": "#a2a6ac",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the Backlog icon in the status menu, copy issue-light-menu",
+            "evidence": "Measured"
+          }
+        },
+        "todo": {
+          "$value": "#a6a6a6",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the Todo icon in the status menu, copy issue-light-menu",
+            "evidence": "Measured"
+          }
+        },
+        "in-progress": {
+          "$value": "#f0bf00",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the In Progress icon in the status menu, copy issue-light-menu",
+            "evidence": "Measured"
+          }
+        },
+        "in-review": {
+          "$value": "#43bc58",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the In Review icon in the status menu, copy issue-light-menu",
+            "evidence": "Measured"
+          }
+        },
+        "done": {
+          "$value": "#5e6ad2",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the Done icon in the status menu, copy issue-light-menu",
+            "evidence": "Measured"
+          }
+        },
+        "canceled": {
+          "$value": "#95a2b3",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the Canceled icon in the status menu, copy issue-light-menu",
+            "evidence": "Measured"
+          }
+        },
+        "duplicate": {
+          "$value": "#95a2b3",
+          "$type": "color",
+          "$extensions": {
+            "source": "computed stroke or fill of the Duplicate icon in the status menu, copy issue-light-menu",
+            "evidence": "Measured"
+          }
+        }
+      }
+    },
+    "shadow": {
+      "low": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "6px",
+            "spread": "-2px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "$type": "shadow",
+        "$extensions": {
+          "source": "css-var --sx-10lzhmx, getComputedStyle on <main> in the light copy issue-light; matches the computed box-shadow of buttons, tabs and cards",
+          "evidence": "Measured"
+        }
+      },
+      "medium": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "6px",
+            "blur": "18px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "9px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "$type": "shadow",
+        "$extensions": {
+          "source": "css-var --sx-1dhg814 (named --changelog-shadow-medium in Linear's bundle), getComputedStyle on <main> in the light copy issue-light; matches the computed box-shadow of menus, toasts and select lists",
+          "evidence": "Measured"
+        }
+      },
+      "high": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.08)",
+            "offsetX": "0px",
+            "offsetY": "9px",
+            "blur": "48px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "6px",
+            "blur": "24px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "$type": "shadow",
+        "$extensions": {
+          "source": "css-var --sx-1k7v50d, getComputedStyle on <main> in the light copy issue-light; matches the computed box-shadow of the composer dialog",
+          "evidence": "Measured"
+        }
+      },
+      "inset": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "3px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "5px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "$type": "shadow",
+        "$extensions": {
+          "source": "css-var --sx-umgfby, getComputedStyle on <main> in the light copy issue-light",
+          "evidence": "Measured"
+        }
+      },
+      "card": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.088)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "6px",
+            "spread": "-2px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "$type": "shadow",
+        "$extensions": {
+          "source": "computed box-shadow of a board card, copy issues-board-light (a 0.5px ring plus the low shadow)",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "$extensions": {
+      "notTokenised": [
+        {
+          "role": "color.feedback.info",
+          "reason": "Not captured: no info banner or info-coloured message appeared on the screens reached"
+        }
+      ]
     }
   },
   "web": {
     "canvas": {
+      "$value": "#08090a",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.03137254901960784,
-          0.03529411764705882,
-          0.0392156862745098
-        ],
-        "alpha": 1
-      },
-      "$description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "$extensions": {
+        "source": "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23",
+        "evidence": "Measured (public site)"
+      }
     },
     "surface": {
+      "$value": "#0f1011",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.058823529411764705,
-          0.06274509803921569,
-          0.06666666666666667
-        ],
-        "alpha": 1
-      },
-      "$description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "$extensions": {
+        "source": "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23",
+        "evidence": "Measured (public site)"
+      }
     },
     "raised": {
+      "$value": "#161718",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.08627450980392157,
-          0.09019607843137255,
-          0.09411764705882353
-        ],
-        "alpha": 1
-      },
-      "$description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "$extensions": {
+        "source": "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23",
+        "evidence": "Measured (public site)"
+      }
     },
     "border": {
+      "$value": "#24282c",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.1411764705882353,
-          0.1568627450980392,
-          0.17254901960784313
-        ],
-        "alpha": 1
-      },
-      "$description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "$extensions": {
+        "source": "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23",
+        "evidence": "Measured (public site)"
+      }
     },
     "text": {
+      "$value": "#f7f8f8",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.9686274509803922,
-          0.9725490196078431,
-          0.9725490196078431
-        ],
-        "alpha": 1
-      },
-      "$description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "$extensions": {
+        "source": "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23",
+        "evidence": "Measured (public site)"
+      }
     },
     "secondary": {
+      "$value": "#d0d6e0",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.8156862745098039,
-          0.8392156862745098,
-          0.8784313725490196
-        ],
-        "alpha": 1
-      },
-      "$description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "$extensions": {
+        "source": "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23",
+        "evidence": "Measured (public site)"
+      }
     },
     "muted": {
+      "$value": "#8a8f98",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.5411764705882353,
-          0.5607843137254902,
-          0.596078431372549
-        ],
-        "alpha": 1
-      },
-      "$description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "$extensions": {
+        "source": "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23",
+        "evidence": "Measured (public site)"
+      }
     },
     "subtle": {
+      "$value": "#62666d",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.3843137254901961,
-          0.4,
-          0.42745098039215684
-        ],
-        "alpha": 1
-      },
-      "$description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "$extensions": {
+        "source": "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23",
+        "evidence": "Measured (public site)"
+      }
     },
     "primary": {
+      "$value": "#e5e5e6",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.8980392156862745,
-          0.8980392156862745,
-          0.9019607843137255
-        ],
-        "alpha": 1
-      },
-      "$description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "$extensions": {
+        "source": "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23",
+        "evidence": "Measured (public site)"
+      }
     },
     "accent": {
+      "$value": "#5e6ad2",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.3686274509803922,
-          0.41568627450980394,
-          0.8235294117647058
-        ],
-        "alpha": 1
-      },
-      "$description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "$extensions": {
+        "source": "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23",
+        "evidence": "Measured (public site)"
+      }
     }
   },
   "brand": {
     "mercury-white": {
+      "$value": "#f4f5f8",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.9568627450980393,
-          0.9607843137254902,
-          0.9725490196078431
-        ],
-        "alpha": 1
-      },
-      "$description": "Official brand page. Nordic Gray RGB prose conflicts with hex; preserved displayed hex."
+      "$extensions": {
+        "source": "https://linear.app/brand, displayed hex (Nordic Gray's RGB prose says 35, 35, 38; the displayed hex is kept)",
+        "evidence": "Measured (brand page)"
+      }
     },
     "nordic-gray": {
+      "$value": "#222326",
       "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.13333333333333333,
-          0.13725490196078433,
-          0.14901960784313725
-        ],
-        "alpha": 1
-      },
-      "$description": "Official brand page. Nordic Gray RGB prose conflicts with hex; preserved displayed hex."
+      "$extensions": {
+        "source": "https://linear.app/brand, displayed hex (Nordic Gray's RGB prose says 35, 35, 38; the displayed hex is kept)",
+        "evidence": "Measured (brand page)"
+      }
     }
   },
-  "semantic": {
-    "todo": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.6274509803921569,
-          0.6274509803921569,
-          0.6470588235294118
-        ],
-        "alpha": 1
+  "$themes": [
+    {
+      "id": "dark",
+      "name": "Dark",
+      "selectedTokenSets": {
+        "core": "source",
+        "dark": "enabled"
       },
-      "$description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
+      "$description": "Settings > Preferences > Interface theme: Dark (the account's theme; every dark copy)"
     },
-    "in-progress": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.9490196078431372,
-          0.788235294117647,
-          0.2980392156862745
-        ],
-        "alpha": 1
+    {
+      "id": "light",
+      "name": "Light",
+      "selectedTokenSets": {
+        "core": "source",
+        "light": "enabled"
       },
-      "$description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
-    },
-    "done": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.3686274509803922,
-          0.41568627450980394,
-          0.8235294117647058
-        ],
-        "alpha": 1
-      },
-      "$description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
-    },
-    "urgent": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.9215686274509803,
-          0.3411764705882353,
-          0.3411764705882353
-        ],
-        "alpha": 1
-      },
-      "$description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
-    },
-    "success": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.15294117647058825,
-          0.6509803921568628,
-          0.26666666666666666
-        ],
-        "alpha": 1
-      },
-      "$description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
-    },
-    "link": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.3058823529411765,
-          0.6549019607843137,
-          0.9882352941176471
-        ],
-        "alpha": 1
-      },
-      "$description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
+      "$description": "Interface theme: Light, switched for the light copies on 2026-10-17 with the owner's agreement and set back to Dark"
     }
-  },
-  "radius": {
-    "micro": {
-      "$type": "dimension",
-      "$value": {
-        "value": 4,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "small": {
-      "$type": "dimension",
-      "$value": {
-        "value": 6,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "control": {
-      "$type": "dimension",
-      "$value": {
-        "value": 8,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "panel": {
-      "$type": "dimension",
-      "$value": {
-        "value": 12,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "large": {
-      "$type": "dimension",
-      "$value": {
-        "value": 16,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "pill": {
-      "$type": "dimension",
-      "$value": {
-        "value": 9999,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    }
-  },
-  "space": {
-    "1": {
-      "$type": "dimension",
-      "$value": {
-        "value": 4,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "2": {
-      "$type": "dimension",
-      "$value": {
-        "value": 8,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "3": {
-      "$type": "dimension",
-      "$value": {
-        "value": 12,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "4": {
-      "$type": "dimension",
-      "$value": {
-        "value": 16,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "6": {
-      "$type": "dimension",
-      "$value": {
-        "value": 24,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "8": {
-      "$type": "dimension",
-      "$value": {
-        "value": 32,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "12": {
-      "$type": "dimension",
-      "$value": {
-        "value": 48,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "16": {
-      "$type": "dimension",
-      "$value": {
-        "value": 64,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    }
-  },
-  "size": {
-    "compact-control": {
-      "$type": "dimension",
-      "$value": {
-        "value": 28,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "web-control": {
-      "$type": "dimension",
-      "$value": {
-        "value": 32,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "row": {
-      "$type": "dimension",
-      "$value": {
-        "value": 40,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "icon": {
-      "$type": "dimension",
-      "$value": {
-        "value": 16,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    },
-    "avatar": {
-      "$type": "dimension",
-      "$value": {
-        "value": 20,
-        "unit": "px"
-      },
-      "$description": "Observed public radius values; spacing and app dimensions are reconstruction scales."
-    }
-  },
-  "font": {
-    "ui": {
-      "$type": "fontFamily",
-      "$value": [
-        "Inter Variable",
-        "Inter",
-        "Arial",
-        "sans-serif"
-      ]
-    },
-    "mono": {
-      "$type": "fontFamily",
-      "$value": [
-        "Berkeley Mono",
-        "SF Mono",
-        "Menlo",
-        "monospace"
-      ]
-    },
-    "editorial": {
-      "$type": "fontFamily",
-      "$value": [
-        "Tiempos Headline",
-        "Georgia",
-        "serif"
-      ]
-    }
+  ],
+  "$metadata": {
+    "tokenSetOrder": [
+      "core",
+      "dark",
+      "light",
+      "web",
+      "brand"
+    ]
   }
 }

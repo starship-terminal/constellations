@@ -1,235 +1,1396 @@
 {
-  "linear-reference": {
-    "app": {
-      "canvas": {
-        "type": "color",
-        "value": "#09090B",
-        "description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
+  "core": {
+    "font": {
+      "family": {
+        "ui": {
+          "type": "fontFamily",
+          "value": [
+            "Inter Variable",
+            "SF Pro Display",
+            "-apple-system",
+            "BlinkMacSystemFont",
+            "Segoe UI",
+            "Roboto",
+            "Oxygen",
+            "Ubuntu",
+            "Cantarell",
+            "Open Sans",
+            "Helvetica Neue",
+            "Linear Thai",
+            "sans-serif"
+          ],
+          "description": "Measured: css-var --font-regular, getComputedStyle on <main>, copy issue-dark"
+        },
+        "mono": {
+          "type": "fontFamily",
+          "value": [
+            "Berkeley Mono",
+            "SFMono Regular",
+            "Consolas",
+            "Liberation Mono",
+            "Menlo",
+            "Courier",
+            "monospace"
+          ],
+          "description": "Measured: css-var --font-monospace, getComputedStyle on <main>, copy issue-dark"
+        },
+        "emoji": {
+          "type": "fontFamily",
+          "value": [
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Segoe UI",
+            "Twemoji Mozilla",
+            "Noto Color Emoji",
+            "Android Emoji"
+          ],
+          "description": "Measured: css-var --font-emoji, getComputedStyle on <main>, copy issue-dark"
+        },
+        "editorial": {
+          "type": "fontFamily",
+          "value": [
+            "Tiempos Headline",
+            "Georgia",
+            "serif"
+          ],
+          "description": "Measured (public site): public site computed font-family of the Linear Method heading, evidence/styles/method-styles.json, 2026-09-23; Georgia and serif are this package's fallbacks"
+        }
       },
-      "surface": {
-        "type": "color",
-        "value": "#121214",
-        "description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
+      "size": {
+        "micro": {
+          "type": "dimension",
+          "value": "12px",
+          "description": "Derived: css-var --font-size-micro (round(up, .6875rem, 2px)), worked out at 16px"
+        },
+        "mini": {
+          "type": "dimension",
+          "value": "12px",
+          "description": "Measured: css-var --font-size-mini (.75rem at 16px), copy issue-dark"
+        },
+        "small": {
+          "type": "dimension",
+          "value": "13px",
+          "description": "Measured: css-var --font-size-small (.8125rem at 16px), copy issue-dark"
+        },
+        "regular": {
+          "type": "dimension",
+          "value": "15px",
+          "description": "Measured: css-var --font-size-regular (.9375rem at 16px), copy issue-dark"
+        },
+        "large": {
+          "type": "dimension",
+          "value": "18px",
+          "description": "Measured: css-var --font-size-large (1.125rem at 16px), copy issue-dark"
+        },
+        "title3": {
+          "type": "dimension",
+          "value": "20px",
+          "description": "Measured: css-var --font-size-title3 (1.25rem at 16px), copy issue-dark"
+        },
+        "title2": {
+          "type": "dimension",
+          "value": "24px",
+          "description": "Measured: css-var --font-size-title2 (1.5rem at 16px), copy issue-dark"
+        },
+        "title1": {
+          "type": "dimension",
+          "value": "36px",
+          "description": "Measured: css-var --font-size-title1 (2.25rem at 16px), copy issue-dark"
+        }
       },
-      "raised": {
-        "type": "color",
-        "value": "#1A1A1C",
-        "description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
+      "weight": {
+        "light": {
+          "type": "fontWeight",
+          "value": 300,
+          "description": "Measured: css-var --font-weight-light, copy issue-dark"
+        },
+        "normal": {
+          "type": "fontWeight",
+          "value": 450,
+          "description": "Measured: css-var --font-weight-normal, copy issue-dark"
+        },
+        "medium": {
+          "type": "fontWeight",
+          "value": 500,
+          "description": "Measured: css-var --font-weight-medium, copy issue-dark"
+        },
+        "semibold": {
+          "type": "fontWeight",
+          "value": 600,
+          "description": "Measured: css-var --font-weight-semibold, copy issue-dark"
+        },
+        "bold": {
+          "type": "fontWeight",
+          "value": 700,
+          "description": "Measured: css-var --font-weight-bold, copy issue-dark"
+        }
       },
-      "popover": {
-        "type": "color",
-        "value": "#212123",
-        "description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-      },
-      "selected": {
-        "type": "color",
-        "value": "#323234",
-        "description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-      },
-      "text": {
-        "type": "color",
-        "value": "#FFFFFF",
-        "description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-      },
-      "muted": {
-        "type": "color",
-        "value": "#969699",
-        "description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-      },
-      "accent": {
-        "type": "color",
-        "value": "#5E6AD2",
-        "description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
-      },
-      "border": {
-        "type": "color",
-        "value": "#2B2B2E",
-        "description": "Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access."
+      "lineHeight": {
+        "editor": {
+          "type": "number",
+          "value": 1.6,
+          "description": "Measured: css-var --editor-line-height, copy issue-dark"
+        }
       }
     },
-    "web": {
-      "canvas": {
-        "type": "color",
-        "value": "#08090A",
-        "description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+    "typography": {
+      "issue-title": {
+        "type": "typography",
+        "value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "24px",
+          "fontWeight": 600,
+          "lineHeight": 1.333,
+          "letterSpacing": "-0.16px"
+        },
+        "description": "Measured: computed text node style of Issue title (detail), copy issue-dark; the issue detail title"
       },
-      "surface": {
-        "type": "color",
-        "value": "#0F1011",
-        "description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "heading": {
+        "type": "typography",
+        "value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "19px",
+          "fontWeight": 600,
+          "lineHeight": 1.474,
+          "letterSpacing": "0.05px"
+        },
+        "description": "Measured: computed text node style of Description heading (h2), copy issue-dark; an h2 in an issue description"
       },
-      "raised": {
-        "type": "color",
-        "value": "#161718",
-        "description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "body": {
+        "type": "typography",
+        "value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "15px",
+          "fontWeight": 450,
+          "lineHeight": 1.6,
+          "letterSpacing": "-0.1px"
+        },
+        "description": "Measured: computed text node style of Description body paragraph, copy issue-dark; a description paragraph (--editor-font-size, --editor-line-height)"
       },
-      "border": {
-        "type": "color",
-        "value": "#24282C",
-        "description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "page-title": {
+        "type": "typography",
+        "value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "24px",
+          "fontWeight": 500,
+          "lineHeight": 1.333,
+          "letterSpacing": "-0.16px"
+        },
+        "description": "Measured: computed text node style of Settings page title, copy settings-members-dark; a settings page title"
       },
-      "text": {
-        "type": "color",
-        "value": "#F7F8F8",
-        "description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "label": {
+        "type": "typography",
+        "value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "13px",
+          "fontWeight": 500
+        },
+        "description": "Measured: computed text node style of Sidebar item, copy issues-board-dark; sidebar item label"
       },
-      "secondary": {
-        "type": "color",
-        "value": "#D0D6E0",
-        "description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "control": {
+        "type": "typography",
+        "value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "12px",
+          "fontWeight": 500
+        },
+        "description": "Measured: computed text node style of View tab (pill), copy issues-board-dark; view tab and small control label"
       },
-      "muted": {
-        "type": "color",
-        "value": "#8A8F98",
-        "description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "caption": {
+        "type": "typography",
+        "value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "12px",
+          "fontWeight": 450
+        },
+        "description": "Measured: computed element style of Card meta line, copy issues-board-dark; card meta line"
       },
-      "subtle": {
-        "type": "color",
-        "value": "#62666D",
-        "description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
+      "section-label": {
+        "type": "typography",
+        "value": {
+          "fontFamily": [
+            "Inter Variable",
+            "sans-serif"
+          ],
+          "fontSize": "12px",
+          "fontWeight": 500
+        },
+        "description": "Measured: computed element style of Sidebar section label (Workspace), copy issues-board-dark; sidebar section label"
       },
-      "primary": {
-        "type": "color",
-        "value": "#E5E5E6",
-        "description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
-      },
-      "accent": {
-        "type": "color",
-        "value": "#5E6AD2",
-        "description": "Measured computed CSS, 01-home-styles.json, 2026-09-23."
-      }
-    },
-    "brand": {
-      "mercury-white": {
-        "type": "color",
-        "value": "#F4F5F8",
-        "description": "Official brand page. Nordic Gray RGB prose conflicts with hex; preserved displayed hex."
-      },
-      "nordic-gray": {
-        "type": "color",
-        "value": "#222326",
-        "description": "Official brand page. Nordic Gray RGB prose conflicts with hex; preserved displayed hex."
-      }
-    },
-    "semantic": {
-      "todo": {
-        "type": "color",
-        "value": "#A0A0A5",
-        "description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
-      },
-      "in-progress": {
-        "type": "color",
-        "value": "#F2C94C",
-        "description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
-      },
-      "done": {
-        "type": "color",
-        "value": "#5E6AD2",
-        "description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
-      },
-      "urgent": {
-        "type": "color",
-        "value": "#EB5757",
-        "description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
-      },
-      "success": {
-        "type": "color",
-        "value": "#27A644",
-        "description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
-      },
-      "link": {
-        "type": "color",
-        "value": "#4EA7FC",
-        "description": "Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable."
+      "code": {
+        "type": "typography",
+        "value": {
+          "fontFamily": [
+            "Berkeley Mono",
+            "monospace"
+          ],
+          "fontSize": "14.062px",
+          "fontWeight": 450,
+          "lineHeight": 1.3,
+          "letterSpacing": "-0.1px"
+        },
+        "description": "Measured: computed text node style of Inline code, copy issue-dark; inline code in a description"
       }
     },
     "radius": {
-      "micro": {
-        "type": "dimension",
-        "value": "4px"
-      },
-      "small": {
-        "type": "dimension",
-        "value": "6px"
-      },
       "control": {
         "type": "dimension",
-        "value": "8px"
+        "value": "8px",
+        "description": "Measured: css-var --control-border-radius (control radius), copy issue-dark"
       },
-      "panel": {
+      "settings-group": {
         "type": "dimension",
-        "value": "12px"
+        "value": "10px",
+        "description": "Measured: css-var --settings-list-view-item-radius (settings list group), copy issue-dark"
       },
-      "large": {
+      "editor-block": {
         "type": "dimension",
-        "value": "16px"
+        "value": "6px",
+        "description": "Measured: css-var --editor-block-radius (editor blocks), copy issue-dark"
       },
       "pill": {
         "type": "dimension",
-        "value": "9999px"
+        "value": "9999px",
+        "description": "Measured: css-var --radius-rounded (pills, tabs, buttons), copy issue-dark"
+      },
+      "card": {
+        "type": "dimension",
+        "value": "8px",
+        "description": "Measured: computed border-radius of the board card, copy issues-board-dark"
+      },
+      "menu": {
+        "type": "dimension",
+        "value": "12px",
+        "description": "Measured: computed border-radius of the toast, menu and select surfaces (12px on each), copy issue-dark-toast"
+      },
+      "dialog": {
+        "type": "dimension",
+        "value": "21px",
+        "description": "Measured: computed border-radius of the composer dialog, copy composer-dark"
+      },
+      "badge": {
+        "type": "dimension",
+        "value": "3px",
+        "description": "Measured: computed border-radius of the Admin badge, copy settings-members-dark"
+      },
+      "kbd": {
+        "type": "dimension",
+        "value": "4px",
+        "description": "Measured: computed border-radius of the keyboard key in a tooltip, copy issue-dark-tooltip"
       }
     },
     "space": {
       "1": {
         "type": "dimension",
-        "value": "4px"
+        "value": "4px",
+        "description": "Reconstruction: 4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings"
       },
       "2": {
         "type": "dimension",
-        "value": "8px"
+        "value": "8px",
+        "description": "Reconstruction: 4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings"
       },
       "3": {
         "type": "dimension",
-        "value": "12px"
+        "value": "12px",
+        "description": "Reconstruction: 4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings"
       },
       "4": {
         "type": "dimension",
-        "value": "16px"
+        "value": "16px",
+        "description": "Reconstruction: 4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings"
       },
       "6": {
         "type": "dimension",
-        "value": "24px"
+        "value": "24px",
+        "description": "Reconstruction: 4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings"
       },
       "8": {
         "type": "dimension",
-        "value": "32px"
+        "value": "32px",
+        "description": "Reconstruction: 4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings"
       },
       "12": {
         "type": "dimension",
-        "value": "48px"
+        "value": "48px",
+        "description": "Reconstruction: 4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings"
       },
       "16": {
         "type": "dimension",
-        "value": "64px"
+        "value": "64px",
+        "description": "Reconstruction: 4px-step scale chosen for this package in 2026-09; Linear declares no spacing scale and its stylex classes carry literal paddings"
       }
     },
     "size": {
-      "compact-control": {
+      "control": {
         "type": "dimension",
-        "value": "28px"
+        "value": "28px",
+        "description": "Measured: measured height of the primary button, tabs and icon buttons, copy composer-dark"
       },
-      "web-control": {
+      "control-large": {
         "type": "dimension",
-        "value": "32px"
+        "value": "32px",
+        "description": "Measured: measured height of the text fields, search and page-header buttons, copy settings-workspace-dark"
       },
-      "row": {
+      "sidebar-item": {
         "type": "dimension",
-        "value": "40px"
+        "value": "28px",
+        "description": "Measured: measured height of the sidebar items, copy issues-board-dark"
       },
-      "icon": {
+      "menu-option": {
         "type": "dimension",
-        "value": "16px"
+        "value": "32px",
+        "description": "Measured: measured height of the menu and select options, copy issue-dark-menu"
+      },
+      "list-row": {
+        "type": "dimension",
+        "value": "36px",
+        "description": "Measured: measured height of the sub-issue rows, copy issue-dark"
+      },
+      "table-row": {
+        "type": "dimension",
+        "value": "48px",
+        "description": "Measured: measured height of the projects table rows, copy projects-dark"
       },
       "avatar": {
         "type": "dimension",
-        "value": "20px"
+        "value": "24px",
+        "description": "Measured: measured width of the avatars in tables, copy settings-members-dark"
+      },
+      "switch-width": {
+        "type": "dimension",
+        "value": "30px",
+        "description": "Measured: measured width of the switch track, copy settings-prefs-dark"
+      },
+      "switch-height": {
+        "type": "dimension",
+        "value": "20px",
+        "description": "Measured: measured height of the switch track, copy settings-prefs-dark"
+      },
+      "icon": {
+        "type": "dimension",
+        "value": "14px",
+        "description": "Measured: measured icon width inside the icon button, copy issue-dark"
+      }
+    },
+    "layout": {
+      "sidebar-width": {
+        "type": "dimension",
+        "value": "244px",
+        "description": "Measured: css-var --sidebar-width, copy issue-dark"
+      },
+      "header-height": {
+        "type": "dimension",
+        "value": "43.5px",
+        "description": "Measured: css-var --header-height, copy issue-dark"
+      },
+      "desktop-tabs-height": {
+        "type": "dimension",
+        "value": "40px",
+        "description": "Measured: css-var --desktop-tabs-height, copy issue-dark"
+      },
+      "content-inset": {
+        "type": "dimension",
+        "value": "8px",
+        "description": "Measured: measured gap between the window edge and the inset main panel, copy issues-board-dark"
+      }
+    },
+    "borderWidth": {
+      "default": {
+        "type": "dimension",
+        "value": "1px",
+        "description": "Measured: computed border width of a text field, copy settings-workspace-dark"
+      },
+      "hairline": {
+        "type": "dimension",
+        "value": "0.5px",
+        "description": "Measured: css-var --editor-hairline; the 0.5px rings in Linear's surface shadows use the same width"
+      }
+    },
+    "focusRing": {
+      "width": {
+        "type": "dimension",
+        "value": "1px",
+        "description": "Measured: css-var --focus-ring-width, and the measured outline width on every focus-visible state"
+      },
+      "offset-button": {
+        "type": "dimension",
+        "value": "2px",
+        "description": "Measured: computed outline-offset of Primary button (Create issue) at focus-visible (real keyboard focus), copy composer-dark"
+      },
+      "offset-field": {
+        "type": "dimension",
+        "value": "-1px",
+        "description": "Measured: computed outline-offset of Text field (workspace name) at focus-visible (real keyboard focus), copy settings-workspace-dark"
+      },
+      "offset-icon": {
+        "type": "dimension",
+        "value": "0px",
+        "description": "Measured: computed outline-offset of Icon button (Copy issue URL) at focus-visible (real keyboard focus), copy issue-dark"
+      },
+      "offset-link": {
+        "type": "dimension",
+        "value": "1px",
+        "description": "Measured: computed outline-offset of Inline link (Read more) at focus-visible (real keyboard focus), copy settings-workspace-dark"
+      }
+    },
+    "duration": {
+      "highlightFadeIn": {
+        "type": "duration",
+        "value": "0ms",
+        "description": "Measured: css-var --speed-highlightFadeIn, copy issue-dark"
+      },
+      "quickTransition": {
+        "type": "duration",
+        "value": "100ms",
+        "description": "Measured: css-var --speed-quickTransition, copy issue-dark"
+      },
+      "highlightFadeOut": {
+        "type": "duration",
+        "value": "150ms",
+        "description": "Measured: css-var --speed-highlightFadeOut, copy issue-dark"
+      },
+      "regularTransition": {
+        "type": "duration",
+        "value": "250ms",
+        "description": "Measured: css-var --speed-regularTransition, copy issue-dark"
+      },
+      "slowTransition": {
+        "type": "duration",
+        "value": "350ms",
+        "description": "Measured: css-var --speed-slowTransition, copy issue-dark"
+      },
+      "hover": {
+        "type": "duration",
+        "value": "150ms",
+        "description": "Measured: the most common transition on measured components (border, background-color, color, opacity 0.15s ease; 29 states, raw/measurements.md)"
+      }
+    },
+    "easing": {
+      "out-quad": {
+        "type": "cubicBezier",
+        "value": [
+          0.25,
+          0.46,
+          0.45,
+          0.94
+        ],
+        "description": "Measured: css-var --ease-out-quad, copy issue-dark"
+      },
+      "out-cubic": {
+        "type": "cubicBezier",
+        "value": [
+          0.215,
+          0.61,
+          0.355,
+          1.0
+        ],
+        "description": "Measured: css-var --ease-out-cubic, copy issue-dark"
+      },
+      "in-out-cubic": {
+        "type": "cubicBezier",
+        "value": [
+          0.645,
+          0.045,
+          0.355,
+          1.0
+        ],
+        "description": "Measured: css-var --ease-in-out-cubic, copy issue-dark"
+      },
+      "out-quart": {
+        "type": "cubicBezier",
+        "value": [
+          0.165,
+          0.84,
+          0.44,
+          1.0
+        ],
+        "description": "Measured: css-var --ease-out-quart, copy issue-dark"
+      },
+      "out-expo": {
+        "type": "cubicBezier",
+        "value": [
+          0.19,
+          1.0,
+          0.22,
+          1.0
+        ],
+        "description": "Measured: css-var --ease-out-expo, copy issue-dark"
+      },
+      "default": {
+        "type": "cubicBezier",
+        "value": [
+          0.25,
+          0.1,
+          0.25,
+          1
+        ],
+        "description": "Measured: the CSS keyword ease, the timing function on 106 rules in the bundle (raw/css-vars.json easings)"
+      },
+      "out": {
+        "type": "cubicBezier",
+        "value": [
+          0,
+          0,
+          0.58,
+          1
+        ],
+        "description": "Measured: the CSS keyword ease-out, on 47 rules in the bundle"
+      }
+    },
+    "breakpoint": {
+      "phone-small": {
+        "type": "dimension",
+        "value": "375px",
+        "description": "Measured: @media (max-width: 375px) in the app bundle (6 rules)"
+      },
+      "phone": {
+        "type": "dimension",
+        "value": "640px",
+        "description": "Measured: @media (max-width: 640px) in the app bundle (88 rules)"
+      },
+      "tablet": {
+        "type": "dimension",
+        "value": "768px",
+        "description": "Measured: @media (max-width: 768px) in the app bundle (23 rules)"
+      },
+      "laptop": {
+        "type": "dimension",
+        "value": "1024px",
+        "description": "Measured: @media (max-width: 1024px) in the app bundle (47 rules)"
+      },
+      "wide": {
+        "type": "dimension",
+        "value": "1400px",
+        "description": "Measured: @media (min-width: 1400px) in the app bundle (3 rules)"
+      },
+      "ultrawide": {
+        "type": "dimension",
+        "value": "1800px",
+        "description": "Measured: @media (min-width: 1800px) in the app bundle (4 rules)"
+      }
+    },
+    "zIndex": {
+      "dialog": {
+        "type": "number",
+        "value": 300,
+        "description": "Measured: computed z-index of the dialog's outermost stacking ancestor, copy composer-dark; the same in light"
+      },
+      "toast": {
+        "type": "number",
+        "value": 580,
+        "description": "Measured: computed z-index of the toast's outermost stacking ancestor, copy issue-dark-toast; the same in light"
+      },
+      "menu": {
+        "type": "number",
+        "value": 600,
+        "description": "Measured: computed z-index of the menu's outermost stacking ancestor, copy issue-dark-menu; the same in light"
       }
     }
   },
-  "$themes": [],
+  "dark": {
+    "color": {
+      "bg": {
+        "page": {
+          "type": "color",
+          "value": "#09090a",
+          "description": "Measured: css-var --content-bg-color, getComputedStyle on <main> in the dark copy issue-dark"
+        },
+        "panel": {
+          "type": "color",
+          "value": "#121213",
+          "description": "Measured: css-var --color-bg-primary, getComputedStyle on <main> in the dark copy issue-dark"
+        },
+        "raised": {
+          "type": "color",
+          "value": "#1a1a1b",
+          "description": "Measured: computed backgroundColor of Board card, state default, copy issues-board-dark; equals --color-bg-quaternary, --sx-1gxylln"
+        },
+        "control": {
+          "type": "color",
+          "value": "#1c1c1d",
+          "description": "Measured: computed backgroundColor of View tab (pill), state default, copy issues-board-dark; equals --loading-error-secondary-bg, --loading-error-secondary-bg-dark"
+        },
+        "control-hover": {
+          "type": "color",
+          "value": "#232424",
+          "description": "Measured: computed backgroundColor of View tab (pill), state hover, copy issues-board-dark; equals --sx-629164"
+        },
+        "selected": {
+          "type": "color",
+          "value": "#29292b",
+          "description": "Measured: computed backgroundColor of View tab (pill), state selected, copy issues-board-dark; equals --sx-1edn6di, --sx-ljw4h1"
+        },
+        "overlay": {
+          "type": "color",
+          "value": "#212122",
+          "description": "Measured: computed backgroundColor of Toast, state default, copy issue-dark-toast"
+        },
+        "overlay-strong": {
+          "type": "color",
+          "value": "#28292b",
+          "description": "Measured: computed backgroundColor of Select trigger (First day of the week), state open, copy settings-prefs-dark-select"
+        },
+        "highlight": {
+          "type": "color",
+          "value": "#313234",
+          "description": "Measured: computed backgroundColor of Menu (status picker), state option-highlighted, copy issue-dark-menu; equals --sx-138kmyo"
+        },
+        "scrim": {
+          "type": "color",
+          "value": "rgba(0, 0, 0, 0.4)",
+          "description": "Measured: computed backgroundColor of Dialog scrim, state default, copy composer-dark; equals --sx-1qdowq0"
+        }
+      },
+      "text": {
+        "primary": {
+          "type": "color",
+          "value": "#ffffff",
+          "description": "Measured: css-var --color-text-primary, getComputedStyle on <main> in the dark copy issue-dark"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "#e3e4e6",
+          "description": "Measured: css-var --color-text-secondary, getComputedStyle on <main> in the dark copy issue-dark"
+        },
+        "tertiary": {
+          "type": "color",
+          "value": "#959597",
+          "description": "Measured: css-var --color-text-tertiary, getComputedStyle on <main> in the dark copy issue-dark"
+        },
+        "quaternary": {
+          "type": "color",
+          "value": "#565759",
+          "description": "Measured: css-var --color-text-quaternary, getComputedStyle on <main> in the dark copy issue-dark"
+        },
+        "link": {
+          "type": "color",
+          "value": "#707ffe",
+          "description": "Measured: css-var --sx-1xaoi8i (named --changelog-label-link, --integration-cms-link-color in Linear's bundle), getComputedStyle on <main> in the dark copy issue-dark"
+        },
+        "on-accent": {
+          "type": "color",
+          "value": "#fffeff",
+          "description": "Measured: computed color of Primary button (Create issue), state default, copy composer-dark; equals --sx-ickszr"
+        }
+      },
+      "border": {
+        "primary": {
+          "type": "color",
+          "value": "#1a1b1d",
+          "description": "Measured: css-var --color-border-primary, getComputedStyle on <main> in the dark copy issue-dark"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "#232426",
+          "description": "Measured: css-var --color-border-secondary, getComputedStyle on <main> in the dark copy issue-dark"
+        },
+        "tertiary": {
+          "type": "color",
+          "value": "#28282b",
+          "description": "Measured: css-var --color-border-tertiary, getComputedStyle on <main> in the dark copy issue-dark"
+        },
+        "field": {
+          "type": "color",
+          "value": "#48494c",
+          "description": "Measured: computed borderTopColor of Text field (workspace name), state default, copy settings-workspace-dark"
+        },
+        "field-hover": {
+          "type": "color",
+          "value": "#3e424d",
+          "description": "Measured: computed borderTopColor of Text field (workspace name), state hover, copy settings-workspace-dark"
+        },
+        "focus": {
+          "type": "color",
+          "value": "#5e6ad2",
+          "description": "Measured: css-var --focus-ring-color, getComputedStyle on <main> in the dark copy issue-dark"
+        }
+      },
+      "accent": {
+        "default": {
+          "type": "color",
+          "value": "#5e6ad2",
+          "description": "Measured: computed backgroundColor of Primary button (Create issue), state default, copy composer-dark; equals --focus-ring-color, --sx-1yxqotz"
+        },
+        "hover": {
+          "type": "color",
+          "value": "#6975e2",
+          "description": "Measured: computed backgroundColor of Primary button (Create issue), state hover, copy composer-dark; equals --sx-1jffjrl"
+        },
+        "pressed": {
+          "type": "color",
+          "value": "#6975e2",
+          "description": "Measured: computed backgroundColor of Primary button (Create issue), state pressed, copy composer-dark; equals --sx-1jffjrl"
+        }
+      },
+      "feedback": {
+        "danger": {
+          "type": "color",
+          "value": "#ff8683",
+          "description": "Measured: computed text colour of Destructive button (Delete workspace), state default, copy settings-workspace-dark; equals --sx-1bu05id"
+        },
+        "danger-hover-bg": {
+          "type": "color",
+          "value": "#361d1e",
+          "description": "Measured: computed paint colour of Destructive button (Delete workspace), state hover, copy settings-workspace-dark"
+        },
+        "success": {
+          "type": "color",
+          "value": "#27a644",
+          "description": "Measured: computed backgroundColor of Presence dot (Online), state default, copy settings-members-dark; equals --sx-wsz0k3"
+        },
+        "warning": {
+          "type": "color",
+          "value": "#9d854c",
+          "description": "Measured: computed color of Project health, At risk, state default, copy projects-dark"
+        },
+        "on-track": {
+          "type": "color",
+          "value": "#527a58",
+          "description": "Measured: computed color of Project health, On track, state default, copy projects-dark"
+        }
+      },
+      "status": {
+        "backlog": {
+          "type": "color",
+          "value": "#bec2c8",
+          "description": "Measured: computed stroke or fill of the Backlog icon in the status menu, copy issue-dark-menu"
+        },
+        "todo": {
+          "type": "color",
+          "value": "#e2e2e2",
+          "description": "Measured: computed stroke or fill of the Todo icon in the status menu, copy issue-dark-menu"
+        },
+        "in-progress": {
+          "type": "color",
+          "value": "#f0bf00",
+          "description": "Measured: computed stroke or fill of the In Progress icon in the status menu, copy issue-dark-menu"
+        },
+        "in-review": {
+          "type": "color",
+          "value": "#27a644",
+          "description": "Measured: computed stroke or fill of the In Review icon in the status menu, copy issue-dark-menu"
+        },
+        "done": {
+          "type": "color",
+          "value": "#5e6ad2",
+          "description": "Measured: computed stroke or fill of the Done icon in the status menu, copy issue-dark-menu"
+        },
+        "canceled": {
+          "type": "color",
+          "value": "#95a2b3",
+          "description": "Measured: computed stroke or fill of the Canceled icon in the status menu, copy issue-dark-menu"
+        },
+        "duplicate": {
+          "type": "color",
+          "value": "#95a2b3",
+          "description": "Measured: computed stroke or fill of the Duplicate icon in the status menu, copy issue-dark-menu"
+        }
+      }
+    },
+    "shadow": {
+      "low": {
+        "type": "shadow",
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.3)",
+            "offsetX": "0px",
+            "offsetY": "0.5px",
+            "blur": "1px",
+            "spread": "1px",
+            "inset": false
+          }
+        ],
+        "description": "Measured: css-var --sx-10lzhmx, getComputedStyle on <main> in the dark copy issue-dark; matches the computed box-shadow of buttons, tabs and cards"
+      },
+      "medium": {
+        "type": "shadow",
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "8px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "5px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "description": "Measured: css-var --sx-1dhg814 (named --changelog-shadow-medium in Linear's bundle), getComputedStyle on <main> in the dark copy issue-dark; matches the computed box-shadow of menus, toasts and select lists"
+      },
+      "high": {
+        "type": "shadow",
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "40px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "20px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "12px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "8px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.125)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "description": "Measured: css-var --sx-1k7v50d, getComputedStyle on <main> in the dark copy issue-dark; matches the computed box-shadow of the composer dialog"
+      },
+      "inset": {
+        "type": "shadow",
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "3px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "5px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "description": "Measured: css-var --sx-umgfby, getComputedStyle on <main> in the dark copy issue-dark"
+      },
+      "card": {
+        "type": "shadow",
+        "value": [
+          {
+            "color": "rgba(255, 255, 255, 0.083)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.3)",
+            "offsetX": "0px",
+            "offsetY": "0.5px",
+            "blur": "1px",
+            "spread": "1px",
+            "inset": false
+          }
+        ],
+        "description": "Measured: computed box-shadow of a board card, copy issues-board-dark (a 0.5px ring plus the low shadow)"
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "bg": {
+        "page": {
+          "type": "color",
+          "value": "#efeff0",
+          "description": "Measured: css-var --content-bg-color, getComputedStyle on <main> in the light copy issue-light"
+        },
+        "panel": {
+          "type": "color",
+          "value": "#f9f9fa",
+          "description": "Measured: css-var --color-bg-primary, getComputedStyle on <main> in the light copy issue-light"
+        },
+        "raised": {
+          "type": "color",
+          "value": "#ffffff",
+          "description": "Measured: computed backgroundColor of Board card, state default, copy issues-board-light; equals --content-highlight-color-dark, --sx-1fphd1n"
+        },
+        "control": {
+          "type": "color",
+          "value": "#ffffff",
+          "description": "Measured: computed backgroundColor of View tab (pill), state default, copy issues-board-light; equals --content-highlight-color-dark, --sx-1fphd1n"
+        },
+        "control-hover": {
+          "type": "color",
+          "value": "#f0f0f1",
+          "description": "Measured: computed backgroundColor of View tab (pill), state hover, copy issues-board-light; equals --sx-629164"
+        },
+        "selected": {
+          "type": "color",
+          "value": "#ececed",
+          "description": "Measured: computed backgroundColor of View tab (pill), state selected, copy issues-board-light; equals --sx-ljw4h1"
+        },
+        "overlay": {
+          "type": "color",
+          "value": "#ffffff",
+          "description": "Measured: computed backgroundColor of Toast, state default, copy issue-light-toast; equals --content-highlight-color-dark, --sx-1fphd1n"
+        },
+        "overlay-strong": {
+          "type": "color",
+          "value": "#ffffff",
+          "description": "Measured: computed backgroundColor of Select trigger (First day of the week), state open, copy settings-prefs-light-select; equals --content-highlight-color-dark, --sx-1fphd1n"
+        },
+        "highlight": {
+          "type": "color",
+          "value": "#f1f1f1",
+          "description": "Measured: computed backgroundColor of Menu (status picker), state option-highlighted, copy issue-light-menu; equals --color-border-primary, --sx-d29rh7"
+        },
+        "scrim": {
+          "type": "color",
+          "value": "rgba(0, 0, 0, 0.25)",
+          "description": "Measured: computed backgroundColor of Dialog scrim, state default, copy composer-light; equals --sx-1qdowq0"
+        }
+      },
+      "text": {
+        "primary": {
+          "type": "color",
+          "value": "#1b1b1b",
+          "description": "Measured: css-var --color-text-primary, getComputedStyle on <main> in the light copy issue-light"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "#2f2f31",
+          "description": "Measured: css-var --color-text-secondary, getComputedStyle on <main> in the light copy issue-light"
+        },
+        "tertiary": {
+          "type": "color",
+          "value": "#5c5c5e",
+          "description": "Measured: css-var --color-text-tertiary, getComputedStyle on <main> in the light copy issue-light"
+        },
+        "quaternary": {
+          "type": "color",
+          "value": "#9c9d9f",
+          "description": "Measured: css-var --color-text-quaternary, getComputedStyle on <main> in the light copy issue-light"
+        },
+        "link": {
+          "type": "color",
+          "value": "#4061da",
+          "description": "Measured: css-var --sx-1xaoi8i (named --changelog-label-link, --integration-cms-link-color in Linear's bundle), getComputedStyle on <main> in the light copy issue-light"
+        },
+        "on-accent": {
+          "type": "color",
+          "value": "#fffeff",
+          "description": "Measured: computed color of Primary button (Create issue), state default, copy composer-light; equals --sx-ickszr"
+        }
+      },
+      "border": {
+        "primary": {
+          "type": "color",
+          "value": "#f1f1f1",
+          "description": "Measured: css-var --color-border-primary, getComputedStyle on <main> in the light copy issue-light"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "#dedede",
+          "description": "Measured: css-var --color-border-secondary, getComputedStyle on <main> in the light copy issue-light"
+        },
+        "tertiary": {
+          "type": "color",
+          "value": "#d3d3d3",
+          "description": "Measured: css-var --color-border-tertiary, getComputedStyle on <main> in the light copy issue-light"
+        },
+        "field": {
+          "type": "color",
+          "value": "#d8d8d8",
+          "description": "Measured: computed borderTopColor of Text field (workspace name), state default, copy settings-workspace-light"
+        },
+        "field-hover": {
+          "type": "color",
+          "value": "#c2c2c2",
+          "description": "Measured: computed borderTopColor of Text field (workspace name), state hover, copy settings-workspace-light"
+        },
+        "focus": {
+          "type": "color",
+          "value": "#6d78d5",
+          "description": "Measured: css-var --focus-ring-color, getComputedStyle on <main> in the light copy issue-light"
+        }
+      },
+      "accent": {
+        "default": {
+          "type": "color",
+          "value": "#6d78d5",
+          "description": "Measured: computed backgroundColor of Primary button (Create issue), state default, copy composer-light; equals --focus-ring-color, --sx-ch85qk"
+        },
+        "hover": {
+          "type": "color",
+          "value": "#5e6ac1",
+          "description": "Measured: computed backgroundColor of Primary button (Create issue), state hover, copy composer-light; equals --sx-1jffjrl"
+        },
+        "pressed": {
+          "type": "color",
+          "value": "#5e6ac1",
+          "description": "Measured: computed backgroundColor of Primary button (Create issue), state pressed, copy composer-light; equals --sx-1jffjrl"
+        }
+      },
+      "feedback": {
+        "danger": {
+          "type": "color",
+          "value": "#e2253b",
+          "description": "Measured: computed text colour of Destructive button (Delete workspace), state default, copy settings-workspace-light; equals --sx-1bu05id"
+        },
+        "danger-hover-bg": {
+          "type": "color",
+          "value": "#fde9e9",
+          "description": "Measured: computed paint colour of Destructive button (Delete workspace), state hover, copy settings-workspace-light"
+        },
+        "success": {
+          "type": "color",
+          "value": "#43bc58",
+          "description": "Measured: computed backgroundColor of Presence dot (Online), state default, copy settings-members-light; equals --sx-wsz0k3"
+        },
+        "warning": {
+          "type": "color",
+          "value": "#9d8242",
+          "description": "Measured: computed color of Project health, At risk, state default, copy projects-light"
+        },
+        "on-track": {
+          "type": "color",
+          "value": "#4c8055",
+          "description": "Measured: computed color of Project health, On track, state default, copy projects-light"
+        }
+      },
+      "status": {
+        "backlog": {
+          "type": "color",
+          "value": "#a2a6ac",
+          "description": "Measured: computed stroke or fill of the Backlog icon in the status menu, copy issue-light-menu"
+        },
+        "todo": {
+          "type": "color",
+          "value": "#a6a6a6",
+          "description": "Measured: computed stroke or fill of the Todo icon in the status menu, copy issue-light-menu"
+        },
+        "in-progress": {
+          "type": "color",
+          "value": "#f0bf00",
+          "description": "Measured: computed stroke or fill of the In Progress icon in the status menu, copy issue-light-menu"
+        },
+        "in-review": {
+          "type": "color",
+          "value": "#43bc58",
+          "description": "Measured: computed stroke or fill of the In Review icon in the status menu, copy issue-light-menu"
+        },
+        "done": {
+          "type": "color",
+          "value": "#5e6ad2",
+          "description": "Measured: computed stroke or fill of the Done icon in the status menu, copy issue-light-menu"
+        },
+        "canceled": {
+          "type": "color",
+          "value": "#95a2b3",
+          "description": "Measured: computed stroke or fill of the Canceled icon in the status menu, copy issue-light-menu"
+        },
+        "duplicate": {
+          "type": "color",
+          "value": "#95a2b3",
+          "description": "Measured: computed stroke or fill of the Duplicate icon in the status menu, copy issue-light-menu"
+        }
+      }
+    },
+    "shadow": {
+      "low": {
+        "type": "shadow",
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "6px",
+            "spread": "-2px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "description": "Measured: css-var --sx-10lzhmx, getComputedStyle on <main> in the light copy issue-light; matches the computed box-shadow of buttons, tabs and cards"
+      },
+      "medium": {
+        "type": "shadow",
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "6px",
+            "blur": "18px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "9px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "description": "Measured: css-var --sx-1dhg814 (named --changelog-shadow-medium in Linear's bundle), getComputedStyle on <main> in the light copy issue-light; matches the computed box-shadow of menus, toasts and select lists"
+      },
+      "high": {
+        "type": "shadow",
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.08)",
+            "offsetX": "0px",
+            "offsetY": "9px",
+            "blur": "48px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "6px",
+            "blur": "24px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "description": "Measured: css-var --sx-1k7v50d, getComputedStyle on <main> in the light copy issue-light; matches the computed box-shadow of the composer dialog"
+      },
+      "inset": {
+        "type": "shadow",
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "3px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "5px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "description": "Measured: css-var --sx-umgfby, getComputedStyle on <main> in the light copy issue-light"
+      },
+      "card": {
+        "type": "shadow",
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.088)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "6px",
+            "spread": "-2px",
+            "inset": false
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "description": "Measured: computed box-shadow of a board card, copy issues-board-light (a 0.5px ring plus the low shadow)"
+      }
+    }
+  },
+  "web": {
+    "canvas": {
+      "type": "color",
+      "value": "#08090a",
+      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#0f1011",
+      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+    },
+    "raised": {
+      "type": "color",
+      "value": "#161718",
+      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+    },
+    "border": {
+      "type": "color",
+      "value": "#24282c",
+      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+    },
+    "text": {
+      "type": "color",
+      "value": "#f7f8f8",
+      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+    },
+    "secondary": {
+      "type": "color",
+      "value": "#d0d6e0",
+      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+    },
+    "muted": {
+      "type": "color",
+      "value": "#8a8f98",
+      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+    },
+    "subtle": {
+      "type": "color",
+      "value": "#62666d",
+      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+    },
+    "primary": {
+      "type": "color",
+      "value": "#e5e5e6",
+      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+    },
+    "accent": {
+      "type": "color",
+      "value": "#5e6ad2",
+      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+    }
+  },
+  "brand": {
+    "mercury-white": {
+      "type": "color",
+      "value": "#f4f5f8",
+      "description": "Measured (brand page): https://linear.app/brand, displayed hex (Nordic Gray's RGB prose says 35, 35, 38; the displayed hex is kept)"
+    },
+    "nordic-gray": {
+      "type": "color",
+      "value": "#222326",
+      "description": "Measured (brand page): https://linear.app/brand, displayed hex (Nordic Gray's RGB prose says 35, 35, 38; the displayed hex is kept)"
+    }
+  },
+  "$themes": [
+    {
+      "id": "dark",
+      "name": "Dark",
+      "selectedTokenSets": {
+        "core": "source",
+        "dark": "enabled"
+      },
+      "$description": "Settings > Preferences > Interface theme: Dark (the account's theme; every dark copy)"
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "selectedTokenSets": {
+        "core": "source",
+        "light": "enabled"
+      },
+      "$description": "Interface theme: Light, switched for the light copies on 2026-10-17 with the owner's agreement and set back to Dark"
+    }
+  ],
   "$metadata": {
     "tokenSetOrder": [
-      "linear-reference"
+      "core",
+      "dark",
+      "light",
+      "web",
+      "brand"
     ]
   }
 }

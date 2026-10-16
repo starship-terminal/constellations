@@ -11,23 +11,8 @@ colors={
  'brand':{'mercury-white':'#F4F5F8','nordic-gray':'#222326'},
  'semantic':{'todo':'#A0A0A5','in-progress':'#F2C94C','done':'#5E6AD2','urgent':'#EB5757','success':'#27A644','link':'#4EA7FC'}
 }
-evidence={'app':'Screenshot-sampled surfaces; text, border and accent are reconstruction values. No authenticated computed CSS access.', 'web':'Measured computed CSS, 01-home-styles.json, 2026-09-23.', 'brand':'Official brand page. Nordic Gray RGB prose conflicts with hex; preserved displayed hex.', 'semantic':'Reconstruction semantics. Colors occur in public examples but workflow assignments are configurable.'}
-tokens={};studio={}
-for group,vals in colors.items():
- tokens[group]={};studio[group]={}
- for name,h in vals.items():
-  rgb=[int(h[i:i+2],16)/255 for i in (1,3,5)]
-  tokens[group][name]={'$type':'color','$value':{'colorSpace':'srgb','components':rgb,'alpha':1},'$description':evidence[group]}
-  studio[group][name]={'type':'color','value':h,'description':evidence[group]}
-for group,vals in {'radius':{'micro':4,'small':6,'control':8,'panel':12,'large':16,'pill':9999},'space':{'1':4,'2':8,'3':12,'4':16,'6':24,'8':32,'12':48,'16':64},'size':{'compact-control':28,'web-control':32,'row':40,'icon':16,'avatar':20}}.items():
- tokens[group]={k:{'$type':'dimension','$value':{'value':v,'unit':'px'},'$description':'Observed public radius values; spacing and app dimensions are reconstruction scales.'} for k,v in vals.items()}
- studio[group]={k:{'type':'dimension','value':str(v)+'px'} for k,v in vals.items()}
-tokens['font']={k:{'$type':'fontFamily','$value':v} for k,v in {'ui':['Inter Variable','Inter','Arial','sans-serif'],'mono':['Berkeley Mono','SF Mono','Menlo','monospace'],'editorial':['Tiempos Headline','Georgia','serif']}.items()}
-(P/'tokens/linear.tokens.json').write_text(json.dumps(tokens,indent=2))
-(P/'tokens/tokens-studio.json').write_text(json.dumps({'linear-reference':studio,'$themes':[],'$metadata':{'tokenSetOrder':['linear-reference']}},indent=2))
-css=':root {\n'+''.join(f'  --linear-{g}-{n}: {v};\n' for g,vals in colors.items() for n,v in vals.items())+'  --linear-font-ui: "Inter Variable", Inter, system-ui, sans-serif;\n  --linear-font-mono: "Berkeley Mono", "SF Mono", Menlo, monospace;\n  --linear-font-editorial: "Tiempos Headline", Georgia, serif;\n}\n'
-css+='body {font-family:var(--linear-font-ui);font-feature-settings:"cv01","ss03";}\n'
-(P/'tokens/linear.css').write_text(css)
+# Tokens are built by tools/build_tokens.py from the 2026-10-17 measurements; the colours above
+# only draw these SVG reconstructions.
 def rect(x,y,w,h,fill='#1A1A1C',r=8,stroke='none'):
  return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}"/>'
 def text(x,y,s,size=13,fill='#F7F8F8',weight=400,font='Inter, Arial, sans-serif'):
