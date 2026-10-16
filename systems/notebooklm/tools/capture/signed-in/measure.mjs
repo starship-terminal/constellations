@@ -274,13 +274,13 @@ const SPECS = [
   { key: 'link', group: 'Links', title: 'Link (Learn more, Notifications dialog)', snap: 'home-dark-notifications-dialog', find: () => Q('[role=dialog] a.learn-more-link'), states: ALL },
   { key: 'link-inline', group: 'Links', title: 'Inline link in help text (learn more)', snap: 'notebook-dark-website-dialog', find: () => Q('[role=dialog] a.learn-more'), states: ALL },
   // Inputs
-  { key: 'text-field', group: 'Inputs', title: 'Text field (Add people and groups)', snap: 'notebook-dark-share-dialog', find: () => C(Q('[role=dialog] input.mat-mdc-input-element'), 'mat-form-field'), states: ALL },
-  { key: 'search-field', group: 'Inputs', title: 'Search field (expanded header search)', snap: 'search-dark-empty', find: () => C(Q('input[aria-label="Search notebooks"]'), 'mat-form-field') || P(Q('input[aria-label="Search notebooks"]')), states: ALL, extra: { typed: { snap: 'home-dark-search-typed', find: () => P(Q('input[placeholder]')) } } },
+  { key: 'text-field', group: 'Inputs', title: 'Text field (Add people and groups)', snap: 'notebook-dark-share-dialog', find: () => C(Q('[role=dialog] input.mat-mdc-input-element'), 'mat-form-field'), fieldFocus: true, states: ALL },
+  { key: 'search-field', group: 'Inputs', title: 'Search field (expanded header search)', snap: 'search-dark-empty', find: () => C(Q('input[aria-label="Search notebooks"]'), 'mat-form-field') || P(Q('input[aria-label="Search notebooks"]')), fieldFocus: true, states: ALL, extra: { typed: { snap: 'home-dark-search-typed', find: () => P(Q('input[placeholder]')) } } },
   { key: 'text-area', group: 'Inputs', title: 'Text area (chat composer)', desc: 'A cdk-autosize <textarea> inside the rounded composer.', snap: 'notebook-dark', find: () => P(Q('textarea.query-box-input')), focusOn: () => Q('textarea.query-box-input'), states: ALL, extra: { typed: { snap: 'notebook-dark-composer-typed', find: () => P(Q('textarea.query-box-input')) } } },
-  { key: 'text-area-outlined', group: 'Inputs', title: 'Text area, outlined (Website URLs)', snap: 'notebook-dark-website-dialog', find: () => C(Q('[role=dialog] textarea'), 'mat-form-field'), states: ALL, extra: { typed: { snap: 'notebook-dark-website-dialog-typed', find: () => C(Q('[role=dialog] textarea'), 'mat-form-field') }, error: { snap: 'notebook-dark-website-dialog-error', find: () => C(Q('[role=dialog] textarea'), 'mat-form-field') } } },
+  { key: 'text-area-outlined', group: 'Inputs', title: 'Text area, outlined (Website URLs)', snap: 'notebook-dark-website-dialog', find: () => C(Q('[role=dialog] textarea'), 'mat-form-field'), fieldFocus: true, states: ALL, extra: { typed: { snap: 'notebook-dark-website-dialog-typed', find: () => C(Q('[role=dialog] textarea'), 'mat-form-field') }, error: { snap: 'notebook-dark-website-dialog-error', find: () => C(Q('[role=dialog] textarea'), 'mat-form-field') } } },
   { key: 'error-text', group: 'Inputs', title: 'Field error message', snap: 'notebook-dark-website-dialog-error', find: () => Q('[role=dialog] mat-error'), states: R, pad: 4 },
-  { key: 'text-area-custom', group: 'Inputs', title: 'Text area with counter (Custom chat prompt)', snap: 'notebook-dark-configure-chat-custom', find: () => C(Q('[role=dialog] textarea.custom-input-textarea'), 'mat-form-field'), states: ALL },
-  { key: 'select', group: 'Inputs', title: 'Select (Notebook access)', snap: 'notebook-dark-share-dialog', find: () => C(Q('[role=dialog] mat-select.general-access-select-dropdown'), 'mat-form-field') || Q('[role=dialog] mat-select.general-access-select-dropdown'), states: ALL, extra: { open: { snap: 'notebook-dark-share-select-open', prep: () => MOVESEL(), find: () => Q('.mat-mdc-select-panel') }, option: { snap: 'notebook-dark-share-select-open', prep: () => MOVESEL(), find: () => Q('.mat-mdc-select-panel mat-option', 1), states: ['hover'] }, 'option-selected': { snap: 'notebook-dark-share-select-open', prep: () => MOVESEL(), find: () => Q('.mat-mdc-select-panel mat-option.mdc-list-item--selected') } } },
+  { key: 'text-area-custom', group: 'Inputs', title: 'Text area with counter (Custom chat prompt)', snap: 'notebook-dark-configure-chat-custom', find: () => C(Q('[role=dialog] textarea.custom-input-textarea'), 'mat-form-field'), fieldFocus: true, states: ALL },
+  { key: 'select', group: 'Inputs', title: 'Select (Notebook access)', snap: 'notebook-dark-share-dialog', find: () => C(Q('[role=dialog] mat-select.general-access-select-dropdown'), 'mat-form-field') || Q('[role=dialog] mat-select.general-access-select-dropdown'), fieldFocus: true, states: ALL, extra: { open: { snap: 'notebook-dark-share-select-open', prep: () => MOVESEL(), find: () => Q('.mat-mdc-select-panel') }, option: { snap: 'notebook-dark-share-select-open', prep: () => MOVESEL(), find: () => Q('.mat-mdc-select-panel mat-option', 1), states: ['hover'] }, 'option-selected': { snap: 'notebook-dark-share-select-open', prep: () => MOVESEL(), find: () => Q('.mat-mdc-select-panel mat-option.mdc-list-item--selected') } } },
   { key: 'menu-trigger', group: 'Inputs', title: 'Menu trigger (Web source type)', snap: 'notebook-dark', find: () => Q('nb-button.corpus-menu-trigger button'), states: ALLP },
   { key: 'checkbox', group: 'Inputs', title: 'Checkbox (source row, checked)', snap: 'notebook-dark', find: () => Q('mat-checkbox.select-checkbox'), focusOn: () => document.querySelector('mat-checkbox.select-checkbox input'), states: ALL, extra: { 'notify-checked': { snap: 'notebook-dark-share-dialog', find: () => Q('[role=dialog] mat-checkbox') } } },
   { key: 'radio', group: 'Inputs', title: 'Radio group drawn as toggle chips (Configure Chat)', desc: 'mat-button-toggle-group with role radiogroup; each chip is a role=radio button. The checked chip gains a leading check.', snap: 'notebook-dark-configure-chat', find: () => Q('[role=dialog] mat-button-toggle:not(.mat-button-toggle-checked) button'), states: ALLP, extra: { selected: { find: () => Q('[role=dialog] mat-button-toggle.mat-button-toggle-checked button') }, group: { find: () => Q('[role=dialog] mat-button-toggle-group') } } },
@@ -432,6 +432,21 @@ async function measureSnap(browser, label, specs, out) {
         if (job.prep) { await page.evaluate(`(${job.prep.toString()})()`); await page.waitForTimeout(250); }
         const loc = await tag(job.find, 'el');
         if (!loc) throw new Error('element not found');
+        // NotebookLM (adapt): Material outlined fields show focus through classes Angular's focus
+        // monitor sets (mat-focused, mdc-text-field--focused), which a static copy keeps from the
+        // moment it was taken and no script clears or sets. For a field spec's own states, every
+        // copied focus class is cleared at rest and on hover, and set on the measured field after
+        // real keyboard focus, as the focus monitor would. Variant copies (typed, error) keep the
+        // classes they were captured with.
+        if (spec.fieldFocus && !job.variant) {
+          await loc.evaluate((el, on) => {
+            for (const f of document.querySelectorAll('mat-form-field')) {
+              const mine = on && (f.contains(el) || el.contains(f) || f === el);
+              f.classList.toggle('mat-focused', mine);
+              f.querySelectorAll('.mdc-text-field').forEach((t) => t.classList.toggle('mdc-text-field--focused', mine));
+            }
+          }, job.base === 'focus-visible');
+        }
         await ensureVisible(loc);
         let via = job.variant && job.base === 'default' ? `at rest, captured ${job.state}` : 'at rest';
         let focus;

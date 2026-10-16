@@ -78,11 +78,13 @@ SIZE = {v: k for v, k in dim_map("size").items() if not k.startswith("size.icon-
 for _k, _t in flat(TOK["core"]["size"]):
     if not _k.startswith("icon-"):
         SIZE.setdefault(str(_t["$value"]), f"size.{_k}")
+# A type role matches only when family, size, weight and line height all match.
+FAMILY = {k: t["$value"][0] for k, t in flat(TOK["core"]["fontFamily"])}
 TYPE = {}
 for k, t in flat(TOK["core"]["typography"]):
     v = t["$value"]
-    TYPE.setdefault((v["fontSize"], str(v["fontWeight"]), v["lineHeight"]), f"typography.{k}")
-    TYPE.setdefault((v["fontSize"], str(v["fontWeight"])), f"typography.{k}")
+    fam = FAMILY[v["fontFamily"].strip("{}").split(".")[1]]
+    TYPE.setdefault((fam, v["fontSize"], str(v["fontWeight"]), v["lineHeight"]), f"typography.{k}")
 SHADOW = {}
 for theme in ("dark", "light"):
     for k, t in flat(TOK[theme]["shadow"]):
@@ -133,10 +135,16 @@ def len_cell(v, table):
     return tok(p) if p else raw(v)
 
 def pad_cell(st):
-    t, l = st["paddingTop"], st["paddingLeft"]
-    if t == "0px" and l == "0px":
+    """CSS order (top right bottom left), shortened only where sides match."""
+    t, r, b, l = st["paddingTop"], st["paddingRight"], st["paddingBottom"], st["paddingLeft"]
+    if t == r == b == l == "0px":
         return "0"
-    return f"{len_cell(t, SPACE)} {len_cell(l, SPACE)}"
+    sides = [t, r, b, l]
+    if t == b and r == l:
+        sides = [t, r] if t != r else [t]
+    elif r == l:
+        sides = [t, r, b]
+    return " ".join(len_cell(v, SPACE) for v in sides)
 
 ICON_SIZE = {str(t["$value"]): f"size.{k}" for k, t in flat(TOK["core"]["size"]) if k.startswith("icon-")}
 def type_cell(s):
@@ -146,7 +154,10 @@ def type_cell(s):
         p = ICON_SIZE.get(ts.get("fontSize"))
         return "icon glyph " + (tok(p) if p else raw(ts.get("fontSize")))
     size, w, lh = ts.get("fontSize") or st["fontSize"], str(int(float(ts.get("fontWeight") or st["fontWeight"]))), ts.get("lineHeight") or st["lineHeight"]
-    p = TYPE.get((size, w, lh)) or TYPE.get((size, w))
+    fam = (ts.get("fontFamily") or st["fontFamily"]).split(",")[0].strip().strip('"')
+    p = TYPE.get((fam, size, w, lh))
+    if not p:
+        return raw(f"{fam} {size}/{lh} {w}")
     return tok(p) if p else raw(f"{size}/{lh} {w}")
 
 def inner_layer(s):
@@ -156,12 +167,14 @@ def inner_layer(s):
                 return p.get("bg"), p.get("opacity")
     return None, None
 
-def focus_cell(s, theme):
+def focus_cell(s, theme, focused=True):
     st = s["style"]
     if st["outlineStyle"] == "auto":
         return "browser default ring (outline auto), no product ring"
     if st["outlineStyle"] != "none" and st["outlineWidth"] != "0px" and not st["outlineColor"].endswith(", 0)"):
         return f'{len_cell(st["outlineWidth"], {"3px": "focusRing.width", "2px": "borderWidth.field-focus", "1px": "borderWidth.hairline"})} {color_cell(st["outlineColor"], theme, "border")} offset {len_cell(st["outlineOffset"], {"2px": "focusRing.offset"})}'
+    if not focused:
+        return "none"
     for p in s.get("paint", []):
         if "focus-indicator" in p["node"] and p.get("border"):
             m = re.search(r"(\d+px) solid (rgba?\([^)]*\))", p["border"])
@@ -173,14 +186,10 @@ def focus_cell(s, theme):
                 return f"browser default ring on {p['node'].split('.')[0]} (outline auto), no product ring"
             if m and m.group(2) != "none":
                 return f"{m.group(1)} {m.group(2)} {color_cell(m.group(3), theme, 'border')} on {p['node'].split('.')[0]}"
-        if p.get("border") and "notch" in p["node"]:
+        if p.get("border") and "notch" in p["node"] and focused:
             m = re.search(r"(\d+px) solid (rgba?\([^)]*\))", p["border"])
             if m:
                 return 'outline thickens to ' + len_cell(m.group(1), {"2px": "borderWidth.field-focus", "1px": "borderWidth.field"}) + ' ' + color_cell(m.group(2), theme, "border")
-    for p in s.get("paint", []):
-        if p.get("border") and re.search(r"(\d+px) solid (rgb\(\d+, \d+, \d+\))", p["border"]):
-            m = re.search(r"(\d+px) solid (rgb\(\d+, \d+, \d+\))", p["border"])
-            return f'{m.group(1)} {color_cell(m.group(2), theme, "border")} on {p["node"].split(".")[0]}'
     return "none painted"
 
 def fill_cell(s, theme):
@@ -294,7 +303,8 @@ for group in GROUPS:
                 if not d or "style" not in d:
                     cells.append((d or {}).get("skipped") or (d or {}).get("error") or "not measured")
                     continue
-                cells.append(both(lambda x, th: fn(x, th), d, l if l and "style" in l else None))
+                f = (lambda x, th, st=s: focus_cell(x, th, "focus" in st)) if label == "Focus ring" else fn
+                cells.append(both(f, d, l if l and "style" in l else None))
             if all(x in ("none", "0", "none painted", "") for x in cells) and label not in ("Fill", "Text", "Type"):
                 continue
             W(f"| {label} | " + " | ".join(cells) + " |")

@@ -438,7 +438,7 @@ def theme_set(theme):
         "divider": T(re.search(r"rgb\([^)]*\)", paint("table-row", st, "td|tr", "border")).group(0) and hexa(re.search(r"rgb\([^)]*\)", paint("table-row", st, "td|tr", "border")).group(0)), "color", M("computed bottom border of list-view table cells")),
         "strong": T(vt("--nlm-stroke-focus"), "color", M("css-var --nlm-stroke-focus")),
         "subtle": T(vt("--nlm-stroke-default"), "color", M("css-var --nlm-stroke-default; computed border of the empty-state panel")),
-        "field": T(hexa(re.search(r"rgb\([^)]*\)", paint("text-area-outlined", SS(theme, "focus-visible"), "notch|outline|div|span", "border")).group(0)), "color", M("computed outline of the outlined text area (same colour at rest and focused; it thickens)")),
+        "field": T(hexa(re.search(r"rgb\([^)]*\)", paint("text-area-outlined", SS(theme, "focus-visible"), "notch|outline|div|span", "border")).group(0)), "color", M("computed outline of the outlined text area on hover (1px) and with keyboard focus (2px); at rest it is border.subtle")),
         "focus": T(hexa(cstyle("button-accent", SS(theme, "focus-visible"), "outlineColor")), "color", M("computed outline colour of nb-buttons with keyboard focus (on-surface)")),
         "focus-strong": T(vt("--nlm-strong-focus-indicator"), "color", M("css-var --nlm-strong-focus-indicator; the computed focus ring of checkboxes, links and Material toggles"), "The second focus colour: lavender in dark, brand blue in light."),
         "error": T(hexa(re.search(r"rgb\([^)]*\)", paint("text-area-outlined", SS(theme, "error"), "notch|outline|div|span", "border")).group(0)), "color", M("computed outline of the URL text area in its error state")),

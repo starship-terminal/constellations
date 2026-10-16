@@ -11067,7 +11067,7 @@
      "theme": "dark",
      "snapshot": "notebook-dark-share-dialog",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled",
      "text": "Add people and groups",
      "rect": {
       "x": 527,
@@ -11151,18 +11151,18 @@
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__leading",
        "size": "16.0x56.0",
-       "border": "T:2px solid rgb(230, 230, 230) | B:2px solid rgb(230, 230, 230) | L:2px solid rgb(230, 230, 230)",
+       "border": "T:1px solid rgb(55, 56, 59) | B:1px solid rgb(55, 56, 59) | L:1px solid rgb(55, 56, 59)",
        "radius": "16px 0px 0px 16px"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__notch",
        "size": "138.8x56.0",
-       "border": "B:2px solid rgb(230, 230, 230) | L:1px solid rgba(0, 0, 0, 0)"
+       "border": "B:1px solid rgb(55, 56, 59) | L:1px solid rgba(0, 0, 0, 0)"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__trailing",
        "size": "232.3x56.0",
-       "border": "T:2px solid rgb(230, 230, 230) | R:2px solid rgb(230, 230, 230) | B:2px solid rgb(230, 230, 230)",
+       "border": "T:1px solid rgb(55, 56, 59) | R:1px solid rgb(55, 56, 59) | B:1px solid rgb(55, 56, 59)",
        "radius": "0px 16px 16px 0px"
       }
      ],
@@ -11192,7 +11192,7 @@
      "theme": "dark",
      "snapshot": "notebook-dark-share-dialog",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled",
      "text": "Add people and groups",
      "rect": {
       "x": 527,
@@ -11276,18 +11276,18 @@
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__leading",
        "size": "16.0x56.0",
-       "border": "T:2px solid rgb(230, 230, 230) | B:2px solid rgb(230, 230, 230) | L:2px solid rgb(230, 230, 230)",
+       "border": "T:1px solid rgb(230, 230, 230) | B:1px solid rgb(230, 230, 230) | L:1px solid rgb(230, 230, 230)",
        "radius": "16px 0px 0px 16px"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__notch",
        "size": "138.8x56.0",
-       "border": "B:2px solid rgb(230, 230, 230) | L:1px solid rgba(0, 0, 0, 0)"
+       "border": "B:1px solid rgb(230, 230, 230) | L:1px solid rgba(0, 0, 0, 0)"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__trailing",
        "size": "232.3x56.0",
-       "border": "T:2px solid rgb(230, 230, 230) | R:2px solid rgb(230, 230, 230) | B:2px solid rgb(230, 230, 230)",
+       "border": "T:1px solid rgb(230, 230, 230) | R:1px solid rgb(230, 230, 230) | B:1px solid rgb(230, 230, 230)",
        "radius": "0px 16px 16px 0px"
       }
      ],
@@ -11317,7 +11317,7 @@
      "theme": "dark",
      "snapshot": "notebook-dark-share-dialog",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled mat-focused",
      "text": "Add people and groups",
      "rect": {
       "x": 527,
@@ -11447,7 +11447,7 @@
      "theme": "light",
      "snapshot": "notebook-dark-share-dialog#light",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled",
      "text": "Add people and groups",
      "rect": {
       "x": 527,
@@ -11531,18 +11531,18 @@
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__leading",
        "size": "16.0x56.0",
-       "border": "T:2px solid rgb(0, 0, 0) | B:2px solid rgb(0, 0, 0) | L:2px solid rgb(0, 0, 0)",
+       "border": "T:1px solid rgb(221, 225, 235) | B:1px solid rgb(221, 225, 235) | L:1px solid rgb(221, 225, 235)",
        "radius": "16px 0px 0px 16px"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__notch",
        "size": "138.8x56.0",
-       "border": "B:2px solid rgb(0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+       "border": "B:1px solid rgb(221, 225, 235) | L:1px solid rgba(0, 0, 0, 0)"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__trailing",
        "size": "232.3x56.0",
-       "border": "T:2px solid rgb(0, 0, 0) | R:2px solid rgb(0, 0, 0) | B:2px solid rgb(0, 0, 0)",
+       "border": "T:1px solid rgb(221, 225, 235) | R:1px solid rgb(221, 225, 235) | B:1px solid rgb(221, 225, 235)",
        "radius": "0px 16px 16px 0px"
       }
      ],
@@ -11554,7 +11554,7 @@
       "lineHeight": "normal",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.92)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -11572,7 +11572,7 @@
      "theme": "light",
      "snapshot": "notebook-dark-share-dialog#light",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled",
      "text": "Add people and groups",
      "rect": {
       "x": 527,
@@ -11656,18 +11656,18 @@
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__leading",
        "size": "16.0x56.0",
-       "border": "T:2px solid rgb(0, 0, 0) | B:2px solid rgb(0, 0, 0) | L:2px solid rgb(0, 0, 0)",
+       "border": "T:1px solid rgb(0, 0, 0) | B:1px solid rgb(0, 0, 0) | L:1px solid rgb(0, 0, 0)",
        "radius": "16px 0px 0px 16px"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__notch",
        "size": "138.8x56.0",
-       "border": "B:2px solid rgb(0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+       "border": "B:1px solid rgb(0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__trailing",
        "size": "232.3x56.0",
-       "border": "T:2px solid rgb(0, 0, 0) | R:2px solid rgb(0, 0, 0) | B:2px solid rgb(0, 0, 0)",
+       "border": "T:1px solid rgb(0, 0, 0) | R:1px solid rgb(0, 0, 0) | B:1px solid rgb(0, 0, 0)",
        "radius": "0px 16px 16px 0px"
       }
      ],
@@ -11697,7 +11697,7 @@
      "theme": "light",
      "snapshot": "notebook-dark-share-dialog#light",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field add-recipient-field mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled mat-focused",
      "text": "Add people and groups",
      "rect": {
       "x": 527,
@@ -12082,7 +12082,7 @@
      "theme": "dark",
      "snapshot": "search-dark-empty",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field notebook-search-field mat-mdc-form-field-type-mat-input mat-mdc-form-field-has-icon-prefix mat-mdc-form-field-has-icon-suffix mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field notebook-search-field mat-mdc-form-field-type-mat-input mat-mdc-form-field-has-icon-prefix mat-mdc-form-field-has-icon-suffix mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled mat-focused",
      "text": "search close",
      "rect": {
       "x": 410.9,
@@ -12575,7 +12575,7 @@
      "theme": "light",
      "snapshot": "search-dark-empty#light",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field notebook-search-field mat-mdc-form-field-type-mat-input mat-mdc-form-field-has-icon-prefix mat-mdc-form-field-has-icon-suffix mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field notebook-search-field mat-mdc-form-field-type-mat-input mat-mdc-form-field-has-icon-prefix mat-mdc-form-field-has-icon-suffix mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled mat-focused",
      "text": "search close",
      "rect": {
       "x": 410.9,
@@ -13835,7 +13835,7 @@
      "theme": "dark",
      "snapshot": "notebook-dark-website-dialog",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-form-field-animations-enabled",
      "text": "",
      "rect": {
       "x": 407,
@@ -13919,13 +13919,13 @@
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__leading",
        "size": "16.0x200.0",
-       "border": "T:2px solid rgb(230, 230, 230) | B:2px solid rgb(230, 230, 230) | L:2px solid rgb(230, 230, 230)",
+       "border": "T:1px solid rgb(55, 56, 59) | B:1px solid rgb(55, 56, 59) | L:1px solid rgb(55, 56, 59)",
        "radius": "16px 0px 0px 16px"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__trailing",
        "size": "610.0x200.0",
-       "border": "T:2px solid rgb(230, 230, 230) | R:2px solid rgb(230, 230, 230) | B:2px solid rgb(230, 230, 230)",
+       "border": "T:1px solid rgb(55, 56, 59) | R:1px solid rgb(55, 56, 59) | B:1px solid rgb(55, 56, 59)",
        "radius": "0px 16px 16px 0px"
       }
      ],
@@ -13936,7 +13936,7 @@
      "theme": "dark",
      "snapshot": "notebook-dark-website-dialog",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-form-field-animations-enabled",
      "text": "",
      "rect": {
       "x": 407,
@@ -14020,13 +14020,13 @@
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__leading",
        "size": "16.0x200.0",
-       "border": "T:2px solid rgb(230, 230, 230) | B:2px solid rgb(230, 230, 230) | L:2px solid rgb(230, 230, 230)",
+       "border": "T:1px solid rgb(230, 230, 230) | B:1px solid rgb(230, 230, 230) | L:1px solid rgb(230, 230, 230)",
        "radius": "16px 0px 0px 16px"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__trailing",
        "size": "610.0x200.0",
-       "border": "T:2px solid rgb(230, 230, 230) | R:2px solid rgb(230, 230, 230) | B:2px solid rgb(230, 230, 230)",
+       "border": "T:1px solid rgb(230, 230, 230) | R:1px solid rgb(230, 230, 230) | B:1px solid rgb(230, 230, 230)",
        "radius": "0px 16px 16px 0px"
       }
      ],
@@ -14037,7 +14037,7 @@
      "theme": "dark",
      "snapshot": "notebook-dark-website-dialog",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-form-field-animations-enabled mat-focused",
      "text": "",
      "rect": {
       "x": 407,
@@ -14369,7 +14369,7 @@
      "theme": "light",
      "snapshot": "notebook-dark-website-dialog#light",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-form-field-animations-enabled",
      "text": "",
      "rect": {
       "x": 407,
@@ -14453,13 +14453,13 @@
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__leading",
        "size": "16.0x200.0",
-       "border": "T:2px solid rgb(0, 0, 0) | B:2px solid rgb(0, 0, 0) | L:2px solid rgb(0, 0, 0)",
+       "border": "T:1px solid rgb(221, 225, 235) | B:1px solid rgb(221, 225, 235) | L:1px solid rgb(221, 225, 235)",
        "radius": "16px 0px 0px 16px"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__trailing",
        "size": "610.0x200.0",
-       "border": "T:2px solid rgb(0, 0, 0) | R:2px solid rgb(0, 0, 0) | B:2px solid rgb(0, 0, 0)",
+       "border": "T:1px solid rgb(221, 225, 235) | R:1px solid rgb(221, 225, 235) | B:1px solid rgb(221, 225, 235)",
        "radius": "0px 16px 16px 0px"
       }
      ],
@@ -14470,7 +14470,7 @@
      "theme": "light",
      "snapshot": "notebook-dark-website-dialog#light",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-form-field-animations-enabled",
      "text": "",
      "rect": {
       "x": 407,
@@ -14554,13 +14554,13 @@
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__leading",
        "size": "16.0x200.0",
-       "border": "T:2px solid rgb(0, 0, 0) | B:2px solid rgb(0, 0, 0) | L:2px solid rgb(0, 0, 0)",
+       "border": "T:1px solid rgb(0, 0, 0) | B:1px solid rgb(0, 0, 0) | L:1px solid rgb(0, 0, 0)",
        "radius": "16px 0px 0px 16px"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__trailing",
        "size": "610.0x200.0",
-       "border": "T:2px solid rgb(0, 0, 0) | R:2px solid rgb(0, 0, 0) | B:2px solid rgb(0, 0, 0)",
+       "border": "T:1px solid rgb(0, 0, 0) | R:1px solid rgb(0, 0, 0) | B:1px solid rgb(0, 0, 0)",
        "radius": "0px 16px 16px 0px"
       }
      ],
@@ -14571,7 +14571,7 @@
      "theme": "light",
      "snapshot": "notebook-dark-website-dialog#light",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-focused mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field urls-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-form-field-animations-enabled mat-focused",
      "text": "",
      "rect": {
       "x": 407,
@@ -15365,7 +15365,7 @@
      "theme": "dark",
      "snapshot": "notebook-dark-configure-chat-custom",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field custom-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field custom-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-form-field-animations-enabled mat-focused",
      "text": "0 / 10000",
      "rect": {
       "x": 316,
@@ -15449,13 +15449,13 @@
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__leading",
        "size": "12.0x104.0",
-       "border": "T:1px solid rgb(55, 56, 59) | B:1px solid rgb(55, 56, 59) | L:1px solid rgb(55, 56, 59)",
+       "border": "T:2px solid rgb(230, 230, 230) | B:2px solid rgb(230, 230, 230) | L:2px solid rgb(230, 230, 230)",
        "radius": "4px 0px 0px 4px"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__trailing",
        "size": "796.0x104.0",
-       "border": "T:1px solid rgb(55, 56, 59) | R:1px solid rgb(55, 56, 59) | B:1px solid rgb(55, 56, 59)",
+       "border": "T:2px solid rgb(230, 230, 230) | R:2px solid rgb(230, 230, 230) | B:2px solid rgb(230, 230, 230)",
        "radius": "0px 4px 4px 0px"
       }
      ],
@@ -15709,7 +15709,7 @@
      "theme": "light",
      "snapshot": "notebook-dark-configure-chat-custom#light",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field custom-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field custom-input mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-invalid mat-form-field-animations-enabled mat-focused",
      "text": "0 / 10000",
      "rect": {
       "x": 316,
@@ -15793,13 +15793,13 @@
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__leading",
        "size": "12.0x104.0",
-       "border": "T:1px solid rgb(221, 225, 235) | B:1px solid rgb(221, 225, 235) | L:1px solid rgb(221, 225, 235)",
+       "border": "T:2px solid rgb(0, 0, 0) | B:2px solid rgb(0, 0, 0) | L:2px solid rgb(0, 0, 0)",
        "radius": "4px 0px 0px 4px"
       },
       {
        "node": "div.mat-mdc-notch-piece.mdc-notched-outline__trailing",
        "size": "796.0x104.0",
-       "border": "T:1px solid rgb(221, 225, 235) | R:1px solid rgb(221, 225, 235) | B:1px solid rgb(221, 225, 235)",
+       "border": "T:2px solid rgb(0, 0, 0) | R:2px solid rgb(0, 0, 0) | B:2px solid rgb(0, 0, 0)",
        "radius": "0px 4px 4px 0px"
       }
      ],
@@ -16070,7 +16070,7 @@
      "theme": "dark",
      "snapshot": "notebook-dark-share-dialog",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field general-access-field-inner-content select-inner-content select-form-field mat-mdc-form-field-type-mat-select mat-form-field-appearance-fill mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field general-access-field-inner-content select-inner-content select-form-field mat-mdc-form-field-type-mat-select mat-form-field-appearance-fill mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled mat-focused",
      "text": "Restricted",
      "rect": {
       "x": 579,
@@ -16173,9 +16173,9 @@
      "icon": {
       "w": 24,
       "h": 24,
-      "fill": "rgba(255, 255, 255, 0.55)",
+      "fill": "rgb(230, 230, 230)",
       "stroke": "none",
-      "color": "rgba(255, 255, 255, 0.55)",
+      "color": "rgb(230, 230, 230)",
       "strokeWidth": "1px",
       "classes": ""
      },
@@ -16914,7 +16914,7 @@
      "theme": "light",
      "snapshot": "notebook-dark-share-dialog#light",
      "tag": "mat-form-field",
-     "classes": "mat-mdc-form-field general-access-field-inner-content select-inner-content select-form-field mat-mdc-form-field-type-mat-select mat-form-field-appearance-fill mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled",
+     "classes": "mat-mdc-form-field general-access-field-inner-content select-inner-content select-form-field mat-mdc-form-field-type-mat-select mat-form-field-appearance-fill mat-primary ng-untouched ng-pristine ng-valid mat-form-field-animations-enabled mat-focused",
      "text": "Restricted",
      "rect": {
       "x": 579,
@@ -17017,9 +17017,9 @@
      "icon": {
       "w": 24,
       "h": 24,
-      "fill": "rgba(0, 0, 0, 0.55)",
+      "fill": "rgb(0, 0, 0)",
       "stroke": "none",
-      "color": "rgba(0, 0, 0, 0.55)",
+      "color": "rgb(0, 0, 0)",
       "strokeWidth": "1px",
       "classes": ""
      },

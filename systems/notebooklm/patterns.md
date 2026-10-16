@@ -18,7 +18,7 @@ How NotebookLM's components combine for its recurring jobs, written from the 202
 
 **Components.** Outlined text area and text field ([text-area-outlined](components.md#text-area-outlined), [text-field](components.md#text-field), [text-area-custom](components.md#text-area-custom)), the field error message ([error-text](components.md#error-text)), the dialog confirm button ([button-dialog-primary](components.md#button-dialog-primary), [button-disabled](components.md#button-disabled)).
 
-**Layout.** Fields are Material outlined fields: a 1px outline in `border.field` that thickens to 2px (`borderWidth.field-focus`) on focus, with no separate focus ring. Help text sits under the field as a bulleted list. The confirm button sits bottom right and stays disabled (`state.disabled-container`, `text.disabled-button`) until the input is valid, so the product prevents a bad submit instead of rejecting one.
+**Layout.** Fields are Material outlined fields: a 1px outline in `border.subtle` at rest, `border.field` on hover, and the same colour at 2px (`borderWidth.field-focus`) on focus, with no separate focus ring. Help text sits under the field as a bulleted list. The confirm button sits bottom right and stays disabled (`state.disabled-container`, `text.disabled-button`) until the input is valid, so the product prevents a bad submit instead of rejecting one.
 
 **When the error appears.** On blur, not on each keystroke: typing "not a link" changed nothing until focus left the field, then the outline turned `border.error` and "URL should start with http:// or https://" appeared under it in `text.error` at 13px. Insert stayed disabled throughout. Recovery is editing the field; nothing else on the dialog changes.
 

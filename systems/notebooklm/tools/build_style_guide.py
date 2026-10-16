@@ -103,7 +103,7 @@ def palette(fam):
                      for k, t in T["core"]["palette"][fam].items())
 
 type_rows = "\n".join(
-    f'<tr><td><code>{k}</code></td><td style="font:var(--typography-{k});letter-spacing:{t["$value"]["letterSpacing"]}">The quick brown fox</td>'
+    f'<tr><td><code>{k}</code></td><td style="font:var(--typography-{k});letter-spacing:{t["$value"]["letterSpacing"]};font-variation-settings:{html.escape(t["$extensions"].get("fontVariationSettings") or "normal", quote=True)}">The quick brown fox</td>'
     f'<td>{T["core"]["fontFamily"][family_key(t["$value"])]["$value"]} · {t["$value"]["fontSize"]}/{t["$value"]["lineHeight"]} · {t["$value"]["fontWeight"]} · {t["$value"]["letterSpacing"]}</td>'
     f'<td>{html.escape(t.get("$description",""))}</td></tr>'
     for k, t in T["core"]["typography"].items())
