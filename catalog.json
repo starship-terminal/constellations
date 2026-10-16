@@ -727,15 +727,18 @@
         "forms"
       ],
       "shape": "audit",
-      "captured": "2026-09-25",
-      "access": "published packages and the archive repo at a pinned commit",
+      "captured": "2026-10-17",
+      "access": "published packages and the archive repo at a pinned commit (2026-09-25); gallery re-shot and ramps, focus states and patterns added in headless Chromium (2026-10-17)",
       "themes": [
         "light",
         "light-mobile",
         "light-high-contrast-experimental",
         "dark-experimental"
       ],
-      "widths": [],
+      "widths": [
+        1440,
+        390
+      ],
       "entry": "systems/polaris/README.md",
       "tokens": "systems/polaris/tokens/polaris.tokens-studio.json",
       "styleGuide": "systems/polaris/style-guide.html",
