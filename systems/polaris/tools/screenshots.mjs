@@ -79,6 +79,12 @@ if (!only) {
     page = await open(s, {theme: 'dark-experimental'}); await shoot(page, 'screenshots/dark/' + file(i, s)); await page.close();
     page = await open(s, {width: 390, height: 844}); await shoot(page, 'screenshots/phone/' + file(i, s)); await page.close();
   }
+  page = await open('App shell', {width: 390, height: 844});
+  await page.getByRole('button', {name: 'Toggle menu'}).click(); await page.getByRole('link', {name: 'Customers'}).waitFor();
+  await page.waitForTimeout(400);
+  // The open drawer locks page scroll, so a full-page shot stops at the viewport: shoot the shell itself.
+  await page.locator('.shell').screenshot({path: 'screenshots/phone/14-app-shell-nav-open.png', animations: 'disabled'});
+  console.log('wrote screenshots/phone/14-app-shell-nav-open.png'); await page.close();
 }
 
 // Focus-visible: press Tab once so the page is in keyboard modality, focus each control,

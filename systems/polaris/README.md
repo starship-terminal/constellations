@@ -184,7 +184,7 @@ All four sets are retained: `light`, `light-mobile`, `light-high-contrast-experi
 | `screenshots/01` to `13` | One full page per guide section, light, 1440 px |
 | `screenshots/14` to `21` | Open states: modal, popover menu, app shell, success and error toasts, the States section, delete confirmation, tooltip |
 | `screenshots/dark/` | The nine component sections in `dark-experimental`, 1440 px |
-| `screenshots/phone/` | The same nine sections at 390 px, light |
+| `screenshots/phone/` | The same nine sections at 390 px, light, plus the app shell with its navigation drawer opened from the top bar's menu button |
 | `screenshots/focus/` | 23 controls in their focus-visible state, 2x crops; computed values in `evidence/focus-states.json` |
 
 Screenshots 01 to 15 replaced the 2026-09-25 originals (taken at 1327 px through computer use) on 2026-10-17.
@@ -227,7 +227,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Refreshed 2
 | Table | Captured: `DataTable` with totals | [11-data](screenshots/11-data.png) |
 | Avatar | Captured: initials and customer placeholder, two sizes | [10-surfaces](screenshots/10-surfaces.png) |
 | Badge | Captured: every tone, progress, small | [06-badges-tags](screenshots/06-badges-tags.png) |
-| App shell and navigation | Captured | [16-app-shell](screenshots/16-app-shell.png), [phone/14-app-shell](screenshots/phone/14-app-shell.png) |
+| App shell and navigation | Captured: desktop, and phone with the drawer closed and open | [16-app-shell](screenshots/16-app-shell.png), [phone/14-app-shell](screenshots/phone/14-app-shell.png), [phone/14-app-shell-nav-open](screenshots/phone/14-app-shell-nav-open.png) |
 | Form with a validation error | Captured | [19-states](screenshots/19-states.png) |
 | Empty, loading, error states | Captured | [19-states](screenshots/19-states.png), [11-data](screenshots/11-data.png), [18-app-shell-error-toast](screenshots/18-app-shell-error-toast.png) |
 | Destructive confirmation | Captured | [20-delete-confirm](screenshots/20-delete-confirm.png) |
