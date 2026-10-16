@@ -308,12 +308,15 @@
         "research"
       ],
       "shape": "reference",
-      "captured": "2026-10-04",
+      "captured": "2026-10-17",
       "access": "signed in",
       "themes": [
         "light"
       ],
-      "widths": [],
+      "widths": [
+        1440,
+        390
+      ],
       "entry": "systems/researchrabbit/README.md",
       "tokens": "systems/researchrabbit/tokens.json",
       "styleGuide": "systems/researchrabbit/style-guide.html",
@@ -334,7 +337,8 @@
         ]
       },
       "extras": [
-        "systems/researchrabbit/graph.md"
+        "systems/researchrabbit/graph.md",
+        "systems/researchrabbit/patterns.md"
       ],
       "source": {
         "repo": "https://github.com/c-wenlong/self-learn",

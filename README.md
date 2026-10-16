@@ -50,7 +50,7 @@ secret. `make help` lists the other targets (`make check` validates
 | [notebooklm](systems/notebooklm) | Source-grounded AI workspace, sources panel, chat | 2026-09-25 | light, dark | [README](systems/notebooklm/README.md) |
 | [coursera](systems/coursera) | Course catalogue, course and module pages, course cards | 2026-09-29 | light, dark | [README](systems/coursera/README.md) |
 | [gauth](systems/gauth) | AI tutor app, lesson players with a tutor panel | 2026-10-17 | light | [README](systems/gauth/README.md) |
-| [researchrabbit](systems/researchrabbit) | Interactive graph beside a list | 2026-10-04 | light | [README](systems/researchrabbit/README.md), [graph.md](systems/researchrabbit/graph.md) |
+| [researchrabbit](systems/researchrabbit) | Interactive graph beside a list | 2026-10-17 | light | [README](systems/researchrabbit/README.md), [graph.md](systems/researchrabbit/graph.md), [patterns.md](systems/researchrabbit/patterns.md) |
 | [manus](systems/manus) | Agent app shell, sidebar, a Library of agent outputs | 2026-10-17 | light, dark | [README](systems/manus/README.md) |
 | [chatgpt](systems/chatgpt) | The baseline chat UI: thread, composer, history | 2026-10-04 | light, dark | [README](systems/chatgpt/README.md) |
 | [claude](systems/claude) | A quiet chat shell, Artifacts, Projects | 2026-10-04 | light, dark | [README](systems/claude/README.md) |

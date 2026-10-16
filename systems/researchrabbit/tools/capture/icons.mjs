@@ -26,7 +26,7 @@ import zlib from 'node:zlib';
 const HERE = path.dirname(new URL(import.meta.url).pathname);
 const REF = path.resolve(HERE, '..', '..');
 const OUT = path.join(REF, 'icons') + path.sep;
-const ARCHIVE = (process.env.RR_SNAPSHOTS || '~/.self-learn/researchrabbit-snapshots').replace(/^~/, os.homedir());
+const ARCHIVE = (process.env.RR_SNAPSHOTS || '~/.design-systems/snaps/researchrabbit').replace(/^~/, os.homedir());
 const BUNDLE = process.env.RR_BUNDLE || '';
 
 const PAGES = [

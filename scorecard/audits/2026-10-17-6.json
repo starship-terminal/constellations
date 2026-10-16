@@ -391,7 +391,7 @@
    "category": "Learning",
    "goodFor": "Course catalogue, course and module pages, course cards, a mature enterprise design system (386 --cds-* variables)",
    "url": "https://www.coursera.org",
-   "captured": "2026-10-17",
+   "captured": "2026-09-29",
    "themes": [
     "light",
     "dark"
@@ -399,59 +399,59 @@
    "grades": {
     "F1": {
      "grade": "meets",
-     "evidence": "core.palette: 7 hues x 15 steps, grey first, plus darken/lighten alpha ramps"
+     "evidence": "core.palette: 7 hues x 15 steps, grey neutral"
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "role.background page, page-learner, surface, raised, overlay, scrim, selected in light and dark, each measured"
+     "grade": "partly",
+     "evidence": "light.neutral.background-primary, utility.overlay, modal.scrim; no raised background"
     },
     "F3": {
-     "grade": "meets",
-     "evidence": "role.text primary, secondary, disabled (disabled ghost label), on-accent, link, link-hover"
+     "grade": "partly",
+     "evidence": "neutral.primary, primary-weak, primary-invert; no link or text disabled role"
     },
     "F4": {
      "grade": "meets",
-     "evidence": "role.border default, strong (field outline), hover, focus, divider"
+     "evidence": "neutral.stroke-primary-weak, stroke-primary, interactive.stroke-primary-focus"
     },
     "F5": {
      "grade": "meets",
-     "evidence": "role.accent default, hover, pressed (interactive.primary*), measured on the primary button"
+     "evidence": "interactive.primary, primary-hover, primary-pressed"
     },
     "F6": {
-     "grade": "meets",
-     "evidence": "role.status fill and text for success, warning, danger, info from measured callouts; borders derived because CDS callouts draw none (measured 0px)"
+     "grade": "partly",
+     "evidence": "feedback.success/error/warning/informative plus *-weak fills; no status border tokens"
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "dark is a learner setting; light and dark both 135 tokens with identical names; shipped dark matches all 221 colour vars"
+     "grade": "partly",
+     "evidence": "dark set lacks 6 light roles incl. component.modal.scrim; dark not shipped"
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "Source Sans stack with Arial fallback, 28 styles with responsive sizes, display/title/body/label roles plus core.typography.code"
+     "grade": "partly",
+     "evidence": "core.typography 28 styles, Arial fallback; no code or mono role"
     },
     "F9": {
      "grade": "meets",
-     "evidence": "core.spacing 2-112px on the 8px --cds-base"
+     "evidence": "core.spacing 2-112px on 8px base token"
     },
     "F10": {
-     "grade": "meets",
-     "evidence": "core.radius 2px-max and core.borderWidth default 1px, strong 2px, indicator 4px, measured"
+     "grade": "partly",
+     "evidence": "core.radius 25-max; no border-width tokens, 1px/2px only in components"
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "buttons 36/48 (no small button rule in CDS), icon buttons 36/48, chip 32, field 48; icon sm/md/lg; core.focus ring widths and offset"
+     "grade": "partly",
+     "evidence": "core.size button-medium 36, large 48 (no small); icon sm/md/lg; core.focus"
     },
     "F12": {
-     "grade": "meets",
-     "evidence": "elevation.level1 floating buttons, level2 popovers/menus/card hover, level3 defined but unused; card and sticky-nav shadows as component tokens"
+     "grade": "partly",
+     "evidence": "light.elevation.level1-3 unlabelled; uses not tied to components"
     },
     "F13": {
-     "grade": "meets",
-     "evidence": "core.duration and easing measured; reduced motion: transition none on cards, chevrons, loader pulses 1.5s (measurements.md#reduced-motion)"
+     "grade": "partly",
+     "evidence": "core.duration/easing measured; no reduced-motion behaviour captured"
     },
     "F14": {
-     "grade": "meets",
-     "evidence": "2 breakpoints, 1440 container, 12-col grid and gutters, core.zIndex ladder 1 to 11000"
+     "grade": "partly",
+     "evidence": "12-col grid, 1440 container, 2 breakpoints; z-index only as prose (3000)"
     },
     "F15": {
      "grade": "meets",
@@ -459,31 +459,31 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 694 of 694 tokens name their source"
+     "evidence": "Script: 597 of 597 tokens name their source"
     },
     "C1": {
-     "grade": "meets",
-     "evidence": "18/19: text area and switch added; toast not present (copy feedback is an inline label)"
+     "grade": "partly",
+     "evidence": "16/19: missing text area, switch, toast"
     },
     "C2": {
-     "grade": "meets",
-     "evidence": "hover, focus, pressed, selected, disabled (ghost, secondary, send, legacy Submit), error as notification; loading never shown"
+     "grade": "partly",
+     "evidence": "hover, focus, pressed, selected; no error or loading, disabled barely"
     },
     "C3": {
-     "grade": "meets",
-     "evidence": "focus-visible on public controls plus menu item, select option, switch, text area and overflow button as captured"
+     "grade": "partly",
+     "evidence": "62 focus-visible crops, core.focus ring; select option, menus missing"
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "components.md names --cds tokens or tokens.json paths; 17 'no token' left are off-system legacy values"
+     "grade": "partly",
+     "evidence": "hex shown beside --cds token name; some 'no token' values"
     },
     "C5": {
      "grade": "na",
      "evidence": "Not applicable to a capture: keyboard and screen-reader behaviour and per-component misuses are decisions a product team writes down; a capture can record what it saw, but cannot read the spec off the interface."
     },
     "P1": {
-     "grade": "meets",
-     "evidence": "patterns.md: 8 patterns written; destructive confirm and onboarding say why not captured"
+     "grade": "partly",
+     "evidence": "page shell entries and pages.md only; no forms, empty, confirm patterns"
     },
     "V1": {
      "grade": "na",
@@ -495,11 +495,11 @@
     },
     "A1": {
      "grade": "meets",
-     "evidence": "icons/INDEX.tsv by name and place; Source Sans open source, Boutros named, code monospace fallback"
+     "evidence": "icons/INDEX.tsv by name and place; Source Sans open-source, fallback stack"
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README: how read, shipped dark, refresh method, redaction, 46-row Coverage table with reasons"
+     "evidence": "README: how read, forced dark, redaction, read tokens not images"
     },
     "K2": {
      "grade": "meets",
@@ -510,8 +510,7 @@
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "short": "Coursera",
-   "reviewed": "2026-10-17"
+   "short": "Coursera"
   },
   {
    "slug": "duolingo",
@@ -1413,66 +1412,66 @@
    "category": "AI research",
    "goodFor": "Interactive citation graph beside a list: node and edge styling, canvas interaction (see graph.md)",
    "url": "https://www.researchrabbit.ai",
-   "captured": "2026-10-04",
+   "captured": "2026-10-17",
    "themes": [
     "light"
    ],
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "core.palette: grey 9 steps, accent hues only 3-4 steps"
+     "evidence": "core.palette.grey 9 steps; turq/green/lavender/peach/selection only 3 to 4 steps each"
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "light.background.page/panel/panel-glass/section; no overlay, scrim, raised"
+     "grade": "meets",
+     "evidence": "light.background.page, surface, raised, overlay, scrim, each sourced from a CSS rule"
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "light.text.primary/secondary/tertiary/inverse; no disabled, link-hover only"
+     "grade": "meets",
+     "evidence": "light.text.primary, secondary, disabled, on-accent, link (plus tertiary, link-hover)"
     },
     "F4": {
      "grade": "meets",
-     "evidence": "light.border.rule, line, field, focus"
+     "evidence": "light.border.default (grey.2), strong (black), focus (selection.base)"
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "light.action.accent has no hover or pressed; primary-hover only"
+     "grade": "meets",
+     "evidence": "light.action.primary, primary-hover, primary-pressed; pressed measured, equals hover"
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "palette.activity success/important/error base, dark, bg; no info"
+     "grade": "meets",
+     "evidence": "light.status success/warning/danger/info each fill/text/border; borders mapped strong step"
     },
     "F7": {
      "grade": "na",
-     "evidence": "light-only product; no dark theme exists"
+     "evidence": "Light-only product; $themes has one light set, no dark rules in page CSS"
     },
     "F8": {
      "grade": "partly",
-     "evidence": "core.typography 13 roles, 6 sizes, stacks; no code role"
+     "evidence": "Stacks, 8 fontSize, 5 weights, lineHeight per role, display/heading/label/caption; no code"
     },
     "F9": {
      "grade": "meets",
-     "evidence": "core.spacing 0-16 on 0.25rem (4px) step"
+     "evidence": "core.spacing 0 to 16 on a 0.25rem (4px) step"
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "core.radius xs-pill; no border-width tokens"
+     "grade": "meets",
+     "evidence": "core.radius xs to pill; core.borderWidth default 1px, ring 2px, thumb-ring 4px"
     },
     "F11": {
-     "grade": "partly",
-     "evidence": "core.size header/nav-button only; no icon sizes or focus tokens"
+     "grade": "meets",
+     "evidence": "core.size control-sm/md/lg/xl, field, icon 14/16/18/24, focus-ring-width 1px, offset 0"
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "light.elevation s/m/l/popup; s/m/l unused by any component"
+     "grade": "meets",
+     "evidence": "light.elevation menu, popup, dialog tied to uses; s/m/l declared, l for toasts"
     },
     "F13": {
      "grade": "partly",
-     "evidence": "core.duration, graph.motion.*; reduced motion only advised in graph.md"
+     "evidence": "core.duration 7, core.easing 1 curve (+2 graph); reduced motion: nothing changes"
     },
     "F14": {
      "grade": "partly",
-     "evidence": "core.size root-max/list widths; no breakpoints, grid, z-index"
+     "evidence": "core.breakpoint 640px only, size widths, zIndex 1 to 3; no grid columns, no dialog z"
     },
     "F15": {
      "grade": "meets",
@@ -1480,23 +1479,23 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 291 of 291 tokens name their source"
+     "evidence": "Script: 359 of 359 tokens name their source"
     },
     "C1": {
      "grade": "partly",
-     "evidence": "13/19: missing text area, radio, switch, dialog, toast, table"
+     "evidence": "16/19 (text area as note composer); missing radio, switch, toast"
     },
     "C2": {
      "grade": "partly",
-     "evidence": "hover, focus-visible; pressed unmeasured, disabled/error incidental"
+     "evidence": "hover, focus-visible, pressed, selected, disabled, loading; error never reached"
     },
     "C3": {
      "grade": "meets",
-     "evidence": "43 components draw ring; 9 non-focusable named per entry"
+     "evidence": "84 focus-visible rows across entries; 14 non-focusable parts named as Not measured"
     },
     "C4": {
      "grade": "partly",
-     "evidence": "raw values plus css-var names; not token paths"
+     "evidence": "Raw value then token; 779 palette refs, 0 semantic light.* roles; Parts lists raw px"
     },
     "C5": {
      "grade": "na",
@@ -1504,7 +1503,7 @@
     },
     "P1": {
      "grade": "partly",
-     "evidence": "graph.md interaction and Next Search empty state only"
+     "evidence": "patterns.md has all 8; validation, error state and onboarding marked not captured"
     },
     "V1": {
      "grade": "na",
@@ -1516,11 +1515,11 @@
     },
     "A1": {
      "grade": "meets",
-     "evidence": "icons/INDEX.tsv by name; README Fonts table, open source, stacks"
+     "evidence": "icons/INDEX.tsv 66 icons by role name and place; README Fonts table, core.fontFamily"
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README: how read, canvas from bundle, no dark, traps"
+     "evidence": "README: pages read, how values read, What to distrust, Coverage table"
     },
     "K2": {
      "grade": "meets",
@@ -1531,7 +1530,8 @@
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "short": "ResearchRabbit"
+   "short": "ResearchRabbit",
+   "reviewed": "2026-10-17"
   },
   {
    "slug": "tokentracker",

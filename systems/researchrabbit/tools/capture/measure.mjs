@@ -1,12 +1,12 @@
 // Measures ResearchRabbit's signed-in components from the redacted static
-// snapshots (~/.self-learn/researchrabbit-snapshots/<page>.html.gz), in every
+// snapshots (~/.design-systems/snaps/researchrabbit/<page>.html.gz), in every
 // state CSS can still reach once scripts are gone.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/measure.mjs [--only key,key] [page ...]
 //
 // SNAP_DIR may point at a directory that already holds the gunzipped
 // snapshots (<name>.html + <name>.json); otherwise they are gunzipped from
-// RR_SNAPSHOTS (default ~/.self-learn/researchrabbit-snapshots) into a
+// RR_SNAPSHOTS (default ~/.design-systems/snaps/researchrabbit) into a
 // temporary directory outside the repository and removed afterwards.
 //
 // Writes raw/components-computed.json (merged, so a subset of pages can be
@@ -48,7 +48,7 @@ const REF = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', 
 const RAW = path.join(REF, 'raw');
 const CROPS = path.join(REF, 'components', 'crops');
 const OUT_JSON = path.join(RAW, 'components-computed.json');
-const ARCHIVE = (process.env.RR_SNAPSHOTS || '~/.self-learn/researchrabbit-snapshots').replace(/^~/, os.homedir());
+const ARCHIVE = (process.env.RR_SNAPSHOTS || '~/.design-systems/snaps/researchrabbit').replace(/^~/, os.homedir());
 
 const args = process.argv.slice(2);
 const onlyArg = args.indexOf('--only');
@@ -80,7 +80,34 @@ const PAGES = {
   'lm-reset': 'library-map-light-positions-reset-menu',
   ll: 'library-list-light-default',
   home: 'home-light-default',
+  // 2026-10-17 refresh
+  home2: 'home-light-refresh',
+  'home-typed': 'home-light-search-typed',
+  'menu-ws': 'home-light-workspace-menu',
+  'menu-acc': 'home-light-account-menu',
+  'acc-profile': 'account-light-profile',
+  'acc-edit': 'account-light-edit-profile-dialog',
+  'acc-delete': 'account-light-delete-confirm',
+  'acc-prefs': 'account-light-preferences',
+  'acc-subs': 'account-light-subscription-empty',
+  kw: 'search-list-light-keyword-results',
+  'kw-loading': 'search-list-light-loading',
+  'kw-updating': 'search-list-light-updating-dialog',
+  'kw-selected': 'search-list-light-selected',
+  'st-open': 'search-list-light-settings-drawer',
+  'st-select': 'search-list-light-settings-select-open',
+  'st-checked': 'search-list-light-settings-checked',
+  'lib-all': 'library-all-light-default',
+  'lib-table': 'library-table-light-default',
+  'lib-reading': 'library-reading-light-empty',
+  'mobile-warn': 'library-mobile-light-screen-too-small',
+  'mobile-lib': 'library-mobile-light-continue',
+  'search-start': 'search-start-light-recent',
+  'lib-notes': 'library-all-light-notes-empty',
+  'lib-selected': 'library-all-light-selected',
 };
+// The pages before home2 were read on 2026-10-04; the rest in the 2026-10-17 refresh.
+const READ_ON = (pkey) => (Object.keys(PAGES).indexOf(pkey) < Object.keys(PAGES).indexOf('home2') ? '2026-10-04' : '2026-10-17');
 
 // ---------------------------------------------------------------- specs
 //
@@ -93,6 +120,11 @@ const PAGES = {
 
 const ALL = ['default', 'hover', 'focus-visible'];
 const D = ['default'];
+// pressed: the mouse held down on the element (Playwright mouse.down) while it is read. Added 2026-10-17.
+const ALLP = ['default', 'hover', 'focus-visible', 'pressed'];
+const P = ['pressed'];
+const LAST = (n) => `[...document.querySelectorAll('[class*="${n}-sc-"]')].pop()`;
+const DRAWER = (sel) => `__m.q('[class*="FilterableSearchActions__Container"] ${sel.replace(/'/g, "\\'")}')`;
 const HOV = ['default', 'hover'];
 const sc = (n, i = 0) => `__m.sc(${JSON.stringify(n)}, ${i})`;
 const btn = (t, scope) => `__m.btn(${JSON.stringify(t)}${scope ? ', ' + scope : ''})`;
@@ -318,7 +350,123 @@ const SPECS = [
     targets: [T('home', sc('DashboardFolders__ItemContainer'), { states: ALL, extra: sub({ icon: 'DashboardFolders__FolderIcon', label: 'DashboardFolders__Label', arrow: 'DashboardFolders__StyledArrowRight' }) })] },
   { key: 'home-guide-card', group: 'Home', name: 'Guide card', desc: 'A linked card with a 180px image over a title and a short description.',
     targets: [T('home', sc('DashboardNew__ContentContainer', 0), { states: ALL, extra: sub({ image: 'DashboardNew__ContentImageContainer', body: 'DashboardNew__ContentBody', title: 'DashboardNew__Title', desc: 'DashboardNew__Desc' }) })] },
+  // ============================================================ 2026-10-17 refresh
+  // Dialogs
+  { key: 'dialog', group: 'Dialogs', name: 'Dialog', desc: 'Every dialog is one white sheet centred over a teal-grey scrim: 16px corners, a 1px rule under a 24px title, and a close button at the top right. Account Settings is 650 x 600 with a 180px tab column; Update profile opens a second dialog over the first; the loader is the same sheet with only a message and a spinner.',
+    targets: [T('acc-profile', LAST('Modal__Content'), { as: 'account-settings', states: D, extra: sub({ head: 'Modal__HeadContainer', title: 'Modal__Title', body: 'Modal__BodyContainer' }) }),
+      T('acc-edit', LAST('Modal__Content'), { as: 'form', states: D, extra: `(el) => __m.kids(el, 'label, input, button')` }),
+      T('kw-updating', LAST('Modal__Content'), { as: 'loading', states: D, extra: sub({ content: 'Loader__Content' }) })] },
+  { key: 'dialog-scrim', group: 'Dialogs', name: 'Dialog scrim', desc: 'The full-screen overlay behind every dialog. A second dialog adds a second overlay, so the page darkens twice.',
+    targets: [T('acc-profile', sc('Modal__Overlay'), { states: D, crop: false }), T('acc-edit', LAST('Modal__Overlay'), { as: 'stacked', states: D, crop: false })] },
+  { key: 'dialog-close', group: 'Dialogs', name: 'Dialog close button', desc: 'Round 32px button with a 24px cross.',
+    targets: [T('acc-profile', sc('Modal__CloseButton'), { states: ALLP })] },
+  { key: 'confirm-destructive', group: 'Dialogs', name: 'Destructive confirmation', desc: 'Delete Account: a sentence of warning, then a pale yellow box asking for a typed phrase, then a pale red "Permanently Delete My Account" button that stays disabled until the phrase matches, and a plain Cancel. Opened and cancelled; nothing was typed.',
+    targets: [T('acc-delete', LAST('Modal__Content'), { states: D, extra: sub({ content: 'Confirm__Content', safeguard: 'Confirm__SafeguardContainer' }) })] },
+  { key: 'confirm-safeguard', group: 'Dialogs', name: 'Typed-phrase box', desc: 'The yellow box in the destructive confirmation, with the phrase in bold and an empty 5% black input.',
+    targets: [T('acc-delete', sc('Confirm__SafeguardContainer'), { states: D }), T('acc-delete', `${sc('Confirm__SafeguardContainer')}.querySelector('input')`, { as: 'input', states: ALL, crop: sc('Confirm__SafeguardContainer') })] },
+  // Buttons
+  { key: 'button-primary', group: 'Buttons', name: 'Primary button', desc: 'Black rectangle with white text and 8px corners ("Done" in a dialog, "Search for Articles" in an empty state).',
+    targets: [T('acc-edit', btn('Done'), { states: ALLP }), T('lib-reading', `[...document.querySelectorAll('button')].find((b) => b.innerText.trim() === 'Search for Articles')`, { as: 'empty-state', states: ALLP })] },
+  { key: 'button-secondary', group: 'Buttons', name: 'Secondary button', desc: 'Text only, the same height as the primary beside it ("Cancel").',
+    targets: [T('acc-edit', btn('Cancel'), { states: ALLP }), T('acc-delete', btn('Cancel'), { as: 'confirm', states: ALLP })] },
+  { key: 'button-danger', group: 'Buttons', name: 'Danger button', desc: 'The destructive action in the confirmation. Seen only disabled: the phrase was never typed.',
+    targets: [T('acc-delete', btn('Permanently Delete My Account'), { as: 'disabled', states: HOV })] },
+  { key: 'button-disabled', group: 'Buttons', name: 'Disabled buttons', desc: 'Buttons with the disabled attribute: Reset Tutorials in Preferences, and the selection actions above an article list until something is selected.',
+    targets: [T('acc-prefs', btn('Reset Tutorials'), { as: 'reset-tutorials', states: HOV }), T('lib-all', btn('Delete'), { as: 'toolbar', states: HOV, crop: sc('ListSelectionBar__Container') })] },
+  { key: 'button-text', group: 'Buttons', name: 'Text button', desc: 'Left-aligned 600 text buttons in a column (Update Profile, Change Email, Change Password, Delete Account).',
+    targets: [T('acc-profile', btn('Update Profile'), { states: ALLP }), T('acc-profile', btn('Delete Account'), { as: 'delete', states: HOV })] },
+  { key: 'button-link', group: 'Buttons', name: 'Inline link button', desc: 'Small text button with a leading plus ("Link Zotero").',
+    targets: [T('acc-prefs', btn('Link Zotero'), { states: ALLP })] },
+  // Form controls
+  { key: 'text-field', group: 'Form controls', name: 'Text field', desc: 'Field with an inset 1px grey line and 8px corners under a label. Filled and empty (placeholder).',
+    targets: [T('acc-edit', sc('Input__form', 0), { as: 'filled', states: ALL }), T('acc-edit', sc('Input__form', 1), { as: 'placeholder', states: ALL })] },
+  { key: 'checkbox', group: 'Form controls', name: 'Checkbox', desc: 'A 20px square button with role checkbox. Light in a dialog, dark in the Search Settings drawer, where checking it tints the whole row and adds a remove cross.',
+    targets: [T('acc-prefs', `__m.q('[role=checkbox]')`, { as: 'unchecked', states: ALLP, crop: `__m.q('[role=checkbox]').parentElement` }),
+      T('st-open', DRAWER('[role=checkbox]'), { as: 'dark', states: ALL }),
+      T('st-checked', DRAWER('[role=checkbox]'), { as: 'dark-checked', states: D, crop: `${DRAWER('[role=checkbox]')}.closest('[class*="ExploreFilters__ItemContainer-sc-"]')` })] },
+  { key: 'segmented', group: 'Form controls', name: 'Single-choice pills', desc: 'The product has no radio buttons. A choice of one is a row of outlined pills where the chosen one is filled lavender (Articles or Authors; Similar, References or Citations; 10, 20 or 40).',
+    targets: [T('st-open', sc('ExploreFiltersStyles__ExploreFiltersButton', 0), { as: 'selected', states: ALLP, crop: `__m.sc('ExploreFiltersStyles__ExploreFiltersButton', 0).parentElement` }), T('st-open', sc('ExploreFiltersStyles__ExploreFiltersButton', 1), { as: 'other', states: ALLP, crop: `__m.sc('ExploreFiltersStyles__ExploreFiltersButton', 0).parentElement` })] },
+  { key: 'select-dark', group: 'Form controls', name: 'Select in the drawer', desc: 'The Retractions select ("Not set...") and its open list: white, 6px corners, the highlighted option in the selection blue.',
+    targets: [T('st-open', DRAWER('[class*="Select__Trigger-sc-"]'), { as: 'trigger', states: ALL }),
+      T('st-select', sc('Select__Content'), { as: 'list', states: D }),
+      T('st-select', `__m.q('[class*="Select__SelectItem-sc-"][data-highlighted]') || __m.sc('Select__SelectItem', 0)`, { as: 'option-highlighted', states: D, crop: sc('Select__Content') }),
+      T('st-select', sc('Select__SelectItem', 1), { as: 'option', states: D, crop: sc('Select__Content') })] },
+  { key: 'slider', group: 'Form controls', name: 'Range slider', desc: 'Two thumbs on a 3px track: 12px dark thumbs with a 4px lavender ring.',
+    targets: [T('st-open', sc('Slider__Root', 0), { states: D, extra: sub({ track: 'Slider__Track', range: 'Slider__Range', thumb: 'Slider__Thumb' }) }), T('st-open', sc('Slider__Thumb', 0), { as: 'thumb', states: ALLP, crop: sc('Slider__Root', 0) })] },
+  { key: 'drawer-input', group: 'Form controls', name: 'Drawer inputs', desc: 'Pill inputs on the dark drawer: the keyword field (italic placeholder) and the 60px number fields of a range.',
+    targets: [T('st-open', sc('KeywordFilters__FreeformInput'), { as: 'keyword', states: ALL }), T('st-open', `__m.q('[class*="ExploreFiltersRange__RangeForm-sc-"] input')`, { as: 'number', states: ALL, crop: `__m.q('[class*="ExploreFiltersRange__RangeForm-sc-"]')` })] },
+  { key: 'quartile-chip', group: 'Form controls', name: 'Multi-choice chips', desc: 'Outlined lavender chips that toggle independently (SJR quartiles Q1 to Q4).',
+    targets: [T('st-open', sc('QuartileFilters__Button', 0), { states: ALLP, crop: sc('QuartileFilters__Container') })] },
+  // Tabs
+  { key: 'settings-tab', group: 'Tabs and navigation', name: 'Vertical tab', desc: 'The Account Settings tab column: 40px rows with an icon, the current one on a grey fill.',
+    targets: [T('acc-prefs', btn('Preferences'), { as: 'current', states: ALLP }), T('acc-prefs', btn('Profile'), { as: 'other', states: ALLP })] },
+  { key: 'filter-toggle', group: 'Tabs and navigation', name: 'Filter toggle pills', desc: 'All, To Read and Read above the Reading List, each with a count; the current one has a 1px black inset ring.',
+    targets: [T('lib-reading', sc('ListFilterBar__ToggleButton', 0), { as: 'current', states: ALLP, crop: `__m.sc('ListFilterBar__ToggleButton', 0).parentElement` }), T('lib-reading', sc('ListFilterBar__ToggleButton', 1), { as: 'other', states: ALLP, crop: `__m.sc('ListFilterBar__ToggleButton', 0).parentElement` })] },
+  // Menus
+  { key: 'menu', group: 'Menus', name: 'Menu', desc: 'The workspace menu: a 220px white sheet with 6px corners and a soft two-layer shadow, a separator, and 30px items with a 32px left inset for the check. The highlighted item is the selection blue.',
+    targets: [T('menu-ws', sc('Dropdown__Content'), { states: D }),
+      T('menu-ws', `__m.q('[class*="Dropdown__Item-sc-"][data-highlighted]') || __m.sc('Dropdown__Item', 1)`, { as: 'item-highlighted', states: D, crop: sc('Dropdown__Content') }),
+      T('menu-ws', sc('Dropdown__Item', 2), { as: 'item', states: D, crop: sc('Dropdown__Content') }),
+      T('menu-ws', sc('Dropdown__Separator'), { as: 'separator', states: D, crop: false })] },
+  { key: 'account-menu', group: 'Menus', name: 'Account menu', desc: 'A popover from the account button: name and email (redacted), then three groups of text items split by rules, Log Out centred at the foot.',
+    targets: [T('menu-acc', sc('Popup__Content'), { states: D, extra: `(el) => __m.kids(el, 'button')` }), T('menu-acc', `[...document.querySelectorAll('[class*="Popup__Content-sc-"] button')].find((b) => b.innerText.trim() === 'Subscription')`, { as: 'item', states: ALLP, crop: sc('Popup__Content') })] },
+  // Avatar and badges
+  { key: 'avatar', group: 'Avatar and badges', name: 'Avatar', desc: 'No photo is set, so the avatar is a placeholder person glyph: an 80px white circle on the profile card, 16px inside the 32px account button.',
+    targets: [T('acc-profile', sc('ProfileTab__ImageContainer'), { as: 'profile', states: D }), T('menu-acc', sc('ActiveUserAvatar__PlaceholderContainer'), { as: 'button', states: D, crop: `__m.sc('ActiveUserAvatar__PlaceholderContainer').closest('button')` })] },
+  { key: 'paywall-badge', group: 'Avatar and badges', name: 'Upgrade badge', desc: 'Green 12px 600 pill marking a paid feature, in menus and drawer headings.',
+    targets: [T('menu-ws', sc('PaywallIndicator__Container'), { states: D, crop: `__m.sc('PaywallIndicator__Container').closest('[role=menuitem]')` }), T('st-open', sc('PaywallIndicator__Container'), { as: 'drawer', states: D })] },
+  { key: 'notice', group: 'Avatar and badges', name: 'Notice banner', desc: 'Pale green box with a lock icon ("You are previewing Advanced Settings"). With the turquoise tip banner, the only informational banners seen.',
+    targets: [T('st-open', sc('PaywallIndicator__VerboseContainer'), { states: D })] },
+  // Feedback and loading
+  { key: 'spinner', group: 'Feedback and loading', name: 'Spinner', desc: '16px spinning wheel, 1.1s per turn: alone in the middle of the list while a page of results loads, or under the message in the loading dialog.',
+    targets: [T('kw-loading', sc('LoadWheel__StyledIcon'), { as: 'list', states: D, pad: 16 }), T('kw-updating', sc('LoadWheel__StyledIcon'), { as: 'dialog', states: D, pad: 16 })] },
+  { key: 'selection-tick', group: 'Feedback and loading', name: 'Selection circle', desc: 'The 20px circle at the top right of a result card. Selecting it fills it black with a white tick, outlines the card and lists the paper in Next Search.',
+    targets: [T('kw', sc('SelectionTick__Container', 0), { as: 'unselected', states: ALLP }), T('kw-selected', sc('SelectionTick__Container', 0), { as: 'selected', states: D })] },
+  { key: 'clear-link', group: 'Feedback and loading', name: 'Clear link', desc: 'Underlined grey text after the selection count ("1 selected Clear").',
+    targets: [T('kw-selected', sc('ExploreBuilder__ClearButton'), { states: ALLP, crop: `__m.sc('ExploreBuilder__ClearButton').parentElement` })] },
+  // Data display
+  { key: 'table', group: 'Data display', name: 'Article table', desc: 'The library table view: a white panel with 8px corners, a 600 header row with a sort chevron, 29px rows split by 1px grey rules, numbers at the right and a selection circle per row.',
+    targets: [T('lib-table', sc('ArticleTable__Container'), { states: D })] },
+  { key: 'table-header', group: 'Data display', name: 'Table header cell', desc: 'A sortable column title; Label carries the up chevron.',
+    targets: [T('lib-table', sc('ArticleTableStyles__ColumnCell', 0), { states: ALLP, crop: sc('ArticleTableStyles__RowContainer', 0) })] },
+  { key: 'table-row', group: 'Data display', name: 'Table row', desc: 'One article per 29px row.',
+    targets: [T('lib-table', sc('ArticleTableStyles__RowContainer', 2), { states: ALLP })] },
+  // Empty states
+  { key: 'empty-reading', group: 'Empty states', name: 'Empty Reading List', desc: 'A 400px line illustration, "A clean slate - enjoy!", one sentence, and a black "Search for Articles" button.',
+    targets: [T('lib-reading', `__m.sc('LibraryReadingList__EmptyImage').parentElement`, { states: D })] },
+  { key: 'empty-text', group: 'Empty states', name: 'Empty tab', desc: 'A tab with nothing in it shows one line of 14px text at the top left ("You have no active subscriptions").',
+    targets: [T('acc-subs', `__m.byText('You have no active subscriptions')`, { states: D, crop: LAST('Modal__Content') })] },
+  // Phone width
+  { key: 'mobile-warning', group: 'Phone width', name: 'Screen too small', desc: 'At 640px wide or less the app covers every page with this notice: the wordmark, a heading, an 18px sentence and a "Continue anyway" text button. Continuing shows the desktop layout clipped at the right edge.',
+    targets: [T('mobile-warn', sc('MobileWarning__Container'), { states: D, extra: sub({ logo: 'MobileWarning__StyledLogo', desc: 'MobileWarning__Desc' }) }), T('mobile-warn', btn('Continue anyway'), { as: 'continue', states: ALLP, crop: sc('MobileWarning__Container') })] },
+  { key: 'note-composer', group: 'Form controls', name: 'Note composer', desc: 'The multi-line field at the foot of the Notes tab: a contenteditable rich-text box, the product\'s only free-text area. Seen empty, never typed into.',
+    targets: [T('lib-notes', sc('RichInput__StyledEditable'), { states: ALL, crop: sc('ArticleNotesCreate__Container') })] },
+  { key: 'empty-notes', group: 'Empty states', name: 'Empty Notes tab', desc: 'Centred 600 heading "Turn reading into understanding" over one sentence, above the composer.',
+    targets: [T('lib-notes', sc('ArticleNotes__EmptyContainer'), { states: D })] },
+  { key: 'recent-search-row', group: 'Data display', name: 'Recent search row', desc: 'One past search on the Search start page: the inputs as chips, the date in 12px grey, and a remove cross.',
+    targets: [T('search-start', sc('DashboardRecentSessions__ItemContainer'), { states: ALLP, extra: sub({ main: 'DashboardRecentSessions__ItemMain', date: 'DashboardRecentSessions__DateLabel' }) })] },
+  { key: 'drop-zone', group: 'Form controls', name: 'BibTeX drop zone', desc: 'A 30% white strip with 16px corners on the Search start page: "Drag and drop a BibTeX file to search from".',
+    targets: [T('search-start', sc('ExploreEmpty__DropInstructionContainer'), { states: D })] },
 ];
+
+// Pressed states and new views of components first read on 2026-10-04, added in the 2026-10-17
+// refresh. They join the existing entries, so the older states stay as they were read.
+const EXTRA = {
+  'nav-tab': [T('kw', sc('Navigation__LinkContainer', 0), { as: 'current', states: P }), T('kw', sc('Navigation__LinkContainer', 1), { as: 'other', states: P })],
+  'nav-upgrade': [T('kw', sc('Navigation__NavButton'), { states: P })],
+  'nav-workspace': [T('kw', btn('My workspace'), { states: P }), T('menu-ws', btn('My workspace'), { as: 'open', states: D })],
+  'nav-avatar': [T('kw', sc('generateVariantComponent__default', 1), { states: P })],
+  'view-toggle-button': [T('kw', sc('ViewSelection__Button', 1), { as: 'current', states: P, crop: sc('ViewSelection__Container') }), T('kw', sc('ViewSelection__Button', 0), { as: 'other', states: P, crop: sc('ViewSelection__Container') })],
+  'autosave-button': [T('kw', btn('Auto-save to...'), { states: P })],
+  'list-card': [T('kw-selected', sc('ListItemContainer', 0), { as: 'selected', states: D })],
+  drawer: [T('st-open', sc('FilterableSearchActions__Container'), { as: 'open', states: D })],
+  'home-search-field': [T('home-typed', sc('SearchBar__StyledInput'), { as: 'typed', states: D, crop: sc('SearchBar__Container'), pad: 12 })],
+  'home-search-button': [T('home2', sc('SearchBar__SearchButton'), { states: P, crop: sc('SearchBar__Container'), pad: 12 })],
+  'home-browse-library': [T('home2', btn('Browse Library'), { states: P, crop: sc('DashboardSearch__Container'), pad: 4 })],
+  'library-list-row': [T('lib-all', sc('LibrarySidebar__ClickableSectionContainer', 1), { as: 'all-articles-current', states: ['default', 'pressed'] })],
+  'selection-bar': [T('lib-all', btn('Select all'), { as: 'select-all', states: P, crop: sc('ListSelectionBar__Container') }), T('lib-selected', sc('ListSelectionBar__Container'), { as: 'one-selected', states: D }), T('lib-selected', btn('Delete', sc('ListSelectionBar__Container')), { as: 'action-enabled', states: ALLP, crop: sc('ListSelectionBar__Container') })],
+};
+for (const s of SPECS) if (EXTRA[s.key]) s.targets.push(...EXTRA[s.key]);
 
 // ---------------------------------------------------------------- page helpers (run in the page)
 
@@ -514,7 +662,9 @@ async function run() {
   let tmp = null;
   if (!snapDir) {
     tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rr-snap-'));
-    for (const name of Object.values(PAGES)) {
+    // Only the pages asked for; the 2026-10-04 snapshots no longer exist, so a full run needs them back.
+    for (const [pkey, name] of Object.entries(PAGES)) {
+      if (ONLY_PAGES.length && !ONLY_PAGES.includes(pkey)) continue;
       for (const ext of ['html', 'json']) fs.writeFileSync(path.join(tmp, `${name}.${ext}`), zlib.gunzipSync(fs.readFileSync(path.join(ARCHIVE, `${name}.${ext}.gz`))));
     }
     snapDir = tmp;
@@ -523,13 +673,14 @@ async function run() {
   const prev = fs.existsSync(OUT_JSON) ? JSON.parse(fs.readFileSync(OUT_JSON, 'utf8')) : {};
   const out = { _meta: prev._meta || {}, pages: prev.pages || {}, components: prev.components || {} };
   Object.assign(out._meta, {
-    read: '2026-10-04',
+    read: '2026-10-04; 2026-10-17 for the pages marked so',
     source: 'static, redacted DOM snapshots of signed-in app.researchrabbit.ai pages (stylesheets inlined from the CSSOM, scripts stripped, the graph canvas replaced by an image of its bitmap)',
-    viewport: '1440x900 at 2x, headless Chromium (Playwright), file:// URLs',
+    viewport: 'each page at the size it was captured (1440x900, or 390x844 for the phone pages) at 2x, headless Chromium (Playwright), file:// URLs',
     states: {
       default: 'at rest, as captured',
       hover: 'real mouse hover, 450ms settle; `hovered` says whether :hover matched',
       'focus-visible': 'real keyboard focus (focus, Shift+Tab, Tab); `focus.ok` and `focus.matches` say whether it took',
+      pressed: 'mouse held down on the element (2026-10-17 pages only); `active` says whether :active matched',
       other: 'another element or snapshot captured in that state, named by the `as` label',
     },
     crops: 'components/crops/{component}-{state}.png at 2x, 256 colours, halved when wider than 1600px; a state whose pixels equal the default crop has `sameAsDefault` and no file of its own',
@@ -558,10 +709,11 @@ async function run() {
     const name = PAGES[pkey];
     const targets = specs.flatMap((s) => s.targets.filter((t) => t.page === pkey).map((t) => ({ spec: s, t })));
     const meta = hasMeta(name);
-    out.pages[pkey] = { name, url: String(meta.url).replace(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/g, '<id>'), scrollY: meta.scrollY, viewport: `${meta.w}x${meta.h}` };
+    out.pages[pkey] = { name, read: READ_ON(pkey), url: String(meta.url).replace(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/g, '<id>'), scrollY: meta.scrollY, viewport: `${meta.w}x${meta.h}` };
     if (!targets.length) continue;
     const page = await ctx.newPage();
     page.setDefaultTimeout(8000);
+    await page.setViewportSize({ width: meta.w, height: meta.h });
     log('open', pkey, name);
     await page.goto(`file://${snapDir}/${name}.html`, { waitUntil: 'load', timeout: 60000 });
     await page.waitForTimeout(2500);
@@ -621,12 +773,20 @@ async function run() {
           let via = 'at rest';
           let hovered;
           let focusInfo;
+          let active;
           if (st === 'hover') {
             const hp = await pointOf(hoverLoc);
             await page.mouse.move(hp.x, hp.y, { steps: 4 });
             await page.waitForTimeout(450);
             via = 'mouse hover';
             hovered = await loc.evaluate((el) => el.matches(':hover') || el.closest(':hover') !== null || !!el.querySelector(':hover'));
+          } else if (st === 'pressed') {
+            const pp = await pointOf(hoverLoc);
+            await page.mouse.move(pp.x, pp.y, { steps: 4 });
+            await page.mouse.down();
+            await page.waitForTimeout(300);
+            via = 'mouse held down';
+            active = await loc.evaluate((el) => el.matches(':active') || !!el.querySelector(':active'));
           } else if (st === 'focus-visible') {
             focusInfo = await kbFocus(focusLoc);
             via = 'keyboard: focus(), Shift+Tab, Tab';
@@ -634,6 +794,7 @@ async function run() {
           const s = await styleOf(loc);
           if (hovered !== undefined) s.hovered = hovered;
           if (focusInfo) s.focus = focusInfo;
+          if (active !== undefined) s.active = active;
           if (t.extra && st === 'default') s.extra = await loc.evaluate((el, src) => (0, eval)(`(${src})`)(el), t.extra);
           if (st === 'default') s.rules = await loc.evaluate((el) => window.__m.rules(el));
           if (t.crop !== false) {
