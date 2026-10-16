@@ -49,6 +49,18 @@ class ContrastTest(unittest.TestCase):
         g, _ = self.run_grade(bg="#ffffff", card="#ffffff", ink="#bbbbbb", soft="#555555")
         self.assertEqual(g, "missing")
 
+    def test_theme_without_a_palette_borrows_the_paths_or_is_reported(self):
+        tokens = {**colours(bg="#ffffff", card="#fafafa", ink="#111111", soft="#555555"),
+                  "mobile": {k: {"$value": v} for k, v in
+                             dict(bg="#ffffff", card="#ffffff", ink="#111111", soft="#999999").items()}}
+        system, tmp = system_with(tokens)
+        system["themes"] = ["light", "mobile", "contrast"]
+        with tmp, mock.patch.object(grade, "ROOT", Path(tmp.name)):
+            g, why = grade.grade_contrast(system)
+        self.assertEqual(g, "partly")
+        self.assertIn("mobile muted (mobile.soft)", why)
+        self.assertIn("contrast not checked (no palette)", why)
+
     def test_translucent_surface_is_blended_over_the_page(self):
         g, why = self.run_grade(bg="#000000", card="rgba(255,255,255,0.05)", ink="#ffffff", soft="#cccccc")
         self.assertEqual(g, "meets", why)
@@ -84,6 +96,11 @@ class DoAndDontTest(unittest.TestCase):
     def test_rule_without_an_image_is_partly(self):
         readme = "## Do and don't\n\n- Do a. [s](a.png)\n- Do b. [s](b.png)\n- Don't c.\n"
         self.assertEqual(self.run_grade(readme), ("partly", "Script: 3 rules, 2 linking an image (needs 3+, all linked)"))
+
+    def test_link_on_a_wrapped_line_counts(self):
+        readme = ("## Do and don't\n\n1. **Do a.** Long rule that wraps,\n   see [s](a.png).\n"
+                  "2. **Do b.**\n   [s](b.png)\n3. Do c. [s](c.png)\n\nA closing paragraph [x](d.png).\n")
+        self.assertEqual(self.run_grade(readme), ("meets", "Script: 3 rules, each linking a screenshot or crop"))
 
     def test_no_section_is_missing(self):
         self.assertEqual(self.run_grade("# X\n\nSome text.\n")[0], "missing")

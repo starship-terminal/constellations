@@ -73,7 +73,7 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1; lowest 5.63:1 light muted (light.text.secondary) on surface (light.bg.secondary)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 5.63:1 light muted (light.text.secondary) on surface (light.bg.secondary)"
     },
     "F16": {
      "grade": "meets",
@@ -200,7 +200,7 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1; lowest 6.25:1 light muted (light.text.secondary) on surface (light.bg.secondary-surface)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 6.25:1 light muted (light.text.secondary) on surface (light.bg.secondary-surface)"
     },
     "F16": {
      "grade": "meets",
@@ -327,7 +327,7 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1; lowest 7.73:1 light muted (light.text.secondary) on page (light.surface.page)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 7.73:1 light muted (light.text.secondary) on page (light.surface.page)"
     },
     "F16": {
      "grade": "meets",
@@ -454,7 +454,7 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1; lowest 6.31:1 dark muted (dark.neutral.primary-weak) on surface (dark.neutral.background-primary-weak)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 6.31:1 dark muted (dark.neutral.primary-weak) on surface (dark.neutral.background-primary-weak)"
     },
     "F16": {
      "grade": "meets",
@@ -707,7 +707,7 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1; lowest 5.28:1 light muted (light.text.secondary) on surface (light.background.canvas)"
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.28:1 light muted (light.text.secondary) on surface (light.background.canvas)"
     },
     "F16": {
      "grade": "meets",
@@ -960,7 +960,7 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1; lowest 6.34:1 dark muted (app.muted) on surface (app.surface)"
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 6.34:1 dark muted (app.muted) on surface (app.surface)"
     },
     "F16": {
      "grade": "partly",
@@ -1087,7 +1087,7 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1; lowest 7.40:1 dark muted (dark.text.secondary) on surface (dark.background.menu-white)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 7.40:1 dark muted (dark.text.secondary) on surface (dark.background.menu-white)"
     },
     "F16": {
      "grade": "meets",
@@ -1214,7 +1214,7 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1; lowest 5.65:1 light muted (light.text.secondary) on page (light.bg.page)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 5.65:1 light muted (light.text.secondary) on page (light.bg.page)"
     },
     "F16": {
      "grade": "meets",
@@ -1343,7 +1343,7 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1; lowest 5.48:1 light muted (light.color.color-text-secondary) on page (light.color.color-bg)"
+     "evidence": "Script: all 16 pairs pass 4.5:1 across 4 themes; lowest 5.48:1 light muted (light.color.color-text-secondary) on page (light.color.color-bg)"
     },
     "F16": {
      "grade": "meets",
@@ -1469,7 +1469,7 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1; lowest 4.53:1 light muted (light.text.secondary) on page (light.background.page)"
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.53:1 light muted (light.text.secondary) on page (light.background.page)"
     },
     "F16": {
      "grade": "meets",

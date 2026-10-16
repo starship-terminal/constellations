@@ -43,10 +43,31 @@ METHOD = ("Grades marked \"Script:\" were recomputed by tools/grade.py from the 
 # ---------------------------------------------------------------- the four checks
 
 
+def theme_palettes(system: dict, tokens: dict) -> tuple[dict, list[str]]:
+    """The role paths to check for every declared theme. A theme with no preview palette
+    borrows the first palette's paths with the theme set swapped (`light.text` becomes
+    `light-mobile.text`) when every one exists; otherwise it is reported as unchecked."""
+    palettes = dict(system["preview"].get("swatches", {}))
+    flat = catalog.flatten(tokens)
+    unchecked = []
+    model_theme, model = next(iter(palettes.items()), (None, {}))
+    for theme in system.get("themes", []):
+        if theme in palettes:
+            continue
+        swapped = {role: theme + path[len(model_theme):] if path.startswith(model_theme + ".") else None
+                   for role, path in model.items()}
+        if model and all(p and p in flat for p in swapped.values()):
+            palettes[theme] = swapped
+        else:
+            unchecked.append(theme)
+    return palettes, unchecked
+
+
 def grade_contrast(system: dict) -> tuple[str, str]:
     tokens = json.loads((ROOT / system["tokens"]).read_text())
+    palettes, unchecked = theme_palettes(system, tokens)
     rows = []
-    for theme, roles in system["preview"].get("swatches", {}).items():
+    for theme, roles in palettes.items():
         page, surface = roles.get("page"), roles.get("surface")
         for role in ("text", "muted"):
             for bg_role, bg in (("page", page), ("surface", surface)):
@@ -63,11 +84,14 @@ def grade_contrast(system: dict) -> tuple[str, str]:
     text_bad = [r for r in rows if r["role"] == "text" and r["status"] != "pass"]
     muted_bad = [r for r in rows if r["role"] == "muted" and r["status"] != "pass"]
     pairs = lambda n: f"{n} pair{'s' if n != 1 else ''}"
+    gap = f"; {', '.join(unchecked)} not checked (no palette)" if unchecked else ""
     if text_bad:
-        return "missing", f"Script: primary text fails {pairs(len(text_bad))}; worst {where}"
+        return "missing", f"Script: primary text fails {pairs(len(text_bad))}; worst {where}{gap}"
     if muted_bad:
-        return "partly", f"Script: primary text passes; secondary fails {pairs(len(muted_bad))}, worst {where}"
-    return "meets", f"Script: all {len(rows)} pairs pass 4.5:1; lowest {where}"
+        return "partly", f"Script: primary text passes; secondary fails {pairs(len(muted_bad))}, worst {where}{gap}"
+    if unchecked:
+        return "partly", f"Script: all {len(rows)} checked pairs pass; lowest {where}{gap}"
+    return "meets", f"Script: all {len(rows)} pairs pass 4.5:1 across {len(palettes)} themes; lowest {where}"
 
 
 def _token_nodes(node, out: list) -> None:
@@ -97,6 +121,32 @@ DO_HEADING = re.compile(r"^(#{1,6})\s*do(?:'s)? and don'?t", re.I | re.M)
 IMAGE_LINK = re.compile(r"\]\(([^)\s]+\.(?:png|jpe?g|gif|webp|svg))[)#?\s]", re.I)
 
 
+ITEM = re.compile(r"^(\s*)(?:[-*+]|\d+\.)\s+(.*)$")
+
+
+def list_items(section: str) -> list[str]:
+    """Top-level list items with their wrapped continuation lines joined, so a link that
+    falls on a rule's second line still counts. After a blank line only an indented
+    line continues the item; a heading or an unindented paragraph ends it."""
+    items: list[str] = []
+    base = None
+    blank = False
+    for line in section.splitlines():
+        m = ITEM.match(line)
+        if m and (base is None or len(m.group(1)) <= base):
+            base = len(m.group(1)) if base is None else base
+            items.append(m.group(2))
+            blank = False
+        elif not line.strip():
+            blank = True
+        elif items and (line.startswith((" ", "\t")) or not blank) and not line.lstrip().startswith("#"):
+            items[-1] += " " + line.strip()
+            blank = False
+        else:
+            break
+    return [i for i in items if i.strip()]
+
+
 def grade_do_and_dont(system: dict) -> tuple[str, str]:
     readme = (ROOT / system["entry"]).read_text()
     m = DO_HEADING.search(readme)
@@ -106,8 +156,7 @@ def grade_do_and_dont(system: dict) -> tuple[str, str]:
     rest = readme[m.end():]
     end = re.search(rf"^#{{1,{level}}}\s", rest, re.M)
     section = rest[:end.start()] if end else rest
-    rules = re.findall(r"^\s*(?:[-*+]|\d+\.)\s+(.+)$", section, re.M)
-    rules = [r for r in rules if r.strip()]
+    rules = list_items(section)
     linked = [r for r in rules if IMAGE_LINK.search(r + " ")]
     if len(rules) >= 3 and len(linked) == len(rules):
         return "meets", f"Script: {len(rules)} rules, each linking a screenshot or crop"
