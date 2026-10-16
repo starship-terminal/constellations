@@ -25,13 +25,15 @@ def css_val(t):
     if ty == "cubicBezier":
         return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
     if ty == "shadow":
-        return ", ".join(f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {s["color"]}' for s in v)
+        return ", ".join(f'{"inset " if s.get("type") == "innerShadow" else ""}{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {s["color"]}' for s in v)
+    if isinstance(v, (int, float)) and ty in ("number",):
+        return str(v)
     if ty == "typography":
         # Point at the page's font stack (--ff-*), not the bare family, so the public
         # fallbacks apply when Google Sans is not installed.
         return f'{v["fontWeight"]} {v["fontSize"]}/{v["lineHeight"]} var(--ff-{family_key(v)})'
     if ty == "fontFamily":
-        return f'"{v}"'
+        return ", ".join(x if x in ("sans-serif", "serif", "monospace") else f'"{x}"' for x in (v if isinstance(v, list) else [v]))
     return str(v)
 
 core_css = "\n".join(f"  --{n}: {css_val(t)};" for n, t in flat(T["core"]))
@@ -43,11 +45,11 @@ def swatches(group):
     rows = []
     for n, t in flat(T["light"][group], group + "-"):
         d = dict(flat(T["dark"][group], group + "-"))[n]
-        est = "estimated" in t["$extensions"]["source"] or "estimated" in d["$extensions"]["source"]
+        est = t["$extensions"]["source"].startswith("Derived") or d["$extensions"]["source"].startswith("Derived")
         rows.append(
             f'<div class="sw"><div class="chip" style="background:var(--{n})"></div>'
             f'<div class="sw-meta"><code>{n}</code><span>{t["$value"]} / {d["$value"]}</span>'
-            f'<small>{html.escape(t.get("$description",""))}{" · <b>estimated</b>" if est else ""}</small></div></div>')
+            f'<small>{html.escape(t.get("$description",""))}{" · <b>derived</b>" if est else ""}</small></div></div>')
     return "\n".join(rows)
 
 def luminance(hexv):
@@ -64,12 +66,44 @@ def ink(hexv):
     # whichever label colour has the higher WCAG contrast against the swatch
     return max(("#1b1b1c", "#ffffff"), key=lambda c: contrast(c, hexv))
 
+def palettes():
+    return "\n".join(f'<h3>{fam}</h3><div class="ramp">{palette(fam)}</div>' for fam in T["core"]["palette"])
+
+import pathlib as _p
+COMP = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+def components():
+    out, group = [], None
+    for key, c in COMP.items():
+        if c["group"] != group:
+            group = c["group"]
+            out.append(f"<h3>{html.escape(group)}</h3>")
+        cells = []
+        for st in [k for k in c["states"] if not k.startswith("light")]:
+            lt = "light" if st == "default" else f"light-{st}"
+            d, l = HERE / "components" / "crops" / f"{key}-{st}.png", HERE / "components" / "crops" / f"{key}-{lt}.png"
+            if not d.exists():
+                continue
+            img = f'<img class="only-dark" src="components/crops/{d.name}" alt="{key} {st}, dark">'
+            if l.exists():
+                img += f'<img class="only-light" src="components/crops/{l.name}" alt="{key} {st}, light">'
+            cells.append(f'<figure class="crop">{img}<figcaption>{html.escape(st)}</figcaption></figure>')
+        if cells:
+            out.append(f'<div class="comp"><h4 id="c-{key}">{html.escape(c["title"])}</h4><div class="row crops">{"".join(cells)}</div></div>')
+    return "\n".join(out)
+
+def icons():
+    rows = []
+    for line in (HERE / "icons" / "INDEX.tsv").read_text().splitlines()[1:]:
+        f = line.split("\t")
+        rows.append(f'<tr><td><span class="mi">{html.escape(f[0])}</span></td><td><code>{html.escape(f[0])}</code></td><td>{html.escape(f[1])}</td><td>{html.escape(f[2])}</td><td>{html.escape(f[3])}</td><td>{html.escape(f[5])}</td></tr>')
+    return '<div class="scroll-x"><table class="spec"><tr><th></th><th>Ligature</th><th>Role</th><th>Where</th><th>Sizes</th><th>Font that drew it</th></tr>' + "".join(rows) + "</table></div>"
+
 def palette(fam):
     return "\n".join(f'<div class="ramp-step" style="background:var(--palette-{fam}-{k});color:{ink(t["$value"])}"><span>{k}</span><span>{t["$value"]}</span></div>'
                      for k, t in T["core"]["palette"][fam].items())
 
 type_rows = "\n".join(
-    f'<tr><td><code>{k}</code></td><td style="font:var(--typography-{k});letter-spacing:{t["$value"]["letterSpacing"]}">The quick brown fox</td>'
+    f'<tr><td><code>{k}</code></td><td style="font:var(--typography-{k});letter-spacing:{t["$value"]["letterSpacing"]};font-variation-settings:{html.escape(t["$extensions"].get("fontVariationSettings") or "normal", quote=True)}">The quick brown fox</td>'
     f'<td>{T["core"]["fontFamily"][family_key(t["$value"])]["$value"]} · {t["$value"]["fontSize"]}/{t["$value"]["lineHeight"]} · {t["$value"]["fontWeight"]} · {t["$value"]["letterSpacing"]}</td>'
     f'<td>{html.escape(t.get("$description",""))}</td></tr>'
     for k, t in T["core"]["typography"].items())
@@ -91,11 +125,12 @@ for key, val in {
     "SW_TEXT": swatches("text"), "SW_ACCENT": swatches("accent"), "SW_STATE": swatches("state"),
     "SW_STATUS": swatches("status"), "SW_TILE": swatches("tile"), "SW_PASTEL": swatches("pastel"),
     "SW_DATAVIZ": swatches("dataviz"), "SW_SKEL": swatches("skeleton"),
-    "PAL_GREY": palette("grey"), "PAL_BLUE": palette("blue"), "PAL_GREEN": palette("green"), "PAL_BRAND": palette("brand"), "PAL_ICON": palette("icon"),
+    "PALETTES": palettes(), "COMPONENTS": components(), "ICONS": icons(),
     "TYPE_ROWS": type_rows, "RADIUS": radius_demo, "SHADOWS": shadow_demo, "SPACING": spacing_demo,
     "SIZE_ROWS": dim_rows("size"), "BP_ROWS": dim_rows("breakpoint"), "BW_ROWS": dim_rows("borderWidth"),
     "BLUR_ROWS": dim_rows("blur"), "MOTION_ROWS": motion_rows, "DUR_ROWS": dur_rows,
 }.items():
     tpl = tpl.replace("{{" + key + "}}", val)
+tpl = tpl.replace("</style>", ".crop .only-light{display:none}[data-theme=light] .crop .only-light{display:block}[data-theme=light] .crop .only-dark{display:none}.crops{gap:12px;align-items:flex-end}.crop{margin:0}.crop img{max-width:340px;max-height:200px;display:block;border-radius:6px}.crop figcaption{font:12px/16px var(--ff-text);color:var(--text-secondary);margin-top:4px}.comp h4{margin:18px 0 6px;font:500 15px/20px var(--ff-text);color:var(--text-title)}\n</style>", 1)
 (HERE / "style-guide.html").write_text(tpl)
 print("wrote style-guide.html", len(tpl), "bytes")
