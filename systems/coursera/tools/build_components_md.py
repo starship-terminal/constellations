@@ -150,6 +150,7 @@ def parse_si():
 
 import json
 SIJSON = json.load(open('raw/components-signed-in.json'))['components']
+PUBJSON = json.load(open('raw/components-computed.json'))['components']
 PUB = parse_public()
 SI = parse_si()
 LOOK = {('p', e['id']): e for e in PUB}
@@ -354,8 +355,14 @@ def painted_cells(e):
         pd = e.get('painted') or {}
         if not pd:
             return None
+        # measurements.md writes a state's painted line only when it differs from the last state
+        # written, and skips states that paint nothing. The JSON says which of the two it was.
+        js = PUBJSON.get(e['id'], {}).get('states', {})
         cells, last = [], ''
         for st in e['states']:
+            if not (js.get(st) or {}).get('paint'):
+                cells.append('')
+                continue
             last = pd.get(st, last)
             cells.append(condense_layers(last) if last else '')
         return cells
