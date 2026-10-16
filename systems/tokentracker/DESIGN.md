@@ -69,6 +69,7 @@ colors:
   status-danger-fill: "#dc2626"
   status-danger-text: "#ffffff"
   control-switchOn: "#10b981"
+  control-switchThumb: "#ffffff"
   control-switchOff: "#d4d4d4"
   heatmap-0: "#ebedf0"
   heatmap-1: "#a7f3d0"

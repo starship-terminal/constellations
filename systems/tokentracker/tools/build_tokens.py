@@ -455,6 +455,8 @@ def themed(theme):
     P("status.danger.text", color("toast", "color", theme, "open", desc="Text on the danger fill."))
     P("control.switchOn", tok(hexa(reading("switch-on", theme, "disabled")["paint"][0]["bg"]), "color",
         f"Measured: computed fill of span.tt-toggle-track in {ckey('switch-on', theme)} (disabled, at 50% opacity as a whole), raw/components-computed.json"))
+    P("control.switchThumb", tok(hexa(reading("switch-on", theme, "disabled")["paint"][1]["bg"]), "color",
+        f"Measured: computed fill of span.tt-toggle-thumb in {ckey('switch-on', theme)} disabled, raw/components-computed.json", "The 14px thumb, white in both themes."))
     P("control.switchOff", tok(hexa(reading("switch-off", theme, "disabled")["paint"][0]["bg"]), "color",
         f"Measured: computed fill of span.tt-toggle-track in {ckey('switch-off', theme)} (disabled), raw/components-computed.json"))
     for i in range(5):

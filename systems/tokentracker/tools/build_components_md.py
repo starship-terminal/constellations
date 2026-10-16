@@ -92,9 +92,10 @@ for name, t in CORE.items():
     if name.startswith("motion.duration."):
         DUR.setdefault(t["$value"], name)
 UNTOK = "untokenised"
+PARTS = {"switch-on", "switch-off"}
 
 
-def ctok(c, theme, key, state="default"):
+def ctok(c, theme, key, state="default", prefer=None):
     """A computed colour as the token that holds it."""
     if not c or c in ("transparent", "rgba(0, 0, 0, 0)"):
         return "transparent"
@@ -104,7 +105,8 @@ def ctok(c, theme, key, state="default"):
         k = key if theme == "dark" else f"{key}.light"
         exact = [n for n, src in hits if f" {k} {state} " in src]
         own = [n for n, src in hits if f" {k} " in src]
-        return f"`{(exact or own or [hits[0][0]])[0]}`"
+        pref = [n for n, src in hits if prefer and n.startswith(prefer)]
+        return f"`{(exact or own or pref or [hits[0][0]])[0]}`"
     if len(h) == 9 and COLOUR[theme].get(h[:7]):
         return f"`{COLOUR[theme][h[:7]][0][0]}` @ {round(int(h[7:], 16) / 255, 2):g}"
     return f"{h} ({UNTOK})"
@@ -191,6 +193,18 @@ def row(v, theme, key, state="default"):
     }
     if ol:
         out["focus ring"] = ol
+    # Controls whose element is only a hit area: the visible parts are its painted children.
+    if key in PARTS and v.get("paint"):
+        parts = []
+        for p in v["paint"]:
+            if not p.get("bg"):
+                continue
+            name = re.sub(r"^span\.tt-toggle-", "", p["node"]).split(".")[0]
+            part = f"{name} {p['size'].replace('.0', '')} {ctok(p['bg'], theme, key, state, prefer='control.')}"
+            if p.get("radius"):
+                part += f", {dtok(p['radius'], 'radius')}"
+            parts.append(part)
+        out["parts"] = "; ".join(parts)
     if v.get("icon"):
         out["icon"] = dtok(f"{v['icon']['w']:g}px", "size.icon")
     return out
@@ -206,7 +220,7 @@ def table(key):
             continue
         states = list(c["states"])
         rows = {st: row(c["states"][st], theme, key, st) for st in states}
-        props = [p for p in ["size", "padding", "fill", "border", "radius", "text", "shadow", "focus ring", "icon", "transition", "error"] if any(p in r for r in rows.values())]
+        props = [p for p in ["size", "padding", "fill", "border", "radius", "text", "shadow", "focus ring", "parts", "icon", "transition", "error"] if any(p in r for r in rows.values())]
         lines.append(f"| {theme} | " + " | ".join(states) + " |")
         lines.append("|---|" + "---|" * len(states))
         for p in props:

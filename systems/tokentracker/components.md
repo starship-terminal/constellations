@@ -823,6 +823,7 @@ Crops: [cancel-button.light-default](components/crops/cancel-button.light-defaul
 | radius | `radius.full` | = |
 | text | `typography.body`, `text.primary` | = |
 | shadow | none | = |
+| parts | track 36x20 `control.switchOn`, `radius.full`; thumb 14x14 `control.switchThumb`, `radius.full` | = |
 | transition | none | = |
 
 Crops: [switch-on-disabled](components/crops/switch-on-disabled.png), [switch-on-hover](components/crops/switch-on-hover.png).
@@ -836,6 +837,7 @@ Crops: [switch-on-disabled](components/crops/switch-on-disabled.png), [switch-on
 | radius | `radius.full` | = |
 | text | `typography.body`, `text.primary` | = |
 | shadow | none | = |
+| parts | track 36x20 `control.switchOn`, `radius.full`; thumb 14x14 `control.switchThumb`, `radius.full` | = |
 | transition | none | = |
 
 Crops: [switch-on.light-disabled](components/crops/switch-on.light-disabled.png), [switch-on.light-hover](components/crops/switch-on.light-hover.png).
@@ -854,6 +856,7 @@ Crops: [switch-on.light-disabled](components/crops/switch-on.light-disabled.png)
 | radius | `radius.full` | = |
 | text | `typography.body`, `text.primary` | = |
 | shadow | none | = |
+| parts | track 36x20 `control.switchOff`, `radius.full`; thumb 14x14 `control.switchThumb`, `radius.full` | = |
 | transition | none | = |
 
 Crops: [switch-off-disabled](components/crops/switch-off-disabled.png), [switch-off-hover](components/crops/switch-off-hover.png).
@@ -867,6 +870,7 @@ Crops: [switch-off-disabled](components/crops/switch-off-disabled.png), [switch-
 | radius | `radius.full` | = |
 | text | `typography.body`, `text.primary` | = |
 | shadow | none | = |
+| parts | track 36x20 `control.switchOff`, `radius.full`; thumb 14x14 `control.switchThumb`, `radius.full` | = |
 | transition | none | = |
 
 Crops: [switch-off.light-disabled](components/crops/switch-off.light-disabled.png), [switch-off.light-hover](components/crops/switch-off.light-hover.png).
