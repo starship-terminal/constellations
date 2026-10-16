@@ -217,6 +217,9 @@ def border_cell(s, theme):
     if st["borderTopWidth"] != "0px" and st["borderTopStyle"] != "none" and norm_color(st["borderTopColor"]) != "transparent":
         return f'{len_cell(st["borderTopWidth"], {"1px": "borderWidth.hairline", "2px": "borderWidth.field-focus"})} {color_cell(st["borderTopColor"], theme, "border")}'
     for p in s.get("paint", [])[:4]:
+        # A checkmark is drawn with two border strokes; it is a glyph, not the control's border.
+        if re.search(r"pseudo-checkbox|checkmark|__mark", p["node"]):
+            continue
         if p.get("border"):
             m = re.search(r"(\d+px) solid (rgba?\([^)]*\))", p["border"])
             if m and norm_color(m.group(2)) != "transparent" and "focus" not in p["node"]:

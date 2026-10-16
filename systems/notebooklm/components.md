@@ -326,7 +326,6 @@ A cdk-autosize <textarea> inside the rounded composer.
 | Fill | none | none | none | `surface.panel` | `surface.panel` (on parent) | `state.hover-on-surface` / `surface.badge` | `state.pressed-on-surface` |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.primary` |
 | Type | Google Sans Flex 14px/24px 400 (raw) | Google Sans Flex 14px/24px 400 (raw) | Google Sans Flex 14px/24px 400 (raw) | Google Sans Flex 16px/20px 400 (raw) | Google Sans Flex 16px/20px 400 (raw) | Google Sans Flex 16px/20px 400 (raw) | Google Sans Flex 16px/20px 400 (raw) |
-| Border | none | none | none | `borderWidth.field-focus` #c2e7ff (raw) (mat-pseudo-checkbox) / `borderWidth.field-focus` #004a77 (raw) (mat-pseudo-checkbox) | none | none | `borderWidth.field-focus` #c2e7ff (raw) (mat-pseudo-checkbox) / `borderWidth.field-focus` #004a77 (raw) (mat-pseudo-checkbox) |
 | Radius | 0 | 0 | 0 | 0 0 `radius.xs` `radius.xs` | 0 | 0 | 0 |
 | Padding | 0 | 0 | 0 | `spacing.8` 0 | 0 `spacing.16` | 0 `spacing.16` | 0 `spacing.16` |
 | Shadow | none | none | none | `shadow.select` | none | none | none |
@@ -374,7 +373,7 @@ mat-button-toggle-group with role radiogroup; each chip is a role=radio button. 
 | Fill | none | none | none | none | `accent.brand` (inner) | `accent.brand` (on parent) |
 | Text | `text.primary` | `text.primary` | `text.primary` | `text.primary` | `text.on-brand` | `text.on-brand` |
 | Type | Google Sans Flex 15px/40px 370 (raw) | Google Sans Flex 15px/40px 370 (raw) | Google Sans Flex 15px/40px 370 (raw) | Google Sans Flex 15px/40px 370 (raw) | Google Sans Flex 15px/40px 370 (raw) | Google Sans Flex 15px/40px 370 (raw) |
-| Border | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) / `borderWidth.field-focus` `state.brand-layer` (mat-pseudo-checkbox) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) / `borderWidth.field-focus` `state.brand-layer` (mat-pseudo-checkbox) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) / `borderWidth.field-focus` `state.brand-layer` (mat-pseudo-checkbox) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) / `borderWidth.field-focus` `state.brand-layer` (mat-pseudo-checkbox) | `borderWidth.hairline` `border.subtle` (mat-button-toggle) | `borderWidth.field-focus` `text.on-brand` (mat-pseudo-checkbox) / `borderWidth.field-focus` `state.brand-layer` (mat-pseudo-checkbox) |
+| Border | none | none | none | none | `borderWidth.hairline` `border.subtle` (mat-button-toggle) | none |
 | Radius | 0 | 0 | 0 | 0 | `radius.lg-max` | 0 |
 | Padding | 0 | 0 | 0 | 0 | 0 | 0 0 0 30px (raw) |
 | Focus ring | none | none | `focusRing.checkbox-width` ring `border.focus-strong` (.mat-focus-indicator) | none | none | none |
@@ -961,4 +960,4 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 - **Avatar**: the photo was replaced by a grey disc in the copy, so only its size and shape are the product's.
 - **Studio outputs** (Audio and Video Overviews, mind map, flashcards, quiz) open player or iframe views that were not recaptured on 2026-10-17; the 2026-09-25 package measured some from screenshots and those readings are not carried over.
 
-Token coverage: 1708 cells name a token, 224 are raw values.
+Token coverage: 1684 cells name a token, 220 are raw values.
