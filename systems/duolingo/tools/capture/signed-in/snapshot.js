@@ -141,7 +141,7 @@ window.__snap = function (label, REDACT) {
     if (!c) return;
     if (el.type === 'checkbox' || el.type === 'radio') { if (el.checked) c.setAttribute('checked', ''); else c.removeAttribute('checked'); }
     else if (el.tagName === 'TEXTAREA') c.textContent = el.value;
-    else if (el.tagName === 'SELECT') [...c.options].forEach((o, j) => { o.selected = el.options[j] && el.options[j].selected; });
+    else if (el.tagName === 'SELECT') [...c.options].forEach((o, j) => { if (el.options[j] && el.options[j].selected) o.setAttribute('selected', ''); else o.removeAttribute('selected'); });
     else c.setAttribute('value', el.value);
   });
   // Base UI (Claude) marks a popup that is closing with data-ending-style and one that is opening

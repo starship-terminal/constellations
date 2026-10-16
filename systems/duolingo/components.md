@@ -301,7 +301,7 @@ unstyled (variant-unstyled _1gEmM): no background/border/padding, hover brightne
 
 ### Table (Guidebook phrase table)
 
-<table> cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card; header cells: tinted fill, 2px border on every side, outer top corners rounded 16px; body cells: no fill, 2px right and . [Full spec](components/core.md#table-guidebook-phrase-table)
+`<table>` cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card; header cells: tinted fill, 2px border on every side, outer top corners rounded 16px; body cells: no fill, 2px right an. [Full spec](components/core.md#table-guidebook-phrase-table)
 
 ![table light](components/crops/table-light.png) ![table dark](components/crops/table-dark.png)
 

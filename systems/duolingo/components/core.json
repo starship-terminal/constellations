@@ -10882,7 +10882,7 @@
    "id": "table",
    "name": "Table (Guidebook phrase table)",
    "anatomy": [
-    "<table> cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card",
+    "`<table>` cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card",
     "header cells: tinted fill, 2px border on every side, outer top corners rounded 16px",
     "body cells: no fill, 2px right and bottom borders; the grid is drawn by the cells (border-collapse separate, spacing 0)"
    ],
