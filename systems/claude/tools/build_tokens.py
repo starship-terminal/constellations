@@ -587,6 +587,12 @@ core["duration"]["$extensions"] = {"reducedMotion": {
     "summary": "Every animation is cut to 0.01ms and one iteration; transitions on popups, dialogs, tooltips and cards are removed (transition: none), entrance scales and translates are dropped (transform: none, scale-100), the skeleton shimmer is hidden, and shimmer text is shown plain in text.muted or text.secondary. Colour and opacity changes still happen, instantly.",
 }}
 
+# the label role: the field label of a form, measured
+fl = state("field-label")["style"]
+assert fl["fontSize"] == "14px" and fl["fontWeight"] == "500", fl
+core["typography"]["label"] = tok({"fontFamily": "{fontFamily.sans}", "fontSize": "{fontSize.body}", "lineHeight": px(fl["lineHeight"]), "fontWeight": "{fontWeight.medium}", "letterSpacing": "0px"}, "typography",
+                                  "measured: field-label on projects-dark-create (What are you working on?): %s %s/%s %s; body size and medium weight, set solid (line height = size)" % (fl["fontFamily"].split(",")[0], fl["fontSize"], fl["lineHeight"], fl["fontWeight"]))
+
 # themed: the link role and the pressed accent
 for setname, tree in (("light", light), ("dark", dark)):
     put(tree, ["text", "link"], tok("{text.accent}", "color", "measured: cds TextLink (`a, .prose-link`: color var(--cds-text-accent), underline 3px below at 40%% of the colour, full on hover and focus), text-link on settings-dark-capabilities reads %s" % state("text-link", "default" if setname == "dark" else "light")["style"]["color"]))

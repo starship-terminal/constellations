@@ -98,6 +98,13 @@ for grp in ("radius", "density", "size", "layout"):
             if n.startswith("density.gap"):
                 continue
             BY_DIM.setdefault((grp if grp == "radius" or n.startswith("density.radius") else "pad" if n.startswith("density.pad") else "size", t["$value"]), n)
+# Paddings off the density steps fall back to the spacing scale (Tailwind's 4px unit and its half steps).
+for n, t in sorted(flat(T["core"]["space"], "space."), key=lambda nt: float(nt[1]["$value"][:-2])):
+    BY_DIM.setdefault(("pad", t["$value"]), n)
+# Icon glyph sizes: the density icon steps, the small one included.
+BY_ICON = {}
+for step in ("icon", "icon--sm", "icon--lg"):
+    BY_ICON.setdefault(T["core"]["density"][step]["$value"], "density." + step)
 BY_DUR = {}
 for n, t in flat(T["core"]["duration"], "duration."):
     ms = float(t["$value"].replace("ms", ""))
@@ -106,7 +113,22 @@ BY_EASE = {}
 for n, t in flat(T["core"]["easing"], "easing."):
     if isinstance(t["$value"], list):
         BY_EASE.setdefault("cubic-bezier(%s)" % ", ".join(f"{x:g}" for x in t["$value"]), n)
-BY_OPACITY = {str(t["$value"]): n for n, t in flat(T["core"]["opacity"], "opacity.")}
+BY_OPACITY = {}
+for n, t in sorted(flat(T["core"]["opacity"], "opacity."), key=lambda nt: nt[0] != "opacity.disabled"):
+    BY_OPACITY.setdefault(str(t["$value"]), n)
+
+
+def core_value(v):
+    """A core alias such as {fontSize.body} -> its literal."""
+    m = re.fullmatch(r"\{([^{}]+)\}", str(v))
+    if not m:
+        return v
+    node = T["core"]
+    for k in m.group(1).split("."):
+        node = node.get(k, {}) if isinstance(node, dict) else {}
+    return core_value(node.get("$value", v))
+
+
 
 # Counts of what the entries name: every colour, shadow and dimension written, and how many name a token.
 NAMED = collections.Counter()
@@ -201,9 +223,23 @@ def num(x):
     return re.sub(r"(\d+\.\d\d)\d+", r"\1", str(x))
 
 
+# Type by (family, size, line height, weight), from the composite typography tokens; the plain
+# role names (body-regular) before the measured ones that share a value.
+BY_TYPE = {}
+for n, t in flat(T["core"]["typography"], "typography."):
+    v = t["$value"]
+    fam_ = core_value(v["fontFamily"])
+    fam_ = fam_[0] if isinstance(fam_, list) else str(fam_).split(",")[0]
+    key = (fam(str(fam_)), num(str(core_value(v["fontSize"])).replace("px", "")), num(str(core_value(v["lineHeight"])).replace("px", "")), str(core_value(v["fontWeight"])))
+    BY_TYPE.setdefault(key, n)
+
+
 def font(fz, lh, fw, f):
     lh = lh.replace("px", "") if lh != "normal" else "normal"
-    return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
+    raw = f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
+    if fam(f) == "Anthropicons":  # an icon glyph: its size is an icon step, not a type role
+        return f"Anthropicons {tok(BY_ICON.get(fz), fz)} at weight {fw}"
+    return tok(BY_TYPE.get((fam(f), num(fz.replace("px", "")), num(lh), str(fw))), raw)
 
 
 def dim(kind, value):
@@ -428,8 +464,8 @@ W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md
 W()
 W("How to read an entry:")
 W()
-W("- Values are written as tokens: a colour, shadow, radius, padding, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A value no token holds is written raw: Tailwind's default curve `cubic-bezier(0.4, 0, 0.2, 1)`, odd paddings, most drop shadows inside components. @@NAMED@@")
-W("- Text is Text is written family size/line-height weight, then its colour, for example `Anthropic Sans 14/20 400, #f0efec`, and is read from the first text node inside the component. A glyph from the icon font reads `Anthropicons`.")
+W("- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A value no token holds is written raw: Tailwind's default curve `cubic-bezier(0.4, 0, 0.2, 1)`, odd paddings, most drop shadows inside components. @@NAMED@@")
+W("- Text is written as its typography token, then family size/line-height weight in brackets, then its colour, for example `` `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) ``, and is read from the first text node inside the component. A glyph from the icon font reads `Anthropicons` with its icon size step and weight.")
 W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do: a cds Button paints its fill on an inner span, so its hover shows there.")
 W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()

@@ -510,6 +510,12 @@ typography:
     fontWeight: 400
     lineHeight: "20px"
     letterSpacing: "0px"
+  label:
+    fontFamily: "anthropic-sans"
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: "14px"
+    letterSpacing: "0px"
 rounded:
   composer: "20px"
   card: "12px"
@@ -581,15 +587,15 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-24 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: anthropic-mono, anthropic-sans, anthropic-serif.
+25 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: anthropic-mono, anthropic-sans, anthropic-serif.
 
 ### Fonts (from README.md)
 
 | Family | Used for | Licence | Use instead |
 |---|---|---|---|
-| Anthropic Sans (`anthropic-sans`) | Everything in the interface, at the cds type roles: caption 12, footnote 13, body 14, heading 15, title 22 (comfortable). Semibold is 580, bold 600. | Anthropic's own face, served from assets-proxy.anthropic.com; no licence for reuse | The stack's own fallback, `ui-sans-serif, system-ui` (`fontFamily.sans`); Inter or SF Pro in Figma |
-| Anthropic Serif (`anthropic-serif`, `--cds-font-voice`) | The "Claude" wordmark, the home greeting (38/47.5 at weight 300 with the opsz 48 axis), page titles (24/32, 500), and Claude's replies at 16/24, the chat font's default. | Anthropic's own face; no licence for reuse | Georgia, the stack's fallback; the style guide uses Source Serif 4 from Google Fonts as a stand-in |
-| Anthropic Mono (`anthropic-mono`) | Code blocks and code spans. | Anthropic's own face; no licence for reuse | `ui-monospace`, the stack's fallback |
+| Anthropic Sans (`anthropic-sans`) | Everything in the interface, at the cds type roles: caption 12, footnote 13, body 14, heading 15, title 22 (comfortable). Semibold is 580, bold 600. | Anthropic's own face, served from assets-proxy.anthropic.com; no licence for reuse | The stack's own fallbacks, `system-ui, "Segoe UI", Roboto, Helvetica, Arial` (`fontFamily.sans`); Inter or SF Pro in Figma |
+| Anthropic Serif (`anthropic-serif`, `--cds-font-voice`) | The "Claude" wordmark, the home greeting (38/47.5 at weight 300 with the opsz 48 axis), page titles (24/32, 500), and Claude's replies at 16/24, the chat font's default. | Anthropic's own face; no licence for reuse | Georgia, the stack's first real fallback (`fontFamily.serif`); the style guide uses Source Serif 4 from Google Fonts as a stand-in |
+| Anthropic Mono (`anthropic-mono`) | Code blocks and code spans. | Anthropic's own face; no licence for reuse | `ui-monospace, "SF Mono", Menlo, Consolas`, the stack's fallbacks (`fontFamily.mono`) |
 | Anthropicons-Variable | Every icon: one character per glyph, its weight thinned as the size grows. | Anthropic's own icon font; the 72 drawings in [icons/](icons) are kept for reference only | An open icon set of your choice, at the sizes and roles [icons/INDEX.tsv](icons/INDEX.tsv) lists |
 | System, OpenDyslexic | The other chat font options in Settings > Appearance (System, Dyslexic friendly); `data-font="system"` swaps the UI sans for the platform face. | The platform's own face; OpenDyslexic is an open font under its own licence | The same |
 
