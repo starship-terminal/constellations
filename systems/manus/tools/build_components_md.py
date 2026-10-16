@@ -45,6 +45,7 @@ for theme in ("dark", "light"):
             BY_COLOR[theme].setdefault(key, n)
 
 THEME = ["dark"]  # the theme the colour() helper looks tokens up in; set per state
+STATE = ["default"]  # the state being written, so own_tokens() knows which class variants apply
 
 # The token each variable is, by name: a token's source names the css-var it was read from.
 NAME2PATH = {"dark": {}, "light": {}}
@@ -53,7 +54,12 @@ for theme in ("dark", "light"):
         m = re.match(r"css-var (--[A-Za-z0-9-]+) ", t.get("$extensions", {}).get("source", ""))
         if m and not n.startswith(("role.", "component.")):
             NAME2PATH[theme].setdefault(m.group(1), n)
-OWN = [{}]  # value -> token, for the variables the state's own classes name; set per state
+OWN = [{}]  # property -> {value: token}, from the state's own classes; set per state
+
+# Which class prefix sets which property, and which class variants apply in which measured state.
+PROP_CLASS = {"bg": r"bg", "text": r"text", "border": r"border(?:-[trblxyse])?"}
+STATE_VARIANTS = (("pressed", ("active", "hover")), ("hover", ("hover", "group-hover")), ("focus", ("focus", "focus-visible", "focus-within")),
+                  ("disabled", ("disabled",)), ("open", ("data-[state=open]", "aria-expanded")), ("selected", ("data-[active]", "aria-selected")))
 
 
 def hexnorm(v):
@@ -67,13 +73,30 @@ def hexnorm(v):
     return norm(int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16), a)
 
 
-def own_tokens(v, theme):
+def own_tokens(v, theme, state):
+    """{property: {value: token}} for the colours the element's own classes set, in variants that
+    apply to this state. The value is the variable's value in this theme, so a label is exact only
+    when the class that names the variable is on this element, for this property, in this state."""
+    variants = {""} | ({"dark"} if theme == "dark" else set())
+    for key, vs in STATE_VARIANTS:
+        if key in state:
+            variants |= set(vs)
+    vals = v.get("vars") or {}
     out = {}
-    for name, val in (v.get("vars") or {}).items():
-        path = NAME2PATH[theme].get(name)
-        hv = hexnorm(val) if isinstance(val, str) else None
-        if path and hv:
-            out.setdefault(re.sub(r"(\d+\.\d+)\)", lambda m: f"{round(float(m.group(1)), 2):g})", hv), path)
+    for cls in v.get("classes", "").split():
+        parts = cls.split(":")
+        base, mods = parts[-1], parts[:-1]
+        if any(m not in variants for m in mods):
+            continue
+        for prop, rx in PROP_CLASS.items():
+            m = re.fullmatch(rx + r"-\[var\(--([A-Za-z0-9-]+)\)\]", base)
+            if not m:
+                continue
+            name = "--" + m.group(1)
+            path = NAME2PATH[theme].get(name)
+            hv = hexnorm(vals[name]) if path and isinstance(vals.get(name), str) else None
+            if hv:
+                out.setdefault(prop, {}).setdefault(re.sub(r"(\d+\.\d+)\)", lambda mm: f"{round(float(mm.group(1)), 2):g})", hv), path)
     return out
 
 
@@ -83,15 +106,16 @@ def norm(r, g, b, a=None):
     return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), round(float(a), 2))
 
 
-def colour(c, tokens=True):
-    """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)'."""
+def colour(c, tokens=True, prop=None):
+    """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)'. With `prop` (bg, text, border), a
+    value the element's own class sets for that property in this state gets that exact token."""
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
         if not tokens:
             return v
-        if v in OWN[0]:
-            return f"{v} `{OWN[0][v]}`"
+        if prop and v in OWN[0].get(prop, {}):
+            return f"{v} `{OWN[0][prop][v]}`"
         tok = BY_COLOR[THEME[0]].get(v)
         return f"{v} `≈ {tok}`" if tok else v
 
@@ -124,7 +148,7 @@ def font(fz, lh, fw, f):
 
 def props(v):
     s = v["style"]
-    OWN[0] = own_tokens(v, THEME[0])
+    OWN[0] = own_tokens(v, THEME[0], STATE[0])
     o = {}
     o["size"] = f"{num(v['rect']['w'])} x {num(v['rect']['h'])}"
     pad = sides(s["paddingTop"], s["paddingRight"], s["paddingBottom"], s["paddingLeft"])
@@ -133,7 +157,7 @@ def props(v):
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'])}")
+            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], prop='border')}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
@@ -141,7 +165,7 @@ def props(v):
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
         o["radius"] = rad
-    o["background"] = colour(s["backgroundColor"])
+    o["background"] = colour(s["backgroundColor"], prop="bg")
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
         o["image"] = colour(img)[:200]
@@ -159,7 +183,7 @@ def props(v):
     if t:
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
     elif v.get("text"):
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], prop='text')}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -202,10 +226,12 @@ def state_rows(c):
         if not states:
             continue
         THEME[0] = theme
+        STATE[0] = states[0]
         base = props(c["states"][states[0]])
         trows = [(states[0], base)]
         same = []
         for st in states[1:]:
+            STATE[0] = st
             p = props(c["states"][st])
             diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
             for k in ORDER:

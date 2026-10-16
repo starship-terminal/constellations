@@ -2,13 +2,15 @@
 """Read the foundation values Manus keeps in utility classes rather than custom properties, and
 write raw/css-rules.json. Added on the 2026-10-17 refresh to close the scorecard's foundation gaps.
 
-    python3 tools/capture/rules.py <dir of the downloaded .css chunks> [SNAPS dir]
+    python3 tools/capture/rules.py <dir of the downloaded .css chunks> <SNAPS dir>
 
 Manus is Tailwind 3 over CSS variables (see vars.mjs), so its shadows, spacing, z-index layers,
 border widths, focus treatment and reduced-motion rules live in utility classes. This script reads
 them from the same stylesheet chunks vars.mjs parses and, where a count says more than a list,
 counts how many elements carry each class in the page copies (SNAPS, outside the repository; only
-the counts are written). Every reading names where it came from:
+the counts are written). Both inputs are required: the spacing scale and every element count come
+from the copies, so the script refuses to run without them rather than write empty readings over
+the committed ones. Every reading names where it came from:
 
   namedShadows    the shadow-* utilities Manus defines by name (shadow-card, shadow-layer,
                   shadow-menu) plus Tailwind's defaults it ships, parsed into layers
@@ -35,6 +37,10 @@ snaps = pathlib.Path(_snaps).expanduser() if _snaps else None
 HTML = sorted(snaps.glob("*.html")) if snaps and snaps.is_dir() else []
 
 CSS = {f.name: f.read_text() for f in sorted(css_dir.glob("*.css"))}
+if not CSS:
+    sys.exit(f"no .css chunks in {css_dir}; nothing written")
+if not HTML:
+    sys.exit(f"no page copies (*.html) in {snaps or '(no SNAPS dir given)'}; the spacing scale and element counts need them, nothing written")
 
 
 def unescape(sel):

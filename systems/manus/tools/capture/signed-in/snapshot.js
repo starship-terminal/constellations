@@ -89,10 +89,15 @@ window.__snap = function (label, REDACT) {
   });
   clone.querySelectorAll('script,noscript,link[rel="stylesheet"],link[rel="preload"],link[rel="modulepreload"],link[rel="prefetch"],style,base').forEach((n) => n.remove());
   const INL = window.__inl || {};
+  // REDACT.blankSrc is a regex for image URLs that show the account's own content (slide
+  // screenshots, uploaded files). It is tested against the original URL, before an inlined
+  // thumbnail (window.__inl) replaces it, and a match becomes a 1x1 transparent GIF.
+  const BLANK = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA=';
+  const bl = REDACT.blankSrc ? new RegExp(REDACT.blankSrc) : null;
   clone.querySelectorAll('[src]').forEach((n) => {
     const v = n.getAttribute('src');
     let full; try { full = new URL(v, location.href).href; } catch { full = v; }
-    n.setAttribute('src', INL[full] || abs(v));
+    n.setAttribute('src', bl && (bl.test(full) || bl.test(v)) ? BLANK : INL[full] || abs(v));
   });
   clone.querySelectorAll('[href]').forEach((n) => n.setAttribute('href', abs(n.getAttribute('href'))));
   clone.querySelectorAll('[srcset]').forEach((n) => n.setAttribute('srcset', n.getAttribute('srcset').split(',').map((p) => {
@@ -142,13 +147,8 @@ window.__snap = function (label, REDACT) {
       }
     });
   }
-  // The <title> is the task's name. REDACT.blankSrc is a regex for image URLs that show the
-  // account's own content (slide screenshots, uploaded files); each becomes a 1x1 transparent GIF.
+  // The <title> is the task's name.
   clone.querySelectorAll('title').forEach((t) => { t.textContent = 'Manus'; });
-  if (REDACT.blankSrc) {
-    const bl = new RegExp(REDACT.blankSrc);
-    clone.querySelectorAll('img[src]').forEach((i) => { if (bl.test(i.getAttribute('src'))) i.setAttribute('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA='); });
-  }
   for (const a of REDACT.stripAttrs || []) clone.querySelectorAll('[' + a + ']').forEach((x) => x.removeAttribute(a));
   clone.querySelectorAll('[href*="/app/"]').forEach((x) => x.setAttribute('href', x.getAttribute('href').replace(/\/app\/[A-Za-z0-9_-]{12,}/g, '/app/ID')));
   let html = '<!doctype html>\n' + clone.outerHTML;
