@@ -1058,7 +1058,7 @@
     },
     "F7": {
      "grade": "meets",
-     "evidence": "light and dark each 704 tokens, identical key sets, role and elevation in both"
+     "evidence": "every colour, role, elevation and palette key in both themes; only 6 composer border entries are dark-only (light uses a literal)"
     },
     "F8": {
      "grade": "meets",
@@ -1094,7 +1094,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 1672 of 1672 tokens name their source"
+     "evidence": "Script: 1682 of 1682 tokens name their source"
     },
     "C1": {
      "grade": "partly",

@@ -356,7 +356,6 @@ colors:
   component-category-tab-default-text: "#737373"
   component-category-tab-hover-bg: "rgba(55, 53, 47, 0.039)"
   component-composer-default-bg: "#ffffff"
-  component-composer-focus-within-border: "rgba(0, 0, 0, 0.141)"
   component-composer-connectors-default-text: "#1a1a1a"
   component-composer-connectors-hover-bg: "rgba(55, 53, 47, 0.039)"
   component-composer-desktop-chip-default-text: "#4d4d4d"
@@ -470,7 +469,6 @@ colors:
   component-m-chip-default-border: "rgba(0, 0, 0, 0.059)"
   component-m-chip-hover-bg: "rgba(55, 53, 47, 0.039)"
   component-m-composer-default-bg: "#ffffff"
-  component-m-composer-focus-within-border: "rgba(0, 0, 0, 0.141)"
   component-m-drawer-default-bg: "#f0f0f0"
   component-m-drawer-scrim-default-bg: "rgba(0, 0, 0, 0.651)"
   component-m-file-row-hover-bg: "rgba(55, 53, 47, 0.039)"
@@ -546,7 +544,6 @@ colors:
   component-project-add-button-hover-bg: "rgba(55, 53, 47, 0.039)"
   component-project-add-button-default-text: "#1a1a1a"
   component-project-composer-default-bg: "#ffffff"
-  component-project-composer-focus-within-border: "rgba(0, 0, 0, 0.141)"
   component-project-connectors-default-bg: "rgba(55, 53, 47, 0.039)"
   component-project-connectors-hover-bg: "rgba(55, 53, 47, 0.059)"
   component-project-icon-default-bg: "rgba(55, 53, 47, 0.059)"
@@ -585,10 +582,12 @@ colors:
   component-settings-close-hover-bg: "rgba(55, 53, 47, 0.039)"
   component-settings-dialog-default-bg: "#f8f8f7"
   component-settings-nav-item-default-text: "#1a1a1a"
-  component-settings-nav-item-hover-bg: "rgba(55, 53, 47, 0.078)"
+  component-settings-nav-item-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-settings-nav-item-hover-pressed-bg: "rgba(55, 53, 47, 0.078)"
   component-settings-nav-label-default-text: "#737373"
   component-settings-nav-row-default-text: "#1a1a1a"
-  component-settings-nav-row-hover-bg: "rgba(55, 53, 47, 0.078)"
+  component-settings-nav-row-hover-bg: "rgba(55, 53, 47, 0.039)"
+  component-settings-nav-row-hover-pressed-bg: "rgba(55, 53, 47, 0.078)"
   component-settings-row-desc-default-text: "#737373"
   component-settings-row-title-default-text: "#1a1a1a"
   component-settings-rule-default-bg: "rgba(0, 0, 0, 0.059)"
@@ -641,6 +640,7 @@ colors:
   component-table-row-more-hover-bg: "rgba(55, 53, 47, 0.059)"
   component-tabs-underline-default-text: "#737373"
   component-tabs-underline-hover-text: "#4d4d4d"
+  component-tabs-underline-selected-text: "#1a1a1a"
   component-task-completed-default-text: "#25ba3b"
   component-task-group-link-default-text: "#1a1a1a"
   component-task-menu-default-bg: "#ffffff"
@@ -658,8 +658,9 @@ colors:
   component-text-field-wrapper-focus-within-ring: "rgba(0, 0, 0, 0.141)"
   component-theme-card-default-border: "rgba(0, 0, 0, 0.122)"
   component-theme-card-default-text: "#4d4d4d"
-  component-theme-card-hover-bg: "rgba(55, 53, 47, 0.059)"
+  component-theme-card-hover-bg: "rgba(55, 53, 47, 0.039)"
   component-theme-card-hover-text: "#1a1a1a"
+  component-theme-card-hover-pressed-bg: "rgba(55, 53, 47, 0.059)"
   component-tooltip-default-bg: "rgba(0, 0, 0, 0.902)"
   component-tooltip-default-text: "#ffffff"
   component-topbar-more-button-hover-bg: "rgba(55, 53, 47, 0.039)"
@@ -690,6 +691,7 @@ colors:
   component-view-toggle-default-bg: "rgba(55, 53, 47, 0.039)"
   component-view-toggle-option-default-text: "#737373"
   component-view-toggle-option-hover-text: "#4d4d4d"
+  component-view-toggle-option-selected-text: "#1a1a1a"
   component-view-toggle-thumb-default-bg: "#ffffff"
   component-waitlist-banner-default-border: "rgba(0, 0, 0, 0.141)"
   component-waitlist-banner-default-bg: "#ffffff"
@@ -1252,12 +1254,16 @@ components:
     textColor: "{colors.component-settings-nav-item-default-text}"
   settings-nav-item-hover:
     backgroundColor: "{colors.component-settings-nav-item-hover-bg}"
+  settings-nav-item-hover-pressed:
+    backgroundColor: "{colors.component-settings-nav-item-hover-pressed-bg}"
   settings-nav-label-default:
     textColor: "{colors.component-settings-nav-label-default-text}"
   settings-nav-row-default:
     textColor: "{colors.component-settings-nav-row-default-text}"
   settings-nav-row-hover:
     backgroundColor: "{colors.component-settings-nav-row-hover-bg}"
+  settings-nav-row-hover-pressed:
+    backgroundColor: "{colors.component-settings-nav-row-hover-pressed-bg}"
   settings-row-desc-default:
     textColor: "{colors.component-settings-row-desc-default-text}"
   settings-row-title-default:
@@ -1338,6 +1344,8 @@ components:
     textColor: "{colors.component-tabs-underline-default-text}"
   tabs-underline-hover:
     textColor: "{colors.component-tabs-underline-hover-text}"
+  tabs-underline-selected:
+    textColor: "{colors.component-tabs-underline-selected-text}"
   task-completed-default:
     textColor: "{colors.component-task-completed-default-text}"
   task-group-link-default:
@@ -1364,6 +1372,8 @@ components:
   theme-card-hover:
     backgroundColor: "{colors.component-theme-card-hover-bg}"
     textColor: "{colors.component-theme-card-hover-text}"
+  theme-card-hover-pressed:
+    backgroundColor: "{colors.component-theme-card-hover-pressed-bg}"
   tooltip-default:
     backgroundColor: "{colors.component-tooltip-default-bg}"
     textColor: "{colors.component-tooltip-default-text}"
@@ -1414,6 +1424,8 @@ components:
     textColor: "{colors.component-view-toggle-option-default-text}"
   view-toggle-option-hover:
     textColor: "{colors.component-view-toggle-option-hover-text}"
+  view-toggle-option-selected:
+    textColor: "{colors.component-view-toggle-option-selected-text}"
   view-toggle-thumb-default:
     backgroundColor: "{colors.component-view-toggle-thumb-default-bg}"
   waitlist-banner-default:
@@ -1536,7 +1548,7 @@ Corner radii from `core.radius`: `row` 10px, `small` 8px, `card` 12px, `composer
 
 ## Components
 
-274 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+279 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 

@@ -619,16 +619,26 @@ def component_set(theme):
             continue
         entry = {}
         for cls in s["classes"].split():
-            variant = cls.split(":")[0] if ":" in cls and not cls.startswith("[") else "default"
-            if variant not in ("default", "hover", "focus", "focus-visible", "focus-within", "active", "disabled", "group-hover", "data-[active]"):
+            # Every modifier counts: hover:active:bg-x is the pressed colour, not the hover one. The
+            # state key is the whole chain (hover, pressed, hover-pressed, focus-visible, ...); dark:
+            # applies only to the dark set, where it is the default.
+            mods = cls.split(":")[:-1] if not cls.startswith("[") else []
+            if "dark" in mods:
+                if theme != "dark":
+                    continue
+                mods = [x for x in mods if x != "dark"]
+            names = {"hover": "hover", "group-hover": "group-hover", "focus": "focus", "focus-visible": "focus-visible", "focus-within": "focus-within",
+                     "active": "pressed", "disabled": "disabled", "data-[active]": "selected"}
+            if any(x not in names for x in mods):
                 continue
+            variant = "-".join(names[x] for x in mods) or "default"
             for prop, _, rx in PROP:
-                m = re.match(rx, cls)
+                m = re.match(rx, cls.split(":")[-1])
                 if m and m.group(1) in by_name:
-                    entry.setdefault(variant.replace("data-[active]", "selected"), {})[prop] = {"$value": "{" + by_name[m.group(1)] + "}", "$type": "color", "$extensions": {"source": f"Measured: class `{cls}` on the measured element ({s['snapshot']})"}}
+                    entry.setdefault(variant, {})[prop] = {"$value": "{" + by_name[m.group(1)] + "}", "$type": "color", "$extensions": {"source": f"Measured: class `{cls}` on the measured element ({s['snapshot']})"}}
         if entry:
             out[key] = entry
-    out["$description"] = ("One entry per measured component: the colour tokens its own classes name (bg-[var(--x)], text-[var(--x)], border-[var(--x)], ring-[var(--x)]), by state variant (default, hover, focus, active, disabled, selected). "
+    out["$description"] = ("One entry per measured component: the colour tokens its own classes name (bg-[var(--x)], text-[var(--x)], border-[var(--x)], ring-[var(--x)]), keyed by the class's whole modifier chain (default, hover, pressed, hover-pressed, focus-visible, disabled, selected, ...), so a pressed colour never stands in for hover. "
                            "Read from the element's class list, so a token here is the one Manus wrote, never a value match. raw/measurements.md has every computed value.")
     return out
 
