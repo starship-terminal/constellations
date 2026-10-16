@@ -1,0 +1,386 @@
+{
+  "method": "Chromium via Playwright, 1440 px at 2x, light theme. Tab pressed once for keyboard modality, then the control focused; values are computed styles that differ from the unfocused control.",
+  "gallery": "@shopify/polaris 13.9.5",
+  "results": {
+    "button-primary": {
+      "section": "Buttons",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Button.Polaris-Button--pressable.Polaris-Button--variantPrimary.Polaris-Button--sizeMedium.Polaris-Button--textAlignCenter": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "background-color": "rgb(26, 26, 26)"
+        }
+      }
+    },
+    "button-secondary": {
+      "section": "Buttons",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Button.Polaris-Button--pressable.Polaris-Button--variantSecondary.Polaris-Button--sizeMedium.Polaris-Button--textAlignCenter": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "background-color": "rgb(250, 250, 250)"
+        }
+      }
+    },
+    "button-tertiary": {
+      "section": "Buttons",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Button.Polaris-Button--pressable.Polaris-Button--variantTertiary.Polaris-Button--sizeMedium.Polaris-Button--textAlignCenter": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "background-color": "rgba(0, 0, 0, 0.05)"
+        }
+      }
+    },
+    "button-plain": {
+      "section": "Buttons",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Button.Polaris-Button--pressable.Polaris-Button--variantPlain.Polaris-Button--sizeMedium.Polaris-Button--textAlignCenter": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-offset": "-6px",
+          "border-color": "rgb(0, 66, 153)"
+        }
+      }
+    },
+    "button-critical": {
+      "section": "Buttons",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Button.Polaris-Button--pressable.Polaris-Button--variantPrimary.Polaris-Button--sizeMedium.Polaris-Button--textAlignCenter.Polaris-Button--toneCritical": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "background-color": "rgb(163, 10, 36)"
+        }
+      }
+    },
+    "icon-button": {
+      "section": "Buttons",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Button.Polaris-Button--pressable.Polaris-Button--variantSecondary.Polaris-Button--sizeMedium.Polaris-Button--textAlignCenter.Polaris-Button--iconOnly": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "background-color": "rgb(250, 250, 250)"
+        }
+      }
+    },
+    "button-segmented": {
+      "section": "Buttons",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Button.Polaris-Button--pressable.Polaris-Button--variantSecondary.Polaris-Button--sizeMedium.Polaris-Button--textAlignCenter": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "background-color": "rgb(250, 250, 250)"
+        },
+        "parent .Polaris-ButtonGroup__Item.Polaris-ButtonGroup__Item--focused": {
+          "outline-style": "none",
+          "outline-width": "0px",
+          "outline-color": "rgb(48, 48, 48)",
+          "outline-offset": "0px",
+          "box-shadow": "none",
+          "border-color": "rgb(48, 48, 48)",
+          "background-color": "rgba(0, 0, 0, 0)"
+        }
+      }
+    },
+    "tag-remove": {
+      "section": "Badges and tags",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Tag__Button": {
+          "outline-color": "rgb(48, 48, 48)",
+          "border-color": "rgb(48, 48, 48)",
+          "background-color": "rgb(212, 212, 212)"
+        },
+        "self::after .Polaris-Tag__Button": {
+          "outline-style": "solid",
+          "outline-width": "1px",
+          "outline-color": "rgba(0, 0, 0, 0)",
+          "box-shadow": "rgb(0, 91, 211) 0px 0px 0px 2px",
+          "border-color": "rgb(48, 48, 48)"
+        }
+      }
+    },
+    "text-field": {
+      "section": "Forms",
+      "focusVisible": true,
+      "changed": {
+        "parent .Polaris-TextField.Polaris-TextField--hasValue.Polaris-TextField--focus": {
+          "outline-style": "none",
+          "outline-width": "0px",
+          "outline-color": "rgb(48, 48, 48)",
+          "outline-offset": "0px",
+          "box-shadow": "none",
+          "border-color": "rgb(48, 48, 48)",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "sibling0 .Polaris-TextField__Backdrop": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "border-color": "rgb(26, 26, 26)",
+          "background-color": "rgb(247, 247, 247)"
+        }
+      }
+    },
+    "text-area": {
+      "section": "Forms",
+      "focusVisible": true,
+      "changed": {
+        "parent .Polaris-TextField.Polaris-TextField--hasValue.Polaris-TextField--multiline.Polaris-TextField--focus": {
+          "outline-style": "none",
+          "outline-width": "0px",
+          "outline-color": "rgb(48, 48, 48)",
+          "outline-offset": "0px",
+          "box-shadow": "none",
+          "border-color": "rgb(48, 48, 48)",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "sibling0 .Polaris-TextField__Backdrop": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "border-color": "rgb(26, 26, 26)",
+          "background-color": "rgb(247, 247, 247)"
+        }
+      }
+    },
+    "select": {
+      "section": "Forms",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Select__Input": {
+          "outline-style": "auto",
+          "outline-width": "1px",
+          "outline-color": "rgb(0, 95, 204)"
+        },
+        "sibling1 .Polaris-Select__Backdrop": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "border-color": "rgb(26, 26, 26)",
+          "background-color": "rgb(247, 247, 247)"
+        }
+      }
+    },
+    "checkbox": {
+      "section": "Forms",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Checkbox__Input": {
+          "outline-style": "auto",
+          "outline-width": "1px",
+          "outline-color": "rgb(0, 95, 204)",
+          "outline-offset": "2px"
+        },
+        "sibling0 .Polaris-Checkbox__Backdrop": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px"
+        }
+      }
+    },
+    "radio": {
+      "section": "Forms",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-RadioButton__Input": {
+          "outline-style": "auto",
+          "outline-width": "1px",
+          "outline-color": "rgb(0, 95, 204)",
+          "outline-offset": "2px"
+        },
+        "sibling0 .Polaris-RadioButton__Backdrop": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px"
+        }
+      }
+    },
+    "range-slider": {
+      "section": "Forms",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-RangeSlider-SingleThumb__Input": {
+          "outline-style": "solid",
+          "outline-width": "1px",
+          "outline-color": "rgba(0, 0, 0, 0)"
+        }
+      }
+    },
+    "tooltip-activator": {
+      "section": "Feedback",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Button.Polaris-Button--pressable.Polaris-Button--variantSecondary.Polaris-Button--sizeMedium.Polaris-Button--textAlignCenter": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "background-color": "rgb(250, 250, 250)"
+        }
+      }
+    },
+    "tab": {
+      "section": "Navigation",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Tabs__Tab.Polaris-Tabs__Tab--active": {
+          "outline-color": "rgb(74, 74, 74)",
+          "border-color": "rgb(74, 74, 74)",
+          "background-color": "rgba(0, 0, 0, 0.05)"
+        },
+        "self::after .Polaris-Tabs__Tab.Polaris-Tabs__Tab--active": {
+          "outline-style": "solid",
+          "outline-width": "1px",
+          "outline-color": "rgba(0, 0, 0, 0)",
+          "box-shadow": "rgb(0, 91, 211) 0px 0px 0px 2px",
+          "border-color": "rgb(74, 74, 74)"
+        }
+      }
+    },
+    "pagination": {
+      "section": "Navigation",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Button.Polaris-Button--pressable.Polaris-Button--variantSecondary.Polaris-Button--sizeMedium.Polaris-Button--textAlignCenter.Polaris-Button--iconOnly": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "background-color": "rgb(204, 204, 204)"
+        },
+        "parent .Polaris-ButtonGroup__Item.Polaris-ButtonGroup__Item--focused": {
+          "outline-style": "none",
+          "outline-width": "0px",
+          "outline-color": "rgb(48, 48, 48)",
+          "outline-offset": "0px",
+          "box-shadow": "none",
+          "border-color": "rgb(48, 48, 48)",
+          "background-color": "rgba(0, 0, 0, 0)"
+        }
+      }
+    },
+    "menu-activator": {
+      "section": "Navigation",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Button.Polaris-Button--pressable.Polaris-Button--variantSecondary.Polaris-Button--sizeMedium.Polaris-Button--textAlignCenter.Polaris-Button--disclosure": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "background-color": "rgb(250, 250, 250)"
+        }
+      }
+    },
+    "nav-item": {
+      "section": "App shell",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Navigation__Item.Polaris-Navigation__Item--selected.Polaris-Navigation--subNavigationActive": {
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px"
+        }
+      }
+    },
+    "list-row": {
+      "section": "App shell",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-ResourceItem__Link": {
+          "outline-style": "auto",
+          "outline-width": "1px",
+          "outline-color": "rgb(0, 95, 204)",
+          "outline-offset": "1px"
+        },
+        "parent .Polaris-ResourceItem.Polaris-ResourceItem--focused.Polaris-ResourceItem--selectable": {
+          "outline-style": "none",
+          "outline-width": "0px",
+          "outline-color": "rgb(48, 48, 48)",
+          "outline-offset": "0px",
+          "box-shadow": "none",
+          "border-color": "rgb(48, 48, 48)",
+          "background-color": "rgba(0, 0, 0, 0)"
+        }
+      }
+    },
+    "list-row-checkbox": {
+      "section": "App shell",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Checkbox__Input": {
+          "outline-style": "auto",
+          "outline-width": "1px",
+          "outline-color": "rgb(0, 95, 204)",
+          "outline-offset": "2px"
+        },
+        "sibling0 .Polaris-Checkbox__Backdrop": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "background-color": "rgb(250, 250, 250)"
+        }
+      }
+    },
+    "search-field": {
+      "section": "App shell",
+      "focusVisible": true,
+      "changed": {
+        "parent .Polaris-TextField.Polaris-TextField--focus.Polaris-TextField--slim": {
+          "outline-style": "none",
+          "outline-width": "0px",
+          "outline-color": "rgb(48, 48, 48)",
+          "outline-offset": "0px",
+          "box-shadow": "none",
+          "border-color": "rgb(48, 48, 48)",
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "sibling1 .Polaris-TextField__Backdrop": {
+          "outline-style": "solid",
+          "outline-width": "2px",
+          "outline-color": "rgb(0, 91, 211)",
+          "outline-offset": "1px",
+          "border-color": "rgb(26, 26, 26)",
+          "background-color": "rgb(247, 247, 247)"
+        }
+      }
+    },
+    "link": {
+      "section": "States",
+      "focusVisible": true,
+      "changed": {
+        "self .Polaris-Link": {
+          "outline-style": "auto",
+          "outline-width": "2px",
+          "outline-offset": "2px"
+        }
+      }
+    }
+  }
+}

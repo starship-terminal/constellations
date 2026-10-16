@@ -351,7 +351,7 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: Admin and commerce UI built from a published component library: semantic colour roles, buttons, cards, banners.
 
-Captured 2026-09-25, published packages and the archive repo at a pinned commit. Themes: light, light-mobile, light-high-contrast-experimental, dark-experimental.
+Captured 2026-10-17, published packages and the archive repo at a pinned commit (2026-09-25); gallery re-shot and ramps, focus states and patterns added in headless Chromium (2026-10-17). Themes: light, light-mobile, light-high-contrast-experimental, dark-experimental.
 
 This is a local reference library for Shopify's archived Polaris React system. It is not the current Polaris web components system, a native Shopify/Figma library, or a claim to reproduce every Shopify application screen.
 
@@ -372,6 +372,27 @@ Use semantic tokens rather than choosing raw RGB values by appearance. Surface t
 
 The light canvas is `color-bg` (`#F1F1F1`), primary surface is `color-bg-surface` (`#FFFFFF`), primary text is `color-text` (`#303030`). The catalog retains original RGBA strings and transparent colors. Critical, warning, caution, info, success and magic have separate families. Badge attention uses caution tokens.
 
+#### Background roles
+
+Polaris has no separate raised or overlay colour: cards, popovers, dialogs and toasts sit on `color-bg-surface` (or the inverse fill) and are told apart by shadow and z-index. Read from each component's CSS at the pinned commit.
+
+| Role | Colour | Shadow | Radius | z-index | Label | Source |
+|---|---|---|---|---|---|---|
+| Page | `color-bg` (`#F1F1F1`) | none | none | none | Measured CSS | [Frame.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Frame/Frame.module.css#L10) |
+| Surface, raised (Card) | `color-bg-surface` (`#FFFFFF`) | `shadow-100` plus `shadow-bevel-100` | `border-radius-300` from `sm` up, 0 below | none | Measured CSS | [Card.tsx](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Card/Card.tsx#L36-L65) |
+| Secondary surface (subdued panes, grouped areas) | `color-bg-surface-secondary` (`#F7F7F7`) | none | per component | none | Measured CSS | [Popover.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Popover/Popover.module.css#L123-L125) |
+| Overlay: popover, tooltip | `color-bg-surface` | `shadow-300` plus bevel | `border-radius-300` (popover), `border-radius-200` (tooltip) | `z-index-2` (400), raised above the nearest layer | Measured CSS | [Popover.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Popover/Popover.module.css#L11-L13), [PositionedOverlay.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/PositionedOverlay/PositionedOverlay.module.css#L1-L4) |
+| Overlay: dialog, sheet | `color-bg-surface` | `shadow-600` | `border-radius-400` from `md` up; 0 on phones, where the dialog is a bottom sheet | `z-index-11` (519) | Measured CSS | [Dialog.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Modal/components/Dialog/Dialog.module.css#L1-L56) |
+| Inverse: top bar, toast | `color-bg-inverse` (`#1A1A1A`); error toast `color-bg-fill-critical` | `shadow-100` (top bar), `shadow-400` (toast) | 0, `border-radius-200` | `z-index-4` (512), `z-index-12` (520) | Measured CSS | [TopBar.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/TopBar/TopBar.module.css#L1-L8), [Toast.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Frame/components/Toast/Toast.module.css#L1-L20) |
+| Navigation | `color-nav-bg` (`#EBEBEB`) | none | none | `z-index-8` below `md`, 1 above | Measured CSS | [Navigation.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Navigation/Navigation.module.css#L19) |
+| Scrim | literal `rgba(0, 0, 0, 0.5)`; the `color-backdrop-bg` token (71% black) exists but no component uses it | none | none | `z-index-10` (518) | Measured CSS | [Backdrop.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Backdrop/Backdrop.module.css#L1-L23) |
+
+#### Primitive ramps
+
+`tokens/polaris.tokens-studio.json` has a `core` set with the 14 primitive ramps the tokens package builds its themes from: `gray`, `azure`, `blue`, `teal`, `green`, `lime`, `yellow`, `orange`, `red`, `rose`, `magenta`, `purple`, plus `blackAlpha` and `whiteAlpha`. Each has 16 steps, `1` lightest to `16` darkest (`gray.1` is `#FFFFFF`, `gray.16` is `#1A1A1A`; `blackAlpha` runs from 0% to 90% black and `whiteAlpha` from 1% to 80% white). The package ships them in `dist/cjs/src/colors.js` but does not export them from its index; `tools/build.mjs` reads that file and also writes it unchanged to `tokens/polaris-colors.raw.json`.
+
+Every semantic colour in the four theme sets that names a ramp step is now an alias to it (`light.color.color-bg` is `{color.gray.6}`): 894 of 904 theme colours. The builder rebuilds the themes from source with each step replaced by a marker to find the step, then checks the alias resolves to the published value; all 1,812 theme tokens resolve to exactly the values they had before. The other 10 are `color-scheme`, the button gradient and one dark tooltip-tail border, which are literal in the source. Ramp use across the four themes: gray 327 roles, blue 92, azure, green, red and purple 64 each, blackAlpha 62, yellow and orange 56 each, whiteAlpha 13, rose, magenta, lime and teal 8 each.
+
 Every color is searchable on the Colors page. `tokens/polaris-themes.raw.json` preserves all values grouped by theme and type; `tokens/polaris-metadata.json` preserves source metadata. `tokens/light.css` provides `--p-*` custom properties. At a 16px root, all displayed rem-to-pixel conversions are arithmetic conversions, not a recommendation to hard-code pixels.
 
 ## Typography
@@ -386,6 +407,23 @@ The four weight tokens are regular **450**, medium **550**, semibold **650**, bo
 
 Font sizes span 11, 12, 13, 14, 16, 18, 20, 22, 24, 30, 32, 36 and 40px at a 16px root. Font line-height tokens span 12 through 48px. Tracking tokens are -0.54px, -0.3px, -0.2px and 0. Text-role tokens combine size, leading, weight and tracking, and can change with mobile themes. The Typography page lists every font and text token and renders actual Text variants.
 
+#### Type roles
+
+The `Text` component's variants map onto the `text-*` tokens. Base text is 13/20 at weight 450. Sizes are px at a 16px root; line height follows the slash.
+
+| Role | What Polaris uses | Size / line height | Weight | Label | Source |
+|---|---|---|---|---|---|
+| Display | `heading3xl` is deprecated and renders as `heading2xl`; there is no display component | 30/40 (24/32 below `md`) | bold 700 | Measured CSS | [Text.tsx](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Text/Text.tsx#L54-L56) |
+| Headings | `headingXl` 24/32, `headingLg` 20/24, `headingMd` 14/20, `headingSm` 13/20, `headingXs` 12/16 | as listed; `headingXl` is 20/24 below `md` | bold (Xl from `md` up), otherwise semibold 650 | Measured CSS | [Text.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Text/Text.module.css#L81-L149) |
+| Body | `bodyLg` 14/20, `bodyMd` 13/20, `bodySm` 12/16, `bodyXs` 11/12 | as listed | regular 450 | Measured CSS | [Text.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Text/Text.module.css) |
+| Label | `Label` renders `bodyMd`; a required mark is `color-text-critical` | 13/20 | regular 450 | Measured CSS | [Label.tsx](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Label/Label.tsx#L36-L38) |
+| Help text and caption | field help text is `bodyMd` in `color-text-secondary`; badges, tags, tabs and most buttons use `bodySm` | 13/20; 12/16 | regular; medium 550 on tabs | Derived (no role is named caption) | [Labelled.tsx](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Labelled/Labelled.tsx#L63-L72) |
+| Error | `InlineError` is `bodyMd` in `color-text-critical` with a 20px alert icon | 13/20 | regular | Measured CSS | [InlineError.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/InlineError/InlineError.module.css#L1-L15) |
+| Code | `InlineCode`: `font-family-mono` at 0.85em, on `color-bg-fill-tertiary`, padding `space-025` by `space-100`, radius `border-radius-050` | 0.85em of the surrounding text | medium 550 | Measured CSS | [InlineCode.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/InlineCode/InlineCode.module.css#L1-L9) |
+| Keyboard key | `KeyboardKey` is sans, not mono: `font-size-350` in a 28px box on `color-bg-surface-tertiary`, `border-radius-100` | 14/28 (small: 12/16 in 20px) | medium 550 | Measured CSS | [KeyboardKey.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/KeyboardKey/KeyboardKey.module.css#L1-L32) |
+
+Two things change type on narrow screens. Below `md`, `headingXl` to `heading3xl` step down a size, and text fields and selects grow to 16/24. The `light-mobile` set is opt-in through `AppProvider`'s `theme` prop and raises body and heading sizes again (body-md 16/24, heading-md 16); no component switches to it on its own. See [phone/07-forms](screenshots/phone/07-forms.png) and [19-states](screenshots/19-states.png) for code and keys.
+
 ## Layout
 
 Spacing from `light.space`: `space-0` 0rem, `space-025` 0.0625rem, `space-050` 0.125rem, `space-100` 0.25rem, `space-150` 0.375rem, `space-200` 0.5rem, `space-300` 0.75rem, `space-400` 1rem, `space-500` 1.25rem, `space-600` 1.5rem, `space-800` 2rem, `space-1000` 2.5rem, `space-1200` 3rem, `space-1600` 4rem, `space-2000` 5rem, `space-2400` 6rem, `space-2800` 7rem, `space-3200` 8rem, `space-button-group-gap` 0.5rem, `space-card-gap` 1rem, `space-card-padding` 1rem, `space-table-cell-padding` 0.375rem.
@@ -397,6 +435,21 @@ Radius scale: **0, 2, 4, 6, 8, 12, 16, 20, 30px**, plus a full radius token of 9
 Border widths include **0, 0.66, 1, 2, 4px**. Thin controls can use subpixel borders. Focus outlines typically use 2px with a 1px offset. Spacing tokens and width/height tokens are separate namespaces even when their values match. The Geometry page exposes the entire scale, shadows, motion, breakpoints and layering tokens.
 
 Breakpoints: xs 0, sm 490, md 768, lg 1040, xl 1440px. Use these for responsive layout; component rules may use breakpoint-down mixins as well as min-width changes. Narrow-screen input type is larger than desktop type. Do not shrink touch controls to match desktop screenshots.
+
+#### Content widths, grid and layers
+
+| Item | Value | Token | Label |
+|---|---|---|---|
+| Page, default | 998px max, centred, 24px side padding from `sm` up | `layout.page-max-width`, `layout.page-inline-padding` | Measured CSS |
+| Page, `narrowWidth` | 662px max | `layout.page-narrow-max-width` | Measured CSS |
+| Page, `fullWidth` | no max | | Measured CSS |
+| Layout sections | primary 480 to 662px, secondary 240 to 320px, `oneHalf` basis 450px, `oneThird` 240px, 16px gaps | `layout.layout-*` | Measured CSS |
+| Grid | 6 columns at xs, sm and md; 12 at lg and xl; 16px gap at every breakpoint | `layout.grid-columns-*`, `layout.grid-gap` | Measured CSS |
+| Frame | navigation 240px from `md` up; top bar 56px | `layout.navigation-width`, `layout.top-bar-height` | Measured CSS |
+| Modal | 620px, small 380px, large 980px at `lg` | `layout.modal-width*` | Measured CSS |
+| Toast | 500px max, centred at the bottom; dismisses after 5s, 10s with an action | `layout.toast-max-width` | Measured CSS |
+
+The `z-index` tokens are ordered layers: popovers and tooltips `z-index-2` (400, raised above the nearest layer), global ribbon 3, top bar 4, contextual save bar 5, loading bar 6, navigation below `md` 8, skip link 9, backdrop 10, modal and sheet 11, toasts 12 (520). Sources: [Page.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Page/Page.module.css#L7-L26), [Layout.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Layout/Layout.module.css#L1-L95), [Grid.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Grid/Grid.module.css#L4-L57), [Frame.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Frame/Frame.module.css), [ToastManager.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Frame/components/ToastManager/ToastManager.module.css#L15-L26).
 
 ## Elevation & Depth
 
@@ -456,6 +509,10 @@ TextField and Select have distinct default, hover, focus, invalid, read-only and
 Cards group related content using surface, padding and bevel. Banners use semantic status families and change presentation inside content containers. Critical/warning banners announce alerts; info/success announce status. Tabs show selected state and preserve tab roles. Popovers have bounded surfaces, action lists and dismissal. Modals use a focus-managed dialog with title and actions. Tooltips explain controls and must not be the sole home of essential instructions. Tables align numeric content separately from labels; empty states explain what belongs there and offer an action.
 
 The live guide includes card, banner, tabs, pagination, popover, modal, tooltip, avatar, data table, progress bar, spinner, range slider and empty-state compositions in addition to core controls. Sample actions do not modify any store.
+
+### Patterns (from README.md)
+
+[patterns.md](patterns.md) summarises the written patterns in the archived polaris.shopify.com content at the pinned commit, in plain words with the source `.mdx` path under each: app shell, forms and validation, empty, loading and error states, destructive confirmation, feedback, search and filtering, data display and onboarding, plus the archive's own layout, common-action, date-picking and picker patterns. Each of the first eight links an example screen from the gallery. Several shell and feedback components (Frame, TopBar, Navigation, Toast, Modal, ContextualSaveBar) are marked no longer supported in those docs, with App Bridge named as the replacement; the App Bridge rules are not in the archive.
 
 ## Do's and Don'ts
 
