@@ -105,6 +105,18 @@ const ckey = (c) => (c ? c.join(',') : '');
 const PALETTE = /^--cds-color-(grey|blue|purple|green|red|yellow|pink|darken|lighten|white|black|neutral-white|neutral-black)(-\d+)?$/;
 
 const colorIdx = new Map();
+// The same index for the dark side of each light-dark() pair: a state measured in the
+// learner's dark theme is named by the variable that paints that colour in dark.
+const colorIdxDark = new Map();
+let THEME = 'light';
+for (const [name, raw] of Object.entries(VARS.resolved)) {
+  if (!name.startsWith('--cds-color')) continue;
+  const m = /^light-dark\((.*)\)$/s.exec(raw.trim());
+  const c = parseColor(m ? splitTop(m[1])[1] : raw.trim());
+  if (!c) continue;
+  if (!colorIdxDark.has(ckey(c))) colorIdxDark.set(ckey(c), []);
+  colorIdxDark.get(ckey(c)).push(name);
+}
 const pxIdx = { spacing: new Map(), radius: new Map(), size: new Map(), lh: new Map() };
 const typoIdx = new Map();
 for (const [name, raw] of Object.entries(VARS.resolved)) {
@@ -131,7 +143,7 @@ for (const [name, raw] of Object.entries(VARS.resolved)) {
     typoIdx.get(k).push(name);
   }
 }
-for (const list of [...colorIdx.values(), ...typoIdx.values(), ...Object.values(pxIdx).flatMap((m) => [...m.values()])]) {
+for (const list of [...colorIdx.values(), ...colorIdxDark.values(), ...typoIdx.values(), ...Object.values(pxIdx).flatMap((m) => [...m.values()])]) {
   list.sort((a, b) => a.length - b.length || a.localeCompare(b));
 }
 
@@ -141,7 +153,7 @@ for (const list of [...colorIdx.values(), ...typoIdx.values(), ...Object.values(
 function colorTokens(value, prop = 'color') {
   const c = parseColor(value);
   if (!c || c[3] === 0) return [];
-  const names = colorIdx.get(ckey(c)) || [];
+  const names = (THEME === 'dark' ? colorIdxDark : colorIdx).get(ckey(c)) || [];
   const want = prop === 'bg' ? /background/ : prop === 'border' ? /stroke|border|divider/ : /^(?!.*(background|stroke)).*$/;
   const sem = names.filter((n) => !PALETTE.test(n));
   const pal = names.filter((n) => PALETTE.test(n));
@@ -974,7 +986,7 @@ function buildMd(out) {
   L.push('');
   L.push('Read from the 11 redacted static snapshots in `raw/snapshots/` (stylesheets inlined from the CSSOM, scripts stripped), rendered by `tools/capture/signed-in/measure.mjs` in headless Chromium at 1440x900 @2x, light theme. The full per-state data, including every painted child layer, the authored state rules that match each element and the `extra` sub-measurements, is in `raw/components-signed-in.json`; crops are in `components/crops/signed-in/<component>-<state>.png` (256 colours).');
   L.push('');
-  L.push('Colours are written as hex and mapped to `--cds-color-*` tokens by matching the light value of `light-dark()` in `raw/css-vars.json` (semantic names first, the palette name last; the `--cds-color-` prefix is dropped in the tables). "no token" means no token has that light value. Spacing, radius, font size and typography tokens are matched the same way.');
+  L.push('Colours are written as hex and mapped to `--cds-color-*` tokens by matching the light value of `light-dark()` in `raw/css-vars.json` (semantic names first, the palette name last; the `--cds-color-` prefix is dropped in the tables). A state whose name says dark is matched against the dark value instead, so its names are the variables that paint that colour in dark. "no token" means no token has that light value. Spacing, radius, font size and typography tokens are matched the same way.');
   L.push('');
   L.push('## States');
   L.push('');
@@ -1031,7 +1043,7 @@ function buildMd(out) {
       L.push('');
       if (!names.length) { L.push(`Not measured: ${errs.map(([s, v]) => `${s}: ${v.error}`).join('; ')}`); L.push(''); continue; }
       const base = c.states.default ? rows(c.states.default) : null;
-      const table = names.map((n) => rows(c.states[n]));
+      const table = names.map((n) => { THEME = /\bdark\b/.test(n) ? 'dark' : 'light'; const r = rows(c.states[n]); THEME = 'light'; return r; });
       const labels = Object.keys(table[0]).filter((lab) => table.some((t) => t[lab] && t[lab] !== 'none' && t[lab] !== '0' && t[lab] !== '1' && !(lab === 'Cursor' && t[lab] === 'auto') && !(lab === 'Transform' && t[lab] === 'none')));
       L.push(`| Property | ${names.join(' | ')} |`);
       L.push(`| --- | ${names.map(() => '---').join(' | ')} |`);

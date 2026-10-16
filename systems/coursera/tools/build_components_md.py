@@ -258,7 +258,7 @@ def tn_clean(c):
 
 PROP_ORDER = ['Size', 'Padding', 'Gap', 'Border', 'Radius', 'Background', 'Box shadow', 'Outline',
               'Font', 'Colour', 'Text decoration', 'Transition', 'Transform', 'Opacity', 'Icon',
-              'Placeholder']
+              'Placeholder', 'Painted']
 PROP_ALIAS = {'Size (w x h)': 'Size', 'Size (w×h)': 'Size'}
 SAME = ('same', '=', '')
 NOISE_OUTLINE = re.compile(r'^(none|1px solid transparent offset 2px)$')
@@ -329,7 +329,42 @@ def diff_table(e):
         if not any(vals):
             continue
         res[p] = vals
+    # A state can change only what a child or pseudo-element paints (a switch's track, a ring
+    # on ::before), so the painted layers join the table whenever they differ between states.
+    pc = painted_cells(e)
+    if pc and len(set(pc)) > 1:
+        res['Painted'] = pc
     return states, res, b
+
+
+def condense_layers(raw, limit=4):
+    layers = [l.strip() for l in raw.split('; ') if l.strip() and not l.strip().startswith('ancestor')]
+    out = []
+    for l in layers[:limit]:
+        l = re.sub(r'^([a-z0-9]+(?:::(?:before|after))?)(?:[.:#][^\s,]*)*', r'\1', l)
+        l = cond(l)
+        l = re.sub(r'\.0(?=[x ,;]|$)', '', l)
+        out.append(l.replace(' r ', ' radius ').replace(' bg ', ' background '))
+    return ', '.join(out)
+
+
+def painted_cells(e):
+    """The painted layers per state, condensed, or None when the entry has none."""
+    if e['src'] == 'p':
+        pd = e.get('painted') or {}
+        if not pd:
+            return None
+        cells, last = [], ''
+        for st in e['states']:
+            last = pd.get(st, last)
+            cells.append(condense_layers(last) if last else '')
+        return cells
+    for r in e['table'][1] if e['table'] else []:
+        if r[0] == 'Painted layers':
+            raw = (r[1:] + [''] * len(e['states']))[:len(e['states'])]
+            first = raw[0]
+            return [condense_layers(first if c in SAME else c) if (first if c in SAME else c) else '' for c in raw]
+    return None
 
 
 def esc(c):
@@ -339,7 +374,8 @@ def esc(c):
 LABEL = {'Size': 'size', 'Padding': 'padding', 'Gap': 'gap', 'Border': 'border', 'Radius': 'radius',
          'Background': 'background', 'Box shadow': 'shadow', 'Outline': 'outline', 'Font': 'font',
          'Colour': 'colour', 'Text decoration': 'decoration', 'Transition': 'transition',
-         'Transform': 'transform', 'Opacity': 'opacity', 'Icon': 'icon', 'Placeholder': 'placeholder'}
+         'Transform': 'transform', 'Opacity': 'opacity', 'Icon': 'icon', 'Placeholder': 'placeholder',
+         'Painted': 'painted by children'}
 
 
 def render_state_rows(e):

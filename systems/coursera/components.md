@@ -166,11 +166,11 @@ Audience tab in the top bar. The current audience is bold with a white underline
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 114.63 x 40; padding 0 8px; border B: 6px solid transparent; radius 0px; background transparent; shadow none; font 16/40 400; colour #ffffff `--cds-color-neutral-primary-invert` |
-| selected | size 117.34 x 40; border B: 6px solid #ffffff `--cds-color-neutral-stroke-primary-invert`; font 16/40 600 |
-| hover | background #ffffff `--cds-color-neutral-background-primary`; colour #0d0f12 `--cds-color-interactive-secondary` |
-| focus-visible | radius 4px `--cds-border-radius-50`; background #ffffff `--cds-color-neutral-background-primary`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0d0f12 `--cds-color-interactive-secondary` |
-| pressed | background #ffffff `--cds-color-neutral-background-primary`; colour #0d0f12 `--cds-color-interactive-secondary` |
+| default | size 114.63 x 40; padding 0 8px; border B: 6px solid transparent; radius 0px; background transparent; shadow none; font 16/40 400; colour #ffffff `--cds-color-neutral-primary-invert`; painted by children a, 114.6x40, border B:6px solid transparent |
+| selected | size 117.34 x 40; border B: 6px solid #ffffff `--cds-color-neutral-stroke-primary-invert`; font 16/40 600; painted by children a, 117.3x40, border B:6px solid #ffffff `--cds-color-neutral-stroke-primary-invert` |
+| hover | background #ffffff `--cds-color-neutral-background-primary`; colour #0d0f12 `--cds-color-interactive-secondary`; painted by children a, 114.6x40, background #ffffff `--cds-color-neutral-background-primary`, border B:6px solid transparent |
+| focus-visible | radius 4px `--cds-border-radius-50`; background #ffffff `--cds-color-neutral-background-primary`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0d0f12 `--cds-color-interactive-secondary`; painted by children a, 114.6x40, background #ffffff `--cds-color-neutral-background-primary`, border B:6px solid transparent, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
+| pressed | background #ffffff `--cds-color-neutral-background-primary`; colour #0d0f12 `--cds-color-interactive-secondary`; painted by children a, 114.6x40, background #ffffff `--cds-color-neutral-background-primary`, border B:6px solid transparent |
 
 ![Audience link selected](components/crops/header-audience-link-selected.png) ![Audience link default](components/crops/header-audience-link-default.png) ![Audience link hover](components/crops/header-audience-link-hover.png) ![Audience link focus-visible](components/crops/header-audience-link-focus-visible.png) ![Audience link pressed](components/crops/header-audience-link-pressed.png)
 
@@ -180,7 +180,9 @@ Explore menu trigger: ghost button with a chevron end icon; turns into a tinted 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 83.8 x 36; padding 8px; radius 8px `--cds-border-radius-100`; background transparent; font 14/20 400 `--cds-typography-body2`; colour #48546e `--cds-color-neutral-primary-weak`; icon 20 x 20, colour #48546e `--cds-color-neutral-primary-weak` |
-| hover, focus-visible, pressed, expanded | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 83.8x36, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 83.8x36, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 87.7969pxx40px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed, expanded | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 83.8x36, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px |
 
 ![Explore menu button default](components/crops/button-ghost-nav-default.png) ![Explore menu button hover](components/crops/button-ghost-nav-hover.png) ![Explore menu button focus-visible](components/crops/button-ghost-nav-focus-visible.png) ![Explore menu button pressed](components/crops/button-ghost-nav-pressed.png) ![Explore menu button expanded](components/crops/button-ghost-nav-expanded.png)
 
@@ -190,7 +192,8 @@ Degrees: a ghost button rendered as a link. Measured as `header-degrees-link` on
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 62.95 x 36; padding 8px; radius 8px `--cds-border-radius-100`; background transparent; font 14/20 400 `--cds-typography-body2`; colour #48546e `--cds-color-neutral-primary-weak` |
-| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a, 63x36, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a, 63x36, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, a::after, 66.9531pxx40px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
 
 ![Degrees link default](components/crops/header-degrees-link-default.png) ![Degrees link hover](components/crops/header-degrees-link-hover.png) ![Degrees link focus-visible](components/crops/header-degrees-link-focus-visible.png)
 
@@ -199,7 +202,9 @@ Global search: rounded field (cds-Search-base) with a round primary icon button 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, filled) | size 480 x 44; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary` |
+| default | size 480 x 44; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children div, 480x44, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, radius 24px, button, 36x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 24px |
+| hover | painted by children div, 480x44, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, radius 24px, button, 36x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 24px |
+| focus-visible, filled | painted by children div, 480x44, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, outline 1px solid transparent offset 2px, radius 24px, div::before, 482pxx46px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 24px, inset -2px -2px -2px -2px, button, 36x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 24px |
 
 Child layers that carry the look: div, 480x44, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, radius 24px; button, 36x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 24px.
 
@@ -215,9 +220,10 @@ Round search submit inside the field: cds-iconButton-small primary, 36x36, 20px 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; padding 0; radius 24px `--cds-border-radius-300`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 400 `--cds-typography-body2`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover, focus-visible | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour) |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-selected`; shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour) |
+| default | size 36 x 36; padding 0; radius 24px `--cds-border-radius-300`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 400 `--cds-typography-body2`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert`; painted by children button, 36x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 24px |
+| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); painted by children button, 36x36, background #0b408b `--cds-color-emphasis-primary-background-xstrong`, shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 24px |
+| focus-visible | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); painted by children button, 36x36, background #0b408b `--cds-color-emphasis-primary-background-xstrong`, shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), outline 1px solid transparent offset 2px, radius 24px, button::after, 40pxx40px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-selected`; shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); painted by children button, 36x36, background #3c0f8a `--cds-color-interactive-primary-selected`, shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 24px |
 
 ![Search submit button default](components/crops/icon-button-search-default.png) ![Search submit button hover](components/crops/icon-button-search-hover.png) ![Search submit button focus-visible](components/crops/icon-button-search-focus-visible.png) ![Search submit button pressed](components/crops/icon-button-search-pressed.png)
 
@@ -226,7 +232,8 @@ Clear (x) button inside a filled search field. Measured as `search-clear-button`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 36 x 36; padding 0; radius 8px `--cds-border-radius-100`; background transparent; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #0d0f12 `--cds-color-interactive-secondary` |
+| default (same: hover) | size 36 x 36; padding 0; radius 8px `--cds-border-radius-100`; background transparent; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #0d0f12 `--cds-color-interactive-secondary` |
+| focus-visible, pressed | painted by children button, 36x36, outline 1px solid transparent offset 2px, radius 8px, button::after, 20pxx20px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 50%, inset 8px 8px 8px 8px |
 
 ![Search clear button default](components/crops/search-clear-button-default.png) ![Search clear button hover](components/crops/search-clear-button-hover.png) ![Search clear button focus-visible](components/crops/search-clear-button-focus-visible.png) ![Search clear button pressed](components/crops/search-clear-button-pressed.png)
 
@@ -243,7 +250,7 @@ One autocomplete suggestion row. Measured as `search-autocomplete-option` on the
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 754 x 60; padding 8px; gap 12px; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children div, 754x60, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px |
 
 ![Autocomplete option default](components/crops/search-autocomplete-option-default.png) ![Autocomplete option hover](components/crops/search-autocomplete-option-hover.png)
 
@@ -252,9 +259,10 @@ Ghost icon button, medium (AI coach trigger in the header): 48x48, 24px icon. Me
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 48 x 48; padding 0; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset (no edge); font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary` |
-| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected`; icon 24 x 24, colour #3c0f8a `--cds-color-interactive-primary-selected` |
+| default | size 48 x 48; padding 0; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset (no edge); font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary`; painted by children button, 48x48, shadow transparent 0px 0px 0px 1px inset (no edge), radius 8px |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 48x48, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, shadow transparent 0px 0px 0px 1px inset (no edge), radius 8px |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 48x48, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, shadow transparent 0px 0px 0px 1px inset (no edge), outline 1px solid transparent offset 2px, radius 8px, button::after, 52pxx52px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected`; icon 24 x 24, colour #3c0f8a `--cds-color-interactive-primary-selected`; painted by children button, 48x48, background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`, shadow transparent 0px 0px 0px 1px inset (no edge), radius 8px |
 
 ![AI coach button default](components/crops/icon-button-ghost-default.png) ![AI coach button hover](components/crops/icon-button-ghost-hover.png) ![AI coach button focus-visible](components/crops/icon-button-ghost-focus-visible.png) ![AI coach button pressed](components/crops/icon-button-ghost-pressed.png)
 
@@ -277,7 +285,7 @@ Link in a mega menu column. Measured as `mega-menu-link` on the home page.
 |---|---|
 | default | size 72.55 x 36; padding 8px 0; radius 0px; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none |
 | hover | decoration underline |
-| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline |
+| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline; painted by children a, 72.5x36, outline 1px auto #005fcc offset 1px |
 
 Child layers that carry the look: a, 72.5x36, outline 1px auto #005fcc offset 1px.
 
@@ -290,7 +298,7 @@ Child layers that carry the look: a, 72.5x36, outline 1px auto #005fcc offset 1p
 |---|---|
 | default | size 44.75 x 20; padding 0; radius 0px; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration underline |
 | hover | decoration none |
-| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration none |
+| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration none; painted by children a, 44.8x20, outline 1px auto #005fcc offset 1px |
 
 Child layers that carry the look: a, 44.8x20, outline 1px auto #005fcc offset 1px.
 
@@ -371,10 +379,10 @@ Ghost small icon button, 32x32 with a 24px icon. Measured as `topbar-switcher` o
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only) |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak` |
+| default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children button 32x32 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children button 32x32 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); painted by children button 32x32 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 36pxx36px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; painted by children button 32x32 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
 
 ![App switcher button default](components/crops/signed-in/topbar-switcher-default.png) ![App switcher button hover](components/crops/signed-in/topbar-switcher-hover.png) ![App switcher button focus-visible](components/crops/signed-in/topbar-switcher-focus-visible.png) ![App switcher button focus-visible-cds](components/crops/signed-in/topbar-switcher-focus-visible-cds.png) ![App switcher button pressed](components/crops/signed-in/topbar-switcher-pressed.png)
 
@@ -383,9 +391,9 @@ Coursera wordmark (127x32 svg), a 1x26 divider, then the programme badge. One li
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 192 x 32; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; icon 127 x 32, fill #0056d2, color #0056d2 (`--cds-color-interactive-primary`) |
+| default | size 192 x 32; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; icon 127 x 32, fill #0056d2, color #0056d2 (`--cds-color-interactive-primary`); painted by children div 1x26 border L:1px solid #a7b4c9 `--cds-color-neutral-disabled-strong`, div 32x32 background #00255d, no token radius 50% |
 | hover | decoration underline auto offset auto |
-| focus-visible, focus-visible-cds | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline auto offset auto |
+| focus-visible, focus-visible-cds | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline auto offset auto; painted by children a 192x32 outline 1px auto rgb(0, 95, 204) offset 1px, div 1x26 border L:1px solid #a7b4c9 `--cds-color-neutral-disabled-strong`, div 32x32 background #00255d, no token radius 50% |
 
 Child layers that carry the look: div 1x26 border L:1px solid #a7b4c9 `--cds-color-neutral-disabled-strong`; div 32x32 background #00255d, no token radius 50%.
 
@@ -396,8 +404,8 @@ Square-cornered 300x36 input; its right edge meets the Search button. Measured a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 299.59 x 36; padding 12px `--cds-spacing-150`; border 1px solid #53617e `--cds-color-grey-700`; radius 4px 0px 0px 4px (`--cds-border-radius-50`); background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
-| focus-visible | border 1px solid #227af9 `--cds-color-blue-600` |
+| default (same: hover) | size 299.59 x 36; padding 12px `--cds-spacing-150`; border 1px solid #53617e `--cds-color-grey-700`; radius 4px 0px 0px 4px (`--cds-border-radius-50`); background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; painted by children input 299.6x36 background #ffffff `--cds-color-neutral-background-primary` border T:1px solid #53617e `--cds-color-grey-700` / R:1px solid #53617e `--cds-color-grey-700` / B:1px solid #53617e `--cds-color-grey-700` / L:1px solid #53617e `--cds-color-grey-700` radius 4px 0px 0px 4px |
+| focus-visible | border 1px solid #227af9 `--cds-color-blue-600`; painted by children input 299.6x36 background #ffffff `--cds-color-neutral-background-primary` border T:1px solid #227af9 `--cds-color-blue-600` / R:1px solid #227af9 `--cds-color-blue-600` / B:1px solid #227af9 `--cds-color-blue-600` / L:1px solid #227af9 `--cds-color-blue-600` radius 4px 0px 0px 4px |
 
 ![Course search input default](components/crops/signed-in/topbar-course-search-input-default.png) ![Course search input hover](components/crops/signed-in/topbar-course-search-input-hover.png) ![Course search input focus-visible](components/crops/signed-in/topbar-course-search-input-focus-visible.png)
 
@@ -406,10 +414,10 @@ Primary button, 36px tall, joined to the input. Measured as `topbar-course-searc
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 73.98 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 0px 4px 4px 0px (`--cds-border-radius-50`); background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover | background #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed` |
+| default (same: focus-visible) | size 73.98 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 0px 4px 4px 0px (`--cds-border-radius-50`); background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; painted by children button 74x36 background #0056d2 `--cds-color-interactive-primary` radius 0px 4px 4px 0px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #0b408b `--cds-color-interactive-primary-hover`; painted by children button 74x36 background #0b408b `--cds-color-interactive-primary-hover` radius 0px 4px 4px 0px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); painted by children button 74x36 background #0056d2 `--cds-color-interactive-primary` radius 0px 4px 4px 0px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 77.9844pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; painted by children button 74x36 background #3c0f8a `--cds-color-interactive-primary-pressed` radius 0px 4px 4px 0px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 
 ![Course search button default](components/crops/signed-in/topbar-course-search-button-default.png) ![Course search button hover](components/crops/signed-in/topbar-course-search-button-hover.png) ![Course search button focus-visible](components/crops/signed-in/topbar-course-search-button-focus-visible.png) ![Course search button focus-visible-cds](components/crops/signed-in/topbar-course-search-button-focus-visible-cds.png) ![Course search button pressed](components/crops/signed-in/topbar-course-search-button-pressed.png)
 
@@ -418,10 +426,10 @@ Ghost small icon button (help, language, bell and avatar share it): 32x32, 24px 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, fill none, color #404b5e `--cds-color-interactive-secondary-inactive` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed` |
+| default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, fill none, color #404b5e `--cds-color-interactive-secondary-inactive`; painted by children button 32x32 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 32x32 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 32x32 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 36pxx36px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; painted by children button 32x32 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
 
 | Part | Values (default) |
 |---|---|
@@ -434,9 +442,9 @@ User avatar, 24px navy disc with the initial, inside a 32px ghost icon button. M
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
+| default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; painted by children button 32x32 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, div 24x24 background #002457 `--cds-color-callouts-background-primary-strong` radius 50% |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 32x32 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, div 24x24 background #002457 `--cds-color-callouts-background-primary-strong` radius 50% |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 32x32 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 36pxx36px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px, div 24x24 background #002457 `--cds-color-callouts-background-primary-strong` radius 50% |
 
 ![Avatar menu button default](components/crops/signed-in/topbar-avatar-default.png) ![Avatar menu button hover](components/crops/signed-in/topbar-avatar-hover.png) ![Avatar menu button focus-visible](components/crops/signed-in/topbar-avatar-focus-visible.png) ![Avatar menu button focus-visible-cds](components/crops/signed-in/topbar-avatar-focus-visible-cds.png)
 
@@ -453,9 +461,9 @@ Ghost button with a 20px chevron end icon. Measured as `topbar-ml-explore` on My
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 83.8 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #48546e `--cds-color-neutral-primary-weak`; icon 20 x 20, fill none, color #48546e `--cds-color-neutral-primary-weak` |
-| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
+| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 83.8x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 83.8x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 87.7969pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 83.8x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
 
 ![Explore button (My Learning) default](components/crops/signed-in/topbar-ml-explore-default.png) ![Explore button (My Learning) hover](components/crops/signed-in/topbar-ml-explore-hover.png) ![Explore button (My Learning) focus-visible](components/crops/signed-in/topbar-ml-explore-focus-visible.png) ![Explore button (My Learning) focus-visible-cds](components/crops/signed-in/topbar-ml-explore-focus-visible-cds.png) ![Explore button (My Learning) pressed](components/crops/signed-in/topbar-ml-explore-pressed.png)
 
@@ -465,11 +473,11 @@ Ghost buttons rendered as links. The current page (My Learning) is marked isCurr
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 62.95 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #48546e `--cds-color-neutral-primary-weak` |
-| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
+| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a 63x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a 63x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, a::after 66.9531pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a 63x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
 | current, current-default | size 90.53 x 36; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| current-hover | size 90.53 x 36; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0b408b `--cds-color-interactive-primary-hover` |
+| current-hover | size 90.53 x 36; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a 90.5x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
 
 ![Nav link (My Learning) default](components/crops/signed-in/topbar-ml-nav-link-default.png) ![Nav link (My Learning) hover](components/crops/signed-in/topbar-ml-nav-link-hover.png) ![Nav link (My Learning) focus-visible](components/crops/signed-in/topbar-ml-nav-link-focus-visible.png) ![Nav link (My Learning) focus-visible-cds](components/crops/signed-in/topbar-ml-nav-link-focus-visible-cds.png) ![Nav link (My Learning) pressed](components/crops/signed-in/topbar-ml-nav-link-pressed.png) ![Nav link (My Learning) current](components/crops/signed-in/topbar-ml-nav-link-current.png) ![Nav link (My Learning) current-default](components/crops/signed-in/topbar-ml-nav-link-current-default.png) ![Nav link (My Learning) current-hover](components/crops/signed-in/topbar-ml-nav-link-current-hover.png)
 
@@ -478,8 +486,8 @@ Pill search field (cds-Search) 476x44, notched outline, with a round primary ico
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 476.39 x 44; border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; radius 24px `--cds-border-radius-300`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 0 x 0, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
+| default (same: focus-visible) | size 476.39 x 44; border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; radius 24px `--cds-border-radius-300`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 0 x 0, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children div 476.4x44 background #ffffff `--cds-color-neutral-background-primary` border T:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` / R:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` / B:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` / L:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` radius 24px, button 36x36 background #0056d2 `--cds-color-interactive-primary` radius 24px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children div 476.4x44 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` border T:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` / R:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` / B:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` / L:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` radius 24px, button 36x36 background #0056d2 `--cds-color-interactive-primary` radius 24px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 
 ![Catalog search (My Learning) default](components/crops/signed-in/topbar-ml-search-default.png) ![Catalog search (My Learning) hover](components/crops/signed-in/topbar-ml-search-hover.png) ![Catalog search (My Learning) focus-visible](components/crops/signed-in/topbar-ml-search-focus-visible.png)
 
@@ -488,10 +496,10 @@ Primary small icon button, 36x36, 20px magnifier, fully round. Measured as `topb
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius 24px `--cds-border-radius-300`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 400 `--cds-typography-body2`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, fill none, color #ffffff `--cds-color-neutral-primary-invert` |
-| hover | background #0b408b `--cds-color-interactive-primary-hover`; shadow #0b408b 0px 0px 0px 1px inset |
-| focus-visible-cds | background #0b408b `--cds-color-interactive-primary-hover`; shadow #0b408b 0px 0px 0px 1px inset; outline 1px solid transparent offset 2px (forced-colours only) |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; shadow #3c0f8a 0px 0px 0px 1px inset |
+| default (same: focus-visible) | size 36 x 36; radius 24px `--cds-border-radius-300`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 400 `--cds-typography-body2`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, fill none, color #ffffff `--cds-color-neutral-primary-invert`; painted by children button 36x36 background #0056d2 `--cds-color-interactive-primary` radius 24px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #0b408b `--cds-color-interactive-primary-hover`; shadow #0b408b 0px 0px 0px 1px inset; painted by children button 36x36 background #0b408b `--cds-color-interactive-primary-hover` radius 24px shadow rgb(11, 64, 139) 0px 0px 0px 1px inset |
+| focus-visible-cds | background #0b408b `--cds-color-interactive-primary-hover`; shadow #0b408b 0px 0px 0px 1px inset; outline 1px solid transparent offset 2px (forced-colours only); painted by children button 36x36 background #0b408b `--cds-color-interactive-primary-hover` radius 24px shadow rgb(11, 64, 139) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 40pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; shadow #3c0f8a 0px 0px 0px 1px inset; painted by children button 36x36 background #3c0f8a `--cds-color-interactive-primary-pressed` radius 24px shadow rgb(60, 15, 138) 0px 0px 0px 1px inset |
 
 ![Round search button default](components/crops/signed-in/topbar-ml-search-button-default.png) ![Round search button hover](components/crops/signed-in/topbar-ml-search-button-hover.png) ![Round search button focus-visible](components/crops/signed-in/topbar-ml-search-button-focus-visible.png) ![Round search button focus-visible-cds](components/crops/signed-in/topbar-ml-search-button-focus-visible-cds.png) ![Round search button pressed](components/crops/signed-in/topbar-ml-search-button-pressed.png)
 
@@ -502,7 +510,7 @@ Primary small icon button, 36x36, 20px magnifier, fully round. Measured as `topb
 |---|---|
 | default (same: focus-visible) | size 186.81 x 20; radius 0; background transparent; shadow none; outline none; font 14/20 400 `--cds-typography-body2`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline auto offset auto |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a 186.8x20 radius 4px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px |
 | pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none |
 
 No crop was saved for this entry; the values are from the computed styles.
@@ -516,9 +524,10 @@ Primary filled button, medium (View in the filter popover): solid blue, white la
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 61.3 x 36; padding 8px 16px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong` |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-selected` |
+| default | size 61.3 x 36; padding 8px 16px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert`; painted by children button, 61.3x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; painted by children button, 61.3x36, background #0b408b `--cds-color-emphasis-primary-background-xstrong`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| focus-visible | painted by children button, 61.3x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), outline 1px solid transparent offset 2px, radius 8px, button::after, 65.2969pxx40px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-selected`; painted by children button, 61.3x36, background #3c0f8a `--cds-color-interactive-primary-selected`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
 
 | Part | Values (default) |
 |---|---|
@@ -531,8 +540,9 @@ Full-width primary button at the foot of the sheet (View). Measured as `button-p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 328 x 36; padding 8px 16px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong` |
+| default | size 328 x 36; padding 8px 16px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert`; painted by children button, 328x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; painted by children button, 328x36, background #0b408b `--cds-color-emphasis-primary-background-xstrong`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| focus-visible | painted by children button, 328x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), outline 1px solid transparent offset 2px, radius 8px, button::after, 332pxx40px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
 
 ![Block primary button default](components/crops/button-primary-block-default.png) ![Block primary button hover](components/crops/button-primary-block-hover.png) ![Block primary button focus-visible](components/crops/button-primary-block-focus-visible.png)
 
@@ -541,9 +551,10 @@ Full-width primary button at the foot of the sheet (View). Measured as `button-p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 256.39 x 64; padding 11px 80px 13px 80px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 16/24 600 `--cds-typography-title3`, ls 0.16px; colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong` |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-selected` |
+| default | size 256.39 x 64; padding 11px 80px 13px 80px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 16/24 600 `--cds-typography-title3`, ls 0.16px; colour #ffffff `--cds-color-neutral-primary-invert`; painted by children button, 256.4x64, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; painted by children button, 256.4x64, background #0b408b `--cds-color-emphasis-primary-background-xstrong`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| focus-visible | painted by children button, 256.4x64, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), outline 1px solid transparent offset 2px, radius 8px, button::after, 260.391pxx68px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-selected`; painted by children button, 256.4x64, background #3c0f8a `--cds-color-interactive-primary-selected`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
 
 | Part | Values (default) |
 |---|---|
@@ -556,9 +567,10 @@ Secondary outlined button (Join for Free): white fill, 1px blue border, blue lab
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 103.17 x 36; padding 8px 12px; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 700 `--cds-typography-title4`, ls 0.14px; colour #0056d2 `--cds-color-interactive-primary` |
-| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); colour #3c0f8a `--cds-color-interactive-primary-selected` |
+| default | size 103.17 x 36; padding 8px 12px; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 700 `--cds-typography-title4`, ls 0.14px; colour #0056d2 `--cds-color-interactive-primary`; painted by children a, 103.2x36, background #ffffff `--cds-color-neutral-background-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a, 103.2x36, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a, 103.2x36, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), outline 1px solid transparent offset 2px, radius 8px, a::after, 107.172pxx40px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); colour #3c0f8a `--cds-color-interactive-primary-selected`; painted by children a, 103.2x36, background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`, shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
 
 | Part | Values (default) |
 |---|---|
@@ -573,8 +585,8 @@ Ghost button (Log In in the header): no fill, blue label. Measured as `button-gh
 |---|---|
 | default | size 60.27 x 44; padding 12px; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 400 `--cds-typography-body2`, ls 0.14px; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | decoration underline |
-| focus-visible | outline 5px auto #005fcc (the browser default focus outline) offset -2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| pressed | decoration underline |
+| focus-visible | outline 5px auto #005fcc (the browser default focus outline) offset -2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline; painted by children a, 60.3x44, outline 5px auto #005fcc offset -2px, radius 8px, a::after, 64.2656pxx48px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | decoration underline; painted by children a, 60.3x44, outline 5px auto #005fcc offset -2px, radius 8px, a::after, 64.2656pxx48px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
 
 | Part | Values (default) |
 |---|---|
@@ -590,8 +602,8 @@ Ghost button (Log In in the header): no fill, blue label. Measured as `button-gh
 |---|---|
 | default | size 55.47 x 20; padding 0; radius 8px `--cds-border-radius-100`; background transparent; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| pressed | colour #3c0f8a `--cds-color-interactive-primary-selected`; decoration underline |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline; painted by children button, 55.5x20, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 59.4688pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | colour #3c0f8a `--cds-color-interactive-primary-selected`; decoration underline; painted by children button, 55.5x20, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 59.4688pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
 
 ![Ghost inline button default](components/crops/button-ghost-inline-default.png) ![Ghost inline button hover](components/crops/button-ghost-inline-hover.png) ![Ghost inline button focus-visible](components/crops/button-ghost-inline-focus-visible.png) ![Ghost inline button pressed](components/crops/button-ghost-inline-pressed.png)
 
@@ -602,8 +614,8 @@ Ghost button (Log In in the header): no fill, blue label. Measured as `button-gh
 |---|---|
 | default | size 127.55 x 20; padding 0; radius 8px `--cds-border-radius-100`; background transparent; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| pressed | colour #3c0f8a `--cds-color-interactive-primary-selected`; decoration underline |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline; painted by children button, 127.5x20, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 131.547pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | colour #3c0f8a `--cds-color-interactive-primary-selected`; decoration underline; painted by children button, 127.5x20, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 131.547pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
 
 ![Ghost bold button default](components/crops/button-ghost-bold-default.png) ![Ghost bold button hover](components/crops/button-ghost-bold-hover.png) ![Ghost bold button focus-visible](components/crops/button-ghost-bold-focus-visible.png) ![Ghost bold button pressed](components/crops/button-ghost-bold-pressed.png)
 
@@ -614,8 +626,8 @@ Ghost secondary button (Show all after the skills): dark text, underlined. Measu
 |---|---|
 | default | size 52.25 x 20; padding 0; radius 8px `--cds-border-radius-100`; background transparent; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; decoration underline |
 | hover | colour #232b3a `--cds-color-interactive-secondary-hover`; decoration none |
-| focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | colour #1c2026 `--cds-color-interactive-secondary-selected`; decoration none |
+| focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button, 52.3x20, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 56.25pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | colour #1c2026 `--cds-color-interactive-secondary-selected`; decoration none; painted by children button, 52.3x20, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 56.25pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
 
 ![Ghost secondary button default](components/crops/button-ghost-secondary-default.png) ![Ghost secondary button hover](components/crops/button-ghost-secondary-hover.png) ![Ghost secondary button focus-visible](components/crops/button-ghost-secondary-focus-visible.png) ![Ghost secondary button pressed](components/crops/button-ghost-secondary-pressed.png)
 
@@ -626,8 +638,8 @@ Text-sized ghost button ("30 languages available"). Measured as `button-ghost-te
 |---|---|
 | default | size 138.92 x 20; padding 0; radius 8px `--cds-border-radius-100`; background transparent; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| pressed | colour #3c0f8a `--cds-color-interactive-primary-selected`; decoration underline |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline; painted by children button, 138.9x20, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 142.922pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | colour #3c0f8a `--cds-color-interactive-primary-selected`; decoration underline; painted by children button, 138.9x20, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 142.922pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
 
 ![Ghost text button default](components/crops/button-ghost-text-default.png) ![Ghost text button hover](components/crops/button-ghost-text-hover.png) ![Ghost text button focus-visible](components/crops/button-ghost-text-focus-visible.png) ![Ghost text button pressed](components/crops/button-ghost-text-pressed.png)
 
@@ -636,8 +648,9 @@ Legacy "Show more" text toggle (button.bold.body-2-text) under long descriptions
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 77.27 x 21; padding 0; radius 0px; background transparent; outline none; font OpenSans 14/21 700; colour #136ef0 `--cds-color-callouts-background-primary` |
-| focus-visible | outline 1px auto #005fcc offset 0px (the browser default focus outline) |
+| default (same: hover) | size 77.27 x 21; padding 0; radius 0px; background transparent; outline none; font OpenSans 14/21 700; colour #136ef0 `--cds-color-callouts-background-primary` |
+| focus-visible | outline 1px auto #005fcc offset 0px (the browser default focus outline); painted by children button, 77.3x21, outline 1px auto #005fcc offset 0px |
+| pressed | painted by children button, 77.3x21, outline 1px auto #005fcc offset 0px |
 
 Child layers that carry the look: button, 77.3x21, outline 1px auto #005fcc offset 0px.
 
@@ -649,8 +662,9 @@ Child layers that carry the look: button, 77.3x21, outline 1px auto #005fcc offs
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 67.61 x 24; padding 0; radius 8px `--cds-border-radius-100`; background transparent; font 14/24 400, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; decoration underline |
-| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 67.6x24, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 67.6x24, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 71.6094pxx28px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected`; painted by children button, 67.6x24, background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`, radius 8px |
 
 ![Show more button default](components/crops/button-show-more-default.png) ![Show more button hover](components/crops/button-show-more-hover.png) ![Show more button focus-visible](components/crops/button-show-more-focus-visible.png) ![Show more button pressed](components/crops/button-show-more-pressed.png)
 
@@ -660,9 +674,10 @@ Child layers that carry the look: button, 77.3x21, outline 1px auto #005fcc offs
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 220.55 x 20; padding 0; radius 4px `--cds-border-radius-50`; background transparent; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover, focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-selected`; decoration underline; icon 16 x 16, colour #1c2026 `--cds-color-interactive-secondary-selected` |
-| expanded | size 214.97 x 20; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover` |
+| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button, 220.5x20, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, radius 4px |
+| focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button, 220.5x20, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, outline 1px solid transparent offset 2px, radius 4px, button::after, 224.547pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-selected`; decoration underline; icon 16 x 16, colour #1c2026 `--cds-color-interactive-secondary-selected`; painted by children button, 220.5x20, background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, radius 4px |
+| expanded | size 214.97 x 20; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button, 215x20, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, radius 4px |
 
 ![Show more container button default](components/crops/show-more-container-button-default.png) ![Show more container button hover](components/crops/show-more-container-button-hover.png) ![Show more container button focus-visible](components/crops/show-more-container-button-focus-visible.png) ![Show more container button pressed](components/crops/show-more-container-button-pressed.png) ![Show more container button expanded](components/crops/show-more-container-button-expanded.png)
 
@@ -672,8 +687,9 @@ Child layers that carry the look: button, 77.3x21, outline 1px auto #005fcc offs
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 259.05 x 20; padding 0; radius 8px `--cds-border-radius-100`; background transparent; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover, focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-selected`; decoration underline; icon 16 x 16, colour #1c2026 `--cds-color-interactive-secondary-selected` |
+| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button, 259x20, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, radius 8px |
+| focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button, 259x20, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, radius 8px, button::after, 263.047pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-selected`; decoration underline; icon 16 x 16, colour #1c2026 `--cds-color-interactive-secondary-selected`; painted by children button, 259x20, background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, radius 8px |
 
 ![Show more list button default](components/crops/show-more-list-button-default.png) ![Show more list button hover](components/crops/show-more-list-button-hover.png) ![Show more list button focus-visible](components/crops/show-more-list-button-focus-visible.png) ![Show more list button pressed](components/crops/show-more-list-button-pressed.png)
 
@@ -683,8 +699,9 @@ Chevron toggle button at the right of a course row. Measured as `spec-course-tog
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 56 x 77; padding 12px 16px; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 600 `--cds-typography-title3`, ls 0.16px; colour #0056d2 `--cds-color-interactive-primary`; decoration none; icon 20 x 20, colour #0056d2 `--cds-color-interactive-primary` |
-| hover, focus-visible | size 155.33 x 77; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected`; decoration underline |
+| hover | size 155.33 x 77; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline; painted by children button, 155.3x77, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px |
+| focus-visible | size 155.33 x 77; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline; painted by children button, 155.3x77, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 159.328pxx81px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected`; decoration underline; painted by children button, 56x77, background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`, radius 8px |
 
 ![Course row toggle default](components/crops/spec-course-toggle-default.png) ![Course row toggle hover](components/crops/spec-course-toggle-hover.png) ![Course row toggle focus-visible](components/crops/spec-course-toggle-focus-visible.png) ![Course row toggle pressed](components/crops/spec-course-toggle-pressed.png)
 
@@ -693,9 +710,10 @@ Close (x) in the sheet: cds-iconButton-medium ghostSecondary round. Measured as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 24 x 24; padding 0; radius 50px `--cds-border-radius-max`; background transparent; shadow transparent 0px 0px 0px 1px inset (no edge); font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover, focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` |
+| default | size 24 x 24; padding 0; radius 50px `--cds-border-radius-max`; background transparent; shadow transparent 0px 0px 0px 1px inset (no edge); font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children button, 24x24, shadow transparent 0px 0px 0px 1px inset (no edge), radius 50px |
+| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; painted by children button, 24x24, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, shadow transparent 0px 0px 0px 1px inset (no edge), radius 50px |
+| focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; painted by children button, 24x24, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, shadow transparent 0px 0px 0px 1px inset (no edge), outline 1px solid transparent offset 2px, radius 50px, button::after, 28pxx28px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 50px, inset -2px -2px -2px -2px |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; painted by children button, 24x24, background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, shadow transparent 0px 0px 0px 1px inset (no edge), radius 50px |
 
 | Part | Values (default) |
 |---|---|
@@ -709,9 +727,10 @@ Info (i) toggle next to "Recommended experience": 20px button, 16px icon. Measur
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 20 x 20; padding 0; radius 8px `--cds-border-radius-100`; background transparent; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover, focus-visible | colour #232b3a `--cds-color-interactive-secondary-hover`; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | colour #1c2026 `--cds-color-interactive-secondary-selected`; icon 16 x 16, colour #1c2026 `--cds-color-interactive-secondary-selected` |
-| expanded | icon 22.63 x 22.63, colour #0d0f12 `--cds-color-interactive-secondary` |
+| hover | colour #232b3a `--cds-color-interactive-secondary-hover`; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover` |
+| focus-visible | colour #232b3a `--cds-color-interactive-secondary-hover`; icon 16 x 16, colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button, 20x20, outline 1px solid transparent offset 2px, radius 8px, button::after, 18pxx18px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 50%, inset 1px 1px 1px 1px |
+| pressed | colour #1c2026 `--cds-color-interactive-secondary-selected`; icon 16 x 16, colour #1c2026 `--cds-color-interactive-secondary-selected`; painted by children button, 20x20, outline 1px solid transparent offset 2px, radius 8px, button::after, 18pxx18px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 50%, inset 1px 1px 1px 1px |
+| expanded | icon 22.63 x 22.63, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children button, 20x20, outline 1px solid transparent offset 2px, radius 8px, button::after, 18pxx18px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 50%, inset 1px 1px 1px 1px |
 
 ![Help toggle default](components/crops/contextual-help-button-default.png) ![Help toggle hover](components/crops/contextual-help-button-hover.png) ![Help toggle focus-visible](components/crops/contextual-help-button-focus-visible.png) ![Help toggle pressed](components/crops/contextual-help-button-pressed.png) ![Help toggle expanded](components/crops/contextual-help-button-expanded.png)
 
@@ -731,8 +750,8 @@ Breadcrumb link. Measured as `breadcrumb-link` on the course page.
 |---|---|
 | default | size 77.78 x 36; padding 8px; radius 0px; background transparent; shadow none; font 14/20 400 `--cds-typography-body2`; colour #48546e `--cds-color-neutral-primary-weak`; decoration none |
 | hover | decoration underline |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); decoration underline |
-| pressed | decoration underline |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); decoration underline; painted by children a, 77.8x36, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
+| pressed | decoration underline; painted by children a, 77.8x36, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
 
 ![Breadcrumb link default](components/crops/breadcrumb-link-default.png) ![Breadcrumb link hover](components/crops/breadcrumb-link-hover.png) ![Breadcrumb link focus-visible](components/crops/breadcrumb-link-focus-visible.png) ![Breadcrumb link pressed](components/crops/breadcrumb-link-pressed.png)
 
@@ -741,9 +760,10 @@ Home icon at the start of the trail: cds-iconButton-small ghostSecondary. Measur
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; padding 0; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset (no edge); font 16/24 400 `--cds-typography-body1`; colour #48546e `--cds-color-neutral-primary-weak`; decoration none; icon 20 x 20, colour #48546e `--cds-color-neutral-primary-weak` |
-| hover, focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; decoration underline |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; decoration underline |
+| default | size 36 x 36; padding 0; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset (no edge); font 16/24 400 `--cds-typography-body1`; colour #48546e `--cds-color-neutral-primary-weak`; decoration none; icon 20 x 20, colour #48546e `--cds-color-neutral-primary-weak`; painted by children a, 36x36, shadow transparent 0px 0px 0px 1px inset (no edge), radius 8px |
+| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; decoration underline; painted by children a, 36x36, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, shadow transparent 0px 0px 0px 1px inset (no edge), radius 8px |
+| focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; decoration underline; painted by children a, 36x36, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, shadow transparent 0px 0px 0px 1px inset (no edge), outline 1px solid transparent offset 2px, radius 8px, a::after, 40pxx40px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; decoration underline; painted by children a, 36x36, background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, shadow transparent 0px 0px 0px 1px inset (no edge), radius 8px |
 
 ![Breadcrumb home icon default](components/crops/breadcrumb-home-default.png) ![Breadcrumb home icon hover](components/crops/breadcrumb-home-hover.png) ![Breadcrumb home icon focus-visible](components/crops/breadcrumb-home-focus-visible.png) ![Breadcrumb home icon pressed](components/crops/breadcrumb-home-pressed.png)
 
@@ -754,8 +774,8 @@ Inline link in body text (the specialization name in the hero): underlined, inhe
 |---|---|
 | default | size 221.22 x 22; padding 0; radius 0px; background transparent; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a, 221.2x22, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
+| pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none; painted by children a, 221.2x22, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
 
 ![Inline link default](components/crops/link-inline-default.png) ![Inline link hover](components/crops/link-inline-hover.png) ![Inline link focus-visible](components/crops/link-inline-focus-visible.png) ![Inline link pressed](components/crops/link-inline-pressed.png)
 
@@ -766,8 +786,8 @@ Standalone link in body copy (the specialization link in Outcomes): blue, no und
 |---|---|
 | default | size 221.22 x 22; padding 0; radius 0px; background transparent; shadow none; font 16/24 600 `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline; painted by children a, 221.2x22, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
+| pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline; painted by children a, 221.2x22, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
 
 ![Standalone link default](components/crops/link-standalone-default.png) ![Standalone link hover](components/crops/link-standalone-hover.png) ![Standalone link focus-visible](components/crops/link-standalone-focus-visible.png) ![Standalone link pressed](components/crops/link-standalone-pressed.png)
 
@@ -778,7 +798,7 @@ Instructor name link (underlined, semibold). Measured as `instructor-name` on th
 |---|---|
 | default | size 74.39 x 22; padding 0; radius 0px; background transparent; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a, 74.4x22, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
 
 ![Instructor name link default](components/crops/instructor-name-default.png) ![Instructor name link hover](components/crops/instructor-name-hover.png) ![Instructor name link focus-visible](components/crops/instructor-name-focus-visible.png)
 
@@ -789,7 +809,7 @@ Instructor name link (underlined, semibold). Measured as `instructor-name` on th
 |---|---|
 | default | size 124.41 x 22; padding 0; radius 0px; background transparent; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration underline |
 | hover | decoration none |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`) |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); painted by children a, 124.4x22, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
 
 ![View more reviews link default](components/crops/link-view-more-default.png) ![View more reviews link hover](components/crops/link-view-more-hover.png) ![View more reviews link focus-visible](components/crops/link-view-more-focus-visible.png)
 
@@ -800,7 +820,7 @@ Course title link in the series list. Measured as `spec-course-title-link` on th
 |---|---|
 | default | size 505.53 x 28; padding 0; radius 0px; background transparent; shadow none; font 20/28 600 `--cds-typography-title2`, ls -0.1px; colour #0d0f12 `--cds-color-interactive-secondary`; decoration underline |
 | hover | colour #0056d2 `--cds-color-interactive-primary` |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a, 505.5x28, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
 
 ![Course title link default](components/crops/spec-course-title-link-default.png) ![Course title link hover](components/crops/spec-course-title-link-hover.png) ![Course title link focus-visible](components/crops/spec-course-title-link-focus-visible.png)
 
@@ -820,10 +840,10 @@ Results for "machine learning" heading. Measured as `search-results-heading` on 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 209.13 x 32; padding 8px 10px 8px 8px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 400 `--cds-typography-body2`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
-| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline) |
-| pressed | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
+| default | size 209.13 x 32; padding 8px 10px 8px 8px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 400 `--cds-typography-body2`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; painted by children button, 209.1x32, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
+| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; painted by children button, 209.1x32, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
+| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline); painted by children button, 209.1x32, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, outline 1px auto #005fcc offset 3px, radius 20px |
+| pressed | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; painted by children button, 209.1x32, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
 
 | Part | Values (default) |
 |---|---|
@@ -849,10 +869,10 @@ Filter & Sort: pill outlined button with a 16px sliders icon. Measured as `filte
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 127.7 x 36; padding 8px 16px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
-| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline) |
-| pressed | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
+| default | size 127.7 x 36; padding 8px 16px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children button, 127.7x36, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
+| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; painted by children button, 127.7x36, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
+| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline); painted by children button, 127.7x36, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, outline 1px auto #005fcc offset 3px, radius 20px |
+| pressed | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; painted by children button, 127.7x36, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
 
 ![Filter and sort button default](components/crops/filter-and-sort-button-default.png) ![Filter and sort button hover](components/crops/filter-and-sort-button-hover.png) ![Filter and sort button focus-visible](components/crops/filter-and-sort-button-focus-visible.png) ![Filter and sort button pressed](components/crops/filter-and-sort-button-pressed.png)
 
@@ -861,10 +881,10 @@ Facet dropdown trigger (Topic, Duration, ...): pill outlined button with a 16px 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: expanded) | size 87.06 x 36; padding 8px 16px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
-| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline) |
-| pressed | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
+| default (same: expanded) | size 87.06 x 36; padding 8px 16px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children button, 87.1x36, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
+| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; painted by children button, 87.1x36, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
+| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline); painted by children button, 87.1x36, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, outline 1px auto #005fcc offset 3px, radius 20px |
+| pressed | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; painted by children button, 87.1x36, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
 
 ![Filter dropdown default](components/crops/filter-dropdown-default.png) ![Filter dropdown hover](components/crops/filter-dropdown-hover.png) ![Filter dropdown focus-visible](components/crops/filter-dropdown-focus-visible.png) ![Filter dropdown pressed](components/crops/filter-dropdown-pressed.png) ![Filter dropdown expanded](components/crops/filter-dropdown-expanded.png)
 
@@ -873,9 +893,9 @@ AI-suggested topic pill in the filter bar, with a sparkle prefix icon. Measured 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 372.22 x 36; padding 8px 16px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
-| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline) |
+| default | size 372.22 x 36; padding 8px 16px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children button, 372.2x36, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
+| hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; painted by children button, 372.2x36, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, radius 20px |
+| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline); painted by children button, 372.2x36, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #dae1ed `--cds-color-neutral-disabled`, outline 1px auto #005fcc offset 3px, radius 20px |
 
 ![AI suggestion pill default](components/crops/filter-ai-pill-default.png) ![AI suggestion pill hover](components/crops/filter-ai-pill-hover.png) ![AI suggestion pill focus-visible](components/crops/filter-ai-pill-focus-visible.png)
 
@@ -897,7 +917,8 @@ Filter checkbox row (cds-checkboxAndRadio-label): 18px box, label, count in brac
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 360 x 32; padding 4px 0; gap 8px; radius 0px; background transparent; font 16/16 400; colour #000000 @ 0.87, no token; icon 18 x 18, colour #8495b0 `--cds-color-neutral-stroke-primary` |
-| hover, focus-visible, checked | icon 18 x 18, colour #0b408b `--cds-color-interactive-primary-hover` |
+| hover | icon 18 x 18, colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible, checked | icon 18 x 18, colour #0b408b `--cds-color-interactive-primary-hover`; painted by children input, 18x20, outline 1px dotted #0b408b offset -2px, svg, 18x18, shadow #ffffff 0px 0px 0px 2px, #804ee4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons), radius 4px |
 
 Child layers that carry the look: input, 18x20, outline 1px dotted #0b408b offset -2px; svg, 18x18, shadow #ffffff 0px 0px 0px 2px, #804ee4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons), radius 4px.
 
@@ -914,7 +935,8 @@ The 18x18 checkbox glyph (svg) itself. Measured as `checkbox-box` on the search 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 18 x 20; padding 1px 0; radius 4px `--cds-border-radius-50`; background transparent; font 24/24 400; colour #8495b0 `--cds-color-neutral-stroke-primary`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, colour #8495b0 `--cds-color-neutral-stroke-primary` |
-| hover, focus-visible, checked, checked-focus-visible | colour #0b408b `--cds-color-interactive-primary-hover`; icon 18 x 18, colour #0b408b `--cds-color-interactive-primary-hover` |
+| hover | colour #0b408b `--cds-color-interactive-primary-hover`; icon 18 x 18, colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible, checked, checked-focus-visible | colour #0b408b `--cds-color-interactive-primary-hover`; icon 18 x 18, colour #0b408b `--cds-color-interactive-primary-hover`; painted by children input, 18x20, outline 1px dotted #0b408b offset -2px, svg, 18x18, shadow #ffffff 0px 0px 0px 2px, #804ee4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons), radius 4px |
 
 ![Checkbox glyph default](components/crops/checkbox-box-default.png) ![Checkbox glyph hover](components/crops/checkbox-box-hover.png) ![Checkbox glyph focus-visible](components/crops/checkbox-box-focus-visible.png) ![Checkbox glyph checked](components/crops/checkbox-box-checked.png) ![Checkbox glyph checked-focus-visible](components/crops/checkbox-box-checked-focus-visible.png)
 
@@ -925,7 +947,8 @@ Sort radio (Best Match / Newest): 20px circle. Measured as `radio` on the search
 |---|---|
 | default | size 101.02 x 40; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #8495b0 `--cds-color-neutral-stroke-primary` |
 | checked | icon 20 x 20, colour #0056d2 `--cds-color-interactive-primary` |
-| hover, focus-visible | icon 20 x 20, colour #0b408b `--cds-color-interactive-primary-hover` |
+| hover | icon 20 x 20, colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | icon 20 x 20, colour #0b408b `--cds-color-interactive-primary-hover`; painted by children input, 20x20, outline 1px dotted #0b408b offset -2px, svg, 20x20, shadow #ffffff 0px 0px 0px 2px, #804ee4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons), radius 50% |
 
 Child layers that carry the look: input, 20x20, outline 1px dotted #0b408b offset -2px; svg, 20x20, shadow #ffffff 0px 0px 0px 2px, #804ee4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons), radius 50%.
 
@@ -936,8 +959,8 @@ Facet group in the sheet: cds-AccordionRoot silent, header 48px, chevron at the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| expanded | size 356 x 152; padding 0; border 1px solid transparent; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary` |
-| collapsed | size 356 x 50 |
+| expanded | size 356 x 152; padding 0; border 1px solid transparent; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children div, 356x152, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px |
+| collapsed | size 356 x 50; painted by children div, 356x50, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px |
 
 ![Filter accordion expanded](components/crops/filter-accordion-expanded.png) ![Filter accordion collapsed](components/crops/filter-accordion-collapsed.png)
 
@@ -955,8 +978,10 @@ Select field ("All courses" in reviews): cds-input-root with notched outline, 16
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, opened) | size 121.66 x 32; padding 0; radius 32px `--cds-border-radius-400`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
+| default | size 121.66 x 32; padding 0; radius 32px `--cds-border-radius-400`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children div, 121.7x32, background #ffffff `--cds-color-neutral-background-primary`, radius 32px, input, 121.7x25, background #ffffff `--cds-color-neutral-background-primary`, border 2px inset #767676, no token, fieldset, 121.7x37, border 1px solid #8495b0 `--cds-color-neutral-stroke-primary`, radius 32px |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children div, 121.7x32, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 32px, input, 121.7x25, background #ffffff `--cds-color-neutral-background-primary`, border 2px inset #767676, no token, fieldset, 121.7x37, border 1px solid #0b408b `--cds-color-interactive-primary-hover`, radius 32px |
+| focus-visible | painted by children div, 121.7x32, background #ffffff `--cds-color-neutral-background-primary`, outline 1px solid transparent offset 2px, radius 32px, div::before, 125.656pxx36px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 32px, inset -2px -2px -2px -2px, input, 121.7x25, background #ffffff `--cds-color-neutral-background-primary`, border 2px inset #767676, no token, fieldset, 121.7x37, border 1px solid #8495b0 `--cds-color-neutral-stroke-primary`, radius 32px |
+| opened | painted by children div, 121.7x32, background #ffffff `--cds-color-neutral-background-primary`, radius 32px, input, 121.7x25, background #ffffff `--cds-color-neutral-background-primary`, border 2px inset #767676, no token, fieldset, 121.7x37, border 1px solid #0b408b `--cds-color-interactive-primary-hover`, radius 32px |
 
 | Part | Values (default) |
 |---|---|
@@ -969,8 +994,9 @@ Option row in the select menu. Measured as `select-option` on the specialization
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| selected (same: focus-visible) | size 368 x 40; padding 4px 0; radius 8px `--cds-border-radius-100`; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; font 16/24 400 `--cds-typography-body1`; colour #000000 @ 0.87, no token; icon 20 x 20, colour #0b408b `--cds-color-interactive-primary-hover` |
-| hover | size 368 x 64 |
+| selected | size 368 x 40; padding 4px 0; radius 8px `--cds-border-radius-100`; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; font 16/24 400 `--cds-typography-body1`; colour #000000 @ 0.87, no token; icon 20 x 20, colour #0b408b `--cds-color-interactive-primary-hover`; painted by children li, 368x40, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px, div, 368x32, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 7px |
+| hover | size 368 x 64; painted by children li, 368x64, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px, div, 368x56, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 7px |
+| focus-visible | painted by children li, 368x64, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px, div, 368x56, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 7px |
 
 ![Select option selected](components/crops/select-option-selected.png) ![Select option hover](components/crops/select-option-hover.png)
 
@@ -983,9 +1009,10 @@ Search result card (cds-ProductCard-grid): bordered white card, 16:9 image inset
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 335 x 418.31; padding 0; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; transition all 0.3s cubic-bezier(0, 0, 0.5, 1) |
-| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`) |
-| pressed | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`) |
+| default | size 335 x 418.31; padding 0; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; transition all 0.3s cubic-bezier(0, 0, 0.5, 1); painted by children div, 335x418.3, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, span, 106.8x20, background #e8d6ff `--cds-color-purple-100`, radius 50px |
+| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`); painted by children div, 335x418.3, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`), radius 16px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, span, 106.8x20, background #e8d6ff `--cds-color-purple-100`, radius 50px |
+| focus-visible | painted by children div, 335x418.3, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, a, 301x20, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
+| pressed | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`); painted by children div, 335x418.3, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`), radius 16px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, span, 106.8x20, background #e8d6ff `--cds-color-purple-100`, radius 50px |
 
 | Part | Values (default) |
 |---|---|
@@ -1010,7 +1037,7 @@ The title link (stretched to cover the card). Measured as `product-card-title-li
 |---|---|
 | default | size 301 x 20; padding 0; radius 0px; background transparent; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary` |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a, 301x20, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
 
 ![Product card title link hover](components/crops/product-card-title-link-hover.png) ![Product card title link focus-visible](components/crops/product-card-title-link-focus-visible.png)
 
@@ -1019,8 +1046,9 @@ List variant of the product card (cds-ProductCard-list): image left (315 wide), 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 664 x 189; padding 8px; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; transition all 0.3s cubic-bezier(0, 0, 0.5, 1) |
-| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`) |
+| default | size 664 x 189; padding 8px; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; transition all 0.3s cubic-bezier(0, 0, 0.5, 1); painted by children div, 664x189, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 315x171, background #dae1ed `--cds-color-neutral-disabled`, radius 8px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px |
+| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`); painted by children div, 664x189, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`), radius 16px, div, 315x171, background #dae1ed `--cds-color-neutral-disabled`, radius 8px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px |
+| focus-visible | painted by children div, 664x189, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 315x171, background #dae1ed `--cds-color-neutral-disabled`, radius 8px, div, 38x38, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, a, 315x20, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
 
 | Part | Values (default) |
 |---|---|
@@ -1034,8 +1062,9 @@ cds-Pill-root: partner or domain pill on the home page. Measured as `pill` on th
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 100.08 x 42; padding 8px 12px; gap 8px; border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; radius 100px; background #ffffff `--cds-color-neutral-background-primary`; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none; transition all 0.3s cubic-bezier(0, 0, 0.5, 1) |
+| default | size 100.08 x 42; padding 8px 12px; gap 8px; border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; radius 100px; background #ffffff `--cds-color-neutral-background-primary`; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none; transition all 0.3s cubic-bezier(0, 0, 0.5, 1); painted by children a, 100.1x42, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, radius 100px |
 | hover | decoration underline |
+| focus-visible | painted by children a, 100.1x42, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, outline 1px solid transparent offset 2px, radius 100px, a::after, 98.0781pxx40px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 100px, inset 0px 0px 0px 0px |
 
 ![Pill default](components/crops/pill-default.png) ![Pill focus-visible](components/crops/pill-focus-visible.png)
 
@@ -1048,8 +1077,8 @@ Explore page band (Trusted AI Learning): a full-width grey wrapper holding a 20%
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 1440 x 351.61; padding 0; radius 0px; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary` |
-| mobile | size 390 x 443.25; icon 20 x 20, colour #0d0f12 `--cds-color-interactive-secondary` |
+| default | size 1440 x 351.61; padding 0; radius 0px; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children div, 1440x351.6, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, button, 92.7x32, background #1c2026, border 1px solid #1c2026, radius 32px (`--cds-color-interactive-secondary-selected`), button, 53.2x32, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 32px, button, 111.5x32, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 32px |
+| mobile | size 390 x 443.25; icon 20 x 20, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children div, 390x443.3, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, button, 92.7x32, background #1c2026, border 1px solid #1c2026, radius 32px (`--cds-color-interactive-secondary-selected`), button, 53.2x32, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 32px, button, 111.5x32, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 32px |
 
 ![Explore band default](components/crops/explore-band-default.png) ![Explore band mobile](components/crops/explore-band-mobile.png)
 
@@ -1082,9 +1111,10 @@ Idle chip (cds-Chip-root): white pill, 1px grey border, 400 14/20 label, 32 tall
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, mobile) | size 53.19 x 32; padding 4px 12px; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 32px `--cds-border-radius-400`; background #ffffff `--cds-color-neutral-background-primary`; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover | border 1px solid #0b408b `--cds-color-interactive-primary-hover`; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | border 1px solid #3c0f8a `--cds-color-interactive-primary-selected`; background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected` |
+| default (same: mobile) | size 53.19 x 32; padding 4px 12px; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 32px `--cds-border-radius-400`; background #ffffff `--cds-color-neutral-background-primary`; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; painted by children button, 53.2x32, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 32px |
+| hover | border 1px solid #0b408b `--cds-color-interactive-primary-hover`; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 53.2x32, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, border 1px solid #0b408b `--cds-color-interactive-primary-hover`, radius 32px |
+| focus-visible | painted by children button, 53.2x32, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, outline 1px solid transparent offset 2px, radius 32px, button::after, 55.1875pxx34px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 32px, inset -2px -2px -2px -2px |
+| pressed | border 1px solid #3c0f8a `--cds-color-interactive-primary-selected`; background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected`; painted by children button, 53.2x32, background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`, border 1px solid #3c0f8a `--cds-color-interactive-primary-selected`, radius 32px |
 
 ![Explore chip default](components/crops/explore-chip-default.png) ![Explore chip hover](components/crops/explore-chip-hover.png) ![Explore chip focus-visible](components/crops/explore-chip-focus-visible.png) ![Explore chip pressed](components/crops/explore-chip-pressed.png) ![Explore chip mobile](components/crops/explore-chip-mobile.png)
 
@@ -1093,9 +1123,10 @@ Selected chip (cds-Chip-selected): near-black fill, white 600 14/20 label with 0
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 92.67 x 32; padding 4px 12px; border 1px solid #1c2026 `--cds-color-interactive-secondary-selected`; radius 32px `--cds-border-radius-400`; background #1c2026 `--cds-color-interactive-secondary-selected`; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover | border 1px solid #0b408b `--cds-color-interactive-primary-hover`; background #0b408b `--cds-color-emphasis-primary-background-xstrong` |
-| pressed | border 1px solid #3c0f8a `--cds-color-interactive-primary-selected`; background #3c0f8a `--cds-color-interactive-primary-selected` |
+| default | size 92.67 x 32; padding 4px 12px; border 1px solid #1c2026 `--cds-color-interactive-secondary-selected`; radius 32px `--cds-border-radius-400`; background #1c2026 `--cds-color-interactive-secondary-selected`; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert`; painted by children button, 92.7x32, background #1c2026, border 1px solid #1c2026, radius 32px (`--cds-color-interactive-secondary-selected`) |
+| hover | border 1px solid #0b408b `--cds-color-interactive-primary-hover`; background #0b408b `--cds-color-emphasis-primary-background-xstrong`; painted by children button, 92.7x32, background #0b408b `--cds-color-emphasis-primary-background-xstrong`, border 1px solid #0b408b `--cds-color-interactive-primary-hover`, radius 32px |
+| focus-visible | painted by children button, 92.7x32, background #1c2026, border 1px solid #1c2026, outline 1px solid transparent offset 2px, radius 32px (`--cds-color-interactive-secondary-selected`), button::after, 94.6719pxx34px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 32px, inset -2px -2px -2px -2px |
+| pressed | border 1px solid #3c0f8a `--cds-color-interactive-primary-selected`; background #3c0f8a `--cds-color-interactive-primary-selected`; painted by children button, 92.7x32, background #3c0f8a, border 1px solid #3c0f8a, radius 32px (`--cds-color-interactive-primary-selected`) |
 
 ![Explore chip, selected default](components/crops/explore-chip-selected-default.png) ![Explore chip, selected hover](components/crops/explore-chip-selected-hover.png) ![Explore chip, selected focus-visible](components/crops/explore-chip-selected-focus-visible.png) ![Explore chip, selected pressed](components/crops/explore-chip-selected-pressed.png)
 
@@ -1104,8 +1135,8 @@ The card row (data-testid overflow-carousel): a flex wrapper with -8px -16px mar
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 1116.8 x 263.61; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary` |
-| mobile, narrow | size 390 x 218.25 |
+| default | size 1116.8 x 263.61; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children div, 266.2x247.6, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 18x18, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, div, 266.2x247.6, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 18x18, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px |
+| mobile, narrow | size 390 x 218.25; painted by children div, 150x202.3, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 18x18, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, div, 150x202.3, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 18x18, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px |
 
 Child layers that carry the look: div, 266.2x247.6, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px; div, 18x18, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px; div, 266.2x247.6, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px.
 
@@ -1120,10 +1151,11 @@ Compact course card: the search product card (cds-ProductCard-grid) without the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 266.19 x 247.61; padding 0; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; transition all 0.3s cubic-bezier(0, 0, 0.5, 1) |
-| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`) |
-| pressed | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`) |
-| mobile | size 150 x 202.25 |
+| default | size 266.19 x 247.61; padding 0; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; transition all 0.3s cubic-bezier(0, 0, 0.5, 1); painted by children div, 266.2x247.6, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 18x18, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px |
+| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`); painted by children div, 266.2x247.6, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`), radius 16px, div, 18x18, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px |
+| focus-visible | painted by children div, 266.2x247.6, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 18x18, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px, a, 232.2x20, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
+| pressed | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`); painted by children div, 266.2x247.6, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`), radius 16px, div, 18x18, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px |
+| mobile | size 150 x 202.25; painted by children div, 150x202.3, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 16px, div, 18x18, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 5px |
 
 | Part | Values (default) |
 |---|---|
@@ -1146,7 +1178,7 @@ The title link; it is stretched over the whole card, so it takes the card focus 
 |---|---|
 | default | size 232.19 x 20; padding 0; radius 0px; background transparent; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary` |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a, 232.2x20, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
 
 ![Compact card title link hover](components/crops/explore-card-title-link-hover.png) ![Compact card title link focus-visible](components/crops/explore-card-title-link-focus-visible.png)
 
@@ -1168,7 +1200,8 @@ The "Explore programs" arrow link under the sub text: cds-button-ghostInvert, a 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 183.66 x 48; padding 12px 16px; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 600 `--cds-typography-title3`, ls 0.16px; colour #ffffff `--cds-color-neutral-primary-invert`; decoration none; icon 24 x 24, colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover, focus-visible, pressed | decoration underline |
+| hover | decoration underline |
+| focus-visible, pressed | decoration underline; painted by children a, 183.7x48, outline 1px solid transparent offset 2px, radius 8px, a::after, 187.656pxx52px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
 
 ![Explore band arrow link default](components/crops/explore-section-link-default.png) ![Explore band arrow link hover](components/crops/explore-section-link-hover.png) ![Explore band arrow link focus-visible](components/crops/explore-section-link-focus-visible.png) ![Explore band arrow link pressed](components/crops/explore-section-link-pressed.png)
 
@@ -1189,10 +1222,11 @@ Next arrow: a 24px wide button the height of the row, pinned to the right end, a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 24 x 274; padding 0 0 0 4px; radius 0px; background transparent + linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%); font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover | background transparent + linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.8) 40%, rgb(255, 255, 255) 100%); colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary` |
-| pressed | background transparent + linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.8) 40%, rgb(255, 255, 255) 100%); colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary` |
-| narrow | size 24 x 202.25 |
+| default | size 24 x 274; padding 0 0 0 4px; radius 0px; background transparent + linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%); font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children button, 24x274, bg-image linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%) |
+| hover | background transparent + linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.8) 40%, rgb(255, 255, 255) 100%); colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary`; painted by children button, 24x274, bg-image linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.8) 40%, rgb(255, 255, 255) 100%) |
+| focus-visible | painted by children button, 24x274, bg-image linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%), outline 1px solid transparent offset 2px, button::after, 28pxx278px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background transparent + linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.8) 40%, rgb(255, 255, 255) 100%); colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary`; painted by children button, 24x274, bg-image linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.8) 40%, rgb(255, 255, 255) 100%) |
+| narrow | size 24 x 202.25; painted by children button, 24x202.3, bg-image linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%) |
 
 ![Carousel Next arrow default](components/crops/explore-carousel-next-default.png) ![Carousel Next arrow hover](components/crops/explore-carousel-next-hover.png) ![Carousel Next arrow focus-visible](components/crops/explore-carousel-next-focus-visible.png) ![Carousel Next arrow pressed](components/crops/explore-carousel-next-pressed.png) ![Carousel Next arrow narrow](components/crops/explore-carousel-next-narrow.png)
 
@@ -1201,9 +1235,10 @@ Previous arrow: mirror of the Next arrow at the left end (white fade to the left
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 24 x 274; padding 0 4px 0 0; radius 0px; background transparent + linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%); font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary` |
-| hover | background transparent + linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.1) 100%); colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary` |
-| pressed | background transparent + linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.1) 100%); colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary` |
+| default | size 24 x 274; padding 0 4px 0 0; radius 0px; background transparent + linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%); font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children button, 24x274, bg-image linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%) |
+| hover | background transparent + linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.1) 100%); colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary`; painted by children button, 24x274, bg-image linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.1) 100%) |
+| focus-visible | painted by children button, 24x274, bg-image linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%), outline 1px solid transparent offset 2px, button::after, 28pxx278px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background transparent + linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.1) 100%); colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary`; painted by children button, 24x274, bg-image linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.1) 100%) |
 
 ![Carousel Previous arrow default](components/crops/explore-carousel-prev-default.png) ![Carousel Previous arrow hover](components/crops/explore-carousel-prev-hover.png) ![Carousel Previous arrow focus-visible](components/crops/explore-carousel-prev-focus-visible.png) ![Carousel Previous arrow pressed](components/crops/explore-carousel-prev-pressed.png)
 
@@ -1254,7 +1289,7 @@ Floating stats card that overlaps the bottom of the hero: modules, rating, level
 |---|---|
 | default | size 88.14 x 28; padding 0; radius 0px; background transparent; shadow none; font 20/24 600 `--cds-typography-subtitle-large`, ls -0.06px; colour #0d0f12 `--cds-color-interactive-secondary`; decoration underline |
 | hover | decoration none |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`) |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); painted by children a, 88.1x28, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 4px |
 
 ![Stats card link hover](components/crops/stats-card-link-hover.png) ![Stats card link focus-visible](components/crops/stats-card-link-focus-visible.png)
 
@@ -1272,11 +1307,11 @@ One section tab link. Measured as `tab` on the course page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 81.97 x 44; padding 10px 12px; radius 4px `--cds-border-radius-50`; background transparent; outline none; font 16/24 600 `--cds-typography-title3`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none |
+| default | size 81.97 x 44; padding 10px 12px; radius 4px `--cds-border-radius-50`; background transparent; outline none; font 16/24 600 `--cds-typography-title3`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none; painted by children a, 65.4x44, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, radius 4px |
 | selected | size 65.41 x 44; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0056d2 `--cds-color-interactive-primary` |
-| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid #0056d2 `--cds-color-interactive-primary` offset -1px; colour #0056d2 `--cds-color-interactive-primary` |
-| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0056d2 `--cds-color-interactive-primary` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0056d2 `--cds-color-interactive-primary`; painted by children a, 82x44, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 4px |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid #0056d2 `--cds-color-interactive-primary` offset -1px; colour #0056d2 `--cds-color-interactive-primary`; painted by children a, 82x44, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid #0056d2 offset -1px, radius 4px |
+| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0056d2 `--cds-color-interactive-primary`; painted by children a, 82x44, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 4px |
 | selected-sticky | size 65.41 x 44; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline |
 
 ![Tab selected](components/crops/tab-selected.png) ![Tab default](components/crops/tab-default.png) ![Tab hover](components/crops/tab-hover.png) ![Tab focus-visible](components/crops/tab-focus-visible.png) ![Tab pressed](components/crops/tab-pressed.png) ![Tab selected-sticky](components/crops/tab-selected-sticky.png)
@@ -1311,9 +1346,9 @@ Sticky course nav that replaces the header once the hero scrolls away: partner m
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 126.89 x 30; padding 4px 12px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 50px `--cds-border-radius-max`; background #dae1ed `--cds-color-neutral-disabled`; shadow none; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none |
+| default | size 126.89 x 30; padding 4px 12px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 50px `--cds-border-radius-max`; background #dae1ed `--cds-color-neutral-disabled`; shadow none; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none; painted by children a, 126.9x30, background #dae1ed, border 1px solid #dae1ed, radius 50px (`--cds-color-neutral-disabled`) |
 | hover | decoration underline |
-| focus-visible | shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
+| focus-visible | shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline; painted by children a, 126.9x30, background #dae1ed, border 1px solid #dae1ed, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), outline 1px solid transparent offset 2px, radius 50px (`--cds-color-neutral-disabled`) |
 | pressed | decoration underline |
 
 ![Skill chip default](components/crops/skill-chip-default.png) ![Skill chip hover](components/crops/skill-chip-hover.png) ![Skill chip focus-visible](components/crops/skill-chip-focus-visible.png) ![Skill chip pressed](components/crops/skill-chip-pressed.png)
@@ -1358,8 +1393,8 @@ Module accordion item (cds-AccordionRoot silent): header row is a full-width gho
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| collapsed | size 817.33 x 82; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #0056d2 `--cds-color-interactive-primary` |
-| expanded | size 817.33 x 290 |
+| collapsed | size 817.33 x 82; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #0056d2 `--cds-color-interactive-primary`; painted by children div, 813.3x78, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px |
+| expanded | size 817.33 x 290; painted by children div, 813.3x286, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px, button, 843.3x76, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px |
 
 Child layers that carry the look: div, 813.3x78, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px.
 
@@ -1378,9 +1413,10 @@ The header button of a module accordion. Measured as `module-accordion-header` o
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 843.33 x 76; padding 12px 16px; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 600 `--cds-typography-title3`, ls 0.16px; colour #0056d2 `--cds-color-interactive-primary`; icon 20 x 20, colour #0056d2 `--cds-color-interactive-primary` |
-| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected` |
-| expanded | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 843.3x76, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 843.3x76, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, outline 1px solid transparent offset 2px, radius 8px, button::after, 847.328pxx80px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected`; painted by children button, 843.3x76, background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`, radius 8px |
+| expanded | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 843.3x76, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px |
 
 ![Module accordion header default](components/crops/module-accordion-header-default.png) ![Module accordion header hover](components/crops/module-accordion-header-hover.png) ![Module accordion header focus-visible](components/crops/module-accordion-header-focus-visible.png) ![Module accordion header pressed](components/crops/module-accordion-header-pressed.png) ![Module accordion header expanded](components/crops/module-accordion-header-expanded.png)
 
@@ -1402,8 +1438,8 @@ Specialization course list item: 94x53 thumbnail, title link (h3), "Course 1 •
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| collapsed | size 817.33 x 83; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #0056d2 `--cds-color-interactive-primary` |
-| expanded | size 817.33 x 435 |
+| collapsed | size 817.33 x 83; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #0056d2 `--cds-color-interactive-primary`; painted by children div, 813.3x79, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px, span, 132.2x22, background #dae1ed, border 1px solid #dae1ed, radius 50px (`--cds-color-neutral-disabled`), span, 129.5x22, background #dae1ed, border 1px solid #dae1ed, radius 50px (`--cds-color-neutral-disabled`), span, 137.5x22, background #dae1ed, border 1px solid #dae1ed, radius 50px (`--cds-color-neutral-disabled`) |
+| expanded | size 817.33 x 435; painted by children div, 813.3x431, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px, button, 155.3x77, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px, span, 132.2x22, background #dae1ed, border 1px solid #dae1ed, radius 50px (`--cds-color-neutral-disabled`), span, 129.5x22, background #dae1ed, border 1px solid #dae1ed, radius 50px (`--cds-color-neutral-disabled`) |
 
 Child layers that carry the look: div, 813.3x79, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px; span, 132.2x22, background #dae1ed, border 1px solid #dae1ed, radius 50px (`--cds-color-neutral-disabled`); span, 129.5x22, background #dae1ed, border 1px solid #dae1ed, radius 50px (`--cds-color-neutral-disabled`).
 
@@ -1435,10 +1471,11 @@ Filter chip used as a tab (cds-Chip-root): Related / Degrees; the selected one i
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 75.28 x 32; padding 4px 12px; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 32px `--cds-border-radius-400`; background #ffffff `--cds-color-neutral-background-primary`; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary` |
-| selected | size 72.84 x 32; border 1px solid #1c2026 `--cds-color-interactive-secondary-selected`; background #1c2026 `--cds-color-interactive-secondary-selected`; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover | border 1px solid #0b408b `--cds-color-interactive-primary-hover`; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | border 1px solid #3c0f8a `--cds-color-interactive-primary-selected`; background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected` |
+| default | size 75.28 x 32; padding 4px 12px; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 32px `--cds-border-radius-400`; background #ffffff `--cds-color-neutral-background-primary`; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; painted by children button, 75.3x32, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, radius 32px |
+| selected | size 72.84 x 32; border 1px solid #1c2026 `--cds-color-interactive-secondary-selected`; background #1c2026 `--cds-color-interactive-secondary-selected`; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert`; painted by children button, 72.8x32, background #1c2026, border 1px solid #1c2026, radius 32px (`--cds-color-interactive-secondary-selected`) |
+| hover | border 1px solid #0b408b `--cds-color-interactive-primary-hover`; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 75.3x32, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, border 1px solid #0b408b `--cds-color-interactive-primary-hover`, radius 32px |
+| focus-visible | painted by children button, 75.3x32, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, outline 1px solid transparent offset 2px, radius 32px, button::after, 77.2812pxx34px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 32px, inset -2px -2px -2px -2px |
+| pressed | border 1px solid #3c0f8a `--cds-color-interactive-primary-selected`; background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected`; painted by children button, 75.3x32, background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`, border 1px solid #3c0f8a `--cds-color-interactive-primary-selected`, radius 32px |
 
 | Part | Values (default) |
 |---|---|
@@ -1478,8 +1515,8 @@ FAQ item (cds-AccordionRoot with a leading 24px chevron, question 16px semibold)
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| collapsed | size 825.33 x 71; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary` |
-| expanded | size 825.33 x 191 |
+| collapsed | size 825.33 x 71; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children div, 825.3x71, border B:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, div, 821.3x58, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px |
+| expanded | size 825.33 x 191; painted by children div, 825.3x191, border B:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, div, 821.3x178, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px, h3, 819.3x56, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 16px |
 
 Child layers that carry the look: div, 825.3x71, border B:1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; div, 821.3x58, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid transparent, radius 16px.
 
@@ -1535,9 +1572,10 @@ Full-width button with the label and a 20px chevron at the right; it opens and c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, focus-visible-cds, collapsed) | size 268 x 40; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
+| default (same: focus-visible, collapsed) | size 268 x 40; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children button 268x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible-cds | painted by children button::after 268pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 2px inset |
+| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children button 268x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
 
 ![Course Material heading default](components/crops/signed-in/sidebar-course-material-default.png) ![Course Material heading hover](components/crops/signed-in/sidebar-course-material-hover.png) ![Course Material heading focus-visible](components/crops/signed-in/sidebar-course-material-focus-visible.png) ![Course Material heading focus-visible-cds](components/crops/signed-in/sidebar-course-material-focus-visible-cds.png) ![Course Material heading pressed](components/crops/signed-in/sidebar-course-material-pressed.png) ![Course Material heading collapsed](components/crops/signed-in/sidebar-course-material-collapsed.png)
 
@@ -1546,12 +1584,12 @@ Module link with a 16px progress circle at the left. The current module gets a t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 268 x 36; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible, focus-visible-cds | outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px |
-| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| selected, selected-hover | size 268 x 40; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| selected-focus-visible, selected-focus-visible-cds | size 268 x 40; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px |
+| default | size 268 x 36; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; painted by children span 16x16 border T:1px solid #8495b0 / R:1px solid #8495b0 / B:1px solid #8495b0 / L:1px solid #8495b0 radius 50% (`--cds-color-neutral-stroke-primary`) |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children a 268x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px, span 16x16 border T:1px solid #8495b0 / R:1px solid #8495b0 / B:1px solid #8495b0 / L:1px solid #8495b0 radius 50% (`--cds-color-neutral-stroke-primary`) |
+| focus-visible, focus-visible-cds | outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px; painted by children a 268x36 radius 8px outline 2px solid rgb(128, 78, 228) offset -3px, span 16x16 border T:1px solid #8495b0 / R:1px solid #8495b0 / B:1px solid #8495b0 / L:1px solid #8495b0 radius 50% (`--cds-color-neutral-stroke-primary`) |
+| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children a 268x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px, span 16x16 border T:1px solid #8495b0 / R:1px solid #8495b0 / B:1px solid #8495b0 / L:1px solid #8495b0 radius 50% (`--cds-color-neutral-stroke-primary`) |
+| selected, selected-hover | size 268 x 40; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children a 268x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px, span 16x16 border T:1px solid #8495b0 / R:1px solid #8495b0 / B:1px solid #8495b0 / L:1px solid #8495b0 radius 50% (`--cds-color-neutral-stroke-primary`) |
+| selected-focus-visible, selected-focus-visible-cds | size 268 x 40; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px; painted by children a 268x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 2px solid rgb(128, 78, 228) offset -3px, span 16x16 border T:1px solid #8495b0 / R:1px solid #8495b0 / B:1px solid #8495b0 / L:1px solid #8495b0 radius 50% (`--cds-color-neutral-stroke-primary`) |
 
 | Part | Values (default) |
 |---|---|
@@ -1565,11 +1603,11 @@ Plain full-width links under Course Material, 40px rows. Measured as `sidebar-na
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 268 x 40; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible, focus-visible-cds | outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px |
-| pressed, selected-grades, selected-grades-hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| selected-grades-focus-visible, selected-grades-focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px |
-| selected-course-info | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children a 268x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible, focus-visible-cds | outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px; painted by children a 268x40 radius 8px outline 2px solid rgb(128, 78, 228) offset -3px |
+| pressed, selected-grades, selected-grades-hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children a 268x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| selected-grades-focus-visible, selected-grades-focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px; painted by children a 268x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 2px solid rgb(128, 78, 228) offset -3px |
+| selected-course-info | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children a 268x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
 
 ![Sidebar nav link default](components/crops/signed-in/sidebar-nav-link-default.png) ![Sidebar nav link hover](components/crops/signed-in/sidebar-nav-link-hover.png) ![Sidebar nav link focus-visible](components/crops/signed-in/sidebar-nav-link-focus-visible.png) ![Sidebar nav link focus-visible-cds](components/crops/signed-in/sidebar-nav-link-focus-visible-cds.png) ![Sidebar nav link pressed](components/crops/signed-in/sidebar-nav-link-pressed.png) ![Sidebar nav link selected-grades](components/crops/signed-in/sidebar-nav-link-selected-grades.png) ![Sidebar nav link selected-grades-hover](components/crops/signed-in/sidebar-nav-link-selected-grades-hover.png) ![Sidebar nav link selected-grades-focus-visible](components/crops/signed-in/sidebar-nav-link-selected-grades-focus-visible.png) ![Sidebar nav link selected-grades-focus-visible-cds](components/crops/signed-in/sidebar-nav-link-selected-grades-focus-visible-cds.png) ![Sidebar nav link selected-course-info](components/crops/signed-in/sidebar-nav-link-selected-course-info.png)
 
@@ -1591,9 +1629,9 @@ Ghost secondary button (cds-ShowMoreContainer) with a 16px chevron end icon. Mea
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 178.42 x 20; radius 4px `--cds-border-radius-50`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none; icon 16 x 16, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; decoration underline auto offset auto; icon 16 x 16, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed` |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 178.4x20 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 4px |
+| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 178.4x20 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 4px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 182.422pxx24px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; decoration underline auto offset auto; icon 16 x 16, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed`; painted by children button 178.4x20 background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` radius 4px |
 | expanded | size 172.86 x 20 |
 
 | Part | Values (default) |
@@ -1607,9 +1645,10 @@ Collapsible header for a lesson group: label and a 20px chevron, full width, 40p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, focus-visible-cds) | size 668 x 40; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
+| default (same: focus-visible) | size 668 x 40; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children button 668x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible-cds | painted by children button::after 668pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 2px inset |
+| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children button 668x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
 
 | Part | Values (default) |
 |---|---|
@@ -1623,12 +1662,12 @@ One learning item: a 20px status icon (green check when done, the item-type icon
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 668 x 60; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 24, fill none, color #197d12 `--cds-color-feedback-success` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible, focus-visible-cds | outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px |
-| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| current, current-hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| current-focus-visible, current-focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| current-pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children a 668x60 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible, focus-visible-cds | outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px; painted by children a 668x60 radius 8px outline 2px solid rgb(128, 78, 228) offset -3px |
+| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children a 668x60 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| current, current-hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children a 668x60 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px, span 80.8x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| current-focus-visible, current-focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children a 668x60 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 2px solid rgb(128, 78, 228) offset -3px, span 80.8x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| current-pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children a 668x60 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px, span 80.8x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 | not-started | icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 
 ![Item row default](components/crops/signed-in/item-row-default.png) ![Item row hover](components/crops/signed-in/item-row-hover.png) ![Item row focus-visible](components/crops/signed-in/item-row-focus-visible.png) ![Item row focus-visible-cds](components/crops/signed-in/item-row-focus-visible-cds.png) ![Item row pressed](components/crops/signed-in/item-row-pressed.png) ![Item row current](components/crops/signed-in/item-row-current.png) ![Item row current-hover](components/crops/signed-in/item-row-current-hover.png) ![Item row current-focus-visible](components/crops/signed-in/item-row-current-focus-visible.png) ![Item row current-focus-visible-cds](components/crops/signed-in/item-row-current-focus-visible-cds.png) ![Item row current-pressed](components/crops/signed-in/item-row-current-pressed.png) ![Item row not-started](components/crops/signed-in/item-row-not-started.png)
@@ -1638,9 +1677,9 @@ Primary button (a span with role=button inside the row link) at the right end of
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 80.81 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover | background #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed` |
+| default | size 80.81 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; painted by children span 80.8x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #0b408b `--cds-color-interactive-primary-hover`; painted by children span 80.8x36 background #0b408b `--cds-color-interactive-primary-hover` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; painted by children span 80.8x36 background #3c0f8a `--cds-color-interactive-primary-pressed` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 
 ![Resume button (course home) default](components/crops/signed-in/item-resume-button-default.png) ![Resume button (course home) hover](components/crops/signed-in/item-resume-button-hover.png) ![Resume button (course home) pressed](components/crops/signed-in/item-resume-button-pressed.png)
 
@@ -1672,7 +1711,7 @@ Link-styled button. Measured as `rail-goal-edit` on course home, module 1 (in pr
 |---|---|
 | default (same: focus-visible) | size 208.52 x 24; radius 0; background transparent; shadow none; outline none; font 16/24 600 `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children button 208.5x24 radius 4px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px |
 | pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 
 ![Edit goal link default](components/crops/signed-in/rail-goal-edit-default.png) ![Edit goal link hover](components/crops/signed-in/rail-goal-edit-hover.png) ![Edit goal link focus-visible](components/crops/signed-in/rail-goal-edit-focus-visible.png) ![Edit goal link focus-visible-cds](components/crops/signed-in/rail-goal-edit-focus-visible-cds.png) ![Edit goal link pressed](components/crops/signed-in/rail-goal-edit-pressed.png)
@@ -1696,7 +1735,7 @@ Underlined blue link to the graded item. Measured as `rail-deadline-link` on cou
 |---|---|
 | default (same: focus-visible) | size 135.94 x 20; radius 0; background transparent; shadow none; outline none; font 14/20 400 `--cds-typography-body2`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline auto offset auto |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children a 135.9x20 radius 4px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px |
 | pressed | colour #0b408b `--cds-color-interactive-primary-hover` |
 
 ![Deadline link default](components/crops/signed-in/rail-deadline-link-default.png) ![Deadline link hover](components/crops/signed-in/rail-deadline-link-hover.png) ![Deadline link focus-visible](components/crops/signed-in/rail-deadline-link-focus-visible.png) ![Deadline link focus-visible-cds](components/crops/signed-in/rail-deadline-link-focus-visible-cds.png) ![Deadline link pressed](components/crops/signed-in/rail-deadline-link-pressed.png)
@@ -1720,8 +1759,8 @@ One graded item: title link and type on the left, then status, due date (date ov
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 966 x 69; border T: 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak` |
+| default | size 966 x 69; border T: 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; painted by children div 966x69 border T:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; painted by children div 966x69 background #f2f5fa `--cds-color-neutral-background-primary-weak` border T:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` |
 
 ![Grades row default](components/crops/signed-in/grades-row-default.png) ![Grades row hover](components/crops/signed-in/grades-row-hover.png)
 
@@ -1733,7 +1772,7 @@ Link styled as plain text (cds Link, no underline at rest). Measured as `grades-
 | default | size 155.36 x 22; radius 0; background transparent; shadow none; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none |
 | hover | colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; painted by children a 155.4x22 radius 4px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px |
 | pressed | colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
 
 ![Grade item link default](components/crops/signed-in/grades-item-link-default.png) ![Grade item link hover](components/crops/signed-in/grades-item-link-hover.png) ![Grade item link focus-visible](components/crops/signed-in/grades-item-link-focus-visible.png) ![Grade item link focus-visible-cds](components/crops/signed-in/grades-item-link-focus-visible-cds.png) ![Grade item link pressed](components/crops/signed-in/grades-item-link-pressed.png)
@@ -1755,9 +1794,9 @@ Ghost button, 48px tall, blue label. Measured as `info-show-more` on course info
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 111.14 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children button 111.1x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children button 111.1x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 115.141pxx52px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; painted by children button 111.1x48 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px |
 
 ![Show more button (course info) default](components/crops/signed-in/info-show-more-default.png) ![Show more button (course info) hover](components/crops/signed-in/info-show-more-hover.png) ![Show more button (course info) focus-visible](components/crops/signed-in/info-show-more-focus-visible.png) ![Show more button (course info) focus-visible-cds](components/crops/signed-in/info-show-more-focus-visible-cds.png) ![Show more button (course info) pressed](components/crops/signed-in/info-show-more-pressed.png)
 
@@ -1776,7 +1815,7 @@ Bold link styled as text. Measured as `info-instructor-link` on course info.
 | default | size 351.73 x 24; radius 0; background transparent; shadow none; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children a 351.7x24 radius 4px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px |
 | pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 
 ![Instructor name link (course info) default](components/crops/signed-in/info-instructor-link-default.png) ![Instructor name link (course info) hover](components/crops/signed-in/info-instructor-link-hover.png) ![Instructor name link (course info) focus-visible](components/crops/signed-in/info-instructor-link-focus-visible.png) ![Instructor name link (course info) focus-visible-cds](components/crops/signed-in/info-instructor-link-focus-visible-cds.png) ![Instructor name link (course info) pressed](components/crops/signed-in/info-instructor-link-pressed.png)
@@ -1800,11 +1839,11 @@ Secondary (outlined) button, 48px tall. Measured as `info-catalog-button` on cou
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 229.69 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| default | size 229.69 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; painted by children a 229.7x48 background #ffffff `--cds-color-neutral-background-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children a 229.7x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgb(11, 64, 139) 0px 0px 0px 1px inset |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; shadow #3c0f8a 0px 0px 0px 1px inset; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children a 229.7x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgb(11, 64, 139) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, a::after 233.688pxx52px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; shadow #3c0f8a 0px 0px 0px 1px inset; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; painted by children a 229.7x48 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px shadow rgb(60, 15, 138) 0px 0px 0px 1px inset |
 
 ![View in catalog button default](components/crops/signed-in/info-catalog-button-default.png) ![View in catalog button hover](components/crops/signed-in/info-catalog-button-hover.png) ![View in catalog button focus-visible](components/crops/signed-in/info-catalog-button-focus-visible.png) ![View in catalog button focus-visible-cds](components/crops/signed-in/info-catalog-button-focus-visible-cds.png) ![View in catalog button pressed](components/crops/signed-in/info-catalog-button-pressed.png)
 
@@ -1832,7 +1871,7 @@ Course name at the top of the outline, a link back to the course home. Measured 
 |---|---|
 | default (same: pressed) | size 283.97 x 28; padding 0; radius 0; background transparent; outline none; font 20/24 600, -0.06px `--cds-typography-subtitle-large`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none |
 | hover | decoration underline auto offset auto |
-| focus-visible, focus-visible-cds | size 295.97 x 32; padding 2px / 6px (`--cds-spacing-25`, `--cds-spacing-75`); radius 8px `--cds-border-radius-100`; outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -2px |
+| focus-visible, focus-visible-cds | size 295.97 x 32; padding 2px / 6px (`--cds-spacing-25`, `--cds-spacing-75`); radius 8px `--cds-border-radius-100`; outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -2px; painted by children a 296x32 radius 8px outline 1px solid rgb(128, 78, 228) offset -2px |
 
 ![Outline course link default](components/crops/signed-in/outline-course-link-default.png) ![Outline course link hover](components/crops/signed-in/outline-course-link-hover.png) ![Outline course link focus-visible](components/crops/signed-in/outline-course-link-focus-visible.png) ![Outline course link focus-visible-cds](components/crops/signed-in/outline-course-link-focus-visible-cds.png) ![Outline course link pressed](components/crops/signed-in/outline-course-link-pressed.png)
 
@@ -1841,10 +1880,10 @@ Ghost small icon button, 36x36 with a 20px icon. Measured as `outline-close` on 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only) |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak` |
+| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children button 36x36 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children button 36x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); painted by children button 36x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 40pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; painted by children button 36x36 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
 
 ![Outline collapse button default](components/crops/signed-in/outline-close-default.png) ![Outline collapse button hover](components/crops/signed-in/outline-close-hover.png) ![Outline collapse button focus-visible](components/crops/signed-in/outline-close-focus-visible.png) ![Outline collapse button focus-visible-cds](components/crops/signed-in/outline-close-focus-visible-cds.png) ![Outline collapse button pressed](components/crops/signed-in/outline-close-pressed.png)
 
@@ -1855,7 +1894,7 @@ The accordion header button. Measured as `outline-goal-header` on video item.
 |---|---|
 | default (same: focus-visible) | size 326 x 56; padding 16px `--cds-spacing-200`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 30/36 600 `--cds-typography-title-small`; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill #48546e, color #48546e (`--cds-color-neutral-primary-weak`) |
 | hover | icon 24 x 24, fill #0d0f12, color #0d0f12 (`--cds-color-neutral-primary`) |
-| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); painted by children button 326x56 radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 330pxx60px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
 | pressed | icon 24 x 24, fill #0d0f12, color #0d0f12 (`--cds-color-neutral-primary`) |
 
 ![Outline goal header default](components/crops/signed-in/outline-goal-header-default.png) ![Outline goal header hover](components/crops/signed-in/outline-goal-header-hover.png) ![Outline goal header focus-visible](components/crops/signed-in/outline-goal-header-focus-visible.png) ![Outline goal header focus-visible-cds](components/crops/signed-in/outline-goal-header-focus-visible-cds.png) ![Outline goal header pressed](components/crops/signed-in/outline-goal-header-pressed.png)
@@ -1866,9 +1905,9 @@ Silent CDS accordion header: "Module 1" small label over the module title, 24px 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible, collapsed) | size 360 x 76; padding 16px `--cds-spacing-200`; background transparent; outline none; font 30/36 600 `--cds-typography-title-small`; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill #48546e, color #48546e (`--cds-color-neutral-primary-weak`) |
-| hover | icon 24 x 24, fill #0d0f12, color #0d0f12 (`--cds-color-neutral-primary`) |
-| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
-| pressed | icon 24 x 24, fill #0d0f12, color #0d0f12 (`--cds-color-neutral-primary`) |
+| hover | icon 24 x 24, fill #0d0f12, color #0d0f12 (`--cds-color-neutral-primary`); painted by children button::before 356pxx72px background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); painted by children button 360x76 outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 364pxx80px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | icon 24 x 24, fill #0d0f12, color #0d0f12 (`--cds-color-neutral-primary`); painted by children button::before 356pxx72px background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
 
 ![Outline module header default](components/crops/signed-in/outline-module-header-default.png) ![Outline module header hover](components/crops/signed-in/outline-module-header-hover.png) ![Outline module header focus-visible](components/crops/signed-in/outline-module-header-focus-visible.png) ![Outline module header focus-visible-cds](components/crops/signed-in/outline-module-header-focus-visible-cds.png) ![Outline module header pressed](components/crops/signed-in/outline-module-header-pressed.png) ![Outline module header collapsed](components/crops/signed-in/outline-module-header-collapsed.png)
 
@@ -1877,13 +1916,13 @@ Item link: 20px status icon, title, and a type • duration line. The link spans
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 344 x 60; padding 12px 16px 8px 16px (`--cds-spacing-150`, `--cds-spacing-200`, `--cds-spacing-100`); gap 12px `--cds-spacing-150`; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 20 x 20, fill none, color #197d12 `--cds-color-feedback-success` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible, focus-visible-cds | outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -1px |
-| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| selected, selected-hover | padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| selected-focus-visible, selected-focus-visible-cds | padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -1px |
-| not-started | size 344 x 56; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); icon 20 x 20, fill none, color #0056d2 `--cds-color-interactive-primary` |
+| default | size 344 x 60; padding 12px 16px 8px 16px (`--cds-spacing-150`, `--cds-spacing-200`, `--cds-spacing-100`); gap 12px `--cds-spacing-150`; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 20 x 20, fill none, color #197d12 `--cds-color-feedback-success`; painted by children div 344x60 background #ffffff `--cds-color-neutral-background-primary` radius 8px |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children div 344x60 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible, focus-visible-cds | outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -1px; painted by children div 344x60 background #ffffff `--cds-color-neutral-background-primary` radius 8px outline 1px solid rgb(128, 78, 228) offset -1px |
+| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children div 344x60 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| selected, selected-hover | padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children div 344x60 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| selected-focus-visible, selected-focus-visible-cds | padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -1px; painted by children div 344x60 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 1px solid rgb(128, 78, 228) offset -1px |
+| not-started | size 344 x 56; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); icon 20 x 20, fill none, color #0056d2 `--cds-color-interactive-primary`; painted by children div 344x56 background #ffffff `--cds-color-neutral-background-primary` radius 8px |
 
 ![Outline item row default](components/crops/signed-in/outline-item-default.png) ![Outline item row hover](components/crops/signed-in/outline-item-hover.png) ![Outline item row focus-visible](components/crops/signed-in/outline-item-focus-visible.png) ![Outline item row focus-visible-cds](components/crops/signed-in/outline-item-focus-visible-cds.png) ![Outline item row pressed](components/crops/signed-in/outline-item-pressed.png) ![Outline item row selected](components/crops/signed-in/outline-item-selected.png) ![Outline item row selected-hover](components/crops/signed-in/outline-item-selected-hover.png) ![Outline item row selected-focus-visible](components/crops/signed-in/outline-item-selected-focus-visible.png) ![Outline item row selected-focus-visible-cds](components/crops/signed-in/outline-item-selected-focus-visible-cds.png) ![Outline item row not-started](components/crops/signed-in/outline-item-not-started.png)
 
@@ -1913,9 +1952,9 @@ Ghost button, 48px tall, 16px pencil start icon. Measured as `video-save-note` o
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 120.58 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; icon 16 x 16, fill none, color #0056d2 `--cds-color-interactive-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; icon 16 x 16, fill none, color #3c0f8a `--cds-color-interactive-primary-pressed` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #0b408b `--cds-color-interactive-primary-hover`; painted by children button 120.6x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #0b408b `--cds-color-interactive-primary-hover`; painted by children button 120.6x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 124.578pxx52px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; icon 16 x 16, fill none, color #3c0f8a `--cds-color-interactive-primary-pressed`; painted by children button 120.6x48 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px |
 
 ![Save note button default](components/crops/signed-in/video-save-note-default.png) ![Save note button hover](components/crops/signed-in/video-save-note-hover.png) ![Save note button focus-visible](components/crops/signed-in/video-save-note-focus-visible.png) ![Save note button focus-visible-cds](components/crops/signed-in/video-save-note-focus-visible-cds.png) ![Save note button pressed](components/crops/signed-in/video-save-note-pressed.png)
 
@@ -1932,7 +1971,7 @@ The disclosure header (role=button). Measured as `ai-panel-header` on video item
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 912 x 56; padding 16px / 24px (`--cds-spacing-200`, `--cds-spacing-300`); radius 16px `--cds-border-radius-200`; background transparent; shadow none; font 20/24 600, -0.06px `--cds-typography-subtitle-large`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| focus-visible | shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px |
+| focus-visible | shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; painted by children div 912x56 radius 16px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
 
 ![AI panel header default](components/crops/signed-in/ai-panel-header-default.png) ![AI panel header hover](components/crops/signed-in/ai-panel-header-hover.png) ![AI panel header focus-visible](components/crops/signed-in/ai-panel-header-focus-visible.png) ![AI panel header pressed](components/crops/signed-in/ai-panel-header-pressed.png)
 
@@ -1941,10 +1980,10 @@ Secondary button (outlined) used as a chip: "Give me practice questions". Measur
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 196.41 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent + linear-gradient(279deg, rgb(13, 47, 96) -5.78%, rgb(19, 110, 240) 83.48%); outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; transition none; transform none |
+| default (same: focus-visible) | size 196.41 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent + linear-gradient(279deg, rgb(13, 47, 96) -5.78%, rgb(19, 110, 240) 83.48%); outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; transition none; transform none; painted by children button 196.4x36 radius 8px, button::before 192.406pxx32px background #ffffff `--cds-color-neutral-background-primary` radius 6px |
 | hover | background transparent + linear-gradient(310deg, rgb(13, 47, 96) -10.46%, rgb(19, 110, 240) 78.54%, rgb(126, 216, 116) 116.68%); colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background transparent + linear-gradient(310deg, rgb(13, 47, 96) -10.46%, rgb(19, 110, 240) 78.54%, rgb(126, 216, 116) 116.68%); outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | size 192.48 x 35.28; radius 12px; background transparent + linear-gradient(310deg, rgb(13, 47, 96) -10.46%, rgb(19, 110, 240) 78.54%, rgb(126, 216, 116) 116.68%); colour #3c0f8a `--cds-color-interactive-primary-pressed`; transition all 0.2s cubic-bezier(0, 1, 0.9, 1); transform matrix3d(0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 1) |
+| focus-visible-cds | background transparent + linear-gradient(310deg, rgb(13, 47, 96) -10.46%, rgb(19, 110, 240) 78.54%, rgb(126, 216, 116) 116.68%); outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 196.4x36 radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::before 192.406pxx32px background #ffffff `--cds-color-neutral-background-primary` radius 6px, button::after 200.406pxx40px radius 10px shadow rgb(0, 36, 87) 0px 0px 0px 1px, rgb(227, 238, 255) 0px 0px 0px 2px |
+| pressed | size 192.48 x 35.28; radius 12px; background transparent + linear-gradient(310deg, rgb(13, 47, 96) -10.46%, rgb(19, 110, 240) 78.54%, rgb(126, 216, 116) 116.68%); colour #3c0f8a `--cds-color-interactive-primary-pressed`; transition all 0.2s cubic-bezier(0, 1, 0.9, 1); transform matrix3d(0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 1); painted by children button 192.5x35.3 radius 12px, button::before 192.406pxx32px background #ffffff `--cds-color-neutral-background-primary` radius 10px |
 
 ![AI suggestion chip default](components/crops/signed-in/ai-chip-default.png) ![AI suggestion chip hover](components/crops/signed-in/ai-chip-hover.png) ![AI suggestion chip focus-visible](components/crops/signed-in/ai-chip-focus-visible.png) ![AI suggestion chip focus-visible-cds](components/crops/signed-in/ai-chip-focus-visible-cds.png) ![AI suggestion chip pressed](components/crops/signed-in/ai-chip-pressed.png)
 
@@ -1953,10 +1992,10 @@ Ghost-secondary small icon buttons, 36x36 with 20px icons, in a row under the AI
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; icon 20 x 20, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed` |
+| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children button 36x36 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 36x36 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 36x36 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 40pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; icon 20 x 20, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed`; painted by children button 36x36 background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
 
 ![Feedback icon button default](components/crops/signed-in/item-feedback-icon-default.png) ![Feedback icon button hover](components/crops/signed-in/item-feedback-icon-hover.png) ![Feedback icon button focus-visible](components/crops/signed-in/item-feedback-icon-focus-visible.png) ![Feedback icon button focus-visible-cds](components/crops/signed-in/item-feedback-icon-focus-visible-cds.png) ![Feedback icon button pressed](components/crops/signed-in/item-feedback-icon-pressed.png)
 
@@ -1965,10 +2004,10 @@ Primary button with a 20px arrow end icon, bottom right of the item card. Measur
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 149.08 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, fill none, color #ffffff `--cds-color-neutral-primary-invert` |
-| hover | background #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed` |
+| default (same: focus-visible) | size 149.08 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, fill none, color #ffffff `--cds-color-neutral-primary-invert`; painted by children button 149.1x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #0b408b `--cds-color-interactive-primary-hover`; painted by children button 149.1x36 background #0b408b `--cds-color-interactive-primary-hover` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); painted by children button 149.1x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 153.078pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; painted by children button 149.1x36 background #3c0f8a `--cds-color-interactive-primary-pressed` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 
 ![Next item button default](components/crops/signed-in/next-item-button-default.png) ![Next item button hover](components/crops/signed-in/next-item-button-hover.png) ![Next item button focus-visible](components/crops/signed-in/next-item-button-focus-visible.png) ![Next item button focus-visible-cds](components/crops/signed-in/next-item-button-focus-visible-cds.png) ![Next item button pressed](components/crops/signed-in/next-item-button-pressed.png)
 
@@ -1994,11 +2033,11 @@ Right-edge column of 72x72 buttons: a 20px icon over a small label. Measured as 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 72 x 72; padding 16px `--cds-spacing-200`; gap 4px `--cds-spacing-50`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; transition background-color 0.2s ease; icon 20 x 20, fill none, color #48546e `--cds-color-neutral-primary-weak` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak` |
-| focus-visible, focus-visible-cds | outline 1px solid #925ceb `--cds-color-emphasis-quaternary-stroke-default` offset 1px |
-| pressed | background #f2f5fa `--cds-color-neutral-background-primary-weak` |
-| selected, selected-hover | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| selected-focus-visible | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; outline 1px solid #925ceb `--cds-color-emphasis-quaternary-stroke-default` offset 1px; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; painted by children button 72x72 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px |
+| focus-visible, focus-visible-cds | outline 1px solid #925ceb `--cds-color-emphasis-quaternary-stroke-default` offset 1px; painted by children button 72x72 radius 8px outline 1px solid rgb(146, 92, 235) offset 1px |
+| pressed | background #f2f5fa `--cds-color-neutral-background-primary-weak`; painted by children button 72x72 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px |
+| selected, selected-hover | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children button 72x72 background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` radius 8px |
+| selected-focus-visible | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; outline 1px solid #925ceb `--cds-color-emphasis-quaternary-stroke-default` offset 1px; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children button 72x72 background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` radius 8px outline 1px solid rgb(146, 92, 235) offset 1px |
 
 ![Tool strip button default](components/crops/signed-in/tool-strip-button-default.png) ![Tool strip button hover](components/crops/signed-in/tool-strip-button-hover.png) ![Tool strip button focus-visible](components/crops/signed-in/tool-strip-button-focus-visible.png) ![Tool strip button focus-visible-cds](components/crops/signed-in/tool-strip-button-focus-visible-cds.png) ![Tool strip button pressed](components/crops/signed-in/tool-strip-button-pressed.png) ![Tool strip button selected](components/crops/signed-in/tool-strip-button-selected.png) ![Tool strip button selected-hover](components/crops/signed-in/tool-strip-button-selected-hover.png) ![Tool strip button selected-focus-visible](components/crops/signed-in/tool-strip-button-selected-focus-visible.png)
 
@@ -2007,7 +2046,8 @@ Right-edge column of 72x72 buttons: a 20px icon over a small label. Measured as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 10 x 819; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; transition width 0.225s cubic-bezier(0.2, 0, 0, 1) |
+| default | size 10 x 819; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; transition width 0.225s cubic-bezier(0.2, 0, 0, 1); painted by children div 10x819 background #ffffff `--cds-color-neutral-background-primary`, div::before 1pxx819px background #c1cbdb `--cds-color-neutral-stroke-primary-weak` |
+| hover | painted by children div 10x819 background #ffffff `--cds-color-neutral-background-primary`, div::before 2pxx819px background #0056d2 `--cds-color-interactive-primary` |
 
 No crop was saved for this entry; the values are from the computed styles.
 
@@ -2025,10 +2065,10 @@ Ghost-secondary small icon button, 36x36 with a 20px X. Measured as `transcript-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; icon 20 x 20, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed` |
+| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children button 36x36 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 36x36 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 36x36 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 40pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; icon 20 x 20, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed`; painted by children button 36x36 background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
 
 ![Transcript close button default](components/crops/signed-in/transcript-close-default.png) ![Transcript close button hover](components/crops/signed-in/transcript-close-hover.png) ![Transcript close button focus-visible](components/crops/signed-in/transcript-close-focus-visible.png) ![Transcript close button focus-visible-cds](components/crops/signed-in/transcript-close-focus-visible-cds.png) ![Transcript close button pressed](components/crops/signed-in/transcript-close-pressed.png)
 
@@ -2037,7 +2077,8 @@ Silent select: bold label and value, 24px chevron, no visible box. Measured as `
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 135.5 x 32; radius 8px `--cds-border-radius-100`; background transparent; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| default (same: focus-visible) | size 135.5 x 32; radius 8px `--cds-border-radius-100`; background transparent; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children input 135.5x25 background #ffffff `--cds-color-neutral-background-primary` border T:2px inset #767676, no token / R:2px inset #767676, no token / B:2px inset #767676, no token / L:2px inset #767676, no token |
+| hover | painted by children input 135.5x25 background #ffffff `--cds-color-neutral-background-primary` border T:2px inset #767676, no token / R:2px inset #767676, no token / B:2px inset #767676, no token / L:2px inset #767676, no token, fieldset 135.5x37 border B:2px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` radius 8px 8px 0px 0px |
 
 ![Transcript language select default](components/crops/signed-in/transcript-language-default.png) ![Transcript language select hover](components/crops/signed-in/transcript-language-hover.png) ![Transcript language select focus-visible](components/crops/signed-in/transcript-language-focus-visible.png)
 
@@ -2048,7 +2089,7 @@ Paragraph timestamp as a button ("0:00"). Measured as `transcript-timestamp` on 
 |---|---|
 | default (same: focus-visible) | size 25.95 x 20; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none |
 | hover | decoration underline auto offset auto |
-| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); painted by children button 26x20 radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 29.9531pxx24px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
 | pressed | decoration underline auto offset auto |
 
 ![Transcript timestamp default](components/crops/signed-in/transcript-timestamp-default.png) ![Transcript timestamp hover](components/crops/signed-in/transcript-timestamp-hover.png) ![Transcript timestamp focus-visible](components/crops/signed-in/transcript-timestamp-focus-visible.png) ![Transcript timestamp focus-visible-cds](components/crops/signed-in/transcript-timestamp-focus-visible-cds.png) ![Transcript timestamp pressed](components/crops/signed-in/transcript-timestamp-pressed.png)
@@ -2059,9 +2100,9 @@ Each sentence fragment is an inline role=button span. The current phrase gets a 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 192.06 x 48; background transparent; outline none; font 16/26 400; colour #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #e3eeff `--cds-color-callouts-background-primary-weak` |
-| pressed | background #e3eeff `--cds-color-callouts-background-primary-weak` |
-| current | size 192.31 x 74; background #e3eeff `--cds-color-callouts-background-primary-weak`; outline 1px solid #3587fc `--cds-color-emphasis-primary-stroke-default` offset 0px |
+| hover | background #e3eeff `--cds-color-callouts-background-primary-weak`; painted by children span 192.1x48 background #e3eeff `--cds-color-callouts-background-primary-weak` |
+| pressed | background #e3eeff `--cds-color-callouts-background-primary-weak`; painted by children span 192.1x48 background #e3eeff `--cds-color-callouts-background-primary-weak` |
+| current | size 192.31 x 74; background #e3eeff `--cds-color-callouts-background-primary-weak`; outline 1px solid #3587fc `--cds-color-emphasis-primary-stroke-default` offset 0px; painted by children span 192.3x74 background #e3eeff `--cds-color-callouts-background-primary-weak` outline 1px solid rgb(53, 135, 252) offset 0px |
 
 ![Transcript phrase default](components/crops/signed-in/transcript-phrase-default.png) ![Transcript phrase hover](components/crops/signed-in/transcript-phrase-hover.png) ![Transcript phrase focus-visible](components/crops/signed-in/transcript-phrase-focus-visible.png) ![Transcript phrase pressed](components/crops/signed-in/transcript-phrase-pressed.png) ![Transcript phrase current](components/crops/signed-in/transcript-phrase-current.png)
 
@@ -2090,7 +2131,7 @@ Underlined blue link with a 16px external-link icon after it. Measured as `readi
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 184.64 x 24; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline auto offset auto; icon 16 x 16, fill none, color #0056d2 `--cds-color-interactive-primary` |
-| focus-visible, focus-visible-cds | outline 1px auto #005fcc offset 1px (the browser default focus outline) |
+| focus-visible, focus-visible-cds | outline 1px auto #005fcc offset 1px (the browser default focus outline); painted by children a 184.6x24 outline 1px auto rgb(0, 95, 204) offset 1px |
 
 ![Reading link default](components/crops/signed-in/reading-link-default.png) ![Reading link hover](components/crops/signed-in/reading-link-hover.png) ![Reading link focus-visible](components/crops/signed-in/reading-link-focus-visible.png) ![Reading link focus-visible-cds](components/crops/signed-in/reading-link-focus-visible-cds.png) ![Reading link pressed](components/crops/signed-in/reading-link-pressed.png)
 
@@ -2099,10 +2140,10 @@ Primary large button (48px) at the end of the reading, followed by a green "Comp
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 154.36 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover | background #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed` |
+| default (same: focus-visible) | size 154.36 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #ffffff `--cds-color-neutral-primary-invert`; painted by children button 154.4x48 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #0b408b `--cds-color-interactive-primary-hover`; painted by children button 154.4x48 background #0b408b `--cds-color-interactive-primary-hover` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); painted by children button 154.4x48 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 158.359pxx52px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; painted by children button 154.4x48 background #3c0f8a `--cds-color-interactive-primary-pressed` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 
 ![Reading next button (large) default](components/crops/signed-in/reading-next-button-default.png) ![Reading next button (large) hover](components/crops/signed-in/reading-next-button-hover.png) ![Reading next button (large) focus-visible](components/crops/signed-in/reading-next-button-focus-visible.png) ![Reading next button (large) focus-visible-cds](components/crops/signed-in/reading-next-button-focus-visible-cds.png) ![Reading next button (large) pressed](components/crops/signed-in/reading-next-button-pressed.png)
 
@@ -2119,9 +2160,9 @@ Ghost button with a 20px start icon, 36px tall. Measured as `item-feedback-text-
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 65.33 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; icon 20 x 20, fill none, color #0056d2 `--cds-color-interactive-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children button 65.3x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children button 65.3x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 69.3281pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; painted by children button 65.3x36 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px |
 
 ![Feedback text button default](components/crops/signed-in/item-feedback-text-button-default.png) ![Feedback text button hover](components/crops/signed-in/item-feedback-text-button-hover.png) ![Feedback text button focus-visible](components/crops/signed-in/item-feedback-text-button-focus-visible.png) ![Feedback text button focus-visible-cds](components/crops/signed-in/item-feedback-text-button-focus-visible-cds.png) ![Feedback text button pressed](components/crops/signed-in/item-feedback-text-button-pressed.png)
 
@@ -2142,10 +2183,10 @@ Primary large button (48px). Measured as `assignment-primary` on assignment item
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 112.5 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover | background #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed` |
+| default (same: focus-visible) | size 112.5 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #ffffff `--cds-color-neutral-primary-invert`; painted by children button 112.5x48 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #0b408b `--cds-color-interactive-primary-hover`; painted by children button 112.5x48 background #0b408b `--cds-color-interactive-primary-hover` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); painted by children button 112.5x48 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 116.5pxx52px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; painted by children button 112.5x48 background #3c0f8a `--cds-color-interactive-primary-pressed` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 
 ![Assignment primary button default](components/crops/signed-in/assignment-primary-default.png) ![Assignment primary button hover](components/crops/signed-in/assignment-primary-hover.png) ![Assignment primary button focus-visible](components/crops/signed-in/assignment-primary-focus-visible.png) ![Assignment primary button focus-visible-cds](components/crops/signed-in/assignment-primary-focus-visible-cds.png) ![Assignment primary button pressed](components/crops/signed-in/assignment-primary-pressed.png)
 
@@ -2155,9 +2196,9 @@ Ghost large button with a 24px sparkle start icon, dark label. Measured as `assi
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 177.8 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; transition none; transform none; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | size 174.24 x 47.04; radius 12px; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; transition all 0.2s cubic-bezier(0, 1, 0.9, 1); transform matrix3d(0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 1); icon 23.52 x 23.52, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 177.8x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 177.8x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 181.797pxx52px radius 10px shadow rgb(0, 36, 87) 0px 0px 0px 1px, rgb(227, 238, 255) 0px 0px 0px 2px |
+| pressed | size 174.24 x 47.04; radius 12px; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; transition all 0.2s cubic-bezier(0, 1, 0.9, 1); transform matrix3d(0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 1); icon 23.52 x 23.52, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children button 174.2x47 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 12px |
 
 ![Assignment AI button default](components/crops/signed-in/assignment-ai-button-default.png) ![Assignment AI button hover](components/crops/signed-in/assignment-ai-button-hover.png) ![Assignment AI button focus-visible](components/crops/signed-in/assignment-ai-button-focus-visible.png) ![Assignment AI button focus-visible-cds](components/crops/signed-in/assignment-ai-button-focus-visible-cds.png) ![Assignment AI button pressed](components/crops/signed-in/assignment-ai-button-pressed.png)
 
@@ -2173,11 +2214,11 @@ White outlined button with a dark label, 36px tall. Measured as `assignment-seco
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 134.06 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #c1cbdb 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #8495b0 0px 0px 0px 1px inset; colour #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; shadow #8495b0 0px 0px 0px 1px inset; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; shadow #8495b0 0px 0px 0px 1px inset; colour #1c2026 `--cds-color-interactive-secondary-pressed` |
-| disabled, disabled-hover | size 120.45 x 36; background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #a7b4c9 `--cds-color-neutral-disabled-strong` |
+| default (same: focus-visible) | size 134.06 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #c1cbdb 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary`; painted by children button 134.1x36 background #ffffff `--cds-color-neutral-background-primary` radius 8px shadow rgb(193, 203, 219) 0px 0px 0px 1px inset |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #8495b0 0px 0px 0px 1px inset; colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 134.1x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgb(132, 149, 176) 0px 0px 0px 1px inset |
+| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; shadow #8495b0 0px 0px 0px 1px inset; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 134.1x36 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px shadow rgb(132, 149, 176) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 138.062pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; shadow #8495b0 0px 0px 0px 1px inset; colour #1c2026 `--cds-color-interactive-secondary-pressed`; painted by children button 134.1x36 background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` radius 8px shadow rgb(132, 149, 176) 0px 0px 0px 1px inset |
+| disabled, disabled-hover | size 120.45 x 36; background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #a7b4c9 `--cds-color-neutral-disabled-strong`; painted by children button 120.5x36 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px shadow rgb(193, 203, 219) 0px 0px 0px 1px inset |
 
 ![Assignment secondary button default](components/crops/signed-in/assignment-secondary-button-default.png) ![Assignment secondary button hover](components/crops/signed-in/assignment-secondary-button-hover.png) ![Assignment secondary button focus-visible](components/crops/signed-in/assignment-secondary-button-focus-visible.png) ![Assignment secondary button focus-visible-cds](components/crops/signed-in/assignment-secondary-button-focus-visible-cds.png) ![Assignment secondary button pressed](components/crops/signed-in/assignment-secondary-button-pressed.png) ![Assignment secondary button disabled](components/crops/signed-in/assignment-secondary-button-disabled.png) ![Assignment secondary button disabled-hover](components/crops/signed-in/assignment-secondary-button-disabled-hover.png)
 
@@ -2194,9 +2235,9 @@ Ghost-secondary button with a 20px flag start icon. Measured as `assignment-repo
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 134.48 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; decoration underline auto offset auto; icon 20 x 20, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed` |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 134.5x36 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px |
+| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 134.5x36 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 138.484pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; decoration underline auto offset auto; icon 20 x 20, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed`; painted by children button 134.5x36 background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` radius 8px |
 
 ![Report an issue button default](components/crops/signed-in/assignment-report-default.png) ![Report an issue button hover](components/crops/signed-in/assignment-report-hover.png) ![Report an issue button focus-visible](components/crops/signed-in/assignment-report-focus-visible.png) ![Report an issue button focus-visible-cds](components/crops/signed-in/assignment-report-focus-visible-cds.png) ![Report an issue button pressed](components/crops/signed-in/assignment-report-pressed.png)
 
@@ -2220,7 +2261,7 @@ Underlined dark link inside the sentence. Measured as `ml-career-goal-link` on M
 |---|---|
 | default (same: focus-visible) | size 207.47 x 22; radius 0; background transparent; shadow none; outline none; font 16/24 600, -0.048px `--cds-typography-title3`; colour #0d0f12 `--cds-color-neutral-primary`; decoration underline auto offset auto |
 | hover | decoration none |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only) |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); painted by children a 207.5x22 radius 4px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px |
 | pressed | decoration none |
 
 No crop was saved for this entry; the values are from the computed styles.
@@ -2231,10 +2272,10 @@ Ghost button with no padding, blue label. Measured as `ml-edit-goal` on My Learn
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 53.64 x 24; padding 4px `--cds-spacing-50` 0 0 0; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children a 53.6x24 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children a 53.6x24 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, a::after 57.6406pxx28px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; painted by children a 53.6x24 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px |
 
 ![Edit goal button default](components/crops/signed-in/ml-edit-goal-default.png) ![Edit goal button hover](components/crops/signed-in/ml-edit-goal-hover.png) ![Edit goal button focus-visible](components/crops/signed-in/ml-edit-goal-focus-visible.png) ![Edit goal button focus-visible-cds](components/crops/signed-in/ml-edit-goal-focus-visible-cds.png) ![Edit goal button pressed](components/crops/signed-in/ml-edit-goal-pressed.png)
 
@@ -2251,14 +2292,14 @@ Unselected tab ("Completed"); the selected one is "In Progress". Measured as `ml
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 73.81 x 48; padding 12px `--cds-spacing-150` / 0; radius 0; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #404b5e `--cds-color-interactive-secondary-inactive` |
-| hover | radius 4px `--cds-border-radius-50`; colour #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | radius 8px `--cds-border-radius-100`; outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset 2px; colour #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | radius 4px `--cds-border-radius-50`; colour #232b3a `--cds-color-interactive-secondary-hover` |
+| hover | radius 4px `--cds-border-radius-50`; colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button::after 73.8125pxx4px background #c1cbdb `--cds-color-neutral-stroke-primary-weak` radius 2px 2px 0px 0px |
+| focus-visible-cds | radius 8px `--cds-border-radius-100`; outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset 2px; colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 73.8x48 radius 8px outline 1px solid rgb(128, 78, 228) offset 2px |
+| pressed | radius 4px `--cds-border-radius-50`; colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button::after 73.8125pxx4px background #c1cbdb `--cds-color-neutral-stroke-primary-weak` radius 2px 2px 0px 0px |
 | selected | size 78.36 x 48; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0d0f12 `--cds-color-neutral-primary` |
-| selected-hover | size 78.36 x 48; radius 4px `--cds-border-radius-50`; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0d0f12 `--cds-color-neutral-primary` |
+| selected-hover | size 78.36 x 48; radius 4px `--cds-border-radius-50`; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0d0f12 `--cds-color-neutral-primary`; painted by children button::after 78.3594pxx4px background #c1cbdb `--cds-color-neutral-stroke-primary-weak` radius 2px 2px 0px 0px |
 | selected-focus-visible | size 78.36 x 48; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0d0f12 `--cds-color-neutral-primary` |
-| selected-focus-visible-cds | size 78.36 x 48; radius 8px `--cds-border-radius-100`; outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset 2px; font 16/24 600, 0.16px `--cds-typography-title3`; colour #232b3a `--cds-color-interactive-secondary-hover` |
-| selected-pressed | size 78.36 x 48; radius 4px `--cds-border-radius-50`; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0d0f12 `--cds-color-neutral-primary` |
+| selected-focus-visible-cds | size 78.36 x 48; radius 8px `--cds-border-radius-100`; outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset 2px; font 16/24 600, 0.16px `--cds-typography-title3`; colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 78.4x48 radius 8px outline 1px solid rgb(128, 78, 228) offset 2px |
+| selected-pressed | size 78.36 x 48; radius 4px `--cds-border-radius-50`; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0d0f12 `--cds-color-neutral-primary`; painted by children button::after 78.3594pxx4px background #c1cbdb `--cds-color-neutral-stroke-primary-weak` radius 2px 2px 0px 0px |
 | selected-completed | size 76.91 x 48; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0d0f12 `--cds-color-neutral-primary` |
 
 ![Tab (My Learning) default](components/crops/signed-in/ml-tab-default.png) ![Tab (My Learning) hover](components/crops/signed-in/ml-tab-hover.png) ![Tab (My Learning) focus-visible](components/crops/signed-in/ml-tab-focus-visible.png) ![Tab (My Learning) focus-visible-cds](components/crops/signed-in/ml-tab-focus-visible-cds.png) ![Tab (My Learning) pressed](components/crops/signed-in/ml-tab-pressed.png) ![Tab (My Learning) selected](components/crops/signed-in/ml-tab-selected.png) ![Tab (My Learning) selected-hover](components/crops/signed-in/ml-tab-selected-hover.png) ![Tab (My Learning) selected-focus-visible](components/crops/signed-in/ml-tab-selected-focus-visible.png) ![Tab (My Learning) selected-focus-visible-cds](components/crops/signed-in/ml-tab-selected-focus-visible-cds.png) ![Tab (My Learning) selected-pressed](components/crops/signed-in/ml-tab-selected-pressed.png) ![Tab (My Learning) selected-completed](components/crops/signed-in/ml-tab-selected-completed.png)
@@ -2279,8 +2320,9 @@ Title link, then "Course 2 of 9 · Not started"; the overflow button at the righ
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 883.33 x 81; padding 16px `--cds-spacing-200`; border T: 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
-| in-progress, in-progress-hover | size 883.33 x 110; border none |
+| default | size 883.33 x 81; padding 16px `--cds-spacing-200`; border T: 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; painted by children div 883.3x81 background #ffffff `--cds-color-neutral-background-primary` border T:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, button 48x48 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, button 0x0 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| hover | painted by children div 883.3x81 background #ffffff `--cds-color-neutral-background-primary` border T:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`, a 235.1x20 border B:1px solid #0d0f12 `--cds-color-neutral-primary`, span 235.1x23 border B:1px solid #0d0f12 `--cds-color-neutral-primary`, button 48x48 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| in-progress, in-progress-hover | size 883.33 x 110; border none; painted by children div 883.3x110 background #ffffff `--cds-color-neutral-background-primary`, div 425.7x8 background #f2f5fa `--cds-color-neutral-background-primary-weak` border T:1px solid #f2f5fa `--cds-color-neutral-disabled-weak` / R:1px solid #f2f5fa `--cds-color-neutral-disabled-weak` / B:1px solid #f2f5fa `--cds-color-neutral-disabled-weak` / L:1px solid #f2f5fa `--cds-color-neutral-disabled-weak` radius 8px, div 12.7x8 background #6f29e5 `--cds-color-emphasis-quaternary-background-strong` radius 8px, section 350x78 border T:1px solid #f2f5fa / R:1px solid #f2f5fa / B:1px solid #f2f5fa / L:1px solid #f2f5fa radius 12px (`--cds-color-neutral-disabled-weak`) |
 
 ![Program course row default](components/crops/signed-in/ml-course-row-default.png) ![Program course row hover](components/crops/signed-in/ml-course-row-hover.png) ![Program course row in-progress](components/crops/signed-in/ml-course-row-in-progress.png) ![Program course row in-progress-hover](components/crops/signed-in/ml-course-row-in-progress-hover.png)
 
@@ -2290,9 +2332,9 @@ Course name as a link, bold, dark, no underline at rest. Measured as `ml-course-
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 374.8 x 20; border none; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
-| hover | border B: 1px solid #0d0f12 `--cds-color-neutral-primary` |
-| focus-visible, focus-visible-cds | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline auto offset auto |
-| pressed | border B: 1px solid #0d0f12 `--cds-color-neutral-primary` |
+| hover | border B: 1px solid #0d0f12 `--cds-color-neutral-primary`; painted by children a 374.8x20 border B:1px solid #0d0f12 `--cds-color-neutral-primary`, span 200x23 border B:1px solid #0d0f12 `--cds-color-neutral-primary` |
+| focus-visible, focus-visible-cds | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline auto offset auto; painted by children a 374.8x20 outline 1px auto rgb(0, 95, 204) offset 1px |
+| pressed | border B: 1px solid #0d0f12 `--cds-color-neutral-primary`; painted by children a 374.8x20 border B:1px solid #0d0f12 `--cds-color-neutral-primary`, span 200x23 border B:1px solid #0d0f12 `--cds-color-neutral-primary` |
 
 ![Course title link (My Learning) default](components/crops/signed-in/ml-course-title-link-default.png) ![Course title link (My Learning) hover](components/crops/signed-in/ml-course-title-link-hover.png) ![Course title link (My Learning) focus-visible](components/crops/signed-in/ml-course-title-link-focus-visible.png) ![Course title link (My Learning) focus-visible-cds](components/crops/signed-in/ml-course-title-link-focus-visible-cds.png) ![Course title link (My Learning) pressed](components/crops/signed-in/ml-course-title-link-pressed.png)
 
@@ -2301,8 +2343,8 @@ Pill track with a purple fill ("3% complete"); 8px tall. Measured as `ml-progres
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 12.7 x 8; radius 8px `--cds-border-radius-100`; background #6f29e5 `--cds-color-emphasis-quaternary-background-strong`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
-| course-card | size 38.13 x 8 |
+| default | size 12.7 x 8; radius 8px `--cds-border-radius-100`; background #6f29e5 `--cds-color-emphasis-quaternary-background-strong`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; painted by children div 12.7x8 background #6f29e5 `--cds-color-emphasis-quaternary-background-strong` radius 8px |
+| course-card | size 38.13 x 8; painted by children div 38.1x8 background #6f29e5 `--cds-color-emphasis-quaternary-background-strong` radius 8px |
 
 ![Progress bar default](components/crops/signed-in/ml-progress-bar-default.png) ![Progress bar course-card](components/crops/signed-in/ml-progress-bar-course-card.png)
 
@@ -2320,12 +2362,12 @@ Primary button, 36px tall. Measured as `ml-resume-button` on My Learning, In Pro
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 80.81 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; decoration none |
-| hover | background #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| default | size 80.81 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; decoration none; painted by children a 80.8x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children a 80.8x36 background #0b408b `--cds-color-interactive-primary-hover` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); decoration underline auto offset auto |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
-| get-started | size 99.94 x 36 |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); decoration underline auto offset auto; painted by children a 80.8x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, a::after 84.8125pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; painted by children a 80.8x36 background #3c0f8a `--cds-color-interactive-primary-pressed` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| get-started | size 99.94 x 36; painted by children a 99.9x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 
 ![Resume button (My Learning) default](components/crops/signed-in/ml-resume-button-default.png) ![Resume button (My Learning) hover](components/crops/signed-in/ml-resume-button-hover.png) ![Resume button (My Learning) focus-visible](components/crops/signed-in/ml-resume-button-focus-visible.png) ![Resume button (My Learning) focus-visible-cds](components/crops/signed-in/ml-resume-button-focus-visible-cds.png) ![Resume button (My Learning) pressed](components/crops/signed-in/ml-resume-button-pressed.png) ![Resume button (My Learning) get-started](components/crops/signed-in/ml-resume-button-get-started.png)
 
@@ -2334,11 +2376,11 @@ Ghost medium icon button, 48x48 with a 24px blue dots icon. Measured as `ml-over
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 48 x 48; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, fill none, color #0056d2 `--cds-color-interactive-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; icon 24 x 24, fill none, color #3c0f8a `--cds-color-interactive-primary-pressed` |
-| focus-visible (as captured) | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
+| default (same: focus-visible) | size 48 x 48; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, fill none, color #0056d2 `--cds-color-interactive-primary`; painted by children button 48x48 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, color #0b408b `--cds-color-interactive-primary-hover`; painted by children button 48x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, color #0b408b `--cds-color-interactive-primary-hover`; painted by children button 48x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 52pxx52px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; icon 24 x 24, fill none, color #3c0f8a `--cds-color-interactive-primary-pressed`; painted by children button 48x48 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| focus-visible (as captured) | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, color #0b408b `--cds-color-interactive-primary-hover`; painted by children button 48x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 52pxx52px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
 
 ![Overflow button default](components/crops/signed-in/ml-overflow-button-default.png) ![Overflow button hover](components/crops/signed-in/ml-overflow-button-hover.png) ![Overflow button focus-visible](components/crops/signed-in/ml-overflow-button-focus-visible.png) ![Overflow button focus-visible-cds](components/crops/signed-in/ml-overflow-button-focus-visible-cds.png) ![Overflow button pressed](components/crops/signed-in/ml-overflow-button-pressed.png) ![Overflow button focus-visible (as captured)](components/crops/signed-in/ml-overflow-button-focus-visible-as-captured.png)
 
@@ -2347,8 +2389,8 @@ Bordered rounded card: partner logo and name, "Offered by", course title link, "
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 885.33 x 132; padding 24px / 16px (`--cds-spacing-300`, `--cds-spacing-200`); border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
-| with-progress | size 885.33 x 152 |
+| default (same: hover) | size 885.33 x 132; padding 24px / 16px (`--cds-spacing-300`, `--cds-spacing-200`); border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; painted by children div 885.3x132 background #ffffff `--cds-color-neutral-background-primary` border T:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` / R:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` / B:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` / L:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` radius 16px, div 30x30 border T:1px solid #c1cbdb / R:1px solid #c1cbdb / B:1px solid #c1cbdb / L:1px solid #c1cbdb radius 4px (`--cds-color-neutral-stroke-primary-weak`), section 350x82 border T:1px solid #f2f5fa / R:1px solid #f2f5fa / B:1px solid #f2f5fa / L:1px solid #f2f5fa radius 12px (`--cds-color-neutral-disabled-weak`), a 99.9x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| with-progress | size 885.33 x 152; painted by children div 885.3x152 background #ffffff `--cds-color-neutral-background-primary` border T:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` / R:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` / B:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` / L:1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` radius 16px, div 30x30 border T:1px solid #c1cbdb / R:1px solid #c1cbdb / B:1px solid #c1cbdb / L:1px solid #c1cbdb radius 4px (`--cds-color-neutral-stroke-primary-weak`), div 425.7x8 background #f2f5fa `--cds-color-neutral-background-primary-weak` border T:1px solid #f2f5fa `--cds-color-neutral-disabled-weak` / R:1px solid #f2f5fa `--cds-color-neutral-disabled-weak` / B:1px solid #f2f5fa `--cds-color-neutral-disabled-weak` / L:1px solid #f2f5fa `--cds-color-neutral-disabled-weak` radius 8px, div 38.1x8 background #6f29e5 `--cds-color-emphasis-quaternary-background-strong` radius 8px |
 
 ![Standalone course card default](components/crops/signed-in/ml-course-card-default.png) ![Standalone course card hover](components/crops/signed-in/ml-course-card-hover.png) ![Standalone course card with-progress](components/crops/signed-in/ml-course-card-with-progress.png)
 
@@ -2368,10 +2410,10 @@ Ghost small icon buttons, 36x36 with 20px chevrons. Measured as `ml-calendar-nav
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only) |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak` |
+| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children button 36x36 radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children button 36x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); painted by children button 36x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 40pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; painted by children button 36x36 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
 
 ![Calendar nav button default](components/crops/signed-in/ml-calendar-nav-default.png) ![Calendar nav button hover](components/crops/signed-in/ml-calendar-nav-hover.png) ![Calendar nav button focus-visible](components/crops/signed-in/ml-calendar-nav-focus-visible.png) ![Calendar nav button focus-visible-cds](components/crops/signed-in/ml-calendar-nav-focus-visible-cds.png) ![Calendar nav button pressed](components/crops/signed-in/ml-calendar-nav-pressed.png)
 
@@ -2389,7 +2431,7 @@ Ghost-invert button with no padding, 24px tall. Measured as `ml-cert-linkedin` o
 |---|---|
 | default | size 96.11 x 24; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/24 600, 0.14px; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover, focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); decoration underline auto offset auto |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); decoration underline auto offset auto; painted by children a 96.1x24 radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, a::after 100.109pxx28px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
 | pressed | decoration underline auto offset auto |
 
 ![Add to LinkedIn (ghost) default](components/crops/signed-in/ml-cert-linkedin-default.png) ![Add to LinkedIn (ghost) hover](components/crops/signed-in/ml-cert-linkedin-hover.png) ![Add to LinkedIn (ghost) focus-visible](components/crops/signed-in/ml-cert-linkedin-focus-visible.png) ![Add to LinkedIn (ghost) focus-visible-cds](components/crops/signed-in/ml-cert-linkedin-focus-visible-cds.png) ![Add to LinkedIn (ghost) pressed](components/crops/signed-in/ml-cert-linkedin-pressed.png)
@@ -2402,7 +2444,7 @@ cds Link, bold blue. Measured as `ml-cert-view` on My Learning, In Progress.
 | default | size 92.06 x 25; radius 0; background transparent; shadow none; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none |
 | hover | colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; painted by children a 92.1x25 radius 4px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px |
 | pressed | colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
 
 ![View certificate link default](components/crops/signed-in/ml-cert-view-default.png) ![View certificate link hover](components/crops/signed-in/ml-cert-view-hover.png) ![View certificate link focus-visible](components/crops/signed-in/ml-cert-view-focus-visible.png) ![View certificate link focus-visible-cds](components/crops/signed-in/ml-cert-view-focus-visible-cds.png) ![View certificate link pressed](components/crops/signed-in/ml-cert-view-pressed.png)
@@ -2421,11 +2463,11 @@ Primary button, 36px tall. Measured as `mlc-linkedin-button` on My Learning, Com
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 128.11 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; decoration none |
-| hover | background #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| default | size 128.11 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; decoration none; painted by children a 128.1x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children a 128.1x36 background #0b408b `--cds-color-interactive-primary-hover` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); decoration underline auto offset auto |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); decoration underline auto offset auto; painted by children a 128.1x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px, a::after 132.109pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; painted by children a 128.1x36 background #3c0f8a `--cds-color-interactive-primary-pressed` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 
 ![Add to LinkedIn (primary) default](components/crops/signed-in/mlc-linkedin-button-default.png) ![Add to LinkedIn (primary) hover](components/crops/signed-in/mlc-linkedin-button-hover.png) ![Add to LinkedIn (primary) focus-visible](components/crops/signed-in/mlc-linkedin-button-focus-visible.png) ![Add to LinkedIn (primary) focus-visible-cds](components/crops/signed-in/mlc-linkedin-button-focus-visible-cds.png) ![Add to LinkedIn (primary) pressed](components/crops/signed-in/mlc-linkedin-button-pressed.png)
 
@@ -2434,11 +2476,11 @@ Legacy link button (primary invert classes, not a cds-button): blue text, no fil
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 126.3 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; transition none |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; transition all 0.25s ease-in-out |
+| default | size 126.3 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; transition none; painted by children a 126.3x36 background #ffffff `--cds-color-neutral-background-primary` radius 8px |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; transition all 0.25s ease-in-out; painted by children a 126.3x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; transition all 0.25s ease-in-out |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children a 126.3x36 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, a::after 130.297pxx40px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; transition all 0.25s ease-in-out; painted by children a 126.3x36 background #f9f5ff `--cds-color-callouts-background-secondary-weak` radius 8px |
 
 ![View certificate button (legacy) default](components/crops/signed-in/mlc-view-certificate-default.png) ![View certificate button (legacy) hover](components/crops/signed-in/mlc-view-certificate-hover.png) ![View certificate button (legacy) focus-visible](components/crops/signed-in/mlc-view-certificate-focus-visible.png) ![View certificate button (legacy) focus-visible-cds](components/crops/signed-in/mlc-view-certificate-focus-visible-cds.png) ![View certificate button (legacy) pressed](components/crops/signed-in/mlc-view-certificate-pressed.png)
 
@@ -2447,8 +2489,8 @@ Primary button. Measured as `mlc-purchase` on My Learning, Completed.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 155.72 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; decoration none |
-| hover | background #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| default | size 155.72 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; decoration none; painted by children a 155.7x36 background #0056d2 `--cds-color-interactive-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; painted by children a 155.7x36 background #0b408b `--cds-color-interactive-primary-hover` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
 
 ![Purchase certificate button default](components/crops/signed-in/mlc-purchase-default.png) ![Purchase certificate button hover](components/crops/signed-in/mlc-purchase-hover.png)
 
@@ -2519,9 +2561,10 @@ CDS text field (the email field in the log-in dialog): cds-input-root with a not
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, filled, error) | size 368 x 48; padding 0; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-interactive-secondary`; transform none |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| error-dialog | size 424 x 708.11; radius 16px `--cds-border-radius-200`; font 16/24 400 `--cds-typography-body1`; transform matrix(1, 0, 0, 1, -212, -354.055); icon 20 x 20, colour #0d0f12 `--cds-color-interactive-secondary` |
+| default | size 368 x 48; padding 0; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-interactive-secondary`; transform none; painted by children div, 368x48, background #ffffff `--cds-color-neutral-background-primary`, radius 8px, fieldset, 368x53, border 1px solid #8495b0 `--cds-color-neutral-stroke-primary`, radius 8px |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children div, 368x48, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, radius 8px, fieldset, 368x53, border 1px solid #0b408b `--cds-color-interactive-primary-hover`, radius 8px |
+| focus-visible, filled, error | painted by children div, 368x48, background #ffffff `--cds-color-neutral-background-primary`, outline 1px solid transparent offset 2px, radius 8px, div::before, 372pxx52px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px, fieldset, 368x53, border 1px solid #8495b0 `--cds-color-neutral-stroke-primary`, radius 8px |
+| error-dialog | size 424 x 708.11; radius 16px `--cds-border-radius-200`; font 16/24 400 `--cds-typography-body1`; transform matrix(1, 0, 0, 1, -212, -354.055); icon 20 x 20, colour #0d0f12 `--cds-color-interactive-secondary`; painted by children div, 424x708.1, background #ffffff `--cds-color-neutral-background-primary`, radius 16px, div, 0x0, background #ffffff `--cds-color-neutral-background-primary`, header, 0x0, background #ffffff `--cds-color-neutral-background-primary`, shadow #0f1114 @ 0.1 0px 2px 2px 0px, no token, button, 36x36, shadow transparent 0px 0px 0px 1px inset (no edge), radius 50% |
 
 ![Text field default](components/crops/text-field-default.png) ![Text field hover](components/crops/text-field-hover.png) ![Text field focus-visible](components/crops/text-field-focus-visible.png) ![Text field filled](components/crops/text-field-filled.png) ![Text field error](components/crops/text-field-error.png) ![Text field error-dialog](components/crops/text-field-error-dialog.png)
 
@@ -2537,10 +2580,10 @@ Large primary button (Continue in the log-in dialog), full width, 48px. Measured
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 368 x 48; padding 12px 32px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow none; outline none; font 14/24 700; colour #ffffff `--cds-color-neutral-primary-invert`; transition background-color 0.25s ease-out, box-shadow 0.25s ease-out, color 0.25s ease-out |
-| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong` |
-| focus-visible | shadow #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons); outline 2px solid #793ae4 `--cds-color-purple-700` offset 2px |
-| pressed | background #2c0b65 `--cds-color-emphasis-quaternary-background-xstrong` |
+| default | size 368 x 48; padding 12px 32px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow none; outline none; font 14/24 700; colour #ffffff `--cds-color-neutral-primary-invert`; transition background-color 0.25s ease-out, box-shadow 0.25s ease-out, color 0.25s ease-out; painted by children button, 368x48, background #0056d2 `--cds-color-interactive-primary`, radius 8px |
+| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; painted by children button, 368x48, background #0b408b `--cds-color-emphasis-primary-background-xstrong`, radius 8px |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons); outline 2px solid #793ae4 `--cds-color-purple-700` offset 2px; painted by children button, 368x48, background #0056d2 `--cds-color-interactive-primary`, shadow #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons), outline 2px solid #793ae4 offset 2px, radius 8px |
+| pressed | background #2c0b65 `--cds-color-emphasis-quaternary-background-xstrong`; painted by children button, 368x48, background #2c0b65 `--cds-color-emphasis-quaternary-background-xstrong`, radius 8px |
 
 ![Large primary button default](components/crops/button-primary-large-default.png) ![Large primary button hover](components/crops/button-primary-large-hover.png) ![Large primary button focus-visible](components/crops/button-primary-large-focus-visible.png) ![Large primary button pressed](components/crops/button-primary-large-pressed.png)
 
@@ -2549,10 +2592,10 @@ Outlined social sign-in button (Continue with Google): white, 1px dark border, 4
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 368 x 50; padding 12px 16px; border 1px solid #0d0f12 `--cds-color-interactive-secondary`; radius 8px `--cds-border-radius-100`; background transparent; shadow none; outline none; font 14/24 700; colour #0d0f12 `--cds-color-interactive-secondary`; transition background-color 0.25s ease-out, box-shadow 0.25s ease-out, color 0.25s ease-out; icon 18 x 18, colour #232b3a `--cds-color-interactive-secondary-hover` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons); outline 2px solid #0056d2 `--cds-color-interactive-primary` offset 2px |
-| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #2c0b65 `--cds-color-emphasis-quaternary-content-default` |
+| default | size 368 x 50; padding 12px 16px; border 1px solid #0d0f12 `--cds-color-interactive-secondary`; radius 8px `--cds-border-radius-100`; background transparent; shadow none; outline none; font 14/24 700; colour #0d0f12 `--cds-color-interactive-secondary`; transition background-color 0.25s ease-out, box-shadow 0.25s ease-out, color 0.25s ease-out; icon 18 x 18, colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button, 368x50, border 1px solid #0d0f12 `--cds-color-interactive-secondary`, radius 8px |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button, 368x50, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, border 1px solid #0d0f12 `--cds-color-interactive-secondary`, radius 8px |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons); outline 2px solid #0056d2 `--cds-color-interactive-primary` offset 2px; painted by children button, 368x50, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, border 1px solid #0d0f12 `--cds-color-interactive-secondary`, shadow #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons), outline 2px solid #0056d2 offset 2px, radius 8px |
+| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #2c0b65 `--cds-color-emphasis-quaternary-content-default`; painted by children button, 368x50, background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`, border 1px solid #0d0f12 `--cds-color-interactive-secondary`, radius 8px |
 
 ![Social sign-in button default](components/crops/button-social-default.png) ![Social sign-in button hover](components/crops/button-social-hover.png) ![Social sign-in button focus-visible](components/crops/button-social-focus-visible.png) ![Social sign-in button pressed](components/crops/button-social-pressed.png)
 
@@ -2575,8 +2618,8 @@ Warning callout on Account settings ("Warning: ..."): --cds-color-feedback-backg
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 592 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 16px `--cds-border-radius-200`; background #ffeac9 `--cds-color-feedback-background-warning-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #8e4209 `--cds-color-feedback-warning` |
-| dark | background #3a1703 `--cds-color-emphasis-tertiary-background-xstrong`; colour #f2f5fa `--cds-color-neutral-disabled-weak`; icon 20 x 20, fill none, color #f28100 `--cds-color-yellow-400` |
+| default | size 592 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 16px `--cds-border-radius-200`; background #ffeac9 `--cds-color-feedback-background-warning-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #8e4209 `--cds-color-feedback-warning`; painted by children div 592x48 background #ffeac9 `--cds-color-feedback-background-warning-weak` radius 16px |
+| dark | background #3a1703 `--cds-color-feedback-background-warning-weak`; colour #f2f5fa `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #f28100 `--cds-color-feedback-warning`; painted by children div 592x48 background #3a1703 `--cds-color-feedback-background-warning-weak` radius 16px |
 
 ![Warning notification default](components/crops/signed-in/callout-warning-default.png) ![Warning notification dark](components/crops/signed-in/callout-warning-dark.png)
 
@@ -2585,8 +2628,9 @@ CDS chat text area ("Ask anything..."): a grey 16-radius form with an auto-growi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 383 x 56; padding 8px; gap 8px; radius 16px `--cds-border-radius-200`; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #dae1ed `--cds-color-neutral-disabled` |
-| filled | icon 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` |
+| default (same: hover) | size 383 x 56; padding 8px; gap 8px; radius 16px `--cds-border-radius-200`; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #dae1ed `--cds-color-neutral-disabled`; painted by children form, 383x56, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, radius 16px, div, 0x0, border 1px solid #f0f6ff `--cds-color-interactive-stroke-primary-focus-invert`, radius 11px, div::after, autoxauto, border 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus`, radius 9px, inset 2px 2px 2px 2px, span, 36x36, background #a7b4c9 `--cds-color-neutral-disabled-strong`, shadow #a7b4c9 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| focus-visible | painted by children form, 383x56, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, radius 16px, div, 391x64, border 1px solid #f0f6ff `--cds-color-interactive-stroke-primary-focus-invert`, radius 11px, div::after, 385pxx58px, border 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus`, radius 9px, inset 2px 2px 2px 2px, span, 36x36, background #a7b4c9 `--cds-color-neutral-disabled-strong`, shadow #a7b4c9 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| filled | icon 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert`; painted by children form, 383x56, background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`, radius 16px, div, 391x64, border 1px solid #f0f6ff `--cds-color-interactive-stroke-primary-focus-invert`, radius 11px, div::after, 385pxx58px, border 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus`, radius 9px, inset 2px 2px 2px 2px, button, 36x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
 
 | Part | Values (default) |
 |---|---|
@@ -2599,10 +2643,11 @@ Round send button in the chat field: filled primary when there is text, grey dis
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; padding 0; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 16/24 400 `--cds-typography-body1`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` |
-| disabled | background #a7b4c9 `--cds-color-neutral-disabled-strong`; shadow #a7b4c9 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); colour #dae1ed `--cds-color-neutral-disabled`; icon 20 x 20, colour #dae1ed `--cds-color-neutral-disabled` |
-| hover, focus-visible | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour) |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-selected`; shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour) |
+| default | size 36 x 36; padding 0; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 16/24 400 `--cds-typography-body1`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert`; painted by children button, 36x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| disabled | background #a7b4c9 `--cds-color-neutral-disabled-strong`; shadow #a7b4c9 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); colour #dae1ed `--cds-color-neutral-disabled`; icon 20 x 20, colour #dae1ed `--cds-color-neutral-disabled`; painted by children span, 36x36, background #a7b4c9 `--cds-color-neutral-disabled-strong`, shadow #a7b4c9 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); painted by children button, 36x36, background #0b408b `--cds-color-emphasis-primary-background-xstrong`, shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
+| focus-visible | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); painted by children button, 36x36, background #0b408b `--cds-color-emphasis-primary-background-xstrong`, shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), outline 1px solid transparent offset 2px, radius 8px, button::after, 40pxx40px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`), radius 8px, inset -2px -2px -2px -2px |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-selected`; shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); painted by children button, 36x36, background #3c0f8a `--cds-color-interactive-primary-selected`, shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 8px |
 
 ![Chat send button disabled](components/crops/icon-button-send-disabled.png) ![Chat send button default](components/crops/icon-button-send-default.png) ![Chat send button hover](components/crops/icon-button-send-hover.png) ![Chat send button focus-visible](components/crops/icon-button-send-focus-visible.png) ![Chat send button pressed](components/crops/icon-button-send-pressed.png)
 
@@ -2611,9 +2656,9 @@ CDS multiline text field ("Write your review (optional)"): cds-input-root with c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 664 x 48; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible (as captured) | outline 1px solid transparent offset 2px (forced-colours only) |
+| default | size 664 x 48; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; painted by children div 664x48 background #ffffff `--cds-color-neutral-background-primary` radius 8px, fieldset 664x53 border T:1px solid #8495b0 / R:1px solid #8495b0 / B:1px solid #8495b0 / L:1px solid #8495b0 radius 8px (`--cds-color-neutral-stroke-primary`) |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children div 664x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px, fieldset 664x53 border T:1px solid #0b408b / R:1px solid #0b408b / B:1px solid #0b408b / L:1px solid #0b408b radius 8px (`--cds-color-interactive-primary-hover`) |
+| focus-visible (as captured) | outline 1px solid transparent offset 2px (forced-colours only); painted by children div 664x48 background #ffffff `--cds-color-neutral-background-primary` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, div::before 668pxx52px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px, fieldset 664x53 border T:1px solid #8495b0 / R:1px solid #8495b0 / B:1px solid #8495b0 / L:1px solid #8495b0 radius 8px (`--cds-color-neutral-stroke-primary`) |
 
 ![Text area default](components/crops/signed-in/text-area-cds-default.png) ![Text area hover](components/crops/signed-in/text-area-cds-hover.png) ![Text area focus-visible (as captured)](components/crops/signed-in/text-area-cds-focus-visible-as-captured.png)
 
@@ -2622,8 +2667,10 @@ CDS switch (cds-labs-Switch): 40x24 track, 12 radius, 20px white knob; on is --c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, checked, focus-visible (as captured)) | size 40 x 24; gap 24px `--cds-spacing-300`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
-| checked, dark, dark | colour #f2f5fa `--cds-color-neutral-disabled-weak` |
+| default (same: hover) | size 40 x 24; gap 24px `--cds-spacing-300`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; painted by children button 40x24 background #8495b0 `--cds-color-neutral-stroke-primary` radius 12px, span 20x20 background #ffffff `--cds-color-neutral-background-primary` radius 50% |
+| checked, focus-visible (as captured) | painted by children button 40x24 background #0056d2 `--cds-color-interactive-primary` radius 12px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 44pxx28px radius 16px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px, span 20x20 background #ffffff `--cds-color-neutral-background-primary` radius 50% |
+| checked, dark | colour #f2f5fa `--cds-color-neutral-primary`; painted by children button 40x24 background #87b8ff `--cds-color-interactive-primary` radius 12px, span 20x20 background #000000 `--cds-color-neutral-background-primary` radius 50% |
+| dark | colour #f2f5fa `--cds-color-neutral-primary`; painted by children button 40x24 background #48546e `--cds-color-neutral-stroke-primary` radius 12px, span 20x20 background #000000 `--cds-color-neutral-background-primary` radius 50% |
 
 Child layers that carry the look: button 40x24 background #8495b0 `--cds-color-neutral-stroke-primary` radius 12px; span 20x20 background #ffffff `--cds-color-neutral-background-primary` radius 50%.
 
@@ -2642,8 +2689,8 @@ Menu item (Rate, Share): 40px, 8px padding, 16/24 400. Enter on the trigger focu
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 54.66 x 40; padding 8px `--cds-spacing-100`; gap 12px `--cds-spacing-150`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible (as captured) | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover` |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 54.7x40 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px |
+| focus-visible (as captured) | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; painted by children button 54.7x40 background #f2f5fa `--cds-color-neutral-background-primary-weak` radius 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px, button::after 58.6562pxx44px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
 
 ![Overflow menu item default](components/crops/signed-in/overflow-menu-item-default.png) ![Overflow menu item hover](components/crops/signed-in/overflow-menu-item-hover.png) ![Overflow menu item focus-visible (as captured)](components/crops/signed-in/overflow-menu-item-focus-visible-as-captured.png)
 
@@ -2661,8 +2708,8 @@ Colour theme select on Account settings (Light mode, Dark mode, System default),
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| opened | size 186.66 x 48; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary` |
-| dark | background #000000, no token; colour #f2f5fa `--cds-color-neutral-disabled-weak`; icon 24 x 24, fill none, color #f2f5fa `--cds-color-neutral-disabled-weak` |
+| opened | size 186.66 x 48; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary`; painted by children div 186.7x48 background #ffffff `--cds-color-neutral-background-primary` radius 8px, input 186.7x25 background #ffffff `--cds-color-neutral-background-primary` border T:2px inset #767676, no token / R:2px inset #767676, no token / B:2px inset #767676, no token / L:2px inset #767676, no token, fieldset 186.7x53 border T:1px solid #0b408b / R:1px solid #0b408b / B:1px solid #0b408b / L:1px solid #0b408b radius 8px (`--cds-color-interactive-primary-hover`) |
+| dark | background #000000 `--cds-color-neutral-background-primary`; colour #f2f5fa `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #f2f5fa `--cds-color-neutral-primary`; painted by children div 186.7x48 background #000000 `--cds-color-neutral-background-primary` radius 8px, input 186.7x25 background #3b3b3b, no token border T:2px inset #858585, no token / R:2px inset #858585, no token / B:2px inset #858585, no token / L:2px inset #858585, no token, fieldset 186.7x53 border T:1px solid #48546e / R:1px solid #48546e / B:1px solid #48546e / L:1px solid #48546e radius 8px (`--cds-color-neutral-stroke-primary`) |
 
 | Part | Values (default) |
 |---|---|
@@ -2675,9 +2722,9 @@ Option row in the CDS select list, 40px. Enter on the field focuses the selected
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 155 x 40; padding 4px `--cds-spacing-50` / 0; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour rgba(0,0,0,0.87), no token |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| selected, focus-visible (as captured) | background transparent; icon 20 x 20, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
+| default | size 155 x 40; padding 4px `--cds-spacing-50` / 0; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour rgba(0,0,0,0.87), no token; painted by children li 155x40 background #ffffff `--cds-color-neutral-background-primary` radius 8px |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; painted by children li 155x40 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px, div 155x32 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 7px |
+| selected, focus-visible (as captured) | background transparent; icon 20 x 20, fill none, color #0b408b `--cds-color-interactive-primary-hover`; painted by children li::before 155pxx36px radius 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px, div 155x32 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 7px |
 
 ![Select option, signed in default](components/crops/signed-in/select-option-signed-in-default.png) ![Select option, signed in hover](components/crops/signed-in/select-option-signed-in-hover.png) ![Select option, signed in selected, focus-visible (as captured)](components/crops/signed-in/select-option-signed-in-selected-focus-visible-as-captured.png)
 
@@ -2708,8 +2755,8 @@ Delete account: the destructive action is an ordinary 48px secondary (outlined b
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 152.14 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0056d2 0px 0px 0px 1px inset; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset; colour #0b408b `--cds-color-interactive-primary-hover` |
+| default | size 152.14 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0056d2 0px 0px 0px 1px inset; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; painted by children button 152.1x48 background #ffffff `--cds-color-neutral-background-primary` radius 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset; colour #0b408b `--cds-color-interactive-primary-hover`; painted by children button 152.1x48 background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` radius 8px shadow rgb(11, 64, 139) 0px 0px 0px 1px inset |
 
 ![Delete account button default](components/crops/signed-in/button-secondary-destructive-default.png) ![Delete account button hover](components/crops/signed-in/button-secondary-destructive-hover.png)
 
@@ -2743,7 +2790,7 @@ Footer column link. Measured as `footer-link` on the home page.
 |---|---|
 | default | size 65.53 x 20; padding 0; radius 0px; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none |
 | hover | decoration underline |
-| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline |
+| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline; painted by children a, 65.5x20, outline 1px auto #005fcc offset 1px |
 
 Child layers that carry the look: a, 65.5x20, outline 1px auto #005fcc offset 1px.
 
@@ -2756,7 +2803,7 @@ Social icon link in the footer bottom row. Measured as `footer-social-icon` on t
 |---|---|
 | default | size 28 x 28; padding 0; radius 0px; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | decoration underline |
-| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline |
+| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline; painted by children a, 28x28, outline 1px auto #005fcc offset 1px |
 
 Child layers that carry the look: a, 28x28, outline 1px auto #005fcc offset 1px.
 
