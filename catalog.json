@@ -604,8 +604,8 @@
         "data-viz"
       ],
       "shape": "reference",
-      "captured": "2026-10-11",
-      "access": "local dashboard served by the TokenTracker CLI, no account, headless Chromium",
+      "captured": "2026-10-17",
+      "access": "local dashboard served by the TokenTracker CLI (v1.4.3), no account, headless Chromium",
       "themes": [
         "light",
         "dark"

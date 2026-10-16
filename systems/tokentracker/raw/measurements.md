@@ -1,6 +1,6 @@
 # TokenTracker component measurements
 
-Computed styles read from TokenTracker v1.3.5's dashboard (the local server the CLI runs, 127.0.0.1:7680) on 2026-10-11 by `tools/capture/public/measure.mjs`, no account signed in, in headless Chromium at 1440 x 900. Keys ending `.light` were read in the light theme, the rest in dark (the default). Private text (paths, session titles, skill names) was replaced before reading. and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from TokenTracker v1.4.3's dashboard (the local server the CLI runs, 127.0.0.1:7680) on 2026-10-17 by `tools/capture/public/measure.mjs`, no account signed in, in headless Chromium at 1440 x 900. Keys ending `.light` were read in the light theme, the rest in dark (the default). Private text (paths, session titles, skill names) was replaced before reading. and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -26,10 +26,10 @@ Page: dashboard. Selector: `aside`. States: default.
 | Font | ui-sans-serif 16px/24px 400 |
 | Letter spacing | normal |
 | Colour | #fafafa |
-| Text node | div.px-3.pb-1: ui-sans-serif 10px/15px 400, #737373, ls 0.5px |
+| Text node | span.truncate.flex-1: ui-sans-serif 13px/19.5px 500, #d4d4d4 |
 | Transition | width 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | Icon | 16 x 16, colour #737373 |
-| Painted layers | div.h-9.w-9 36.0x36.0 bg #262626 r 9999px; a.flex.items-center 204.0x32.0 bg #262626 r 8px; span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 9999px; span.tt-sidebar-pill.inline-flex 63.9x32.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 9999px |
+| Painted layers | a.flex.items-center 204.0x32.0 bg #262626 r 8px; span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 9999px; span.tt-sidebar-pill.inline-flex 63.9x32.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 9999px |
 | How | at rest |
 
 Crops: `sidebar-default.png`.
@@ -156,66 +156,66 @@ Page: dashboard. Selector: `first rounded, filled ancestor of main`. States: def
 | Font | ui-sans-serif 16px/24px 400 |
 | Letter spacing | normal |
 | Colour | #fafafa |
-| Text node | span.flex.items-center: ui-sans-serif 9px/13.5px 600, #ffffff @ 0.9, ls -0.225px |
+| Text node | span.w-full.min-w-0: ui-sans-serif 14px/20px 600, #fafafa |
 | Transition | none |
 | Icon | 0 x 0, colour #a3a3a3 |
-| Painted layers | div.flex-1.min-h-0 1208.0x880.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px; div.lg:hidden.flex 0.0x0.0 border B:1px solid #262626; div.relative.rounded-xl 375.3x259.5 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px; div.relative.h-24 341.3x96.0 bg #020617 r 12px shadow #ffffff 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px; div.absolute.-left-10 224.0x144.0 bg #4f46e5 @ 0.25 r 9999px; div.absolute.-right-8 192.0x128.0 bg #0ea5e9 @ 0.15 r 9999px |
+| Painted layers | div.flex-1.min-h-0 1208.0x880.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px; div.lg:hidden.flex 0.0x0.0 border B:1px solid #262626; div.rounded-xl.border 375.3x279.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px; div.min-w-0.flex 77.3x53.0 bg #262626 r 12px; div.min-w-0.flex 77.3x53.0 bg #262626 r 12px; div.min-w-0.flex 77.3x53.0 bg #262626 r 12px |
 | How | at rest |
 
 Crops: none.
 
 #### theme-toggle
 
-Theme toggle.
+Theme toggle. One of the few controls that keeps a focus outline (.tt-sidebar-theme:focus-visible).
 
-Page: dashboard. Selector: `button[aria-label*=theme]`. States: default, hover.
+Page: dashboard. Selector: `button[aria-label*=theme]`. States: default, hover, focus-visible.
 
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 44 x 44 | = |
-| Padding | 0px | = |
-| Border | none | = |
-| Radius | 9999px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | ui-sans-serif 16px/24px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #fafafa | = |
-| Transition | none | = |
-| Cursor | pointer | = |
-| Icon | 14 x 14, colour #a3a3a3 | 14 x 14, colour #ffffff |
-| Painted layers | span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 9999px | span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 bg #262626 border T:1px solid #525252 / R:1px solid #525252 / B:1px solid #525252 / L:1px solid #525252 r 9999px |
-| How | at rest | mouse hover |
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 44 x 44 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 9999px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | 2px solid #fafafa offset 2px |
+| Font | ui-sans-serif 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #fafafa | = | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Icon | 14 x 14, colour #a3a3a3 | 14 x 14, colour #ffffff | = |
+| Painted layers | span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 9999px | span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 bg #262626 border T:1px solid #525252 / R:1px solid #525252 / B:1px solid #525252 / L:1px solid #525252 r 9999px | button.tt-sidebar-theme.inline-flex 44.0x44.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #fafafa offset 2px; span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 9999px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
 
-Crops: `theme-toggle-default.png`, `theme-toggle-hover.png`.
+Crops: `theme-toggle-default.png`, `theme-toggle-hover.png`, `theme-toggle-focus-visible.png`.
 
 #### star-pill
 
 GitHub star pill.
 
-Page: dashboard. Selector: `a[href*=github]`. States: default, hover.
+Page: dashboard. Selector: `a[href*=github]`. States: default, hover, focus-visible.
 
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 63.92 x 44 | = |
-| Padding | 0px | = |
-| Border | none | = |
-| Radius | 9999px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | ui-sans-serif 16px/24px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #fafafa | = |
-| Text node | span: ui-sans-serif 12px/12px 500, #a3a3a3 | span: ui-sans-serif 12px/12px 500, #ffffff |
-| Transition | none | = |
-| Cursor | pointer | = |
-| Icon | 12 x 12, colour #a3a3a3 | 12 x 12, colour #ffffff |
-| Painted layers | span.tt-sidebar-pill.inline-flex 63.9x32.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 9999px | span.tt-sidebar-pill.inline-flex 63.9x32.0 bg #262626 border T:1px solid #525252 / R:1px solid #525252 / B:1px solid #525252 / L:1px solid #525252 r 9999px |
-| How | at rest | mouse hover |
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 63.92 x 44 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 9999px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | 2px solid #fafafa offset 2px |
+| Font | ui-sans-serif 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #fafafa | = | = |
+| Text node | span: ui-sans-serif 12px/12px 500, #a3a3a3 | span: ui-sans-serif 12px/12px 500, #ffffff | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Icon | 12 x 12, colour #a3a3a3 | 12 x 12, colour #ffffff | = |
+| Painted layers | span.tt-sidebar-pill.inline-flex 63.9x32.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 9999px | span.tt-sidebar-pill.inline-flex 63.9x32.0 bg #262626 border T:1px solid #525252 / R:1px solid #525252 / B:1px solid #525252 / L:1px solid #525252 r 9999px | a.tt-sidebar-star.inline-flex 63.9x44.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #fafafa offset 2px; span.tt-sidebar-pill.inline-flex 63.9x32.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 9999px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
 
-Crops: `star-pill-default.png`, `star-pill-hover.png`.
+Crops: `star-pill-default.png`, `star-pill-hover.png`, `star-pill-focus-visible.png`.
 
 #### sidebar.light
 
@@ -365,66 +365,172 @@ Page: dashboard. Selector: `first rounded, filled ancestor of main`. States: def
 | Font | ui-sans-serif 16px/24px 400 |
 | Letter spacing | normal |
 | Colour | #0a0a0a |
-| Text node | span.flex.items-center: ui-sans-serif 9px/13.5px 600, #ffffff @ 0.9, ls -0.225px |
+| Text node | span.w-full.min-w-0: ui-sans-serif 14px/20px 600, #0a0a0a |
 | Transition | none |
 | Icon | 0 x 0, colour #525252 |
-| Painted layers | div.flex-1.min-h-0 1208.0x880.0 bg #fafafa border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px; div.lg:hidden.flex 0.0x0.0 border B:1px solid #e5e5e5; div.relative.rounded-xl 375.3x259.5 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px; div.relative.h-24 341.3x96.0 bg #020617 r 12px shadow #ffffff 0px 0px 0px 0px, #000000 @ 0.1 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px; div.absolute.-left-10 224.0x144.0 bg #4f46e5 @ 0.25 r 9999px; div.absolute.-right-8 192.0x128.0 bg #0ea5e9 @ 0.15 r 9999px |
+| Painted layers | div.flex-1.min-h-0 1208.0x880.0 bg #fafafa border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px; div.lg:hidden.flex 0.0x0.0 border B:1px solid #e5e5e5; div.rounded-xl.border 375.3x279.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px; div.min-w-0.flex 77.3x53.0 bg #fafafa r 12px; div.min-w-0.flex 77.3x53.0 bg #fafafa r 12px; div.min-w-0.flex 77.3x53.0 bg #fafafa r 12px |
 | How | at rest |
 
 Crops: none.
 
 #### theme-toggle.light
 
-Theme toggle.
+Theme toggle. One of the few controls that keeps a focus outline (.tt-sidebar-theme:focus-visible).
 
-Page: dashboard. Selector: `button[aria-label*=theme]`. States: default, hover.
+Page: dashboard. Selector: `button[aria-label*=theme]`. States: default, hover, focus-visible.
 
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 44 x 44 | = |
-| Padding | 0px | = |
-| Border | none | = |
-| Radius | 9999px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | ui-sans-serif 16px/24px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #0a0a0a | = |
-| Transition | none | = |
-| Cursor | pointer | = |
-| Icon | 14 x 14, colour #525252 | 14 x 14, colour #0a0a0a |
-| Painted layers | span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px | span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 bg #e5e5e5 @ 0.6 border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 9999px |
-| How | at rest | mouse hover |
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 44 x 44 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 9999px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | 2px solid #0a0a0a offset 2px |
+| Font | ui-sans-serif 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0a0a0a | = | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Icon | 14 x 14, colour #525252 | 14 x 14, colour #0a0a0a | = |
+| Painted layers | span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px | span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 bg #e5e5e5 @ 0.6 border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 9999px | button.tt-sidebar-theme.inline-flex 44.0x44.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #0a0a0a offset 2px; span.tt-sidebar-pill.tt-sidebar-theme-face 32.0x32.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
 
-Crops: `theme-toggle.light-default.png`, `theme-toggle.light-hover.png`.
+Crops: `theme-toggle.light-default.png`, `theme-toggle.light-hover.png`, `theme-toggle.light-focus-visible.png`.
 
 #### star-pill.light
 
 GitHub star pill.
 
-Page: dashboard. Selector: `a[href*=github]`. States: default, hover.
+Page: dashboard. Selector: `a[href*=github]`. States: default, hover, focus-visible.
 
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 63.92 x 44 | = |
-| Padding | 0px | = |
-| Border | none | = |
-| Radius | 9999px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | ui-sans-serif 16px/24px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #0a0a0a | = |
-| Text node | span: ui-sans-serif 12px/12px 500, #525252 | span: ui-sans-serif 12px/12px 500, #0a0a0a |
-| Transition | none | = |
-| Cursor | pointer | = |
-| Icon | 12 x 12, colour #525252 | 12 x 12, colour #0a0a0a |
-| Painted layers | span.tt-sidebar-pill.inline-flex 63.9x32.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px | span.tt-sidebar-pill.inline-flex 63.9x32.0 bg #e5e5e5 @ 0.6 border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 9999px |
-| How | at rest | mouse hover |
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 63.92 x 44 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 9999px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | 2px solid #0a0a0a offset 2px |
+| Font | ui-sans-serif 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0a0a0a | = | = |
+| Text node | span: ui-sans-serif 12px/12px 500, #525252 | span: ui-sans-serif 12px/12px 500, #0a0a0a | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Icon | 12 x 12, colour #525252 | 12 x 12, colour #0a0a0a | = |
+| Painted layers | span.tt-sidebar-pill.inline-flex 63.9x32.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px | span.tt-sidebar-pill.inline-flex 63.9x32.0 bg #e5e5e5 @ 0.6 border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 9999px | a.tt-sidebar-star.inline-flex 63.9x44.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #0a0a0a offset 2px; span.tt-sidebar-pill.inline-flex 63.9x32.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
 
-Crops: `star-pill.light-default.png`, `star-pill.light-hover.png`.
+Crops: `star-pill.light-default.png`, `star-pill.light-hover.png`, `star-pill.light-focus-visible.png`.
+
+#### sidebar-toggle
+
+Sidebar collapse button. Chevron in the sidebar header; keeps a focus outline.
+
+Page: dashboard. Selector: `button.tt-sidebar-toggle`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 44 x 44 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 12px | = | = |
+| Background | transparent | #262626 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | 2px solid #737373 offset 2px |
+| Font | ui-sans-serif 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #737373 | #e5e5e5 | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Icon | 16 x 16, colour #737373 | 16 x 16, colour #e5e5e5 | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | button.tt-sidebar-toggle.flex 44.0x44.0 bg #262626 r 12px | button.tt-sidebar-toggle.flex 44.0x44.0 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #737373 offset 2px |
+
+Crops: `sidebar-toggle-default.png`, `sidebar-toggle-hover.png`, `sidebar-toggle-focus-visible.png`.
+
+#### account-control
+
+Account control (signed out). Top of the sidebar: the app mark and "Sign in", where a signed-in account shows its avatar. Measured only; never pressed.
+
+Page: dashboard. Selector: `.tt-sidebar-account-control`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 156 x 32 | = | = |
+| Padding | 6px 8px | = | = |
+| Gap | 8px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | #262626 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | ui-sans-serif 13px/19.5px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #d4d4d4 | #ffffff | = |
+| Text node | span.truncate.flex-1: ui-sans-serif 13px/19.5px 500, #d4d4d4 | span.truncate.flex-1: ui-sans-serif 13px/19.5px 500, #ffffff | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | button.flex.items-center 156.0x32.0 bg #262626 r 8px | button.flex.items-center 156.0x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+
+Crops: `account-control-default.png`, `account-control-hover.png`, `account-control-focus-visible.png`.
+
+#### sidebar-toggle.light
+
+Sidebar collapse button. Chevron in the sidebar header; keeps a focus outline.
+
+Page: dashboard. Selector: `button.tt-sidebar-toggle`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 44 x 44 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 12px | = | = |
+| Background | transparent | #e5e5e5 @ 0.6 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | 2px solid #737373 offset 2px |
+| Font | ui-sans-serif 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #737373 | #171717 | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Icon | 16 x 16, colour #737373 | 16 x 16, colour #171717 | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | button.tt-sidebar-toggle.flex 44.0x44.0 bg #e5e5e5 @ 0.6 r 12px | button.tt-sidebar-toggle.flex 44.0x44.0 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #737373 offset 2px |
+
+Crops: `sidebar-toggle.light-default.png`, `sidebar-toggle.light-hover.png`, `sidebar-toggle.light-focus-visible.png`.
+
+#### account-control.light
+
+Account control (signed out). Top of the sidebar: the app mark and "Sign in", where a signed-in account shows its avatar. Measured only; never pressed.
+
+Page: dashboard. Selector: `.tt-sidebar-account-control`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 156 x 32 | = | = |
+| Padding | 6px 8px | = | = |
+| Gap | 8px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | #e5e5e5 @ 0.6 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | ui-sans-serif 13px/19.5px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #404040 | #0a0a0a | = |
+| Text node | span.truncate.flex-1: ui-sans-serif 13px/19.5px 500, #404040 | span.truncate.flex-1: ui-sans-serif 13px/19.5px 500, #0a0a0a | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | button.flex.items-center 156.0x32.0 bg #e5e5e5 @ 0.6 r 8px | button.flex.items-center 156.0x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+
+Crops: `account-control.light-default.png`, `account-control.light-hover.png`, `account-control.light-focus-visible.png`.
 
 ### Buttons and segmented controls
 
@@ -533,29 +639,28 @@ Crops: `share-button-default.png`, `share-button-hover.png`, `share-button-focus
 
 #### primary-button
 
-Primary button. Solid near-black in light, near-white in dark. Measured, never pressed.
+Primary button. "Download Mac App": solid near-black in light, near-white in dark. Measured, never pressed.
 
-Page: dashboard. Selector: `button "Open in Mac app"`. States: default, hover, focus-visible, pressed.
+Page: widgets. Selector: `a "Download Mac App"`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 121.02 x 28 | 124.65 x 28.84 | = | = |
-| Padding | 6px 12px | = | = | = |
-| Gap | 6px | = | = | = |
+| Size (w x h) | 183.42 x 40 | = | = | = |
+| Padding | 0px 16px | = | = | = |
+| Gap | 8px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #fafafa | = | = | = |
-| Box shadow | none | = | = | = |
+| Radius | 12px | = | = | = |
+| Background | #ffffff | #e5e5e5 | = | #e5e5e5 |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | = |
 | Outline | none | = | = | = |
-| Font | ui-sans-serif 12px/16px 500 | = | = | = |
+| Font | OpenAI Sans 14px/20px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #171717 | = | = | = |
-| Transition | opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Colour | #0a0a0a | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.inline-flex.items-center 121.0x28.0 bg #fafafa r 8px | button.inline-flex.items-center 124.6x28.8 bg #fafafa r 8px | = | = |
+| Icon | 16 x 16, colour #0a0a0a | = | = | = |
+| Painted layers | a.inline-flex.h-10 183.4x40.0 bg #ffffff r 12px | a.inline-flex.h-10 183.4x40.0 bg #e5e5e5 r 12px | a.inline-flex.h-10 183.4x40.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | a.inline-flex.h-10 183.4x40.0 bg #e5e5e5 r 12px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Transform | - | matrix(1.03, 0, 0, 1.03, 0, 0) | = | = |
-| Opacity | - | 0.9 | = | 0.9 |
 
 Crops: `primary-button-default.png`, `primary-button-hover.png`, `primary-button-focus-visible.png`, `primary-button-pressed.png`.
 
@@ -677,7 +782,7 @@ Page: settings. Selector: `button "Full"`. States: default, hover, focus-visible
 | Border | none | = | = |
 | Radius | 8px | = | = |
 | Background | transparent | = | = |
-| Box shadow | none | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | Outline | none | = | = |
 | Font | OpenAI Sans 12px/16px 500 | = | = |
 | Letter spacing | normal | = | = |
@@ -687,6 +792,7 @@ Page: settings. Selector: `button "Full"`. States: default, hover, focus-visible
 | Cursor | pointer | = | = |
 | Ancestor paint | 1 up div.inline-flex.items-center bg #171717 | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | = | button.inline-flex.items-center 44.6x28.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 
 Crops: `segment-default.png`, `segment-hover.png`, `segment-focus-visible.png`.
 
@@ -795,29 +901,28 @@ Crops: `share-button.light-default.png`, `share-button.light-hover.png`, `share-
 
 #### primary-button.light
 
-Primary button. Solid near-black in light, near-white in dark. Measured, never pressed.
+Primary button. "Download Mac App": solid near-black in light, near-white in dark. Measured, never pressed.
 
-Page: dashboard. Selector: `button "Open in Mac app"`. States: default, hover, focus-visible, pressed.
+Page: widgets. Selector: `a "Download Mac App"`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 121.02 x 28 | 124.65 x 28.84 | = | = |
-| Padding | 6px 12px | = | = | = |
-| Gap | 6px | = | = | = |
+| Size (w x h) | 183.42 x 40 | = | = | = |
+| Padding | 0px 16px | = | = | = |
+| Gap | 8px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #171717 | = | = | = |
-| Box shadow | none | = | = | = |
+| Radius | 12px | = | = | = |
+| Background | #0a0a0a | #262626 | = | #262626 |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | = |
 | Outline | none | = | = | = |
-| Font | ui-sans-serif 12px/16px 500 | = | = | = |
+| Font | OpenAI Sans 14px/20px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Transition | opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.inline-flex.items-center 121.0x28.0 bg #171717 r 8px | button.inline-flex.items-center 124.6x28.8 bg #171717 r 8px | = | = |
+| Icon | 16 x 16, colour #ffffff | = | = | = |
+| Painted layers | a.inline-flex.h-10 183.4x40.0 bg #0a0a0a r 12px | a.inline-flex.h-10 183.4x40.0 bg #262626 r 12px | a.inline-flex.h-10 183.4x40.0 bg #0a0a0a r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | a.inline-flex.h-10 183.4x40.0 bg #262626 r 12px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Transform | - | matrix(1.03, 0, 0, 1.03, 0, 0) | = | = |
-| Opacity | - | 0.9 | = | 0.9 |
 
 Crops: `primary-button.light-default.png`, `primary-button.light-hover.png`, `primary-button.light-focus-visible.png`, `primary-button.light-pressed.png`.
 
@@ -939,7 +1044,7 @@ Page: settings. Selector: `button "Full"`. States: default, hover, focus-visible
 | Border | none | = | = |
 | Radius | 8px | = | = |
 | Background | transparent | = | = |
-| Box shadow | none | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | Outline | none | = | = |
 | Font | OpenAI Sans 12px/16px 500 | = | = |
 | Letter spacing | normal | = | = |
@@ -949,8 +1054,421 @@ Page: settings. Selector: `button "Full"`. States: default, hover, focus-visible
 | Cursor | pointer | = | = |
 | Ancestor paint | 1 up div.inline-flex.items-center bg #fafafa | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | = | button.inline-flex.items-center 44.6x28.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 
 Crops: `segment.light-default.png`, `segment.light-hover.png`, `segment.light-focus-visible.png`.
+
+#### retry-button
+
+Retry button. Measured, never pressed.
+
+Page: sessionsError. Selector: `button "Try again"`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 79.09 x 44 | = | = |
+| Padding | 0px 12px | = | = |
+| Border | 1px solid #262626 | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | #262626 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | OpenAI Sans 12px/16px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #e5e5e5 | #ffffff | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Painted layers | button.mt-4.inline-flex 79.1x44.0 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 8px | button.mt-4.inline-flex 79.1x44.0 bg #262626 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 8px | button.mt-4.inline-flex 79.1x44.0 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `retry-button-default.png`, `retry-button-hover.png`, `retry-button-focus-visible.png`.
+
+#### link
+
+Text link. "Display settings" on Limits: an in-app link set as quiet text.
+
+Page: limits. Selector: `main a[href^=/settings]`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 36 x 36 | = | = |
+| Padding | 0px | = | = |
+| Border | 1px solid #262626 | = | = |
+| Radius | 12px | = | = |
+| Background | transparent | #262626 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | OpenAI Sans 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #a3a3a3 | #ffffff | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Icon | 16 x 16, colour #a3a3a3 | 16 x 16, colour #ffffff | = |
+| Painted layers | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px | a.shrink-0.inline-flex 36.0x36.0 bg #262626 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `link-default.png`, `link-hover.png`, `link-focus-visible.png`.
+
+#### danger-button
+
+Danger button. The confirm action in the remove dialog. Hovered and focused only, never pressed.
+
+Page: skills. Selector: `last "Remove" button in the dialog`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 78.14 x 32 | = | = |
+| Padding | 0px 12px | = | = |
+| Border | 1px solid #000000 @ 0 | = | = |
+| Radius | 8px | = | = |
+| Background | #dc2626 | #ef4444 | #ef4444 |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | -apple-system 14px/20px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0a0a0a | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Painted layers | button.inline-flex.items-center 78.1x32.0 bg #dc2626 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #ef4444 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #ef4444 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Ancestor paint | 2 up div.relative.w-full bg #0a0a0a shadow #ffffff 0px 0px 0px 0px, #262626 0px 0px 0px 1px, #000000 @ 0.65 0px 20px 60px -10px | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `danger-button-default.png`, `danger-button-hover.png`, `danger-button-focus-visible.png`.
+
+#### cancel-button
+
+Cancel button.
+
+Page: skills. Selector: `"Cancel" in the dialog`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 69.59 x 32 | = |
+| Padding | 0px 12px | = |
+| Border | 1px solid #404040 | = |
+| Radius | 8px | = |
+| Background | #171717 | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 14px/20px 500 | = |
+| Letter spacing | normal | = |
+| Colour | #fafafa | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Cursor | pointer | = |
+| Painted layers | button.inline-flex.items-center 69.6x32.0 bg #171717 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 8px | = |
+| Ancestor paint | 2 up div.relative.w-full bg #0a0a0a shadow #ffffff 0px 0px 0px 0px, #262626 0px 0px 0px 1px, #000000 @ 0.65 0px 20px 60px -10px | = |
+| How | at rest | mouse hover |
+
+Crops: `cancel-button-default.png`, `cancel-button-hover.png`.
+
+#### switch-on
+
+Switch, on. Disabled here: the switches only work with the Mac app connected.
+
+Page: widgets. Selector: `[role=switch][aria-checked=true]`. States: disabled, hover.
+
+| Property | disabled | hover |
+|---|---|---|
+| Size (w x h) | 44 x 44 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 9999px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | OpenAI Sans 16px/24px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #fafafa | = |
+| Transition | none | = |
+| Opacity | 0.5 | = |
+| Cursor | not-allowed | = |
+| Painted layers | span.tt-toggle-track.relative 36.0x20.0 bg #10b981 r 9999px; span.tt-toggle-thumb.inline-block 14.0x14.0 bg #ffffff r 9999px | = |
+| How | at rest | mouse hover |
+
+Crops: `switch-on-disabled.png`, `switch-on-hover.png`.
+
+#### switch-off
+
+Switch, off.
+
+Page: pet. Selector: `[role=switch][aria-checked=false]`. States: disabled, hover.
+
+| Property | disabled | hover |
+|---|---|---|
+| Size (w x h) | 44 x 44 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 9999px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | OpenAI Sans 16px/24px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #fafafa | = |
+| Transition | none | = |
+| Opacity | 0.5 | = |
+| Cursor | not-allowed | = |
+| Painted layers | span.tt-toggle-track.relative 36.0x20.0 bg #404040 r 9999px; span.tt-toggle-thumb.inline-block 14.0x14.0 bg #ffffff r 9999px | = |
+| How | at rest | mouse hover |
+
+Crops: `switch-off-disabled.png`, `switch-off-hover.png`.
+
+#### button-disabled
+
+Button, disabled. "Add" before a pet URL is typed.
+
+Page: pet. Selector: `button[type=submit][disabled]`. States: disabled.
+
+| Property | disabled |
+|---|---|
+| Size (w x h) | 51.55 x 36 |
+| Padding | 0px 14px |
+| Gap | 6px |
+| Border | none |
+| Radius | 12px |
+| Background | #262626 |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 12px/16px 600 |
+| Letter spacing | normal |
+| Colour | #737373 |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| Cursor | default |
+| Painted layers | button.flex.h-9 51.5x36.0 bg #262626 r 12px |
+| How | at rest |
+
+Crops: `button-disabled-disabled.png`.
+
+#### cloud-button
+
+Cloud page button. First button on the signed-out Cloud page; the Cloud page draws focus outlines. Never pressed.
+
+Page: cloud. Selector: `first button in .tt-cloud-theme`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 418 x 44 | = | = |
+| Padding | 0px 16px | = | = |
+| Border | 1px solid #404040 | 1px solid #d4d4d4 | = |
+| Radius | 8px | = | = |
+| Background | #171717 | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | 2px solid #f5f5f5 offset 2px |
+| Font | OpenAI Sans 14px/20px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #fafafa | #f5f5f5 | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Painted layers | a.inline-flex.items-center 418.0x44.0 bg #171717 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 8px | a.inline-flex.items-center 418.0x44.0 bg #171717 border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 8px | a.inline-flex.items-center 418.0x44.0 bg #171717 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #f5f5f5 offset 2px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `cloud-button-default.png`, `cloud-button-hover.png`, `cloud-button-focus-visible.png`.
+
+#### retry-button.light
+
+Retry button. Measured, never pressed.
+
+Page: sessionsError. Selector: `button "Try again"`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 79.09 x 44 | = | = |
+| Padding | 0px 12px | = | = |
+| Border | 1px solid #e5e5e5 | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | #f5f5f5 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | OpenAI Sans 12px/16px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #404040 | #0a0a0a | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Painted layers | button.mt-4.inline-flex 79.1x44.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 8px | button.mt-4.inline-flex 79.1x44.0 bg #f5f5f5 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 8px | button.mt-4.inline-flex 79.1x44.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `retry-button.light-default.png`, `retry-button.light-hover.png`, `retry-button.light-focus-visible.png`.
+
+#### link.light
+
+Text link. "Display settings" on Limits: an in-app link set as quiet text.
+
+Page: limits. Selector: `main a[href^=/settings]`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 36 x 36 | = | = |
+| Padding | 0px | = | = |
+| Border | 1px solid #e5e5e5 | = | = |
+| Radius | 12px | = | = |
+| Background | transparent | #f5f5f5 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | OpenAI Sans 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #525252 | #0a0a0a | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Icon | 16 x 16, colour #525252 | 16 x 16, colour #0a0a0a | = |
+| Painted layers | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px | a.shrink-0.inline-flex 36.0x36.0 bg #f5f5f5 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `link.light-default.png`, `link.light-hover.png`, `link.light-focus-visible.png`.
+
+#### danger-button.light
+
+Danger button. The confirm action in the remove dialog. Hovered and focused only, never pressed.
+
+Page: skills. Selector: `last "Remove" button in the dialog`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 78.14 x 32 | = | = |
+| Padding | 0px 12px | = | = |
+| Border | 1px solid #000000 @ 0 | = | = |
+| Radius | 8px | = | = |
+| Background | #dc2626 | #b91c1c | #b91c1c |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | -apple-system 14px/20px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #ffffff | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Painted layers | button.inline-flex.items-center 78.1x32.0 bg #dc2626 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #b91c1c border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #b91c1c border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Ancestor paint | 2 up div.relative.w-full bg #ffffff shadow #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0.25 0px 20px 60px -20px | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `danger-button.light-default.png`, `danger-button.light-hover.png`, `danger-button.light-focus-visible.png`.
+
+#### cancel-button.light
+
+Cancel button.
+
+Page: skills. Selector: `"Cancel" in the dialog`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 69.59 x 32 | = |
+| Padding | 0px 12px | = |
+| Border | 1px solid #d4d4d4 | 1px solid #059669 |
+| Radius | 8px | = |
+| Background | #fafafa | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 14px/20px 500 | = |
+| Letter spacing | normal | = |
+| Colour | #0a0a0a | #059669 |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Cursor | pointer | = |
+| Painted layers | button.inline-flex.items-center 69.6x32.0 bg #fafafa border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 8px | button.inline-flex.items-center 69.6x32.0 bg #fafafa border T:1px solid #059669 / R:1px solid #059669 / B:1px solid #059669 / L:1px solid #059669 r 8px |
+| Ancestor paint | 2 up div.relative.w-full bg #ffffff shadow #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0.25 0px 20px 60px -20px | = |
+| How | at rest | mouse hover |
+
+Crops: `cancel-button.light-default.png`, `cancel-button.light-hover.png`.
+
+#### switch-on.light
+
+Switch, on. Disabled here: the switches only work with the Mac app connected.
+
+Page: widgets. Selector: `[role=switch][aria-checked=true]`. States: disabled, hover.
+
+| Property | disabled | hover |
+|---|---|---|
+| Size (w x h) | 44 x 44 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 9999px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | OpenAI Sans 16px/24px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #0a0a0a | = |
+| Transition | none | = |
+| Opacity | 0.5 | = |
+| Cursor | not-allowed | = |
+| Painted layers | span.tt-toggle-track.relative 36.0x20.0 bg #10b981 r 9999px; span.tt-toggle-thumb.inline-block 14.0x14.0 bg #ffffff r 9999px | = |
+| How | at rest | mouse hover |
+
+Crops: `switch-on.light-disabled.png`, `switch-on.light-hover.png`.
+
+#### switch-off.light
+
+Switch, off.
+
+Page: pet. Selector: `[role=switch][aria-checked=false]`. States: disabled, hover.
+
+| Property | disabled | hover |
+|---|---|---|
+| Size (w x h) | 44 x 44 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 9999px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | OpenAI Sans 16px/24px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #0a0a0a | = |
+| Transition | none | = |
+| Opacity | 0.5 | = |
+| Cursor | not-allowed | = |
+| Painted layers | span.tt-toggle-track.relative 36.0x20.0 bg #d4d4d4 r 9999px; span.tt-toggle-thumb.inline-block 14.0x14.0 bg #ffffff r 9999px | = |
+| How | at rest | mouse hover |
+
+Crops: `switch-off.light-disabled.png`, `switch-off.light-hover.png`.
+
+#### button-disabled.light
+
+Button, disabled. "Add" before a pet URL is typed.
+
+Page: pet. Selector: `button[type=submit][disabled]`. States: disabled.
+
+| Property | disabled |
+|---|---|
+| Size (w x h) | 51.55 x 36 |
+| Padding | 0px 14px |
+| Gap | 6px |
+| Border | none |
+| Radius | 12px |
+| Background | #e5e5e5 |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 12px/16px 600 |
+| Letter spacing | normal |
+| Colour | #a3a3a3 |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| Cursor | default |
+| Painted layers | button.flex.h-9 51.5x36.0 bg #e5e5e5 r 12px |
+| How | at rest |
+
+Crops: `button-disabled.light-disabled.png`.
+
+#### cloud-button.light
+
+Cloud page button. First button on the signed-out Cloud page; the Cloud page draws focus outlines. Never pressed.
+
+Page: cloud. Selector: `first button in .tt-cloud-theme`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 418 x 44 | = | = |
+| Padding | 0px 16px | = | = |
+| Border | 1px solid #d4d4d4 | 1px solid #525252 | = |
+| Radius | 8px | = | = |
+| Background | #fafafa | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | 2px solid #171717 offset 2px |
+| Font | OpenAI Sans 14px/20px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0a0a0a | #171717 | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Painted layers | a.inline-flex.items-center 418.0x44.0 bg #fafafa border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 8px | a.inline-flex.items-center 418.0x44.0 bg #fafafa border T:1px solid #525252 / R:1px solid #525252 / B:1px solid #525252 / L:1px solid #525252 r 8px | a.inline-flex.items-center 418.0x44.0 bg #fafafa border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #171717 offset 2px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `cloud-button.light-default.png`, `cloud-button.light-hover.png`, `cloud-button.light-focus-visible.png`.
 
 ### Tokens page
 
@@ -997,7 +1515,7 @@ Page: dashboard. Selector: `largest text in main`. States: default.
 | Colour | #fafafa |
 | Text node | span: ui-sans-serif 72px/72px 700, #fafafa, ls -1.8px |
 | Transition | none |
-| Painted layers | span 133.1x0.0 image linear-gradient(#0a0a0a @ 0.98, #0a0a0a @ 0); span 133.1x0.0 image linear-gradient(to top, #0a0a0a @ 0.98, #0a0a0a @ 0); div.mx-auto.h-[58px] 0.0x0.0 bg #262626 r 16px |
+| Painted layers | span 187.0x0.0 image linear-gradient(#0a0a0a @ 0.98, #0a0a0a @ 0); span 187.0x0.0 image linear-gradient(to top, #0a0a0a @ 0.98, #0a0a0a @ 0); div.mx-auto.h-[58px] 0.0x0.0 bg #262626 r 16px |
 | How | at rest |
 
 Crops: `hero-metric-default.png`.
@@ -1010,7 +1528,7 @@ Page: dashboard. Selector: `text matching $n.nn`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 133.09 x 28 |
+| Size (w x h) | 131.17 x 28 |
 | Padding | 0px |
 | Gap | 6px |
 | Border | none |
@@ -1184,27 +1702,27 @@ Crops: `heatmap-cell-empty-default.png`.
 
 Hero cost button. The cost under the hero number is a button that opens the cost breakdown.
 
-Page: dashboard. Selector: `button[aria-label="View cost breakdown"]`. States: default, hover, focus-visible.
+Page: dashboard. Selector: `button[aria-label="View cost breakdown"]`. States: default, hover, focus-visible, pressed.
 
-| Property | default | hover | focus-visible |
-|---|---|---|---|
-| Size (w x h) | 133.09 x 28 | = | = |
-| Padding | 0px | = | = |
-| Gap | 6px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | ui-sans-serif 20px/28px 700 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #059669 | #10b981 | = |
-| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
-| Cursor | pointer | = | = |
-| Icon | 16 x 16, colour #059669 | 16 x 16, colour #10b981 | = |
-| How | at rest | mouse hover | Shift+Tab, Tab |
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 131.17 x 28 | = | = | = |
+| Padding | 0px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | ui-sans-serif 20px/28px 700 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #059669 | #10b981 | = | #10b981 |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #059669 | 16 x 16, colour #10b981 | = | 16 x 16, colour #10b981 |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `cost-button-default.png`, `cost-button-hover.png`, `cost-button-focus-visible.png`.
+Crops: `cost-button-default.png`, `cost-button-hover.png`, `cost-button-focus-visible.png`, `cost-button-pressed.png`.
 
 #### hero-label.light
 
@@ -1249,7 +1767,7 @@ Page: dashboard. Selector: `largest text in main`. States: default.
 | Colour | #0a0a0a |
 | Text node | span: ui-sans-serif 72px/72px 700, #0a0a0a, ls -1.8px |
 | Transition | none |
-| Painted layers | span 133.1x8.0 image linear-gradient(#ffffff @ 0.96, #ffffff @ 0); span 133.1x8.0 image linear-gradient(to top, #ffffff @ 0.96, #ffffff @ 0); div.mx-auto.h-[58px] 0.0x0.0 bg #f5f5f5 r 16px |
+| Painted layers | span 187.0x8.0 image linear-gradient(#ffffff @ 0.96, #ffffff @ 0); span 187.0x8.0 image linear-gradient(to top, #ffffff @ 0.96, #ffffff @ 0); div.mx-auto.h-[58px] 0.0x0.0 bg #f5f5f5 r 16px |
 | How | at rest |
 
 Crops: `hero-metric.light-default.png`.
@@ -1262,7 +1780,7 @@ Page: dashboard. Selector: `text matching $n.nn`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 133.98 x 28 |
+| Size (w x h) | 131.17 x 28 |
 | Padding | 0px |
 | Gap | 6px |
 | Border | none |
@@ -1436,27 +1954,27 @@ Crops: `heatmap-cell-empty.light-default.png`.
 
 Hero cost button. The cost under the hero number is a button that opens the cost breakdown.
 
-Page: dashboard. Selector: `button[aria-label="View cost breakdown"]`. States: default, hover, focus-visible.
+Page: dashboard. Selector: `button[aria-label="View cost breakdown"]`. States: default, hover, focus-visible, pressed.
 
-| Property | default | hover | focus-visible |
-|---|---|---|---|
-| Size (w x h) | 133.98 x 28 | = | = |
-| Padding | 0px | = | = |
-| Gap | 6px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | ui-sans-serif 20px/28px 700 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #059669 | #047857 | = |
-| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
-| Cursor | pointer | = | = |
-| Icon | 16 x 16, colour #059669 | 16 x 16, colour #047857 | = |
-| How | at rest | mouse hover | Shift+Tab, Tab |
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 131.17 x 28 | = | = | = |
+| Padding | 0px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | ui-sans-serif 20px/28px 700 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #059669 | #047857 | = | #047857 |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #059669 | 16 x 16, colour #047857 | = | 16 x 16, colour #047857 |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `cost-button.light-default.png`, `cost-button.light-hover.png`, `cost-button.light-focus-visible.png`.
+Crops: `cost-button.light-default.png`, `cost-button.light-hover.png`, `cost-button.light-focus-visible.png`, `cost-button.light-pressed.png`.
 
 #### card
 
@@ -1507,218 +2025,6 @@ Page: dashboard. Selector: `card around "Activity heatmap"`. States: default.
 | How | at rest |
 
 Crops: `card.light-default.png`.
-
-### Badges, tooltips and status
-
-#### beta-badge
-
-Badge.
-
-Page: dashboard. Selector: `leaf "BETA"`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 31.57 x 14.4 |
-| Padding | 2px 6px |
-| Border | none |
-| Radius | 4px |
-| Background | #262626 @ 0.8 |
-| Box shadow | none |
-| Outline | none |
-| Font | ui-sans-serif 8px/12px 600 |
-| Letter spacing | 0.4px |
-| Colour | #a3a3a3 |
-| Transition | none |
-| Transform | matrix(0.9, 0, 0, 0.9, 0, 0) |
-| Painted layers | span.px-1.5.py-0.5 31.6x14.4 bg #262626 @ 0.8 r 4px |
-| How | at rest |
-
-Crops: `beta-badge-default.png`.
-
-#### dialog
-
-Dialog (cost breakdown). Opened by the hero cost button, closed with Escape.
-
-Page: dashboard. Selector: `[role=dialog]`. States: open.
-
-| Property | open |
-|---|---|
-| Size (w x h) | 460 x 868 |
-| Padding | 0px |
-| Border | none |
-| Radius | 16px |
-| Background | #0a0a0a |
-| Box shadow | #ffffff 0px 0px 0px 0px, #262626 0px 0px 0px 1px, #000000 @ 0.65 0px 20px 60px -10px |
-| Outline | none |
-| Font | -apple-system 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #fafafa |
-| Text node | p.text-label.uppercase: -apple-system 11px/14.3px 600, #a3a3a3, ls 1.32px |
-| Transition | opacity, transform 0.22s, 0.26s cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1) delay 0s, 0s |
-| Transform | matrix(1, 0, 0, 1, 0, 0) |
-| Icon | 16 x 16, colour #a3a3a3 |
-| Painted layers | div.cost-modal-popup.relative 460.0x868.0 bg #0a0a0a r 16px shadow #ffffff 0px 0px 0px 0px, #262626 0px 0px 0px 1px, #000000 @ 0.65 0px 20px 60px -10px; div.flex.items-center 436.0x31.3 border B:1px solid #262626 |
-| How | at rest |
-
-Crops: `dialog-open.png`.
-
-#### status-badge
-
-Status badge. STALE / RE-AUTH pill with a coloured dot.
-
-Page: limits. Selector: `pill reading STALE`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 101.11 x 19.5 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | OpenAI Sans 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #fafafa |
-| Text node | span.inline-flex.items-center: OpenAI Sans 9px/13.5px 600, #a3a3a3, ls 0.45px |
-| Transition | none |
-| Cursor | help |
-| Painted layers | span.inline-flex.items-center 101.1x19.5 bg #262626 border T:1px solid #404040 @ 0.6 / R:1px solid #404040 @ 0.6 / B:1px solid #404040 @ 0.6 / L:1px solid #404040 @ 0.6 r 9999px; span.h-1.5.w-1.5 6.0x6.0 bg #f59e0b r 9999px; span.pointer-events-none.absolute 182.4x56.0 bg #262626 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px; span.absolute.left-1/2 7.6x7.6 border T:4px solid #262626 / R:4px solid #000000 @ 0 / B:4px solid #000000 @ 0 / L:4px solid #000000 @ 0 |
-| How | at rest |
-
-Crops: `status-badge-default.png`.
-
-#### status-row
-
-Service status row.
-
-Page: status. Selector: `row around "Claude"`. States: default, hover.
-
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 544 x 130 | = |
-| Padding | 20px | = |
-| Border | 1px solid #262626 | 1px solid #404040 |
-| Radius | 16px | = |
-| Background | #171717 | #262626 @ 0.6 |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | OpenAI Sans 16px/24px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #fafafa | = |
-| Text node | span.font-medium.text-sm: OpenAI Sans 16px/24px 500, #fafafa | = |
-| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = |
-| Cursor | pointer | = |
-| Icon | 16 x 16, colour #a3a3a3 | 16 x 16, colour #ffffff |
-| Painted layers | a.group.block 544.0x130.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px; span.absolute.inline-flex 16.0x16.0 bg #eab308 r 9999px; span.relative.inline-flex 8.0x8.0 bg #eab308 r 9999px | a.group.block 544.0x130.0 bg #262626 @ 0.6 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 16px; span.absolute.inline-flex 16.0x16.0 bg #eab308 r 9999px; span.relative.inline-flex 8.0x8.0 bg #eab308 r 9999px |
-| How | at rest | mouse hover |
-
-Crops: `status-row-default.png`, `status-row-hover.png`.
-
-#### beta-badge.light
-
-Badge.
-
-Page: dashboard. Selector: `leaf "BETA"`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 31.57 x 14.4 |
-| Padding | 2px 6px |
-| Border | none |
-| Radius | 4px |
-| Background | #f5f5f5 |
-| Box shadow | none |
-| Outline | none |
-| Font | ui-sans-serif 8px/12px 600 |
-| Letter spacing | 0.4px |
-| Colour | #737373 |
-| Transition | none |
-| Transform | matrix(0.9, 0, 0, 0.9, 0, 0) |
-| Painted layers | span.px-1.5.py-0.5 31.6x14.4 bg #f5f5f5 r 4px |
-| How | at rest |
-
-Crops: `beta-badge.light-default.png`.
-
-#### dialog.light
-
-Dialog (cost breakdown). Opened by the hero cost button, closed with Escape.
-
-Page: dashboard. Selector: `[role=dialog]`. States: open.
-
-| Property | open |
-|---|---|
-| Size (w x h) | 460 x 868 |
-| Padding | 0px |
-| Border | none |
-| Radius | 16px |
-| Background | #ffffff |
-| Box shadow | #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0.25 0px 20px 60px -20px |
-| Outline | none |
-| Font | -apple-system 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #0a0a0a |
-| Text node | p.text-label.uppercase: -apple-system 11px/14.3px 600, #737373, ls 1.32px |
-| Transition | opacity, transform 0.22s, 0.26s cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1) delay 0s, 0s |
-| Transform | matrix(1, 0, 0, 1, 0, 0) |
-| Icon | 16 x 16, colour #737373 |
-| Painted layers | div.cost-modal-popup.relative 460.0x868.0 bg #ffffff r 16px shadow #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0.25 0px 20px 60px -20px; div.flex.items-center 436.0x31.3 border B:1px solid #e5e5e5 |
-| How | at rest |
-
-Crops: `dialog.light-open.png`.
-
-#### status-badge.light
-
-Status badge. STALE / RE-AUTH pill with a coloured dot.
-
-Page: limits. Selector: `pill reading STALE`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 101.11 x 19.5 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | OpenAI Sans 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #0a0a0a |
-| Text node | span.inline-flex.items-center: OpenAI Sans 9px/13.5px 600, #737373, ls 0.45px |
-| Transition | none |
-| Cursor | help |
-| Painted layers | span.inline-flex.items-center 101.1x19.5 bg #fafafa border T:1px solid #e5e5e5 @ 0.6 / R:1px solid #e5e5e5 @ 0.6 / B:1px solid #e5e5e5 @ 0.6 / L:1px solid #e5e5e5 @ 0.6 r 9999px; span.h-1.5.w-1.5 6.0x6.0 bg #f59e0b r 9999px; span.pointer-events-none.absolute 182.4x56.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px; span.absolute.left-1/2 7.6x7.6 border T:4px solid #171717 / R:4px solid #000000 @ 0 / B:4px solid #000000 @ 0 / L:4px solid #000000 @ 0 |
-| How | at rest |
-
-Crops: `status-badge.light-default.png`.
-
-#### status-row.light
-
-Service status row.
-
-Page: status. Selector: `row around "Claude"`. States: default, hover.
-
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 544 x 130 | = |
-| Padding | 20px | = |
-| Border | 1px solid #e5e5e5 | 1px solid #d4d4d4 |
-| Radius | 16px | = |
-| Background | #ffffff | #fafafa |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | OpenAI Sans 16px/24px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #0a0a0a | = |
-| Text node | span.font-medium.text-sm: OpenAI Sans 16px/24px 500, #0a0a0a | = |
-| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = |
-| Cursor | pointer | = |
-| Icon | 16 x 16, colour #a3a3a3 | 16 x 16, colour #0a0a0a |
-| Painted layers | a.group.block 544.0x130.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px; span.absolute.inline-flex 15.8x15.8 bg #eab308 r 9999px; span.relative.inline-flex 8.0x8.0 bg #eab308 r 9999px | a.group.block 544.0x130.0 bg #fafafa border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 16px; span.absolute.inline-flex 15.5x15.5 bg #eab308 r 9999px; span.relative.inline-flex 8.0x8.0 bg #eab308 r 9999px |
-| How | at rest | mouse hover |
-
-Crops: `status-row.light-default.png`, `status-row.light-hover.png`.
 
 ### Tables and lists
 
@@ -2220,6 +2526,732 @@ Page: sessions. Selector: `.sessions-row-title`. States: default, hover, focus-v
 
 Crops: `list-row-title.light-default.png`, `list-row-title.light-hover.png`, `list-row-title.light-focus-visible.png`.
 
+#### empty-state
+
+Empty state (no match). Sessions searched for text nothing matches: a title and a hint, no illustration.
+
+Page: sessions. Selector: `block around "No matching sessions"`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1104 x 174 |
+| Padding | 64px 0px |
+| Border | 1px dashed #262626 |
+| Radius | 16px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #fafafa |
+| Text node | p.text-sm.font-medium: OpenAI Sans 14px/20px 500, #ffffff |
+| Transition | none |
+| Painted layers | div.rounded-xl.border 1104.0x174.0 border T:1px dashed #262626 / R:1px dashed #262626 / B:1px dashed #262626 / L:1px dashed #262626 r 16px |
+| How | at rest |
+
+Crops: `empty-state-default.png`.
+
+#### loading-state
+
+Loading state. Sessions with its request held back: one quiet line where the list goes.
+
+Page: sessionsLoading. Selector: `block around "Loading sessions…"`. States: loading.
+
+| Property | loading |
+|---|---|
+| Size (w x h) | 1152 x 408 |
+| Padding | 0px 24px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #fafafa |
+| Text node | h1.mb-3.text-3xl: OpenAI Sans 36px/40px 600, #ffffff, ls -0.9px |
+| Transition | none |
+| Icon | 16 x 16, colour #a3a3a3 |
+| Painted layers | button.inline-flex.h-9 36.0x36.0 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px; input.w-full.bg-oai-white 400.0x36.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 8px; button.relative.inline-flex 168.0x36.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 6px; input 1.0x1.0 bg #3b3b3b; button.relative.inline-flex 168.0x36.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 6px; input 1.0x1.0 bg #3b3b3b |
+| How | at rest |
+
+Crops: `loading-state-loading.png`.
+
+#### error-state
+
+Error state. Sessions with its request aborted: a title, the reason and Try again.
+
+Page: sessionsError. Selector: `block around "Could not load sessions"`. States: error.
+
+| Property | error |
+|---|---|
+| Size (w x h) | 1104 x 234 |
+| Padding | 64px 0px |
+| Border | 1px dashed #ef4444 @ 0.4 |
+| Radius | 16px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #fafafa |
+| Text node | p.text-sm.font-medium: OpenAI Sans 14px/20px 500, #ffffff |
+| Transition | none |
+| Painted layers | div.rounded-xl.border 1104.0x234.0 border T:1px dashed #ef4444 @ 0.4 / R:1px dashed #ef4444 @ 0.4 / B:1px dashed #ef4444 @ 0.4 / L:1px dashed #ef4444 @ 0.4 r 16px; button.mt-4.inline-flex 79.1x44.0 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 8px |
+| How | at rest |
+
+Crops: `error-state-error.png`.
+
+#### empty-state.light
+
+Empty state (no match). Sessions searched for text nothing matches: a title and a hint, no illustration.
+
+Page: sessions. Selector: `block around "No matching sessions"`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1104 x 174 |
+| Padding | 64px 0px |
+| Border | 1px dashed #e5e5e5 |
+| Radius | 16px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Text node | p.text-sm.font-medium: OpenAI Sans 14px/20px 500, #0a0a0a |
+| Transition | none |
+| Painted layers | div.rounded-xl.border 1104.0x174.0 border T:1px dashed #e5e5e5 / R:1px dashed #e5e5e5 / B:1px dashed #e5e5e5 / L:1px dashed #e5e5e5 r 16px |
+| How | at rest |
+
+Crops: `empty-state.light-default.png`.
+
+#### loading-state.light
+
+Loading state. Sessions with its request held back: one quiet line where the list goes.
+
+Page: sessionsLoading. Selector: `block around "Loading sessions…"`. States: loading.
+
+| Property | loading |
+|---|---|
+| Size (w x h) | 1152 x 408 |
+| Padding | 0px 24px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Text node | h1.mb-3.text-3xl: OpenAI Sans 36px/40px 600, #0a0a0a, ls -0.9px |
+| Transition | none |
+| Icon | 16 x 16, colour #525252 |
+| Painted layers | button.inline-flex.h-9 36.0x36.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px; input.w-full.bg-oai-white 400.0x36.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 8px; button.relative.inline-flex 168.0x36.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 6px; input 1.0x1.0 bg #ffffff; button.relative.inline-flex 168.0x36.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 6px; input 1.0x1.0 bg #ffffff |
+| How | at rest |
+
+Crops: `loading-state.light-loading.png`.
+
+#### error-state.light
+
+Error state. Sessions with its request aborted: a title, the reason and Try again.
+
+Page: sessionsError. Selector: `block around "Could not load sessions"`. States: error.
+
+| Property | error |
+|---|---|
+| Size (w x h) | 1104 x 234 |
+| Padding | 64px 0px |
+| Border | 1px dashed #fca5a5 |
+| Radius | 16px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Text node | p.text-sm.font-medium: OpenAI Sans 14px/20px 500, #0a0a0a |
+| Transition | none |
+| Painted layers | div.rounded-xl.border 1104.0x234.0 border T:1px dashed #fca5a5 / R:1px dashed #fca5a5 / B:1px dashed #fca5a5 / L:1px dashed #fca5a5 r 16px; button.mt-4.inline-flex 79.1x44.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 8px |
+| How | at rest |
+
+Crops: `error-state.light-error.png`.
+
+### Badges, tooltips and status
+
+#### dialog
+
+Dialog (cost breakdown). Opened by the hero cost button, closed with Escape.
+
+Page: dashboard. Selector: `[role=dialog]`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 460 x 868 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #0a0a0a |
+| Box shadow | #ffffff 0px 0px 0px 0px, #262626 0px 0px 0px 1px, #000000 @ 0.65 0px 20px 60px -10px |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #fafafa |
+| Text node | p.text-label.uppercase: -apple-system 11px/14.3px 600, #a3a3a3, ls 1.32px |
+| Transition | opacity, transform 0.22s, 0.26s cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1) delay 0s, 0s |
+| Transform | matrix(1, 0, 0, 1, 0, 0) |
+| Icon | 16 x 16, colour #a3a3a3 |
+| Painted layers | div.cost-modal-popup.relative 460.0x868.0 bg #0a0a0a r 16px shadow #ffffff 0px 0px 0px 0px, #262626 0px 0px 0px 1px, #000000 @ 0.65 0px 20px 60px -10px; div.flex.items-center 436.0x31.3 border B:1px solid #262626 |
+| How | at rest |
+
+Crops: `dialog-open.png`.
+
+#### status-badge
+
+Status badge. CACHED / STALE / RE-AUTH pill beside a limit.
+
+Page: limits. Selector: `pill reading CACHED, STALE or RE-AUTH`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 46.33 x 19.5 |
+| Padding | 2px 6px |
+| Gap | 4px |
+| Border | 1px solid #404040 @ 0.6 |
+| Radius | 9999px |
+| Background | #262626 |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 9px/13.5px 600 |
+| Letter spacing | 0.45px |
+| Colour | #a3a3a3 |
+| Transition | none |
+| Cursor | help |
+| Painted layers | span.inline-flex.items-center 46.3x19.5 bg #262626 border T:1px solid #404040 @ 0.6 / R:1px solid #404040 @ 0.6 / B:1px solid #404040 @ 0.6 / L:1px solid #404040 @ 0.6 r 9999px; span.animate-ping.absolute 7.7x7.7 bg #34d399 r 9999px; span.relative.inline-flex 6.0x6.0 bg #10b981 r 9999px |
+| How | at rest |
+
+Crops: `status-badge-default.png`.
+
+#### status-row
+
+Service status row.
+
+Page: status. Selector: `row around "Claude"`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 544 x 106 | = |
+| Padding | 20px | = |
+| Border | 1px solid #262626 | 1px solid #404040 |
+| Radius | 16px | = |
+| Background | #171717 | #262626 @ 0.6 |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | OpenAI Sans 16px/24px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #fafafa | = |
+| Text node | span.font-medium.text-sm: OpenAI Sans 16px/24px 500, #fafafa | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Cursor | pointer | = |
+| Icon | 16 x 16, colour #a3a3a3 | 16 x 16, colour #ffffff |
+| Painted layers | a.group.block 544.0x106.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px; span.relative.inline-flex 8.0x8.0 bg #10b981 r 9999px | a.group.block 544.0x106.0 bg #262626 @ 0.6 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 16px; span.relative.inline-flex 8.0x8.0 bg #10b981 r 9999px |
+| How | at rest | mouse hover |
+
+Crops: `status-row-default.png`, `status-row-hover.png`.
+
+#### dialog.light
+
+Dialog (cost breakdown). Opened by the hero cost button, closed with Escape.
+
+Page: dashboard. Selector: `[role=dialog]`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 460 x 868 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #ffffff |
+| Box shadow | #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0.25 0px 20px 60px -20px |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Text node | p.text-label.uppercase: -apple-system 11px/14.3px 600, #737373, ls 1.32px |
+| Transition | opacity, transform 0.22s, 0.26s cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1) delay 0s, 0s |
+| Transform | matrix(1, 0, 0, 1, 0, 0) |
+| Icon | 16 x 16, colour #737373 |
+| Painted layers | div.cost-modal-popup.relative 460.0x868.0 bg #ffffff r 16px shadow #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0.25 0px 20px 60px -20px; div.flex.items-center 436.0x31.3 border B:1px solid #e5e5e5 |
+| How | at rest |
+
+Crops: `dialog.light-open.png`.
+
+#### status-badge.light
+
+Status badge. CACHED / STALE / RE-AUTH pill beside a limit.
+
+Page: limits. Selector: `pill reading CACHED, STALE or RE-AUTH`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 46.33 x 19.5 |
+| Padding | 2px 6px |
+| Gap | 4px |
+| Border | 1px solid #e5e5e5 @ 0.6 |
+| Radius | 9999px |
+| Background | #fafafa |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 9px/13.5px 600 |
+| Letter spacing | 0.45px |
+| Colour | #737373 |
+| Transition | none |
+| Cursor | help |
+| Painted layers | span.inline-flex.items-center 46.3x19.5 bg #fafafa border T:1px solid #e5e5e5 @ 0.6 / R:1px solid #e5e5e5 @ 0.6 / B:1px solid #e5e5e5 @ 0.6 / L:1px solid #e5e5e5 @ 0.6 r 9999px; span.animate-ping.absolute 7.7x7.7 bg #34d399 r 9999px; span.relative.inline-flex 6.0x6.0 bg #10b981 r 9999px |
+| How | at rest |
+
+Crops: `status-badge.light-default.png`.
+
+#### status-row.light
+
+Service status row.
+
+Page: status. Selector: `row around "Claude"`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 544 x 106 | = |
+| Padding | 20px | = |
+| Border | 1px solid #e5e5e5 | 1px solid #d4d4d4 |
+| Radius | 16px | = |
+| Background | #ffffff | #fafafa |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | OpenAI Sans 16px/24px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #0a0a0a | = |
+| Text node | span.font-medium.text-sm: OpenAI Sans 16px/24px 500, #0a0a0a | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Cursor | pointer | = |
+| Icon | 16 x 16, colour #a3a3a3 | 16 x 16, colour #0a0a0a |
+| Painted layers | a.group.block 544.0x106.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px; span.relative.inline-flex 8.0x8.0 bg #10b981 r 9999px | a.group.block 544.0x106.0 bg #fafafa border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 16px; span.relative.inline-flex 8.0x8.0 bg #10b981 r 9999px |
+| How | at rest | mouse hover |
+
+Crops: `status-row.light-default.png`, `status-row.light-hover.png`.
+
+#### tooltip
+
+Tooltip. Hovering a heatmap cell: the day, its tokens and the timezone.
+
+Page: dashboard. Selector: `node that appears on hovering the busiest heatmap cell`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 235.13 x 218.5 |
+| Padding | 14px |
+| Gap | 8px |
+| Border | 1px solid #262626 @ 0.5 |
+| Radius | 16px |
+| Background | #171717 @ 0.95 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px |
+| Backdrop filter | blur(12px) |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #fafafa |
+| Text node | span.text-[11px].font-semibold: -apple-system 11px/16.5px 600, #a3a3a3 |
+| Transition | all 0.1s ease |
+| Transform | matrix(1, 0, 0, 1, -117.562, 0) |
+| Painted layers | div.absolute.left-0 235.1x218.5 bg #171717 @ 0.95 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.flex.items-center 205.1x28.0 border B:1px solid #262626 @ 0.8; span.text-[10px].px-2 50.3x21.0 bg #34d399 @ 0.133 border T:1px solid #34d399 @ 0.267 / R:1px solid #34d399 @ 0.267 / B:1px solid #34d399 @ 0.267 / L:1px solid #34d399 @ 0.267 r 9999px; div.mt-1.5.border-t 205.1x119.5 border T:1px solid #262626 @ 0.6; div.w-full.h-1 199.1x4.0 bg #262626 @ 0.85 r 9999px; div.h-full.rounded-full 193.1x4.0 bg #34d399 r 9999px shadow #34d399 @ 0.333 0px 0px 4px 0px |
+| How | at rest |
+
+Crops: `tooltip-open.png`.
+
+#### dialog-scrim
+
+Dialog scrim. The full-window layer behind the open dialog.
+
+Page: dashboard. Selector: `fixed full-window layer behind [role=dialog]`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 1440 x 900 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | #000000 @ 0.6 |
+| Box shadow | none |
+| Backdrop filter | blur(4px) |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #fafafa |
+| Transition | opacity 0.2s ease-out |
+| Painted layers | div.cost-modal-backdrop 1440.0x900.0 bg #000000 @ 0.6 |
+| How | at rest |
+
+Crops: none.
+
+#### share-dialog
+
+Dialog (share card). Opened by Share; the image is drawn in the browser.
+
+Page: dashboard. Selector: `[role=dialog] after Share`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 1440 x 900 |
+| Padding | 24px |
+| Border | none |
+| Radius | 0px |
+| Background | #0a0a0a @ 0.72 |
+| Box shadow | none |
+| Outline | none |
+| Font | ui-sans-serif 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #fafafa |
+| Text node | div: Space Grotesk 20px/24px 500, #ffffff @ 0.45 |
+| Transition | none |
+| Icon | 22 x 22, colour #fafafa |
+| Painted layers | div.fixed.inset-0 1440.0x900.0 bg #0a0a0a @ 0.72; div 1080.0x1865.0 bg #0a0820; div 48.0x48.0 image linear-gradient(135deg, #4c1d95, #7c3aed) border T:2px solid #ffffff @ 0.15 / R:2px solid #ffffff @ 0.15 / B:2px solid #ffffff @ 0.15 / L:2px solid #ffffff @ 0.15 r 50%; div 984.0x1180.0 bg #140f32 @ 0.38 border T:1px solid #ffffff @ 0.05 / R:1px solid #ffffff @ 0.05 / B:1px solid #ffffff @ 0.05 / L:1px solid #ffffff @ 0.05 r 22px shadow #ffffff @ 0.1 0px 39px 56px -36px inset, #ffffff @ 0.06 0px 7px 11px -4px inset, #654395 @ 0.08 0px -82px 68px -64px inset, #d0abff @ 0.06 0px 98px 100px -48px inset, #9c92d7 @ 0.06 0px 4px 18px 0px inset, #e4deff @ 0.04 0px 1px 40px 0px inset; div 16.0x16.0 bg #ffffff @ 0.06 r 3px; div 16.0x16.0 bg #4a3d8f r 3px |
+| Ancestor paint | 2 up div.flex-1.min-h-0 bg #171717 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
+| How | at rest |
+
+Crops: `share-dialog-open.png`.
+
+#### toast
+
+Toast. Feedback after Copy on the share card.
+
+Page: dashboard. Selector: `node that appears after Copy`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 174.45 x 32 |
+| Padding | 8px 16px |
+| Border | none |
+| Radius | 9999px |
+| Background | #dc2626 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 4px 6px -1px, #000000 @ 0.1 0px 2px 4px -2px |
+| Outline | none |
+| Font | ui-sans-serif 12px/16px 500 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Transition | none |
+| Painted layers | div.px-4.py-2 174.5x32.0 bg #dc2626 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 4px 6px -1px, #000000 @ 0.1 0px 2px 4px -2px |
+| Ancestor paint | 2 up div.relative.w-full bg #0a0a0a shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px |
+| How | at rest |
+
+Crops: `toast-open.png`.
+
+#### confirm-dialog
+
+Confirmation dialog (destructive). Bulk Remove on Skills asks first. Cancelled with Escape.
+
+Page: skills. Selector: `[role=dialog] after bulk Remove`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 448 x 180 |
+| Padding | 24px |
+| Border | none |
+| Radius | 16px |
+| Background | #0a0a0a |
+| Box shadow | #ffffff 0px 0px 0px 0px, #262626 0px 0px 0px 1px, #000000 @ 0.65 0px 20px 60px -10px |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #fafafa |
+| Text node | h2.text-base.font-semibold: -apple-system 16px/24px 600, #ffffff |
+| Transition | opacity, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1) |
+| Painted layers | div.relative.w-full 448.0x180.0 bg #0a0a0a r 16px shadow #ffffff 0px 0px 0px 0px, #262626 0px 0px 0px 1px, #000000 @ 0.65 0px 20px 60px -10px; button.inline-flex.items-center 69.6x32.0 bg #171717 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; button.inline-flex.items-center 78.1x32.0 bg #dc2626 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
+| How | at rest |
+
+Crops: `confirm-dialog-open.png`.
+
+#### confirm-scrim
+
+Confirmation scrim.
+
+Page: skills. Selector: `fixed full-window layer behind the dialog`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 1440 x 900 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | #000000 @ 0.4 |
+| Box shadow | none |
+| Backdrop filter | blur(2px) |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #fafafa |
+| Transition | opacity 0.2s cubic-bezier(0, 0, 0.2, 1) |
+| Painted layers | div.fixed.inset-0 1440.0x900.0 bg #000000 @ 0.4 |
+| How | at rest |
+
+Crops: none.
+
+#### tooltip.light
+
+Tooltip. Hovering a heatmap cell: the day, its tokens and the timezone.
+
+Page: dashboard. Selector: `node that appears on hovering the busiest heatmap cell`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 235.13 x 218.5 |
+| Padding | 14px |
+| Gap | 8px |
+| Border | 1px solid #e5e5e5 @ 0.5 |
+| Radius | 16px |
+| Background | #ffffff @ 0.95 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px |
+| Backdrop filter | blur(12px) |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Text node | span.text-[11px].font-semibold: -apple-system 11px/16.5px 600, #737373 |
+| Transition | all 0.1s ease |
+| Transform | matrix(1, 0, 0, 1, -117.562, 0) |
+| Painted layers | div.absolute.left-0 235.1x218.5 bg #ffffff @ 0.95 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.flex.items-center 205.1x28.0 border B:1px solid #f5f5f5; span.text-[10px].px-2 50.3x21.0 bg #10b981 @ 0.133 border T:1px solid #10b981 @ 0.267 / R:1px solid #10b981 @ 0.267 / B:1px solid #10b981 @ 0.267 / L:1px solid #10b981 @ 0.267 r 9999px; div.mt-1.5.border-t 205.1x119.5 border T:1px solid #f5f5f5; div.w-full.h-1 199.1x4.0 bg #f5f5f5 r 9999px; div.h-full.rounded-full 193.1x4.0 bg #10b981 r 9999px shadow #10b981 @ 0.333 0px 0px 4px 0px |
+| How | at rest |
+
+Crops: `tooltip.light-open.png`.
+
+#### dialog-scrim.light
+
+Dialog scrim. The full-window layer behind the open dialog.
+
+Page: dashboard. Selector: `fixed full-window layer behind [role=dialog]`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 1440 x 900 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | #000000 @ 0.4 |
+| Box shadow | none |
+| Backdrop filter | blur(4px) |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Transition | opacity 0.2s ease-out |
+| Painted layers | div.cost-modal-backdrop 1440.0x900.0 bg #000000 @ 0.4 |
+| How | at rest |
+
+Crops: none.
+
+#### share-dialog.light
+
+Dialog (share card). Opened by Share; the image is drawn in the browser.
+
+Page: dashboard. Selector: `[role=dialog] after Share`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 1440 x 900 |
+| Padding | 24px |
+| Border | none |
+| Radius | 0px |
+| Background | #0a0a0a @ 0.72 |
+| Box shadow | none |
+| Outline | none |
+| Font | ui-sans-serif 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Text node | div: Space Grotesk 20px/24px 500, #ffffff @ 0.45 |
+| Transition | none |
+| Icon | 22 x 22, colour #0a0a0a |
+| Painted layers | div.fixed.inset-0 1440.0x900.0 bg #0a0a0a @ 0.72; div 1080.0x1865.0 bg #0a0820; div 48.0x48.0 image linear-gradient(135deg, #4c1d95, #7c3aed) border T:2px solid #ffffff @ 0.15 / R:2px solid #ffffff @ 0.15 / B:2px solid #ffffff @ 0.15 / L:2px solid #ffffff @ 0.15 r 50%; div 984.0x1180.0 bg #140f32 @ 0.38 border T:1px solid #ffffff @ 0.05 / R:1px solid #ffffff @ 0.05 / B:1px solid #ffffff @ 0.05 / L:1px solid #ffffff @ 0.05 r 22px shadow #ffffff @ 0.1 0px 39px 56px -36px inset, #ffffff @ 0.06 0px 7px 11px -4px inset, #654395 @ 0.08 0px -82px 68px -64px inset, #d0abff @ 0.06 0px 98px 100px -48px inset, #9c92d7 @ 0.06 0px 4px 18px 0px inset, #e4deff @ 0.04 0px 1px 40px 0px inset; div 16.0x16.0 bg #ffffff @ 0.06 r 3px; div 16.0x16.0 bg #4a3d8f r 3px |
+| Ancestor paint | 2 up div.flex-1.min-h-0 bg #fafafa shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
+| How | at rest |
+
+Crops: `share-dialog.light-open.png`.
+
+#### toast.light
+
+Toast. Feedback after Copy on the share card.
+
+Page: dashboard. Selector: `node that appears after Copy`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 174.45 x 32 |
+| Padding | 8px 16px |
+| Border | none |
+| Radius | 9999px |
+| Background | #dc2626 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 4px 6px -1px, #000000 @ 0.1 0px 2px 4px -2px |
+| Outline | none |
+| Font | ui-sans-serif 12px/16px 500 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Transition | none |
+| Painted layers | div.px-4.py-2 174.5x32.0 bg #dc2626 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 4px 6px -1px, #000000 @ 0.1 0px 2px 4px -2px |
+| Ancestor paint | 2 up div.relative.w-full bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px |
+| How | at rest |
+
+Crops: `toast.light-open.png`.
+
+#### confirm-dialog.light
+
+Confirmation dialog (destructive). Bulk Remove on Skills asks first. Cancelled with Escape.
+
+Page: skills. Selector: `[role=dialog] after bulk Remove`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 448 x 180 |
+| Padding | 24px |
+| Border | none |
+| Radius | 16px |
+| Background | #ffffff |
+| Box shadow | #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0.25 0px 20px 60px -20px |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Text node | h2.text-base.font-semibold: -apple-system 16px/24px 600, #0a0a0a |
+| Transition | opacity, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1) |
+| Painted layers | div.relative.w-full 448.0x180.0 bg #ffffff r 16px shadow #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0.25 0px 20px 60px -20px; button.inline-flex.items-center 69.6x32.0 bg #fafafa border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; button.inline-flex.items-center 78.1x32.0 bg #dc2626 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
+| How | at rest |
+
+Crops: `confirm-dialog.light-open.png`.
+
+#### confirm-scrim.light
+
+Confirmation scrim.
+
+Page: skills. Selector: `fixed full-window layer behind the dialog`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 1440 x 900 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | #000000 @ 0.4 |
+| Box shadow | none |
+| Backdrop filter | blur(2px) |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Transition | opacity 0.2s cubic-bezier(0, 0, 0.2, 1) |
+| Painted layers | div.fixed.inset-0 1440.0x900.0 bg #000000 @ 0.4 |
+| How | at rest |
+
+Crops: none.
+
+#### hint-tooltip
+
+Tooltip (hint). Hovering the CACHED pill on Limits.
+
+Page: limits. Selector: `absolute span that appears on hovering the pill`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 192 x 44 |
+| Padding | 6px 10px |
+| Border | 1px solid #404040 |
+| Radius | 8px |
+| Background | #262626 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px |
+| Outline | none |
+| Font | OpenAI Sans 10px/15px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Transition | all 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
+| Transform | matrix(1, 0, 0, 1, -96, 0) |
+| Cursor | help |
+| Painted layers | span.pointer-events-none.absolute 192.0x44.0 bg #262626 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px; span.absolute.left-1/2 8.0x8.0 border T:4px solid #262626 / R:4px solid #000000 @ 0 / B:4px solid #000000 @ 0 / L:4px solid #000000 @ 0 |
+| How | at rest |
+
+Crops: `hint-tooltip-open.png`.
+
+#### badge
+
+Badge. The neutral pill on a skill row ("Plugin").
+
+Page: skills. Selector: `leaf "Plugin"`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 43.45 x 19 |
+| Padding | 2px 6px |
+| Border | none |
+| Radius | 9999px |
+| Background | #262626 |
+| Box shadow | #ffffff 0px 0px 0px 0px, #404040 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none |
+| Font | OpenAI Sans 10px/15px 600 |
+| Letter spacing | normal |
+| Colour | #d4d4d4 |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | span.inline-flex.shrink-0 43.5x19.0 bg #262626 r 9999px shadow #ffffff 0px 0px 0px 0px, #404040 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest |
+
+Crops: `badge-default.png`.
+
+#### hint-tooltip.light
+
+Tooltip (hint). Hovering the CACHED pill on Limits.
+
+Page: limits. Selector: `absolute span that appears on hovering the pill`. States: open.
+
+| Property | open |
+|---|---|
+| Size (w x h) | 192 x 44 |
+| Padding | 6px 10px |
+| Border | 1px solid #262626 |
+| Radius | 8px |
+| Background | #171717 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px |
+| Outline | none |
+| Font | OpenAI Sans 10px/15px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Transition | all 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
+| Transform | matrix(1, 0, 0, 1, -96, 0) |
+| Cursor | help |
+| Painted layers | span.pointer-events-none.absolute 192.0x44.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px; span.absolute.left-1/2 8.0x8.0 border T:4px solid #171717 / R:4px solid #000000 @ 0 / B:4px solid #000000 @ 0 / L:4px solid #000000 @ 0 |
+| How | at rest |
+
+Crops: `hint-tooltip.light-open.png`.
+
+#### badge.light
+
+Badge. The neutral pill on a skill row ("Plugin").
+
+Page: skills. Selector: `leaf "Plugin"`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 43.45 x 19 |
+| Padding | 2px 6px |
+| Border | none |
+| Radius | 9999px |
+| Background | #f5f5f5 |
+| Box shadow | #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none |
+| Font | OpenAI Sans 10px/15px 600 |
+| Letter spacing | normal |
+| Colour | #525252 |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | span.inline-flex.shrink-0 43.5x19.0 bg #f5f5f5 r 9999px shadow #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest |
+
+Crops: `badge.light-default.png`.
+
 ### Page header
 
 #### page-title
@@ -2402,7 +3434,7 @@ Page: sessions. Selector: `[role=listbox]`. States: open.
 
 | Property | open |
 |---|---|
-| Size (w x h) | 158 x 112 |
+| Size (w x h) | 158 x 196 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -2415,7 +3447,7 @@ Page: sessions. Selector: `[role=listbox]`. States: open.
 | Text node | div: -apple-system 12px/16px 400, #ffffff |
 | Transition | none |
 | Icon | 12 x 12, colour #d4d4d4 |
-| Painted layers | div.flex.w-full 158.0x28.0 bg #262626 @ 0.7 r 12px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px |
+| Painted layers | div.flex.w-full 158.0x28.0 bg #262626 @ 0.7 r 12px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px |
 | Ancestor paint | 1 up div.max-h-[min(18rem,var(--available-height))].origin-[var(--transform-origin)] bg #171717 shadow #ffffff 0px 0px 0px 0px, #ffffff @ 0.05 0px 0px 0px 1px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px |
 | How | at rest |
 
@@ -2564,7 +3596,7 @@ Page: sessions. Selector: `[role=listbox]`. States: open.
 
 | Property | open |
 |---|---|
-| Size (w x h) | 158 x 112 |
+| Size (w x h) | 158 x 196 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -2577,7 +3609,7 @@ Page: sessions. Selector: `[role=listbox]`. States: open.
 | Text node | div: -apple-system 12px/16px 400, #0a0a0a |
 | Transition | none |
 | Icon | 12 x 12, colour #737373 |
-| Painted layers | div.flex.w-full 158.0x28.0 bg #f5f5f5 r 12px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px |
+| Painted layers | div.flex.w-full 158.0x28.0 bg #f5f5f5 r 12px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px; div.flex.w-full 158.0x28.0 r 12px outline 2px solid #000000 @ 0 offset 2px |
 | Ancestor paint | 1 up div.max-h-[min(18rem,var(--available-height))].origin-[var(--transform-origin)] bg #ffffff shadow #ffffff 0px 0px 0px 0px, #000000 @ 0.04 0px 0px 0px 1px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px |
 | How | at rest |
 
@@ -2640,6 +3672,265 @@ Page: sessions. Selector: `second option`. States: open, hover.
 
 Crops: `select-option.light-open.png`, `select-option.light-hover.png`.
 
+#### checkbox
+
+Checkbox.
+
+Page: skills. Selector: `first input[type=checkbox] on Skills`. States: default, hover, focus-visible, checked.
+
+| Property | default | hover | focus-visible | checked |
+|---|---|---|---|---|
+| Size (w x h) | 16 x 16 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | #171717 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | OpenAI Sans 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | default | = | = | = |
+| Placeholder | #ffffff, opacity 1 | = | = | = |
+| Painted layers | input.h-4.w-4 16.0x16.0 bg #171717 | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | at rest |
+
+Crops: `checkbox-default.png`, `checkbox-hover.png`, `checkbox-focus-visible.png`, `checkbox-checked.png`.
+
+#### select-disabled
+
+Select, disabled.
+
+Page: widgets. Selector: `button[role=combobox][disabled]`. States: disabled.
+
+| Property | disabled |
+|---|---|
+| Size (w x h) | 455 x 38 |
+| Padding | 8px 12px |
+| Gap | 8px |
+| Border | 1px solid #262626 |
+| Radius | 12px |
+| Background | #171717 |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 14px/20px 500 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | span.truncate: OpenAI Sans 14px/20px 500, #ffffff |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| Opacity | 0.5 |
+| Cursor | not-allowed |
+| Icon | 14 x 14, colour #a3a3a3 |
+| Painted layers | button.relative.inline-flex 455.0x38.0 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px |
+| How | at rest |
+
+Crops: `select-disabled-disabled.png`.
+
+#### checkbox.light
+
+Checkbox.
+
+Page: skills. Selector: `first input[type=checkbox] on Skills`. States: default, hover, focus-visible, checked.
+
+| Property | default | hover | focus-visible | checked |
+|---|---|---|---|---|
+| Size (w x h) | 16 x 16 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | OpenAI Sans 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #0a0a0a | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | default | = | = | = |
+| Placeholder | #0a0a0a, opacity 1 | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | at rest |
+
+Crops: `checkbox.light-default.png`, `checkbox.light-hover.png`, `checkbox.light-focus-visible.png`, `checkbox.light-checked.png`.
+
+#### select-disabled.light
+
+Select, disabled.
+
+Page: widgets. Selector: `button[role=combobox][disabled]`. States: disabled.
+
+| Property | disabled |
+|---|---|
+| Size (w x h) | 455 x 38 |
+| Padding | 8px 12px |
+| Gap | 8px |
+| Border | 1px solid #e5e5e5 |
+| Radius | 12px |
+| Background | #ffffff |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 14px/20px 500 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Text node | span.truncate: OpenAI Sans 14px/20px 500, #0a0a0a |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| Opacity | 0.5 |
+| Cursor | not-allowed |
+| Icon | 14 x 14, colour #737373 |
+| Painted layers | button.relative.inline-flex 455.0x38.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px |
+| How | at rest |
+
+Crops: `select-disabled.light-disabled.png`.
+
+#### text-field
+
+Text field. Settings, Network: proxy host. Focus changes the border only.
+
+Page: settings. Selector: `first text input in Network settings`. States: default, hover, focused.
+
+| Property | default | hover | focused |
+|---|---|---|---|
+| Size (w x h) | 176 x 34 | = | = |
+| Padding | 6px 10px | = | = |
+| Border | 1px solid #404040 | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | 2px solid #000000 @ 0 offset 2px | = | none |
+| Font | OpenAI Sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #ffffff | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | text | = | = |
+| Placeholder | #9ca3af, opacity 1 | = | = |
+| Painted layers | input.w-full.rounded-md 176.0x34.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 8px outline 2px solid #000000 @ 0 offset 2px | = | input.w-full.rounded-md 176.0x34.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | mouse hover | clicked into the field |
+
+Crops: `text-field-default.png`, `text-field-hover.png`, `text-field-focused.png`.
+
+#### text-field.light
+
+Text field. Settings, Network: proxy host. Focus changes the border only.
+
+Page: settings. Selector: `first text input in Network settings`. States: default, hover, focused.
+
+| Property | default | hover | focused |
+|---|---|---|---|
+| Size (w x h) | 176 x 34 | = | = |
+| Padding | 6px 10px | = | = |
+| Border | 1px solid #d4d4d4 | = | 1px solid #10b981 |
+| Radius | 8px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | 2px solid #000000 @ 0 offset 2px | = | none |
+| Font | OpenAI Sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #0a0a0a | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | text | = | = |
+| Placeholder | #9ca3af, opacity 1 | = | = |
+| Painted layers | input.w-full.rounded-md 176.0x34.0 border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 8px outline 2px solid #000000 @ 0 offset 2px | = | input.w-full.rounded-md 176.0x34.0 border T:1px solid #10b981 / R:1px solid #10b981 / B:1px solid #10b981 / L:1px solid #10b981 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | mouse hover | clicked into the field |
+
+Crops: `text-field.light-default.png`, `text-field.light-hover.png`, `text-field.light-focused.png`.
+
+#### field-error
+
+Field error message. Replaces the field hint when Test connection finds an invalid host.
+
+Page: settings. Selector: `leaf "Enter a host ..."`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 534 x 16 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 12px/16px 400 |
+| Letter spacing | normal |
+| Colour | #a3a3a3 |
+| Transition | none |
+| How | at rest |
+
+Crops: `field-error-default.png`.
+
+#### text-field-error
+
+Text field, invalid.
+
+Page: settings. Selector: `the same input holding an invalid host`. States: error.
+
+| Property | error |
+|---|---|
+| Size (w x h) | 176 x 34 |
+| Padding | 6px 10px |
+| Border | 1px solid #404040 |
+| Radius | 8px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | 2px solid #000000 @ 0 offset 2px |
+| Font | OpenAI Sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| Cursor | text |
+| Placeholder | #9ca3af, opacity 1 |
+| Painted layers | input.w-full.rounded-md 176.0x34.0 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 8px outline 2px solid #000000 @ 0 offset 2px |
+| How | at rest |
+
+Crops: `text-field-error-error.png`.
+
+#### field-error.light
+
+Field error message. Replaces the field hint when Test connection finds an invalid host.
+
+Page: settings. Selector: `leaf "Enter a host ..."`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 534 x 16 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 12px/16px 400 |
+| Letter spacing | normal |
+| Colour | #737373 |
+| Transition | none |
+| How | at rest |
+
+Crops: `field-error.light-default.png`.
+
+#### text-field-error.light
+
+Text field, invalid.
+
+Page: settings. Selector: `the same input holding an invalid host`. States: error.
+
+| Property | error |
+|---|---|
+| Size (w x h) | 176 x 34 |
+| Padding | 6px 10px |
+| Border | 1px solid #d4d4d4 |
+| Radius | 8px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | 2px solid #000000 @ 0 offset 2px |
+| Font | OpenAI Sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| Cursor | text |
+| Placeholder | #9ca3af, opacity 1 |
+| Painted layers | input.w-full.rounded-md 176.0x34.0 border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 8px outline 2px solid #000000 @ 0 offset 2px |
+| How | at rest |
+
+Crops: `text-field-error.light-error.png`.
+
 ### Limits
 
 #### limits-card
@@ -2650,7 +3941,7 @@ Page: limits. Selector: `card around the "Usage limits" title`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1104 x 2340.81 |
+| Size (w x h) | 1104 x 2417.69 |
 | Padding | 0px |
 | Border | 1px solid #262626 |
 | Radius | 16px |
@@ -2663,7 +3954,7 @@ Page: limits. Selector: `card around the "Usage limits" title`. States: default.
 | Text node | h3.text-sm.font-medium: OpenAI Sans 14px/20px 500, #d4d4d4, ls 0.35px |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | Icon | 14 x 14, colour #fafafa |
-| Painted layers | div.rounded-xl.border 1104.0x2340.8 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px; div.pointer-events-none.absolute 162.5x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 270.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #10b981 |
+| Painted layers | div.rounded-xl.border 1104.0x2417.7 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px; div.pointer-events-none.absolute 175.9x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: none.
@@ -2713,7 +4004,7 @@ Page: limits. Selector: `row around the first track`. States: default.
 | Text node | div.pointer-events-none.absolute: OpenAI Sans 10.5px/14.4375px 400, #e5e5e5 |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.pointer-events-none.absolute 162.5x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 270.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #10b981 |
+| Painted layers | div.pointer-events-none.absolute 175.9x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: `usage-row-default.png`.
@@ -2738,7 +4029,7 @@ Page: limits. Selector: `first track`. States: default.
 | Colour | #fafafa |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 270.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #10b981 |
+| Painted layers | div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: `usage-track-default.png`.
@@ -2751,7 +4042,7 @@ Page: limits. Selector: `its fill`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 269.98 x 6 |
+| Size (w x h) | 232.75 x 6 |
 | Padding | 0px |
 | Border | none |
 | Radius | 9999px |
@@ -2763,7 +4054,7 @@ Page: limits. Selector: `its fill`. States: default.
 | Colour | #fafafa |
 | Transition | width 0.5s cubic-bezier(0, 0, 0.2, 1) |
 | Cursor | pointer |
-| Painted layers | div.bg-emerald-500.rounded-full 270.0x6.0 bg #10b981 r 9999px |
+| Painted layers | div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px |
 | Ancestor paint | 1 up div.relative.flex-1 bg #404040 @ 0.5 |
 | How | at rest |
 
@@ -2803,7 +4094,7 @@ Page: limits. Selector: `card around the "Usage limits" title`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1104 x 2340.81 |
+| Size (w x h) | 1104 x 2417.69 |
 | Padding | 0px |
 | Border | 1px solid #e5e5e5 |
 | Radius | 16px |
@@ -2816,7 +4107,7 @@ Page: limits. Selector: `card around the "Usage limits" title`. States: default.
 | Text node | h3.text-sm.font-medium: OpenAI Sans 14px/20px 500, #737373, ls 0.35px |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | Icon | 14 x 14, colour #0a0a0a |
-| Painted layers | div.rounded-xl.border 1104.0x2340.8 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px; div.pointer-events-none.absolute 162.5x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 270.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #10b981 |
+| Painted layers | div.rounded-xl.border 1104.0x2417.7 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px; div.pointer-events-none.absolute 161.9x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #10b981 |
 | How | at rest |
 
 Crops: none.
@@ -2866,7 +4157,7 @@ Page: limits. Selector: `row around the first track`. States: default.
 | Text node | div.pointer-events-none.absolute: OpenAI Sans 10.5px/14.4375px 400, #404040 |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.pointer-events-none.absolute 162.5x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 270.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #10b981 |
+| Painted layers | div.pointer-events-none.absolute 161.9x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #10b981 |
 | How | at rest |
 
 Crops: `usage-row.light-default.png`.
@@ -2891,7 +4182,7 @@ Page: limits. Selector: `first track`. States: default.
 | Colour | #0a0a0a |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 270.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #10b981 |
+| Painted layers | div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #10b981 |
 | How | at rest |
 
 Crops: `usage-track.light-default.png`.
@@ -2904,7 +4195,7 @@ Page: limits. Selector: `its fill`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 269.98 x 6 |
+| Size (w x h) | 232.75 x 6 |
 | Padding | 0px |
 | Border | none |
 | Radius | 9999px |
@@ -2916,7 +4207,7 @@ Page: limits. Selector: `its fill`. States: default.
 | Colour | #0a0a0a |
 | Transition | width 0.5s cubic-bezier(0, 0, 0.2, 1) |
 | Cursor | pointer |
-| Painted layers | div.bg-emerald-500.rounded-full 270.0x6.0 bg #10b981 r 9999px |
+| Painted layers | div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px |
 | Ancestor paint | 1 up div.relative.flex-1 bg #f5f5f5 |
 | How | at rest |
 
@@ -3037,16 +4328,16 @@ Page: settings. Selector: `main h2`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 768 x 28 |
+| Size (w x h) | 726 x 20 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | OpenAI Sans 20px/28px 600 |
-| Letter spacing | -0.5px |
-| Colour | #ffffff |
+| Font | OpenAI Sans 14px/20px 500 |
+| Letter spacing | 0.35px |
+| Colour | #d4d4d4 |
 | Transition | none |
 | How | at rest |
 
@@ -3235,16 +4526,16 @@ Page: settings. Selector: `main h2`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 768 x 28 |
+| Size (w x h) | 726 x 20 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | OpenAI Sans 20px/28px 600 |
-| Letter spacing | -0.5px |
-| Colour | #0a0a0a |
+| Font | OpenAI Sans 14px/20px 500 |
+| Letter spacing | 0.35px |
+| Colour | #737373 |
 | Transition | none |
 | How | at rest |
 

@@ -55,7 +55,7 @@ secret. `make help` lists the other targets (`make check` validates
 | [chatgpt](systems/chatgpt) | The baseline chat UI: thread, composer, history | 2026-10-04 | light, dark | [README](systems/chatgpt/README.md) |
 | [claude](systems/claude) | A quiet chat shell, Artifacts, Projects | 2026-10-04 | light, dark | [README](systems/claude/README.md) |
 | [hevy](systems/hevy) | Native iOS workout logging, dense set table, one accent, iOS 26 glass chrome | 2026-10-10 | light, dark | [README](systems/hevy/README.md) |
-| [tokentracker](systems/tokentracker) | Local AI usage dashboard: borderless sidebar, rounded panel, hairline cards, one green accent | 2026-10-11 | light, dark | [README](systems/tokentracker/README.md) |
+| [tokentracker](systems/tokentracker) | Local AI usage dashboard: borderless sidebar, rounded panel, hairline cards, one green accent | 2026-10-17 | light, dark | [README](systems/tokentracker/README.md) |
 | [linear](systems/linear) | Dense, keyboard-first product UI, plus the marketing site | 2026-10-17 | dark, light | [README](systems/linear/README.md) |
 | [polaris](systems/polaris) | Admin and commerce UI from a published component library | 2026-09-25 | light (dark experimental) | [README](systems/polaris/README.md) |
 

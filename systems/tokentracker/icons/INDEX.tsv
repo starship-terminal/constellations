@@ -26,7 +26,6 @@ square-arrow-out-up-right.svg	square-arrow-out-up-right	3c239262	14x14	0 0 24 24
 bell-off.svg	bell-off	465e465e	16x16	0 0 24 24	stroke	limits	button lucide-bell-off	Enable predictive limit alerts
 download.svg	download	5185cfa4	16x16	0 0 24 24	stroke	widgets	a lucide-download	
 external-link.svg	external-link	56a981a8	16x16	0 0 24 24	stroke	service-status	a lucide-external-link	Open Claude status page / Open OpenAI / Codex status page / Open Cursor status page
-arrow-up-right.svg	arrow-up-right	73c93c1e	12x12	0 0 24 24	stroke	tokens	a lucide-arrow-up-right	
 sun.svg	sun	750668a3	14x14	0 0 24 24	stroke	settings	button lucide-sun	
 palette.svg	palette	93434e1d	16x16	0 0 24 24	fill	settings	button lucide-palette	
 languages.svg	languages	b810d101	14x14	0 0 24 24	stroke	settings	button lucide-languages	Language
