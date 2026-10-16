@@ -40,6 +40,10 @@ The values that decide whether a rebuilt course list and course page read as Cou
 
 The snapshots have no scripts, so anything that needs JavaScript is missing: every menu (app switcher, help, language, notifications, avatar, Explore mega menu, the course overflow "…" menu), the Coursera AI chat panel, opening or closing any accordion or disclosure (only the states captured are measured: Course Material open and closed, objectives shown and hidden, outline modules open and closed), "Show more" expansions, the language select list, calendar month paging, tooltips, the Save note dialog, video playback (the player is a poster frame; the control bar's show/hide is scripted) and the transcript highlight moving. CDS's keyboard focus ring is emulated as described above. The reading in the snapshot has no subheadings, lists, code or tables; their styles come from a probe block the script inserts into the CML viewer (marked as such under "Reading: body paragraph"), plus the authored CML rules listed there. Dark theme was not measured.
 
+## 2026-10-17 refresh
+
+A second pass copied seven more states from the same account with `snapshot.js` and measured them with `tools/capture/signed-in/refresh.mjs`: the course overflow menu and its tooltip on My Learning, the course review dialog, the share dialog, and Account settings (the colour theme select, the switches, a warning callout) in light and in the dark theme the learner chose in Appearance for the pass (set back to Light afterwards). Those copies hold the learner's current course list, so they stay outside the repository. Keyboard states were reached with real keys in the live tab before the copy, so the CDS focus classes in them are the product's own; their state is written `focus-visible (as captured)`. Nothing was rated, submitted, toggled or deleted. Their components are under "Menus, dialogs and settings" at the end, plus one state on the My Learning overflow button.
+
 ## Page shells and grid
 
 ### Page shell: course home (module page)
@@ -3396,24 +3400,24 @@ Authored state rules that match this element (9, first 6; the rest are in the JS
 
 Ghost medium icon button, 48x48 with a 24px blue dots icon.
 
-Key `ml-overflow-button`. Read from `__m.q("[data-e2e=dropdown-menu]", 0)` on my-learning.
+Key `ml-overflow-button`. Read from `__m.q("[data-e2e=dropdown-menu]", 0)` on my-learning; the 2026-10-17 copies `ml-overflow-tooltip` (tools/capture/signed-in/refresh.mjs).
 
-| Property | default | hover | focus-visible | focus-visible-cds | pressed |
-| --- | --- | --- | --- | --- | --- |
-| Size (w×h) | 48×48 | = | = | = | = |
-| Radius | 8px (border-radius-100) | = | = | = | = |
-| Background | transparent (no token) | #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) | = | #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) | #f9f5ff (callouts-background-secondary-weak, emphasis-quaternary-background-xweak, purple-25) |
-| Box shadow | transparent 0px 0px 0px 1px inset | = | = | = | = |
-| Outline | none | = | = | 1px solid transparent (no token) offset 2px | = |
-| Pseudo element |  | = | = | ::after inset -2px -2px -2px -2px, shadow #804ee4 (interactive-stroke-primary-focus, purple-600) 0px 0px 0px 1px, #f0f6ff (interactive-stroke-primary-focus-invert, emphasis-primary-background-xweak, blue-25) 0px 0px 0px 2px, radius 8px | = |
-| Painted layers | button.cds-113.cds-iconButton-medium 48.0x48.0 r 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset | button.cds-113.cds-iconButton-medium 48.0x48.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset | = | button.cds-113.cds-iconButton-medium 48.0x48.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px; button::after.cds-113.cds-iconButton-medium 52pxx52px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px | button.cds-113.cds-iconButton-medium 48.0x48.0 bg #f9f5ff (callouts-background-secondary-weak, emphasis-quaternary-background-xweak, purple-25) r 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset |
-| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | = | = | = | = |
-| Colour | #0056d2 (interactive-primary, feedback-informative, blue-800) | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) | = | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) | #3c0f8a (interactive-primary-pressed, interactive-primary-selected, purple-900) |
-| Cursor | pointer | = | = | = | = |
-| Icon | 24×24, fill none (no token), color #0056d2 (interactive-primary, feedback-informative, blue-800) | 24×24, fill none (no token), color #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) | = | 24×24, fill none (no token), color #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) | 24×24, fill none (no token), color #3c0f8a (interactive-primary-pressed, interactive-primary-selected, purple-900) |
-| Crop | [png](../components/crops/signed-in/ml-overflow-button-default.png) | [png](../components/crops/signed-in/ml-overflow-button-hover.png) | [png](../components/crops/signed-in/ml-overflow-button-focus-visible.png) | [png](../components/crops/signed-in/ml-overflow-button-focus-visible-cds.png) | [png](../components/crops/signed-in/ml-overflow-button-pressed.png) |
+| Property | default | hover | focus-visible | focus-visible-cds | pressed | focus-visible (as captured) |
+| --- | --- | --- | --- | --- | --- | --- |
+| Size (w×h) | 48×48 | = | = | = | = | = |
+| Radius | 8px (border-radius-100) | = | = | = | = | = |
+| Background | transparent (no token) | #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) | = | #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) | #f9f5ff (callouts-background-secondary-weak, emphasis-quaternary-background-xweak, purple-25) | #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) |
+| Box shadow | transparent 0px 0px 0px 1px inset | = | = | = | = | = |
+| Outline | none | = | = | 1px solid transparent (no token) offset 2px | = | 1px solid transparent (no token) offset 2px |
+| Pseudo element |  | = | = | ::after inset -2px -2px -2px -2px, shadow #804ee4 (interactive-stroke-primary-focus, purple-600) 0px 0px 0px 1px, #f0f6ff (interactive-stroke-primary-focus-invert, emphasis-primary-background-xweak, blue-25) 0px 0px 0px 2px, radius 8px | = | ::after inset -2px -2px -2px -2px, shadow #804ee4 (interactive-stroke-primary-focus, purple-600) 0px 0px 0px 1px, #f0f6ff (interactive-stroke-primary-focus-invert, emphasis-primary-background-xweak, blue-25) 0px 0px 0px 2px, radius 8px |
+| Painted layers | button.cds-113.cds-iconButton-medium 48.0x48.0 r 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset | button.cds-113.cds-iconButton-medium 48.0x48.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset | = | button.cds-113.cds-iconButton-medium 48.0x48.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px; button::after.cds-113.cds-iconButton-medium 52pxx52px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px | button.cds-113.cds-iconButton-medium 48.0x48.0 bg #f9f5ff (callouts-background-secondary-weak, emphasis-quaternary-background-xweak, purple-25) r 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset | button.cds-113.cds-iconButton-medium 48.0x48.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 8px shadow rgba(0, 0, 0, 0) 0px 0px 0px 1px inset outline 1px solid rgba(0, 0, 0, 0) offset 2px; button::after.cds-113.cds-iconButton-medium 52pxx52px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | = | = | = | = | = |
+| Colour | #0056d2 (interactive-primary, feedback-informative, blue-800) | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) | = | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) | #3c0f8a (interactive-primary-pressed, interactive-primary-selected, purple-900) | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
+| Cursor | pointer | = | = | = | = | = |
+| Icon | 24×24, fill none (no token), color #0056d2 (interactive-primary, feedback-informative, blue-800) | 24×24, fill none (no token), color #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) | = | 24×24, fill none (no token), color #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) | 24×24, fill none (no token), color #3c0f8a (interactive-primary-pressed, interactive-primary-selected, purple-900) | 24×24, fill none (no token), color #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
+| Crop | [png](../components/crops/signed-in/ml-overflow-button-default.png) | [png](../components/crops/signed-in/ml-overflow-button-hover.png) | [png](../components/crops/signed-in/ml-overflow-button-focus-visible.png) | [png](../components/crops/signed-in/ml-overflow-button-focus-visible-cds.png) | [png](../components/crops/signed-in/ml-overflow-button-pressed.png) | [png](../components/crops/signed-in/ml-overflow-button-focus-visible-as-captured.png) |
 
-How: hover: mouse hover; focus-visible: keyboard: focus(), Shift+Tab, Tab; focus-visible-cds: keyboard: focus(), Shift+Tab, Tab; emulated CDS JS: added button.css-9jkubm+.cds-buttonBase-focusVisible; pressed: mouse button held down (released over the page ground).
+How: hover: mouse hover; focus-visible: keyboard: focus(), Shift+Tab, Tab; focus-visible-cds: keyboard: focus(), Shift+Tab, Tab; emulated CDS JS: added button.css-9jkubm+.cds-buttonBase-focusVisible; pressed: mouse button held down (released over the page ground); focus-visible (as captured): Shift+Tab, Tab in the live page; the tooltip opened on keyboard focus.
 
 Authored state rules that match this element (6, first 6; the rest are in the JSON):
 
@@ -3767,4 +3771,289 @@ Authored state rules that match this element (9, first 6; the rest are in the JS
 - `@media (hover: hover) .css-bws60f:hover { border-color: var(--cds-color-interactive-primary-hover); background-color: var(--cds-color-interactive-primary-hover); }`
 - `.css-bws60f:active { border-color: var(--cds-color-interactive-primary-pressed); background-color: var(--cds-color-interactive-primary-pressed); }`
 - `.css-bws60f:active.cds-button-disableElevation::after { content: unset; }`
+
+## Menus, dialogs and settings (2026-10-17 refresh)
+
+### tooltip-signed-in
+
+CDS tooltip ("More") shown on keyboard focus of the course overflow button, z-index 11000.
+
+Key `tooltip-signed-in`. Read from the 2026-10-17 copies `ml-overflow-tooltip` (tools/capture/signed-in/refresh.mjs).
+
+| Property | opened |
+| --- | --- |
+| Size (w×h) | 45.44×41 |
+| Background | transparent (no token) |
+| Painted layers | div.cds-159.cds-Tooltip-tooltip 45.4x28.0 bg #002457 (callouts-background-primary-strong, emphasis-primary-background-xxstrong, blue-950) r 4px; span::before.cds-161.cds-Tooltip-arrow 20pxx8px bg #002457 (callouts-background-primary-strong, emphasis-primary-background-xxstrong, blue-950) r 3px 0px |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
+| Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) |
+| Transform | matrix(1, 0, 0, 1, 869, 1197) |
+| Crop | [png](../components/crops/signed-in/tooltip-signed-in-opened.png) |
+
+How: opened: as captured.
+
+### overflow-menu
+
+Course overflow menu on My Learning (cds-actionOverflowMenu): white popover paper, 16 radius, --cds-elevation-level2, inside a fixed z-index 10000 layer. Opened with Enter on the trigger.
+
+Key `overflow-menu`. Read from the 2026-10-17 copies `ml-menu-open` (tools/capture/signed-in/refresh.mjs).
+
+| Property | opened |
+| --- | --- |
+| Size (w×h) | 78.66×106 |
+| Padding | 8px (spacing-100) |
+| Radius | 16px (border-radius-200) |
+| Background | #ffffff (neutral-background-primary, neutral-primary-invert, white-0) |
+| Box shadow | rgba(15,17,20,0.1) 0px 0px 4px 0px, rgba(15,17,20,0.1) 0px 4px 12px 4px (elevation-level2) |
+| Painted layers | div.cds-322.cds-172 78.7x106.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 16px shadow rgba(15, 17, 20, 0.1) 0px 0px 4px 0px, rgba(15, 17, 20, 0.1) 0px 4px 12px 4px; ul.cds-actionOverflowMenu-menu 62.7x90.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0); button.cds-113.cds-actionOverflowMenu-menuItem 54.7x40.0 bg #f2f5fa (neutral-background-primary-weak, emphasis-neutral-background-xweak, grey-25) r 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px; button::after.cds-113.cds-actionOverflowMenu-menuItem 58.6562pxx44px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
+| Colour | rgba(0,0,0,0.87) (no token) |
+| Crop | [png](../components/crops/signed-in/overflow-menu-opened.png) |
+
+How: opened: as captured.
+
+### overflow-menu-item
+
+Menu item (Rate, Share): 40px, 8px padding, 16/24 400. Enter on the trigger focuses the first item with the CDS focus ring.
+
+Key `overflow-menu-item`. Read from the 2026-10-17 copies `ml-menu-open` (tools/capture/signed-in/refresh.mjs).
+
+| Property | default | hover | focus-visible (as captured) |
+| --- | --- | --- | --- |
+| Size (w×h) | 54.66×40 | = | = |
+| Padding | 8px (spacing-100) | = | = |
+| Gap | 12px (spacing-150) | = | = |
+| Radius | 8px (border-radius-100) | = | = |
+| Background | transparent (no token) | #f2f5fa (neutral-background-primary-weak, emphasis-neutral-background-xweak, grey-25) | #f2f5fa (neutral-background-primary-weak, emphasis-neutral-background-xweak, grey-25) |
+| Outline | none | = | 1px solid transparent (no token) offset 2px |
+| Pseudo element |  | = | ::after inset -2px -2px -2px -2px, shadow #804ee4 (interactive-stroke-primary-focus, purple-600) 0px 0px 0px 1px, #f0f6ff (interactive-stroke-primary-focus-invert, emphasis-primary-background-xweak, blue-25) 0px 0px 0px 2px, radius 8px |
+| Painted layers |  | button.cds-113.cds-actionOverflowMenu-menuItem 54.7x40.0 bg #f2f5fa (neutral-background-primary-weak, emphasis-neutral-background-xweak, grey-25) r 8px | button.cds-113.cds-actionOverflowMenu-menuItem 54.7x40.0 bg #f2f5fa (neutral-background-primary-weak, emphasis-neutral-background-xweak, grey-25) r 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px; button::after.cds-113.cds-actionOverflowMenu-menuItem 58.6562pxx44px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | = | = |
+| Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) | #232b3a (interactive-secondary-hover, emphasis-neutral-background-xstrong, grey-900) | #232b3a (interactive-secondary-hover, emphasis-neutral-background-xstrong, grey-900) |
+| Cursor | pointer | = | = |
+| Crop | [png](../components/crops/signed-in/overflow-menu-item-default.png) | [png](../components/crops/signed-in/overflow-menu-item-hover.png) | [png](../components/crops/signed-in/overflow-menu-item-focus-visible-as-captured.png) |
+
+How: default: as captured; hover: mouse hover on the copy; focus-visible (as captured): Enter on the trigger in the live page.
+
+### rate-dialog
+
+Course review dialog (legacy rc-Modal, not CDS): white, 3px radius, 28px padding, over a z-index 3000 overlay. Opened from the overflow menu; nothing was rated or submitted.
+
+Key `rate-dialog`. Read from the 2026-10-17 copies `ml-rate-dialog` (tools/capture/signed-in/refresh.mjs).
+
+| Property | opened |
+| --- | --- |
+| Size (w×h) | 720×410 |
+| Padding | 28px |
+| Radius | 3px |
+| Background | #ffffff (neutral-background-primary, neutral-primary-invert, white-0) |
+| Painted layers | div.c-modal-content 720.0x410.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 3px; span.cds-113.cds-365 24.0x24.0 r 50% shadow rgb(128, 78, 228) 0px 0px 0px 1px inset, rgb(240, 246, 255) 0px 0px 0px 1px outline 1px solid rgba(0, 0, 0, 0) offset 2px; div.cds-131.cds-116 664.0x48.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px; fieldset.cds-167.cds-125 664.0x53.0 border T:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| R:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| B:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| L:1px solid #8495b0 (neutral-stroke-primary, grey-400) r 8px |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
+| Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) |
+| Transform | matrix(1, 0, 0, 1, -360, -205) |
+| Cursor | default |
+| Crop | [png](../components/crops/signed-in/rate-dialog-opened.png) |
+
+How: opened: as captured.
+
+### text-area-cds
+
+CDS multiline text field ("Write your review (optional)"): cds-input-root with cds-input-multiline, notched-outline fieldset, 8 radius.
+
+Key `text-area-cds`. Read from the 2026-10-17 copies `ml-rate-dialog`, `ml-rate-dialog-textarea-focus` (tools/capture/signed-in/refresh.mjs).
+
+| Property | default | hover | focus-visible (as captured) |
+| --- | --- | --- | --- |
+| Size (w×h) | 664×48 | = | = |
+| Radius | 8px (border-radius-100) | = | = |
+| Background | #ffffff (neutral-background-primary, neutral-primary-invert, white-0) | #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) | = |
+| Outline | none | = | 1px solid transparent (no token) offset 2px |
+| Pseudo element |  | = | ::before inset -2px -2px -2px -2px, shadow #804ee4 (interactive-stroke-primary-focus, purple-600) 0px 0px 0px 1px, #f0f6ff (interactive-stroke-primary-focus-invert, emphasis-primary-background-xweak, blue-25) 0px 0px 0px 2px, radius 8px |
+| Painted layers | div.cds-131.cds-116 664.0x48.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px; fieldset.cds-167.cds-125 664.0x53.0 border T:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| R:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| B:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| L:1px solid #8495b0 (neutral-stroke-primary, grey-400) r 8px | div.cds-131.cds-116 664.0x48.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 8px; fieldset.cds-167.cds-125 664.0x53.0 border T:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) \| R:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) \| B:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) \| L:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) r 8px | div.cds-131.cds-116 664.0x48.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px outline 1px solid rgba(0, 0, 0, 0) offset 2px; div::before.cds-131.cds-116 668pxx52px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px; fieldset.cds-167.cds-125 664.0x53.0 border T:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| R:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| B:1px solid #8495b0 (neutral-stroke-primary, grey-400) \| L:1px solid #8495b0 (neutral-stroke-primary, grey-400) r 8px |
+| Font | Source Sans Pro 400 16px/19.0016px | = | = |
+| Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) | = | = |
+| Cursor | text | = | = |
+| Crop | [png](../components/crops/signed-in/text-area-cds-default.png) | [png](../components/crops/signed-in/text-area-cds-hover.png) | [png](../components/crops/signed-in/text-area-cds-focus-visible-as-captured.png) |
+
+How: default: as captured; hover: mouse hover on the copy; focus-visible (as captured): focused in the live page (cds-input-focused).
+
+### button-disabled-legacy
+
+Submit in the review dialog while no rating is chosen: a legacy (non-CDS) button, disabled, grey.200 fill with grey.25 label, 2px radius.
+
+Key `button-disabled-legacy`. Read from the 2026-10-17 copies `ml-rate-dialog` (tools/capture/signed-in/refresh.mjs).
+
+| Property | disabled |
+| --- | --- |
+| Size (w×h) | 116.08×48 |
+| Padding | 14.4px / 32px (spacing-400) |
+| Border | 1px solid #c1cbdb (neutral-stroke-primary-weak, grey-200) |
+| Radius | 2px (border-radius-25) |
+| Background | #c1cbdb (neutral-stroke-primary-weak, grey-200) |
+| Painted layers | button._hy276lt.submit_button 116.1x48.0 bg #c1cbdb (neutral-stroke-primary-weak, grey-200) border T:1px solid #c1cbdb (neutral-stroke-primary-weak, grey-200) \| R:1px solid #c1cbdb (neutral-stroke-primary-weak, grey-200) \| B:1px solid #c1cbdb (neutral-stroke-primary-weak, grey-200) \| L:1px solid #c1cbdb (neutral-stroke-primary-weak, grey-200) r 2px |
+| Font | Source Sans Pro 600 16px/16px |
+| Colour | #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) |
+| Transition | all 0.45s cubic-bezier(0.23 |
+| Cursor | not-allowed |
+| Crop | [png](../components/crops/signed-in/button-disabled-legacy-disabled.png) |
+
+How: disabled: as captured.
+
+### select-signed-in
+
+Colour theme select on Account settings (Light mode, Dark mode, System default), CDS select.
+
+Key `select-signed-in`. Read from the 2026-10-17 copies `settings-theme-select-open`, `settings-dark` (tools/capture/signed-in/refresh.mjs).
+
+| Property | opened | dark |
+| --- | --- | --- |
+| Size (w×h) | 186.66×48 | 186.66×48 |
+| Radius | 8px (border-radius-100) | 8px (border-radius-100) |
+| Background | #ffffff (neutral-background-primary, neutral-primary-invert, white-0) | #000000 (no token) |
+| Painted layers | div.cds-142.cds-127 186.7x48.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px; input.cds-220 186.7x25.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) border T:2px inset #767676 (no token) \| R:2px inset #767676 (no token) \| B:2px inset #767676 (no token) \| L:2px inset #767676 (no token); fieldset.cds-167.cds-136 186.7x53.0 border T:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) \| R:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) \| B:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) \| L:1px solid #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) r 8px | div.cds-142.cds-127 186.7x48.0 bg #000000 (no token) r 8px; input.cds-220 186.7x25.0 bg #3b3b3b (no token) border T:2px inset #858585 (no token) \| R:2px inset #858585 (no token) \| B:2px inset #858585 (no token) \| L:2px inset #858585 (no token); fieldset.cds-167.cds-136 186.7x53.0 border T:1px solid #48546e (neutral-primary-weak, grey-750) \| R:1px solid #48546e (neutral-primary-weak, grey-750) \| B:1px solid #48546e (neutral-primary-weak, grey-750) \| L:1px solid #48546e (neutral-primary-weak, grey-750) r 8px |
+| Font | Source Sans Pro 400 16px/19.0016px | Source Sans Pro 400 16px/19.0016px |
+| Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) | #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) |
+| Cursor | text | text |
+| Icon | 24×24, fill none (no token), color #0d0f12 (neutral-primary, interactive-secondary, grey-975) | 24×24, fill none (no token), color #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) |
+| Crop | [png](../components/crops/signed-in/select-signed-in-opened.png) | [png](../components/crops/signed-in/select-signed-in-dark.png) |
+
+How: opened: as captured; dark: learner chose Appearance: Dark mode.
+
+### select-menu-signed-in
+
+Open CDS select list: white paper, 16 radius, --cds-elevation-level2, fixed z-index 10000 layer.
+
+Key `select-menu-signed-in`. Read from the 2026-10-17 copies `settings-theme-select-open` (tools/capture/signed-in/refresh.mjs).
+
+| Property | opened |
+| --- | --- |
+| Size (w×h) | 187×160 |
+| Radius | 16px (border-radius-200) |
+| Background | #ffffff (neutral-background-primary, neutral-primary-invert, white-0) |
+| Box shadow | rgba(15,17,20,0.1) 0px 0px 4px 0px, rgba(15,17,20,0.1) 0px 4px 12px 4px (elevation-level2) |
+| Painted layers | div.cds-238.cds-221 187.0x160.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 16px shadow rgba(15, 17, 20, 0.1) 0px 0px 4px 0px, rgba(15, 17, 20, 0.1) 0px 4px 12px 4px; li::before.cds-124.cds-274 155pxx36px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px; div.cds-selectOption-container 155.0x32.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 7px; li.cds-124.cds-274 155.0x40.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
+| Colour | rgba(0,0,0,0.87) (no token) |
+| Icon | 20×20, fill none (no token), color #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
+| Crop | [png](../components/crops/signed-in/select-menu-signed-in-opened.png) |
+
+How: opened: as captured.
+
+### select-option-signed-in
+
+Option row in the CDS select list, 40px. Enter on the field focuses the selected option with cds-selectOption-focusVisible.
+
+Key `select-option-signed-in`. Read from the 2026-10-17 copies `settings-theme-select-open` (tools/capture/signed-in/refresh.mjs).
+
+| Property | default | hover | selected, focus-visible (as captured) |
+| --- | --- | --- | --- |
+| Size (w×h) | 155×40 | = | = |
+| Padding | 4px (spacing-50) / 0 | = | = |
+| Radius | 8px (border-radius-100) | = | = |
+| Background | #ffffff (neutral-background-primary, neutral-primary-invert, white-0) | #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) | transparent (no token) |
+| Pseudo element |  | = | ::before inset 2px 0px 2px 0px, shadow #804ee4 (interactive-stroke-primary-focus, purple-600) 0px 0px 0px 1px, #f0f6ff (interactive-stroke-primary-focus-invert, emphasis-primary-background-xweak, blue-25) 0px 0px 0px 2px, radius 8px |
+| Painted layers | li.cds-124.cds-274 155.0x40.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px | li.cds-124.cds-274 155.0x40.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 8px; div.cds-selectOption-container 155.0x32.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 7px | li::before.cds-124.cds-274 155pxx36px r 8px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px outline 1px solid rgba(0, 0, 0, 0) offset 2px; div.cds-selectOption-container 155.0x32.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 7px |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | = | = |
+| Colour | rgba(0,0,0,0.87) (no token) | = | = |
+| Cursor | pointer | = | = |
+| Icon |  | = | 20×20, fill none (no token), color #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
+| Crop | [png](../components/crops/signed-in/select-option-signed-in-default.png) | [png](../components/crops/signed-in/select-option-signed-in-hover.png) | [png](../components/crops/signed-in/select-option-signed-in-selected-focus-visible-as-captured.png) |
+
+How: default: as captured; hover: mouse hover on the copy; selected, focus-visible (as captured): Enter on the select in the live page.
+
+### switch
+
+CDS switch (cds-labs-Switch): 40x24 track, 12 radius, 20px white knob; on is --cds-color-interactive-primary, off is --cds-color-neutral-stroke-primary; the fill and knob move in 0.1s ease-in-out.
+
+Key `switch`. Read from the 2026-10-17 copies `settings-switch-focus`, `settings-dark` (tools/capture/signed-in/refresh.mjs).
+
+| Property | default | hover | checked, focus-visible (as captured) | checked, dark | dark |
+| --- | --- | --- | --- | --- | --- |
+| Size (w×h) | 40×24 | = | = | = | = |
+| Gap | 24px (spacing-300) | = | = | = | = |
+| Background | transparent (no token) | = | = | = | = |
+| Painted layers | button.cds-124.switch-toggle 40.0x24.0 bg #8495b0 (neutral-stroke-primary, grey-400) r 12px; span.switch-indicator 20.0x20.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 50% | = | button.cds-124.switch-toggle 40.0x24.0 bg #0056d2 (interactive-primary, feedback-informative, blue-800) r 12px outline 1px solid rgba(0, 0, 0, 0) offset 2px; button::after.cds-124.switch-toggle 44pxx28px r 16px shadow rgb(128, 78, 228) 0px 0px 0px 1px, rgb(240, 246, 255) 0px 0px 0px 2px; span.switch-indicator 20.0x20.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 50% | button.cds-124.switch-toggle 40.0x24.0 bg #87b8ff (emphasis-primary-background-default, blue-300) r 12px; span.switch-indicator 20.0x20.0 bg #000000 (no token) r 50% | button.cds-124.switch-toggle 40.0x24.0 bg #48546e (neutral-primary-weak, grey-750) r 12px; span.switch-indicator 20.0x20.0 bg #000000 (no token) r 50% |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | = | = | = | = |
+| Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) | = | = | #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) | #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) |
+| Crop | [png](../components/crops/signed-in/switch-default.png) | [png](../components/crops/signed-in/switch-hover.png) | [png](../components/crops/signed-in/switch-checked-focus-visible-as-captured.png) | [png](../components/crops/signed-in/switch-checked-dark.png) | [png](../components/crops/signed-in/switch-dark.png) |
+
+How: default: as captured; hover: mouse hover on the copy; checked, focus-visible (as captured): Shift+Tab, Tab in the live page; the switch was never toggled; checked, dark: learner chose Appearance: Dark mode; dark: learner chose Appearance: Dark mode.
+
+### callout-warning
+
+Warning callout on Account settings ("Warning: ..."): --cds-color-feedback-background-warning-weak fill, 16 radius, 12px 16px padding, 20px icon in --cds-color-feedback-warning, no border.
+
+Key `callout-warning`. Read from the 2026-10-17 copies `settings-switch-focus`, `settings-dark` (tools/capture/signed-in/refresh.mjs).
+
+| Property | default | dark |
+| --- | --- | --- |
+| Size (w×h) | 592×48 | = |
+| Padding | 12px (spacing-150) / 16px (spacing-200) | = |
+| Radius | 16px (border-radius-200) | = |
+| Background | #ffeac9 (feedback-background-warning-weak, emphasis-tertiary-background-weak, yellow-50) | #3a1703 (emphasis-tertiary-background-xstrong, emphasis-tertiary-content-default, yellow-950) |
+| Painted layers | div 592.0x48.0 bg #ffeac9 (feedback-background-warning-weak, emphasis-tertiary-background-weak, yellow-50) r 16px | div 592.0x48.0 bg #3a1703 (emphasis-tertiary-background-xstrong, emphasis-tertiary-content-default, yellow-950) r 16px |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) | = |
+| Colour | #0d0f12 (neutral-primary, interactive-secondary, grey-975) | #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) |
+| Icon | 20×20, fill none (no token), color #8e4209 (feedback-warning, emphasis-tertiary-background-strong, yellow-750) | 20×20, fill none (no token), color #f28100 (yellow-400) |
+| Crop | [png](../components/crops/signed-in/callout-warning-default.png) | [png](../components/crops/signed-in/callout-warning-dark.png) |
+
+How: default: as captured; dark: learner chose Appearance: Dark mode.
+
+### button-secondary-destructive
+
+Delete account: the destructive action is an ordinary 48px secondary (outlined blue) button. Never pressed.
+
+Key `button-secondary-destructive`. Read from the 2026-10-17 copies `settings-switch-focus` (tools/capture/signed-in/refresh.mjs).
+
+| Property | default | hover |
+| --- | --- | --- |
+| Size (w×h) | 152.14×48 | = |
+| Padding | 12px (spacing-150) / 24px (spacing-300) | = |
+| Radius | 8px (border-radius-100) | = |
+| Background | #ffffff (neutral-background-primary, neutral-primary-invert, white-0) | #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) |
+| Box shadow | #0056d2 0px 0px 0px 1px inset | #0b408b 0px 0px 0px 1px inset |
+| Painted layers | button.cds-124.cds-button-disableElevation 152.1x48.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0) r 8px shadow rgb(0, 86, 210) 0px 0px 0px 1px inset | button.cds-124.cds-button-disableElevation 152.1x48.0 bg #f0f6ff (emphasis-primary-background-xweak, interactive-background-primary-hover-weak, blue-25) r 8px shadow rgb(11, 64, 139) 0px 0px 0px 1px inset |
+| Font | Source Sans Pro 600 16px/24px, 0.16px (typography-title3, typography-action-primary) | = |
+| Colour | #0056d2 (interactive-primary, feedback-informative, blue-800) | #0b408b (interactive-primary-hover, emphasis-primary-background-xstrong, blue-850) |
+| Cursor | pointer | = |
+| Crop | [png](../components/crops/signed-in/button-secondary-destructive-default.png) | [png](../components/crops/signed-in/button-secondary-destructive-hover.png) |
+
+How: default: as captured; hover: mouse hover on the copy.
+
+### share-dialog
+
+Share dialog (legacy, not CDS): five round share targets over the course link and a COPY text button. Pressing COPY in the live page swapped its label to "COPIED!" (read from the DOM straight after); that label swap is the only feedback, no toast appears. The copy was taken after the label had reverted.
+
+Key `share-dialog`. Read from the 2026-10-17 copies `ml-share-copied` (tools/capture/signed-in/refresh.mjs).
+
+| Property | default |
+| --- | --- |
+| Size (w×h) | 460×290 |
+| Padding | 15px |
+| Background | #ffffff (neutral-background-primary, neutral-primary-invert, white-0) |
+| Painted layers | div 460.0x290.0 bg #ffffff (neutral-background-primary, neutral-primary-invert, white-0); svg 50.0x50.0 bg #0056d2 (interactive-primary, feedback-informative, blue-800) r 32px; input.rc-CopyItem__input 430.0x46.0 bg #f2f5fa (neutral-background-primary-weak, emphasis-neutral-background-xweak, grey-25) border T:1px solid #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) \| R:1px solid #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) \| B:1px solid #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25) \| L:1px solid #f2f5fa (neutral-disabled-weak, neutral-background-primary-weak, grey-25); div 78.0x40.0 |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
+| Colour | #1f1f1f (no token) |
+| Crop | [png](../components/crops/signed-in/share-dialog-default.png) |
+
+How: default: as captured.
+
+### share-copy-button
+
+COPY text button beside the share link; its label reads "COPIED!" for a moment after a press.
+
+Key `share-copy-button`. Read from the 2026-10-17 copies `ml-share-copied` (tools/capture/signed-in/refresh.mjs).
+
+| Property | default |
+| --- | --- |
+| Size (w×h) | 78×40 |
+| Padding | 8px (spacing-100) |
+| Background | transparent (no token) + linear-gradient(270deg, rgb(242, 245, 250) 80%, rgba(0, 0, 0, 0) 100%) |
+| Painted layers | div 78.0x40.0 |
+| Font | Source Sans Pro 400 16px/24px (typography-body1, typography-body-primary) |
+| Colour | #1f1f1f (no token) |
+| Cursor | pointer |
+| Crop | [png](../components/crops/signed-in/share-copy-button-default.png) |
+
+How: default: as captured.
 

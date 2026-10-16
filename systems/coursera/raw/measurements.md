@@ -1,12 +1,12 @@
 # Raw measurements (computed styles, CSS px), coursera.org, captured 2026-09-29T03:36:35.172Z
 
-193 components, 397 component states, 352 crops in [components/crops/](../components/crops/). Every value below was read from the live public pages with `getComputedStyle` and `getBoundingClientRect`; nothing is estimated. The machine-readable copy is [components-computed.json](components-computed.json), keyed by component, then state. Tokens are matched against [css-vars.json](css-vars.json) (the light half of each `light-dark()` pair).
+203 components, 425 component states, 379 crops in [components/crops/](../components/crops/). Every value below was read from the live public pages with `getComputedStyle` and `getBoundingClientRect`; nothing is estimated. The machine-readable copy is [components-computed.json](components-computed.json), keyed by component, then state. Tokens are matched against [css-vars.json](css-vars.json) (the light half of each `light-dark()` pair).
 
 ## How it was read
 
-- Pages: `/search?query=machine%20learning`, `/learn/machine-learning`, `/specializations/machine-learning-introduction`, `/` (header, mega menu, footer), `/explore/generative-ai` (the compact course card, chip row, carousel and band headings; also read in a 390x844 mobile context, and in a 390 window with the desktop user agent for the arrow buttons).
+- Pages: `/search?query=machine%20learning`, `/learn/machine-learning`, `/specializations/machine-learning-introduction`, `/` (header, mega menu, footer), `/explore/generative-ai` (the compact course card, chip row, carousel and band headings; also read in a 390x844 mobile context, and in a 390 window with the desktop user agent for the arrow buttons). A 2026-10-17 pass added `/?authMode=login` (the log-in dialog), the AI coach panel the course page opens, a 404 URL, and the z-index and reduced-motion reads below.
 - Headless Chromium (Playwright 1.63), desktop Chrome user agent, 1440x900 at deviceScaleFactor 2, 6.5s settle after `domcontentloaded`, one slow scroll through each page so lazy sections mount. The cookie banner is removed and the AI coach side panel is closed with its own close button (it opens by default and squeezes `<main>` to 1024px).
-- States: `hover` is a real mouse hover with a 450ms settle. `focus-visible` is a real keyboard focus (focus, Shift+Tab, Tab), so CDS's `cds-buttonBase-focusVisible` class and the browser's `:focus-visible` both apply. `pressed` is `:active:hover` forced with the DevTools protocol (`CSS.forcePseudoState`); no mouse button is ever pressed, so no link, submit or Enroll button fires. `expanded`, `opened`, `checked` and `selected` come from clicking UI toggles only (accordions, the Explore menu, a filter checkbox with View never pressed, the select, the (i) help button). Nothing was signed into, enrolled in or submitted.
+- States: `hover` is a real mouse hover with a 450ms settle. `focus-visible` is a real keyboard focus (focus, Shift+Tab, Tab), so CDS's `cds-buttonBase-focusVisible` class and the browser's `:focus-visible` both apply. `pressed` is `:active:hover` forced with the DevTools protocol (`CSS.forcePseudoState`); no mouse button is ever pressed, so no link, submit or Enroll button fires. `expanded`, `opened`, `checked` and `selected` come from clicking UI toggles only (accordions, the Explore menu, a filter checkbox with View never pressed, the select, the (i) help button). Nothing was signed into, enrolled in or submitted. The log-in field's error was reached by pressing Enter on "not-an-email" after every network request had been set to abort, so the address never left the browser; the chat field was typed into and never sent.
 - Scripts: [tools/capture/measure.mjs](../tools/capture/measure.mjs) (measure and crop), [tools/capture/lib.mjs](../tools/capture/lib.mjs) (computed-style reader, crop and quantize), [tools/capture/build-measurements.mjs](../tools/capture/build-measurements.mjs) (this file), [tools/capture/explore.mjs](../tools/capture/explore.mjs) (class inventory pass).
 - Hooks: most sections carry `data-testid`; the hero, its title, the Enroll button and the stats slot carry `data-e2e` instead (`[data-e2e=hero-module]`, `[data-e2e=hero-title]`, `[data-e2e=enroll-button]`, `[data-e2e=key-information]`). Several blocks exist twice in the DOM (a hidden mobile copy at 0x0 and the visible one); every measurement takes the visible one.
 
@@ -27,10 +27,10 @@
 
 - No left filter panel exists on the search page any more. Filters are pill dropdowns in a sticky bar (Topic, Duration, Learning Product, Language, Level, AI topic pills) opening a checkbox popover, plus a Filter & Sort side sheet. There is no sort dropdown: sort is the "Sort by" radio group (Best Match / Newest) at the top of that sheet, measured as `radio` and `filter-accordion`.
 - `pill` hover: the home-page partner pills sit in a horizontal carousel and Playwright reports the pill outside the viewport even when centred, so only default and focus-visible were read.
-- `select-option` focus-visible: after ArrowDown in the open select no option carried `:focus`, `data-focus-visible` or `data-focused`, so that state is missing; selected and hover are measured.
+- `select-option` focus-visible: after ArrowDown in the open select no option carried `:focus`, `data-focus-visible` or `data-focused`, so that state is missing here; selected and hover are measured. The 2026-10-17 pass caught it on the signed-in colour theme select instead (`select-option-signed-in` in [measurements-signed-in.md](measurements-signed-in.md)).
 - The overflow chevron at the end of the in-page tab bar is not reported visible to Playwright at 1440, so it has no entry; its two gradient fades are in the `tab-bar` paint list.
 - The contextual (i) next to "Recommended experience" opens a modal dialog, not a hover tooltip; both are measured (`help-dialog`, `tooltip`, `tooltip-icon`).
-- No disabled primary button appeared on these pages; disabled ghost and disabled secondary were measured in the filter popover and sheet.
+- No disabled primary button appeared on these pages; disabled ghost and disabled secondary were measured in the filter popover and sheet, and the chat send icon button while its field is empty (`icon-button-send`).
 - The AI coach panel, cookie banner, sign-in and enrollment flows were deliberately not measured.
 
 ## Focus rings
@@ -64,6 +64,7 @@ Every distinct transition on the measured components (computed style, any state)
 |---|---|---|---|
 | 0.15s | cubic-bezier(0.4, 0, 0.2, 1) | background-color | checkbox-box |
 | 0.15s | ease-in-out | transform | faq-chevron |
+| 0.25s | ease-out | background-color, box-shadow, color | button-primary-large, button-social |
 | 0.2s | ease-in-out | transform | header-container |
 | 0.3s | cubic-bezier(0, 0, 0.5, 1) | all | pill, product-card, product-card-list, explore-card |
 
@@ -82,6 +83,75 @@ Declared on stylesheet rules (selector attributed to its `cds-*` class):
 | 200ms | cubic-bezier(0.4, 0, 0.2, 1) | cds-178 (opacity 200ms cubic-bezier(0.4, 0, 0.2, 1)) |
 | 300ms | ease-in-out | cds-ShowMoreList-ctaIcon (transform 300ms ease-in-out) |
 | 50ms | cubic-bezier(0, 0, 0.2, 1) | cds-205 (max-width 50ms cubic-bezier(0, 0, 0.2, 1)) |
+
+## Layers (z-index)
+
+Every positioned element with a z-index above 0 on three pages (`measure.mjs layers`): home at rest, search with the Topic filter popover open, course with the AI coach open and the page scrolled. Highest first; repeated card hit areas are folded into one row.
+
+| z-index | Position | Element | Page |
+|---|---|---|---|
+| 3000 | sticky | `div.rc-GlobalPageHeaderContainer` 1440x105 | home |
+| 1001 | relative | `div.cds-Search-base.cds-Search-default` (search-autocomplete) 480x44 | home |
+| 999 | relative | `div.` 1440x40 | home |
+| 1 | absolute | `button.cds-149` 24x314 | home |
+| 1 | relative | `div.cds-CommonCard-interactiveArea` 118x20 | home |
+| 1 | relative | `button.cds-149.cds-button-disableElevation.cds-button-secondary` 179x36 | home |
+| 10000 | fixed | `div.cds-207.cds-popoverDropdown-default` (presentation) 1440x900 | search |
+| 2 | relative | `div.` (sticky-filter-wrapper) 1376x52 | search |
+| 11000 | absolute | `div.cds-192.cds-193.cds-194` (tooltip) 127x41 | course |
+| 3100 | absolute | `div.` (ai-coach-chat-container) 415x795 | course |
+| 3001 | fixed | `aside.` 416x795 | course |
+| 10 | relative | `div.coach-conversation-container` 415x795 | course |
+| 10 | absolute | `button.cds-149.cds-button-disableElevation.cds-button-ghost` (earlier-messages-button) 159x36 | course |
+| 10 | absolute | `div.` 36x36 | course |
+| 1 | relative | `button.cds-149.cds-button-disableElevation.cds-button-ghostInvert` 83x36 | course |
+| 1 | relative | `button.cds-149.cds-button-disableElevation.cds-button-ghost` 101x56 | course |
+| 1 | relative | `button.cds-149.cds-AccordionHeader-button` 542x56 | course |
+| -1 | absolute | `div.` 2880x576 | course |
+
+## Reduced motion
+
+Every rule inside `@media (prefers-reduced-motion: reduce)` in the stylesheets of three pages (`measure.mjs motion`), and the search product card hovered in a context that emulates `reducedMotion: reduce`.
+
+| Page | Component | Selector | Declaration |
+|---|---|---|---|
+| search | cds-ProductCard-base cds-ProductCard-grid | `.css-amuahx.cds-ProductCard-base` | `transition: none;` |
+| search | cds-ProductCard-base cds-ProductCard-grid | `.css-amuahx.cds-ProductCard-base:hover` | `transform: none;` |
+| search | - | `.css-8wjfhv` | `transition: none;` |
+| search | - | `.css-8wjfhv:hover` | `transform: none;` |
+| course | cds-ContextualHelpIcon-customHelpIcon | `.css-112k3na .cds-ContextualHelpIcon-background, .css-112k3na .cds-ContextualHelpIcon-neck, .css-112k3na .cds-ContextualHelpIcon-dot, .css-1` | `transition: none;` |
+| course | - | `.css-11g2uo0 .cds-ShowMoreList-ctaIcon` | `transition: none;` |
+| course | - | `.css-8129rc .cds-AccordionHeader-chevron` | `transition: none;` |
+| course | - | `.css-4cqb4a .cds-Loader-container .cds-Loader-fillCircle` | `transition: none;` |
+| course | - | `.css-4cqb4a .cds-Loader-container .cds-Loader-imageContainer` | `animation: 1.5s ease-in-out 0s infinite normal none running loading-section-pulse;` |
+| course | - | `.css-4cqb4a .cds-Loader-container .cds-Loader-mainCircle, .css-4cqb4a .cds-Loader-container .cds-Loader-secondaryCircle, .css-4cqb4a .cds-Lo` | `animation: auto ease 0s 1 normal none running none; stroke-dashoffset: 0;` |
+| course | - | `.css-sy8qzk .cds-ShowMoreContainer-ctaIcon` | `transition: none;` |
+
+Product card on hover with reduced motion: transition `none`, transform `none`, shadow `rgb(233, 238, 247) 0px 0px 4px 0px, rgba(15, 17, 20, 0.1) 0px 4px 12px 4px`. The hover shadow still appears, without its 0.3s transition. The rule also sets `transform: none` on hover, though the measured grid card does not move on hover with motion allowed either (its hover transform is the identity matrix).
+
+## Dark parity
+
+The six component colours that sit outside the CDS semantic tokens, read again after setting `data-color-theme="dark"` on `<html>` (`measure.mjs darkparity`). That attribute is what the signed-in Appearance setting sets; on 2026-10-17 a learner page with Dark mode chosen computed every `--cds-color-*` variable to the dark side of its `light-dark()` pair ([css-vars-dark-shipped.json](css-vars-dark-shipped.json)).
+
+| Value | Dark |
+|---|---|
+| Course hero band | `#0056d2 @ 0.05` |
+| Top Instructor badge fill | `#0d2f60` |
+| Stats card shadow | `rgba(255, 255, 255, 0.2) 0px 8px 16px 0px` |
+| Sticky nav shadow | `rgba(0, 0, 0, 0.24) 0px 2px 12px 0px` |
+| Dialog scrim (cds-Modal-backdrop) | `#636363 @ 0.5` |
+| Top AI program tag fill | `#3c0f8a` |
+
+## Elevation in use
+
+Stylesheet rules that paint an `--cds-elevation-*` level by name (`measure.mjs elevation`). Emotion often writes the resolved shadow instead of the variable, so the computed shadows in the component tables below are the fuller record: level2 is on the filter popover, search suggestions, select list, catalogue cards on hover and, signed in, the overflow menu and select list; level1 on the round jump buttons in the AI coach panel. The `:root` rule that declares the three levels is left out; no rule found uses level3.
+
+| Level | Selector | Component | Page |
+|---|---|---|---|
+| 2 | `.css-1imdok9 .cds-popoverDropdown-paper` | - | search |
+| 1 | `.css-a3e33x` | - | course |
+| 1 | `.css-m6ljsa` | - | course |
+| 1 | `.css-1u88u7m` | - | course |
 
 ## Layout grid
 
@@ -1256,6 +1326,71 @@ Crops: `show-more-list-button-default.png`, `show-more-list-button-hover.png`, `
 - Painted in `hover`: button.cds-149.cds-ShowMoreList-ctaButton, 259.0x20.0, bg #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` / `--cds-color-grey-25`, radius 8px
 - Painted in `focus-visible`: button.cds-149.cds-ShowMoreList-ctaButton, 259.0x20.0, bg #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` / `--cds-color-grey-25`, radius 8px; button::after.cds-149.cds-ShowMoreList-ctaButton, 263.047pxx24px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (no elevation token), radius 8px, inset -2px -2px -2px -2px
 - Painted in `pressed`: button.cds-149.cds-ShowMoreList-ctaButton, 259.0x20.0, bg #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` / `--cds-color-grey-50`, radius 8px
+
+- `hover` reached by: mouse hover
+- `focus-visible` reached by: Shift+Tab, Tab
+- `pressed` reached by: CDP forcePseudoState :active:hover
+
+#### button-primary-large
+
+Large primary button (Continue in the log-in dialog), full width, 48px.
+
+Page: login (https://www.coursera.org/?authMode=login). Selector: `[role=dialog] button[type=submit]`. States: default, hover, focus-visible, pressed.
+Crops: `button-primary-large-default.png`, `button-primary-large-hover.png`, `button-primary-large-focus-visible.png`, `button-primary-large-pressed.png`.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 368 x 48 | same | same | same |
+| Padding | 12px 32px | same | same | same |
+| Margin | 4px 0 0 0 | same | same | same |
+| Display | block | same | same | same |
+| Radius | 8px `--cds-border-radius-100` | same | same | same |
+| Background | #0056d2 `--cds-color-interactive-primary` / `--cds-color-blue-800` | #0b408b `--cds-color-emphasis-primary-background-xstrong` / `--cds-color-blue-850` | same | #2c0b65 `--cds-color-emphasis-quaternary-background-xstrong` / `--cds-color-purple-950` |
+| Box shadow | none | same | #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (no elevation token) | same |
+| Outline | none | same | 2px solid #793ae4 `--cds-color-purple-700` offset 2px | same |
+| Font | Source Sans Pro 14/24 700 | same | same | same |
+| Colour | #ffffff `--cds-color-neutral-primary-invert` / `--cds-color-white-0` | same | same | same |
+| Transition | background-color 0.25s ease-out, box-shadow 0.25s ease-out, color 0.25s ease-out | same | same | same |
+| Cursor | pointer | same | same | same |
+
+- Painted in `default`: button, 368.0x48.0, bg #0056d2 `--cds-color-interactive-primary` / `--cds-color-blue-800`, radius 8px
+- Painted in `hover`: button, 368.0x48.0, bg #0b408b `--cds-color-emphasis-primary-background-xstrong` / `--cds-color-blue-850`, radius 8px
+- Painted in `focus-visible`: button, 368.0x48.0, bg #0056d2 `--cds-color-interactive-primary` / `--cds-color-blue-800`, shadow #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (no elevation token), outline 2px solid #793ae4 offset 2px, radius 8px
+- Painted in `pressed`: button, 368.0x48.0, bg #2c0b65 `--cds-color-emphasis-quaternary-background-xstrong` / `--cds-color-purple-950`, radius 8px
+
+- `hover` reached by: mouse hover
+- `focus-visible` reached by: Shift+Tab, Tab
+- `pressed` reached by: CDP forcePseudoState :active:hover
+
+#### button-social
+
+Outlined social sign-in button (Continue with Google): white, 1px dark border, 48px.
+
+Page: login (https://www.coursera.org/?authMode=login). Selector: `[role=dialog] button:has-text("Continue with Google")`. States: default, hover, focus-visible, pressed.
+Crops: `button-social-default.png`, `button-social-hover.png`, `button-social-focus-visible.png`, `button-social-pressed.png`.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 368 x 50 | same | same | same |
+| Padding | 12px 16px | same | same | same |
+| Display | block | same | same | same |
+| Border | 1px solid #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` | same | same | same |
+| Radius | 8px `--cds-border-radius-100` | same | same | same |
+| Background | transparent | #f0f6ff `--cds-color-interactive-background-primary-hover-weak` / `--cds-color-blue-25` | #f0f6ff `--cds-color-interactive-background-primary-hover-weak` / `--cds-color-blue-25` | #f0f6ff `--cds-color-interactive-background-primary-hover-weak` / `--cds-color-blue-25` |
+| Box shadow | none | same | #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (no elevation token) | same |
+| Outline | none | same | 2px solid #0056d2 `--cds-color-interactive-primary` / `--cds-color-blue-800` offset 2px | same |
+| Font | Source Sans Pro 14/24 700 | same | same | same |
+| Text node font | span: Source Sans Pro 14/20 600 `--cds-typography-action-secondary`, ls 0.14px | same | same | same |
+| Text node colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` | #0b408b `--cds-color-interactive-primary-hover` / `--cds-color-blue-850` | same | #2c0b65 `--cds-color-emphasis-quaternary-content-default` / `--cds-color-purple-950` |
+| Colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` | #0b408b `--cds-color-interactive-primary-hover` / `--cds-color-blue-850` | same | #2c0b65 `--cds-color-emphasis-quaternary-content-default` / `--cds-color-purple-950` |
+| Transition | background-color 0.25s ease-out, box-shadow 0.25s ease-out, color 0.25s ease-out | same | same | same |
+| Cursor | pointer | same | same | same |
+| Icon | 18 x 18, colour #232b3a `--cds-color-interactive-secondary-hover` / `--cds-color-grey-900` | same | same | same |
+
+- Painted in `default`: button, 368.0x50.0, border 1px solid #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975`, radius 8px
+- Painted in `hover`: button, 368.0x50.0, bg #f0f6ff `--cds-color-interactive-background-primary-hover-weak` / `--cds-color-blue-25`, border 1px solid #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975`, radius 8px
+- Painted in `focus-visible`: button, 368.0x50.0, bg #f0f6ff `--cds-color-interactive-background-primary-hover-weak` / `--cds-color-blue-25`, border 1px solid #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975`, shadow #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (no elevation token), outline 2px solid #0056d2 offset 2px, radius 8px
+- Painted in `pressed`: button, 368.0x50.0, bg #f0f6ff `--cds-color-interactive-background-primary-hover-weak` / `--cds-color-blue-25`, border 1px solid #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975`, radius 8px
 
 - `hover` reached by: mouse hover
 - `focus-visible` reached by: Shift+Tab, Tab
@@ -4806,6 +4941,229 @@ Crops: `footer-social-icon-default.png`, `footer-social-icon-hover.png`, `footer
 
 - `hover` reached by: mouse hover
 - `focus-visible` reached by: Shift+Tab, Tab
+
+### Log-in dialog, AI chat panel and error page (2026-10-17 refresh)
+
+#### login-dialog
+
+Log in or create account: the CDS dialog over a dimmed page, with the email field, a large primary Continue and three outlined social buttons.
+
+Page: login (https://www.coursera.org/?authMode=login). Selector: `[role=dialog]`. States: opened.
+Crops: `login-dialog-opened.png`.
+
+| Property | opened |
+|---|---|
+| Size (w x h) | 424 x 647 |
+| Padding | 0 |
+| Display | grid |
+| Radius | 16px `--cds-border-radius-200` |
+| Background | #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0` |
+| Font | Source Sans Pro 16/24 400 `--cds-typography-body1`, `--cds-typography-body-primary` |
+| Text node font | h2.cds-Typography-alignLeft: Source Sans Pro 24/28 600 `--cds-typography-title-x-small`, ls -0.12px |
+| Text node colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| Colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| Transform | matrix(1, 0, 0, 1, -212, -323.5) |
+| Icon | 20 x 20, colour #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+
+- Painted in `opened`: div.cds-Dialog-dialog, 424.0x647.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, radius 16px; div, 0.0x0.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`; header, 0.0x0.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, shadow #0f1114 @ 0.1 0px 2px 2px 0px (no elevation token); button.cds-149.cds-iconButton-small, 36.0x36.0, shadow transparent 0px 0px 0px 1px inset (no elevation token), radius 50%; div.cds-167.cds-152, 368.0x48.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, outline 1px solid transparent offset 2px, radius 8px; div::before.cds-167.cds-152, 372pxx52px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (no elevation token), radius 8px, inset -2px -2px -2px -2px
+
+- Extra (`opened`): `{"scrim":{"tag":"div","cls":"cds-222 cds-Modal-backdrop","backgroundColor":"#636363 @ 0.5","backgroundImage":"none"},"layers":[{"node":"div.","zIndex":"10000","position":"fixed","bg":"transparent"}]}`
+
+#### text-field
+
+CDS text field (the email field in the log-in dialog): cds-input-root with a notched-outline fieldset, label above with a red required star.
+
+Page: login (https://www.coursera.org/?authMode=login). Selector: `[role=dialog] .cds-input-root`. States: default, hover, focus-visible, filled, error, error-dialog.
+Crops: `text-field-default.png`, `text-field-hover.png`, `text-field-focus-visible.png`, `text-field-filled.png`, `text-field-error.png`, `text-field-error-dialog.png`.
+
+| Property | default | hover | focus-visible | filled | error | error-dialog |
+|---|---|---|---|---|---|---|
+| Size (w x h) | 368 x 48 | same | same | same | same | 424 x 708.11 |
+| Padding | 0 | same | same | same | same | same |
+| Margin | 4px 0 0 0 | same | same | same | same | 0 |
+| Display | flex row, align center, justify normal | same | same | same | same | grid |
+| Radius | 8px `--cds-border-radius-100` | same | same | same | same | 16px `--cds-border-radius-200` |
+| Background | #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0` | #f0f6ff `--cds-color-interactive-background-primary-hover-weak` / `--cds-color-blue-25` | same | same | same | same |
+| Outline | none | same | 1px solid transparent offset 2px | 1px solid transparent offset 2px | 1px solid transparent offset 2px | same |
+| Font | Source Sans Pro 16/19.0016 400 | same | same | same | same | Source Sans Pro 16/24 400 `--cds-typography-body1`, `--cds-typography-body-primary` |
+| Text node font |  | same | same | same | same | h2.cds-Typography-alignLeft: Source Sans Pro 24/28 600 `--cds-typography-title-x-small`, ls -0.12px |
+| Text node colour |  | same | same | same | same | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| Colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` | same | same | same | same | same |
+| Cursor | text | same | same | same | same | auto |
+| Transform | none | same | same | same | same | matrix(1, 0, 0, 1, -212, -354.055) |
+| Icon |  | same | same | same | same | 20 x 20, colour #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| ::before |  | same | 372.0 x 52.0, inset -2px -2px -2px -2px, radius 8px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (no elevation token) | 372.0 x 52.0, inset -2px -2px -2px -2px, radius 8px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (no elevation token) | 372.0 x 52.0, inset -2px -2px -2px -2px, radius 8px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (no elevation token) | same |
+
+- Painted in `default`: div.cds-167.cds-152, 368.0x48.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, radius 8px; fieldset.cds-203.cds-161, 368.0x53.0, border 1px solid #8495b0 `--cds-color-neutral-stroke-primary` / `--cds-color-grey-400`, radius 8px
+- Painted in `hover`: div.cds-167.cds-152, 368.0x48.0, bg #f0f6ff `--cds-color-interactive-background-primary-hover-weak` / `--cds-color-blue-25`, radius 8px; fieldset.cds-203.cds-161, 368.0x53.0, border 1px solid #0b408b `--cds-color-interactive-primary-hover` / `--cds-color-blue-850`, radius 8px
+- Painted in `focus-visible`: div.cds-167.cds-152, 368.0x48.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, outline 1px solid transparent offset 2px, radius 8px; div::before.cds-167.cds-152, 372pxx52px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (no elevation token), radius 8px, inset -2px -2px -2px -2px; fieldset.cds-203.cds-161, 368.0x53.0, border 1px solid #8495b0 `--cds-color-neutral-stroke-primary` / `--cds-color-grey-400`, radius 8px
+- Painted in `error-dialog`: div.cds-Dialog-dialog, 424.0x708.1, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, radius 16px; div, 0.0x0.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`; header, 0.0x0.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, shadow #0f1114 @ 0.1 0px 2px 2px 0px (no elevation token); button.cds-149.cds-iconButton-small, 36.0x36.0, shadow transparent 0px 0px 0px 1px inset (no elevation token), radius 50%; div, 368.0x61.1, bg #fad2d8 `--cds-color-feedback-error-invert-weak` / `--cds-color-red-100`, radius 8px; div.cds-167.cds-152, 368.0x48.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, outline 1px solid transparent offset 2px, radius 8px
+
+- Extra (`default`): `{"fieldset":{"border":"1px solid #8495b0","radius":"8px","boxShadow":"none","outline":"#0d0f12 none 0px"},"input":{"font":"16px / 24px \SSP","color":"#0d0f12","padding":"12px","ariaInvalid":"false"},"label":{"font":"16px/20px 600","color":"#0d0f12"},"message":[],"icon":null}`
+- Extra (`hover`): `{"fieldset":{"border":"1px solid #0b408b","radius":"8px","boxShadow":"none","outline":"#0d0f12 none 0px"},"input":{"font":"16px / 24px \SSP","color":"#0d0f12","padding":"12px","ariaInvalid":"false"},"label":{"font":"16px/20px 600","color":"#0d0f12"},"message":[],"icon":null}`
+- `hover` reached by: mouse hover
+- Extra (`focus-visible`): `{"fieldset":{"border":"1px solid #8495b0","radius":"8px","boxShadow":"none","outline":"#0d0f12 none 0px"},"input":{"font":"16px / 24px \SSP","color":"#0d0f12","padding":"12px","ariaInvalid":"false"},"label":{"font":"16px/20px 600","color":"#0d0f12"},"message":[],"icon":null}`
+- `focus-visible` reached by: Shift+Tab, Tab
+- `filled` reached by: typed "not-an-email", focus kept
+- `error` reached by: Enter with "not-an-email", every request aborted
+- `error-dialog` reached by: the whole dialog in its error state
+
+#### coach-panel
+
+The AI coach side panel: white, 1px left rule, fixed beside <main>.
+
+Page: chat (https://www.coursera.org/learn/machine-learning). Selector: `aside holding the chat`. States: opened.
+Crops: `coach-panel-opened.png`.
+
+| Property | opened |
+|---|---|
+| Size (w x h) | 415 x 795 |
+| Padding | 0 |
+| Display | flex column, align normal, justify normal |
+| Radius | 16px `--cds-border-radius-200` |
+| Background | #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0` |
+| Font | Source Sans Pro 16/24 400 `--cds-typography-body1`, `--cds-typography-body-primary` |
+| Text node font | h2.cds-inlineNotification-inlineNotificationTitle: Source Sans Pro 16/20 600 `--cds-typography-subtitle-medium`, ls -0.048px |
+| Text node colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| Colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| Icon | 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+
+- Painted in `opened`: div.coach-conversation-container, 415.0x795.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, radius 16px; div.cds-localNotification-hasActions, 383.0x192.0, bg #e3eeff `--cds-color-emphasis-primary-background-weak` / `--cds-color-blue-50`, radius 16px; button.cds-149.cds-button-disableElevation, 65.6x36.0, bg #0056d2 `--cds-color-interactive-primary` / `--cds-color-blue-800`, shadow #0056d2 0px 0px 0px 1px inset (no elevation token), radius 8px; button.cds-149.cds-button-disableElevation, 159.2x36.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, shadow #0f1114 @ 0.2 0px 0px 4px 0px (no elevation token), outline 1px solid #f2f5fa offset 0px, radius 8px; span, 194.5x28.0, bg-image linear-gradient(279deg, rgb(36, 219, 231) -5.78%, rgb(105, 35, 222) 12%); button.cds-149.cds-button-disableElevation, 191.8x36.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`, shadow #c1cbdb 0px 0px 0px 1px inset (no elevation token), radius 8px
+
+- Extra (`opened`): `[{"node":"div.coach-conversation-container","zIndex":"10","position":"relative","borderLeft":"0px none #0d0f12"},{"node":"div.","zIndex":"3100","position":"absolute","borderLeft":"0px none #0d0f12"},{"node":"aside.","zIndex":"3001","position":"fixed","borderLeft":"1px solid #c1cbdb"}]`
+
+#### callout-info
+
+Informative callout (Your privacy and this chat): blue-tint fill, info icon, title, body, primary button.
+
+Page: chat (https://www.coursera.org/learn/machine-learning). Selector: `coach privacy notice`. States: default.
+Crops: `callout-info-default.png`.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 383 x 192 |
+| Padding | 12px 16px |
+| Display | flex row, align normal, justify normal |
+| Radius | 16px `--cds-border-radius-200` |
+| Background | #e3eeff `--cds-color-emphasis-primary-background-weak` / `--cds-color-blue-50` |
+| Font | Source Sans Pro 16/24 400 `--cds-typography-body1`, `--cds-typography-body-primary` |
+| Text node font | h2.cds-inlineNotification-inlineNotificationTitle: Source Sans Pro 16/20 600 `--cds-typography-subtitle-medium`, ls -0.048px |
+| Text node colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| Colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| Icon | 20 x 20, colour #0056d2 `--cds-color-interactive-primary` / `--cds-color-blue-800` |
+
+- Painted in `default`: div.cds-localNotification-hasActions, 383.0x192.0, bg #e3eeff `--cds-color-emphasis-primary-background-weak` / `--cds-color-blue-50`, radius 16px; button.cds-149.cds-button-disableElevation, 65.6x36.0, bg #0056d2 `--cds-color-interactive-primary` / `--cds-color-blue-800`, shadow #0056d2 0px 0px 0px 1px inset (no elevation token), radius 8px
+
+#### text-area
+
+CDS chat text area ("Ask anything..."): a grey 16-radius form with an auto-growing textarea and a round send button.
+
+Page: chat (https://www.coursera.org/learn/machine-learning). Selector: `form.cds-ChatResponseField-root`. States: default, hover, focus-visible, filled.
+Crops: `text-area-default.png`, `text-area-hover.png`, `text-area-focus-visible.png`, `text-area-filled.png`.
+
+| Property | default | hover | focus-visible | filled |
+|---|---|---|---|---|
+| Size (w x h) | 383 x 56 | same | same | same |
+| Padding | 8px | same | same | same |
+| Gap | 8px | same | same | same |
+| Display | flex column, align normal, justify normal | same | same | same |
+| Radius | 16px `--cds-border-radius-200` | same | same | same |
+| Background | #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` / `--cds-color-grey-25` | same | same | same |
+| Font | Source Sans Pro 16/24 400 `--cds-typography-body1`, `--cds-typography-body-primary` | same | same | same |
+| Text node font |  | same | same | textarea.cds-ChatResponseField-textarea: Source Sans Pro 16/24 400 `--cds-typography-body1`, `--cds-typography-body-primary`, ls normal |
+| Text node colour |  | same | same | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| Colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` | same | same | same |
+| Icon | 20 x 20, colour #dae1ed `--cds-color-neutral-disabled` / `--cds-color-grey-100` | same | same | 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` / `--cds-color-white-0` |
+
+- Painted in `default`: form.cds-ChatResponseField-root, 383.0x56.0, bg #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` / `--cds-color-grey-25`, radius 16px; div.cds-ChatResponseField-focusRing, 0.0x0.0, border 1px solid #f0f6ff `--cds-color-interactive-stroke-primary-focus-invert` / `--cds-color-blue-25`, radius 11px; div::after.cds-ChatResponseField-focusRing, autoxauto, border 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` / `--cds-color-purple-600`, radius 9px, inset 2px 2px 2px 2px; span.cds-149.cds-ChatResponseField-sendButton, 36.0x36.0, bg #a7b4c9 `--cds-color-neutral-disabled-strong` / `--cds-color-grey-300`, shadow #a7b4c9 0px 0px 0px 1px inset (no elevation token), radius 8px
+- Painted in `focus-visible`: form.cds-ChatResponseField-root, 383.0x56.0, bg #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` / `--cds-color-grey-25`, radius 16px; div.cds-ChatResponseField-focusRing, 391.0x64.0, border 1px solid #f0f6ff `--cds-color-interactive-stroke-primary-focus-invert` / `--cds-color-blue-25`, radius 11px; div::after.cds-ChatResponseField-focusRing, 385pxx58px, border 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` / `--cds-color-purple-600`, radius 9px, inset 2px 2px 2px 2px; span.cds-149.cds-ChatResponseField-sendButton, 36.0x36.0, bg #a7b4c9 `--cds-color-neutral-disabled-strong` / `--cds-color-grey-300`, shadow #a7b4c9 0px 0px 0px 1px inset (no elevation token), radius 8px
+- Painted in `filled`: form.cds-ChatResponseField-root, 383.0x56.0, bg #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` / `--cds-color-grey-25`, radius 16px; div.cds-ChatResponseField-focusRing, 391.0x64.0, border 1px solid #f0f6ff `--cds-color-interactive-stroke-primary-focus-invert` / `--cds-color-blue-25`, radius 11px; div::after.cds-ChatResponseField-focusRing, 385pxx58px, border 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` / `--cds-color-purple-600`, radius 9px, inset 2px 2px 2px 2px; button.cds-149.cds-ChatResponseField-sendButton, 36.0x36.0, bg #0056d2 `--cds-color-interactive-primary` / `--cds-color-blue-800`, shadow #0056d2 0px 0px 0px 1px inset (no elevation token), radius 8px
+
+- Extra (`default`): `{"textarea":{"size":"331x40","font":"16px/24px 400","color":"#0d0f12","padding":"8px","rows":1,"resize":"none","placeholder":"#48546e"},"send":null}`
+- `hover` reached by: mouse hover
+- `focus-visible` reached by: Shift+Tab, Tab
+- Extra (`filled`): `{"textarea":{"size":"331x40","font":"16px/24px 400","color":"#0d0f12","padding":"8px","rows":1,"resize":"none","placeholder":"#48546e"},"send":{"label":"Send message","disabled":null,"size":"36x36","bg":"#0056d2","color":"#ffffff","radius":"8px"}}`
+- `filled` reached by: typed, never sent
+
+#### icon-button-send
+
+Round send button in the chat field: filled primary when there is text, grey disabled when empty.
+
+Page: chat (https://www.coursera.org/learn/machine-learning). Selector: `form.cds-ChatResponseField-root button`. States: disabled, default, hover, focus-visible, pressed.
+Crops: `icon-button-send-disabled.png`, `icon-button-send-default.png`, `icon-button-send-hover.png`, `icon-button-send-focus-visible.png`, `icon-button-send-pressed.png`.
+
+| Property | disabled | default | hover | focus-visible | pressed |
+|---|---|---|---|---|---|
+| Size (w x h) | 36 x 36 | same | same | same | same |
+| Padding | 0 | same | same | same | same |
+| Display | flex row, align center, justify center | same | same | same | same |
+| Radius | 8px `--cds-border-radius-100` | same | same | same | same |
+| Background | #a7b4c9 `--cds-color-neutral-disabled-strong` / `--cds-color-grey-300` | #0056d2 `--cds-color-interactive-primary` / `--cds-color-blue-800` | #0b408b `--cds-color-emphasis-primary-background-xstrong` / `--cds-color-blue-850` | #0b408b `--cds-color-emphasis-primary-background-xstrong` / `--cds-color-blue-850` | #3c0f8a `--cds-color-interactive-primary-selected` / `--cds-color-purple-900` |
+| Box shadow | #a7b4c9 0px 0px 0px 1px inset (no elevation token) | #0056d2 0px 0px 0px 1px inset (no elevation token) | #0b408b 0px 0px 0px 1px inset (no elevation token) | #0b408b 0px 0px 0px 1px inset (no elevation token) | #3c0f8a 0px 0px 0px 1px inset (no elevation token) |
+| Outline | none | same | same | 1px solid transparent offset 2px | same |
+| Font | Source Sans Pro 16/24 400 `--cds-typography-body1`, `--cds-typography-body-primary` | same | same | same | same |
+| Colour | #dae1ed `--cds-color-neutral-disabled` / `--cds-color-grey-100` | #ffffff `--cds-color-neutral-primary-invert` / `--cds-color-white-0` | #ffffff `--cds-color-neutral-primary-invert` / `--cds-color-white-0` | #ffffff `--cds-color-neutral-primary-invert` / `--cds-color-white-0` | #ffffff `--cds-color-neutral-primary-invert` / `--cds-color-white-0` |
+| Cursor | default | pointer | pointer | pointer | pointer |
+| Icon | 20 x 20, colour #dae1ed `--cds-color-neutral-disabled` / `--cds-color-grey-100` | 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` / `--cds-color-white-0` | 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` / `--cds-color-white-0` | 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` / `--cds-color-white-0` | 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` / `--cds-color-white-0` |
+| ::after |  | same | same | 40.0 x 40.0, inset -2px -2px -2px -2px, radius 8px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (no elevation token) | same |
+
+- Painted in `disabled`: span.cds-149.cds-ChatResponseField-sendButton, 36.0x36.0, bg #a7b4c9 `--cds-color-neutral-disabled-strong` / `--cds-color-grey-300`, shadow #a7b4c9 0px 0px 0px 1px inset (no elevation token), radius 8px
+- Painted in `default`: button.cds-149.cds-ChatResponseField-sendButton, 36.0x36.0, bg #0056d2 `--cds-color-interactive-primary` / `--cds-color-blue-800`, shadow #0056d2 0px 0px 0px 1px inset (no elevation token), radius 8px
+- Painted in `hover`: button.cds-149.cds-ChatResponseField-sendButton, 36.0x36.0, bg #0b408b `--cds-color-emphasis-primary-background-xstrong` / `--cds-color-blue-850`, shadow #0b408b 0px 0px 0px 1px inset (no elevation token), radius 8px
+- Painted in `focus-visible`: button.cds-149.cds-ChatResponseField-sendButton, 36.0x36.0, bg #0b408b `--cds-color-emphasis-primary-background-xstrong` / `--cds-color-blue-850`, shadow #0b408b 0px 0px 0px 1px inset (no elevation token), outline 1px solid transparent offset 2px, radius 8px; button::after.cds-149.cds-ChatResponseField-sendButton, 40pxx40px, shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (no elevation token), radius 8px, inset -2px -2px -2px -2px
+- Painted in `pressed`: button.cds-149.cds-ChatResponseField-sendButton, 36.0x36.0, bg #3c0f8a `--cds-color-interactive-primary-selected` / `--cds-color-purple-900`, shadow #3c0f8a 0px 0px 0px 1px inset (no elevation token), radius 8px
+
+- `disabled` reached by: field empty
+- `hover` reached by: mouse hover
+- `focus-visible` reached by: Shift+Tab, Tab
+- `pressed` reached by: CDP forcePseudoState :active:hover
+
+#### error-page
+
+The 404 page: logo bar, grey ground, an abstract illustration, one sentence with two links, three helpful links. It loads without CDS, so text falls back to the browser serif.
+
+Page: notfound (https://www.coursera.org/learn/no-such-course-refresh-404). Selector: `body`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1440 x 900 |
+| Padding | 0 |
+| Display | block |
+| Radius | 0px |
+| Background | #f5f5f5 no token |
+| Font | Opensans-Light 16/normal 400 |
+| Text node font | p: Opensans-Light 20/normal 400, ls normal |
+| Text node colour | #000000 no token |
+| Colour | #000000 no token |
+| Icon | 780 x 350, colour #000000 no token |
+
+- Painted in `default`: body, 1440.0x900.0, bg #f5f5f5 no token; div, 1440.0x65.0, bg #ffffff `--cds-color-neutral-background-primary` / `--cds-color-white-0`
+
+- Extra (`default`): `{"status":404,"message":{"font":"16px Opensans-Light","color":"#000000"},"link":{"font":"20px Opensans-Light","color":"#4a90e2"},"ground":"#f5f5f5","cdsVars":"none"}`
+
+#### callout-error
+
+Error notification the log-in dialog shows above the field after an invalid submit: red-tint fill, outlined error icon, one line of text. The field itself is not marked invalid.
+
+Page: login (https://www.coursera.org/?authMode=login). Selector: `[role=dialog] error notification`. States: error.
+Crops: `callout-error-error.png`.
+
+| Property | error |
+|---|---|
+| Size (w x h) | 368 x 61.11 |
+| Padding | 18px 22px 18px 16px |
+| Display | flex row, align center, justify normal |
+| Radius | 8px `--cds-border-radius-100` |
+| Background | #fad2d8 `--cds-color-feedback-error-invert-weak` / `--cds-color-red-100` |
+| Font | Source Sans Pro 16/24 400 `--cds-typography-body1`, `--cds-typography-body-primary` |
+| Text node font | li: Source Sans Pro 12/18 400 `--cds-typography-body-tertiary`, ls normal |
+| Text node colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| Colour | #0d0f12 `--cds-color-interactive-secondary` / `--cds-color-grey-975` |
+| Icon | 24 x 24, colour #232b3a `--cds-color-interactive-secondary-hover` / `--cds-color-grey-900` |
+
+- Painted in `error`: div, 368.0x61.1, bg #fad2d8 `--cds-color-feedback-error-invert-weak` / `--cds-color-red-100`, radius 8px
+
+- Extra (`error`): `{"role":"img","icon":{"w":24,"color":"#232b3a","fill":"#b21836"},"text":{"font":"16px/24px 400","color":"#232b3a"}}`
 
 ## CDS class names in the stylesheets
 

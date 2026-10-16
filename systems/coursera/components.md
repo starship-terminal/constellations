@@ -1,12 +1,12 @@
 # Coursera components
 
-The discovery list of every page and view captured, then one inventory entry per component with crops of the real product, the icon summary and the Gaps. Public pages were captured on 2026-09-29, signed out, in headless Chromium at 1440x900 (mobile 390x844) with computed styles read from the running page. The learner pages (course home, grades, course info, video, reading, assignment, My Learning) were captured the same day from 11 static DOM snapshots of a signed-in session with the learner's name replaced, and measured in headless Chromium at 1440x900. On the public pages nothing was signed into, enrolled in or submitted.
+The discovery list of every page and view captured, then one inventory entry per component with crops of the real product, the icon summary and the Gaps. A 2026-10-17 pass added the log-in dialog, the AI coach text area, the 404 page and, signed in, the overflow menu, review and share dialogs and Account settings in light and dark; their entries are under [Forms, menus, settings and states](#forms-menus-settings-and-states). Public pages were captured on 2026-09-29, signed out, in headless Chromium at 1440x900 (mobile 390x844) with computed styles read from the running page. The learner pages (course home, grades, course info, video, reading, assignment, My Learning) were captured the same day from 11 static DOM snapshots of a signed-in session with the learner's name replaced, and measured in headless Chromium at 1440x900. On the public pages nothing was signed into, enrolled in or submitted.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md) (public) and [raw/measurements-signed-in.md](raw/measurements-signed-in.md) (learner pages), with machine-readable copies in [raw/components-computed.json](raw/components-computed.json) and [raw/components-signed-in.json](raw/components-signed-in.json). The page layouts are described in [raw/pages.md](raw/pages.md).
 
 How to read an entry:
 
-- Values are condensed from those files. A colour is the hex followed by the `--cds-*` token whose light value matches it (the semantic name, not the palette name); "no token" means nothing in the dump matches. Fonts are Source Sans Pro unless a value names another family, and are written size/line-height weight, for example `16/24 400`.
+- Values are condensed from those files. A colour is the hex followed by the `--cds-*` token whose light value matches it (the semantic name, not the palette name). A value CDS has no variable for but this package's [tokens.json](tokens.json) names (the focus ring, the card and sticky-nav shadows, the hero band) is followed by that token path; "no token" means neither names it. Fonts are Source Sans Pro unless a value names another family, and are written size/line-height weight, for example `16/24 400`.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes from it. A state with the same values as the first row is named in its label, for example "default (same: pressed)".
 - Entries that name several measured parts (a card and its logo, title and metadata) list each part as a row with its default values. "Measured as" gives the id in the raw files.
 - Crops are images of the component read from the live page: public crops are in [components/crops/](components/crops), learner-page crops in [components/crops/signed-in/](components/crops/signed-in). Screenshots are in [screenshots/](screenshots).
@@ -20,13 +20,15 @@ Screenshots are named `{page}-{theme}-{state}.png`. Desktop shots are 2880x1800 
 | Surface | URL | Captured | Light | Dark |
 |---|---|---|---|---|
 | Home. Hero carousel, three "New and popular" rails, gradient career bands, categories, FAQ, footer. Mega menu open state captured. | `/` | desktop | [default](screenshots/home-light-default.png), [explore-menu](screenshots/home-light-explore-menu.png), [full](screenshots/home-light-full.png) | - |
-| Search results. Suggestion chips, filter bar, 4-column product card grid. Filter dropdown, applied chip, filtered results and card hover captured. | `/search?query=machine%20learning` | desktop | [card-hover](screenshots/search-light-card-hover.png), [chip-applied](screenshots/search-light-chip-applied.png), [default](screenshots/search-light-default.png), [filter-dropdown](screenshots/search-light-filter-dropdown.png), [filtered](screenshots/search-light-filtered.png), [full](screenshots/search-light-full.png) | [card-hover](screenshots/search-dark-card-hover.png), [chip-applied](screenshots/search-dark-chip-applied.png), [default](screenshots/search-dark-default.png), [filter-dropdown](screenshots/search-dark-filter-dropdown.png), [filtered](screenshots/search-dark-filtered.png) |
+| Search results. Suggestion chips, filter bar, 4-column product card grid. Filter dropdown, applied chip, filtered results and card hover captured. | `/search?query=machine%20learning` | desktop | [card-hover](screenshots/search-light-card-hover.png), [chip-applied](screenshots/search-light-chip-applied.png), [default](screenshots/search-light-default.png), [filter-dropdown](screenshots/search-light-filter-dropdown.png), [filtered](screenshots/search-light-filtered.png), [full](screenshots/search-light-full.png), [no-match](screenshots/search-light-no-match.png) | [card-hover](screenshots/search-dark-card-hover.png), [chip-applied](screenshots/search-dark-chip-applied.png), [default](screenshots/search-dark-default.png), [filter-dropdown](screenshots/search-dark-filter-dropdown.png), [filtered](screenshots/search-dark-filtered.png) |
 | Browse category. Breadcrumb, stats, "Most popular" cards, sticky 304px filter sidebar, 3-column grid, FAQ. | `/browse/data-science` | desktop | [default](screenshots/browse-light-default.png), [full](screenshots/browse-light-full.png) | - |
 | Course landing. Hero, stats card, tabs, About, Outcomes, Modules with rail, Recommendations, Testimonials, Reviews, FAQ. All six tab positions, module expand and details, instructors, offered by, sticky nav and the AI panel captured. | `/learn/machine-learning` | desktop | [ai-panel](screenshots/course-light-ai-panel.png), [default](screenshots/course-light-default.png), [full](screenshots/course-light-full.png), [instructors](screenshots/course-light-instructors.png), [module-details](screenshots/course-light-module-details.png), [module-expanded](screenshots/course-light-module-expanded.png), [offered-by](screenshots/course-light-offered-by.png), [sticky](screenshots/course-light-sticky.png), [tab-about](screenshots/course-light-tab-about.png), [tab-modules](screenshots/course-light-tab-modules.png), [tab-outcomes](screenshots/course-light-tab-outcomes.png), [tab-recommendations](screenshots/course-light-tab-recommendations.png), [tab-reviews](screenshots/course-light-tab-reviews.png), [tab-testimonials](screenshots/course-light-tab-testimonials.png) | [ai-panel](screenshots/course-dark-ai-panel.png), [default](screenshots/course-dark-default.png), [instructors](screenshots/course-dark-instructors.png), [module-details](screenshots/course-dark-module-details.png), [module-expanded](screenshots/course-dark-module-expanded.png), [offered-by](screenshots/course-dark-offered-by.png), [sticky](screenshots/course-dark-sticky.png), [tab-about](screenshots/course-dark-tab-about.png), [tab-modules](screenshots/course-dark-tab-modules.png), [tab-outcomes](screenshots/course-dark-tab-outcomes.png), [tab-recommendations](screenshots/course-dark-tab-recommendations.png), [tab-reviews](screenshots/course-dark-tab-reviews.png), [tab-testimonials](screenshots/course-dark-tab-testimonials.png) |
 | Second course. Same frame as the first course, no Outcomes tab, four modules, an "AI Graded" disclaimer. | `/learn/learning-how-to-learn` | desktop | [default](screenshots/course2-light-default.png), [full](screenshots/course2-light-full.png), [module-details](screenshots/course2-light-module-details.png), [modules-expanded](screenshots/course2-light-modules-expanded.png) | - |
 | Explore topic. Bands of heading column, chip row and four compact cards, a dark band with an arrow link and a scrolling row, degrees, articles, FAQ. Card hover captured; the chip and card states are crops and measurements. | `/explore/generative-ai` | desktop | [card-hover](screenshots/explore-light-card-hover.png), [default](screenshots/explore-light-default.png) | - |
 | Specialization. Same hero and stats card; the course list replaces Modules; Course details opens a panel. | `/specializations/machine-learning-introduction` | desktop | [courses-expanded-2](screenshots/specialization-light-courses-expanded-2.png), [courses-expanded](screenshots/specialization-light-courses-expanded.png), [default](screenshots/specialization-light-default.png), [full-courses-expanded](screenshots/specialization-light-full-courses-expanded.png), [full](screenshots/specialization-light-full.png) | - |
 | Professional certificate. Adds a dismissible promo banner and nine course rows. | `/professional-certificates/google-data-analytics` | desktop | [courses-expanded](screenshots/certificate-light-courses-expanded.png), [default](screenshots/certificate-light-default.png), [full](screenshots/certificate-light-full.png) | - |
+| Log-in dialog (2026-10-17). The CDS dialog over the home page, in its error state after an invalid address (every request aborted first). | `/?authMode=login` | desktop | [error](screenshots/login-light-error.png) | - |
+| 404 page (2026-10-17). Logo bar, illustration and links on a grey ground; no CDS. | `/learn/no-such-course-refresh-404` | desktop | [default](screenshots/notfound-light-default.png) | - |
 
 Mobile pages (390x844): header 65px with hamburger, wordmark and search icon; a 92px bar fixed to the bottom holds Enroll for free on course-like pages; the stat card becomes a stacked list; weeks and courses open a full-height sheet instead of expanding in place.
 
@@ -38,7 +40,7 @@ Mobile pages (390x844): header 65px with hamburger, wordmark and search icon; a 
 | Course landing | [default](screenshots/mobile-course-light-default.png), [full](screenshots/mobile-course-light-full.png), [modules-expanded](screenshots/mobile-course-light-modules-expanded.png) |
 | Specialization | [courses-expanded](screenshots/mobile-specialization-light-courses-expanded.png), [default](screenshots/mobile-specialization-light-default.png), [full](screenshots/mobile-specialization-light-full.png) |
 
-### Signed-in learner pages (light only, 1440x900)
+### Signed-in learner pages (1440x900)
 
 Course `machine-learning-duke` and the learner's My Learning page. The `Read on` label is the id the measurement file uses for that view.
 
@@ -55,6 +57,10 @@ Course `machine-learning-duke` and the learner's My Learning page. The `Read on`
 | Assignment item (submitted) | `/learn/machine-learning-duke/assignment-submission/wJmSz/intro-to-machine-learning` | `item-assignment` | [view](screenshots/learn-assignment-light-submitted.png), [full](screenshots/learn-assignment-light-submitted-full.png) |
 | My Learning, In Progress | `/my-learning?myLearningTab=IN_PROGRESS` | `my-learning` | [view](screenshots/my-learning-light-default.png), [full](screenshots/my-learning-light-default-full.png) |
 | My Learning, Completed | `/my-learning?myLearningTab=COMPLETED` | `my-learning-completed` | [view](screenshots/my-learning-light-completed.png), [full](screenshots/my-learning-light-completed-full.png) |
+| My Learning, In Progress, in the Dark mode the learner can choose (2026-10-17) | `/my-learning?myLearningTab=IN_PROGRESS` | `my-learning-dark` | [view](screenshots/my-learning-dark-default.png) |
+| Account settings, Appearance and switches, light and dark (2026-10-17) | `/account-settings` | `settings-switch-focus`, `settings-dark` | crops only: [Switch](#switch), [Warning notification](#warning-notification), [Select, signed in](#select-signed-in) |
+
+The 2026-10-17 copies come from a later enrolment on the same account, so their course names are replaced with "Example Course" and "Another Course"; they stay outside the repository.
 
 ### Overlays and transient states
 
@@ -76,9 +82,15 @@ Course `machine-learning-duke` and the learner's My Learning page. The `Read on`
 | Learning objectives shown | course home | L screenshot `learn-home-light-objectives-expanded` |
 | Submitted assignment banner | assignment item | L screenshot `learn-assignment-light-submitted` |
 | Mobile sheet for a week or course | mobile course and specialization | L screenshots `mobile-course-light-modules-expanded`, `mobile-specialization-light-courses-expanded` |
-| Empty and error states | - | none captured; see Gaps |
+| Log-in validation error | home, log-in dialog | L screenshot `login-light-error`; entries [Text field](#text-field) and [Error notification](#error-notification) |
+| 404 page | any unknown URL | L screenshot `notfound-light-default`; entry [404 page](#404-page) |
+| AI coach text area and send button | course, AI coach panel | crops and measurements; entries [Chat text area](#chat-text-area) and [Chat send button](#chat-send-button) |
+| Course overflow menu and tooltip | My Learning, course row | crops and measurements; entries [Overflow menu](#overflow-menu) and [Tooltip, signed in](#tooltip-signed-in) |
+| Review and share dialogs | My Learning, overflow menu | crops and measurements; entries [Review dialog](#review-dialog) and [Share dialog](#share-dialog) |
+| Search with no match | search, `?query=zqxjvkwpq` | L screenshot `search-light-no-match`: fallback results under "Results for", no empty state |
+| Toast | - | not present: no toast appeared on any page; see Gaps |
 
-Total: 90 screenshots, 193 components measured on public pages and 132 on learner pages.
+Total: 94 screenshots, 203 components measured on public pages and 146 on learner pages.
 
 ## Shared values
 
@@ -112,7 +124,7 @@ Values that apply across entries, from the measurement files.
 | [Product card](#product-card) | 335 x 418.31 | 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` | 16px `--cds-border-radius-200` | #ffffff `--cds-color-neutral-background-primary` | none | 0 |
 | [Compact course card](#compact-course-card) | 266.19 x 247.61 | 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` | 16px `--cds-border-radius-200` | #ffffff `--cds-color-neutral-background-primary` | none | 0 |
 | [Product card, list variant](#product-card-list-variant) | 664 x 189 | 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` | 16px `--cds-border-radius-200` | #ffffff `--cds-color-neutral-background-primary` | none | 8px |
-| [Stats card](#stats-card) | 1344 x 114 | 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` | 8px `--cds-border-radius-100` | #ffffff `--cds-color-neutral-background-primary` | #0f1114 @ 0.2 0px 8px 16px 0px, no token | 0 |
+| [Stats card](#stats-card) | 1344 x 114 | 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` | 8px `--cds-border-radius-100` | #ffffff `--cds-color-neutral-background-primary` | #0f1114 @ 0.2 0px 8px 16px 0px (`component.stats-card.shadow`) | 0 |
 | [Module list](#module-list) | 885.33 x 432 | 2px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` | 8px `--cds-border-radius-100` | transparent | - | 0 |
 | [Review card](#review-card) | 885.33 x 202 | 2px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` | 8px `--cds-border-radius-100` | transparent | - | 24px 32px |
 | [Testimonial card](#testimonial-card) | 312 x 202 | 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak` | 8px `--cds-border-radius-100` | transparent | - | 16px |
@@ -157,7 +169,7 @@ Audience tab in the top bar. The current audience is bold with a white underline
 | default | size 114.63 x 40; padding 0 8px; border B: 6px solid transparent; radius 0px; background transparent; shadow none; font 16/40 400; colour #ffffff `--cds-color-neutral-primary-invert` |
 | selected | size 117.34 x 40; border B: 6px solid #ffffff `--cds-color-neutral-stroke-primary-invert`; font 16/40 600 |
 | hover | background #ffffff `--cds-color-neutral-background-primary`; colour #0d0f12 `--cds-color-interactive-secondary` |
-| focus-visible | radius 4px `--cds-border-radius-50`; background #ffffff `--cds-color-neutral-background-primary`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token; colour #0d0f12 `--cds-color-interactive-secondary` |
+| focus-visible | radius 4px `--cds-border-radius-50`; background #ffffff `--cds-color-neutral-background-primary`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0d0f12 `--cds-color-interactive-secondary` |
 | pressed | background #ffffff `--cds-color-neutral-background-primary`; colour #0d0f12 `--cds-color-interactive-secondary` |
 
 ![Audience link selected](components/crops/header-audience-link-selected.png) ![Audience link default](components/crops/header-audience-link-default.png) ![Audience link hover](components/crops/header-audience-link-hover.png) ![Audience link focus-visible](components/crops/header-audience-link-focus-visible.png) ![Audience link pressed](components/crops/header-audience-link-pressed.png)
@@ -189,7 +201,7 @@ Global search: rounded field (cds-Search-base) with a round primary icon button 
 |---|---|
 | default (same: hover, focus-visible, filled) | size 480 x 44; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary` |
 
-Child layers that carry the look: div, 480x44, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, radius 24px; button, 36x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset, no token, radius 24px.
+Child layers that carry the look: div, 480x44, background #ffffff `--cds-color-neutral-background-primary`, border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`, radius 24px; button, 36x36, background #0056d2 `--cds-color-interactive-primary`, shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour), radius 24px.
 
 | Part | Values (default) |
 |---|---|
@@ -203,9 +215,9 @@ Round search submit inside the field: cds-iconButton-small primary, 36x36, 20px 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; padding 0; radius 24px `--cds-border-radius-300`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset, no token; font 14/20 400 `--cds-typography-body2`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` |
-| hover, focus-visible | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; shadow #0b408b 0px 0px 0px 1px inset, no token |
-| pressed | background #3c0f8a `--cds-color-interactive-primary-selected`; shadow #3c0f8a 0px 0px 0px 1px inset, no token |
+| default | size 36 x 36; padding 0; radius 24px `--cds-border-radius-300`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 400 `--cds-typography-body2`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` |
+| hover, focus-visible | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour) |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-selected`; shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour) |
 
 ![Search submit button default](components/crops/icon-button-search-default.png) ![Search submit button hover](components/crops/icon-button-search-hover.png) ![Search submit button focus-visible](components/crops/icon-button-search-focus-visible.png) ![Search submit button pressed](components/crops/icon-button-search-pressed.png)
 
@@ -240,7 +252,7 @@ Ghost icon button, medium (AI coach trigger in the header): 48x48, 24px icon. Me
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 48 x 48; padding 0; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset, no token; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary` |
+| default | size 48 x 48; padding 0; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset (no edge); font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, colour #0056d2 `--cds-color-interactive-primary` |
 | hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, colour #0b408b `--cds-color-interactive-primary-hover` |
 | pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; colour #3c0f8a `--cds-color-interactive-primary-selected`; icon 24 x 24, colour #3c0f8a `--cds-color-interactive-primary-selected` |
 
@@ -265,7 +277,7 @@ Link in a mega menu column. Measured as `mega-menu-link` on the home page.
 |---|---|
 | default | size 72.55 x 36; padding 8px 0; radius 0px; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none |
 | hover | decoration underline |
-| focus-visible | outline 1px auto #005fcc, no token offset 1px; decoration underline |
+| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline |
 
 Child layers that carry the look: a, 72.5x36, outline 1px auto #005fcc offset 1px.
 
@@ -278,7 +290,7 @@ Child layers that carry the look: a, 72.5x36, outline 1px auto #005fcc offset 1p
 |---|---|
 | default | size 44.75 x 20; padding 0; radius 0px; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration underline |
 | hover | decoration none |
-| focus-visible | outline 1px auto #005fcc, no token offset 1px; decoration none |
+| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration none |
 
 Child layers that carry the look: a, 44.8x20, outline 1px auto #005fcc offset 1px.
 
@@ -359,9 +371,9 @@ Ghost small icon button, 32x32 with a 24px icon. Measured as `topbar-switcher` o
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak` |
 
 ![App switcher button default](components/crops/signed-in/topbar-switcher-default.png) ![App switcher button hover](components/crops/signed-in/topbar-switcher-hover.png) ![App switcher button focus-visible](components/crops/signed-in/topbar-switcher-focus-visible.png) ![App switcher button focus-visible-cds](components/crops/signed-in/topbar-switcher-focus-visible-cds.png) ![App switcher button pressed](components/crops/signed-in/topbar-switcher-pressed.png)
@@ -373,7 +385,7 @@ Coursera wordmark (127x32 svg), a 1x26 divider, then the programme badge. One li
 |---|---|
 | default | size 192 x 32; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; icon 127 x 32, fill #0056d2, color #0056d2 (`--cds-color-interactive-primary`) |
 | hover | decoration underline auto offset auto |
-| focus-visible, focus-visible-cds | outline 1px auto #005fcc, no token offset 1px; decoration underline auto offset auto |
+| focus-visible, focus-visible-cds | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline auto offset auto |
 
 Child layers that carry the look: div 1x26 border L:1px solid #a7b4c9 `--cds-color-neutral-disabled-strong`; div 32x32 background #00255d, no token radius 50%.
 
@@ -396,7 +408,7 @@ Primary button, 36px tall, joined to the input. Measured as `topbar-course-searc
 |---|---|
 | default (same: focus-visible) | size 73.98 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 0px 4px 4px 0px (`--cds-border-radius-50`); background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert` |
 | hover | background #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | background #3c0f8a `--cds-color-interactive-primary-pressed` |
 
 ![Course search button default](components/crops/signed-in/topbar-course-search-button-default.png) ![Course search button hover](components/crops/signed-in/topbar-course-search-button-hover.png) ![Course search button focus-visible](components/crops/signed-in/topbar-course-search-button-focus-visible.png) ![Course search button focus-visible-cds](components/crops/signed-in/topbar-course-search-button-focus-visible-cds.png) ![Course search button pressed](components/crops/signed-in/topbar-course-search-button-pressed.png)
@@ -406,9 +418,9 @@ Ghost small icon button (help, language, bell and avatar share it): 32x32, 24px 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, fill none, no token, color #404b5e `--cds-color-interactive-secondary-inactive` |
+| default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, fill none, color #404b5e `--cds-color-interactive-secondary-inactive` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
 | pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed` |
 
 | Part | Values (default) |
@@ -424,7 +436,7 @@ User avatar, 24px navy disc with the initial, inside a 32px ghost icon button. M
 |---|---|
 | default (same: focus-visible) | size 32 x 32; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
 
 ![Avatar menu button default](components/crops/signed-in/topbar-avatar-default.png) ![Avatar menu button hover](components/crops/signed-in/topbar-avatar-hover.png) ![Avatar menu button focus-visible](components/crops/signed-in/topbar-avatar-focus-visible.png) ![Avatar menu button focus-visible-cds](components/crops/signed-in/topbar-avatar-focus-visible-cds.png)
 
@@ -440,9 +452,9 @@ Ghost button with a 20px chevron end icon. Measured as `topbar-ml-explore` on My
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 83.8 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #48546e `--cds-color-neutral-primary-weak`; icon 20 x 20, fill none, no token, color #48546e `--cds-color-neutral-primary-weak` |
+| default | size 83.8 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #48546e `--cds-color-neutral-primary-weak`; icon 20 x 20, fill none, color #48546e `--cds-color-neutral-primary-weak` |
 | hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
 | pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
 
 ![Explore button (My Learning) default](components/crops/signed-in/topbar-ml-explore-default.png) ![Explore button (My Learning) hover](components/crops/signed-in/topbar-ml-explore-hover.png) ![Explore button (My Learning) focus-visible](components/crops/signed-in/topbar-ml-explore-focus-visible.png) ![Explore button (My Learning) focus-visible-cds](components/crops/signed-in/topbar-ml-explore-focus-visible-cds.png) ![Explore button (My Learning) pressed](components/crops/signed-in/topbar-ml-explore-pressed.png)
@@ -454,7 +466,7 @@ Ghost buttons rendered as links. The current page (My Learning) is marked isCurr
 |---|---|
 | default | size 62.95 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #48546e `--cds-color-neutral-primary-weak` |
 | hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
 | pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
 | current, current-default | size 90.53 x 36; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0b408b `--cds-color-interactive-primary-hover` |
 | current-hover | size 90.53 x 36; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0b408b `--cds-color-interactive-primary-hover` |
@@ -466,7 +478,7 @@ Pill search field (cds-Search) 476x44, notched outline, with a round primary ico
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 476.39 x 44; border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; radius 24px `--cds-border-radius-300`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 0 x 0, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| default (same: focus-visible) | size 476.39 x 44; border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; radius 24px `--cds-border-radius-300`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 0 x 0, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
 
 ![Catalog search (My Learning) default](components/crops/signed-in/topbar-ml-search-default.png) ![Catalog search (My Learning) hover](components/crops/signed-in/topbar-ml-search-hover.png) ![Catalog search (My Learning) focus-visible](components/crops/signed-in/topbar-ml-search-focus-visible.png)
@@ -476,9 +488,9 @@ Primary small icon button, 36x36, 20px magnifier, fully round. Measured as `topb
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius 24px `--cds-border-radius-300`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 400 `--cds-typography-body2`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, fill none, no token, color #ffffff `--cds-color-neutral-primary-invert` |
+| default (same: focus-visible) | size 36 x 36; radius 24px `--cds-border-radius-300`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 400 `--cds-typography-body2`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, fill none, color #ffffff `--cds-color-neutral-primary-invert` |
 | hover | background #0b408b `--cds-color-interactive-primary-hover`; shadow #0b408b 0px 0px 0px 1px inset |
-| focus-visible-cds | background #0b408b `--cds-color-interactive-primary-hover`; shadow #0b408b 0px 0px 0px 1px inset; outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | background #0b408b `--cds-color-interactive-primary-hover`; shadow #0b408b 0px 0px 0px 1px inset; outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; shadow #3c0f8a 0px 0px 0px 1px inset |
 
 ![Round search button default](components/crops/signed-in/topbar-ml-search-button-default.png) ![Round search button hover](components/crops/signed-in/topbar-ml-search-button-hover.png) ![Round search button focus-visible](components/crops/signed-in/topbar-ml-search-button-focus-visible.png) ![Round search button focus-visible-cds](components/crops/signed-in/topbar-ml-search-button-focus-visible-cds.png) ![Round search button pressed](components/crops/signed-in/topbar-ml-search-button-pressed.png)
@@ -490,7 +502,7 @@ Primary small icon button, 36x36, 20px magnifier, fully round. Measured as `topb
 |---|---|
 | default (same: focus-visible) | size 186.81 x 20; radius 0; background transparent; shadow none; outline none; font 14/20 400 `--cds-typography-body2`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline auto offset auto |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
 | pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none |
 
 No crop was saved for this entry; the values are from the computed styles.
@@ -504,13 +516,13 @@ Primary filled button, medium (View in the filter popover): solid blue, white la
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 61.3 x 36; padding 8px 16px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset, no token; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert` |
+| default (same: focus-visible) | size 61.3 x 36; padding 8px 16px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert` |
 | hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong` |
 | pressed | background #3c0f8a `--cds-color-interactive-primary-selected` |
 
 | Part | Values (default) |
 |---|---|
-| `button-primary-dialog` | size 68.66 x 48; padding 12px 24px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; box shadow #0056d2 0px 0px 0px 1px inset, no token; text span 16/24 600 `--cds-typography-title3`, ls 0.16px, #ffffff `--cds-color-neutral-primary-invert` |
+| `button-primary-dialog` | size 68.66 x 48; padding 12px 24px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; box shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); text span 16/24 600 `--cds-typography-title3`, ls 0.16px, #ffffff `--cds-color-neutral-primary-invert` |
 
 ![Primary button default](components/crops/button-primary-default.png) ![Primary button hover](components/crops/button-primary-hover.png) ![Primary button focus-visible](components/crops/button-primary-focus-visible.png) ![Primary button pressed](components/crops/button-primary-pressed.png) ![Primary button (button-primary-dialog) default](components/crops/button-primary-dialog-default.png)
 
@@ -519,7 +531,7 @@ Full-width primary button at the foot of the sheet (View). Measured as `button-p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 328 x 36; padding 8px 16px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset, no token; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert` |
+| default (same: focus-visible) | size 328 x 36; padding 8px 16px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #ffffff `--cds-color-neutral-primary-invert` |
 | hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong` |
 
 ![Block primary button default](components/crops/button-primary-block-default.png) ![Block primary button hover](components/crops/button-primary-block-hover.png) ![Block primary button focus-visible](components/crops/button-primary-block-focus-visible.png)
@@ -529,13 +541,13 @@ Full-width primary button at the foot of the sheet (View). Measured as `button-p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 256.39 x 64; padding 11px 80px 13px 80px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset, no token; font 16/24 600 `--cds-typography-title3`, ls 0.16px; colour #ffffff `--cds-color-neutral-primary-invert` |
+| default (same: focus-visible) | size 256.39 x 64; padding 11px 80px 13px 80px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 16/24 600 `--cds-typography-title3`, ls 0.16px; colour #ffffff `--cds-color-neutral-primary-invert` |
 | hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong` |
 | pressed | background #3c0f8a `--cds-color-interactive-primary-selected` |
 
 | Part | Values (default) |
 |---|---|
-| `button-enroll-compact` | size 180 x 60; padding 11px 32px 13px 32px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; box shadow #0056d2 0px 0px 0px 1px inset, no token; text span 14/20 600 `--cds-typography-action-secondary`, ls 0.14px, #ffffff `--cds-color-neutral-primary-invert` |
+| `button-enroll-compact` | size 180 x 60; padding 11px 32px 13px 32px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; box shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); text span 14/20 600 `--cds-typography-action-secondary`, ls 0.14px, #ffffff `--cds-color-neutral-primary-invert` |
 
 ![Enroll button default](components/crops/button-enroll-default.png) ![Enroll button hover](components/crops/button-enroll-hover.png) ![Enroll button focus-visible](components/crops/button-enroll-focus-visible.png) ![Enroll button pressed](components/crops/button-enroll-pressed.png) ![Enroll button (button-enroll-compact) default](components/crops/button-enroll-compact-default.png)
 
@@ -544,13 +556,13 @@ Secondary outlined button (Join for Free): white fill, 1px blue border, blue lab
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 103.17 x 36; padding 8px 12px; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0056d2 0px 0px 0px 1px inset, no token; font 14/20 700 `--cds-typography-title4`, ls 0.14px; colour #0056d2 `--cds-color-interactive-primary` |
-| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset, no token; colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; shadow #3c0f8a 0px 0px 0px 1px inset, no token; colour #3c0f8a `--cds-color-interactive-primary-selected` |
+| default | size 103.17 x 36; padding 8px 12px; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 14/20 700 `--cds-typography-title4`, ls 0.14px; colour #0056d2 `--cds-color-interactive-primary` |
+| hover, focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); colour #0b408b `--cds-color-interactive-primary-hover` |
+| pressed | background #f9f5ff `--cds-color-interactive-background-primary-selected-weak`; shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); colour #3c0f8a `--cds-color-interactive-primary-selected` |
 
 | Part | Values (default) |
 |---|---|
-| `button-disabled-secondary` | size 328 x 36; padding 8px 16px; radius 8px `--cds-border-radius-100`; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; box shadow #a7b4c9 0px 0px 0px 1px inset, no token; text span 14/20 600 `--cds-typography-action-secondary`, ls 0.14px, #a7b4c9 `--cds-color-neutral-disabled-strong` |
+| `button-disabled-secondary` | size 328 x 36; padding 8px 16px; radius 8px `--cds-border-radius-100`; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; box shadow #a7b4c9 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); text span 14/20 600 `--cds-typography-action-secondary`, ls 0.14px, #a7b4c9 `--cds-color-neutral-disabled-strong` |
 
 ![Secondary button default](components/crops/button-secondary-default.png) ![Secondary button hover](components/crops/button-secondary-hover.png) ![Secondary button focus-visible](components/crops/button-secondary-focus-visible.png) ![Secondary button pressed](components/crops/button-secondary-pressed.png) ![Secondary button (button-disabled-secondary) disabled](components/crops/button-disabled-secondary-disabled.png)
 
@@ -561,7 +573,7 @@ Ghost button (Log In in the header): no fill, blue label. Measured as `button-gh
 |---|---|
 | default | size 60.27 x 44; padding 12px; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 400 `--cds-typography-body2`, ls 0.14px; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | decoration underline |
-| focus-visible | outline 5px auto #005fcc, no token offset -2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
+| focus-visible | outline 5px auto #005fcc (the browser default focus outline) offset -2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
 | pressed | decoration underline |
 
 | Part | Values (default) |
@@ -625,7 +637,7 @@ Legacy "Show more" text toggle (button.bold.body-2-text) under long descriptions
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 77.27 x 21; padding 0; radius 0px; background transparent; outline none; font OpenSans 14/21 700; colour #136ef0 `--cds-color-callouts-background-primary` |
-| focus-visible | outline 1px auto #005fcc, no token offset 0px |
+| focus-visible | outline 1px auto #005fcc offset 0px (the browser default focus outline) |
 
 Child layers that carry the look: button, 77.3x21, outline 1px auto #005fcc offset 0px.
 
@@ -681,13 +693,13 @@ Close (x) in the sheet: cds-iconButton-medium ghostSecondary round. Measured as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 24 x 24; padding 0; radius 50px `--cds-border-radius-max`; background transparent; shadow transparent 0px 0px 0px 1px inset, no token; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary` |
+| default | size 24 x 24; padding 0; radius 50px `--cds-border-radius-max`; background transparent; shadow transparent 0px 0px 0px 1px inset (no edge); font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary` |
 | hover, focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
 | pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak` |
 
 | Part | Values (default) |
 |---|---|
-| `icon-button-dialog-close` | size 24 x 24; radius 50px `--cds-border-radius-max`; box shadow transparent 0px 0px 0px 1px inset, no token; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary`; states measured: default, hover |
+| `icon-button-dialog-close` | size 24 x 24; radius 50px `--cds-border-radius-max`; box shadow transparent 0px 0px 0px 1px inset (no edge); font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary`; states measured: default, hover |
 
 ![Close icon button default](components/crops/icon-button-close-default.png) ![Close icon button hover](components/crops/icon-button-close-hover.png) ![Close icon button focus-visible](components/crops/icon-button-close-focus-visible.png) ![Close icon button pressed](components/crops/icon-button-close-pressed.png) ![Close icon button (icon-button-dialog-close) default](components/crops/icon-button-dialog-close-default.png)
 
@@ -708,7 +720,7 @@ Breadcrumb trail (cds-breadcrumbs-list): home icon button, chevron separators (2
 
 **Values.** size 904 x 36; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #48546e `--cds-color-neutral-primary-weak`.
 
-Child layers that carry the look: a, 36x36, shadow transparent 0px 0px 0px 1px inset, no token, radius 8px.
+Child layers that carry the look: a, 36x36, shadow transparent 0px 0px 0px 1px inset (no edge), radius 8px.
 
 ![Breadcrumbs default](components/crops/breadcrumbs-default.png)
 
@@ -719,7 +731,7 @@ Breadcrumb link. Measured as `breadcrumb-link` on the course page.
 |---|---|
 | default | size 77.78 x 36; padding 8px; radius 0px; background transparent; shadow none; font 14/20 400 `--cds-typography-body2`; colour #48546e `--cds-color-neutral-primary-weak`; decoration none |
 | hover | decoration underline |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token; decoration underline |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); decoration underline |
 | pressed | decoration underline |
 
 ![Breadcrumb link default](components/crops/breadcrumb-link-default.png) ![Breadcrumb link hover](components/crops/breadcrumb-link-hover.png) ![Breadcrumb link focus-visible](components/crops/breadcrumb-link-focus-visible.png) ![Breadcrumb link pressed](components/crops/breadcrumb-link-pressed.png)
@@ -729,7 +741,7 @@ Home icon at the start of the trail: cds-iconButton-small ghostSecondary. Measur
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; padding 0; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset, no token; font 16/24 400 `--cds-typography-body1`; colour #48546e `--cds-color-neutral-primary-weak`; decoration none; icon 20 x 20, colour #48546e `--cds-color-neutral-primary-weak` |
+| default | size 36 x 36; padding 0; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset (no edge); font 16/24 400 `--cds-typography-body1`; colour #48546e `--cds-color-neutral-primary-weak`; decoration none; icon 20 x 20, colour #48546e `--cds-color-neutral-primary-weak` |
 | hover, focus-visible | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; decoration underline |
 | pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; decoration underline |
 
@@ -742,7 +754,7 @@ Inline link in body text (the specialization name in the hero): underlined, inhe
 |---|---|
 | default | size 221.22 x 22; padding 0; radius 0px; background transparent; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover` |
 | pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none |
 
 ![Inline link default](components/crops/link-inline-default.png) ![Inline link hover](components/crops/link-inline-hover.png) ![Inline link focus-visible](components/crops/link-inline-focus-visible.png) ![Inline link pressed](components/crops/link-inline-pressed.png)
@@ -754,7 +766,7 @@ Standalone link in body copy (the specialization link in Outcomes): blue, no und
 |---|---|
 | default | size 221.22 x 22; padding 0; radius 0px; background transparent; shadow none; font 16/24 600 `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
 | pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
 
 ![Standalone link default](components/crops/link-standalone-default.png) ![Standalone link hover](components/crops/link-standalone-hover.png) ![Standalone link focus-visible](components/crops/link-standalone-focus-visible.png) ![Standalone link pressed](components/crops/link-standalone-pressed.png)
@@ -766,7 +778,7 @@ Instructor name link (underlined, semibold). Measured as `instructor-name` on th
 |---|---|
 | default | size 74.39 x 22; padding 0; radius 0px; background transparent; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration none |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover` |
 
 ![Instructor name link default](components/crops/instructor-name-default.png) ![Instructor name link hover](components/crops/instructor-name-hover.png) ![Instructor name link focus-visible](components/crops/instructor-name-focus-visible.png)
 
@@ -777,7 +789,7 @@ Instructor name link (underlined, semibold). Measured as `instructor-name` on th
 |---|---|
 | default | size 124.41 x 22; padding 0; radius 0px; background transparent; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration underline |
 | hover | decoration none |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`) |
 
 ![View more reviews link default](components/crops/link-view-more-default.png) ![View more reviews link hover](components/crops/link-view-more-hover.png) ![View more reviews link focus-visible](components/crops/link-view-more-focus-visible.png)
 
@@ -788,7 +800,7 @@ Course title link in the series list. Measured as `spec-course-title-link` on th
 |---|---|
 | default | size 505.53 x 28; padding 0; radius 0px; background transparent; shadow none; font 20/28 600 `--cds-typography-title2`, ls -0.1px; colour #0d0f12 `--cds-color-interactive-secondary`; decoration underline |
 | hover | colour #0056d2 `--cds-color-interactive-primary` |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover` |
 
 ![Course title link default](components/crops/spec-course-title-link-default.png) ![Course title link hover](components/crops/spec-course-title-link-hover.png) ![Course title link focus-visible](components/crops/spec-course-title-link-focus-visible.png)
 
@@ -810,7 +822,7 @@ Results for "machine learning" heading. Measured as `search-results-heading` on 
 |---|---|
 | default | size 209.13 x 32; padding 8px 10px 8px 8px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 400 `--cds-typography-body2`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary` |
 | hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
-| focus-visible | outline 1px auto #005fcc, no token offset 3px |
+| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline) |
 | pressed | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
 
 | Part | Values (default) |
@@ -839,7 +851,7 @@ Filter & Sort: pill outlined button with a 16px sliders icon. Measured as `filte
 |---|---|
 | default | size 127.7 x 36; padding 8px 16px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary` |
 | hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
-| focus-visible | outline 1px auto #005fcc, no token offset 3px |
+| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline) |
 | pressed | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
 
 ![Filter and sort button default](components/crops/filter-and-sort-button-default.png) ![Filter and sort button hover](components/crops/filter-and-sort-button-hover.png) ![Filter and sort button focus-visible](components/crops/filter-and-sort-button-focus-visible.png) ![Filter and sort button pressed](components/crops/filter-and-sort-button-pressed.png)
@@ -851,7 +863,7 @@ Facet dropdown trigger (Topic, Duration, ...): pill outlined button with a 16px 
 |---|---|
 | default (same: expanded) | size 87.06 x 36; padding 8px 16px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary` |
 | hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
-| focus-visible | outline 1px auto #005fcc, no token offset 3px |
+| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline) |
 | pressed | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
 
 ![Filter dropdown default](components/crops/filter-dropdown-default.png) ![Filter dropdown hover](components/crops/filter-dropdown-hover.png) ![Filter dropdown focus-visible](components/crops/filter-dropdown-focus-visible.png) ![Filter dropdown pressed](components/crops/filter-dropdown-pressed.png) ![Filter dropdown expanded](components/crops/filter-dropdown-expanded.png)
@@ -863,7 +875,7 @@ AI-suggested topic pill in the filter bar, with a sparkle prefix icon. Measured 
 |---|---|
 | default | size 372.22 x 36; padding 8px 16px; gap 4px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 20px; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600 `--cds-typography-action-secondary`, ls 0.14px; colour #0d0f12 `--cds-color-interactive-secondary`; icon 16 x 16, colour #0d0f12 `--cds-color-interactive-secondary` |
 | hover | background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak` |
-| focus-visible | outline 1px auto #005fcc, no token offset 3px |
+| focus-visible | outline 1px auto #005fcc offset 3px (the browser default focus outline) |
 
 ![AI suggestion pill default](components/crops/filter-ai-pill-default.png) ![AI suggestion pill hover](components/crops/filter-ai-pill-hover.png) ![AI suggestion pill focus-visible](components/crops/filter-ai-pill-focus-visible.png)
 
@@ -887,7 +899,7 @@ Filter checkbox row (cds-checkboxAndRadio-label): 18px box, label, count in brac
 | default | size 360 x 32; padding 4px 0; gap 8px; radius 0px; background transparent; font 16/16 400; colour #000000 @ 0.87, no token; icon 18 x 18, colour #8495b0 `--cds-color-neutral-stroke-primary` |
 | hover, focus-visible, checked | icon 18 x 18, colour #0b408b `--cds-color-interactive-primary-hover` |
 
-Child layers that carry the look: input, 18x20, outline 1px dotted #0b408b offset -2px; svg, 18x18, shadow #ffffff 0px 0px 0px 2px, #804ee4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px, no token, radius 4px.
+Child layers that carry the look: input, 18x20, outline 1px dotted #0b408b offset -2px; svg, 18x18, shadow #ffffff 0px 0px 0px 2px, #804ee4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons), radius 4px.
 
 | Part | Values (default) |
 |---|---|
@@ -915,7 +927,7 @@ Sort radio (Best Match / Newest): 20px circle. Measured as `radio` on the search
 | checked | icon 20 x 20, colour #0056d2 `--cds-color-interactive-primary` |
 | hover, focus-visible | icon 20 x 20, colour #0b408b `--cds-color-interactive-primary-hover` |
 
-Child layers that carry the look: input, 20x20, outline 1px dotted #0b408b offset -2px; svg, 20x20, shadow #ffffff 0px 0px 0px 2px, #804ee4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px, no token, radius 50%.
+Child layers that carry the look: input, 20x20, outline 1px dotted #0b408b offset -2px; svg, 20x20, shadow #ffffff 0px 0px 0px 2px, #804ee4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons), radius 50%.
 
 ![Radio checked](components/crops/radio-checked.png) ![Radio default](components/crops/radio-default.png) ![Radio hover](components/crops/radio-hover.png) ![Radio focus-visible](components/crops/radio-focus-visible.png)
 
@@ -972,8 +984,8 @@ Search result card (cds-ProductCard-grid): bordered white card, 16:9 image inset
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 335 x 418.31; padding 0; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; transition all 0.3s cubic-bezier(0, 0, 0.5, 1) |
-| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px, no token |
-| pressed | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px, no token |
+| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`) |
+| pressed | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`) |
 
 | Part | Values (default) |
 |---|---|
@@ -998,7 +1010,7 @@ The title link (stretched to cover the card). Measured as `product-card-title-li
 |---|---|
 | default | size 301 x 20; padding 0; radius 0px; background transparent; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary` |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover` |
 
 ![Product card title link hover](components/crops/product-card-title-link-hover.png) ![Product card title link focus-visible](components/crops/product-card-title-link-focus-visible.png)
 
@@ -1008,7 +1020,7 @@ List variant of the product card (cds-ProductCard-list): image left (315 wide), 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 664 x 189; padding 8px; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; transition all 0.3s cubic-bezier(0, 0, 0.5, 1) |
-| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px, no token |
+| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`) |
 
 | Part | Values (default) |
 |---|---|
@@ -1109,8 +1121,8 @@ Compact course card: the search product card (cds-ProductCard-grid) without the 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 266.19 x 247.61; padding 0; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; transition all 0.3s cubic-bezier(0, 0, 0.5, 1) |
-| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px, no token |
-| pressed | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px, no token |
+| hover | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`) |
+| pressed | shadow #e9eef7 0px 0px 4px 0px, #0f1114 @ 0.1 0px 4px 12px 4px (`component.product-card.shadow-hover`) |
 | mobile | size 150 x 202.25 |
 
 | Part | Values (default) |
@@ -1134,7 +1146,7 @@ The title link; it is stretched over the whole card, so it takes the card focus 
 |---|---|
 | default | size 232.19 x 20; padding 0; radius 0px; background transparent; shadow none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary` |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover` |
 
 ![Compact card title link hover](components/crops/explore-card-title-link-hover.png) ![Compact card title link focus-visible](components/crops/explore-card-title-link-focus-visible.png)
 
@@ -1200,7 +1212,7 @@ Previous arrow: mirror of the Next arrow at the left end (white fade to the left
 The course page top to bottom: hero band with a floating stats card, in-page tabs, About (what you will learn, skills, details), Outcomes, Modules with the instructor rail, Recommendations, Testimonials, Reviews, FAQ. The hero and stats card are shared with specializations and professional certificates. A 146px sticky nav replaces the tabs once they scroll away.
 
 #### Course hero
-Course hero: pale blue full-bleed band with a large decorative Coursera-C graphic at the right, partner logos, title, part-of line, instructors, the Enroll CTA and the enrolled count. Measured as `course-hero` on the course page. The tint is a full-bleed 2880x524 layer at `rgba(0,86,210,.05)` (sampled `#f2f6fd` on white, no token) with a 566x465 decorative Coursera C in `#e3eeff` and `#6d7c99`. Partner logos are 36px tall, split by a 2x32 `#a7b4c9` rule.
+Course hero: pale blue full-bleed band with a large decorative Coursera-C graphic at the right, partner logos, title, part-of line, instructors, the Enroll CTA and the enrolled count. Measured as `course-hero` on the course page. The tint is a full-bleed 2880x524 layer at `rgba(0,86,210,.05)` (sampled `#f2f6fd` on white; no --cds variable, `component.hero.band` in tokens.json) with a 566x465 decorative Coursera C in `#e3eeff` and `#6d7c99`. Partner logos are 36px tall, split by a 2x32 `#a7b4c9` rule.
 
 **Values.** size 1360 x 372; padding 0; radius 0px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`.
 
@@ -1209,7 +1221,7 @@ Child layers that carry the look: div, 2x32, background #a7b4c9 `--cds-color-neu
 | Part | Values (default) |
 |---|---|
 | `spec-hero` | size 1360 x 368; text span 44/52 600 `--cds-typography-display2`, ls -0.1px, #0d0f12 `--cds-color-interactive-secondary` |
-| `course-hero-background` | size 2880 x 524; background #0056d2 @ 0.05, no token; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary` |
+| `course-hero-background` | size 2880 x 524; background #0056d2 @ 0.05 (`component.hero.band`); font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary` |
 | `course-hero-art` | size 566 x 465; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 566 x 465, colour #0d0f12 `--cds-color-interactive-secondary` |
 | `hero-partner-logo` | size 149.5 x 36; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary` |
 | `hero-partner-divider` | size 2 x 32; background #a7b4c9 `--cds-color-neutral-disabled-strong`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary` |
@@ -1224,7 +1236,7 @@ Child layers that carry the look: div, 2x32, background #a7b4c9 `--cds-color-neu
 #### Stats card
 Floating stats card that overlaps the bottom of the hero: modules, rating, level, schedule, with vertical dividers; white, rounded, elevated. Measured as `stats-card` on the course page. It overlaps the bottom of the hero with `margin-top: -76px`. Cells are split by 1px `#e9eef7` left borders; values are 20/24 600 and sub-lines 14/20 `#48546e`.
 
-**Values.** size 1344 x 114; padding 0; border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0f1114 @ 0.2 0px 8px 16px 0px, no token; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary`.
+**Values.** size 1344 x 114; padding 0; border 1px solid #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0f1114 @ 0.2 0px 8px 16px 0px (`component.stats-card.shadow`); font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary`.
 
 | Part | Values (default) |
 |---|---|
@@ -1242,7 +1254,7 @@ Floating stats card that overlaps the bottom of the hero: modules, rating, level
 |---|---|
 | default | size 88.14 x 28; padding 0; radius 0px; background transparent; shadow none; font 20/24 600 `--cds-typography-subtitle-large`, ls -0.06px; colour #0d0f12 `--cds-color-interactive-secondary`; decoration underline |
 | hover | decoration none |
-| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token |
+| focus-visible | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`) |
 
 ![Stats card link hover](components/crops/stats-card-link-hover.png) ![Stats card link focus-visible](components/crops/stats-card-link-focus-visible.png)
 
@@ -1272,7 +1284,7 @@ One section tab link. Measured as `tab` on the course page.
 #### Sticky nav
 Sticky course nav that replaces the header once the hero scrolls away: partner marks + course title, a compact Enroll button at the right, the tab bar under it; white with a drop shadow, fixed at top 0. Measured as `sticky-nav` on the course page.
 
-**Values.** size 1440 x 146; padding 0; radius 0px; background #ffffff `--cds-color-neutral-background-primary`; shadow #000000 @ 0.24 0px 2px 12px 0px, no token; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary`.
+**Values.** size 1440 x 146; padding 0; radius 0px; background #ffffff `--cds-color-neutral-background-primary`; shadow #000000 @ 0.24 0px 2px 12px 0px (`component.sticky-nav.shadow`); font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 0 x 0, colour #0d0f12 `--cds-color-interactive-secondary`.
 
 | Part | Values (default) |
 |---|---|
@@ -1301,7 +1313,7 @@ Sticky course nav that replaces the header once the hero scrolls away: partner m
 |---|---|
 | default | size 126.89 x 30; padding 4px 12px; border 1px solid #dae1ed `--cds-color-neutral-disabled`; radius 50px `--cds-border-radius-max`; background #dae1ed `--cds-color-neutral-disabled`; shadow none; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none |
 | hover | decoration underline |
-| focus-visible | shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px, no token; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
+| focus-visible | shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px (`component.focus.ring`); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline |
 | pressed | decoration underline |
 
 ![Skill chip default](components/crops/skill-chip-default.png) ![Skill chip hover](components/crops/skill-chip-hover.png) ![Skill chip focus-visible](components/crops/skill-chip-focus-visible.png) ![Skill chip pressed](components/crops/skill-chip-pressed.png)
@@ -1523,7 +1535,7 @@ Full-width button with the label and a 20px chevron at the right; it opens and c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, focus-visible-cds, collapsed) | size 268 x 40; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| default (same: focus-visible, focus-visible-cds, collapsed) | size 268 x 40; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
 | pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
 
@@ -1568,7 +1580,7 @@ Module name, h2 at the top of the main card. Measured as `module-title` on cours
 
 | Part | Values (default) |
 |---|---|
-| `module-meta-row` | size 652 x 24; gap 8px 12px `--cds-spacing-100`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 16 x 16, fill none, no token, color #48546e `--cds-color-neutral-primary-weak` |
+| `module-meta-row` | size 652 x 24; gap 8px 12px `--cds-spacing-100`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 16 x 16, fill none, color #48546e `--cds-color-neutral-primary-weak` |
 | `module-description` | size 652 x 120; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
 
 ![Module title and meta default](components/crops/signed-in/module-title-default.png) ![Module title and meta (module-meta-row) default](components/crops/signed-in/module-meta-row-default.png) ![Module title and meta (module-description) default](components/crops/signed-in/module-description-default.png)
@@ -1578,10 +1590,10 @@ Ghost secondary button (cds-ShowMoreContainer) with a 16px chevron end icon. Mea
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 178.42 x 20; radius 4px `--cds-border-radius-50`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none; icon 16 x 16, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, no token, color #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent, no token offset 2px; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, no token, color #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; decoration underline auto offset auto; icon 16 x 16, fill none, no token, color #1c2026 `--cds-color-interactive-secondary-pressed` |
+| default (same: focus-visible) | size 178.42 x 20; radius 4px `--cds-border-radius-50`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none; icon 16 x 16, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
+| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; decoration underline auto offset auto; icon 16 x 16, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed` |
 | expanded | size 172.86 x 20 |
 
 | Part | Values (default) |
@@ -1595,7 +1607,7 @@ Collapsible header for a lesson group: label and a 20px chevron, full width, 40p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, focus-visible-cds) | size 668 x 40; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| default (same: focus-visible, focus-visible-cds) | size 668 x 40; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
 | pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
 
@@ -1610,14 +1622,14 @@ One learning item: a 20px status icon (green check when done, the item-type icon
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 668 x 60; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 24, fill none, no token, color #197d12 `--cds-color-feedback-success` |
+| default | size 668 x 60; padding 8px `--cds-spacing-100`; gap 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 24, fill none, color #197d12 `--cds-color-feedback-success` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
 | focus-visible, focus-visible-cds | outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px |
 | pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| current, current-hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
-| current-focus-visible, current-focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
-| current-pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
-| not-started | icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| current, current-hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| current-focus-visible, current-focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 2px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -3px; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| current-pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| not-started | icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 
 ![Item row default](components/crops/signed-in/item-row-default.png) ![Item row hover](components/crops/signed-in/item-row-hover.png) ![Item row focus-visible](components/crops/signed-in/item-row-focus-visible.png) ![Item row focus-visible-cds](components/crops/signed-in/item-row-focus-visible-cds.png) ![Item row pressed](components/crops/signed-in/item-row-pressed.png) ![Item row current](components/crops/signed-in/item-row-current.png) ![Item row current-hover](components/crops/signed-in/item-row-current-hover.png) ![Item row current-focus-visible](components/crops/signed-in/item-row-current-focus-visible.png) ![Item row current-focus-visible-cds](components/crops/signed-in/item-row-current-focus-visible-cds.png) ![Item row current-pressed](components/crops/signed-in/item-row-current-pressed.png) ![Item row not-started](components/crops/signed-in/item-row-not-started.png)
 
@@ -1637,8 +1649,8 @@ Completed check (filled green circle), and the outline type icons shown before a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| completed | size 20 x 24; background transparent; font 16/24 400 `--cds-typography-body1`; colour #197d12 `--cds-color-feedback-success`; icon 20 x 24, fill none, no token, color #197d12 `--cds-color-feedback-success` |
-| reading-current, video, practice, graded, lab | size 20 x 20; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| completed | size 20 x 24; background transparent; font 16/24 400 `--cds-typography-body1`; colour #197d12 `--cds-color-feedback-success`; icon 20 x 24, fill none, color #197d12 `--cds-color-feedback-success` |
+| reading-current, video, practice, graded, lab | size 20 x 20; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 
 ![Item status icons completed](components/crops/signed-in/item-status-icon-completed.png) ![Item status icons reading-current](components/crops/signed-in/item-status-icon-reading-current.png) ![Item status icons video](components/crops/signed-in/item-status-icon-video.png) ![Item status icons practice](components/crops/signed-in/item-status-icon-practice.png) ![Item status icons graded](components/crops/signed-in/item-status-icon-graded.png) ![Item status icons lab](components/crops/signed-in/item-status-icon-lab.png)
 
@@ -1660,7 +1672,7 @@ Link-styled button. Measured as `rail-goal-edit` on course home, module 1 (in pr
 |---|---|
 | default (same: focus-visible) | size 208.52 x 24; radius 0; background transparent; shadow none; outline none; font 16/24 600 `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 
 ![Edit goal link default](components/crops/signed-in/rail-goal-edit-default.png) ![Edit goal link hover](components/crops/signed-in/rail-goal-edit-hover.png) ![Edit goal link focus-visible](components/crops/signed-in/rail-goal-edit-focus-visible.png) ![Edit goal link focus-visible-cds](components/crops/signed-in/rail-goal-edit-focus-visible-cds.png) ![Edit goal link pressed](components/crops/signed-in/rail-goal-edit-pressed.png)
@@ -1684,7 +1696,7 @@ Underlined blue link to the graded item. Measured as `rail-deadline-link` on cou
 |---|---|
 | default (same: focus-visible) | size 135.94 x 20; radius 0; background transparent; shadow none; outline none; font 14/20 400 `--cds-typography-body2`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline auto offset auto |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
 | pressed | colour #0b408b `--cds-color-interactive-primary-hover` |
 
 ![Deadline link default](components/crops/signed-in/rail-deadline-link-default.png) ![Deadline link hover](components/crops/signed-in/rail-deadline-link-hover.png) ![Deadline link focus-visible](components/crops/signed-in/rail-deadline-link-focus-visible.png) ![Deadline link focus-visible-cds](components/crops/signed-in/rail-deadline-link-focus-visible-cds.png) ![Deadline link pressed](components/crops/signed-in/rail-deadline-link-pressed.png)
@@ -1721,7 +1733,7 @@ Link styled as plain text (cds Link, no underline at rest). Measured as `grades-
 | default | size 155.36 x 22; radius 0; background transparent; shadow none; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none |
 | hover | colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent, no token offset 2px; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
 | pressed | colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
 
 ![Grade item link default](components/crops/signed-in/grades-item-link-default.png) ![Grade item link hover](components/crops/signed-in/grades-item-link-hover.png) ![Grade item link focus-visible](components/crops/signed-in/grades-item-link-focus-visible.png) ![Grade item link focus-visible-cds](components/crops/signed-in/grades-item-link-focus-visible-cds.png) ![Grade item link pressed](components/crops/signed-in/grades-item-link-pressed.png)
@@ -1744,7 +1756,7 @@ Ghost button, 48px tall, blue label. Measured as `info-show-more` on course info
 |---|---|
 | default (same: focus-visible) | size 111.14 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
 
 ![Show more button (course info) default](components/crops/signed-in/info-show-more-default.png) ![Show more button (course info) hover](components/crops/signed-in/info-show-more-hover.png) ![Show more button (course info) focus-visible](components/crops/signed-in/info-show-more-focus-visible.png) ![Show more button (course info) focus-visible-cds](components/crops/signed-in/info-show-more-focus-visible-cds.png) ![Show more button (course info) pressed](components/crops/signed-in/info-show-more-pressed.png)
@@ -1764,7 +1776,7 @@ Bold link styled as text. Measured as `info-instructor-link` on course info.
 | default | size 351.73 x 24; radius 0; background transparent; shadow none; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | pressed | colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 
 ![Instructor name link (course info) default](components/crops/signed-in/info-instructor-link-default.png) ![Instructor name link (course info) hover](components/crops/signed-in/info-instructor-link-hover.png) ![Instructor name link (course info) focus-visible](components/crops/signed-in/info-instructor-link-focus-visible.png) ![Instructor name link (course info) focus-visible-cds](components/crops/signed-in/info-instructor-link-focus-visible-cds.png) ![Instructor name link (course info) pressed](components/crops/signed-in/info-instructor-link-pressed.png)
@@ -1791,7 +1803,7 @@ Secondary (outlined) button, 48px tall. Measured as `info-catalog-button` on cou
 | default | size 229.69 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; shadow #3c0f8a 0px 0px 0px 1px inset; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
 
 ![View in catalog button default](components/crops/signed-in/info-catalog-button-default.png) ![View in catalog button hover](components/crops/signed-in/info-catalog-button-hover.png) ![View in catalog button focus-visible](components/crops/signed-in/info-catalog-button-focus-visible.png) ![View in catalog button focus-visible-cds](components/crops/signed-in/info-catalog-button-focus-visible-cds.png) ![View in catalog button pressed](components/crops/signed-in/info-catalog-button-pressed.png)
@@ -1829,9 +1841,9 @@ Ghost small icon button, 36x36 with a 20px icon. Measured as `outline-close` on 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak` |
 
 ![Outline collapse button default](components/crops/signed-in/outline-close-default.png) ![Outline collapse button hover](components/crops/signed-in/outline-close-hover.png) ![Outline collapse button focus-visible](components/crops/signed-in/outline-close-focus-visible.png) ![Outline collapse button focus-visible-cds](components/crops/signed-in/outline-close-focus-visible-cds.png) ![Outline collapse button pressed](components/crops/signed-in/outline-close-pressed.png)
@@ -1843,7 +1855,7 @@ The accordion header button. Measured as `outline-goal-header` on video item.
 |---|---|
 | default (same: focus-visible) | size 326 x 56; padding 16px `--cds-spacing-200`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 30/36 600 `--cds-typography-title-small`; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill #48546e, color #48546e (`--cds-color-neutral-primary-weak`) |
 | hover | icon 24 x 24, fill #0d0f12, color #0d0f12 (`--cds-color-neutral-primary`) |
-| focus-visible-cds | outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | icon 24 x 24, fill #0d0f12, color #0d0f12 (`--cds-color-neutral-primary`) |
 
 ![Outline goal header default](components/crops/signed-in/outline-goal-header-default.png) ![Outline goal header hover](components/crops/signed-in/outline-goal-header-hover.png) ![Outline goal header focus-visible](components/crops/signed-in/outline-goal-header-focus-visible.png) ![Outline goal header focus-visible-cds](components/crops/signed-in/outline-goal-header-focus-visible-cds.png) ![Outline goal header pressed](components/crops/signed-in/outline-goal-header-pressed.png)
@@ -1855,7 +1867,7 @@ Silent CDS accordion header: "Module 1" small label over the module title, 24px 
 |---|---|
 | default (same: focus-visible, collapsed) | size 360 x 76; padding 16px `--cds-spacing-200`; background transparent; outline none; font 30/36 600 `--cds-typography-title-small`; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill #48546e, color #48546e (`--cds-color-neutral-primary-weak`) |
 | hover | icon 24 x 24, fill #0d0f12, color #0d0f12 (`--cds-color-neutral-primary`) |
-| focus-visible-cds | outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | icon 24 x 24, fill #0d0f12, color #0d0f12 (`--cds-color-neutral-primary`) |
 
 ![Outline module header default](components/crops/signed-in/outline-module-header-default.png) ![Outline module header hover](components/crops/signed-in/outline-module-header-hover.png) ![Outline module header focus-visible](components/crops/signed-in/outline-module-header-focus-visible.png) ![Outline module header focus-visible-cds](components/crops/signed-in/outline-module-header-focus-visible-cds.png) ![Outline module header pressed](components/crops/signed-in/outline-module-header-pressed.png) ![Outline module header collapsed](components/crops/signed-in/outline-module-header-collapsed.png)
@@ -1865,20 +1877,20 @@ Item link: 20px status icon, title, and a type • duration line. The link spans
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 344 x 60; padding 12px 16px 8px 16px (`--cds-spacing-150`, `--cds-spacing-200`, `--cds-spacing-100`); gap 12px `--cds-spacing-150`; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 20 x 20, fill none, no token, color #197d12 `--cds-color-feedback-success` |
+| default | size 344 x 60; padding 12px 16px 8px 16px (`--cds-spacing-150`, `--cds-spacing-200`, `--cds-spacing-100`); gap 12px `--cds-spacing-150`; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 20 x 20, fill none, color #197d12 `--cds-color-feedback-success` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
 | focus-visible, focus-visible-cds | outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -1px |
 | pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
 | selected, selected-hover | padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
 | selected-focus-visible, selected-focus-visible-cds | padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid #804ee4 `--cds-color-interactive-stroke-primary-focus` offset -1px |
-| not-started | size 344 x 56; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); icon 20 x 20, fill none, no token, color #0056d2 `--cds-color-interactive-primary` |
+| not-started | size 344 x 56; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); icon 20 x 20, fill none, color #0056d2 `--cds-color-interactive-primary` |
 
 ![Outline item row default](components/crops/signed-in/outline-item-default.png) ![Outline item row hover](components/crops/signed-in/outline-item-hover.png) ![Outline item row focus-visible](components/crops/signed-in/outline-item-focus-visible.png) ![Outline item row focus-visible-cds](components/crops/signed-in/outline-item-focus-visible-cds.png) ![Outline item row pressed](components/crops/signed-in/outline-item-pressed.png) ![Outline item row selected](components/crops/signed-in/outline-item-selected.png) ![Outline item row selected-hover](components/crops/signed-in/outline-item-selected-hover.png) ![Outline item row selected-focus-visible](components/crops/signed-in/outline-item-selected-focus-visible.png) ![Outline item row selected-focus-visible-cds](components/crops/signed-in/outline-item-selected-focus-visible-cds.png) ![Outline item row not-started](components/crops/signed-in/outline-item-not-started.png)
 
 #### Video player frame
 The player container (the video itself is a poster frame in the snapshot): centre play button, control bar with a progress rail. Measured as `video-player` on video item.
 
-**Values.** size 912 x 483; border 2px solid transparent, no token; radius 16px `--cds-border-radius-200`; background #f2f5fa `--cds-color-neutral-background-primary-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; transition border-color 0.2s linear.
+**Values.** size 912 x 483; border 2px solid transparent; radius 16px `--cds-border-radius-200`; background #f2f5fa `--cds-color-neutral-background-primary-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; transition border-color 0.2s linear.
 
 | Part | Values (default) |
 |---|---|
@@ -1900,10 +1912,10 @@ Ghost button, 48px tall, 16px pencil start icon. Measured as `video-save-note` o
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 120.58 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; icon 16 x 16, fill none, no token, color #0056d2 `--cds-color-interactive-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, no token, color #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, no token, color #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; icon 16 x 16, fill none, no token, color #3c0f8a `--cds-color-interactive-primary-pressed` |
+| default (same: focus-visible) | size 120.58 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; icon 16 x 16, fill none, color #0056d2 `--cds-color-interactive-primary` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; icon 16 x 16, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; icon 16 x 16, fill none, color #3c0f8a `--cds-color-interactive-primary-pressed` |
 
 ![Save note button default](components/crops/signed-in/video-save-note-default.png) ![Save note button hover](components/crops/signed-in/video-save-note-hover.png) ![Save note button focus-visible](components/crops/signed-in/video-save-note-focus-visible.png) ![Save note button focus-visible-cds](components/crops/signed-in/video-save-note-focus-visible-cds.png) ![Save note button pressed](components/crops/signed-in/video-save-note-pressed.png)
 
@@ -1919,7 +1931,7 @@ The disclosure header (role=button). Measured as `ai-panel-header` on video item
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 912 x 56; padding 16px / 24px (`--cds-spacing-200`, `--cds-spacing-300`); radius 16px `--cds-border-radius-200`; background transparent; shadow none; font 20/24 600, -0.06px `--cds-typography-subtitle-large`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| default (same: hover, pressed) | size 912 x 56; padding 16px / 24px (`--cds-spacing-200`, `--cds-spacing-300`); radius 16px `--cds-border-radius-200`; background transparent; shadow none; font 20/24 600, -0.06px `--cds-typography-subtitle-large`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 | focus-visible | shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px |
 
 ![AI panel header default](components/crops/signed-in/ai-panel-header-default.png) ![AI panel header hover](components/crops/signed-in/ai-panel-header-hover.png) ![AI panel header focus-visible](components/crops/signed-in/ai-panel-header-focus-visible.png) ![AI panel header pressed](components/crops/signed-in/ai-panel-header-pressed.png)
@@ -1931,7 +1943,7 @@ Secondary button (outlined) used as a chip: "Give me practice questions". Measur
 |---|---|
 | default (same: focus-visible) | size 196.41 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent + linear-gradient(279deg, rgb(13, 47, 96) -5.78%, rgb(19, 110, 240) 83.48%); outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; transition none; transform none |
 | hover | background transparent + linear-gradient(310deg, rgb(13, 47, 96) -10.46%, rgb(19, 110, 240) 78.54%, rgb(126, 216, 116) 116.68%); colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background transparent + linear-gradient(310deg, rgb(13, 47, 96) -10.46%, rgb(19, 110, 240) 78.54%, rgb(126, 216, 116) 116.68%); outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | background transparent + linear-gradient(310deg, rgb(13, 47, 96) -10.46%, rgb(19, 110, 240) 78.54%, rgb(126, 216, 116) 116.68%); outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
 | pressed | size 192.48 x 35.28; radius 12px; background transparent + linear-gradient(310deg, rgb(13, 47, 96) -10.46%, rgb(19, 110, 240) 78.54%, rgb(126, 216, 116) 116.68%); colour #3c0f8a `--cds-color-interactive-primary-pressed`; transition all 0.2s cubic-bezier(0, 1, 0.9, 1); transform matrix3d(0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 1) |
 
 ![AI suggestion chip default](components/crops/signed-in/ai-chip-default.png) ![AI suggestion chip hover](components/crops/signed-in/ai-chip-hover.png) ![AI suggestion chip focus-visible](components/crops/signed-in/ai-chip-focus-visible.png) ![AI suggestion chip focus-visible-cds](components/crops/signed-in/ai-chip-focus-visible-cds.png) ![AI suggestion chip pressed](components/crops/signed-in/ai-chip-pressed.png)
@@ -1941,10 +1953,10 @@ Ghost-secondary small icon buttons, 36x36 with 20px icons, in a row under the AI
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, no token, color #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent, no token offset 2px; colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, no token, color #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; icon 20 x 20, fill none, no token, color #1c2026 `--cds-color-interactive-secondary-pressed` |
+| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
+| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; icon 20 x 20, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed` |
 
 ![Feedback icon button default](components/crops/signed-in/item-feedback-icon-default.png) ![Feedback icon button hover](components/crops/signed-in/item-feedback-icon-hover.png) ![Feedback icon button focus-visible](components/crops/signed-in/item-feedback-icon-focus-visible.png) ![Feedback icon button focus-visible-cds](components/crops/signed-in/item-feedback-icon-focus-visible-cds.png) ![Feedback icon button pressed](components/crops/signed-in/item-feedback-icon-pressed.png)
 
@@ -1953,9 +1965,9 @@ Primary button with a 20px arrow end icon, bottom right of the item card. Measur
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 149.08 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, fill none, no token, color #ffffff `--cds-color-neutral-primary-invert` |
+| default (same: focus-visible) | size 149.08 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, fill none, color #ffffff `--cds-color-neutral-primary-invert` |
 | hover | background #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | background #3c0f8a `--cds-color-interactive-primary-pressed` |
 
 ![Next item button default](components/crops/signed-in/next-item-button-default.png) ![Next item button hover](components/crops/signed-in/next-item-button-hover.png) ![Next item button focus-visible](components/crops/signed-in/next-item-button-focus-visible.png) ![Next item button focus-visible-cds](components/crops/signed-in/next-item-button-focus-visible-cds.png) ![Next item button pressed](components/crops/signed-in/next-item-button-pressed.png)
@@ -1981,12 +1993,12 @@ Right-edge column of 72x72 buttons: a 20px icon over a small label. Measured as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 72 x 72; padding 16px `--cds-spacing-200`; gap 4px `--cds-spacing-50`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; transition background-color 0.2s ease; icon 20 x 20, fill none, no token, color #48546e `--cds-color-neutral-primary-weak` |
+| default | size 72 x 72; padding 16px `--cds-spacing-200`; gap 4px `--cds-spacing-50`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; transition background-color 0.2s ease; icon 20 x 20, fill none, color #48546e `--cds-color-neutral-primary-weak` |
 | hover | background #f2f5fa `--cds-color-neutral-background-primary-weak` |
 | focus-visible, focus-visible-cds | outline 1px solid #925ceb `--cds-color-emphasis-quaternary-stroke-default` offset 1px |
 | pressed | background #f2f5fa `--cds-color-neutral-background-primary-weak` |
-| selected, selected-hover | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
-| selected-focus-visible | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; outline 1px solid #925ceb `--cds-color-emphasis-quaternary-stroke-default` offset 1px; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| selected, selected-hover | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| selected-focus-visible | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; outline 1px solid #925ceb `--cds-color-emphasis-quaternary-stroke-default` offset 1px; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 
 ![Tool strip button default](components/crops/signed-in/tool-strip-button-default.png) ![Tool strip button hover](components/crops/signed-in/tool-strip-button-hover.png) ![Tool strip button focus-visible](components/crops/signed-in/tool-strip-button-focus-visible.png) ![Tool strip button focus-visible-cds](components/crops/signed-in/tool-strip-button-focus-visible-cds.png) ![Tool strip button pressed](components/crops/signed-in/tool-strip-button-pressed.png) ![Tool strip button selected](components/crops/signed-in/tool-strip-button-selected.png) ![Tool strip button selected-hover](components/crops/signed-in/tool-strip-button-selected-hover.png) ![Tool strip button selected-focus-visible](components/crops/signed-in/tool-strip-button-selected-focus-visible.png)
 
@@ -2013,10 +2025,10 @@ Ghost-secondary small icon button, 36x36 with a 20px X. Measured as `transcript-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, no token, color #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent, no token offset 2px; colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, no token, color #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; icon 20 x 20, fill none, no token, color #1c2026 `--cds-color-interactive-secondary-pressed` |
+| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
+| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; icon 20 x 20, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed` |
 
 ![Transcript close button default](components/crops/signed-in/transcript-close-default.png) ![Transcript close button hover](components/crops/signed-in/transcript-close-hover.png) ![Transcript close button focus-visible](components/crops/signed-in/transcript-close-focus-visible.png) ![Transcript close button focus-visible-cds](components/crops/signed-in/transcript-close-focus-visible-cds.png) ![Transcript close button pressed](components/crops/signed-in/transcript-close-pressed.png)
 
@@ -2025,7 +2037,7 @@ Silent select: bold label and value, 24px chevron, no visible box. Measured as `
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 135.5 x 32; radius 8px `--cds-border-radius-100`; background transparent; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| default (same: hover, focus-visible) | size 135.5 x 32; radius 8px `--cds-border-radius-100`; background transparent; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 
 ![Transcript language select default](components/crops/signed-in/transcript-language-default.png) ![Transcript language select hover](components/crops/signed-in/transcript-language-hover.png) ![Transcript language select focus-visible](components/crops/signed-in/transcript-language-focus-visible.png)
 
@@ -2036,7 +2048,7 @@ Paragraph timestamp as a button ("0:00"). Measured as `transcript-timestamp` on 
 |---|---|
 | default (same: focus-visible) | size 25.95 x 20; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none |
 | hover | decoration underline auto offset auto |
-| focus-visible-cds | outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | decoration underline auto offset auto |
 
 ![Transcript timestamp default](components/crops/signed-in/transcript-timestamp-default.png) ![Transcript timestamp hover](components/crops/signed-in/transcript-timestamp-hover.png) ![Transcript timestamp focus-visible](components/crops/signed-in/transcript-timestamp-focus-visible.png) ![Transcript timestamp focus-visible-cds](components/crops/signed-in/transcript-timestamp-focus-visible-cds.png) ![Transcript timestamp pressed](components/crops/signed-in/transcript-timestamp-pressed.png)
@@ -2056,19 +2068,19 @@ Each sentence fragment is an inline role=button span. The current phrase gets a 
 #### Reading body
 CML paragraph. This reading has no subheadings or lists, so only the paragraph and link styles are on the page. Measured as `reading-body` on reading item.
 
-**Values.** size 770 x 72; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 16 x 16, fill none, no token, color #0056d2 `--cds-color-interactive-primary`.
+**Values.** size 770 x 72; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 16 x 16, fill none, color #0056d2 `--cds-color-interactive-primary`.
 
 | Part | Values (default) |
 |---|---|
 | `reading-title` | size 770 x 52; font 44/52 400, -0.1px `--cds-typography-display2-weak`; colour #0d0f12 `--cds-color-neutral-primary` |
-| `reading-completed` | size 127.03 x 24; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, no token, color #197d12 `--cds-color-feedback-success` |
+| `reading-completed` | size 127.03 x 24; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #197d12 `--cds-color-feedback-success` |
 
 ![Reading body default](components/crops/signed-in/reading-body-default.png) ![Reading body (reading-title) default](components/crops/signed-in/reading-title-default.png) ![Reading body (reading-completed) default](components/crops/signed-in/reading-completed-default.png)
 
 #### Reading audio player
 Grey pill bar: play button, time, a progress rail with a thumb, playback rate, mute and settings. Measured as `reading-audio-player` on reading item.
 
-**Values.** size 770 x 54; radius 50px `--cds-border-radius-max`; background #f2f5fa `--cds-color-neutral-background-primary-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 28 x 28, fill none, no token, color #0d0f12 `--cds-color-neutral-primary`.
+**Values.** size 770 x 54; radius 50px `--cds-border-radius-max`; background #f2f5fa `--cds-color-neutral-background-primary-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 28 x 28, fill none, color #0d0f12 `--cds-color-neutral-primary`.
 
 ![Reading audio player default](components/crops/signed-in/reading-audio-player-default.png)
 
@@ -2077,8 +2089,8 @@ Underlined blue link with a 16px external-link icon after it. Measured as `readi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 184.64 x 24; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline auto offset auto; icon 16 x 16, fill none, no token, color #0056d2 `--cds-color-interactive-primary` |
-| focus-visible, focus-visible-cds | outline 1px auto #005fcc, no token offset 1px |
+| default (same: hover, pressed) | size 184.64 x 24; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration underline auto offset auto; icon 16 x 16, fill none, color #0056d2 `--cds-color-interactive-primary` |
+| focus-visible, focus-visible-cds | outline 1px auto #005fcc offset 1px (the browser default focus outline) |
 
 ![Reading link default](components/crops/signed-in/reading-link-default.png) ![Reading link hover](components/crops/signed-in/reading-link-hover.png) ![Reading link focus-visible](components/crops/signed-in/reading-link-focus-visible.png) ![Reading link focus-visible-cds](components/crops/signed-in/reading-link-focus-visible-cds.png) ![Reading link pressed](components/crops/signed-in/reading-link-pressed.png)
 
@@ -2089,7 +2101,7 @@ Primary large button (48px) at the end of the reading, followed by a green "Comp
 |---|---|
 | default (same: focus-visible) | size 154.36 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #ffffff `--cds-color-neutral-primary-invert` |
 | hover | background #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | background #3c0f8a `--cds-color-interactive-primary-pressed` |
 
 ![Reading next button (large) default](components/crops/signed-in/reading-next-button-default.png) ![Reading next button (large) hover](components/crops/signed-in/reading-next-button-hover.png) ![Reading next button (large) focus-visible](components/crops/signed-in/reading-next-button-focus-visible.png) ![Reading next button (large) focus-visible-cds](components/crops/signed-in/reading-next-button-focus-visible-cds.png) ![Reading next button (large) pressed](components/crops/signed-in/reading-next-button-pressed.png)
@@ -2097,7 +2109,7 @@ Primary large button (48px) at the end of the reading, followed by a green "Comp
 #### Feedback row
 Below a top rule, ghost buttons with 20px start icons. Measured as `reading-feedback-row` on reading item.
 
-**Values.** size 770 x 67; padding 15px / 0; border T: 1px solid #f2f5fa `--cds-color-neutral-disabled-weak`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, no token, color #0056d2 `--cds-color-interactive-primary`.
+**Values.** size 770 x 67; padding 15px / 0; border T: 1px solid #f2f5fa `--cds-color-neutral-disabled-weak`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0056d2 `--cds-color-interactive-primary`.
 
 ![Feedback row default](components/crops/signed-in/reading-feedback-row-default.png)
 
@@ -2106,9 +2118,9 @@ Ghost button with a 20px start icon, 36px tall. Measured as `item-feedback-text-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 65.33 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; icon 20 x 20, fill none, no token, color #0056d2 `--cds-color-interactive-primary` |
+| default (same: focus-visible) | size 65.33 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; icon 20 x 20, fill none, color #0056d2 `--cds-color-interactive-primary` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
 
 ![Feedback text button default](components/crops/signed-in/item-feedback-text-button-default.png) ![Feedback text button hover](components/crops/signed-in/item-feedback-text-button-hover.png) ![Feedback text button focus-visible](components/crops/signed-in/item-feedback-text-button-focus-visible.png) ![Feedback text button focus-visible-cds](components/crops/signed-in/item-feedback-text-button-focus-visible-cds.png) ![Feedback text button pressed](components/crops/signed-in/item-feedback-text-button-pressed.png)
@@ -2132,7 +2144,7 @@ Primary large button (48px). Measured as `assignment-primary` on assignment item
 |---|---|
 | default (same: focus-visible) | size 112.5 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #ffffff `--cds-color-neutral-primary-invert` |
 | hover | background #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | background #3c0f8a `--cds-color-interactive-primary-pressed` |
 
 ![Assignment primary button default](components/crops/signed-in/assignment-primary-default.png) ![Assignment primary button hover](components/crops/signed-in/assignment-primary-hover.png) ![Assignment primary button focus-visible](components/crops/signed-in/assignment-primary-focus-visible.png) ![Assignment primary button focus-visible-cds](components/crops/signed-in/assignment-primary-focus-visible-cds.png) ![Assignment primary button pressed](components/crops/signed-in/assignment-primary-pressed.png)
@@ -2142,10 +2154,10 @@ Ghost large button with a 24px sparkle start icon, dark label. Measured as `assi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 177.8 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; transition none; transform none; icon 24 x 24, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| default (same: focus-visible) | size 177.8 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary`; transition none; transform none; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | size 174.24 x 47.04; radius 12px; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; transition all 0.2s cubic-bezier(0, 1, 0.9, 1); transform matrix3d(0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 1); icon 23.52 x 23.52, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover` |
+| pressed | size 174.24 x 47.04; radius 12px; background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; transition all 0.2s cubic-bezier(0, 1, 0.9, 1); transform matrix3d(0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 0.98, 0, 0, 0, 0, 1); icon 23.52 x 23.52, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 
 ![Assignment AI button default](components/crops/signed-in/assignment-ai-button-default.png) ![Assignment AI button hover](components/crops/signed-in/assignment-ai-button-hover.png) ![Assignment AI button focus-visible](components/crops/signed-in/assignment-ai-button-focus-visible.png) ![Assignment AI button focus-visible-cds](components/crops/signed-in/assignment-ai-button-focus-visible-cds.png) ![Assignment AI button pressed](components/crops/signed-in/assignment-ai-button-pressed.png)
 
@@ -2163,7 +2175,7 @@ White outlined button with a dark label, 36px tall. Measured as `assignment-seco
 |---|---|
 | default (same: focus-visible) | size 134.06 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #c1cbdb 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #8495b0 0px 0px 0px 1px inset; colour #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; shadow #8495b0 0px 0px 0px 1px inset; outline 1px solid transparent, no token offset 2px; colour #232b3a `--cds-color-interactive-secondary-hover` |
+| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; shadow #8495b0 0px 0px 0px 1px inset; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover` |
 | pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; shadow #8495b0 0px 0px 0px 1px inset; colour #1c2026 `--cds-color-interactive-secondary-pressed` |
 | disabled, disabled-hover | size 120.45 x 36; background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #a7b4c9 `--cds-color-neutral-disabled-strong` |
 
@@ -2172,7 +2184,7 @@ White outlined button with a dark label, 36px tall. Measured as `assignment-seco
 #### Assignment expectations card
 Bordered card: heading, then rows of a 20px icon and a line of text. Measured as `assignment-expect-card` on assignment item (submitted).
 
-**Values.** size 250 x 118; padding 16px `--cds-spacing-200`; gap 8px `--cds-spacing-100`; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary`.
+**Values.** size 250 x 118; padding 16px `--cds-spacing-200`; gap 8px `--cds-spacing-100`; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary`.
 
 ![Assignment expectations card default](components/crops/signed-in/assignment-expect-card-default.png)
 
@@ -2181,10 +2193,10 @@ Ghost-secondary button with a 20px flag start icon. Measured as `assignment-repo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 134.48 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
-| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 20 x 20, fill none, no token, color #232b3a `--cds-color-interactive-secondary-hover` |
-| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent, no token offset 2px; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 20 x 20, fill none, no token, color #232b3a `--cds-color-interactive-secondary-hover` |
-| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; decoration underline auto offset auto; icon 20 x 20, fill none, no token, color #1c2026 `--cds-color-interactive-secondary-pressed` |
+| default (same: focus-visible) | size 134.48 x 36; padding 8px `--cds-spacing-100`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
+| focus-visible-cds | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto; icon 20 x 20, fill none, color #232b3a `--cds-color-interactive-secondary-hover` |
+| pressed | background #e9eef7 `--cds-color-interactive-background-secondary-pressed-weak`; colour #1c2026 `--cds-color-interactive-secondary-pressed`; decoration underline auto offset auto; icon 20 x 20, fill none, color #1c2026 `--cds-color-interactive-secondary-pressed` |
 
 ![Report an issue button default](components/crops/signed-in/assignment-report-default.png) ![Report an issue button hover](components/crops/signed-in/assignment-report-hover.png) ![Report an issue button focus-visible](components/crops/signed-in/assignment-report-focus-visible.png) ![Report an issue button focus-visible-cds](components/crops/signed-in/assignment-report-focus-visible-cds.png) ![Report an issue button pressed](components/crops/signed-in/assignment-report-pressed.png)
 
@@ -2208,7 +2220,7 @@ Underlined dark link inside the sentence. Measured as `ml-career-goal-link` on M
 |---|---|
 | default (same: focus-visible) | size 207.47 x 22; radius 0; background transparent; shadow none; outline none; font 16/24 600, -0.048px `--cds-typography-title3`; colour #0d0f12 `--cds-color-neutral-primary`; decoration underline auto offset auto |
 | hover | decoration none |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | decoration none |
 
 No crop was saved for this entry; the values are from the computed styles.
@@ -2221,7 +2233,7 @@ Ghost button with no padding, blue label. Measured as `ml-edit-goal` on My Learn
 | default | size 53.64 x 24; padding 4px `--cds-spacing-50` 0 0 0; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
 
 ![Edit goal button default](components/crops/signed-in/ml-edit-goal-default.png) ![Edit goal button hover](components/crops/signed-in/ml-edit-goal-hover.png) ![Edit goal button focus-visible](components/crops/signed-in/ml-edit-goal-focus-visible.png) ![Edit goal button focus-visible-cds](components/crops/signed-in/ml-edit-goal-focus-visible-cds.png) ![Edit goal button pressed](components/crops/signed-in/ml-edit-goal-pressed.png)
@@ -2279,7 +2291,7 @@ Course name as a link, bold, dark, no underline at rest. Measured as `ml-course-
 |---|---|
 | default | size 374.8 x 20; border none; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | border B: 1px solid #0d0f12 `--cds-color-neutral-primary` |
-| focus-visible, focus-visible-cds | outline 1px auto #005fcc, no token offset 1px; decoration underline auto offset auto |
+| focus-visible, focus-visible-cds | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline auto offset auto |
 | pressed | border B: 1px solid #0d0f12 `--cds-color-neutral-primary` |
 
 ![Course title link (My Learning) default](components/crops/signed-in/ml-course-title-link-default.png) ![Course title link (My Learning) hover](components/crops/signed-in/ml-course-title-link-hover.png) ![Course title link (My Learning) focus-visible](components/crops/signed-in/ml-course-title-link-focus-visible.png) ![Course title link (My Learning) focus-visible-cds](components/crops/signed-in/ml-course-title-link-focus-visible-cds.png) ![Course title link (My Learning) pressed](components/crops/signed-in/ml-course-title-link-pressed.png)
@@ -2299,7 +2311,7 @@ Bordered inset card inside a course row: next item title, a 16px type icon and "
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 350 x 78; padding 16px `--cds-spacing-200`; gap 16px `--cds-spacing-200`; border 1px solid #f2f5fa `--cds-color-neutral-disabled-weak`; radius 12px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 16 x 16, fill none, no token, color #48546e `--cds-color-neutral-primary-weak` |
+| default (same: hover) | size 350 x 78; padding 16px `--cds-spacing-200`; gap 16px `--cds-spacing-200`; border 1px solid #f2f5fa `--cds-color-neutral-disabled-weak`; radius 12px; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 16 x 16, fill none, color #48546e `--cds-color-neutral-primary-weak` |
 
 ![Next item card default](components/crops/signed-in/ml-next-item-card-default.png) ![Next item card hover](components/crops/signed-in/ml-next-item-card-hover.png)
 
@@ -2311,7 +2323,7 @@ Primary button, 36px tall. Measured as `ml-resume-button` on My Learning, In Pro
 | default | size 80.81 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; decoration none |
 | hover | background #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | outline 1px solid transparent, no token offset 2px; decoration underline auto offset auto |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); decoration underline auto offset auto |
 | pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
 | get-started | size 99.94 x 36 |
 
@@ -2322,12 +2334,13 @@ Ghost medium icon button, 48x48 with a 24px blue dots icon. Measured as `ml-over
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 48 x 48; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, fill none, no token, color #0056d2 `--cds-color-interactive-primary` |
-| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, no token, color #0b408b `--cds-color-interactive-primary-hover` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, no token, color #0b408b `--cds-color-interactive-primary-hover` |
-| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; icon 24 x 24, fill none, no token, color #3c0f8a `--cds-color-interactive-primary-pressed` |
+| default (same: focus-visible) | size 48 x 48; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; icon 24 x 24, fill none, color #0056d2 `--cds-color-interactive-primary` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
+| pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; icon 24 x 24, fill none, color #3c0f8a `--cds-color-interactive-primary-pressed` |
+| focus-visible (as captured) | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; icon 24 x 24, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
 
-![Overflow button default](components/crops/signed-in/ml-overflow-button-default.png) ![Overflow button hover](components/crops/signed-in/ml-overflow-button-hover.png) ![Overflow button focus-visible](components/crops/signed-in/ml-overflow-button-focus-visible.png) ![Overflow button focus-visible-cds](components/crops/signed-in/ml-overflow-button-focus-visible-cds.png) ![Overflow button pressed](components/crops/signed-in/ml-overflow-button-pressed.png)
+![Overflow button default](components/crops/signed-in/ml-overflow-button-default.png) ![Overflow button hover](components/crops/signed-in/ml-overflow-button-hover.png) ![Overflow button focus-visible](components/crops/signed-in/ml-overflow-button-focus-visible.png) ![Overflow button focus-visible-cds](components/crops/signed-in/ml-overflow-button-focus-visible-cds.png) ![Overflow button pressed](components/crops/signed-in/ml-overflow-button-pressed.png) ![Overflow button focus-visible (as captured)](components/crops/signed-in/ml-overflow-button-focus-visible-as-captured.png)
 
 #### Standalone course card
 Bordered rounded card: partner logo and name, "Offered by", course title link, "Course · 9% complete · Estimated completion", progress bar, next-item card and overflow button. Measured as `ml-course-card` on My Learning, In Progress.
@@ -2346,7 +2359,7 @@ Bordered card: month title with previous/next icon buttons, a 7-column grid (wee
 
 | Part | Values (default) |
 |---|---|
-| `ml-calendar-day` | size 32 x 32; border 2px solid transparent, no token; radius 50% `--cds-border-radius-max`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; states measured: default, today |
+| `ml-calendar-day` | size 32 x 32; border 2px solid transparent; radius 50% `--cds-border-radius-max`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; states measured: default, today |
 
 No crop was saved for this entry; the values are from the computed styles.
 
@@ -2355,9 +2368,9 @@ Ghost small icon buttons, 36x36 with 20px chevrons. Measured as `ml-calendar-nav
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, no token, color #0d0f12 `--cds-color-neutral-primary` |
+| default (same: focus-visible) | size 36 x 36; radius 8px `--cds-border-radius-100`; background transparent; shadow transparent 0px 0px 0px 1px inset; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #0d0f12 `--cds-color-neutral-primary` |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only) |
 | pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak` |
 
 ![Calendar nav button default](components/crops/signed-in/ml-calendar-nav-default.png) ![Calendar nav button hover](components/crops/signed-in/ml-calendar-nav-hover.png) ![Calendar nav button focus-visible](components/crops/signed-in/ml-calendar-nav-focus-visible.png) ![Calendar nav button focus-visible-cds](components/crops/signed-in/ml-calendar-nav-focus-visible-cds.png) ![Calendar nav button pressed](components/crops/signed-in/ml-calendar-nav-pressed.png)
@@ -2376,7 +2389,7 @@ Ghost-invert button with no padding, 24px tall. Measured as `ml-cert-linkedin` o
 |---|---|
 | default | size 96.11 x 24; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 14/24 600, 0.14px; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover, focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | outline 1px solid transparent, no token offset 2px; decoration underline auto offset auto |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); decoration underline auto offset auto |
 | pressed | decoration underline auto offset auto |
 
 ![Add to LinkedIn (ghost) default](components/crops/signed-in/ml-cert-linkedin-default.png) ![Add to LinkedIn (ghost) hover](components/crops/signed-in/ml-cert-linkedin-hover.png) ![Add to LinkedIn (ghost) focus-visible](components/crops/signed-in/ml-cert-linkedin-focus-visible.png) ![Add to LinkedIn (ghost) focus-visible-cds](components/crops/signed-in/ml-cert-linkedin-focus-visible-cds.png) ![Add to LinkedIn (ghost) pressed](components/crops/signed-in/ml-cert-linkedin-pressed.png)
@@ -2389,7 +2402,7 @@ cds Link, bold blue. Measured as `ml-cert-view` on My Learning, In Progress.
 | default | size 92.06 x 25; radius 0; background transparent; shadow none; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; decoration none |
 | hover | colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent, no token offset 2px; colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | radius 4px `--cds-border-radius-50`; shadow #804ee4 0px 0px 0px 1px, #f0f6ff 0px 0px 0px 2px; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
 | pressed | colour #232b3a `--cds-color-interactive-secondary-hover`; decoration underline auto offset auto |
 
 ![View certificate link default](components/crops/signed-in/ml-cert-view-default.png) ![View certificate link hover](components/crops/signed-in/ml-cert-view-hover.png) ![View certificate link focus-visible](components/crops/signed-in/ml-cert-view-focus-visible.png) ![View certificate link focus-visible-cds](components/crops/signed-in/ml-cert-view-focus-visible-cds.png) ![View certificate link pressed](components/crops/signed-in/ml-cert-view-pressed.png)
@@ -2411,7 +2424,7 @@ Primary button, 36px tall. Measured as `mlc-linkedin-button` on My Learning, Com
 | default | size 128.11 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #ffffff `--cds-color-neutral-primary-invert`; decoration none |
 | hover | background #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | outline 1px solid transparent, no token offset 2px; decoration underline auto offset auto |
+| focus-visible-cds | outline 1px solid transparent offset 2px (forced-colours only); decoration underline auto offset auto |
 | pressed | background #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto |
 
 ![Add to LinkedIn (primary) default](components/crops/signed-in/mlc-linkedin-button-default.png) ![Add to LinkedIn (primary) hover](components/crops/signed-in/mlc-linkedin-button-hover.png) ![Add to LinkedIn (primary) focus-visible](components/crops/signed-in/mlc-linkedin-button-focus-visible.png) ![Add to LinkedIn (primary) focus-visible-cds](components/crops/signed-in/mlc-linkedin-button-focus-visible-cds.png) ![Add to LinkedIn (primary) pressed](components/crops/signed-in/mlc-linkedin-button-pressed.png)
@@ -2424,7 +2437,7 @@ Legacy link button (primary invert classes, not a cds-button): blue text, no fil
 | default | size 126.3 x 36; padding 8px / 16px (`--cds-spacing-100`, `--cds-spacing-200`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 14/20 600, 0.14px `--cds-typography-action-secondary`; colour #0056d2 `--cds-color-interactive-primary`; decoration none; transition none |
 | hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto; transition all 0.25s ease-in-out |
 | focus-visible | decoration underline auto offset auto |
-| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent, no token offset 2px; colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
+| focus-visible-cds | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #0b408b `--cds-color-interactive-primary-hover`; decoration underline auto offset auto |
 | pressed | background #f9f5ff `--cds-color-callouts-background-secondary-weak`; colour #3c0f8a `--cds-color-interactive-primary-pressed`; decoration underline auto offset auto; transition all 0.25s ease-in-out |
 
 ![View certificate button (legacy) default](components/crops/signed-in/mlc-view-certificate-default.png) ![View certificate button (legacy) hover](components/crops/signed-in/mlc-view-certificate-hover.png) ![View certificate button (legacy) focus-visible](components/crops/signed-in/mlc-view-certificate-focus-visible.png) ![View certificate button (legacy) focus-visible-cds](components/crops/signed-in/mlc-view-certificate-focus-visible-cds.png) ![View certificate button (legacy) pressed](components/crops/signed-in/mlc-view-certificate-pressed.png)
@@ -2497,6 +2510,216 @@ Status tags: the public product card tags (Free trial, Top AI program, category,
 
 ![Top Instructor badge default](components/crops/badge-top-instructor-default.png)
 
+### Forms, menus, settings and states
+
+Added on 2026-10-17. Public: the log-in dialog with its email field, its error notification (reached with every request aborted, so nothing was sent) and its buttons; the AI coach panel with its privacy notification, chat text area and send button; and the 404 page. Signed in, from copies of the live tab: the course overflow menu and the tooltip on its button, the course review dialog (a CDS multiline text field and a disabled Submit), the share dialog, and on Account settings the colour theme select, the switches, a warning notification and Delete account, in light and in the dark theme the learner can choose. Nothing was rated, submitted, toggled or deleted.
+
+#### Text field
+CDS text field (the email field in the log-in dialog): cds-input-root with a notched-outline fieldset, label above with a red required star. Measured as `text-field` on the login page. Hover tints the field `#f0f6ff` and darkens the outline to `#0b408b`; focus adds the two-ring `::before`. An invalid submit does not mark the field: `aria-invalid` stays false and the outline stays grey, and the message appears as an [error notification](#error-notification) above it.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: focus-visible, filled, error) | size 368 x 48; padding 0; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-interactive-secondary`; transform none |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
+| error-dialog | size 424 x 708.11; radius 16px `--cds-border-radius-200`; font 16/24 400 `--cds-typography-body1`; transform matrix(1, 0, 0, 1, -212, -354.055); icon 20 x 20, colour #0d0f12 `--cds-color-interactive-secondary` |
+
+![Text field default](components/crops/text-field-default.png) ![Text field hover](components/crops/text-field-hover.png) ![Text field focus-visible](components/crops/text-field-focus-visible.png) ![Text field filled](components/crops/text-field-filled.png) ![Text field error](components/crops/text-field-error.png) ![Text field error-dialog](components/crops/text-field-error-dialog.png)
+
+#### Log-in dialog
+Log in or create account: the CDS dialog over a dimmed page, with the email field, a large primary Continue and three outlined social buttons. Measured as `login-dialog` on the login page.
+
+**Values.** size 424 x 647; padding 0; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; transform matrix(1, 0, 0, 1, -212, -323.5); icon 20 x 20, colour #0d0f12 `--cds-color-interactive-secondary`.
+
+![Log-in dialog opened](components/crops/login-dialog-opened.png)
+
+#### Large primary button
+Large primary button (Continue in the log-in dialog), full width, 48px. Measured as `button-primary-large` on the login page. The log-in buttons are not CDS buttons: 700 weight on 14/24 where CDS uses 600, a 0.25s ease-out transition where CDS buttons have none, and a focus ring with a white gap plus a 2px outline. Pressed goes to `#2c0b65`.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 368 x 48; padding 12px 32px; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow none; outline none; font 14/24 700; colour #ffffff `--cds-color-neutral-primary-invert`; transition background-color 0.25s ease-out, box-shadow 0.25s ease-out, color 0.25s ease-out |
+| hover | background #0b408b `--cds-color-emphasis-primary-background-xstrong` |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons); outline 2px solid #793ae4 `--cds-color-purple-700` offset 2px |
+| pressed | background #2c0b65 `--cds-color-emphasis-quaternary-background-xstrong` |
+
+![Large primary button default](components/crops/button-primary-large-default.png) ![Large primary button hover](components/crops/button-primary-large-hover.png) ![Large primary button focus-visible](components/crops/button-primary-large-focus-visible.png) ![Large primary button pressed](components/crops/button-primary-large-pressed.png)
+
+#### Social sign-in button
+Outlined social sign-in button (Continue with Google): white, 1px dark border, 48px. Measured as `button-social` on the login page. Same non-CDS button family as Continue: 1px `#0d0f12` border, 8 radius, 18px brand icon at the left.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 368 x 50; padding 12px 16px; border 1px solid #0d0f12 `--cds-color-interactive-secondary`; radius 8px `--cds-border-radius-100`; background transparent; shadow none; outline none; font 14/24 700; colour #0d0f12 `--cds-color-interactive-secondary`; transition background-color 0.25s ease-out, box-shadow 0.25s ease-out, color 0.25s ease-out; icon 18 x 18, colour #232b3a `--cds-color-interactive-secondary-hover` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #0b408b `--cds-color-interactive-primary-hover` |
+| focus-visible | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #ffffff 0px 0px 0px 2px, #793ae4 0px 0px 0px 3px, #f0f6ff 0px 0px 0px 4px (a focus ring with a 2px white gap before the rings: the checkbox and the log-in buttons); outline 2px solid #0056d2 `--cds-color-interactive-primary` offset 2px |
+| pressed | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; colour #2c0b65 `--cds-color-emphasis-quaternary-content-default` |
+
+![Social sign-in button default](components/crops/button-social-default.png) ![Social sign-in button hover](components/crops/button-social-hover.png) ![Social sign-in button focus-visible](components/crops/button-social-focus-visible.png) ![Social sign-in button pressed](components/crops/button-social-pressed.png)
+
+#### Error notification
+Error notification the log-in dialog shows above the field after an invalid submit: red-tint fill, outlined error icon, one line of text. The field itself is not marked invalid. Measured as `callout-error` on the login page. Red-tint fill `#fad2d8` (`--cds-color-feedback-error-invert-weak`), 8 radius, no border, a 24px error icon filled `#b21836` and one line of 16/24 text. It sits between the dialog intro and the field.
+
+**Values.** size 368 x 61.11; padding 18px 22px 18px 16px; radius 8px `--cds-border-radius-100`; background #fad2d8 `--cds-color-feedback-error-invert-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #232b3a `--cds-color-interactive-secondary-hover`.
+
+![Error notification error](components/crops/callout-error-error.png)
+
+#### Info notification
+Informative callout (Your privacy and this chat): blue-tint fill, info icon, title, body, primary button. Measured as `callout-info` on the chat page.
+
+**Values.** size 383 x 192; padding 12px 16px; radius 16px `--cds-border-radius-200`; background #e3eeff `--cds-color-emphasis-primary-background-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #0056d2 `--cds-color-interactive-primary`.
+
+![Info notification default](components/crops/callout-info-default.png)
+
+#### Warning notification
+Warning callout on Account settings ("Warning: ..."): --cds-color-feedback-background-warning-weak fill, 16 radius, 12px 16px padding, 20px icon in --cds-color-feedback-warning, no border. Measured as `callout-warning` on learner pages.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 592 x 48; padding 12px / 16px (`--cds-spacing-150`, `--cds-spacing-200`); radius 16px `--cds-border-radius-200`; background #ffeac9 `--cds-color-feedback-background-warning-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; icon 20 x 20, fill none, color #8e4209 `--cds-color-feedback-warning` |
+| dark | background #3a1703 `--cds-color-emphasis-tertiary-background-xstrong`; colour #f2f5fa `--cds-color-neutral-disabled-weak`; icon 20 x 20, fill none, color #f28100 `--cds-color-yellow-400` |
+
+![Warning notification default](components/crops/signed-in/callout-warning-default.png) ![Warning notification dark](components/crops/signed-in/callout-warning-dark.png)
+
+#### Chat text area
+CDS chat text area ("Ask anything..."): a grey 16-radius form with an auto-growing textarea and a round send button. Measured as `text-area` on the chat page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, focus-visible) | size 383 x 56; padding 8px; gap 8px; radius 16px `--cds-border-radius-200`; background #f2f5fa `--cds-color-interactive-background-secondary-hover-weak`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-interactive-secondary`; icon 20 x 20, colour #dae1ed `--cds-color-neutral-disabled` |
+| filled | icon 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` |
+
+| Part | Values (default) |
+|---|---|
+| `coach-panel` | size 415 x 795; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; text h2 16/20 600 `--cds-typography-subtitle-medium`, ls -0.048px, #0d0f12 `--cds-color-interactive-secondary`; icon 24 x 24, colour #0d0f12 `--cds-color-interactive-secondary` |
+
+![Chat text area default](components/crops/text-area-default.png) ![Chat text area hover](components/crops/text-area-hover.png) ![Chat text area focus-visible](components/crops/text-area-focus-visible.png) ![Chat text area filled](components/crops/text-area-filled.png) ![Chat text area (coach-panel) opened](components/crops/coach-panel-opened.png)
+
+#### Chat send button
+Round send button in the chat field: filled primary when there is text, grey disabled when empty. Measured as `icon-button-send` on the chat page. Disabled while the field is empty: `#a7b4c9` fill (`--cds-color-neutral-disabled-strong`) with a `#dae1ed` arrow (`--cds-color-neutral-disabled`). With text it is a 36px primary icon button: `#0056d2`, hover `#0b408b`, pressed `#3c0f8a`.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 36 x 36; padding 0; radius 8px `--cds-border-radius-100`; background #0056d2 `--cds-color-interactive-primary`; shadow #0056d2 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); font 16/24 400 `--cds-typography-body1`; colour #ffffff `--cds-color-neutral-primary-invert`; icon 20 x 20, colour #ffffff `--cds-color-neutral-primary-invert` |
+| disabled | background #a7b4c9 `--cds-color-neutral-disabled-strong`; shadow #a7b4c9 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour); colour #dae1ed `--cds-color-neutral-disabled`; icon 20 x 20, colour #dae1ed `--cds-color-neutral-disabled` |
+| hover, focus-visible | background #0b408b `--cds-color-emphasis-primary-background-xstrong`; shadow #0b408b 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour) |
+| pressed | background #3c0f8a `--cds-color-interactive-primary-selected`; shadow #3c0f8a 0px 0px 0px 1px inset (a `core.borderWidth.default` edge in the label colour) |
+
+![Chat send button disabled](components/crops/icon-button-send-disabled.png) ![Chat send button default](components/crops/icon-button-send-default.png) ![Chat send button hover](components/crops/icon-button-send-hover.png) ![Chat send button focus-visible](components/crops/icon-button-send-focus-visible.png) ![Chat send button pressed](components/crops/icon-button-send-pressed.png)
+
+#### Text area
+CDS multiline text field ("Write your review (optional)"): cds-input-root with cds-input-multiline, notched-outline fieldset, 8 radius. Measured as `text-area-cds` on learner pages.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 664 x 48; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; outline none; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
+| focus-visible (as captured) | outline 1px solid transparent offset 2px (forced-colours only) |
+
+![Text area default](components/crops/signed-in/text-area-cds-default.png) ![Text area hover](components/crops/signed-in/text-area-cds-hover.png) ![Text area focus-visible (as captured)](components/crops/signed-in/text-area-cds-focus-visible-as-captured.png)
+
+#### Switch
+CDS switch (cds-labs-Switch): 40x24 track, 12 radius, 20px white knob; on is --cds-color-interactive-primary, off is --cds-color-neutral-stroke-primary; the fill and knob move in 0.1s ease-in-out. Measured as `switch` on learner pages. Never toggled for the capture: the on switch (Sound effects) and the off switch (Two factor authentication) were read as they were. In dark the on track is `#87b8ff` and the knob turns black.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, checked, focus-visible (as captured)) | size 40 x 24; gap 24px `--cds-spacing-300`; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
+| checked, dark, dark | colour #f2f5fa `--cds-color-neutral-disabled-weak` |
+
+Child layers that carry the look: button 40x24 background #8495b0 `--cds-color-neutral-stroke-primary` radius 12px; span 20x20 background #ffffff `--cds-color-neutral-background-primary` radius 50%.
+
+![Switch default](components/crops/signed-in/switch-default.png) ![Switch hover](components/crops/signed-in/switch-hover.png) ![Switch checked, focus-visible (as captured)](components/crops/signed-in/switch-checked-focus-visible-as-captured.png) ![Switch checked, dark](components/crops/signed-in/switch-checked-dark.png) ![Switch dark](components/crops/signed-in/switch-dark.png)
+
+#### Overflow menu
+Course overflow menu on My Learning (cds-actionOverflowMenu): white popover paper, 16 radius, --cds-elevation-level2, inside a fixed z-index 10000 layer. Opened with Enter on the trigger. Measured as `overflow-menu` on learner pages.
+
+**Values.** size 78.66 x 106; padding 8px `--cds-spacing-100`; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; shadow rgba(15,17,20,0.1) 0px 0px 4px 0px, rgba(15,17,20,0.1) 0px 4px 12px 4px `--cds-elevation-level2`; font 16/24 400 `--cds-typography-body1`; colour rgba(0,0,0,0.87), no token.
+
+![Overflow menu opened](components/crops/signed-in/overflow-menu-opened.png)
+
+#### Overflow menu item
+Menu item (Rate, Share): 40px, 8px padding, 16/24 400. Enter on the trigger focuses the first item with the CDS focus ring. Measured as `overflow-menu-item` on learner pages.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 54.66 x 40; padding 8px `--cds-spacing-100`; gap 12px `--cds-spacing-150`; radius 8px `--cds-border-radius-100`; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary` |
+| hover | background #f2f5fa `--cds-color-neutral-background-primary-weak`; colour #232b3a `--cds-color-interactive-secondary-hover` |
+| focus-visible (as captured) | background #f2f5fa `--cds-color-neutral-background-primary-weak`; outline 1px solid transparent offset 2px (forced-colours only); colour #232b3a `--cds-color-interactive-secondary-hover` |
+
+![Overflow menu item default](components/crops/signed-in/overflow-menu-item-default.png) ![Overflow menu item hover](components/crops/signed-in/overflow-menu-item-hover.png) ![Overflow menu item focus-visible (as captured)](components/crops/signed-in/overflow-menu-item-focus-visible-as-captured.png)
+
+#### Tooltip, signed in
+CDS tooltip ("More") shown on keyboard focus of the course overflow button, z-index 11000. Measured as `tooltip-signed-in` on learner pages.
+
+**Values.** size 45.44 x 41; background transparent; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; transform matrix(1, 0, 0, 1, 869, 1197).
+
+Child layers that carry the look: div 45.4x28 background #002457 `--cds-color-callouts-background-primary-strong` radius 4px; span 20pxx8px background #002457 `--cds-color-callouts-background-primary-strong` radius 3px 0px.
+
+![Tooltip, signed in opened](components/crops/signed-in/tooltip-signed-in-opened.png)
+
+#### Select, signed in
+Colour theme select on Account settings (Light mode, Dark mode, System default), CDS select. Measured as `select-signed-in` on learner pages.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| opened | size 186.66 x 48; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/19.0016 400; colour #0d0f12 `--cds-color-neutral-primary`; icon 24 x 24, fill none, color #0d0f12 `--cds-color-neutral-primary` |
+| dark | background #000000, no token; colour #f2f5fa `--cds-color-neutral-disabled-weak`; icon 24 x 24, fill none, color #f2f5fa `--cds-color-neutral-disabled-weak` |
+
+| Part | Values (default) |
+|---|---|
+| `select-menu-signed-in` | size 187 x 160; radius 16px `--cds-border-radius-200`; background #ffffff `--cds-color-neutral-background-primary`; box shadow rgba(15,17,20,0.1) 0px 0px 4px 0px, rgba(15,17,20,0.1) 0px 4px 12px 4px `--cds-elevation-level2`; font 16/24 400 `--cds-typography-body1`; colour rgba(0,0,0,0.87), no token; icon 20 x 20, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
+
+![Select, signed in opened](components/crops/signed-in/select-signed-in-opened.png) ![Select, signed in dark](components/crops/signed-in/select-signed-in-dark.png) ![Select, signed in (select-menu-signed-in) opened](components/crops/signed-in/select-menu-signed-in-opened.png)
+
+#### Select option, signed in
+Option row in the CDS select list, 40px. Enter on the field focuses the selected option with cds-selectOption-focusVisible. Measured as `select-option-signed-in` on learner pages. Enter on the closed select opens the list with the selected option focused; it carries `cds-selectOption-focusVisible`, the two-ring focus and a `#f0f6ff` fill, and a check at the right.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 155 x 40; padding 4px `--cds-spacing-50` / 0; radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour rgba(0,0,0,0.87), no token |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak` |
+| selected, focus-visible (as captured) | background transparent; icon 20 x 20, fill none, color #0b408b `--cds-color-interactive-primary-hover` |
+
+![Select option, signed in default](components/crops/signed-in/select-option-signed-in-default.png) ![Select option, signed in hover](components/crops/signed-in/select-option-signed-in-hover.png) ![Select option, signed in selected, focus-visible (as captured)](components/crops/signed-in/select-option-signed-in-selected-focus-visible-as-captured.png)
+
+#### Review dialog
+Course review dialog (legacy rc-Modal, not CDS): white, 3px radius, 28px padding, over a z-index 3000 overlay. Opened from the overflow menu; nothing was rated or submitted. Measured as `rate-dialog` on learner pages. A legacy modal (rc-Modal), not CDS: 3px radius and a 2px-radius Submit, unlike the 16 and 8 of CDS dialogs and buttons. Submit stays disabled until a star is chosen.
+
+**Values.** size 720 x 410; padding 28px; radius 3px; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #0d0f12 `--cds-color-neutral-primary`; transform matrix(1, 0, 0, 1, -360, -205).
+
+| Part | Values (default) |
+|---|---|
+| `button-disabled-legacy` | size 116.08 x 48; padding 14.4px / 32px `--cds-spacing-400`; border 1px solid #c1cbdb `--cds-color-neutral-stroke-primary-weak`; radius 2px `--cds-border-radius-25`; background #c1cbdb `--cds-color-neutral-stroke-primary-weak`; font 16/16 600; colour #f2f5fa `--cds-color-neutral-disabled-weak`; transition all 0.45s cubic-bezier(0.23, 1, 0.32, 1) |
+
+![Review dialog opened](components/crops/signed-in/rate-dialog-opened.png) ![Review dialog (button-disabled-legacy) disabled](components/crops/signed-in/button-disabled-legacy-disabled.png)
+
+#### Share dialog
+Share dialog (legacy, not CDS): five round share targets over the course link and a COPY text button. Pressing COPY in the live page swapped its label to "COPIED!" (read from the DOM straight after); that label swap is the only feedback, no toast appears. The copy was taken after the label had reverted. Measured as `share-dialog` on learner pages. Five round share targets and a COPY text button. After COPY the label read "COPIED!" in the live page; no toast appears anywhere in the capture.
+
+**Values.** size 460 x 290; padding 15px; background #ffffff `--cds-color-neutral-background-primary`; font 16/24 400 `--cds-typography-body1`; colour #1f1f1f, no token.
+
+| Part | Values (default) |
+|---|---|
+| `share-copy-button` | size 78 x 40; padding 8px `--cds-spacing-100`; background transparent + linear-gradient(270deg, rgb(242, 245, 250) 80%, rgba(0, 0, 0, 0) 100%); font 16/24 400 `--cds-typography-body1`; colour #1f1f1f, no token |
+
+![Share dialog default](components/crops/signed-in/share-dialog-default.png) ![Share dialog (share-copy-button) default](components/crops/signed-in/share-copy-button-default.png)
+
+#### Delete account button
+Delete account: the destructive action is an ordinary 48px secondary (outlined blue) button. Never pressed. Measured as `button-secondary-destructive` on learner pages. The one destructive action captured is an ordinary secondary button; there is no red danger style and no confirmation was opened.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 152.14 x 48; padding 12px / 24px (`--cds-spacing-150`, `--cds-spacing-300`); radius 8px `--cds-border-radius-100`; background #ffffff `--cds-color-neutral-background-primary`; shadow #0056d2 0px 0px 0px 1px inset; font 16/24 600, 0.16px `--cds-typography-title3`; colour #0056d2 `--cds-color-interactive-primary` |
+| hover | background #f0f6ff `--cds-color-interactive-background-primary-hover-weak`; shadow #0b408b 0px 0px 0px 1px inset; colour #0b408b `--cds-color-interactive-primary-hover` |
+
+![Delete account button default](components/crops/signed-in/button-secondary-destructive-default.png) ![Delete account button hover](components/crops/signed-in/button-secondary-destructive-hover.png)
+
+#### 404 page
+The 404 page: logo bar, grey ground, an abstract illustration, one sentence with two links, three helpful links. It loads without CDS, so text falls back to the browser serif. Measured as `error-page` on the notfound page. The 404 page loads without CDS: its message falls back to a light Open Sans weight, links are `#4a90e2`, and the ground is `#f5f5f5`. See [notfound-light-default](screenshots/notfound-light-default.png).
+
+**Values.** size 1440 x 900; padding 0; radius 0px; background #f5f5f5, no token; font Opensans-Light 16/normal 400; colour #000000, no token; icon 780 x 350, colour #000000, no token.
+
+No crop was saved for this entry; the values are from the computed styles.
+
 ### Footer
 
 Full width, about 1745px tall on course pages: column headings, then Coursera, Community and More with app store badges, social icons and the copyright line.
@@ -2520,7 +2743,7 @@ Footer column link. Measured as `footer-link` on the home page.
 |---|---|
 | default | size 65.53 x 20; padding 0; radius 0px; background transparent; outline none; font 14/20 400 `--cds-typography-body2`; colour #0d0f12 `--cds-color-interactive-secondary`; decoration none |
 | hover | decoration underline |
-| focus-visible | outline 1px auto #005fcc, no token offset 1px; decoration underline |
+| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline |
 
 Child layers that carry the look: a, 65.5x20, outline 1px auto #005fcc offset 1px.
 
@@ -2533,7 +2756,7 @@ Social icon link in the footer bottom row. Measured as `footer-social-icon` on t
 |---|---|
 | default | size 28 x 28; padding 0; radius 0px; background transparent; outline none; font 16/24 400 `--cds-typography-body1`; colour #0056d2 `--cds-color-interactive-primary`; decoration none |
 | hover | decoration underline |
-| focus-visible | outline 1px auto #005fcc, no token offset 1px; decoration underline |
+| focus-visible | outline 1px auto #005fcc offset 1px (the browser default focus outline); decoration underline |
 
 Child layers that carry the look: a, 28x28, outline 1px auto #005fcc offset 1px.
 
@@ -2600,32 +2823,32 @@ Child layers that carry the look: a, 28x28, outline 1px auto #005fcc offset 1px.
 
 - **Left filter panel:** none exists on the search page. Filters are pill dropdowns (Topic, Duration, Learning Product, Language, Level, AI topic pills) plus the Filter and sort sheet, and sort is the "Sort by" radio group (Best Match, Newest) in that sheet, not a dropdown.
 - **Pill hover:** the home page partner pills sit in a horizontal carousel that Playwright reports as outside the viewport, so only default and focus-visible were read.
-- **Select option focus-visible:** after ArrowDown in the open select no option carried focus, so that state is missing. Selected and hover are measured.
+- **Select option focus-visible:** after ArrowDown in the open public select no option carried focus. The 2026-10-17 pass caught it on the signed-in colour theme select ([Select option, signed in](#select-option-signed-in)).
 - **Tab bar overflow chevron:** not reported visible at 1440, so it has no entry. Its two gradient fades are in the `tab-bar` paint list.
 - **Help (i):** opens a modal dialog, not a hover tooltip. Both are measured (`help-dialog`, `tooltip`, `tooltip-icon`).
-- **Disabled primary button:** none appeared. Disabled ghost and disabled secondary were measured in the filter popover and sheet.
-- **Not measured on purpose:** the AI coach panel contents, the cookie banner (OneTrust is in the DOM but showed nothing in a fresh context, so nothing was declined), sign-in and enrolment flows.
+- **Disabled primary button:** none appeared. Disabled ghost and disabled secondary were measured in the filter popover and sheet, the disabled chat send button on the course page, and the legacy disabled Submit in the review dialog.
+- **Not measured on purpose:** the AI coach's replies (nothing was sent), the cookie banner (OneTrust is in the DOM but showed nothing in a fresh context, so nothing was declined), sign-in and enrolment flows past the first log-in step.
 - **Footer link lists:** the link lists under the footer headings did not render in the headless captures, so the footer screenshots show headings over empty space. The footer link entry was measured on the home page.
 - **Explore page:** only the first light band (Trusted AI Learning) and the dark certificates band were measured. Selecting a chip was not tried, so what it does to the row is not recorded; the degrees band, the articles grid, the role tiles and the FAQ were not measured. The "AI courses by leading organizations" chips carry a logo and are 34 tall; they were not measured. Previous exists only after the row has scrolled (measured after one click on Next). Dark screenshots were not taken.
-- **Empty and error states, toasts:** none appeared on any captured page.
+- **Empty, loading and error states, toasts:** a search with no match shows fallback results under the query, not an empty state. The one error page is the 404, which loads without CDS. The log-in field's error is a notification above the field. No toast appeared: copying a share link swaps the button label to COPIED! instead. The one loading screen seen was a course-home modal ("Extending and personalizing your target dates") that the site raised on its own and closed before it could be copied; the CDS loader is known from its stylesheet rules only (spin, and a 1.5s pulse under reduced motion).
 
 ### Signed-in pages
 
 The learner pages were measured from static snapshots with scripts stripped, so anything that needs JavaScript is missing:
 
-- every menu: app switcher, help, language, notifications, avatar, the Explore mega menu on signed-in pages, and the course overflow menu
-- the Coursera AI chat panel
+- every menu: app switcher, help, language, notifications, avatar and the Explore mega menu on signed-in pages. The course overflow menu on My Learning was copied open with keyboard focus on 2026-10-17 ([Overflow menu](#overflow-menu))
+- the Coursera AI chat panel on learner pages (its public copy on the course page is measured: [Chat text area](#chat-text-area))
 - opening or closing any accordion or disclosure: only the states captured are measured (Course Material open and closed, objectives shown and hidden, outline modules open and closed)
-- "Show more" expansions, the language select list, calendar month paging, tooltips, the Save note dialog
+- "Show more" expansions, the language select list, calendar month paging, tooltips (one, on the overflow button, was copied on 2026-10-17), the Save note dialog
 - video playback: the player is a poster frame, the control bar's show and hide is scripted, and the transcript highlight does not move
-- CDS keyboard focus rings are emulated (`focus-visible-cds`), because CDS adds its focus class from JavaScript
+- CDS keyboard focus rings are emulated (`focus-visible-cds`), because CDS adds its focus class from JavaScript. The 2026-10-17 copies were taken after real key presses, so their `focus-visible (as captured)` states carry the classes CDS set itself
 - the reading in the snapshot has no subheadings, lists, code or tables; their styles come from a probe block the script inserted into the reading viewer, marked as such in [raw/measurements-signed-in.md](raw/measurements-signed-in.md)
 
 ### Themes
 
-- **Dark is a forced flip, not a shipped theme.** Coursera has no dark setting and ignores `prefers-color-scheme` (a dark-scheme context still loads with `data-color-theme="light"`). Setting `data-color-theme="dark"` and `color-scheme: dark` on the root after load re-renders every page, because each colour token is a `light-dark()` pair. Learners are never offered it.
+- **Dark is shipped to signed-in learners.** Account settings > Appearance offers Light mode, Dark mode and System default. Dark mode sets `data-color-theme="dark"` on `<html>`, and on 2026-10-17 every `--cds-color-*` variable on a learner page then equalled the dark side of its `light-dark()` pair ([raw/css-vars-dark-shipped.json](raw/css-vars-dark-shipped.json)), the same values the first capture got by forcing the attribute. Signed-out pages ignore `prefers-color-scheme` and stay light; the public dark screenshots set the attribute by hand.
 - **Dark quirks:** partner logos and some art keep their light look (logos gain a white pill), the audience strip is black in both themes, and the tab bar overflow fade stays light.
-- **Dark screenshots** exist only for the search and course pages. No component was measured in dark, and the signed-in pages are light only.
+- **Dark screenshots** exist for the search and course pages (attribute set by hand) and My Learning (the learner's own Dark mode). The switch, warning notification and theme select were measured in dark on Account settings; the dark course home was copied but not published, because its text names the enrolled course.
 
 ### Screenshots
 

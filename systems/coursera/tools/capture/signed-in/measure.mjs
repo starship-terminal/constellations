@@ -988,6 +988,12 @@ function buildMd(out) {
   L.push('');
   L.push(INTRO.trim());
   L.push('');
+  if (out._meta.refresh) {
+    L.push('## 2026-10-17 refresh');
+    L.push('');
+    L.push('A second pass copied seven more states from the same account with `snapshot.js` and measured them with `tools/capture/signed-in/refresh.mjs`: the course overflow menu and its tooltip on My Learning, the course review dialog, the share dialog, and Account settings (the colour theme select, the switches, a warning callout) in light and in the dark theme the learner chose in Appearance for the pass (set back to Light afterwards). Those copies hold the learner\'s current course list, so they stay outside the repository. Keyboard states were reached with real keys in the live tab before the copy, so the CDS focus classes in them are the product\'s own; their state is written `focus-visible (as captured)`. Nothing was rated, submitted, toggled or deleted. Their components are under "Menus, dialogs and settings" at the end, plus one state on the My Learning overflow button.');
+    L.push('');
+  }
   const groups = [
     ['Page shells and grid', /^shell-/],
     ['Top bar', /^topbar-/],
@@ -1002,10 +1008,11 @@ function buildMd(out) {
     ['Reading item', /^(reading-|item-feedback-text|item-footer)/],
     ['Assignment item', /^assignment-/],
     ['My Learning', /^(ml-|mlc-)/],
+    ['Menus, dialogs and settings (2026-10-17 refresh)', (k) => out.components[k].refresh],
   ];
   const seen = new Set();
   for (const [title, re] of groups) {
-    const keys = Object.keys(out.components).filter((k) => re.test(k) && !seen.has(k));
+    const keys = Object.keys(out.components).filter((k) => (typeof re === 'function' ? re(k) : re.test(k)) && !seen.has(k));
     if (!keys.length) continue;
     L.push(`## ${title}`);
     L.push('');
@@ -1018,7 +1025,9 @@ function buildMd(out) {
       L.push('');
       if (c.description) L.push(c.description);
       L.push('');
-      L.push(`Key \`${key}\`. Read from ${Object.entries(c.selectors || {}).map(([p, s]) => `\`${esc(s)}\` on ${out._meta.pages[p] ? out._meta.pages[p].label : p}`).join('; ')}.`);
+      const fromRefresh = [...new Set(Object.values(c.states).map((v) => v.snapshot).filter(Boolean))];
+      const fromSel = Object.entries(c.selectors || {}).map(([p, s]) => `\`${esc(s)}\` on ${out._meta.pages[p] ? out._meta.pages[p].label : p}`);
+      L.push(`Key \`${key}\`. Read from ${[...fromSel, ...(fromRefresh.length ? [`the 2026-10-17 copies ${fromRefresh.map((x) => `\`${x}\``).join(', ')} (tools/capture/signed-in/refresh.mjs)`] : [])].join('; ')}.`);
       L.push('');
       if (!names.length) { L.push(`Not measured: ${errs.map(([s, v]) => `${s}: ${v.error}`).join('; ')}`); L.push(''); continue; }
       const base = c.states.default ? rows(c.states.default) : null;

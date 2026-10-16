@@ -7,6 +7,9 @@ Sources, all read from coursera.org on 2026-09-29:
                              every colour variable painted in the light and the forced dark scheme
                              (colorProbe)
   raw/component-tokens.json  component values picked from the measurements, each with its source
+  raw/css-vars-dark-shipped.json  every colour variable computed on a signed-in page after the
+                             learner chose Appearance: Dark mode (2026-10-17); it must equal the
+                             dark side of each light-dark() pair, and the build checks that it does
 Every token carries $extensions.source: "css-var <name>", "computed <where>" or "measured <where>".
 
 CDS writes each colour as light-dark(<light>, <dark>). The palette ramps flip in the dark scheme
@@ -166,10 +169,72 @@ core["breakpoint"] = {
 }
 core["textDecoration"] = {"link": tok(ROOT[C + "text-decoration-link"], "textDecoration", f"css-var {C}text-decoration-link")}
 for group, vals in COMP.get("core", {}).items():
-    core[group] = {k: tok(v["value"], v["type"], v["source"], v.get("description")) for k, v in vals.items()}
+    core.setdefault(group, {}).update({k: tok(v["value"], v["type"], v["source"], v.get("description")) for k, v in vals.items()})
 
 
 # ---------- light and dark ----------
+# Where each elevation level is used, from the stylesheet rules that name it and the computed
+# shadows of the measured components (raw/measurements.md#elevation-in-use).
+ELEVATION_USE = {
+    "level1": "Floating round icon buttons: the jump-to-latest buttons in the AI coach panel",
+    "level2": "Everything that floats over the page: overflow menu, select list, filter popover, search suggestions, and catalogue cards on hover (with a grey.50 first layer)",
+    "level3": "Defined, but no rule on the home, search or course page and no measured learner component uses it",
+}
+
+M, S = "raw/measurements.md", "raw/measurements-signed-in.md"
+# The checklist's colour roles, each an alias to the CDS token the product paints for it, with
+# the element it was measured on. The same aliases resolve in the light and the dark set.
+ROLES = {
+    "background": {
+        "page": ("{neutral.background-primary}", f"{M}#global-header", "Public pages, dialogs and the 404 aside"),
+        "page-learner": ("{neutral.background-primary-weak}", f"{S}#page-shell-course-home-module-page", "The grey ground of the course home, grades and My Learning"),
+        "surface": ("{neutral.background-primary}", f"{S}#course-sidebar-card", "Learner cards on that ground: no border, no shadow, 16 radius"),
+        "raised": ("{neutral.background-primary}", f"{S}#overflow-menu", "Menus, select lists and the filter popover: the same white, lifted by elevation.level2"),
+        "overlay": ("{neutral.background-primary}", f"{M}#login-dialog", "Dialog paper (log-in, help), 16 radius, no shadow, over the scrim"),
+        "scrim": ("{component.modal.scrim}", f"{M}#login-dialog", "cds-Modal-backdrop behind every CDS dialog"),
+        "selected": ("{interactive.background-primary-hover-weak}", f"{S}#module-page-item-row", "Current module, item and sidebar link"),
+    },
+    "text": {
+        "primary": ("{neutral.primary}", f"{M}#ten-facts-for-a-coursera-style-course-list-and-course-page", None),
+        "secondary": ("{neutral.primary-weak}", f"{M}#product-card-metadata", "Meta lines, card skills, captions"),
+        "disabled": ("{neutral.disabled-strong}", f"{M}#button-disabled-ghost", "Disabled ghost and secondary labels, and the disabled send button's fill"),
+        "on-accent": ("{neutral.primary-invert}", f"{M}#button-primary", None),
+        "link": ("{interactive.primary}", f"{M}#link-inline", "Underlined"),
+        "link-hover": ("{interactive.primary-hover}", f"{M}#link-inline", None),
+        "placeholder": ("{neutral.primary-weak}", f"{M}#text-area", None),
+    },
+    "border": {
+        "default": ("{neutral.stroke-primary-weak}", f"{M}#product-card", "Catalogue card hairline"),
+        "strong": ("{neutral.stroke-primary}", f"{M}#text-field", "Text field and select outline at rest"),
+        "hover": ("{interactive.primary-hover}", f"{M}#text-field", "Text field outline on hover, over a blue.25 fill"),
+        "focus": ("{interactive.stroke-primary-focus}", f"{M}#focus-rings", "First ring of the two; the second is interactive.stroke-primary-focus-invert"),
+        "divider": ("{interactive.background-secondary-pressed-weak}", f"{M}#module-list", "2px rules in the module list, 1px in the stats card"),
+    },
+    "accent": {
+        "default": ("{interactive.primary}", f"{M}#button-primary", None),
+        "hover": ("{interactive.primary-hover}", f"{M}#button-primary", None),
+        "pressed": ("{interactive.primary-pressed}", f"{M}#button-primary", "A purple, not a darker blue"),
+    },
+    "status": {
+        "info-fill": ("{feedback.background-informative-weak}", f"{M}#callout-info", "AI coach privacy callout, 16 radius, no border"),
+        "info-text": ("{feedback.informative}", f"{M}#callout-info", "Its icon; body text stays neutral.primary"),
+        "info-border": ("{feedback.informative}", f"{M}#callout-info", "Derived: CDS callouts draw no border (info, warning and error measured at 0px); this is the status colour to use if one is needed"),
+        "success-fill": ("{feedback.background-success-weak}", f"{S}#right-rail-course-timeline-card", "Right on schedule! callout"),
+        "success-text": ("{feedback.success}", f"{S}#module-page-item-status-icons", "Completed checks and labels"),
+        "success-border": ("{feedback.success}", f"{S}#right-rail-course-timeline-card", "Derived: no success border is drawn"),
+        "warning-fill": ("{feedback.background-warning-weak}", f"{S}#callout-warning", "Account settings warning, 16 radius, no border"),
+        "warning-text": ("{feedback.warning}", f"{S}#callout-warning", "Its 20px icon"),
+        "warning-border": ("{feedback.warning}", f"{S}#callout-warning", "Derived: no warning border is drawn"),
+        "danger-fill": ("{feedback.error-invert-weak}", f"{M}#callout-error", "Log-in error notification, 8 radius, no border"),
+        "danger-text": ("{feedback.error}", f"{M}#callout-error", "The required star and error text; the notification's icon is a step darker (red.800)"),
+        "danger-border": ("{feedback.error}", f"{M}#callout-error", "Derived: the field itself is not outlined in red on an error"),
+    },
+}
+
+
+def roles():
+    return {g: {k: tok(v, "color", f"measured {src} (alias)", d) for k, (v, src, d) in vals.items()} for g, vals in ROLES.items()}
+
 def semantic(scheme):
     out = {}
     for k in ROOT:
@@ -193,13 +258,22 @@ def semantic(scheme):
                 cm = re.match(r"rgb\((\d+) (\d+) (\d+) / (\d+)%\)", col)
                 color = "rgba(%s, %s, %s, %s)" % (cm.group(1), cm.group(2), cm.group(3), int(cm.group(4)) / 100) if cm else col
                 layers.append({"x": f"{x}px", "y": f"{y}px", "blur": f"{blur}px", "spread": f"{spread}px", "color": color, "type": "dropShadow"})
-        shadows[lvl] = tok(layers, "boxShadow", f"css-var {C}elevation-{lvl} ({scheme} side)")
+        shadows[lvl] = tok(layers, "boxShadow", f"css-var {C}elevation-{lvl} ({scheme} side)", ELEVATION_USE[lvl])
     out["elevation"] = shadows
+    out["role"] = roles()
     comp = COMP.get(scheme, {})
     if comp:
         out["component"] = {c: {k: tok(v["value"], v["type"], v["source"], v.get("description")) for k, v in vals.items()}
                             for c, vals in comp.items()}
     return out
+
+
+# The shipped dark theme must be the dark side of every pair: fail the build if it is not.
+SHIPPED = RAW / "css-vars-dark-shipped.json"
+if SHIPPED.exists():
+    shipped = json.loads(SHIPPED.read_text())["vars"]
+    bad = [k for k, v in shipped.items() if "elevation" not in k and k in PROBE["dark"] and rgb_to_css(v) != rgb_to_css(PROBE["dark"][k])]
+    assert not bad, f"shipped dark differs from the forced dark probe: {bad[:5]}"
 
 
 # ---------- DTCG types ----------
@@ -232,7 +306,7 @@ tokens = {
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
         {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "Defined by every light-dark() pair in CDS but not offered to learners on the pages captured"},
+         "$description": "Offered to signed-in learners since the first capture: Account settings > Appearance > Dark mode sets data-color-theme=dark on <html>, and every colour then equals the dark side of its light-dark() pair (raw/css-vars-dark-shipped.json)"},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
