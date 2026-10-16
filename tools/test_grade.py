@@ -102,6 +102,11 @@ class DoAndDontTest(unittest.TestCase):
                   "2. **Do b.**\n   [s](b.png)\n3. Do c. [s](c.png)\n\nA closing paragraph [x](d.png).\n")
         self.assertEqual(self.run_grade(readme), ("meets", "Script: 3 rules, each linking a screenshot or crop"))
 
+    def test_introduction_and_heading_suffix_are_skipped(self):
+        rules = "\n".join(f"- Do {i}. [s](s{i}.png)" for i in range(3))
+        readme = f"## Do and don't (observed)\n\nFollow these rules:\n\n{rules}\n"
+        self.assertEqual(self.run_grade(readme)[0], "meets")
+
     def test_no_section_is_missing(self):
         self.assertEqual(self.run_grade("# X\n\nSome text.\n")[0], "missing")
 

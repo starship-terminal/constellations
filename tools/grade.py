@@ -126,8 +126,9 @@ ITEM = re.compile(r"^(\s*)(?:[-*+]|\d+\.)\s+(.*)$")
 
 def list_items(section: str) -> list[str]:
     """Top-level list items with their wrapped continuation lines joined, so a link that
-    falls on a rule's second line still counts. After a blank line only an indented
-    line continues the item; a heading or an unindented paragraph ends it."""
+    falls on a rule's second line still counts. Text before the first item is an
+    introduction and skipped. After a blank line only an indented line continues the
+    item; a heading or an unindented paragraph ends the list."""
     items: list[str] = []
     base = None
     blank = False
@@ -137,6 +138,8 @@ def list_items(section: str) -> list[str]:
             base = len(m.group(1)) if base is None else base
             items.append(m.group(2))
             blank = False
+        elif not items:
+            continue  # an introduction before the first rule
         elif not line.strip():
             blank = True
         elif items and (line.startswith((" ", "\t")) or not blank) and not line.lstrip().startswith("#"):
@@ -153,7 +156,7 @@ def grade_do_and_dont(system: dict) -> tuple[str, str]:
     if not m:
         return "missing", "Script: no \"Do and don't\" section in the README"
     level = len(m.group(1))
-    rest = readme[m.end():]
+    rest = readme[m.end():].split("\n", 1)[1] if "\n" in readme[m.end():] else ""
     end = re.search(rf"^#{{1,{level}}}\s", rest, re.M)
     section = rest[:end.start()] if end else rest
     rules = list_items(section)
