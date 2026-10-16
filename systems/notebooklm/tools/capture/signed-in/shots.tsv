@@ -1,0 +1,33 @@
+# label	render flags
+# One row per page copy, named <page>-<theme>-<state>. Copies are taken in dark; render-all.sh
+# renders each -dark- copy in light as well.
+home-dark
+home-dark-card-menu
+home-dark-collections-empty
+home-dark-delete-confirm
+home-dark-icon-focus
+home-dark-list
+home-dark-notifications-dialog
+home-dark-search-typed
+home-dark-settings-menu
+home-dark-theme-submenu
+mobile-home-dark
+mobile-notebook-dark-chat
+mobile-notebook-dark-studio
+notebook-dark
+notebook-dark-add-sources
+notebook-dark-announcement
+notebook-dark-composer-typed
+notebook-dark-config-menu
+notebook-dark-configure-chat
+notebook-dark-configure-chat-custom
+notebook-dark-share-dialog
+notebook-dark-share-select-open
+notebook-dark-source-menu
+notebook-dark-toast
+notebook-dark-tooltip
+notebook-dark-website-dialog
+notebook-dark-website-dialog-error
+notebook-dark-website-dialog-typed
+search-dark-empty
+search-dark-loading

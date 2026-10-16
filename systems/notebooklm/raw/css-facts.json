@@ -1,0 +1,1050 @@
+{
+ "_meta": {
+  "read": "2026-10-17",
+  "copies": [
+   "home-dark",
+   "notebook-dark"
+  ],
+  "method": "Headless Chromium on the redacted page copies; dark as captured, light with body.dark-theme swapped for light-theme. Colours resolved through a probe element on <body>."
+ },
+ "media": {
+  "@media (min-width: 600px)": 1,
+  "@media (min-width: 1024px)": 2,
+  "@media (-ms-high-contrast:active), (forced-colors: active)": 14,
+  "@media print": 1,
+  "@media (forced-colors: active)": 19,
+  "@media (-ms-high-contrast:active), screen and (forced-colors: active)": 6,
+  "@media (forced-colors: none)": 3,
+  "@media (forced-colors: active) and (prefers-color-scheme: dark)": 7,
+  "@media (forced-colors: active) and (prefers-color-scheme: light)": 4,
+  "@media (prefers-color-scheme: dark)": 1,
+  "@media screen and (max-width: 520px)": 2,
+  "@media (-webkit-min-device-pixel-ratio: 1.25), (min-device-pixel-ratio:1.25), (min-resolution: 1.25dppx)": 2,
+  "@media (max-width: 640px)": 1,
+  "@media screen and (max-width: 319px)": 2,
+  "@media (max-width: 350px)": 1,
+  "@media screen and (max-width: 480px)": 3,
+  "@media (min-width: 600px) and (max-width: 959.98px)": 1,
+  "@media (max-width: 440px)": 1,
+  "@media (max-width: 1280px)": 1,
+  "@media (max-width: 665px)": 3,
+  "@media (max-width: 890px)": 1,
+  "@media (max-width: 1300px)": 1,
+  "@media (max-width: 359.98px)": 3,
+  "@media (max-width: 599.98px)": 15,
+  "@media (prefers-reduced-motion)": 2,
+  "@media (prefers-reduced-motion: reduce)": 3,
+  "@media (hover: none)": 1,
+  "@media (hover: hover)": 1
+ },
+ "reduced": [
+  {
+   "media": "@media (prefers-reduced-motion)",
+   "selector": "body",
+   "css": ""
+  },
+  {
+   "media": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".notebook-search-input-lumi[_ngcontent-ng-c3253750263]",
+   "css": "animation: auto ease 0s 1 normal none running none;"
+  },
+  {
+   "media": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".nb-segmented-button-row-slider[_ngcontent-ng-c1192056572]",
+   "css": "transition: none;"
+  },
+  {
+   "media": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".loading-more-card[_ngcontent-ng-c2263165610], .animate-cards[_nghost-ng-c2263165610] .project-button[_ngcontent-ng-c2263165610], .animate-cards[_nghost-ng-c226",
+   "css": "animation: auto ease 0s 1 normal none running none;"
+  },
+  {
+   "media": "@media (prefers-reduced-motion)",
+   "selector": ".cdk-overlay-backdrop",
+   "css": "transition-duration: 1ms;"
+  }
+ ],
+ "motion": {
+  "durations": {
+   "0.2s": 10,
+   "6s": 4,
+   "0.5s": 7,
+   "0.25s": 5,
+   "1.56824s": 2,
+   "5332ms": 18,
+   "1333ms": 5,
+   "50ms": 2,
+   "1.4s": 4,
+   "0.15s": 1,
+   "365ms": 4,
+   "0.3s": 8,
+   "1568ms": 2,
+   "auto": 6,
+   "0.4s": 2,
+   "1s": 1,
+   "120ms": 1,
+   "100ms": 1,
+   "0ms": 1,
+   "280ms": 4,
+   "200ms": 1,
+   "400ms": 1,
+   "1ms": 3
+  },
+  "easings": {
+   "ease": 35,
+   "linear": 9,
+   "cubic-bezier(0, 0, 0.2, 1)": 6,
+   "cubic-bezier(0.4, 0, 0.6, 1)": 3,
+   "cubic-bezier(0.4, 0, 0.2, 1)": 34,
+   "ease-in-out": 6,
+   "cubic-bezier(0.5, 0, 0.5, 1)": 1,
+   "ease-out": 2,
+   "cubic-bezier(0.05, 0.7, 0.1, 1)": 1,
+   "cubic-bezier(0.3, 0, 0.8, 0.15)": 1,
+   "ease-in": 1,
+   "cubic-bezier(0.2, 0, 0, 1)": 1,
+   "cubic-bezier(0.25, 0.8, 0.25, 1)": 1
+  }
+ },
+ "zIndex": [
+  {
+   "z": "-2",
+   "selector": ".project-button-card.cover-image-card.featured-project-card.project-button-card[_ngcontent-ng-c1469625152] .luminous-card-cover-image[_ngcon"
+  },
+  {
+   "z": "-1",
+   "selector": ".GmCircularProgress .mdc-circular-progress__accessible-label"
+  },
+  {
+   "z": "-1",
+   "selector": ".gb_Md"
+  },
+  {
+   "z": "-1",
+   "selector": ".project-button-card.cover-image-card.featured-project-card.project-button-card[_ngcontent-ng-c1469625152] .luminous-card-cover-overlay[_ngc"
+  },
+  {
+   "z": "0",
+   "selector": ".gb_0"
+  },
+  {
+   "z": "0",
+   "selector": ".nb-segmented-button-row-slider[_ngcontent-ng-c1192056572]"
+  },
+  {
+   "z": "0",
+   "selector": ".mat-mdc-icon-button"
+  },
+  {
+   "z": "1",
+   "selector": ".glue-cookie-notification-bar__more:focus"
+  },
+  {
+   "z": "1",
+   "selector": ".peoplekitComponentsChipDeleteButton"
+  },
+  {
+   "z": "1",
+   "selector": ".gb_wb"
+  },
+  {
+   "z": "1",
+   "selector": ".emoji-keyboard__background"
+  },
+  {
+   "z": "1",
+   "selector": ".emoji-keyboard-variant--open .emoji-keyboard__grid::before"
+  },
+  {
+   "z": "1",
+   "selector": ".try-button[_ngcontent-ng-c3253750263]"
+  },
+  {
+   "z": "1",
+   "selector": ".create-new-button-footer[_ngcontent-ng-c3253750263]"
+  },
+  {
+   "z": "1",
+   "selector": ".nb-segmented-button[_nghost-ng-c4071747860]"
+  },
+  {
+   "z": "1",
+   "selector": ".extendable-button[_ngcontent-ng-c28437919]"
+  },
+  {
+   "z": "1",
+   "selector": ".mat-mdc-button .mdc-button__label, .mat-mdc-button .mat-icon, .mat-mdc-unelevated-button .mdc-button__label, .mat-mdc-unelevated-button .ma"
+  },
+  {
+   "z": "1",
+   "selector": ".mat-mdc-icon-button .mdc-button__label, .mat-mdc-icon-button .mat-icon"
+  },
+  {
+   "z": "1",
+   "selector": ".primary-action-button[_ngcontent-ng-c1469625152]"
+  },
+  {
+   "z": "1",
+   "selector": ".source-badge[_ngcontent-ng-c1469625152]:nth-child(5)"
+  },
+  {
+   "z": "2",
+   "selector": ".emoji-keyboard .emoji-keyboard .emoji-keyboard__container, .emoji-keyboard .emoji-keyboard__container--with-shadow"
+  },
+  {
+   "z": "2",
+   "selector": ".emoji-keyboard__toolbar"
+  },
+  {
+   "z": "2",
+   "selector": ".emoji-keyboard-variant"
+  },
+  {
+   "z": "2",
+   "selector": ".source-badge[_ngcontent-ng-c1469625152]:nth-child(4)"
+  },
+  {
+   "z": "2",
+   "selector": ".expert-intelligence-badge[_ngcontent-ng-c1469625152]"
+  },
+  {
+   "z": "3",
+   "selector": ".source-badge[_ngcontent-ng-c1469625152]:nth-child(3)"
+  },
+  {
+   "z": "4",
+   "selector": ".source-badge[_ngcontent-ng-c1469625152]:nth-child(2)"
+  },
+  {
+   "z": "5",
+   "selector": ".source-badge[_ngcontent-ng-c1469625152]:first-child"
+  },
+  {
+   "z": "9",
+   "selector": ".peoplekitComponentsTooltipImplTooltip"
+  },
+  {
+   "z": "9",
+   "selector": ".peoplekitComponentsTooltipImplRichTooltip"
+  },
+  {
+   "z": "10",
+   "selector": ".project-button-card[_ngcontent-ng-c1469625152] project-action-button[_ngcontent-ng-c1469625152]"
+  },
+  {
+   "z": "10",
+   "selector": ".project-button-box-right[_ngcontent-ng-c1469625152]"
+  },
+  {
+   "z": "100",
+   "selector": ".picker-close-button"
+  },
+  {
+   "z": "100",
+   "selector": ".debug-container[_ngcontent-ng-c1469625152]"
+  },
+  {
+   "z": "100",
+   "selector": ".debug-info[_ngcontent-ng-c1469625152]"
+  },
+  {
+   "z": "986",
+   "selector": ".gb_Lb"
+  },
+  {
+   "z": "991",
+   "selector": ".gb_va"
+  },
+  {
+   "z": "999",
+   "selector": ".boqOnegoogleliteOgbOneGoogleBar"
+  },
+  {
+   "z": "1000",
+   "selector": ".glue-cookie-notification-bar"
+  },
+  {
+   "z": "1000",
+   "selector": ".dev-fab[_ngcontent-ng-c1964455643]"
+  },
+  {
+   "z": "1000",
+   "selector": ".cdk-overlay-container"
+  },
+  {
+   "z": "1000",
+   "selector": ".cdk-global-overlay-wrapper"
+  },
+  {
+   "z": "1000",
+   "selector": ".cdk-overlay-pane"
+  },
+  {
+   "z": "1000",
+   "selector": ".cdk-overlay-backdrop"
+  },
+  {
+   "z": "1000",
+   "selector": ".cdk-overlay-connected-position-bounding-box"
+  },
+  {
+   "z": "1003",
+   "selector": ".google-picker.modal-dialog-bg"
+  },
+  {
+   "z": "1004",
+   "selector": ".google-picker.modal-dialog"
+  },
+  {
+   "z": "9999",
+   "selector": ".peopleSharekitNotificationCircularProgress"
+  },
+  {
+   "z": "9999",
+   "selector": ".peopleSharekitNotificationLinearProgress"
+  },
+  {
+   "z": "999999",
+   "selector": ".peoplekitComponentsDialogImplScrim"
+  },
+  {
+   "z": "999999",
+   "selector": ".peoplekitComponentsAutocompletePopupContainer"
+  },
+  {
+   "z": "999999",
+   "selector": ".peopleSharekitUiDialogScrim"
+  },
+  {
+   "z": "9999999",
+   "selector": ".peopleSharekitUiCommonSnackbarSnackbar"
+  },
+  {
+   "z": "2147483647",
+   "selector": ".emoji-keyboard, .emoji-keyboard__background"
+  }
+ ],
+ "shadows": {
+  "rgb(127, 255, 212) 0px 0px 0px 5px": [
+   ".boqHighlightVe [jslog]"
+  ],
+  "rgba(60, 64, 67, 0.3) 0px 2px 3px 0px, rgba(60, 64, 67, 0.15) 0px 6px 10px 4px": [
+   ".glue-cookie-notification-bar"
+  ],
+  "rgb(26, 115, 232) 0px 0px 0px 2px": [
+   ".glue-cookie-notification-bar__more:focus"
+  ],
+  "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px": [
+   ".glue-cookie-notification-bar__accept:hover, .glue-cookie-notification-bar__reject:hover",
+   ":where(:root):root .xap-inline-dialog-container",
+   ".dark-theme .xap-inline-dialog-container",
+   ".gb_wb"
+  ],
+  "rgb(24, 90, 188) 0px 0px 0px 2px": [
+   ".glue-cookie-notification-bar__accept:focus, .glue-cookie-notification-bar__reject:focus"
+  ],
+  "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px": [
+   ".glue-cookie-notification-bar__accept:active, .glue-cookie-notification-bar__reject:active",
+   ".peoplekitComponentsChipChip.isDragged.isActive, .peoplekitComponentsChipChip.isDragged.isError, .peoplekitComponentsChi",
+   ".peoplekitComponentsChipChip.isDragged",
+   ".peoplekitThemeDark .peoplekitComponentsChipChip.isDragged.isActive, .peoplekitThemeDark .peoplekitComponentsChipChip.is",
+   ".peoplekitThemeDark .peoplekitThemeDark .peoplekitComponentsChipChip.isDragged.isActive, .peoplekitThemeDark .peoplekitT",
+   ".peoplekitThemeDark .peoplekitComponentsChipChip.isDragged"
+  ],
+  "0 0 0 1px var(--pkw-outline,rgb(218,220,224)) inset": [
+   ".peoplekitComponentsChipChip"
+  ],
+  "0 0 0 2px var(--pkw-primary,rgb(102,157,246)) inset": [
+   ".peoplekitComponentsChipChip.isSpotlit"
+  ],
+  "0 0 0 1px var(--pkw-caution,rgb(251,188,4)) inset": [
+   ".peoplekitComponentsChipChip.isWarning"
+  ],
+  "0 0 0 2px var(--pkw-on-caution-container,rgb(32,33,36)) inset": [
+   ".peoplekitComponentsChipChip.isWarning.isSpotlit"
+  ],
+  "0 0 0 1px var(--pkw-error,rgb(234,67,53)) inset": [
+   ".peoplekitComponentsChipChip.isError"
+  ],
+  "0 0 0 2px var(--pkw-on-error-container,rgb(165,14,14)) inset": [
+   ".peoplekitComponentsChipChip.isError.isSpotlit"
+  ],
+  "rgba(0, 0, 0, 0.3) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 4px 8px 3px": [
+   ".peoplekitComponentsChipChip.isDragged.peopleKitStyleGm3",
+   ".peoplekitThemeDark .peoplekitComponentsChipChip.isDragged.peopleKitStyleGm3",
+   ".peoplekitComponentsDialogImplDialog.peopleKitStyleGm3",
+   ".peopleSharekitUiCommonSnackbarSnackbarSurface"
+  ],
+  "0 0 0 1px var(--pkw-outline,rgb(95,99,104)) inset": [
+   ".peoplekitThemeDark .peoplekitComponentsChipChip"
+  ],
+  "0 0 0 2px var(--pkw-primary,rgb(174,203,250)) inset": [
+   ".peoplekitThemeDark .peoplekitComponentsChipChip.isSpotlit"
+  ],
+  "0 0 0 1px var(--pkw-caution,rgb(253,214,99)) inset": [
+   ".peoplekitThemeDark .peoplekitComponentsChipChip.isWarning"
+  ],
+  "0 0 0 2px var(--pkw-on-caution-container,rgb(232,234,237)) inset": [
+   ".peoplekitThemeDark .peoplekitComponentsChipChip.isWarning.isSpotlit"
+  ],
+  "0 0 0 1px var(--pkw-error,rgb(242,139,130)) inset": [
+   ".peoplekitThemeDark .peoplekitComponentsChipChip.isError"
+  ],
+  "0 0 0 2px var(--pkw-on-error-container,rgb(250,210,207)) inset": [
+   ".peoplekitThemeDark .peoplekitComponentsChipChip.isError.isSpotlit"
+  ],
+  "rgba(0, 0, 0, 0.15) 0px 2px 6px 2px, rgba(0, 0, 0, 0.3) 0px 1px 2px 0px": [
+   ".peoplekitComponentsTooltipImplRichTooltip",
+   ".peopleKitStyleGm3 .peoplekitComponentsAutocompletePopupContainer"
+  ],
+  "rgba(60, 64, 67, 0.3) 0px 1px 3px 0px, rgba(60, 64, 67, 0.15) 0px 4px 8px 3px": [
+   ".peoplekitComponentsDialogImplDialog",
+   ".peoplekitComponentsAutocompletePopupContainer",
+   ".peopleSharekitUiDialogContainer"
+  ],
+  "var(--ski-container-header-components-box-shadow)": [
+   ".peopleSharekitContainerHeaderComponentsScroll"
+  ],
+  "rgba(0, 0, 0, 0.15) 0px 0.25rem 0.5rem 0.1875rem, rgba(0, 0, 0, 0.3) 0px 0.0625rem 0.1875rem 0px": [
+   ".peopleSharekitUiDialogContainer"
+  ],
+  "rgba(0, 0, 0, 0.2) 0px 4px 16px": [
+   ".goog-modalpopup, .modal-dialog"
+  ],
+  "rgba(0, 0, 0, 0.1) 0px 1px 1px": [
+   ".modal-dialog-buttons button:active, .modal-dialog-buttons button:hover"
+  ],
+  "rgba(0, 0, 0, 0.1) 0px 1px 2px inset": [
+   ".modal-dialog-buttons button:active"
+  ],
+  "rgba(0, 0, 0, 0.3) 0px 1px 2px inset": [
+   ".modal-dialog-buttons .goog-buttonset-action:active"
+  ],
+  "rgb(255, 255, 255) 0px 0px 0px 1px inset": [
+   ".modal-dialog-buttons .goog-buttonset-action:focus"
+  ],
+  "rgba(60, 64, 67, 0.15) 0px 4px 8px 3px, rgba(60, 64, 67, 0.3) 0px 1px 3px": [
+   ".google-picker.modal-dialog"
+  ],
+  "0 0 1.25rem 0 var(--nb-sys-elevation--level1-color,rgba(0,0,0,.08))": [
+   "body.luminous-ui .mat-mdc-menu-panel"
+  ],
+  "rgba(0, 0, 0, 0.15) 0px 1px 0px": [
+   ".gb_0:focus, .gb_0:hover"
+  ],
+  "rgba(0, 0, 0, 0.15) 0px 2px 0px inset": [
+   ".gb_0:active"
+  ],
+  "rgba(0, 0, 0, 0.15) 0px 1px 0px, rgba(0, 0, 0, 0.2) 0px 1px 2px": [
+   ".gb_ba .gb_0:focus, .gb_ba .gb_0:hover, .gb_ua .gb_0:focus, .gb_ua .gb_0:hover"
+  ],
+  "rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px, rgba(0, 0, 0, 0.2) 0px 2px 4px -1px": [
+   ".gb_6d"
+  ],
+  "rgba(0, 0, 0, 0.2) 0px 2px 10px": [
+   ".gb_va"
+  ],
+  "rgba(0, 0, 0, 0.224) 0px 1px 2px 0px, rgba(0, 0, 0, 0.114) 0px 2px 6px 2px": [
+   ".emoji-keyboard__container",
+   ".emoji-keyboard--dark_theme .emoji-keyboard__container"
+  ],
+  "var(--nb-sys-elevation--level1-shadow-offset-x) var(--nb-sys-elevation--level1-shadow-offset-y) var(--nb-sys-elevation--level1-shadow-blur) var(--nb-sys-elevation--level1-shadow-spread) var(--nb-sys-elevation--level1-color)": [
+   ".play-books-banner[_ngcontent-ng-c3253750263]",
+   ".nb-segmented-button-row-slider[_ngcontent-ng-c1192056572]"
+  ],
+  "var(--mat-menu-container-elevation-shadow, 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12))": [
+   ".mat-mdc-menu-panel"
+  ],
+  "var(--mat-button-protected-container-elevation-shadow, var(--mat-sys-level1))": [
+   ".mat-mdc-raised-button"
+  ],
+  "var(--mat-button-protected-hover-container-elevation-shadow, var(--mat-sys-level2))": [
+   ".mat-mdc-raised-button:hover"
+  ],
+  "var(--mat-button-protected-focus-container-elevation-shadow, var(--mat-sys-level1))": [
+   ".mat-mdc-raised-button:focus"
+  ],
+  "var(--mat-button-protected-pressed-container-elevation-shadow, var(--mat-sys-level1))": [
+   ".mat-mdc-raised-button:active, .mat-mdc-raised-button:focus:active"
+  ],
+  "var(--mat-button-protected-disabled-container-elevation-shadow, var(--mat-sys-level0))": [
+   ".mat-mdc-raised-button[disabled].mat-mdc-button-disabled, .mat-mdc-raised-button.mat-mdc-button-disabled.mat-mdc-button-"
+  ],
+  "rgba(0, 0, 0, 0.2) 0px 1px 3px": [
+   ".debug-trigger[_ngcontent-ng-c1469625152]"
+  ],
+  "var(--mat-card-elevated-container-elevation, var(--mat-sys-level1))": [
+   ".mat-mdc-card"
+  ],
+  "var(--mat-card-outlined-container-elevation, var(--mat-sys-level0))": [
+   ".mat-mdc-card-outlined"
+  ],
+  "var(--mat-card-filled-container-elevation, var(--mat-sys-level0))": [
+   ".mat-mdc-card-filled"
+  ]
+ },
+ "grids": {
+  "390": {
+   "node": "div.project-grid-container",
+   "display": "contents",
+   "gridTemplateColumns": "none",
+   "gap": "normal",
+   "columnsInFirstRow": 1,
+   "cardWidth": 342,
+   "padding": "0px"
+  },
+  "800": {
+   "node": "div.project-grid-container",
+   "display": "contents",
+   "gridTemplateColumns": "none",
+   "gap": "normal",
+   "columnsInFirstRow": 2,
+   "cardWidth": 372,
+   "padding": "0px"
+  },
+  "1024": {
+   "node": "div.project-grid-container",
+   "display": "contents",
+   "gridTemplateColumns": "none",
+   "gap": "normal",
+   "columnsInFirstRow": 3,
+   "cardWidth": 320,
+   "padding": "0px"
+  },
+  "1440": {
+   "node": "div.project-grid-container",
+   "display": "contents",
+   "gridTemplateColumns": "none",
+   "gap": "normal",
+   "columnsInFirstRow": 5,
+   "cardWidth": 272,
+   "padding": "0px"
+  },
+  "rules": [
+   {
+    "selector": ".emoji-keyboard__grid__icons",
+    "media": "",
+    "value": "repeat(auto-fill, minmax(38px, 1fr))"
+   },
+   {
+    "selector": ".project-buttons-flow[_ngcontent-ng-c3253750263]",
+    "media": "",
+    "value": "repeat(auto-fill,minmax(var(--project-card-min-width),1fr))"
+   },
+   {
+    "selector": ".collections-grid[_ngcontent-ng-c3253750263]",
+    "media": "",
+    "value": "repeat(auto-fill,minmax(var(--project-card-min-width),1fr))"
+   },
+   {
+    "selector": ".skeleton-grid[_ngcontent-ng-c3253750263]",
+    "media": "",
+    "value": "repeat(auto-fill,minmax(var(--project-card-min-width,16.25rem),1fr))"
+   }
+  ]
+ },
+ "widths": [
+  {
+   "maxWidth": "380px",
+   "selector": ".glue-cookie-notification-bar__accept, .glue-cookie-notification-bar__reject"
+  },
+  {
+   "maxWidth": "unset",
+   "selector": ".glue-cookie-notification-bar__accept, .glue-cookie-notification-bar__reject"
+  },
+  {
+   "maxWidth": "400px",
+   "selector": ".peoplekitComponentsChipLabel"
+  },
+  {
+   "maxWidth": "200px",
+   "selector": ".peoplekitComponentsTooltipImplTooltip"
+  },
+  {
+   "maxWidth": "280px",
+   "selector": ".peoplekitComponentsTooltipImplRichTooltip"
+  },
+  {
+   "maxWidth": "300px",
+   "selector": ".peoplekitComponentsDialogImplDialog"
+  },
+  {
+   "maxWidth": "0px",
+   "selector": ".peoplekitComponentsTagUnrollingAltText"
+  },
+  {
+   "maxWidth": "1000px",
+   "selector": ".peoplekitComponentsTagTag:hover .peoplekitComponentsTagUnrollingAltText"
+  },
+  {
+   "maxWidth": "70%",
+   "selector": ".peopleSharekitUiCopyLinkBarShareLink"
+  },
+  {
+   "maxWidth": "0px",
+   "selector": ".katex .katex-thinbox"
+  },
+  {
+   "maxWidth": "200px",
+   "selector": ".gb_he"
+  },
+  {
+   "maxWidth": "74px",
+   "selector": ".gb_hb .gb_jb"
+  },
+  {
+   "maxWidth": "100vw",
+   "selector": ".emoji-keyboard__container"
+  },
+  {
+   "maxWidth": "inherit",
+   "selector": ".project-table-publisher-logo[_ngcontent-ng-c3253750263]"
+  },
+  {
+   "maxWidth": "20rem",
+   "selector": ".pinned-projects-carousel[_ngcontent-ng-c3253750263] .project-button[_ngcontent-ng-c3253750263]"
+  },
+  {
+   "maxWidth": "40.625rem",
+   "selector": ".notebook-search-input-persistent[_ngcontent-ng-c3253750263]"
+  },
+  {
+   "maxWidth": "var(--mini-search-pill-inline-size)",
+   "selector": ""
+  },
+  {
+   "maxWidth": "40.625rem",
+   "selector": ""
+  },
+  {
+   "maxWidth": "var(--mini-search-pill-inline-size)",
+   "selector": ""
+  },
+  {
+   "maxWidth": "40.625rem",
+   "selector": ""
+  },
+  {
+   "maxWidth": "40.625rem",
+   "selector": ".notebook-search-input-lumi[_ngcontent-ng-c3253750263]"
+  },
+  {
+   "maxWidth": "280px",
+   "selector": ".mat-mdc-menu-panel"
+  },
+  {
+   "maxWidth": "10rem",
+   "selector": ".project-button-publisher-name[_ngcontent-ng-c1469625152]"
+  },
+  {
+   "maxWidth": "2.25rem",
+   "selector": ".expert-intelligence-badge[_ngcontent-ng-c1469625152]"
+  },
+  {
+   "maxWidth": "12rem",
+   "selector": ".project-button-card[_ngcontent-ng-c1469625152]:hover .expert-intelligence-badge[_ngcontent-ng-c1469625152]"
+  },
+  {
+   "maxWidth": "17.5rem",
+   "selector": ".project-actions-menu.mat-mdc-menu-panel"
+  }
+ ],
+ "fonts": {
+  "faces": {
+   "KaTeX_AMS": {
+    "weights": [
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_Caligraphic": {
+    "weights": [
+     "700",
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_Fraktur": {
+    "weights": [
+     "700",
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_Main": {
+    "weights": [
+     "700",
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_Math": {
+    "weights": [
+     "700",
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_SansSerif": {
+    "weights": [
+     "700",
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_Script": {
+    "weights": [
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_Size1": {
+    "weights": [
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_Size2": {
+    "weights": [
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_Size3": {
+    "weights": [
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_Size4": {
+    "weights": [
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "KaTeX_Typewriter": {
+    "weights": [
+     "400"
+    ],
+    "hosts": [
+     "www.gstatic.com"
+    ]
+   },
+   "Roboto": {
+    "weights": [
+     "400",
+     "500"
+    ],
+    "hosts": [
+     "fonts.gstatic.com"
+    ]
+   },
+   "Google Material Icons": {
+    "weights": [
+     "400"
+    ],
+    "hosts": [
+     "fonts.gstatic.com"
+    ]
+   },
+   "Google Sans": {
+    "weights": [
+     "400",
+     "500",
+     "700"
+    ],
+    "hosts": [
+     "fonts.gstatic.com"
+    ]
+   },
+   "Google Sans Display": {
+    "weights": [
+     "400"
+    ],
+    "hosts": [
+     "fonts.gstatic.com"
+    ]
+   },
+   "Google Sans Flex": {
+    "weights": [
+     "100 1000"
+    ],
+    "hosts": [
+     "fonts.gstatic.com"
+    ]
+   },
+   "Google Symbols": {
+    "weights": [
+     "100 700"
+    ],
+    "hosts": [
+     "fonts.gstatic.com"
+    ]
+   }
+  },
+  "stacks": {
+   "--nlm-font-family-sans": "\"Google Sans Flex\",\"Google Sans\",\"Roboto\",sans-serif",
+   "--mat-sys-body-medium-font": "Google Sans Flex,Google Sans Text,Google Sans,sans-serif",
+   "--mat-sys-title-large-font": "Google Sans Flex,Google Sans,sans-serif",
+   "--mat-sys-headline-small-font": "Google Sans Flex,Google Sans,sans-serif",
+   "--mat-sys-label-large-font": "Google Sans Flex,Google Sans Text,Google Sans,sans-serif",
+   "body computed": "Times",
+   "h2.projects-header": "\"Google Sans Flex\", \"Google Sans\", sans-serif",
+   "code": "monospace"
+  }
+ },
+ "usage": {
+  "home-dark/dark": {
+   "bg": {
+    "rgb(23, 23, 23)": 9,
+    "rgb(15, 15, 15)": 3,
+    "rgb(138, 138, 138)": 1,
+    "rgb(31, 31, 31)": 1,
+    "rgba(255, 255, 255, 0.12)": 1,
+    "rgb(31, 59, 155)": 1
+   },
+   "text": {
+    "rgba(255, 255, 255, 0.55)": 25,
+    "rgb(230, 230, 230)": 16,
+    "rgb(199, 199, 199)": 7,
+    "rgb(171, 171, 171)": 7,
+    "rgb(242, 242, 242)": 2,
+    "rgb(255, 255, 255)": 1
+   },
+   "border": {
+    "1px rgba(255, 255, 255, 0.12)": 1
+   },
+   "radius": {
+    "9999px": 53,
+    "40px": 14,
+    "50%": 10,
+    "8px": 1
+   },
+   "fontSize": {
+    "15px": 23,
+    "20px": 20,
+    "36px": 7,
+    "13px": 4,
+    "12px": 1,
+    "23px": 1,
+    "11px": 1,
+    "24px": 1
+   },
+   "fontWeight": {
+    "400": 41,
+    "470": 7,
+    "475": 1,
+    "500": 1,
+    "600": 1,
+    "900": 7
+   }
+  },
+  "home-dark/light": {
+   "bg": {
+    "rgb(242, 240, 240)": 9,
+    "rgb(250, 249, 249)": 3,
+    "rgb(138, 138, 138)": 1,
+    "rgb(255, 255, 255)": 1,
+    "rgba(0, 0, 0, 0.08)": 1,
+    "rgb(157, 210, 255)": 1
+   },
+   "text": {
+    "rgba(0, 0, 0, 0.55)": 25,
+    "rgb(0, 0, 0)": 16,
+    "rgb(48, 48, 48)": 7,
+    "rgb(94, 94, 94)": 7,
+    "rgb(27, 27, 28)": 2,
+    "rgb(255, 255, 255)": 1
+   },
+   "border": {
+    "1px rgba(0, 0, 0, 0.08)": 1
+   },
+   "radius": {
+    "9999px": 53,
+    "40px": 14,
+    "50%": 10,
+    "8px": 1
+   },
+   "fontSize": {
+    "15px": 23,
+    "20px": 20,
+    "36px": 7,
+    "13px": 4,
+    "12px": 1,
+    "23px": 1,
+    "11px": 1,
+    "24px": 1
+   },
+   "fontWeight": {
+    "400": 41,
+    "470": 7,
+    "475": 1,
+    "500": 1,
+    "600": 1,
+    "900": 7
+   }
+  },
+  "notebook-dark/dark": {
+   "bg": {
+    "rgb(23, 23, 23)": 12,
+    "rgb(31, 31, 31)": 6,
+    "rgb(15, 15, 15)": 2,
+    "rgba(255, 255, 255, 0.12)": 2,
+    "rgb(138, 138, 138)": 1,
+    "color(srgb 0.16 0.16 0.16)": 1
+   },
+   "text": {
+    "rgb(230, 230, 230)": 63,
+    "rgb(199, 199, 199)": 27,
+    "rgb(242, 242, 242)": 18,
+    "rgb(219, 55, 45)": 17,
+    "rgba(255, 255, 255, 0.55)": 10,
+    "rgb(171, 171, 171)": 8,
+    "rgb(248, 114, 185)": 4,
+    "rgb(236, 223, 119)": 4,
+    "rgb(118, 160, 255)": 3,
+    "rgb(63, 221, 160)": 2,
+    "rgb(77, 210, 225)": 2,
+    "rgb(255, 255, 255)": 1,
+    "rgba(255, 255, 255, 0.12)": 1,
+    "color(srgb 0.901961 0.901961 0.901961 / 0.38)": 1,
+    "rgb(164, 125, 255)": 1
+   },
+   "border": {
+    "1px rgba(0, 0, 0, 0)": 3
+   },
+   "radius": {
+    "9999px": 152,
+    "50%": 62,
+    "20px": 44,
+    "8px": 35,
+    "32px": 4,
+    "16px": 3,
+    "4px": 2,
+    "24px": 1,
+    "40px": 1,
+    "30px": 1
+   },
+   "fontSize": {
+    "20px": 31,
+    "24px": 26,
+    "14px": 21,
+    "13px": 19,
+    "17px": 18,
+    "12px": 10,
+    "15px": 10,
+    "16px": 8,
+    "22px": 7,
+    "11.008px": 6,
+    "18px": 2,
+    "11px": 1,
+    "192px": 1,
+    "40px": 1,
+    "36px": 1
+   },
+   "fontWeight": {
+    "320": 1,
+    "400": 138,
+    "470": 2,
+    "500": 10,
+    "540": 5,
+    "600": 6
+   }
+  },
+  "notebook-dark/light": {
+   "bg": {
+    "rgb(242, 240, 240)": 11,
+    "rgb(255, 255, 255)": 7,
+    "rgb(250, 249, 249)": 2,
+    "rgba(0, 0, 0, 0.08)": 2,
+    "rgb(138, 138, 138)": 1,
+    "color(srgb 0.862745 0.859294 0.859294)": 1
+   },
+   "text": {
+    "rgb(0, 0, 0)": 63,
+    "rgb(48, 48, 48)": 27,
+    "rgb(27, 27, 28)": 18,
+    "rgb(219, 55, 45)": 17,
+    "rgba(0, 0, 0, 0.55)": 10,
+    "rgb(94, 94, 94)": 8,
+    "rgb(196, 61, 146)": 4,
+    "rgb(255, 129, 4)": 4,
+    "rgb(46, 100, 222)": 3,
+    "rgb(10, 172, 110)": 2,
+    "rgb(22, 127, 155)": 2,
+    "rgb(255, 255, 255)": 1,
+    "rgba(0, 0, 0, 0.08)": 1,
+    "color(srgb 0 0 0 / 0.38)": 1,
+    "rgb(104, 88, 199)": 1
+   },
+   "border": {
+    "1px rgba(0, 0, 0, 0)": 3
+   },
+   "radius": {
+    "9999px": 152,
+    "50%": 62,
+    "20px": 44,
+    "8px": 35,
+    "32px": 4,
+    "16px": 3,
+    "4px": 2,
+    "24px": 1,
+    "40px": 1,
+    "30px": 1
+   },
+   "fontSize": {
+    "20px": 31,
+    "24px": 26,
+    "14px": 21,
+    "13px": 19,
+    "17px": 18,
+    "12px": 10,
+    "15px": 10,
+    "16px": 8,
+    "22px": 7,
+    "11.008px": 6,
+    "18px": 2,
+    "11px": 1,
+    "192px": 1,
+    "40px": 1,
+    "36px": 1
+   },
+   "fontWeight": {
+    "320": 1,
+    "400": 138,
+    "470": 2,
+    "500": 10,
+    "540": 5,
+    "600": 6
+   }
+  }
+ },
+ "zIndexComputed": {
+  ".cdk-overlay-container": "1000",
+  ".boqOnegoogleliteOgbOneGoogleBar": "999",
+  "page-header": "auto",
+  "header": null
+ }
+}
