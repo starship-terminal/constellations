@@ -131,6 +131,6 @@ for key, val in {
     "BLUR_ROWS": dim_rows("blur"), "MOTION_ROWS": motion_rows, "DUR_ROWS": dur_rows,
 }.items():
     tpl = tpl.replace("{{" + key + "}}", val)
-tpl = tpl.replace("</style>", ".only-light{display:none}[data-theme=light] .only-light{display:block}[data-theme=light] .only-dark{display:none}.crops{gap:12px;align-items:flex-end}.crop{margin:0}.crop img{max-width:340px;max-height:200px;display:block;border-radius:6px}.crop figcaption{font:12px/16px var(--ff-text);color:var(--text-secondary);margin-top:4px}.comp h4{margin:18px 0 6px;font:500 15px/20px var(--ff-text);color:var(--text-title)}\n</style>", 1)
+tpl = tpl.replace("</style>", ".crop .only-light{display:none}[data-theme=light] .crop .only-light{display:block}[data-theme=light] .crop .only-dark{display:none}.crops{gap:12px;align-items:flex-end}.crop{margin:0}.crop img{max-width:340px;max-height:200px;display:block;border-radius:6px}.crop figcaption{font:12px/16px var(--ff-text);color:var(--text-secondary);margin-top:4px}.comp h4{margin:18px 0 6px;font:500 15px/20px var(--ff-text);color:var(--text-title)}\n</style>", 1)
 (HERE / "style-guide.html").write_text(tpl)
 print("wrote style-guide.html", len(tpl), "bytes")

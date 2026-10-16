@@ -195,15 +195,12 @@ def role(r, family="display", base=SCALE, desc=None):
     w = int(var(f"{base}{r}-font-weight"))
     tr = px(var(f"{base}{r}-font-tracking"))
     weights.add(w)
-    extra = {}
-    for axis in ("font-width", "opsz", "font-rond"):
-        n = f"{base}{r}-{axis}"
-        if n in VARS:
-            extra[axis.replace("font-", "")] = var(n).replace('"', "")
+    # The captured settings are already CSS ("wdth" 100), so they are joined as they are.
+    axes = [var(f"{base}{r}-{axis}") for axis in ("font-width", "opsz", "font-rond") if f"{base}{r}-{axis}" in VARS]
     return T({"fontFamily": "{fontFamily.%s}" % family, "fontSize": size, "fontWeight": w, "lineHeight": lh,
               "letterSpacing": tr if tr not in ("0", "0rem") else "0px"}, "typography",
              M(f"css-vars {base}{r}-font-size/-line-height/-font-weight/-font-tracking"), desc,
-             fontVariationSettings=", ".join(f"{k} {v}" for k, v in extra.items()) or None)
+             fontVariationSettings=", ".join(axes) or None)
 
 typo = {}
 for name, r in (("display-large", "display-l"), ("display-medium", "display-m"), ("display-small", "display-s"),

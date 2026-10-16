@@ -208,14 +208,14 @@ def border_cell(s, theme):
         if p.get("shadow") and "inset" in p["shadow"]:
             m = re.match(r"(rgba?\([^)]*\)) 0px 0px 0px (\d+px) inset", p["shadow"])
             if m and norm_color(m.group(1)) != "transparent":
-                return f"{len_cell(m.group(2), {'1px': 'borderWidth.hairline'})} {color_cell(m.group(1), theme, "border")} (inset shadow)"
+                return f"{len_cell(m.group(2), {'1px': 'borderWidth.hairline'})} {color_cell(m.group(1), theme, 'border')} (inset shadow)"
     return "none"
 
 def layer_cell(s, theme):
     bg, op = inner_layer(s)
     if not bg:
         return "none"
-    return f"{color_cell(bg, theme, "fill")} at `opacity.{ {'0.08': 'hover', '0.12': 'pressed', '0.16': 'dragged'}.get(op, op) }`"
+    return f"{color_cell(bg, theme, 'fill')} at `opacity.{ {'0.08': 'hover', '0.12': 'pressed', '0.16': 'dragged'}.get(op, op) }`"
 
 def size_cell(s):
     w, h = s["rect"]["w"], s["rect"]["h"]
