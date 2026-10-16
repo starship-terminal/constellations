@@ -1694,7 +1694,7 @@
      {
       "part": "legendary (gold)",
       "property": "banner vars",
-      "value": "jTeoa / _13YX7._1Bwfb: `gamification.xp` bee #FFC800 L / #FFC700 D with `palette.light.gold-shine` gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900",
+      "value": "jTeoa / _13YX7._1Bwfb: `palette.light.bee` bee #FFC800 L / #FFC700 D with `palette.light.gold-shine` gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900",
       "source": "css only: css:path-e50cab6b.css .jTeoa, ._13YX7._1Bwfb"
      }
     ]
@@ -1778,7 +1778,7 @@
     "GUIDEBOOK hover/active not captured (CSS only).",
     "Mobile screenshots do not match the mobile dumps (screenshot shows unit 1 macaw, dump shows unit 12 owl); mobile colours are taken from the dump only."
    ],
-   "notes": "Dark theme rules (html[data-duo-theme=dark] .EDeQe:not(._1Bwfb) etc.) switch --path-unit-background-color to `palette.light.polar-always-dark` polar-always-dark #202F36 inside the path sections, but the banner uses its own colour class (LJB6r) so it stays saturated.",
+   "notes": "Dark theme rules (html[data-duo-theme=dark] .EDeQe:not(._1Bwfb) etc.) switch --path-unit-background-color to `palette.dark.polar-always-dark` polar-always-dark #202F36 inside the path sections, but the banner uses its own colour class (LJB6r) so it stays saturated.",
    "part": "path"
   },
   {
@@ -2040,13 +2040,13 @@
      {
       "part": "shine overlay",
       "property": "colour",
-      "value": "macaw units `palette.light.bea-junior-shine` #43BEF8 (bea-junior-shine); starfish units `palette.light.zari-shine` #FF9ED9 (zari-shine)",
+      "value": "macaw units `palette.dark.bea-junior-shine` #43BEF8 (bea-junior-shine); starfish units `palette.dark.zari-shine` #FF9ED9 (zari-shine)",
       "source": "learn-dark-default _25i8d (#573), _3aYNQ (#1037)"
      },
      {
       "part": "radio icon (completed)",
       "property": "colour",
-      "value": "macaw units `palette.light.bea-radio` #147BAC (bea-radio); starfish `palette.light.zari-radio` #B35E92 (zari-radio); owl `palette.light.duo-radio` #3E8F01 (duo-radio)",
+      "value": "macaw units `palette.dark.bea-radio` #147BAC (bea-radio); starfish `palette.dark.zari-radio` #B35E92 (zari-radio); owl `palette.dark.duo-radio` #3E8F01 (duo-radio)",
       "source": "learn-dark-default _1-7MG (#595), _2GiEE; learn-dark-completed-unit _3y0yK"
      },
      {
@@ -2066,7 +2066,7 @@
      {
       "part": "current / completed face",
       "property": "background",
-      "value": "same unit colours as dark (*-always-light names): `accent.primary.face` owl #58CC02, `text.link` macaw #1CB0F6, `unitColors.pink` starfish #FF86D0, `status.warningText` fox #FF9600",
+      "value": "same unit colours as dark (*-always-light names): `unitColors.green` owl #58CC02, `unitColors.blue` macaw #1CB0F6, `unitColors.pink` starfish #FF86D0, `unitColors.orange` fox #FF9600",
       "source": "learn-light-default ::after of #1258, #581, #1045, #1341"
      },
      {
@@ -2204,7 +2204,7 @@
      {
       "part": "per unit colour",
       "property": "face / shine / radio icon / mobile-header lip",
-      "value": "`text.link` macaw: #1CB0F6 / `palette.light.bea-junior-shine` bea-junior-shine #43BEF8 / `palette.light.bea-radio` bea-radio #147BAC / `palette.light.bea-secondary` bea-secondary #1899D6; `accent.primary.face` owl: #58CC02 / `palette.light.duo-shine` duo-shine #72D627 / `palette.light.duo-radio` duo-radio #3E8F01 / `palette.light.tree-frog-always-light` tree-frog-always-light #58A700; `accent.danger.text` cardinal: #FF4B4B / `palette.light.eddy-shine` eddy-shine #FF6969 / `palette.light.eddy-radio` eddy-radio #B33535 / `palette.light.eddy-secondary` eddy-secondary #EA2B2B; `unitColors.brown` grizzly-lite: #DC8F47 / `palette.light.falstaff-shine` falstaff-shine #E3A56C / `palette.light.falstaff-radio` falstaff-radio #834F33 / `palette.light.falstaff-secondary` falstaff-secondary #965A3A; `dataViz.avatar.purple` beetle: #CE82FF / `palette.light.lily-shine` lily-shine #D696FF / `palette.light.lily-radio` lily-radio #905BB3 / `palette.light.lily-secondary` lily-secondary #A568CC; `status.warningText` fox: #FF9600 / `palette.light.lin-lucy-shine` lin-lucy-shine #FFA82C / `palette.light.lin-lucy-radio` lin-lucy-radio #B36900 / `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900; `unitColors.teal` peacock: #00CD9C / `palette.light.oscar-shine` oscar-shine #3FD9B5 / `palette.light.oscar-radio` oscar-radio #00906D / `palette.light.oscar-secondary` oscar-secondary #00A47D; `unitColors.magenta` dragon: #CC348D / `palette.light.vikram-shine` vikram-shine #D65AA2 / `palette.light.vikram-radio` vikram-radio #8F2463 / `palette.light.vikram-secondary` vikram-secondary #A32A71; `unitColors.pink` starfish: #FF86D0 / `palette.light.zari-shine` zari-shine #FF9ED9 / `palette.light.zari-radio` zari-radio #B35E92 / `palette.light.zari-secondary` zari-secondary #CC6BA6",
+      "value": "`unitColors.blue` macaw: #1CB0F6 / `palette.light.bea-junior-shine` bea-junior-shine #43BEF8 / `palette.light.bea-radio` bea-radio #147BAC / `text.selected` bea-secondary #1899D6; `unitColors.green` owl: #58CC02 / `palette.light.duo-shine` duo-shine #72D627 / `palette.light.duo-radio` duo-radio #3E8F01 / `palette.light.tree-frog-always-light` tree-frog-always-light #58A700; `accent.danger.text` cardinal: #FF4B4B / `palette.light.eddy-shine` eddy-shine #FF6969 / `palette.light.eddy-radio` eddy-radio #B33535 / `palette.light.eddy-secondary` eddy-secondary #EA2B2B; `unitColors.brown` grizzly-lite: #DC8F47 / `palette.light.falstaff-shine` falstaff-shine #E3A56C / `palette.light.falstaff-radio` falstaff-radio #834F33 / `palette.light.falstaff-secondary` falstaff-secondary #965A3A; `dataViz.avatar.purple` beetle: #CE82FF / `palette.light.lily-shine` lily-shine #D696FF / `palette.light.lily-radio` lily-radio #905BB3 / `palette.light.lily-secondary` lily-secondary #A568CC; `status.warningText` fox: #FF9600 / `palette.light.lin-lucy-shine` lin-lucy-shine #FFA82C / `palette.light.lin-lucy-radio` lin-lucy-radio #B36900 / `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900; `unitColors.teal` peacock: #00CD9C / `palette.light.oscar-shine` oscar-shine #3FD9B5 / `palette.light.oscar-radio` oscar-radio #00906D / `palette.light.oscar-secondary` oscar-secondary #00A47D; `unitColors.magenta` dragon: #CC348D / `palette.light.vikram-shine` vikram-shine #D65AA2 / `palette.light.vikram-radio` vikram-radio #8F2463 / `palette.light.vikram-secondary` vikram-secondary #A32A71; `unitColors.pink` starfish: #FF86D0 / `palette.light.zari-shine` zari-shine #FF9ED9 / `palette.light.zari-radio` zari-radio #B35E92 / `palette.light.zari-secondary` zari-secondary #CC6BA6",
       "source": "css:path-e50cab6b.css: unit classes (._2hQt4 ... ._2_zd7), shine classes (.nboUl ... ._3aYNQ), radio classes (._7lILJ ... ._2GiEE), secondary classes (._3TE__ ... ._43NnU). Pairing inferred from matching rule order; captured pairs: macaw/_25i8d/_1-7MG, starfish/_3aYNQ/_2GiEE, owl/_3y0yK"
      }
     ]
@@ -3186,7 +3186,7 @@
      {
       "part": "locked card",
       "property": "bg / text",
-      "value": "`gamification.league.demotedRow` #202F36 (polar) / `palette.light.dark-mode-locked-path-section-text-color` #52656D (dark-mode-locked-path-section-text-color)",
+      "value": "`gamification.league.demotedRow` #202F36 (polar) / `palette.dark.dark-mode-locked-path-section-text-color` #52656D (dark-mode-locked-path-section-text-color)",
       "source": "sections-dark-default _36wSS (#234); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._36wSS"
      },
      {
@@ -3292,7 +3292,7 @@
      {
       "part": "title colour (completed, in progress)",
       "property": "colour",
-      "value": "inherits body text (`text.body` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump",
+      "value": "inherits body text (`palette.dark.black-text` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump",
       "source": "css:app-f2ef02f8.css body",
       "estimated": true
      }
@@ -5643,7 +5643,7 @@
      {
       "part": "neutral bar / title / CONTINUE",
       "property": "colours",
-      "value": "`status.warningBackground` #202F36 (canary, dark) / `feedback.neutral.text` #D79433 (guinea-pig, dark) / face `gamification.xp` #FFC700 (bee), lip `palette.light.camel` #E7A601 (camel)",
+      "value": "`status.warningBackground` #202F36 (canary, dark) / `feedback.neutral.text` #D79433 (guinea-pig, dark) / face `gamification.xp` #FFC700 (bee), lip `palette.dark.camel` #E7A601 (camel)",
       "source": "lesson-dark-cant-listen #144, #153, #174"
      }
     ],
@@ -7868,7 +7868,7 @@
      {
       "part": "ad: footer top border",
       "property": "colour",
-      "value": "`palette.light.snow-always-light` #FFFFFF @0.40 (snow-always-light)",
+      "value": "`palette.dark.snow-always-light` #FFFFFF @0.40 (snow-always-light)",
       "source": "lesson-dark-super-upsell #13"
      },
      {
@@ -8467,7 +8467,7 @@
     },
     {
      "state": "header: extended (lesson done today)",
-     "changes": "popover bg `palette.light.streak-panel-extended-background` streak-panel-extended-background #FF9600 light (#CD7900 dark from css), title/subtitle white",
+     "changes": "popover bg `unitColors.orange` streak-panel-extended-background #FF9600 light (#CD7900 dark from css), title/subtitle white",
      "source": "captured:learn-light-streak-dropdown cl=_28-a0 (#80)"
     },
     {
@@ -9612,7 +9612,7 @@
     },
     {
      "state": "diamond / top league current user",
-     "changes": "background `palette.light.diamond-highlight` diamond-highlight #E7FBFB (dark polar), text `gamification.league.diamond` diamond #38D0D0; another variant uses a background image with `palette.light.betta` betta #9069CD text",
+     "changes": "background `palette.light.diamond-highlight` diamond-highlight #E7FBFB (dark polar), text `gamification.league.diamond` diamond #38D0D0; another variant uses a background image with `palette.dark.betta` betta #9069CD text",
      "source": "css:1008-b4d34396.css .MytTp._7trGg, .MytTp.zGzKm (not captured)"
     },
     {
@@ -9824,7 +9824,7 @@
      {
       "part": "bubble",
       "property": "fill / ring",
-      "value": "`text.onColor` #FFFFFF (snow-always-light), owl status `accent.primary.face` #93D333 (owl) / `gamification.streakInactive` #37464F (swan, dark)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light), owl status `palette.dark.owl` #93D333 (owl) / `gamification.streakInactive` #37464F (swan, dark)",
       "source": "leaderboard-dark-default (#94, #96)"
      },
      {
@@ -10089,7 +10089,7 @@
      {
       "part": "shine",
       "property": "fill",
-      "value": "`palette.light.snow-always-light` #FFFFFF (snow-always-light) @0.2",
+      "value": "`palette.dark.snow-always-light` #FFFFFF (snow-always-light) @0.2",
       "source": "quests-dark-mobile cl=wg2yg _1EFTr (#63)"
      },
      {
@@ -10614,7 +10614,7 @@
      {
       "part": "progress shine",
       "property": "background",
-      "value": "`palette.light.snow-always-light` #FFFFFF (snow-always-light) @0.2 opacity",
+      "value": "`palette.dark.snow-always-light` #FFFFFF (snow-always-light) @0.2 opacity",
       "source": "profile-dark-default #326; css:4779 ._1EFTr"
      },
      {
@@ -10856,7 +10856,7 @@
      {
       "part": "edit button face",
       "property": "background",
-      "value": "#8CE31B (same avatar colour) with border `palette.light.black` #000000 @0.30 (black) and 2px lip shadow black @0.30",
+      "value": "#8CE31B (same avatar colour) with border `palette.dark.black` #000000 @0.30 (black) and 2px lip shadow black @0.30",
       "source": "profile-dark-default #206 ::before; css:5515 ._3Y-wy"
      },
      {
@@ -12677,7 +12677,7 @@
      {
       "part": "B/C banner",
       "property": "background",
-      "value": "radial-gradient(216% 106% at 6% 3%, `palette.light.gamma` #26F663 (gamma) @0.3 0, `palette.light.starlight` #268AFF (starlight) @0.3 52%, `palette.light.quasar` #FC55FF (quasar) @0.3 100%) over `gamification.super.surface` #000437 (eclipse); text `text.onColor` #FFFFFF (snow-always-light)",
+      "value": "radial-gradient(216% 106% at 6% 3%, `palette.dark.gamma` #26F663 (gamma) @0.3 0, `palette.dark.starlight` #268AFF (starlight) @0.3 52%, `palette.dark.quasar` #FC55FF (quasar) @0.3 100%) over `gamification.super.surface` #000437 (eclipse); text `text.onColor` #FFFFFF (snow-always-light)",
       "source": "shop-dark-default #145; css:8566 .MGk8p"
      },
      {
@@ -12892,7 +12892,7 @@
      {
       "part": "card",
       "property": "background",
-      "value": "radial-gradient(216% 106% at 6% 3%, `palette.light.gamma` #26F663 (gamma) @0.3 0, `palette.light.starlight` #268AFF (starlight) @0.3 52%, `palette.light.quasar` #FC55FF (quasar) @0.3 100%) over `gamification.super.surface` #000437 (eclipse)",
+      "value": "radial-gradient(216% 106% at 6% 3%, `palette.dark.gamma` #26F663 (gamma) @0.3 0, `palette.dark.starlight` #268AFF (starlight) @0.3 52%, `palette.dark.quasar` #FC55FF (quasar) @0.3 100%) over `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-dark-default #114; css:1327 ._3Mmv9"
      },
      {

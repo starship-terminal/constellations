@@ -76,7 +76,38 @@ def theme_of(hex_, name, stated):
 NAME_HEX = re.compile(r"(?<![`\w-])([a-z][a-z0-9]*(?:-[a-z0-9]+)*):? (#[0-9A-Fa-f]{6})\b")
 HEX_ALPHA = re.compile(r"(?<!` )(#[0-9A-Fa-f]{6}) @ ?[\d.]+%? \(([a-z0-9-]+)\)")
 
-def tokenize_segment(text, role_of):
+# Semantic paths whose value is the same hex in light and in dark (unitColors.blue is macaw in
+# both; text.link is not). A colour the spec gives with no theme, in a passage about both
+# themes, can only take one of these; otherwise it takes the core palette token.
+STABLE = {}
+for th in ("light", "dark"):
+    for name, paths in ALIAS[th].items():
+        for path, a in paths:
+            STABLE.setdefault(path, {})[th] = (PAL[th][name]["$value"].lower(), a)
+
+def pick_stable(name, hex_, role, alpha):
+    cands = [p for p, v in STABLE.items() if v.get("light") == v.get("dark") == (hex_.lower(), alpha)]
+    role = role.lower()
+    for words, pats in ROLE:
+        if re.search(words, role):
+            for pat in pats:
+                hit = [c for c in cands if re.search(pat, c)]
+                if hit:
+                    return hit[0]
+    for pre in ORDER:
+        hit = [c for c in cands if c.startswith(pre)]
+        if hit:
+            return hit[0]
+    th = theme_of(hex_, name, None)
+    return f"palette.{th}.{name}"
+
+def theme_context(text):
+    """The theme a passage is about, when it says so ('Tokens (dark):', a Light column, '(dark)')."""
+    t = text.lower()
+    has_l, has_d = re.search(r"\blight\b", t), re.search(r"\bdark\b", t)
+    return "light" if has_l and not has_d else "dark" if has_d and not has_l else None
+
+def tokenize_segment(text, role_of, theme_at=lambda i: None):
     hits = []  # (start, name, hex, stated theme)
     def alpha_after(end):
         a = re.match(r"\)?\s*@\s*([\d.]+)(%?)", text[end:end + 16])
@@ -94,10 +125,12 @@ def tokenize_segment(text, role_of):
     for start, name, hex_, stated, alpha in sorted(set(hits), key=lambda h: h[0]):
         if start < last:
             continue
-        th = theme_of(hex_, name, stated)
+        ctx = None if stated else theme_at(start)
+        th = theme_of(hex_, name, stated or (ctx if ctx and PAL[ctx].get(name, {}).get("$value", "").lower() == hex_.lower() else None))
         if th is None or name not in PAL[th]:
             continue
-        out.append(text[last:start] + f"`{pick(name, th, role_of(start), alpha)}` ")
+        token = pick(name, th, role_of(start), alpha) if (stated or ctx) else pick_stable(name, hex_, role_of(start), alpha)
+        out.append(text[last:start] + f"`{token}` ")
         last = start
     out.append(text[last:])
     return "".join(out)
@@ -114,7 +147,8 @@ def tokenize(text, context=""):
         if not line.startswith("|"):
             header = None
             role = inline_role(line)
-            lines[n] = tokenize_segment(line, lambda i, role=role: context + " " + role(i))
+            lines[n] = tokenize_segment(line, lambda i, role=role: context + " " + role(i),
+                                        lambda i, line=line: theme_context(context + " " + line[:i]))
             continue
         cells = line.split("|")
         if header is None:
@@ -126,7 +160,10 @@ def tokenize(text, context=""):
             col = line.count("|", 0, i) 
             head = header[col] if col < len(header) else ""
             return cells[1] + " " + head + " " + inline_role(cells[col] if col < len(cells) else "")(len(cells[col]) if col < len(cells) else 0)
-        lines[n] = tokenize_lengths(tokenize_segment(line, role_of), header)
+        def theme_at(i, cells=cells, line=line):
+            col = line.count("|", 0, i)
+            return theme_context((header[col] if col < len(header) else "") + " " + " ".join(cells[1:3]) + " " + context)
+        lines[n] = tokenize_lengths(tokenize_segment(line, role_of, theme_at), header)
     return "\n".join(lines)
 
 # Lengths: in a table row about radius, spacing or border width, a px value that equals a core
