@@ -53,13 +53,40 @@ def pick(name, theme, role):
             return hit[0]
     return f"palette.{theme}.{name}"
 
-HEX = re.compile(r"(?<!` )(#[0-9A-Fa-f]{6}) \(([a-z0-9-]+)(?: = [a-z0-9-]+)?, (light|dark)\)")
+HEX = re.compile(r"(?<!` )(#[0-9A-Fa-f]{6}) \(([a-z0-9-]+)(?: = [a-z0-9-]+)?(?:, (light|dark))?(?=[,)])")
+PAL = T["core"]["palette"]
+
+def theme_of(hex_, name, stated):
+    """The theme the spec states, or else the theme whose palette entry of that name has this value."""
+    if stated:
+        return stated
+    for th in ("light", "dark"):
+        if PAL[th].get(name, {}).get("$value", "").lower() == hex_.lower():
+            return th
+    return None
+
+# The other ways the specs write a colour: 'owl #58CC02' and '#000000 @0.40 (black)'.
+NAME_HEX = re.compile(r"(?<![`\w-])([a-z][a-z0-9]*(?:-[a-z0-9]+)*):? (#[0-9A-Fa-f]{6})\b")
+HEX_ALPHA = re.compile(r"(?<!` )(#[0-9A-Fa-f]{6}) @ ?[\d.]+%? \(([a-z0-9-]+)\)")
 
 def tokenize_segment(text, role_of):
-    out, last = [], 0
+    hits = []  # (start, name, hex, stated theme)
     for m in HEX.finditer(text):
-        out.append(text[last:m.start()] + f"`{pick(m.group(2), m.group(3), role_of(m.start()))}` ")
-        last = m.start()
+        hits.append((m.start(), m.group(2), m.group(1), m.group(3)))
+    for m in HEX_ALPHA.finditer(text):
+        hits.append((m.start(), m.group(2), m.group(1), None))
+    for m in NAME_HEX.finditer(text):
+        if text[max(0, m.start() - 2):m.start()] != "` ":
+            hits.append((m.start(), m.group(1), m.group(2), None))
+    out, last = [], 0
+    for start, name, hex_, stated in sorted(set(hits)):
+        if start < last:
+            continue
+        th = theme_of(hex_, name, stated)
+        if th is None or name not in PAL[th]:
+            continue
+        out.append(text[last:start] + f"`{pick(name, th, role_of(start))}` ")
+        last = start
     out.append(text[last:])
     return "".join(out)
 

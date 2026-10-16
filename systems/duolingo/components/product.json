@@ -204,7 +204,7 @@
      {
       "part": "promo card",
       "property": "border / title / body / CTA",
-      "value": "#37464F (swan) / #F1F7FB (eel, from CSS; equal to the dump default) / #DCE6EC (wolf) / #49C0F8 (macaw), dark",
+      "value": "`border.default` #37464F (swan) / `text.primary` #F1F7FB (eel, from CSS; equal to the dump default) / `text.secondary` #DCE6EC (wolf) / `text.link` #49C0F8 (macaw), dark",
       "source": "learn-dark-default #58-#63; css:4243-a8d324a8.css ._332av"
      }
     ],
@@ -260,13 +260,13 @@
      {
       "part": "MORE popover",
       "property": "surface / border / row text",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #777777 (wolf), light",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.secondary` #777777 (wolf), light",
       "source": "learn-light-more-menu #59; css:4779-c36ad395.css ._36bu_; css:9071-d035f2e5.css .GHXZL"
      },
      {
       "part": "promo card",
       "property": "border / title / body / CTA",
-      "value": "#E5E5E5 (swan) / #4B4B4B (eel) / #777777 (wolf) / #1CB0F6 (macaw), light",
+      "value": "`border.default` #E5E5E5 (swan) / `text.primary` #4B4B4B (eel) / `text.secondary` #777777 (wolf) / `text.link` #1CB0F6 (macaw), light",
       "source": "learn-light-default #58-#63"
      }
     ],
@@ -1568,13 +1568,13 @@
      {
       "part": "label",
       "property": "colour",
-      "value": "#FFFFFF (snow-always-light) at opacity 0.7",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) at opacity 0.7",
       "source": "learn-dark-default _3WYpp (#157)"
      },
      {
       "part": "GUIDEBOOK button",
       "property": "face",
-      "value": "transparent (header colour shows through); ::before border and 2px lip #000000 @0.20 (black)",
+      "value": "transparent (header colour shows through); ::before border and 2px lip `border.onColor` #000000 @0.20 (black)",
       "source": "learn-dark-default dt=guidebook-button-82 (#159) ::before"
      },
      {
@@ -1606,7 +1606,7 @@
      {
       "part": "GUIDEBOOK button",
       "property": "face / lip",
-      "value": "transparent; ::before border and lip #000000 @0.20 (black)",
+      "value": "transparent; ::before border and lip `border.onColor` #000000 @0.20 (black)",
       "source": "learn-light-default dt=guidebook-button-82"
      }
     ],
@@ -1640,61 +1640,61 @@
      {
       "part": "owl",
       "property": "banner class / colour",
-      "value": "LJB6r: owl-always-light #58CC02 (both themes)",
+      "value": "LJB6r: `unitColors.green` owl-always-light #58CC02 (both themes)",
       "source": "captured: learn-dark-default #154, learn-light-default #163; css:path-e50cab6b.css .LJB6r"
      },
      {
       "part": "starfish",
       "property": "banner class / colour",
-      "value": "_1p2Lt: starfish #FF86D0 (both themes)",
+      "value": "_1p2Lt: `unitColors.pink` starfish #FF86D0 (both themes)",
       "source": "captured: learn-dark-completed-unit #154, learn-light-completed-unit #163; css:path-e50cab6b.css ._1p2Lt"
      },
      {
       "part": "macaw",
       "property": "banner class / colour",
-      "value": "_1yHHi or _3cANP: macaw-always-light #1CB0F6",
+      "value": "_1yHHi or _3cANP: `unitColors.blue` macaw-always-light #1CB0F6",
       "source": "css only on desktop: css:path-e50cab6b.css ._1yHHi, ._3cANP; seen visually on the mobile screenshot (learn-dark-mobile, unit 1)"
      },
      {
       "part": "cardinal",
       "property": "banner class / colour",
-      "value": "_1g6lo: cardinal-always-light #FF4B4B",
+      "value": "_1g6lo: `unitColors.red` cardinal-always-light #FF4B4B",
       "source": "css only: css:path-e50cab6b.css ._1g6lo (unit 128 is cardinal in learn-*-path-end, but its header was not on screen)"
      },
      {
       "part": "fox",
       "property": "banner class / colour",
-      "value": "_2DiMj / _2Iw0k: fox-always-light #FF9600",
+      "value": "_2DiMj / _2Iw0k: `unitColors.orange` fox-always-light #FF9600",
       "source": "css only: css:path-e50cab6b.css"
      },
      {
       "part": "grizzly-lite",
       "property": "banner class / colour",
-      "value": "_3JOb1: grizzly-lite #DC8F47",
+      "value": "_3JOb1: `unitColors.brown` grizzly-lite #DC8F47",
       "source": "css only: css:path-e50cab6b.css"
      },
      {
       "part": "beetle",
       "property": "banner class / colour",
-      "value": "M7Jo3: beetle #CE82FF",
+      "value": "M7Jo3: `dataViz.avatar.purple` beetle #CE82FF",
       "source": "css only: css:path-e50cab6b.css"
      },
      {
       "part": "peacock",
       "property": "banner class / colour",
-      "value": "_2bAvg: peacock #00CD9C",
+      "value": "_2bAvg: `unitColors.teal` peacock #00CD9C",
       "source": "css only: css:path-e50cab6b.css"
      },
      {
       "part": "dragon",
       "property": "banner class / colour",
-      "value": "_14qwu: dragon #CC348D",
+      "value": "_14qwu: `unitColors.magenta` dragon #CC348D",
       "source": "css only: css:path-e50cab6b.css"
      },
      {
       "part": "legendary (gold)",
       "property": "banner vars",
-      "value": "jTeoa / _13YX7._1Bwfb: bee #FFC800 L / #FFC700 D with gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text guinea-pig-always-light #CD7900",
+      "value": "jTeoa / _13YX7._1Bwfb: `gamification.xp` bee #FFC800 L / #FFC700 D with `palette.light.gold-shine` gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900",
       "source": "css only: css:path-e50cab6b.css .jTeoa, ._13YX7._1Bwfb"
      }
     ]
@@ -1725,7 +1725,7 @@
     "button: secondary (GUIDEBOOK, desktop)",
     "button: unit-coloured split button (mobile)"
    ],
-   "desktop_vs_mobile": "Mobile (<700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face owl-always-light #58CC02, 4px lip tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.",
+   "desktop_vs_mobile": "Mobile (<700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face `unitColors.green` owl-always-light #58CC02, 4px lip `palette.light.tree-frog-always-light` tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.",
    "screenshots": [
     {
      "dump": "learn-dark-default",
@@ -1778,7 +1778,7 @@
     "GUIDEBOOK hover/active not captured (CSS only).",
     "Mobile screenshots do not match the mobile dumps (screenshot shows unit 1 macaw, dump shows unit 12 owl); mobile colours are taken from the dump only."
    ],
-   "notes": "Dark theme rules (html[data-duo-theme=dark] .EDeQe:not(._1Bwfb) etc.) switch --path-unit-background-color to polar-always-dark #202F36 inside the path sections, but the banner uses its own colour class (LJB6r) so it stays saturated.",
+   "notes": "Dark theme rules (html[data-duo-theme=dark] .EDeQe:not(._1Bwfb) etc.) switch --path-unit-background-color to `palette.light.polar-always-dark` polar-always-dark #202F36 inside the path sections, but the banner uses its own colour class (LJB6r) so it stays saturated.",
    "part": "path"
   },
   {
@@ -2004,13 +2004,13 @@
      {
       "part": "current / completed face",
       "property": "background",
-      "value": "unit colour: #58CC02 (owl-always-light), #1CB0F6 (macaw-always-light), #FF86D0 (starfish), #FF9600 (fox-always-light) in the captured units",
+      "value": "unit colour: `unitColors.green` #58CC02 (owl-always-light), `unitColors.blue` #1CB0F6 (macaw-always-light), `unitColors.pink` #FF86D0 (starfish), `unitColors.orange` #FF9600 (fox-always-light) in the captured units",
       "source": "learn-dark-default ::after of #1236 (owl), #572 (macaw), #1036 (starfish), #1319 (fox)"
      },
      {
       "part": "lip",
       "property": "colour",
-      "value": "face colour with #000000 @0.20 (black) laid over it",
+      "value": "face colour with `background.scrim` #000000 @0.20 (black) laid over it",
       "source": "learn-dark-default (#1236) ::after box-shadow"
      },
      {
@@ -2040,25 +2040,25 @@
      {
       "part": "shine overlay",
       "property": "colour",
-      "value": "macaw units #43BEF8 (bea-junior-shine); starfish units #FF9ED9 (zari-shine)",
+      "value": "macaw units `palette.light.bea-junior-shine` #43BEF8 (bea-junior-shine); starfish units `palette.light.zari-shine` #FF9ED9 (zari-shine)",
       "source": "learn-dark-default _25i8d (#573), _3aYNQ (#1037)"
      },
      {
       "part": "radio icon (completed)",
       "property": "colour",
-      "value": "macaw units #147BAC (bea-radio); starfish #B35E92 (zari-radio); owl #3E8F01 (duo-radio)",
+      "value": "macaw units `palette.light.bea-radio` #147BAC (bea-radio); starfish `palette.light.zari-radio` #B35E92 (zari-radio); owl `palette.light.duo-radio` #3E8F01 (duo-radio)",
       "source": "learn-dark-default _1-7MG (#595), _2GiEE; learn-dark-completed-unit _3y0yK"
      },
      {
       "part": "START bubble",
       "property": "bg / border / text",
-      "value": "#131F24 (snow) / #37464F (swan) / unit colour #58CC02 (owl-always-light)",
+      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan) / unit colour `unitColors.green` #58CC02 (owl-always-light)",
       "source": "learn-dark-default _27IMa (#1239)"
      },
      {
       "part": "jump tooltip",
       "property": "bg / border / text",
-      "value": "#131F24 (snow) / #37464F (swan) / #FF9600 (fox-always-light, next unit colour)",
+      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan) / `unitColors.orange` #FF9600 (fox-always-light, next unit colour)",
       "source": "learn-dark-default TOHdU (#1322)"
      }
     ],
@@ -2066,7 +2066,7 @@
      {
       "part": "current / completed face",
       "property": "background",
-      "value": "same unit colours as dark (*-always-light names): owl #58CC02, macaw #1CB0F6, starfish #FF86D0, fox #FF9600",
+      "value": "same unit colours as dark (*-always-light names): `accent.primary.face` owl #58CC02, `text.link` macaw #1CB0F6, `unitColors.pink` starfish #FF86D0, `status.warning` fox #FF9600",
       "source": "learn-light-default ::after of #1258, #581, #1045, #1341"
      },
      {
@@ -2096,13 +2096,13 @@
      {
       "part": "START bubble",
       "property": "bg / border / text",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #58CC02 (owl)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `accent.primary.face` #58CC02 (owl)",
       "source": "learn-light-default _27IMa; css:path-e50cab6b.css ._27IMa"
      },
      {
       "part": "jump tooltip",
       "property": "bg / border / text",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #FF9600 (fox)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `status.warning` #FF9600 (fox)",
       "source": "learn-light-default TOHdU (#1344)"
      }
     ],
@@ -2204,7 +2204,7 @@
      {
       "part": "per unit colour",
       "property": "face / shine / radio icon / mobile-header lip",
-      "value": "macaw: #1CB0F6 / bea-junior-shine #43BEF8 / bea-radio #147BAC / bea-secondary #1899D6; owl: #58CC02 / duo-shine #72D627 / duo-radio #3E8F01 / tree-frog-always-light #58A700; cardinal: #FF4B4B / eddy-shine #FF6969 / eddy-radio #B33535 / eddy-secondary #EA2B2B; grizzly-lite: #DC8F47 / falstaff-shine #E3A56C / falstaff-radio #834F33 / falstaff-secondary #965A3A; beetle: #CE82FF / lily-shine #D696FF / lily-radio #905BB3 / lily-secondary #A568CC; fox: #FF9600 / lin-lucy-shine #FFA82C / lin-lucy-radio #B36900 / guinea-pig-always-light #CD7900; peacock: #00CD9C / oscar-shine #3FD9B5 / oscar-radio #00906D / oscar-secondary #00A47D; dragon: #CC348D / vikram-shine #D65AA2 / vikram-radio #8F2463 / vikram-secondary #A32A71; starfish: #FF86D0 / zari-shine #FF9ED9 / zari-radio #B35E92 / zari-secondary #CC6BA6",
+      "value": "`text.link` macaw: #1CB0F6 / `palette.light.bea-junior-shine` bea-junior-shine #43BEF8 / `palette.light.bea-radio` bea-radio #147BAC / `palette.light.bea-secondary` bea-secondary #1899D6; `accent.primary.face` owl: #58CC02 / `palette.light.duo-shine` duo-shine #72D627 / `palette.light.duo-radio` duo-radio #3E8F01 / `palette.light.tree-frog-always-light` tree-frog-always-light #58A700; `accent.danger.face` cardinal: #FF4B4B / `palette.light.eddy-shine` eddy-shine #FF6969 / `palette.light.eddy-radio` eddy-radio #B33535 / `palette.light.eddy-secondary` eddy-secondary #EA2B2B; `unitColors.brown` grizzly-lite: #DC8F47 / `palette.light.falstaff-shine` falstaff-shine #E3A56C / `palette.light.falstaff-radio` falstaff-radio #834F33 / `palette.light.falstaff-secondary` falstaff-secondary #965A3A; `dataViz.avatar.purple` beetle: #CE82FF / `palette.light.lily-shine` lily-shine #D696FF / `palette.light.lily-radio` lily-radio #905BB3 / `palette.light.lily-secondary` lily-secondary #A568CC; `status.warning` fox: #FF9600 / `palette.light.lin-lucy-shine` lin-lucy-shine #FFA82C / `palette.light.lin-lucy-radio` lin-lucy-radio #B36900 / `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900; `unitColors.teal` peacock: #00CD9C / `palette.light.oscar-shine` oscar-shine #3FD9B5 / `palette.light.oscar-radio` oscar-radio #00906D / `palette.light.oscar-secondary` oscar-secondary #00A47D; `unitColors.magenta` dragon: #CC348D / `palette.light.vikram-shine` vikram-shine #D65AA2 / `palette.light.vikram-radio` vikram-radio #8F2463 / `palette.light.vikram-secondary` vikram-secondary #A32A71; `unitColors.pink` starfish: #FF86D0 / `palette.light.zari-shine` zari-shine #FF9ED9 / `palette.light.zari-radio` zari-radio #B35E92 / `palette.light.zari-secondary` zari-secondary #CC6BA6",
       "source": "css:path-e50cab6b.css: unit classes (._2hQt4 ... ._2_zd7), shine classes (.nboUl ... ._3aYNQ), radio classes (._7lILJ ... ._2GiEE), secondary classes (._3TE__ ... ._43NnU). Pairing inferred from matching rule order; captured pairs: macaw/_25i8d/_1-7MG, starfish/_3aYNQ/_2GiEE, owl/_3y0yK"
      }
     ]
@@ -2247,7 +2247,7 @@
     },
     {
      "state": "legendary",
-     "changes": "class _2ucCV: face bee (#FFC800 light / #FFC700 dark), lip and band guinea-pig-always-light #CD7900 @0.5",
+     "changes": "class _2ucCV: face bee (#FFC800 light / #FFC700 dark), lip and band `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900 @0.5",
      "source": "css:path-e50cab6b.css ._2ucCV, ._2ucCV:before, ._2ucCV:after (not captured)"
     },
     {
@@ -2372,37 +2372,37 @@
      {
       "part": "current shell + arrow",
       "property": "background",
-      "value": "#58CC02 (owl-always-light) = unit colour; no border (_1Fbw- border 0)",
+      "value": "`unitColors.green` #58CC02 (owl-always-light) = unit colour; no border (_1Fbw- border 0)",
       "source": "learn-dark-node-popover (#1239, #1246); css:path-e50cab6b.css ._1Fbw-"
      },
      {
       "part": "completed shell",
       "property": "background",
-      "value": "#FF86D0 (starfish) = unit colour",
+      "value": "`unitColors.pink` #FF86D0 (starfish) = unit colour",
       "source": "learn-dark-completed-popover (#1429)"
      },
      {
       "part": "shell text",
       "property": "colour",
-      "value": "#FFFFFF (snow-always-light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light)",
       "source": "learn-dark-node-popover (#1239)"
      },
      {
       "part": "START / REVIEW button",
       "property": "face / text / lip",
-      "value": "face #FFFFFF (snow-always-light); text = unit colour (#58CC02 owl / #FF86D0 starfish); lip #FFFFFF @0.70",
+      "value": "face `dataViz.progress.shine` #FFFFFF (snow-always-light); text = unit colour (#58CC02 owl / #FF86D0 starfish); lip #FFFFFF @0.70",
       "source": "learn-dark-node-popover (#1244) ::before; learn-dark-completed-popover (#1434); css:app-f2ef02f8.css ._19ped; css:path-e50cab6b.css ._2yBgn .PbV1v"
      },
      {
       "part": "locked shell + arrow",
       "property": "bg / border / text",
-      "value": "`surface.subtle` #202F36 (polar, dark) / 2px #37464F (swan) / #52656D (hare)",
+      "value": "`surface.subtle` #202F36 (polar, dark) / 2px `border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "learn-dark-locked-popover _2txMY (#1270, #1278); css:path-e50cab6b.css ._2txMY"
      },
      {
       "part": "LOCKED button",
       "property": "face / text",
-      "value": "#37464F (swan) / #52656D (hare); no lip (pushed down 4px)",
+      "value": "`border.default` #37464F (swan) / `text.tertiary` #52656D (hare); no lip (pushed down 4px)",
       "source": "learn-dark-locked-popover dt=skill-path-level-locked-button (#1275)"
      }
     ],
@@ -2434,13 +2434,13 @@
      {
       "part": "locked shell + arrow",
       "property": "bg / border / text",
-      "value": "`surface.subtle` #F7F7F7 (polar, light) / 2px #E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`surface.subtle` #F7F7F7 (polar, light) / 2px `border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "learn-light-locked-popover (#1268, #1276)"
      },
      {
       "part": "LOCKED button",
       "property": "face / text",
-      "value": "#E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "learn-light-locked-popover (#1273)"
      }
     ],
@@ -2862,7 +2862,7 @@
      {
       "part": "UP NEXT pill (locked)",
       "property": "bg / text",
-      "value": "#37464F (swan) / #52656D (hare)",
+      "value": "`border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "learn-dark-path-end (#470); css:path-e50cab6b.css ._1Qswf"
      },
      {
@@ -2880,7 +2880,7 @@
      {
       "part": "button",
       "property": "face / border+lip / text",
-      "value": "#131F24 (snow) / #37464F (swan) / `text.link` #49C0F8 (macaw, dark)",
+      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan) / `text.link` #49C0F8 (macaw, dark)",
       "source": "learn-dark-path-end (#475) ::before"
      },
      {
@@ -2900,7 +2900,7 @@
      {
       "part": "UP NEXT pill (locked)",
       "property": "bg / text",
-      "value": "#E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "learn-light-path-end (#480)"
      },
      {
@@ -2918,7 +2918,7 @@
      {
       "part": "button",
       "property": "face / border+lip / text",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / `text.link` #1CB0F6 (macaw, light)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.link` #1CB0F6 (macaw, light)",
       "source": "learn-light-path-end (#485) ::before"
      },
      {
@@ -2930,7 +2930,7 @@
      {
       "part": "UP NEXT pill (unlocked, CSS)",
       "property": "bg / text",
-      "value": "#DDF4FF (iguana-always-light) / macaw #1CB0F6 L, #49C0F8 D",
+      "value": "`palette.light.iguana-always-light` #DDF4FF (iguana-always-light) / `text.link` macaw #1CB0F6 L, #49C0F8 D",
       "source": "css:path-e50cab6b.css ._3LDH7 (not captured)"
      }
     ],
@@ -3126,7 +3126,7 @@
      {
       "part": "completed card",
       "property": "background",
-      "value": "#131F24 (snow) with diagonal stripes #202F36 (polar) at 136deg, bands 10-40% and 53-71%",
+      "value": "`text.onPrimary` #131F24 (snow) with diagonal stripes `surface.subtle` #202F36 (polar) at 136deg, bands 10-40% and 53-71%",
       "source": "sections-dark-default (#158); css:pathSections-c1a583d8.css ._2UWvP"
      },
      {
@@ -3138,7 +3138,7 @@
      {
       "part": "COMPLETED! label",
       "property": "colour",
-      "value": "#58CC02 (owl-always-light), opacity 1",
+      "value": "`unitColors.green` #58CC02 (owl-always-light), opacity 1",
       "source": "sections-dark-default _1tBwZ (#165)"
      },
      {
@@ -3150,7 +3150,7 @@
      {
       "part": "REVIEW button",
       "property": "face / border+lip",
-      "value": "#131F24 (snow) / #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan)",
       "source": "sections-dark-default (#167) ::before"
      },
      {
@@ -3162,7 +3162,7 @@
      {
       "part": "progress bar",
       "property": "track / fill",
-      "value": "#131F24 (snow) / `accent.primary.face` #93D333 (owl, dark); label #AFAFAF (hare-always-light) on track, #131F24 on fill",
+      "value": "`text.onPrimary` #131F24 (snow) / `accent.primary.face` #93D333 (owl, dark); label `dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light) on track, #131F24 on fill",
       "source": "sections-dark-default (#198, #200, #199, #203)"
      },
      {
@@ -3174,25 +3174,25 @@
      {
       "part": "CONTINUE button",
       "property": "face / lip / text",
-      "value": "#1CB0F6 (macaw-always-light) / #1CB0F6 @0.70 / #FFFFFF",
+      "value": "`unitColors.blue` #1CB0F6 (macaw-always-light) / #1CB0F6 @0.70 / #FFFFFF",
       "source": "sections-dark-default (#210) ::before; css:pathSections-c1a583d8.css ._3_XLT"
      },
      {
       "part": "speech bubble",
       "property": "bg / text / furigana",
-      "value": "#131F24 (snow) / eel #F1F7FB (css) / #52656D (hare)",
+      "value": "`text.onPrimary` #131F24 (snow) / `text.primary` eel #F1F7FB (css) / `text.tertiary` #52656D (hare)",
       "source": "sections-dark-default _2NZrx (#214), rt (#218); css:pathSections-c1a583d8.css .O93KC"
      },
      {
       "part": "locked card",
       "property": "bg / text",
-      "value": "#202F36 (polar) / #52656D (dark-mode-locked-path-section-text-color)",
+      "value": "`surface.subtle` #202F36 (polar) / `palette.light.dark-mode-locked-path-section-text-color` #52656D (dark-mode-locked-path-section-text-color)",
       "source": "sections-dark-default _36wSS (#234); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._36wSS"
      },
      {
       "part": "locked JUMP TO SECTION button",
       "property": "face / border / text",
-      "value": "#131F24 / #37464F / #49C0F8 (macaw)",
+      "value": "#131F24 / #37464F / `text.link` #49C0F8 (macaw)",
       "source": "sections-dark-default (#241)"
      }
     ],
@@ -3200,7 +3200,7 @@
      {
       "part": "completed card",
       "property": "background",
-      "value": "#FFFFFF (snow) with stripes #F7F7F7 (polar)",
+      "value": "`text.onPrimary` #FFFFFF (snow) with stripes `surface.subtle` #F7F7F7 (polar)",
       "source": "sections-light-default (#167)"
      },
      {
@@ -3236,7 +3236,7 @@
      {
       "part": "progress bar",
       "property": "track / fill",
-      "value": "#FFFFFF (snow) / #58CC02 (owl); label #AFAFAF on track, #FFFFFF on fill",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `accent.primary.face` #58CC02 (owl); label #AFAFAF on track, #FFFFFF on fill",
       "source": "sections-light-default (#207, #209, #208, #212)"
      },
      {
@@ -3254,7 +3254,7 @@
      {
       "part": "locked card",
       "property": "bg / text",
-      "value": "#F7F7F7 (polar) / #777777 (wolf)",
+      "value": "`surface.subtle` #F7F7F7 (polar) / `text.secondary` #777777 (wolf)",
       "source": "sections-light-default (#245)"
      }
     ],
@@ -3292,7 +3292,7 @@
      {
       "part": "title colour (completed, in progress)",
       "property": "colour",
-      "value": "inherits body text (black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump",
+      "value": "inherits body text (`text.body` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump",
       "source": "css:app-f2ef02f8.css body",
       "estimated": true
      }
@@ -3469,7 +3469,7 @@
      {
       "part": "highlight stripe",
       "property": "background",
-      "value": "#FFFFFF (snow-always-light) @ opacity 0.2",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) @ opacity 0.2",
       "source": "lesson-dark-choice-default cl=_1EFTr (#14)"
      },
      {
@@ -3513,7 +3513,7 @@
      {
       "part": "highlight stripe",
       "property": "background",
-      "value": "#FFFFFF (snow-always-light) @ opacity 0.2",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) @ opacity 0.2",
       "source": "lesson-light-challenge-default cl=_1EFTr (#14)"
      },
      {
@@ -3896,7 +3896,7 @@
      {
       "part": "tail",
       "property": "fill",
-      "value": "#131F24 (snow) over #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) over `border.default` #37464F (swan)",
       "source": "lesson-dark-challenge-default path cl=_3q-cX (#78), _1Ps8f (#79)"
      },
      {
@@ -3920,7 +3920,7 @@
      {
       "part": "new-word text + sparkles",
       "property": "color",
-      "value": "#CE82FF (beetle), 700; underline images/af821b2d9d7e2fd3cbfce2ed8a0264da.svg",
+      "value": "`dataViz.avatar.purple` #CE82FF (beetle), 700; underline images/af821b2d9d7e2fd3cbfce2ed8a0264da.svg",
       "source": "lesson-dark-challenge-tiles-partial cl=_1ELE3 (#66, #75); css:1327-4028784b.css ._1ELE3"
      }
     ],
@@ -3946,7 +3946,7 @@
      {
       "part": "tail",
       "property": "fill",
-      "value": "#FFFFFF (snow) over #E5E5E5 (swan)",
+      "value": "`text.onPrimary` #FFFFFF (snow) over `border.default` #E5E5E5 (swan)",
       "source": "lesson-light-challenge-default path (#87, #88)"
      },
      {
@@ -3970,7 +3970,7 @@
      {
       "part": "new-word text + sparkles",
       "property": "color",
-      "value": "#CE82FF (beetle), same rule both themes",
+      "value": "`dataViz.avatar.purple` #CE82FF (beetle), same rule both themes",
       "source": "css:1327-4028784b.css ._1ELE3, .P77qm:before"
      }
     ],
@@ -4432,7 +4432,7 @@
      {
       "part": "badge",
       "property": "border / text",
-      "value": "#37464F (swan) / #52656D (hare)",
+      "value": "`border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-choice-default #41"
      },
      {
@@ -4450,7 +4450,7 @@
      {
       "part": "selected label + badge text",
       "property": "color",
-      "value": "#1899D6 (whale)",
+      "value": "`text.selected` #1899D6 (whale)",
       "source": "lesson-dark-choice-selected #59, #60"
      }
     ],
@@ -4476,7 +4476,7 @@
      {
       "part": "badge",
       "property": "border / text",
-      "value": "#E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-choice-selected #60"
      },
      {
@@ -4500,7 +4500,7 @@
      {
       "part": "selected label + badge text",
       "property": "color",
-      "value": "#1899D6 (whale)",
+      "value": "`text.selected` #1899D6 (whale)",
       "source": "lesson-light-choice-selected #72, #73"
      }
     ],
@@ -4682,13 +4682,13 @@
      {
       "part": "selected face / border / text",
       "property": "colours",
-      "value": "#DDF4FF (iguana) / #84D8FF (blue-jay) / #1899D6 (whale)",
+      "value": "`surface.selected` #DDF4FF (iguana) / `border.selected` #84D8FF (blue-jay) / `text.selected` #1899D6 (whale)",
       "source": "lesson-light-select-selected #40, #53"
      },
      {
       "part": "correct face / border / text",
       "property": "colours",
-      "value": "#D7FFB8 (sea-sponge) / #A5ED6E (turtle) / #58A700 (tree-frog)",
+      "value": "`status.successBackground` #D7FFB8 (sea-sponge) / `status.successBorder` #A5ED6E (turtle) / `accent.primary.lip` #58A700 (tree-frog)",
       "source": "lesson-light-feedback-correct #41, #54"
      }
     ],
@@ -4829,7 +4829,7 @@
      {
       "part": "face / border + lip",
       "property": "colours",
-      "value": "#131F24 (snow) / #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan)",
       "source": "lesson-dark-match-default #30 ::before"
      },
      {
@@ -4841,19 +4841,19 @@
      {
       "part": "badge",
       "property": "border / text",
-      "value": "#37464F (swan) / #52656D (hare)",
+      "value": "`border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-match-default #31"
      },
      {
       "part": "selected",
       "property": "border + lip / text + badge text / inner fill",
-      "value": "#3F85A7 (blue-jay) / #1899D6 (whale) / `surface.selected` #202F36 (iguana, dark)",
+      "value": "`border.selected` #3F85A7 (blue-jay) / `text.selected` #1899D6 (whale) / `surface.selected` #202F36 (iguana, dark)",
       "source": "lesson-dark-match-selected #30, #31, #32"
      },
      {
       "part": "matched",
       "property": "label + badge",
-      "value": "#37464F (swan), face and lip unchanged",
+      "value": "`border.default` #37464F (swan), face and lip unchanged",
       "source": "lesson-dark-match-pair-matched #30"
      },
      {
@@ -4867,7 +4867,7 @@
      {
       "part": "face / border + lip",
       "property": "colours",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan)",
       "source": "lesson-light-match-default #30 ::before"
      },
      {
@@ -4879,19 +4879,19 @@
      {
       "part": "badge",
       "property": "border / text",
-      "value": "#E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-match-default #31"
      },
      {
       "part": "selected",
       "property": "border + lip / text / inner fill",
-      "value": "#84D8FF (blue-jay) / #1899D6 (whale) / `surface.selected` #DDF4FF (iguana, light)",
+      "value": "`border.selected` #84D8FF (blue-jay) / `text.selected` #1899D6 (whale) / `surface.selected` #DDF4FF (iguana, light)",
       "source": "lesson-light-match-selected #30, #31"
      },
      {
       "part": "matched",
       "property": "label + badge",
-      "value": "#E5E5E5 (swan), face and lip unchanged",
+      "value": "`border.default` #E5E5E5 (swan), face and lip unchanged",
       "source": "lesson-light-match-pair-matched #30"
      }
     ],
@@ -5070,7 +5070,7 @@
      {
       "part": "bubble",
       "property": "background / border",
-      "value": "#131F24 (snow) / #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan)",
       "source": "lesson-dark-dialogue-default #34"
      },
      {
@@ -5221,7 +5221,7 @@
      {
       "part": "speaker lip (button bg)",
       "property": "background",
-      "value": "#1899D6 (whale)",
+      "value": "`text.selected` #1899D6 (whale)",
       "source": "lesson-dark-listen-default #31; css:app-f2ef02f8.css ._3TlAm"
      },
      {
@@ -5259,7 +5259,7 @@
      {
       "part": "speaker lip",
       "property": "background",
-      "value": "#1899D6 (whale), derived, not captured",
+      "value": "`text.selected` #1899D6 (whale), derived, not captured",
       "source": "css:app-f2ef02f8.css ._3TlAm"
      },
      {
@@ -5387,25 +5387,25 @@
      {
       "part": "bar",
       "property": "background / top rule",
-      "value": "#131F24 (snow) / #37464F (swan)",
+      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan)",
       "source": "lesson-dark-challenge-default #146"
      },
      {
       "part": "SKIP",
       "property": "face / border + lip / label",
-      "value": "#131F24 (snow) / #37464F (swan) / #52656D (hare)",
+      "value": "`text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-challenge-default #149"
      },
      {
       "part": "CHECK disabled",
       "property": "face / label",
-      "value": "#37464F (swan) / #52656D (hare)",
+      "value": "`border.default` #37464F (swan) / `text.tertiary` #52656D (hare)",
       "source": "lesson-dark-challenge-default #152"
      },
      {
       "part": "CHECK enabled",
       "property": "face / lip / label",
-      "value": "#93D333 (owl) / #79B933 (tree-frog) / #131F24 (snow)",
+      "value": "`accent.primary.face` #93D333 (owl) / `accent.primary.lip` #79B933 (tree-frog) / `text.onPrimary` #131F24 (snow)",
       "source": "lesson-dark-challenge-check-enabled #178"
      }
     ],
@@ -5413,25 +5413,25 @@
      {
       "part": "bar",
       "property": "background / top rule",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan)",
       "source": "lesson-light-challenge-default #150"
      },
      {
       "part": "SKIP",
       "property": "face / border + lip / label",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-challenge-default #153"
      },
      {
       "part": "CHECK disabled",
       "property": "face / label",
-      "value": "#E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "lesson-light-challenge-default #156"
      },
      {
       "part": "CHECK enabled",
       "property": "face / lip / label",
-      "value": "#58CC02 (owl) / #58A700 (tree-frog) / #FFFFFF (snow)",
+      "value": "`accent.primary.face` #58CC02 (owl) / `accent.primary.lip` #58A700 (tree-frog) / `text.onPrimary` #FFFFFF (snow)",
       "source": "lesson-light-choice-selected #95"
      }
     ],
@@ -5643,7 +5643,7 @@
      {
       "part": "neutral bar / title / CONTINUE",
       "property": "colours",
-      "value": "`status.warningBackground` #202F36 (canary, dark) / `status.warningBorder` #D79433 (guinea-pig, dark) / face #FFC700 (bee), lip #E7A601 (camel)",
+      "value": "`status.warningBackground` #202F36 (canary, dark) / `status.warningBorder` #D79433 (guinea-pig, dark) / face `dataViz.progress.fillSecondary` #FFC700 (bee), lip `palette.light.camel` #E7A601 (camel)",
       "source": "lesson-dark-cant-listen #144, #153, #174"
      }
     ],
@@ -6389,7 +6389,7 @@
      {
       "part": "Duo lottie",
       "property": "fills",
-      "value": "#58CC02 (owl), #89E219 (mask-green), #FF4B4B (cardinal), #4B4B4B (eel), #FFFFFF plus illustration colours #14C3FB, #4AAE00, #A15803, #F49000, #FFB0E4, #FFC200 (NO PALETTE MATCH)",
+      "value": "`accent.primary.face` #58CC02 (owl), `palette.light.mask-green` #89E219 (mask-green), `accent.danger.face` #FF4B4B (cardinal), `text.primary` #4B4B4B (eel), #FFFFFF plus illustration colours #14C3FB, #4AAE00, #A15803, #F49000, #FFB0E4, #FFC200 (NO PALETTE MATCH)",
       "source": "lesson-light-quit-modal svg (#32) descendants"
      }
     ],
@@ -6502,7 +6502,7 @@
      {
       "part": "backdrop",
       "property": "background",
-      "value": "#000000 @0.40 (black)",
+      "value": "`border.onColor` #000000 @0.40 (black)",
       "source": "lesson-dark-quit-modal dt=drawer-backdrop (#127)"
      },
      {
@@ -6520,7 +6520,7 @@
      {
       "part": "KEEP LEARNING",
       "property": "face / lip / text",
-      "value": "`text.link` #49C0F8 (macaw, dark) / #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-quit-modal dt=notification-button (#137) ::before"
      },
      {
@@ -6534,7 +6534,7 @@
      {
       "part": "backdrop",
       "property": "background",
-      "value": "#000000 @0.40 (black)",
+      "value": "`border.onColor` #000000 @0.40 (black)",
       "source": "lesson-light-quit-modal dt=drawer-backdrop (#143)"
      },
      {
@@ -6552,7 +6552,7 @@
      {
       "part": "KEEP LEARNING",
       "property": "face / lip / text",
-      "value": "`text.link` #1CB0F6 (macaw, light) / #1899D6 (whale) / `text.onPrimary` #FFFFFF (snow, light)",
+      "value": "`text.link` #1CB0F6 (macaw, light) / `text.selected` #1899D6 (whale) / `text.onPrimary` #FFFFFF (snow, light)",
       "source": "lesson-light-quit-modal dt=notification-button (#153) ::before"
      },
      {
@@ -6753,7 +6753,7 @@
      {
       "part": "card: beetle variant",
       "property": "frame / border / value text",
-      "value": "#CE82FF (beetle), derived",
+      "value": "`dataViz.avatar.purple` #CE82FF (beetle), derived",
       "source": "css:1008-b4d34396.css ._2IhSJ, ._2_GKE"
      },
      {
@@ -6803,13 +6803,13 @@
      {
       "part": "REVIEW LESSON",
       "property": "face / border+lip / text",
-      "value": "#FFFFFF (snow) / #E5E5E5 (swan) / #AFAFAF (hare)",
+      "value": "`text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare)",
       "source": "captured on the same end-screen footer in lesson-light-video-ad (#9) ::before"
      },
      {
       "part": "CONTINUE",
       "property": "face / lip / text",
-      "value": "#58CC02 (owl) / #58A700 (tree-frog) / #FFFFFF (snow)",
+      "value": "`accent.primary.face` #58CC02 (owl) / `accent.primary.lip` #58A700 (tree-frog) / `text.onPrimary` #FFFFFF (snow)",
       "source": "lesson-light-video-ad dt=player-next (#12) ::before"
      }
     ],
@@ -7104,7 +7104,7 @@
      {
       "part": "CONTINUE (celebration)",
       "property": "face / lip / text",
-      "value": "`text.link` #49C0F8 (macaw, dark) / #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-streak-celebration dt=player-next (#45) ::before"
      },
      {
@@ -7382,7 +7382,7 @@
      {
       "part": "numeral",
       "property": "colour",
-      "value": "#FF4B4B (cardinal-always-light)",
+      "value": "`unitColors.red` #FF4B4B (cardinal-always-light)",
       "source": "lesson-dark-streak-goal-default cl=G8vvg (#243)"
      },
      {
@@ -7449,7 +7449,7 @@
     },
     {
      "state": "row active",
-     "changes": "translateY(2px), ::before lip removed, border blue-jay (#84D8FF L / #3F85A7 D), face iguana (#DDF4FF L / #202F36 D), text whale #1899D6",
+     "changes": "translateY(2px), ::before lip removed, border blue-jay (#84D8FF L / #3F85A7 D), face iguana (#DDF4FF L / #202F36 D), text `text.selected` whale #1899D6",
      "source": "css:4779-c36ad395.css ._8dMUn:active:not(._3neHb), ...:before"
     },
     {
@@ -7648,13 +7648,13 @@
      {
       "part": "INVITE",
       "property": "face / lip / text",
-      "value": "`text.link` #49C0F8 (macaw, dark) / #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark)",
+      "value": "`text.link` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark)",
       "source": "lesson-dark-friend-streak-invite #22 ::before"
      },
      {
       "part": "CONTINUE / REVIEW LESSON",
       "property": "colours",
-      "value": "owl #93D333 + tree-frog #79B933 / snow + swan + hare, as on lesson complete",
+      "value": "`accent.primary.face` owl #93D333 + `accent.primary.lip` tree-frog #79B933 / snow + swan + hare, as on lesson complete",
       "source": "lesson-dark-friend-streak-invite dt=player-next (#73), #70"
      }
     ],
@@ -7680,7 +7680,7 @@
      {
       "part": "INVITE",
       "property": "face / lip / text",
-      "value": "`text.link` #1CB0F6 (macaw, light) / #1899D6 (whale) / #FFFFFF, derived",
+      "value": "`text.link` #1CB0F6 (macaw, light) / `text.selected` #1899D6 (whale) / #FFFFFF, derived",
       "source": "palette:macaw, whale, snow"
      }
     ],
@@ -7856,19 +7856,19 @@
      {
       "part": "ad: background (screen and footer)",
       "property": "colour",
-      "value": "#000437 (eclipse, same both themes)",
+      "value": "`gamification.super.surface` #000437 (eclipse, same both themes)",
       "source": "lesson-dark-super-upsell cl=_2hhqt (#6), _3KWA6 (#14)"
      },
      {
       "part": "ad: text",
       "property": "colour",
-      "value": "#FFFFFF (snow-always-light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light)",
       "source": "lesson-dark-super-upsell #12; css:4358-6896adab.css ._2hhqt"
      },
      {
       "part": "ad: footer top border",
       "property": "colour",
-      "value": "#FFFFFF @0.40 (snow-always-light)",
+      "value": "`text.onColor` #FFFFFF @0.40 (snow-always-light)",
       "source": "lesson-dark-super-upsell #13"
      },
      {
@@ -7880,7 +7880,7 @@
      {
       "part": "ad: GET STARTED",
       "property": "face / lip / text",
-      "value": "#FFFFFF / #FFFFFF @0.50 / #000437 (eclipse)",
+      "value": "#FFFFFF / #FFFFFF @0.50 / `gamification.super.surface` #000437 (eclipse)",
       "source": "lesson-dark-super-upsell #17 ::before; css:app-f2ef02f8.css ._19taU"
      }
     ],
@@ -7888,25 +7888,25 @@
      {
       "part": "trial: background",
       "property": "gradient",
-      "value": "linear-gradient(172deg, #000437 (unknown-000437/eclipse) 0, #061B4B (half-branded-background-blue-middle) 38.31%, #16378C (half-branded-background-blue-end) 69.3%, #8C3DBA (half-branded-background-purple-end) 100%)",
+      "value": "linear-gradient(172deg, #000437 (unknown-000437/eclipse) 0, `palette.light.half-branded-background-blue-middle` #061B4B (half-branded-background-blue-middle) 38.31%, `palette.light.half-branded-background-blue-end` #16378C (half-branded-background-blue-end) 69.3%, `palette.light.half-branded-background-purple-end` #8C3DBA (half-branded-background-purple-end) 100%)",
       "source": "lesson-light-trial-upsell cl=_3YO3u (#18); css:3406-0039e405.css ._3YO3u"
      },
      {
       "part": "trial: h1 / top text",
       "property": "colour",
-      "value": "#FFFFFF (snow-always-light); highlighted spans #26F663 (gamma)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light); highlighted spans `palette.light.gamma` #26F663 (gamma)",
       "source": "lesson-light-trial-upsell #29; css:3406-0039e405.css ._3ifZ6>span>span"
      },
      {
       "part": "trial: lower panel",
       "property": "background / text",
-      "value": "#FAFAFA (unknown-fafafa) / `text.primary` #4B4B4B (eel, light)",
+      "value": "`palette.light.unknown-fafafa` #FAFAFA (unknown-fafafa) / `text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-trial-upsell cl=_3XsPC (#34)"
      },
      {
       "part": "trial: option row",
       "property": "background / border / text",
-      "value": "#FFFFFF (snow-always-light) / `border.default` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) / `border.default` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)",
       "source": "lesson-light-trial-upsell #36"
      },
      {
@@ -7918,25 +7918,25 @@
      {
       "part": "trial: CTA enabled",
       "property": "face / lip / text",
-      "value": "#3C4DFF (cosmos) / #3F22EC (nebula) / #FFFFFF, from CSS vars",
+      "value": "`gamification.super.face` #3C4DFF (cosmos) / `gamification.super.lip` #3F22EC (nebula) / #FFFFFF, from CSS vars",
       "source": "css:app-f2ef02f8.css ._3b8r8"
      },
      {
       "part": "trial: CTA disabled",
       "property": "face / text",
-      "value": "#E5E5E5 (swan-always-light) / #AFAFAF (hare-always-light)",
+      "value": "`palette.light.swan-always-light` #E5E5E5 (swan-always-light) / `dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light)",
       "source": "lesson-light-trial-upsell dt=plus-continue (#47) ::before"
      },
      {
       "part": "trial: NO THANKS",
       "property": "text",
-      "value": "#3C4DFF (cosmos)",
+      "value": "`gamification.super.face` #3C4DFF (cosmos)",
       "source": "lesson-light-trial-upsell dt=plus-no-thanks (#49); css:app-f2ef02f8.css ._2h7HV"
      },
      {
       "part": "video: background",
       "property": "colour",
-      "value": "#000000 (black)",
+      "value": "`border.onColor` #000000 (black)",
       "source": "lesson-light-video-ad cl=_3BWKN (#18)"
      }
     ],
@@ -8290,13 +8290,13 @@
      {
       "part": "friend card",
       "property": "background / text",
-      "value": "`palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) / #FFFFFF (snow-always-light)",
+      "value": "`palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) / `dataViz.progress.shine` #FFFFFF (snow-always-light)",
       "source": "learn-dark-streak-dropdown cl=_3TU61 (#115)"
      },
      {
       "part": "VIEW LIST",
       "property": "face / lip / text",
-      "value": "#FFFFFF (snow-always-light) / #FFFFFF @0.60 / #FF5F00 (streak-panel-friend-background)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) / #FFFFFF @0.60 / `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background)",
       "source": "learn-dark-streak-dropdown cl=_2loTO (#120) ::before"
      },
      {
@@ -8340,7 +8340,7 @@
      {
       "part": "title and subtitle (extended)",
       "property": "color",
-      "value": "#FFFFFF (snow-always-light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light)",
       "source": "learn-light-streak-dropdown cl=_2u6EE (#86, #87)"
      },
      {
@@ -8370,7 +8370,7 @@
      {
       "part": "day circle (done)",
       "property": "fill / check stroke",
-      "value": "`status.warning` #FF9600 (fox, light) / #FFFFFF (snow), stroke-width 8 in svg units",
+      "value": "`status.warning` #FF9600 (fox, light) / `text.onPrimary` #FFFFFF (snow), stroke-width 8 in svg units",
       "source": "learn-light-streak-dropdown svg path (#116), path (#129)"
      },
      {
@@ -8467,7 +8467,7 @@
     },
     {
      "state": "header: extended (lesson done today)",
-     "changes": "popover bg streak-panel-extended-background #FF9600 light (#CD7900 dark from css), title/subtitle white",
+     "changes": "popover bg `palette.light.streak-panel-extended-background` streak-panel-extended-background #FF9600 light (#CD7900 dark from css), title/subtitle white",
      "source": "captured:learn-light-streak-dropdown cl=_28-a0 (#80)"
     },
     {
@@ -8482,7 +8482,7 @@
     },
     {
      "state": "header: milestone",
-     "changes": "background linear-gradient(133deg, streak-panel-milestone-gradient-start #FF933A, fox-always-light #FF9600 51.31%, ...); dark: solid #CD7900 (guinea-pig-always-light)",
+     "changes": "background linear-gradient(133deg, `palette.light.streak-panel-milestone-gradient-start` streak-panel-milestone-gradient-start #FF933A, `unitColors.orange` fox-always-light #FF9600 51.31%, ...); dark: solid `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light)",
      "source": "css:5275-8898b509.css ._5caAA, html[data-duo-theme=dark] ._5caAA"
     },
     {
@@ -8845,7 +8845,7 @@
      {
       "part": "FREE TRIAL",
       "property": "color",
-      "value": "#CF17C8 (nova)",
+      "value": "`gamification.super.label` #CF17C8 (nova)",
       "source": "learn-dark-hearts-dropdown cl=_2vZsg (#112)"
      },
      {
@@ -8895,7 +8895,7 @@
      {
       "part": "FREE TRIAL",
       "property": "color",
-      "value": "#CF17C8 (nova)",
+      "value": "`gamification.super.label` #CF17C8 (nova)",
       "source": "learn-light-hearts-dropdown (#131)"
      },
      {
@@ -9082,7 +9082,7 @@
      {
       "part": "current course row",
       "property": "background / text",
-      "value": "`surface.selected` #202F36 (iguana, dark) / #1899D6 (whale)",
+      "value": "`surface.selected` #202F36 (iguana, dark) / `text.selected` #1899D6 (whale)",
       "source": "learn-dark-courses-dropdown cl=_1aVVk _1WRXX (#79)"
      },
      {
@@ -9094,7 +9094,7 @@
      {
       "part": "flag",
       "property": "outline",
-      "value": "#FFFFFF (snow-always-light)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light)",
       "source": "learn-dark-courses-dropdown (#81)"
      }
     ],
@@ -9120,7 +9120,7 @@
      {
       "part": "current course row",
       "property": "background / text",
-      "value": "`surface.selected` #DDF4FF (iguana, light) / #1899D6 (whale)",
+      "value": "`surface.selected` #DDF4FF (iguana, light) / `text.selected` #1899D6 (whale)",
       "source": "learn-light-courses-dropdown cl=_1aVVk _1WRXX (#80)"
      },
      {
@@ -9415,13 +9415,13 @@
      {
       "part": "status bubble",
       "property": "fill / ring",
-      "value": "#FFFFFF (snow-always-light) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) / `border.default` #37464F (swan, dark)",
       "source": "leaderboard-dark-top cl=_2R_e4 (#194)"
      },
      {
       "part": "letter avatar",
       "property": "fill / letter",
-      "value": "fox #FFAB33, beetle #CE82FF / `text.onPrimary` #131F24 (snow, dark)",
+      "value": "`status.warning` fox #FFAB33, `dataViz.avatar.purple` beetle #CE82FF / `text.onPrimary` #131F24 (snow, dark)",
       "source": "leaderboard-dark-top cl=_1a-Dv (#184), cl=_1gexH (#226)"
      },
      {
@@ -9513,7 +9513,7 @@
      {
       "part": "letter avatar",
       "property": "fill / letter",
-      "value": "beetle #CE82FF, fox #FF9600, cardinal #FF4B4B / `surface.default` #FFFFFF (snow, light)",
+      "value": "`dataViz.avatar.purple` beetle #CE82FF, `status.warning` fox #FF9600, `accent.danger.face` cardinal #FF4B4B / `surface.default` #FFFFFF (snow, light)",
       "source": "leaderboard-light-default (#187, #223, #213)"
      },
      {
@@ -9602,7 +9602,7 @@
     },
     {
      "state": "demotion zone row",
-     "changes": "current user: background walking-fish (L #FFDFE0; dark uses polar #202F36), text fire-ant (L #EA2B2B, D #D84848); rank colour fire-ant",
+     "changes": "current user: background walking-fish (L #FFDFE0; dark uses `surface.subtle` polar #202F36), text fire-ant (L #EA2B2B, D #D84848); rank colour fire-ant",
      "source": "css:1008-b4d34396.css .MytTp._1XTsS, ._1XTsS ._1kz8P, html[data-duo-theme=dark] .MytTp._1XTsS (not captured)"
     },
     {
@@ -9612,7 +9612,7 @@
     },
     {
      "state": "diamond / top league current user",
-     "changes": "background diamond-highlight #E7FBFB (dark polar), text diamond #38D0D0; another variant uses a background image with betta #9069CD text",
+     "changes": "background `palette.light.diamond-highlight` diamond-highlight #E7FBFB (dark polar), text `gamification.league.diamond` diamond #38D0D0; another variant uses a background image with `palette.light.betta` betta #9069CD text",
      "source": "css:1008-b4d34396.css .MytTp._7trGg, .MytTp.zGzKm (not captured)"
     },
     {
@@ -9824,7 +9824,7 @@
      {
       "part": "bubble",
       "property": "fill / ring",
-      "value": "#FFFFFF (snow-always-light), owl status #93D333 (owl) / `border.default` #37464F (swan, dark)",
+      "value": "`text.onColor` #FFFFFF (snow-always-light), owl status `accent.primary.face` #93D333 (owl) / `border.default` #37464F (swan, dark)",
       "source": "leaderboard-dark-default (#94, #96)"
      },
      {
@@ -10089,19 +10089,19 @@
      {
       "part": "shine",
       "property": "fill",
-      "value": "#FFFFFF (snow-always-light) @0.2",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) @0.2",
       "source": "quests-dark-mobile cl=wg2yg _1EFTr (#63)"
      },
      {
       "part": "label on track",
       "property": "color",
-      "value": "#AFAFAF (hare-always-light)",
+      "value": "`dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light)",
       "source": "quests-dark-default cl=_3a7rM (#167)"
      },
      {
       "part": "label on fill",
       "property": "color",
-      "value": "#CD7900 (guinea-pig-always-light)",
+      "value": "`dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light)",
       "source": "quests-dark-default cl=_2spfn (#170); css:1327-4028784b.css ._2nasW"
      },
      {
@@ -10157,13 +10157,13 @@
      {
       "part": "label on track",
       "property": "color",
-      "value": "#AFAFAF (hare-always-light)",
+      "value": "`dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light)",
       "source": "quests-light-default (#168)"
      },
      {
       "part": "label on fill",
       "property": "color",
-      "value": "#CD7900 (guinea-pig-always-light)",
+      "value": "`dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light)",
       "source": "quests-light-default (#172)"
      },
      {
@@ -10614,7 +10614,7 @@
      {
       "part": "progress shine",
       "property": "background",
-      "value": "#FFFFFF (snow-always-light) @0.2 opacity",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) @0.2 opacity",
       "source": "profile-dark-default #326; css:4779 ._1EFTr"
      },
      {
@@ -10676,7 +10676,7 @@
      {
       "part": "progress shine",
       "property": "background",
-      "value": "#FFFFFF (snow-always-light) @0.2 opacity",
+      "value": "`text.onColor` #FFFFFF (snow-always-light) @0.2 opacity",
       "source": "profile-light-default cl=_1EFTr (#337)"
      },
      {
@@ -10850,13 +10850,13 @@
      {
       "part": "banner",
       "property": "background",
-      "value": "#8CE31B (NO PALETTE MATCH: user avatar colour from --avatars-background-color; fallback snow #131F24)",
+      "value": "#8CE31B (NO PALETTE MATCH: user avatar colour from --avatars-background-color; fallback `text.onPrimary` snow #131F24)",
       "source": "profile-dark-default #205; css:5515 .eGQis"
      },
      {
       "part": "edit button face",
       "property": "background",
-      "value": "#8CE31B (same avatar colour) with border #000000 @0.30 (black) and 2px lip shadow black @0.30",
+      "value": "#8CE31B (same avatar colour) with border `border.onColor` #000000 @0.30 (black) and 2px lip shadow black @0.30",
       "source": "profile-dark-default #206 ::before; css:5515 ._3Y-wy"
      },
      {
@@ -10906,13 +10906,13 @@
      {
       "part": "banner",
       "property": "background",
-      "value": "#8CE31B (NO PALETTE MATCH, avatar colour; fallback snow #FFFFFF)",
+      "value": "#8CE31B (NO PALETTE MATCH, avatar colour; fallback `text.onPrimary` snow #FFFFFF)",
       "source": "profile-light-default cl=eGQis (#206)"
      },
      {
       "part": "edit button face",
       "property": "background",
-      "value": "#8CE31B with border #000000 @0.30 (black)",
+      "value": "#8CE31B with border `border.onColor` #000000 @0.30 (black)",
       "source": "profile-light-default #207"
      },
      {
@@ -11136,7 +11136,7 @@
      {
       "part": "week badge",
       "property": "background / text / border",
-      "value": "bg #CD7900 (guinea-pig-always-light), text + border `text.onPrimary` #131F24 (snow, dark)",
+      "value": "bg `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light), text + border `text.onPrimary` #131F24 (snow, dark)",
       "source": "profile-dark-mobile #92; css:5515 ._1eerR, ._3qbFZ"
      },
      {
@@ -11168,7 +11168,7 @@
      {
       "part": "week badge",
       "property": "background / text / border",
-      "value": "bg #CD7900 (guinea-pig-always-light), text + border `text.onPrimary` #FFFFFF (snow, light)",
+      "value": "bg `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light), text + border `text.onPrimary` #FFFFFF (snow, light)",
       "source": "profile-light-default #261"
      },
      {
@@ -11580,13 +11580,13 @@
      {
       "part": "CELEBRATE",
       "property": "face / border / label",
-      "value": "face #131F24 (snow), border + 2px lip #37464F (swan), label #F1F7FB (eel)",
+      "value": "face `surface.default` #131F24 (snow), border + 2px lip `border.default` #37464F (swan), label `text.primary` #F1F7FB (eel)",
       "source": "profile-dark-default #103 ::before; css:4779 ._2ZO5y"
      },
      {
       "part": "reaction ring",
       "property": "outer / inner",
-      "value": "outer bg + border #131F24 (snow), inner border #37464F (swan)",
+      "value": "outer bg + border `surface.default` #131F24 (snow), inner border `border.default` #37464F (swan)",
       "source": "profile-dark-default #109, #110"
      },
      {
@@ -11630,13 +11630,13 @@
      {
       "part": "CELEBRATE",
       "property": "face / border / label",
-      "value": "face #FFFFFF (snow), border + lip #E5E5E5 (swan), label #4B4B4B (eel)",
+      "value": "face `surface.default` #FFFFFF (snow), border + lip `border.default` #E5E5E5 (swan), label `text.primary` #4B4B4B (eel)",
       "source": "profile-light-default #104, #106"
      },
      {
       "part": "reaction ring",
       "property": "outer / inner",
-      "value": "outer #FFFFFF (snow), inner border #E5E5E5 (swan)",
+      "value": "outer `text.onPrimary` #FFFFFF (snow), inner border `border.default` #E5E5E5 (swan)",
       "source": "profile-light-default #110, #111"
      },
      {
@@ -12382,25 +12382,25 @@
      {
       "part": "price button",
       "property": "face / border / label",
-      "value": "face #131F24 (snow), border + lip #37464F (swan), label #49C0F8 (macaw)",
+      "value": "face `surface.default` #131F24 (snow), border + lip `border.default` #37464F (swan), label `text.link` #49C0F8 (macaw)",
       "source": "shop-dark-default #173; css:4779 ._3xDVI"
      },
      {
       "part": "FREE TRIAL label",
       "property": "color",
-      "value": "#CF17C8 (nova)",
+      "value": "`gamification.super.label` #CF17C8 (nova)",
       "source": "shop-dark-default #165; css:8566 ._2eqoY"
      },
      {
       "part": "disabled (FULL / EQUIPPED)",
       "property": "face / border / label",
-      "value": "face #131F24 (snow), border #37464F (swan), label #37464F (swan), no lip",
+      "value": "face `surface.default` #131F24 (snow), border `border.default` #37464F (swan), label `gamification.streakInactive` #37464F (swan), no lip",
       "source": "shop-dark-default #159; css:app ._3U5_i"
      },
      {
       "part": "pill (not equipped)",
       "property": "bg / text",
-      "value": "bg #37464F (swan), text #52656D (hare)",
+      "value": "bg `surface.disabled` #37464F (swan), text `text.tertiary` #52656D (hare)",
       "source": "shop-dark-default #177; css:8566 ._2tJ-w"
      },
      {
@@ -12438,19 +12438,19 @@
      {
       "part": "price button",
       "property": "face / border / label",
-      "value": "face #FFFFFF (snow), border + lip #E5E5E5 (swan), label #1CB0F6 (macaw)",
+      "value": "face `surface.default` #FFFFFF (snow), border + lip `border.default` #E5E5E5 (swan), label `text.link` #1CB0F6 (macaw)",
       "source": "shop-light-default #169"
      },
      {
       "part": "FREE TRIAL label",
       "property": "color",
-      "value": "#CF17C8 (nova)",
+      "value": "`gamification.super.label` #CF17C8 (nova)",
       "source": "shop-light-default #175"
      },
      {
       "part": "disabled (EQUIPPED)",
       "property": "face / border / label",
-      "value": "face #FFFFFF (snow), border #E5E5E5 (swan), label #E5E5E5 (swan)",
+      "value": "face `surface.default` #FFFFFF (snow), border `border.default` #E5E5E5 (swan), label `gamification.streakInactive` #E5E5E5 (swan)",
       "source": "shop-light-default #183, #184"
      },
      {
@@ -12659,7 +12659,7 @@
      {
       "part": "A card",
       "property": "bg / border / body text",
-      "value": "bg #131F24 (snow), border #37464F (swan), body #DCE6EC (wolf)",
+      "value": "bg `surface.default` #131F24 (snow), border `border.default` #37464F (swan), body `text.secondary` #DCE6EC (wolf)",
       "source": "learn-dark-default #87, #92; css:7668 ._16rRh"
      },
      {
@@ -12671,25 +12671,25 @@
      {
       "part": "A button",
       "property": "face / lip / label",
-      "value": "face #3C4DFF (cosmos), lip #3F22EC (nebula), label #FFFFFF (snow-always-light)",
+      "value": "face `gamification.super.face` #3C4DFF (cosmos), lip `gamification.super.lip` #3F22EC (nebula), label `text.onColor` #FFFFFF (snow-always-light)",
       "source": "learn-dark-default #93 ::before; css:app-f2ef02f8.css ._3b8r8"
      },
      {
       "part": "B/C banner",
       "property": "background",
-      "value": "radial-gradient(216% 106% at 6% 3%, #26F663 (gamma) @0.3 0, #268AFF (starlight) @0.3 52%, #FC55FF (quasar) @0.3 100%) over #000437 (eclipse); text #FFFFFF (snow-always-light)",
+      "value": "radial-gradient(216% 106% at 6% 3%, `palette.light.gamma` #26F663 (gamma) @0.3 0, `palette.light.starlight` #268AFF (starlight) @0.3 52%, `palette.light.quasar` #FC55FF (quasar) @0.3 100%) over `gamification.super.surface` #000437 (eclipse); text `text.onColor` #FFFFFF (snow-always-light)",
       "source": "shop-dark-default #145; css:8566 .MGk8p"
      },
      {
       "part": "B/C button",
       "property": "face / lip / label",
-      "value": "face #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label #000437 (eclipse)",
+      "value": "face `dataViz.progress.shine` #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-dark-default #152 ::before; css:app ._19taU"
      },
      {
       "part": "C body emphasis",
       "property": "color",
-      "value": "\"Super Duolingo\" #FFFFFF (snow-always-light, !important via .EryQo) bold",
+      "value": "\"Super Duolingo\" `text.onColor` #FFFFFF (snow-always-light, !important via .EryQo) bold",
       "source": "settings-super-dark-default #108; css:7668 .EryQo>span>span"
      }
     ],
@@ -12697,7 +12697,7 @@
      {
       "part": "A card",
       "property": "bg / border / body text",
-      "value": "bg #FFFFFF (snow), border #E5E5E5 (swan), body #777777 (wolf)",
+      "value": "bg `surface.default` #FFFFFF (snow), border `border.default` #E5E5E5 (swan), body `text.secondary` #777777 (wolf)",
       "source": "learn-light-default #88, #93"
      },
      {
@@ -12709,19 +12709,19 @@
      {
       "part": "A button",
       "property": "face / lip / label",
-      "value": "face #3C4DFF (cosmos), lip #3F22EC (nebula), label #FFFFFF",
+      "value": "face `gamification.super.face` #3C4DFF (cosmos), lip `gamification.super.lip` #3F22EC (nebula), label #FFFFFF",
       "source": "learn-light-default #94"
      },
      {
       "part": "B/C banner",
       "property": "background",
-      "value": "same gradient over #000437 (eclipse): theme-independent",
+      "value": "same gradient over `gamification.super.surface` #000437 (eclipse): theme-independent",
       "source": "shop-light-default #154; settings-super-light-default #102"
      },
      {
       "part": "B/C button",
       "property": "face / lip / label",
-      "value": "face #FFFFFF, lip #FFFFFF @0.5, label #000437 (eclipse)",
+      "value": "face #FFFFFF, lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-light-default #163"
      }
     ],
@@ -12892,19 +12892,19 @@
      {
       "part": "card",
       "property": "background",
-      "value": "radial-gradient(216% 106% at 6% 3%, #26F663 (gamma) @0.3 0, #268AFF (starlight) @0.3 52%, #FC55FF (quasar) @0.3 100%) over #000437 (eclipse)",
+      "value": "radial-gradient(216% 106% at 6% 3%, `palette.light.gamma` #26F663 (gamma) @0.3 0, `palette.light.starlight` #268AFF (starlight) @0.3 52%, `palette.light.quasar` #FC55FF (quasar) @0.3 100%) over `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-dark-default #114; css:1327 ._3Mmv9"
      },
      {
       "part": "title / body / link",
       "property": "color",
-      "value": "#FFFFFF (snow-always-light); body opacity 0.8",
+      "value": "`text.onColor` #FFFFFF (snow-always-light); body opacity 0.8",
       "source": "shop-dark-default #117, #118, #124; css:1327 ._3IB6P, ._yQL7, ._1d5x2 a"
      },
      {
       "part": "button",
       "property": "face / lip / label",
-      "value": "face #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label #000437 (eclipse)",
+      "value": "face `dataViz.progress.shine` #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
       "source": "shop-dark-default #120 ::before; css:app ._19taU"
      }
     ],
@@ -12918,13 +12918,13 @@
      {
       "part": "title / body / link",
       "property": "color",
-      "value": "#FFFFFF (snow-always-light); body opacity 0.8",
+      "value": "`text.onColor` #FFFFFF (snow-always-light); body opacity 0.8",
       "source": "learn-light-default #135, #136"
      },
      {
       "part": "button",
       "property": "face / lip / label",
-      "value": "face #FFFFFF, lip #FFFFFF @0.5, label #000437 (eclipse)",
+      "value": "face #FFFFFF, lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse)",
       "source": "learn-light-default #138"
      }
     ],

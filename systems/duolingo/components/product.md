@@ -47,9 +47,9 @@ Anatomy:
 | focus / active (pressed) | no :focus, :focus-visible or :active rules exist for the nav item classes | states_for on _22Pme _33YLo p3liX YAEPa _3Dchg _348_2 _2dvyl: none |
 | collapsed hover tooltip (<1160) | label shown as a fixed tooltip: background wolf, text snow, radius 8px, padding 7px 12px, 15px, left 88px | css:9071-d035f2e5.css .j5zXd (not captured) |
 
-Tokens (dark): container background `surface.default` #131F24 (snow, dark); container border-right `border.default` #37464F (swan, dark); label (default) color `text.secondary` #DCE6EC (wolf, dark); label (selected) color `text.link` #49C0F8 (macaw, dark); item (selected) background `surface.selected` #202F36 (iguana, dark); item (selected) border 2px `border.selected` #3F85A7 (blue-jay, dark); item (hover) background `surface.subtle` #202F36 (polar, dark), same hex as iguana in dark, so selected differs from hover only by the blue-jay border; notification dot fill / ring `accent.danger.face` #EE5555 (cardinal, dark) / 2px `surface.default` #131F24 (snow, dark); MORE popover surface / border / row hover `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) / `surface.subtle` #202F36 (polar, dark); MORE popover row text `text.secondary` #DCE6EC (wolf, dark); promo card border / title / body / CTA #37464F (swan) / #F1F7FB (eel, from CSS; equal to the dump default) / #DCE6EC (wolf) / #49C0F8 (macaw), dark
+Tokens (dark): container background `surface.default` #131F24 (snow, dark); container border-right `border.default` #37464F (swan, dark); label (default) color `text.secondary` #DCE6EC (wolf, dark); label (selected) color `text.link` #49C0F8 (macaw, dark); item (selected) background `surface.selected` #202F36 (iguana, dark); item (selected) border 2px `border.selected` #3F85A7 (blue-jay, dark); item (hover) background `surface.subtle` #202F36 (polar, dark), same hex as iguana in dark, so selected differs from hover only by the blue-jay border; notification dot fill / ring `accent.danger.face` #EE5555 (cardinal, dark) / 2px `surface.default` #131F24 (snow, dark); MORE popover surface / border / row hover `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) / `surface.subtle` #202F36 (polar, dark); MORE popover row text `text.secondary` #DCE6EC (wolf, dark); promo card border / title / body / CTA `border.default` #37464F (swan) / `text.primary` #F1F7FB (eel, from CSS; equal to the dump default) / `text.secondary` #DCE6EC (wolf) / `text.link` #49C0F8 (macaw), dark
 
-Tokens (light): container background `surface.default` #FFFFFF (snow, light); container border-right `border.default` #E5E5E5 (swan, light); label (default) color `text.secondary` #777777 (wolf, light); label (selected) color `text.link` #1CB0F6 (macaw, light); item (selected) background `surface.selected` #DDF4FF (iguana, light); item (selected) border 2px `border.selected` #84D8FF (blue-jay, light); item (hover) background `surface.subtle` #F7F7F7 (polar, light); notification dot fill / ring `accent.danger.face` #FF4B4B (cardinal, light) / 2px `surface.default` #FFFFFF (snow, light); MORE popover surface / border / row text #FFFFFF (snow) / #E5E5E5 (swan) / #777777 (wolf), light; promo card border / title / body / CTA #E5E5E5 (swan) / #4B4B4B (eel) / #777777 (wolf) / #1CB0F6 (macaw), light
+Tokens (light): container background `surface.default` #FFFFFF (snow, light); container border-right `border.default` #E5E5E5 (swan, light); label (default) color `text.secondary` #777777 (wolf, light); label (selected) color `text.link` #1CB0F6 (macaw, light); item (selected) background `surface.selected` #DDF4FF (iguana, light); item (selected) border 2px `border.selected` #84D8FF (blue-jay, light); item (hover) background `surface.subtle` #F7F7F7 (polar, light); notification dot fill / ring `accent.danger.face` #FF4B4B (cardinal, light) / 2px `surface.default` #FFFFFF (snow, light); MORE popover surface / border / row text `text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.secondary` #777777 (wolf), light; promo card border / title / body / CTA `border.default` #E5E5E5 (swan) / `text.primary` #4B4B4B (eel) / `text.secondary` #777777 (wolf) / `text.link` #1CB0F6 (macaw), light
 
 Type: nav label: duolingo-sans 700 15px, line-height 25px, uppercase, letter-spacing 0.8px (0 for [lang=ar]); container base: 500 17px/25px duolingo-sans, antialiased; MORE popover row: 700 15px/16px uppercase (link rows add letter-spacing 0.8px from ._1AZJt); promo title / body / CTA: 700 20/24 / 400 16/24 / 700 14px/28px uppercase ls 0.56px
 
@@ -340,8 +340,8 @@ Tokens (dark):
 | banner (unit 81, owl) | background | `unitColors.green` #58CC02 (owl-always-light, dark) | learn-dark-default PsNCe LJB6r (#154) |
 | banner (unit 80, starfish) | background | `unitColors.pink` #FF86D0 (starfish, dark) | learn-dark-completed-unit PsNCe _1p2Lt (#154) |
 | banner | text colour | `text.onColor` #FFFFFF (snow-always-light, dark) | learn-dark-default (#154); css:path-e50cab6b.css .LJB6r |
-| label | colour | #FFFFFF (snow-always-light) at opacity 0.7 | learn-dark-default _3WYpp (#157) |
-| GUIDEBOOK button | face | transparent (header colour shows through); ::before border and 2px lip #000000 @0.20 (black) | learn-dark-default dt=guidebook-button-82 (#159) ::before |
+| label | colour | `text.onColor` #FFFFFF (snow-always-light) at opacity 0.7 | learn-dark-default _3WYpp (#157) |
+| GUIDEBOOK button | face | transparent (header colour shows through); ::before border and 2px lip `background.scrim` #000000 @0.20 (black) | learn-dark-default dt=guidebook-button-82 (#159) ::before |
 | GUIDEBOOK label | colour | `text.onColor` #FFFFFF (snow-always-light, dark) | learn-dark-default _30k3d (#161) |
 
 Tokens (light):
@@ -351,7 +351,7 @@ Tokens (light):
 | banner (unit 81, owl) | background | `unitColors.green` #58CC02 (owl-always-light, light) | learn-light-default PsNCe LJB6r (#163) |
 | banner (unit 80, starfish) | background | `unitColors.pink` #FF86D0 (starfish, light) | learn-light-completed-unit PsNCe _1p2Lt (#163) |
 | banner | text colour | `text.onColor` #FFFFFF (snow-always-light, light) | css:path-e50cab6b.css .LJB6r |
-| GUIDEBOOK button | face / lip | transparent; ::before border and lip #000000 @0.20 (black) | learn-light-default dt=guidebook-button-82 |
+| GUIDEBOOK button | face / lip | transparent; ::before border and lip `background.scrim` #000000 @0.20 (black) | learn-light-default dt=guidebook-button-82 |
 
 Type:
 
@@ -366,22 +366,22 @@ Unit colours:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| owl | banner class / colour | LJB6r: owl-always-light #58CC02 (both themes) | captured: learn-dark-default #154, learn-light-default #163; css:path-e50cab6b.css .LJB6r |
-| starfish | banner class / colour | _1p2Lt: starfish #FF86D0 (both themes) | captured: learn-dark-completed-unit #154, learn-light-completed-unit #163; css:path-e50cab6b.css ._1p2Lt |
-| macaw | banner class / colour | _1yHHi or _3cANP: macaw-always-light #1CB0F6 | css only on desktop: css:path-e50cab6b.css ._1yHHi, ._3cANP; seen visually on the mobile screenshot (learn-dark-mobile, unit 1) |
-| cardinal | banner class / colour | _1g6lo: cardinal-always-light #FF4B4B | css only: css:path-e50cab6b.css ._1g6lo (unit 128 is cardinal in learn-*-path-end, but its header was not on screen) |
-| fox | banner class / colour | _2DiMj / _2Iw0k: fox-always-light #FF9600 | css only: css:path-e50cab6b.css |
-| grizzly-lite | banner class / colour | _3JOb1: grizzly-lite #DC8F47 | css only: css:path-e50cab6b.css |
-| beetle | banner class / colour | M7Jo3: beetle #CE82FF | css only: css:path-e50cab6b.css |
-| peacock | banner class / colour | _2bAvg: peacock #00CD9C | css only: css:path-e50cab6b.css |
-| dragon | banner class / colour | _14qwu: dragon #CC348D | css only: css:path-e50cab6b.css |
-| legendary (gold) | banner vars | jTeoa / _13YX7._1Bwfb: bee #FFC800 L / #FFC700 D with gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text guinea-pig-always-light #CD7900 | css only: css:path-e50cab6b.css .jTeoa, ._13YX7._1Bwfb |
+| owl | banner class / colour | LJB6r: `unitColors.green` owl-always-light #58CC02 (both themes) | captured: learn-dark-default #154, learn-light-default #163; css:path-e50cab6b.css .LJB6r |
+| starfish | banner class / colour | _1p2Lt: `unitColors.pink` starfish #FF86D0 (both themes) | captured: learn-dark-completed-unit #154, learn-light-completed-unit #163; css:path-e50cab6b.css ._1p2Lt |
+| macaw | banner class / colour | _1yHHi or _3cANP: `unitColors.blue` macaw-always-light #1CB0F6 | css only on desktop: css:path-e50cab6b.css ._1yHHi, ._3cANP; seen visually on the mobile screenshot (learn-dark-mobile, unit 1) |
+| cardinal | banner class / colour | _1g6lo: `unitColors.red` cardinal-always-light #FF4B4B | css only: css:path-e50cab6b.css ._1g6lo (unit 128 is cardinal in learn-*-path-end, but its header was not on screen) |
+| fox | banner class / colour | _2DiMj / _2Iw0k: `unitColors.orange` fox-always-light #FF9600 | css only: css:path-e50cab6b.css |
+| grizzly-lite | banner class / colour | _3JOb1: `unitColors.brown` grizzly-lite #DC8F47 | css only: css:path-e50cab6b.css |
+| beetle | banner class / colour | M7Jo3: `dataViz.avatar.purple` beetle #CE82FF | css only: css:path-e50cab6b.css |
+| peacock | banner class / colour | _2bAvg: `unitColors.teal` peacock #00CD9C | css only: css:path-e50cab6b.css |
+| dragon | banner class / colour | _14qwu: `unitColors.magenta` dragon #CC348D | css only: css:path-e50cab6b.css |
+| legendary (gold) | banner vars | jTeoa / _13YX7._1Bwfb: `gamification.xp` bee #FFC800 L / #FFC700 D with `palette.light.gold-shine` gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900 | css only: css:path-e50cab6b.css .jTeoa, ._13YX7._1Bwfb |
 
 Contains: button: secondary (GUIDEBOOK, desktop), button: unit-coloured split button (mobile)
-Desktop vs mobile: Mobile (<700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face owl-always-light #58CC02, 4px lip tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.
+Desktop vs mobile: Mobile (<700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face `unitColors.green` owl-always-light #58CC02, 4px lip `palette.light.tree-frog-always-light` tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.
 Crops: [unit-header-dark](crops/unit-header-dark.png) · [unit-header-light](crops/unit-header-light.png) · [unit-header--starfish-dark](crops/unit-header--starfish-dark.png) · [unit-header--starfish-light](crops/unit-header--starfish-light.png) · [unit-header--mobile-dark](crops/unit-header--mobile-dark.png) · [unit-header--mobile-light](crops/unit-header--mobile-light.png)
 Gaps: Only owl and starfish banners were captured on desktop; other unit colours are from CSS only.; Legendary (gold) banner not in any dump.; GUIDEBOOK hover/active not captured (CSS only).; Mobile screenshots do not match the mobile dumps (screenshot shows unit 1 macaw, dump shows unit 12 owl); mobile colours are taken from the dump only.
-Notes: Dark theme rules (html[data-duo-theme=dark] .EDeQe:not(._1Bwfb) etc.) switch --path-unit-background-color to polar-always-dark #202F36 inside the path sections, but the banner uses its own colour class (LJB6r) so it stays saturated.
+Notes: Dark theme rules (html[data-duo-theme=dark] .EDeQe:not(._1Bwfb) etc.) switch --path-unit-background-color to `palette.light.polar-always-dark` polar-always-dark #202F36 inside the path sections, but the banner uses its own colour class (LJB6r) so it stays saturated.
 
 ### Unit divider
 Where: /learn, first child of every section[dt=skill-path-unit-N]: header._10Xfk
@@ -468,7 +468,7 @@ Anatomy:
 | hover | transform translateY(1.5px); ::after lip shadow 8px to 6.5px; ::before band hidden | captured: learn-dark-node-popover #1236 vs learn-dark-default #1236; css:path-e50cab6b.css ._22TV_:hover:not(:active) |
 | hover filter | none (._3Jm09 sets --web-ui_button-filter-hover:none, so the generic brightness(1.1) does not apply); chests likewise (_2vzTv) | css:path-e50cab6b.css ._3Jm09, ._2vzTv; css:4779-c36ad395.css ._1gEmM:hover |
 | active (pressed) | transform translateY(8px); ::after box-shadow none; ::before hidden (face drops onto the lip) | css:path-e50cab6b.css ._3Jm09:active, ._3Jm09:active:after, ._3Jm09:active:before |
-| legendary | class _2ucCV: face bee (#FFC800 light / #FFC700 dark), lip and band guinea-pig-always-light #CD7900 @0.5 | css:path-e50cab6b.css ._2ucCV, ._2ucCV:before, ._2ucCV:after (not captured) |
+| legendary | class _2ucCV: face bee (#FFC800 light / #FFC700 dark), lip and band `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900 @0.5 | css:path-e50cab6b.css ._2ucCV, ._2ucCV:before, ._2ucCV:after (not captured) |
 | unit test / jump | a[dt=skill-path-state-unit_test] at slot 0 of the next unit, face in that unit colour (#FF9600 fox), tooltip "JUMP HERE?" above, href /lesson/unit/83/test | captured: learn-dark-default #1319-#1324; learn-light-default #1341-#1346 |
 | chest | button 80x90 with class _2wryV (cursor default), no face; locked chest art per theme, opened chest art in completed units | captured: learn-dark-default #1258, #669 |
 | transition | transition: filter 0.2s | learn-dark-default #1236; css:4779-c36ad395.css ._1gEmM |
@@ -477,28 +477,28 @@ Tokens (dark):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| current / completed face | background | unit colour: #58CC02 (owl-always-light), #1CB0F6 (macaw-always-light), #FF86D0 (starfish), #FF9600 (fox-always-light) in the captured units | learn-dark-default ::after of #1236 (owl), #572 (macaw), #1036 (starfish), #1319 (fox) |
-| lip | colour | face colour with #000000 @0.20 (black) laid over it | learn-dark-default (#1236) ::after box-shadow |
+| current / completed face | background | unit colour: `unitColors.green` #58CC02 (owl-always-light), `unitColors.blue` #1CB0F6 (macaw-always-light), `unitColors.pink` #FF86D0 (starfish), `unitColors.orange` #FF9600 (fox-always-light) in the captured units | learn-dark-default ::after of #1236 (owl), #572 (macaw), #1036 (starfish), #1319 (fox) |
+| lip | colour | face colour with `border.onColor` #000000 @0.20 (black) laid over it | learn-dark-default (#1236) ::after box-shadow |
 | locked face | background | `gamification.streakInactive` #37464F (swan, dark) | learn-dark-default G_Z0K ::after (#1245); css:path-e50cab6b.css .G_Z0K |
 | progress ring track | fill | `border.default` #37464F (swan, dark) | learn-dark-default svg path (#1233) |
 | progress ring end cap | fill | `text.onPrimary` #131F24 (snow, dark) | learn-dark-default circle (#1234) |
 | progress ring arc | fill | var(--path-unit-character-color) = unit colour (no arc drawn at Lesson 1 of 6) | learn-dark-default (#1231); icons-_learn.json |
-| shine overlay | colour | macaw units #43BEF8 (bea-junior-shine); starfish units #FF9ED9 (zari-shine) | learn-dark-default _25i8d (#573), _3aYNQ (#1037) |
-| radio icon (completed) | colour | macaw units #147BAC (bea-radio); starfish #B35E92 (zari-radio); owl #3E8F01 (duo-radio) | learn-dark-default _1-7MG (#595), _2GiEE; learn-dark-completed-unit _3y0yK |
-| START bubble | bg / border / text | #131F24 (snow) / #37464F (swan) / unit colour #58CC02 (owl-always-light) | learn-dark-default _27IMa (#1239) |
-| jump tooltip | bg / border / text | #131F24 (snow) / #37464F (swan) / #FF9600 (fox-always-light, next unit colour) | learn-dark-default TOHdU (#1322) |
+| shine overlay | colour | macaw units `palette.light.bea-junior-shine` #43BEF8 (bea-junior-shine); starfish units `palette.light.zari-shine` #FF9ED9 (zari-shine) | learn-dark-default _25i8d (#573), _3aYNQ (#1037) |
+| radio icon (completed) | colour | macaw units `palette.light.bea-radio` #147BAC (bea-radio); starfish `palette.light.zari-radio` #B35E92 (zari-radio); owl `palette.light.duo-radio` #3E8F01 (duo-radio) | learn-dark-default _1-7MG (#595), _2GiEE; learn-dark-completed-unit _3y0yK |
+| START bubble | bg / border / text | `text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / unit colour `unitColors.green` #58CC02 (owl-always-light) | learn-dark-default _27IMa (#1239) |
+| jump tooltip | bg / border / text | `text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / `unitColors.orange` #FF9600 (fox-always-light, next unit colour) | learn-dark-default TOHdU (#1322) |
 
 Tokens (light):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| current / completed face | background | same unit colours as dark (*-always-light names): owl #58CC02, macaw #1CB0F6, starfish #FF86D0, fox #FF9600 | learn-light-default ::after of #1258, #581, #1045, #1341 |
+| current / completed face | background | same unit colours as dark (*-always-light names): `accent.primary.face` owl #58CC02, `text.link` macaw #1CB0F6, `unitColors.pink` starfish #FF86D0, `status.warningText` fox #FF9600 | learn-light-default ::after of #1258, #581, #1045, #1341 |
 | locked face | background | `gamification.streakInactive` #E5E5E5 (swan, light) | learn-light-default G_Z0K ::after (#1267) |
 | progress ring track | fill | `border.default` #E5E5E5 (swan, light) | learn-light-default svg path (#1254) |
 | progress ring arc | fill | `accent.primary.face` #58CC02 (owl, light) = unit colour; arc covers about a third at "Lesson 3 of 6" | learn-light-default path (#1256) r=[612,303,49,68] |
 | progress ring end cap | fill | `text.onPrimary` #FFFFFF (snow, light) | learn-light-default circle (#1255) |
-| START bubble | bg / border / text | #FFFFFF (snow) / #E5E5E5 (swan) / #58CC02 (owl) | learn-light-default _27IMa; css:path-e50cab6b.css ._27IMa |
-| jump tooltip | bg / border / text | #FFFFFF (snow) / #E5E5E5 (swan) / #FF9600 (fox) | learn-light-default TOHdU (#1344) |
+| START bubble | bg / border / text | `text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `accent.primary.face` #58CC02 (owl) | learn-light-default _27IMa; css:path-e50cab6b.css ._27IMa |
+| jump tooltip | bg / border / text | `text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `status.warningText` #FF9600 (fox) | learn-light-default TOHdU (#1344) |
 
 Type:
 
@@ -529,7 +529,7 @@ Unit colour families:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| per unit colour | face / shine / radio icon / mobile-header lip | macaw: #1CB0F6 / bea-junior-shine #43BEF8 / bea-radio #147BAC / bea-secondary #1899D6; owl: #58CC02 / duo-shine #72D627 / duo-radio #3E8F01 / tree-frog-always-light #58A700; cardinal: #FF4B4B / eddy-shine #FF6969 / eddy-radio #B33535 / eddy-secondary #EA2B2B; grizzly-lite: #DC8F47 / falstaff-shine #E3A56C / falstaff-radio #834F33 / falstaff-secondary #965A3A; beetle: #CE82FF / lily-shine #D696FF / lily-radio #905BB3 / lily-secondary #A568CC; fox: #FF9600 / lin-lucy-shine #FFA82C / lin-lucy-radio #B36900 / guinea-pig-always-light #CD7900; peacock: #00CD9C / oscar-shine #3FD9B5 / oscar-radio #00906D / oscar-secondary #00A47D; dragon: #CC348D / vikram-shine #D65AA2 / vikram-radio #8F2463 / vikram-secondary #A32A71; starfish: #FF86D0 / zari-shine #FF9ED9 / zari-radio #B35E92 / zari-secondary #CC6BA6 | css:path-e50cab6b.css: unit classes (._2hQt4 ... ._2_zd7), shine classes (.nboUl ... ._3aYNQ), radio classes (._7lILJ ... ._2GiEE), secondary classes (._3TE__ ... ._43NnU). Pairing inferred from matching rule order; captured pairs: macaw/_25i8d/_1-7MG, starfish/_3aYNQ/_2GiEE, owl/_3y0yK |
+| per unit colour | face / shine / radio icon / mobile-header lip | `text.link` macaw: #1CB0F6 / `palette.light.bea-junior-shine` bea-junior-shine #43BEF8 / `palette.light.bea-radio` bea-radio #147BAC / `palette.light.bea-secondary` bea-secondary #1899D6; `accent.primary.face` owl: #58CC02 / `palette.light.duo-shine` duo-shine #72D627 / `palette.light.duo-radio` duo-radio #3E8F01 / `palette.light.tree-frog-always-light` tree-frog-always-light #58A700; `accent.danger.text` cardinal: #FF4B4B / `palette.light.eddy-shine` eddy-shine #FF6969 / `palette.light.eddy-radio` eddy-radio #B33535 / `palette.light.eddy-secondary` eddy-secondary #EA2B2B; `unitColors.brown` grizzly-lite: #DC8F47 / `palette.light.falstaff-shine` falstaff-shine #E3A56C / `palette.light.falstaff-radio` falstaff-radio #834F33 / `palette.light.falstaff-secondary` falstaff-secondary #965A3A; `dataViz.avatar.purple` beetle: #CE82FF / `palette.light.lily-shine` lily-shine #D696FF / `palette.light.lily-radio` lily-radio #905BB3 / `palette.light.lily-secondary` lily-secondary #A568CC; `status.warningText` fox: #FF9600 / `palette.light.lin-lucy-shine` lin-lucy-shine #FFA82C / `palette.light.lin-lucy-radio` lin-lucy-radio #B36900 / `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900; `unitColors.teal` peacock: #00CD9C / `palette.light.oscar-shine` oscar-shine #3FD9B5 / `palette.light.oscar-radio` oscar-radio #00906D / `palette.light.oscar-secondary` oscar-secondary #00A47D; `unitColors.magenta` dragon: #CC348D / `palette.light.vikram-shine` vikram-shine #D65AA2 / `palette.light.vikram-radio` vikram-radio #8F2463 / `palette.light.vikram-secondary` vikram-secondary #A32A71; `unitColors.pink` starfish: #FF86D0 / `palette.light.zari-shine` zari-shine #FF9ED9 / `palette.light.zari-radio` zari-radio #B35E92 / `palette.light.zari-secondary` zari-secondary #CC6BA6 | css:path-e50cab6b.css: unit classes (._2hQt4 ... ._2_zd7), shine classes (.nboUl ... ._3aYNQ), radio classes (._7lILJ ... ._2GiEE), secondary classes (._3TE__ ... ._43NnU). Pairing inferred from matching rule order; captured pairs: macaw/_25i8d/_1-7MG, starfish/_3aYNQ/_2GiEE, owl/_3y0yK |
 
 Contains: popover shell (START bubble, JUMP HERE? tooltip)
 Desktop vs mobile: Same node size, offsets (0, 44.884, 70) and vertical gaps on mobile (learn-dark-mobile #466-#623: identical wrapper left/margin-top values); only the column is wider (570px).
@@ -569,12 +569,12 @@ Tokens (dark):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| current shell + arrow | background | #58CC02 (owl-always-light) = unit colour; no border (_1Fbw- border 0) | learn-dark-node-popover (#1239, #1246); css:path-e50cab6b.css ._1Fbw- |
-| completed shell | background | #FF86D0 (starfish) = unit colour | learn-dark-completed-popover (#1429) |
-| shell text | colour | #FFFFFF (snow-always-light) | learn-dark-node-popover (#1239) |
-| START / REVIEW button | face / text / lip | face #FFFFFF (snow-always-light); text = unit colour (#58CC02 owl / #FF86D0 starfish); lip #FFFFFF @0.70 | learn-dark-node-popover (#1244) ::before; learn-dark-completed-popover (#1434); css:app-f2ef02f8.css ._19ped; css:path-e50cab6b.css ._2yBgn .PbV1v |
-| locked shell + arrow | bg / border / text | `gamification.league.demotedRow` #202F36 (polar, dark) / `borderWidth.2` 2px #37464F (swan) / #52656D (hare) | learn-dark-locked-popover _2txMY (#1270, #1278); css:path-e50cab6b.css ._2txMY |
-| LOCKED button | face / text | #37464F (swan) / #52656D (hare); no lip (pushed down 4px) | learn-dark-locked-popover dt=skill-path-level-locked-button (#1275) |
+| current shell + arrow | background | `unitColors.green` #58CC02 (owl-always-light) = unit colour; no border (_1Fbw- border 0) | learn-dark-node-popover (#1239, #1246); css:path-e50cab6b.css ._1Fbw- |
+| completed shell | background | `unitColors.pink` #FF86D0 (starfish) = unit colour | learn-dark-completed-popover (#1429) |
+| shell text | colour | `text.onColor` #FFFFFF (snow-always-light) | learn-dark-node-popover (#1239) |
+| START / REVIEW button | face / text / lip | face `text.onColor` #FFFFFF (snow-always-light); text = unit colour (#58CC02 owl / #FF86D0 starfish); lip #FFFFFF @0.70 | learn-dark-node-popover (#1244) ::before; learn-dark-completed-popover (#1434); css:app-f2ef02f8.css ._19ped; css:path-e50cab6b.css ._2yBgn .PbV1v |
+| locked shell + arrow | bg / border / text | `gamification.league.demotedRow` #202F36 (polar, dark) / `borderWidth.2` 2px `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare) | learn-dark-locked-popover _2txMY (#1270, #1278); css:path-e50cab6b.css ._2txMY |
+| LOCKED button | face / text | `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare); no lip (pushed down 4px) | learn-dark-locked-popover dt=skill-path-level-locked-button (#1275) |
 
 Tokens (light):
 
@@ -584,8 +584,8 @@ Tokens (light):
 | completed shell | background | `unitColors.pink` #FF86D0 (starfish, light) | learn-light-completed-popover (#1438) |
 | shell text | colour | `text.onPrimary` #FFFFFF (snow, light) | learn-light-node-popover (#1249) |
 | START / REVIEW button | face / text / lip | #FFFFFF / unit colour / #FFFFFF @0.70 | learn-light-node-popover (#1254); learn-light-completed-popover (#1443) |
-| locked shell + arrow | bg / border / text | `surface.subtle` #F7F7F7 (polar, light) / `borderWidth.2` 2px #E5E5E5 (swan) / #AFAFAF (hare) | learn-light-locked-popover (#1268, #1276) |
-| LOCKED button | face / text | #E5E5E5 (swan) / #AFAFAF (hare) | learn-light-locked-popover (#1273) |
+| locked shell + arrow | bg / border / text | `surface.subtle` #F7F7F7 (polar, light) / `borderWidth.2` 2px `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare) | learn-light-locked-popover (#1268, #1276) |
+| LOCKED button | face / text | `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare) | learn-light-locked-popover (#1273) |
 
 Type:
 
@@ -713,10 +713,10 @@ Tokens (dark):
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | card | border | `gamification.streakInactive` #37464F (swan, dark); background transparent | learn-dark-path-end (#468) |
-| UP NEXT pill (locked) | bg / text | #37464F (swan) / #52656D (hare) | learn-dark-path-end (#470); css:path-e50cab6b.css ._1Qswf |
+| UP NEXT pill (locked) | bg / text | `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare) | learn-dark-path-end (#470); css:path-e50cab6b.css ._1Qswf |
 | title | colour | `text.secondary` #DCE6EC (wolf, dark) | learn-dark-path-end _1YutV (#473) |
 | description | colour | `text.tertiary` #52656D (hare, dark) | learn-dark-path-end _3czy6 (#474) |
-| button | face / border+lip / text | #131F24 (snow) / #37464F (swan) / `text.link` #49C0F8 (macaw, dark) | learn-dark-path-end (#475) ::before |
+| button | face / border+lip / text | `text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / `text.link` #49C0F8 (macaw, dark) | learn-dark-path-end (#475) ::before |
 | lock icon | src | https://d35aaqx5ub95lt.cloudfront.net/images/path/icons/9df8cee6fe91d35859cc7013d23e5d77.svg | learn-dark-path-end (#472) |
 
 Tokens (light):
@@ -724,12 +724,12 @@ Tokens (light):
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | card | border | `gamification.streakInactive` #E5E5E5 (swan, light) | learn-light-path-end (#478) |
-| UP NEXT pill (locked) | bg / text | #E5E5E5 (swan) / #AFAFAF (hare) | learn-light-path-end (#480) |
+| UP NEXT pill (locked) | bg / text | `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare) | learn-light-path-end (#480) |
 | title | colour | `text.secondary` #777777 (wolf, light) | learn-light-path-end (#483) |
 | description | colour | `text.tertiary` #AFAFAF (hare, light) | learn-light-path-end (#484) |
-| button | face / border+lip / text | #FFFFFF (snow) / #E5E5E5 (swan) / `text.link` #1CB0F6 (macaw, light) | learn-light-path-end (#485) ::before |
+| button | face / border+lip / text | `text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `text.link` #1CB0F6 (macaw, light) | learn-light-path-end (#485) ::before |
 | lock icon | src | https://d35aaqx5ub95lt.cloudfront.net/images/path/icons/42790390eb3178780c3620661860e84b.svg | learn-light-path-end (#482) |
-| UP NEXT pill (unlocked, CSS) | bg / text | #DDF4FF (iguana-always-light) / macaw #1CB0F6 L, #49C0F8 D | css:path-e50cab6b.css ._3LDH7 (not captured) |
+| UP NEXT pill (unlocked, CSS) | bg / text | `palette.light.iguana-always-light` #DDF4FF (iguana-always-light) / `text.link` macaw #1CB0F6 L, #49C0F8 D | css:path-e50cab6b.css ._3LDH7 (not captured) |
 
 Type:
 
@@ -785,33 +785,33 @@ Tokens (dark):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| completed card | background | #131F24 (snow) with diagonal stripes #202F36 (polar) at 136deg, bands 10-40% and 53-71% | sections-dark-default (#158); css:pathSections-c1a583d8.css ._2UWvP |
+| completed card | background | `text.onPrimary` #131F24 (snow) with diagonal stripes `gamification.league.demotedRow` #202F36 (polar) at 136deg, bands 10-40% and 53-71% | sections-dark-default (#158); css:pathSections-c1a583d8.css ._2UWvP |
 | completed card | border | `borderWidth.2` 2px `gamification.streakInactive` #37464F (swan, dark) | sections-dark-default (#158) |
-| COMPLETED! label | colour | #58CC02 (owl-always-light), opacity 1 | sections-dark-default _1tBwZ (#165) |
+| COMPLETED! label | colour | `unitColors.green` #58CC02 (owl-always-light), opacity 1 | sections-dark-default _1tBwZ (#165) |
 | SEE DETAILS / REVIEW text | colour | `text.link` #49C0F8 (macaw, dark) | sections-dark-default (#160, #167) |
-| REVIEW button | face / border+lip | #131F24 (snow) / #37464F (swan) | sections-dark-default (#167) ::before |
+| REVIEW button | face / border+lip | `text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) | sections-dark-default (#167) ::before |
 | in-progress card | background | `surface.selected` #202F36 (iguana, dark); no border | sections-dark-default (#191); css:pathSections-c1a583d8.css ._1pT8b |
-| progress bar | track / fill | #131F24 (snow) / `accent.primary.face` #93D333 (owl, dark); label #AFAFAF (hare-always-light) on track, #131F24 on fill | sections-dark-default (#198, #200, #199, #203) |
+| progress bar | track / fill | `text.onPrimary` #131F24 (snow) / `accent.primary.face` #93D333 (owl, dark); label `dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light) on track, #131F24 on fill | sections-dark-default (#198, #200, #199, #203) |
 | trophy | colour | `gamification.streakInactive` #37464F (swan, dark) | sections-dark-default _320PF (#205); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._320PF |
-| CONTINUE button | face / lip / text | #1CB0F6 (macaw-always-light) / #1CB0F6 @0.70 / #FFFFFF | sections-dark-default (#210) ::before; css:pathSections-c1a583d8.css ._3_XLT |
-| speech bubble | bg / text / furigana | #131F24 (snow) / eel #F1F7FB (css) / #52656D (hare) | sections-dark-default _2NZrx (#214), rt (#218); css:pathSections-c1a583d8.css .O93KC |
-| locked card | bg / text | #202F36 (polar) / #52656D (dark-mode-locked-path-section-text-color) | sections-dark-default _36wSS (#234); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._36wSS |
-| locked JUMP TO SECTION button | face / border / text | #131F24 / #37464F / #49C0F8 (macaw) | sections-dark-default (#241) |
+| CONTINUE button | face / lip / text | `unitColors.blue` #1CB0F6 (macaw-always-light) / #1CB0F6 @0.70 / #FFFFFF | sections-dark-default (#210) ::before; css:pathSections-c1a583d8.css ._3_XLT |
+| speech bubble | bg / text / furigana | `text.onPrimary` #131F24 (snow) / `text.primary` eel #F1F7FB (css) / `text.tertiary` #52656D (hare) | sections-dark-default _2NZrx (#214), rt (#218); css:pathSections-c1a583d8.css .O93KC |
+| locked card | bg / text | `gamification.league.demotedRow` #202F36 (polar) / `palette.light.dark-mode-locked-path-section-text-color` #52656D (dark-mode-locked-path-section-text-color) | sections-dark-default _36wSS (#234); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._36wSS |
+| locked JUMP TO SECTION button | face / border / text | #131F24 / #37464F / `text.link` #49C0F8 (macaw) | sections-dark-default (#241) |
 
 Tokens (light):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| completed card | background | #FFFFFF (snow) with stripes #F7F7F7 (polar) | sections-light-default (#167) |
+| completed card | background | `text.onPrimary` #FFFFFF (snow) with stripes `surface.subtle` #F7F7F7 (polar) | sections-light-default (#167) |
 | completed card | border | `borderWidth.2` 2px `gamification.streakInactive` #E5E5E5 (swan, light) | sections-light-default (#167) |
 | COMPLETED! label | colour | `accent.primary.face` #58CC02 (owl, light) | sections-light-default (#174) |
 | SEE DETAILS / REVIEW text | colour | `text.link` #1CB0F6 (macaw, light) | sections-light-default (#169, #176) |
 | REVIEW button | face / border+lip | #FFFFFF / #E5E5E5 | sections-light-default (#176) ::before |
 | in-progress card | background | `surface.selected` #DDF4FF (iguana, light) | sections-light-default (#200) |
-| progress bar | track / fill | #FFFFFF (snow) / #58CC02 (owl); label #AFAFAF on track, #FFFFFF on fill | sections-light-default (#207, #209, #208, #212) |
+| progress bar | track / fill | `text.onPrimary` #FFFFFF (snow) / `accent.primary.face` #58CC02 (owl); label #AFAFAF on track, #FFFFFF on fill | sections-light-default (#207, #209, #208, #212) |
 | CONTINUE button | face / lip / text | #1CB0F6 / #1CB0F6 @0.70 / #FFFFFF | sections-light-default (#221) |
 | speech bubble | bg / border | #FFFFFF; locked cards add `borderWidth.2` 2px #E5E5E5 border (Un2ta) | sections-light-default (#225, #256) |
-| locked card | bg / text | #F7F7F7 (polar) / #777777 (wolf) | sections-light-default (#245) |
+| locked card | bg / text | `surface.subtle` #F7F7F7 (polar) / `text.secondary` #777777 (wolf) | sections-light-default (#245) |
 
 Type:
 
@@ -822,7 +822,7 @@ Type:
 | status label | font | 700 15px/18px uppercase, letter-spacing 0.6px (locked: opacity 0.7) | sections-dark-default _1tBwZ (#165, #239) |
 | progress % | font | 700 14px/18px uppercase, letter-spacing 0.56px | sections-dark-default (#199) |
 | speech bubble | font | 20px/28px; furigana 16px/24px | sections-dark-default O93KC (#215), rt (#218) |
-| title colour (completed, in progress) | colour | inherits body text (black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump (estimated) | css:app-f2ef02f8.css body |
+| title colour (completed, in progress) | colour | inherits body text (`text.body` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump (estimated) | css:app-f2ef02f8.css body |
 
 Contains: button: secondary, button: primary (macaw), progress bar, speech bubble
 Desktop vs mobile: CSS only: below 700px the completed card gets 16px side margins (._2UWvP @media (max-width:699px)); no mobile dump of /sections.
@@ -873,7 +873,7 @@ Tokens (dark):
 | fill (combo streak) | background | `status.warningText` #FFAB33 (fox, dark) | lesson-dark-listen-default cl=_27NV6 (#12); also lesson-dark-dialogue-default, lesson-dark-previous-mistake |
 | fill (bee) | background | `gamification.xp` #FFC700 (bee, dark) | lesson-dark-match-default cl=_27NV6 (#12); css:4358-6896adab.css ._1YnbS {--web-ui_progress-bar-color: bee} |
 | secondary inner fill | background | `gamification.xp` #FFC700 (bee, dark), clipped to inner value (0 in every capture) | lesson-dark-challenge-default cl=_1qzJe _27NV6 (#13) |
-| highlight stripe | background | #FFFFFF (snow-always-light) @ opacity 0.2 | lesson-dark-choice-default cl=_1EFTr (#14) |
+| highlight stripe | background | `text.onColor` #FFFFFF (snow-always-light) @ opacity 0.2 | lesson-dark-choice-default cl=_1EFTr (#14) |
 | hearts count | color | `accent.danger.text` #EE5555 (cardinal, dark) | lesson-dark-challenge-default cl=_28aeG (#25) |
 | settings gear | image | images/bdab870a9c5acfc2e89f73316ce5ac06.svg | css:1584-b289a3ce.css html[data-duo-theme=dark] ._2VEsk |
 
@@ -885,7 +885,7 @@ Tokens (light):
 | fill (default) | background | `accent.primary.face` #58CC02 (owl, light) | lesson-light-challenge-default cl=_27NV6 (#12) |
 | fill (combo streak) | background | `status.warningText` #FF9600 (fox, light) | lesson-light-match-default cl=_27NV6 (#12) |
 | secondary inner fill | background | `gamification.xp` #FFC800 (bee, light) | lesson-light-challenge-default cl=_1qzJe _27NV6 (#13) |
-| highlight stripe | background | #FFFFFF (snow-always-light) @ opacity 0.2 | lesson-light-challenge-default cl=_1EFTr (#14) |
+| highlight stripe | background | `text.onColor` #FFFFFF (snow-always-light) @ opacity 0.2 | lesson-light-challenge-default cl=_1EFTr (#14) |
 | hearts count | color | `accent.danger.text` #FF4B4B (cardinal, light) | lesson-light-challenge-default cl=_28aeG (#18) |
 | settings gear | image | images/4f9f726081167f96137117883812c434.svg | css:1584-b289a3ce.css ._2VEsk |
 
@@ -993,11 +993,11 @@ Tokens (dark):
 | bubble | background | `text.onPrimary` #131F24 (snow, dark) | lesson-dark-challenge-default cl=_20npu (#42) |
 | bubble | border | `gamification.streakInactive` #37464F (swan, dark) | lesson-dark-challenge-default #42 |
 | bubble text | color | `text.primary` #F1F7FB (eel, dark) | css:4358-6896adab.css ._20npu {color:eel} |
-| tail | fill | #131F24 (snow) over #37464F (swan) | lesson-dark-challenge-default path cl=_3q-cX (#78), _1Ps8f (#79) |
+| tail | fill | `text.onPrimary` #131F24 (snow) over `gamification.streakInactive` #37464F (swan) | lesson-dark-challenge-default path cl=_3q-cX (#78), _1Ps8f (#79) |
 | speaker | fill | `text.link` #49C0F8 (macaw, dark) | lesson-dark-challenge-default path cl=animated-speaker-icon-lottie (#51) |
 | rt | color | `text.tertiary` #52656D (hare, dark) | lesson-dark-challenge-default rt cl=_5qxJi (#64) |
 | hint underline | image | images/5dcc0728f1bbbf031b0259a99d5a75a8.svg | css:1327-4028784b.css html[data-duo-theme=dark] ._2IGwo |
-| new-word text + sparkles | color | #CE82FF (beetle), 700; underline images/af821b2d9d7e2fd3cbfce2ed8a0264da.svg | lesson-dark-challenge-tiles-partial cl=_1ELE3 (#66, #75); css:1327-4028784b.css ._1ELE3 |
+| new-word text + sparkles | color | `dataViz.avatar.purple` #CE82FF (beetle), 700; underline images/af821b2d9d7e2fd3cbfce2ed8a0264da.svg | lesson-dark-challenge-tiles-partial cl=_1ELE3 (#66, #75); css:1327-4028784b.css ._1ELE3 |
 
 Tokens (light):
 
@@ -1006,11 +1006,11 @@ Tokens (light):
 | bubble | background | `text.onPrimary` #FFFFFF (snow, light) | lesson-light-challenge-default cl=_20npu (#35) |
 | bubble | border | `gamification.streakInactive` #E5E5E5 (swan, light) | lesson-light-challenge-default #35 |
 | bubble text | color | `text.primary` #4B4B4B (eel, light) | lesson-light-challenge-default #35 |
-| tail | fill | #FFFFFF (snow) over #E5E5E5 (swan) | lesson-light-challenge-default path (#87, #88) |
+| tail | fill | `text.onPrimary` #FFFFFF (snow) over `gamification.streakInactive` #E5E5E5 (swan) | lesson-light-challenge-default path (#87, #88) |
 | speaker | fill | `text.link` #1CB0F6 (macaw, light) | lesson-light-challenge-default speaker paths under #40 |
 | rt | color | `text.tertiary` #AFAFAF (hare, light) | lesson-light-challenge-default rt (#57) |
 | hint underline | image | images/06f94a15de0c0937cce25dc5dc083e6e.svg | css:1327-4028784b.css ._2IGwo |
-| new-word text + sparkles | color | #CE82FF (beetle), same rule both themes | css:1327-4028784b.css ._1ELE3, .P77qm:before |
+| new-word text + sparkles | color | `dataViz.avatar.purple` #CE82FF (beetle), same rule both themes | css:1327-4028784b.css ._1ELE3, .P77qm:before |
 
 Type: bubble text: duolingo-sans 500 20px (text-body-spacious 1.25rem), line-height 55.5px with ruby, 32px without (lesson-light-challenge-default #35; css:4358-6896adab.css ._20npu, ._1BU--; css:app-f2ef02f8.css * {font-family:duolingo-sans,sans-serif}); rt: duolingo-sans 500 16px/24px (text-caption) (lesson-light-challenge-default #57; css:1327-4028784b.css ._271_n)
 
@@ -1159,10 +1159,10 @@ Tokens (dark):
 | face | background | `text.onPrimary` #131F24 (snow, dark) | lesson-dark-choice-default #40 ::before |
 | border + lip | color | `border.default` #37464F (swan, dark) | lesson-dark-choice-default #40 ::before |
 | label | color | `text.primary` #F1F7FB (eel, dark) | css:1327-4028784b.css ._1G3d- {color:eel} |
-| badge | border / text | #37464F (swan) / #52656D (hare) | lesson-dark-choice-default #41 |
+| badge | border / text | `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare) | lesson-dark-choice-default #41 |
 | selected face | background | `surface.selected` #202F36 (iguana, dark) | lesson-dark-choice-selected #59 ::before |
 | selected border + lip | color | `border.selected` #3F85A7 (blue-jay, dark) | lesson-dark-choice-selected #59 ::before |
-| selected label + badge text | color | #1899D6 (whale) | lesson-dark-choice-selected #59, #60 |
+| selected label + badge text | color | `text.selected` #1899D6 (whale) | lesson-dark-choice-selected #59, #60 |
 
 Tokens (light):
 
@@ -1171,11 +1171,11 @@ Tokens (light):
 | face | background | `text.onPrimary` #FFFFFF (snow, light) | lesson-light-choice-selected #59 ::before |
 | border + lip | color | `border.default` #E5E5E5 (swan, light) | lesson-light-choice-selected #59 ::before |
 | label | color | `text.primary` #4B4B4B (eel, light) | lesson-light-choice-selected #59 |
-| badge | border / text | #E5E5E5 (swan) / #AFAFAF (hare) | lesson-light-choice-selected #60 |
+| badge | border / text | `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare) | lesson-light-choice-selected #60 |
 | hover face | background | `surface.subtle` #F7F7F7 (polar, light) | lesson-light-choice-selected #40 ::before |
 | selected face | background | `surface.selected` #DDF4FF (iguana, light) | lesson-light-choice-selected #72 ::before |
 | selected border + lip | color | `border.selected` #84D8FF (blue-jay, light) | lesson-light-choice-selected #72 ::before |
-| selected label + badge text | color | #1899D6 (whale) | lesson-light-choice-selected #72, #73 |
+| selected label + badge text | color | `text.selected` #1899D6 (whale) | lesson-light-choice-selected #72, #73 |
 
 Type: label: duolingo-sans 500 19px, line-height 1.4 (26.6px) (lesson-dark-choice-default #40; css:1327-4028784b.css ._1G3d-); number badge: duolingo-sans 700 15px (lesson-dark-choice-default #41; css:1327-4028784b.css ._20AkF); rt: duolingo-sans 500 16px/24px, hare (lesson-dark-choice-default #45)
 
@@ -1223,8 +1223,8 @@ Tokens (light):
 | border + lip | color | `border.default` #E5E5E5 (swan, light) | lesson-light-select-default #40 ::before |
 | label | color | `text.primary` #4B4B4B (eel, light) | lesson-light-select-default #40 |
 | hover face | background | `surface.subtle` #F7F7F7 (polar, light) | lesson-light-select-default #78 ::before |
-| selected face / border / text | colours | #DDF4FF (iguana) / #84D8FF (blue-jay) / #1899D6 (whale) | lesson-light-select-selected #40, #53 |
-| correct face / border / text | colours | #D7FFB8 (sea-sponge) / #A5ED6E (turtle) / #58A700 (tree-frog) | lesson-light-feedback-correct #41, #54 |
+| selected face / border / text | colours | `surface.selected` #DDF4FF (iguana) / `border.selected` #84D8FF (blue-jay) / `accent.secondary.lip` #1899D6 (whale) | lesson-light-select-selected #40, #53 |
+| correct face / border / text | colours | `gamification.league.promotedRow` #D7FFB8 (sea-sponge) / `status.successBorder` #A5ED6E (turtle) / `accent.primary.lip` #58A700 (tree-frog) | lesson-light-feedback-correct #41, #54 |
 
 Type: word: duolingo-sans 500 19px, rt 16px/24px (css:1327-4028784b.css ._2_Y8r; lesson-light-select-selected #48)
 
@@ -1267,22 +1267,22 @@ Tokens (dark):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| face / border + lip | colours | #131F24 (snow) / #37464F (swan) | lesson-dark-match-default #30 ::before |
+| face / border + lip | colours | `text.onPrimary` #131F24 (snow) / `border.default` #37464F (swan) | lesson-dark-match-default #30 ::before |
 | label | color | `text.primary` #F1F7FB (eel, dark) | css:1008-b4d34396.css ._2O7Ua |
-| badge | border / text | #37464F (swan) / #52656D (hare) | lesson-dark-match-default #31 |
-| selected | border + lip / text + badge text / inner fill | #3F85A7 (blue-jay) / #1899D6 (whale) / `surface.selected` #202F36 (iguana, dark) | lesson-dark-match-selected #30, #31, #32 |
-| matched | label + badge | #37464F (swan), face and lip unchanged | lesson-dark-match-pair-matched #30 |
+| badge | border / text | `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare) | lesson-dark-match-default #31 |
+| selected | border + lip / text + badge text / inner fill | `border.selected` #3F85A7 (blue-jay) / `text.selected` #1899D6 (whale) / `surface.selected` #202F36 (iguana, dark) | lesson-dark-match-selected #30, #31, #32 |
+| matched | label + badge | `border.default` #37464F (swan), face and lip unchanged | lesson-dark-match-pair-matched #30 |
 | wrong | border + lip / text / inner fill | `status.dangerBorder` #945151 (flamingo, dark) / `status.dangerText` #D84848 (fire-ant, dark) / #202F36 | lesson-dark-match-pair-wrong #41, #42, #43 |
 
 Tokens (light):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| face / border + lip | colours | #FFFFFF (snow) / #E5E5E5 (swan) | lesson-light-match-default #30 ::before |
+| face / border + lip | colours | `text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) | lesson-light-match-default #30 ::before |
 | label | color | `text.primary` #4B4B4B (eel, light) | lesson-light-match-default #30 |
-| badge | border / text | #E5E5E5 (swan) / #AFAFAF (hare) | lesson-light-match-default #31 |
-| selected | border + lip / text / inner fill | #84D8FF (blue-jay) / #1899D6 (whale) / `surface.selected` #DDF4FF (iguana, light) | lesson-light-match-selected #30, #31 |
-| matched | label + badge | #E5E5E5 (swan), face and lip unchanged | lesson-light-match-pair-matched #30 |
+| badge | border / text | `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare) | lesson-light-match-default #31 |
+| selected | border + lip / text / inner fill | `border.selected` #84D8FF (blue-jay) / `text.selected` #1899D6 (whale) / `surface.selected` #DDF4FF (iguana, light) | lesson-light-match-selected #30, #31 |
+| matched | label + badge | `border.default` #E5E5E5 (swan), face and lip unchanged | lesson-light-match-pair-matched #30 |
 
 Type: label: duolingo-sans 500 19px/21.85px (lesson-dark-match-default #30); badge: duolingo-sans 700 15px, line-height 17.25px (lesson-dark-match-default #31)
 
@@ -1322,7 +1322,7 @@ Tokens (dark):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| bubble | background / border | #131F24 (snow) / #37464F (swan) | lesson-dark-dialogue-default #34 |
+| bubble | background / border | `text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) | lesson-dark-dialogue-default #34 |
 | blank | rule | `text.tertiary` #52656D (hare, dark) | lesson-dark-dialogue-default #83 |
 | speaker | fill | `text.link` #49C0F8 (macaw, dark) | lesson-dark-dialogue-default #37 subtree |
 
@@ -1376,7 +1376,7 @@ Tokens (dark):
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | speaker face (::after) | background | `text.link` #49C0F8 (macaw, dark) | lesson-dark-listen-default #31 ::after; css:app-f2ef02f8.css ._3TlAm:after |
-| speaker lip (button bg) | background | #1899D6 (whale) | lesson-dark-listen-default #31; css:app-f2ef02f8.css ._3TlAm |
+| speaker lip (button bg) | background | `accent.secondary.lip` #1899D6 (whale) | lesson-dark-listen-default #31; css:app-f2ef02f8.css ._3TlAm |
 | speaker icon | fill | `text.onPrimary` #131F24 (snow, dark) | lesson-dark-listen-default #33 paths |
 | small speaker ring | border | `text.onPrimary` #131F24 (snow, dark) | lesson-dark-listen-default #46 ::before |
 | Can't listen now label | color | `text.tertiary` #52656D (hare, dark), SKIP button styling | lesson-dark-listen-default #139 |
@@ -1387,7 +1387,7 @@ Tokens (light):
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | speaker face | background | `text.link` #1CB0F6 (macaw, light), derived, not captured | css:app-f2ef02f8.css ._3TlAm:after |
-| speaker lip | background | #1899D6 (whale), derived, not captured | css:app-f2ef02f8.css ._3TlAm |
+| speaker lip | background | `accent.secondary.lip` #1899D6 (whale), derived, not captured | css:app-f2ef02f8.css ._3TlAm |
 | speaker icon / ring | fill / border | `text.onPrimary` #FFFFFF (snow, light), derived, not captured | css:app-f2ef02f8.css ._3TlAm color; css:1327-4028784b.css ._37SfF:before |
 
 Type: Can't listen now: duolingo-sans 700 17px/20.4px uppercase, letter-spacing 0.8px (lesson-dark-listen-default #139); Use keyboard: duolingo-sans 700 17px uppercase 0.8px (15px below 700px) (lesson-dark-listen-default #144; css:app-f2ef02f8.css ._2Rt1l; css:1008-b4d34396.css ._1Z76W)
@@ -1433,19 +1433,19 @@ Tokens (dark):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| bar | background / top rule | #131F24 (snow) / #37464F (swan) | lesson-dark-challenge-default #146 |
-| SKIP | face / border + lip / label | #131F24 (snow) / #37464F (swan) / #52656D (hare) | lesson-dark-challenge-default #149 |
-| CHECK disabled | face / label | #37464F (swan) / #52656D (hare) | lesson-dark-challenge-default #152 |
-| CHECK enabled | face / lip / label | #93D333 (owl) / #79B933 (tree-frog) / #131F24 (snow) | lesson-dark-challenge-check-enabled #178 |
+| bar | background / top rule | `text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) | lesson-dark-challenge-default #146 |
+| SKIP | face / border + lip / label | `text.onPrimary` #131F24 (snow) / `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare) | lesson-dark-challenge-default #149 |
+| CHECK disabled | face / label | `gamification.streakInactive` #37464F (swan) / `text.tertiary` #52656D (hare) | lesson-dark-challenge-default #152 |
+| CHECK enabled | face / lip / label | `accent.primary.face` #93D333 (owl) / `status.successText` #79B933 (tree-frog) / `text.onPrimary` #131F24 (snow) | lesson-dark-challenge-check-enabled #178 |
 
 Tokens (light):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| bar | background / top rule | #FFFFFF (snow) / #E5E5E5 (swan) | lesson-light-challenge-default #150 |
-| SKIP | face / border + lip / label | #FFFFFF (snow) / #E5E5E5 (swan) / #AFAFAF (hare) | lesson-light-challenge-default #153 |
-| CHECK disabled | face / label | #E5E5E5 (swan) / #AFAFAF (hare) | lesson-light-challenge-default #156 |
-| CHECK enabled | face / lip / label | #58CC02 (owl) / #58A700 (tree-frog) / #FFFFFF (snow) | lesson-light-choice-selected #95 |
+| bar | background / top rule | `text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) | lesson-light-challenge-default #150 |
+| SKIP | face / border + lip / label | `text.onPrimary` #FFFFFF (snow) / `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare) | lesson-light-challenge-default #153 |
+| CHECK disabled | face / label | `gamification.streakInactive` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare) | lesson-light-challenge-default #156 |
+| CHECK enabled | face / lip / label | `accent.primary.face` #58CC02 (owl) / `status.successText` #58A700 (tree-frog) / `text.onPrimary` #FFFFFF (snow) | lesson-light-choice-selected #95 |
 
 Type: SKIP / CHECK label: duolingo-sans 700 17px, line-height 1.2 (20.4px), uppercase, letter-spacing 0.8px (lesson-dark-challenge-default #149, #152; css:1008-b4d34396.css ._3DbUj, ._3fo6Q {--web-ui_button-font-size:17px} @media (min-width:700px); css:4779-c36ad395.css ._1ursp)
 
@@ -1533,7 +1533,7 @@ Tokens (dark):
 | incorrect bar | background | `status.dangerBackground` #202F36 (walking-fish, dark) | lesson-dark-feedback-incorrect #123; css:1008-b4d34396.css ._3FB5S._2cfV0 |
 | incorrect title, solution, actions | color | `status.dangerText` #D84848 (fire-ant, dark) | lesson-dark-feedback-incorrect #132, #133, #136 |
 | icon circle | background | `text.onPrimary` #131F24 (snow, dark) | lesson-dark-feedback-correct #143, lesson-dark-feedback-incorrect #127 |
-| neutral bar / title / CONTINUE | colours | `status.warningBackground` #202F36 (canary, dark) / `feedback.neutral.text` #D79433 (guinea-pig, dark) / face #FFC700 (bee), lip #E7A601 (camel) | lesson-dark-cant-listen #144, #153, #174 |
+| neutral bar / title / CONTINUE | colours | `status.warningBackground` #202F36 (canary, dark) / `feedback.neutral.text` #D79433 (guinea-pig, dark) / face `gamification.xp` #FFC700 (bee), lip `palette.light.camel` #E7A601 (camel) | lesson-dark-cant-listen #144, #153, #174 |
 
 Tokens (light):
 
@@ -1681,7 +1681,7 @@ Tokens (dark):
 Tokens (light):
 - bubble, background / border: `text.onPrimary` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light) (lesson-light-quit-modal #132)
 - bubble, text: `text.body` #3C3C3C (black-text, light), inherited (css:app-f2ef02f8.css body)
-- Duo lottie, fills: #58CC02 (owl), #89E219 (mask-green), #FF4B4B (cardinal), #4B4B4B (eel), #FFFFFF plus illustration colours #14C3FB, #4AAE00, #A15803, #F49000, #FFB0E4, #FFC200 (NO PALETTE MATCH) (lesson-light-quit-modal svg (#32) descendants)
+- Duo lottie, fills: `accent.primary.face` #58CC02 (owl), `palette.light.mask-green` #89E219 (mask-green), `accent.danger.face` #FF4B4B (cardinal), `text.primary` #4B4B4B (eel), #FFFFFF plus illustration colours #14C3FB, #4AAE00, #A15803, #F49000, #FFB0E4, #FFC200 (NO PALETTE MATCH) (lesson-light-quit-modal svg (#32) descendants)
 
 Type:
 - bubble text: inherited body type: 500, 17px / 20px (no own font rules on _1TmO0) (css:app-f2ef02f8.css body { font:500 17px/20px })
@@ -1726,17 +1726,17 @@ Anatomy:
 | open | drawer-backdrop opacity 1 (it is 0 in every non-modal lesson dump) | captured: lesson-dark-quit-modal #127 vs lesson-dark-complete #52 |
 
 Tokens (dark):
-- backdrop, background: #000000 @0.40 (black) (lesson-dark-quit-modal dt=drawer-backdrop (#127))
+- backdrop, background: `border.onColor` #000000 @0.40 (black) (lesson-dark-quit-modal dt=drawer-backdrop (#127))
 - card, background: `text.onPrimary` #131F24 (snow, dark) (lesson-dark-quit-modal #132)
 - title, colour: `text.primary` #F1F7FB (eel, dark); equals body colour so not on the node (css:1060-a4cddb41.css ._3r1YP { color:rgb(var(--color-eel)) })
-- KEEP LEARNING, face / lip / text: `text.link` #49C0F8 (macaw, dark) / #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark) (lesson-dark-quit-modal dt=notification-button (#137) ::before)
+- KEEP LEARNING, face / lip / text: `text.link` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark) (lesson-dark-quit-modal dt=notification-button (#137) ::before)
 - END SESSION, text: `accent.danger.face` #EE5555 (cardinal, dark) (lesson-dark-quit-modal #139; css:app-f2ef02f8.css ._27kss { --web-ui_button-color:cardinal })
 
 Tokens (light):
-- backdrop, background: #000000 @0.40 (black) (lesson-light-quit-modal dt=drawer-backdrop (#143))
+- backdrop, background: `border.onColor` #000000 @0.40 (black) (lesson-light-quit-modal dt=drawer-backdrop (#143))
 - card, background: `text.onPrimary` #FFFFFF (snow, light) (lesson-light-quit-modal #148)
 - title, colour: `text.primary` #4B4B4B (eel, light) (lesson-light-quit-modal cl=_3r1YP (#152))
-- KEEP LEARNING, face / lip / text: `text.link` #1CB0F6 (macaw, light) / #1899D6 (whale) / `text.onPrimary` #FFFFFF (snow, light) (lesson-light-quit-modal dt=notification-button (#153) ::before)
+- KEEP LEARNING, face / lip / text: `text.link` #1CB0F6 (macaw, light) / `text.selected` #1899D6 (whale) / `text.onPrimary` #FFFFFF (snow, light) (lesson-light-quit-modal dt=notification-button (#153) ::before)
 - END SESSION, text: `accent.danger.face` #FF4B4B (cardinal, light) (lesson-light-quit-modal #155)
 
 Type:
@@ -1794,7 +1794,7 @@ Tokens (dark):
 - value box, background: `text.onPrimary` #131F24 (snow, dark) (lesson-dark-complete #16)
 - card: owl variant (accuracy, "GREAT!"), frame / border / value text: `accent.primary.face` #93D333 (owl, dark), derived from CSS, not captured in the dump (css:1008-b4d34396.css ._52uc9, .uiOhM (palette:owl))
 - card: macaw variant, frame / border / value text: `text.link` #49C0F8 (macaw, dark), derived (css:1008-b4d34396.css ._27CoB/._2f4A8, ._36aXx/._2c6u3)
-- card: beetle variant, frame / border / value text: #CE82FF (beetle), derived (css:1008-b4d34396.css ._2IhSJ, ._2_GKE)
+- card: beetle variant, frame / border / value text: `dataViz.avatar.purple` #CE82FF (beetle), derived (css:1008-b4d34396.css ._2IhSJ, ._2_GKE)
 - card: teal variant, frame / border / value text: #00C495 (NO PALETTE MATCH, literal in CSS) (css:1008-b4d34396.css ._33C3y, ._2O_yN)
 - REVIEW LESSON, face / border+lip / text: `text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark) (lesson-dark-complete #46 ::before)
 - CONTINUE, face / lip / text: `accent.primary.face` #93D333 (owl, dark) / `accent.primary.lip` #79B933 (tree-frog, dark) / `text.onPrimary` #131F24 (snow, dark) (lesson-dark-complete dt=player-next (#49) ::before)
@@ -1804,8 +1804,8 @@ Tokens (light):
 - card / value box, background: `text.onPrimary` #FFFFFF (snow, light), derived (css:1008-b4d34396.css ._23WOw, ._5KPRI)
 - card: bee variant, frame / border / value text: `gamification.xp` #FFC800 (bee, light); label text `text.onPrimary` #FFFFFF (snow, light), derived (css:1008-b4d34396.css ._3IRrf, ._5KPRI, .d8ITn)
 - card: owl variant, frame / border / value text: `accent.primary.face` #58CC02 (owl, light), derived (css:1008-b4d34396.css ._52uc9, .uiOhM)
-- REVIEW LESSON, face / border+lip / text: #FFFFFF (snow) / #E5E5E5 (swan) / #AFAFAF (hare) (captured on the same end-screen footer in lesson-light-video-ad (#9) ::before)
-- CONTINUE, face / lip / text: #58CC02 (owl) / #58A700 (tree-frog) / #FFFFFF (snow) (lesson-light-video-ad dt=player-next (#12) ::before)
+- REVIEW LESSON, face / border+lip / text: `text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.tertiary` #AFAFAF (hare) (captured on the same end-screen footer in lesson-light-video-ad (#9) ::before)
+- CONTINUE, face / lip / text: `accent.primary.face` #58CC02 (owl) / `accent.primary.lip` #58A700 (tree-frog) / `text.onPrimary` #FFFFFF (snow) (lesson-light-video-ad dt=player-next (#12) ::before)
 
 Type:
 - title: inherited family, 700, 32px (25px below 700px wide), line-height 20px inherited (lesson-dark-complete #11; css:1008-b4d34396.css ._3z6AH)
@@ -1876,7 +1876,7 @@ Tokens (dark):
 - caret, background / border: `text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) (lesson-dark-streak-calendar #40)
 - message / tip text, colour: `text.secondary` #DCE6EC (wolf, dark); highlighted spans fox (lesson-dark-streak-celebration #37; css:1008-b4d34396.css ._36njd>span>span)
 - calendar heading, colour: `text.body` #F1F7FB (black-text, dark), inherited (css:app-f2ef02f8.css body)
-- CONTINUE (celebration), face / lip / text: `text.link` #49C0F8 (macaw, dark) / #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark) (lesson-dark-streak-celebration dt=player-next (#45) ::before)
+- CONTINUE (celebration), face / lip / text: `text.link` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark) (lesson-dark-streak-celebration dt=player-next (#45) ::before)
 - CONTINUE (calendar), face / lip / text: `accent.primary.face` #93D333 (owl, dark) / `accent.primary.lip` #79B933 (tree-frog, dark) / #131F24 (lesson-dark-streak-calendar dt=player-next (#64))
 
 Tokens (light):
@@ -1929,7 +1929,7 @@ Anatomy:
 | State | What changes | Source |
 | --- | --- | --- |
 | row hover | ::before background #131F24 to `surface.subtle` #202F36 (polar, dark); border and lip unchanged | captured: lesson-dark-streak-goal-row-hover cl=_8dMUn (#242) diff vs lesson-dark-streak-goal-default (#245); css:4779-c36ad395.css ._8dMUn:hover:not(:active):not(._1pRZ7):not(._3neHb):before @media (hover:hover) |
-| row active | translateY(2px), ::before lip removed, border blue-jay (#84D8FF L / #3F85A7 D), face iguana (#DDF4FF L / #202F36 D), text whale #1899D6 | css:4779-c36ad395.css ._8dMUn:active:not(._3neHb), ...:before |
+| row active | translateY(2px), ::before lip removed, border blue-jay (#84D8FF L / #3F85A7 D), face iguana (#DDF4FF L / #202F36 D), text `text.selected` whale #1899D6 | css:4779-c36ad395.css ._8dMUn:active:not(._3neHb), ...:before |
 | row selected (._1pRZ7) | same colours as active (blue-jay border, iguana face, whale text), lip kept | css:4779-c36ad395.css ._8dMUn._1pRZ7, ._8dMUn._1pRZ7:before |
 | row disabled (._3neHb) | text swan, cursor default, translateY(2px) and no lip | css:4779-c36ad395.css ._8dMUn._3neHb... |
 | CTA disabled | face swan, text hare, lip removed, translateY(4px) | captured: lesson-dark-streak-goal-default dt=player-next cl=_2wryV (#261); css:4779-c36ad395.css ._1VYyp._2wryV:not(._3fmUm) |
@@ -1940,7 +1940,7 @@ Tokens (dark):
 - row border + lip, colour: `border.default` #37464F (swan, dark) (lesson-dark-streak-goal-default #245 ::before)
 - row text, colour: `text.body` #F1F7FB (black-text, dark), inherited (css:app-f2ef02f8.css body)
 - bubble, background / border: `text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) (lesson-dark-streak-goal-default #15)
-- numeral, colour: #FF4B4B (cardinal-always-light) (lesson-dark-streak-goal-default cl=G8vvg (#243))
+- numeral, colour: `unitColors.red` #FF4B4B (cardinal-always-light) (lesson-dark-streak-goal-default cl=G8vvg (#243))
 - CTA disabled, face / text: `border.default` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark), no lip (lesson-dark-streak-goal-default dt=player-next (#261) ::before)
 
 Tokens (light):
@@ -2002,14 +2002,14 @@ Tokens (dark):
 - heading, colour: `text.body` #F1F7FB (black-text, dark), inherited (css:app-f2ef02f8.css body)
 - count, colour: `text.tertiary` #52656D (hare, dark) (lesson-dark-friend-streak-invite #15)
 - table border, row dividers, header divider, colour: `border.default` #37464F (swan, dark) (lesson-dark-friend-streak-invite #17, #18, #16)
-- INVITE, face / lip / text: `text.link` #49C0F8 (macaw, dark) / #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark) (lesson-dark-friend-streak-invite #22 ::before)
-- CONTINUE / REVIEW LESSON, colours: owl #93D333 + tree-frog #79B933 / snow + swan + hare, as on lesson complete (lesson-dark-friend-streak-invite dt=player-next (#73), #70)
+- INVITE, face / lip / text: `text.link` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale) / `text.onPrimary` #131F24 (snow, dark) (lesson-dark-friend-streak-invite #22 ::before)
+- CONTINUE / REVIEW LESSON, colours: `accent.primary.face` owl #93D333 + `accent.primary.lip` tree-frog #79B933 / snow + swan + hare, as on lesson complete (lesson-dark-friend-streak-invite dt=player-next (#73), #70)
 
 Tokens (light):
 - header, background: `text.onPrimary` #FFFFFF (snow, light), derived, not captured (css:1008-b4d34396.css ._3-LZT)
 - count, colour: `text.tertiary` #AFAFAF (hare, light), derived (css:1008-b4d34396.css ._1k4BL)
 - table border, dividers, colour: `border.default` #E5E5E5 (swan, light), derived (overridable by --friend-streak-table-border-color) (css:2634-6b22725c.css ._1pa14, ._2OBb8)
-- INVITE, face / lip / text: `text.link` #1CB0F6 (macaw, light) / #1899D6 (whale) / #FFFFFF, derived (palette:macaw, whale, snow)
+- INVITE, face / lip / text: `text.link` #1CB0F6 (macaw, light) / `text.selected` #1899D6 (whale) / #FFFFFF, derived (palette:macaw, whale, snow)
 
 Type:
 - heading: duolingo-sans 700, 24px / 32px (heading-medium) (lesson-dark-friend-streak-invite #14; css:1008-b4d34396.css ._3-rnE)
@@ -2061,22 +2061,22 @@ Anatomy:
 | screen enter | fade in (_3Y2NM .3s) | css:app-f2ef02f8.css ._2CoFd; captured animation-name on lesson-dark-super-upsell #5 and lesson-light-trial-upsell #17 |
 
 Tokens (dark):
-- ad: background (screen and footer), colour: #000437 (eclipse, same both themes) (lesson-dark-super-upsell cl=_2hhqt (#6), _3KWA6 (#14))
-- ad: text, colour: #FFFFFF (snow-always-light) (lesson-dark-super-upsell #12; css:4358-6896adab.css ._2hhqt)
-- ad: footer top border, colour: #FFFFFF @0.40 (snow-always-light) (lesson-dark-super-upsell #13)
+- ad: background (screen and footer), colour: `gamification.super.surface` #000437 (eclipse, same both themes) (lesson-dark-super-upsell cl=_2hhqt (#6), _3KWA6 (#14))
+- ad: text, colour: `text.onColor` #FFFFFF (snow-always-light) (lesson-dark-super-upsell #12; css:4358-6896adab.css ._2hhqt)
+- ad: footer top border, colour: `text.onColor` #FFFFFF @0.40 (snow-always-light) (lesson-dark-super-upsell #13)
 - ad: NO THANKS, face / border+lip / text: transparent / #FFFFFF @0.50 / #FFFFFF (lesson-dark-super-upsell #15 ::before; css:app-f2ef02f8.css ._1S2uf)
-- ad: GET STARTED, face / lip / text: #FFFFFF / #FFFFFF @0.50 / #000437 (eclipse) (lesson-dark-super-upsell #17 ::before; css:app-f2ef02f8.css ._19taU)
+- ad: GET STARTED, face / lip / text: #FFFFFF / #FFFFFF @0.50 / `gamification.super.surface` #000437 (eclipse) (lesson-dark-super-upsell #17 ::before; css:app-f2ef02f8.css ._19taU)
 
 Tokens (light):
-- trial: background, gradient: linear-gradient(172deg, #000437 (unknown-000437/eclipse) 0, #061B4B (half-branded-background-blue-middle) 38.31%, #16378C (half-branded-background-blue-end) 69.3%, #8C3DBA (half-branded-background-purple-end) 100%) (lesson-light-trial-upsell cl=_3YO3u (#18); css:3406-0039e405.css ._3YO3u)
-- trial: h1 / top text, colour: #FFFFFF (snow-always-light); highlighted spans #26F663 (gamma) (lesson-light-trial-upsell #29; css:3406-0039e405.css ._3ifZ6>span>span)
-- trial: lower panel, background / text: #FAFAFA (unknown-fafafa) / `text.primary` #4B4B4B (eel, light) (lesson-light-trial-upsell cl=_3XsPC (#34))
-- trial: option row, background / border / text: #FFFFFF (snow-always-light) / `border.default` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light) (lesson-light-trial-upsell #36)
+- trial: background, gradient: linear-gradient(172deg, #000437 (unknown-000437/eclipse) 0, `palette.light.half-branded-background-blue-middle` #061B4B (half-branded-background-blue-middle) 38.31%, `palette.light.half-branded-background-blue-end` #16378C (half-branded-background-blue-end) 69.3%, `palette.light.half-branded-background-purple-end` #8C3DBA (half-branded-background-purple-end) 100%) (lesson-light-trial-upsell cl=_3YO3u (#18); css:3406-0039e405.css ._3YO3u)
+- trial: h1 / top text, colour: `text.onColor` #FFFFFF (snow-always-light); highlighted spans `palette.light.gamma` #26F663 (gamma) (lesson-light-trial-upsell #29; css:3406-0039e405.css ._3ifZ6>span>span)
+- trial: lower panel, background / text: `palette.light.unknown-fafafa` #FAFAFA (unknown-fafafa) / `text.primary` #4B4B4B (eel, light) (lesson-light-trial-upsell cl=_3XsPC (#34))
+- trial: option row, background / border / text: `text.onColor` #FFFFFF (snow-always-light) / `border.default` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light) (lesson-light-trial-upsell #36)
 - trial: disclaimer, colour: `text.secondary` #777777 (wolf, light) (lesson-light-trial-upsell cl=_1-Pul (#43))
-- trial: CTA enabled, face / lip / text: #3C4DFF (cosmos) / #3F22EC (nebula) / #FFFFFF, from CSS vars (css:app-f2ef02f8.css ._3b8r8)
-- trial: CTA disabled, face / text: #E5E5E5 (swan-always-light) / #AFAFAF (hare-always-light) (lesson-light-trial-upsell dt=plus-continue (#47) ::before)
-- trial: NO THANKS, text: #3C4DFF (cosmos) (lesson-light-trial-upsell dt=plus-no-thanks (#49); css:app-f2ef02f8.css ._2h7HV)
-- video: background, colour: #000000 (black) (lesson-light-video-ad cl=_3BWKN (#18))
+- trial: CTA enabled, face / lip / text: `gamification.super.face` #3C4DFF (cosmos) / `gamification.super.lip` #3F22EC (nebula) / #FFFFFF, from CSS vars (css:app-f2ef02f8.css ._3b8r8)
+- trial: CTA disabled, face / text: `palette.light.swan-always-light` #E5E5E5 (swan-always-light) / `dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light) (lesson-light-trial-upsell dt=plus-continue (#47) ::before)
+- trial: NO THANKS, text: `gamification.super.face` #3C4DFF (cosmos) (lesson-light-trial-upsell dt=plus-no-thanks (#49); css:app-f2ef02f8.css ._2h7HV)
+- video: background, colour: `border.onColor` #000000 (black) (lesson-light-video-ad cl=_3BWKN (#18))
 
 Type:
 - ad: h1: 700, 25px / 34px (21px below 700px) (lesson-dark-super-upsell cl=_1jGvf (#12); css:4358-6896adab.css ._1jGvf)
@@ -2139,19 +2139,19 @@ Anatomy:
 | State | What changes | Source |
 | --- | --- | --- |
 | header: unextended (no lesson today) | popover bg #202F36 dark (light #FFF5D3 from css), title streak-panel-unextended-heading-text (#52656D dark, #EBC37F light) | captured:learn-dark-streak-dropdown cl=_37-_J (#79) |
-| header: extended (lesson done today) | popover bg streak-panel-extended-background #FF9600 light (#CD7900 dark from css), title/subtitle white | captured:learn-light-streak-dropdown cl=_28-a0 (#80) |
+| header: extended (lesson done today) | popover bg `palette.light.streak-panel-extended-background` streak-panel-extended-background #FF9600 light (#CD7900 dark from css), title/subtitle white | captured:learn-light-streak-dropdown cl=_28-a0 (#80) |
 | header: frozen | popover bg streak-panel-frozen-background (L #DDF4FF, D #2B70C9); text streak-panel-frozen-text (L #84D8FF, D #FFFFFF); subtitle streak-panel-frozen-subtitle (L #1CB0F6, D #FFFFFF) | css:5275-8898b509.css ._1HflL, ._2v3Mh, ._2wr8Y |
 | header: streak society | popover bg streak-panel-streak-society-background (L #FFC800, D #D79433); text streak-panel-streak-society-text (L #CD7900, D #FFFFFF) | css:5275-8898b509.css ._1ShRd, ._2A7RF |
-| header: milestone | background linear-gradient(133deg, streak-panel-milestone-gradient-start #FF933A, fox-always-light #FF9600 51.31%, ...); dark: solid #CD7900 (guinea-pig-always-light) | css:5275-8898b509.css ._5caAA, html[data-duo-theme=dark] ._5caAA |
+| header: milestone | background linear-gradient(133deg, `palette.light.streak-panel-milestone-gradient-start` streak-panel-milestone-gradient-start #FF933A, `unitColors.orange` fox-always-light #FF9600 51.31%, ...); dark: solid `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light) | css:5275-8898b509.css ._5caAA, html[data-duo-theme=dark] ._5caAA |
 | day: today label | letter colour fox | captured:learn-dark-streak-dropdown cl=_1tnkE (#96); learn-light-streak-dropdown cl=_374yM (#97) |
 | day: done | fox disc with white check, animated svg over the swan circle (class _1R024 hides ._20s-Y) | captured:learn-light-streak-dropdown cl=_1R024 (#110) |
 | day: consecutive-days connector | bar behind circles, fox, radius 18px, height 34px, width transition .18s; gradient variants fox to duck (#FBE56D) | css:5275-8898b509.css ._3H2QG, .X4r5V, ._3ayqn (not captured, 1-day streak only) |
 | VIEW LIST / VIEW MORE hover | filter brightness(1.1) | css:4779-c36ad395.css ._1VYyp:hover:not(._2wryV) @media (hover:hover) |
 | VIEW LIST / VIEW MORE active | transform translateY(4px) (lip width), ::before box-shadow none | css:4779-c36ad395.css ._1VYyp:active:not(._2wryV) |
 
-Tokens (dark): panel (unextended, 0 day) background `palette.dark.streak-panel-unextended-heading-background` #202F36 (streak-panel-unextended-heading-background, dark); panel border `border.default` #37464F (swan, dark); title (unextended) color `palette.dark.streak-panel-unextended-heading-text` #52656D (streak-panel-unextended-heading-text, dark); subtitle color `text.secondary` #DCE6EC (wolf, dark); calendar card background `surface.default` #131F24 (snow, dark); day letter color `text.tertiary` #52656D (hare, dark); day letter, today color `status.warningText` #FFAB33 (fox, dark); day circle (not done) background `surface.disabled` #37464F (swan, dark); lower sections background `surface.default` #131F24 (snow, dark); friend card background / text `palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) / #FFFFFF (snow-always-light); VIEW LIST face / lip / text #FFFFFF (snow-always-light) / #FFFFFF @0.60 / #FF5F00 (streak-panel-friend-background); society card background / border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); society title color `text.primary` #F1F7FB (eel, dark); society body color `text.secondary` #DCE6EC (wolf, dark); VIEW MORE face / lip / text `border.focus` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale, dark) / `text.onPrimary` #131F24 (snow, dark)
+Tokens (dark): panel (unextended, 0 day) background `palette.dark.streak-panel-unextended-heading-background` #202F36 (streak-panel-unextended-heading-background, dark); panel border `border.default` #37464F (swan, dark); title (unextended) color `palette.dark.streak-panel-unextended-heading-text` #52656D (streak-panel-unextended-heading-text, dark); subtitle color `text.secondary` #DCE6EC (wolf, dark); calendar card background `surface.default` #131F24 (snow, dark); day letter color `text.tertiary` #52656D (hare, dark); day letter, today color `status.warningText` #FFAB33 (fox, dark); day circle (not done) background `surface.disabled` #37464F (swan, dark); lower sections background `surface.default` #131F24 (snow, dark); friend card background / text `palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) / `dataViz.progress.shine` #FFFFFF (snow-always-light); VIEW LIST face / lip / text `text.onColor` #FFFFFF (snow-always-light) / #FFFFFF @0.60 / `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background); society card background / border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); society title color `text.primary` #F1F7FB (eel, dark); society body color `text.secondary` #DCE6EC (wolf, dark); VIEW MORE face / lip / text `border.focus` #49C0F8 (macaw, dark) / `text.selected` #1899D6 (whale, dark) / `text.onPrimary` #131F24 (snow, dark)
 
-Tokens (light): panel (extended, streak done today) background `palette.light.streak-panel-extended-background` #FF9600 (streak-panel-extended-background, light); panel border `border.default` #E5E5E5 (swan, light); title and subtitle (extended) color #FFFFFF (snow-always-light); calendar card background `surface.default` #FFFFFF (snow, light); day letter color `text.tertiary` #AFAFAF (hare, light); day letter, today color `status.warningText` #FF9600 (fox, light); day circle (not done) background `surface.disabled` #E5E5E5 (swan, light); day circle (done) fill / check stroke `dataViz.avatar.orange` #FF9600 (fox, light) / #FFFFFF (snow), stroke-width 8 in svg units; lower sections background `surface.default` #FFFFFF (snow, light); friend card background / text `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light) / #FFFFFF; VIEW LIST face / lip / text #FFFFFF / #FFFFFF @0.60 / #FF5F00; society card background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); society title color `text.primary` #4B4B4B (eel, light); society body color `text.secondary` #777777 (wolf, light); VIEW MORE face / lip / text `border.focus` #1CB0F6 (macaw, light) / `text.selected` #1899D6 (whale, light) / `text.onPrimary` #FFFFFF (snow, light)
+Tokens (light): panel (extended, streak done today) background `palette.light.streak-panel-extended-background` #FF9600 (streak-panel-extended-background, light); panel border `border.default` #E5E5E5 (swan, light); title and subtitle (extended) color `text.onColor` #FFFFFF (snow-always-light); calendar card background `surface.default` #FFFFFF (snow, light); day letter color `text.tertiary` #AFAFAF (hare, light); day letter, today color `status.warningText` #FF9600 (fox, light); day circle (not done) background `surface.disabled` #E5E5E5 (swan, light); day circle (done) fill / check stroke `dataViz.avatar.orange` #FF9600 (fox, light) / `text.onPrimary` #FFFFFF (snow), stroke-width 8 in svg units; lower sections background `surface.default` #FFFFFF (snow, light); friend card background / text `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light) / #FFFFFF; VIEW LIST face / lip / text #FFFFFF / #FFFFFF @0.60 / #FF5F00; society card background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); society title color `text.primary` #4B4B4B (eel, light); society body color `text.secondary` #777777 (wolf, light); VIEW MORE face / lip / text `border.focus` #1CB0F6 (macaw, light) / `text.selected` #1899D6 (whale, light) / `text.onPrimary` #FFFFFF (snow, light)
 
 Type: all text duolingo-sans, sans-serif; title 700 25px/34px; subtitle 500 17px/24px; day letter 700 17px/25px, centred; friend title 700 16px (--text-heading-xsmall), line box 20px; friend caption 500 16px/24px (--text-caption); society title / body 700 17px/24px / 500 17px/24px; buttons 700 15px/18px, letter-spacing 0.8px, uppercase
 
@@ -2233,9 +2233,9 @@ Anatomy:
 | row hover | filter brightness(0.9) | css:4779-c36ad395.css ._2V6ug:hover:not(._2wryV) @media (hover:hover) |
 | row active | translateY(2px), ::before box-shadow none | css:4779-c36ad395.css ._2V6ug:active:not(._2wryV) |
 
-Tokens (dark): panel background / border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); title / status color `text.primary` #F1F7FB (eel, dark); subtext color `text.secondary` #DCE6EC (wolf, dark); row (enabled) face / border+lip `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark), lip box-shadow 0 2px; row label (enabled) color `text.primary` #F1F7FB (eel, dark); row label (disabled) color `text.secondary` #DCE6EC (wolf, dark); FREE TRIAL color #CF17C8 (nova); gem price color `text.link` #49C0F8 (macaw, dark), shown grayscale(1) when disabled
+Tokens (dark): panel background / border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); title / status color `text.primary` #F1F7FB (eel, dark); subtext color `text.secondary` #DCE6EC (wolf, dark); row (enabled) face / border+lip `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark), lip box-shadow 0 2px; row label (enabled) color `text.primary` #F1F7FB (eel, dark); row label (disabled) color `text.secondary` #DCE6EC (wolf, dark); FREE TRIAL color `gamification.super.label` #CF17C8 (nova); gem price color `text.link` #49C0F8 (macaw, dark), shown grayscale(1) when disabled
 
-Tokens (light): panel background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); title / status color `text.primary` #4B4B4B (eel, light); status time color `accent.danger.text` #FF4B4B (cardinal, light); subtext color `text.secondary` #777777 (wolf, light); row face / border+lip `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); row label color `text.primary` #4B4B4B (eel, light); FREE TRIAL color #CF17C8 (nova); gem price color `text.link` #1CB0F6 (macaw, light)
+Tokens (light): panel background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); title / status color `text.primary` #4B4B4B (eel, light); status time color `accent.danger.text` #FF4B4B (cardinal, light); subtext color `text.secondary` #777777 (wolf, light); row face / border+lip `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); row label color `text.primary` #4B4B4B (eel, light); FREE TRIAL color `gamification.super.label` #CF17C8 (nova); gem price color `text.link` #1CB0F6 (macaw, light)
 
 Type: title 700 25px/28px; status line 700 19px, line box 20px; subtext 500 17px/24px; row label / FREE TRIAL / price 700 15px/18px uppercase, letter-spacing 0 (uapW2 override)
 
@@ -2274,9 +2274,9 @@ Anatomy:
 | row hover / focus / focus-within (not current) | background polar (#F7F7F7 light, #202F36 dark) | css:5275-8898b509.css ._2xxCs ._1aVVk:hover:not(._3dQ3c):not(._1WRXX) @media (hover:hover), :focus, :focus-within |
 | add row hover / focus | background polar | css:5275-8898b509.css ._2xxCs ._2jW-1:hover:not(._3dQ3c):not(._1WRXX) |
 
-Tokens (dark): panel background / border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); header text / rule `text.tertiary` #52656D (hare, dark) / `border.default` #37464F (swan, dark); course row text `text.primary` #F1F7FB (eel, dark); current course row background / text `surface.selected` #202F36 (iguana, dark) / #1899D6 (whale); add row rule / text `border.default` #37464F (swan, dark) / `text.primary` #F1F7FB (eel, dark); flag outline #FFFFFF (snow-always-light)
+Tokens (dark): panel background / border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); header text / rule `text.tertiary` #52656D (hare, dark) / `border.default` #37464F (swan, dark); course row text `text.primary` #F1F7FB (eel, dark); current course row background / text `surface.selected` #202F36 (iguana, dark) / `text.selected` #1899D6 (whale); add row rule / text `border.default` #37464F (swan, dark) / `text.primary` #F1F7FB (eel, dark); flag outline `text.onColor` #FFFFFF (snow-always-light)
 
-Tokens (light): panel background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); header text / rule `text.tertiary` #AFAFAF (hare, light) / `border.default` #E5E5E5 (swan, light); course row text `text.primary` #4B4B4B (eel, light); current course row background / text `surface.selected` #DDF4FF (iguana, light) / #1899D6 (whale); add row rule / text `border.default` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)
+Tokens (light): panel background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); header text / rule `text.tertiary` #AFAFAF (hare, light) / `border.default` #E5E5E5 (swan, light); course row text `text.primary` #4B4B4B (eel, light); current course row background / text `surface.selected` #DDF4FF (iguana, light) / `text.selected` #1899D6 (whale); add row rule / text `border.default` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)
 
 Type: header 700 15px uppercase, line box 20px; course name / add label 700 17px/20px
 
@@ -2334,14 +2334,14 @@ Anatomy:
 | current user | row background swan, online dot ring swan | captured:leaderboard-dark-populated (#259); leaderboard-light-default (#272) |
 | current user in promotion zone | background sea-sponge, rank/name/XP tree-frog, dot ring sea-sponge | captured:leaderboard-dark-mobile (#125), leaderboard-light-mobile (#137); css:1008-b4d34396.css .MytTp._27HUw |
 | rank 1 to 3 | gold / silver / bronze medal images instead of numbers | captured:leaderboard-dark-top cl=_33f2x (#166, #174, #182) |
-| demotion zone row | current user: background walking-fish (L #FFDFE0; dark uses polar #202F36), text fire-ant (L #EA2B2B, D #D84848); rank colour fire-ant | css:1008-b4d34396.css .MytTp._1XTsS, ._1XTsS ._1kz8P, html[data-duo-theme=dark] .MytTp._1XTsS (not captured) |
+| demotion zone row | current user: background walking-fish (L #FFDFE0; dark uses `gamification.league.demotedRow` polar #202F36), text fire-ant (L #EA2B2B, D #D84848); rank colour fire-ant | css:1008-b4d34396.css .MytTp._1XTsS, ._1XTsS ._1kz8P, html[data-duo-theme=dark] .MytTp._1XTsS (not captured) |
 | demotion divider | fire-ant text; class .PshIT sits beside .KWJR3 in the stylesheet, its use as the demotion divider is inferred | css:1008-b4d34396.css .PshIT (not captured) |
-| diamond / top league current user | background diamond-highlight #E7FBFB (dark polar), text diamond #38D0D0; another variant uses a background image with betta #9069CD text | css:1008-b4d34396.css .MytTp._7trGg, .MytTp.zGzKm (not captured) |
+| diamond / top league current user | background `palette.light.diamond-highlight` diamond-highlight #E7FBFB (dark polar), text `gamification.league.diamond` diamond #38D0D0; another variant uses a background image with `palette.light.betta` betta #9069CD text | css:1008-b4d34396.css .MytTp._7trGg, .MytTp.zGzKm (not captured) |
 | not joined (before first lesson of the week) | join prompt + START A LESSON, skeleton rows, sticky current-user bar with "-" rank and 0 XP in hare | captured:leaderboard-dark-default (#159 to #175) |
 
-Tokens (dark): header background `surface.default` #131F24 (snow, dark); league name / names / rank outside zone color `text.body` #F1F7FB (black-text, dark); subtitle color `text.secondary` #DCE6EC (wolf, dark); time left color `gamification.xp` #FFC700 (bee, dark); rule color `border.default` #37464F (swan, dark); rank in promotion zone color `status.successText` #79B933 (tree-frog, dark); XP color `text.secondary` #DCE6EC (wolf, dark); online dot fill / ring `accent.primary.face` #93D333 (owl, dark) / `text.onPrimary` #131F24 (snow, dark); status bubble fill / ring #FFFFFF (snow-always-light) / `border.default` #37464F (swan, dark); letter avatar fill / letter fox #FFAB33, beetle #CE82FF / `surface.default` #131F24 (snow, dark); row hover background `surface.subtle` #202F36 (polar, dark); current user row background / dot ring `border.default` #37464F (swan, dark) / #37464F; current user in promotion zone background / text `gamification.league.promotedRow` #202F36 (sea-sponge, dark) / `accent.primary.lip` #79B933 (tree-frog, dark); promotion divider color `accent.primary.lip` #79B933 (tree-frog, dark); not joined: START A LESSON face / lip / text `text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) / `text.link` #49C0F8 (macaw, dark); not joined: user bar background / text `gamification.league.demotedRow` #202F36 (polar, dark) / `text.tertiary` #52656D (hare, dark)
+Tokens (dark): header background `surface.default` #131F24 (snow, dark); league name / names / rank outside zone color `text.body` #F1F7FB (black-text, dark); subtitle color `text.secondary` #DCE6EC (wolf, dark); time left color `gamification.xp` #FFC700 (bee, dark); rule color `border.default` #37464F (swan, dark); rank in promotion zone color `status.successText` #79B933 (tree-frog, dark); XP color `text.secondary` #DCE6EC (wolf, dark); online dot fill / ring `accent.primary.face` #93D333 (owl, dark) / `text.onPrimary` #131F24 (snow, dark); status bubble fill / ring `dataViz.progress.shine` #FFFFFF (snow-always-light) / `border.default` #37464F (swan, dark); letter avatar fill / letter `dataViz.avatar.orange` fox #FFAB33, `dataViz.avatar.purple` beetle #CE82FF / `surface.default` #131F24 (snow, dark); row hover background `surface.subtle` #202F36 (polar, dark); current user row background / dot ring `border.default` #37464F (swan, dark) / #37464F; current user in promotion zone background / text `gamification.league.promotedRow` #202F36 (sea-sponge, dark) / `accent.primary.lip` #79B933 (tree-frog, dark); promotion divider color `accent.primary.lip` #79B933 (tree-frog, dark); not joined: START A LESSON face / lip / text `text.onPrimary` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) / `text.link` #49C0F8 (macaw, dark); not joined: user bar background / text `gamification.league.demotedRow` #202F36 (polar, dark) / `text.tertiary` #52656D (hare, dark)
 
-Tokens (light): header background `surface.default` #FFFFFF (snow, light); league name / names / rank outside zone color `text.body` #3C3C3C (black-text, light); subtitle color `text.secondary` #777777 (wolf, light); time left color `gamification.xp` #FFC800 (bee, light); rule color `border.default` #E5E5E5 (swan, light); rank in promotion zone color `status.successText` #58A700 (tree-frog, light); XP color `text.secondary` #777777 (wolf, light); online dot fill / ring `accent.primary.face` #58CC02 (owl, light) / `text.onPrimary` #FFFFFF (snow, light); letter avatar fill / letter beetle #CE82FF, fox #FF9600, cardinal #FF4B4B / `surface.default` #FFFFFF (snow, light); row hover background `surface.subtle` #F7F7F7 (polar, light); current user row background `surface.disabled` #E5E5E5 (swan, light); current user in promotion zone background / text `gamification.league.promotedRow` #D7FFB8 (sea-sponge, light) / `accent.primary.lip` #58A700 (tree-frog, light); promotion divider color `accent.primary.lip` #58A700 (tree-frog, light)
+Tokens (light): header background `surface.default` #FFFFFF (snow, light); league name / names / rank outside zone color `text.body` #3C3C3C (black-text, light); subtitle color `text.secondary` #777777 (wolf, light); time left color `gamification.xp` #FFC800 (bee, light); rule color `border.default` #E5E5E5 (swan, light); rank in promotion zone color `status.successText` #58A700 (tree-frog, light); XP color `text.secondary` #777777 (wolf, light); online dot fill / ring `accent.primary.face` #58CC02 (owl, light) / `text.onPrimary` #FFFFFF (snow, light); letter avatar fill / letter `dataViz.avatar.purple` beetle #CE82FF, `dataViz.avatar.orange` fox #FF9600, `accent.danger.face` cardinal #FF4B4B / `surface.default` #FFFFFF (snow, light); row hover background `surface.subtle` #F7F7F7 (polar, light); current user row background `surface.disabled` #E5E5E5 (swan, light); current user in promotion zone background / text `gamification.league.promotedRow` #D7FFB8 (sea-sponge, light) / `accent.primary.lip` #58A700 (tree-frog, light); promotion divider color `accent.primary.lip` #58A700 (tree-frog, light)
 
 Type: league name 700 25px, line box 20px; subtitle 500 19px; time left 700 17px; rank number / name 700 17px/20px; XP 500 17px/20px, right aligned; promotion divider 700 15px, letter-spacing 0.8px, uppercase
 
@@ -2384,7 +2384,7 @@ Anatomy:
 | CLEAR hover | filter brightness(1.1) | css:4779-c36ad395.css .c1Mv-:hover |
 | no status set | bubble hidden | not captured |
 
-Tokens (dark): card background / border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); title color `text.primary` #F1F7FB (eel, dark); CLEAR color `text.link` #49C0F8 (macaw, dark); tile face / border+lip `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); owl tiles face `accent.primary.face` #93D333 (owl, dark); selected tile border+lip `border.selected` #3F85A7 (blue-jay, dark); bubble fill / ring #FFFFFF (snow-always-light), owl status #93D333 (owl) / `border.default` #37464F (swan, dark); online dot fill / ring `accent.primary.face` #93D333 (owl, dark) / `text.onPrimary` #131F24 (snow, dark)
+Tokens (dark): card background / border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); title color `text.primary` #F1F7FB (eel, dark); CLEAR color `text.link` #49C0F8 (macaw, dark); tile face / border+lip `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); owl tiles face `accent.primary.face` #93D333 (owl, dark); selected tile border+lip `border.selected` #3F85A7 (blue-jay, dark); bubble fill / ring `dataViz.progress.shine` #FFFFFF (snow-always-light), owl status `accent.primary.face` #93D333 (owl) / `border.default` #37464F (swan, dark); online dot fill / ring `accent.primary.face` #93D333 (owl, dark) / `text.onPrimary` #131F24 (snow, dark)
 
 Tokens (light): card background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); title color `text.primary` #4B4B4B (eel, light); CLEAR color `text.link` #1CB0F6 (macaw, light); tile face / border+lip `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); owl tiles face `accent.primary.face` #58CC02 (owl, light); selected tile border+lip `border.selected` #84D8FF (blue-jay, light)
 
@@ -2433,9 +2433,9 @@ Anatomy:
 | partial progress | fill clipped to --__internal__progress-bar-value; label split between track and fill colours | css:4779-c36ad395.css ._1jSC8, ._3jkB9 (not captured) |
 | VIEW ALL hover | filter brightness(1.1) | css:4779-c36ad395.css .c1Mv-:hover |
 
-Tokens (dark): card background / border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); section title / quest title color `text.primary` #F1F7FB (eel, dark); timer color `status.warningText` #FFAB33 (fox, dark); `gamification.xp` #FFC700 (bee, dark) on mobile; bar track background `surface.disabled` #37464F (swan, dark); bar fill background `dataViz.progress.fillSecondary` #FFC700 (bee, dark); shine fill #FFFFFF (snow-always-light) @0.2; label on track color #AFAFAF (hare-always-light); label on fill color #CD7900 (guinea-pig-always-light); locked card background / text / border `gamification.league.demotedRow` #202F36 (polar, dark) / `text.tertiary` #52656D (hare, dark) / `border.default` #37464F (swan, dark); VIEW ALL (rail) color `text.link` #49C0F8 (macaw, dark)
+Tokens (dark): card background / border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); section title / quest title color `text.primary` #F1F7FB (eel, dark); timer color `status.warningText` #FFAB33 (fox, dark); `gamification.xp` #FFC700 (bee, dark) on mobile; bar track background `surface.disabled` #37464F (swan, dark); bar fill background `dataViz.progress.fillSecondary` #FFC700 (bee, dark); shine fill `dataViz.progress.shine` #FFFFFF (snow-always-light) @0.2; label on track color `dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light); label on fill color `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light); locked card background / text / border `gamification.league.demotedRow` #202F36 (polar, dark) / `text.tertiary` #52656D (hare, dark) / `border.default` #37464F (swan, dark); VIEW ALL (rail) color `text.link` #49C0F8 (macaw, dark)
 
-Tokens (light): card background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); section title / quest title color `text.primary` #4B4B4B (eel, light); timer color `status.warningText` #FF9600 (fox, light); bar track background `surface.disabled` #E5E5E5 (swan, light); bar fill background `dataViz.progress.fillSecondary` #FFC800 (bee, light); shine fill #FFFFFF @0.2; label on track color #AFAFAF (hare-always-light); label on fill color #CD7900 (guinea-pig-always-light); locked card background / text / border `surface.subtle` #F7F7F7 (polar, light) / `text.tertiary` #AFAFAF (hare, light) / `border.default` #E5E5E5 (swan, light); VIEW ALL (rail) color `text.link` #1CB0F6 (macaw, light)
+Tokens (light): card background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); section title / quest title color `text.primary` #4B4B4B (eel, light); timer color `status.warningText` #FF9600 (fox, light); bar track background `surface.disabled` #E5E5E5 (swan, light); bar fill background `dataViz.progress.fillSecondary` #FFC800 (bee, light); shine fill #FFFFFF @0.2; label on track color `dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light); label on fill color `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light); locked card background / text / border `surface.subtle` #F7F7F7 (polar, light) / `text.tertiary` #AFAFAF (hare, light) / `border.default` #E5E5E5 (swan, light); VIEW ALL (rail) color `text.link` #1CB0F6 (macaw, light)
 
 Type: page section title 700 25px/28px; rail card title 700 19px/28px; timer 700 17px uppercase; quest title 700 19px/26px page, 700 17px/24px rail; progress label 700 14px, letter-spacing 0.56px (.04em), uppercase, line-height = bar height, centred; locked card 700 19px/28px
 
@@ -2526,7 +2526,7 @@ Tokens (dark):
 | description | color | `text.secondary` #DCE6EC (wolf, dark) | profile-dark-default #328; css:5515 ._7Cbsk |
 | progress track | background | `gamification.streakInactive` #37464F (swan, dark) | profile-dark-default #323; css:4779 ._3yKMC |
 | progress fill | background | `gamification.xp` #FFC700 (bee, dark) | profile-dark-default #324, #325 |
-| progress shine | background | #FFFFFF (snow-always-light) @0.2 opacity | profile-dark-default #326; css:4779 ._1EFTr |
+| progress shine | background | `text.onColor` #FFFFFF (snow-always-light) @0.2 opacity | profile-dark-default #326; css:4779 ._1EFTr |
 | level label (red/purple tiles) | color | `text.onPrimary` #131F24 (snow, dark) | profile-dark-default #313, #341; css:4243 ._1sF2c |
 | level label (gold tile, Sage) | color | `feedback.neutral.text` #D79433 (guinea-pig, dark) | profile-dark-default #332; css:4243 ._1K2bC |
 | badge tile art | background-image | achievements/217492e7...svg (Wildfire), ee0cbd16...svg (Sage), a7018d3f...svg (Champion); same art in both themes | profile-dark-default #312, #331, #340; css:4243 .bvEQe/._1U6RL/._3rkbr |
@@ -2541,7 +2541,7 @@ Tokens (light):
 | description | color | `text.secondary` #777777 (wolf, light) | profile-light-default cl=_7Cbsk (#339) |
 | progress track | background | `gamification.streakInactive` #E5E5E5 (swan, light) | profile-light-default cl=_3yKMC (#334) |
 | progress fill | background | `gamification.xp` #FFC800 (bee, light) | profile-light-default cl=_27NV6 (#335) |
-| progress shine | background | #FFFFFF (snow-always-light) @0.2 opacity | profile-light-default cl=_1EFTr (#337) |
+| progress shine | background | `text.onColor` #FFFFFF (snow-always-light) @0.2 opacity | profile-light-default cl=_1EFTr (#337) |
 | level label (red/purple tiles) | color | `text.onPrimary` #FFFFFF (snow, light) | profile-light-default #324, #352 |
 | level label (gold tile) | color | `feedback.neutral.text` #CD7900 (guinea-pig, light) | profile-light-default #343 |
 
@@ -2595,8 +2595,8 @@ Tokens (dark):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| banner | background | #8CE31B (NO PALETTE MATCH: user avatar colour from --avatars-background-color; fallback snow #131F24) | profile-dark-default #205; css:5515 .eGQis |
-| edit button face | background | #8CE31B (same avatar colour) with border #000000 @0.30 (black) and 2px lip shadow black @0.30 | profile-dark-default #206 ::before; css:5515 ._3Y-wy |
+| banner | background | #8CE31B (NO PALETTE MATCH: user avatar colour from --avatars-background-color; fallback `text.onPrimary` snow #131F24) | profile-dark-default #205; css:5515 .eGQis |
+| edit button face | background | #8CE31B (same avatar colour) with border `border.onColor` #000000 @0.30 (black) and 2px lip shadow black @0.30 | profile-dark-default #206 ::before; css:5515 ._3Y-wy |
 | edit icon | fill | `palette.dark.eel-always-light` #4B4B4B (eel-always-light, dark) | profile-dark-default #209 |
 | name | color | `text.body` #F1F7FB (black-text, dark) | baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #217 |
 | handle | color | `text.tertiary` #52656D (hare, dark) | profile-dark-default #218; css:5515 ._1Fdxc |
@@ -2609,8 +2609,8 @@ Tokens (light):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| banner | background | #8CE31B (NO PALETTE MATCH, avatar colour; fallback snow #FFFFFF) | profile-light-default cl=eGQis (#206) |
-| edit button face | background | #8CE31B with border #000000 @0.30 (black) | profile-light-default #207 |
+| banner | background | #8CE31B (NO PALETTE MATCH, avatar colour; fallback `text.onPrimary` snow #FFFFFF) | profile-light-default cl=eGQis (#206) |
+| edit button face | background | #8CE31B with border `background.scrim` #000000 @0.30 (black) | profile-light-default #207 |
 | edit icon | fill | `text.primary` #4B4B4B (eel, light) | profile-light-default #210 |
 | name | color | `text.body` #3C3C3C (black-text, light) | baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #218 |
 | handle | color | `text.tertiary` #AFAFAF (hare, light) | profile-light-default #219 |
@@ -2670,7 +2670,7 @@ Tokens (dark):
 | value (active) | color | `text.body` #F1F7FB (black-text, dark) | baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #248 |
 | value (inactive streak) | color | `text.tertiary` #52656D (hare, dark) | profile-dark-default #242; css:5515 ._1kcT_ h4 |
 | label | color | `text.tertiary` #52656D (hare, dark) | profile-dark-default #243; css:5515 ._3oUUc |
-| week badge | background / text / border | bg #CD7900 (guinea-pig-always-light), text + border `text.onPrimary` #131F24 (snow, dark) | profile-dark-mobile #92; css:5515 ._1eerR, ._3qbFZ |
+| week badge | background / text / border | bg `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light), text + border `text.onPrimary` #131F24 (snow, dark) | profile-dark-mobile #92; css:5515 ._1eerR, ._3qbFZ |
 | icons | image | streak inactive icons/65b8a029...svg (grey flame); XP profile/01ce3a81...svg; league leagues/19218167...svg (Bronze); top-3 profile/3f97ae33...svg | profile-dark-default #240, #246, #252, #258 |
 
 Tokens (light):
@@ -2680,7 +2680,7 @@ Tokens (light):
 | tile | border-color | `gamification.streakInactive` #E5E5E5 (swan, light) | profile-light-default #249 |
 | value | color | `text.body` #3C3C3C (black-text, light) | baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #252 |
 | label | color | `text.tertiary` #AFAFAF (hare, light) | profile-light-default #253 |
-| week badge | background / text / border | bg #CD7900 (guinea-pig-always-light), text + border `text.onPrimary` #FFFFFF (snow, light) | profile-light-default #261 |
+| week badge | background / text / border | bg `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light), text + border `text.onPrimary` #FFFFFF (snow, light) | profile-light-default #261 |
 | streak icon (active) | image | profile/8a6dca76...svg (orange flame) | profile-light-default #250 |
 
 Type:
@@ -2801,8 +2801,8 @@ Tokens (dark):
 | time | color | `text.tertiary` #52656D (hare, dark) | profile-dark-default #97 |
 | event text | color | `text.body` #F1F7FB (black-text, dark) | baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #98 |
 | event art | background | `text.onPrimary` #131F24 (snow, dark) | profile-dark-default #100; css:5515 ._18A1Y |
-| CELEBRATE | face / border / label | face #131F24 (snow), border + `borderWidth.2` 2px lip #37464F (swan), label #F1F7FB (eel) | profile-dark-default #103 ::before; css:4779 ._2ZO5y |
-| reaction ring | outer / inner | outer bg + border #131F24 (snow), inner border #37464F (swan) | profile-dark-default #109, #110 |
+| CELEBRATE | face / border / label | face `text.onPrimary` #131F24 (snow), border + `borderWidth.2` 2px lip `gamification.streakInactive` #37464F (swan), label `text.primary` #F1F7FB (eel) | profile-dark-default #103 ::before; css:4779 ._2ZO5y |
+| reaction ring | outer / inner | outer bg + border `text.onPrimary` #131F24 (snow), inner border `border.default` #37464F (swan) | profile-dark-default #109, #110 |
 | reaction count | color | `text.tertiary` #52656D (hare, dark) | profile-dark-default #112 |
 | View all | color | `text.primary` #F1F7FB (eel, dark) | css:5515 ._1eHsP |
 
@@ -2814,8 +2814,8 @@ Tokens (light):
 | name | color | `text.primary` #4B4B4B (eel, light) | profile-light-default #97 |
 | time | color | `text.tertiary` #AFAFAF (hare, light) | profile-light-default #98 |
 | event text | color | `text.body` #3C3C3C (black-text, light) | baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #99 |
-| CELEBRATE | face / border / label | face #FFFFFF (snow), border + lip #E5E5E5 (swan), label #4B4B4B (eel) | profile-light-default #104, #106 |
-| reaction ring | outer / inner | outer #FFFFFF (snow), inner border #E5E5E5 (swan) | profile-light-default #110, #111 |
+| CELEBRATE | face / border / label | face `text.onPrimary` #FFFFFF (snow), border + lip `gamification.streakInactive` #E5E5E5 (swan), label `text.primary` #4B4B4B (eel) | profile-light-default #104, #106 |
+| reaction ring | outer / inner | outer `text.onPrimary` #FFFFFF (snow), inner border `border.default` #E5E5E5 (swan) | profile-light-default #110, #111 |
 | reaction count | color | `text.tertiary` #AFAFAF (hare, light) | profile-light-default #113 |
 | View all | color | `text.primary` #4B4B4B (eel, light) | profile-light-default #139 |
 
@@ -3042,10 +3042,10 @@ Tokens (dark):
 | row rule | border-color | `border.default` #37464F (swan, dark) | shop-dark-default #157 |
 | title | color | `text.body` #F1F7FB (black-text, dark) | baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); shop-dark-default #161 |
 | description | color | `text.secondary` #DCE6EC (wolf, dark) | shop-dark-default #162; css:8566 ._23KGP |
-| price button | face / border / label | face #131F24 (snow), border + lip #37464F (swan), label #49C0F8 (macaw) | shop-dark-default #173; css:4779 ._3xDVI |
-| FREE TRIAL label | color | #CF17C8 (nova) | shop-dark-default #165; css:8566 ._2eqoY |
-| disabled (FULL / EQUIPPED) | face / border / label | face #131F24 (snow), border #37464F (swan), label #37464F (swan), no lip | shop-dark-default #159; css:app ._3U5_i |
-| pill (not equipped) | bg / text | bg #37464F (swan), text #52656D (hare) | shop-dark-default #177; css:8566 ._2tJ-w |
+| price button | face / border / label | face `text.onPrimary` #131F24 (snow), border + lip `gamification.streakInactive` #37464F (swan), label `text.link` #49C0F8 (macaw) | shop-dark-default #173; css:4779 ._3xDVI |
+| FREE TRIAL label | color | `gamification.super.label` #CF17C8 (nova) | shop-dark-default #165; css:8566 ._2eqoY |
+| disabled (FULL / EQUIPPED) | face / border / label | face `text.onPrimary` #131F24 (snow), border `border.default` #37464F (swan), label `border.default` #37464F (swan), no lip | shop-dark-default #159; css:app ._3U5_i |
+| pill (not equipped) | bg / text | bg `gamification.streakInactive` #37464F (swan), text `text.tertiary` #52656D (hare) | shop-dark-default #177; css:8566 ._2tJ-w |
 | pill (equipped) | bg / text | bg `gamification.league.promotedRow` #202F36 (sea-sponge, dark), text `accent.primary.face` #93D333 (owl, dark) | css:8566 ._1-6PO; captured in shop-dark-mobile #83 |
 | gem | background-image | gems/45c14e05...svg | shop-dark-default #174 |
 
@@ -3056,9 +3056,9 @@ Tokens (light):
 | row rule | border-color | `border.default` #E5E5E5 (swan, light) | shop-light-default #167 |
 | title | color | `text.body` #3C3C3C (black-text, light) | baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); shop-light-default #171 |
 | description | color | `text.secondary` #777777 (wolf, light) | shop-light-default #172 |
-| price button | face / border / label | face #FFFFFF (snow), border + lip #E5E5E5 (swan), label #1CB0F6 (macaw) | shop-light-default #169 |
-| FREE TRIAL label | color | #CF17C8 (nova) | shop-light-default #175 |
-| disabled (EQUIPPED) | face / border / label | face #FFFFFF (snow), border #E5E5E5 (swan), label #E5E5E5 (swan) | shop-light-default #183, #184 |
+| price button | face / border / label | face `text.onPrimary` #FFFFFF (snow), border + lip `gamification.streakInactive` #E5E5E5 (swan), label `text.link` #1CB0F6 (macaw) | shop-light-default #169 |
+| FREE TRIAL label | color | `gamification.super.label` #CF17C8 (nova) | shop-light-default #175 |
+| disabled (EQUIPPED) | face / border / label | face `text.onPrimary` #FFFFFF (snow), border `gamification.streakInactive` #E5E5E5 (swan), label `gamification.streakInactive` #E5E5E5 (swan) | shop-light-default #183, #184 |
 | pill (equipped) | bg / text | bg `gamification.league.promotedRow` #D7FFB8 (sea-sponge, light), text `accent.primary.face` #58CC02 (owl, light) | shop-light-default cl=_1-6PO _2I6Qk (#187) |
 
 Type:
@@ -3109,22 +3109,22 @@ Tokens (dark):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| A card | bg / border / body text | bg #131F24 (snow), border #37464F (swan), body #DCE6EC (wolf) | learn-dark-default #87, #92; css:7668 ._16rRh |
+| A card | bg / border / body text | bg `text.onPrimary` #131F24 (snow), border `gamification.streakInactive` #37464F (swan), body `text.secondary` #DCE6EC (wolf) | learn-dark-default #87, #92; css:7668 ._16rRh |
 | A title | color | `text.primary` #F1F7FB (eel, dark) | css:7668 ._3f4H2; learn-dark-default #91 |
-| A button | face / lip / label | face #3C4DFF (cosmos), lip #3F22EC (nebula), label #FFFFFF (snow-always-light) | learn-dark-default #93 ::before; css:app-f2ef02f8.css ._3b8r8 |
-| B/C banner | background | radial-gradient(216% 106% at 6% 3%, #26F663 (gamma) @0.3 0, #268AFF (starlight) @0.3 52%, #FC55FF (quasar) @0.3 100%) over #000437 (eclipse); text #FFFFFF (snow-always-light) | shop-dark-default #145; css:8566 .MGk8p |
-| B/C button | face / lip / label | face #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label #000437 (eclipse) | shop-dark-default #152 ::before; css:app ._19taU |
-| C body emphasis | color | "Super Duolingo" #FFFFFF (snow-always-light, !important via .EryQo) bold | settings-super-dark-default #108; css:7668 .EryQo>span>span |
+| A button | face / lip / label | face `gamification.super.face` #3C4DFF (cosmos), lip `gamification.super.lip` #3F22EC (nebula), label `text.onColor` #FFFFFF (snow-always-light) | learn-dark-default #93 ::before; css:app-f2ef02f8.css ._3b8r8 |
+| B/C banner | background | radial-gradient(216% 106% at 6% 3%, `palette.light.gamma` #26F663 (gamma) @0.3 0, `palette.light.starlight` #268AFF (starlight) @0.3 52%, `palette.light.quasar` #FC55FF (quasar) @0.3 100%) over `gamification.super.surface` #000437 (eclipse); text `text.onColor` #FFFFFF (snow-always-light) | shop-dark-default #145; css:8566 .MGk8p |
+| B/C button | face / lip / label | face `text.onColor` #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse) | shop-dark-default #152 ::before; css:app ._19taU |
+| C body emphasis | color | "Super Duolingo" `text.onColor` #FFFFFF (snow-always-light, !important via .EryQo) bold | settings-super-dark-default #108; css:7668 .EryQo>span>span |
 
 Tokens (light):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| A card | bg / border / body text | bg #FFFFFF (snow), border #E5E5E5 (swan), body #777777 (wolf) | learn-light-default #88, #93 |
+| A card | bg / border / body text | bg `text.onPrimary` #FFFFFF (snow), border `gamification.streakInactive` #E5E5E5 (swan), body `text.secondary` #777777 (wolf) | learn-light-default #88, #93 |
 | A title | color | `text.primary` #4B4B4B (eel, light) | learn-light-default #92 |
-| A button | face / lip / label | face #3C4DFF (cosmos), lip #3F22EC (nebula), label #FFFFFF | learn-light-default #94 |
-| B/C banner | background | same gradient over #000437 (eclipse): theme-independent | shop-light-default #154; settings-super-light-default #102 |
-| B/C button | face / lip / label | face #FFFFFF, lip #FFFFFF @0.5, label #000437 (eclipse) | shop-light-default #163 |
+| A button | face / lip / label | face `gamification.super.face` #3C4DFF (cosmos), lip `gamification.super.lip` #3F22EC (nebula), label #FFFFFF | learn-light-default #94 |
+| B/C banner | background | same gradient over `gamification.super.surface` #000437 (eclipse): theme-independent | shop-light-default #154; settings-super-light-default #102 |
+| B/C button | face / lip / label | face #FFFFFF, lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse) | shop-light-default #163 |
 
 Type:
 - A title: duolingo-sans 700 19px / 28px (learn-dark-default #91)
@@ -3171,17 +3171,17 @@ Tokens (dark):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| card | background | radial-gradient(216% 106% at 6% 3%, #26F663 (gamma) @0.3 0, #268AFF (starlight) @0.3 52%, #FC55FF (quasar) @0.3 100%) over #000437 (eclipse) | shop-dark-default #114; css:1327 ._3Mmv9 |
-| title / body / link | color | #FFFFFF (snow-always-light); body opacity 0.8 | shop-dark-default #117, #118, #124; css:1327 ._3IB6P, ._yQL7, ._1d5x2 a |
-| button | face / lip / label | face #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label #000437 (eclipse) | shop-dark-default #120 ::before; css:app ._19taU |
+| card | background | radial-gradient(216% 106% at 6% 3%, `palette.light.gamma` #26F663 (gamma) @0.3 0, `palette.light.starlight` #268AFF (starlight) @0.3 52%, `palette.light.quasar` #FC55FF (quasar) @0.3 100%) over `gamification.super.surface` #000437 (eclipse) | shop-dark-default #114; css:1327 ._3Mmv9 |
+| title / body / link | color | `text.onColor` #FFFFFF (snow-always-light); body opacity 0.8 | shop-dark-default #117, #118, #124; css:1327 ._3IB6P, ._yQL7, ._1d5x2 a |
+| button | face / lip / label | face `text.onColor` #FFFFFF (snow-always-light), lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse) | shop-dark-default #120 ::before; css:app ._19taU |
 
 Tokens (light):
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | card | background | identical to dark (all tokens are always-light / eclipse) | learn-light-default #132; shop-light-default #122 |
-| title / body / link | color | #FFFFFF (snow-always-light); body opacity 0.8 | learn-light-default #135, #136 |
-| button | face / lip / label | face #FFFFFF, lip #FFFFFF @0.5, label #000437 (eclipse) | learn-light-default #138 |
+| title / body / link | color | `text.onColor` #FFFFFF (snow-always-light); body opacity 0.8 | learn-light-default #135, #136 |
+| button | face / lip / label | face #FFFFFF, lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse) | learn-light-default #138 |
 
 Type:
 - title: duolingo-sans 700 24px / 30px (1.25), centred (shop-dark-default #117)
