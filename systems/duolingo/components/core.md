@@ -21,54 +21,54 @@ Face = `::before` fill (legacy FOLLOW: `::after`). Lip = `::before` box-shadow c
 
 | Variant | Theme | Face | Lip | Border | Text | Size (WxH, radius) | Dump node | Crop |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| primary-green | light | #58CC02 (owl, light) | #58A700 (tree-frog, light) | none | #FFFFFF (snow, light) | 150x50, 16px | lesson-light-challenge-tiles-partial#167 | [light](crops/button-primary-green-light.png) |
-| primary-green | dark | #93D333 (owl, dark) | #79B933 (tree-frog, dark) | none | #131F24 (snow, dark) | 150x50, 16px | lesson-dark-challenge-tiles-partial#136 | [dark](crops/button-primary-green-dark.png) |
-| primary-blue | light | #1CB0F6 (macaw, light) | #1899D6 (whale, light) | none | #FFFFFF (snow, light) | 336x50, 16px | lesson-light-quit-modal#153 | [light](crops/button-primary-blue-light.png) |
-| primary-blue | dark | #49C0F8 (macaw, dark) | #1899D6 (whale, dark) | none | #131F24 (snow, dark) | 336x50, 16px | learn-dark-modal-notifications#477 | [dark](crops/button-primary-blue-dark.png) |
-| primary-blue-juicy | light | #1CB0F6 (macaw, light) | #1899D6 (whale, light) | none | #FFFFFF (snow, light) | 331x48, 16px | characters-light-default#176 | [light](crops/button-primary-blue-juicy-light.png) |
-| primary-blue-juicy | dark | #49C0F8 (macaw, dark) | #1899D6 (whale, dark) | none | #131F24 (snow, dark) | 264x48, 16px | characters-dark-default#168 | [dark](crops/button-primary-blue-juicy-dark.png) |
-| secondary | light | #FFFFFF (snow, light) | #E5E5E5 (swan, light) | #E5E5E5 (swan, light) | #AFAFAF (hare, light) | 150x50, 16px | lesson-light-challenge-tiles-partial#164 | [light](crops/button-secondary-light.png) |
-| secondary | dark | #131F24 (snow, dark) | #37464F (swan, dark) | #37464F (swan, dark) | #52656D (hare, dark) | 150x50, 16px | lesson-dark-challenge-tiles-partial#133 | [dark](crops/button-secondary-dark.png) |
-| secondary-macaw | light | #FFFFFF (snow, light) | #E5E5E5 (swan, light) | #E5E5E5 (swan, light) | #1CB0F6 (macaw, light) | 528x50, 16px | learn-light-path-end#485 | [light](crops/button-secondary-macaw-light.png) |
-| secondary-macaw | dark | #131F24 (snow, dark) | #37464F (swan, dark) | #37464F (swan, dark) | #49C0F8 (macaw, dark) | 416x50, 16px | learn-dark-path-end#475 | [dark](crops/button-secondary-macaw-dark.png) |
-| secondary-eel | light | #FFFFFF (snow, light) | #E5E5E5 (swan, light) | #E5E5E5 (swan, light) | #4B4B4B (eel, light) | 149x50, 16px | profile-light-default#104 | [light](crops/button-secondary-eel-light.png) |
-| secondary-eel | dark | #131F24 (snow, dark) | #37464F (swan, dark) | #37464F (swan, dark) | #F1F7FB (eel, dark) | 149x50, 16px | profile-dark-default#103 | [dark](crops/button-secondary-eel-dark.png) |
-| secondary-juicy-macaw | light | #FFFFFF (snow, light) | #E5E5E5 (swan, light) | #E5E5E5 (swan, light) | #1CB0F6 (macaw, light) | 331x48, 16px | characters-light-default#174 | [light](crops/button-secondary-juicy-macaw-light.png) |
-| secondary-juicy-macaw | dark | #131F24 (snow, dark) | #37464F (swan, dark) | #37464F (swan, dark) | #49C0F8 (macaw, dark) | 264x48, 16px | characters-dark-default#166 | [dark](crops/button-secondary-juicy-macaw-dark.png) |
-| super | light | #3C4DFF (cosmos, light) | #3F22EC (nebula, light) | none | #FFFFFF (snow-always-light, light) | 328x50, 16px | characters-light-default#93 | [light](crops/button-super-light.png) |
-| super | dark | #3C4DFF (cosmos, dark) | #3F22EC (nebula, dark) | none | #FFFFFF (snow-always-light, dark) | 328x50, 16px | characters-dark-default#93 | [dark](crops/button-super-dark.png) |
-| super-inverse | light | #FFFFFF (snow-always-light, light) | #FFFFFF (snow-always-light, light) @ 0.5 alpha | none | #000437 (eclipse, light) | 552x50, 12px | settings-super-light-default#109 | [light](crops/button-super-inverse-light.png) |
-| super-inverse | dark | #FFFFFF (snow-always-light, dark) | #FFFFFF (snow-always-light, dark) @ 0.5 alpha | none | #000437 (eclipse, dark) | 260x50, 12px | settings-super-dark-default#109 | [dark](crops/button-super-inverse-dark.png) |
-| danger | light | #FF4B4B (cardinal, light) | #EA2B2B (fire-ant, light) | none | #FFFFFF (snow, light) | 184x50, 16px | settings-courses-light-remove-confirm#144 | [light](crops/button-danger-light.png) |
-| danger | dark | #EE5555 (cardinal, dark) | #D84848 (fire-ant, dark) | none | #131F24 (snow, dark) | 184x50, 16px | settings-courses-dark-remove-confirm#142 | [dark](crops/button-danger-dark.png) |
-| popover-cta | light | #FFFFFF (snow-always-light, light) | #FFFFFF (snow-always-light, light) @ 0.7 alpha | none | #58CC02 (owl-always-light, light) | 263x50, 16px | learn-light-node-popover#1254 | [light](crops/button-popover-cta-light.png) |
-| popover-cta | dark | #FFFFFF (snow-always-light, dark) | #FFFFFF (snow-always-light, dark) @ 0.7 alpha | none | #58CC02 (owl-always-light, dark) | 263x50, 16px | learn-dark-node-popover#1244 | [dark](crops/button-popover-cta-dark.png) |
-| streak-cta | light | #FFFFFF (snow-always-light, light) | #FFFFFF (snow-always-light, light) @ 0.6 alpha | none | #FF5F00 (streak-panel-friend-background, light) | 196x36, 8px | learn-light-streak-dropdown#140 | [light](crops/button-streak-cta-light.png) |
-| streak-cta | dark | #FFFFFF (snow-always-light, dark) | #FFFFFF (snow-always-light, dark) @ 0.6 alpha | none | #FF5F00 (streak-panel-friend-background, dark) | 196x36, 8px | learn-dark-streak-dropdown#120 | [dark](crops/button-streak-cta-dark.png) |
-| outline-on-colour | light | none | #000000 (black, light) @ 0.2 alpha | #000000 (black, light) @ 0.2 alpha | #FFFFFF (snow, light) | 148x54, 16px | learn-light-completed-popover#168 | [light](crops/button-outline-on-colour-light.png) |
-| outline-on-colour | dark | none | #000000 (black, dark) @ 0.2 alpha | #000000 (black, dark) @ 0.2 alpha | #131F24 (snow, dark) (label renders #FFFFFF (celestia, dark)) | 148x54, 16px | learn-dark-completed-popover#159 | [dark](crops/button-outline-on-colour-dark.png) |
-| text-macaw | light | none | none | none | #1CB0F6 (macaw, light) | 65x18, - | characters-light-default#114 | [light](crops/button-text-macaw-light.png) |
-| text-macaw | dark | none | none | none | #49C0F8 (macaw, dark) | 336x32, - | learn-dark-modal-notifications#479 | [dark](crops/button-text-macaw-dark.png) |
-| text-cardinal | light | none | none | none | #FF4B4B (cardinal, light) | 336x32, - | lesson-light-quit-modal#155 | [light](crops/button-text-cardinal-light.png) |
-| text-cardinal | dark | none | none | none | #EE5555 (cardinal, dark) | 336x32, - | lesson-dark-quit-modal#139 | [dark](crops/button-text-cardinal-dark.png) |
-| link-juicy-cardinal | light | none | none | none | #FF4B4B (cardinal, light) | 85x48, - | settings-courses-light-default#107 | [light](crops/button-link-juicy-cardinal-light.png) |
-| link-juicy-cardinal | dark | none | none | none | #EE5555 (cardinal, dark) | 85x48, - | settings-courses-dark-default#105 | [dark](crops/button-link-juicy-cardinal-dark.png) |
-| link-juicy-macaw-small | light | none | none | none | #1CB0F6 (macaw, light) | 83x32, - | characters-light-default#61 | [light](crops/button-link-juicy-macaw-small-light.png) |
-| link-juicy-macaw-small | dark | none | none | none | #49C0F8 (macaw, dark) | 83x32, - | characters-dark-default#62 | [dark](crops/button-link-juicy-macaw-small-dark.png) |
-| disabled-solid | light | #E5E5E5 (swan, light) | none | none | #AFAFAF (hare, light) | 150x50, 16px | lesson-light-challenge-default#156 | [light](crops/button-disabled-solid-light.png) |
-| disabled-solid | dark | #37464F (swan, dark) | none | none | #52656D (hare, dark) | 150x50, 16px | lesson-dark-challenge-default#152 | [dark](crops/button-disabled-solid-dark.png) |
-| disabled-stroke | light | #FFFFFF (snow, light) | none | #E5E5E5 (swan, light) | #E5E5E5 (swan, light) | 150x50, 16px | shop-light-default#183 | [light](crops/button-disabled-stroke-light.png) |
-| disabled-stroke | dark | #131F24 (snow, dark) | none | #37464F (swan, dark) | #37464F (swan, dark) | 150x50, 16px | shop-dark-default#159 | [dark](crops/button-disabled-stroke-dark.png) |
-| follow-pill | light | #1CB0F6 (macaw, light) | #1899D6 (whale, light) | none | #FFFFFF (snow, light) | 127x36, 8px | user-search-light-results#85 | [light](crops/button-follow-pill-light.png) |
-| follow-pill | dark | #49C0F8 (macaw, dark) | #1899D6 (whale, dark) | none | #131F24 (snow, dark) | 127x36, 8px | user-search-dark-results#85 | [dark](crops/button-follow-pill-dark.png) |
+| primary-green | light | `accent.primary.face` #58CC02 (owl, light) | `accent.primary.lip` #58A700 (tree-frog, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 150x50, 16px | lesson-light-challenge-tiles-partial#167 | [light](crops/button-primary-green-light.png) |
+| primary-green | dark | `accent.primary.face` #93D333 (owl, dark) | `accent.primary.lip` #79B933 (tree-frog, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 150x50, 16px | lesson-dark-challenge-tiles-partial#136 | [dark](crops/button-primary-green-dark.png) |
+| primary-blue | light | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.lip` #1899D6 (whale, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 336x50, 16px | lesson-light-quit-modal#153 | [light](crops/button-primary-blue-light.png) |
+| primary-blue | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 336x50, 16px | learn-dark-modal-notifications#477 | [dark](crops/button-primary-blue-dark.png) |
+| primary-blue-juicy | light | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.lip` #1899D6 (whale, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 331x48, 16px | characters-light-default#176 | [light](crops/button-primary-blue-juicy-light.png) |
+| primary-blue-juicy | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 264x48, 16px | characters-dark-default#168 | [dark](crops/button-primary-blue-juicy-dark.png) |
+| secondary | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | 150x50, 16px | lesson-light-challenge-tiles-partial#164 | [light](crops/button-secondary-light.png) |
+| secondary | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 150x50, 16px | lesson-dark-challenge-tiles-partial#133 | [dark](crops/button-secondary-dark.png) |
+| secondary-macaw | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.link` #1CB0F6 (macaw, light) | 528x50, 16px | learn-light-path-end#485 | [light](crops/button-secondary-macaw-light.png) |
+| secondary-macaw | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.link` #49C0F8 (macaw, dark) | 416x50, 16px | learn-dark-path-end#475 | [dark](crops/button-secondary-macaw-dark.png) |
+| secondary-eel | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.primary` #4B4B4B (eel, light) | 149x50, 16px | profile-light-default#104 | [light](crops/button-secondary-eel-light.png) |
+| secondary-eel | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.primary` #F1F7FB (eel, dark) | 149x50, 16px | profile-dark-default#103 | [dark](crops/button-secondary-eel-dark.png) |
+| secondary-juicy-macaw | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.link` #1CB0F6 (macaw, light) | 331x48, 16px | characters-light-default#174 | [light](crops/button-secondary-juicy-macaw-light.png) |
+| secondary-juicy-macaw | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.link` #49C0F8 (macaw, dark) | 264x48, 16px | characters-dark-default#166 | [dark](crops/button-secondary-juicy-macaw-dark.png) |
+| super | light | `gamification.super.face` #3C4DFF (cosmos, light) | `gamification.super.lip` #3F22EC (nebula, light) | none | `text.onColor` #FFFFFF (snow-always-light, light) | 328x50, 16px | characters-light-default#93 | [light](crops/button-super-light.png) |
+| super | dark | `gamification.super.face` #3C4DFF (cosmos, dark) | `gamification.super.lip` #3F22EC (nebula, dark) | none | `text.onColor` #FFFFFF (snow-always-light, dark) | 328x50, 16px | characters-dark-default#93 | [dark](crops/button-super-dark.png) |
+| super-inverse | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.5 alpha | none | `gamification.super.surface` #000437 (eclipse, light) | 552x50, 12px | settings-super-light-default#109 | [light](crops/button-super-inverse-light.png) |
+| super-inverse | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.5 alpha | none | `gamification.super.surface` #000437 (eclipse, dark) | 260x50, 12px | settings-super-dark-default#109 | [dark](crops/button-super-inverse-dark.png) |
+| danger | light | `accent.danger.face` #FF4B4B (cardinal, light) | `accent.danger.lip` #EA2B2B (fire-ant, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 184x50, 16px | settings-courses-light-remove-confirm#144 | [light](crops/button-danger-light.png) |
+| danger | dark | `accent.danger.face` #EE5555 (cardinal, dark) | `accent.danger.lip` #D84848 (fire-ant, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 184x50, 16px | settings-courses-dark-remove-confirm#142 | [dark](crops/button-danger-dark.png) |
+| popover-cta | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.7 alpha | none | `unitColors.green` #58CC02 (owl-always-light, light) | 263x50, 16px | learn-light-node-popover#1254 | [light](crops/button-popover-cta-light.png) |
+| popover-cta | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.7 alpha | none | `unitColors.green` #58CC02 (owl-always-light, dark) | 263x50, 16px | learn-dark-node-popover#1244 | [dark](crops/button-popover-cta-dark.png) |
+| streak-cta | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.6 alpha | none | `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light) | 196x36, 8px | learn-light-streak-dropdown#140 | [light](crops/button-streak-cta-light.png) |
+| streak-cta | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.6 alpha | none | `palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) | 196x36, 8px | learn-dark-streak-dropdown#120 | [dark](crops/button-streak-cta-dark.png) |
+| outline-on-colour | light | none | `border.onColor` #000000 (black, light) @ 0.2 alpha | `border.onColor` #000000 (black, light) @ 0.2 alpha | `text.onPrimary` #FFFFFF (snow, light) | 148x54, 16px | learn-light-completed-popover#168 | [light](crops/button-outline-on-colour-light.png) |
+| outline-on-colour | dark | none | `border.onColor` #000000 (black, dark) @ 0.2 alpha | `border.onColor` #000000 (black, dark) @ 0.2 alpha | `text.onPrimary` #131F24 (snow, dark) (label renders `palette.dark.celestia` #FFFFFF (celestia, dark)) | 148x54, 16px | learn-dark-completed-popover#159 | [dark](crops/button-outline-on-colour-dark.png) |
+| text-macaw | light | none | none | none | `text.link` #1CB0F6 (macaw, light) | 65x18, - | characters-light-default#114 | [light](crops/button-text-macaw-light.png) |
+| text-macaw | dark | none | none | none | `text.link` #49C0F8 (macaw, dark) | 336x32, - | learn-dark-modal-notifications#479 | [dark](crops/button-text-macaw-dark.png) |
+| text-cardinal | light | none | none | none | `accent.danger.text` #FF4B4B (cardinal, light) | 336x32, - | lesson-light-quit-modal#155 | [light](crops/button-text-cardinal-light.png) |
+| text-cardinal | dark | none | none | none | `accent.danger.text` #EE5555 (cardinal, dark) | 336x32, - | lesson-dark-quit-modal#139 | [dark](crops/button-text-cardinal-dark.png) |
+| link-juicy-cardinal | light | none | none | none | `accent.danger.text` #FF4B4B (cardinal, light) | 85x48, - | settings-courses-light-default#107 | [light](crops/button-link-juicy-cardinal-light.png) |
+| link-juicy-cardinal | dark | none | none | none | `accent.danger.text` #EE5555 (cardinal, dark) | 85x48, - | settings-courses-dark-default#105 | [dark](crops/button-link-juicy-cardinal-dark.png) |
+| link-juicy-macaw-small | light | none | none | none | `text.link` #1CB0F6 (macaw, light) | 83x32, - | characters-light-default#61 | [light](crops/button-link-juicy-macaw-small-light.png) |
+| link-juicy-macaw-small | dark | none | none | none | `text.link` #49C0F8 (macaw, dark) | 83x32, - | characters-dark-default#62 | [dark](crops/button-link-juicy-macaw-small-dark.png) |
+| disabled-solid | light | `surface.disabled` #E5E5E5 (swan, light) | none | none | `text.tertiary` #AFAFAF (hare, light) | 150x50, 16px | lesson-light-challenge-default#156 | [light](crops/button-disabled-solid-light.png) |
+| disabled-solid | dark | `surface.disabled` #37464F (swan, dark) | none | none | `text.tertiary` #52656D (hare, dark) | 150x50, 16px | lesson-dark-challenge-default#152 | [dark](crops/button-disabled-solid-dark.png) |
+| disabled-stroke | light | `surface.default` #FFFFFF (snow, light) | none | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | 150x50, 16px | shop-light-default#183 | [light](crops/button-disabled-stroke-light.png) |
+| disabled-stroke | dark | `surface.default` #131F24 (snow, dark) | none | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | 150x50, 16px | shop-dark-default#159 | [dark](crops/button-disabled-stroke-dark.png) |
+| follow-pill | light | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.lip` #1899D6 (whale, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 127x36, 8px | user-search-light-results#85 | [light](crops/button-follow-pill-light.png) |
+| follow-pill | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 127x36, 8px | user-search-dark-results#85 | [dark](crops/button-follow-pill-dark.png) |
 | invite-small | light | not captured | | | | | | |
-| invite-small | dark | #49C0F8 (macaw, dark) | #1899D6 (whale, dark) | none | #131F24 (snow, dark) | 60x32, 8px | lesson-dark-friend-streak-invite#22 | [dark](crops/button-invite-small-dark.png) |
-| icon-tile | light | #FFFFFF (snow, light) | #E5E5E5 (swan, light) | #E5E5E5 (swan, light) | #AFAFAF (hare, light) | 48x48, 12px | leaderboard-light-default#103 | [light](crops/button-icon-tile-light.png) |
-| icon-tile | dark | #131F24 (snow, dark) | #37464F (swan, dark) | #37464F (swan, dark) | #52656D (hare, dark) | 48x48, 12px | leaderboard-dark-default#102 | [dark](crops/button-icon-tile-dark.png) |
-| icon-tile-selected | light | #58CC02 (owl, light) | #84D8FF (blue-jay, light) | #84D8FF (blue-jay, light) | #AFAFAF (hare, light) | 48x48, 12px | leaderboard-light-default#101 | [light](crops/button-icon-tile-selected-light.png) |
-| icon-tile-selected | dark | #93D333 (owl, dark) | #3F85A7 (blue-jay, dark) | #3F85A7 (blue-jay, dark) | #52656D (hare, dark) | 48x48, 12px | leaderboard-dark-default#100 | [dark](crops/button-icon-tile-selected-dark.png) |
-| fab-stroke | light | #FFFFFF (snow, light) | #E5E5E5 (swan, light) | #E5E5E5 (swan, light) | #AFAFAF (hare, light) | 52x52, 16px | learn-light-completed-popover#1674 | [light](crops/button-fab-stroke-light.png) |
-| fab-stroke | dark | #131F24 (snow, dark) | #37464F (swan, dark) | #37464F (swan, dark) | #52656D (hare, dark) | 52x52, 16px | learn-dark-completed-popover#1664 | [dark](crops/button-fab-stroke-dark.png) |
+| invite-small | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 60x32, 8px | lesson-dark-friend-streak-invite#22 | [dark](crops/button-invite-small-dark.png) |
+| icon-tile | light | `text.onPrimary` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | 48x48, 12px | leaderboard-light-default#103 | [light](crops/button-icon-tile-light.png) |
+| icon-tile | dark | `text.onPrimary` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 48x48, 12px | leaderboard-dark-default#102 | [dark](crops/button-icon-tile-dark.png) |
+| icon-tile-selected | light | `accent.primary.face` #58CC02 (owl, light) | `border.selected` #84D8FF (blue-jay, light) | `border.selected` #84D8FF (blue-jay, light) | `text.tertiary` #AFAFAF (hare, light) | 48x48, 12px | leaderboard-light-default#101 | [light](crops/button-icon-tile-selected-light.png) |
+| icon-tile-selected | dark | `accent.primary.face` #93D333 (owl, dark) | `border.selected` #3F85A7 (blue-jay, dark) | `border.selected` #3F85A7 (blue-jay, dark) | `text.tertiary` #52656D (hare, dark) | 48x48, 12px | leaderboard-dark-default#100 | [dark](crops/button-icon-tile-selected-dark.png) |
+| fab-stroke | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | 52x52, 16px | learn-light-completed-popover#1674 | [light](crops/button-fab-stroke-light.png) |
+| fab-stroke | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 52x52, 16px | learn-dark-completed-popover#1664 | [dark](crops/button-fab-stroke-dark.png) |
 
 | Variant | Label | web-ui variant | Classes | CSS rule(s) defining the colours | Notes |
 | --- | --- | --- | --- | --- | --- |
@@ -120,18 +120,18 @@ Face = `::before` fill (legacy FOLLOW: `::after`). Lip = `::before` box-shadow c
 | size: text no-padding (_1nf6U) | height: auto (18px measured); padding: 0<br>css:4779-c36ad395.css ._1nf6U { --__internal__height:var(--web-ui_button-height,auto); --__internal__padding:var(--web-ui_button-padding,0) } |
 | size: streak CTA (_2loTO) | height: 36px; radius: 8px<br>css:5275-8898b509.css ._2loTO { --web-ui_button-background-color:rgb(var(--color-snow-always-light)); --web-ui_button-border-color:rgb(var(--color-snow-always-light),0.6); --web-ui_button-border-radius:8px; --web-ui_button-color:rgb(var(--color-streak-panel-friend-background)); --web-ui_button-height:36px } |
 | size: full-width player button (_3DbUj) | width: 100% below 700px, auto with min-width 150px at >=700px<br>css:1008-b4d34396.css ._3DbUj { min-width:150px; width:100% }<br>css:1008-b4d34396.css @media (min-width:700px) ._3DbUj { --web-ui_button-font-size:17px; width:auto } |
-| label_icon_gap | FOLLOW: 8px (margin-left on label, user-search-dark-results#87 _2NaX_); web-ui buttons have no built-in gap, icons are laid out by the caller |
+| label_icon_gap | FOLLOW: `space.8` 8px (margin-left on label, user-search-dark-results#87 _2NaX_); web-ui buttons have no built-in gap, icons are laid out by the caller |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| primary-green (dark) | lesson-dark-challenge-tiles-partial#136 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _3DbUj _38g3s _2oGJR' dt='player-next' | 150x50 | 0px 16px 0px 16px | 16px | 0px 0px 4px 0px transparent | ::before #93D333 (owl, dark); lip #79B933 (tree-frog, dark) 0px 4px 0px 0px | #131F24 (snow, dark) | label 700 17px/20.4px ls 0.8px uppercase |
-| primary-green (light) | lesson-light-challenge-tiles-partial#167 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _3DbUj _38g3s _2oGJR' dt='player-next' | 150x50 | 0px 16px 0px 16px | 16px | 0px 0px 4px 0px transparent | ::before #58CC02 (owl, light); lip #58A700 (tree-frog, light) 0px 4px 0px 0px | #FFFFFF (snow, light) | label 700 17px/20.4px ls 0.8px uppercase |
-| secondary (dark) | lesson-dark-challenge-tiles-partial#133 <button> cl='_2V6ug _1ursp _7jW2t _2x7Co _3fo6Q' dt='player-skip' | 150x50 | 0px 16px 0px 16px | 16px | 2px 2px 4px 2px transparent | ::before #131F24 (snow, dark); lip #37464F (swan, dark) 0px 2px 0px 0px | #52656D (hare, dark) | label 700 17px/20.4px ls 0.8px uppercase |
-| juicy 48px (dark) | characters-dark-default#168 <a> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t' | 264x48 | 0px 12px 0px 12px | 16px | 0px 0px 4px 0px transparent | ::before #49C0F8 (macaw, dark); lip #1899D6 (whale, dark) 0px 4px 0px 0px | #131F24 (snow, dark) | label 700 16px/44px ls 0.64px uppercase |
-| small 32px (dark) | lesson-dark-friend-streak-invite#22 <button> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t _1W_p8 _2bkKc _38OE1' | 60x32 | 0px 8px 0px 8px | 8px | 0px 0px 4px 0px transparent | ::before #49C0F8 (macaw, dark); lip #1899D6 (whale, dark) 0px 4px 0px 0px | #131F24 (snow, dark) | label 700 14px/28px ls 0.56px uppercase |
-| popover CTA auto-height (dark) | learn-dark-node-popover#1244 <a> cl='_1rcV8 _1VYyp _1ursp _7jW2t PbV1v _2sYfM _19ped' dt='skill-path-state-active skill-path-unit-test-81' | 263x50 | 8px 16px 8px 16px | 16px | 0px 0px 4px 0px transparent | ::before #FFFFFF (celestia, dark); lip #FFFFFF (celestia, dark) @ 0.7 alpha 0px 4px 0px 0px | #58CC02 (owl-always-light, dark) | 700 15px/18px |
+| primary-green (dark) | lesson-dark-challenge-tiles-partial#136 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _3DbUj _38g3s _2oGJR' dt='player-next' | 150x50 | 0px 16px 0px 16px | 16px | 0px 0px 4px 0px transparent | ::before `accent.primary.face` #93D333 (owl, dark); lip `gamification.league.promotion` #79B933 (tree-frog, dark) 0px 4px 0px 0px | `text.onPrimary` #131F24 (snow, dark) | label 700 17px/20.4px ls 0.8px uppercase |
+| primary-green (light) | lesson-light-challenge-tiles-partial#167 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _3DbUj _38g3s _2oGJR' dt='player-next' | 150x50 | 0px 16px 0px 16px | 16px | 0px 0px 4px 0px transparent | ::before `accent.primary.face` #58CC02 (owl, light); lip `gamification.league.promotion` #58A700 (tree-frog, light) 0px 4px 0px 0px | `text.onPrimary` #FFFFFF (snow, light) | label 700 17px/20.4px ls 0.8px uppercase |
+| secondary (dark) | lesson-dark-challenge-tiles-partial#133 <button> cl='_2V6ug _1ursp _7jW2t _2x7Co _3fo6Q' dt='player-skip' | 150x50 | 0px 16px 0px 16px | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | label 700 17px/20.4px ls 0.8px uppercase |
+| juicy 48px (dark) | characters-dark-default#168 <a> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t' | 264x48 | 0px 12px 0px 12px | 16px | 0px 0px 4px 0px transparent | ::before `accent.secondary.face` #49C0F8 (macaw, dark); lip `text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px | `text.onPrimary` #131F24 (snow, dark) | label 700 16px/44px ls 0.64px uppercase |
+| small 32px (dark) | lesson-dark-friend-streak-invite#22 <button> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t _1W_p8 _2bkKc _38OE1' | 60x32 | 0px 8px 0px 8px | 8px | 0px 0px 4px 0px transparent | ::before `accent.secondary.face` #49C0F8 (macaw, dark); lip `text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px | `text.onPrimary` #131F24 (snow, dark) | label 700 14px/28px ls 0.56px uppercase |
+| popover CTA auto-height (dark) | learn-dark-node-popover#1244 <a> cl='_1rcV8 _1VYyp _1ursp _7jW2t PbV1v _2sYfM _19ped' dt='skill-path-state-active skill-path-unit-test-81' | 263x50 | 8px 16px 8px 16px | 16px | 0px 0px 4px 0px transparent | ::before `palette.dark.celestia` #FFFFFF (celestia, dark); lip `palette.dark.celestia` #FFFFFF (celestia, dark) @ 0.7 alpha 0px 4px 0px 0px | `unitColors.green` #58CC02 (owl-always-light, dark) | 700 15px/18px |
 
 **States**
 
@@ -188,26 +188,26 @@ Notes: Transition: css:4779 ._1VYyp declares "filter .2s, transform var(--web-ui
 | Property | Value |
 | --- | --- |
 | height | 48px (44px input + 2px border top/bottom) |
-| input_padding | 8px 14px |
-| border | 2px |
-| radius | 12px |
+| input_padding | `space.8` 8px `space.14` 14px |
+| border | `borderWidth.2` 2px |
+| radius | `radius.12` 12px |
 | font | body: 500 20px/28px (var(--text-body-*) = 1.25rem/1.75rem) |
 | label | 700 20px/24px (heading-small), 24px tall, 4px gap to the field (_3zSI5 gap) |
-| trailing_icon_button | 24x24, margin 0 6px 0 -6px (rQJD2); eye glyph 24x17, clear glyph 18x18 |
+| trailing_icon_button | 24x24, margin 0 `space.6` 6px 0 -6px (rQJD2); eye glyph 24x17, clear glyph 18x18 |
 | CSS source | css:4779-c36ad395.css ._1Um2j { background:rgb(var(--color-polar)); border:2px solid rgb(var(--color-swan)); border-radius:12px; display:flex; overflow:hidden }<br>css:4779-c36ad395.css ._298F2 { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; -webkit-appearance:none; -moz-appearance:none; appearance:none; background:none; border:none; box-sizing:border-box; caret-color:rgb(var(--color-macaw)); color:rgb(var(--color-eel)); font:var(--text-body-weight) var(--text-body-size) /var(--text-body-line-height) duolingo-sans,sans-serif; font-size:var(--__internal__input-font-size,var(--text-body-size)); letter-spacing:var(--text-body-letter-spacing); line-height:var(--__internal__input-line-height,var(--text-body-line-height)); min-width:0; outline:none; padding:var(--__internal__input-padding,8px 14px); text-transform:var(--text-body-casing); width:100% }<br>css:4779-c36ad395.css .rQJD2 { align-self:center; margin-left:-6px; margin-right:6px }<br>css:4779-c36ad395.css ._3zSI5 { display:inline-flex; flex-direction:column; gap:4px }<br>css:4779-c36ad395.css ._17QjI { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; color:rgb(var(--color-eel)); font:var(--text-heading-weight-small) var(--text-heading-size-small) /var(--text-heading-line-height-small) duolingo-sans,sans-serif; letter-spacing:var(--text-heading-letter-spacing-small); text-transform:var(--text-heading-casing-small) } |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| text (dark, focused) | settings-profile-dark-input-focus#109 <div> cl='_1Um2j' | 480x48 |  | 12px | 2px #49C0F8 (macaw, dark) | #202F36 (polar, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| input (dark) | settings-profile-dark-input-focus#110 <input> cl='_298F2' | 452x44 | 8px 14px 8px 14px |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 20px/28px |
-| clear button (dark, focus only) | settings-profile-dark-input-focus#111 <button> cl='ypJiL _1gEmM _7jW2t _3as_M rQJD2' | 24x24 |  |  |  |  | #000000 (black, dark) | 400 17px/19.55px |
-| password field (dark) | settings-profile-dark-input-focus#124 <div> cl='_1Um2j' | 480x48 |  | 12px | 2px #37464F (swan, dark) | #202F36 (polar, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| eye toggle (dark) | settings-profile-dark-input-focus#126 <button> cl='ypJiL _1gEmM _7jW2t rQJD2' | 24x24 |  |  |  |  | #000000 (black, dark) | 400 17px/19.55px |
-| text (light, default) | settings-profile-light-default#111 <div> cl='_1Um2j' | 592x48 |  | 12px | 2px #E5E5E5 (swan, light) | #F7F7F7 (polar, light) | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| input (light) | settings-profile-light-default#112 <input> cl='_298F2' | 588x44 | 8px 14px 8px 14px |  |  |  | #4B4B4B (eel, light) | 500 20px/28px |
-| label (dark) | settings-profile-dark-default#108 <label> cl='_17QjI' | 480x24 |  |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 20px/24px |
+| text (dark, focused) | settings-profile-dark-input-focus#109 <div> cl='_1Um2j' | 480x48 |  | 12px | 2px `border.focus` #49C0F8 (macaw, dark) | `gamification.league.demotedRow` #202F36 (polar, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| input (dark) | settings-profile-dark-input-focus#110 <input> cl='_298F2' | 452x44 | 8px 14px 8px 14px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 20px/28px |
+| clear button (dark, focus only) | settings-profile-dark-input-focus#111 <button> cl='ypJiL _1gEmM _7jW2t _3as_M rQJD2' | 24x24 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
+| password field (dark) | settings-profile-dark-input-focus#124 <div> cl='_1Um2j' | 480x48 |  | 12px | 2px `border.default` #37464F (swan, dark) | `gamification.league.demotedRow` #202F36 (polar, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| eye toggle (dark) | settings-profile-dark-input-focus#126 <button> cl='ypJiL _1gEmM _7jW2t rQJD2' | 24x24 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
+| text (light, default) | settings-profile-light-default#111 <div> cl='_1Um2j' | 592x48 |  | 12px | 2px `border.default` #E5E5E5 (swan, light) | `surface.subtle` #F7F7F7 (polar, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| input (light) | settings-profile-light-default#112 <input> cl='_298F2' | 588x44 | 8px 14px 8px 14px |  |  |  | `text.primary` #4B4B4B (eel, light) | 500 20px/28px |
+| label (dark) | settings-profile-dark-default#108 <label> cl='_17QjI' | 480x24 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 20px/24px |
 
 **States**
 
@@ -225,18 +225,18 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| field fill | #F7F7F7 (polar, light) | #202F36 (polar, dark) |
-| field border | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| focus border | #1CB0F6 (macaw, light) | #49C0F8 (macaw, dark) |
-| error border | #EA2B2B (fire-ant, light) | #D84848 (fire-ant, dark) |
-| disabled border | #F7F7F7 (polar, light) | #202F36 (polar, dark) |
-| text | #4B4B4B (eel, light) | #F1F7FB (eel, dark) |
-| placeholder | #777777 (wolf, light) | #DCE6EC (wolf, dark) |
-| disabled text | #AFAFAF (hare, light) | #52656D (hare, dark) |
-| caret | #1CB0F6 (macaw, light) | #49C0F8 (macaw, dark) |
-| label | #4B4B4B (eel, light) | #F1F7FB (eel, dark) |
-| eye icon | #1CB0F6 (macaw, light) | #49C0F8 (macaw, dark) |
-| clear icon | #AFAFAF (hare, light) | #52656D (hare, dark) |
+| field fill | `surface.subtle` #F7F7F7 (polar, light) | `surface.subtle` #202F36 (polar, dark) |
+| field border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| focus border | `border.focus` #1CB0F6 (macaw, light) | `border.focus` #49C0F8 (macaw, dark) |
+| error border | `accent.danger.lip` #EA2B2B (fire-ant, light) | `accent.danger.lip` #D84848 (fire-ant, dark) |
+| disabled border | `surface.subtle` #F7F7F7 (polar, light) | `surface.subtle` #202F36 (polar, dark) |
+| text | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
+| placeholder | `text.secondary` #777777 (wolf, light) | `text.secondary` #DCE6EC (wolf, dark) |
+| disabled text | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
+| caret | `text.link` #1CB0F6 (macaw, light) | `text.link` #49C0F8 (macaw, dark) |
+| label | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
+| eye icon | `text.link` #1CB0F6 (macaw, light) | `text.link` #49C0F8 (macaw, dark) |
+| clear icon | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
 
 Type style: Input: body (500, 20px/28px at desktop). Label: heading-small (700, 20px/24px). Helper: caption (500, 16px/24px).
 
@@ -262,10 +262,10 @@ Crops: [dark: text-input-dark.png](crops/text-input-dark.png) [light: text-input
 
 | Property | Value |
 | --- | --- |
-| height | 63px (27px input + 16px padding x2 + 2px border x2) |
-| padding | 16px 20px |
-| border | 2px |
-| radius | 12px |
+| height | 63px (27px input + 16px padding x2 + `space.2` 2px border x2) |
+| padding | `space.16` 16px `space.20` 20px |
+| border | `borderWidth.2` 2px |
+| radius | `radius.12` 12px |
 | font | 400 22px / 25.3px |
 | icon | search 20x21 rendered, clear 20x20 |
 | CSS source | css:2173-53849902.css .JW88y { align-items:center; background-color:rgb(var(--color-polar)); border:2px solid rgb(var(--color-swan)); border-radius:12px; color:rgb(var(--color-eel)); display:flex; font-size:22px; margin-bottom:48px; padding:16px 20px }<br>css:2173-53849902.css .t40Pr { background-color:transparent; border:0; color:rgb(var(--color-eel)); flex:1 1 auto }<br>css:2173-53849902.css ._1QdIO { margin-right:17px; transform:scale(1.4); transform-origin:50% 50% }<br>css:2173-53849902.css ._36I3w { cursor:pointer; flex:0 0 auto } |
@@ -274,11 +274,11 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| dark | user-search-dark-results#68 <form> cl='JW88y' | 896x63 | 16px 20px 16px 20px | 12px | 2px #37464F (swan, dark) | #202F36 (polar, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 22px/20px |
-| input dark | user-search-dark-results#70 <input> cl='t40Pr' dt='user-search-input' | 801x27 | 1px 2px 1px 2px |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 400 22px/25.3px |
-| clear dark | user-search-dark-results#71 <img> cl='_36I3w' | 20x20 |  |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 22px/20px |
-| light | user-search-light-results#68 <form> cl='JW88y' | 1008x63 | 16px 20px 16px 20px | 12px | 2px #E5E5E5 (swan, light) | #F7F7F7 (polar, light) | #4B4B4B (eel, light) | 500 22px/20px |
-| focused, empty (dark) | user-search-dark-input-focus#68 <form> cl='JW88y' | 896x63 | 16px 20px 16px 20px | 12px | 2px #37464F (swan, dark) | #202F36 (polar, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 22px/20px |
+| dark | user-search-dark-results#68 <form> cl='JW88y' | 896x63 | 16px 20px 16px 20px | 12px | 2px `border.default` #37464F (swan, dark) | `surface.subtle` #202F36 (polar, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 22px/20px |
+| input dark | user-search-dark-results#70 <input> cl='t40Pr' dt='user-search-input' | 801x27 | 1px 2px 1px 2px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 400 22px/25.3px |
+| clear dark | user-search-dark-results#71 <img> cl='_36I3w' | 20x20 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 22px/20px |
+| light | user-search-light-results#68 <form> cl='JW88y' | 1008x63 | 16px 20px 16px 20px | 12px | 2px `border.default` #E5E5E5 (swan, light) | `surface.subtle` #F7F7F7 (polar, light) | `text.primary` #4B4B4B (eel, light) | 500 22px/20px |
+| focused, empty (dark) | user-search-dark-input-focus#68 <form> cl='JW88y' | 896x63 | 16px 20px 16px 20px | 12px | 2px `border.default` #37464F (swan, dark) | `surface.subtle` #202F36 (polar, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 22px/20px |
 
 **States**
 
@@ -294,9 +294,9 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| fill | #F7F7F7 (polar, light) | #202F36 (polar, dark) |
-| border | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| text | #4B4B4B (eel, light) | #F1F7FB (eel, dark) |
+| fill | `surface.subtle` #F7F7F7 (polar, light) | `surface.subtle` #202F36 (polar, dark) |
+| border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| text | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
 
 Type style: 22px / weight 400 (desktop); 19px below 700px.
 
@@ -326,10 +326,10 @@ Notes: The web-ui input (_298F2) also has a type=search mode (RPjiw search icon,
 | Property | Value |
 | --- | --- |
 | height | 50px |
-| padding | 0 41px 0 12px |
-| border | 2px 2px 4px (transparent) + ::before 2px border |
+| padding | 0 41px 0 `space.12` 12px |
+| border | `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px (transparent) + ::before `borderWidth.2` 2px border |
 | lip | 2px box-shadow (4px visual) |
-| radius | 12px |
+| radius | `radius.12` 12px |
 | font | 700 15px/18px, 0.8px, uppercase (value); face font 500 17px/25px |
 | chevron | 15x9 |
 | CSS source | css:2833-494f8efd.css ._3QwUP { border:solid transparent; border-radius:12px; border-width:2px 2px 4px; color:rgb(var(--color-wolf)); height:50px; padding:0 41px 0 12px }<br>css:2833-494f8efd.css ._3QwUP:before { background:rgb(var(--color-snow)); border:2px solid rgb(var(--color-swan)); border-radius:12px; bottom:-2px; box-shadow:0 2px 0 rgb(var(--color-swan)); content:""; left:-2px; position:absolute; right:-2px; top:-2px }<br>css:2833-494f8efd.css ._3xxe1 { position:relative }<br>css:2833-494f8efd.css ._3QwUP ._3N2pE { color:rgb(var(--color-hare)); position:absolute; right:16px } |
@@ -338,12 +338,12 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| dark | settings-account-dark-default#140 <div> cl='_3QwUP _1dgwa' | 480x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before #131F24 (snow, dark); lip #37464F (swan, dark) 0px 2px 0px 0px | #DCE6EC (wolf, dark) | label 700 15px/18px ls 0.8px uppercase |
-| value dark | settings-account-dark-default#141 <span> cl='_3xxe1' | 423x18 |  |  |  |  | #DCE6EC (wolf, dark) | 700 15px/18px |
-| chevron dark | settings-account-dark-default#142 <svg> cl='_3N2pE' | 15x9 |  |  |  |  | #52656D (hare, dark) | 500 17px/25px |
-| light | settings-account-light-default#143 <div> cl='_3QwUP _1dgwa' | 592x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before #FFFFFF (snow, light); lip #E5E5E5 (swan, light) 0px 2px 0px 0px | #777777 (wolf, light) | label 700 15px/18px ls 0.8px uppercase |
-| disabled light | settings-notifications-light-default#163 <div> cl='_3QwUP _1dgwa _2MogS' | 592x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before #E5E5E5 (swan, light) | #AFAFAF (hare, light) | label 700 15px/18px ls 0.8px uppercase |
-| disabled dark | settings-notifications-dark-default#161 <div> cl='_3QwUP _1dgwa _2MogS' | 480x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before #37464F (swan, dark) | #52656D (hare, dark) | label 700 15px/18px ls 0.8px uppercase |
+| dark | settings-account-dark-default#140 <div> cl='_3QwUP _1dgwa' | 480x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.secondary` #DCE6EC (wolf, dark) | label 700 15px/18px ls 0.8px uppercase |
+| value dark | settings-account-dark-default#141 <span> cl='_3xxe1' | 423x18 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 700 15px/18px |
+| chevron dark | settings-account-dark-default#142 <svg> cl='_3N2pE' | 15x9 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | 500 17px/25px |
+| light | settings-account-light-default#143 <div> cl='_3QwUP _1dgwa' | 592x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #FFFFFF (snow, light); lip `surface.disabled` #E5E5E5 (swan, light) 0px 2px 0px 0px | `text.secondary` #777777 (wolf, light) | label 700 15px/18px ls 0.8px uppercase |
+| disabled light | settings-notifications-light-default#163 <div> cl='_3QwUP _1dgwa _2MogS' | 592x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.disabled` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | label 700 15px/18px ls 0.8px uppercase |
+| disabled dark | settings-notifications-dark-default#161 <div> cl='_3QwUP _1dgwa _2MogS' | 480x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.disabled` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | label 700 15px/18px ls 0.8px uppercase |
 
 **States**
 
@@ -360,12 +360,12 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| face | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| border + lip | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| value | #777777 (wolf, light) | #DCE6EC (wolf, dark) |
-| chevron | #AFAFAF (hare, light) | #52656D (hare, dark) |
-| disabled face | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| disabled value | #AFAFAF (hare, light) | #52656D (hare, dark) |
+| face | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| border + lip | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| value | `text.secondary` #777777 (wolf, light) | `text.secondary` #DCE6EC (wolf, dark) |
+| chevron | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
+| disabled face | `surface.disabled` #E5E5E5 (swan, light) | `surface.disabled` #37464F (swan, dark) |
+| disabled value | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
 
 Type style: Value: 700 15px/18px uppercase 0.8px.
 
@@ -391,8 +391,8 @@ Crops: [dark: select-dark.png](crops/select-dark.png) [light: select-light.png](
 | Property | Value |
 | --- | --- |
 | size | 30x30 inside a 32x32 box |
-| border | 2px |
-| radius | 8px |
+| border | `borderWidth.2` 2px |
+| radius | `radius.8` 8px |
 | icon | 24x24 box, 13x10 glyph |
 | CSS source | css:4779-c36ad395.css .Ug-rb { --web-ui_button-filter-hover:none; align-items:center; border:2px solid rgb(var(--color-swan))!important; border-radius:8px; box-sizing:border-box; color:rgb(var(--color-macaw)); height:30px; justify-content:center; width:30px }<br>css:4779-c36ad395.css .Ug-rb._2u5BZ { background:rgb(var(--color-macaw))!important; border-color:rgb(var(--color-macaw))!important }<br>css:4779-c36ad395.css ._31gfP { align-items:center; display:inline-flex; height:32px; justify-content:center; width:32px } |
 
@@ -400,10 +400,10 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| unchecked dark | settings-notifications-dark-default#112 <button> cl='_1gEmM _7jW2t Ug-rb' | 30x30 |  | 8px | 2px #37464F (swan, dark) |  | #49C0F8 (macaw, dark) | 400 17px/19.55px |
-| checked dark | settings-notifications-dark-default#142 <button> cl='_1gEmM _7jW2t Ug-rb _2u5BZ' | 30x30 |  | 8px | 2px #49C0F8 (macaw, dark) | #49C0F8 (macaw, dark) | #49C0F8 (macaw, dark) | 400 17px/19.55px |
-| unchecked light | settings-notifications-light-default#114 <button> cl='_1gEmM _7jW2t Ug-rb' | 30x30 |  | 8px | 2px #E5E5E5 (swan, light) |  | #1CB0F6 (macaw, light) | 400 17px/19.55px |
-| checked light | settings-notifications-light-default#144 <button> cl='_1gEmM _7jW2t Ug-rb _2u5BZ' | 30x30 |  | 8px | 2px #1CB0F6 (macaw, light) | #1CB0F6 (macaw, light) | #1CB0F6 (macaw, light) | 400 17px/19.55px |
+| unchecked dark | settings-notifications-dark-default#112 <button> cl='_1gEmM _7jW2t Ug-rb' | 30x30 |  | 8px | 2px `border.default` #37464F (swan, dark) |  | `text.link` #49C0F8 (macaw, dark) | 400 17px/19.55px |
+| checked dark | settings-notifications-dark-default#142 <button> cl='_1gEmM _7jW2t Ug-rb _2u5BZ' | 30x30 |  | 8px | 2px `border.focus` #49C0F8 (macaw, dark) | `accent.secondary.face` #49C0F8 (macaw, dark) | `text.link` #49C0F8 (macaw, dark) | 400 17px/19.55px |
+| unchecked light | settings-notifications-light-default#114 <button> cl='_1gEmM _7jW2t Ug-rb' | 30x30 |  | 8px | 2px `border.default` #E5E5E5 (swan, light) |  | `text.link` #1CB0F6 (macaw, light) | 400 17px/19.55px |
+| checked light | settings-notifications-light-default#144 <button> cl='_1gEmM _7jW2t Ug-rb _2u5BZ' | 30x30 |  | 8px | 2px `border.focus` #1CB0F6 (macaw, light) | `accent.secondary.face` #1CB0F6 (macaw, light) | `text.link` #1CB0F6 (macaw, light) | 400 17px/19.55px |
 
 **States**
 
@@ -421,12 +421,12 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| border | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| checked fill + border | #1CB0F6 (macaw, light) | #49C0F8 (macaw, dark) |
-| check glyph | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| disabled fill | #F7F7F7 (polar, light) | #202F36 (polar, dark) |
-| disabled checked fill | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| disabled glyph | #AFAFAF (hare, light) | #52656D (hare, dark) |
+| border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| checked fill + border | `border.focus` #1CB0F6 (macaw, light) | `border.focus` #49C0F8 (macaw, dark) |
+| check glyph | `text.onPrimary` #FFFFFF (snow, light) | `text.onPrimary` #131F24 (snow, dark) |
+| disabled fill | `surface.subtle` #F7F7F7 (polar, light) | `surface.subtle` #202F36 (polar, dark) |
+| disabled checked fill | `surface.disabled` #E5E5E5 (swan, light) | `surface.disabled` #37464F (swan, dark) |
+| disabled glyph | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
 
 Type style: n/a (icon only)
 
@@ -452,12 +452,12 @@ Crops: [dark: checkbox-dark.png](crops/checkbox-dark.png) [light: checkbox-light
 | Property | Value |
 | --- | --- |
 | row_height | 54px (streak goal) |
-| row_padding | 8px 16px (a3yOs) |
-| row_gap | 12px |
-| card_padding | 30px desktop / 15px below 700px (_8YNCv) |
-| border | 2px, bottom 4px space for the lip |
+| row_padding | `space.8` 8px `space.16` 16px (a3yOs) |
+| row_gap | `space.12` 12px |
+| card_padding | `space.30` 30px desktop / `space.15` 15px below 700px (_8YNCv) |
+| border | `borderWidth.2` 2px, bottom `borderWidth.4` 4px space for the lip |
 | lip | 0 2px 0 (4px visual) |
-| radius | 12px |
+| radius | `radius.12` 12px |
 | title_font | 700 20px/32px (streak goal, body-spacious-bold via .WMgCJ) |
 | caption_font | 500 16px/24px (caption) |
 | CSS source | css:4779-c36ad395.css ._8dMUn { --__internal__border-color:var(     --web-ui_card-border-color,rgb(var(--color-swan))   ); border:solid transparent; border-radius:var(--web-ui_card-border-radius,12px); border-width:2px 2px 4px; cursor:pointer; display:inline-flex; outline:0; position:relative; touch-action:manipulation; transform:translateZ(0); -webkit-user-select:none; -moz-user-select:none; user-select:none }<br>css:4779-c36ad395.css ._8dMUn:before { background-color:var(--web-ui_card-background-color,rgb(var(--color-snow))); border:2px solid var(--__internal__border-color); border-radius:var(--web-ui_card-border-radius,12px); bottom:-2px; box-shadow:0 2px 0 var(--__internal__border-color); content:""; left:-2px; position:absolute; right:-2px; top:-2px; z-index:-1 }<br>css:1008-b4d34396.css .a3yOs { align-items:center; display:flex; justify-content:space-between; padding:8px 16px }<br>css:1008-b4d34396.css ._13-RH { display:flex; flex-direction:column; gap:12px; justify-content:center; margin:0 auto; max-width:480px; opacity:calc(1 - var(--streak-goal-before-slide-up, 1)); transition:opacity .35s ease-in-out; width:100% }<br>css:4243-a8d324a8.css ._8YNCv { color:rgb(var(--color-eel)); padding:15px } |
@@ -466,13 +466,13 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| streak goal row (dark) | lesson-dark-streak-goal-default#245 <div> cl='_8dMUn a3yOs' | 480x54 | 8px 16px 8px 16px | 12px | 2px 2px 4px 2px transparent | ::before #131F24 (snow, dark); lip #37464F (swan, dark) 0px 2px 0px 0px | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/32px ls normal none |
-| streak goal row hover (dark) | lesson-dark-streak-goal-row-hover#242 <div> cl='_8dMUn a3yOs' | 480x54 | 8px 16px 8px 16px | 12px | 2px 2px 4px 2px transparent | ::before #202F36 (polar, dark); lip #37464F (swan, dark) 0px 2px 0px 0px | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/32px ls normal none |
-| settings card checked (dark) | settings-account-dark-default#159 <div> cl='_8dMUn _1pRZ7 _8YNCv' | 232x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before #202F36 (polar, dark); lip #3F85A7 (blue-jay, dark) 0px 2px 0px 0px | #1899D6 (whale, dark) | label 500 17px/20px ls normal none |
-| settings card unchecked (dark) | settings-account-dark-default#163 <div> cl='_8dMUn _8YNCv' | 232x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before #131F24 (snow, dark); lip #37464F (swan, dark) 0px 2px 0px 0px | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 500 17px/20px ls normal none |
-| settings card checked (light) | settings-account-light-default#162 <div> cl='_8dMUn _1pRZ7 _8YNCv' | 288x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before #DDF4FF (iguana, light); lip #84D8FF (blue-jay, light) 0px 2px 0px 0px | #1899D6 (whale, light) | label 500 17px/20px ls normal none |
-| lesson choice selected (dark, same _8dMUn card) | lesson-dark-choice-selected#59 <div> cl='_8dMUn _1pRZ7 _2cKzl _1G3d-' dt='challenge-choice' | 600x70 | 12px 16px 12px 16px | 12px | 2px 2px 4px 2px transparent | ::before #202F36 (polar, dark); lip #3F85A7 (blue-jay, dark) 0px 2px 0px 0px | #1899D6 (whale, dark) | label 700 15px/21px ls normal none |
-| settings card unchecked (light) | settings-account-light-default#166 <div> cl='_8dMUn _8YNCv' | 288x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before #FFFFFF (snow, light); lip #E5E5E5 (swan, light) 0px 2px 0px 0px | #4B4B4B (eel, light) | label 500 17px/20px ls normal none |
+| streak goal row (dark) | lesson-dark-streak-goal-default#245 <div> cl='_8dMUn a3yOs' | 480x54 | 8px 16px 8px 16px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/32px ls normal none |
+| streak goal row hover (dark) | lesson-dark-streak-goal-row-hover#242 <div> cl='_8dMUn a3yOs' | 480x54 | 8px 16px 8px 16px | 12px | 2px 2px 4px 2px transparent | ::before `surface.subtle` #202F36 (polar, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/32px ls normal none |
+| settings card checked (dark) | settings-account-dark-default#159 <div> cl='_8dMUn _1pRZ7 _8YNCv' | 232x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.subtle` #202F36 (polar, dark); lip `border.selected` #3F85A7 (blue-jay, dark) 0px 2px 0px 0px | `text.selected` #1899D6 (whale, dark) | label 500 17px/20px ls normal none |
+| settings card unchecked (dark) | settings-account-dark-default#163 <div> cl='_8dMUn _8YNCv' | 232x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 500 17px/20px ls normal none |
+| settings card checked (light) | settings-account-light-default#162 <div> cl='_8dMUn _1pRZ7 _8YNCv' | 288x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.selected` #DDF4FF (iguana, light); lip `border.selected` #84D8FF (blue-jay, light) 0px 2px 0px 0px | `text.selected` #1899D6 (whale, light) | label 500 17px/20px ls normal none |
+| lesson choice selected (dark, same _8dMUn card) | lesson-dark-choice-selected#59 <div> cl='_8dMUn _1pRZ7 _2cKzl _1G3d-' dt='challenge-choice' | 600x70 | 12px 16px 12px 16px | 12px | 2px 2px 4px 2px transparent | ::before `surface.subtle` #202F36 (polar, dark); lip `border.selected` #3F85A7 (blue-jay, dark) 0px 2px 0px 0px | `text.selected` #1899D6 (whale, dark) | label 700 15px/21px ls normal none |
+| settings card unchecked (light) | settings-account-light-default#166 <div> cl='_8dMUn _8YNCv' | 288x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #FFFFFF (snow, light); lip `surface.disabled` #E5E5E5 (swan, light) 0px 2px 0px 0px | `text.primary` #4B4B4B (eel, light) | label 500 17px/20px ls normal none |
 
 **States**
 
@@ -489,13 +489,13 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| fill | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| border + lip | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| hover fill | #F7F7F7 (polar, light) | #202F36 (polar, dark) |
-| checked fill | #DDF4FF (iguana, light) | #202F36 (iguana, dark) |
-| checked border + lip | #84D8FF (blue-jay, light) | #3F85A7 (blue-jay, dark) |
-| checked text | #1899D6 (whale, light) | #1899D6 (whale, dark) |
-| disabled text | #E5E5E5 (swan, light) | #37464F (swan, dark) |
+| fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| border + lip | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| hover fill | `surface.subtle` #F7F7F7 (polar, light) | `surface.subtle` #202F36 (polar, dark) |
+| checked fill | `surface.selected` #DDF4FF (iguana, light) | `surface.selected` #202F36 (iguana, dark) |
+| checked border + lip | `border.selected` #84D8FF (blue-jay, light) | `border.selected` #3F85A7 (blue-jay, dark) |
+| checked text | `text.selected` #1899D6 (whale, light) | `text.selected` #1899D6 (whale, dark) |
+| disabled text | `gamification.streakInactive` #E5E5E5 (swan, light) | `gamification.streakInactive` #37464F (swan, dark) |
 
 Type style: Title body-spacious bold (700, 20px/32px here); caption 500 16px/24px.
 
@@ -523,8 +523,8 @@ Notes: Lesson multiple-choice options use the same _8dMUn card and belong to the
 | Property | Value |
 | --- | --- |
 | button | 56x32 |
-| track | 56x24, radius 12px |
-| knob | 30x32, border 2px 2px 4px, radius 8px |
+| track | 56x24, radius `radius.12` 12px |
+| knob | 30x32, border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px, radius `radius.8` 8px |
 | travel | 26px |
 | transition | transform .2s |
 | CSS source | css:4243-a8d324a8.css ._2mkWS { --web-ui_button-filter-hover:none; color:rgb(var(--color-macaw)); height:32px }<br>css:4243-a8d324a8.css ._1gwYP { align-items:center; width:56px }<br>css:4243-a8d324a8.css ._1gwYP:before { background:rgb(var(--color-snow)); border-color:rgb(var(--color-swan)); border-radius:8px; border-style:solid; border-width:2px 2px 4px; box-sizing:border-box; content:""; height:32px; position:absolute; transition:transform .2s; width:30px }<br>css:4243-a8d324a8.css ._1gwYP.XIyeO:before { border-color:rgb(var(--color-macaw)); transform:translateX(26px) } |
@@ -533,13 +533,13 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| on (dark) | settings-account-dark-default#110 <button> cl='_1gEmM _7jW2t _2mkWS' | 56x32 |  |  |  |  | #49C0F8 (macaw, dark) | 400 17px/19.55px |
-| track on (dark) | settings-account-dark-default#111 <span> cl='_1gwYP XIyeO _9lHjd' | 56x24 |  | 12px |  | ::before #131F24 (snow, dark) | #49C0F8 (macaw, dark) | 400 17px/19.55px |
-| off (dark) | settings-social-dark-default#107 <button> cl='_1gEmM _7jW2t _2mkWS' | 56x32 |  |  |  |  | #49C0F8 (macaw, dark) | 400 17px/19.55px |
-| track off (dark) | settings-social-dark-default#108 <span> cl='_1gwYP _9lHjd' | 56x24 |  | 12px |  | ::before #131F24 (snow, dark) | #49C0F8 (macaw, dark) | 400 17px/19.55px |
-| on (light) | settings-account-light-default#113 <button> cl='_1gEmM _7jW2t _2mkWS' | 56x32 |  |  |  |  | #1CB0F6 (macaw, light) | 400 17px/19.55px |
-| off (light) | settings-social-light-default#109 <button> cl='_1gEmM _7jW2t _2mkWS' | 56x32 |  |  |  |  | #1CB0F6 (macaw, light) | 400 17px/19.55px |
-| track off (light) | settings-social-light-default#110 <span> cl='_1gwYP _9lHjd' | 56x24 |  | 12px |  | ::before #FFFFFF (snow, light) | #1CB0F6 (macaw, light) | 400 17px/19.55px |
+| on (dark) | settings-account-dark-default#110 <button> cl='_1gEmM _7jW2t _2mkWS' | 56x32 |  |  |  |  | `text.link` #49C0F8 (macaw, dark) | 400 17px/19.55px |
+| track on (dark) | settings-account-dark-default#111 <span> cl='_1gwYP XIyeO _9lHjd' | 56x24 |  | 12px |  | ::before `surface.default` #131F24 (snow, dark) | `text.link` #49C0F8 (macaw, dark) | 400 17px/19.55px |
+| off (dark) | settings-social-dark-default#107 <button> cl='_1gEmM _7jW2t _2mkWS' | 56x32 |  |  |  |  | `text.link` #49C0F8 (macaw, dark) | 400 17px/19.55px |
+| track off (dark) | settings-social-dark-default#108 <span> cl='_1gwYP _9lHjd' | 56x24 |  | 12px |  | ::before `surface.default` #131F24 (snow, dark) | `text.link` #49C0F8 (macaw, dark) | 400 17px/19.55px |
+| on (light) | settings-account-light-default#113 <button> cl='_1gEmM _7jW2t _2mkWS' | 56x32 |  |  |  |  | `text.link` #1CB0F6 (macaw, light) | 400 17px/19.55px |
+| off (light) | settings-social-light-default#109 <button> cl='_1gEmM _7jW2t _2mkWS' | 56x32 |  |  |  |  | `text.link` #1CB0F6 (macaw, light) | 400 17px/19.55px |
+| track off (light) | settings-social-light-default#110 <span> cl='_1gwYP _9lHjd' | 56x24 |  | 12px |  | ::before `surface.default` #FFFFFF (snow, light) | `text.link` #1CB0F6 (macaw, light) | 400 17px/19.55px |
 
 **States**
 
@@ -555,12 +555,12 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| track on side | #1CB0F6 (macaw, light) | #49C0F8 (macaw, dark) |
-| track off side | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| knob fill | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| knob border off | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| knob border on | #1CB0F6 (macaw, light) | #49C0F8 (macaw, dark) |
-| disabled track + knob border | #F7F7F7 (polar, light) | #202F36 (polar, dark) |
+| track on side | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.face` #49C0F8 (macaw, dark) |
+| track off side | `surface.disabled` #E5E5E5 (swan, light) | `surface.disabled` #37464F (swan, dark) |
+| knob fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| knob border off | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| knob border on | `border.focus` #1CB0F6 (macaw, light) | `border.focus` #49C0F8 (macaw, dark) |
+| disabled track + knob border | `surface.subtle` #F7F7F7 (polar, light) | `surface.subtle` #202F36 (polar, dark) |
 
 Type style: n/a
 
@@ -585,8 +585,8 @@ Crops: [dark: toggle-dark.png](crops/toggle-dark.png) [dark: toggle-off-dark.png
 | Property | Value |
 | --- | --- |
 | height | 52px |
-| padding | 15px 0 |
-| border_bottom | 2px |
+| padding | `space.15` 15px 0 |
+| border_bottom | `borderWidth.2` 2px |
 | font | 700 17px/20px, letter-spacing .03em (0.51px), uppercase |
 | width | 158px each at 480px column (dark), 195px at 592px (light) |
 | CSS source | css:9416-975668fa.css ._3ugho { border-bottom:2px solid rgb(var(--color-swan)); color:rgb(var(--color-hare)); font-size:17px; letter-spacing:.03em; padding:15px 0; text-transform:uppercase } |
@@ -595,11 +595,11 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| selected (dark) | characters-dark-default#155 <div> cl='_1H-vp _3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px #49C0F8 (macaw, dark) |  | #49C0F8 (macaw, dark) | 700 17px/20px |
-| unselected (dark) | characters-dark-default#157 <div> cl='_3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px #37464F (swan, dark) |  | #52656D (hare, dark) | 700 17px/20px |
-| hover (dark) | characters-dark-tab-hover#157 <div> cl='_3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px #49C0F8 (macaw, dark) |  | #49C0F8 (macaw, dark) | 700 17px/20px |
-| selected (light) | characters-light-default#163 <div> cl='_1H-vp _3ugho' | 195x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px #1CB0F6 (macaw, light) |  | #1CB0F6 (macaw, light) | 700 17px/20px |
-| unselected (light) | characters-light-default#165 <div> cl='_3ugho' | 195x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px #E5E5E5 (swan, light) |  | #AFAFAF (hare, light) | 700 17px/20px |
+| selected (dark) | characters-dark-default#155 <div> cl='_1H-vp _3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | 700 17px/20px |
+| unselected (dark) | characters-dark-default#157 <div> cl='_3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.tertiary` #52656D (hare, dark) | 700 17px/20px |
+| hover (dark) | characters-dark-tab-hover#157 <div> cl='_3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | 700 17px/20px |
+| selected (light) | characters-light-default#163 <div> cl='_1H-vp _3ugho' | 195x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.focus` #1CB0F6 (macaw, light) |  | `text.link` #1CB0F6 (macaw, light) | 700 17px/20px |
+| unselected (light) | characters-light-default#165 <div> cl='_3ugho' | 195x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.default` #E5E5E5 (swan, light) |  | `text.tertiary` #AFAFAF (hare, light) | 700 17px/20px |
 
 **States**
 
@@ -616,9 +616,9 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| label | #AFAFAF (hare, light) | #52656D (hare, dark) |
-| rule | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| selected/hover label + rule | #1CB0F6 (macaw, light) | #49C0F8 (macaw, dark) |
+| label | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
+| rule | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| selected/hover label + rule | `border.focus` #1CB0F6 (macaw, light) | `border.focus` #49C0F8 (macaw, dark) |
 
 Type style: 700 17px/20px uppercase, 0.03em tracking.
 
@@ -643,7 +643,7 @@ Crops: [dark: tabs-underline-dark.png](crops/tabs-underline-dark.png) [light: ta
 
 | Property | Value |
 | --- | --- |
-| tab_height | 48px (16px top padding + 34px label box - 2px overlap) |
+| tab_height | 48px (16px top padding + 34px label box - `space.2` 2px overlap) |
 | label | 700 16px, 0.8px, uppercase |
 | indicator | 2px bottom border |
 | CSS source | css:3014-2a6e31d6.css ._36qf- { flex:1 1 0; padding-top:16px }<br>css:3014-2a6e31d6.css .bsF09 { display:block; margin-bottom:-2px; text-align:center }<br>css:3014-2a6e31d6.css ._3Jy0n { border-bottom:2px solid rgb(var(--color-swan)); position:relative }<br>css:3014-2a6e31d6.css ._3o5O9>.bsF09 { border-bottom-color:rgb(var(--color-macaw)); color:rgb(var(--color-macaw)) } |
@@ -652,10 +652,10 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| selected (dark) | profile-dark-default#144 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px 12px 10px |  | 0px 0px 2px 0px #49C0F8 (macaw, dark) |  | #49C0F8 (macaw, dark) | label 700 16px/20px ls 0.8px uppercase |
-| unselected (dark) | profile-dark-default#147 <span> cl='_38_oS bsF09' | 182x34 | 0px 10px 12px 0px |  | 0px 0px 2px 0px transparent |  | #DCE6EC (wolf, dark) | label 700 16px/20px ls 0.8px uppercase |
-| strip (dark) | profile-dark-default#142 <ul> cl='_1SZs_ _3Jy0n _2Rt1l' | 364x50 |  |  | 0px 0px 2px 0px #37464F (swan, dark) |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 16px/20px ls 0.8px uppercase |
-| selected (light) | profile-light-default#145 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px 12px 10px |  | 0px 0px 2px 0px #1CB0F6 (macaw, light) |  | #1CB0F6 (macaw, light) | label 700 16px/20px ls 0.8px uppercase |
+| selected (dark) | profile-dark-default#144 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px 12px 10px |  | 0px 0px 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | label 700 16px/20px ls 0.8px uppercase |
+| unselected (dark) | profile-dark-default#147 <span> cl='_38_oS bsF09' | 182x34 | 0px 10px 12px 0px |  | 0px 0px 2px 0px transparent |  | `text.secondary` #DCE6EC (wolf, dark) | label 700 16px/20px ls 0.8px uppercase |
+| strip (dark) | profile-dark-default#142 <ul> cl='_1SZs_ _3Jy0n _2Rt1l' | 364x50 |  |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 16px/20px ls 0.8px uppercase |
+| selected (light) | profile-light-default#145 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px 12px 10px |  | 0px 0px 2px 0px `border.focus` #1CB0F6 (macaw, light) |  | `text.link` #1CB0F6 (macaw, light) | label 700 16px/20px ls 0.8px uppercase |
 | unselected (light) | profile-light-default#148 <span> cl='_38_oS bsF09' | 182x34 | 0px 10px 12px 0px |  | 0px 0px 2px 0px transparent |  | #999999 (NO-PALETTE-MATCH, light) | label 700 16px/20px ls 0.8px uppercase |
 
 **States**
@@ -672,8 +672,8 @@ Measured instances:
 | Role | Light | Dark |
 | --- | --- | --- |
 | label | rgb(var(--color-gray-text)) = #999999 per dumps/rootvars-light.json (name not in palettes-raw.json) | #DCE6EC (renders as wolf, dark; gray-text dark value not in palette file) |
-| selected label + indicator | #1CB0F6 (macaw, light) | #49C0F8 (macaw, dark) |
-| strip rule | #E5E5E5 (swan, light) | #37464F (swan, dark) |
+| selected label + indicator | `text.link` #1CB0F6 (macaw, light) | `text.link` #49C0F8 (macaw, dark) |
+| strip rule | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
 
 Type style: 700 16px uppercase, 0.8px tracking.
 
@@ -699,9 +699,9 @@ Crops: [dark: tabs-list-dark.png](crops/tabs-list-dark.png) [light: tabs-list-li
 | Property | Value |
 | --- | --- |
 | height | 48px |
-| padding | 0 16px |
+| padding | 0 `space.16` 16px |
 | indicator | 4px bar (::after), 2px radius |
-| rule | 2px |
+| rule | `borderWidth.2` 2px |
 | font | label-medium: 700 16px/16px, 0.04em, uppercase |
 | CSS source | css:5823-96f39733.css ._3Ji0r { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; --web-ui_button-filter-hover:none; align-items:center; border-bottom:2px solid rgb(var(--color-swan))!important; border-top:2px solid transparent!important; box-sizing:border-box; color:rgb(var(--color-eel)); flex:1; font:var(--text-label-weight-medium) var(--text-label-size-medium) /var(--text-label-line-height-medium) duolingo-sans,sans-serif; height:48px; justify-content:center; letter-spacing:var(--text-label-letter-spacing-medium); min-width:0; padding:0 16px!important; text-transform:var(--text-label-casing-medium) }<br>css:5823-96f39733.css ._2d5P5:after { background:rgb(var(--color-whale)); border-radius:2px; bottom:-2px; content:""; height:4px; position:absolute; width:100% }<br>css:5823-96f39733.css ._1L0JB ._3Ji0r { border-bottom:2px solid rgb(var(--color-snow-always-light))!important; color:rgb(var(--color-snow-always-light)) } |
 
@@ -709,10 +709,10 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| selected (dark) | quests-dark-mobile#30 <button> cl='_1gEmM _7jW2t _2d5P5 _3Ji0r' | 285x48 | 0px 16px 0px 16px | 0px 0px 0px 2px | 2px 0px 2px 0px transparent / - / #FFFFFF (celestia, dark) / - | ::after #FFFFFF (celestia, dark) | #FFFFFF (celestia, dark) | label 700 16px/16px ls 0.64px uppercase |
-| unselected (dark) | quests-dark-mobile#32 <button> cl='_1gEmM _7jW2t _3Ji0r' | 285x48 | 0px 16px 0px 16px |  | 2px 0px 2px 0px transparent / - / #FFFFFF (celestia, dark) / - |  | #FFFFFF (celestia, dark) | label 700 16px/16px ls 0.64px uppercase |
-| selected (light) | quests-light-mobile#30 <button> cl='_1gEmM _7jW2t _2d5P5 _3Ji0r' | 285x48 | 0px 16px 0px 16px | 0px 0px 0px 2px | 2px 0px 2px 0px transparent / - / #FFFFFF (snow, light) / - | ::after #FFFFFF (snow, light) | #FFFFFF (snow, light) | label 700 16px/16px ls 0.64px uppercase |
-| unselected (light) | quests-light-mobile#32 <button> cl='_1gEmM _7jW2t _3Ji0r' | 285x48 | 0px 16px 0px 16px |  | 2px 0px 2px 0px transparent / - / #FFFFFF (snow, light) / - |  | #FFFFFF (snow, light) | label 700 16px/16px ls 0.64px uppercase |
+| selected (dark) | quests-dark-mobile#30 <button> cl='_1gEmM _7jW2t _2d5P5 _3Ji0r' | 285x48 | 0px 16px 0px 16px | 0px 0px 0px 2px | 2px 0px 2px 0px transparent / - / `palette.dark.celestia` #FFFFFF (celestia, dark) / - | ::after `palette.dark.celestia` #FFFFFF (celestia, dark) | `palette.dark.celestia` #FFFFFF (celestia, dark) | label 700 16px/16px ls 0.64px uppercase |
+| unselected (dark) | quests-dark-mobile#32 <button> cl='_1gEmM _7jW2t _3Ji0r' | 285x48 | 0px 16px 0px 16px |  | 2px 0px 2px 0px transparent / - / `palette.dark.celestia` #FFFFFF (celestia, dark) / - |  | `palette.dark.celestia` #FFFFFF (celestia, dark) | label 700 16px/16px ls 0.64px uppercase |
+| selected (light) | quests-light-mobile#30 <button> cl='_1gEmM _7jW2t _2d5P5 _3Ji0r' | 285x48 | 0px 16px 0px 16px | 0px 0px 0px 2px | 2px 0px 2px 0px transparent / - / `text.onPrimary` #FFFFFF (snow, light) / - | ::after `surface.default` #FFFFFF (snow, light) | `text.onPrimary` #FFFFFF (snow, light) | label 700 16px/16px ls 0.64px uppercase |
+| unselected (light) | quests-light-mobile#32 <button> cl='_1gEmM _7jW2t _3Ji0r' | 285x48 | 0px 16px 0px 16px |  | 2px 0px 2px 0px transparent / - / `text.onPrimary` #FFFFFF (snow, light) / - |  | `text.onPrimary` #FFFFFF (snow, light) | label 700 16px/16px ls 0.64px uppercase |
 
 **States**
 
@@ -727,10 +727,10 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| label default | #4B4B4B (eel, light) | #F1F7FB (eel, dark) |
-| selected | #1899D6 (whale, light) | #1899D6 (whale, dark) |
-| rule | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| on coloured header (_1L0JB, as captured) | #FFFFFF (snow-always-light, light) | #FFFFFF (snow-always-light, dark) |
+| label default | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
+| selected | `text.selected` #1899D6 (whale, light) | `text.selected` #1899D6 (whale, dark) |
+| rule | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| on coloured header (_1L0JB, as captured) | `text.onColor` #FFFFFF (snow-always-light, light) | `text.onColor` #FFFFFF (snow-always-light, dark) |
 
 Type style: label-medium: 700 16px/16px, 0.04em, uppercase.
 
@@ -756,9 +756,9 @@ Crops: [dark: tabs-segmented-dark.png](crops/tabs-segmented-dark.png) [light: ta
 
 | Property | Value |
 | --- | --- |
-| up_next | 74x26, padding 4px 8px, radius 6px, 700 15px/18px, 0.04em (dump 0.6px), uppercase |
-| count | 42x25, padding 4px 8px, radius 16px, 700 15px/17.25px, 0.8px, uppercase |
-| equipped | 110x25, padding 8px, radius 16px, 700 15px uppercase |
+| up_next | 74x26, padding `space.4` 4px `space.8` 8px, radius 6px, 700 15px/18px, 0.04em (dump 0.6px), uppercase |
+| count | 42x25, padding `space.4` 4px `space.8` 8px, radius `radius.16` 16px, 700 15px/17.25px, 0.8px, uppercase |
+| equipped | 110x25, padding `space.8` 8px, radius `radius.16` 16px, 700 15px uppercase |
 | super_logo | 78x21 image |
 | CSS source | css:path-e50cab6b.css ._3LDH7 { background:rgb(var(--color-iguana-always-light)); border-radius:6px; color:rgb(var(--color-macaw)); display:inline-block; font-size:15px; font-weight:700; letter-spacing:.04em; line-height:18px; margin-bottom:16px; padding:4px 8px; text-transform:uppercase }<br>css:path-e50cab6b.css ._1Qswf { background:rgb(var(--color-swan)); color:rgb(var(--color-hare)) }<br>css:2820-18cf65ab.css ._2TZCt { align-items:center; background:rgb(var(--color-cardinal)); color:rgb(var(--color-snow-always-light)); padding:4px 8px; position:absolute; right:-12px; top:-12px }<br>css:8566-1e4d7a6c.css ._2I6Qk { align-items:center; border-radius:16px; border-width:0; display:flex; font-size:15px; font-weight:700; height:25px; justify-content:center; padding:8px; text-transform:uppercase; white-space:nowrap; width:-moz-min-content; width:min-content }<br>css:8566-1e4d7a6c.css ._2tJ-w { background:rgb(var(--color-swan)); color:rgb(var(--color-hare)) }<br>css:8566-1e4d7a6c.css ._1-6PO { background:rgb(var(--color-sea-sponge)); color:rgb(var(--color-owl)) } |
 
@@ -766,14 +766,14 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| up next (dark) | learn-dark-path-end#470 <p> cl='_1Qswf _3LDH7' | 74x26 | 4px 8px 4px 8px | 6px |  | #37464F (swan, dark) | #52656D (hare, dark) | 700 15px/18px |
-| up next (light) | learn-light-path-end#480 <p> cl='_1Qswf _3LDH7' | 74x26 | 4px 8px 4px 8px | 6px |  | #E5E5E5 (swan, light) | #AFAFAF (hare, light) | 700 15px/18px |
-| 30+ (dark) | practice-hub-dark-default#187 <span> cl='_2TZCt _2Rt1l' | 42x25 | 4px 8px 4px 8px | 16px |  | #EE5555 (cardinal, dark) | #FFFFFF (celestia, dark) | 700 15px/17.25px |
-| 30+ (light) | practice-hub-light-default#195 <span> cl='_2TZCt _2Rt1l' | 42x25 | 4px 8px 4px 8px | 16px |  | #FF4B4B (cardinal, light) | #FFFFFF (snow, light) | 700 15px/17.25px |
-| equipped empty (dark) | shop-dark-default#177 <div> cl='_2tJ-w _2I6Qk' | 111x25 | 8px | 16px |  | #37464F (swan, dark) | #52656D (hare, dark) | 700 15px/20px |
-| equipped full (light) | shop-light-default#187 <div> cl='_1-6PO _2I6Qk' | 110x25 | 8px | 16px |  | #D7FFB8 (sea-sponge, light) | #58CC02 (owl, light) | 700 15px/20px |
-| equipped full (dark mobile) | shop-dark-mobile#83 <div> cl='_1-6PO _2I6Qk' | 110x25 | 8px | 16px |  | #202F36 (polar, dark) | #93D333 (owl, dark) | 700 15px/20px |
-| SUPER logo (dark) | characters-dark-default#88 <img> cl='' dt='plus-offer-logo' | 78x21 |  |  |  |  | #DCE6EC (wolf, dark) | 500 17px/20px |
+| up next (dark) | learn-dark-path-end#470 <p> cl='_1Qswf _3LDH7' | 74x26 | 4px 8px 4px 8px | 6px |  | `surface.disabled` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 700 15px/18px |
+| up next (light) | learn-light-path-end#480 <p> cl='_1Qswf _3LDH7' | 74x26 | 4px 8px 4px 8px | 6px |  | `surface.disabled` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | 700 15px/18px |
+| 30+ (dark) | practice-hub-dark-default#187 <span> cl='_2TZCt _2Rt1l' | 42x25 | 4px 8px 4px 8px | 16px |  | `accent.danger.face` #EE5555 (cardinal, dark) | `palette.dark.celestia` #FFFFFF (celestia, dark) | 700 15px/17.25px |
+| 30+ (light) | practice-hub-light-default#195 <span> cl='_2TZCt _2Rt1l' | 42x25 | 4px 8px 4px 8px | 16px |  | `accent.danger.face` #FF4B4B (cardinal, light) | `text.onPrimary` #FFFFFF (snow, light) | 700 15px/17.25px |
+| equipped empty (dark) | shop-dark-default#177 <div> cl='_2tJ-w _2I6Qk' | 111x25 | 8px | 16px |  | `surface.disabled` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 700 15px/20px |
+| equipped full (light) | shop-light-default#187 <div> cl='_1-6PO _2I6Qk' | 110x25 | 8px | 16px |  | `status.successBackground` #D7FFB8 (sea-sponge, light) | `accent.primary.face` #58CC02 (owl, light) | 700 15px/20px |
+| equipped full (dark mobile) | shop-dark-mobile#83 <div> cl='_1-6PO _2I6Qk' | 110x25 | 8px | 16px |  | `surface.subtle` #202F36 (polar, dark) | `accent.primary.face` #93D333 (owl, dark) | 700 15px/20px |
+| SUPER logo (dark) | characters-dark-default#88 <img> cl='' dt='plus-offer-logo' | 78x21 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 500 17px/20px |
 
 **States**
 
@@ -787,12 +787,12 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| up next fill | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| up next text | #AFAFAF (hare, light) | #52656D (hare, dark) |
-| count fill | #FF4B4B (cardinal, light) | #EE5555 (cardinal, dark) |
-| count text | #FFFFFF (snow-always-light, light) | #FFFFFF (snow-always-light, dark) |
-| equipped empty fill/text | #E5E5E5 (swan, light) / #AFAFAF (hare, light) | #37464F (swan, dark) / #52656D (hare, dark) |
-| equipped full fill/text | #D7FFB8 (sea-sponge, light) / #58CC02 (owl, light) | #202F36 (sea-sponge, dark) / #93D333 (owl, dark) |
+| up next fill | `surface.disabled` #E5E5E5 (swan, light) | `surface.disabled` #37464F (swan, dark) |
+| up next text | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
+| count fill | `accent.danger.text` #FF4B4B (cardinal, light) | `accent.danger.text` #EE5555 (cardinal, dark) |
+| count text | `text.onColor` #FFFFFF (snow-always-light, light) | `text.onColor` #FFFFFF (snow-always-light, dark) |
+| equipped empty fill/text | `gamification.streakInactive` #E5E5E5 (swan, light) / `text.tertiary` #AFAFAF (hare, light) | `gamification.streakInactive` #37464F (swan, dark) / `text.tertiary` #52656D (hare, dark) |
+| equipped full fill/text | `gamification.league.promotedRow` #D7FFB8 (sea-sponge, light) / `accent.primary.face` #58CC02 (owl, light) | `gamification.league.promotedRow` #202F36 (sea-sponge, dark) / `accent.primary.face` #93D333 (owl, dark) |
 
 Type style: 700 15px uppercase (all three CSS pills).
 
@@ -824,20 +824,20 @@ Notes: Super logo src: https://d35aaqx5ub95lt.cloudfront.net/images/super/2e50c3
 | sizes | web-ui avatar: small 30, medium 48 (default), large 63, xlarge 77, xxlarge 90 (letter avatar small is 36); captured: 48 (lists, leaderboard), 70 (search results) |
 | letter_font | 700, 0.46 x size (22.08px at 48) |
 | online_dot | 12x12, 2px border |
-| ring | no ring on list avatars; edit badge border 3px snow |
+| ring | no ring on list avatars; edit badge border `borderWidth.3` 3px snow |
 | CSS source | css:4779-c36ad395.css ._1N32S { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; align-items:center; border-radius:50%; box-sizing:border-box; color:rgb(var(--color-snow)); display:inline-flex; font:700 17px/25px duolingo-sans,sans-serif; justify-content:center; vertical-align:middle }<br>css:1008-b4d34396.css ._2NNBf { background-color:rgb(var(--color-owl)); border:2px solid rgb(var(--color-snow)); border-radius:50%; bottom:1px; height:12px; position:absolute; right:3px; width:12px }<br>css:4779-c36ad395.css ._1wd57 { border-style:dashed; border-width:2px; color:rgb(var(--color-hare)) }<br>css:settingsPage-f3f7f16a.css ._1VC2W { background:rgb(var(--color-macaw)); border:3px solid rgb(var(--color-snow)); border-radius:50%; display:flex; height:31px; justify-content:center; position:absolute; right:-11px; top:0; width:31px }<br>js/4779-9b5aed3c.js module 80645 sizes {large:63,medium:48,small:30,xlarge:77,xxlarge:90}; module 30254 letter avatar {large:63,medium:48,small:36,xlarge:77}, fontSize .46*size |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| photo 48 (dark) | profile-dark-default#153 <img> cl='_1yM9n fs-exclude' | 48x48 |  | 50% |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| letter 48 (dark) | leaderboard-dark-top#184 <div> cl='_1a-Dv _1N32S BfIim fs-exclude' | 48x48 |  | 50% |  | #FFAB33 (fox, dark) | #131F24 (snow, dark) | 700 22.08px/25px |
-| online dot (dark) | leaderboard-dark-top#185 <span> cl='_2NNBf' | 12x12 |  | 50% | 2px #131F24 (snow, dark) | #93D333 (owl, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| letter 48 (light) | leaderboard-light-default#187 <div> cl='_1gexH _1N32S BfIim fs-exclude' | 48x48 |  | 50% |  | #CE82FF (beetle, light) | #FFFFFF (snow, light) | 700 22.08px/25px |
-| online dot (light) | leaderboard-light-default#188 <span> cl='_2NNBf' | 12x12 |  | 50% | 2px #FFFFFF (snow, light) | #58CC02 (owl, light) | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| photo 70 (search result, dark) | user-search-dark-results#81 <img> cl='_1yM9n fs-exclude' | 70x70 |  | 50% |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| edit badge (dark) | settings-profile-dark-default#105 <a> cl='_1VC2W' | 31x31 |  | 50% | 3px #131F24 (snow, dark) | #49C0F8 (macaw, dark) | #0000EE (browser default, not painted) | 500 17px/20px |
+| photo 48 (dark) | profile-dark-default#153 <img> cl='_1yM9n fs-exclude' | 48x48 |  | 50% |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| letter 48 (dark) | leaderboard-dark-top#184 <div> cl='_1a-Dv _1N32S BfIim fs-exclude' | 48x48 |  | 50% |  | `dataViz.avatar.orange` #FFAB33 (fox, dark) | `text.onPrimary` #131F24 (snow, dark) | 700 22.08px/25px |
+| online dot (dark) | leaderboard-dark-top#185 <span> cl='_2NNBf' | 12x12 |  | 50% | 2px `surface.default` #131F24 (snow, dark) | `accent.primary.face` #93D333 (owl, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| letter 48 (light) | leaderboard-light-default#187 <div> cl='_1gexH _1N32S BfIim fs-exclude' | 48x48 |  | 50% |  | `dataViz.avatar.purple` #CE82FF (beetle, light) | `text.onPrimary` #FFFFFF (snow, light) | 700 22.08px/25px |
+| online dot (light) | leaderboard-light-default#188 <span> cl='_2NNBf' | 12x12 |  | 50% | 2px `surface.default` #FFFFFF (snow, light) | `accent.primary.face` #58CC02 (owl, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| photo 70 (search result, dark) | user-search-dark-results#81 <img> cl='_1yM9n fs-exclude' | 70x70 |  | 50% |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| edit badge (dark) | settings-profile-dark-default#105 <a> cl='_1VC2W' | 31x31 |  | 50% | 3px `text.onPrimary` #131F24 (snow, dark) | `accent.secondary.face` #49C0F8 (macaw, dark) | #0000EE (browser default, not painted) | 500 17px/20px |
 
 **States**
 
@@ -852,10 +852,10 @@ Measured instances:
 | Role | Light | Dark |
 | --- | --- | --- |
 | letter colours (by user id % 5) | beetle, cardinal, fox, macaw, tree-frog | beetle, cardinal, fox, macaw, tree-frog |
-| letter text | #FFFFFF (snow, light) | #131F24 (snow, dark) (dark text on colour in dark theme) |
-| online dot | #58CC02 (owl, light) | #93D333 (owl, dark) |
-| dot border | #FFFFFF (snow, light) (swan/sea-sponge/etc inside highlighted leaderboard rows) | #131F24 (snow, dark) |
-| ghost border | #AFAFAF (hare, light) | #52656D (hare, dark) |
+| letter text | `text.onPrimary` #FFFFFF (snow, light) | `text.onPrimary` #131F24 (snow, dark) (dark text on colour in dark theme) |
+| online dot | `accent.primary.face` #58CC02 (owl, light) | `accent.primary.face` #93D333 (owl, dark) |
+| dot border | `surface.default` #FFFFFF (snow, light) (swan/sea-sponge/etc inside highlighted leaderboard rows) | `surface.default` #131F24 (snow, dark) |
+| ghost border | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
 
 Type style: Letter: 700, 0.46 x size.
 
@@ -881,24 +881,24 @@ Crops: [dark: avatar-dark.png](crops/avatar-dark.png) [dark: avatar-edit-dark.pn
 
 | Property | Value |
 | --- | --- |
-| border | 2px |
-| radius | 15px (var --web-ui_popover-border-radius; 10px on path tooltips, 5px on progress-bar popover) |
-| offset | 8px from trigger (margin on direction class); path node popover 12px |
+| border | `borderWidth.2` 2px |
+| radius | `radius.15` 15px (var --web-ui_popover-border-radius; `radius.10` 10px on path tooltips, 5px on progress-bar popover) |
+| offset | `space.8` 8px from trigger (margin on direction class); path node popover `space.12` 12px |
 | stem | 20x10 visible, square 14.14px CSS (20px rendered bbox) rotated 45deg |
-| gems_content | 380x148, padding 24px 12px; 100px illustration + 12px gap; title 700 24px/26px; body wolf |
-| path_popover | 295px wide, padding 16px, 700 19px/1.4, centered, no border |
+| gems_content | 380x148, padding `space.24` 24px `space.12` 12px; 100px illustration + 12px gap; title 700 24px/26px; body wolf |
+| path_popover | 295px wide, padding `space.16` 16px, 700 19px/1.4, centered, no border |
 | CSS source | css:4779-c36ad395.css ._36bu_ { background-color:var(--web-ui_popover-background-color,rgb(var(--color-snow))); border:2px solid var(--web-ui_popover-border-color,rgb(var(--color-swan))); border-radius:var(--web-ui_popover-border-radius,15px); box-sizing:border-box; overflow:hidden; transform:translateZ(0) }<br>css:4779-c36ad395.css ._1TMn5 { background-color:var(--web-ui_popover-background-color,rgb(var(--color-snow))); border:2px solid var(--web-ui_popover-border-color,rgb(var(--color-swan))); border-radius:2px; content:""; height:14.14427157px; left:50%; transform:translateZ(0) rotate(45deg); transform-origin:top left; width:14.14427157px }<br>css:4779-c36ad395.css ._3T97b { box-sizing:border-box; position:absolute }<br>css:4779-c36ad395.css ._3OfAS { margin-top:8px }<br>css:5275-8898b509.css ._3cG-N { align-items:center; box-sizing:border-box; display:flex; padding:24px 12px; width:380px }<br>css:path-e50cab6b.css ._3RP1Q { font-size:19px; font-weight:700; line-height:1.4; padding:16px; text-align:center }<br>css:path-e50cab6b.css ._1Fbw- { background-color:var(--path-unit-character-color); border:0; color:rgb(var(--color-snow-always-light)) } |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| gems dropdown bubble (dark) | learn-dark-gems-dropdown#84 <div> cl='_36bu_' | 384x152 |  | 15px | 2px #37464F (swan, dark) | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
-| gems content (dark) | learn-dark-gems-dropdown#85 <div> cl='_3n4Rk _3cG-N' dt='lingots-menu-content' | 380x148 | 24px 12px 24px 12px |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
-| stem (dark) | learn-dark-gems-dropdown#92 <div> cl='_1TMn5' | 20x20 |  | 2px | 2px #37464F (swan, dark) | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| gems dropdown bubble (light) | learn-light-gems-dropdown#85 <div> cl='_36bu_' | 384x152 |  | 15px | 2px #E5E5E5 (swan, light) | #FFFFFF (snow, light) | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
-| path node popover (dark) | learn-dark-node-popover#1239 <div> cl='_36bu_ _3RP1Q _1Fbw-' | 295x151 | 16px | 15px |  | #58CC02 (owl-always-light, dark) | #FFFFFF (celestia, dark) | label 500 17px/26.6px ls normal none |
-| path node popover (light) | learn-light-node-popover#1249 <div> cl='_36bu_ _3RP1Q _1Fbw-' | 295x151 | 16px | 15px |  | #58CC02 (owl, light) | #FFFFFF (snow, light) | label 500 17px/26.6px ls normal none |
+| gems dropdown bubble (dark) | learn-dark-gems-dropdown#84 <div> cl='_36bu_' | 384x152 |  | 15px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
+| gems content (dark) | learn-dark-gems-dropdown#85 <div> cl='_3n4Rk _3cG-N' dt='lingots-menu-content' | 380x148 | 24px 12px 24px 12px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
+| stem (dark) | learn-dark-gems-dropdown#92 <div> cl='_1TMn5' | 20x20 |  | 2px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| gems dropdown bubble (light) | learn-light-gems-dropdown#85 <div> cl='_36bu_' | 384x152 |  | 15px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
+| path node popover (dark) | learn-dark-node-popover#1239 <div> cl='_36bu_ _3RP1Q _1Fbw-' | 295x151 | 16px | 15px |  | `unitColors.green` #58CC02 (owl-always-light, dark) | `palette.dark.celestia` #FFFFFF (celestia, dark) | label 500 17px/26.6px ls normal none |
+| path node popover (light) | learn-light-node-popover#1249 <div> cl='_36bu_ _3RP1Q _1Fbw-' | 295x151 | 16px | 15px |  | `accent.primary.face` #58CC02 (owl, light) | `text.onPrimary` #FFFFFF (snow, light) | label 500 17px/26.6px ls normal none |
 
 **States**
 
@@ -914,10 +914,10 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| fill | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| border | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| title | #4B4B4B (eel, light) | #F1F7FB (eel, dark) |
-| body | #777777 (wolf, light) | #DCE6EC (wolf, dark) |
+| fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| title | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
+| body | `text.secondary` #777777 (wolf, light) | `text.secondary` #DCE6EC (wolf, dark) |
 
 Type style: Dropdown title 700 24px/26px; body 17px/20px wolf. Path popover 700 19px/26.6px white.
 
@@ -943,9 +943,9 @@ Crops: [dark: popover-dark.png](crops/popover-dark.png) [dark: popover-path-dark
 | Property | Value |
 | --- | --- |
 | size | 80x45 (min-width 80px) |
-| padding | 12px |
-| radius | 10px |
-| border | 2px |
+| padding | `space.12` 12px |
+| radius | `radius.10` 10px |
+| border | `borderWidth.2` 2px |
 | font | 700 17px, line-height 1, 0.03em, uppercase |
 | CSS source | css:path-e50cab6b.css ._27IMa { background:rgb(var(--color-snow)); border-color:rgb(var(--color-swan)); color:var(--path-unit-character-color); font-size:17px; font-weight:700; letter-spacing:.03em; line-height:1; padding:12px; text-align:center; text-transform:uppercase; white-space:nowrap }<br>css:path-e50cab6b.css ._kJVz { --web-ui_popover-border-radius:10px; margin-bottom:-2px; min-width:80px }<br>css:path-e50cab6b.css .YxHCU { background:rgb(var(--color-snow)); border-color:rgb(var(--color-swan)) } |
 
@@ -953,9 +953,9 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| START (dark) | learn-dark-default#1239 <div> cl='_36bu_ _27IMa' | 80x45 | 12px | 10px | 2px #37464F (swan, dark) | #131F24 (snow, dark) | #58CC02 (owl-always-light, dark) | 700 17px/17px |
-| START (light) | learn-light-default#1261 <div> cl='_36bu_ _27IMa' | 80x45 | 12px | 10px | 2px #E5E5E5 (swan, light) | #FFFFFF (snow, light) | #58CC02 (owl, light) | 700 17px/17px |
-| stem (dark) | learn-dark-default#1241 <div> cl='_1TMn5 YxHCU' | 20x20 |  | 2px | 2px #37464F (swan, dark) | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| START (dark) | learn-dark-default#1239 <div> cl='_36bu_ _27IMa' | 80x45 | 12px | 10px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `unitColors.green` #58CC02 (owl-always-light, dark) | 700 17px/17px |
+| START (light) | learn-light-default#1261 <div> cl='_36bu_ _27IMa' | 80x45 | 12px | 10px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `accent.primary.face` #58CC02 (owl, light) | 700 17px/17px |
+| stem (dark) | learn-dark-default#1241 <div> cl='_1TMn5 YxHCU' | 20x20 |  | 2px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
 
 **States**
 
@@ -969,8 +969,8 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| fill | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| border | #E5E5E5 (swan, light) | #37464F (swan, dark) |
+| fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
 | text | --path-unit-character-color (captured #58CC02 owl-always-light) | --path-unit-character-color (captured #58CC02 owl-always-light) |
 
 Type style: 700 17px, line-height 1, uppercase.
@@ -1002,25 +1002,25 @@ Notes: No hover tooltips on icons/buttons were found; these path bubbles are the
 | --- | --- |
 | width | 291px bubble (fit-content) |
 | row_heights | 52px (icon rows), 40px (text rows), 55-56px (courses) |
-| row_padding | 0 40px 0 20px |
+| row_padding | 0 `space.40` 40px 0 `space.20` 20px |
 | icon | 32x32, 20px right margin |
 | font | 700 15px/16px, 0.8px, uppercase |
-| section_padding | 8px 0 |
-| divider | 2px swan |
+| section_padding | `space.8` 8px 0 |
+| divider | `borderWidth.2` 2px swan |
 | CSS source | css:9071-d035f2e5.css .GHXZL { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; --web-ui_button-filter-hover:none; align-items:center; box-sizing:border-box; color:rgb(var(--color-wolf)); display:flex; font:700 15px/16px duolingo-sans,sans-serif; min-width:100px; padding:0 40px 0 20px; text-transform:uppercase; white-space:nowrap; width:100% }<br>css:9071-d035f2e5.css ._2ifes { height:52px }<br>css:9071-d035f2e5.css ._3QrGV { height:40px }<br>css:9071-d035f2e5.css ._1fv9a { border-bottom:2px solid rgb(var(--color-swan)) }<br>css:5275-8898b509.css ._2xxCs ._1aVVk { align-items:center; display:flex; flex-direction:row } |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| MORE bubble (dark) | learn-dark-more-menu#59 <div> cl='_36bu_' | 291x262 |  | 15px | 2px #37464F (swan, dark) | #131F24 (snow, dark) | #52656D (hare, dark) | label 700 15px/16px ls normal uppercase |
-| link row (dark) | learn-dark-more-menu#61 <a> cl='_2ifes GHXZL' dt='det-nav' | 287x52 | 0px 40px 0px 20px |  |  |  | #DCE6EC (wolf, dark) | label 700 15px/16px ls 0.8px uppercase |
-| action row (dark) | learn-dark-more-menu#68 <button> cl='_1gEmM _7jW2t _3QrGV GHXZL' dt='settings-button' | 287x40 | 0px 40px 0px 20px |  |  |  | #DCE6EC (wolf, dark) | label 700 15px/16px ls normal uppercase |
-| action row hover (dark) | learn-dark-more-menu-item-hover#68 <button> cl='_1gEmM _7jW2t _3QrGV GHXZL' dt='settings-button' | 287x40 | 0px 40px 0px 20px |  |  | #202F36 (polar, dark) | #DCE6EC (wolf, dark) | label 700 15px/16px ls normal uppercase |
-| MORE bubble (light) | learn-light-more-menu#59 <div> cl='_36bu_' | 291x262 |  | 15px | 2px #E5E5E5 (swan, light) | #FFFFFF (snow, light) | #AFAFAF (hare, light) | label 700 15px/16px ls normal uppercase |
-| action row (light) | learn-light-more-menu#68 <button> cl='_1gEmM _7jW2t _3QrGV GHXZL' dt='settings-button' | 287x40 | 0px 40px 0px 20px |  |  |  | #777777 (wolf, light) | label 700 15px/16px ls normal uppercase |
-| courses menu item selected (dark) | learn-dark-courses-dropdown#79 <div> cl='_1aVVk _1WRXX' | 240x55 | 10px 12px 10px 20px |  |  | #202F36 (polar, dark) | #1899D6 (whale, dark) | 700 17px/20px |
-| courses menu item (light) | learn-light-courses-dropdown#83 <div> cl='_1aVVk' | 240x55 | 10px 12px 10px 20px |  |  |  | #4B4B4B (eel, light) | 700 17px/20px |
+| MORE bubble (dark) | learn-dark-more-menu#59 <div> cl='_36bu_' | 291x262 |  | 15px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.tertiary` #52656D (hare, dark) | label 700 15px/16px ls normal uppercase |
+| link row (dark) | learn-dark-more-menu#61 <a> cl='_2ifes GHXZL' dt='det-nav' | 287x52 | 0px 40px 0px 20px |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | label 700 15px/16px ls 0.8px uppercase |
+| action row (dark) | learn-dark-more-menu#68 <button> cl='_1gEmM _7jW2t _3QrGV GHXZL' dt='settings-button' | 287x40 | 0px 40px 0px 20px |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | label 700 15px/16px ls normal uppercase |
+| action row hover (dark) | learn-dark-more-menu-item-hover#68 <button> cl='_1gEmM _7jW2t _3QrGV GHXZL' dt='settings-button' | 287x40 | 0px 40px 0px 20px |  |  | `surface.subtle` #202F36 (polar, dark) | `text.secondary` #DCE6EC (wolf, dark) | label 700 15px/16px ls normal uppercase |
+| MORE bubble (light) | learn-light-more-menu#59 <div> cl='_36bu_' | 291x262 |  | 15px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `text.tertiary` #AFAFAF (hare, light) | label 700 15px/16px ls normal uppercase |
+| action row (light) | learn-light-more-menu#68 <button> cl='_1gEmM _7jW2t _3QrGV GHXZL' dt='settings-button' | 287x40 | 0px 40px 0px 20px |  |  |  | `text.secondary` #777777 (wolf, light) | label 700 15px/16px ls normal uppercase |
+| courses menu item selected (dark) | learn-dark-courses-dropdown#79 <div> cl='_1aVVk _1WRXX' | 240x55 | 10px 12px 10px 20px |  |  | `surface.subtle` #202F36 (polar, dark) | `text.selected` #1899D6 (whale, dark) | 700 17px/20px |
+| courses menu item (light) | learn-light-courses-dropdown#83 <div> cl='_1aVVk' | 240x55 | 10px 12px 10px 20px |  |  |  | `text.primary` #4B4B4B (eel, light) | 700 17px/20px |
 
 **States**
 
@@ -1036,13 +1036,13 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| fill | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| border | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| row label | #777777 (wolf, light) | #DCE6EC (wolf, dark) |
-| hover row fill | #F7F7F7 (polar, light) | #202F36 (polar, dark) |
-| selected course fill | #F7F7F7 (polar, light) | #202F36 (polar, dark) |
-| selected course text | #1899D6 (whale, light) | #1899D6 (whale, dark) |
-| header | #AFAFAF (hare, light) | #52656D (hare, dark) |
+| fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| row label | `text.secondary` #777777 (wolf, light) | `text.secondary` #DCE6EC (wolf, dark) |
+| hover row fill | `surface.subtle` #F7F7F7 (polar, light) | `surface.subtle` #202F36 (polar, dark) |
+| selected course fill | `surface.subtle` #F7F7F7 (polar, light) | `surface.subtle` #202F36 (polar, dark) |
+| selected course text | `text.selected` #1899D6 (whale, light) | `text.selected` #1899D6 (whale, dark) |
+| header | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
 
 Type style: 700 15px/16px uppercase, 0.8px.
 
@@ -1070,14 +1070,14 @@ Crops: [dark: menu-dark.png](crops/menu-dark.png) [dark: menu-hover-dark.png](cr
 | Property | Value |
 | --- | --- |
 | width | 384px (notifications, quit) / 480px (invite) |
-| padding | 24px (notifications, quit) / 30px (invite) |
-| radius | 16px |
-| margin | 24px |
+| padding | `space.24` 24px (notifications, quit) / `space.30` 30px (invite) |
+| radius | `radius.16` 16px |
+| margin | `space.24` 24px |
 | border | none |
 | shadow | none |
 | title | 700 24px/32px (heading-medium), 12px top margin |
 | body | 500 16px/24px caption, wolf, 12px top margin |
-| button_stack | primary 50px, margin-top 32px; secondary text 32px, margin-top 16px |
+| button_stack | primary 50px, margin-top `space.32` 32px; secondary text 32px, margin-top `space.16` 16px |
 | close | 35x35, 2px border, radius 98px, 16px icon |
 | CSS source | css:app-f2ef02f8.css ._1yFTM { border-radius:var(--modal-border-radius,16px); margin:var(--modal-margin,24px) }<br>css:app-f2ef02f8.css .FohH5 { --modal-padding:30px; background:rgb(var(--color-snow)) }<br>css:1527-94387874.css ._3tUNa { --modal-padding:24px; width:384px }<br>css:4779-c36ad395.css ._1ATOC { background:rgb(var(--color-black),.4); bottom:0; left:0; position:fixed; right:0; top:0 }<br>css:app-f2ef02f8.css .rXoiv { align-items:center; background:rgb(var(--color-snow)); cursor:pointer; display:flex; height:35px; justify-content:center; position:absolute; right:4px; top:4px; width:35px; z-index:10 }<br>css:app-f2ef02f8.css @media (min-width:700px) .rXoiv { backface-visibility:hidden; border:2px solid rgb(var(--color-swan)); border-radius:98px; right:0; top:0; transform:translateX(50%) translateY(-50%) }<br>css:1060-a4cddb41.css ._3r1YP { color:rgb(var(--color-eel)) }<br>css:1060-a4cddb41.css ._3WCnS { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; color:rgb(var(--color-wolf)); font:var(--text-caption-weight) var(--text-caption-size) /var(--text-caption-line-height) duolingo-sans,sans-serif; letter-spacing:var(--text-caption-letter-spacing); margin-top:12px; text-transform:var(--text-caption-casing) } |
 
@@ -1085,16 +1085,16 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| notifications modal (dark) | learn-dark-modal-notifications#358 <div> cl='_1yFTM _3fFQQ FohH5 _3tUNa' | 384x442 | 24px | 16px |  | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| backdrop (dark) | learn-dark-modal-notifications#353 <div> cl='_1ATOC _1Fnem' dt='drawer-backdrop' | 1200x797 |  |  |  | #000000 (black, dark) @ 0.4 alpha | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| title (dark) | learn-dark-modal-notifications#475 <span> cl='_3r1YP' | 336x32 |  |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 24px/32px |
-| body (dark) | learn-dark-modal-notifications#476 <span> cl='_3WCnS' | 336x48 |  |  |  |  | #DCE6EC (wolf, dark) | 500 16px/24px |
-| invite modal (dark) | user-search-dark-invite-modal#196 <div> cl='_1yFTM _3fFQQ FohH5' | 480x477 | 30px | 16px |  | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
-| close button (dark) | user-search-dark-invite-modal#197 <div> cl='rXoiv' dt='close-button' | 35x35 |  | 98px | 2px #37464F (swan, dark) | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| copy-link field (dark) | user-search-dark-invite-modal#202 <div> cl='_1CdbA DLitl' | 420x48 | 5px 10px 5px 10px | 16px | 2px #37464F (swan, dark) | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/20px ls 0.8px uppercase |
-| invite modal (light) | user-search-light-invite-modal#196 <div> cl='_1yFTM _3fFQQ FohH5' | 480x477 | 30px | 16px |  | #FFFFFF (snow, light) | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
-| quit modal (dark) | lesson-dark-quit-modal#132 <div> cl='_1yFTM _3fFQQ FohH5 _3Dms8' | 384x387 | 24px | 16px |  | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| quit modal (light) | lesson-light-quit-modal#148 <div> cl='_1yFTM _3fFQQ FohH5 _3Dms8' | 384x387 | 24px | 16px |  | #FFFFFF (snow, light) | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| notifications modal (dark) | learn-dark-modal-notifications#358 <div> cl='_1yFTM _3fFQQ FohH5 _3tUNa' | 384x442 | 24px | 16px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| backdrop (dark) | learn-dark-modal-notifications#353 <div> cl='_1ATOC _1Fnem' dt='drawer-backdrop' | 1200x797 |  |  |  | `background.scrim` #000000 (black, dark) @ 0.4 alpha | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| title (dark) | learn-dark-modal-notifications#475 <span> cl='_3r1YP' | 336x32 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 24px/32px |
+| body (dark) | learn-dark-modal-notifications#476 <span> cl='_3WCnS' | 336x48 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 500 16px/24px |
+| invite modal (dark) | user-search-dark-invite-modal#196 <div> cl='_1yFTM _3fFQQ FohH5' | 480x477 | 30px | 16px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
+| close button (dark) | user-search-dark-invite-modal#197 <div> cl='rXoiv' dt='close-button' | 35x35 |  | 98px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| copy-link field (dark) | user-search-dark-invite-modal#202 <div> cl='_1CdbA DLitl' | 420x48 | 5px 10px 5px 10px | 16px | 2px `border.default` #37464F (swan, dark) | `text.onPrimary` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/20px ls 0.8px uppercase |
+| invite modal (light) | user-search-light-invite-modal#196 <div> cl='_1yFTM _3fFQQ FohH5' | 480x477 | 30px | 16px |  | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
+| quit modal (dark) | lesson-dark-quit-modal#132 <div> cl='_1yFTM _3fFQQ FohH5 _3Dms8' | 384x387 | 24px | 16px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| quit modal (light) | lesson-light-quit-modal#148 <div> cl='_1yFTM _3fFQQ FohH5 _3Dms8' | 384x387 | 24px | 16px |  | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
 
 **States**
 
@@ -1109,13 +1109,13 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| dialog fill | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| title | #4B4B4B (eel, light) | #F1F7FB (eel, dark) |
-| body | #777777 (wolf, light) | #DCE6EC (wolf, dark) |
-| close fill | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| close border | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| close hover fill | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| field border | #E5E5E5 (swan, light) | #37464F (swan, dark) |
+| dialog fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| title | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
+| body | `text.secondary` #777777 (wolf, light) | `text.secondary` #DCE6EC (wolf, dark) |
+| close fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| close border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| close hover fill | `surface.disabled` #E5E5E5 (swan, light) | `surface.disabled` #37464F (swan, dark) |
+| field border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
 | backdrop | rgb(var(--color-black)) @ 0.4 = #000000 @ 0.4 alpha in both themes (css:4779 ._1ATOC) | |
 
 Type style: Title heading-medium (700 24px/32px); body caption (500 16px/24px).
@@ -1144,8 +1144,8 @@ Crops: [dark: modal-dark.png](crops/modal-dark.png) [dark: modal-invite-dark.png
 | Property | Value |
 | --- | --- |
 | height | 195px (content-driven) |
-| padding | 40px 24px |
-| grid_gap | 16px 40px |
+| padding | `space.40` 40px `space.24` 24px |
+| grid_gap | `space.16` 16px `space.40` 40px |
 | radius | none |
 | title | 700 24px/32px heading-medium |
 | description | 19px/24px wolf |
@@ -1157,13 +1157,13 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| sheet (dark) | settings-courses-dark-remove-confirm#134 <div> cl='rs95t _3fIZ6 _19idO' | 1200x195 |  |  |  | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| inner (dark) | settings-courses-dark-remove-confirm#135 <div> cl='_3qIEH' | 1140x195 | 40px 24px 40px 24px |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| grid (dark) | settings-courses-dark-remove-confirm#136 <div> cl='_1fZrK _25RZD eDTjy _3tWO8' | 1092x115 |  |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| title (dark) | settings-courses-dark-remove-confirm#139 <span> cl='_2ac0P' | 519x32 |  |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 24px/32px |
-| description (dark) | settings-courses-dark-remove-confirm#140 <span> cl='_3OWkn' | 519x48 |  |  |  |  | #DCE6EC (wolf, dark) | 500 19px/24px |
-| cancel (dark) | settings-courses-dark-remove-confirm#145 <button> cl='_3fmUm _2V6ug _1ursp _7jW2t _1wMvQ _3Lflf _1yKZz' dt='notification-drawer-no-thanks-button' | 184x50 | 0px 16px 0px 16px | 16px | 2px 2px 4px 2px transparent | ::before #131F24 (snow, dark); lip #37464F (swan, dark) 0px 2px 0px 0px | #52656D (hare, dark) | label 700 15px/18px ls 0.8px uppercase |
-| sheet (light) | settings-courses-light-remove-confirm#136 <div> cl='rs95t _3fIZ6 _19idO' | 1384x195 |  |  |  | #FFFFFF (snow, light) | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| sheet (dark) | settings-courses-dark-remove-confirm#134 <div> cl='rs95t _3fIZ6 _19idO' | 1200x195 |  |  |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| inner (dark) | settings-courses-dark-remove-confirm#135 <div> cl='_3qIEH' | 1140x195 | 40px 24px 40px 24px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| grid (dark) | settings-courses-dark-remove-confirm#136 <div> cl='_1fZrK _25RZD eDTjy _3tWO8' | 1092x115 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| title (dark) | settings-courses-dark-remove-confirm#139 <span> cl='_2ac0P' | 519x32 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 24px/32px |
+| description (dark) | settings-courses-dark-remove-confirm#140 <span> cl='_3OWkn' | 519x48 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 500 19px/24px |
+| cancel (dark) | settings-courses-dark-remove-confirm#145 <button> cl='_3fmUm _2V6ug _1ursp _7jW2t _1wMvQ _3Lflf _1yKZz' dt='notification-drawer-no-thanks-button' | 184x50 | 0px 16px 0px 16px | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | label 700 15px/18px ls 0.8px uppercase |
+| sheet (light) | settings-courses-light-remove-confirm#136 <div> cl='rs95t _3fIZ6 _19idO' | 1384x195 |  |  |  | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
 
 **States**
 
@@ -1177,9 +1177,9 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| sheet fill | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| title | #4B4B4B (eel, light) | #F1F7FB (eel, dark) |
-| description | #777777 (wolf, light) | #DCE6EC (wolf, dark) |
+| sheet fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| title | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
+| description | `text.secondary` #777777 (wolf, light) | `text.secondary` #DCE6EC (wolf, dark) |
 | backdrop | #000000 @ 0.4 alpha (css:4779 ._1ATOC) | |
 
 Type style: Title heading-medium 700 24px/32px; description 19px/24px.
@@ -1209,9 +1209,9 @@ Notes: Same drawer classes (rs95t) are shared across 40+ CSS chunks (lesson feed
 | Property | Value |
 | --- | --- |
 | row_height | 40px |
-| row_gap | 4px |
-| padding | 8px 30px |
-| radius | 12px |
+| row_gap | `space.4` 4px |
+| padding | `space.8` 8px `space.30` 30px |
+| radius | `radius.12` 12px |
 | font | 700 20px/24px (heading-small) |
 | title | 700 24px/32px wolf |
 | CSS source | css:settingsPage-f3f7f16a.css .bigAx { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; color:rgb(var(--color-eel)); display:block; font:var(--text-heading-weight-small) var(--text-heading-size-small) /var(--text-heading-line-height-small) duolingo-sans,sans-serif; letter-spacing:var(--text-heading-letter-spacing-small); padding:8px 30px; text-transform:var(--text-heading-casing-small) }<br>css:settingsPage-f3f7f16a.css .wgPZT { border-radius:12px }<br>css:settingsPage-f3f7f16a.css ._1lpXi { display:grid; gap:4px }<br>css:settingsPage-f3f7f16a.css ._7yUNn { -webkit-font-smoothing:antialiased; font:var(--text-heading-weight-medium) var(--text-heading-size-medium) /var(--text-heading-line-height-medium) duolingo-sans,sans-serif; letter-spacing:var(--text-heading-letter-spacing-medium); margin:0 30px 16px; text-transform:var(--text-heading-casing-medium) } |
@@ -1220,12 +1220,12 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| row (dark) | settings-courses-dark-default#71 <li> cl='wgPZT' | 332x40 |  | 12px |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| link (dark) | settings-courses-dark-default#72 <a> cl='bigAx' | 332x40 | 8px 30px 8px 30px |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 20px/24px |
-| row hover (dark) | settings-courses-dark-sidenav-hover#93 <li> cl='wgPZT' | 332x40 |  | 12px |  | #37464F (swan, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| row (light) | settings-courses-light-default#71 <li> cl='wgPZT' | 332x40 |  | 12px |  |  | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| row hover (light, pointer resting in default capture) | settings-profile-light-default#83 <li> cl='wgPZT' | 332x40 |  | 12px |  | #E5E5E5 (swan, light) | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| section title (dark) | settings-courses-dark-default#69 <h2> cl='_7yUNn' | 272x32 |  |  |  |  | #DCE6EC (wolf, dark) | 700 24px/32px |
+| row (dark) | settings-courses-dark-default#71 <li> cl='wgPZT' | 332x40 |  | 12px |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
+| link (dark) | settings-courses-dark-default#72 <a> cl='bigAx' | 332x40 | 8px 30px 8px 30px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 20px/24px |
+| row hover (dark) | settings-courses-dark-sidenav-hover#93 <li> cl='wgPZT' | 332x40 |  | 12px |  | `surface.disabled` #37464F (swan, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
+| row (light) | settings-courses-light-default#71 <li> cl='wgPZT' | 332x40 |  | 12px |  |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
+| row hover (light, pointer resting in default capture) | settings-profile-light-default#83 <li> cl='wgPZT' | 332x40 |  | 12px |  | `surface.disabled` #E5E5E5 (swan, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
+| section title (dark) | settings-courses-dark-default#69 <h2> cl='_7yUNn' | 272x32 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 700 24px/32px |
 
 **States**
 
@@ -1240,9 +1240,9 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| label | #4B4B4B (eel, light) | #F1F7FB (eel, dark) |
-| hover fill | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| section title | #777777 (wolf, light) | #DCE6EC (wolf, dark) |
+| label | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
+| hover fill | `surface.disabled` #E5E5E5 (swan, light) | `surface.disabled` #37464F (swan, dark) |
+| section title | `text.secondary` #777777 (wolf, light) | `text.secondary` #DCE6EC (wolf, dark) |
 
 Type style: Row: heading-small 700 20px/24px. Title: heading-medium 700 24px/32px.
 
@@ -1269,10 +1269,10 @@ Crops: [dark: list-settings-nav-dark.png](crops/list-settings-nav-dark.png) [lig
 
 | Property | Value |
 | --- | --- |
-| course_row | 64px, gap 16px |
-| search_row | 113px, padding 18px 24px, avatar 70, text margin 0 16px |
-| following_row | 85px, padding 16px, avatar 48 |
-| divider | 2px swan |
+| course_row | 64px, gap `space.16` 16px |
+| search_row | 113px, padding `space.18` 18px `space.24` 24px, avatar 70, text margin 0 `space.16` 16px |
+| following_row | 85px, padding `space.16` 16px, avatar 48 |
+| divider | `borderWidth.2` 2px swan |
 | container | 2px swan border, 16px radius |
 | CSS source | css:settingsPage-f3f7f16a.css .Ej0kW { align-items:center; box-sizing:content-box; display:flex; gap:16px; height:64px; padding:0 16px }<br>css:settingsPage-f3f7f16a.css ._3hY-r { border-bottom:2px solid rgb(var(--color-swan)) }<br>css:1081-5a510dac.css .nAD2k { padding:18px 24px }<br>css:1081-5a510dac.css ._39QMj { align-items:center; border-bottom:2px solid rgb(var(--color-swan)); display:flex }<br>css:1081-5a510dac.css ._1xR2j { padding:16px }<br>css:1081-5a510dac.css ._2G9SS { border:2px solid rgb(var(--color-swan)); border-radius:16px }<br>css:5515-e83f96c1.css ._3jvnF { border-top:2px solid rgb(var(--color-swan)); color:rgb(var(--color-eel)); display:flex; font-weight:700; justify-content:space-between; padding:16px; width:100% }<br>css:settingsPage-f3f7f16a.css ._2R7tY { align-items:center; display:flex; gap:48px; justify-content:space-between } |
 
@@ -1280,16 +1280,16 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| course row (dark) | settings-courses-dark-default#102 <li> cl='_3hY-r Ej0kW' | 480x66 |  |  | 0px 0px 2px 0px #37464F (swan, dark) |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| course row (light) | settings-courses-light-default#104 <li> cl='_3hY-r Ej0kW' | 592x66 |  |  | 0px 0px 2px 0px #E5E5E5 (swan, light) |  | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| search result (dark) | user-search-dark-results#78 <div> cl='nAD2k _39QMj' | 482x113 | 18px 24px 18px 24px |  | 0px 0px 2px 0px #37464F (swan, dark) |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/20px ls 0.8px uppercase |
-| search result (light) | user-search-light-results#78 <div> cl='nAD2k _39QMj' | 594x113 | 18px 24px 18px 24px |  | 0px 0px 2px 0px #E5E5E5 (swan, light) |  | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/20px ls 0.8px uppercase |
-| result name (dark) | user-search-dark-results#83 <h3> cl='_25Afh _2jQO8' | 93x33 |  |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 24px/normal |
-| result handle (dark) | user-search-dark-results#84 <div> cl='_347DQ LH3xS' | 93x20 |  |  |  |  | #52656D (hare, dark) | 500 18px/20px |
-| following row (dark) | profile-dark-default#150 <div> cl='_1xR2j _39QMj _2SROJ' | 364x85 | 16px |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/normal ls normal none |
-| following row (light) | profile-light-default#151 <div> cl='_1xR2j _39QMj _2SROJ' | 364x85 | 16px |  |  |  | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/normal ls normal none |
-| view more (dark) | profile-dark-default#171 <button> cl='_1gEmM _7jW2t _3jvnF' | 364x54 | 16px |  | 2px 0px 0px 0px #37464F (swan, dark) |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 17px/19.55px |
-| settings row (dark) | settings-account-dark-default#106 <li> cl='hpqEH' | 480x32 |  |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
+| course row (dark) | settings-courses-dark-default#102 <li> cl='_3hY-r Ej0kW' | 480x66 |  |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
+| course row (light) | settings-courses-light-default#104 <li> cl='_3hY-r Ej0kW' | 592x66 |  |  | 0px 0px 2px 0px `border.default` #E5E5E5 (swan, light) |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
+| search result (dark) | user-search-dark-results#78 <div> cl='nAD2k _39QMj' | 482x113 | 18px 24px 18px 24px |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/20px ls 0.8px uppercase |
+| search result (light) | user-search-light-results#78 <div> cl='nAD2k _39QMj' | 594x113 | 18px 24px 18px 24px |  | 0px 0px 2px 0px `border.default` #E5E5E5 (swan, light) |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/20px ls 0.8px uppercase |
+| result name (dark) | user-search-dark-results#83 <h3> cl='_25Afh _2jQO8' | 93x33 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 24px/normal |
+| result handle (dark) | user-search-dark-results#84 <div> cl='_347DQ LH3xS' | 93x20 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | 500 18px/20px |
+| following row (dark) | profile-dark-default#150 <div> cl='_1xR2j _39QMj _2SROJ' | 364x85 | 16px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/normal ls normal none |
+| following row (light) | profile-light-default#151 <div> cl='_1xR2j _39QMj _2SROJ' | 364x85 | 16px |  |  |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/normal ls normal none |
+| view more (dark) | profile-dark-default#171 <button> cl='_1gEmM _7jW2t _3jvnF' | 364x54 | 16px |  | 2px 0px 0px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 17px/19.55px |
+| settings row (dark) | settings-account-dark-default#106 <li> cl='hpqEH' | 480x32 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
 
 **States**
 
@@ -1304,9 +1304,9 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| name | #4B4B4B (eel, light) | #F1F7FB (eel, dark) |
-| secondary text | #AFAFAF (hare, light) | #52656D (hare, dark) |
-| divider / container border | #E5E5E5 (swan, light) | #37464F (swan, dark) |
+| name | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
+| secondary text | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
+| divider / container border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
 
 Type style: Course name heading-small 700 20px/24px; search name 700 24px; handle 18px; following name 20px, XP 16px.
 
@@ -1332,26 +1332,26 @@ Crops: [dark: list-rows-courses-dark.png](crops/list-rows-courses-dark.png) [dar
 
 | Property | Value |
 | --- | --- |
-| rail_card | 368px wide, padding 18px, border 2px, radius 16px, 16px vertical gap between cards |
-| settings_card | padding 24px 16px |
-| stat_tile | 234x78 (desktop 480 column), padding 15px 24px, gap 12px between tiles |
+| rail_card | 368px wide, padding `space.18` 18px, border `borderWidth.2` 2px, radius `radius.16` 16px, 16px vertical gap between cards |
+| settings_card | padding `space.24` 24px `space.16` 16px |
+| stat_tile | 234x78 (desktop 480 column), padding `space.15` 15px `space.24` 24px, gap `space.12` 12px between tiles |
 | CSS source | css:1008-b4d34396.css ._1T_BQ { background:rgb(var(--color-snow)); border:2px solid rgb(var(--color-swan)); border-radius:16px }<br>css:settingsPage-f3f7f16a.css ._1uIIO { padding:24px 16px }<br>css:5515-e83f96c1.css ._2uSOC { border:2px solid rgb(var(--color-swan)); border-radius:16px; display:flex; overflow:hidden; padding:15px 24px }<br>css:5515-e83f96c1.css @media (max-width:699px) ._2uSOC { padding:12px 14px 10px }<br>css:5515-e83f96c1.css ._1kcT_ { color:rgb(var(--color-hare)) }<br>css:5515-e83f96c1.css .-TMd4 { font-size:20px; margin-bottom:4px } |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| rail card (dark) | characters-dark-default#95 <div> cl='_2cnFr _1T_BQ' | 368x230 | 18px | 16px | 2px #37464F (swan, dark) | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/18px ls normal uppercase |
-| rail card eyebrow (dark) | characters-dark-default#96 <div> cl='bVnHX' | 328x18 |  |  |  |  | #52656D (hare, dark) | 700 15px/18px |
-| rail card title (dark) | characters-dark-default#99 <h2> cl='_3yevs _1d_-b' | 224x28 |  |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 19px/28px |
-| rail card body (dark) | characters-dark-default#100 <div> cl='_1MY88 OWSZL' | 224x50 |  |  |  |  | #DCE6EC (wolf, dark) | 500 17px/25px |
-| rail card (light) | characters-light-default#96 <div> cl='_2cnFr _1T_BQ' | 368x178 | 18px | 16px | 2px #E5E5E5 (swan, light) | #FFFFFF (snow, light) | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 500 17px/25px ls normal none |
-| settings side card (dark) | settings-courses-dark-default#68 <div> cl='_1uIIO _1T_BQ' | 368x404 | 24px 16px 24px 16px | 16px | 2px #37464F (swan, dark) | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| super promo card (dark) | characters-dark-default#123 <div> cl='_3Mmv9' | 368x330 | 0px 24px 0px 24px | 16px |  | #000437 (eclipse, dark) | #FFFFFF (celestia, dark) | label 700 15px/20px ls 1px uppercase |
-| stat tile (dark) | profile-dark-default#245 <div> cl='_2uSOC' | 234x78 | 15px 24px 15px 24px | 16px | 2px #37464F (swan, dark) |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/20px ls normal none |
-| stat tile inactive (dark) | profile-dark-default#239 <div> cl='_2uSOC _1kcT_' | 234x78 | 15px 24px 15px 24px | 16px | 2px #37464F (swan, dark) |  | #52656D (hare, dark) | label 700 20px/20px ls normal none |
-| stat tile (light) | profile-light-default#255 <div> cl='_2uSOC' | 290x78 | 15px 24px 15px 24px | 16px | 2px #E5E5E5 (swan, light) |  | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/20px ls normal none |
-| stat tile (dark mobile) | profile-dark-mobile#80 <div> cl='_2uSOC' | 263x70 | 12px 14px 10px 14px | 16px | 2px #37464F (swan, dark) |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 19px/20px ls normal none |
+| rail card (dark) | characters-dark-default#95 <div> cl='_2cnFr _1T_BQ' | 368x230 | 18px | 16px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/18px ls normal uppercase |
+| rail card eyebrow (dark) | characters-dark-default#96 <div> cl='bVnHX' | 328x18 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | 700 15px/18px |
+| rail card title (dark) | characters-dark-default#99 <h2> cl='_3yevs _1d_-b' | 224x28 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 19px/28px |
+| rail card body (dark) | characters-dark-default#100 <div> cl='_1MY88 OWSZL' | 224x50 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 500 17px/25px |
+| rail card (light) | characters-light-default#96 <div> cl='_2cnFr _1T_BQ' | 368x178 | 18px | 16px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 500 17px/25px ls normal none |
+| settings side card (dark) | settings-courses-dark-default#68 <div> cl='_1uIIO _1T_BQ' | 368x404 | 24px 16px 24px 16px | 16px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| super promo card (dark) | characters-dark-default#123 <div> cl='_3Mmv9' | 368x330 | 0px 24px 0px 24px | 16px |  | `gamification.super.surface` #000437 (eclipse, dark) | `palette.dark.celestia` #FFFFFF (celestia, dark) | label 700 15px/20px ls 1px uppercase |
+| stat tile (dark) | profile-dark-default#245 <div> cl='_2uSOC' | 234x78 | 15px 24px 15px 24px | 16px | 2px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/20px ls normal none |
+| stat tile inactive (dark) | profile-dark-default#239 <div> cl='_2uSOC _1kcT_' | 234x78 | 15px 24px 15px 24px | 16px | 2px `border.default` #37464F (swan, dark) |  | `text.tertiary` #52656D (hare, dark) | label 700 20px/20px ls normal none |
+| stat tile (light) | profile-light-default#255 <div> cl='_2uSOC' | 290x78 | 15px 24px 15px 24px | 16px | 2px `border.default` #E5E5E5 (swan, light) |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/20px ls normal none |
+| stat tile (dark mobile) | profile-dark-mobile#80 <div> cl='_2uSOC' | 263x70 | 12px 14px 10px 14px | 16px | 2px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 19px/20px ls normal none |
 
 **States**
 
@@ -1365,13 +1365,13 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| fill | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| border | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| title | #4B4B4B (eel, light) | #F1F7FB (eel, dark) |
-| body | #777777 (wolf, light) | #DCE6EC (wolf, dark) |
-| eyebrow | #AFAFAF (hare, light) | #52656D (hare, dark) |
-| stat caption | #AFAFAF (hare, light) | #52656D (hare, dark) |
-| super card fill | #000437 (eclipse, light) | #000437 (eclipse, dark) |
+| fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| title | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
+| body | `text.secondary` #777777 (wolf, light) | `text.secondary` #DCE6EC (wolf, dark) |
+| eyebrow | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
+| stat caption | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
+| super card fill | `gamification.super.surface` #000437 (eclipse, light) | `gamification.super.surface` #000437 (eclipse, dark) |
 
 Type style: Title 700 19px/28px; body 17px/25px wolf; eyebrow 700 15px/18px uppercase hare; stat value 700 20px; stat caption 16px.
 
@@ -1405,9 +1405,9 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| hr (dark) | settings-account-dark-default#104 <hr> cl='_3D1uH' | 480x2 |  |  | 2px 0px 0px 0px #37464F (swan, dark) |  | #808080 (browser default, not painted) | 500 17px/20px |
-| hr (light) | settings-account-light-default#137 <hr> cl='_3D1uH' | 592x2 |  |  | 2px 0px 0px 0px #E5E5E5 (swan, light) |  | #808080 (browser default, not painted) | 500 17px/20px |
-| menu divider (dark) | learn-dark-more-menu#60 <div> cl='_1fv9a' | 287x122 | 8px 0px 8px 0px |  | 0px 0px 2px 0px #37464F (swan, dark) |  | #52656D (hare, dark) | label 700 15px/16px ls 0.8px uppercase |
+| hr (dark) | settings-account-dark-default#104 <hr> cl='_3D1uH' | 480x2 |  |  | 2px 0px 0px 0px `border.default` #37464F (swan, dark) |  | #808080 (browser default, not painted) | 500 17px/20px |
+| hr (light) | settings-account-light-default#137 <hr> cl='_3D1uH' | 592x2 |  |  | 2px 0px 0px 0px `border.default` #E5E5E5 (swan, light) |  | #808080 (browser default, not painted) | 500 17px/20px |
+| menu divider (dark) | learn-dark-more-menu#60 <div> cl='_1fv9a' | 287x122 | 8px 0px 8px 0px |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.tertiary` #52656D (hare, dark) | label 700 15px/16px ls 0.8px uppercase |
 
 **States**
 
@@ -1419,7 +1419,7 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| rule | #E5E5E5 (swan, light) | #37464F (swan, dark) |
+| rule | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
 
 Type style: n/a
 
@@ -1458,12 +1458,12 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| sections bar 18px (dark) | sections-dark-default#197 <div> cl='oCRfA _2MB9M' | 178x18 |  |  |  |  | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
-| track (dark) | sections-dark-default#198 <div> cl='_3yKMC' | 178x18 |  | 9px |  | #131F24 (snow, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
-| fill (dark) | sections-dark-default#200 <div> cl='_27NV6' | 178x18 |  | 9px |  | #93D333 (owl, dark) | #93D333 (owl, dark) | label 700 14px/18px ls 0.56px uppercase |
-| shine (dark) | sections-dark-default#202 <div> cl='_1EFTr' | 38x3 |  | 9999px |  | #FFFFFF (celestia, dark) | #93D333 (owl, dark) | 500 17px/20px |
-| sections bar (light) | sections-light-default#206 <div> cl='oCRfA _2MB9M' | 254x18 |  |  |  |  | #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
-| quest bar 18px empty (dark) | characters-dark-default#115 <div> cl='ThLWu _3yKMC' | 207x18 |  | 9px 0px 0px 9px |  | #37464F (swan, dark) | #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
+| sections bar 18px (dark) | sections-dark-default#197 <div> cl='oCRfA _2MB9M' | 178x18 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
+| track (dark) | sections-dark-default#198 <div> cl='_3yKMC' | 178x18 |  | 9px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
+| fill (dark) | sections-dark-default#200 <div> cl='_27NV6' | 178x18 |  | 9px |  | `accent.primary.face` #93D333 (owl, dark) | `accent.primary.face` #93D333 (owl, dark) | label 700 14px/18px ls 0.56px uppercase |
+| shine (dark) | sections-dark-default#202 <div> cl='_1EFTr' | 38x3 |  | 9999px |  | `palette.dark.celestia` #FFFFFF (celestia, dark) | `accent.primary.face` #93D333 (owl, dark) | 500 17px/20px |
+| sections bar (light) | sections-light-default#206 <div> cl='oCRfA _2MB9M' | 254x18 |  |  |  |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
+| quest bar 18px empty (dark) | characters-dark-default#115 <div> cl='ThLWu _3yKMC' | 207x18 |  | 9px 0px 0px 9px |  | `surface.disabled` #37464F (swan, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
 
 **States**
 
@@ -1478,11 +1478,11 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| track | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| fill (default) | #58CC02 (owl, light) | #93D333 (owl, dark) |
-| secondary fill | #FFC800 (bee, light) | #FFC700 (bee, dark) |
-| shine | #FFFFFF (snow-always-light, light) | #FFFFFF (snow-always-light, dark) |
-| inner text on fill | #FFFFFF (snow, light) | #131F24 (snow, dark) |
+| track | `surface.disabled` #E5E5E5 (swan, light) | `surface.disabled` #37464F (swan, dark) |
+| fill (default) | `accent.primary.face` #58CC02 (owl, light) | `accent.primary.face` #93D333 (owl, dark) |
+| secondary fill | `dataViz.progress.fillSecondary` #FFC800 (bee, light) | `dataViz.progress.fillSecondary` #FFC700 (bee, dark) |
+| shine | `text.onColor` #FFFFFF (snow-always-light, light) | `text.onColor` #FFFFFF (snow-always-light, dark) |
+| inner text on fill | `text.onPrimary` #FFFFFF (snow, light) | `text.onPrimary` #131F24 (snow, dark) |
 | note | Sections page sets the track to snow (_2MB9M); quest bars use a bee fill and guinea-pig-always-light inner text (_2nasW). | |
 
 Type style: Inner text 700 14px/18px uppercase.
@@ -1521,13 +1521,13 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| view all (dark) | characters-dark-default#107 <a> cl='_1nf6U c1Mv- _1ursp _7jW2t' | 65x18 |  |  |  |  | #49C0F8 (macaw, dark) | 700 15px/18px |
-| view all (light) | characters-light-default#114 <a> cl='_1nf6U c1Mv- _1ursp _7jW2t' | 65x18 |  |  |  |  | #1CB0F6 (macaw, light) | 700 15px/18px |
-| go to shop (dark) | learn-dark-gems-dropdown#90 <a> cl='MVjvO _1nf6U c1Mv- _1ursp _7jW2t _1PQJw' dt='shop-nav' | 83x18 |  |  |  |  | #49C0F8 (macaw, dark) | 700 15px/18px |
-| export data (dark) | settings-profile-dark-default#137 <a> cl='hBgxi' | 125x16 |  |  |  |  | #52656D (hare, dark) | 700 16px/16px |
-| delete account (dark) | settings-profile-dark-default#138 <a> cl='_2FVDQ' | 153x16 |  |  |  |  | #EE5555 (cardinal, dark) | 700 16px/16px |
-| footer (dark) | characters-dark-default#136 <a> cl='_1oCct' | 38x16 |  |  |  |  | #52656D (hare, dark) | 700 13px/16px |
-| copy link (dark) | user-search-dark-invite-modal#204 <span> cl='_2Go8B _1NHFn _1WLlV _1KSsU _2Rt1l' | 73x20 |  |  |  |  | #49C0F8 (macaw, dark) | 700 15px/20px |
+| view all (dark) | characters-dark-default#107 <a> cl='_1nf6U c1Mv- _1ursp _7jW2t' | 65x18 |  |  |  |  | `text.link` #49C0F8 (macaw, dark) | 700 15px/18px |
+| view all (light) | characters-light-default#114 <a> cl='_1nf6U c1Mv- _1ursp _7jW2t' | 65x18 |  |  |  |  | `text.link` #1CB0F6 (macaw, light) | 700 15px/18px |
+| go to shop (dark) | learn-dark-gems-dropdown#90 <a> cl='MVjvO _1nf6U c1Mv- _1ursp _7jW2t _1PQJw' dt='shop-nav' | 83x18 |  |  |  |  | `text.link` #49C0F8 (macaw, dark) | 700 15px/18px |
+| export data (dark) | settings-profile-dark-default#137 <a> cl='hBgxi' | 125x16 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | 700 16px/16px |
+| delete account (dark) | settings-profile-dark-default#138 <a> cl='_2FVDQ' | 153x16 |  |  |  |  | `accent.danger.text` #EE5555 (cardinal, dark) | 700 16px/16px |
+| footer (dark) | characters-dark-default#136 <a> cl='_1oCct' | 38x16 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | 700 13px/16px |
+| copy link (dark) | user-search-dark-invite-modal#204 <span> cl='_2Go8B _1NHFn _1WLlV _1KSsU _2Rt1l' | 73x20 |  |  |  |  | `text.link` #49C0F8 (macaw, dark) | 700 15px/20px |
 
 **States**
 
@@ -1545,9 +1545,9 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| primary link | #1CB0F6 (macaw, light) | #49C0F8 (macaw, dark) |
-| muted link | #AFAFAF (hare, light) | #52656D (hare, dark) |
-| destructive link | #FF4B4B (cardinal, light) | #EE5555 (cardinal, dark) |
+| primary link | `text.link` #1CB0F6 (macaw, light) | `text.link` #49C0F8 (macaw, dark) |
+| muted link | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
+| destructive link | `accent.danger.text` #FF4B4B (cardinal, light) | `accent.danger.text` #EE5555 (cardinal, dark) |
 
 Type style: 700 uppercase; see sizes.
 
@@ -1573,21 +1573,21 @@ Crops: [dark: link-dark.png](crops/link-dark.png) [light: link-light.png](crops/
 | Property | Value |
 | --- | --- |
 | sizes | 12, 18, 24 (unstyled glyph boxes); 35 (round close); 48 (square tile); 52 (floating) |
-| radius | 12px (tile, _2FxcQ); 16px (fab, root button radius); 50% (close) |
+| radius | `radius.12` 12px (tile, _2FxcQ); `radius.16` 16px (fab, root button radius); 50% (close) |
 | CSS source | css:4779-c36ad395.css ._1gEmM { background:none; border:none; padding:0; transition:filter .2s }<br>css:4779-c36ad395.css @media (hover:hover) ._1gEmM:hover:not(._2wryV):not(.ypJiL) { filter:var(--web-ui_button-filter-hover,brightness(1.1)) }<br>css:app-f2ef02f8.css ._2FxcQ { --web-ui_button-height:48px; --web-ui_button-padding:0; --web-ui_button-border-radius:12px; width:48px }<br>css:path-e50cab6b.css ._2dnkd { --web-ui_button-height:52px; --web-ui_button-padding:0; width:52px }<br>css:4779-c36ad395.css .GEQ3b { --web-ui_button-filter-hover:none; align-items:center; border-radius:12px; height:48px; justify-content:center; width:48px } |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| quit X (dark) | lesson-dark-challenge-default#7 <button> cl='_1gEmM _7jW2t _3X5b9' dt='quit-button' | 18x18 |  |  |  |  | #000000 (black, dark) | 400 17px/19.55px |
-| quit X (light) | lesson-light-challenge-default#7 <button> cl='_1gEmM _7jW2t _3X5b9' dt='quit-button' | 18x18 |  |  |  |  | #000000 (black, light) | 400 17px/19.55px |
-| close X on upsell (light) | lesson-light-trial-upsell#21 <button> cl='_1gEmM _7jW2t GEQ3b _2pYm_ bafGS _2LoNU VzbUl _1saKQ _1AgKJ' dt='plus-close-x' | 19x19 |  |  |  |  | #000000 (black, light) | 400 17px/0px |
-| password eye (light) | settings-profile-light-default#125 <button> cl='ypJiL _1gEmM _7jW2t rQJD2' | 24x24 |  |  |  |  | #000000 (black, light) | 400 17px/19.55px |
-| suggestion dismiss (dark) | profile-dark-scrolled#278 <button> cl='_1gEmM _7jW2t _2FpYw' | 12x12 |  |  |  |  | #000000 (black, dark) | 400 17px/19.55px |
-| fab 52 (dark) | learn-dark-completed-popover#1664 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR' | 52x52 |  | 16px | 2px 2px 4px 2px transparent | ::before #131F24 (snow, dark); lip #37464F (swan, dark) 0px 2px 0px 0px | #52656D (hare, dark) | 700 15px/18px |
-| fab 52 (light) | learn-light-completed-popover#1674 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR' | 52x52 |  | 16px | 2px 2px 4px 2px transparent | ::before #FFFFFF (snow, light); lip #E5E5E5 (swan, light) 0px 2px 0px 0px | #AFAFAF (hare, light) | 700 15px/18px |
-| tile 48 (dark) | leaderboard-dark-default#102 <button> cl='_2V6ug _1ursp _7jW2t _5Keb0 _2FxcQ' | 48x48 |  | 12px | 2px 2px 4px 2px transparent | ::before #131F24 (snow, dark); lip #37464F (swan, dark) 0px 2px 0px 0px | #52656D (hare, dark) | 700 15px/18px |
+| quit X (dark) | lesson-dark-challenge-default#7 <button> cl='_1gEmM _7jW2t _3X5b9' dt='quit-button' | 18x18 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
+| quit X (light) | lesson-light-challenge-default#7 <button> cl='_1gEmM _7jW2t _3X5b9' dt='quit-button' | 18x18 |  |  |  |  | `palette.light.black` #000000 (black, light) | 400 17px/19.55px |
+| close X on upsell (light) | lesson-light-trial-upsell#21 <button> cl='_1gEmM _7jW2t GEQ3b _2pYm_ bafGS _2LoNU VzbUl _1saKQ _1AgKJ' dt='plus-close-x' | 19x19 |  |  |  |  | `palette.light.black` #000000 (black, light) | 400 17px/0px |
+| password eye (light) | settings-profile-light-default#125 <button> cl='ypJiL _1gEmM _7jW2t rQJD2' | 24x24 |  |  |  |  | `palette.light.black` #000000 (black, light) | 400 17px/19.55px |
+| suggestion dismiss (dark) | profile-dark-scrolled#278 <button> cl='_1gEmM _7jW2t _2FpYw' | 12x12 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
+| fab 52 (dark) | learn-dark-completed-popover#1664 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR' | 52x52 |  | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | 700 15px/18px |
+| fab 52 (light) | learn-light-completed-popover#1674 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR' | 52x52 |  | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #FFFFFF (snow, light); lip `surface.disabled` #E5E5E5 (swan, light) 0px 2px 0px 0px | `text.tertiary` #AFAFAF (hare, light) | 700 15px/18px |
+| tile 48 (dark) | leaderboard-dark-default#102 <button> cl='_2V6ug _1ursp _7jW2t _5Keb0 _2FxcQ' | 48x48 |  | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | 700 15px/18px |
 
 **States**
 
@@ -1604,9 +1604,9 @@ Measured instances:
 
 | Role | Light | Dark |
 | --- | --- | --- |
-| framed face | #FFFFFF (snow, light) | #131F24 (snow, dark) |
-| framed border + lip | #E5E5E5 (swan, light) | #37464F (swan, dark) |
-| glyph (quit X) | #AFAFAF (hare, light) | #52656D (hare, dark) |
+| framed face | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| framed border + lip | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
+| glyph (quit X) | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
 
 Type style: n/a
 
@@ -1618,6 +1618,53 @@ Crops: [dark: icon-button-dark.png](crops/icon-button-dark.png) [dark: icon-butt
 
 ![icon-button light](crops/icon-button-light.png)
 ![icon-button dark](crops/icon-button-dark.png)
+
+## Table (Guidebook phrase table)
+
+**Anatomy**
+
+- `<table>` cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card
+- header cells (`td` cl=GK0kS DLX_3): tinted fill, 2px border on every side, the outer top corners rounded 16px
+- body cells (`td` cl=GK0kS): no fill, 2px right and bottom borders (2px left on the first column), so the grid is drawn by the cells, not by the table (`border-collapse: separate`, spacing 0)
+
+**Measurements**
+
+| Property | Value |
+| --- | --- |
+| table | 544 x 210 at 1440 (432 wide at 1200); no border of its own |
+| table radius | `radius.16` 16px |
+| header row | 66px tall; header labels bold (Observed) |
+| cell padding | `space.10` 10px `space.16` 16px |
+| body row | 48px tall; 500 17px/22px |
+| grid line border | `borderWidth.2` 2px |
+| source | computed styles from the 2026-10-17 page copies (raw/2026-10/copy-measurements.json guidebook-*-table) and the 2026-09-25 dumps (guidebook-light-default#491-525, guidebook-dark-default#482-516) |
+
+**States**
+
+| State | What changes | Source |
+| --- | --- | --- |
+| default | as above | captured: guidebook-light-table, guidebook-dark-table (2026-10-17) |
+| hover / focus / selected | none: the table is static reading content with no interactive cells | not interactive |
+
+**Tokens**
+
+| Role | Light | Dark |
+| --- | --- | --- |
+| table fill | `surface.default` #FFFFFF (snow, light) | `surface.default` #131F24 (snow, dark) |
+| header cell fill (at 0.3 alpha) | `palette.light.macaw` #1CB0F6 (macaw, light) | `palette.dark.macaw` #49C0F8 (macaw, dark) |
+| grid line border | `border.selected` #84D8FF (blue-jay, light) | `border.selected` #3F85A7 (blue-jay, dark) |
+| cell text | `text.body` #3C3C3C (black-text, light) | `text.body` #F1F7FB (black-text, dark) |
+
+Type style: body (500, 17px/22px).
+
+Responsive (570px): no phone capture of the Guidebook.
+
+Screenshots: light: `../screenshots/guidebook-light-table.png`; dark: `../screenshots/guidebook-dark-table.png`
+
+Crops: [light: table-light.png](crops/table-light.png) [dark: table-dark.png](crops/table-dark.png)
+
+![table light](crops/table-light.png)
+![table dark](crops/table-dark.png)
 
 ## Toast / snackbar
 

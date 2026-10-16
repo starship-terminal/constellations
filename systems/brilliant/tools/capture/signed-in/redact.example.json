@@ -1,0 +1,11 @@
+{
+ "_note": "Shape of ~/.design-systems/brilliant-redact.json (never committed). replace: [pattern, flags, replacement]; badges: [selector, letter] for initials. The real file holds the account's name, email and account id.",
+ "replace": [
+  ["Account Holder", "gi", "Learner Example"],
+  ["\\bAccount\\b(?= Holder)", "g", "Learner"],
+  ["account\\.holder(@|%40)example\\.com", "gi", "learner@example.com"]
+ ],
+ "badges": [["[role=img][aria-label]", "L"]],
+ "scrub": [],
+ "keep": []
+}

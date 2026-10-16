@@ -1,0 +1,16 @@
+# label	render flags: "full" adds a whole-page shot; scroll=<px|max> scrolls the tallest inner scroller
+# One row per page copy, named <page>-<theme>-<state>. Light and dark are separate copies, taken by
+# switching the browser colour scheme (the account theme follows the system).
+learn-light-friend-streak-modal
+learn-light-tablet
+learn-light-phone
+learn-dark-phone
+lesson-dark-report-form
+lesson-dark-report-form-checked
+lesson-light-report-form-checked
+user-search-light-empty
+user-search-light-no-results
+user-search-dark-no-results
+quests-dark-phone
+guidebook-dark-table
+guidebook-light-table

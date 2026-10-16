@@ -1,0 +1,360 @@
+{
+ "url": "/register",
+ "theme": "light",
+ "w": 390,
+ "headings": [
+  {
+   "t": "I want to learn...",
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(75, 75, 75)",
+    "border-top-color": "rgb(75, 75, 75)",
+    "border-top-width": "0px",
+    "border-bottom-width": "0px",
+    "border-radius": "0px",
+    "box-shadow": "none",
+    "font-size": "32px",
+    "font-weight": "700",
+    "line-height": "40px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "40px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   }
+  },
+  {
+   "t": "Spanish",
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(75, 75, 75)",
+    "border-top-color": "rgb(75, 75, 75)",
+    "border-top-width": "0px",
+    "border-bottom-width": "0px",
+    "border-radius": "0px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "700",
+    "line-height": "20.4px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "20.3906px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   }
+  },
+  {
+   "t": "French",
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(75, 75, 75)",
+    "border-top-color": "rgb(75, 75, 75)",
+    "border-top-width": "0px",
+    "border-bottom-width": "0px",
+    "border-radius": "0px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "700",
+    "line-height": "20.4px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "20.3906px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   }
+  },
+  {
+   "t": "Chess",
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(75, 75, 75)",
+    "border-top-color": "rgb(75, 75, 75)",
+    "border-top-width": "0px",
+    "border-bottom-width": "0px",
+    "border-radius": "0px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "700",
+    "line-height": "20.4px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "20.3906px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   }
+  },
+  {
+   "t": "English",
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(75, 75, 75)",
+    "border-top-color": "rgb(75, 75, 75)",
+    "border-top-width": "0px",
+    "border-bottom-width": "0px",
+    "border-radius": "0px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "700",
+    "line-height": "20.4px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "20.3906px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   }
+  },
+  {
+   "t": "Japanese",
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(75, 75, 75)",
+    "border-top-color": "rgb(75, 75, 75)",
+    "border-top-width": "0px",
+    "border-bottom-width": "0px",
+    "border-radius": "0px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "700",
+    "line-height": "20.4px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "20.3906px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   }
+  },
+  {
+   "t": "German",
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(75, 75, 75)",
+    "border-top-color": "rgb(75, 75, 75)",
+    "border-top-width": "0px",
+    "border-bottom-width": "0px",
+    "border-radius": "0px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "700",
+    "line-height": "20.4px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "20.3906px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   }
+  }
+ ],
+ "items": [
+  {
+   "tag": "A",
+   "dt": "",
+   "role": "",
+   "text": "",
+   "rect": [
+    115,
+    14,
+    161,
+    42
+   ],
+   "s": {
+    "background-color": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 238)",
+    "border-top-color": "rgb(0, 0, 238)",
+    "border-top-width": "0px",
+    "border-bottom-width": "0px",
+    "border-radius": "0px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "500",
+    "line-height": "20px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "42px",
+    "padding-top": "0px",
+    "padding-left": "0px"
+   },
+   "before": null
+  },
+  {
+   "tag": "BUTTON",
+   "dt": "flag-spanish language-card",
+   "role": "",
+   "text": "Spanish41.9M learners",
+   "rect": [
+    28,
+    234,
+    161,
+    217
+   ],
+   "s": {
+    "background-color": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border-top-color": "rgb(229, 229, 229)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "16px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "400",
+    "line-height": "19.55px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "217px",
+    "padding-top": "12px",
+    "padding-left": "12px"
+   },
+   "before": null
+  },
+  {
+   "tag": "BUTTON",
+   "dt": "flag-french language-card",
+   "role": "",
+   "text": "French22.6M learners",
+   "rect": [
+    201,
+    234,
+    161,
+    217
+   ],
+   "s": {
+    "background-color": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border-top-color": "rgb(229, 229, 229)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "16px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "400",
+    "line-height": "19.55px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "217px",
+    "padding-top": "12px",
+    "padding-left": "12px"
+   },
+   "before": null
+  },
+  {
+   "tag": "BUTTON",
+   "dt": "flag-chess language-card",
+   "role": "",
+   "text": "Chess",
+   "rect": [
+    28,
+    463,
+    161,
+    217
+   ],
+   "s": {
+    "background-color": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border-top-color": "rgb(229, 229, 229)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "16px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "400",
+    "line-height": "19.55px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "217px",
+    "padding-top": "12px",
+    "padding-left": "12px"
+   },
+   "before": null
+  },
+  {
+   "tag": "BUTTON",
+   "dt": "flag-english language-card",
+   "role": "",
+   "text": "English19.6M learners",
+   "rect": [
+    201,
+    463,
+    161,
+    217
+   ],
+   "s": {
+    "background-color": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border-top-color": "rgb(229, 229, 229)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "16px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "400",
+    "line-height": "19.55px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "217px",
+    "padding-top": "12px",
+    "padding-left": "12px"
+   },
+   "before": null
+  },
+  {
+   "tag": "BUTTON",
+   "dt": "flag-japanese language-card",
+   "role": "",
+   "text": "Japanese17.8M learners",
+   "rect": [
+    28,
+    692,
+    161,
+    217
+   ],
+   "s": {
+    "background-color": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border-top-color": "rgb(229, 229, 229)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "16px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "400",
+    "line-height": "19.55px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "217px",
+    "padding-top": "12px",
+    "padding-left": "12px"
+   },
+   "before": null
+  },
+  {
+   "tag": "BUTTON",
+   "dt": "flag-german language-card",
+   "role": "",
+   "text": "German15.9M learners",
+   "rect": [
+    201,
+    692,
+    161,
+    217
+   ],
+   "s": {
+    "background-color": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border-top-color": "rgb(229, 229, 229)",
+    "border-top-width": "2px",
+    "border-bottom-width": "4px",
+    "border-radius": "16px",
+    "box-shadow": "none",
+    "font-size": "17px",
+    "font-weight": "400",
+    "line-height": "19.55px",
+    "letter-spacing": "normal",
+    "text-transform": "none",
+    "height": "217px",
+    "padding-top": "12px",
+    "padding-left": "12px"
+   },
+   "before": null
+  }
+ ],
+ "inputs": []
+}
