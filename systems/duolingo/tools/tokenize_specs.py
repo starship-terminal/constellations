@@ -122,9 +122,14 @@ def tokenize_segment(text, role_of, theme_at=lambda i: None):
         if text[max(0, m.start() - 2):m.start()] != "` ":
             hits.append((m.start(), m.group(1), m.group(2), None, alpha_after(m.end())))
     out, last = [], 0
+    def theme_after(start):
+        """'#1CB0F6 L, #49C0F8 D' and '#F1F7FB dark / #3C3C3C light' state the theme after the value."""
+        m = re.compile(r"#[0-9A-Fa-f]{6}\)?\s*\(?(L|D|light|dark)\b").search(text, start, start + 40)
+        return {"L": "light", "D": "dark"}.get(m.group(1), m.group(1)) if m else None
     for start, name, hex_, stated, alpha in sorted(set(hits), key=lambda h: h[0]):
         if start < last:
             continue
+        stated = stated or theme_after(start)
         ctx = None if stated else theme_at(start)
         th = theme_of(hex_, name, stated or (ctx if ctx and PAL[ctx].get(name, {}).get("$value", "").lower() == hex_.lower() else None))
         if th is None or name not in PAL[th]:

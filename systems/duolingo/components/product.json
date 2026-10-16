@@ -1694,7 +1694,7 @@
      {
       "part": "legendary (gold)",
       "property": "banner vars",
-      "value": "jTeoa / _13YX7._1Bwfb: `palette.light.bee` bee #FFC800 L / #FFC700 D with `palette.light.gold-shine` gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900",
+      "value": "jTeoa / _13YX7._1Bwfb: `gamification.xp` bee #FFC800 L / #FFC700 D with `palette.light.gold-shine` gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900",
       "source": "css only: css:path-e50cab6b.css .jTeoa, ._13YX7._1Bwfb"
      }
     ]
@@ -3292,7 +3292,7 @@
      {
       "part": "title colour (completed, in progress)",
       "property": "colour",
-      "value": "inherits body text (`palette.dark.black-text` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump",
+      "value": "inherits body text (`text.body` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump",
       "source": "css:app-f2ef02f8.css body",
       "estimated": true
      }
@@ -9612,7 +9612,7 @@
     },
     {
      "state": "diamond / top league current user",
-     "changes": "background `palette.light.diamond-highlight` diamond-highlight #E7FBFB (dark polar), text `gamification.league.diamond` diamond #38D0D0; another variant uses a background image with `palette.dark.betta` betta #9069CD text",
+     "changes": "background `palette.dark.diamond-highlight` diamond-highlight #E7FBFB (dark polar), text `gamification.league.diamond` diamond #38D0D0; another variant uses a background image with `palette.dark.betta` betta #9069CD text",
      "source": "css:1008-b4d34396.css .MytTp._7trGg, .MytTp.zGzKm (not captured)"
     },
     {

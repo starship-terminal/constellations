@@ -375,7 +375,7 @@ Unit colours:
 | beetle | banner class / colour | M7Jo3: `dataViz.avatar.purple` beetle #CE82FF | css only: css:path-e50cab6b.css |
 | peacock | banner class / colour | _2bAvg: `unitColors.teal` peacock #00CD9C | css only: css:path-e50cab6b.css |
 | dragon | banner class / colour | _14qwu: `unitColors.magenta` dragon #CC348D | css only: css:path-e50cab6b.css |
-| legendary (gold) | banner vars | jTeoa / _13YX7._1Bwfb: `palette.light.bee` bee #FFC800 L / #FFC700 D with `palette.light.gold-shine` gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900 | css only: css:path-e50cab6b.css .jTeoa, ._13YX7._1Bwfb |
+| legendary (gold) | banner vars | jTeoa / _13YX7._1Bwfb: `gamification.xp` bee #FFC800 L / #FFC700 D with `palette.light.gold-shine` gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900 | css only: css:path-e50cab6b.css .jTeoa, ._13YX7._1Bwfb |
 
 Contains: button: secondary (GUIDEBOOK, desktop), button: unit-coloured split button (mobile)
 Desktop vs mobile: Mobile (<700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face `unitColors.green` owl-always-light #58CC02, 4px lip `palette.light.tree-frog-always-light` tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.
@@ -729,7 +729,7 @@ Tokens (light):
 | description | colour | `text.tertiary` #AFAFAF (hare, light) | learn-light-path-end (#484) |
 | button | face / border+lip / text | `text.onColor` #FFFFFF (snow) / `palette.light.swan` #E5E5E5 (swan) / `text.link` #1CB0F6 (macaw, light) | learn-light-path-end (#485) ::before |
 | lock icon | src | https://d35aaqx5ub95lt.cloudfront.net/images/path/icons/42790390eb3178780c3620661860e84b.svg | learn-light-path-end (#482) |
-| UP NEXT pill (unlocked, CSS) | bg / text | `palette.light.iguana-always-light` #DDF4FF (iguana-always-light) / `unitColors.blue` macaw #1CB0F6 L, #49C0F8 D | css:path-e50cab6b.css ._3LDH7 (not captured) |
+| UP NEXT pill (unlocked, CSS) | bg / text | `palette.light.iguana-always-light` #DDF4FF (iguana-always-light) / `text.link` macaw #1CB0F6 L, #49C0F8 D | css:path-e50cab6b.css ._3LDH7 (not captured) |
 
 Type:
 
@@ -795,7 +795,7 @@ Tokens (dark):
 | trophy | colour | `gamification.streakInactive` #37464F (swan, dark) | sections-dark-default _320PF (#205); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._320PF |
 | CONTINUE button | face / lip / text | `unitColors.blue` #1CB0F6 (macaw-always-light) / #1CB0F6 @0.70 / #FFFFFF | sections-dark-default (#210) ::before; css:pathSections-c1a583d8.css ._3_XLT |
 | speech bubble | bg / text / furigana | `palette.dark.snow` #131F24 (snow) / `palette.dark.eel` eel #F1F7FB (css) / `palette.dark.hare` #52656D (hare) | sections-dark-default _2NZrx (#214), rt (#218); css:pathSections-c1a583d8.css .O93KC |
-| locked card | bg / text | `palette.dark.polar` #202F36 (polar) / `palette.light.dark-mode-locked-path-section-text-color` #52656D (dark-mode-locked-path-section-text-color) | sections-dark-default _36wSS (#234); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._36wSS |
+| locked card | bg / text | `gamification.league.demotedRow` #202F36 (polar) / `palette.dark.dark-mode-locked-path-section-text-color` #52656D (dark-mode-locked-path-section-text-color) | sections-dark-default _36wSS (#234); css:pathSections-c1a583d8.css html[data-duo-theme=dark] ._36wSS |
 | locked JUMP TO SECTION button | face / border / text | #131F24 / #37464F / `palette.dark.macaw` #49C0F8 (macaw) | sections-dark-default (#241) |
 
 Tokens (light):
@@ -822,7 +822,7 @@ Type:
 | status label | font | 700 15px/18px uppercase, letter-spacing 0.6px (locked: opacity 0.7) | sections-dark-default _1tBwZ (#165, #239) |
 | progress % | font | 700 14px/18px uppercase, letter-spacing 0.56px | sections-dark-default (#199) |
 | speech bubble | font | 20px/28px; furigana 16px/24px | sections-dark-default O93KC (#215), rt (#218) |
-| title colour (completed, in progress) | colour | inherits body text (`palette.dark.black-text` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump (estimated) | css:app-f2ef02f8.css body |
+| title colour (completed, in progress) | colour | inherits body text (`text.body` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump (estimated) | css:app-f2ef02f8.css body |
 
 Contains: button: secondary, button: primary (macaw), progress bar, speech bubble
 Desktop vs mobile: CSS only: below 700px the completed card gets 16px side margins (._2UWvP @media (max-width:699px)); no mobile dump of /sections.
