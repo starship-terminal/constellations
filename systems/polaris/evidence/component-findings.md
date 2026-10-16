@@ -40,14 +40,14 @@ Read from the live gallery (published 13.9.5) in headless Chromium at 1440 px, l
 
 | Control | Where the ring is drawn | Ring | Other change on focus | Crop |
 |---|---|---|---|---|
-| Button (primary, secondary, tertiary, critical, icon-only, disclosure, segmented, pagination) | the button | 2 px solid outline, 1 px offset | fill moves to its hover value (primary `#1A1A1A`, secondary `#FAFAFA`, tertiary 5% black, critical `#A30A24`, pagination `#CCCCCC`) | [button-primary](../screenshots/focus/button-primary.png), [icon-button](../screenshots/focus/icon-button.png), [button-segmented](../screenshots/focus/button-segmented.png) |
+| Button (primary, secondary, tertiary, critical, icon-only, disclosure, segmented, pagination) | the button | 2 px solid outline, 1 px offset | fill moves to its hover token (primary `color-bg-fill-brand-hover` `#1A1A1A`, secondary `color-bg-fill-hover` `#FAFAFA`, tertiary `color-bg-fill-transparent-hover` 5% black, critical `color-bg-fill-critical-hover` `#A30A24`; the pagination button read `#CCCCCC`, the value of `color-bg-fill-selected`) | [button-primary](../screenshots/focus/button-primary.png), [icon-button](../screenshots/focus/icon-button.png), [button-segmented](../screenshots/focus/button-segmented.png) |
 | Plain button | the button | 2 px solid outline, offset -6 px (inside the text box) | none | [button-plain](../screenshots/focus/button-plain.png) |
 | Link | the link | browser default `auto` outline, 2 px, 2 px offset | none | [link](../screenshots/focus/link.png) |
-| Text field, text area, search field | the `Backdrop` sibling | 2 px solid outline, 1 px offset | border `#1A1A1A`, fill `#F7F7F7` | [text-field](../screenshots/focus/text-field.png), [search-field](../screenshots/focus/search-field.png) |
-| Select | the `Backdrop` sibling | 2 px solid outline, 1 px offset | border `#1A1A1A`, fill `#F7F7F7`; the transparent native select also gets the browser outline | [select](../screenshots/focus/select.png) |
+| Text field, text area, search field | the `Backdrop` sibling | 2 px solid outline, 1 px offset | border `color-input-border-active` (`#1A1A1A`), fill `color-input-bg-surface-active` (`#F7F7F7`) | [text-field](../screenshots/focus/text-field.png), [search-field](../screenshots/focus/search-field.png) |
+| Select | the `Backdrop` sibling | 2 px solid outline, 1 px offset | border `color-input-border-active` (`#1A1A1A`), fill `color-input-bg-surface-active` (`#F7F7F7`); the transparent native select also gets the browser outline | [select](../screenshots/focus/select.png) |
 | Checkbox, radio (and the list-row checkbox) | the `Backdrop` sibling | 2 px solid outline, 1 px offset | none | [checkbox](../screenshots/focus/checkbox.png), [radio](../screenshots/focus/radio.png) |
-| Tab | `::after` on the tab | 2 px `box-shadow` ring, no offset | fill 5% black | [tab](../screenshots/focus/tab.png) |
-| Tag remove button | `::after` on the button | 2 px `box-shadow` ring | fill `#D4D4D4` | [tag-remove](../screenshots/focus/tag-remove.png) |
+| Tab | `::after` on the tab | 2 px `box-shadow` ring, no offset | fill `color-bg-fill-transparent-hover` (5% black) | [tab](../screenshots/focus/tab.png) |
+| Tag remove button | `::after` on the button | 2 px `box-shadow` ring | fill `color-bg-fill-tertiary-hover` (`#D4D4D4`) | [tag-remove](../screenshots/focus/tag-remove.png) |
 | Range slider | the thumb pseudo-element (not readable through computed style) | ring visible on the thumb in the crop | none readable | [range-slider](../screenshots/focus/range-slider.png) |
 | Navigation item | the item | 2 px outline, 1 px offset | none | [nav-item](../screenshots/focus/nav-item.png) |
 | Resource list row | the row's overlay link | browser `auto` outline on the link; the row gets `ResourceItem--focused`, drawn as a full-row ring in the crop | none | [list-row](../screenshots/focus/list-row.png) |

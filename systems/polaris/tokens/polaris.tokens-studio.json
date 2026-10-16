@@ -1,6 +1,88 @@
 {
   "core": {
     "color": {
+      "gray": {
+        "1": {
+          "value": "rgba(255, 255, 255, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "2": {
+          "value": "rgba(253, 253, 253, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "3": {
+          "value": "rgba(250, 250, 250, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "4": {
+          "value": "rgba(247, 247, 247, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "5": {
+          "value": "rgba(243, 243, 243, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "6": {
+          "value": "rgba(241, 241, 241, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "7": {
+          "value": "rgba(235, 235, 235, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "8": {
+          "value": "rgba(227, 227, 227, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "9": {
+          "value": "rgba(212, 212, 212, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "10": {
+          "value": "rgba(204, 204, 204, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "11": {
+          "value": "rgba(181, 181, 181, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "12": {
+          "value": "rgba(138, 138, 138, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "13": {
+          "value": "rgba(97, 97, 97, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "14": {
+          "value": "rgba(74, 74, 74, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "15": {
+          "value": "rgba(48, 48, 48, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        },
+        "16": {
+          "value": "rgba(26, 26, 26, 1)",
+          "type": "color",
+          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
+        }
+      },
       "azure": {
         "1": {
           "value": "rgba(251, 253, 255, 1)",
@@ -243,88 +325,6 @@
         },
         "16": {
           "value": "rgba(0, 22, 51, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        }
-      },
-      "gray": {
-        "1": {
-          "value": "rgba(255, 255, 255, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "2": {
-          "value": "rgba(253, 253, 253, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "3": {
-          "value": "rgba(250, 250, 250, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "4": {
-          "value": "rgba(247, 247, 247, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "5": {
-          "value": "rgba(243, 243, 243, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "6": {
-          "value": "rgba(241, 241, 241, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "7": {
-          "value": "rgba(235, 235, 235, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "8": {
-          "value": "rgba(227, 227, 227, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "9": {
-          "value": "rgba(212, 212, 212, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "10": {
-          "value": "rgba(204, 204, 204, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "11": {
-          "value": "rgba(181, 181, 181, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "12": {
-          "value": "rgba(138, 138, 138, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "13": {
-          "value": "rgba(97, 97, 97, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "14": {
-          "value": "rgba(74, 74, 74, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "15": {
-          "value": "rgba(48, 48, 48, 1)",
-          "type": "color",
-          "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
-        },
-        "16": {
-          "value": "rgba(26, 26, 26, 1)",
           "type": "color",
           "description": "@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp"
         }

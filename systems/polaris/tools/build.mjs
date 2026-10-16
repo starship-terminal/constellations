@@ -30,7 +30,9 @@ for(const dir of ['assets','tokens','icons','licenses'])fs.mkdirSync(dir,{recurs
 write('tokens/polaris-themes.raw.json',t.themes);
 write('tokens/polaris-metadata.json',t.metaThemes);
 write('tokens/polaris-colors.raw.json',ramps);
-const studio={core:{color:Object.fromEntries(Object.entries(ramps).map(([hue,steps])=>[hue,Object.fromEntries(Object.entries(steps).map(([step,value])=>[step,{value,type:'color',description:'@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp'}]))]))}};
+// Neutral first, then the hues in the package's order.
+const rampOrder=Object.entries(ramps).sort(([a],[b])=>(b==='gray')-(a==='gray'));
+const studio={core:{color:Object.fromEntries(rampOrder.map(([hue,steps])=>[hue,Object.fromEntries(Object.entries(steps).map(([step,value])=>[step,{value,type:'color',description:'@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp'}]))]))}};
 for(const [theme,groups] of Object.entries(t.themes)){
  const out={};
  for(const [group,values] of Object.entries(groups)){out[group]={};for(const [name,value]of Object.entries(values)){

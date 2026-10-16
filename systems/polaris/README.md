@@ -39,11 +39,26 @@ Polaris has no separate raised or overlay colour: cards, popovers, dialogs and t
 | Navigation | `color-nav-bg` (`#EBEBEB`) | none | none | `z-index-8` below `md`, 1 above | Measured CSS | [Navigation.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Navigation/Navigation.module.css#L19) |
 | Scrim | literal `rgba(0, 0, 0, 0.5)`; the `color-backdrop-bg` token (71% black) exists but no component uses it | none | none | `z-index-10` (518) | Measured CSS | [Backdrop.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Backdrop/Backdrop.module.css#L1-L23) |
 
+### Elevation
+
+Six drop-shadow levels, each read from the components that use it in the 13.9.5 compiled CSS. Levels 100 to 300 pair with an inset bevel on `::before`.
+
+| Level | Value | Used by | Label |
+|---|---|---|---|
+| `shadow-100` | 0 1px 0 0, 7% | Card (through `ShadowBevel`), LegacyCard, TopBar, sticky table and list headers | Measured CSS |
+| `shadow-200` | 0 3px 1px -1px, 7% | Banner inside a page, sticky IndexFilters, navigation logo, skip link | Measured CSS |
+| `shadow-300` | 0 4px 6px -2px, 20% | Popover, Tooltip, IndexTable loading panel | Measured CSS |
+| `shadow-400` | 0 8px 16px -4px, 22% | Toast | Measured CSS |
+| `shadow-500` | 0 12px 20px -8px, 24% | RangeSlider output bubble | Measured CSS |
+| `shadow-600` | 0 20px 20px -8px, 28% | Modal dialog, Sheet, TopBar search results | Measured CSS |
+
+Buttons use their own `shadow-button*` bevels and `shadow-inset-*` presses rather than this scale. Sources: [ShadowBevel.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/ShadowBevel/ShadowBevel.module.css#L1-L16), [Toast.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Frame/components/Toast/Toast.module.css#L1-L20), [Dialog.module.css](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/polaris-react/src/components/Modal/components/Dialog/Dialog.module.css#L1-L19).
+
 ### Primitive ramps
 
 `tokens/polaris.tokens-studio.json` has a `core` set with the 14 primitive ramps the tokens package builds its themes from: `gray`, `azure`, `blue`, `teal`, `green`, `lime`, `yellow`, `orange`, `red`, `rose`, `magenta`, `purple`, plus `blackAlpha` and `whiteAlpha`. Each has 16 steps, `1` lightest to `16` darkest (`gray.1` is `#FFFFFF`, `gray.16` is `#1A1A1A`; `blackAlpha` runs from 0% to 90% black and `whiteAlpha` from 1% to 80% white). The package ships them in `dist/cjs/src/colors.js` but does not export them from its index; `tools/build.mjs` reads that file and also writes it unchanged to `tokens/polaris-colors.raw.json`.
 
-Every semantic colour in the four theme sets that names a ramp step is now an alias to it (`light.color.color-bg` is `{color.gray.6}`): 894 of 904 theme colours. The builder rebuilds the themes from source with each step replaced by a marker to find the step, then checks the alias resolves to the published value; all 1,812 theme tokens resolve to exactly the values they had before. The other 10 are `color-scheme`, the button gradient and one dark tooltip-tail border, which are literal in the source. Ramp use across the four themes: gray 327 roles, blue 92, azure, green, red and purple 64 each, blackAlpha 62, yellow and orange 56 each, whiteAlpha 13, rose, magenta, lime and teal 8 each.
+Every semantic colour in the four theme sets that names a ramp step is now an alias to it (`light.color.color-bg` is `{color.gray.6}`): 894 of 904 theme colours. The builder rebuilds the themes from source with each step replaced by a marker to find the step, then checks the alias resolves to the published value; all 1,812 theme tokens resolve to exactly the values they had before. The other 10 are `color-scheme` and the button gradient in each of the four sets, and the two `dark-experimental` tooltip-tail borders, which are literal in the source. Ramp use across the four themes: gray 327 roles, blue 92, azure, green, red and purple 64 each, blackAlpha 62, yellow and orange 56 each, whiteAlpha 13, rose, magenta, lime and teal 8 each.
 
 Every color is searchable on the Colors page. `tokens/polaris-themes.raw.json` preserves all values grouped by theme and type; `tokens/polaris-metadata.json` preserves source metadata. `tokens/light.css` provides `--p-*` custom properties. At a 16px root, all displayed rem-to-pixel conversions are arithmetic conversions, not a recommendation to hard-code pixels.
 
@@ -189,7 +204,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Refreshed 2
 | Type families, scale and roles | Captured: display, headings, body, label, help text, error, code, keyboard key | `<theme>.font`, `<theme>.text`; Type roles above |
 | Spacing | Captured | `<theme>.space` |
 | Radii, border widths | Captured | `<theme>.border` |
-| Elevation | Captured: `shadow-100` to `600`, each tied to a component in Background roles | `<theme>.shadow` |
+| Elevation | Captured: `shadow-100` to `600`, each tied to the components that use it (see Elevation) | `<theme>.shadow` |
 | Motion | Captured, including what reduced motion changes (only Tooltip) | `<theme>.motion`; Motion above |
 | Sizing and focus ring | Captured | `core.size`, `core.focusRing` |
 | Layout: breakpoints, widths, grid, layers | Captured | `<theme>.breakpoints`, `core.layout`, `<theme>.zIndex` |
