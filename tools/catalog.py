@@ -2,8 +2,8 @@
 """Check the catalog, build the browsable gallery, and serve it.
 
     python3 tools/catalog.py check            validate catalog.json against the packages
-    python3 tools/catalog.py build            write site/data.json and site/thumbs/
-    python3 tools/catalog.py serve [--port N] build, then serve the repo at /site/
+    python3 tools/catalog.py build            write docs/gallery/data.json and docs/gallery/thumbs/
+    python3 tools/catalog.py serve [--port N] build the gallery, scorecard and docs site, then serve it
     python3 tools/catalog.py find WORDS...    rank packages by name, use, tags and themes
     python3 tools/catalog.py export SLUG      print a package's tokens as CSS variables (or --format json)
     python3 tools/catalog.py export --file tokens.json --themes light,dark   the same for any token file
@@ -30,7 +30,10 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = ROOT / "site"
+# The docs site is built from docs/ by Zensical into site/; the gallery is one page of it.
+DOCS = ROOT / "docs"
+SITE = DOCS / "gallery"
+SITE_OUT = ROOT / "site"
 THUMBS = SITE / "thumbs"
 IMAGE_EXT = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
 COMPONENT_EXT = IMAGE_EXT | {".svg"}
@@ -950,7 +953,8 @@ def attach_thumbs(images: list[dict]) -> None:
 
     def one(path):
         dst = _thumb_name(path)
-        return path, dst.relative_to(ROOT).as_posix() if _make_thumb(ROOT / path, dst) else path
+        # Paths are relative to the built site's root, which mirrors docs/.
+        return path, dst.relative_to(DOCS).as_posix() if _make_thumb(ROOT / path, dst) else path
 
     with ThreadPoolExecutor(max_workers=8) as pool:
         thumbs = dict(pool.map(one, paths))
@@ -1095,24 +1099,40 @@ def build() -> Path:
     return out
 
 
+# Repository paths the local server answers from the checkout instead of the built
+# site: the gallery's screenshots and package files, and the files docs link to.
+# They are never part of the published site.
+REPO_PATHS = ("/systems/", "/tools/", "/example/", "/catalog.json", "/README.md")
+
+
+def build_docs() -> None:
+    """Generate the scorecard pages, then build the whole docs site into site/."""
+    subprocess.run([sys.executable, str(ROOT / "tools" / "scorecard.py")], check=True)
+    zensical = ROOT / ".venv" / "bin" / "zensical"
+    exe = str(zensical) if zensical.exists() else shutil.which("zensical")
+    if not exe:
+        sys.exit("Zensical is not installed: run `make setup` once, then `make serve`.")
+    subprocess.run([exe, "build", "--clean"], cwd=ROOT, check=True)
+
+
 def serve(port: int) -> None:
     out = build()
     print(f"built {out.relative_to(ROOT)}")
+    build_docs()
+
     class Handler(http.server.SimpleHTTPRequestHandler):
-        def do_GET(self):
-            if self.path in ("/", "/index.html"):
-                self.send_response(302)
-                self.send_header("Location", "/site/")
-                self.end_headers()
-                return
-            super().do_GET()
+        def translate_path(self, path):
+            clean = path.split("?", 1)[0].split("#", 1)[0]
+            if any(clean == p or clean.startswith(p) for p in REPO_PATHS):
+                return str(ROOT) + clean
+            return super().translate_path(path)
 
         def log_message(self, *args):
             pass
 
-    handler = functools.partial(Handler, directory=str(ROOT))
+    handler = functools.partial(Handler, directory=str(SITE_OUT))
     with http.server.ThreadingHTTPServer(("127.0.0.1", port), handler) as httpd:
-        print(f"design-systems catalog: http://127.0.0.1:{port}/site/  (Ctrl-C to stop)")
+        print(f"design-systems docs: http://127.0.0.1:{port}/  (gallery at /gallery/, Ctrl-C to stop)")
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:

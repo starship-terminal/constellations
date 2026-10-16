@@ -55,6 +55,12 @@ kbd {
 }
 .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
 .brand svg { fill: var(--text); }
+.site-nav { display: flex; gap: 2px; }
+.site-nav a {
+  padding: 6px 10px; border-radius: 8px; color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 520;
+}
+.site-nav a:hover { color: var(--text); background: var(--sunken); }
+.site-nav a[aria-current="page"] { color: var(--text); background: var(--sunken); }
 .search {
   flex: 1; max-width: 460px; margin-left: auto; display: flex; align-items: center; gap: 8px;
   padding: 0 10px; height: 34px; background: var(--panel); border: 1px solid var(--line);
@@ -235,6 +241,8 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 @media (max-width: 640px) {
   .bar { gap: 10px; }
   .brand span { display: none; }
+  .site-nav a { padding: 6px 7px; }
+  .site-nav a:first-child { display: none; }
   .search kbd { display: none; }
   .seg { margin-left: 0; }
   .toolbar .sep { display: none; }

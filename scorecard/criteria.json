@@ -1,0 +1,180 @@
+{
+ "layers": {
+  "F": "Foundations",
+  "C": "Components",
+  "P": "Patterns",
+  "V": "Principles and voice",
+  "A": "Assets",
+  "K": "Package"
+ },
+ "criteria": [
+  {
+   "id": "F1",
+   "layer": "Foundations",
+   "title": "Colour ramps",
+   "doneWhen": "A ramp per hue used, neutral first, about 10 steps from lightest to darkest."
+  },
+  {
+   "id": "F2",
+   "layer": "Foundations",
+   "title": "Background roles",
+   "doneWhen": "Page, surface, raised, overlay and scrim."
+  },
+  {
+   "id": "F3",
+   "layer": "Foundations",
+   "title": "Text roles",
+   "doneWhen": "Primary, secondary, disabled, on-accent and link."
+  },
+  {
+   "id": "F4",
+   "layer": "Foundations",
+   "title": "Border roles",
+   "doneWhen": "Default, strong and focus."
+  },
+  {
+   "id": "F5",
+   "layer": "Foundations",
+   "title": "Accent states",
+   "doneWhen": "Default, hover and pressed."
+  },
+  {
+   "id": "F6",
+   "layer": "Foundations",
+   "title": "Status colours",
+   "doneWhen": "Success, warning, danger and info, each with fill, text and border."
+  },
+  {
+   "id": "F7",
+   "layer": "Foundations",
+   "title": "Theme parity",
+   "doneWhen": "Every semantic colour role exists in each theme the product ships."
+  },
+  {
+   "id": "F8",
+   "layer": "Foundations",
+   "title": "Type",
+   "doneWhen": "Families with fallback stacks, a scale of 6 to 8 sizes, weights, line heights, and named roles (display, headings, body, label, caption, code)."
+  },
+  {
+   "id": "F9",
+   "layer": "Foundations",
+   "title": "Spacing",
+   "doneWhen": "A scale on one base unit (4 or 8 px)."
+  },
+  {
+   "id": "F10",
+   "layer": "Foundations",
+   "title": "Shape",
+   "doneWhen": "Corner radii and border widths."
+  },
+  {
+   "id": "F11",
+   "layer": "Foundations",
+   "title": "Sizing",
+   "doneWhen": "Control heights per size, icon sizes, and the focus ring's width and offset."
+  },
+  {
+   "id": "F12",
+   "layer": "Foundations",
+   "title": "Elevation",
+   "doneWhen": "3 to 5 shadow levels, each tied to a use (card, popover, dialog)."
+  },
+  {
+   "id": "F13",
+   "layer": "Foundations",
+   "title": "Motion",
+   "doneWhen": "Durations, easing curves, and what changes under reduced motion."
+  },
+  {
+   "id": "F14",
+   "layer": "Foundations",
+   "title": "Layout",
+   "doneWhen": "Breakpoints, content widths, grid columns and z-index layers."
+  },
+  {
+   "id": "F15",
+   "layer": "Foundations",
+   "title": "Contrast",
+   "doneWhen": "Primary and secondary text pass WCAG AA (4.5:1) on page and surface backgrounds in every theme."
+  },
+  {
+   "id": "F16",
+   "layer": "Foundations",
+   "title": "Provenance",
+   "doneWhen": "Every token records where its value came from (measured, derived, sampled or reconstructed)."
+  },
+  {
+   "id": "C1",
+   "layer": "Components",
+   "title": "Component coverage",
+   "doneWhen": "At least 17 of the 19 checklist components: button, icon button, link, text field, text area, select, checkbox, radio, switch, tabs, menu, tooltip, dialog, toast, card, list row, table, avatar, badge."
+  },
+  {
+   "id": "C2",
+   "layer": "Components",
+   "title": "States",
+   "doneWhen": "Components show states beyond default: hover, focus-visible, pressed, selected, disabled, loading, error, as each applies."
+  },
+  {
+   "id": "C3",
+   "layer": "Components",
+   "title": "Focus",
+   "doneWhen": "A visible focus state is captured for interactive components."
+  },
+  {
+   "id": "C4",
+   "layer": "Components",
+   "title": "Token-based specs",
+   "doneWhen": "Component entries are written in tokens, not raw values."
+  },
+  {
+   "id": "C5",
+   "layer": "Components",
+   "title": "Behaviour",
+   "doneWhen": "Keyboard and screen-reader behaviour, and do and don't, per component."
+  },
+  {
+   "id": "P1",
+   "layer": "Patterns",
+   "title": "Patterns",
+   "doneWhen": "Written patterns: app shell, forms and validation, empty/loading/error, destructive confirmation, feedback, search and filtering, data display, onboarding."
+  },
+  {
+   "id": "V1",
+   "layer": "Principles and voice",
+   "title": "Principles",
+   "doneWhen": "3 to 5 principles that decide real trade-offs, each with an example."
+  },
+  {
+   "id": "V2",
+   "layer": "Principles and voice",
+   "title": "Voice",
+   "doneWhen": "Tone, capitalisation, vocabulary and a formula for messages."
+  },
+  {
+   "id": "A1",
+   "layer": "Assets",
+   "title": "Assets",
+   "doneWhen": "Icon set indexed by role; fonts named with their licence or fallback."
+  },
+  {
+   "id": "K1",
+   "layer": "Package",
+   "title": "Package entry",
+   "doneWhen": "The README says what was captured, how, and what to distrust."
+  },
+  {
+   "id": "K2",
+   "layer": "Package",
+   "title": "Do and don't",
+   "doneWhen": "A style-wide list of rules the product follows that tokens cannot carry."
+  },
+  {
+   "id": "K3",
+   "layer": "Package",
+   "title": "DESIGN.md",
+   "doneWhen": "A generated DESIGN.md is present and current."
+  }
+ ]
+}

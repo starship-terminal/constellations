@@ -1,0 +1,205 @@
+/* Scorecard heatmap, badges and bar. Colours follow the theme through
+   [data-md-color-scheme]; each grade also carries a glyph, so colour is never the
+   only cue (WCAG 1.4.1). */
+:root {
+  --sc-meets: #1d9e75;
+  --sc-partly: #ef9f27;
+  --sc-missing: #e24b4a;
+  --sc-na: transparent;
+  --sc-glyph: rgba(0, 0, 0, 0.62);
+  --sc-cell: 1.35rem;
+}
+[data-md-color-scheme="slate"] {
+  --sc-meets: #2bb488;
+  --sc-partly: #f0a83a;
+  --sc-missing: #e86160;
+  --sc-glyph: rgba(0, 0, 0, 0.7);
+}
+
+.sc-scroll {
+  overflow-x: auto;
+  margin: 1rem 0;
+  padding-bottom: 0.25rem;
+}
+.sc-scroll:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+.md-typeset table.sc-heat {
+  display: table;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 2px;
+  font-size: 0.68rem;
+  background: none;
+  box-shadow: none;
+  width: auto;
+  margin: 0;
+}
+.md-typeset .sc-heat caption {
+  caption-side: top;
+  text-align: left;
+  color: var(--md-default-fg-color--light);
+  padding-bottom: 0.4rem;
+}
+.md-typeset .sc-heat th,
+.md-typeset .sc-heat td {
+  border: 0;
+  padding: 0;
+  background: none;
+  vertical-align: middle;
+}
+.md-typeset .sc-heat thead th {
+  font-weight: 600;
+  color: var(--md-default-fg-color--light);
+  text-align: center;
+  min-width: var(--sc-cell);
+}
+.md-typeset .sc-heat thead th a {
+  color: inherit;
+}
+.md-typeset .sc-heat .sc-layers th {
+  font-weight: 500;
+  font-size: 0.6rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: 0.2rem;
+}
+.md-typeset .sc-heat tbody th {
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 0.6rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+.md-typeset .sc-heat tbody th a {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+.md-typeset .sc-heat tbody th a:hover,
+.md-typeset .sc-heat tbody th a:focus-visible {
+  text-decoration: underline;
+}
+.md-typeset .sc-heat td[class^="g-"] {
+  width: var(--sc-cell);
+  height: var(--sc-cell);
+  border-radius: 5px;
+  text-align: center;
+}
+.md-typeset .sc-heat td[class^="g-"] a {
+  display: block;
+  line-height: var(--sc-cell);
+  color: var(--sc-glyph);
+  font-size: 0.7rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.md-typeset .sc-heat td[class^="g-"] a:hover,
+.md-typeset .sc-heat td[class^="g-"] a:focus-visible {
+  outline: 2px solid var(--md-default-fg-color);
+  outline-offset: 1px;
+}
+.md-typeset .sc-heat td.g-na {
+  box-shadow: inset 0 0 0 1px var(--md-default-fg-color--lightest);
+}
+.md-typeset .sc-heat td.g-na a {
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .sc-heat .sc-total {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+  padding: 0 0.35rem;
+  text-align: center;
+  color: var(--md-default-fg-color);
+}
+.md-typeset .sc-heat thead .sc-total,
+.md-typeset .sc-heat .sc-corner {
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .sc-heat .sc-corner {
+  text-align: right;
+  padding-right: 0.6rem;
+}
+
+.g-meets { background: var(--sc-meets) !important; }
+.g-partly { background: var(--sc-partly) !important; }
+.g-missing { background: var(--sc-missing) !important; }
+.g-na { background: var(--sc-na); }
+
+/* Visible only to screen readers. */
+.sc-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.md-typeset .sc-badge {
+  display: inline-block;
+  padding: 0.05rem 0.45rem;
+  border-radius: 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.78);
+}
+.md-typeset .sc-badge.g-na {
+  color: var(--md-default-fg-color--light);
+  box-shadow: inset 0 0 0 1px var(--md-default-fg-color--lighter);
+}
+
+.md-typeset .sc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.7rem;
+}
+.md-typeset .sc-key {
+  color: var(--md-default-fg-color--light);
+  margin-left: 0.4rem;
+}
+
+.sc-bar {
+  display: flex;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  margin: 0.5rem 0 1.2rem;
+  gap: 2px;
+}
+.sc-bar .g-na {
+  background: var(--md-default-fg-color--lightest) !important;
+}
+
+.md-typeset .sc-heat .sc-layers .sc-layer-gap {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Jumping to a grade from the heatmap: clear the sticky header, mark the row. */
+.md-typeset td span[id] {
+  scroll-margin-top: 4.5rem;
+}
+.md-typeset tr:has(span[id]:target) td {
+  background: var(--md-accent-fg-color--transparent);
+}
+
+/* Keep system names visible while the grid scrolls sideways on narrow screens. */
+.md-typeset .sc-heat tbody th,
+.md-typeset .sc-heat thead .sc-corner {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--md-default-bg-color);
+}
+
+/* Search is switched off (every page is excluded so the index cannot leak the
+   encrypted content), so hide its box. */
+.md-search,
+label[for="__search"] {
+  display: none !important;
+}
