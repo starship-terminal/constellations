@@ -195,7 +195,7 @@ Child layers: a 253x20; a 328pxx36px
 | default (same: hover, focus-visible, pressed, open) | size 248.11 x `size.control.3xl`; padding 0 `spacing.2`; radius `radius.xl`; background transparent; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.on-accent`; transition opacity 0.15s ease, color 0.15s ease |
 | light (same: light-hover, light-focus-visible, light-pressed, light-open) | size 248.11 x `size.control.3xl`; padding 0 `spacing.2`; radius `radius.xl`; background transparent; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.inverse`; transition opacity 0.15s ease, color 0.15s ease |
 
-Child layers: button 248.109pxx48px background `variant.primary.soft.bg-hover` radius 12px; div 7x12 background #8a8a8a radius 9999px
+Child layers: button 248.109pxx48px background `variant.primary.soft.bg-hover` radius 12px; div 24x24 background #8a8a8a radius 9999px
 
 #### Avatar
 
@@ -205,8 +205,8 @@ Child layers: button 248.109pxx48px background `variant.primary.soft.bg-hover` r
 
 | State | Values |
 |---|---|
-| default | size 7.03 x `size.control-font.sm`; radius `radius.full`; background #8a8a8a; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.on-accent` |
-| light | size 7.03 x `size.control-font.sm`; radius `radius.full`; background #8a8a8a; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.inverse` |
+| default | size 24 x `size.control.2xs`; radius `radius.full`; background #8a8a8a; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.on-accent` |
+| light | size 24 x `size.control.2xs`; radius `radius.full`; background #8a8a8a; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.inverse` |
 
 #### Outline pill button (account Upgrade)
 

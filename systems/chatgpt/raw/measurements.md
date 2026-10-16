@@ -545,7 +545,7 @@ Dark theme.
 | Cursor | pointer | = | = | = | = |
 | ::before | 248.109px x 48px, absolute, bg #ffffff @ 0.1, radius 12px | = | = | 248.109px x 48px, absolute, bg #ededed @ 0.16, radius 12px | = |
 | ::after | 248.109px x 48px, absolute, bg #000000 @ 0, radius 12px | = | = | = | = |
-| Painted layers | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #ffffff @ 0.1 r 12px opacity 0; div.shrink-0.object-cover.rounded-full 7.0x12.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #ffffff @ 0.1 r 12px; div.shrink-0.object-cover.rounded-full 7.0x12.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #ffffff @ 0.1 r 12px opacity 0; button.Button-QTscM8.outline-hidden.cursor-interaction::after 248.109pxx48px r 12px outline 2px solid #3a83f7 offset -1px; div.shrink-0.object-cover.rounded-full 7.0x12.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #ededed @ 0.16 r 12px; div.shrink-0.object-cover.rounded-full 7.0x12.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #ffffff @ 0.1 r 12px opacity 0.6; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px |
+| Painted layers | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #ffffff @ 0.1 r 12px opacity 0; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #ffffff @ 0.1 r 12px; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #ffffff @ 0.1 r 12px opacity 0; button.Button-QTscM8.outline-hidden.cursor-interaction::after 248.109pxx48px r 12px outline 2px solid #3a83f7 offset -1px; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #ededed @ 0.16 r 12px; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #ffffff @ 0.1 r 12px opacity 0.6; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) | at rest, captured open |
 
 Light theme.
@@ -568,7 +568,7 @@ Light theme.
 | Cursor | pointer | = | = | = | = |
 | ::before | 248.109px x 48px, absolute, bg #000000 @ 0.05, radius 12px | = | = | 248.109px x 48px, absolute, bg #0d0d0d @ 0.12, radius 12px | = |
 | ::after | 248.109px x 48px, absolute, bg #000000 @ 0, radius 12px | = | = | = | = |
-| Painted layers | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #000000 @ 0.05 r 12px opacity 0; div.shrink-0.object-cover.rounded-full 7.0x12.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #000000 @ 0.05 r 12px; div.shrink-0.object-cover.rounded-full 7.0x12.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #000000 @ 0.05 r 12px opacity 0; button.Button-QTscM8.outline-hidden.cursor-interaction::after 248.109pxx48px r 12px outline 2px solid #3a83f7 offset -1px; div.shrink-0.object-cover.rounded-full 7.0x12.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #0d0d0d @ 0.12 r 12px; div.shrink-0.object-cover.rounded-full 7.0x12.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #000000 @ 0.05 r 12px opacity 0.6; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px |
+| Painted layers | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #000000 @ 0.05 r 12px opacity 0; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #000000 @ 0.05 r 12px; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #000000 @ 0.05 r 12px opacity 0; button.Button-QTscM8.outline-hidden.cursor-interaction::after 248.109pxx48px r 12px outline 2px solid #3a83f7 offset -1px; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #0d0d0d @ 0.12 r 12px; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px | button.Button-QTscM8.outline-hidden.cursor-interaction::before 248.109pxx48px bg #000000 @ 0.05 r 12px opacity 0.6; div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) | at rest, captured open |
 
 Other finders: open: `() => Q('button[aria-label="Open profile menu"]', 0, S())`; light-open: `() => Q('button[aria-label="Open profile menu"]', 0, S())`.
@@ -585,7 +585,7 @@ Dark theme.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 7.03 x 12 |
+| Size (w x h) | 24 x 24 |
 | Padding | 0px |
 | Border | none |
 | Radius | 9999px |
@@ -597,14 +597,14 @@ Dark theme.
 | Colour | #ffffff |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.shrink-0.object-cover.rounded-full 7.0x12.0 bg #8a8a8a r 9999px |
+| Painted layers | div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px |
 | How | at rest |
 
 Light theme.
 
 | Property | light |
 |---|---|
-| Size (w x h) | 7.03 x 12 |
+| Size (w x h) | 24 x 24 |
 | Padding | 0px |
 | Border | none |
 | Radius | 9999px |
@@ -616,7 +616,7 @@ Light theme.
 | Colour | #ffffff |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.shrink-0.object-cover.rounded-full 7.0x12.0 bg #8a8a8a r 9999px |
+| Painted layers | div.shrink-0.object-cover.rounded-full 24.0x24.0 bg #8a8a8a r 9999px |
 | How | at rest |
 
 Crops: `avatar-default.png`, `avatar-light.png`.
