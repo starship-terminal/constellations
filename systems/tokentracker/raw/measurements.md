@@ -1085,26 +1085,24 @@ Crops: `retry-button-default.png`, `retry-button-hover.png`, `retry-button-focus
 
 #### link
 
-Text link. "Display settings" on Limits: an in-app link set as quiet text.
+Text link. "Suggest it on GitHub" under the badges: secondary text with a light underline. Never followed.
 
-Page: limits. Selector: `main a[href^=/settings]`. States: default, hover, focus-visible.
+Page: achievements. Selector: `a "Suggest it on GitHub"`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 36 x 36 | = | = |
+| Size (w x h) | 117.83 x 15 | = | = |
 | Padding | 0px | = | = |
-| Border | 1px solid #262626 | = | = |
-| Radius | 12px | = | = |
-| Background | transparent | #262626 | = |
-| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
 | Outline | none | = | = |
-| Font | OpenAI Sans 16px/24px 400 | = | = |
+| Font | OpenAI Sans 12px/16px 400 | = | = |
 | Letter spacing | normal | = | = |
-| Colour | #a3a3a3 | #ffffff | = |
+| Colour | #737373 | #d4d4d4 | = |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
 | Cursor | pointer | = | = |
-| Icon | 16 x 16, colour #a3a3a3 | 16 x 16, colour #ffffff | = |
-| Painted layers | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px | a.shrink-0.inline-flex 36.0x36.0 bg #262626 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | How | at rest | mouse hover | Shift+Tab, Tab |
 
 Crops: `link-default.png`, `link-hover.png`, `link-focus-visible.png`.
@@ -1121,7 +1119,7 @@ Page: skills. Selector: `last "Remove" button in the dialog`. States: default, h
 | Padding | 0px 12px | = | = |
 | Border | 1px solid #000000 @ 0 | = | = |
 | Radius | 8px | = | = |
-| Background | #dc2626 | #ef4444 | #ef4444 |
+| Background | #dc2626 | #ef4444 | = |
 | Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | Outline | none | = | = |
 | Font | -apple-system 14px/20px 500 | = | = |
@@ -1129,7 +1127,7 @@ Page: skills. Selector: `last "Remove" button in the dialog`. States: default, h
 | Colour | #0a0a0a | = | = |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
 | Cursor | pointer | = | = |
-| Painted layers | button.inline-flex.items-center 78.1x32.0 bg #dc2626 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #ef4444 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #ef4444 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Painted layers | button.inline-flex.items-center 78.1x32.0 bg #dc2626 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #ef4444 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #dc2626 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | Ancestor paint | 2 up div.relative.w-full bg #0a0a0a shadow #ffffff 0px 0px 0px 0px, #262626 0px 0px 0px 1px, #000000 @ 0.65 0px 20px 60px -10px | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab |
 
@@ -1291,26 +1289,24 @@ Crops: `retry-button.light-default.png`, `retry-button.light-hover.png`, `retry-
 
 #### link.light
 
-Text link. "Display settings" on Limits: an in-app link set as quiet text.
+Text link. "Suggest it on GitHub" under the badges: secondary text with a light underline. Never followed.
 
-Page: limits. Selector: `main a[href^=/settings]`. States: default, hover, focus-visible.
+Page: achievements. Selector: `a "Suggest it on GitHub"`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 36 x 36 | = | = |
+| Size (w x h) | 117.83 x 15 | = | = |
 | Padding | 0px | = | = |
-| Border | 1px solid #e5e5e5 | = | = |
-| Radius | 12px | = | = |
-| Background | transparent | #f5f5f5 | = |
-| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
 | Outline | none | = | = |
-| Font | OpenAI Sans 16px/24px 400 | = | = |
+| Font | OpenAI Sans 12px/16px 400 | = | = |
 | Letter spacing | normal | = | = |
-| Colour | #525252 | #0a0a0a | = |
+| Colour | #a3a3a3 | #404040 | = |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
 | Cursor | pointer | = | = |
-| Icon | 16 x 16, colour #525252 | 16 x 16, colour #0a0a0a | = |
-| Painted layers | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px | a.shrink-0.inline-flex 36.0x36.0 bg #f5f5f5 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | How | at rest | mouse hover | Shift+Tab, Tab |
 
 Crops: `link.light-default.png`, `link.light-hover.png`, `link.light-focus-visible.png`.
@@ -1327,7 +1323,7 @@ Page: skills. Selector: `last "Remove" button in the dialog`. States: default, h
 | Padding | 0px 12px | = | = |
 | Border | 1px solid #000000 @ 0 | = | = |
 | Radius | 8px | = | = |
-| Background | #dc2626 | #b91c1c | #b91c1c |
+| Background | #dc2626 | #b91c1c | = |
 | Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | Outline | none | = | = |
 | Font | -apple-system 14px/20px 500 | = | = |
@@ -1335,7 +1331,7 @@ Page: skills. Selector: `last "Remove" button in the dialog`. States: default, h
 | Colour | #ffffff | = | = |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
 | Cursor | pointer | = | = |
-| Painted layers | button.inline-flex.items-center 78.1x32.0 bg #dc2626 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #b91c1c border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #b91c1c border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Painted layers | button.inline-flex.items-center 78.1x32.0 bg #dc2626 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #b91c1c border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | button.inline-flex.items-center 78.1x32.0 bg #dc2626 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | Ancestor paint | 2 up div.relative.w-full bg #ffffff shadow #ffffff 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0.25 0px 20px 60px -20px | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab |
 
@@ -1469,6 +1465,58 @@ Page: cloud. Selector: `first button in .tt-cloud-theme`. States: default, hover
 | How | at rest | mouse hover | Shift+Tab, Tab |
 
 Crops: `cloud-button.light-default.png`, `cloud-button.light-hover.png`, `cloud-button.light-focus-visible.png`.
+
+#### icon-link
+
+Icon link. The gear on Limits ("Display settings" is its accessible label): an icon-only link to Settings.
+
+Page: limits. Selector: `main a[href^=/settings]`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 36 x 36 | = | = |
+| Padding | 0px | = | = |
+| Border | 1px solid #262626 | = | = |
+| Radius | 12px | = | = |
+| Background | transparent | #262626 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | OpenAI Sans 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #a3a3a3 | #ffffff | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Icon | 16 x 16, colour #a3a3a3 | 16 x 16, colour #ffffff | = |
+| Painted layers | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px | a.shrink-0.inline-flex 36.0x36.0 bg #262626 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `icon-link-default.png`, `icon-link-hover.png`, `icon-link-focus-visible.png`.
+
+#### icon-link.light
+
+Icon link. The gear on Limits ("Display settings" is its accessible label): an icon-only link to Settings.
+
+Page: limits. Selector: `main a[href^=/settings]`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 36 x 36 | = | = |
+| Padding | 0px | = | = |
+| Border | 1px solid #e5e5e5 | = | = |
+| Radius | 12px | = | = |
+| Background | transparent | #f5f5f5 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | OpenAI Sans 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #525252 | #0a0a0a | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Icon | 16 x 16, colour #525252 | 16 x 16, colour #0a0a0a | = |
+| Painted layers | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px | a.shrink-0.inline-flex 36.0x36.0 bg #f5f5f5 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px | a.shrink-0.inline-flex 36.0x36.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `icon-link.light-default.png`, `icon-link.light-hover.png`, `icon-link.light-focus-visible.png`.
 
 ### Tokens page
 
@@ -2728,7 +2776,7 @@ Page: limits. Selector: `pill reading CACHED, STALE or RE-AUTH`. States: default
 | Colour | #a3a3a3 |
 | Transition | none |
 | Cursor | help |
-| Painted layers | span.inline-flex.items-center 46.3x19.5 bg #262626 border T:1px solid #404040 @ 0.6 / R:1px solid #404040 @ 0.6 / B:1px solid #404040 @ 0.6 / L:1px solid #404040 @ 0.6 r 9999px; span.animate-ping.absolute 7.7x7.7 bg #34d399 r 9999px; span.relative.inline-flex 6.0x6.0 bg #10b981 r 9999px |
+| Painted layers | span.inline-flex.items-center 46.3x19.5 bg #262626 border T:1px solid #404040 @ 0.6 / R:1px solid #404040 @ 0.6 / B:1px solid #404040 @ 0.6 / L:1px solid #404040 @ 0.6 r 9999px; span.animate-ping.absolute 11.0x11.0 bg #34d399 r 9999px; span.relative.inline-flex 6.0x6.0 bg #10b981 r 9999px |
 | How | at rest |
 
 Crops: `status-badge-default.png`.
@@ -2808,7 +2856,7 @@ Page: limits. Selector: `pill reading CACHED, STALE or RE-AUTH`. States: default
 | Colour | #737373 |
 | Transition | none |
 | Cursor | help |
-| Painted layers | span.inline-flex.items-center 46.3x19.5 bg #fafafa border T:1px solid #e5e5e5 @ 0.6 / R:1px solid #e5e5e5 @ 0.6 / B:1px solid #e5e5e5 @ 0.6 / L:1px solid #e5e5e5 @ 0.6 r 9999px; span.animate-ping.absolute 7.7x7.7 bg #34d399 r 9999px; span.relative.inline-flex 6.0x6.0 bg #10b981 r 9999px |
+| Painted layers | span.inline-flex.items-center 46.3x19.5 bg #fafafa border T:1px solid #e5e5e5 @ 0.6 / R:1px solid #e5e5e5 @ 0.6 / B:1px solid #e5e5e5 @ 0.6 / L:1px solid #e5e5e5 @ 0.6 r 9999px; span.animate-ping.absolute 9.6x9.6 bg #34d399 r 9999px; span.relative.inline-flex 6.0x6.0 bg #10b981 r 9999px |
 | How | at rest |
 
 Crops: `status-badge.light-default.png`.
@@ -3954,7 +4002,7 @@ Page: limits. Selector: `card around the "Usage limits" title`. States: default.
 | Text node | h3.text-sm.font-medium: OpenAI Sans 14px/20px 500, #d4d4d4, ls 0.35px |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | Icon | 14 x 14, colour #fafafa |
-| Painted layers | div.rounded-xl.border 1104.0x2417.7 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px; div.pointer-events-none.absolute 175.9x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
+| Painted layers | div.rounded-xl.border 1104.0x2417.7 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px; div.pointer-events-none.absolute 175.6x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: none.
@@ -4004,7 +4052,7 @@ Page: limits. Selector: `row around the first track`. States: default.
 | Text node | div.pointer-events-none.absolute: OpenAI Sans 10.5px/14.4375px 400, #e5e5e5 |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.pointer-events-none.absolute 175.9x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
+| Painted layers | div.pointer-events-none.absolute 175.6x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: `usage-row-default.png`.
@@ -4029,7 +4077,7 @@ Page: limits. Selector: `first track`. States: default.
 | Colour | #fafafa |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
+| Painted layers | div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: `usage-track-default.png`.
@@ -4042,7 +4090,7 @@ Page: limits. Selector: `its fill`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 232.75 x 6 |
+| Size (w x h) | 335.16 x 6 |
 | Padding | 0px |
 | Border | none |
 | Radius | 9999px |
@@ -4054,7 +4102,7 @@ Page: limits. Selector: `its fill`. States: default.
 | Colour | #fafafa |
 | Transition | width 0.5s cubic-bezier(0, 0, 0.2, 1) |
 | Cursor | pointer |
-| Painted layers | div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px |
+| Painted layers | div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px |
 | Ancestor paint | 1 up div.relative.flex-1 bg #404040 @ 0.5 |
 | How | at rest |
 
@@ -4107,7 +4155,7 @@ Page: limits. Selector: `card around the "Usage limits" title`. States: default.
 | Text node | h3.text-sm.font-medium: OpenAI Sans 14px/20px 500, #737373, ls 0.35px |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | Icon | 14 x 14, colour #0a0a0a |
-| Painted layers | div.rounded-xl.border 1104.0x2417.7 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px; div.pointer-events-none.absolute 161.9x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #10b981 |
+| Painted layers | div.rounded-xl.border 1104.0x2417.7 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px; div.pointer-events-none.absolute 175.6x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: none.
@@ -4157,7 +4205,7 @@ Page: limits. Selector: `row around the first track`. States: default.
 | Text node | div.pointer-events-none.absolute: OpenAI Sans 10.5px/14.4375px 400, #404040 |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.pointer-events-none.absolute 161.9x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #10b981 |
+| Painted layers | div.pointer-events-none.absolute 175.6x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: `usage-row.light-default.png`.
@@ -4182,7 +4230,7 @@ Page: limits. Selector: `first track`. States: default.
 | Colour | #0a0a0a |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #10b981 |
+| Painted layers | div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: `usage-track.light-default.png`.
@@ -4195,7 +4243,7 @@ Page: limits. Selector: `its fill`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 232.75 x 6 |
+| Size (w x h) | 335.16 x 6 |
 | Padding | 0px |
 | Border | none |
 | Radius | 9999px |
@@ -4207,7 +4255,7 @@ Page: limits. Selector: `its fill`. States: default.
 | Colour | #0a0a0a |
 | Transition | width 0.5s cubic-bezier(0, 0, 0.2, 1) |
 | Cursor | pointer |
-| Painted layers | div.bg-emerald-500.rounded-full 232.8x6.0 bg #10b981 r 9999px |
+| Painted layers | div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px |
 | Ancestor paint | 1 up div.relative.flex-1 bg #f5f5f5 |
 | How | at rest |
 
