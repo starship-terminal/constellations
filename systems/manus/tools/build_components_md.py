@@ -46,6 +46,36 @@ for theme in ("dark", "light"):
 
 THEME = ["dark"]  # the theme the colour() helper looks tokens up in; set per state
 
+# The token each variable is, by name: a token's source names the css-var it was read from.
+NAME2PATH = {"dark": {}, "light": {}}
+for theme in ("dark", "light"):
+    for n, t in flat(T[theme]):
+        m = re.match(r"css-var (--[A-Za-z0-9-]+) ", t.get("$extensions", {}).get("source", ""))
+        if m and not n.startswith(("role.", "component.")):
+            NAME2PATH[theme].setdefault(m.group(1), n)
+OWN = [{}]  # value -> token, for the variables the state's own classes name; set per state
+
+
+def hexnorm(v):
+    m = re.fullmatch(r"#([0-9a-fA-F]{3,8})", v.strip())
+    if not m:
+        return None
+    h = m.group(1)
+    if len(h) in (3, 4):
+        h = "".join(c * 2 for c in h)
+    a = int(h[6:8], 16) / 255 if len(h) == 8 else None
+    return norm(int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16), a)
+
+
+def own_tokens(v, theme):
+    out = {}
+    for name, val in (v.get("vars") or {}).items():
+        path = NAME2PATH[theme].get(name)
+        hv = hexnorm(val) if isinstance(val, str) else None
+        if path and hv:
+            out.setdefault(re.sub(r"(\d+\.\d+)\)", lambda m: f"{round(float(m.group(1)), 2):g})", hv), path)
+    return out
+
 
 def norm(r, g, b, a=None):
     if a is None or float(a) == 1:
@@ -58,8 +88,12 @@ def colour(c, tokens=True):
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
-        tok = BY_COLOR[THEME[0]].get(v) if tokens else None
-        return f"{v} `{tok}`" if tok else v
+        if not tokens:
+            return v
+        if v in OWN[0]:
+            return f"{v} `{OWN[0][v]}`"
+        tok = BY_COLOR[THEME[0]].get(v)
+        return f"{v} `≈ {tok}`" if tok else v
 
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
@@ -90,6 +124,7 @@ def font(fz, lh, fw, f):
 
 def props(v):
     s = v["style"]
+    OWN[0] = own_tokens(v, THEME[0])
     o = {}
     o["size"] = f"{num(v['rect']['w'])} x {num(v['rect']['h'])}"
     pad = sides(s["paddingTop"], s["paddingRight"], s["paddingBottom"], s["paddingLeft"])
@@ -232,6 +267,7 @@ GROUP_INTRO = {
     "Agents": "The Meet Cue page: a title, a video with its play button, two download buttons, the waitlist banner and a footer link.",
     "Automations": "The empty state: a heading and three example cards (Schedule, Trigger, Advanced) over a Get started button.",
     "Plugins": "The connector gallery: header buttons, a carousel of promo cards, search, category tabs and a two-column grid of plugin rows.",
+    "Settings and forms": "Added on the 2026-10-17 refresh: Settings' Developers pane (underline tabs, an info banner, the API key table with its row button and popover, the destructive confirmation), the Create API Key form (label, text field, select and its listbox, the primary button disabled and enabled), Personalization's fields, Usage & Billing loading, and the invite dialog (segmented control, black and blue buttons, the email field and Send). These are the only components with a measured pressed state.",
     "Project": "A project page: icon, title and meta, the recent tasks, a composer, and the right rail of cards with Add buttons.",
     "Task": "A finished task's thread: the user bubble with an attachment, assistant turns with the logo header and Lite tag, step rows, message actions, the deliverable card, file chips, View all files, Task completed, rating stars, follow-up suggestions, the step footer, and the split view's tab bar, empty state tiles and files tree.",
     "Mobile": "The same app at 390 wide: the app banner, the header with its menu button, the serif hero, the composer and suggestion chips, the carousel card, the drawer, the Library header with its type dropdown, and the task page.",
@@ -240,7 +276,8 @@ GROUP_INTRO = {
 PAGE_DESC = [
     ("home", "Home. The logo and promo carousel, Build and Create, Start from a local file, the composer. Captured at rest, with the model menu, the + attach menu, a line typed in the composer, the sidebar collapsed, the search dialog and the notifications panel.", "/app"),
     ("library", "Library. The title bar, the type tabs, groups by day. Captured on All, on Slides, on Images in grid view, with the view options open, grouped by task, with a row's menu open, with the document previewer open, and with the account menu open.", "/app/documents"),
-    ("settings", "Settings dialog. General (language, theme cards, chat and communication toggles) and Keyboard shortcuts.", "/app/documents#settings"),
+    ("settings", "Settings dialog. General (language, theme cards, chat and communication toggles) and Keyboard shortcuts; on 2026-10-17 also Developers (the API key table, a row's menu, the delete confirmation, the Create API Key form empty, typed and with its select open), Personalization and Usage & Billing while its history loads.", "/app#settings"),
+    ("invite", "The invite dialog (2026-10-17): share tabs, Copy invitation link, the social row and the email field, empty and typed.", "/app#invitation"),
     ("creations", "Creations. Tabs and two creation cards.", "/app/creations"),
     ("computers", "Computers. The setup cards and the Customize and Connect bands.", "/app/computers"),
     ("agents", "Agents. Meet Cue.", "/app/agents"),
@@ -282,13 +319,13 @@ icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n
 
 W("# Manus components")
 W()
-W(f"The discovery list of every page and state captured, then one entry per component with crops of the real product, the shared values, the icon index and the Gaps. Captured from manus.im/app on {META['read']}, signed in, as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was created, sent or deleted in the account; the only changes made were opening menus, switching the Library's view options and switching them back, typing a line into the composer and deleting it, and toggling the sidebar.")
+W(f"The discovery list of every page and state captured, then one entry per component with crops of the real product, the shared values, the icon index and the Gaps. Captured from manus.im/app on 2026-10-04 and refreshed on 2026-10-17, signed in, as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent or deleted in the account; the changes made were opening menus and dialogs, switching the Library's view options and switching them back, typing into the composer and into two dialog fields without submitting, and toggling the sidebar. On 2026-10-17 one click landed on a popover's \"Continue in new task\" by mistake and branched an existing task; the owner was told and the branch is theirs to remove.")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the token in [tokens.json](tokens.json) whose value in that theme is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `System 14/21 400, #e6e6e6`, and is read from the first text node inside the component.")
+W("- A colour is its value followed by its token in [tokens.json](tokens.json). A plain `token` is the variable the component's own classes name (bg-[var(--x)] and the like), so it is the token Manus wrote; `≈ token` is only a token with the same value in that theme, for colours no class names (inherited text, browser defaults). Each component's named tokens are also in tokens.json under `component.<key>` in each theme. Text is written family size/line-height weight, then its colour, for example `System 14/21 400, #e6e6e6`, and is read from the first text node inside the component.")
 W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
@@ -325,6 +362,11 @@ OVER = [
     ("Split view", "task", "the panel toggle, then Files in Start from scratch; closed with the Close sidebar button", "[task-dark-side-panel](screenshots/task-dark-side-panel.png), [task-dark-files-tab](screenshots/task-dark-files-tab.png)"),
     ("Mobile app gate and drawer", "home at 390", "on load, Continue with web; then the menu button", "[mobile-home-dark-app-gate](screenshots/mobile-home-dark-app-gate.png), [mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png)"),
     ("Mobile type dropdown", "Library at 390", "the All chip", "[mobile-library-dark-type-menu](screenshots/mobile-library-dark-type-menu.png)"),
+    ("API key row menu and delete confirmation", "Settings > Developers (2026-10-17)", "a row's more button, then Delete; closed with Cancel, nothing deleted", "[settings-dark-key-menu](screenshots/settings-dark-key-menu.png), [settings-dark-delete-confirm](screenshots/settings-dark-delete-confirm.png), [confirm-dialog](#confirm-dialog)"),
+    ("Create API Key form", "Settings > Developers (2026-10-17)", "Create new; a name typed, the Expiration select opened; closed with Cancel, nothing created", "[settings-dark-create-key](screenshots/settings-dark-create-key.png), [settings-dark-create-key-typed](screenshots/settings-dark-create-key-typed.png), [settings-dark-select-open](screenshots/settings-dark-select-open.png), [form-dialog](#form-dialog)"),
+    ("Usage history loading", "Settings > Usage & Billing (2026-10-17)", "the pane opened, copied while its history fetched", "[settings-dark-usage-loading](screenshots/settings-dark-usage-loading.png), [spinner](#spinner)"),
+    ("Invite dialog", "account row banner (2026-10-17)", "the Share Manus banner; an invalid address typed, not sent; closed", "[invite-dark-dialog](screenshots/invite-dark-dialog.png), [invite-dark-email-typed](screenshots/invite-dark-email-typed.png), [invite-dialog](#invite-dialog)"),
+    ("Toast", "task (2026-10-17)", "seen once, \"Creating new task…\" with a spinner, top centre", "not captured as a copy (seen only in the live pane)"),
 ]
 for row in OVER:
     W("| " + " | ".join(row) + " |")

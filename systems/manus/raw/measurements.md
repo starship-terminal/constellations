@@ -1,26 +1,26 @@
 # Manus component measurements
 
-Computed styles read on 2026-10-04 by `tools/capture/signed-in/measure.mjs` from static snapshots of the signed-in app (1440x900 (the mobile-* snapshots 390x844), deviceScaleFactor 2), and written here by `tools/capture/signed-in/build-measurements.mjs` from [components-computed.json](components-computed.json). Each snapshot was captured in the dark theme. Dark states have plain names; light states (`light`, `light-<state>`) were read from the same DOM with the `dark` class removed from <html>. Every state records `theme` and `snapshot`.
+Computed styles read on 2026-10-16 by `tools/capture/signed-in/measure.mjs` from static snapshots of the signed-in app (1440x900 (the mobile-* snapshots 390x844), deviceScaleFactor 2), and written here by `tools/capture/signed-in/build-measurements.mjs` from [components-computed.json](components-computed.json). Each snapshot was captured in the dark theme. Dark states have plain names; light states (`light`, `light-<state>`) were read from the same DOM with the `dark` class removed from <html>. Every state records `theme` and `snapshot`.
 
 Every component has one table per theme: a column per state, a row per property. A cell that repeats the first column reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline (Manus often paints a hover or selection on an inner layer, not the element itself); "Ancestor paint" the same for its parents. "Tokens" lists the `var(--x)` names the component's Tailwind classes use, with the value each resolved to in that theme.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab), skipped where the element (a div with role=button) cannot take focus; the rest (`active`, `selected`, `checked`, `open`, `typed`, `enabled`, ...) are other elements or snapshots captured in that state. Light states are prefixed `light`. The 390 wide snapshots are measured at rest only.
 
-233 components, 842 states (842 measured, 0 skipped, 0 not found).
+267 components, 1046 states (1040 measured, 6 skipped, 0 not found).
 
 ## Shared values
 
 Tallied over every measured state by the build script.
 
-- **Radius scale** (element radius, times seen): 8px (298), 12px (116), 9999px (66), 10px (52), 6px (48), 22px (18), 5px (8), 100px (6), 4px (6), 16px (4), 20px (2), 14px (2).
-- **Transitions**: `color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (198), `background-color 0.15s cubic-bezier(0, 0, 0.2, 1)` (14), `transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (10), `color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (8), `opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (6), `box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (6), `opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)` (4), `color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0, 0, 0.2, 1)` (4), `width, background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (4), `all 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (4).
-- **Font families**: -apple-system (1340), LibreBaskerville (24), ui-sans-serif (2).
-- **Type sizes** (size/line-height weight of the first text): 16px/24px 400 (206), 14px/20px 400 (180), 14px/20px 500 (90), 14px/18px 500 (56), 13px/18px 400 (52), 12px/16px 400 (42), 14px/21px 400 (32), 16px/22px 500 (30), 13px/18px 500 (22), 13px/19.5px 400 (14), 14px/21px 500 (14), 12px/18px 600 (12), 12px/20px 600 (10), 14px/18px 400 (10).
-- **Shadows**: `#000000 @ 0.02 0px 12px 32px 0px` (24); `#ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px` (24); `#000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px` (24); `#000000 @ 0.06 0px 8px 16px 0px` (14); `#000000 @ 0.16 0px 3px 10px 0px` (8); `#000000 @ 0.04 0px 3px 10px 0px` (8).
-- **Focus-visible, dark** (51 focused states): nothing painted on the element (36); outline 1px solid #ffffff @ 0.12 offset -1px (7); outline 2px solid #1a93fe offset 2px (3); outline 1px solid #ffffff @ 0.06 offset -1px (2); outline 2px solid #b3b3b3 offset 0px (1); outline 2px solid #000000 @ 0 offset 2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 12px 32px 0px (1).
-- **Focus-visible, light** (51 focused states): nothing painted on the element (36); outline 1px solid #000000 @ 0.12 offset -1px (7); outline 2px solid #0081f2 offset 2px (3); outline 1px solid #000000 @ 0.06 offset -1px (2); outline 2px solid #4d4d4d offset 0px (1); outline 2px solid #000000 @ 0 offset 2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 12px 32px 0px (1).
-- **Hover changes, dark** (108 hovered components, 23 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #ffffff @ 0.04 (44); backgroundColor #000000 @ 0 → #ffffff @ 0.06 (14); backgroundColor #ffffff @ 0.04 → #ffffff @ 0.06 (4); backgroundColor #242424 → #ffffff @ 0.06 (3); backgroundColor #242424 → #1c1c1c (2); backgroundColor #0081f2 @ 0.08 → #0081f2 @ 0.12 (1); backgroundColor #242424 → #1a1a1a (1); backgroundColor #ffffff @ 0.06 → #ffffff @ 0.04 (1).
-- **Hover changes, light** (108 hovered components, 23 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #37352f @ 0.04 (44); backgroundColor #000000 @ 0 → #37352f @ 0.06 (14); backgroundColor #37352f @ 0.04 → #37352f @ 0.06 (4); backgroundColor #ffffff → #ffffff @ 0.08 (3); backgroundColor #ffffff → #f8f8f7 (2); backgroundColor #0081f2 @ 0.08 → #0081f2 @ 0.12 (1); backgroundColor #ffffff → #fafafa (1); backgroundColor #37352f @ 0.06 → #37352f @ 0.04 (1).
+- **Radius scale** (element radius, times seen): 8px (402), 12px (128), 9999px (68), 6px (64), 10px (60), 22px (18), 16px (10), 5px (8), 100px (6), 4px (6), 20px (2), 14px (2).
+- **Transitions**: `color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (264), `color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (20), `background-color 0.15s cubic-bezier(0, 0, 0.2, 1)` (14), `transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (10), `color, background-color, border-color, text-decoration-color, fill, stroke 0.3s cubic-bezier(0.4, 0, 0.2, 1)` (8), `opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (6), `box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (6), `box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1)` (6), `opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)` (4), `color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0, 0, 0.2, 1)` (4).
+- **Font families**: -apple-system (1668), LibreBaskerville (26), ui-sans-serif (2).
+- **Type sizes** (size/line-height weight of the first text): 14px/20px 400 (250), 16px/24px 400 (214), 14px/20px 500 (146), 14px/18px 500 (72), 13px/18px 400 (72), 12px/16px 400 (42), 14px/21px 400 (40), 16px/22px 500 (30), 13px/18px 500 (22), 14px/21px 500 (20), 13px/19.5px 400 (14), 12px/18px 600 (12), 12px/20px 600 (10), 14px/18px 400 (10).
+- **Shadows**: `#ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px` (34); `#000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px` (34); `#000000 @ 0.02 0px 12px 32px 0px` (24); `#000000 @ 0.06 0px 8px 16px 0px` (14); `#000000 @ 0.16 0px 3px 10px 0px` (8); `#000000 @ 0.04 0px 3px 10px 0px` (8).
+- **Focus-visible, dark** (66 focused states): nothing painted on the element (46); outline 1px solid #ffffff @ 0.12 offset -1px (9); outline 2px solid #1a93fe offset 2px (3); outline 1px solid #ffffff @ 0.06 offset -1px (2); shadow #ffffff 0px 0px 0px 0px inset, #ffffff @ 0.12 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px (2); outline 2px solid #b3b3b3 offset 0px (1); outline 2px solid #000000 @ 0 offset 2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 12px 32px 0px (1); shadow #ffffff 0px 0px 0px 0px, #ffffff @ 0.12 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px (1).
+- **Focus-visible, light** (66 focused states): nothing painted on the element (46); outline 1px solid #000000 @ 0.12 offset -1px (9); outline 2px solid #0081f2 offset 2px (3); outline 1px solid #000000 @ 0.06 offset -1px (2); shadow #ffffff 0px 0px 0px 0px inset, #000000 @ 0.14 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px (2); outline 2px solid #4d4d4d offset 0px (1); outline 2px solid #000000 @ 0 offset 2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 12px 32px 0px (1); shadow #ffffff 0px 0px 0px 0px, #000000 @ 0.14 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px (1).
+- **Hover changes, dark** (128 hovered components, 30 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #ffffff @ 0.04 (48); backgroundColor #000000 @ 0 → #ffffff @ 0.06 (17); backgroundColor #ffffff @ 0.04 → #ffffff @ 0.06 (4); backgroundColor #242424 → #ffffff @ 0.06 (3); backgroundColor #242424 → #1c1c1c (2); backgroundColor #0081f2 @ 0.08 → #0081f2 @ 0.12 (1); backgroundColor #242424 → #1a1a1a (1); backgroundColor #ffffff @ 0.06 → #ffffff @ 0.04 (1).
+- **Hover changes, light** (128 hovered components, 30 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #37352f @ 0.04 (48); backgroundColor #000000 @ 0 → #37352f @ 0.06 (17); backgroundColor #37352f @ 0.04 → #37352f @ 0.06 (4); backgroundColor #ffffff → #ffffff @ 0.08 (3); backgroundColor #ffffff → #f8f8f7 (2); backgroundColor #0081f2 @ 0.08 → #0081f2 @ 0.12 (1); backgroundColor #ffffff → #fafafa (1); backgroundColor #37352f @ 0.06 → #37352f @ 0.04 (1).
 
 ### Tokens the measured components use
 
@@ -29,6 +29,7 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | Token | Dark | Light |
 |---|---|---|
 | `--accent-send-button` | #fffffff2 | #1a1a19 |
+| `--anchor-width` | 360px | 360px |
 | `--available-width` | 1124px | 1124px |
 | `--background-card` | #1c1c1c | #fafafa |
 | `--background-card-gray` | #1c1c1c | #fafafa |
@@ -48,12 +49,15 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | `--border-input-active` | #ffffff52 | #0000004d |
 | `--border-light` | #ffffff08 | #0000000a |
 | `--border-main` | #ffffff0f | #0000000f |
+| `--border-primary` | #56565f52 | #4f59661f |
 | `--border-white` | #00000014 | #fff3 |
 | `--Button-black` | #fffffff2 | #1a1a19 |
 | `--Button-blue` | #1a93fe | #0081f2 |
 | `--Button-border-secondary` | #ffffff1f | #0000001f |
 | `--dlg-enter-scale` | 1 | 1 |
 | `--dlg-enter-y` | 0px | 0px |
+| `--dp` | - | - |
+| `--dp-header-end` | - | - |
 | `--fill-black` | #28282973 | #28282973 |
 | `--fill-gray` | #1c1c1c | #f8f8f7 |
 | `--fill-tsp-gray-dark` | #0000004d | #37352f14 |
@@ -104,6 +108,7 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | `--ui-density-home-input-editor-min-height` | 50px | 50px |
 | `--ui-density-input-editor-min-height` | 50px | 50px |
 | `--ui-density-input-gap` | 10px | 10px |
+| `--ui-density-large-control-height` | 40px | 40px |
 | `--ui-density-menu-item-padding-y` | 8px | 8px |
 | `--ui-density-nav-icon-box-size` | 20px | 20px |
 | `--ui-density-nav-item-gap` | 8px | 8px |
@@ -10993,6 +10998,1810 @@ Light theme.
 | How | at rest |
 
 Crops: `preview-empty-default.png`, `preview-empty-light.png`.
+
+### Settings and forms
+
+#### settings-nav-row
+
+Settings nav item, pressed and selected (Developers pane). A row in the Settings dialog's left nav: 16px icon, 14px label; the current pane is filled.
+
+Snapshot: `settings-dark-developers-table`. Finder: `() => C(T('Shortcuts', D()), 'button,.clickable')`.
+
+Dark theme.
+
+| Property | default | hover | pressed | selected |
+|---|---|---|---|---|
+| Size (w x h) | 196 x 32 | = | = | = |
+| Padding | 8px 16px 8px 14px | = | = | = |
+| Gap | 8px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | #ffffff @ 0.04 | #ffffff @ 0.08 | #ffffff @ 0.06 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 400 | = | = | -apple-system 14px/20px 500 |
+| Letter spacing | normal | = | = | = |
+| Colour | #e6e6e6 | = | = | = |
+| Text node | span.truncate: -apple-system 14px/20px 400, #e6e6e6 | = | = | span.truncate: -apple-system 14px/20px 500, #e6e6e6 |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #b3b3b3, stroke #b3b3b3 2px | = | = | 16 x 16, colour #e6e6e6, stroke #e6e6e6 2px |
+| Tokens | --fill-tsp-white-dark #ffffff14; --fill-tsp-white-light #ffffff0a; --icon-secondary #b3b3b3; --text-primary #e6e6e6; --ui-density-row-gap 8px; --ui-density-small-radius 8px; --ui-density-small-row-height 32px; --ui-font-size-sm 14px; --ui-line-height-sm 20px | = | = | --Button-black #fffffff2; --fill-tsp-white-dark #ffffff14; --fill-tsp-white-main #ffffff0f; --icon-primary #e6e6e6; --text-primary #e6e6e6; --ui-density-row-gap 8px; --ui-density-small-radius 8px; --ui-density-small-row-height 32px; --ui-font-size-sm 14px; --ui-line-height-sm 20px |
+| How | at rest | mouse hover | mouse held down (:active) | at rest, captured selected |
+| Painted layers | - | button.flex.py-2.items-center 196.0x32.0 bg #ffffff @ 0.04 r 8px | button.flex.py-2.items-center 196.0x32.0 bg #ffffff @ 0.08 r 8px | button.flex.py-2.items-center 196.0x32.0 bg #ffffff @ 0.06 r 8px |
+
+Light theme.
+
+| Property | light | light-hover | light-pressed | light-selected |
+|---|---|---|---|---|
+| Size (w x h) | 196 x 32 | = | = | = |
+| Padding | 8px 16px 8px 14px | = | = | = |
+| Gap | 8px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | #37352f @ 0.04 | #37352f @ 0.08 | #37352f @ 0.06 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 400 | = | = | -apple-system 14px/20px 500 |
+| Letter spacing | normal | = | = | = |
+| Colour | #1a1a1a | = | = | = |
+| Text node | span.truncate: -apple-system 14px/20px 400, #1a1a1a | = | = | span.truncate: -apple-system 14px/20px 500, #1a1a1a |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #4d4d4d, stroke #4d4d4d 2px | = | = | 16 x 16, colour #1a1a1a, stroke #1a1a1a 2px |
+| Tokens | --fill-tsp-white-dark #37352f14; --fill-tsp-white-light #37352f0a; --icon-secondary #4d4d4d; --text-primary #1a1a1a; --ui-density-row-gap 8px; --ui-density-small-radius 8px; --ui-density-small-row-height 32px; --ui-font-size-sm 14px; --ui-line-height-sm 20px | = | = | --Button-black #1a1a19; --fill-tsp-white-dark #37352f14; --fill-tsp-white-main #37352f0f; --icon-primary #1a1a1a; --text-primary #1a1a1a; --ui-density-row-gap 8px; --ui-density-small-radius 8px; --ui-density-small-row-height 32px; --ui-font-size-sm 14px; --ui-line-height-sm 20px |
+| How | at rest | mouse hover | mouse held down (:active) | at rest, captured selected |
+| Painted layers | - | button.flex.py-2.items-center 196.0x32.0 bg #37352f @ 0.04 r 8px | button.flex.py-2.items-center 196.0x32.0 bg #37352f @ 0.08 r 8px | button.flex.py-2.items-center 196.0x32.0 bg #37352f @ 0.06 r 8px |
+
+Other finders: selected: `() => C(T('Developers', D()), 'button,.clickable')`; light-selected: `() => C(T('Developers', D()), 'button,.clickable')`.
+
+Crops: none.
+
+#### tabs-underline
+
+Underline tab (API keys | Webhooks). Text tabs over a 1px rule; the active one is 500 weight in --text-primary with a 2px --Button-black underline that slides between tabs.
+
+Snapshot: `settings-dark-developers-table`. Finder: `() => C(T('Webhooks', D()), 'li')`.
+
+Dark theme.
+
+| Property | default | hover | selected |
+|---|---|---|---|
+| Size (w x h) | 69.09 x 40 | = | 56.05 x 40 |
+| Padding | 10px 0px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 14px/20px 400 | = | -apple-system 14px/20px 500 |
+| Letter spacing | normal | = | = |
+| Colour | #8c8c8c | #b3b3b3 | #e6e6e6 |
+| Text node | span.absolute.inset-0: -apple-system 14px/20px 400, #8c8c8c | span.absolute.inset-0: -apple-system 14px/20px 400, #b3b3b3 | span.absolute.inset-0: -apple-system 14px/20px 500, #e6e6e6 |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Tokens | --text-primary #e6e6e6; --text-secondary #b3b3b3; --text-tertiary #8c8c8c | = | --Button-black #fffffff2; --text-primary #e6e6e6; --text-secondary #b3b3b3; --text-tertiary #8c8c8c |
+| How | at rest | mouse hover | at rest, captured selected |
+| Painted layers | - | = | div.absolute.left-0.right-0 56.0x2.0 border B:2px solid #ffffff @ 0.95 |
+
+Light theme.
+
+| Property | light | light-hover | light-selected |
+|---|---|---|---|
+| Size (w x h) | 69.09 x 40 | = | 56.05 x 40 |
+| Padding | 10px 0px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 14px/20px 400 | = | -apple-system 14px/20px 500 |
+| Letter spacing | normal | = | = |
+| Colour | #737373 | #4d4d4d | #1a1a1a |
+| Text node | span.absolute.inset-0: -apple-system 14px/20px 400, #737373 | span.absolute.inset-0: -apple-system 14px/20px 400, #4d4d4d | span.absolute.inset-0: -apple-system 14px/20px 500, #1a1a1a |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Tokens | --text-primary #1a1a1a; --text-secondary #4d4d4d; --text-tertiary #737373 | = | --Button-black #1a1a19; --text-primary #1a1a1a; --text-secondary #4d4d4d; --text-tertiary #737373 |
+| How | at rest | mouse hover | at rest, captured selected |
+| Painted layers | - | = | div.absolute.left-0.right-0 56.0x2.0 border B:2px solid #1a1a19 |
+
+Other finders: selected: `() => C(T('API keys', D()), 'li')`; light-selected: `() => C(T('API keys', D()), 'li')`.
+
+Crops: none.
+
+#### info-banner
+
+Info banner (Manage API Keys …).
+
+Snapshot: `settings-dark-developers-table`. Finder: `() => P(TS('Manage API Keys', D()))`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 768 x 42 |
+| Padding | 12px 16px |
+| Gap | 12px |
+| Border | none |
+| Radius | 12px |
+| Background | #ffffff @ 0.04 |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #e6e6e6 |
+| Text node | p.truncate: -apple-system 13px/18px 400, #e6e6e6 |
+| Transition | none |
+| Icon | 16 x 16, colour #e6e6e6, stroke #8c8c8c 2px |
+| Painted layers | div.flex.items-center.justify-between 768.0x42.0 bg #ffffff @ 0.04 r 12px |
+| Tokens | --fill-tsp-white-light #ffffff0a; --text-primary #e6e6e6; --text-tertiary #8c8c8c |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 768 x 42 |
+| Padding | 12px 16px |
+| Gap | 12px |
+| Border | none |
+| Radius | 12px |
+| Background | #37352f @ 0.04 |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #1a1a1a |
+| Text node | p.truncate: -apple-system 13px/18px 400, #1a1a1a |
+| Transition | none |
+| Icon | 16 x 16, colour #1a1a1a, stroke #737373 2px |
+| Painted layers | div.flex.items-center.justify-between 768.0x42.0 bg #37352f @ 0.04 r 12px |
+| Tokens | --fill-tsp-white-light #37352f0a; --text-primary #1a1a1a; --text-tertiary #737373 |
+| How | at rest |
+
+Crops: none.
+
+#### button-outline
+
+Outline button (+ Create new).
+
+Snapshot: `settings-dark-developers-table`. Finder: `() => C(T('Create new', D()), 'button')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 112.91 x 32 | = | = | = |
+| Padding | 0px 8px | = | = | = |
+| Gap | 4px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | #ffffff @ 0.04 | = | #ffffff @ 0.04 |
+| Box shadow | none | = | = | = |
+| Outline | 1px solid #ffffff @ 0.12 offset -1px | = | = | = |
+| Font | -apple-system 14px/18px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #e6e6e6 | = | = | = |
+| Text node | span: -apple-system 14px/18px 500, #e6e6e6 | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #e6e6e6, stroke #e6e6e6 2px | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 112.9x32.0 r 8px outline 1px solid #ffffff @ 0.12 offset -1px | button.inline-flex.items-center.justify-center 112.9x32.0 bg #ffffff @ 0.04 r 8px outline 1px solid #ffffff @ 0.12 offset -1px opacity 0.9 | = | button.inline-flex.items-center.justify-center 112.9x32.0 bg #ffffff @ 0.04 r 8px outline 1px solid #ffffff @ 0.12 offset -1px opacity 0.9 |
+| Tokens | --Button-border-secondary #ffffff1f; --fill-tsp-white-light #ffffff0a; --text-primary #e6e6e6; --ui-density-small-row-height 32px | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 112.91 x 32 | = | = | = |
+| Padding | 0px 8px | = | = | = |
+| Gap | 4px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | #37352f @ 0.04 | = | #37352f @ 0.04 |
+| Box shadow | none | = | = | = |
+| Outline | 1px solid #000000 @ 0.12 offset -1px | = | = | = |
+| Font | -apple-system 14px/18px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #1a1a1a | = | = | = |
+| Text node | span: -apple-system 14px/18px 500, #1a1a1a | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #1a1a1a, stroke #1a1a1a 2px | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 112.9x32.0 r 8px outline 1px solid #000000 @ 0.12 offset -1px | button.inline-flex.items-center.justify-center 112.9x32.0 bg #37352f @ 0.04 r 8px outline 1px solid #000000 @ 0.12 offset -1px opacity 0.9 | = | button.inline-flex.items-center.justify-center 112.9x32.0 bg #37352f @ 0.04 r 8px outline 1px solid #000000 @ 0.12 offset -1px opacity 0.9 |
+| Tokens | --Button-border-secondary #0000001f; --fill-tsp-white-light #37352f0a; --text-primary #1a1a1a; --ui-density-small-row-height 32px | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Crops: none.
+
+#### table
+
+Table (API keys). A plain <table>: a 13px --text-tertiary header row and 14px body rows divided by 1px --border-main rules, no zebra, no outer border; the last column is a 28px more button.
+
+Snapshot: `settings-dark-developers-table`. Finder: `() => Q('table')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 768 x 183 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #e6e6e6 |
+| Text node | th.pe-6.py-2.text-start: -apple-system 13px/18px 400, #8c8c8c |
+| Transition | none |
+| Icon | 20 x 20, colour #e6e6e6, stroke #8c8c8c 2px |
+| Painted layers | thead.border-b.border-t 768.0x35.0 border T:1px solid #ffffff @ 0.06 / B:1px solid #ffffff @ 0.06; tr.border-b 768.0x49.0 border B:1px solid #ffffff @ 0.03; tr.border-b 768.0x49.0 border B:1px solid #ffffff @ 0.03; tr.border-b 768.0x49.0 border B:1px solid #ffffff @ 0.03 |
+| Tokens | --border-light #ffffff08; --border-main #ffffff0f; --fill-tsp-white-main #ffffff0f; --text-primary #e6e6e6; --text-tertiary #8c8c8c |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 768 x 183 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #1a1a1a |
+| Text node | th.pe-6.py-2.text-start: -apple-system 13px/18px 400, #737373 |
+| Transition | none |
+| Icon | 20 x 20, colour #1a1a1a, stroke #737373 2px |
+| Painted layers | thead.border-b.border-t 768.0x35.0 border T:1px solid #000000 @ 0.06 / B:1px solid #000000 @ 0.06; tr.border-b 768.0x49.0 border B:1px solid #000000 @ 0.04; tr.border-b 768.0x49.0 border B:1px solid #000000 @ 0.04; tr.border-b 768.0x49.0 border B:1px solid #000000 @ 0.04 |
+| Tokens | --border-light #0000000a; --border-main #0000000f; --fill-tsp-white-main #37352f0f; --text-primary #1a1a1a; --text-tertiary #737373 |
+| How | at rest |
+
+Crops: none.
+
+#### table-header-cell
+
+Table header cell.
+
+Snapshot: `settings-dark-developers-table`. Finder: `() => Q('table th')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 140 x 35 |
+| Padding | 8px 24px 8px 1px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 13px/18px 400 |
+| Letter spacing | normal |
+| Colour | #8c8c8c |
+| Transition | none |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 140 x 35 |
+| Padding | 8px 24px 8px 1px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 13px/18px 400 |
+| Letter spacing | normal |
+| Colour | #737373 |
+| Transition | none |
+| How | at rest |
+
+Crops: none.
+
+#### table-row
+
+Table row.
+
+Snapshot: `settings-dark-developers-table`. Finder: `() => Q('table tbody tr')`.
+
+Dark theme.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 768 x 49 | = |
+| Padding | 0px | = |
+| Border | T: none; R: none; B: 1px solid #ffffff @ 0.03; L: none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 13px/18px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #e6e6e6 | = |
+| Text node | td.pe-6.py-2.5.text-start: -apple-system 13px/18px 400, #e6e6e6 | = |
+| Transition | none | = |
+| Icon | 20 x 20, colour #e6e6e6, stroke #8c8c8c 2px | = |
+| Painted layers | tr.border-b 768.0x49.0 border B:1px solid #ffffff @ 0.03 | = |
+| Tokens | --border-light #ffffff08; --fill-tsp-white-main #ffffff0f | = |
+| How | at rest | mouse hover |
+
+Light theme.
+
+| Property | light | light-hover |
+|---|---|---|
+| Size (w x h) | 768 x 49 | = |
+| Padding | 0px | = |
+| Border | T: none; R: none; B: 1px solid #000000 @ 0.04; L: none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | -apple-system 13px/18px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #1a1a1a | = |
+| Text node | td.pe-6.py-2.5.text-start: -apple-system 13px/18px 400, #1a1a1a | = |
+| Transition | none | = |
+| Icon | 20 x 20, colour #1a1a1a, stroke #737373 2px | = |
+| Painted layers | tr.border-b 768.0x49.0 border B:1px solid #000000 @ 0.04 | = |
+| Tokens | --border-light #0000000a; --fill-tsp-white-main #37352f0f | = |
+| How | at rest | mouse hover |
+
+Crops: none.
+
+#### table-row-more
+
+Table row more button. 28x28, radius 6; hover fills with --fill-tsp-white-main.
+
+Snapshot: `settings-dark-developers-table`, `settings-dark-key-menu`. Finder: `() => Q('table tbody tr button[aria-label=More]')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed | open |
+|---|---|---|---|---|---|
+| Size (w x h) | 28 x 28 | = | = | = | = |
+| Padding | 0px | = | = | = | = |
+| Border | none | = | = | = | = |
+| Radius | 6px | = | = | = | = |
+| Background | transparent | #ffffff @ 0.06 | = | #ffffff @ 0.06 | #ffffff @ 0.06 |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | = | = | = |
+| Font | -apple-system 13px/18px 400 | = | = | = | = |
+| Letter spacing | normal | = | = | = | = |
+| Colour | #e6e6e6 | = | = | = | = |
+| Transition | none | = | = | = | = |
+| Cursor | pointer | = | = | = | = |
+| Icon | 20 x 20, colour #e6e6e6, stroke #8c8c8c 2px | = | = | = | = |
+| Tokens | --fill-tsp-white-main #ffffff0f | = | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) | at rest, captured open |
+| Painted layers | - | button.clickable.inline-flex.items-center 28.0x28.0 bg #ffffff @ 0.06 r 6px | = | button.clickable.inline-flex.items-center 28.0x28.0 bg #ffffff @ 0.06 r 6px | button.clickable.inline-flex.items-center 28.0x28.0 bg #ffffff @ 0.06 r 6px |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed | light-open |
+|---|---|---|---|---|---|
+| Size (w x h) | 28 x 28 | = | = | = | = |
+| Padding | 0px | = | = | = | = |
+| Border | none | = | = | = | = |
+| Radius | 6px | = | = | = | = |
+| Background | transparent | #37352f @ 0.06 | = | #37352f @ 0.06 | #37352f @ 0.06 |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | = | = | = |
+| Font | -apple-system 13px/18px 400 | = | = | = | = |
+| Letter spacing | normal | = | = | = | = |
+| Colour | #1a1a1a | = | = | = | = |
+| Transition | none | = | = | = | = |
+| Cursor | pointer | = | = | = | = |
+| Icon | 20 x 20, colour #1a1a1a, stroke #737373 2px | = | = | = | = |
+| Tokens | --fill-tsp-white-main #37352f0f | = | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) | at rest, captured open |
+| Painted layers | - | button.clickable.inline-flex.items-center 28.0x28.0 bg #37352f @ 0.06 r 6px | = | button.clickable.inline-flex.items-center 28.0x28.0 bg #37352f @ 0.06 r 6px | button.clickable.inline-flex.items-center 28.0x28.0 bg #37352f @ 0.06 r 6px |
+
+Other finders: open: `() => Q('table tbody tr button[aria-expanded=true]')`; light-open: `() => Q('table tbody tr button[aria-expanded=true]')`.
+
+Crops: none.
+
+#### popover-menu
+
+Row popover menu. A one-item popover under the more button.
+
+Snapshot: `settings-dark-key-menu`. Finder: `() => P(T('Delete', D()))`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 110 x 44 |
+| Padding | 4px |
+| Border | none |
+| Radius | 12px |
+| Background | #242424 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #e6e6e6 |
+| Text node | div.flex-1.flex.items-center: -apple-system 14px/20px 400, #eb4d4d |
+| Transition | none |
+| Icon | 16 x 16, colour #eb4d4d, stroke #eb4d4d 2px |
+| Painted layers | div.shadow-menu.p-1 110.0x44.0 bg #242424 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px |
+| Tokens | --background-menu-white #242424; --fill-tsp-white-main #ffffff0f; --function-error #eb4d4d; --ui-density-menu-item-padding-y 8px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 110 x 44 |
+| Padding | 4px |
+| Border | none |
+| Radius | 12px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #1a1a1a |
+| Text node | div.flex-1.flex.items-center: -apple-system 14px/20px 400, #fb494f |
+| Transition | none |
+| Icon | 16 x 16, colour #fb494f, stroke #fb494f 2px |
+| Painted layers | div.shadow-menu.p-1 110.0x44.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px |
+| Tokens | --background-menu-white #fff; --fill-tsp-white-main #37352f0f; --function-error #fb494f; --ui-density-menu-item-padding-y 8px |
+| How | at rest |
+
+Crops: none.
+
+#### menu-item-danger
+
+Menu item, destructive (Delete). Text and trash icon in --function-error; the hover fill is the neutral menu hover, not a red one.
+
+Snapshot: `settings-dark-key-menu`. Finder: `() => C(T('Delete', D()), '[class*="function-error"]')`.
+
+Dark theme.
+
+| Property | default | hover | pressed |
+|---|---|---|---|
+| Size (w x h) | 102 x 36 | = | = |
+| Padding | 8px | = | = |
+| Gap | 8px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | #ffffff @ 0.06 | #ffffff @ 0.06 |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #eb4d4d | = | = |
+| Text node | div.flex-1.flex.items-center: -apple-system 14px/20px 400, #eb4d4d | = | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Icon | 16 x 16, colour #eb4d4d, stroke #eb4d4d 2px | = | = |
+| Ancestor paint | 1 up div.shadow-menu.p-1 bg #242424 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px | = | = |
+| Tokens | --fill-tsp-white-main #ffffff0f; --function-error #eb4d4d; --ui-density-menu-item-padding-y 8px | = | = |
+| How | at rest | mouse hover | mouse held down (:active) |
+| Painted layers | - | div.flex.items-center.gap-2 102.0x36.0 bg #ffffff @ 0.06 r 8px | div.flex.items-center.gap-2 102.0x36.0 bg #ffffff @ 0.06 r 8px |
+
+Light theme.
+
+| Property | light | light-hover | light-pressed |
+|---|---|---|---|
+| Size (w x h) | 102 x 36 | = | = |
+| Padding | 8px | = | = |
+| Gap | 8px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | #37352f @ 0.06 | #37352f @ 0.06 |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #fb494f | = | = |
+| Text node | div.flex-1.flex.items-center: -apple-system 14px/20px 400, #fb494f | = | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Icon | 16 x 16, colour #fb494f, stroke #fb494f 2px | = | = |
+| Ancestor paint | 1 up div.shadow-menu.p-1 bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px | = | = |
+| Tokens | --fill-tsp-white-main #37352f0f; --function-error #fb494f; --ui-density-menu-item-padding-y 8px | = | = |
+| How | at rest | mouse hover | mouse held down (:active) |
+| Painted layers | - | div.flex.items-center.gap-2 102.0x36.0 bg #37352f @ 0.06 r 8px | div.flex.items-center.gap-2 102.0x36.0 bg #37352f @ 0.06 r 8px |
+
+Crops: none.
+
+#### confirm-dialog
+
+Destructive confirmation dialog. A small dialog over a scrim: a 16px 500 question, a 14px "This action cannot be undone." line, Cancel and a red Delete at the end, and a close button.
+
+Snapshot: `settings-dark-delete-confirm`. Finder: `() => P(TS('Are you sure', D()))`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 440 x 156 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #1a1a1a |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px |
+| Outline | 2px solid #000000 @ 0 offset 2px |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #e6e6e6 |
+| Text node | h3.flex-1.min-w-0.break-words: -apple-system 18px/24px 600, #e6e6e6 |
+| Transition | none |
+| Icon | 20 x 20, colour #8c8c8c, stroke #8c8c8c 2px |
+| Painted layers | div.@container/dialog.overflow-auto.outline-none 440.0x156.0 bg #1a1a1a r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px outline 2px solid #000000 @ 0 offset 2px; button.inline-flex.items-center.justify-center 72.0x36.0 r 8px outline 1px solid #ffffff @ 0.12 offset -1px; button.inline-flex.items-center.justify-center 72.0x36.0 bg #eb4d4d r 8px |
+| Tokens | --Button-border-secondary #ffffff1f; --background-gray-main #1a1a1a; --dlg-enter-scale 1; --dlg-enter-y 0px; --dp (unset); --dp-header-end (unset); --fill-tsp-white-light #ffffff0a; --function-error #eb4d4d; --icon-tertiary #8c8c8c; --text-primary #e6e6e6 |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 440 x 156 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #f8f8f7 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px |
+| Outline | 2px solid #000000 @ 0 offset 2px |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #1a1a1a |
+| Text node | h3.flex-1.min-w-0.break-words: -apple-system 18px/24px 600, #1a1a1a |
+| Transition | none |
+| Icon | 20 x 20, colour #737373, stroke #737373 2px |
+| Painted layers | div.@container/dialog.overflow-auto.outline-none 440.0x156.0 bg #f8f8f7 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px outline 2px solid #000000 @ 0 offset 2px; button.inline-flex.items-center.justify-center 72.0x36.0 r 8px outline 1px solid #000000 @ 0.12 offset -1px; button.inline-flex.items-center.justify-center 72.0x36.0 bg #fb494f r 8px |
+| Tokens | --Button-border-secondary #0000001f; --background-gray-main #f8f8f7; --dlg-enter-scale 1; --dlg-enter-y 0px; --dp (unset); --dp-header-end (unset); --fill-tsp-white-light #37352f0a; --function-error #fb494f; --icon-tertiary #737373; --text-primary #1a1a1a |
+| How | at rest |
+
+Crops: none.
+
+#### button-danger
+
+Danger button (Delete).
+
+Snapshot: `settings-dark-delete-confirm`. Finder: `() => C(T('Delete', D()), 'button')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 72 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #eb4d4d | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #ffffff | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 72.0x36.0 bg #eb4d4d r 8px | button.inline-flex.items-center.justify-center 72.0x36.0 bg #eb4d4d r 8px opacity 0.9 | = | button.inline-flex.items-center.justify-center 72.0x36.0 bg #eb4d4d r 8px opacity 0.9 |
+| Ancestor paint | 2 up div.@container/dialog.overflow-auto.outline-none bg #1a1a1a shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | = | = |
+| Tokens | --function-error #eb4d4d; --text-white #fff | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 72 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #fb494f | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #ffffff | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 72.0x36.0 bg #fb494f r 8px | button.inline-flex.items-center.justify-center 72.0x36.0 bg #fb494f r 8px opacity 0.9 | = | button.inline-flex.items-center.justify-center 72.0x36.0 bg #fb494f r 8px opacity 0.9 |
+| Ancestor paint | 2 up div.@container/dialog.overflow-auto.outline-none bg #f8f8f7 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | = | = |
+| Tokens | --function-error #fb494f; --text-white #fff | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Crops: none.
+
+#### button-secondary
+
+Secondary button (Cancel).
+
+Snapshot: `settings-dark-delete-confirm`. Finder: `() => C(T('Cancel', D()), 'button')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 72 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | #ffffff @ 0.04 | = | #ffffff @ 0.04 |
+| Box shadow | none | = | = | = |
+| Outline | 1px solid #ffffff @ 0.12 offset -1px | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #e6e6e6 | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #e6e6e6 | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 72.0x36.0 r 8px outline 1px solid #ffffff @ 0.12 offset -1px | button.inline-flex.items-center.justify-center 72.0x36.0 bg #ffffff @ 0.04 r 8px outline 1px solid #ffffff @ 0.12 offset -1px opacity 0.9 | = | button.inline-flex.items-center.justify-center 72.0x36.0 bg #ffffff @ 0.04 r 8px outline 1px solid #ffffff @ 0.12 offset -1px opacity 0.9 |
+| Ancestor paint | 2 up div.@container/dialog.overflow-auto.outline-none bg #1a1a1a shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | = | = |
+| Tokens | --Button-border-secondary #ffffff1f; --fill-tsp-white-light #ffffff0a; --text-primary #e6e6e6 | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 72 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | #37352f @ 0.04 | = | #37352f @ 0.04 |
+| Box shadow | none | = | = | = |
+| Outline | 1px solid #000000 @ 0.12 offset -1px | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #1a1a1a | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #1a1a1a | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 72.0x36.0 r 8px outline 1px solid #000000 @ 0.12 offset -1px | button.inline-flex.items-center.justify-center 72.0x36.0 bg #37352f @ 0.04 r 8px outline 1px solid #000000 @ 0.12 offset -1px opacity 0.9 | = | button.inline-flex.items-center.justify-center 72.0x36.0 bg #37352f @ 0.04 r 8px outline 1px solid #000000 @ 0.12 offset -1px opacity 0.9 |
+| Ancestor paint | 2 up div.@container/dialog.overflow-auto.outline-none bg #f8f8f7 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | = | = |
+| Tokens | --Button-border-secondary #0000001f; --fill-tsp-white-light #37352f0a; --text-primary #1a1a1a | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Crops: none.
+
+#### confirm-dialog-close
+
+Dialog close button.
+
+Snapshot: `settings-dark-delete-confirm`. Finder: `() => K('cursor-pointer rounded-md', 0, D()) // [...D().querySelectorAll('svg')].map((v) => v.parentElement).find((b) => !b.innerText.trim())`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 28 x 28 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 6px | = | - | = |
+| Background | transparent | #ffffff @ 0.04 | - | #ffffff @ 0.04 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | -apple-system 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #e6e6e6 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 20 x 20, colour #8c8c8c, stroke #8c8c8c 2px | = | - | = |
+| Ancestor paint | 2 up div.@container/dialog.overflow-auto.outline-none bg #1a1a1a shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | - | = |
+| Tokens | --fill-tsp-white-light #ffffff0a; --icon-tertiary #8c8c8c | = | - | = |
+| How | at rest | mouse hover | - | mouse held down (:active) |
+| Painted layers | - | div.flex.h-7.w-7 28.0x28.0 bg #ffffff @ 0.04 r 6px | = | div.flex.h-7.w-7 28.0x28.0 bg #ffffff @ 0.04 r 6px |
+| Skipped | - | = | not focusable in the static copy (no tabindex) | = |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 28 x 28 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 6px | = | - | = |
+| Background | transparent | #37352f @ 0.04 | - | #37352f @ 0.04 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | -apple-system 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1a1a1a | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 20 x 20, colour #737373, stroke #737373 2px | = | - | = |
+| Ancestor paint | 2 up div.@container/dialog.overflow-auto.outline-none bg #f8f8f7 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | - | = |
+| Tokens | --fill-tsp-white-light #37352f0a; --icon-tertiary #737373 | = | - | = |
+| How | at rest | mouse hover | - | mouse held down (:active) |
+| Painted layers | - | div.flex.h-7.w-7 28.0x28.0 bg #37352f @ 0.04 r 6px | = | div.flex.h-7.w-7 28.0x28.0 bg #37352f @ 0.04 r 6px |
+| Skipped | - | = | not focusable in the static copy (no tabindex) | = |
+
+Crops: none.
+
+#### form-dialog
+
+Form dialog (Create API Key). Labelled fields stacked with 8px between label and field; Cancel and Create at the end. Create stays disabled until the name has text; there is no inline validation message.
+
+Snapshot: `settings-dark-create-key`. Finder: `() => P(T('Create API Key', D()))`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 400 x 280 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #1a1a1a |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px |
+| Outline | 2px solid #000000 @ 0 offset 2px |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #e6e6e6 |
+| Text node | h3.flex-1.min-w-0.break-words: -apple-system 18px/24px 600, #e6e6e6 |
+| Transition | none |
+| Icon | 20 x 20, colour #8c8c8c, stroke #8c8c8c 2px |
+| Placeholder | "my-secret-key" #595959, opacity 1, 14px |
+| Painted layers | div.@container/dialog.overflow-auto.outline-none 400.0x280.0 bg #1a1a1a r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px outline 2px solid #000000 @ 0 offset 2px; div.group.overflow-hidden.text-sm 360.0x36.0 bg #ffffff @ 0.06 r 8px; div.flex.items-center.w-full 360.0x40.0 bg #ffffff @ 0.04 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px; button.inline-flex.items-center.justify-center 72.0x36.0 r 8px outline 1px solid #ffffff @ 0.12 offset -1px; button.inline-flex.items-center.justify-center 72.0x36.0 bg #ffffff @ 0.95 r 8px opacity 0.5 |
+| Tokens | --Button-black #fffffff2; --Button-border-secondary #ffffff1f; --background-gray-main #1a1a1a; --border-dark #ffffff1f; --dlg-enter-scale 1; --dlg-enter-y 0px; --dp (unset); --dp-header-end (unset); --fill-tsp-white-light #ffffff0a; --fill-tsp-white-main #ffffff0f |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 400 x 280 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #f8f8f7 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px |
+| Outline | 2px solid #000000 @ 0 offset 2px |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #1a1a1a |
+| Text node | h3.flex-1.min-w-0.break-words: -apple-system 18px/24px 600, #1a1a1a |
+| Transition | none |
+| Icon | 20 x 20, colour #737373, stroke #737373 2px |
+| Placeholder | "my-secret-key" #a6a6a6, opacity 1, 14px |
+| Painted layers | div.@container/dialog.overflow-auto.outline-none 400.0x280.0 bg #f8f8f7 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px outline 2px solid #000000 @ 0 offset 2px; div.group.overflow-hidden.text-sm 360.0x36.0 bg #37352f @ 0.06 r 8px; div.flex.items-center.w-full 360.0x40.0 bg #37352f @ 0.04 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px; button.inline-flex.items-center.justify-center 72.0x36.0 r 8px outline 1px solid #000000 @ 0.12 offset -1px; button.inline-flex.items-center.justify-center 72.0x36.0 bg #1a1a19 r 8px opacity 0.5 |
+| Tokens | --Button-black #1a1a19; --Button-border-secondary #0000001f; --background-gray-main #f8f8f7; --border-dark #00000024; --dlg-enter-scale 1; --dlg-enter-y 0px; --dp (unset); --dp-header-end (unset); --fill-tsp-white-light #37352f0a; --fill-tsp-white-main #37352f0f |
+| How | at rest |
+
+Crops: none.
+
+#### field-label
+
+Field label.
+
+Snapshot: `settings-dark-create-key`. Finder: `() => T('Name your key', D())`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 360 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 14px/20px 500 |
+| Letter spacing | normal |
+| Colour | #e6e6e6 |
+| Transition | none |
+| Ancestor paint | 3 up div.@container/dialog.overflow-auto.outline-none bg #1a1a1a shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px outline 2px solid #000000 @ 0 |
+| Tokens | --text-primary #e6e6e6 |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 360 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 14px/20px 500 |
+| Letter spacing | normal |
+| Colour | #1a1a1a |
+| Transition | none |
+| Ancestor paint | 3 up div.@container/dialog.overflow-auto.outline-none bg #f8f8f7 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px outline 2px solid #000000 @ 0 |
+| Tokens | --text-primary #1a1a1a |
+| How | at rest |
+
+Crops: none.
+
+#### text-field
+
+Text field. Placeholder in --text-disable; the value in --text-primary; a clear (×) button appears inside once it has text.
+
+Snapshot: `settings-dark-create-key`, `settings-dark-create-key-typed`. Finder: `() => Q('input[placeholder="my-secret-key"]')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | typed | typed-focus-visible |
+|---|---|---|---|---|---|
+| Size (w x h) | 336 x 20 | = | = | 310 x 20 | 310 x 20 |
+| Padding | 0px | = | = | = | = |
+| Border | none | = | = | = | = |
+| Radius | 0px | = | = | = | = |
+| Background | transparent | = | = | = | = |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | = | = | = |
+| Font | -apple-system 14px/20px 400 | = | = | = | = |
+| Letter spacing | normal | = | = | = | = |
+| Colour | #e6e6e6 | = | = | = | = |
+| Transition | none | = | = | = | = |
+| Cursor | text | = | = | = | = |
+| Placeholder | "my-secret-key" #595959, opacity 1, 14px | = | = | = | = |
+| Ancestor paint | 1 up div.group.overflow-hidden.text-sm bg #ffffff @ 0.06 | = | 1 up div.group.overflow-hidden.text-sm bg #ffffff @ 0.06 shadow #ffffff 0px 0px 0px 0px inset, #ffffff @ 0.12 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px | = | 1 up div.group.overflow-hidden.text-sm bg #ffffff @ 0.06 shadow #ffffff 0px 0px 0px 0px inset, #ffffff @ 0.12 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
+| Tokens | --text-disable #595959 | = | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | at rest, captured typed | keyboard: focus(), Shift+Tab, Tab |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-typed | light-typed-focus-visible |
+|---|---|---|---|---|---|
+| Size (w x h) | 336 x 20 | = | = | 310 x 20 | 310 x 20 |
+| Padding | 0px | = | = | = | = |
+| Border | none | = | = | = | = |
+| Radius | 0px | = | = | = | = |
+| Background | transparent | = | = | = | = |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | = | = | = |
+| Font | -apple-system 14px/20px 400 | = | = | = | = |
+| Letter spacing | normal | = | = | = | = |
+| Colour | #1a1a1a | = | = | = | = |
+| Transition | none | = | = | = | = |
+| Cursor | text | = | = | = | = |
+| Placeholder | "my-secret-key" #a6a6a6, opacity 1, 14px | = | = | = | = |
+| Ancestor paint | 1 up div.group.overflow-hidden.text-sm bg #37352f @ 0.06 | = | 1 up div.group.overflow-hidden.text-sm bg #37352f @ 0.06 shadow #ffffff 0px 0px 0px 0px inset, #000000 @ 0.14 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px | = | 1 up div.group.overflow-hidden.text-sm bg #37352f @ 0.06 shadow #ffffff 0px 0px 0px 0px inset, #000000 @ 0.14 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
+| Tokens | --text-disable #a6a6a6 | = | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | at rest, captured typed | keyboard: focus(), Shift+Tab, Tab |
+
+Other finders: typed: `() => Q('input[placeholder="my-secret-key"]')`; typed-focus-visible: `() => Q('input[placeholder="my-secret-key"]')`; light-typed: `() => Q('input[placeholder="my-secret-key"]')`; light-typed-focus-visible: `() => Q('input[placeholder="my-secret-key"]')`.
+
+Crops: none.
+
+#### text-field-wrapper
+
+Text field frame. The painted frame around the input; focus-visible is read with keyboard focus on the input inside.
+
+Snapshot: `settings-dark-create-key`, `settings-dark-create-key-typed`. Finder: `() => P(Q('input[placeholder="my-secret-key"]').parentElement)`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | typed |
+|---|---|---|---|---|
+| Size (w x h) | 360 x 36 | = | = | = |
+| Padding | 8px 12px | = | = | = |
+| Gap | 10px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #ffffff @ 0.06 | = | = | = |
+| Box shadow | none | = | #ffffff 0px 0px 0px 0px inset, #ffffff @ 0.12 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #e6e6e6 | = | = | = |
+| Transition | none | = | = | = |
+| Placeholder | "my-secret-key" #595959, opacity 1, 14px | = | = | = |
+| Painted layers | div.group.overflow-hidden.text-sm 360.0x36.0 bg #ffffff @ 0.06 r 8px | = | div.group.overflow-hidden.text-sm 360.0x36.0 bg #ffffff @ 0.06 r 8px shadow #ffffff 0px 0px 0px 0px inset, #ffffff @ 0.12 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px | = |
+| Ancestor paint | 3 up div.@container/dialog.overflow-auto.outline-none bg #1a1a1a shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | = | = |
+| Tokens | --border-dark #ffffff1f; --fill-tsp-white-main #ffffff0f; --text-disable #595959; --text-primary #e6e6e6; --ui-density-input-gap 10px; --ui-density-row-height 36px; --ui-density-small-radius 8px | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab (on the field inside) | at rest, captured typed |
+| Icon | - | = | = | 16 x 16, colour #8c8c8c |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-typed |
+|---|---|---|---|---|
+| Size (w x h) | 360 x 36 | = | = | = |
+| Padding | 8px 12px | = | = | = |
+| Gap | 10px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #37352f @ 0.06 | = | = | = |
+| Box shadow | none | = | #ffffff 0px 0px 0px 0px inset, #000000 @ 0.14 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #1a1a1a | = | = | = |
+| Transition | none | = | = | = |
+| Placeholder | "my-secret-key" #a6a6a6, opacity 1, 14px | = | = | = |
+| Painted layers | div.group.overflow-hidden.text-sm 360.0x36.0 bg #37352f @ 0.06 r 8px | = | div.group.overflow-hidden.text-sm 360.0x36.0 bg #37352f @ 0.06 r 8px shadow #ffffff 0px 0px 0px 0px inset, #000000 @ 0.14 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px | = |
+| Ancestor paint | 3 up div.@container/dialog.overflow-auto.outline-none bg #f8f8f7 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | = | = |
+| Tokens | --border-dark #00000024; --fill-tsp-white-main #37352f0f; --text-disable #a6a6a6; --text-primary #1a1a1a; --ui-density-input-gap 10px; --ui-density-row-height 36px; --ui-density-small-radius 8px | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab (on the field inside) | at rest, captured typed |
+| Icon | - | = | = | 16 x 16, colour #737373 |
+
+Other finders: typed: `() => P(Q('input[placeholder="my-secret-key"]').parentElement)`; light-typed: `() => P(Q('input[placeholder="my-secret-key"]').parentElement)`.
+
+Crops: none.
+
+#### select-trigger
+
+Select trigger (Expiration).
+
+Snapshot: `settings-dark-create-key`, `settings-dark-select-open`. Finder: `() => P(T('Never', D()))`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed | open |
+|---|---|---|---|---|---|
+| Size (w x h) | 360 x 40 | = | - | = | = |
+| Padding | 0px 12px | = | - | = | = |
+| Gap | 8px | = | - | = | = |
+| Border | 1px solid #000000 @ 0 | = | - | = | = |
+| Radius | 10px | = | - | = | = |
+| Background | #ffffff @ 0.04 | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | -apple-system 16px/24px 400 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #e6e6e6 | = | - | = | = |
+| Text node | div.flex-1: -apple-system 14px/20px 400, #e6e6e6 | = | - | = | = |
+| Transition | none | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Icon | 16 x 16, colour #e6e6e6, stroke #8c8c8c 2px | = | - | = | = |
+| Painted layers | div.flex.items-center.w-full 360.0x40.0 bg #ffffff @ 0.04 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px | = | - | = | = |
+| Ancestor paint | 3 up div.@container/dialog.overflow-auto.outline-none bg #1a1a1a shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | - | = | = |
+| Tokens | --fill-tsp-white-light #ffffff0a; --text-primary #e6e6e6; --ui-density-content-padding 12px; --ui-density-large-control-height 40px; --ui-density-row-gap 8px; --ui-density-row-radius 10px; --ui-density-small-row-height 32px; --ui-font-size-sm 14px; --ui-line-height-sm 20px | = | - | = | = |
+| How | at rest | mouse hover | - | mouse held down (:active) | at rest, captured open |
+| Skipped | - | = | not focusable in the static copy (no tabindex) | = | = |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed | light-open |
+|---|---|---|---|---|---|
+| Size (w x h) | 360 x 40 | = | - | = | = |
+| Padding | 0px 12px | = | - | = | = |
+| Gap | 8px | = | - | = | = |
+| Border | 1px solid #000000 @ 0 | = | - | = | = |
+| Radius | 10px | = | - | = | = |
+| Background | #37352f @ 0.04 | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | -apple-system 16px/24px 400 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #1a1a1a | = | - | = | = |
+| Text node | div.flex-1: -apple-system 14px/20px 400, #1a1a1a | = | - | = | = |
+| Transition | none | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Icon | 16 x 16, colour #1a1a1a, stroke #737373 2px | = | - | = | = |
+| Painted layers | div.flex.items-center.w-full 360.0x40.0 bg #37352f @ 0.04 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px | = | - | = | = |
+| Ancestor paint | 3 up div.@container/dialog.overflow-auto.outline-none bg #f8f8f7 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | - | = | = |
+| Tokens | --fill-tsp-white-light #37352f0a; --text-primary #1a1a1a; --ui-density-content-padding 12px; --ui-density-large-control-height 40px; --ui-density-row-gap 8px; --ui-density-row-radius 10px; --ui-density-small-row-height 32px; --ui-font-size-sm 14px; --ui-line-height-sm 20px | = | - | = | = |
+| How | at rest | mouse hover | - | mouse held down (:active) | at rest, captured open |
+| Skipped | - | = | not focusable in the static copy (no tabindex) | = | = |
+
+Other finders: open: `() => P(T('Never', [...document.querySelectorAll('[role=dialog]')].find((d) => /Create API Key/.test(d.innerText))))`; light-open: `() => P(T('Never', [...document.querySelectorAll('[role=dialog]')].find((d) => /Create API Key/.test(d.innerText))))`.
+
+Crops: none.
+
+#### select-listbox
+
+Select listbox.
+
+Snapshot: `settings-dark-select-open`. Finder: `() => P(C(T('In 7 days'), '.cursor-pointer').parentElement)`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 360 x 234 |
+| Padding | 4px |
+| Border | none |
+| Radius | 12px |
+| Background | #242424 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #e6e6e6 |
+| Text node | div.flex-1.flex.items-center: -apple-system 14px/20px 400, #e6e6e6 |
+| Transition | none |
+| Icon | 16 x 16, colour #e6e6e6, stroke #e6e6e6 2px |
+| Painted layers | div.shadow-menu.p-1 360.0x234.0 bg #242424 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px |
+| Tokens | --anchor-width 360px; --background-menu-white #242424; --fill-tsp-white-main #ffffff0f; --text-primary #e6e6e6; --ui-density-menu-item-padding-y 8px; --ui-density-row-height 36px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 360 x 234 |
+| Padding | 4px |
+| Border | none |
+| Radius | 12px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #1a1a1a |
+| Text node | div.flex-1.flex.items-center: -apple-system 14px/20px 400, #1a1a1a |
+| Transition | none |
+| Icon | 16 x 16, colour #1a1a1a, stroke #1a1a1a 2px |
+| Painted layers | div.shadow-menu.p-1 360.0x234.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px |
+| Tokens | --anchor-width 360px; --background-menu-white #fff; --fill-tsp-white-main #37352f0f; --text-primary #1a1a1a; --ui-density-menu-item-padding-y 8px; --ui-density-row-height 36px |
+| How | at rest |
+
+Crops: none.
+
+#### select-option
+
+Select option.
+
+Snapshot: `settings-dark-select-open`. Finder: `() => C(T('In 7 days'), '.cursor-pointer')`.
+
+Dark theme.
+
+| Property | default | hover | pressed | selected |
+|---|---|---|---|---|
+| Size (w x h) | 352 x 36 | = | = | = |
+| Padding | 8px 6px 8px 8px | = | = | = |
+| Gap | 8px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | #ffffff @ 0.06 | #ffffff @ 0.06 | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #e6e6e6 | = | = | = |
+| Text node | div.flex-1.flex.items-center: -apple-system 14px/20px 400, #e6e6e6 | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Ancestor paint | 1 up div.shadow-menu.p-1 bg #242424 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px | = | = | = |
+| Tokens | --fill-tsp-white-main #ffffff0f; --text-primary #e6e6e6; --ui-density-menu-item-padding-y 8px; --ui-density-row-height 36px | = | = | = |
+| How | at rest | mouse hover | mouse held down (:active) | at rest, captured selected |
+| Painted layers | - | div.flex.items-center.gap-2 352.0x36.0 bg #ffffff @ 0.06 r 8px | div.flex.items-center.gap-2 352.0x36.0 bg #ffffff @ 0.06 r 8px | = |
+| Icon | - | = | = | 16 x 16, colour #e6e6e6, stroke #e6e6e6 2px |
+
+Light theme.
+
+| Property | light | light-hover | light-pressed | light-selected |
+|---|---|---|---|---|
+| Size (w x h) | 352 x 36 | = | = | = |
+| Padding | 8px 6px 8px 8px | = | = | = |
+| Gap | 8px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | #37352f @ 0.06 | #37352f @ 0.06 | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #1a1a1a | = | = | = |
+| Text node | div.flex-1.flex.items-center: -apple-system 14px/20px 400, #1a1a1a | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Ancestor paint | 1 up div.shadow-menu.p-1 bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px | = | = | = |
+| Tokens | --fill-tsp-white-main #37352f0f; --text-primary #1a1a1a; --ui-density-menu-item-padding-y 8px; --ui-density-row-height 36px | = | = | = |
+| How | at rest | mouse hover | mouse held down (:active) | at rest, captured selected |
+| Painted layers | - | div.flex.items-center.gap-2 352.0x36.0 bg #37352f @ 0.06 r 8px | div.flex.items-center.gap-2 352.0x36.0 bg #37352f @ 0.06 r 8px | = |
+| Icon | - | = | = | 16 x 16, colour #1a1a1a, stroke #1a1a1a 2px |
+
+Other finders: selected: `() => [...document.querySelectorAll('.cursor-pointer')].find((e) => (e.innerText // '').trim() === 'Never' && e.querySelector('svg'))`; light-selected: `() => [...document.querySelectorAll('.cursor-pointer')].find((e) => (e.innerText // '').trim() === 'Never' && e.querySelector('svg'))`.
+
+Crops: none.
+
+#### button-primary
+
+Primary button (Create). Black on light, white on dark (--Button-black / --text-onblack); hover opacity 0.9, pressed 0.8. Disabled while the form is incomplete (`default`), enabled once a name is typed.
+
+Snapshot: `settings-dark-create-key`, `settings-dark-create-key-typed`. Finder: `() => C(T('Create', D()), 'button')`.
+
+Dark theme.
+
+| Property | default | enabled | enabled-hover | enabled-focus-visible | enabled-pressed |
+|---|---|---|---|---|---|
+| Size (w x h) | 72 x 36 | = | = | = | = |
+| Padding | 0px 12px | = | = | = | = |
+| Gap | 6px | = | = | = | = |
+| Border | none | = | = | = | = |
+| Radius | 8px | = | = | = | = |
+| Background | #ffffff @ 0.95 | = | = | = | = |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = | = |
+| Letter spacing | normal | = | = | = | = |
+| Colour | #000000 @ 0.898 | = | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #000000 @ 0.898 | = | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = | = |
+| Opacity | 0.5 | - | 0.9 | - | 0.9 |
+| Cursor | not-allowed | pointer | pointer | pointer | pointer |
+| Painted layers | button.inline-flex.items-center.justify-center 72.0x36.0 bg #ffffff @ 0.95 r 8px opacity 0.5 | button.inline-flex.items-center.justify-center 72.0x36.0 bg #ffffff @ 0.95 r 8px | button.inline-flex.items-center.justify-center 72.0x36.0 bg #ffffff @ 0.95 r 8px opacity 0.9 | button.inline-flex.items-center.justify-center 72.0x36.0 bg #ffffff @ 0.95 r 8px | button.inline-flex.items-center.justify-center 72.0x36.0 bg #ffffff @ 0.95 r 8px opacity 0.9 |
+| Ancestor paint | 2 up div.@container/dialog.overflow-auto.outline-none bg #1a1a1a shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | = | = | = |
+| Tokens | --Button-black #fffffff2; --text-onblack #000000e5 | = | = | = | = |
+| How | at rest | at rest, captured enabled | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+
+Light theme.
+
+| Property | light | light-enabled | light-enabled-hover | light-enabled-focus-visible | light-enabled-pressed |
+|---|---|---|---|---|---|
+| Size (w x h) | 72 x 36 | = | = | = | = |
+| Padding | 0px 12px | = | = | = | = |
+| Gap | 6px | = | = | = | = |
+| Border | none | = | = | = | = |
+| Radius | 8px | = | = | = | = |
+| Background | #1a1a19 | = | = | = | = |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = | = |
+| Letter spacing | normal | = | = | = | = |
+| Colour | #ffffff | = | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #ffffff | = | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = | = |
+| Opacity | 0.5 | - | 0.9 | - | 0.9 |
+| Cursor | not-allowed | pointer | pointer | pointer | pointer |
+| Painted layers | button.inline-flex.items-center.justify-center 72.0x36.0 bg #1a1a19 r 8px opacity 0.5 | button.inline-flex.items-center.justify-center 72.0x36.0 bg #1a1a19 r 8px | button.inline-flex.items-center.justify-center 72.0x36.0 bg #1a1a19 r 8px opacity 0.9 | button.inline-flex.items-center.justify-center 72.0x36.0 bg #1a1a19 r 8px | button.inline-flex.items-center.justify-center 72.0x36.0 bg #1a1a19 r 8px opacity 0.9 |
+| Ancestor paint | 2 up div.@container/dialog.overflow-auto.outline-none bg #f8f8f7 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px outline 2px solid #000000 @ 0 | = | = | = | = |
+| Tokens | --Button-black #1a1a19; --text-onblack #fff | = | = | = | = |
+| How | at rest | at rest, captured enabled | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+
+Other finders: enabled: `() => C(T('Create', D()), 'button')`; enabled-hover: `() => C(T('Create', D()), 'button')`; enabled-focus-visible: `() => C(T('Create', D()), 'button')`; enabled-pressed: `() => C(T('Create', D()), 'button')`; light-enabled: `() => C(T('Create', D()), 'button')`; light-enabled-hover: `() => C(T('Create', D()), 'button')`; light-enabled-focus-visible: `() => C(T('Create', D()), 'button')`; light-enabled-pressed: `() => C(T('Create', D()), 'button')`.
+
+Crops: none.
+
+#### text-area
+
+Text area (More about you).
+
+Snapshot: `settings-dark-personalization`. Finder: `() => Q('textarea')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 768 x 122 | = | = |
+| Padding | 12px 16px 20px 16px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | #ffffff 0px 0px 0px 0px, #ffffff @ 0.12 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | -apple-system 14px/22px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #e6e6e6 | = | = |
+| Transition | none | = | = |
+| Cursor | text | = | = |
+| Placeholder | "I'm an Analyst based in NYC. I work main" #595959, opacity 1, 14px | = | = |
+| Ancestor paint | 1 up div.flex.flex-col.flex-1 bg #ffffff @ 0.04 | = | 1 up div.flex.flex-col.flex-1 bg #ffffff @ 0.04 shadow #ffffff 0px 0px 0px 0px inset, #ffffff @ 0.12 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
+| Tokens | --border-dark #ffffff1f; --fill-tsp-white-light #ffffff0a; --text-disable #595959; --text-primary #e6e6e6; --text-tertiary #8c8c8c | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+| Painted layers | - | = | textarea.resize-none.px-4.py-3 768.0x122.0 shadow #ffffff 0px 0px 0px 0px, #ffffff @ 0.12 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible |
+|---|---|---|---|
+| Size (w x h) | 768 x 122 | = | = |
+| Padding | 12px 16px 20px 16px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | #ffffff 0px 0px 0px 0px, #000000 @ 0.14 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | -apple-system 14px/22px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #1a1a1a | = | = |
+| Transition | none | = | = |
+| Cursor | text | = | = |
+| Placeholder | "I'm an Analyst based in NYC. I work main" #a6a6a6, opacity 1, 14px | = | = |
+| Ancestor paint | 1 up div.flex.flex-col.flex-1 bg #37352f @ 0.04 | = | 1 up div.flex.flex-col.flex-1 bg #37352f @ 0.04 shadow #ffffff 0px 0px 0px 0px inset, #000000 @ 0.14 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
+| Tokens | --border-dark #00000024; --fill-tsp-white-light #37352f0a; --text-disable #a6a6a6; --text-primary #1a1a1a; --text-tertiary #737373 | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+| Painted layers | - | = | textarea.resize-none.px-4.py-3 768.0x122.0 shadow #ffffff 0px 0px 0px 0px, #000000 @ 0.14 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+
+Crops: none.
+
+#### text-field-settings
+
+Settings text field (Nickname).
+
+Snapshot: `settings-dark-personalization`. Finder: `() => Q('input[placeholder="Jane"]')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 376 x 36 | = | = |
+| Padding | 8px 12px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | #ffffff @ 0.04 | = | = |
+| Box shadow | none | = | #ffffff 0px 0px 0px 0px inset, #ffffff @ 0.12 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | -apple-system 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #e6e6e6 | = | = |
+| Transition | none | = | = |
+| Cursor | text | = | = |
+| Placeholder | "Jane" #595959, opacity 1, 14px | = | = |
+| Painted layers | input.overflow-hidden.text-sm.w-full 376.0x36.0 bg #ffffff @ 0.04 r 8px | = | input.overflow-hidden.text-sm.w-full 376.0x36.0 bg #ffffff @ 0.04 r 8px shadow #ffffff 0px 0px 0px 0px inset, #ffffff @ 0.12 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
+| Tokens | --border-dark #ffffff1f; --fill-tsp-white-light #ffffff0a; --text-disable #595959; --text-primary #e6e6e6; --ui-density-row-height 36px; --ui-density-small-radius 8px | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible |
+|---|---|---|---|
+| Size (w x h) | 376 x 36 | = | = |
+| Padding | 8px 12px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | #37352f @ 0.04 | = | = |
+| Box shadow | none | = | #ffffff 0px 0px 0px 0px inset, #000000 @ 0.14 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = |
+| Font | -apple-system 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #1a1a1a | = | = |
+| Transition | none | = | = |
+| Cursor | text | = | = |
+| Placeholder | "Jane" #a6a6a6, opacity 1, 14px | = | = |
+| Painted layers | input.overflow-hidden.text-sm.w-full 376.0x36.0 bg #37352f @ 0.04 r 8px | = | input.overflow-hidden.text-sm.w-full 376.0x36.0 bg #37352f @ 0.04 r 8px shadow #ffffff 0px 0px 0px 0px inset, #000000 @ 0.14 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
+| Tokens | --border-dark #00000024; --fill-tsp-white-light #37352f0a; --text-disable #a6a6a6; --text-primary #1a1a1a; --ui-density-row-height 36px; --ui-density-small-radius 8px | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+
+Crops: none.
+
+#### settings-card-row
+
+Settings link card (Import memory).
+
+Snapshot: `settings-dark-personalization`. Finder: `() => C(TS('Import memory from another AI', D()), 'button,.clickable,[role=button]') // P(TS('Import memory from another AI', D()))`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 768 x 74.5 | = | - | = |
+| Padding | 16px | = | - | = |
+| Gap | 16px | = | - | = |
+| Border | 1px solid #ffffff @ 0.06 | = | - | = |
+| Radius | 12px | = | - | = |
+| Background | #1c1c1c | = | - | = |
+| Box shadow | none | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.16 0px 1px 2px 0px, #000000 @ 0.16 0px 2px 4px 0px | - | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.16 0px 1px 2px 0px, #000000 @ 0.16 0px 2px 4px 0px |
+| Outline | none | = | - | = |
+| Font | -apple-system 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #e6e6e6 | = | - | = |
+| Text node | span.font-medium: -apple-system 14px/21px 500, #e6e6e6 | = | - | = |
+| Transition | box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 20 x 20, colour #e6e6e6 | = | - | = |
+| Painted layers | div.group/import-memory-banner.relative.overflow-visible 768.0x74.5 bg #1c1c1c border T:1px solid #ffffff @ 0.06 / R:1px solid #ffffff @ 0.06 / B:1px solid #ffffff @ 0.06 / L:1px solid #ffffff @ 0.06 r 12px; div.flex.shrink-0.justify-center 40.0x40.0 bg #242424 border T:1px solid #ffffff @ 0.06 / R:1px solid #ffffff @ 0.06 / B:1px solid #ffffff @ 0.06 / L:1px solid #ffffff @ 0.06 r 8px; button.absolute.flex.items-center 24.0x24.0 bg #242424 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.16 0px 0.4px 2.5px 0px opacity 0 | div.group/import-memory-banner.relative.overflow-visible 768.0x74.5 bg #1c1c1c border T:1px solid #ffffff @ 0.06 / R:1px solid #ffffff @ 0.06 / B:1px solid #ffffff @ 0.06 / L:1px solid #ffffff @ 0.06 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.16 0px 1px 2px 0px, #000000 @ 0.16 0px 2px 4px 0px; div.flex.shrink-0.justify-center 40.0x40.0 bg #242424 border T:1px solid #ffffff @ 0.06 / R:1px solid #ffffff @ 0.06 / B:1px solid #ffffff @ 0.06 / L:1px solid #ffffff @ 0.06 r 8px; button.absolute.flex.items-center 24.0x24.0 bg #242424 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.16 0px 0.4px 2.5px 0px | - | div.group/import-memory-banner.relative.overflow-visible 768.0x74.5 bg #1c1c1c border T:1px solid #ffffff @ 0.06 / R:1px solid #ffffff @ 0.06 / B:1px solid #ffffff @ 0.06 / L:1px solid #ffffff @ 0.06 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.16 0px 1px 2px 0px, #000000 @ 0.16 0px 2px 4px 0px; div.flex.shrink-0.justify-center 40.0x40.0 bg #242424 border T:1px solid #ffffff @ 0.06 / R:1px solid #ffffff @ 0.06 / B:1px solid #ffffff @ 0.06 / L:1px solid #ffffff @ 0.06 r 8px; button.absolute.flex.items-center 24.0x24.0 bg #242424 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.16 0px 0.4px 2.5px 0px |
+| Tokens | --background-card-gray #1c1c1c; --background-menu-white #242424; --border-main #ffffff0f; --shadow-S #00000029; --text-primary #e6e6e6; --text-tertiary #8c8c8c | = | - | = |
+| How | at rest | mouse hover | - | mouse held down (:active) |
+| Skipped | - | = | not focusable in the static copy (no tabindex) | = |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 768 x 74.5 | = | - | = |
+| Padding | 16px | = | - | = |
+| Gap | 16px | = | - | = |
+| Border | 1px solid #000000 @ 0.06 | = | - | = |
+| Radius | 12px | = | - | = |
+| Background | #fafafa | = | - | = |
+| Box shadow | none | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px | - | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px |
+| Outline | none | = | - | = |
+| Font | -apple-system 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1a1a1a | = | - | = |
+| Text node | span.font-medium: -apple-system 14px/21px 500, #1a1a1a | = | - | = |
+| Transition | box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 20 x 20, colour #1a1a1a | = | - | = |
+| Painted layers | div.group/import-memory-banner.relative.overflow-visible 768.0x74.5 bg #fafafa border T:1px solid #000000 @ 0.06 / R:1px solid #000000 @ 0.06 / B:1px solid #000000 @ 0.06 / L:1px solid #000000 @ 0.06 r 12px; div.flex.shrink-0.justify-center 40.0x40.0 bg #ffffff border T:1px solid #000000 @ 0.06 / R:1px solid #000000 @ 0.06 / B:1px solid #000000 @ 0.06 / L:1px solid #000000 @ 0.06 r 8px; button.absolute.flex.items-center 24.0x24.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 0.4px 2.5px 0px opacity 0 | div.group/import-memory-banner.relative.overflow-visible 768.0x74.5 bg #fafafa border T:1px solid #000000 @ 0.06 / R:1px solid #000000 @ 0.06 / B:1px solid #000000 @ 0.06 / L:1px solid #000000 @ 0.06 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px; div.flex.shrink-0.justify-center 40.0x40.0 bg #ffffff border T:1px solid #000000 @ 0.06 / R:1px solid #000000 @ 0.06 / B:1px solid #000000 @ 0.06 / L:1px solid #000000 @ 0.06 r 8px; button.absolute.flex.items-center 24.0x24.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 0.4px 2.5px 0px | - | div.group/import-memory-banner.relative.overflow-visible 768.0x74.5 bg #fafafa border T:1px solid #000000 @ 0.06 / R:1px solid #000000 @ 0.06 / B:1px solid #000000 @ 0.06 / L:1px solid #000000 @ 0.06 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px; div.flex.shrink-0.justify-center 40.0x40.0 bg #ffffff border T:1px solid #000000 @ 0.06 / R:1px solid #000000 @ 0.06 / B:1px solid #000000 @ 0.06 / L:1px solid #000000 @ 0.06 r 8px; button.absolute.flex.items-center 24.0x24.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 0.4px 2.5px 0px |
+| Tokens | --background-card-gray #fafafa; --background-menu-white #fff; --border-main #0000000f; --shadow-S #0000000a; --text-primary #1a1a1a; --text-tertiary #737373 | = | - | = |
+| How | at rest | mouse hover | - | mouse held down (:active) |
+| Skipped | - | = | not focusable in the static copy (no tabindex) | = |
+
+Crops: none.
+
+#### spinner
+
+Loading spinner. The only loading indicator in the Settings dialog: a ring under "Credits history" while the list loads.
+
+Snapshot: `settings-dark-usage-loading`. Finder: `() => Q('[role=dialog] .animate-spin')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 16 x 16 |
+| Padding | 0px |
+| Border | T: 2px solid #e6e6e6; R: 2px solid #e5e7eb; B: 2px solid #e5e7eb; L: 2px solid #e5e7eb |
+| Radius | 9999px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #e6e6e6 |
+| Transition | none |
+| Transform | matrix(1, 0, 0, 1, 0, 0) |
+| Painted layers | div.border.rounded-full.animate-spin 16.0x16.0 border T:2px solid #e6e6e6 / R:2px solid #e5e7eb / B:2px solid #e5e7eb / L:2px solid #e5e7eb r 9999px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 16 x 16 |
+| Padding | 0px |
+| Border | T: 2px solid #1a1a1a; R: 2px solid #e5e7eb; B: 2px solid #e5e7eb; L: 2px solid #e5e7eb |
+| Radius | 9999px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #1a1a1a |
+| Transition | none |
+| Transform | matrix(1, 0, 0, 1, 0, 0) |
+| Painted layers | div.border.rounded-full.animate-spin 16.0x16.0 border T:2px solid #1a1a1a / R:2px solid #e5e7eb / B:2px solid #e5e7eb / L:2px solid #e5e7eb r 9999px |
+| How | at rest |
+
+Crops: none.
+
+#### button-white
+
+Upgrade button (Usage).
+
+Snapshot: `settings-dark-usage-loading`. Finder: `() => C(T('Upgrade', D()), 'button')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 73.16 x 32 | = | = | = |
+| Padding | 0px 8px | = | = | = |
+| Gap | 4px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #ffffff @ 0.95 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/18px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #000000 @ 0.898 | = | = | = |
+| Text node | span: -apple-system 14px/18px 500, #000000 @ 0.898 | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 73.2x32.0 bg #ffffff @ 0.95 r 8px | button.inline-flex.items-center.justify-center 73.2x32.0 bg #ffffff @ 0.95 r 8px opacity 0.9 | = | button.inline-flex.items-center.justify-center 73.2x32.0 bg #ffffff @ 0.95 r 8px opacity 0.9 |
+| Tokens | --Button-black #fffffff2; --text-onblack #000000e5; --ui-density-small-row-height 32px | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 73.16 x 32 | = | = | = |
+| Padding | 0px 8px | = | = | = |
+| Gap | 4px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #1a1a19 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/18px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span: -apple-system 14px/18px 500, #ffffff | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 73.2x32.0 bg #1a1a19 r 8px | button.inline-flex.items-center.justify-center 73.2x32.0 bg #1a1a19 r 8px opacity 0.9 | = | button.inline-flex.items-center.justify-center 73.2x32.0 bg #1a1a19 r 8px opacity 0.9 |
+| Tokens | --Button-black #1a1a19; --text-onblack #fff; --ui-density-small-row-height 32px | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Crops: none.
+
+#### plan-card
+
+Plan card (Free).
+
+Snapshot: `settings-dark-usage-loading`. Finder: `() => P(C(T('Upgrade', D()), 'button').parentElement.parentElement)`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 734 x 57 |
+| Padding | 12px 0px |
+| Gap | 12px |
+| Border | T: none; R: none; B: 1px dashed #ffffff @ 0.12; L: none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #e6e6e6 |
+| Text node | div.font-serif.text-base.font-bold: LibreBaskerville 16px/22px 700, #e6e6e6 |
+| Transition | none |
+| Painted layers | div.w-full.flex.justify-between 734.0x57.0 border B:1px dashed #ffffff @ 0.12; button.inline-flex.items-center.justify-center 73.2x32.0 bg #ffffff @ 0.95 r 8px |
+| Ancestor paint | 1 up div.border.px-4.w-full bg #1c1c1c |
+| Tokens | --Button-black #fffffff2; --border-dark #ffffff1f; --text-onblack #000000e5; --text-primary #e6e6e6; --ui-density-small-row-height 32px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 734 x 57 |
+| Padding | 12px 0px |
+| Gap | 12px |
+| Border | T: none; R: none; B: 1px dashed #000000 @ 0.14; L: none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #1a1a1a |
+| Text node | div.font-serif.text-base.font-bold: LibreBaskerville 16px/22px 700, #1a1a1a |
+| Transition | none |
+| Painted layers | div.w-full.flex.justify-between 734.0x57.0 border B:1px dashed #000000 @ 0.14; button.inline-flex.items-center.justify-center 73.2x32.0 bg #1a1a19 r 8px |
+| Ancestor paint | 1 up div.border.px-4.w-full bg #fafafa |
+| Tokens | --Button-black #1a1a19; --border-dark #00000024; --text-onblack #fff; --text-primary #1a1a1a; --ui-density-small-row-height 32px |
+| How | at rest |
+
+Crops: none.
+
+#### invite-dialog
+
+Invite dialog.
+
+Snapshot: `invite-dark-dialog`. Finder: `() => P(T('Invite to get credits'))`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 440 x 532.5 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #1a1a1a |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px |
+| Outline | 2px solid #000000 @ 0 offset 2px |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #e6e6e6 |
+| Text node | p.text-center.font-semibold: -apple-system 28px/42px 600, #e6e6e6 |
+| Transition | none |
+| Icon | 20 x 20, colour #8c8c8c, stroke #8c8c8c 2px |
+| Placeholder | "Enter email address" #595959, opacity 1, 14px |
+| Painted layers | div.@container/dialog.overflow-auto.outline-none 440.0x532.5 bg #1a1a1a r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.14 0px 0px 0px 1px, #000000 @ 0.28 0px 0px 0px 1px, #000000 @ 0.16 0px 24px 24px -12px, #000000 @ 0.28 0px 3px 3px -1.5px, #000000 @ 0.16 0px 10px 20px 1px outline 2px solid #000000 @ 0 offset 2px; div.items-stretch.grid.grid-cols-2 276.3x36.0 bg #000000 @ 0.2 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; div.absolute.inset-0 136.1x32.0 bg #242424 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.16 0px 0.5px 3px 0px |
+| Tokens | --background-gray-main #1a1a1a; --border-main #ffffff0f; --dlg-enter-scale 1; --dlg-enter-y 0px; --dp (unset); --dp-header-end (unset); --fill-tsp-gray-main #0003; --fill-tsp-white-light #ffffff0a; --fill-white #242424; --icon-tertiary #8c8c8c |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 440 x 532.5 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #f8f8f7 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px |
+| Outline | 2px solid #000000 @ 0 offset 2px |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #1a1a1a |
+| Text node | p.text-center.font-semibold: -apple-system 28px/42px 600, #1a1a1a |
+| Transition | none |
+| Icon | 20 x 20, colour #737373, stroke #737373 2px |
+| Placeholder | "Enter email address" #a6a6a6, opacity 1, 14px |
+| Painted layers | div.@container/dialog.overflow-auto.outline-none 440.0x532.5 bg #f8f8f7 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 24px 24px -12px, #000000 @ 0.06 0px 3px 3px -1.5px, #000000 @ 0.04 0px 10px 20px 1px outline 2px solid #000000 @ 0 offset 2px; div.items-stretch.grid.grid-cols-2 276.3x36.0 bg #37352f @ 0.04 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; div.absolute.inset-0 136.1x32.0 bg #ffffff r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 0.5px 3px 0px |
+| Tokens | --background-gray-main #f8f8f7; --border-main #0000000f; --dlg-enter-scale 1; --dlg-enter-y 0px; --dp (unset); --dp-header-end (unset); --fill-tsp-gray-main #37352f0a; --fill-tsp-white-light #37352f0a; --fill-white #fff; --icon-tertiary #737373 |
+| How | at rest |
+
+Crops: none.
+
+#### segmented
+
+Segmented control (Share on web | mobile).
+
+Snapshot: `invite-dark-dialog`. Finder: `() => C(T('Share on web'), 'ul,div.relative,div')`.
+
+Dark theme.
+
+| Property | default | item | item-hover | item-focus-visible | selected |
+|---|---|---|---|---|---|
+| Size (w x h) | 276.25 x 36 | 136.13 x 32 | 136.13 x 32 | 136.13 x 32 | 136.13 x 32 |
+| Padding | 1px | 0px 16px | 0px 16px | 0px 16px | 0px |
+| Border | 1px solid #000000 @ 0 | none | none | none | none |
+| Radius | 8px | 0px | 0px | 0px | 0px |
+| Background | #000000 @ 0.2 | transparent | transparent | transparent | transparent |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | = | = | = |
+| Font | -apple-system 14px/20px 400 | = | = | = | = |
+| Letter spacing | normal | = | = | = | = |
+| Colour | #e6e6e6 | #8c8c8c | #b3b3b3 | #8c8c8c | = |
+| Text node | button.w-full.h-full.px-4: -apple-system 14px/20px 400, #e6e6e6 | - | - | - | = |
+| Transition | none | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Painted layers | div.items-stretch.grid.grid-cols-2 276.3x36.0 bg #000000 @ 0.2 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; div.absolute.inset-0 136.1x32.0 bg #242424 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.16 0px 0.5px 3px 0px | - | - | - | div.absolute.inset-0 136.1x32.0 bg #242424 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.16 0px 0.5px 3px 0px |
+| Tokens | --fill-tsp-gray-main #0003; --fill-white #242424; --shadow-S #00000029; --text-primary #e6e6e6; --text-secondary #b3b3b3; --text-tertiary #8c8c8c | --text-primary #e6e6e6; --text-secondary #b3b3b3; --text-tertiary #8c8c8c | --text-primary #e6e6e6; --text-secondary #b3b3b3; --text-tertiary #8c8c8c | --text-primary #e6e6e6; --text-secondary #b3b3b3; --text-tertiary #8c8c8c | --fill-white #242424; --shadow-S #00000029; --text-primary #e6e6e6; --text-secondary #b3b3b3; --text-tertiary #8c8c8c |
+| How | at rest | at rest, captured item | mouse hover | keyboard: focus(), Shift+Tab, Tab | at rest, captured selected |
+| Cursor | - | pointer | pointer | pointer | = |
+| Ancestor paint | - | = | = | = | 1 up div.items-stretch.grid.grid-cols-2 bg #000000 @ 0.2 |
+
+Light theme.
+
+| Property | light | light-item | light-item-hover | light-item-focus-visible | light-selected |
+|---|---|---|---|---|---|
+| Size (w x h) | 276.25 x 36 | 136.13 x 32 | 136.13 x 32 | 136.13 x 32 | 136.13 x 32 |
+| Padding | 1px | 0px 16px | 0px 16px | 0px 16px | 0px |
+| Border | 1px solid #000000 @ 0 | none | none | none | none |
+| Radius | 8px | 0px | 0px | 0px | 0px |
+| Background | #37352f @ 0.04 | transparent | transparent | transparent | transparent |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | = | = | = |
+| Font | -apple-system 14px/20px 400 | = | = | = | = |
+| Letter spacing | normal | = | = | = | = |
+| Colour | #1a1a1a | #737373 | #4d4d4d | #737373 | = |
+| Text node | button.w-full.h-full.px-4: -apple-system 14px/20px 400, #1a1a1a | - | - | - | = |
+| Transition | none | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Painted layers | div.items-stretch.grid.grid-cols-2 276.3x36.0 bg #37352f @ 0.04 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; div.absolute.inset-0 136.1x32.0 bg #ffffff r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 0.5px 3px 0px | - | - | - | div.absolute.inset-0 136.1x32.0 bg #ffffff r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 0.5px 3px 0px |
+| Tokens | --fill-tsp-gray-main #37352f0a; --fill-white #fff; --shadow-S #0000000a; --text-primary #1a1a1a; --text-secondary #4d4d4d; --text-tertiary #737373 | --text-primary #1a1a1a; --text-secondary #4d4d4d; --text-tertiary #737373 | --text-primary #1a1a1a; --text-secondary #4d4d4d; --text-tertiary #737373 | --text-primary #1a1a1a; --text-secondary #4d4d4d; --text-tertiary #737373 | --fill-white #fff; --shadow-S #0000000a; --text-primary #1a1a1a; --text-secondary #4d4d4d; --text-tertiary #737373 |
+| How | at rest | at rest, captured item | mouse hover | keyboard: focus(), Shift+Tab, Tab | at rest, captured selected |
+| Cursor | - | pointer | pointer | pointer | = |
+| Ancestor paint | - | = | = | = | 1 up div.items-stretch.grid.grid-cols-2 bg #37352f @ 0.04 |
+
+Other finders: selected: `() => C(T('Share on web'), 'li')`; light-selected: `() => C(T('Share on web'), 'li')`; item: `() => [...document.querySelectorAll('button')].find((b) => b.innerText.trim() === 'Share on mobile')`; item-hover: `() => [...document.querySelectorAll('button')].find((b) => b.innerText.trim() === 'Share on mobile')`; item-focus-visible: `() => [...document.querySelectorAll('button')].find((b) => b.innerText.trim() === 'Share on mobile')`; light-item: `() => [...document.querySelectorAll('button')].find((b) => b.innerText.trim() === 'Share on mobile')`; light-item-hover: `() => [...document.querySelectorAll('button')].find((b) => b.innerText.trim() === 'Share on mobile')`; light-item-focus-visible: `() => [...document.querySelectorAll('button')].find((b) => b.innerText.trim() === 'Share on mobile')`.
+
+Crops: none.
+
+#### button-black-wide
+
+Full-width black button (Copy invitation link).
+
+Snapshot: `invite-dark-dialog`. Finder: `() => C(T('Copy invitation link'), 'button')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 392 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #ffffff @ 0.95 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #000000 @ 0.898 | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #000000 @ 0.898 | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #000000 @ 0.898, stroke #000000 @ 0.898 2px | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 392.0x36.0 bg #ffffff @ 0.95 r 8px | button.inline-flex.items-center.justify-center 392.0x36.0 bg #ffffff @ 0.95 r 8px opacity 0.9 | = | button.inline-flex.items-center.justify-center 392.0x36.0 bg #ffffff @ 0.95 r 8px opacity 0.9 |
+| Tokens | --Button-black #fffffff2; --text-onblack #000000e5 | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 392 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #1a1a19 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #ffffff | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #ffffff, stroke #ffffff 2px | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 392.0x36.0 bg #1a1a19 r 8px | button.inline-flex.items-center.justify-center 392.0x36.0 bg #1a1a19 r 8px opacity 0.9 | = | button.inline-flex.items-center.justify-center 392.0x36.0 bg #1a1a19 r 8px opacity 0.9 |
+| Tokens | --Button-black #1a1a19; --text-onblack #fff | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Crops: none.
+
+#### button-blue
+
+Blue button (Invite Facebook friends). Facebook's own blue as a literal (#2167e8 in both themes), not a Manus token; Manus's blue is button.blue. Kept for its states, which match the black buttons (hover and pressed at opacity 0.9).
+
+Snapshot: `invite-dark-dialog`. Finder: `() => C(T('Invite Facebook friends'), 'button')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 392 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #2167e8 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #ffffff | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #ffffff | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 392.0x36.0 bg #2167e8 r 8px | button.inline-flex.items-center.justify-center 392.0x36.0 bg #2167e8 r 8px opacity 0.9 | = | button.inline-flex.items-center.justify-center 392.0x36.0 bg #2167e8 r 8px opacity 0.9 |
+| Tokens | --text-white #fff | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 392 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #2167e8 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #ffffff | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #ffffff | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 392.0x36.0 bg #2167e8 r 8px | button.inline-flex.items-center.justify-center 392.0x36.0 bg #2167e8 r 8px opacity 0.9 | = | button.inline-flex.items-center.justify-center 392.0x36.0 bg #2167e8 r 8px opacity 0.9 |
+| Tokens | --text-white #fff | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse held down (:active) |
+| Opacity | - | 0.9 | = | 0.9 |
+
+Crops: none.
+
+#### email-field
+
+Email field.
+
+Snapshot: `invite-dark-dialog`, `invite-dark-email-typed`. Finder: `() => Q('input[placeholder="Enter email address"]')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | typed |
+|---|---|---|---|---|
+| Size (w x h) | 302.22 x 36 | = | = | = |
+| Padding | 8px 12px 8px 16px | = | = | = |
+| Border | 1px solid #000000 @ 0 | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/21px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #e6e6e6 | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.3s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | text | = | = | = |
+| Placeholder | "Enter email address" #595959, opacity 1, 14px | = | = | = |
+| Painted layers | input.transition-colors.duration-300.grow 302.2x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 | = | = | = |
+| Tokens | --border-primary #56565f52; --text-disable #595959 | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | at rest, captured typed |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-typed |
+|---|---|---|---|---|
+| Size (w x h) | 302.22 x 36 | = | = | = |
+| Padding | 8px 12px 8px 16px | = | = | = |
+| Border | 1px solid #000000 @ 0 | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/21px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #1a1a1a | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.3s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | text | = | = | = |
+| Placeholder | "Enter email address" #a6a6a6, opacity 1, 14px | = | = | = |
+| Painted layers | input.transition-colors.duration-300.grow 302.2x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 | = | = | = |
+| Tokens | --border-primary #4f59661f; --text-disable #a6a6a6 | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | at rest, captured typed |
+
+Other finders: typed: `() => Q('input[placeholder="Enter email address"]')`; light-typed: `() => Q('input[placeholder="Enter email address"]')`.
+
+Crops: none.
+
+#### send-button
+
+Send button (disabled, then enabled). Disabled while the field is empty; any text enables it (no format check before submit).
+
+Snapshot: `invite-dark-dialog`, `invite-dark-email-typed`. Finder: `() => C(T('Send', D()), 'button')`.
+
+Dark theme.
+
+| Property | default | enabled | enabled-hover | enabled-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 81.78 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #ffffff @ 0.95 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #000000 @ 0.898 | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #000000 @ 0.898 | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Opacity | 0.5 | - | 0.9 | 0.9 |
+| Cursor | not-allowed | pointer | pointer | pointer |
+| Icon | 16 x 16, colour #000000 @ 0.898 | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 81.8x36.0 bg #ffffff @ 0.95 r 8px opacity 0.5 | button.inline-flex.items-center.justify-center 81.8x36.0 bg #ffffff @ 0.95 r 8px | button.inline-flex.items-center.justify-center 81.8x36.0 bg #ffffff @ 0.95 r 8px opacity 0.9 | button.inline-flex.items-center.justify-center 81.8x36.0 bg #ffffff @ 0.95 r 8px opacity 0.9 |
+| Tokens | --Button-black #fffffff2; --text-onblack #000000e5 | = | = | = |
+| How | at rest | at rest, captured enabled | mouse hover | mouse held down (:active) |
+
+Light theme.
+
+| Property | light | light-enabled | light-enabled-hover | light-enabled-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 81.78 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #1a1a19 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | -apple-system 14px/20px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span: -apple-system 14px/20px 500, #ffffff | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Opacity | 0.5 | - | 0.9 | 0.9 |
+| Cursor | not-allowed | pointer | pointer | pointer |
+| Icon | 16 x 16, colour #ffffff | = | = | = |
+| Painted layers | button.inline-flex.items-center.justify-center 81.8x36.0 bg #1a1a19 r 8px opacity 0.5 | button.inline-flex.items-center.justify-center 81.8x36.0 bg #1a1a19 r 8px | button.inline-flex.items-center.justify-center 81.8x36.0 bg #1a1a19 r 8px opacity 0.9 | button.inline-flex.items-center.justify-center 81.8x36.0 bg #1a1a19 r 8px opacity 0.9 |
+| Tokens | --Button-black #1a1a19; --text-onblack #fff | = | = | = |
+| How | at rest | at rest, captured enabled | mouse hover | mouse held down (:active) |
+
+Other finders: enabled: `() => C(T('Send', D()), 'button')`; enabled-hover: `() => C(T('Send', D()), 'button')`; enabled-pressed: `() => C(T('Send', D()), 'button')`; light-enabled: `() => C(T('Send', D()), 'button')`; light-enabled-hover: `() => C(T('Send', D()), 'button')`; light-enabled-pressed: `() => C(T('Send', D()), 'button')`.
+
+Crops: none.
 
 ### Mobile
 

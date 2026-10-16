@@ -5,7 +5,7 @@
 // Manus (manus.im/app, Next.js with Tailwind 3) serves its CSS as hashed chunks from
 // files.manuscdn.com, cross-origin to the app, so the page's CSSOM refuses to read them and a
 // snapshot keeps them as <link> tags. The chunk list below is what the signed-in app page
-// loaded on 2026-10-04 (document.styleSheets); pass a directory of downloaded copies to read
+// loaded on 2026-10-17 (document.styleSheets; the 2026-10-04 capture's list was different); pass a directory of downloaded copies to read
 // those instead of fetching. Each file is parsed by a headless Chromium (constructed
 // CSSStyleSheet), and every rule that declares a custom property is kept with its selector,
 // enclosing media/supports/layer, and the file it came from. @font-face rules are kept too.
@@ -16,9 +16,9 @@ import { fileURLToPath } from 'url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
 const BASE = 'https://files.manuscdn.com/webapp/_next/static/chunks/';
-const CHUNKS = ['3tlx9g3u00e4v', '0mlvxo4ytv-6f', '3q-evgfeh3xkz', '06xv5_avbc1xh', '0456am4tjt1gw', '3hdx9vpchmf7m',
-  '1qe30y4202s4a', '2nb_ptmdclc6b', '2sop6smnvcrfi', '03d0vrppv2y1v', '3o5taco3mrcp2', '2-5arczle5b7o', '0shfuko59v1f6',
-  '17pikhz7s8rlv', '0iarg13mzevkt', '2o41ojcla7cf9', '2xcvan87951zy'];
+const CHUNKS = ['103b_7yr04gh1', '40pg-gaizz3oq', '20ltafw1wb84f', '0l0v22wndw5xb', '1bc8iqysa6nev', '08_8tcflrgsla',
+  '0mlvxo4ytv-6f', '0p0dbh3-6xn1t', '06xv5_avbc1xh', '0456am4tjt1gw', '3o5taco3mrcp2', '2-5arczle5b7o', '0qsju0u24gcvr',
+  '1gu7e9ofl-qhh', '2zhca6bc4lzot', '0shl_3bp9nxh9', '2o41ojcla7cf9', '2xcvan87951zy'];
 
 const dir = process.argv[2];
 const sheets = [];
