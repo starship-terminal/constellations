@@ -1,4 +1,5 @@
 """Tests for tools/catalog.py. Run with `make test`."""
+import copy
 import json
 import re
 import sys
@@ -638,6 +639,50 @@ class LayoutTest(unittest.TestCase):
         self.assertEqual(self.problems(self.FULL + ["graph.md"], self.FULL),
                          ["x: graph.md has no row in the README's file table"])
         self.assertEqual(self.problems(self.FULL + ["graph.md"], self.FULL + ["graph.md"]), [])
+
+
+class SectionDataTest(unittest.TestCase):
+    """The gallery's per-section data matches DESIGN.md and the catalog."""
+
+    def system(self, slug):
+        return next(s for s in catalog.load_catalog()["systems"] if s["slug"] == slug)
+
+    def test_scales_match_design_md(self):
+        for s in catalog.load_catalog()["systems"]:
+            with self.subTest(slug=s["slug"]):
+                data, md = catalog.section_data(s), catalog.design_md_tokens(s)
+                front = md["front"]
+                self.assertEqual(data["tokenTheme"], md["theme"])
+                self.assertEqual([t["name"] for t in data["typeStyles"]], list(front.get("typography", {})))
+                self.assertEqual({r["name"]: r["value"] for r in data["radii"]}, front.get("rounded", {}))
+                self.assertEqual({r["name"]: r["value"] for r in data["spacing"]}, front.get("spacing", {}))
+                self.assertEqual([(x["token"], x["css"]) for x in data["shadows"]], md["shadows"])
+                self.assertEqual(data["layoutGaps"], s.get("layoutGaps", {}))
+
+    def test_type_style_fields(self):
+        style = catalog.section_data(self.system("claude"))["typeStyles"][0]
+        self.assertEqual(set(style), {"name", "family", "size", "weight", "lineHeight", "letterSpacing"})
+        self.assertTrue(style["size"].endswith("px"))
+
+    def test_icons_are_capped_sorted_images_with_a_total(self):
+        icons = catalog.section_data(self.system("polaris"))["icons"]
+        self.assertGreater(icons["total"], catalog.ICON_LIMIT)
+        self.assertEqual(len(icons["items"]), catalog.ICON_LIMIT)
+        self.assertEqual(icons["items"], sorted(icons["items"]))
+        self.assertTrue(all(p.startswith("systems/polaris/icons/") and p.endswith(".svg") for p in icons["items"]))
+
+    def test_missing_parts_carry_their_reason(self):
+        hevy = catalog.section_data(self.system("hevy"))
+        self.assertEqual(hevy["icons"], {"total": 0, "items": []})
+        self.assertIn("icons/", hevy["layoutGaps"])
+        self.assertEqual(hevy["shadows"], [])
+
+    def test_omitted_scale_gives_the_generator_reason(self):
+        s = copy.deepcopy(self.system("hevy"))
+        s["designMd"] = {"spacing": "core.nothing-here."}
+        data = catalog.section_data(s)
+        self.assertEqual(data["spacing"], [])
+        self.assertIn("spacing", data["omitted"]["spacing"])
 
 
 class RepositoryTest(unittest.TestCase):

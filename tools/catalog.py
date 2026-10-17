@@ -1148,6 +1148,40 @@ def latest_scores() -> dict[str, dict]:
     return out
 
 
+ICON_LIMIT = 96  # icon files listed per package in data.json; the gallery says how many more exist
+
+
+def list_icons(slug: str) -> dict:
+    """The package's icon images under icons/, sorted, capped at ICON_LIMIT, with the total."""
+    base = ROOT / "systems" / slug / "icons"
+    files = sorted(f.relative_to(ROOT).as_posix() for f in base.rglob("*")
+                   if f.is_file() and f.suffix.lower() in COMPONENT_EXT) if base.is_dir() else []
+    return {"total": len(files), "items": files[:ICON_LIMIT]}
+
+
+def section_data(system: dict) -> dict:
+    """What the gallery's Typography, Spacing, Corner radius, Shadows and Assets sections
+    show, taken from design_md_tokens so each matches the package's DESIGN.md: the same
+    theme, names and values, in the same order. `omitted` gives the reason for each scale
+    DESIGN.md leaves out, and `layoutGaps` the reason for each standard part a package lacks."""
+    tokens = design_md_tokens(system)
+    front = tokens["front"]
+    type_styles = [{"name": name, "family": t.get("fontFamily"), "size": t.get("fontSize"),
+                    "weight": t.get("fontWeight"), "lineHeight": t.get("lineHeight"),
+                    "letterSpacing": t.get("letterSpacing")}
+                   for name, t in front.get("typography", {}).items()]
+    return {
+        "tokenTheme": tokens["theme"],
+        "typeStyles": type_styles,
+        "radii": [{"name": k, "value": v} for k, v in front.get("rounded", {}).items()],
+        "spacing": [{"name": k, "value": v} for k, v in front.get("spacing", {}).items()],
+        "shadows": [{"token": path, "css": css} for path, css in tokens["shadows"]],
+        "omitted": {o["section"]: o["reason"] for o in front.get("omitted", [])},
+        "icons": list_icons(system["slug"]),
+        "layoutGaps": dict(system.get("layoutGaps", {})),
+    }
+
+
 def build() -> Path:
     problems = check()
     if problems:
@@ -1177,6 +1211,7 @@ def build() -> Path:
             "components": list_images(s, "components", COMPONENT_EXT),
             "docs": sorted(p.relative_to(ROOT).as_posix()
                            for p in (ROOT / "systems" / s["slug"]).glob("*.md")),
+            **section_data(s),
         })
     attach_thumbs(all_shots)
     out = SITE / "data.json"
