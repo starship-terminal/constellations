@@ -417,5 +417,28 @@
   "max-button-dark-purple": 1,
   "turtle-always-light": 1,
   "snow-dark-swan": 1
+ },
+ "dark_neutral_borders": {
+  "count": 3,
+  "rules": [
+   {
+    "file": "3406-0039e405.css",
+    "cond": "",
+    "selector": ".uzb3k",
+    "css": "border-color:rgb(var(--color-hare));margin:20px 0 30px;opacity:.4"
+   },
+   {
+    "file": "4051-ee2d9724.css",
+    "cond": "",
+    "selector": "._3ahVn:hover",
+    "css": "border-color:rgb(var(--color-hare))"
+   },
+   {
+    "file": "4779-c36ad395.css",
+    "cond": "",
+    "selector": "._1wd57",
+    "css": "border-style:dashed;border-width:2px;color:rgb(var(--color-hare))"
+   }
+  ]
  }
 }

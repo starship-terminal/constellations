@@ -38,6 +38,19 @@ ROLE = [  # (words in the spec's role text, path patterns preferred, in order)
     (r"text|label|title|body|value|placeholder|caret|count|colou?r|icon|link|heading|caption|glyph|chevron|number|name|copy|word", [r"^text\.", r"^accent\.[a-z]+\.text$", r"^status\.\w*Text$", r"^feedback\.\w+\.text$", r"^feedback\.tile\.\w*Text$", r"^gamification\."]),
     (r"fill|background|bg|face|surface|track|shell|card|container|dot|item|tile|banner|scrim|backdrop|row|bar|panel|bubble|button", [r"^surface\.", r"^background\.", r"^accent\.[a-z]+\.face$", r"^status\.\w*Background$", r"^feedback\.\w+\.(background|buttonFace)$", r"^dataViz\.", r"^gamification\.", r"^unitColors\."]),
 ]
+def by_role(cands, role):
+    """The first role group named in the role text, in ROLE order. border.strong (hare) is the
+    exception: hare is mostly a text colour (text.tertiary), so it is an edge only when the role
+    names an edge and no text ('ghost border', not 'header text / rule' or a Label column)."""
+    role = role.lower()
+    for words, pats in ROLE:
+        if re.search(words, role):
+            for p in pats:
+                hit = [c for c in cands if re.search(p, c) and not (c == "border.strong" and re.search(ROLE[1][0], role))]
+                if hit:
+                    return hit[0]
+    return None
+
 ORDER = ["text.", "border.", "surface.", "background.", "accent.", "status.", "feedback.", "gamification.", "dataViz.", "unitColors."]
 
 def pick(name, theme, role, alpha=None):
@@ -47,13 +60,9 @@ def pick(name, theme, role, alpha=None):
     cands = [c for c, a in ALIAS[theme].get(name, []) if (a is None and alpha is None) or (a is not None and alpha is not None and abs(a - alpha) < 1e-6)]
     if alpha is not None and not cands:
         return f"palette.{theme}.{name}"
-    role = role.lower()
-    for words, pats in ROLE:
-        if re.search(words, role):
-            for p in pats:
-                hit = [c for c in cands if re.search(p, c)]
-                if hit:
-                    return hit[0]
+    hit = by_role(cands, role)
+    if hit:
+        return hit
     for pre in ORDER:
         hit = [c for c in cands if c.startswith(pre)]
         if hit:
@@ -87,13 +96,9 @@ for th in ("light", "dark"):
 
 def pick_stable(name, hex_, role, alpha):
     cands = [p for p, v in STABLE.items() if v.get("light") == v.get("dark") == (hex_.lower(), alpha)]
-    role = role.lower()
-    for words, pats in ROLE:
-        if re.search(words, role):
-            for pat in pats:
-                hit = [c for c in cands if re.search(pat, c)]
-                if hit:
-                    return hit[0]
+    hit = by_role(cands, role)
+    if hit:
+        return hit
     for pre in ORDER:
         hit = [c for c in cands if c.startswith(pre)]
         if hit:
@@ -182,6 +187,14 @@ SCALES = [
 ]
 PX = re.compile(r"(?<![`\w.-])(?<!` )(\d+)px\b")
 
+def in_pair(text, m):
+    """A value in a 'width x height' pair ('600 x 70px', '52x52')."""
+    return re.search(r"\d(?:px)? ?x ?$", text[:m.start()]) is not None or re.match(r" ?x ?\d", text[m.end():]) is not None
+
+def clause_from(text, end, seps):
+    """Where the clause holding position end starts: just after the last separator before it."""
+    return max([text.rfind(sep, 0, end) + len(sep) for sep in seps if text.rfind(sep, 0, end) >= 0] + [0])
+
 def tokenize_lengths(line, header):
     """Only in measurement tables (a 'Property' column), never inside a quoted CSS rule or a source
     cell. Each px value takes the group named nearest before it in its own clause ('padding 4px 8px;
@@ -204,8 +217,10 @@ def tokenize_lengths(line, header):
         if head == "Source" or "css:" in cell or "{" in cell or "captured" in cell:
             continue
         def sub(m, cell=cell):
-            clause_start = max(cell.rfind(sep, 0, m.start()) for sep in (";", ",", "(", "/")) + 1
+            clause_start = clause_from(cell, m.start(), (";", ",", "(", "/", "+", " - "))
             named = [g for pos, g in groups_in(cell[clause_start:m.start()])]
+            if not named and in_pair(cell, m):
+                return m.group(0)  # '1000 x 32px' is a box size, whatever group the row names
             group = named[-1] if named else row_group
             if not group:
                 return m.group(0)
@@ -227,9 +242,160 @@ def tokenize_json(v, key=""):
         return {k: tokenize_json(x, (key + " " + k).strip()) for k, x in v.items()}
     return v
 
+# Type and heights. A font shorthand ('700 15px/18px', '700 15px/1.2') gets the typography style
+# with that weight, size and line height when exactly one style has them; letter spacing written
+# after it ('0.8px') settles a tie, and then the component the section is about ('button'). A
+# height takes the core.size token with that value only when the section or row names the thing
+# the token measures (a 48px height is size.inputHeight in the text-field section and
+# size.buttonHeightMedium in a button row). Anything else stays raw.
+FW = {k: str(v["$value"]) for k, v in CORE["fontWeight"].items() if isinstance(v, dict)}
+TYPE = {}
+def _styles(node, path):
+    for k, v in node.items():
+        if isinstance(v, dict) and isinstance(v.get("$value"), dict):
+            x = v["$value"]
+            w = x["fontWeight"]
+            w = FW.get(w.strip("{}").split(".")[-1], w) if isinstance(w, str) else str(w)
+            TYPE.setdefault((w, x["fontSize"], x["lineHeight"]), []).append((path + k, x.get("letterSpacing")))
+        elif isinstance(v, dict):
+            _styles(v, path + k + ".")
+_styles(CORE["typography"], "typography.")
+FONT = re.compile(r"(?<![`\w.#])(?<!` )([1-9]00) (\d+)px ?/ ?(\d+(?:\.\d+)?)(px)?(?![\w.])")
+SPACING = re.compile(r"^[^;|]*?(?<![\d.])(\d*\.\d+|0)px")
+HEIGHTS = {  # core.size token: what it measures, as words a section or row uses
+    "buttonHeight": r"button", "buttonHeightMedium": r"button", "buttonHeightSmall": r"button",
+    "inputHeight": r"text input|text field|input", "menuItemHeight": r"menu", "tapTokenHeight": r"tap token|word.bank",
+    "choiceRowHeight": r"choice", "leaderboardRowHeight": r"leaderboard", "friendRowHeight": r"friend",
+    "navItemHeight": r"sidebar|nav item", "statsBarHeight": r"stats bar|stat bar", "progressBarHeightLesson": r"progress",
+    "progressBarHeightQuest": r"progress", "unitHeaderHeight": r"unit header", "lessonFooterHeight": r"lesson footer",
+    "topBarHeightMobile": r"mobile top bar", "tabBarHeightMobile": r"tab bar",
+}
+HEIGHT_VALUE = {k: CORE["size"][k]["$value"] for k in HEIGHTS}
+
+def is_height(prop):
+    return prop.endswith("height") and not re.search(r"line[-_ ]?height$", prop)
+
+def type_token(m, text):
+    w, size, lh, unit = m.groups()
+    lh = lh + "px" if unit else ("%g" % round(float(size) * float(lh), 2)) + "px"
+    cands = TYPE.get((w, size + "px", lh), [])
+    sp = SPACING.match(text[m.end():])
+    if sp:  # spacing written beside the shorthand must match the style's, or it stays raw
+        written = ("%g" % float(sp.group(1))) + "px"
+        cands = [c for c in cands if ("%g" % float(c[1].rstrip("px") or 0) + "px" if c[1] and c[1] != "normal" else "0px") == written]
+    return cands
+
+def size_token(value, ctx):
+    hits = [k for k, words in HEIGHTS.items() if HEIGHT_VALUE[k] == value and re.search(words, ctx)]
+    return hits[0] if len(hits) == 1 else None
+
+# 'below 700px', 'at >=700px', 'min-width 1160px': a viewport width that is one of the
+# breakpoints. A bare 'at 1440px' is usually the capture width, so it stays raw.
+BREAK_BEFORE = re.compile(r"(?:\b(?:below|under|above)\s+|(?:>=|<=|<|>)\s*|\b(?:min|max)-width:?\s*)$")
+BREAKPOINT = {v["$value"]: k for k, v in CORE["breakpoint"].items() if isinstance(v, dict) and "$value" in v}
+GROUP_WORD = "|".join(w for w, _ in SCALES)
+NUM = r"(?:`[\w.-]+`\s*)?(?:-?\d+(?:\.\d+)?(?:px|%|em|rem)?|auto)"
+KEY_BEFORE = re.compile(r"(" + GROUP_WORD + r")(?:-[a-z]+)?\s*:?\s*(?:" + NUM + r"\s+)*$")
+WORD_AFTER = re.compile(r"(?:\s+" + NUM + r")*\s+(" + GROUP_WORD + r")\b")
+
+def named_group(before, after, key_group=None, pair=False):
+    """Lengths outside the measurement tables: a px value takes a radius, space or borderWidth
+    token only when the group is named right before its run of values ('padding: 0 16px') or
+    right after it ('2px radius', '20px 25px padding'), or, in the JSON twins, when the field is
+    named for one ('padding') and nothing in the clause names anything. Box sizes stay raw."""
+    for m in (KEY_BEFORE.search(before.lower()), WORD_AFTER.match(after.lower())):
+        if m:
+            return next(g for w, g in SCALES if re.fullmatch(w, m.group(1)))
+    clause = before[clause_from(before, len(before), (";", ",", "(", "/", "+", " - ", "<br>")):]
+    if pair or re.search(r"[a-z]{3,}", clause.lower()):
+        return None
+    return key_group
+
+def type_and_heights(text, ctx, height_row=False, pair_row=False, key_group=None):
+    """One cell, one prose line or one JSON string. ctx is the section and row text. A quoted
+    CSS rule ('css:file sel { ... }', up to the next <br> or closing bracket) is left as written."""
+    quote = lambda t: [(m.start(), m.end()) for m in re.finditer(r"css:[^{<]*\{[^}]*\}?|css:[^<)]*|\{[^}]*\}?", t)]
+    quoted = quote(text)
+    inside = lambda i: any(a <= i < b for a, b in quoted)
+    def font(m):
+        if inside(m.start()):
+            return m.group(0)
+        cands = type_token(m, text)
+        if len(cands) > 1:
+            cands = [c for c in cands if c[0].split(".")[1].lower() in ctx] or cands
+        return f"`{cands[0][0]}` {m.group(0)}" if len(cands) == 1 else m.group(0)
+    text = FONT.sub(font, text)
+    quoted = quote(text)  # the type references moved everything after them
+    def height(m):
+        if inside(m.start()) or text[m.start() - 1:m.start()] == ":":
+            return m.group(0)  # a quoted declaration ('--web-ui_button-height:32px'), not a spec value
+        start = clause_from(text, m.start(), (";", ",", "(", "+", " - ", "<br>"))
+        named = re.findall(r"height|width|padding|margin|gap|radius|border|font|size|line", text[start:m.start()])
+        second_of_pair = re.search(r"\d(?:px)? ?x ?$", text[:m.start()]) is not None
+        if (named and named[-1] == "height" and "line" not in named[-2:]) or (height_row and not named) \
+                or (pair_row and second_of_pair and not named):
+            k = size_token(m.group(0), ctx)
+            if k:
+                return f"`size.{k}` {m.group(0)}"
+            return m.group(0)
+        if BREAK_BEFORE.search(text[:m.start()]) and m.group(0) in BREAKPOINT:
+            return f"`breakpoint.{BREAKPOINT[m.group(0)]}` {m.group(0)}"
+        group = named_group(text[:m.start()], text[m.end():], key_group, in_pair(text, m))
+        if group:
+            k = {v["$value"]: k for k, v in CORE[group].items() if isinstance(v, dict) and "$value" in v}.get(m.group(0))
+            return f"`{group}.{k}` {m.group(0)}" if k else m.group(0)
+        return m.group(0)
+    return PX.sub(height, text)
+
+def type_and_heights_md(md):
+    lines, header, section = md.split("\n"), None, ""
+    for n, line in enumerate(lines):
+        if line.startswith("#"):
+            section = line.lower()
+        if not line.startswith("|"):
+            header = None
+            if not line.startswith("#"):
+                lines[n] = type_and_heights(line, section)
+            continue
+        cells = line.split("|")
+        if header is None:
+            header = cells
+            continue
+        if set(line) <= set("|- :"):
+            continue
+        heads = [h.strip() for h in header]
+        pcol = heads.index("Property") if "Property" in heads else 1
+        prop = cells[pcol].strip().lower() if pcol < len(cells) else ""
+        part = " ".join(cells[1:pcol]).lower()
+        for i in range(pcol + 1, len(cells)):
+            head = header[i].strip() if i < len(header) else ""
+            if head == "Source" or "captured" in cells[i]:
+                continue
+            col_groups = {g for words, g in SCALES if re.search(words, head.lower())}
+            cells[i] = type_and_heights(cells[i], section + " " + part + " " + prop, height_row=is_height(prop),
+                                        key_group=col_groups.pop() if len(col_groups) == 1 else None,
+                                        pair_row=prop.startswith("width x height") or prop == "size")
+        lines[n] = "|".join(cells)
+    return "\n".join(lines)
+
+def type_and_heights_json(v, ctx=""):
+    if isinstance(v, str):
+        field = ctx.lower().rsplit(" ", 1)[-1]
+        # the field name stands in for the group, except in the
+        # evidence notes ('coverage_gaps[].gap' says what is missing, not a gap size)
+        notes = re.search(r"\b(?:gaps|coverage_gaps|notes|caveat\w*)\b", ctx.lower())
+        groups = set() if notes else {g for words, g in SCALES if re.search(words, field)}
+        return type_and_heights(v, ctx.lower(), height_row=is_height(ctx.lower()), key_group=groups.pop() if len(groups) == 1 else None)
+    if isinstance(v, list):
+        return [type_and_heights_json(x, ctx) for x in v]
+    if isinstance(v, dict):
+        name = " ".join(str(v[k]) for k in ("name", "component", "title") if isinstance(v.get(k), str))
+        return {k: type_and_heights_json(x, (ctx + " " + name + " " + k).strip()) for k, x in v.items()}
+    return v
+
 # This script's own output: a token path in backticks followed by a space, in front of a colour
 # or a length. Stripped first, so a change to the rules above regenerates every spec.
-OWN = re.compile(r"`(?:palette\.(?:light|dark)|text|border|surface|background|accent|status|feedback|gamification|dataViz|unitColors|radius|space|borderWidth)\.[\w.-]+` (?=#|\d|[a-z][a-z0-9-]*:? #)")
+OWN = re.compile(r"`(?:palette\.(?:light|dark)|text|border|surface|background|accent|status|feedback|gamification|dataViz|unitColors|radius|space|borderWidth|typography|size|breakpoint)\.[\w.-]+` (?=#|\d|[a-z][a-z0-9-]*:? #)")
 
 def strip(v):
     if isinstance(v, str):
@@ -244,12 +410,12 @@ n = 0
 for md in ("components/core.md", "components/product.md"):
     p = PKG / md
     before = p.read_text()
-    after = tokenize(strip(before))
+    after = type_and_heights_md(tokenize(strip(before)))
     tokref = re.compile(r"`[a-zA-Z]+\.[\w.-]+` (?=#|\d)")
     n += len(tokref.findall(after)) - len(tokref.findall(before))
     p.write_text(after)
 for js in ("components/core.json", "components/product.json"):
     p = PKG / js
     d = json.loads(p.read_text())
-    p.write_text(json.dumps(tokenize_json(strip(d)), indent=1, ensure_ascii=False))
+    p.write_text(json.dumps(type_and_heights_json(tokenize_json(strip(d))), indent=1, ensure_ascii=False))
 print("tokens placed in front of", n, "values")
