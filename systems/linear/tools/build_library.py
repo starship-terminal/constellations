@@ -137,5 +137,5 @@ for i,(n,inner,w,h) in enumerate(reficons):
  x=40+(i%6)*188;y=190+(i//6)*115
  iconbody+=rect(x,y,160,88,'#121214',9,'#24282C')+f'<g transform="translate({x+18} {y+16}) scale({20/w})" fill="#D0D6E0" color="#D0D6E0">{inner}</g>'+text(x+10,y+70,n[:24],9,'#8A8F98')
 board('05-icons','Icon reference atlas','Extracted from visible public demos. Proprietary reference assets; preserve source attribution.',1200,1040,iconbody)
-(P/'components/manifest.json').write_text(json.dumps([{ 'name':n,'file':n+'.svg','width':c['width'],'height':c['height'],'status':'reconstruction','source':'See component matrix in README.md'} for n,c in comps.items()],indent=2))
+(P/'components/manifest.json').write_text(json.dumps([{ 'name':n,'file':n+'.svg','width':c['width'],'height':c['height'],'status':'reconstruction','source':'See the component inventory in components.md'} for n,c in comps.items()],indent=2))
 print('Built',len(comps),'components,',len(reficons),'reference icons and 5 boards')

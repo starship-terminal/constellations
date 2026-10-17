@@ -54,7 +54,7 @@
             "Georgia",
             "serif"
           ],
-          "description": "Measured (public site): public site computed font-family of the Linear Method heading, evidence/styles/method-styles.json, 2026-09-23; Georgia and serif are this package's fallbacks"
+          "description": "Measured (public site): public site computed font-family of the Linear Method heading, raw/styles/method-styles.json, 2026-09-23; Georgia and serif are this package's fallbacks"
         }
       },
       "size": {
@@ -1304,52 +1304,52 @@
     "canvas": {
       "type": "color",
       "value": "#08090a",
-      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+      "description": "Measured (public site): public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23"
     },
     "surface": {
       "type": "color",
       "value": "#0f1011",
-      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+      "description": "Measured (public site): public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23"
     },
     "raised": {
       "type": "color",
       "value": "#161718",
-      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+      "description": "Measured (public site): public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23"
     },
     "border": {
       "type": "color",
       "value": "#24282c",
-      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+      "description": "Measured (public site): public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23"
     },
     "text": {
       "type": "color",
       "value": "#f7f8f8",
-      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+      "description": "Measured (public site): public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23"
     },
     "secondary": {
       "type": "color",
       "value": "#d0d6e0",
-      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+      "description": "Measured (public site): public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23"
     },
     "muted": {
       "type": "color",
       "value": "#8a8f98",
-      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+      "description": "Measured (public site): public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23"
     },
     "subtle": {
       "type": "color",
       "value": "#62666d",
-      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+      "description": "Measured (public site): public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23"
     },
     "primary": {
       "type": "color",
       "value": "#e5e5e6",
-      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+      "description": "Measured (public site): public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23"
     },
     "accent": {
       "type": "color",
       "value": "#5e6ad2",
-      "description": "Measured (public site): public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23"
+      "description": "Measured (public site): public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23"
     }
   },
   "brand": {

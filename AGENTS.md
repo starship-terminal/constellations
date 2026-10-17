@@ -65,7 +65,7 @@ illustrations or brand colours into something that ships
   run its builders and confirm `git status --short .` is empty. Do this
   after touching anything under `tools/` or `raw/`. Two known exceptions,
   present since the packages were copied: Linear's builders rewrite
-  `evidence/validation.json`, `boards/04-components.svg` and
+  `raw/validation.json`, `boards/04-components.svg` and
   `components/issue-composer.svg`, and Polaris's `build_vectors.py` measures
   text with whatever Pillow and font versions are installed, so its SVG
   widths drift. Compare against a rebuild from before your change, not

@@ -674,7 +674,7 @@
         390
       ],
       "entry": "systems/linear/README.md",
-      "tokens": "systems/linear/tokens/linear.tokens.json",
+      "tokens": "systems/linear/tokens.json",
       "styleGuide": "systems/linear/style-guide.html",
       "preview": {
         "cover": "systems/linear/screenshots/01-home.png",
