@@ -6,9 +6,10 @@ The full per-state readings are in [raw/measurements.md](raw/measurements.md), w
 
 How to read an entry:
 
-- A colour is its value followed by its token in [tokens.json](tokens.json). A plain `token` is the variable the component's own classes name (bg-[var(--x)] and the like), so it is the token Manus wrote; `≈ token` is only a token with the same value in that theme, for colours no class names (inherited text, browser defaults). Each component's named tokens are also in tokens.json under `component.<key>` in each theme. Text is written family size/line-height weight, then its colour, for example `System 14/21 400, #e6e6e6`, and is read from the first text node inside the component.
+- Every value is written token first: `` `token` (value) ``. A plain token is exact: for a colour, the variable the component's own classes name for that property in that state (bg-[var(--x)], text-, border-); for a size, radius, padding, type style, duration, easing, shadow or opacity, the core token whose value it is. `` `≈ token` `` names a colour token only by its value in that theme, for colours no class on the element names (inherited text, browser defaults). A value with no token is written alone. Text is family size/line-height weight, for example `` `typography.sm` (System 14/20 400) ``, read from the first text node inside the component. Each component's class-named colour tokens are also in tokens.json under `component.<key>` in each theme.
 - Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
 - Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (898 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Coverage: of 4346 values written in the entries below (colours, dimensions, heights, icon sizes, text styles, durations, easings, shadows and opacities; widths and zeros aside), 2944 (68%) name an exact token, 762 (18%) name a colour token by value (`≈`) and 640 (15%) are raw: text styles and heights off Manus's scales, hairline offsets and one-off shadows. A colour's exact token comes from the element's own class; a dimension's from the core tokens meant for that kind of value (radii from `core.radius`, heights from the control sizes in `core.size`, icons from `core.size.icon*`, paddings from `core.space`, borders from `core.borderWidth` and `core.focusRing`), generic before component-specific; text to `core.typography` and its roles; transitions to `core.duration` and `core.easing`; shadows to `elevation.*`; opacity to `core.opacity`.
 
 ## Discovery list
 
@@ -66,9 +67,9 @@ Values that apply across entries, tallied from the measurement file.
 
 **Radius.** 8px (402), 12px (128), 9999px (66), 6px (64), 10px (60), 22px (18), 16px (10), 5px (8), 100px (6), 4px (6). The density tokens name four of them: `radius.row` 10 (nav tabs, list rows), `radius.small` 8 (icon buttons, chips, the segmented control), `radius.card` 12 (cards, menus, dialogs), `radius.composer` 22. The 6 is the segmented control's thumb and the smaller icon buttons; 9999 is avatars, pills and the send button.
 
-**Hover.** Manus hovers with a translucent fill, not a colour change. Dark: transparent to rgba(255, 255, 255, 0.04) `≈ fill.tsp-white-light` (48), no change on the element (35), transparent to rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` (17), opacity 1 to 0.9 (7), rgba(255, 255, 255, 0.04) `≈ fill.tsp-white-light` to rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` (4), #242424 `≈ background.live-events-end` to rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` (3). Light: transparent to rgba(55, 53, 47, 0.04) `≈ background.tsp-card-gray` (48), no change on the element (35), transparent to rgba(55, 53, 47, 0.06) `≈ fill.tsp-white-main` (17), opacity 1 to 0.9 (7), rgba(55, 53, 47, 0.04) `≈ background.tsp-card-gray` to rgba(55, 53, 47, 0.06) `≈ fill.tsp-white-main` (4), #ffffff `≈ background.menu-white` to rgba(255, 255, 255, 0.08) `≈ background.tsp-menu-white` (3). The two fills are `fill.tsp-white-light` (4%) and `fill.tsp-white-main` (6%); the current nav tab rests on the 6% fill and hovers to it.
+**Hover.** Manus hovers with a translucent fill, not a colour change. Dark: transparent to `≈ fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) (48), no change on the element (35), transparent to `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) (17), opacity 1 to 0.9 (7), `≈ fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) to `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) (4), `≈ background.live-events-end` (#242424) to `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) (3). Light: transparent to `≈ background.tsp-card-gray` (rgba(55, 53, 47, 0.04)) (48), no change on the element (35), transparent to `≈ fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) (17), opacity 1 to 0.9 (7), `≈ background.tsp-card-gray` (rgba(55, 53, 47, 0.04)) to `≈ fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) (4), `≈ background.menu-white` (#ffffff) to `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.08)) (3). The two fills are `fill.tsp-white-light` (4%) and `fill.tsp-white-main` (6%); the current nav tab rests on the 6% fill and hovers to it.
 
-**Focus.** Of 66 elements given a real keyboard focus in dark: no ring on the element (50), 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar` offset -1px (9), 2px solid #1a93fe `≈ text.blue` offset 2px (3), 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` offset -1px (2), 2px solid #b3b3b3 `≈ text.secondary` offset 0px (1), 2px solid transparent offset 2px (1). In light: no ring on the element (50), 1px solid rgba(0, 0, 0, 0.12) `≈ button.border-secondary` offset -1px (9), 2px solid #0081f2 `≈ text.blue` offset 2px (3), 1px solid rgba(0, 0, 0, 0.06) `≈ border.menu-arrow` offset -1px (2), 2px solid #4d4d4d `≈ text.secondary` offset 0px (1), 2px solid transparent offset 2px (1). Most of Manus's controls are `div`s with `role=button` and draw no ring; the inset 1px ring is Radix's menu item focus, the 2px blue ring (`text.blue`, offset 2) is the composer's send button and the theme cards.
+**Focus.** Of 66 elements given a real keyboard focus in dark: no ring on the element (50), 1px solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)) offset -1px (9), 2px solid `≈ text.blue` (#1a93fe) offset 2px (3), 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) offset -1px (2), 2px solid `≈ text.secondary` (#b3b3b3) offset 0px (1), 2px solid transparent offset 2px (1). In light: no ring on the element (50), 1px solid `≈ button.border-secondary` (rgba(0, 0, 0, 0.12)) offset -1px (9), 2px solid `≈ text.blue` (#0081f2) offset 2px (3), 1px solid `≈ border.menu-arrow` (rgba(0, 0, 0, 0.06)) offset -1px (2), 2px solid `≈ text.secondary` (#4d4d4d) offset 0px (1), 2px solid transparent offset 2px (1). Most of Manus's controls are `div`s with `role=button` and draw no ring; the inset 1px ring is Radix's menu item focus, the 2px blue ring (`text.blue`, offset 2) is the composer's send button and the theme cards.
 
 **Motion.** 0.15s cubic-bezier(0.4, 0, 0.2, 1) (286), 0.2s cubic-bezier(0.4, 0, 0.2, 1) (32), 0.15s cubic-bezier(0, 0, 0.2, 1) (18), 0.3s cubic-bezier(0.4, 0, 0.2, 1) (12), 0.2s cubic-bezier(0, 0, 0.2, 1) (6), 0.1s cubic-bezier(0.4, 0, 0.2, 1) (2). Nearly every transition is Tailwind's `transition-colors` at 150 ms on the standard curve; the sidebar's width is 200 ms, the task column's theme cross-fade 500 ms, the segmented thumb 200 ms on transform.
 
@@ -88,8 +89,8 @@ The 300px sidebar every page shares: a 48px logo row with search and collapse, e
 
 | State | Values |
 |---|---|
-| default | size 300 x 900; background #1f1f1f `background.nav`; text System 14/21 400, #e6e6e6 `≈ text.primary`; transition transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 28 x 28, #e6e6e6 `≈ text.primary` |
-| light | size 300 x 900; background #f0f0f0 `background.nav`; text System 14/21 400, #1a1a1a `≈ text.primary`; transition transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 28 x 28, #1a1a1a `≈ text.primary` |
+| default | size 300 x 900; background `background.nav` (#1f1f1f); text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#e6e6e6); transition transform `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon 28 x 28, `≈ text.primary` (#e6e6e6) |
+| light | size 300 x 900; background `background.nav` (#f0f0f0); text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#1a1a1a); transition transform `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon 28 x 28, `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-nav`, `--border-light`, `--border-main`, `--fill-tsp-white-light`, `--icon-secondary`, `--text-primary`, `--text-tertiary`, `--ui-density-nav-icon-box-size`, `--ui-density-nav-item-gap`, `--ui-density-nav-item-padding-start`, `--ui-density-outer-padding`, `--ui-density-row-height`, `--ui-density-row-radius`, `--ui-font-size-sm`.
 
@@ -101,8 +102,8 @@ Tokens named in its classes: `--background-nav`, `--border-light`, `--border-mai
 
 | State | Values |
 |---|---|
-| default | size 300 x 48; padding 8px 10px; background transparent; icon 28 x 28, #e6e6e6 `≈ text.primary` |
-| light | size 300 x 48; padding 8px 10px; background transparent; icon 28 x 28, #1a1a1a `≈ text.primary` |
+| default | size 300 x `size.header` (48px); padding `space.2` (8px) `space.2_5` (10px); background transparent; icon 28 x 28, `≈ text.primary` (#e6e6e6) |
+| light | size 300 x `size.header` (48px); padding `space.2` (8px) `space.2_5` (10px); background transparent; icon 28 x 28, `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
@@ -114,8 +115,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 94.83 x 28; background transparent; icon 28 x 28, #e6e6e6 `≈ text.primary` |
-| light (same: light-hover) | size 94.83 x 28; background transparent; icon 28 x 28, #1a1a1a `≈ text.primary` |
+| default (same: hover) | size 94.83 x `size.control-small` (28px); background transparent; icon 28 x 28, `≈ text.primary` (#e6e6e6) |
+| light (same: light-hover) | size 94.83 x `size.control-small` (28px); background transparent; icon 28 x 28, `≈ text.primary` (#1a1a1a) |
 
 #### Sidebar search icon button
 
@@ -125,10 +126,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
 | State | Values |
 |---|---|
-| default | size 32 x 32; radius 6px; background transparent; icon 18 x 18, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 32 x 32; radius 6px; background transparent; icon 18 x 18, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 32 x `size.row-small` (32px); radius `radius.md` (6px); background transparent; icon `size.icon` (18 x 18), `icon.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 32 x `size.row-small` (32px); radius `radius.md` (6px); background transparent; icon `size.icon` (18 x 18), `icon.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
@@ -140,10 +141,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
 | State | Values |
 |---|---|
-| default | size 32 x 32; radius 6px; background transparent; icon 18 x 18, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 32 x 32; radius 6px; background transparent; icon 18 x 18, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 32 x `size.row-small` (32px); radius `radius.md` (6px); background transparent; icon `size.icon` (18 x 18), `icon.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 32 x `size.row-small` (32px); radius `radius.md` (6px); background transparent; icon `size.icon` (18 x 18), `icon.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
@@ -155,14 +156,14 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
 | State | Values |
 |---|---|
-| default | size 284 x 36; padding 0px 2px 0px 8px; radius 10px; background transparent; text System 14/21 400, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| active | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| active-hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 284 x 36; padding 0px 2px 0px 8px; radius 10px; background transparent; text System 14/21 400, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
-| light-active | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
-| light-active-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 284 x `size.row` (36px); padding 0px `space.0_5` (2px) 0px `space.2` (8px); radius `radius.row` (10px); background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| active | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| active-hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 284 x `size.row` (36px); padding 0px `space.0_5` (2px) 0px `space.2` (8px); radius `radius.row` (10px); background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
+| light-active | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
+| light-active-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`, `--ui-density-nav-icon-box-size`, `--ui-density-nav-item-gap`, `--ui-density-nav-item-padding-start`, `--ui-density-row-height`, `--ui-density-row-radius`, `--ui-font-size-sm`.
 
@@ -174,8 +175,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--text
 
 | State | Values |
 |---|---|
-| hover | size 35.59 x 16.5; padding 0px 6px 0px 0px; background transparent; text System 11/16.5 400, #8c8c8c `text.tertiary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | size 35.59 x 16.5; padding 0px 6px 0px 0px; background transparent; text System 11/16.5 400, #737373 `text.tertiary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | size 35.59 x 16.5; padding 0px `space.1_5` (6px) 0px 0px; background transparent; text System 11/16.5 400, `text.tertiary` (#8c8c8c); transition opacity `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | size 35.59 x 16.5; padding 0px `space.1_5` (6px) 0px 0px; background transparent; text System 11/16.5 400, `text.tertiary` (#737373); transition opacity `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
 
 Tokens named in its classes: `--text-tertiary`.
 
@@ -187,8 +188,8 @@ Tokens named in its classes: `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 40.39 x 20; padding 0px 8px; radius 9999px; background rgba(255, 255, 255, 0.08) `fill.tsp-white-dark`; icon 24.39 x 9.2, #e6e6e6 `≈ text.primary` |
-| light | size 40.39 x 20; padding 0px 8px; radius 9999px; background rgba(55, 53, 47, 0.08) `fill.tsp-white-dark`; icon 24.39 x 9.2, #1a1a1a `≈ text.primary` |
+| default | size 40.39 x 20; padding 0px `space.2` (8px); radius `radius.full` (9999px); background `fill.tsp-white-dark` (rgba(255, 255, 255, 0.08)); icon 24.39 x 9.2, `≈ text.primary` (#e6e6e6) |
+| light | size 40.39 x 20; padding 0px `space.2` (8px); radius `radius.full` (9999px); background `fill.tsp-white-dark` (rgba(55, 53, 47, 0.08)); icon 24.39 x 9.2, `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-dark`, `--text-primary`.
 
@@ -200,8 +201,8 @@ Tokens named in its classes: `--fill-tsp-white-dark`, `--text-primary`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 284 x 36; padding 2px 2px 2px 10px; background #1f1f1f `background.nav`; text System 13/18 500, #8c8c8c `≈ text.tertiary`; icon 14 x 14, #e6e6e6 `≈ text.primary` |
-| light (same: light-hover) | size 284 x 36; padding 2px 2px 2px 10px; background #f0f0f0 `background.nav`; text System 13/18 500, #737373 `≈ text.tertiary`; icon 14 x 14, #1a1a1a `≈ text.primary` |
+| default (same: hover) | size 284 x `size.row` (36px); padding `space.0_5` (2px) `space.0_5` (2px) `space.0_5` (2px) `space.2_5` (10px); background `background.nav` (#1f1f1f); text System 13/18 500 tracking -0.091px, `≈ text.tertiary` (#8c8c8c); icon `size.icon-xs` (14 x 14), `≈ text.primary` (#e6e6e6) |
+| light (same: light-hover) | size 284 x `size.row` (36px); padding `space.0_5` (2px) `space.0_5` (2px) `space.0_5` (2px) `space.2_5` (10px); background `background.nav` (#f0f0f0); text System 13/18 500 tracking -0.091px, `≈ text.tertiary` (#737373); icon `size.icon-xs` (14 x 14), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-nav`, `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--icon-tertiary`, `--text-tertiary`, `--ui-density-row-height`, `--ui-density-row-radius`, `--ui-density-section-padding-start`, `--ui-density-section-row-gap`, `--ui-font-size-label`, `--ui-line-height-label`.
 
@@ -213,8 +214,8 @@ Tokens named in its classes: `--background-nav`, `--fill-tsp-white-dark`, `--fil
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 284 x 36; padding 2px 2px 2px 10px; background #1f1f1f `background.nav`; text System 13/18 500, #8c8c8c `≈ text.tertiary`; icon 14 x 14, #e6e6e6 `≈ text.primary` |
-| light (same: light-hover) | size 284 x 36; padding 2px 2px 2px 10px; background #f0f0f0 `background.nav`; text System 13/18 500, #737373 `≈ text.tertiary`; icon 14 x 14, #1a1a1a `≈ text.primary` |
+| default (same: hover) | size 284 x `size.row` (36px); padding `space.0_5` (2px) `space.0_5` (2px) `space.0_5` (2px) `space.2_5` (10px); background `background.nav` (#1f1f1f); text System 13/18 500 tracking -0.091px, `≈ text.tertiary` (#8c8c8c); icon `size.icon-xs` (14 x 14), `≈ text.primary` (#e6e6e6) |
+| light (same: light-hover) | size 284 x `size.row` (36px); padding `space.0_5` (2px) `space.0_5` (2px) `space.0_5` (2px) `space.2_5` (10px); background `background.nav` (#f0f0f0); text System 13/18 500 tracking -0.091px, `≈ text.tertiary` (#737373); icon `size.icon-xs` (14 x 14), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-nav`, `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--icon-tertiary`, `--text-tertiary`, `--ui-density-row-height`, `--ui-density-row-radius`, `--ui-density-section-padding-start`, `--ui-density-section-row-gap`, `--ui-font-size-label`, `--ui-line-height-label`.
 
@@ -226,8 +227,8 @@ Tokens named in its classes: `--background-nav`, `--fill-tsp-white-dark`, `--fil
 
 | State | Values |
 |---|---|
-| hover | size 28 x 28; radius 6px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; icon 18 x 18, #8c8c8c `≈ text.tertiary` |
-| light-hover | size 28 x 28; radius 6px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; icon 18 x 18, #737373 `≈ text.tertiary` |
+| hover | size 28 x `size.control-small` (28px); radius `radius.md` (6px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); icon `size.icon` (18 x 18), `icon.tertiary` (#8c8c8c) |
+| light-hover | size 28 x `size.control-small` (28px); radius `radius.md` (6px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); icon `size.icon` (18 x 18), `icon.tertiary` (#737373) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-tertiary`.
 
@@ -237,10 +238,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-tertiary`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 284 x 36; padding 0px 2px 0px 8px; background #1f1f1f `background.nav`; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| hover | radius 10px; shadow rgba(255, 255, 255, 0.04) 0px 0px 0px 100px inset |
-| light (same: light-focus-visible) | size 284 x 36; padding 0px 2px 0px 8px; background #f0f0f0 `background.nav`; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-hover | radius 10px; shadow rgba(55, 53, 47, 0.04) 0px 0px 0px 100px inset |
+| default (same: focus-visible) | size 284 x `size.row` (36px); padding 0px `space.0_5` (2px) 0px `space.2` (8px); background `background.nav` (#1f1f1f); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| hover | radius `radius.row` (10px); shadow rgba(255, 255, 255, 0.04) 0px 0px 0px 100px inset |
+| light (same: light-focus-visible) | size 284 x `size.row` (36px); padding 0px `space.0_5` (2px) 0px `space.2` (8px); background `background.nav` (#f0f0f0); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
+| light-hover | radius `radius.row` (10px); shadow rgba(55, 53, 47, 0.04) 0px 0px 0px 100px inset |
 
 Tokens named in its classes: `--background-nav`, `--fill-tsp-white-light`, `--text-primary`, `--ui-density-nav-icon-box-size`, `--ui-density-nav-item-gap`, `--ui-density-nav-item-padding-start`, `--ui-density-row-height`, `--ui-density-row-radius`, `--ui-density-section-row-gap`.
 
@@ -250,12 +251,12 @@ Tokens named in its classes: `--background-nav`, `--fill-tsp-white-light`, `--te
 
 | State | Values |
 |---|---|
-| default | size 284 x 36; padding 0px 2px 0px 8px; radius 10px; background transparent; text System 14/21 400, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| active | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 284 x 36; padding 0px 2px 0px 8px; radius 10px; background transparent; text System 14/21 400, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-active | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 284 x `size.row` (36px); padding 0px `space.0_5` (2px) 0px `space.2` (8px); radius `radius.row` (10px); background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| active | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 284 x `size.row` (36px); padding 0px `space.0_5` (2px) 0px `space.2` (8px); radius `radius.row` (10px); background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
+| light-active | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Child layers: div 238pxx21px
 
@@ -280,8 +281,8 @@ Tokens named in its classes: `--background-nav`, `--fill-tsp-white-light`, `--sc
 
 | State | Values |
 |---|---|
-| default | size 18 x 18; background transparent; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| light | size 18 x 18; background transparent; icon 18 x 18, #1a1a1a `≈ text.primary` |
+| default | size 18 x 18; background transparent; icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| light | size 18 x 18; background transparent; icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
 
 #### Task list loading skeleton
 
@@ -291,8 +292,8 @@ Tokens named in its classes: `--background-nav`, `--fill-tsp-white-light`, `--sc
 
 | State | Values |
 |---|---|
-| default | size 268 x 20; radius 6px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 268 x 20; radius 6px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 268 x 20; radius `radius.md` (6px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 268 x 20; radius `radius.md` (6px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`.
 
@@ -304,9 +305,9 @@ Tokens named in its classes: `--fill-tsp-white-light`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 284 x 54; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background rgba(63, 63, 63, 0.32) `background.mask-white`; text Libre Baskerville 14/20 400, #e6e6e6 `≈ text.primary`; transition box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #e6e6e6 `≈ text.primary` |
+| default (same: focus-visible) | size 284 x 54; border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.mask-white` (rgba(63, 63, 63, 0.32)); text Libre Baskerville 14/20 400, `≈ text.primary` (#e6e6e6); transition box-shadow `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
 | hover | shadow rgba(255, 255, 255, 0.04) 0px 0px 0px 100px inset |
-| light (same: light-focus-visible) | size 284 x 54; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background rgba(255, 255, 255, 0.65) `background.mask-white`; text Libre Baskerville 14/20 400, #1a1a1a `≈ text.primary`; transition box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #1a1a1a `≈ text.primary` |
+| light (same: light-focus-visible) | size 284 x 54; border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.mask-white` (rgba(255, 255, 255, 0.65)); text Libre Baskerville 14/20 400, `≈ text.primary` (#1a1a1a); transition box-shadow `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
 | light-hover | shadow rgba(55, 53, 47, 0.04) 0px 0px 0px 100px inset |
 
 Tokens named in its classes: `--background-mask-white`, `--border-dark`, `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`, `--ui-density-menu-item-padding-y`, `--ui-density-section-row-gap`, `--ui-density-small-row-height`.
@@ -319,10 +320,10 @@ Tokens named in its classes: `--background-mask-white`, `--border-dark`, `--fill
 
 | State | Values |
 |---|---|
-| default | size 284 x 32; padding 0px 2px 0px 0px; background transparent; text System 12/20 600, #e6e6e6 `≈ text.primary`; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| light | size 284 x 32; padding 0px 2px 0px 0px; background transparent; text System 12/20 600, #1a1a1a `≈ text.primary`; icon 18 x 18, #1a1a1a `≈ text.primary` |
+| default | size 284 x `size.row-small` (32px); padding 0px `space.0_5` (2px) 0px 0px; background transparent; text `typography.role.initial` (System 12/20 600), `≈ text.primary` (#e6e6e6); icon `size.icon` (18 x 18), `icon.primary` (#e6e6e6) |
+| light | size 284 x `size.row-small` (32px); padding 0px `space.0_5` (2px) 0px 0px; background transparent; text `typography.role.initial` (System 12/20 600), `≈ text.primary` (#1a1a1a); icon `size.icon` (18 x 18), `icon.primary` (#1a1a1a) |
 
-Child layers: div 28x28 background rgba(255, 255, 255, 0.08) `≈ fill.tsp-white-dark`
+Child layers: div 28x28 background `≈ fill.tsp-white-dark` (rgba(255, 255, 255, 0.08))
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-primary`, `--text-primary`.
 
@@ -334,12 +335,12 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-primary`, `--text
 
 | State | Values |
 |---|---|
-| default | size 90.52 x 32; padding 2px; background transparent; text System 12/20 600, #e6e6e6 `≈ text.primary` |
+| default | size 90.52 x `size.row-small` (32px); padding `space.0_5` (2px); background transparent; text `typography.role.initial` (System 12/20 600), `≈ text.primary` (#e6e6e6) |
 | hover | opacity 0.7 |
-| light | size 90.52 x 32; padding 2px; background transparent; text System 12/20 600, #1a1a1a `≈ text.primary` |
+| light | size 90.52 x `size.row-small` (32px); padding `space.0_5` (2px); background transparent; text `typography.role.initial` (System 12/20 600), `≈ text.primary` (#1a1a1a) |
 | light-hover | opacity 0.7 |
 
-Child layers: div 28x28 background rgba(255, 255, 255, 0.08) `≈ fill.tsp-white-dark`
+Child layers: div 28x28 background `≈ fill.tsp-white-dark` (rgba(255, 255, 255, 0.08))
 
 Tokens named in its classes: `--text-primary`.
 
@@ -351,10 +352,10 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 28 x 28; radius 9999px; background transparent; text System 12/20 600, #e6e6e6 `≈ text.primary` |
-| light | size 28 x 28; radius 9999px; background transparent; text System 12/20 600, #1a1a1a `≈ text.primary` |
+| default | size 28 x `size.control-small` (28px); radius `radius.full` (9999px); background transparent; text `typography.role.initial` (System 12/20 600), `≈ text.primary` (#e6e6e6) |
+| light | size 28 x `size.control-small` (28px); radius `radius.full` (9999px); background transparent; text `typography.role.initial` (System 12/20 600), `≈ text.primary` (#1a1a1a) |
 
-Child layers: div 28x28 background rgba(255, 255, 255, 0.08) `≈ fill.tsp-white-dark`
+Child layers: div 28x28 background `≈ fill.tsp-white-dark` (rgba(255, 255, 255, 0.08))
 
 #### Desktop app icon button
 
@@ -364,10 +365,10 @@ Child layers: div 28x28 background rgba(255, 255, 255, 0.08) `≈ fill.tsp-white
 
 | State | Values |
 |---|---|
-| default | size 28 x 28; radius 8px; background transparent; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 28 x 28; radius 8px; background transparent; icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 28 x `size.control-small` (28px); radius `radius.small` (8px); background transparent; icon `size.icon` (18 x 18), `icon.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 28 x `size.control-small` (28px); radius `radius.small` (8px); background transparent; icon `size.icon` (18 x 18), `icon.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-primary`.
 
@@ -379,10 +380,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-primary`.
 
 | State | Values |
 |---|---|
-| default | size 28 x 28; radius 8px; background transparent; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| hover, open | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 28 x 28; radius 8px; background transparent; icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-hover, light-open | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 28 x `size.control-small` (28px); radius `radius.small` (8px); background transparent; icon `size.icon` (18 x 18), `icon.primary` (#e6e6e6) |
+| hover, open | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 28 x `size.control-small` (28px); radius `radius.small` (8px); background transparent; icon `size.icon` (18 x 18), `icon.primary` (#1a1a1a) |
+| light-hover, light-open | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-primary`.
 
@@ -394,8 +395,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-primary`.
 
 | State | Values |
 |---|---|
-| default | size 52 x 900; background #1f1f1f `background.nav`; text System 12/20 600, #e6e6e6 `≈ text.primary`; transition transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 28 x 28, #e6e6e6 `≈ text.primary` |
-| light | size 52 x 900; background #f0f0f0 `background.nav`; text System 12/20 600, #1a1a1a `≈ text.primary`; transition transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 28 x 28, #1a1a1a `≈ text.primary` |
+| default | size 52 x 900; background `background.nav` (#1f1f1f); text `typography.role.initial` (System 12/20 600), `≈ text.primary` (#e6e6e6); transition transform `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon 28 x 28, `≈ text.primary` (#e6e6e6) |
+| light | size 52 x 900; background `background.nav` (#f0f0f0); text `typography.role.initial` (System 12/20 600), `≈ text.primary` (#1a1a1a); transition transform `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon 28 x 28, `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-nav`, `--border-light`, `--border-main`, `--fill-tsp-white-light`, `--scroll-shadow-background`, `--scroll-shadow-block-end-offset`, `--scroll-shadow-block-start-offset`, `--scroll-shadow-height`, `--scroll-shadow-inline-end-offset`, `--scroll-shadow-inline-start-offset`, `--scroll-shadow-width`, `--scroll-shadow-z-index`, `--simplebar-scrollbar-width`, `--text-disable`, `--text-tertiary`, `--ui-density-nav-icon-box-size`, `--ui-density-nav-item-gap`, `--ui-density-outer-padding`, `--ui-density-row-height`, `--ui-density-row-radius`, `--ui-density-section-gap`.
 
@@ -407,10 +408,10 @@ Tokens named in its classes: `--background-nav`, `--border-light`, `--border-mai
 
 | State | Values |
 |---|---|
-| default | size 36 x 36; padding 8px; radius 10px; background transparent; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 36 x 36; padding 8px; radius 10px; background transparent; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 36 x `size.row` (36px); padding `space.2` (8px); radius `radius.row` (10px); background transparent; transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 36 x `size.row` (36px); padding `space.2` (8px); radius `radius.row` (10px); background transparent; transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--ui-density-nav-icon-box-size`, `--ui-density-nav-item-gap`, `--ui-density-outer-padding`, `--ui-density-row-height`, `--ui-density-row-radius`.
 
@@ -426,10 +427,10 @@ The 48px row over the content: the model picker at the left, and at the right th
 
 | State | Values |
 |---|---|
-| default | size 154.09 x 32; padding 7px 6px 7px 8px; radius 8px; background transparent; text System 18/22 500, #e6e6e6 `≈ text.primary`; transition background-color 0.15s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #8c8c8c `≈ text.tertiary` |
-| hover, open | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 154.09 x 32; padding 7px 6px 7px 8px; radius 8px; background transparent; text System 18/22 500, #1a1a1a `≈ text.primary`; transition background-color 0.15s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #737373 `≈ text.tertiary` |
-| light-hover, light-open | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 154.09 x `size.row-small` (32px); padding 7px `space.1_5` (6px) 7px `space.2` (8px); radius `radius.small` (8px); background transparent; text System 18/22 500, `≈ text.primary` (#e6e6e6); transition background-color `duration.fast` (0.15s) cubic-bezier(0, 0, 0.2, 1); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#8c8c8c) |
+| hover, open | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 154.09 x `size.row-small` (32px); padding 7px `space.1_5` (6px) 7px `space.2` (8px); radius `radius.small` (8px); background transparent; text System 18/22 500, `≈ text.primary` (#1a1a1a); transition background-color `duration.fast` (0.15s) cubic-bezier(0, 0, 0.2, 1); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#737373) |
+| light-hover, light-open | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`.
 
@@ -441,8 +442,8 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 166.7 x 32; padding 4px 12px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 8px; background transparent; text System 14/21 400, #8c8c8c `≈ text.tertiary` |
-| light | size 166.7 x 32; padding 4px 12px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 8px; background transparent; text System 14/21 400, #737373 `≈ text.tertiary` |
+| default | size 166.7 x `size.row-small` (32px); padding `space.1` (4px) `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.small` (8px); background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.tertiary` (#8c8c8c) |
+| light | size 166.7 x `size.row-small` (32px); padding `space.1` (4px) `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.small` (8px); background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--border-dark`, `--border-main`, `--text-blue`, `--text-tertiary`.
 
@@ -454,10 +455,10 @@ Tokens named in its classes: `--border-dark`, `--border-main`, `--text-blue`, `-
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 56 x 21; radius 8px; background transparent; text System 14/21 400, #1a93fe `≈ text.blue`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | opacity 0.8 |
-| light (same: light-focus-visible) | size 56 x 21; radius 8px; background transparent; text System 14/21 400, #0081f2 `≈ text.blue`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | opacity 0.8 |
+| default (same: focus-visible) | size 56 x 21; radius `radius.small` (8px); background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.blue` (#1a93fe); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | opacity `opacity.pressed` (0.8) |
+| light (same: light-focus-visible) | size 56 x 21; radius `radius.small` (8px); background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.blue` (#0081f2); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | opacity `opacity.pressed` (0.8) |
 
 Tokens named in its classes: `--text-blue`.
 
@@ -469,10 +470,10 @@ Tokens named in its classes: `--text-blue`.
 
 | State | Values |
 |---|---|
-| default | size 65.88 x 32; padding 0px 12px 0px 8px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 8px; background transparent; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 65.88 x 32; padding 0px 12px 0px 8px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 8px; background transparent; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 65.88 x `size.row-small` (32px); padding 0px `space.3` (12px) 0px `space.2` (8px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.small` (8px); background transparent; text System 14/20 500 tracking -0.15px, `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 65.88 x `size.row-small` (32px); padding 0px `space.3` (12px) 0px `space.2` (8px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.small` (8px); background transparent; text System 14/20 500 tracking -0.15px, `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-white-main`, `--text-primary`.
 
@@ -484,9 +485,9 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-main`, `--text-p
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 90.88 x 32; padding 0px 8px; radius 10px; background rgba(0, 129, 242, 0.08); text System 13/18 500, #0081f2 `≈ activity-indicator.running`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #e6e6e6 `≈ text.primary` |
+| default (same: focus-visible) | size 90.88 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.row` (10px); background rgba(0, 129, 242, 0.08); text System 13/18 500 tracking -0.091px, `≈ activity-indicator.running` (#0081f2); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
 | hover | background rgba(0, 129, 242, 0.12) |
-| light (same: light-focus-visible) | size 90.88 x 32; padding 0px 8px; radius 10px; background rgba(0, 129, 242, 0.08) `≈ fill.blue`; text System 13/18 500, #0081f2 `≈ text.blue`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #1a1a1a `≈ text.primary` |
+| light (same: light-focus-visible) | size 90.88 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.row` (10px); background `≈ fill.blue` (rgba(0, 129, 242, 0.08)); text System 13/18 500 tracking -0.091px, `≈ text.blue` (#0081f2); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 | light-hover | background rgba(0, 129, 242, 0.12) |
 
 Tokens named in its classes: `--text-primary`.
@@ -499,10 +500,10 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 74.22 x 32; padding 0px 8px; radius 8px; background transparent; text System 14/18 500, #b3b3b3 `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light (same: light-focus-visible) | size 74.22 x 32; padding 0px 8px; radius 8px; background transparent; text System 14/18 500, #4d4d4d `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default (same: focus-visible) | size 74.22 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.label-compact` (System 14/18 500), `≈ text.secondary` (#b3b3b3); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light (same: light-focus-visible) | size 74.22 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.label-compact` (System 14/18 500), `≈ text.secondary` (#4d4d4d); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--text-secondary`.
 
@@ -514,10 +515,10 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--text-
 
 | State | Values |
 |---|---|
-| default | size 32 x 32; radius 6px; background transparent; icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 32 x 32; radius 6px; background transparent; icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 32 x `size.row-small` (32px); radius `radius.md` (6px); background transparent; icon `size.icon-small` (16 x 16), `icon.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 32 x `size.row-small` (32px); radius `radius.md` (6px); background transparent; icon `size.icon-small` (16 x 16), `icon.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
@@ -529,10 +530,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
 | State | Values |
 |---|---|
-| default | size 32 x 32; radius 8px; background transparent; icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 32 x 32; radius 8px; background transparent; icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 32 x `size.row-small` (32px); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `icon.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 32 x `size.row-small` (32px); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `icon.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
@@ -548,8 +549,8 @@ The new-task page: the logo with the promo carousel beside it, the Build and Cre
 
 | State | Values |
 |---|---|
-| default | size 376 x 64; background transparent; text System 16/24 400, #e6e6e6 `≈ text.primary` |
-| light | size 376 x 64; background transparent; text System 16/24 400, #1a1a1a `≈ text.primary` |
+| default | size 376 x 64; background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#e6e6e6) |
+| light | size 376 x 64; background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#1a1a1a) |
 
 #### Promo carousel card
 
@@ -559,10 +560,10 @@ The new-task page: the logo with the promo carousel beside it, the Build and Cre
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 252 x 56; padding 1px 14px 1px 10px; border 1px solid transparent; radius 12px; background #000000 `game.promo`; text Libre Baskerville 13/18 700, #ffffff `≈ background.tool-used-image-loading`; transition transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| focus-visible | outline 2px solid #1a93fe `≈ text.blue`, offset 2px |
-| light (same: light-hover) | size 252 x 56; padding 1px 14px 1px 10px; border 1px solid transparent; radius 12px; background #1a1a19 `game.promo`; text Libre Baskerville 13/18 700, #ffffff `≈ background.menu-white`; transition transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-focus-visible | outline 2px solid #0081f2 `≈ text.blue`, offset 2px |
+| default (same: hover) | size 252 x 56; padding 1px `space.3_5` (14px) 1px `space.2_5` (10px); border `borderWidth.default` (1px) solid transparent; radius `radius.card` (12px); background `game.promo` (#000000); text Libre Baskerville 13/18 700, `≈ background.tool-used-image-loading` (#ffffff); transition transform `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| focus-visible | outline `focusRing.width` (2px) solid `≈ text.blue` (#1a93fe), offset `focusRing.width` (2px) |
+| light (same: light-hover) | size 252 x 56; padding 1px `space.3_5` (14px) 1px `space.2_5` (10px); border `borderWidth.default` (1px) solid transparent; radius `radius.card` (12px); background `game.promo` (#1a1a19); text Libre Baskerville 13/18 700, `≈ background.menu-white` (#ffffff); transition transform `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-focus-visible | outline `focusRing.width` (2px) solid `≈ text.blue` (#0081f2), offset `focusRing.width` (2px) |
 
 Tokens named in its classes: `--background-game-promo`, `--background-game-promo-preview`, `--border-game-promo-preview`, `--text-blue`, `--text-white`, `--text-white-tsp`.
 
@@ -574,14 +575,14 @@ Tokens named in its classes: `--background-game-promo`, `--background-game-promo
 
 | State | Values |
 |---|---|
-| default | size 14 x 18; radius 9999px; background transparent; text System 16/24 400, #e6e6e6 `≈ text.primary` |
-| focus-visible | outline 2px solid #b3b3b3 `≈ text.secondary`, offset 0px |
+| default | size 14 x 18; radius `radius.full` (9999px); background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#e6e6e6) |
+| focus-visible | outline `focusRing.width` (2px) solid `≈ text.secondary` (#b3b3b3), offset 0px |
 | inactive | size 14 x 12 |
-| light | size 14 x 18; radius 9999px; background transparent; text System 16/24 400, #1a1a1a `≈ text.primary` |
-| light-focus-visible | outline 2px solid #4d4d4d `≈ text.secondary`, offset 0px |
+| light | size 14 x 18; radius `radius.full` (9999px); background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#1a1a1a) |
+| light-focus-visible | outline `focusRing.width` (2px) solid `≈ text.secondary` (#4d4d4d), offset 0px |
 | light-inactive | size 14 x 12 |
 
-Child layers: span 5x18 background rgba(255, 255, 255, 0.08) `≈ fill.tsp-white-dark` radius 9999px; span 5x3.6 background #b3b3b3 `≈ text.secondary` radius 9999px
+Child layers: span 5x18 background `≈ fill.tsp-white-dark` (rgba(255, 255, 255, 0.08)) radius 9999px; span 5x3.6 background `≈ text.secondary` (#b3b3b3) radius 9999px
 
 Tokens named in its classes: `--fill-tsp-white-dark`, `--icon-secondary`.
 
@@ -593,12 +594,12 @@ Tokens named in its classes: `--fill-tsp-white-dark`, `--icon-secondary`.
 
 | State | Values |
 |---|---|
-| default | size 490 x 130; padding 0px 0px 0px 20px; radius 12px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text System 16/22 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| focus-visible | shadow #ffffff 0px 0px 0px 0px, rgba(255, 255, 255, 0.12) 0px 0px 0px 2px; outline 2px solid transparent, offset 2px |
-| light | size 490 x 130; padding 0px 0px 0px 20px; radius 12px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text System 16/22 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
-| light-focus-visible | shadow #ffffff 0px 0px 0px 0px, rgba(0, 0, 0, 0.14) 0px 0px 0px 2px; outline 2px solid transparent, offset 2px |
+| default | size 490 x 130; padding 0px 0px 0px `space.5` (20px); radius `radius.card` (12px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text `typography.title-base` (System 16/22 500), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| focus-visible | shadow #ffffff 0px 0px 0px 0px, rgba(255, 255, 255, 0.12) 0px 0px 0px 2px; outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px) |
+| light | size 490 x 130; padding 0px 0px 0px `space.5` (20px); radius `radius.card` (12px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text `typography.title-base` (System 16/22 500), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
+| light-focus-visible | shadow #ffffff 0px 0px 0px 0px, rgba(0, 0, 0, 0.14) 0px 0px 0px 2px; outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px) |
 
 Tokens named in its classes: `--border-dark`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-primary`, `--text-tertiary`.
 
@@ -610,10 +611,10 @@ Tokens named in its classes: `--border-dark`, `--fill-tsp-white-light`, `--fill-
 
 | State | Values |
 |---|---|
-| default | size 490 x 130; padding 0px 0px 0px 20px; radius 12px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text System 16/22 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 490 x 130; padding 0px 0px 0px 20px; radius 12px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text System 16/22 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 490 x 130; padding 0px 0px 0px `space.5` (20px); radius `radius.card` (12px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text `typography.title-base` (System 16/22 500), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 490 x 130; padding 0px 0px 0px `space.5` (20px); radius `radius.card` (12px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text `typography.title-base` (System 16/22 500), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--border-dark`, `--border-main`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--illustration-studio-create-paper`, `--text-primary`, `--text-tertiary`.
 
@@ -625,10 +626,10 @@ Tokens named in its classes: `--border-dark`, `--border-main`, `--fill-tsp-white
 
 | State | Values |
 |---|---|
-| default | size 270 x 270; padding 12px; radius 12px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text System 12/16 400, #b3b3b3 `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 270 x 270; padding 12px; radius 12px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text System 12/16 400, #4d4d4d `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 270 x 270; padding `space.3` (12px); radius `radius.card` (12px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text `typography.role.caption` (System 12/16 400), `≈ text.secondary` (#b3b3b3); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 270 x 270; padding `space.3` (12px); radius `radius.card` (12px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text `typography.role.caption` (System 12/16 400), `≈ text.secondary` (#4d4d4d); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--border-dark`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--fill-white-primary`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -640,8 +641,8 @@ Tokens named in its classes: `--border-dark`, `--fill-tsp-white-light`, `--fill-
 
 | State | Values |
 |---|---|
-| default | size 75.45 x 20; padding 0px 6px; radius 9999px; background rgba(255, 255, 255, 0.06) `fill.tsp-white-main`; text System 12/16 400, #b3b3b3 `text.secondary` |
-| light | size 75.45 x 20; padding 0px 6px; radius 9999px; background rgba(55, 53, 47, 0.06) `fill.tsp-white-main`; text System 12/16 400, #4d4d4d `text.secondary` |
+| default | size 75.45 x 20; padding 0px `space.1_5` (6px); radius `radius.full` (9999px); background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)); text `typography.role.caption` (System 12/16 400), `text.secondary` (#b3b3b3) |
+| light | size 75.45 x 20; padding 0px `space.1_5` (6px); radius `radius.full` (9999px); background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)); text `typography.role.caption` (System 12/16 400), `text.secondary` (#4d4d4d) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-secondary`.
 
@@ -657,14 +658,14 @@ The task composer, shared by the home, the task page, the project page and the p
 
 | State | Values |
 |---|---|
-| default | size 768 x 120; padding 12px 0px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 22px; background #242424 `background.menu-white`; shadow rgba(0, 0, 0, 0.02) 0px 12px 32px 0px; text System 14/18 400, #b3b3b3 `≈ text.secondary`; icon 17 x 17, #b3b3b3 `≈ text.secondary`; placeholder #8c8c8c `≈ text.tertiary` |
-| focus-visible | border 1px solid rgba(255, 255, 255, 0.12) `border.dark` |
-| typed | text System 16/24 400, #e6e6e6 `≈ text.primary`; placeholder none |
-| task | text System 12/16 400, #8c8c8c `≈ text.tertiary` |
-| light | size 768 x 120; padding 12px 0px; border 1px solid #e5e7eb; radius 22px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.02) 0px 12px 32px 0px; text System 14/18 400, #4d4d4d `≈ text.secondary`; icon 17 x 17, #4d4d4d `≈ text.secondary`; placeholder #737373 `≈ text.tertiary` |
-| light-focus-visible | border 1px solid rgba(0, 0, 0, 0.2) `≈ gradient.dark-20` |
-| light-typed | text System 16/24 400, #1a1a1a `≈ text.primary`; placeholder none |
-| light-task | text System 12/16 400, #737373 `≈ text.tertiary` |
+| default | size 768 x 120; padding `space.3` (12px) 0px; border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.composer` (22px); background `background.menu-white` (#242424); shadow `elevation.composer` (rgba(0, 0, 0, 0.02) 0px 12px 32px 0px); text System 14/18 400, `≈ text.secondary` (#b3b3b3); icon 17 x 17, `≈ text.secondary` (#b3b3b3); placeholder `≈ text.tertiary` (#8c8c8c) |
+| focus-visible | border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)) |
+| typed | text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#e6e6e6); placeholder none |
+| task | text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#8c8c8c) |
+| light | size 768 x 120; padding `space.3` (12px) 0px; border `borderWidth.default` (1px) solid #e5e7eb; radius `radius.composer` (22px); background `background.menu-white` (#ffffff); shadow `elevation.composer` (rgba(0, 0, 0, 0.02) 0px 12px 32px 0px); text System 14/18 400, `≈ text.secondary` (#4d4d4d); icon 17 x 17, `≈ text.secondary` (#4d4d4d); placeholder `≈ text.tertiary` (#737373) |
+| light-focus-visible | border `borderWidth.default` (1px) solid `≈ gradient.dark-20` (rgba(0, 0, 0, 0.2)) |
+| light-typed | text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#1a1a1a); placeholder none |
+| light-task | text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--accent-send-button`, `--background-menu-white`, `--border-dark`, `--border-main`, `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--icon-primary`, `--icon-secondary`, `--text-onblack`, `--text-primary`, `--text-secondary`, `--text-tertiary`, `--ui-density-composer-radius`, `--ui-density-content-padding`, `--ui-density-home-input-editor-min-height`, `--ui-density-outer-padding`, `--ui-density-row-gap`, `--ui-density-section-gap`, `--ui-density-small-row-height`.
 
@@ -676,8 +677,8 @@ Tokens named in its classes: `--accent-send-button`, `--background-menu-white`, 
 
 | State | Values |
 |---|---|
-| default | size 742 x 24; background transparent; placeholder #8c8c8c `≈ text.tertiary` |
-| light | size 742 x 24; background transparent; placeholder #737373 `≈ text.tertiary` |
+| default | size 742 x 24; background transparent; placeholder `≈ text.tertiary` (#8c8c8c) |
+| light | size 742 x 24; background transparent; placeholder `≈ text.tertiary` (#737373) |
 
 #### Composer typed text
 
@@ -687,8 +688,8 @@ Tokens named in its classes: `--accent-send-button`, `--background-menu-white`, 
 
 | State | Values |
 |---|---|
-| default | size 742 x 24; background transparent; text System 16/24 400, #e6e6e6 `≈ text.primary` |
-| light | size 742 x 24; background transparent; text System 16/24 400, #1a1a1a `≈ text.primary` |
+| default | size 742 x 24; background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#e6e6e6) |
+| light | size 742 x 24; background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#1a1a1a) |
 
 #### Composer + button
 
@@ -698,12 +699,12 @@ Tokens named in its classes: `--accent-send-button`, `--background-menu-white`, 
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 32 x 32; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 9999px; background transparent; icon 17 x 17, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| open | border none; background rgba(255, 255, 255, 0.04) `≈ fill.tsp-white-light` |
-| light (same: light-focus-visible) | size 32 x 32; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 9999px; background transparent; icon 17 x 17, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
-| light-open | border none; background rgba(55, 53, 47, 0.04) `≈ background.tsp-card-gray` |
+| default (same: focus-visible) | size 32 x `size.row-small` (32px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.full` (9999px); background transparent; icon 17 x 17, `≈ text.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| open | border none; background `≈ fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light (same: light-focus-visible) | size 32 x `size.row-small` (32px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.full` (9999px); background transparent; icon 17 x 17, `≈ text.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
+| light-open | border none; background `≈ background.tsp-card-gray` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-secondary`, `--ui-density-small-row-height`.
 
@@ -715,10 +716,10 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 72 x 32; padding 8px; radius 100px; background transparent; outline 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`, offset -1px; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 72 x 32; padding 8px; radius 100px; background transparent; outline 1px solid rgba(0, 0, 0, 0.06) `≈ border.menu-arrow`, offset -1px; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 72 x `size.row-small` (32px); padding `space.2` (8px); radius 100px; background transparent; outline `focusRing.input-width` (1px) solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)), offset -1px; transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 72 x `size.row-small` (32px); padding `space.2` (8px); radius 100px; background transparent; outline `focusRing.input-width` (1px) solid `≈ border.menu-arrow` (rgba(0, 0, 0, 0.06)), offset -1px; transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 72x32 radius 100px
 
@@ -732,10 +733,10 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 136.52 x 32; padding 0px 8px; radius 9999px; background transparent; outline 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`, offset -1px; text System 14/18 400, #b3b3b3 `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 136.52 x 32; padding 0px 8px; radius 9999px; background transparent; outline 1px solid rgba(0, 0, 0, 0.06) `≈ border.menu-arrow`, offset -1px; text System 14/18 400, #4d4d4d `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 136.52 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.full` (9999px); background transparent; outline `focusRing.input-width` (1px) solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)), offset -1px; text System 14/18 400, `≈ text.secondary` (#b3b3b3); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 136.52 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.full` (9999px); background transparent; outline `focusRing.input-width` (1px) solid `≈ border.menu-arrow` (rgba(0, 0, 0, 0.06)), offset -1px; text System 14/18 400, `≈ text.secondary` (#4d4d4d); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 136.5x32 radius 9999px
 
@@ -749,10 +750,10 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--icon-
 
 | State | Values |
 |---|---|
-| default | size 32 x 32; padding 0px 8px; radius 9999px; background transparent; icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 32 x 32; padding 0px 8px; radius 9999px; background transparent; icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 32 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.full` (9999px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 32 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.full` (9999px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
@@ -764,10 +765,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`.
 
 | State | Values |
 |---|---|
-| default | size 32 x 32; radius 9999px; background transparent; icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 32 x 32; radius 9999px; background transparent; icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 32 x `size.row-small` (32px); radius `radius.full` (9999px); background transparent; icon `size.icon-small` (16 x 16), `icon.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 32 x `size.row-small` (32px); radius `radius.full` (9999px); background transparent; icon `size.icon-small` (16 x 16), `icon.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`, `--ui-density-small-row-height`.
 
@@ -779,14 +780,14 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`, `--ui
 
 | State | Values |
 |---|---|
-| default | size 32 x 32; radius 9999px; background rgba(255, 255, 255, 0.08) `≈ fill.tsp-white-dark`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 15 x 15, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips` |
-| enabled | background rgba(255, 255, 255, 0.95) `accent.send-button` |
-| enabled-hover | background rgba(255, 255, 255, 0.95) `accent.send-button`; opacity 0.9 |
-| enabled-focus-visible | background rgba(255, 255, 255, 0.95) `accent.send-button` |
-| light | size 32 x 32; radius 9999px; background rgba(55, 53, 47, 0.08) `≈ fill.tsp-white-dark`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 15 x 15, #ffffff `≈ background.menu-white` |
-| light-enabled | background #1a1a19 `accent.send-button` |
-| light-enabled-hover | background #1a1a19 `accent.send-button`; opacity 0.9 |
-| light-enabled-focus-visible | background #1a1a19 `accent.send-button` |
+| default | size 32 x `size.row-small` (32px); radius `radius.full` (9999px); background `≈ fill.tsp-white-dark` (rgba(255, 255, 255, 0.08)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon 15 x 15, `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)) |
+| enabled | background `accent.send-button` (rgba(255, 255, 255, 0.95)) |
+| enabled-hover | background `accent.send-button` (rgba(255, 255, 255, 0.95)); opacity `opacity.hover` (0.9) |
+| enabled-focus-visible | background `accent.send-button` (rgba(255, 255, 255, 0.95)) |
+| light | size 32 x `size.row-small` (32px); radius `radius.full` (9999px); background `≈ fill.tsp-white-dark` (rgba(55, 53, 47, 0.08)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon 15 x 15, `≈ background.menu-white` (#ffffff) |
+| light-enabled | background `accent.send-button` (#1a1a19) |
+| light-enabled-hover | background `accent.send-button` (#1a1a19); opacity `opacity.hover` (0.9) |
+| light-enabled-focus-visible | background `accent.send-button` (#1a1a19) |
 
 Tokens named in its classes: `--accent-send-button`, `--fill-tsp-white-dark`, `--text-onblack`, `--ui-density-small-row-height`.
 
@@ -798,8 +799,8 @@ Tokens named in its classes: `--accent-send-button`, `--fill-tsp-white-dark`, `-
 
 | State | Values |
 |---|---|
-| default | size 768 x 16; background transparent; text System 12/16 400, #8c8c8c `text.tertiary` |
-| light | size 768 x 16; background transparent; text System 12/16 400, #737373 `text.tertiary` |
+| default | size 768 x 16; background transparent; text `typography.role.caption` (System 12/16 400), `text.tertiary` (#8c8c8c) |
+| light | size 768 x 16; background transparent; text `typography.role.caption` (System 12/16 400), `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--text-tertiary`.
 
@@ -815,8 +816,8 @@ The popovers and dialogs: the model menu, the + attach menu, the search dialog, 
 
 | State | Values |
 |---|---|
-| default | size 366 x 232; padding 4px; radius 12px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; backdrop blur(40px); text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| light | size 366 x 232; padding 4px; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; backdrop blur(40px); text System 14/20 400, #1a1a1a `≈ text.primary`; icon 18 x 18, #1a1a1a `≈ text.primary` |
+| default | size 366 x 232; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); backdrop blur(40px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| light | size 366 x 232; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); backdrop blur(40px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--available-width`, `--background-menu-white`, `--border-dark`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -828,16 +829,16 @@ Tokens named in its classes: `--available-width`, `--background-menu-white`, `--
 
 | State | Values |
 |---|---|
-| default | size 358 x 52; padding 8px 8px 8px 12px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; transition background-color 0.15s cubic-bezier(0, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| checked | icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| checked-hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| light | size 358 x 52; padding 8px 8px 8px 12px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; transition background-color 0.15s cubic-bezier(0, 0, 0.2, 1) |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
-| light-checked | icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-checked-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; icon 18 x 18, #1a1a1a `≈ text.primary` |
+| default | size 358 x 52; padding `space.2` (8px) `space.2` (8px) `space.2` (8px) `space.3` (12px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); transition background-color `duration.fast` (0.15s) cubic-bezier(0, 0, 0.2, 1) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| checked | icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| checked-hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| light | size 358 x 52; padding `space.2` (8px) `space.2` (8px) `space.2` (8px) `space.3` (12px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); transition background-color `duration.fast` (0.15s) cubic-bezier(0, 0, 0.2, 1) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
+| light-checked | icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
+| light-checked-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
 
-Child layers: div 34.5x18 background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 5px
+Child layers: div 34.5x18 background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 5px
 
 Tokens named in its classes: `--border-dark`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-primary`, `--text-tertiary`.
 
@@ -849,8 +850,8 @@ Tokens named in its classes: `--border-dark`, `--fill-tsp-white-light`, `--fill-
 
 | State | Values |
 |---|---|
-| default | size 34.45 x 18; padding 1px 6px; radius 5px; background rgba(255, 255, 255, 0.06) `fill.tsp-white-main`; text Libre Baskerville 12/16 700, #e6e6e6 `text.primary` |
-| light | size 34.45 x 18; padding 1px 6px; radius 5px; background rgba(55, 53, 47, 0.06) `fill.tsp-white-main`; text Libre Baskerville 12/16 700, #1a1a1a `text.primary` |
+| default | size 34.45 x 18; padding 1px `space.1_5` (6px); radius 5px; background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)); text Libre Baskerville 12/16 700, `text.primary` (#e6e6e6) |
+| light | size 34.45 x 18; padding 1px `space.1_5` (6px); radius 5px; background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)); text Libre Baskerville 12/16 700, `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`.
 
@@ -862,8 +863,8 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 40.34 x 18; padding 0px 6px; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 8px 10px 10px 0px; background transparent; text System 12/16 500, #8c8c8c `text.tertiary` |
-| light | size 40.34 x 18; padding 0px 6px; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 8px 10px 10px 0px; background transparent; text System 12/16 500, #737373 `text.tertiary` |
+| default | size 40.34 x 18; padding 0px `space.1_5` (6px); border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.small` (8px) `radius.row` (10px) `radius.row` (10px) 0px; background transparent; text System 12/16 500, `text.tertiary` (#8c8c8c) |
+| light | size 40.34 x 18; padding 0px `space.1_5` (6px); border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.small` (8px) `radius.row` (10px) `radius.row` (10px) 0px; background transparent; text System 12/16 500, `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--border-dark`, `--text-tertiary`.
 
@@ -875,8 +876,8 @@ Tokens named in its classes: `--border-dark`, `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 198.88 x 269; padding 4px; radius 12px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 198.88 x 269; padding 4px; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 198.88 x 269; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 198.88 x 269; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -888,10 +889,10 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill
 
 | State | Values |
 |---|---|
-| default | size 190.88 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 190.88 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 190.88 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 190.88 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -903,8 +904,8 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-de
 
 | State | Values |
 |---|---|
-| default | size 166.88 x 1; background rgba(255, 255, 255, 0.06) `border.main` |
-| light | size 166.88 x 1; background rgba(0, 0, 0, 0.06) `border.main` |
+| default | size 166.88 x 1; background `border.main` (rgba(255, 255, 255, 0.06)) |
+| light | size 166.88 x 1; background `border.main` (rgba(0, 0, 0, 0.06)) |
 
 Tokens named in its classes: `--border-main`.
 
@@ -914,8 +915,8 @@ Tokens named in its classes: `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 680 x 440; radius 20px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 18 x 18, #e6e6e6 `≈ text.primary`; placeholder #8c8c8c `≈ text.tertiary` |
-| light | size 680 x 440; radius 20px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 18 x 18, #1a1a1a `≈ text.primary`; placeholder #737373 `≈ text.tertiary` |
+| default | size 680 x 440; radius 20px; background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6); placeholder `≈ text.tertiary` (#8c8c8c) |
+| light | size 680 x 440; radius 20px; background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a); placeholder `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-dark`, `--border-main`, `--dlg-enter-scale`, `--dlg-enter-y`, `--fill-tsp-white-light`, `--icon-tertiary`, `--text-primary`, `--text-tertiary`.
 
@@ -927,10 +928,10 @@ Tokens named in its classes: `--background-menu-white`, `--border-dark`, `--bord
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 680 x 67; padding 20px 12px 18px 20px; border B: 1px solid rgba(255, 255, 255, 0.06) `border.main`; background transparent; icon 18 x 18, #e6e6e6 `≈ text.primary`; placeholder #8c8c8c `≈ text.tertiary` |
-| light (same: light-focus-visible) | size 680 x 67; padding 20px 12px 18px 20px; border B: 1px solid rgba(0, 0, 0, 0.06) `border.main`; background transparent; icon 18 x 18, #1a1a1a `≈ text.primary`; placeholder #737373 `≈ text.tertiary` |
+| default (same: focus-visible) | size 680 x 67; padding `space.5` (20px) `space.3` (12px) 18px `space.5` (20px); border B: `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); background transparent; icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6); placeholder `≈ text.tertiary` (#8c8c8c) |
+| light (same: light-focus-visible) | size 680 x 67; padding `space.5` (20px) `space.3` (12px) 18px `space.5` (20px); border B: `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); background transparent; icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a); placeholder `≈ text.tertiary` (#737373) |
 
-Child layers: h3 680x67 border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`
+Child layers: h3 680x67 border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06))
 
 Tokens named in its classes: `--border-dark`, `--border-main`, `--fill-tsp-white-light`, `--icon-tertiary`, `--text-primary`, `--text-tertiary`.
 
@@ -940,12 +941,12 @@ Tokens named in its classes: `--border-dark`, `--border-main`, `--fill-tsp-white
 
 | State | Values |
 |---|---|
-| default | size 664 x 52; padding 8px 12px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| selected | size 664 x 36; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| light | size 664 x 52; padding 8px 12px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
-| light-selected | size 664 x 36; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; icon 18 x 18, #1a1a1a `≈ text.primary` |
+| default | size 664 x 52; padding `space.2` (8px) `space.3` (12px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| selected | size 664 x `size.row` (36px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| light | size 664 x 52; padding `space.2` (8px) `space.3` (12px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
+| light-selected | size 664 x `size.row` (36px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`.
 
@@ -957,8 +958,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--text
 
 | State | Values |
 |---|---|
-| default | size 680 x 39.5; padding 12px 20px 8px 20px; background transparent; text System 13/19.5 500, #8c8c8c `text.tertiary` |
-| light | size 680 x 39.5; padding 12px 20px 8px 20px; background transparent; text System 13/19.5 500, #737373 `text.tertiary` |
+| default | size 680 x 39.5; padding `space.3` (12px) `space.5` (20px) `space.2` (8px) `space.5` (20px); background transparent; text System 13/19.5 500, `text.tertiary` (#8c8c8c) |
+| light | size 680 x 39.5; padding `space.3` (12px) `space.5` (20px) `space.2` (8px) `space.5` (20px); background transparent; text System 13/19.5 500, `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--text-tertiary`.
 
@@ -970,8 +971,8 @@ Tokens named in its classes: `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 400 x 600; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background #242424 `background.menu-white`; shadow rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 4px 32px 0px; backdrop blur(40px); text System 18/24 500, #e6e6e6 `≈ text.primary`; icon 60 x 60, #e6e6e6 `≈ text.primary` |
-| light | size 400 x 600; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 4px 32px 0px; backdrop blur(40px); text System 18/24 500, #1a1a1a `≈ text.primary`; icon 60 x 60, #1a1a1a `≈ text.primary` |
+| default | size 400 x 600; border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.panel` (rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 4px 32px 0px); backdrop blur(40px); text `typography.title-lg` (System 18/24 500), `≈ text.primary` (#e6e6e6); icon 60 x 60, `≈ text.primary` (#e6e6e6) |
+| light | size 400 x 600; border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.panel` (rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 4px 32px 0px); backdrop blur(40px); text `typography.title-lg` (System 18/24 500), `≈ text.primary` (#1a1a1a); icon 60 x 60, `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-mask-black`, `--background-menu-white`, `--border-dark`, `--border-main`, `--fill-black`, `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--shadow-S`, `--shadow-XS`, `--simplebar-scrollbar-width`, `--text-disable`, `--text-primary`, `--text-tertiary`.
 
@@ -983,10 +984,10 @@ Tokens named in its classes: `--background-mask-black`, `--background-menu-white
 
 | State | Values |
 |---|---|
-| default | size 366 x 364.88; padding 16px 0px; border B: 1px solid rgba(255, 255, 255, 0.06) `border.main`; background transparent; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 60 x 60, #e6e6e6 `≈ text.primary` |
-| light | size 366 x 364.88; padding 16px 0px; border B: 1px solid rgba(0, 0, 0, 0.06) `border.main`; background transparent; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 60 x 60, #1a1a1a `≈ text.primary` |
+| default | size 366 x 364.88; padding `space.4` (16px) 0px; border B: `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon 60 x 60, `≈ text.primary` (#e6e6e6) |
+| light | size 366 x 364.88; padding `space.4` (16px) 0px; border B: `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon 60 x 60, `≈ text.primary` (#1a1a1a) |
 
-Child layers: div 366x364.9 border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`; svg 60x60 background rgba(40, 40, 41, 0.45) `≈ fill.black` radius 9999px
+Child layers: div 366x364.9 border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)); svg 60x60 background `≈ fill.black` (rgba(40, 40, 41, 0.45)) radius 9999px
 
 Tokens named in its classes: `--background-mask-black`, `--border-main`, `--fill-black`, `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`.
 
@@ -998,8 +999,8 @@ Tokens named in its classes: `--background-mask-black`, `--border-main`, `--fill
 
 | State | Values |
 |---|---|
-| default | size 87.67 x 24; padding 4px 8px; radius 8px; background rgba(0, 0, 0, 0.9) `background.menu-tooltips`; text System 12/16 400, #ffffff `text.white` |
-| light | size 87.67 x 24; padding 4px 8px; radius 8px; background rgba(0, 0, 0, 0.9) `background.menu-tooltips`; text System 12/16 400, #ffffff `text.white` |
+| default | size 87.67 x 24; padding `space.1` (4px) `space.2` (8px); radius `radius.small` (8px); background `background.menu-tooltips` (rgba(0, 0, 0, 0.9)); text `typography.role.caption` (System 12/16 400), `text.white` (#ffffff) |
+| light | size 87.67 x 24; padding `space.1` (4px) `space.2` (8px); radius `radius.small` (8px); background `background.menu-tooltips` (rgba(0, 0, 0, 0.9)); text `typography.role.caption` (System 12/16 400), `text.white` (#ffffff) |
 
 Tokens named in its classes: `--background-menu-tooltips`, `--text-white`.
 
@@ -1011,8 +1012,8 @@ Tokens named in its classes: `--background-menu-tooltips`, `--text-white`.
 
 | State | Values |
 |---|---|
-| default | size 192 x 111.5; padding 4px; radius 12px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; text System 13/19.5 400, #8c8c8c `≈ text.tertiary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 192 x 111.5; padding 4px; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; text System 13/19.5 400, #737373 `≈ text.tertiary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 192 x 111.5; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); text `typography.role.shortcut` (System 13/19.5 400), `≈ text.tertiary` (#8c8c8c); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 192 x 111.5; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); text `typography.role.shortcut` (System 13/19.5 400), `≈ text.tertiary` (#737373); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-menu-white`, `--fill-tsp-white-main`, `--text-primary`, `--text-tertiary`, `--ui-density-menu-item-padding-y`.
 
@@ -1024,10 +1025,10 @@ Tokens named in its classes: `--background-menu-white`, `--fill-tsp-white-main`,
 
 | State | Values |
 |---|---|
-| default (same: second) | size 184 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light (same: light-second) | size 184 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default (same: second) | size 184 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light (same: light-second) | size 184 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -1039,8 +1040,8 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-de
 
 | State | Values |
 |---|---|
-| default | size 280 x 229; padding 4px; radius 12px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 280 x 229; padding 4px; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 280 x 229; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 280 x 229; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -1052,10 +1053,10 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill
 
 | State | Values |
 |---|---|
-| default | size 272 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 272 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 272 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 272 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -1067,8 +1068,8 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-de
 
 | State | Values |
 |---|---|
-| default | size 284 x 418; radius 12px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; text System 12/18 600, #e6e6e6 `≈ text.primary`; icon 16 x 16, #8c8c8c `≈ text.tertiary` |
-| light | size 284 x 418; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; text System 12/18 600, #1a1a1a `≈ text.primary`; icon 16 x 16, #737373 `≈ text.tertiary` |
+| default | size 284 x 418; radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); text `typography.role.menu-header` (System 12/18 600), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#8c8c8c) |
+| light | size 284 x 418; radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); text `typography.role.menu-header` (System 12/18 600), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--Button-black`, `--background-menu-white`, `--border-main`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-onblack`, `--text-primary`, `--text-tertiary`, `--ui-density-small-row-height`.
 
@@ -1080,12 +1081,12 @@ Tokens named in its classes: `--Button-black`, `--background-menu-white`, `--bor
 
 | State | Values |
 |---|---|
-| default | size 276 x 52; padding 8px; radius 8px; background transparent; text System 12/18 600, #e6e6e6 `≈ text.primary`; icon 16 x 16, #8c8c8c `≈ text.tertiary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 276 x 52; padding 8px; radius 8px; background transparent; text System 12/18 600, #1a1a1a `≈ text.primary`; icon 16 x 16, #737373 `≈ text.tertiary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 276 x 52; padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.menu-header` (System 12/18 600), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#8c8c8c) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 276 x 52; padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.menu-header` (System 12/18 600), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#737373) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
-Child layers: div 28x28 border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 9999px; div 26x26 background rgba(255, 255, 255, 0.08) `≈ fill.tsp-white-dark`
+Child layers: div 28x28 border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 9999px; div 26x26 background `≈ fill.tsp-white-dark` (rgba(255, 255, 255, 0.08))
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`.
 
@@ -1097,8 +1098,8 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default | size 276 x 80; radius 8px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text Libre Baskerville 14/20 700, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 276 x 80; radius 8px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text Libre Baskerville 14/20 700, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 276 x 80; radius `radius.small` (8px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text Libre Baskerville 14/20 700, `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 276 x 80; radius `radius.small` (8px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text Libre Baskerville 14/20 700, `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--Button-black`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-onblack`, `--text-primary`, `--text-tertiary`, `--ui-density-small-row-height`.
 
@@ -1110,10 +1111,10 @@ Tokens named in its classes: `--Button-black`, `--fill-tsp-white-light`, `--fill
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 68.95 x 28; padding 0px 8px; radius 8px; background rgba(255, 255, 255, 0.95) `button.black`; text System 13/18 500, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | opacity 0.9 |
-| light (same: light-focus-visible) | size 68.95 x 28; padding 0px 8px; radius 8px; background #1a1a19 `button.black`; text System 13/18 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | opacity 0.9 |
+| default (same: focus-visible) | size 68.95 x `size.control-small` (28px); padding 0px `space.2` (8px); radius `radius.small` (8px); background `button.black` (rgba(255, 255, 255, 0.95)); text System 13/18 500 tracking -0.08px, `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 68.95 x `size.control-small` (28px); padding 0px `space.2` (8px); radius `radius.small` (8px); background `button.black` (#1a1a19); text System 13/18 500 tracking -0.08px, `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | opacity `opacity.hover` (0.9) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`, `--ui-density-small-row-height`.
 
@@ -1125,10 +1126,10 @@ Tokens named in its classes: `--Button-black`, `--text-onblack`, `--ui-density-s
 
 | State | Values |
 |---|---|
-| default (same: link, link-focus-visible) | size 276 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light (same: light-link, light-link-focus-visible) | size 276 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default (same: link, link-focus-visible) | size 276 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light (same: light-link, light-link-focus-visible) | size 276 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`.
 
@@ -1140,8 +1141,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--text
 
 | State | Values |
 |---|---|
-| default | size 132.33 x 116; padding 4px; radius 12px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 132.33 x 116; padding 4px; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 132.33 x 116; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 132.33 x 116; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-menu-white`, `--fill-tsp-white-main`, `--function-error`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -1153,10 +1154,10 @@ Tokens named in its classes: `--background-menu-white`, `--fill-tsp-white-main`,
 
 | State | Values |
 |---|---|
-| default | size 124.33 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #eb4d4d `≈ function.error`; icon 16 x 16, #eb4d4d `≈ function.error` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 124.33 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #fb494f `≈ function.error`; icon 16 x 16, #fb494f `≈ function.error` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 124.33 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ function.error` (#eb4d4d); icon `size.icon-small` (16 x 16), `≈ function.error` (#eb4d4d) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 124.33 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ function.error` (#fb494f); icon `size.icon-small` (16 x 16), `≈ function.error` (#fb494f) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--function-error`, `--ui-density-menu-item-padding-y`.
 
@@ -1168,8 +1169,8 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--function-error`, `--ui-
 
 | State | Values |
 |---|---|
-| default | size 190 x 116; padding 4px; radius 12px; background #1a1a1a `background.menu-gray`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 190 x 116; padding 4px; radius 12px; background #f8f8f7 `background.menu-gray`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 190 x 116; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-gray` (#1a1a1a); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 190 x 116; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-gray` (#f8f8f7); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-menu-gray`, `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -1181,10 +1182,10 @@ Tokens named in its classes: `--background-menu-gray`, `--fill-tsp-white-main`, 
 
 | State | Values |
 |---|---|
-| default | size 182 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 182 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 182 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 182 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -1196,8 +1197,8 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-de
 
 | State | Values |
 |---|---|
-| default | size 200 x 424; padding 4px; radius 12px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 200 x 424; padding 4px; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 200 x 424; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 200 x 424; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -1209,10 +1210,10 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill
 
 | State | Values |
 |---|---|
-| default | size 192 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #eb4d4d `≈ function.error`; icon 16 x 16, #eb4d4d `≈ function.error` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 192 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #fb494f `≈ function.error`; icon 16 x 16, #fb494f `≈ function.error` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 192 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ function.error` (#eb4d4d); icon `size.icon-small` (16 x 16), `≈ function.error` (#eb4d4d) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 192 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ function.error` (#fb494f); icon `size.icon-small` (16 x 16), `≈ function.error` (#fb494f) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--function-error`, `--ui-density-menu-item-padding-y`.
 
@@ -1222,8 +1223,8 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--function-error`, `--ui-
 
 | State | Values |
 |---|---|
-| default | size 600 x 680; radius 16px; background #1a1a1a `background.gray-main`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 18/28 600, #e6e6e6 `≈ text.primary`; icon 18 x 18, #b3b3b3 `≈ text.secondary` |
-| light | size 600 x 680; radius 16px; background #f8f8f7 `background.gray-main`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 18/28 600, #1a1a1a `≈ text.primary`; icon 18 x 18, #4d4d4d `≈ text.secondary` |
+| default | size 600 x 680; radius `radius.dialog` (16px); background `background.gray-main` (#1a1a1a); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text System 18/28 600, `≈ text.primary` (#e6e6e6); icon `size.icon` (18 x 18), `icon.secondary` (#b3b3b3) |
+| light | size 600 x 680; radius `radius.dialog` (16px); background `background.gray-main` (#f8f8f7); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text System 18/28 600, `≈ text.primary` (#1a1a1a); icon `size.icon` (18 x 18), `icon.secondary` (#4d4d4d) |
 
 Tokens named in its classes: `--background-gray-main`, `--dlg-enter-scale`, `--dlg-enter-y`, `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--icon-secondary`, `--icon-tertiary`, `--text-primary`, `--text-tertiary`, `--ui-density-small-row-height`.
 
@@ -1233,10 +1234,10 @@ Tokens named in its classes: `--background-gray-main`, `--dlg-enter-scale`, `--d
 
 | State | Values |
 |---|---|
-| default | size 576 x 56; padding 10px 12px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 32 x 32, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 576 x 56; padding 10px 12px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 32 x 32, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 576 x 56; padding `space.2_5` (10px) `space.3` (12px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon 32 x 32, `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 576 x 56; padding `space.2_5` (10px) `space.3` (12px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon 32 x 32, `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-tertiary`, `--text-primary`, `--text-tertiary`.
 
@@ -1246,8 +1247,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-tertiary`, `--tex
 
 | State | Values |
 |---|---|
-| default | size 1440 x 900; background rgba(0, 0, 0, 0.6) `background.dialog-mask`; backdrop blur(4px) |
-| light | size 1440 x 900; background rgba(0, 0, 0, 0.3) `background.dialog-mask`; backdrop blur(4px) |
+| default | size 1440 x 900; background `background.dialog-mask` (rgba(0, 0, 0, 0.6)); backdrop blur(4px) |
+| light | size 1440 x 900; background `background.dialog-mask` (rgba(0, 0, 0, 0.3)); backdrop blur(4px) |
 
 Tokens named in its classes: `--background-dialog-mask`.
 
@@ -1259,10 +1260,10 @@ Tokens named in its classes: `--background-dialog-mask`.
 
 | State | Values |
 |---|---|
-| default | size 32 x 32; radius 6px; background transparent; icon 18 x 18, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 32 x 32; radius 6px; background transparent; icon 18 x 18, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 32 x `size.row-small` (32px); radius `radius.md` (6px); background transparent; icon `size.icon` (18 x 18), `icon.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 32 x `size.row-small` (32px); radius `radius.md` (6px); background transparent; icon `size.icon` (18 x 18), `icon.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`, `--ui-density-small-row-height`.
 
@@ -1278,8 +1279,8 @@ The file library: the title bar with search, view options and the grid/list cont
 
 | State | Values |
 |---|---|
-| default | size 57.63 x 24; background transparent; text System 18/24 500, #e6e6e6 `text.primary` |
-| light | size 57.63 x 24; background transparent; text System 18/24 500, #1a1a1a `text.primary` |
+| default | size 57.63 x 24; background transparent; text `typography.title-lg` (System 18/24 500), `text.primary` (#e6e6e6) |
+| light | size 57.63 x 24; background transparent; text `typography.title-lg` (System 18/24 500), `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -1291,8 +1292,8 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible) | size 240 x 32; padding 4px 6px 4px 12px; border 1px solid rgba(255, 255, 255, 0.12) `button.border-secondary`; radius 8px; background transparent; icon 16 x 16, #e6e6e6 `≈ text.primary`; placeholder #595959 `≈ text.disable` |
-| light (same: light-hover, light-focus-visible) | size 240 x 32; padding 4px 6px 4px 12px; border 1px solid rgba(0, 0, 0, 0.12) `button.border-secondary`; radius 8px; background transparent; icon 16 x 16, #1a1a1a `≈ text.primary`; placeholder #a6a6a6 `≈ text.disable` |
+| default (same: hover, focus-visible) | size 240 x `size.row-small` (32px); padding `space.1` (4px) `space.1_5` (6px) `space.1` (4px) `space.3` (12px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(255, 255, 255, 0.12)); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6); placeholder `≈ text.disable` (#595959) |
+| light (same: light-hover, light-focus-visible) | size 240 x `size.row-small` (32px); padding `space.1` (4px) `space.1_5` (6px) `space.1` (4px) `space.3` (12px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(0, 0, 0, 0.12)); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a); placeholder `≈ text.disable` (#a6a6a6) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--text-disable`, `--text-primary`, `--ui-density-input-gap`, `--ui-density-small-radius`.
 
@@ -1304,10 +1305,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--text-disable`, `--t
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 32 x 32; border 1px solid rgba(255, 255, 255, 0.12) `button.border-secondary`; radius 8px; background transparent; icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light (same: light-focus-visible) | size 32 x 32; border 1px solid rgba(0, 0, 0, 0.12) `button.border-secondary`; radius 8px; background transparent; icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default (same: focus-visible) | size 32 x `size.row-small` (32px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(255, 255, 255, 0.12)); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light (same: light-focus-visible) | size 32 x `size.row-small` (32px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(0, 0, 0, 0.12)); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-main`, `--icon-secondary`.
 
@@ -1319,8 +1320,8 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-main
 
 | State | Values |
 |---|---|
-| default | size 68 x 32; padding 1px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 8px; background rgba(0, 0, 0, 0.2) `fill.tsp-gray-main`; icon 16 x 16, #8c8c8c `≈ text.tertiary` |
-| light | size 68 x 32; padding 1px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 8px; background rgba(55, 53, 47, 0.04) `fill.tsp-gray-main`; icon 16 x 16, #737373 `≈ text.tertiary` |
+| default | size 68 x `size.row-small` (32px); padding 1px; border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.small` (8px); background `fill.tsp-gray-main` (rgba(0, 0, 0, 0.2)); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#8c8c8c) |
+| light | size 68 x `size.row-small` (32px); padding 1px; border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.small` (8px); background `fill.tsp-gray-main` (rgba(55, 53, 47, 0.04)); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-gray-main`, `--fill-white`, `--shadow-S`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -1332,12 +1333,12 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-gray-main`, `--fill-wh
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 32 x 28; padding 0px 8px; background transparent; transition color and 5 more 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #8c8c8c `≈ text.tertiary` |
-| hover | icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| active | icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light (same: light-focus-visible) | size 32 x 28; padding 0px 8px; background transparent; transition color and 5 more 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #737373 `≈ text.tertiary` |
-| light-hover | icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-active | icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default (same: focus-visible) | size 32 x `size.control-small` (28px); padding 0px `space.2` (8px); background transparent; transition color and 5 more `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#8c8c8c) |
+| hover | icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| active | icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light (same: light-focus-visible) | size 32 x `size.control-small` (28px); padding 0px `space.2` (8px); background transparent; transition color and 5 more `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#737373) |
+| light-hover | icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
+| light-active | icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -1349,8 +1350,8 @@ Tokens named in its classes: `--text-primary`, `--text-secondary`, `--text-terti
 
 | State | Values |
 |---|---|
-| default | size 32 x 28; radius 6px; background #242424 `fill.white`; shadow rgba(0, 0, 0, 0.16) 0px 0.5px 3px 0px |
-| light | size 32 x 28; radius 6px; background #ffffff `fill.white`; shadow rgba(0, 0, 0, 0.04) 0px 0.5px 3px 0px |
+| default | size 32 x `size.control-small` (28px); radius `radius.md` (6px); background `fill.white` (#242424); shadow rgba(0, 0, 0, 0.16) 0px 0.5px 3px 0px |
+| light | size 32 x `size.control-small` (28px); radius `radius.md` (6px); background `fill.white` (#ffffff); shadow rgba(0, 0, 0, 0.04) 0px 0.5px 3px 0px |
 
 Tokens named in its classes: `--fill-white`, `--shadow-S`.
 
@@ -1362,12 +1363,12 @@ Tokens named in its classes: `--fill-white`, `--shadow-S`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 92.17 x 32; padding 0px 10px; radius 8px; background transparent; text System 14/20 400, #8c8c8c `≈ text.tertiary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| selected, selected-hover | size 48 x 32; background rgba(255, 255, 255, 0.08) `fill.tsp-white-dark`; text System 14/20 500, #e6e6e6 `≈ text.primary` |
-| light (same: light-focus-visible) | size 92.17 x 32; padding 0px 10px; radius 8px; background transparent; text System 14/20 400, #737373 `≈ text.tertiary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
-| light-selected, light-selected-hover | size 48 x 32; background rgba(55, 53, 47, 0.08) `fill.tsp-white-dark`; text System 14/20 500, #1a1a1a `≈ text.primary` |
+| default (same: focus-visible) | size 92.17 x `size.row-small` (32px); padding 0px `space.2_5` (10px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.tertiary` (#8c8c8c); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| selected, selected-hover | size 48 x `size.row-small` (32px); background `fill.tsp-white-dark` (rgba(255, 255, 255, 0.08)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6) |
+| light (same: light-focus-visible) | size 92.17 x `size.row-small` (32px); padding 0px `space.2_5` (10px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.tertiary` (#737373); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
+| light-selected, light-selected-hover | size 48 x `size.row-small` (32px); background `fill.tsp-white-dark` (rgba(55, 53, 47, 0.08)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--text-tertiary`.
 
@@ -1379,8 +1380,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 59.67 x 20; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary` |
-| light | size 59.67 x 20; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary` |
+| default | size 59.67 x 20; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6) |
+| light | size 59.67 x 20; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`, `--text-tertiary`.
 
@@ -1390,12 +1391,12 @@ Tokens named in its classes: `--text-primary`, `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 1024 x 67; padding 0px 12px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 24 x 24, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 1024 x 67; padding 0px 12px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 24 x 24, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 1024 x 67; padding 0px `space.3` (12px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-large` (24 x 24), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 1024 x 67; padding 0px `space.3` (12px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-large` (24 x 24), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
-Child layers: div 1000x67 border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`
+Child layers: div 1000x67 border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06))
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`.
 
@@ -1407,8 +1408,8 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default | size 24 x 24; background transparent; icon 24 x 24, #e6e6e6 `≈ text.primary` |
-| light | size 24 x 24; background transparent; icon 24 x 24, #1a1a1a `≈ text.primary` |
+| default | size 24 x 24; background transparent; icon `size.icon-large` (24 x 24), `≈ text.primary` (#e6e6e6) |
+| light | size 24 x 24; background transparent; icon `size.icon-large` (24 x 24), `≈ text.primary` (#1a1a1a) |
 
 #### File row title
 
@@ -1416,8 +1417,8 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default | size 493.38 x 17; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary` |
-| light | size 493.38 x 17; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary` |
+| default | size 493.38 x 17; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6) |
+| light | size 493.38 x 17; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a) |
 
 #### File row source task
 
@@ -1425,8 +1426,8 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default | size 331.67 x 18; background transparent; text System 13/18 400, #8c8c8c `text.tertiary` |
-| light | size 331.67 x 18; background transparent; text System 13/18 400, #737373 `text.tertiary` |
+| default | size 331.67 x 18; background transparent; text `typography.role.meta` (System 13/18 400), `text.tertiary` (#8c8c8c) |
+| light | size 331.67 x 18; background transparent; text `typography.role.meta` (System 13/18 400), `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--text-tertiary`.
 
@@ -1438,8 +1439,8 @@ Tokens named in its classes: `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 55.11 x 16; background transparent; text System 12/16 400, #8c8c8c `text.tertiary` |
-| light | size 55.11 x 16; background transparent; text System 12/16 400, #737373 `text.tertiary` |
+| default | size 55.11 x 16; background transparent; text `typography.role.caption` (System 12/16 400), `text.tertiary` (#8c8c8c) |
+| light | size 55.11 x 16; background transparent; text `typography.role.caption` (System 12/16 400), `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--text-tertiary`.
 
@@ -1451,12 +1452,12 @@ Tokens named in its classes: `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 32 x 32; padding 8px; radius 8px; background transparent; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| open | background rgba(255, 255, 255, 0.04) `≈ fill.tsp-white-light` |
-| light (same: light-focus-visible) | size 32 x 32; padding 8px; radius 8px; background transparent; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
-| light-open | background rgba(55, 53, 47, 0.04) `≈ background.tsp-card-gray` |
+| default (same: focus-visible) | size 32 x `size.row-small` (32px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| open | background `≈ fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light (same: light-focus-visible) | size 32 x `size.row-small` (32px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
+| light-open | background `≈ background.tsp-card-gray` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`.
 
@@ -1466,10 +1467,10 @@ Tokens named in its classes: `--fill-tsp-white-light`.
 
 | State | Values |
 |---|---|
-| default | size 322.66 x 258.41; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background #242424 `background.menu-white`; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 24 x 24, #e6e6e6 `≈ text.primary` |
-| hover | shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px |
-| light | size 322.66 x 258.41; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background #ffffff `background.menu-white`; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 24 x 24, #1a1a1a `≈ text.primary` |
-| light-hover | shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px |
+| default | size 322.66 x 258.41; border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.menu-white` (#242424); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-large` (24 x 24), `≈ text.primary` (#e6e6e6) |
+| hover | shadow `elevation.layer` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px) |
+| light | size 322.66 x 258.41; border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-large` (24 x 24), `≈ text.primary` (#1a1a1a) |
+| light-hover | shadow `elevation.layer` (rgba(0, 0, 0, 0.06) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-dark`, `--fill-tsp-gray-dark`, `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`.
 
@@ -1490,8 +1491,8 @@ Tokens named in its classes: `--fill-tsp-gray-dark`.
 
 | State | Values |
 |---|---|
-| default | size 74.69 x 20; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary` |
-| light | size 74.69 x 20; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary` |
+| default | size 74.69 x 20; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6) |
+| light | size 74.69 x 20; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a) |
 
 #### Group-by-task heading
 
@@ -1499,8 +1500,8 @@ Tokens named in its classes: `--fill-tsp-gray-dark`.
 
 | State | Values |
 |---|---|
-| default | size 1000 x 34; padding 12px 0px 0px 0px; background transparent; text System 16/22 500, #e6e6e6 `≈ text.primary` |
-| light | size 1000 x 34; padding 12px 0px 0px 0px; background transparent; text System 16/22 500, #1a1a1a `≈ text.primary` |
+| default | size 1000 x 34; padding `space.3` (12px) 0px 0px 0px; background transparent; text `typography.title-base` (System 16/22 500), `≈ text.primary` (#e6e6e6) |
+| light | size 1000 x 34; padding `space.3` (12px) 0px 0px 0px; background transparent; text `typography.title-base` (System 16/22 500), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`, `--text-secondary`.
 
@@ -1510,8 +1511,8 @@ Tokens named in its classes: `--text-primary`, `--text-secondary`.
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible) | size 96.56 x 22; background transparent; text System 16/22 500, #e6e6e6 `text.primary` |
-| light (same: light-hover, light-focus-visible) | size 96.56 x 22; background transparent; text System 16/22 500, #1a1a1a `text.primary` |
+| default (same: hover, focus-visible) | size 96.56 x 22; background transparent; text `typography.title-base` (System 16/22 500), `text.primary` (#e6e6e6) |
+| light (same: light-hover, light-focus-visible) | size 96.56 x 22; background transparent; text `typography.title-base` (System 16/22 500), `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -1525,8 +1526,8 @@ The full-screen previewer a Library row opens: a header with the title, Last mod
 
 | State | Values |
 |---|---|
-| default | size 1200 x 820; background #1a1a1a `background.gray-main`; shadow rgba(0, 0, 0, 0.02) 0px 0px 8px 0px; text System 16/22 500, #e6e6e6 `≈ text.primary`; icon 14 x 14, #8c8c8c `≈ text.tertiary` |
-| light | size 1200 x 820; background #f8f8f7 `background.gray-main`; shadow rgba(0, 0, 0, 0.02) 0px 0px 8px 0px; text System 16/22 500, #1a1a1a `≈ text.primary`; icon 14 x 14, #737373 `≈ text.tertiary` |
+| default | size 1200 x 820; background `background.gray-main` (#1a1a1a); shadow rgba(0, 0, 0, 0.02) 0px 0px 8px 0px; text System 16/22 500 tracking -0.31px, `≈ text.primary` (#e6e6e6); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#8c8c8c) |
+| light | size 1200 x 820; background `background.gray-main` (#f8f8f7); shadow rgba(0, 0, 0, 0.02) 0px 0px 8px 0px; text System 16/22 500 tracking -0.31px, `≈ text.primary` (#1a1a1a); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--background-gray-main`, `--border-dark`, `--border-main`, `--fill-tsp-white-main`, `--icon-secondary`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -1536,8 +1537,8 @@ Tokens named in its classes: `--background-gray-main`, `--border-dark`, `--borde
 
 | State | Values |
 |---|---|
-| default | size 1200 x 48; padding 6px 12px 6px 20px; border B: 1px solid rgba(255, 255, 255, 0.06) `border.main`; background #1a1a1a `background.gray-main`; text System 16/22 500, #e6e6e6 `≈ text.primary`; icon 14 x 14, #8c8c8c `≈ text.tertiary` |
-| light | size 1200 x 48; padding 6px 12px 6px 20px; border B: 1px solid rgba(0, 0, 0, 0.06) `border.main`; background #f8f8f7 `background.gray-main`; text System 16/22 500, #1a1a1a `≈ text.primary`; icon 14 x 14, #737373 `≈ text.tertiary` |
+| default | size 1200 x `size.header` (48px); padding `space.1_5` (6px) `space.3` (12px) `space.1_5` (6px) `space.5` (20px); border B: `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); background `background.gray-main` (#1a1a1a); text System 16/22 500 tracking -0.31px, `≈ text.primary` (#e6e6e6); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#8c8c8c) |
+| light | size 1200 x `size.header` (48px); padding `space.1_5` (6px) `space.3` (12px) `space.1_5` (6px) `space.5` (20px); border B: `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); background `background.gray-main` (#f8f8f7); text System 16/22 500 tracking -0.31px, `≈ text.primary` (#1a1a1a); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--background-gray-main`, `--border-dark`, `--border-main`, `--fill-tsp-white-main`, `--icon-secondary`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -1547,8 +1548,8 @@ Tokens named in its classes: `--background-gray-main`, `--border-dark`, `--borde
 
 | State | Values |
 |---|---|
-| default | size 542.88 x 22; background transparent; text System 16/22 500, #e6e6e6 `text.primary` |
-| light | size 542.88 x 22; background transparent; text System 16/22 500, #1a1a1a `text.primary` |
+| default | size 542.88 x 22; background transparent; text System 16/22 500 tracking -0.31px, `text.primary` (#e6e6e6) |
+| light | size 542.88 x 22; background transparent; text System 16/22 500 tracking -0.31px, `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -1560,8 +1561,8 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 118.03 x 16; background transparent; text System 12/16 400, #8c8c8c `≈ text.tertiary` |
-| light | size 118.03 x 16; background transparent; text System 12/16 400, #737373 `≈ text.tertiary` |
+| default | size 118.03 x 16; background transparent; text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#8c8c8c) |
+| light | size 118.03 x 16; background transparent; text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#737373) |
 
 #### Previewer toolbar icon button
 
@@ -1571,10 +1572,10 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 28 x 28; radius 8px; background transparent; icon 18 x 18, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 28 x 28; radius 8px; background transparent; icon 18 x 18, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 28 x `size.control-small` (28px); radius `radius.small` (8px); background transparent; icon `size.icon` (18 x 18), `icon.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 28 x `size.control-small` (28px); radius `radius.small` (8px); background transparent; icon `size.icon` (18 x 18), `icon.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--icon-secondary`.
 
@@ -1584,10 +1585,10 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--icon-secondary`.
 
 | State | Values |
 |---|---|
-| default | size 712 x 3058.89; background transparent; text Libre Baskerville 30/39 600, #e6e6e6 `≈ text.primary`; icon 16 x 16, #8c8c8c `≈ text.tertiary` |
-| light | size 712 x 3058.89; background transparent; text Libre Baskerville 30/39 600, #1a1a1a `≈ text.primary`; icon 16 x 16, #737373 `≈ text.tertiary` |
+| default | size 712 x 3058.89; background transparent; text `typography.role.display` (Libre Baskerville 30/39 600), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#8c8c8c) |
+| light | size 712 x 3058.89; background transparent; text `typography.role.display` (Libre Baskerville 30/39 600), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#737373) |
 
-Child layers: div 712x1 background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`; div 712x1 background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`; div 712x1 background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`
+Child layers: div 712x1 background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)); div 712x1 background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)); div 712x1 background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06))
 
 Tokens named in its classes: `--border-main`.
 
@@ -1597,8 +1598,8 @@ Tokens named in its classes: `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 712 x 84; padding 3px 0px; background transparent; text Libre Baskerville 30/39 600, #e6e6e6 `≈ text.primary` |
-| light | size 712 x 84; padding 3px 0px; background transparent; text Libre Baskerville 30/39 600, #1a1a1a `≈ text.primary` |
+| default | size 712 x 84; padding 3px 0px; background transparent; text `typography.role.display` (Libre Baskerville 30/39 600), `≈ text.primary` (#e6e6e6) |
+| light | size 712 x 84; padding 3px 0px; background transparent; text `typography.role.display` (Libre Baskerville 30/39 600), `≈ text.primary` (#1a1a1a) |
 
 #### Document h2
 
@@ -1606,8 +1607,8 @@ Tokens named in its classes: `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 712 x 37.19; padding 3px 0px; background transparent; text System 24/31.2 600, #e6e6e6 `≈ text.primary` |
-| light | size 712 x 37.19; padding 3px 0px; background transparent; text System 24/31.2 600, #1a1a1a `≈ text.primary` |
+| default | size 712 x 37.19; padding 3px 0px; background transparent; text System 24/31.2 600, `≈ text.primary` (#e6e6e6) |
+| light | size 712 x 37.19; padding 3px 0px; background transparent; text System 24/31.2 600, `≈ text.primary` (#1a1a1a) |
 
 #### Document h3
 
@@ -1615,8 +1616,8 @@ Tokens named in its classes: `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 712 x 32; padding 3px 0px; background transparent; text System 20/26 600, #e6e6e6 `≈ text.primary` |
-| light | size 712 x 32; padding 3px 0px; background transparent; text System 20/26 600, #1a1a1a `≈ text.primary` |
+| default | size 712 x `size.row-small` (32px); padding 3px 0px; background transparent; text System 20/26 600, `≈ text.primary` (#e6e6e6) |
+| light | size 712 x `size.row-small` (32px); padding 3px 0px; background transparent; text System 20/26 600, `≈ text.primary` (#1a1a1a) |
 
 #### Document paragraph
 
@@ -1624,8 +1625,8 @@ Tokens named in its classes: `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 712 x 54; padding 3px 0px; background transparent; text System 16/24 400, #e6e6e6 `≈ text.primary` |
-| light | size 712 x 54; padding 3px 0px; background transparent; text System 16/24 400, #1a1a1a `≈ text.primary` |
+| default | size 712 x 54; padding 3px 0px; background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#e6e6e6) |
+| light | size 712 x 54; padding 3px 0px; background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#1a1a1a) |
 
 #### Document bullet
 
@@ -1633,8 +1634,8 @@ Tokens named in its classes: `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 24 x 30; background transparent; text System 24/36 400, #e6e6e6 `≈ text.primary` |
-| light | size 24 x 30; background transparent; text System 24/36 400, #1a1a1a `≈ text.primary` |
+| default | size 24 x 30; background transparent; text System 24/36 400, `≈ text.primary` (#e6e6e6) |
+| light | size 24 x 30; background transparent; text System 24/36 400, `≈ text.primary` (#1a1a1a) |
 
 #### Document horizontal rule
 
@@ -1644,8 +1645,8 @@ Tokens named in its classes: `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 712 x 1; background rgba(255, 255, 255, 0.06) `border.main` |
-| light | size 712 x 1; background rgba(0, 0, 0, 0.06) `border.main` |
+| default | size 712 x 1; background `border.main` (rgba(255, 255, 255, 0.06)) |
+| light | size 712 x 1; background `border.main` (rgba(0, 0, 0, 0.06)) |
 
 Tokens named in its classes: `--border-main`.
 
@@ -1661,8 +1662,8 @@ The settings dialog: an account header and a left nav of sections, the General p
 
 | State | Values |
 |---|---|
-| default | size 1152 x 810; radius 16px; background #1a1a1a `background.gray-main`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 12/18 600, #e6e6e6 `≈ text.primary`; icon 20 x 20, #8c8c8c `≈ text.tertiary`; placeholder #595959 `≈ text.disable` |
-| light | size 1152 x 810; radius 16px; background #f8f8f7 `background.gray-main`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 12/18 600, #1a1a1a `≈ text.primary`; icon 20 x 20, #737373 `≈ text.tertiary`; placeholder #a6a6a6 `≈ text.disable` |
+| default | size 1152 x 810; radius `radius.dialog` (16px); background `background.gray-main` (#1a1a1a); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text `typography.role.menu-header` (System 12/18 600), `≈ text.primary` (#e6e6e6); icon `size.icon-medium` (20 x 20), `icon.tertiary` (#8c8c8c); placeholder `≈ text.disable` (#595959) |
+| light | size 1152 x 810; radius `radius.dialog` (16px); background `background.gray-main` (#f8f8f7); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text `typography.role.menu-header` (System 12/18 600), `≈ text.primary` (#1a1a1a); icon `size.icon-medium` (20 x 20), `icon.tertiary` (#737373); placeholder `≈ text.disable` (#a6a6a6) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--background-gray-main`, `--border-input-active`, `--border-main`, `--dlg-enter-scale`, `--dlg-enter-y`, `--fill-tsp-gray-main`, `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--icon-secondary`, `--icon-tertiary`, `--simplebar-scrollbar-width`, `--text-disable`, `--text-primary`, `--text-tertiary`, `--ui-density-row-gap`, `--ui-density-small-radius`, `--ui-density-small-row-height`, `--ui-font-size-sm`, `--ui-line-height-sm`.
 
@@ -1674,10 +1675,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--background-gray-mai
 
 | State | Values |
 |---|---|
-| default | size 28 x 28; radius 6px; background transparent; icon 20 x 20, #8c8c8c `≈ text.tertiary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 28 x 28; radius 6px; background transparent; icon 20 x 20, #737373 `≈ text.tertiary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 28 x `size.control-small` (28px); radius `radius.md` (6px); background transparent; icon `size.icon-medium` (20 x 20), `icon.tertiary` (#8c8c8c) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 28 x `size.control-small` (28px); radius `radius.md` (6px); background transparent; icon `size.icon-medium` (20 x 20), `icon.tertiary` (#737373) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-tertiary`.
 
@@ -1689,10 +1690,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-tertiary`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 180 x 36; background transparent; text System 12/18 600, #e6e6e6 `≈ text.primary`; transition opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| light (same: light-hover) | size 180 x 36; background transparent; text System 12/18 600, #1a1a1a `≈ text.primary`; transition opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #4d4d4d `≈ text.secondary` |
+| default (same: hover) | size 180 x `size.row` (36px); background transparent; text `typography.role.menu-header` (System 12/18 600), `≈ text.primary` (#e6e6e6); transition opacity `duration.resize` (0.3s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| light (same: light-hover) | size 180 x `size.row` (36px); background transparent; text `typography.role.menu-header` (System 12/18 600), `≈ text.primary` (#1a1a1a); transition opacity `duration.resize` (0.3s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
 
-Child layers: div 32x32 border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 9999px; div 30x30 background rgba(255, 255, 255, 0.08) `≈ fill.tsp-white-dark`
+Child layers: div 32x32 border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 9999px; div 30x30 background `≈ fill.tsp-white-dark` (rgba(255, 255, 255, 0.08))
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`.
 
@@ -1704,10 +1705,10 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 196 x 32; padding 0px 8px 0px 11px; border 1px solid rgba(255, 255, 255, 0.12) `button.border-secondary`; radius 8px; background transparent; icon 16 x 16, #e6e6e6 `≈ text.primary`; placeholder #595959 `≈ text.disable` |
-| focus-visible | border 1px solid rgba(255, 255, 255, 0.32) `border.input-active` |
-| light (same: light-hover) | size 196 x 32; padding 0px 8px 0px 11px; border 1px solid rgba(0, 0, 0, 0.12) `button.border-secondary`; radius 8px; background transparent; icon 16 x 16, #1a1a1a `≈ text.primary`; placeholder #a6a6a6 `≈ text.disable` |
-| light-focus-visible | border 1px solid rgba(0, 0, 0, 0.3) `border.input-active` |
+| default (same: hover) | size 196 x `size.row-small` (32px); padding 0px `space.2` (8px) 0px 11px; border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(255, 255, 255, 0.12)); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6); placeholder `≈ text.disable` (#595959) |
+| focus-visible | border `borderWidth.default` (1px) solid `border.input-active` (rgba(255, 255, 255, 0.32)) |
+| light (same: light-hover) | size 196 x `size.row-small` (32px); padding 0px `space.2` (8px) 0px 11px; border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(0, 0, 0, 0.12)); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a); placeholder `≈ text.disable` (#a6a6a6) |
+| light-focus-visible | border `borderWidth.default` (1px) solid `border.input-active` (rgba(0, 0, 0, 0.3)) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--border-input-active`, `--text-disable`, `--text-primary`.
 
@@ -1719,8 +1720,8 @@ Tokens named in its classes: `--Button-border-secondary`, `--border-input-active
 
 | State | Values |
 |---|---|
-| default | size 75.97 x 34; padding 12px 12px 4px 14px; background transparent; text System 13/18 400, #8c8c8c `text.tertiary` |
-| light | size 75.97 x 34; padding 12px 12px 4px 14px; background transparent; text System 13/18 400, #737373 `text.tertiary` |
+| default | size 75.97 x 34; padding `space.3` (12px) `space.3` (12px) `space.1` (4px) `space.3_5` (14px); background transparent; text `typography.role.meta` (System 13/18 400), `text.tertiary` (#8c8c8c) |
+| light | size 75.97 x 34; padding `space.3` (12px) `space.3` (12px) `space.1` (4px) `space.3_5` (14px); background transparent; text `typography.role.meta` (System 13/18 400), `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--text-tertiary`.
 
@@ -1732,12 +1733,12 @@ Tokens named in its classes: `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 196 x 32; padding 8px 16px 8px 14px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| active, active-hover | background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light (same: light-focus-visible) | size 196 x 32; padding 8px 16px 8px 14px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
-| light-active, light-active-hover | background rgba(55, 53, 47, 0.06) `≈ fill.tsp-white-main`; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default (same: focus-visible) | size 196 x `size.row-small` (32px); padding `space.2` (8px) `space.4` (16px) `space.2` (8px) `space.3_5` (14px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| active, active-hover | background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light (same: light-focus-visible) | size 196 x `size.row-small` (32px); padding `space.2` (8px) `space.4` (16px) `space.2` (8px) `space.3_5` (14px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
+| light-active, light-active-hover | background `≈ fill.tsp-white-main` (rgba(55, 53, 47, 0.06)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--icon-secondary`, `--text-primary`, `--ui-density-row-gap`, `--ui-density-small-radius`, `--ui-density-small-row-height`, `--ui-font-size-sm`, `--ui-line-height-sm`.
 
@@ -1749,8 +1750,8 @@ Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-light`, 
 
 | State | Values |
 |---|---|
-| default | size 768 x 30; background transparent; text System 24/30 500, #e6e6e6 `text.primary` |
-| light | size 768 x 30; background transparent; text System 24/30 500, #1a1a1a `text.primary` |
+| default | size 768 x 30; background transparent; text `typography.headline-base` (System 24/30 500), `text.primary` (#e6e6e6) |
+| light | size 768 x 30; background transparent; text `typography.headline-base` (System 24/30 500), `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -1762,8 +1763,8 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 768 x 22; background transparent; text System 16/22 500, #e6e6e6 `text.primary` |
-| light | size 768 x 22; background transparent; text System 16/22 500, #1a1a1a `text.primary` |
+| default | size 768 x 22; background transparent; text `typography.title-base` (System 16/22 500), `text.primary` (#e6e6e6) |
+| light | size 768 x 22; background transparent; text `typography.title-base` (System 16/22 500), `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`, `--ui-font-size-title-base`, `--ui-line-height-title-base`.
 
@@ -1775,8 +1776,8 @@ Tokens named in its classes: `--text-primary`, `--ui-font-size-title-base`, `--u
 
 | State | Values |
 |---|---|
-| default | size 768 x 24; background transparent; text System 16/24 400, #e6e6e6 `≈ text.primary` |
-| light | size 768 x 24; background transparent; text System 16/24 400, #1a1a1a `≈ text.primary` |
+| default | size 768 x 24; background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#e6e6e6) |
+| light | size 768 x 24; background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#1a1a1a) |
 
 #### Language select
 
@@ -1786,8 +1787,8 @@ Tokens named in its classes: `--text-primary`, `--ui-font-size-title-base`, `--u
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible) | size 208 x 36; padding 0px 12px; border 1px solid rgba(0, 0, 0, 0.08) `border.white`; radius 8px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light (same: light-hover, light-focus-visible) | size 208 x 36; padding 0px 12px; border 1px solid rgba(255, 255, 255, 0.2) `border.white`; radius 8px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default (same: hover, focus-visible) | size 208 x `size.row` (36px); padding 0px `space.3` (12px); border `borderWidth.default` (1px) solid `border.white` (rgba(0, 0, 0, 0.08)); radius `radius.small` (8px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light (same: light-hover, light-focus-visible) | size 208 x `size.row` (36px); padding 0px `space.3` (12px); border `borderWidth.default` (1px) solid `border.white` (rgba(255, 255, 255, 0.2)); radius `radius.small` (8px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--border-white`, `--fill-tsp-white-light`, `--text-primary`.
 
@@ -1799,12 +1800,12 @@ Tokens named in its classes: `--border-white`, `--fill-tsp-white-light`, `--text
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 110 x 62; padding 12px 8px 8px 8px; border 1px solid rgba(255, 255, 255, 0.12) `button.border-secondary`; radius 10px; background transparent; text System 14/20 500, #b3b3b3 `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| selected | border 1px solid rgba(255, 255, 255, 0.95) `button.black`; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| light (same: light-focus-visible) | size 110 x 62; padding 12px 8px 8px 8px; border 1px solid rgba(0, 0, 0, 0.12) `button.border-secondary`; radius 10px; background transparent; text System 14/20 500, #4d4d4d `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-selected | border 1px solid #1a1a19 `button.black`; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 18 x 18, #1a1a1a `≈ text.primary` |
+| default (same: focus-visible) | size 110 x 62; padding `space.3` (12px) `space.2` (8px) `space.2` (8px) `space.2` (8px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(255, 255, 255, 0.12)); radius `radius.row` (10px); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.secondary` (#b3b3b3); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| selected | border `borderWidth.default` (1px) solid `button.black` (rgba(255, 255, 255, 0.95)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| light (same: light-focus-visible) | size 110 x 62; padding `space.3` (12px) `space.2` (8px) `space.2` (8px) `space.2` (8px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(0, 0, 0, 0.12)); radius `radius.row` (10px); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.secondary` (#4d4d4d); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon` (18 x 18), `≈ text.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
+| light-selected | border `borderWidth.default` (1px) solid `button.black` (#1a1a19); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-primary`, `--text-secondary`, `--ui-density-content-padding`, `--ui-density-outer-padding`, `--ui-density-row-radius`, `--ui-density-small-row-height`, `--ui-font-size-sm`, `--ui-line-height-sm`.
 
@@ -1816,8 +1817,8 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-ligh
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 230 x 36; padding 0px 0px 0px 12px; border 1px solid transparent; radius 10px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light (same: light-hover) | size 230 x 36; padding 0px 0px 0px 12px; border 1px solid transparent; radius 10px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default (same: hover) | size 230 x `size.row` (36px); padding 0px 0px 0px `space.3` (12px); border `borderWidth.default` (1px) solid transparent; radius `radius.row` (10px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light (same: light-hover) | size 230 x `size.row` (36px); padding 0px 0px 0px `space.3` (12px); border `borderWidth.default` (1px) solid transparent; radius `radius.row` (10px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--ui-density-content-padding`, `--ui-density-row-gap`, `--ui-density-row-radius`, `--ui-density-small-row-height`, `--ui-font-size-sm`, `--ui-line-height-sm`.
 
@@ -1829,8 +1830,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--ui-d
 
 | State | Values |
 |---|---|
-| default | size 139.59 x 20; background transparent; text System 14/20 500, #e6e6e6 `text.primary` |
-| light | size 139.59 x 20; background transparent; text System 14/20 500, #1a1a1a `text.primary` |
+| default | size 139.59 x 20; background transparent; text `typography.role.label` (System 14/20 500), `text.primary` (#e6e6e6) |
+| light | size 139.59 x 20; background transparent; text `typography.role.label` (System 14/20 500), `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -1842,8 +1843,8 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 726 x 18; background transparent; text System 13/18 400, #8c8c8c `text.tertiary` |
-| light | size 726 x 18; background transparent; text System 13/18 400, #737373 `text.tertiary` |
+| default | size 726 x 18; background transparent; text `typography.role.meta` (System 13/18 400), `text.tertiary` (#8c8c8c) |
+| light | size 726 x 18; background transparent; text `typography.role.meta` (System 13/18 400), `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--text-tertiary`, `--ui-font-size-label`, `--ui-line-height-label`.
 
@@ -1858,7 +1859,7 @@ Tokens named in its classes: `--text-tertiary`, `--ui-font-size-label`, `--ui-li
 | default (same: hover, focus-visible, on, disabled) | size 26 x 16; background transparent |
 | light (same: light-hover, light-focus-visible, light-on, light-disabled) | size 26 x 16; background transparent |
 
-Child layers: div 26x16 background #595959 `≈ text.disable` radius 16px; span 14x14 background #ffffff `≈ background.tool-used-image-loading` radius 9999px
+Child layers: div 26x16 background `≈ text.disable` (#595959) radius 16px; span 14x14 background `≈ background.tool-used-image-loading` (#ffffff) radius 9999px
 
 Tokens named in its classes: `--icon-disable`, `--icon-white`.
 
@@ -1870,8 +1871,8 @@ Tokens named in its classes: `--icon-disable`, `--icon-white`.
 
 | State | Values |
 |---|---|
-| default | size 768 x 1; background rgba(255, 255, 255, 0.06) `border.main` |
-| light | size 768 x 1; background rgba(0, 0, 0, 0.06) `border.main` |
+| default | size 768 x 1; background `border.main` (rgba(255, 255, 255, 0.06)) |
+| light | size 768 x 1; background `border.main` (rgba(0, 0, 0, 0.06)) |
 
 Tokens named in its classes: `--border-main`.
 
@@ -1883,10 +1884,10 @@ Tokens named in its classes: `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 768 x 36; background transparent; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 14 x 14, #8c8c8c `≈ text.tertiary` |
-| light | size 768 x 36; background transparent; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 14 x 14, #737373 `≈ text.tertiary` |
+| default | size 768 x `size.row` (36px); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#8c8c8c) |
+| light | size 768 x `size.row` (36px); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#737373) |
 
-Child layers: div 230x36 border 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar` radius 8px; span 26x26 background #1c1c1c `≈ background.canvas-bg` border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 6px; span 26x26 background #1c1c1c `≈ background.canvas-bg` border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 6px
+Child layers: div 230x36 border 1px solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)) radius 8px; span 26x26 background `≈ background.canvas-bg` (#1c1c1c) border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 6px; span 26x26 background `≈ background.canvas-bg` (#1c1c1c) border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 6px
 
 Tokens named in its classes: `--background-card`, `--border-dark`, `--border-main`, `--fill-tsp-white-light`, `--icon-tertiary`, `--text-primary`, `--text-secondary`.
 
@@ -1898,10 +1899,10 @@ Tokens named in its classes: `--background-card`, `--border-dark`, `--border-mai
 
 | State | Values |
 |---|---|
-| default | size 230 x 36; padding 0px 4px 0px 6px; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 8px; background transparent; text System 13/19.5 400, #b3b3b3 `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #8c8c8c `≈ text.tertiary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 230 x 36; padding 0px 4px 0px 6px; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 8px; background transparent; text System 13/19.5 400, #4d4d4d `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #737373 `≈ text.tertiary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 230 x `size.row` (36px); padding 0px `space.1` (4px) 0px `space.1_5` (6px); border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.small` (8px); background transparent; text `typography.role.shortcut` (System 13/19.5 400), `≈ text.secondary` (#b3b3b3); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#8c8c8c) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 230 x `size.row` (36px); padding 0px `space.1` (4px) 0px `space.1_5` (6px); border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.small` (8px); background transparent; text `typography.role.shortcut` (System 13/19.5 400), `≈ text.secondary` (#4d4d4d); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#737373) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--background-card`, `--border-dark`, `--border-main`, `--fill-tsp-white-light`, `--icon-tertiary`, `--text-primary`, `--text-secondary`.
 
@@ -1913,8 +1914,8 @@ Tokens named in its classes: `--background-card`, `--border-dark`, `--border-mai
 
 | State | Values |
 |---|---|
-| default | size 26 x 26; padding 0px 6px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 6px; background #1c1c1c `background.card`; text System 13/19.5 400, #b3b3b3 `text.secondary` |
-| light | size 26 x 26; padding 0px 6px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 6px; background #fafafa `background.card`; text System 13/19.5 400, #4d4d4d `text.secondary` |
+| default | size 26 x 26; padding 0px `space.1_5` (6px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.md` (6px); background `background.card` (#1c1c1c); text `typography.role.shortcut` (System 13/19.5 400), `text.secondary` (#b3b3b3) |
+| light | size 26 x 26; padding 0px `space.1_5` (6px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.md` (6px); background `background.card` (#fafafa); text `typography.role.shortcut` (System 13/19.5 400), `text.secondary` (#4d4d4d) |
 
 Tokens named in its classes: `--background-card`, `--border-main`, `--text-secondary`.
 
@@ -1926,10 +1927,10 @@ Tokens named in its classes: `--background-card`, `--border-main`, `--text-secon
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 24 x 24; radius 6px; background transparent; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #8c8c8c `≈ text.tertiary` |
-| hover | icon 14 x 14, #e6e6e6 `≈ text.primary` |
-| light (same: light-focus-visible) | size 24 x 24; radius 6px; background transparent; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #737373 `≈ text.tertiary` |
-| light-hover | icon 14 x 14, #1a1a1a `≈ text.primary` |
+| default (same: focus-visible) | size 24 x 24; radius `radius.md` (6px); background transparent; transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#8c8c8c) |
+| hover | icon `size.icon-xs` (14 x 14), `≈ text.primary` (#e6e6e6) |
+| light (same: light-focus-visible) | size 24 x 24; radius `radius.md` (6px); background transparent; transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#737373) |
+| light-hover | icon `size.icon-xs` (14 x 14), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--icon-tertiary`, `--text-primary`.
 
@@ -1941,10 +1942,10 @@ Tokens named in its classes: `--icon-tertiary`, `--text-primary`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 127.7 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar`, offset -1px; text System 14/18 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 127.7 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(0, 0, 0, 0.12) `≈ button.border-secondary`, offset -1px; text System 14/18 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 127.7 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 127.7 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ button.border-secondary` (rgba(0, 0, 0, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 127.7x32 radius 8px
 
@@ -1962,8 +1963,8 @@ Published websites, games and apps: a tab strip and wide cards with a thumbnail,
 
 | State | Values |
 |---|---|
-| default | size 240 x 32; padding 4px 6px 4px 12px; border 1px solid rgba(255, 255, 255, 0.12) `button.border-secondary`; radius 8px; background transparent; icon 16 x 16, #e6e6e6 `≈ text.primary`; placeholder #595959 `≈ text.disable` |
-| light | size 240 x 32; padding 4px 6px 4px 12px; border 1px solid rgba(0, 0, 0, 0.12) `button.border-secondary`; radius 8px; background transparent; icon 16 x 16, #1a1a1a `≈ text.primary`; placeholder #a6a6a6 `≈ text.disable` |
+| default | size 240 x `size.row-small` (32px); padding `space.1` (4px) `space.1_5` (6px) `space.1` (4px) `space.3` (12px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(255, 255, 255, 0.12)); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6); placeholder `≈ text.disable` (#595959) |
+| light | size 240 x `size.row-small` (32px); padding `space.1` (4px) `space.1_5` (6px) `space.1` (4px) `space.3` (12px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(0, 0, 0, 0.12)); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a); placeholder `≈ text.disable` (#a6a6a6) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--text-disable`, `--text-primary`, `--ui-density-input-gap`, `--ui-density-small-radius`.
 
@@ -1973,8 +1974,8 @@ Tokens named in its classes: `--Button-border-secondary`, `--text-disable`, `--t
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 1000 x 156.5; padding 12px; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background #242424 `background.menu-white`; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light (same: light-hover) | size 1000 x 156.5; padding 12px; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background #ffffff `background.menu-white`; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default (same: hover) | size 1000 x 156.5; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.menu-white` (#242424); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light (same: light-hover) | size 1000 x 156.5; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--Button-black`, `--Button-border-secondary`, `--background-menu-white`, `--border-dark`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-onblack`, `--text-primary`, `--text-tertiary`, `--ui-density-small-row-height`.
 
@@ -1984,8 +1985,8 @@ Tokens named in its classes: `--Button-black`, `--Button-border-secondary`, `--b
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 232 x 130.5; radius 8px; background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light (same: light-hover) | size 232 x 130.5; radius 8px; background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default (same: hover) | size 232 x 130.5; radius `radius.small` (8px); background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light (same: light-hover) | size 232 x 130.5; radius `radius.small` (8px); background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`.
 
@@ -1995,10 +1996,10 @@ Tokens named in its classes: `--fill-tsp-white-main`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 208 x 20; padding 2px 4px; radius 4px; background rgba(255, 255, 255, 0.06) `fill.tsp-white-main`; text System 12/16 400, #8c8c8c `≈ text.tertiary`; icon 14 x 14, #8c8c8c `≈ text.tertiary` |
-| hover | text System 12/16 400, #e6e6e6 `≈ text.primary`; icon 14 x 14, #e6e6e6 `≈ text.primary` |
-| light (same: light-focus-visible) | size 208 x 20; padding 2px 4px; radius 4px; background rgba(55, 53, 47, 0.06) `fill.tsp-white-main`; text System 12/16 400, #737373 `≈ text.tertiary`; icon 14 x 14, #737373 `≈ text.tertiary` |
-| light-hover | text System 12/16 400, #1a1a1a `≈ text.primary`; icon 14 x 14, #1a1a1a `≈ text.primary` |
+| default (same: focus-visible) | size 208 x 20; padding `space.0_5` (2px) `space.1` (4px); radius 4px; background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)); text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#8c8c8c); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#8c8c8c) |
+| hover | text `typography.role.caption` (System 12/16 400), `≈ text.primary` (#e6e6e6); icon `size.icon-xs` (14 x 14), `≈ text.primary` (#e6e6e6) |
+| light (same: light-focus-visible) | size 208 x 20; padding `space.0_5` (2px) `space.1` (4px); radius 4px; background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)); text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#737373); icon `size.icon-xs` (14 x 14), `≈ text.tertiary` (#737373) |
+| light-hover | text `typography.role.caption` (System 12/16 400), `≈ text.primary` (#1a1a1a); icon `size.icon-xs` (14 x 14), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--text-tertiary`.
 
@@ -2010,10 +2011,10 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--text-
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 107.58 x 32; padding 0px 8px; radius 8px; background rgba(255, 255, 255, 0.95) `button.black`; text System 14/18 500, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | opacity 0.9 |
-| light (same: light-focus-visible) | size 107.58 x 32; padding 0px 8px; radius 8px; background #1a1a19 `button.black`; text System 14/18 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | opacity 0.9 |
+| default (same: focus-visible) | size 107.58 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background `button.black` (rgba(255, 255, 255, 0.95)); text `typography.role.label-compact` (System 14/18 500), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 107.58 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background `button.black` (#1a1a19); text `typography.role.label-compact` (System 14/18 500), `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | opacity `opacity.hover` (0.9) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`, `--ui-density-small-row-height`.
 
@@ -2025,10 +2026,10 @@ Tokens named in its classes: `--Button-black`, `--text-onblack`, `--ui-density-s
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 121.56 x 32; padding 0px 8px; border 1px solid rgba(255, 255, 255, 0.12) `button.border-secondary`; radius 8px; background transparent; text System 14/18 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light (same: light-focus-visible) | size 121.56 x 32; padding 0px 8px; border 1px solid rgba(0, 0, 0, 0.12) `button.border-secondary`; radius 8px; background transparent; text System 14/18 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default (same: focus-visible) | size 121.56 x `size.row-small` (32px); padding 0px `space.2` (8px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(255, 255, 255, 0.12)); radius `radius.small` (8px); background transparent; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light (same: light-focus-visible) | size 121.56 x `size.row-small` (32px); padding 0px `space.2` (8px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(0, 0, 0, 0.12)); radius `radius.small` (8px); background transparent; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-main`, `--text-primary`, `--ui-density-small-row-height`.
 
@@ -2040,10 +2041,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-main
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 28 x 28; radius 8px; background transparent; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light (same: light-focus-visible) | size 28 x 28; radius 8px; background transparent; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default (same: focus-visible) | size 28 x `size.control-small` (28px); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light (same: light-focus-visible) | size 28 x `size.control-small` (28px); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`.
 
@@ -2059,10 +2060,10 @@ Cloud computers: a heading, six setup cards with badges, and the Customize and C
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 189.58 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar`, offset -1px; text System 14/18 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 189.58 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(0, 0, 0, 0.12) `≈ button.border-secondary`, offset -1px; text System 14/18 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 189.58 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 189.58 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ button.border-secondary` (rgba(0, 0, 0, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 189.6x32 radius 8px
 
@@ -2076,8 +2077,8 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-ligh
 
 | State | Values |
 |---|---|
-| default | size 960 x 32; background transparent; text System 24/32 600, #e6e6e6 `text.primary` |
-| light | size 960 x 32; background transparent; text System 24/32 600, #1a1a1a `text.primary` |
+| default | size 960 x `size.row-small` (32px); background transparent; text System 24/32 600, `text.primary` (#e6e6e6) |
+| light | size 960 x `size.row-small` (32px); background transparent; text System 24/32 600, `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -2089,12 +2090,12 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 312 x 299; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 12px; background #242424 `background.menu-white`; text System 16/22 600, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; background #1c1c1c `background.card` |
-| focus-visible | outline 2px solid #1a93fe `≈ text.blue`, offset 2px |
-| light | size 312 x 299; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 12px; background #ffffff `background.menu-white`; text System 16/22 600, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; background #fafafa `background.card` |
-| light-focus-visible | outline 2px solid #0081f2 `≈ text.blue`, offset 2px |
+| default | size 312 x 299; border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.card` (12px); background `background.menu-white` (#242424); text System 16/22 600, `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); background `background.card` (#1c1c1c) |
+| focus-visible | outline `focusRing.width` (2px) solid `≈ text.blue` (#1a93fe), offset `focusRing.width` (2px) |
+| light | size 312 x 299; border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text System 16/22 600, `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); background `background.card` (#fafafa) |
+| light-focus-visible | outline `focusRing.width` (2px) solid `≈ text.blue` (#0081f2), offset `focusRing.width` (2px) |
 
 Tokens named in its classes: `--Button-blue`, `--background-card`, `--background-menu-white`, `--border-dark`, `--border-main`, `--fill-tsp-gray-main`, `--fill-tsp-white-main`, `--text-primary`, `--text-secondary`.
 
@@ -2106,8 +2107,8 @@ Tokens named in its classes: `--Button-blue`, `--background-card`, `--background
 
 | State | Values |
 |---|---|
-| default | size 66.08 x 24; padding 4px 8px; radius 6px; background rgba(255, 255, 255, 0.06) `fill.tsp-white-main`; text System 12/16 400, #b3b3b3 `≈ text.secondary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 66.08 x 24; padding 4px 8px; radius 6px; background rgba(55, 53, 47, 0.06) `fill.tsp-white-main`; text System 12/16 400, #4d4d4d `≈ text.secondary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 66.08 x 24; padding `space.1` (4px) `space.2` (8px); radius `radius.md` (6px); background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)); text `typography.role.caption` (System 12/16 400), `≈ text.secondary` (#b3b3b3); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 66.08 x 24; padding `space.1` (4px) `space.2` (8px); radius `radius.md` (6px); background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)); text `typography.role.caption` (System 12/16 400), `≈ text.secondary` (#4d4d4d); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-main`.
 
@@ -2119,12 +2120,12 @@ Tokens named in its classes: `--fill-tsp-white-main`.
 
 | State | Values |
 |---|---|
-| default | size 474 x 86; padding 12px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 12px; background #242424 `background.menu-white`; shadow rgba(0, 0, 0, 0.16) 0px 3px 10px 0px; text System 14/20 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background #1a1a1a `background.menu-gray` |
-| focus-visible | outline 2px solid #1a93fe `≈ text.blue`, offset 2px |
-| light | size 474 x 86; padding 12px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.04) 0px 3px 10px 0px; text System 14/20 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background #f8f8f7 `background.menu-gray` |
-| light-focus-visible | outline 2px solid #0081f2 `≈ text.blue`, offset 2px |
+| default | size 474 x 86; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.raised` (rgba(0, 0, 0, 0.16) 0px 3px 10px 0px); text System 14/20 500 tracking -0.15px, `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `background.menu-gray` (#1a1a1a) |
+| focus-visible | outline `focusRing.width` (2px) solid `≈ text.blue` (#1a93fe), offset `focusRing.width` (2px) |
+| light | size 474 x 86; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.raised` (rgba(0, 0, 0, 0.04) 0px 3px 10px 0px); text System 14/20 500 tracking -0.15px, `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `background.menu-gray` (#f8f8f7) |
+| light-focus-visible | outline `focusRing.width` (2px) solid `≈ text.blue` (#0081f2), offset `focusRing.width` (2px) |
 
 Tokens named in its classes: `--Button-blue`, `--background-menu-gray`, `--background-menu-white`, `--border-main`, `--shadow-S`, `--text-primary`, `--text-tertiary`.
 
@@ -2136,8 +2137,8 @@ Tokens named in its classes: `--Button-blue`, `--background-menu-gray`, `--backg
 
 | State | Values |
 |---|---|
-| default | size 474 x 86; padding 12px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 12px; background #242424 `background.menu-white`; shadow rgba(0, 0, 0, 0.16) 0px 3px 10px 0px; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 14 x 14, #b3b3b3 `≈ text.secondary` |
-| light | size 474 x 86; padding 12px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.04) 0px 3px 10px 0px; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 14 x 14, #4d4d4d `≈ text.secondary` |
+| default | size 474 x 86; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.raised` (rgba(0, 0, 0, 0.16) 0px 3px 10px 0px); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon-xs` (14 x 14), `≈ text.secondary` (#b3b3b3) |
+| light | size 474 x 86; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.raised` (rgba(0, 0, 0, 0.04) 0px 3px 10px 0px); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon-xs` (14 x 14), `≈ text.secondary` (#4d4d4d) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--background-menu-white`, `--border-main`, `--fill-tsp-white-light`, `--shadow-S`, `--text-primary`.
 
@@ -2149,10 +2150,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--background-menu-whi
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 177.38 x 28; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar`, offset -1px; text System 13/18 400, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 177.38 x 28; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(0, 0, 0, 0.12) `≈ button.border-secondary`, offset -1px; text System 13/18 400, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 177.38 x `size.control-small` (28px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)), offset -1px; text `typography.role.meta` (System 13/18 400), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-xs` (14 x 14), `≈ text.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 177.38 x `size.control-small` (28px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ button.border-secondary` (rgba(0, 0, 0, 0.12)), offset -1px; text `typography.role.meta` (System 13/18 400), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-xs` (14 x 14), `≈ text.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 177.4x28 radius 8px
 
@@ -2170,8 +2171,8 @@ The Meet Cue page: a title, a video with its play button, two download buttons, 
 
 | State | Values |
 |---|---|
-| default | size 562 x 34; background transparent; text System 34/34 500, #e6e6e6 `text.primary` |
-| light | size 562 x 34; background transparent; text System 34/34 500, #1a1a1a `text.primary` |
+| default | size 562 x 34; background transparent; text System 34/34 500, `text.primary` (#e6e6e6) |
+| light | size 562 x 34; background transparent; text System 34/34 500, `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -2183,10 +2184,10 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 562 x 316.13; radius 14px; background transparent; text System 16/24 400, #e6e6e6 `≈ text.primary`; icon 24 x 24, #ffffff `≈ background.tool-used-image-loading` |
-| light | size 562 x 316.13; radius 14px; background transparent; text System 16/24 400, #1a1a1a `≈ text.primary`; icon 24 x 24, #ffffff `≈ background.menu-white` |
+| default | size 562 x 316.13; radius 14px; background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#e6e6e6); icon `size.icon-large` (24 x 24), `≈ background.tool-used-image-loading` (#ffffff) |
+| light | size 562 x 316.13; radius 14px; background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#1a1a1a); icon `size.icon-large` (24 x 24), `≈ background.menu-white` (#ffffff) |
 
-Child layers: button 64x64 background rgba(0, 0, 0, 0.6) `≈ background.dialog-mask` radius 9999px
+Child layers: button 64x64 background `≈ background.dialog-mask` (rgba(0, 0, 0, 0.6)) radius 9999px
 
 Tokens named in its classes: `--background-dialog-mask`, `--icon-white`.
 
@@ -2198,8 +2199,8 @@ Tokens named in its classes: `--background-dialog-mask`, `--icon-white`.
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible) | size 64 x 64; radius 9999px; background rgba(0, 0, 0, 0.6) `background.dialog-mask`; text System 16/24 400, #ffffff `icon.white`; icon 24 x 24, #ffffff `≈ background.tool-used-image-loading` |
-| light (same: light-hover, light-focus-visible) | size 64 x 64; radius 9999px; background rgba(0, 0, 0, 0.3) `background.dialog-mask`; text System 16/24 400, #ffffff `icon.white`; icon 24 x 24, #ffffff `≈ background.menu-white` |
+| default (same: hover, focus-visible) | size 64 x 64; radius `radius.full` (9999px); background `background.dialog-mask` (rgba(0, 0, 0, 0.6)); text `typography.role.body-long` (System 16/24 400), `icon.white` (#ffffff); icon `size.icon-large` (24 x 24), `≈ background.tool-used-image-loading` (#ffffff) |
+| light (same: light-hover, light-focus-visible) | size 64 x 64; radius `radius.full` (9999px); background `background.dialog-mask` (rgba(0, 0, 0, 0.3)); text `typography.role.body-long` (System 16/24 400), `icon.white` (#ffffff); icon `size.icon-large` (24 x 24), `≈ background.menu-white` (#ffffff) |
 
 Tokens named in its classes: `--background-dialog-mask`, `--icon-white`.
 
@@ -2211,8 +2212,8 @@ Tokens named in its classes: `--background-dialog-mask`, `--icon-white`.
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible) | size 197.02 x 40; padding 8px 20px 8px 12px; radius 10px; background rgba(255, 255, 255, 0.95) `button.black`; text System 13/18 400, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips` |
-| light (same: light-hover, light-focus-visible) | size 197.02 x 40; padding 8px 20px 8px 12px; radius 10px; background #1a1a19 `button.black`; text System 13/18 400, #ffffff `≈ background.menu-white` |
+| default (same: hover, focus-visible) | size 197.02 x `size.control-large` (40px); padding `space.2` (8px) `space.5` (20px) `space.2` (8px) `space.3` (12px); radius `radius.row` (10px); background `button.black` (rgba(255, 255, 255, 0.95)); text `typography.role.meta` (System 13/18 400), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)) |
+| light (same: light-hover, light-focus-visible) | size 197.02 x `size.control-large` (40px); padding `space.2` (8px) `space.5` (20px) `space.2` (8px) `space.3` (12px); radius `radius.row` (10px); background `button.black` (#1a1a19); text `typography.role.meta` (System 13/18 400), `≈ background.menu-white` (#ffffff) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
@@ -2224,8 +2225,8 @@ Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible) | size 179.2 x 40; padding 8px 20px 8px 12px; radius 10px; background rgba(255, 255, 255, 0.95) `button.black`; text System 13/18 400, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips` |
-| light (same: light-hover, light-focus-visible) | size 179.2 x 40; padding 8px 20px 8px 12px; radius 10px; background #1a1a19 `button.black`; text System 13/18 400, #ffffff `≈ background.menu-white` |
+| default (same: hover, focus-visible) | size 179.2 x `size.control-large` (40px); padding `space.2` (8px) `space.5` (20px) `space.2` (8px) `space.3` (12px); radius `radius.row` (10px); background `button.black` (rgba(255, 255, 255, 0.95)); text `typography.role.meta` (System 13/18 400), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)) |
+| light (same: light-hover, light-focus-visible) | size 179.2 x `size.control-large` (40px); padding `space.2` (8px) `space.5` (20px) `space.2` (8px) `space.3` (12px); radius `radius.row` (10px); background `button.black` (#1a1a19); text `typography.role.meta` (System 13/18 400), `≈ background.menu-white` (#ffffff) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
@@ -2237,8 +2238,8 @@ Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
 | State | Values |
 |---|---|
-| default | size 562 x 66; padding 12px; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background #242424 `background.menu-white`; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 20 x 20, #e6e6e6 `≈ text.primary` |
-| light | size 562 x 66; padding 12px; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background #ffffff `background.menu-white`; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 20 x 20, #1a1a1a `≈ text.primary` |
+| default | size 562 x 66; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.menu-white` (#242424); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-medium` (20 x 20), `≈ text.primary` (#e6e6e6) |
+| light | size 562 x 66; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-medium` (20 x 20), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--background-menu-white`, `--border-dark`, `--fill-tsp-white-light`, `--icon-blue`, `--text-primary`.
 
@@ -2250,10 +2251,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--background-menu-whi
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 102.09 x 36; padding 0px 12px; radius 8px; background transparent; outline 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar`, offset -1px; text System 14/20 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 102.09 x 36; padding 0px 12px; radius 8px; background transparent; outline 1px solid rgba(0, 0, 0, 0.12) `≈ button.border-secondary`, offset -1px; text System 14/20 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 102.09 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)), offset -1px; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 102.09 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ button.border-secondary` (rgba(0, 0, 0, 0.12)), offset -1px; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 102.1x36 radius 8px
 
@@ -2267,8 +2268,8 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-ligh
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible) | size 116.25 x 18; background transparent; text System 13/18 400, #b3b3b3 `≈ text.secondary`; icon 14 x 14, #b3b3b3 `≈ text.secondary` |
-| light (same: light-hover, light-focus-visible) | size 116.25 x 18; background transparent; text System 13/18 400, #4d4d4d `≈ text.secondary`; icon 14 x 14, #4d4d4d `≈ text.secondary` |
+| default (same: hover, focus-visible) | size 116.25 x 18; background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.secondary` (#b3b3b3); icon `size.icon-xs` (14 x 14), `≈ text.secondary` (#b3b3b3) |
+| light (same: light-hover, light-focus-visible) | size 116.25 x 18; background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.secondary` (#4d4d4d); icon `size.icon-xs` (14 x 14), `≈ text.secondary` (#4d4d4d) |
 
 Tokens named in its classes: `--text-secondary`.
 
@@ -2284,8 +2285,8 @@ The empty state: a heading and three example cards (Schedule, Trigger, Advanced)
 
 | State | Values |
 |---|---|
-| default | size 344.75 x 34; background transparent; text System 28/34 500, #e6e6e6 `text.primary` |
-| light | size 344.75 x 34; background transparent; text System 28/34 500, #1a1a1a `text.primary` |
+| default | size 344.75 x 34; background transparent; text `typography.headline-lg` (System 28/34 500), `text.primary` (#e6e6e6) |
+| light | size 344.75 x 34; background transparent; text `typography.headline-lg` (System 28/34 500), `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -2297,8 +2298,8 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 312 x 421; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 12px; background #242424 `background.menu-white`; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 12 x 12, #8c8c8c `≈ text.tertiary` |
-| light (same: light-hover) | size 312 x 421; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 12px; background #ffffff `background.menu-white`; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 12 x 12, #737373 `≈ text.tertiary` |
+| default (same: hover) | size 312 x 421; border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.card` (12px); background `background.menu-white` (#242424); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon 12 x 12, `≈ text.tertiary` (#8c8c8c) |
+| light (same: light-hover) | size 312 x 421; border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon 12 x 12, `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill-tsp-white-dark`, `--fill-tsp-white-main`, `--icon-primary`, `--shadow-M`, `--text-onblack`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -2310,8 +2311,8 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill
 
 | State | Values |
 |---|---|
-| default | size 69.11 x 22; background transparent; text System 16/22 500, #e6e6e6 `text.primary` |
-| light | size 69.11 x 22; background transparent; text System 16/22 500, #1a1a1a `text.primary` |
+| default | size 69.11 x 22; background transparent; text `typography.title-base` (System 16/22 500), `text.primary` (#e6e6e6) |
+| light | size 69.11 x 22; background transparent; text `typography.title-base` (System 16/22 500), `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -2323,10 +2324,10 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 310 x 36; padding 0px 12px; radius 8px; background rgba(255, 255, 255, 0.95) `button.black`; text System 14/20 500, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | opacity 0.9 |
-| light (same: light-focus-visible) | size 310 x 36; padding 0px 12px; radius 8px; background #1a1a19 `button.black`; text System 14/20 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | opacity 0.9 |
+| default (same: focus-visible) | size 310 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background `button.black` (rgba(255, 255, 255, 0.95)); text `typography.role.label` (System 14/20 500), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 310 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background `button.black` (#1a1a19); text `typography.role.label` (System 14/20 500), `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | opacity `opacity.hover` (0.9) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
@@ -2342,10 +2343,10 @@ The connector gallery: header buttons, a carousel of promo cards, search, catego
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 148.8 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar`, offset -1px; text System 14/18 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 148.8 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(0, 0, 0, 0.12) `≈ button.border-secondary`, offset -1px; text System 14/18 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 148.8 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 148.8 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ button.border-secondary` (rgba(0, 0, 0, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 148.8x32 radius 8px
 
@@ -2359,10 +2360,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-ligh
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 80.05 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar`, offset -1px; text System 14/18 500, #e6e6e6 `text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 80.05 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(0, 0, 0, 0.12) `≈ button.border-secondary`, offset -1px; text System 14/18 500, #1a1a1a `text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 80.05 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 80.05 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ button.border-secondary` (rgba(0, 0, 0, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 80x32 radius 8px
 
@@ -2376,8 +2377,8 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-ligh
 
 | State | Values |
 |---|---|
-| default | size 280 x 114; padding 12px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 12px; background #1c1c1c `background.card-gray`; text System 14/20 500, #e6e6e6 `≈ text.primary` |
-| light | size 280 x 114; padding 12px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 12px; background #fafafa `background.card-gray`; text System 14/20 500, #1a1a1a `≈ text.primary` |
+| default | size 280 x 114; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.card` (12px); background `background.card-gray` (#1c1c1c); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6) |
+| light | size 280 x 114; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.card` (12px); background `background.card-gray` (#fafafa); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-card-gray`, `--background-menu-white`, `--border-main`, `--fill-tsp-white-light`, `--text-primary`.
 
@@ -2389,10 +2390,10 @@ Tokens named in its classes: `--background-card-gray`, `--background-menu-white`
 
 | State | Values |
 |---|---|
-| default | size 32 x 32; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 9999px; background #242424 `fill.white`; shadow rgba(0, 0, 0, 0.06) 0px 8px 16px 0px; text System 16/24 400, #e6e6e6 `≈ text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); transform translate(0px, -16px); opacity 0; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background #1c1c1c `fill.gray`; opacity none |
-| light | size 32 x 32; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 9999px; background #ffffff `fill.white`; shadow rgba(0, 0, 0, 0.06) 0px 8px 16px 0px; text System 16/24 400, #1a1a1a `≈ text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); transform translate(0px, -16px); opacity 0; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background #f8f8f7 `fill.gray`; opacity none |
+| default | size 32 x `size.row-small` (32px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.full` (9999px); background `fill.white` (#242424); shadow rgba(0, 0, 0, 0.06) 0px 8px 16px 0px; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#e6e6e6); transition opacity `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); transform translate(0px, -16px); opacity 0; icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.gray` (#1c1c1c); opacity none |
+| light | size 32 x `size.row-small` (32px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.full` (9999px); background `fill.white` (#ffffff); shadow rgba(0, 0, 0, 0.06) 0px 8px 16px 0px; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#1a1a1a); transition opacity `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); transform translate(0px, -16px); opacity 0; icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.gray` (#f8f8f7); opacity none |
 
 Tokens named in its classes: `--border-main`, `--fill-gray`, `--fill-white`.
 
@@ -2404,10 +2405,10 @@ Tokens named in its classes: `--border-main`, `--fill-gray`, `--fill-white`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 768 x 36; padding 0px 8px; border 1px solid rgba(255, 255, 255, 0.12) `button.border-secondary`; radius 8px; background transparent; icon 16 x 16, #e6e6e6 `≈ text.primary`; placeholder #595959 `≈ text.disable` |
-| focus-visible | border 1px solid rgba(255, 255, 255, 0.32) `border.input-active` |
-| light (same: light-hover) | size 768 x 36; padding 0px 8px; border 1px solid rgba(0, 0, 0, 0.12) `button.border-secondary`; radius 8px; background transparent; icon 16 x 16, #1a1a1a `≈ text.primary`; placeholder #a6a6a6 `≈ text.disable` |
-| light-focus-visible | border 1px solid rgba(0, 0, 0, 0.3) `border.input-active` |
+| default (same: hover) | size 768 x `size.row` (36px); padding 0px `space.2` (8px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(255, 255, 255, 0.12)); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6); placeholder `≈ text.disable` (#595959) |
+| focus-visible | border `borderWidth.default` (1px) solid `border.input-active` (rgba(255, 255, 255, 0.32)) |
+| light (same: light-hover) | size 768 x `size.row` (36px); padding 0px `space.2` (8px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(0, 0, 0, 0.12)); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a); placeholder `≈ text.disable` (#a6a6a6) |
+| light-focus-visible | border `borderWidth.default` (1px) solid `border.input-active` (rgba(0, 0, 0, 0.3)) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--border-input-active`, `--text-disable`, `--text-primary`.
 
@@ -2419,12 +2420,12 @@ Tokens named in its classes: `--Button-border-secondary`, `--border-input-active
 
 | State | Values |
 |---|---|
-| default | size 99.86 x 32; padding 0px 10px; radius 8px; background transparent; text System 14/20 400, #8c8c8c `≈ text.tertiary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| selected | size 48 x 32; background rgba(255, 255, 255, 0.08) `fill.tsp-white-dark`; text System 14/20 500, #e6e6e6 `≈ text.primary` |
-| light | size 99.86 x 32; padding 0px 10px; radius 8px; background transparent; text System 14/20 400, #737373 `≈ text.tertiary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
-| light-selected | size 48 x 32; background rgba(55, 53, 47, 0.08) `fill.tsp-white-dark`; text System 14/20 500, #1a1a1a `≈ text.primary` |
+| default | size 99.86 x `size.row-small` (32px); padding 0px `space.2_5` (10px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.tertiary` (#8c8c8c); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| selected | size 48 x `size.row-small` (32px); background `fill.tsp-white-dark` (rgba(255, 255, 255, 0.08)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6) |
+| light | size 99.86 x `size.row-small` (32px); padding 0px `space.2_5` (10px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.tertiary` (#737373); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
+| light-selected | size 48 x `size.row-small` (32px); background `fill.tsp-white-dark` (rgba(55, 53, 47, 0.08)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--text-tertiary`.
 
@@ -2436,10 +2437,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 378 x 76; padding 12px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 12px; background transparent; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 14 x 14, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 378 x 76; padding 12px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 12px; background transparent; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 14 x 14, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 378 x 76; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.card` (12px); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon-xs` (14 x 14), `icon.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 378 x 76; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.card` (12px); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon-xs` (14 x 14), `icon.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill-tsp-white-light`, `--icon-primary`, `--text-primary`, `--text-tertiary`.
 
@@ -2451,8 +2452,8 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill
 
 | State | Values |
 |---|---|
-| default | size 40 x 40; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 8px; background #242424 `background.menu-white` |
-| light | size 40 x 40; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 8px; background #ffffff `background.menu-white` |
+| default | size 40 x `size.control-large` (40px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.small` (8px); background `background.menu-white` (#242424) |
+| light | size 40 x `size.control-large` (40px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.small` (8px); background `background.menu-white` (#ffffff) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-main`.
 
@@ -2464,8 +2465,8 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 66.31 x 17; background transparent; text System 14/20 500, #e6e6e6 `≈ text.primary` |
-| light | size 66.31 x 17; background transparent; text System 14/20 500, #1a1a1a `≈ text.primary` |
+| default | size 66.31 x 17; background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6) |
+| light | size 66.31 x 17; background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a) |
 
 #### Plugin description
 
@@ -2475,8 +2476,8 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 254.72 x 31; background transparent; text System 12/16 400, #8c8c8c `≈ text.tertiary` |
-| light | size 254.72 x 31; background transparent; text System 12/16 400, #737373 `≈ text.tertiary` |
+| default | size 254.72 x 31; background transparent; text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#8c8c8c) |
+| light | size 254.72 x 31; background transparent; text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#737373) |
 
 #### Plugin add (+) button
 
@@ -2486,10 +2487,10 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`.
 
 | State | Values |
 |---|---|
-| default | size 28 x 28; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 8px; background transparent; icon 14 x 14, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 28 x 28; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 8px; background transparent; icon 14 x 14, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 28 x `size.control-small` (28px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.small` (8px); background transparent; icon `size.icon-xs` (14 x 14), `icon.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 28 x `size.control-small` (28px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.small` (8px); background transparent; icon `size.icon-xs` (14 x 14), `icon.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--icon-primary`.
 
@@ -2505,10 +2506,10 @@ A project page: icon, title and meta, the recent tasks, a composer, and the righ
 
 | State | Values |
 |---|---|
-| default | size 48 x 48; padding 12px; radius 12px; background rgba(255, 255, 255, 0.06) `fill.tsp-white-main`; icon 24 x 24, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 48 x 48; padding 12px; radius 12px; background rgba(55, 53, 47, 0.06) `fill.tsp-white-main`; icon 24 x 24, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 48 x `size.header` (48px); padding `space.3` (12px); radius `radius.card` (12px); background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)); icon `size.icon-large` (24 x 24), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 48 x `size.header` (48px); padding `space.3` (12px); radius `radius.card` (12px); background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)); icon `size.icon-large` (24 x 24), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--fill-tsp-white-main`.
 
@@ -2518,8 +2519,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--fill-tsp-white-main`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 107.38 x 28; background transparent; text System 20/28 500, #e6e6e6 `text.primary` |
-| light (same: light-hover) | size 107.38 x 28; background transparent; text System 20/28 500, #1a1a1a `text.primary` |
+| default (same: hover) | size 107.38 x `size.control-small` (28px); background transparent; text System 20/28 500, `text.primary` (#e6e6e6) |
+| light (same: light-hover) | size 107.38 x `size.control-small` (28px); background transparent; text System 20/28 500, `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`, `--text-primary-hover`.
 
@@ -2531,10 +2532,10 @@ Tokens named in its classes: `--text-primary`, `--text-primary-hover`.
 
 | State | Values |
 |---|---|
-| default | size 648 x 16; background transparent; text System 12/16 400, #8c8c8c `≈ text.tertiary` |
-| light | size 648 x 16; background transparent; text System 12/16 400, #737373 `≈ text.tertiary` |
+| default | size 648 x 16; background transparent; text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#8c8c8c) |
+| light | size 648 x 16; background transparent; text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#737373) |
 
-Child layers: div 3x3 background #595959 `≈ text.disable` radius 9999px
+Child layers: div 3x3 background `≈ text.disable` (#595959) radius 9999px
 
 Tokens named in its classes: `--icon-disable`, `--text-tertiary`.
 
@@ -2546,8 +2547,8 @@ Tokens named in its classes: `--icon-disable`, `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 43.23 x 18; background transparent; text System 13/18 500, #8c8c8c `text.tertiary` |
-| light | size 43.23 x 18; background transparent; text System 13/18 500, #737373 `text.tertiary` |
+| default | size 43.23 x 18; background transparent; text `typography.role.section-label` (System 13/18 500), `text.tertiary` (#8c8c8c) |
+| light | size 43.23 x 18; background transparent; text `typography.role.section-label` (System 13/18 500), `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--text-tertiary`, `--ui-font-size-label`, `--ui-line-height-label`.
 
@@ -2557,12 +2558,12 @@ Tokens named in its classes: `--text-tertiary`, `--ui-font-size-label`, `--ui-li
 
 | State | Values |
 |---|---|
-| default | size 724 x 52; padding 12px 8px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 14 x 14, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 724 x 52; padding 12px 8px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 14 x 14, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 724 x 52; padding `space.3` (12px) `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-xs` (14 x 14), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 724 x 52; padding `space.3` (12px) `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-xs` (14 x 14), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
-Child layers: div 706x1 background rgba(255, 255, 255, 0.03) `≈ border.light`
+Child layers: div 706x1 background `≈ border.light` (rgba(255, 255, 255, 0.03))
 
 Tokens named in its classes: `--border-light`, `--fill-tsp-white-light`, `--icon-tertiary`, `--text-primary`, `--text-tertiary`, `--ui-line-height-sm`, `--ui-line-height-xs`.
 
@@ -2574,8 +2575,8 @@ Tokens named in its classes: `--border-light`, `--fill-tsp-white-light`, `--icon
 
 | State | Values |
 |---|---|
-| default | size 320 x 207; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 12px; background transparent; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 320 x 207; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 12px; background transparent; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 320 x 207; border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.card` (12px); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 320 x 207; border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.card` (12px); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--border-main`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-primary`, `--text-secondary`, `--text-tertiary`, `--ui-density-small-row-height`.
 
@@ -2587,10 +2588,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--border-main`, `--fi
 
 | State | Values |
 |---|---|
-| default | size 318 x 136; padding 16px 12px 16px 16px; background transparent; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 318 x 136; padding 16px 12px 16px 16px; background transparent; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 318 x 136; padding `space.4` (16px) `space.3` (12px) `space.4` (16px) `space.4` (16px); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 318 x 136; padding `space.4` (16px) `space.3` (12px) `space.4` (16px) `space.4` (16px); background transparent; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Child layers: button 64.4x32 radius 8px
 
@@ -2604,10 +2605,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-ligh
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 64.39 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar`, offset -1px; text System 14/18 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 64.39 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(0, 0, 0, 0.12) `≈ button.border-secondary`, offset -1px; text System 14/18 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 64.39 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 64.39 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ button.border-secondary` (rgba(0, 0, 0, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 64.4x32 radius 8px
 
@@ -2621,10 +2622,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-ligh
 
 | State | Values |
 |---|---|
-| default | size 290 x 36; padding 8px 12px; radius 8px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 290 x 36; padding 8px 12px; radius 8px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 290 x `size.row` (36px); padding `space.2` (8px) `space.3` (12px); radius `radius.small` (8px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 290 x `size.row` (36px); padding `space.2` (8px) `space.3` (12px); radius `radius.small` (8px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-primary`, `--text-secondary`.
 
@@ -2636,8 +2637,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--fill-tsp-white-main`, 
 
 | State | Values |
 |---|---|
-| default | size 740 x 120; padding 12px 0px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 22px; background #242424 `background.menu-white`; shadow rgba(0, 0, 0, 0.02) 0px 12px 32px 0px; text System 12/16 500, #8c8c8c `≈ text.tertiary`; icon 17 x 17, #b3b3b3 `≈ text.secondary`; placeholder #8c8c8c `≈ text.tertiary` |
-| light | size 740 x 120; padding 12px 0px; border 1px solid #e5e7eb; radius 22px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.02) 0px 12px 32px 0px; text System 12/16 500, #737373 `≈ text.tertiary`; icon 17 x 17, #4d4d4d `≈ text.secondary`; placeholder #737373 `≈ text.tertiary` |
+| default | size 740 x 120; padding `space.3` (12px) 0px; border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.composer` (22px); background `background.menu-white` (#242424); shadow `elevation.composer` (rgba(0, 0, 0, 0.02) 0px 12px 32px 0px); text System 12/16 500, `≈ text.tertiary` (#8c8c8c); icon 17 x 17, `≈ text.secondary` (#b3b3b3); placeholder `≈ text.tertiary` (#8c8c8c) |
+| light | size 740 x 120; padding `space.3` (12px) 0px; border `borderWidth.default` (1px) solid #e5e7eb; radius `radius.composer` (22px); background `background.menu-white` (#ffffff); shadow `elevation.composer` (rgba(0, 0, 0, 0.02) 0px 12px 32px 0px); text System 12/16 500, `≈ text.tertiary` (#737373); icon 17 x 17, `≈ text.secondary` (#4d4d4d); placeholder `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--accent-send-button`, `--background-menu-white`, `--border-dark`, `--border-main`, `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--icon-primary`, `--icon-secondary`, `--text-onblack`, `--text-primary`, `--text-secondary`, `--text-tertiary`, `--ui-density-composer-radius`, `--ui-density-content-padding`, `--ui-density-home-input-editor-min-height`, `--ui-density-outer-padding`, `--ui-density-row-gap`, `--ui-density-section-gap`, `--ui-density-small-row-height`.
 
@@ -2651,8 +2652,8 @@ A finished task's thread: the user bubble with an attachment, assistant turns wi
 
 | State | Values |
 |---|---|
-| default | size 662.39 x 72; padding 12px; radius 12px 12px 4px 12px; background #242424 `≈ background.live-events-end`; outline 1px solid rgba(255, 255, 255, 0.03) `≈ border.light`, offset 0px; text System 16/24 400, #e6e6e6 `≈ text.primary` |
-| light | size 662.39 x 72; padding 12px; radius 12px 12px 4px 12px; background #ffffff `≈ background.menu-white`; outline 1px solid rgba(0, 0, 0, 0.04) `≈ border.light`, offset 0px; text System 16/24 400, #1a1a1a `≈ text.primary` |
+| default | size 662.39 x 72; padding `space.3` (12px); radius `radius.card` (12px) `radius.card` (12px) 4px `radius.card` (12px); background `≈ background.live-events-end` (#242424); outline `focusRing.input-width` (1px) solid `≈ border.light` (rgba(255, 255, 255, 0.03)), offset 0px; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#e6e6e6) |
+| light | size 662.39 x 72; padding `space.3` (12px); radius `radius.card` (12px) `radius.card` (12px) 4px `radius.card` (12px); background `≈ background.menu-white` (#ffffff); outline `focusRing.input-width` (1px) solid `≈ border.light` (rgba(0, 0, 0, 0.04)), offset 0px; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--border-light`, `--text-primary`, `--ui-density-bubble-padding-y`, `--ui-density-card-radius`, `--ui-density-content-padding`.
 
@@ -2662,10 +2663,10 @@ Tokens named in its classes: `--border-light`, `--text-primary`, `--ui-density-b
 
 | State | Values |
 |---|---|
-| default | size 280 x 56; padding 8px 10px 8px 8px; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background #242424 `background.menu-white`; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 32 x 32, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `background.tsp-menu-white` |
-| light | size 280 x 56; padding 8px 10px 8px 8px; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background #ffffff `background.menu-white`; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 32 x 32, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(255, 255, 255, 0.08) `background.tsp-menu-white` |
+| default | size 280 x 56; padding `space.2` (8px) `space.2_5` (10px) `space.2` (8px) `space.2` (8px); border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.menu-white` (#242424); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon 32 x 32, `≈ text.primary` (#e6e6e6) |
+| hover | background `background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) |
+| light | size 280 x 56; padding `space.2` (8px) `space.2_5` (10px) `space.2` (8px) `space.2` (8px); border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon 32 x 32, `≈ text.primary` (#1a1a1a) |
+| light-hover | background `background.tsp-menu-white` (rgba(255, 255, 255, 0.08)) |
 
 Tokens named in its classes: `--background-menu-white`, `--background-tsp-menu-white`, `--border-dark`, `--fill-tsp-white-main`, `--icon-secondary`, `--text-primary`, `--text-tertiary`.
 
@@ -2677,8 +2678,8 @@ Tokens named in its classes: `--background-menu-white`, `--background-tsp-menu-w
 
 | State | Values |
 |---|---|
-| hover | size 35.61 x 16; background transparent; text System 12/16 400, #8c8c8c `text.tertiary`; transition color and 11 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | size 35.61 x 16; background transparent; text System 12/16 400, #737373 `text.tertiary`; transition color and 11 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | size 35.61 x 16; background transparent; text `typography.role.caption` (System 12/16 400), `text.tertiary` (#8c8c8c); transition color and 11 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | size 35.61 x 16; background transparent; text `typography.role.caption` (System 12/16 400), `text.tertiary` (#737373); transition color and 11 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
 
 Tokens named in its classes: `--text-tertiary`.
 
@@ -2690,10 +2691,10 @@ Tokens named in its classes: `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 136.91 x 24; background transparent; text System 12/16 400, #8c8c8c `≈ text.tertiary`; icon 24 x 24, #e6e6e6 `≈ text.primary` |
-| light | size 136.91 x 24; background transparent; text System 12/16 400, #737373 `≈ text.tertiary`; icon 24 x 24, #1a1a1a `≈ text.primary` |
+| default | size 136.91 x 24; background transparent; text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#8c8c8c); icon `size.icon-large` (24 x 24), `≈ text.primary` (#e6e6e6) |
+| light | size 136.91 x 24; background transparent; text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#737373); icon `size.icon-large` (24 x 24), `≈ text.primary` (#1a1a1a) |
 
-Child layers: span 34.9x20 border 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar` radius 6px
+Child layers: span 34.9x20 border 1px solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)) radius 6px
 
 Tokens named in its classes: `--border-dark`, `--text-tertiary`.
 
@@ -2705,8 +2706,8 @@ Tokens named in its classes: `--border-dark`, `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 34.91 x 20; padding 2px 6px; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 6px; background transparent; text System 12/16 400, #8c8c8c `text.tertiary` |
-| light | size 34.91 x 20; padding 2px 6px; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 6px; background transparent; text System 12/16 400, #737373 `text.tertiary` |
+| default | size 34.91 x 20; padding `space.0_5` (2px) `space.1_5` (6px); border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.md` (6px); background transparent; text `typography.role.caption` (System 12/16 400), `text.tertiary` (#8c8c8c) |
+| light | size 34.91 x 20; padding `space.0_5` (2px) `space.1_5` (6px); border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.md` (6px); background transparent; text `typography.role.caption` (System 12/16 400), `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--border-dark`, `--text-tertiary`.
 
@@ -2716,8 +2717,8 @@ Tokens named in its classes: `--border-dark`, `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 736 x 48; background transparent; text System 16/24 400, #e6e6e6 `≈ text.primary` |
-| light | size 736 x 48; background transparent; text System 16/24 400, #1a1a1a `≈ text.primary` |
+| default | size 736 x `size.header` (48px); background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#e6e6e6) |
+| light | size 736 x `size.header` (48px); background transparent; text `typography.role.body-long` (System 16/24 400), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`.
 
@@ -2727,12 +2728,12 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 736 x 28; background transparent; text System 14/20 400, #b3b3b3 `≈ text.secondary`; icon 9 x 9, #8c8c8c `≈ text.tertiary` |
-| hover | text System 14/20 400, #e6e6e6 `≈ text.primary` |
-| light (same: light-focus-visible) | size 736 x 28; background transparent; text System 14/20 400, #4d4d4d `≈ text.secondary`; icon 9 x 9, #737373 `≈ text.tertiary` |
-| light-hover | text System 14/20 400, #1a1a1a `≈ text.primary` |
+| default (same: focus-visible) | size 736 x `size.control-small` (28px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.secondary` (#b3b3b3); icon 9 x 9, `icon.tertiary` (#8c8c8c) |
+| hover | text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6) |
+| light (same: light-focus-visible) | size 736 x `size.control-small` (28px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.secondary` (#4d4d4d); icon 9 x 9, `icon.tertiary` (#737373) |
+| light-hover | text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a) |
 
-Child layers: div 17x17 background rgba(255, 255, 255, 0.08) `≈ fill.tsp-white-dark` radius 9999px
+Child layers: div 17x17 background `≈ fill.tsp-white-dark` (rgba(255, 255, 255, 0.08)) radius 9999px
 
 Tokens named in its classes: `--fill-tsp-white-dark`, `--icon-tertiary`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -2744,8 +2745,8 @@ Tokens named in its classes: `--fill-tsp-white-dark`, `--icon-tertiary`, `--text
 
 | State | Values |
 |---|---|
-| default | size 17 x 17; radius 9999px; background rgba(255, 255, 255, 0.08) `fill.tsp-white-dark`; icon 9 x 9, #8c8c8c `≈ text.tertiary` |
-| light | size 17 x 17; radius 9999px; background rgba(55, 53, 47, 0.08) `fill.tsp-white-dark`; icon 9 x 9, #737373 `≈ text.tertiary` |
+| default | size 17 x 17; radius `radius.full` (9999px); background `fill.tsp-white-dark` (rgba(255, 255, 255, 0.08)); icon 9 x 9, `icon.tertiary` (#8c8c8c) |
+| light | size 17 x 17; radius `radius.full` (9999px); background `fill.tsp-white-dark` (rgba(55, 53, 47, 0.08)); icon 9 x 9, `icon.tertiary` (#737373) |
 
 Tokens named in its classes: `--fill-tsp-white-dark`, `--icon-tertiary`.
 
@@ -2757,10 +2758,10 @@ Tokens named in its classes: `--fill-tsp-white-dark`, `--icon-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 28 x 28; radius 6px; background transparent; icon 16 x 16, #8c8c8c `≈ text.tertiary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 28 x 28; radius 6px; background transparent; icon 16 x 16, #737373 `≈ text.tertiary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 28 x `size.control-small` (28px); radius `radius.md` (6px); background transparent; icon `size.icon-small` (16 x 16), `icon.tertiary` (#8c8c8c) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 28 x `size.control-small` (28px); radius `radius.md` (6px); background transparent; icon `size.icon-small` (16 x 16), `icon.tertiary` (#737373) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-tertiary`.
 
@@ -2770,8 +2771,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-tertiary`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 570 x 382.5; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background #242424 `background.menu-white`; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 27 x 27, #e6e6e6 `≈ text.primary` |
-| light (same: light-hover) | size 570 x 382.5; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background #ffffff `background.menu-white`; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 27 x 27, #1a1a1a `≈ text.primary` |
+| default (same: hover) | size 570 x 382.5; border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.menu-white` (#242424); text System 14/20 500 tracking -0.154px, `≈ text.primary` (#e6e6e6); icon 27 x 27, `≈ text.primary` (#e6e6e6) |
+| light (same: light-hover) | size 570 x 382.5; border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text System 14/20 500 tracking -0.154px, `≈ text.primary` (#1a1a1a); icon 27 x 27, `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-dark`, `--border-main`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-primary`.
 
@@ -2781,10 +2782,10 @@ Tokens named in its classes: `--background-menu-white`, `--border-dark`, `--bord
 
 | State | Values |
 |---|---|
-| default | size 568 x 61; padding 14px 12px; border B: 1px solid rgba(255, 255, 255, 0.06) `border.main`; background transparent; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 27 x 27, #e6e6e6 `≈ text.primary` |
-| light | size 568 x 61; padding 14px 12px; border B: 1px solid rgba(0, 0, 0, 0.06) `border.main`; background transparent; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 27 x 27, #1a1a1a `≈ text.primary` |
+| default | size 568 x 61; padding `space.3_5` (14px) `space.3` (12px); border B: `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); background transparent; text System 14/20 500 tracking -0.154px, `≈ text.primary` (#e6e6e6); icon 27 x 27, `≈ text.primary` (#e6e6e6) |
+| light | size 568 x 61; padding `space.3_5` (14px) `space.3` (12px); border B: `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); background transparent; text System 14/20 500 tracking -0.154px, `≈ text.primary` (#1a1a1a); icon 27 x 27, `≈ text.primary` (#1a1a1a) |
 
-Child layers: div 568x61 border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`
+Child layers: div 568x61 border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06))
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-primary`.
 
@@ -2796,10 +2797,10 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 32 x 32; padding 8px; radius 8px; background transparent; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light (same: light-focus-visible) | size 32 x 32; padding 8px; radius 8px; background transparent; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default (same: focus-visible) | size 32 x `size.row-small` (32px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light (same: light-focus-visible) | size 32 x `size.row-small` (32px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`.
 
@@ -2809,8 +2810,8 @@ Tokens named in its classes: `--fill-tsp-white-light`.
 
 | State | Values |
 |---|---|
-| default | size 570 x 382.5; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background #242424 `background.menu-white`; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 24 x 24, #e6e6e6 `≈ text.primary` |
-| light | size 570 x 382.5; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background #ffffff `background.menu-white`; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 24 x 24, #1a1a1a `≈ text.primary` |
+| default | size 570 x 382.5; border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.menu-white` (#242424); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon-large` (24 x 24), `≈ text.primary` (#e6e6e6) |
+| light | size 570 x 382.5; border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon-large` (24 x 24), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-dark`, `--border-main`, `--fill-tsp-white-light`, `--text-primary`.
 
@@ -2820,10 +2821,10 @@ Tokens named in its classes: `--background-menu-white`, `--border-dark`, `--bord
 
 | State | Values |
 |---|---|
-| default | size 280 x 56; padding 8px 10px 8px 8px; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background #242424 `background.menu-white`; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 32 x 32, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `background.tsp-menu-white` |
-| light | size 280 x 56; padding 8px 10px 8px 8px; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background #ffffff `background.menu-white`; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 32 x 32, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(255, 255, 255, 0.08) `background.tsp-menu-white` |
+| default | size 280 x 56; padding `space.2` (8px) `space.2_5` (10px) `space.2` (8px) `space.2` (8px); border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.menu-white` (#242424); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon 32 x 32, `≈ text.primary` (#e6e6e6) |
+| hover | background `background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) |
+| light | size 280 x 56; padding `space.2` (8px) `space.2_5` (10px) `space.2` (8px) `space.2` (8px); border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon 32 x 32, `≈ text.primary` (#1a1a1a) |
+| light-hover | background `background.tsp-menu-white` (rgba(255, 255, 255, 0.08)) |
 
 Tokens named in its classes: `--background-menu-white`, `--background-tsp-menu-white`, `--border-dark`, `--fill-tsp-white-main`, `--icon-secondary`, `--text-primary`, `--text-tertiary`.
 
@@ -2835,10 +2836,10 @@ Tokens named in its classes: `--background-menu-white`, `--background-tsp-menu-w
 
 | State | Values |
 |---|---|
-| default | size 280 x 55; padding 0px 6px 0px 16px; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background #242424 `background.menu-white`; text System 14/20 400, #b3b3b3 `≈ text.secondary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.06) `background.tsp-menu-white` |
-| light | size 280 x 55; padding 0px 6px 0px 16px; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background #ffffff `background.menu-white`; text System 14/20 400, #4d4d4d `≈ text.secondary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(255, 255, 255, 0.08) `background.tsp-menu-white` |
+| default | size 280 x 55; padding 0px `space.1_5` (6px) 0px `space.4` (16px); border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.menu-white` (#242424); text `typography.role.body` (System 14/20 400), `≈ text.secondary` (#b3b3b3); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover | background `background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) |
+| light | size 280 x 55; padding 0px `space.1_5` (6px) 0px `space.4` (16px); border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text `typography.role.body` (System 14/20 400), `≈ text.secondary` (#4d4d4d); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `background.tsp-menu-white` (rgba(255, 255, 255, 0.08)) |
 
 Tokens named in its classes: `--background-menu-white`, `--background-tsp-menu-white`, `--border-dark`, `--icon-secondary`.
 
@@ -2850,8 +2851,8 @@ Tokens named in its classes: `--background-menu-white`, `--background-tsp-menu-w
 
 | State | Values |
 |---|---|
-| default | size 133.89 x 20; padding 0px 8px 0px 0px; radius 9999px; background transparent; text System 14/20 400, #5eb92d `≈ function.success`; icon 16 x 16, #5eb92d `≈ function.success` |
-| light | size 133.89 x 20; padding 0px 8px 0px 0px; radius 9999px; background transparent; text System 14/20 400, #25ba3b `≈ function.success`; icon 16 x 16, #25ba3b `≈ function.success` |
+| default | size 133.89 x 20; padding 0px `space.2` (8px) 0px 0px; radius `radius.full` (9999px); background transparent; text `typography.role.body` (System 14/20 400), `≈ function.success` (#5eb92d); icon `size.icon-small` (16 x 16), `≈ function.success` (#5eb92d) |
+| light | size 133.89 x 20; padding 0px `space.2` (8px) 0px 0px; radius `radius.full` (9999px); background transparent; text `typography.role.body` (System 14/20 400), `≈ function.success` (#25ba3b); icon `size.icon-small` (16 x 16), `≈ function.success` (#25ba3b) |
 
 Tokens named in its classes: `--function-success`.
 
@@ -2863,8 +2864,8 @@ Tokens named in its classes: `--function-success`.
 
 | State | Values |
 |---|---|
-| default | size 252.27 x 32; padding 6px 0px; radius 8px; background transparent; text System 14/20 400, #b3b3b3 `≈ text.secondary`; icon 16 x 16, rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar` |
-| light | size 252.27 x 32; padding 6px 0px; radius 8px; background transparent; text System 14/20 400, #4d4d4d `≈ text.secondary`; icon 16 x 16, rgba(0, 0, 0, 0.14) `≈ border.dark` |
+| default | size 252.27 x `size.row-small` (32px); padding `space.1_5` (6px) 0px; radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.secondary` (#b3b3b3); icon `size.icon-small` (16 x 16), `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)) |
+| light | size 252.27 x `size.row-small` (32px); padding `space.1_5` (6px) 0px; radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.secondary` (#4d4d4d); icon `size.icon-small` (16 x 16), `≈ border.dark` (rgba(0, 0, 0, 0.14)) |
 
 Tokens named in its classes: `--text-secondary`.
 
@@ -2876,8 +2877,8 @@ Tokens named in its classes: `--text-secondary`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 20 x 20; padding 2px; background transparent; icon 16 x 16, rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar` |
-| light (same: light-hover) | size 20 x 20; padding 2px; background transparent; icon 16 x 16, rgba(0, 0, 0, 0.14) `≈ border.dark` |
+| default (same: hover) | size 20 x 20; padding `space.0_5` (2px); background transparent; icon `size.icon-small` (16 x 16), `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)) |
+| light (same: light-hover) | size 20 x 20; padding `space.0_5` (2px); background transparent; icon `size.icon-small` (16 x 16), `≈ border.dark` (rgba(0, 0, 0, 0.14)) |
 
 #### Follow-up suggestion row
 
@@ -2885,12 +2886,12 @@ Tokens named in its classes: `--text-secondary`.
 
 | State | Values |
 |---|---|
-| default | size 760 x 38; padding 9px 12px; background transparent; text System 14/20 400, #b3b3b3 `≈ text.secondary`; icon 16 x 16, #8c8c8c `≈ text.tertiary` |
-| hover | radius 10px; background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 760 x 38; padding 9px 12px; background transparent; text System 14/20 400, #4d4d4d `≈ text.secondary`; icon 16 x 16, #737373 `≈ text.tertiary` |
-| light-hover | radius 10px; background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 760 x 38; padding `density.suggestion-padding-y` (9px) `space.3` (12px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.secondary` (#b3b3b3); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#8c8c8c) |
+| hover | radius `radius.row` (10px); background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 760 x 38; padding `density.suggestion-padding-y` (9px) `space.3` (12px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.secondary` (#4d4d4d); icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#737373) |
+| light-hover | radius `radius.row` (10px); background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
-Child layers: div 736pxx1px background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`
+Child layers: div 736pxx1px background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06))
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-white-main`, `--text-secondary`, `--ui-density-suggestion-padding-y`.
 
@@ -2900,8 +2901,8 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-main`, `--text-s
 
 | State | Values |
 |---|---|
-| default | size 768 x 61; padding 0px 0px 19px 0px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 22px 22px 0px 0px; background #1c1c1c `background.card-gray`; shadow rgba(0, 0, 0, 0.08) 0px 8px 16px 0px; text System 12/16 400, #8c8c8c `≈ text.tertiary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 768 x 61; padding 0px 0px 19px 0px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 22px 22px 0px 0px; background #fafafa `background.card-gray`; shadow rgba(0, 0, 0, 0.02) 0px 8px 16px 0px; text System 12/16 400, #737373 `≈ text.tertiary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 768 x 61; padding 0px 0px 19px 0px; border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.composer` (22px) `radius.composer` (22px) 0px 0px; background `background.card-gray` (#1c1c1c); shadow rgba(0, 0, 0, 0.08) 0px 8px 16px 0px; text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#8c8c8c); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 768 x 61; padding 0px 0px 19px 0px; border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.composer` (22px) `radius.composer` (22px) 0px 0px; background `background.card-gray` (#fafafa); shadow rgba(0, 0, 0, 0.02) 0px 8px 16px 0px; text `typography.role.caption` (System 12/16 400), `≈ text.tertiary` (#737373); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-card-gray`, `--background-gray-main`, `--border-dark`, `--border-main`, `--fill-white`, `--shadow-S`, `--shadow-XS`, `--shadows-drop-2`, `--tab-fill`, `--text-primary`, `--text-tertiary`.
 
@@ -2911,8 +2912,8 @@ Tokens named in its classes: `--background-card-gray`, `--background-gray-main`,
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 766 x 40; padding 10px 16px; radius 22px 22px 0px 0px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light (same: light-hover) | size 766 x 40; padding 10px 16px; radius 22px 22px 0px 0px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default (same: hover) | size 766 x `size.control-large` (40px); padding `space.2_5` (10px) `space.4` (16px); radius `radius.composer` (22px) `radius.composer` (22px) 0px 0px; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light (same: light-hover) | size 766 x `size.control-large` (40px); padding `space.2_5` (10px) `space.4` (16px); radius `radius.composer` (22px) `radius.composer` (22px) 0px 0px; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--icon-tertiary`, `--text-tertiary`.
 
@@ -2924,8 +2925,8 @@ Tokens named in its classes: `--icon-tertiary`, `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 51.77 x 18; background transparent; text System 13/18 400, #8c8c8c `text.tertiary` |
-| light | size 51.77 x 18; background transparent; text System 13/18 400, #737373 `text.tertiary` |
+| default | size 51.77 x 18; background transparent; text `typography.role.meta` (System 13/18 400), `text.tertiary` (#8c8c8c) |
+| light | size 51.77 x 18; background transparent; text `typography.role.meta` (System 13/18 400), `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--text-tertiary`.
 
@@ -2937,10 +2938,10 @@ Tokens named in its classes: `--text-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 570 x 852; padding 32px 24px; background transparent; text System 14/21 500, #e6e6e6 `≈ text.primary`; icon 22 x 22, #b3b3b3 `≈ text.secondary` |
-| light | size 570 x 852; padding 32px 24px; background transparent; text System 14/21 500, #1a1a1a `≈ text.primary`; icon 22 x 22, #4d4d4d `≈ text.secondary` |
+| default | size 570 x 852; padding `space.8` (32px) `space.6` (24px); background transparent; text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#e6e6e6); icon 22 x 22, `icon.secondary` (#b3b3b3) |
+| light | size 570 x 852; padding `space.8` (32px) `space.6` (24px); background transparent; text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#1a1a1a); icon 22 x 22, `icon.secondary` (#4d4d4d) |
 
-Child layers: div 44x44 background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 12px; div 216x72 background #242424 `≈ background.live-events-end` border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 12px; div 216x72 background #242424 `≈ background.live-events-end` border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 12px
+Child layers: div 44x44 background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 12px; div 216x72 background `≈ background.live-events-end` (#242424) border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 12px; div 216x72 background `≈ background.live-events-end` (#242424) border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 12px
 
 Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill-tsp-gray-main`, `--fill-tsp-white-main`, `--icon-secondary`, `--text-primary`, `--text-tertiary`.
 
@@ -2952,8 +2953,8 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill
 
 | State | Values |
 |---|---|
-| default | size 570 x 48; padding 0px 12px 0px 0px; border B: 1px solid rgba(255, 255, 255, 0.06) `border.main`; background #1a1a1a `background.gray-main`; text System 13/19.5 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| light | size 570 x 48; padding 0px 12px 0px 0px; border B: 1px solid rgba(0, 0, 0, 0.06) `border.main`; background #f8f8f7 `background.gray-main`; text System 13/19.5 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #4d4d4d `≈ text.secondary` |
+| default | size 570 x `size.header` (48px); padding 0px `space.3` (12px) 0px 0px; border B: `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); background `background.gray-main` (#1a1a1a); text `typography.role.shortcut` (System 13/19.5 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| light | size 570 x `size.header` (48px); padding 0px `space.3` (12px) 0px 0px; border B: `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); background `background.gray-main` (#f8f8f7); text `typography.role.shortcut` (System 13/19.5 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
 
 Tokens named in its classes: `--background-gray-main`, `--border-main`, `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--icon-secondary`, `--icon-tertiary`, `--tab-close-width`, `--tab-title-mask`, `--text-primary`, `--ui-density-small-row-height`.
 
@@ -2965,8 +2966,8 @@ Tokens named in its classes: `--background-gray-main`, `--border-main`, `--fill-
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 160 x 32; padding 0px 5px; radius 8px; background rgba(255, 255, 255, 0.06) `fill.tsp-white-main`; text System 13/19.5 400, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| light (same: light-hover) | size 160 x 32; padding 0px 5px; radius 8px; background rgba(55, 53, 47, 0.06) `fill.tsp-white-main`; text System 13/19.5 400, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #4d4d4d `≈ text.secondary` |
+| default (same: hover) | size 160 x `size.row-small` (32px); padding 0px 5px; radius `radius.small` (8px); background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)); text `typography.role.shortcut` (System 13/19.5 400), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) cubic-bezier(0, 0, 0.2, 1); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| light (same: light-hover) | size 160 x `size.row-small` (32px); padding 0px 5px; radius `radius.small` (8px); background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)); text `typography.role.shortcut` (System 13/19.5 400), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) cubic-bezier(0, 0, 0.2, 1); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
 
 Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-main`, `--icon-secondary`, `--icon-tertiary`, `--tab-close-width`, `--tab-title-mask`, `--text-primary`.
 
@@ -2978,10 +2979,10 @@ Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-main`, `
 
 | State | Values |
 |---|---|
-| default | size 48 x 32; radius 8px; background transparent; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 48 x 32; radius 8px; background transparent; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 48 x `size.row-small` (32px); radius `radius.small` (8px); background transparent; transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `icon.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 48 x `size.row-small` (32px); radius `radius.small` (8px); background transparent; transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `icon.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--icon-secondary`, `--ui-density-small-row-height`.
 
@@ -2993,10 +2994,10 @@ Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-light`, 
 
 | State | Values |
 |---|---|
-| default | size 440 x 273; background transparent; text System 14/21 500, #e6e6e6 `≈ text.primary`; icon 22 x 22, #b3b3b3 `≈ text.secondary` |
-| light | size 440 x 273; background transparent; text System 14/21 500, #1a1a1a `≈ text.primary`; icon 22 x 22, #4d4d4d `≈ text.secondary` |
+| default | size 440 x 273; background transparent; text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#e6e6e6); icon 22 x 22, `icon.secondary` (#b3b3b3) |
+| light | size 440 x 273; background transparent; text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#1a1a1a); icon 22 x 22, `icon.secondary` (#4d4d4d) |
 
-Child layers: div 44x44 background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 12px; div 216x72 background #242424 `≈ background.live-events-end` border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 12px; div 216x72 background #242424 `≈ background.live-events-end` border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 12px
+Child layers: div 44x44 background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 12px; div 216x72 background `≈ background.live-events-end` (#242424) border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 12px; div 216x72 background `≈ background.live-events-end` (#242424) border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 12px
 
 Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill-tsp-gray-main`, `--fill-tsp-white-main`, `--icon-secondary`, `--text-primary`, `--text-tertiary`.
 
@@ -3008,10 +3009,10 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill
 
 | State | Values |
 |---|---|
-| default | size 216 x 72; padding 12px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 12px; background #242424 `background.menu-white`; text System 13/18 400, #e6e6e6 `≈ text.primary`; icon 18 x 18, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(0, 0, 0, 0.2) `fill.tsp-gray-main` |
-| light | size 216 x 72; padding 12px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 12px; background #ffffff `background.menu-white`; text System 13/18 400, #1a1a1a `≈ text.primary`; icon 18 x 18, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-gray-main` |
+| default | size 216 x 72; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.card` (12px); background `background.menu-white` (#242424); text `typography.role.meta` (System 13/18 400), `≈ text.primary` (#e6e6e6); icon `size.icon` (18 x 18), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-gray-main` (rgba(0, 0, 0, 0.2)) |
+| light | size 216 x 72; padding `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text `typography.role.meta` (System 13/18 400), `≈ text.primary` (#1a1a1a); icon `size.icon` (18 x 18), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-gray-main` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill-tsp-gray-main`, `--text-primary`.
 
@@ -3021,10 +3022,10 @@ Tokens named in its classes: `--background-menu-white`, `--border-main`, `--fill
 
 | State | Values |
 |---|---|
-| default | size 1 x 900; radius 9999px; background rgba(255, 255, 255, 0.06) `border.main`; transition width 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | size 5 x 900; background #1a93fe `icon.blue` |
-| light | size 1 x 900; radius 9999px; background rgba(0, 0, 0, 0.06) `border.main`; transition width 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | size 5 x 900; background #0081f2 `icon.blue` |
+| default | size 1 x 900; radius `radius.full` (9999px); background `border.main` (rgba(255, 255, 255, 0.06)); transition width `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)), background-color `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | size 5 x 900; background `icon.blue` (#1a93fe) |
+| light | size 1 x 900; radius `radius.full` (9999px); background `border.main` (rgba(0, 0, 0, 0.06)); transition width `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)), background-color `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | size 5 x 900; background `icon.blue` (#0081f2) |
 
 Tokens named in its classes: `--border-main`, `--icon-blue`.
 
@@ -3034,8 +3035,8 @@ Tokens named in its classes: `--border-main`, `--icon-blue`.
 
 | State | Values |
 |---|---|
-| default | size 260 x 804; padding 4px; background #1a1a1a `background.gray-main`; text System 14/21 500, #e6e6e6 `≈ text.primary`; icon 14 x 14, #8c8c8c `≈ text.tertiary`; placeholder #595959 `≈ text.disable` |
-| light | size 260 x 804; padding 4px; background #f8f8f7 `background.gray-main`; text System 14/21 500, #1a1a1a `≈ text.primary`; icon 14 x 14, #737373 `≈ text.tertiary`; placeholder #a6a6a6 `≈ text.disable` |
+| default | size 260 x 804; padding `space.1` (4px); background `background.gray-main` (#1a1a1a); text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#e6e6e6); icon `size.icon-xs` (14 x 14), `icon.tertiary` (#8c8c8c); placeholder `≈ text.disable` (#595959) |
+| light | size 260 x 804; padding `space.1` (4px); background `background.gray-main` (#f8f8f7); text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#1a1a1a); icon `size.icon-xs` (14 x 14), `icon.tertiary` (#737373); placeholder `≈ text.disable` (#a6a6a6) |
 
 Tokens named in its classes: `--background-gray-main`, `--background-menu-white`, `--border-input-active`, `--border-main`, `--fill-tsp-white-light`, `--icon-secondary`, `--icon-tertiary`, `--text-disable`, `--text-primary`, `--text-tertiary`, `--ui-density-input-gap`, `--ui-density-small-radius`, `--ui-density-small-row-height`.
 
@@ -3047,10 +3048,10 @@ Tokens named in its classes: `--background-gray-main`, `--background-menu-white`
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 252 x 30; padding 0px 4px; radius 6px; background transparent; text System 14/21 500, #e6e6e6 `≈ text.primary`; icon 12 x 12, #8c8c8c `≈ text.tertiary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light (same: light-focus-visible) | size 252 x 30; padding 0px 4px; radius 6px; background transparent; text System 14/21 500, #1a1a1a `≈ text.primary`; icon 12 x 12, #737373 `≈ text.tertiary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default (same: focus-visible) | size 252 x 30; padding 0px `space.1` (4px); radius `radius.md` (6px); background transparent; text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#e6e6e6); icon 12 x 12, `icon.tertiary` (#8c8c8c) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light (same: light-focus-visible) | size 252 x 30; padding 0px `space.1` (4px); radius `radius.md` (6px); background transparent; text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#1a1a1a); icon 12 x 12, `icon.tertiary` (#737373) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`, `--icon-tertiary`, `--text-primary`, `--text-tertiary`.
 
@@ -3060,10 +3061,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-secondary`, `--ic
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 234 x 28; padding 0px 5px; radius 5px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 14 x 14, #e6e6e6 `≈ text.primary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light (same: light-focus-visible) | size 234 x 28; padding 0px 5px; radius 5px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 14 x 14, #1a1a1a `≈ text.primary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default (same: focus-visible) | size 234 x `size.control-small` (28px); padding 0px 5px; radius 5px; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-xs` (14 x 14), `≈ text.primary` (#e6e6e6) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light (same: light-focus-visible) | size 234 x `size.control-small` (28px); padding 0px 5px; radius 5px; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-xs` (14 x 14), `≈ text.primary` (#1a1a1a) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`.
 
@@ -3075,10 +3076,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 197.34 x 77; padding 0px 24px; background transparent; text System 14/21 500, #e6e6e6 `≈ text.primary`; icon 22 x 22, #b3b3b3 `≈ text.secondary` |
-| light | size 197.34 x 77; padding 0px 24px; background transparent; text System 14/21 500, #1a1a1a `≈ text.primary`; icon 22 x 22, #4d4d4d `≈ text.secondary` |
+| default | size 197.34 x 77; padding 0px `space.6` (24px); background transparent; text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#e6e6e6); icon 22 x 22, `icon.secondary` (#b3b3b3) |
+| light | size 197.34 x 77; padding 0px `space.6` (24px); background transparent; text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#1a1a1a); icon 22 x 22, `icon.secondary` (#4d4d4d) |
 
-Child layers: div 44x44 background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` radius 12px
+Child layers: div 44x44 background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) radius 12px
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--icon-secondary`, `--text-primary`.
 
@@ -3092,14 +3093,14 @@ Added on the 2026-10-17 refresh: Settings' Developers pane (underline tabs, an i
 
 | State | Values |
 |---|---|
-| default | size 196 x 32; padding 8px 16px 8px 14px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| hover | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| pressed | background rgba(255, 255, 255, 0.08) `fill.tsp-white-dark` |
-| selected | background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 196 x 32; padding 8px 16px 8px 14px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-hover | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
-| light-pressed | background rgba(55, 53, 47, 0.08) `fill.tsp-white-dark` |
-| light-selected | background rgba(55, 53, 47, 0.06) `≈ fill.tsp-white-main`; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 196 x `size.row-small` (32px); padding `space.2` (8px) `space.4` (16px) `space.2` (8px) `space.3_5` (14px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| hover | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| pressed | background `fill.tsp-white-dark` (rgba(255, 255, 255, 0.08)) |
+| selected | background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 196 x `size.row-small` (32px); padding `space.2` (8px) `space.4` (16px) `space.2` (8px) `space.3_5` (14px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
+| light-hover | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
+| light-pressed | background `fill.tsp-white-dark` (rgba(55, 53, 47, 0.08)) |
+| light-selected | background `≈ fill.tsp-white-main` (rgba(55, 53, 47, 0.06)); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--icon-secondary`, `--text-primary`, `--ui-density-row-gap`, `--ui-density-small-radius`, `--ui-density-small-row-height`, `--ui-font-size-sm`, `--ui-line-height-sm`.
 
@@ -3109,12 +3110,12 @@ Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-light`, 
 
 | State | Values |
 |---|---|
-| default | size 69.09 x 40; padding 10px 0px; background transparent; text System 14/20 400, #8c8c8c `≈ text.tertiary`; transition color and 5 more 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | text System 14/20 400, #b3b3b3 `≈ text.secondary` |
-| selected | size 56.05 x 40; text System 14/20 500, #e6e6e6 `≈ text.primary` |
-| light | size 69.09 x 40; padding 10px 0px; background transparent; text System 14/20 400, #737373 `≈ text.tertiary`; transition color and 5 more 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover | text System 14/20 400, #4d4d4d `≈ text.secondary` |
-| light-selected | size 56.05 x 40; text System 14/20 500, #1a1a1a `≈ text.primary` |
+| default | size 69.09 x `size.control-large` (40px); padding `space.2_5` (10px) 0px; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.tertiary` (#8c8c8c); transition color and 5 more `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | text `typography.role.body` (System 14/20 400), `≈ text.secondary` (#b3b3b3) |
+| selected | size 56.05 x `size.control-large` (40px); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6) |
+| light | size 69.09 x `size.control-large` (40px); padding `space.2_5` (10px) 0px; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.tertiary` (#737373); transition color and 5 more `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | text `typography.role.body` (System 14/20 400), `≈ text.secondary` (#4d4d4d) |
+| light-selected | size 56.05 x `size.control-large` (40px); text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -3124,8 +3125,8 @@ Tokens named in its classes: `--text-primary`, `--text-secondary`, `--text-terti
 
 | State | Values |
 |---|---|
-| default | size 768 x 42; padding 12px 16px; radius 12px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text System 13/18 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 768 x 42; padding 12px 16px; radius 12px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text System 13/18 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 768 x 42; padding `space.3` (12px) `space.4` (16px); radius `radius.card` (12px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text `typography.role.meta` (System 13/18 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 768 x 42; padding `space.3` (12px) `space.4` (16px); radius `radius.card` (12px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text `typography.role.meta` (System 13/18 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`.
 
@@ -3135,10 +3136,10 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--text
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 112.91 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar`, offset -1px; text System 14/18 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| hover, pressed | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 112.91 x 32; padding 0px 8px; radius 8px; background transparent; outline 1px solid rgba(0, 0, 0, 0.12) `≈ button.border-secondary`, offset -1px; text System 14/18 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #1a1a1a `≈ text.primary` |
-| light-hover, light-pressed | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 112.91 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| hover, pressed | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 112.91 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ button.border-secondary` (rgba(0, 0, 0, 0.12)), offset -1px; text `typography.role.label-compact` (System 14/18 500), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
+| light-hover, light-pressed | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 112.9x32 radius 8px
 
@@ -3150,10 +3151,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-ligh
 
 | State | Values |
 |---|---|
-| default | size 768 x 183; background transparent; text System 13/18 400, #8c8c8c `≈ text.tertiary`; icon 20 x 20, #e6e6e6 `≈ text.primary` |
-| light | size 768 x 183; background transparent; text System 13/18 400, #737373 `≈ text.tertiary`; icon 20 x 20, #1a1a1a `≈ text.primary` |
+| default | size 768 x 183; background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.tertiary` (#8c8c8c); icon `size.icon-medium` (20 x 20), `≈ text.primary` (#e6e6e6) |
+| light | size 768 x 183; background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.tertiary` (#737373); icon `size.icon-medium` (20 x 20), `≈ text.primary` (#1a1a1a) |
 
-Child layers: thead 768x35 border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`; tr 768x49 border 1px solid rgba(255, 255, 255, 0.03) `≈ border.light`; tr 768x49 border 1px solid rgba(255, 255, 255, 0.03) `≈ border.light`
+Child layers: thead 768x35 border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)); tr 768x49 border 1px solid `≈ border.light` (rgba(255, 255, 255, 0.03)); tr 768x49 border 1px solid `≈ border.light` (rgba(255, 255, 255, 0.03))
 
 Tokens named in its classes: `--border-light`, `--border-main`, `--fill-tsp-white-main`, `--text-primary`, `--text-tertiary`.
 
@@ -3163,8 +3164,8 @@ Tokens named in its classes: `--border-light`, `--border-main`, `--fill-tsp-whit
 
 | State | Values |
 |---|---|
-| default | size 140 x 35; padding 8px 24px 8px 1px; background transparent; text System 13/18 400, #8c8c8c `≈ text.tertiary` |
-| light | size 140 x 35; padding 8px 24px 8px 1px; background transparent; text System 13/18 400, #737373 `≈ text.tertiary` |
+| default | size 140 x 35; padding `space.2` (8px) `space.6` (24px) `space.2` (8px) 1px; background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.tertiary` (#8c8c8c) |
+| light | size 140 x 35; padding `space.2` (8px) `space.6` (24px) `space.2` (8px) 1px; background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.tertiary` (#737373) |
 
 #### Table row
 
@@ -3172,10 +3173,10 @@ Tokens named in its classes: `--border-light`, `--border-main`, `--fill-tsp-whit
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 768 x 49; border B: 1px solid rgba(255, 255, 255, 0.03) `border.light`; background transparent; text System 13/18 400, #e6e6e6 `≈ text.primary`; icon 20 x 20, #e6e6e6 `≈ text.primary` |
-| light (same: light-hover) | size 768 x 49; border B: 1px solid rgba(0, 0, 0, 0.04) `border.light`; background transparent; text System 13/18 400, #1a1a1a `≈ text.primary`; icon 20 x 20, #1a1a1a `≈ text.primary` |
+| default (same: hover) | size 768 x 49; border B: `borderWidth.default` (1px) solid `border.light` (rgba(255, 255, 255, 0.03)); background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.primary` (#e6e6e6); icon `size.icon-medium` (20 x 20), `≈ text.primary` (#e6e6e6) |
+| light (same: light-hover) | size 768 x 49; border B: `borderWidth.default` (1px) solid `border.light` (rgba(0, 0, 0, 0.04)); background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.primary` (#1a1a1a); icon `size.icon-medium` (20 x 20), `≈ text.primary` (#1a1a1a) |
 
-Child layers: tr 768x49 border 1px solid rgba(255, 255, 255, 0.03) `≈ border.light`
+Child layers: tr 768x49 border 1px solid `≈ border.light` (rgba(255, 255, 255, 0.03))
 
 Tokens named in its classes: `--border-light`, `--fill-tsp-white-main`.
 
@@ -3185,12 +3186,12 @@ Tokens named in its classes: `--border-light`, `--fill-tsp-white-main`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 28 x 28; radius 6px; background transparent; text System 13/18 400, #e6e6e6 `≈ text.primary`; icon 20 x 20, #e6e6e6 `≈ text.primary` |
-| hover, pressed | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| open | background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` |
-| light (same: light-focus-visible) | size 28 x 28; radius 6px; background transparent; text System 13/18 400, #1a1a1a `≈ text.primary`; icon 20 x 20, #1a1a1a `≈ text.primary` |
-| light-hover, light-pressed | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
-| light-open | background rgba(55, 53, 47, 0.06) `≈ fill.tsp-white-main` |
+| default (same: focus-visible) | size 28 x `size.control-small` (28px); radius `radius.md` (6px); background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.primary` (#e6e6e6); icon `size.icon-medium` (20 x 20), `≈ text.primary` (#e6e6e6) |
+| hover, pressed | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| open | background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) |
+| light (same: light-focus-visible) | size 28 x `size.control-small` (28px); radius `radius.md` (6px); background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.primary` (#1a1a1a); icon `size.icon-medium` (20 x 20), `≈ text.primary` (#1a1a1a) |
+| light-hover, light-pressed | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
+| light-open | background `≈ fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`.
 
@@ -3200,8 +3201,8 @@ Tokens named in its classes: `--fill-tsp-white-main`.
 
 | State | Values |
 |---|---|
-| default | size 110 x 44; padding 4px; radius 12px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; text System 14/20 400, #eb4d4d `≈ function.error`; icon 16 x 16, #eb4d4d `≈ function.error` |
-| light | size 110 x 44; padding 4px; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; text System 14/20 400, #fb494f `≈ function.error`; icon 16 x 16, #fb494f `≈ function.error` |
+| default | size 110 x 44; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ function.error` (#eb4d4d); icon `size.icon-small` (16 x 16), `≈ function.error` (#eb4d4d) |
+| light | size 110 x 44; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ function.error` (#fb494f); icon `size.icon-small` (16 x 16), `≈ function.error` (#fb494f) |
 
 Tokens named in its classes: `--background-menu-white`, `--fill-tsp-white-main`, `--function-error`, `--ui-density-menu-item-padding-y`.
 
@@ -3211,10 +3212,10 @@ Tokens named in its classes: `--background-menu-white`, `--fill-tsp-white-main`,
 
 | State | Values |
 |---|---|
-| default | size 102 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #eb4d4d `≈ function.error`; icon 16 x 16, #eb4d4d `≈ function.error` |
-| hover, pressed | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| light | size 102 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #fb494f `≈ function.error`; icon 16 x 16, #fb494f `≈ function.error` |
-| light-hover, light-pressed | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
+| default | size 102 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ function.error` (#eb4d4d); icon `size.icon-small` (16 x 16), `≈ function.error` (#eb4d4d) |
+| hover, pressed | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| light | size 102 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ function.error` (#fb494f); icon `size.icon-small` (16 x 16), `≈ function.error` (#fb494f) |
+| light-hover, light-pressed | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--function-error`, `--ui-density-menu-item-padding-y`.
 
@@ -3224,8 +3225,8 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--function-error`, `--ui-
 
 | State | Values |
 |---|---|
-| default | size 440 x 156; radius 16px; background #1a1a1a `background.gray-main`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 18/24 600, #e6e6e6 `≈ text.primary`; icon 20 x 20, #8c8c8c `≈ text.tertiary` |
-| light | size 440 x 156; radius 16px; background #f8f8f7 `background.gray-main`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 18/24 600, #1a1a1a `≈ text.primary`; icon 20 x 20, #737373 `≈ text.tertiary` |
+| default | size 440 x 156; radius `radius.dialog` (16px); background `background.gray-main` (#1a1a1a); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text `typography.role.heading` (System 18/24 600), `≈ text.primary` (#e6e6e6); icon `size.icon-medium` (20 x 20), `icon.tertiary` (#8c8c8c) |
+| light | size 440 x 156; radius `radius.dialog` (16px); background `background.gray-main` (#f8f8f7); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text `typography.role.heading` (System 18/24 600), `≈ text.primary` (#1a1a1a); icon `size.icon-medium` (20 x 20), `icon.tertiary` (#737373) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--background-gray-main`, `--dlg-enter-scale`, `--dlg-enter-y`, `--dp`, `--dp-header-end`, `--fill-tsp-white-light`, `--function-error`, `--icon-tertiary`, `--text-primary`, `--text-tertiary`, `--text-white`.
 
@@ -3235,10 +3236,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--background-gray-mai
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 72 x 36; padding 0px 12px; radius 8px; background #eb4d4d `function.error`; text System 14/20 500, #ffffff `≈ background.tool-used-image-loading`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover, pressed | opacity 0.9 |
-| light (same: light-focus-visible) | size 72 x 36; padding 0px 12px; radius 8px; background #fb494f `function.error`; text System 14/20 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover, light-pressed | opacity 0.9 |
+| default (same: focus-visible) | size 72 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background `function.error` (#eb4d4d); text `typography.role.label` (System 14/20 500), `≈ background.tool-used-image-loading` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover, pressed | opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 72 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background `function.error` (#fb494f); text `typography.role.label` (System 14/20 500), `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover, light-pressed | opacity `opacity.hover` (0.9) |
 
 Tokens named in its classes: `--function-error`, `--text-white`.
 
@@ -3248,10 +3249,10 @@ Tokens named in its classes: `--function-error`, `--text-white`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 72 x 36; padding 0px 12px; radius 8px; background transparent; outline 1px solid rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar`, offset -1px; text System 14/20 500, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover, pressed | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; opacity 0.9 |
-| light (same: light-focus-visible) | size 72 x 36; padding 0px 12px; radius 8px; background transparent; outline 1px solid rgba(0, 0, 0, 0.12) `≈ button.border-secondary`, offset -1px; text System 14/20 500, #1a1a1a `≈ text.primary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover, light-pressed | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; opacity 0.9 |
+| default (same: focus-visible) | size 72 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)), offset -1px; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover, pressed | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 72 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background transparent; outline `focusRing.input-width` (1px) solid `≈ button.border-secondary` (rgba(0, 0, 0, 0.12)), offset -1px; text `typography.role.label` (System 14/20 500), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover, light-pressed | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); opacity `opacity.hover` (0.9) |
 
 Child layers: button 72x36 radius 8px
 
@@ -3263,10 +3264,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-ligh
 
 | State | Values |
 |---|---|
-| default | size 28 x 28; radius 6px; background transparent; icon 20 x 20, #8c8c8c `≈ text.tertiary` |
-| hover, pressed | background rgba(255, 255, 255, 0.04) `fill.tsp-white-light` |
-| light | size 28 x 28; radius 6px; background transparent; icon 20 x 20, #737373 `≈ text.tertiary` |
-| light-hover, light-pressed | background rgba(55, 53, 47, 0.04) `fill.tsp-white-light` |
+| default | size 28 x `size.control-small` (28px); radius `radius.md` (6px); background transparent; icon `size.icon-medium` (20 x 20), `icon.tertiary` (#8c8c8c) |
+| hover, pressed | background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)) |
+| light | size 28 x `size.control-small` (28px); radius `radius.md` (6px); background transparent; icon `size.icon-medium` (20 x 20), `icon.tertiary` (#737373) |
+| light-hover, light-pressed | background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--icon-tertiary`.
 
@@ -3276,8 +3277,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--icon-tertiary`.
 
 | State | Values |
 |---|---|
-| default | size 400 x 280; radius 16px; background #1a1a1a `background.gray-main`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 18/24 600, #e6e6e6 `≈ text.primary`; icon 20 x 20, #8c8c8c `≈ text.tertiary`; placeholder #595959 `≈ text.disable` |
-| light | size 400 x 280; radius 16px; background #f8f8f7 `background.gray-main`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 18/24 600, #1a1a1a `≈ text.primary`; icon 20 x 20, #737373 `≈ text.tertiary`; placeholder #a6a6a6 `≈ text.disable` |
+| default | size 400 x 280; radius `radius.dialog` (16px); background `background.gray-main` (#1a1a1a); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text `typography.role.heading` (System 18/24 600), `≈ text.primary` (#e6e6e6); icon `size.icon-medium` (20 x 20), `icon.tertiary` (#8c8c8c); placeholder `≈ text.disable` (#595959) |
+| light | size 400 x 280; radius `radius.dialog` (16px); background `background.gray-main` (#f8f8f7); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text `typography.role.heading` (System 18/24 600), `≈ text.primary` (#1a1a1a); icon `size.icon-medium` (20 x 20), `icon.tertiary` (#737373); placeholder `≈ text.disable` (#a6a6a6) |
 
 Tokens named in its classes: `--Button-black`, `--Button-border-secondary`, `--background-gray-main`, `--border-dark`, `--dlg-enter-scale`, `--dlg-enter-y`, `--dp`, `--dp-header-end`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--icon-tertiary`, `--text-disable`, `--text-onblack`, `--text-primary`, `--ui-density-content-padding`, `--ui-density-input-gap`, `--ui-density-large-control-height`, `--ui-density-row-gap`, `--ui-density-row-height`, `--ui-density-row-radius`, `--ui-density-small-radius`, `--ui-density-small-row-height`, `--ui-font-size-sm`, `--ui-line-height-sm`.
 
@@ -3287,8 +3288,8 @@ Tokens named in its classes: `--Button-black`, `--Button-border-secondary`, `--b
 
 | State | Values |
 |---|---|
-| default | size 360 x 20; background transparent; text System 14/20 500, #e6e6e6 `text.primary` |
-| light | size 360 x 20; background transparent; text System 14/20 500, #1a1a1a `text.primary` |
+| default | size 360 x 20; background transparent; text `typography.role.label` (System 14/20 500), `text.primary` (#e6e6e6) |
+| light | size 360 x 20; background transparent; text `typography.role.label` (System 14/20 500), `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -3298,9 +3299,9 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible) | size 336 x 20; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; placeholder #595959 `≈ text.disable` |
+| default (same: hover, focus-visible) | size 336 x 20; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); placeholder `≈ text.disable` (#595959) |
 | typed, typed-focus-visible | size 310 x 20 |
-| light (same: light-hover, light-focus-visible) | size 336 x 20; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; placeholder #a6a6a6 `≈ text.disable` |
+| light (same: light-hover, light-focus-visible) | size 336 x 20; background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); placeholder `≈ text.disable` (#a6a6a6) |
 | light-typed, light-typed-focus-visible | size 310 x 20 |
 
 Tokens named in its classes: `--text-disable`.
@@ -3311,12 +3312,12 @@ Tokens named in its classes: `--text-disable`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 360 x 36; padding 8px 12px; radius 8px; background rgba(255, 255, 255, 0.06) `fill.tsp-white-main`; placeholder #595959 `≈ text.disable` |
+| default (same: hover) | size 360 x `size.row` (36px); padding `space.2` (8px) `space.3` (12px); radius `radius.small` (8px); background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)); placeholder `≈ text.disable` (#595959) |
 | focus-visible | shadow #ffffff 0px 0px 0px 0px inset, rgba(255, 255, 255, 0.12) 0px 0px 0px 1px inset |
-| typed | icon 16 x 16, #8c8c8c `≈ text.tertiary` |
-| light (same: light-hover) | size 360 x 36; padding 8px 12px; radius 8px; background rgba(55, 53, 47, 0.06) `fill.tsp-white-main`; placeholder #a6a6a6 `≈ text.disable` |
+| typed | icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#8c8c8c) |
+| light (same: light-hover) | size 360 x `size.row` (36px); padding `space.2` (8px) `space.3` (12px); radius `radius.small` (8px); background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)); placeholder `≈ text.disable` (#a6a6a6) |
 | light-focus-visible | shadow #ffffff 0px 0px 0px 0px inset, rgba(0, 0, 0, 0.14) 0px 0px 0px 1px inset |
-| light-typed | icon 16 x 16, #737373 `≈ text.tertiary` |
+| light-typed | icon `size.icon-small` (16 x 16), `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--border-dark`, `--fill-tsp-white-main`, `--text-disable`, `--text-primary`, `--ui-density-input-gap`, `--ui-density-row-height`, `--ui-density-small-radius`.
 
@@ -3326,8 +3327,8 @@ Tokens named in its classes: `--border-dark`, `--fill-tsp-white-main`, `--text-d
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed, open) | size 360 x 40; padding 0px 12px; border 1px solid transparent; radius 10px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light (same: light-hover, light-pressed, light-open) | size 360 x 40; padding 0px 12px; border 1px solid transparent; radius 10px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default (same: hover, pressed, open) | size 360 x `size.control-large` (40px); padding 0px `space.3` (12px); border `borderWidth.default` (1px) solid transparent; radius `radius.row` (10px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light (same: light-hover, light-pressed, light-open) | size 360 x `size.control-large` (40px); padding 0px `space.3` (12px); border `borderWidth.default` (1px) solid transparent; radius `radius.row` (10px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--ui-density-content-padding`, `--ui-density-large-control-height`, `--ui-density-row-gap`, `--ui-density-row-radius`, `--ui-density-small-row-height`, `--ui-font-size-sm`, `--ui-line-height-sm`.
 
@@ -3337,8 +3338,8 @@ Tokens named in its classes: `--fill-tsp-white-light`, `--text-primary`, `--ui-d
 
 | State | Values |
 |---|---|
-| default | size 360 x 234; padding 4px; radius 12px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 360 x 234; padding 4px; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 360 x 234; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 360 x 234; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--anchor-width`, `--background-menu-white`, `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`, `--ui-density-row-height`.
 
@@ -3348,12 +3349,12 @@ Tokens named in its classes: `--anchor-width`, `--background-menu-white`, `--fil
 
 | State | Values |
 |---|---|
-| default | size 352 x 36; padding 8px 6px 8px 8px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary` |
-| hover, pressed | background rgba(255, 255, 255, 0.06) `fill.tsp-white-main` |
-| selected | icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 352 x 36; padding 8px 6px 8px 8px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary` |
-| light-hover, light-pressed | background rgba(55, 53, 47, 0.06) `fill.tsp-white-main` |
-| light-selected | icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 352 x `size.row` (36px); padding `space.2` (8px) `space.1_5` (6px) `space.2` (8px) `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6) |
+| hover, pressed | background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)) |
+| selected | icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 352 x `size.row` (36px); padding `space.2` (8px) `space.1_5` (6px) `space.2` (8px) `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a) |
+| light-hover, light-pressed | background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
+| light-selected | icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`, `--ui-density-row-height`.
 
@@ -3363,16 +3364,16 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-de
 
 | State | Values |
 |---|---|
-| default | size 72 x 36; padding 0px 12px; radius 8px; background rgba(255, 255, 255, 0.95) `button.black`; text System 14/20 500, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); opacity 0.5 |
+| default | size 72 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background `button.black` (rgba(255, 255, 255, 0.95)); text `typography.role.label` (System 14/20 500), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); opacity `opacity.disabled-strong` (0.5) |
 | enabled | opacity none |
-| enabled-hover | opacity 0.9 |
+| enabled-hover | opacity `opacity.hover` (0.9) |
 | enabled-focus-visible | opacity none |
-| enabled-pressed | opacity 0.9 |
-| light | size 72 x 36; padding 0px 12px; radius 8px; background #1a1a19 `button.black`; text System 14/20 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); opacity 0.5 |
+| enabled-pressed | opacity `opacity.hover` (0.9) |
+| light | size 72 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background `button.black` (#1a1a19); text `typography.role.label` (System 14/20 500), `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); opacity `opacity.disabled-strong` (0.5) |
 | light-enabled | opacity none |
-| light-enabled-hover | opacity 0.9 |
+| light-enabled-hover | opacity `opacity.hover` (0.9) |
 | light-enabled-focus-visible | opacity none |
-| light-enabled-pressed | opacity 0.9 |
+| light-enabled-pressed | opacity `opacity.hover` (0.9) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
@@ -3382,9 +3383,9 @@ Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 768 x 122; padding 12px 16px 20px 16px; background transparent; text System 14/22 400, #e6e6e6 `text.primary`; placeholder #595959 `≈ text.disable` |
+| default (same: hover) | size 768 x 122; padding `space.3` (12px) `space.4` (16px) `space.5` (20px) `space.4` (16px); background transparent; text `typography.body-sm` (System 14/22 400), `text.primary` (#e6e6e6); placeholder `≈ text.disable` (#595959) |
 | focus-visible | shadow #ffffff 0px 0px 0px 0px, rgba(255, 255, 255, 0.12) 0px 0px 0px 0px |
-| light (same: light-hover) | size 768 x 122; padding 12px 16px 20px 16px; background transparent; text System 14/22 400, #1a1a1a `text.primary`; placeholder #a6a6a6 `≈ text.disable` |
+| light (same: light-hover) | size 768 x 122; padding `space.3` (12px) `space.4` (16px) `space.5` (20px) `space.4` (16px); background transparent; text `typography.body-sm` (System 14/22 400), `text.primary` (#1a1a1a); placeholder `≈ text.disable` (#a6a6a6) |
 | light-focus-visible | shadow #ffffff 0px 0px 0px 0px, rgba(0, 0, 0, 0.14) 0px 0px 0px 0px |
 
 Tokens named in its classes: `--border-dark`, `--fill-tsp-white-light`, `--text-disable`, `--text-primary`, `--text-tertiary`.
@@ -3395,9 +3396,9 @@ Tokens named in its classes: `--border-dark`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 376 x 36; padding 8px 12px; radius 8px; background rgba(255, 255, 255, 0.04) `fill.tsp-white-light`; text System 14/20 400, #e6e6e6 `text.primary`; placeholder #595959 `≈ text.disable` |
+| default (same: hover) | size 376 x `size.row` (36px); padding `space.2` (8px) `space.3` (12px); radius `radius.small` (8px); background `fill.tsp-white-light` (rgba(255, 255, 255, 0.04)); text `typography.role.body` (System 14/20 400), `text.primary` (#e6e6e6); placeholder `≈ text.disable` (#595959) |
 | focus-visible | shadow #ffffff 0px 0px 0px 0px inset, rgba(255, 255, 255, 0.12) 0px 0px 0px 1px inset |
-| light (same: light-hover) | size 376 x 36; padding 8px 12px; radius 8px; background rgba(55, 53, 47, 0.04) `fill.tsp-white-light`; text System 14/20 400, #1a1a1a `text.primary`; placeholder #a6a6a6 `≈ text.disable` |
+| light (same: light-hover) | size 376 x `size.row` (36px); padding `space.2` (8px) `space.3` (12px); radius `radius.small` (8px); background `fill.tsp-white-light` (rgba(55, 53, 47, 0.04)); text `typography.role.body` (System 14/20 400), `text.primary` (#1a1a1a); placeholder `≈ text.disable` (#a6a6a6) |
 | light-focus-visible | shadow #ffffff 0px 0px 0px 0px inset, rgba(0, 0, 0, 0.14) 0px 0px 0px 1px inset |
 
 Tokens named in its classes: `--border-dark`, `--fill-tsp-white-light`, `--text-disable`, `--text-primary`, `--ui-density-row-height`, `--ui-density-small-radius`.
@@ -3408,9 +3409,9 @@ Tokens named in its classes: `--border-dark`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default | size 768 x 74.5; padding 16px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 12px; background #1c1c1c `background.card-gray`; text System 14/21 500, #e6e6e6 `≈ text.primary`; transition box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1); icon 20 x 20, #e6e6e6 `≈ text.primary` |
+| default | size 768 x 74.5; padding `space.4` (16px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.card` (12px); background `background.card-gray` (#1c1c1c); text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#e6e6e6); transition box-shadow `duration.sidebar` (0.2s) cubic-bezier(0, 0, 0.2, 1); icon `size.icon-medium` (20 x 20), `≈ text.primary` (#e6e6e6) |
 | hover, pressed | shadow rgba(0, 0, 0, 0.16) 0px 1px 2px 0px, rgba(0, 0, 0, 0.16) 0px 2px 4px 0px |
-| light | size 768 x 74.5; padding 16px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 12px; background #fafafa `background.card-gray`; text System 14/21 500, #1a1a1a `≈ text.primary`; transition box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1); icon 20 x 20, #1a1a1a `≈ text.primary` |
+| light | size 768 x 74.5; padding `space.4` (16px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.card` (12px); background `background.card-gray` (#fafafa); text `typography.role.nav-strong` (System 14/21 500), `≈ text.primary` (#1a1a1a); transition box-shadow `duration.sidebar` (0.2s) cubic-bezier(0, 0, 0.2, 1); icon `size.icon-medium` (20 x 20), `≈ text.primary` (#1a1a1a) |
 | light-hover, light-pressed | shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.04) 0px 2px 4px 0px |
 
 Tokens named in its classes: `--background-card-gray`, `--background-menu-white`, `--border-main`, `--shadow-S`, `--text-primary`, `--text-tertiary`.
@@ -3421,8 +3422,8 @@ Tokens named in its classes: `--background-card-gray`, `--background-menu-white`
 
 | State | Values |
 |---|---|
-| default | size 16 x 16; border T: 2px solid #e6e6e6 `≈ text.primary`; R: 2px solid #e5e7eb; B: 2px solid #e5e7eb; L: 2px solid #e5e7eb; radius 9999px; background transparent |
-| light | size 16 x 16; border T: 2px solid #1a1a1a `≈ text.primary`; R: 2px solid #e5e7eb; B: 2px solid #e5e7eb; L: 2px solid #e5e7eb; radius 9999px; background transparent |
+| default | size 16 x 16; border T: `borderWidth.strong` (2px) solid `≈ text.primary` (#e6e6e6); R: `borderWidth.strong` (2px) solid #e5e7eb; B: `borderWidth.strong` (2px) solid #e5e7eb; L: `borderWidth.strong` (2px) solid #e5e7eb; radius `radius.full` (9999px); background transparent |
+| light | size 16 x 16; border T: `borderWidth.strong` (2px) solid `≈ text.primary` (#1a1a1a); R: `borderWidth.strong` (2px) solid #e5e7eb; B: `borderWidth.strong` (2px) solid #e5e7eb; L: `borderWidth.strong` (2px) solid #e5e7eb; radius `radius.full` (9999px); background transparent |
 
 #### Upgrade button (Usage)
 
@@ -3430,10 +3431,10 @@ Tokens named in its classes: `--background-card-gray`, `--background-menu-white`
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 73.16 x 32; padding 0px 8px; radius 8px; background rgba(255, 255, 255, 0.95) `button.black`; text System 14/18 500, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover, pressed | opacity 0.9 |
-| light (same: light-focus-visible) | size 73.16 x 32; padding 0px 8px; radius 8px; background #1a1a19 `button.black`; text System 14/18 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-hover, light-pressed | opacity 0.9 |
+| default (same: focus-visible) | size 73.16 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background `button.black` (rgba(255, 255, 255, 0.95)); text `typography.role.label-compact` (System 14/18 500), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover, pressed | opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 73.16 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background `button.black` (#1a1a19); text `typography.role.label-compact` (System 14/18 500), `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover, light-pressed | opacity `opacity.hover` (0.9) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`, `--ui-density-small-row-height`.
 
@@ -3443,10 +3444,10 @@ Tokens named in its classes: `--Button-black`, `--text-onblack`, `--ui-density-s
 
 | State | Values |
 |---|---|
-| default | size 734 x 57; padding 12px 0px; border B: 1px dashed rgba(255, 255, 255, 0.12) `border.dark`; background transparent; text Libre Baskerville 16/22 700, #e6e6e6 `≈ text.primary` |
-| light | size 734 x 57; padding 12px 0px; border B: 1px dashed rgba(0, 0, 0, 0.14) `border.dark`; background transparent; text Libre Baskerville 16/22 700, #1a1a1a `≈ text.primary` |
+| default | size 734 x 57; padding `space.3` (12px) 0px; border B: `borderWidth.default` (1px) dashed `border.dark` (rgba(255, 255, 255, 0.12)); background transparent; text Libre Baskerville 16/22 700, `≈ text.primary` (#e6e6e6) |
+| light | size 734 x 57; padding `space.3` (12px) 0px; border B: `borderWidth.default` (1px) dashed `border.dark` (rgba(0, 0, 0, 0.14)); background transparent; text Libre Baskerville 16/22 700, `≈ text.primary` (#1a1a1a) |
 
-Child layers: div 734x57 border 1px dashed rgba(255, 255, 255, 0.12) `≈ border.image-preview-toolbar`; button 73.2x32 background rgba(255, 255, 255, 0.95) `≈ button.black` radius 8px
+Child layers: div 734x57 border 1px dashed `≈ border.image-preview-toolbar` (rgba(255, 255, 255, 0.12)); button 73.2x32 background `≈ button.black` (rgba(255, 255, 255, 0.95)) radius 8px
 
 Tokens named in its classes: `--Button-black`, `--border-dark`, `--text-onblack`, `--text-primary`, `--ui-density-small-row-height`.
 
@@ -3456,8 +3457,8 @@ Tokens named in its classes: `--Button-black`, `--border-dark`, `--text-onblack`
 
 | State | Values |
 |---|---|
-| default | size 440 x 532.5; radius 16px; background #1a1a1a `background.gray-main`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 28/42 600, #e6e6e6 `≈ text.primary`; icon 20 x 20, #8c8c8c `≈ text.tertiary`; placeholder #595959 `≈ text.disable` |
-| light | size 440 x 532.5; radius 16px; background #f8f8f7 `background.gray-main`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; outline 2px solid transparent, offset 2px; text System 28/42 600, #1a1a1a `≈ text.primary`; icon 20 x 20, #737373 `≈ text.tertiary`; placeholder #a6a6a6 `≈ text.disable` |
+| default | size 440 x 532.5; radius `radius.dialog` (16px); background `background.gray-main` (#1a1a1a); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text System 28/42 600, `≈ text.primary` (#e6e6e6); icon `size.icon-medium` (20 x 20), `icon.tertiary` (#8c8c8c); placeholder `≈ text.disable` (#595959) |
+| light | size 440 x 532.5; radius `radius.dialog` (16px); background `background.gray-main` (#f8f8f7); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); outline `focusRing.width` (2px) solid transparent, offset `focusRing.width` (2px); text System 28/42 600, `≈ text.primary` (#1a1a1a); icon `size.icon-medium` (20 x 20), `icon.tertiary` (#737373); placeholder `≈ text.disable` (#a6a6a6) |
 
 Tokens named in its classes: `--background-gray-main`, `--border-main`, `--dlg-enter-scale`, `--dlg-enter-y`, `--dp`, `--dp-header-end`, `--fill-tsp-gray-main`, `--fill-tsp-white-light`, `--fill-white`, `--icon-tertiary`, `--shadow-S`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -3467,16 +3468,16 @@ Tokens named in its classes: `--background-gray-main`, `--border-main`, `--dlg-e
 
 | State | Values |
 |---|---|
-| default | size 276.25 x 36; padding 1px; border 1px solid transparent; radius 8px; background rgba(0, 0, 0, 0.2) `fill.tsp-gray-main`; text System 14/20 400, #e6e6e6 `≈ text.primary` |
-| item | size 136.13 x 32; padding 0px 16px; border none; radius none; background transparent; text System 14/20 400, #8c8c8c `text.tertiary`; transition color and 5 more 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| item-hover | size 136.13 x 32; padding 0px 16px; border none; radius none; background transparent; text System 14/20 400, #b3b3b3 `text.secondary`; transition color and 5 more 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| item-focus-visible | size 136.13 x 32; padding 0px 16px; border none; radius none; background transparent; text System 14/20 400, #8c8c8c `text.tertiary`; transition color and 5 more 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| selected | size 136.13 x 32; padding none; border none; radius none; background transparent |
-| light | size 276.25 x 36; padding 1px; border 1px solid transparent; radius 8px; background rgba(55, 53, 47, 0.04) `fill.tsp-gray-main`; text System 14/20 400, #1a1a1a `≈ text.primary` |
-| light-item | size 136.13 x 32; padding 0px 16px; border none; radius none; background transparent; text System 14/20 400, #737373 `text.tertiary`; transition color and 5 more 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-item-hover | size 136.13 x 32; padding 0px 16px; border none; radius none; background transparent; text System 14/20 400, #4d4d4d `text.secondary`; transition color and 5 more 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-item-focus-visible | size 136.13 x 32; padding 0px 16px; border none; radius none; background transparent; text System 14/20 400, #737373 `text.tertiary`; transition color and 5 more 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-selected | size 136.13 x 32; padding none; border none; radius none; background transparent |
+| default | size 276.25 x `size.row` (36px); padding 1px; border `borderWidth.default` (1px) solid transparent; radius `radius.small` (8px); background `fill.tsp-gray-main` (rgba(0, 0, 0, 0.2)); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6) |
+| item | size 136.13 x `size.row-small` (32px); padding 0px `space.4` (16px); border none; radius none; background transparent; text `typography.role.body` (System 14/20 400), `text.tertiary` (#8c8c8c); transition color and 5 more `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| item-hover | size 136.13 x `size.row-small` (32px); padding 0px `space.4` (16px); border none; radius none; background transparent; text `typography.role.body` (System 14/20 400), `text.secondary` (#b3b3b3); transition color and 5 more `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| item-focus-visible | size 136.13 x `size.row-small` (32px); padding 0px `space.4` (16px); border none; radius none; background transparent; text `typography.role.body` (System 14/20 400), `text.tertiary` (#8c8c8c); transition color and 5 more `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| selected | size 136.13 x `size.row-small` (32px); padding none; border none; radius none; background transparent |
+| light | size 276.25 x `size.row` (36px); padding 1px; border `borderWidth.default` (1px) solid transparent; radius `radius.small` (8px); background `fill.tsp-gray-main` (rgba(55, 53, 47, 0.04)); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a) |
+| light-item | size 136.13 x `size.row-small` (32px); padding 0px `space.4` (16px); border none; radius none; background transparent; text `typography.role.body` (System 14/20 400), `text.tertiary` (#737373); transition color and 5 more `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-item-hover | size 136.13 x `size.row-small` (32px); padding 0px `space.4` (16px); border none; radius none; background transparent; text `typography.role.body` (System 14/20 400), `text.secondary` (#4d4d4d); transition color and 5 more `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-item-focus-visible | size 136.13 x `size.row-small` (32px); padding 0px `space.4` (16px); border none; radius none; background transparent; text `typography.role.body` (System 14/20 400), `text.tertiary` (#737373); transition color and 5 more `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-selected | size 136.13 x `size.row-small` (32px); padding none; border none; radius none; background transparent |
 
 Tokens named in its classes: `--fill-tsp-gray-main`, `--fill-white`, `--shadow-S`, `--text-primary`, `--text-secondary`, `--text-tertiary`.
 
@@ -3486,10 +3487,10 @@ Tokens named in its classes: `--fill-tsp-gray-main`, `--fill-white`, `--shadow-S
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 392 x 36; padding 0px 12px; radius 8px; background rgba(255, 255, 255, 0.95) `button.black`; text System 14/20 500, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips` |
-| hover, pressed | opacity 0.9 |
-| light (same: light-focus-visible) | size 392 x 36; padding 0px 12px; radius 8px; background #1a1a19 `button.black`; text System 14/20 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #ffffff `≈ background.menu-white` |
-| light-hover, light-pressed | opacity 0.9 |
+| default (same: focus-visible) | size 392 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background `button.black` (rgba(255, 255, 255, 0.95)); text `typography.role.label` (System 14/20 500), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)) |
+| hover, pressed | opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 392 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background `button.black` (#1a1a19); text `typography.role.label` (System 14/20 500), `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ background.menu-white` (#ffffff) |
+| light-hover, light-pressed | opacity `opacity.hover` (0.9) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
@@ -3499,10 +3500,10 @@ Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 392 x 36; padding 0px 12px; radius 8px; background #2167e8; text System 14/20 500, #ffffff `≈ background.tool-used-image-loading`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #ffffff `≈ background.tool-used-image-loading` |
-| hover, pressed | opacity 0.9 |
-| light (same: light-focus-visible) | size 392 x 36; padding 0px 12px; radius 8px; background #2167e8; text System 14/20 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #ffffff `≈ background.menu-white` |
-| light-hover, light-pressed | opacity 0.9 |
+| default (same: focus-visible) | size 392 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background #2167e8; text `typography.role.label` (System 14/20 500), `≈ background.tool-used-image-loading` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ background.tool-used-image-loading` (#ffffff) |
+| hover, pressed | opacity `opacity.hover` (0.9) |
+| light (same: light-focus-visible) | size 392 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background #2167e8; text `typography.role.label` (System 14/20 500), `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ background.menu-white` (#ffffff) |
+| light-hover, light-pressed | opacity `opacity.hover` (0.9) |
 
 Tokens named in its classes: `--text-white`.
 
@@ -3512,8 +3513,8 @@ Tokens named in its classes: `--text-white`.
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, typed) | size 302.22 x 36; padding 8px 12px 8px 16px; border 1px solid transparent; background transparent; text System 14/21 400, #e6e6e6 `≈ text.primary`; transition color and 5 more 0.3s cubic-bezier(0.4, 0, 0.2, 1); placeholder #595959 `≈ text.disable` |
-| light (same: light-hover, light-focus-visible, light-typed) | size 302.22 x 36; padding 8px 12px 8px 16px; border 1px solid transparent; background transparent; text System 14/21 400, #1a1a1a `≈ text.primary`; transition color and 5 more 0.3s cubic-bezier(0.4, 0, 0.2, 1); placeholder #a6a6a6 `≈ text.disable` |
+| default (same: hover, focus-visible, typed) | size 302.22 x `size.row` (36px); padding `space.2` (8px) `space.3` (12px) `space.2` (8px) `space.4` (16px); border `borderWidth.default` (1px) solid transparent; background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#e6e6e6); transition color and 5 more `duration.resize` (0.3s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); placeholder `≈ text.disable` (#595959) |
+| light (same: light-hover, light-focus-visible, light-typed) | size 302.22 x `size.row` (36px); padding `space.2` (8px) `space.3` (12px) `space.2` (8px) `space.4` (16px); border `borderWidth.default` (1px) solid transparent; background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#1a1a1a); transition color and 5 more `duration.resize` (0.3s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); placeholder `≈ text.disable` (#a6a6a6) |
 
 Tokens named in its classes: `--border-primary`, `--text-disable`.
 
@@ -3523,12 +3524,12 @@ Tokens named in its classes: `--border-primary`, `--text-disable`.
 
 | State | Values |
 |---|---|
-| default | size 81.78 x 36; padding 0px 12px; radius 8px; background rgba(255, 255, 255, 0.95) `button.black`; text System 14/20 500, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); opacity 0.5; icon 16 x 16, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips` |
+| default | size 81.78 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background `button.black` (rgba(255, 255, 255, 0.95)); text `typography.role.label` (System 14/20 500), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); opacity `opacity.disabled-strong` (0.5); icon `size.icon-small` (16 x 16), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)) |
 | enabled | opacity none |
-| enabled-hover, enabled-pressed | opacity 0.9 |
-| light | size 81.78 x 36; padding 0px 12px; radius 8px; background #1a1a19 `button.black`; text System 14/20 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); opacity 0.5; icon 16 x 16, #ffffff `≈ background.menu-white` |
+| enabled-hover, enabled-pressed | opacity `opacity.hover` (0.9) |
+| light | size 81.78 x `size.row` (36px); padding 0px `space.3` (12px); radius `radius.small` (8px); background `button.black` (#1a1a19); text `typography.role.label` (System 14/20 500), `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); opacity `opacity.disabled-strong` (0.5); icon `size.icon-small` (16 x 16), `≈ background.menu-white` (#ffffff) |
 | light-enabled | opacity none |
-| light-enabled-hover, light-enabled-pressed | opacity 0.9 |
+| light-enabled-hover, light-enabled-pressed | opacity `opacity.hover` (0.9) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
@@ -3544,8 +3545,8 @@ The same app at 390 wide: the app banner, the header with its menu button, the s
 
 | State | Values |
 |---|---|
-| default | size 390 x 65; padding 12px 16px 12px 6px; border B: 1px solid rgba(255, 255, 255, 0.06) `border.main`; background #1a1a1a `background.gray-main`; text System 16/22 600, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 390 x 65; padding 12px 16px 12px 6px; border B: 1px solid rgba(0, 0, 0, 0.06) `border.main`; background #f8f8f7 `background.gray-main`; text System 16/22 600, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 390 x 65; padding `space.3` (12px) `space.4` (16px) `space.3` (12px) `space.1_5` (6px); border B: `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); background `background.gray-main` (#1a1a1a); text System 16/22 600, `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 390 x 65; padding `space.3` (12px) `space.4` (16px) `space.3` (12px) `space.1_5` (6px); border B: `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); background `background.gray-main` (#f8f8f7); text System 16/22 600, `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--Button-black`, `--background-gray-main`, `--border-main`, `--text-onblack`, `--text-primary`, `--text-tertiary`, `--ui-density-small-row-height`.
 
@@ -3557,8 +3558,8 @@ Tokens named in its classes: `--Button-black`, `--background-gray-main`, `--bord
 
 | State | Values |
 |---|---|
-| default | size 80.06 x 32; padding 0px 8px; radius 8px; background rgba(255, 255, 255, 0.95) `button.black`; text System 14/18 500, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light | size 80.06 x 32; padding 0px 8px; radius 8px; background #1a1a19 `button.black`; text System 14/18 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 80.06 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background `button.black` (rgba(255, 255, 255, 0.95)); text `typography.role.label-compact` (System 14/18 500), `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size 80.06 x `size.row-small` (32px); padding 0px `space.2` (8px); radius `radius.small` (8px); background `button.black` (#1a1a19); text `typography.role.label-compact` (System 14/18 500), `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`, `--ui-density-small-row-height`.
 
@@ -3570,8 +3571,8 @@ Tokens named in its classes: `--Button-black`, `--text-onblack`, `--ui-density-s
 
 | State | Values |
 |---|---|
-| default | size 390 x 48; padding 8px 20px 8px 16px; border B: 1px solid transparent; background #1a1a1a `background.gray-main`; text System 16/20 500, #e6e6e6 `≈ text.primary`; icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| light | size 390 x 48; padding 8px 20px 8px 16px; border B: 1px solid transparent; background #f8f8f7 `background.gray-main`; text System 16/20 500, #1a1a1a `≈ text.primary`; icon 16 x 16, #4d4d4d `≈ text.secondary` |
+| default | size 390 x `size.header` (48px); padding `space.2` (8px) `space.5` (20px) `space.2` (8px) `space.4` (16px); border B: `borderWidth.default` (1px) solid transparent; background `background.gray-main` (#1a1a1a); text System 16/20 500, `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `icon.secondary` (#b3b3b3) |
+| light | size 390 x `size.header` (48px); padding `space.2` (8px) `space.5` (20px) `space.2` (8px) `space.4` (16px); border B: `borderWidth.default` (1px) solid transparent; background `background.gray-main` (#f8f8f7); text System 16/20 500, `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `icon.secondary` (#4d4d4d) |
 
 Tokens named in its classes: `--background-gray-main`, `--border-dark`, `--border-main`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--icon-secondary`, `--text-blue`, `--text-primary`, `--text-tertiary`.
 
@@ -3583,8 +3584,8 @@ Tokens named in its classes: `--background-gray-main`, `--border-dark`, `--borde
 
 | State | Values |
 |---|---|
-| default | size 319.66 x 42; background transparent; text Libre Baskerville 28/42 400, #e6e6e6 `text.primary` |
-| light | size 319.66 x 42; background transparent; text Libre Baskerville 28/42 400, #1a1a1a `text.primary` |
+| default | size 319.66 x 42; background transparent; text Libre Baskerville 28/42 400, `text.primary` (#e6e6e6) |
+| light | size 319.66 x 42; background transparent; text Libre Baskerville 28/42 400, `text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--text-primary`.
 
@@ -3596,8 +3597,8 @@ Tokens named in its classes: `--text-primary`.
 
 | State | Values |
 |---|---|
-| default | size 358 x 120; padding 12px 0px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 22px; background #242424 `background.menu-white`; shadow rgba(0, 0, 0, 0.02) 0px 12px 32px 0px; text System 12/16 500, #8c8c8c `≈ text.tertiary`; icon 17 x 17, #b3b3b3 `≈ text.secondary`; placeholder #8c8c8c `≈ text.tertiary` |
-| light | size 358 x 120; padding 12px 0px; border 1px solid #e5e7eb; radius 22px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.02) 0px 12px 32px 0px; text System 12/16 500, #737373 `≈ text.tertiary`; icon 17 x 17, #4d4d4d `≈ text.secondary`; placeholder #737373 `≈ text.tertiary` |
+| default | size 358 x 120; padding `space.3` (12px) 0px; border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.composer` (22px); background `background.menu-white` (#242424); shadow `elevation.composer` (rgba(0, 0, 0, 0.02) 0px 12px 32px 0px); text System 12/16 500, `≈ text.tertiary` (#8c8c8c); icon 17 x 17, `≈ text.secondary` (#b3b3b3); placeholder `≈ text.tertiary` (#8c8c8c) |
+| light | size 358 x 120; padding `space.3` (12px) 0px; border `borderWidth.default` (1px) solid #e5e7eb; radius `radius.composer` (22px); background `background.menu-white` (#ffffff); shadow `elevation.composer` (rgba(0, 0, 0, 0.02) 0px 12px 32px 0px); text System 12/16 500, `≈ text.tertiary` (#737373); icon 17 x 17, `≈ text.secondary` (#4d4d4d); placeholder `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--accent-send-button`, `--background-menu-white`, `--border-dark`, `--border-main`, `--fill-tsp-white-dark`, `--fill-tsp-white-light`, `--icon-primary`, `--icon-secondary`, `--text-onblack`, `--text-primary`, `--text-secondary`, `--text-tertiary`, `--ui-density-composer-radius`, `--ui-density-content-padding`, `--ui-density-home-input-editor-min-height`, `--ui-density-outer-padding`, `--ui-density-row-gap`, `--ui-density-section-gap`, `--ui-density-small-row-height`.
 
@@ -3609,8 +3610,8 @@ Tokens named in its classes: `--accent-send-button`, `--background-menu-white`, 
 
 | State | Values |
 |---|---|
-| default | size 136.09 x 40; padding 7px 12px; border 1px solid rgba(255, 255, 255, 0.06) `border.main`; radius 9999px; background transparent; text System 14/21 400, #e6e6e6 `≈ text.primary`; icon 18 x 18, #8c8c8c `≈ text.tertiary` |
-| light | size 136.09 x 40; padding 7px 12px; border 1px solid rgba(0, 0, 0, 0.06) `border.main`; radius 9999px; background transparent; text System 14/21 400, #1a1a1a `≈ text.primary`; icon 18 x 18, #737373 `≈ text.tertiary` |
+| default | size 136.09 x `size.control-large` (40px); padding 7px `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(255, 255, 255, 0.06)); radius `radius.full` (9999px); background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#e6e6e6); icon `size.icon` (18 x 18), `≈ text.tertiary` (#8c8c8c) |
+| light | size 136.09 x `size.control-large` (40px); padding 7px `space.3` (12px); border `borderWidth.default` (1px) solid `border.main` (rgba(0, 0, 0, 0.06)); radius `radius.full` (9999px); background transparent; text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#1a1a1a); icon `size.icon` (18 x 18), `≈ text.tertiary` (#737373) |
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-primary`.
 
@@ -3622,8 +3623,8 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default | size 350 x 98; radius 12px; background rgba(255, 255, 255, 0.06) `fill.tsp-white-main`; text System 16/22 500, #e6e6e6 `≈ text.primary` |
-| light | size 350 x 98; radius 12px; background rgba(55, 53, 47, 0.06) `fill.tsp-white-main`; text System 16/22 500, #1a1a1a `≈ text.primary` |
+| default | size 350 x 98; radius `radius.card` (12px); background `fill.tsp-white-main` (rgba(255, 255, 255, 0.06)); text `typography.title-base` (System 16/22 500), `≈ text.primary` (#e6e6e6) |
+| light | size 350 x 98; radius `radius.card` (12px); background `fill.tsp-white-main` (rgba(55, 53, 47, 0.06)); text `typography.title-base` (System 16/22 500), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-main`, `--icon-tertiary`, `--text-primary`, `--text-tertiary`.
 
@@ -3635,10 +3636,10 @@ Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-main`, `
 
 | State | Values |
 |---|---|
-| default | size 8 x 8; radius 9999px; background rgba(255, 255, 255, 0.08) `fill.tsp-white-dark`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| active | background #595959 `icon.disable` |
-| light | size 8 x 8; radius 9999px; background rgba(55, 53, 47, 0.08) `fill.tsp-white-dark`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light-active | background #a6a6a6 `icon.disable` |
+| default | size 8 x 8; radius `radius.full` (9999px); background `fill.tsp-white-dark` (rgba(255, 255, 255, 0.08)); transition all `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| active | background `icon.disable` (#595959) |
+| light | size 8 x 8; radius `radius.full` (9999px); background `fill.tsp-white-dark` (rgba(55, 53, 47, 0.08)); transition all `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-active | background `icon.disable` (#a6a6a6) |
 
 Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-light`.
 
@@ -3650,8 +3651,8 @@ Tokens named in its classes: `--fill-tsp-white-dark`, `--fill-tsp-white-light`.
 
 | State | Values |
 |---|---|
-| default | size 300 x 844; background #1f1f1f `background.nav`; text System 14/21 400, #e6e6e6 `≈ text.primary`; transition width 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 28 x 28, #e6e6e6 `≈ text.primary` |
-| light | size 300 x 844; background #f0f0f0 `background.nav`; text System 14/21 400, #1a1a1a `≈ text.primary`; transition width 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 28 x 28, #1a1a1a `≈ text.primary` |
+| default | size 300 x 844; background `background.nav` (#1f1f1f); text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#e6e6e6); transition width `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)), transform `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon 28 x 28, `≈ text.primary` (#e6e6e6) |
+| light | size 300 x 844; background `background.nav` (#f0f0f0); text `typography.role.nav` (System 14/21 400), `≈ text.primary` (#1a1a1a); transition width `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)), transform `duration.sidebar` (0.2s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon 28 x 28, `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-nav`, `--border-light`, `--border-main`, `--fill-tsp-white-light`, `--icon-secondary`, `--text-primary`, `--text-tertiary`, `--ui-density-nav-icon-box-size`, `--ui-density-nav-item-gap`, `--ui-density-nav-item-padding-start`, `--ui-density-outer-padding`, `--ui-density-row-height`, `--ui-density-row-radius`, `--ui-font-size-sm`.
 
@@ -3661,8 +3662,8 @@ Tokens named in its classes: `--background-nav`, `--border-light`, `--border-mai
 
 | State | Values |
 |---|---|
-| default | size 390 x 844; background rgba(0, 0, 0, 0.45) `background.mask-black`; transition visibility 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1) |
-| light | size 390 x 844; background rgba(0, 0, 0, 0.65) `background.mask-black`; transition visibility 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 390 x 844; background `background.mask-black` (rgba(0, 0, 0, 0.45)); transition visibility 0.1s `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)), background-color 0.1s `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size 390 x 844; background `background.mask-black` (rgba(0, 0, 0, 0.65)); transition visibility 0.1s `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)), background-color 0.1s `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
 
 Tokens named in its classes: `--background-mask-black`.
 
@@ -3674,8 +3675,8 @@ Tokens named in its classes: `--background-mask-black`.
 
 | State | Values |
 |---|---|
-| default | size 390 x 112; background #1a1a1a `background.gray-main`; text System 18/24 500, #e6e6e6 `≈ text.primary`; icon 16 x 16, #b3b3b3 `≈ text.secondary`; placeholder #595959 `≈ text.disable` |
-| light | size 390 x 112; background #f8f8f7 `background.gray-main`; text System 18/24 500, #1a1a1a `≈ text.primary`; icon 16 x 16, #4d4d4d `≈ text.secondary`; placeholder #a6a6a6 `≈ text.disable` |
+| default | size 390 x 112; background `background.gray-main` (#1a1a1a); text `typography.title-lg` (System 18/24 500), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `icon.secondary` (#b3b3b3); placeholder `≈ text.disable` (#595959) |
+| light | size 390 x 112; background `background.gray-main` (#f8f8f7); text `typography.title-lg` (System 18/24 500), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `icon.secondary` (#4d4d4d); placeholder `≈ text.disable` (#a6a6a6) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--background-gray-main`, `--border-main`, `--fill-tsp-gray-main`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--fill-white`, `--icon-secondary`, `--shadow-S`, `--text-disable`, `--text-primary`, `--text-secondary`, `--text-tertiary`, `--ui-density-input-gap`, `--ui-density-small-radius`.
 
@@ -3687,10 +3688,10 @@ Tokens named in its classes: `--Button-border-secondary`, `--background-gray-mai
 
 | State | Values |
 |---|---|
-| default | size 81.11 x 32; padding 0px 8px 0px 12px; border 1px solid rgba(255, 255, 255, 0.12) `button.border-secondary`; radius 8px; background transparent; text System 13/18 400, #b3b3b3 `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| open | background rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white` |
-| light | size 81.11 x 32; padding 0px 8px 0px 12px; border 1px solid rgba(0, 0, 0, 0.12) `button.border-secondary`; radius 8px; background transparent; text System 13/18 400, #4d4d4d `≈ text.secondary`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-open | background rgba(55, 53, 47, 0.06) `≈ fill.tsp-white-main` |
+| default | size 81.11 x `size.row-small` (32px); padding 0px `space.2` (8px) 0px `space.3` (12px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(255, 255, 255, 0.12)); radius `radius.small` (8px); background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.secondary` (#b3b3b3); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| open | background `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06)) |
+| light | size 81.11 x `size.row-small` (32px); padding 0px `space.2` (8px) 0px `space.3` (12px); border `borderWidth.default` (1px) solid `button.border-secondary` (rgba(0, 0, 0, 0.12)); radius `radius.small` (8px); background transparent; text `typography.role.meta` (System 13/18 400), `≈ text.secondary` (#4d4d4d); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
+| light-open | background `≈ fill.tsp-white-main` (rgba(55, 53, 47, 0.06)) |
 
 Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-main`, `--text-secondary`.
 
@@ -3702,8 +3703,8 @@ Tokens named in its classes: `--Button-border-secondary`, `--fill-tsp-white-main
 
 | State | Values |
 |---|---|
-| default | size 200 x 296; padding 4px; radius 12px; background #242424 `background.menu-white`; shadow rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 200 x 296; padding 4px; radius 12px; background #ffffff `background.menu-white`; shadow rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 200 x 296; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#242424); shadow `elevation.menu` (rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 24px -12px, rgba(0, 0, 0, 0.28) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.16) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 200 x 296; padding `space.1` (4px); radius `radius.card` (12px); background `background.menu-white` (#ffffff); shadow `elevation.menu` (rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 24px -12px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.04) 0px 10px 20px 1px); text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-menu-white`, `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -3715,10 +3716,10 @@ Tokens named in its classes: `--background-menu-white`, `--fill-tsp-white-main`,
 
 | State | Values |
 |---|---|
-| default | size 192 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 16 x 16, #b3b3b3 `≈ text.secondary` |
-| checked | icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 192 x 36; padding 8px; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 16 x 16, #4d4d4d `≈ text.secondary` |
-| light-checked | icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 192 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#b3b3b3) |
+| checked | icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 192 x `size.row` (36px); padding `space.2` (8px); radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.secondary` (#4d4d4d) |
+| light-checked | icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-density-menu-item-padding-y`.
 
@@ -3728,10 +3729,10 @@ Tokens named in its classes: `--fill-tsp-white-main`, `--text-primary`, `--ui-de
 
 | State | Values |
 |---|---|
-| default | size 350 x 67; radius 8px; background transparent; text System 14/20 400, #e6e6e6 `≈ text.primary`; icon 24 x 24, #e6e6e6 `≈ text.primary` |
-| light | size 350 x 67; radius 8px; background transparent; text System 14/20 400, #1a1a1a `≈ text.primary`; icon 24 x 24, #1a1a1a `≈ text.primary` |
+| default | size 350 x 67; radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#e6e6e6); icon `size.icon-large` (24 x 24), `≈ text.primary` (#e6e6e6) |
+| light | size 350 x 67; radius `radius.small` (8px); background transparent; text `typography.role.body` (System 14/20 400), `≈ text.primary` (#1a1a1a); icon `size.icon-large` (24 x 24), `≈ text.primary` (#1a1a1a) |
 
-Child layers: div 350x67 border 1px solid rgba(255, 255, 255, 0.06) `≈ background.tsp-menu-white`
+Child layers: div 350x67 border 1px solid `≈ background.tsp-menu-white` (rgba(255, 255, 255, 0.06))
 
 Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-primary`, `--text-tertiary`.
 
@@ -3741,8 +3742,8 @@ Tokens named in its classes: `--border-main`, `--fill-tsp-white-light`, `--text-
 
 | State | Values |
 |---|---|
-| default | size 326 x 245.25; border 1px solid rgba(255, 255, 255, 0.12) `border.dark`; radius 12px; background #242424 `background.menu-white`; text System 14/20 500, #e6e6e6 `≈ text.primary`; icon 27 x 27, #e6e6e6 `≈ text.primary` |
-| light | size 326 x 245.25; border 1px solid rgba(0, 0, 0, 0.14) `border.dark`; radius 12px; background #ffffff `background.menu-white`; text System 14/20 500, #1a1a1a `≈ text.primary`; icon 27 x 27, #1a1a1a `≈ text.primary` |
+| default | size 326 x 245.25; border `borderWidth.default` (1px) solid `border.dark` (rgba(255, 255, 255, 0.12)); radius `radius.card` (12px); background `background.menu-white` (#242424); text System 14/20 500 tracking -0.154px, `≈ text.primary` (#e6e6e6); icon 27 x 27, `≈ text.primary` (#e6e6e6) |
+| light | size 326 x 245.25; border `borderWidth.default` (1px) solid `border.dark` (rgba(0, 0, 0, 0.14)); radius `radius.card` (12px); background `background.menu-white` (#ffffff); text System 14/20 500 tracking -0.154px, `≈ text.primary` (#1a1a1a); icon 27 x 27, `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--background-menu-white`, `--border-dark`, `--border-main`, `--fill-tsp-white-light`, `--fill-tsp-white-main`, `--text-primary`.
 
@@ -3754,8 +3755,8 @@ Tokens named in its classes: `--background-menu-white`, `--border-dark`, `--bord
 
 | State | Values |
 |---|---|
-| default | size 390 x 844; background #1a1a1a `background.gray-main`; text System 16/22 600, #e6e6e6 `≈ text.primary`; icon 16 x 16, #e6e6e6 `≈ text.primary` |
-| light | size 390 x 844; background #f8f8f7 `background.gray-main`; text System 16/22 600, #1a1a1a `≈ text.primary`; icon 16 x 16, #1a1a1a `≈ text.primary` |
+| default | size 390 x 844; background `background.gray-main` (#1a1a1a); text System 16/22 600, `≈ text.primary` (#e6e6e6); icon `size.icon-small` (16 x 16), `≈ text.primary` (#e6e6e6) |
+| light | size 390 x 844; background `background.gray-main` (#f8f8f7); text System 16/22 600, `≈ text.primary` (#1a1a1a); icon `size.icon-small` (16 x 16), `≈ text.primary` (#1a1a1a) |
 
 Tokens named in its classes: `--Button-black`, `--background-gray-main`, `--border-main`, `--text-onblack`, `--text-primary`, `--text-tertiary`, `--ui-density-small-row-height`.
 
@@ -3767,8 +3768,8 @@ Tokens named in its classes: `--Button-black`, `--background-gray-main`, `--bord
 
 | State | Values |
 |---|---|
-| default | size 298 x 48; padding 0px 24px; radius 12px; background rgba(255, 255, 255, 0.95) `button.black`; text System 16/24 500, rgba(0, 0, 0, 0.9) `≈ background.menu-tooltips`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| light | size 298 x 48; padding 0px 24px; radius 12px; background #1a1a19 `button.black`; text System 16/24 500, #ffffff `≈ background.menu-white`; transition color and 5 more 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 298 x `size.header` (48px); padding 0px `space.6` (24px); radius `radius.card` (12px); background `button.black` (rgba(255, 255, 255, 0.95)); text System 16/24 500, `≈ background.menu-tooltips` (rgba(0, 0, 0, 0.9)); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size 298 x `size.header` (48px); padding 0px `space.6` (24px); radius `radius.card` (12px); background `button.black` (#1a1a19); text System 16/24 500, `≈ background.menu-white` (#ffffff); transition color and 5 more `duration.fast` (0.15s) `easing.standard` (cubic-bezier(0.4, 0, 0.2, 1)) |
 
 Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
@@ -3780,14 +3781,14 @@ Tokens named in its classes: `--Button-black`, `--text-onblack`.
 
 | State | Values |
 |---|---|
-| default | size 122.27 x 20; background transparent; text System 14/20 500, #8c8c8c `text.tertiary` |
-| light | size 122.27 x 20; background transparent; text System 14/20 500, #737373 `text.tertiary` |
+| default | size 122.27 x 20; background transparent; text `typography.role.label` (System 14/20 500), `text.tertiary` (#8c8c8c) |
+| light | size 122.27 x 20; background transparent; text `typography.role.label` (System 14/20 500), `text.tertiary` (#737373) |
 
 Tokens named in its classes: `--text-tertiary`.
 
 ## Icon index
 
-173 distinct glyphs were lifted from the pages into [icons/](icons), 84 named by role in [icons/INDEX.tsv](icons/INDEX.tsv) and the rest by their Lucide class or a hash. Manus draws almost everything with Lucide (24-unit stroke icons at 2px, shown at 16 or 18) in `--icon-primary`, `--icon-secondary` or `--icon-tertiary`; the file-type icons in the Library are filled 32-unit glyphs in blue, red, orange and grey; the sidebar's task glyphs are images Manus serves from its CDN, kept under `icons/session/`.
+161 distinct glyphs were lifted from the pages into [icons/](icons), every one named by its role or its Lucide name in [icons/INDEX.tsv](icons/INDEX.tsv) (the 67 icons.mjs had left as a hash were named on the 2026-10-17 refresh from the words beside them and by sight, through tools/capture/icon-names.tsv and name_icons.py). Glyphs named `brand-*` are other companies' marks (Gmail, Google Docs, Drive and Sheets, Instagram, Shopify, Windows, Apple) as Manus shows them in connectors and examples; they belong to those companies. Manus draws almost everything with Lucide (24-unit stroke icons at 2px, shown at 16 or 18) in `--icon-primary`, `--icon-secondary` or `--icon-tertiary`; the file-type icons in the Library are filled 32-unit glyphs in blue, red, orange and grey; the sidebar's task glyphs are images Manus serves from its CDN, kept under `icons/session/`.
 
 | Icon | Where |
 |---|---|
@@ -3801,9 +3802,11 @@ Tokens named in its classes: `--text-tertiary`.
 | `check` | [svg] Task progress / Re-organize slide structure // for 5 presenters / Update slide conte |
 | `logo-manus-mark` | [svg] Feb 11 / [svg] Lite Feb // 11 [svg] [svg] / [svg] Lite Feb |
 | `sidebar-search` | Manus [svg] [svg] / [svg] [svg] New // [svg] [svg] Library / [svg] [svg] [svg] |
+| `library-file-generic` | Jan 10 (2) / A task // 03:07 AM [svg] / A task |
 | `project-folder` | [svg] [svg] [svg] / [svg] Hackathons Hackathons // [svg] [svg] [svg] / [svg] L [svg] |
 | `close` | Manus Desktop [svg] / Manus Desktop [svg] // Manus Close banner / [svg] Manus app |
 | `nav-computers` | New task ⌘⇧O / Computers Computers scrollable // New task Ctrl+⇧+O / Computers Computers s |
+| `rating-star` | was this result? / [svg] [svg] [svg] // this result? [svg] / [svg] [svg] [svg] |
 | `nav-library` | Agents Agents [svg] / Library Library [svg] // Recent tasks [svg] / Library [svg] [svg] |
 | `nav-creations` | [svg] Library Library / Creations Creations [svg] // [svg] Library [svg] / Creations [svg] |
 | `nav-automations` | [svg] Creations Creations / Automations Automations [svg] // [svg] [svg] [svg] / [svg] [sv |
@@ -3820,37 +3823,118 @@ Tokens named in its classes: `--text-tertiary`.
 | `list-filter` | Tasks [svg] [svg] / [svg] Another task |
 | `chevron-down` | [svg] [svg] All / All All Text // user Step 4/4 / Task progress [svg] |
 | `step-check` | for your reference. / Extract text from // [svg] Feb 11 / Deliver the Markdown |
+| `logo-manus-wordmark-small` | Feb 11 [svg] / Lite Feb 11 // [svg] [svg] [svg] / Lite Feb 11 |
+| `message-continue-in-new-task` | Feb 11 [svg] / [svg][svg] Lite Feb // more vibrant [svg] / How was this |
 | `download` | · 104.13 KB / This is the // A file / [svg] A file |
+| `composer-send` | Desktop [svg] [svg] / Manus is an // Manus Desktop [svg] / Manus is an |
 | `desktop` | +1 Manus Desktop / [svg] Manus Desktop // [svg] Manus Desktop / [svg] Manus Desktop |
+| `model-picker-chevron` | Manus 2.0 Lite / Free plan Upgrade // Manus 2.0 Lite / [svg] Upgrade [svg] |
 | `mic` | Manus Desktop [svg] / [svg] Manus is // [svg] Manus Desktop / [svg] Manus is |
+| `card-chevron` | your Video Build / Websites, apps, and // Manus Studio Create / Slides, images, and |
 | `clear-filled` | [svg] Library [svg] / [svg] [svg] [svg] // [svg] Creations [svg] / [svg] [svg] All |
 | `list-view` | [svg] [svg] [svg] / [svg] All [svg] // [svg] [svg] [svg] / [svg] Images [svg] |
+| `share-button` | [svg] [svg] Upgrade / Share [svg] [svg] // Lite [svg] [svg] / [svg] scrollable content |
 | `grid-view` | [svg] [svg] [svg] / [svg] [svg] All // [svg] [svg] [svg] / [svg] [svg] Images |
+| `nav-tasks-filter` | Library [svg] [svg] / [svg] [svg] [svg] |
+| `automation-expand` | 3 Sun 4 / [svg] Scheduled time // items · $128 / [svg] Checkout detected |
+| `logo-manus-mark-filled` | Sun 4 [svg] / Scheduled time reached // · $128 [svg] / Checkout detected —Manus |
+| `composer-chat-mode` | [svg] Manus Desktop / [svg] [svg] Manus // Desktop [svg] [svg] / [svg] [svg] Manus |
+| `credits-sparkle` | Free plan Upgrade / 341 Manus Studio // Free plan Upgrade / What can I |
 | `arrow-right` | skill with /skill-creator / [svg] Create a // the speaker notes. / [svg] Suggest additiona |
 | `view-options-filter` | [svg] [svg] [svg] / All [svg] All // 03:02 AM [svg] / All [svg] [svg] |
 | `panel-right` | [svg] Share [svg] / scrollable content [svg] // [svg] Share [svg] / scrollable content the |
+| `notification-thumbnail-blank` | it with Manus. / Wed, 4:14 AM // new agent app. / Tue, 2:51 AM |
 | `file-pdf` | [svg] scrollable content / Another file.pdf Another file.pdf PDF // Feb 11 [svg] / Another |
+| `logo-manus-mark-outline` | Close banner [svg] / Manus app Leave // Continue with web / Get Manus on |
+| `suggestion-create-slides` | double-check before use. / Create slides [svg] // [svg] Design More / Create slides [svg] |
+| `upgrade-sparkle` | 2.0 Lite [svg] / Upgrade [svg] Share // 2.0 Lite [svg] / [svg] [svg] scrollable |
+| `automation-back` | [svg] Detect changes / Update card [svg] // [svg] Update card / Compare plans [svg] |
+| `settings-skills` | [svg] [svg] [svg] / Make the process // Personalization [svg] Connectors / Skills [svg] Ma |
 | `star` | Creations [svg] [svg] / [svg] All [svg] // A project / https://example.manus.space/ [svg]  |
+| `suggestion-build-website` | [svg] Create slides / Build website [svg] // [svg] Create slides / Build website More |
+| `project-add` | in this project. / Add [svg] Connectors // Add [svg] Connectors / Add Files & |
 | `arrow-up-right` | ⌘⇧, [svg] Homepage / [svg] Get help // [svg] Get help / [svg] Docs [svg] |
 | `help` | Create a team / Get help [svg] // Upgrade [svg] Credits / 341 [svg] [svg] |
+| `brand-google-docs` | your weekly report. / Weekly_report_Oct_04.md October[svg] Mon // highlighting emerging tr |
+| `settings-personalization` | Beta features Capabilities / Personalization [svg] Connectors // [svg] [svg] Account / Per |
+| `automation-arrow` | [svg] Monitor pricing / Detect changes [svg] // [svg] Collect feedback / Similar issues [s |
+| `panel-tab-video` | Create games New / Video New [svg] // Slides [svg] Canvas / Video Close sidebar |
+| `automation-condition` | when it happens. / Customized condition When // [svg] Compare plans / Customized condition |
+| `calendar-previous` | own words. October / Mon 28 Tue // [svg] Weekly_report_Oct_04.md October / Mon 5 Tue |
 | `filter-images` | [svg] [svg] [svg] / Images [svg] All // Slides [svg] Spreadsheets / Images [svg] Videos |
+| `suggestion-design` | [svg] Video New / Design More [svg] // Files [svg] Slides / Canvas [svg] Video |
 | `rename` | A task / Last active: Feb // per… [svg] Share / Rename [svg] Mark |
 | `settings-connectors` | Capabilities [svg] Personalization / Connectors [svg] Skills // project. [svg] Add / Conne |
+| `settings-phone` | Assets [svg] Email / Phone [svg] Wallet // Connect new computer / Control from your |
 | `cloud` | PM Feb 11 / Temporary cloud computer // modified: May 3 / Last modified: May |
 | `maximize` | [svg] [svg] [svg] / [svg] A report// [svg] [svg] [svg] / [svg] [svg] [svg] |
 | `filter-text-pdf` | [svg] All [svg] / Text & PDF // 3 minutes per… / Files [svg] [svg] |
 | `settings-general` | & Billing Settings / General [svg] Shortcuts // Account [svg] Personalization / Settings ⌘ |
+| `account-switcher` | Learner Personal Personal / [svg] scrollable content // Learner Personal Personal / Free U |
 | `file-doc-alt` | Feb 11 [svg] / A file.docx Feb 11 // A document / A file.docx Close |
+| `settings-usage-billing` | Account [svg] Account / Usage & Billing // [svg] Free Upgrade / Credits [svg] 341 |
 | `link` | [svg] [svg] [svg] /  // A document / Feb 11 [svg] |
 | `settings-account` | scrollable content Account / Account [svg] Usage |
+| `settings-team` | Integrations [svg] Developers / Create a team |
 | `new-tab` | 3 minutes per… / New tab [svg] // [svg] [svg] [svg] / New tab Start |
+| `brand-shopify` | Manus should run. / Checkout abandoned [svg] // Post improvement brief / Checkout abandone |
+| `settings-email` | [svg] Computers Assets / Email [svg] Phone |
+| `automation-checkout` | [svg] Checkout abandoned / 2 items · |
+| `settings-data-controls` | Data & Integrations / Data controls [svg] |
+| `brand-gmail` | personalized recovery email. / Recovery email draft |
+| `settings-mail-manus` | Connectors [svg] Skills / Mail Manus [svg] |
 | `settings-beta` | General [svg] Shortcuts / Beta features Capabilities |
 | `settings-developers` | controls [svg] Integrations / Developers [svg] Create |
 | `delete` | [svg] View project / Delete To pick // favorites [svg] Archive / Delete To pick |
 | `settings-shortcuts` | Settings [svg] General / Shortcuts [svg] Beta |
 | `settings-wallet` | Email [svg] Phone / Wallet Data & |
 | `settings-integrations` | [svg] Data controls / Integrations [svg] Developers |
+| `link-external` | Visit our website / To pick up |
 | `sign-out` | [svg] Docs [svg] / Sign out To |
+| `filter-audio` | Images [svg] Videos / Audio [svg] Others |
+| `filter-slides` | scratch [svg] Files / Slides [svg] Canvas |
+| `theme-dark` | Theme [svg] Light / Dark [svg] Auto |
+| `mark-unread` | Share [svg] Rename / Mark as unread |
+| `menu-share` | to[svg] [svg] Share / Locate in task |
+| `brand-instagram` | Logged in Sheets / Post performance below |
+| `menu-open-in-desktop` | in new tab / Open in desktop |
+| `project-recent-tasks` | Use skills [svg] / Recent tasks [svg] |
+| `attach-search-web` | tasks. [svg]Upload [svg] / Search web Skills |
+| `computers-linux-server` | online. [svg]Linux Server / Have a setup |
+| `computers-connect-device` | Connect your devices / Connect new computer |
+| `filter-videos` | Spreadsheets [svg] Images / Videos [svg] Audio |
+| `selection-quote` | escape to cancel. / Quote Cancel [svg] |
+| `move-to-project` | app [svg] Pin / Move to project |
+| `edit-project` | in Notion [svg] / Edit project [svg] |
+| `view-options-group-by-task` | [svg] View options / Group by task |
+| `settings-account-user` | [svg] 341 [svg] / Account [svg] Personalization |
+| `attach-upload` | across all tasks. / Upload [svg] [svg] |
+| `view-project` | [svg] Edit project / View project [svg] |
+| `connector-computer-use` | in Notion [svg] / Computer Use [svg] |
+| `theme-light` | English [svg] Theme / Light [svg] Dark |
+| `attach-other-sources` | double-check before use. / Other sources [svg] |
+| `brand-windows` | or other devices. / Windows Build & |
+| `send-to-manus` | Add to favorites / Send to Manus |
+| `brand-google-drive` | Other sources [svg] / Add from Google |
+| `brand-instagram-small` | preparing improvement recommendations. / Post improvement brief |
+| `attach` | [svg] Creations [svg] / Local files To |
+| `file-pdf-small` | New invoice received / Invoice_1048.pdf [svg] [svg] |
+| `archive` | Add to favorites / Archive [svg] Delete |
+| `creation-url-globe` | This [svg] https://example.manus.space/ / https://example.manus.space/ Locate in |
+| `theme-auto` | Light [svg] Dark / Auto Chat preferences |
+| `automation-performance-drop` | performance below target / 24 hours · |
+| `open-in-new-tab` | Mark as unread / Open in new |
+| `brand-apple` | a cloud Mac. / macOS Xcode Host |
+| `menu-pin` | in desktop app / Pin [svg] Move |
+| `model-menu-check` | for everyday tasks. / Manus Flex Beta |
+| `mobile-app-gate-dots` | the mobile app / You need an |
+| `files-download-all` | in this task / [svg] All All |
+| `library-tab-spreadsheets` | PDF [svg] Slides / Spreadsheets [svg] Images |
+| `filter-others` | Videos [svg] Audio / Others To pick |
+| `brand-gmail-large` | Recovery email draft / New invoice received |
+| `video-play` | done for you. / Play video Download |
+| `filter-files` | [svg] [svg] [svg] / Files in this |
+| `brand-google-sheets` | the invoice tracker. / Saved to Drive |
 
 ## Gaps
 
@@ -3858,6 +3942,6 @@ Tokens named in its classes: `--text-tertiary`.
 - The deliverable card's slide preview is an iframe, kept as a same-size dark box in every copy; its header, menu and the file chips under it are real.
 - Hover and focus on the 390-wide copies were not measured (a phone has neither), and the Library's checked view option does not exist in the mobile copy.
 - The first grid-view copy (`library-dark-images-grid`) was taken before thumbnails were inlined, so its cards show the placeholder; the grouped-by-task and view-options copies have the real thumbnails.
-- The Manus Flex promo dialog, the Create automation flow, a plugin's detail dialog, a creation's page, the Computers' create flow, the Account and Billing settings panes and the share sheet were not captured, since each either spends credits, changes the account or shows billing details.
+- The Manus Flex promo dialog, the Create automation flow, a plugin's detail dialog, a creation's page, the Computers' create flow, the Account settings pane and the share sheet were not captured, since each either spends credits, changes the account or shows billing details.
 - The light theme was read by removing the `dark` class from the copies, not by switching the account's theme. Everything Manus paints is a var() of the two palette blocks, so the readings match what the Light setting shows, but any image Manus swaps per theme through JavaScript rather than CSS would not have swapped.
 
