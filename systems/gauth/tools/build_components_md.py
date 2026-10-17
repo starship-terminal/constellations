@@ -74,9 +74,14 @@ def _rank(n):
     return next((i for i, p in enumerate(COLOR_ORDER) if n.startswith(p)), 99), any(w in leaf for w in STATEFUL), n
 
 
+def ckey(v):
+    """A colour as a lookup key: an alpha rounded to two places, since #5058651a reads back as 0.1 when computed."""
+    return re.sub(r"(rgba\(\d+, \d+, \d+, )([\d.]+)\)", lambda m: f"{m.group(1)}{round(float(m.group(2)), 2):g})", v)
+
+
 BY_COLOR = {}
 for n in sorted((n for n in TOK if TYPES[n] == "color"), key=_rank):
-    BY_COLOR.setdefault(TOK[n], n)
+    BY_COLOR.setdefault(ckey(TOK[n]), n)
 
 # The same colour can hold several roles (#21252e is both text.primary and action.primary), so a value is
 # looked up by what it paints: a fill prefers background, action and status roles, text the text roles,
@@ -91,8 +96,8 @@ ROLE_ORDER = {
 
 def by_role(v, role):
     if role not in ROLE_ORDER:
-        return BY_COLOR.get(v)
-    names = [n for n in TOK if TYPES[n] == "color" and TOK[n] == v]
+        return BY_COLOR.get(ckey(v))
+    names = [n for n in TOK if TYPES[n] == "color" and ckey(TOK[n]) == ckey(v)]
     if not names:
         return None
     if role == "fill" and _control[0]:
@@ -101,8 +106,13 @@ def by_role(v, role):
     # a token named for another job (action.primary-text is a label colour, not a fill) ranks last
     other = {"fill": ("text", "border", "line"), "fill-control": ("text", "border", "line"), "text": ("border", "line", "fill", "background", "bg"), "line": ("text", "fill", "background", "bg")}[role]
 
+    key = _cur[0] or ""
+    own = lambda n: n.startswith("component.") and (lambda g: key == g or key.startswith(g + "-"))(n.split(".")[1])
+
     def rank(n):
         leaf = n.rsplit(".", 1)[-1]
+        if own(n) and not any(w in leaf for w in other):
+            return (False, -1, False, n)  # the entry's own component token names the value best
         wrong = any(w in leaf for w in other) or (role != "text" and n.startswith("text.")) or (role == "text" and n.startswith(("background.", "border.")))
         return wrong, next((i for i, p in enumerate(order) if n.startswith(p)), 99), any(w in leaf for w in STATEFUL), n
     return min(names, key=rank)
@@ -125,10 +135,47 @@ for n in sorted((n for n in TOK if TYPES[n] == "shadow" and not n.startswith("el
     BY_SHADOW.setdefault(shadow_key(TOK[n]), n)
 for n in sorted(n for n in TOK if n.startswith("elevation.level-")):
     BY_SHADOW[shadow_key(TOK[n])] = n  # a level names the shadow when one matches
+def stack(f):
+    return [x.strip().strip('"').strip("'") for x in f.split(",") if x.strip()]
+
+
+# A measured family stack names its font family token: the token whose stack starts with the same family, else
+# the one that lists it ("SF Pro" is fontFamily.sf-pro, whose stack opens with -apple-system for Apple devices).
+FAMILIES = {n: stack(TOK[n]) for n in sorted(n for n in TOK if TYPES[n] == "fontFamily")}
+
+
+def fam_token(f):
+    """The family token sharing the longest opening run of families with the measured stack, else the token named
+    for the measured first family ("SF Pro" is fontFamily.sf-pro, whose stack opens with -apple-system for Apple
+    devices). A bare fallback face such as Arial matches no token and stays raw."""
+    ms = stack(f)
+    if not ms:
+        return ""
+
+    def run(st):
+        k = 0
+        while k < min(len(st), len(ms)) and st[k] == ms[k]:
+            k += 1
+        return k
+    best = max(FAMILIES, key=lambda n: (run(FAMILIES[n]), n == "fontFamily.system"))
+    if run(FAMILIES[best]) > 0:
+        return best
+    named = re.sub(r"[^a-z0-9]+", "-", ms[0].lower()).strip("-")
+    return next((n for n, st in FAMILIES.items() if n == "fontFamily." + named and ms[0] in st), ms[0])
+
+
+def px2(v):
+    """'20.0004px' -> '20px', '0.126px' -> '0.13px': lengths compared at two decimals, as computed styles drift."""
+    if v in ("normal", "", None):
+        return "0px"
+    m = re.fullmatch(r"(-?[\d.]+)px", str(v))
+    return f"{round(float(m.group(1)), 2):g}px" if m else str(v)
+
+
 BY_TYPE = {}
 for n in sorted(n for n in TOK if TYPES[n] == "typography"):
     v = TOK[n]
-    BY_TYPE.setdefault((v["fontFamily"].split(",")[0].replace('"', "").strip(), v["fontSize"], v["lineHeight"], str(v["fontWeight"]), v.get("letterSpacing", "0px")), n)
+    BY_TYPE.setdefault((fam_token(TOK_RAW[n]["fontFamily"]) if TOK_RAW[n]["fontFamily"].startswith("{") is False else TOK_RAW[n]["fontFamily"].strip("{}"), px2(v["fontSize"]), px2(v["lineHeight"]), str(v["fontWeight"]), px2(v.get("letterSpacing", "0px"))), n)
 
 USED = {}  # component -> tokens it cites
 _cur = [None]
@@ -214,9 +261,23 @@ def shadow(css):
 def typeset(fz, lh, fw, f, ls="normal"):
     """A text style -> its typography token when family, size, line height, weight and letter spacing all
     match; otherwise the measured style, with its letter spacing when it is not zero."""
-    ls = "0px" if ls in ("normal", "0px", "") else num(ls)
-    n = BY_TYPE.get((fam(f), fz, lh, str(fw), ls))
+    ls = px2(ls)
+    n = BY_TYPE.get((fam_token(f), px2(fz), px2(lh) if lh != "normal" else "normal", str(fw), ls))
     return cite(n) if n else raw(font(fz, lh, fw, f) + (f", letter spacing {ls}" if ls != "0px" else ""))
+
+
+KEYWORD_EASE = {"ease": [0.25, 0.1, 0.25, 1], "ease-in-out": [0.42, 0, 0.58, 1], "ease-in": [0.42, 0, 1, 1], "ease-out": [0, 0, 0.58, 1], "linear": [0, 0, 1, 1]}
+
+
+def easing(e):
+    """A timing function -> its core.easing token (CSS keywords compared by their curves), else the raw value."""
+    m = re.fullmatch(r"cubic-bezier\(([^)]*)\)", e)
+    curve = [round(float(x), 3) for x in m.group(1).split(",")] if m else KEYWORD_EASE.get(e)
+    if curve:
+        n = next((n for n in sorted(TOK) if n.startswith("easing.") and [round(float(x), 3) for x in TOK[n]] == curve), None)
+        if n:
+            return cite(n)
+    return raw(e)
 
 
 def dur_ms(d):
@@ -266,7 +327,7 @@ def props(v):
     o["background"] = colour(s["backgroundColor"], role="fill")
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
-        o["image"] = colour(img)[:200]
+        o["image"] = colour(img[:200])
     if s["boxShadow"] != "none":
         sh = shadow(s["boxShadow"])
         if sh is None:
@@ -287,7 +348,9 @@ def props(v):
             if anc:
                 o["outline"] = f"on its parent: {colour(anc['outline'], role='line')}"
     t = v.get("textStyle")
-    if t:
+    if not t and not v.get("text") and v.get("tag") not in ("input", "textarea"):
+        pass  # an element with no text and no label draws no text (a field's typed value is not in `text`, so fields keep theirs)
+    elif t:
         o["text"] = f"{typeset(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('letterSpacing', 'normal'))}, {colour(t['color'], role='text')}"
     else:
         o["text"] = f"{typeset(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'], s.get('letterSpacing', 'normal'))}, {colour(s['color'], role='text')}"
@@ -301,7 +364,7 @@ def props(v):
             if d == "0s":
                 continue
             ms = f"{round(dur_ms(d))}ms"
-            parts.append(f"{p} {cite(BY_DUR[ms]) if ms in BY_DUR else raw(d)} {tf[i % len(tf)] if tf else ''}".strip())
+            parts.append(f"{p} {cite(BY_DUR[ms]) if ms in BY_DUR else raw(d)} {easing(tf[i % len(tf)]) if tf else ''}".strip())
         if parts:
             o["transition"] = ", ".join(parts)
     if s["transform"] not in ("none", "matrix(1, 0, 0, 1, 0, 0)"):
@@ -316,12 +379,15 @@ def props(v):
         o["opacity"] = s["opacity"]
     if v.get("icon") and v["icon"]["w"] > 0 and v["icon"]["w"] < 120:
         o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'], role='text')}"
+    ex = v.get("extra") or {}
+    if ex.get("inputColor"):
+        o["field"] = f"typed text {colour(ex['inputColor'], role='text')} on {colour(ex['inputBackground'], role='fill')}" + (f", icon {colour(ex['iconStroke'], role='line')}" if ex.get("iconStroke") and ex["iconStroke"] != "none" else "")
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"], role="text")
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "field", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
@@ -366,7 +432,7 @@ def child_layers(c):
         if p.get("bg"):
             bits.append("background " + colour(p["bg"], role="fill"))
         if p.get("bgImage"):
-            bits.append("image " + colour(p["bgImage"])[:90])
+            bits.append("image " + colour(p["bgImage"][:90]))
         if p.get("border"):
             bw, _, bc = p["border"].split(" | ")[0][2:].partition(" solid ")
             bits.append("border " + (f"{dim_named(bw, ['borderWidth.hairline', 'borderWidth.strong', 'borderWidth.choice', 'borderWidth.indicator'])} solid {colour(bc, role='line')}" if bc else colour(p["border"].split(" | ")[0][2:], role="line")))
@@ -487,6 +553,10 @@ OVER = [
     ("Playback speed menu", "science lesson", "Settings, then its Speed row; no speed chosen", "[lesson-science-light-speed-menu](screenshots/lesson-science-light-speed-menu.png), [playback-speed-menu](#playback-speed-menu)"),
     ("Tooltip", "science lesson", "hovering a header control", "[lesson-science-light-tooltip](screenshots/lesson-science-light-tooltip.png), [tooltip](#tooltip)"),
     ("Sign in dialog", "every page with the top bar", "the top bar's Sign in; a throwaway string typed into the email field and deleted, nothing submitted", "[signin-light-dialog](screenshots/signin-light-dialog.png), [sign-in-dialog](#sign-in-dialog)"),
+    ("Sign in, enabled", "Sign in dialog", "name@example.com typed so the brand-red button enables; never pressed", "[signin-light-filled](screenshots/signin-light-filled.png), [primary-button-brand-red-sign-in](#primary-button-brand-red-sign-in)"),
+    ("Sign-up view", "Sign in dialog", "its Sign up link; the password field focused (never typed into) to show its rule line", "[signin-light-signup-focused](screenshots/signin-light-signup-focused.png), [field-helper-text](#field-helper-text)"),
+    ("Field error (forced)", "Sign in dialog", "Gauth's own form_error class added to the email field in DevTools; its error shows only after a submit", "[text-field-error-forced](#text-field-error-forced)"),
+    ("Quiz answered right", "science lesson", "a second visit, the option naming lift, thrust and climb cost picked", "[quiz-result-card-right-answer](#quiz-result-card-right-answer)"),
     ("Gauth PLUS dialog", "every page with the sidebar", "the sidebar card's Start Free Trial; nothing chosen, typed or bought", "[plus-dialog-light-default](screenshots/plus-dialog-light-default.png), [gauth-plus-dialog](#gauth-plus-dialog)"),
     ("Language list", "footer", "the footer's language select; no language chosen", "[footer-light-language-open](screenshots/footer-light-language-open.png), [select-list-language](#select-list-language)"),
     ("Chapters panel", "math and history lessons", "the chapters button", "[lesson-math-light-chapters](screenshots/lesson-math-light-chapters.png), [lesson-history-light-chapters](screenshots/lesson-history-light-chapters.png)"),
@@ -502,10 +572,10 @@ W()
 
 # ------------------------------------------------ checklist coverage
 CHECKLIST = [
-    ("Button", ["start-button", "create-button", "audio-not-now", "start-free-button", "join-button", "signin-submit"]),
+    ("Button", ["start-button", "create-button", "accent-button", "audio-not-now", "start-free-button", "join-button", "signin-submit"]),
     ("Icon button", ["canvas-control", "canvas-exit", "header-round-button", "page-nav", "modal-close"]),
     ("Link", ["inline-link", "footer-link", "terms-link", "signup-link", "back-link"]),
-    ("Text field", ["signin-email", "question-box", "atlas-search", "header-question", "tutor-input"]),
+    ("Text field", ["signin-email", "field-focused", "field-error", "field-helper", "question-box", "atlas-search", "header-question", "tutor-input"]),
     ("Text area", ["atlas-textarea", "atlas-composer", "create-prompt"]),
     ("Select", ["language-select", "language-list", "language-option-selected", "language-option"]),
     ("Checkbox", []),
@@ -585,7 +655,7 @@ with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} show a visible change (an outline on the element, a child or a parent, a shadow ring, a border or a fill): {', '.join(with_ring)}. The other {len(without)} change nothing, so a keyboard user sees no focus: {', '.join(without)}. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
 W()
-W("**Pressed.** Gauth's primary buttons shrink when pressed instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.")
+W("**Pressed.** Gauth's own button component, the brand-red primary in the Sign in dialog, darkens when pressed (`action.accent` `#ff013e`, hover `#f00039`, pressed `#d80033`). The learning pages' buttons shrink instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -649,7 +719,11 @@ for k in ["lesson-card", "unit-card", "story-card", "feature-card", "solution-op
     p = props(st)
     if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
         p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+        bw, _, bc = (p0.get("border") or "").split(" | ")[0][2:].partition(" solid ")
+        sh = shadow(p0["shadow"]) if p0.get("shadow") else None
+        p = dict(p, border=f"{dim_named(bw, ['borderWidth.hairline', 'borderWidth.strong', 'borderWidth.choice', 'borderWidth.indicator'])} solid {colour(bc, role='line')}" if bc else "-",
+                 radius=dims(p0["radius"], "radius") if p0.get("radius") else "-", background=colour(p0.get("bg", ""), role="fill") or "-",
+                 shadow=sh if sh else (colour(p0.get("shadow", ""), tokens=False) or "none"))
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
@@ -724,7 +798,7 @@ W()
 W("### Pages")
 W()
 W("- **Signed-in pages.** Nothing behind sign-in was captured: a learner's own My Course list, course progress, history, the homework answer page, Atlas topics a learner made, account settings and the subscription checkout. The kit never signs in.")
-W("- **Anything that sends or creates.** No homework question was submitted (so the answer and step-by-step pages are missing), no course was generated from Create a Course, no tutor message or voice question was sent, no Atlas story was generated, no file was uploaded, and no dialog was submitted. The one answer given is to the science lesson's practice check-in, which a signed-out visitor answers as part of the lesson.")
+W("- **Anything that sends or creates.** No homework question was submitted (so the answer and step-by-step pages are missing), no course was generated from Create a Course, no tutor message or voice question was sent, no Atlas story was generated, no file was uploaded, and no dialog was submitted. The answers given are to the science lesson's practice check-in, once wrong and once right on two visits, which a signed-out visitor answers as part of the lesson.")
 W("- **Toast and checkbox.** Neither was seen. No toast appeared after any action the capture took, and no public form has a checkbox; the Sign in dialog states its terms in a line of text instead.")
 W("- **Study Resources.** `/study-resources/*` redirects to gauthmath.com, which answers a headless browser with Access Denied.")
 W("- **The science lesson's Completed screen** (a cover, a laurel \"Completed\" title, Share and View Canvas) was seen while exploring, after a lesson played to its end, but the kit does not wait the several minutes it takes, so there is no crop or measurement.")
@@ -736,7 +810,7 @@ W()
 W("- **Pressed** was forced with DevTools on every control except toggles, so a state a script adds on mousedown (if any) is missing.")
 W("- **Hover on the feature cards, the article rows, the Share button and the play disc** changed nothing measurable; their entries read 'same'.")
 W("- **The tutor transcript** held only the status line during the 25 seconds of playback the kit waits; transcript text was not captured.")
-W("- **Disabled states** were found on three controls: the Sign in dialog's Sign in button (brand red at low strength), the Atlas Send button while the box is empty (it turns dark, enabled, once text is typed), and the blog's Previous arrow on page 1. Gauth shows no inline error under a field: the Sign in dialog keeps its button disabled instead.")
+W("- **Disabled states** were found on three controls: the Sign in dialog's Sign in button (brand red at low strength), the Atlas Send button while the box is empty (it turns dark, enabled, once text is typed), and the blog's Previous arrow on page 1. Gauth shows no inline error while typing: the Sign in dialog keeps its button disabled instead. Its CSS declares the error state a submit would show (`form_error`: a `#fff2f2` field with a `#f00039` border, a red 14/20 message); the capture forced that class in DevTools to read it ([text-field-error-forced](#text-field-error-forced)).")
 W("- **Loading states.** The pages render on the server, so the skeletons in Gauth's CSS (`catalog_mathSkeleton*`, `math-course-detail_detailSkeletonBanner`) never showed, even with the data request held back. The nearest to a loading state is the math tutor's status line, which shimmers while it narrates; it was read at rest, as its default state ([tutor-status-line](#tutor-status-line)).")
 W()
 W("### Themes")
@@ -762,8 +836,8 @@ W("- No personal data was captured: the pages were read signed out, and the Atla
 # count the values in the entries, then turn the marks into Markdown
 body = "\n".join(L[ENTRY_START:ENTRY_END])
 n_tok, n_raw = body.count("\x03"), body.count("\x01")
-share = f"{n_tok} of {n_tok + n_raw} values in the entries ({round(100 * n_tok / max(1, n_tok + n_raw))}%) are written as tokens; the other {n_raw} are values Gauth gives no token (a one-off padding, a third-party library's colour, a type size used once) and stay raw"
+share = f"{n_tok} of {n_tok + n_raw} values in the entries ({round(100 * n_tok / max(1, n_tok + n_raw))}%) are written as tokens. The other {n_raw} are marked †: a value used by one component only (a one-off padding, colour or text style), a `50%` circle radius, or a line height of `normal`, none of which a DTCG token in this file holds; every other value used by two or more components has a token"
 text = "\n".join(L).replace("{{TOKEN_SHARE}}", share)
-text = re.sub("\x03([^\x04]*)\x04", r"`\1`", text).replace("\x01", "").replace("\x02", "")
+text = re.sub("\x03([^\x04]*)\x04", r"`\1`", text).replace("\x01", "").replace("\x02", "†")
 Path("components.md").write_text(text + "\n")
 print("components.md:", len(L), "lines,", len(C), "entries,", n_crops, "crops,", len(icons), "icons")
