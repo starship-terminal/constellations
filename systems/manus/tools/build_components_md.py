@@ -301,7 +301,7 @@ def props(v):
                 STATS["raw"] += 1
             ease = tf[i % len(tf)] if tf else ""
             if ease in EASE:
-                ease = f"`{EASE[ease]}`"
+                ease = f"`{EASE[ease]}` ({ease})"
             parts.append(f"{p} {d} {ease}".strip())
         if parts:
             o["transition"] = ", ".join(parts) if len(parts) < 4 else f"{parts[0].split(' ')[0]} and {len(parts) - 1} more {' '.join(parts[0].split(' ')[1:])}"
@@ -672,6 +672,9 @@ def coverage(rows):
     raw += len(re.findall(r"\b(?:System|Libre Baskerville|Mono|KaTeX_Main) [\d.]+/", rest))  # text styles with no token
     raw += len(re.findall(r"\bsize [\d.]+ x [\d.]+", rest))  # heights with no token
     raw += len(re.findall(r"\bicon [\d.]+ x [\d.]+", rest))  # icon sizes with no token
+    raw += len(re.findall(r"\bopacity [\d.]+", rest))  # opacities with no token
+    raw += len(re.findall(r"(?<![\w.(])\d*\.?\d+m?s\b", rest))  # durations with no token
+    raw += len(re.findall(r"(?:cubic-bezier\([^)]*\)|\bsteps\([^)]*\)|\b(?:ease|ease-in|ease-out|ease-in-out|linear)\b)", rest))  # easings with no token
     return exact, approx, raw
 
 
@@ -687,6 +690,6 @@ for l in L:  # every row of every component's State | Values table, however many
 ex, ap, rw = coverage(entry_rows)
 tot = ex + ap + rw
 i = next(k for k, l in enumerate(L) if l.startswith("- Crops are images"))
-L.insert(i + 1, f"- Coverage: of {tot} values written in the entries below (colours, dimensions, heights, icon sizes, text styles, durations, shadows and opacities; widths and zeros aside), {ex} ({ex / tot:.0%}) name an exact token, {ap} ({ap / tot:.0%}) name a colour token by value (`≈`) and {rw} ({rw / tot:.0%}) are raw: text styles and heights off Manus's scales, hairline offsets and one-off shadows. A colour's exact token comes from the element's own class; a dimension's from the core tokens meant for that kind of value (radii from `core.radius`, heights from the control sizes in `core.size`, icons from `core.size.icon*`, paddings from `core.space`, borders from `core.borderWidth` and `core.focusRing`), generic before component-specific; text to `core.typography` and its roles; transitions to `core.duration` and `core.easing`; shadows to `elevation.*`; opacity to `core.opacity`.")
+L.insert(i + 1, f"- Coverage: of {tot} values written in the entries below (colours, dimensions, heights, icon sizes, text styles, durations, easings, shadows and opacities; widths and zeros aside), {ex} ({ex / tot:.0%}) name an exact token, {ap} ({ap / tot:.0%}) name a colour token by value (`≈`) and {rw} ({rw / tot:.0%}) are raw: text styles and heights off Manus's scales, hairline offsets and one-off shadows. A colour's exact token comes from the element's own class; a dimension's from the core tokens meant for that kind of value (radii from `core.radius`, heights from the control sizes in `core.size`, icons from `core.size.icon*`, paddings from `core.space`, borders from `core.borderWidth` and `core.focusRing`), generic before component-specific; text to `core.typography` and its roles; transitions to `core.duration` and `core.easing`; shadows to `elevation.*`; opacity to `core.opacity`.")
 open("components.md", "w").write("\n".join(L) + "\n")
 print(f"components.md: {len(C)} components, {n_states} states, {n_crops} crops, {len(L)} lines; values {ex} token, {ap} approx, {rw} raw")
