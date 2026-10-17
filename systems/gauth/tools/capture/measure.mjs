@@ -764,11 +764,20 @@ async function forms() {
   await email.fill('').catch(() => {});
   const item = q(M('pc-login-modal-view_login-input')).filter({ has: q('input[placeholder="E-mail address"]') });
   const errCls = moduleClass('form_error');
+  const inputErrCls = moduleClass('input_email-error');
   out._meta.formErrorClass = errCls;
-  await S('field-error', item, ['error'], { group: g, title: 'Text field, error (forced)', desc: 'The email field with Gauth\'s own form_error class added in DevTools: its CSS turns the field #fff2f2 with a #f00039 border and red text. Gauth shows it after a submit, which the capture never made, so the class was forced to read the rule.', sel: M('pc-login-modal-view_login-input') + ' + form_error' }, {
+  out._meta.inputErrorClass = inputErrCls;
+  await S('field-error', item, ['error'], { group: g, title: 'Text field, error (forced)', desc: 'The email field with Gauth\'s own error classes added in DevTools: form_error on the field turns it #fff2f2 with a #f00039 border, and input_email-error on its input wrapper turns the typed text and the mail icon red. Gauth shows them after a submit, which the capture never made, so the classes were forced to read the rules.', sel: M('pc-login-modal-view_login-input') + ' + form_error' }, {
     noScroll: true,
-    before: { error: async (l) => { if (!errCls) throw new Error('form_error class not found in the stylesheets'); await l.evaluate((e, c) => e.classList.add(c), errCls); await page.waitForTimeout(300); return `class ${errCls.replace(/__.*/, '')} added in DevTools`; } },
-    after: { error: async (l) => { await l.evaluate((e, c) => e.classList.remove(c), errCls); } },
+    before: { error: async (l) => {
+      if (!errCls || !inputErrCls) throw new Error('form_error or input_email-error class not found in the stylesheets');
+      await email.click(); await page.keyboard.type('abc', { delay: 10 });
+      await l.evaluate((e, [c, ic]) => { e.classList.add(c); e.querySelector('[class*="input_input-wrapper__"]')?.classList.add(ic); }, [errCls, inputErrCls]);
+      await page.waitForTimeout(300);
+      return 'classes form_error and input_email-error added in DevTools; "abc" typed so the text colour shows (deleted after)';
+    } },
+    after: { error: async (l) => { await l.evaluate((e, [c, ic]) => { e.classList.remove(c); e.querySelector('[class*="input_input-wrapper__"]')?.classList.remove(ic); }, [errCls, inputErrCls]); await email.fill(''); } },
+    extra: async (l) => l.evaluate((e) => { const i = e.querySelector('input'); const ic = e.querySelector('svg path'); const ci = getComputedStyle(i); return { inputColor: ci.color, inputBackground: ci.backgroundColor, iconStroke: ic ? getComputedStyle(ic).stroke : null }; }),
   });
   // the sign-up view: focus the password field (never typed into) to show its rule line
   await q('[data-e2e="auth-open-signup"]').click();

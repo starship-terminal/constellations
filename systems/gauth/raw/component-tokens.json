@@ -640,9 +640,9 @@
    "field": {
     "background": {"value": "{palette.paper.cool}", "type": "color", "source": "measured raw/measurements.md#signin-email (#f5f5f7)"},
     "border-focus": {"value": "{palette.slate.field-focus}", "type": "color", "source": "measured raw/measurements.md#field-focused"},
-    "error-background": {"value": "{palette.red.field-fill}", "type": "color", "source": "measured raw/measurements.md#field-error (forced)"},
+    "error-background": {"value": "{palette.red.field-fill}", "type": "color", "source": "measured raw/measurements.md#field-error (forced: field and input #fff2f2)"},
     "error-border": {"value": "{palette.brand.pink-text}", "type": "color", "source": "measured raw/measurements.md#field-error (forced); css .form_error border-color #f00039"},
-    "error-text": {"value": "{palette.brand.pink-text}", "type": "color", "source": "css .form_error-msg (color #f00039, 14/20); declared, not seen painted"},
+    "error-text": {"value": "{palette.brand.pink-text}", "type": "color", "source": "measured raw/measurements.md#field-error (forced form_error and input_email-error: the typed text and icon #f00039); css .form_error-msg uses the same red for the message (declared)"},
     "helper-text": {"value": "{palette.ink.500}", "type": "color", "source": "measured raw/measurements.md#field-helper"}
    },
    "code": {

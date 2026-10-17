@@ -1620,7 +1620,7 @@
     "el": "div.math-course-detail_courseBannerCopy",
     "z": 2,
     "position": "relative",
-    "w": 300,
+    "w": 301,
     "h": 56
    },
    {
@@ -1691,11 +1691,74 @@
   ],
   "lesson-math": [
    {
+    "el": "div.shared_lessonPage",
+    "z": 1000,
+    "position": "fixed",
+    "w": 1440,
+    "h": 900
+   },
+   {
     "el": "button.shared_closeButton",
     "z": 40,
     "position": "fixed",
     "w": 40,
     "h": 40
+   },
+   {
+    "el": "aside.tutor_tutorControls",
+    "z": 20,
+    "position": "relative",
+    "w": 296,
+    "h": 48
+   },
+   {
+    "el": "header.shared_header",
+    "z": 20,
+    "position": "relative",
+    "w": 1080,
+    "h": 66
+   },
+   {
+    "el": "div.shared_tutorInputDock",
+    "z": 6,
+    "position": "absolute",
+    "w": 296,
+    "h": 48
+   },
+   {
+    "el": "aside.shared_tutorPanel",
+    "z": 5,
+    "position": "relative",
+    "w": 360,
+    "h": 900
+   },
+   {
+    "el": "div.shared_tutorAvatar",
+    "z": 3,
+    "position": "absolute",
+    "w": 53,
+    "h": 53
+   },
+   {
+    "el": "div.shared_tutorTopMask",
+    "z": 2,
+    "position": "absolute",
+    "w": 360,
+    "h": 140
+   },
+   {
+    "el": "div.shared_tutorTranscript",
+    "z": 1,
+    "position": "absolute",
+    "w": 296,
+    "h": 748
+   },
+   {
+    "el": "section.shared_playerFrame.shared_playerFrameWithAction",
+    "z": 1,
+    "position": "relative",
+    "w": 1048,
+    "h": 820
    }
   ],
   "atlas": [
@@ -1849,6 +1912,66 @@
   "manifest": null
  },
  "declaredRules": {
+  ".button_btn-primary": {
+   "declarations": "background: rgb(255, 1, 62); border: 1px solid rgba(0, 0, 0, 0); color: rgb(255, 255, 255);",
+   "media": null,
+   "sheet": "css/main.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".button_btn-primary:not(.button_btn-disabled):not(.button_btn-loading):hover": {
+   "declarations": "background: rgb(240, 0, 57);",
+   "media": null,
+   "sheet": "css/main.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".button_btn-primary:not(.button_btn-disabled):not(.button_btn-loading):active": {
+   "declarations": "background: rgb(216, 0, 51);",
+   "media": null,
+   "sheet": "css/main.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".button_btn-primary-default-disabled": {
+   "declarations": "background-color: rgb(255, 204, 216);",
+   "media": null,
+   "sheet": "css/main.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
   ".md-container code:not(pre > code), .md-container strong": {
    "declarations": "word-break: break-word;",
    "media": null,
@@ -1913,66 +2036,6 @@
    "declarations": "line-height: 1.65;",
    "media": null,
    "sheet": "css/2836.css",
-   "pages": [
-    "home",
-    "academy",
-    "unit",
-    "lesson-science",
-    "lesson-math",
-    "atlas",
-    "news",
-    "plus"
-   ]
-  },
-  ".button_btn-primary": {
-   "declarations": "background: rgb(255, 1, 62); border: 1px solid rgba(0, 0, 0, 0); color: rgb(255, 255, 255);",
-   "media": null,
-   "sheet": "css/main.css",
-   "pages": [
-    "home",
-    "academy",
-    "unit",
-    "lesson-science",
-    "lesson-math",
-    "atlas",
-    "news",
-    "plus"
-   ]
-  },
-  ".button_btn-primary:not(.button_btn-disabled):not(.button_btn-loading):hover": {
-   "declarations": "background: rgb(240, 0, 57);",
-   "media": null,
-   "sheet": "css/main.css",
-   "pages": [
-    "home",
-    "academy",
-    "unit",
-    "lesson-science",
-    "lesson-math",
-    "atlas",
-    "news",
-    "plus"
-   ]
-  },
-  ".button_btn-primary:not(.button_btn-disabled):not(.button_btn-loading):active": {
-   "declarations": "background: rgb(216, 0, 51);",
-   "media": null,
-   "sheet": "css/main.css",
-   "pages": [
-    "home",
-    "academy",
-    "unit",
-    "lesson-science",
-    "lesson-math",
-    "atlas",
-    "news",
-    "plus"
-   ]
-  },
-  ".button_btn-primary-default-disabled": {
-   "declarations": "background-color: rgb(255, 204, 216);",
-   "media": null,
-   "sheet": "css/main.css",
    "pages": [
     "home",
     "academy",

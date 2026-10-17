@@ -6,7 +6,7 @@ The full per-state readings are in [raw/measurements.md](raw/measurements.md), w
 
 How to read an entry:
 
-- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as the role token for what it paints (a fill as `action.*` or `background.*`, text as `text.*`, a border or outline as `border.*`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). 1376 of 1567 values in the entries (88%) are written as tokens. The other 191 are marked †: a value used by one component only (a one-off padding, colour or text style), a `50%` circle radius, or a line height of `normal`, none of which a DTCG token in this file holds; every other value used by two or more components has a token. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.
+- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as the role token for what it paints (a fill as `action.*` or `background.*`, text as `text.*`, a border or outline as `border.*`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). 1379 of 1570 values in the entries (88%) are written as tokens. The other 191 are marked †: a value used by one component only (a one-off padding, colour or text style), a `50%` circle radius, or a line height of `normal`, none of which a DTCG token in this file holds; every other value used by two or more components has a token. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
 - Crops are images of the component read from the live page, in [components/crops/](components/crops) (369 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
@@ -169,9 +169,9 @@ The gold Upgrade pill: a warm gradient fill with brown text and a bolt icon. A d
 |---|---|
 | default | size 90.28 x 31; padding `spacing-offgrid.5` `spacing.8`; radius `radius.8`; background transparent; image linear-gradient(90deg, `palette.gold.start`, `palette.gold.end`); text `typography.nav-strong`, `component.upgrade.text`; icon 14 x 15, `component.upgrade.text` |
 | hover | background `component.upgrade.hover`; image none |
-| pressed | background `component.plus-card.button-hover`; image none |
+| pressed | background `component.upgrade.pressed`; image none |
 
-**Tokens.** `component.plus-card.button-hover`, `component.upgrade.hover`, `component.upgrade.text`, `palette.gold.end`, `palette.gold.start`, `radius.8`, `spacing-offgrid.5`, `spacing.8`, `typography.nav-strong`.
+**Tokens.** `component.upgrade.hover`, `component.upgrade.pressed`, `component.upgrade.text`, `palette.gold.end`, `palette.gold.start`, `radius.8`, `spacing-offgrid.5`, `spacing.8`, `typography.nav-strong`.
 
 ![Upgrade button default](components/crops/upgrade-button-default.png) ![Upgrade button hover](components/crops/upgrade-button-hover.png) ![Upgrade button pressed](components/crops/upgrade-button-pressed.png)
 
@@ -591,9 +591,9 @@ The current catalogue tab: #f4ebe5 fill, transparent border, 700 label. Read as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 122.98 x 36; padding 0px `spacing-offgrid.15`; border `borderWidth.hairline` solid transparent; radius `radius.12`; background `background.selected-warm`; text `typography.tab-strong`, `text.primary` |
+| default (same: focus-visible) | size 122.98 x 36; padding 0px `spacing-offgrid.15`; border `borderWidth.hairline` solid transparent; radius `radius.12`; background `component.category-tab.current`; text `typography.tab-strong`, `text.primary` |
 
-**Tokens.** `background.selected-warm`, `borderWidth.hairline`, `radius.12`, `spacing-offgrid.15`, `text.primary`, `typography.tab-strong`.
+**Tokens.** `borderWidth.hairline`, `component.category-tab.current`, `radius.12`, `spacing-offgrid.15`, `text.primary`, `typography.tab-strong`.
 
 ![Category tab, current default](components/crops/category-tab-active-default.png) ![Category tab, current focus-visible](components/crops/category-tab-active-focus-visible.png)
 
@@ -602,10 +602,10 @@ A 36px tab with a 1px #5058651a border, radius 12, 14/19.6 grey label. Read as `
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 139.19 x 36; padding 0px `spacing-offgrid.15`; border `borderWidth.hairline` solid `border.control`; radius `radius.12`; background transparent; text `typography.tab`, `text.tab` |
-| hover, pressed | background `background.hover-warm`; text `typography.tab`, `text.primary` |
+| default (same: focus-visible) | size 139.19 x 36; padding 0px `spacing-offgrid.15`; border `borderWidth.hairline` solid `component.category-tab.border`; radius `radius.12`; background transparent; text `typography.tab`, `component.category-tab.text` |
+| hover, pressed | background `component.category-tab.hover`; text `typography.tab`, `text.primary` |
 
-**Tokens.** `background.hover-warm`, `border.control`, `borderWidth.hairline`, `radius.12`, `spacing-offgrid.15`, `text.primary`, `text.tab`, `typography.tab`.
+**Tokens.** `borderWidth.hairline`, `component.category-tab.border`, `component.category-tab.hover`, `component.category-tab.text`, `radius.12`, `spacing-offgrid.15`, `text.primary`, `typography.tab`.
 
 ![Category tab default](components/crops/category-tab-default.png) ![Category tab hover](components/crops/category-tab-hover.png) ![Category tab focus-visible](components/crops/category-tab-focus-visible.png) ![Category tab pressed](components/crops/category-tab-pressed.png)
 
@@ -725,11 +725,11 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 145.28 x 40; padding 0px `spacing.16`; border `borderWidth.hairline` solid `component.show-more.border`; radius `radius.12`; background transparent; text Arial 14/19.6 400†, `text.meta`; icon 14 x 14, `text.meta` |
-| hover | border `borderWidth.hairline` solid `border.strong`; background `background.hover-warm`; text Arial 14/19.6 400†, `text.primary`; icon 14 x 14, `text.primary` |
-| pressed | border `borderWidth.hairline` solid `border.strong`; background `component.show-more.pressed`; text Arial 14/19.6 400†, `text.primary`; icon 14 x 14, `text.primary` |
+| hover | border `borderWidth.hairline` solid `component.show-more.border-hover`; background `component.show-more.hover`; text Arial 14/19.6 400†, `text.primary`; icon 14 x 14, `text.primary` |
+| pressed | border `borderWidth.hairline` solid `component.show-more.border-hover`; background `component.show-more.pressed`; text Arial 14/19.6 400†, `text.primary`; icon 14 x 14, `text.primary` |
 | expanded | size 118.81 x 40 |
 
-**Tokens.** `background.hover-warm`, `border.strong`, `borderWidth.hairline`, `component.show-more.border`, `component.show-more.pressed`, `radius.12`, `spacing.16`, `text.meta`, `text.primary`.
+**Tokens.** `borderWidth.hairline`, `component.show-more.border`, `component.show-more.border-hover`, `component.show-more.hover`, `component.show-more.pressed`, `radius.12`, `spacing.16`, `text.meta`, `text.primary`.
 
 ![Show more button default](components/crops/show-more-default.png) ![Show more button hover](components/crops/show-more-hover.png) ![Show more button focus-visible](components/crops/show-more-focus-visible.png) ![Show more button pressed](components/crops/show-more-pressed.png) ![Show more button expanded](components/crops/show-more-expanded.png)
 
@@ -984,9 +984,9 @@ The compact pill docked at the bottom centre: white, 1px #e2e2e8 border, radius 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 820 x 52; border `borderWidth.hairline` solid `component.ask-tutor.border`; radius `radius.pill`; background `background.card`; shadow `elevation.ask-tutor`; text `typography.field`, `text.tertiary`; transition width `duration.ask-tutor` `easing.ask-tutor`; icon 40 x 40, `palette.ink.black` |
+| default (same: hover) | size 820 x 52; border `borderWidth.hairline` solid `component.ask-tutor.border`; radius `radius.pill`; background `background.card`; shadow `elevation.ask-tutor`; text `typography.field`, `component.ask-tutor.placeholder`; transition width `duration.ask-tutor` `easing.ask-tutor`; icon 40 x 40, `palette.ink.black` |
 
-**Tokens.** `background.card`, `borderWidth.hairline`, `component.ask-tutor.border`, `duration.ask-tutor`, `easing.ask-tutor`, `elevation.ask-tutor`, `palette.ink.black`, `radius.pill`, `text.tertiary`, `typography.field`.
+**Tokens.** `background.card`, `borderWidth.hairline`, `component.ask-tutor.border`, `component.ask-tutor.placeholder`, `duration.ask-tutor`, `easing.ask-tutor`, `elevation.ask-tutor`, `palette.ink.black`, `radius.pill`, `typography.field`.
 
 ![Ask Tutor bar default](components/crops/ask-tutor-default.png) ![Ask Tutor bar hover](components/crops/ask-tutor-hover.png)
 
@@ -1007,10 +1007,10 @@ Clicking the bar widens it into a text field. Sample text was typed and deleted;
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| opened | size 820 x 52; border `borderWidth.hairline` solid `component.ask-tutor.border`; radius `radius.pill`; background `background.card`; shadow `elevation.ask-tutor`; text `typography.field`, `text.tertiary`; transition width `duration.ask-tutor` `easing.ask-tutor`; icon 40 x 40, `palette.ink.black` |
+| opened | size 820 x 52; border `borderWidth.hairline` solid `component.ask-tutor.border`; radius `radius.pill`; background `background.card`; shadow `elevation.ask-tutor`; text `typography.field`, `component.ask-tutor.placeholder`; transition width `duration.ask-tutor` `easing.ask-tutor`; icon 40 x 40, `palette.ink.black` |
 | filled | text `typography.field`, `palette.ink.story` |
 
-**Tokens.** `background.card`, `borderWidth.hairline`, `component.ask-tutor.border`, `duration.ask-tutor`, `easing.ask-tutor`, `elevation.ask-tutor`, `palette.ink.black`, `palette.ink.story`, `radius.pill`, `text.tertiary`, `typography.field`.
+**Tokens.** `background.card`, `borderWidth.hairline`, `component.ask-tutor.border`, `component.ask-tutor.placeholder`, `duration.ask-tutor`, `easing.ask-tutor`, `elevation.ask-tutor`, `palette.ink.black`, `palette.ink.story`, `radius.pill`, `typography.field`.
 
 ![Ask Tutor bar, opened opened](components/crops/ask-tutor-open-opened.png) ![Ask Tutor bar, opened filled](components/crops/ask-tutor-open-filled.png)
 
@@ -1118,10 +1118,10 @@ A 44px option, 1px #e6e6e7 border, radius 10, SF Pro 14/20, over a visually hidd
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 518 x 44; padding 0px `spacing.12`; border `borderWidth.hairline` solid `component.quiz.option-border`; radius `radius.10`; background `action.secondary`; text SF Pro 14/20 400†, #2c323d†; transition box-shadow `duration.astryx` `easing.astryx`, border-color `duration.astryx` `easing.astryx` |
-| hover | background `background.hover` |
+| hover | background `component.quiz.option-hover` |
 | focus-visible | outline `focus.width` solid `border.focus`, offset `focus.offset-astryx` |
 
-**Tokens.** `action.secondary`, `background.hover`, `border.focus`, `borderWidth.hairline`, `component.quiz.option-border`, `duration.astryx`, `easing.astryx`, `focus.offset-astryx`, `focus.width`, `radius.10`, `spacing.12`.
+**Tokens.** `action.secondary`, `border.focus`, `borderWidth.hairline`, `component.quiz.option-border`, `component.quiz.option-hover`, `duration.astryx`, `easing.astryx`, `focus.offset-astryx`, `focus.width`, `radius.10`, `spacing.12`.
 
 ![Quiz option default](components/crops/quiz-option-default.png) ![Quiz option hover](components/crops/quiz-option-hover.png) ![Quiz option focus-visible](components/crops/quiz-option-focus-visible.png)
 
@@ -2193,29 +2193,29 @@ Gauth's own button component (button_btn-primary) in the Sign in dialog, enabled
 ![Primary button, brand red (Sign in) default](components/crops/accent-button-default.png) ![Primary button, brand red (Sign in) hover](components/crops/accent-button-hover.png) ![Primary button, brand red (Sign in) pressed](components/crops/accent-button-pressed.png)
 
 #### Text field, error (forced)
-The email field with Gauth's own form_error class added in DevTools: its CSS turns the field #fff2f2 with a #f00039 border and red text. Gauth shows it after a submit, which the capture never made, so the class was forced to read the rule. Read as `field-error` on the Homework home page.
+The email field with Gauth's own error classes added in DevTools: form_error on the field turns it #fff2f2 with a #f00039 border, and input_email-error on its input wrapper turns the typed text and the mail icon red. Gauth shows them after a submit, which the capture never made, so the classes were forced to read the rules. Read as `field-error` on the Homework home page.
 
-**Values (error).** size 400 x 48; border `borderWidth.hairline` solid `action.accent-hover`; radius `radius.12`; background `component.field.error-background`; icon 24 x 25, `palette.ink.black`.
+**Values (error).** size 400 x 48; border `borderWidth.hairline` solid `component.field.error-border`; radius `radius.12`; background `component.field.error-background`; field typed text `component.field.error-text` on `component.field.error-background`, icon `component.field.error-border`; icon 24 x 25, `palette.ink.black`.
 
-**Tokens.** `action.accent-hover`, `borderWidth.hairline`, `component.field.error-background`, `palette.ink.black`, `radius.12`.
+**Tokens.** `borderWidth.hairline`, `component.field.error-background`, `component.field.error-border`, `component.field.error-text`, `palette.ink.black`, `radius.12`.
 
 ![Text field, error (forced) error](components/crops/field-error-error.png)
 
 #### Text field, focused (sign-up password)
 Focusing a sign-up field gives it Gauth's form_active border (#8e8e93) and shows the rule line under the password field. Focused only; nothing typed. Read as `field-focused` on the Homework home page.
 
-**Values (focused).** size 400 x 48; border `borderWidth.hairline` solid `component.field.border-focus`; radius `radius.12`; background `background.selected`; icon 24 x 25, `palette.ink.black`.
+**Values (focused).** size 400 x 48; border `borderWidth.hairline` solid `component.field.border-focus`; radius `radius.12`; background `component.field.background`; icon 24 x 25, `palette.ink.black`.
 
-**Tokens.** `background.selected`, `borderWidth.hairline`, `component.field.border-focus`, `palette.ink.black`, `radius.12`.
+**Tokens.** `borderWidth.hairline`, `component.field.background`, `component.field.border-focus`, `palette.ink.black`, `radius.12`.
 
 ![Text field, focused (sign-up password) focused](components/crops/field-focused-focused.png)
 
 #### Field helper text
 The rule line Gauth shows under the password field while it has focus: "Use 6-20 characters from at least 2 categories". Read as `field-helper` on the Homework home page.
 
-**Values (focused).** size 400 x 36; background transparent; text `typography.chip-label`, `text.meta`.
+**Values (focused).** size 400 x 36; background transparent; text `typography.chip-label`, `component.field.helper-text`.
 
-**Tokens.** `text.meta`, `typography.chip-label`.
+**Tokens.** `component.field.helper-text`, `typography.chip-label`.
 
 ![Field helper text focused](components/crops/field-helper-focused.png)
 

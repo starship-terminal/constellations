@@ -106,8 +106,13 @@ def by_role(v, role):
     # a token named for another job (action.primary-text is a label colour, not a fill) ranks last
     other = {"fill": ("text", "border", "line"), "fill-control": ("text", "border", "line"), "text": ("border", "line", "fill", "background", "bg"), "line": ("text", "fill", "background", "bg")}[role]
 
+    key = _cur[0] or ""
+    own = lambda n: n.startswith("component.") and (lambda g: key == g or key.startswith(g + "-"))(n.split(".")[1])
+
     def rank(n):
         leaf = n.rsplit(".", 1)[-1]
+        if own(n) and not any(w in leaf for w in other):
+            return (False, -1, False, n)  # the entry's own component token names the value best
         wrong = any(w in leaf for w in other) or (role != "text" and n.startswith("text.")) or (role == "text" and n.startswith(("background.", "border.")))
         return wrong, next((i for i, p in enumerate(order) if n.startswith(p)), 99), any(w in leaf for w in STATEFUL), n
     return min(names, key=rank)
@@ -374,12 +379,15 @@ def props(v):
         o["opacity"] = s["opacity"]
     if v.get("icon") and v["icon"]["w"] > 0 and v["icon"]["w"] < 120:
         o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'], role='text')}"
+    ex = v.get("extra") or {}
+    if ex.get("inputColor"):
+        o["field"] = f"typed text {colour(ex['inputColor'], role='text')} on {colour(ex['inputBackground'], role='fill')}" + (f", icon {colour(ex['iconStroke'], role='line')}" if ex.get("iconStroke") and ex["iconStroke"] != "none" else "")
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"], role="text")
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "field", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):

@@ -327,7 +327,8 @@
    "label": "QUICK CHECK \u00b7 CORRECT",
    "right": true
   },
-  "formErrorClass": "form_error__ATu6ZT"
+  "formErrorClass": "form_error__ATu6ZT",
+  "inputErrorClass": "input_email-error__PvU8Eb"
  },
  "components": {
   "promo-dialog": {
@@ -44359,7 +44360,7 @@
    "states": {
     "error": {
      "tag": "div",
-     "classes": "pc-login-modal-view_login-input form_form-item form_error",
+     "classes": "pc-login-modal-view_login-input form_form-item form_active form_error",
      "text": "",
      "rect": {
       "x": 520,
@@ -44447,7 +44448,7 @@
       },
       {
        "node": "input",
-       "size": "334.0x46.0",
+       "size": "313.0x46.0",
        "bg": "rgb(255, 242, 242)"
       }
      ],
@@ -44459,7 +44460,12 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/field-error-error.png",
-     "via": "class form_error added in DevTools"
+     "via": "classes form_error and input_email-error added in DevTools; \"abc\" typed so the text colour shows (deleted after)",
+     "extra": {
+      "inputColor": "rgb(240, 0, 57)",
+      "inputBackground": "rgb(255, 242, 242)",
+      "iconStroke": "rgb(240, 0, 57)"
+     }
     }
    },
    "page": "home",
@@ -44467,7 +44473,7 @@
    "url": "https://www.gauth.com/",
    "title": "Text field, error (forced)",
    "group": "Dialogs and overlays",
-   "desc": "The email field with Gauth's own form_error class added in DevTools: its CSS turns the field #fff2f2 with a #f00039 border and red text. Gauth shows it after a submit, which the capture never made, so the class was forced to read the rule.",
+   "desc": "The email field with Gauth's own error classes added in DevTools: form_error on the field turns it #fff2f2 with a #f00039 border, and input_email-error on its input wrapper turns the typed text and the mail icon red. Gauth shows them after a submit, which the capture never made, so the classes were forced to read the rules.",
    "selector": "[class*=\"pc-login-modal-view_login-input__\"] + form_error"
   },
   "field-focused": {

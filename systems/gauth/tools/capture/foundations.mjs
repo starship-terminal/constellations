@@ -55,6 +55,9 @@ for (const [key, p] of Object.entries(PAGES)) {
   const nn = page.getByRole('button', { name: 'Not now' });
   if (await nn.count()) { await nn.click().catch(() => {}); await page.waitForTimeout(1200); }
   if (key === 'lesson-science') out.astryxThemes = { withAudioDialog: themesBefore, afterNotNow: await themes() };
+  // the math player waits behind an audio gate; its Continue starts playback, so the layers read are the player's
+  const gate = page.getByRole('button', { name: 'Continue', exact: true });
+  if (key === 'lesson-math' && await gate.count()) { await gate.click().catch(() => {}); await page.waitForTimeout(4000); }
 
   // every rule inside a prefers-reduced-motion condition, in Gauth's sheets and the inline ones
   const inline = await page.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => { try { return ['inline-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; } }).filter(Boolean));

@@ -880,7 +880,7 @@ Crops: `accent-button-default.png`, `accent-button-hover.png`, `accent-button-pr
 
 #### field-error
 
-Text field, error (forced). The email field with Gauth's own form_error class added in DevTools: its CSS turns the field #fff2f2 with a #f00039 border and red text. Gauth shows it after a submit, which the capture never made, so the class was forced to read the rule.
+Text field, error (forced). The email field with Gauth's own error classes added in DevTools: form_error on the field turns it #fff2f2 with a #f00039 border, and input_email-error on its input wrapper turns the typed text and the mail icon red. Gauth shows them after a submit, which the capture never made, so the classes were forced to read the rules.
 
 Page: home. Selector: `[class*="pc-login-modal-view_login-input__"] + form_error`. States: error.
 
@@ -898,8 +898,8 @@ Page: home. Selector: `[class*="pc-login-modal-view_login-input__"] + form_error
 | Colour | #000000 |
 | Transition | none |
 | Icon | 24 x 25, colour #000000 |
-| Painted layers | div.pc-login-modal-view_login-input.form_form-item 400.0x48.0 bg #fff2f2 border T:1px solid #f00039 / R:1px solid #f00039 / B:1px solid #f00039 / L:1px solid #f00039 r 12px; input 334.0x46.0 bg #fff2f2 |
-| How | class form_error added in DevTools |
+| Painted layers | div.pc-login-modal-view_login-input.form_form-item 400.0x48.0 bg #fff2f2 border T:1px solid #f00039 / R:1px solid #f00039 / B:1px solid #f00039 / L:1px solid #f00039 r 12px; input 313.0x46.0 bg #fff2f2 |
+| How | classes form_error and input_email-error added in DevTools; "abc" typed so the text colour shows (deleted after) |
 
 Crops: `field-error-error.png`.
 
