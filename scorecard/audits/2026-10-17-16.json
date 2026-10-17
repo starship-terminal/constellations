@@ -1039,19 +1039,19 @@
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "core.palette Derived: neutral 24, 7 accent ramps; no red ramp, and text.blue, function.* values sit on no ramp"
+     "evidence": "core.palette neutral 11 first, blue/yellow 10, orange/green/purple 9, pink 8; red 6 of 8 declared, teal 2; lightness-picked"
     },
     "F2": {
      "grade": "meets",
-     "evidence": "role.background page/surface/raised/overlay/scrim in both themes; Derived mapping from measured components"
+     "evidence": "role.background page/surface/raised/overlay/dialog/scrim in both themes; Derived mapping from measured components"
     },
     "F3": {
      "grade": "meets",
-     "evidence": "role.text primary/secondary/disabled/on-accent(text.onblack)/link(text.blue), both themes"
+     "evidence": "role.text primary/secondary/tertiary/disabled/on-accent(text.onblack)/link(text.blue), both themes"
     },
     "F4": {
      "grade": "meets",
-     "evidence": "role.border default(border.main)/strong(border.dark)/focus(border.input-active, stylesheet), both themes"
+     "evidence": "role.border subtle/default(border.main)/strong(border.dark)/focus(border.input-active, stylesheet), both themes"
     },
     "F5": {
      "grade": "meets",
@@ -1059,27 +1059,27 @@
     },
     "F6": {
      "grade": "partly",
-     "evidence": "role.status danger fill/text/border; success, warning fill/text only; no info"
+     "evidence": "role.status danger fill/text/border; success, warning fill/text only, no border token; no info"
     },
     "F7": {
      "grade": "meets",
-     "evidence": "every colour, role, elevation and palette key in both themes; only 6 composer border entries are dark-only (light uses a literal)"
+     "evidence": "light 706, dark 712 tokens; only 6 component.*composer border entries are dark-only (dark: class); palette and roles in both"
     },
     "F8": {
      "grade": "meets",
-     "evidence": "fallback stacks, 9 sizes, 4 weights, line heights; typography.role display/heading/body/label/caption/code"
+     "evidence": "fontFamily stacks, 9 sizes 12-30, 4 weights, line heights; typography.role display/heading/body/label/caption/code"
     },
     "F9": {
-     "grade": "partly",
-     "evidence": "core.space measured counts but includes 1, 7, 10, 14, 6px; a usage list, not one-base scale"
+     "grade": "meets",
+     "evidence": "core.space 0_5 to 15 (2-60px) on Tailwind 4px base, half steps 6/10/14; 73 of 2809 uses kept apart in offGrid, matches raw"
     },
     "F10": {
      "grade": "meets",
-     "evidence": "core.radius via density 8/10/12/22 plus dialog 16 in README; core.borderWidth 0.5/1/2px and 1.2px illustrations"
+     "evidence": "core.radius row/small/card/composer via density plus segment-thumb 6, avatar, dialog 16; core.borderWidth 0.5/1/2/1.2px"
     },
     "F11": {
      "grade": "meets",
-     "evidence": "size.row-small 32, row 36, control-large 40; nav-icon 18, file-icon 32; focusRing 2px offset 2px, input 1px"
+     "evidence": "size.control-small 28, row-small 32, row 36, control-large 40; size.icon-xs to icon-large 14-24; focusRing 2px offset 2px"
     },
     "F12": {
      "grade": "meets",
@@ -1087,11 +1087,11 @@
     },
     "F13": {
      "grade": "meets",
-     "evidence": "core.duration 6, core.easing 3; reducedMotion note plus 51 rules in raw/css-rules.json say what stops"
+     "evidence": "core.duration 6, core.easing 3; README reduced-motion note plus 51 rules in raw/css-rules.json say what stops"
     },
     "F14": {
      "grade": "meets",
-     "evidence": "breakpoint 4, layout widths, layout.grid per page, zIndex content/raised/sticky/overlay/tooltip 999/toast 1050"
+     "evidence": "breakpoint sm-xl 4, layout widths, layout.grid per page, zIndex content/raised/sticky/overlay/tooltip 999/toast 1050"
     },
     "F15": {
      "grade": "meets",
@@ -1099,7 +1099,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 1682 of 1682 tokens name their source"
+     "evidence": "Script: 1860 of 1860 tokens name their source"
     },
     "C1": {
      "grade": "partly",
@@ -1111,11 +1111,11 @@
     },
     "C3": {
      "grade": "partly",
-     "evidence": "faithful no-ring capture still fails it, as Linear: ~11 of 66 focus states change ring/border (live check agrees)"
+     "evidence": "faithful no-ring capture: about 11 of 66 focus states change ring/border; raw/focus-live.md agrees (8 Tab stops, no outline)"
     },
     "C4": {
-     "grade": "partly",
-     "evidence": "component.* names class tokens, colour only, 222 entries; components.md specs raw px/hex with labels"
+     "grade": "meets",
+     "evidence": "Recount all rows: 86% token-first, 624 raw (312 heights, 78 text, 52 icons); same count ChatGPT 75%, Claude 87%"
     },
     "C5": {
      "grade": "na",
@@ -1134,12 +1134,12 @@
      "evidence": "Not applicable to a capture: voice guidelines (tone, vocabulary, message formula) are a team's own rules; a capture holds the product's copy, not the guideline behind it."
     },
     "A1": {
-     "grade": "partly",
-     "evidence": "161 SVGs, 76 named by role, 67 by hash, 18 Lucide; fonts table with fallbacks, licence only 'open source'"
+     "grade": "meets",
+     "evidence": "INDEX.tsv: all 161 SVGs by role or Lucide name, none by hash, sizes, seen_on, context; Fonts gives licence and fallback per family"
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README: How the values were read, What to distrust list, Coverage table, Rebuild"
+     "evidence": "README: How the values were read, What to distrust (palette assembled, roles mapped), Coverage table, Rebuild"
     },
     "K2": {
      "grade": "meets",
@@ -1424,59 +1424,59 @@
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "tokens.json core.palette.grey has 9 steps (bg0 to primary), but turq, green and peach have 3 steps (base, 50, 25), lavender 4 and selection 3; no hue other than grey approaches a 10-step ramp."
+     "evidence": "core.palette.grey 9 steps; turq/green/lavender/peach/selection only 3 to 4 steps each"
     },
     "F2": {
      "grade": "meets",
-     "evidence": "tokens.json light.background.page ({palette.grey.bg2}, body rule), surface, raised (Modal__Content), overlay (Dropdown__Content) and scrim ({palette.alpha.scrim}, Modal__Overlay)."
+     "evidence": "light.background.page, surface, raised, overlay, scrim, each sourced from a CSS rule"
     },
     "F3": {
      "grade": "meets",
-     "evidence": "tokens.json light.text.primary, secondary, disabled ({palette.grey.3}, Select__SelectItem[data-disabled]), on-accent and link (computed empty-state-link), plus link-hover."
+     "evidence": "light.text.primary, secondary, disabled, on-accent, link (plus tertiary, link-hover)"
     },
     "F4": {
      "grade": "meets",
-     "evidence": "tokens.json light.border.default ({palette.grey.2}), strong ({palette.base.black}, Popup__Content) and focus ({palette.selection.base}), plus field, rule, line and drawer."
+     "evidence": "light.border.default (grey.2), strong (black), focus (selection.base)"
     },
     "F5": {
      "grade": "meets",
-     "evidence": "tokens.json light.action.primary, primary-hover (ViewSelection__Button:hover) and primary-pressed (computed button-primary pressed); pressed equals hover because no :active rule exists, which README 'What to distrust' states. The lavender action.accent has no hover or pressed of its own."
+     "evidence": "light.action.primary, primary-hover, primary-pressed; pressed measured, equals hover"
     },
     "F6": {
      "grade": "meets",
-     "evidence": "tokens.json light.status.success/warning/danger/info each with fill, text and border from the --activity-* vars; the fill/text/border split and info (the green paywall notice) are the package's mapping, flagged in README 'Status roles are a mapping'."
+     "evidence": "light.status success/warning/danger/info each fill/text/border; borders mapped strong step"
     },
     "F7": {
      "grade": "na",
-     "evidence": "$themes holds only 'light'; README and components.md Gaps > Themes confirm no [data-theme], .dark or prefers-color-scheme rule exists, so the product ships one theme."
+     "evidence": "Light-only product; $themes has one light set, no dark rules in page CSS"
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "tokens.json fontFamily.ui/mono/light with stacks, fontSize 12 to 32 (8 sizes), fontWeight 300 to 700, lineHeight on every role, and typography.display, heading-2 to heading-5, body, label, caption and code (fontFamily.mono 12px, sourced to css rule CopyContainer__Preview)."
+     "grade": "partly",
+     "evidence": "Stacks, 8 fontSize, 5 weights, lineHeight per role, display/heading/label/caption; no code"
     },
     "F9": {
      "grade": "meets",
-     "evidence": "tokens.json core.spacing 0 to 16 on a 0.25rem (4px) step from the --0..--16 vars, plus neg1/neg2."
+     "evidence": "core.spacing 0 to 16 on a 0.25rem (4px) step"
     },
     "F10": {
      "grade": "meets",
-     "evidence": "tokens.json core.radius xs 3px to pill 48px (plus chip, search, drawer) and core.borderWidth default 1px, ring 2px, thumb-ring 4px, each sourced to a css rule."
+     "evidence": "core.radius xs to pill; core.borderWidth default 1px, ring 2px, thumb-ring 4px"
     },
     "F11": {
      "grade": "meets",
-     "evidence": "tokens.json core.size control-sm 24, control-md 32, control-lg 40, control-xl 56 and field 37; icon-sm 14, icon 16, icon-md 18, icon-lg 20; focus-ring-width 1px and focus-ring-offset 0px from computed button-primary focus-visible."
+     "evidence": "core.size control-sm/md/lg/xl, field, icon 14/16/18/24, focus-ring-width 1px, offset 0"
     },
     "F12": {
      "grade": "meets",
-     "evidence": "tokens.json light.elevation.menu (Dropdown__Content), popup (Popup__Content: popovers, tooltips), dialog (Modal__Content) and toast (Toast__ToastFill): four used levels each tied to a use; the declared s/m/l are kept and marked unused in README."
+     "evidence": "light.elevation menu, popup, dialog tied to uses; s/m/l declared, l for toasts"
     },
     "F13": {
-     "grade": "meets",
-     "evidence": "tokens.json core.duration fast 150 to chevron 500ms, enter/exit, dialog/popup 400ms, spinner 1100ms, toast 4000/2000ms; core.easing standard, out, linear, popup cubic-bezier(0.16,1,0.3,1); reduced motion answered as 'nothing changes', verified in raw/css-vars.json media list and raw/app-code-notes.md section 4."
+     "grade": "partly",
+     "evidence": "core.duration 7, core.easing 1 curve (+2 graph); reduced motion: nothing changes"
     },
     "F14": {
-     "grade": "meets",
-     "evidence": "tokens.json core.breakpoint too-small 640 (css @media) and sm to 2xl (raw/app-code-notes.md section 1), core.grid home-columns 3 / home-columns-narrow 1 (isSmallerThan('xmd')), core.size root-max 1400, dialog and menu widths, core.zIndex raised 1, toast 2, commander 3 (the only z-index values in raw/css-vars.json)."
+     "grade": "partly",
+     "evidence": "core.breakpoint 640px only, size widths, zIndex 1 to 3; no grid columns, no dialog z"
     },
     "F15": {
      "grade": "meets",
@@ -1484,23 +1484,23 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 410 of 410 tokens name their source"
+     "evidence": "Script: 359 of 359 tokens name their source"
     },
     "C1": {
-     "grade": "meets",
-     "evidence": "components.md has 17 of 19: primary/secondary/danger/text buttons, dialog close and graph toolbar icon buttons, links, text field, note composer (contenteditable text area), select, checkbox, vertical/layout tabs, menu, legend tooltip, dialog, toast, result card, library list row, article table, avatar, Upgrade badge. Radio and switch are absent (single-choice pills and layout toggle stand in)."
+     "grade": "partly",
+     "evidence": "16/19 (text area as note composer); missing radio, switch, toast"
     },
     "C2": {
      "grade": "partly",
-     "evidence": "components.md shows hover, focus-visible and pressed (2026-10-17 pages), selected, disabled, loading (Spinner) and an Inline error box. Missing: an error/invalid state on any input (text field has only filled and placeholder), the enabled Danger button, and the error toast (Gaps > States)."
+     "evidence": "hover, focus-visible, pressed, selected, disabled, loading; error never reached"
     },
     "C3": {
      "grade": "meets",
-     "evidence": "components.md has a focus-visible row and crop for each focusable component (90 focus crops, e.g. button-primary-focus-visible.png and text-field-filled-focus-visible.png show the 1px #b0edf0 ring); components that cannot take focus say so in a 'Not measured' line."
+     "evidence": "84 focus-visible rows across entries; 14 non-focusable parts named as Not measured"
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "At 113cf0d every colour, shadow, radius, spacing and size in components.md carries a token (1497 references, all resolving in tokens.json), with the entry's own component.* role first. The ten earlier primitives now use sourced semantic roles: {text.choice-dark}/{border.choice-dark}, {text.chip-dark}/{border.chip-dark}, {text.icon-strong}, {action.upgrade-hover}, {action.go} and {background.drop-zone}. The 9 remaining {palette.ugc.amber} references are the user's collection colour, which is data. Two small leftovers: the Shared values Focus summary names {palette.turq.50} where the entries use {action.focus-ring}, and one Page ground gradient stop, rgba(215,246,248,0.5), has no token."
+     "grade": "partly",
+     "evidence": "Raw value then token; 779 palette refs, 0 semantic light.* roles; Parts lists raw px"
     },
     "C5": {
      "grade": "na",
@@ -1508,7 +1508,7 @@
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md writes app shell, empty/loading/error, destructive confirmation, feedback, search and filtering, and data display (list, table, pager, sort). Missing: the validation half of 'Forms and validation' ('Validation. Not captured') and 'Onboarding and first run' ('Not captured', only existing-account hints)."
+     "evidence": "patterns.md has all 8; validation, error state and onboarding marked not captured"
     },
     "V1": {
      "grade": "na",
@@ -1520,11 +1520,11 @@
     },
     "A1": {
      "grade": "meets",
-     "evidence": "icons/INDEX.tsv lists 66 SVGs named by role (zoom-in, delete, view-split, graph-seed) with sizes, viewBox and place; README Fonts names Plus Jakarta Sans, IBM Plex Sans and the browser monospace as open source on Google Fonts, with fallback stacks in tokens.json fontFamily."
+     "evidence": "icons/INDEX.tsv 66 icons by role name and place; README Fonts table, core.fontFamily"
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README.md says what was captured (pages, dates, widths, actions taken), how (snapshot.js, unsnap/render/store, vars.py, measure.mjs, bundle reads in raw/) and what to distrust (two capture dates, pressed = hover, status mapping, danger button only disabled, six sampled colours, code-read breakpoints, canvas graph). After d076f79 the Fonts section is consistent with tokens.json typography.code ('The one monospace text is the formatted citation in Cite Article'), and there is one Reduced motion paragraph citing both CSS and bundle. Minor leftover: 'Both families are open source' now sits under a three-row font table."
+     "evidence": "README: pages read, how values read, What to distrust, Coverage table"
     },
     "K2": {
      "grade": "meets",
