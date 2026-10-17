@@ -123,10 +123,10 @@ Google Fonts, which the style guide links.
 Every text line read computes to a line height of 1.5 times its size (14/21,
 16/24, 24/36, 32/48), the html default; only bare spans drop to 1em. The
 element defaults give the heading scale: h1 32px 600, h2 28px, h3 24px (also
-the dialog title), h4 16px 500, h5 14px 600, and labels 14px 500. There is no
-code or monospace text anywhere in the captured pages; Tailwind's default
-`--font-mono` stack is declared but nothing uses it, so `core.typography` has
-no code role.
+the dialog title), h4 16px 500, h5 14px 600, and labels 14px 500. The one
+monospace text is the formatted citation in Cite Article, 12/18 in the
+browser's `monospace` (`typography.code`); Tailwind's default `--font-mono`
+stack is declared but nothing uses it.
 
 ## Foundations at a glance
 
@@ -134,22 +134,21 @@ no code role.
 |---|---|---|
 | Colour ramps | `core.palette`: a nine-step grey, three to four steps of turquoise, green, lavender and peach, three of the selection blue, nine collection colours, the status trios, and the alphas the rules use | The 80 `:root` properties; the product defines no longer ramps |
 | Backgrounds | `light.background`: page (body), surface, raised (dialogs), overlay (menus), scrim, plus the glass panel, section and hint fills | Rules on `body`, `Modal__Content`, `Dropdown__Content`, `Modal__Overlay` |
-| Text | primary, secondary, tertiary, disabled, inverse, on-accent, link, link-hover | Rules and the computed link colour |
-| Borders | default, strong, rule, field, line, focus, drawer; widths in `core.borderWidth` (1px everywhere, a 2px select ring, a 4px slider ring) | Rules |
+| Text | default (the inherited black most text uses), primary, secondary, tertiary, disabled, inverse, on-accent, link, link-hover | Rules and the computed link colour |
+| Borders | default, strong, rule, field, line, focus, the browser focus ring (`#005fcc`), drawer; widths in `core.borderWidth` (1px everywhere, a 2px select ring, a 4px slider ring) | Rules |
 | Actions | primary black with hover and pressed `#333333`, the lavender accent, quiet fills, the focus ring colour, the peach danger fill | Rules and computed pressed states |
 | Status | success, warning, danger and info, each with fill, text and border | The `--activity-*` properties, the typed-phrase box and the notice banner |
 | Sizing | controls 24, 32, 40 and 56px, the 37px field, icons 14, 16, 18 and 20px, a 1px focus ring at offset 0 | Rules, computed heights and icon sizes |
-| Elevation | `light.elevation`: menu, popup (popovers, tooltips) and dialog shadows; the declared `--shadow-s/m/l` are unused | Rules |
+| Elevation | `light.elevation`: menu, popup (popovers, tooltips), toast and dialog shadows, and the 1px inset rings (strong, field, field-dark, highlight) that stand in for borders; the declared `--shadow-s/m/l` are unused | Rules |
 | Motion | 150 to 500ms transitions (enter 200ms, exit 150ms), 400ms dialog and popover entrances on `cubic-bezier(0.16, 1, 0.3, 1)`, the default `ease` for panels and drawers, `ease-out` on the scrollbar, a linear 1.1s spinner, toasts held 4s (2s after hover) | Rules, computed transitions, the bundle |
 | Layout | the 640px Screen too small breakpoint, the script breakpoints sm 640, md 768, xmd 896, lg 1024, xl 1280, 2xl 1536, three home cards per row stacking to one below 896px, 1400px home column, 650px Account Settings, 500 to 800px dialogs, 220 to 500px menus, 290 to 390px right panel, z-index 1 to 3 | Rules, `@media`, the bundle and computed layout |
 
 **Reduced motion.** No captured stylesheet has a `prefers-reduced-motion` rule
-(the `@media` list is in [raw/css-vars.json](raw/css-vars.json)), so nothing
+(the `@media` list is in [raw/css-vars.json](raw/css-vars.json)), and the
+production bundle has no reduced-motion check either
+([raw/app-code-notes.md](raw/app-code-notes.md) section 4). So nothing
 changes when a visitor asks for less motion: dialogs still slide in over
 400ms, the spinner still turns and the graph still animates its entrance.
-
-**Reduced motion.** The production bundle has no reduced-motion check either
-([raw/app-code-notes.md](raw/app-code-notes.md) section 4).
 
 **Breakpoints and grid.** The stylesheet's one breakpoint is `max-width: 640px`,
 where every page is covered by the Screen too small notice. The script has its
@@ -199,8 +198,8 @@ name the file that shows them; the rest say why not.
 |---|---|---|
 | Colour ramps | Captured, short | `core.palette`; the product's own ramps stop at three to four steps per hue (nine for grey), and no longer ramp exists to read |
 | Background roles | Captured | `light.background` page, surface, raised, overlay, scrim |
-| Text roles | Captured | `light.text` primary, secondary, disabled, on-accent, link |
-| Border roles | Captured | `light.border` default, strong, focus |
+| Text roles | Captured | `light.text` default, primary, secondary, disabled, on-accent, link |
+| Border roles | Captured | `light.border` default, strong, focus, focus-browser |
 | Accent states | Captured | `light.action.primary`, `primary-hover`, `primary-pressed` |
 | Status colours | Captured | `light.status` success, warning, danger, info with fill, text, border |
 | Theme parity | Not present | One light theme; no dark theme exists |

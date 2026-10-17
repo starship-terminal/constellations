@@ -7,7 +7,7 @@ The machine-readable copy is [raw/components-computed.json](raw/components-compu
 How to read an entry:
 
 - A component is found by its styled-components display name (`GraphControls__StyledButton`), so `generateVariantComponent__default`, which many unrelated buttons share, is found by text or position instead. The entry's heading is the product's name for the part, and the key in backticks is the key in the JSON.
-- A colour, shadow, radius, padding, gap or control height is its value followed by the [tokens.json](tokens.json) token with the same value (`{palette.grey.primary}`, `{elevation.menu}`, `{radius.lg}`, `{spacing.2}`, `{size.control-md}`), when there is one; a colour names the light-set role for what it paints (`{background.surface}` for a fill, `{text.default}` for text, `{border.default}` for a border; these live in the light set) and falls back to the palette token when no role has that value. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 {palette.base.black}`, and is read from the first text node inside the component.
+- A colour, shadow, radius, padding, gap or control height is its value followed by the [tokens.json](tokens.json) token with the same value (`{palette.grey.primary}`, `{elevation.menu}`, `{radius.lg}`, `{spacing.2}`, `{size.control-md}`), when there is one; a colour names the light-set role for what it paints (`{background.surface}` for a fill, `{text.default}` for text, `{border.default}` for a border; these live in the light set) and falls back to the palette token when no role has that value; an entry's own `component.*` token is named first for its fill. Collection colours (`palette.ugc.*`) stay palette tokens because the user picks them per collection. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 {palette.base.black}`, and is read from the first text node inside the component.
 - The state table has one row per element or snapshot state read at rest. A hover, focus-visible or pressed row lists only what changes from the row above it; a state with the same values is named in the row's label, for example "default (same: hover)". Hover is a real mouse hover, focus-visible a real keyboard focus and pressed the mouse held down (2026-10-17 pages only); where a snapshot state could not be reached it says so.
 - "Parts" lists the pieces inside the component, with sizes and offsets measured from the component's corner.
 - Crops are images of the component read from the rendered snapshot, in [components/crops/](components/crops) (445 files, named `{component}-{state}.png`, at 2x, 256 colours). A crop wider than 1600px was halved. A state that paints the same pixels as its default has no file of its own. Screenshots are in [screenshots/](screenshots).
@@ -105,18 +105,18 @@ Values that apply across entries, from the measurement file. Counts are componen
 
 | Shadow | Where |
 |---|---|
-| #000000 0px 0px 0px 1px inset | `filter-toggle`, `library-list-row`, `list-card`, `recent-search-row` |
-| #000000 0px 0px 0px 2px | `filter-bar-button`, `layout-select`, `select-dark` |
-| #c9cdd3 0px 0px 0px 1px inset | `button-disabled`, `filter-input`, `text-field` |
+| #000000 0px 0px 0px 1px inset (`{elevation.ring-strong}`) | `filter-toggle`, `library-list-row`, `list-card`, `recent-search-row` |
+| #000000 0px 0px 0px 2px (`{elevation.ring-strong}`) | `filter-bar-button`, `layout-select`, `select-dark` |
+| #c9cdd3 0px 0px 0px 1px inset (`{elevation.ring-field}`) | `button-disabled`, `filter-input`, `text-field` |
 | rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px (`{elevation.popup}`) | `account-menu`, `filter-popover`, `graph-tooltip` |
 | rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px (`{elevation.menu}`) | `menu`, `reset-menu`, `select-dark` |
-| #a7d4ff 0px 0px 0px 1px inset | `inspector`, `list-card` |
+| #a7d4ff 0px 0px 0px 1px inset (`{elevation.ring-highlight}`) | `inspector`, `list-card` |
 | rgba(0, 0, 0, 0.5) 3px 3px 12px 0px (`{elevation.dialog}`) | `confirm-destructive`, `dialog` |
-| #000000 0px 0px 0px 1px | `home-guide-card` |
+| #000000 0px 0px 0px 1px (`{elevation.ring-strong}`) | `home-guide-card` |
 | #686d79 0px 0px 0px 1px | `note-composer` |
 | #a49edb 0px 0px 0px 4px | `slider` |
 | #a49edb 0px 0px 0px 5px | `slider` |
-| #dde0e4 0px 0px 0px 1px inset | `drawer-input` |
+| #dde0e4 0px 0px 0px 1px inset (`{elevation.ring-field-dark}`) | `drawer-input` |
 | rgba(0, 0, 0, 0.3) 3px 3px 12px 0px (`{elevation.toast}`) | `toast` |
 
 **Colours in use.** Background and text colours of the first state of each component, most used first.
@@ -137,7 +137,7 @@ Values that apply across entries, from the measurement file. Counts are componen
 | background | #8add8a `{action.upgrade}` | 2 |
 | background | #d1ceed `{action.accent}` | 2 |
 | background | #eef0f1 `{background.page}` | 2 |
-| background | #f2f2f2 `{palette.ui.bg}` | 2 |
+| background | #f2f2f2 `{action.control}` | 2 |
 | background | #fcebe5 `{status.danger.fill}` | 2 |
 | background | rgba(0, 0, 0, 0.1) `{action.quiet-hover}` | 2 |
 | background | #61dce2 `{palette.turq.base}` | 1 |
@@ -147,10 +147,10 @@ Values that apply across entries, from the measurement file. Counts are componen
 | background | #f2af97 `{action.danger}` | 1 |
 | background | #f5c751 `{component.positions-moved}` | 1 |
 | background | #fef1c5 `{status.warning.fill}` | 1 |
-| background | rgba(221, 204, 255, 0.2) `{palette.alpha.violet-20}` | 1 |
+| background | rgba(221, 204, 255, 0.2) `{background.panel-tint}` | 1 |
 | background | rgba(255, 255, 255, 0.3) `{palette.alpha.white-30}` | 1 |
 | background | rgba(255, 255, 255, 0.4) `{background.section}` | 1 |
-| background | rgba(255, 255, 255, 0.9) `{palette.alpha.white-90}` | 1 |
+| background | rgba(255, 255, 255, 0.9) `{action.glass-hover}` | 1 |
 
 **Motion.** Transitions in the page's CSS (every styled component's rules, in [raw/css-vars.json](raw/css-vars.json)) and on the measured elements. The CSS defines no transition on a hover or focus colour except the scrollbar thumb; the rest are opacity, transform and width changes on panels, the drawer and overlays.
 
@@ -163,7 +163,7 @@ Values that apply across entries, from the measurement file. Counts are componen
 | 350ms | `ease` | opacity, transform | AnimatedContainer__Container |
 | 500ms | `ease` | max-height, transform, width | FilterableSearchActions__Chevron, Navigation__AnimatedWidth, `drawer` |
 
-**Focus.** Real keyboard focus was given to every component that could take it. 62 draw an outline ring, in 3 styles: 1px auto #b0edf0 `{palette.turq.50}`, offset 0px on `account-menu`, `autosave-button`, `button-link`, `button-primary`, `button-secondary` and more; 1px auto #005fcc, offset 1px on `empty-state-link`, `home-guide-card`, `inspector-title`, `nav-logo`, `nav-tab`; 1px auto #005fcc, offset 0px on `note-composer`. 1 change something other than an outline: `slider`. 14 could not take focus (a div, or disabled): `citation-box`, `drawer-search-button`, `graph-legend-item`, `inspector-authors`, `inspector-nav`, `layout-reset`, `layout-tab`, `library-list-row`, `list-pager`, `recent-search-row`, `selection-bar`, `selection-tick`, `table-header`, `table-row`.
+**Focus.** Real keyboard focus was given to every component that could take it. 62 draw an outline ring, in 3 styles: 1px auto #b0edf0 `{palette.turq.50}`, offset 0px on `account-menu`, `autosave-button`, `button-link`, `button-primary`, `button-secondary` and more; 1px auto #005fcc `{border.focus-browser}`, offset 1px on `empty-state-link`, `home-guide-card`, `inspector-title`, `nav-logo`, `nav-tab`; 1px auto #005fcc `{border.focus-browser}`, offset 0px on `note-composer`. 1 change something other than an outline: `slider`. 14 could not take focus (a div, or disabled): `citation-box`, `drawer-search-button`, `graph-legend-item`, `inspector-authors`, `inspector-nav`, `layout-reset`, `layout-tab`, `library-list-row`, `list-pager`, `recent-search-row`, `selection-bar`, `selection-tick`, `table-header`, `table-row`.
 
 **Hover.** 71 hovered states differ from their rest state in computed style and 60 do not (they change something drawn on the canvas, or nothing). Background changes on hover, most common first:
 
@@ -171,13 +171,13 @@ Values that apply across entries, from the measurement file. Counts are componen
 |---|---|---|
 | transparent | rgba(0, 0, 0, 0.05) `{action.quiet}` | 23 |
 | #000000 `{action.primary}` | #333333 `{action.primary-hover}` | 6 |
-| rgba(0, 0, 0, 0.05) `{action.quiet}` | rgba(0, 0, 0, 0.07) `{palette.alpha.black-07}` | 5 |
+| rgba(0, 0, 0, 0.05) `{action.quiet}` | rgba(0, 0, 0, 0.07) `{action.select-hover}` | 5 |
 | transparent | #ffffff `{background.surface}` | 3 |
 | rgba(0, 0, 0, 0.05) `{action.quiet}` | rgba(0, 0, 0, 0.08) | 2 |
 | rgba(0, 0, 0, 0.05) `{action.quiet}` | rgba(0, 0, 0, 0.1) `{action.quiet-hover}` | 2 |
-| transparent | rgba(255, 255, 255, 0.1) | 2 |
+| transparent | rgba(255, 255, 255, 0.1) `{action.quiet-hover-inverse}` | 2 |
 | #8add8a `{action.upgrade}` | #c4eec4 `{palette.green.50}` | 1 |
-| #f2f2f2 `{palette.ui.bg}` | #e8e8e8 `{palette.ui.bg-hover}` | 1 |
+| #f2f2f2 `{action.control}` | #e8e8e8 `{action.control-hover}` | 1 |
 | #ffffff `{background.surface}` | #e9f5fe `{component.option-selected}` | 1 |
 | #ffffff `{background.surface}` | #eef0f1 `{background.page}` | 1 |
 | #ffffff `{background.surface}` | rgba(255, 255, 255, 0.5) `{background.panel-glass}` | 1 |
@@ -232,7 +232,7 @@ Values that apply across entries, from the measurement file. Counts are componen
 | [Legend tooltip](#legend-tooltip) | 162.41 x 28 | - | 8px `{radius.lg}` | #333333 `{action.primary-hover}` | rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px (`{elevation.popup}`) | 8px 12px `{spacing.2} {spacing.3}` |
 | [Tip banner](#tip-banner) | 374 x 44 | - | 8px `{radius.lg}` | #d7f6f8 `{background.hint}` | none | 0 |
 | [Search Settings drawer](#search-settings-drawer) | 390 x 110 | - | 32px 32px 16px 16px | #000000 `{action.primary}` | none | 0 |
-| [Article detail panel](#article-detail-panel) | 390 x 772 | - | 16px `{radius.2xl}` | #ffffff `{background.surface}` | #a7d4ff 0px 0px 0px 1px inset | 0 |
+| [Article detail panel](#article-detail-panel) | 390 x 772 | - | 16px `{radius.2xl}` | #ffffff `{background.surface}` | #a7d4ff 0px 0px 0px 1px inset (`{elevation.ring-highlight}`) | 0 |
 | [Layout option card](#layout-option-card) | 374 x 190 | 1px solid #8a92a1 `{border.line}` | 6px `{radius.md}` | #e9f5fe `{component.option-selected}` | none | 12px `{spacing.3}` |
 | [Layout select](#layout-select) | 119.59 x 29 | - | 4px `{radius.sm}` | rgba(0, 0, 0, 0.05) `{action.quiet}` | none | 4px 8px `{spacing.1} {spacing.2}` |
 | [Positions moved pill](#positions-moved-pill) | 150.33 x 24 (height `{size.control-sm}`) | - | 48px `{radius.pill}` | #f5c751 `{component.positions-moved}` | none | 4px 8px `{spacing.1} {spacing.2}` |
@@ -300,7 +300,7 @@ ResearchRabbit wordmark. The rabbit mark beside it only shows on the Library and
 |---|---|
 | default | size 208 x 48; background transparent; text Plus Jakarta Sans 14/21 600, #000000 `{text.default}`; cursor pointer; icon 48 x 48, #000000 `{text.default}` |
 | hover | text Plus Jakarta Sans 14/21 600, #000000 `{text.default}`, underline |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| focus-visible | outline 1px auto #005fcc `{border.focus-browser}`, offset 1px |
 | with-mark (as the first row, except) | size 256 x 48 |
 
 Parts:
@@ -318,11 +318,11 @@ Two text tabs. The current one sits in a white pill; the other is plain text. Re
 |---|---|
 | current | size 71.77 x 37 (height `{size.field}`); padding 8px 12px `{spacing.2} {spacing.3}`; radius 48px `{radius.pill}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/21 700, #000000 `{text.default}`; cursor pointer |
 | current, hover | text Plus Jakarta Sans 14/21 700, #000000 `{text.default}`, underline |
-| current, focus-visible | outline 1px auto #005fcc, offset 1px |
+| current, focus-visible | outline 1px auto #005fcc `{border.focus-browser}`, offset 1px |
 | current, pressed | text Plus Jakarta Sans 14/21 700, #000000 `{text.default}`, underline |
 | other (as the first row, except) | size 71.33 x 37 (height `{size.field}`); background transparent |
 | other, hover | text Plus Jakarta Sans 14/21 700, #000000 `{text.default}`, underline |
-| other, focus-visible | outline 1px auto #005fcc, offset 1px |
+| other, focus-visible | outline 1px auto #005fcc `{border.focus-browser}`, offset 1px |
 | other, pressed | text Plus Jakarta Sans 14/21 700, #000000 `{text.default}`, underline |
 
 Authored state rules (from the page's CSS): `a:hover { text-decoration: underline; }`.
@@ -427,7 +427,7 @@ The 390px column at the right: Next Search, the article detail or the layout set
 | layout (same as the first row) | same values |
 | width-1000 | size 314.67 x 672; background transparent; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; icon 16 x 16, #000000 `{text.default}` |
 
-Child layers that carry the look: div 390x772 background rgba(221, 204, 255, 0.2) `{palette.alpha.violet-20}` radius 12px; button 126.2x32 background #000000 `{action.primary}` radius 48px; div 374x44 background #d7f6f8 `{background.hint}` radius 8px.
+Child layers that carry the look: div 390x772 background rgba(221, 204, 255, 0.2) `{background.panel-tint}` radius 12px; button 126.2x32 background #000000 `{action.primary}` radius 48px; div 374x44 background #d7f6f8 `{background.hint}` radius 8px.
 
 ![Right panel next-search](components/crops/side-panel-next-search.png) ![Right panel article](components/crops/side-panel-article.png) ![Right panel layout](components/crops/side-panel-layout.png)
 
@@ -438,11 +438,11 @@ The row at the top of the main card: the "Similar articles to 9 Articles" summar
 #### Search summary pill
 The search header: "Similar articles" in a light pill, "to", then the black "9 Articles" pill, all inside a lavender capsule. Read as `search-summary` on the search split view.
 
-**Values (default).** size 248.64 x 37 (height `{size.field}`); padding 4px `{spacing.1}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background #d1ceed `{action.accent}`; text Plus Jakarta Sans 14/21 600, #000000 `{text.default}`; cursor pointer; icon 14 x 14, #ffffff `{text.inverse}`.
+**Values (default).** size 248.64 x 37 (height `{size.field}`); padding 4px `{spacing.1}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background #d1ceed `{component.search-summary}`; text Plus Jakarta Sans 14/21 600, #000000 `{text.default}`; cursor pointer; icon 14 x 14, #ffffff `{text.inverse}`.
 
 Parts:
 
-- left: 113.81 x 29; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; background #ffffff `{background.surface}`; radius 48px `{radius.pill}`; padding 4px 8px `{spacing.1} {spacing.2}`; gap 4px `{spacing.1}`; text "Similar articles"
+- left: 113.81 x 29; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; background #ffffff `{component.search-summary-label}`; radius 48px `{radius.pill}`; padding 4px 8px `{spacing.1} {spacing.2}`; gap 4px `{spacing.1}`; text "Similar articles"
 - label: 97.81 x 21; Plus Jakarta Sans 14/21 600, #000000 `{text.default}`; text "Similar articles"
 - to: 14.33 x 14; Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; text "to"
 
@@ -506,7 +506,7 @@ Round funnel button left of the view toggle; it opens the filter popover. Read a
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default (same: hover) | size 32 x 32 (height `{size.control-md}`); padding 8px `{spacing.2}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background #eef0f1 `{background.page}`; text Plus Jakarta Sans 16/24 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
+| default (same: hover) | size 32 x 32 (height `{size.control-md}`); padding 8px `{spacing.2}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background #eef0f1 `{component.filter-button}`; text Plus Jakarta Sans 16/24 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
 | focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | open (as the first row, except) | outline 1px solid #000000 `{border.strong}`, offset 0px |
 
@@ -521,7 +521,7 @@ A small card under the filter button: a text field with a Go button and a line o
 
 Parts:
 
-- input: 340 x 37; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; radius 8px `{radius.lg}`; padding 8px 32px 8px 12px `{spacing.2} {spacing.8} {spacing.2} {spacing.3}`; shadow #c9cdd3 0px 0px 0px 1px inset
+- input: 340 x 37; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; radius 8px `{radius.lg}`; padding 8px 32px 8px 12px `{spacing.2} {spacing.8} {spacing.2} {spacing.3}`; shadow #c9cdd3 0px 0px 0px 1px inset (`{elevation.ring-field}`)
 - info: 340 x 58; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; background #e8e7f6 `{action.accent-soft}`; radius 8px `{radius.lg}`; padding 8px 12px `{spacing.2} {spacing.3}`; gap 8px `{spacing.2}`; text "Find a broader set of results "
 
 Authored state rules (from the page's CSS): `.x:focus { box-shadow: rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px, rgba(0, 0, 0, 0.2) 0px 0px 0px 2px; }`; `.x[data-state="open"][data-side="bottom"] { animation-name: fSMqcH; }`.
@@ -533,7 +533,7 @@ Text input inside the filter popover. Read as `filter-input` on the search map v
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default (same: hover) | size 340 x 37 (height `{size.field}`); padding 8px 32px 8px 12px `{spacing.2} {spacing.8} {spacing.2} {spacing.3}`; radius 8px `{radius.lg}`; background transparent; shadow #c9cdd3 0px 0px 0px 1px inset; text Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; cursor text; placeholder oklab(0 0 0 / 0.5) |
+| default (same: hover) | size 340 x 37 (height `{size.field}`); padding 8px 32px 8px 12px `{spacing.2} {spacing.8} {spacing.2} {spacing.3}`; radius 8px `{radius.lg}`; background transparent; shadow #c9cdd3 0px 0px 0px 1px inset (`{elevation.ring-field}`); text Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; cursor text; placeholder oklab(0 0 0 / 0.5) |
 | focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`.
@@ -780,14 +780,14 @@ A white card per article: author and year, title, journal in italics, a selectio
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default | size 372 x 204; radius 8px `{radius.lg}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 16/24 500, #000000 `{text.default}`; icon 18 x 18, #000000 `{text.default}` |
-| hover | shadow #a7d4ff 0px 0px 0px 1px inset |
+| hover | shadow #a7d4ff 0px 0px 0px 1px inset (`{elevation.ring-highlight}`) |
 | second (as the first row, except) | size 372 x 225 |
-| tinted (as the first row, except) | size 372 x 225; background #f0f6ff; shadow #a7d4ff 0px 0px 0px 1px inset |
+| tinted (as the first row, except) | size 372 x 225; background #f0f6ff `{component.list-card-tinted}`; shadow #a7d4ff 0px 0px 0px 1px inset (`{elevation.ring-highlight}`) |
 | list-view (as the first row, except) | size 966 x 183 |
-| list-view, hover | shadow #a7d4ff 0px 0px 0px 1px inset |
+| list-view, hover | shadow #a7d4ff 0px 0px 0px 1px inset (`{elevation.ring-highlight}`) |
 | library (as the first row, except) | size 1114 x 217; icon 16 x 16, #f07d59 `{palette.ugc.amber}` |
-| library, hover | shadow #a7d4ff 0px 0px 0px 1px inset |
-| selected (as the first row, except) | size 966 x 183; shadow #000000 0px 0px 0px 1px inset |
+| library, hover | shadow #a7d4ff 0px 0px 0px 1px inset (`{elevation.ring-highlight}`) |
+| selected (as the first row, except) | size 966 x 183; shadow #000000 0px 0px 0px 1px inset (`{elevation.ring-strong}`) |
 
 Parts:
 
@@ -864,7 +864,7 @@ Outlined chip under a library card title naming the collection the article is in
 | default | size 1054 x 26; gap 4px `{spacing.1}`; background transparent; text Plus Jakarta Sans 12/18 400, #000000 `{text.default}`; icon 16 x 16, #f07d59 `{palette.ugc.amber}` |
 | hover | cursor pointer |
 
-Child layers that carry the look: div 124.5x26 radius 4px shadow #dde0e4 0px 0px 0px 1px inset.
+Child layers that carry the look: div 124.5x26 radius 4px shadow #dde0e4 0px 0px 0px 1px inset (`{elevation.ring-field-dark}`).
 
 Parts:
 
@@ -881,7 +881,7 @@ The right panel when nothing is selected: a header, a dismissible tip, an empty 
 #### Next Search panel
 The right-hand column when nothing is selected: header, a dismissible tip, an empty state with art, and the black Search Settings drawer at the foot. Read as `next-search` on the search split view.
 
-**Values (default).** size 390 x 772; radius 12px `{radius.xl}`; background rgba(221, 204, 255, 0.2) `{palette.alpha.violet-20}`; text Plus Jakarta Sans 16/24 500, #000000 `{text.default}`; icon 16 x 16, #ffffff `{text.inverse}`.
+**Values (default).** size 390 x 772; radius 12px `{radius.xl}`; background rgba(221, 204, 255, 0.2) `{background.panel-tint}`; text Plus Jakarta Sans 16/24 500, #000000 `{text.default}`; icon 16 x 16, #ffffff `{text.inverse}`.
 
 ![Next Search panel default](components/crops/next-search-default.png)
 
@@ -963,7 +963,7 @@ Underlined link under the illustration. Read as `empty-state-link` on the search
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default (same: hover) | size 141.39 x 18; background transparent; text Plus Jakarta Sans 14/21 600, #000000 `{text.default}`, underline; cursor pointer |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| focus-visible | outline 1px auto #005fcc `{border.focus-browser}`, offset 1px |
 
 Authored state rules (from the page's CSS): `a:hover { text-decoration: underline; }`.
 
@@ -974,7 +974,7 @@ Black rounded sheet pinned to the foot of the right panel: a head row with a che
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| search-settings | size 390 x 110; radius 32px 32px 16px 16px; background #000000 `{action.primary}`; text Plus Jakarta Sans 16/24 600, #ffffff `{text.inverse}`; transition max-height 0.5s ease; icon 20 x 20, #ffffff `{text.inverse}` |
+| search-settings | size 390 x 110; radius 32px 32px 16px 16px; background #000000 `{component.drawer}`; text Plus Jakarta Sans 16/24 600, #ffffff `{text.inverse}`; transition max-height 0.5s ease; icon 20 x 20, #ffffff `{text.inverse}` |
 | dive-deeper (same as the first row) | same values |
 | open (as the first row, except) | size 390 x 772 |
 
@@ -1023,14 +1023,14 @@ The right column when a node or card is selected: a header (counts, close, stick
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default | size 390 x 772; radius 16px `{radius.2xl}`; background #ffffff `{background.surface}`; shadow #a7d4ff 0px 0px 0px 1px inset; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; icon 16 x 16, #000000 `{text.default}` |
+| default | size 390 x 772; radius 16px `{radius.2xl}`; background #ffffff `{background.surface}`; shadow #a7d4ff 0px 0px 0px 1px inset (`{elevation.ring-highlight}`); text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; icon 16 x 16, #000000 `{text.default}` |
 | split (same as the first row) | same values |
 
 Parts:
 
 - header: 390 x 108; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; padding 12px `{spacing.3}`; gap 16px `{spacing.4}`; border B:1px solid #dde0e4 `{border.rule}`; text "Article Notes 0 Raghavendra, 2"
 - body: 390 x 662; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; radius 8px `{radius.lg}`; text "SWE Atlas: Benchmarking Coding"
-- nav: 145.2 x 33; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; background #f2f2f2 `{palette.ui.bg}`; radius 48px `{radius.pill}`; padding 2px; gap 4px `{spacing.1}`; text "Article Notes 0"
+- nav: 145.2 x 33; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; background #f2f2f2 `{action.control}`; radius 48px `{radius.pill}`; padding 2px; gap 4px `{spacing.1}`; text "Article Notes 0"
 - nickname: 149.25 x 24; Plus Jakarta Sans 16/24 500, #000000 `{text.default}`; text "Raghavendra, 2026"
 - title: 366 x 42; Plus Jakarta Sans 14/21 600, #000000 `{text.default}`; text "SWE Atlas: Benchmarking Coding"
 - journal: 366 x 21; Plus Jakarta Sans 14/21 400 italic, #000000 `{text.default}`; text "arXiv (Cornell University)"
@@ -1044,14 +1044,14 @@ Previous and next article arrows with a count. Read as `inspector-nav` on the se
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default | size 145.2 x 33; padding 2px; gap 4px `{spacing.1}`; radius 48px `{radius.pill}`; background #f2f2f2 `{palette.ui.bg}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}` |
+| default | size 145.2 x 33; padding 2px; gap 4px `{spacing.1}`; radius 48px `{radius.pill}`; background #f2f2f2 `{action.control}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}` |
 | item (same: hover) | size 58.72 x 29; padding 4px 8px `{spacing.1} {spacing.2}`; radius 48px `{radius.pill}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; cursor pointer |
 
 - Not measured: item cannot take keyboard focus.
 
 Parts:
 
-- container: 145.2 x 33; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; background #f2f2f2 `{palette.ui.bg}`; radius 48px `{radius.pill}`; padding 2px; gap 4px `{spacing.1}`; text "Article Notes 0"
+- container: 145.2 x 33; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; background #f2f2f2 `{action.control}`; radius 48px `{radius.pill}`; padding 2px; gap 4px `{spacing.1}`; text "Article Notes 0"
   - child Article: 58.72 x 29; at 2, 2; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; background #ffffff `{background.surface}`; radius 48px `{radius.pill}`; padding 4px 8px `{spacing.1} {spacing.2}`; text "Article"
   - child Notes 0: 78.48 x 29; at 64.7, 2; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; radius 48px `{radius.pill}`; padding 4px 8px `{spacing.1} {spacing.2}`; gap 4px `{spacing.1}`; text "Notes 0"
   - child 0: 18.25 x 21; at 117, 6; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; radius 48px `{radius.pill}`; padding 0px 4px `{spacing.0} {spacing.1}`; text "0"
@@ -1065,8 +1065,8 @@ Authored state rules (from the page's CSS): `.x:hover { background-color: white;
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 36px `{radius.search}`; background #f2f2f2 `{palette.ui.bg}`; text Plus Jakarta Sans 18/27 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
-| hover | background #e8e8e8 `{palette.ui.bg-hover}` |
+| default | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 36px `{radius.search}`; background #f2f2f2 `{action.control}`; text Plus Jakarta Sans 18/27 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
+| hover | background #e8e8e8 `{action.control-hover}` |
 | focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover { background-color: var(--ui-bg-hover); }`.
@@ -1078,7 +1078,7 @@ Authored state rules (from the page's CSS): `button:focus, input:focus { outline
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default (same: hover) | size 34 x 34; border 1px solid #dde0e4 `{border.rule}`; radius 48px `{radius.pill}`; background rgba(255, 255, 255, 0.9) `{palette.alpha.white-90}`; text Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; cursor pointer; icon 18 x 18, #000000 `{text.default}` |
+| default (same: hover) | size 34 x 34; border 1px solid #dde0e4 `{border.rule}`; radius 48px `{radius.pill}`; background rgba(255, 255, 255, 0.9) `{action.glass-hover}`; text Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; cursor pointer; icon 18 x 18, #000000 `{text.default}` |
 | focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 
 Parts:
@@ -1095,7 +1095,7 @@ Author and year heading ("Raghavendra, 2026") with the evaluation dot and action
 
 **Values (default).** size 366 x 34; background transparent; text Plus Jakarta Sans 16/24 500, #000000 `{text.default}`; icon 18 x 18, #000000 `{text.default}`.
 
-Child layers that carry the look: button 34x34 background rgba(255, 255, 255, 0.9) `{palette.alpha.white-90}` border 1px solid #dde0e4 `{border.rule}` radius 48px; div 8x8 background #8add8a `{action.upgrade}` radius 50%.
+Child layers that carry the look: button 34x34 background rgba(255, 255, 255, 0.9) `{action.glass-hover}` border 1px solid #dde0e4 `{border.rule}` radius 48px; div 8x8 background #8add8a `{action.upgrade}` radius 50%.
 
 Parts:
 
@@ -1111,7 +1111,7 @@ Parts:
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | first | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; gap 4px `{spacing.1}`; radius 48px `{radius.pill}`; background transparent; text Plus Jakarta Sans 12/18 600, #333333 `{palette.base.secondary}`; cursor pointer; icon 16 x 16, #333333 `{palette.base.secondary}` |
-| first, hover | background #e8e8e8 `{palette.ui.bg-hover}` |
+| first, hover | background #e8e8e8 `{action.control-hover}` |
 | first, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | second | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background transparent; text Plus Jakarta Sans 16/24 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
 | second, hover | background rgba(0, 0, 0, 0.08) |
@@ -1130,7 +1130,7 @@ The paper title, a link to the source. Read as `inspector-title` on the search m
 |---|---|
 | default | size 331.11 x 39; background transparent; text Plus Jakarta Sans 14/21 600, #000000 `{text.default}`, underline; cursor pointer |
 | hover | text Plus Jakarta Sans 14/21 600, #746fa3 `{text.link-hover}`, underline |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| focus-visible | outline 1px auto #005fcc `{border.focus-browser}`, offset 1px |
 
 Parts:
 
@@ -1340,12 +1340,12 @@ Grey rounded select with a chevron ("Logarithmic", "4"). Read as `layout-select`
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default | size 119.59 x 29; padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 4px `{radius.sm}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
-| hover | background rgba(0, 0, 0, 0.07) `{palette.alpha.black-07}` |
-| focus-visible | shadow #000000 0px 0px 0px 2px; outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
+| hover | background rgba(0, 0, 0, 0.07) `{action.select-hover}` |
+| focus-visible | shadow #000000 0px 0px 0px 2px (`{elevation.ring-strong}`); outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | small (as the first row, except) | size 48.83 x 29 |
-| small, hover | background rgba(0, 0, 0, 0.07) `{palette.alpha.black-07}` |
+| small, hover | background rgba(0, 0, 0, 0.07) `{action.select-hover}` |
 | advanced (as the first row, except) | size 85.86 x 29 |
-| advanced, hover | background rgba(0, 0, 0, 0.07) `{palette.alpha.black-07}` |
+| advanced, hover | background rgba(0, 0, 0, 0.07) `{action.select-hover}` |
 
 Parts:
 
@@ -1411,7 +1411,7 @@ A fixed list entry with an icon, a name and a count badge. Read as `library-list
 | recently-found (same: hover) | size 234 x 34; padding 8px `{spacing.2}`; radius 8px `{radius.lg}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
 | all-articles (same: hover) (same as the first row) | same values |
 | reading-list (same: hover) (same as the first row) | same values |
-| all-articles-current (same: pressed) (as the first row, except) | shadow #000000 0px 0px 0px 1px inset; text Plus Jakarta Sans 14/14 600, #000000 `{text.default}` |
+| all-articles-current (same: pressed) (as the first row, except) | shadow #000000 0px 0px 0px 1px inset (`{elevation.ring-strong}`); text Plus Jakarta Sans 14/14 600, #000000 `{text.default}` |
 
 - Not measured: recently-found cannot take keyboard focus.
 
@@ -1454,7 +1454,7 @@ Parts:
 
 - icon: 18 x 18
 - label: 96.58 x 21; Plus Jakarta Sans 14/21 600, #000000 `{text.default}`; margin 4px 0px `{spacing.1} {spacing.0}`; text "my-collection"
-- overlay: 218 x 38; radius 8px `{radius.lg}`; shadow #000000 0px 0px 0px 1px inset
+- overlay: 218 x 38; radius 8px `{radius.lg}`; shadow #000000 0px 0px 0px 1px inset (`{elevation.ring-strong}`)
 - chevron: 16 x 16
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover .x { opacity: 1; }`; `.x:hover { background-color: rgba(0, 0, 0, 0.05); }`.
@@ -1591,8 +1591,8 @@ The sort select, the filter button, the search field and the view buttons (curre
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | sort | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
-| sort, hover | background rgba(0, 0, 0, 0.07) `{palette.alpha.black-07}` |
-| sort, focus-visible | shadow #000000 0px 0px 0px 2px; outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
+| sort, hover | background rgba(0, 0, 0, 0.07) `{action.select-hover}` |
+| sort, focus-visible | shadow #000000 0px 0px 0px 2px (`{elevation.ring-strong}`); outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | filter | size 156.97 x 26; padding 4px 12px `{spacing.1} {spacing.3}`; radius 48px `{radius.pill}`; background #000000 `{action.primary}`; text Plus Jakarta Sans 12/18 600, #ffffff `{text.inverse}`; cursor pointer |
 | filter, hover | background #333333 `{action.primary-hover}` |
 | filter, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
@@ -1661,9 +1661,9 @@ Light pill with a library icon next to the field. Read as `home-browse-library` 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default | size 142.45 x 34; padding 8px `{spacing.2}`; gap 12px `{spacing.3}`; border 1px solid #686d79 `{border.drawer}`; radius 48px `{radius.pill}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/14 600, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
-| hover | background rgba(255, 255, 255, 0.9) `{palette.alpha.white-90}` |
+| hover | background rgba(255, 255, 255, 0.9) `{action.glass-hover}` |
 | focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
-| pressed | background rgba(255, 255, 255, 0.9) `{palette.alpha.white-90}` |
+| pressed | background rgba(255, 255, 255, 0.9) `{action.glass-hover}` |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover { background-color: rgba(255, 255, 255, 0.9); }`.
 
@@ -1732,8 +1732,8 @@ A linked card with a 180px image over a title and a short description. Read as `
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default | size 416 x 275; radius 16px `{radius.2xl}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/21 600, #000000 `{text.default}`; cursor pointer; icon 14 x 14, #000000 `{text.default}` |
-| hover | shadow #000000 0px 0px 0px 1px |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| hover | shadow #000000 0px 0px 0px 1px (`{elevation.ring-strong}`) |
+| focus-visible | outline 1px auto #005fcc `{border.focus-browser}`, offset 1px |
 
 Parts:
 
@@ -1871,7 +1871,7 @@ Buttons with the disabled attribute: Reset Tutorials in Preferences, and the sel
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| reset-tutorials | size 422 x 37 (height `{size.field}`); padding 8px 12px `{spacing.2} {spacing.3}`; radius 8px `{radius.lg}`; background transparent; shadow #c9cdd3 0px 0px 0px 1px inset; text Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; opacity 0.5 |
+| reset-tutorials | size 422 x 37 (height `{size.field}`); padding 8px 12px `{spacing.2} {spacing.3}`; radius 8px `{radius.lg}`; background transparent; shadow #c9cdd3 0px 0px 0px 1px inset (`{elevation.ring-field}`); text Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; opacity 0.5 |
 | reset-tutorials, hover | background rgba(0, 0, 0, 0.05) `{action.quiet}` |
 | toolbar (same: hover) | size 74.42 x 26; padding 4px 8px `{spacing.1} {spacing.2}`; gap 4px `{spacing.1}`; radius 24px `{radius.chip}`; background transparent; text Plus Jakarta Sans 12/18 500, #000000 `{text.default}`; opacity 0.4; icon 16 x 16, #000000 `{text.default}` |
 
@@ -1918,7 +1918,7 @@ Field with an inset 1px grey line and 8px corners under a label. Filled and empt
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| filled (same: hover) | size 468 x 37 (height `{size.field}`); padding 8px 12px `{spacing.2} {spacing.3}`; radius 8px `{radius.lg}`; background transparent; shadow #c9cdd3 0px 0px 0px 1px inset; text Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; cursor text; placeholder #000000 `{text.default}` |
+| filled (same: hover) | size 468 x 37 (height `{size.field}`); padding 8px 12px `{spacing.2} {spacing.3}`; radius 8px `{radius.lg}`; background transparent; shadow #c9cdd3 0px 0px 0px 1px inset (`{elevation.ring-field}`); text Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; cursor text; placeholder #000000 `{text.default}` |
 | filled, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | placeholder (same: hover) (same as the first row) | same values |
 | placeholder, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
@@ -1952,9 +1952,9 @@ The product has no radio buttons. A choice of one is a row of outlined pills whe
 | selected (same: hover, pressed) | size 60.73 x 28; padding 4px 8px `{spacing.1} {spacing.2}`; border 1px solid #e8e7f6 `{palette.lavender.25}`; radius 48px `{radius.pill}`; background #e8e7f6 `{action.accent-soft}`; text Plus Jakarta Sans 12/18 400, #000000 `{text.default}`; cursor pointer |
 | selected, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | other (as the first row, except) | size 62.14 x 28; background transparent; text Plus Jakarta Sans 12/18 400, #e8e7f6 `{palette.lavender.25}` |
-| other, hover | background rgba(255, 255, 255, 0.1) |
+| other, hover | background rgba(255, 255, 255, 0.1) `{action.quiet-hover-inverse}` |
 | other, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
-| other, pressed | background rgba(255, 255, 255, 0.1) |
+| other, pressed | background rgba(255, 255, 255, 0.1) `{action.quiet-hover-inverse}` |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover:not(:disabled) { background-color: rgba(255, 255, 255, 0.1); }`; `.x:hover:not(:disabled) { background-color: var(--lavender-25); }`.
 
@@ -1966,8 +1966,8 @@ The Retractions select ("Not set...") and its open list: white, 6px corners, the
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | trigger | size 100.33 x 29; padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 4px `{radius.sm}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; text Plus Jakarta Sans 14/14 400, #686d79 `{text.secondary}`; cursor pointer; icon 16 x 16, #686d79 `{text.secondary}` |
-| trigger, hover | background rgba(0, 0, 0, 0.07) `{palette.alpha.black-07}` |
-| trigger, focus-visible | shadow #000000 0px 0px 0px 2px; outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
+| trigger, hover | background rgba(0, 0, 0, 0.07) `{action.select-hover}` |
+| trigger, focus-visible | shadow #000000 0px 0px 0px 2px (`{elevation.ring-strong}`); outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | list | size 189.91 x 52; radius 6px `{radius.md}`; background #ffffff `{background.surface}`; shadow rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px (`{elevation.menu}`); text Plus Jakarta Sans 14/14 400, #000000 `{text.default}` |
 | option-highlighted | size 181.91 x 22; padding 4px 35px 4px 25px; radius 4px `{radius.sm}`; background #a7d4ff `{action.highlighted}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}` |
 | option | size 181.91 x 22; padding 4px 35px 4px 25px; radius 4px `{radius.sm}`; background transparent; text Plus Jakarta Sans 14/14 400, #201d1d `{text.primary}` |
@@ -1986,11 +1986,11 @@ Two thumbs on a 3px track: 12px dark thumbs with a 4px lavender ring. Read as `s
 | thumb, focus-visible | shadow #a49edb 0px 0px 0px 5px |
 | thumb, pressed | shadow #a49edb 0px 0px 0px 5px; cursor grabbing |
 
-Child layers that carry the look: span 269x3 background #f2f2f2 `{palette.ui.bg}` radius 48px; span 269x3 background #000000 `{action.primary}` radius 48px; span 12x12 background #353535 `{component.drawer-row}` radius 10px shadow #a49edb 0px 0px 0px 4px.
+Child layers that carry the look: span 269x3 background #f2f2f2 `{action.control}` radius 48px; span 269x3 background #000000 `{action.primary}` radius 48px; span 12x12 background #353535 `{component.drawer-row}` radius 10px shadow #a49edb 0px 0px 0px 4px.
 
 Parts:
 
-- track: 269 x 3; Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; background #f2f2f2 `{palette.ui.bg}`; radius 48px `{radius.pill}`
+- track: 269 x 3; Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; background #f2f2f2 `{action.control}`; radius 48px `{radius.pill}`
 - range: 269 x 3; Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; background #000000 `{action.primary}`; radius 48px `{radius.pill}`
 - thumb: 12 x 12; Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; background #353535 `{component.drawer-row}`; radius 10px; shadow #a49edb 0px 0px 0px 4px
 
@@ -2003,7 +2003,7 @@ Pill inputs on the dark drawer: the keyword field (italic placeholder) and the 6
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| keyword (same: hover) | size 293 x 26; padding 4px 8px `{spacing.1} {spacing.2}`; radius 48px `{radius.pill}`; background transparent; shadow #dde0e4 0px 0px 0px 1px inset; text Plus Jakarta Sans 12/18 400, #ffffff `{text.inverse}`; cursor text; placeholder #ffffff `{text.inverse}` |
+| keyword (same: hover) | size 293 x 26; padding 4px 8px `{spacing.1} {spacing.2}`; radius 48px `{radius.pill}`; background transparent; shadow #dde0e4 0px 0px 0px 1px inset (`{elevation.ring-field-dark}`); text Plus Jakarta Sans 12/18 400, #ffffff `{text.inverse}`; cursor text; placeholder #ffffff `{text.inverse}` |
 | keyword, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | number (same: hover) (as the first row, except) | size 60 x 28; padding 4px 12px `{spacing.1} {spacing.3}`; border 1px solid #c9cdd3 `{border.default}`; shadow none |
 | number, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
@@ -2029,8 +2029,8 @@ The multi-line field at the foot of the Notes tab: a contenteditable rich-text b
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default (same: hover) | size 382 x 50; padding 4px 8px `{spacing.1} {spacing.2}`; radius 8px `{radius.lg}`; background #ffffff `{background.surface}`; shadow #686d79 0px 0px 0px 1px; text Plus Jakarta Sans 13/13 400 italic, #aaaaaa; transition min-height 0.3s ease |
-| focus-visible | outline 1px auto #005fcc, offset 0px |
+| default (same: hover) | size 382 x 50; padding 4px 8px `{spacing.1} {spacing.2}`; radius 8px `{radius.lg}`; background #ffffff `{background.surface}`; shadow #686d79 0px 0px 0px 1px; text Plus Jakarta Sans 13/13 400 italic, #aaaaaa `{component.note-placeholder}`; transition min-height 0.3s ease |
+| focus-visible | outline 1px auto #005fcc `{border.focus-browser}`, offset 0px |
 
 ![Note composer default](components/crops/note-composer-default.png) ![Note composer focus-visible](components/crops/note-composer-focus-visible.png)
 
@@ -2040,8 +2040,8 @@ The click-to-copy box in Cite Article: the citation in 12px monospace on a pale 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default | size 502 x 108; padding 4px `{spacing.1}`; border 1px solid #c9cdd3 `{border.default}`; radius 8px `{radius.lg}`; background #ffffff `{background.surface}`; text monospace 12/12 400, #000000 `{text.default}`; cursor pointer; icon 14 x 14, #000000 `{text.default}` |
-| hover, pressed | background #e9f5fe `{component.option-selected}` |
-| copied (as the first row, except) | background #e9f5fe `{component.option-selected}` |
+| hover, pressed | background #e9f5fe `{component.citation-box}` |
+| copied (as the first row, except) | background #e9f5fe `{component.citation-box}` |
 
 - Not measured: the component cannot take keyboard focus.
 
@@ -2085,7 +2085,7 @@ All, To Read and Read above the Reading List, each with a count; the current one
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| current (same: hover, pressed) | size 39.97 x 22; padding 2px 8px; radius 48px `{radius.pill}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; shadow #000000 0px 0px 0px 1px inset; text Plus Jakarta Sans 12/18 400, #000000 `{text.default}`; cursor pointer |
+| current (same: hover, pressed) | size 39.97 x 22; padding 2px 8px; radius 48px `{radius.pill}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; shadow #000000 0px 0px 0px 1px inset (`{elevation.ring-strong}`); text Plus Jakarta Sans 12/18 400, #000000 `{text.default}`; cursor pointer |
 | current, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | other (same: hover, pressed) (as the first row, except) | size 71.31 x 22; shadow none |
 | other, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
@@ -2214,11 +2214,11 @@ A 500px dark bar centred 12px above the bottom edge: an icon, a 500 message, and
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default | size 500 x 42; gap 8px `{spacing.2}`; border 1px solid transparent; radius 8px `{radius.lg}`; background #333333 `{action.primary-hover}`; shadow rgba(0, 0, 0, 0.3) 3px 3px 12px 0px (`{elevation.toast}`); text Plus Jakarta Sans 14/14 500, #ffffff `{text.inverse}`; icon 14 x 14, #ffffff `{text.inverse}` |
+| default | size 500 x 42; gap 8px `{spacing.2}`; border 1px solid transparent; radius 8px `{radius.lg}`; background #333333 `{component.toast}`; shadow rgba(0, 0, 0, 0.3) 3px 3px 12px 0px (`{elevation.toast}`); text Plus Jakarta Sans 14/14 500, #ffffff `{text.inverse}`; icon 14 x 14, #ffffff `{text.inverse}` |
 | close | size 40 x 40 (height `{size.control-lg}`); padding 12px `{spacing.3}`; background transparent; text Plus Jakarta Sans 18/27 400, #ffffff `{text.inverse}`; cursor pointer; icon 16 x 16, #ffffff `{text.inverse}` |
-| close, hover | background rgba(255, 255, 255, 0.1) |
+| close, hover | background rgba(255, 255, 255, 0.1) `{action.quiet-hover-inverse}` |
 | close, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
-| close, pressed | background rgba(255, 255, 255, 0.1) |
+| close, pressed | background rgba(255, 255, 255, 0.1) `{action.quiet-hover-inverse}` |
 
 Parts:
 
@@ -2241,8 +2241,8 @@ A peach chip after the author and year on a result card, and a banner with Learn
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| chip | size 130.77 x 26; padding 4px 8px `{spacing.1} {spacing.2}`; gap 4px `{spacing.1}`; radius 48px `{radius.pill}`; background #fcebe5 `{status.danger.fill}`; text Plus Jakarta Sans 12/18 500, #000000 `{text.default}`; icon 16 x 16, #686d79 `{text.secondary}` |
-| banner | size 366 x 26; padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 8px `{radius.lg}`; background #fcebe5 `{status.danger.fill}`; text Plus Jakarta Sans 12/18 500, #000000 `{text.default}`; icon 14 x 14, #686d79 `{text.secondary}` |
+| chip | size 130.77 x 26; padding 4px 8px `{spacing.1} {spacing.2}`; gap 4px `{spacing.1}`; radius 48px `{radius.pill}`; background #fcebe5 `{component.incomplete-warning}`; text Plus Jakarta Sans 12/18 500, #000000 `{text.default}`; icon 16 x 16, #686d79 `{text.secondary}` |
+| banner | size 366 x 26; padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 8px `{radius.lg}`; background #fcebe5 `{component.incomplete-warning}`; text Plus Jakarta Sans 12/18 500, #000000 `{text.default}`; icon 14 x 14, #686d79 `{text.secondary}` |
 
 ![Incomplete data warning chip](components/crops/incomplete-warning-chip.png) ![Incomplete data warning banner](components/crops/incomplete-warning-banner.png)
 
@@ -2277,7 +2277,7 @@ One article per 29px row. Read as `table-row` on the library, All Articles in ta
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default | size 1126 x 29; padding 0px 4px `{spacing.0} {spacing.1}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/21 500, #000000 `{text.default}`; icon 14 x 14, #000000 `{text.default}` |
-| hover, pressed | background #eef0f1 `{background.page}` |
+| hover, pressed | background #eef0f1 `{component.table-row-hover}` |
 
 - Not measured: the component cannot take keyboard focus.
 
@@ -2291,7 +2291,7 @@ One past search on the Search start page: the inputs as chips, the date in 12px 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default | size 1316 x 92; radius 8px `{radius.lg}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; icon 14 x 14, #000000 `{text.default}` |
-| hover, pressed | shadow #000000 0px 0px 0px 1px inset |
+| hover, pressed | shadow #000000 0px 0px 0px 1px inset (`{elevation.ring-strong}`) |
 
 - Not measured: the component cannot take keyboard focus.
 

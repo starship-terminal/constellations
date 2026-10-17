@@ -132,7 +132,10 @@ def parse_shadow(s):
         color = norm_color(m.group(1))
         lens = re.findall(r"-?\d+(?:\.\d+)?px|(?<![\w.#])0(?![\w.])", part.replace(m.group(1), ""))
         lens = [x if x.endswith("px") else "0px" for x in lens] + ["0px"] * 4
-        layers.append({"color": color, "offsetX": lens[0], "offsetY": lens[1], "blur": lens[2], "spread": lens[3]})
+        layer = {"color": color, "offsetX": lens[0], "offsetY": lens[1], "blur": lens[2], "spread": lens[3]}
+        if re.search(r"\binset\b", part):
+            layer["inset"] = True
+        layers.append(layer)
     return layers
 
 
@@ -205,6 +208,7 @@ SPEC_CORE = {
             "black-05": R("color", "rgba(0, 0, 0, 0.05)", "GraphControls__StyledButton", "background-color: rgba(0, 0, 0, 0.05)", "Quiet hover on toolbar, ghost and side buttons"),
             "black-07": R("color", "rgba(0, 0, 0, 0.07)", "Select__Trigger", "background-color: rgba(0, 0, 0, 0.07)"),
             "black-10": R("color", "rgba(0, 0, 0, 0.1)", "ExploreSession__NavButtonsContainer", "background-color: rgba(0, 0, 0, 0.1)", "The back and forward trail behind the header"),
+            "white-10": R("color", "rgba(255, 255, 255, 0.1)", "Toast__InlineButton", "&:hover { background-color: rgba(255, 255, 255, 0.1); }", "Quiet hover on dark surfaces: the toast's close button and the drawer's filter buttons"),
             "white-30": R("color", "rgba(255, 255, 255, 0.3)", "LibraryFolder__ArticlesContainer", "background-color: rgba(255, 255, 255, 0.3)"),
             "white-40": R("color", "rgba(255, 255, 255, 0.4)", "DashboardFolders__StyledSection", "background-color: rgba(255, 255, 255, 0.4)"),
             "white-50": R("color", "rgba(255, 255, 255, 0.5)", "ExploreStep__StyledScaffoldMain", "background-color: rgba(255, 255, 255, 0.5)"),
@@ -365,6 +369,7 @@ SPEC_LIGHT = {
         "panel": R("color", "{palette.base.white}", "Scaffold__Header", "background-color: white", "Panel headers, list cards, the settings panel"),
         "panel-glass": R("color", "{palette.alpha.white-50}", "ExploreStep__StyledScaffoldMain", "background-color: rgba(255, 255, 255, 0.5)", "The body of the results panel, graph included"),
         "section": R("color", "{palette.alpha.white-40}", "DashboardFolders__StyledSection", "background-color: rgba(255, 255, 255, 0.4)"),
+        "panel-tint": R("color", "{palette.alpha.violet-20}", "ExploreBuilder__Container", "background-color: rgba(221, 204, 255, 0.2)", "The faint violet behind the Next Search panel"),
         "hint": R("color", "{palette.turq.25}", "GradientBackground__Container", "background-color: rgb(215, 246, 248)", "The turquoise tip strip, and the colour of the top glow"),
     },
     "gradient": {
@@ -391,6 +396,7 @@ SPEC_LIGHT = {
         "rule": R("color", "{palette.grey.1}", "InspectorStyles__Header", "border-bottom: 1px solid var(--grey-1)"),
         "drawer": R("color", "rgb(104, 109, 121)", "FilterableSearchActions__TrayHeadButton", "border-bottom: 1px solid rgb(104, 109, 121)"),
         "focus": R("color", "{palette.selection.base}", "InspectorStyles__Content", "box-shadow: inset 0 0 0 1px var(--selection)"),
+        "focus-browser": M("color", "#005fcc", "nav-logo", "focus-visible", "outlineColor", "The browser's own focus ring (outline auto), on links and elements no rule restyles; computed on the wordmark, tabs, links and the note composer"),
     },
     "action": {
         "primary": R("color", "{palette.base.black}", "ExploreBuilder__AutosaveFolderButton", "background-color: black"),
@@ -402,6 +408,11 @@ SPEC_LIGHT = {
         "accent": R("color", "{palette.lavender.50}", "SearchBar__SearchButton", "background-color: var(--lavender-50)", "The lavender Search button and search pill"),
         "accent-soft": R("color", "{palette.lavender.25}", "ExploreActionsMain__StyledExploreFurtherButton", "background-color: var(--lavender-25)"),
         "quiet": R("color", "{palette.alpha.black-05}", "ViewSelection__Button", "background-color: rgba(0, 0, 0, 0.05)"),
+        "control": R("color", "{palette.ui.bg}", "ArticleDetailsDisplay__NavContainer", "background-color: var(--ui-bg)", "Grey pill controls in the article panel (the previous and next pill, close and action buttons)"),
+        "control-hover": R("color", "{palette.ui.bg-hover}", "ArticleEvaluation__Container", "&:hover { background-color: var(--ui-bg-hover); }", "Hover on those grey controls"),
+        "select-hover": R("color", "{palette.alpha.black-07}", "Select__Trigger", "&:hover { background-color: rgba(0, 0, 0, 0.07); }", "Hover on selects and the layout select"),
+        "glass-hover": R("color", "{palette.alpha.white-90}", "DashboardSearch__StyledFolderSelect", "&:hover { background-color: rgba(255, 255, 255, 0.9); }", "Hover on white-glass buttons (Browse Library, the sticker and nickname buttons)"),
+        "quiet-hover-inverse": R("color", "{palette.alpha.white-10}", "Toast__InlineButton", "&:hover { background-color: rgba(255, 255, 255, 0.1); }", "Quiet hover on the toast and the black drawer"),
         "quiet-hover": R("color", "{palette.alpha.black-10}", "ViewSelection__Button", "&:hover { background-color: rgba(0, 0, 0, 0.1)"),
         "upgrade": M("color", "{palette.green.base}", "nav-upgrade", "default", "backgroundColor", "The Upgrade pill and the Upgrade badges"),
         "highlighted": R("color", "{palette.selection.base}", "Dropdown__Item", "&[data-highlighted] { background-color: var(--selection)"),
@@ -413,6 +424,10 @@ SPEC_LIGHT = {
         "menu": {"type": "shadow", "rule": ("Dropdown__Content", "box-shadow: rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px"),
                  "value": "rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px",
                  "description": "Menus and select lists"},
+        "ring-strong": M("shadow", "rgb(0, 0, 0) 0px 0px 0px 1px inset", "list-card", "selected", "boxShadow", "A 1px black ring drawn inside: selected cards, the current library list and filter pill"),
+        "ring-field": M("shadow", "rgb(201, 205, 211) 0px 0px 0px 1px inset", "text-field", "filled", "boxShadow", "A 1px grey-2 ring inside a light field and a disabled button"),
+        "ring-field-dark": M("shadow", "rgb(221, 224, 228) 0px 0px 0px 1px inset", "drawer-input", "keyword", "boxShadow", "The ring inside the black drawer's inputs"),
+        "ring-highlight": M("shadow", "rgb(167, 212, 255) 0px 0px 0px 1px inset", "list-card", "tinted", "boxShadow", "The selection-blue ring on a highlighted card and the article panel"),
         "toast": {"type": "shadow", "rule": ("Toast__ToastFill", "box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 12px"),
                   "value": "rgba(0, 0, 0, 0.3) 3px 3px 12px", "description": "Toasts"},
         "dialog": {"type": "shadow", "rule": ("Modal__Content", "box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 12px"),
@@ -456,9 +471,11 @@ SPEC_LIGHT = {
         "positions-moved": R("color", "{palette.activity.important}", "GraphBrokenAxes__BrokenAxesDropdown", "background-color: var(--activity-important)"),
         "folder-tint": R("color", "{palette.alpha.amber-20}", "ArticleFolders__FolderContainer", "background-color: rgba(240, 125, 89, 0.2)"),
         "tooltip": R("color", "{palette.literal.charcoal}", "HintContainer__Content", "background-color: rgb(51, 51, 51)"),
+        "list-card-tinted": M("color", "#f0f6ff", "list-card", "tinted", "backgroundColor", "A result card while its node is hovered in the graph (set by script; no rule names it)"),
+        "note-placeholder": M("color", "#aaaaaa", "note-composer", "default", "textColor", "The note composer's italic placeholder line"),
         "toast": R("color", "{palette.literal.charcoal}", "Toast__ToastFill", "background-color: rgb(51, 51, 51)", "The toast bar, with white text"),
         "citation-box": R("color", "{palette.selection.light}", "CopyContainer__Container", "background-color: var(--selection-light)", "The citation box at rest and on hover"),
-        "warning-chip": R("color", "{palette.peach.25}", "IncompleteInlineWarning__Container", "background-color: var(--peach-25)", "Incomplete data chip and banner"),
+        "incomplete-warning": R("color", "{palette.peach.25}", "IncompleteInlineWarning__Container", "background-color: var(--peach-25)", "Incomplete data chip and banner"),
         "drawer-row": R("color", "{palette.literal.drawer-row}", "ExploreFilters__ItemContainer", "background-color: rgb(53, 53, 53)"),
         "drawer-row-on": R("color", "{palette.literal.drawer-row-on}", "ExploreFilters__ItemContainer", "background-color: rgb(77, 76, 91)"),
         "tab-current": R("color", "{palette.grey.bg2}", "TabbedContent__Option", "background-color: var(--grey-bg2)", "The current vertical tab in Account Settings"),
@@ -534,7 +551,7 @@ def leaf(path, spec):
         comp, state, prop = spec["computed"]
         got = COMPUTED[comp]["states"][state]
         raw = (f"{got['rect']['h']:g}px" if prop == "height" else f"{got['icon']['w']:g}px" if prop == "iconWidth"
-               else got["style"][prop])
+               else got["textStyle"]["color"] if prop == "textColor" else got["style"][prop])
         val = spec["value"]
         want = val
         if is_alias(val):
