@@ -6,7 +6,7 @@ Read a row as: what changes from the default in that state. "browser default rin
 
 ## Component specs (2026-10)
 
-778 of 796 values in these specs are named by a token; the 18 others are printed raw and marked "no token".
+782 of 802 values in these specs are named by a token; the 20 others are printed raw and marked "no token".
 
 18 of 19 checklist components are captured; select is not present on any screen a free account reaches. Alert and skeleton are extra, outside the checklist.
 
@@ -183,7 +183,7 @@ Not present: no screen reached on a free account uses one. The stylesheet carrie
 
 ### Checkbox
 
-`data-slot=checkbox` (Base UI), 20px square with 6px corners and a 2px border; checked fills solid with the inverse colour. Found on Settings > Deactivate account (the reason list); the settings switches elsewhere hide their own checkbox inputs.
+`data-slot=checkbox` (Base UI), 20px square with 6px corners and a 2px border; checked fills solid with the inverse colour and draws a 12x9 checkmark in `text.inverse`. Found on Settings > Deactivate account (the reason list); the settings switches elsewhere hide their own checkbox inputs.
 
 **checkbox** (no label; `[data-slot=checkbox]`)
 
@@ -198,7 +198,7 @@ Not present: no screen reached on a free account uses one. The stylesheet carrie
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | fill `bg.inverse-primary`; text `text.primary`; border `borderWidth.default` transparent; shadow none; size `size.icon-md` high; radius `radius.xs`; type `typography.body.base` | fill `bg.inverse-primary`; text `text.primary`; border `borderWidth.default` transparent; shadow none; size `size.icon-md` high; radius `radius.xs`; type `typography.body.base` | [dark](components/crops/2026-10/checkbox-checked-dark-default.png) [light](components/crops/2026-10/checkbox-checked-light-default.png) |
+| default | fill `bg.inverse-primary`; border `borderWidth.default` transparent; size `size.icon-md` high; radius `radius.xs`; checkmark: text `text.inverse`; checkmark: shadow none; checkmark: size 9px (no token) high; checkmark: type `typography.body.base` | fill `bg.inverse-primary`; border `borderWidth.default` transparent; size `size.icon-md` high; radius `radius.xs`; checkmark: text `text.inverse`; checkmark: shadow none; checkmark: size 9px (no token) high; checkmark: type `typography.body.base` | [dark](components/crops/2026-10/checkbox-checked-dark-default.png) [light](components/crops/2026-10/checkbox-checked-light-default.png) |
 | focus-visible | outline `focusRing.width` `border.select` | outline `focusRing.width` `border.select` | [dark](components/crops/2026-10/checkbox-checked-dark-focus-visible.png) [light](components/crops/2026-10/checkbox-checked-light-focus-visible.png) |
 
 ### Radio
@@ -242,14 +242,14 @@ A real radio (`data-slot=radio`, 20px) in the account's connected-accounts list,
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | fill `component.switch.on`; size `size.switch-height` high; radius `radius.full`; padding `spacing.1`; face: fill `component.switch.thumb`; face: text `text.primary`; face: shadow none; face: transform translateX(16px); face: size `size.switch-thumb` high; face: radius `radius.full`; face: type `typography.body.base` | fill `component.switch.on`; size `size.switch-height` high; radius `radius.full`; padding `spacing.1`; face: fill `component.switch.thumb`; face: text `text.primary`; face: shadow none; face: transform translateX(16px); face: size `size.switch-thumb` high; face: radius `radius.full`; face: type `typography.body.base` | [dark](components/crops/2026-10/switch-on-dark-default.png) [light](components/crops/2026-10/switch-on-light-default.png) |
+| default | fill `component.switch.on`; size `size.switch-height` high; radius `radius.full`; padding `spacing.1`; thumb: fill `component.switch.thumb`; thumb: text `text.primary`; thumb: shadow none; thumb: transform translateX(16px); thumb: size `size.switch-thumb` high; thumb: radius `radius.full`; thumb: type `typography.body.base` | fill `component.switch.on`; size `size.switch-height` high; radius `radius.full`; padding `spacing.1`; thumb: fill `component.switch.thumb`; thumb: text `text.primary`; thumb: shadow none; thumb: transform translateX(16px); thumb: size `size.switch-thumb` high; thumb: radius `radius.full`; thumb: type `typography.body.base` | [dark](components/crops/2026-10/switch-on-dark-default.png) [light](components/crops/2026-10/switch-on-light-default.png) |
 | focus-visible | outline `focusRing.switch-outline` `border.select` | outline `focusRing.switch-outline` `border.select` | [dark](components/crops/2026-10/switch-on-dark-focus-visible.png) [light](components/crops/2026-10/switch-on-light-focus-visible.png) |
 
 **switch-off** (no label; `[data-slot=switch][data-unchecked]`)
 
 | State | Dark | Light | Crops |
 |---|---|---|---|
-| default | fill `component.switch.off`; size `size.switch-height` high; radius `radius.full`; padding `spacing.1`; face: fill `component.switch.thumb`; face: text `text.primary`; face: shadow none; face: size `size.switch-thumb` high; face: radius `radius.full`; face: type `typography.body.base` | fill `component.switch.off`; size `size.switch-height` high; radius `radius.full`; padding `spacing.1`; face: fill `component.switch.thumb`; face: text `text.primary`; face: shadow none; face: size `size.switch-thumb` high; face: radius `radius.full`; face: type `typography.body.base` | [dark](components/crops/2026-10/switch-off-dark-default.png) [light](components/crops/2026-10/switch-off-light-default.png) |
+| default | fill `component.switch.off`; size `size.switch-height` high; radius `radius.full`; padding `spacing.1`; thumb: fill `component.switch.thumb`; thumb: text `text.primary`; thumb: shadow none; thumb: size `size.switch-thumb` high; thumb: radius `radius.full`; thumb: type `typography.body.base` | fill `component.switch.off`; size `size.switch-height` high; radius `radius.full`; padding `spacing.1`; thumb: fill `component.switch.thumb`; thumb: text `text.primary`; thumb: shadow none; thumb: size `size.switch-thumb` high; thumb: radius `radius.full`; thumb: type `typography.body.base` | [dark](components/crops/2026-10/switch-off-dark-default.png) [light](components/crops/2026-10/switch-off-light-default.png) |
 | focus-visible | outline `focusRing.switch-outline` `border.select` | outline `focusRing.switch-outline` `border.select` | [dark](components/crops/2026-10/switch-off-dark-focus-visible.png) [light](components/crops/2026-10/switch-off-light-focus-visible.png) |
 
 ### Tabs

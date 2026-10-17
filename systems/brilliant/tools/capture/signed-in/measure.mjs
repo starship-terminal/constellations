@@ -51,7 +51,7 @@ const SPECS = [
   S('list-row-setting', 'settings-dark-preferences', 'div', { pick: (els) => els.filter((e) => /^Enable sound effects in lessons$/.test(e.innerText.trim()) && parseFloat(getComputedStyle(e).borderTopWidth) > 0).pop(), states: ['default', 'hover'] }),
   S('alert-info', 'settings-dark-account', '[data-slot=alert]', { states: ['default'] }),
   S('checkbox', 'deactivate-dark-default', '[data-slot=checkbox]'),
-  S('checkbox-checked', 'deactivate-dark-other-checked', '[data-slot=checkbox][data-checked]'),
+  S('checkbox-checked', 'deactivate-dark-other-checked', '[data-slot=checkbox][data-checked]', { part: '[data-slot=checkbox-indicator]' }),
   S('text-area-bordered', 'deactivate-dark-other-checked', 'textarea'),
   S('skeleton-loading', 'you-dark-loading', '[data-slot=skeleton][data-loading]', { states: ['default'] }),
   S('button-danger-disabled', 'deactivate-dark-default', '[data-slot=button][data-disabled]', { pick: (els) => els.find((e) => /Deactivate/.test(e.textContent)), states: ['default', 'hover'] }),

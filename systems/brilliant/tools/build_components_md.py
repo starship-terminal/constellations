@@ -122,6 +122,8 @@ OVERRIDE = {
     ("skeleton-loading", "fill"): "pulses between `component.skeleton.from` and `component.skeleton.to` (read mid-pulse)",
     ("skeleton-loading", "opacity"): ".7 while loading (no token)",
 }
+# What the measured inner part is called in the spec; button3d parts are its face.
+PART_LABEL = {"switch-on": "thumb", "switch-off": "thumb", "radio": "indicator", "checkbox-checked": "checkmark"}
 SPEC = [""]  # the spec being written
 HINTS = []  # words of the spec being written (switch, radio, avatar, button3d); a token named for the component wins
 
@@ -302,7 +304,7 @@ def spec_table(name):
                 pb = None if st == "default" else r["default"]["part"]
                 pi = describe(r[st]["part"], th, pb, o.get("part"))
                 if pi:
-                    items = items + [("face: " + k, v) for k, v in pi]
+                    items = items + [(PART_LABEL.get(name, "face") + ": " + k, v) for k, v in pi]
             cells.append(fmt(items))
         links = " ".join(x for x in (crop(name, "dark", st), crop(name, "light", st)) if x)
         if st != "default" and cells[0] == "no change" and cells[1] == "no change":
@@ -326,7 +328,7 @@ CHECKLIST = [
     ("Text area", ["text-area", "text-area-pill", "text-area-bordered"], "Two kinds. The Koji prompt is a borderless auto-growing textarea inside a frosted pill (`blur.ask-pill`); it shows no focus ring, so the caret is the only focus cue. "
      "The deactivate form's \"Other\" reason opens a bordered textarea, styled like the text field, whose focus darkens the border and adds an inset ring."),
     ("Select", None, "Not present: no screen reached on a free account uses one. The stylesheet carries a `select-icon` slot, but nothing rendered it."),
-    ("Checkbox", ["checkbox", "checkbox-checked"], "`data-slot=checkbox` (Base UI), 20px square with 6px corners and a 2px border; checked fills solid with the inverse colour. Found on Settings > Deactivate account (the reason list); the settings switches elsewhere hide their own checkbox inputs."),
+    ("Checkbox", ["checkbox", "checkbox-checked"], "`data-slot=checkbox` (Base UI), 20px square with 6px corners and a 2px border; checked fills solid with the inverse colour and draws a 12x9 checkmark in `text.inverse`. Found on Settings > Deactivate account (the reason list); the settings switches elsewhere hide their own checkbox inputs."),
     ("Radio", ["radio", "segment-selected", "segment", "segment-track"], "A real radio (`data-slot=radio`, 20px) in the account's connected-accounts list, and the segmented control, which is a Base UI radio group (`role=radiogroup`) of pill segments."),
     ("Switch", ["switch-on", "switch-off"], "`data-slot=switch`, 48x32 track, 24px thumb; focus is a 3px outline in `border.select`."),
     ("Tabs", ["nav-tab-selected", "nav-tab", "settings-tab-selected", "settings-tab"], "Two tab sets: the app header (Home, Topics, You; selected has an underline bar and `text.primary`) and the settings side menu (selected gets `bg.tertiary`)."),
