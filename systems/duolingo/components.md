@@ -157,7 +157,7 @@ Face = `::before` fill (legacy FOLLOW: `::after`). Lip = `::before` box-shadow c
 
 ### Button (web-ui "juicy" 3D button)
 
-root <button>/<a> (class _7jW2t base + variant class); face = ::before pseudo-element (fill, border, radius) sitting at z-index -1; 3D lip = ::before box-shadow "0 <lip> 0" in the lip colour (solid) or `borderWidth.2` 2p. [Full spec](components/core.md#button-web-ui-juicy-3d-button)
+root <button>/<a> (class _7jW2t base + variant class); face = ::before pseudo-element (fill, border, radius) sitting at z-index -1; 3D lip = ::before box-shadow "0 <lip> 0" in the lip colour (solid) or `borderWidth.2` .... [Full spec](components/core.md#button-web-ui-juicy-3d-button)
 
 ![button light](components/crops/button-light.png) ![button dark](components/crops/button-dark.png)
 
@@ -169,7 +169,7 @@ wrapper _3zSI5 (flex column, gap `space.4` 4px); label <label class="_17QjI"> (h
 
 ### Search input (friend search) with clear button
 
-form JW88y (polar fill, 2px swan border, `radius.12` 12px radius, `space.16` 16px `space.20` 20px padding); leading search glyph (sprite b3fgl 14x15, scaled 1.4, 17px right margin); <input class="t40Pr"> (transparent, ee. [Full spec](components/core.md#search-input-friend-search-with-clear-button)
+form JW88y (polar fill, 2px swan border, `radius.12` 12px radius, `space.16` 16px `space.20` 20px padding); leading search glyph (sprite b3fgl 14x15, scaled 1.4, 17px right margin); <input class="t40Pr"> (transparent .... [Full spec](components/core.md#search-input-friend-search-with-clear-button)
 
 ![search-input light](components/crops/search-input-light.png) ![search-input dark](components/crops/search-input-dark.png)
 
@@ -187,13 +187,13 @@ hit area _31gfP 32x32; <button aria-pressed class="Ug-rb"> 30x30, `borderWidth.2
 
 ### Radio / selectable card (web-ui Card, role=radio)
 
-radiogroup container (column gap `space.12` 12px for streak goal; 2-col grid gap `space.16` 16px in settings); card _8dMUn: border 2/2/4 transparent + ::before fill with `borderWidth.2` 2px border and 0 2px 0 lip; conten. [Full spec](components/core.md#radio--selectable-card-web-ui-card-roleradio)
+radiogroup container (column gap `space.12` 12px for streak goal; 2-col grid gap `space.16` 16px in settings); card _8dMUn: border 2/2/4 transparent + ::before fill with `borderWidth.2` 2px border and 0 2px 0 lip .... [Full spec](components/core.md#radio--selectable-card-web-ui-card-roleradio)
 
 ![radio-card light](components/crops/radio-card-light.png) ![radio-card dark](components/crops/radio-card-dark.png)
 
 ### Toggle / switch
 
-`<button aria-pressed class="_2mkWS">` 56x32, macaw; track span _1gwYP 56x24, `radius.12` 12px radius, background linear-gradient(to left, swan 50%, macaw 50%); knob = track ::before 30x32, snow fill, 2/2/4 border, `radi. [Full spec](components/core.md#toggle--switch)
+`<button aria-pressed class="_2mkWS">` 56x32, macaw; track span _1gwYP 56x24, `radius.12` 12px radius, background linear-gradient(to left, swan 50%, macaw 50%); knob = track ::before 30x32, snow fill, 2/2/4 border .... [Full spec](components/core.md#toggle--switch)
 
 ![toggle light](components/crops/toggle-light.png) ![toggle dark](components/crops/toggle-dark.png)
 
@@ -205,7 +205,7 @@ row _7WPBm of equal-width tabs; tab _3ugho: text + 2px bottom border, 15px verti
 
 ### Tabs: bordered-list tabs (Profile Following / Followers)
 
-bordered box _2G9SS (2px swan, `radius.16` 16px radius); tab strip ul _1SZs_ _3Jy0n (2px swan bottom rule, label font 700 15px uppercase 0.8px); tab li cwfCJ (padding-top `space.16` 16px) > span bsF09 (16px, 12px bottom . [Full spec](components/core.md#tabs-bordered-list-tabs-profile-following--followers)
+bordered box _2G9SS (2px swan, `radius.16` 16px radius); tab strip ul _1SZs_ _3Jy0n (2px swan bottom rule, label font 700 15px uppercase 0.8px); tab li cwfCJ (padding-top `space.16` 16px) > span bsF09 (16px, 12px bottom .... [Full spec](components/core.md#tabs-bordered-list-tabs-profile-following--followers)
 
 ![tabs-list light](components/crops/tabs-list-light.png) ![tabs-list dark](components/crops/tabs-list-dark.png)
 
@@ -217,7 +217,7 @@ nav role=tablist _1L0JB _1UMEd; tab <button role=tab class="_3Ji0r"> flex:1, 48p
 
 ### Badges and pills
 
-"UP NEXT" section chip _1Qswf _3LDH7: swan fill, hare text, 6px radius, `space.4` 4px `space.8` 8px padding; "30+" count badge _2TZCt: cardinal fill, white text, `radius.16` 16px radius, absolutely placed top/right -12px. [Full spec](components/core.md#badges-and-pills)
+"UP NEXT" section chip _1Qswf _3LDH7: swan fill, hare text, 6px radius, `space.4` 4px `space.8` 8px padding; "30+" count badge _2TZCt: cardinal fill, white text, `radius.16` 16px radius, absolutely placed top/right .... [Full spec](components/core.md#badges-and-pills)
 
 ![badge-pill light](components/crops/badge-upnext-light.png) ![badge-pill dark](components/crops/badge-upnext-dark.png)
 
@@ -229,31 +229,31 @@ photo <img class="_1yM9n"> circle (border-radius 50%); or letter avatar _1N32S: 
 
 ### Popover / dropdown shell (web-ui Popover: top-bar dropdowns, MORE menu, path popover)
 
-wrap _3zpnU (positioned _1o3g5; direction class _3OfAS down / _37pE2 up / D0iFS right / Z0Dvv left adds an `space.8` 8px offset); bubble _36bu_: fill, `borderWidth.2` 2px border, `radius.15` 15px radius, overflow hidden;. [Full spec](components/core.md#popover--dropdown-shell-web-ui-popover-top-bar-dropdowns-more-menu-path-popover)
+wrap _3zpnU (positioned _1o3g5; direction class _3OfAS down / _37pE2 up / D0iFS right / Z0Dvv left adds an `space.8` 8px offset); bubble _36bu_: fill, `borderWidth.2` 2px border, `radius.15` 15px radius, overflow .... [Full spec](components/core.md#popover--dropdown-shell-web-ui-popover-top-bar-dropdowns-more-menu-path-popover)
 
 ![popover light](components/crops/popover-light.png) ![popover dark](components/crops/popover-dark.png)
 
 ### Tooltip bubble (small popover, e.g. "START" / "JUMP HERE?")
 
-web-ui popover wrap _3zpnU _37pE2 (direction up) with --web-ui_popover-border-radius:10px; bubble _36bu_ _27IMa: `space.12` 12px padding, 700 17px uppercase, unit-coloured text; stem pointing down (rotated square, 20x10 . [Full spec](components/core.md#tooltip-bubble-small-popover-eg-start--jump-here)
+web-ui popover wrap _3zpnU _37pE2 (direction up) with --web-ui_popover-border-radius:10px; bubble _36bu_ _27IMa: `space.12` 12px padding, 700 17px uppercase, unit-coloured text; stem pointing down (rotated square, 20x10 .... [Full spec](components/core.md#tooltip-bubble-small-popover-eg-start--jump-here)
 
 ![tooltip light](components/crops/tooltip-light.png) ![tooltip dark](components/crops/tooltip-dark.png)
 
 ### Menu (MORE menu flyout, courses menu)
 
-popover bubble (see popover) opening to the right of the sidebar item (D0iFS, `space.8` 8px gap); section _1fv9a: `space.8` 8px 0 padding, 2px swan divider below; link row _2ifes GHXZL: 52px, 32px icon + `space.20` 20px . [Full spec](components/core.md#menu-more-menu-flyout-courses-menu)
+popover bubble (see popover) opening to the right of the sidebar item (D0iFS, `space.8` 8px gap); section _1fv9a: `space.8` 8px 0 padding, 2px swan divider below; link row _2ifes GHXZL: 52px, 32px icon + `space.20` 20px .... [Full spec](components/core.md#menu-more-menu-flyout-courses-menu)
 
 ![menu light](components/crops/menu-light.png) ![menu dark](components/crops/menu-dark.png)
 
 ### Modal (centered dialog)
 
-backdrop _1ATOC: fixed, black @ 0.4, z-index 300; centering layer _3Mzt6 (flex center, z 310); dialog _1yFTM _3fFQQ FohH5: snow fill, `radius.16` 16px radius, `space.24` 24px margin, --modal-padding `space.30` 30px (24px. [Full spec](components/core.md#modal-centered-dialog)
+backdrop _1ATOC: fixed, black @ 0.4, z-index 300; centering layer _3Mzt6 (flex center, z 310); dialog _1yFTM _3fFQQ FohH5: snow fill, `radius.16` 16px radius, `space.24` 24px margin, --modal-padding `space.30` 30px .... [Full spec](components/core.md#modal-centered-dialog)
 
 ![modal light](components/crops/modal-light.png) ![modal dark](components/crops/modal-dark.png)
 
 ### Bottom sheet (remove-course confirm drawer)
 
-backdrop _1ATOC _1Fnem (black @ 0.4); sheet rs95t _3fIZ6 _19idO: fixed bottom, full width, snow fill, z 320, no radius, no border; inner _3qIEH: max-width 1140px, padding `space.40` 40px `space.24` 24px (32px 16px mobile. [Full spec](components/core.md#bottom-sheet-remove-course-confirm-drawer)
+backdrop _1ATOC _1Fnem (black @ 0.4); sheet rs95t _3fIZ6 _19idO: fixed bottom, full width, snow fill, z 320, no radius, no border; inner _3qIEH: max-width 1140px, padding `space.40` 40px `space.24` 24px (32px 16px .... [Full spec](components/core.md#bottom-sheet-remove-course-confirm-drawer)
 
 ![bottom-sheet light](components/crops/bottom-sheet-light.png) ![bottom-sheet dark](components/crops/bottom-sheet-dark.png)
 
@@ -265,43 +265,43 @@ card _1uIIO _1T_BQ (see card); section title h2 _7yUNn (heading-medium, wolf, 0 
 
 ### List rows: courses list, search results, following list, settings rows
 
-courses row Ej0kW: 64px, flag 34x26 (18% radius, 2px white outline) + name (heading-small) + trailing REMOVE link button, 2px swan divider (_3hY-r); search result row nAD2k _39QMj: `space.18` 18px `space.24` 24px padding. [Full spec](components/core.md#list-rows-courses-list-search-results-following-list-settings-rows)
+courses row Ej0kW: 64px, flag 34x26 (18% radius, 2px white outline) + name (heading-small) + trailing REMOVE link button, 2px swan divider (_3hY-r); search result row nAD2k _39QMj: `space.18` 18px `space.24` 24px .... [Full spec](components/core.md#list-rows-courses-list-search-results-following-list-settings-rows)
 
 ![list-rows light](components/crops/list-rows-courses-light.png) ![list-rows dark](components/crops/list-rows-courses-dark.png)
 
 ### Cards (right-rail cards, settings side cards, stat tiles)
 
-right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, `radius.16` 16px radius, `space.18` 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (`typography.app.cardTitle` 700 19px/28px), body (wolf,. [Full spec](components/core.md#cards-right-rail-cards-settings-side-cards-stat-tiles)
+right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, `radius.16` 16px radius, `space.18` 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (`typography.app.cardTitle` 700 19px/28px), body .... [Full spec](components/core.md#cards-right-rail-cards-settings-side-cards-stat-tiles)
 
 ![card light](components/crops/card-light.png) ![card dark](components/crops/card-dark.png)
 
 ### Dividers
 
-section rule <hr class="_3D1uH">: 2px swan top border, 0 margin (settings sections); list row divider: `borderWidth.2` 2px swan border-bottom (_3hY-r, _39QMj, hpqEH on mobile); menu section divider: `borderWidth.2` 2px s. [Full spec](components/core.md#dividers)
+section rule <hr class="_3D1uH">: 2px swan top border, 0 margin (settings sections); list row divider: `borderWidth.2` 2px swan border-bottom (_3hY-r, _39QMj, hpqEH on mobile); menu section divider: `borderWidth.2` 2px .... [Full spec](components/core.md#dividers)
 
 ![divider light](components/crops/divider-light.png) ![divider dark](components/crops/divider-dark.png)
 
 ### Progress bar (web-ui)
 
-root oCRfA role=progressbar (sets --__internal__progress-bar-height, default 16px); track _3yKMC: swan (or --web-ui_progress-bar-background), radius = height/2; fill _27NV6: currentColor (default owl), clip-path inset re. [Full spec](components/core.md#progress-bar-web-ui)
+root oCRfA role=progressbar (sets --__internal__progress-bar-height, default 16px); track _3yKMC: swan (or --web-ui_progress-bar-background), radius = height/2; fill _27NV6: currentColor (default owl), clip-path inset .... [Full spec](components/core.md#progress-bar-web-ui)
 
 ![progress-bar light](components/crops/progress-bar-light.png) ![progress-bar dark](components/crops/progress-bar-dark.png)
 
 ### Links
 
-inline text-button link (web-ui variant-text-no-padding-macaw, MVjvO _1nf6U c1Mv-): 700 15px/18px uppercase macaw ("VIEW ALL", "GO TO SHOP"); settings footer links hBgxi (hare) / _2FVDQ (cardinal): label-medium `typograp. [Full spec](components/core.md#links)
+inline text-button link (web-ui variant-text-no-padding-macaw, MVjvO _1nf6U c1Mv-): 700 15px/18px uppercase macaw ("VIEW ALL", "GO TO SHOP"); settings footer links hBgxi (hare) / _2FVDQ (cardinal): label-medium .... [Full spec](components/core.md#links)
 
 ![link light](components/crops/link-light.png) ![link dark](components/crops/link-dark.png)
 
 ### Icon buttons (unstyled and framed)
 
-unstyled (variant-unstyled _1gEmM): no background/border/padding, hover brightness(1.1), glyph only (quit X 18px, close X 24px, eye 24px, clear 24px, dismiss 12px); framed square: web-ui stroke 48x48 (_2FxcQ, radius `rad. [Full spec](components/core.md#icon-buttons-unstyled-and-framed)
+unstyled (variant-unstyled _1gEmM): no background/border/padding, hover brightness(1.1), glyph only (quit X 18px, close X 24px, eye 24px, clear 24px, dismiss 12px); framed square: web-ui stroke 48x48 (_2FxcQ, radius .... [Full spec](components/core.md#icon-buttons-unstyled-and-framed)
 
 ![icon-button light](components/crops/icon-button-light.png) ![icon-button dark](components/crops/icon-button-dark.png)
 
 ### Table (Guidebook phrase table)
 
-`<table>` cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card; header cells: tinted fill, `borderWidth.2` 2px border on every side, outer top corners rounded 16px; body cells: no fi. [Full spec](components/core.md#table-guidebook-phrase-table)
+`<table>` cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card; header cells: tinted fill, `borderWidth.2` 2px border on every side, outer top corners rounded 16px; body cells: no .... [Full spec](components/core.md#table-guidebook-phrase-table)
 
 ![table light](components/crops/table-light.png) ![table dark](components/crops/table-dark.png)
 
@@ -355,7 +355,7 @@ fixed sidebar (256 / 88 / none); content wrapper: max-width 1056, centred, paddi
 
 #### Unit header banner
 
-sticky wrapper (_1g8jV) with 24px page-colour spacer above (_3LueZ, desktop only); banner (PsNCe): 2-column grid, unit colour background, radius 13; back link row: arrow icon 16x16 + label "SECTION 4, UNIT 12" (links to . Where: /learn, sticky at the top of the path column; div.PsNCe + unit colour class (LJB6r owl, _1p2Lt starfish, ...) inside div._1g8jV. [Full spec](components/product.md#unit-header-banner)
+sticky wrapper (_1g8jV) with 24px page-colour spacer above (_3LueZ, desktop only); banner (PsNCe): 2-column grid, unit colour background, radius 13; back link row: arrow icon 16x16 + label "SECTION 4, UNIT 12" (links to .... Where: /learn, sticky at the top of the path column; div.PsNCe + unit colour class (LJB6r owl, _1p2Lt starfish, ...) inside div._1g8jV. [Full spec](components/product.md#unit-header-banner)
 
 ![unit-header light](components/crops/unit-header-light.png) ![unit-header dark](components/crops/unit-header-dark.png)
 
@@ -367,7 +367,7 @@ left rule (hr._1JA0o, flex-grow); unit title (h2._3qGKs); right rule. Where: /le
 
 #### Path node
 
-offset wrapper (R7x3_, position relative, left = zig-zag offset); face: ::after ellipse 70x57, radius 50%; lip: ::after box-shadow 0 8px (black @0.20 over the face colour) plus ::before 8px band at top 28.5px that fills . Where: /learn, button[dt="skill-path-level-N skill-path-level-{skill|story|duo_radio|alphabet|practice|unit_review}"] cl=_1gEmM _7jW2t {_1333i|G_Z0K} [_22TV_] _3Jm09; . [Full spec](components/product.md#path-node)
+offset wrapper (R7x3_, position relative, left = zig-zag offset); face: ::after ellipse 70x57, radius 50%; lip: ::after box-shadow 0 8px (black @0.20 over the face colour) plus ::before 8px band at top 28.5px that fills .... Where: /learn, button[dt="skill-path-level-N skill-path-level-{skill|story|duo_radio|alphabet|practice|unit_review}"] cl=_1gEmM _7jW2t {_1333i|G_Z0K} [_22TV_] _3Jm09; . [Full spec](components/product.md#path-node)
 
 ![path-node light](components/crops/path-node-light.png) ![path-node dark](components/crops/path-node-dark.png)
 
@@ -475,7 +475,7 @@ bar (140px, tinted, no top rule); icon circle 80x80 with check / cross image; ti
 
 #### Review mistakes interstitial
 
-lesson top bar (quit, settings, progress bar, hearts; documented by the challenge-screen part); Duo character (dt=session-duo, 200x123, mirrored with scaleX(-1), anchored to the bottom of the content area); speech bubble. Where: /lesson, between the last new challenge and the replay of missed ones; dt=session-duo + speech bubble, footer dt=player-next. [Full spec](components/product.md#review-mistakes-interstitial)
+lesson top bar (quit, settings, progress bar, hearts; documented by the challenge-screen part); Duo character (dt=session-duo, 200x123, mirrored with scaleX(-1), anchored to the bottom of the content area); speech .... Where: /lesson, between the last new challenge and the replay of missed ones; dt=session-duo + speech bubble, footer dt=player-next. [Full spec](components/product.md#review-mistakes-interstitial)
 
 ![review-interstitial dark](components/crops/review-interstitial-dark.png)
 
@@ -519,7 +519,7 @@ sticky header: illustration 214 x 199, heading, "5 invites remaining", hidden di
 
 #### Super upsell screens
 
-practice-hub ad (dark capture): eclipse background, SUPER logo top right, hero image 400 x 428, h1, footer with NO THANKS (outline white) and GET STARTED (white); trial reminder (light capture): gradient sky, close X top. Where: /lesson end flow: practice-hub ad (dt=practice-hub-ad-*), trial reminder picker (dt=trial-reminder, dt=plus-continue, dt=plus-no-thanks), and a full-screen vide. [Full spec](components/product.md#super-upsell-screens)
+practice-hub ad (dark capture): eclipse background, SUPER logo top right, hero image 400 x 428, h1, footer with NO THANKS (outline white) and GET STARTED (white); trial reminder (light capture): gradient sky, close X .... Where: /lesson end flow: practice-hub ad (dt=practice-hub-ad-*), trial reminder picker (dt=trial-reminder, dt=plus-continue, dt=plus-no-thanks), and a full-screen vide. [Full spec](components/product.md#super-upsell-screens)
 
 ![super-upsell light](components/crops/super-upsell--trial-light.png) ![super-upsell dark](components/crops/super-upsell-dark.png)
 
@@ -527,7 +527,7 @@ practice-hub ad (dark capture): eclipse background, SUPER logo top right, hero i
 
 #### Streak dropdown
 
-popover shell (generic), background swapped per streak state by a modifier class on dt=streak-panel; header: title "N day streak" (dt=streak-panel-header), subtitle, flame illustration right (64x77); week calendar card: . Where: /learn (any page with the top stat bar), hover dt=streak-menu; panel dt=streak-panel. [Full spec](components/product.md#streak-dropdown)
+popover shell (generic), background swapped per streak state by a modifier class on dt=streak-panel; header: title "N day streak" (dt=streak-panel-header), subtitle, flame illustration right (64x77); week calendar card: .... Where: /learn (any page with the top stat bar), hover dt=streak-menu; panel dt=streak-panel. [Full spec](components/product.md#streak-dropdown)
 
 ![streak-dropdown light](components/crops/streak-dropdown-light.png) ![streak-dropdown dark](components/crops/streak-dropdown-dark.png)
 
@@ -551,7 +551,7 @@ popover shell (generic, _2xxCs modifier); header "MY COURSES" with bottom rule; 
 
 #### Leaderboard
 
-league badge row: current league badge 80x91, locked badges 52x58, `space.28` 28px gap, grid of 11 shifted by --offset; header (sticky, snow bg): league name, subtitle ("Top 11 advance..." or join prompt), time left (bee. Where: /leaderboard main column; list dt=leaderboard. [Full spec](components/product.md#leaderboard)
+league badge row: current league badge 80x91, locked badges 52x58, `space.28` 28px gap, grid of 11 shifted by --offset; header (sticky, snow bg): league name, subtitle ("Top 11 advance..." or join prompt), time left .... Where: /leaderboard main column; list dt=leaderboard. [Full spec](components/product.md#leaderboard)
 
 ![leaderboard light](components/crops/leaderboard-light.png) ![leaderboard dark](components/crops/leaderboard-dark.png)
 
@@ -563,7 +563,7 @@ bordered card; header: title + CLEAR text button; preview: 80px avatar, 46px sta
 
 #### Daily quest card
 
-section header: "Daily Quests" + timer (16px clock icon + "N HOURS")  [page]; or card header with VIEW ALL [rail]; quest card: quest icon 60x60, title, progress row (bar + chest 35x35); progress bar: track, fill (clip-pa. Where: /quests "Daily Quests" section (page variant) and /learn right rail (rail variant). [Full spec](components/product.md#daily-quest-card)
+section header: "Daily Quests" + timer (16px clock icon + "N HOURS")  [page]; or card header with VIEW ALL [rail]; quest card: quest icon 60x60, title, progress row (bar + chest 35x35); progress bar: track, fill .... Where: /quests "Daily Quests" section (page variant) and /learn right rail (rail variant). [Full spec](components/product.md#daily-quest-card)
 
 ![daily-quest-card light](components/crops/daily-quest-card-light.png) ![daily-quest-card dark](components/crops/daily-quest-card-dark.png)
 
@@ -575,7 +575,7 @@ bordered card (transparent fill); header: title + VIEW ALL text button; rows: ba
 
 #### Achievement row
 
-list container (2px swan border, radius 16, rows separated by 2px swan rule; last row has no rule); level badge tile (77 x 96 SVG background image per achievement, contain, no-repeat); level label ("LEVEL 9") absolutely . Where: /profile/<user>, Achievements section: ul.cl=_1dDcV > li.cl=m_b-V _27zqm (no data-test). [Full spec](components/product.md#achievement-row)
+list container (2px swan border, radius 16, rows separated by 2px swan rule; last row has no rule); level badge tile (77 x 96 SVG background image per achievement, contain, no-repeat); level label ("LEVEL 9") absolutely .... Where: /profile/<user>, Achievements section: ul.cl=_1dDcV > li.cl=m_b-V _27zqm (no data-test). [Full spec](components/product.md#achievement-row)
 
 ![achievement-row light](components/crops/achievement-row-light.png) ![achievement-row dark](components/crops/achievement-row-dark.png)
 
@@ -629,7 +629,7 @@ section heading (Hearts, Power-Ups); row with 2px swan top rule; item icon (100 
 
 #### Super promo card
 
-variant A, rail card: standard rail card (snow, 2px swan, radius 16) + SUPER wordmark (78 x 21) + Duo art (98px, absolute top/right 24) + title + body + full-width cosmos button "TRY 1 WEEK FREE"; variant B, hero banner . Where: right rail on /learn, /characters, /guidebook (div.cl=_16rRh _2cnFr _1T_BQ, logo dt=plus-offer-logo); hero banner on /shop and /settings/super (div.cl=MGk8p, bu. [Full spec](components/product.md#super-promo-card)
+variant A, rail card: standard rail card (snow, 2px swan, radius 16) + SUPER wordmark (78 x 21) + Duo art (98px, absolute top/right 24) + title + body + full-width cosmos button "TRY 1 WEEK FREE"; variant B, hero banner .... Where: right rail on /learn, /characters, /guidebook (div.cl=_16rRh _2cnFr _1T_BQ, logo dt=plus-offer-logo); hero banner on /shop and /settings/super (div.cl=MGk8p, bu. [Full spec](components/product.md#super-promo-card)
 
 ![super-promo-card light](components/crops/super-promo-card-light.png) ![super-promo-card dark](components/crops/super-promo-card-dark.png)
 

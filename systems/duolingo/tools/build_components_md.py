@@ -20,10 +20,18 @@ def crops(c):
         th='dark' if '-dark' in p else 'light' if '-light' in p else 'x'
         pick.setdefault(th,p)
     return [pick[t] for t in ('light','dark') if t in pick]
+def clip(text, n):
+    """Cut at the last space within n characters that is outside a `code span`, so a token
+    name the specs put in backticks is never cut in half."""
+    if len(text) <= n: return text
+    cut = 0
+    for i, ch in enumerate(text[:n]):
+        if ch == ' ' and text[:i].count('`') % 2 == 0: cut = i
+    return text[:cut or n].rstrip(' ;,') + ' ...'
 def first_anatomy(c):
     a=c.get('anatomy') or []
-    if isinstance(a,str): return a[:160]
-    return '; '.join(str(x) for x in a[:3])[:220]
+    if isinstance(a,str): return clip(a,160)
+    return clip('; '.join(str(x) for x in a[:3]),220)
 L=[]
 L.append('# Duolingo: component reference\n')
 L.append('Captured from www.duolingo.com on 2026-09-25, signed in (free account, Japanese course), in both themes. Every measurement is a computed style read from the running app, or a CSS rule from its own stylesheets where a state could not be held live; each spec row names its source. Token names refer to [tokens.json](tokens.json); the rendered versions are in [style-guide.html](style-guide.html). Refreshed on 2026-10-17: every colour in the specs now leads with its token, focus states were measured live with the keyboard ([components/focus.md](components/focus.md)), and the patterns are written up in [patterns.md](patterns.md).\n')

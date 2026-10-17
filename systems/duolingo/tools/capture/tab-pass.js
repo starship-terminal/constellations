@@ -5,7 +5,8 @@
 //   2. press Tab (a real key press through the pane, so :focus-visible is set)
 //   3. __tab('<page>')      diff the focused element and its ancestors against rest, push to __flog
 //      (__tab('<page>', 'ArrowDown') after an arrow key; build_focus_md.py reads these records as saved)
-// Call __restAll() again after a menu or dialog opens, so its rows have a resting read.
+// Call __restAll() again after a menu or dialog opens, so its rows have a resting read, and
+// __restAll(true) after a theme switch, so old resting reads are replaced.
 // Get the log out with JSON.stringify({focus: __flog}). Reads after a script focus() are not key
 // presses and were left out of the saved file.
 (() => {
@@ -26,9 +27,14 @@
     return d;
   };
   window.__rest = new WeakMap(); window.__flog = window.__flog || [];
-  window.__restAll = () => {
+  // __restAll(true) re-reads every resting style (after a theme switch or a state change that
+  // reuses the same nodes), except the focused control and its ancestors, which are not at rest.
+  window.__restAll = (refresh = false) => {
     let n = 0;
-    document.querySelectorAll('a,button,input,textarea,select,[tabindex],[role]').forEach(e => { for (const c of chain(e)) if (!__rest.has(c)) { __rest.set(c, one(c)); n++; } });
+    const busy = new Set(document.activeElement && document.activeElement !== document.body ? chain(document.activeElement) : []);
+    document.querySelectorAll('a,button,input,textarea,select,[tabindex],[role]').forEach(e => {
+      for (const c of chain(e)) if ((refresh && !busy.has(c)) || !__rest.has(c)) { __rest.set(c, one(c)); n++; }
+    });
     return n;
   };
   window.__tab = (page, key = 'Tab') => {
