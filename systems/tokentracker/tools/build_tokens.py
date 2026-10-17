@@ -148,9 +148,14 @@ for step in ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900"
 # Ramps for every other hue the interface uses, with the steps the stylesheet actually ships (the
 # Tailwind utility rules in the bundle). Hues with fewer than five steps are listed, not tokenised.
 UTIL = K["sheet"]["utilities"]
-RAMPS = {"red": "Danger: the toast, the danger button, error text.", "amber": "Warning: cached-limit notices.",
-         "orange": "Claude's share in charts and the pace marker.", "sky": "Charts and the one sky ring.",
+RAMPS = {"red": "Danger: the toast, the danger button, the error notice.", "amber": "Warning: the notice under a limit.",
+         "orange": "Claude's share in charts and the pace marker.", "sky": "Info: the skill update badge and banner; charts.",
          "blue": "Charts and provider marks."}
+# Every other hue the stylesheet ships a utility for, at the steps it ships: chart, provider and
+# achievement colours. Each is a ramp of what the product uses, not Tailwind's full ramp.
+for hue in sorted(UTIL):
+    if hue not in RAMPS and hue not in ("emerald", "oai-brand", "oai-gray"):
+        RAMPS[hue] = "Charts, provider marks and badges."
 for hue, desc in RAMPS.items():
     for step in sorted(UTIL[hue], key=int):
         u = UTIL[hue][step]
@@ -175,6 +180,15 @@ put(core, "font.family.sans", tok(v, "fontFamily", s, "One family carries everyt
 v, s = var("--oai-font-mono")
 put(core, "font.family.mono", tok(v, "fontFamily", s, "Code blocks and terminal-style copy."))
 
+# The size scale: every font size that at least 10 rendered text elements use (dark, all pages).
+from collections import Counter
+sizes = Counter()
+for v, x in K["totals"]["dark"]["type"].items():
+    sizes[v.split("/")[0]] += x["n"]
+for i, (size, n) in enumerate(sorted(((sz, n) for sz, n in sizes.items() if n >= 10), key=lambda kv: float(kv[0][:-2]))):
+    put(core, f"font.scale.{size[:-2]}", tok(size, "dimension",
+        f"Measured: font size of {n} rendered text elements across the ten pages (dark), raw/census.json totals.dark.type"))
+
 TYPE = [
     ("display", "hero-metric", "The one giant number (total tokens). Tabular figures."),
     ("pageTitle", "page-title", "h1 on every page but Tokens."),
@@ -198,7 +212,9 @@ for role, key, desc in TYPE:
     r = reading(key, "dark")
     st = r.get("textStyle") or r["style"]
     src = f"Measured: computed font of {key} default (dark){' (its label ' + st['node'] + ')' if r.get('textStyle') else ''}, raw/components-computed.json, {READ}"
-    put(core, f"font.size.{role}", tok(st["fontSize"], "dimension", src))
+    scale_ref = st["fontSize"][:-2] if sizes.get(st["fontSize"], 0) >= 10 else None
+    put(core, f"font.size.{role}", tok(f"{{font.scale.{scale_ref}}}" if scale_ref else st["fontSize"], "dimension",
+        src if not scale_ref else f"Derived: alias of font.scale.{scale_ref}, the size {src[len('Measured: '):]}"))
     put(core, f"font.weight.{role}", tok(int(st["fontWeight"]), "fontWeight", src))
     put(core, f"font.lineHeight.{role}", tok(st["lineHeight"], "dimension", src))
     put(core, f"font.letterSpacing.{role}", tok("0px" if st["letterSpacing"] == "normal" else st["letterSpacing"], "dimension", src))
@@ -220,15 +236,6 @@ for v, x in K["totals"]["dark"]["type"].items():
         name += f"lh{lh[:-2].replace('.', '_')}"
     put(core, f"typography.{name}", tok({"fontFamily": "{font.family.sans}", "fontSize": size, "fontWeight": w, "lineHeight": lh, "letterSpacing": "0px"},
         "typography", f"Measured: computed font of {x['n']} rendered text elements such as {x['where'][0]} ({', '.join(sorted(set(x['pages']))[:4])}, dark), raw/census.json totals.dark.type"))
-
-# The size scale: every font size that at least 10 rendered text elements use (dark, all pages).
-from collections import Counter
-sizes = Counter()
-for v, x in K["totals"]["dark"]["type"].items():
-    sizes[v.split("/")[0]] += x["n"]
-for i, (size, n) in enumerate(sorted(((sz, n) for sz, n in sizes.items() if n >= 10), key=lambda kv: float(kv[0][:-2]))):
-    put(core, f"font.scale.{size[:-2]}", tok(size, "dimension",
-        f"Measured: font size of {n} rendered text elements across the ten pages (dark), raw/census.json totals.dark.type"))
 
 # Radii, each from the component that shows it
 RADII = [
@@ -381,9 +388,8 @@ core["$extensions"] = {"notTokenised": {
         "rules": [r["rule"] for r in K["sheet"]["reduced"]],
         "source": "Measured: every rule inside a prefers-reduced-motion media query, and the motion-safe/motion-reduce utilities, in the dashboard stylesheet, raw/census.json sheet.reduced",
     },
-    "otherHues": {h: sorted(UTIL[h], key=int) for h in sorted(UTIL) if h not in RAMPS and h not in ("emerald", "oai-brand", "oai-gray")},
-    "otherHuesNote": "Hues the stylesheet ships fewer steps of (mostly chart and provider colours). Listed with their steps; not tokenised.",
-    "warningNotice": "The only rendered warning surface is a light-theme notice on Limits: amber-50 at 50% fill, amber-300 at 60% border (raw/census.json). Dark has none on screen, so no themed warning fill or border is tokenised.",
+    "rampSteps": "Each core.color ramp holds only the steps the dashboard stylesheet ships for that hue (Tailwind utilities it uses), so red and amber stop at 8 steps and the chart hues at fewer. Steps the product never uses are not filled in.",
+    "statusGaps": "No info surface rendered on this machine: the sky update badge and banner on Skills appear only when a skill has an update. No success fill or border renders; success is green text only.",
     "providerColors": "Per-provider colours (Claude orange, Codex blue, OpenCode purple) come from getProviderColor() in the dashboard source; data-viz only, not read as tokens.",
 }}
 
@@ -447,12 +453,18 @@ def themed(theme):
     P("button.secondary.border", color("share-button", "borderTopColor", theme))
     P("button.secondary.hoverFg", color("share-button", "color", theme, "hover"))
     P("usage.track", color("usage-track", "backgroundColor", theme))
-    for k in ["success", "warning", "error"]:
-        P(f"status.{k}", tok(f"{{color.status.{k}.{theme}}}", "color", f"Derived: alias of color.status.{k}.{theme}"))
+    for k, name in [("success", "success"), ("warning", "warning"), ("error", "danger")]:
+        P(f"status.{name}.base", tok(f"{{color.status.{k}.{theme}}}", "color", f"Derived: alias of color.status.{k}.{theme} (--oai-{k} in styles.css)"))
     v, src = census(theme, "text", "text-emerald-600")
-    P("status.successText", tok(hexa(v), "color", src, "\"Operational\" on Service Status."))
-    P("status.danger.fill", color("toast", "backgroundColor", theme, "open", desc="The error toast and the danger button."))
-    P("status.danger.text", color("toast", "color", theme, "open", desc="Text on the danger fill."))
+    P("status.success.text", tok(hexa(v), "color", src, "\"Operational\" on Service Status."))
+    P("status.danger.fill", color("toast", "backgroundColor", theme, "open", desc="Solid: the error toast and the danger button."))
+    P("status.danger.onFill", color("toast", "color", theme, "open", desc="Text on the solid danger fill."))
+    P("status.danger.surface", color("danger-notice", "backgroundColor", theme, desc="The error notice on Skills."))
+    P("status.danger.border", color("danger-notice", "borderTopColor", theme))
+    P("status.danger.text", color("danger-notice", "color", theme, desc="Error notice text."))
+    P("status.warning.surface", color("warning-notice", "backgroundColor", theme, desc="The notice under a limit on Limits."))
+    P("status.warning.border", color("warning-notice", "borderTopColor", theme))
+    P("status.warning.text", color("warning-notice", "color", theme, desc="Neutral: warning notices keep the body text colour; only the box is amber."))
     P("control.switchOn", tok(hexa(reading("switch-on", theme, "disabled")["paint"][0]["bg"]), "color",
         f"Measured: computed fill of span.tt-toggle-track in {ckey('switch-on', theme)} (disabled, at 50% opacity as a whole), raw/components-computed.json"))
     P("control.switchThumb", tok(hexa(reading("switch-on", theme, "disabled")["paint"][1]["bg"]), "color",

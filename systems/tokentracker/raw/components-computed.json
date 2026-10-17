@@ -10556,19 +10556,19 @@
     "default": {
      "tag": "div",
      "classes": "rounded-xl border border-oai-gray-200 dark:border-oai-gray-800",
-     "text": "USAGE LIMITS·USED Claude Max 5h: ahead of pace, ~2h to limit Resets 10/17, 06:29",
+     "text": "USAGE LIMITS·USED Claude Error: Claude token expired — run `claude` once to refr",
      "rect": {
       "x": 272,
-      "y": -761,
+      "y": -734,
       "w": 1104,
-      "h": 2417.69
+      "h": 2363.31
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "1104px",
-      "height": "2417.69px",
+      "height": "2363.31px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -10636,14 +10636,14 @@
      "paint": [
       {
        "node": "div.rounded-xl.border",
-       "size": "1104.0x2417.7",
+       "size": "1104.0x2363.3",
        "border": "T:1px solid rgb(38, 38, 38) | R:1px solid rgb(38, 38, 38) | B:1px solid rgb(38, 38, 38) | L:1px solid rgb(38, 38, 38)",
        "bg": "rgb(23, 23, 23)",
        "radius": "16px"
       },
       {
        "node": "div.pointer-events-none.absolute",
-       "size": "175.6x42.9",
+       "size": "179.5x42.9",
        "border": "T:1px solid rgba(38, 38, 38, 0.5) | R:1px solid rgba(38, 38, 38, 0.5) | B:1px solid rgba(38, 38, 38, 0.5) | L:1px solid rgba(38, 38, 38, 0.5)",
        "bg": "rgba(23, 23, 23, 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
@@ -10657,7 +10657,7 @@
       },
       {
        "node": "div.bg-emerald-500.rounded-full",
-       "size": "335.2x6.0",
+       "size": "512.0x6.0",
        "bg": "rgb(16, 185, 129)",
        "radius": "9999px"
       },
@@ -10673,37 +10673,7 @@
       },
       {
        "node": "div.pointer-events-none.absolute",
-       "size": "175.4x42.9",
-       "border": "T:1px solid rgba(38, 38, 38, 0.5) | R:1px solid rgba(38, 38, 38, 0.5) | B:1px solid rgba(38, 38, 38, 0.5) | L:1px solid rgba(38, 38, 38, 0.5)",
-       "bg": "rgba(23, 23, 23, 0.9)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
-       "radius": "16px"
-      },
-      {
-       "node": "div.relative.flex-1",
-       "size": "931.0x6.0",
-       "bg": "rgba(64, 64, 64, 0.5)",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.bg-emerald-500.rounded-full",
-       "size": "223.4x6.0",
-       "bg": "rgb(16, 185, 129)",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.absolute.top-0",
-       "size": "6.0x6.0",
-       "bg": "rgba(64, 64, 64, 0.5)"
-      },
-      {
-       "node": "div.absolute.top-0",
-       "size": "2.0x6.0",
-       "bg": "rgb(239, 68, 68)"
-      },
-      {
-       "node": "div.pointer-events-none.absolute",
-       "size": "169.8x42.9",
+       "size": "164.4x42.9",
        "border": "T:1px solid rgba(38, 38, 38, 0.5) | R:1px solid rgba(38, 38, 38, 0.5) | B:1px solid rgba(38, 38, 38, 0.5) | L:1px solid rgba(38, 38, 38, 0.5)",
        "bg": "rgba(23, 23, 23, 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
@@ -10719,6 +10689,40 @@
        "node": "div.bg-emerald-500.rounded-full",
        "size": "0.0x6.0",
        "bg": "rgb(16, 185, 129)",
+       "radius": "9999px"
+      },
+      {
+       "node": "div.pointer-events-none.absolute",
+       "size": "166.0x42.9",
+       "border": "T:1px solid rgba(38, 38, 38, 0.5) | R:1px solid rgba(38, 38, 38, 0.5) | B:1px solid rgba(38, 38, 38, 0.5) | L:1px solid rgba(38, 38, 38, 0.5)",
+       "bg": "rgba(23, 23, 23, 0.9)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
+       "radius": "16px"
+      },
+      {
+       "node": "div.relative.flex-1",
+       "size": "931.0x6.0",
+       "bg": "rgba(64, 64, 64, 0.5)",
+       "radius": "9999px"
+      },
+      {
+       "node": "div.bg-emerald-500.rounded-full",
+       "size": "0.0x6.0",
+       "bg": "rgb(16, 185, 129)",
+       "radius": "9999px"
+      },
+      {
+       "node": "div.pointer-events-none.absolute",
+       "size": "159.6x42.9",
+       "border": "T:1px solid rgba(38, 38, 38, 0.5) | R:1px solid rgba(38, 38, 38, 0.5) | B:1px solid rgba(38, 38, 38, 0.5) | L:1px solid rgba(38, 38, 38, 0.5)",
+       "bg": "rgba(23, 23, 23, 0.9)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
+       "radius": "16px"
+      },
+      {
+       "node": "div.relative.flex-1",
+       "size": "931.0x6.0",
+       "bg": "rgba(64, 64, 64, 0.5)",
        "radius": "9999px"
       }
      ],
@@ -10759,7 +10763,7 @@
      "text": "USAGE LIMITS·USED",
      "rect": {
       "x": 293,
-      "y": -740,
+      "y": -713,
       "w": 1062,
       "h": 20
      },
@@ -10849,10 +10853,10 @@
     "default": {
      "tag": "div",
      "classes": "group relative flex items-center",
-     "text": "5h: ahead of pace, ~2h to limit Resets 10/17, 06:29 5h 36% 3h",
+     "text": "7d: ahead of pace, ~17h to limit Resets 10/23, 15:05 7d 55% 6d",
      "rect": {
       "x": 293,
-      "y": 240,
+      "y": 293.1,
       "w": 1062,
       "h": 16.5
      },
@@ -10929,7 +10933,7 @@
      "paint": [
       {
        "node": "div.pointer-events-none.absolute",
-       "size": "175.6x42.9",
+       "size": "179.5x42.9",
        "border": "T:1px solid rgba(38, 38, 38, 0.5) | R:1px solid rgba(38, 38, 38, 0.5) | B:1px solid rgba(38, 38, 38, 0.5) | L:1px solid rgba(38, 38, 38, 0.5)",
        "bg": "rgba(23, 23, 23, 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
@@ -10943,7 +10947,7 @@
       },
       {
        "node": "div.bg-emerald-500.rounded-full",
-       "size": "335.2x6.0",
+       "size": "512.0x6.0",
        "bg": "rgb(16, 185, 129)",
        "radius": "9999px"
       },
@@ -10960,7 +10964,7 @@
      ],
      "textStyle": {
       "node": "div.pointer-events-none.absolute",
-      "text": "5h: ahead of pace, ~2h to limit\nResets 1",
+      "text": "7d: ahead of pace, ~17h to limit\nResets ",
       "fontFamily": "\"OpenAI Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, sans-serif",
       "fontSize": "10.5px",
       "lineHeight": "14.4375px",
@@ -10990,7 +10994,7 @@
      "text": "",
      "rect": {
       "x": 348,
-      "y": 245.3,
+      "y": 298.4,
       "w": 931,
       "h": 6
      },
@@ -11073,7 +11077,7 @@
       },
       {
        "node": "div.bg-emerald-500.rounded-full",
-       "size": "335.2x6.0",
+       "size": "512.0x6.0",
        "bg": "rgb(16, 185, 129)",
        "radius": "9999px"
       },
@@ -11107,15 +11111,15 @@
      "text": "",
      "rect": {
       "x": 348,
-      "y": 245.3,
-      "w": 335.16,
+      "y": 298.4,
+      "w": 512.05,
       "h": 6
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "335.156px",
+      "width": "512.047px",
       "height": "6px",
       "minWidth": "3px",
       "maxWidth": "none",
@@ -11184,7 +11188,7 @@
      "paint": [
       {
        "node": "div.bg-emerald-500.rounded-full",
-       "size": "335.2x6.0",
+       "size": "512.0x6.0",
        "bg": "rgb(16, 185, 129)",
        "radius": "9999px"
       }
@@ -11216,7 +11220,7 @@
      "text": "LIVE",
      "rect": {
       "x": 488.4,
-      "y": 438.5,
+      "y": 438.1,
       "w": 46.33,
       "h": 19.5
      },
@@ -11300,7 +11304,7 @@
       },
       {
        "node": "span.animate-ping.absolute",
-       "size": "11.0x11.0",
+       "size": "9.4x9.4",
        "bg": "rgb(52, 211, 153)",
        "radius": "9999px"
       },
@@ -11331,7 +11335,7 @@
      "text": "export COPILOT_OTEL_ENABLED=true export COPILOT_OTEL_EXPORTER_TYPE=file export C",
      "rect": {
       "x": 304,
-      "y": 422.1,
+      "y": 422.8,
       "w": 1040,
       "h": 51.38
      },
@@ -22075,19 +22079,19 @@
     "default": {
      "tag": "div",
      "classes": "rounded-xl border border-oai-gray-200 dark:border-oai-gray-800",
-     "text": "USAGE LIMITS·USED Claude Max 5h: ahead of pace, ~2h to limit Resets 10/17, 06:29",
+     "text": "USAGE LIMITS·USED Claude Error: Claude token expired — run `claude` once to refr",
      "rect": {
       "x": 272,
-      "y": -761,
+      "y": -734,
       "w": 1104,
-      "h": 2417.69
+      "h": 2363.31
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "1104px",
-      "height": "2417.69px",
+      "height": "2363.31px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -22155,14 +22159,14 @@
      "paint": [
       {
        "node": "div.rounded-xl.border",
-       "size": "1104.0x2417.7",
+       "size": "1104.0x2363.3",
        "border": "T:1px solid rgb(229, 229, 229) | R:1px solid rgb(229, 229, 229) | B:1px solid rgb(229, 229, 229) | L:1px solid rgb(229, 229, 229)",
        "bg": "rgb(255, 255, 255)",
        "radius": "16px"
       },
       {
        "node": "div.pointer-events-none.absolute",
-       "size": "175.6x42.9",
+       "size": "179.5x42.9",
        "border": "T:1px solid rgba(229, 229, 229, 0.5) | R:1px solid rgba(229, 229, 229, 0.5) | B:1px solid rgba(229, 229, 229, 0.5) | L:1px solid rgba(229, 229, 229, 0.5)",
        "bg": "rgba(255, 255, 255, 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
@@ -22176,7 +22180,7 @@
       },
       {
        "node": "div.bg-emerald-500.rounded-full",
-       "size": "335.2x6.0",
+       "size": "512.0x6.0",
        "bg": "rgb(16, 185, 129)",
        "radius": "9999px"
       },
@@ -22192,37 +22196,7 @@
       },
       {
        "node": "div.pointer-events-none.absolute",
-       "size": "175.4x42.9",
-       "border": "T:1px solid rgba(229, 229, 229, 0.5) | R:1px solid rgba(229, 229, 229, 0.5) | B:1px solid rgba(229, 229, 229, 0.5) | L:1px solid rgba(229, 229, 229, 0.5)",
-       "bg": "rgba(255, 255, 255, 0.9)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
-       "radius": "16px"
-      },
-      {
-       "node": "div.relative.flex-1",
-       "size": "931.0x6.0",
-       "bg": "rgb(245, 245, 245)",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.bg-emerald-500.rounded-full",
-       "size": "223.4x6.0",
-       "bg": "rgb(16, 185, 129)",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.absolute.top-0",
-       "size": "6.0x6.0",
-       "bg": "rgb(245, 245, 245)"
-      },
-      {
-       "node": "div.absolute.top-0",
-       "size": "2.0x6.0",
-       "bg": "rgb(239, 68, 68)"
-      },
-      {
-       "node": "div.pointer-events-none.absolute",
-       "size": "169.8x42.9",
+       "size": "164.4x42.9",
        "border": "T:1px solid rgba(229, 229, 229, 0.5) | R:1px solid rgba(229, 229, 229, 0.5) | B:1px solid rgba(229, 229, 229, 0.5) | L:1px solid rgba(229, 229, 229, 0.5)",
        "bg": "rgba(255, 255, 255, 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
@@ -22238,6 +22212,40 @@
        "node": "div.bg-emerald-500.rounded-full",
        "size": "0.0x6.0",
        "bg": "rgb(16, 185, 129)",
+       "radius": "9999px"
+      },
+      {
+       "node": "div.pointer-events-none.absolute",
+       "size": "166.0x42.9",
+       "border": "T:1px solid rgba(229, 229, 229, 0.5) | R:1px solid rgba(229, 229, 229, 0.5) | B:1px solid rgba(229, 229, 229, 0.5) | L:1px solid rgba(229, 229, 229, 0.5)",
+       "bg": "rgba(255, 255, 255, 0.9)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
+       "radius": "16px"
+      },
+      {
+       "node": "div.relative.flex-1",
+       "size": "931.0x6.0",
+       "bg": "rgb(245, 245, 245)",
+       "radius": "9999px"
+      },
+      {
+       "node": "div.bg-emerald-500.rounded-full",
+       "size": "0.0x6.0",
+       "bg": "rgb(16, 185, 129)",
+       "radius": "9999px"
+      },
+      {
+       "node": "div.pointer-events-none.absolute",
+       "size": "159.6x42.9",
+       "border": "T:1px solid rgba(229, 229, 229, 0.5) | R:1px solid rgba(229, 229, 229, 0.5) | B:1px solid rgba(229, 229, 229, 0.5) | L:1px solid rgba(229, 229, 229, 0.5)",
+       "bg": "rgba(255, 255, 255, 0.9)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
+       "radius": "16px"
+      },
+      {
+       "node": "div.relative.flex-1",
+       "size": "931.0x6.0",
+       "bg": "rgb(245, 245, 245)",
        "radius": "9999px"
       }
      ],
@@ -22278,7 +22286,7 @@
      "text": "USAGE LIMITS·USED",
      "rect": {
       "x": 293,
-      "y": -740,
+      "y": -713,
       "w": 1062,
       "h": 20
      },
@@ -22368,10 +22376,10 @@
     "default": {
      "tag": "div",
      "classes": "group relative flex items-center",
-     "text": "5h: ahead of pace, ~2h to limit Resets 10/17, 06:29 5h 36% 3h",
+     "text": "7d: ahead of pace, ~17h to limit Resets 10/23, 15:05 7d 55% 6d",
      "rect": {
       "x": 293,
-      "y": 240,
+      "y": 293.1,
       "w": 1062,
       "h": 16.5
      },
@@ -22448,7 +22456,7 @@
      "paint": [
       {
        "node": "div.pointer-events-none.absolute",
-       "size": "175.6x42.9",
+       "size": "179.5x42.9",
        "border": "T:1px solid rgba(229, 229, 229, 0.5) | R:1px solid rgba(229, 229, 229, 0.5) | B:1px solid rgba(229, 229, 229, 0.5) | L:1px solid rgba(229, 229, 229, 0.5)",
        "bg": "rgba(255, 255, 255, 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
@@ -22462,7 +22470,7 @@
       },
       {
        "node": "div.bg-emerald-500.rounded-full",
-       "size": "335.2x6.0",
+       "size": "512.0x6.0",
        "bg": "rgb(16, 185, 129)",
        "radius": "9999px"
       },
@@ -22479,7 +22487,7 @@
      ],
      "textStyle": {
       "node": "div.pointer-events-none.absolute",
-      "text": "5h: ahead of pace, ~2h to limit\nResets 1",
+      "text": "7d: ahead of pace, ~17h to limit\nResets ",
       "fontFamily": "\"OpenAI Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, sans-serif",
       "fontSize": "10.5px",
       "lineHeight": "14.4375px",
@@ -22509,7 +22517,7 @@
      "text": "",
      "rect": {
       "x": 348,
-      "y": 245.3,
+      "y": 298.4,
       "w": 931,
       "h": 6
      },
@@ -22592,7 +22600,7 @@
       },
       {
        "node": "div.bg-emerald-500.rounded-full",
-       "size": "335.2x6.0",
+       "size": "512.0x6.0",
        "bg": "rgb(16, 185, 129)",
        "radius": "9999px"
       },
@@ -22626,15 +22634,15 @@
      "text": "",
      "rect": {
       "x": 348,
-      "y": 245.3,
-      "w": 335.16,
+      "y": 298.4,
+      "w": 512.05,
       "h": 6
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "335.156px",
+      "width": "512.047px",
       "height": "6px",
       "minWidth": "3px",
       "maxWidth": "none",
@@ -22703,7 +22711,7 @@
      "paint": [
       {
        "node": "div.bg-emerald-500.rounded-full",
-       "size": "335.2x6.0",
+       "size": "512.0x6.0",
        "bg": "rgb(16, 185, 129)",
        "radius": "9999px"
       }
@@ -22735,7 +22743,7 @@
      "text": "LIVE",
      "rect": {
       "x": 488.4,
-      "y": 438.5,
+      "y": 438.1,
       "w": 46.33,
       "h": 19.5
      },
@@ -22819,7 +22827,7 @@
       },
       {
        "node": "span.animate-ping.absolute",
-       "size": "9.6x9.6",
+       "size": "12.0x12.0",
        "bg": "rgb(52, 211, 153)",
        "radius": "9999px"
       },
@@ -22850,7 +22858,7 @@
      "text": "export COPILOT_OTEL_ENABLED=true export COPILOT_OTEL_EXPORTER_TYPE=file export C",
      "rect": {
       "x": 304,
-      "y": 422.1,
+      "y": 422.8,
       "w": 1040,
       "h": 51.38
      },
@@ -34141,7 +34149,7 @@
      "text": "Real-time limits retrieved from your Antigravity Google account.",
      "rect": {
       "x": 415.5,
-      "y": 386.5,
+      "y": 386.1,
       "w": 192,
       "h": 44
      },
@@ -34554,7 +34562,7 @@
      "text": "Real-time limits retrieved from your Antigravity Google account.",
      "rect": {
       "x": 415.5,
-      "y": 386.5,
+      "y": 386.1,
       "w": 192,
       "h": 44
      },
@@ -35956,6 +35964,688 @@
    "group": "Buttons and segmented controls",
    "desc": "The gear on Limits (\"Display settings\" is its accessible label): an icon-only link to Settings.",
    "selector": "main a[href^=/settings]"
+  },
+  "warning-notice": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "mt-1 rounded-md border border-amber-300/60",
+     "text": "Track Copilot token usage Limits load via your GitHub OAuth token. To also recor",
+     "rect": {
+      "x": 293,
+      "y": 380.1,
+      "w": 1062,
+      "h": 134.75
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "1062px",
+      "height": "134.75px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "8px",
+      "paddingRight": "10px",
+      "paddingBottom": "8px",
+      "paddingLeft": "10px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(180, 83, 9, 0.4)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(180, 83, 9, 0.4)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(180, 83, 9, 0.4)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(180, 83, 9, 0.4)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgba(120, 53, 15, 0.1)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(212, 212, 212)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"OpenAI Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, sans-serif",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "lineHeight": "16.5px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(212, 212, 212)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(212, 212, 212)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.mt-1.rounded-md",
+       "size": "1062.0x134.8",
+       "border": "T:1px solid rgba(180, 83, 9, 0.4) | R:1px solid rgba(180, 83, 9, 0.4) | B:1px solid rgba(180, 83, 9, 0.4) | L:1px solid rgba(180, 83, 9, 0.4)",
+       "bg": "rgba(120, 53, 15, 0.1)",
+       "radius": "8px"
+      },
+      {
+       "node": "pre.mt-1.5.overflow-x-auto",
+       "size": "1040.0x51.4",
+       "bg": "rgba(23, 23, 23, 0.6)",
+       "radius": "4px"
+      },
+      {
+       "node": "button.mt-1.inline-flex",
+       "size": "40.0x21.8",
+       "border": "T:1px solid rgb(64, 64, 64) | R:1px solid rgb(64, 64, 64) | B:1px solid rgb(64, 64, 64) | L:1px solid rgb(64, 64, 64)",
+       "radius": "4px"
+      }
+     ],
+     "textStyle": {
+      "node": "div.font-medium.text-oai-gray-700",
+      "text": "Track Copilot token usage",
+      "fontFamily": "\"OpenAI Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, sans-serif",
+      "fontSize": "11px",
+      "lineHeight": "16.5px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "rgb(229, 229, 229)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/warning-notice-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "limits",
+   "run": "limits-dark",
+   "url": "http://127.0.0.1:7680/limits",
+   "title": "Warning notice",
+   "group": "Badges, tooltips and status",
+   "desc": "The amber notice under a limit (Copilot token usage).",
+   "selector": "div with the amber border on Limits"
+  },
+  "danger-notice": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "mb-4 rounded-lg border border-red-200",
+     "text": "Failed to fetch",
+     "rect": {
+      "x": 272,
+      "y": 163,
+      "w": 1104,
+      "h": 46
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "1104px",
+      "height": "46px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "12px",
+      "paddingRight": "16px",
+      "paddingBottom": "12px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "16px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(127, 29, 29, 0.6)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(127, 29, 29, 0.6)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(127, 29, 29, 0.6)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(127, 29, 29, 0.6)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "rgba(69, 10, 10, 0.3)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(254, 202, 202)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"OpenAI Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(254, 202, 202)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(254, 202, 202)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.mb-4.rounded-lg",
+       "size": "1104.0x46.0",
+       "border": "T:1px solid rgba(127, 29, 29, 0.6) | R:1px solid rgba(127, 29, 29, 0.6) | B:1px solid rgba(127, 29, 29, 0.6) | L:1px solid rgba(127, 29, 29, 0.6)",
+       "bg": "rgba(69, 10, 10, 0.3)",
+       "radius": "12px"
+      }
+     ],
+     "crop": "components/crops/danger-notice-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "skills",
+   "run": "skills-dark",
+   "url": "http://127.0.0.1:7680/skills",
+   "title": "Error notice",
+   "group": "Badges, tooltips and status",
+   "desc": "Skills reports a failed operation in a red box above the list (Refresh, with its requests aborted in the capture browser).",
+   "selector": "div with the red border on Skills"
+  },
+  "warning-notice.light": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "mt-1 rounded-md border border-amber-300/60",
+     "text": "Track Copilot token usage Limits load via your GitHub OAuth token. To also recor",
+     "rect": {
+      "x": 293,
+      "y": 380.1,
+      "w": 1062,
+      "h": 134.75
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "1062px",
+      "height": "134.75px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "8px",
+      "paddingRight": "10px",
+      "paddingBottom": "8px",
+      "paddingLeft": "10px",
+      "marginTop": "4px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(252, 211, 77, 0.6)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(252, 211, 77, 0.6)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(252, 211, 77, 0.6)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(252, 211, 77, 0.6)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgba(255, 251, 235, 0.5)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(82, 82, 82)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"OpenAI Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, sans-serif",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "lineHeight": "16.5px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(82, 82, 82)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(82, 82, 82)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.mt-1.rounded-md",
+       "size": "1062.0x134.8",
+       "border": "T:1px solid rgba(252, 211, 77, 0.6) | R:1px solid rgba(252, 211, 77, 0.6) | B:1px solid rgba(252, 211, 77, 0.6) | L:1px solid rgba(252, 211, 77, 0.6)",
+       "bg": "rgba(255, 251, 235, 0.5)",
+       "radius": "8px"
+      },
+      {
+       "node": "pre.mt-1.5.overflow-x-auto",
+       "size": "1040.0x51.4",
+       "bg": "rgb(245, 245, 245)",
+       "radius": "4px"
+      },
+      {
+       "node": "button.mt-1.inline-flex",
+       "size": "40.0x21.8",
+       "border": "T:1px solid rgb(212, 212, 212) | R:1px solid rgb(212, 212, 212) | B:1px solid rgb(212, 212, 212) | L:1px solid rgb(212, 212, 212)",
+       "radius": "4px"
+      }
+     ],
+     "textStyle": {
+      "node": "div.font-medium.text-oai-gray-700",
+      "text": "Track Copilot token usage",
+      "fontFamily": "\"OpenAI Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, sans-serif",
+      "fontSize": "11px",
+      "lineHeight": "16.5px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "rgb(64, 64, 64)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/warning-notice.light-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "limits",
+   "run": "limits-light",
+   "url": "http://127.0.0.1:7680/limits",
+   "title": "Warning notice",
+   "group": "Badges, tooltips and status",
+   "desc": "The amber notice under a limit (Copilot token usage).",
+   "selector": "div with the amber border on Limits"
+  },
+  "danger-notice.light": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "mb-4 rounded-lg border border-red-200",
+     "text": "Failed to fetch",
+     "rect": {
+      "x": 272,
+      "y": 163,
+      "w": 1104,
+      "h": 46
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "1104px",
+      "height": "46px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "12px",
+      "paddingRight": "16px",
+      "paddingBottom": "12px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "16px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(254, 202, 202)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(254, 202, 202)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(254, 202, 202)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(254, 202, 202)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "rgb(254, 242, 242)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(185, 28, 28)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"OpenAI Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(185, 28, 28)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(185, 28, 28)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.mb-4.rounded-lg",
+       "size": "1104.0x46.0",
+       "border": "T:1px solid rgb(254, 202, 202) | R:1px solid rgb(254, 202, 202) | B:1px solid rgb(254, 202, 202) | L:1px solid rgb(254, 202, 202)",
+       "bg": "rgb(254, 242, 242)",
+       "radius": "12px"
+      }
+     ],
+     "crop": "components/crops/danger-notice.light-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "skills",
+   "run": "skills-light",
+   "url": "http://127.0.0.1:7680/skills",
+   "title": "Error notice",
+   "group": "Badges, tooltips and status",
+   "desc": "Skills reports a failed operation in a red box above the list (Refresh, with its requests aborted in the capture browser).",
+   "selector": "div with the red border on Skills"
+  },
+  "avatar": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "flex shrink-0 items-center justify-center",
+     "text": "A",
+     "rect": {
+      "x": 363.5,
+      "y": 359,
+      "w": 32,
+      "h": 32
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "32px",
+      "height": "32px",
+      "minWidth": "32px",
+      "maxWidth": "none",
+      "minHeight": "32px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "borderTopLeftRadius": "9999px",
+      "borderTopRightRadius": "9999px",
+      "borderBottomRightRadius": "9999px",
+      "borderBottomLeftRadius": "9999px",
+      "backgroundColor": "rgb(62, 123, 50)",
+      "backgroundImage": "none",
+      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"OpenAI Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, sans-serif",
+      "fontSize": "11px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.flex.shrink-0",
+       "size": "32.0x32.0",
+       "bg": "rgb(62, 123, 50)",
+       "shadow": "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "9999px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "span.inline-flex.rounded-full",
+       "radius": "9999px",
+       "bg": "rgb(10, 10, 10)"
+      }
+     ],
+     "crop": "components/crops/avatar-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "leaderboard",
+   "run": "leaderboard-dark",
+   "url": "http://127.0.0.1:7680/leaderboard",
+   "title": "Avatar",
+   "group": "Shell and navigation",
+   "desc": "The initials fallback: a circle in a colour picked from the person, white semibold initials, a 1px ring. A photo takes the same circle. Names and photos were removed from the page before reading.",
+   "selector": "div[aria-hidden].rounded-full on Leaderboard"
+  },
+  "avatar.light": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "flex shrink-0 items-center justify-center",
+     "text": "A",
+     "rect": {
+      "x": 363.5,
+      "y": 359,
+      "w": 32,
+      "h": 32
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "32px",
+      "height": "32px",
+      "minWidth": "32px",
+      "maxWidth": "none",
+      "minHeight": "32px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "borderTopLeftRadius": "9999px",
+      "borderTopRightRadius": "9999px",
+      "borderBottomRightRadius": "9999px",
+      "borderBottomLeftRadius": "9999px",
+      "backgroundColor": "rgb(62, 123, 50)",
+      "backgroundImage": "none",
+      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"OpenAI Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, sans-serif",
+      "fontSize": "11px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.flex.shrink-0",
+       "size": "32.0x32.0",
+       "bg": "rgb(62, 123, 50)",
+       "shadow": "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "9999px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "span.inline-flex.rounded-full",
+       "radius": "9999px",
+       "bg": "rgb(255, 255, 255)"
+      }
+     ],
+     "crop": "components/crops/avatar.light-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "leaderboard",
+   "run": "leaderboard-light",
+   "url": "http://127.0.0.1:7680/leaderboard",
+   "title": "Avatar",
+   "group": "Shell and navigation",
+   "desc": "The initials fallback: a circle in a colour picked from the person, white semibold initials, a 1px ring. A photo takes the same circle. Names and photos were removed from the page before reading.",
+   "selector": "div[aria-hidden].rounded-full on Leaderboard"
   }
  }
 }

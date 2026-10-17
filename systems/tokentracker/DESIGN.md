@@ -62,12 +62,18 @@ colors:
   button-secondary-border: "#d4d4d4"
   button-secondary-hoverFg: "#059669"
   usage-track: "#f5f5f5"
-  status-success: "#10b981"
-  status-warning: "#f59e0b"
-  status-error: "#ef4444"
-  status-successText: "#059669"
+  status-success-base: "#10b981"
+  status-success-text: "#059669"
+  status-warning-base: "#f59e0b"
+  status-warning-surface: "#fffbeb80"
+  status-warning-border: "#fcd34d99"
+  status-warning-text: "#525252"
+  status-danger-base: "#ef4444"
   status-danger-fill: "#dc2626"
-  status-danger-text: "#ffffff"
+  status-danger-onFill: "#ffffff"
+  status-danger-surface: "#fef2f2"
+  status-danger-border: "#fecaca"
+  status-danger-text: "#b91c1c"
   control-switchOn: "#10b981"
   control-switchThumb: "#ffffff"
   control-switchOff: "#d4d4d4"
@@ -179,11 +185,23 @@ typography:
     fontWeight: 500
     lineHeight: "16.8px"
     letterSpacing: "0.12px"
+  text12w400:
+    fontFamily: "-apple-system"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: "16px"
+    letterSpacing: "0px"
   text14w600:
     fontFamily: "-apple-system"
     fontSize: "14px"
     fontWeight: 600
     lineHeight: "20px"
+    letterSpacing: "0px"
+  text10w600:
+    fontFamily: "-apple-system"
+    fontSize: "10px"
+    fontWeight: 600
+    lineHeight: "15px"
     letterSpacing: "0px"
   text11w400:
     fontFamily: "-apple-system"
@@ -195,7 +213,43 @@ typography:
     fontFamily: "-apple-system"
     fontSize: "14px"
     fontWeight: 400
+    lineHeight: "20px"
+    letterSpacing: "0px"
+  text14w400lh21:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 400
     lineHeight: "21px"
+    letterSpacing: "0px"
+  text14w500:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: "20px"
+    letterSpacing: "0px"
+  text13w400:
+    fontFamily: "-apple-system"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "19.5px"
+    letterSpacing: "0px"
+  text10w400:
+    fontFamily: "-apple-system"
+    fontSize: "10px"
+    fontWeight: 400
+    lineHeight: "15px"
+    letterSpacing: "0px"
+  text12w500:
+    fontFamily: "-apple-system"
+    fontSize: "12px"
+    fontWeight: 500
+    lineHeight: "16px"
+    letterSpacing: "0px"
+  text72w700:
+    fontFamily: "-apple-system"
+    fontSize: "72px"
+    fontWeight: 700
+    lineHeight: "72px"
     letterSpacing: "0px"
   text13w500:
     fontFamily: "-apple-system"
@@ -209,11 +263,17 @@ typography:
     fontWeight: 400
     lineHeight: "24px"
     letterSpacing: "0px"
-  text12w500:
+  text12w500lh15:
     fontFamily: "-apple-system"
     fontSize: "12px"
     fontWeight: 500
     lineHeight: "15px"
+    letterSpacing: "0px"
+  text36w600:
+    fontFamily: "-apple-system"
+    fontSize: "36px"
+    fontWeight: 600
+    lineHeight: "40px"
     letterSpacing: "0px"
   text10w500:
     fontFamily: "-apple-system"
@@ -301,7 +361,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-26 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, SF Mono.
+35 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, SF Mono.
 
 ### Fonts (from README.md)
 
@@ -377,7 +437,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The green-tinted greys.** TokenTracker's own `DESIGN.md` and `styles.css` describe a green-tinted neutral ramp (`--oai-gray-*`, oklch hue 145). The components do not render it; they render plain Tailwind neutral hex. The tinted ramp is kept under `core.$extensions.notTokenised` and is not the look.
 - **The source on disk is older than the app.** The running dashboard is v1.4.3; the TokenTracker checkout on this machine is 1.2.2. Where the two differ, the live readings win. Values from the source only are marked Derived: the 72px collapsed sidebar, the content widths and the 12-column Tokens grid.
 - **Focus is mostly absent.** `styles.css` removes outlines and Tailwind rings on every element. Only the sidebar's theme toggle, star pill and collapse chevron, and the Cloud page's controls, draw a ring (2px solid in the ink colour, 2px out). Light text fields turn their border emerald on focus; dark ones do not change. Every other `focus-visible` reading equals its default.
-- **Status colours are thin.** Success renders as emerald text, danger as the red toast and the danger button. Warning renders only as one amber notice on Limits in light, so it has no themed token. No info colour renders anywhere. The status triples (fill, text, border) are not complete.
+- **Status colours are uneven.** Danger has the full set: a solid fill (toast, danger button) and an error notice with surface, border and text (Skills, shown by pressing Refresh with its requests aborted). Warning has the Limits notice's amber surface and border; its text stays neutral. Success is green text only. Info (the sky update badge on Skills) appears only when a skill has an update, which none had, so it is not captured.
 - **The toast is the failure toast.** Copy image cannot reach a clipboard headless, so the product showed "Couldn't generate image" in red. The success toast was not reached.
 - **Light secondary text is just under AA on the wash.** `text.secondary` (`#737373`) is 4.34:1 on `bg.wash` (`#f5f5f5`) and passes on the panel and cards. That is the product's value.
 - **Provider colours** (Claude orange, Codex blue, OpenCode purple) come from a JavaScript map, not CSS. They are not tokenised; the style guide's share bar uses illustrative values.

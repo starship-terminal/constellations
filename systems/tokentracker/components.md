@@ -368,6 +368,37 @@ Crops: [account-control-default](components/crops/account-control-default.png), 
 Crops: [account-control.light-default](components/crops/account-control.light-default.png), [account-control.light-hover](components/crops/account-control.light-hover.png), [account-control.light-focus-visible](components/crops/account-control.light-focus-visible.png).
 
 
+#### Avatar
+
+`avatar` on /leaderboard, found by `div[aria-hidden].rounded-full on Leaderboard`. The initials fallback: a circle in a colour picked from the person, white semibold initials, a 1px ring. A photo takes the same circle. Names and photos were removed from the page before reading.
+
+| dark | default |
+|---|---|
+| size | 32 x 32 |
+| padding | 0px |
+| fill | #3e7b32 (untokenised) |
+| border | none |
+| radius | `radius.full` |
+| text | 11px/20px 600 (untokenised), `text.strong` |
+| shadow | 0px 0px 0px 1px #ffffff1a (untokenised) |
+| transition | none |
+
+Crops: [avatar-default](components/crops/avatar-default.png).
+
+| light | default |
+|---|---|
+| size | 32 x 32 |
+| padding | 0px |
+| fill | #3e7b32 (untokenised) |
+| border | none |
+| radius | `radius.full` |
+| text | 11px/20px 600 (untokenised), `bg.card` |
+| shadow | 0px 0px 0px 1px #ffffff1a (untokenised) |
+| transition | none |
+
+Crops: [avatar.light-default](components/crops/avatar.light-default.png).
+
+
 ### Buttons and segmented controls
 
 #### Period tabs
@@ -1204,7 +1235,7 @@ Crops: [card-title.light-default](components/crops/card-title.light-default.png)
 |---|---|---|
 | size | 12 x 12 | 15 x 15, scale 1.25 |
 | padding | 0px | = |
-| fill | `status.success` | = |
+| fill | `status.success.base` | = |
 | border | none | = |
 | radius | `radius.xs` | = |
 | text | `typography.body`, `text.primary` | = |
@@ -1428,7 +1459,7 @@ Crops: [table-header.light-default](components/crops/table-header.light-default.
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.text14w400`, `text.primary` |
+| text | `typography.text14w400lh21`, `text.primary` |
 | shadow | none |
 | transition | none |
 
@@ -1441,7 +1472,7 @@ Crops: [table-cell-default](components/crops/table-cell-default.png).
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.text14w400`, `text.primary` |
+| text | `typography.text14w400lh21`, `text.primary` |
 | shadow | none |
 | transition | none |
 
@@ -1459,7 +1490,7 @@ Crops: [table-cell.light-default](components/crops/table-cell.light-default.png)
 | fill | transparent | `bg.rowHover` |
 | border | bottom `border.width.default` `bg.subtle` | = |
 | radius | 0px | = |
-| text | `typography.text14w400`, `text.linkHover` | = |
+| text | `typography.text14w400lh21`, `text.linkHover` | = |
 | shadow | none | = |
 | transition | color, background-color +4 `motion.duration.fast` | = |
 
@@ -1472,7 +1503,7 @@ Crops: [table-row-default](components/crops/table-row-default.png), [table-row-h
 | fill | transparent | `bg.rowHover` |
 | border | bottom `border.width.default` `bg.wash` | = |
 | radius | 0px | = |
-| text | `typography.text14w400`, `text.secondary` | = |
+| text | `typography.text14w400lh21`, `text.secondary` | = |
 | shadow | none | = |
 | transition | color, background-color +4 `motion.duration.fast` | = |
 
@@ -1934,7 +1965,7 @@ Crops: [share-dialog.light-open](components/crops/share-dialog.light-open.png).
 | fill | `status.danger.fill` |
 | border | none |
 | radius | `radius.full` |
-| text | `typography.control`, `status.danger.text` |
+| text | `typography.control`, `status.danger.onFill` |
 | shadow | `shadow.md` |
 | transition | none |
 
@@ -1947,7 +1978,7 @@ Crops: [toast-open](components/crops/toast-open.png).
 | fill | `status.danger.fill` |
 | border | none |
 | radius | `radius.full` |
-| text | `typography.control`, `status.danger.text` |
+| text | `typography.control`, `status.danger.onFill` |
 | shadow | `shadow.md` |
 | transition | none |
 
@@ -2023,7 +2054,7 @@ Crops: [confirm-dialog.light-open](components/crops/confirm-dialog.light-open.pn
 | fill | `bg.subtle` |
 | border | `border.width.default` `border.strong` |
 | radius | `radius.lg` |
-| text | `typography.groupLabel` with letter-spacing 0px, `text.strong` |
+| text | `typography.text10w400`, `text.strong` |
 | shadow | `shadow.lgBare` |
 | transition | all `motion.duration.base` |
 
@@ -2036,7 +2067,7 @@ Crops: [hint-tooltip-open](components/crops/hint-tooltip-open.png).
 | fill | `text.label` |
 | border | `border.width.default` `button.primary.hover` |
 | radius | `radius.lg` |
-| text | `typography.groupLabel` with letter-spacing 0px, `bg.card` |
+| text | `typography.text10w400`, `bg.card` |
 | shadow | `shadow.lgBare` |
 | transition | all `motion.duration.base` |
 
@@ -2072,6 +2103,68 @@ Crops: [badge-default](components/crops/badge-default.png).
 | transition | none |
 
 Crops: [badge.light-default](components/crops/badge.light-default.png).
+
+
+#### Warning notice
+
+`warning-notice` on /limits, found by `div with the amber border on Limits`. The amber notice under a limit (Copilot token usage).
+
+| dark | default |
+|---|---|
+| size | 1062 x 134.75 |
+| padding | `space.scale.2` `space.scale.2_5` |
+| fill | `status.warning.surface` |
+| border | `border.width.default` `status.warning.border` |
+| radius | `radius.lg` |
+| text | 11px/16.5px 500 (untokenised), `text.label` |
+| shadow | none |
+| transition | none |
+
+Crops: [warning-notice-default](components/crops/warning-notice-default.png).
+
+| light | default |
+|---|---|
+| size | 1062 x 134.75 |
+| padding | `space.scale.2` `space.scale.2_5` |
+| fill | `status.warning.surface` |
+| border | `border.width.default` `status.warning.border` |
+| radius | `radius.lg` |
+| text | 11px/16.5px 500 (untokenised), `text.linkHover` |
+| shadow | none |
+| transition | none |
+
+Crops: [warning-notice.light-default](components/crops/warning-notice.light-default.png).
+
+
+#### Error notice
+
+`danger-notice` on /skills, found by `div with the red border on Skills`. Skills reports a failed operation in a red box above the list (Refresh, with its requests aborted in the capture browser).
+
+| dark | default |
+|---|---|
+| size | 1104 x 46 |
+| padding | `space.scale.3` `space.scale.4` |
+| fill | `status.danger.surface` |
+| border | `border.width.default` `status.danger.border` |
+| radius | `radius.xl` |
+| text | `typography.bodySmall`, `status.danger.text` |
+| shadow | none |
+| transition | none |
+
+Crops: [danger-notice-default](components/crops/danger-notice-default.png).
+
+| light | default |
+|---|---|
+| size | 1104 x 46 |
+| padding | `space.scale.3` `space.scale.4` |
+| fill | `status.danger.surface` |
+| border | `border.width.default` `status.danger.border` |
+| radius | `radius.xl` |
+| text | `typography.bodySmall`, `status.danger.text` |
+| shadow | none |
+| transition | none |
+
+Crops: [danger-notice.light-default](components/crops/danger-notice.light-default.png).
 
 
 ### Page header
@@ -2497,7 +2590,7 @@ Crops: [text-field-error.light-error](components/crops/text-field-error.light-er
 
 | dark | default |
 |---|---|
-| size | 1104 x 2417.69 |
+| size | 1104 x 2363.31 |
 | padding | 0px |
 | fill | `bg.panel` |
 | border | `border.width.default` `bg.subtle` |
@@ -2509,7 +2602,7 @@ Crops: [text-field-error.light-error](components/crops/text-field-error.light-er
 
 | light | default |
 |---|---|
-| size | 1104 x 2417.69 |
+| size | 1104 x 2363.31 |
 | padding | 0px |
 | fill | `bg.card` |
 | border | `border.width.default` `border.default` |
@@ -2619,7 +2712,7 @@ Crops: [usage-track.light-default](components/crops/usage-track.light-default.pn
 
 | dark | default |
 |---|---|
-| size | 335.16 x 6 |
+| size | 512.05 x 6 |
 | padding | 0px |
 | fill | `accent.fill` |
 | border | none |
@@ -2632,7 +2725,7 @@ Crops: [usage-fill-default](components/crops/usage-fill-default.png).
 
 | light | default |
 |---|---|
-| size | 335.16 x 6 |
+| size | 512.05 x 6 |
 | padding | 0px |
 | fill | `accent.fill` |
 | border | none |
@@ -2972,8 +3065,9 @@ Crops: [footer-link.light-default](components/crops/footer-link.light-default.pn
 
 ## Gaps
 
-- **Not captured: signed-in pages.** The signed-in Cloud page, Leaderboard and the account half of Settings need a TokenTracker account; none was signed in. Leaderboard shows other people's handles and avatars, so it was not captured; the signed-out account control stands in for an avatar.
+- **Not captured: signed-in pages.** The signed-in Cloud page, Leaderboard and the account half of Settings need a TokenTracker account; none was signed in. Leaderboard shows other people's names and photos: only its avatar was read, with photos blocked (so the initials fallback renders) and every name and initial replaced first.
 - **Not present: text area and radio.** No page in v1.4.3 renders either.
+- **Not captured: info status.** The sky update badge and banner on Skills render only when a skill has an update; none had one.
 - **The toast** is the share card's failure toast: Copy image cannot reach a clipboard in a headless browser, so the product reports "Couldn't generate image". The success toast ("Image copied to clipboard") was not reached.
 - **Switches are disabled** on every page reached: they work only with the Mac app connected. Their hover and focus states are not available.
 - **The field error** appears only after Test connection (or Save): the host was typed, Test connection was pressed, the check failed before any request, and the field was cleared. Save was never pressed.

@@ -6,7 +6,7 @@ It is the reference for Quiver's macOS app, which takes TokenTracker's look and 
 
 | File | What it is |
 |---|---|
-| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (261: neutral, brand, red, amber, orange, sky and blue ramps, status and heatmap colours, the font stacks, a 9-step size scale (`font.scale`, every size at least 10 rendered elements use), 17 named type roles plus 9 more type styles counted from the rendered text, a 2px-step spacing scale, radii, border width, sizes, the focus ring, shadows for each use, z-index layers, breakpoints, content widths, durations, easings) and `light` and `dark` (65 each: wash, panel, card, raised, overlay and scrim fills, text roles including disabled and link, borders including focus, the focus ring colour, accent default/hover/pressed, primary, danger and disabled buttons, switch tracks, status and heatmap aliases), plus `$themes`. Every token carries `$extensions.source`. |
+| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (304: a ramp for every hue the stylesheet ships, neutral first, at the steps it ships, status and heatmap colours, the font stacks, a 9-step size scale (`font.scale`, every size at least 10 rendered elements use), 17 named type roles aliased to that scale where it holds their size, plus 9 more type styles counted from the rendered text, a 2px-step spacing scale, radii, border width, sizes, the focus ring, shadows for each use, z-index layers, breakpoints, content widths, durations, easings) and `light` and `dark` (71 each: wash, panel, card, raised, overlay and scrim fills, text roles including disabled and link, borders including focus, the focus ring colour, accent default/hover/pressed, primary, danger and disabled buttons, switch tracks, status groups with surface, border and text where the product renders them, heatmap aliases), plus `$themes`. Every token carries `$extensions.source`. |
 | [style-guide.html](style-guide.html) | One self-contained page that rebuilds the shell, controls, lists and tables from the tokens, with a light and dark toggle, and lists every colour role, ramp, type role, radius, size and duration with its source. Open it from disk. |
 | [components.md](components.md) | The pages captured, the shared values (hover, focus, pressed, disabled, motion, radii), one entry per component with dark and light state tables written in token names, crops, the icon index and the Gaps. |
 | [patterns.md](patterns.md) | The app shell, page header, forms and validation, empty/loading/error states, destructive confirmation, feedback, search and filtering, data display and first run, each with its components, layout and screenshots. |
@@ -24,9 +24,9 @@ The rendered neutrals do not come from custom properties. Components use Tailwin
 
 [census.mjs](tools/capture/public/census.mjs) walks every visible element on ten pages in both themes and counts each colour, shadow, z-index, padding, gap, radius and font size, with where it appears. The spacing scale, the status colours and the z-index layers come from those counts, so a value seen once does not become a token. It also reads the stylesheet's media queries (breakpoints, reduced motion) and the Tailwind colour utilities the bundle ships, which give the red, amber, orange, sky and blue ramps their steps.
 
-Look, don't act. Every capture browser aborts any request that is not a read (GET, HEAD, OPTIONS), so no click could save, sync, remove or send anything. The only interactions: period and table tabs, the sidebar chevron, filter selects (closed with Escape), the mobile menu, page sub-navigation, a search typed and cleared, Share then Copy image (drawn and copied inside the headless browser, which has no clipboard, so it reports a failure), one Skills row ticked then its Remove confirmation opened and cancelled with Escape, and the Network proxy switched to Manual in the page, an invalid host typed and checked with Test connection, then cleared and switched back without saving. The loading and error states are Sessions with its request held back or aborted in the capture browser. The first run is a second TokenTracker started with an empty home folder on port 7681.
+Look, don't act. Every capture browser aborts any request that is not a read (GET, HEAD, OPTIONS), so no click could save, sync, remove or send anything. The only interactions: period and table tabs, the sidebar chevron, filter selects (closed with Escape), the mobile menu, page sub-navigation, a search typed and cleared, Share then Copy image (drawn and copied inside the headless browser, which has no clipboard, so it reports a failure), one Skills row ticked then its Remove confirmation opened and cancelled with Escape, Skills' Refresh pressed with its requests aborted (to show the error notice), and the Network proxy switched to Manual in the page, an invalid host typed and checked with Test connection, then cleared and switched back without saving. The loading and error states are Sessions with its request held back or aborted in the capture browser. The first run is a second TokenTracker started with an empty home folder on port 7681.
 
-The dashboard shows the owner's real usage. Before every screenshot, crop and reading, [lib.mjs](tools/capture/public/lib.mjs) replaces home-directory paths, session and project titles and installed skill names in the page, using a redaction file kept outside the repository. Usage figures, model names and plan names are left as they were. Leaderboard (other people's handles and avatars) and Claude IP Check (the machine's IP address and location) were not captured.
+The dashboard shows the owner's real usage. Before every screenshot, crop and reading, [lib.mjs](tools/capture/public/lib.mjs) replaces home-directory paths, session and project titles and installed skill names in the page, using a redaction file kept outside the repository. Usage figures, model names and plan names are left as they were. Leaderboard shows other people's names and photos, so only its avatar component was read: photo requests were blocked so each avatar fell back to the product's initials circle, every name and initial in the page was replaced, and no screenshot of the page was kept. Claude IP Check (the machine's IP address and location) was not captured.
 
 Screenshots are 256-colour PNGs. Flat UI colours survive exactly; read values from the tokens, not the images.
 
@@ -35,7 +35,7 @@ Screenshots are 256-colour PNGs. Flat UI colours survive exactly; read values fr
 - **The green-tinted greys.** TokenTracker's own `DESIGN.md` and `styles.css` describe a green-tinted neutral ramp (`--oai-gray-*`, oklch hue 145). The components do not render it; they render plain Tailwind neutral hex. The tinted ramp is kept under `core.$extensions.notTokenised` and is not the look.
 - **The source on disk is older than the app.** The running dashboard is v1.4.3; the TokenTracker checkout on this machine is 1.2.2. Where the two differ, the live readings win. Values from the source only are marked Derived: the 72px collapsed sidebar, the content widths and the 12-column Tokens grid.
 - **Focus is mostly absent.** `styles.css` removes outlines and Tailwind rings on every element. Only the sidebar's theme toggle, star pill and collapse chevron, and the Cloud page's controls, draw a ring (2px solid in the ink colour, 2px out). Light text fields turn their border emerald on focus; dark ones do not change. Every other `focus-visible` reading equals its default.
-- **Status colours are thin.** Success renders as emerald text, danger as the red toast and the danger button. Warning renders only as one amber notice on Limits in light, so it has no themed token. No info colour renders anywhere. The status triples (fill, text, border) are not complete.
+- **Status colours are uneven.** Danger has the full set: a solid fill (toast, danger button) and an error notice with surface, border and text (Skills, shown by pressing Refresh with its requests aborted). Warning has the Limits notice's amber surface and border; its text stays neutral. Success is green text only. Info (the sky update badge on Skills) appears only when a skill has an update, which none had, so it is not captured.
 - **The toast is the failure toast.** Copy image cannot reach a clipboard headless, so the product showed "Couldn't generate image" in red. The success toast was not reached.
 - **Light secondary text is just under AA on the wash.** `text.secondary` (`#737373`) is 4.34:1 on `bg.wash` (`#f5f5f5`) and passes on the panel and cards. That is the product's value.
 - **Provider colours** (Claude orange, Codex blue, OpenCode purple) come from a JavaScript map, not CSS. They are not tokenised; the style guide's share bar uses illustrative values.
@@ -105,12 +105,12 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md).
 
 | Item | Status | Where |
 |---|---|---|
-| Colour ramps | Captured | `core.color.neutral`, `brand`, `red`, `amber`, `orange`, `sky`, `blue` (the steps the stylesheet ships); thinner hues listed under `notTokenised.otherHues` |
+| Colour ramps | Captured | `core.color.*`: neutral and brand 11 steps, then every hue the stylesheet ships at the steps it ships (red and amber 8, the chart hues fewer) |
 | Background roles | Captured | `bg.wash` (page), `bg.panel` and `bg.card` (surface), `bg.raised` (menus), `bg.overlay` (dialogs), `bg.scrim` |
 | Text roles | Captured | `text.primary`, `secondary`, `disabled`, `onPrimary`, `link`, `linkHover` |
 | Border roles | Captured | `border.default`, `strong`, `hover`, `focus` (light changes on focus; dark does not) |
 | Accent states | Captured | `accent.default`, `hover`, `pressed` (pressed equals hover); `button.primary.*` |
-| Status colours | Partly captured | Success text and danger fill and text; warning renders only once in light, info never. See What to distrust |
+| Status colours | Partly captured | Danger: fill, surface, border, text. Warning: surface, border, (neutral) text. Success: text. Info: not rendered. See What to distrust |
 | Type roles | Captured | `core.font.scale` (10, 11, 12, 13, 14, 16, 18, 36, 72px); `core.typography`: 17 named roles (display, headings, body, label, caption, code in the mono stack) and 9 styles counted from rendered text |
 | Spacing | Captured | `core.space.scale` (counted from every rendered padding and gap) |
 | Radii, borders | Captured | `core.radius`, `core.border` |
@@ -136,7 +136,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md).
 | Card | Captured | `card`, `provider-tile`, `stat-chip`, `status-row`, `settings-card` |
 | List row | Captured | `list-row`, `list-row-title` |
 | Table | Captured | `table-header`, `table-cell`, `table-row` |
-| Avatar | Not captured | Signed out: `account-control` shows the app mark and "Sign in" where an avatar would be. Leaderboard avatars are other people's |
+| Avatar | Captured | `avatar`: the initials circle on Leaderboard, names and photos removed first; signed out, the sidebar shows `account-control` instead |
 | Badge | Captured | `badge`, `status-badge` |
 | App shell and navigation | Captured | [patterns.md](patterns.md); collapsed and mobile shots |
 | Form with a validation error | Captured | `settings-*-network-error`; [patterns.md](patterns.md) |
@@ -148,7 +148,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md).
 | Onboarding | Captured | `onboarding-*` from an empty install |
 | Light and dark | Captured | Every page and component |
 | Desktop and phone widths | Captured | 1440 for all pages; 390 for Tokens, Sessions, Limits, Settings |
-| Signed-in pages | Not captured | Cloud (signed in), Leaderboard, Settings > Account need an account |
+| Signed-in pages | Not captured | Cloud (signed in) and Settings > Account need an account; Leaderboard read for its avatar only |
 
 ## Rebuild
 
