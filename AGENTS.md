@@ -55,9 +55,11 @@ illustrations or brand colours into something that ships
 - **Packages are copied evidence. Do not edit their contents casually.**
   The nine reference packages are byte-identical to self-learn at commit
   `84a260ac`, and linear and polaris to their original work-project sources apart from the
-  2026-10-10 move of their evidence and builders into `evidence/` and
-  `tools/` (and `GUIDE.md`, `index.html` renamed to `README.md`,
-  `style-guide.html`), and Linear's app evidence, anonymised on 2026-10-11. A fix to a
+  2026-10-10 move of their builders into `tools/` (and `GUIDE.md`,
+  `index.html` renamed to `README.md`, `style-guide.html`), Linear's app
+  evidence, anonymised on 2026-10-11, and the 2026-10-17 move into the
+  standard layout (`tokens.json` at the top, readings in `raw/`, component
+  material in `components.md`). A fix to a
   package goes through its builders (everything under the package's
   `tools/`), and the builders' output must be committed with the input that
   changed it.

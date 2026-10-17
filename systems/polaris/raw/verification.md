@@ -23,7 +23,15 @@ Scope: desktop reference gallery. Not an exhaustive automated accessibility audi
 Headless Chromium through Playwright (`tools/screenshots.mjs`), against the gallery rebuilt from the same pinned packages.
 
 - `npm ci --ignore-scripts` into a throwaway folder, then `npm run build` before any change: every committed output came back byte-identical, `assets/gallery.js` included.
-- After the change, all 1,812 theme tokens in `tokens/polaris.tokens-studio.json` resolve (through the new ramp aliases) to exactly their values in `tokens/polaris-themes.raw.json`; the builder also throws if any alias would not.
+- After the change, all 1,812 theme tokens in `tokens.json` resolve (through the new ramp aliases) to exactly their values in `raw/polaris-themes.raw.json`; the builder also throws if any alias would not.
 - Screenshots 01 to 15 re-shot at 1440 px by the script (the originals were 1327 px wide, taken through computer use). New: 16 to 21 (app shell, toasts, states, delete confirmation, open tooltip), `screenshots/dark/` (nine sections in `dark-experimental`) and `screenshots/phone/` (the same nine at 390 px). The browser console reported no errors or warnings while shooting.
 - Focus-visible: 23 controls focused after a Tab key press; all 23 matched `:focus-visible`. Crops in `screenshots/focus/` at 2x, computed changes in `focus-states.json`. Tabs use a roving tabindex, so the selected tab is the one captured.
 - `dark-experimental` keeps the light input surface (`color-input-bg-surface` `#FDFDFD`) while `color-text` becomes `#E3E3E3`: typed text on inputs is 1.26:1 and unreadable in [dark/07-forms](../screenshots/dark/07-forms.png). Critical tokens do not change either; see [dark/05-buttons](../screenshots/dark/05-buttons.png).
+
+## Layout move, 2026-10-17
+
+The package moved to the standard layout: the tokens to `tokens.json`, the raw token inputs and everything from `evidence/` to `raw/`, and the component findings into `components.md`. The builders write the new paths.
+
+- `npm ci --ignore-scripts`, `npm run build` and `tools/build_vectors.py` were run before and after the move. Every output came back byte-identical at its new path except `assets/gallery.js`, which changed only by its two links (`raw/provenance.json`, `components.md`) and the minifier's renaming that follows from them.
+- `assets/inter-preview.ttf` differs on every run of `build_vectors.py` by its `head.modified` timestamp alone, so the committed copy was kept.
+- The style guide, served by `tools/catalog.py serve`, fetched `assets/library.json`, `assets/tokens.json` and `assets/icons.json`, and its links to `raw/provenance.json` and `components.md` resolved.
