@@ -2933,7 +2933,7 @@ Tokens (light):
 | unselected rule | border-color | `border.default` #E5E5E5 (swan, light) | characters-light-default #165 |
 
 Type:
-- label: duolingo-sans `typography.app.bodyStrong` 700 17px / 20px uppercase, letter-spacing 0.03em (0.51px) (characters-dark-default #155; css:9416 ._3ugho, ._1xZUP)
+- label: duolingo-sans 700 17px / 20px uppercase, letter-spacing 0.03em (0.51px) (characters-dark-default #155; css:9416 ._3ugho, ._1xZUP)
 
 Contains: tabs (underline)
 

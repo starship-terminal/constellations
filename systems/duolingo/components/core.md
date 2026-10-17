@@ -587,7 +587,7 @@ Crops: [dark: toggle-dark.png](crops/toggle-dark.png) [dark: toggle-off-dark.png
 | height | 52px |
 | padding | `space.15` 15px 0 |
 | border_bottom | `borderWidth.2` 2px |
-| font | `typography.app.bodyStrong` 700 17px/20px, letter-spacing .03em (0.51px), uppercase |
+| font | 700 17px/20px, letter-spacing .03em (0.51px), uppercase |
 | width | 158px each at 480px column (dark), 195px at 592px (light) |
 | CSS source | css:9416-975668fa.css ._3ugho { border-bottom:2px solid rgb(var(--color-swan)); color:rgb(var(--color-hare)); font-size:17px; letter-spacing:.03em; padding:15px 0; text-transform:uppercase } |
 
@@ -652,11 +652,11 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| selected (dark) | profile-dark-default#144 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px `space.12` 12px `space.10` 10px |  | 0px 0px `borderWidth.2` 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | label `typography.heading.xsmall` 700 16px/20px ls 0.8px uppercase |
-| unselected (dark) | profile-dark-default#147 <span> cl='_38_oS bsF09' | 182x34 | 0px `space.10` 10px `space.12` 12px 0px |  | 0px 0px `borderWidth.2` 2px 0px transparent |  | `text.secondary` #DCE6EC (wolf, dark) | label `typography.heading.xsmall` 700 16px/20px ls 0.8px uppercase |
-| strip (dark) | profile-dark-default#142 <ul> cl='_1SZs_ _3Jy0n _2Rt1l' | 364x50 |  |  | 0px 0px `borderWidth.2` 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.xsmall` 700 16px/20px ls 0.8px uppercase |
-| selected (light) | profile-light-default#145 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px `space.12` 12px `space.10` 10px |  | 0px 0px `borderWidth.2` 2px 0px `border.focus` #1CB0F6 (macaw, light) |  | `text.link` #1CB0F6 (macaw, light) | label `typography.heading.xsmall` 700 16px/20px ls 0.8px uppercase |
-| unselected (light) | profile-light-default#148 <span> cl='_38_oS bsF09' | 182x34 | 0px `space.10` 10px `space.12` 12px 0px |  | 0px 0px `borderWidth.2` 2px 0px transparent |  | #999999 (NO-PALETTE-MATCH, light) | label `typography.heading.xsmall` 700 16px/20px ls 0.8px uppercase |
+| selected (dark) | profile-dark-default#144 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px `space.12` 12px `space.10` 10px |  | 0px 0px `borderWidth.2` 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | label 700 16px/20px ls 0.8px uppercase |
+| unselected (dark) | profile-dark-default#147 <span> cl='_38_oS bsF09' | 182x34 | 0px `space.10` 10px `space.12` 12px 0px |  | 0px 0px `borderWidth.2` 2px 0px transparent |  | `text.secondary` #DCE6EC (wolf, dark) | label 700 16px/20px ls 0.8px uppercase |
+| strip (dark) | profile-dark-default#142 <ul> cl='_1SZs_ _3Jy0n _2Rt1l' | 364x50 |  |  | 0px 0px `borderWidth.2` 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 16px/20px ls 0.8px uppercase |
+| selected (light) | profile-light-default#145 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px `space.12` 12px `space.10` 10px |  | 0px 0px `borderWidth.2` 2px 0px `border.focus` #1CB0F6 (macaw, light) |  | `text.link` #1CB0F6 (macaw, light) | label 700 16px/20px ls 0.8px uppercase |
+| unselected (light) | profile-light-default#148 <span> cl='_38_oS bsF09' | 182x34 | 0px `space.10` 10px `space.12` 12px 0px |  | 0px 0px `borderWidth.2` 2px 0px transparent |  | #999999 (NO-PALETTE-MATCH, light) | label 700 16px/20px ls 0.8px uppercase |
 
 **States**
 

@@ -12032,7 +12032,7 @@
     "type": [
      {
       "part": "label",
-      "value": "duolingo-sans `typography.app.bodyStrong` 700 17px / 20px uppercase, letter-spacing 0.03em (0.51px)",
+      "value": "duolingo-sans 700 17px / 20px uppercase, letter-spacing 0.03em (0.51px)",
       "source": "characters-dark-default #155; css:9416 ._3ugho, ._1xZUP"
      }
     ]

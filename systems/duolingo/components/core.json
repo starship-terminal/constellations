@@ -5614,7 +5614,7 @@
     "height": "52px",
     "padding": "`space.15` 15px 0",
     "border_bottom": "`borderWidth.2` 2px",
-    "font": "`typography.app.bodyStrong` 700 17px/20px, letter-spacing .03em (0.51px), uppercase",
+    "font": "700 17px/20px, letter-spacing .03em (0.51px), uppercase",
     "width": "158px each at 480px column (dark), 195px at 592px (light)",
     "source": [
      "css:9416-975668fa.css ._3ugho { border-bottom:2px solid rgb(var(--color-swan)); color:rgb(var(--color-hare)); font-size:17px; letter-spacing:.03em; padding:15px 0; text-transform:uppercase }"

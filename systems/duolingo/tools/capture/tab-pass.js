@@ -4,6 +4,7 @@
 //   1. __restAll()          record the resting style of every focusable element and three ancestors
 //   2. press Tab (a real key press through the pane, so :focus-visible is set)
 //   3. __tab('<page>')      diff the focused element and its ancestors against rest, push to __flog
+//      (__tab('<page>', 'ArrowDown') after an arrow key; build_focus_md.py reads these records as saved)
 // Call __restAll() again after a menu or dialog opens, so its rows have a resting read.
 // Get the log out with JSON.stringify({focus: __flog}). Reads after a script focus() are not key
 // presses and were left out of the saved file.
@@ -30,12 +31,12 @@
     document.querySelectorAll('a,button,input,textarea,select,[tabindex],[role]').forEach(e => { for (const c of chain(e)) if (!__rest.has(c)) { __rest.set(c, one(c)); n++; } });
     return n;
   };
-  window.__tab = (page) => {
+  window.__tab = (page, key = 'Tab') => {
     const e = document.activeElement;
     if (!e || e === document.body) { __flog.push({ page, el: 'body' }); return 'body'; }
     const levels = chain(e).map((c, i) => { const r = __rest.get(c); return { level: i, cls: (c.getAttribute('class') || '').slice(0, 50), diff: r ? dif(r, one(c)) : null }; });
     const me = one(e);
-    const rec = { page, tag: me.tag, cls: me.cls, role: me.role, dt: me['data-test'], aria: me['aria-label'], sel: me['aria-selected'] || me['aria-checked'], type: me.type, rect: me.rect, fv: e.matches(':focus-visible'), levels };
+    const rec = { page, key, tag: me.tag, cls: me.cls, role: me.role, dt: me['data-test'], aria: me['aria-label'], sel: me['aria-selected'] || me['aria-checked'], type: me.type, rect: me.rect, fv: e.matches(':focus-visible'), levels };
     __flog.push(rec);
     const vis = levels.filter(l => l.diff && Object.keys(l.diff).filter(k => !/outline-offset/.test(k)).length).map(l => l.level + ':' + Object.keys(l.diff).join(','));
     return [me.tag, me.role || '', me['data-test'] || '', me.cls.slice(0, 30), 'fv=' + rec.fv, vis.join(' | ') || 'no visible change'].join(' ; ');

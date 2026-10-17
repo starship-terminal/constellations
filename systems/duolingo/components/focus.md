@@ -91,8 +91,8 @@ Same method, dark theme, 1440x900 ([tools/capture/tab-pass.js](../tools/capture/
 | 41 | lesson-dark-footer-correct | Tab | Icon button (lesson settings gear) | yes | no computed change |
 | 42 | lesson-dark-footer-correct | Tab | Footer feedback button (Too easy / Too difficult) | yes | no computed change |
 | 43 | lesson-dark-footer-correct | Tab | Footer feedback button (Too easy / Too difficult) | yes | no computed change |
-| 44 | lesson-dark-report-form | Tab | Checkbox (native input) | yes | outline-offset 1px with outline-style none (no ring drawn) |
-| 45 | lesson-dark-report-form | Tab | Checkbox (native input) | yes | outline-offset 1px with outline-style none (no ring drawn) |
+| 44 | lesson-dark-report-form | Tab | Checkbox (native input) | yes | outline-offset 2px with outline-style none (no ring drawn) |
+| 45 | lesson-dark-report-form | Tab | Checkbox (native input) | yes | outline-offset 2px with outline-style none (no ring drawn) |
 | 46 | sections-math-dark | Tab | Segmented tab (Grades / Topics) | yes | no computed change |
 | 47 | sections-math-dark | Tab | Segmented tab (Grades / Topics) | yes | no computed change |
 | 48 | sections-math-dark | Tab | Section-group row (Math section picker, role=button) | yes | 2px solid outline in rgb(73, 192, 248) (`border.focus`, macaw), offset -2px (drawn inside the row) |

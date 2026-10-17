@@ -279,10 +279,10 @@ def type_token(m, text):
     w, size, lh, unit = m.groups()
     lh = lh + "px" if unit else ("%g" % round(float(size) * float(lh), 2)) + "px"
     cands = TYPE.get((w, size + "px", lh), [])
-    if len(cands) > 1:
-        sp = SPACING.match(text[m.end():])
-        if sp:
-            cands = [c for c in cands if c[1] == ("%g" % float(sp.group(1))) + "px"] or cands
+    sp = SPACING.match(text[m.end():])
+    if sp:  # spacing written beside the shorthand must match the style's, or it stays raw
+        written = ("%g" % float(sp.group(1))) + "px"
+        cands = [c for c in cands if ("%g" % float(c[1].rstrip("px") or 0) + "px" if c[1] and c[1] != "normal" else "0px") == written]
     return cands
 
 def size_token(value, ctx):

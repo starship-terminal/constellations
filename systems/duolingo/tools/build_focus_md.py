@@ -13,6 +13,21 @@ PKG = pathlib.Path(__file__).resolve().parent.parent
 d = json.loads((PKG / "raw/2026-10/live-measurements.json").read_text())
 d2 = json.loads((PKG / "raw/2026-10/live-measurements-2.json").read_text())
 
+def normalise(r):
+    """tab-pass.js saves levels (0 = the control, 1-3 = ancestors); the committed file holds
+    diff / ancestorDiff. Read either, so a fresh capture rebuilds without a conversion step."""
+    if "levels" in r:
+        lv = r.pop("levels") or []
+        r["diff"] = (lv[0].get("diff") or {}) if lv else {}
+        anc = {str(l["level"]): l["diff"] for l in lv[1:] if l.get("diff")}
+        if anc:
+            r["ancestorDiff"] = anc
+    if not r.get("note"):
+        r.setdefault("key", "Tab")
+    return r
+
+d2["focus"] = [normalise(r) for r in d2["focus"] if r.get("el") != "body"]
+
 def kind(r):
     dt, cls, tag, role, typ = r.get("dt") or "", r.get("cls") or "", r.get("tag"), r.get("role"), r.get("type")
     if dt == "det-nav": return "MORE menu row (link)"
@@ -77,7 +92,7 @@ def change2(r):
         parts.append(f"{w} solid outline in {c} (`border.focus`, macaw), offset {o} (drawn inside the row)")
     for k, (a, b) in diff.items():
         if k == "outline-offset":
-            parts.append("outline-offset 1px with outline-style none (no ring drawn)")
+            parts.append(f"outline-offset {b} with outline-style none (no ring drawn)")
         elif k == "background-color" and b == "rgb(32, 47, 54)":
             parts.append(f"fill {a} -> {b} (`surface.subtle`, dark polar)")
         else:
