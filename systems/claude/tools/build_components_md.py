@@ -336,6 +336,12 @@ def props(v):
     if rad != "0px":
         o["radius"] = dim("radius", rad) if " " not in rad else rad
     o["background"] = colour(s["backgroundColor"], role="background")
+    # A cds Button paints on an inner span (.cds-btn-squish), so its hover and press fills only show
+    # there: when the root paints nothing, its first painted layer's fill is a state value too.
+    if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["backgroundImage"] == "none":
+        layer = next((ly for ly in (v.get("paint") or []) if ly.get("bg")), None)
+        if layer:
+            o["inner fill"] = colour(layer["bg"], role="background")
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
         o["image"] = colour(img)[:200]
@@ -404,7 +410,7 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "focus ring", "backdrop", "outline", "text", "underline", "transition", "transform", "press", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "inner fill", "image", "shadow", "focus ring", "backdrop", "outline", "text", "underline", "transition", "transform", "press", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
@@ -532,7 +538,7 @@ W("How to read an entry:")
 W()
 W("- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A height is named by the control-height, size or layout token that holds it; a width only when a layout width token holds it or the box is square, and otherwise it is the instance's content width, written raw and not counted below. A colour with zero alpha reads `transparent`. A value no token holds is written raw: a few line heights (14/21), odd paddings and some drop shadows inside components. @@NAMED@@")
 W("- Text is written as its typography token, then family size/line-height weight in brackets, then its colour, for example `` `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) ``, and is read from the first text node inside the component. A glyph from the icon font reads `Anthropicons` with its icon size step and weight.")
-W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do: a cds Button paints its fill on an inner span, so its hover shows there.")
+W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do: a cds Button paints its fill on an inner span, so its rows also carry that span's fill as `inner fill`, where its hover and press colours show.")
 W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
@@ -640,7 +646,7 @@ def top(ctr, n):
 
 W(f"**Radius.** {top(radii, 10)}. Most of the interface is 8 (rows, icon buttons, menu items, list hover fills, the code block: the comfortable `--cds-radius`); 12 is cards, menus, dialogs and the user bubble (`rounded-card`, radius + 4); 7 and 6 are segmented tracks and their thumbs; 20 is the composer alone; 14 the Make something new tiles; 9999 avatars and switches.")
 W()
-W(f"**Hover.** Claude hovers with a translucent wash of the text colour. Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. The wash is `fill.ghost-hover` (`rgba(255, 255, 255, 0.075)` in dark, `rgba(11, 11, 11, 0.05)` in light) on buttons, menu items and list rows; sidebar rows use `frame.hover`, the same wash in dark and a solid `#f0efec` in light; a selected row is `frame.selected` (15% white, or `#edece8`). A cds Button paints that fill on its inner `.cds-btn-squish` span, so the button itself reads \"no change\".")
+W(f"**Hover.** Claude hovers with a translucent wash of the text colour. Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. The wash is `fill.ghost-hover` (`rgba(255, 255, 255, 0.075)` in dark, `rgba(11, 11, 11, 0.05)` in light) on buttons, menu items and list rows; sidebar rows use `frame.hover`, the same wash in dark and a solid `#f0efec` in light; a selected row is `frame.selected` (15% white, or `#edece8`). A cds Button paints that fill on its inner `.cds-btn-squish` span, so the button itself reads \"no change\" here; its entry's `inner fill` shows the hover colour.")
 W()
 W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 4)}. In light: {top(focus['light'], 4)}. The common ring is `shadow.focus`: a 1px inset of the page colour, a 1px `fill.accent` blue (`#2a78d6`) ring and a 6px blue glow, so focus reads as a blue outline with a halo. The composer's mic and voice buttons, the Thought for N s pill and the message actions use a 2px blue outline offset 2 instead. A row (sidebar row, Chats row, settings nav item) puts the ring on its inner link or button and the sidebar rows add the hover wash; a tab puts it on its inner button. The segmented controls (Chat/Cowork, the Theme picker) are radio groups whose checked radio takes the ring. Menu items take no ring: keyboard focus in a cds Menu is the same `fill.ghost-hover` wash as the pointer ([menu-item-keyboard](#menu-item-keyboard)). The one element that shows nothing is the search dialog's field row, whose focus is the caret in its text area. States named `refresh-focus-visible` were read on the 2026-10-17 copies for components whose 2026-10-04 copy had no focus reading.")
 W()

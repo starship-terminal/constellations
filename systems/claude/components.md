@@ -6,9 +6,9 @@ The full per-state readings are in [raw/measurements.md](raw/measurements.md), w
 
 How to read an entry:
 
-- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A height is named by the control-height, size or layout token that holds it; a width only when a layout width token holds it or the box is square, and otherwise it is the instance's content width, written raw and not counted below. A colour with zero alpha reads `transparent`. A value no token holds is written raw: a few line heights (14/21), odd paddings and some drop shadows inside components. Of the 2721 values written in the state rows and child-layer lines below (zeros and content widths aside), 2442 (90%) name a token.
+- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A height is named by the control-height, size or layout token that holds it; a width only when a layout width token holds it or the box is square, and otherwise it is the instance's content width, written raw and not counted below. A colour with zero alpha reads `transparent`. A value no token holds is written raw: a few line heights (14/21), odd paddings and some drop shadows inside components. Of the 2864 values written in the state rows and child-layer lines below (zeros and content widths aside), 2584 (90%) name a token.
 - Text is written as its typography token, then family size/line-height weight in brackets, then its colour, for example `` `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) ``, and is read from the first text node inside the component. A glyph from the icon font reads `Anthropicons` with its icon size step and weight.
-- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do: a cds Button paints its fill on an inner span, so its hover shows there.
+- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do: a cds Button paints its fill on an inner span, so its rows also carry that span's fill as `inner fill`, where its hover and press colours show.
 - Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (682 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
@@ -58,7 +58,7 @@ Values that apply across entries, tallied from the measurement file.
 
 **Radius.** 8px (280), 6px (40), 7px (40), 12px (32), 9999px (26), 4px (14), 20px (12), 5px (12), 2px (12), 10px (10). Most of the interface is 8 (rows, icon buttons, menu items, list hover fills, the code block: the comfortable `--cds-radius`); 12 is cards, menus, dialogs and the user bubble (`rounded-card`, radius + 4); 7 and 6 are segmented tracks and their thumbs; 20 is the composer alone; 14 the Make something new tiles; 9999 avatars and switches.
 
-**Hover.** Claude hovers with a translucent wash of the text colour. Dark: no change on the element (52), transparent to `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) (7), text `text.secondary` (#c3c2b7) to `fill.primary` (#ffffff) (3), text `text.muted` (#898781) to `text.primary` (#f0efec) (3), text `text.muted` (#898781) to `text.secondary` (#c3c2b7) (3), opacity 0 to 1 (1). Light: no change on the element (52), transparent to `frame.hover` (#f0efec) (4), text `text.secondary` (#52514e) to `text.primary` (#0b0b0b) (3), text `text.muted` (#898781) to `text.primary` (#0b0b0b) (3), text `text.muted` (#898781) to `text.secondary` (#52514e) (3), transparent to `alpha.1` (rgba(11, 11, 11, 0.05)) (3). The wash is `fill.ghost-hover` (`rgba(255, 255, 255, 0.075)` in dark, `rgba(11, 11, 11, 0.05)` in light) on buttons, menu items and list rows; sidebar rows use `frame.hover`, the same wash in dark and a solid `#f0efec` in light; a selected row is `frame.selected` (15% white, or `#edece8`). A cds Button paints that fill on its inner `.cds-btn-squish` span, so the button itself reads "no change".
+**Hover.** Claude hovers with a translucent wash of the text colour. Dark: no change on the element (52), transparent to `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) (7), text `text.secondary` (#c3c2b7) to `fill.primary` (#ffffff) (3), text `text.muted` (#898781) to `text.primary` (#f0efec) (3), text `text.muted` (#898781) to `text.secondary` (#c3c2b7) (3), opacity 0 to 1 (1). Light: no change on the element (52), transparent to `frame.hover` (#f0efec) (4), text `text.secondary` (#52514e) to `text.primary` (#0b0b0b) (3), text `text.muted` (#898781) to `text.primary` (#0b0b0b) (3), text `text.muted` (#898781) to `text.secondary` (#52514e) (3), transparent to `alpha.1` (rgba(11, 11, 11, 0.05)) (3). The wash is `fill.ghost-hover` (`rgba(255, 255, 255, 0.075)` in dark, `rgba(11, 11, 11, 0.05)` in light) on buttons, menu items and list rows; sidebar rows use `frame.hover`, the same wash in dark and a solid `#f0efec` in light; a selected row is `frame.selected` (15% white, or `#edece8`). A cds Button paints that fill on its inner `.cds-btn-squish` span, so the button itself reads "no change" here; its entry's `inner fill` shows the hover colour.
 
 **Focus.** Of 57 elements given a real keyboard focus in dark: the shadow.focus ring (or shadow.focus-danger), on the element or an inner layer (50), a 2px solid outline in `legacy.accent-100` (#5598e7), offset 2px (4), its own ring turns border.strong (the composer, a field that holds the caret) (1), nothing visible on the element or its first layers (1). In light: the shadow.focus ring (or shadow.focus-danger), on the element or an inner layer (50), a 2px solid outline in `legacy.accent-100` (#256abf), offset 2px (4), its own ring turns border.strong (the composer, a field that holds the caret) (1), nothing visible on the element or its first layers (1). The common ring is `shadow.focus`: a 1px inset of the page colour, a 1px `fill.accent` blue (`#2a78d6`) ring and a 6px blue glow, so focus reads as a blue outline with a halo. The composer's mic and voice buttons, the Thought for N s pill and the message actions use a 2px blue outline offset 2 instead. A row (sidebar row, Chats row, settings nav item) puts the ring on its inner link or button and the sidebar rows add the hover wash; a tab puts it on its inner button. The segmented controls (Chat/Cowork, the Theme picker) are radio groups whose checked radio takes the ring. Menu items take no ring: keyboard focus in a cds Menu is the same `fill.ghost-hover` wash as the pointer ([menu-item-keyboard](#menu-item-keyboard)). The one element that shows nothing is the search dialog's field row, whose focus is the caret in its text area. States named `refresh-focus-visible` were read on the 2026-10-17 copies for components whose 2026-10-04 copy had no focus reading.
 
@@ -124,10 +124,10 @@ Child layers: a 68.3x20
 | State | Values |
 |---|---|
 | default | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#c3c2b7) |
-| hover | text Anthropicons `density.icon--sm` (16px, weight 533.25), `on.accent` (#ffffff) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); text Anthropicons `density.icon--sm` (16px, weight 533.25), `on.accent` (#ffffff) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 | light | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#52514e) |
-| light-hover | text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#0b0b0b) |
+| light-hover | inner fill `frame.hover` (#f0efec); text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#0b0b0b) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
@@ -141,10 +141,10 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 | State | Values |
 |---|---|
 | default (same: refresh) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#c3c2b7) |
-| hover | text Anthropicons `density.icon--sm` (16px, weight 533.25), `on.accent` (#ffffff) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); text Anthropicons `density.icon--sm` (16px, weight 533.25), `on.accent` (#ffffff) |
 | refresh-focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 | light (same: light-refresh) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#52514e) |
-| light-hover | text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#0b0b0b) |
+| light-hover | inner fill `frame.hover` (#f0efec); text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#0b0b0b) |
 | light-refresh-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
@@ -347,10 +347,10 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-fill-accent`, `-
 |---|---|
 | default (same: hover, refresh) | size `density.h-control--xs` (24) x `density.h-control--xs` (24); radius `radius.segment-thumb` (6px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#c3c2b7); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
 | refresh-focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| open | text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#f0efec) |
+| open | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#f0efec) |
 | light (same: light-hover, light-refresh) | size `density.h-control--xs` (24) x `density.h-control--xs` (24); radius `radius.segment-thumb` (6px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#52514e); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
 | light-refresh-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light-open | text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#0b0b0b) |
+| light-open | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)); text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#0b0b0b) |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`, `--df-row-ctl`.
 
@@ -362,11 +362,11 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`, `--df-
 
 | State | Values |
 |---|---|
-| default (same: open) | size 164.11 x `density.h-control` (32); padding 0 `density.pad-sm` (8px) 0 `space.0-5` (2px); radius `radius.row` (8px); background transparent; text Anthropic Sans 14/21 400, `text.secondary` (#c3c2b7) |
-| hover | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
+| default (same: open) | size 164.11 x `density.h-control` (32); padding 0 `density.pad-sm` (8px) 0 `space.0-5` (2px); radius `radius.row` (8px); background transparent; inner fill `fill.control` (rgba(255, 255, 255, 0.1)); text Anthropic Sans 14/21 400, `text.secondary` (#c3c2b7) |
+| hover | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); inner fill none |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-open) | size 164.84 x `density.h-control` (32); padding 0 `density.pad-sm` (8px) 0 `space.0-5` (2px); radius `radius.row` (8px); background transparent; text Anthropic Sans 14/21 400, `text.secondary` (#52514e) |
-| light-hover | background `frame.hover` (#f0efec) |
+| light (same: light-open) | size 164.84 x `density.h-control` (32); padding 0 `density.pad-sm` (8px) 0 `space.0-5` (2px); radius `radius.row` (8px); background transparent; inner fill `fill.control` (rgba(11, 11, 11, 0.1)); text Anthropic Sans 14/21 400, `text.secondary` (#52514e) |
+| light-hover | background `frame.hover` (#f0efec); inner fill none |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Child layers: span 24x24 background `fill.control` (rgba(255, 255, 255, 0.1)) radius `radius.full` (9999px)
@@ -406,10 +406,10 @@ Tokens named in its classes: `--cds-avatar-sm`, `--cds-rem-scale`.
 | State | Values |
 |---|---|
 | default | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#c3c2b7) |
-| hover | text Anthropicons `density.icon--sm` (16px, weight 533.25), `on.accent` (#ffffff) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); text Anthropicons `density.icon--sm` (16px, weight 533.25), `on.accent` (#ffffff) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 | light | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#52514e) |
-| light-hover | text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#0b0b0b) |
+| light-hover | inner fill `frame.hover` (#f0efec); text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#0b0b0b) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
@@ -420,8 +420,8 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 12 x 900; background transparent; text Anthropic Sans 14/21 400, `text.primary` (#f0efec) |
-| light (same: light-hover) | size 12 x 900; background transparent; text Anthropic Sans 14/21 400, `text.primary` (#0b0b0b) |
+| default (same: hover) | size 12 x 900; background transparent; inner fill `text.muted` (#898781); text Anthropic Sans 14/21 400, `text.primary` (#f0efec) |
+| light (same: light-hover) | size 12 x 900; background transparent; inner fill `text.muted` (#898781); text Anthropic Sans 14/21 400, `text.primary` (#0b0b0b) |
 
 Child layers: div 3x48 background `text.muted` (#898781) radius `radius.full` (9999px)
 
@@ -435,8 +435,8 @@ Tokens named in its classes: `--cds-resize-pill-force`, `--cds-ring-inner`, `--c
 
 | State | Values |
 |---|---|
-| default | size `density.h-control` (32) x `density.h-control` (32); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#c3c2b7) |
-| light | size `density.h-control` (32) x `density.h-control` (32); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#52514e) |
+| default | size `density.h-control` (32) x `density.h-control` (32); background transparent; inner fill `surface.3` (#20201f); text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#c3c2b7) |
+| light | size `density.h-control` (32) x `density.h-control` (32); background transparent; inner fill `surface.2` (#ffffff); text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#52514e) |
 
 Child layers: div 288x900 background `surface.3` (#20201f) border `borderWidth.default` (1px) solid `border.default` (rgba(255, 255, 255, 0.1)) shadow `frame.shadow-pop` (rgba(255, 255, 255, 0.08) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.4) 0px 4px 12px 0px, rgba(0, 0, 0, 0.5) 0px 16px 40px 0px); div 270x32 background rgba(255, 255, 255, 0.06) radius `radius.row` (8px); div 136x30 background `fill.control` (rgba(255, 255, 255, 0.1)) radius `radius.segment-track` (7px) shadow `component.mode-pill-indicator-shadow` (rgba(255, 255, 255, 0.08) 0px 0px 0px 0.5px inset, rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgba(0, 0, 0, 0.25) 0px 2px 6px -1px)
 
@@ -450,9 +450,11 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-fill-accent`, `-
 
 | State | Values |
 |---|---|
-| default (same: hover) | size `density.h-control--xs` (24) x `density.h-control--xs` (24); radius `radius.segment-thumb` (6px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#c3c2b7); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size `density.h-control--xs` (24) x `density.h-control--xs` (24); radius `radius.segment-thumb` (6px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#c3c2b7); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size `density.h-control--xs` (24) x `density.h-control--xs` (24); radius `radius.segment-thumb` (6px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#52514e); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size `density.h-control--xs` (24) x `density.h-control--xs` (24); radius `radius.segment-thumb` (6px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.secondary` (#52514e); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
@@ -482,8 +484,8 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default | size 1136 x 900; background transparent; text `typography.display` (Anthropic Serif 38/47.5 300), `text.primary` (#f0efec); transition filter `duration.snap` (0.12s) ease-out; icon `density.icon` (20) x `density.icon` (20), `text.primary` (#f0efec); placeholder `text.muted` (#898781) |
-| light | size 1136 x 900; background transparent; text Anthropic Serif 38/47.5 330, `text.primary` (#0b0b0b); transition filter `duration.snap` (0.12s) ease-out; icon `density.icon` (20) x `density.icon` (20), `text.primary` (#0b0b0b); placeholder `text.muted` (#898781) |
+| default | size 1136 x 900; background transparent; inner fill `surface.3` (#20201f); text `typography.display` (Anthropic Serif 38/47.5 300), `text.primary` (#f0efec); transition filter `duration.snap` (0.12s) ease-out; icon `density.icon` (20) x `density.icon` (20), `text.primary` (#f0efec); placeholder `text.muted` (#898781) |
+| light | size 1136 x 900; background transparent; inner fill `surface.2` (#ffffff); text Anthropic Serif 38/47.5 330, `text.primary` (#0b0b0b); transition filter `duration.snap` (0.12s) ease-out; icon `density.icon` (20) x `density.icon` (20), `text.primary` (#0b0b0b); placeholder `text.muted` (#898781) |
 
 Child layers: div 672x120 background `surface.3` (#20201f) border `borderWidth.default` (1px) solid transparent radius `radius.composer` (20px) shadow `component.composer-shadow` (rgba(0, 0, 0, 0.04) 0px 4px 20px 0px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset); div 119.2x28 background `fill.disabled` (rgba(255, 255, 255, 0.05)) radius `radius.segment-track` (7px); div 49.5x26 background `fill.control` (rgba(255, 255, 255, 0.1)) radius `radius.segment-thumb` (6px) shadow `borderWidth.default` (1px) ring inset `border.default` (rgba(255, 255, 255, 0.1)) + `shadow.field-drop` (rgba(0, 0, 0, 0.05) 0px 1px 2px 0px)
 
@@ -497,9 +499,11 @@ Tokens named in its classes: `--app-visual-viewport-height`, `--band-slot-lift`,
 
 | State | Values |
 |---|---|
-| default (same: hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); icon `density.icon` (20) x `density.icon` (20), `text.primary` (#f0efec) |
+| default | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); icon `density.icon` (20) x `density.icon` (20), `text.primary` (#f0efec) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); icon `density.icon` (20) x `density.icon` (20), `text.primary` (#0b0b0b) |
+| light | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); icon `density.icon` (20) x `density.icon` (20), `text.primary` (#0b0b0b) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
@@ -512,9 +516,11 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 117.97 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 117.97 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size 118.77 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size 118.77 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-page-bg`.
@@ -527,8 +533,10 @@ Tokens named in its classes: `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size `density.h-control--sm` (28) x `density.h-control--sm` (28); radius `radius.segment-track` (7px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
-| light (same: light-hover) | size `density.h-control--sm` (28) x `density.h-control--sm` (28); radius `radius.segment-track` (7px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size `density.h-control--sm` (28) x `density.h-control--sm` (28); radius `radius.segment-track` (7px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
+| light | size `density.h-control--sm` (28) x `density.h-control--sm` (28); radius `radius.segment-track` (7px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
@@ -540,9 +548,11 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 57.66 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 57.66 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; inner fill `fill.control` (rgba(255, 255, 255, 0.1)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.secondary-hover` (rgba(255, 255, 255, 0.14)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size 58 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size 58 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; inner fill `fill.secondary` (rgba(255, 255, 255, 0.1)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Child layers: span 57.7x28 background `fill.control` (rgba(255, 255, 255, 0.1)) radius `radius.segment-track` (7px) shadow `shadow.field-drop` (rgba(0, 0, 0, 0.05) 0px 1px 2px 0px)
@@ -626,10 +636,14 @@ Tokens named in its classes: `--cds-border`, `--cds-cursor-interactive`, `--cds-
 
 | State | Values |
 |---|---|
-| default (same: hover, open) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover, light-open) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| open | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
+| light | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
+| light-open | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
@@ -675,10 +689,14 @@ Tokens named in its classes: `--cds-radius`.
 
 | State | Values |
 |---|---|
-| default (same: hover, open) | size 141.98 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 141.98 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover, light-open) | size 142.5 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| open | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
+| light | size 142.5 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
+| light-open | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
@@ -724,9 +742,11 @@ Child layers: button 32x32 radius `radius.row` (8px)
 
 | State | Values |
 |---|---|
-| default (same: hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `on.brand` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; inner fill `fill.brand` (#c6613f); text Anthropicons `density.icon` (20px, weight 433.25), `on.brand` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.brand-hover` (#d97757) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `on.brand` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; inner fill `fill.brand` (#c6613f); text Anthropicons `density.icon` (20px, weight 433.25), `on.brand` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.brand-hover` (#d97757) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Child layers: span 31x31 background `fill.brand` (#c6613f) radius `radius.row` (8px)
@@ -990,9 +1010,11 @@ Child layers: button 650x36 radius `radius.row` (8px)
 
 | State | Values |
 |---|---|
-| default (same: hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus on this surface` (#20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus on this surface` (#ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
@@ -1031,9 +1053,9 @@ The settings dialog: a 192px nav with a search field and two groups (Settings, C
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 167 x `density.h-control` (32); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.muted` (#898781); placeholder `text.muted` (#898781) |
+| default (same: hover) | size 167 x `density.h-control` (32); background transparent; inner fill `fill.disabled` (rgba(255, 255, 255, 0.05)); text Anthropicons `density.icon` (20px, weight 433.25), `text.muted` (#898781); placeholder `text.muted` (#898781) |
 | focus-visible | focus ring on the inner div: `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px) |
-| light (same: light-hover) | size 167 x `density.h-control` (32); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.muted` (#898781); placeholder `text.muted` (#898781) |
+| light (same: light-hover) | size 167 x `density.h-control` (32); background transparent; inner fill `fill.field` (rgba(255, 255, 255, 0.5)); text Anthropicons `density.icon` (20px, weight 433.25), `text.muted` (#898781); placeholder `text.muted` (#898781) |
 | light-focus-visible | focus ring on the inner div: `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px) |
 
 Child layers: div 167x32 background `fill.disabled` (rgba(255, 255, 255, 0.05)) radius `radius.row` (8px) shadow `borderWidth.default` (1px) ring inset `border.default` (rgba(255, 255, 255, 0.1))
@@ -1057,12 +1079,16 @@ Child layers: div 167x32 background `fill.disabled` (rgba(255, 255, 255, 0.05)) 
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, active, active-hover) | size 167 x `density.h-control` (32); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#c3c2b7) |
+| default (same: focus-visible) | size 167 x `density.h-control` (32); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#c3c2b7) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | refresh | size 187 x `density.h-control` (32) |
 | refresh-focus-visible | size 187 x `density.h-control` (32); focus ring on the inner button: `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px) |
-| light (same: light-hover, light-focus-visible, light-active, light-active-hover) | size 167 x `density.h-control` (32); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#52514e) |
+| active, active-hover | inner fill `fill.ghost-selected` (rgba(255, 255, 255, 0.15)) |
+| light (same: light-focus-visible) | size 167 x `density.h-control` (32); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#52514e) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-refresh | size 187 x `density.h-control` (32) |
 | light-refresh-focus-visible | size 187 x `density.h-control` (32); focus ring on the inner button: `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px) |
+| light-active, light-active-hover | inner fill `fill.control` (rgba(11, 11, 11, 0.1)) |
 
 Child layers: button 167x32 radius `radius.row` (8px)
 
@@ -1085,8 +1111,8 @@ Child layers: button 167x32 radius `radius.row` (8px)
 
 | State | Values |
 |---|---|
-| default | size 782 x 56; padding `density.pad-md` (12px) 0; background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); placeholder `text.primary` (#f0efec) |
-| light | size 784 x 56; padding `density.pad-md` (12px) 0; background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); placeholder `text.primary` (#0b0b0b) |
+| default | size 782 x 56; padding `density.pad-md` (12px) 0; background transparent; inner fill `fill.disabled` (rgba(255, 255, 255, 0.05)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); placeholder `text.primary` (#f0efec) |
+| light | size 784 x 56; padding `density.pad-md` (12px) 0; background transparent; inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); placeholder `text.primary` (#0b0b0b) |
 
 Child layers: div 92x32 background `fill.disabled` (rgba(255, 255, 255, 0.05)) radius `radius.row` (8px); input 1x1; input 1x1
 
@@ -1122,8 +1148,8 @@ Tokens named in its classes: `--cds-border`, `--cds-radius`, `--cds-segmented-co
 
 | State | Values |
 |---|---|
-| default | size 782 x 182; background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); placeholder `text.primary` (#f0efec) |
-| light | size 784 x 182; background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); placeholder `text.primary` (#0b0b0b) |
+| default | size 782 x 182; background transparent; inner fill `fill.disabled` (rgba(255, 255, 255, 0.05)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); placeholder `text.primary` (#f0efec) |
+| light | size 784 x 182; background transparent; inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); placeholder `text.primary` (#0b0b0b) |
 
 Child layers: div 92x32 background `fill.disabled` (rgba(255, 255, 255, 0.05)) radius `radius.row` (8px); input 1x1; input 1x1
 
@@ -1227,9 +1253,11 @@ Tokens named in its classes: `--cds-switch-h`, `--cds-switch-knob`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
@@ -1246,8 +1274,8 @@ A chat: the 768px transcript, the user's bubble, "Thought for 6s", Claude's repl
 
 | State | Values |
 |---|---|
-| default | size `layout.transcript-width` (768) x 3142.5; padding `space.1` (4px) `density.pad-lg` (16px) 0 `density.pad-lg` (16px); background transparent; text `typography.heading-regular` (Anthropic Sans 15/20 400), `text.primary` (#f0efec); icon 32 x 32, `text.primary` (#f0efec) |
-| light | size `layout.transcript-width` (768) x 3142.5; padding `space.1` (4px) `density.pad-lg` (16px) 0 `density.pad-lg` (16px); background transparent; text `typography.heading-regular` (Anthropic Sans 15/20 400), `text.primary` (#0b0b0b); icon 32 x 32, `text.primary` (#0b0b0b) |
+| default | size `layout.transcript-width` (768) x 3142.5; padding `space.1` (4px) `density.pad-lg` (16px) 0 `density.pad-lg` (16px); background transparent; inner fill `fill.disabled` (rgba(255, 255, 255, 0.05)); text `typography.heading-regular` (Anthropic Sans 15/20 400), `text.primary` (#f0efec); icon 32 x 32, `text.primary` (#f0efec) |
+| light | size `layout.transcript-width` (768) x 3142.5; padding `space.1` (4px) `density.pad-lg` (16px) 0 `density.pad-lg` (16px); background transparent; inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)); text `typography.heading-regular` (Anthropic Sans 15/20 400), `text.primary` (#0b0b0b); icon 32 x 32, `text.primary` (#0b0b0b) |
 
 Child layers: div 623x288 background `fill.disabled` (rgba(255, 255, 255, 0.05)) radius `radius.card` (12px); button 1x1; button 732x28
 
@@ -1313,8 +1341,8 @@ Child layers: button 732x28
 
 | State | Values |
 |---|---|
-| default | size `layout.transcript-feed-width` (736) x 1309.5; background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec) |
-| light | size `layout.transcript-feed-width` (736) x 1309.5; background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b) |
+| default | size `layout.transcript-feed-width` (736) x 1309.5; background transparent; inner fill rgba(32, 32, 31, 0.5); text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec) |
+| light | size `layout.transcript-feed-width` (736) x 1309.5; background transparent; inner fill `fill.field` (rgba(255, 255, 255, 0.5)); text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b) |
 
 Child layers: div 736x834.5 background rgba(32, 32, 31, 0.5) border `borderWidth.default` (1px) solid `border.default` (rgba(255, 255, 255, 0.1)) radius `radius.row` (8px); table 728x355 border `borderWidth.default` (1px) solid `border.default` (rgba(255, 255, 255, 0.1)) radius `radius.row` (8px); th 170.7x39 background `fill.disabled` (rgba(255, 255, 255, 0.05)) border `borderWidth.default` (1px) solid `border.default` (rgba(255, 255, 255, 0.1)) radius 7px 0px 0px
 
@@ -1400,8 +1428,8 @@ Tokens named in its classes: `--msg-block-radius`.
 
 | State | Values |
 |---|---|
-| default | size 728 x 355; border `borderWidth.default` (1px) solid `border.default` (rgba(255, 255, 255, 0.1)); radius `radius.row` (8px); background transparent; text Anthropic Serif 16/24 500, `text.primary` (#f0efec) |
-| light | size 728 x 355; border `borderWidth.default` (1px) solid `border.default` (rgba(11, 11, 11, 0.1)); radius `radius.row` (8px); background transparent; text Anthropic Serif 16/24 500, `text.primary` (#0b0b0b) |
+| default | size 728 x 355; border `borderWidth.default` (1px) solid `border.default` (rgba(255, 255, 255, 0.1)); radius `radius.row` (8px); background transparent; inner fill `fill.disabled` (rgba(255, 255, 255, 0.05)); text Anthropic Serif 16/24 500, `text.primary` (#f0efec) |
+| light | size 728 x 355; border `borderWidth.default` (1px) solid `border.default` (rgba(11, 11, 11, 0.1)); radius `radius.row` (8px); background transparent; inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)); text Anthropic Serif 16/24 500, `text.primary` (#0b0b0b) |
 
 #### Table header cell
 
@@ -1480,8 +1508,8 @@ The list pages share one 960px page column with a serif page title: Artifacts (t
 
 | State | Values |
 |---|---|
-| default | size `layout.page-width` (960) x 96; background transparent; text `typography.page-title` (Anthropic Serif 24/32 500), `text.primary` (#f0efec) |
-| light | size `layout.page-width` (960) x 96; background transparent; text `typography.page-title` (Anthropic Serif 24/32 500), `text.primary` (#0b0b0b) |
+| default | size `layout.page-width` (960) x 96; background transparent; inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); text `typography.page-title` (Anthropic Serif 24/32 500), `text.primary` (#f0efec) |
+| light | size `layout.page-width` (960) x 96; background transparent; inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)); text `typography.page-title` (Anthropic Serif 24/32 500), `text.primary` (#0b0b0b) |
 
 Child layers: button 40.5469pxx32px background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) radius `radius.row` (8px); span 130.8x28 background `fill.control` (rgba(255, 255, 255, 0.1)) radius `radius.segment-track` (7px) shadow `shadow.field-drop` (rgba(0, 0, 0, 0.05) 0px 1px 2px 0px)
 
@@ -1512,8 +1540,8 @@ Tokens named in its classes: `--cds-page-header-title-leading`, `--cds-page-head
 
 | State | Values |
 |---|---|
-| default | size 233.64 x `density.h-control` (32); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#f0efec) |
-| light | size 234.45 x `density.h-control` (32); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#0b0b0b) |
+| default | size 233.64 x `density.h-control` (32); background transparent; inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#f0efec) |
+| light | size 234.45 x `density.h-control` (32); background transparent; inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#0b0b0b) |
 
 Child layers: button 40.5469pxx32px background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) radius `radius.row` (8px)
 
@@ -1526,13 +1554,13 @@ Child layers: button 40.5469pxx32px background `fill.ghost-hover` (rgba(255, 255
 | State | Values |
 |---|---|
 | default (same: refresh) | size 61.33 x `density.h-control` (32); padding 0 `density.pad-md` (12px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.muted` (#898781) |
-| hover | text `typography.body-medium` (Anthropic Sans 14/20 500), `text.secondary` (#c3c2b7) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.secondary` (#c3c2b7) |
 | focus-visible, refresh-focus-visible | focus ring on the inner button: `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| selected, selected-hover | size 41.55 x `density.h-control` (32); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#f0efec) |
+| selected, selected-hover | size 41.55 x `density.h-control` (32); inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#f0efec) |
 | light (same: light-refresh) | size 61.5 x `density.h-control` (32); padding 0 `density.pad-md` (12px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.muted` (#898781) |
-| light-hover | text `typography.body-medium` (Anthropic Sans 14/20 500), `text.secondary` (#52514e) |
+| light-hover | inner fill `fill.ghost-hover` (rgba(11, 11, 11, 0.05)); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.secondary` (#52514e) |
 | light-focus-visible, light-refresh-focus-visible | focus ring on the inner button: `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light-selected, light-selected-hover | size 41.66 x `density.h-control` (32); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#0b0b0b) |
+| light-selected, light-selected-hover | size 41.66 x `density.h-control` (32); inner fill `fill.ghost-hover` (rgba(11, 11, 11, 0.05)); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#0b0b0b) |
 
 #### Page header icon button
 
@@ -1542,9 +1570,11 @@ Child layers: button 40.5469pxx32px background `fill.ghost-hover` (rgba(255, 255
 
 | State | Values |
 |---|---|
-| default (same: hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
@@ -1557,10 +1587,12 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 105.56 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 105.56 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.primary` (#ffffff); text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.primary-hover` (#e1e0d9) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 | link | size 54.53 x `density.h-control` (32) |
-| light (same: light-hover) | size 105.92 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size 105.92 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.primary` (#0b0b0b); text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.primary-hover` (#2c2c2a) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 | light-link | size 54.63 x `density.h-control` (32) |
 
@@ -1576,8 +1608,8 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default | size `layout.page-width` (960) x 138; radius `radius.card` (12px); background transparent; text `typography.body-semibold` (Anthropic Sans 14/20 580), `text.primary` (#f0efec) |
-| light | size `layout.page-width` (960) x 138; radius `radius.card` (12px); background transparent; text `typography.body-semibold` (Anthropic Sans 14/20 580), `text.primary` (#0b0b0b) |
+| default | size `layout.page-width` (960) x 138; radius `radius.card` (12px); background transparent; inner fill `surface.1` (#151515); text `typography.body-semibold` (Anthropic Sans 14/20 580), `text.primary` (#f0efec) |
+| light | size `layout.page-width` (960) x 138; radius `radius.card` (12px); background transparent; inner fill `surface.1` (#fcfcfb); text `typography.body-semibold` (Anthropic Sans 14/20 580), `text.primary` (#0b0b0b) |
 
 Child layers: div 960pxx138px radius `radius.card` (12px) shadow `borderWidth.default` (1px) ring inset `border.default` (rgba(255, 255, 255, 0.1)); span 960x138 background `surface.1` (#151515) radius `radius.card` (12px); span 242.3x28 background `fill.control` (rgba(255, 255, 255, 0.1)) radius `radius.segment-track` (7px) shadow `shadow.field-drop` (rgba(0, 0, 0, 0.05) 0px 1px 2px 0px)
 
@@ -1591,9 +1623,11 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 242.31 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 242.31 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; inner fill `fill.control` (rgba(255, 255, 255, 0.1)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.secondary-hover` (rgba(255, 255, 255, 0.14)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size 243.83 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size 243.83 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; inner fill `fill.secondary` (rgba(255, 255, 255, 0.1)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Child layers: span 242.3x28 background `fill.control` (rgba(255, 255, 255, 0.1)) radius `radius.segment-track` (7px) shadow `shadow.field-drop` (rgba(0, 0, 0, 0.05) 0px 1px 2px 0px)
@@ -1608,9 +1642,11 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size `density.h-control--sm` (28) x `density.h-control--sm` (28); radius `radius.segment-track` (7px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size `density.h-control--sm` (28) x `density.h-control--sm` (28); radius `radius.segment-track` (7px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size `density.h-control--sm` (28) x `density.h-control--sm` (28); radius `radius.segment-track` (7px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size `density.h-control--sm` (28) x `density.h-control--sm` (28); radius `radius.segment-track` (7px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
@@ -1634,9 +1670,9 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 136 x 119; radius `radius.template-card` (14px); background transparent; text `typography.footnote-medium` (Anthropic Sans 13/17 500), `text.primary` (#f0efec); transition transform and 3 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); icon 5 x 5, `text.primary` (#f0efec) |
+| default (same: hover) | size 136 x 119; radius `radius.template-card` (14px); background transparent; inner fill `surface.2` (#1a1a19); text `typography.footnote-medium` (Anthropic Sans 13/17 500), `text.primary` (#f0efec); transition transform and 3 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); icon 5 x 5, `text.primary` (#f0efec) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size 136 x 119; radius `radius.template-card` (14px); background transparent; text `typography.footnote-medium` (Anthropic Sans 13/17 500), `text.primary` (#0b0b0b); transition transform and 3 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); icon 5 x 5, `text.primary` (#0b0b0b) |
+| light (same: light-hover) | size 136 x 119; radius `radius.template-card` (14px); background transparent; inner fill `surface.2` (#ffffff); text `typography.footnote-medium` (Anthropic Sans 13/17 500), `text.primary` (#0b0b0b); transition transform and 3 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); icon 5 x 5, `text.primary` (#0b0b0b) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Child layers: span 136x96 background `surface.2` (#1a1a19) radius `radius.template-card` (14px) shadow `shadow.sm` (rgba(11, 11, 11, 0.06) 0px 1px 2px 0px, rgba(0, 0, 0, 0.24) 0px 2px 8px 0px); span 136pxx96px radius `radius.template-card` (14px) shadow `borderWidth.default` (1px) ring inset `border.default` (rgba(255, 255, 255, 0.1)); span 124x84
@@ -1677,8 +1713,9 @@ Tokens named in its classes: `--cds-rem-scale`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 984 x `layout.list-row-height` (52); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#c3c2b7) |
-| light (same: light-hover) | size 984 x `layout.list-row-height` (52); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#52514e) |
+| default | size 984 x `layout.list-row-height` (52); background transparent; inner fill `fill.disabled` (rgba(255, 255, 255, 0.05)); text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#c3c2b7) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
+| light (same: light-hover) | size 984 x `layout.list-row-height` (52); background transparent; inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)); text Anthropicons `density.icon` (20px, weight 433.25), `text.secondary` (#52514e) |
 
 Child layers: div 36x36 background `fill.disabled` (rgba(255, 255, 255, 0.05)); button 24x24 radius `radius.row` (8px); span 3x3 background `fill.control-hover` (rgba(255, 255, 255, 0.2)) radius `radius.full` (9999px)
 
@@ -1714,9 +1751,11 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`, `--lis
 
 | State | Values |
 |---|---|
-| default (same: hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size `density.h-control` (32) x `density.h-control` (32); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`, `--list-header-scroll-offset`.
@@ -1729,9 +1768,11 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`, `--lis
 
 | State | Values |
 |---|---|
-| default (same: hover, refresh) | size 984 x `layout.table-row-height` (53); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); placeholder `text.primary` (#f0efec) |
+| default (same: refresh) | size 984 x `layout.table-row-height` (53); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); placeholder `text.primary` (#f0efec) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | refresh-focus-visible | focus ring on the inner a: `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px) |
-| light (same: light-hover, light-refresh) | size 984 x `layout.table-row-height` (53); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); placeholder `text.primary` (#0b0b0b) |
+| light (same: light-refresh) | size 984 x `layout.table-row-height` (53); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); placeholder `text.primary` (#0b0b0b) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-refresh-focus-visible | focus ring on the inner a: `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px) |
 
 Child layers: td 984x53 border `borderWidth.default` (1px) solid transparent
@@ -1757,9 +1798,11 @@ Tokens named in its classes: `--cds-alpha-1`, `--cds-checkbox`, `--cds-checkbox-
 
 | State | Values |
 |---|---|
-| default (same: hover, refresh) | size 468 x 161; background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#f0efec) |
+| default (same: refresh) | size 468 x 161; background transparent; inner fill `surface.1` (#151515); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#f0efec) |
+| hover | inner fill `surface.2` (#1a1a19) |
 | refresh-focus-visible | focus ring on the inner div: `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px) |
-| light (same: light-hover, light-refresh) | size 468 x 161; background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#0b0b0b) |
+| light (same: light-refresh) | size 468 x 161; background transparent; inner fill `surface.1` (#fcfcfb); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#0b0b0b) |
+| light-hover | inner fill `surface.2` (#ffffff) |
 | light-refresh-focus-visible | focus ring on the inner div: `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px) |
 
 Child layers: div 468x161 background `surface.1` (#151515) radius `radius.card` (12px) shadow `borderWidth.default` (1px) ring inset `border.default` (rgba(255, 255, 255, 0.1)); span 108.9x20 background `fill.disabled` (rgba(255, 255, 255, 0.05)) radius 5.5px
@@ -1774,9 +1817,11 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`, `--lis
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 75.22 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 75.22 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light (same: light-hover) | size 75.53 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size 75.53 x `density.h-control--sm` (28); padding 0 `space.2-5` (10px); radius `radius.segment-track` (7px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
@@ -1811,8 +1856,10 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 704 x 54; background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) |
-| light (same: light-hover) | size 704 x 54; background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b) |
+| default | size 704 x 54; background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) |
+| hover | inner fill `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
+| light | size 704 x 54; background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 
 Child layers: td 704x54 border `borderWidth.default` (1px) solid transparent
 
@@ -1826,8 +1873,8 @@ Tokens named in its classes: `--cds-alpha-1`, `--cds-cursor-interactive`, `--cds
 
 | State | Values |
 |---|---|
-| default | size `layout.project-rail-width` (352) x 559.5; border `borderWidth.default` (1px) solid `border.default` (rgba(255, 255, 255, 0.1)); radius `radius.rail-card` (16px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.secondary` (#c3c2b7); icon `density.icon--sm` (16) x `density.icon--sm` (16), `text.muted` (#898781); placeholder `text.primary` (#f0efec) |
-| light | size `layout.project-rail-width` (352) x 559.5; border `borderWidth.default` (1px) solid `border.default` (rgba(11, 11, 11, 0.1)); radius `radius.rail-card` (16px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.secondary` (#52514e); icon `density.icon--sm` (16) x `density.icon--sm` (16), `text.muted` (#898781); placeholder `text.primary` (#0b0b0b) |
+| default | size `layout.project-rail-width` (352) x 559.5; border `borderWidth.default` (1px) solid `border.default` (rgba(255, 255, 255, 0.1)); radius `radius.rail-card` (16px); background transparent; inner fill `surface.0` (#0b0b0b); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.secondary` (#c3c2b7); icon `density.icon--sm` (16) x `density.icon--sm` (16), `text.muted` (#898781); placeholder `text.primary` (#f0efec) |
+| light | size `layout.project-rail-width` (352) x 559.5; border `borderWidth.default` (1px) solid `border.default` (rgba(11, 11, 11, 0.1)); radius `radius.rail-card` (16px); background transparent; inner fill `surface.0` (#f9f9f7); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.secondary` (#52514e); icon `density.icon--sm` (16) x `density.icon--sm` (16), `text.muted` (#898781); placeholder `text.primary` (#0b0b0b) |
 
 Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
@@ -1906,8 +1953,8 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-fill-accent`, `-
 
 | State | Values |
 |---|---|
-| default | size 374 x `density.h-control--lg` (40); padding 0 `density.pad-lg` (16px); radius 10px; background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
-| light | size 374 x `density.h-control--lg` (40); padding 0 `density.pad-lg` (16px); radius 10px; background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 374 x `density.h-control--lg` (40); padding 0 `density.pad-lg` (16px); radius 10px; background transparent; inner fill `fill.control` (rgba(255, 255, 255, 0.1)); text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size 374 x `density.h-control--lg` (40); padding 0 `density.pad-lg` (16px); radius 10px; background transparent; inner fill `fill.secondary` (rgba(255, 255, 255, 0.1)); text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
 
 Child layers: span 374x40 background `fill.control` (rgba(255, 255, 255, 0.1)) radius 10px shadow `shadow.field-drop` (rgba(0, 0, 0, 0.05) 0px 1px 2px 0px)
 
@@ -1936,8 +1983,8 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-fill-accent`, `-
 
 | State | Values |
 |---|---|
-| default | size `layout.phone-width` (390) x `layout.header-height` (48); padding 0 `space.5` (20px) 0 `space.14` (56px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) |
-| light | size `layout.phone-width` (390) x `layout.header-height` (48); padding 0 `space.5` (20px) 0 `space.14` (56px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b) |
+| default | size `layout.phone-width` (390) x `layout.header-height` (48); padding 0 `space.5` (20px) 0 `space.14` (56px); background transparent; inner fill `surface.1` (#151515); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) |
+| light | size `layout.phone-width` (390) x `layout.header-height` (48); padding 0 `space.5` (20px) 0 `space.14` (56px); background transparent; inner fill `surface.1` (#fcfcfb); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b) |
 
 Child layers: div 378x72 background `surface.1` (#151515); span 57.7x28 background `fill.control` (rgba(255, 255, 255, 0.1)) radius `radius.segment-track` (7px) shadow `shadow.field-drop` (rgba(0, 0, 0, 0.05) 0px 1px 2px 0px)
 
@@ -2025,8 +2072,8 @@ Tokens named in its classes: `--cds-checkbox`, `--cds-checkbox-radius`.
 
 | State | Values |
 |---|---|
-| default | size 283.5 x `density.h-control` (32); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.muted` (#898781) |
-| light | size 284.73 x `density.h-control` (32); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.muted` (#898781) |
+| default | size 283.5 x `density.h-control` (32); background transparent; inner fill `fill.control` (rgba(255, 255, 255, 0.1)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.muted` (#898781) |
+| light | size 284.73 x `density.h-control` (32); background transparent; inner fill `fill.secondary` (rgba(255, 255, 255, 0.1)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.muted` (#898781) |
 
 Child layers: span 82.7x32 background `fill.control` (rgba(255, 255, 255, 0.1)) radius `radius.row` (8px) shadow `shadow.field-drop` (rgba(0, 0, 0, 0.05) 0px 1px 2px 0px); span 67x31 background `fill.danger` (#d03b3b) radius `radius.row` (8px)
 
@@ -2040,12 +2087,14 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`, `--cds
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 67.95 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `on.danger` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 67.95 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.danger` (#d03b3b); text `typography.body-medium` (Anthropic Sans 14/20 500), `on.danger` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.danger-hover` (#e34948) |
 | focus-visible | shadow `shadow.focus-danger on this surface` (#20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, rgba(142, 38, 38, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| pressed | shadow `shadow.focus-danger on this surface` (#20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, rgba(142, 38, 38, 0.6) 0px 0px 6px 1px); press paint layer `press.button-scale` (scale(0.975)) |
-| light (same: light-hover) | size 68.16 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `on.danger` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| pressed | inner fill `fill.danger-hover` (#e34948); shadow `shadow.focus-danger on this surface` (#20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, rgba(142, 38, 38, 0.6) 0px 0px 6px 1px); press paint layer `press.button-scale` (scale(0.975)) |
+| light | size 68.16 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.danger` (#d03b3b); text `typography.body-medium` (Anthropic Sans 14/20 500), `on.danger` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.danger-hover` (#e34948) |
 | light-focus-visible | shadow `shadow.focus-danger on this surface` (#ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light-pressed | shadow `shadow.focus-danger on this surface` (#ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px); press paint layer `press.button-scale` (scale(0.975)) |
+| light-pressed | inner fill `fill.danger-hover` (#e34948); shadow `shadow.focus-danger on this surface` (#ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px); press paint layer `press.button-scale` (scale(0.975)) |
 
 Child layers: span 67x31 background `fill.danger` (#d03b3b) radius `radius.row` (8px)
 
@@ -2059,12 +2108,14 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 69.7 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 69.7 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.control` (rgba(255, 255, 255, 0.1)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.secondary-hover` (rgba(255, 255, 255, 0.14)) |
 | focus-visible | shadow `shadow.focus on this surface` (#20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| pressed | press paint layer `press.button-scale` (scale(0.975)) |
-| light (same: light-hover) | size 70.05 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| pressed | inner fill `fill.secondary-hover` (rgba(255, 255, 255, 0.14)); press paint layer `press.button-scale` (scale(0.975)) |
+| light | size 70.05 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.secondary` (rgba(255, 255, 255, 0.1)); text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus on this surface` (#ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light-pressed | press paint layer `press.button-scale` (scale(0.975)) |
+| light-pressed | inner fill `fill.disabled` (rgba(11, 11, 11, 0.05)); press paint layer `press.button-scale` (scale(0.975)) |
 
 Child layers: span 69.7x32 background `fill.control` (rgba(255, 255, 255, 0.1)) radius `radius.row` (8px) shadow `shadow.field-drop` (rgba(0, 0, 0, 0.05) 0px 1px 2px 0px)
 
@@ -2158,12 +2209,14 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`, `--des
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 120.98 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 120.98 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.primary` (#ffffff); text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.primary-hover` (#e1e0d9) |
 | focus-visible | shadow `shadow.focus on this surface` (#20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| pressed | press paint layer `press.button-scale` (scale(0.975)) |
-| light (same: light-hover) | size 121.45 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| pressed | inner fill `fill.primary-hover` (#e1e0d9); press paint layer `press.button-scale` (scale(0.975)) |
+| light | size 121.45 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.primary` (#0b0b0b); text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.primary-hover` (#2c2c2a) |
 | light-focus-visible | shadow `shadow.focus on this surface` (#ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light-pressed | press paint layer `press.button-scale` (scale(0.975)) |
+| light-pressed | inner fill `fill.primary-hover` (#2c2c2a); press paint layer `press.button-scale` (scale(0.975)) |
 
 Child layers: span 120x31 background `fill.primary` (#ffffff) radius `radius.row` (8px)
 
@@ -2177,8 +2230,8 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 124.64 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); opacity `opacity.disabled` (0.4) |
-| light (same: light-hover, light-pressed) | size 125.09 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); opacity `opacity.disabled` (0.4) |
+| default (same: hover, pressed) | size 124.64 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.primary` (#ffffff); text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); opacity `opacity.disabled` (0.4) |
+| light (same: light-hover, light-pressed) | size 125.09 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.primary` (#0b0b0b); text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)); opacity `opacity.disabled` (0.4) |
 
 Child layers: span 123.6x31 background `fill.primary` (#ffffff) radius `radius.row` (8px)
 
@@ -2294,8 +2347,8 @@ Tokens named in its classes: `--cds-skeleton-base`, `--cds-skeleton-sheen`.
 
 | State | Values |
 |---|---|
-| default | size `layout.page-width` (960) x 492; background transparent; text Anthropic Sans 14/21 400, `text.primary` (#f0efec) |
-| light | size `layout.page-width` (960) x 492; background transparent; text Anthropic Sans 14/21 400, `text.primary` (#0b0b0b) |
+| default | size `layout.page-width` (960) x 492; background transparent; inner fill `surface.2` (#1a1a19); text Anthropic Sans 14/21 400, `text.primary` (#f0efec) |
+| light | size `layout.page-width` (960) x 492; background transparent; inner fill `surface.2` (#ffffff); text Anthropic Sans 14/21 400, `text.primary` (#0b0b0b) |
 
 Child layers: div 304x234 background `surface.2` (#1a1a19) radius `radius.card` (12px) shadow `borderWidth.default` (1px) ring inset `border.default` (rgba(255, 255, 255, 0.1)); div 302x1 border `borderWidth.default` (1px) solid `alpha.1` (rgba(255, 255, 255, 0.05)); div 193.2x14 background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) radius `radius.row` (8px)
 
@@ -2307,8 +2360,8 @@ Tokens named in its classes: `--cds-skeleton-base`, `--cds-skeleton-sheen`.
 
 | State | Values |
 |---|---|
-| default | size `layout.page-width` (960) x 161; background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#f0efec) |
-| light | size `layout.page-width` (960) x 161; background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#0b0b0b) |
+| default | size `layout.page-width` (960) x 161; background transparent; inner fill `surface.1` (#151515); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#f0efec) |
+| light | size `layout.page-width` (960) x 161; background transparent; inner fill `surface.1` (#fcfcfb); text `typography.body-medium` (Anthropic Sans 14/20 500), `text.primary` (#0b0b0b) |
 
 Child layers: div 468x161 background `surface.1` (#151515) radius `radius.card` (12px) shadow `borderWidth.default` (1px) ring inset `border.default` (rgba(255, 255, 255, 0.1)); span 108.9x20 background `fill.disabled` (rgba(255, 255, 255, 0.05)) radius 5.5px; div 468x161 background `surface.1` (#151515) radius `radius.card` (12px) shadow `borderWidth.default` (1px) ring inset `border.default` (rgba(255, 255, 255, 0.1))
 
@@ -2322,12 +2375,14 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`, `--lis
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 105.56 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 105.56 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.primary` (#ffffff); text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.primary-hover` (#e1e0d9) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| pressed | press paint layer `press.button-scale` (scale(0.975)) |
-| light (same: light-hover) | size 105.92 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| pressed | inner fill `fill.primary-hover` (#e1e0d9); press paint layer `press.button-scale` (scale(0.975)) |
+| light | size 105.92 x `density.h-control` (32); padding 0 `density.pad-md` (12px); radius `radius.row` (8px); background transparent; inner fill `fill.primary` (#0b0b0b); text `typography.body-medium` (Anthropic Sans 14/20 500), `on.primary` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.primary-hover` (#2c2c2a) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light-pressed | press paint layer `press.button-scale` (scale(0.975)) |
+| light-pressed | inner fill `fill.primary-hover` (#2c2c2a); press paint layer `press.button-scale` (scale(0.975)) |
 
 Child layers: span 104.6x31 background `fill.primary` (#ffffff) radius `radius.row` (8px)
 
@@ -2482,12 +2537,14 @@ Child layers: a 110.4x18 radius 2px; a 357.6x38 radius 2px
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 406 x `density.h-control--lg` (40); padding 0 `density.pad-lg` (16px); radius 10px; background transparent; text Anthropic Sans 15/22 500, `on.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size 406 x `density.h-control--lg` (40); padding 0 `density.pad-lg` (16px); radius 10px; background transparent; inner fill `fill.primary` (#ffffff); text Anthropic Sans 15/22 500, `on.primary` (#0b0b0b); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| hover | inner fill `fill.primary-hover` (#e1e0d9) |
 | focus-visible | shadow `shadow.focus` (#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| pressed | press paint layer `press.button-scale` (scale(0.975)) |
-| light (same: light-hover) | size 406 x `density.h-control--lg` (40); padding 0 `density.pad-lg` (16px); radius 10px; background transparent; text Anthropic Sans 15/22 500, `on.primary` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| pressed | inner fill `fill.primary-hover` (#e1e0d9); press paint layer `press.button-scale` (scale(0.975)) |
+| light | size 406 x `density.h-control--lg` (40); padding 0 `density.pad-lg` (16px); radius 10px; background transparent; inner fill `fill.primary` (#0b0b0b); text Anthropic Sans 15/22 500, `on.primary` (#ffffff); transition box-shadow `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light-hover | inner fill `fill.primary-hover` (#2c2c2a) |
 | light-focus-visible | shadow `shadow.focus` (#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light-pressed | press paint layer `press.button-scale` (scale(0.975)) |
+| light-pressed | inner fill `fill.primary-hover` (#2c2c2a); press paint layer `press.button-scale` (scale(0.975)) |
 
 Child layers: span 405x39 background `fill.primary` (#ffffff) radius 10px
 
