@@ -264,7 +264,7 @@ table.t td.src { color: var(--text-tertiary); font-size: 12px; }
   <p class="lead">Manus names colours by role, not by hue: <code>text</code>, <code>icon</code>, <code>background</code>, <code>border</code>, <code>fill</code> (the translucent hover and chip fills, <code>tsp</code> for transparent), <code>function</code> (status), <code>Button</code>, <code>tab</code>, <code>shadow</code>, plus the <code>accent</code> palettes a user can choose in the desktop app. Each swatch shows the active theme's value; flip the header toggle to compare.</p>
   <div id="roles-out"></div>
   <h3 class="sub">Ramps</h3>
-  <p class="note">Manus declares no ramps. These are assembled from the values its variables hold (Derived): the greys at least two variables share, and each accent palette, lightest to darkest.</p>
+  <p class="note">Manus declares no ramps. These are assembled from the values its variables hold (Derived): every declared colour goes on the ramp of its hue, and each 50 to 950 stop is the declared colour nearest that lightness. The full list of each hue is in <code>tokens.json</code> as <code>core.palette.&lt;hue&gt;-all</code>.</p>
   <div id="ramps-out"></div>
 </section>
 
@@ -490,6 +490,7 @@ roles();
 (function ramps() {
   let h = '';
   for (const [hue, steps] of Object.entries(TOK.core.palette)) {
+    if (hue.endsWith('-all')) continue;
     h += `<div class="pal-h">${esc(hue)}</div><div class="pal">`;
     for (const [k, t] of Object.entries(steps)) h += `<div class="sw"><span class="dot"><i style="background:${t.v}"></i></span><div><div class="nm">${esc(hue + '.' + k)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
