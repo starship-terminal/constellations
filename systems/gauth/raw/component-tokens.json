@@ -202,7 +202,8 @@
    "canvas-print": {"var": "--canvas-print-font", "type": "fontFamily", "source": "css @font-face Canvas Print and Canvas Heading = Satoshi Medium", "description": "The science canvas's text face: Satoshi (Fontshare, not on Google Fonts)"},
    "canvas-chapter": {"var": "--canvas-chapter-font", "type": "fontFamily", "source": "css @font-face Canvas Chapter = Libre Baskerville Bold"},
    "canvas-tutor": {"value": "\"Canvas Tutor\", \"Shantell Sans\", cursive", "type": "fontFamily", "source": "css @font-face Canvas Tutor = Shantell Sans Medium and SemiBold", "description": "The handwritten face of tutor annotations on the canvas"},
-   "rubik": {"value": "Rubik, -apple-system, sans-serif", "type": "fontFamily", "source": "measured raw/measurements.md#new-topic, #share-button, #video-settings", "description": "Small Atlas labels; no @font-face is declared, so it renders only where Rubik is installed"}
+   "rubik": {"value": "Rubik, -apple-system, sans-serif", "type": "fontFamily", "source": "measured raw/measurements.md#new-topic, #share-button, #video-settings", "description": "Small Atlas labels; no @font-face is declared, so it renders only where Rubik is installed"},
+   "arial": {"value": "Arial", "type": "fontFamily", "source": "measured raw/measurements.md#plan-card, #plan-tag, #show-more (computed font-family: Arial)", "description": "Chrome's default face for a button whose CSS sets no font; Gauth never names Arial itself"}
   },
   "fontWeight": {
    "regular": {"var": "--ugc-lesson-font-weight-regular", "type": "fontWeight"},
@@ -292,7 +293,9 @@
    "table-heading": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 500, "fontSize": "26px", "lineHeight": "34px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#plan-table-header (\"Features by plan\")"},
    "button-xl": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 600, "fontSize": "18px", "lineHeight": "48px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#accent-button, #signin-submit"},
    "code-block": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 400, "fontSize": "13.6px", "lineHeight": "22.44px", "letterSpacing": "0px"}, "type": "typography", "source": "css .highlight pre, pre (font-size 85%) and pre code, pre tt (line-height 1.65) (raw/foundations.json declaredRules); 13.6px and 22.44px derived from the 16px body; declared, not seen painted", "description": "Code blocks: 85% of the body size on component.code.block, padding 16px, radius 4 inside .md-container (16 elsewhere)"},
-   "atlas-rail": {"value": {"fontFamily": "{fontFamily.rubik}", "fontWeight": 700, "fontSize": "12px", "lineHeight": "13.2px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#rail-item, #view-rail (\"View\", \"Details\")"}
+   "atlas-rail": {"value": {"fontFamily": "{fontFamily.rubik}", "fontWeight": 700, "fontSize": "12px", "lineHeight": "13.2px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#rail-item, #view-rail (\"View\", \"Details\")"},
+   "composer": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 400, "fontSize": "15px", "lineHeight": "23.57px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#atlas-composer, #atlas-textarea (the prompt text)"},
+   "plan-tag": {"value": {"fontFamily": "{fontFamily.arial}", "fontWeight": 700, "fontSize": "12px", "lineHeight": "16.8px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#plan-tag, #plan-card-selected (\"-30%\", \"3 Day Free Trial\")"}
   },
   "spacing": {
    "base": {"value": "4px", "type": "dimension", "source": "derived raw/components-computed.json: 643 of 1,020 measured paddings and gaps (63%) are multiples of 4px; 8, 12 and 16 are the most used", "description": "The base unit. Gauth declares no spacing scale; this is the grid its measured paddings and gaps fall on. The values off it are under spacing-offgrid."},

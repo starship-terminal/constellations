@@ -6,7 +6,7 @@ The full per-state readings are in [raw/measurements.md](raw/measurements.md), w
 
 How to read an entry:
 
-- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as the role token for what it paints (a fill as `action.*` or `background.*`, text as `text.*`, a border or outline as `border.*`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). 1376 of 1565 values in the entries (88%) are written as tokens. The other 189 are marked †: a value used by one component only (a one-off padding, colour or text style), a `50%` circle radius, or a line height of `normal`, none of which a DTCG token in this file holds; every other value used by two or more components has a token. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.
+- Every value is written as the token in [tokens.json](tokens.json) that holds it: a colour as the role token for what it paints (a fill as `action.*` or `background.*`, text as `text.*`, a border or outline as `border.*`) or, failing that, its palette token; a radius, padding, border width, focus ring, shadow, duration or press scale as its core or elevation token; text as its typography token, then its colour. A value no token holds is written raw (a text style as family size/line-height weight, for example `SF Pro 14/21 500`). 1376 of 1567 values in the entries (88%) are written as tokens. The other 191 are marked †: a value used by one component only (a one-off padding, colour or text style), a `50%` circle radius, or a line height of `normal`, none of which a DTCG token in this file holds; every other value used by two or more components has a token. Each entry ends with the list of tokens it uses. Sizes are the element's measured box and stay in px.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
 - Crops are images of the component read from the live page, in [components/crops/](components/crops) (369 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
@@ -724,12 +724,12 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 145.28 x 40; padding 0px `spacing.16`; border `borderWidth.hairline` solid `component.show-more.border`; radius `radius.12`; background transparent; text `typography.tab`, `text.meta`; icon 14 x 14, `text.meta` |
-| hover | border `borderWidth.hairline` solid `border.strong`; background `background.hover-warm`; text `typography.tab`, `text.primary`; icon 14 x 14, `text.primary` |
-| pressed | border `borderWidth.hairline` solid `border.strong`; background `component.show-more.pressed`; text `typography.tab`, `text.primary`; icon 14 x 14, `text.primary` |
+| default (same: focus-visible) | size 145.28 x 40; padding 0px `spacing.16`; border `borderWidth.hairline` solid `component.show-more.border`; radius `radius.12`; background transparent; text Arial 14/19.6 400†, `text.meta`; icon 14 x 14, `text.meta` |
+| hover | border `borderWidth.hairline` solid `border.strong`; background `background.hover-warm`; text Arial 14/19.6 400†, `text.primary`; icon 14 x 14, `text.primary` |
+| pressed | border `borderWidth.hairline` solid `border.strong`; background `component.show-more.pressed`; text Arial 14/19.6 400†, `text.primary`; icon 14 x 14, `text.primary` |
 | expanded | size 118.81 x 40 |
 
-**Tokens.** `background.hover-warm`, `border.strong`, `borderWidth.hairline`, `component.show-more.border`, `component.show-more.pressed`, `radius.12`, `spacing.16`, `text.meta`, `text.primary`, `typography.tab`.
+**Tokens.** `background.hover-warm`, `border.strong`, `borderWidth.hairline`, `component.show-more.border`, `component.show-more.pressed`, `radius.12`, `spacing.16`, `text.meta`, `text.primary`.
 
 ![Show more button default](components/crops/show-more-default.png) ![Show more button hover](components/crops/show-more-hover.png) ![Show more button focus-visible](components/crops/show-more-focus-visible.png) ![Show more button pressed](components/crops/show-more-pressed.png) ![Show more button expanded](components/crops/show-more-expanded.png)
 
@@ -1493,9 +1493,9 @@ A 920 x 148 white box, 1px #e4e6eb border, radius 20, a peach glow (0 6 20 rgba(
 |---|---|
 | default (same: hover) | size 920 x 148; padding `spacing.12` `spacing.12` `spacing-offgrid.10` `spacing.12`; border `borderWidth.hairline` solid `border.field`; radius `radius.20`; background `background.card`; shadow `elevation.composer`; text SF Pro 15/22 400†, `text.tertiary`; transition border-color `duration.composer` `easing.ease`, box-shadow `duration.composer` `easing.ease`, background `duration.composer` `easing.ease`; icon 13 x 13, `text.inverse` |
 | focused | border `borderWidth.hairline` solid `palette.atlas.line-focus`; shadow `elevation.composer-focus` |
-| filled | border `borderWidth.hairline` solid `palette.atlas.line-focus`; shadow `elevation.composer-focus`; text -apple-system 15/23.57 400†, `text.primary` |
+| filled | border `borderWidth.hairline` solid `palette.atlas.line-focus`; shadow `elevation.composer-focus`; text `typography.composer`, `text.primary` |
 
-**Tokens.** `background.card`, `border.field`, `borderWidth.hairline`, `duration.composer`, `easing.ease`, `elevation.composer`, `elevation.composer-focus`, `palette.atlas.line-focus`, `radius.20`, `spacing-offgrid.10`, `spacing.12`, `text.inverse`, `text.primary`, `text.tertiary`.
+**Tokens.** `background.card`, `border.field`, `borderWidth.hairline`, `duration.composer`, `easing.ease`, `elevation.composer`, `elevation.composer-focus`, `palette.atlas.line-focus`, `radius.20`, `spacing-offgrid.10`, `spacing.12`, `text.inverse`, `text.primary`, `text.tertiary`, `typography.composer`.
 
 ![Atlas prompt box default](components/crops/atlas-composer-default.png) ![Atlas prompt box hover](components/crops/atlas-composer-hover.png) ![Atlas prompt box focused](components/crops/atlas-composer-focused.png) ![Atlas prompt box filled](components/crops/atlas-composer-filled.png)
 
@@ -1656,9 +1656,9 @@ The multi-line field inside the prompt box: an Ant Design textarea with no borde
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, filled) | size 894 x 78; padding `spacing.4` 58px† `spacing.4` `spacing.8`; radius `radius.6`; background transparent; transition all `duration.popover` `easing.ease`; placeholder `text.primary` |
+| default (same: focus-visible, filled) | size 894 x 78; padding `spacing.4` 58px† `spacing.4` `spacing.8`; radius `radius.6`; background transparent; text `typography.composer`, `text.primary`; transition all `duration.popover` `easing.ease`; placeholder `text.primary` |
 
-**Tokens.** `duration.popover`, `easing.ease`, `radius.6`, `spacing.4`, `spacing.8`, `text.primary`.
+**Tokens.** `duration.popover`, `easing.ease`, `radius.6`, `spacing.4`, `spacing.8`, `text.primary`, `typography.composer`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -2142,18 +2142,18 @@ One of three 147 x 160 cards that behave as a single-choice group: 2px border, r
 #### Plan card, selected
 The preselected 12 Months card: a gold border and a gold corner tag. Read as `plan-card-selected` on the Homework home page.
 
-**Values (selected).** size 146.67 x 160; padding `spacing-offgrid.30` `spacing.12` `spacing.16` `spacing.12`; border `borderWidth.choice` solid `palette.gold.plan`; radius `radius.16`; background `background.card`; text `typography.caption-strong`, `text.inverse`.
+**Values (selected).** size 146.67 x 160; padding `spacing-offgrid.30` `spacing.12` `spacing.16` `spacing.12`; border `borderWidth.choice` solid `palette.gold.plan`; radius `radius.16`; background `background.card`; text `typography.plan-tag`, `text.inverse`.
 
-**Tokens.** `background.card`, `borderWidth.choice`, `palette.gold.plan`, `radius.16`, `spacing-offgrid.30`, `spacing.12`, `spacing.16`, `text.inverse`, `typography.caption-strong`.
+**Tokens.** `background.card`, `borderWidth.choice`, `palette.gold.plan`, `radius.16`, `spacing-offgrid.30`, `spacing.12`, `spacing.16`, `text.inverse`, `typography.plan-tag`.
 
 ![Plan card, selected selected](components/crops/plan-card-selected-selected.png)
 
 #### Badge (plan tag)
 The gold tag on a plan card's top edge. Read as `plan-tag` on the Homework home page.
 
-**Values (default).** size 50 x 21; padding `spacing-offgrid.2` `spacing.8`; radius 0px `radius.16` 0px `radius.10`; background `palette.gold.plan`; text `typography.caption-strong`, `text.inverse`.
+**Values (default).** size 50 x 21; padding `spacing-offgrid.2` `spacing.8`; radius 0px `radius.16` 0px `radius.10`; background `palette.gold.plan`; text `typography.plan-tag`, `text.inverse`.
 
-**Tokens.** `palette.gold.plan`, `radius.10`, `radius.16`, `spacing-offgrid.2`, `spacing.8`, `text.inverse`, `typography.caption-strong`.
+**Tokens.** `palette.gold.plan`, `radius.10`, `radius.16`, `spacing-offgrid.2`, `spacing.8`, `text.inverse`, `typography.plan-tag`.
 
 ![Badge (plan tag) default](components/crops/plan-tag-default.png)
 

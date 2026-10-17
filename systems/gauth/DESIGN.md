@@ -497,6 +497,18 @@ typography:
     fontWeight: 700
     lineHeight: "13.2px"
     letterSpacing: "0px"
+  composer:
+    fontFamily: "-apple-system"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: "23.57px"
+    letterSpacing: "0px"
+  plan-tag:
+    fontFamily: "Arial"
+    fontSize: "12px"
+    fontWeight: 700
+    lineHeight: "16.8px"
+    letterSpacing: "0px"
 rounded:
   "4": "4px"
   "6": "6px"
@@ -594,7 +606,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-58 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, Canvas Chapter, Canvas Print, Gauth Home Libre Baskerville, Inter, Playfair Display, Rubik.
+60 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, Arial, Canvas Chapter, Canvas Print, Gauth Home Libre Baskerville, Inter, Playfair Display, Rubik.
 
 ### Fonts (from README.md)
 

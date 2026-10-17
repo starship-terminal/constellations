@@ -140,8 +140,9 @@ FAMILIES = {n: stack(TOK[n]) for n in sorted(n for n in TOK if TYPES[n] == "font
 
 
 def fam_token(f):
-    """The family token sharing the longest opening run of families with the measured stack, else the one that
-    lists its first family anywhere."""
+    """The family token sharing the longest opening run of families with the measured stack, else the token named
+    for the measured first family ("SF Pro" is fontFamily.sf-pro, whose stack opens with -apple-system for Apple
+    devices). A bare fallback face such as Arial matches no token and stays raw."""
     ms = stack(f)
     if not ms:
         return ""
@@ -154,7 +155,8 @@ def fam_token(f):
     best = max(FAMILIES, key=lambda n: (run(FAMILIES[n]), n == "fontFamily.system"))
     if run(FAMILIES[best]) > 0:
         return best
-    return next((n for n, st in FAMILIES.items() if ms[0] in st), ms[0])
+    named = re.sub(r"[^a-z0-9]+", "-", ms[0].lower()).strip("-")
+    return next((n for n, st in FAMILIES.items() if n == "fontFamily." + named and ms[0] in st), ms[0])
 
 
 def px2(v):
@@ -341,8 +343,8 @@ def props(v):
             if anc:
                 o["outline"] = f"on its parent: {colour(anc['outline'], role='line')}"
     t = v.get("textStyle")
-    if not t and not v.get("text"):
-        pass  # an element with no text and no label draws no text, so it has no text style to record
+    if not t and not v.get("text") and v.get("tag") not in ("input", "textarea"):
+        pass  # an element with no text and no label draws no text (a field's typed value is not in `text`, so fields keep theirs)
     elif t:
         o["text"] = f"{typeset(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('letterSpacing', 'normal'))}, {colour(t['color'], role='text')}"
     else:
