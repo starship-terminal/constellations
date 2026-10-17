@@ -10,11 +10,12 @@ pattern says so instead of guessing what the product would do.
 |---|---|---|
 | [App shell and navigation](#app-shell-and-navigation) | Captured | [home-light-default](screenshots/home-light-default.png), [search-split-light-default](screenshots/search-split-light-default.png) |
 | [Forms and validation](#forms-and-validation) | Form captured; no validation error reached | [account-light-edit-profile-dialog](screenshots/account-light-edit-profile-dialog.png) |
-| [Empty, loading and error states](#empty-loading-and-error-states) | Empty and loading captured; no error reached | [library-reading-light-empty](screenshots/library-reading-light-empty.png), [search-list-light-loading](screenshots/search-list-light-loading.png) |
+| [Empty, loading and error states](#empty-loading-and-error-states) | Captured; a failed request not seen | [library-reading-light-empty](screenshots/library-reading-light-empty.png), [search-list-light-loading](screenshots/search-list-light-loading.png), [search-list-light-citation-missing](screenshots/search-list-light-citation-missing.png) |
 | [Destructive confirmation](#destructive-confirmation) | Captured, cancelled | [account-light-delete-confirm](screenshots/account-light-delete-confirm.png) |
-| [Feedback after an action](#feedback-after-an-action) | Inline feedback captured; no toast appeared | [search-list-light-selected](screenshots/search-list-light-selected.png) |
+| [Feedback after an action](#feedback-after-an-action) | Captured; the error toast not raised | [search-list-light-selected](screenshots/search-list-light-selected.png), [library-all-light-toast](screenshots/library-all-light-toast.png) |
 | [Search and filtering](#search-and-filtering) | Captured | [search-list-light-settings-drawer](screenshots/search-list-light-settings-drawer.png) |
 | [Data display](#data-display) | Captured | [library-table-light-default](screenshots/library-table-light-default.png), [search-list-light-keyword-results](screenshots/search-list-light-keyword-results.png) |
+| [Page widths](#page-widths) | Captured at 1440, 1000, 800 and 390px | [home-narrow-light-stacked](screenshots/home-narrow-light-stacked.png), [search-tablet-light-inspect](screenshots/search-tablet-light-inspect.png), [library-mobile-light-screen-too-small](screenshots/library-mobile-light-screen-too-small.png) |
 | [Onboarding and first run](#onboarding-and-first-run) | Only the hints an existing account sees | [search-split-light-default](screenshots/search-split-light-default.png) |
 
 ## App shell and navigation
@@ -59,7 +60,7 @@ The filter pills above the Reading List still show with zero counts (All 0, To R
 
 The graph has its own entrance (nodes grow from dots), described in [graph.md](graph.md).
 
-**Error.** Not captured. No request failed during the capture, and nothing was forced to fail.
+**Error.** Inline and specific to where it applies. An article with no references and no citations gets a peach [Incomplete data chip](components.md#incomplete-data-warning) on its card, an Incomplete data banner with Learn More at the top of the article panel, and in place of the drawer's search buttons a pale red [inline error](components.md#inline-error): "Cannot search: Citation info missing" ([search-list-light-citation-missing](screenshots/search-list-light-citation-missing.png)). Nothing else on the page changes. No request failed during the capture, so a failed load was not seen.
 
 ## Destructive confirmation
 
@@ -77,7 +78,7 @@ The graph has its own entrance (nodes grow from dots), described in [graph.md](g
 
 **On a setting.** Checking a filter on the drawer tints its whole row and adds a remove cross; because the filter is a paid one, the drawer's Search button gains a lock badge ([search-list-light-settings-checked](screenshots/search-list-light-settings-checked.png)).
 
-**Toasts.** Not captured. A toast container is mounted on every page (z-index 2) but stayed empty: none of the actions taken (selecting, clearing, checking a filter, paging, searching) raised one.
+**Toasts.** For actions with no visible result on the page. Copying a citation in Cite Article raises a [toast](components.md#toast): a 500px charcoal bar 12px above the bottom edge with an icon, "Copied to clipboard" in white and a close cross, over the dialog ([library-all-light-toast](screenshots/library-all-light-toast.png)). It stays 4 seconds, or 2 more after the pointer leaves it, and an error toast adds an orange border (read from the bundle, [raw/app-code-notes.md](raw/app-code-notes.md); the error toast was not raised). Selecting, clearing, checking a filter, paging and searching raise none.
 
 ## Search and filtering
 
@@ -96,6 +97,14 @@ The graph has its own entrance (nodes grow from dots), described in [graph.md](g
 **Graph.** The map and split views draw the same results as a citation graph; [graph.md](graph.md) covers it.
 
 **Recent searches.** On the Search start page, each past search is a white row with its inputs as chips, its date in 12px grey, and a remove cross ([search-start-light-recent](screenshots/search-start-light-recent.png)).
+
+## Page widths
+
+**When.** Whenever the window narrows. The product is built for desktop and changes little between desktop and 641px.
+
+**How.** The frame (top bar, main card, right panel) stays at every width above 640px. The right panel keeps its width and the main card gives way: at 1000 x 800 the result list narrows to fit beside a 390px article panel ([search-tablet-light-inspect](screenshots/search-tablet-light-inspect.png)). The script's breakpoints ([tokens.json](tokens.json) `breakpoint.sm` to `breakpoint.2xl`, from [raw/app-code-notes.md](raw/app-code-notes.md)) switch a few things: below 896px the three home cards stack in one column ([home-narrow-light-stacked](screenshots/home-narrow-light-stacked.png), the [home columns](components.md#home-columns) entry), below 768px the hero illustration drops, and below 1024px a split search view falls back to the list. At 640px or less every page is covered by the [Screen too small](components.md#screen-too-small) notice, with Continue anyway leading to the desktop layout clipped at the right ([library-mobile-light-screen-too-small](screenshots/library-mobile-light-screen-too-small.png)).
+
+**Not seen.** 1024 to 1280px on its own, and any width on the map view other than 1440.
 
 ## Onboarding and first run
 

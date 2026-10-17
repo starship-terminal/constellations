@@ -43,6 +43,7 @@ GLOBALS = CSS.get("globals", [])
 MEDIA = CSS.get("media", {})
 COMPUTED = json.loads((RAW / "components-computed.json").read_text())["components"]
 NOTES = (RAW / "graph-code-notes.md").read_text()
+APP_NOTES = (RAW / "app-code-notes.md").read_text()
 
 SHOT = "screenshots/search-split-light-default.png"
 
@@ -159,6 +160,11 @@ def M(ty, value, comp, state, prop, desc=None):
     return {"type": ty, "value": value, "computed": (comp, state, prop), "description": desc}
 
 
+def A(ty, value, ident, section, desc=None):
+    """A value from the app's production bundle, quoted in raw/app-code-notes.md."""
+    return {"type": ty, "value": value, "app": (ident, section), "description": desc}
+
+
 def Q(value, cond, desc=None):
     return {"type": "dimension", "value": value, "media": cond, "description": desc}
 
@@ -219,6 +225,7 @@ SPEC_CORE = {
     "fontFamily": {
         "ui": {"type": "fontFamily", "value": ["Plus Jakarta Sans", "system-ui", "sans-serif"], "font": "Plus+Jakarta+Sans",
                "description": "Every UI line and every canvas label"},
+        "mono": R("fontFamily", ["monospace"], "CopyContainer__Preview", "font-family: monospace; font-size: 12px", "The citation box in Cite Article; the browser's monospace face"),
         "light": {"type": "fontFamily", "value": ["IBM Plex Sans", "system-ui", "sans-serif"], "font": "IBM+Plex+Sans",
                   "description": "Loaded by the app at weight 300; which lines paint it was not read"},
     },
@@ -258,6 +265,7 @@ SPEC_CORE = {
         "heading-4": G("typography", TY("{fontFamily.ui}", "{fontSize.16}", "{fontWeight.medium}", 1.5), "h4", "font-size: 16px; font-weight: 500", "The h4 default. " + LH),
         "heading-5": G("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.semibold}", 1.5), "h5", "font-size: 14px; font-weight: 600", "The h5 default. " + LH),
         "form-label": G("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.medium}", 1.5), "label", "font-size: 14px; font-weight: 500", "Field labels in dialogs. " + LH),
+        "code": R("typography", TY("{fontFamily.mono}", "{fontSize.12}", "{fontWeight.regular}", 1.5), "CopyContainer__Preview", "font-family: monospace; font-size: 12px", "Formatted citations to copy (Cite Article). Line height measured 12/18 on the citation box (raw/components-computed.json)."),
         "caption": R("typography", TY("{fontFamily.ui}", "{fontSize.12}", "{fontWeight.regular}", 1), "DashboardSearch__Tip", "font-size: 12px", "The one-line hint under the home search field. Line height measured 12/12 on that tip (home-hero, a span, in raw/components-computed.json), unlike the 1.5 of running text."),
     },
     "spacing": {},  # filled from --neg2..--16 below
@@ -310,6 +318,16 @@ SPEC_CORE = {
     },
     "breakpoint": {
         "too-small": Q("640px", "(max-width: 640px)", "At this width or less every page is covered by the Screen too small notice; there is no phone layout"),
+        "sm": A("dimension", "640px", 'sm:640', "1", "The app's script breakpoints (useBreakpoint); sm changes the upgrade dialog's price line"),
+        "md": A("dimension", "768px", 'md:768', "1", "The home hero illustration shows above this width"),
+        "xmd": A("dimension", "896px", 'xmd:896', "1", "Below this width the home cards stack in one column"),
+        "lg": A("dimension", "1024px", 'lg:1024', "1", "Below this width a split search view falls back to the list"),
+        "xl": A("dimension", "1280px", 'xl:1280', "1", "Declared; no use found"),
+        "2xl": A("dimension", "1536px", '"2xl":1536', "1", "Declared; no use found"),
+    },
+    "grid": {
+        "home-columns": A("number", 3, 'isSmallerThan("xmd")', "1", "Home cards per row at 896px and wider: three equal flex children, measured (home-columns row-1440); there is no CSS grid"),
+        "home-columns-narrow": A("number", 1, 'isSmallerThan("xmd")', "1", "Below 896px the same cards stack in one column (home-columns stacked-800)"),
     },
     "zIndex": {
         "raised": R("number", 1, "ArticleAuthors__AuthorButton", "z-index: 1", "Author chips and the note composer over their neighbours"),
@@ -324,8 +342,15 @@ SPEC_CORE = {
         "chevron": R("duration", "500ms", "FilterableSearchActions__Chevron", "transition: transform 500ms", "The drawer chevron and the nav logo width"),
         "dialog": R("duration", "400ms", "Modal__Content", "animation: 400ms cubic-bezier(0.16, 1, 0.3, 1)", "Dialog and scrim entrance"),
         "spinner": R("duration", "1100ms", "LoadWheel__StyledIcon", "animation: 1.1s linear 0s infinite", "One turn of the loading wheel"),
+        "enter": R("duration", "200ms", "AnimatedContainer__Container", "&.ac-enter-active, &.ac-appear-active { transition: opacity 200ms, transform 200ms", "Panels, menus and toasts sliding in (200, 300 or 350ms by size)"),
+        "exit": R("duration", "150ms", "AnimatedContainer__Container", "&.ac-exit-active { transition: opacity 150ms, transform 150ms", "The quickest exit (150 to 300ms)"),
+        "toast": A("duration", "4000ms", "duration:P=4e3", "2", "How long a toast stays"),
+        "toast-after-hover": A("duration", "2000ms", "durationAfterHover:me=2e3", "2", "How long a toast stays after the pointer leaves it"),
     },
     "easing": {
+        "standard": R("cubicBezier", [0.25, 0.1, 0.25, 1], "AnimatedContainer__Container", "&.ac-enter-active, &.ac-appear-active { transition: opacity 200ms, transform 200ms", "Derived: the rule names no timing function, so CSS's default ease applies (computed 'ease' on the drawer and note composer)"),
+        "out": R("cubicBezier", [0, 0, 0.58, 1], "ScrollContainer__Scrollbar", "transition: background-color 160ms ease-out", "ease-out, the scrollbar thumb's colour change"),
+        "linear": R("cubicBezier", [0, 0, 1, 1], "LoadWheel__StyledIcon", "animation: 1.1s linear 0s infinite", "The spinner's constant turn"),
         "popup": R("cubicBezier", [0.16, 1, 0.3, 1], "Popup__Content", "animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1)", "Popups, dropdowns and hints slide in on this"),
     },
 }
@@ -348,6 +373,7 @@ SPEC_LIGHT = {
         "glow-bottom-right": S("{palette.peach.25}", (2870, 1795), "Lower right glow"),
     },
     "text": {
+        "default": M("color", "{palette.base.black}", "home-section", "recent", "color", "Most text: body sets no colour, so it inherits the browser's black (computed on the home cards, dialogs and list cards)"),
         "primary": R("color", "{palette.grey.primary}", "ExploreGraphLegend__Container", "color: var(--grey-primary)"),
         "secondary": R("color", "{palette.grey.secondary}", "GraphAxes__AxisLabel", "color: var(--grey-secondary)"),
         "tertiary": R("color", "{palette.grey.tertiary}", "GraphAxes__AxisIcon", "color: var(--grey-tertiary)"),
@@ -387,6 +413,8 @@ SPEC_LIGHT = {
         "menu": {"type": "shadow", "rule": ("Dropdown__Content", "box-shadow: rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px"),
                  "value": "rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px",
                  "description": "Menus and select lists"},
+        "toast": {"type": "shadow", "rule": ("Toast__ToastFill", "box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 12px"),
+                  "value": "rgba(0, 0, 0, 0.3) 3px 3px 12px", "description": "Toasts"},
         "dialog": {"type": "shadow", "rule": ("Modal__Content", "box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 12px"),
                    "value": "rgba(0, 0, 0, 0.5) 3px 3px 12px", "description": "Dialogs, over the scrim"},
         "popup": {"type": "shadow", "rule": ("Popup__Content", "box-shadow: rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px"),
@@ -428,6 +456,9 @@ SPEC_LIGHT = {
         "positions-moved": R("color", "{palette.activity.important}", "GraphBrokenAxes__BrokenAxesDropdown", "background-color: var(--activity-important)"),
         "folder-tint": R("color", "{palette.alpha.amber-20}", "ArticleFolders__FolderContainer", "background-color: rgba(240, 125, 89, 0.2)"),
         "tooltip": R("color", "{palette.literal.charcoal}", "HintContainer__Content", "background-color: rgb(51, 51, 51)"),
+        "toast": R("color", "{palette.literal.charcoal}", "Toast__ToastFill", "background-color: rgb(51, 51, 51)", "The toast bar, with white text"),
+        "citation-box": R("color", "{palette.selection.light}", "CopyContainer__Container", "background-color: var(--selection-light)", "The citation box at rest and on hover"),
+        "warning-chip": R("color", "{palette.peach.25}", "IncompleteInlineWarning__Container", "background-color: var(--peach-25)", "Incomplete data chip and banner"),
         "drawer-row": R("color", "{palette.literal.drawer-row}", "ExploreFilters__ItemContainer", "background-color: rgb(53, 53, 53)"),
         "drawer-row-on": R("color", "{palette.literal.drawer-row-on}", "ExploreFilters__ItemContainer", "background-color: rgb(77, 76, 91)"),
         "tab-current": R("color", "{palette.grey.bg2}", "TabbedContent__Option", "background-color: var(--grey-bg2)", "The current vertical tab in Account Settings"),
@@ -490,6 +521,11 @@ def leaf(path, spec):
             if not rules or (piece and piece not in flat):
                 raise KeyError(f"{path}: {sel} {{ {piece} }} is not in raw/css-vars.json globals")
         val, src = spec["value"], f"css rule {sel}: {decl}"
+    elif "app" in spec:
+        ident, sec = spec["app"]
+        if ident not in APP_NOTES:
+            raise KeyError(f"{path}: {ident!r} is not in raw/app-code-notes.md")
+        val, src = spec["value"], f"app code: {ident} (raw/app-code-notes.md section {sec})"
     elif "media" in spec:
         if spec["media"] not in MEDIA:
             raise KeyError(f"{path}: @media {spec['media']} is not in raw/css-vars.json")
@@ -583,7 +619,7 @@ for name in ROOT:
 SPEC_CORE["spacing"] = spacing
 
 core = {}
-for group in ("palette", "spacing", "fontFamily", "fontWeight", "fontSize", "typography", "radius", "borderWidth", "size", "breakpoint", "zIndex", "duration", "easing"):
+for group in ("palette", "spacing", "fontFamily", "fontWeight", "fontSize", "typography", "radius", "borderWidth", "size", "breakpoint", "grid", "zIndex", "duration", "easing"):
     core[group] = build(SPEC_CORE[group], group)
 core = {k: core[k] for k in SPEC_CORE}  # keep the SPEC's order in the file
 core["graph"] = build_graph(GRAPH, "graph")

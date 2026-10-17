@@ -26,17 +26,23 @@ empty Notes tab, and the empty Reading List; the Search start page; and the
 Screen too small notice at phone width. [patterns.md](patterns.md) is new and
 writes up the patterns those screens show.
 
+A second pass the same day added the Cite Article dialog and the toast raised by
+copying a citation, an article with no citation data (the inline error and the
+incomplete-data warning), search at 1000 x 800 and home at 800 x 900, and read
+the app's script breakpoints, toast timing and reduced-motion handling from the
+production bundle ([raw/app-code-notes.md](raw/app-code-notes.md)).
+
 | File | What it is |
 |---|---|
 | [graph.md](graph.md) | How the graph is laid out, drawn and driven, what each pointer and key does, the motion table, and what the `/learn` map can take from it |
 | [patterns.md](patterns.md) | The app shell, forms, empty and loading states, the destructive confirmation, feedback, search and filtering, data display and onboarding, as the product does them |
 | [style-guide.html](style-guide.html) | One self-contained page rendering every token and the chrome components, with a live canvas graph that reproduces the engine's grammar on sample learning topics, written to be ported |
-| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout (`core`, `light`, `$themes`): the palette, type, spacing, radius, border widths, sizes (controls, icons, focus ring, dialog and menu widths), the 640px breakpoint, z-index, motion, the semantic colour roles (backgrounds, text, borders, actions, status) and elevation, plus a `graph` group with the engine's node, edge, label, interaction, motion and layout constants. Every token carries `$extensions.source` |
+| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout (`core`, `light`, `$themes`): the palette, type, spacing, radius, border widths, sizes (controls, icons, focus ring, dialog and menu widths), the 640px breakpoint and the script breakpoints, the home column count, z-index, motion, the semantic colour roles (backgrounds, text, borders, actions, status) and elevation, plus a `graph` group with the engine's node, edge, label, interaction, motion and layout constants. Every token carries `$extensions.source` |
 | [components.md](components.md) | Every page and component with crops and measured values (each colour, shadow and radius named by its token), the shared values, the icon index, and the gaps |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png`, at 2x |
 | [icons/](icons) | SVGs lifted from the pages, plus the graph's own canvas glyphs (`graph-*.svg`), named in [icons/INDEX.tsv](icons/INDEX.tsv). ResearchRabbit's property, kept for reference only |
 | [screenshots/](screenshots) | `{page}-light-{state}.png`, 2880 x 1800 renders (1440 x 900 at 2x) of each captured state; the two `library-mobile` ones are 390 x 844 at 2x |
-| [raw/](raw) | The unprocessed readings: [graph-code-notes.md](raw/graph-code-notes.md) (the engine, read from the production bundle, with identifiers and byte offsets), [css-vars.json](raw/css-vars.json) (the `:root` properties, every styled-component's rules, the rules on bare elements, the @media conditions and keyframes), [components-computed.json](raw/components-computed.json) (computed styles per component and state, with the date each page was read) |
+| [raw/](raw) | The unprocessed readings: [graph-code-notes.md](raw/graph-code-notes.md) (the engine, read from the production bundle, with identifiers and byte offsets), [app-code-notes.md](raw/app-code-notes.md) (the breakpoints, toast timing and reduced-motion search, read from the same bundle), [css-vars.json](raw/css-vars.json) (the `:root` properties, every styled-component's rules, the rules on bare elements, the @media conditions and keyframes), [components-computed.json](raw/components-computed.json) (computed styles per component and state, with the date each page was read) |
 | [tools/](tools) | The builders and the capture kit. See Rebuild |
 
 ## How the values were read
@@ -107,6 +113,7 @@ tokens, not the images.
 | Family | Weights | Used for |
 |---|---|---|
 | Plus Jakarta Sans | 200 to 800 | Everything: the interface and the canvas labels (12px, 600 for emphasis, 600 14px selected) |
+| monospace (the browser's) | 400 | Formatted citations in Cite Article (`typography.code`, 12/18) |
 | IBM Plex Sans | 300, roman and italic | Requested by the page's font link, but no captured rule names it, so nothing on these pages renders in it |
 
 The italic used for journal names and the list total is Plus Jakarta Sans
@@ -133,20 +140,29 @@ no code role.
 | Status | success, warning, danger and info, each with fill, text and border | The `--activity-*` properties, the typed-phrase box and the notice banner |
 | Sizing | controls 24, 32, 40 and 56px, the 37px field, icons 14, 16, 18 and 20px, a 1px focus ring at offset 0 | Rules, computed heights and icon sizes |
 | Elevation | `light.elevation`: menu, popup (popovers, tooltips) and dialog shadows; the declared `--shadow-s/m/l` are unused | Rules |
-| Motion | 150 to 500ms transitions, 400ms dialog and popover entrances on `cubic-bezier(0.16, 1, 0.3, 1)`, a 1.1s spinner | Rules |
-| Layout | the 640px Screen too small breakpoint, 1400px home column, 650px Account Settings, 500 to 800px dialogs, 220 to 500px menus, 290 to 390px right panel, z-index 1 to 3 | Rules and `@media` |
+| Motion | 150 to 500ms transitions (enter 200ms, exit 150ms), 400ms dialog and popover entrances on `cubic-bezier(0.16, 1, 0.3, 1)`, the default `ease` for panels and drawers, `ease-out` on the scrollbar, a linear 1.1s spinner, toasts held 4s (2s after hover) | Rules, computed transitions, the bundle |
+| Layout | the 640px Screen too small breakpoint, the script breakpoints sm 640, md 768, xmd 896, lg 1024, xl 1280, 2xl 1536, three home cards per row stacking to one below 896px, 1400px home column, 650px Account Settings, 500 to 800px dialogs, 220 to 500px menus, 290 to 390px right panel, z-index 1 to 3 | Rules, `@media`, the bundle and computed layout |
 
 **Reduced motion.** No captured stylesheet has a `prefers-reduced-motion` rule
 (the `@media` list is in [raw/css-vars.json](raw/css-vars.json)), so nothing
 changes when a visitor asks for less motion: dialogs still slide in over
 400ms, the spinner still turns and the graph still animates its entrance.
 
-**Breakpoints and grid.** The app's one breakpoint is `max-width: 640px`,
-where every page is covered by the Screen too small notice. Tailwind's
-`.container` steps (40, 48, 64, 80, 96rem) are declared in the CSS but no
-captured element uses them. Layouts are flex rows, not a column grid: the
-home page puts three equal cards in a 1400px row, and search pages split a
-main card from the 290 to 390px right panel.
+**Reduced motion.** The production bundle has no reduced-motion check either
+([raw/app-code-notes.md](raw/app-code-notes.md) section 4).
+
+**Breakpoints and grid.** The stylesheet's one breakpoint is `max-width: 640px`,
+where every page is covered by the Screen too small notice. The script has its
+own scale (`breakpoint.sm` to `breakpoint.2xl`, read from the bundle), and
+three of its steps change a captured layout: below 896px (xmd) the home cards
+stack in one column ([home-narrow-light-stacked](screenshots/home-narrow-light-stacked.png)),
+below 768px (md) the hero illustration drops, and below 1024px (lg) a split
+search view gives way to the list ([search-tablet-light-inspect](screenshots/search-tablet-light-inspect.png)).
+Tailwind's `.container` steps (40, 48, 64, 80, 96rem) are declared in the CSS
+but no captured element uses them. Layouts are flex rows: the home page puts
+three equal cards (`grid.home-columns`) in a 1400px row, and search pages
+split a main card from the 290 to 390px right panel, which keeps its width
+at 1000px while the list narrows.
 
 ## What to distrust
 
@@ -166,6 +182,11 @@ main card from the 290 to 390px right panel.
 - **Six colours are still screenshot samples** (the corner glows, the
   drawer's idle Search button, the search summary's white half, the card
   rule); their tokens say so.
+- **Breakpoints and toast timing are read from code.** The script
+  breakpoints and the 4s toast come from the minified bundle
+  ([raw/app-code-notes.md](raw/app-code-notes.md)); the home stacking was
+  seen at 800px, but xl and 2xl change nothing that was captured, and widths
+  between 1024 and 1280 were not rendered.
 - **The graph is a canvas.** Its values come from the production bundle, not
   from styles; see [graph.md](graph.md).
 
@@ -183,13 +204,13 @@ name the file that shows them; the rest say why not.
 | Accent states | Captured | `light.action.primary`, `primary-hover`, `primary-pressed` |
 | Status colours | Captured | `light.status` success, warning, danger, info with fill, text, border |
 | Theme parity | Not present | One light theme; no dark theme exists |
-| Type | Captured, no code role | `core.typography` (19 roles, 8 sizes, line heights measured); the product sets no code text |
+| Type | Captured | `core.typography` (20 roles, 8 sizes, line heights measured), including `typography.code` for the monospace citation box |
 | Spacing | Captured | `core.spacing`, a 4px step |
 | Shape | Captured | `core.radius`, `core.borderWidth` |
 | Sizing | Captured | `core.size` control-sm to control-xl, icon sizes, focus-ring-width and offset |
-| Elevation | Captured | `light.elevation` menu, popup, dialog |
-| Motion | Captured | `core.duration`, `core.easing`; reduced motion: nothing changes (above) |
-| Layout | Captured | `core.breakpoint`, `core.size` widths, `core.zIndex`; no column grid (above) |
+| Elevation | Captured | `light.elevation` menu, popup, dialog, toast |
+| Motion | Captured | `core.duration` (with enter, exit and toast timing), `core.easing` standard, out, linear and the popup curve; reduced motion: nothing changes, in the CSS or the script (above) |
+| Layout | Captured | `core.breakpoint` (640px notice plus the script scale), `core.grid` home columns 3 to 1, `core.size` widths, `core.zIndex`; flex rows, no CSS grid (above) |
 | Button | Captured | [components.md](components.md#primary-button): primary, secondary, danger, disabled, text |
 | Icon button | Captured | [dialog close](components.md#dialog-close-button), [graph toolbar](components.md#graph-toolbar-button) |
 | Link | Captured | [Find out how it works](components.md#find-out-how-it-works-link), [Clear](components.md#clear-link) |
@@ -203,23 +224,23 @@ name the file that shows them; the rest say why not.
 | Menu | Captured | [menu](components.md#menu), [account menu](components.md#account-menu) |
 | Tooltip | Captured | [legend tooltip](components.md#legend-tooltip) |
 | Dialog | Captured | [dialog](components.md#dialog), [scrim](components.md#dialog-scrim), [destructive confirmation](components.md#destructive-confirmation) |
-| Toast | Not captured | The toast container is mounted empty; no action taken raised a toast |
+| Toast | Captured | [toast](components.md#toast), raised by copying a citation; the error toast (orange border in the bundle) was not raised |
 | Card | Captured | [result card](components.md#result-card), [home section card](components.md#home-section-card) |
 | List row | Captured | [library list row](components.md#library-list-row), [recent search row](components.md#recent-search-row) |
 | Table | Captured | [article table](components.md#article-table), [header cell](components.md#table-header-cell), [row](components.md#table-row) |
 | Avatar | Captured | [avatar](components.md#avatar), the placeholder glyph; no photo is set |
 | Badge | Captured | [Upgrade badge](components.md#upgrade-badge), [count badge](components.md#library-list-row) |
-| States | Captured except error | hover, focus-visible, pressed, selected, disabled, loading in [components.md](components.md); no error state was reached |
+| States | Captured | hover, focus-visible, pressed, selected, disabled, loading and an [inline error](components.md#inline-error) in [components.md](components.md) |
 | App shell | Captured | [patterns.md](patterns.md#app-shell-and-navigation) |
 | Form with a validation error | Not captured | The only forms edit the account; they were not emptied or submitted ([patterns.md](patterns.md#forms-and-validation)) |
-| Empty, loading, error | Empty and loading captured; error not captured | [patterns.md](patterns.md#empty-loading-and-error-states); nothing failed during the capture |
+| Empty, loading, error | Captured | [patterns.md](patterns.md#empty-loading-and-error-states); the error is the Cannot search notice for an article with no citation data; no request failed |
 | Destructive confirmation | Captured | [patterns.md](patterns.md#destructive-confirmation) |
-| Feedback after an action | Captured inline; toast not captured | [patterns.md](patterns.md#feedback-after-an-action) |
+| Feedback after an action | Captured | [patterns.md](patterns.md#feedback-after-an-action): inline changes and the Copied to clipboard toast |
 | Search and filtering | Captured | [patterns.md](patterns.md#search-and-filtering) |
 | List or table | Captured | [patterns.md](patterns.md#data-display) |
 | Onboarding | Not captured | The account is not new and Reset Tutorials is disabled ([patterns.md](patterns.md#onboarding-and-first-run)) |
 | Light and dark | Light only | The product has no dark theme |
-| Desktop and phone widths | Captured | 1440 x 900 throughout; 390 x 844 shows the Screen too small notice, the product's only phone state |
+| Desktop, tablet and phone widths | Captured | 1440 x 900 throughout; search at 1000 x 800 and home at 800 x 900 ([breakpoints](#foundations-at-a-glance)); 390 x 844 shows the Screen too small notice, the product's only phone state |
 
 ## Do and don't
 
