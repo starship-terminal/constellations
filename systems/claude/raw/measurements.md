@@ -6,21 +6,21 @@ Every component has one table per theme: a column per state, a row per property.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab), skipped where the element (a radio span of a segmented control) cannot take focus; the rest (`active`, `selected`, `checked`, `open`, `typed`, `enabled`, ...) are other elements or snapshots captured in that state. Light states are prefixed `light`. The 390 wide copies are measured at rest only.
 
-157 components, 662 states (658 measured, 4 skipped, 0 not found).
+169 components, 700 states (696 measured, 4 skipped, 0 not found).
 
 ## Shared values
 
 Tallied over every measured state by the build script.
 
-- **Radius scale** (element radius, times seen): 8px (274), 6px (40), 7px (40), 12px (28), 9999px (26), 4px (14), 20px (12), 5px (12), 2px (12), 14px (6), 5.5px (2), 16px (2), 10px (2).
-- **Transitions**: `box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (134), `outline 0.2s ease` (66), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (28), `background-color, border-color, box-shadow, opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (12), `color, text-decoration-color, box-shadow 0.06s cubic-bezier(0.165, 0.84, 0.44, 1)` (10), `box-shadow 0.06s ease` (8), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (8), `transform, translate, scale, rotate 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (4), `opacity, scale, filter 0.2s cubic-bezier(0.165, 0.84, 0.44, 1)` (4), `background-color 0.3s cubic-bezier(0.32, 0.72, 0, 1)` (2).
-- **Font families**: anthropic-sans (850), Anthropicons-Variable (252), anthropic-serif (48), anthropic-mono (6).
-- **Type sizes** (size/line-height weight of the first text): 20px/20px 433.25 (158), 14px/20px 400 (152), 14px/20px 500 (80), 16px/16px 533.25 (68), 14px/21px 400 (46), 16px/16px 700 (26), 15px/20px 400 (26), 13px/17px 400 (16), 13px/17px 500 (10), 24px/32px 500 (8), 13px/16px 400 (6), 16px/24px 400 (6), 12px/17px 400 (6), 12px/12px 400 (4).
-- **Shadows**: `#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px` (64); `#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px` (64); `#151515 0px 0px 0px 1px inset` (20); `#fcfcfb 0px 0px 0px 1px inset` (20); `#0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px` (20); `#000000 @ 0.05 0px 1px 2px 0px` (15).
-- **Focus-visible, dark** (54 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px (27); nothing painted on the element (11); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px (5); outline 2px solid #5598e7 offset 2px (4); outline 2px solid #5598e7 @ 0 offset 2px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #8e2626 @ 0.6 0px 0px 6px 1px (2); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.075 0px 4px 20px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset, #ffffff @ 0.2 0px 0px 0px 0px (1); outline 2px solid #000000 @ 0 offset 2px (1).
-- **Focus-visible, light** (54 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px (27); nothing painted on the element (11); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px (5); outline 2px solid #256abf offset 2px (4); outline 2px solid #256abf @ 0 offset 2px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px (2); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.075 0px 4px 20px 0px, #0b0b0b @ 0.2 0px 0px 0px 0px inset, #0b0b0b @ 0.2 0px 0px 0px 1px (1); outline 2px solid #000000 @ 0 offset 2px (1).
-- **Hover changes, dark** (68 hovered components, 19 with no change on the element or its first painted layer): inner layer none → #ffffff @ 0.075 (12); backgroundColor #000000 @ 0 → #ffffff @ 0.075 (6); inner layer #ffffff @ 0.1 → #ffffff @ 0.14 (3); inner layer undefined → #ffffff @ 0.075 (3); inner layer #ffffff → #e1e0d9 (3); inner layer #898781 → #898781 (1); backgroundColor #000000 @ 0 → #ffffff @ 0.1 (1); inner layer #c6613f → #d97757 (1).
-- **Hover changes, light** (68 hovered components, 19 with no change on the element or its first painted layer): inner layer none → #0b0b0b @ 0.05 (12); backgroundColor #000000 @ 0 → #f0efec (4); inner layer #ffffff @ 0.1 → #0b0b0b @ 0.05 (3); inner layer undefined → #0b0b0b @ 0.05 (3); inner layer #0b0b0b → #2c2c2a (3); backgroundColor #000000 @ 0 → #0b0b0b @ 0.05 (2); inner layer #898781 → #898781 (1); backgroundColor #000000 @ 0 → #0b0b0b @ 0.1 (1).
+- **Radius scale** (element radius, times seen): 8px (280), 6px (40), 7px (40), 12px (32), 9999px (26), 4px (14), 20px (12), 5px (12), 2px (12), 10px (10), 14px (6), 16px (4), 5.5px (2).
+- **Transitions**: `box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (140), `outline 0.2s ease` (70), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (32), `background-color, border-color, box-shadow, opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (12), `color, text-decoration-color, box-shadow 0.06s cubic-bezier(0.165, 0.84, 0.44, 1)` (10), `box-shadow 0.06s ease` (8), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (8), `transform, translate, scale, rotate 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (4), `opacity, scale, filter 0.2s cubic-bezier(0.165, 0.84, 0.44, 1)` (4), `background-color 0.3s cubic-bezier(0.32, 0.72, 0, 1)` (2).
+- **Font families**: anthropic-sans (894), Anthropicons-Variable (272), anthropic-serif (50), anthropic-mono (6).
+- **Type sizes** (size/line-height weight of the first text): 20px/20px 433.25 (164), 14px/20px 400 (156), 14px/20px 500 (82), 16px/16px 533.25 (74), 14px/21px 400 (46), 16px/16px 700 (34), 15px/20px 400 (28), 13px/17px 400 (16), 13px/17px 500 (10), 24px/32px 500 (8), 15px/22px 500 (8), 13px/16px 400 (6), 16px/24px 400 (6), 12px/17px 400 (6).
+- **Shadows**: `#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px` (67); `#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px` (67); `#151515 0px 0px 0px 1px inset` (21); `#fcfcfb 0px 0px 0px 1px inset` (21); `#0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px` (20); `#000000 @ 0.05 0px 1px 2px 0px` (15).
+- **Focus-visible, dark** (57 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px (28); nothing painted on the element (12); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px (6); outline 2px solid #5598e7 offset 2px (4); outline 2px solid #5598e7 @ 0 offset 2px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #8e2626 @ 0.6 0px 0px 6px 1px (2); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.075 0px 4px 20px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset, #ffffff @ 0.2 0px 0px 0px 0px (1); outline 2px solid #000000 @ 0 offset 2px (1).
+- **Focus-visible, light** (57 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px (28); nothing painted on the element (12); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px (6); outline 2px solid #256abf offset 2px (4); outline 2px solid #256abf @ 0 offset 2px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px (2); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.075 0px 4px 20px 0px, #0b0b0b @ 0.2 0px 0px 0px 0px inset, #0b0b0b @ 0.2 0px 0px 0px 1px (1); outline 2px solid #000000 @ 0 offset 2px (1).
+- **Hover changes, dark** (71 hovered components, 20 with no change on the element or its first painted layer): inner layer none → #ffffff @ 0.075 (12); backgroundColor #000000 @ 0 → #ffffff @ 0.075 (7); inner layer #ffffff → #e1e0d9 (4); inner layer #ffffff @ 0.1 → #ffffff @ 0.14 (3); inner layer undefined → #ffffff @ 0.075 (3); inner layer #898781 → #898781 (1); backgroundColor #000000 @ 0 → #ffffff @ 0.1 (1); inner layer #c6613f → #d97757 (1).
+- **Hover changes, light** (71 hovered components, 20 with no change on the element or its first painted layer): inner layer none → #0b0b0b @ 0.05 (12); backgroundColor #000000 @ 0 → #f0efec (4); inner layer #0b0b0b → #2c2c2a (4); inner layer #ffffff @ 0.1 → #0b0b0b @ 0.05 (3); backgroundColor #000000 @ 0 → #0b0b0b @ 0.05 (3); inner layer undefined → #0b0b0b @ 0.05 (3); inner layer #898781 → #898781 (1); backgroundColor #000000 @ 0 → #0b0b0b @ 0.1 (1).
 
 ### Tokens the measured components use
 
@@ -34,7 +34,10 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | `--band-slot-lift` | - | - |
 | `--cds-alpha-1` | hsl(from #fff h s l / 5%) | hsl(from #0b0b0b h s l / 5%) |
 | `--cds-avatar-sm` | calc(1.5rem * 1) | calc(1.5rem * 1) |
+| `--cds-banner-neutral-ring` | - | - |
+| `--cds-banner-neutral-tint` | - | - |
 | `--cds-bg-user-message` | hsl(from #fff h s l / 5%) | hsl(from #0b0b0b h s l / 5%) |
+| `--cds-bg-warning` | #311a00 | #f9dca4 |
 | `--cds-black` | #000 | #000 |
 | `--cds-border` | hsl(from #fff h s l / 10%) | hsl(from #0b0b0b h s l / 10%) |
 | `--cds-checkbox` | calc(1.25rem * 1), calc(1rem * 1) | calc(1.25rem * 1), calc(1rem * 1) |
@@ -61,8 +64,9 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | `--cds-radius` | calc(.5rem * 1), calc(.4375rem * 1) | calc(.5rem * 1), calc(.4375rem * 1) |
 | `--cds-rem-scale` | - | - |
 | `--cds-resize-pill-force` | - | - |
+| `--cds-ring-color` | hsl(from #fff h s l / 10%) | hsl(from #0b0b0b h s l / 10%) |
 | `--cds-ring-inner` | 0px, 1px | 0px |
-| `--cds-ring-outer` | .5px | .5px |
+| `--cds-ring-outer` | .5px, 0px | .5px, 1px |
 | `--cds-segmented-control-thumb` | hsl(from #fff h s l / 10%) | #fff |
 | `--cds-segmented-control-track` | hsl(from #fff h s l / 5%) | #f6f6f4, hsl(from #0b0b0b h s l / 5%) |
 | `--cds-shortcut-cap-ink` | #a5a49a, currentColor, #898781 | #6d6b67, currentColor, #898781 |
@@ -72,7 +76,9 @@ Every `var(--x)` named in a measured component's classes, with the value it reso
 | `--cds-switch-knob` | #fff | #fff |
 | `--cds-switch-track` | hsl(from #fff h s l / 10%) | hsl(from #0b0b0b h s l / 20%) |
 | `--cds-switch-track-hover` | hsl(from #fff h s l / 20%) | hsl(from #0b0b0b h s l / 35%) |
+| `--cds-text-danger` | #ec7e7e | #8e2626 |
 | `--cds-text-muted` | #898781 | #898781 |
+| `--cds-text-secondary` | #c3c2b7 | #52514e |
 | `--cds-text-stays-secondary` | - | - |
 | `--cds-tooltip-bg` | #20201f | #0b0b0b |
 | `--cds-tooltip-fg` | #f0efec | #fff |
@@ -7942,3 +7948,579 @@ Light theme.
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) |
 
 Crops: `button-primary-page-default.png`, `button-primary-page-hover.png`, `button-primary-page-focus-visible.png`, `button-primary-page-pressed.png`, `button-primary-page-light.png`, `button-primary-page-light-hover.png`, `button-primary-page-light-focus-visible.png`, `button-primary-page-light-pressed.png`.
+
+#### banner-info
+
+Information banner. cds Banner, role=status, the neutral tone: an info glyph, body text with an inline link, on surface-1 inside a 1px ring (--cds-banner-neutral-ring, which falls back to the ring colour). Claude has no info hue; this neutral banner is how it informs.
+
+Copy: `settings-dark-capabilities`. Finder: `() => Q('[data-cds=Banner]')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 712 x 64 |
+| Padding | 12px 16px |
+| Gap | 8px |
+| Border | none |
+| Radius | 12px |
+| Background | #151515 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Text node | span: Anthropicons-Variable 20px/20px 433.25, #f0efec |
+| Transition | none |
+| Painted layers | div.flex.items-start.gap-xs 712.0x64.0 bg #151515 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px; a.cds-reset.cds-text-link.cds-text-link-underline 647.2x38.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px |
+| Tokens | --cds-banner-neutral-ring (unset); --cds-banner-neutral-tint (unset); --cds-ring-color hsl(from #fff h s l / 10%); --cds-ring-inner 1px; --cds-ring-outer 0px; --cds-text-danger #ec7e7e; --cds-text-secondary #c3c2b7 |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 714 x 64 |
+| Padding | 12px 16px |
+| Gap | 8px |
+| Border | none |
+| Radius | 12px |
+| Background | #fcfcfb |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Text node | span: Anthropicons-Variable 20px/20px 433.25, #0b0b0b |
+| Transition | none |
+| Painted layers | div.flex.items-start.gap-xs 714.0x64.0 bg #fcfcfb r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px; a.cds-reset.cds-text-link.cds-text-link-underline 651.9x38.0 r 2px outline 2px solid #256abf @ 0 offset 2px |
+| Tokens | --cds-banner-neutral-ring (unset); --cds-banner-neutral-tint (unset); --cds-ring-color hsl(from #0b0b0b h s l / 10%); --cds-ring-inner 0px; --cds-ring-outer 1px; --cds-text-danger #8e2626; --cds-text-secondary #52514e |
+| How | at rest |
+
+Crops: `banner-info-default.png`, `banner-info-light.png`.
+
+#### banner-info-icon
+
+Information banner glyph.
+
+Copy: `settings-dark-capabilities`. Finder: `() => Q('[data-cds=Banner] [data-cds=Icon]')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 20 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Anthropicons-Variable 20px/20px 433.25 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Transition | none |
+| Ancestor paint | 2 up div.flex.items-start.gap-xs bg #151515 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 20 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Anthropicons-Variable 20px/20px 433.25 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Transition | none |
+| Ancestor paint | 2 up div.flex.items-start.gap-xs bg #fcfcfb shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px |
+| How | at rest |
+
+Crops: `banner-info-icon-default.png`, `banner-info-icon-light.png`.
+
+#### banner-info-text
+
+Information banner message. The banner text read on its own (the banner entry above reads its glyph first).
+
+Copy: `settings-dark-capabilities`. Finder: `() => Q('[data-cds=Banner] .min-w-0 > div')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 652 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Transition | none |
+| Painted layers | a.cds-reset.cds-text-link.cds-text-link-underline 647.2x38.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px |
+| Ancestor paint | 2 up div.flex.items-start.gap-xs bg #151515 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 654 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Transition | none |
+| Painted layers | a.cds-reset.cds-text-link.cds-text-link-underline 651.9x38.0 r 2px outline 2px solid #256abf @ 0 offset 2px |
+| Ancestor paint | 2 up div.flex.items-start.gap-xs bg #fcfcfb shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px |
+| How | at rest |
+
+Crops: `banner-info-text-default.png`, `banner-info-text-light.png`.
+
+#### toast
+
+Toast (warning). The toast raised after opening a chat that no longer exists: bottom right, radius card, surface-3 under a bg.warning layer, a 1px warning ring (shadow-ring-warning), text.warning, a 20px warning glyph, a medium-weight message and a 16px Dismiss button. Toasts stack upward 14px apart and shrink 4% per step.
+
+Copy: `home-dark-toast`. Finder: `() => Q('[data-cds=Toast] [role=dialog] > div')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 360 x 64 |
+| Padding | 0px |
+| Border | none |
+| Radius | 12px |
+| Background | #20201f |
+| Background image | linear-gradient(0deg, #311a00, #311a00) |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #512e00 0px 0px 0px 1px inset |
+| Outline | none |
+| Font | anthropic-sans 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #db9300 |
+| Text node | span: Anthropicons-Variable 20px/20px 433.25, #db9300 |
+| Transition | none |
+| Painted layers | div.rounded-card.bg-surface-3.shadow-panel 360.0x64.0 bg #20201f image linear-gradient(0deg, #311a00, #311a00) r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #512e00 0px 0px 0px 1px inset |
+| Tokens | --cds-bg-warning #311a00 |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 360 x 64 |
+| Padding | 0px |
+| Border | none |
+| Radius | 12px |
+| Background | #ffffff |
+| Background image | linear-gradient(0deg, #f9dca4, #f9dca4) |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #eda100 0px 0px 0px 1px inset |
+| Outline | none |
+| Font | anthropic-sans 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #734500 |
+| Text node | span: Anthropicons-Variable 20px/20px 433.25, #734500 |
+| Transition | none |
+| Painted layers | div.rounded-card.bg-surface-3.shadow-panel 360.0x64.0 bg #ffffff image linear-gradient(0deg, #f9dca4, #f9dca4) r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #eda100 0px 0px 0px 1px inset |
+| Tokens | --cds-bg-warning #f9dca4 |
+| How | at rest |
+
+Crops: `toast-default.png`, `toast-light.png`.
+
+#### toast-text
+
+Toast message. The toast message read on its own (the toast entry above reads its glyph first).
+
+Copy: `home-dark-toast`. Finder: `() => Q('[data-cds=Toast] h2')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 268 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 500 |
+| Letter spacing | normal |
+| Colour | #db9300 |
+| Text node | span: anthropic-sans 14px/20px 500, #db9300 |
+| Transition | none |
+| Ancestor paint | 3 up div.rounded-card.bg-surface-3.shadow-panel bg #20201f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #512e00 0px 0px 0px 1px inset |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 268 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 500 |
+| Letter spacing | normal |
+| Colour | #734500 |
+| Text node | span: anthropic-sans 14px/20px 500, #734500 |
+| Transition | none |
+| Ancestor paint | 3 up div.rounded-card.bg-surface-3.shadow-panel bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #eda100 0px 0px 0px 1px inset |
+| How | at rest |
+
+Crops: `toast-text-default.png`, `toast-text-light.png`.
+
+#### toast-dismiss
+
+Toast dismiss button.
+
+Copy: `home-dark-toast`. Finder: `() => Q('[data-cds=Toast] button[aria-label=Dismiss]')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 24 x 24 | = | = |
+| Padding | 4px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | #ffffff @ 0.075 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #db9300 | = | = |
+| Text node | span: Anthropicons-Variable 16px/16px 533.25, #db9300 | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | outline 0.2s ease |
+| Cursor | default | = | = |
+| Ancestor paint | 2 up div.rounded-card.bg-surface-3.shadow-panel bg #20201f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #512e00 0px 0px 0px 1px inset | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+| Painted layers | - | button.cds-reset.-mx-1.-mb-1 24.0x24.0 bg #ffffff @ 0.075 r 8px | button.cds-reset.-mx-1.-mb-1 24.0x24.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible |
+|---|---|---|---|
+| Size (w x h) | 24 x 24 | = | = |
+| Padding | 4px | = | = |
+| Border | none | = | = |
+| Radius | 8px | = | = |
+| Background | transparent | #0b0b0b @ 0.05 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #734500 | = | = |
+| Text node | span: Anthropicons-Variable 16px/16px 533.25, #734500 | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | outline 0.2s ease |
+| Cursor | default | = | = |
+| Ancestor paint | 2 up div.rounded-card.bg-surface-3.shadow-panel bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #eda100 0px 0px 0px 1px inset | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab |
+| Painted layers | - | button.cds-reset.-mx-1.-mb-1 24.0x24.0 bg #0b0b0b @ 0.05 r 8px | button.cds-reset.-mx-1.-mb-1 24.0x24.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px |
+
+Crops: `toast-dismiss-default.png`, `toast-dismiss-hover.png`, `toast-dismiss-focus-visible.png`, `toast-dismiss-light.png`, `toast-dismiss-light-hover.png`, `toast-dismiss-light-focus-visible.png`.
+
+#### onboarding-card
+
+Onboarding card. The first-run screen at /onboarding: the wordmark, a serif display title, a secondary line, then one card on surface-3 (radius 16, a border and shadow-sm) holding the two consent checkboxes and a full-width primary button; the verified email and a link to change it sit at the foot of the page.
+
+Copy: `onboarding-dark`. Finder: `() => C(Q('form [data-cds=Checkbox]'), '.rounded-2xl')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 448 x 190 |
+| Padding | 20px |
+| Border | 1px solid #ffffff @ 0.1 |
+| Radius | 16px |
+| Background | #20201f |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #000000 @ 0.24 0px 2px 8px 0px |
+| Outline | none |
+| Font | anthropic-sans 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Text node | span: Anthropicons-Variable 16px/16px 700, #ffffff |
+| Transition | none |
+| Placeholder | "" #c3c2b7, opacity 1, 14px |
+| Painted layers | div.bg-surface-3.rounded-2xl.p-5 448.0x190.0 bg #20201f border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #000000 @ 0.24 0px 2px 8px 0px; span.flex.shrink-0.items-center 20.0x20.0 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 5px; input 1.0x1.0 outline 2px solid #5598e7 @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 110.4x18.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 357.6x38.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px; span.flex.shrink-0.items-center 20.0x20.0 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 5px |
+| Tokens | --cds-checkbox calc(1.25rem * 1); --cds-checkbox-radius calc(.3125rem * 1); --cds-cursor-interactive default; --cds-page-bg #151515 |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 448 x 190 |
+| Padding | 20px |
+| Border | 1px solid #0b0b0b @ 0.1 |
+| Radius | 16px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #0b0b0b @ 0.08 0px 2px 8px 0px |
+| Outline | none |
+| Font | anthropic-sans 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Text node | span: Anthropicons-Variable 16px/16px 700, #ffffff |
+| Transition | none |
+| Placeholder | "" #52514e, opacity 1, 14px |
+| Painted layers | div.bg-surface-3.rounded-2xl.p-5 448.0x190.0 bg #ffffff border T:1px solid #0b0b0b @ 0.1 / R:1px solid #0b0b0b @ 0.1 / B:1px solid #0b0b0b @ 0.1 / L:1px solid #0b0b0b @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #0b0b0b @ 0.08 0px 2px 8px 0px; span.flex.shrink-0.items-center 20.0x20.0 border T:1px solid #0b0b0b @ 0.2 / R:1px solid #0b0b0b @ 0.2 / B:1px solid #0b0b0b @ 0.2 / L:1px solid #0b0b0b @ 0.2 r 5px; input 1.0x1.0 outline 2px solid #256abf @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 111.2x18.0 r 2px outline 2px solid #256abf @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 360.2x38.0 r 2px outline 2px solid #256abf @ 0 offset 2px; span.flex.shrink-0.items-center 20.0x20.0 border T:1px solid #0b0b0b @ 0.2 / R:1px solid #0b0b0b @ 0.2 / B:1px solid #0b0b0b @ 0.2 / L:1px solid #0b0b0b @ 0.2 r 5px |
+| Tokens | --cds-checkbox calc(1.25rem * 1); --cds-checkbox-radius calc(.3125rem * 1); --cds-cursor-interactive default; --cds-page-bg #fcfcfb |
+| How | at rest |
+
+Crops: `onboarding-card-default.png`, `onboarding-card-light.png`.
+
+#### onboarding-title
+
+Onboarding title.
+
+Copy: `onboarding-dark`. Finder: `() => Q('h1')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 448 x 45.59 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-serif 38px/45.6px 300 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Transition | none |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 448 x 45.59 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-serif 38px/45.6px 330 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Transition | none |
+| How | at rest |
+
+Crops: `onboarding-title-default.png`, `onboarding-title-light.png`.
+
+#### onboarding-checkbox
+
+Consent checkbox with label.
+
+Copy: `onboarding-dark`. Finder: `() => C(Q('form [data-cds=Checkbox]'), 'label')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 406 x 40 | = | = |
+| Padding | 0px | = | = |
+| Gap | 8px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #c3c2b7 | = | = |
+| Text node | span: Anthropicons-Variable 16px/16px 700, #ffffff | = | = |
+| Transition | none | = | = |
+| Cursor | default | = | = |
+| Placeholder | "" #c3c2b7, opacity 1, 14px | = | = |
+| Painted layers | span.flex.shrink-0.items-center 20.0x20.0 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 5px; input 1.0x1.0 outline 2px solid #5598e7 @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 110.4x18.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 357.6x38.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px | = | span.flex.shrink-0.items-center 20.0x20.0 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 5px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px; input 1.0x1.0 outline 2px solid #5598e7 @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 110.4x18.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 357.6x38.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px |
+| Ancestor paint | 3 up div.bg-surface-3.rounded-2xl.p-5 bg #20201f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #000000 @ 0.24 0px 2px 8px 0px | = | = |
+| Tokens | --cds-checkbox calc(1.25rem * 1); --cds-checkbox-radius calc(.3125rem * 1) | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab (on the field inside) |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible |
+|---|---|---|---|
+| Size (w x h) | 406 x 40 | = | = |
+| Padding | 0px | = | = |
+| Gap | 8px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | anthropic-sans 14px/20px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #52514e | = | = |
+| Text node | span: Anthropicons-Variable 16px/16px 700, #ffffff | = | = |
+| Transition | none | = | = |
+| Cursor | default | = | = |
+| Placeholder | "" #52514e, opacity 1, 14px | = | = |
+| Painted layers | span.flex.shrink-0.items-center 20.0x20.0 border T:1px solid #0b0b0b @ 0.2 / R:1px solid #0b0b0b @ 0.2 / B:1px solid #0b0b0b @ 0.2 / L:1px solid #0b0b0b @ 0.2 r 5px; input 1.0x1.0 outline 2px solid #256abf @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 111.2x18.0 r 2px outline 2px solid #256abf @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 360.2x38.0 r 2px outline 2px solid #256abf @ 0 offset 2px | = | span.flex.shrink-0.items-center 20.0x20.0 border T:1px solid #0b0b0b @ 0.2 / R:1px solid #0b0b0b @ 0.2 / B:1px solid #0b0b0b @ 0.2 / L:1px solid #0b0b0b @ 0.2 r 5px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px; input 1.0x1.0 outline 2px solid #256abf @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 111.2x18.0 r 2px outline 2px solid #256abf @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 360.2x38.0 r 2px outline 2px solid #256abf @ 0 offset 2px |
+| Ancestor paint | 3 up div.bg-surface-3.rounded-2xl.p-5 bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #0b0b0b @ 0.08 0px 2px 8px 0px | = | = |
+| Tokens | --cds-checkbox calc(1.25rem * 1); --cds-checkbox-radius calc(.3125rem * 1) | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab (on the field inside) |
+
+Crops: `onboarding-checkbox-default.png`, `onboarding-checkbox-hover.png`, `onboarding-checkbox-focus-visible.png`, `onboarding-checkbox-light.png`, `onboarding-checkbox-light-hover.png`, `onboarding-checkbox-light-focus-visible.png`.
+
+#### onboarding-checkbox-label
+
+Consent checkbox label. The label text read on its own (the checkbox entries read the check glyph first), with its inline TextLinks.
+
+Copy: `onboarding-dark`. Finder: `() => [...document.querySelectorAll('form label span')].find((e) => e.innerText.startsWith('I agree'))`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 378 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #c3c2b7 |
+| Transition | none |
+| Cursor | default |
+| Painted layers | a.cds-reset.cds-text-link.cds-text-link-underline 110.4x18.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 357.6x38.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 378 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #52514e |
+| Transition | none |
+| Cursor | default |
+| Painted layers | a.cds-reset.cds-text-link.cds-text-link-underline 111.2x18.0 r 2px outline 2px solid #256abf @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 360.2x38.0 r 2px outline 2px solid #256abf @ 0 offset 2px |
+| How | at rest |
+
+Crops: `onboarding-checkbox-label-default.png`, `onboarding-checkbox-label-light.png`.
+
+#### onboarding-subtitle
+
+Onboarding secondary line.
+
+Copy: `onboarding-dark`. Finder: `() => Q('header p')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 448 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 15px/20px 400 |
+| Letter spacing | normal |
+| Colour | #c3c2b7 |
+| Transition | none |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 448 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 15px/20px 400 |
+| Letter spacing | normal |
+| Colour | #52514e |
+| Transition | none |
+| How | at rest |
+
+Crops: `onboarding-subtitle-default.png`, `onboarding-subtitle-light.png`.
+
+#### onboarding-button
+
+Create account button.
+
+Copy: `onboarding-dark`. Finder: `() => [...document.querySelectorAll('form button')].find((b) => b.innerText.trim() === 'Create account')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 406 x 40 | = | = | = |
+| Padding | 0px 16px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 10px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px | = |
+| Outline | none | = | = | = |
+| Font | anthropic-sans 15px/22px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #0b0b0b | = | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 15px/22px 500, #0b0b0b | = | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | outline 0.2s ease | = |
+| Cursor | default | = | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 405.0x39.0 bg #ffffff r 10px | span.absolute.inset-0.duration-fast 405.0x39.0 bg #e1e0d9 r 10px | button.cds-reset.group/btn.relative 406.0x40.0 r 10px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px; span.absolute.inset-0.duration-fast 405.0x39.0 bg #ffffff r 10px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset | span.absolute.inset-0.duration-fast 394.9x38.0 bg #e1e0d9 r 10px |
+| Ancestor paint | 1 up div.bg-surface-3.rounded-2xl.p-5 bg #20201f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #000000 @ 0.24 0px 2px 8px 0px | = | = | = |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #151515 | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 406 x 40 | = | = | = |
+| Padding | 0px 16px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 10px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px | = |
+| Outline | none | = | = | = |
+| Font | anthropic-sans 15px/22px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span.inline-flex.min-w-0.items-center: anthropic-sans 15px/22px 500, #ffffff | = | = | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = | outline 0.2s ease | = |
+| Cursor | default | = | = | = |
+| Painted layers | span.absolute.inset-0.duration-fast 405.0x39.0 bg #0b0b0b r 10px | span.absolute.inset-0.duration-fast 405.0x39.0 bg #2c2c2a r 10px | button.cds-reset.group/btn.relative 406.0x40.0 r 10px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px; span.absolute.inset-0.duration-fast 405.0x39.0 bg #0b0b0b r 10px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset | span.absolute.inset-0.duration-fast 394.9x38.0 bg #2c2c2a r 10px |
+| Ancestor paint | 1 up div.bg-surface-3.rounded-2xl.p-5 bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.06 0px 1px 2px 0px, #0b0b0b @ 0.08 0px 2px 8px 0px | = | = | = |
+| Tokens | --cds-cursor-interactive default; --cds-page-bg #fcfcfb | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | pointer held down (:active) |
+
+Crops: `onboarding-button-default.png`, `onboarding-button-hover.png`, `onboarding-button-focus-visible.png`, `onboarding-button-pressed.png`, `onboarding-button-light.png`, `onboarding-button-light-hover.png`, `onboarding-button-light-focus-visible.png`, `onboarding-button-light-pressed.png`.

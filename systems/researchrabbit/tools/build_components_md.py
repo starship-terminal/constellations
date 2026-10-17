@@ -84,6 +84,41 @@ TOK_COLOR = {}
 for n, t in sorted(LEAF.items(), key=lambda kv: _rank(kv[0])):
     if t["$type"] == "color":
         TOK_COLOR.setdefault(resolve(t["$value"]), n)
+# semantic roles from the light set (referenced without the set name) by what the colour paints; the general roles first, component roles last
+ROLE_PRE = {
+    "bg": ("background.", "action.", "status.", "component."),
+    "text": ("text.", "status.", "action.primary-text"),
+    "border": ("border.", "status.", "action.focus-ring"),
+    "image": ("gradient.", "background."),
+}
+ROLE_OK = {"image": lambda n: True, "bg": lambda n: not n.startswith("status.") or n.endswith(".fill"),
+           "text": lambda n: not n.startswith("status.") or n.endswith(".text"),
+           "border": lambda n: not n.startswith("status.") or n.endswith(".border")}
+TOK_ROLE = {}
+for role, pres in ROLE_PRE.items():
+    m = TOK_ROLE[role] = {}
+    for i, pre in enumerate(pres):
+        for n, t in LEAF.items():  # tokens.json order: the general role in each group comes first
+            if n.startswith(pre) and t["$type"] == "color" and ROLE_OK[role](n):
+                m.setdefault(resolve(t["$value"]), n)
+# a component's own light-set token (component.toast for the toast entry) wins over a general role
+TOK_COMP = defaultdict(dict)
+for n, t in LEAF.items():
+    if n.startswith("component.") and t["$type"] == "color":
+        TOK_COMP[n.split(".")[1]].setdefault(resolve(t["$value"]), n)
+CUR = {"comp": None}
+
+
+def comp_tok(key):
+    k = CUR["comp"]
+    if not k:
+        return None
+    for name, vals in TOK_COMP.items():
+        if (name == k or name.startswith(k + "-") or k.endswith("-" + name)) and key in vals:
+            return vals[key]
+    return None
+
+
 TOK_RADIUS = {}
 for n, t in sorted(LEAF.items(), key=lambda kv: (len(kv[0]), kv[0])):
     if n.startswith("radius."):
@@ -124,8 +159,15 @@ def to_hex(r, g, b):
     return "#%02x%02x%02x" % (int(round(float(r))), int(round(float(g))), int(round(float(b))))
 
 
-def colour(c, tokens=True):
-    """rgb()/rgba() inside any string -> '#hex `{token.path}`' or 'rgba(...) `{token.path}`'."""
+def colour(c, tokens=True, role=None):
+    """rgb()/rgba() inside any string -> '#hex `{token.path}`' or 'rgba(...) `{token.path}`'.
+
+    With a role ("bg", "text" or "border") the light-set token for that role is named when one has the
+    value, and the palette token otherwise."""
+    def look(key):
+        if not tokens:
+            return None
+        return (comp_tok(key) if role == "bg" else None) or (TOK_ROLE[role].get(key) if role else None) or TOK_COLOR.get(key)
     def one(m):
         r, g, b = m.group(1), m.group(2), m.group(3)
         a = m.group(4)
@@ -134,9 +176,9 @@ def colour(c, tokens=True):
         h = to_hex(r, g, b)
         if a is not None and float(a) != 1:
             txt = "rgba(%d, %d, %d, %g)" % (round(float(r)), round(float(g)), round(float(b)), round(float(a), 3))
-            tok = TOK_COLOR.get(h + "%02x" % round(float(a) * 255)) if tokens else None
+            tok = look(h + "%02x" % round(float(a) * 255))
             return f"{txt} `{{{tok}}}`" if tok else txt
-        tok = TOK_COLOR.get(h) if tokens else None
+        tok = look(h)
         return f"{h} `{{{tok}}}`" if tok else h
     return re.sub(r"rgba?\(\s*([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\s*\)", one, c)
 
@@ -189,27 +231,26 @@ def shadow_layers(s):
             m = re.findall(r"[\d.]+", c)
             r, g, b = (float(x) for x in m[:3])
             a = float(m[3]) if len(m) > 3 else 1.0
-        out.append((tuple(nums), round(r), round(g), round(b), round(a, 2)))
+        out.append((tuple(nums), round(r), round(g), round(b), round(a, 2), bool(re.search(r"\binset\b", p))))
     return out
 
 
 SHADOW_TOK = {}
 for name, val in ROOTV.items():
     if name.startswith("--shadow-") and not name.endswith("-dark"):
-        SHADOW_TOK[tuple(map(lambda t: (tuple(t[0][:3]),) + t[1:], shadow_layers(val)))] = name
+        SHADOW_TOK[tuple(shadow_layers(val))] = name
 
 
 for n, t in LEAF.items():
     if t["$type"] == "shadow":
-        val = ", ".join(f"{l['color']} {l['offsetX']} {l['offsetY']} {l['blur']} {l['spread']}" for l in t["$value"])
-        SHADOW_TOK.setdefault(tuple(map(lambda t_: (tuple(t_[0][:3]),) + t_[1:], shadow_layers(val))), "{" + n + "}")
+        val = ", ".join(f"{l['color']} {l['offsetX']} {l['offsetY']} {l['blur']} {l['spread']}{' inset' if l.get('inset') else ''}"
+                        for l in t["$value"])
+        SHADOW_TOK.setdefault(tuple(shadow_layers(val)), "{" + n + "}")
 
 
 def shadow_token(s):
-    key = tuple((tuple(t[0][:3]),) + t[1:] for t in shadow_layers(s))
-    # the computed form has the spread as a 4th number; the root vars have none
-    key2 = tuple((tuple(t[0][:3]),) + (t[1], t[2], t[3], t[4]) for t in shadow_layers(s))
-    return SHADOW_TOK.get(key) or SHADOW_TOK.get(key2)
+    # offsets, blur, spread (0 when a root var omits it), colour and inset must all match
+    return SHADOW_TOK.get(tuple(shadow_layers(s)))
 
 
 def shadow_text(s):
@@ -241,7 +282,7 @@ def props(v):
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'])}")
+            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role="border")}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
@@ -249,21 +290,21 @@ def props(v):
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
         o["radius"] = radius_tok(rad)
-    o["background"] = colour(s["backgroundColor"])
+    o["background"] = colour(s["backgroundColor"], role="bg")
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
-        o["image"] = colour(img)[:200]
+        o["image"] = colour(img, role="image")[:200]
     if s["boxShadow"] != "none":
         o["shadow"] = shadow_text(s["boxShadow"])
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
+        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], role="border")}, offset {s['outlineOffset']}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('fontStyle', 'normal'))}, {colour(t['color'])}"
+        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('fontStyle', 'normal'))}, {colour(t['color'], role="text")}"
         if t.get("textDecorationLine") not in (None, "none"):
             o["text"] += f", {t['textDecorationLine']}"
     else:
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'], s.get('fontStyle', 'normal'))}, {colour(s['color'])}"
+        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'], s.get('fontStyle', 'normal'))}, {colour(s['color'], role="text")}"
         if s["textDecorationLine"] != "none":
             o["text"] += f", {s['textDecorationLine']}"
     if s["opacity"] != "1":
@@ -281,9 +322,9 @@ def props(v):
             o["transition"] = ", ".join(parts)
     if v.get("icon") and 0 < v["icon"]["w"] < 120:
         ic = v["icon"]
-        o["icon"] = f"{px(ic['w'])} x {px(ic['h'])}, {colour(ic['stroke'] if ic['fill'] == 'none' and ic['stroke'] != 'none' else ic['color'])}"
+        o["icon"] = f"{px(ic['w'])} x {px(ic['h'])}, {colour(ic['stroke'] if ic['fill'] == 'none' and ic['stroke'] != 'none' else ic['color'], role="text")}"
     if v.get("placeholder"):
-        o["placeholder"] = colour(v["placeholder"]["color"])
+        o["placeholder"] = colour(v["placeholder"]["color"], role="text")
     return o
 
 
@@ -339,13 +380,14 @@ def part(name, b, origin=None):
     m = re.match(r"(\d+) ([\d.]+)px/([\d.a-z]+) (.*)", f)
     if m and b.get("text") is not None or (m and b.get("tag") in ("p", "h1", "h2", "h3", "h4", "h5", "span", "label", "a", "button", "input")):
         lh = "normal" if m.group(3) == "normal" else px(m.group(3))
-        bits.append(f"{m.group(4)} {px(m.group(2))}/{lh} {m.group(1)}{' italic' if b.get('fontStyle') == 'italic' else ''}, {colour(b['color'])}")
+        bits.append(f"{m.group(4)} {px(m.group(2))}/{lh} {m.group(1)}{' italic' if b.get('fontStyle') == 'italic' else ''}, {colour(b['color'], role="text")}")
     for k, lab in (("bg", "background"), ("radius", "radius"), ("padding", "padding"), ("margin", "margin"), ("gap", "gap"), ("border", "border"), ("boxShadow", "shadow")):
         if b.get(k) and b[k] not in ("0px", "normal"):
-            val = colour(b[k]) if k in ("bg", "border") else (shadow_text(b[k]) if k == "boxShadow" else b[k])
+            val = (colour(b[k], role=k) if k in ("bg", "border") else shadow_text(b[k]) if k == "boxShadow"
+                   else space_tok(b[k]) if k in ("padding", "margin", "gap") else radius_tok(b[k]) if k == "radius" else b[k])
             bits.append(f"{lab} {val}")
     if b.get("bgImage"):
-        bits.append("image " + colour(b["bgImage"])[:110])
+        bits.append("image " + colour(b["bgImage"], role="image")[:110])
     if b.get("opacity"):
         bits.append(f"opacity {b['opacity']}")
     if b.get("text"):
@@ -399,7 +441,10 @@ PAGE_NAME = {
     "kw-selected": "keyword search results (one article selected)", "st-open": "Search Settings drawer (open)", "st-select": "Search Settings drawer (select open)",
     "st-checked": "Search Settings drawer (Open Access checked)", "lib-all": "library, All Articles", "lib-table": "library, All Articles in table view",
     "lib-reading": "library, Reading List (empty)", "mobile-warn": "library at 390px (Screen too small)", "mobile-lib": "library at 390px (after Continue anyway)",
-    "search-start": "Search start page (recent searches)", "lib-notes": "library, article Notes tab (empty)", "lib-selected": "library, All Articles (one selected)",
+    "search-start": "Search start page (recent searches)",
+    "lib-cite": "library, Cite Article dialog", "lib-toast": "library, Cite Article (citation copied, toast showing)",
+    "kw-missing": "keyword search results (an article with no citation data inspected)", "tablet": "search list view at 1000 x 800 (an article inspected)",
+    "home-narrow": "home page at 800 x 900", "lib-notes": "library, article Notes tab (empty)", "lib-selected": "library, All Articles (one selected)",
 }
 
 GROUP_INTRO = {
@@ -418,24 +463,26 @@ GROUP_INTRO = {
     "Tabs and navigation": "Read on 2026-10-17. The vertical tabs of Account Settings and the filter pills above the Reading List.",
     "Menus": "Read on 2026-10-17. The workspace menu (Radix dropdown) and the account popover.",
     "Avatar and badges": "Read on 2026-10-17. The placeholder avatar, the green Upgrade badge and the notice banner.",
-    "Feedback and loading": "Read on 2026-10-17. The spinner, the selection circle and its Clear link. No toast appeared during the capture.",
+    "Feedback and loading": "Read on 2026-10-17. The spinner, the selection circle and its Clear link, the toast (raised by copying a citation), the inline error and the incomplete-data warning.",
     "Data display": "Read on 2026-10-17. The library table and the recent-search rows.",
     "Empty states": "Read on 2026-10-17. Each empty list or tab has its own line of copy; the Reading List and Notes add an illustration or a heading.",
-    "Phone width": "Read on 2026-10-17 at 390 x 844. The app has no phone layout; this is what it shows instead.",
+    "Phone width": "Read on 2026-10-17 at 390 x 844, 800 x 900 and 1000 x 800. Below 641px the app has no layout and shows a notice instead; between that and desktop it keeps the desktop frame and changes only what its script breakpoints switch (raw/app-code-notes.md).",
 }
 
 SHOTS = [
     ("search-split", "Search, split view. The list of result cards beside the graph, Next Search at the right. Default, a search input node hovered, a result node hovered, a list card hovered (it stays tinted), the two legend chips hovered, and a node inspected.", "/search/<id>/0"),
     ("search-map", "Search, map view. The graph fills the main card. Default, zoomed in, a node inspected, the four layout settings tabs, and the filter popover.", "/search/<id>/0"),
-    ("search-list", "Search, list view. The result cards at full width; on 2026-10-17 a keyword search: results, the next page loading, the updating dialog, one article selected, and the Search Settings drawer open, with its select open and a checkbox checked.", "/search/<id>/0"),
+    ("search-list", "Search, list view. The result cards at full width; on 2026-10-17 a keyword search: results, the next page loading, the updating dialog, one article selected, an article with no citation data (the inline error), and the Search Settings drawer open, with its select open and a checkbox checked.", "/search/<id>/0"),
     ("search-start", "Search start page (2026-10-17): the search field, the BibTeX drop zone and the recent searches.", "/search"),
     ("library-map", "Library, map view of one collection. Default, hovering, after a node was dragged (Positions moved), and the Reset menu open.", "/library/<id>"),
     ("library-list", "Library, list view of one collection, with the sidebar and the collection header.", "/library/<id>"),
     ("home", "Home. Hero with the search field, recent articles, collections and guides; on 2026-10-17 again, with a query typed and the workspace and account menus open.", "/"),
     ("account", "Account Settings dialog (2026-10-17), opened from the account menu: Profile, Preferences, an empty Subscription tab, the Update profile dialog stacked on it, and the Delete Account confirmation (cancelled).", "/?account=<tab>"),
-    ("library-all", "Library, All Articles (2026-10-17): the list, one article selected, and an article's empty Notes tab.", "/library"),
+    ("library-all", "Library, All Articles (2026-10-17): the list, one article selected, an article's empty Notes tab, the Cite Article dialog, and the toast after copying a citation.", "/library"),
     ("library-table", "Library, All Articles in the table view (2026-10-17).", "/library"),
     ("library-reading", "Library, the empty Reading List (2026-10-17).", "/library/reading"),
+    ("search-tablet", "Search list view at 1000 x 800 (2026-10-17), an article inspected: the right panel shrinks toward its 290px minimum (314.67px here) and the list narrows.", "/search/<id>/0"),
+    ("home-narrow", "Home at 800 x 900 (2026-10-17): below 896px the three cards stack in one column.", "/"),
     ("library-mobile", "Library at 390 x 844 (2026-10-17): the Screen too small notice, and the clipped desktop layout after Continue anyway.", "/library"),
 ]
 
@@ -453,6 +500,8 @@ OVER = [
     ("Destructive confirmation", "Account Settings, Profile", "Delete Account, then Cancel; nothing typed", "[account-light-delete-confirm](screenshots/account-light-delete-confirm.png), [destructive confirmation](#destructive-confirmation)"),
     ("Loading", "keyword search results", "the copy was taken by a script the moment the spinner or loading dialog mounted", "[search-list-light-loading](screenshots/search-list-light-loading.png), [search-list-light-updating-dialog](screenshots/search-list-light-updating-dialog.png), [spinner](#spinner)"),
     ("Selected article", "keyword search results, All Articles", "the selection circle clicked, then Clear", "[search-list-light-selected](screenshots/search-list-light-selected.png), [library-all-light-selected](screenshots/library-all-light-selected.png), [selection circle](#selection-circle)"),
+    ("Toast", "library, All Articles", "an article's Cite button, then the citation box clicked (copies to the clipboard); the copy was taken the moment the toast mounted", "[library-all-light-cite-dialog](screenshots/library-all-light-cite-dialog.png), [library-all-light-toast](screenshots/library-all-light-toast.png), [toast](#toast)"),
+    ("Inline error", "keyword search results", "an article with no references and no citations inspected; the drawer shows Cannot search", "[search-list-light-citation-missing](screenshots/search-list-light-citation-missing.png), [inline error](#inline-error), [incomplete data warning](#incomplete-data-warning)"),
     ("Select list, checked checkbox", "Search Settings drawer", "the Retractions select opened; Open Access checked, then unchecked", "[search-list-light-settings-select-open](screenshots/search-list-light-settings-select-open.png), [search-list-light-settings-checked](screenshots/search-list-light-settings-checked.png)"),
 ]
 
@@ -488,14 +537,14 @@ icons = [r for r in csv.reader(open("icons/INDEX.tsv"), delimiter="\t")][1:]
 # ------------------------------------------------ head
 W("# ResearchRabbit components")
 W()
-W("The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Read on 2026-10-04 and again on 2026-10-17 (the dialogs, menus, forms, table, empty and loading states, pressed states and the phone width) from static, redacted snapshots of signed-in pages on app.researchrabbit.ai, rendered in headless Chromium at 1440 x 900 (2x; the phone pages at 390 x 844), with computed styles read from the rendered page. The workspace, account and collection names in the snapshots are redacted. Nothing was created, sent or changed; one keyword search was run, an article was selected and cleared, and a filter was checked and unchecked.")
+W("The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Read on 2026-10-04 and again on 2026-10-17 (the dialogs, menus, forms, table, empty, loading and error states, the toast, pressed states, and the tablet and phone widths) from static, redacted snapshots of signed-in pages on app.researchrabbit.ai, rendered in headless Chromium at 1440 x 900 (2x; the narrow pages at 1000 x 800, 800 x 900 and 390 x 844), with computed styles read from the rendered page. The workspace, account and collection names in the snapshots are redacted. Nothing was created, sent or changed; one keyword search was run, an article was selected and cleared, a filter was checked and unchecked, and a citation was copied to the clipboard.")
 W()
 W(f"The machine-readable copy is [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). Custom properties and per-component CSS rules are in [raw/css-vars.json](raw/css-vars.json); how the graph engine draws is in [raw/graph-code-notes.md](raw/graph-code-notes.md).")
 W()
 W("How to read an entry:")
 W()
 W("- A component is found by its styled-components display name (`GraphControls__StyledButton`), so `generateVariantComponent__default`, which many unrelated buttons share, is found by text or position instead. The entry's heading is the product's name for the part, and the key in backticks is the key in the JSON.")
-W("- A colour, shadow, radius, padding, gap or control height is its value followed by the [tokens.json](tokens.json) token with the same value (`{palette.grey.primary}`, `{elevation.menu}`, `{radius.lg}`, `{spacing.2}`, `{size.control-md}`), when there is one; a palette token is named before a semantic one, so look the role up in tokens.json. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 {palette.base.black}`, and is read from the first text node inside the component.")
+W("- A colour, shadow, radius, padding, gap or control height is its value followed by the [tokens.json](tokens.json) token with the same value (`{palette.grey.primary}`, `{elevation.menu}`, `{radius.lg}`, `{spacing.2}`, `{size.control-md}`), when there is one; a colour names the light-set role for what it paints (`{background.surface}` for a fill, `{text.default}` for text, `{border.default}` for a border; these live in the light set) and falls back to the palette token when no role has that value; an entry's own `component.*` token (by name: `component.toast` for the toast, `component.tooltip` for the graph tooltip, `component.menu-separator` for a menu's rule) is named first for its fill, so a token is only chosen by value when the component has none of its own. Collection colours (`palette.ugc.*`) stay palette tokens because the user picks them per collection. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 {palette.base.black}`, and is read from the first text node inside the component.")
 W("- The state table has one row per element or snapshot state read at rest. A hover, focus-visible or pressed row lists only what changes from the row above it; a state with the same values is named in the row's label, for example \"default (same: hover)\". Hover is a real mouse hover, focus-visible a real keyboard focus and pressed the mouse held down (2026-10-17 pages only); where a snapshot state could not be reached it says so.")
 W("- \"Parts\" lists the pieces inside the component, with sizes and offsets measured from the component's corner.")
 W(f"- Crops are images of the component read from the rendered snapshot, in [components/crops/](components/crops) ({len(crop_files)} files, named `{{component}}-{{state}}.png`, at 2x, 256 colours). A crop wider than 1600px was halved. A state that paints the same pixels as its default has no file of its own. Screenshots are in [screenshots/](screenshots).")
@@ -610,7 +659,7 @@ cwhere = defaultdict(set)
 for k, v in first_state.items():
     s = v["style"]
     for prop in ("backgroundColor", "color"):
-        c = colour(s[prop])
+        c = colour(s[prop], role="bg" if prop == "backgroundColor" else "text")
         if c != "transparent":
             cc[(prop, c)] += 1
             cwhere[(prop, c)].add(k)
@@ -680,7 +729,7 @@ for k, c in C.items():
                 continue
             s_ = v["style"]
             if s_["outlineStyle"] != "none" and float(s_["outlineWidth"].replace("px", "")) > 0:
-                ring[f"{s_['outlineWidth']} {s_['outlineStyle']} {colour(s_['outlineColor'])}, offset {s_['outlineOffset']}"].append(k)
+                ring[f"{s_['outlineWidth']} {s_['outlineStyle']} {colour(s_['outlineColor'], role="border")}, offset {s_['outlineOffset']}"].append(k)
             elif diff(props(v), props(bv)):
                 changed_f.append(k)
             else:
@@ -724,7 +773,7 @@ W("|---|---|---|---|---|---|---|---|")
 reg = OrderedDict()
 for pk, pv in PG.items():
     for rn, r in pv.get("regions", {}).items():
-        key = (rn, px(r["x"]), px(r["y"]), px(r["w"]), px(r["h"]), colour(r["bg"]) if r.get("bg") else "-", r.get("radius", "-"))
+        key = (rn, px(r["x"]), px(r["y"]), px(r["w"]), px(r["h"]), colour(r["bg"], role="bg") if r.get("bg") else "-", r.get("radius", "-"))
         reg.setdefault(key, []).append(pk)
 for key, pks in sorted(reg.items(), key=lambda kv: (kv[0][0], kv[1][0])):
     W(f"| {' | '.join(key)} | {', '.join(pks) if len(pks) <= 4 else f'{pks[0]} and {len(pks) - 1} more'} |")
@@ -742,7 +791,7 @@ for k in SHAPES:
     p = props(st)
     if (p["background"] == "transparent" or "radius" not in p) and st.get("paint"):
         p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=shadow_text(p0.get("shadow", "")) or "none")
+        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", ""), role="bg") or "-", shadow=shadow_text(p0.get("shadow", "")) or "none")
     W(f"| [{C[k]['name']}](#{slug(C[k]['name'])}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
@@ -762,6 +811,7 @@ for g in group_order:
     for k, c in C.items():
         if c["group"] != g:
             continue
+        CUR["comp"] = k
         W()
         W(f"#### {c['name']}")
         desc = (c.get("description") or "").strip()
@@ -832,9 +882,9 @@ for g in group_order:
             for p in st0["paint"][:3]:
                 bits = [p["node"].split(".")[0] if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
                 if p.get("bg"):
-                    bits.append("background " + colour(p["bg"]))
+                    bits.append("background " + colour(p["bg"], role="bg"))
                 if p.get("border"):
-                    bits.append("border " + colour(p["border"].split(" | ")[0][2:]))
+                    bits.append("border " + colour(p["border"].split(" | ")[0][2:], role="border"))
                 if p.get("radius"):
                     bits.append("radius " + p["radius"])
                 if p.get("shadow"):
@@ -881,6 +931,7 @@ for r in icons:
 W()
 
 # ------------------------------------------------ gaps
+CUR["comp"] = None
 W("## Gaps")
 W()
 W("### Graph")
@@ -896,8 +947,8 @@ W()
 W("- **Pressed** was measured only on the 2026-10-17 pages (and the top-bar, view toggle, Auto-save and home controls read again there). No captured rule styles `:active` except the slider thumb's cursor, so every pressed state keeps the hover fill.")
 W("- **Hover states of the canvas** (a node, an edge) are only in the three hover snapshots; the DOM tooltip is measured, the title box on the canvas is not.")
 W("- **Components that did not take focus** (legend chips, the disabled pager and drawer Search button, text tabs that are divs) are named in each entry.")
-W("- **Still missing**: toasts (the toast container is mounted empty; no action taken during the capture raised one), the Sort select list, the Collection and Reading List menus, the share dialog, list scrolling, the drawer opening and closing, and every transition between panels. Only the states captured are measured.")
-W("- **Error states** were not reached: the only forms edit the account, and the capture did not submit or empty them. Disabled is measured on Reset Tutorials, the selection actions, the danger button and the disabled pager.")
+W("- **Still missing**: an error toast (only the copy toast was raised; the bundle styles an error toast with an orange border), the Sort select list, the Collection and Reading List menus, the share dialog, list scrolling, the drawer opening and closing, and every transition between panels. Only the states captured are measured.")
+W("- **Error states.** One inline error was captured: Cannot search, for an article with no citation data, with the incomplete-data chip and banner. Form validation was not reached: the only forms edit the account, and the capture did not submit or empty them. Disabled is measured on Reset Tutorials, the selection actions, the danger button and the disabled pager.")
 W()
 W("### Themes")
 W()
@@ -905,7 +956,7 @@ W("Only the light theme was captured. The stylesheets declare dark values (the `
 W()
 W("### Pages and widths")
 W()
-W("- **Widths.** Pages were read at 1440 x 900. At 640px or less the app covers every page with the Screen too small notice (captured at 390 x 844); there is no tablet or phone layout to capture.")
+W("- **Widths.** Pages were read at 1440 x 900, with search at 1000 x 800 and home at 800 x 900. At 640px or less the app covers every page with the Screen too small notice (captured at 390 x 844); there is no phone layout. Between 641px and desktop the frame stays and only the script breakpoints act (home cards stack below 896px, the split view gives way to the list below 1024px); 1024 to 1280 was not captured on its own.")
 W("- **Not captured:** sign-in and first-run onboarding (the account is not new, and Reset Tutorials is disabled), billing and plans (paid), the share dialog, the import (BibTeX, Zotero) flows, the authors view, the Reading List with content, and the PDF reader.")
 W()
 W("### Screenshots and crops")

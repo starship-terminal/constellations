@@ -105,6 +105,11 @@ const PAGES = {
   'search-start': 'search-start-light-recent',
   'lib-notes': 'library-all-light-notes-empty',
   'lib-selected': 'library-all-light-selected',
+  'lib-cite': 'library-all-light-cite-dialog',
+  'lib-toast': 'library-all-light-toast',
+  'kw-missing': 'search-list-light-citation-missing',
+  'tablet': 'search-tablet-light-inspect',
+  'home-narrow': 'home-narrow-light-stacked',
 };
 // The pages before home2 were read on 2026-10-04; the rest in the 2026-10-17 refresh.
 const READ_ON = (pkey) => (Object.keys(PAGES).indexOf(pkey) < Object.keys(PAGES).indexOf('home2') ? '2026-10-04' : '2026-10-17');
@@ -445,6 +450,16 @@ const SPECS = [
     targets: [T('lib-notes', sc('ArticleNotes__EmptyContainer'), { states: D })] },
   { key: 'recent-search-row', group: 'Data display', name: 'Recent search row', desc: 'One past search on the Search start page: the inputs as chips, the date in 12px grey, and a remove cross.',
     targets: [T('search-start', sc('DashboardRecentSessions__ItemContainer'), { states: ALLP, extra: sub({ main: 'DashboardRecentSessions__ItemMain', date: 'DashboardRecentSessions__DateLabel' }) })] },
+  { key: 'toast', group: 'Feedback and loading', name: 'Toast', desc: 'A 500px dark bar centred 12px above the bottom edge: an icon, a 500 message, and a close cross in a 40px square. Seen after copying a citation ("Copied to clipboard"); it stays 4 seconds, 2 more after the pointer leaves (raw/app-code-notes.md).',
+    targets: [T('lib-toast', sc('Toast__ToastFill'), { states: D, extra: sub({ message: 'Toast__Message', close: 'Toast__InlineButton' }) }), T('lib-toast', sc('Toast__InlineButton'), { as: 'close', states: ALLP, crop: sc('Toast__ToastFill') })] },
+  { key: 'citation-box', group: 'Form controls', name: 'Citation box', desc: 'The click-to-copy box in Cite Article: the citation in 12px monospace on a pale blue fill with a copy icon. Clicking copies it and raises a toast.',
+    targets: [T('lib-cite', sc('CopyContainer__Container'), { states: ALLP, extra: sub({ preview: 'CopyContainer__Preview' }) }), T('lib-toast', sc('CopyContainer__Container'), { as: 'copied', states: D })] },
+  { key: 'error-box', group: 'Feedback and loading', name: 'Inline error', desc: 'A pale red 12px box in the article panel\'s drawer, "Cannot search: Citation info missing", shown when an article has no references and no citations.',
+    targets: [T('kw-missing', sc('ExploreActionsInspected__WarningContainer'), { states: D })] },
+  { key: 'incomplete-warning', group: 'Feedback and loading', name: 'Incomplete data warning', desc: 'A peach chip after the author and year on a result card, and a banner with Learn More at the top of the article panel, for an article whose metadata is incomplete.',
+    targets: [T('kw-missing', sc('IncompleteInlineWarning__Container'), { as: 'chip', states: D }), T('kw-missing', sc('ArticleDetailsDisplay__IncompleteContainer'), { as: 'banner', states: D })] },
+  { key: 'home-columns', group: 'Phone width', name: 'Home columns', desc: 'The home page lays its three cards in a row at 896px and wider, and stacks them in one column below that (the breakpoint xmd, raw/app-code-notes.md). The hero illustration drops out below 768px (md).',
+    targets: [T('home-narrow', `__m.sc('DashboardStyles__Section', 0).parentElement`, { as: 'stacked-800', states: D, crop: false, extra: `(el) => __m.kids(el, ':scope > *')` }), T('home2', `__m.sc('DashboardStyles__Section', 0).parentElement`, { as: 'row-1440', states: D, crop: false, extra: `(el) => __m.kids(el, ':scope > *')` })] },
   { key: 'drop-zone', group: 'Form controls', name: 'BibTeX drop zone', desc: 'A 30% white strip with 16px corners on the Search start page: "Drag and drop a BibTeX file to search from".',
     targets: [T('search-start', sc('ExploreEmpty__DropInstructionContainer'), { states: D })] },
 ];
@@ -460,6 +475,9 @@ const EXTRA = {
   'autosave-button': [T('kw', btn('Auto-save to...'), { states: P })],
   'list-card': [T('kw-selected', sc('ListItemContainer', 0), { as: 'selected', states: D })],
   drawer: [T('st-open', sc('FilterableSearchActions__Container'), { as: 'open', states: D })],
+  dialog: [T('lib-cite', LAST('Modal__Content'), { as: 'cite', states: D, extra: `(el) => __m.kids(el, 'button, [role=checkbox], [role=combobox]')` })],
+  checkbox: [T('lib-cite', `__m.q('[role=dialog] [role=checkbox]')`, { as: 'cite', states: ALLP, crop: `__m.q('[role=dialog] [role=checkbox]').parentElement` })],
+  'side-panel': [T('tablet', sc('Scaffold__Actions'), { as: 'width-1000', states: D, crop: false })],
   'home-search-field': [T('home-typed', sc('SearchBar__StyledInput'), { as: 'typed', states: D, crop: sc('SearchBar__Container'), pad: 12 })],
   'home-search-button': [T('home2', sc('SearchBar__SearchButton'), { states: P, crop: sc('SearchBar__Container'), pad: 12 })],
   'home-browse-library': [T('home2', btn('Browse Library'), { states: P, crop: sc('DashboardSearch__Container'), pad: 4 })],

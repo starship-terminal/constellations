@@ -53,6 +53,8 @@ Build apps and interactive documents that use Claude inside the artifact.|Inline
 Code execution and file creation|Cloud code execution and file creation|Allow network egress|security risks|Domain allowlist|Choose which domains the sandbox can access
 Package managers only|Claude can access common package managers plus any additional domains you specify below.|View package manager domains|Additional allowed domains|Add
 Skills have moved to|New Slides and Design projects are created as artifacts.|Nothing matches “qzxv”|Artifacts - Claude|Projects - Claude
+Let’s noodle|That chat is no longer available. Starting a new one.|Let’s create your account|A few things for you to review|I agree to Anthropic’s|Consumer Terms|and
+Acceptable Use Policy|and confirm that I am at least 18 years of age.|Subscribe to occasional promotional emails and notifications. You can opt out any time.|Create account|Email verified as|Use a different email
 Claude can choose to notify you about important updates from a Code session.
 Get a push notification on your phone when Claude messages you in Dispatch.
 Get a push notification when Claude needs your approval to run a command in a Code session.
