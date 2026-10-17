@@ -30,7 +30,13 @@ const PROBES = {
 };
 
 const strip = (s) => String(s).replace(/__[A-Za-z0-9_-]{5,6}\b/g, '');
-const out = { url: BASE, read: new Date().toLocaleDateString('en-CA'), pages: PAGES, reducedMotion: {}, reducedMotionPaint: {}, zIndex: {}, brand: {} };
+const out = { url: BASE, read: new Date().toLocaleDateString('en-CA'), pages: PAGES, reducedMotion: {}, reducedMotionPaint: {}, zIndex: {}, brand: {}, declaredRules: {}, astryxResolved: {} };
+
+// Gauth rules recorded verbatim (hash stripped) because the package cites values read from them that no page
+// captured paints: the button component's states, the form error, the markdown code styles, the Atlas delete dialog.
+const DECLARED = /^(\.button_btn-primary(__\w+)?(:not\([^)]*\))*(:hover|:active)?|\.button_btn-primary-default-disabled|\.form_error-msg|\.form_form-item(\.form_\w+)+(:not\([^)]*\))?( input)?|\.input_input-wrapper\.input_(email|password)-error.*|\.md-container (code|pre).*|\.markdown-body code|\.highlight pre, pre|pre code, pre tt|\.wap-atlas-drawer_(delete|cancelDelete|confirmDelete)\w*.*|\.header_delete\w+.*|\.header_historyItem:(hover|focus-within) \.header_deleteBtn)$/;
+// Astryx's status variables, resolved on the page root and inside a stone-themed Astryx element of the science player.
+const ASTRYX_VARS = ['--color-background-yellow', '--color-text-yellow', '--color-border-yellow', '--color-background-green', '--color-text-green', '--color-border-green', '--color-background-red', '--color-text-red', '--color-border-red', '--color-background-blue', '--color-text-blue', '--color-border-blue', '--color-text-primary'];
 
 const { browser, context } = await launch();
 for (const [key, p] of Object.entries(PAGES)) {
@@ -44,8 +50,11 @@ for (const [key, p] of Object.entries(PAGES)) {
   try {
     await open(page, BASE + p, { wait: 7000 });
   } catch (e) { out.reducedMotion[key] = { error: String(e.message).split('\n')[0] }; await page.close(); continue; }
+  const themes = () => page.evaluate(() => [...document.querySelectorAll('[data-astryx-theme]')].map((e) => `${e === document.documentElement ? 'html' : e.tagName.toLowerCase()}=${e.getAttribute('data-astryx-theme')}`));
+  const themesBefore = await themes();
   const nn = page.getByRole('button', { name: 'Not now' });
   if (await nn.count()) { await nn.click().catch(() => {}); await page.waitForTimeout(1200); }
+  if (key === 'lesson-science') out.astryxThemes = { withAudioDialog: themesBefore, afterNotNow: await themes() };
 
   // every rule inside a prefers-reduced-motion condition, in Gauth's sheets and the inline ones
   const inline = await page.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => { try { return ['inline-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; } }).filter(Boolean));
@@ -68,6 +77,33 @@ for (const [key, p] of Object.entries(PAGES)) {
     return res;
   }, sheets);
   out.reducedMotion[key] = rules.map((r) => ({ ...r, selector: strip(r.selector) }));
+  const declared = await page.evaluate((sheets) => {
+    const res = [];
+    for (const [name, text] of sheets) {
+      if (name.startsWith('inline-')) continue;
+      const s = new CSSStyleSheet();
+      try { s.replaceSync(text); } catch { continue; }
+      const walk = (rs, media) => { for (const r of rs) { if (r instanceof CSSMediaRule) { walk(r.cssRules, [...media, r.conditionText]); continue; } if (r.cssRules && !r.style) { walk(r.cssRules, media); continue; } if (r.style && r.selectorText) res.push({ sheet: name, media: media.join(' and ') || null, selector: r.selectorText, declarations: r.style.cssText }); } };
+      walk(s.cssRules, []);
+    }
+    return res;
+  }, sheets);
+  for (const r of declared) {
+    const sel = strip(r.selector).replace(/\[dir=(ltr|rtl)\] /, '');
+    if (!DECLARED.test(sel)) continue;
+    out.declaredRules[sel] ??= { declarations: r.declarations, media: r.media, sheet: r.sheet.replace(/\.[0-9a-f]{10}\.css$/, '.css'), pages: [] };
+    if (!out.declaredRules[sel].pages.includes(key)) out.declaredRules[sel].pages.push(key);
+  }
+  if (key === 'lesson-science') {
+    await page.waitForSelector('[data-astryx-theme="stone"]', { timeout: 20000 }).catch(() => {});
+    out.astryxResolved = await page.evaluate((names) => {
+      const read = (el) => { const probe = document.createElement('span'); el.appendChild(probe); const o = {}; for (const n of names) { probe.style.color = `var(${n})`; o[n] = getComputedStyle(probe).color; } probe.remove(); return o; };
+      const all = [...document.querySelectorAll('[data-astryx-theme="stone"]')].filter((e) => e !== document.documentElement);
+      const stone = all.find((e) => e.getBoundingClientRect().width > 0) || all[0];
+      const box = stone && stone.getBoundingClientRect();
+      return { root: { element: 'body', htmlTheme: document.documentElement.getAttribute('data-astryx-theme'), values: read(document.body) }, stone: stone ? { element: stone.tagName.toLowerCase() + '[data-astryx-theme="stone"]', size: `${Math.round(box.width)}x${Math.round(box.height)}`, values: read(stone) } : null };
+    }, ASTRYX_VARS);
+  }
 
   // what the probes paint with and without reduced motion
   if (PROBES[key]) {

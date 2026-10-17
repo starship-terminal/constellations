@@ -118,42 +118,6 @@
   ],
   "academy": [
    {
-    "sheet": "css/async/4930.41d9a56cf2.css",
-    "media": "(prefers-reduced-motion: reduce)",
-    "selector": ".course-create-modal_loadingDot",
-    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.5;"
-   },
-   {
-    "sheet": "css/async/4930.41d9a56cf2.css",
-    "media": "(prefers-reduced-motion: reduce)",
-    "selector": ".math-course-detail_bottomGlow, .math-course-detail_detailSkeletonBanner, .math-course-detail_detailSkeletonHeader, .math-course-detail_detailSkeletonRail > span, .math",
-    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 1;"
-   },
-   {
-    "sheet": "css/async/4930.41d9a56cf2.css",
-    "media": "(prefers-reduced-motion: reduce)",
-    "selector": ".math-course-detail_topicButtonInProgress.math-course-detail_topicButtonAnimated .math-course-detail_topicNodeSlot svg > path:first-child, .math-course-detail_topicCompletedGlo",
-    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 1; transform: none;"
-   },
-   {
-    "sheet": "css/async/4930.41d9a56cf2.css",
-    "media": "(prefers-reduced-motion: reduce)",
-    "selector": ".math-course-detail_topicButtonInProgress .math-course-detail_topicNodeSlot .math-course-detail_topicNodeInProgress, .math-course-detail_topicButtonInProgress .math-cou",
-    "declarations": "animation: auto ease 0s 1 normal none running none;"
-   },
-   {
-    "sheet": "css/async/4930.41d9a56cf2.css",
-    "media": "(prefers-reduced-motion: reduce)",
-    "selector": ".catalog_mathSkeletonAction, .catalog_mathSkeletonCover, .catalog_mathSkeletonSubtitle, .catalog_mathSkeletonTitle, .catalog_mathSkeletonUnit, .catalog_skeleton",
-    "declarations": "animation: auto ease 0s 1 normal none running none;"
-   },
-   {
-    "sheet": "css/async/4930.41d9a56cf2.css",
-    "media": "(prefers-reduced-motion: reduce)",
-    "selector": ".catalog_premiumCoverGeneratingImage, .catalog_premiumCoverGenerating",
-    "declarations": "animation: auto ease 0s 1 normal none running none;"
-   },
-   {
     "sheet": "css/main.1d799576e4.css",
     "media": "(prefers-reduced-motion: reduce)",
     "selector": ".shared_playerFrameIncorrect",
@@ -254,6 +218,42 @@
     "media": "(prefers-reduced-motion: reduce)",
     "selector": ".ugc_ugcLessonView [data-quiz-intro-action=\"true\"] [data-lesson-action-area=\"true\"] button:first-child",
     "declarations": "animation: 0.16s ease-out 0s 1 normal both running ugc_quiz-intro-action-fade-only__XjKHAu; transform: none;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".course-create-modal_loadingDot",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 0.5;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".math-course-detail_bottomGlow, .math-course-detail_detailSkeletonBanner, .math-course-detail_detailSkeletonHeader, .math-course-detail_detailSkeletonRail > span, .math",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 1;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".math-course-detail_topicButtonInProgress.math-course-detail_topicButtonAnimated .math-course-detail_topicNodeSlot svg > path:first-child, .math-course-detail_topicCompletedGlo",
+    "declarations": "animation: auto ease 0s 1 normal none running none; opacity: 1; transform: none;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".math-course-detail_topicButtonInProgress .math-course-detail_topicNodeSlot .math-course-detail_topicNodeInProgress, .math-course-detail_topicButtonInProgress .math-cou",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".catalog_mathSkeletonAction, .catalog_mathSkeletonCover, .catalog_mathSkeletonSubtitle, .catalog_mathSkeletonTitle, .catalog_mathSkeletonUnit, .catalog_skeleton",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
+   },
+   {
+    "sheet": "css/async/4930.41d9a56cf2.css",
+    "media": "(prefers-reduced-motion: reduce)",
+    "selector": ".catalog_premiumCoverGeneratingImage, .catalog_premiumCoverGenerating",
+    "declarations": "animation: auto ease 0s 1 normal none running none;"
    }
   ],
   "unit": [
@@ -1620,7 +1620,7 @@
     "el": "div.math-course-detail_courseBannerCopy",
     "z": 2,
     "position": "relative",
-    "w": 301,
+    "w": 300,
     "h": 56
    },
    {
@@ -1691,81 +1691,11 @@
   ],
   "lesson-math": [
    {
-    "el": "div.shared_lessonPage",
-    "z": 1000,
-    "position": "fixed",
-    "w": 1440,
-    "h": 900
-   },
-   {
     "el": "button.shared_closeButton",
     "z": 40,
     "position": "fixed",
     "w": 40,
     "h": 40
-   },
-   {
-    "el": "aside.tutor_tutorControls",
-    "z": 20,
-    "position": "relative",
-    "w": 296,
-    "h": 48
-   },
-   {
-    "el": "header.shared_header",
-    "z": 20,
-    "position": "relative",
-    "w": 1080,
-    "h": 66
-   },
-   {
-    "el": "div.shared_tutorInputDock",
-    "z": 6,
-    "position": "absolute",
-    "w": 296,
-    "h": 48
-   },
-   {
-    "el": "aside.shared_tutorPanel",
-    "z": 5,
-    "position": "relative",
-    "w": 360,
-    "h": 900
-   },
-   {
-    "el": "div.shared_tutorAvatar",
-    "z": 3,
-    "position": "absolute",
-    "w": 53,
-    "h": 53
-   },
-   {
-    "el": "div.shared_prompt",
-    "z": 3,
-    "position": "absolute",
-    "w": 1046,
-    "h": 818
-   },
-   {
-    "el": "div.shared_tutorTopMask",
-    "z": 2,
-    "position": "absolute",
-    "w": 360,
-    "h": 140
-   },
-   {
-    "el": "div.shared_tutorTranscript",
-    "z": 1,
-    "position": "absolute",
-    "w": 296,
-    "h": 748
-   },
-   {
-    "el": "section.shared_playerFrame.shared_playerFrameWithAction",
-    "z": 1,
-    "position": "relative",
-    "w": 1048,
-    "h": 820
    }
   ],
   "atlas": [
@@ -1917,5 +1847,416 @@
   ],
   "maskIcon": [],
   "manifest": null
+ },
+ "declaredRules": {
+  ".md-container code:not(pre > code), .md-container strong": {
+   "declarations": "word-break: break-word;",
+   "media": null,
+   "sheet": "css/2836.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".md-container pre": {
+   "declarations": "border-radius: 4px;",
+   "media": null,
+   "sheet": "css/2836.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".md-container code:not(pre > code)": {
+   "declarations": "background: rgba(117, 124, 136, 0.2); font-family: inherit; padding: 0px 4px;",
+   "media": null,
+   "sheet": "css/2836.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".highlight pre, pre": {
+   "declarations": "background: rgba(228, 230, 235, 0.5); border-radius: 16px; font-size: 85%; line-height: 1.45; overflow: auto; padding: 16px;",
+   "media": null,
+   "sheet": "css/2836.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  "pre code, pre tt": {
+   "declarations": "line-height: 1.65;",
+   "media": null,
+   "sheet": "css/2836.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".button_btn-primary": {
+   "declarations": "background: rgb(255, 1, 62); border: 1px solid rgba(0, 0, 0, 0); color: rgb(255, 255, 255);",
+   "media": null,
+   "sheet": "css/main.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".button_btn-primary:not(.button_btn-disabled):not(.button_btn-loading):hover": {
+   "declarations": "background: rgb(240, 0, 57);",
+   "media": null,
+   "sheet": "css/main.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".button_btn-primary:not(.button_btn-disabled):not(.button_btn-loading):active": {
+   "declarations": "background: rgb(216, 0, 51);",
+   "media": null,
+   "sheet": "css/main.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".button_btn-primary-default-disabled": {
+   "declarations": "background-color: rgb(255, 204, 216);",
+   "media": null,
+   "sheet": "css/main.css",
+   "pages": [
+    "home",
+    "academy",
+    "unit",
+    "lesson-science",
+    "lesson-math",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".form_error-msg": {
+   "declarations": "color: rgb(240, 0, 57); font-size: 14px; line-height: 20px; margin: 12px auto; transform: translateY(-2px);",
+   "media": null,
+   "sheet": "css/async/1753.css",
+   "pages": [
+    "home",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".form_form-item.form_error": {
+   "declarations": "background: rgb(255, 242, 242); border-color: rgb(240, 0, 57);",
+   "media": null,
+   "sheet": "css/async/1753.css",
+   "pages": [
+    "home",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".form_form-item.form_error input": {
+   "declarations": "background: rgb(255, 242, 242);",
+   "media": null,
+   "sheet": "css/async/1753.css",
+   "pages": [
+    "home",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".form_form-item.form_active:not(.form_error)": {
+   "declarations": "border-color: rgb(142, 142, 147);",
+   "media": null,
+   "sheet": "css/async/1753.css",
+   "pages": [
+    "home",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".input_input-wrapper.input_email-error input, .input_input-wrapper.input_password-error input": {
+   "declarations": "background: rgb(255, 242, 242); color: rgb(240, 0, 57);",
+   "media": null,
+   "sheet": "css/async/1753.css",
+   "pages": [
+    "home",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".input_input-wrapper.input_password-error svg:first-child circle": {
+   "declarations": "stroke: rgb(240, 0, 57);",
+   "media": null,
+   "sheet": "css/async/1753.css",
+   "pages": [
+    "home",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".input_input-wrapper.input_password-error svg:first-child path": {
+   "declarations": "fill: rgb(240, 0, 57); stroke: none;",
+   "media": null,
+   "sheet": "css/async/1753.css",
+   "pages": [
+    "home",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".input_input-wrapper.input_email-error svg:first-child path, .input_input-wrapper.input_password-error svg:first-child path:last-of-type": {
+   "declarations": "stroke: rgb(240, 0, 57);",
+   "media": null,
+   "sheet": "css/async/1753.css",
+   "pages": [
+    "home",
+    "atlas",
+    "news",
+    "plus"
+   ]
+  },
+  ".wap-atlas-drawer_deleteButton": {
+   "declarations": "align-items: center; background: none; border: 0px; color: rgb(175, 179, 185); display: inline-flex; flex: 0 0 28px; height: 28px; justify-content: center; padding: 0px; width: 28px;",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".wap-atlas-drawer_deleteIcon": {
+   "declarations": "height: 14px; width: 14px;",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".wap-atlas-drawer_deleteIcon path": {
+   "declarations": "fill: currentcolor;",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".wap-atlas-drawer_deleteMask": {
+   "declarations": "align-items: center; background: rgba(20, 24, 32, 0.2); display: flex; inset: 0px; justify-content: center; padding: 16px; position: fixed; z-index: 10000;",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".wap-atlas-drawer_deleteDialog": {
+   "declarations": "background: rgb(255, 255, 255); border-radius: 16px; box-sizing: border-box; padding: 16px; width: min(100%, 320px);",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".wap-atlas-drawer_deleteTitle": {
+   "declarations": "color: rgb(20, 24, 32); font-family: \"SF Pro\", sans-serif; font-size: 16px; font-weight: 600; line-height: 1.35; margin: 0px;",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".wap-atlas-drawer_deleteDesc": {
+   "declarations": "color: rgb(109, 116, 130); font-family: \"SF Pro\", sans-serif; font-size: 13px; line-height: 1.45; margin: 8px 0px 0px;",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".wap-atlas-drawer_deleteActions": {
+   "declarations": "display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px;",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".wap-atlas-drawer_cancelDeleteBtn, .wap-atlas-drawer_confirmDeleteBtn": {
+   "declarations": "border: 0px; border-radius: 10px; font-family: \"SF Pro\", sans-serif; font-size: 14px; font-weight: 500; height: 36px; min-width: 88px; padding: 0px 14px;",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".wap-atlas-drawer_cancelDeleteBtn": {
+   "declarations": "background: rgb(243, 244, 247); color: rgb(47, 52, 61);",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".wap-atlas-drawer_confirmDeleteBtn": {
+   "declarations": "background: rgb(255, 77, 79); color: rgb(255, 255, 255);",
+   "media": null,
+   "sheet": "css/async/(region$)/__atlas/atlas/layout.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".header_historyItem:hover .header_deleteBtn": {
+   "declarations": "opacity: 1; pointer-events: auto; visibility: visible;",
+   "media": null,
+   "sheet": "css/async/2809.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".header_historyItem:focus-within .header_deleteBtn": {
+   "declarations": "opacity: 1; pointer-events: auto; visibility: visible;",
+   "media": null,
+   "sheet": "css/async/2809.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".header_deleteBtn": {
+   "declarations": "align-items: center; background: none; border: 0px; border-radius: 8px; color: rgb(175, 179, 185); cursor: pointer; display: inline-flex; flex: 0 0 28px; height: 28px; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.15s; visibility: hidden; width: 28px;",
+   "media": null,
+   "sheet": "css/async/2809.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".header_deleteBtn:hover": {
+   "declarations": "background: none;",
+   "media": null,
+   "sheet": "css/async/2809.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".header_deleteIcon": {
+   "declarations": "height: 14px; width: 14px;",
+   "media": null,
+   "sheet": "css/async/2809.css",
+   "pages": [
+    "atlas"
+   ]
+  },
+  ".header_deleteIcon path": {
+   "declarations": "fill: currentcolor;",
+   "media": null,
+   "sheet": "css/async/2809.css",
+   "pages": [
+    "atlas"
+   ]
+  }
+ },
+ "astryxResolved": {
+  "root": {
+   "element": "body",
+   "htmlTheme": null,
+   "values": {
+    "--color-background-yellow": "rgba(226, 164, 0, 0.2)",
+    "--color-text-yellow": "rgb(117, 63, 7)",
+    "--color-border-yellow": "rgb(197, 134, 0)",
+    "--color-background-green": "rgba(36, 187, 94, 0.2)",
+    "--color-text-green": "rgb(9, 68, 31)",
+    "--color-border-green": "rgb(13, 134, 38)",
+    "--color-background-red": "rgba(227, 25, 59, 0.2)",
+    "--color-text-red": "rgb(123, 2, 16)",
+    "--color-border-red": "rgb(227, 25, 59)",
+    "--color-background-blue": "rgba(1, 113, 227, 0.2)",
+    "--color-text-blue": "rgb(4, 47, 151)",
+    "--color-border-blue": "rgb(0, 100, 224)",
+    "--color-text-primary": "rgb(10, 19, 23)"
+   }
+  },
+  "stone": {
+   "element": "div[data-astryx-theme=\"stone\"]",
+   "size": "0x0",
+   "values": {
+    "--color-background-yellow": "rgb(244, 225, 183)",
+    "--color-text-yellow": "rgb(82, 70, 34)",
+    "--color-border-yellow": "rgb(229, 211, 169)",
+    "--color-background-green": "rgb(208, 233, 206)",
+    "--color-text-green": "rgb(55, 76, 54)",
+    "--color-border-green": "rgb(194, 219, 192)",
+    "--color-background-red": "rgb(249, 220, 215)",
+    "--color-text-red": "rgb(88, 65, 62)",
+    "--color-border-red": "rgb(235, 206, 201)",
+    "--color-background-blue": "rgb(215, 228, 245)",
+    "--color-text-blue": "rgb(60, 72, 86)",
+    "--color-border-blue": "rgb(201, 214, 231)",
+    "--color-text-primary": "rgb(37, 37, 42)"
+   }
+  }
+ },
+ "astryxThemes": {
+  "withAudioDialog": [
+   "html=stone",
+   "div=stone",
+   "div=stone"
+  ],
+  "afterNotNow": [
+   "div=stone"
+  ]
  }
 }

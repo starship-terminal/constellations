@@ -145,9 +145,9 @@ colors:
   status-info-fill: "#e6eff9"
   status-info-text: "#043277"
   status-info-border: "#c8d9ec"
-  status-warning-fill: "rgba(226, 164, 0, 0.2)"
-  status-warning-text: "#753f07"
-  status-warning-border: "#c58600"
+  status-warning-fill: "#f4e1b7"
+  status-warning-text: "#524622"
+  status-warning-border: "#e5d3a9"
 typography:
   hero:
     fontFamily: "Gauth Home Libre Baskerville"
@@ -655,7 +655,7 @@ The Academy catalogue is the screen to get right. It sits on a warm `#faf9f5` gr
 
 ### What to distrust (from README.md)
 
-- **Status colours.** `status.danger` and `status.success` are painted (the check-in's result card, answered wrong and right). `status.info` is Gauth's declared `--gauth-semantic-blue-*`, and `status.warning` is Astryx's yellow as the science player resolves it; neither was seen painted, and Gauth's own CSS has no warning. Gauth also declares a danger and a success trio (`--lesson-wrong-*`, `--lesson-right-*`) that differ from the painted ones.
+- **Status colours.** `status.danger` and `status.success` are painted (the check-in's result card, answered wrong and right). `status.info` is Gauth's declared `--gauth-semantic-blue-*`, and `status.warning` is Astryx's yellow as the player's stone theme resolves it (the stone scope stays on a container after the audio dialog closes; the page root's Astryx yellow differs); neither was seen painted, and Gauth's own CSS has no warning. Gauth also declares a danger and a success trio (`--lesson-wrong-*`, `--lesson-right-*`) that differ from the painted ones.
 - **Forced and declared states.** The field error is Gauth's `form_error` class added in DevTools; the error message text, the code role and the delete dialog are read from Gauth's CSS and never seen on a page.
 - **The spacing scale is a reading, not Gauth's.** Gauth declares no spacing scale. `core.spacing` lists the measured values on a 4px grid, which 63% of the 1,020 measured paddings and gaps fall on; `core.spacing-offgrid` keeps the rest (10px alone is used 131 times).
 - **The elevation levels are a grouping.** `elevation.level-1` to `level-4` point at measured shadows chosen by use (resting card, hovered card, popover, dialog); Gauth itself paints 17 different shadows, all kept under `light.elevation`.

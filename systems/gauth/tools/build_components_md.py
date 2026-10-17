@@ -259,6 +259,20 @@ def typeset(fz, lh, fw, f, ls="normal"):
     return cite(n) if n else raw(font(fz, lh, fw, f) + (f", letter spacing {ls}" if ls != "0px" else ""))
 
 
+KEYWORD_EASE = {"ease": [0.25, 0.1, 0.25, 1], "ease-in-out": [0.42, 0, 0.58, 1], "ease-in": [0.42, 0, 1, 1], "ease-out": [0, 0, 0.58, 1], "linear": [0, 0, 1, 1]}
+
+
+def easing(e):
+    """A timing function -> its core.easing token (CSS keywords compared by their curves), else the raw value."""
+    m = re.fullmatch(r"cubic-bezier\(([^)]*)\)", e)
+    curve = [round(float(x), 3) for x in m.group(1).split(",")] if m else KEYWORD_EASE.get(e)
+    if curve:
+        n = next((n for n in sorted(TOK) if n.startswith("easing.") and [round(float(x), 3) for x in TOK[n]] == curve), None)
+        if n:
+            return cite(n)
+    return raw(e)
+
+
 def dur_ms(d):
     return float(d[:-1]) * 1000 if d.endswith("s") and not d.endswith("ms") else float(d[:-2])
 
@@ -343,7 +357,7 @@ def props(v):
             if d == "0s":
                 continue
             ms = f"{round(dur_ms(d))}ms"
-            parts.append(f"{p} {cite(BY_DUR[ms]) if ms in BY_DUR else raw(d)} {tf[i % len(tf)] if tf else ''}".strip())
+            parts.append(f"{p} {cite(BY_DUR[ms]) if ms in BY_DUR else raw(d)} {easing(tf[i % len(tf)]) if tf else ''}".strip())
         if parts:
             o["transition"] = ", ".join(parts)
     if s["transform"] not in ("none", "matrix(1, 0, 0, 1, 0, 0)"):
@@ -695,7 +709,11 @@ for k in ["lesson-card", "unit-card", "story-card", "feature-card", "solution-op
     p = props(st)
     if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
         p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+        bw, _, bc = (p0.get("border") or "").split(" | ")[0][2:].partition(" solid ")
+        sh = shadow(p0["shadow"]) if p0.get("shadow") else None
+        p = dict(p, border=f"{dim_named(bw, ['borderWidth.hairline', 'borderWidth.strong', 'borderWidth.choice', 'borderWidth.indicator'])} solid {colour(bc, role='line')}" if bc else "-",
+                 radius=dims(p0["radius"], "radius") if p0.get("radius") else "-", background=colour(p0.get("bg", ""), role="fill") or "-",
+                 shadow=sh if sh else (colour(p0.get("shadow", ""), tokens=False) or "none"))
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
