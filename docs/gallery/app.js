@@ -313,11 +313,12 @@ const RENDER = {
       const generic = /mono|code/i.test(family) ? 'ui-monospace, monospace' : /serif/i.test(family) && !/sans/i.test(family) ? 'Georgia, serif' : 'system-ui, sans-serif';
       return `"${family.replace(/"/g, '')}", ${generic}`;
     };
-    const spec = (t) => [t.size, t.lineHeight != null ? `/ ${cssLen(t.lineHeight)}` : '', t.weight != null ? `· ${t.weight}` : '',
+    // A numeric line height is a multiplier (DESIGN.md writes it unitless); a string keeps its unit.
+    const spec = (t) => [t.size, t.lineHeight != null ? `/ ${t.lineHeight}` : '', t.weight != null ? `· ${t.weight}` : '',
       t.letterSpacing && !/^0(px|em|rem)?$/.test(t.letterSpacing) ? `· ${t.letterSpacing} tracking` : '', t.family ? `· ${t.family}` : '']
       .filter(Boolean).join(' ');
     const style = (t) => [`font-family:${stackFor(t.family)}`, t.size && `font-size:${t.size}`, t.weight != null && `font-weight:${t.weight}`,
-      t.lineHeight != null && `line-height:${cssLen(t.lineHeight)}`, t.letterSpacing && `letter-spacing:${t.letterSpacing}`].filter(Boolean).join(';');
+      t.lineHeight != null && `line-height:${t.lineHeight}`, t.letterSpacing && `letter-spacing:${t.letterSpacing}`].filter(Boolean).join(';');
     main.innerHTML = `${head('Typography', `Font families from the catalog, then every type style ${esc(tokensFile(s))} defines, rendered live as DESIGN.md holds them (${esc(s.tokenTheme)} theme). A font this machine does not have falls back to the system face.`)}
       ${s.fonts.length ? `<div class="fonts">${s.fonts.map((f) => `<div class="font">
         <div class="sample" style="font-family:${esc(f.stack)}">${esc(f.family)} Aa 123</div>
