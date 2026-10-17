@@ -196,7 +196,7 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
              review_method: str | None = None) -> dict:
     """The newest audit with each package's details refreshed from the catalog, any fresh
     reviews merged in, scripted grades replaced and capture rules applied. A package in
-    the catalog but not in the base audit is left out: it has no reviewed grades yet.
+    the catalog but not in the base audit is left out until a review adds it.
 
     `reviews` maps a slug to {criterion: {grade, evidence}} from a new review of that
     package; it may only set reviewed criteria, and the package records the review date.
@@ -216,8 +216,8 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
     capture_rules = {c["id"]: c["capture"] for c in criteria["criteria"] if c.get("capture")}
     reviewable = {c["id"] for c in criteria["criteria"]} - set(SCRIPTED) - set(capture_rules)
     for slug, grades in (reviews or {}).items():
-        if slug not in {s["slug"] for s in out["systems"]}:
-            raise SystemExit(f"review for {slug}: not in the newest audit")
+        if slug not in by_slug:
+            raise SystemExit(f"review for {slug}: not in catalog.json")
         wrong = sorted(set(grades) - reviewable)
         if wrong:
             raise SystemExit(f"review for {slug} sets {', '.join(wrong)}, which are scripted or capture rules")
@@ -225,6 +225,9 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
         missing = sorted(reviewable - set(grades), key=lambda c: (c[0], int(c[1:]) if c[1:].isdigit() else 0))
         if missing:
             raise SystemExit(f"review for {slug} is incomplete; it also needs {', '.join(missing)}")
+        # A package's first review adds it; the loop below fills in its details.
+        if slug not in {s["slug"] for s in out["systems"]}:
+            out["systems"].append({"slug": slug, "grades": {}})
     for system in out["systems"]:
         source = by_slug.get(system["slug"])
         if not source:
@@ -234,6 +237,8 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
                 system[key] = source[key]
         if categories and source.get("category") in categories:
             system["category"] = categories[source["category"]]
+        elif "category" not in system and "category" in source:
+            system["category"] = source["category"]
         if system["slug"] in (reviews or {}):
             system["grades"].update(reviews[system["slug"]])
             system["reviewed"] = date
