@@ -99,6 +99,20 @@ Quiver's app is SwiftUI on macOS 26, so the tokens map to native equivalents rat
 
 The sidebar group labels and card titles should be sentence case (Do and don't, rule 4). The desktop widget designs (usage summary, activity heatmap, top models, usage limits) are on [widgets-dark-full](screenshots/widgets-dark-full.png), for Quiver's WidgetKit milestone.
 
+## Criteria a capture cannot close
+
+Five scorecard criteria stay at partly after two capture rounds (2026-10-17, [PR 11](https://github.com/c-wenlong/design-systems/pull/11) and [PR 20](https://github.com/c-wenlong/design-systems/pull/20)). Each gap comes from the product, so another capture would not change it; only a change to TokenTracker would.
+
+| Criterion | Why it stays partly | What would close it |
+|---|---|---|
+| F1 Colour ramps | The stylesheet ships only the steps the product uses: red and amber stop at 8, several chart hues at 1 or 2. The missing steps would have to be invented | TokenTracker shipping fuller ramps |
+| F6 Status colours | Info (the sky update badge on Skills) renders only when a skill has an update, and none had one. Success is green text only, with no fill or border anywhere | A skill update on this machine (then recapture Skills for info); success surfaces in the product |
+| F8 Type scale | The product uses 9 font sizes; the rubric asks for 6 to 8. `figure` (20px) and `code` (10.5px) sit off the scale | TokenTracker consolidating its sizes |
+| F15 Contrast | Light `text.secondary` (`#737373`) is 4.34:1 on `bg.wash` (`#f5f5f5`), under 4.5:1. That is the product's colour | TokenTracker darkening its secondary text |
+| C3 Focus | `styles.css` removes the focus ring on every element; only the theme toggle, star pill, sidebar chevron and Cloud page draw one | TokenTracker restoring focus rings |
+
+Before the next refresh, check whether a skill shows an update badge: that is the one gap a capture could still narrow.
+
 ## Coverage
 
 Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md).
