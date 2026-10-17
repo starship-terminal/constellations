@@ -92,26 +92,49 @@ core["duration"]["reducedMotion"] = tok("0ms", "duration",
 # Every step is a colour the palette already holds (none is interpolated). For each hue: the
 # palette entries in its hue window (HLS saturation >= 0.3; neutral: <= 0.05), one name per
 # distinct value, the original core names kept, others added where they sit at least 4 L* from
-# every kept step, ordered lightest to darkest by CIE L* of the light value. Green and yellow
-# stop short of 10 because the palette has no more distinct values in those hues.
+# every kept step, ordered lightest to darkest by CIE L* of the light value. Green, yellow and
+# pink stop short of 10 because the palette has no more distinct values in those hues.
 RAMPS = {
     "neutral": ["snow", "polar", "swan", "koala", "hare", "gray-text", "wolf", "freetail", "eel", "orca"],
     "green": ["sea-sponge", "turtle", "mask-green", "duo-shine", "owl", "tree-frog", "kiwi-dark", "duo-radio"],
     "blue": ["iguana", "blue-jay", "bea-junior-shine", "macaw", "whale", "blue-tang", "humpback", "narwhal", "blue-space", "manta-ray"],
     "red": ["walking-fish", "flamingo", "pig", "crab", "cardinal", "fire-ant", "eddy-radio", "discoverer-progress-bar", "discoverer"],
-    "orange": ["cheetah", "streak-panel-unextended-topbar-text", "traveler-progress-bar", "fox", "grizzly-lite", "guinea-pig", "lin-lucy-radio", "falstaff-secondary", "falstaff-radio"],
+    "orange": ["hv-light-peach", "cheetah", "traveler-progress-bar", "fox", "grizzly-lite", "guinea-pig", "lin-lucy-radio", "falstaff-secondary", "falstaff-radio"],
     "yellow": ["canary", "duck", "bee", "streak-society-light-orange", "camel"],
+    "purple": ["lily-shine", "beetle", "max-ad82e6", "betta", "lily-radio", "butterfly", "super-gradient-neutral-purple", "super-gradient-bottom-halo", "max-purple", "streak-revival-background"],
+    "pink": ["pearl-stat", "starfish", "explorer", "zari-secondary", "zari-radio", "rosefinch", "vikram-radio"],
 }
+
+
+def lstar(hex_):
+    c = [int(hex_[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+    c = [x / 12.92 if x <= 0.04045 else ((x + 0.055) / 1.055) ** 2.4 for x in c]
+    y = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+    return 116 * (y ** (1 / 3) if y > 0.008856 else 7.787 * y + 16 / 116) - 16
+
+
+def ramp_names(th, hue):
+    """Light: the list as written. Dark: the same entries sorted by their dark L*, so step 100
+    is the lightest in both sets and both sets hold the same steps. Duolingo's dark theme turns
+    the light tints (walking-fish, sea-sponge, canary) into its dark surfaces, so in dark those
+    entries sort to the dark end of the ramp, and a few neutral names share one dark value."""
+    names = RAMPS[hue]
+    return names if th == "light" else sorted(names, key=lambda n: -lstar(hexof("dark", n)))
+
+
 for th in ("light", "dark"):
     if "ramp" in t[th]:
         t[th]["ramp"].clear()  # keep the group's place in the set; rebuild its steps
-for hue, names in RAMPS.items():
-    for i, name in enumerate(names):
-        step = str((i + 1) * 100)
-        both(f"ramp.{hue}.{step}", lambda th, name=name, hue=hue, step=step, n=len(names): tok(
-            "{palette.%s.%s}" % (th, name), "color",
-            f"{hue} ramp step {step} of {n}: palette '{name}'. Duolingo publishes no ramps; the steps are colours its palette already holds in this hue, ordered lightest to darkest by CIE L* of their light values, none interpolated. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.",
-            "derived from core.palette (palette app-54af2130.js; light and dark checked live, raw/2026-10/rootvars-live.json)", "Derived"))
+    for hue in RAMPS:
+        names = ramp_names(th, hue)
+        for i, name in enumerate(names):
+            step = str((i + 1) * 100)
+            node = t[th].setdefault("ramp", {}).setdefault(hue, {})
+            order = "their light values" if th == "light" else "their dark values (the dark set reorders the light ramp's entries; the light tints are dark surfaces in this theme, so they sit at the dark end)"
+            node[step] = tok(
+                "{palette.%s.%s}" % (th, name), "color",
+                f"{hue} ramp step {step} of {len(names)}: palette '{name}'. Duolingo publishes no ramps; the steps are colours its palette already holds in this hue, ordered lightest to darkest by CIE L* of {order}, none interpolated.",
+                "derived from core.palette (palette app-54af2130.js; light and dark checked live, raw/2026-10/rootvars-live.json)", "Derived")
 
 # --- Strong border (F4) -------------------------------------------------------------------
 both("border.strong", lambda th: tok("{palette.%s.hare}" % th, "color",

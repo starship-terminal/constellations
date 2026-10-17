@@ -18,28 +18,28 @@
    "id": "sidebar-nav",
    "group": "App shell",
    "name": "Sidebar navigation",
-   "where": "every desktop page at >=700px wide (absent from all *-mobile dumps); nav items dt=home-nav, characters-nav, practice-hub-nav, leaderboard-nav, quests-nav, shop-nav, profile-tab, more-nav",
+   "where": "every desktop page at >=`breakpoint.md` 700px wide (absent from all *-mobile dumps); nav items dt=home-nav, characters-nav, practice-hub-nav, leaderboard-nav, quests-nav, shop-nav, profile-tab, more-nav",
    "anatomy": [
     "container: fixed full-height column with 2px right border (cl=_3P5E_)",
     "logo block (wordmark 128x30; 40x40 mark when collapsed)",
     "nav list: 8 items in a 8px-gap column",
-    "nav item: 32x32 icon + uppercase label, 2px border box, 12px radius when hovered/selected",
+    "nav item: 32x32 icon + uppercase label, `borderWidth.2` 2px border box, `radius.12` 12px radius when hovered/selected",
     "notification dot on the icon (Practice)",
     "profile item uses the round avatar as its icon",
     "MORE item (role=button) that opens a side popover menu",
-    "promo card (Want to learn chess?) under the list, >=1160px only"
+    "promo card (Want to learn chess?) under the list, >=`breakpoint.navLabels` 1160px only"
    ],
    "measurements": [
     {
      "part": "container",
      "property": "width x height",
-     "value": "256 x 797 (100vh); width = calc(var(--web-ui_navbar-width,224px) + 32px) at >=1160px, calc(var(--web-ui_navbar-width-no-labels,56px) + 32px) = 88px below",
+     "value": "256 x 797 (100vh); width = calc(var(--web-ui_navbar-width,224px) + 32px) at >=`breakpoint.navLabels` 1160px, calc(var(--web-ui_navbar-width-no-labels,56px) + 32px) = 88px below",
      "source": "learn-dark-default cl=_3P5E_ (#3); css:9071-d035f2e5.css ._3P5E_ and ._3P5E_ @media (min-width:1160px)"
     },
     {
      "part": "container",
      "property": "padding / border",
-     "value": "0 16px; border-right 2px solid; box-sizing border-box, so the content column is 222px",
+     "value": "0 16px; border-right `borderWidth.2` 2px solid; box-sizing border-box, so the content column is 222px",
      "source": "learn-dark-default cl=_3P5E_ (#3)"
     },
     {
@@ -51,7 +51,7 @@
     {
      "part": "logo block",
      "property": "box",
-     "value": "222 x 92: padding 32px 0 30px 16px, height 30px (>=1160); below 1160: height 39px, padding 36px 0 25px 10px",
+     "value": "222 x 92: padding `space.32` 32px 0 `space.30` 30px `space.16` 16px, height 30px (>=1160); below 1160: height 39px, padding 36px 0 25px `space.10` 10px",
      "source": "learn-dark-default cl=_3vxyy (#4); css:9071-d035f2e5.css ._3vxyy"
     },
     {
@@ -63,19 +63,19 @@
     {
      "part": "nav list",
      "property": "layout",
-     "value": "flex column, gap 8px; 222 wide (width 56px below 1160)",
+     "value": "flex column, gap `space.8` 8px; 222 wide (width 56px below 1160)",
      "source": "learn-dark-default cl=_2uLXp (#7); css:9071-d035f2e5.css ._2uLXp"
     },
     {
      "part": "nav item",
      "property": "width x height",
-     "value": "222 x 52 (inner height 40px + 4px padding x2 + 2px border x2); 48px tall and padding 0 below 1160",
+     "value": "222 x 52 (inner height 40px + `space.4` 4px padding x2 + `borderWidth.2` 2px border x2); 48px tall and padding 0 below 1160",
      "source": "learn-dark-default dt=home-nav span cl=_22Pme _33YLo p3liX YAEPa (#10); css:9071-d035f2e5.css .p3liX, .YAEPa"
     },
     {
      "part": "nav item",
      "property": "padding / border / radius",
-     "value": "padding var(--web-ui_tab-padding,4px 8px); border 2px solid transparent; radius 12px (applied by the selected and hover rules)",
+     "value": "padding var(--web-ui_tab-padding,4px 8px); border `borderWidth.2` 2px solid transparent; radius `radius.12` 12px (applied by the selected and hover rules)",
      "source": "css:9071-d035f2e5.css .YAEPa, ._348_2, ._3Dchg:hover"
     },
     {
@@ -93,7 +93,7 @@
     {
      "part": "icon",
      "property": "size / offset",
-     "value": "32 x 32 img, margin-left 6px (0 below 1160) inside a 38 x 32 wrapper with margin-right 20px (0 below 1160); icon x=32, label x=84",
+     "value": "32 x 32 img, margin-left `space.6` 6px (0 below 1160) inside a 38 x 32 wrapper with margin-right `space.20` 20px (0 below 1160); icon x=32, label x=84",
      "source": "learn-dark-default cl=_4fxfA (#11), cl=_101n8 (#12); css:9071-d035f2e5.css ._4fxfA, ._101n8"
     },
     {
@@ -117,7 +117,7 @@
     {
      "part": "MORE popover",
      "property": "rect / offset",
-     "value": "291 x 262 at x246 y502: position fixed, 8px (margin-left) right of the 238px item edge; z-index 220; surface radius 15px, 2px border; rows 52px (link rows) and 40px (Settings, Help, Log out) with padding 0 40px 0 20px, 2px divider after the link group",
+     "value": "291 x 262 at x246 y502: position fixed, 8px (margin-left) right of the 238px item edge; z-index 220; surface radius `radius.15` 15px, `borderWidth.2` 2px border; rows 52px (link rows) and 40px (Settings, Help, Log out) with padding 0 `space.40` 40px 0 `space.20` 20px, `borderWidth.2` 2px divider after the link group",
      "source": "learn-dark-more-menu cl=_3zpnU D0iFS _1o3g5 xw9u1 (#58), cl=_36bu_ (#59), cl=_1fv9a (#60), dt=det-nav (#61), dt=settings-button (#68); css:4779-c36ad395.css ._36bu_; css:9071-d035f2e5.css .GHXZL, ._2ifes"
     },
     {
@@ -129,7 +129,7 @@
     {
      "part": "promo card",
      "property": "box",
-     "value": "222 x 199, margin 12px 0, padding 24px 12px 16px, gap 8px, border 2px, radius 12px, text-align center; display none below 1160",
+     "value": "222 x 199, margin `space.12` 12px 0, padding `space.24` 24px `space.12` 12px `space.16` 16px, gap `space.8` 8px, border `borderWidth.2` 2px, radius `radius.12` 12px, text-align center; display none below 1160",
      "source": "learn-dark-default cl=_2cabz (#58); css:4243-a8d324a8.css ._2cabz @media (min-width:1160px)"
     },
     {
@@ -296,17 +296,17 @@
    "states": [
     {
      "state": "default",
-     "changes": "transparent 2px border, no fill, label wolf",
+     "changes": "transparent `borderWidth.2` 2px border, no fill, label wolf",
      "source": "learn-dark-default #16 cl=_3Dchg"
     },
     {
      "state": "hover (non-selected)",
-     "changes": "background polar, radius 12px (only under @media (hover:hover))",
-     "source": "css:9071-d035f2e5.css ._3Dchg:hover; captured:learn-dark-nav-hover (dt=quests-nav #35 gained rgb(32,47,54) + 12px radius)"
+     "changes": "background polar, radius `radius.12` 12px (only under @media (hover:hover))",
+     "source": "css:9071-d035f2e5.css ._3Dchg:hover; captured:learn-dark-nav-hover (dt=quests-nav #35 gained rgb(32,47,54) + `radius.12` 12px radius)"
     },
     {
      "state": "selected / active page",
-     "changes": "background iguana, 2px blue-jay border, radius 12px, label macaw (wrapper cl=_3glZ0 colours the label)",
+     "changes": "background iguana, 2px blue-jay border, radius `radius.12` 12px, label macaw (wrapper cl=_3glZ0 colours the label)",
      "source": "css:9071-d035f2e5.css ._348_2, ._3glZ0 ._1AZJt; captured:learn-dark-default #10"
     },
     {
@@ -331,17 +331,17 @@
     },
     {
      "state": "collapsed hover tooltip (<1160)",
-     "changes": "label shown as a fixed tooltip: background wolf, text snow, radius 8px, padding 7px 12px, 15px, left 88px",
+     "changes": "label shown as a fixed tooltip: background wolf, text snow, radius `radius.8` 8px, padding 7px `space.12` 12px, 15px, left 88px",
      "source": "css:9071-d035f2e5.css .j5zXd (not captured)"
     }
    ],
    "contains_generic": [
-    "popover shell (MORE menu, side placement, 15px radius)",
+    "popover shell (MORE menu, side placement, `radius.15` 15px radius)",
     "menu (MORE menu rows)",
-    "card (chess promo, 12px radius variant)",
+    "card (chess promo, `radius.12` 12px radius variant)",
     "button: text/ghost macaw (TRY CHESS)"
    ],
-   "desktop_vs_mobile": ">=1160px: 256px wide with labels, wordmark and promo card. 700-1159px: 88px icon-only rail (labels display none, items 48px tall and centred, 40x40 logo mark, hover tooltip), page padding-left 88px (css:4243 ._19E80). <700px: not rendered; replaced by mobile-top-bar and mobile-tab-bar (absent from every *-mobile dump).",
+   "desktop_vs_mobile": ">=`breakpoint.navLabels` 1160px: 256px wide with labels, wordmark and promo card. 700-1159px: 88px icon-only rail (labels display none, items 48px tall and centred, 40x40 logo mark, hover tooltip), page padding-left 88px (css:4243 ._19E80). <`breakpoint.md` 700px: not rendered; replaced by mobile-top-bar and mobile-tab-bar (absent from every *-mobile dump).",
    "screenshots": [
     {
      "dump": "learn-dark-default",
@@ -405,19 +405,19 @@
     {
      "part": "row",
      "property": "width x height / spacing",
-     "value": "368 x 44, flex row, justify-content space-between, align-items center; margin-bottom 8px (so the first card sits 8 + 16 gap below)",
+     "value": "368 x 44, flex row, justify-content space-between, align-items center; margin-bottom `space.8` 8px (so the first card sits 8 + 16 gap below)",
      "source": "learn-dark-default cl=_2gxqo (#69); css:5275-8898b509.css ._2gxqo"
     },
     {
      "part": "trigger",
      "property": "height / radius",
-     "value": "44px (height 100%), border-radius 12px, flex centred",
+     "value": "44px (height 100%), border-radius `radius.12` 12px, flex centred",
      "source": "learn-dark-default cl=_1LP0k (#71,#75,#80,#84); css:5275-8898b509.css ._1LP0k"
     },
     {
      "part": "course trigger",
      "property": "size",
-     "value": "flag only: 64 x 44 (width 64px, cl=_3gO6p) in dark dumps; flag + number: 90 x 44 (min-width 80px, padding 0 16px 0 13px, gap 14px) in light dumps",
+     "value": "flag only: 64 x 44 (width 64px, cl=_3gO6p) in dark dumps; flag + number: 90 x 44 (min-width 80px, padding 0 `space.16` 16px 0 13px, gap `space.14` 14px) in light dumps",
      "source": "learn-dark-default dt=courses-menu (#70,#71); learn-light-default dt=courses-menu cl=_2cstC (#70), cl=_310Fd (#71), cl=IBL62 (#72); css:5275-8898b509.css ._3gO6p, ._2cstC, ._310Fd, .IBL62"
     },
     {
@@ -429,7 +429,7 @@
     {
      "part": "streak trigger",
      "property": "size / padding",
-     "value": "68 x 44 (67 light), padding 0 16px 0 10px; icon wrapper 34 x 28",
+     "value": "68 x 44 (67 light), padding 0 `space.16` 16px 0 `space.10` 10px; icon wrapper 34 x 28",
      "source": "learn-dark-default dt=streak-menu (#74,#75), cl=_1BpZv (#76); css:5275-8898b509.css ._3KUWP"
     },
     {
@@ -441,19 +441,19 @@
     {
      "part": "gems trigger",
      "property": "size / padding",
-     "value": "89 x 44, padding 0 16px 0 10px",
+     "value": "89 x 44, padding 0 `space.16` 16px 0 `space.10` 10px",
      "source": "learn-dark-default dt=lingot-menu (#79,#80); css:5275-8898b509.css ._3w8he"
     },
     {
      "part": "gem icon",
      "property": "size",
-     "value": "22 x 28, margin-right 10px",
+     "value": "22 x 28, margin-right `space.10` 10px",
      "source": "learn-dark-default cl=_2Jf7o (#81); css:5275-8898b509.css ._2Jf7o"
     },
     {
      "part": "hearts trigger",
      "property": "size / padding",
-     "value": "72 x 44 (width 72px), padding 0 16px 0 10px, justify space-between",
+     "value": "72 x 44 (width 72px), padding 0 `space.16` 16px 0 `space.10` 10px, justify space-between",
      "source": "learn-dark-default dt=hearts-menu (#83,#84); css:5275-8898b509.css .hCZR9"
     },
     {
@@ -654,7 +654,7 @@
    "id": "right-rail",
    "group": "App shell",
    "name": "Right rail",
-   "where": "right column of every desktop page at >=700px (learn, leaderboard, quests, shop, profile, practice-hub, characters, sections, settings)",
+   "where": "right column of every desktop page at >=`breakpoint.md` 700px (learn, leaderboard, quests, shop, profile, practice-hub, characters, sections, settings)",
    "anatomy": [
     "outer column (cl=_1UT5d, width 368px) with a JS-sized ::before spacer",
     "inner sticky stack (cl=_1GhPE) with 16px gaps",
@@ -688,7 +688,7 @@
     {
      "part": "stack",
      "property": "gap",
-     "value": "16px between cards; the stat bar adds its own 8px margin-bottom, so the first card starts 68px below the rail top (y 92)",
+     "value": "16px between cards; the stat bar adds its own `space.8` 8px margin-bottom, so the first card starts 68px below the rail top (y 92)",
      "source": "learn-dark-default cl=_1GhPE (#68), _2gxqo (#69); css:5275-8898b509.css ._1GhPE"
     },
     {
@@ -700,13 +700,13 @@
     {
      "part": "cards",
      "property": "common shell",
-     "value": "368 wide, padding 18px, 2px border, radius 16px (card class _2cnFr _1T_BQ)",
+     "value": "368 wide, padding `space.18` 18px, `borderWidth.2` 2px border, radius `radius.16` 16px (card class _2cnFr _1T_BQ)",
      "source": "learn-dark-default #95; css:1008-b4d34396.css ._2cnFr, ._1T_BQ"
     },
     {
      "part": "footer links",
      "property": "box",
-     "value": "348 wide, margin 16px 10px 4px, flex wrap centred; each li margin 0 10px 12px; link 13px/16px 700 uppercase",
+     "value": "348 wide, margin `space.16` 16px `space.10` 10px `space.4` 4px, flex wrap centred; each li margin 0 `space.10` 10px `space.12` 12px; link 13px/16px 700 uppercase",
      "source": "learn-dark-default dt=footer-links (#134), cl=pQQIb (#135), cl=_1oCct (#136); css:5275-8898b509.css ._3mfHU, .pQQIb, ._1oCct"
     },
     {
@@ -808,10 +808,10 @@
     }
    ],
    "contains_generic": [
-    "card (16px radius, 2px border)",
+    "card (`radius.16` 16px radius, `borderWidth.2` 2px border)",
     "button: primary / secondary inside cards (documented by the card owners)"
    ],
-   "desktop_vs_mobile": "Not rendered below 700px (no _1UT5d node in any *-mobile dump); its stat bar moves to mobile-top-bar and the cards are dropped.",
+   "desktop_vs_mobile": "Not rendered below `breakpoint.md` 700px (no _1UT5d node in any *-mobile dump); its stat bar moves to mobile-top-bar and the cards are dropped.",
    "screenshots": [
     {
      "dump": "learn-dark-default",
@@ -847,7 +847,7 @@
    "id": "mobile-top-bar",
    "group": "App shell",
    "name": "Mobile top bar",
-   "where": "<700px on /learn and /shop only (cl=_3sbzq _1lHE4); not rendered on /leaderboard, /quests, /profile, /settings mobile",
+   "where": "<`breakpoint.md` 700px on /learn and /shop only (cl=_3sbzq _1lHE4); not rendered on /leaderboard, /quests, /profile, /settings mobile",
    "anatomy": [
     "fixed full-width bar, 58px tall",
     "four stat triggers spread with space-between: course (flag + number), streak, gems, hearts"
@@ -880,25 +880,25 @@
     {
      "part": "course",
      "property": "flag + number",
-     "value": "flag 32 x 25, gap 6px, number 16 x 24",
+     "value": "flag 32 x 25, gap `space.6` 6px, number 16 x 24",
      "source": "learn-dark-mobile cl=_2Zkly (#7), img (#8), cl=_2DN_i (#9); css:5275-8898b509.css ._2Zkly"
     },
     {
      "part": "streak",
      "property": "icon",
-     "value": "25 x 30, margin-right 6px",
+     "value": "25 x 30, margin-right `space.6` 6px",
      "source": "learn-dark-mobile dt=imageStreak cl=_1s1SW (#13); css:5275-8898b509.css ._1s1SW"
     },
     {
      "part": "gems",
      "property": "icon",
-     "value": "24 x 30, margin-right 6px",
+     "value": "24 x 30, margin-right `space.6` 6px",
      "source": "learn-dark-mobile cl=_1J0jY (#17); css:5275-8898b509.css ._1J0jY"
     },
     {
      "part": "hearts",
      "property": "icon",
-     "value": "32 x 32, gap 6px; count margin 6px auto",
+     "value": "32 x 32, gap `space.6` 6px; count margin `space.6` 6px auto",
      "source": "learn-dark-mobile cl=_3QChT (#21), img (#22), cl=IYCa_ (#23); css:4769-628e48ee.css ._3QChT, .IYCa_"
     },
     {
@@ -1051,7 +1051,7 @@
    "id": "mobile-tab-bar",
    "group": "App shell",
    "name": "Mobile tab bar",
-   "where": "<700px on /learn, /leaderboard, /quests, /profile, /shop (cl=_1p0jQ > nav _2_E8y > _2zdkO); absent on /settings/* mobile",
+   "where": "<`breakpoint.md` 700px on /learn, /leaderboard, /quests, /profile, /shop (cl=_1p0jQ > nav _2_E8y > _2zdkO); absent on /settings/* mobile",
    "anatomy": [
     "fixed bottom bar, 82px, top border",
     "6 icon-only tabs: Learn, Characters, Practice, Leaderboards, Quests, Profile (no Shop, no More)",
@@ -1068,7 +1068,7 @@
     {
      "part": "bar",
      "property": "padding / gap",
-     "value": "padding 16px; flex, align-items center, justify-content space-between, gap 12px; box-sizing border-box",
+     "value": "padding `space.16` 16px; flex, align-items center, justify-content space-between, gap `space.12` 12px; box-sizing border-box",
      "source": "learn-dark-mobile #27; css:5275-8898b509.css ._2zdkO"
     },
     {
@@ -1092,7 +1092,7 @@
     {
      "part": "active chip",
      "property": "border / radius",
-     "value": "2px solid border, radius 8px (on the 48x48 tab)",
+     "value": "2px solid border, radius `radius.8` 8px (on the 48x48 tab)",
      "source": "learn-dark-mobile cl=_2-WjO (#28); css:5275-8898b509.css ._2-WjO"
     },
     {
@@ -1160,7 +1160,7 @@
    "states": [
     {
      "state": "active",
-     "changes": "iguana fill, 2px blue-jay border, 8px radius; icon unchanged (same src)",
+     "changes": "iguana fill, 2px blue-jay border, `radius.8` 8px radius; icon unchanged (same src)",
      "source": "captured:learn-dark-mobile #28 (Learn), leaderboard-dark-mobile #16, quests-dark-mobile #19, profile-dark-mobile #22 and light twins; css:5275-8898b509.css ._2-WjO"
     },
     {
@@ -1175,7 +1175,7 @@
     }
    ],
    "contains_generic": [],
-   "desktop_vs_mobile": "Mobile-only replacement for sidebar-nav: icons 40px (desktop 32px), no labels, chip radius 8px (desktop item 12px), same iguana/blue-jay selected tokens; Shop and More are not reachable from the bar.",
+   "desktop_vs_mobile": "Mobile-only replacement for sidebar-nav: icons 40px (desktop 32px), no labels, chip radius `radius.8` 8px (desktop item 12px), same iguana/blue-jay selected tokens; Shop and More are not reachable from the bar.",
    "screenshots": [
     {
      "dump": "learn-dark-mobile",
@@ -1224,13 +1224,13 @@
    "anatomy": [
     "fixed sidebar (256 / 88 / none)",
     "content wrapper: max-width 1056, centred, padding-top 24",
-    "flex row-reverse: main column (flex 1) + 48px gap + 368px right rail, 24px side and bottom padding"
+    "flex row-reverse: main column (flex 1) + `space.48` 48px gap + 368px right rail, 24px side and bottom padding"
    ],
    "measurements": [
     {
      "part": "app wrapper",
      "property": "min-width / top padding",
-     "value": ">=700px: min-width 900px, margin 0 auto, padding-top calc(var(--app-offset) + 24px); below: padding-top var(--app-offset)",
+     "value": ">=`breakpoint.md` 700px: min-width 900px, margin 0 auto, padding-top calc(var(--app-offset) + 24px); below: padding-top var(--app-offset)",
      "source": "learn-dark-default cl=_3Cy6o _2kkzG (#1); css:4243-a8d324a8.css ._2kkzG"
     },
     {
@@ -1242,13 +1242,13 @@
     {
      "part": "content wrapper",
      "property": "max-width",
-     "value": "1056px, margin 0 auto, width 100%, padding-top 24px",
+     "value": "1056px, margin 0 auto, width 100%, padding-top `space.24` 24px",
      "source": "learn-dark-default cl=AkzqY (#65); css:4243-a8d324a8.css .AkzqY"
     },
     {
      "part": "row",
      "property": "flex",
-     "value": "flex-direction row-reverse (>=700) / column (<700); gap 48px; padding 0 24px 24px (>=700 only)",
+     "value": "flex-direction row-reverse (>=700) / column (<700); gap `space.48` 48px; padding 0 `space.24` 24px `space.24` 24px (>=700 only)",
      "source": "learn-dark-default dt=home cl=wl71D (#66); css:4819-8f413e73.css .wl71D"
     },
     {
@@ -1327,7 +1327,7 @@
    },
    "states": [
     {
-     "state": ">=1160px",
+     "state": ">=`breakpoint.navLabels` 1160px",
      "changes": "sidebar 256 with labels; content offset 256",
      "source": "css:9071-d035f2e5.css ._3P5E_ @media (min-width:1160px); css:4243-a8d324a8.css ._19E80"
     },
@@ -1337,7 +1337,7 @@
      "source": "css:9071-d035f2e5.css; css:4243-a8d324a8.css ._2kkzG (not captured)"
     },
     {
-     "state": "<700px",
+     "state": "<`breakpoint.md` 700px",
      "changes": "mobile layout: column flow, no row padding, no sidebar or rail, fixed top and tab bars; kPqwA max-width 1140 only applies >=700",
      "source": "css:4819-8f413e73.css .wl71D; css:4243-a8d324a8.css .kPqwA; captured:*-mobile"
     },
@@ -1412,13 +1412,13 @@
      "page": "/shop",
      "1200": "main 480, rail sticky",
      "1384": "main 592",
-     "570": "padding 16px, top bar + tab bar (none active)"
+     "570": "padding `space.16` 16px, top bar + tab bar (none active)"
     },
     {
      "page": "/profile",
      "1200": "main 480, rail static",
      "1384": "main 592, rail static",
-     "570": "padding 0 16px, tab bar only (Profile active)"
+     "570": "padding 0 `space.16` 16px, tab bar only (Profile active)"
     },
     {
      "page": "/practice-hub",
@@ -1442,7 +1442,7 @@
      "page": "/settings/*",
      "1200": "main 480, rail sticky (settings cards, no stat bar)",
      "1384": "main 592",
-     "570": "no top bar, no tab bar; sticky 58px page header _3Zt5A; padding 24px 16px"
+     "570": "no top bar, no tab bar; sticky 58px page header _3Zt5A; padding `space.24` 24px `space.16` 16px"
     }
    ],
    "part": "shell"
@@ -1457,13 +1457,13 @@
     "banner (PsNCe): 2-column grid, unit colour background, radius 13",
     "back link row: arrow icon 16x16 + label \"SECTION 4, UNIT 12\" (links to /sections)",
     "unit title",
-    "GUIDEBOOK button (grid column 2, spans both rows): 24px notebook icon + label (label only at >=1100px)"
+    "GUIDEBOOK button (grid column 2, spans both rows): 24px notebook icon + label (label only at >=`breakpoint.xl` 1100px)"
    ],
    "measurements": [
     {
      "part": "sticky wrapper",
      "property": "position / top / z-index",
-     "value": "sticky, top 0 (>=700px), z-index 210, min-height 82px",
+     "value": "sticky, top 0 (>=`breakpoint.md` 700px), z-index 210, min-height 82px",
      "source": "learn-dark-default cl=_1g8jV (#152); css:path-e50cab6b.css ._1g8jV"
     },
     {
@@ -1487,19 +1487,19 @@
     {
      "part": "banner",
      "property": "gap (row / column)",
-     "value": "6px / 16px (row-gap 3px below 700px)",
+     "value": "6px / 16px (row-gap 3px below `breakpoint.md` 700px)",
      "source": "learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe"
     },
     {
      "part": "banner",
      "property": "border-radius",
-     "value": "13px (>=700px only; 0 on mobile)",
+     "value": "13px (>=`breakpoint.md` 700px only; 0 on mobile)",
      "source": "learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe @media (min-width:700px)"
     },
     {
      "part": "back link",
      "property": "layout",
-     "value": "flex, gap 8px; arrow img 16x16; r=[296,40,284,24]",
+     "value": "flex, gap `space.8` 8px; arrow img 16x16; r=[296,40,284,24]",
      "source": "learn-dark-default cl=_3HqVu (#155), img (#156)"
     },
     {
@@ -1529,7 +1529,7 @@
     {
      "part": "GUIDEBOOK button",
      "property": "border width / radius",
-     "value": "2px sides and top, 4px bottom (lip); radius 16px",
+     "value": "2px sides and top, 4px bottom (lip); radius `radius.16` 16px",
      "source": "learn-dark-default (#159)"
     },
     {
@@ -1541,7 +1541,7 @@
     {
      "part": "GUIDEBOOK label",
      "property": "margin-left / display",
-     "value": "12px; display none below 1100px viewport",
+     "value": "12px; display none below `breakpoint.xl` 1100px viewport",
      "source": "learn-dark-default span cl=_30k3d (#161); css:path-e50cab6b.css ._30k3d @media (min-width:1100px)"
     }
    ],
@@ -1620,7 +1620,7 @@
      {
       "part": "title",
       "property": "font",
-      "value": "`typography.path.unitHeaderTitle` 700 22px/28px (19px/22px below 700px)",
+      "value": "`typography.path.unitHeaderTitle` 700 22px/28px (19px/22px below `breakpoint.md` 700px)",
       "source": "learn-dark-default U_xpg (#158); css:path-e50cab6b.css .U_xpg"
      },
      {
@@ -1725,7 +1725,7 @@
     "button: secondary (GUIDEBOOK, desktop)",
     "button: unit-coloured split button (mobile)"
    ],
-   "desktop_vs_mobile": "Mobile (<700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face `unitColors.green` owl-always-light #58CC02, 4px lip `palette.light.tree-frog-always-light` tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.",
+   "desktop_vs_mobile": "Mobile (<`breakpoint.md` 700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 `space.16` 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face `unitColors.green` owl-always-light #58CC02, 4px lip `palette.light.tree-frog-always-light` tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.",
    "screenshots": [
     {
      "dump": "learn-dark-default",
@@ -1795,7 +1795,7 @@
     {
      "part": "divider",
      "property": "height / margins",
-     "value": "82px tall; margin 8px 0",
+     "value": "82px tall; margin `space.8` 8px 0",
      "source": "learn-dark-default header cl=_10Xfk (#1182) r=[280,146,480,82]"
     },
     {
@@ -1947,7 +1947,7 @@
     {
      "part": "progress ring",
      "property": "size",
-     "value": "98 x 98px svg scaled 0.946 vertically = 98 x 93px; node sits inside with 14px margin (_1xsb4)",
+     "value": "98 x 98px svg scaled 0.946 vertically = 98 x 93px; node sits inside with `space.14` 14px margin (_1xsb4)",
      "source": "learn-dark-default svg cl=_2FMGJ (#1231), div cl=_1xsb4 (#1235); css:path-e50cab6b.css ._2FMGJ, ._1xsb4"
     },
     {
@@ -1983,13 +1983,13 @@
     {
      "part": "START bubble",
      "property": "size / position",
-     "value": "80 x 45px (min-width 80), radius 10px, border 2px, padding 12px; above the ring (top -43px), arrow 20x10 pointing down",
+     "value": "80 x 45px (min-width 80), radius `radius.10` 10px, border `borderWidth.2` 2px, padding `space.12` 12px; above the ring (top -43px), arrow 20x10 pointing down",
      "source": "learn-dark-default cl=_3zpnU _37pE2 _1o3g5 _kJVz (#1238), _36bu_ _27IMa (#1239), _3T97b (#1240); css:path-e50cab6b.css ._kJVz, ._27IMa"
     },
     {
      "part": "jump tooltip",
      "property": "size",
-     "value": "126 x 45px, radius 10px, border 2px, padding 12px, arrow 20x10",
+     "value": "126 x 45px, radius `radius.10` 10px, border `borderWidth.2` 2px, padding `space.12` 12px, arrow 20x10",
      "source": "learn-dark-default dt=skill-path-tooltip-unit-test (#1321), TOHdU (#1322)"
     },
     {
@@ -2345,13 +2345,13 @@
     {
      "part": "shell",
      "property": "offset from node",
-     "value": "margin-top 12px below the node (arrow overlaps 8px); horizontal translate centres the shell on the column (-147.5px for the centre node, -192.384px for the node at +44.884, -102.616px for a node at -44.884)",
+     "value": "margin-top `space.12` 12px below the node (arrow overlaps 8px); horizontal translate centres the shell on the column (-147.5px for the centre node, -192.384px for the node at +44.884, -102.616px for a node at -44.884)",
      "source": "learn-dark-node-popover (#1238); learn-dark-locked-popover (#1269); learn-dark-completed-popover (#1428)"
     },
     {
      "part": "arrow",
      "property": "size / radius",
-     "value": "20 x 10px clip, inner square 20x20 rotated 45deg, radius 2px; margin 0 15px (popover radius var)",
+     "value": "20 x 10px clip, inner square 20x20 rotated 45deg, radius `radius.2` 2px; margin 0 `space.15` 15px (popover radius var)",
      "source": "learn-dark-node-popover _3T97b (#1245), _1TMn5 (#1246); css:4779-c36ad395.css ._37pE2>._3T97b"
     },
     {
@@ -2363,7 +2363,7 @@
     {
      "part": "button",
      "property": "width x height",
-     "value": "263 x 50px (min-height 50), margin-top 16px (8px in locked), padding 8px 16px, radius 16px, border-bottom 4px lip",
+     "value": "263 x 50px (min-height 50), margin-top `space.16` 16px (8px in locked), padding `space.8` 8px `space.16` 16px, radius `radius.16` 16px, border-bottom `borderWidth.4` 4px lip",
      "source": "learn-dark-node-popover dt=\"skill-path-state-active skill-path-unit-test-81\" (#1244); css:path-e50cab6b.css ._2sYfM"
     }
    ],
@@ -2454,7 +2454,7 @@
      {
       "part": "subtitle",
       "property": "font",
-      "value": "500 17px/26.6px (locked: 19px, margin-top 8px)",
+      "value": "500 17px/26.6px (locked: 19px, margin-top `space.8` 8px)",
       "source": "css:path-e50cab6b.css ._21efi, ._3WUdw ._21efi; learn-dark-locked-popover (#1274)"
      },
      {
@@ -2666,13 +2666,13 @@
     {
      "part": "button",
      "property": "border / radius",
-     "value": "2px sides and top, 4px bottom; radius 16px; ::before inset -2px with 2px border and 0 2px lip",
+     "value": "2px sides and top, 4px bottom; radius `radius.16` 16px; ::before inset -2px with `borderWidth.2` 2px border and 0 2px lip",
      "source": "learn-dark-completed-unit (#1668)"
     },
     {
      "part": "button",
      "property": "position",
-     "value": "sticky, bottom 24px (>=700px; 98px on mobile), right edge on the column edge (x 708-760 in a 280-760 column)",
+     "value": "sticky, bottom 24px (>=`breakpoint.md` 700px; 98px on mobile), right edge on the column edge (x 708-760 in a 280-760 column)",
      "source": "learn-dark-completed-unit (#1668); css:path-e50cab6b.css ._2El3L"
     },
     {
@@ -2823,13 +2823,13 @@
     {
      "part": "UP NEXT pill",
      "property": "size / padding / radius",
-     "value": "74 x 26px, padding 4px 8px, radius 6px, margin-bottom 16px",
+     "value": "74 x 26px, padding `space.4` 4px `space.8` 8px, radius 6px, margin-bottom `space.16` 16px",
      "source": "learn-dark-path-end cl=_1Qswf _3LDH7 (#470)"
     },
     {
      "part": "lock icon",
      "property": "size",
-     "value": "21 x 25px, margin-right 12px",
+     "value": "21 x 25px, margin-right `space.12` 12px",
      "source": "learn-dark-path-end img cl=_3kRS5 (#472)"
     },
     {
@@ -2847,7 +2847,7 @@
     {
      "part": "button",
      "property": "width x height / radius",
-     "value": "416 x 50px (528 at 592 card), radius 16px, border 2/4px",
+     "value": "416 x 50px (528 at 592 card), radius `radius.16` 16px, border 2/4px",
      "source": "learn-dark-path-end cl=_3xDVI _2V6ug _1jUqO (#475)"
     }
    ],
@@ -3020,7 +3020,7 @@
    "id": "section-card",
    "group": "Learn path",
    "name": "Section card (sections page)",
-   "where": "/sections, div.JTQLF (grid, gap 16px) of div._3AIkT cards: completed ._2UWvP, in progress ._1pT8b._2E1uv, locked ._36wSS._2E1uv",
+   "where": "/sections, div.JTQLF (grid, gap `space.16` 16px) of div._3AIkT cards: completed ._2UWvP, in progress ._1pT8b._2E1uv, locked ._36wSS._2E1uv",
    "anatomy": [
     "card (radius 16, padding 0 24, grid 1fr + min-content)",
     "CEFR link button \"A1 • SEE DETAILS\"",
@@ -3081,7 +3081,7 @@
     {
      "part": "status icon",
      "property": "size",
-     "value": "16 x 17px (check), 13 x 16px (lock); margin-right 8px / 5px",
+     "value": "16 x 17px (check), 13 x 16px (lock); margin-right `space.8` 8px / 5px",
      "source": "sections-dark-default _6wAz8 (#164), _2cmY1 (#238)"
     },
     {
@@ -3093,7 +3093,7 @@
     {
      "part": "progress bar",
      "property": "width x height / radius",
-     "value": "178 x 18px (254 at 1384), radius 9px; top highlight strip 3px tall, inset 5px, radius 9999, white @0.2",
+     "value": "178 x 18px (254 at 1384), radius `radius.9` 9px; top highlight strip 3px tall, inset `space.5` 5px, radius 9999, white @0.2",
      "source": "sections-dark-default role=progressbar (#197), _3yKMC (#198), _1EFTr (#202)"
     },
     {
@@ -3105,13 +3105,13 @@
     {
      "part": "CONTINUE button",
      "property": "width x height / margin-top",
-     "value": "178 x 50px, radius 12px, margin-top 24px",
+     "value": "178 x 50px, radius `radius.12` 12px, margin-top `space.24` 24px",
      "source": "sections-dark-default cl=_3_XLT _3RMj4 (#210)"
     },
     {
      "part": "speech bubble",
      "property": "width / radius / padding",
-     "value": "264px, radius 16px, padding 28px 16px 16px; tail img 23 x 24px",
+     "value": "264px, radius `radius.16` 16px, padding `space.28` 28px `space.16` 16px `space.16` 16px; tail img 23 x 24px",
      "source": "sections-dark-default _2NZrx (#214), O93KC (#215), _3moA6 (#232)"
     },
     {
@@ -3326,7 +3326,7 @@
     "progress bar",
     "speech bubble"
    ],
-   "desktop_vs_mobile": "CSS only: below 700px the completed card gets 16px side margins (._2UWvP @media (max-width:699px)); no mobile dump of /sections.",
+   "desktop_vs_mobile": "CSS only: below `breakpoint.md` 700px the completed card gets 16px side margins (._2UWvP @media (max-width:699px)); no mobile dump of /sections.",
    "screenshots": [
     {
      "dump": "sections-dark-default",
@@ -3366,7 +3366,7 @@
    "name": "Lesson top bar",
    "where": "/lesson, header row (cl=wqSzE > _3v4ux > _18N2Q _1zcW8): dt=quit-button, settings button, role=progressbar, hearts",
    "anatomy": [
-    "row: grid min-content | min-content | 1fr | min-content, gap 24px",
+    "row: grid min-content | min-content | 1fr | min-content, gap `space.24` 24px",
     "close X (dt=quit-button, 18x18 img)",
     "settings gear (22x22 background-image button)",
     "progress bar: track, fill (clip-path to value), secondary inner fill (bee), highlight stripe",
@@ -3388,7 +3388,7 @@
     {
      "part": "row",
      "property": "width x height, gap",
-     "value": "1000 x 32px, column gap 24px",
+     "value": "1000 x 32px, column gap `space.24` 24px",
      "source": "lesson-light-challenge-default cl=_18N2Q _1zcW8 (#6)"
     },
     {
@@ -3406,7 +3406,7 @@
     {
      "part": "progress track",
      "property": "width x height, radius",
-     "value": "840 x 16px, radius 8px (height/2)",
+     "value": "840 x 16px, radius `radius.8` 8px (height/2)",
      "source": "lesson-light-challenge-default cl=_3yKMC (#11)"
     },
     {
@@ -3424,13 +3424,13 @@
     {
      "part": "highlight stripe",
      "property": "size / offset",
-     "value": "height 3px (30% of bar), top 25% (4px), left 4px (height/4), width = value - 8px, radius 9999px",
+     "value": "height 3px (30% of bar), top 25% (4px), left 4px (height/4), width = value - 8px, radius `radius.pill` 9999px",
      "source": "lesson-light-challenge-default cl=_1EFTr (#14) r=[284,62,90,3]; css:4779-c36ad395.css ._1EFTr"
     },
     {
      "part": "hearts",
      "property": "layout",
-     "value": "flex, gap 5px; img 32 x 32px; count 8 x 20px, margin-left 3px",
+     "value": "flex, gap `space.5` 5px; img 32 x 32px; count 8 x 20px, margin-left 3px",
      "source": "lesson-light-challenge-default cl=_3ww7z (#16), _14S2e (#17), _28aeG _c4M- (#18)"
     }
    ],
@@ -3570,7 +3570,7 @@
     }
    ],
    "contains_generic": [],
-   "desktop_vs_mobile": "Below 700px: row gap 20px instead of 24px (css:1584-b289a3ce.css ._1zcW8), the 50px 40px top padding is dropped (css:1584-b289a3ce.css ._3v4ux @media (min-width:700px)) and the lesson grid gets padding 24px 16px with rows min-content 1fr min-content (css:1584-b289a3ce.css ._2G9ED, ._29gfw). 700px+ with max-height 650px: top padding 40px, header row 90px. No mobile lesson dump exists.",
+   "desktop_vs_mobile": "Below 700px: row gap `space.20` 20px instead of 24px (css:1584-b289a3ce.css ._1zcW8), the 50px 40px top padding is dropped (css:1584-b289a3ce.css ._3v4ux @media (min-width:700px)) and the lesson grid gets padding `space.24` 24px `space.16` 16px with rows min-content 1fr min-content (css:1584-b289a3ce.css ._2G9ED, ._29gfw). 700px+ with max-height 650px: top padding `space.40` 40px, header row 90px. No mobile lesson dump exists.",
    "screenshots": [
     {
      "dump": "lesson-dark-choice-default",
@@ -3616,7 +3616,7 @@
     "crops/lesson-top-bar--bee-dark.png"
    ],
    "gaps": [
-    "Progress bar height (16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it.",
+    "Progress bar height (`space.16` 16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it.",
     "What triggers bee versus fox fill is not recorded; both captured only as inline colours.",
     "Light bee fill not captured.",
     "Settings gear hover not captured, only CSS."
@@ -3661,7 +3661,7 @@
     {
      "part": "header to body",
      "property": "gap",
-     "value": "24px (16px below 700px, 8px when max-height 500px)",
+     "value": "24px (16px below `breakpoint.md` 700px, 8px when max-height 500px)",
      "source": "css:4358-6896adab.css .K3vbJ"
     },
     {
@@ -3715,7 +3715,7 @@
     "type": [
      {
       "part": "title",
-      "value": "duolingo-sans `typography.lesson.challengeHeader` 700 32px/40px (25px, line-height 1.25 below 700px)",
+      "value": "duolingo-sans `typography.lesson.challengeHeader` 700 32px/40px (25px, line-height 1.25 below `breakpoint.md` 700px)",
       "source": "lesson-dark-tile-hover #36; css:4358-6896adab.css ._3EOK0; css:app-f2ef02f8.css h1"
      },
      {
@@ -3748,7 +3748,7 @@
     }
    ],
    "contains_generic": [],
-   "desktop_vs_mobile": "Title 25px below 700px, 32px at 700px+ (css:4358-6896adab.css ._3EOK0 @media (min-width:700px)). Header to body gap 16px below 700px.",
+   "desktop_vs_mobile": "Title 25px below `breakpoint.md` 700px, 32px at 700px+ (css:4358-6896adab.css ._3EOK0 @media (min-width:700px)). Header to body gap `space.16` 16px below `breakpoint.md` 700px.",
    "screenshots": [
     {
      "dump": "lesson-dark-feedback-correct",
@@ -3803,7 +3803,7 @@
     {
      "part": "row",
      "property": "layout",
-     "value": "flex, align-items center, gap 0; wrapper padding-left 10px, margin-top -24px",
+     "value": "flex, align-items center, gap 0; wrapper padding-left `space.10` 10px, margin-top -24px",
      "source": "lesson-light-challenge-default cl=_31yjb (#29), _2w0y3 _1dtTU (#28)"
     },
     {
@@ -3863,13 +3863,13 @@
     {
      "part": "hint token",
      "property": "underline",
-     "value": "padding-bottom 4px; dashed-line background image repeat-x at 0 100%",
+     "value": "padding-bottom `space.4` 4px; dashed-line background image repeat-x at 0 100%",
      "source": "lesson-light-challenge-default dt=hint-token (#81); css:1327-4028784b.css ._2IGwo, .XxgPa"
     },
     {
      "part": "new-word sparkle",
      "property": "size",
-     "value": "6px squares (8px for the larger one), radius 2px, 48x48 area rotated 45deg",
+     "value": "6px squares (8px for the larger one), radius `radius.2` 2px, 48x48 area rotated 45deg",
      "source": "lesson-dark-challenge-tiles-partial cl=_1kMJb P77qm (#76-#78); css:1327-4028784b.css .P77qm, ._1kMJb"
     }
    ],
@@ -4070,7 +4070,7 @@
     {
      "part": "row",
      "property": "height / rule",
-     "value": "60px, border-bottom 2px solid (74px when tokens carry furigana, +14px)",
+     "value": "60px, border-bottom `borderWidth.2` 2px solid (74px when tokens carry furigana, +14px)",
      "source": "lesson-light-challenge-default cl=_3gJ3o D0fy9 (#96); lesson-dark-listen-default cl=D0fy9 C67H0 (#65); css:1008-b4d34396.css .D0fy9, .D0fy9.C67H0"
     },
     {
@@ -4082,7 +4082,7 @@
     {
      "part": "whole answer + bank block",
      "property": "min-height",
-     "value": "170px (87px below 700px)",
+     "value": "170px (87px below `breakpoint.md` 700px)",
      "source": "css:4358-6896adab.css ._3hg-V"
     },
     {
@@ -4162,14 +4162,14 @@
    "anatomy": [
     "slot (cl=_1uV0Q, 60px tall)",
     "button (transparent 2/2/4 border for the lip space)",
-    "::before face (2px border, radius 12, 2px lip as box-shadow)",
+    "::before face (`borderWidth.2` 2px border, radius 12, 2px lip as box-shadow)",
     "label span dt=challenge-tap-token-text"
    ],
    "measurements": [
     {
      "part": "slot",
      "property": "height / margin",
-     "value": "60px (74px with furigana), margin 0 4px",
+     "value": "60px (74px with furigana), margin 0 `space.4` 4px",
      "source": "lesson-light-challenge-default cl=_1uV0Q _DVHp (#103); css:1008-b4d34396.css ._1uV0Q"
     },
     {
@@ -4193,7 +4193,7 @@
     {
      "part": "face (::before)",
      "property": "inset / border / radius",
-     "value": "-2px all sides, 2px solid, radius 12px",
+     "value": "-2px all sides, 2px solid, radius `radius.12` 12px",
      "source": "lesson-light-challenge-default #105 ::before; css:4779-c36ad395.css ._2V6ug:before; css:1008-b4d34396.css ._2O7Ua {--web-ui_button-border-radius:12px}"
     },
     {
@@ -4387,7 +4387,7 @@
     {
      "part": "row",
      "property": "radius / border",
-     "value": "12px; 2px 2px 4px transparent, face ::before inset -2px, 2px border, lip 0 2px 0",
+     "value": "12px; 2px 2px 4px transparent, face ::before inset -2px, `borderWidth.2` 2px border, lip 0 2px 0",
      "source": "lesson-dark-choice-default #40; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before"
     },
     {
@@ -4399,7 +4399,7 @@
     {
      "part": "number badge",
      "property": "size / border / radius",
-     "value": "30 x 30px, 2px, radius 8px",
+     "value": "30 x 30px, 2px, radius `radius.8` 8px",
      "source": "lesson-dark-choice-default cl=_3zbIX _20AkF (#41)"
     },
     {
@@ -4610,7 +4610,7 @@
    "name": "Image select card",
    "where": "/lesson \"Which one of these is ...\", role=radiogroup cl=HsVVL > div dt=challenge-choice cl=_8dMUn _2_Y8r",
    "anatomy": [
-    "card (same shell as choice row, padding 24px)",
+    "card (same shell as choice row, padding `space.24` 24px)",
     "illustration 143x160 (background-image)",
     "footer: word with ruby (left) + number badge 30x30 (right)"
    ],
@@ -4618,13 +4618,13 @@
     {
      "part": "card",
      "property": "width x height",
-     "value": "195 x 261px, 3 across with 8px gap",
+     "value": "195 x 261px, 3 across with `space.8` 8px gap",
      "source": "lesson-light-select-default dt=challenge-choice (#40, #59, #78); cl=HsVVL (#39)"
     },
     {
      "part": "card",
      "property": "padding",
-     "value": "24px (12px below 700px)",
+     "value": "24px (12px below `breakpoint.md` 700px)",
      "source": "lesson-light-select-default #40; css:1327-4028784b.css ._2_Y8r"
     },
     {
@@ -4636,7 +4636,7 @@
     {
      "part": "illustration",
      "property": "size",
-     "value": "143 x 160px, margin-bottom 10px",
+     "value": "143 x 160px, margin-bottom `space.10` 10px",
      "source": "lesson-light-select-selected cl=fRsqg (#43)"
     },
     {
@@ -4648,7 +4648,7 @@
     {
      "part": "badge",
      "property": "size",
-     "value": "30 x 30px, radius 8px, 2px border",
+     "value": "30 x 30px, radius `radius.8` 8px, `borderWidth.2` 2px border",
      "source": "lesson-light-select-selected #53"
     }
    ],
@@ -4735,7 +4735,7 @@
    "contains_generic": [
     "card: selectable"
    ],
-   "desktop_vs_mobile": "Below 700px: 2 columns, a third card spans centred at 50% width (css:1327-4028784b.css .HsVVL, .HsVVL>:nth-child(3):last-child @media (max-width:699px)); padding 12px; footer centred.",
+   "desktop_vs_mobile": "Below 700px: 2 columns, a third card spans centred at 50% width (css:1327-4028784b.css .HsVVL, .HsVVL>:nth-child(3):last-child @media (max-width:699px)); padding `space.12` 12px; footer centred.",
    "screenshots": [
     {
      "dump": "lesson-light-select-default",
@@ -4784,13 +4784,13 @@
     "tile (tap-token shell, 255x68)",
     "number badge 30x30 at left 16px",
     "label (word or ruby)",
-    "inner fill (cl=_12ozk, inset 2px, radius 10px) shown when selected or wrong"
+    "inner fill (cl=_12ozk, inset `space.2` 2px, radius `radius.10` 10px) shown when selected or wrong"
    ],
    "measurements": [
     {
      "part": "grid",
      "property": "columns / gap",
-     "value": "2 x 255px, gap 10px 30px, rows 1fr",
+     "value": "2 x 255px, gap `space.10` 10px `space.30` 30px, rows 1fr",
      "source": "lesson-dark-match-default cl=_1bmNz _3rat3 (#28); css:4358-6896adab.css ._1bmNz @media (min-width:700px)"
     },
     {
@@ -4814,13 +4814,13 @@
     {
      "part": "badge",
      "property": "size / position",
-     "value": "30 x 30px, radius 8px, absolute left 16px",
+     "value": "30 x 30px, radius `radius.8` 8px, absolute left 16px",
      "source": "lesson-dark-match-default cl=_3zbIX _20AkF _2MhQB (#31); css:1008-b4d34396.css ._3ZtW_._1YHBP ._2MhQB"
     },
     {
      "part": "inner fill",
      "property": "inset / radius",
-     "value": "251 x 62px (2px inset), radius 10px",
+     "value": "251 x 62px (`space.2` 2px inset), radius `radius.10` 10px",
      "source": "lesson-dark-match-selected cl=_12ozk (#31); css:1008-b4d34396.css ._12ozk"
     }
    ],
@@ -4943,7 +4943,7 @@
    "contains_generic": [
     "button: secondary (outline) shell, re-skinned"
    ],
-   "desktop_vs_mobile": "Below 700px: columns minmax(0,1fr) x 2, rows fixed 76px, gap 16px 20px (css:4358-6896adab.css ._1bmNz).",
+   "desktop_vs_mobile": "Below 700px: columns minmax(0,1fr) x 2, rows fixed 76px, gap `space.16` 16px `space.20` 20px (css:4358-6896adab.css ._1bmNz).",
    "screenshots": [
     {
      "dump": "lesson-dark-match-default",
@@ -5055,13 +5055,13 @@
     {
      "part": "blank",
      "property": "size / rule",
-     "value": "70 x 2px, border-bottom 2px, margin 0 3px -2px",
+     "value": "70 x 2px, border-bottom `borderWidth.2` 2px, margin 0 3px -2px",
      "source": "lesson-dark-dialogue-default cl=_3AISd (#83)"
     },
     {
      "part": "choice rows",
      "property": "size",
-     "value": "600 x 60px, gap 8px",
+     "value": "600 x 60px, gap `space.8` 8px",
      "source": "lesson-dark-dialogue-default dt=challenge-choice (#90, #98)"
     }
    ],
@@ -5158,7 +5158,7 @@
     {
      "part": "large speaker",
      "property": "size / radius",
-     "value": "100 x 100px, radius 25%, bottom border 4px (lip)",
+     "value": "100 x 100px, radius 25%, bottom border `borderWidth.4` 4px (lip)",
      "source": "lesson-dark-listen-default cl=yJbco _23274 _3TlAm (#31); css:1327-4028784b.css .yJbco, ._25RRr"
     },
     {
@@ -5170,7 +5170,7 @@
     {
      "part": "small speaker",
      "property": "size / gap",
-     "value": "70 x 70px, margin-left 16px, icon 42 x 23px (60%)",
+     "value": "70 x 70px, margin-left `space.16` 16px, icon 42 x 23px (60%)",
      "source": "lesson-dark-listen-default cl=rnwSx (#46), g8o0T (#44)"
     },
     {
@@ -5277,7 +5277,7 @@
      },
      {
       "part": "Use keyboard",
-      "value": "duolingo-sans 700 17px uppercase 0.8px (15px below 700px)",
+      "value": "duolingo-sans 700 17px uppercase 0.8px (15px below `breakpoint.md` 700px)",
       "source": "lesson-dark-listen-default #144; css:app-f2ef02f8.css ._2Rt1l; css:1008-b4d34396.css ._1Z76W"
      }
     ]
@@ -5290,7 +5290,7 @@
     },
     {
      "state": "speaker active",
-     "changes": "border-width 4px 0 0, lip removed (face moves down)",
+     "changes": "border-width `borderWidth.4` 4px 0 0, lip removed (face moves down)",
      "source": "css:app-f2ef02f8.css ._1Lt8-:active:not(:disabled):not(._1bjzW), :after"
     },
     {
@@ -5312,7 +5312,7 @@
    "contains_generic": [
     "button: secondary (SKIP slot)"
    ],
-   "desktop_vs_mobile": "Below 700px and max-height 500px: speakers 50x50 and 35x35, gap 8px (css:1327-4028784b.css .yJbco, .rnwSx; css:4358-6896adab.css .g8o0T).",
+   "desktop_vs_mobile": "Below 700px and max-height 500px: speakers 50x50 and 35x35, gap `space.8` 8px (css:1327-4028784b.css .yJbco, .rnwSx; css:4358-6896adab.css .g8o0T).",
    "screenshots": [],
    "crops": [],
    "gaps": [
@@ -5336,13 +5336,13 @@
     {
      "part": "bar",
      "property": "height / top border",
-     "value": "140px (min-height, max-height `size.lessonFooterHeight` 140px), border-top 2px solid",
+     "value": "140px (min-height, max-height `size.lessonFooterHeight` 140px), border-top `borderWidth.2` 2px solid",
      "source": "lesson-dark-challenge-default cl=_3rB4d _1VTif _2HXQ9 (#146); css:1008-b4d34396.css ._3rB4d @media (min-width:700px)"
     },
     {
      "part": "inner",
      "property": "max-width / padding",
-     "value": "1000px, padding 0 40px, margin-left calc(50% - 500px); grid repeat(5,1fr), gap 8px 16px",
+     "value": "1000px, padding 0 `space.40` 40px, margin-left calc(50% - 500px); grid repeat(5,1fr), gap `space.8` 8px `space.16` 16px",
      "source": "lesson-dark-challenge-default cl=U8jH3 jHbiF (#147); css:1008-b4d34396.css .jHbiF, .U8jH3"
     },
     {
@@ -5354,7 +5354,7 @@
     {
      "part": "SKIP",
      "property": "size / padding / radius",
-     "value": "150 x 50px min, padding 0 16px, radius 16px, border 2px 2px 4px",
+     "value": "150 x 50px min, padding 0 `space.16` 16px, radius `radius.16` 16px, border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px",
      "source": "lesson-dark-challenge-default dt=player-skip (#149); css:app-f2ef02f8.css :root {--web-ui_button-border-radius:16px}"
     },
     {
@@ -5366,7 +5366,7 @@
     {
      "part": "CHECK",
      "property": "size / radius",
-     "value": "150 x 50px, radius 16px, border-bottom 4px (lip width)",
+     "value": "150 x 50px, radius `radius.16` 16px, border-bottom `borderWidth.4` 4px (lip width)",
      "source": "lesson-dark-challenge-check-enabled dt=player-next (#178); css:4779-c36ad395.css ._1VYyp"
     },
     {
@@ -5550,7 +5550,7 @@
     {
      "part": "blame",
      "property": "layout",
-     "value": "grid min-content | 1fr, gap 16px; 80px tall (93px with solution)",
+     "value": "grid min-content | 1fr, gap `space.16` 16px; 80px tall (93px with solution)",
      "source": "lesson-dark-feedback-correct dt=blame blame-correct (#142); lesson-dark-feedback-incorrect #126"
     },
     {
@@ -5562,7 +5562,7 @@
     {
      "part": "check image",
      "property": "size / margin",
-     "value": "41 x 31px, margin 27px 0 0 20px",
+     "value": "41 x 31px, margin 27px 0 0 `space.20` 20px",
      "source": "lesson-dark-feedback-correct cl=_3oCTd (#144)"
     },
     {
@@ -5574,7 +5574,7 @@
     {
      "part": "text column",
      "property": "max / min width",
-     "value": "400px / 320px (350px rendered), gap 16px to the actions row",
+     "value": "400px / 320px (350px rendered), gap `space.16` 16px to the actions row",
      "source": "lesson-dark-feedback-correct cl=_3LKiy (#146)"
     },
     {
@@ -5598,7 +5598,7 @@
     {
      "part": "CONTINUE",
      "property": "size / radius / lip",
-     "value": "150 x 50px, radius 16px, lip 4px (box-shadow 0 4px 0)",
+     "value": "150 x 50px, radius `radius.16` 16px, lip 4px (box-shadow 0 4px 0)",
      "source": "lesson-dark-feedback-correct dt=player-next (#168)"
     },
     {
@@ -5687,7 +5687,7 @@
      },
      {
       "part": "solution",
-      "value": "duolingo-sans 500 17px/26px (15px/22px below 700px)",
+      "value": "duolingo-sans 500 17px/26px (15px/22px below `breakpoint.md` 700px)",
       "source": "lesson-dark-feedback-incorrect #133; css:1008-b4d34396.css ._2jz5U, ._1D3fo"
      },
      {
@@ -5739,7 +5739,7 @@
     "button: primary (cardinal / danger)",
     "button: primary (bee)"
    ],
-   "desktop_vs_mobile": "Below 700px: the icon circle and images are hidden (display none), action labels hidden (icons only, css:1008-b4d34396.css ._2J0K5, ._2_snL), the message block becomes absolute at the bottom with padding 24px 16px 72px and the tint moves onto it (._3yMvO ._8wIx-, ._2cfV0 ._8wIx-); title/solution gap 5px, line-height 22px, solution 15px.",
+   "desktop_vs_mobile": "Below 700px: the icon circle and images are hidden (display none), action labels hidden (icons only, css:1008-b4d34396.css ._2J0K5, ._2_snL), the message block becomes absolute at the bottom with padding `space.24` 24px `space.16` 16px 72px and the tint moves onto it (._3yMvO ._8wIx-, ._2cfV0 ._8wIx-); title/solution gap `space.5` 5px, line-height 22px, solution 15px.",
    "screenshots": [
     {
      "dump": "lesson-dark-feedback-correct",
@@ -5781,7 +5781,7 @@
    "gaps": [
     "Light incorrect not captured: every light incorrect value is derived from the CSS rules the dark incorrect nodes use.",
     "Light incorrect icon image and report icon not captured; REPORT icon class for light incorrect is probably .o8H6C (images/0f625e0c64ba72c0cd96755abcc4bcdf.svg), inferred only from the order of the report-icon rules in css:1008-b4d34396.css (light correct _26G6u, dark correct Htiq_, then o8H6C, dark incorrect _2M-GA).",
-    "TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, 2px)."
+    "TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, `space.2` 2px)."
    ],
    "notes": "Dark correct crop taken from a 1384px screenshot of a 1200px dump, crop_offset [92,0].",
    "feedback_table": [
@@ -6055,19 +6055,19 @@
     {
      "part": "bubble",
      "property": "gap to Duo",
-     "value": "8px margin-left on the popover wrapper (D0iFS); the bubble starts 32px inside the Duo box (bubble x=560, Duo box right edge x=592); _2GMvD also sets --popover-offset:-25px",
+     "value": "`space.8` 8px margin-left on the popover wrapper (D0iFS); the bubble starts 32px inside the Duo box (bubble x=560, Duo box right edge x=592); _2GMvD also sets --popover-offset:-25px",
      "source": "lesson-dark-review-interstitial cl=_3zpnU D0iFS (#128); css:4779-c36ad395.css .D0iFS { margin-left:8px }"
     },
     {
      "part": "caret",
      "property": "box",
-     "value": "20 x 10px clip box rotated -90deg at left:-13px, inner square 14.14px rotated 45deg, 2px border, radius 2px",
+     "value": "20 x 10px clip box rotated -90deg at left:-13px, inner square 14.14px rotated 45deg, `borderWidth.2` 2px border, radius `radius.2` 2px",
      "source": "lesson-dark-review-interstitial cl=_3T97b (#130), cl=_1TMn5 (#131); css:4779-c36ad395.css .D0iFS>._3T97b, ._1TMn5"
     },
     {
      "part": "caret",
      "property": "vertical offset",
-     "value": "margin: 15px 0 (border radius) from the bubble top",
+     "value": "margin: `space.15` 15px 0 (border radius) from the bubble top",
      "source": "css:4779-c36ad395.css .D0iFS>._3T97b { margin:var(--web-ui_popover-border-radius,15px) 0 }"
     },
     {
@@ -6079,7 +6079,7 @@
     {
      "part": "CONTINUE",
      "property": "width x height",
-     "value": "150 x 50px (min-width 150px), radius 16px, lip 4px",
+     "value": "150 x 50px (min-width 150px), radius `radius.16` 16px, lip 4px",
      "source": "lesson-dark-review-interstitial dt=player-next (#137)"
     }
    ],
@@ -6332,7 +6332,7 @@
     {
      "part": "stage",
      "property": "layout",
-     "value": "absolute flex column centred; >=700px: height 75%, max-height 600px, top 50%, translateY(-50%)",
+     "value": "absolute flex column centred; >=`breakpoint.md` 700px: height 75%, max-height 600px, top 50%, translateY(-50%)",
      "source": "lesson-light-quit-modal cl=flbyJ (#30); css:4358-6896adab.css .flbyJ"
     },
     {
@@ -6419,7 +6419,7 @@
    "contains_generic": [
     "popover shell (speech bubble, caret bottom)"
    ],
-   "desktop_vs_mobile": "flbyJ: below 700px the stage fills 100% height from the top; at >=700px it is 75% high (max 600px) and vertically centred (css:4358-6896adab.css .flbyJ @media (min-width:700px)).",
+   "desktop_vs_mobile": "flbyJ: below `breakpoint.md` 700px the stage fills 100% height from the top; at >=`breakpoint.md` 700px it is 75% high (max 600px) and vertically centred (css:4358-6896adab.css .flbyJ @media (min-width:700px)).",
    "screenshots": [],
    "crops": [],
    "gaps": [
@@ -6469,25 +6469,25 @@
     {
      "part": "art",
      "property": "width x height",
-     "value": "120 x 120px, margin-top 8px (wrapper 120 x 133)",
+     "value": "120 x 120px, margin-top `space.8` 8px (wrapper 120 x 133)",
      "source": "lesson-dark-quit-modal cl=_2g5dx (#135), V9gXn (#134)"
     },
     {
      "part": "title",
      "property": "width x height",
-     "value": "336 x 64px (2 lines), margin-top 12px",
+     "value": "336 x 64px (2 lines), margin-top `space.12` 12px",
      "source": "lesson-dark-quit-modal cl=_3r1YP (#136)"
     },
     {
      "part": "KEEP LEARNING",
      "property": "width x height",
-     "value": "336 x 50px (width 100%), margin-top 32px, radius 16px, lip 4px",
+     "value": "336 x 50px (width 100%), margin-top `space.32` 32px, radius `radius.16` 16px, lip 4px",
      "source": "lesson-dark-quit-modal dt=notification-button (#137); css ._1V1Gt, .vSCTx"
     },
     {
      "part": "END SESSION",
      "property": "width x height",
-     "value": "336 x 32px (--web-ui_button-height:32px), margin-top 16px, no face, no lip",
+     "value": "336 x 32px (--web-ui_button-height:32px), margin-top `space.16` 16px, no face, no lip",
      "source": "lesson-dark-quit-modal dt=notification-drawer-no-thanks-button (#139); css ._2xxrg"
     },
     {
@@ -6678,7 +6678,7 @@
     {
      "part": "outer frame (strip)",
      "property": "size",
-     "value": "absolute, 100% x 100% of the card, radius 16px, z-index -1",
+     "value": "absolute, 100% x 100% of the card, radius `radius.16` 16px, z-index -1",
      "source": "lesson-dark-complete cl=_3IRrf (#14); css:1008-b4d34396.css ._3IRrf"
     },
     {
@@ -6690,13 +6690,13 @@
     {
      "part": "value box",
      "property": "width x height",
-     "value": "163 x 70px (height:70px), border 2px, radius 16px",
+     "value": "163 x 70px (height:70px), border `borderWidth.2` 2px, radius `radius.16` 16px",
      "source": "lesson-dark-complete cl=_5KPRI (#16); css:1008-b4d34396.css ._5KPRI"
     },
     {
      "part": "value icon",
      "property": "width x height, gap",
-     "value": "18 x 23px, margin-right 8px",
+     "value": "18 x 23px, margin-right `space.8` 8px",
      "source": "lesson-dark-complete cl=_35hcT _3DJ9E (#17)"
     },
     {
@@ -6816,7 +6816,7 @@
     "type": [
      {
       "part": "title",
-      "value": "inherited family, 700, 32px (25px below 700px wide), line-height 20px inherited",
+      "value": "inherited family, 700, 32px (25px below `breakpoint.md` 700px wide), line-height 20px inherited",
       "source": "lesson-dark-complete #11; css:1008-b4d34396.css ._3z6AH"
      },
      {
@@ -6831,7 +6831,7 @@
      },
      {
       "part": "footer buttons",
-      "value": "700, 17px (>=700px via --web-ui_button-font-size) / 20.4px, letter-spacing 0.8px, uppercase",
+      "value": "700, 17px (>=`breakpoint.md` 700px via --web-ui_button-font-size) / 20.4px, letter-spacing 0.8px, uppercase",
       "source": "lesson-dark-complete #47, #50; css:1008-b4d34396.css ._3fo6Q, ._3DbUj"
      }
     ]
@@ -6887,7 +6887,7 @@
     "button: primary (owl)",
     "button: secondary/outline (Review lesson)"
    ],
-   "desktop_vs_mobile": "Title 25px below 700px, 32px at >=700px; card width 118 / 130 (>=300px) / 163 (>=380px); cards gap 10 / 16 (>=350px); value 16px / 20px (>=300px); title margins 20px / 44px (min-height:750px); whole stack scale(.7) when max-height:500px; footer buttons full width below 700px and grid-placed at >=700px (css:1008-b4d34396.css ._3SXFk, ._3dwfW, ._3z6AH, ._21KAg, ._23WOw, ._5KPRI, ._3h0lA, .MYehf). Mobile not captured.",
+   "desktop_vs_mobile": "Title 25px below `breakpoint.md` 700px, 32px at >=`breakpoint.md` 700px; card width 118 / 130 (>=300px) / 163 (>=380px); cards gap 10 / 16 (>=350px); value 16px / 20px (>=300px); title margins 20px / 44px (min-height:750px); whole stack scale(.7) when max-height:500px; footer buttons full width below `breakpoint.md` 700px and grid-placed at >=`breakpoint.md` 700px (css:1008-b4d34396.css ._3SXFk, ._3dwfW, ._3z6AH, ._21KAg, ._23WOw, ._5KPRI, ._3h0lA, .MYehf). Mobile not captured.",
    "screenshots": [
     {
      "dump": "lesson-dark-complete",
@@ -6919,7 +6919,7 @@
     "celebration: flame animation (canvas, max 340 square)",
     "count number (canvas, 340 square)",
     "\"day streak\" label",
-    "week card: top section (day columns: label + 34px circle) with a 2px divider, bottom message section",
+    "week card: top section (day columns: label + 34px circle) with a `borderWidth.2` 2px divider, bottom message section",
     "calendar variant: heading h2, illustration 294 x 160, week card (7 days) with a caret under the next day, tip box",
     "footer: REVIEW LESSON + CONTINUE (owl) or CONTINUE (macaw) on the celebration"
    ],
@@ -6927,7 +6927,7 @@
     {
      "part": "flame canvas",
      "property": "size / margins",
-     "value": "max-width 340px square (width calc(100vw - 32px)), margin -140px auto 14px",
+     "value": "max-width 340px square (width calc(100vw - 32px)), margin -140px auto `space.14` 14px",
      "source": "lesson-dark-streak-celebration cl=_3XxHw _2Ylex (#11); css:1008-b4d34396.css ._3XxHw"
     },
     {
@@ -6945,13 +6945,13 @@
     {
      "part": "week card",
      "property": "width x height",
-     "value": "340 x 168px, radius 12px",
+     "value": "340 x 168px, radius `radius.12` 12px",
      "source": "lesson-dark-streak-celebration cl=_3kddW tuVG5 _36i3u (#17)"
     },
     {
      "part": "week card top",
      "property": "padding / border",
-     "value": "12px / 2px on top and sides, radius 12 12 0 0; a 2px divider (::after, bottom -4px)",
+     "value": "12px / 2px on top and sides, radius 12 12 0 0; a `borderWidth.2` 2px divider (::after, bottom -4px)",
      "source": "lesson-dark-streak-celebration cl=_2k21Q (#18); css:1008-b4d34396.css ._2k21Q, ._2k21Q:after"
     },
     {
@@ -6963,7 +6963,7 @@
     {
      "part": "day column",
      "property": "width x height, spacing",
-     "value": "34 x 63px, margin 0 6px (first/last 0)",
+     "value": "34 x 63px, margin 0 `space.6` 6px (first/last 0)",
      "source": "lesson-dark-streak-celebration cl=_3ahcA (#20); css:1008-b4d34396.css ._3ahcA"
     },
     {
@@ -6987,7 +6987,7 @@
     {
      "part": "message box",
      "property": "width x height / padding",
-     "value": "340 x 79px / 12px, border 0 2px 2px, radius 0 0 12px 12px",
+     "value": "340 x 79px / 12px, border 0 `borderWidth.2` 2px `borderWidth.2` 2px, radius 0 0 `radius.12` 12px `radius.12` 12px",
      "source": "lesson-dark-streak-celebration cl=_36njd uxKQj (#37); css:2634-6b22725c.css .uxKQj"
     },
     {
@@ -6999,13 +6999,13 @@
     {
      "part": "calendar illustration",
      "property": "width x height",
-     "value": "294 x 160px (250 x 136 below 700px)",
+     "value": "294 x 160px (250 x 136 below `breakpoint.md` 700px)",
      "source": "lesson-dark-streak-calendar cl=_2WyQU (#12); css:1008-b4d34396.css ._2WyQU"
     },
     {
      "part": "calendar week card",
      "property": "width x height / padding / margin-top",
-     "value": "340 x 95px / 12px 12px 16px / 40px, border 2px, radius 12 12 0 0",
+     "value": "340 x 95px / 12px 12px 16px / 40px, border `borderWidth.2` 2px, radius 12 12 0 0",
      "source": "lesson-dark-streak-calendar cl=_1FNhm (#13); css:1008-b4d34396.css ._1FNhm"
     },
     {
@@ -7017,7 +7017,7 @@
     {
      "part": "caret under target",
      "property": "size",
-     "value": "38 x 26px box rotated 45deg (rect 45 x 45), 2px border, radius 2px, margin-top 6px, top 100%",
+     "value": "38 x 26px box rotated 45deg (rect 45 x 45), `borderWidth.2` 2px border, radius `radius.2` 2px, margin-top `space.6` 6px, top 100%",
      "source": "lesson-dark-streak-calendar cl=_2OXpp _2CoFd (#40); css:1008-b4d34396.css ._2OXpp"
     },
     {
@@ -7221,7 +7221,7 @@
     "button: primary (owl, macaw)",
     "button: secondary/outline (Review lesson)"
    ],
-   "desktop_vs_mobile": "Day columns margin 0 2px and scale(.9) below 360px, 0 6px at >=360px; caret hidden below 340px; calendar illustration 250 x 136 below 700px; flame and count canvases width calc(100vw - 32px) capped at 340px (css:1008-b4d34396.css). Mobile not captured.",
+   "desktop_vs_mobile": "Day columns margin 0 `space.2` 2px and scale(.9) below `breakpoint.xs` 360px, 0 6px at >=`breakpoint.xs` 360px; caret hidden below 340px; calendar illustration 250 x 136 below `breakpoint.md` 700px; flame and count canvases width calc(100vw - 32px) capped at 340px (css:1008-b4d34396.css). Mobile not captured.",
    "screenshots": [
     {
      "dump": "lesson-dark-streak-celebration",
@@ -7325,7 +7325,7 @@
     {
      "part": "row",
      "property": "border / lip / radius",
-     "value": "transparent 2px 2px 4px on the element; visible 2px border + 2px lip (box-shadow 0 2px) on ::before inset -2px; radius 12px",
+     "value": "transparent 2px 2px 4px on the element; visible `borderWidth.2` 2px border + 2px lip (box-shadow 0 2px) on ::before inset -2px; radius `radius.12` 12px",
      "source": "lesson-dark-streak-goal-default #245 ::before; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before"
     },
     {
@@ -7478,7 +7478,7 @@
     "button: primary (disabled)",
     "speech bubble"
    ],
-   "desktop_vs_mobile": "_36XSq gets padding 16px 0 at >=700px; _3pl7T becomes height 100% with its own scroll at >=700px (css:1008-b4d34396.css). Mobile not captured.",
+   "desktop_vs_mobile": "_36XSq gets padding `space.16` 16px 0 at >=`breakpoint.md` 700px; _3pl7T becomes height 100% with its own scroll at >=700px (css:1008-b4d34396.css). Mobile not captured.",
    "screenshots": [
     {
      "dump": "lesson-dark-streak-goal-default",
@@ -7537,7 +7537,7 @@
     {
      "part": "scroll area",
      "property": "margin",
-     "value": "32px (16px below 700px)",
+     "value": "32px (16px below `breakpoint.md` 700px)",
      "source": "lesson-dark-friend-streak-invite cl=QuvtB _2Yntw (#9); css:1008-b4d34396.css .QuvtB"
     },
     {
@@ -7555,7 +7555,7 @@
     {
      "part": "illustration",
      "property": "width x height",
-     "value": "214 x 199px (height 213px >=700px, max-height calc(50vh - 200px)), margin-bottom 16px",
+     "value": "214 x 199px (height 213px >=700px, max-height calc(50vh - 200px)), margin-bottom `space.16` 16px",
      "source": "lesson-dark-friend-streak-invite cl=_3-dw5 (#13); css:1008-b4d34396.css ._3-dw5"
     },
     {
@@ -7615,7 +7615,7 @@
     {
      "part": "INVITE",
      "property": "width x height",
-     "value": "60 x 32px (min-width 60px), padding 0 8px, radius 8px, lip 4px",
+     "value": "60 x 32px (min-width 60px), padding 0 `space.8` 8px, radius `radius.8` 8px, lip 4px",
      "source": "lesson-dark-friend-streak-invite cl=_3q--f _20olS _1W_p8 _38OE1 (#22); css:4779-c36ad395.css ._20olS._1W_p8"
     }
    ],
@@ -7739,7 +7739,7 @@
     "avatar",
     "list"
    ],
-   "desktop_vs_mobile": "Outer margin 16px below 700px and 32px at >=700px; illustration 148px high below 700px and 213px at >=700px (css:1008-b4d34396.css .QuvtB, ._3-dw5). Mobile not captured.",
+   "desktop_vs_mobile": "Outer margin `space.16` 16px below `breakpoint.md` 700px and 32px at >=`breakpoint.md` 700px; illustration 148px high below `breakpoint.md` 700px and 213px at >=`breakpoint.md` 700px (css:1008-b4d34396.css .QuvtB, ._3-dw5). Mobile not captured.",
    "screenshots": [
     {
      "dump": "lesson-dark-friend-streak-invite",
@@ -7775,19 +7775,19 @@
     {
      "part": "ad: logo",
      "property": "width x height / position",
-     "value": "87 x 23px / top 40px, right 40px (10px below 700px)",
+     "value": "87 x 23px / top 40px, right 40px (10px below `breakpoint.md` 700px)",
      "source": "lesson-dark-super-upsell dt=plus-offer-logo cl=UhDGm (#9); css:4358-6896adab.css .UhDGm"
     },
     {
      "part": "ad: hero",
      "property": "width x height",
-     "value": "400 x 428px (250px wide below 700px)",
+     "value": "400 x 428px (250px wide below `breakpoint.md` 700px)",
      "source": "lesson-dark-super-upsell cl=_3ZLZ_ (#10); css:4358-6896adab.css ._3ZLZ_"
     },
     {
      "part": "ad: text block",
      "property": "width / margin-top",
-     "value": "350px max (300px below 700px) / -24px",
+     "value": "350px max (300px below `breakpoint.md` 700px) / -24px",
      "source": "lesson-dark-super-upsell cl=_3TDCm (#11)"
     },
     {
@@ -7799,7 +7799,7 @@
     {
      "part": "ad: buttons",
      "property": "width x height",
-     "value": "250 x 50px each (min-width 250px, width 100% at >=700px), radius 16px",
+     "value": "250 x 50px each (min-width 250px, width 100% at >=`breakpoint.md` 700px), radius `radius.16` 16px",
      "source": "lesson-dark-super-upsell dt=practice-hub-ad-no-thanks-button (#15), dt=practice-hub-ad-continue-button (#17)"
     },
     {
@@ -7835,7 +7835,7 @@
     {
      "part": "trial: CTA",
      "property": "width x height",
-     "value": "600 x 50px (max-width 600px), radius 16px",
+     "value": "600 x 50px (max-width 600px), radius `radius.16` 16px",
      "source": "lesson-light-trial-upsell dt=plus-continue (#47)"
     },
     {
@@ -7847,7 +7847,7 @@
     {
      "part": "video: close / mute",
      "property": "size",
-     "value": "68 x 68 (20px icon + 24px padding) / 78 x 71 (30 x 23 icon + 24px padding)",
+     "value": "68 x 68 (20px icon + `space.24` 24px padding) / 78 x 71 (30 x 23 icon + `space.24` 24px padding)",
      "source": "lesson-light-video-ad cl=_1Udkq (#19), _32yet (#21)"
     }
    ],
@@ -7943,7 +7943,7 @@
     "type": [
      {
       "part": "ad: h1",
-      "value": "700, 25px / 34px (21px below 700px)",
+      "value": "700, 25px / 34px (21px below `breakpoint.md` 700px)",
       "source": "lesson-dark-super-upsell cl=_1jGvf (#12); css:4358-6896adab.css ._1jGvf"
      },
      {
@@ -7953,7 +7953,7 @@
      },
      {
       "part": "trial: h1",
-      "value": "700, 28px / 1.35 (24px below 530px), text-wrap balance",
+      "value": "700, 28px / 1.35 (24px below `breakpoint.sm` 530px), text-wrap balance",
       "source": "lesson-light-trial-upsell #29; css:3406-0039e405.css ._3ifZ6"
      },
      {
@@ -8016,7 +8016,7 @@
     "button: text (cosmos)",
     "icon button (close, mute)"
    ],
-   "desktop_vs_mobile": "Ad: content padding-bottom 100px below 700px and height calc(100% - 140px) at >=700px; logo inset 10px vs 40px; hero 250px vs 400px; h1 21px vs 25px; footer top border only at >=700px; NO THANKS order 1 (below GET STARTED) below 700px; buttons margin 0 16px below 700px (css:4358-6896adab.css ._3AYrR, .UhDGm, ._3ZLZ_, ._1jGvf, ._2iHAQ, ._76ebC, .cnGdv). Trial: h1 28px at >=530px, button stack gaps 8/4 vs 16/8 (css:3406-0039e405.css ._3ifZ6, .OvpzU). Mobile not captured.",
+   "desktop_vs_mobile": "Ad: content padding-bottom 100px below `breakpoint.md` 700px and height calc(100% - 140px) at >=`breakpoint.md` 700px; logo inset `space.10` 10px vs 40px; hero 250px vs 400px; h1 21px vs 25px; footer top border only at >=`breakpoint.md` 700px; NO THANKS order 1 (below GET STARTED) below `breakpoint.md` 700px; buttons margin 0 `space.16` 16px below `breakpoint.md` 700px (css:4358-6896adab.css ._3AYrR, .UhDGm, ._3ZLZ_, ._1jGvf, ._2iHAQ, ._76ebC, .cnGdv). Trial: h1 28px at >=`breakpoint.sm` 530px, button stack gaps 8/4 vs 16/8 (css:3406-0039e405.css ._3ifZ6, .OvpzU). Mobile not captured.",
    "screenshots": [
     {
      "dump": "lesson-dark-super-upsell",
@@ -8077,13 +8077,13 @@
     {
      "part": "panel",
      "property": "width x height",
-     "value": "388 x 651px (incl. 2px border); inner column 384px wide",
+     "value": "388 x 651px (incl. `borderWidth.2` 2px border); inner column 384px wide",
      "source": "learn-dark-streak-dropdown dt=streak-panel (#79); css:5275-8898b509.css ._1n_9- {width:384px}"
     },
     {
      "part": "panel",
      "property": "offset below trigger",
-     "value": "margin-top 8px",
+     "value": "margin-top `space.8` 8px",
      "source": "learn-dark-streak-dropdown dt=streak-panel (#79)"
     },
     {
@@ -8143,7 +8143,7 @@
     {
      "part": "day circle cell",
      "property": "horizontal margin",
-     "value": "4px each side (2px under 360px)",
+     "value": "4px each side (2px under `breakpoint.xs` 360px)",
      "source": "learn-dark-streak-dropdown cl=_1asXw (#100); css:5275-8898b509.css ._1asXw @media (min-width:360px)"
     },
     {
@@ -8191,7 +8191,7 @@
     {
      "part": "VIEW LIST button",
      "property": "width x height / radius / lip",
-     "value": "196 x 36px / 8px / border-bottom 4px, lip box-shadow 0 4px",
+     "value": "196 x 36px / 8px / border-bottom `borderWidth.4` 4px, lip box-shadow 0 4px",
      "source": "learn-dark-streak-dropdown cl=_2loTO (#120); css:5275-8898b509.css ._2loTO {--web-ui_button-height:36px; --web-ui_button-border-radius:8px}"
     },
     {
@@ -8221,13 +8221,13 @@
     {
      "part": "VIEW MORE button",
      "property": "width x height / radius / lip",
-     "value": "344 x 50px / 12px / border-bottom 4px, lip box-shadow 0 4px",
+     "value": "344 x 50px / 12px / border-bottom `borderWidth.4` 4px, lip box-shadow 0 4px",
      "source": "learn-dark-streak-dropdown cl=_1i82L ... oXbqr (#128)"
     },
     {
      "part": "caret",
      "property": "size",
-     "value": "20 x 10px box, 14.14px rotated square, 2px border",
+     "value": "20 x 10px box, 14.14px rotated square, `borderWidth.2` 2px border",
      "source": "learn-dark-streak-dropdown cl=_3T97b (#130), cl=_1TMn5 (#131)"
     }
    ],
@@ -8565,7 +8565,7 @@
     {
      "part": "panel",
      "property": "width x height",
-     "value": "384 x 152px (incl. 2px border)",
+     "value": "384 x 152px (incl. `borderWidth.2` 2px border)",
      "source": "learn-dark-gems-dropdown cl=_36bu_ (#84)"
     },
     {
@@ -9007,7 +9007,7 @@
     {
      "part": "panel",
      "property": "width x height",
-     "value": "244 x 364px (incl. 2px border)",
+     "value": "244 x 364px (incl. `borderWidth.2` 2px border)",
      "source": "learn-dark-courses-dropdown cl=_36bu_ _2xxCs (#75)"
     },
     {
@@ -9203,7 +9203,7 @@
    "name": "Leaderboard",
    "where": "/leaderboard main column; list dt=leaderboard",
    "anatomy": [
-    "league badge row: current league badge 80x91, locked badges 52x58, 28px gap, grid of 11 shifted by --offset",
+    "league badge row: current league badge 80x91, locked badges 52x58, `space.28` 28px gap, grid of 11 shifted by --offset",
     "header (sticky, snow bg): league name, subtitle (\"Top 11 advance...\" or join prompt), time left (bee), 2px swan rule",
     "row: rank (medal image 41x42 for 1 to 3, else number 41px wide), avatar 48 with online dot and optional status bubble, name (ellipsis), XP right",
     "row variants: default, hover (polar), current user (swan), current user in promotion zone (sea-sponge + tree-frog text)",
@@ -9268,7 +9268,7 @@
     {
      "part": "row",
      "property": "height / padding / radius",
-     "value": "64px / 8px 24px 8px 16px / 16px (only at min-width 700px)",
+     "value": "64px / 8px 24px 8px 16px / 16px (only at min-width `breakpoint.md` 700px)",
      "source": "leaderboard-dark-top cl=_3kvGS (#165); css:1008-b4d34396.css ._3kvGS"
     },
     {
@@ -9298,7 +9298,7 @@
     {
      "part": "status bubble on avatar",
      "property": "size / radius / position",
-     "value": "28 x 28px, 2px border, radius 50% 50% 50% 16% / top -6px right -16px; icon 26px",
+     "value": "28 x 28px, `borderWidth.2` 2px border, radius 50% 50% 50% 16% / top -6px right -16px; icon 26px",
      "source": "leaderboard-dark-top cl=_2R_e4 (#194), cl=_m6h6 (#195)"
     },
     {
@@ -9625,7 +9625,7 @@
     "avatar (48px, online dot)",
     "button: secondary (START A LESSON, macaw text)"
    ],
-   "desktop_vs_mobile": "570px (leaderboard-dark-mobile, leaderboard-light-mobile): column is full width 570, rows full-bleed with no radius (radius only at min-width 700px), header has no 24px padding-top and the badge row gets margin-top 24px, status picker and right rail are absent, bottom tab bar appears. css: not-joined user bar becomes position fixed, bottom 82px, full width (css:7607-21dedb14.css ._11XmH).",
+   "desktop_vs_mobile": "570px (leaderboard-dark-mobile, leaderboard-light-mobile): column is full width 570, rows full-bleed with no radius (radius only at min-width `breakpoint.md` 700px), header has no `space.24` 24px padding-top and the badge row gets margin-top `space.24` 24px, status picker and right rail are absent, bottom tab bar appears. css: not-joined user bar becomes position fixed, bottom 82px, full width (css:7607-21dedb14.css ._11XmH).",
    "screenshots": [
     {
      "dump": "leaderboard-dark-top",
@@ -9972,7 +9972,7 @@
     {
      "part": "timer icon",
      "property": "size / gap",
-     "value": "16 x 16px / margin-right 5px",
+     "value": "16 x 16px / margin-right `space.5` 5px",
      "source": "quests-dark-default cl=_1kZ3q (#151)"
     },
     {
@@ -10244,7 +10244,7 @@
     "progress bar (generic web-ui progress bar, bee colour via _2nasW)",
     "button: text (VIEW ALL)"
    ],
-   "desktop_vs_mobile": "570px (quests-dark-mobile, quests-light-mobile): page gets a Quests / Badges tab bar on a beetle header, card is 538px wide with the same 20px 25px padding and 20px bar; rail variant absent. Timer rendered in bee (_3nMro) in the mobile capture.",
+   "desktop_vs_mobile": "570px (quests-dark-mobile, quests-light-mobile): page gets a Quests / Badges tab bar on a beetle header, card is 538px wide with the same `space.20` 20px 25px padding and 20px bar; rail variant absent. Timer rendered in bee (_3nMro) in the mobile capture.",
    "screenshots": [
     {
      "dump": "quests-dark-default",
@@ -10497,7 +10497,7 @@
     {
      "part": "list",
      "property": "width x border / radius",
-     "value": "480px wide (desktop column), 2px border, radius 16px",
+     "value": "480px wide (desktop column), `borderWidth.2` 2px border, radius `radius.16` 16px",
      "source": "profile-dark-default ul cl=_1dDcV (#309); css:5515-e83f96c1.css ._1dDcV"
     },
     {
@@ -10539,19 +10539,19 @@
     {
      "part": "title",
      "property": "height / margin",
-     "value": "29px line box, margin-bottom 6px, ellipsis",
+     "value": "29px line box, margin-bottom `space.6` 6px, ellipsis",
      "source": "profile-dark-default h3 cl=-Zgv1 (#317); css:5515 .-Zgv1"
     },
     {
      "part": "counter",
      "property": "gap from title",
-     "value": "margin-left 12px, right-aligned",
+     "value": "margin-left `space.12` 12px, right-aligned",
      "source": "profile-dark-default cl=_8oTbo (#318)"
     },
     {
      "part": "progress block",
      "property": "margin",
-     "value": "margin-top 10px; bar wrapper margin-bottom 15px",
+     "value": "margin-top `space.10` 10px; bar wrapper margin-bottom `space.15` 15px",
      "source": "profile-dark-default cl=jX2vW (#319), cl=_3H4Dc (#320)"
     },
     {
@@ -10563,7 +10563,7 @@
     {
      "part": "progress shine",
      "property": "geometry",
-     "value": "absolute, top 3.5px left 3.5px, 3px tall (30% of height), radius 9999px, opacity 0.2",
+     "value": "absolute, top 3.5px left 3.5px, 3px tall (30% of height), radius `radius.pill` 9999px, opacity 0.2",
      "source": "profile-dark-default cl=_1EFTr (#326); css:4779 ._1EFTr"
     },
     {
@@ -10585,7 +10585,7 @@
       "part": "title",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #317"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #317"
      },
      {
       "part": "counter \"238/250\"",
@@ -10647,7 +10647,7 @@
       "part": "title",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #328"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #328"
      },
      {
       "part": "counter",
@@ -10700,12 +10700,12 @@
      },
      {
       "part": "counter",
-      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under 700px)",
+      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under `breakpoint.md` 700px)",
       "source": "profile-dark-default #318; css:5515 ._8oTbo @media (min-width:700px)"
      },
      {
       "part": "description",
-      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under 700px)",
+      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under `breakpoint.md` 700px)",
       "source": "profile-dark-default #328; css:5515 ._7Cbsk"
      },
      {
@@ -10736,7 +10736,7 @@
     "progress bar (web-ui, recoloured bee, 14px)",
     "card/list shell (2px swan, radius 16)"
    ],
-   "desktop_vs_mobile": "mobile (570px): same row geometry (20px padding, 77x96 tile, 30px spacer); counter and description drop to 15px; the list gains a final \"View all\" row (a.cl=_2MpO3, padding 16px, 700 19px, eel) instead of the section-header link. Source: profile-dark-mobile ul (#193), #202, #212, #241; css:5515 ._2MpO3.",
+   "desktop_vs_mobile": "mobile (570px): same row geometry (`space.20` 20px padding, 77x96 tile, 30px spacer); counter and description drop to 15px; the list gains a final \"View all\" row (a.cl=_2MpO3, padding `space.16` 16px, 700 19px, eel) instead of the section-header link. Source: profile-dark-mobile ul (#193), #202, #212, #241; css:5515 ._2MpO3.",
    "screenshots": [
     {
      "dump": "profile-dark-scrolled",
@@ -10787,13 +10787,13 @@
     {
      "part": "banner",
      "property": "width x height / radius",
-     "value": "480 x 224px (100% of column), radius 15px, margin-bottom -12px, overflow hidden",
+     "value": "480 x 224px (100% of column), radius `radius.15` 15px, margin-bottom -12px, overflow hidden",
      "source": "profile-dark-default cl=eGQis (#205); css:5515-e83f96c1.css .eGQis"
     },
     {
      "part": "edit button",
      "property": "size / position",
-     "value": "48 x 48px, absolute top 16px right 16px, radius 16px, border 2px 2px 4px (lip)",
+     "value": "48 x 48px, absolute top 16px right 16px, radius `radius.16` 16px, border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px (lip)",
      "source": "profile-dark-default button cl=_2V6ug _3Y-wy (#206); css:5515 ._3Y-wy"
     },
     {
@@ -10811,37 +10811,37 @@
     {
      "part": "info block",
      "property": "margin / padding",
-     "value": "margin-top 8px; padding-bottom 16px (._3byCv sets 0 0 32px at min-width 700px, ._2C8UD overrides to 0 0 16px); 150px tall total",
+     "value": "margin-top `space.8` 8px; padding-bottom `space.16` 16px (._3byCv sets 0 0 32px at min-width `breakpoint.md` 700px, ._2C8UD overrides to 0 0 16px); 150px tall total",
      "source": "profile-dark-default cl=_3byCv _2C8UD (#213); css:5515 ._3byCv, ._2C8UD"
     },
     {
      "part": "name block",
      "property": "height",
-     "value": "h1 54px (name 34px line + handle 20px), margin-bottom 6px",
+     "value": "h1 54px (name 34px line + handle 20px), margin-bottom `space.6` 6px",
      "source": "profile-dark-default h1 dt=profile-username (#216)"
     },
     {
      "part": "joined row",
      "property": "margin",
-     "value": "margin-bottom 12px",
+     "value": "margin-bottom `space.12` 12px",
      "source": "profile-dark-default cl=xk0If (#220)"
     },
     {
      "part": "follow links row",
      "property": "height / gap",
-     "value": "24px tall buttons, gap 16px, margin-bottom 16px, padding 0",
+     "value": "24px tall buttons, gap `space.16` 16px, margin-bottom `space.16` 16px, padding 0",
      "source": "profile-dark-default cl=_7V_nj (#222); css:5515 ._7V_nj"
     },
     {
      "part": "flags button",
      "property": "size",
-     "value": "156 x 48px, padding 10px 0; flag img 31 x 24 with 4px side margins",
+     "value": "156 x 48px, padding `space.10` 10px 0; flag img 31 x 24 with 4px side margins",
      "source": "profile-dark-default button cl=_36U8q (#228), img cl=_2WKNC (#229)"
     },
     {
      "part": "\"+N\" chip",
      "property": "size",
-     "value": "31 x 28px, border 2px, radius 5px, padding 2px 3px",
+     "value": "31 x 28px, border `borderWidth.2` 2px, radius 5px, padding `space.2` 2px 3px",
      "source": "profile-dark-default cl=_1ZEoN (#232); css:5515 ._1ZEoN"
     }
    ],
@@ -10869,7 +10869,7 @@
       "part": "name",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #217"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #217"
      },
      {
       "part": "handle",
@@ -10925,7 +10925,7 @@
       "part": "name",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #218"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #218"
      },
      {
       "part": "handle",
@@ -10961,7 +10961,7 @@
     "type": [
      {
       "part": "name",
-      "value": "duolingo-sans 700 28px / 34px (25px under 700px)",
+      "value": "duolingo-sans 700 28px / 34px (25px under `breakpoint.md` 700px)",
       "source": "profile-dark-default #216; css:5515 ._2eRPO"
      },
      {
@@ -10971,7 +10971,7 @@
      },
      {
       "part": "joined",
-      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px (15px under 700px)",
+      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px (15px under `breakpoint.md` 700px)",
       "source": "profile-dark-default #221; css:5515 ._3KQMU"
      },
      {
@@ -11056,7 +11056,7 @@
    "name": "Profile statistics tile",
    "where": "/profile/<user>, Statistics: div.cl=_37tLJ grid > div.cl=_2Hzv5 > div.cl=_2uSOC",
    "anatomy": [
-    "2-column grid, 12px gap",
+    "2-column grid, `space.12` 12px gap",
     "tile (2px swan border, radius 16)",
     "icon (21px wide, top-aligned)",
     "value (h4)",
@@ -11067,7 +11067,7 @@
     {
      "part": "grid",
      "property": "columns / gap",
-     "value": "repeat(2, 1fr), gap 12px",
+     "value": "repeat(2, 1fr), gap `space.12` 12px",
      "source": "profile-dark-default cl=_37tLJ (#237); css:5515 ._37tLJ"
     },
     {
@@ -11085,13 +11085,13 @@
     {
      "part": "icon",
      "property": "size / gap",
-     "value": "width 21px (heights 25 to 29 by art; league icon 24 x 27), margin-right 15px (14px league), align-self start",
+     "value": "width 21px (heights 25 to 29 by art; league icon 24 x 27), margin-right `space.15` 15px (14px league), align-self start",
      "source": "profile-dark-default #240, #246, #252; css:5515 .-AVDu, ._2aR6Z"
     },
     {
      "part": "value",
      "property": "margin",
-     "value": "margin-bottom 4px; 20px line",
+     "value": "margin-bottom `space.4` 4px; 20px line",
      "source": "profile-dark-default h4 cl=-TMd4 (#242)"
     },
     {
@@ -11103,7 +11103,7 @@
     {
      "part": "week badge",
      "property": "size / position",
-     "value": "53 x 24px, absolute top -8px right -6px, radius 7px, 2px border, padding 3px 5px 3px 6px",
+     "value": "53 x 24px, absolute top -8px right -6px, radius 7px, `borderWidth.2` 2px border, padding 3px `space.5` 5px 3px `space.6` 6px",
      "source": "profile-light-default cl=_1eerR _3qbFZ (#261); css:5515 ._3qbFZ"
     }
    ],
@@ -11119,7 +11119,7 @@
       "part": "value (active)",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #248"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #248"
      },
      {
       "part": "value (inactive streak)",
@@ -11157,7 +11157,7 @@
       "part": "value",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #252"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #252"
      },
      {
       "part": "label",
@@ -11181,12 +11181,12 @@
     "type": [
      {
       "part": "value",
-      "value": "duolingo-sans `typography.app.statValue` 700 20px / 20px (19px under 700px)",
+      "value": "duolingo-sans `typography.app.statValue` 700 20px / 20px (19px under `breakpoint.md` 700px)",
       "source": "profile-dark-default #242; css:5515 .-TMd4"
      },
      {
       "part": "label",
-      "value": "duolingo-sans `typography.body.compact` 500 16px / 20px (15px under 700px)",
+      "value": "duolingo-sans `typography.body.compact` 500 16px / 20px (15px under `breakpoint.md` 700px)",
       "source": "profile-dark-default #243; css:5515 ._3oUUc"
      },
      {
@@ -11221,7 +11221,7 @@
    "contains_generic": [
     "badge (corner pill)"
    ],
-   "desktop_vs_mobile": "mobile: tile 263 x 70px, padding 12px 14px 10px; icon 15px wide with 7.5px gap; value 19px; label 15px and \"Current league\" shortens to \"League\". Source: profile-dark-mobile #80, #81, #83, #84, #97; css:5515 ._2uSOC/.-AVDu/.-TMd4/._3oUUc @media (max-width:699px).",
+   "desktop_vs_mobile": "mobile: tile 263 x 70px, padding `space.12` 12px `space.14` 14px `space.10` 10px; icon 15px wide with 7.5px gap; value 19px; label 15px and \"Current league\" shortens to \"League\". Source: profile-dark-mobile #80, #81, #83, #84, #97; css:5515 ._2uSOC/.-AVDu/.-TMd4/._3oUUc @media (max-width:699px).",
    "screenshots": [
     {
      "dump": "profile-dark-default",
@@ -11274,7 +11274,7 @@
     {
      "part": "card",
      "property": "width x height / padding",
-     "value": "149 x 239px (dark, text wraps) / 187 x 217 (light); padding 20px 16px",
+     "value": "149 x 239px (dark, text wraps) / 187 x 217 (light); padding `space.20` 20px `space.16` 16px",
      "source": "profile-dark-default cl=_18ikm (#269); css:1081-5a510dac.css ._18ikm"
     },
     {
@@ -11286,7 +11286,7 @@
     {
      "part": "name",
      "property": "margin / line",
-     "value": "margin-top 8px, 24px line",
+     "value": "margin-top `space.8` 8px, 24px line",
      "source": "profile-dark-default h3 cl=WDFdx _2jQO8 (#274)"
     },
     {
@@ -11298,13 +11298,13 @@
     {
      "part": "entry block",
      "property": "margin",
-     "value": "margin-bottom 30px above the button",
+     "value": "margin-bottom `space.30` 30px above the button",
      "source": "profile-dark-default a dt=friend-entry cl=-rEIl (#270)"
     },
     {
      "part": "FOLLOW button",
      "property": "size / padding / radius",
-     "value": "113 x 36px (100% width), padding 6px 18px, radius 8px, bottom border 4px transparent + ::after face extending 4px below",
+     "value": "113 x 36px (100% width), padding `space.6` 6px `space.18` 18px, radius `radius.8` 8px, bottom border `borderWidth.4` 4px transparent + ::after face extending 4px below",
      "source": "profile-dark-default dt=friend-add-button (#276); css:1081 .eiTQu, .DCN49; css:app-f2ef02f8.css ._3XEA0"
     },
     {
@@ -11444,11 +11444,11 @@
     }
    ],
    "contains_generic": [
-    "button: primary (legacy lip button, macaw/whale, 8px radius, 36px tall)",
+    "button: primary (legacy lip button, macaw/whale, `radius.8` 8px radius, 36px tall)",
     "avatar",
     "icon button (dismiss)"
    ],
-   "desktop_vs_mobile": "mobile: cards become list rows inside one bordered panel (div.cl=_1xR2j _39QMj, padding 16px, 2px swan divider, 87px tall): avatar 48 left, name 700 20px, reason 16px, then an icon-only FOLLOW (41 x 32, padding 6px 8px, add-friend svg 25x16) and an 18px dismiss X with 16px left margin; panel ends with a \"View all\" row. Source: profile-dark-mobile #107-#118, #141; css:1081 ._1xR2j, ._39QMj, ._3GTBe, ._32Aog.",
+   "desktop_vs_mobile": "mobile: cards become list rows inside one bordered panel (div.cl=_1xR2j _39QMj, padding `space.16` 16px, 2px swan divider, 87px tall): avatar 48 left, name 700 20px, reason 16px, then an icon-only FOLLOW (41 x 32, padding `space.6` 6px `space.8` 8px, add-friend svg 25x16) and an 18px dismiss X with 16px left margin; panel ends with a \"View all\" row. Source: profile-dark-mobile #107-#118, #141; css:1081 ._1xR2j, ._39QMj, ._3GTBe, ._32Aog.",
    "screenshots": [
     {
      "dump": "profile-dark-scrolled",
@@ -11499,49 +11499,49 @@
     {
      "part": "panel",
      "property": "width",
-     "value": "368px right rail, 2px border, radius 16px",
+     "value": "368px right rail, `borderWidth.2` 2px border, radius `radius.16` 16px",
      "source": "profile-dark-default cl=_2G9SS (#87)"
     },
     {
      "part": "update item",
      "property": "padding / height",
-     "value": "padding 0 0 16px 16px; 222px tall",
+     "value": "padding 0 0 `space.16` 16px `space.16` 16px; 222px tall",
      "source": "profile-dark-default cl=_2tJ8I (#88); css:5515 ._2tJ8I"
     },
     {
      "part": "header row",
      "property": "margin",
-     "value": "margin-top 16px; avatar 50 x 50; name block margin-left 10px, max-width 158px",
+     "value": "margin-top `space.16` 16px; avatar 50 x 50; name block margin-left `space.10` 10px, max-width 158px",
      "source": "profile-dark-default cl=_3NHGm (#91), img (#93), cl=_3uy9e (#94)"
     },
     {
      "part": "event text",
      "property": "size / margin",
-     "value": "218px max width, margin 16px 0 20px, ellipsis",
+     "value": "218px max width, margin `space.16` 16px 0 `space.20` 20px, ellipsis",
      "source": "profile-dark-default cl=Vbl7C _3Umux (#98)"
     },
     {
      "part": "event art",
      "property": "size",
-     "value": "130 x 130px, margin-top 10px (104px under 360px)",
+     "value": "130 x 130px, margin-top `space.10` 10px (104px under `breakpoint.xs` 360px)",
      "source": "profile-dark-default img cl=_18A1Y (#100); css:5515 ._18A1Y"
     },
     {
      "part": "CELEBRATE",
      "property": "size",
-     "value": "149 x 50px, radius 16px, border 2px 2px 4px; icon 26 x 20, label margin-left 7px",
+     "value": "149 x 50px, radius `radius.16` 16px, border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px; icon 26 x 20, label margin-left 7px",
      "source": "profile-dark-default button cl=_2ZO5y _2V6ug (#103), img (#104), span (#105)"
     },
     {
      "part": "reaction counter",
      "property": "size",
-     "value": "outer ring 34 x 34 (2px snow border), inner ring 30 x 30 (2px swan border, padding 4px), icon 18 x 18, radius 16; count margin-left 8px; group margin-right 16px",
+     "value": "outer ring 34 x 34 (2px snow border), inner ring 30 x 30 (2px swan border, padding `space.4` 4px), icon 18 x 18, radius 16; count margin-left `space.8` 8px; group margin-right `space.16` 16px",
      "source": "profile-dark-default #108-#112; css:5515 ._1aIia, ._34nUQ"
     },
     {
      "part": "View all row",
      "property": "padding / height",
-     "value": "padding 16px 25px 13px 18px; 51px; chevron 10 x 20",
+     "value": "padding `space.16` 16px 25px 13px `space.18` 18px; 51px; chevron 10 x 20",
      "source": "profile-dark-default a cl=_1eHsP (#138), #139"
     }
    ],
@@ -11569,7 +11569,7 @@
       "part": "event text",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #98"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #98"
      },
      {
       "part": "event art",
@@ -11625,7 +11625,7 @@
       "part": "event text",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #99"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #99"
      },
      {
       "part": "CELEBRATE",
@@ -11708,7 +11708,7 @@
     "card/list shell",
     "list row with chevron"
    ],
-   "desktop_vs_mobile": "mobile: the feed collapses to a single \"Friend updates\" row in the main column (a.cl=BAKBs, 534 x 82, padding 20px 22px, 700 20px eel, 55 x 42 party icon with 14px gap, chevron). Source: profile-dark-mobile #61-#64; css:5515 .BAKBs, .UqpgY.",
+   "desktop_vs_mobile": "mobile: the feed collapses to a single \"Friend updates\" row in the main column (a.cl=BAKBs, 534 x 82, padding `space.20` 20px 22px, 700 20px eel, 55 x 42 party icon with `space.14` 14px gap, chevron). Source: profile-dark-mobile #61-#64; css:5515 .BAKBs, .UqpgY.",
    "screenshots": [
     {
      "dump": "profile-dark-default",
@@ -11764,7 +11764,7 @@
     {
      "part": "grid",
      "property": "gaps",
-     "value": "rows: row-gap 8px; columns: column-gap 8px, 5 cells per kana row (combo rows use 3)",
+     "value": "rows: row-gap `space.8` 8px; columns: column-gap `space.8` 8px, 5 cells per kana row (combo rows use 3)",
      "source": "characters-dark-default cl=_22vCj (#171), cl=_11ETR (#172); css:9416-975668fa.css ._22vCj, ._11ETR"
     },
     {
@@ -11776,7 +11776,7 @@
     {
      "part": "cell",
      "property": "padding / radius / border",
-     "value": "padding 10px 0 5px, height auto, line-height 1; radius 16px; border 2px 2px 4px transparent with ::before face (2px border, 2px box-shadow lip)",
+     "value": "padding `space.10` 10px 0 `space.5` 5px, height auto, line-height 1; radius `radius.16` 16px; border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px transparent with ::before face (`borderWidth.2` 2px border, 2px box-shadow lip)",
      "source": "characters-dark-default #173; css:9416 ._3Dsa-"
     },
     {
@@ -11788,13 +11788,13 @@
     {
      "part": "romaji",
      "property": "line / margin",
-     "value": "15px line, margin-bottom 5px",
+     "value": "15px line, margin-bottom `space.5` 5px",
      "source": "characters-dark-default cl=_3UqmZ (#176)"
     },
     {
      "part": "mastery bar",
      "property": "size",
-     "value": "40 x 8px (width 60%, max 40px), radius 4px, centred; fill min-width 12px",
+     "value": "40 x 8px (width 60%, max 40px), radius `radius.4` 4px, centred; fill min-width 12px",
      "source": "characters-dark-default role=progressbar cl=oCRfA QhZ1x (#177), #178, #181; css:9416 .QhZ1x"
     }
    ],
@@ -11978,13 +11978,13 @@
     {
      "part": "tab",
      "property": "padding / rule",
-     "value": "padding 15px 0; border-bottom 2px",
+     "value": "padding `space.15` 15px 0; border-bottom `borderWidth.2` 2px",
      "source": "characters-dark-default cl=_3ugho (#155); css:9416-975668fa.css ._3ugho"
     },
     {
      "part": "row",
      "property": "margins",
-     "value": "margin 0 (desktop), 0 -16px under 700px",
+     "value": "margin 0 (desktop), 0 -16px under `breakpoint.md` 700px",
      "source": "css:9416 ._7WPBm"
     }
    ],
@@ -12057,7 +12057,7 @@
    "contains_generic": [
     "tabs (underline)"
    ],
-   "desktop_vs_mobile": "no mobile dump; CSS pulls the tab row out to the screen edge under 700px (margin 0 -16px)",
+   "desktop_vs_mobile": "no mobile dump; CSS pulls the tab row out to the screen edge under `breakpoint.md` 700px (margin 0 -16px)",
    "screenshots": [
     {
      "dump": "characters-dark-default",
@@ -12103,13 +12103,13 @@
     {
      "part": "bubble",
      "property": "size",
-     "value": "content-sized width (245 to 379px seen), 91px tall; offset 8px right of the column edge to make room for the arrow",
+     "value": "content-sized width (245 to 379px seen), 91px tall; offset `space.8` 8px right of the column edge to make room for the arrow",
      "source": "guidebook-dark-default cl=_36bu_ _1KdWa (#177), cl=_3zpnU D0iFS (#176); css:4779-c36ad395.css .D0iFS"
     },
     {
      "part": "bubble",
      "property": "padding / border / radius",
-     "value": "padding 8px 16px 16px (12px sides under 700px); border 2px; radius 15px",
+     "value": "padding `space.8` 8px `space.16` 16px `space.16` 16px (12px sides under `breakpoint.md` 700px); border `borderWidth.2` 2px; radius `radius.15` 15px",
      "source": "guidebook-dark-default #177; css:1327-4028784b.css ._1KdWa; css:4779 ._36bu_"
     },
     {
@@ -12121,7 +12121,7 @@
     {
      "part": "grid",
      "property": "layout",
-     "value": "2-column grid: speaker (col 1, 39px tall, margin-right 10px) + text (col 2); translation in row 2",
+     "value": "2-column grid: speaker (col 1, 39px tall, margin-right `space.10` 10px) + text (col 2); translation in row 2",
      "source": "guidebook-dark-default cl=iS2Dl (#178), cl=fEd5_ (#179); css:1327 .fEd5_, ._3X015, .ihYGQ"
     },
     {
@@ -12133,7 +12133,7 @@
     {
      "part": "hint token",
      "property": "underline",
-     "value": "padding-bottom 4px; repeat-x dotted underline image at the bottom",
+     "value": "padding-bottom `space.4` 4px; repeat-x dotted underline image at the bottom",
      "source": "guidebook-dark-default dt=hint-token (#212); css:1327 ._2IGwo, .XxgPa"
     },
     {
@@ -12167,7 +12167,7 @@
       "part": "JP text",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); guidebook-dark-default #195"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); guidebook-dark-default #195"
      },
      {
       "part": "hint underline",
@@ -12205,7 +12205,7 @@
       "part": "JP text",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); guidebook-light-default #204"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); guidebook-light-default #204"
      },
      {
       "part": "hint underline",
@@ -12265,7 +12265,7 @@
     "popover shell (web-ui _36bu_, arrow left)",
     "icon button (speaker)"
    ],
-   "desktop_vs_mobile": "no mobile dump; CSS narrows bubble side padding to 12px under 700px (css:1327 ._1KdWa)",
+   "desktop_vs_mobile": "no mobile dump; CSS narrows bubble side padding to 12px under `breakpoint.md` 700px (css:1327 ._1KdWa)",
    "screenshots": [
     {
      "dump": "guidebook-dark-default",
@@ -12313,13 +12313,13 @@
     {
      "part": "section heading",
      "property": "size / margin",
-     "value": "24px / 26px, margin-top 40px, 25px gap to the list",
+     "value": "24px / 26px, margin-top `space.40` 40px, 25px gap to the list",
      "source": "shop-dark-default h2 cl=_21GJ- (#155)"
     },
     {
      "part": "row",
      "property": "padding / min-height",
-     "value": "padding 20px 0 20px 110px, min-height 120px (138px with 2-line text; 166 power-up with pill)",
+     "value": "padding `space.20` 20px 0 `space.20` 20px 110px, min-height 120px (138px with 2-line text; 166 power-up with pill)",
      "source": "shop-dark-default li cl=_3-o-j (#157, #171); css:8566-1e4d7a6c.css ._3-o-j @media (min-width:700px)"
     },
     {
@@ -12331,7 +12331,7 @@
     {
      "part": "title",
      "property": "padding",
-     "value": "padding 8px 0, 36px tall",
+     "value": "padding `space.8` 8px 0, 36px tall",
      "source": "shop-dark-default cl=_32enP (#161)"
     },
     {
@@ -12343,19 +12343,19 @@
     {
      "part": "price button",
      "property": "size / position",
-     "value": "min-width 150px (158 with price), 50px tall, float right, margin-left 18px, radius 16px, border 2px 2px 4px",
+     "value": "min-width 150px (158 with price), 50px tall, float right, margin-left `space.18` 18px, radius `radius.16` 16px, border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px",
      "source": "shop-dark-default dt=purchase-button (#159, #173); css:8566 .kbxOW"
     },
     {
      "part": "gem icon",
      "property": "size / margin",
-     "value": "24 x 26px, margin -8px 4px -6px 6px",
+     "value": "24 x 26px, margin -8px `space.4` 4px -6px `space.6` 6px",
      "source": "shop-dark-default cl=_235HK (#174); css:8566 ._235HK"
     },
     {
      "part": "equipped pill",
      "property": "size",
-     "value": "height 25px, padding 8px, radius 16px; gap 20px from title (row-gap 3px)",
+     "value": "height 25px, padding `space.8` 8px, radius `radius.16` 16px; gap `space.20` 20px from title (row-gap 3px)",
      "source": "shop-dark-default cl=_2tJ-w _2I6Qk (#177), cl=_2Q29c (#175); css:8566 ._2I6Qk"
     }
    ],
@@ -12371,7 +12371,7 @@
       "part": "title",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); shop-dark-default #161"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); shop-dark-default #161"
      },
      {
       "part": "description",
@@ -12427,7 +12427,7 @@
       "part": "title",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); shop-light-default #171"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); shop-light-default #171"
      },
      {
       "part": "description",
@@ -12519,7 +12519,7 @@
     "button: secondary (web-ui _2V6ug, macaw label)",
     "badge/pill"
    ],
-   "desktop_vs_mobile": "mobile (<700px): row padding 15px 0 70px 110px, no min-height; button leaves the float and becomes position absolute, bottom 20px, left 110px (under the text), width by content (158 with price, 116 for FREE TRIAL); description gets margin-bottom 18px. Source: shop-dark-mobile #63, #65, #68, #71; css:8566 ._3-o-j, .kbxOW.",
+   "desktop_vs_mobile": "mobile (<`breakpoint.md` 700px): row padding `space.15` 15px 0 70px 110px, no min-height; button leaves the float and becomes position absolute, bottom 20px, left 110px (under the text), width by content (158 with price, 116 for FREE TRIAL); description gets margin-bottom `space.18` 18px. Source: shop-dark-mobile #63, #65, #68, #71; css:8566 ._3-o-j, .kbxOW.",
    "screenshots": [
     {
      "dump": "shop-dark-default",
@@ -12584,25 +12584,25 @@
     {
      "part": "A card",
      "property": "width x height / padding",
-     "value": "368 x 233px, padding 18px, radius 16px, border 2px",
+     "value": "368 x 233px, padding `space.18` 18px, radius `radius.16` 16px, border `borderWidth.2` 2px",
      "source": "learn-dark-default cl=_16rRh _2cnFr _1T_BQ (#87); css:1008-b4d34396.css ._2cnFr, ._1T_BQ"
     },
     {
      "part": "A title",
      "property": "width / margin",
-     "value": "220px, margin 8px 0",
+     "value": "220px, margin `space.8` 8px 0",
      "source": "learn-dark-default h2 cl=_3f4H2 WyfrO (#91); css:7668-84c050df.css .WyfrO"
     },
     {
      "part": "A body",
      "property": "width / margin",
-     "value": "calc(100% - 83px) = 245px, margin 8px 0 24px",
+     "value": "calc(100% - 83px) = 245px, margin `space.8` 8px 0 `space.24` 24px",
      "source": "learn-dark-default cl=_3GCbg (#92)"
     },
     {
      "part": "A button",
      "property": "size",
-     "value": "328 x 50px (100%), radius 16px, 4px lip (box-shadow 0 4px nebula)",
+     "value": "328 x 50px (100%), radius `radius.16` 16px, 4px lip (box-shadow 0 4px nebula)",
      "source": "learn-dark-default button cl=_1VYyp _3b8r8 (#93)"
     },
     {
@@ -12614,7 +12614,7 @@
     {
      "part": "B/C banner",
      "property": "padding / radius / margin",
-     "value": "padding 20px (20px 10px 10px under 530px), radius 16px, margin-bottom 32px",
+     "value": "padding `space.20` 20px (20px 10px 10px under `breakpoint.sm` 530px), radius `radius.16` 16px, margin-bottom `space.32` 32px",
      "source": "shop-dark-default cl=MGk8p (#145); css:8566-1e4d7a6c.css .MGk8p"
     },
     {
@@ -12626,19 +12626,19 @@
     {
      "part": "B art + headline",
      "property": "size",
-     "value": "art 90 x 113px, margin-right 24px; headline block margin-top 24px",
+     "value": "art 90 x 113px, margin-right `space.24` 24px; headline block margin-top `space.24` 24px",
      "source": "shop-dark-default img cl=_22aYT (#147), cl=_1iadG (#148)"
     },
     {
      "part": "B/C button",
      "property": "size / margin",
-     "value": "height 50, margin-top 24px, width 100% of its column (440 B; 260 C dark; 369 C light), radius 16px (12px on settings-super), 4px lip",
+     "value": "height 50, margin-top `space.24` 24px, width 100% of its column (440 B; 260 C dark; 369 C light), radius `radius.16` 16px (12px on settings-super), 4px lip",
      "source": "shop-dark-default dt=plus-offer-button (#152); settings-super-dark-default #109; css:7668 ._3LkfO"
     },
     {
      "part": "B logo",
      "property": "size / position",
-     "value": "86 x 23px, absolute top 0 right 0 with 16px margin",
+     "value": "86 x 23px, absolute top 0 right 0 with `space.16` 16px margin",
      "source": "shop-dark-default dt=plus-offer-logo (#154); css:7668 .ZEFkS, ._24WQp"
     },
     {
@@ -12650,7 +12650,7 @@
     {
      "part": "C illustration",
      "property": "clip",
-     "value": "max-width 200px, margin -20px -20px -65px 0, image max-height 230px; hidden under 530px",
+     "value": "max-width 200px, margin -20px -20px -65px 0, image max-height 230px; hidden under `breakpoint.sm` 530px",
      "source": "settings-super-dark-default cl=_2o8pO (#102), img cl=_2hygw (#103); css:7668 ._2o8pO, ._2hygw"
     }
    ],
@@ -12743,7 +12743,7 @@
      },
      {
       "part": "B/C headline",
-      "value": "duolingo-sans `typography.app.promoTitle` 700 25px / 34px (23px / 31px under 530px)",
+      "value": "duolingo-sans `typography.app.promoTitle` 700 25px / 34px (23px / 31px under `breakpoint.sm` 530px)",
       "source": "shop-dark-default #149; css:8566 ._353sT"
      },
      {
@@ -12853,7 +12853,7 @@
     {
      "part": "card",
      "property": "width x height / padding / radius",
-     "value": "368 x 330px, padding 0 24px, radius 16px, overflow hidden; flex column, space-between",
+     "value": "368 x 330px, padding 0 `space.24` 24px, radius `radius.16` 16px, overflow hidden; flex column, space-between",
      "source": "shop-dark-default cl=_3D_HB (#113), cl=_3Mmv9 (#114); css:1327-4028784b.css ._3Mmv9"
     },
     {
@@ -12865,7 +12865,7 @@
     {
      "part": "title",
      "property": "margin",
-     "value": "margin-bottom 12px; 30px line",
+     "value": "margin-bottom `space.12` 12px; 30px line",
      "source": "shop-dark-default h2 cl=_3IB6P (#117)"
     },
     {
@@ -12877,13 +12877,13 @@
     {
      "part": "button",
      "property": "size",
-     "value": "320 x 50px, radius 16px, 4px lip",
+     "value": "320 x 50px, radius `radius.16` 16px, 4px lip",
      "source": "shop-dark-default button cl=_1VYyp _19taU (#120)"
     },
     {
      "part": "link block",
      "property": "margin",
-     "value": "margin-bottom 15px; link 20px line",
+     "value": "margin-bottom `space.15` 15px; link 20px line",
      "source": "shop-dark-default cl=_1d5x2 (#123), a (#124)"
     }
    ],
@@ -13165,7 +13165,7 @@
   },
   {
    "component": "lesson-top-bar",
-   "gap": "Progress bar height (16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it."
+   "gap": "Progress bar height (`space.16` 16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it."
   },
   {
    "component": "lesson-top-bar",
@@ -13277,7 +13277,7 @@
   },
   {
    "component": "feedback-bar",
-   "gap": "TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, 2px)."
+   "gap": "TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, `space.2` 2px)."
   },
   {
    "component": "review-interstitial",

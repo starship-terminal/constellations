@@ -79,32 +79,32 @@ Face = `::before` fill (legacy FOLLOW: `::after`). Lip = `::before` box-shadow c
 
 | Variant | Theme | Face | Lip | Border | Text | Size (WxH, radius) | Dump node | Crop |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| primary-green | light | `accent.primary.face` #58CC02 (owl, light) | `accent.primary.lip` #58A700 (tree-frog, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 150x50, 16px | lesson-light-challenge-tiles-partial#167 | [light](components/crops/button-primary-green-light.png) |
-| primary-green | dark | `accent.primary.face` #93D333 (owl, dark) | `accent.primary.lip` #79B933 (tree-frog, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 150x50, 16px | lesson-dark-challenge-tiles-partial#136 | [dark](components/crops/button-primary-green-dark.png) |
-| primary-blue | light | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.lip` #1899D6 (whale, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 336x50, 16px | lesson-light-quit-modal#153 | [light](components/crops/button-primary-blue-light.png) |
-| primary-blue | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 336x50, 16px | learn-dark-modal-notifications#477 | [dark](components/crops/button-primary-blue-dark.png) |
-| primary-blue-juicy | light | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.lip` #1899D6 (whale, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 331x48, 16px | characters-light-default#176 | [light](components/crops/button-primary-blue-juicy-light.png) |
-| primary-blue-juicy | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 264x48, 16px | characters-dark-default#168 | [dark](components/crops/button-primary-blue-juicy-dark.png) |
-| secondary | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | 150x50, 16px | lesson-light-challenge-tiles-partial#164 | [light](components/crops/button-secondary-light.png) |
-| secondary | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 150x50, 16px | lesson-dark-challenge-tiles-partial#133 | [dark](components/crops/button-secondary-dark.png) |
-| secondary-macaw | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.link` #1CB0F6 (macaw, light) | 528x50, 16px | learn-light-path-end#485 | [light](components/crops/button-secondary-macaw-light.png) |
-| secondary-macaw | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.link` #49C0F8 (macaw, dark) | 416x50, 16px | learn-dark-path-end#475 | [dark](components/crops/button-secondary-macaw-dark.png) |
-| secondary-eel | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.primary` #4B4B4B (eel, light) | 149x50, 16px | profile-light-default#104 | [light](components/crops/button-secondary-eel-light.png) |
-| secondary-eel | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.primary` #F1F7FB (eel, dark) | 149x50, 16px | profile-dark-default#103 | [dark](components/crops/button-secondary-eel-dark.png) |
-| secondary-juicy-macaw | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.link` #1CB0F6 (macaw, light) | 331x48, 16px | characters-light-default#174 | [light](components/crops/button-secondary-juicy-macaw-light.png) |
-| secondary-juicy-macaw | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.link` #49C0F8 (macaw, dark) | 264x48, 16px | characters-dark-default#166 | [dark](components/crops/button-secondary-juicy-macaw-dark.png) |
-| super | light | `gamification.super.face` #3C4DFF (cosmos, light) | `gamification.super.lip` #3F22EC (nebula, light) | none | `text.onColor` #FFFFFF (snow-always-light, light) | 328x50, 16px | characters-light-default#93 | [light](components/crops/button-super-light.png) |
-| super | dark | `gamification.super.face` #3C4DFF (cosmos, dark) | `gamification.super.lip` #3F22EC (nebula, dark) | none | `text.onColor` #FFFFFF (snow-always-light, dark) | 328x50, 16px | characters-dark-default#93 | [dark](components/crops/button-super-dark.png) |
-| super-inverse | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.5 alpha | none | `gamification.super.surface` #000437 (eclipse, light) | 552x50, 12px | settings-super-light-default#109 | [light](components/crops/button-super-inverse-light.png) |
-| super-inverse | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.5 alpha | none | `gamification.super.surface` #000437 (eclipse, dark) | 260x50, 12px | settings-super-dark-default#109 | [dark](components/crops/button-super-inverse-dark.png) |
-| danger | light | `accent.danger.face` #FF4B4B (cardinal, light) | `accent.danger.lip` #EA2B2B (fire-ant, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 184x50, 16px | settings-courses-light-remove-confirm#144 | [light](components/crops/button-danger-light.png) |
-| danger | dark | `accent.danger.face` #EE5555 (cardinal, dark) | `accent.danger.lip` #D84848 (fire-ant, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 184x50, 16px | settings-courses-dark-remove-confirm#142 | [dark](components/crops/button-danger-dark.png) |
-| popover-cta | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.7 alpha | none | `unitColors.green` #58CC02 (owl-always-light, light) | 263x50, 16px | learn-light-node-popover#1254 | [light](components/crops/button-popover-cta-light.png) |
-| popover-cta | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.7 alpha | none | `unitColors.green` #58CC02 (owl-always-light, dark) | 263x50, 16px | learn-dark-node-popover#1244 | [dark](components/crops/button-popover-cta-dark.png) |
-| streak-cta | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.6 alpha | none | `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light) | 196x36, 8px | learn-light-streak-dropdown#140 | [light](components/crops/button-streak-cta-light.png) |
-| streak-cta | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.6 alpha | none | `palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) | 196x36, 8px | learn-dark-streak-dropdown#120 | [dark](components/crops/button-streak-cta-dark.png) |
-| outline-on-colour | light | none | `border.onColor` #000000 (black, light) @ 0.2 alpha | `border.onColor` #000000 (black, light) @ 0.2 alpha | `text.onPrimary` #FFFFFF (snow, light) | 148x54, 16px | learn-light-completed-popover#168 | [light](components/crops/button-outline-on-colour-light.png) |
-| outline-on-colour | dark | none | `border.onColor` #000000 (black, dark) @ 0.2 alpha | `border.onColor` #000000 (black, dark) @ 0.2 alpha | `text.onPrimary` #131F24 (snow, dark) (label renders `palette.dark.celestia` #FFFFFF (celestia, dark)) | 148x54, 16px | learn-dark-completed-popover#159 | [dark](components/crops/button-outline-on-colour-dark.png) |
+| primary-green | light | `accent.primary.face` #58CC02 (owl, light) | `accent.primary.lip` #58A700 (tree-frog, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 150x50, `radius.16` 16px | lesson-light-challenge-tiles-partial#167 | [light](components/crops/button-primary-green-light.png) |
+| primary-green | dark | `accent.primary.face` #93D333 (owl, dark) | `accent.primary.lip` #79B933 (tree-frog, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 150x50, `radius.16` 16px | lesson-dark-challenge-tiles-partial#136 | [dark](components/crops/button-primary-green-dark.png) |
+| primary-blue | light | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.lip` #1899D6 (whale, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 336x50, `radius.16` 16px | lesson-light-quit-modal#153 | [light](components/crops/button-primary-blue-light.png) |
+| primary-blue | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 336x50, `radius.16` 16px | learn-dark-modal-notifications#477 | [dark](components/crops/button-primary-blue-dark.png) |
+| primary-blue-juicy | light | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.lip` #1899D6 (whale, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 331x48, `radius.16` 16px | characters-light-default#176 | [light](components/crops/button-primary-blue-juicy-light.png) |
+| primary-blue-juicy | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 264x48, `radius.16` 16px | characters-dark-default#168 | [dark](components/crops/button-primary-blue-juicy-dark.png) |
+| secondary | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | 150x50, `radius.16` 16px | lesson-light-challenge-tiles-partial#164 | [light](components/crops/button-secondary-light.png) |
+| secondary | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 150x50, `radius.16` 16px | lesson-dark-challenge-tiles-partial#133 | [dark](components/crops/button-secondary-dark.png) |
+| secondary-macaw | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.link` #1CB0F6 (macaw, light) | 528x50, `radius.16` 16px | learn-light-path-end#485 | [light](components/crops/button-secondary-macaw-light.png) |
+| secondary-macaw | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.link` #49C0F8 (macaw, dark) | 416x50, `radius.16` 16px | learn-dark-path-end#475 | [dark](components/crops/button-secondary-macaw-dark.png) |
+| secondary-eel | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.primary` #4B4B4B (eel, light) | 149x50, `radius.16` 16px | profile-light-default#104 | [light](components/crops/button-secondary-eel-light.png) |
+| secondary-eel | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.primary` #F1F7FB (eel, dark) | 149x50, `radius.16` 16px | profile-dark-default#103 | [dark](components/crops/button-secondary-eel-dark.png) |
+| secondary-juicy-macaw | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.link` #1CB0F6 (macaw, light) | 331x48, `radius.16` 16px | characters-light-default#174 | [light](components/crops/button-secondary-juicy-macaw-light.png) |
+| secondary-juicy-macaw | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.link` #49C0F8 (macaw, dark) | 264x48, `radius.16` 16px | characters-dark-default#166 | [dark](components/crops/button-secondary-juicy-macaw-dark.png) |
+| super | light | `gamification.super.face` #3C4DFF (cosmos, light) | `gamification.super.lip` #3F22EC (nebula, light) | none | `text.onColor` #FFFFFF (snow-always-light, light) | 328x50, `radius.16` 16px | characters-light-default#93 | [light](components/crops/button-super-light.png) |
+| super | dark | `gamification.super.face` #3C4DFF (cosmos, dark) | `gamification.super.lip` #3F22EC (nebula, dark) | none | `text.onColor` #FFFFFF (snow-always-light, dark) | 328x50, `radius.16` 16px | characters-dark-default#93 | [dark](components/crops/button-super-dark.png) |
+| super-inverse | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.5 alpha | none | `gamification.super.surface` #000437 (eclipse, light) | 552x50, `radius.12` 12px | settings-super-light-default#109 | [light](components/crops/button-super-inverse-light.png) |
+| super-inverse | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.5 alpha | none | `gamification.super.surface` #000437 (eclipse, dark) | 260x50, `radius.12` 12px | settings-super-dark-default#109 | [dark](components/crops/button-super-inverse-dark.png) |
+| danger | light | `accent.danger.face` #FF4B4B (cardinal, light) | `accent.danger.lip` #EA2B2B (fire-ant, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 184x50, `radius.16` 16px | settings-courses-light-remove-confirm#144 | [light](components/crops/button-danger-light.png) |
+| danger | dark | `accent.danger.face` #EE5555 (cardinal, dark) | `accent.danger.lip` #D84848 (fire-ant, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 184x50, `radius.16` 16px | settings-courses-dark-remove-confirm#142 | [dark](components/crops/button-danger-dark.png) |
+| popover-cta | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.7 alpha | none | `unitColors.green` #58CC02 (owl-always-light, light) | 263x50, `radius.16` 16px | learn-light-node-popover#1254 | [light](components/crops/button-popover-cta-light.png) |
+| popover-cta | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.7 alpha | none | `unitColors.green` #58CC02 (owl-always-light, dark) | 263x50, `radius.16` 16px | learn-dark-node-popover#1244 | [dark](components/crops/button-popover-cta-dark.png) |
+| streak-cta | light | `dataViz.progress.shine` #FFFFFF (snow-always-light, light) | `palette.light.snow-always-light` #FFFFFF (snow-always-light, light) @ 0.6 alpha | none | `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light) | 196x36, `radius.8` 8px | learn-light-streak-dropdown#140 | [light](components/crops/button-streak-cta-light.png) |
+| streak-cta | dark | `dataViz.progress.shine` #FFFFFF (snow-always-light, dark) | `palette.dark.snow-always-light` #FFFFFF (snow-always-light, dark) @ 0.6 alpha | none | `palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark) | 196x36, `radius.8` 8px | learn-dark-streak-dropdown#120 | [dark](components/crops/button-streak-cta-dark.png) |
+| outline-on-colour | light | none | `border.onColor` #000000 (black, light) @ 0.2 alpha | `border.onColor` #000000 (black, light) @ 0.2 alpha | `text.onPrimary` #FFFFFF (snow, light) | 148x54, `radius.16` 16px | learn-light-completed-popover#168 | [light](components/crops/button-outline-on-colour-light.png) |
+| outline-on-colour | dark | none | `border.onColor` #000000 (black, dark) @ 0.2 alpha | `border.onColor` #000000 (black, dark) @ 0.2 alpha | `text.onPrimary` #131F24 (snow, dark) (label renders `palette.dark.celestia` #FFFFFF (celestia, dark)) | 148x54, `radius.16` 16px | learn-dark-completed-popover#159 | [dark](components/crops/button-outline-on-colour-dark.png) |
 | text-macaw | light | none | none | none | `text.link` #1CB0F6 (macaw, light) | 65x18, - | characters-light-default#114 | [light](components/crops/button-text-macaw-light.png) |
 | text-macaw | dark | none | none | none | `text.link` #49C0F8 (macaw, dark) | 336x32, - | learn-dark-modal-notifications#479 | [dark](components/crops/button-text-macaw-dark.png) |
 | text-cardinal | light | none | none | none | `accent.danger.text` #FF4B4B (cardinal, light) | 336x32, - | lesson-light-quit-modal#155 | [light](components/crops/button-text-cardinal-light.png) |
@@ -113,30 +113,30 @@ Face = `::before` fill (legacy FOLLOW: `::after`). Lip = `::before` box-shadow c
 | link-juicy-cardinal | dark | none | none | none | `accent.danger.text` #EE5555 (cardinal, dark) | 85x48, - | settings-courses-dark-default#105 | [dark](components/crops/button-link-juicy-cardinal-dark.png) |
 | link-juicy-macaw-small | light | none | none | none | `text.link` #1CB0F6 (macaw, light) | 83x32, - | characters-light-default#61 | [light](components/crops/button-link-juicy-macaw-small-light.png) |
 | link-juicy-macaw-small | dark | none | none | none | `text.link` #49C0F8 (macaw, dark) | 83x32, - | characters-dark-default#62 | [dark](components/crops/button-link-juicy-macaw-small-dark.png) |
-| disabled-solid | light | `surface.disabled` #E5E5E5 (swan, light) | none | none | `text.tertiary` #AFAFAF (hare, light) | 150x50, 16px | lesson-light-challenge-default#156 | [light](components/crops/button-disabled-solid-light.png) |
-| disabled-solid | dark | `surface.disabled` #37464F (swan, dark) | none | none | `text.tertiary` #52656D (hare, dark) | 150x50, 16px | lesson-dark-challenge-default#152 | [dark](components/crops/button-disabled-solid-dark.png) |
-| disabled-stroke | light | `surface.default` #FFFFFF (snow, light) | none | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | 150x50, 16px | shop-light-default#183 | [light](components/crops/button-disabled-stroke-light.png) |
-| disabled-stroke | dark | `surface.default` #131F24 (snow, dark) | none | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | 150x50, 16px | shop-dark-default#159 | [dark](components/crops/button-disabled-stroke-dark.png) |
-| follow-pill | light | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.lip` #1899D6 (whale, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 127x36, 8px | user-search-light-results#85 | [light](components/crops/button-follow-pill-light.png) |
-| follow-pill | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 127x36, 8px | user-search-dark-results#85 | [dark](components/crops/button-follow-pill-dark.png) |
+| disabled-solid | light | `surface.disabled` #E5E5E5 (swan, light) | none | none | `text.tertiary` #AFAFAF (hare, light) | 150x50, `radius.16` 16px | lesson-light-challenge-default#156 | [light](components/crops/button-disabled-solid-light.png) |
+| disabled-solid | dark | `surface.disabled` #37464F (swan, dark) | none | none | `text.tertiary` #52656D (hare, dark) | 150x50, `radius.16` 16px | lesson-dark-challenge-default#152 | [dark](components/crops/button-disabled-solid-dark.png) |
+| disabled-stroke | light | `surface.default` #FFFFFF (snow, light) | none | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | 150x50, `radius.16` 16px | shop-light-default#183 | [light](components/crops/button-disabled-stroke-light.png) |
+| disabled-stroke | dark | `surface.default` #131F24 (snow, dark) | none | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | 150x50, `radius.16` 16px | shop-dark-default#159 | [dark](components/crops/button-disabled-stroke-dark.png) |
+| follow-pill | light | `accent.secondary.face` #1CB0F6 (macaw, light) | `accent.secondary.lip` #1899D6 (whale, light) | none | `text.onPrimary` #FFFFFF (snow, light) | 127x36, `radius.8` 8px | user-search-light-results#85 | [light](components/crops/button-follow-pill-light.png) |
+| follow-pill | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 127x36, `radius.8` 8px | user-search-dark-results#85 | [dark](components/crops/button-follow-pill-dark.png) |
 | invite-small | light | not captured | | | | | | |
-| invite-small | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 60x32, 8px | lesson-dark-friend-streak-invite#22 | [dark](components/crops/button-invite-small-dark.png) |
-| icon-tile | light | `text.onPrimary` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | 48x48, 12px | leaderboard-light-default#103 | [light](components/crops/button-icon-tile-light.png) |
-| icon-tile | dark | `text.onPrimary` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 48x48, 12px | leaderboard-dark-default#102 | [dark](components/crops/button-icon-tile-dark.png) |
-| icon-tile-selected | light | `accent.primary.face` #58CC02 (owl, light) | `border.selected` #84D8FF (blue-jay, light) | `border.selected` #84D8FF (blue-jay, light) | `text.tertiary` #AFAFAF (hare, light) | 48x48, 12px | leaderboard-light-default#101 | [light](components/crops/button-icon-tile-selected-light.png) |
-| icon-tile-selected | dark | `accent.primary.face` #93D333 (owl, dark) | `border.selected` #3F85A7 (blue-jay, dark) | `border.selected` #3F85A7 (blue-jay, dark) | `text.tertiary` #52656D (hare, dark) | 48x48, 12px | leaderboard-dark-default#100 | [dark](components/crops/button-icon-tile-selected-dark.png) |
-| fab-stroke | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | 52x52, 16px | learn-light-completed-popover#1674 | [light](components/crops/button-fab-stroke-light.png) |
-| fab-stroke | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 52x52, 16px | learn-dark-completed-popover#1664 | [dark](components/crops/button-fab-stroke-dark.png) |
+| invite-small | dark | `accent.secondary.face` #49C0F8 (macaw, dark) | `accent.secondary.lip` #1899D6 (whale, dark) | none | `text.onPrimary` #131F24 (snow, dark) | 60x32, `radius.8` 8px | lesson-dark-friend-streak-invite#22 | [dark](components/crops/button-invite-small-dark.png) |
+| icon-tile | light | `text.onPrimary` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | 48x48, `radius.12` 12px | leaderboard-light-default#103 | [light](components/crops/button-icon-tile-light.png) |
+| icon-tile | dark | `text.onPrimary` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 48x48, `radius.12` 12px | leaderboard-dark-default#102 | [dark](components/crops/button-icon-tile-dark.png) |
+| icon-tile-selected | light | `accent.primary.face` #58CC02 (owl, light) | `border.selected` #84D8FF (blue-jay, light) | `border.selected` #84D8FF (blue-jay, light) | `text.tertiary` #AFAFAF (hare, light) | 48x48, `radius.12` 12px | leaderboard-light-default#101 | [light](components/crops/button-icon-tile-selected-light.png) |
+| icon-tile-selected | dark | `accent.primary.face` #93D333 (owl, dark) | `border.selected` #3F85A7 (blue-jay, dark) | `border.selected` #3F85A7 (blue-jay, dark) | `text.tertiary` #52656D (hare, dark) | 48x48, `radius.12` 12px | leaderboard-dark-default#100 | [dark](components/crops/button-icon-tile-selected-dark.png) |
+| fab-stroke | light | `surface.default` #FFFFFF (snow, light) | `border.default` #E5E5E5 (swan, light) | `border.default` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | 52x52, `radius.16` 16px | learn-light-completed-popover#1674 | [light](components/crops/button-fab-stroke-light.png) |
+| fab-stroke | dark | `surface.default` #131F24 (snow, dark) | `border.default` #37464F (swan, dark) | `border.default` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 52x52, `radius.16` 16px | learn-dark-completed-popover#1664 | [dark](components/crops/button-fab-stroke-dark.png) |
 
 | Variant | Label | web-ui variant | Classes | CSS rule(s) defining the colours | Notes |
 | --- | --- | --- | --- | --- | --- |
 | primary-green | Primary (green, "Check" / "Continue") | variant-solid + --web-ui_button-* override | `_1rcV8 _1VYyp _1ursp _7jW2t + _2oGJR` | css:app-f2ef02f8.css ._2oGJR { --web-ui_button-background-color:rgb(var(--color-owl)); --web-ui_button-border-color:rgb(var(--color-tree-frog)); --web-ui_button-color:rgb(var(--color-snow)) }<br>css:4779-c36ad395.css ._1VYyp:before { background-color:var(--__internal__background-color); border-radius:var(--__internal__border-radius); bottom:0; box-shadow:0 var(--__internal__lip-width) 0; color:var(--__internal__border-color); content:""; left:0; position:absolute; right:0; top:0; transition:box-shadow var(--web-ui_button-transition-lip); z-index:-1 } | Dark theme keeps a light-green face and flips the label to snow(dark) #131F24, i.e. dark text on green. |
 | primary-blue | Primary blue CTA ("macaw", web-ui default solid) | variant-solid (defaults) / variant-solid-macaw (_1i82L) | `_1rcV8 _1VYyp _1ursp _7jW2t (optionally _1i82L)` | css:4779-c36ad395.css ._1VYyp { --__internal__background-color:var(--web-ui_button-background-color,rgb(var(--color-macaw))); --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-swan))); --__internal__border-color:var(--web-ui_button-border-color,rgb(var(--color-whale))); --__internal__border-radius:var(--web-ui_button-border-radius,12px); --__internal__color:var(--web-ui_button-color,rgb(var(--color-snow))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__color-disabled:var(--web-ui_button-color-disabled,rgb(var(--color-hare))); --__internal__filter-hover:var(--web-ui_button-filter-hover,brightness(1.1)); --__internal__h … }<br>css:4779-c36ad395.css ._1i82L { --__internal__background-color:var(--web-ui_button-background-color,rgb(var(--color-macaw))); --__internal__border-color:var(--web-ui_button-border-color,rgb(var(--color-whale))); --__internal__color:var(--web-ui_button-color,rgb(var(--color-snow))) } | The web-ui solid button defaults to macaw/whale; _1i82L sets the same values explicitly. |
-| primary-blue-juicy | Primary blue, "juicy" 48px size | variant-solid-juicy-macaw | `_3q--f _20olS _1VYyp _1ursp _7jW2t` | css:4779-c36ad395.css ._1VYyp { --__internal__background-color:var(--web-ui_button-background-color,rgb(var(--color-macaw))); --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-swan))); --__internal__border-color:var(--web-ui_button-border-color,rgb(var(--color-whale))); --__internal__border-radius:var(--web-ui_button-border-radius,12px); --__internal__color:var(--web-ui_button-color,rgb(var(--color-snow))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__color-disabled:var(--web-ui_button-color-disabled,rgb(var(--color-hare))); --__internal__filter-hover:var(--web-ui_button-filter-hover,brightness(1.1)); --__internal__h … }<br>css:4779-c36ad395.css ._20olS { --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - var(--__internal__lip-width))); --__internal__padding:var(--web-ui_button-padding,0 12px) } | Same colours as primary-blue; 48px tall, 16px label, 0.04em tracking. Radius 16px from the root --web-ui_button-border-radius; settings pages re-set it to 12px on their wrapper (css:settingsPage .unX5-), which is why settings save/super buttons measure 12px. |
+| primary-blue-juicy | Primary blue, "juicy" 48px size | variant-solid-juicy-macaw | `_3q--f _20olS _1VYyp _1ursp _7jW2t` | css:4779-c36ad395.css ._1VYyp { --__internal__background-color:var(--web-ui_button-background-color,rgb(var(--color-macaw))); --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-swan))); --__internal__border-color:var(--web-ui_button-border-color,rgb(var(--color-whale))); --__internal__border-radius:var(--web-ui_button-border-radius,12px); --__internal__color:var(--web-ui_button-color,rgb(var(--color-snow))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__color-disabled:var(--web-ui_button-color-disabled,rgb(var(--color-hare))); --__internal__filter-hover:var(--web-ui_button-filter-hover,brightness(1.1)); --__internal__h … }<br>css:4779-c36ad395.css ._20olS { --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - var(--__internal__lip-width))); --__internal__padding:var(--web-ui_button-padding,0 12px) } | Same colours as primary-blue; 48px tall, 16px label, 0.04em tracking. Radius `radius.16` 16px from the root --web-ui_button-border-radius; settings pages re-set it to 12px on their wrapper (css:settingsPage .unX5-), which is why settings save/super buttons measure 12px. |
 | secondary | Secondary / outline (grey label) | variant-stroke | `_2V6ug _1ursp _7jW2t` | css:4779-c36ad395.css ._2V6ug { --__internal__background-color:var(--web-ui_button-background-color,rgb(var(--color-snow))); --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-swan))); --__internal__border-color:var(--web-ui_button-border-color,rgb(var(--color-swan))); --__internal__border-color-disabled:var(--web-ui_button-border-color-disabled,var(--__internal__border-color)); --__internal__border-radius:var(--web-ui_button-border-radius,12px); --__internal__color:var(--web-ui_button-color,rgb(var(--color-hare))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__color-disabled:var(--web-ui_button-color-disabled,rgb(var( … }<br>css:4779-c36ad395.css ._2V6ug:before { background-color:var(--__internal__background-color); border:2px solid var(--__internal__switchable__border-color); border-radius:var(--__internal__border-radius); bottom:-2px; box-shadow:0 2px 0; color:var(--__internal__switchable__border-color); content:""; left:-2px; position:absolute; right:-2px; top:-2px; transition:box-shadow var(--web-ui_button-transition-lip); z-index:-1 } | 3D lip = 2px ::before border + 0 2px 0 box-shadow = 4px visual bottom edge. |
 | secondary-macaw | Outline with blue label | variant-stroke-macaw | `_3xDVI _2V6ug _1ursp _7jW2t` | css:4779-c36ad395.css ._3xDVI { --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))) }<br>css:4779-c36ad395.css ._2V6ug:before { background-color:var(--__internal__background-color); border:2px solid var(--__internal__switchable__border-color); border-radius:var(--__internal__border-radius); bottom:-2px; box-shadow:0 2px 0; color:var(--__internal__switchable__border-color); content:""; left:-2px; position:absolute; right:-2px; top:-2px; transition:box-shadow var(--web-ui_button-transition-lip); z-index:-1 } | Captured at the end of the path where a background fade overlaps the lower edge of the crop. Hover captured: learn-dark-secondary-button-hover#475 brightness(0.9). |
 | secondary-eel | Outline with dark label | variant-stroke-eel | `_2ZO5y _2V6ug _1ursp _7jW2t` | css:4779-c36ad395.css ._2ZO5y { --__internal__color:var(--web-ui_button-color,rgb(var(--color-eel))) }<br>css:4779-c36ad395.css ._2V6ug:before { background-color:var(--__internal__background-color); border:2px solid var(--__internal__switchable__border-color); border-radius:var(--__internal__border-radius); bottom:-2px; box-shadow:0 2px 0; color:var(--__internal__switchable__border-color); content:""; left:-2px; position:absolute; right:-2px; top:-2px; transition:box-shadow var(--web-ui_button-transition-lip); z-index:-1 } |  |
-| secondary-juicy-macaw | Outline "juicy" (1px outline, 48px) | variant-stroke-juicy-macaw | `_2paU5 rdtAy _2V6ug _1ursp _7jW2t` | css:4779-c36ad395.css .rdtAy { --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-snow))); --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - 6px)); --__internal__padding:var(--web-ui_button-padding,0 11px); border-width:1px 1px 5px }<br>css:4779-c36ad395.css .rdtAy:before { border-width:1px; bottom:-1px; box-shadow:0 3px 0 1px; left:-1px; outline:1px solid var(--__internal__border-color); right:-1px; top:-1px }<br>css:4779-c36ad395.css ._2paU5 { --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__color-active:var(--web-ui_button-color-active,rgb(var(--color-whale))) } | Border is 1px + 1px outline, lip is box-shadow 0 3px 0 1px, element border 1px 1px 5px; pressed moves 4px. |
+| secondary-juicy-macaw | Outline "juicy" (1px outline, 48px) | variant-stroke-juicy-macaw | `_2paU5 rdtAy _2V6ug _1ursp _7jW2t` | css:4779-c36ad395.css .rdtAy { --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-snow))); --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - 6px)); --__internal__padding:var(--web-ui_button-padding,0 11px); border-width:1px 1px 5px }<br>css:4779-c36ad395.css .rdtAy:before { border-width:1px; bottom:-1px; box-shadow:0 3px 0 1px; left:-1px; outline:1px solid var(--__internal__border-color); right:-1px; top:-1px }<br>css:4779-c36ad395.css ._2paU5 { --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__color-active:var(--web-ui_button-color-active,rgb(var(--color-whale))) } | Border is 1px + 1px outline, lip is box-shadow 0 3px 0 1px, element border `borderWidth.1` 1px `borderWidth.1` 1px `borderWidth.5` 5px; pressed moves 4px. |
 | super | Super / premium (indigo) | variant-solid-macaw + _3b8r8 override | `_1i82L _1rcV8 _1VYyp _1ursp _7jW2t _3b8r8` | css:app-f2ef02f8.css ._3b8r8 { --web-ui_button-background-color:rgb(var(--color-cosmos)); --web-ui_button-background-color-disabled:rgb(var(--color-swan-always-light)); --web-ui_button-border-color:rgb(var(--color-nebula)); --web-ui_button-color:rgb(var(--color-snow-always-light)); --web-ui_button-color-disabled:rgb(var(--color-hare-always-light)) }<br>css:4779-c36ad395.css ._1VYyp:before { background-color:var(--__internal__background-color); border-radius:var(--__internal__border-radius); bottom:0; box-shadow:0 var(--__internal__lip-width) 0; color:var(--__internal__border-color); content:""; left:0; position:absolute; right:0; top:0; transition:box-shadow var(--web-ui_button-transition-lip); z-index:-1 } | Disabled overrides: swan-always-light face, hare-always-light label (same rule). |
 | super-inverse | White on Super surfaces | variant-solid + _19taU override | `_1rcV8 _1VYyp _1ursp _7jW2t _19taU` | css:app-f2ef02f8.css ._19taU { --web-ui_button-background-color:rgb(var(--color-snow-always-light)); --web-ui_button-background-color-disabled:rgb(var(--color-snow-always-light),0.3); --web-ui_button-border-color:rgb(var(--color-snow-always-light),0.5); --web-ui_button-color:rgb(var(--color-eclipse)); --web-ui_button-color-disabled:rgb(var(--color-eclipse),0.6) }<br>css:4779-c36ad395.css ._1VYyp:before { background-color:var(--__internal__background-color); border-radius:var(--__internal__border-radius); bottom:0; box-shadow:0 var(--__internal__lip-width) 0; color:var(--__internal__border-color); content:""; left:0; position:absolute; right:0; top:0; transition:box-shadow var(--web-ui_button-transition-lip); z-index:-1 } | Used on Super-branded (eclipse) surfaces. The practice-hub "Unlock" instance (practice-hub-dark-default#162) overrides the label to nebula and height to 42px via _1M4wz. Lip is 50% white. |
 | danger | Danger / destructive | variant-solid + _3S8jJ override | `_1rcV8 _1VYyp _1ursp _7jW2t _3S8jJ` | css:app-f2ef02f8.css ._3S8jJ { --web-ui_button-background-color:rgb(var(--color-cardinal)); --web-ui_button-border-color:rgb(var(--color-fire-ant)); --web-ui_button-color:rgb(var(--color-snow)) }<br>css:4779-c36ad395.css ._1VYyp:before { background-color:var(--__internal__background-color); border-radius:var(--__internal__border-radius); bottom:0; box-shadow:0 var(--__internal__lip-width) 0; color:var(--__internal__border-color); content:""; left:0; position:absolute; right:0; top:0; transition:box-shadow var(--web-ui_button-transition-lip); z-index:-1 } |  |
@@ -157,19 +157,19 @@ Face = `::before` fill (legacy FOLLOW: `::after`). Lip = `::before` box-shadow c
 
 ### Button (web-ui "juicy" 3D button)
 
-root <button>/<a> (class _7jW2t base + variant class); face = ::before pseudo-element (fill, border, radius) sitting at z-index -1; 3D lip = ::before box-shadow "0 <lip> 0" in the lip colour (solid) or 2px border + 0 2px. [Full spec](components/core.md#button-web-ui-juicy-3d-button)
+root <button>/<a> (class _7jW2t base + variant class); face = ::before pseudo-element (fill, border, radius) sitting at z-index -1; 3D lip = ::before box-shadow "0 <lip> 0" in the lip colour (solid) or `borderWidth.2` 2p. [Full spec](components/core.md#button-web-ui-juicy-3d-button)
 
 ![button light](components/crops/button-light.png) ![button dark](components/crops/button-dark.png)
 
 ### Text input (incl. password with eye toggle, clearable)
 
-wrapper _3zSI5 (flex column, gap 4px); label <label class="_17QjI"> (heading-small); field box _1Um2j (polar fill, 2px swan border, 12px radius, overflow hidden). [Full spec](components/core.md#text-input-incl-password-with-eye-toggle-clearable)
+wrapper _3zSI5 (flex column, gap `space.4` 4px); label <label class="_17QjI"> (heading-small); field box _1Um2j (polar fill, 2px swan border, `radius.12` 12px radius, overflow hidden). [Full spec](components/core.md#text-input-incl-password-with-eye-toggle-clearable)
 
 ![text-input light](components/crops/text-input-light.png) ![text-input dark](components/crops/text-input-dark.png)
 
 ### Search input (friend search) with clear button
 
-form JW88y (polar fill, 2px swan border, 12px radius, 16px 20px padding); leading search glyph (sprite b3fgl 14x15, scaled 1.4, 17px right margin); <input class="t40Pr"> (transparent, eel, 22px/400). [Full spec](components/core.md#search-input-friend-search-with-clear-button)
+form JW88y (polar fill, 2px swan border, `radius.12` 12px radius, `space.16` 16px `space.20` 20px padding); leading search glyph (sprite b3fgl 14x15, scaled 1.4, 17px right margin); <input class="t40Pr"> (transparent, ee. [Full spec](components/core.md#search-input-friend-search-with-clear-button)
 
 ![search-input light](components/crops/search-input-light.png) ![search-input dark](components/crops/search-input-dark.png)
 
@@ -181,19 +181,19 @@ wrapper _1l2WX; face _3QwUP _1dgwa: 50px, border 2/2/4 transparent, ::before sno
 
 ### Checkbox (square toggle button)
 
-hit area _31gfP 32x32; <button aria-pressed class="Ug-rb"> 30x30, 2px border, 8px radius; checkmark-small svg 24x24 (glyph 13x10), snow, only when checked. [Full spec](components/core.md#checkbox-square-toggle-button)
+hit area _31gfP 32x32; <button aria-pressed class="Ug-rb"> 30x30, `borderWidth.2` 2px border, `radius.8` 8px radius; checkmark-small svg 24x24 (glyph 13x10), snow, only when checked. [Full spec](components/core.md#checkbox-square-toggle-button)
 
 ![checkbox light](components/crops/checkbox-light.png) ![checkbox dark](components/crops/checkbox-dark.png)
 
 ### Radio / selectable card (web-ui Card, role=radio)
 
-radiogroup container (column gap 12px for streak goal; 2-col grid gap 16px in settings); card _8dMUn: border 2/2/4 transparent + ::before fill with 2px border and 0 2px 0 lip; content: title (body-spacious bold) + traili. [Full spec](components/core.md#radio--selectable-card-web-ui-card-roleradio)
+radiogroup container (column gap `space.12` 12px for streak goal; 2-col grid gap `space.16` 16px in settings); card _8dMUn: border 2/2/4 transparent + ::before fill with `borderWidth.2` 2px border and 0 2px 0 lip; conten. [Full spec](components/core.md#radio--selectable-card-web-ui-card-roleradio)
 
 ![radio-card light](components/crops/radio-card-light.png) ![radio-card dark](components/crops/radio-card-dark.png)
 
 ### Toggle / switch
 
-`<button aria-pressed class="_2mkWS">` 56x32, macaw; track span _1gwYP 56x24, 12px radius, background linear-gradient(to left, swan 50%, macaw 50%); knob = track ::before 30x32, snow fill, 2/2/4 border, 8px radius; trans. [Full spec](components/core.md#toggle--switch)
+`<button aria-pressed class="_2mkWS">` 56x32, macaw; track span _1gwYP 56x24, `radius.12` 12px radius, background linear-gradient(to left, swan 50%, macaw 50%); knob = track ::before 30x32, snow fill, 2/2/4 border, `radi. [Full spec](components/core.md#toggle--switch)
 
 ![toggle light](components/crops/toggle-light.png) ![toggle dark](components/crops/toggle-dark.png)
 
@@ -205,19 +205,19 @@ row _7WPBm of equal-width tabs; tab _3ugho: text + 2px bottom border, 15px verti
 
 ### Tabs: bordered-list tabs (Profile Following / Followers)
 
-bordered box _2G9SS (2px swan, 16px radius); tab strip ul _1SZs_ _3Jy0n (2px swan bottom rule, label font 700 15px uppercase 0.8px); tab li cwfCJ (padding-top 16px) > span bsF09 (16px, 12px bottom padding, 2px bottom bor. [Full spec](components/core.md#tabs-bordered-list-tabs-profile-following--followers)
+bordered box _2G9SS (2px swan, `radius.16` 16px radius); tab strip ul _1SZs_ _3Jy0n (2px swan bottom rule, label font 700 15px uppercase 0.8px); tab li cwfCJ (padding-top `space.16` 16px) > span bsF09 (16px, 12px bottom . [Full spec](components/core.md#tabs-bordered-list-tabs-profile-following--followers)
 
 ![tabs-list light](components/crops/tabs-list-light.png) ![tabs-list dark](components/crops/tabs-list-dark.png)
 
 ### Tabs: full-width top tabs (web-ui, mobile Quests/Badges)
 
-nav role=tablist _1L0JB _1UMEd; tab <button role=tab class="_3Ji0r"> flex:1, 48px, 2px transparent top border + 2px bottom rule; selected (_2d5P5): ::after 4px indicator bar, 2px radius, bottom -2px. [Full spec](components/core.md#tabs-full-width-top-tabs-web-ui-mobile-questsbadges)
+nav role=tablist _1L0JB _1UMEd; tab <button role=tab class="_3Ji0r"> flex:1, 48px, 2px transparent top border + 2px bottom rule; selected (_2d5P5): ::after 4px indicator bar, `radius.2` 2px radius, bottom -2px. [Full spec](components/core.md#tabs-full-width-top-tabs-web-ui-mobile-questsbadges)
 
 ![tabs-segmented light](components/crops/tabs-segmented-light.png) ![tabs-segmented dark](components/crops/tabs-segmented-dark.png)
 
 ### Badges and pills
 
-"UP NEXT" section chip _1Qswf _3LDH7: swan fill, hare text, 6px radius, 4px 8px padding; "30+" count badge _2TZCt: cardinal fill, white text, 16px radius, absolutely placed top/right -12px; "x / 2 EQUIPPED" status pill _. [Full spec](components/core.md#badges-and-pills)
+"UP NEXT" section chip _1Qswf _3LDH7: swan fill, hare text, 6px radius, `space.4` 4px `space.8` 8px padding; "30+" count badge _2TZCt: cardinal fill, white text, `radius.16` 16px radius, absolutely placed top/right -12px. [Full spec](components/core.md#badges-and-pills)
 
 ![badge-pill light](components/crops/badge-upnext-light.png) ![badge-pill dark](components/crops/badge-upnext-dark.png)
 
@@ -229,55 +229,55 @@ photo <img class="_1yM9n"> circle (border-radius 50%); or letter avatar _1N32S: 
 
 ### Popover / dropdown shell (web-ui Popover: top-bar dropdowns, MORE menu, path popover)
 
-wrap _3zpnU (positioned _1o3g5; direction class _3OfAS down / _37pE2 up / D0iFS right / Z0Dvv left adds an 8px offset); bubble _36bu_: fill, 2px border, 15px radius, overflow hidden; stem container _3T97b 20x10 (overflow. [Full spec](components/core.md#popover--dropdown-shell-web-ui-popover-top-bar-dropdowns-more-menu-path-popover)
+wrap _3zpnU (positioned _1o3g5; direction class _3OfAS down / _37pE2 up / D0iFS right / Z0Dvv left adds an `space.8` 8px offset); bubble _36bu_: fill, `borderWidth.2` 2px border, `radius.15` 15px radius, overflow hidden;. [Full spec](components/core.md#popover--dropdown-shell-web-ui-popover-top-bar-dropdowns-more-menu-path-popover)
 
 ![popover light](components/crops/popover-light.png) ![popover dark](components/crops/popover-dark.png)
 
 ### Tooltip bubble (small popover, e.g. "START" / "JUMP HERE?")
 
-web-ui popover wrap _3zpnU _37pE2 (direction up) with --web-ui_popover-border-radius:10px; bubble _36bu_ _27IMa: 12px padding, 700 17px uppercase, unit-coloured text; stem pointing down (rotated square, 20x10 container). [Full spec](components/core.md#tooltip-bubble-small-popover-eg-start--jump-here)
+web-ui popover wrap _3zpnU _37pE2 (direction up) with --web-ui_popover-border-radius:10px; bubble _36bu_ _27IMa: `space.12` 12px padding, 700 17px uppercase, unit-coloured text; stem pointing down (rotated square, 20x10 . [Full spec](components/core.md#tooltip-bubble-small-popover-eg-start--jump-here)
 
 ![tooltip light](components/crops/tooltip-light.png) ![tooltip dark](components/crops/tooltip-dark.png)
 
 ### Menu (MORE menu flyout, courses menu)
 
-popover bubble (see popover) opening to the right of the sidebar item (D0iFS, 8px gap); section _1fv9a: 8px 0 padding, 2px swan divider below; link row _2ifes GHXZL: 52px, 32px icon + 20px gap, label. [Full spec](components/core.md#menu-more-menu-flyout-courses-menu)
+popover bubble (see popover) opening to the right of the sidebar item (D0iFS, `space.8` 8px gap); section _1fv9a: `space.8` 8px 0 padding, 2px swan divider below; link row _2ifes GHXZL: 52px, 32px icon + `space.20` 20px . [Full spec](components/core.md#menu-more-menu-flyout-courses-menu)
 
 ![menu light](components/crops/menu-light.png) ![menu dark](components/crops/menu-dark.png)
 
 ### Modal (centered dialog)
 
-backdrop _1ATOC: fixed, black @ 0.4, z-index 300; centering layer _3Mzt6 (flex center, z 310); dialog _1yFTM _3fFQQ FohH5: snow fill, 16px radius, 24px margin, --modal-padding 30px (24px with _3tUNa/_3Dms8, width 384px). [Full spec](components/core.md#modal-centered-dialog)
+backdrop _1ATOC: fixed, black @ 0.4, z-index 300; centering layer _3Mzt6 (flex center, z 310); dialog _1yFTM _3fFQQ FohH5: snow fill, `radius.16` 16px radius, `space.24` 24px margin, --modal-padding `space.30` 30px (24px. [Full spec](components/core.md#modal-centered-dialog)
 
 ![modal light](components/crops/modal-light.png) ![modal dark](components/crops/modal-dark.png)
 
 ### Bottom sheet (remove-course confirm drawer)
 
-backdrop _1ATOC _1Fnem (black @ 0.4); sheet rs95t _3fIZ6 _19idO: fixed bottom, full width, snow fill, z 320, no radius, no border; inner _3qIEH: max-width 1140px, padding 40px 24px (32px 16px mobile). [Full spec](components/core.md#bottom-sheet-remove-course-confirm-drawer)
+backdrop _1ATOC _1Fnem (black @ 0.4); sheet rs95t _3fIZ6 _19idO: fixed bottom, full width, snow fill, z 320, no radius, no border; inner _3qIEH: max-width 1140px, padding `space.40` 40px `space.24` 24px (32px 16px mobile. [Full spec](components/core.md#bottom-sheet-remove-course-confirm-drawer)
 
 ![bottom-sheet light](components/crops/bottom-sheet-light.png) ![bottom-sheet dark](components/crops/bottom-sheet-dark.png)
 
 ### List: settings side navigation
 
-card _1uIIO _1T_BQ (see card); section title h2 _7yUNn (heading-medium, wolf, 0 30px 16px margin); ul _1lpXi (grid, 4px gap). [Full spec](components/core.md#list-settings-side-navigation)
+card _1uIIO _1T_BQ (see card); section title h2 _7yUNn (heading-medium, wolf, 0 `space.30` 30px `space.16` 16px margin); ul _1lpXi (grid, `space.4` 4px gap). [Full spec](components/core.md#list-settings-side-navigation)
 
 ![list-settings-nav light](components/crops/list-settings-nav-light.png) ![list-settings-nav dark](components/crops/list-settings-nav-dark.png)
 
 ### List rows: courses list, search results, following list, settings rows
 
-courses row Ej0kW: 64px, flag 34x26 (18% radius, 2px white outline) + name (heading-small) + trailing REMOVE link button, 2px swan divider (_3hY-r); search result row nAD2k _39QMj: 18px 24px padding, 70px avatar, name 70. [Full spec](components/core.md#list-rows-courses-list-search-results-following-list-settings-rows)
+courses row Ej0kW: 64px, flag 34x26 (18% radius, 2px white outline) + name (heading-small) + trailing REMOVE link button, 2px swan divider (_3hY-r); search result row nAD2k _39QMj: `space.18` 18px `space.24` 24px padding. [Full spec](components/core.md#list-rows-courses-list-search-results-following-list-settings-rows)
 
 ![list-rows light](components/crops/list-rows-courses-light.png) ![list-rows dark](components/crops/list-rows-courses-dark.png)
 
 ### Cards (right-rail cards, settings side cards, stat tiles)
 
-right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, 16px radius, 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (`typography.app.cardTitle` 700 19px/28px), body (wolf, 25px lh), full-width C. [Full spec](components/core.md#cards-right-rail-cards-settings-side-cards-stat-tiles)
+right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, `radius.16` 16px radius, `space.18` 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (`typography.app.cardTitle` 700 19px/28px), body (wolf,. [Full spec](components/core.md#cards-right-rail-cards-settings-side-cards-stat-tiles)
 
 ![card light](components/crops/card-light.png) ![card dark](components/crops/card-dark.png)
 
 ### Dividers
 
-section rule <hr class="_3D1uH">: 2px swan top border, 0 margin (settings sections); list row divider: 2px swan border-bottom (_3hY-r, _39QMj, hpqEH on mobile); menu section divider: 2px swan border-bottom (_1fv9a). [Full spec](components/core.md#dividers)
+section rule <hr class="_3D1uH">: 2px swan top border, 0 margin (settings sections); list row divider: `borderWidth.2` 2px swan border-bottom (_3hY-r, _39QMj, hpqEH on mobile); menu section divider: `borderWidth.2` 2px s. [Full spec](components/core.md#dividers)
 
 ![divider light](components/crops/divider-light.png) ![divider dark](components/crops/divider-dark.png)
 
@@ -295,13 +295,13 @@ inline text-button link (web-ui variant-text-no-padding-macaw, MVjvO _1nf6U c1Mv
 
 ### Icon buttons (unstyled and framed)
 
-unstyled (variant-unstyled _1gEmM): no background/border/padding, hover brightness(1.1), glyph only (quit X 18px, close X 24px, eye 24px, clear 24px, dismiss 12px); framed square: web-ui stroke 48x48 (_2FxcQ, radius 12px. [Full spec](components/core.md#icon-buttons-unstyled-and-framed)
+unstyled (variant-unstyled _1gEmM): no background/border/padding, hover brightness(1.1), glyph only (quit X 18px, close X 24px, eye 24px, clear 24px, dismiss 12px); framed square: web-ui stroke 48x48 (_2FxcQ, radius `rad. [Full spec](components/core.md#icon-buttons-unstyled-and-framed)
 
 ![icon-button light](components/crops/icon-button-light.png) ![icon-button dark](components/crops/icon-button-dark.png)
 
 ### Table (Guidebook phrase table)
 
-`<table>` cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card; header cells: tinted fill, 2px border on every side, outer top corners rounded 16px; body cells: no fill, 2px right an. [Full spec](components/core.md#table-guidebook-phrase-table)
+`<table>` cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card; header cells: tinted fill, `borderWidth.2` 2px border on every side, outer top corners rounded 16px; body cells: no fi. [Full spec](components/core.md#table-guidebook-phrase-table)
 
 ![table light](components/crops/table-light.png) ![table dark](components/crops/table-dark.png)
 
@@ -317,7 +317,7 @@ Components distinctive to Duolingo. Full specs: [components/product.md](componen
 
 #### Sidebar navigation
 
-container: fixed full-height column with 2px right border (cl=_3P5E_); logo block (wordmark 128x30; 40x40 mark when collapsed); nav list: 8 items in a 8px-gap column. Where: every desktop page at >=700px wide (absent from all *-mobile dumps); nav items dt=home-nav, characters-nav, practice-hub-nav, leaderboard-nav, quests-nav, shop-. [Full spec](components/product.md#sidebar-navigation)
+container: fixed full-height column with 2px right border (cl=_3P5E_); logo block (wordmark 128x30; 40x40 mark when collapsed); nav list: 8 items in a 8px-gap column. Where: every desktop page at >=`breakpoint.md` 700px wide (absent from all *-mobile dumps); nav items dt=home-nav, characters-nav, practice-hub-nav, leaderboard-nav, q. [Full spec](components/product.md#sidebar-navigation)
 
 ![sidebar-nav light](components/crops/sidebar-nav-light.png) ![sidebar-nav dark](components/crops/sidebar-nav-dark.png)
 
@@ -329,25 +329,25 @@ row container 368 x 44, space-between; course trigger: flag (+ number in the lig
 
 #### Right rail
 
-outer column (cl=_1UT5d, width 368px) with a JS-sized ::before spacer; inner sticky stack (cl=_1GhPE) with 16px gaps; stat bar first, then page-specific cards, then footer links. Where: right column of every desktop page at >=700px (learn, leaderboard, quests, shop, profile, practice-hub, characters, sections, settings). [Full spec](components/product.md#right-rail)
+outer column (cl=_1UT5d, width 368px) with a JS-sized ::before spacer; inner sticky stack (cl=_1GhPE) with 16px gaps; stat bar first, then page-specific cards, then footer links. Where: right column of every desktop page at >=`breakpoint.md` 700px (learn, leaderboard, quests, shop, profile, practice-hub, characters, sections, settings). [Full spec](components/product.md#right-rail)
 
 ![right-rail light](components/crops/right-rail-light.png) ![right-rail dark](components/crops/right-rail-dark.png)
 
 #### Mobile top bar
 
-fixed full-width bar, 58px tall; four stat triggers spread with space-between: course (flag + number), streak, gems, hearts. Where: <700px on /learn and /shop only (cl=_3sbzq _1lHE4); not rendered on /leaderboard, /quests, /profile, /settings mobile. [Full spec](components/product.md#mobile-top-bar)
+fixed full-width bar, 58px tall; four stat triggers spread with space-between: course (flag + number), streak, gems, hearts. Where: <`breakpoint.md` 700px on /learn and /shop only (cl=_3sbzq _1lHE4); not rendered on /leaderboard, /quests, /profile, /settings mobile. [Full spec](components/product.md#mobile-top-bar)
 
 ![mobile-top-bar light](components/crops/mobile-top-bar-light.png) ![mobile-top-bar dark](components/crops/mobile-top-bar-dark.png)
 
 #### Mobile tab bar
 
-fixed bottom bar, 82px, top border; 6 icon-only tabs: Learn, Characters, Practice, Leaderboards, Quests, Profile (no Shop, no More); active tab: 48x48 chip with fill and border. Where: <700px on /learn, /leaderboard, /quests, /profile, /shop (cl=_1p0jQ > nav _2_E8y > _2zdkO); absent on /settings/* mobile. [Full spec](components/product.md#mobile-tab-bar)
+fixed bottom bar, 82px, top border; 6 icon-only tabs: Learn, Characters, Practice, Leaderboards, Quests, Profile (no Shop, no More); active tab: 48x48 chip with fill and border. Where: <`breakpoint.md` 700px on /learn, /leaderboard, /quests, /profile, /shop (cl=_1p0jQ > nav _2_E8y > _2zdkO); absent on /settings/* mobile. [Full spec](components/product.md#mobile-tab-bar)
 
 ![mobile-tab-bar light](components/crops/mobile-tab-bar-light.png) ![mobile-tab-bar dark](components/crops/mobile-tab-bar-dark.png)
 
 #### Page grid
 
-fixed sidebar (256 / 88 / none); content wrapper: max-width 1056, centred, padding-top 24; flex row-reverse: main column (flex 1) + 48px gap + 368px right rail, 24px side and bottom padding. Where: all logged-in pages: app wrapper cl=_3Cy6o _2kkzG (kPqwA on some pages) > _19E80 > AkzqY (max 1056) > wl71D (dt=home on /learn) > [rail _1UT5d, main _2HEhk] in . [Full spec](components/product.md#page-grid)
+fixed sidebar (256 / 88 / none); content wrapper: max-width 1056, centred, padding-top 24; flex row-reverse: main column (flex 1) + `space.48` 48px gap + 368px right rail, 24px side and bottom padding. Where: all logged-in pages: app wrapper cl=_3Cy6o _2kkzG (kPqwA on some pages) > _19E80 > AkzqY (max 1056) > wl71D (dt=home on /learn) > [rail _1UT5d, main _2HEhk] in . [Full spec](components/product.md#page-grid)
 
 ![page-grid light](components/crops/page-grid-light.png) ![page-grid dark](components/crops/page-grid-dark.png)
 
@@ -397,7 +397,7 @@ outlined card; UP NEXT pill; lock icon + "Section 5" title. Where: /learn, after
 
 #### Section card (sections page)
 
-card (radius 16, padding 0 24, grid 1fr + min-content); CEFR link button "A1 • SEE DETAILS"; section title. Where: /sections, div.JTQLF (grid, gap 16px) of div._3AIkT cards: completed ._2UWvP, in progress ._1pT8b._2E1uv, locked ._36wSS._2E1uv. [Full spec](components/product.md#section-card-sections-page)
+card (radius 16, padding 0 24, grid 1fr + min-content); CEFR link button "A1 • SEE DETAILS"; section title. Where: /sections, div.JTQLF (grid, gap `space.16` 16px) of div._3AIkT cards: completed ._2UWvP, in progress ._1pT8b._2E1uv, locked ._36wSS._2E1uv. [Full spec](components/product.md#section-card-sections-page)
 
 ![section-card light](components/crops/section-card-light.png) ![section-card dark](components/crops/section-card-dark.png)
 
@@ -405,7 +405,7 @@ card (radius 16, padding 0 24, grid 1fr + min-content); CEFR link button "A1 •
 
 #### Lesson top bar
 
-row: grid min-content | min-content | 1fr | min-content, gap 24px; close X (dt=quit-button, 18x18 img); settings gear (22x22 background-image button). Where: /lesson, header row (cl=wqSzE > _3v4ux > _18N2Q _1zcW8): dt=quit-button, settings button, role=progressbar, hearts. [Full spec](components/product.md#lesson-top-bar)
+row: grid min-content | min-content | 1fr | min-content, gap `space.24` 24px; close X (dt=quit-button, 18x18 img); settings gear (22x22 background-image button). Where: /lesson, header row (cl=wqSzE > _3v4ux > _18N2Q _1zcW8): dt=quit-button, settings button, role=progressbar, hearts. [Full spec](components/product.md#lesson-top-bar)
 
 ![lesson-top-bar light](components/crops/lesson-top-bar-light.png) ![lesson-top-bar dark](components/crops/lesson-top-bar-dark.png)
 
@@ -429,7 +429,7 @@ top rule (2px); ruled rows (60px each, 2px bottom rule); answer tiles overlay (c
 
 #### Word bank tile
 
-slot (cl=_1uV0Q, 60px tall); button (transparent 2/2/4 border for the lip space); ::before face (2px border, radius 12, 2px lip as box-shadow). Where: /lesson, dt=word-bank > button dt=<word>-challenge-tap-token. [Full spec](components/product.md#word-bank-tile)
+slot (cl=_1uV0Q, 60px tall); button (transparent 2/2/4 border for the lip space); ::before face (`borderWidth.2` 2px border, radius 12, 2px lip as box-shadow). Where: /lesson, dt=word-bank > button dt=<word>-challenge-tap-token. [Full spec](components/product.md#word-bank-tile)
 
 ![word-bank-tile light](components/crops/word-bank-tile-light.png) ![word-bank-tile dark](components/crops/word-bank-tile-dark.png)
 
@@ -441,7 +441,7 @@ card (2/2/4 transparent border, ::before face with 2px lip); number badge 30x30 
 
 #### Image select card
 
-card (same shell as choice row, padding 24px); illustration 143x160 (background-image); footer: word with ruby (left) + number badge 30x30 (right). Where: /lesson "Which one of these is ...", role=radiogroup cl=HsVVL > div dt=challenge-choice cl=_8dMUn _2_Y8r. [Full spec](components/product.md#image-select-card)
+card (same shell as choice row, padding `space.24` 24px); illustration 143x160 (background-image); footer: word with ruby (left) + number badge 30x30 (right). Where: /lesson "Which one of these is ...", role=radiogroup cl=HsVVL > div dt=challenge-choice cl=_8dMUn _2_Y8r. [Full spec](components/product.md#image-select-card)
 
 ![image-select-card light](components/crops/image-select-card-light.png)
 
@@ -551,7 +551,7 @@ popover shell (generic, _2xxCs modifier); header "MY COURSES" with bottom rule; 
 
 #### Leaderboard
 
-league badge row: current league badge 80x91, locked badges 52x58, 28px gap, grid of 11 shifted by --offset; header (sticky, snow bg): league name, subtitle ("Top 11 advance..." or join prompt), time left (bee), 2px swan. Where: /leaderboard main column; list dt=leaderboard. [Full spec](components/product.md#leaderboard)
+league badge row: current league badge 80x91, locked badges 52x58, `space.28` 28px gap, grid of 11 shifted by --offset; header (sticky, snow bg): league name, subtitle ("Top 11 advance..." or join prompt), time left (bee. Where: /leaderboard main column; list dt=leaderboard. [Full spec](components/product.md#leaderboard)
 
 ![leaderboard light](components/crops/leaderboard-light.png) ![leaderboard dark](components/crops/leaderboard-dark.png)
 
@@ -587,7 +587,7 @@ avatar banner (full column width x 224, radius 15, background = user avatar colo
 
 #### Profile statistics tile
 
-2-column grid, 12px gap; tile (2px swan border, radius 16); icon (21px wide, top-aligned). Where: /profile/<user>, Statistics: div.cl=_37tLJ grid > div.cl=_2Hzv5 > div.cl=_2uSOC. [Full spec](components/product.md#profile-statistics-tile)
+2-column grid, `space.12` 12px gap; tile (2px swan border, radius 16); icon (21px wide, top-aligned). Where: /profile/<user>, Statistics: div.cl=_37tLJ grid > div.cl=_2Hzv5 > div.cl=_2uSOC. [Full spec](components/product.md#profile-statistics-tile)
 
 ![profile-stat-tile light](components/crops/profile-stat-tile-light.png) ![profile-stat-tile dark](components/crops/profile-stat-tile-dark.png)
 
@@ -738,7 +738,7 @@ The per-icon table (file, source, where used, rendered size, fill or stroke, col
 - section-card: No mobile capture of /sections.
 - section-card: Hover states not captured.
 - section-card: Title colour on completed/in-progress cards is not recorded in the dump.
-- lesson-top-bar: Progress bar height (16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it.
+- lesson-top-bar: Progress bar height (`space.16` 16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it.
 - lesson-top-bar: What triggers bee versus fox fill is not recorded; both captured only as inline colours.
 - lesson-top-bar: Light bee fill not captured.
 - lesson-top-bar: Settings gear hover not captured, only CSS.
@@ -766,7 +766,7 @@ The per-icon table (file, source, where used, rendered size, fill or stroke, col
 - lesson-footer: Light enabled crop deleted: lesson-light-choice-selected screenshot shows CHECK still disabled.
 - feedback-bar: Light incorrect not captured: every light incorrect value is derived from the CSS rules the dark incorrect nodes use.
 - feedback-bar: Light incorrect icon image and report icon not captured; REPORT icon class for light incorrect is probably .o8H6C (images/0f625e0c64ba72c0cd96755abcc4bcdf.svg), inferred only from the order of the report-icon rules in css:1008-b4d34396.css (light correct _26G6u, dark correct Htiq_, then o8H6C, dark incorrect _2M-GA).
-- feedback-bar: TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, 2px).
+- feedback-bar: TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, `space.2` 2px).
 - review-interstitial: light theme not captured: light values derived from CSS variables and palette
 - review-interstitial: mobile layout not captured
 - review-interstitial: the body text of the bubble has no own colour on the node, so its colour comes from the body rule

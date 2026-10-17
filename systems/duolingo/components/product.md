@@ -3,17 +3,17 @@
 ## App shell
 
 ### Sidebar navigation
-Where: every desktop page at >=700px wide (absent from all *-mobile dumps); nav items dt=home-nav, characters-nav, practice-hub-nav, leaderboard-nav, quests-nav, shop-nav, profile-tab, more-nav
+Where: every desktop page at >=`breakpoint.md` 700px wide (absent from all *-mobile dumps); nav items dt=home-nav, characters-nav, practice-hub-nav, leaderboard-nav, quests-nav, shop-nav, profile-tab, more-nav
 
 Anatomy:
 - container: fixed full-height column with 2px right border (cl=_3P5E_)
 - logo block (wordmark 128x30; 40x40 mark when collapsed)
 - nav list: 8 items in a 8px-gap column
-- nav item: 32x32 icon + uppercase label, 2px border box, 12px radius when hovered/selected
+- nav item: 32x32 icon + uppercase label, `borderWidth.2` 2px border box, `radius.12` 12px radius when hovered/selected
 - notification dot on the icon (Practice)
 - profile item uses the round avatar as its icon
 - MORE item (role=button) that opens a side popover menu
-- promo card (Want to learn chess?) under the list, >=1160px only
+- promo card (Want to learn chess?) under the list, >=`breakpoint.navLabels` 1160px only
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
@@ -38,24 +38,24 @@ Anatomy:
 
 | State | What changes | Source |
 | --- | --- | --- |
-| default | transparent 2px border, no fill, label wolf | learn-dark-default #16 cl=_3Dchg |
-| hover (non-selected) | background polar, radius 12px (only under @media (hover:hover)) | css:9071-d035f2e5.css ._3Dchg:hover; captured:learn-dark-nav-hover (dt=quests-nav #35 gained rgb(32,47,54) + 12px radius) |
-| selected / active page | background iguana, 2px blue-jay border, radius 12px, label macaw (wrapper cl=_3glZ0 colours the label) | css:9071-d035f2e5.css ._348_2, ._3glZ0 ._1AZJt; captured:learn-dark-default #10 |
+| default | transparent `borderWidth.2` 2px border, no fill, label wolf | learn-dark-default #16 cl=_3Dchg |
+| hover (non-selected) | background polar, radius `radius.12` 12px (only under @media (hover:hover)) | css:9071-d035f2e5.css ._3Dchg:hover; captured:learn-dark-nav-hover (dt=quests-nav #35 gained rgb(32,47,54) + 12px radius) |
+| selected / active page | background iguana, 2px blue-jay border, radius `radius.12` 12px, label macaw (wrapper cl=_3glZ0 colours the label) | css:9071-d035f2e5.css ._348_2, ._3glZ0 ._1AZJt; captured:learn-dark-default #10 |
 | selected per page | home-nav on /learn and /sections, characters-nav, practice-hub-nav, leaderboard-nav, quests-nav, shop-nav, profile-tab on their pages; nothing selected on /settings/* | captured: *-dark-default dumps (cl=_348_2); settings-account-dark-default has no _348_2 |
 | MORE open | trigger keeps the polar hover fill (outer span cl=_3tK_c) while the popover (its DOM child) is hovered; ::after 10px bridge to the right | captured:learn-dark-more-menu #53/#54, learn-light-more-menu #53/#54; css:9071-d035f2e5.css ._3tK_c:hover, ._3tK_c:hover:after |
 | MORE menu row hover | row background polar; the inner item span drops its own hover fill but the outer _3tK_c keeps it | captured:learn-dark-more-menu-item-hover dt=settings-button (#68); css:9071-d035f2e5.css .GHXZL:hover |
 | focus / active (pressed) | no :focus, :focus-visible or :active rules exist for the nav item classes | states_for on _22Pme _33YLo p3liX YAEPa _3Dchg _348_2 _2dvyl: none |
-| collapsed hover tooltip (<1160) | label shown as a fixed tooltip: background wolf, text snow, radius 8px, padding 7px 12px, 15px, left 88px | css:9071-d035f2e5.css .j5zXd (not captured) |
+| collapsed hover tooltip (<1160) | label shown as a fixed tooltip: background wolf, text snow, radius `radius.8` 8px, padding 7px `space.12` 12px, 15px, left 88px | css:9071-d035f2e5.css .j5zXd (not captured) |
 
-Tokens (dark): container background `surface.default` #131F24 (snow, dark); container border-right `border.default` #37464F (swan, dark); label (default) color `text.secondary` #DCE6EC (wolf, dark); label (selected) color `text.link` #49C0F8 (macaw, dark); item (selected) background `surface.selected` #202F36 (iguana, dark); item (selected) border 2px `border.selected` #3F85A7 (blue-jay, dark); item (hover) background `surface.subtle` #202F36 (polar, dark), same hex as iguana in dark, so selected differs from hover only by the blue-jay border; notification dot fill / ring `accent.danger.face` #EE5555 (cardinal, dark) / 2px `surface.default` #131F24 (snow, dark); MORE popover surface / border / row hover `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) / `surface.subtle` #202F36 (polar, dark); MORE popover row text `text.secondary` #DCE6EC (wolf, dark); promo card border / title / body / CTA `border.default` #37464F (swan) / `text.primary` #F1F7FB (eel, from CSS; equal to the dump default) / `text.secondary` #DCE6EC (wolf) / `text.link` #49C0F8 (macaw), dark
+Tokens (dark): container background `surface.default` #131F24 (snow, dark); container border-right `border.default` #37464F (swan, dark); label (default) color `text.secondary` #DCE6EC (wolf, dark); label (selected) color `text.link` #49C0F8 (macaw, dark); item (selected) background `surface.selected` #202F36 (iguana, dark); item (selected) border `borderWidth.2` 2px `border.selected` #3F85A7 (blue-jay, dark); item (hover) background `surface.subtle` #202F36 (polar, dark), same hex as iguana in dark, so selected differs from hover only by the blue-jay border; notification dot fill / ring `accent.danger.face` #EE5555 (cardinal, dark) / 2px `surface.default` #131F24 (snow, dark); MORE popover surface / border / row hover `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark) / `surface.subtle` #202F36 (polar, dark); MORE popover row text `text.secondary` #DCE6EC (wolf, dark); promo card border / title / body / CTA `border.default` #37464F (swan) / `text.primary` #F1F7FB (eel, from CSS; equal to the dump default) / `text.secondary` #DCE6EC (wolf) / `text.link` #49C0F8 (macaw), dark
 
-Tokens (light): container background `surface.default` #FFFFFF (snow, light); container border-right `border.default` #E5E5E5 (swan, light); label (default) color `text.secondary` #777777 (wolf, light); label (selected) color `text.link` #1CB0F6 (macaw, light); item (selected) background `surface.selected` #DDF4FF (iguana, light); item (selected) border 2px `border.selected` #84D8FF (blue-jay, light); item (hover) background `surface.subtle` #F7F7F7 (polar, light); notification dot fill / ring `accent.danger.face` #FF4B4B (cardinal, light) / 2px `surface.default` #FFFFFF (snow, light); MORE popover surface / border / row text `text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.secondary` #777777 (wolf), light; promo card border / title / body / CTA `border.default` #E5E5E5 (swan) / `text.primary` #4B4B4B (eel) / `text.secondary` #777777 (wolf) / `text.link` #1CB0F6 (macaw), light
+Tokens (light): container background `surface.default` #FFFFFF (snow, light); container border-right `border.default` #E5E5E5 (swan, light); label (default) color `text.secondary` #777777 (wolf, light); label (selected) color `text.link` #1CB0F6 (macaw, light); item (selected) background `surface.selected` #DDF4FF (iguana, light); item (selected) border `borderWidth.2` 2px `border.selected` #84D8FF (blue-jay, light); item (hover) background `surface.subtle` #F7F7F7 (polar, light); notification dot fill / ring `accent.danger.face` #FF4B4B (cardinal, light) / 2px `surface.default` #FFFFFF (snow, light); MORE popover surface / border / row text `text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.secondary` #777777 (wolf), light; promo card border / title / body / CTA `border.default` #E5E5E5 (swan) / `text.primary` #4B4B4B (eel) / `text.secondary` #777777 (wolf) / `text.link` #1CB0F6 (macaw), light
 
 Type: nav label: duolingo-sans 700 15px, line-height 25px, uppercase, letter-spacing 0.8px (0 for [lang=ar]); container base: `typography.app.railBody` 500 17px/25px duolingo-sans, antialiased; MORE popover row: 700 15px/16px uppercase (link rows add letter-spacing 0.8px from ._1AZJt); promo title / body / CTA: 700 20/24 / 400 16/24 / `typography.button.small` 700 14px/28px uppercase ls 0.56px
 
-Contains: popover shell (MORE menu, side placement, 15px radius), menu (MORE menu rows), card (chess promo, 12px radius variant), button: text/ghost macaw (TRY CHESS)
+Contains: popover shell (MORE menu, side placement, `radius.15` 15px radius), menu (MORE menu rows), card (chess promo, `radius.12` 12px radius variant), button: text/ghost macaw (TRY CHESS)
 
-Desktop vs mobile: >=1160px: 256px wide with labels, wordmark and promo card. 700-1159px: 88px icon-only rail (labels display none, items 48px tall and centred, 40x40 logo mark, hover tooltip), page padding-left 88px (css:4243 ._19E80). <700px: not rendered; replaced by mobile-top-bar and mobile-tab-bar (absent from every *-mobile dump).
+Desktop vs mobile: >=`breakpoint.navLabels` 1160px: 256px wide with labels, wordmark and promo card. 700-1159px: 88px icon-only rail (labels display none, items 48px tall and centred, 40x40 logo mark, hover tooltip), page padding-left 88px (css:4243 ._19E80). <`breakpoint.md` 700px: not rendered; replaced by mobile-top-bar and mobile-tab-bar (absent from every *-mobile dump).
 
 Crops: [sidebar-nav-dark](crops/sidebar-nav-dark.png) · [sidebar-nav-light](crops/sidebar-nav-light.png) · [sidebar-nav--more-open-dark](crops/sidebar-nav--more-open-dark.png) · [sidebar-nav--more-open-light](crops/sidebar-nav--more-open-light.png) · [sidebar-nav--more-item-hover-dark](crops/sidebar-nav--more-item-hover-dark.png)
 
@@ -115,7 +115,7 @@ Gaps: Active streak on desktop dark and inactive streak on desktop light were no
 Notes: The dropdown diffs also add a 14x22 svg at the pointer: that is the capture tool's cursor, not UI.
 
 ### Right rail
-Where: right column of every desktop page at >=700px (learn, leaderboard, quests, shop, profile, practice-hub, characters, sections, settings)
+Where: right column of every desktop page at >=`breakpoint.md` 700px (learn, leaderboard, quests, shop, profile, practice-hub, characters, sections, settings)
 
 Anatomy:
 - outer column (cl=_1UT5d, width 368px) with a JS-sized ::before spacer
@@ -130,7 +130,7 @@ Anatomy:
 | rail | position (static variant) | cl=_3hqQW: flex column, width 368, not sticky (used on /quests and /profile) | quests-dark-default cl=_3hqQW _1UT5d _2YNyh (#66); profile-dark-default (#66); css:5275-8898b509.css ._3hqQW |
 | stack | gap | `space.16` 16px between cards; the stat bar adds its own `space.8` 8px margin-bottom, so the first card starts 68px below the rail top (y 92) | learn-dark-default cl=_1GhPE (#68), _2gxqo (#69); css:5275-8898b509.css ._1GhPE |
 | rail | z-index | 1 (main column z-index 0) | css:5275-8898b509.css ._2YNyh, ._2HEhk |
-| cards | common shell | 368 wide, padding `space.18` 18px, 2px border, radius `radius.16` 16px (card class _2cnFr _1T_BQ) | learn-dark-default #95; css:1008-b4d34396.css ._2cnFr, ._1T_BQ |
+| cards | common shell | 368 wide, padding `space.18` 18px, `borderWidth.2` 2px border, radius `radius.16` 16px (card class _2cnFr _1T_BQ) | learn-dark-default #95; css:1008-b4d34396.css ._2cnFr, ._1T_BQ |
 | footer links | box | 348 wide, margin `space.16` 16px `space.10` 10px `space.4` 4px, flex wrap centred; each li margin 0 `space.10` 10px `space.12` 12px; link 13px/16px 700 uppercase | learn-dark-default dt=footer-links (#134), cl=pQQIb (#135), cl=_1oCct (#136); css:5275-8898b509.css ._3mfHU, .pQQIb, ._1oCct |
 | order /learn (dark 1200) | cards [y, h] | stat bar [24,44]; Super promo _16rRh [92,233]; Leaderboard result card [341,230]; Daily Quests [587,165]; ad-blocker Super card _3D_HB [768,330]; footer [1130,64] | learn-dark-default children of #68 |
 | order /learn (light 1384) | cards [y, h] | stat bar [24,44]; Super promo [92,233]; Bronze League card [341,178]; Daily Quests [535,165]; ad-blocker card [716,330]; footer [1078,64] | learn-light-default children of #68 |
@@ -152,9 +152,9 @@ Tokens (light): card shell background / border `surface.default` #FFFFFF (snow, 
 
 Type: footer links: duolingo-sans `typography.app.footerLink` 700 13px/16px uppercase
 
-Contains: card (16px radius, 2px border), button: primary / secondary inside cards (documented by the card owners)
+Contains: card (`radius.16` 16px radius, `borderWidth.2` 2px border), button: primary / secondary inside cards (documented by the card owners)
 
-Desktop vs mobile: Not rendered below 700px (no _1UT5d node in any *-mobile dump); its stat bar moves to mobile-top-bar and the cards are dropped.
+Desktop vs mobile: Not rendered below `breakpoint.md` 700px (no _1UT5d node in any *-mobile dump); its stat bar moves to mobile-top-bar and the cards are dropped.
 
 Crops: [right-rail-dark](crops/right-rail-dark.png) · [right-rail-light](crops/right-rail-light.png)
 
@@ -163,7 +163,7 @@ Gaps: --sidebar-offset and --app-offset are set by JS; their live values were no
 Notes: The Leaderboard card differs by moment, not theme: dark captured the end-of-week result card, light the in-week Bronze League card.
 
 ### Mobile top bar
-Where: <700px on /learn and /shop only (cl=_3sbzq _1lHE4); not rendered on /leaderboard, /quests, /profile, /settings mobile
+Where: <`breakpoint.md` 700px on /learn and /shop only (cl=_3sbzq _1lHE4); not rendered on /leaderboard, /quests, /profile, /settings mobile
 
 Anatomy:
 - fixed full-width bar, 58px tall
@@ -202,7 +202,7 @@ Crops: [mobile-top-bar-dark](crops/mobile-top-bar-dark.png) · [mobile-top-bar-l
 Gaps: Border-bottom variant (without hJZ_L) was not seen on any captured page. Dropdown/open state and any themed (--web-ui_topbar-*) variant not captured on mobile.
 
 ### Mobile tab bar
-Where: <700px on /learn, /leaderboard, /quests, /profile, /shop (cl=_1p0jQ > nav _2_E8y > _2zdkO); absent on /settings/* mobile
+Where: <`breakpoint.md` 700px on /learn, /leaderboard, /quests, /profile, /shop (cl=_1p0jQ > nav _2_E8y > _2zdkO); absent on /settings/* mobile
 
 Anatomy:
 - fixed bottom bar, 82px, top border
@@ -223,19 +223,19 @@ Anatomy:
 
 | State | What changes | Source |
 | --- | --- | --- |
-| active | iguana fill, 2px blue-jay border, 8px radius; icon unchanged (same src) | captured:learn-dark-mobile #28 (Learn), leaderboard-dark-mobile #16, quests-dark-mobile #19, profile-dark-mobile #22 and light twins; css:5275-8898b509.css ._2-WjO |
+| active | iguana fill, 2px blue-jay border, `radius.8` 8px radius; icon unchanged (same src) | captured:learn-dark-mobile #28 (Learn), leaderboard-dark-mobile #16, quests-dark-mobile #19, profile-dark-mobile #22 and light twins; css:5275-8898b509.css ._2-WjO |
 | no active tab | on /shop none of the 6 tabs is active (Shop has no tab) | captured:shop-dark-mobile, shop-light-mobile #28-#43 |
 | hover / pressed / focus | no rules for _3UCzw, _39wwe, _3J4we | states_for: none |
 
-Tokens (dark): bar background / top border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); active chip background `surface.selected` #202F36 (iguana, dark); active chip border 2px `border.selected` #3F85A7 (blue-jay, dark)
+Tokens (dark): bar background / top border `surface.default` #131F24 (snow, dark) / `border.default` #37464F (swan, dark); active chip background `surface.selected` #202F36 (iguana, dark); active chip border `borderWidth.2` 2px `border.selected` #3F85A7 (blue-jay, dark)
 
-Tokens (light): bar background / top border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); active chip background `surface.selected` #DDF4FF (iguana, light); active chip border 2px `border.selected` #84D8FF (blue-jay, light)
+Tokens (light): bar background / top border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); active chip background `surface.selected` #DDF4FF (iguana, light); active chip border `borderWidth.2` 2px `border.selected` #84D8FF (blue-jay, light)
 
 Type: tabs: icon only; accessible name via aria-label (Learn, Characters, Practice, Leaderboards, Quests, Profile)
 
 Contains: none
 
-Desktop vs mobile: Mobile-only replacement for sidebar-nav: icons 40px (desktop 32px), no labels, chip radius 8px (desktop item 12px), same iguana/blue-jay selected tokens; Shop and More are not reachable from the bar.
+Desktop vs mobile: Mobile-only replacement for sidebar-nav: icons 40px (desktop 32px), no labels, chip radius `radius.8` 8px (desktop item 12px), same iguana/blue-jay selected tokens; Shop and More are not reachable from the bar.
 
 Crops: [mobile-tab-bar-dark](crops/mobile-tab-bar-dark.png) · [mobile-tab-bar-light](crops/mobile-tab-bar-light.png) · [mobile-tab-bar--leaderboard-active-dark](crops/mobile-tab-bar--leaderboard-active-dark.png)
 
@@ -247,11 +247,11 @@ Where: all logged-in pages: app wrapper cl=_3Cy6o _2kkzG (kPqwA on some pages) >
 Anatomy:
 - fixed sidebar (256 / 88 / none)
 - content wrapper: max-width 1056, centred, padding-top 24
-- flex row-reverse: main column (flex 1) + 48px gap + 368px right rail, 24px side and bottom padding
+- flex row-reverse: main column (flex 1) + `space.48` 48px gap + 368px right rail, 24px side and bottom padding
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| app wrapper | min-width / top padding | >=700px: min-width 900px, margin 0 auto, padding-top calc(var(--app-offset) + `space.24` 24px); below: padding-top var(--app-offset) | learn-dark-default cl=_3Cy6o _2kkzG (#1); css:4243-a8d324a8.css ._2kkzG |
+| app wrapper | min-width / top padding | >=`breakpoint.md` 700px: min-width 900px, margin 0 auto, padding-top calc(var(--app-offset) + `space.24` 24px); below: padding-top var(--app-offset) | learn-dark-default cl=_3Cy6o _2kkzG (#1); css:4243-a8d324a8.css ._2kkzG |
 | sidebar offset | padding-left | 256px at >=1160, 88px below (the fixed sidebar width) | learn-dark-default cl=_19E80 (#2); css:4243-a8d324a8.css ._19E80 |
 | content wrapper | max-width | 1056px, margin 0 auto, width 100%, padding-top `space.24` 24px | learn-dark-default cl=AkzqY (#65); css:4243-a8d324a8.css .AkzqY |
 | row | flex | flex-direction row-reverse (>=700) / column (<700); gap `space.48` 48px; padding 0 `space.24` 24px `space.24` 24px (>=700 only) | learn-dark-default dt=home cl=wl71D (#66); css:4819-8f413e73.css .wl71D |
@@ -269,12 +269,12 @@ Anatomy:
 | /learn | main 480 @280, rail 368 @808 (sticky) | main 592 @316, rail 368 @956 (sticky) | main 570, top bar + tab bar (Learn active) |
 | /leaderboard | main 480 (inner max 592), rail sticky | main 592 | full bleed, tab bar only (Leaderboards active), sticky league header |
 | /quests | main 480, rail static (_3hqQW) | main 592, rail static | full bleed, tab bar only (Quests active) |
-| /shop | main 480, rail sticky | main 592 | padding 16px, top bar + tab bar (none active) |
-| /profile | main 480, rail static | main 592, rail static | padding 0 16px, tab bar only (Profile active) |
+| /shop | main 480, rail sticky | main 592 | padding `space.16` 16px, top bar + tab bar (none active) |
+| /profile | main 480, rail static | main 592, rail static | padding 0 `space.16` 16px, tab bar only (Profile active) |
 | /practice-hub | main 480, rail sticky | main 592 | not captured |
 | /characters | main 480, rail sticky | main 592 | not captured |
 | /sections | main 516 (overflows), rail @844 | main 592 | not captured |
-| /settings/* | main 480, rail sticky (settings cards, no stat bar) | main 592 | no top bar, no tab bar; sticky 58px page header _3Zt5A; padding 24px 16px |
+| /settings/* | main 480, rail sticky (settings cards, no stat bar) | main 592 | no top bar, no tab bar; sticky 58px page header _3Zt5A; padding `space.24` 24px `space.16` 16px |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -307,16 +307,16 @@ Anatomy:
 - banner (PsNCe): 2-column grid, unit colour background, radius 13
 - back link row: arrow icon 16x16 + label "SECTION 4, UNIT 12" (links to /sections)
 - unit title
-- GUIDEBOOK button (grid column 2, spans both rows): 24px notebook icon + label (label only at >=1100px)
+- GUIDEBOOK button (grid column 2, spans both rows): 24px notebook icon + label (label only at >=`breakpoint.xl` 1100px)
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| sticky wrapper | position / top / z-index | sticky, top 0 (>=700px), z-index 210, min-height 82px | learn-dark-default cl=_1g8jV (#152); css:path-e50cab6b.css ._1g8jV |
+| sticky wrapper | position / top / z-index | sticky, top 0 (>=`breakpoint.md` 700px), z-index 210, min-height 82px | learn-dark-default cl=_1g8jV (#152); css:path-e50cab6b.css ._1g8jV |
 | spacer above banner | height | 24px (desktop), 0 (mobile) | learn-dark-default cl=_3LueZ (#153) r=[280,0,480,24]; css:path-e50cab6b.css ._3LueZ |
 | banner | width x height | 480 x `size.unitHeaderHeight` 90px at 1200 viewport; 592 x `size.unitHeaderHeight` 90px at 1384 viewport (fills the path column) | learn-dark-default cl=PsNCe LJB6r (#154); learn-light-default (#163) |
 | banner | padding | `space.16` 16px | learn-dark-default PsNCe (#154) |
-| banner | gap (row / column) | `space.6` 6px / `space.16` 16px (row-gap 3px below 700px) | learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe |
-| banner | border-radius | `radius.13` 13px (>=700px only; 0 on mobile) | learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe @media (min-width:700px) |
+| banner | gap (row / column) | `space.6` 6px / `space.16` 16px (row-gap 3px below `breakpoint.md` 700px) | learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe |
+| banner | border-radius | `radius.13` 13px (>=`breakpoint.md` 700px only; 0 on mobile) | learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe @media (min-width:700px) |
 | back link | layout | flex, gap `space.8` 8px; arrow img 16x16; r=[296,40,284,24] | learn-dark-default cl=_3HqVu (#155), img (#156) |
 | section/unit label | size | 127 x 24px, opacity 0.7 | learn-dark-default h1 cl=_3WYpp (#157) |
 | title | size | 284 x 28px, max-width 100% | learn-dark-default span cl=U_xpg (#158) |
@@ -324,7 +324,7 @@ Anatomy:
 | GUIDEBOOK button | padding | `space.12` 12px `space.14` 14px `space.12` 12px `space.12` 12px | learn-dark-default (#159); css:path-e50cab6b.css ._1ORKS |
 | GUIDEBOOK button | border width / radius | 2px sides and top, 4px bottom (lip); radius `radius.16` 16px | learn-dark-default (#159) |
 | GUIDEBOOK icon | size | 24 x 24px | learn-dark-default img cl=uGhFr (#160) |
-| GUIDEBOOK label | margin-left / display | `space.12` 12px; display none below 1100px viewport | learn-dark-default span cl=_30k3d (#161); css:path-e50cab6b.css ._30k3d @media (min-width:1100px) |
+| GUIDEBOOK label | margin-left / display | `space.12` 12px; display none below `breakpoint.xl` 1100px viewport | learn-dark-default span cl=_30k3d (#161); css:path-e50cab6b.css ._30k3d @media (min-width:1100px) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -358,7 +358,7 @@ Type:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | section/unit label | font | `typography.caption.bold` 700 16px/24px, opacity 0.7 (not uppercased by CSS; the string is uppercase) | learn-dark-default _3WYpp (#157); css:path-e50cab6b.css ._3WYpp |
-| title | font | `typography.path.unitHeaderTitle` 700 22px/28px (19px/22px below 700px) | learn-dark-default U_xpg (#158); css:path-e50cab6b.css .U_xpg |
+| title | font | `typography.path.unitHeaderTitle` 700 22px/28px (19px/22px below `breakpoint.md` 700px) | learn-dark-default U_xpg (#158); css:path-e50cab6b.css .U_xpg |
 | GUIDEBOOK label | font | `typography.button.default` 700 15px/18px uppercase, letter-spacing 0.8px (duolingo-sans via button class _1ursp) | learn-dark-default (#161); css:4779-c36ad395.css ._1ursp |
 | all | font-family | not recorded in dumps (body rule: `typography.app.bodyDefault` 500 17px/20px) | css:app-f2ef02f8.css body |
 
@@ -378,7 +378,7 @@ Unit colours:
 | legendary (gold) | banner vars | jTeoa / _13YX7._1Bwfb: `gamification.xp` bee #FFC800 L / #FFC700 D with `palette.light.gold-shine` gold-shine #FFE700 @0.5 diagonal stripes (136deg: 10-40%, 53-71%), text `dataViz.progress.labelOnFill` guinea-pig-always-light #CD7900 | css only: css:path-e50cab6b.css .jTeoa, ._13YX7._1Bwfb |
 
 Contains: button: secondary (GUIDEBOOK, desktop), button: unit-coloured split button (mobile)
-Desktop vs mobile: Mobile (<700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face `unitColors.green` owl-always-light #58CC02, 4px lip `palette.light.tree-frog-always-light` tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.
+Desktop vs mobile: Mobile (<`breakpoint.md` 700px): the banner becomes two joined buttons inside div.SwnLV (padding 0 `space.16` 16px, min-height 82px): left a._1Cm_g 482x82 (radius 12 0 0 12, padding 0 16 12, face `unitColors.green` owl-always-light #58CC02, 4px lip `palette.light.tree-frog-always-light` tree-frog-always-light #58A700), right guidebook a._1J0Ov 56x82 (radius 0 12 12 0, padding 16, icon 24x24, 2px tree-frog divider on its left edge). Label h1.nS3-9 16px/24px 700 uppercase opacity 0.7 margin-top 12; title span._1ejwf 19px/22px 700. Sticky at top 58px under the mobile top bar with a snow background (._3IQDn). No back arrow, no GUIDEBOOK text. Source: learn-dark-mobile #49-#55 and ::before of #51/#54; css:path-e50cab6b.css ._1Cm_g, ._1J0Ov, .FxC7I, ._2Wapu, ._3IQDn. The mobile screenshots show a different moment (SECTION 4, UNIT 1, macaw) than the mobile dump (UNIT 12, owl); the mobile crop is visual only.
 Crops: [unit-header-dark](crops/unit-header-dark.png) · [unit-header-light](crops/unit-header-light.png) · [unit-header--starfish-dark](crops/unit-header--starfish-dark.png) · [unit-header--starfish-light](crops/unit-header--starfish-light.png) · [unit-header--mobile-dark](crops/unit-header--mobile-dark.png) · [unit-header--mobile-light](crops/unit-header--mobile-light.png)
 Gaps: Only owl and starfish banners were captured on desktop; other unit colours are from CSS only.; Legendary (gold) banner not in any dump.; GUIDEBOOK hover/active not captured (CSS only).; Mobile screenshots do not match the mobile dumps (screenshot shows unit 1 macaw, dump shows unit 12 owl); mobile colours are taken from the dump only.
 Notes: Dark theme rules (html[data-duo-theme=dark] .EDeQe:not(._1Bwfb) etc.) switch --path-unit-background-color to `palette.dark.polar-always-dark` polar-always-dark #202F36 inside the path sections, but the banner uses its own colour class (LJB6r) so it stays saturated.
@@ -449,7 +449,7 @@ Anatomy:
 | side band (::before) | size | 70 x 8px at top 28.5px, same colour stack as the lip | learn-dark-default (#1236) ::before; css:path-e50cab6b.css ._3Jm09:before |
 | icon | size / position | 42 x 34px at left 14px, top 11.5px | learn-dark-default img cl=_1B6UH (#1237); css:path-e50cab6b.css ._1B6UH |
 | shine overlay | size / position | 56 x 51px box at left 6, top 5; svg 56x46 | learn-dark-default span cl=_1kZ3q _25i8d _1IwKR (#573), svg (#574) |
-| progress ring | size | 98 x 98px svg scaled 0.946 vertically = 98 x 93px; node sits inside with 14px margin (_1xsb4) | learn-dark-default svg cl=_2FMGJ (#1231), div cl=_1xsb4 (#1235); css:path-e50cab6b.css ._2FMGJ, ._1xsb4 |
+| progress ring | size | 98 x 98px svg scaled 0.946 vertically = 98 x 93px; node sits inside with `space.14` 14px margin (_1xsb4) | learn-dark-default svg cl=_2FMGJ (#1231), div cl=_1xsb4 (#1235); css:path-e50cab6b.css ._2FMGJ, ._1xsb4 |
 | progress ring | stroke | outer radius 50, inner 42 in a 100 viewBox = 8 units, about 7.8px rendered; arc ends rounded (r 4) | dumps/icons-_learn.json svg._2FMGJ |
 | zig-zag | horizontal offsets (wrapper left) | 0, +44.884, +70, +44.884, 0, -44.884, -70, -44.884, 0 ... (px from column centre); the sign of the first swing alternates per unit (unit 79 and 81 start +, unit 80 and 82 start -) | learn-dark-default div.R7x3_ wrappers of #572-#729 (unit 79), #1036-#1175 (unit 80), #1236-#1303 (unit 81) |
 | zig-zag | vertical gap (wrapper margin-top) | 11.853px between rows at offset 0 and 44.884; 20.383px between 44.884 and 70; so centre-to-centre pitch 76.9px or 85.4px | learn-dark-default R7x3_ wrappers (e.g. parent of #1245 mt 11.8533, parent of #1250 mt 20.3826) |
@@ -649,7 +649,7 @@ Anatomy:
 | --- | --- | --- | --- |
 | button | width x height | 52 x 52px | learn-dark-completed-unit (#1668); css:path-e50cab6b.css ._2dnkd |
 | button | border / radius | 2px sides and top, 4px bottom; radius `radius.16` 16px; ::before inset -2px with `space.2` 2px border and 0 `borderWidth.2` 2px lip | learn-dark-completed-unit (#1668) |
-| button | position | sticky, bottom 24px (>=700px; 98px on mobile), right edge on the column edge (x 708-760 in a 280-760 column) | learn-dark-completed-unit (#1668); css:path-e50cab6b.css ._2El3L |
+| button | position | sticky, bottom 24px (>=`breakpoint.md` 700px; 98px on mobile), right edge on the column edge (x 708-760 in a 280-760 column) | learn-dark-completed-unit (#1668); css:path-e50cab6b.css ._2El3L |
 | icon | size | 18 x 20px | learn-dark-completed-unit img cl=_3wVBw _1FKvm (#1669); css:path-e50cab6b.css ._1FKvm |
 
 | State | What changes | Source |
@@ -746,7 +746,7 @@ Crops: [section-end-card-dark](crops/section-end-card-dark.png) · [section-end-
 Gaps: Card bottom (y 797-835) is below the viewport in both screenshots; crops cut 38px of the bottom padding.; Unlocked variant not captured.; Mobile not captured.
 
 ### Section card (sections page)
-Where: /sections, div.JTQLF (grid, gap 16px) of div._3AIkT cards: completed ._2UWvP, in progress ._1pT8b._2E1uv, locked ._36wSS._2E1uv
+Where: /sections, div.JTQLF (grid, gap `space.16` 16px) of div._3AIkT cards: completed ._2UWvP, in progress ._1pT8b._2E1uv, locked ._36wSS._2E1uv
 
 Anatomy:
 - card (radius 16, padding 0 24, grid 1fr + min-content)
@@ -825,7 +825,7 @@ Type:
 | title colour (completed, in progress) | colour | inherits body text (`text.body` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump (estimated) | css:app-f2ef02f8.css body |
 
 Contains: button: secondary, button: primary (macaw), progress bar, speech bubble
-Desktop vs mobile: CSS only: below 700px the completed card gets 16px side margins (._2UWvP @media (max-width:699px)); no mobile dump of /sections.
+Desktop vs mobile: CSS only: below `breakpoint.md` 700px the completed card gets 16px side margins (._2UWvP @media (max-width:699px)); no mobile dump of /sections.
 Crops: [section-card-dark](crops/section-card-dark.png) · [section-card-light](crops/section-card-light.png)
 Gaps: In-progress card is cut at the viewport bottom (797) in both screenshots; locked cards are off screen, so no crop shows them.; No mobile capture of /sections.; Hover states not captured.; Title colour on completed/in-progress cards is not recorded in the dump.
 Notes: CEFR-tier colours for other courses (rookie, explorer, traveler, ... champion) exist in css:pathSections-c1a583d8.css but were not used here.
@@ -836,7 +836,7 @@ Notes: CEFR-tier colours for other courses (rookie, explorer, traveler, ... cham
 Where: /lesson, header row (cl=wqSzE > _3v4ux > _18N2Q _1zcW8): dt=quit-button, settings button, role=progressbar, hearts
 
 Anatomy:
-- row: grid min-content | min-content | 1fr | min-content, gap 24px
+- row: grid min-content | min-content | 1fr | min-content, gap `space.24` 24px
 - close X (dt=quit-button, 18x18 img)
 - settings gear (22x22 background-image button)
 - progress bar: track, fill (clip-path to value), secondary inner fill (bee), highlight stripe
@@ -893,7 +893,7 @@ Type: hearts count: duolingo-sans `typography.app.bodyStrong` 700 17px/20px (bod
 
 Contains: none
 
-Desktop vs mobile: Below 700px: row gap 20px instead of 24px (css:1584-b289a3ce.css ._1zcW8), the 50px 40px top padding is dropped (css:1584-b289a3ce.css ._3v4ux @media (min-width:700px)) and the lesson grid gets padding 24px 16px with rows min-content 1fr min-content (css:1584-b289a3ce.css ._2G9ED, ._29gfw). 700px+ with max-height 650px: top padding 40px, header row 90px. No mobile lesson dump exists.
+Desktop vs mobile: Below 700px: row gap `space.20` 20px instead of 24px (css:1584-b289a3ce.css ._1zcW8), the 50px 40px top padding is dropped (css:1584-b289a3ce.css ._3v4ux @media (min-width:700px)) and the lesson grid gets padding `space.24` 24px `space.16` 16px with rows min-content 1fr min-content (css:1584-b289a3ce.css ._2G9ED, ._29gfw). 700px+ with max-height 650px: top padding `space.40` 40px, header row 90px. No mobile lesson dump exists.
 
 Crops: [dark](crops/lesson-top-bar-dark.png) · [light](crops/lesson-top-bar-light.png) · [combo-light](crops/lesson-top-bar--combo-light.png) · [bee-dark](crops/lesson-top-bar--bee-dark.png)
 
@@ -914,7 +914,7 @@ Anatomy:
 | badge | width x height | 600 x 32px (inline-flex, align center) | lesson-dark-tile-hover cl=w2K8w (#32) |
 | badge icon | box / glyph | 32 x 32px span, margin-inline-end `space.4` 4px; svg path 24 x 24px | lesson-light-select-default cl=_1dTNB (#33), path (#35); css:4358-6896adab.css ._1dTNB |
 | title | width x height | 600 x 40px, text-align left | lesson-dark-tile-hover dt=challenge-header (#36) |
-| header to body | gap | `space.24` 24px (`space.16` 16px below 700px, `space.8` 8px when max-height 500px) | css:4358-6896adab.css .K3vbJ |
+| header to body | gap | `space.24` 24px (`space.16` 16px below `breakpoint.md` 700px, `space.8` 8px when max-height 500px) | css:4358-6896adab.css .K3vbJ |
 | challenge column | width / min-height | 600px / 450px (700px+) | css:4358-6896adab.css ._2n5fx @media (min-width:700px) |
 
 | State | What changes | Source |
@@ -944,7 +944,7 @@ Type: title: duolingo-sans `typography.lesson.challengeHeader` 700 32px/40px (25
 
 Contains: none
 
-Desktop vs mobile: Title 25px below 700px, 32px at 700px+ (css:4358-6896adab.css ._3EOK0 @media (min-width:700px)). Header to body gap 16px below 700px.
+Desktop vs mobile: Title 25px below `breakpoint.md` 700px, 32px at 700px+ (css:4358-6896adab.css ._3EOK0 @media (min-width:700px)). Header to body gap `space.16` 16px below `breakpoint.md` 700px.
 
 Crops: [dark](crops/challenge-header-dark.png) · [light](crops/challenge-header-light.png)
 
@@ -1070,7 +1070,7 @@ Where: /lesson, dt=word-bank > button dt=<word>-challenge-tap-token
 Anatomy:
 - slot (cl=_1uV0Q, 60px tall)
 - button (transparent 2/2/4 border for the lip space)
-- ::before face (2px border, radius 12, 2px lip as box-shadow)
+- ::before face (`borderWidth.2` 2px border, radius 12, 2px lip as box-shadow)
 - label span dt=challenge-tap-token-text
 
 | Part | Property | Value | Source |
@@ -1137,7 +1137,7 @@ Anatomy:
 | --- | --- | --- | --- |
 | row | width x height | 600 x `size.choiceRowHeight` 70px with furigana (600 x 60px without) | lesson-dark-choice-default dt=challenge-choice (#40); lesson-dark-dialogue-default #90 |
 | row | padding | `space.12` 12px `space.16` 16px | lesson-dark-choice-default #40; css:1327-4028784b.css ._1G3d- |
-| row | radius / border | 12px; 2px 2px 4px transparent, face ::before inset -2px, 2px border, lip 0 2px 0 | lesson-dark-choice-default #40; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
+| row | radius / border | 12px; 2px 2px 4px transparent, face ::before inset -2px, `borderWidth.2` 2px border, lip 0 2px 0 | lesson-dark-choice-default #40; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
 | list | gap | `space.8` 8px | lesson-dark-choice-default cl=PaKCO _1vQbM (#39); css:1327-4028784b.css ._1vQbM |
 | number badge | size / border / radius | 30 x 30px, 2px, radius `radius.8` 8px | lesson-dark-choice-default cl=_3zbIX _20AkF (#41) |
 | label | margin | 0 `space.14` 14px 0 `space.12` 12px, centred, flex 1 | lesson-dark-choice-default cl=CwCwj _1FXPg (#42) |
@@ -1191,18 +1191,18 @@ Gaps: lesson-light-choice-selected screenshot shows the moment before selection 
 Where: /lesson "Which one of these is ...", role=radiogroup cl=HsVVL > div dt=challenge-choice cl=_8dMUn _2_Y8r
 
 Anatomy:
-- card (same shell as choice row, padding 24px)
+- card (same shell as choice row, padding `space.24` 24px)
 - illustration 143x160 (background-image)
 - footer: word with ruby (left) + number badge 30x30 (right)
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | card | width x height | 195 x 261px, 3 across with 8px gap | lesson-light-select-default dt=challenge-choice (#40, #59, #78); cl=HsVVL (#39) |
-| card | padding | `space.24` 24px (`space.12` 12px below 700px) | lesson-light-select-default #40; css:1327-4028784b.css ._2_Y8r |
+| card | padding | `space.24` 24px (`space.12` 12px below `breakpoint.md` 700px) | lesson-light-select-default #40; css:1327-4028784b.css ._2_Y8r |
 | card | radius / lip | `radius.12` 12px; `radius.2` 2px lip | lesson-light-select-default #40 ::before |
 | illustration | size | 143 x 160px, margin-bottom `space.10` 10px | lesson-light-select-selected cl=fRsqg (#43) |
 | footer | height | 37px, word left, badge right (justify flex-end) | lesson-light-select-selected cl=_2Y0B7 (#44); css:1327-4028784b.css ._2Y0B7 |
-| badge | size | 30 x 30px, radius `radius.8` 8px, 2px border | lesson-light-select-selected #53 |
+| badge | size | 30 x 30px, radius `radius.8` 8px, `borderWidth.2` 2px border | lesson-light-select-selected #53 |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -1230,7 +1230,7 @@ Type: word: duolingo-sans 500 19px, rt 16px/24px (css:1327-4028784b.css ._2_Y8r;
 
 Contains: card: selectable
 
-Desktop vs mobile: Below 700px: 2 columns, a third card spans centred at 50% width (css:1327-4028784b.css .HsVVL, .HsVVL>:nth-child(3):last-child @media (max-width:699px)); padding 12px; footer centred.
+Desktop vs mobile: Below 700px: 2 columns, a third card spans centred at 50% width (css:1327-4028784b.css .HsVVL, .HsVVL>:nth-child(3):last-child @media (max-width:699px)); padding `space.12` 12px; footer centred.
 
 Crops: [light](crops/image-select-card-light.png) · [selected-light](crops/image-select-card--selected-light.png) · [correct-light](crops/image-select-card--correct-light.png)
 
@@ -1243,7 +1243,7 @@ Anatomy:
 - tile (tap-token shell, 255x68)
 - number badge 30x30 at left 16px
 - label (word or ruby)
-- inner fill (cl=_12ozk, inset 2px, radius 10px) shown when selected or wrong
+- inner fill (cl=_12ozk, inset `space.2` 2px, radius `radius.10` 10px) shown when selected or wrong
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
@@ -1252,7 +1252,7 @@ Anatomy:
 | tile | padding | `space.12` 12px `space.30` 30px `space.12` 12px 58px | lesson-dark-match-default #30; css:1008-b4d34396.css ._3ZtW_._1YHBP |
 | tile | radius / lip | `radius.12` 12px, `radius.2` 2px lip, lip transition 100ms linear | lesson-dark-match-default #30; css:1008-b4d34396.css ._2O7Ua._3Ymqr |
 | badge | size / position | 30 x 30px, radius `radius.8` 8px, absolute left 16px | lesson-dark-match-default cl=_3zbIX _20AkF _2MhQB (#31); css:1008-b4d34396.css ._3ZtW_._1YHBP ._2MhQB |
-| inner fill | inset / radius | 251 x 62px (2px inset), radius `radius.10` 10px | lesson-dark-match-selected cl=_12ozk (#31); css:1008-b4d34396.css ._12ozk |
+| inner fill | inset / radius | 251 x 62px (`space.2` 2px inset), radius `radius.10` 10px | lesson-dark-match-selected cl=_12ozk (#31); css:1008-b4d34396.css ._12ozk |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -1288,7 +1288,7 @@ Type: label: duolingo-sans `typography.lesson.token` 500 19px/21.85px (lesson-da
 
 Contains: button: secondary (outline) shell, re-skinned
 
-Desktop vs mobile: Below 700px: columns minmax(0,1fr) x 2, rows fixed 76px, gap 16px 20px (css:4358-6896adab.css ._1bmNz).
+Desktop vs mobile: Below 700px: columns minmax(0,1fr) x 2, rows fixed 76px, gap `space.16` 16px `space.20` 20px (css:4358-6896adab.css ._1bmNz).
 
 Crops: [dark](crops/match-tile-dark.png) · [light](crops/match-tile-light.png) · [selected-dark](crops/match-tile--selected-dark.png) · [matched-dark](crops/match-tile--matched-dark.png) · [selected-light](crops/match-tile--selected-light.png)
 
@@ -1366,7 +1366,7 @@ Anatomy:
 | State | What changes | Source |
 | --- | --- | --- |
 | speaker hover | brightness(1.1) | css:app-f2ef02f8.css ._1saKQ:hover:not(:disabled) |
-| speaker active | border-width 4px 0 0, lip removed (face moves down) | css:app-f2ef02f8.css ._1Lt8-:active:not(:disabled):not(._1bjzW), :after |
+| speaker active | border-width `borderWidth.4` 4px 0 0, lip removed (face moves down) | css:app-f2ef02f8.css ._1Lt8-:active:not(:disabled):not(._1bjzW), :after |
 | speaker disabled | face swan, text hare, no lip | css:app-f2ef02f8.css ._1Lt8-:disabled:not(.WHVbR), :after |
 | small speaker active | ring bottom shrinks to -4px | css:1327-4028784b.css ._37SfF:active:before |
 | after Can't listen now | neutral feedback bar "No listening exercises." (see feedback-bar) | captured:lesson-dark-cant-listen #144-#175 |
@@ -1390,11 +1390,11 @@ Tokens (light):
 | speaker lip | background | `accent.secondary.lip` #1899D6 (whale), derived, not captured | css:app-f2ef02f8.css ._3TlAm |
 | speaker icon / ring | fill / border | `text.onPrimary` #FFFFFF (snow, light), derived, not captured | css:app-f2ef02f8.css ._3TlAm color; css:1327-4028784b.css ._37SfF:before |
 
-Type: Can't listen now: duolingo-sans `typography.button.large` 700 17px/20.4px uppercase, letter-spacing 0.8px (lesson-dark-listen-default #139); Use keyboard: duolingo-sans 700 17px uppercase 0.8px (15px below 700px) (lesson-dark-listen-default #144; css:app-f2ef02f8.css ._2Rt1l; css:1008-b4d34396.css ._1Z76W)
+Type: Can't listen now: duolingo-sans `typography.button.large` 700 17px/20.4px uppercase, letter-spacing 0.8px (lesson-dark-listen-default #139); Use keyboard: duolingo-sans 700 17px uppercase 0.8px (15px below `breakpoint.md` 700px) (lesson-dark-listen-default #144; css:app-f2ef02f8.css ._2Rt1l; css:1008-b4d34396.css ._1Z76W)
 
 Contains: button: secondary (SKIP slot)
 
-Desktop vs mobile: Below 700px and max-height 500px: speakers 50x50 and 35x35, gap 8px (css:1327-4028784b.css .yJbco, .rnwSx; css:4358-6896adab.css .g8o0T).
+Desktop vs mobile: Below 700px and max-height 500px: speakers 50x50 and 35x35, gap `space.8` 8px (css:1327-4028784b.css .yJbco, .rnwSx; css:4358-6896adab.css .g8o0T).
 
 Crops: none
 
@@ -1545,11 +1545,11 @@ Tokens (light):
 | incorrect title, solution, actions | color | `status.dangerText` #EA2B2B (fire-ant, light), derived, not captured | css:1008-b4d34396.css .o-3Ru, ._1CCAE, ._3Q4Uw |
 | icon circle | background | `text.onPrimary` #FFFFFF (snow, light) | lesson-light-feedback-correct #107 |
 
-Type: title: duolingo-sans `typography.app.modalTitle` 700 24px/30px (lesson-dark-feedback-correct #148; css:app-f2ef02f8.css h2; css:1008-b4d34396.css ._2U7Gm @media (min-width:700px)); solution: duolingo-sans 500 17px/26px (15px/22px below 700px) (lesson-dark-feedback-incorrect #133; css:1008-b4d34396.css ._2jz5U, ._1D3fo); action labels: duolingo-sans 700 15px uppercase, letter-spacing 0.8px (lesson-dark-feedback-correct #156; css:app-f2ef02f8.css ._2Rt1l); CONTINUE: duolingo-sans `typography.button.large` 700 17px/20.4px uppercase, letter-spacing 0.8px (lesson-dark-feedback-correct #168)
+Type: title: duolingo-sans `typography.app.modalTitle` 700 24px/30px (lesson-dark-feedback-correct #148; css:app-f2ef02f8.css h2; css:1008-b4d34396.css ._2U7Gm @media (min-width:700px)); solution: duolingo-sans 500 17px/26px (15px/22px below `breakpoint.md` 700px) (lesson-dark-feedback-incorrect #133; css:1008-b4d34396.css ._2jz5U, ._1D3fo); action labels: duolingo-sans 700 15px uppercase, letter-spacing 0.8px (lesson-dark-feedback-correct #156; css:app-f2ef02f8.css ._2Rt1l); CONTINUE: duolingo-sans `typography.button.large` 700 17px/20.4px uppercase, letter-spacing 0.8px (lesson-dark-feedback-correct #168)
 
 Contains: button: primary (owl), button: primary (cardinal / danger), button: primary (bee)
 
-Desktop vs mobile: Below 700px: the icon circle and images are hidden (display none), action labels hidden (icons only, css:1008-b4d34396.css ._2J0K5, ._2_snL), the message block becomes absolute at the bottom with padding 24px 16px 72px and the tint moves onto it (._3yMvO ._8wIx-, ._2cfV0 ._8wIx-); title/solution gap 5px, line-height 22px, solution 15px.
+Desktop vs mobile: Below 700px: the icon circle and images are hidden (display none), action labels hidden (icons only, css:1008-b4d34396.css ._2J0K5, ._2_snL), the message block becomes absolute at the bottom with padding `space.24` 24px `space.16` 16px 72px and the tint moves onto it (._3yMvO ._8wIx-, ._2cfV0 ._8wIx-); title/solution gap `space.5` 5px, line-height 22px, solution 15px.
 
 Crops: [correct-dark](crops/feedback-bar--correct-dark.png) · [incorrect-dark](crops/feedback-bar--incorrect-dark.png) · [correct-light](crops/feedback-bar--correct-light.png)
 
@@ -1575,7 +1575,7 @@ Anatomy:
 | bubble | padding | `space.12` 12px `space.24` 24px | lesson-dark-review-interstitial #129; css:4358-6896adab.css ._1K3po { padding:12px 24px } |
 | bubble | border / radius | 2px solid / 15px (--web-ui_popover-border-radius) | lesson-dark-review-interstitial #129; css:4779-c36ad395.css ._36bu_ |
 | bubble | gap to Duo | `space.8` 8px margin-left on the popover wrapper (D0iFS); the bubble starts `space.32` 32px inside the Duo box (bubble x=560, Duo box right edge x=592); _2GMvD also sets --popover-offset:-25px | lesson-dark-review-interstitial cl=_3zpnU D0iFS (#128); css:4779-c36ad395.css .D0iFS { margin-left:8px } |
-| caret | box | 20 x 10px clip box rotated -90deg at left:-13px, inner square 14.14px rotated 45deg, 2px border, radius `radius.2` 2px | lesson-dark-review-interstitial cl=_3T97b (#130), cl=_1TMn5 (#131); css:4779-c36ad395.css .D0iFS>._3T97b, ._1TMn5 |
+| caret | box | 20 x 10px clip box rotated -90deg at left:-13px, inner square 14.14px rotated 45deg, `borderWidth.2` 2px border, radius `radius.2` 2px | lesson-dark-review-interstitial cl=_3T97b (#130), cl=_1TMn5 (#131); css:4779-c36ad395.css .D0iFS>._3T97b, ._1TMn5 |
 | caret | vertical offset | margin: `space.15` 15px 0 (border radius) from the bubble top | css:4779-c36ad395.css .D0iFS>._3T97b { margin:var(--web-ui_popover-border-radius,15px) 0 } |
 | footer | height / top border | 140px / `borderWidth.2` 2px solid | lesson-dark-review-interstitial cl=_3rB4d _1VTif _2HXQ9 (#134) |
 | CONTINUE | width x height | 150 x 50px (min-width 150px), radius `radius.16` 16px, lip 4px | lesson-dark-review-interstitial dt=player-next (#137) |
@@ -1663,7 +1663,7 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| stage | layout | absolute flex column centred; >=700px: height 75%, max-height 600px, top 50%, translateY(-50%) | lesson-light-quit-modal cl=flbyJ (#30); css:4358-6896adab.css .flbyJ |
+| stage | layout | absolute flex column centred; >=`breakpoint.md` 700px: height 75%, max-height 600px, top 50%, translateY(-50%) | lesson-light-quit-modal cl=flbyJ (#30); css:4358-6896adab.css .flbyJ |
 | Duo lottie | width x height | 320 x 418px (var(--lottie-width) x var(--lottie-height)) | lesson-light-quit-modal cl=_1Oj8V (#31), svg (#32); css:4358-6896adab.css ._1Oj8V |
 | bubble anchor | position | absolute, centred on Duo (left 50%, translateX(-50%)), max-width 75% | lesson-light-quit-modal cl=_2B4y0 _382wv (#130); css:4358-6896adab.css ._2B4y0, ._382wv |
 | bubble | width x height | 240 x 76px (width max-content) | lesson-light-quit-modal cl=_36bu_ _1TmO0 (#132); css:4358-6896adab.css ._3k7HD |
@@ -1688,7 +1688,7 @@ Type:
 
 Contains: popover shell (speech bubble, caret bottom)
 
-Desktop vs mobile: flbyJ: below 700px the stage fills 100% height from the top; at >=700px it is 75% high (max 600px) and vertically centred (css:4358-6896adab.css .flbyJ @media (min-width:700px)).
+Desktop vs mobile: flbyJ: below `breakpoint.md` 700px the stage fills 100% height from the top; at >=`breakpoint.md` 700px it is 75% high (max 600px) and vertically centred (css:4358-6896adab.css .flbyJ @media (min-width:700px)).
 
 Crops: none (see gaps)
 
@@ -1808,14 +1808,14 @@ Tokens (light):
 - CONTINUE, face / lip / text: `unitColors.green` #58CC02 (owl) / `palette.light.tree-frog` #58A700 (tree-frog) / `text.onColor` #FFFFFF (snow) (lesson-light-video-ad dt=player-next (#12) ::before)
 
 Type:
-- title: inherited family, 700, 32px (25px below 700px wide), line-height 20px inherited (lesson-dark-complete #11; css:1008-b4d34396.css ._3z6AH)
+- title: inherited family, 700, 32px (25px below `breakpoint.md` 700px wide), line-height 20px inherited (lesson-dark-complete #11; css:1008-b4d34396.css ._3z6AH)
 - label strip: 700, 13px / 16px, uppercase (lesson-dark-complete #15; css:1008-b4d34396.css .d8ITn)
 - value: 700, 20px (16px below 300px), digits line-height 20px (lesson-dark-complete #16; css:1008-b4d34396.css ._5KPRI)
-- footer buttons: 700, 17px (>=700px via --web-ui_button-font-size) / 20.4px, letter-spacing 0.8px, uppercase (lesson-dark-complete #47, #50; css:1008-b4d34396.css ._3fo6Q, ._3DbUj)
+- footer buttons: 700, 17px (>=`breakpoint.md` 700px via --web-ui_button-font-size) / 20.4px, letter-spacing 0.8px, uppercase (lesson-dark-complete #47, #50; css:1008-b4d34396.css ._3fo6Q, ._3DbUj)
 
 Contains: button: primary (owl), button: secondary/outline (Review lesson)
 
-Desktop vs mobile: Title 25px below 700px, 32px at >=700px; card width 118 / 130 (>=300px) / 163 (>=380px); cards gap 10 / 16 (>=350px); value 16px / 20px (>=300px); title margins 20px / 44px (min-height:750px); whole stack scale(.7) when max-height:500px; footer buttons full width below 700px and grid-placed at >=700px (css:1008-b4d34396.css ._3SXFk, ._3dwfW, ._3z6AH, ._21KAg, ._23WOw, ._5KPRI, ._3h0lA, .MYehf). Mobile not captured.
+Desktop vs mobile: Title 25px below `breakpoint.md` 700px, 32px at >=`breakpoint.md` 700px; card width 118 / 130 (>=300px) / 163 (>=380px); cards gap 10 / 16 (>=350px); value 16px / 20px (>=300px); title margins 20px / 44px (min-height:750px); whole stack scale(.7) when max-height:500px; footer buttons full width below `breakpoint.md` 700px and grid-placed at >=`breakpoint.md` 700px (css:1008-b4d34396.css ._3SXFk, ._3dwfW, ._3z6AH, ._21KAg, ._23WOw, ._5KPRI, ._3h0lA, .MYehf). Mobile not captured.
 
 Crops: [dark](crops/lesson-complete-dark.png)
 
@@ -1828,7 +1828,7 @@ Anatomy:
 - celebration: flame animation (canvas, max 340 square)
 - count number (canvas, 340 square)
 - "day streak" label
-- week card: top section (day columns: label + 34px circle) with a 2px divider, bottom message section
+- week card: top section (day columns: label + 34px circle) with a `borderWidth.2` 2px divider, bottom message section
 - calendar variant: heading h2, illustration 294 x 160, week card (7 days) with a caret under the next day, tip box
 - footer: REVIEW LESSON + CONTINUE (owl) or CONTINUE (macaw) on the celebration
 
@@ -1838,7 +1838,7 @@ Anatomy:
 | count canvas | size / margins | 340 x 340px, margin -124px auto -44px | lesson-dark-streak-celebration cl=_1PSwR zWgl3 (#13); css:1008-b4d34396.css ._1PSwR |
 | "day streak" | width x height, offset | 340 x 28px box, margin-top -110px (overlaps the count canvas) | lesson-dark-streak-celebration cl=Ikkcc _33hhf (#16) |
 | week card | width x height | 340 x 168px, radius `radius.12` 12px | lesson-dark-streak-celebration cl=_3kddW tuVG5 _36i3u (#17) |
-| week card top | padding / border | 12px / 2px on top and sides, radius 12 12 0 0; a 2px divider (::after, bottom -4px) | lesson-dark-streak-celebration cl=_2k21Q (#18); css:1008-b4d34396.css ._2k21Q, ._2k21Q:after |
+| week card top | padding / border | 12px / 2px on top and sides, radius 12 12 0 0; a `borderWidth.2` 2px divider (::after, bottom -4px) | lesson-dark-streak-celebration cl=_2k21Q (#18); css:1008-b4d34396.css ._2k21Q, ._2k21Q:after |
 | day row | max-width | 280px (5 days) / 392px (7 days, calendar) | lesson-dark-streak-celebration cl=_3Ja2a (#19); lesson-dark-streak-calendar cl=_3LUJ9 (#14) |
 | day column | width x height, spacing | 34 x 63px, margin 0 `space.6` 6px (first/last 0) | lesson-dark-streak-celebration cl=_3ahcA (#20); css:1008-b4d34396.css ._3ahcA |
 | day label | height / gap | 25px line, `space.4` 4px below | lesson-dark-streak-celebration cl=_2z97y (#21) |
@@ -1849,7 +1849,7 @@ Anatomy:
 | calendar illustration | width x height | 294 x 160px (250 x 136 below 700px) | lesson-dark-streak-calendar cl=_2WyQU (#12); css:1008-b4d34396.css ._2WyQU |
 | calendar week card | width x height / padding / margin-top | 340 x 95px / `space.12` 12px `space.12` 12px `space.16` 16px / `space.40` 40px, border `borderWidth.2` 2px, radius 12 12 0 0 | lesson-dark-streak-calendar cl=_1FNhm (#13); css:1008-b4d34396.css ._1FNhm |
 | next-day target circle | border | `borderWidth.2` 2px dashed | lesson-dark-streak-calendar cl=_3g_6k OfNk6 (#39) |
-| caret under target | size | 38 x 26px box rotated 45deg (rect 45 x 45), 2px border, radius `radius.2` 2px, margin-top `space.6` 6px, top 100% | lesson-dark-streak-calendar cl=_2OXpp _2CoFd (#40); css:1008-b4d34396.css ._2OXpp |
+| caret under target | size | 38 x 26px box rotated 45deg (rect 45 x 45), `borderWidth.2` 2px border, radius `radius.2` 2px, margin-top `space.6` 6px, top 100% | lesson-dark-streak-calendar cl=_2OXpp _2CoFd (#40); css:1008-b4d34396.css ._2OXpp |
 | tip box | width x height | 340 x 79px, same uxKQj box as the message | lesson-dark-streak-calendar cl=uZOTl _2CoFd uxKQj (#56) |
 
 | State | What changes | Source |
@@ -1895,7 +1895,7 @@ Type:
 
 Contains: button: primary (owl, macaw), button: secondary/outline (Review lesson)
 
-Desktop vs mobile: Day columns margin 0 2px and scale(.9) below 360px, 0 6px at >=360px; caret hidden below 340px; calendar illustration 250 x 136 below 700px; flame and count canvases width calc(100vw - 32px) capped at 340px (css:1008-b4d34396.css). Mobile not captured.
+Desktop vs mobile: Day columns margin 0 `space.2` 2px and scale(.9) below `breakpoint.xs` 360px, 0 6px at >=`breakpoint.xs` 360px; caret hidden below 340px; calendar illustration 250 x 136 below `breakpoint.md` 700px; flame and count canvases width calc(100vw - 32px) capped at 340px (css:1008-b4d34396.css). Mobile not captured.
 
 Crops: [dark](crops/streak-screen-dark.png) · [calendar-dark](crops/streak-screen--calendar-dark.png) (crop offset [-37, -5])
 
@@ -1920,7 +1920,7 @@ Anatomy:
 | list | width / gap | 480px max / `space.12` 12px | lesson-dark-streak-goal-default cl=_13-RH (#244) |
 | row | width x height | 480 x 54px | lesson-dark-streak-goal-default cl=_8dMUn a3yOs (#245) |
 | row | padding | `space.8` 8px `space.16` 16px, space-between | lesson-dark-streak-goal-default #245; css:1008-b4d34396.css .a3yOs |
-| row | border / lip / radius | transparent 2px 2px 4px on the element; visible 2px border + 2px lip (box-shadow 0 2px) on ::before inset -2px; radius `radius.12` 12px | lesson-dark-streak-goal-default #245 ::before; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
+| row | border / lip / radius | transparent 2px 2px 4px on the element; visible `borderWidth.2` 2px border + 2px lip (box-shadow 0 2px) on ::before inset -2px; radius `radius.12` 12px | lesson-dark-streak-goal-default #245 ::before; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
 | row label | width x height | 103 x 32px (auto) | lesson-dark-streak-goal-default cl=WMgCJ (#246) |
 | grade | height | 24px | lesson-dark-streak-goal-default dt=streak-goal-option cl=g4E00 (#247) |
 | numeral overlay | position | absolute, left 38%, bottom 18%, translate(-50%,-50%) | lesson-dark-streak-goal-default cl=G8vvg (#243); css:1008-b4d34396.css .G8vvg |
@@ -1957,7 +1957,7 @@ Type:
 
 Contains: card/radio row (web-ui card, _8dMUn), button: primary (disabled), speech bubble
 
-Desktop vs mobile: _36XSq gets padding 16px 0 at >=700px; _3pl7T becomes height 100% with its own scroll at >=700px (css:1008-b4d34396.css). Mobile not captured.
+Desktop vs mobile: _36XSq gets padding `space.16` 16px 0 at >=`breakpoint.md` 700px; _3pl7T becomes height 100% with its own scroll at >=700px (css:1008-b4d34396.css). Mobile not captured.
 
 Crops: [dark](crops/streak-goal-list-dark.png) · [hover-dark](crops/streak-goal-list--hover-dark.png) (crop offset [0, 4])
 
@@ -1974,7 +1974,7 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| scroll area | margin | `space.32` 32px (`space.16` 16px below 700px) | lesson-dark-friend-streak-invite cl=QuvtB _2Yntw (#9); css:1008-b4d34396.css .QuvtB |
+| scroll area | margin | `space.32` 32px (`space.16` 16px below `breakpoint.md` 700px) | lesson-dark-friend-streak-invite cl=QuvtB _2Yntw (#9); css:1008-b4d34396.css .QuvtB |
 | column | max-width | 400px | lesson-dark-friend-streak-invite cl=_1oVn_ (#10) |
 | header | position | sticky, top 0, z-index 1 | lesson-dark-friend-streak-invite cl=_3-LZT (#11); css:1008-b4d34396.css ._3-LZT |
 | illustration | width x height | 214 x 199px (height 213px >=700px, max-height calc(50vh - 200px)), margin-bottom `space.16` 16px | lesson-dark-friend-streak-invite cl=_3-dw5 (#13); css:1008-b4d34396.css ._3-dw5 |
@@ -2019,7 +2019,7 @@ Type:
 
 Contains: button: primary small (macaw, 32px), avatar, list
 
-Desktop vs mobile: Outer margin 16px below 700px and 32px at >=700px; illustration 148px high below 700px and 213px at >=700px (css:1008-b4d34396.css .QuvtB, ._3-dw5). Mobile not captured.
+Desktop vs mobile: Outer margin `space.16` 16px below `breakpoint.md` 700px and 32px at >=`breakpoint.md` 700px; illustration 148px high below `breakpoint.md` 700px and 213px at >=`breakpoint.md` 700px (css:1008-b4d34396.css .QuvtB, ._3-dw5). Mobile not captured.
 
 Crops: [dark](crops/friend-streak-invite-dark.png)
 
@@ -2035,11 +2035,11 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| ad: logo | width x height / position | 87 x 23px / top 40px, right 40px (10px below 700px) | lesson-dark-super-upsell dt=plus-offer-logo cl=UhDGm (#9); css:4358-6896adab.css .UhDGm |
+| ad: logo | width x height / position | 87 x 23px / top 40px, right 40px (10px below `breakpoint.md` 700px) | lesson-dark-super-upsell dt=plus-offer-logo cl=UhDGm (#9); css:4358-6896adab.css .UhDGm |
 | ad: hero | width x height | 400 x 428px (250px wide below 700px) | lesson-dark-super-upsell cl=_3ZLZ_ (#10); css:4358-6896adab.css ._3ZLZ_ |
-| ad: text block | width / margin-top | 350px max (300px below 700px) / -24px | lesson-dark-super-upsell cl=_3TDCm (#11) |
+| ad: text block | width / margin-top | 350px max (300px below `breakpoint.md` 700px) / -24px | lesson-dark-super-upsell cl=_3TDCm (#11) |
 | ad: footer | height / top border | 140px / `borderWidth.1` 1px | lesson-dark-super-upsell cl=_2iHAQ (#13), _3KWA6 (#14) |
-| ad: buttons | width x height | 250 x `size.buttonHeight` 50px each (min-width 250px, width 100% at >=700px), radius `radius.16` 16px | lesson-dark-super-upsell dt=practice-hub-ad-no-thanks-button (#15), dt=practice-hub-ad-continue-button (#17) |
+| ad: buttons | width x height | 250 x `size.buttonHeight` 50px each (min-width 250px, width 100% at >=`breakpoint.md` 700px), radius `radius.16` 16px | lesson-dark-super-upsell dt=practice-hub-ad-no-thanks-button (#15), dt=practice-hub-ad-continue-button (#17) |
 | trial: close / logo | position / size | top 24px left 24px (19 x 19 X) / top 24px right 34px (103 x 27 logo) | lesson-light-trial-upsell dt=plus-close-x (#21), dt=plus-offer-logo cl=_1OBpI (#25) |
 | trial: h1 | width x height / padding / margin | 500 x 76px / 0 `space.16` 16px / `space.16` 16px auto | lesson-light-trial-upsell dt=trial-reminder cl=_3ifZ6 (#29) |
 | trial: art band | height | 239px (30vh, min 200, max 250); lottie canvas 800 x 800 centred; cloud svg repeat-x at bottom, background-size 1800px | lesson-light-trial-upsell cl=JPT4U (#30), _2KpHg (#31), _3KggR (#33); css:3406-0039e405.css .JPT4U, ._3KggR |
@@ -2047,7 +2047,7 @@ Anatomy:
 | trial: option row | width x height / padding / border / radius | 468 x 58px / 12px 16px / 2px 2px 4px / 12px | lesson-light-trial-upsell role=radio cl=_2u2n_ (#36) |
 | trial: CTA | width x height | 600 x 50px (max-width 600px), radius `radius.16` 16px | lesson-light-trial-upsell dt=plus-continue (#47) |
 | trial: NO THANKS | width x height | 112 x 48px (text button) | lesson-light-trial-upsell dt=plus-no-thanks (#49) |
-| video: close / mute | size | 68 x 68 (20px icon + 24px padding) / 78 x 71 (30 x 23 icon + 24px padding) | lesson-light-video-ad cl=_1Udkq (#19), _32yet (#21) |
+| video: close / mute | size | 68 x 68 (20px icon + `space.24` 24px padding) / 78 x 71 (30 x 23 icon + `space.24` 24px padding) | lesson-light-video-ad cl=_1Udkq (#19), _32yet (#21) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -2079,15 +2079,15 @@ Tokens (light):
 - video: background, colour: `palette.light.black` #000000 (black) (lesson-light-video-ad cl=_3BWKN (#18))
 
 Type:
-- ad: h1: 700, 25px / 34px (21px below 700px) (lesson-dark-super-upsell cl=_1jGvf (#12); css:4358-6896adab.css ._1jGvf)
+- ad: h1: 700, 25px / 34px (21px below `breakpoint.md` 700px) (lesson-dark-super-upsell cl=_1jGvf (#12); css:4358-6896adab.css ._1jGvf)
 - ad: buttons: 700, 15px / 18px, letter-spacing 0.8px, uppercase (lesson-dark-super-upsell #16, #18)
-- trial: h1: 700, 28px / 1.35 (24px below 530px), text-wrap balance (lesson-light-trial-upsell #29; css:3406-0039e405.css ._3ifZ6)
+- trial: h1: 700, 28px / 1.35 (24px below `breakpoint.sm` 530px), text-wrap balance (lesson-light-trial-upsell #29; css:3406-0039e405.css ._3ifZ6)
 - trial: option label / date: `typography.body.bold` 700 20px / 28px ; 400 16px / 18.4px (lesson-light-trial-upsell cl=_1En-_ (#37), cl=_1UP1a (#38))
 - trial: disclaimer: 500, 16px / 21.6px (1.35) (lesson-light-trial-upsell #43)
 
 Contains: button: primary (white on eclipse, cosmos), button: outline (white 50%), button: text (cosmos), icon button (close, mute)
 
-Desktop vs mobile: Ad: content padding-bottom 100px below 700px and height calc(100% - 140px) at >=700px; logo inset 10px vs 40px; hero 250px vs 400px; h1 21px vs 25px; footer top border only at >=700px; NO THANKS order 1 (below GET STARTED) below 700px; buttons margin 0 16px below 700px (css:4358-6896adab.css ._3AYrR, .UhDGm, ._3ZLZ_, ._1jGvf, ._2iHAQ, ._76ebC, .cnGdv). Trial: h1 28px at >=530px, button stack gaps 8/4 vs 16/8 (css:3406-0039e405.css ._3ifZ6, .OvpzU). Mobile not captured.
+Desktop vs mobile: Ad: content padding-bottom 100px below `breakpoint.md` 700px and height calc(100% - 140px) at >=`breakpoint.md` 700px; logo inset `space.10` 10px vs 40px; hero 250px vs 400px; h1 21px vs 25px; footer top border only at >=`breakpoint.md` 700px; NO THANKS order 1 (below GET STARTED) below `breakpoint.md` 700px; buttons margin 0 `space.16` 16px below `breakpoint.md` 700px (css:4358-6896adab.css ._3AYrR, .UhDGm, ._3ZLZ_, ._1jGvf, ._2iHAQ, ._76ebC, .cnGdv). Trial: h1 28px at >=`breakpoint.sm` 530px, button stack gaps 8/4 vs 16/8 (css:3406-0039e405.css ._3ifZ6, .OvpzU). Mobile not captured.
 
 Crops: [dark](crops/super-upsell-dark.png) · [trial-light](crops/super-upsell--trial-light.png) · [video-ad-light](crops/super-upsell--video-ad-light.png)
 
@@ -2120,7 +2120,7 @@ Anatomy:
 | calendar card | width x height / padding / radius | 344 x 87px / 12px 16px / 12px | learn-dark-streak-dropdown cl=_8ECdA (#89) |
 | day letter | cell width / margin-bottom | 45px / `space.4` 4px | learn-dark-streak-dropdown cl=_3u3Eq (#92) |
 | day circle | size / radius | 34 x 34px / 18px | learn-dark-streak-dropdown cl=_1DNjG _2pdFv _2LCuE (#101) |
-| day circle cell | horizontal margin | `space.4` 4px each side (`space.2` 2px under 360px) | learn-dark-streak-dropdown cl=_1asXw (#100); css:5275-8898b509.css ._1asXw @media (min-width:360px) |
+| day circle cell | horizontal margin | `space.4` 4px each side (`space.2` 2px under `breakpoint.xs` 360px) | learn-dark-streak-dropdown cl=_1asXw (#100); css:5275-8898b509.css ._1asXw @media (min-width:360px) |
 | done-day check svg | box | 46 x 116px, margin -79px -5px 0, scale 1.05 (animated svg) | learn-light-streak-dropdown cl=u_TP- i9nlH (#111) |
 | friend section | padding | `space.20` 20px `space.20` 20px 0 | learn-dark-streak-dropdown cl=yFj8x (#114) |
 | friend card | width x height / radius / min-height | 344 x 136px / `radius.16` 16px / 50px | learn-dark-streak-dropdown cl=_3TU61 (#115) |
@@ -2134,7 +2134,7 @@ Anatomy:
 | society lock image | size / margin-top | 60 x 60px / `space.8` 8px | learn-light-streak-dropdown cl=_2TgZn (#144); css:458-86426c1c.css ._2TgZn |
 | society text column | margin-left / gap | `space.24` 24px / `space.8` 8px | learn-dark-streak-dropdown cl=_2QLYz (#125) |
 | VIEW MORE button | width x height / radius / lip | 344 x `size.buttonHeight` 50px / `radius.12` 12px / border-bottom `borderWidth.4` 4px, lip box-shadow 0 `radius.4` 4px | learn-dark-streak-dropdown cl=_1i82L ... oXbqr (#128) |
-| caret | size | 20 x 10px box, 14.14px rotated square, 2px border | learn-dark-streak-dropdown cl=_3T97b (#130), cl=_1TMn5 (#131) |
+| caret | size | 20 x 10px box, 14.14px rotated square, `borderWidth.2` 2px border | learn-dark-streak-dropdown cl=_3T97b (#130), cl=_1TMn5 (#131) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -2292,7 +2292,7 @@ Gaps: row hover not captured (css only); in dark, hover (polar) and current (igu
 Where: /leaderboard main column; list dt=leaderboard
 
 Anatomy:
-- league badge row: current league badge 80x91, locked badges 52x58, 28px gap, grid of 11 shifted by --offset
+- league badge row: current league badge 80x91, locked badges 52x58, `space.28` 28px gap, grid of 11 shifted by --offset
 - header (sticky, snow bg): league name, subtitle ("Top 11 advance..." or join prompt), time left (bee), 2px swan rule
 - row: rank (medal image 41x42 for 1 to 3, else number 41px wide), avatar 48 with online dot and optional status bubble, name (ellipsis), XP right
 - row variants: default, hover (polar), current user (swan), current user in promotion zone (sea-sponge + tree-frog text)
@@ -2310,7 +2310,7 @@ Anatomy:
 | subtitle | padding / margin-bottom | 0 `space.12` 12px / `space.5` 5px | leaderboard-dark-top cl=_1Zr5T (#159) |
 | time left row | height / margin-bottom | 26px / `space.16` 16px | leaderboard-dark-top cl=_3S3VJ (#160) |
 | rule | border-top | `borderWidth.2` 2px | leaderboard-dark-top hr cl=_1c5Wu (#163); css:app-f2ef02f8.css hr |
-| row | height / padding / radius | 64px / 8px 24px 8px 16px / 16px (only at min-width 700px) | leaderboard-dark-top cl=_3kvGS (#165); css:1008-b4d34396.css ._3kvGS |
+| row | height / padding / radius | 64px / 8px 24px 8px 16px / 16px (only at min-width `breakpoint.md` 700px) | leaderboard-dark-top cl=_3kvGS (#165); css:1008-b4d34396.css ._3kvGS |
 | rank medal | size | 41 x 42px | leaderboard-dark-top cl=_33f2x (#166) |
 | rank number | width | 41px, centred | leaderboard-dark-top cl=_1kz8P (#190) |
 | avatar | size / margin | 48 x 48px / 0 `space.28` 28px 0 `space.12` 12px | leaderboard-dark-top cl=_2vxUc (#167) |
@@ -2347,7 +2347,7 @@ Type: league name 700 25px, line box 20px; subtitle 500 19px; time left 700 17px
 
 Contains: avatar (48px, online dot), button: secondary (START A LESSON, macaw text)
 
-Desktop vs mobile: 570px (leaderboard-dark-mobile, leaderboard-light-mobile): column is full width 570, rows full-bleed with no radius (radius only at min-width 700px), header has no 24px padding-top and the badge row gets margin-top 24px, status picker and right rail are absent, bottom tab bar appears. css: not-joined user bar becomes position fixed, bottom 82px, full width (css:7607-21dedb14.css ._11XmH).
+Desktop vs mobile: 570px (leaderboard-dark-mobile, leaderboard-light-mobile): column is full width 570, rows full-bleed with no radius (radius only at min-width `breakpoint.md` 700px), header has no `space.24` 24px padding-top and the badge row gets margin-top `space.24` 24px, status picker and right rail are absent, bottom tab bar appears. css: not-joined user bar becomes position fixed, bottom 82px, full width (css:7607-21dedb14.css ._11XmH).
 
 Crops: [leaderboard-dark](crops/leaderboard-dark.png) · [leaderboard-light](crops/leaderboard-light.png) · [leaderboard--not-joined-dark](crops/leaderboard--not-joined-dark.png) · [leaderboard--row-hover-dark](crops/leaderboard--row-hover-dark.png) · [leaderboard--row-hover-light](crops/leaderboard--row-hover-light.png) · [leaderboard--current-user-dark](crops/leaderboard--current-user-dark.png) · [leaderboard--mobile-dark](crops/leaderboard--mobile-dark.png) · [leaderboard--mobile-light](crops/leaderboard--mobile-light.png)
 
@@ -2441,7 +2441,7 @@ Type: page section title 700 25px/28px; rail card title `typography.app.cardTitl
 
 Contains: card (_1T_BQ), progress bar (generic web-ui progress bar, bee colour via _2nasW), button: text (VIEW ALL)
 
-Desktop vs mobile: 570px (quests-dark-mobile, quests-light-mobile): page gets a Quests / Badges tab bar on a beetle header, card is 538px wide with the same 20px 25px padding and 20px bar; rail variant absent. Timer rendered in bee (_3nMro) in the mobile capture.
+Desktop vs mobile: 570px (quests-dark-mobile, quests-light-mobile): page gets a Quests / Badges tab bar on a beetle header, card is 538px wide with the same `space.20` 20px 25px padding and 20px bar; rail variant absent. Timer rendered in bee (_3nMro) in the mobile capture.
 
 Crops: [daily-quest-card-dark](crops/daily-quest-card-dark.png) · [daily-quest-card-light](crops/daily-quest-card-light.png) · [daily-quest-card--rail-dark](crops/daily-quest-card--rail-dark.png) · [daily-quest-card--rail-light](crops/daily-quest-card--rail-light.png) · [daily-quest-card--mobile-dark](crops/daily-quest-card--mobile-dark.png)
 
@@ -2496,7 +2496,7 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| list | width x border / radius | 480px wide (desktop column), 2px border, radius `radius.16` 16px | profile-dark-default ul cl=_1dDcV (#309); css:5515-e83f96c1.css ._1dDcV |
+| list | width x border / radius | 480px wide (desktop column), `borderWidth.2` 2px border, radius `radius.16` 16px | profile-dark-default ul cl=_1dDcV (#309); css:5515-e83f96c1.css ._1dDcV |
 | row | padding / height | `space.20` 20px all sides; 138px tall with bar (136 last row, no bottom rule); flex row, align-items stretch | profile-dark-default li cl=m_b-V _27zqm (#310, #338); css:5515-e83f96c1.css ._27zqm, .m_b-V |
 | row | divider | `borderWidth.2` 2px solid bottom border, removed on :last-child | css:5515-e83f96c1.css .m_b-V / .m_b-V:last-child |
 | badge tile | width x height | 77 x 96px (padding-bottom 124.5% of width, min-width 77px) | profile-dark-default cl=_1hfyC bvEQe (#312); css:4243-a8d324a8.css ._1hfyC; css:5515 ._2ymEQ |
@@ -2547,13 +2547,13 @@ Tokens (light):
 
 Type:
 - title: duolingo-sans 700 19px / 28.5px (line-height 1.5), ellipsis (profile-dark-default h3 cl=-Zgv1 (#317))
-- counter: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under 700px) (profile-dark-default #318; css:5515 ._8oTbo @media (min-width:700px))
-- description: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under 700px) (profile-dark-default #328; css:5515 ._7Cbsk)
+- counter: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under `breakpoint.md` 700px) (profile-dark-default #318; css:5515 ._8oTbo @media (min-width:700px))
+- description: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under `breakpoint.md` 700px) (profile-dark-default #328; css:5515 ._7Cbsk)
 - level label: duolingo-sans 700 11px, not uppercased by CSS (text is authored "LEVEL 9") (profile-dark-default #313; css:4243 ._36H8N)
 
 Contains: progress bar (web-ui, recoloured bee, 14px), card/list shell (2px swan, radius 16)
 
-Desktop vs mobile: mobile (570px): same row geometry (20px padding, 77x96 tile, 30px spacer); counter and description drop to 15px; the list gains a final "View all" row (a.cl=_2MpO3, padding 16px, 700 19px, eel) instead of the section-header link. Source: profile-dark-mobile ul (#193), #202, #212, #241; css:5515 ._2MpO3.
+Desktop vs mobile: mobile (570px): same row geometry (`space.20` 20px padding, 77x96 tile, 30px spacer); counter and description drop to 15px; the list gains a final "View all" row (a.cl=_2MpO3, padding `space.16` 16px, 700 19px, eel) instead of the section-header link. Source: profile-dark-mobile ul (#193), #202, #212, #241; css:5515 ._2MpO3.
 
 Crops: [achievement-row-dark](crops/achievement-row-dark.png) · [achievement-row-light](crops/achievement-row-light.png)
 
@@ -2578,7 +2578,7 @@ Anatomy:
 | edit button | size / position | 48 x 48px, absolute top 16px right 16px, radius `radius.16` 16px, border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px (lip) | profile-dark-default button cl=_2V6ug _3Y-wy (#206); css:5515 ._3Y-wy |
 | edit icon | size | 18 x 18px svg pencil | profile-dark-default #208 |
 | avatar hit area | width | 220px, full banner height, centred (translateX -50%), z-index 1 | profile-dark-default cl=_2Sqqq role=button (#210) |
-| info block | margin / padding | margin-top `space.8` 8px; padding-bottom `space.16` 16px (._3byCv sets 0 0 `space.32` 32px at min-width 700px, ._2C8UD overrides to 0 0 `space.16` 16px); 150px tall total | profile-dark-default cl=_3byCv _2C8UD (#213); css:5515 ._3byCv, ._2C8UD |
+| info block | margin / padding | margin-top `space.8` 8px; padding-bottom `space.16` 16px (._3byCv sets 0 0 `space.32` 32px at min-width `breakpoint.md` 700px, ._2C8UD overrides to 0 0 `space.16` 16px); 150px tall total | profile-dark-default cl=_3byCv _2C8UD (#213); css:5515 ._3byCv, ._2C8UD |
 | name block | height | h1 54px (name 34px line + handle 20px), margin-bottom `space.6` 6px | profile-dark-default h1 dt=profile-username (#216) |
 | joined row | margin | margin-bottom `space.12` 12px | profile-dark-default cl=xk0If (#220) |
 | follow links row | height / gap | `space.24` 24px tall buttons, gap `space.16` 16px, margin-bottom `space.16` 16px, padding 0 | profile-dark-default cl=_7V_nj (#222); css:5515 ._7V_nj |
@@ -2620,9 +2620,9 @@ Tokens (light):
 | bottom rule | border-color | `border.default` #E5E5E5 (swan, light) | profile-light-default #214 |
 
 Type:
-- name: duolingo-sans 700 28px / 34px (25px under 700px) (profile-dark-default #216; css:5515 ._2eRPO)
+- name: duolingo-sans 700 28px / 34px (25px under `breakpoint.md` 700px) (profile-dark-default #216; css:5515 ._2eRPO)
 - handle: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px (profile-dark-default #218; css:5515 ._1Fdxc)
-- joined: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px (15px under 700px) (profile-dark-default #221; css:5515 ._3KQMU)
+- joined: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px (15px under `breakpoint.md` 700px) (profile-dark-default #221; css:5515 ._3KQMU)
 - following / followers: duolingo-sans 700 16px / 19.2px, letter-spacing 0.8px, text-transform none on the label span (profile-dark-default #223-#226; css:5515 ._7V_nj, ._3KQMU)
 - "+N" chip: duolingo-sans 700 17px / 19.55px (profile-dark-default #232)
 
@@ -2638,7 +2638,7 @@ Gaps: avatar art is drawn in a <canvas>, so its layers are not in the dump; no h
 Where: /profile/<user>, Statistics: div.cl=_37tLJ grid > div.cl=_2Hzv5 > div.cl=_2uSOC
 
 Anatomy:
-- 2-column grid, 12px gap
+- 2-column grid, `space.12` 12px gap
 - tile (2px swan border, radius 16)
 - icon (21px wide, top-aligned)
 - value (h4)
@@ -2653,7 +2653,7 @@ Anatomy:
 | icon | size / gap | width 21px (heights 25 to 29 by art; league icon 24 x 27), margin-right `space.15` 15px (`space.14` 14px league), align-self start | profile-dark-default #240, #246, #252; css:5515 .-AVDu, ._2aR6Z |
 | value | margin | margin-bottom `space.4` 4px; `space.20` 20px line | profile-dark-default h4 cl=-TMd4 (#242) |
 | section title | size / gap | "Statistics" h2 `space.24` 24px/26px, `space.12` 12px below | profile-dark-default h2 cl=_347iz (#235), cl=_2Nu7i (#234) |
-| week badge | size / position | 53 x 24px, absolute top -8px right -6px, radius 7px, 2px border, padding 3px `space.5` 5px 3px `space.6` 6px | profile-light-default cl=_1eerR _3qbFZ (#261); css:5515 ._3qbFZ |
+| week badge | size / position | 53 x 24px, absolute top -8px right -6px, radius 7px, `borderWidth.2` 2px border, padding 3px `space.5` 5px 3px `space.6` 6px | profile-light-default cl=_1eerR _3qbFZ (#261); css:5515 ._3qbFZ |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -2684,13 +2684,13 @@ Tokens (light):
 | streak icon (active) | image | profile/8a6dca76...svg (orange flame) | profile-light-default #250 |
 
 Type:
-- value: duolingo-sans `typography.app.statValue` 700 20px / 20px (19px under 700px) (profile-dark-default #242; css:5515 .-TMd4)
-- label: duolingo-sans `typography.body.compact` 500 16px / 20px (15px under 700px) (profile-dark-default #243; css:5515 ._3oUUc)
+- value: duolingo-sans `typography.app.statValue` 700 20px / 20px (19px under `breakpoint.md` 700px) (profile-dark-default #242; css:5515 .-TMd4)
+- label: duolingo-sans `typography.body.compact` 500 16px / 20px (15px under `breakpoint.md` 700px) (profile-dark-default #243; css:5515 ._3oUUc)
 - week badge: duolingo-sans 700 12px / 14px uppercase (profile-light-default #261; css:5515 ._3qbFZ)
 
 Contains: badge (corner pill)
 
-Desktop vs mobile: mobile: tile 263 x 70px, padding 12px 14px 10px; icon 15px wide with 7.5px gap; value 19px; label 15px and "Current league" shortens to "League". Source: profile-dark-mobile #80, #81, #83, #84, #97; css:5515 ._2uSOC/.-AVDu/.-TMd4/._3oUUc @media (max-width:699px).
+Desktop vs mobile: mobile: tile 263 x 70px, padding `space.12` 12px `space.14` 14px `space.10` 10px; icon 15px wide with 7.5px gap; value 19px; label 15px and "Current league" shortens to "League". Source: profile-dark-mobile #80, #81, #83, #84, #97; css:5515 ._2uSOC/.-AVDu/.-TMd4/._3oUUc @media (max-width:699px).
 
 Crops: [profile-stat-tile-dark](crops/profile-stat-tile-dark.png) · [profile-stat-tile-light](crops/profile-stat-tile-light.png)
 
@@ -2754,9 +2754,9 @@ Type:
 - reason: duolingo-sans 500 15px / 22px, centred (profile-dark-default #275; css:1081 ._142Ad)
 - FOLLOW: duolingo-sans `typography.app.labelSmall` 700 15px / 20px uppercase, letter-spacing 0.8px (profile-dark-default #276; css:app ._3wPHf, ._2Rt1l)
 
-Contains: button: primary (legacy lip button, macaw/whale, 8px radius, 36px tall), avatar, icon button (dismiss)
+Contains: button: primary (legacy lip button, macaw/whale, `radius.8` 8px radius, 36px tall), avatar, icon button (dismiss)
 
-Desktop vs mobile: mobile: cards become list rows inside one bordered panel (div.cl=_1xR2j _39QMj, padding 16px, 2px swan divider, 87px tall): avatar 48 left, name 700 20px, reason 16px, then an icon-only FOLLOW (41 x 32, padding 6px 8px, add-friend svg 25x16) and an 18px dismiss X with 16px left margin; panel ends with a "View all" row. Source: profile-dark-mobile #107-#118, #141; css:1081 ._1xR2j, ._39QMj, ._3GTBe, ._32Aog.
+Desktop vs mobile: mobile: cards become list rows inside one bordered panel (div.cl=_1xR2j _39QMj, padding `space.16` 16px, 2px swan divider, 87px tall): avatar 48 left, name 700 20px, reason 16px, then an icon-only FOLLOW (41 x 32, padding `space.6` 6px `space.8` 8px, add-friend svg 25x16) and an 18px dismiss X with 16px left margin; panel ends with a "View all" row. Source: profile-dark-mobile #107-#118, #141; css:1081 ._1xR2j, ._39QMj, ._3GTBe, ._32Aog.
 
 Crops: [friend-suggestion-card-dark](crops/friend-suggestion-card-dark.png) · [friend-suggestion-card-light](crops/friend-suggestion-card-light.png)
 
@@ -2777,11 +2777,11 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| panel | width | 368px right rail, 2px border, radius `radius.16` 16px | profile-dark-default cl=_2G9SS (#87) |
+| panel | width | 368px right rail, `borderWidth.2` 2px border, radius `radius.16` 16px | profile-dark-default cl=_2G9SS (#87) |
 | update item | padding / height | padding 0 0 `space.16` 16px `space.16` 16px; 222px tall | profile-dark-default cl=_2tJ8I (#88); css:5515 ._2tJ8I |
 | header row | margin | margin-top `space.16` 16px; avatar 50 x 50; name block margin-left `space.10` 10px, max-width 158px | profile-dark-default cl=_3NHGm (#91), img (#93), cl=_3uy9e (#94) |
 | event text | size / margin | 218px max width, margin `space.16` 16px 0 `space.20` 20px, ellipsis | profile-dark-default cl=Vbl7C _3Umux (#98) |
-| event art | size | 130 x 130px, margin-top `space.10` 10px (104px under 360px) | profile-dark-default img cl=_18A1Y (#100); css:5515 ._18A1Y |
+| event art | size | 130 x 130px, margin-top `space.10` 10px (104px under `breakpoint.xs` 360px) | profile-dark-default img cl=_18A1Y (#100); css:5515 ._18A1Y |
 | CELEBRATE | size | 149 x 50px, radius `radius.16` 16px, border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px; icon 26 x 20, label margin-left 7px | profile-dark-default button cl=_2ZO5y _2V6ug (#103), img (#104), span (#105) |
 | reaction counter | size | outer ring 34 x 34 (2px snow border), inner ring 30 x 30 (2px swan border, padding `space.4` 4px), icon 18 x 18, radius 16; count margin-left `space.8` 8px; group margin-right `space.16` 16px | profile-dark-default #108-#112; css:5515 ._1aIia, ._34nUQ |
 | View all row | padding / height | padding `space.16` 16px 25px 13px `space.18` 18px; 51px; chevron 10 x 20 | profile-dark-default a cl=_1eHsP (#138), #139 |
@@ -2829,7 +2829,7 @@ Type:
 
 Contains: button: secondary (web-ui _2V6ug, snow face, swan border), avatar, card/list shell, list row with chevron
 
-Desktop vs mobile: mobile: the feed collapses to a single "Friend updates" row in the main column (a.cl=BAKBs, 534 x 82, padding 20px 22px, 700 20px eel, 55 x 42 party icon with 14px gap, chevron). Source: profile-dark-mobile #61-#64; css:5515 .BAKBs, .UqpgY.
+Desktop vs mobile: mobile: the feed collapses to a single "Friend updates" row in the main column (a.cl=BAKBs, 534 x 82, padding `space.20` 20px 22px, 700 20px eel, 55 x 42 party icon with `space.14` 14px gap, chevron). Source: profile-dark-mobile #61-#64; css:5515 .BAKBs, .UqpgY.
 
 Crops: [friend-update-card-dark](crops/friend-update-card-dark.png) · [friend-update-card-light](crops/friend-update-card-light.png) · [friend-update-card--mobile-light](crops/friend-update-card--mobile-light.png)
 
@@ -2848,7 +2848,7 @@ Anatomy:
 | --- | --- | --- | --- |
 | grid | gaps | rows: row-gap `space.8` 8px; columns: column-gap `space.8` 8px, 5 cells per kana row (combo rows use 3) | characters-dark-default cl=_22vCj (#171), cl=_11ETR (#172); css:9416-975668fa.css ._22vCj, ._11ETR |
 | cell | width x height | 82 x 68px at 480 column (86 x 68 light) | characters-dark-default #173; characters-light-default #181 |
-| cell | padding / radius / border | padding `space.10` 10px 0 `space.5` 5px, height auto, line-height 1; radius `radius.16` 16px; border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px transparent with ::before face (2px border, 2px box-shadow lip) | characters-dark-default #173; css:9416 ._3Dsa- |
+| cell | padding / radius / border | padding `space.10` 10px 0 `space.5` 5px, height auto, line-height 1; radius `radius.16` 16px; border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px transparent with ::before face (`borderWidth.2` 2px border, 2px box-shadow lip) | characters-dark-default #173; css:9416 ._3Dsa- |
 | glyph | line | 19px line box | characters-dark-default span cl=IxPSK (#175) |
 | romaji | line / margin | `space.15` 15px line, margin-bottom `space.5` 5px | characters-dark-default cl=_3UqmZ (#176) |
 | mastery bar | size | 40 x 8px (width 60%, max 40px), radius `radius.4` 4px, centred; fill min-width 12px | characters-dark-default role=progressbar cl=oCRfA QhZ1x (#177), #178, #181; css:9416 .QhZ1x |
@@ -2908,7 +2908,7 @@ Anatomy:
 | --- | --- | --- | --- |
 | tab | width x height | 158 x 52px at 480 column (195 x 52 light) | characters-dark-default #154-#159; characters-light-default #162-#167 |
 | tab | padding / rule | padding `space.15` 15px 0; border-bottom `borderWidth.2` 2px | characters-dark-default cl=_3ugho (#155); css:9416-975668fa.css ._3ugho |
-| row | margins | margin 0 (desktop), 0 -16px under 700px | css:9416 ._7WPBm |
+| row | margins | margin 0 (desktop), 0 -16px under `breakpoint.md` 700px | css:9416 ._7WPBm |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -2937,7 +2937,7 @@ Type:
 
 Contains: tabs (underline)
 
-Desktop vs mobile: no mobile dump; CSS pulls the tab row out to the screen edge under 700px (margin 0 -16px)
+Desktop vs mobile: no mobile dump; CSS pulls the tab row out to the screen edge under `breakpoint.md` 700px (margin 0 -16px)
 
 Crops: [characters-tabs-dark](crops/characters-tabs-dark.png) · [characters-tabs-light](crops/characters-tabs-light.png)
 
@@ -2956,7 +2956,7 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | bubble | size | content-sized width (245 to 379px seen), 91px tall; offset `space.8` 8px right of the column edge to make room for the arrow | guidebook-dark-default cl=_36bu_ _1KdWa (#177), cl=_3zpnU D0iFS (#176); css:4779-c36ad395.css .D0iFS |
-| bubble | padding / border / radius | padding `space.8` 8px `space.16` 16px `space.16` 16px (12px sides under 700px); border `borderWidth.2` 2px; radius `radius.15` 15px | guidebook-dark-default #177; css:1327-4028784b.css ._1KdWa; css:4779 ._36bu_ |
+| bubble | padding / border / radius | padding `space.8` 8px `space.16` 16px `space.16` 16px (12px sides under `breakpoint.md` 700px); border `borderWidth.2` 2px; radius `radius.15` 15px | guidebook-dark-default #177; css:1327-4028784b.css ._1KdWa; css:4779 ._36bu_ |
 | arrow | size / position | 20 x 10px, rotated -90deg, left -13px, 15px below the top radius | guidebook-dark-default cl=_3T97b (#231); css:4779 .D0iFS>._3T97b |
 | grid | layout | 2-column grid: speaker (col 1, 39px tall, margin-right `space.10` 10px) + text (col 2); translation in row 2 | guidebook-dark-default cl=iS2Dl (#178), cl=fEd5_ (#179); css:1327 .fEd5_, ._3X015, .ihYGQ |
 | speaker | size | 29 x 22px svg | guidebook-dark-default button (#180), span cl=_1OCYa (#181); css:1327 ._3DAip ._1OCYa |
@@ -2999,7 +2999,7 @@ Type:
 
 Contains: popover shell (web-ui _36bu_, arrow left), icon button (speaker)
 
-Desktop vs mobile: no mobile dump; CSS narrows bubble side padding to 12px under 700px (css:1327 ._1KdWa)
+Desktop vs mobile: no mobile dump; CSS narrows bubble side padding to 12px under `breakpoint.md` 700px (css:1327 ._1KdWa)
 
 Crops: [guidebook-phrase-dark](crops/guidebook-phrase-dark.png) · [guidebook-phrase-light](crops/guidebook-phrase-light.png)
 
@@ -3070,7 +3070,7 @@ Type:
 
 Contains: button: secondary (web-ui _2V6ug, macaw label), badge/pill
 
-Desktop vs mobile: mobile (<700px): row padding 15px 0 70px 110px, no min-height; button leaves the float and becomes position absolute, bottom 20px, left 110px (under the text), width by content (158 with price, 116 for FREE TRIAL); description gets margin-bottom 18px. Source: shop-dark-mobile #63, #65, #68, #71; css:8566 ._3-o-j, .kbxOW.
+Desktop vs mobile: mobile (<`breakpoint.md` 700px): row padding `space.15` 15px 0 70px 110px, no min-height; button leaves the float and becomes position absolute, bottom 20px, left 110px (under the text), width by content (158 with price, 116 for FREE TRIAL); description gets margin-bottom `space.18` 18px. Source: shop-dark-mobile #63, #65, #68, #71; css:8566 ._3-o-j, .kbxOW.
 
 Crops: [shop-item-row-dark](crops/shop-item-row-dark.png) · [shop-item-row-light](crops/shop-item-row-light.png) · [shop-item-row--equipped-light](crops/shop-item-row--equipped-light.png) · [shop-item-row--mobile-dark](crops/shop-item-row--mobile-dark.png)
 
@@ -3091,13 +3091,13 @@ Anatomy:
 | A body | width / margin | calc(100% - 83px) = 245px, margin `space.8` 8px 0 `space.24` 24px | learn-dark-default cl=_3GCbg (#92) |
 | A button | size | 328 x `size.buttonHeight` 50px (100%), radius `radius.16` 16px, 4px lip (box-shadow 0 4px nebula) | learn-dark-default button cl=_1VYyp _3b8r8 (#93) |
 | A art | size / position | 98 x 94px, absolute top 24px right 24px | learn-dark-default img cl=zYUV0 (#89) |
-| B/C banner | padding / radius / margin | padding `space.20` 20px (20px 10px 10px under 530px), radius `radius.16` 16px, margin-bottom `space.32` 32px | shop-dark-default cl=MGk8p (#145); css:8566-1e4d7a6c.css .MGk8p |
+| B/C banner | padding / radius / margin | padding `space.20` 20px (20px 10px 10px under `breakpoint.sm` 530px), radius `radius.16` 16px, margin-bottom `space.32` 32px | shop-dark-default cl=MGk8p (#145); css:8566-1e4d7a6c.css .MGk8p |
 | B banner | size | 480 x 227px | shop-dark-default #145 |
 | B art + headline | size | art 90 x 113px, margin-right `space.24` 24px; headline block margin-top `space.24` 24px | shop-dark-default img cl=_22aYT (#147), cl=_1iadG (#148) |
 | B/C button | size / margin | height 50, margin-top `space.24` 24px, width 100% of its column (440 B; 260 C dark; 369 C light), radius `radius.16` 16px (`space.12` 12px on settings-super), `space.4` 4px lip | shop-dark-default dt=plus-offer-button (#152); settings-super-dark-default #109; css:7668 ._3LkfO |
-| B logo | size / position | 86 x 23px, absolute top 0 right 0 with 16px margin | shop-dark-default dt=plus-offer-logo (#154); css:7668 .ZEFkS, ._24WQp |
+| B logo | size / position | 86 x 23px, absolute top 0 right 0 with `space.16` 16px margin | shop-dark-default dt=plus-offer-logo (#154); css:7668 .ZEFkS, ._24WQp |
 | C banner | size | 480 x 222 (settings-super dark), 592 x 227 (settings-super light), 592 x 197 (shop light) | settings-super-dark-default cl=_3_cT8 MGk8p (#100); settings-super-light-default #102; shop-light-default #154 |
-| C illustration | clip | max-width 200px, margin -20px -20px -65px 0, image max-height 230px; hidden under 530px | settings-super-dark-default cl=_2o8pO (#102), img cl=_2hygw (#103); css:7668 ._2o8pO, ._2hygw |
+| C illustration | clip | max-width 200px, margin -20px -20px -65px 0, image max-height 230px; hidden under `breakpoint.sm` 530px | settings-super-dark-default cl=_2o8pO (#102), img cl=_2hygw (#103); css:7668 ._2o8pO, ._2hygw |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -3130,7 +3130,7 @@ Type:
 - A title: duolingo-sans `typography.app.cardTitle` 700 19px / 28px (learn-dark-default #91)
 - A body: duolingo-sans `typography.app.railBody` 500 17px / 25px (learn-dark-default #92; css:7668 .OWSZL)
 - buttons: duolingo-sans `typography.button.default` 700 15px / 18px uppercase, letter-spacing 0.8px (learn-dark-default #93)
-- B/C headline: duolingo-sans `typography.app.promoTitle` 700 25px / 34px (23px / 31px under 530px) (shop-dark-default #149; css:8566 ._353sT)
+- B/C headline: duolingo-sans `typography.app.promoTitle` 700 25px / 34px (23px / 31px under `breakpoint.sm` 530px) (shop-dark-default #149; css:8566 ._353sT)
 - C body: duolingo-sans `typography.app.railBody` 500 17px / 25px; emphasis 700 (settings-super-dark-default #106, #108; css:7668 ._15G6R)
 
 Contains: button: primary (web-ui _1VYyp, recoloured cosmos/nebula), button: primary on dark (web-ui _1VYyp + _19taU white), card shell (rail card)

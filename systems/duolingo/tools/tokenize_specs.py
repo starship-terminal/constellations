@@ -289,10 +289,32 @@ def size_token(value, ctx):
     hits = [k for k, words in HEIGHTS.items() if HEIGHT_VALUE[k] == value and re.search(words, ctx)]
     return hits[0] if len(hits) == 1 else None
 
-def type_and_heights(text, ctx, height_row=False, pair_row=False):
+# 'below 700px', 'at >=700px', 'min-width 1160px': a viewport width that is one of the
+# breakpoints. A bare 'at 1440px' is usually the capture width, so it stays raw.
+BREAK_BEFORE = re.compile(r"(?:\b(?:below|under|above)\s+|(?:>=|<=|<|>)\s*|\b(?:min|max)-width:?\s*)$")
+BREAKPOINT = {v["$value"]: k for k, v in CORE["breakpoint"].items() if isinstance(v, dict) and "$value" in v}
+GROUP_WORD = "|".join(w for w, _ in SCALES)
+NUM = r"(?:`[\w.-]+`\s*)?(?:-?\d+(?:\.\d+)?(?:px|%|em|rem)?|auto)"
+KEY_BEFORE = re.compile(r"(" + GROUP_WORD + r")(?:-[a-z]+)?\s*:?\s*(?:" + NUM + r"\s+)*$")
+WORD_AFTER = re.compile(r"(?:\s+" + NUM + r")*\s+(" + GROUP_WORD + r")\b")
+
+def named_group(before, after, key_group=None, pair=False):
+    """Lengths outside the measurement tables: a px value takes a radius, space or borderWidth
+    token only when the group is named right before its run of values ('padding: 0 16px') or
+    right after it ('2px radius', '20px 25px padding'), or, in the JSON twins, when the field is
+    named for one ('padding') and nothing in the clause names anything. Box sizes stay raw."""
+    for m in (KEY_BEFORE.search(before.lower()), WORD_AFTER.match(after.lower())):
+        if m:
+            return next(g for w, g in SCALES if re.fullmatch(w, m.group(1)))
+    clause = before[clause_from(before, len(before), (";", ",", "(", "/", "+", " - ", "<br>")):]
+    if pair or re.search(r"[a-z]{3,}", clause.lower()):
+        return None
+    return key_group
+
+def type_and_heights(text, ctx, height_row=False, pair_row=False, key_group=None):
     """One cell, one prose line or one JSON string. ctx is the section and row text. A quoted
     CSS rule ('css:file sel { ... }', up to the next <br> or closing bracket) is left as written."""
-    quoted = [(m.start(), m.end()) for m in re.finditer(r"css:[^<)]*|\{[^}]*\}?", text)]
+    quoted = [(m.start(), m.end()) for m in re.finditer(r"css:[^{<]*\{[^}]*\}?|css:[^<)]*|\{[^}]*\}?", text)]
     inside = lambda i: any(a <= i < b for a, b in quoted)
     def font(m):
         if inside(m.start()):
@@ -313,6 +335,13 @@ def type_and_heights(text, ctx, height_row=False, pair_row=False):
             k = size_token(m.group(0), ctx)
             if k:
                 return f"`size.{k}` {m.group(0)}"
+            return m.group(0)
+        if BREAK_BEFORE.search(text[:m.start()]) and m.group(0) in BREAKPOINT:
+            return f"`breakpoint.{BREAKPOINT[m.group(0)]}` {m.group(0)}"
+        group = named_group(text[:m.start()], text[m.end():], key_group, in_pair(text, m))
+        if group:
+            k = {v["$value"]: k for k, v in CORE[group].items() if isinstance(v, dict) and "$value" in v}.get(m.group(0))
+            return f"`{group}.{k}` {m.group(0)}" if k else m.group(0)
         return m.group(0)
     return PX.sub(height, text)
 
@@ -340,14 +369,18 @@ def type_and_heights_md(md):
             head = header[i].strip() if i < len(header) else ""
             if head == "Source" or "captured" in cells[i]:
                 continue
+            col_groups = {g for words, g in SCALES if re.search(words, head.lower())}
             cells[i] = type_and_heights(cells[i], section + " " + part + " " + prop, height_row=is_height(prop),
+                                        key_group=col_groups.pop() if len(col_groups) == 1 else None,
                                         pair_row=prop.startswith("width x height") or prop == "size")
         lines[n] = "|".join(cells)
     return "\n".join(lines)
 
 def type_and_heights_json(v, ctx=""):
     if isinstance(v, str):
-        return type_and_heights(v, ctx.lower(), height_row=is_height(ctx.lower()))
+        field = ctx.lower().rsplit(" ", 1)[-1]
+        groups = {g for words, g in SCALES if re.search(words, field)}
+        return type_and_heights(v, ctx.lower(), height_row=is_height(ctx.lower()), key_group=groups.pop() if len(groups) == 1 else None)
     if isinstance(v, list):
         return [type_and_heights_json(x, ctx) for x in v]
     if isinstance(v, dict):
@@ -357,7 +390,7 @@ def type_and_heights_json(v, ctx=""):
 
 # This script's own output: a token path in backticks followed by a space, in front of a colour
 # or a length. Stripped first, so a change to the rules above regenerates every spec.
-OWN = re.compile(r"`(?:palette\.(?:light|dark)|text|border|surface|background|accent|status|feedback|gamification|dataViz|unitColors|radius|space|borderWidth|typography|size)\.[\w.-]+` (?=#|\d|[a-z][a-z0-9-]*:? #)")
+OWN = re.compile(r"`(?:palette\.(?:light|dark)|text|border|surface|background|accent|status|feedback|gamification|dataViz|unitColors|radius|space|borderWidth|typography|size|breakpoint)\.[\w.-]+` (?=#|\d|[a-z][a-z0-9-]*:? #)")
 
 def strip(v):
     if isinstance(v, str):

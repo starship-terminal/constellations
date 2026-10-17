@@ -160,8 +160,8 @@ colors:
   ramp-red-700: "#b33535"
   ramp-red-800: "#833241"
   ramp-red-900: "#6f2c39"
-  ramp-orange-100: "#ffce8e"
-  ramp-orange-200: "#ebc37f"
+  ramp-orange-100: "#f1dab3"
+  ramp-orange-200: "#ffce8e"
   ramp-orange-300: "#ffa76a"
   ramp-orange-400: "#ff9600"
   ramp-orange-500: "#dc8f47"
@@ -174,6 +174,23 @@ colors:
   ramp-yellow-300: "#ffc800"
   ramp-yellow-400: "#ffb301"
   ramp-yellow-500: "#e7a601"
+  ramp-purple-100: "#d696ff"
+  ramp-purple-200: "#ce82ff"
+  ramp-purple-300: "#ad82e6"
+  ramp-purple-400: "#9069cd"
+  ramp-purple-500: "#905bb3"
+  ramp-purple-600: "#6f4ea1"
+  ramp-purple-700: "#5f3cac"
+  ramp-purple-800: "#4c1d73"
+  ramp-purple-900: "#42026a"
+  ramp-purple-1000: "#250957"
+  ramp-pink-100: "#ffaade"
+  ramp-pink-200: "#ff86d0"
+  ramp-pink-300: "#ff64bf"
+  ramp-pink-400: "#cc6ba6"
+  ramp-pink-500: "#b35e92"
+  ramp-pink-600: "#b41c75"
+  ramp-pink-700: "#8f2463"
 typography:
   pageTitle-small:
     fontFamily: "duolingo-sans"
@@ -514,7 +531,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **Derived tokens.** `accent.*.hover` is the face colour put through the button's `filter: brightness(1.1)`, worked out from the palette; the product applies a filter, so the pixel colour can differ slightly where the face is anti-aliased. `ramp.*` groups palette colours Duolingo never groups into ramps: 8 to 10 steps per hue, 5 for yellow, every step a colour the palette holds (none interpolated), ordered by CIE L*. Some steps carry feature names (`gray-text`, `eddy-radio`, `streak-panel-unextended-topbar-text`) because those are the only palette entries at that lightness. `border.strong` is hare, the one neutral edge darker than swan; Duolingo draws it on three rules only: the ghost avatar's dashed border, a chip's hover border and a 40%-opacity divider. `status.*Border`, `status.infoText` and `status.warningText` are roles assigned from the component that draws that colour; Duolingo has no status component with its own border.
+- **Derived tokens.** `accent.*.hover` is the face colour put through the button's `filter: brightness(1.1)`, worked out from the palette; the product applies a filter, so the pixel colour can differ slightly where the face is anti-aliased. `ramp.*` groups palette colours Duolingo never groups into ramps: eight hues, 5 to 10 steps each in light, every step a colour the palette holds (none interpolated), ordered by CIE L* in each theme. Some steps carry feature names (`gray-text`, `eddy-radio`, `lily-radio`) because those are the only palette entries at that lightness. `border.strong` is hare, the one neutral edge darker than swan; Duolingo draws it on three rules only: the ghost avatar's dashed border, a chip's hover border and a 40%-opacity divider. `status.*Border`, `status.infoText` and `status.warningText` are roles assigned from the component that draws that colour; Duolingo has no status component with its own border.
 - **Light warning and light wrong-answer colours** come from CSS and the palette, not from a light capture (no wrong answer was given, to keep the account's hearts).
 - **The 2026-10 screenshots are renders of page copies**, not window captures: scripts are removed, so animated illustrations are frozen where the snapshot caught them, and the fonts are the same CDN files the app loads, declared again by [lib.mjs](tools/capture/signed-in/lib.mjs). The 2026-09 screenshots carry the capture tool's orange edge glow and pointer.
 - **Gem and XP totals** in the 2026-10 renders were replaced with round numbers by the redaction file; other learners' avatars are shown, their names are not.

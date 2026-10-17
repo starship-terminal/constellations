@@ -11,14 +11,14 @@
    "colour": "\"#HEX (palette-name, theme)\"; \"@ a alpha\" when translucent. When several palette names share a hex, the name used by the CSS rule is shown.",
    "trace": "dump#node <tag> cl=... ; css:<file> [@media] <selector>",
    "body_defaults": "A missing font value in a dump equals the body default: duolingo-sans `typography.app.bodyDefault` 500 17px/20px (css:app-f2ef02f8.css body); font-family is duolingo-sans for everything (css:app * {font-family:duolingo-sans,sans-serif}).",
-   "screenshots": "screenshots/ are 2x; crops use rect x2 with 8px padding.",
+   "screenshots": "screenshots/ are 2x; crops use rect x2 with `space.8` 8px padding.",
    "caveat_overlay": "Captures include an injected agent overlay (orange inset glow at the viewport edges, a pointer svg). Ignore the orange tint near crop edges and the #D97757 / #111111 / #FAF9F5 values."
   },
   "global_rules": {
    "focus": "No focus ring anywhere in the button system: css:app-f2ef02f8.css * {outline:none}, button:focus {outline:none}, css:4779 ._7jW2t:not(._1ZhE5) {outline:none}. The only :focus-visible rule in all 182 CSS files is pathSections ._3DGr8:focus-visible {outline:2px solid macaw; outline-offset:-2px}.",
    "hover": "All button hovers are gated by @media (hover:hover) and implemented as CSS filter (brightness 1.1 on coloured faces, 0.9 on white faces). Text/unstyled buttons animate it over .2s; solid/outline web-ui buttons switch instantly because their transition references an undefined variable (see Button notes).",
-   "press": "Solid: face moves down by the lip width (4px) and the ::before box-shadow lip is removed. Outline: moves 2px, shadow removed, 2px border stays. Cards: 2px.",
-   "root_button_radius": "css:app :root { --web-ui_button-border-radius:16px } makes 16px the effective default radius; component defaults (12px) apply only where the var is re-set."
+   "press": "Solid: face moves down by the lip width (4px) and the ::before box-shadow lip is removed. Outline: moves 2px, shadow removed, `borderWidth.2` 2px border stays. Cards: 2px.",
+   "root_button_radius": "css:app :root { --web-ui_button-border-radius:16px } makes 16px the effective default radius; component defaults (`radius.12` 12px) apply only where the var is re-set."
   }
  },
  "button_variants": [
@@ -54,12 +54,12 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
       "family": "duolingo-sans",
@@ -73,7 +73,7 @@
      "::before": {
       "fill": "`accent.primary.face` #58CC02 (owl, light)",
       "box_shadow": "`accent.primary.lip` #58A700 (tree-frog, light) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Check",
@@ -115,12 +115,12 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -134,7 +134,7 @@
      "::before": {
       "fill": "`accent.primary.face` #93D333 (owl, dark)",
       "box_shadow": "`accent.primary.lip` #79B933 (tree-frog, dark) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Check",
@@ -193,13 +193,13 @@
       "w": 336,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
-     "margin": "32px 0px 0px 0px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
+     "margin": "`space.32` 32px 0px 0px 0px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
       "family": "duolingo-sans",
@@ -213,7 +213,7 @@
      "::before": {
       "fill": "`accent.secondary.face` #1CB0F6 (macaw, light)",
       "box_shadow": "`accent.secondary.lip` #1899D6 (whale, light) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Keep learning",
@@ -255,13 +255,13 @@
       "w": 336,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
-     "margin": "32px 0px 0px 0px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
+     "margin": "`space.32` 32px 0px 0px 0px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -275,7 +275,7 @@
      "::before": {
       "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
       "box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Allow notifications",
@@ -334,12 +334,12 @@
       "w": 331,
       "h": 48
      },
-     "padding": "0px 12px 0px 12px",
+     "padding": "0px `space.12` 12px 0px `space.12` 12px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
       "family": "duolingo-sans",
@@ -353,7 +353,7 @@
      "::before": {
       "fill": "`accent.secondary.face` #1CB0F6 (macaw, light)",
       "box_shadow": "`accent.secondary.lip` #1899D6 (whale, light) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Learn the characters",
@@ -395,12 +395,12 @@
       "w": 264,
       "h": 48
      },
-     "padding": "0px 12px 0px 12px",
+     "padding": "0px `space.12` 12px 0px `space.12` 12px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -414,7 +414,7 @@
      "::before": {
       "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
       "box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Learn the characters",
@@ -439,7 +439,7 @@
     "crop": "crops/button-primary-blue-juicy-dark.png",
     "screenshot": "characters-dark-default.png"
    },
-   "notes": "Same colours as primary-blue; 48px tall, 16px label, 0.04em tracking. Radius 16px from the root --web-ui_button-border-radius; settings pages re-set it to 12px on their wrapper (css:settingsPage .unX5-), which is why settings save/super buttons measure 12px."
+   "notes": "Same colours as primary-blue; 48px tall, 16px label, 0.04em tracking. Radius `radius.16` 16px from the root --web-ui_button-border-radius; settings pages re-set it to 12px on their wrapper (css:settingsPage .unX5-), which is why settings save/super buttons measure 12px."
   },
   {
    "id": "secondary",
@@ -465,7 +465,7 @@
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.tertiary` #AFAFAF (hare, light)",
     "lip_box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "lesson-light-challenge-tiles-partial#164 <button> cl='_2V6ug _1ursp _7jW2t _2x7Co _3fo6Q' dt='player-skip'",
      "rect": {
@@ -474,12 +474,12 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
      "font": {
       "family": "duolingo-sans",
@@ -497,7 +497,7 @@
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
       "box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Skip",
@@ -531,7 +531,7 @@
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.tertiary` #52656D (hare, dark)",
     "lip_box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "lesson-dark-challenge-tiles-partial#133 <button> cl='_2V6ug _1ursp _7jW2t _2x7Co _3fo6Q' dt='player-skip'",
      "rect": {
@@ -540,12 +540,12 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -563,7 +563,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Skip",
@@ -614,7 +614,7 @@
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.link` #1CB0F6 (macaw, light)",
     "lip_box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "learn-light-path-end#485 <button> cl='_3xDVI _2V6ug _1ursp _7jW2t _1jUqO'",
      "rect": {
@@ -623,12 +623,12 @@
       "w": 528,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.link` #1CB0F6 (macaw, light)",
      "font": {
       "family": "duolingo-sans",
@@ -646,7 +646,7 @@
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
       "box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Jump here?",
@@ -680,7 +680,7 @@
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.link` #49C0F8 (macaw, dark)",
     "lip_box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "learn-dark-path-end#475 <button> cl='_3xDVI _2V6ug _1ursp _7jW2t _1jUqO'",
      "rect": {
@@ -689,12 +689,12 @@
       "w": 416,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -712,7 +712,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Jump here?",
@@ -763,7 +763,7 @@
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.primary` #4B4B4B (eel, light)",
     "lip_box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "profile-light-default#104 <button> cl='_2ZO5y _2V6ug _1ursp _7jW2t _38b4b'",
      "rect": {
@@ -772,12 +772,12 @@
       "w": 149,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.primary` #4B4B4B (eel, light)",
      "font": {
       "family": "duolingo-sans",
@@ -794,7 +794,7 @@
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
       "box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "CELEBRATE",
@@ -834,7 +834,7 @@
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.primary` #F1F7FB (eel, dark)",
     "lip_box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "profile-dark-default#103 <button> cl='_2ZO5y _2V6ug _1ursp _7jW2t _38b4b'",
      "rect": {
@@ -843,12 +843,12 @@
       "w": 149,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -865,7 +865,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "CELEBRATE",
@@ -921,7 +921,7 @@
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.link` #1CB0F6 (macaw, light)",
     "lip_box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 3px 0px 1px",
-    "border_width": "1px",
+    "border_width": "`borderWidth.1` 1px",
     "measured": {
      "trace": "characters-light-default#174 <a> cl='_2paU5 rdtAy _2V6ug _1ursp _7jW2t'",
      "rect": {
@@ -935,7 +935,7 @@
       "width": "1px 1px 5px 1px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.link` #1CB0F6 (macaw, light)",
      "font": {
       "family": "duolingo-sans",
@@ -953,7 +953,7 @@
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
       "box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 3px 0px 1px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Tips",
@@ -987,7 +987,7 @@
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.link` #49C0F8 (macaw, dark)",
     "lip_box_shadow": "`border.default` #37464F (swan, dark) 0px 3px 0px 1px",
-    "border_width": "1px",
+    "border_width": "`borderWidth.1` 1px",
     "measured": {
      "trace": "characters-dark-default#166 <a> cl='_2paU5 rdtAy _2V6ug _1ursp _7jW2t'",
      "rect": {
@@ -1001,7 +1001,7 @@
       "width": "1px 1px 5px 1px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -1019,7 +1019,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 3px 0px 1px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Tips",
@@ -1044,7 +1044,7 @@
     "crop": "crops/button-secondary-juicy-macaw-dark.png",
     "screenshot": "characters-dark-default.png"
    },
-   "notes": "Border is 1px + 1px outline, lip is box-shadow 0 3px 0 1px, element border 1px 1px 5px; pressed moves 4px."
+   "notes": "Border is 1px + 1px outline, lip is box-shadow 0 3px 0 1px, element border `borderWidth.1` 1px `borderWidth.1` 1px `borderWidth.5` 5px; pressed moves 4px."
   },
   {
    "id": "super",
@@ -1078,12 +1078,12 @@
       "w": 328,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
       "family": "duolingo-sans",
@@ -1096,7 +1096,7 @@
      "::before": {
       "fill": "`gamification.super.face` #3C4DFF (cosmos, light)",
       "box_shadow": "`gamification.super.lip` #3F22EC (nebula, light) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Try 1 week free",
@@ -1138,12 +1138,12 @@
       "w": 328,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -1156,7 +1156,7 @@
      "::before": {
       "fill": "`gamification.super.face` #3C4DFF (cosmos, dark)",
       "box_shadow": "`gamification.super.lip` #3F22EC (nebula, dark) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Try 1 week free",
@@ -1215,13 +1215,13 @@
       "w": 552,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
-     "margin": "24px 0px 0px 0px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
+     "margin": "`space.24` 24px 0px 0px 0px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`gamification.super.surface` #000437 (eclipse, light)",
      "font": {
       "family": "duolingo-sans",
@@ -1235,7 +1235,7 @@
      "::before": {
       "fill": "`surface.default` #FFFFFF (snow, light)",
       "box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.5 alpha 0px 4px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "Start my free 7 days",
@@ -1277,13 +1277,13 @@
       "w": 260,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
-     "margin": "24px 0px 0px 0px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
+     "margin": "`space.24` 24px 0px 0px 0px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`gamification.super.surface` #000437 (eclipse, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -1298,7 +1298,7 @@
      "::before": {
       "fill": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
       "box_shadow": "`palette.dark.celestia` #FFFFFF (celestia, dark) @ 0.5 alpha 0px 4px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "Learn more",
@@ -1357,12 +1357,12 @@
       "w": 184,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
       "family": "duolingo-sans",
@@ -1375,7 +1375,7 @@
      "::before": {
       "fill": "`accent.danger.face` #FF4B4B (cardinal, light)",
       "box_shadow": "`accent.danger.lip` #EA2B2B (fire-ant, light) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Remove",
@@ -1417,12 +1417,12 @@
       "w": 184,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -1435,7 +1435,7 @@
      "::before": {
       "fill": "`accent.danger.face` #EE5555 (cardinal, dark)",
       "box_shadow": "`accent.danger.lip` #D84848 (fire-ant, dark) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Remove",
@@ -1495,13 +1495,13 @@
       "w": 263,
       "h": 50
      },
-     "padding": "8px 16px 8px 16px",
-     "margin": "16px 0px 0px 0px",
+     "padding": "`space.8` 8px `space.16` 16px `space.8` 8px `space.16` 16px",
+     "margin": "`space.16` 16px 0px 0px 0px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`accent.primary.face` #58CC02 (owl, light)",
      "font": {
       "family": "duolingo-sans",
@@ -1514,7 +1514,7 @@
      "::before": {
       "fill": "`surface.default` #FFFFFF (snow, light)",
       "box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.7 alpha 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "text": "Start +10 XP"
     },
@@ -1538,13 +1538,13 @@
       "w": 263,
       "h": 50
      },
-     "padding": "8px 16px 8px 16px",
-     "margin": "16px 0px 0px 0px",
+     "padding": "`space.8` 8px `space.16` 16px `space.8` 8px `space.16` 16px",
+     "margin": "`space.16` 16px 0px 0px 0px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`unitColors.green` #58CC02 (owl-always-light, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -1557,7 +1557,7 @@
      "::before": {
       "fill": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
       "box_shadow": "`palette.dark.celestia` #FFFFFF (celestia, dark) @ 0.7 alpha 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "text": "Start +10 XP"
     },
@@ -1597,12 +1597,12 @@
       "w": 196,
       "h": 36
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "8px",
+     "radius": "`radius.8` 8px",
      "text_color": "`palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light)",
      "font": {
       "family": "duolingo-sans",
@@ -1616,7 +1616,7 @@
      "::before": {
       "fill": "`surface.default` #FFFFFF (snow, light)",
       "box_shadow": "`palette.light.snow` #FFFFFF (snow, light) @ 0.6 alpha 0px 4px 0px 0px",
-      "radius": "8px"
+      "radius": "`radius.8` 8px"
      },
      "label": {
       "text": "View List",
@@ -1658,12 +1658,12 @@
       "w": 196,
       "h": 36
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "8px",
+     "radius": "`radius.8` 8px",
      "text_color": "`palette.dark.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -1677,7 +1677,7 @@
      "::before": {
       "fill": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
       "box_shadow": "`palette.dark.celestia` #FFFFFF (celestia, dark) @ 0.6 alpha 0px 4px 0px 0px",
-      "radius": "8px"
+      "radius": "`radius.8` 8px"
      },
      "label": {
       "text": "View List",
@@ -1728,7 +1728,7 @@
     "border": "`border.onColor` #000000 (black, light) @ 0.2 alpha",
     "text": "`text.onPrimary` #FFFFFF (snow, light)",
     "lip_box_shadow": "`border.onColor` #000000 (black, light) @ 0.2 alpha 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "learn-light-completed-popover#168 <a> cl='_1ORKS _1yhVg _2V6ug _1ursp _7jW2t' dt='guidebook-button-81'",
      "rect": {
@@ -1737,12 +1737,12 @@
       "w": 148,
       "h": 54
      },
-     "padding": "12px 14px 12px 12px",
+     "padding": "`space.12` 12px `space.14` 14px `space.12` 12px `space.12` 12px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
       "family": "duolingo-sans",
@@ -1759,7 +1759,7 @@
        "color": "`border.onColor` #000000 (black, light) @ 0.2 alpha"
       },
       "box_shadow": "`border.onColor` #000000 (black, light) @ 0.2 alpha 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Guidebook",
@@ -1799,7 +1799,7 @@
     "border": "`border.onColor` #000000 (black, dark) @ 0.2 alpha",
     "text": "`text.onPrimary` #131F24 (snow, dark)",
     "lip_box_shadow": "`border.onColor` #000000 (black, dark) @ 0.2 alpha 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "learn-dark-completed-popover#159 <a> cl='_1ORKS _1yhVg _2V6ug _1ursp _7jW2t' dt='guidebook-button-81'",
      "rect": {
@@ -1808,12 +1808,12 @@
       "w": 148,
       "h": 54
      },
-     "padding": "12px 14px 12px 12px",
+     "padding": "`space.12` 12px `space.14` 14px `space.12` 12px `space.12` 12px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -1830,7 +1830,7 @@
        "color": "`border.onColor` #000000 (black, dark) @ 0.2 alpha"
       },
       "box_shadow": "`border.onColor` #000000 (black, dark) @ 0.2 alpha 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Guidebook",
@@ -1927,8 +1927,8 @@
       "w": 336,
       "h": 32
      },
-     "padding": "0px 16px 0px 16px",
-     "margin": "16px 0px 0px 0px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
+     "margin": "`space.16` 16px 0px 0px 0px",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -1996,8 +1996,8 @@
       "w": 336,
       "h": 32
      },
-     "padding": "0px 16px 0px 16px",
-     "margin": "16px 0px 0px 0px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
+     "margin": "`space.16` 16px 0px 0px 0px",
      "text_color": "`accent.danger.text` #FF4B4B (cardinal, light)",
      "font": {
       "family": "duolingo-sans",
@@ -2048,8 +2048,8 @@
       "w": 336,
       "h": 32
      },
-     "padding": "0px 16px 0px 16px",
-     "margin": "16px 0px 0px 0px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
+     "margin": "`space.16` 16px 0px 0px 0px",
      "text_color": "`accent.danger.text` #EE5555 (cardinal, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -2248,7 +2248,7 @@
       "h": 32
      },
      "padding": "0px 7px 0px 7px",
-     "margin": "4px 0px 0px 0px",
+     "margin": "`space.4` 4px 0px 0px 0px",
      "text_color": "`text.link` #1CB0F6 (macaw, light)",
      "font": {
       "family": "duolingo-sans",
@@ -2300,7 +2300,7 @@
       "h": 32
      },
      "padding": "0px 7px 0px 7px",
-     "margin": "4px 0px 0px 0px",
+     "margin": "`space.4` 4px 0px 0px 0px",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -2368,12 +2368,12 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
      "font": {
       "family": "duolingo-sans",
@@ -2387,7 +2387,7 @@
      "transform": "matrix(1, 0, 0, 1, 0, 4)",
      "::before": {
       "fill": "`surface.disabled` #E5E5E5 (swan, light)",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Check",
@@ -2429,12 +2429,12 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -2448,7 +2448,7 @@
      "transform": "matrix(1, 0, 0, 1, 0, 4)",
      "::before": {
       "fill": "`surface.disabled` #37464F (swan, dark)",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Check",
@@ -2499,7 +2499,7 @@
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`gamification.streakInactive` #E5E5E5 (swan, light)",
     "lip_box_shadow": "none",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "shop-light-default#183 <button> cl='_2wryV _3xDVI _2V6ug _1ursp _7jW2t kbxOW _3U5_i' dt='purchase-button'",
      "rect": {
@@ -2508,13 +2508,13 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
-     "margin": "0px 0px 0px 18px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
+     "margin": "0px 0px 0px `space.18` 18px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`gamification.streakInactive` #E5E5E5 (swan, light)",
      "font": {
       "family": "duolingo-sans",
@@ -2532,7 +2532,7 @@
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Equipped",
@@ -2566,7 +2566,7 @@
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`gamification.streakInactive` #37464F (swan, dark)",
     "lip_box_shadow": "none",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "shop-dark-default#159 <button> cl='_2wryV _3xDVI _2V6ug _1ursp _7jW2t kbxOW _3U5_i' dt='purchase-button'",
      "rect": {
@@ -2575,13 +2575,13 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
-     "margin": "0px 0px 0px 18px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
+     "margin": "0px 0px 0px `space.18` 18px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`gamification.streakInactive` #37464F (swan, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -2599,7 +2599,7 @@
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
       },
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Full",
@@ -2659,12 +2659,12 @@
       "w": 127,
       "h": 36
      },
-     "padding": "6px 18px 6px 18px",
+     "padding": "`space.6` 6px `space.18` 18px `space.6` 6px `space.18` 18px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "8px",
+     "radius": "`radius.8` 8px",
      "background": "`text.selected` #1899D6 (whale, light)",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
@@ -2682,7 +2682,7 @@
        "width": "0px 0px 4px 0px",
        "color": "transparent"
       },
-      "radius": "8px"
+      "radius": "`radius.8` 8px"
      },
      "label": {
       "text": "Follow",
@@ -2729,12 +2729,12 @@
       "w": 127,
       "h": 36
      },
-     "padding": "6px 18px 6px 18px",
+     "padding": "`space.6` 6px `space.18` 18px `space.6` 6px `space.18` 18px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "8px",
+     "radius": "`radius.8` 8px",
      "background": "`text.selected` #1899D6 (whale, dark)",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
@@ -2752,7 +2752,7 @@
        "width": "0px 0px 4px 0px",
        "color": "transparent"
       },
-      "radius": "8px"
+      "radius": "`radius.8` 8px"
      },
      "label": {
       "text": "Follow",
@@ -2820,12 +2820,12 @@
       "w": 60,
       "h": 32
      },
-     "padding": "0px 8px 0px 8px",
+     "padding": "0px `space.8` 8px 0px `space.8` 8px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "8px",
+     "radius": "`radius.8` 8px",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -2839,7 +2839,7 @@
      "::before": {
       "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
       "box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
-      "radius": "8px"
+      "radius": "`radius.8` 8px"
      },
      "label": {
       "text": "INVITE",
@@ -2891,7 +2891,7 @@
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.tertiary` #AFAFAF (hare, light)",
     "lip_box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "leaderboard-light-default#103 <button> cl='_2V6ug _1ursp _7jW2t _5Keb0 _2FxcQ'",
      "rect": {
@@ -2904,7 +2904,7 @@
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
      "font": {
       "family": "duolingo-sans",
@@ -2922,7 +2922,7 @@
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
       "box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "icon": {
       "trace": "leaderboard-light-default#104 <img>",
@@ -2943,7 +2943,7 @@
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.tertiary` #52656D (hare, dark)",
     "lip_box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "leaderboard-dark-default#102 <button> cl='_2V6ug _1ursp _7jW2t _5Keb0 _2FxcQ'",
      "rect": {
@@ -2956,7 +2956,7 @@
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -2974,7 +2974,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "icon": {
       "trace": "leaderboard-dark-default#103 <img>",
@@ -3012,7 +3012,7 @@
     "border": "`border.selected` #84D8FF (blue-jay, light)",
     "text": "`text.tertiary` #AFAFAF (hare, light)",
     "lip_box_shadow": "`border.selected` #84D8FF (blue-jay, light) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "leaderboard-light-default#101 <button> cl='_2V6ug _1ursp _7jW2t _333Yq _3cwVc _2FxcQ'",
      "rect": {
@@ -3025,7 +3025,7 @@
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
      "font": {
       "family": "duolingo-sans",
@@ -3043,7 +3043,7 @@
        "color": "`border.selected` #84D8FF (blue-jay, light)"
       },
       "box_shadow": "`border.selected` #84D8FF (blue-jay, light) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "icon": {
       "trace": "leaderboard-light-default#102 <img>",
@@ -3064,7 +3064,7 @@
     "border": "`border.selected` #3F85A7 (blue-jay, dark)",
     "text": "`text.tertiary` #52656D (hare, dark)",
     "lip_box_shadow": "`border.selected` #3F85A7 (blue-jay, dark) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "leaderboard-dark-default#100 <button> cl='_2V6ug _1ursp _7jW2t _333Yq _3cwVc _2FxcQ'",
      "rect": {
@@ -3077,7 +3077,7 @@
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -3095,7 +3095,7 @@
        "color": "`border.selected` #3F85A7 (blue-jay, dark)"
       },
       "box_shadow": "`border.selected` #3F85A7 (blue-jay, dark) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "icon": {
       "trace": "leaderboard-dark-default#101 <img>",
@@ -3133,7 +3133,7 @@
     "border": "`border.default` #E5E5E5 (swan, light)",
     "text": "`text.tertiary` #AFAFAF (hare, light)",
     "lip_box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "learn-light-completed-popover#1674 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR'",
      "rect": {
@@ -3143,12 +3143,12 @@
       "h": 52
      },
      "margin": "0px 0px 0px 540px",
-     "gap": "24px",
+     "gap": "`space.24` 24px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
      "font": {
       "family": "duolingo-sans",
@@ -3167,7 +3167,7 @@
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
       "box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "icon": {
       "trace": "learn-light-completed-popover#1675 <img>",
@@ -3188,7 +3188,7 @@
     "border": "`border.default` #37464F (swan, dark)",
     "text": "`text.tertiary` #52656D (hare, dark)",
     "lip_box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-    "border_width": "2px",
+    "border_width": "`borderWidth.2` 2px",
     "measured": {
      "trace": "learn-dark-completed-popover#1664 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR'",
      "rect": {
@@ -3198,12 +3198,12 @@
       "h": 52
      },
      "margin": "0px 0px 0px 428px",
-     "gap": "24px",
+     "gap": "`space.24` 24px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -3222,7 +3222,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "icon": {
       "trace": "learn-dark-completed-popover#1665 <img>",
@@ -3244,7 +3244,7 @@
    "anatomy": [
     "root <button>/<a> (class _7jW2t base + variant class)",
     "face = ::before pseudo-element (fill, border, radius) sitting at z-index -1",
-    "3D lip = ::before box-shadow \"0 <lip> 0\" in the lip colour (solid) or 2px border + 0 2px 0 shadow (outline)",
+    "3D lip = ::before box-shadow \"0 <lip> 0\" in the lip colour (solid) or `borderWidth.2` 2px border + 0 2px 0 shadow (outline)",
     "label = <span class=\"_9lHjd\"> (wrapped children), uppercase",
     "optional leading icon <img>/<svg>",
     "loading state: three 8px dots (NHKbl) replace the label (submitting)"
@@ -3254,9 +3254,9 @@
      {
       "size": "default (variant-solid / variant-stroke)",
       "height": "`size.buttonHeight` 50px",
-      "padding": "0 16px",
-      "radius": "16px (root --web-ui_button-border-radius:16px overrides the 12px component default)",
-      "font": "`typography.button.default` 700 15px/1.2 duolingo-sans, 0.8px tracking, uppercase; 17px at >=700px when _3DbUj/_3fo6Q is present (player buttons)",
+      "padding": "0 `space.16` 16px",
+      "radius": "`radius.16` 16px (root --web-ui_button-border-radius:16px overrides the 12px component default)",
+      "font": "`typography.button.default` 700 15px/1.2 duolingo-sans, 0.8px tracking, uppercase; 17px at >=`breakpoint.md` 700px when _3DbUj/_3fo6Q is present (player buttons)",
       "lip": "4px",
       "source": [
        "css:4779-c36ad395.css ._1ursp { --__internal__font-size:var(--web-ui_button-font-size,15px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.8px); --__internal__line-height:var(--web-ui_button-line-height,1.2); letter-spacing:var(--__internal__letter-spacing) }",
@@ -3268,10 +3268,10 @@
      {
       "size": "juicy (variant-solid-juicy / stroke-juicy / link-juicy)",
       "height": "`size.buttonHeightMedium` 48px",
-      "padding": "0 12px (solid-juicy) / 0 11px (stroke-juicy, link-juicy)",
-      "radius": "16px measured (characters-dark-default#168, root var); 12px inside settings pages (settingsPage .unX5-), 8px when small",
+      "padding": "0 `space.12` 12px (solid-juicy) / 0 11px (stroke-juicy, link-juicy)",
+      "radius": "`radius.16` 16px measured (characters-dark-default#168, root var); `radius.12` 12px inside settings pages (settingsPage .unX5-), `radius.8` 8px when small",
       "font": "700 16px, 0.04em tracking (0.64px), line-height = height minus lip (44px solid, 42px stroke-juicy)",
-      "lip": "4px solid; stroke-juicy 1px outline + 3px shadow",
+      "lip": "4px solid; stroke-juicy `borderWidth.1` 1px outline + 3px shadow",
       "source": [
        "css:4779-c36ad395.css ._20olS { --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - var(--__internal__lip-width))); --__internal__padding:var(--web-ui_button-padding,0 12px) }",
        "css:4779-c36ad395.css .rdtAy { --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-snow))); --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - 6px)); --__internal__padding:var(--web-ui_button-padding,0 11px); border-width:1px 1px 5px }",
@@ -3282,8 +3282,8 @@
      {
       "size": "small (_1W_p8)",
       "height": "`size.buttonHeightSmall` 32px",
-      "padding": "0 8px (solid-juicy) / 0 7px (link, stroke-juicy)",
-      "radius": "8px",
+      "padding": "0 `space.8` 8px (solid-juicy) / 0 7px (link, stroke-juicy)",
+      "radius": "`radius.8` 8px",
       "font": "700 14px",
       "lip": "4px",
       "source": [
@@ -3295,7 +3295,7 @@
       "size": "pill (variant-pill, _17LYs)",
       "height": "26px",
       "padding": "0 9px",
-      "radius": "16px",
+      "radius": "`radius.16` 16px",
       "font": "700 14px",
       "lip": "2px",
       "source": [
@@ -3306,7 +3306,7 @@
      {
       "size": "text (variant-text c1Mv-)",
       "height": "`size.buttonHeightMedium` 48px (`size.buttonHeightSmall` 32px with _2xxrg)",
-      "padding": "0 16px",
+      "padding": "0 `space.16` 16px",
       "radius": "n/a (no face)",
       "font": "`typography.button.default` 700 15px/1.2, 0.8px, uppercase",
       "lip": "none",
@@ -3325,14 +3325,14 @@
      {
       "size": "streak CTA (_2loTO)",
       "height": "36px",
-      "radius": "8px",
+      "radius": "`radius.8` 8px",
       "source": [
        "css:5275-8898b509.css ._2loTO { --web-ui_button-background-color:rgb(var(--color-snow-always-light)); --web-ui_button-border-color:rgb(var(--color-snow-always-light),0.6); --web-ui_button-border-radius:8px; --web-ui_button-color:rgb(var(--color-streak-panel-friend-background)); --web-ui_button-height:36px }"
       ]
      },
      {
       "size": "full-width player button (_3DbUj)",
-      "width": "100% below 700px, auto with min-width 150px at >=700px",
+      "width": "100% below `breakpoint.md` 700px, auto with min-width 150px at >=`breakpoint.md` 700px",
       "source": [
        "css:1008-b4d34396.css ._3DbUj { min-width:150px; width:100% }",
        "css:1008-b4d34396.css @media (min-width:700px) ._3DbUj { --web-ui_button-font-size:17px; width:auto }"
@@ -3388,7 +3388,7 @@
     },
     {
      "state": "active / pressed (outline)",
-     "change": "translateY(2px), ::before box-shadow none (2px border remains)",
+     "change": "translateY(2px), ::before box-shadow none (`borderWidth.2` 2px border remains)",
      "source": "css:4779-c36ad395.css ._2V6ug:active:not(._2wryV); css:4779-c36ad395.css ._2V6ug:active:not(._2wryV):before"
     },
     {
@@ -3432,7 +3432,7 @@
      "source": "captured:leaderboard-dark-default#100"
     }
    ],
-   "responsive": "Player buttons (_3DbUj) are width:100% with min-width 150px below 700px and auto width at >=700px; label 17px only at >=700px. Mobile profile CTA \"GET STARTED\" spans 506px (profile-dark-mobile#72). FOLLOW collapses to an icon-only 41x32 button with 6px 8px padding in the mobile friend list (profile-dark-mobile#115) vs 127x36 with 6px 18px padding (eiTQu) on desktop.",
+   "responsive": "Player buttons (_3DbUj) are width:100% with min-width 150px below `breakpoint.md` 700px and auto width at >=`breakpoint.md` 700px; label 17px only at >=`breakpoint.md` 700px. Mobile profile CTA \"GET STARTED\" spans 506px (profile-dark-mobile#72). FOLLOW collapses to an icon-only 41x32 button with `space.6` 6px `space.8` 8px padding in the mobile friend list (profile-dark-mobile#115) vs 127x36 with `space.6` 6px `space.18` 18px padding (eiTQu) on desktop.",
    "screenshots": {
     "dark": "lesson-dark-challenge-tiles-partial.png",
     "light": "lesson-light-challenge-tiles-partial.png"
@@ -3454,12 +3454,12 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -3473,7 +3473,7 @@
      "::before": {
       "fill": "`accent.primary.face` #93D333 (owl, dark)",
       "box_shadow": "`accent.primary.lip` #79B933 (tree-frog, dark) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Check",
@@ -3504,12 +3504,12 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
       "family": "duolingo-sans",
@@ -3523,7 +3523,7 @@
      "::before": {
       "fill": "`accent.primary.face` #58CC02 (owl, light)",
       "box_shadow": "`accent.primary.lip` #58A700 (tree-frog, light) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Check",
@@ -3554,12 +3554,12 @@
       "w": 150,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -3577,7 +3577,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Skip",
@@ -3608,12 +3608,12 @@
       "w": 264,
       "h": 48
      },
-     "padding": "0px 12px 0px 12px",
+     "padding": "0px `space.12` 12px 0px `space.12` 12px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -3627,7 +3627,7 @@
      "::before": {
       "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
       "box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Learn the characters",
@@ -3658,12 +3658,12 @@
       "w": 60,
       "h": 32
      },
-     "padding": "0px 8px 0px 8px",
+     "padding": "0px `space.8` 8px 0px `space.8` 8px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "8px",
+     "radius": "`radius.8` 8px",
      "text_color": "`text.onPrimary` #131F24 (snow, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -3677,7 +3677,7 @@
      "::before": {
       "fill": "`accent.secondary.face` #49C0F8 (macaw, dark)",
       "box_shadow": "`accent.secondary.lip` #1899D6 (whale, dark) 0px 4px 0px 0px",
-      "radius": "8px"
+      "radius": "`radius.8` 8px"
      },
      "label": {
       "text": "INVITE",
@@ -3708,13 +3708,13 @@
       "w": 263,
       "h": 50
      },
-     "padding": "8px 16px 8px 16px",
-     "margin": "16px 0px 0px 0px",
+     "padding": "`space.8` 8px `space.16` 16px `space.8` 8px `space.16` 16px",
+     "margin": "`space.16` 16px 0px 0px 0px",
      "border": {
       "width": "0px 0px 4px 0px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`unitColors.green` #58CC02 (owl-always-light, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -3727,7 +3727,7 @@
      "::before": {
       "fill": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
       "box_shadow": "`palette.dark.celestia` #FFFFFF (celestia, dark) @ 0.7 alpha 0px 4px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "text": "Start +10 XP",
      "instance": "popover CTA auto-height (dark)"
@@ -3739,21 +3739,21 @@
    "id": "text-input",
    "name": "Text input (incl. password with eye toggle, clearable)",
    "anatomy": [
-    "wrapper _3zSI5 (flex column, gap 4px)",
+    "wrapper _3zSI5 (flex column, gap `space.4` 4px)",
     "label <label class=\"_17QjI\"> (heading-small)",
-    "field box _1Um2j (polar fill, 2px swan border, 12px radius, overflow hidden)",
-    "<input class=\"_298F2\"> (body text, 8px 14px padding)",
+    "field box _1Um2j (polar fill, 2px swan border, `radius.12` 12px radius, overflow hidden)",
+    "<input class=\"_298F2\"> (body text, `space.8` 8px `space.14` 14px padding)",
     "trailing 24px icon button (ypJiL _1gEmM rQJD2): eye/eye-hidden for password, circle-x clear (_3as_M) for text",
     "optional helper/error text _3c2kP (caption, wolf; fire-ant + circle-exclamation icon when error)"
    ],
    "measurements": {
     "height": "`size.inputHeight` 48px (44px input + 2px border top/bottom)",
-    "input_padding": "8px 14px",
-    "border": "2px",
-    "radius": "12px",
+    "input_padding": "`space.8` 8px `space.14` 14px",
+    "border": "`borderWidth.2` 2px",
+    "radius": "`radius.12` 12px",
     "font": "body: `typography.body.default` 500 20px/28px (var(--text-body-*) = 1.25rem/1.75rem)",
-    "label": "`typography.heading.small` 700 20px/24px (heading-small), 24px tall, 4px gap to the field (_3zSI5 gap)",
-    "trailing_icon_button": "24x24, margin 0 6px 0 -6px (rQJD2); eye glyph 24x17, clear glyph 18x18",
+    "label": "`typography.heading.small` 700 20px/24px (heading-small), 24px tall, `space.4` 4px gap to the field (_3zSI5 gap)",
+    "trailing_icon_button": "24x24, margin 0 `space.6` 6px 0 -6px (rQJD2); eye glyph 24x17, clear glyph 18x18",
     "source": [
      "css:4779-c36ad395.css ._1Um2j { background:rgb(var(--color-polar)); border:2px solid rgb(var(--color-swan)); border-radius:12px; display:flex; overflow:hidden }",
      "css:4779-c36ad395.css ._298F2 { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; -webkit-appearance:none; -moz-appearance:none; appearance:none; background:none; border:none; box-sizing:border-box; caret-color:rgb(var(--color-macaw)); color:rgb(var(--color-eel)); font:var(--text-body-weight) var(--text-body-size) /var(--text-body-line-height) duolingo-sans,sans-serif; font-size:var(--__internal__input-font-size,var(--text-body-size)); letter-spacing:var(--text-body-letter-spacing); line-height:var(--__internal__input-line-height,var(--text-body-line-height)); min-width:0; outline:none; padding:var(--__internal__input-padding,8px 14px); text-transform:var(--text-body-casing); width:100% }",
@@ -3856,7 +3856,7 @@
       "width": "2px",
       "color": "`border.focus` #49C0F8 (macaw, dark)"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background": "`surface.subtle` #202F36 (polar, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -3884,7 +3884,7 @@
       "w": 452,
       "h": 44
      },
-     "padding": "8px 14px 8px 14px",
+     "padding": "`space.8` 8px `space.14` 14px `space.8` 8px `space.14` 14px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -3904,7 +3904,7 @@
       "w": 24,
       "h": 24
      },
-     "margin": "0px 6px 0px -6px",
+     "margin": "0px `space.6` 6px 0px -6px",
      "text_color": "`palette.dark.black` #000000 (black, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -3935,7 +3935,7 @@
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background": "`surface.subtle` #202F36 (polar, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -3963,7 +3963,7 @@
       "w": 24,
       "h": 24
      },
-     "margin": "0px 6px 0px -6px",
+     "margin": "0px `space.6` 6px 0px -6px",
      "text_color": "`palette.dark.black` #000000 (black, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -3994,7 +3994,7 @@
       "width": "2px",
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background": "`surface.subtle` #F7F7F7 (polar, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -4016,7 +4016,7 @@
       "w": 588,
       "h": 44
      },
-     "padding": "8px 14px 8px 14px",
+     "padding": "`space.8` 8px `space.14` 14px `space.8` 8px `space.14` 14px",
      "text_color": "`text.primary` #4B4B4B (eel, light)",
      "font": {
       "family": "duolingo-sans",
@@ -4056,16 +4056,16 @@
    "id": "search-input",
    "name": "Search input (friend search) with clear button",
    "anatomy": [
-    "form JW88y (polar fill, 2px swan border, 12px radius, 16px 20px padding)",
+    "form JW88y (polar fill, 2px swan border, `radius.12` 12px radius, `space.16` 16px `space.20` 20px padding)",
     "leading search glyph (sprite b3fgl 14x15, scaled 1.4, 17px right margin)",
     "<input class=\"t40Pr\"> (transparent, eel, 22px/400)",
     "trailing clear <img class=\"_36I3w\"> 20x20, only when the field has text"
    ],
    "measurements": {
     "height": "63px (27px input + 16px padding x2 + 2px border x2)",
-    "padding": "16px 20px",
-    "border": "2px",
-    "radius": "12px",
+    "padding": "`space.16` 16px `space.20` 20px",
+    "border": "`borderWidth.2` 2px",
+    "radius": "`radius.12` 12px",
     "font": "400 22px / 25.3px",
     "icon": "search 20x21 rendered, clear 20x20",
     "source": [
@@ -4087,7 +4087,7 @@
      "text": "`text.primary` #F1F7FB (eel, dark)"
     }
    },
-   "type_style": "22px / weight 400 (desktop); 19px below 700px.",
+   "type_style": "22px / weight 400 (desktop); 19px below `breakpoint.md` 700px.",
    "states": [
     {
      "state": "default (with query)",
@@ -4115,7 +4115,7 @@
      "source": "not captured"
     }
    ],
-   "responsive": "@media (max-width:699px): font-size 19px, margin 0 16px 16px, padding 16px (css:2173 .JW88y). No 570px capture of this page.",
+   "responsive": "@media (max-width:699px): font-size 19px, margin 0 `space.16` 16px `space.16` 16px, padding `space.16` 16px (css:2173 .JW88y). No 570px capture of this page.",
    "screenshots": {
     "dark": "user-search-dark-results.png",
     "light": "user-search-light-results.png"
@@ -4137,13 +4137,13 @@
       "w": 896,
       "h": 63
      },
-     "padding": "16px 20px 16px 20px",
-     "margin": "0px 0px 48px 0px",
+     "padding": "`space.16` 16px `space.20` 20px `space.16` 16px `space.20` 20px",
+     "margin": "0px 0px `space.48` 48px 0px",
      "border": {
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background": "`surface.subtle` #202F36 (polar, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -4169,7 +4169,7 @@
       "w": 801,
       "h": 27
      },
-     "padding": "1px 2px 1px 2px",
+     "padding": "1px `space.2` 2px 1px `space.2` 2px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -4210,13 +4210,13 @@
       "w": 1008,
       "h": 63
      },
-     "padding": "16px 20px 16px 20px",
-     "margin": "0px 0px 48px 0px",
+     "padding": "`space.16` 16px `space.20` 20px `space.16` 16px `space.20` 20px",
+     "margin": "0px 0px `space.48` 48px 0px",
      "border": {
       "width": "2px",
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background": "`surface.subtle` #F7F7F7 (polar, light)",
      "text_color": "`text.primary` #4B4B4B (eel, light)",
      "font": {
@@ -4243,13 +4243,13 @@
       "w": 896,
       "h": 63
      },
-     "padding": "16px 20px 16px 20px",
-     "margin": "0px 0px 48px 0px",
+     "padding": "`space.16` 16px `space.20` 20px `space.16` 16px `space.20` 20px",
+     "margin": "0px 0px `space.48` 48px 0px",
      "border": {
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background": "`surface.subtle` #202F36 (polar, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -4277,10 +4277,10 @@
    ],
    "measurements": {
     "height": "50px",
-    "padding": "0 41px 0 12px",
-    "border": "2px 2px 4px (transparent) + ::before 2px border",
+    "padding": "0 41px 0 `space.12` 12px",
+    "border": "`borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px (transparent) + ::before `borderWidth.2` 2px border",
     "lip": "2px box-shadow (4px visual)",
-    "radius": "12px",
+    "radius": "`radius.12` 12px",
     "font": "`typography.button.default` 700 15px/18px, 0.8px, uppercase (value); face font `typography.app.railBody` 500 17px/25px",
     "chevron": "15x9",
     "source": [
@@ -4364,12 +4364,12 @@
       "w": 480,
       "h": 50
      },
-     "padding": "0px 41px 0px 12px",
+     "padding": "0px 41px 0px `space.12` 12px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.secondary` #DCE6EC (wolf, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -4387,7 +4387,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "System Default",
@@ -4464,12 +4464,12 @@
       "w": 592,
       "h": 50
      },
-     "padding": "0px 41px 0px 12px",
+     "padding": "0px 41px 0px `space.12` 12px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.secondary` #777777 (wolf, light)",
      "font": {
       "family": "duolingo-sans",
@@ -4487,7 +4487,7 @@
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
       "box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "Off",
@@ -4524,12 +4524,12 @@
       "w": 592,
       "h": 50
      },
-     "padding": "0px 41px 0px 12px",
+     "padding": "0px 41px 0px `space.12` 12px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
      "font": {
       "family": "duolingo-sans",
@@ -4547,7 +4547,7 @@
        "width": "2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "5pm",
@@ -4584,12 +4584,12 @@
       "w": 480,
       "h": 50
      },
-     "padding": "0px 41px 0px 12px",
+     "padding": "0px 41px 0px `space.12` 12px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -4607,7 +4607,7 @@
        "width": "2px",
        "color": "`border.default` #37464F (swan, dark)"
       },
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "5pm",
@@ -4644,13 +4644,13 @@
    "name": "Checkbox (square toggle button)",
    "anatomy": [
     "hit area _31gfP 32x32",
-    "<button aria-pressed class=\"Ug-rb\"> 30x30, 2px border, 8px radius",
+    "<button aria-pressed class=\"Ug-rb\"> 30x30, `borderWidth.2` 2px border, `radius.8` 8px radius",
     "checkmark-small svg 24x24 (glyph 13x10), snow, only when checked"
    ],
    "measurements": {
     "size": "30x30 inside a 32x32 box",
-    "border": "2px",
-    "radius": "8px",
+    "border": "`borderWidth.2` 2px",
+    "radius": "`radius.8` 8px",
     "icon": "24x24 box, 13x10 glyph",
     "source": [
      "css:4779-c36ad395.css .Ug-rb { --web-ui_button-filter-hover:none; align-items:center; border:2px solid rgb(var(--color-swan))!important; border-radius:8px; box-sizing:border-box; color:rgb(var(--color-macaw)); height:30px; justify-content:center; width:30px }",
@@ -4740,7 +4740,7 @@
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "8px",
+     "radius": "`radius.8` 8px",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -4765,7 +4765,7 @@
       "width": "2px",
       "color": "`border.focus` #49C0F8 (macaw, dark)"
      },
-     "radius": "8px",
+     "radius": "`radius.8` 8px",
      "background": "`accent.secondary.face` #49C0F8 (macaw, dark)",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
@@ -4797,7 +4797,7 @@
       "width": "2px",
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
-     "radius": "8px",
+     "radius": "`radius.8` 8px",
      "text_color": "`text.link` #1CB0F6 (macaw, light)",
      "font": {
       "family": "duolingo-sans",
@@ -4822,7 +4822,7 @@
       "width": "2px",
       "color": "`border.focus` #1CB0F6 (macaw, light)"
      },
-     "radius": "8px",
+     "radius": "`radius.8` 8px",
      "background": "`accent.secondary.face` #1CB0F6 (macaw, light)",
      "text_color": "`text.link` #1CB0F6 (macaw, light)",
      "font": {
@@ -4849,18 +4849,18 @@
    "id": "radio-card",
    "name": "Radio / selectable card (web-ui Card, role=radio)",
    "anatomy": [
-    "radiogroup container (column gap 12px for streak goal; 2-col grid gap 16px in settings)",
-    "card _8dMUn: border 2/2/4 transparent + ::before fill with 2px border and 0 2px 0 lip",
+    "radiogroup container (column gap `space.12` 12px for streak goal; 2-col grid gap `space.16` 16px in settings)",
+    "card _8dMUn: border 2/2/4 transparent + ::before fill with `borderWidth.2` 2px border and 0 2px 0 lip",
     "content: title (body-spacious bold) + trailing caption (streak goal row) or image + caption (settings card)"
    ],
    "measurements": {
     "row_height": "54px (streak goal)",
-    "row_padding": "8px 16px (a3yOs)",
-    "row_gap": "12px",
-    "card_padding": "30px desktop / 15px below 700px (_8YNCv)",
-    "border": "2px, bottom 4px space for the lip",
+    "row_padding": "`space.8` 8px `space.16` 16px (a3yOs)",
+    "row_gap": "`space.12` 12px",
+    "card_padding": "`space.30` 30px desktop / `space.15` 15px below `breakpoint.md` 700px (_8YNCv)",
+    "border": "`borderWidth.2` 2px, bottom 4px space for the lip",
     "lip": "0 2px 0 (4px visual)",
-    "radius": "12px",
+    "radius": "`radius.12` 12px",
     "title_font": "`typography.body.spaciousBold` 700 20px/32px (streak goal, body-spacious-bold via .WMgCJ)",
     "caption_font": "`typography.caption.default` 500 16px/24px (caption)",
     "source": [
@@ -4924,7 +4924,7 @@
      "source": "css:4779-c36ad395.css ._8dMUn._3neHb:not(._1pRZ7):not(._2cKzl)"
     }
    ],
-   "responsive": "Settings cards: padding 15px below 700px (css:4243 ._8YNCv), 30px at >=700px; mobile capture settings-account-dark-mobile#68 is 243x108.",
+   "responsive": "Settings cards: padding `space.15` 15px below `breakpoint.md` 700px (css:4243 ._8YNCv), 30px at >=`breakpoint.md` 700px; mobile capture settings-account-dark-mobile#68 is 243x108.",
    "screenshots": {
     "dark": "lesson-dark-streak-goal-row-hover.png",
     "light": "settings-account-light-default.png"
@@ -4947,12 +4947,12 @@
       "w": 480,
       "h": 54
      },
-     "padding": "8px 16px 8px 16px",
+     "padding": "`space.8` 8px `space.16` 16px `space.8` 8px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -4970,7 +4970,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "7 day streak",
@@ -5000,12 +5000,12 @@
       "w": 480,
       "h": 54
      },
-     "padding": "8px 16px 8px 16px",
+     "padding": "`space.8` 8px `space.16` 16px `space.8` 8px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -5023,7 +5023,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "7 day streak",
@@ -5053,12 +5053,12 @@
       "w": 232,
       "h": 138
      },
-     "padding": "30px",
+     "padding": "`space.30` 30px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.selected` #1899D6 (whale, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -5076,7 +5076,7 @@
        "color": "`border.selected` #3F85A7 (blue-jay, dark)"
       },
       "box_shadow": "`border.selected` #3F85A7 (blue-jay, dark) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "Romanized",
@@ -5113,12 +5113,12 @@
       "w": 232,
       "h": 138
      },
-     "padding": "30px",
+     "padding": "`space.30` 30px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -5136,7 +5136,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "Japanese",
@@ -5171,12 +5171,12 @@
       "w": 288,
       "h": 138
      },
-     "padding": "30px",
+     "padding": "`space.30` 30px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.selected` #1899D6 (whale, light)",
      "font": {
       "family": "duolingo-sans",
@@ -5194,7 +5194,7 @@
        "color": "`border.selected` #84D8FF (blue-jay, light)"
       },
       "box_shadow": "`border.selected` #84D8FF (blue-jay, light) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "Romanized",
@@ -5231,12 +5231,12 @@
       "w": 600,
       "h": 70
      },
-     "padding": "12px 16px 12px 16px",
+     "padding": "`space.12` 12px `space.16` 16px `space.12` 12px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.selected` #1899D6 (whale, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -5254,7 +5254,7 @@
        "color": "`border.selected` #3F85A7 (blue-jay, dark)"
       },
       "box_shadow": "`border.selected` #3F85A7 (blue-jay, dark) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "2",
@@ -5291,12 +5291,12 @@
       "w": 288,
       "h": 138
      },
-     "padding": "30px",
+     "padding": "`space.30` 30px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.primary` #4B4B4B (eel, light)",
      "font": {
       "family": "duolingo-sans",
@@ -5314,7 +5314,7 @@
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
       "box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "label": {
       "text": "Japanese",
@@ -5351,13 +5351,13 @@
    "name": "Toggle / switch",
    "anatomy": [
     "`<button aria-pressed class=\"_2mkWS\">` 56x32, macaw",
-    "track span _1gwYP 56x24, 12px radius, background linear-gradient(to left, swan 50%, macaw 50%)",
-    "knob = track ::before 30x32, snow fill, 2/2/4 border, 8px radius; translateX(26px) when on (XIyeO)"
+    "track span _1gwYP 56x24, `radius.12` 12px radius, background linear-gradient(to left, swan 50%, macaw 50%)",
+    "knob = track ::before 30x32, snow fill, 2/2/4 border, `radius.8` 8px radius; translateX(26px) when on (XIyeO)"
    ],
    "measurements": {
     "button": "56x32",
-    "track": "56x24, radius 12px",
-    "knob": "30x32, border 2px 2px 4px, radius 8px",
+    "track": "56x24, radius `radius.12` 12px",
+    "knob": "30x32, border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px, radius `radius.8` 8px",
     "travel": "26px",
     "transition": "transform .2s",
     "source": [
@@ -5457,7 +5457,7 @@
       "w": 56,
       "h": 24
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background_image": "linear-gradient(to left, `surface.disabled` #37464F (swan, dark) 50%, `accent.secondary.face` #49C0F8 (macaw, dark) 50%)",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
@@ -5475,7 +5475,7 @@
        "width": "2px 2px 4px 2px",
        "color": "`border.focus` #49C0F8 (macaw, dark)"
       },
-      "radius": "8px",
+      "radius": "`radius.8` 8px",
       "transform": "matrix(1, 0, 0, 1, 26, 0)"
      },
      "instance": "track on (dark)"
@@ -5508,7 +5508,7 @@
       "w": 56,
       "h": 24
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background_image": "linear-gradient(to left, `surface.disabled` #37464F (swan, dark) 50%, `accent.secondary.face` #49C0F8 (macaw, dark) 50%)",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
@@ -5526,7 +5526,7 @@
        "width": "2px 2px 4px 2px",
        "color": "`border.default` #37464F (swan, dark)"
       },
-      "radius": "8px"
+      "radius": "`radius.8` 8px"
      },
      "instance": "track off (dark)"
     },
@@ -5578,7 +5578,7 @@
       "w": 56,
       "h": 24
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background_image": "linear-gradient(to left, `surface.disabled` #E5E5E5 (swan, light) 50%, `accent.secondary.face` #1CB0F6 (macaw, light) 50%)",
      "text_color": "`text.link` #1CB0F6 (macaw, light)",
      "font": {
@@ -5596,7 +5596,7 @@
        "width": "2px 2px 4px 2px",
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
-      "radius": "8px"
+      "radius": "`radius.8` 8px"
      },
      "instance": "track off (light)"
     }
@@ -5612,8 +5612,8 @@
    ],
    "measurements": {
     "height": "52px",
-    "padding": "15px 0",
-    "border_bottom": "2px",
+    "padding": "`space.15` 15px 0",
+    "border_bottom": "`borderWidth.2` 2px",
     "font": "`typography.app.bodyStrong` 700 17px/20px, letter-spacing .03em (0.51px), uppercase",
     "width": "158px each at 480px column (dark), 195px at 592px (light)",
     "source": [
@@ -5636,7 +5636,7 @@
    "states": [
     {
      "state": "default",
-     "change": "hare label, swan 2px rule",
+     "change": "hare label, swan `borderWidth.2` 2px rule",
      "source": "captured:characters-dark-default#157"
     },
     {
@@ -5687,7 +5687,7 @@
       "w": 158,
       "h": 52
      },
-     "padding": "15px 0px 15px 0px",
+     "padding": "`space.15` 15px 0px `space.15` 15px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
       "color": "`border.focus` #49C0F8 (macaw, dark)"
@@ -5712,7 +5712,7 @@
       "w": 158,
       "h": 52
      },
-     "padding": "15px 0px 15px 0px",
+     "padding": "`space.15` 15px 0px `space.15` 15px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
       "color": "`border.default` #37464F (swan, dark)"
@@ -5737,7 +5737,7 @@
       "w": 158,
       "h": 52
      },
-     "padding": "15px 0px 15px 0px",
+     "padding": "`space.15` 15px 0px `space.15` 15px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
       "color": "`border.focus` #49C0F8 (macaw, dark)"
@@ -5762,7 +5762,7 @@
       "w": 195,
       "h": 52
      },
-     "padding": "15px 0px 15px 0px",
+     "padding": "`space.15` 15px 0px `space.15` 15px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
       "color": "`border.focus` #1CB0F6 (macaw, light)"
@@ -5787,7 +5787,7 @@
       "w": 195,
       "h": 52
      },
-     "padding": "15px 0px 15px 0px",
+     "padding": "`space.15` 15px 0px `space.15` 15px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
       "color": "`border.default` #E5E5E5 (swan, light)"
@@ -5811,9 +5811,9 @@
    "id": "tabs-list",
    "name": "Tabs: bordered-list tabs (Profile Following / Followers)",
    "anatomy": [
-    "bordered box _2G9SS (2px swan, 16px radius)",
+    "bordered box _2G9SS (2px swan, `radius.16` 16px radius)",
     "tab strip ul _1SZs_ _3Jy0n (2px swan bottom rule, label font 700 15px uppercase 0.8px)",
-    "tab li cwfCJ (padding-top 16px) > span bsF09 (16px, 12px bottom padding, 2px bottom border overlapping the rule by -2px)"
+    "tab li cwfCJ (padding-top `space.16` 16px) > span bsF09 (16px, 12px bottom padding, 2px bottom border overlapping the rule by -2px)"
    ],
    "measurements": {
     "tab_height": "48px (16px top padding + 34px label box - 2px overlap)",
@@ -5883,7 +5883,7 @@
       "w": 182,
       "h": 34
      },
-     "padding": "0px 0px 12px 10px",
+     "padding": "0px 0px `space.12` 12px `space.10` 10px",
      "margin": "0px 0px -2px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
@@ -5927,7 +5927,7 @@
       "w": 182,
       "h": 34
      },
-     "padding": "0px 10px 12px 0px",
+     "padding": "0px `space.10` 10px `space.12` 12px 0px",
      "margin": "0px 0px -2px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
@@ -6013,7 +6013,7 @@
       "w": 182,
       "h": 34
      },
-     "padding": "0px 0px 12px 10px",
+     "padding": "0px 0px `space.12` 12px `space.10` 10px",
      "margin": "0px 0px -2px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
@@ -6057,7 +6057,7 @@
       "w": 182,
       "h": 34
      },
-     "padding": "0px 10px 12px 0px",
+     "padding": "0px `space.10` 10px `space.12` 12px 0px",
      "margin": "0px 0px -2px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
@@ -6102,13 +6102,13 @@
    "anatomy": [
     "nav role=tablist _1L0JB _1UMEd",
     "tab <button role=tab class=\"_3Ji0r\"> flex:1, 48px, 2px transparent top border + 2px bottom rule",
-    "selected (_2d5P5): ::after 4px indicator bar, 2px radius, bottom -2px"
+    "selected (_2d5P5): ::after 4px indicator bar, `radius.2` 2px radius, bottom -2px"
    ],
    "measurements": {
     "height": "48px",
-    "padding": "0 16px",
-    "indicator": "4px bar (::after), 2px radius",
-    "rule": "2px",
+    "padding": "0 `space.16` 16px",
+    "indicator": "4px bar (::after), `radius.2` 2px radius",
+    "rule": "`borderWidth.2` 2px",
     "font": "label-medium: `typography.label.medium` 700 16px/16px, 0.04em, uppercase",
     "source": [
      "css:5823-96f39733.css ._3Ji0r { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; --web-ui_button-filter-hover:none; align-items:center; border-bottom:2px solid rgb(var(--color-swan))!important; border-top:2px solid transparent!important; box-sizing:border-box; color:rgb(var(--color-eel)); flex:1; font:var(--text-label-weight-medium) var(--text-label-size-medium) /var(--text-label-line-height-medium) duolingo-sans,sans-serif; height:48px; justify-content:center; letter-spacing:var(--text-label-letter-spacing-medium); min-width:0; padding:0 16px!important; text-transform:var(--text-label-casing-medium) }",
@@ -6153,7 +6153,7 @@
      "source": "not captured"
     }
    ],
-   "responsive": "Only rendered below 700px (quests mobile); desktop Quests has no tabs.",
+   "responsive": "Only rendered below `breakpoint.md` 700px (quests mobile); desktop Quests has no tabs.",
    "screenshots": {
     "dark": "quests-dark-mobile.png",
     "light": "quests-light-mobile.png"
@@ -6175,12 +6175,12 @@
       "w": 285,
       "h": 48
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 0px 2px 0px",
       "color": "transparent / - / `palette.dark.celestia` #FFFFFF (celestia, dark) / -"
      },
-     "radius": "0px 0px 0px 2px",
+     "radius": "0px 0px 0px `radius.2` 2px",
      "text_color": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -6192,7 +6192,7 @@
      },
      "::after": {
       "fill": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
-      "radius": "2px"
+      "radius": "`radius.2` 2px"
      },
      "label": {
       "text": "Quests",
@@ -6223,7 +6223,7 @@
       "w": 285,
       "h": 48
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 0px 2px 0px",
       "color": "transparent / - / `palette.dark.celestia` #FFFFFF (celestia, dark) / -"
@@ -6266,12 +6266,12 @@
       "w": 285,
       "h": 48
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 0px 2px 0px",
       "color": "transparent / - / `text.onPrimary` #FFFFFF (snow, light) / -"
      },
-     "radius": "0px 0px 0px 2px",
+     "radius": "0px 0px 0px `radius.2` 2px",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
       "family": "duolingo-sans",
@@ -6283,7 +6283,7 @@
      },
      "::after": {
       "fill": "`surface.default` #FFFFFF (snow, light)",
-      "radius": "2px"
+      "radius": "`radius.2` 2px"
      },
      "label": {
       "text": "Quests",
@@ -6314,7 +6314,7 @@
       "w": 285,
       "h": 48
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 0px 2px 0px",
       "color": "transparent / - / `text.onPrimary` #FFFFFF (snow, light) / -"
@@ -6356,15 +6356,15 @@
    "id": "badge-pill",
    "name": "Badges and pills",
    "anatomy": [
-    "\"UP NEXT\" section chip _1Qswf _3LDH7: swan fill, hare text, 6px radius, 4px 8px padding",
-    "\"30+\" count badge _2TZCt: cardinal fill, white text, 16px radius, absolutely placed top/right -12px",
-    "\"x / 2 EQUIPPED\" status pill _2I6Qk: 25px tall, 16px radius, 8px padding; empty = swan/hare, full = sea-sponge/owl",
+    "\"UP NEXT\" section chip _1Qswf _3LDH7: swan fill, hare text, 6px radius, `space.4` 4px `space.8` 8px padding",
+    "\"30+\" count badge _2TZCt: cardinal fill, white text, `radius.16` 16px radius, absolutely placed top/right -12px",
+    "\"x / 2 EQUIPPED\" status pill _2I6Qk: 25px tall, `radius.16` 16px radius, `space.8` 8px padding; empty = swan/hare, full = sea-sponge/owl",
     "\"SUPER\" logo badge: SVG image asset (plus-offer-logo) 78x21, not CSS"
    ],
    "measurements": {
-    "up_next": "74x26, padding 4px 8px, radius 6px, `typography.app.eyebrow` 700 15px/18px, 0.04em (dump 0.6px), uppercase",
-    "count": "42x25, padding 4px 8px, radius 16px, 700 15px/17.25px, 0.8px, uppercase",
-    "equipped": "110x25, padding 8px, radius 16px, 700 15px uppercase",
+    "up_next": "74x26, padding `space.4` 4px `space.8` 8px, radius 6px, `typography.app.eyebrow` 700 15px/18px, 0.04em (dump 0.6px), uppercase",
+    "count": "42x25, padding `space.4` 4px `space.8` 8px, radius `radius.16` 16px, 700 15px/17.25px, 0.8px, uppercase",
+    "equipped": "110x25, padding `space.8` 8px, radius `radius.16` 16px, 700 15px uppercase",
     "super_logo": "78x21 image",
     "source": [
      "css:path-e50cab6b.css ._3LDH7 { background:rgb(var(--color-iguana-always-light)); border-radius:6px; color:rgb(var(--color-macaw)); display:inline-block; font-size:15px; font-weight:700; letter-spacing:.04em; line-height:18px; margin-bottom:16px; padding:4px 8px; text-transform:uppercase }",
@@ -6439,8 +6439,8 @@
       "w": 74,
       "h": 26
      },
-     "padding": "4px 8px 4px 8px",
-     "margin": "0px 0px 16px 0px",
+     "padding": "`space.4` 4px `space.8` 8px `space.4` 4px `space.8` 8px",
+     "margin": "0px 0px `space.16` 16px 0px",
      "radius": "6px",
      "background": "`surface.disabled` #37464F (swan, dark)",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
@@ -6463,8 +6463,8 @@
       "w": 74,
       "h": 26
      },
-     "padding": "4px 8px 4px 8px",
-     "margin": "0px 0px 16px 0px",
+     "padding": "`space.4` 4px `space.8` 8px `space.4` 4px `space.8` 8px",
+     "margin": "0px 0px `space.16` 16px 0px",
      "radius": "6px",
      "background": "`surface.disabled` #E5E5E5 (swan, light)",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
@@ -6487,8 +6487,8 @@
       "w": 42,
       "h": 25
      },
-     "padding": "4px 8px 4px 8px",
-     "radius": "16px",
+     "padding": "`space.4` 4px `space.8` 8px `space.4` 4px `space.8` 8px",
+     "radius": "`radius.16` 16px",
      "background": "`accent.danger.face` #EE5555 (cardinal, dark)",
      "text_color": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
      "font": {
@@ -6510,8 +6510,8 @@
       "w": 42,
       "h": 25
      },
-     "padding": "4px 8px 4px 8px",
-     "radius": "16px",
+     "padding": "`space.4` 4px `space.8` 8px `space.4` 4px `space.8` 8px",
+     "radius": "`radius.16` 16px",
      "background": "`accent.danger.face` #FF4B4B (cardinal, light)",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
@@ -6533,8 +6533,8 @@
       "w": 111,
       "h": 25
      },
-     "padding": "8px",
-     "radius": "16px",
+     "padding": "`space.8` 8px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.disabled` #37464F (swan, dark)",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
@@ -6557,8 +6557,8 @@
       "w": 110,
       "h": 25
      },
-     "padding": "8px",
-     "radius": "16px",
+     "padding": "`space.8` 8px",
+     "radius": "`radius.16` 16px",
      "background": "`status.successBackground` #D7FFB8 (sea-sponge, light)",
      "text_color": "`accent.primary.face` #58CC02 (owl, light)",
      "font": {
@@ -6581,8 +6581,8 @@
       "w": 110,
       "h": 25
      },
-     "padding": "8px",
-     "radius": "16px",
+     "padding": "`space.8` 8px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.subtle` #202F36 (polar, dark)",
      "text_color": "`accent.primary.face` #93D333 (owl, dark)",
      "font": {
@@ -6625,14 +6625,14 @@
     "photo <img class=\"_1yM9n\"> circle (border-radius 50%)",
     "or letter avatar _1N32S: coloured circle, first letter, 700, font-size = 0.46 x size",
     "self \"ghost\" letter avatar: 2px dashed hare border (_1wd57)",
-    "online dot _2NNBf: 12px owl circle, 2px border in the row background, bottom 1px / right 3px",
+    "online dot _2NNBf: 12px owl circle, `borderWidth.2` 2px border in the row background, bottom 1px / right 3px",
     "settings edit badge _1VC2W: 31px macaw circle, 3px snow border, top-right -11px"
    ],
    "measurements": {
     "sizes": "web-ui avatar: small 30, medium 48 (default), large 63, xlarge 77, xxlarge 90 (letter avatar small is 36); captured: 48 (lists, leaderboard), 70 (search results)",
     "letter_font": "700, 0.46 x size (22.08px at 48)",
-    "online_dot": "12x12, 2px border",
-    "ring": "no ring on list avatars; edit badge border 3px snow",
+    "online_dot": "12x12, `borderWidth.2` 2px border",
+    "ring": "no ring on list avatars; edit badge border `borderWidth.3` 3px snow",
     "source": [
      "css:4779-c36ad395.css ._1N32S { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; align-items:center; border-radius:50%; box-sizing:border-box; color:rgb(var(--color-snow)); display:inline-flex; font:700 17px/25px duolingo-sans,sans-serif; justify-content:center; vertical-align:middle }",
      "css:1008-b4d34396.css ._2NNBf { background-color:rgb(var(--color-owl)); border:2px solid rgb(var(--color-snow)); border-radius:50%; bottom:1px; height:12px; position:absolute; right:3px; width:12px }",
@@ -6862,18 +6862,18 @@
    "id": "popover",
    "name": "Popover / dropdown shell (web-ui Popover: top-bar dropdowns, MORE menu, path popover)",
    "anatomy": [
-    "wrap _3zpnU (positioned _1o3g5; direction class _3OfAS down / _37pE2 up / D0iFS right / Z0Dvv left adds an 8px offset)",
-    "bubble _36bu_: fill, 2px border, 15px radius, overflow hidden",
-    "stem container _3T97b 20x10 (overflow hidden) holding a 20x20 square _1TMn5 rotated 45deg with the same fill/border and 2px radius",
-    "content (e.g. _3cG-N: 380px wide, 24px 12px padding)"
+    "wrap _3zpnU (positioned _1o3g5; direction class _3OfAS down / _37pE2 up / D0iFS right / Z0Dvv left adds an `space.8` 8px offset)",
+    "bubble _36bu_: fill, `borderWidth.2` 2px border, `radius.15` 15px radius, overflow hidden",
+    "stem container _3T97b 20x10 (overflow hidden) holding a 20x20 square _1TMn5 rotated 45deg with the same fill/border and `radius.2` 2px radius",
+    "content (e.g. _3cG-N: 380px wide, `space.24` 24px `space.12` 12px padding)"
    ],
    "measurements": {
-    "border": "2px",
-    "radius": "15px (var --web-ui_popover-border-radius; 10px on path tooltips, 5px on progress-bar popover)",
-    "offset": "8px from trigger (margin on direction class); path node popover 12px",
+    "border": "`borderWidth.2` 2px",
+    "radius": "`radius.15` 15px (var --web-ui_popover-border-radius; `radius.10` 10px on path tooltips, 5px on progress-bar popover)",
+    "offset": "`space.8` 8px from trigger (margin on direction class); path node popover 12px",
     "stem": "20x10 visible, square 14.14px CSS (20px rendered bbox) rotated 45deg",
-    "gems_content": "380x148, padding 24px 12px; 100px illustration + 12px gap; title `typography.app.sectionTitle` 700 24px/26px; body wolf",
-    "path_popover": "295px wide, padding 16px, `typography.path.unitDivider` 700 19px/1.4, centered, no border",
+    "gems_content": "380x148, padding `space.24` 24px `space.12` 12px; 100px illustration + `space.12` 12px gap; title `typography.app.sectionTitle` 700 24px/26px; body wolf",
+    "path_popover": "295px wide, padding `space.16` 16px, `typography.path.unitDivider` 700 19px/1.4, centered, no border",
     "source": [
      "css:4779-c36ad395.css ._36bu_ { background-color:var(--web-ui_popover-background-color,rgb(var(--color-snow))); border:2px solid var(--web-ui_popover-border-color,rgb(var(--color-swan))); border-radius:var(--web-ui_popover-border-radius,15px); box-sizing:border-box; overflow:hidden; transform:translateZ(0) }",
      "css:4779-c36ad395.css ._1TMn5 { background-color:var(--web-ui_popover-background-color,rgb(var(--color-snow))); border:2px solid var(--web-ui_popover-border-color,rgb(var(--color-swan))); border-radius:2px; content:\"\"; height:14.14427157px; left:50%; transform:translateZ(0) rotate(45deg); transform-origin:top left; width:14.14427157px }",
@@ -6954,7 +6954,7 @@
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "15px",
+     "radius": "`radius.15` 15px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -6998,7 +6998,7 @@
       "w": 380,
       "h": 148
      },
-     "padding": "24px 12px 24px 12px",
+     "padding": "`space.24` 24px `space.12` 12px `space.24` 24px `space.12` 12px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -7045,7 +7045,7 @@
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "2px",
+     "radius": "`radius.2` 2px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -7071,7 +7071,7 @@
       "width": "2px",
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
-     "radius": "15px",
+     "radius": "`radius.15` 15px",
      "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -7116,8 +7116,8 @@
       "w": 295,
       "h": 151
      },
-     "padding": "16px",
-     "radius": "15px",
+     "padding": "`space.16` 16px",
+     "radius": "`radius.15` 15px",
      "background": "`unitColors.green` #58CC02 (owl-always-light, dark)",
      "text_color": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
      "font": {
@@ -7157,8 +7157,8 @@
       "w": 295,
       "h": 151
      },
-     "padding": "16px",
-     "radius": "15px",
+     "padding": "`space.16` 16px",
+     "radius": "`radius.15` 15px",
      "background": "`accent.primary.face` #58CC02 (owl, light)",
      "text_color": "`text.onPrimary` #FFFFFF (snow, light)",
      "font": {
@@ -7198,14 +7198,14 @@
    "name": "Tooltip bubble (small popover, e.g. \"START\" / \"JUMP HERE?\")",
    "anatomy": [
     "web-ui popover wrap _3zpnU _37pE2 (direction up) with --web-ui_popover-border-radius:10px",
-    "bubble _36bu_ _27IMa: 12px padding, 700 17px uppercase, unit-coloured text",
+    "bubble _36bu_ _27IMa: `space.12` 12px padding, 700 17px uppercase, unit-coloured text",
     "stem pointing down (rotated square, 20x10 container)"
    ],
    "measurements": {
     "size": "80x45 (min-width 80px)",
-    "padding": "12px",
-    "radius": "10px",
-    "border": "2px",
+    "padding": "`space.12` 12px",
+    "radius": "`radius.10` 10px",
+    "border": "`borderWidth.2` 2px",
     "font": "700 17px, line-height 1, 0.03em, uppercase",
     "source": [
      "css:path-e50cab6b.css ._27IMa { background:rgb(var(--color-snow)); border-color:rgb(var(--color-swan)); color:var(--path-unit-character-color); font-size:17px; font-weight:700; letter-spacing:.03em; line-height:1; padding:12px; text-align:center; text-transform:uppercase; white-space:nowrap }",
@@ -7265,12 +7265,12 @@
       "w": 80,
       "h": 45
      },
-     "padding": "12px",
+     "padding": "`space.12` 12px",
      "border": {
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "10px",
+     "radius": "`radius.10` 10px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`unitColors.green` #58CC02 (owl-always-light, dark)",
      "font": {
@@ -7292,12 +7292,12 @@
       "w": 80,
       "h": 45
      },
-     "padding": "12px",
+     "padding": "`space.12` 12px",
      "border": {
       "width": "2px",
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
-     "radius": "10px",
+     "radius": "`radius.10` 10px",
      "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`accent.primary.face` #58CC02 (owl, light)",
      "font": {
@@ -7323,7 +7323,7 @@
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "2px",
+     "radius": "`radius.2` 2px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -7344,20 +7344,20 @@
    "id": "menu",
    "name": "Menu (MORE menu flyout, courses menu)",
    "anatomy": [
-    "popover bubble (see popover) opening to the right of the sidebar item (D0iFS, 8px gap)",
-    "section _1fv9a: 8px 0 padding, 2px swan divider below",
-    "link row _2ifes GHXZL: 52px, 32px icon + 20px gap, label",
+    "popover bubble (see popover) opening to the right of the sidebar item (D0iFS, `space.8` 8px gap)",
+    "section _1fv9a: `space.8` 8px 0 padding, 2px swan divider below",
+    "link row _2ifes GHXZL: 52px, 32px icon + `space.20` 20px gap, label",
     "action row _3QrGV GHXZL: 40px, label only",
     "courses menu: header _34_P_ (48px, hare 15px uppercase, divider), items _1aVVk (55px, flag 32x25 scaled .8), footer item _2jW-1 with 2px top divider"
    ],
    "measurements": {
     "width": "291px bubble (fit-content)",
     "row_heights": "52px (icon rows), 40px (text rows), 55-56px (courses)",
-    "row_padding": "0 40px 0 20px",
+    "row_padding": "0 `space.40` 40px 0 `space.20` 20px",
     "icon": "32x32, 20px right margin",
     "font": "700 15px/16px, 0.8px, uppercase",
-    "section_padding": "8px 0",
-    "divider": "2px swan",
+    "section_padding": "`space.8` 8px 0",
+    "divider": "`borderWidth.2` 2px swan",
     "source": [
      "css:9071-d035f2e5.css .GHXZL { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; --web-ui_button-filter-hover:none; align-items:center; box-sizing:border-box; color:rgb(var(--color-wolf)); display:flex; font:700 15px/16px duolingo-sans,sans-serif; min-width:100px; padding:0 40px 0 20px; text-transform:uppercase; white-space:nowrap; width:100% }",
      "css:9071-d035f2e5.css ._2ifes { height:52px }",
@@ -7410,7 +7410,7 @@
     },
     {
      "state": "trigger hover (sidebar MORE)",
-     "change": "polar fill, 12px radius",
+     "change": "polar fill, `radius.12` 12px radius",
      "source": "captured:learn-dark-more-menu#54; css:9071-d035f2e5.css @media (hover:hover) ._3tK_c:hover"
     }
    ],
@@ -7442,7 +7442,7 @@
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "15px",
+     "radius": "`radius.15` 15px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
@@ -7488,7 +7488,7 @@
       "w": 287,
       "h": 52
      },
-     "padding": "0px 40px 0px 20px",
+     "padding": "0px `space.40` 40px 0px `space.20` 20px",
      "text_color": "`text.secondary` #DCE6EC (wolf, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -7534,7 +7534,7 @@
       "w": 287,
       "h": 40
      },
-     "padding": "0px 40px 0px 20px",
+     "padding": "0px `space.40` 40px 0px `space.20` 20px",
      "text_color": "`text.secondary` #DCE6EC (wolf, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -7574,7 +7574,7 @@
       "w": 287,
       "h": 40
      },
-     "padding": "0px 40px 0px 20px",
+     "padding": "0px `space.40` 40px 0px `space.20` 20px",
      "background": "`surface.subtle` #202F36 (polar, dark)",
      "text_color": "`text.secondary` #DCE6EC (wolf, dark)",
      "font": {
@@ -7619,7 +7619,7 @@
       "width": "2px",
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
-     "radius": "15px",
+     "radius": "`radius.15` 15px",
      "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
      "font": {
@@ -7665,7 +7665,7 @@
       "w": 287,
       "h": 40
      },
-     "padding": "0px 40px 0px 20px",
+     "padding": "0px `space.40` 40px 0px `space.20` 20px",
      "text_color": "`text.secondary` #777777 (wolf, light)",
      "font": {
       "family": "duolingo-sans",
@@ -7705,7 +7705,7 @@
       "w": 240,
       "h": 55
      },
-     "padding": "10px 12px 10px 20px",
+     "padding": "`space.10` 10px `space.12` 12px `space.10` 10px `space.20` 20px",
      "background": "`surface.subtle` #202F36 (polar, dark)",
      "text_color": "`text.selected` #1899D6 (whale, dark)",
      "font": {
@@ -7733,7 +7733,7 @@
       "w": 240,
       "h": 55
      },
-     "padding": "10px 12px 10px 20px",
+     "padding": "`space.10` 10px `space.12` 12px `space.10` 10px `space.20` 20px",
      "text_color": "`text.primary` #4B4B4B (eel, light)",
      "font": {
       "family": "duolingo-sans",
@@ -7761,21 +7761,21 @@
    "anatomy": [
     "backdrop _1ATOC: fixed, black @ 0.4, z-index 300",
     "centering layer _3Mzt6 (flex center, z 310)",
-    "dialog _1yFTM _3fFQQ FohH5: snow fill, 16px radius, 24px margin, --modal-padding 30px (24px with _3tUNa/_3Dms8, width 384px)",
+    "dialog _1yFTM _3fFQQ FohH5: snow fill, `radius.16` 16px radius, `space.24` 24px margin, --modal-padding `space.30` 30px (24px with _3tUNa/_3Dms8, width 384px)",
     "optional close button rXoiv: 35px snow circle, 2px swan border, straddles the top-right corner (translate 50%/-50%)",
-    "illustration, title (heading-medium), body (caption, wolf), stacked full-width buttons (primary 50px + 16px gap + text button 32px)"
+    "illustration, title (heading-medium), body (caption, wolf), stacked full-width buttons (primary 50px + `space.16` 16px gap + text button 32px)"
    ],
    "measurements": {
     "width": "384px (notifications, quit) / 480px (invite)",
-    "padding": "24px (notifications, quit) / 30px (invite)",
-    "radius": "16px",
-    "margin": "24px",
+    "padding": "`space.24` 24px (notifications, quit) / `space.30` 30px (invite)",
+    "radius": "`radius.16` 16px",
+    "margin": "`space.24` 24px",
     "border": "none",
     "shadow": "none",
     "title": "`typography.heading.medium` 700 24px/32px (heading-medium), 12px top margin",
     "body": "`typography.caption.default` 500 16px/24px caption, wolf, 12px top margin",
-    "button_stack": "primary 50px, margin-top 32px; secondary text 32px, margin-top 16px",
-    "close": "35x35, 2px border, radius 98px, 16px icon",
+    "button_stack": "primary 50px, margin-top `space.32` 32px; secondary text 32px, margin-top `space.16` 16px",
+    "close": "35x35, `borderWidth.2` 2px border, radius 98px, 16px icon",
     "source": [
      "css:app-f2ef02f8.css ._1yFTM { border-radius:var(--modal-border-radius,16px); margin:var(--modal-margin,24px) }",
      "css:app-f2ef02f8.css .FohH5 { --modal-padding:30px; background:rgb(var(--color-snow)) }",
@@ -7855,9 +7855,9 @@
       "w": 384,
       "h": 442
      },
-     "padding": "24px",
-     "margin": "24px",
-     "radius": "16px",
+     "padding": "`space.24` 24px",
+     "margin": "`space.24` 24px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -7923,7 +7923,7 @@
       "w": 336,
       "h": 32
      },
-     "margin": "12px 0px 0px 0px",
+     "margin": "`space.12` 12px 0px 0px 0px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -7945,7 +7945,7 @@
       "w": 336,
       "h": 48
      },
-     "margin": "12px 0px 0px 0px",
+     "margin": "`space.12` 12px 0px 0px 0px",
      "text_color": "`text.secondary` #DCE6EC (wolf, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -7967,9 +7967,9 @@
       "w": 480,
       "h": 477
      },
-     "padding": "30px",
-     "margin": "24px",
-     "radius": "16px",
+     "padding": "`space.30` 30px",
+     "margin": "`space.24` 24px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -8046,13 +8046,13 @@
       "w": 420,
       "h": 48
      },
-     "padding": "5px 10px 5px 10px",
+     "padding": "`space.5` 5px `space.10` 10px `space.5` 5px `space.10` 10px",
      "margin": "25px 0px 0px 0px",
      "border": {
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -8092,9 +8092,9 @@
       "w": 480,
       "h": 477
      },
-     "padding": "30px",
-     "margin": "24px",
-     "radius": "16px",
+     "padding": "`space.30` 30px",
+     "margin": "`space.24` 24px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -8139,9 +8139,9 @@
       "w": 384,
       "h": 387
      },
-     "padding": "24px",
-     "margin": "24px",
-     "radius": "16px",
+     "padding": "`space.24` 24px",
+     "margin": "`space.24` 24px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -8186,9 +8186,9 @@
       "w": 384,
       "h": 387
      },
-     "padding": "24px",
-     "margin": "24px",
-     "radius": "16px",
+     "padding": "`space.24` 24px",
+     "margin": "`space.24` 24px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -8235,14 +8235,14 @@
    "anatomy": [
     "backdrop _1ATOC _1Fnem (black @ 0.4)",
     "sheet rs95t _3fIZ6 _19idO: fixed bottom, full width, snow fill, z 320, no radius, no border",
-    "inner _3qIEH: max-width 1140px, padding 40px 24px (32px 16px mobile)",
-    "grid _1fZrK: image | title+description | dismiss | cta (columns min-content 1fr 172px 172px, gap 16px 40px)",
+    "inner _3qIEH: max-width 1140px, padding `space.40` 40px `space.24` 24px (32px 16px mobile)",
+    "grid _1fZrK: image | title+description | dismiss | cta (columns min-content 1fr 172px 172px, gap `space.16` 16px `space.40` 40px)",
     "buttons: secondary outline \"Cancel\" + danger \"Remove\", each 184x50"
    ],
    "measurements": {
     "height": "195px (content-driven)",
-    "padding": "40px 24px",
-    "grid_gap": "16px 40px",
+    "padding": "`space.40` 40px `space.24` 24px",
+    "grid_gap": "`space.16` 16px `space.40` 40px",
     "radius": "none",
     "title": "`typography.heading.medium` 700 24px/32px heading-medium",
     "description": "19px/24px wolf",
@@ -8287,7 +8287,7 @@
      "source": "not captured"
     }
    ],
-   "responsive": "Below 700px the grid is a single centered column and the description gets 0 24px padding with line-height 1.4 (css:1060 ._1fZrK, ._3OWkn). No mobile capture.",
+   "responsive": "Below 700px the grid is a single centered column and the description gets 0 `space.24` 24px padding with line-height 1.4 (css:1060 ._1fZrK, ._3OWkn). No mobile capture.",
    "screenshots": {
     "dark": "settings-courses-dark-remove-confirm.png",
     "light": "settings-courses-light-remove-confirm.png"
@@ -8353,8 +8353,8 @@
       "w": 1140,
       "h": 195
      },
-     "padding": "40px 24px 40px 24px",
-     "margin": "0px 30px 0px 30px",
+     "padding": "`space.40` 40px `space.24` 24px `space.40` 40px `space.24` 24px",
+     "margin": "0px `space.30` 30px 0px `space.30` 30px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8398,7 +8398,7 @@
       "w": 1092,
       "h": 115
      },
-     "gap": "16px 40px",
+     "gap": "`space.16` 16px `space.40` 40px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8483,12 +8483,12 @@
       "w": 184,
       "h": 50
      },
-     "padding": "0px 16px 0px 16px",
+     "padding": "0px `space.16` 16px 0px `space.16` 16px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -8505,7 +8505,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "label": {
       "text": "Cancel",
@@ -8580,15 +8580,15 @@
    "name": "List: settings side navigation",
    "anatomy": [
     "card _1uIIO _1T_BQ (see card)",
-    "section title h2 _7yUNn (heading-medium, wolf, 0 30px 16px margin)",
-    "ul _1lpXi (grid, 4px gap)",
-    "li wgPZT (12px radius) > a bigAx (heading-small, eel, 8px 30px padding)"
+    "section title h2 _7yUNn (heading-medium, wolf, 0 `space.30` 30px `space.16` 16px margin)",
+    "ul _1lpXi (grid, `space.4` 4px gap)",
+    "li wgPZT (`radius.12` 12px radius) > a bigAx (heading-small, eel, `space.8` 8px `space.30` 30px padding)"
    ],
    "measurements": {
     "row_height": "40px",
-    "row_gap": "4px",
-    "padding": "8px 30px",
-    "radius": "12px",
+    "row_gap": "`space.4` 4px",
+    "padding": "`space.8` 8px `space.30` 30px",
+    "radius": "`radius.12` 12px",
     "font": "`typography.heading.small` 700 20px/24px (heading-small)",
     "title": "`typography.heading.medium` 700 24px/32px wolf",
     "source": [
@@ -8619,7 +8619,7 @@
     },
     {
      "state": "hover",
-     "change": "fill swan, 12px radius",
+     "change": "fill swan, `radius.12` 12px radius",
      "source": "captured:settings-courses-dark-sidenav-hover#93, settings-profile-light-default#83; css:settingsPage-f3f7f16a.css @media (hover:hover) .wgPZT:hover"
     },
     {
@@ -8655,7 +8655,7 @@
       "w": 332,
       "h": 40
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8694,7 +8694,7 @@
       "w": 332,
       "h": 40
      },
-     "padding": "8px 30px 8px 30px",
+     "padding": "`space.8` 8px `space.30` 30px `space.8` 8px `space.30` 30px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8715,7 +8715,7 @@
       "w": 332,
       "h": 40
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background": "`surface.disabled` #37464F (swan, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -8755,7 +8755,7 @@
       "w": 332,
       "h": 40
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -8795,7 +8795,7 @@
       "w": 332,
       "h": 40
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "background": "`surface.disabled` #E5E5E5 (swan, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -8836,7 +8836,7 @@
       "w": 272,
       "h": 32
      },
-     "margin": "0px 30px 16px 30px",
+     "margin": "0px `space.30` 30px `space.16` 16px `space.30` 30px",
      "text_color": "`text.secondary` #DCE6EC (wolf, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -8857,17 +8857,17 @@
    "name": "List rows: courses list, search results, following list, settings rows",
    "anatomy": [
     "courses row Ej0kW: 64px, flag 34x26 (18% radius, 2px white outline) + name (heading-small) + trailing REMOVE link button, 2px swan divider (_3hY-r)",
-    "search result row nAD2k _39QMj: 18px 24px padding, 70px avatar, name 700 24px + @handle 18px hare, trailing FOLLOW, 2px swan divider; list wrapped in _2G9SS box (2px swan, 16px radius)",
-    "following row _1xR2j _39QMj _2SROJ: 16px padding, 48px avatar, 12px text margin, name 20px + XP 16px hare, no divider (_2SROJ border 0)",
-    "settings preference row hpqEH > _2R7tY: label + control, space-between, 48px gap; 24px row gap on desktop",
-    "\"View N more\" footer button _3jvnF: 16px padding, 2px top swan border, 700 eel"
+    "search result row nAD2k _39QMj: `space.18` 18px `space.24` 24px padding, 70px avatar, name 700 24px + @handle 18px hare, trailing FOLLOW, 2px swan divider; list wrapped in _2G9SS box (2px swan, `radius.16` 16px radius)",
+    "following row _1xR2j _39QMj _2SROJ: `space.16` 16px padding, 48px avatar, 12px text margin, name 20px + XP 16px hare, no divider (_2SROJ border 0)",
+    "settings preference row hpqEH > _2R7tY: label + control, space-between, `space.48` 48px gap; 24px row gap on desktop",
+    "\"View N more\" footer button _3jvnF: `space.16` 16px padding, 2px top swan border, 700 eel"
    ],
    "measurements": {
-    "course_row": "64px, gap 16px",
-    "search_row": "113px, padding 18px 24px, avatar 70, text margin 0 16px",
-    "following_row": "85px, padding 16px, avatar 48",
-    "divider": "2px swan",
-    "container": "2px swan border, 16px radius",
+    "course_row": "64px, gap `space.16` 16px",
+    "search_row": "113px, padding `space.18` 18px `space.24` 24px, avatar 70, text margin 0 `space.16` 16px",
+    "following_row": "85px, padding `space.16` 16px, avatar 48",
+    "divider": "`borderWidth.2` 2px swan",
+    "container": "2px swan border, `radius.16` 16px radius",
     "source": [
      "css:settingsPage-f3f7f16a.css .Ej0kW { align-items:center; box-sizing:content-box; display:flex; gap:16px; height:64px; padding:0 16px }",
      "css:settingsPage-f3f7f16a.css ._3hY-r { border-bottom:2px solid rgb(var(--color-swan)) }",
@@ -8905,7 +8905,7 @@
     },
     {
      "state": "hover (leaderboard-style rows _5W_8K)",
-     "change": "fill polar, 16px radius",
+     "change": "fill polar, `radius.16` 16px radius",
      "source": "captured:leaderboard-dark-row-hover#165; css:1008-b4d34396.css @media (hover:hover) ._5W_8K:hover"
     },
     {
@@ -8914,7 +8914,7 @@
      "source": "not captured"
     }
    ],
-   "responsive": "Below 700px: settings lists become one bordered group (2px swan, 12px radius) with 16px row padding and 2px dividers (css:settingsPage ._2QqPx, .hpqEH; settings-account-dark-mobile#16-#35); courses list gets the same border (._1GEp7) and 0 16px row padding.",
+   "responsive": "Below 700px: settings lists become one bordered group (2px swan, `radius.12` 12px radius) with 16px row padding and 2px dividers (css:settingsPage ._2QqPx, .hpqEH; settings-account-dark-mobile#16-#35); courses list gets the same border (._1GEp7) and 0 16px row padding.",
    "screenshots": {
     "dark": "settings-courses-dark-default.png",
     "light": "settings-courses-light-default.png"
@@ -8940,7 +8940,7 @@
       "w": 480,
       "h": 66
      },
-     "gap": "16px",
+     "gap": "`space.16` 16px",
      "border": {
       "width": "0px 0px 2px 0px",
       "color": "`border.default` #37464F (swan, dark)"
@@ -8987,7 +8987,7 @@
       "w": 592,
       "h": 66
      },
-     "gap": "16px",
+     "gap": "`space.16` 16px",
      "border": {
       "width": "0px 0px 2px 0px",
       "color": "`border.default` #E5E5E5 (swan, light)"
@@ -9035,7 +9035,7 @@
       "w": 482,
       "h": 113
      },
-     "padding": "18px 24px 18px 24px",
+     "padding": "`space.18` 18px `space.24` 24px `space.18` 18px `space.24` 24px",
      "border": {
       "width": "0px 0px 2px 0px",
       "color": "`border.default` #37464F (swan, dark)"
@@ -9084,7 +9084,7 @@
       "w": 594,
       "h": 113
      },
-     "padding": "18px 24px 18px 24px",
+     "padding": "`space.18` 18px `space.24` 24px `space.18` 18px `space.24` 24px",
      "border": {
       "width": "0px 0px 2px 0px",
       "color": "`border.default` #E5E5E5 (swan, light)"
@@ -9174,8 +9174,8 @@
       "w": 364,
       "h": 85
      },
-     "padding": "16px",
-     "margin": "8px 0px 0px 0px",
+     "padding": "`space.16` 16px",
+     "margin": "`space.8` 8px 0px 0px 0px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -9218,8 +9218,8 @@
       "w": 364,
       "h": 85
      },
-     "padding": "16px",
-     "margin": "8px 0px 0px 0px",
+     "padding": "`space.16` 16px",
+     "margin": "`space.8` 8px 0px 0px 0px",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -9264,7 +9264,7 @@
       "w": 364,
       "h": 54
      },
-     "padding": "16px",
+     "padding": "`space.16` 16px",
      "border": {
       "width": "2px 0px 0px 0px",
       "color": "`border.default` #37464F (swan, dark)"
@@ -9326,15 +9326,15 @@
    "id": "card",
    "name": "Cards (right-rail cards, settings side cards, stat tiles)",
    "anatomy": [
-    "right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, 16px radius, 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (`typography.app.cardTitle` 700 19px/28px), body (wolf, 25px lh), full-width CTA",
-    "settings side card _1uIIO _1T_BQ: same shell, 24px 16px padding",
-    "Super promo card _3Mmv9: eclipse fill + radial gradient, no border, 16px radius, 24px side padding",
-    "stat tile _2uSOC: 2px swan border, 16px radius, 15px 24px padding, icon 21px + 15px gap, value 700 20px, caption 16px hare; inactive tile (_1kcT_) all hare"
+    "right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, `radius.16` 16px radius, `space.18` 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (`typography.app.cardTitle` 700 19px/28px), body (wolf, 25px lh), full-width CTA",
+    "settings side card _1uIIO _1T_BQ: same shell, `space.24` 24px `space.16` 16px padding",
+    "Super promo card _3Mmv9: eclipse fill + radial gradient, no border, `radius.16` 16px radius, 24px side padding",
+    "stat tile _2uSOC: 2px swan border, `radius.16` 16px radius, `space.15` 15px `space.24` 24px padding, icon 21px + `space.15` 15px gap, value 700 20px, caption 16px hare; inactive tile (_1kcT_) all hare"
    ],
    "measurements": {
-    "rail_card": "368px wide, padding 18px, border 2px, radius 16px, 16px vertical gap between cards",
-    "settings_card": "padding 24px 16px",
-    "stat_tile": "234x78 (desktop 480 column), padding 15px 24px, gap 12px between tiles",
+    "rail_card": "368px wide, padding `space.18` 18px, border `borderWidth.2` 2px, radius `radius.16` 16px, 16px vertical gap between cards",
+    "settings_card": "padding `space.24` 24px `space.16` 16px",
+    "stat_tile": "234x78 (desktop 480 column), padding `space.15` 15px `space.24` 24px, gap `space.12` 12px between tiles",
     "source": [
      "css:1008-b4d34396.css ._1T_BQ { background:rgb(var(--color-snow)); border:2px solid rgb(var(--color-swan)); border-radius:16px }",
      "css:settingsPage-f3f7f16a.css ._1uIIO { padding:24px 16px }",
@@ -9382,7 +9382,7 @@
      "source": "captured:profile-dark-default#239"
     }
    ],
-   "responsive": "Stat tile below 700px: padding 12px 14px 10px, icon 15px wide with 7.5px gap, value 19px, caption 15px (css:5515 @media (max-width:699px); profile-dark-mobile#80 263x70). Right rail is hidden in the 570px captures.",
+   "responsive": "Stat tile below `breakpoint.md` 700px: padding `space.12` 12px `space.14` 14px `space.10` 10px, icon 15px wide with 7.5px gap, value 19px, caption 15px (css:5515 @media (max-width:699px); profile-dark-mobile#80 263x70). Right rail is hidden in the 570px captures.",
    "screenshots": {
     "dark": "characters-dark-default.png",
     "light": "characters-light-default.png"
@@ -9407,12 +9407,12 @@
       "w": 368,
       "h": 230
      },
-     "padding": "18px",
+     "padding": "`space.18` 18px",
      "border": {
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -9458,7 +9458,7 @@
       "w": 328,
       "h": 18
      },
-     "margin": "0px 0px 8px 0px",
+     "margin": "0px 0px `space.8` 8px 0px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -9479,7 +9479,7 @@
       "w": 224,
       "h": 28
      },
-     "margin": "0px 0px 8px 0px",
+     "margin": "0px 0px `space.8` 8px 0px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -9520,12 +9520,12 @@
       "w": 368,
       "h": 178
      },
-     "padding": "18px",
+     "padding": "`space.18` 18px",
      "border": {
       "width": "2px",
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.default` #FFFFFF (snow, light)",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -9570,12 +9570,12 @@
       "w": 368,
       "h": 404
      },
-     "padding": "24px 16px 24px 16px",
+     "padding": "`space.24` 24px `space.16` 16px `space.24` 24px `space.16` 16px",
      "border": {
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -9616,8 +9616,8 @@
       "w": 368,
       "h": 330
      },
-     "padding": "0px 24px 0px 24px",
-     "radius": "16px",
+     "padding": "0px `space.24` 24px 0px `space.24` 24px",
+     "radius": "`radius.16` 16px",
      "background": "`gamification.super.surface` #000437 (eclipse, dark)",
      "background_image": "radial-gradient(216% 106% at 6% 3%, `palette.dark.gamma` #26F663 (gamma, dark) @ 0.3 alpha 0px, `palette.dark.starlight` #268AFF (starlight, dark) @ 0.3 alpha 52%, `palette.dark.quasar` #FC55FF (quasar, dark) @ 0.3 alpha 100%), none",
      "text_color": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
@@ -9665,12 +9665,12 @@
       "w": 234,
       "h": 78
      },
-     "padding": "15px 24px 15px 24px",
+     "padding": "`space.15` 15px `space.24` 24px `space.15` 15px `space.24` 24px",
      "border": {
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -9713,12 +9713,12 @@
       "w": 234,
       "h": 78
      },
-     "padding": "15px 24px 15px 24px",
+     "padding": "`space.15` 15px `space.24` 24px `space.15` 15px `space.24` 24px",
      "border": {
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -9763,12 +9763,12 @@
       "w": 290,
       "h": 78
      },
-     "padding": "15px 24px 15px 24px",
+     "padding": "`space.15` 15px `space.24` 24px `space.15` 15px `space.24` 24px",
      "border": {
       "width": "2px",
       "color": "`border.default` #E5E5E5 (swan, light)"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -9811,12 +9811,12 @@
       "w": 263,
       "h": 70
      },
-     "padding": "12px 14px 10px 14px",
+     "padding": "`space.12` 12px `space.14` 14px `space.10` 10px `space.14` 14px",
      "border": {
       "width": "2px",
       "color": "`border.default` #37464F (swan, dark)"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
       "family": "duolingo-sans",
@@ -9859,10 +9859,10 @@
    "name": "Dividers",
    "anatomy": [
     "section rule <hr class=\"_3D1uH\">: 2px swan top border, 0 margin (settings sections)",
-    "list row divider: 2px swan border-bottom (_3hY-r, _39QMj, hpqEH on mobile)",
-    "menu section divider: 2px swan border-bottom (_1fv9a)",
-    "tab strip rule: 2px swan (see tabs)",
-    "page header rule: 2px swan border-bottom (_74cF6 search header)"
+    "list row divider: `borderWidth.2` 2px swan border-bottom (_3hY-r, _39QMj, hpqEH on mobile)",
+    "menu section divider: `borderWidth.2` 2px swan border-bottom (_1fv9a)",
+    "tab strip rule: `borderWidth.2` 2px swan (see tabs)",
+    "page header rule: `borderWidth.2` 2px swan border-bottom (_74cF6 search header)"
    ],
    "measurements": {
     "thickness": "2px everywhere",
@@ -9888,7 +9888,7 @@
      "source": "captured"
     }
    ],
-   "responsive": "hr._3D1uH is display:none below 700px (css:settingsPage @media not all and (min-width:700px)).",
+   "responsive": "hr._3D1uH is display:none below `breakpoint.md` 700px (css:settingsPage @media not all and (min-width:700px)).",
    "screenshots": {
     "dark": "settings-account-dark-default.png",
     "light": "settings-account-light-default.png"
@@ -9956,7 +9956,7 @@
       "w": 287,
       "h": 122
      },
-     "padding": "8px 0px 8px 0px",
+     "padding": "`space.8` 8px 0px `space.8` 8px 0px",
      "border": {
       "width": "0px 0px 2px 0px",
       "color": "`border.default` #37464F (swan, dark)"
@@ -10126,7 +10126,7 @@
       "w": 178,
       "h": 18
      },
-     "radius": "9px",
+     "radius": "`radius.9` 9px",
      "background": "`surface.default` #131F24 (snow, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -10166,7 +10166,7 @@
       "w": 178,
       "h": 18
      },
-     "radius": "9px",
+     "radius": "`radius.9` 9px",
      "background": "`accent.primary.face` #93D333 (owl, dark)",
      "text_color": "`accent.primary.face` #93D333 (owl, dark)",
      "font": {
@@ -10207,7 +10207,7 @@
       "w": 38,
       "h": 3
      },
-     "radius": "9999px",
+     "radius": "`radius.pill` 9999px",
      "background": "`palette.dark.celestia` #FFFFFF (celestia, dark)",
      "text_color": "`accent.primary.face` #93D333 (owl, dark)",
      "font": {
@@ -10267,7 +10267,7 @@
       "w": 207,
       "h": 18
      },
-     "radius": "9px 0px 0px 9px",
+     "radius": "`radius.9` 9px 0px 0px `radius.9` 9px",
      "background": "`surface.disabled` #37464F (swan, dark)",
      "text_color": "`text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))]",
      "font": {
@@ -10438,7 +10438,7 @@
       "w": 83,
       "h": 18
      },
-     "margin": "12px 0px 0px 0px",
+     "margin": "`space.12` 12px 0px 0px 0px",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -10521,7 +10521,7 @@
       "w": 73,
       "h": 20
      },
-     "margin": "0px 0px 0px 5px",
+     "margin": "0px 0px 0px `space.5` 5px",
      "text_color": "`text.link` #49C0F8 (macaw, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -10543,12 +10543,12 @@
    "name": "Icon buttons (unstyled and framed)",
    "anatomy": [
     "unstyled (variant-unstyled _1gEmM): no background/border/padding, hover brightness(1.1), glyph only (quit X 18px, close X 24px, eye 24px, clear 24px, dismiss 12px)",
-    "framed square: web-ui stroke 48x48 (_2FxcQ, radius 12px) or 52x52 floating (_2dnkd)",
+    "framed square: web-ui stroke 48x48 (_2FxcQ, radius `radius.12` 12px) or 52x52 floating (_2dnkd)",
     "round close: rXoiv 35px circle with 2px swan border (modals)"
    ],
    "measurements": {
     "sizes": "12, 18, 24 (unstyled glyph boxes); 35 (round close); 48 (square tile); 52 (floating)",
-    "radius": "12px (tile, _2FxcQ); 16px (fab, root button radius); 50% (close)",
+    "radius": "`radius.12` 12px (tile, _2FxcQ); `radius.16` 16px (fab, root button radius); 50% (close)",
     "source": [
      "css:4779-c36ad395.css ._1gEmM { background:none; border:none; padding:0; transition:filter .2s }",
      "css:4779-c36ad395.css @media (hover:hover) ._1gEmM:hover:not(._2wryV):not(.ypJiL) { filter:var(--web-ui_button-filter-hover,brightness(1.1)) }",
@@ -10705,7 +10705,7 @@
       "w": 24,
       "h": 24
      },
-     "margin": "0px 6px 0px -6px",
+     "margin": "0px `space.6` 6px 0px -6px",
      "text_color": "`palette.light.black` #000000 (black, light)",
      "font": {
       "family": "duolingo-sans",
@@ -10758,12 +10758,12 @@
       "h": 52
      },
      "margin": "0px 0px 0px 428px",
-     "gap": "24px",
+     "gap": "`space.24` 24px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -10782,7 +10782,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "icon": {
       "trace": "learn-dark-completed-popover#1665 <img>",
@@ -10801,12 +10801,12 @@
       "h": 52
      },
      "margin": "0px 0px 0px 540px",
-     "gap": "24px",
+     "gap": "`space.24` 24px",
      "border": {
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "16px",
+     "radius": "`radius.16` 16px",
      "text_color": "`text.tertiary` #AFAFAF (hare, light)",
      "font": {
       "family": "duolingo-sans",
@@ -10825,7 +10825,7 @@
        "color": "`border.default` #E5E5E5 (swan, light)"
       },
       "box_shadow": "`border.default` #E5E5E5 (swan, light) 0px 2px 0px 0px",
-      "radius": "16px"
+      "radius": "`radius.16` 16px"
      },
      "icon": {
       "trace": "learn-light-completed-popover#1675 <img>",
@@ -10847,7 +10847,7 @@
       "width": "2px 2px 4px 2px",
       "color": "transparent"
      },
-     "radius": "12px",
+     "radius": "`radius.12` 12px",
      "text_color": "`text.tertiary` #52656D (hare, dark)",
      "font": {
       "family": "duolingo-sans",
@@ -10865,7 +10865,7 @@
        "color": "`border.default` #37464F (swan, dark)"
       },
       "box_shadow": "`border.default` #37464F (swan, dark) 0px 2px 0px 0px",
-      "radius": "12px"
+      "radius": "`radius.12` 12px"
      },
      "icon": {
       "trace": "leaderboard-dark-default#103 <img>",
@@ -10883,13 +10883,13 @@
    "name": "Table (Guidebook phrase table)",
    "anatomy": [
     "`<table>` cl=gNFrF GTI2Y: two columns, a header row and three body rows, inside a Guidebook tip card",
-    "header cells: tinted fill, 2px border on every side, outer top corners rounded 16px",
+    "header cells: tinted fill, `borderWidth.2` 2px border on every side, outer top corners rounded 16px",
     "body cells: no fill, 2px right and bottom borders; the grid is drawn by the cells (border-collapse separate, spacing 0)"
    ],
    "measurements": {
-    "table": "544 x 210 at 1440, radius 16px",
-    "header_row": "66px, padding 10px 16px",
-    "body_row": "48px, padding 10px 16px, 500 17px/22px",
+    "table": "544 x 210 at 1440, radius `radius.16` 16px",
+    "header_row": "66px, padding `space.10` 10px `space.16` 16px",
+    "body_row": "48px, padding `space.10` 10px `space.16` 16px, 500 17px/22px",
     "grid_line": "2px"
    },
    "tokens": {
