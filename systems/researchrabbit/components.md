@@ -7,7 +7,7 @@ The machine-readable copy is [raw/components-computed.json](raw/components-compu
 How to read an entry:
 
 - A component is found by its styled-components display name (`GraphControls__StyledButton`), so `generateVariantComponent__default`, which many unrelated buttons share, is found by text or position instead. The entry's heading is the product's name for the part, and the key in backticks is the key in the JSON.
-- A colour, shadow, radius, padding, gap or control height is its value followed by the [tokens.json](tokens.json) token with the same value (`{palette.grey.primary}`, `{elevation.menu}`, `{radius.lg}`, `{spacing.2}`, `{size.control-md}`), when there is one; a colour names the light-set role for what it paints (`{background.surface}` for a fill, `{text.default}` for text, `{border.default}` for a border; these live in the light set) and falls back to the palette token when no role has that value; an entry's own `component.*` token is named first for its fill. Collection colours (`palette.ugc.*`) stay palette tokens because the user picks them per collection. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 {palette.base.black}`, and is read from the first text node inside the component.
+- A colour, shadow, radius, padding, gap or control height is its value followed by the [tokens.json](tokens.json) token with the same value (`{palette.grey.primary}`, `{elevation.menu}`, `{radius.lg}`, `{spacing.2}`, `{size.control-md}`), when there is one; a colour names the light-set role for what it paints (`{background.surface}` for a fill, `{text.default}` for text, `{border.default}` for a border; these live in the light set) and falls back to the palette token when no role has that value; an entry's own `component.*` token (by name: `component.toast` for the toast, `component.tooltip` for the graph tooltip, `component.menu-separator` for a menu's rule) is named first for its fill, so a token is only chosen by value when the component has none of its own. Collection colours (`palette.ugc.*`) stay palette tokens because the user picks them per collection. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 {palette.base.black}`, and is read from the first text node inside the component.
 - The state table has one row per element or snapshot state read at rest. A hover, focus-visible or pressed row lists only what changes from the row above it; a state with the same values is named in the row's label, for example "default (same: hover)". Hover is a real mouse hover, focus-visible a real keyboard focus and pressed the mouse held down (2026-10-17 pages only); where a snapshot state could not be reached it says so.
 - "Parts" lists the pieces inside the component, with sizes and offsets measured from the component's corner.
 - Crops are images of the component read from the rendered snapshot, in [components/crops/](components/crops) (445 files, named `{component}-{state}.png`, at 2x, 256 colours). A crop wider than 1600px was halved. A state that paints the same pixels as its default has no file of its own. Screenshots are in [screenshots/](screenshots).
@@ -113,9 +113,9 @@ Values that apply across entries, from the measurement file. Counts are componen
 | #a7d4ff 0px 0px 0px 1px inset (`{elevation.ring-highlight}`) | `inspector`, `list-card` |
 | rgba(0, 0, 0, 0.5) 3px 3px 12px 0px (`{elevation.dialog}`) | `confirm-destructive`, `dialog` |
 | #000000 0px 0px 0px 1px (`{elevation.ring-strong}`) | `home-guide-card` |
-| #686d79 0px 0px 0px 1px | `note-composer` |
-| #a49edb 0px 0px 0px 4px | `slider` |
-| #a49edb 0px 0px 0px 5px | `slider` |
+| #686d79 0px 0px 0px 1px (`{elevation.ring-composer}`) | `note-composer` |
+| #a49edb 0px 0px 0px 4px (`{elevation.slider-thumb}`) | `slider` |
+| #a49edb 0px 0px 0px 5px (`{elevation.slider-thumb}`) | `slider` |
 | #dde0e4 0px 0px 0px 1px inset (`{elevation.ring-field-dark}`) | `drawer-input` |
 | rgba(0, 0, 0, 0.3) 3px 3px 12px 0px (`{elevation.toast}`) | `toast` |
 
@@ -173,7 +173,7 @@ Values that apply across entries, from the measurement file. Counts are componen
 | #000000 `{action.primary}` | #333333 `{action.primary-hover}` | 6 |
 | rgba(0, 0, 0, 0.05) `{action.quiet}` | rgba(0, 0, 0, 0.07) `{action.select-hover}` | 5 |
 | transparent | #ffffff `{background.surface}` | 3 |
-| rgba(0, 0, 0, 0.05) `{action.quiet}` | rgba(0, 0, 0, 0.08) | 2 |
+| rgba(0, 0, 0, 0.05) `{action.quiet}` | rgba(0, 0, 0, 0.08) `{action.quiet-hover-soft}` | 2 |
 | rgba(0, 0, 0, 0.05) `{action.quiet}` | rgba(0, 0, 0, 0.1) `{action.quiet-hover}` | 2 |
 | transparent | rgba(255, 255, 255, 0.1) `{action.quiet-hover-inverse}` | 2 |
 | #8add8a `{action.upgrade}` | #c4eec4 `{palette.green.50}` | 1 |
@@ -628,7 +628,7 @@ Dark tooltip with an arrow, shown above a legend chip. Read as `graph-tooltip` o
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| search-inputs | size 162.41 x 28; padding 8px 12px `{spacing.2} {spacing.3}`; radius 8px `{radius.lg}`; background #333333 `{action.primary-hover}`; shadow rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px (`{elevation.popup}`); text Plus Jakarta Sans 12/12 400, #ffffff `{text.inverse}`; icon 10 x 5, #ffffff `{text.inverse}` |
+| search-inputs | size 162.41 x 28; padding 8px 12px `{spacing.2} {spacing.3}`; radius 8px `{radius.lg}`; background #333333 `{component.tooltip}`; shadow rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px (`{elevation.popup}`); text Plus Jakarta Sans 12/12 400, #ffffff `{text.inverse}`; icon 10 x 5, #ffffff `{text.inverse}` |
 | results (as the first row, except) | size 232.84 x 28 |
 | result-hover (same as the first row) | same values |
 
@@ -765,12 +765,12 @@ The 400px column of result cards at the left of the split view, with a thin load
 
 **Values (default).** size 400 x 726; padding 8px `{spacing.2}`; background transparent; text Plus Jakarta Sans 16/24 500, #000000 `{text.default}`; icon 18 x 18, #000000 `{text.default}`.
 
-Child layers that carry the look: div 372x2 background #0000ff; div 372x2; div 372x204 background #ffffff `{background.surface}` radius 8px.
+Child layers that carry the look: div 372x2 background #0000ff `{component.result-card-loadline}`; div 372x2; div 372x204 background #ffffff `{background.surface}` radius 8px.
 
 Parts:
 
 - viewport: 372 x 686; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; radius 4px `{radius.sm}`; text "Jimenez, 2023 SWE-bench: Can L"
-- loadline: 372 x 2; background #0000ff; opacity 0
+- loadline: 372 x 2; background #0000ff `{component.result-card-loadline}`; opacity 0
 
 ![Result list column default](components/crops/list-column-default.png)
 
@@ -1114,7 +1114,7 @@ Parts:
 | first, hover | background #e8e8e8 `{action.control-hover}` |
 | first, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | second | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background transparent; text Plus Jakarta Sans 16/24 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
-| second, hover | background rgba(0, 0, 0, 0.08) |
+| second, hover | background rgba(0, 0, 0, 0.08) `{action.quiet-hover-soft}` |
 | second, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 
 Child layers that carry the look: div 8x8 background #8add8a `{action.upgrade}` radius 50%.
@@ -1429,10 +1429,10 @@ The "Collections" heading with three 24px tool buttons (sort, filter, add). Read
 |---|---|
 | default | size 88.44 x 24 (height `{size.control-sm}`); background transparent; text Plus Jakarta Sans 16/24 600, #000000 `{text.default}` |
 | tool-sort | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; text Plus Jakarta Sans 16/24 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
-| tool-sort, hover | background rgba(0, 0, 0, 0.08) |
+| tool-sort, hover | background rgba(0, 0, 0, 0.08) `{action.quiet-hover-soft}` |
 | tool-sort, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | tool-add | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; text Plus Jakarta Sans 16/24 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
-| tool-add, hover | background rgba(0, 0, 0, 0.08) |
+| tool-add, hover | background rgba(0, 0, 0, 0.08) `{action.quiet-hover-soft}` |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover { background-color: rgba(0, 0, 0, 0.08); }`.
 
@@ -1982,17 +1982,17 @@ Two thumbs on a 3px track: 12px dark thumbs with a 4px lavender ring. Read as `s
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default | size 293 x 20; padding 8px 12px `{spacing.2} {spacing.3}`; background transparent; text Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}` |
-| thumb (same: hover) | size 12 x 12; radius 10px; background #353535 `{component.drawer-row}`; shadow #a49edb 0px 0px 0px 4px; text Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; cursor grab |
-| thumb, focus-visible | shadow #a49edb 0px 0px 0px 5px |
-| thumb, pressed | shadow #a49edb 0px 0px 0px 5px; cursor grabbing |
+| thumb (same: hover) | size 12 x 12; radius 10px; background #353535 `{component.drawer-row}`; shadow #a49edb 0px 0px 0px 4px (`{elevation.slider-thumb}`); text Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; cursor grab |
+| thumb, focus-visible | shadow #a49edb 0px 0px 0px 5px (`{elevation.slider-thumb}`) |
+| thumb, pressed | shadow #a49edb 0px 0px 0px 5px (`{elevation.slider-thumb}`); cursor grabbing |
 
-Child layers that carry the look: span 269x3 background #f2f2f2 `{action.control}` radius 48px; span 269x3 background #000000 `{action.primary}` radius 48px; span 12x12 background #353535 `{component.drawer-row}` radius 10px shadow #a49edb 0px 0px 0px 4px.
+Child layers that carry the look: span 269x3 background #f2f2f2 `{action.control}` radius 48px; span 269x3 background #000000 `{action.primary}` radius 48px; span 12x12 background #353535 `{component.drawer-row}` radius 10px shadow #a49edb 0px 0px 0px 4px (`{elevation.slider-thumb}`).
 
 Parts:
 
 - track: 269 x 3; Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; background #f2f2f2 `{action.control}`; radius 48px `{radius.pill}`
 - range: 269 x 3; Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; background #000000 `{action.primary}`; radius 48px `{radius.pill}`
-- thumb: 12 x 12; Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; background #353535 `{component.drawer-row}`; radius 10px; shadow #a49edb 0px 0px 0px 4px
+- thumb: 12 x 12; Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; background #353535 `{component.drawer-row}`; radius 10px; shadow #a49edb 0px 0px 0px 4px (`{elevation.slider-thumb}`)
 
 Authored state rules (from the page's CSS): `.x:focus { outline: none; box-shadow: 0 0 0 5px var(--lavender); }`; `.x:active { cursor: grabbing; }`.
 
@@ -2029,7 +2029,7 @@ The multi-line field at the foot of the Notes tab: a contenteditable rich-text b
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default (same: hover) | size 382 x 50; padding 4px 8px `{spacing.1} {spacing.2}`; radius 8px `{radius.lg}`; background #ffffff `{background.surface}`; shadow #686d79 0px 0px 0px 1px; text Plus Jakarta Sans 13/13 400 italic, #aaaaaa `{component.note-placeholder}`; transition min-height 0.3s ease |
+| default (same: hover) | size 382 x 50; padding 4px 8px `{spacing.1} {spacing.2}`; radius 8px `{radius.lg}`; background #ffffff `{background.surface}`; shadow #686d79 0px 0px 0px 1px (`{elevation.ring-composer}`); text Plus Jakarta Sans 13/13 400 italic, #aaaaaa `{component.note-placeholder}`; transition min-height 0.3s ease |
 | focus-visible | outline 1px auto #005fcc `{border.focus-browser}`, offset 0px |
 
 ![Note composer default](components/crops/note-composer-default.png) ![Note composer focus-visible](components/crops/note-composer-focus-visible.png)
@@ -2106,7 +2106,7 @@ The workspace menu: a 220px white sheet with 6px corners and a soft two-layer sh
 | default | size 228.16 x 107; padding 4px `{spacing.1}`; radius 6px `{radius.md}`; background #ffffff `{background.surface}`; shadow rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px (`{elevation.menu}`); text Plus Jakarta Sans 14/21 600, #201d1d `{text.primary}`; icon 18 x 18, #201d1d `{text.primary}` |
 | item-highlighted | size 220.16 x 30; padding 8px 8px 8px 32px `{spacing.2} {spacing.2} {spacing.2} {spacing.8}`; radius 3px `{radius.xs}`; background #a7d4ff `{action.highlighted}`; text Plus Jakarta Sans 14/21 400, #201d1d `{text.primary}`; icon 18 x 18, #201d1d `{text.primary}` |
 | item | size 220.16 x 30; padding 8px 8px 8px 32px `{spacing.2} {spacing.2} {spacing.2} {spacing.8}`; radius 3px `{radius.xs}`; background transparent; text Plus Jakarta Sans 14/21 400, #201d1d `{text.primary}`; icon 18 x 18, #201d1d `{text.primary}` |
-| separator | size 212.16 x 1; background #eef0f1 `{background.page}`; text Plus Jakarta Sans 14/21 400, #000000 `{text.default}` |
+| separator | size 212.16 x 1; background #eef0f1 `{component.menu-separator}`; text Plus Jakarta Sans 14/21 400, #000000 `{text.default}` |
 
 Authored state rules (from the page's CSS): `.x[data-state="checked"] { font-weight: 600; }`.
 
@@ -2361,7 +2361,7 @@ The home page lays its three cards in a row at 896px and wider, and stacks them 
 | stacked-800 | size 752 x 1522; gap 16px `{spacing.4}`; background transparent; text Plus Jakarta Sans 16/24 600, #000000 `{text.default}`; icon 16 x 16, #f07d59 `{palette.ugc.amber}` |
 | row-1440 (as the first row, except) | size 1352 x 901 |
 
-Child layers that carry the look: div 752x496.7 background rgba(255, 255, 255, 0.4) `{background.section}` radius 8px; div 728x2 background #0000ff; div 728x2.
+Child layers that carry the look: div 752x496.7 background rgba(255, 255, 255, 0.4) `{background.section}` radius 8px; div 728x2 background #0000ff `{component.result-card-loadline}`; div 728x2.
 
 Parts:
 

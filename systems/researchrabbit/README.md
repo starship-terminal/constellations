@@ -117,8 +117,9 @@ tokens, not the images.
 | IBM Plex Sans | 300, roman and italic | Requested by the page's font link, but no captured rule names it, so nothing on these pages renders in it |
 
 The italic used for journal names and the list total is Plus Jakarta Sans
-italic. Both families are open source on
-Google Fonts, which the style guide links.
+italic. Both named families are open source on
+Google Fonts, which the style guide links; the citation box uses whatever
+monospace face the browser has.
 
 Every text line read computes to a line height of 1.5 times its size (14/21,
 16/24, 24/36, 32/48), the html default; only bare spans drop to 1em. The
