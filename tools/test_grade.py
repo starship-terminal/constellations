@@ -232,6 +232,85 @@ class RefreshAndReviewTest(unittest.TestCase):
         self.assertEqual((problems, warnings), ([], []))
 
 
+class PlatformTest(unittest.TestCase):
+    """A package is graded against its platform's wording, and grades set against another
+    wording are flagged until a review sets them again."""
+    CRITERIA = {"version": "3", "layers": {"F": "Foundations"}, "criteria": [
+        {"id": "F5", "layer": "Foundations", "title": "Accent states", "doneWhen": "Default, hover and pressed.",
+         "platforms": {"mobile": "Default and pressed."}},
+        {"id": "F15", "layer": "Foundations", "title": "Contrast", "doneWhen": "x", "platforms": {"mobile": "m"}},
+        {"id": "V1", "layer": "Foundations", "title": "Principles", "doneWhen": "y", "capture": "not visible",
+         "platforms": {"mobile": "m"}},
+        {"id": "C1", "layer": "Foundations", "title": "Coverage", "doneWhen": "z"}]}
+    # Rubric 2: no platform recorded, so the reviewed grades were set against the web wording.
+    BASE = {"date": "2026-10-16", "rubric": "2", "method": "Review.", "systems": [
+        {"slug": slug, "name": slug, "goodFor": "g", "url": "u", "captured": "2026-10-01", "themes": ["light"],
+         "grades": {"F5": {"grade": "partly", "evidence": "no hover"}, "F15": {"grade": "meets", "evidence": "s"},
+                    "V1": {"grade": "na", "evidence": "n"}, "C1": {"grade": "meets", "evidence": "19/19"}}}
+        for slug in ("app", "web")]}
+    SOURCES = [{"slug": "app", "name": "app", "goodFor": "g", "url": "u", "captured": "2026-10-01",
+                "themes": ["light"], "platform": "mobile"},
+               {"slug": "web", "name": "web", "goodFor": "g", "url": "u", "captured": "2026-10-01",
+                "themes": ["light"], "platform": "web"}]
+    FRESH = {"F15": {"grade": "meets", "evidence": "s"}}
+
+    def snap(self, base=None, reviews=None, date="2026-10-17"):
+        with mock.patch.object(grade, "scripted", return_value=self.FRESH):
+            return grade.snapshot(self.CRITERIA, base or self.BASE, self.SOURCES, date, {}, reviews,
+                                  "Re-reviewed." if reviews else None)
+
+    def stale(self, audit, sources=None):
+        with mock.patch.object(grade, "scripted", return_value=self.FRESH):
+            return grade.stale(self.CRITERIA, audit, sources or self.SOURCES, {})
+
+    def test_the_snapshot_records_the_platform_and_the_wording_reviews_were_set_against(self):
+        out = self.snap()
+        by = {s["slug"]: s for s in out["systems"]}
+        self.assertEqual(out["rubric"], "3")
+        self.assertEqual((by["app"]["platform"], by["app"]["reviewedPlatform"]), ("mobile", "web"))
+        self.assertEqual((by["web"]["platform"], by["web"]["reviewedPlatform"]), ("web", "web"))
+        self.assertEqual(by["app"]["grades"]["F5"], {"grade": "partly", "evidence": "no hover"})
+
+    def test_a_package_reviewed_against_another_platform_is_warned_and_web_carries_over(self):
+        problems, warnings = self.stale(self.snap())
+        self.assertEqual(problems, [])
+        self.assertEqual(len(warnings), 1)
+        # Only reviewed criteria count: F15 is scripted and V1 a capture rule.
+        self.assertIn("app: reviewed grades for F5 were set against the web wording; re-review it against "
+                      "the mobile wording (`python3 tools/grade.py --criteria app`)", warnings[0])
+
+    def test_a_review_clears_the_warning_and_later_snapshots_keep_it_clear(self):
+        reviewed = self.snap(reviews={"app": {"F5": {"grade": "meets", "evidence": "pressed"},
+                                              "C1": {"grade": "meets", "evidence": "18/19"}}})
+        app = next(s for s in reviewed["systems"] if s["slug"] == "app")
+        self.assertEqual((app["reviewedPlatform"], app["reviewed"]), ("mobile", "2026-10-17"))
+        self.assertEqual(self.stale(reviewed), ([], []))
+        self.assertEqual(self.stale(self.snap(base=reviewed, date="2026-10-18")), ([], []))
+
+    def test_a_platform_change_in_the_catalog_is_stale_until_regraded_then_warned(self):
+        out = self.snap()
+        moved = [dict(self.SOURCES[0]), dict(self.SOURCES[1], platform="mobile")]
+        problems, _ = self.stale(out, moved)
+        self.assertIn("web: scorecard platform 'web' differs from catalog.json", problems)
+        with mock.patch.object(grade, "scripted", return_value=self.FRESH):
+            regraded = grade.snapshot(self.CRITERIA, out, moved, "2026-10-18")
+        problems, warnings = self.stale(regraded, moved)
+        self.assertEqual(problems, [])
+        self.assertTrue(any(w.startswith("web: reviewed grades for F5") for w in warnings))
+
+    def test_a_snapshot_from_an_older_rubric_is_stale(self):
+        problems, _ = self.stale(self.BASE | {"systems": []})
+        self.assertIn("scorecard rubric '2' differs from scorecard/criteria.json version '3'", problems)
+
+    def test_the_review_sheet_gives_each_reviewed_criterion_in_the_platform_wording(self):
+        sheet = grade.review_sheet(self.CRITERIA, self.SOURCES[0])
+        self.assertIn("app is a mobile package", sheet[0])
+        self.assertIn("F15, V1 are set automatically", sheet[0])
+        self.assertEqual(sheet[1:], ["F5   Accent states (mobile wording): Default and pressed.",
+                                     "C1   Coverage: z"])
+        self.assertIn("F5   Accent states: Default, hover and pressed.", grade.review_sheet(self.CRITERIA, self.SOURCES[1]))
+
+
 class OrderTest(unittest.TestCase):
     def test_same_day_snapshots_load_in_run_order(self):
         with tempfile.TemporaryDirectory() as d:

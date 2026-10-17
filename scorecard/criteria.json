@@ -1,5 +1,5 @@
 {
- "version": "2",
+ "version": "3",
  "layers": {
   "F": "Foundations",
   "C": "Components",
@@ -37,7 +37,10 @@
    "id": "F5",
    "layer": "Foundations",
    "title": "Accent states",
-   "doneWhen": "Default, hover and pressed."
+   "doneWhen": "Default, hover and pressed.",
+   "platforms": {
+    "mobile": "Default and pressed; touch has no hover."
+   }
   },
   {
    "id": "F6",
@@ -55,7 +58,11 @@
    "id": "F8",
    "layer": "Foundations",
    "title": "Type",
-   "doneWhen": "Families with fallback stacks, a scale of 6 to 8 sizes, weights, line heights, and named roles (display, headings, body, label, caption, code)."
+   "doneWhen": "Families with fallback stacks, a scale of 6 to 8 sizes, weights, line heights, and named roles (display, headings, body, label, caption, code).",
+   "platforms": {
+    "mobile": "The platform text styles the product uses (Dynamic Type or the Material type scale), with sizes, weights, line heights and named roles. A system font needs no fallback stack.",
+    "desktop": "Families, a scale of 6 to 8 sizes, weights, line heights and named roles. A system font needs no fallback stack."
+   }
   },
   {
    "id": "F9",
@@ -73,13 +80,20 @@
    "id": "F11",
    "layer": "Foundations",
    "title": "Sizing",
-   "doneWhen": "Control heights per size, icon sizes, and the focus ring's width and offset."
+   "doneWhen": "Control heights per size, icon sizes, and the focus ring's width and offset.",
+   "platforms": {
+    "mobile": "Control heights, icon sizes, and touch targets (44 pt on iOS, 48 dp on Android)."
+   }
   },
   {
    "id": "F12",
    "layer": "Foundations",
    "title": "Elevation",
-   "doneWhen": "3 to 5 shadow levels, each tied to a use (card, popover, dialog)."
+   "doneWhen": "3 to 5 shadow levels, each tied to a use (card, popover, dialog).",
+   "platforms": {
+    "mobile": "Shadows or materials (blur, glass) in 3 to 5 levels, each tied to a use.",
+    "desktop": "Shadows or materials (vibrancy) in 3 to 5 levels, each tied to a use."
+   }
   },
   {
    "id": "F13",
@@ -91,7 +105,11 @@
    "id": "F14",
    "layer": "Foundations",
    "title": "Layout",
-   "doneWhen": "Breakpoints, content widths, grid columns and z-index layers."
+   "doneWhen": "Breakpoints, content widths, grid columns and z-index layers.",
+   "platforms": {
+    "mobile": "Screen margins, safe areas, the screen widths supported, and the layers sheets and modals sit on.",
+    "desktop": "Window sizes, sidebar and inspector widths, and layers."
+   }
   },
   {
    "id": "F15",
@@ -109,19 +127,29 @@
    "id": "C1",
    "layer": "Components",
    "title": "Component coverage",
-   "doneWhen": "At least 17 of the 19 checklist components: button, icon button, link, text field, text area, select, checkbox, radio, switch, tabs, menu, tooltip, dialog, toast, card, list row, table, avatar, badge."
+   "doneWhen": "At least 17 of the 19 checklist components: button, icon button, link, text field, text area, select, checkbox, radio, switch, tabs, menu, tooltip, dialog, toast, card, list row, table, avatar, badge.",
+   "platforms": {
+    "mobile": "At least 17 of the 19 mobile checklist components: button, icon button, link, text field, text area, select or picker, checkbox or toggle, radio or segmented control, switch, tab bar, navigation bar, menu or action sheet, sheet, dialog or alert, toast or banner, card, list row, avatar, badge.",
+    "desktop": "At least 17 of the 19 checklist components, plus toolbar, context menu and inspector when the product has them."
+   }
   },
   {
    "id": "C2",
    "layer": "Components",
    "title": "States",
-   "doneWhen": "Components show states beyond default: hover, focus-visible, pressed, selected, disabled, loading, error, as each applies."
+   "doneWhen": "Components show states beyond default: hover, focus-visible, pressed, selected, disabled, loading, error, as each applies.",
+   "platforms": {
+    "mobile": "Components show states beyond default: pressed, selected, disabled, loading, error, as each applies (touch has no hover or focus-visible)."
+   }
   },
   {
    "id": "C3",
    "layer": "Components",
    "title": "Focus",
-   "doneWhen": "A visible focus state is captured for interactive components."
+   "doneWhen": "A visible focus state is captured for interactive components.",
+   "platforms": {
+    "mobile": "A visible focus state is captured for text inputs (and for keyboard focus where the platform shows it)."
+   }
   },
   {
    "id": "C4",
@@ -160,7 +188,11 @@
    "id": "A1",
    "layer": "Assets",
    "title": "Assets",
-   "doneWhen": "Icon set indexed by role; fonts named with their licence or fallback."
+   "doneWhen": "Icon set indexed by role; fonts named with their licence or fallback.",
+   "platforms": {
+    "mobile": "Icons indexed by role, or the system icon set named (SF Symbols, Material Symbols); fonts named with their licence or fallback.",
+    "desktop": "Icons indexed by role, or the system icon set named (SF Symbols, Material Symbols); fonts named with their licence or fallback."
+   }
   },
   {
    "id": "K1",

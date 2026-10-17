@@ -5,8 +5,10 @@
     python3 tools/scorecard.py --check    fail if the audit data is malformed
 
 The rubric is scorecard/criteria.json and each audit is one dated snapshot,
-scorecard/audits/<YYYY-MM-DD>.json. The newest snapshot drives every page; older ones
-feed the changelog. docs/scorecard/ and zensical.toml are generated and gitignored, so
+scorecard/audits/<YYYY-MM-DD>.json. A criterion's `doneWhen` is its web wording; `platforms`
+may give mobile or desktop wording, and a platform it does not list uses `doneWhen`. Each
+package is graded against the wording for its catalog `platform` (`done_when`). The newest
+snapshot drives every page; older ones feed the changelog. docs/scorecard/ and zensical.toml are generated and gitignored, so
 edit the data, never the pages. The rest of docs/ (the library docs, the home page and
 the gallery) is written by hand. Standard library only.
 """
@@ -18,6 +20,9 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from catalog import PLATFORMS  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "scorecard"
 DOCS = ROOT / "docs"
@@ -28,6 +33,9 @@ GRADES = {
     "missing": ("○", "Missing"),
     "na": ("–", "Not applicable"),
 }
+# The platform a snapshot entry without one was graded as: before rubric 3 every criterion
+# had one wording, the web one.
+BASE_PLATFORM = "web"
 FRONT = "---\nsearch:\n  exclude: true\n{extra}---\n\n"
 SITE_URL = "https://c-wenlong.github.io/design-systems/"
 LIBRARY_DOCS = [
@@ -56,6 +64,35 @@ def audit_title(audit: dict) -> str:
     return audit["date"]
 
 
+def platform_of(system: dict) -> str:
+    return system.get("platform", BASE_PLATFORM)
+
+
+def done_when(criterion: dict, platform: str) -> str:
+    """The criterion's done-when rule for a platform: its own wording when the criterion
+    lists one, else `doneWhen`, which is the web wording and the default for the rest."""
+    return criterion.get("platforms", {}).get(platform, criterion["doneWhen"])
+
+
+def wordings(criterion: dict) -> list[tuple[list[str], str]]:
+    """Every platform's wording, platforms that share one grouped, in PLATFORMS order."""
+    out: list[tuple[list[str], str]] = []
+    for platform in PLATFORMS:
+        text = done_when(criterion, platform)
+        same = next((group for group in out if group[1] == text), None)
+        if same:
+            same[0].append(platform)
+        else:
+            out.append(([platform], text))
+    return out
+
+
+def platform_label(platforms: list[str]) -> str:
+    """`["mobile", "desktop"]` reads "Mobile and desktop"."""
+    text = " and ".join(platforms)
+    return text[:1].upper() + text[1:]
+
+
 def load() -> tuple[dict, list[dict]]:
     criteria = json.loads((DATA / "criteria.json").read_text())
     audits = sorted((json.loads(p.read_text()) | {"_seq": _seq(p)} for p in (DATA / "audits").glob("*.json")),
@@ -68,11 +105,19 @@ def load() -> tuple[dict, list[dict]]:
 def check(criteria: dict, audits: list[dict]) -> list[str]:
     ids = [c["id"] for c in criteria["criteria"]]
     problems = []
+    for c in criteria["criteria"]:
+        # Web wording is `doneWhen`; a `platforms.web` would be a second copy that could drift.
+        wrong = [p for p in c.get("platforms", {}) if p not in PLATFORMS or p == BASE_PLATFORM]
+        if wrong:
+            problems.append(f"criteria {c['id']}: platforms has {', '.join(wrong)}; "
+                            f"list only {', '.join(p for p in PLATFORMS if p != BASE_PLATFORM)}")
     for audit in audits:
         slugs = [s["slug"] for s in audit["systems"]]
         for slug in sorted({x for x in slugs if slugs.count(x) > 1}):
             problems.append(f"{audit['date']}: slug {slug!r} appears {slugs.count(slug)} times; each page needs its own")
         for s in audit["systems"]:
+            if platform_of(s) not in PLATFORMS:
+                problems.append(f"{audit['date']} {s['slug']}: unknown platform {s['platform']!r}")
             missing = [i for i in ids if i not in s["grades"]]
             if missing:
                 problems.append(f"{audit['date']} {s['slug']}: missing {', '.join(missing)}")
@@ -189,12 +234,20 @@ def system_page(criteria: dict, audit: dict, system: dict, rank: int) -> str:
     md += (f"**Rank {rank} of {len(audit['systems'])}** · {badge('meets')} {n['meets']} · "
            f"{badge('partly')} {n['partly']} · {badge('missing')} {n['missing']}"
            + (f" · {badge('na')} {n['na']}" if n["na"] else "") + "\n\n")
-    md += (f"{esc(system['category'])} · captured {system['captured']} · themes: {', '.join(system['themes'])} · "
-           f"<{system['url']}>\n\n")
+    platform = platform_of(system)
+    md += (f"{esc(system['category'])} · {platform} · captured {system['captured']} · "
+           f"themes: {', '.join(system['themes'])} · <{system['url']}>\n\n")
     md += ('<div class="sc-bar" role="img" aria-label="'
            f'{n["meets"]} meets, {n["partly"]} partly, {n["missing"]} missing, {n["na"]} not applicable">'
            + "".join(f'<span class="g-{g}" style="flex:{n[g]}"></span>' for g in GRADES if n[g]) +
            "</div>\n\n")
+    md += (f"Graded against the {platform} wording of each criterion, shown under its title "
+           f"([every platform's wording](../criteria.md)).\n\n")
+    was = system.get("reviewedPlatform", platform)
+    if was != platform:
+        md += (f'!!! warning "Re-review due"\n\n    The reviewed grades below were set against the {was} '
+               f"wording, before this package was graded as {platform}. Where the two wordings differ, a "
+               f"grade may not match the rule shown until a re-review against the {platform} wording.\n\n")
     # One visible section per layer, not tabs: the heatmap links straight to a row's
     # anchor, and an anchor inside a hidden tab cannot be scrolled to.
     for layer in criteria["layers"].values():
@@ -205,7 +258,8 @@ def system_page(criteria: dict, audit: dict, system: dict, rank: int) -> str:
             g = system["grades"][c["id"]]
             evidence = esc(g["evidence"]).replace("|", "\\|")
             md += (f'| <span id="{c["id"].lower()}"></span>[{c["id"]}](../criteria.md#{c["id"].lower()}) '
-                   f'| {esc(c["title"])} | {badge(g["grade"])} | {evidence} |\n')
+                   f'| {esc(c["title"])}<br><span class="sc-done">{esc(done_when(c, platform))}</span> '
+                   f'| {badge(g["grade"])} | {evidence} |\n')
         md += "\n"
     return md
 
@@ -216,6 +270,10 @@ def criteria_page(criteria: dict, audit: dict) -> str:
     md += ("The checklist comes from the library's own definition of a complete design system: five "
            "layers (foundations, components, patterns, principles and voice, assets), each with a "
            "done-when rule, plus three checks on the package itself.\n\n")
+    md += ("Each package is graded against the wording for its platform: " + ", ".join(PLATFORMS) +
+           ". Where touch, a system font or the platform's own controls change what complete means "
+           "(hover, type, touch targets, materials, layout, the component set), a criterion gives each "
+           "platform its own wording; otherwise one wording applies to all.\n\n")
     md += "## Grades\n\n| Grade | Means |\n|---|---|\n"
     md += f"| {badge('meets')} | The done-when rule is fully met |\n"
     md += f"| {badge('partly')} | Some of it is there; the evidence says what is missing |\n"
@@ -228,7 +286,10 @@ def criteria_page(criteria: dict, audit: dict) -> str:
         for c in criteria["criteria"]:
             if c["layer"] == layer:
                 capture = f"<br>*Not applicable to a capture:* {esc(c['capture'])}" if c.get("capture") else ""
-                md += f'| <span id="{c["id"].lower()}"></span>**{c["id"]}** | {esc(c["title"])} | {esc(c["doneWhen"])}{capture} |\n'
+                groups = wordings(c)
+                rule = (esc(groups[0][1]) if len(groups) == 1 else
+                        "<br>".join(f"*{platform_label(names)}:* {esc(text)}" for names, text in groups))
+                md += f'| <span id="{c["id"].lower()}"></span>**{c["id"]}** | {esc(c["title"])} | {rule}{capture} |\n'
         md += "\n"
     return md
 
@@ -244,6 +305,10 @@ def changelog_page(criteria: dict, audits: list[dict]) -> str:
             continue
         before = {s["slug"]: s for s in audits[i - 1]["systems"]}
         lines = []
+        old_rubric, new_rubric = audits[i - 1].get("rubric"), audit.get("rubric")
+        if old_rubric and new_rubric and old_rubric != new_rubric:
+            lines.append(f"- Rubric changed from version {old_rubric} to {new_rubric} "
+                         "([criteria and method](criteria.md)).")
         for s in ranked(audit["systems"]):
             old = before.get(s["slug"])
             if not old:
@@ -253,6 +318,8 @@ def changelog_page(criteria: dict, audits: list[dict]) -> str:
                        f"{GRADES[g['grade']][1].lower()}"
                        for cid, g in s["grades"].items()
                        if cid in old["grades"] and old["grades"][cid]["grade"] != g["grade"]]
+            if "platform" in old and platform_of(old) != platform_of(s):
+                changed.insert(0, f"platform {platform_of(old)} → {platform_of(s)}")
             if changed:
                 lines.append(f"- **{s['name']}**: " + "; ".join(changed) + ".")
         for slug in before.keys() - {s["slug"] for s in audit["systems"]}:

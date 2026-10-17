@@ -76,7 +76,8 @@ def package_section(criteria: dict, audit: dict, system: dict) -> str:
     lines = ["## Health", "", f"<!-- health:start. {NOTE} -->", ""]
     if graded is None:
         lines += ["Not graded yet: no scorecard snapshot reviews this package. Review it against "
-                  "[scorecard/criteria.json](../../scorecard/criteria.json) and merge the grades with "
+                  "[scorecard/criteria.json](../../scorecard/criteria.json) in the wording for its platform "
+                  "(`python3 tools/grade.py --criteria " + slug + "` prints it) and merge the grades with "
                   "`python3 tools/grade.py --write --review " + slug + "=<grades.json>`.", ""]
     else:
         n = tally(graded["grades"])

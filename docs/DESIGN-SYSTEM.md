@@ -18,6 +18,14 @@ A design system is five layers. Each one is built from the layer below it.
 Accessibility and theming are not layers of their own. They are requirements on
 every layer, listed under each one below.
 
+The checklist is written for the web. A mobile app (iOS, Android) or a desktop
+app (macOS, Windows) needs some items in another form: touch has no hover, the
+system font needs no fallback stack, and the platform supplies controls and
+materials of its own. Each layer below says where mobile and desktop differ,
+and the scorecard grades every package against the wording for its platform
+(its `platform` in [catalog.json](../catalog.json)). Where nothing is said,
+the web wording applies to all three.
+
 ## The folder
 
 A design system for an app is one folder, `design-system/`, at the root of the
@@ -66,6 +74,16 @@ audit packages (linear, polaris) name their sets differently; see
 | Motion | Durations, easing curves, and what changes under reduced motion |
 | Layout | Breakpoints, content widths, grid columns, z-index layers |
 
+On mobile and desktop, five groups read differently:
+
+| Group | Mobile | Desktop |
+|---|---|---|
+| Accent | Default and pressed; touch has no hover | As on the web |
+| Type | The platform text styles the product uses (Dynamic Type or the Material type scale), with sizes, weights, line heights and named roles. A system font needs no fallback stack | Families, a scale of 6 to 8 sizes, weights, line heights and named roles. A system font needs no fallback stack |
+| Sizing | Control heights, icon sizes, and touch targets (44 pt on iOS, 48 dp on Android) | As on the web |
+| Elevation | Shadows or materials (blur, glass) in 3 to 5 levels, each tied to a use | Shadows or materials (vibrancy) in 3 to 5 levels, each tied to a use |
+| Layout | Screen margins, safe areas, the screen widths supported, and the layers sheets and modals sit on | Window sizes, sidebar and inspector widths, and layers |
+
 Done when: every colour, size and duration in the app's UI code resolves to a
 token (check pairs with `python3 tools/catalog.py contrast`); text on its background meets WCAG AA contrast (4.5:1 for body text, 3:1
 for large text and for borders and icons that carry meaning); and every
@@ -76,6 +94,13 @@ semantic colour exists in each theme the app ships.
 One entry per component in `components.md`. The set most apps need first:
 button, icon button, link, text field, text area, select, checkbox, radio,
 switch, tabs, menu, tooltip, dialog, toast, card, list row, table, avatar, badge.
+
+A mobile app needs its own set of 19: button, icon button, link, text field,
+text area, select or picker, checkbox or toggle, radio or segmented control,
+switch, tab bar, navigation bar, menu or action sheet, sheet, dialog or alert,
+toast or banner, card, list row, avatar, badge. A desktop app needs the web set,
+plus a toolbar, context menu and inspector when it has them. The scorecard
+counts a package complete at 17 of its platform's 19.
 
 Each entry covers:
 
@@ -91,8 +116,13 @@ Each entry covers:
 
 Done when: every state is specified, not only the default one; the focus ring
 is visible on every interactive component; touch targets are at least 44 pt on
-iOS and 24 px on the web; and nothing in an entry is a raw value instead of a
-token.
+iOS, 48 dp on Android and 24 px on the web; and nothing in an entry is a raw
+value instead of a token.
+
+On mobile, touch has no hover or focus-visible, so the states to specify are
+pressed, selected, disabled, loading and error, as each applies. A visible
+focus state is needed on text inputs, and on keyboard focus where the platform
+shows it. Desktop follows the web.
 
 ## Patterns
 
@@ -131,6 +161,10 @@ there is one, and the licence for every font and icon set used.
 
 Done when: every asset in the app comes from `assets/` or a named, licensed
 source, and nothing is borrowed from a captured product ([RIGHTS.md](RIGHTS.md)).
+
+On mobile and desktop, naming the system icon set (SF Symbols, Material
+Symbols) can take the place of an index of icons by role. Fonts are still named
+with their licence or fallback.
 
 ## Building one in stages
 

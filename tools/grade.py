@@ -4,11 +4,18 @@
     python3 tools/grade.py            print the scripted grades for every package
     python3 tools/grade.py --write    write scorecard/audits/<today>[-N].json, then every README's Health
     python3 tools/grade.py --check    fail if the newest snapshot or a README's Health is stale
+    python3 tools/grade.py --criteria SLUG    print the wording a reviewer grades SLUG against
 
 A snapshot copies the newest audit, replaces the grades below with fresh results, and
 applies each criterion's `capture` rule from scorecard/criteria.json (criteria a capture
 cannot meet are graded not applicable). Every other grade is a reviewer's judgement and is
 carried over unchanged, so it stays exactly as reliable as the review that set it.
+
+A reviewer grades a package against the wording for its catalog `platform` (web, mobile
+or desktop; `--criteria SLUG` prints it). Each package in a snapshot records `platform` and
+`reviewedPlatform`, the platform whose wording its reviewed grades were set against. When
+the two wordings differ for a reviewed criterion, `--check` warns until a `--review` of the
+package sets them again; so does a capture newer than the review.
 
 | Criterion | Scripted check |
 |---|---|
@@ -188,7 +195,35 @@ def scripted(system: dict) -> dict[str, dict]:
 # ---------------------------------------------------------------- the snapshot
 
 
-META = ("name", "goodFor", "url", "captured", "themes")
+META = ("name", "goodFor", "url", "captured", "themes", "platform")
+
+
+def reviewable(criteria: dict) -> list[dict]:
+    """The criteria a reviewer grades: not scripted here, and not a capture rule."""
+    return [c for c in criteria["criteria"] if c["id"] not in SCRIPTED and not c.get("capture")]
+
+
+def wording_changed(criteria: dict, system: dict, platform: str) -> list[str]:
+    """Reviewed criteria whose wording for `platform` differs from the wording the
+    package's reviewed grades were set against."""
+    was = system.get("reviewedPlatform", scorecard.BASE_PLATFORM)
+    return [c["id"] for c in reviewable(criteria)
+            if scorecard.done_when(c, platform) != scorecard.done_when(c, was)]
+
+
+def review_sheet(criteria: dict, system: dict) -> list[str]:
+    """What a reviewer of one package grades: every reviewed criterion in the package's
+    platform wording, marked where that differs from the web wording."""
+    platform = system.get("platform", scorecard.BASE_PLATFORM)
+    auto = [c["id"] for c in criteria["criteria"] if c["id"] in SCRIPTED or c.get("capture")]
+    lines = [f"{system['slug']} is a {platform} package. Grade each criterion below against this wording, "
+             f"as {{\"<id>\": {{\"grade\": \"meets|partly|missing|na\", \"evidence\": \"...\"}}}}; "
+             f"{', '.join(auto)} are set automatically."]
+    for c in reviewable(criteria):
+        text = scorecard.done_when(c, platform)
+        own = f" ({platform} wording)" if text != c["doneWhen"] else ""
+        lines.append(f"{c['id']:<4} {c['title']}{own}: {text}")
+    return lines
 
 
 def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
@@ -214,15 +249,15 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
     out["method"] = METHOD.format(base=out["base"]) + out["reviewMethod"]
     by_slug = {s["slug"]: s for s in catalog_systems}
     capture_rules = {c["id"]: c["capture"] for c in criteria["criteria"] if c.get("capture")}
-    reviewable = {c["id"] for c in criteria["criteria"]} - set(SCRIPTED) - set(capture_rules)
+    reviewed_ids = {c["id"] for c in reviewable(criteria)}
     for slug, grades in (reviews or {}).items():
         if slug not in by_slug:
             raise SystemExit(f"review for {slug}: not in catalog.json")
-        wrong = sorted(set(grades) - reviewable)
+        wrong = sorted(set(grades) - reviewed_ids)
         if wrong:
             raise SystemExit(f"review for {slug} sets {', '.join(wrong)}, which are scripted or capture rules")
         # A review dates the whole package, so it must grade every reviewed criterion.
-        missing = sorted(reviewable - set(grades), key=lambda c: (c[0], int(c[1:]) if c[1:].isdigit() else 0))
+        missing = sorted(reviewed_ids - set(grades), key=lambda c: (c[0], int(c[1:]) if c[1:].isdigit() else 0))
         if missing:
             raise SystemExit(f"review for {slug} is incomplete; it also needs {', '.join(missing)}")
         # A package's first review adds it; the loop below fills in its details.
@@ -242,6 +277,10 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
         if system["slug"] in (reviews or {}):
             system["grades"].update(reviews[system["slug"]])
             system["reviewed"] = date
+            system["reviewedPlatform"] = system.get("platform", scorecard.BASE_PLATFORM)
+        else:
+            # Grades reviewed before rubric 3 were set against its one wording, the web one.
+            system.setdefault("reviewedPlatform", scorecard.BASE_PLATFORM)
         system["grades"].update(scripted(source))
         for cid, reason in capture_rules.items():
             system["grades"][cid] = {"grade": "na", "evidence": f"Not applicable to a capture: {reason}"}
@@ -250,9 +289,14 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
 
 def stale(criteria: dict, audit: dict, catalog_systems: list[dict], categories: dict) -> tuple[list, list]:
     """Problems (scripted grades or package details that no longer match the packages)
-    and warnings (a package captured after its reviewed grades were last set)."""
+    and warnings (a package captured after its reviewed grades were last set, or graded
+    against another platform's wording than the one its platform now uses)."""
     problems, warnings = [], []
     by_slug = {s["slug"]: s for s in catalog_systems}
+    version = str(criteria.get("version", ""))
+    if version and audit.get("rubric") != version:
+        problems.append(f"scorecard rubric {audit.get('rubric')!r} differs from scorecard/criteria.json "
+                        f"version {version!r}")
     for system in audit["systems"]:
         source = by_slug.get(system["slug"])
         if not source:
@@ -274,6 +318,13 @@ def stale(criteria: dict, audit: dict, catalog_systems: list[dict], categories: 
         if source.get("captured", "") > reviewed:
             warnings.append(f"{system['slug']}: captured {source['captured']}, reviewed grades date from {reviewed}; "
                             "re-review it and pass --review")
+        platform = source.get("platform", scorecard.BASE_PLATFORM)
+        changed = wording_changed(criteria, system, platform)
+        if changed:
+            was = system.get("reviewedPlatform", scorecard.BASE_PLATFORM)
+            warnings.append(f"{system['slug']}: reviewed grades for {', '.join(changed)} were set against the {was} "
+                            f"wording; re-review it against the {platform} wording "
+                            f"(`python3 tools/grade.py --criteria {system['slug']}`) and pass --review")
     for slug in sorted(set(by_slug) - {s["slug"] for s in audit["systems"]}):
         warnings.append(f"{slug}: in catalog.json but never reviewed for the scorecard")
     return problems, warnings
@@ -296,10 +347,18 @@ def main() -> None:
                         help="with --write, merge a fresh review of one package (JSON {criterion: {grade, evidence}})")
     parser.add_argument("--method", metavar="TEXT",
                         help="with --review, how the reviewed grades were set (replaces the carried-over account)")
+    parser.add_argument("--criteria", metavar="SLUG",
+                        help="print the wording a reviewer grades SLUG against, for its platform")
     parser.add_argument("--date", default=dt.date.today().isoformat(), help=argparse.SUPPRESS)
     args = parser.parse_args()
     cat = catalog.load_catalog()
     systems, categories = cat["systems"], cat.get("categories", {})
+    if args.criteria:
+        system = next((s for s in systems if s["slug"] == args.criteria), None)
+        if not system:
+            sys.exit(f"{args.criteria}: not in catalog.json")
+        print("\n".join(review_sheet(scorecard.load()[0], system)))
+        return
     if args.check:
         criteria, audits = scorecard.load()
         problems, warnings = stale(criteria, audits[-1], systems, categories)

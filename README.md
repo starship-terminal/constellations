@@ -30,7 +30,8 @@ the site and serves it at http://127.0.0.1:8800/:
   README. Search matches names, uses, tags and themes; press `/` to focus it.
   "Copy agent prompt" copies instructions that point an agent at that package.
 - **Scorecard**: every package graded against the checklist in
-  [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md), as a heatmap with the evidence
+  [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md), in the wording for its
+  platform (web, mobile or desktop), as a heatmap with the evidence
   behind each grade. It is generated from [scorecard/](scorecard) by
   [tools/scorecard.py](tools/scorecard.py).
 - **Docs**: the files under [docs/](docs), rendered.
