@@ -674,7 +674,7 @@
     "hue": 85,
     "chroma": 60
    },
-   "description": "The yellow the product paints in dark warnings, the dark yellow data-viz pair, the yellow icon, code yellow, the yellow tile and the dark warm Studio accent.",
+   "description": "Seeded from the yellow icon #fcbd00, which is also the dark warning and dark yellow data-viz colour. Code yellow, the dark warm Studio accent and the dark warning text are near this hue but at tones already held, so they are listed under notInRamp.",
    "steps": {
     "0": {
      "hex": "#000000",
@@ -1340,7 +1340,7 @@
     "hue": 244,
     "chroma": 36
    },
-   "description": "The luminous accent in light (the New notebook button, the selected chip); in dark the accent turns navy and sits on palette.info.",
+   "description": "The luminous accent in light (the New notebook button, the selected chip). In dark the accent turns navy (hue 276), nearer palette.info; of the navy colours only the dark surface accent is a step there (info.14).",
    "steps": {
     "0": {
      "hex": "#000000",
@@ -1477,7 +1477,7 @@
     "hue": 270,
     "chroma": 64
    },
-   "description": "Material info, the blue data-viz pair, the blue Studio accent and the luminous accent in dark (its navy is hue 276, not the light sky); the brand blue is palette.blue.",
+   "description": "Material info, the blue data-viz pair, the blue Studio accent and the dark luminous surface accent; the brand blue is palette.blue.",
    "steps": {
     "0": {
      "hex": "#000000",

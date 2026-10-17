@@ -12,9 +12,10 @@
 //     variable and theme it was read from), when the measured colour is within 20 degrees of the
 //     seed's hue and 3 tones of the step;
 //   - every other step is the generated tone (source "derived");
-//   - a measured colour on the seed's hue that falls between two of those tones is added as an
-//     extra measured step named by its own tone (the luminous accent's dark navy is tone 29), so
-//     every colour the product paints in a hue sits in that hue's ramp.
+//   - a measured colour on the seed's hue that falls more than 3 tones from every standard tone is
+//     added as an extra measured step named by its own tone (the blue Studio accent is tone 46).
+// A measured colour whose tone another measured colour already holds, or that is off every ramp's
+// hue, is left out and listed under _meta.notInRamp.
 // For every measured colour the generated tone at the same step is also recorded, with the RGB
 // distance between the two, so the README can say how closely the generator reproduces the product.
 import fs from 'node:fs';
@@ -38,14 +39,14 @@ const RAMPS = {
   amber: ['--mat-sys-warning', [...roles('warning'), ...roles('yellow'), '--nlm-text-warning', '--nlm-fills-ui-caution-subtle'],
     'Light-theme warnings and the light yellow data-viz pair (Material warning and yellow share one value there); the dark-theme warning yellows sit on palette.yellow.'],
   yellow: ['--nlm-icons-yellow', [...roles('yellow'), ...roles('warning'), '--nlm-text-warning', '--nlm-icons-yellow', '--nb-sys-color--code-yellow-text', '--nb-studio-accent-warm', '--nlm-fills-ui-caution-subtle', '--nlm-tiles-on-yellow'],
-    'The yellow the product paints in dark warnings, the dark yellow data-viz pair, the yellow icon, code yellow, the yellow tile and the dark warm Studio accent.'],
+    'Seeded from the yellow icon #fcbd00, which is also the dark warning and dark yellow data-viz colour. Code yellow, the dark warm Studio accent and the dark warning text are near this hue but at tones already held, so they are listed under notInRamp.'],
   'green-status': ['--mat-sys-success', [...roles('success'), ...roles('green'), '--nb-sys-color--positive', '--nb-sys-color--positive-container', '--nb-sys-color--on-positive-container', '--nb-studio-accent-green'],
     'Success, the green data-viz pair and the green Studio accent; the brand green is palette.green.'],
   cyan: ['--mat-sys-cyan', [...roles('cyan'), '--nb-studio-accent-teal'], 'The cyan data-viz pair and the teal Studio accent.'],
   sky: ['--nb-sys-color-acc-color--accent', ['--nb-sys-color-acc-color--accent', '--nb-sys-color-acc-color--accent-container', '--nb-sys-color-acc-color--accent-fixed', '--nb-sys-color--surface-accent'],
-    'The luminous accent in light (the New notebook button, the selected chip); in dark the accent turns navy and sits on palette.info.'],
+    'The luminous accent in light (the New notebook button, the selected chip). In dark the accent turns navy (hue 276), nearer palette.info; of the navy colours only the dark surface accent is a step there (info.14).'],
   info: ['--mat-sys-info', [...roles('info'), ...roles('blue'), '--nb-studio-accent-blue', '--nlm-icons-blue', '--nb-sys-color-acc-color--accent', '--nb-sys-color-acc-color--accent-container', '--nb-sys-color-acc-color--accent-fixed', '--nb-sys-color--surface-accent'],
-    'Material info, the blue data-viz pair, the blue Studio accent and the luminous accent in dark (its navy is hue 276, not the light sky); the brand blue is palette.blue.'],
+    'Material info, the blue data-viz pair, the blue Studio accent and the dark luminous surface accent; the brand blue is palette.blue.'],
   purple: ['--mat-sys-purple', [...roles('purple'), '--nb-studio-accent-purple'], 'The purple data-viz pair and the purple Studio accent.'],
   pink: ['--mat-sys-pink', [...roles('pink'), '--nb-studio-accent-pink'], 'The pink data-viz pair and the pink Studio accent.'],
 };
