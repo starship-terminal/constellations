@@ -1039,19 +1039,19 @@
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "core.palette neutral 11 first, blue/yellow 10, orange/green/purple 9, pink 8; red 6 of 8 declared, teal 2; lightness-picked"
+     "evidence": "core.palette Derived: neutral 24, 7 accent ramps; no red ramp, and text.blue, function.* values sit on no ramp"
     },
     "F2": {
      "grade": "meets",
-     "evidence": "role.background page/surface/raised/overlay/dialog/scrim in both themes; Derived mapping from measured components"
+     "evidence": "role.background page/surface/raised/overlay/scrim in both themes; Derived mapping from measured components"
     },
     "F3": {
      "grade": "meets",
-     "evidence": "role.text primary/secondary/tertiary/disabled/on-accent(text.onblack)/link(text.blue), both themes"
+     "evidence": "role.text primary/secondary/disabled/on-accent(text.onblack)/link(text.blue), both themes"
     },
     "F4": {
      "grade": "meets",
-     "evidence": "role.border subtle/default(border.main)/strong(border.dark)/focus(border.input-active, stylesheet), both themes"
+     "evidence": "role.border default(border.main)/strong(border.dark)/focus(border.input-active, stylesheet), both themes"
     },
     "F5": {
      "grade": "meets",
@@ -1059,27 +1059,27 @@
     },
     "F6": {
      "grade": "partly",
-     "evidence": "role.status danger fill/text/border; success, warning fill/text only, no border token; no info"
+     "evidence": "role.status danger fill/text/border; success, warning fill/text only; no info"
     },
     "F7": {
      "grade": "meets",
-     "evidence": "light 706, dark 712 tokens; only 6 component.*composer border entries are dark-only (dark: class); palette and roles in both"
+     "evidence": "every colour, role, elevation and palette key in both themes; only 6 composer border entries are dark-only (light uses a literal)"
     },
     "F8": {
      "grade": "meets",
-     "evidence": "fontFamily stacks, 9 sizes 12-30, 4 weights, line heights; typography.role display/heading/body/label/caption/code"
+     "evidence": "fallback stacks, 9 sizes, 4 weights, line heights; typography.role display/heading/body/label/caption/code"
     },
     "F9": {
-     "grade": "meets",
-     "evidence": "core.space 0_5 to 15 (2-60px) on Tailwind 4px base, half steps 6/10/14; 73 of 2809 uses kept apart in offGrid, matches raw"
+     "grade": "partly",
+     "evidence": "core.space measured counts but includes 1, 7, 10, 14, 6px; a usage list, not one-base scale"
     },
     "F10": {
      "grade": "meets",
-     "evidence": "core.radius row/small/card/composer via density plus segment-thumb 6, avatar, dialog 16; core.borderWidth 0.5/1/2/1.2px"
+     "evidence": "core.radius via density 8/10/12/22 plus dialog 16 in README; core.borderWidth 0.5/1/2px and 1.2px illustrations"
     },
     "F11": {
      "grade": "meets",
-     "evidence": "size.control-small 28, row-small 32, row 36, control-large 40; size.icon-xs to icon-large 14-24; focusRing 2px offset 2px"
+     "evidence": "size.row-small 32, row 36, control-large 40; nav-icon 18, file-icon 32; focusRing 2px offset 2px, input 1px"
     },
     "F12": {
      "grade": "meets",
@@ -1087,11 +1087,11 @@
     },
     "F13": {
      "grade": "meets",
-     "evidence": "core.duration 6, core.easing 3; README reduced-motion note plus 51 rules in raw/css-rules.json say what stops"
+     "evidence": "core.duration 6, core.easing 3; reducedMotion note plus 51 rules in raw/css-rules.json say what stops"
     },
     "F14": {
      "grade": "meets",
-     "evidence": "breakpoint sm-xl 4, layout widths, layout.grid per page, zIndex content/raised/sticky/overlay/tooltip 999/toast 1050"
+     "evidence": "breakpoint 4, layout widths, layout.grid per page, zIndex content/raised/sticky/overlay/tooltip 999/toast 1050"
     },
     "F15": {
      "grade": "meets",
@@ -1099,7 +1099,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 1860 of 1860 tokens name their source"
+     "evidence": "Script: 1682 of 1682 tokens name their source"
     },
     "C1": {
      "grade": "partly",
@@ -1111,11 +1111,11 @@
     },
     "C3": {
      "grade": "partly",
-     "evidence": "faithful no-ring capture: about 11 of 66 focus states change ring/border; raw/focus-live.md agrees (8 Tab stops, no outline)"
+     "evidence": "faithful no-ring capture still fails it, as Linear: ~11 of 66 focus states change ring/border (live check agrees)"
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "Recount all rows: 86% token-first, 624 raw (312 heights, 78 text, 52 icons); same count ChatGPT 75%, Claude 87%"
+     "grade": "partly",
+     "evidence": "component.* names class tokens, colour only, 222 entries; components.md specs raw px/hex with labels"
     },
     "C5": {
      "grade": "na",
@@ -1134,12 +1134,12 @@
      "evidence": "Not applicable to a capture: voice guidelines (tone, vocabulary, message formula) are a team's own rules; a capture holds the product's copy, not the guideline behind it."
     },
     "A1": {
-     "grade": "meets",
-     "evidence": "INDEX.tsv: all 161 SVGs by role or Lucide name, none by hash, sizes, seen_on, context; Fonts gives licence and fallback per family"
+     "grade": "partly",
+     "evidence": "161 SVGs, 76 named by role, 67 by hash, 18 Lucide; fonts table with fallbacks, licence only 'open source'"
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README: How the values were read, What to distrust (palette assembled, roles mapped), Coverage table, Rebuild"
+     "evidence": "README: How the values were read, What to distrust list, Coverage table, Rebuild"
     },
     "K2": {
      "grade": "meets",
@@ -1166,8 +1166,8 @@
    ],
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "grey 13, blue 14 declared; sky 6, amber 7, info 4 assembled; studio/dataviz hues no ramp (README says so)"
+     "grade": "meets",
+     "evidence": "Grey first, then 10 tonal ramps of 13 to 16 steps covering every hue used, yellow included; generated steps labelled Derived, which EVIDENCE.md allows"
     },
     "F2": {
      "grade": "meets",
@@ -1227,7 +1227,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 564 of 564 tokens name their source"
+     "evidence": "Script: 666 of 666 tokens name their source"
     },
     "C1": {
      "grade": "meets",
