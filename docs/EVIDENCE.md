@@ -30,7 +30,7 @@ New packages use the left column.
 | Package shape | Per value | Per package |
 |---|---|---|
 | Reference | `$extensions.source` on every token in `tokens.json`; values DTCG cannot hold under `$extensions.notTokenised` | README "How the values were read", the Gaps in `components.md`, everything under `raw/` |
-| Audit | The label column in `README.md`'s tables | Linear: `evidence/coverage.json`, `evidence/validation.json`, `evidence/capture-manifest.json`. Polaris: `evidence/token-parity.json` |
+| Audit | The label column in `README.md`'s tables | Linear: `raw/coverage.json`, `raw/validation.json`, `raw/capture-manifest.json`. Polaris: `raw/token-parity.json` |
 
 ## Things the packages already warn about
 

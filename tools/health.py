@@ -55,13 +55,15 @@ def reviewed(audit: dict, graded: dict) -> str:
     return graded.get("reviewed", audit.get("base", audit["date"]))
 
 
-def layout_line(slug: str) -> str:
+def layout_line(system: dict) -> str:
+    slug = system["slug"]
     missing, unlisted = catalog.layout_gaps(slug)
+    why = system.get("layoutGaps", {})
     if not missing and not unlisted:
         return "Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../../docs/PACKAGE.md))."
     parts = []
     if missing:
-        parts.append("no " + ", ".join(f"`{m}`" for m in missing))
+        parts.append("no " + ", ".join(f"`{m}`" + (f" ({why[m].rstrip('.')})" if why.get(m) else "") for m in missing))
     if unlisted:
         parts.append("not in the file table above: " + ", ".join(f"`{u}`" for u in unlisted))
     return f"Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): {'; '.join(parts)}."
@@ -98,7 +100,7 @@ def package_section(criteria: dict, audit: dict, system: dict) -> str:
             lines.append("")
         else:
             lines += ["Every gradable criterion is met.", ""]
-    lines += [layout_line(slug), "", "<!-- health:end -->", ""]
+    lines += [layout_line(system), "", "<!-- health:end -->", ""]
     return "\n".join(lines)
 
 

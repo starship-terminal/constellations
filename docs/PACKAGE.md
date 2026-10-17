@@ -7,11 +7,17 @@ points at a path outside the folder.
 
 ## Layout
 
-Every package aims at the same layout, so an agent can open any of them
-without learning a new one. `make check` fails when a package lacks one of the
-four parts marked required. The rest are standard: the package's
-[Health](#health) section names each standard part it lacks, and the root
-README's catalog table shows the same gaps beside every package.
+Every package has the same layout, so an agent can open any of them without
+learning a new one. `make check` fails when a package lacks one of these
+parts, unless its [catalog.json](../catalog.json) entry declares the gap under
+`layoutGaps` with the reason (Hevy keeps no icons, for rights). A part marked
+required can never be declared missing. The package's [Health](#health)
+section repeats each gap with its reason, and the root README's catalog table
+shows the gaps beside every package.
+
+```json
+"layoutGaps": { "icons/": "Hevy's icons are its artwork and are not kept here (docs/RIGHTS.md)" }
+```
 
 | Path | Required | What it is |
 |---|---|---|
@@ -28,8 +34,10 @@ README's catalog table shows the same gaps beside every package.
 | `tools/` | yes | Every script that rebuilds a generated file in the package, and the capture scripts |
 
 A package may add files for what is unusual about its product, such as
-researchrabbit's `graph.md`. Every top-level file and folder, standard or
-not, gets a row in the README's file table; Health lists any that do not.
+researchrabbit's `graph.md`, or a `tokens/` folder with the same tokens in
+other formats (CSS, a Tokens Studio file). Every top-level file and folder,
+standard or not, gets a row in the README's file table; `make check` fails on
+one that has none.
 
 ## The README
 
@@ -92,22 +100,24 @@ sit in `icons/app/` and `icons/public/` with no `INDEX.tsv`.
 
 ## Linear and Polaris
 
-These two came from a work project, with their own builders, and do not yet
-follow the layout: their tokens sit under `tokens/`, their readings under
-`evidence/`, and neither has `components.md`. Their Health sections list the
-gaps. Until they move, this is what they hold:
+These two came from a work project, with their own builders, and were moved
+into the layout on 2026-10-17: their DTCG tokens are `tokens.json`, their
+readings are in `raw/`, and `components.md` holds their component material.
+Linear has no `patterns.md` and declares the gap. Beyond the layout, this
+is what they hold:
 
 | Path | What it is |
 |---|---|
 | `README.md` | The entry file: scope, evidence labels, colours, type, geometry, components, and the limits of the capture |
 | `style-guide.html` | A browsable guide over everything in the package. Polaris's fetches its data, so open it through `make serve` |
-| `tokens/` | Tokens as DTCG (`linear.tokens.json`), Tokens Studio (`*.tokens-studio.json`) and CSS custom properties (`linear.css`, `light.css`) |
+| `tokens/` | The tokens of `tokens.json` again in other formats. Linear: Tokens Studio (`tokens-studio.json`) and CSS custom properties (`linear.css`). Polaris: CSS custom properties (`light.css`); its `tokens.json` is itself a Tokens Studio file |
 | `components/` | One SVG redraw per component and state, with `manifest.json` (linear). These are reconstructions, labelled as such |
 | `boards/` | SVG sheets of colours, type, geometry, controls, components and icons, for dragging into Figma |
-| `screenshots/` | Linear: full-page public captures plus `app/` anonymised accessibility snapshots of the signed-in app (no app images). Polaris: the local reference gallery |
+| `screenshots/` | Linear: full-page public captures, `app-2026-10/` renders of the redacted app copies, and `app/` anonymised accessibility snapshots from the first capture. Polaris: the local reference gallery |
 | `previews/`, `thumbnails/`, `icons/` | Rendered previews of the boards, page thumbnails, reference icons |
-| `evidence/` | Linear: `pages/<page>-page.txt` and `styles/<page>-styles.json` per public page, plus `coverage.json`, `validation.json`, `capture-manifest.json`, `icon-evidence.json`, `public-navigation.json`, `settings-inventory.json`. Polaris: `token-parity.json`, `provenance.json`, `vector-manifest.json`, findings and verification notes. Polaris also keeps `licenses/` |
-| `tools/` | Linear: `build_library.py` (tokens, boards, components) and `build_guide.py` (the style guide, thumbnails, coverage and validation), both needing Pillow and Markdown. Polaris: `build.mjs` with its `package.json` (`cd tools && npm ci --ignore-scripts && npm run build`), `gallery.jsx` (bundled into `assets/gallery.js`) and `build_vectors.py` |
+| `raw/` | Linear: the app's readings (`css-vars.json`, `components-computed.json`, `measurements.md`), `pages/<page>-page.txt` and `styles/<page>-styles.json` per public page, plus `coverage.json`, `validation.json`, `capture-manifest.json`, `icon-evidence.json`, `public-navigation.json`, `settings-inventory.json`. Polaris: the raw token packages (`polaris-*.raw.json`, `polaris-metadata.json`), `token-parity.json`, `provenance.json`, `vector-manifest.json`, `focus-states.json` and the verification notes |
+| `licenses/` | Polaris: the licences of the Shopify packages, the React libraries its style guide bundles, and the Inter font |
+| `tools/` | Linear: `build_tokens.py` (`tokens.json` and `tokens/`), `build_library.py` (boards, components) and `build_guide.py` (the style guide, thumbnails, `raw/coverage.json` and `raw/validation.json`); the last two need Pillow and Markdown. Polaris: `build.mjs` with its `package.json` (`cd tools && npm ci --ignore-scripts && npm run build`), `gallery.jsx` (bundled into `assets/gallery.js`) and `build_vectors.py` |
 | `assets/` | Polaris: the style guide's bundled script, CSS, font and data |
 
 ## DESIGN.md

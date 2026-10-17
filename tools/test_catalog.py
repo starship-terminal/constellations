@@ -592,6 +592,54 @@ class DesignMdLintTest(unittest.TestCase):
             catalog.lint_design_md([])
 
 
+class LayoutTest(unittest.TestCase):
+    """layout_problems against a package folder built in a temporary repository."""
+
+    def problems(self, entries, readme_rows, gaps=None):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp) / "systems" / "x"
+            folder.mkdir(parents=True)
+            for entry in entries:
+                if entry.endswith("/"):
+                    (folder / entry).mkdir()
+                else:
+                    (folder / entry).write_text("")
+            rows = "\n".join(f"| [{r}]({r}) | what it is |" for r in readme_rows)
+            (folder / "README.md").write_text(f"# X\n\n| File | What |\n|---|---|\n{rows}\n\n## Fonts\n")
+            system = {"slug": "x"} | ({"layoutGaps": gaps} if gaps is not None else {})
+            with mock.patch.object(catalog, "ROOT", Path(tmp)):
+                return catalog.layout_problems(system)
+
+    FULL = [p for p in catalog.STANDARD_PARTS if p != "README.md"]
+
+    def test_a_full_listed_package_is_clean(self):
+        self.assertEqual(self.problems(self.FULL, self.FULL), [])
+
+    def test_an_undeclared_missing_part_fails(self):
+        parts = [p for p in self.FULL if p != "icons/"]
+        self.assertEqual(self.problems(parts, parts), ["x: no icons/; add it, or declare it under layoutGaps with the reason"])
+
+    def test_a_declared_gap_passes_and_a_stale_one_fails(self):
+        parts = [p for p in self.FULL if p != "icons/"]
+        self.assertEqual(self.problems(parts, parts, {"icons/": "rights"}), [])
+        self.assertIn("layoutGaps declares raw/", self.problems(self.FULL, self.FULL, {"raw/": "gone"})[0])
+
+    def test_a_gap_needs_a_reason(self):
+        parts = [p for p in self.FULL if p != "icons/"]
+        self.assertIn("reason", self.problems(parts, parts, {"icons/": ""})[0])
+
+    def test_a_file_where_a_folder_belongs_counts_as_missing(self):
+        parts = [p for p in self.FULL if p != "raw/"] + ["raw"]
+        self.assertIn("x: no raw/; add it", self.problems(parts, parts)[0])
+
+    def test_an_extra_entry_needs_a_row(self):
+        self.assertEqual(self.problems(self.FULL + ["graph.md"], self.FULL),
+                         ["x: graph.md has no row in the README's file table"])
+        self.assertEqual(self.problems(self.FULL + ["graph.md"], self.FULL + ["graph.md"]), [])
+
+
 class RepositoryTest(unittest.TestCase):
     def test_catalog_checks_clean(self):
         self.assertEqual(catalog.check(), [])

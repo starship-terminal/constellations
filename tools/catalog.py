@@ -44,8 +44,9 @@ THUMB_WIDTH = 640
 
 # Every package exposes these at its top level, whatever shape it has.
 REQUIRED_FILES = ("README.md", "style-guide.html", "tools")
-# The standard layout (docs/PACKAGE.md#layout). Each package's generated Health section lists
-# the parts it lacks and the top-level entries its README's file table does not describe.
+# The standard layout (docs/PACKAGE.md#layout). `make check` fails when a package lacks a part
+# its catalog entry does not declare under `layoutGaps` with the reason, or has a top-level
+# entry its README's file table does not describe. Each Health section repeats the gaps.
 STANDARD_PARTS = ("README.md", "DESIGN.md", "tokens.json", "style-guide.html", "components.md",
                   "patterns.md", "components/", "icons/", "screenshots/", "raw/", "tools/")
 REQUIRED_FIELDS = ("slug", "name", "url", "category", "goodFor", "shape", "captured",
@@ -1010,6 +1011,7 @@ def check() -> list[str]:
         for field in ("entry", "tokens", "styleGuide"):
             if field in s and not (ROOT / s[field]).exists():
                 problems.append(f"{slug}: {field} {s[field]} does not exist")
+        problems += layout_problems(s)
         if "preview" not in s or "tokens" not in s:
             continue
         cover = s["preview"].get("cover")
@@ -1063,6 +1065,22 @@ def layout_gaps(slug: str) -> tuple[list[str], list[str]]:
         if not any(named.search(row) for row in rows):
             unlisted.append(entry.name + ("/" if entry.is_dir() else ""))
     return missing, unlisted
+
+
+def layout_problems(system: dict) -> list[str]:
+    """A missing standard part the entry does not declare under `layoutGaps`, a declared gap
+    that is no longer missing, and a top-level entry with no row in the README's file table."""
+    slug = system["slug"]
+    missing, unlisted = layout_gaps(slug)
+    declared = system.get("layoutGaps", {})
+    if not isinstance(declared, dict) or not all(isinstance(v, str) and v for v in declared.values()):
+        return [f"{slug}: layoutGaps must map each missing part to the reason it is missing"]
+    problems = [f"{slug}: no {part}; add it, or declare it under layoutGaps with the reason"
+                for part in missing if part not in declared]
+    problems += [f"{slug}: layoutGaps declares {part}, which the package has or which is not a standard part"
+                 for part in declared if part not in missing]
+    problems += [f"{slug}: {entry} has no row in the README's file table" for entry in unlisted]
+    return problems
 
 
 def design_md_problems(system: dict) -> list[str]:

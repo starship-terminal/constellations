@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build tokens/linear.tokens.json, tokens/tokens-studio.json and tokens/linear.css.
+"""Build tokens.json, tokens/tokens-studio.json and tokens/linear.css.
 
 Sources:
   raw/css-vars.json               the signed-in app's CSS variables, read on <main> (inside Linear's
@@ -9,7 +9,7 @@ Sources:
   raw/components-computed.json    computed styles of the app's components per state and theme
                                   (tools/capture/signed-in/measure.mjs, 2026-10-17)
   the WEB and BRAND tables below  the public website's computed CSS and the brand page, read on
-                                  2026-09-23 (evidence/styles/*-styles.json, https://linear.app/brand)
+                                  2026-09-23 (raw/styles/*-styles.json, https://linear.app/brand)
 
 Sets: `core` (type, radii, sizes, borders, focus ring, motion, breakpoints, z-index, and the
 spacing scale, which is a reconstruction), `dark` and `light` (the app's colour roles and shadows),
@@ -265,7 +265,7 @@ d = "dark"
 put(core, "font.family.ui", tok([f.strip().strip('"') for f in split_top(var("--font-regular", d))], "fontFamily", "css-var --font-regular, getComputedStyle on <main>, copy issue-dark"))
 put(core, "font.family.mono", tok([f.strip().strip('"') for f in split_top(var("--font-monospace", d))], "fontFamily", "css-var --font-monospace, getComputedStyle on <main>, copy issue-dark"))
 put(core, "font.family.emoji", tok([f.strip().strip('"') for f in split_top(var("--font-emoji", d))], "fontFamily", "css-var --font-emoji, getComputedStyle on <main>, copy issue-dark"))
-put(core, "font.family.editorial", tok(["Tiempos Headline", "Georgia", "serif"], "fontFamily", "public site computed font-family of the Linear Method heading, evidence/styles/method-styles.json, 2026-09-23; Georgia and serif are this package's fallbacks", "Measured (public site)"))
+put(core, "font.family.editorial", tok(["Tiempos Headline", "Georgia", "serif"], "fontFamily", "public site computed font-family of the Linear Method heading, raw/styles/method-styles.json, 2026-09-23; Georgia and serif are this package's fallbacks", "Measured (public site)"))
 for name in ("micro", "mini", "small", "regular", "large", "title3", "title2", "title1"):
     raw = var(f"--font-size-{name}", d)
     m = re.fullmatch(r"round\(up, (\d*\.?\d+)rem, (\d+)px\)", raw)
@@ -362,7 +362,7 @@ not_core = [
 
 WEB = {"canvas": "#08090A", "surface": "#0F1011", "raised": "#161718", "border": "#24282C", "text": "#F7F8F8", "secondary": "#D0D6E0", "muted": "#8A8F98", "subtle": "#62666D", "primary": "#E5E5E6", "accent": "#5E6AD2"}
 BRAND = {"mercury-white": "#F4F5F8", "nordic-gray": "#222326"}
-web = {k: tok(v.lower(), "color", "public site computed CSS, evidence/styles/01-home-styles.json, read 2026-09-23", "Measured (public site)") for k, v in WEB.items()}
+web = {k: tok(v.lower(), "color", "public site computed CSS, raw/styles/01-home-styles.json, read 2026-09-23", "Measured (public site)") for k, v in WEB.items()}
 brand = {k: tok(v.lower(), "color", "https://linear.app/brand, displayed hex (Nordic Gray's RGB prose says 35, 35, 38; the displayed hex is kept)", "Measured (brand page)") for k, v in BRAND.items()}
 core["$extensions"] = {"notTokenised": not_core}
 for t in THEMES:
@@ -404,7 +404,7 @@ tokens = {
     "$metadata": {"tokenSetOrder": ["core", "dark", "light", "web", "brand"]},
 }
 out = HERE / "tokens"
-(out / "linear.tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 
 # Tokens Studio: one set per group, plain values.
 

@@ -590,6 +590,11 @@
       },
       "source": {
         "path": "~/Desktop/Personal/Internal/Indie Hacking/alke-fitness/references"
+      },
+      "layoutGaps": {
+        "patterns.md": "no patterns were written from the native capture yet; the next recapture writes them",
+        "components/": "the capture through iPhone Mirroring took whole screens only, so there are no element crops",
+        "icons/": "Hevy's icons are its artwork and are not kept here (docs/RIGHTS.md)"
       }
     },
     {
@@ -674,7 +679,7 @@
         390
       ],
       "entry": "systems/linear/README.md",
-      "tokens": "systems/linear/tokens/linear.tokens.json",
+      "tokens": "systems/linear/tokens.json",
       "styleGuide": "systems/linear/style-guide.html",
       "preview": {
         "cover": "systems/linear/screenshots/01-home.png",
@@ -719,6 +724,9 @@
         ],
         "rounded": "core.radius.",
         "spacing": "core.space."
+      },
+      "layoutGaps": {
+        "patterns.md": "no patterns were written from the capture; the Coverage table records which pattern screens were captured, and the next recapture writes them"
       }
     },
     {
@@ -749,7 +757,7 @@
         390
       ],
       "entry": "systems/polaris/README.md",
-      "tokens": "systems/polaris/tokens/polaris.tokens-studio.json",
+      "tokens": "systems/polaris/tokens.json",
       "styleGuide": "systems/polaris/style-guide.html",
       "preview": {
         "cover": "systems/polaris/screenshots/01-overview.png",
@@ -775,7 +783,7 @@
           "light.font.font-family-sans"
         ]
       },
-      "notes": "style-guide.html fetches its data, so open it through `make serve`, not from disk. Tokens match the archive with zero differences (evidence/token-parity.json).",
+      "notes": "style-guide.html fetches its data, so open it through `make serve`, not from disk. Tokens match the archive with zero differences (raw/token-parity.json).",
       "source": {
         "path": "a private work project (path not recorded)",
         "excluded": [
