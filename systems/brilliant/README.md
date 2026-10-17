@@ -20,13 +20,13 @@ Brilliant styles its app with Panda CSS, which writes every token onto `:root` a
 
 Component measurements are computed styles read live in Chrome for each state: hover and focus were held with the pointer or keyboard, selected and disabled states were reached in the product, and pressed states were caught mid-transition. The theme was switched by setting `data-theme` on the page, never in account settings. Values that could only be sampled from a screenshot are marked "estimated from screenshot"; in the token file that is one token, `size.icon-md`, and in the specs it is the canvas-drawn Koji suggestion cards and the iridescent frames on the pricing page.
 
-The 2026-10 refresh read the app a second way. The signed-in pages were opened in the built-in browser pane, signed in by the owner, and each state was saved as a static copy (`tools/capture/signed-in/snapshot.js`, which inlines every stylesheet and replaces the learner's name, email and account id before the copy leaves the page). The copies were then rendered and measured headless: `measure.mjs` finds 39 component instances by `data-slot`, role or label and reads their computed styles at rest and with hover, focus-visible and pressed forced through the DevTools protocol, in dark and again with `<html data-theme="light">`. `css-rules.mjs` reads the production stylesheet for the font stacks, the reduced-motion rules, every focus rule and the button3d hover rules, and `layout.mjs` reads the page grids. Three groups are Derived rather than measured: accent hover and pressed (the product changes the button's opacity, not its colour, so those two tokens are the face composited at .85 over the page), and the four `feedback.info` tokens (Brilliant has no info role; they are taken from the blue badge).
+The 2026-10 refresh read the app a second way. The signed-in pages were opened in the built-in browser pane, signed in by the owner, and each state was saved as a static copy (`tools/capture/signed-in/snapshot.js`, which inlines every stylesheet and replaces the learner's name, email and account id before the copy leaves the page). The copies were then rendered and measured headless: `measure.mjs` finds 49 component instances by `data-slot`, role or label and reads their computed styles at rest and with hover, focus-visible and pressed forced through the DevTools protocol, in dark and again with `<html data-theme="light">`. `css-rules.mjs` reads the production stylesheet for the font stacks, the reduced-motion rules, every focus rule and the button3d hover rules, and `layout.mjs` reads the page grids. Two groups are Derived rather than measured: accent hover and pressed (the product changes the button's opacity, not its colour, so those two tokens are the face composited at .85 over the page), and the solid fill and border of `feedback.info` (the app's info alert uses only a tinted fill and text, which are measured).
 
 Panda defines no duration tokens that survive to production (`trs-dur_fast` compiles to invalid CSS), so `core.duration` lists the durations the app's transitions actually use, each with the rule it was read from. Springs are real variables: `--spring-smooth` is `cubic-bezier(.2,1.1,.36,1)` over .833s, with a `linear()` version in `easing-linear`.
 
 The screenshots were converted from the display profile (Display P3 or the external monitor's) to sRGB and stored as 256-colour PNGs to keep the repo small. Flat UI colours are exact, but gradients can band slightly, so read exact values from the tokens, not from the images. The signed-in account's name and email were replaced with "Learner", "Example" and learner@example.com before every capture, and in 2026-10 the initials avatar shows "L".
 
-What to distrust: lesson copies from 2026-10 show an empty lesson frame, because the interactive renders in a shadow root that a DOM copy does not carry (the 2026-09 lesson screenshots stand in). The 390 copies were taken from the pane at its phone emulation, whose layout viewport came out 406 wide, and re-rendered at 390, so the header's right edge clips at 390 as it would on a narrow phone. `feedback.info` is Derived from the blue badge: Brilliant defines no info role.
+What to distrust: lesson copies from 2026-10 show an empty lesson frame, because the interactive renders in a shadow root that a DOM copy does not carry (the 2026-09 lesson screenshots stand in). The 390 copies were taken from the pane at its phone emulation, whose layout viewport came out 406 wide, and re-rendered at 390, so the header's right edge clips at 390 as it would on a narrow phone. `feedback.info.fill` and `feedback.info.border` are Derived: the only info surface, the Settings info alert, has no solid fill and no border.
 
 ## Fonts
 
@@ -60,7 +60,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). App items w
 | Colour ramps | Captured: gray first, 12 more hues of 11 steps, oat (2 steps), black and white alpha ramps | `core.palette` |
 | Background, text, border roles | Captured, both themes | `bg.*`, `text.*`, `border.*` |
 | Accent default, hover, pressed | Captured 2026-10; hover and pressed are Derived (the product changes opacity, not colour) | `accent.*` |
-| Status: success, warning, danger, info | Success, warning, danger captured with fill, subtle fill, text and border; info Derived from the blue badge (no info role exists) | `feedback.*` |
+| Status: success, warning, danger, info | Success, warning, danger captured with fill, subtle fill, text and border; info's subtle fill and text measured from the Settings info alert (2026-10), its solid fill and border Derived (the alert has neither) | `feedback.*` |
 | Theme parity | Captured: 373 identical keys in light and dark | `light`, `dark` |
 | Type families and roles | Captured, with the product's fallback stacks (2026-10) | `core.fontFamily`, `core.typography` |
 | Spacing | Captured | `core.spacing` (0.25rem base) |
@@ -69,37 +69,37 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). App items w
 | Elevation | Captured: three levels tied to the app bar, menus and tooltips, and dialogs | `shadow.subtle`, `shadow.base`, `shadow.md` |
 | Motion and reduced motion | Captured: durations, easings, springs, and what the Reduce motion setting turns off (2026-10) | `core.duration`, `core.easing`, `core.motion` |
 | Layout: breakpoints, widths, grids, z-index | Captured; grids are per page (2026-10) | `core.breakpoint`, `core.layout`, `core.zIndex` |
-| Button | Captured: default, hover, focus-visible, pressed, disabled for button3d and flat buttons; loading seen only as the spinner slot | `button3d-*`, `button-*`, `premium-button` |
+| Button | Captured: default, hover, focus-visible, pressed, disabled for button3d and flat buttons, and the solid danger button going from disabled to enabled; loading seen only as the spinner slot | `button3d-*`, `button-*`, `premium-button` |
 | Icon button | Captured: default, hover, focus-visible, pressed, disabled, toggled | `icon-button*` |
 | Link | Captured: default, hover, focus-visible, pressed | `link` |
-| Text field | Captured: default, focus-visible; error not captured (needs a submit) | `text-field` |
-| Text area | Captured: filled, focused (no focus style) | `text-area`, `text-area-pill` |
+| Text field | Captured: default, focus-visible, and invalid (2026-10: the browser's native message; the product paints no error style) | `text-field`, `text-field-invalid` |
+| Text area | Captured: the Koji prompt filled and focused (no focus style), and a bordered text area with its focus | `text-area`, `text-area-pill`, `text-area-bordered` |
 | Select | Not present: no reached screen renders one | |
-| Checkbox | Not present: every checkbox input is the hidden half of a switch | |
+| Checkbox | Captured 2026-10 on the deactivate page: default, hover, focus-visible, pressed, checked | `checkbox`, `checkbox-checked` |
 | Radio | Captured: radio and the segmented control's radio group, default, hover, focus-visible, pressed, selected | `radio`, `segment*` |
 | Switch | Captured: on, off, focus-visible | `switch-on`, `switch-off` |
 | Tabs | Captured: header tabs and settings tabs, default, hover, focus-visible, pressed, selected | `nav-tab*`, `settings-tab*` |
 | Menu | Captured: open, item, highlighted item (keyboard) | `menu*` |
 | Tooltip | Captured, with its trigger's states | `tooltip`, `tooltip-trigger` |
 | Dialog | Captured, both themes (2026-10) | `dialog`, `dialog-scrim` |
-| Toast | Not captured: no look-only action fires one | |
+| Toast | Captured 2026-10: neutral and success toasts, both themes (a topic unstarred and starred again) | `toast`, `toast-added` |
 | Card | Captured: course card (3D) and summary card | `card-course`, `weekly-summary-card` |
 | List row | Captured: settings row | `list-row-setting` |
 | Table | Captured 2026-09: Free vs Premium comparison, both themes; a screen-reader-only data table on You | [premium-comparison-dark](components/crops/premium-comparison-dark.png) |
 | Avatar | Captured: initials tile at phone width | `avatar` |
 | Badge | Captured | `badge-unverified`, `badge-primary` |
 | App shell and navigation | Captured, 1440 and 390 | [patterns.md](patterns.md#app-shell-and-navigation) |
-| Form with a validation error | Form captured; the error not captured (needs a submit); its CSS is recorded | [patterns.md](patterns.md#forms-and-validation) |
-| Empty, loading, error states | Empty captured (You, Help search); loading captured 2026-09; error is the 404 page | [patterns.md](patterns.md#empty-loading-and-error-states) |
-| Destructive confirmation | Captured: quit-lesson dialog, both themes | [patterns.md](patterns.md#destructive-confirmation) |
-| Feedback after an action | Captured: lesson evaluation; toast not captured | [patterns.md](patterns.md#feedback-after-an-action) |
+| Form with a validation error | Captured 2026-10: an invalid email stops at the browser's native validation; the stylesheet's own invalid rules are recorded | [patterns.md](patterns.md#forms-and-validation) |
+| Empty, loading, error states | Empty captured (You, Help search); loading captured 2026-09 and 2026-10 (You page skeleton); error is the 404 page | [patterns.md](patterns.md#empty-loading-and-error-states) |
+| Destructive confirmation | Captured: quit-lesson dialog and the deactivate-account page, both themes | [patterns.md](patterns.md#destructive-confirmation) |
+| Feedback after an action | Captured: lesson evaluation, control state changes, toasts | [patterns.md](patterns.md#feedback-after-an-action) |
 | Search and filtering | Captured: Topics ask box, Help Center live search, You period filter | [patterns.md](patterns.md#search-and-filtering) |
 | List or table | Captured | [patterns.md](patterns.md#data-display) |
 | Onboarding | Captured 2026-09, dark | [patterns.md](patterns.md#onboarding-and-first-run) |
 | Light and dark | Captured: every 2026-10 copy in both themes; onboarding dark only | [screenshots/app-2026-10/](screenshots/app-2026-10) |
 | Desktop and phone widths | Captured: 1440 everywhere; 390 for home, topics, you and settings (2026-10) and the public pages | `mobile-*` |
 
-Totals over 41 rows: 37 captured (states that were not reachable are named in their row), 2 not present (select, checkbox), 2 not captured (toast, and the validation error inside the form row). Why these cannot be closed by a recapture: Brilliant renders no select or checkbox on any screen a free account reaches; a toast and a validation error each need an action this capture does not take (changing the account or submitting a form).
+Totals over 41 rows: 40 captured (states that were not reachable are named in their row), 1 not present (select). Why it cannot be closed by a recapture: Brilliant renders no select on any screen a free account reaches. Focus is recorded as the product draws it: segments, menu items and the Koji text area show no focus ring, and header tabs and cards fall back to the browser's own (see Gaps in [components.md](components.md#gaps)).
 
 ## Do and don't
 
