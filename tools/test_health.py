@@ -98,6 +98,14 @@ class SectionTest(unittest.TestCase):
         self.assertIn("not in the file table above: `extra.md`, `raw/`", text)
 
 
+class FileTableTest(unittest.TestCase):
+    def test_only_the_file_table_lists_entries(self):
+        readme = README + "\n| Value | Source |\n|---|---|\n| a | `raw/notes.json` |\n"
+        with Package(entries=("tokens.json", "raw/"), readme=readme):
+            _, unlisted = catalog.layout_gaps("x")
+        self.assertEqual(unlisted, ["raw/"])
+
+
 class PlacementTest(unittest.TestCase):
     def test_inserted_before_the_first_section_and_replaced_in_place(self):
         first = health.with_section(README, "## Health\n\nold\n\n<!-- health:end -->\n")

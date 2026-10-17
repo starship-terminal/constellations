@@ -1029,6 +1029,21 @@ def check() -> list[str]:
     return problems
 
 
+def file_table(readme: str) -> list[str]:
+    """The rows of a README's file table: the first table whose header starts with a
+    `File` or `Path` column. Other tables that happen to mention a path do not count."""
+    lines = readme.splitlines()
+    for i, line in enumerate(lines):
+        if re.match(r"\|\s*(files?|paths?)\s*\|", line, re.I):
+            rows = []
+            for row in lines[i + 1:]:
+                if not row.startswith("|"):
+                    break
+                rows.append(row)
+            return rows
+    return []
+
+
 def layout_gaps(slug: str) -> tuple[list[str], list[str]]:
     """(the STANDARD_PARTS a package lacks, its top-level entries that no row of the
     README's file table links or names). A folder is written with a trailing slash."""
@@ -1041,7 +1056,7 @@ def layout_gaps(slug: str) -> tuple[list[str], list[str]]:
         if not path.exists() or path.is_dir() != part.endswith("/"):
             missing.append(part)
     readme = folder / "README.md"
-    rows = [line for line in readme.read_text().splitlines() if line.startswith("|")] if readme.is_file() else []
+    rows = file_table(readme.read_text()) if readme.is_file() else []
     unlisted = []
     for entry in sorted(folder.iterdir()):
         if entry.name.startswith(".") or entry.name == "README.md":

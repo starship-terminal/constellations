@@ -17,7 +17,7 @@ Scorecard: **19 of 25 met, 6 partly, 0 missing**; C5, V1, V2 do not apply to a c
 | C4 Token-based specs | Partly | Of the 12 entries in evidence/component-findings.md, 6 (Button, Badge, Select, Card, Banner, Tabs) use only token names; Tag, TextField, Checkbox/Radio, Modal, Popover and Tooltip mix in raw px, several of which duplicate package tokens (Modal 620/380/980px vs core.layout.modal-width*, choice 18/20px vs size.choice-control, Tag 24px vs size.tag-large-min-height). README 'Buttons' also gives heights as raw px. |
 | K1 Package entry | Partly | README covers what was captured, how (pinned commit, package versions, headless Chromium) and caveats, and 8 of 10 spot checks held (534 icons, 23 focus crops, 14x16 ramps, 894/904 aliases, 1,812 tokens, radius/breakpoint/z-index values, 9 dark shots). But it tells readers to unzip polaris-design-library.zip, which is not in the package (catalog lists it as excluded), and claims component-findings.md 'gives each component's hover tokens' when TextField, Select and Checkbox entries do not name them; there is no dedicated what-to-distrust section. |
 
-Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `tokens.json`, `components.md`, `raw/`; not in the file table above: `DESIGN.md`, `assets/`, `boards/`, `components/`, `icons/`, `licenses/`, `patterns.md`, `previews/`, `style-guide.html`, `tools/`.
+Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `tokens.json`, `components.md`, `raw/`; not in the file table above: `DESIGN.md`, `assets/`, `boards/`, `components/`, `evidence/`, `icons/`, `licenses/`, `patterns.md`, `previews/`, `screenshots/`, `style-guide.html`, `tokens/`, `tools/`.
 
 <!-- health:end -->
 

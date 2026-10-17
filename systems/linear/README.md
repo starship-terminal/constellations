@@ -24,7 +24,7 @@ Scorecard: **12 of 25 met, 10 partly, 3 missing**; C5, V1, V2 do not apply to a 
 | A1 Assets | Partly | Fonts are named with licence notes and fallbacks in the README (Inter open source, Berkeley Mono and Tiempos commercial, Georgia/Menlo fallbacks), but icons/reference/ has 39 public-site SVGs with no INDEX.tsv or role index, named after source controls (three are issue titles such as eng-2039pass-sync-status...) and the README says names are not canonical roles. |
 | K1 Package entry | Partly | The README covers what was captured, how (snapshot.js, vars.mjs, measure.mjs) and what to distrust, and its links, 47-component count, 38-row coverage totals and 39 icons check out, but it contradicts its own evidence: Do and don't 6 says every focus-visible state measured is a 1px solid outline and the Coverage table lists card, list row and text area focus-visible (and card hover) as captured, while those crops are identical to default and components-computed.json shows outline none. |
 
-Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `tokens.json`, `components.md`, `patterns.md`; not in the file table above: `DESIGN.md`, `IMPORT.md`, `boards/`, `components/`, `evidence/`, `icons/`, `preview.html`, `previews/`, `style-guide.html`, `thumbnails/`, `tokens/`, `tools/`.
+Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `tokens.json`, `components.md`, `patterns.md`; not in the file table above: `DESIGN.md`, `IMPORT.md`, `boards/`, `components/`, `evidence/`, `icons/`, `preview.html`, `previews/`, `raw/`, `screenshots/`, `style-guide.html`, `thumbnails/`, `tokens/`, `tools/`.
 
 <!-- health:end -->
 
