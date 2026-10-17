@@ -99,7 +99,7 @@ def icons():
     return '<div class="scroll-x"><table class="spec"><tr><th></th><th>Ligature</th><th>Role</th><th>Where</th><th>Sizes</th><th>Font that drew it</th></tr>' + "".join(rows) + "</table></div>"
 
 def palette(fam):
-    return "\n".join(f'<div class="ramp-step" style="background:var(--palette-{fam}-{k});color:{ink(t["$value"])}"><span>{k}</span><span>{t["$value"]}</span></div>'
+    return "\n".join(f'<div class="ramp-step" style="background:var(--palette-{fam}-{k});color:{ink(t["$value"])}"><span>{k}</span><span>{t["$value"]}</span>{"<em>derived</em>" if t["$extensions"]["source"].startswith("Derived") else ""}</div>'
                      for k, t in T["core"]["palette"][fam].items())
 
 type_rows = "\n".join(
