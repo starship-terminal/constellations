@@ -171,7 +171,7 @@ FAMILY = {"System": "fontFamily.sans", "Libre Baskerville": "fontFamily.serif", 
 for prefix, node in (("typography.role.", CORE["typography"]["role"]), ("typography.", {k: v for k, v in CORE["typography"].items() if k != "role"})):
     for n, t in flat(node, prefix):
         v = {k: resolve(x, CORE) for k, x in t["$value"].items()}
-        key = ("%gpx" % float(v["fontSize"][:-2]), "%gpx" % float(v["lineHeight"][:-2]), str(v["fontWeight"]), t["$value"]["fontFamily"])
+        key = ("%gpx" % float(v["fontSize"][:-2]), "%gpx" % float(v["lineHeight"][:-2]), str(v["fontWeight"]), t["$value"]["fontFamily"], "%gpx" % float(str(v.get("letterSpacing", "0px"))[:-2]))
         TYPE.setdefault(key, n)
 STATS = {"token": 0, "approx": 0, "raw": 0}
 
@@ -228,10 +228,13 @@ def num(x):
     return re.sub(r"(\d+\.\d\d)\d+", r"\1", str(x))
 
 
-def font(fz, lh, fw, f):
+def font(fz, lh, fw, f, ls="normal"):
+    """A text style; it names a typography token only when family, size, line height, weight and
+    letter spacing all match (normal spacing is 0px)."""
     lhn = lh.replace("px", "") if lh != "normal" else "normal"
-    plain = f"{fam(f)} {num(fz.replace('px', ''))}/{num(lhn)} {fw}"
-    key = ("%gpx" % float(fz[:-2]), "%gpx" % float(lh[:-2]) if lh.endswith("px") else lh, str(fw), "{" + FAMILY.get(fam(f), "") + "}")
+    plain = f"{fam(f)} {num(fz.replace('px', ''))}/{num(lhn)} {fw}" + (f" tracking {ls}" if ls not in ("normal", "0px") else "")
+    lsk = "0px" if ls in ("normal", None) else "%gpx" % float(ls[:-2])
+    key = ("%gpx" % float(fz[:-2]), "%gpx" % float(lh[:-2]) if lh.endswith("px") else lh, str(fw), "{" + FAMILY.get(fam(f), "") + "}", lsk)
     tok = TYPE.get(key)
     STATS["token" if tok else "raw"] += 1
     return f"`{tok}` ({plain})" if tok else plain
@@ -278,9 +281,9 @@ def props(v):
         o["outline"] = f"{dim(s['outlineWidth'], ('focusRing', 'borderWidth'))} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {dim(s['outlineOffset'], ('focusRing',)) if not s['outlineOffset'].startswith('-') else s['outlineOffset']}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
+        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('letterSpacing', 'normal'))}, {colour(t['color'])}"
     elif v.get("text"):
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], prop='text')}"
+        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'], s.get('letterSpacing', 'normal'))}, {colour(s['color'], prop='text')}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -672,7 +675,15 @@ def coverage(rows):
     return exact, approx, raw
 
 
-entry_rows = [l for l in L if l.startswith("| ") and not l.startswith(("| State |", "| Surface", "| Icon")) and ("; " in l or "size " in l)]
+entry_rows, in_states = [], False
+for l in L:  # every row of every component's State | Values table, however many values it holds
+    if l.startswith("| State | Values |"):
+        in_states = True
+        continue
+    if not l.startswith("|"):
+        in_states = False
+    elif in_states and not l.startswith("|---"):
+        entry_rows.append(l)
 ex, ap, rw = coverage(entry_rows)
 tot = ex + ap + rw
 i = next(k for k, l in enumerate(L) if l.startswith("- Crops are images"))

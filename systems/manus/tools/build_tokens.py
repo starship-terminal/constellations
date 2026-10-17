@@ -683,9 +683,9 @@ for name, (fs, lh, fw), what in (("label-compact", ("14px", "18px", 500), "outli
                                  ("meta", ("13px", "18px", 400), "small buttons, info banners, Cue links"), ("section-label", ("13px", "18px", 500), "sidebar section headers and small upgrade buttons"),
                                  ("shortcut", ("13px", "19.5px", 400), "side panel tabs, view options, shortcut fields"), ("menu-header", ("12px", "18px", 600), "the account menu and settings account header"),
                                  ("initial", ("12px", "20px", 600), "the avatar initial and the sidebar account row")):
-    n = _count(lambda st, k=(fs, lh, str(fw)): (st.get("textStyle") or {}) and (st["textStyle"]["fontSize"], st["textStyle"]["lineHeight"], st["textStyle"]["fontWeight"]) == k)
+    n = _count(lambda st, k=(fs, lh, str(fw), "normal"): (st.get("textStyle") or {}) and (st["textStyle"]["fontSize"], st["textStyle"]["lineHeight"], st["textStyle"]["fontWeight"], st["textStyle"].get("letterSpacing", "normal")) == k)
     core["typography"]["role"][name] = {"$value": {"fontFamily": "{fontFamily.sans}", "fontSize": fs, "lineHeight": lh, "fontWeight": fw, "letterSpacing": "0px"}, "$type": "typography",
-                                        "$extensions": {"source": f"Measured: the text of {n} measured components is {fs}/{lh} {fw}: {what}. Off Manus's --ui-* scale, so it is a role of its own", "components": n}}
+                                        "$extensions": {"source": f"Measured: the text of {n} measured components is {fs}/{lh} {fw} with normal letter spacing: {what}. Off Manus's --ui-* scale, so it is a role of its own; text of this size with negative tracking (the sidebar section labels) is a different style", "components": n}}
 # component entries: every var() a measured component's classes name, per state and theme
 def component_set(theme):
     tree_index = {}
