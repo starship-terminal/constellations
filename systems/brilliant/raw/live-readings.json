@@ -46,5 +46,41 @@
    "backdrop-filter": "blur(24px)"
   },
   "focus ring": "none on the textarea or pill (outline style none); focus is shown by the caret only"
+ },
+ "text-field-invalid-email": {
+  "how": "Settings > Account > Add another email, typed 'not-an-email', pressed Add email once (approved by the owner); the browser blocked the submit, so no request was sent",
+  "element": "input[type=email] in data-slot=field",
+  "validity.valid": false,
+  "validationMessage": "Please include an '@' in the email address. 'not-an-email' is missing an '@'. (Chrome's native bubble)",
+  ":user-invalid": true,
+  "aria-invalid": null,
+  "border after blur": "rgba(255, 255, 255, 0.2) (unchanged: border.primary)",
+  "outline after blur": "rgba(0, 0, 0, 0) solid 2px",
+  "finding": "The product paints no error style on this field; the browser's native validation bubble is the only error shown."
+ },
+ "segment-keyboard-focus": {
+  "how": "Preferences colour-mode segment focused after a Tab keypress (real keyboard modality)",
+  "element": "span[role=radio][data-slot=segment][data-checked]",
+  ":focus-visible": true,
+  "outline": "rgba(0, 0, 0, 0) solid 2px",
+  "box-shadow": "rgba(0, 0, 0, 0.7) 0px 0px 15px 0px (unchanged: the selected segment's shadow.base)",
+  "finding": "No focus indicator: the segment looks the same focused and unfocused."
+ },
+ "toast-favourite": {
+  "how": "Topics: unstarred Math Foundations, then starred it again (owner approved); each click fired a Sonner toast",
+  "messages": [
+   "Removed from your topics",
+   "Added to your learning paths"
+  ],
+  "account": "unchanged at the end (Math Foundations starred, back at the top)"
+ },
+ "alert-info": {
+  "element": "[data-slot=alert][role=alert] on Settings > Account (no password set)",
+  "background-color": "rgb(33, 60, 158) = bg.blue-secondary (class panda-bg_bg.blue.secondary)",
+  "color": "rgb(255, 255, 255) = text.primary",
+  "icon": "16px, fill currentColor",
+  "border": "none",
+  "radius": "12px (radius.lg)",
+  "padding": "16px 20px"
  }
 }

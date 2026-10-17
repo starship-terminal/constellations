@@ -334,8 +334,8 @@ colors:
   feedback-danger-fill-subtle: "#ffdfdf"
   feedback-danger-text: "#c43939"
   feedback-danger-border: "#ff5d5d"
-  feedback-info-fill-subtle: "#ecf0ff"
-  feedback-info-text: "#294bc6"
+  feedback-info-fill-subtle: "#dae2ff"
+  feedback-info-text: "#000000"
   feedback-info-fill: "#456dff"
   feedback-info-border: "#7491ff"
 typography:
