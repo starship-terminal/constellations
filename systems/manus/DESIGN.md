@@ -1611,21 +1611,6 @@ Corner radii from `core.radius`: `row` 10px, `small` 8px, `card` 12px, `composer
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
-### Patterns (from README.md)
-
-| Pattern | What Manus does | See |
-|---|---|---|
-| App shell and navigation | A 300px sidebar holds everything: nav tabs, Projects, Tasks, a share banner and the account row; it folds to a 52px rail and becomes a drawer on a phone. There is no top navigation, only a 48px bar with the model picker and plan. | [home-dark](screenshots/home-dark.png), [home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png) |
-| Forms and validation | Fields stack under 14px labels in a small dialog; the primary button stays disabled until the required field has text, and nothing explains why. The invite email enables Send for any text: the format is checked only on submit, and a bad address is reported by a toast, not on the field. | [settings-dark-create-key](screenshots/settings-dark-create-key.png), [settings-dark-create-key-typed](screenshots/settings-dark-create-key-typed.png), [invite-dark-email-typed](screenshots/invite-dark-email-typed.png), [invite-dark-email-error](screenshots/invite-dark-email-error.png) |
-| Empty | An empty page offers starting points rather than an illustration: Automations shows three example cards and one Get started button. | [automations-dark](screenshots/automations-dark.png) |
-| Loading | Lists load behind pulsing grey rows (the sidebar's task list); a pane that fetches shows one small ring where the content will be. | [settings-dark-usage-loading](screenshots/settings-dark-usage-loading.png), [nav-skeleton-default](components/crops/nav-skeleton-default.png) |
-| Error | Errors are toasts: "Invalid email address." with a red alert icon, top centre, gone after about 6.3s. The field that caused it does not change. No failed request was seen. | [invite-dark-email-error](screenshots/invite-dark-email-error.png), [invite-light-email-error](screenshots/invite-light-email-error.png) |
-| Destructive confirmation | Delete sits alone in the row's popover, in red with a trash icon. Choosing it opens a small dialog: the question, "This action cannot be undone.", then Cancel (outlined) and Delete (red, filled) at the end. | [settings-dark-key-menu](screenshots/settings-dark-key-menu.png), [settings-dark-delete-confirm](screenshots/settings-dark-delete-confirm.png) |
-| Feedback after an action | Toasts mount in a fixed list at the top centre (z-index 1050, newest first) and rest against the window's top edge: `background.menu-tooltips` at 90% black in both themes, radius 12, a 20px icon and 14/22 500 white text. "Creating new task…" with a spinner was seen live while a branch task was created; the validation toast is the one measured. Copy buttons gave no toast. | [toast](components.md#toast), [invite-dark-email-error](screenshots/invite-dark-email-error.png) |
-| Search and filtering | Search is a dialog (Cmd+K) over everything; the Library filters by type with a strip of tabs and switches list or grid and grouping from a view-options menu. | [home-dark-search](screenshots/home-dark-search.png), [library-dark-slides](screenshots/library-dark-slides.png), [library-dark-images-grid-view-options](screenshots/library-dark-images-grid-view-options.png) |
-| Lists and tables | Lists are rows split by 1px rules and grouped by day; the one table (API keys) is a plain table with grey 13px headers, row rules, no zebra and a more button per row. | [library-dark](screenshots/library-dark.png), [settings-dark-developers-table](screenshots/settings-dark-developers-table.png) |
-| Onboarding | Only the phone's app gate was captured (download the app or continue on the web); the first-run flow of a new account was not, since the account is not new. | [mobile-home-dark-app-gate](screenshots/mobile-home-dark-app-gate.png) |
-
 ## Do's and Don'ts
 
 - Do take values from [tokens.json](tokens.json) when you need another theme, a value's source, or a token this file leaves out.

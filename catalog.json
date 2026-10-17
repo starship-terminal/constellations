@@ -590,6 +590,11 @@
       },
       "source": {
         "path": "~/Desktop/Personal/Internal/Indie Hacking/alke-fitness/references"
+      },
+      "layoutGaps": {
+        "patterns.md": "no patterns were written from the native capture yet; the next recapture writes them",
+        "components/": "the capture through iPhone Mirroring took whole screens only, so there are no element crops",
+        "icons/": "Hevy's icons are its artwork and are not kept here (docs/RIGHTS.md)"
       }
     },
     {

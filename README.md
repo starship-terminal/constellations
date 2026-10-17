@@ -53,15 +53,15 @@ Health section that lists what is open, with the evidence.
 
 | Package | Good for | Captured | Themes | Health | Layout gaps |
 |---|---|---|---|---|---|
-| [claude](systems/claude/README.md) | A quiet chat shell with a serif model voice: composer, thread, Artifacts, Projects, settings (cds tokens) | 2026-10-17 | light, dark | 22 of 25 met, 3 partly, 0 missing | `patterns.md` |
+| [claude](systems/claude/README.md) | A quiet chat shell with a serif model voice: composer, thread, Artifacts, Projects, settings (cds tokens) | 2026-10-17 | light, dark | 22 of 25 met, 3 partly, 0 missing | none |
 | [brilliant](systems/brilliant/README.md) | Interactive problem-solving lessons, course paths, a calm editorial learning UI (Panda CSS tokens) | 2026-10-17 | light, dark | 20 of 25 met, 5 partly, 0 missing | none |
 | [polaris](systems/polaris/README.md) | Admin and commerce UI built from a published component library: semantic colour roles, buttons, cards, banners | 2026-10-17 | light, light-mobile, light-high-contrast-experimental, dark-experimental | 19 of 25 met, 6 partly, 0 missing | `tokens.json`, `components.md`, `raw/` |
-| [chatgpt](systems/chatgpt/README.md) | The baseline chat UI: thread, composer, sidebar history, menus, dialogs, search, settings pages | 2026-10-17 | light, dark | 18 of 25 met, 7 partly, 0 missing | `patterns.md` |
+| [chatgpt](systems/chatgpt/README.md) | The baseline chat UI: thread, composer, sidebar history, menus, dialogs, search, settings pages | 2026-10-17 | light, dark | 18 of 25 met, 7 partly, 0 missing | none |
 | [notebooklm](systems/notebooklm/README.md) | Source-grounded AI workspace: sources panel, chat, studio outputs; near-monochrome surfaces with pill buttons (luminous UI) | 2026-10-17 | light, dark | 18 of 25 met, 7 partly, 0 missing | none |
 | [tokentracker](systems/tokentracker/README.md) | Local AI usage dashboard: borderless sidebar, rounded content panel, hairline cards, one green accent for money, dense tables, limits bars | 2026-10-17 | light, dark | 18 of 25 met, 7 partly, 0 missing | none |
 | [gauth](systems/gauth/README.md) | AI tutor learning app: course catalogue, unit pages, lesson players with an Ask Tutor panel | 2026-10-17 | light | 18 of 24 met, 6 partly, 0 missing | none |
 | [coursera](systems/coursera/README.md) | Course catalogue, course and module pages, course cards, a mature enterprise design system (386 --cds-* variables) | 2026-10-17 | light, dark | 17 of 25 met, 8 partly, 0 missing | none |
-| [manus](systems/manus/README.md) | Agent app shell: multi-section sidebar, a Library of agent outputs by type and by day, task threads with deliverables | 2026-10-17 | light, dark | 17 of 25 met, 8 partly, 0 missing | `patterns.md` |
+| [manus](systems/manus/README.md) | Agent app shell: multi-section sidebar, a Library of agent outputs by type and by day, task threads with deliverables | 2026-10-17 | light, dark | 17 of 25 met, 8 partly, 0 missing | none |
 | [researchrabbit](systems/researchrabbit/README.md) | Interactive citation graph beside a list: node and edge styling, canvas interaction (see graph.md) | 2026-10-17 | light | 17 of 24 met, 7 partly, 0 missing | none |
 | [duolingo](systems/duolingo/README.md) | Gamified learning: lesson flow, streaks, leaderboards, chunky 3D buttons, a mascot-led brand | 2026-10-17 | light, dark | 14 of 24 met, 10 partly, 0 missing | none |
 | [linear](systems/linear/README.md) | Dense, keyboard-first product UI in dark and light: issue boards, issue detail, menus, settings tables; plus the public marketing site | 2026-10-17 | dark, light | 12 of 25 met, 10 partly, 3 missing | `tokens.json`, `components.md`, `patterns.md` |

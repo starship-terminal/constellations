@@ -7,11 +7,17 @@ points at a path outside the folder.
 
 ## Layout
 
-Every package aims at the same layout, so an agent can open any of them
-without learning a new one. `make check` fails when a package lacks one of the
-four parts marked required. The rest are standard: the package's
-[Health](#health) section names each standard part it lacks, and the root
-README's catalog table shows the same gaps beside every package.
+Every package has the same layout, so an agent can open any of them without
+learning a new one. `make check` fails when a package lacks one of these
+parts, unless its [catalog.json](../catalog.json) entry declares the gap under
+`layoutGaps` with the reason (Hevy keeps no icons, for rights). A part marked
+required can never be declared missing. The package's [Health](#health)
+section repeats each gap with its reason, and the root README's catalog table
+shows the gaps beside every package.
+
+```json
+"layoutGaps": { "icons/": "Hevy's icons are its artwork and are not kept here (docs/RIGHTS.md)" }
+```
 
 | Path | Required | What it is |
 |---|---|---|
@@ -28,8 +34,10 @@ README's catalog table shows the same gaps beside every package.
 | `tools/` | yes | Every script that rebuilds a generated file in the package, and the capture scripts |
 
 A package may add files for what is unusual about its product, such as
-researchrabbit's `graph.md`. Every top-level file and folder, standard or
-not, gets a row in the README's file table; Health lists any that do not.
+researchrabbit's `graph.md`, or a `tokens/` folder with the same tokens in
+other formats (CSS, a Tokens Studio file). Every top-level file and folder,
+standard or not, gets a row in the README's file table; `make check` fails on
+one that has none.
 
 ## The README
 
