@@ -161,8 +161,8 @@ search view gives way to the list ([search-tablet-light-inspect](screenshots/sea
 Tailwind's `.container` steps (40, 48, 64, 80, 96rem) are declared in the CSS
 but no captured element uses them. Layouts are flex rows: the home page puts
 three equal cards (`grid.home-columns`) in a 1400px row, and search pages
-split a main card from the 290 to 390px right panel, which keeps its width
-at 1000px while the list narrows.
+split a main card from the 290 to 390px right panel, which shrinks to
+314.67px at 1000px while the list narrows beside it.
 
 ## What to distrust
 

@@ -489,7 +489,7 @@ SPEC_LIGHT = {
         "menu-separator": R("color", "{palette.grey.bg2}", "Dropdown__Separator", "background-color: var(--grey-bg2)", "The 1px rule between menu groups"),
         "result-card-loadline": R("color", "#0000ff", "LoadLine__Container", "background-color: blue", "A 2px blue line across the top of a result card while it loads (hidden at opacity 0 when captured)"),
         "toast": R("color", "{palette.literal.charcoal}", "Toast__ToastFill", "background-color: rgb(51, 51, 51)", "The toast bar, with white text"),
-        "citation-box": R("color", "{palette.selection.light}", "CopyContainer__Container", "background-color: var(--selection-light)", "The citation box at rest and on hover"),
+        "citation-box": R("color", "{palette.selection.light}", "CopyContainer__Container", "background-color: var(--selection-light)", "The citation box on hover, while pressed and after copying; it is white at rest"),
         "incomplete-warning": R("color", "{palette.peach.25}", "IncompleteInlineWarning__Container", "background-color: var(--peach-25)", "Incomplete data chip and banner"),
         "drawer-row": R("color", "{palette.literal.drawer-row}", "ExploreFilters__ItemContainer", "background-color: rgb(53, 53, 53)"),
         "drawer-row-on": R("color", "{palette.literal.drawer-row-on}", "ExploreFilters__ItemContainer", "background-color: rgb(77, 76, 91)"),

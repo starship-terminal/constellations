@@ -231,27 +231,26 @@ def shadow_layers(s):
             m = re.findall(r"[\d.]+", c)
             r, g, b = (float(x) for x in m[:3])
             a = float(m[3]) if len(m) > 3 else 1.0
-        out.append((tuple(nums), round(r), round(g), round(b), round(a, 2)))
+        out.append((tuple(nums), round(r), round(g), round(b), round(a, 2), bool(re.search(r"\binset\b", p))))
     return out
 
 
 SHADOW_TOK = {}
 for name, val in ROOTV.items():
     if name.startswith("--shadow-") and not name.endswith("-dark"):
-        SHADOW_TOK[tuple(map(lambda t: (tuple(t[0][:3]),) + t[1:], shadow_layers(val)))] = name
+        SHADOW_TOK[tuple(shadow_layers(val))] = name
 
 
 for n, t in LEAF.items():
     if t["$type"] == "shadow":
-        val = ", ".join(f"{l['color']} {l['offsetX']} {l['offsetY']} {l['blur']} {l['spread']}" for l in t["$value"])
-        SHADOW_TOK.setdefault(tuple(map(lambda t_: (tuple(t_[0][:3]),) + t_[1:], shadow_layers(val))), "{" + n + "}")
+        val = ", ".join(f"{l['color']} {l['offsetX']} {l['offsetY']} {l['blur']} {l['spread']}{' inset' if l.get('inset') else ''}"
+                        for l in t["$value"])
+        SHADOW_TOK.setdefault(tuple(shadow_layers(val)), "{" + n + "}")
 
 
 def shadow_token(s):
-    key = tuple((tuple(t[0][:3]),) + t[1:] for t in shadow_layers(s))
-    # the computed form has the spread as a 4th number; the root vars have none
-    key2 = tuple((tuple(t[0][:3]),) + (t[1], t[2], t[3], t[4]) for t in shadow_layers(s))
-    return SHADOW_TOK.get(key) or SHADOW_TOK.get(key2)
+    # offsets, blur, spread (0 when a root var omits it), colour and inset must all match
+    return SHADOW_TOK.get(tuple(shadow_layers(s)))
 
 
 def shadow_text(s):
@@ -482,7 +481,7 @@ SHOTS = [
     ("library-all", "Library, All Articles (2026-10-17): the list, one article selected, an article's empty Notes tab, the Cite Article dialog, and the toast after copying a citation.", "/library"),
     ("library-table", "Library, All Articles in the table view (2026-10-17).", "/library"),
     ("library-reading", "Library, the empty Reading List (2026-10-17).", "/library/reading"),
-    ("search-tablet", "Search list view at 1000 x 800 (2026-10-17), an article inspected: the right panel keeps its width and the list narrows.", "/search/<id>/0"),
+    ("search-tablet", "Search list view at 1000 x 800 (2026-10-17), an article inspected: the right panel shrinks toward its 290px minimum (314.67px here) and the list narrows.", "/search/<id>/0"),
     ("home-narrow", "Home at 800 x 900 (2026-10-17): below 896px the three cards stack in one column.", "/"),
     ("library-mobile", "Library at 390 x 844 (2026-10-17): the Screen too small notice, and the clipped desktop layout after Continue anyway.", "/library"),
 ]

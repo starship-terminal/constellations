@@ -29,7 +29,7 @@ Screenshots are named `{page}-light-{state}.png` (the captured theme is light; t
 | Library, All Articles (2026-10-17): the list, one article selected, an article's empty Notes tab, the Cite Article dialog, and the toast after copying a citation. | `/library` | [cite-dialog](screenshots/library-all-light-cite-dialog.png), [default](screenshots/library-all-light-default.png), [notes-empty](screenshots/library-all-light-notes-empty.png), [selected](screenshots/library-all-light-selected.png), [toast](screenshots/library-all-light-toast.png) |
 | Library, All Articles in the table view (2026-10-17). | `/library` | [default](screenshots/library-table-light-default.png) |
 | Library, the empty Reading List (2026-10-17). | `/library/reading` | [empty](screenshots/library-reading-light-empty.png) |
-| Search list view at 1000 x 800 (2026-10-17), an article inspected: the right panel keeps its width and the list narrows. | `/search/<id>/0` | [inspect](screenshots/search-tablet-light-inspect.png) |
+| Search list view at 1000 x 800 (2026-10-17), an article inspected: the right panel shrinks toward its 290px minimum (314.67px here) and the list narrows. | `/search/<id>/0` | [inspect](screenshots/search-tablet-light-inspect.png) |
 | Home at 800 x 900 (2026-10-17): below 896px the three cards stack in one column. | `/` | [stacked](screenshots/home-narrow-light-stacked.png) |
 | Library at 390 x 844 (2026-10-17): the Screen too small notice, and the clipped desktop layout after Continue anyway. | `/library` | [continue](screenshots/library-mobile-light-continue.png), [screen-too-small](screenshots/library-mobile-light-screen-too-small.png) |
 
@@ -106,16 +106,16 @@ Values that apply across entries, from the measurement file. Counts are componen
 | Shadow | Where |
 |---|---|
 | #000000 0px 0px 0px 1px inset (`{elevation.ring-strong}`) | `filter-toggle`, `library-list-row`, `list-card`, `recent-search-row` |
-| #000000 0px 0px 0px 2px (`{elevation.ring-strong}`) | `filter-bar-button`, `layout-select`, `select-dark` |
+| #000000 0px 0px 0px 2px | `filter-bar-button`, `layout-select`, `select-dark` |
 | #c9cdd3 0px 0px 0px 1px inset (`{elevation.ring-field}`) | `button-disabled`, `filter-input`, `text-field` |
 | rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px (`{elevation.popup}`) | `account-menu`, `filter-popover`, `graph-tooltip` |
 | rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px (`{elevation.menu}`) | `menu`, `reset-menu`, `select-dark` |
 | #a7d4ff 0px 0px 0px 1px inset (`{elevation.ring-highlight}`) | `inspector`, `list-card` |
 | rgba(0, 0, 0, 0.5) 3px 3px 12px 0px (`{elevation.dialog}`) | `confirm-destructive`, `dialog` |
-| #000000 0px 0px 0px 1px (`{elevation.ring-strong}`) | `home-guide-card` |
+| #000000 0px 0px 0px 1px | `home-guide-card` |
 | #686d79 0px 0px 0px 1px (`{elevation.ring-composer}`) | `note-composer` |
 | #a49edb 0px 0px 0px 4px (`{elevation.slider-thumb}`) | `slider` |
-| #a49edb 0px 0px 0px 5px (`{elevation.slider-thumb}`) | `slider` |
+| #a49edb 0px 0px 0px 5px (`{elevation.slider-thumb-active}`) | `slider` |
 | #dde0e4 0px 0px 0px 1px inset (`{elevation.ring-field-dark}`) | `drawer-input` |
 | rgba(0, 0, 0, 0.3) 3px 3px 12px 0px (`{elevation.toast}`) | `toast` |
 
@@ -1341,7 +1341,7 @@ Grey rounded select with a chevron ("Logarithmic", "4"). Read as `layout-select`
 |---|---|
 | default | size 119.59 x 29; padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 4px `{radius.sm}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
 | hover | background rgba(0, 0, 0, 0.07) `{action.select-hover}` |
-| focus-visible | shadow #000000 0px 0px 0px 2px (`{elevation.ring-strong}`); outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
+| focus-visible | shadow #000000 0px 0px 0px 2px; outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | small (as the first row, except) | size 48.83 x 29 |
 | small, hover | background rgba(0, 0, 0, 0.07) `{action.select-hover}` |
 | advanced (as the first row, except) | size 85.86 x 29 |
@@ -1592,7 +1592,7 @@ The sort select, the filter button, the search field and the view buttons (curre
 |---|---|
 | sort | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
 | sort, hover | background rgba(0, 0, 0, 0.07) `{action.select-hover}` |
-| sort, focus-visible | shadow #000000 0px 0px 0px 2px (`{elevation.ring-strong}`); outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
+| sort, focus-visible | shadow #000000 0px 0px 0px 2px; outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | filter | size 156.97 x 26; padding 4px 12px `{spacing.1} {spacing.3}`; radius 48px `{radius.pill}`; background #000000 `{action.primary}`; text Plus Jakarta Sans 12/18 600, #ffffff `{text.inverse}`; cursor pointer |
 | filter, hover | background #333333 `{action.primary-hover}` |
 | filter, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
@@ -1732,7 +1732,7 @@ A linked card with a 180px image over a title and a short description. Read as `
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default | size 416 x 275; radius 16px `{radius.2xl}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/21 600, #000000 `{text.default}`; cursor pointer; icon 14 x 14, #000000 `{text.default}` |
-| hover | shadow #000000 0px 0px 0px 1px (`{elevation.ring-strong}`) |
+| hover | shadow #000000 0px 0px 0px 1px |
 | focus-visible | outline 1px auto #005fcc `{border.focus-browser}`, offset 1px |
 
 Parts:
@@ -1967,7 +1967,7 @@ The Retractions select ("Not set...") and its open list: white, 6px corners, the
 |---|---|
 | trigger | size 100.33 x 29; padding 4px 8px `{spacing.1} {spacing.2}`; gap 8px `{spacing.2}`; radius 4px `{radius.sm}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; text Plus Jakarta Sans 14/14 400, #686d79 `{text.secondary}`; cursor pointer; icon 16 x 16, #686d79 `{text.secondary}` |
 | trigger, hover | background rgba(0, 0, 0, 0.07) `{action.select-hover}` |
-| trigger, focus-visible | shadow #000000 0px 0px 0px 2px (`{elevation.ring-strong}`); outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
+| trigger, focus-visible | shadow #000000 0px 0px 0px 2px; outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | list | size 189.91 x 52; radius 6px `{radius.md}`; background #ffffff `{background.surface}`; shadow rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px (`{elevation.menu}`); text Plus Jakarta Sans 14/14 400, #000000 `{text.default}` |
 | option-highlighted | size 181.91 x 22; padding 4px 35px 4px 25px; radius 4px `{radius.sm}`; background #a7d4ff `{action.highlighted}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}` |
 | option | size 181.91 x 22; padding 4px 35px 4px 25px; radius 4px `{radius.sm}`; background transparent; text Plus Jakarta Sans 14/14 400, #201d1d `{text.primary}` |
@@ -1983,8 +1983,8 @@ Two thumbs on a 3px track: 12px dark thumbs with a 4px lavender ring. Read as `s
 |---|---|
 | default | size 293 x 20; padding 8px 12px `{spacing.2} {spacing.3}`; background transparent; text Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}` |
 | thumb (same: hover) | size 12 x 12; radius 10px; background #353535 `{component.drawer-row}`; shadow #a49edb 0px 0px 0px 4px (`{elevation.slider-thumb}`); text Plus Jakarta Sans 14/14 400, #ffffff `{text.inverse}`; cursor grab |
-| thumb, focus-visible | shadow #a49edb 0px 0px 0px 5px (`{elevation.slider-thumb}`) |
-| thumb, pressed | shadow #a49edb 0px 0px 0px 5px (`{elevation.slider-thumb}`); cursor grabbing |
+| thumb, focus-visible | shadow #a49edb 0px 0px 0px 5px (`{elevation.slider-thumb-active}`) |
+| thumb, pressed | shadow #a49edb 0px 0px 0px 5px (`{elevation.slider-thumb-active}`); cursor grabbing |
 
 Child layers that carry the look: span 269x3 background #f2f2f2 `{action.control}` radius 48px; span 269x3 background #000000 `{action.primary}` radius 48px; span 12x12 background #353535 `{component.drawer-row}` radius 10px shadow #a49edb 0px 0px 0px 4px (`{elevation.slider-thumb}`).
 
