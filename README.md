@@ -26,9 +26,14 @@ make serve
 the site and serves it at http://127.0.0.1:8800/:
 
 - **Gallery**: one card per package with a cover screenshot, its colour roles and
-  fonts, and a detail page with every screenshot, component crop and rendered
-  README. Search matches names, uses, tags and themes; press `/` to focus it.
-  "Copy agent prompt" copies instructions that point an agent at that package.
+  fonts. Each package's page reads in the same order, from a rail on the left:
+  Overview (its Brief), Colors, Typography, Spacing, Corner radius, Shadows,
+  Components, Assets (icons and screenshots), then Health and Files (every
+  Markdown file, rendered). The scales are the ones its DESIGN.md holds, and a
+  section the package has nothing for says "Not captured" with the reason.
+  Links take the form `#/<slug>/<section>`. Search matches names, uses, tags
+  and themes; press `/` to focus it. "Copy agent prompt" copies instructions
+  that point an agent at that package.
 - **Scorecard**: every package graded against the checklist in
   [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md), in the wording for its
   platform (web, mobile or desktop), as a heatmap with the evidence
