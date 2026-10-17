@@ -1115,7 +1115,7 @@
     },
     "C4": {
      "grade": "meets",
-     "evidence": "Recount ~89% token-first (raw: 312 heights, 54 text, 52 icons); 618/618 colour tokens from own class; dims by kind"
+     "evidence": "Recount all rows: 86% token-first, 624 raw (312 heights, 78 text, 52 icons); same count ChatGPT 75%, Claude 87%"
     },
     "C5": {
      "grade": "na",
