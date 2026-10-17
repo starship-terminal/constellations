@@ -314,7 +314,8 @@ def named_group(before, after, key_group=None, pair=False):
 def type_and_heights(text, ctx, height_row=False, pair_row=False, key_group=None):
     """One cell, one prose line or one JSON string. ctx is the section and row text. A quoted
     CSS rule ('css:file sel { ... }', up to the next <br> or closing bracket) is left as written."""
-    quoted = [(m.start(), m.end()) for m in re.finditer(r"css:[^{<]*\{[^}]*\}?|css:[^<)]*|\{[^}]*\}?", text)]
+    quote = lambda t: [(m.start(), m.end()) for m in re.finditer(r"css:[^{<]*\{[^}]*\}?|css:[^<)]*|\{[^}]*\}?", t)]
+    quoted = quote(text)
     inside = lambda i: any(a <= i < b for a, b in quoted)
     def font(m):
         if inside(m.start()):
@@ -324,6 +325,7 @@ def type_and_heights(text, ctx, height_row=False, pair_row=False, key_group=None
             cands = [c for c in cands if c[0].split(".")[1].lower() in ctx] or cands
         return f"`{cands[0][0]}` {m.group(0)}" if len(cands) == 1 else m.group(0)
     text = FONT.sub(font, text)
+    quoted = quote(text)  # the type references moved everything after them
     def height(m):
         if inside(m.start()) or text[m.start() - 1:m.start()] == ":":
             return m.group(0)  # a quoted declaration ('--web-ui_button-height:32px'), not a spec value

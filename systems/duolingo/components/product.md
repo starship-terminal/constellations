@@ -940,7 +940,7 @@ Tokens (light):
 | NEW WORD label + icon | color / fill | `dataViz.avatar.purple` #CE82FF (beetle, light) | lesson-light-select-default cl=w2K8w (#32), path (#35) |
 | PREVIOUS MISTAKE label | color | `status.warningText` #FF9600 (fox, light), derived, not captured: badge colour is inline, fox resolved in light | lesson-dark-previous-mistake #25 (dark only) |
 
-Type: title: duolingo-sans `typography.lesson.challengeHeader` 700 32px/40px (25px, line-height 1.25 below 700px) (lesson-dark-tile-hover #36; css:4358-6896adab.css ._3EOK0; css:app-f2ef02f8.css h1); badge label: duolingo-sans `typography.label.medium` 700 16px/16px uppercase, letter-spacing 0.64px (0.04em) (lesson-dark-tile-hover #32; css:4358-6896adab.css .w2K8w (text-label-medium))
+Type: title: duolingo-sans `typography.lesson.challengeHeader` 700 32px/40px (25px, line-height 1.25 below `breakpoint.md` 700px) (lesson-dark-tile-hover #36; css:4358-6896adab.css ._3EOK0; css:app-f2ef02f8.css h1); badge label: duolingo-sans `typography.label.medium` 700 16px/16px uppercase, letter-spacing 0.64px (0.04em) (lesson-dark-tile-hover #32; css:4358-6896adab.css .w2K8w (text-label-medium))
 
 Contains: none
 
