@@ -358,19 +358,22 @@ def fmt(d):
     return "; ".join(f"{k} {d[k]}" for k in ORDER if k in d).replace("|", "/")
 
 
-def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s and s.get("theme") == "dark"), None)
+def child_layers(c, theme="dark"):
+    st = next((s for s in c["states"].values() if "style" in s and s.get("theme") == theme), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
     if s["backgroundColor"] != "rgba(0, 0, 0, 0)" or s["boxShadow"] != "none" or s["borderTopWidth"] != "0px" or s["backgroundImage"] != "none":
         return None
-    THEME[0] = "dark"
+    THEME[0] = theme
     out = []
     for p in st["paint"][:3]:
-        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
+        node = p["node"].split(".")[0] + ("::" + p["node"].split("::")[1] if "::" in p["node"] else "")
+        bits = [node, " x ".join("%g" % round(float(n), 2) for n in re.findall(r"[\d.]+", p["size"])[:2])]
         if p.get("bg"):
             bits.append("background " + colour(p["bg"]))
+        if p.get("bgImage"):
+            bits.append("background " + colour(p["bgImage"], tokens=False))
         if p.get("border"):
             bits.append("border " + colour(p["border"].split(" | ")[0][2:], role="border"))
         if p.get("radius"):
@@ -624,9 +627,9 @@ for g, ids in groups.items():
             for name, d in rows:
                 W(f"| {name} | {fmt(d)} |")
             W()
-        cl = child_layers(c)
+        cl, cll = child_layers(c), child_layers(c, "light")
         if cl:
-            W(f"Child layers: {cl}")
+            W(f"Child layers: {cl}" + (f". In light: {cll}" if cll and cll != cl else ""))
             W()
 
 # --------------------------------------------------------------------------- icons

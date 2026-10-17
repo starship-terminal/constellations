@@ -20,7 +20,7 @@ Tallied over every measured state by the build script.
 - **Focus-visible, dark** (65 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (5); outline 2px solid #3a83f7 offset -2px (4); outline 1px auto #99c8ff offset 1px (4); outline 1px auto #99c8ff offset 0px (4); outline 2px solid #3566f0 offset 2px (4); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); outline 2px solid #2c67c5 offset 0px (3); outline 2px solid #3a83f7 offset 0px (1); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #ffffff @ 0.2 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1); outline 2px solid #3566f0 offset 1px (1); outline 2px solid #3566f0 offset 0px (1).
 - **Focus-visible, light** (65 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (5); outline 2px solid #3a83f7 offset -2px (4); outline 2px solid #3a83f7 offset 0px (4); outline 1px auto #005fcc offset 1px (4); outline 1px auto #005fcc offset 0px (4); outline 2px solid #3566f0 offset 2px (4); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #000000 @ 0.15 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1); outline 2px solid #3566f0 offset 1px (1); outline 2px solid #3566f0 offset 0px (1).
 - **Hover changes, dark** (71 hovered components, 24 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #ffffff @ 0.1 (18); inner layer #ffffff @ 0.1 → #ffffff @ 0.1 (3); backgroundColor #000000 @ 0 → #ffffff @ 0.0509804 (3); backgroundColor #303030 → #ffffff @ 0.1 (2); backgroundColor #ff6764 @ 0.1 → #ff6764 @ 0.2 (2); backgroundColor #ededed → #ededed @ 0.8 (2); backgroundColor #ededed @ 0.05 → #ededed @ 0.1 (2); backgroundColor #ffffff → #e8e8e8 (2).
-- **Hover changes, light** (71 hovered components, 24 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #000000 @ 0.05 (18); inner layer #000000 @ 0.05 → #000000 @ 0.05 (3); backgroundColor #000000 @ 0 → #000000 @ 0.0254902 (3); backgroundColor #f3f3f3 → #000000 @ 0.05 (2); backgroundColor #e02e2a @ 0.1 → #e02e2a @ 0.2 (2); backgroundColor #0d0d0d → #0d0d0d @ 0.8 (2); backgroundColor #0d0d0d @ 0.05 → #0d0d0d @ 0.1 (2); backgroundColor #ffffff → #e8e8e8 (2).
+- **Hover changes, light** (71 hovered components, 24 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #000000 @ 0.05 (18); inner layer #000000 @ 0.05 → #000000 @ 0.05 (3); backgroundColor #000000 @ 0 → #000000 @ 0.0254902 (3); backgroundColor #f3f3f3 → #000000 @ 0.05 (2); backgroundColor #e02e2a @ 0.1 → #e02e2a @ 0.2 (2); backgroundColor #0d0d0d → #0d0d0d @ 0.8 (2); backgroundColor #0d0d0d @ 0.05 → #0d0d0d @ 0.1 (2); backgroundColor #0d0d0d → #212121 (2).
 
 ### Tokens the measured components use
 
@@ -5898,18 +5898,18 @@ Light theme.
 |---|---|
 | Size (w x h) | 260 x 185 |
 | Padding | 20px |
-| Border | T: 1px solid #ffffff @ 0.15; R: none; B: none; L: none |
+| Border | T: 1px solid #000000 @ 0.1; R: none; B: none; L: none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
 | Font | -apple-system-body 16px/24px 400 |
 | Letter spacing | normal |
-| Colour | #ffffff |
-| Text node | h2.x1gqwrcx.xpugu0j.xdj266r: -apple-system-body 14px/20px 500, #ffffff, ls -0.2px |
+| Colour | #0d0d0d |
+| Text node | h2.x1gqwrcx.xpugu0j.xdj266r: -apple-system-body 14px/20px 500, #0d0d0d, ls -0.2px |
 | Transition | none |
-| Painted layers | section.x1y8v6su.x1o24gnf.x13fuv20 260.0x185.0 border T:1px solid #ffffff @ 0.15; button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
-| Ancestor paint | 1 up div.x1cho1rl.xz472uy.x5cu31j bg #000000 |
+| Painted layers | section.x1y8v6su.x1o24gnf.x13fuv20 260.0x185.0 border T:1px solid #000000 @ 0.1; button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px |
+| Ancestor paint | 1 up div.x1cho1rl.xz472uy.x5cu31j bg #fcfcfc |
 | How | at rest |
 
 Crops: `onb-nudge-default.png`, `onb-nudge-light.png`.
@@ -5949,15 +5949,15 @@ Light theme.
 | Gap | 6px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 999px | = | = | = |
-| Background | #ffffff | #e8e8e8 | = | #cdcdcd |
+| Background | #0d0d0d | #212121 | = | #303030 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #3566f0 offset 2px | = |
 | Font | -apple-system-body 14px/20px 600 | = | = | = |
 | Letter spacing | -0.08px | = | = | = |
-| Colour | #0d0d0d | = | = | = |
+| Colour | #ffffff | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #ffffff r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #e8e8e8 r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #ffffff r 999px outline 2px solid #3566f0 offset 2px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #cdcdcd r 999px |
+| Painted layers | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #0d0d0d r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #212121 r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #0d0d0d r 999px outline 2px solid #3566f0 offset 2px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #303030 r 999px |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
 
 Crops: `onb-login-header-default.png`, `onb-login-header-hover.png`, `onb-login-header-focus-visible.png`, `onb-login-header-pressed.png`, `onb-login-header-light.png`, `onb-login-header-light-hover.png`, `onb-login-header-light-focus-visible.png`, `onb-login-header-light-pressed.png`.
@@ -5995,17 +5995,17 @@ Light theme.
 | Size (w x h) | 128.8 x 44 | = | = | = |
 | Padding | 0px 12px | = | = | = |
 | Gap | 6px | = | = | = |
-| Border | 1px solid #ffffff @ 0.2 | = | = | = |
+| Border | 1px solid #000000 @ 0.2 | = | = | = |
 | Radius | 999px | = | = | = |
-| Background | #212121 | #303030 | = | #303030 |
+| Background | #ffffff | #f3f3f3 | = | #f3f3f3 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #3566f0 offset 2px | = |
 | Font | -apple-system-body 14px/20px 600 | = | = | = |
 | Letter spacing | -0.08px | = | = | = |
-| Colour | #ffffff | = | = | = |
+| Colour | #0d0d0d | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #303030 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #303030 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
+| Painted layers | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #f3f3f3 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #f3f3f3 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
 
 Crops: `onb-signup-header-default.png`, `onb-signup-header-hover.png`, `onb-signup-header-focus-visible.png`, `onb-signup-header-pressed.png`, `onb-signup-header-light.png`, `onb-signup-header-light-hover.png`, `onb-signup-header-light-focus-visible.png`, `onb-signup-header-light-pressed.png`.
@@ -6043,17 +6043,17 @@ Light theme.
 | Size (w x h) | 220 x 44 | = | = | = |
 | Padding | 8px 16px | = | = | = |
 | Gap | 6px | = | = | = |
-| Border | 1px solid #ffffff @ 0.2 | = | = | = |
+| Border | 1px solid #000000 @ 0.2 | = | = | = |
 | Radius | 999px | = | = | = |
-| Background | #212121 | = | = | = |
+| Background | #ffffff | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #3566f0 offset 2px | = |
 | Font | -apple-system-body 14px/18.6666px 500 | = | = | = |
 | Letter spacing | -0.2px | = | = | = |
-| Colour | #ffffff | = | = | = |
+| Colour | #0d0d0d | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | = | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | = |
+| Painted layers | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | = | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | = |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
 
 Crops: `onb-login-card-default.png`, `onb-login-card-hover.png`, `onb-login-card-focus-visible.png`, `onb-login-card-pressed.png`, `onb-login-card-light.png`, `onb-login-card-light-hover.png`, `onb-login-card-light-focus-visible.png`, `onb-login-card-light-pressed.png`.
@@ -6094,18 +6094,18 @@ Light theme.
 | Padding | 0px |
 | Border | none |
 | Radius | 20px |
-| Background | #303030 |
+| Background | #ffffff |
 | Box shadow | #000000 @ 0.22 0px 24px 64px 0px, #000000 @ 0.12 0px 4px 16px 0px |
 | Outline | none |
 | Font | -apple-system-body 16px/24px 400 |
 | Letter spacing | normal |
-| Colour | #ffffff |
-| Text node | h2.xorku9x.xcg35fi.x1h1fi3m: -apple-system-body 24px/32px 400, #ffffff |
+| Colour | #0d0d0d |
+| Text node | h2.xorku9x.xcg35fi.x1h1fi3m: -apple-system-body 24px/32px 400, #0d0d0d |
 | Transition | transform 0.3s cubic-bezier(0.2, 0, 0, 1) |
 | Transform | matrix(1, 0, 0, 1, -224, -252) |
-| Icon | 20 x 20, colour #ffffff |
+| Icon | 20 x 20, colour #0d0d0d |
 | Placeholder | "" #000000, opacity 1, 16px |
-| Painted layers | dialog.xm7sogi.x1jpqdmu.x1l9hn29 448.0x504.0 bg #303030 r 20px shadow #000000 @ 0.22 0px 24px 64px 0px, #000000 @ 0.12 0px 4px 16px 0px; section.x1f9q82l.xxny6gs.x1v1hne3 448.0x504.0 bg #303030; button.x6s0dn4.xgwjoxm.x1y0btm7 44.0x44.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 999px; a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px; a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px; button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
+| Painted layers | dialog.xm7sogi.x1jpqdmu.x1l9hn29 448.0x504.0 bg #ffffff r 20px shadow #000000 @ 0.22 0px 24px 64px 0px, #000000 @ 0.12 0px 4px 16px 0px; section.x1f9q82l.xxny6gs.x1v1hne3 448.0x504.0 bg #ffffff; button.x6s0dn4.xgwjoxm.x1y0btm7 44.0x44.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 999px; a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px; a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px; button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px |
 | How | at rest |
 
 Crops: `onb-dialog-default.png`, `onb-dialog-light.png`.
@@ -6145,19 +6145,19 @@ Light theme.
 | Size (w x h) | 364.66 x 47.96 | 365 x 48 | 365 x 48 | 365 x 48 |
 | Padding | 0px 16px 0px 12.0001px | = | = | = |
 | Gap | 8px | = | = | = |
-| Border | 1px solid #ffffff @ 0.2 | = | = | = |
+| Border | 1px solid #000000 @ 0.2 | = | = | = |
 | Radius | 999px | = | = | = |
-| Background | #212121 | #303030 | = | #414141 |
+| Background | #ffffff | #f3f3f3 | = | #e8e8e8 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #3566f0 offset 1px | = |
 | Font | -apple-system-body 16px/20px 500 | = | = | = |
 | Letter spacing | -0.08px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | span: -apple-system-body 16px/20px 500, #ffffff, ls -0.08px | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Text node | span: -apple-system-body 16px/20px 500, #0d0d0d, ls -0.08px | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 19.98 x 19.98, colour #ffffff | 20 x 20, colour #ffffff | 20 x 20, colour #ffffff | 20 x 20, colour #ffffff |
-| Painted layers | a.x6s0dn4.xgwjoxm.x1y0btm7 364.7x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #303030 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px outline 2px solid #3566f0 offset 1px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #414141 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
+| Icon | 19.98 x 19.98, colour #0d0d0d | 20 x 20, colour #0d0d0d | 20 x 20, colour #0d0d0d | 20 x 20, colour #0d0d0d |
+| Painted layers | a.x6s0dn4.xgwjoxm.x1y0btm7 364.7x48.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #f3f3f3 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px outline 2px solid #3566f0 offset 1px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #e8e8e8 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
 
 Crops: `onb-provider-default.png`, `onb-provider-hover.png`, `onb-provider-focus-visible.png`, `onb-provider-pressed.png`, `onb-provider-light.png`, `onb-provider-light-hover.png`, `onb-provider-light-focus-visible.png`, `onb-provider-light-pressed.png`.
@@ -6192,20 +6192,20 @@ Light theme.
 
 | Property | light | light-hover | light-focus-visible | light-error |
 |---|---|---|---|---|
-| Size (w x h) | 365 x 48 | = | = | 364.86 x 47.98 |
+| Size (w x h) | 365 x 48 | = | = | 364.97 x 48 |
 | Padding | 1px 16px | = | = | = |
-| Border | 1px solid #ffffff @ 0.15 | = | = | 1px solid #fa423e |
+| Border | 1px solid #000000 @ 0.1 | = | = | 1px solid #ba2623 |
 | Radius | 999px | = | = | = |
-| Background | #000000 | = | = | = |
+| Background | #fcfcfc | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #3566f0 offset 2px | = |
 | Font | -apple-system-body 16px/20px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
+| Colour | #0d0d0d | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | text | = | = | = |
-| Placeholder | "Email address" #cdcdcd, opacity 1, 16px | = | = | = |
-| Painted layers | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #000000 border T:1px solid #ffffff @ 0.15 / R:1px solid #ffffff @ 0.15 / B:1px solid #ffffff @ 0.15 / L:1px solid #ffffff @ 0.15 r 999px | = | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #000000 border T:1px solid #ffffff @ 0.15 / R:1px solid #ffffff @ 0.15 / B:1px solid #ffffff @ 0.15 / L:1px solid #ffffff @ 0.15 r 999px outline 2px solid #3566f0 offset 2px | input.x1pw6kkn.x7xwk5j.x1v3hlx4 364.9x48.0 bg #000000 border T:1px solid #fa423e / R:1px solid #fa423e / B:1px solid #fa423e / L:1px solid #fa423e r 999px |
+| Placeholder | "Email address" #5d5d5d, opacity 1, 16px | = | = | = |
+| Painted layers | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 999px | = | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 999px outline 2px solid #3566f0 offset 2px | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #fcfcfc border T:1px solid #ba2623 / R:1px solid #ba2623 / B:1px solid #ba2623 / L:1px solid #ba2623 r 999px |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | at rest, captured error |
 
 Other finders: error: `() => Q('input[type=email]')`; light-error: `() => Q('input[type=email]')`.
@@ -6222,7 +6222,7 @@ Dark theme.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 364.66 x 15.99 |
+| Size (w x h) | 364.86 x 15.99 |
 | Padding | 0px 16px |
 | Border | none |
 | Radius | 0px |
@@ -6240,7 +6240,7 @@ Light theme.
 
 | Property | light |
 |---|---|
-| Size (w x h) | 364.93 x 16 |
+| Size (w x h) | 364.66 x 15.99 |
 | Padding | 0px 16px |
 | Border | none |
 | Radius | 0px |
@@ -6249,8 +6249,8 @@ Light theme.
 | Outline | none |
 | Font | -apple-system-body 12px/16px 400 |
 | Letter spacing | normal |
-| Colour | #ff6764 |
-| Text node | span: -apple-system-body 12px/16px 400, #ff6764 |
+| Colour | #ba2623 |
+| Text node | span: -apple-system-body 12px/16px 400, #ba2623 |
 | Transition | none |
 | How | at rest |
 
@@ -6286,20 +6286,20 @@ Light theme.
 
 | Property | light | light-hover | light-focus-visible | light-pressed | light-after-error |
 |---|---|---|---|---|---|
-| Size (w x h) | 364.97 x 48 | 365 x 48 | 365 x 48 | 365 x 48 | 364.86 x 47.98 |
+| Size (w x h) | 364.66 x 47.96 | 365 x 48 | 365 x 48 | 365 x 48 | = |
 | Padding | 0px 16px | = | = | = | = |
 | Gap | 6px | = | = | = | = |
-| Border | 1px solid #ffffff | = | = | = | = |
+| Border | 1px solid #0d0d0d | = | = | = | = |
 | Radius | 999px | = | = | = | = |
-| Background | #ffffff | #e8e8e8 | = | #cdcdcd | = |
+| Background | #0d0d0d | #212121 | = | #303030 | = |
 | Box shadow | none | = | = | = | = |
 | Outline | none | = | 2px solid #3566f0 offset 0px | = | = |
 | Font | -apple-system-body 16px/20px 500 | = | = | = | = |
 | Letter spacing | -0.08px | = | = | = | = |
-| Colour | #0d0d0d | = | = | = | = |
+| Colour | #ffffff | = | = | = | = |
 | Transition | none | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
-| Painted layers | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #e8e8e8 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 999px outline 2px solid #3566f0 offset 0px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #cdcdcd border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 364.9x48.0 bg #ffffff border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 999px |
+| Painted layers | button.x6s0dn4.xgwjoxm.x1y0btm7 364.7x48.0 bg #0d0d0d border T:1px solid #0d0d0d / R:1px solid #0d0d0d / B:1px solid #0d0d0d / L:1px solid #0d0d0d r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #0d0d0d / R:1px solid #0d0d0d / B:1px solid #0d0d0d / L:1px solid #0d0d0d r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #0d0d0d border T:1px solid #0d0d0d / R:1px solid #0d0d0d / B:1px solid #0d0d0d / L:1px solid #0d0d0d r 999px outline 2px solid #3566f0 offset 0px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #303030 border T:1px solid #0d0d0d / R:1px solid #0d0d0d / B:1px solid #0d0d0d / L:1px solid #0d0d0d r 999px | = |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) | at rest, captured after-error |
 
 Other finders: after-error: `() => B('Continue')`; light-after-error: `() => B('Continue')`.

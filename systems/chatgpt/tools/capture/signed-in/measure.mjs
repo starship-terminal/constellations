@@ -532,6 +532,9 @@ async function measureSnap(browser, label, specs, out) {
 
   for (const theme of ['dark', 'light']) {
     if (theme === 'light') {
+      // The signed-in app switches on data-theme; the signed-out page on prefers-color-scheme.
+      // render.mjs renders light with both, so the readings do too.
+      await page.emulateMedia({ colorScheme: 'light' });
       await toLight(page);
       await page.waitForTimeout(600);
     }

@@ -103,7 +103,7 @@ The sidebar every page shares (`aside.LeftPanel`, 340 wide at 1440): a 52px head
 | light-hover | ::before `variant.primary.soft.bg-hover` |
 | light-pressed | ::before `variant.primary.ghost.bg-focus` |
 
-Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius 8px
+Child layers: button::before 36 x 36 background `variant.primary.soft.bg-hover` radius 8px
 
 #### Nav row (Images)
 
@@ -161,7 +161,7 @@ Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius
 | focus-visible | size 253 x `size.control.4xs`; background transparent; outline 1px auto #99c8ff, offset 1px; text `typography.text-sm`, rgba(237, 237, 237, 0.85) |
 | light-focus-visible | size 253 x `size.control.4xs`; background transparent; outline 1px auto #005fcc, offset 1px; text `typography.text-sm`, rgba(13, 13, 13, 0.85) |
 
-Child layers: a 253x20; a 328pxx36px
+Child layers: a 253 x 20; a::before 328 x 36
 
 #### Chat actions button
 
@@ -206,7 +206,7 @@ Child layers: a 253x20; a 328pxx36px
 | light-pressed | ::before `variant.primary.ghost.bg-focus` |
 | light-open | ::before `variant.primary.soft.bg-hover`, opacity 0.6 |
 
-Child layers: button 248.109pxx48px background `variant.primary.soft.bg-hover` radius 12px; div 24x24 background #8a8a8a radius 9999px
+Child layers: button::before 248.11 x 48 background `variant.primary.soft.bg-hover` radius 12px; div 24 x 24 background #8a8a8a radius 9999px
 
 #### Avatar
 
@@ -275,7 +275,7 @@ The 52px page header (`<header>`, fixed, z-index 30): the Chat / Work toggle cen
 | default | size 1100 x `size.height.height-toolbar`; padding 0 `spacing.2`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `text.header-upgrade`; icon 20 x 20, `text.header-upgrade` |
 | light | size 1100 x `size.height.height-toolbar`; padding 0 `spacing.2`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `text.tip`; icon 20 x 20, `text.tip` |
 
-Child layers: button 106.2x34 border 1px solid transparent radius 8px; button 36x36 border 1px solid transparent radius 8px
+Child layers: button 106.2 x 34 border 1px solid transparent radius 8px; button 36 x 36 border 1px solid transparent radius 8px
 
 #### Chat / Work segmented toggle
 
@@ -369,7 +369,7 @@ Child layers: button 106.2x34 border 1px solid transparent radius 8px; button 36
 | light-hover | ::before `variant.primary.soft.bg-hover` |
 | light-pressed | ::before `variant.primary.ghost.bg-focus` |
 
-Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius 8px
+Child layers: button::before 36 x 36 background `variant.primary.soft.bg-hover` radius 8px
 
 ### Home
 
@@ -588,7 +588,7 @@ A conversation: the user bubble in the accent colour, the assistant's markdown (
 | default | size 768 x 2695; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary`; icon 12 x 12, `role.text.secondary` |
 | light | size 768 x 2695; background transparent; text `fontSize.base`/26 `fontWeight.normal`, `role.text.primary`; icon 12 x 12, `role.text.secondary` |
 
-Child layers: th 128x33 border 1px solid `role.border.strong`; th 448x33 border 1px solid `role.border.strong`; th 128x33 border 1px solid `role.border.strong`
+Child layers: th 128 x 33 border 1px solid `role.border.strong`; th 448 x 33 border 1px solid `role.border.strong`; th 128 x 33 border 1px solid `role.border.strong`
 
 #### Markdown paragraph
 
@@ -699,7 +699,7 @@ Child layers: th 128x33 border 1px solid `role.border.strong`; th 448x33 border 
 | default | size 1408 x 447; background transparent; text `fontSize.sm`/16 `fontWeight.semibold`, `role.text.primary`; icon 12 x 12, `role.text.secondary` |
 | light | size 1408 x 447; background transparent; text `fontSize.sm`/16 `fontWeight.semibold`, `role.text.primary`; icon 12 x 12, `role.text.secondary` |
 
-Child layers: th 128x33 border 1px solid `role.border.strong`; th 448x33 border 1px solid `role.border.strong`; th 128x33 border 1px solid `role.border.strong`
+Child layers: th 128 x 33 border 1px solid `role.border.strong`; th 448 x 33 border 1px solid `role.border.strong`; th 128 x 33 border 1px solid `role.border.strong`
 
 #### Table header cell
 
@@ -712,7 +712,7 @@ Child layers: th 128x33 border 1px solid `role.border.strong`; th 448x33 border 
 | default | size 128 x 33; padding `spacing.2` `spacing.6` `spacing.2` 0; border B: 1px solid `role.border.strong`; background transparent; text `fontSize.sm`/16 `fontWeight.semibold`, `role.text.primary` |
 | light | size 128 x 33; padding `spacing.2` `spacing.6` `spacing.2` 0; border B: 1px solid `role.border.strong`; background transparent; text `fontSize.sm`/16 `fontWeight.semibold`, `role.text.primary` |
 
-Child layers: th 128x33 border 1px solid `role.border.strong`
+Child layers: th 128 x 33 border 1px solid `role.border.strong`
 
 #### Table cell
 
@@ -725,7 +725,7 @@ Child layers: th 128x33 border 1px solid `role.border.strong`
 | default | size 128 x 125; padding `spacing.2_5` `spacing.6` `spacing.2_5` 0; border B: 1px solid `role.border.subtle`; background transparent; text `fontSize.sm`/26 `fontWeight.semibold`, `role.text.primary` |
 | light | size 128 x 125; padding `spacing.2_5` `spacing.6` `spacing.2_5` 0; border B: 1px solid `role.border.subtle`; background transparent; text `fontSize.sm`/26 `fontWeight.semibold`, `role.text.primary` |
 
-Child layers: td 128x125 border 1px solid `role.border.subtle`
+Child layers: td 128 x 125 border 1px solid `role.border.subtle`
 
 #### Turn action button (Copy)
 
@@ -872,7 +872,7 @@ The popovers: the chat row menu, the composer + menu (a popover of buttons, not 
 | light | size 168.88 x `size.control.lg`; padding `spacing.1_5` `spacing.2_5`; radius `radius.xl`; background transparent; text `typography.text-sm`, `role.text.primary` |
 | light-hover, light-pressed | background `variant.primary.soft.bg-hover` |
 
-Child layers: span 18x18 background `variant.primary.solid.bg`
+Child layers: span 18 x 18 background `variant.primary.solid.bg`
 
 #### Menu item (Delete, danger)
 
@@ -887,7 +887,7 @@ Child layers: span 18x18 background `variant.primary.solid.bg`
 | light | size 168.88 x `size.control.lg`; padding `spacing.1_5` `spacing.2_5`; radius `radius.xl`; background transparent; text `typography.text-sm`, `text.danger` |
 | light-hover | background `variant.primary.soft.bg-hover` |
 
-Child layers: span 18x18 background `variant.danger.soft.text`
+Child layers: span 18 x 18 background `variant.danger.soft.text`. In light: span 18 x 18 background `variant.danger.solid.bg`
 
 #### Menu (composer +)
 
@@ -963,7 +963,7 @@ Child layers: span 18x18 background `variant.danger.soft.text`
 | light-hover | background `variant.primary.soft.bg-hover` |
 | light-checked | icon 18 x 18, `role.text.primary` |
 
-Child layers: span 12x12 background #04bb9f border 1px solid `role.border.default` radius 9999px
+Child layers: span 12 x 12 background #04bb9f border 1px solid `role.border.default` radius 9999px
 
 ### Dialogs
 
@@ -1139,7 +1139,7 @@ The file library: title, filter, grid and list view buttons, search, New, pill t
 | light-pressed | ::before `variant.primary.ghost.bg-focus`; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
 | light-selected | ::before `variant.primary.soft.bg-hover`; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
 
-Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius 9999px
+Child layers: button::before 36 x 36 background `variant.primary.soft.bg-hover` radius 9999px
 
 #### Text field (Search library)
 
@@ -1223,7 +1223,7 @@ Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius
 | default | size 1003 x 160; padding 48px 0; background transparent; text `typography.text-md`, `role.text.primary` |
 | light | size 1003 x 160; padding 48px 0; background transparent; text `typography.text-md`, `role.text.primary` |
 
-Child layers: button 77x24 background `variant.primary.solid.bg` border 1px solid `role.border.default` radius 9999px
+Child layers: button 77 x 24 background `variant.primary.solid.bg` border 1px solid `role.border.default` radius 9999px
 
 #### Small button (Try again)
 
@@ -1253,7 +1253,7 @@ Child layers: button 77x24 background `variant.primary.solid.bg` border 1px soli
 | default | size 1003 x 56; padding `spacing.4` 0; background transparent; text `typography.text-md`, `role.text.primary` |
 | light | size 1003 x 56; padding `spacing.4` 0; background transparent; text `typography.text-md`, `role.text.primary` |
 
-Child layers: button 77x24 background `variant.primary.solid.bg` border 1px solid `role.border.default` radius 9999px
+Child layers: button 77 x 24 background `variant.primary.solid.bg` border 1px solid `role.border.default` radius 9999px
 
 #### Loading placeholder (file card shimmer)
 
@@ -1266,7 +1266,7 @@ Child layers: button 77x24 background `variant.primary.solid.bg` border 1px soli
 | default | size 238.75 x 198.95; radius `radius.2xl`; background transparent; text `typography.text-md`, `role.text.primary` |
 | light | size 238.75 x 198.95; radius `radius.2xl`; background transparent; text `typography.text-md`, `role.text.primary` |
 
-Child layers: div 716.25pxx198.953px
+Child layers: div::before 716.25 x 198.95 background linear-gradient(90deg, rgba(175, 175, 175, 0.1), rgba(175, 175, 175, 0.16), rgba(175, 175, 175, 0.1)). In light: div::before 716.25 x 198.95 background linear-gradient(90deg, rgba(143, 143, 143, 0.1), rgba(143, 143, 143, 0.16), rgba(143, 143, 143, 0.1))
 
 ### Images
 
@@ -1347,7 +1347,7 @@ The plugin store: Plugins / Skills tabs, a search field and plugin rows. The ins
 | light | size 448 x 64.75; padding `spacing.2`; radius `radius.2xl`; background transparent; text `typography.text-md` at `fontWeight.medium`, `role.text.primary`; icon 18 x 18, `role.text.disabled` |
 | light-hover, light-pressed | background `bg.disabled` |
 
-Child layers: span 36x36 background `role.bg.page` border 1px solid `role.border.default` radius 8px
+Child layers: span 36 x 36 background `role.bg.page` border 1px solid `role.border.default` radius 8px
 
 #### List row link (plugin card, focus ring)
 
@@ -1392,7 +1392,7 @@ The settings page (a full page since the redesign, not a dialog): a left nav, th
 | default | size 766 x 60; padding `spacing.3` `spacing.4`; background transparent; ::after `token.border`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
 | light | size 766 x 60; padding `spacing.3` `spacing.4`; background transparent; ::after `token.border`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
 
-Child layers: div 734pxx1px background `token.border`; button 92.5x36 background `bg.disabled` border 1px solid transparent radius 9999px
+Child layers: div::after 734 x 1 background `token.border`; button 92.5 x 36 background `bg.disabled` border 1px solid transparent radius 9999px
 
 #### Switch (on)
 
@@ -1407,7 +1407,7 @@ Child layers: div 734pxx1px background `token.border`; button 92.5x36 background
 | light (same: light-hover, light-pressed) | size 32 x `size.control.4xs`; background transparent; text `typography.text-sm`, `role.text.primary` |
 | light-focus-visible | radius `radius.full`; focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
 
-Child layers: span 32x20 background `variant.primary.soft.ring` radius 9999px; span 16x16 background `variant.danger.solid.text` border 1px solid `variant.danger.solid.text` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px
+Child layers: span 32 x 20 background `variant.primary.soft.ring` radius 9999px; span 16 x 16 background `variant.danger.solid.text` border 1px solid `variant.danger.solid.text` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px. In light: span 32 x 20 background `bg.accent-action` radius 9999px; span 16 x 16 background `role.bg.raised` border 1px solid `variant.primary.soft.bg` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px
 
 #### Switch (off)
 
@@ -1422,7 +1422,7 @@ Child layers: span 32x20 background `variant.primary.soft.ring` radius 9999px; s
 | light (same: light-hover, light-pressed) | size 32 x `size.control.4xs`; background transparent; text `typography.text-sm`, `role.text.primary` |
 | light-focus-visible | radius `radius.full`; focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
 
-Child layers: span 32x20 background `bg.segmented-selected` radius 9999px; span 16x16 background `variant.danger.solid.text` border 1px solid `variant.danger.solid.text` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px
+Child layers: span 32 x 20 background `bg.segmented-selected` radius 9999px; span 16 x 16 background `variant.danger.solid.text` border 1px solid `variant.danger.solid.text` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px. In light: span 32 x 20 background `bg.segmented-selected` radius 9999px; span 16 x 16 background `role.bg.raised` border 1px solid `variant.primary.soft.bg` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px
 
 #### Outline button (Archive all)
 
@@ -1480,7 +1480,7 @@ Child layers: span 32x20 background `bg.segmented-selected` radius 9999px; span 
 | default | size 32 x `size.control.4xs`; background transparent |
 | light | size 32 x `size.control.4xs`; background transparent |
 
-Child layers: span 32x20 background `variant.primary.soft.ring` radius 9999px; span 16x16 background `variant.danger.solid.text` border 1px solid `variant.danger.solid.text` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px
+Child layers: span 32 x 20 background `variant.primary.soft.ring` radius 9999px; span 16 x 16 background `variant.danger.solid.text` border 1px solid `variant.danger.solid.text` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px. In light: span 32 x 20 background `bg.accent-action` radius 9999px; span 16 x 16 background `role.bg.raised` border 1px solid `variant.primary.soft.bg` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px -1px
 
 #### Select (notification channel)
 
@@ -1547,7 +1547,7 @@ Child layers: span 32x20 background `variant.primary.soft.ring` radius 9999px; s
 | default (same: hover) | size 766 x 62; padding `spacing.3` `spacing.4`; background transparent; ::after `token.border`; text `typography.text-sm` at `fontWeight.medium`, `role.text.link`; icon 18 x 18, `role.text.primary` |
 | light (same: light-hover) | size 766 x 62; padding `spacing.3` `spacing.4`; background transparent; ::after `token.border`; text `typography.text-sm` at `fontWeight.medium`, `role.text.link`; icon 18 x 18, `role.text.primary` |
 
-Child layers: div 734pxx1px background `token.border`; button 90.8x36 background `bg.disabled` border 1px solid transparent radius 9999px; button 67.8x36 background `component.button-danger.bg` border 1px solid transparent radius 9999px
+Child layers: div::after 734 x 1 background `token.border`; button 90.8 x 36 background `bg.disabled` border 1px solid transparent radius 9999px; button 67.8 x 36 background `component.button-danger.bg` border 1px solid transparent radius 9999px
 
 #### Link (archived chat title)
 
@@ -1605,7 +1605,7 @@ The Upgrade dialog: a full-screen sheet with a Personal / Business radio segment
 | default | size 1440 x 900; background transparent; text `fontSize.4xl`/40 `fontWeight.semibold`, `role.text.on-accent`; icon 20 x 20, `role.text.secondary` |
 | light | size 1440 x 900; background transparent; text `fontSize.4xl`/40 `fontWeight.semibold`, `role.text.primary`; icon 20 x 20, `role.text.secondary` |
 
-Child layers: main 1440x900 background `role.bg.surface`; button 32x32 border 1px solid transparent radius 9999px; div 352x44 background #424242 radius 20px
+Child layers: main 1440 x 900 background `role.bg.surface`; button 32 x 32 border 1px solid transparent radius 9999px; div 352 x 44 background #424242 radius 20px. In light: main 1440 x 900 background `bg.user-message-compact`; button 32 x 32 border 1px solid transparent radius 9999px; div 352 x 44 background #ececec radius 20px
 
 #### Radio segment (Business, not checked)
 
@@ -1709,7 +1709,7 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 | State | Values |
 |---|---|
 | default | size 260 x 185; padding `spacing.5`; border T: 1px solid `role.border.default`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.on-accent` |
-| light | size 260 x 185; padding `spacing.5`; border T: 1px solid rgba(255, 255, 255, 0.15); background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.inverse` |
+| light | size 260 x 185; padding `spacing.5`; border T: 1px solid `role.border.default`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
 
 #### Inverted button (Log in, header)
 
@@ -1723,10 +1723,10 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 | hover | background #e8e8e8 |
 | focus-visible | outline 2px solid #3566f0, offset 2px |
 | pressed | background `variant.secondary.ghost.text` |
-| light | size 64.03 x `size.control.2xl`; padding 0 `spacing.3`; radius 999px; background `role.bg.raised`; text `typography.text-sm` at `fontWeight.semibold`, `role.text.primary` |
-| light-hover | background `bg.activity-control` |
+| light | size 64.03 x `size.control.2xl`; padding 0 `spacing.3`; radius 999px; background `variant.primary.solid.bg`; text `typography.text-sm` at `fontWeight.semibold`, `role.text.inverse` |
+| light-hover | background `gray.800` |
 | light-focus-visible | outline 2px solid #3566f0, offset 2px |
-| light-pressed | background `gray.200` |
+| light-pressed | background `variant.primary.solid.bg-hover` |
 
 #### Secondary button (Sign up for free)
 
@@ -1740,10 +1740,10 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 | hover | background `surface.elevated-secondary` |
 | focus-visible | outline 2px solid #3566f0, offset 2px |
 | pressed | background `surface.elevated-secondary` |
-| light | size 128.8 x `size.control.2xl`; padding 0 `spacing.3`; border 1px solid rgba(255, 255, 255, 0.2); radius 999px; background `gray.800`; text `typography.text-sm` at `fontWeight.semibold`, `role.text.inverse` |
-| light-hover | background `variant.primary.solid.bg-hover` |
+| light | size 128.8 x `size.control.2xl`; padding 0 `spacing.3`; border 1px solid rgba(0, 0, 0, 0.2); radius 999px; background `role.bg.raised`; text `typography.text-sm` at `fontWeight.semibold`, `role.text.primary` |
+| light-hover | background `bg.user-message-compact` |
 | light-focus-visible | outline 2px solid #3566f0, offset 2px |
-| light-pressed | background `variant.primary.solid.bg-hover` |
+| light-pressed | background `bg.user-message-compact` |
 
 #### Secondary button (Log in, card)
 
@@ -1755,7 +1755,7 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 |---|---|
 | default (same: hover, pressed) | size 220 x `size.control.2xl`; padding `spacing.2` `spacing.4`; border 1px solid `role.border.strong`; radius 999px; background `role.bg.surface`; text `fontSize.sm`/18.66 `fontWeight.medium`, `role.text.on-accent` |
 | focus-visible | outline 2px solid #3566f0, offset 2px |
-| light (same: light-hover, light-pressed) | size 220 x `size.control.2xl`; padding `spacing.2` `spacing.4`; border 1px solid rgba(255, 255, 255, 0.2); radius 999px; background `gray.800`; text `fontSize.sm`/18.66 `fontWeight.medium`, `role.text.inverse` |
+| light (same: light-hover, light-pressed) | size 220 x `size.control.2xl`; padding `spacing.2` `spacing.4`; border 1px solid rgba(0, 0, 0, 0.2); radius 999px; background `role.bg.raised`; text `fontSize.sm`/18.66 `fontWeight.medium`, `role.text.primary` |
 | light-focus-visible | outline 2px solid #3566f0, offset 2px |
 
 #### Dialog (Log in or sign up)
@@ -1767,7 +1767,7 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 | State | Values |
 |---|---|
 | default | size 448 x 504; radius 20px; background `surface.elevated-secondary`; shadow rgba(0, 0, 0, 0.22) 0px 24px 64px 0px, rgba(0, 0, 0, 0.12) 0px 4px 16px 0px; text `fontSize.2xl`/32 `fontWeight.normal`, `role.text.on-accent`; transition transform 0.3s cubic-bezier(0.2, 0, 0, 1); transform translate(-224px, -252px); icon 20 x 20, `role.text.on-accent`; placeholder `role.text.on-accent` |
-| light | size 448 x 504; radius 20px; background `variant.primary.solid.bg-hover`; shadow rgba(0, 0, 0, 0.22) 0px 24px 64px 0px, rgba(0, 0, 0, 0.12) 0px 4px 16px 0px; text `fontSize.2xl`/32 `fontWeight.normal`, `role.text.inverse`; transition transform 0.3s cubic-bezier(0.2, 0, 0, 1); transform translate(-224px, -252px); icon 20 x 20, `role.text.inverse`; placeholder `variant.info.solid.text` |
+| light | size 448 x 504; radius 20px; background `role.bg.raised`; shadow rgba(0, 0, 0, 0.22) 0px 24px 64px 0px, rgba(0, 0, 0, 0.12) 0px 4px 16px 0px; text `fontSize.2xl`/32 `fontWeight.normal`, `role.text.primary`; transition transform 0.3s cubic-bezier(0.2, 0, 0, 1); transform translate(-224px, -252px); icon 20 x 20, `role.text.primary`; placeholder `variant.info.solid.text` |
 
 #### Outline button (Continue with Google)
 
@@ -1781,10 +1781,10 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 | hover | size 365 x `size.control.3xl`; background `surface.elevated-secondary`; icon 20 x 20, `role.text.on-accent` |
 | focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 1px; icon 20 x 20, `role.text.on-accent` |
 | pressed | size 365 x `size.control.3xl`; background `bg.user-message-compact`; icon 20 x 20, `role.text.on-accent` |
-| light | size 364.66 x 47.96; padding 0 `spacing.4` 0 12.0001px; border 1px solid rgba(255, 255, 255, 0.2); radius 999px; background `gray.800`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.inverse`; icon 19.98 x 19.98, `role.text.inverse` |
-| light-hover | size 365 x `size.control.3xl`; background `variant.primary.solid.bg-hover`; icon 20 x 20, `role.text.inverse` |
-| light-focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 1px; icon 20 x 20, `role.text.inverse` |
-| light-pressed | size 365 x `size.control.3xl`; background `variant.primary.solid.bg-active`; icon 20 x 20, `role.text.inverse` |
+| light | size 364.66 x 47.96; padding 0 `spacing.4` 0 12.0001px; border 1px solid rgba(0, 0, 0, 0.2); radius 999px; background `role.bg.raised`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.primary`; icon 19.98 x 19.98, `role.text.primary` |
+| light-hover | size 365 x `size.control.3xl`; background `bg.user-message-compact`; icon 20 x 20, `role.text.primary` |
+| light-focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 1px; icon 20 x 20, `role.text.primary` |
+| light-pressed | size 365 x `size.control.3xl`; background `bg.activity-control`; icon 20 x 20, `role.text.primary` |
 
 #### Text field (email)
 
@@ -1797,9 +1797,9 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 | default (same: hover) | size 365 x `size.control.3xl`; padding 1px `spacing.4`; border 1px solid `role.border.default`; radius 999px; background `role.bg.page`; text `fontSize.base`/20 `fontWeight.normal`, `role.text.on-accent`; placeholder `role.text.secondary` |
 | focus-visible | outline 2px solid #3566f0, offset 2px |
 | error | border 1px solid `variant.danger.ghost.text` |
-| light (same: light-hover) | size 365 x `size.control.3xl`; padding 1px `spacing.4`; border 1px solid rgba(255, 255, 255, 0.15); radius 999px; background `variant.info.solid.text`; text `fontSize.base`/20 `fontWeight.normal`, `role.text.inverse`; placeholder `gray.200` |
+| light (same: light-hover) | size 365 x `size.control.3xl`; padding 1px `spacing.4`; border 1px solid `role.border.default`; radius 999px; background `role.bg.page`; text `fontSize.base`/20 `fontWeight.normal`, `role.text.primary`; placeholder `role.text.secondary` |
 | light-focus-visible | outline 2px solid #3566f0, offset 2px |
-| light-error | size 364.86 x 47.98; border 1px solid `variant.danger.outline.text` |
+| light-error | size 364.97 x `size.control.3xl`; border 1px solid `variant.danger.surface.text` |
 
 #### Field error text (Email is not valid.)
 
@@ -1809,8 +1809,8 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 
 | State | Values |
 |---|---|
-| default | size 364.66 x 15.99; padding 0 `spacing.4`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `text.danger` |
-| light | size 364.93 x `size.icon.sm`; padding 0 `spacing.4`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, #ff6764 |
+| default | size 364.86 x 15.99; padding 0 `spacing.4`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `text.danger` |
+| light | size 364.66 x 15.99; padding 0 `spacing.4`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `variant.danger.surface.text` |
 
 #### Primary button (Continue)
 
@@ -1824,11 +1824,10 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 | hover | size 365 x `size.control.3xl`; background #e8e8e8 |
 | focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 0px |
 | pressed | size 365 x `size.control.3xl`; background `variant.secondary.ghost.text` |
-| light | size 364.97 x `size.control.3xl`; padding 0 `spacing.4`; border 1px solid `variant.primary.soft.bg`; radius 999px; background `role.bg.raised`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.primary` |
-| light-hover | size 365 x `size.control.3xl`; background `bg.activity-control` |
+| light (same: light-after-error) | size 364.66 x 47.96; padding 0 `spacing.4`; border 1px solid `variant.primary.solid.bg`; radius 999px; background `variant.primary.solid.bg`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.inverse` |
+| light-hover | size 365 x `size.control.3xl`; background `gray.800` |
 | light-focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 0px |
-| light-pressed | size 365 x `size.control.3xl`; background `gray.200` |
-| light-after-error | size 364.86 x 47.98 |
+| light-pressed | size 365 x `size.control.3xl`; background `variant.primary.solid.bg-hover` |
 
 ### Phone
 
@@ -1845,7 +1844,7 @@ The same app at 390 wide: the header, the two-row composer, the drawer, the user
 | default | size 390 x `size.height.height-toolbar`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.on-accent`; icon 20 x 20, `role.text.disabled` |
 | light | size 390 x `size.height.height-toolbar`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.disabled` |
 
-Child layers: div 36x36 background `role.bg.page` radius 8px; button 36pxx36px background `variant.primary.soft.bg-hover` radius 8px; button 36x36 border 1px solid transparent radius 8px
+Child layers: div 36 x 36 background `role.bg.page` radius 8px; button::before 36 x 36 background `variant.primary.soft.bg-hover` radius 8px; button 36 x 36 border 1px solid transparent radius 8px
 
 #### Phone composer
 
