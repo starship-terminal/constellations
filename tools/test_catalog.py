@@ -644,6 +644,23 @@ class RepositoryTest(unittest.TestCase):
     def test_catalog_checks_clean(self):
         self.assertEqual(catalog.check(), [])
 
+    def test_platform_is_required_and_must_be_known(self):
+        import copy
+        from unittest import mock
+        data = copy.deepcopy(catalog.load_catalog())
+        first, second = data["systems"][0], data["systems"][1]
+        first["platform"] = "tv"
+        del second["platform"]
+        with mock.patch.object(catalog, "load_catalog", return_value=data):
+            problems = catalog.check()
+        self.assertEqual(problems, [f"{first['slug']}: platform 'tv' is not one of web, mobile, desktop",
+                                    f"{second['slug']}: missing field platform"])
+
+    def test_every_platform_in_the_catalog_is_known(self):
+        platforms = {s["slug"]: s["platform"] for s in catalog.load_catalog()["systems"]}
+        self.assertTrue(set(platforms.values()) <= set(catalog.PLATFORMS))
+        self.assertEqual(platforms["hevy"], "mobile")
+
     def test_image_tags_come_from_path_words(self):
         self.assertEqual(catalog._tags_for(Path("screenshots/dark/d01-home.png")), ["dark"])
         self.assertEqual(catalog._tags_for(Path("screenshots/mobile-login-light-default.png")),

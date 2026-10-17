@@ -203,3 +203,11 @@
 label[for="__search"] {
   display: none !important;
 }
+
+/* A system page's done-when rule, under each criterion's title, for the package's platform. */
+.md-typeset .sc-done {
+  display: inline-block;
+  margin-top: 0.15rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.9em;
+}

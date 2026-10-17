@@ -171,14 +171,17 @@ from one of two rules the export cannot satisfy without inventing data:
 3. Run the three builders and open `style-guide.html` in both themes. Write
    the README in the [outline above](#the-readme), with a row in its file
    table for every top-level entry.
-4. Add an entry to [catalog.json](../catalog.json). The entry needs `tags` and a `preview`:
+4. Add an entry to [catalog.json](../catalog.json). The entry needs a `platform`,
+   one of `web`, `mobile` or `desktop` for what the product runs on (the
+   scorecard grades it against that platform's wording), `tags`, and a `preview`:
    a cover screenshot and the token paths for its swatches (`page`,
    `surface`, `text`, `muted`, `accent`, `border` per theme) and fonts. Copy
    an existing entry, then run `make design-md` and `make check`, which
    resolves every token path, fails on one that does not exist, and fails if
    the package's `DESIGN.md` is missing or stale.
 5. Review the package against [scorecard/criteria.json](../scorecard/criteria.json)
-   and merge the grades with `python3 tools/grade.py --write --review
+   in its platform's wording (`python3 tools/grade.py --criteria <slug>` prints
+   it) and merge the grades with `python3 tools/grade.py --write --review
    <slug>=<grades.json>`. That writes its Health section and its row in the
    root README's catalog table.
 6. Keep anything private out of the folder: account names, chat titles,

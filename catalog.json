@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "about": "One entry per package under systems/. Paths are relative to the repository root. Every package has README.md (the entry) and style-guide.html at its top level; docs/PACKAGE.md describes what sits underneath. tags are for search and filtering. preview names the gallery cover screenshot and the token paths the catalog site resolves into swatches and fonts, so every value shown traces back to tokens. An empty widths list means the package README is the place to look. Run `make check` after editing. designMd, where present, overrides the token path prefixes `make design-md` reads for a package's DESIGN.md (colors, typography, rounded, spacing); the defaults are the swatches' semantic set and core.typography, core.radius, core.spacing or core.space.",
+  "about": "One entry per package under systems/. Paths are relative to the repository root. Every package has README.md (the entry) and style-guide.html at its top level; docs/PACKAGE.md describes what sits underneath. tags are for search and filtering. preview names the gallery cover screenshot and the token paths the catalog site resolves into swatches and fonts, so every value shown traces back to tokens. An empty widths list means the package README is the place to look. platform is web, mobile or desktop: the scorecard grades the package against that platform's wording of each criterion (scorecard/criteria.json). Run `make check` after editing. designMd, where present, overrides the token path prefixes `make design-md` reads for a package's DESIGN.md (colors, typography, rounded, spacing); the defaults are the swatches' semantic set and core.typography, core.radius, core.spacing or core.space.",
   "categories": {
     "learning": "Learning",
     "ai-chat": "AI chat",
@@ -16,6 +16,7 @@
       "name": "Duolingo",
       "url": "https://www.duolingo.com",
       "category": "learning",
+      "platform": "web",
       "goodFor": "Gamified learning: lesson flow, streaks, leaderboards, chunky 3D buttons, a mascot-led brand",
       "tags": [
         "web",
@@ -78,6 +79,7 @@
       "name": "Brilliant",
       "url": "https://brilliant.org",
       "category": "learning",
+      "platform": "web",
       "goodFor": "Interactive problem-solving lessons, course paths, a calm editorial learning UI (Panda CSS tokens)",
       "tags": [
         "web",
@@ -136,6 +138,7 @@
       "name": "Gemini Notebook (NotebookLM)",
       "url": "https://notebook.google.com",
       "category": "ai-research",
+      "platform": "web",
       "goodFor": "Source-grounded AI workspace: sources panel, chat, studio outputs; near-monochrome surfaces with pill buttons (luminous UI)",
       "tags": [
         "web",
@@ -196,6 +199,7 @@
       "name": "Coursera",
       "url": "https://www.coursera.org",
       "category": "learning",
+      "platform": "web",
       "goodFor": "Course catalogue, course and module pages, course cards, a mature enterprise design system (386 --cds-* variables)",
       "tags": [
         "web",
@@ -254,6 +258,7 @@
       "name": "Gauth",
       "url": "https://www.gauth.com",
       "category": "learning",
+      "platform": "web",
       "goodFor": "AI tutor learning app: course catalogue, unit pages, lesson players with an Ask Tutor panel",
       "tags": [
         "web",
@@ -304,6 +309,7 @@
       "name": "ResearchRabbit",
       "url": "https://www.researchrabbit.ai",
       "category": "ai-research",
+      "platform": "web",
       "goodFor": "Interactive citation graph beside a list: node and edge styling, canvas interaction (see graph.md)",
       "tags": [
         "web",
@@ -357,6 +363,7 @@
       "name": "Manus",
       "url": "https://manus.im/app",
       "category": "ai-agent",
+      "platform": "web",
       "goodFor": "Agent app shell: multi-section sidebar, a Library of agent outputs by type and by day, task threads with deliverables",
       "tags": [
         "web",
@@ -417,6 +424,7 @@
       "name": "ChatGPT",
       "url": "https://chatgpt.com",
       "category": "ai-chat",
+      "platform": "web",
       "goodFor": "The baseline chat UI: thread, composer, sidebar history, menus, dialogs, search, settings pages",
       "tags": [
         "web",
@@ -476,6 +484,7 @@
       "name": "Claude",
       "url": "https://claude.ai",
       "category": "ai-chat",
+      "platform": "web",
       "goodFor": "A quiet chat shell with a serif model voice: composer, thread, Artifacts, Projects, settings (cds tokens)",
       "tags": [
         "web",
@@ -542,6 +551,7 @@
       "name": "Hevy",
       "url": "https://www.hevyapp.com",
       "category": "fitness",
+      "platform": "mobile",
       "goodFor": "Native iOS workout logging: dense set table, one blue accent, pale grey fills, small corners, iOS 26 glass chrome, rest timer",
       "tags": [
         "ios",
@@ -602,6 +612,7 @@
       "name": "TokenTracker",
       "url": "https://github.com/xiufengsun/TokenTracker",
       "category": "productivity",
+      "platform": "web",
       "goodFor": "Local AI usage dashboard: borderless sidebar, rounded content panel, hairline cards, one green accent for money, dense tables, limits bars",
       "tags": [
         "web",
@@ -657,6 +668,7 @@
       "name": "Linear",
       "url": "https://linear.app",
       "category": "productivity",
+      "platform": "web",
       "goodFor": "Dense, keyboard-first product UI in dark and light: issue boards, issue detail, menus, settings tables; plus the public marketing site",
       "tags": [
         "web",
@@ -734,6 +746,7 @@
       "name": "Shopify Polaris (React archive)",
       "url": "https://github.com/Shopify/polaris-react-archive",
       "category": "component-library",
+      "platform": "web",
       "goodFor": "Admin and commerce UI built from a published component library: semantic colour roles, buttons, cards, banners",
       "tags": [
         "web",

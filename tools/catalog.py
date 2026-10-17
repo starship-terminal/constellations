@@ -49,8 +49,11 @@ REQUIRED_FILES = ("README.md", "style-guide.html", "tools")
 # entry its README's file table does not describe. Each Health section repeats the gaps.
 STANDARD_PARTS = ("README.md", "DESIGN.md", "tokens.json", "style-guide.html", "components.md",
                   "patterns.md", "components/", "icons/", "screenshots/", "raw/", "tools/")
-REQUIRED_FIELDS = ("slug", "name", "url", "category", "goodFor", "shape", "captured",
+REQUIRED_FIELDS = ("slug", "name", "url", "category", "platform", "goodFor", "shape", "captured",
                    "themes", "entry", "tokens", "styleGuide", "preview", "tags")
+# What the product runs on. The scorecard grades a package against its platform's wording
+# of each criterion (scorecard/criteria.json); web is the base wording, `doneWhen`.
+PLATFORMS = ("web", "mobile", "desktop")
 
 
 def load_catalog() -> dict:
@@ -1002,6 +1005,8 @@ def check() -> list[str]:
         for field in REQUIRED_FIELDS:
             if field not in s:
                 problems.append(f"{slug}: missing field {field}")
+        if "platform" in s and s["platform"] not in PLATFORMS:
+            problems.append(f"{slug}: platform {s['platform']!r} is not one of {', '.join(PLATFORMS)}")
         if not (ROOT / "systems" / slug).is_dir():
             problems.append(f"{slug}: systems/{slug} does not exist")
             continue

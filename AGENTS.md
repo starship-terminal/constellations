@@ -21,7 +21,7 @@ per product under `systems/<slug>/`, indexed in [catalog.json](catalog.json).
 ## Using a style from another project
 
 1. Find the package in [catalog.json](catalog.json) by `slug`, `category`,
-   `goodFor` or `tags` (platform, density, mood and layout words such as
+   `platform` (`web`, `mobile` or `desktop`), `goodFor` or `tags` (platform, density, mood and layout words such as
    `ios`, `dense`, `chat`, `sidebar`). `python3 tools/catalog.py find dark
    dense` ranks them for you. Every package lives at `systems/<slug>/`.
 2. Read its `README.md` in full before anything else. It lists what was
@@ -79,8 +79,8 @@ illustrations or brand colours into something that ships
 - **New packages follow the layout** in
   [docs/PACKAGE.md](docs/PACKAGE.md#layout), with the README in its outline,
   and label every value ([docs/EVIDENCE.md](docs/EVIDENCE.md)). Add each one
-  to [catalog.json](catalog.json), with `tags` and a `preview` block, in the
-  same commit ([docs/PACKAGE.md](docs/PACKAGE.md) has the steps).
+  to [catalog.json](catalog.json), with `platform`, `tags` and a `preview`
+  block, in the same commit ([docs/PACKAGE.md](docs/PACKAGE.md) has the steps).
 - **Health is generated.** Every package README's `## Health` section and the
   catalog table in [README.md](README.md) are written by `make grade`
   ([tools/health.py](tools/health.py)) from the newest scorecard snapshot and
@@ -113,6 +113,17 @@ illustrations or brand colours into something that ships
   `python3 tools/grade.py --write --review <slug>=<grades.json>`, adding `--method "<text>"` to say how the review was done (it replaces the carried-over account, so cover every review still in the scorecard). Criteria marked `capture` in `scorecard/criteria.json` (C5, V1,
   V2) are not applicable to a captured package; never grade them from a
   capture.
+- **Grade a package against its platform's wording.** Each catalog entry has a
+  `platform` (`web`, `mobile` or `desktop`). In `scorecard/criteria.json` a
+  criterion's `doneWhen` is the web wording, and `platforms` holds the mobile
+  or desktop wording where it differs; a platform not listed uses `doneWhen`.
+  `python3 tools/grade.py --criteria <slug>` prints the wording a reviewer of
+  that package grades against. Each snapshot records the platform a package's
+  reviewed grades were set against, and `make check` warns when that wording
+  differs from the wording for its platform now, until a `--review` sets them
+  again. Change a wording only with a rubric version bump, and re-review every
+  package whose platform it touches: a wording edit on its own does not raise
+  that warning.
 - **The published site never includes the gallery.** The Pages workflow
   removes `site/gallery/` and encrypts every page with StatiCrypt before it
   deploys, and fails if readable text or a search index entry remains. Search
