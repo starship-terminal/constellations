@@ -9,6 +9,7 @@
 // lesson's own Not now, Continue (the audio gate), Pause, Settings, Speed and chapters, a story card's
 // Explore, which opens a published story, the buttons that open the Sign in and Gauth PLUS dialogs, the
 // footer's language select (opened, nothing chosen), and one option of the science lesson's practice check-in.
+// The Sign in field gets name@example.com (a reserved example domain) so its button enables; nothing is submitted.
 import fs from 'fs';
 import { M, closePromo, openStory, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
@@ -128,7 +129,13 @@ const desktop = {
   } },
   news: { path: '/news', run: async (p, S) => { await S.view('default'); await S.full(); } },
   // added on the 2026-10-17 refresh. Dialogs are opened and closed; nothing in them is chosen, typed or pressed.
-  signin: { path: '/', run: async (p, S) => { await p.locator(M('pc-header_loginEntry')).first().click(); await wait(p, 2500); await S.view('dialog'); } },
+  signin: { path: '/', run: async (p, S) => {
+    await p.locator(M('pc-header_loginEntry')).first().click(); await wait(p, 2500); await S.view('dialog');
+    // name@example.com typed so the brand-red Sign in enables; it is never pressed
+    await step('filled', async () => { await p.locator('input[placeholder="E-mail address"]').click(); await p.keyboard.type('name@example.com', { delay: 10 }); await wait(p, 700); await p.locator(M('pc-login-modal-view_account-btn')).hover(); await wait(p, 500); await S.view('filled'); });
+    // the sign-up view with its password field focused (never typed into), showing the rule line
+    await step('signup', async () => { await p.locator('[data-e2e="auth-open-signup"]').click(); await wait(p, 1800); await p.locator('input[type=password]').first().focus(); await wait(p, 700); await S.view('signup-focused'); });
+  } },
   'plus-dialog': { path: '/', run: async (p, S) => { await p.locator(M('side-menu-small-cards_btn')).first().click(); await wait(p, 3000); await S.view('default'); } },
   plus: { path: '/plus', run: async (p, S) => { await S.view('default'); await S.full(); } },
   footer: { path: '/', run: async (p, S) => { const sel = p.locator(M('styles_select') + ' .ant-select').first(); await sel.scrollIntoViewIfNeeded(); await wait(p, 600); await sel.click(); await wait(p, 1200); await S.view('language-open'); } },
