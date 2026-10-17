@@ -282,7 +282,7 @@ def props(v):
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role="border")}")
+            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role='border')}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
@@ -290,21 +290,21 @@ def props(v):
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
         o["radius"] = radius_tok(rad)
-    o["background"] = colour(s["backgroundColor"], role="bg")
+    o["background"] = colour(s["backgroundColor"], role='bg')
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
-        o["image"] = colour(img, role="image")[:200]
+        o["image"] = colour(img, role='image')[:200]
     if s["boxShadow"] != "none":
         o["shadow"] = shadow_text(s["boxShadow"])
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], role="border")}, offset {s['outlineOffset']}"
+        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], role='border')}, offset {s['outlineOffset']}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('fontStyle', 'normal'))}, {colour(t['color'], role="text")}"
+        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('fontStyle', 'normal'))}, {colour(t['color'], role='text')}"
         if t.get("textDecorationLine") not in (None, "none"):
             o["text"] += f", {t['textDecorationLine']}"
     else:
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'], s.get('fontStyle', 'normal'))}, {colour(s['color'], role="text")}"
+        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'], s.get('fontStyle', 'normal'))}, {colour(s['color'], role='text')}"
         if s["textDecorationLine"] != "none":
             o["text"] += f", {s['textDecorationLine']}"
     if s["opacity"] != "1":
@@ -322,9 +322,9 @@ def props(v):
             o["transition"] = ", ".join(parts)
     if v.get("icon") and 0 < v["icon"]["w"] < 120:
         ic = v["icon"]
-        o["icon"] = f"{px(ic['w'])} x {px(ic['h'])}, {colour(ic['stroke'] if ic['fill'] == 'none' and ic['stroke'] != 'none' else ic['color'], role="text")}"
+        o["icon"] = f"{px(ic['w'])} x {px(ic['h'])}, {colour(ic['stroke'] if ic['fill'] == 'none' and ic['stroke'] != 'none' else ic['color'], role='text')}"
     if v.get("placeholder"):
-        o["placeholder"] = colour(v["placeholder"]["color"], role="text")
+        o["placeholder"] = colour(v["placeholder"]["color"], role='text')
     return o
 
 
@@ -380,14 +380,14 @@ def part(name, b, origin=None):
     m = re.match(r"(\d+) ([\d.]+)px/([\d.a-z]+) (.*)", f)
     if m and b.get("text") is not None or (m and b.get("tag") in ("p", "h1", "h2", "h3", "h4", "h5", "span", "label", "a", "button", "input")):
         lh = "normal" if m.group(3) == "normal" else px(m.group(3))
-        bits.append(f"{m.group(4)} {px(m.group(2))}/{lh} {m.group(1)}{' italic' if b.get('fontStyle') == 'italic' else ''}, {colour(b['color'], role="text")}")
+        bits.append(f"{m.group(4)} {px(m.group(2))}/{lh} {m.group(1)}{' italic' if b.get('fontStyle') == 'italic' else ''}, {colour(b['color'], role='text')}")
     for k, lab in (("bg", "background"), ("radius", "radius"), ("padding", "padding"), ("margin", "margin"), ("gap", "gap"), ("border", "border"), ("boxShadow", "shadow")):
         if b.get(k) and b[k] not in ("0px", "normal"):
             val = (colour(b[k], role=k) if k in ("bg", "border") else shadow_text(b[k]) if k == "boxShadow"
                    else space_tok(b[k]) if k in ("padding", "margin", "gap") else radius_tok(b[k]) if k == "radius" else b[k])
             bits.append(f"{lab} {val}")
     if b.get("bgImage"):
-        bits.append("image " + colour(b["bgImage"], role="image")[:110])
+        bits.append("image " + colour(b["bgImage"], role='image')[:110])
     if b.get("opacity"):
         bits.append(f"opacity {b['opacity']}")
     if b.get("text"):
@@ -659,7 +659,7 @@ cwhere = defaultdict(set)
 for k, v in first_state.items():
     s = v["style"]
     for prop in ("backgroundColor", "color"):
-        c = colour(s[prop], role="bg" if prop == "backgroundColor" else "text")
+        c = colour(s[prop], role='bg' if prop == "backgroundColor" else "text")
         if c != "transparent":
             cc[(prop, c)] += 1
             cwhere[(prop, c)].add(k)
@@ -729,7 +729,7 @@ for k, c in C.items():
                 continue
             s_ = v["style"]
             if s_["outlineStyle"] != "none" and float(s_["outlineWidth"].replace("px", "")) > 0:
-                ring[f"{s_['outlineWidth']} {s_['outlineStyle']} {colour(s_['outlineColor'], role="border")}, offset {s_['outlineOffset']}"].append(k)
+                ring[f"{s_['outlineWidth']} {s_['outlineStyle']} {colour(s_['outlineColor'], role='border')}, offset {s_['outlineOffset']}"].append(k)
             elif diff(props(v), props(bv)):
                 changed_f.append(k)
             else:
@@ -773,7 +773,7 @@ W("|---|---|---|---|---|---|---|---|")
 reg = OrderedDict()
 for pk, pv in PG.items():
     for rn, r in pv.get("regions", {}).items():
-        key = (rn, px(r["x"]), px(r["y"]), px(r["w"]), px(r["h"]), colour(r["bg"], role="bg") if r.get("bg") else "-", r.get("radius", "-"))
+        key = (rn, px(r["x"]), px(r["y"]), px(r["w"]), px(r["h"]), colour(r["bg"], role='bg') if r.get("bg") else "-", r.get("radius", "-"))
         reg.setdefault(key, []).append(pk)
 for key, pks in sorted(reg.items(), key=lambda kv: (kv[0][0], kv[1][0])):
     W(f"| {' | '.join(key)} | {', '.join(pks) if len(pks) <= 4 else f'{pks[0]} and {len(pks) - 1} more'} |")
@@ -791,7 +791,7 @@ for k in SHAPES:
     p = props(st)
     if (p["background"] == "transparent" or "radius" not in p) and st.get("paint"):
         p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", ""), role="bg") or "-", shadow=shadow_text(p0.get("shadow", "")) or "none")
+        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", ""), role='bg') or "-", shadow=shadow_text(p0.get("shadow", "")) or "none")
     W(f"| [{C[k]['name']}](#{slug(C[k]['name'])}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
@@ -882,9 +882,9 @@ for g in group_order:
             for p in st0["paint"][:3]:
                 bits = [p["node"].split(".")[0] if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
                 if p.get("bg"):
-                    bits.append("background " + colour(p["bg"], role="bg"))
+                    bits.append("background " + colour(p["bg"], role='bg'))
                 if p.get("border"):
-                    bits.append("border " + colour(p["border"].split(" | ")[0][2:], role="border"))
+                    bits.append("border " + colour(p["border"].split(" | ")[0][2:], role='border'))
                 if p.get("radius"):
                     bits.append("radius " + p["radius"])
                 if p.get("shadow"):
