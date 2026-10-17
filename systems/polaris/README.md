@@ -276,7 +276,7 @@ Screenshots 01 to 15 replaced the 2026-09-25 originals (taken at 1327 px through
 
 ## Import into Figma, Paper or similar
 
-Unzip `polaris-design-library.zip`. Import a board from `boards/` or individual SVGs from `components/`; original icon vectors live in `icons/`. Importers vary in text, clipping and font handling. Install Inter before importing. SVGs contain ordinary paths/rectangles/text, with no HTML foreignObject dependency. They are editable references, not native auto-layout components, variants or linked instances. Native Paper/Figma import was not exercised in this environment.
+Import a board from [boards/](boards) or individual SVGs from [components/](components); original icon vectors live in [icons/](icons). Importers vary in text, clipping and font handling. Install Inter before importing. SVGs contain ordinary paths/rectangles/text, with no HTML foreignObject dependency. They are editable references, not native auto-layout components, variants or linked instances. Native Paper/Figma import was not exercised in this environment.
 
 For Tokens Studio, import [tokens.json](tokens.json) as token sets, enable `light` and keep `core` enabled as a source: theme colours are aliases into the `core` ramps. Dimension values stay in source rem units. Complex shadows, motion strings and other unsupported values retain the `other` type rather than a misleading conversion. Use raw JSON/CSS for lossless source values. To create a production design library, map semantic tokens to your tool's variables and turn the imported redraws into native components with constraints and variants.
 
