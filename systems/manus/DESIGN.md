@@ -661,6 +661,8 @@ colors:
   component-theme-card-hover-bg: "rgba(55, 53, 47, 0.039)"
   component-theme-card-hover-text: "#1a1a1a"
   component-theme-card-hover-pressed-bg: "rgba(55, 53, 47, 0.059)"
+  component-toast-default-bg: "rgba(0, 0, 0, 0.902)"
+  component-toast-default-border: "rgba(255, 255, 255, 0.2)"
   component-tooltip-default-bg: "rgba(0, 0, 0, 0.902)"
   component-tooltip-default-text: "#ffffff"
   component-topbar-more-button-hover-bg: "rgba(55, 53, 47, 0.039)"
@@ -1428,6 +1430,8 @@ components:
     textColor: "{colors.component-theme-card-hover-text}"
   theme-card-hover-pressed:
     backgroundColor: "{colors.component-theme-card-hover-pressed-bg}"
+  toast-default:
+    backgroundColor: "{colors.component-toast-default-bg}"
   tooltip-default:
     backgroundColor: "{colors.component-tooltip-default-bg}"
     textColor: "{colors.component-tooltip-default-text}"
@@ -1603,7 +1607,7 @@ Corner radii from `core.radius`: `row` 10px, `small` 8px, `card` 12px, `composer
 
 ## Components
 
-279 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+280 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
@@ -1612,12 +1616,12 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 | Pattern | What Manus does | See |
 |---|---|---|
 | App shell and navigation | A 300px sidebar holds everything: nav tabs, Projects, Tasks, a share banner and the account row; it folds to a 52px rail and becomes a drawer on a phone. There is no top navigation, only a 48px bar with the model picker and plan. | [home-dark](screenshots/home-dark.png), [home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png) |
-| Forms and validation | Fields stack under 14px labels in a small dialog; the primary button stays disabled until the required field has text, and nothing explains why. The invite email enables Send for any text: the format is checked only on submit. | [settings-dark-create-key](screenshots/settings-dark-create-key.png), [settings-dark-create-key-typed](screenshots/settings-dark-create-key-typed.png), [invite-dark-email-typed](screenshots/invite-dark-email-typed.png) |
+| Forms and validation | Fields stack under 14px labels in a small dialog; the primary button stays disabled until the required field has text, and nothing explains why. The invite email enables Send for any text: the format is checked only on submit, and a bad address is reported by a toast, not on the field. | [settings-dark-create-key](screenshots/settings-dark-create-key.png), [settings-dark-create-key-typed](screenshots/settings-dark-create-key-typed.png), [invite-dark-email-typed](screenshots/invite-dark-email-typed.png), [invite-dark-email-error](screenshots/invite-dark-email-error.png) |
 | Empty | An empty page offers starting points rather than an illustration: Automations shows three example cards and one Get started button. | [automations-dark](screenshots/automations-dark.png) |
 | Loading | Lists load behind pulsing grey rows (the sidebar's task list); a pane that fetches shows one small ring where the content will be. | [settings-dark-usage-loading](screenshots/settings-dark-usage-loading.png), [nav-skeleton-default](components/crops/nav-skeleton-default.png) |
-| Error | Not seen; no failed request or invalid submit was triggered. | |
+| Error | Errors are toasts: "Invalid email address." with a red alert icon, top centre, gone after about 6.3s. The field that caused it does not change. No failed request was seen. | [invite-dark-email-error](screenshots/invite-dark-email-error.png), [invite-light-email-error](screenshots/invite-light-email-error.png) |
 | Destructive confirmation | Delete sits alone in the row's popover, in red with a trash icon. Choosing it opens a small dialog: the question, "This action cannot be undone.", then Cancel (outlined) and Delete (red, filled) at the end. | [settings-dark-key-menu](screenshots/settings-dark-key-menu.png), [settings-dark-delete-confirm](screenshots/settings-dark-delete-confirm.png) |
-| Feedback after an action | Toasts mount in a fixed list at the top centre (`top 28px`, z-index 1050). One was seen live, "Creating new task…" with a spinner, while a branch task was created; it was not copied, so its look is not measured. Copy buttons gave no toast. | the toast viewport is in every 2026-10-17 copy |
+| Feedback after an action | Toasts mount in a fixed list at the top centre (z-index 1050, newest first) and rest against the window's top edge: `background.menu-tooltips` at 90% black in both themes, radius 12, a 20px icon and 14/22 500 white text. "Creating new task…" with a spinner was seen live while a branch task was created; the validation toast is the one measured. Copy buttons gave no toast. | [toast](components.md#toast), [invite-dark-email-error](screenshots/invite-dark-email-error.png) |
 | Search and filtering | Search is a dialog (Cmd+K) over everything; the Library filters by type with a strip of tabs and switches list or grid and grouping from a view-options menu. | [home-dark-search](screenshots/home-dark-search.png), [library-dark-slides](screenshots/library-dark-slides.png), [library-dark-images-grid-view-options](screenshots/library-dark-images-grid-view-options.png) |
 | Lists and tables | Lists are rows split by 1px rules and grouped by day; the one table (API keys) is a plain table with grey 13px headers, row rules, no zebra and a more button per row. | [library-dark](screenshots/library-dark.png), [settings-dark-developers-table](screenshots/settings-dark-developers-table.png) |
 | Onboarding | Only the phone's app gate was captured (download the app or continue on the web); the first-run flow of a new account was not, since the account is not new. | [mobile-home-dark-app-gate](screenshots/mobile-home-dark-app-gate.png) |
@@ -1644,7 +1648,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - `core.palette` is assembled, not declared: Manus has no ramps. The hue families, the 50 to 950 stop names and the choice of colour for each stop are this package's; every value is one Manus declares.
 - `role.*` is this package's mapping of checklist roles onto Manus's tokens, chosen from where each token is used; the values are Manus's.
 - `role.accent.hover` and `.pressed` are computed (90% over the page colour); the opacity is measured.
-- Pressed was measured only on the components added on 2026-10-17. The older copies are gone.
-- The toast was seen, not measured; the checkbox exists only as stylesheet rules (antd checkboxes in the website builder's data tables, checked fill `icon.blue`), not on a captured page.
+- Pressed on the older components was read from a fresh copy of the home page (2026-10-17) while their other states come from the first copy; 19 parts on the other pages have no pressed reading, since those copies are gone. The promo card changed in between and was not found.
+- One toast was measured, the validation error; the "Creating new task…" toast with a spinner was only seen. The checkbox exists only as stylesheet rules (antd checkboxes in the website builder's data tables, checked fill `icon.blue`), not on a captured page.
 - Values from 2026-10-04 were not re-measured; the 2026-10-17 stylesheets declare the same values for every variable that existed then.
 - Avatar fills are this package's grey disc; only their size and shape are Manus's.

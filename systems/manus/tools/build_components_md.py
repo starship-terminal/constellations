@@ -55,6 +55,7 @@ for theme in ("dark", "light"):
         if m and not n.startswith(("role.", "component.")):
             NAME2PATH[theme].setdefault(m.group(1), n)
 OWN = [{}]  # property -> {value: token}, from the state's own classes; set per state
+NAMED = [{}]  # value -> token, for every variable named in the component's classes; set per state
 
 # Which class prefix sets which property, and which class variants apply in which measured state.
 PROP_CLASS = {"bg": r"bg", "text": r"text", "border": r"border(?:-[trblxyse])?"}
@@ -100,6 +101,18 @@ def own_tokens(v, theme, state):
     return out
 
 
+def named_tokens(v, theme):
+    """{value: token} for every variable the component's classes (its own and its parts') name, so
+    a colour matched only by value prefers a token the component actually uses."""
+    out = {}
+    for name, val in (v.get("vars") or {}).items():
+        path = NAME2PATH[theme].get(name)
+        hv = hexnorm(val) if path and isinstance(val, str) else None
+        if hv:
+            out.setdefault(re.sub(r"(\d+\.\d+)\)", lambda mm: f"{round(float(mm.group(1)), 2):g})", hv), path)
+    return out
+
+
 def norm(r, g, b, a=None):
     if a is None or float(a) == 1:
         return "#%02x%02x%02x" % (int(r), int(g), int(b))
@@ -117,7 +130,7 @@ def colour(c, tokens=True, prop=None):
         if prop and v in OWN[0].get(prop, {}):
             STATS["token"] += 1
             return f"`{OWN[0][prop][v]}` ({v})"
-        tok = BY_COLOR[THEME[0]].get(v)
+        tok = NAMED[0].get(v) or BY_COLOR[THEME[0]].get(v)
         STATS["approx" if tok else "raw"] += 1
         return f"`≈ {tok}` ({v})" if tok else v
 
@@ -243,6 +256,7 @@ def font(fz, lh, fw, f, ls="normal"):
 def props(v):
     s = v["style"]
     OWN[0] = own_tokens(v, THEME[0], STATE[0])
+    NAMED[0] = named_tokens(v, THEME[0])
     o = {}
     h = "%gpx" % round(v["rect"]["h"], 2)
     o["size"] = f"{num(v['rect']['w'])} x " + (dim(h, ("height",)) if ("height", h) in DIM else num(v["rect"]["h"]))
@@ -409,7 +423,7 @@ GROUP_INTRO = {
     "Agents": "The Meet Cue page: a title, a video with its play button, two download buttons, the waitlist banner and a footer link.",
     "Automations": "The empty state: a heading and three example cards (Schedule, Trigger, Advanced) over a Get started button.",
     "Plugins": "The connector gallery: header buttons, a carousel of promo cards, search, category tabs and a two-column grid of plugin rows.",
-    "Settings and forms": "Added on the 2026-10-17 refresh: Settings' Developers pane (underline tabs, an info banner, the API key table with its row button and popover, the destructive confirmation), the Create API Key form (label, text field, select and its listbox, the primary button disabled and enabled), Personalization's fields, Usage & Billing loading, and the invite dialog (segmented control, black and blue buttons, the email field and Send). These are the only components with a measured pressed state.",
+    "Settings and forms": "Added on the 2026-10-17 refresh: Settings' Developers pane (underline tabs, an info banner, the API key table with its row button and popover, the destructive confirmation), the Create API Key form (label, text field, select and its listbox, the primary button disabled and enabled), Personalization's fields, Usage & Billing loading, and the invite dialog (segmented control, black and blue buttons, the email field and Send), and the toast an invalid email raises. Pressed was read on every part here that has an `active:` style; the older parts' page copies were not kept, so their pressed rows are missing rather than measured.",
     "Project": "A project page: icon, title and meta, the recent tasks, a composer, and the right rail of cards with Add buttons.",
     "Task": "A finished task's thread: the user bubble with an attachment, assistant turns with the logo header and Lite tag, step rows, message actions, the deliverable card, file chips, View all files, Task completed, rating stars, follow-up suggestions, the step footer, and the split view's tab bar, empty state tiles and files tree.",
     "Mobile": "The same app at 390 wide: the app banner, the header with its menu button, the serif hero, the composer and suggestion chips, the carousel card, the drawer, the Library header with its type dropdown, and the task page.",
@@ -508,7 +522,8 @@ OVER = [
     ("Create API Key form", "Settings > Developers (2026-10-17)", "Create new; a name typed, the Expiration select opened; closed with Cancel, nothing created", "[settings-dark-create-key](screenshots/settings-dark-create-key.png), [settings-dark-create-key-typed](screenshots/settings-dark-create-key-typed.png), [settings-dark-select-open](screenshots/settings-dark-select-open.png), [form-dialog](#form-dialog)"),
     ("Usage history loading", "Settings > Usage & Billing (2026-10-17)", "the pane opened, copied while its history fetched", "[settings-dark-usage-loading](screenshots/settings-dark-usage-loading.png), [spinner](#spinner)"),
     ("Invite dialog", "account row banner (2026-10-17)", "the Share Manus banner; an invalid address typed, not sent; closed", "[invite-dark-dialog](screenshots/invite-dark-dialog.png), [invite-dark-email-typed](screenshots/invite-dark-email-typed.png), [invite-dialog](#invite-dialog)"),
-    ("Toast", "task (2026-10-17)", "seen once, \"Creating new task…\" with a spinner, top centre", "not captured as a copy (seen only in the live pane)"),
+    ("Invalid email (validation error) and toast", "invite dialog (2026-10-17)", "with the owner's go-ahead, \"not-an-email\" typed and Send pressed; Manus refused it client-side with a toast, so nothing was sent", "[invite-dark-email-error](screenshots/invite-dark-email-error.png), [toast](#toast), [email-field](#email-field)"),
+    ("Toast while a task starts", "task (2026-10-17)", "seen once, \"Creating new task…\" with a spinner, top centre", "not captured as a copy; the same toast frame is measured from the validation error"),
 ]
 for row in OVER:
     W("| " + " | ".join(row) + " |")
@@ -516,6 +531,7 @@ W()
 
 # --------------------------------------------------------------------------- shared values
 
+NAMED[0] = {}  # tallies across components: no component's variables apply
 W("## Shared values")
 W()
 W("Values that apply across entries, tallied from the measurement file.")
