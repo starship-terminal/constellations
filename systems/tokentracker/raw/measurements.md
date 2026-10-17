@@ -532,6 +532,58 @@ Page: dashboard. Selector: `.tt-sidebar-account-control`. States: default, hover
 
 Crops: `account-control.light-default.png`, `account-control.light-hover.png`, `account-control.light-focus-visible.png`.
 
+#### avatar
+
+Avatar. The initials fallback: a circle in a colour picked from the person, white semibold initials, a 1px ring. A photo takes the same circle. Names and photos were removed from the page before reading.
+
+Page: leaderboard. Selector: `div[aria-hidden].rounded-full on Leaderboard`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 32 x 32 |
+| Padding | 0px |
+| Border | none |
+| Radius | 9999px |
+| Background | #3e7b32 |
+| Box shadow | #ffffff 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none |
+| Font | OpenAI Sans 11px/20px 600 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | div.flex.shrink-0 32.0x32.0 bg #3e7b32 r 9999px shadow #ffffff 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| Ancestor paint | 1 up span.inline-flex.rounded-full bg #0a0a0a |
+| How | at rest |
+
+Crops: `avatar-default.png`.
+
+#### avatar.light
+
+Avatar. The initials fallback: a circle in a colour picked from the person, white semibold initials, a 1px ring. A photo takes the same circle. Names and photos were removed from the page before reading.
+
+Page: leaderboard. Selector: `div[aria-hidden].rounded-full on Leaderboard`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 32 x 32 |
+| Padding | 0px |
+| Border | none |
+| Radius | 9999px |
+| Background | #3e7b32 |
+| Box shadow | #ffffff 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none |
+| Font | OpenAI Sans 11px/20px 600 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | div.flex.shrink-0 32.0x32.0 bg #3e7b32 r 9999px shadow #ffffff 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| Ancestor paint | 1 up span.inline-flex.rounded-full bg #ffffff |
+| How | at rest |
+
+Crops: `avatar.light-default.png`.
+
 ### Buttons and segmented controls
 
 #### period-tabs
@@ -2776,7 +2828,7 @@ Page: limits. Selector: `pill reading CACHED, STALE or RE-AUTH`. States: default
 | Colour | #a3a3a3 |
 | Transition | none |
 | Cursor | help |
-| Painted layers | span.inline-flex.items-center 46.3x19.5 bg #262626 border T:1px solid #404040 @ 0.6 / R:1px solid #404040 @ 0.6 / B:1px solid #404040 @ 0.6 / L:1px solid #404040 @ 0.6 r 9999px; span.animate-ping.absolute 11.0x11.0 bg #34d399 r 9999px; span.relative.inline-flex 6.0x6.0 bg #10b981 r 9999px |
+| Painted layers | span.inline-flex.items-center 46.3x19.5 bg #262626 border T:1px solid #404040 @ 0.6 / R:1px solid #404040 @ 0.6 / B:1px solid #404040 @ 0.6 / L:1px solid #404040 @ 0.6 r 9999px; span.animate-ping.absolute 9.4x9.4 bg #34d399 r 9999px; span.relative.inline-flex 6.0x6.0 bg #10b981 r 9999px |
 | How | at rest |
 
 Crops: `status-badge-default.png`.
@@ -2856,7 +2908,7 @@ Page: limits. Selector: `pill reading CACHED, STALE or RE-AUTH`. States: default
 | Colour | #737373 |
 | Transition | none |
 | Cursor | help |
-| Painted layers | span.inline-flex.items-center 46.3x19.5 bg #fafafa border T:1px solid #e5e5e5 @ 0.6 / R:1px solid #e5e5e5 @ 0.6 / B:1px solid #e5e5e5 @ 0.6 / L:1px solid #e5e5e5 @ 0.6 r 9999px; span.animate-ping.absolute 9.6x9.6 bg #34d399 r 9999px; span.relative.inline-flex 6.0x6.0 bg #10b981 r 9999px |
+| Painted layers | span.inline-flex.items-center 46.3x19.5 bg #fafafa border T:1px solid #e5e5e5 @ 0.6 / R:1px solid #e5e5e5 @ 0.6 / B:1px solid #e5e5e5 @ 0.6 / L:1px solid #e5e5e5 @ 0.6 r 9999px; span.animate-ping.absolute 12.0x12.0 bg #34d399 r 9999px; span.relative.inline-flex 6.0x6.0 bg #10b981 r 9999px |
 | How | at rest |
 
 Crops: `status-badge.light-default.png`.
@@ -3299,6 +3351,106 @@ Page: skills. Selector: `leaf "Plugin"`. States: default.
 | How | at rest |
 
 Crops: `badge.light-default.png`.
+
+#### warning-notice
+
+Warning notice. The amber notice under a limit (Copilot token usage).
+
+Page: limits. Selector: `div with the amber border on Limits`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1062 x 134.75 |
+| Padding | 8px 10px |
+| Border | 1px solid #b45309 @ 0.4 |
+| Radius | 8px |
+| Background | #78350f @ 0.1 |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 11px/16.5px 400 |
+| Letter spacing | normal |
+| Colour | #d4d4d4 |
+| Text node | div.font-medium.text-oai-gray-700: OpenAI Sans 11px/16.5px 500, #e5e5e5 |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | div.mt-1.rounded-md 1062.0x134.8 bg #78350f @ 0.1 border T:1px solid #b45309 @ 0.4 / R:1px solid #b45309 @ 0.4 / B:1px solid #b45309 @ 0.4 / L:1px solid #b45309 @ 0.4 r 8px; pre.mt-1.5.overflow-x-auto 1040.0x51.4 bg #171717 @ 0.6 r 4px; button.mt-1.inline-flex 40.0x21.8 border T:1px solid #404040 / R:1px solid #404040 / B:1px solid #404040 / L:1px solid #404040 r 4px |
+| How | at rest |
+
+Crops: `warning-notice-default.png`.
+
+#### danger-notice
+
+Error notice. Skills reports a failed operation in a red box above the list (Refresh, with its requests aborted in the capture browser).
+
+Page: skills. Selector: `div with the red border on Skills`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1104 x 46 |
+| Padding | 12px 16px |
+| Border | 1px solid #7f1d1d @ 0.6 |
+| Radius | 12px |
+| Background | #450a0a @ 0.3 |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #fecaca |
+| Transition | none |
+| Painted layers | div.mb-4.rounded-lg 1104.0x46.0 bg #450a0a @ 0.3 border T:1px solid #7f1d1d @ 0.6 / R:1px solid #7f1d1d @ 0.6 / B:1px solid #7f1d1d @ 0.6 / L:1px solid #7f1d1d @ 0.6 r 12px |
+| How | at rest |
+
+Crops: `danger-notice-default.png`.
+
+#### warning-notice.light
+
+Warning notice. The amber notice under a limit (Copilot token usage).
+
+Page: limits. Selector: `div with the amber border on Limits`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1062 x 134.75 |
+| Padding | 8px 10px |
+| Border | 1px solid #fcd34d @ 0.6 |
+| Radius | 8px |
+| Background | #fffbeb @ 0.5 |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 11px/16.5px 400 |
+| Letter spacing | normal |
+| Colour | #525252 |
+| Text node | div.font-medium.text-oai-gray-700: OpenAI Sans 11px/16.5px 500, #404040 |
+| Transition | none |
+| Cursor | pointer |
+| Painted layers | div.mt-1.rounded-md 1062.0x134.8 bg #fffbeb @ 0.5 border T:1px solid #fcd34d @ 0.6 / R:1px solid #fcd34d @ 0.6 / B:1px solid #fcd34d @ 0.6 / L:1px solid #fcd34d @ 0.6 r 8px; pre.mt-1.5.overflow-x-auto 1040.0x51.4 bg #f5f5f5 r 4px; button.mt-1.inline-flex 40.0x21.8 border T:1px solid #d4d4d4 / R:1px solid #d4d4d4 / B:1px solid #d4d4d4 / L:1px solid #d4d4d4 r 4px |
+| How | at rest |
+
+Crops: `warning-notice.light-default.png`.
+
+#### danger-notice.light
+
+Error notice. Skills reports a failed operation in a red box above the list (Refresh, with its requests aborted in the capture browser).
+
+Page: skills. Selector: `div with the red border on Skills`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1104 x 46 |
+| Padding | 12px 16px |
+| Border | 1px solid #fecaca |
+| Radius | 12px |
+| Background | #fef2f2 |
+| Box shadow | none |
+| Outline | none |
+| Font | OpenAI Sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #b91c1c |
+| Transition | none |
+| Painted layers | div.mb-4.rounded-lg 1104.0x46.0 bg #fef2f2 border T:1px solid #fecaca / R:1px solid #fecaca / B:1px solid #fecaca / L:1px solid #fecaca r 12px |
+| How | at rest |
+
+Crops: `danger-notice.light-default.png`.
 
 ### Page header
 
@@ -3989,7 +4141,7 @@ Page: limits. Selector: `card around the "Usage limits" title`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1104 x 2417.69 |
+| Size (w x h) | 1104 x 2363.31 |
 | Padding | 0px |
 | Border | 1px solid #262626 |
 | Radius | 16px |
@@ -4002,7 +4154,7 @@ Page: limits. Selector: `card around the "Usage limits" title`. States: default.
 | Text node | h3.text-sm.font-medium: OpenAI Sans 14px/20px 500, #d4d4d4, ls 0.35px |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | Icon | 14 x 14, colour #fafafa |
-| Painted layers | div.rounded-xl.border 1104.0x2417.7 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px; div.pointer-events-none.absolute 175.6x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
+| Painted layers | div.rounded-xl.border 1104.0x2363.3 bg #171717 border T:1px solid #262626 / R:1px solid #262626 / B:1px solid #262626 / L:1px solid #262626 r 16px; div.pointer-events-none.absolute 179.5x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 512.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: none.
@@ -4052,7 +4204,7 @@ Page: limits. Selector: `row around the first track`. States: default.
 | Text node | div.pointer-events-none.absolute: OpenAI Sans 10.5px/14.4375px 400, #e5e5e5 |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.pointer-events-none.absolute 175.6x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
+| Painted layers | div.pointer-events-none.absolute 179.5x42.9 bg #171717 @ 0.9 border T:1px solid #262626 @ 0.5 / R:1px solid #262626 @ 0.5 / B:1px solid #262626 @ 0.5 / L:1px solid #262626 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 512.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: `usage-row-default.png`.
@@ -4077,7 +4229,7 @@ Page: limits. Selector: `first track`. States: default.
 | Colour | #fafafa |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
+| Painted layers | div.relative.flex-1 931.0x6.0 bg #404040 @ 0.5 r 9999px; div.bg-emerald-500.rounded-full 512.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #404040 @ 0.5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: `usage-track-default.png`.
@@ -4090,7 +4242,7 @@ Page: limits. Selector: `its fill`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 335.16 x 6 |
+| Size (w x h) | 512.05 x 6 |
 | Padding | 0px |
 | Border | none |
 | Radius | 9999px |
@@ -4102,7 +4254,7 @@ Page: limits. Selector: `its fill`. States: default.
 | Colour | #fafafa |
 | Transition | width 0.5s cubic-bezier(0, 0, 0.2, 1) |
 | Cursor | pointer |
-| Painted layers | div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px |
+| Painted layers | div.bg-emerald-500.rounded-full 512.0x6.0 bg #10b981 r 9999px |
 | Ancestor paint | 1 up div.relative.flex-1 bg #404040 @ 0.5 |
 | How | at rest |
 
@@ -4142,7 +4294,7 @@ Page: limits. Selector: `card around the "Usage limits" title`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1104 x 2417.69 |
+| Size (w x h) | 1104 x 2363.31 |
 | Padding | 0px |
 | Border | 1px solid #e5e5e5 |
 | Radius | 16px |
@@ -4155,7 +4307,7 @@ Page: limits. Selector: `card around the "Usage limits" title`. States: default.
 | Text node | h3.text-sm.font-medium: OpenAI Sans 14px/20px 500, #737373, ls 0.35px |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | Icon | 14 x 14, colour #0a0a0a |
-| Painted layers | div.rounded-xl.border 1104.0x2417.7 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px; div.pointer-events-none.absolute 175.6x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
+| Painted layers | div.rounded-xl.border 1104.0x2363.3 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 16px; div.pointer-events-none.absolute 179.5x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 512.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: none.
@@ -4205,7 +4357,7 @@ Page: limits. Selector: `row around the first track`. States: default.
 | Text node | div.pointer-events-none.absolute: OpenAI Sans 10.5px/14.4375px 400, #404040 |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.pointer-events-none.absolute 175.6x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
+| Painted layers | div.pointer-events-none.absolute 179.5x42.9 bg #ffffff @ 0.9 border T:1px solid #e5e5e5 @ 0.5 / R:1px solid #e5e5e5 @ 0.5 / B:1px solid #e5e5e5 @ 0.5 / L:1px solid #e5e5e5 @ 0.5 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 20px 25px -5px, #000000 @ 0.1 0px 8px 10px -6px; div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 512.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: `usage-row.light-default.png`.
@@ -4230,7 +4382,7 @@ Page: limits. Selector: `first track`. States: default.
 | Colour | #0a0a0a |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
+| Painted layers | div.relative.flex-1 931.0x6.0 bg #f5f5f5 r 9999px; div.bg-emerald-500.rounded-full 512.0x6.0 bg #10b981 r 9999px; div.absolute.top-0 6.0x6.0 bg #f5f5f5; div.absolute.top-0 2.0x6.0 bg #ef4444 |
 | How | at rest |
 
 Crops: `usage-track.light-default.png`.
@@ -4243,7 +4395,7 @@ Page: limits. Selector: `its fill`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 335.16 x 6 |
+| Size (w x h) | 512.05 x 6 |
 | Padding | 0px |
 | Border | none |
 | Radius | 9999px |
@@ -4255,7 +4407,7 @@ Page: limits. Selector: `its fill`. States: default.
 | Colour | #0a0a0a |
 | Transition | width 0.5s cubic-bezier(0, 0, 0.2, 1) |
 | Cursor | pointer |
-| Painted layers | div.bg-emerald-500.rounded-full 335.2x6.0 bg #10b981 r 9999px |
+| Painted layers | div.bg-emerald-500.rounded-full 512.0x6.0 bg #10b981 r 9999px |
 | Ancestor paint | 1 up div.relative.flex-1 bg #f5f5f5 |
 | How | at rest |
 

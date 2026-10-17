@@ -3,7 +3,7 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: dashboard sessions sessionsLoading sessionsError limits settings status skills widgets pet cloud achievements. Phone layouts come from the screenshots only. Every page runs in dark (the default)
+// Pages: dashboard sessions sessionsLoading sessionsError limits settings status skills widgets pet cloud achievements leaderboard. Phone layouts come from the screenshots only. Every page runs in dark (the default)
 // and light; light entries are keyed `<name>.light`. Writes raw/components-computed.json (merged,
 // so a subset of pages can be re-run) and one crop per component and state into components/crops/.
 // raw/measurements.md is then built from the JSON by build-measurements.mjs.
@@ -47,6 +47,7 @@ const URLS = {
   pet: '/pet-settings',
   cloud: '/cloud',
   achievements: '/achievements',
+  leaderboard: '/leaderboard',
   sessionsLoading: '/sessions',
   sessionsError: '/sessions',
   mobile: '/dashboard',
@@ -485,6 +486,13 @@ async function limits() {
     await reset();
   }
   await T('code-block', { sel: 'main pre' }, ['default'], { group: g, title: 'Code block', sel: 'main pre' });
+  // The warning surface Limits renders on its own: the amber notice under a limit.
+  await page.evaluate(() => {
+    const warn = [...document.querySelectorAll('main div')].find((e) => /border-amber-300\/60/.test(e.className) && e.getBoundingClientRect().width > 0);
+    if (warn) warn.setAttribute('data-m', 'warning-notice');
+  });
+  if (await m('warning-notice').count()) await S('warning-notice', m('warning-notice'), ['default'], { group: G.feedback, title: 'Warning notice', desc: 'The amber notice under a limit (Copilot token usage).', sel: 'div with the amber border on Limits' });
+  else log('  ! no warning notice');
   await T('icon-link', { sel: 'main a[href^="/settings"]' }, ['default', 'hover', 'focus-visible'], { group: G.control, title: 'Icon link', desc: 'The gear on Limits ("Display settings" is its accessible label): an icon-only link to Settings.', sel: 'main a[href^=/settings]' });
   await page.close();
 }
@@ -583,6 +591,38 @@ async function skills() {
     } else log('  ! bulk Remove opened no dialog');
   } else log('  ! no bulk Remove button');
   await box.uncheck(); await page.waitForTimeout(400);
+  // Danger notice: Refresh with every /functions/ request aborted (reads included) fails, and the
+  // page reports it in its red error box. Nothing reaches the server.
+  await page.route('**/functions/**', (r) => r.abort());
+  const refresh = q('main button').filter({ hasText: /^Refresh$/ }).first();
+  if (await refresh.count()) {
+    await refresh.click(); await page.waitForTimeout(2500); await mask(page);
+    await page.evaluate(() => { const e = [...document.querySelectorAll('main div')].find((x) => /border-red-200/.test(x.className) && x.getBoundingClientRect().width > 0); if (e) e.setAttribute('data-m', 'danger-notice'); });
+    if (await m('danger-notice').count()) await S('danger-notice', m('danger-notice'), ['default'], { group: G.feedback, title: 'Error notice', desc: 'Skills reports a failed operation in a red box above the list (Refresh, with its requests aborted in the capture browser).', sel: 'div with the red border on Skills' }, { noScroll: true });
+    else log('  ! no danger notice after Refresh');
+  } else log('  ! no Refresh on Skills');
+  await page.unroute('**/functions/**');
+  await page.close();
+}
+
+// Leaderboard: only the avatar. Every name, handle and initial in the page is replaced first, photos
+// are removed, and no screenshot of the page is kept; the crop is one initials avatar.
+async function leaderboard() {
+  // Photos never load: image requests to other hosts are aborted, so each avatar falls back to the
+  // product's own initials circle (its onError path).
+  await newPage('leaderboard', { wait: 8000, routes: (p) => p.route((u) => !u.hostname.startsWith('127.0.0.1'), (r) => (r.request().resourceType() === 'image' ? r.abort() : r.fallback())) });
+  await page.keyboard.press('Escape'); await page.waitForTimeout(400);
+  await page.evaluate(() => {
+    const main = document.body;
+    const w = document.createTreeWalker(main, NodeFilter.SHOW_TEXT);
+    for (let n; (n = w.nextNode());) { const t = n.textContent.trim(); if (t && /[A-Za-z]/.test(t) && !n.parentElement.closest('aside, th, thead, button[role=tab], [role=tablist]')) n.textContent = n.parentElement.closest('[aria-hidden=true].rounded-full') ? 'A' : 'user'; }
+    main.querySelectorAll('img').forEach((i) => { if (/rounded-full/.test(i.className)) { i.removeAttribute('src'); i.removeAttribute('srcset'); } });
+    main.querySelectorAll('[title], [aria-label], [alt]').forEach((e) => { e.removeAttribute('title'); e.removeAttribute('aria-label'); e.removeAttribute('alt'); });
+    const av = [...main.querySelectorAll('div[aria-hidden=true].rounded-full')].find((e) => e.getBoundingClientRect().width >= 16 && e.style.backgroundColor);
+    if (av) av.setAttribute('data-m', 'avatar');
+  });
+  if (await m('avatar').count()) await S('avatar', m('avatar'), ['default'], { group: G.shell, title: 'Avatar', desc: 'The initials fallback: a circle in a colour picked from the person, white semibold initials, a 1px ring. A photo takes the same circle. Names and photos were removed from the page before reading.', sel: 'div[aria-hidden].rounded-full on Leaderboard' }, { pad: 6 });
+  else log('  ! no initials avatar on Leaderboard');
   await page.close();
 }
 
@@ -625,7 +665,7 @@ async function status() {
   await page.close();
 }
 
-const PAGES = { dashboard, sessions, sessionsLoading, sessionsError, limits, settings, status, skills, widgets, pet, cloud, achievements };
+const PAGES = { dashboard, sessions, sessionsLoading, sessionsError, limits, settings, status, skills, widgets, pet, cloud, achievements, leaderboard };
 const want = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(PAGES);
 const done = new Set();
 for (const theme of ['dark', 'light']) {
