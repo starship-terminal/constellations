@@ -117,6 +117,11 @@ SIZE_NOTE = {
     "text-area": "one line of `typography.body.base` (24px), grows with the text",
     "card-course": "150px square on Topics (no token; `size.course-tile` on the 2xl course shelf)",
 }
+# Values a single reading misstates: the skeleton was read mid-pulse, and its .7 matches a button token only by value.
+OVERRIDE = {
+    ("skeleton-loading", "fill"): "pulses between `component.skeleton.from` and `component.skeleton.to` (read mid-pulse)",
+    ("skeleton-loading", "opacity"): ".7 while loading (no token)",
+}
 SPEC = [""]  # the spec being written
 HINTS = []  # words of the spec being written (switch, radio, avatar, button3d); a token named for the component wins
 
@@ -243,6 +248,7 @@ def describe(s, th, base=None, o=None):
         if any(p != "0" for p in pad):
             out.append(("padding", " ".join(pad)))
         out.append(("type", name_typo(s, th)))
+        out = [(k, OVERRIDE.get((SPEC[0], k), v)) for k, v in out]
     return out
 
 
@@ -308,28 +314,36 @@ def spec_table(name):
 
 # PRODUCT (adapt): the checklist, mapped to the measured specs. None = not present or not captured.
 CHECKLIST = [
-    ("Button", ["button3d-blue", "button3d-neutral", "button3d-disabled", "button-inverse", "button-outline", "button-danger-text", "button-disabled", "premium-button"],
+    ("Button", ["button3d-blue", "button3d-neutral", "button3d-disabled", "button-inverse", "button-outline", "button-danger-text", "button-danger", "button-danger-disabled", "button-disabled", "premium-button"],
      "The 3D button (`data-slot=button3d`: a face lifted 4px over a same-hue lip) is the main action; flat buttons (`data-slot=button`) do everything else. "
-     "Sizes: `size.control-md` for main and flat buttons, `size.control-sm` for outline buttons inside settings rows."),
+     "Sizes: `size.control-md` for main and flat buttons, `size.control-sm` for outline buttons inside settings rows. "
+     "The solid danger button (\"Deactivate account\") stays disabled, a dark red tint with muted text, until a reason is checked."),
     ("Icon button", ["icon-button", "icon-button-disabled", "icon-button-toggle"], "`data-slot=icon-button`: a 44px round button with a 16px glyph; the star toggle on topics is 40px with `aria-pressed`."),
     ("Link", ["link"], "`data-slot=link`: footer and inline links are quiet (`text.secondary`) until hover, which turns them blue and underlined."),
-    ("Text field", ["text-field"], "`data-slot=form-input`. Error state (not reached, see Gaps): the stylesheet sets `outline-color: border.danger-primary` on `:invalid, [data-invalid], [aria-invalid=true]` and `text.danger-primary` on the message (raw/css-rules.json)."),
-    ("Text area", ["text-area", "text-area-pill"], "The Koji prompt: a borderless auto-growing textarea inside a frosted pill (`blur.ask-pill`). It shows no focus ring; the caret is the only focus cue."),
+    ("Text field", ["text-field", "text-field-invalid"], "`data-slot=form-input`. Error state, reached 2026-10-17 by typing `not-an-email` into Settings > Add another email and pressing Add: "
+     "the browser blocked the submit and showed its native bubble (\"Please include an '@' in the email address\"), and the field itself looked unchanged (`text-field-invalid` below matches the default). "
+     "The stylesheet's `outline-color: border.danger-primary` rule on `:invalid, [data-invalid], [aria-invalid=true]` (raw/css-rules.json) did not paint here, because the field draws a border, not an outline. See raw/live-readings.json."),
+    ("Text area", ["text-area", "text-area-pill", "text-area-bordered"], "Two kinds. The Koji prompt is a borderless auto-growing textarea inside a frosted pill (`blur.ask-pill`); it shows no focus ring, so the caret is the only focus cue. "
+     "The deactivate form's \"Other\" reason opens a bordered textarea, styled like the text field, whose focus darkens the border and adds an inset ring."),
     ("Select", None, "Not present: no screen reached on a free account uses one. The stylesheet carries a `select-icon` slot, but nothing rendered it."),
-    ("Checkbox", None, "Not present as a visible control: every `type=checkbox` in the app is the hidden input behind a switch. The stylesheet carries `checkbox` and `checkbox-indicator` slots that no reached screen rendered."),
+    ("Checkbox", ["checkbox", "checkbox-checked"], "`data-slot=checkbox` (Base UI), 20px square with 6px corners and a 2px border; checked fills solid with the inverse colour. Found on Settings > Deactivate account (the reason list); the settings switches elsewhere hide their own checkbox inputs."),
     ("Radio", ["radio", "segment-selected", "segment", "segment-track"], "A real radio (`data-slot=radio`, 20px) in the account's connected-accounts list, and the segmented control, which is a Base UI radio group (`role=radiogroup`) of pill segments."),
     ("Switch", ["switch-on", "switch-off"], "`data-slot=switch`, 48x32 track, 24px thumb; focus is a 3px outline in `border.select`."),
     ("Tabs", ["nav-tab-selected", "nav-tab", "settings-tab-selected", "settings-tab"], "Two tab sets: the app header (Home, Topics, You; selected has an underline bar and `text.primary`) and the settings side menu (selected gets `bg.tertiary`)."),
     ("Menu", ["menu", "menu-item", "menu-item-highlighted"], "Base UI dropdown (`role=menu`). Hover and keyboard focus both set `data-highlighted`, which paints `bg.hover`; the item itself draws no ring."),
     ("Tooltip", ["tooltip", "tooltip-trigger"], "Base UI tooltip on hover or focus of a 12px info icon; `bg.elevated`, `shadow.base`, `typography.body.sm` in `text.secondary`."),
     ("Dialog", ["dialog", "dialog-scrim"], "Base UI dialog (`modal-content`), `shadow.md`, max `size.modal-max`; the scrim is `special.overlay.default`. Used for the destructive quit confirmation."),
-    ("Toast", None, "Not captured: the Sonner toaster is mounted (`section[aria-label^=Notifications]`) but no look-only action fired a toast in either capture."),
+    ("Toast", ["toast", "toast-added"], "Sonner (`[data-sonner-toast]`), bottom of the viewport, 356px wide. Fired 2026-10-17 by unstarring then restarring a topic (account left as it was): removing shows the neutral toast, adding shows the success-tinted one."),
+    ("Alert", ["alert-info"], "`data-slot=alert role=alert`: the info alert on Settings > Account (no password set). Tinted `bg.blue-secondary`, no border, 16px icon in currentColor. It is the measured source for `feedback.info`."),
+    ("Skeleton", ["skeleton-loading"], "`data-slot=skeleton` with `data-loading`: the grey block the You page shows while its chart loads, captured mid-load."),
     ("Card", ["card-course", "weekly-summary-card"], "Course cards are 3D like the button (2px `border.solid` edge plus a 4px lip); summary cards are flat with a 2px border and a tinted gradient."),
     ("List row", ["list-row-setting"], "Settings rows: a 1px `border.primary` box, `radius.xl`, label left and control right."),
     ("Table", None, "Captured 2026-09 on the public `/subscribe/` page (Free vs Premium comparison, both themes): see [raw/pricing-computed.json](raw/pricing-computed.json) and [premium-comparison-dark](components/crops/premium-comparison-dark.png). The You page also renders a screen-reader-only data table (`data-slot=table`, inside `panda-sr_true`) behind its bar chart."),
     ("Avatar", ["avatar"], "An initials tile (48px, `radius.md`, `palette.blue.500`) on the You page at phone width; there is no photo avatar."),
     ("Badge", ["badge-unverified", "badge-primary"], "`.panda-badge` subtle variants: 12/13.2 700 uppercase on a tinted fill, `radius.lg`."),
 ]
+
+EXTRA = {"Alert", "Skeleton"}
 
 
 def main():
@@ -341,8 +355,10 @@ def main():
            "[components/crops/2026-10/](components/crops/2026-10).", "",
            "Read a row as: what changes from the default in that state. \"browser default ring\" means the product sets no focus style there, so Chrome draws its own.", ""]
     out += ["## Component specs (2026-10)", ""]
-    present = sum(1 for _, specs, _ in CHECKLIST if specs) + 1  # Table captured 2026-09
-    out += [f"{present} of {len(CHECKLIST)} checklist components are captured; select and checkbox are not present, and toast was never fired.", ""]
+    core = [t for t in CHECKLIST if t[0] not in EXTRA]
+    present = sum(1 for _, specs, _ in core if specs) + 1  # Table captured 2026-09
+    out += [f"{present} of {len(core)} checklist components are captured; select is not present on any screen a free account reaches. "
+            f"Alert and skeleton are extra, outside the checklist.", ""]
     for title, specs, note in CHECKLIST:
         out += [f"### {title}", "", note, ""]
         for s in specs or []:

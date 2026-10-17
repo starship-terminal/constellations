@@ -6,13 +6,13 @@ Read a row as: what changes from the default in that state. "browser default rin
 
 ## Component specs (2026-10)
 
-607 of 613 values in these specs are named by a token; the 6 others are printed raw and marked "no token".
+778 of 796 values in these specs are named by a token; the 18 others are printed raw and marked "no token".
 
-16 of 19 checklist components are captured; select and checkbox are not present, and toast was never fired.
+18 of 19 checklist components are captured; select is not present on any screen a free account reaches. Alert and skeleton are extra, outside the checklist.
 
 ### Button
 
-The 3D button (`data-slot=button3d`: a face lifted 4px over a same-hue lip) is the main action; flat buttons (`data-slot=button`) do everything else. Sizes: `size.control-md` for main and flat buttons, `size.control-sm` for outline buttons inside settings rows.
+The 3D button (`data-slot=button3d`: a face lifted 4px over a same-hue lip) is the main action; flat buttons (`data-slot=button`) do everything else. Sizes: `size.control-md` for main and flat buttons, `size.control-sm` for outline buttons inside settings rows. The solid danger button ("Deactivate account") stays disabled, a dark red tint with muted text, until a reason is checked.
 
 **button3d-blue** (Start; `[data-slot=button3d]`)
 
@@ -64,6 +64,21 @@ The 3D button (`data-slot=button3d`: a face lifted 4px over a same-hue lip) is t
 | hover | fill `bg.red-tertiary` | fill `bg.red-tertiary` | [dark](components/crops/2026-10/button-danger-text-dark-hover.png) [light](components/crops/2026-10/button-danger-text-light-hover.png) |
 | focus-visible | shadow `focusRing.width` in `border.select` | shadow `focusRing.width` in `border.select` | [dark](components/crops/2026-10/button-danger-text-dark-focus-visible.png) [light](components/crops/2026-10/button-danger-text-light-focus-visible.png) |
 | pressed | fill `bg.danger-secondary-active` | fill `bg.danger-secondary-active` | [dark](components/crops/2026-10/button-danger-text-dark-active.png) [light](components/crops/2026-10/button-danger-text-light-active.png) |
+
+**button-danger** (Deactivate account; `[data-slot=button]`)
+
+| State | Dark | Light | Crops |
+|---|---|---|---|
+| default | fill `bg.danger-primary`; text `text.on-color-primary`; border `borderWidth.default` transparent; shadow none; size `size.control-md` high; radius `radius.button`; padding `spacing.3` `spacing.5.5`; type `typography.ui.actions.base` | fill `bg.danger-primary`; text `text.on-color-primary`; border `borderWidth.default` transparent; shadow none; size `size.control-md` high; radius `radius.button`; padding `spacing.3` `spacing.5.5`; type `typography.ui.actions.base` | [dark](components/crops/2026-10/button-danger-dark-default.png) [light](components/crops/2026-10/button-danger-light-default.png) |
+| hover | no change | fill `bg.danger-hover` | [light](components/crops/2026-10/button-danger-light-hover.png) |
+| focus-visible | shadow `focusRing.width` in `border.select` | shadow `focusRing.width` in `border.select` | [dark](components/crops/2026-10/button-danger-dark-focus-visible.png) [light](components/crops/2026-10/button-danger-light-focus-visible.png) |
+| pressed | fill `bg.danger-active` | fill `bg.danger-active` | [dark](components/crops/2026-10/button-danger-dark-active.png) [light](components/crops/2026-10/button-danger-light-active.png) |
+
+**button-danger-disabled** (Deactivate account; `[data-slot=button][data-disabled]`)
+
+| State | Dark | Light | Crops |
+|---|---|---|---|
+| default | fill `bg.red-tertiary`; text `text.danger-disabled`; border `borderWidth.default` transparent; shadow none; size `size.control-md` high; radius `radius.button`; padding `spacing.3` `spacing.5.5`; type `typography.ui.actions.base` | fill `bg.red-tertiary`; text `text.danger-disabled`; border `borderWidth.default` transparent; shadow none; size `size.control-md` high; radius `radius.button`; padding `spacing.3` `spacing.5.5`; type `typography.ui.actions.base` | [dark](components/crops/2026-10/button-danger-disabled-dark-default.png) [light](components/crops/2026-10/button-danger-disabled-light-default.png) |
 
 **button-disabled** (Update personal info; `[data-slot=button][data-disabled]`)
 
@@ -123,7 +138,7 @@ The 3D button (`data-slot=button3d`: a face lifted 4px over a same-hue lip) is t
 
 ### Text field
 
-`data-slot=form-input`. Error state (not reached, see Gaps): the stylesheet sets `outline-color: border.danger-primary` on `:invalid, [data-invalid], [aria-invalid=true]` and `text.danger-primary` on the message (raw/css-rules.json).
+`data-slot=form-input`. Error state, reached 2026-10-17 by typing `not-an-email` into Settings > Add another email and pressing Add: the browser blocked the submit and showed its native bubble ("Please include an '@' in the email address"), and the field itself looked unchanged (`text-field-invalid` below matches the default). The stylesheet's `outline-color: border.danger-primary` rule on `:invalid, [data-invalid], [aria-invalid=true]` (raw/css-rules.json) did not paint here, because the field draws a border, not an outline. See raw/live-readings.json.
 
 **text-field** (no label; `input[type=text]`)
 
@@ -132,9 +147,16 @@ The 3D button (`data-slot=button3d`: a face lifted 4px over a same-hue lip) is t
 | default | text `text.primary`; border `borderWidth.default` `border.primary`; shadow none; size `size.control-lg` high; radius `radius.md`; padding `spacing.3` `spacing.4`; type `typography.body.base` | text `text.primary`; border `borderWidth.default` `border.primary`; shadow none; size `size.control-lg` high; radius `radius.md`; padding `spacing.3` `spacing.4`; type `typography.body.base` | [dark](components/crops/2026-10/text-field-dark-default.png) [light](components/crops/2026-10/text-field-light-default.png) |
 | focus-visible | border `borderWidth.default` `border.active`; shadow inset 1px in `border.active` (`shadow.input-focus`) | border `borderWidth.default` `border.active`; shadow inset 1px in `border.active` (`shadow.input-focus`) | [dark](components/crops/2026-10/text-field-dark-focus-visible.png) [light](components/crops/2026-10/text-field-light-focus-visible.png) |
 
+**text-field-invalid** (no label; `input[type=email]`)
+
+| State | Dark | Light | Crops |
+|---|---|---|---|
+| default | fill `bg.primary`; text `text.primary`; border `borderWidth.default` `border.primary`; shadow none; size `size.control-lg` high; radius `radius.md`; padding `spacing.3` `spacing.4`; type `typography.body.base` | fill `bg.primary`; text `text.primary`; border `borderWidth.default` `border.primary`; shadow none; size `size.control-lg` high; radius `radius.md`; padding `spacing.3` `spacing.4`; type `typography.body.base` | [dark](components/crops/2026-10/text-field-invalid-dark-default.png) [light](components/crops/2026-10/text-field-invalid-light-default.png) |
+| focus-visible | border `borderWidth.default` `border.active`; shadow inset 1px in `border.active` (`shadow.input-focus`) | border `borderWidth.default` `border.active`; shadow inset 1px in `border.active` (`shadow.input-focus`) | [dark](components/crops/2026-10/text-field-invalid-dark-focus-visible.png) [light](components/crops/2026-10/text-field-invalid-light-focus-visible.png) |
+
 ### Text area
 
-The Koji prompt: a borderless auto-growing textarea inside a frosted pill (`blur.ask-pill`). It shows no focus ring; the caret is the only focus cue.
+Two kinds. The Koji prompt is a borderless auto-growing textarea inside a frosted pill (`blur.ask-pill`); it shows no focus ring, so the caret is the only focus cue. The deactivate form's "Other" reason opens a bordered textarea, styled like the text field, whose focus darkens the border and adds an inset ring.
 
 **text-area** (How do I find the slope of a line?; `textarea`)
 
@@ -148,13 +170,36 @@ The Koji prompt: a borderless auto-growing textarea inside a frosted pill (`blur
 |---|---|---|---|
 | default | fill color(srgb 1 1 1 / 0.15) (no token); text `text.primary`; border `borderWidth.default` `border.secondary`; shadow `shadow.base`; size 68px with one line (no token), grows with the text; radius `radius.3xl`; padding `spacing.3.5`; type `typography.body.base` | fill color(srgb 1 1 1 / 0.95) (no token); text `text.primary`; border `borderWidth.default` `border.secondary`; shadow `shadow.base`; size 68px with one line (no token), grows with the text; radius `radius.3xl`; padding `spacing.3.5`; type `typography.body.base` | [dark](components/crops/2026-10/text-area-pill-dark-default.png) [light](components/crops/2026-10/text-area-pill-light-default.png) |
 
+**text-area-bordered** (no label; `textarea`)
+
+| State | Dark | Light | Crops |
+|---|---|---|---|
+| default | text `text.primary`; border `borderWidth.default` `border.primary`; shadow none; size 108px (no token) high; radius `radius.md`; padding `spacing.4`; type `typography.body.base` | text `text.primary`; border `borderWidth.default` `border.primary`; shadow none; size 108px (no token) high; radius `radius.md`; padding `spacing.4`; type `typography.body.base` | [dark](components/crops/2026-10/text-area-bordered-dark-default.png) [light](components/crops/2026-10/text-area-bordered-light-default.png) |
+| focus-visible | border `borderWidth.default` `border.active`; shadow inset 1px in `border.active` (`shadow.input-focus`) | border `borderWidth.default` `border.active`; shadow inset 1px in `border.active` (`shadow.input-focus`) | [dark](components/crops/2026-10/text-area-bordered-dark-focus-visible.png) [light](components/crops/2026-10/text-area-bordered-light-focus-visible.png) |
+
 ### Select
 
 Not present: no screen reached on a free account uses one. The stylesheet carries a `select-icon` slot, but nothing rendered it.
 
 ### Checkbox
 
-Not present as a visible control: every `type=checkbox` in the app is the hidden input behind a switch. The stylesheet carries `checkbox` and `checkbox-indicator` slots that no reached screen rendered.
+`data-slot=checkbox` (Base UI), 20px square with 6px corners and a 2px border; checked fills solid with the inverse colour. Found on Settings > Deactivate account (the reason list); the settings switches elsewhere hide their own checkbox inputs.
+
+**checkbox** (no label; `[data-slot=checkbox]`)
+
+| State | Dark | Light | Crops |
+|---|---|---|---|
+| default | fill `bg.primary`; text `text.primary`; border `borderWidth.default` `border.primary`; shadow none; size `size.icon-md` high; radius `radius.xs`; type `typography.body.base` | fill `bg.primary`; text `text.primary`; border `borderWidth.default` `border.primary`; shadow none; size `size.icon-md` high; radius `radius.xs`; type `typography.body.base` | [dark](components/crops/2026-10/checkbox-dark-default.png) [light](components/crops/2026-10/checkbox-light-default.png) |
+| hover | border `borderWidth.default` `border.hover` | border `borderWidth.default` `border.hover` | [dark](components/crops/2026-10/checkbox-dark-hover.png) [light](components/crops/2026-10/checkbox-light-hover.png) |
+| focus-visible | outline `focusRing.width` `border.select` | outline `focusRing.width` `border.select` | [dark](components/crops/2026-10/checkbox-dark-focus-visible.png) [light](components/crops/2026-10/checkbox-light-focus-visible.png) |
+| pressed | border `borderWidth.default` `border.hover` | border `borderWidth.default` `border.hover` | [dark](components/crops/2026-10/checkbox-dark-active.png) [light](components/crops/2026-10/checkbox-light-active.png) |
+
+**checkbox-checked** (no label; `[data-slot=checkbox][data-checked]`)
+
+| State | Dark | Light | Crops |
+|---|---|---|---|
+| default | fill `bg.inverse-primary`; text `text.primary`; border `borderWidth.default` transparent; shadow none; size `size.icon-md` high; radius `radius.xs`; type `typography.body.base` | fill `bg.inverse-primary`; text `text.primary`; border `borderWidth.default` transparent; shadow none; size `size.icon-md` high; radius `radius.xs`; type `typography.body.base` | [dark](components/crops/2026-10/checkbox-checked-dark-default.png) [light](components/crops/2026-10/checkbox-checked-light-default.png) |
+| focus-visible | outline `focusRing.width` `border.select` | outline `focusRing.width` `border.select` | [dark](components/crops/2026-10/checkbox-checked-dark-focus-visible.png) [light](components/crops/2026-10/checkbox-checked-light-focus-visible.png) |
 
 ### Radio
 
@@ -303,7 +348,39 @@ Base UI dialog (`modal-content`), `shadow.md`, max `size.modal-max`; the scrim i
 
 ### Toast
 
-Not captured: the Sonner toaster is mounted (`section[aria-label^=Notifications]`) but no look-only action fired a toast in either capture.
+Sonner (`[data-sonner-toast]`), bottom of the viewport, 356px wide. Fired 2026-10-17 by unstarring then restarring a topic (account left as it was): removing shows the neutral toast, adding shows the success-tinted one.
+
+**toast** (Removed from your topics; `[data-sonner-toast]`)
+
+| State | Dark | Light | Crops |
+|---|---|---|---|
+| default | fill `bg.secondary`; text `text.primary`; border `borderWidth.thin` `border.primary`; shadow `shadow.base`; size 58px (no token) high; radius `radius.lg`; padding `spacing.4` `spacing.5`; type `typography.body.base` | fill `bg.secondary`; text `text.primary`; border `borderWidth.thin` `border.primary`; shadow `shadow.base`; size 58px (no token) high; radius `radius.lg`; padding `spacing.4` `spacing.5`; type `typography.body.base` | [dark](components/crops/2026-10/toast-dark-default.png) [light](components/crops/2026-10/toast-light-default.png) |
+
+**toast-added** (Added to your learning paths; `[data-sonner-toast]`)
+
+| State | Dark | Light | Crops |
+|---|---|---|---|
+| default | fill `bg.green-secondary`; text `text.primary`; shadow `shadow.base`; size 56px (no token) high; radius `radius.lg`; padding `spacing.4` `spacing.5`; type `typography.body.base` | fill `bg.green-secondary`; text `text.primary`; shadow `shadow.base`; size 56px (no token) high; radius `radius.lg`; padding `spacing.4` `spacing.5`; type `typography.body.base` | [dark](components/crops/2026-10/toast-added-dark-default.png) [light](components/crops/2026-10/toast-added-light-default.png) |
+
+### Alert
+
+`data-slot=alert role=alert`: the info alert on Settings > Account (no password set). Tinted `bg.blue-secondary`, no border, 16px icon in currentColor. It is the measured source for `feedback.info`.
+
+**alert-info** (Your account doesn't have a password set; `[data-slot=alert]`)
+
+| State | Dark | Light | Crops |
+|---|---|---|---|
+| default | fill `bg.blue-secondary`; text `text.primary`; shadow none; size 136px (no token) high; radius `radius.lg`; padding `spacing.4` `spacing.5`; type `typography.body.base` | fill `bg.blue-secondary`; text `text.primary`; shadow none; size 136px (no token) high; radius `radius.lg`; padding `spacing.4` `spacing.5`; type `typography.body.base` | [dark](components/crops/2026-10/alert-info-dark-default.png) [light](components/crops/2026-10/alert-info-light-default.png) |
+
+### Skeleton
+
+`data-slot=skeleton` with `data-loading`: the grey block the You page shows while its chart loads, captured mid-load.
+
+**skeleton-loading** (no label; `[data-slot=skeleton][data-loading]`)
+
+| State | Dark | Light | Crops |
+|---|---|---|---|
+| default | fill pulses between `component.skeleton.from` and `component.skeleton.to` (read mid-pulse); text `text.primary`; shadow none; opacity .7 while loading (no token); size 256px (no token) high; radius `radius.2xl`; type `typography.body.base` | fill pulses between `component.skeleton.from` and `component.skeleton.to` (read mid-pulse); text `text.primary`; shadow none; opacity .7 while loading (no token); size 256px (no token) high; radius `radius.2xl`; type `typography.body.base` | [dark](components/crops/2026-10/skeleton-loading-dark-default.png) [light](components/crops/2026-10/skeleton-loading-light-default.png) |
 
 ### Card
 
@@ -682,13 +759,12 @@ Course art, path nodes and Koji are raster or complex illustrations and are not 
 
 ## Gaps
 
-What could not be captured, and why. Updated 2026-10-17; rows the recapture closed are gone (light theme for the quit dialog, the signed-in phone width, the Settings Premium tab, and button3d hover and pressed, which are now measured).
+What could not be captured, and why. Updated 2026-10-17; rows the recapture closed are gone (light theme for the quit dialog, the signed-in phone width, the Settings Premium tab, button3d hover and pressed, toasts, checkboxes, the disabled-to-enabled danger button, a loading skeleton and the email field's error, which are now measured).
 
 | Gap | Reason | What stands in |
 |---|---|---|
-| Toasts | Sonner is mounted, but no look-only action fires a toast; starring a topic or saving a setting would change the account | none |
-| Select, checkbox | No reached screen renders one; the stylesheet defines `select-icon`, `checkbox` and `checkbox-indicator` slots | n/a |
-| Form validation error | Errors appear only after a submit, and no form was submitted (the login field shows nothing on blur; clearing a settings field was not attempted because it could save) | the stylesheet's invalid rules: `outline-color: border.danger-primary` and `text.danger-primary` |
+| Select | No reached screen renders one; the stylesheet defines a `select-icon` slot | n/a |
+| A product-painted field error | The only error reached (an invalid email in Settings > Add another email) is the browser's native validation bubble; the field keeps its default border. Server-side errors would need a real submit that changes the account | the stylesheet's invalid rules: `outline-color: border.danger-primary` and `text.danger-primary` |
 | In-app paywall | The onboarding paywall auto-advanced in 2026-09 | the same Free vs Premium table on `/subscribe/`, measured headless in both themes |
 | Koji prompt suggestion cards | Drawn on a `<canvas>`, so there is no DOM to read | values estimated from screenshot |
 | Lesson interactive in the 2026-10 copies | `<custom-interactive>` renders in a shadow root, which a DOM copy does not carry, so lesson copies show an empty frame | the 2026-09 lesson screenshots and `component.lesson.*` tokens |
