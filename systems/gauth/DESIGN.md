@@ -57,6 +57,10 @@ colors:
   action-focus: "#0064e0"
   action-primary-pressed: "#333943"
   action-primary-disabled: "#ffccd8"
+  action-accent: "#ff013e"
+  action-accent-hover: "#f00039"
+  action-accent-pressed: "#d80033"
+  action-accent-disabled: "#ffccd8"
   component-sidebar-background: "#ffffff"
   component-sidebar-background-warm: "#faf9f5"
   component-sidebar-item-hover: "#f5f5f7"
@@ -116,9 +120,24 @@ colors:
   component-news-tab-current: "#fff0f3"
   component-news-tab-current-border: "#ffe5ec"
   component-news-tab-current-text: "#f00039"
-  status-success-fill: "#e8f9f2"
-  status-success-text: "#1f5d3e"
-  status-success-border: "#c3e0d4"
+  component-field-background: "#f5f5f7"
+  component-field-border-focus: "#8e8e93"
+  component-field-error-background: "#fff2f2"
+  component-field-error-border: "#f00039"
+  component-field-error-text: "#f00039"
+  component-field-helper-text: "#757c88"
+  component-code-inline: "rgba(117, 124, 136, 0.2)"
+  component-code-block: "rgba(228, 230, 235, 0.5)"
+  component-delete-dialog-scrim: "rgba(20, 24, 32, 0.2)"
+  component-delete-dialog-background: "#ffffff"
+  component-delete-dialog-title: "#141820"
+  component-delete-dialog-text: "#6d7482"
+  component-delete-dialog-cancel: "#f3f4f7"
+  component-delete-dialog-confirm: "#ff4d4f"
+  status-success-fill: "#f1fbf4"
+  status-success-text: "#1a8c4f"
+  status-success-border: "#bdebcc"
+  status-success-accent: "#1a8c4f"
   status-danger-fill: "#fef4f4"
   status-danger-text: "#b82b33"
   status-danger-border: "#f2c7cc"
@@ -126,6 +145,9 @@ colors:
   status-info-fill: "#e6eff9"
   status-info-text: "#043277"
   status-info-border: "#c8d9ec"
+  status-warning-fill: "#f4e1b7"
+  status-warning-text: "#524622"
+  status-warning-border: "#e5d3a9"
 typography:
   hero:
     fontFamily: "Gauth Home Libre Baskerville"
@@ -367,19 +389,143 @@ typography:
     fontWeight: 600
     lineHeight: "20px"
     letterSpacing: "0px"
+  code:
+    fontFamily: "-apple-system"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "24px"
+    letterSpacing: "0px"
+  label-system:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: "21px"
+    letterSpacing: "0px"
+  menu:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "21px"
+    letterSpacing: "0px"
+  dialog-display:
+    fontFamily: "-apple-system"
+    fontSize: "36px"
+    fontWeight: 600
+    lineHeight: "46.8px"
+    letterSpacing: "0px"
+  rail-meta:
+    fontFamily: "-apple-system"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: "16.8px"
+    letterSpacing: "0px"
+  field:
+    fontFamily: "-apple-system"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "24px"
+    letterSpacing: "0px"
+  field-lg:
+    fontFamily: "-apple-system"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "27px"
+    letterSpacing: "0.126px"
+  select-option:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 600
+    lineHeight: "40px"
+    letterSpacing: "0px"
+  tab-strong:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 700
+    lineHeight: "19.6px"
+    letterSpacing: "0px"
+  rail-current:
+    fontFamily: "Canvas Print"
+    fontSize: "14px"
+    fontWeight: 600
+    lineHeight: "20px"
+    letterSpacing: "0px"
+  overline:
+    fontFamily: "Canvas Print"
+    fontSize: "11px"
+    fontWeight: 700
+    lineHeight: "18px"
+    letterSpacing: "0.88px"
+  overline-lg:
+    fontFamily: "Canvas Print"
+    fontSize: "12px"
+    fontWeight: 700
+    lineHeight: "20px"
+    letterSpacing: "0.96px"
+  atlas-card-title:
+    fontFamily: "Rubik"
+    fontSize: "15px"
+    fontWeight: 600
+    lineHeight: "18px"
+    letterSpacing: "0.45px"
+  pagination:
+    fontFamily: "-apple-system"
+    fontSize: "16px"
+    fontWeight: 600
+    lineHeight: "32px"
+    letterSpacing: "0px"
+  table-heading:
+    fontFamily: "-apple-system"
+    fontSize: "26px"
+    fontWeight: 500
+    lineHeight: "34px"
+    letterSpacing: "0px"
+  button-xl:
+    fontFamily: "-apple-system"
+    fontSize: "18px"
+    fontWeight: 600
+    lineHeight: "48px"
+    letterSpacing: "0px"
+  code-block:
+    fontFamily: "-apple-system"
+    fontSize: "13.6px"
+    fontWeight: 400
+    lineHeight: "22.44px"
+    letterSpacing: "0px"
+  atlas-rail:
+    fontFamily: "Rubik"
+    fontSize: "12px"
+    fontWeight: 700
+    lineHeight: "13.2px"
+    letterSpacing: "0px"
+  composer:
+    fontFamily: "-apple-system"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: "23.57px"
+    letterSpacing: "0px"
+  plan-tag:
+    fontFamily: "Arial"
+    fontSize: "12px"
+    fontWeight: 700
+    lineHeight: "16.8px"
+    letterSpacing: "0px"
 rounded:
   "4": "4px"
+  "6": "6px"
   "8": "8px"
   "10": "10px"
   "12": "12px"
   "14": "14px"
   "16": "16px"
+  "18": "18px"
   "20": "20px"
   "24": "24px"
   "28": "28px"
   "32": "32px"
   "38": "38px"
   "48": "48px"
+  "100": "100px"
+  "999": "999px"
   pill: "9999px"
 spacing:
   base: "4px"
@@ -391,6 +537,7 @@ spacing:
   "24": "24px"
   "28": "28px"
   "32": "32px"
+  "36": "36px"
   "40": "40px"
   "48": "48px"
 components:
@@ -418,6 +565,16 @@ components:
     backgroundColor: "{colors.component-callout-background}"
   news-tab-current:
     textColor: "{colors.component-news-tab-current-text}"
+  field:
+    backgroundColor: "{colors.component-field-background}"
+  field-error:
+    backgroundColor: "{colors.component-field-error-background}"
+    textColor: "{colors.component-field-error-text}"
+  field-helper:
+    textColor: "{colors.component-field-helper-text}"
+  delete-dialog:
+    backgroundColor: "{colors.component-delete-dialog-background}"
+    textColor: "{colors.component-delete-dialog-text}"
 ---
 
 # Gauth
@@ -449,7 +606,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-40 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, Canvas Chapter, Canvas Print, Gauth Home Libre Baskerville, Inter, Playfair Display, Rubik.
+60 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, Arial, Canvas Chapter, Canvas Print, Gauth Home Libre Baskerville, Inter, Playfair Display, Rubik.
 
 ### Fonts (from README.md)
 
@@ -468,7 +625,7 @@ Playfair Display, Libre Baskerville, Inter and Shantell Sans are open source, so
 
 ## Layout
 
-Spacing from `core.spacing`: `base` 4px, `4` 4px, `8` 8px, `12` 12px, `16` 16px, `20` 20px, `24` 24px, `28` 28px, `32` 32px, `40` 40px, `48` 48px.
+Spacing from `core.spacing`: `base` 4px, `4` 4px, `8` 8px, `12` 12px, `16` 16px, `20` 20px, `24` 24px, `28` 28px, `32` 32px, `36` 36px, `40` 40px, `48` 48px.
 
 ## Elevation & Depth
 
@@ -500,11 +657,11 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `4` 4px, `8` 8px, `10` 10px, `12` 12px, `14` 14px, `16` 16px, `20` 20px, `24` 24px, `28` 28px, `32` 32px, `38` 38px, `48` 48px, `pill` 9999px.
+Corner radii from `core.radius`: `4` 4px, `6` 6px, `8` 8px, `10` 10px, `12` 12px, `14` 14px, `16` 16px, `18` 18px, `20` 20px, `24` 24px, `28` 28px, `32` 32px, `38` 38px, `48` 48px, `100` 100px, `999` 999px, `pill` 9999px.
 
 ## Components
 
-12 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+16 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
@@ -522,7 +679,8 @@ The Academy catalogue is the screen to get right. It sits on a warm `#faf9f5` gr
 
 ### What to distrust (from README.md)
 
-- **Status colours beyond danger.** `status.danger` is painted (the answered check-in's result card). `status.success` and `status.info` are Gauth's own declared variables (`--lesson-right-*`, `--gauth-semantic-blue-*`); a correct answer and an info message were not captured, so neither was seen painted. Gauth declares a second danger trio (`--lesson-wrong-*`, `palette.red.fill`, `.line`, `.text`) that differs from the painted one.
+- **Status colours.** `status.danger` and `status.success` are painted (the check-in's result card, answered wrong and right). `status.info` is Gauth's declared `--gauth-semantic-blue-*`, and `status.warning` is Astryx's yellow as the player's stone theme resolves it (the stone scope stays on a container after the audio dialog closes; the page root's Astryx yellow differs); neither was seen painted, and Gauth's own CSS has no warning. Gauth also declares a danger and a success trio (`--lesson-wrong-*`, `--lesson-right-*`) that differ from the painted ones.
+- **Forced and declared states.** The field error is Gauth's `form_error` class added in DevTools; the error message text, the code role and the delete dialog are read from Gauth's CSS and never seen on a page.
 - **The spacing scale is a reading, not Gauth's.** Gauth declares no spacing scale. `core.spacing` lists the measured values on a 4px grid, which 63% of the 1,020 measured paddings and gaps fall on; `core.spacing-offgrid` keeps the rest (10px alone is used 131 times).
 - **The elevation levels are a grouping.** `elevation.level-1` to `level-4` point at measured shadows chosen by use (resting card, hovered card, popover, dialog); Gauth itself paints 17 different shadows, all kept under `light.elevation`.
 - **Three background roles share a value.** `background.surface`, `.raised` and `.overlay` are all white: Gauth separates them by shadow, not by fill.

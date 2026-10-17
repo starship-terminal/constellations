@@ -4,7 +4,7 @@
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
 // Pages: promo home academy create unit science math history atlas story news mobile signin trial plus
-// footer blog.
+// footer blog forms quizright.
 // Writes raw/components-computed.json (merged, so a subset of pages can be re-run)
 // and one crop per component and state into components/crops/. raw/measurements.md
 // is then built from the JSON by build-measurements.mjs.
@@ -48,6 +48,11 @@ const URLS = {
 };
 
 let page, cdp, current, context, run;
+let sheetText = []; // the stylesheet bodies of the current page, to find a CSS-module class's hashed name
+
+// The hashed class Gauth's CSS modules give a name ('form_error' -> 'form_error__ATu6ZT'), read from the
+// page's own stylesheets so a rebuild that changes the hash does not break the kit.
+const moduleClass = (name) => { for (const t of sheetText) { const m = t.match(new RegExp('\\.(' + name + '__[A-Za-z0-9_-]{5,6})\\b')); if (m) return m[1]; } return null; };
 const touched = new Set();
 
 // ---------- helpers ----------
@@ -56,6 +61,8 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   current = key;
   page = await context.newPage();
   page.setDefaultTimeout(8000);
+  sheetText = [];
+  page.on('response', async (r) => { if (r.request().resourceType() === 'stylesheet') { try { sheetText.push(await r.text()); } catch { /* body gone */ } } });
   cdp = await context.newCDPSession(page);
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
@@ -736,7 +743,98 @@ async function blog() {
   await page.close();
 }
 
-const PAGES = { promo, home, academy, create: createDialog, unit, science, math, history, atlas, story, news, mobile, signin, trial, plus, footer, blog };
+// ---------- added on the 2026-10-17 second pass: the brand-red primary, field states, a right answer ----------
+
+// The Sign in dialog's brand-red primary once the field holds an address, and the field states Gauth's form CSS
+// declares. The address typed is name@example.com (a reserved example domain) and is deleted; Sign in is never
+// pressed (its pressed state is forced with DevTools). The error state is Gauth's own `form_error` class added to
+// the field in DevTools, since showing it for real would need a submit. The sign-up view's password field is only
+// focused, never typed into.
+async function forms() {
+  await newPage('home');
+  const g = G.overlay;
+  await q(M('pc-header_loginEntry')).first().click();
+  await page.waitForTimeout(2500);
+  const email = q('input[placeholder="E-mail address"]').filter({ visible: true }).first();
+  const btn = q(M('pc-login-modal-view_account-btn'));
+  const fill = async () => { if (!(await email.inputValue())) { await email.click(); await page.keyboard.type('name@example.com', { delay: 10 }); await page.waitForTimeout(600); } };
+  await S('accent-button', btn, ['default', 'hover', 'pressed'], { group: g, title: 'Primary button, brand red (Sign in)', desc: 'Gauth\'s own button component (button_btn-primary) in the Sign in dialog, enabled once the field holds an address: brand red #ff013e, hover #f00039, pressed #d80033 (its :active rule). name@example.com was typed and deleted; the button was never pressed.', sel: M('pc-login-modal-view_account-btn') }, {
+    noScroll: true, open: fill, before: { default: async () => { await fill(); return 'field holds name@example.com; button enabled'; }, hover: async () => { await fill(); return 'field filled'; }, pressed: async () => { await fill(); return 'field filled'; } },
+  });
+  await email.fill('').catch(() => {});
+  const item = q(M('pc-login-modal-view_login-input')).filter({ has: q('input[placeholder="E-mail address"]') });
+  const errCls = moduleClass('form_error');
+  const inputErrCls = moduleClass('input_email-error');
+  out._meta.formErrorClass = errCls;
+  out._meta.inputErrorClass = inputErrCls;
+  await S('field-error', item, ['error'], { group: g, title: 'Text field, error (forced)', desc: 'The email field with Gauth\'s own error classes added in DevTools: form_error on the field turns it #fff2f2 with a #f00039 border, and input_email-error on its input wrapper turns the typed text and the mail icon red. Gauth shows them after a submit, which the capture never made, so the classes were forced to read the rules.', sel: M('pc-login-modal-view_login-input') + ' + form_error' }, {
+    noScroll: true,
+    before: { error: async (l) => {
+      if (!errCls || !inputErrCls) throw new Error('form_error or input_email-error class not found in the stylesheets');
+      await email.click(); await page.keyboard.type('abc', { delay: 10 });
+      await l.evaluate((e, [c, ic]) => { e.classList.add(c); e.querySelector('[class*="input_input-wrapper__"]')?.classList.add(ic); }, [errCls, inputErrCls]);
+      await page.waitForTimeout(300);
+      return 'classes form_error and input_email-error added in DevTools; "abc" typed so the text colour shows (deleted after)';
+    } },
+    after: { error: async (l) => { await l.evaluate((e, [c, ic]) => { e.classList.remove(c); e.querySelector('[class*="input_input-wrapper__"]')?.classList.remove(ic); }, [errCls, inputErrCls]); await email.fill(''); } },
+    extra: async (l) => l.evaluate((e) => { const i = e.querySelector('input'); const ic = e.querySelector('svg path'); const ci = getComputedStyle(i); return { inputColor: ci.color, inputBackground: ci.backgroundColor, iconStroke: ic ? getComputedStyle(ic).stroke : null }; }),
+  });
+  // the sign-up view: focus the password field (never typed into) to show its rule line
+  await q('[data-e2e="auth-open-signup"]').click();
+  await page.waitForTimeout(1800);
+  const pw = q('input[type=password]').filter({ visible: true }).first();
+  const pwItem = pw.locator('xpath=ancestor::*[contains(@class,"form_form-item")][1]');
+  await S('field-focused', pwItem, ['focused'], { group: g, title: 'Text field, focused (sign-up password)', desc: 'Focusing a sign-up field gives it Gauth\'s form_active border (#8e8e93) and shows the rule line under the password field. Focused only; nothing typed.', sel: 'sign-up password field' }, {
+    noScroll: true, noReset: true, before: { focused: async () => { await pw.focus(); await page.waitForTimeout(600); return 'password field focused; nothing typed'; } },
+  });
+  await page.evaluate(() => { const t = [...document.querySelectorAll('body *')].find((e) => e.children.length === 0 && /^Use \d+-\d+ characters/.test((e.textContent || '').trim()) && e.getBoundingClientRect().width > 0); if (t) t.setAttribute('data-m', 'helper'); });
+  await S('field-helper', q('[data-m="helper"]'), ['focused'], { group: g, title: 'Field helper text', desc: 'The rule line Gauth shows under the password field while it has focus: "Use 6-20 characters from at least 2 categories".', sel: 'sign-up password helper' }, {
+    noScroll: true, noReset: true, before: { focused: async () => { await pw.focus(); await page.waitForTimeout(400); return 'password field focused'; } },
+  });
+  await page.close();
+}
+
+// The science lesson's check-in answered with the option that names lift, thrust and climb cost (the correct one on
+// 2026-10-17), to see the result card in its right-answer colours. One answer, nothing of the visitor's sent.
+async function quizright() {
+  await newPage('lesson-science', { wait: 7000 });
+  const g = G.science;
+  const nn = page.getByRole('button', { name: 'Not now' });
+  if (await nn.count()) { await nn.click(); await page.waitForTimeout(1500); }
+  const play = page.getByRole('button', { name: 'Play' });
+  if (await play.count()) await play.click().catch(() => {});
+  let shown = false;
+  for (let i = 0; i < 120 && !shown; i++) { await page.waitForTimeout(2000); shown = await page.locator('[aria-label="Close quiz and continue"]').count() > 0; }
+  if (!shown) throw new Error('quiz never shown');
+  const opts = page.locator('[aria-label="Close quiz and continue"]').locator('xpath=ancestor::*[.//input][1]').locator('input');
+  const texts = await opts.evaluateAll((es) => es.map((e) => { let n = e.parentElement; while (n && n.getBoundingClientRect().height < 30) n = n.parentElement; return (n?.innerText || '').trim(); }));
+  let idx = texts.findIndex((t) => /lift/i.test(t) && /thrust/i.test(t));
+  out._meta.quizRightOption = { texts, picked: idx };
+  if (idx < 0) idx = 0;
+  await opts.nth(idx).locator('xpath=..').click().catch(() => opts.nth(idx).click({ force: true }));
+  let verdict = { found: false };
+  for (let i = 0; i < 12 && !verdict.found; i++) {
+    await page.waitForTimeout(1000);
+    verdict = await page.evaluate(() => {
+      const area = (e) => { const r = e.getBoundingClientRect(); return r.width * r.height; };
+      const label = [...document.querySelectorAll('body *')].filter((e) => /^quick check/i.test((e.innerText || '').trim()) && e.getBoundingClientRect().height > 0 && e.getBoundingClientRect().height < 40).sort((a, b) => area(a) - area(b))[0];
+      if (!label) return { found: false };
+      let card = label; while (card && !(card.getBoundingClientRect().height > 100 && getComputedStyle(card).backgroundColor !== 'rgba(0, 0, 0, 0)')) card = card.parentElement;
+      label.setAttribute('data-m', 'quiz-right-label');
+      if (card) card.setAttribute('data-m', 'quiz-right');
+      return { found: !!card, label: label.innerText.trim().slice(0, 60), right: !/review|missed|incorrect/i.test(card?.innerText || '') };
+    });
+  }
+  out._meta.quizRightVerdict = verdict;
+  log('  quiz answered:', JSON.stringify(verdict));
+  const st = verdict.right ? 'answered-correct' : 'answered-wrong';
+  const why = { [st]: async () => 'picked the option naming lift, thrust and climb cost (nothing of the visitor\'s sent)' };
+  await S('quiz-result-correct', q('[data-m="quiz-right"]'), [st], { group: g, title: 'Quiz result card, right answer', desc: 'The check-in answered correctly comes back as the same result card in the lesson\'s right-answer colours.', sel: 'canvas result card (right)' }, { before: why });
+  await S('quiz-result-correct-label', q('[data-m="quiz-right-label"]'), [st], { group: g, title: 'Quiz result status line, right answer', sel: 'canvas result card status line (right)' }, { crop: false, before: why });
+  await page.close();
+}
+
+const PAGES = { promo, home, academy, create: createDialog, unit, science, math, history, atlas, story, news, mobile, signin, trial, plus, footer, blog, forms, quizright };
 const want = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(PAGES);
 const done = new Set(); // pages whose capture ran to the end
 for (const k of want) {
