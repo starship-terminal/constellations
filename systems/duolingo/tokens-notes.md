@@ -136,7 +136,8 @@ Applied by [tools/refresh_tokens_2026_10.py](tools/refresh_tokens_2026_10.py); e
 
 | Tokens | Evidence | What they hold |
 | --- | --- | --- |
-| `ramp.{neutral,green,blue,red,orange,yellow}.*` (light and dark) | Derived | The palette's own names per hue, lightest to darkest by light value. In dark the names invert, so the dark set keeps the names, not the order |
+| `ramp.{neutral,green,blue,red,orange,yellow}.*` (light and dark) | Derived | 10, 8, 10, 9, 9 and 5 steps. Each step is a palette colour in the hue's window, one name per distinct value, at least 4 L* from its neighbours, lightest to darkest by CIE L* of the light value; none interpolated. Green and yellow stop short because the palette has no more distinct values there. In dark the names invert, so the dark set keeps the names, not the order |
+| `border.strong` | Derived | hare: the only neutral border darker than swan, on three rules (`._1wd57`, the ghost avatar's 2px dashed border; `._3ahVn:hover`, a pill chip's hover border; `.uzb3k`, a divider at 40% opacity). Every solid resting neutral border is swan. The role name is this package's |
 | `surface.overlay` | Measured | The dialog panel: the page fill, 16px radius, no border or shadow |
 | `accent.{primary,secondary,danger}.hover` | Derived | The face colour through `filter: brightness(1.1)` |
 | `accent.{primary,secondary,danger}.pressed` | Measured | The face colour; the lip shadow goes and the face drops 4px (`._2cMtD`) |
@@ -147,7 +148,7 @@ Applied by [tools/refresh_tokens_2026_10.py](tools/refresh_tokens_2026_10.py); e
 | `core.layout.columns.*` | Measured | 2 columns at 1440 and 1000, 1 at 390 |
 | `core.duration.reducedMotion` | Measured | What `html[reduced-motion]` switches off |
 
-Not present, so not tokenised: a strong border (resting neutral borders are all swan; hare appears only on one hover border, `._3ahVn:hover`, and on a 40%-opacity divider, `.uzb3k`), a code font, blurred elevation.
+Not present, so not tokenised: a code font, blurred elevation.
 
 ## Gaps
 

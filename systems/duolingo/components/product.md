@@ -23,14 +23,14 @@ Anatomy:
 | logo block | box | 222 x 92: padding `space.32` 32px 0 `space.30` 30px `space.16` 16px, height 30px (>=1160); below 1160: height 39px, padding 36px 0 25px `space.10` 10px | learn-dark-default cl=_3vxyy (#4); css:9071-d035f2e5.css ._3vxyy |
 | logo | size | wordmark img 128 x 30 at x32 y32 (cl=sOuBs, shown >=1160); collapsed mark cl=_1C091 40 x 40 (shown <1160, not captured) | learn-dark-default cl=sOuBs (#6); css:9071-d035f2e5.css .sOuBs, ._1C091 |
 | nav list | layout | flex column, gap `space.8` 8px; 222 wide (width 56px below 1160) | learn-dark-default cl=_2uLXp (#7); css:9071-d035f2e5.css ._2uLXp |
-| nav item | width x height | 222 x 52 (inner height 40px + 4px padding x2 + `space.2` 2px border x2); 48px tall and padding 0 below 1160 | learn-dark-default dt=home-nav span cl=_22Pme _33YLo p3liX YAEPa (#10); css:9071-d035f2e5.css .p3liX, .YAEPa |
+| nav item | width x height | 222 x 52 (inner height 40px + 4px padding x2 + 2px border x2); 48px tall and padding 0 below 1160 | learn-dark-default dt=home-nav span cl=_22Pme _33YLo p3liX YAEPa (#10); css:9071-d035f2e5.css .p3liX, .YAEPa |
 | nav item | padding / border / radius | padding var(--web-ui_tab-padding,4px 8px); border `borderWidth.2` 2px solid transparent; radius `radius.12` 12px (applied by the selected and hover rules) | css:9071-d035f2e5.css .YAEPa, ._348_2, ._3Dchg:hover |
 | nav item | pitch | 60px (52 item + 8 gap): items at y 92, 152, 212, 272, 332, 392, 452, 512 | learn-dark-default dt=*-nav (#9,#15,#21,#28,#34,#40,#46,#52) |
 | nav item | alignment | flex row, align-items center; justify-content flex-start (center below 1160) | css:9071-d035f2e5.css ._33YLo, ._22Pme |
 | icon | size / offset | 32 x 32 img, margin-left `space.6` 6px (0 below 1160) inside a 38 x 32 wrapper with margin-right `space.20` 20px (0 below 1160); icon x=32, label x=84 | learn-dark-default cl=_4fxfA (#11), cl=_101n8 (#12); css:9071-d035f2e5.css ._4fxfA, ._101n8 |
 | avatar icon | size | 32 x 32, radius 50% | learn-dark-default dt=profile-tab img cl=_1eYjP _2eox0 (#49); css:9071-d035f2e5.css ._1eYjP |
 | notification dot | size / position | 8 x 8 plus 2px ring = 12 x 12 rendered; absolute top 0 right 0 of the 32px icon (x52 y222) | learn-dark-default cl=_3niSR _2O71O _3MaD6 (#25); css:9071-d035f2e5.css ._3niSR, ._2O71O, ._3MaD6 |
-| label | size | text box 25px tall (line-height 25px from the container font 500 17px/25px); hidden (display none) below 1160 | learn-dark-default cl=_1AZJt (#13); css:9071-d035f2e5.css ._1AZJt |
+| label | size | text box 25px tall (line-height 25px from the container font `typography.app.railBody` 500 17px/25px); hidden (display none) below 1160 | learn-dark-default cl=_1AZJt (#13); css:9071-d035f2e5.css ._1AZJt |
 | MORE popover | rect / offset | 291 x 262 at x246 y502: position fixed, `space.8` 8px (margin-left) right of the 238px item edge; z-index 220; surface radius `radius.15` 15px, `space.2` 2px border; rows 52px (link rows) and `space.40` 40px (Settings, Help, Log out) with padding 0 `space.40` 40px 0 `space.20` 20px, `space.2` 2px divider after the link group | learn-dark-more-menu cl=_3zpnU D0iFS _1o3g5 xw9u1 (#58), cl=_36bu_ (#59), cl=_1fv9a (#60), dt=det-nav (#61), dt=settings-button (#68); css:4779-c36ad395.css ._36bu_; css:9071-d035f2e5.css .GHXZL, ._2ifes |
 | MORE hover bridge | ::after | 10px wide invisible strip to the right of the item (right -10px) so the pointer can travel to the popover | learn-dark-more-menu cl=_3tK_c (#53) ::after; css:9071-d035f2e5.css ._3tK_c:hover:after |
 | promo card | box | 222 x 199, margin `space.12` 12px 0, padding `space.24` 24px `space.12` 12px `space.16` 16px, gap `space.8` 8px, border `borderWidth.2` 2px, radius `radius.12` 12px, text-align center; display none below 1160 | learn-dark-default cl=_2cabz (#58); css:4243-a8d324a8.css ._2cabz @media (min-width:1160px) |
@@ -51,7 +51,7 @@ Tokens (dark): container background `surface.default` #131F24 (snow, dark); cont
 
 Tokens (light): container background `surface.default` #FFFFFF (snow, light); container border-right `border.default` #E5E5E5 (swan, light); label (default) color `text.secondary` #777777 (wolf, light); label (selected) color `text.link` #1CB0F6 (macaw, light); item (selected) background `surface.selected` #DDF4FF (iguana, light); item (selected) border 2px `border.selected` #84D8FF (blue-jay, light); item (hover) background `surface.subtle` #F7F7F7 (polar, light); notification dot fill / ring `accent.danger.face` #FF4B4B (cardinal, light) / 2px `surface.default` #FFFFFF (snow, light); MORE popover surface / border / row text `text.onPrimary` #FFFFFF (snow) / `border.default` #E5E5E5 (swan) / `text.secondary` #777777 (wolf), light; promo card border / title / body / CTA `border.default` #E5E5E5 (swan) / `text.primary` #4B4B4B (eel) / `text.secondary` #777777 (wolf) / `text.link` #1CB0F6 (macaw), light
 
-Type: nav label: duolingo-sans 700 15px, line-height 25px, uppercase, letter-spacing 0.8px (0 for [lang=ar]); container base: 500 17px/25px duolingo-sans, antialiased; MORE popover row: 700 15px/16px uppercase (link rows add letter-spacing 0.8px from ._1AZJt); promo title / body / CTA: 700 20/24 / 400 16/24 / 700 14px/28px uppercase ls 0.56px
+Type: nav label: duolingo-sans 700 15px, line-height 25px, uppercase, letter-spacing 0.8px (0 for [lang=ar]); container base: `typography.app.railBody` 500 17px/25px duolingo-sans, antialiased; MORE popover row: 700 15px/16px uppercase (link rows add letter-spacing 0.8px from ._1AZJt); promo title / body / CTA: 700 20/24 / 400 16/24 / `typography.button.small` 700 14px/28px uppercase ls 0.56px
 
 Contains: popover shell (MORE menu, side placement, 15px radius), menu (MORE menu rows), card (chess promo, 12px radius variant), button: text/ghost macaw (TRY CHESS)
 
@@ -102,7 +102,7 @@ Tokens (dark): flag outline 2px `text.onColor` #FFFFFF (snow-always-light, dark)
 
 Tokens (light): flag outline 2px `text.onColor` #FFFFFF (snow-always-light, light); invisible on the white page; course number color `text.primary` #4B4B4B (eel, light); streak count (0 days) color `gamification.streakInactive` #E5E5E5 (swan, light), from CSS (light was captured at streak 1); streak count (active) color `status.warningText` #FF9600 (fox, light); gems count color `text.link` #1CB0F6 (macaw, light); hearts count color `accent.danger.text` #FF4B4B (cardinal, light); trigger hover / open background `surface.subtle` #F7F7F7 (polar, light)
 
-Type: counts: duolingo-sans 700 15px, line-height 20px (body default), no letter-spacing, no transform; course number: duolingo-sans 700 16px/24px
+Type: counts: duolingo-sans 700 15px, line-height 20px (body default), no letter-spacing, no transform; course number: duolingo-sans `typography.caption.bold` 700 16px/24px
 
 Contains: popover shell (the four dropdowns, documented elsewhere)
 
@@ -125,8 +125,8 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | rail | width | 368px (._2SBm1 / ._3hqQW width 368px override ._1UT5d width 380px), flex 0 0 auto | learn-dark-default cl=_2SBm1 _1UT5d _2YNyh (#67); css:5275-8898b509.css ._1UT5d, ._2SBm1, ._3hqQW |
-| rail | position (sticky variant) | outer: position sticky, bottom 24px, align-self flex-end, flex-direction column-reverse; inner: position sticky, top calc(var(--app-offset) + `space.24` 24px), min-height calc(100vh - var(--app-offset) - `space.48` 48px) = 749px at 797 tall | learn-dark-default #67, cl=_74gJE _1GhPE (#68); css:5275-8898b509.css ._2SBm1, ._74gJE |
-| rail | scroll spacer | ::before height calc(var(--sidebar-offset) - var(--app-offset) - `space.24` 24px); measured outer 14427 = inner 1174 + 13253, where scroll offset meta.sy = 13252.5, so the rail stays pinned while the page scrolls and releases at its bottom | learn-dark-default #67 rect vs #68 rect; learn-light-default #67 14809 = 1122 + 13687 (sy 13686.5); css:5275-8898b509.css ._2SBm1:before |
+| rail | position (sticky variant) | outer: position sticky, bottom 24px, align-self flex-end, flex-direction column-reverse; inner: position sticky, top calc(var(--app-offset) + 24px), min-height calc(100vh - var(--app-offset) - 48px) = 749px at 797 tall | learn-dark-default #67, cl=_74gJE _1GhPE (#68); css:5275-8898b509.css ._2SBm1, ._74gJE |
+| rail | scroll spacer | ::before height calc(var(--sidebar-offset) - var(--app-offset) - 24px); measured outer 14427 = inner 1174 + 13253, where scroll offset meta.sy = 13252.5, so the rail stays pinned while the page scrolls and releases at its bottom | learn-dark-default #67 rect vs #68 rect; learn-light-default #67 14809 = 1122 + 13687 (sy 13686.5); css:5275-8898b509.css ._2SBm1:before |
 | rail | position (static variant) | cl=_3hqQW: flex column, width 368, not sticky (used on /quests and /profile) | quests-dark-default cl=_3hqQW _1UT5d _2YNyh (#66); profile-dark-default (#66); css:5275-8898b509.css ._3hqQW |
 | stack | gap | `space.16` 16px between cards; the stat bar adds its own `space.8` 8px margin-bottom, so the first card starts 68px below the rail top (y 92) | learn-dark-default cl=_1GhPE (#68), _2gxqo (#69); css:5275-8898b509.css ._1GhPE |
 | rail | z-index | 1 (main column z-index 0) | css:5275-8898b509.css ._2YNyh, ._2HEhk |
@@ -150,7 +150,7 @@ Tokens (dark): card shell background / border `surface.default` #131F24 (snow, d
 
 Tokens (light): card shell background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); footer links color `text.tertiary` #AFAFAF (hare, light); hover `text.link` #1CB0F6 (macaw, light)
 
-Type: footer links: duolingo-sans 700 13px/16px uppercase
+Type: footer links: duolingo-sans `typography.app.footerLink` 700 13px/16px uppercase
 
 Contains: card (16px radius, 2px border), button: primary / secondary inside cards (documented by the card owners)
 
@@ -171,7 +171,7 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| bar | width x height | 570 x 58 (height 58px), position fixed top var(--web-ui_topbar-top,0), z-index 210 | learn-dark-mobile cl=_3sbzq _1lHE4 hJZ_L (#3); css:5275-8898b509.css ._3sbzq, ._1lHE4 |
+| bar | width x height | 570 x 58 (height `size.topBarHeightMobile` 58px), position fixed top var(--web-ui_topbar-top,0), z-index 210 | learn-dark-mobile cl=_3sbzq _1lHE4 hJZ_L (#3); css:5275-8898b509.css ._3sbzq, ._1lHE4 |
 | bar | padding | 0 `space.10` 10px; inner row 550 wide, flex, justify-content space-between, height 100% | learn-dark-mobile #3, cl=qs_bd (#4); css:5275-8898b509.css ._3sbzq .qs_bd |
 | bar | bottom border | `borderWidth.2` 2px solid swan by default (._1lHE4); removed with border-bottom 0 !important on /learn and /shop (cl=hJZ_L) | css:5275-8898b509.css ._1lHE4; css:4769-628e48ee.css .hJZ_L |
 | trigger | hit area | full bar height (58px), no padding: course 54, streak 39, gems 64, hearts 46 wide at x 10, 180, 334, 514 | learn-dark-mobile dt=courses-menu (#5), streak-menu (#10), lingot-menu (#15), hearts-menu (#19) |
@@ -191,7 +191,7 @@ Tokens (dark): bar background `surface.default` #131F24 (snow, dark), overridabl
 
 Tokens (light): bar background `surface.default` #FFFFFF (snow, light); bar text colour `text.tertiary` #AFAFAF (hare, light); course number color `text.primary` #4B4B4B (eel, light); streak count color `status.warningText` #FF9600 (fox, light); gems count color `text.link` #1CB0F6 (macaw, light); hearts count color `accent.danger.text` #FF4B4B (cardinal, light)
 
-Type: counts: duolingo-sans 700 17px, line-height 20px (bar font 500 17px/25px with line-height 20px; dump records no size change); course number: duolingo-sans 700 16px/24px
+Type: counts: duolingo-sans 700 17px, line-height 20px (bar font `typography.app.railBody` 500 17px/25px with line-height 20px; dump records no size change); course number: duolingo-sans `typography.caption.bold` 700 16px/24px
 
 Contains: none
 
@@ -212,13 +212,13 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| bar | width x height | 570 x 82 (height 82px), position fixed bottom 0, width 100%, z-index 210 | learn-dark-mobile cl=_1p0jQ (#24), cl=_2zdkO (#27); css:5275-8898b509.css ._1p0jQ, ._2zdkO |
+| bar | width x height | 570 x 82 (height `size.tabBarHeightMobile` 82px), position fixed bottom 0, width 100%, z-index 210 | learn-dark-mobile cl=_1p0jQ (#24), cl=_2zdkO (#27); css:5275-8898b509.css ._1p0jQ, ._2zdkO |
 | bar | padding / gap | padding `space.16` 16px; flex, align-items center, justify-content space-between, gap `space.12` 12px; box-sizing border-box | learn-dark-mobile #27; css:5275-8898b509.css ._2zdkO |
 | bar | top border | `borderWidth.2` 2px solid | learn-dark-mobile #27 |
 | tab | size | 48 x 48, flex centred; at 570 wide the tabs sit at x 16, 114, 212, 310, 408, 506 (98px pitch) | learn-dark-mobile cl=_3UCzw (#28,#31,#34,#37,#40,#43); css:5275-8898b509.css ._3UCzw |
 | icon | size | 40 x 40 (no label) | learn-dark-mobile cl=_3J4we (#30); css:5275-8898b509.css ._3J4we |
 | active chip | border / radius | 2px solid border, radius `radius.8` 8px (on the 48x48 tab) | learn-dark-mobile cl=_2-WjO (#28); css:5275-8898b509.css ._2-WjO |
-| page spacer | height | 82px spacer at the end of /learn (cl=_1uwk5, 0 at >=700) so content clears the bar | learn-dark-mobile cl=_1uwk5 (#1293); css:path-e50cab6b.css ._1uwk5 |
+| page spacer | height | `size.tabBarHeightMobile` 82px spacer at the end of /learn (cl=_1uwk5, 0 at >=700) so content clears the bar | learn-dark-mobile cl=_1uwk5 (#1293); css:path-e50cab6b.css ._1uwk5 |
 | scrim | layer | fixed full-screen, black at 0.3, opacity 0, transition opacity 0.3s, z-index -1 inside the bar | learn-dark-mobile cl=_1gNU8 (#26); css:5275-8898b509.css ._1gNU8 |
 
 | State | What changes | Source |
@@ -287,7 +287,7 @@ Tokens (dark): page background `surface.default` #131F24 (snow, dark)
 
 Tokens (light): page background `surface.default` #FFFFFF (snow, light)
 
-Type: body default: 500 17px/20px, family duolingo-sans (the * rule)
+Type: body default: `typography.app.bodyDefault` 500 17px/20px, family duolingo-sans (the * rule)
 
 Contains: none
 
@@ -313,7 +313,7 @@ Anatomy:
 | --- | --- | --- | --- |
 | sticky wrapper | position / top / z-index | sticky, top 0 (>=700px), z-index 210, min-height 82px | learn-dark-default cl=_1g8jV (#152); css:path-e50cab6b.css ._1g8jV |
 | spacer above banner | height | 24px (desktop), 0 (mobile) | learn-dark-default cl=_3LueZ (#153) r=[280,0,480,24]; css:path-e50cab6b.css ._3LueZ |
-| banner | width x height | 480 x 90px at 1200 viewport; 592 x 90px at 1384 viewport (fills the path column) | learn-dark-default cl=PsNCe LJB6r (#154); learn-light-default (#163) |
+| banner | width x height | 480 x `size.unitHeaderHeight` 90px at 1200 viewport; 592 x `size.unitHeaderHeight` 90px at 1384 viewport (fills the path column) | learn-dark-default cl=PsNCe LJB6r (#154); learn-light-default (#163) |
 | banner | padding | `space.16` 16px | learn-dark-default PsNCe (#154) |
 | banner | gap (row / column) | `space.6` 6px / `space.16` 16px (row-gap 3px below 700px) | learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe |
 | banner | border-radius | `radius.13` 13px (>=700px only; 0 on mobile) | learn-dark-default PsNCe (#154); css:path-e50cab6b.css .PsNCe @media (min-width:700px) |
@@ -357,10 +357,10 @@ Type:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| section/unit label | font | 700 16px/24px, opacity 0.7 (not uppercased by CSS; the string is uppercase) | learn-dark-default _3WYpp (#157); css:path-e50cab6b.css ._3WYpp |
-| title | font | 700 22px/28px (19px/22px below 700px) | learn-dark-default U_xpg (#158); css:path-e50cab6b.css .U_xpg |
-| GUIDEBOOK label | font | 700 15px/18px uppercase, letter-spacing 0.8px (duolingo-sans via button class _1ursp) | learn-dark-default (#161); css:4779-c36ad395.css ._1ursp |
-| all | font-family | not recorded in dumps (body rule: 500 17px/20px) | css:app-f2ef02f8.css body |
+| section/unit label | font | `typography.caption.bold` 700 16px/24px, opacity 0.7 (not uppercased by CSS; the string is uppercase) | learn-dark-default _3WYpp (#157); css:path-e50cab6b.css ._3WYpp |
+| title | font | `typography.path.unitHeaderTitle` 700 22px/28px (19px/22px below 700px) | learn-dark-default U_xpg (#158); css:path-e50cab6b.css .U_xpg |
+| GUIDEBOOK label | font | `typography.button.default` 700 15px/18px uppercase, letter-spacing 0.8px (duolingo-sans via button class _1ursp) | learn-dark-default (#161); css:4779-c36ad395.css ._1ursp |
+| all | font-family | not recorded in dumps (body rule: `typography.app.bodyDefault` 500 17px/20px) | css:app-f2ef02f8.css body |
 
 Unit colours:
 
@@ -420,7 +420,7 @@ Type:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| title | font | 700 19px/26.6px, centred | learn-dark-default (#1184); css:path-e50cab6b.css ._3qGKs |
+| title | font | `typography.path.unitDivider` 700 19px/26.6px, centred | learn-dark-default (#1184); css:path-e50cab6b.css ._3qGKs |
 
 Contains: none
 Desktop vs mobile: Identical styles on mobile; rules stretch to the 570px column (learn-dark-mobile #59-#62).
@@ -504,7 +504,7 @@ Type:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| START / JUMP HERE? bubble | font | 700 17px/17px uppercase, letter-spacing 0.51px (0.03em), nowrap | learn-dark-default (#1239, #1322); css:path-e50cab6b.css ._27IMa, .TOHdU |
+| START / JUMP HERE? bubble | font | `typography.app.tooltipLabel` 700 17px/17px uppercase, letter-spacing 0.51px (0.03em), nowrap | learn-dark-default (#1239, #1322); css:path-e50cab6b.css ._27IMa, .TOHdU |
 
 Node icons:
 
@@ -552,9 +552,9 @@ Anatomy:
 | shell | width x height | 295 x 151px (current, completed); 295 x 182px (locked) | learn-dark-node-popover cl=_36bu_ _3RP1Q _1Fbw- (#1239); learn-dark-locked-popover (#1270) |
 | shell | padding / radius | 16px / 15px | learn-dark-node-popover (#1239); css:path-e50cab6b.css ._3RP1Q |
 | shell | offset from node | margin-top `space.12` 12px below the node (arrow overlaps `space.8` 8px); horizontal translate centres the shell on the column (-147.5px for the centre node, -192.384px for the node at +44.884, -102.616px for a node at -44.884) | learn-dark-node-popover (#1238); learn-dark-locked-popover (#1269); learn-dark-completed-popover (#1428) |
-| arrow | size / radius | 20 x `radius.10` 10px clip, inner square 20x20 rotated 45deg, radius `radius.2` 2px; margin 0 `space.15` 15px (popover radius var) | learn-dark-node-popover _3T97b (#1245), _1TMn5 (#1246); css:4779-c36ad395.css ._37pE2>._3T97b |
+| arrow | size / radius | 20 x 10px clip, inner square 20x20 rotated 45deg, radius `radius.2` 2px; margin 0 `space.15` 15px (popover radius var) | learn-dark-node-popover _3T97b (#1245), _1TMn5 (#1246); css:4779-c36ad395.css ._37pE2>._3T97b |
 | title | box | 263 x 27px | learn-dark-node-popover QPQgr (#1242) |
-| button | width x height | 263 x 50px (min-height 50), margin-top `space.16` 16px (8px in locked), padding `space.8` 8px `space.16` 16px, radius `radius.16` 16px, border-bottom `borderWidth.4` 4px lip | learn-dark-node-popover dt="skill-path-state-active skill-path-unit-test-81" (#1244); css:path-e50cab6b.css ._2sYfM |
+| button | width x height | 263 x `size.buttonHeight` 50px (min-height 50), margin-top `space.16` 16px (8px in locked), padding `space.8` 8px `space.16` 16px, radius `radius.16` 16px, border-bottom `borderWidth.4` 4px lip | learn-dark-node-popover dt="skill-path-state-active skill-path-unit-test-81" (#1244); css:path-e50cab6b.css ._2sYfM |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -591,9 +591,9 @@ Type:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| title | font | 700 19px/26.6px, left aligned | learn-dark-node-popover QPQgr (#1242); css:path-e50cab6b.css .QPQgr |
+| title | font | `typography.path.unitDivider` 700 19px/26.6px, left aligned | learn-dark-node-popover QPQgr (#1242); css:path-e50cab6b.css .QPQgr |
 | subtitle | font | 500 17px/26.6px (locked: 19px, margin-top `space.8` 8px) | css:path-e50cab6b.css ._21efi, ._3WUdw ._21efi; learn-dark-locked-popover (#1274) |
-| button label | font | 700 15px/18px uppercase, letter-spacing 0.8px | learn-dark-node-popover (#1244) |
+| button label | font | `typography.button.default` 700 15px/18px uppercase, letter-spacing 0.8px | learn-dark-node-popover (#1244) |
 
 Contains: popover shell, button: white (snow-always-light, _19ped), button: disabled
 Desktop vs mobile: No mobile popover dump.
@@ -700,7 +700,7 @@ Anatomy:
 | lock icon | size | 21 x 25px, margin-right `space.12` 12px | learn-dark-path-end img cl=_3kRS5 (#472) |
 | title row | margin-bottom | 13px | learn-dark-path-end cl=_3iRHZ (#471) |
 | description | margin-bottom | `space.24` 24px | learn-dark-path-end cl=_3czy6 (#474) |
-| button | width x height / radius | 416 x 50px (528 at 592 card), radius `radius.16` 16px, border 2/`radius.4` 4px | learn-dark-path-end cl=_3xDVI _2V6ug _1jUqO (#475) |
+| button | width x height / radius | 416 x `size.buttonHeight` 50px (528 at 592 card), radius `radius.16` 16px, border 2/`radius.4` 4px | learn-dark-path-end cl=_3xDVI _2V6ug _1jUqO (#475) |
 
 | State | What changes | Source |
 | --- | --- | --- |
@@ -735,10 +735,10 @@ Type:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| UP NEXT | font | 700 15px/18px uppercase, letter-spacing 0.6px (0.04em) | learn-dark-path-end (#470) |
-| title | font | 700 25px/32px | learn-dark-path-end (#473) |
+| UP NEXT | font | `typography.app.eyebrow` 700 15px/18px uppercase, letter-spacing 0.6px (0.04em) | learn-dark-path-end (#470) |
+| title | font | `typography.path.sectionTitle` 700 25px/32px | learn-dark-path-end (#473) |
 | description | font | 19px/29px (weight from body, 500) | learn-dark-path-end (#474) |
-| button | font | 700 15px/18px uppercase, letter-spacing 0.8px | learn-dark-path-end (#475) |
+| button | font | `typography.button.default` 700 15px/18px uppercase, letter-spacing 0.8px | learn-dark-path-end (#475) |
 
 Contains: button: secondary (full width), badge/pill
 Desktop vs mobile: No mobile capture of the path end.
@@ -764,13 +764,13 @@ Anatomy:
 | locked card | width x height | 516 x 265-346px (content dependent) | sections-dark-default #234-#403 |
 | card | radius / padding | 16px / 0 24px; two-column cards: columns 1fr 1fr, gap 26px | sections-dark-default (#158, #191); css:pathSections-c1a583d8.css ._3AIkT, ._2E1uv |
 | left column | padding | 21px 0 | sections-dark-default cl=CQzMM (#159) |
-| SEE DETAILS button | height | 48px (line-height 44, border 1/5px) | sections-dark-default cl=_2rQ98 _1GQxS (#160) |
+| SEE DETAILS button | height | `size.buttonHeightMedium` 48px (line-height 44, border 1/5px) | sections-dark-default cl=_2rQ98 _1GQxS (#160) |
 | title | margin-bottom | `space.15` 15px | sections-dark-default h1 cl=_39RQh (#162) |
 | status icon | size | 16 x 17px (check), 13 x 16px (lock); margin-right `space.8` 8px / 5px | sections-dark-default _6wAz8 (#164), _2cmY1 (#238) |
-| REVIEW button | width x height / radius | 90 x 50px / `radius.12` 12px | sections-dark-default cl=_3xDVI _2V6ug _2izhP (#167) |
-| progress bar | width x height / radius | 178 x 18px (254 at 1384), radius `radius.9` 9px; top highlight strip 3px tall, inset `space.5` 5px, radius 9999, white @0.2 | sections-dark-default role=progressbar (#197), _3yKMC (#198), _1EFTr (#202) |
+| REVIEW button | width x height / radius | 90 x `size.buttonHeight` 50px / `radius.12` 12px | sections-dark-default cl=_3xDVI _2V6ug _2izhP (#167) |
+| progress bar | width x height / radius | 178 x `size.progressBarHeightQuest` 18px (254 at 1384), radius `radius.9` 9px; top highlight strip 3px tall, inset `space.5` 5px, radius 9999, white @0.2 | sections-dark-default role=progressbar (#197), _3yKMC (#198), _1EFTr (#202) |
 | trophy | size | 37 x 36px, overlapping the bar end (left calc(100% - 30px), top -8px) | sections-dark-default _320PF (#205); css:pathSections-c1a583d8.css ._320PF |
-| CONTINUE button | width x height / margin-top | 178 x 50px, radius `radius.12` 12px, margin-top `space.24` 24px | sections-dark-default cl=_3_XLT _3RMj4 (#210) |
+| CONTINUE button | width x height / margin-top | 178 x `size.buttonHeight` 50px, radius `radius.12` 12px, margin-top `space.24` 24px | sections-dark-default cl=_3_XLT _3RMj4 (#210) |
 | speech bubble | width / radius / padding | 264px, radius `radius.16` 16px, padding `space.28` 28px `space.16` 16px `space.16` 16px; tail img 23 x 24px | sections-dark-default _2NZrx (#214), O93KC (#215), _3moA6 (#232) |
 | character | size | 128 x 136px (varies per section, e.g. 139x146, 170x200) | sections-dark-default img _1XMGl (#233), OjEbD (#264), oNIUa (#413) |
 
@@ -817,10 +817,10 @@ Type:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| SEE DETAILS | font | 700 16px/44px uppercase, letter-spacing 0.64px | sections-dark-default (#160) |
-| title | font | 700 25px/34px | sections-dark-default _39RQh (#162) |
-| status label | font | 700 15px/18px uppercase, letter-spacing 0.6px (locked: opacity 0.7) | sections-dark-default _1tBwZ (#165, #239) |
-| progress % | font | 700 14px/18px uppercase, letter-spacing 0.56px | sections-dark-default (#199) |
+| SEE DETAILS | font | `typography.button.medium` 700 16px/44px uppercase, letter-spacing 0.64px | sections-dark-default (#160) |
+| title | font | `typography.app.promoTitle` 700 25px/34px | sections-dark-default _39RQh (#162) |
+| status label | font | `typography.app.eyebrow` 700 15px/18px uppercase, letter-spacing 0.6px (locked: opacity 0.7) | sections-dark-default _1tBwZ (#165, #239) |
+| progress % | font | `typography.app.progressLabel` 700 14px/18px uppercase, letter-spacing 0.56px | sections-dark-default (#199) |
 | speech bubble | font | 20px/28px; furigana 16px/24px | sections-dark-default O93KC (#215), rt (#218) |
 | title colour (completed, in progress) | colour | inherits body text (`text.body` black-text #F1F7FB dark / #3C3C3C light); not recorded in the dump (estimated) | css:app-f2ef02f8.css body |
 
@@ -846,10 +846,10 @@ Anatomy:
 | --- | --- | --- | --- |
 | header row | height | 100px (grid-template-rows 100px 1fr 140px) | css:1584-b289a3ce.css ._29gfw @media (min-width:700px) |
 | header inner | padding / max-width | 50px `space.40` 40px 0 / 1080px, centred | lesson-light-challenge-default cl=_3v4ux (#5); css:1584-b289a3ce.css ._3v4ux |
-| row | width x height, gap | 1000 x `space.32` 32px, column gap `space.24` 24px | lesson-light-challenge-default cl=_18N2Q _1zcW8 (#6) |
+| row | width x height, gap | 1000 x 32px, column gap `space.24` 24px | lesson-light-challenge-default cl=_18N2Q _1zcW8 (#6) |
 | close X | size | 18 x 18px (img src images/df223d5b9feb8017b323ed21103eb5ac.svg) | lesson-dark-challenge-default dt=quit-button (#7, #8) |
 | settings gear | size | 22 x 22px, background-size cover | lesson-light-challenge-default cl=_2VEsk (#9); css:1584-b289a3ce.css ._2VEsk |
-| progress track | width x height, radius | 840 x `radius.16` 16px, radius `radius.8` 8px (height/2) | lesson-light-challenge-default cl=_3yKMC (#11) |
+| progress track | width x height, radius | 840 x `size.progressBarHeightLesson` 16px, radius `radius.8` 8px (height/2) | lesson-light-challenge-default cl=_3yKMC (#11) |
 | progress fill | min width | 24px (1.5 x bar height); visible width = value, e.g. 98px at LCD | lesson-light-challenge-default cl=_27NV6 (#12), cl=_345XU (#15) |
 | progress fill | mechanism | full-width layer clipped by clip-path inset(0 calc(100% - value) 0 0 round 8px); transition background, color, opacity, clip-path 0.4s | css:4779-c36ad395.css ._27NV6 |
 | highlight stripe | size / offset | height 3px (30% of bar), top 25% (`space.4` 4px), left `space.4` 4px (height/4), width = value - `space.8` 8px, radius `radius.pill` 9999px | lesson-light-challenge-default cl=_1EFTr (#14) r=[284,62,90,3]; css:4779-c36ad395.css ._1EFTr |
@@ -889,7 +889,7 @@ Tokens (light):
 | hearts count | color | `accent.danger.text` #FF4B4B (cardinal, light) | lesson-light-challenge-default cl=_28aeG (#18) |
 | settings gear | image | images/4f9f726081167f96137117883812c434.svg | css:1584-b289a3ce.css ._2VEsk |
 
-Type: hearts count: duolingo-sans 700 17px/20px (body size, inherited) (css:app-f2ef02f8.css body {font:500 17px/20px}; css:2634-6b22725c.css ._c4M- {font-weight:700}; css:app-f2ef02f8.css * {font-family:duolingo-sans,sans-serif})
+Type: hearts count: duolingo-sans `typography.app.bodyStrong` 700 17px/20px (body size, inherited) (css:app-f2ef02f8.css body {font:500 17px/20px}; css:2634-6b22725c.css ._c4M- {font-weight:700}; css:app-f2ef02f8.css * {font-family:duolingo-sans,sans-serif})
 
 Contains: none
 
@@ -940,7 +940,7 @@ Tokens (light):
 | NEW WORD label + icon | color / fill | `dataViz.avatar.purple` #CE82FF (beetle, light) | lesson-light-select-default cl=w2K8w (#32), path (#35) |
 | PREVIOUS MISTAKE label | color | `status.warningText` #FF9600 (fox, light), derived, not captured: badge colour is inline, fox resolved in light | lesson-dark-previous-mistake #25 (dark only) |
 
-Type: title: duolingo-sans 700 32px/40px (25px, line-height 1.25 below 700px) (lesson-dark-tile-hover #36; css:4358-6896adab.css ._3EOK0; css:app-f2ef02f8.css h1); badge label: duolingo-sans 700 16px/16px uppercase, letter-spacing 0.64px (0.04em) (lesson-dark-tile-hover #32; css:4358-6896adab.css .w2K8w (text-label-medium))
+Type: title: duolingo-sans `typography.lesson.challengeHeader` 700 32px/40px (25px, line-height 1.25 below 700px) (lesson-dark-tile-hover #36; css:4358-6896adab.css ._3EOK0; css:app-f2ef02f8.css h1); badge label: duolingo-sans `typography.label.medium` 700 16px/16px uppercase, letter-spacing 0.64px (0.04em) (lesson-dark-tile-hover #32; css:4358-6896adab.css .w2K8w (text-label-medium))
 
 Contains: none
 
@@ -1012,7 +1012,7 @@ Tokens (light):
 | hint underline | image | images/06f94a15de0c0937cce25dc5dc083e6e.svg | css:1327-4028784b.css ._2IGwo |
 | new-word text + sparkles | color | `dataViz.avatar.purple` #CE82FF (beetle), same rule both themes | css:1327-4028784b.css ._1ELE3, .P77qm:before |
 
-Type: bubble text: duolingo-sans 500 20px (text-body-spacious 1.25rem), line-height 55.5px with ruby, 32px without (lesson-light-challenge-default #35; css:4358-6896adab.css ._20npu, ._1BU--; css:app-f2ef02f8.css * {font-family:duolingo-sans,sans-serif}); rt: duolingo-sans 500 16px/24px (text-caption) (lesson-light-challenge-default #57; css:1327-4028784b.css ._271_n)
+Type: bubble text: duolingo-sans 500 20px (text-body-spacious 1.25rem), line-height 55.5px with ruby, 32px without (lesson-light-challenge-default #35; css:4358-6896adab.css ._20npu, ._1BU--; css:app-f2ef02f8.css * {font-family:duolingo-sans,sans-serif}); rt: duolingo-sans `typography.caption.default` 500 16px/24px (text-caption) (lesson-light-challenge-default #57; css:1327-4028784b.css ._271_n)
 
 Contains: popover shell (hint popover, not captured)
 
@@ -1076,7 +1076,7 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | slot | height / margin | 60px (74px with furigana), margin 0 `space.4` 4px | lesson-light-challenge-default cl=_1uV0Q _DVHp (#103); css:1008-b4d34396.css ._1uV0Q |
-| tile | height | 52px (68px with furigana); width hugs text, e.g. "movie" 84px, "is" 49px | lesson-light-challenge-default dt=is-challenge-tap-token (#120); lesson-dark-challenge-default #101; lesson-dark-listen-default #74 |
+| tile | height | `size.tapTokenHeight` 52px (68px with furigana); width hugs text, e.g. "movie" 84px, "is" 49px | lesson-light-challenge-default dt=is-challenge-tap-token (#120); lesson-dark-challenge-default #101; lesson-dark-listen-default #74 |
 | tile | padding | `space.12` 12px `space.16` 16px | lesson-light-challenge-default #105; css:1008-b4d34396.css ._3ZtW_ {--web-ui_button-padding:12px 16px} |
 | tile | border (layout) | `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px transparent | lesson-light-challenge-default #105; css:4779-c36ad395.css ._2V6ug |
 | face (::before) | inset / border / radius | -2px all sides, 2px solid, radius `radius.12` 12px | lesson-light-challenge-default #105 ::before; css:4779-c36ad395.css ._2V6ug:before; css:1008-b4d34396.css ._2O7Ua {--web-ui_button-border-radius:12px} |
@@ -1135,7 +1135,7 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| row | width x height | 600 x 70px with furigana (600 x 60px without) | lesson-dark-choice-default dt=challenge-choice (#40); lesson-dark-dialogue-default #90 |
+| row | width x height | 600 x `size.choiceRowHeight` 70px with furigana (600 x 60px without) | lesson-dark-choice-default dt=challenge-choice (#40); lesson-dark-dialogue-default #90 |
 | row | padding | `space.12` 12px `space.16` 16px | lesson-dark-choice-default #40; css:1327-4028784b.css ._1G3d- |
 | row | radius / border | 12px; 2px 2px 4px transparent, face ::before inset -2px, 2px border, lip 0 2px 0 | lesson-dark-choice-default #40; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
 | list | gap | `space.8` 8px | lesson-dark-choice-default cl=PaKCO _1vQbM (#39); css:1327-4028784b.css ._1vQbM |
@@ -1177,7 +1177,7 @@ Tokens (light):
 | selected border + lip | color | `border.selected` #84D8FF (blue-jay, light) | lesson-light-choice-selected #72 ::before |
 | selected label + badge text | color | `text.selected` #1899D6 (whale) | lesson-light-choice-selected #72, #73 |
 
-Type: label: duolingo-sans 500 19px, line-height 1.4 (26.6px) (lesson-dark-choice-default #40; css:1327-4028784b.css ._1G3d-); number badge: duolingo-sans 700 15px (lesson-dark-choice-default #41; css:1327-4028784b.css ._20AkF); rt: duolingo-sans 500 16px/24px, hare (lesson-dark-choice-default #45)
+Type: label: duolingo-sans 500 19px, line-height 1.4 (26.6px) (lesson-dark-choice-default #40; css:1327-4028784b.css ._1G3d-); number badge: duolingo-sans 700 15px (lesson-dark-choice-default #41; css:1327-4028784b.css ._20AkF); rt: duolingo-sans `typography.caption.default` 500 16px/24px, hare (lesson-dark-choice-default #45)
 
 Contains: card: selectable
 
@@ -1284,7 +1284,7 @@ Tokens (light):
 | selected | border + lip / text / inner fill | `palette.light.blue-jay` #84D8FF (blue-jay) / `text.selected` #1899D6 (whale) / `surface.selected` #DDF4FF (iguana, light) | lesson-light-match-selected #30, #31 |
 | matched | label + badge | `palette.light.swan` #E5E5E5 (swan), face and lip unchanged | lesson-light-match-pair-matched #30 |
 
-Type: label: duolingo-sans 500 19px/21.85px (lesson-dark-match-default #30); badge: duolingo-sans 700 15px, line-height 17.25px (lesson-dark-match-default #31)
+Type: label: duolingo-sans `typography.lesson.token` 500 19px/21.85px (lesson-dark-match-default #30); badge: duolingo-sans 700 15px, line-height 17.25px (lesson-dark-match-default #31)
 
 Contains: button: secondary (outline) shell, re-skinned
 
@@ -1310,7 +1310,7 @@ Anatomy:
 | avatar | size / gap | 64 x 67px, `space.16` 16px to the bubble | lesson-dark-dialogue-default cl=_3L4wm _1etlE (#31), _2kufX (#87) |
 | bubble | padding / radius / border | 10px 14px / 12px / 2px, line-height 32px, e.g. 307 x 56px | lesson-dark-dialogue-default cl=_20npu (#34) |
 | tail | position | 18 x 20px, top 12px; left -16px (left bubble), right -16px mirrored (right bubble) | lesson-dark-dialogue-default cl=_2PgN7 _1v78f _3PLLp (#75), tyghN (#84); css:4358-6896adab.css ._1v78f._3PLLp, .tyghN |
-| blank | size / rule | 70 x `borderWidth.2` 2px, border-bottom `borderWidth.2` 2px, margin 0 3px -2px | lesson-dark-dialogue-default cl=_3AISd (#83) |
+| blank | size / rule | 70 x 2px, border-bottom `borderWidth.2` 2px, margin 0 3px -2px | lesson-dark-dialogue-default cl=_3AISd (#83) |
 | choice rows | size | 600 x 60px, gap `space.8` 8px | lesson-dark-dialogue-default dt=challenge-choice (#90, #98) |
 
 | State | What changes | Source |
@@ -1332,7 +1332,7 @@ Tokens (light):
 | --- | --- | --- | --- |
 | blank | rule | `text.tertiary` #AFAFAF (hare, light), derived, not captured | css:4358-6896adab.css ._3AISd |
 
-Type: bubble text: duolingo-sans 500 20px/32px (lesson-dark-dialogue-default #34); choice text: duolingo-sans 500 19px/26.6px (lesson-dark-dialogue-default #90)
+Type: bubble text: duolingo-sans `typography.body.spacious` 500 20px/32px (lesson-dark-dialogue-default #34); choice text: duolingo-sans 500 19px/26.6px (lesson-dark-dialogue-default #90)
 
 Contains: card: selectable (choice rows)
 
@@ -1390,7 +1390,7 @@ Tokens (light):
 | speaker lip | background | `accent.secondary.lip` #1899D6 (whale), derived, not captured | css:app-f2ef02f8.css ._3TlAm |
 | speaker icon / ring | fill / border | `text.onPrimary` #FFFFFF (snow, light), derived, not captured | css:app-f2ef02f8.css ._3TlAm color; css:1327-4028784b.css ._37SfF:before |
 
-Type: Can't listen now: duolingo-sans 700 17px/20.4px uppercase, letter-spacing 0.8px (lesson-dark-listen-default #139); Use keyboard: duolingo-sans 700 17px uppercase 0.8px (15px below 700px) (lesson-dark-listen-default #144; css:app-f2ef02f8.css ._2Rt1l; css:1008-b4d34396.css ._1Z76W)
+Type: Can't listen now: duolingo-sans `typography.button.large` 700 17px/20.4px uppercase, letter-spacing 0.8px (lesson-dark-listen-default #139); Use keyboard: duolingo-sans 700 17px uppercase 0.8px (15px below 700px) (lesson-dark-listen-default #144; css:app-f2ef02f8.css ._2Rt1l; css:1008-b4d34396.css ._1Z76W)
 
 Contains: button: secondary (SKIP slot)
 
@@ -1411,7 +1411,7 @@ Anatomy:
 
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
-| bar | height / top border | 140px (min-height, max-height 140px), border-top `borderWidth.2` 2px solid | lesson-dark-challenge-default cl=_3rB4d _1VTif _2HXQ9 (#146); css:1008-b4d34396.css ._3rB4d @media (min-width:700px) |
+| bar | height / top border | 140px (min-height, max-height `size.lessonFooterHeight` 140px), border-top `borderWidth.2` 2px solid | lesson-dark-challenge-default cl=_3rB4d _1VTif _2HXQ9 (#146); css:1008-b4d34396.css ._3rB4d @media (min-width:700px) |
 | inner | max-width / padding | 1000px, padding 0 `space.40` 40px, margin-left calc(50% - 500px); grid repeat(5,1fr), gap `space.8` 8px `space.16` 16px | lesson-dark-challenge-default cl=U8jH3 jHbiF (#147); css:1008-b4d34396.css .jHbiF, .U8jH3 |
 | buttons | vertical position | y = bar top + 47px (centred) | lesson-dark-challenge-default #149 r=[140,704,...] |
 | SKIP | size / padding / radius | 150 x 50px min, padding 0 `space.16` 16px, radius `radius.16` 16px, border `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px | lesson-dark-challenge-default dt=player-skip (#149); css:app-f2ef02f8.css :root {--web-ui_button-border-radius:16px} |
@@ -1479,7 +1479,7 @@ Anatomy:
 | text column | max / min width | 400px / 320px (350px rendered), gap `space.16` 16px to the actions row | lesson-dark-feedback-correct cl=_3LKiy (#146) |
 | title | height | 30px | lesson-dark-feedback-correct h2 (#148) |
 | solution | height | 26px | lesson-dark-feedback-incorrect cl=_2jz5U (#133) |
-| actions row | gap / height | `space.24` 24px between items, 21px tall; icon 20 x `space.20` 20px + `space.5` 5px + label | lesson-dark-feedback-correct cl=_2yBiG (#149), _2YKKH (#152), _2-7I9 (#153) |
+| actions row | gap / height | `space.24` 24px between items, 21px tall; icon 20 x 20px + `space.5` 5px + label | lesson-dark-feedback-correct cl=_2yBiG (#149), _2YKKH (#152), _2-7I9 (#153) |
 | CONTINUE | size / radius / lip | 150 x 50px, radius `radius.16` 16px, lip `radius.4` 4px (box-shadow 0 `radius.4` 4px 0) | lesson-dark-feedback-correct dt=player-next (#168) |
 | entry | animation | slide up translateY(100%) > 0 in 0.2s cubic-bezier(.35,1.8,.35,.83) | css:app-f2ef02f8.css ._2Ycbe, @keyframes gTkFz |
 
@@ -1545,7 +1545,7 @@ Tokens (light):
 | incorrect title, solution, actions | color | `status.dangerText` #EA2B2B (fire-ant, light), derived, not captured | css:1008-b4d34396.css .o-3Ru, ._1CCAE, ._3Q4Uw |
 | icon circle | background | `text.onPrimary` #FFFFFF (snow, light) | lesson-light-feedback-correct #107 |
 
-Type: title: duolingo-sans 700 24px/30px (lesson-dark-feedback-correct #148; css:app-f2ef02f8.css h2; css:1008-b4d34396.css ._2U7Gm @media (min-width:700px)); solution: duolingo-sans 500 17px/26px (15px/22px below 700px) (lesson-dark-feedback-incorrect #133; css:1008-b4d34396.css ._2jz5U, ._1D3fo); action labels: duolingo-sans 700 15px uppercase, letter-spacing 0.8px (lesson-dark-feedback-correct #156; css:app-f2ef02f8.css ._2Rt1l); CONTINUE: duolingo-sans 700 17px/20.4px uppercase, letter-spacing 0.8px (lesson-dark-feedback-correct #168)
+Type: title: duolingo-sans `typography.app.modalTitle` 700 24px/30px (lesson-dark-feedback-correct #148; css:app-f2ef02f8.css h2; css:1008-b4d34396.css ._2U7Gm @media (min-width:700px)); solution: duolingo-sans 500 17px/26px (15px/22px below 700px) (lesson-dark-feedback-incorrect #133; css:1008-b4d34396.css ._2jz5U, ._1D3fo); action labels: duolingo-sans 700 15px uppercase, letter-spacing 0.8px (lesson-dark-feedback-correct #156; css:app-f2ef02f8.css ._2Rt1l); CONTINUE: duolingo-sans `typography.button.large` 700 17px/20.4px uppercase, letter-spacing 0.8px (lesson-dark-feedback-correct #168)
 
 Contains: button: primary (owl), button: primary (cardinal / danger), button: primary (bee)
 
@@ -1836,7 +1836,7 @@ Anatomy:
 | --- | --- | --- | --- |
 | flame canvas | size / margins | max-width 340px square (width calc(100vw - `space.32` 32px)), margin -140px auto `space.14` 14px | lesson-dark-streak-celebration cl=_3XxHw _2Ylex (#11); css:1008-b4d34396.css ._3XxHw |
 | count canvas | size / margins | 340 x 340px, margin -124px auto -44px | lesson-dark-streak-celebration cl=_1PSwR zWgl3 (#13); css:1008-b4d34396.css ._1PSwR |
-| "day streak" | width x height, offset | 340 x `space.28` 28px box, margin-top -110px (overlaps the count canvas) | lesson-dark-streak-celebration cl=Ikkcc _33hhf (#16) |
+| "day streak" | width x height, offset | 340 x 28px box, margin-top -110px (overlaps the count canvas) | lesson-dark-streak-celebration cl=Ikkcc _33hhf (#16) |
 | week card | width x height | 340 x 168px, radius `radius.12` 12px | lesson-dark-streak-celebration cl=_3kddW tuVG5 _36i3u (#17) |
 | week card top | padding / border | 12px / 2px on top and sides, radius 12 12 0 0; a 2px divider (::after, bottom -4px) | lesson-dark-streak-celebration cl=_2k21Q (#18); css:1008-b4d34396.css ._2k21Q, ._2k21Q:after |
 | day row | max-width | 280px (5 days) / 392px (7 days, calendar) | lesson-dark-streak-celebration cl=_3Ja2a (#19); lesson-dark-streak-calendar cl=_3LUJ9 (#14) |
@@ -1915,12 +1915,12 @@ Anatomy:
 | column | max-width | 640px centred, grid rows 1fr auto 1fr | lesson-dark-streak-goal-default cl=_3pl7T (#9); css:1008-b4d34396.css ._3pl7T |
 | bubble block | width / margin | 254px / 0 auto `space.32` 32px | lesson-dark-streak-goal-default cl=_2VMB2 (#11) |
 | bubble | width x height / padding / border / radius | 254 x 76px / 12px 16px / 2px / 12px | lesson-dark-streak-goal-default cl=_10CrR (#15); css:app-f2ef02f8.css ._10CrR |
-| bubble caret | size / offset | 31 x `space.20` 20px image, `space.40` 40px right of centre (--duo-speech-bubble-caret-offset), bottom 5.5px | lesson-dark-streak-goal-default cl=_1D9cQ (#16); css:app-f2ef02f8.css ._1D9cQ; css:1008-b4d34396.css ._2VMB2 |
+| bubble caret | size / offset | 31 x 20px image, `space.40` 40px right of centre (--duo-speech-bubble-caret-offset), bottom 5.5px | lesson-dark-streak-goal-default cl=_1D9cQ (#16); css:app-f2ef02f8.css ._1D9cQ; css:1008-b4d34396.css ._2VMB2 |
 | illustration | height | 204px (overlaps bubble by margin-bottom -32px on the bubble grid) | lesson-dark-streak-goal-default cl=_38xtY (#106); css:1008-b4d34396.css ._38xtY, .M6NLh |
 | list | width / gap | 480px max / `space.12` 12px | lesson-dark-streak-goal-default cl=_13-RH (#244) |
 | row | width x height | 480 x 54px | lesson-dark-streak-goal-default cl=_8dMUn a3yOs (#245) |
 | row | padding | `space.8` 8px `space.16` 16px, space-between | lesson-dark-streak-goal-default #245; css:1008-b4d34396.css .a3yOs |
-| row | border / lip / radius | transparent 2px 2px 4px on the element; visible 2px border + `borderWidth.2` 2px lip (box-shadow 0 2px) on ::before inset -2px; radius `radius.12` 12px | lesson-dark-streak-goal-default #245 ::before; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
+| row | border / lip / radius | transparent 2px 2px 4px on the element; visible 2px border + 2px lip (box-shadow 0 2px) on ::before inset -2px; radius `radius.12` 12px | lesson-dark-streak-goal-default #245 ::before; css:4779-c36ad395.css ._8dMUn, ._8dMUn:before |
 | row label | width x height | 103 x 32px (auto) | lesson-dark-streak-goal-default cl=WMgCJ (#246) |
 | grade | height | 24px | lesson-dark-streak-goal-default dt=streak-goal-option cl=g4E00 (#247) |
 | numeral overlay | position | absolute, left 38%, bottom 18%, translate(-50%,-50%) | lesson-dark-streak-goal-default cl=G8vvg (#243); css:1008-b4d34396.css .G8vvg |
@@ -2039,7 +2039,7 @@ Anatomy:
 | ad: hero | width x height | 400 x 428px (250px wide below 700px) | lesson-dark-super-upsell cl=_3ZLZ_ (#10); css:4358-6896adab.css ._3ZLZ_ |
 | ad: text block | width / margin-top | 350px max (300px below 700px) / -24px | lesson-dark-super-upsell cl=_3TDCm (#11) |
 | ad: footer | height / top border | 140px / `borderWidth.1` 1px | lesson-dark-super-upsell cl=_2iHAQ (#13), _3KWA6 (#14) |
-| ad: buttons | width x height | 250 x 50px each (min-width 250px, width 100% at >=700px), radius `radius.16` 16px | lesson-dark-super-upsell dt=practice-hub-ad-no-thanks-button (#15), dt=practice-hub-ad-continue-button (#17) |
+| ad: buttons | width x height | 250 x `size.buttonHeight` 50px each (min-width 250px, width 100% at >=700px), radius `radius.16` 16px | lesson-dark-super-upsell dt=practice-hub-ad-no-thanks-button (#15), dt=practice-hub-ad-continue-button (#17) |
 | trial: close / logo | position / size | top 24px left 24px (19 x 19 X) / top 24px right 34px (103 x 27 logo) | lesson-light-trial-upsell dt=plus-close-x (#21), dt=plus-offer-logo cl=_1OBpI (#25) |
 | trial: h1 | width x height / padding / margin | 500 x 76px / 0 `space.16` 16px / `space.16` 16px auto | lesson-light-trial-upsell dt=trial-reminder cl=_3ifZ6 (#29) |
 | trial: art band | height | 239px (30vh, min 200, max 250); lottie canvas 800 x 800 centred; cloud svg repeat-x at bottom, background-size 1800px | lesson-light-trial-upsell cl=JPT4U (#30), _2KpHg (#31), _3KggR (#33); css:3406-0039e405.css .JPT4U, ._3KggR |
@@ -2082,7 +2082,7 @@ Type:
 - ad: h1: 700, 25px / 34px (21px below 700px) (lesson-dark-super-upsell cl=_1jGvf (#12); css:4358-6896adab.css ._1jGvf)
 - ad: buttons: 700, 15px / 18px, letter-spacing 0.8px, uppercase (lesson-dark-super-upsell #16, #18)
 - trial: h1: 700, 28px / 1.35 (24px below 530px), text-wrap balance (lesson-light-trial-upsell #29; css:3406-0039e405.css ._3ifZ6)
-- trial: option label / date: 700 20px / 28px ; 400 16px / 18.4px (lesson-light-trial-upsell cl=_1En-_ (#37), cl=_1UP1a (#38))
+- trial: option label / date: `typography.body.bold` 700 20px / 28px ; 400 16px / 18.4px (lesson-light-trial-upsell cl=_1En-_ (#37), cl=_1UP1a (#38))
 - trial: disclaimer: 500, 16px / 21.6px (1.35) (lesson-light-trial-upsell #43)
 
 Contains: button: primary (white on eclipse, cosmos), button: outline (white 50%), button: text (cosmos), icon button (close, mute)
@@ -2133,7 +2133,7 @@ Anatomy:
 | society card | width x height / padding / border / radius | 344 x 140px / 16px 18px / 2px / 16px | learn-dark-streak-dropdown cl=_1l3c4 _13qJ6 _1T_BQ (#123) |
 | society lock image | size / margin-top | 60 x 60px / `space.8` 8px | learn-light-streak-dropdown cl=_2TgZn (#144); css:458-86426c1c.css ._2TgZn |
 | society text column | margin-left / gap | `space.24` 24px / `space.8` 8px | learn-dark-streak-dropdown cl=_2QLYz (#125) |
-| VIEW MORE button | width x height / radius / lip | 344 x 50px / `radius.12` 12px / border-bottom `borderWidth.4` 4px, lip box-shadow 0 `radius.4` 4px | learn-dark-streak-dropdown cl=_1i82L ... oXbqr (#128) |
+| VIEW MORE button | width x height / radius / lip | 344 x `size.buttonHeight` 50px / `radius.12` 12px / border-bottom `borderWidth.4` 4px, lip box-shadow 0 `radius.4` 4px | learn-dark-streak-dropdown cl=_1i82L ... oXbqr (#128) |
 | caret | size | 20 x 10px box, 14.14px rotated square, 2px border | learn-dark-streak-dropdown cl=_3T97b (#130), cl=_1TMn5 (#131) |
 
 | State | What changes | Source |
@@ -2153,7 +2153,7 @@ Tokens (dark): panel (unextended, 0 day) background `palette.dark.streak-panel-u
 
 Tokens (light): panel (extended, streak done today) background `palette.light.streak-panel-extended-background` #FF9600 (streak-panel-extended-background, light); panel border `border.default` #E5E5E5 (swan, light); title and subtitle (extended) color `text.onColor` #FFFFFF (snow-always-light); calendar card background `surface.default` #FFFFFF (snow, light); day letter color `text.tertiary` #AFAFAF (hare, light); day letter, today color `status.warningText` #FF9600 (fox, light); day circle (not done) background `surface.disabled` #E5E5E5 (swan, light); day circle (done) fill / check stroke `dataViz.avatar.orange` #FF9600 (fox, light) / `text.onPrimary` #FFFFFF (snow), stroke-width 8 in svg units; lower sections background `surface.default` #FFFFFF (snow, light); friend card background / text `palette.light.streak-panel-friend-background` #FF5F00 (streak-panel-friend-background, light) / #FFFFFF; VIEW LIST face / lip / text #FFFFFF / #FFFFFF @0.60 / #FF5F00; society card background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); society title color `text.primary` #4B4B4B (eel, light); society body color `text.secondary` #777777 (wolf, light); VIEW MORE face / lip / text `border.focus` #1CB0F6 (macaw, light) / `text.selected` #1899D6 (whale, light) / `text.onPrimary` #FFFFFF (snow, light)
 
-Type: all text duolingo-sans, sans-serif; title 700 25px/34px; subtitle 500 17px/24px; day letter 700 17px/25px, centred; friend title 700 16px (--text-heading-xsmall), line box 20px; friend caption 500 16px/24px (--text-caption); society title / body 700 17px/24px / 500 17px/24px; buttons 700 15px/18px, letter-spacing 0.8px, uppercase
+Type: all text duolingo-sans, sans-serif; title `typography.app.promoTitle` 700 25px/34px; subtitle 500 17px/24px; day letter 700 17px/25px, centred; friend title 700 16px (--text-heading-xsmall), line box 20px; friend caption `typography.caption.default` 500 16px/24px (--text-caption); society title / body 700 17px/24px / 500 17px/24px; buttons `typography.button.default` 700 15px/18px, letter-spacing 0.8px, uppercase
 
 Contains: popover shell, button: primary (macaw), button: white on colour (custom --web-ui_button-* vars, 36px, radius 8), card (_1T_BQ bordered)
 
@@ -2189,7 +2189,7 @@ Tokens (dark): panel background / border `surface.default` #131F24 (snow, dark) 
 
 Tokens (light): panel background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); title color `text.primary` #4B4B4B (eel, light); balance color `text.secondary` #777777 (wolf, light); GO TO SHOP color `text.link` #1CB0F6 (macaw, light)
 
-Type: title 700 24px/26px; balance 500 17px/20px; GO TO SHOP 700 15px/18px, 0.8px, uppercase
+Type: title `typography.app.sectionTitle` 700 24px/26px; balance `typography.app.bodyDefault` 500 17px/20px; GO TO SHOP `typography.button.default` 700 15px/18px, 0.8px, uppercase
 
 Contains: popover shell, button: text (c1Mv-, macaw)
 
@@ -2215,7 +2215,7 @@ Anatomy:
 | panel | width x height | 404 x 399px (full) / 404 x 403px (refilling) | learn-dark-hearts-dropdown cl=_36bu_ (#88); learn-light-hearts-dropdown (#89) |
 | content | padding / min-width / layout | 26px `space.20` 20px / 380px / column, centred | learn-dark-hearts-dropdown cl=_2wpqL (#89) |
 | title | margin-bottom | `space.16` 16px | learn-dark-hearts-dropdown cl=_1XkbC (#90) |
-| heart | size / gap | 32 x `space.32` 32px (--heart-size) / `space.8` 8px | learn-dark-hearts-dropdown cl=_1mypE (#93), cl=QZL78 (#92) |
+| heart | size / gap | 32 x 32px (--heart-size) / `space.8` 8px | learn-dark-hearts-dropdown cl=_1mypE (#93), cl=QZL78 (#92) |
 | refilling heart | size | 36 x 36px animated svg (heart-size + 4px) | learn-light-hearts-dropdown cl=_1YXWQ (#96) |
 | status line | margin | `space.12` 12px 0 | learn-dark-hearts-dropdown cl=_2u5pt (#102) |
 | option list | margin-top / row gap | `space.16` 16px / `space.8` 8px | learn-dark-hearts-dropdown cl=_2uJd1 (#104); css:4769-628e48ee.css ._2uJd1>:not(:last-child) |
@@ -2278,7 +2278,7 @@ Tokens (dark): panel background / border `surface.default` #131F24 (snow, dark) 
 
 Tokens (light): panel background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); header text / rule `text.tertiary` #AFAFAF (hare, light) / `border.default` #E5E5E5 (swan, light); course row text `text.primary` #4B4B4B (eel, light); current course row background / text `surface.selected` #DDF4FF (iguana, light) / `text.selected` #1899D6 (whale); add row rule / text `border.default` #E5E5E5 (swan, light) / `text.primary` #4B4B4B (eel, light)
 
-Type: header 700 15px uppercase, line box 20px; course name / add label 700 17px/20px
+Type: header 700 15px uppercase, line box 20px; course name / add label `typography.app.bodyStrong` 700 17px/20px
 
 Contains: popover shell, menu (role=menu / menuitem)
 
@@ -2313,15 +2313,15 @@ Anatomy:
 | row | height / padding / radius | 64px / 8px 24px 8px 16px / 16px (only at min-width 700px) | leaderboard-dark-top cl=_3kvGS (#165); css:1008-b4d34396.css ._3kvGS |
 | rank medal | size | 41 x 42px | leaderboard-dark-top cl=_33f2x (#166) |
 | rank number | width | 41px, centred | leaderboard-dark-top cl=_1kz8P (#190) |
-| avatar | size / margin | 48 x `space.48` 48px / 0 `space.28` 28px 0 `space.12` 12px | leaderboard-dark-top cl=_2vxUc (#167) |
+| avatar | size / margin | 48 x 48px / 0 `space.28` 28px 0 `space.12` 12px | leaderboard-dark-top cl=_2vxUc (#167) |
 | online dot | size / border / position | 12 x 12px / `borderWidth.2` 2px / right `borderWidth.3` 3px bottom `borderWidth.1` 1px | leaderboard-dark-top cl=_2NNBf (#169) |
 | status bubble on avatar | size / radius / position | 28 x 28px, `radius.2` 2px border, radius 50% 50% 50% 16% / top -6px right -16px; icon 26px | leaderboard-dark-top cl=_2R_e4 (#194), cl=_m6h6 (#195) |
 | letter avatar | font | 700 22.08px/25px | leaderboard-dark-top cl=_1a-Dv _1N32S (#184) |
 | name column | margin-right | `space.10` 10px, flex-grow 1 | leaderboard-dark-top cl=_3SKx_ (#170) |
 | XP | margin-right | `space.10` 10px | leaderboard-dark-top cl=_1OKd4 (#172) |
 | promotion divider | height / padding / margin-bottom | 54px / 15px 0 / 10px | leaderboard-dark-top cl=KWJR3 EXnGF (#255) |
-| promotion arrows | size / margin | 24 x `space.24` 24px / 0 `space.15` 15px | leaderboard-dark-top cl=W8zCX (#256) |
-| not joined: START A LESSON | width x height / margin | 256 x `space.48` 48px / `space.15` 15px top, `space.48` 48px bottom | leaderboard-dark-default cl=_3FuEB (#160) |
+| promotion arrows | size / margin | 24 x 24px / 0 `space.15` 15px | leaderboard-dark-top cl=W8zCX (#256) |
+| not joined: START A LESSON | width x height / margin | 256 x 48px / `space.15` 15px top, `space.48` 48px bottom | leaderboard-dark-default cl=_3FuEB (#160) |
 | skeleton area | grid / padding | min-content 1fr min-content / 0 `space.24` 24px 0 `space.28` 28px | leaderboard-dark-default cl=_3Z6WZ (#162) |
 | skeleton columns | size | rank dots 16 x 464 (padding-top 16, margin-right 24); avatars+names 208 x 480; XP bars 48 x 462 (padding-top 18) | leaderboard-dark-default cl=_2Tlkh (#163), cl=_1jPFl (#164), cl=_1NQzo (#165) |
 | skeleton fade | overlay | linear-gradient(0deg, snow, snow @0), height 360px | leaderboard-dark-default cl=_2kacL ::after (#161); css:7607-21dedb14.css ._2kacL:after |
@@ -2343,7 +2343,7 @@ Tokens (dark): header background `surface.default` #131F24 (snow, dark); league 
 
 Tokens (light): header background `surface.default` #FFFFFF (snow, light); league name / names / rank outside zone color `text.body` #3C3C3C (black-text, light); subtitle color `text.secondary` #777777 (wolf, light); time left color `gamification.xp` #FFC800 (bee, light); rule color `border.default` #E5E5E5 (swan, light); rank in promotion zone color `status.successText` #58A700 (tree-frog, light); XP color `text.secondary` #777777 (wolf, light); online dot fill / ring `accent.primary.face` #58CC02 (owl, light) / `text.onPrimary` #FFFFFF (snow, light); letter avatar fill / letter `dataViz.avatar.purple` beetle #CE82FF, `dataViz.avatar.orange` fox #FF9600, `accent.danger.face` cardinal #FF4B4B / `surface.default` #FFFFFF (snow, light); row hover background `surface.subtle` #F7F7F7 (polar, light); current user row background `surface.disabled` #E5E5E5 (swan, light); current user in promotion zone background / text `gamification.league.promotedRow` #D7FFB8 (sea-sponge, light) / `accent.primary.lip` #58A700 (tree-frog, light); promotion divider color `accent.primary.lip` #58A700 (tree-frog, light)
 
-Type: league name 700 25px, line box 20px; subtitle 500 19px; time left 700 17px; rank number / name 700 17px/20px; XP 500 17px/20px, right aligned; promotion divider 700 15px, letter-spacing 0.8px, uppercase
+Type: league name 700 25px, line box 20px; subtitle 500 19px; time left 700 17px; rank number / name `typography.app.bodyStrong` 700 17px/20px; XP `typography.app.bodyDefault` 500 17px/20px, right aligned; promotion divider 700 15px, letter-spacing 0.8px, uppercase
 
 Contains: avatar (48px, online dot), button: secondary (START A LESSON, macaw text)
 
@@ -2388,7 +2388,7 @@ Tokens (dark): card background / border `surface.default` #131F24 (snow, dark) /
 
 Tokens (light): card background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); title color `text.primary` #4B4B4B (eel, light); CLEAR color `text.link` #1CB0F6 (macaw, light); tile face / border+lip `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); owl tiles face `accent.primary.face` #58CC02 (owl, light); selected tile border+lip `border.selected` #84D8FF (blue-jay, light)
 
-Type: title 700 19px/28px; CLEAR 700 15px/18px, 0.8px, uppercase
+Type: title `typography.app.cardTitle` 700 19px/28px; CLEAR `typography.button.default` 700 15px/18px, 0.8px, uppercase
 
 Contains: card (_1T_BQ), button: secondary (_2V6ug, 48px square), button: text (CLEAR), avatar (80px)
 
@@ -2410,7 +2410,7 @@ Anatomy:
 | Part | Property | Value | Source |
 | --- | --- | --- | --- |
 | page header | margin-bottom | `space.12` 12px | quests-dark-default cl=_1owP7 (#148) |
-| timer icon | size / gap | 16 x `space.16` 16px / margin-right `space.5` 5px | quests-dark-default cl=_1kZ3q (#151) |
+| timer icon | size / gap | 16 x 16px / margin-right `space.5` 5px | quests-dark-default cl=_1kZ3q (#151) |
 | page card | width x height / padding / gap / border / radius | 480 x 113px at 1200 (592 at 1384) / 20px 25px / 20px / 2px / 16px | quests-dark-default cl=_1RuTi _1T_BQ (#158) |
 | quest icon | size / margin-right | 60 x 60px / 22px | quests-dark-default cl=_3d6BP (#161) |
 | title-to-bar | gap | `space.8` 8px (page), `space.4` 4px (rail) | quests-dark-default cl=H8Z2d (#162); learn-dark-default cl=_3KsFs (#111) |
@@ -2437,7 +2437,7 @@ Tokens (dark): card background / border `surface.default` #131F24 (snow, dark) /
 
 Tokens (light): card background / border `surface.default` #FFFFFF (snow, light) / `border.default` #E5E5E5 (swan, light); section title / quest title color `text.primary` #4B4B4B (eel, light); timer color `status.warningText` #FF9600 (fox, light); bar track background `surface.disabled` #E5E5E5 (swan, light); bar fill background `dataViz.progress.fillSecondary` #FFC800 (bee, light); shine fill #FFFFFF @0.2; label on track color `dataViz.progress.labelOnTrack` #AFAFAF (hare-always-light); label on fill color `dataViz.progress.labelOnFill` #CD7900 (guinea-pig-always-light); locked card background / text / border `surface.subtle` #F7F7F7 (polar, light) / `text.tertiary` #AFAFAF (hare, light) / `border.default` #E5E5E5 (swan, light); VIEW ALL (rail) color `text.link` #1CB0F6 (macaw, light)
 
-Type: page section title 700 25px/28px; rail card title 700 19px/28px; timer 700 17px uppercase; quest title 700 19px/26px page, 700 17px/24px rail; progress label 700 14px, letter-spacing 0.56px (.04em), uppercase, line-height = bar height, centred; locked card 700 19px/28px
+Type: page section title 700 25px/28px; rail card title `typography.app.cardTitle` 700 19px/28px; timer 700 17px uppercase; quest title 700 19px/26px page, 700 17px/24px rail; progress label 700 14px, letter-spacing 0.56px (.04em), uppercase, line-height = bar height, centred; locked card `typography.app.cardTitle` 700 19px/28px
 
 Contains: card (_1T_BQ), progress bar (generic web-ui progress bar, bee colour via _2nasW), button: text (VIEW ALL)
 
@@ -2472,7 +2472,7 @@ Tokens (dark): card background / border none (page #131F24 shows through) / `bor
 
 Tokens (light): card border `border.default` #E5E5E5 (swan, light); title color `text.primary` #4B4B4B (eel, light); badge name color `text.primary` #4B4B4B (eel, light); date color `text.tertiary` #AFAFAF (hare, light); VIEW ALL color `text.link` #1CB0F6 (macaw, light)
 
-Type: title 700 19px/28px; badge name 700 17px, line box 20px; date 500 17px/20px; VIEW ALL 700 15px/18px, 0.8px, uppercase
+Type: title `typography.app.cardTitle` 700 19px/28px; badge name 700 17px, line box 20px; date `typography.app.bodyDefault` 500 17px/20px; VIEW ALL `typography.button.default` 700 15px/18px, 0.8px, uppercase
 
 Contains: card (bordered), button: text (VIEW ALL)
 
@@ -2547,8 +2547,8 @@ Tokens (light):
 
 Type:
 - title: duolingo-sans 700 19px / 28.5px (line-height 1.5), ellipsis (profile-dark-default h3 cl=-Zgv1 (#317))
-- counter: duolingo-sans 500 17px / 20px desktop (15px under 700px) (profile-dark-default #318; css:5515 ._8oTbo @media (min-width:700px))
-- description: duolingo-sans 500 17px / 20px desktop (15px under 700px) (profile-dark-default #328; css:5515 ._7Cbsk)
+- counter: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under 700px) (profile-dark-default #318; css:5515 ._8oTbo @media (min-width:700px))
+- description: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under 700px) (profile-dark-default #328; css:5515 ._7Cbsk)
 - level label: duolingo-sans 700 11px, not uppercased by CSS (text is authored "LEVEL 9") (profile-dark-default #313; css:4243 ._36H8N)
 
 Contains: progress bar (web-ui, recoloured bee, 14px), card/list shell (2px swan, radius 16)
@@ -2582,7 +2582,7 @@ Anatomy:
 | name block | height | h1 54px (name 34px line + handle 20px), margin-bottom `space.6` 6px | profile-dark-default h1 dt=profile-username (#216) |
 | joined row | margin | margin-bottom `space.12` 12px | profile-dark-default cl=xk0If (#220) |
 | follow links row | height / gap | `space.24` 24px tall buttons, gap `space.16` 16px, margin-bottom `space.16` 16px, padding 0 | profile-dark-default cl=_7V_nj (#222); css:5515 ._7V_nj |
-| flags button | size | 156 x 48px, padding `space.10` 10px 0; flag img 31 x 24 with 4px side margins | profile-dark-default button cl=_36U8q (#228), img cl=_2WKNC (#229) |
+| flags button | size | 156 x `size.buttonHeightMedium` 48px, padding `space.10` 10px 0; flag img 31 x 24 with 4px side margins | profile-dark-default button cl=_36U8q (#228), img cl=_2WKNC (#229) |
 | "+N" chip | size | 31 x 28px, border `borderWidth.2` 2px, radius 5px, padding `space.2` 2px 3px | profile-dark-default cl=_1ZEoN (#232); css:5515 ._1ZEoN |
 
 | State | What changes | Source |
@@ -2621,8 +2621,8 @@ Tokens (light):
 
 Type:
 - name: duolingo-sans 700 28px / 34px (25px under 700px) (profile-dark-default #216; css:5515 ._2eRPO)
-- handle: duolingo-sans 500 17px / 20px (profile-dark-default #218; css:5515 ._1Fdxc)
-- joined: duolingo-sans 500 17px / 20px (15px under 700px) (profile-dark-default #221; css:5515 ._3KQMU)
+- handle: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px (profile-dark-default #218; css:5515 ._1Fdxc)
+- joined: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px (15px under 700px) (profile-dark-default #221; css:5515 ._3KQMU)
 - following / followers: duolingo-sans 700 16px / 19.2px, letter-spacing 0.8px, text-transform none on the label span (profile-dark-default #223-#226; css:5515 ._7V_nj, ._3KQMU)
 - "+N" chip: duolingo-sans 700 17px / 19.55px (profile-dark-default #232)
 
@@ -2684,8 +2684,8 @@ Tokens (light):
 | streak icon (active) | image | profile/8a6dca76...svg (orange flame) | profile-light-default #250 |
 
 Type:
-- value: duolingo-sans 700 20px / 20px (19px under 700px) (profile-dark-default #242; css:5515 .-TMd4)
-- label: duolingo-sans 500 16px / 20px (15px under 700px) (profile-dark-default #243; css:5515 ._3oUUc)
+- value: duolingo-sans `typography.app.statValue` 700 20px / 20px (19px under 700px) (profile-dark-default #242; css:5515 .-TMd4)
+- label: duolingo-sans `typography.body.compact` 500 16px / 20px (15px under 700px) (profile-dark-default #243; css:5515 ._3oUUc)
 - week badge: duolingo-sans 700 12px / 14px uppercase (profile-light-default #261; css:5515 ._3qbFZ)
 
 Contains: badge (corner pill)
@@ -2715,7 +2715,7 @@ Anatomy:
 | name | margin / line | margin-top `space.8` 8px, `space.24` 24px line | profile-dark-default h3 cl=WDFdx _2jQO8 (#274) |
 | reason | line | 22px line, wraps to 2 lines at 113px text width | profile-dark-default cl=_142Ad LH3xS (#275) |
 | entry block | margin | margin-bottom `space.30` 30px above the button | profile-dark-default a dt=friend-entry cl=-rEIl (#270) |
-| FOLLOW button | size / padding / radius | 113 x 36px (100% width), padding `space.6` 6px `space.18` 18px, radius `radius.8` 8px, bottom border `borderWidth.4` 4px transparent + ::after face extending `borderWidth.4` 4px below | profile-dark-default dt=friend-add-button (#276); css:1081 .eiTQu, .DCN49; css:app-f2ef02f8.css ._3XEA0 |
+| FOLLOW button | size / padding / radius | 113 x 36px (100% width), padding `space.6` 6px `space.18` 18px, radius `radius.8` 8px, bottom border `borderWidth.4` 4px transparent + ::after face extending 4px below | profile-dark-default dt=friend-add-button (#276); css:1081 .eiTQu, .DCN49; css:app-f2ef02f8.css ._3XEA0 |
 | dismiss | size / position | 12 x 12px icon, absolute top 18px right 16px | profile-dark-default button cl=_2FpYw (#278); css:1081 ._2FpYw, ._2B7Zf |
 
 | State | What changes | Source |
@@ -2752,7 +2752,7 @@ Tokens (light):
 Type:
 - name: duolingo-sans 700 17px / 24px, centred, ellipsis (profile-dark-default #274; css:1081 .WDFdx)
 - reason: duolingo-sans 500 15px / 22px, centred (profile-dark-default #275; css:1081 ._142Ad)
-- FOLLOW: duolingo-sans 700 15px / 20px uppercase, letter-spacing 0.8px (profile-dark-default #276; css:app ._3wPHf, ._2Rt1l)
+- FOLLOW: duolingo-sans `typography.app.labelSmall` 700 15px / 20px uppercase, letter-spacing 0.8px (profile-dark-default #276; css:app ._3wPHf, ._2Rt1l)
 
 Contains: button: primary (legacy lip button, macaw/whale, 8px radius, 36px tall), avatar, icon button (dismiss)
 
@@ -2823,9 +2823,9 @@ Type:
 - name: duolingo-sans 700 19px / 26px, ellipsis (profile-dark-default #96; css:5515 ._1C9lp)
 - time: duolingo-sans 500 15px / 20px (profile-dark-default #97; css:5515 ._1HJua)
 - event text: duolingo-sans 500 17px / 24px (profile-dark-default #98; css:5515 .Vbl7C)
-- CELEBRATE: duolingo-sans 700 15px / 18px uppercase, letter-spacing 0.8px (profile-dark-default #105)
+- CELEBRATE: duolingo-sans `typography.button.default` 700 15px / 18px uppercase, letter-spacing 0.8px (profile-dark-default #105)
 - reaction count: duolingo-sans 500 15px (profile-dark-default #112; css:5515 .Gh-rv)
-- View all: duolingo-sans 700 17px / 20px (profile-dark-default #138)
+- View all: duolingo-sans `typography.app.bodyStrong` 700 17px / 20px (profile-dark-default #138)
 
 Contains: button: secondary (web-ui _2V6ug, snow face, swan border), avatar, card/list shell, list row with chevron
 
@@ -2885,8 +2885,8 @@ Tokens (light):
 | disabled face/border | background / border | `surface.subtle` #F7F7F7 (polar, light) | css:9416 ._3Dsa- |
 
 Type:
-- glyph: duolingo-sans 500 19px / 19px, centred (characters-dark-default #175; css:9416 .IxPSK)
-- romaji: duolingo-sans 500 15px / 15px, text-transform none, letter-spacing 0.8px (inherited from button) (characters-dark-default #176; css:9416 ._3UqmZ, ._1ID0N)
+- glyph: duolingo-sans `typography.characters.glyph` 500 19px / 19px, centred (characters-dark-default #175; css:9416 .IxPSK)
+- romaji: duolingo-sans `typography.characters.romaji` 500 15px / 15px, text-transform none, letter-spacing 0.8px (inherited from button) (characters-dark-default #176; css:9416 ._3UqmZ, ._1ID0N)
 
 Contains: button: secondary (web-ui _2V6ug), progress bar (8px, bee)
 
@@ -2933,7 +2933,7 @@ Tokens (light):
 | unselected rule | border-color | `border.default` #E5E5E5 (swan, light) | characters-light-default #165 |
 
 Type:
-- label: duolingo-sans 700 17px / 20px uppercase, letter-spacing 0.03em (0.51px) (characters-dark-default #155; css:9416 ._3ugho, ._1xZUP)
+- label: duolingo-sans `typography.app.bodyStrong` 700 17px / 20px uppercase, letter-spacing 0.03em (0.51px) (characters-dark-default #155; css:9416 ._3ugho, ._1xZUP)
 
 Contains: tabs (underline)
 
@@ -2993,7 +2993,7 @@ Tokens (light):
 | section label | color | `text.link` #1CB0F6 (macaw, light) | guidebook-light-default #180 |
 
 Type:
-- JP text: duolingo-sans 500 17px / 20px (tokens 24px tall with underline padding) (guidebook-dark-default #195)
+- JP text: duolingo-sans `typography.app.bodyDefault` 500 17px / 20px (tokens 24px tall with underline padding) (guidebook-dark-default #195)
 - translation: duolingo-sans 400 17px / 24px (guidebook-dark-default #230)
 - section label: duolingo-sans 700 17px / 23px (uppercase as authored) (guidebook-dark-default #171)
 
@@ -3062,10 +3062,10 @@ Tokens (light):
 | pill (equipped) | bg / text | bg `gamification.league.promotedRow` #D7FFB8 (sea-sponge, light), text `accent.primary.face` #58CC02 (owl, light) | shop-light-default cl=_1-6PO _2I6Qk (#187) |
 
 Type:
-- section heading: duolingo-sans 700 24px / 26px (shop-dark-default #155)
+- section heading: duolingo-sans `typography.app.sectionTitle` 700 24px / 26px (shop-dark-default #155)
 - title: duolingo-sans 700 19px / 20px (shop-dark-default #161; css:8566 ._32enP)
 - description: duolingo-sans 500 17px / 29.75px (shop-dark-default #162)
-- price button: duolingo-sans 700 15px / 18px uppercase, letter-spacing 0.8px (shop-dark-default #173)
+- price button: duolingo-sans `typography.button.default` 700 15px / 18px uppercase, letter-spacing 0.8px (shop-dark-default #173)
 - pill: duolingo-sans 700 15px uppercase, nowrap (shop-dark-default #177; css:8566 ._2I6Qk)
 
 Contains: button: secondary (web-ui _2V6ug, macaw label), badge/pill
@@ -3089,7 +3089,7 @@ Anatomy:
 | A card | width x height / padding | 368 x 233px, padding `space.18` 18px, radius `radius.16` 16px, border `borderWidth.2` 2px | learn-dark-default cl=_16rRh _2cnFr _1T_BQ (#87); css:1008-b4d34396.css ._2cnFr, ._1T_BQ |
 | A title | width / margin | 220px, margin `space.8` 8px 0 | learn-dark-default h2 cl=_3f4H2 WyfrO (#91); css:7668-84c050df.css .WyfrO |
 | A body | width / margin | calc(100% - 83px) = 245px, margin `space.8` 8px 0 `space.24` 24px | learn-dark-default cl=_3GCbg (#92) |
-| A button | size | 328 x 50px (100%), radius `radius.16` 16px, 4px lip (box-shadow 0 4px nebula) | learn-dark-default button cl=_1VYyp _3b8r8 (#93) |
+| A button | size | 328 x `size.buttonHeight` 50px (100%), radius `radius.16` 16px, 4px lip (box-shadow 0 4px nebula) | learn-dark-default button cl=_1VYyp _3b8r8 (#93) |
 | A art | size / position | 98 x 94px, absolute top 24px right 24px | learn-dark-default img cl=zYUV0 (#89) |
 | B/C banner | padding / radius / margin | padding `space.20` 20px (20px 10px 10px under 530px), radius `radius.16` 16px, margin-bottom `space.32` 32px | shop-dark-default cl=MGk8p (#145); css:8566-1e4d7a6c.css .MGk8p |
 | B banner | size | 480 x 227px | shop-dark-default #145 |
@@ -3127,11 +3127,11 @@ Tokens (light):
 | B/C button | face / lip / label | face #FFFFFF, lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse) | shop-light-default #163 |
 
 Type:
-- A title: duolingo-sans 700 19px / 28px (learn-dark-default #91)
-- A body: duolingo-sans 500 17px / 25px (learn-dark-default #92; css:7668 .OWSZL)
-- buttons: duolingo-sans 700 15px / 18px uppercase, letter-spacing 0.8px (learn-dark-default #93)
-- B/C headline: duolingo-sans 700 25px / 34px (23px / 31px under 530px) (shop-dark-default #149; css:8566 ._353sT)
-- C body: duolingo-sans 500 17px / 25px; emphasis 700 (settings-super-dark-default #106, #108; css:7668 ._15G6R)
+- A title: duolingo-sans `typography.app.cardTitle` 700 19px / 28px (learn-dark-default #91)
+- A body: duolingo-sans `typography.app.railBody` 500 17px / 25px (learn-dark-default #92; css:7668 .OWSZL)
+- buttons: duolingo-sans `typography.button.default` 700 15px / 18px uppercase, letter-spacing 0.8px (learn-dark-default #93)
+- B/C headline: duolingo-sans `typography.app.promoTitle` 700 25px / 34px (23px / 31px under 530px) (shop-dark-default #149; css:8566 ._353sT)
+- C body: duolingo-sans `typography.app.railBody` 500 17px / 25px; emphasis 700 (settings-super-dark-default #106, #108; css:7668 ._15G6R)
 
 Contains: button: primary (web-ui _1VYyp, recoloured cosmos/nebula), button: primary on dark (web-ui _1VYyp + _19taU white), card shell (rail card)
 
@@ -3158,7 +3158,7 @@ Anatomy:
 | art | size | 368 x 91px, margin 0 -24px (bleeds to card edges), max-height 91px | shop-dark-default img cl=_1PyGQ (#115); css:1327 ._1PyGQ |
 | title | margin | margin-bottom `space.12` 12px; `space.30` 30px line | shop-dark-default h2 cl=_3IB6P (#117) |
 | body | margin | margin-top -8px; 2 lines of `space.24` 24px | shop-dark-default cl=_yQL7 (#118) |
-| button | size | 320 x 50px, radius `radius.16` 16px, 4px lip | shop-dark-default button cl=_1VYyp _19taU (#120) |
+| button | size | 320 x `size.buttonHeight` 50px, radius `radius.16` 16px, 4px lip | shop-dark-default button cl=_1VYyp _19taU (#120) |
 | link block | margin | margin-bottom `space.15` 15px; link `space.20` 20px line | shop-dark-default cl=_1d5x2 (#123), a (#124) |
 
 | State | What changes | Source |
@@ -3184,9 +3184,9 @@ Tokens (light):
 | button | face / lip / label | face #FFFFFF, lip #FFFFFF @0.5, label `gamification.super.surface` #000437 (eclipse) | learn-light-default #138 |
 
 Type:
-- title: duolingo-sans 700 24px / 30px (1.25), centred (shop-dark-default #117)
-- body: duolingo-sans 500 16px / 24px, centred (shop-dark-default #118; css:1327 ._yQL7)
-- button: duolingo-sans 700 15px / 18px uppercase, letter-spacing 0.8px (shop-dark-default #120)
+- title: duolingo-sans `typography.app.modalTitle` 700 24px / 30px (1.25), centred (shop-dark-default #117)
+- body: duolingo-sans `typography.caption.default` 500 16px / 24px, centred (shop-dark-default #118; css:1327 ._yQL7)
+- button: duolingo-sans `typography.button.default` 700 15px / 18px uppercase, letter-spacing 0.8px (shop-dark-default #120)
 - link: duolingo-sans 700 15px uppercase, letter-spacing 1px (shop-dark-default #124; css:1327 ._1d5x2 a)
 
 Contains: button: primary on dark (web-ui _1VYyp + _19taU white)

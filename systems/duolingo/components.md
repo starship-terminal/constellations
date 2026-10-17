@@ -271,7 +271,7 @@ courses row Ej0kW: 64px, flag 34x26 (18% radius, 2px white outline) + name (head
 
 ### Cards (right-rail cards, settings side cards, stat tiles)
 
-right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, 16px radius, 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (700 19px/28px), body (wolf, 25px lh), full-width CTA; settings side card _1uI. [Full spec](components/core.md#cards-right-rail-cards-settings-side-cards-stat-tiles)
+right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, 16px radius, 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (`typography.app.cardTitle` 700 19px/28px), body (wolf, 25px lh), full-width C. [Full spec](components/core.md#cards-right-rail-cards-settings-side-cards-stat-tiles)
 
 ![card light](components/crops/card-light.png) ![card dark](components/crops/card-dark.png)
 
@@ -289,7 +289,7 @@ root oCRfA role=progressbar (sets --__internal__progress-bar-height, default 16p
 
 ### Links
 
-inline text-button link (web-ui variant-text-no-padding-macaw, MVjvO _1nf6U c1Mv-): 700 15px/18px uppercase macaw ("VIEW ALL", "GO TO SHOP"); settings footer links hBgxi (hare) / _2FVDQ (cardinal): label-medium 700 16px/. [Full spec](components/core.md#links)
+inline text-button link (web-ui variant-text-no-padding-macaw, MVjvO _1nf6U c1Mv-): 700 15px/18px uppercase macaw ("VIEW ALL", "GO TO SHOP"); settings footer links hBgxi (hare) / _2FVDQ (cardinal): label-medium `typograp. [Full spec](components/core.md#links)
 
 ![link light](components/crops/link-light.png) ![link dark](components/crops/link-dark.png)
 

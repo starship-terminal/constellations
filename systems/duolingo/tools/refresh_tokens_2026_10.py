@@ -64,7 +64,7 @@ for key, px, use in (("xs", 16, "inline glyphs in buttons and lists"), ("sm", 18
         "Measured")
 core["focusRing"] = {
     "width": tok("0px", "dimension",
-        "Duolingo draws no focus ring. A live pass on 2026-10-17 pressed Tab 33 times across the learn page, two settings pages and a lesson (sidebar links, text links, outline buttons, an icon button, the theme select, switches, a radio card, word-bank tiles, hint tokens, text fields); every focused control matched :focus-visible, and none but the text fields changed visibly; the only outline property left is the UA outline-offset of 1px on links, with outline-style none. Text fields show focus by turning their 2px border border.focus, and menu rows by a polar fill.",
+        "Duolingo draws no focus ring. Two live passes on 2026-10-17 pressed Tab (or an arrow key in a menu) 78 times across the learn, characters, profile and settings pages, the MORE and courses menus, a lesson, its quit dialog and its report form (components/focus.md); every focused control matched :focus-visible, and none but the text fields and the courses-menu rows changed visibly; the only outline property left is the UA outline-offset of 1px on links, with outline-style none. Text fields show focus by turning their 2px border border.focus, and menu rows by a polar fill.",
         f"{LIVE} focus[]; {CSSEV} outline_declarations ('*,:after,:before,button,button:focus,input,textarea{{outline:none}}', '._7jW2t:not(._1ZhE5){{outline:none}}'), focus_visible count 0",
         "Measured"),
     "offset": tok("0px", "dimension", "No ring, so no offset. Kept so a consumer that needs a ring knows Duolingo has none.", f"{LIVE} focus[]", "Measured"),
@@ -89,21 +89,35 @@ core["duration"]["reducedMotion"] = tok("0ms", "duration",
     "Measured")
 
 # --- Colour ramps (F1) --------------------------------------------------------------------
+# Every step is a colour the palette already holds (none is interpolated). For each hue: the
+# palette entries in its hue window (HLS saturation >= 0.3; neutral: <= 0.05), one name per
+# distinct value, the original core names kept, others added where they sit at least 4 L* from
+# every kept step, ordered lightest to darkest by CIE L* of the light value. Green and yellow
+# stop short of 10 because the palette has no more distinct values in those hues.
 RAMPS = {
-    "neutral": ["snow", "polar", "swan", "hare", "wolf", "eel"],
-    "green": ["sea-sponge", "turtle", "owl", "tree-frog"],
-    "blue": ["iguana", "blue-jay", "macaw", "whale", "humpback", "narwhal"],
-    "red": ["walking-fish", "flamingo", "pig", "crab", "cardinal", "fire-ant"],
-    "orange": ["cheetah", "fox", "guinea-pig"],
-    "yellow": ["canary", "duck", "bee", "camel"],
+    "neutral": ["snow", "polar", "swan", "koala", "hare", "gray-text", "wolf", "freetail", "eel", "orca"],
+    "green": ["sea-sponge", "turtle", "mask-green", "duo-shine", "owl", "tree-frog", "kiwi-dark", "duo-radio"],
+    "blue": ["iguana", "blue-jay", "bea-junior-shine", "macaw", "whale", "blue-tang", "humpback", "narwhal", "blue-space", "manta-ray"],
+    "red": ["walking-fish", "flamingo", "pig", "crab", "cardinal", "fire-ant", "eddy-radio", "discoverer-progress-bar", "discoverer"],
+    "orange": ["cheetah", "streak-panel-unextended-topbar-text", "traveler-progress-bar", "fox", "grizzly-lite", "guinea-pig", "lin-lucy-radio", "falstaff-secondary", "falstaff-radio"],
+    "yellow": ["canary", "duck", "bee", "streak-society-light-orange", "camel"],
 }
+for th in ("light", "dark"):
+    if "ramp" in t[th]:
+        t[th]["ramp"].clear()  # keep the group's place in the set; rebuild its steps
 for hue, names in RAMPS.items():
     for i, name in enumerate(names):
         step = str((i + 1) * 100)
-        both(f"ramp.{hue}.{step}", lambda th, name=name, hue=hue, step=step: tok(
+        both(f"ramp.{hue}.{step}", lambda th, name=name, hue=hue, step=step, n=len(names): tok(
             "{palette.%s.%s}" % (th, name), "color",
-            f"{hue} ramp step {step}: palette '{name}'. Duolingo publishes no ramps; the steps are its own palette names for this hue, ordered lightest to darkest by their light values. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.",
+            f"{hue} ramp step {step} of {n}: palette '{name}'. Duolingo publishes no ramps; the steps are colours its palette already holds in this hue, ordered lightest to darkest by CIE L* of their light values, none interpolated. In dark the same names invert (snow is the darkest neutral), so this set keeps the names, not the order.",
             "derived from core.palette (palette app-54af2130.js; light and dark checked live, raw/2026-10/rootvars-live.json)", "Derived"))
+
+# --- Strong border (F4) -------------------------------------------------------------------
+both("border.strong", lambda th: tok("{palette.%s.hare}" % th, "color",
+    "Strong neutral edge, one step darker than border.default. Every solid resting neutral border is swan (117 rules); hare is the only darker neutral edge, on three rules: the ghost letter avatar's 2px dashed border (._1wd57, coloured by color: hare), the hover border of the pill chip ._3ahVn (2px swan at rest, 16px radius) and the divider .uzb3k, drawn at 40% opacity. The role name is this package's; the colour and its uses are the product's.",
+    f"{CSSEV} dark_neutral_borders ('._1wd57{{border-style:dashed;border-width:2px;color:rgb(var(--color-hare))}}', '._3ahVn:hover{{border-color:rgb(var(--color-hare))}}', '.uzb3k{{border-color:rgb(var(--color-hare));...;opacity:.4}}'); border_colour_use swan 117, no wolf or eel",
+    "Derived"))
 
 # --- Background roles (F2) ----------------------------------------------------------------
 both("surface.overlay", lambda th: tok("{palette.%s.snow}" % th, "color",

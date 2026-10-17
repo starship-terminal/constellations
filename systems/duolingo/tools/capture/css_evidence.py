@@ -39,5 +39,12 @@ out = {
     "active_on_buttons": pick(lambda f, c, sel, b: ":active" in sel and re.search(r"\._1VYyp|\._2V6ug|\._7jW2t", sel) is not None, 20),
     "hover_filters": pick(lambda f, c, sel, b: "filter-hover" in b and "brightness" in b, 20),
     "border_colour_use": dict(border_use.most_common()),
+    # every border drawn in a neutral darker than swan (hare, wolf, eel): the candidates for a strong
+    # border. A border with no colour of its own takes currentColor, so a rule that sets a border
+    # style or width and color: hare counts too.
+    "dark_neutral_borders": pick(lambda f, c, sel, b: re.search(r"border(?:-(?:top|right|bottom|left))?(?:-color)?:[^;]*?rgb\(var\(--color-(?:hare|wolf|eel)\)", b) is not None
+                                 or (not re.search(r"(?:^|;)border(?:-(?:top|right|bottom|left))?(?:-color)?:[^;]*(?:rgb|transparent|currentcolor|\b0\b|none)", b, re.I)
+                                     and re.search(r"(?:^|;)border(?:-style|-width)?:", b) is not None
+                                     and re.search(r"(?:^|;)color:rgb\(var\(--color-(?:hare|wolf|eel)\)\)", b) is not None), 20),
 }
 json.dump(out, sys.stdout, indent=1)

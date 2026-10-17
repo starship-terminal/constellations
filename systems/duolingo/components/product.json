@@ -111,7 +111,7 @@
     {
      "part": "label",
      "property": "size",
-     "value": "text box 25px tall (line-height 25px from the container font 500 17px/25px); hidden (display none) below 1160",
+     "value": "text box 25px tall (line-height 25px from the container font `typography.app.railBody` 500 17px/25px); hidden (display none) below 1160",
      "source": "learn-dark-default cl=_1AZJt (#13); css:9071-d035f2e5.css ._1AZJt"
     },
     {
@@ -278,7 +278,7 @@
      },
      {
       "part": "container base",
-      "value": "500 17px/25px duolingo-sans, antialiased",
+      "value": "`typography.app.railBody` 500 17px/25px duolingo-sans, antialiased",
       "source": "css:9071-d035f2e5.css ._3P5E_"
      },
      {
@@ -288,7 +288,7 @@
      },
      {
       "part": "promo title / body / CTA",
-      "value": "700 20/24 / 400 16/24 / 700 14px/28px uppercase ls 0.56px",
+      "value": "700 20/24 / 400 16/24 / `typography.button.small` 700 14px/28px uppercase ls 0.56px",
       "source": "learn-dark-default #60, #61, #62"
      }
     ]
@@ -566,7 +566,7 @@
      },
      {
       "part": "course number",
-      "value": "duolingo-sans 700 16px/24px",
+      "value": "duolingo-sans `typography.caption.bold` 700 16px/24px",
       "source": "learn-light-default cl=_2pjbW (#74); css:5275-8898b509.css ._2pjbW"
      }
     ]
@@ -790,7 +790,7 @@
     "type": [
      {
       "part": "footer links",
-      "value": "duolingo-sans 700 13px/16px uppercase",
+      "value": "duolingo-sans `typography.app.footerLink` 700 13px/16px uppercase",
       "source": "learn-dark-default cl=_1oCct (#136)"
      }
     ]
@@ -856,7 +856,7 @@
     {
      "part": "bar",
      "property": "width x height",
-     "value": "570 x 58 (height 58px), position fixed top var(--web-ui_topbar-top,0), z-index 210",
+     "value": "570 x 58 (height `size.topBarHeightMobile` 58px), position fixed top var(--web-ui_topbar-top,0), z-index 210",
      "source": "learn-dark-mobile cl=_3sbzq _1lHE4 hJZ_L (#3); css:5275-8898b509.css ._3sbzq, ._1lHE4"
     },
     {
@@ -988,12 +988,12 @@
     "type": [
      {
       "part": "counts",
-      "value": "duolingo-sans 700 17px, line-height 20px (bar font 500 17px/25px with line-height 20px; dump records no size change)",
+      "value": "duolingo-sans 700 17px, line-height 20px (bar font `typography.app.railBody` 500 17px/25px with line-height 20px; dump records no size change)",
       "source": "learn-dark-mobile #14, #18, #23; css:5275-8898b509.css ._1lHE4, ._1jo6f"
      },
      {
       "part": "course number",
-      "value": "duolingo-sans 700 16px/24px",
+      "value": "duolingo-sans `typography.caption.bold` 700 16px/24px",
       "source": "learn-dark-mobile cl=_2DN_i (#9)"
      }
     ]
@@ -1062,7 +1062,7 @@
     {
      "part": "bar",
      "property": "width x height",
-     "value": "570 x 82 (height 82px), position fixed bottom 0, width 100%, z-index 210",
+     "value": "570 x 82 (height `size.tabBarHeightMobile` 82px), position fixed bottom 0, width 100%, z-index 210",
      "source": "learn-dark-mobile cl=_1p0jQ (#24), cl=_2zdkO (#27); css:5275-8898b509.css ._1p0jQ, ._2zdkO"
     },
     {
@@ -1320,7 +1320,7 @@
     "type": [
      {
       "part": "body default",
-      "value": "500 17px/20px, family duolingo-sans (the * rule)",
+      "value": "`typography.app.bodyDefault` 500 17px/20px, family duolingo-sans (the * rule)",
       "source": "css:app-f2ef02f8.css body, *"
      }
     ]
@@ -1614,25 +1614,25 @@
      {
       "part": "section/unit label",
       "property": "font",
-      "value": "700 16px/24px, opacity 0.7 (not uppercased by CSS; the string is uppercase)",
+      "value": "`typography.caption.bold` 700 16px/24px, opacity 0.7 (not uppercased by CSS; the string is uppercase)",
       "source": "learn-dark-default _3WYpp (#157); css:path-e50cab6b.css ._3WYpp"
      },
      {
       "part": "title",
       "property": "font",
-      "value": "700 22px/28px (19px/22px below 700px)",
+      "value": "`typography.path.unitHeaderTitle` 700 22px/28px (19px/22px below 700px)",
       "source": "learn-dark-default U_xpg (#158); css:path-e50cab6b.css .U_xpg"
      },
      {
       "part": "GUIDEBOOK label",
       "property": "font",
-      "value": "700 15px/18px uppercase, letter-spacing 0.8px (duolingo-sans via button class _1ursp)",
+      "value": "`typography.button.default` 700 15px/18px uppercase, letter-spacing 0.8px (duolingo-sans via button class _1ursp)",
       "source": "learn-dark-default (#161); css:4779-c36ad395.css ._1ursp"
      },
      {
       "part": "all",
       "property": "font-family",
-      "value": "not recorded in dumps (body rule: 500 17px/20px)",
+      "value": "not recorded in dumps (body rule: `typography.app.bodyDefault` 500 17px/20px)",
       "source": "css:app-f2ef02f8.css body"
      }
     ],
@@ -1850,7 +1850,7 @@
      {
       "part": "title",
       "property": "font",
-      "value": "700 19px/26.6px, centred",
+      "value": "`typography.path.unitDivider` 700 19px/26.6px, centred",
       "source": "learn-dark-default (#1184); css:path-e50cab6b.css ._3qGKs"
      }
     ]
@@ -2110,7 +2110,7 @@
      {
       "part": "START / JUMP HERE? bubble",
       "property": "font",
-      "value": "700 17px/17px uppercase, letter-spacing 0.51px (0.03em), nowrap",
+      "value": "`typography.app.tooltipLabel` 700 17px/17px uppercase, letter-spacing 0.51px (0.03em), nowrap",
       "source": "learn-dark-default (#1239, #1322); css:path-e50cab6b.css ._27IMa, .TOHdU"
      }
     ],
@@ -2448,7 +2448,7 @@
      {
       "part": "title",
       "property": "font",
-      "value": "700 19px/26.6px, left aligned",
+      "value": "`typography.path.unitDivider` 700 19px/26.6px, left aligned",
       "source": "learn-dark-node-popover QPQgr (#1242); css:path-e50cab6b.css .QPQgr"
      },
      {
@@ -2460,7 +2460,7 @@
      {
       "part": "button label",
       "property": "font",
-      "value": "700 15px/18px uppercase, letter-spacing 0.8px",
+      "value": "`typography.button.default` 700 15px/18px uppercase, letter-spacing 0.8px",
       "source": "learn-dark-node-popover (#1244)"
      }
     ]
@@ -2938,13 +2938,13 @@
      {
       "part": "UP NEXT",
       "property": "font",
-      "value": "700 15px/18px uppercase, letter-spacing 0.6px (0.04em)",
+      "value": "`typography.app.eyebrow` 700 15px/18px uppercase, letter-spacing 0.6px (0.04em)",
       "source": "learn-dark-path-end (#470)"
      },
      {
       "part": "title",
       "property": "font",
-      "value": "700 25px/32px",
+      "value": "`typography.path.sectionTitle` 700 25px/32px",
       "source": "learn-dark-path-end (#473)"
      },
      {
@@ -2956,7 +2956,7 @@
      {
       "part": "button",
       "property": "font",
-      "value": "700 15px/18px uppercase, letter-spacing 0.8px",
+      "value": "`typography.button.default` 700 15px/18px uppercase, letter-spacing 0.8px",
       "source": "learn-dark-path-end (#475)"
      }
     ]
@@ -3262,25 +3262,25 @@
      {
       "part": "SEE DETAILS",
       "property": "font",
-      "value": "700 16px/44px uppercase, letter-spacing 0.64px",
+      "value": "`typography.button.medium` 700 16px/44px uppercase, letter-spacing 0.64px",
       "source": "sections-dark-default (#160)"
      },
      {
       "part": "title",
       "property": "font",
-      "value": "700 25px/34px",
+      "value": "`typography.app.promoTitle` 700 25px/34px",
       "source": "sections-dark-default _39RQh (#162)"
      },
      {
       "part": "status label",
       "property": "font",
-      "value": "700 15px/18px uppercase, letter-spacing 0.6px (locked: opacity 0.7)",
+      "value": "`typography.app.eyebrow` 700 15px/18px uppercase, letter-spacing 0.6px (locked: opacity 0.7)",
       "source": "sections-dark-default _1tBwZ (#165, #239)"
      },
      {
       "part": "progress %",
       "property": "font",
-      "value": "700 14px/18px uppercase, letter-spacing 0.56px",
+      "value": "`typography.app.progressLabel` 700 14px/18px uppercase, letter-spacing 0.56px",
       "source": "sections-dark-default (#199)"
      },
      {
@@ -3532,7 +3532,7 @@
     "type": [
      {
       "part": "hearts count",
-      "value": "duolingo-sans 700 17px/20px (body size, inherited)",
+      "value": "duolingo-sans `typography.app.bodyStrong` 700 17px/20px (body size, inherited)",
       "source": "css:app-f2ef02f8.css body {font:500 17px/20px}; css:2634-6b22725c.css ._c4M- {font-weight:700}; css:app-f2ef02f8.css * {font-family:duolingo-sans,sans-serif}"
      }
     ]
@@ -3715,12 +3715,12 @@
     "type": [
      {
       "part": "title",
-      "value": "duolingo-sans 700 32px/40px (25px, line-height 1.25 below 700px)",
+      "value": "duolingo-sans `typography.lesson.challengeHeader` 700 32px/40px (25px, line-height 1.25 below 700px)",
       "source": "lesson-dark-tile-hover #36; css:4358-6896adab.css ._3EOK0; css:app-f2ef02f8.css h1"
      },
      {
       "part": "badge label",
-      "value": "duolingo-sans 700 16px/16px uppercase, letter-spacing 0.64px (0.04em)",
+      "value": "duolingo-sans `typography.label.medium` 700 16px/16px uppercase, letter-spacing 0.64px (0.04em)",
       "source": "lesson-dark-tile-hover #32; css:4358-6896adab.css .w2K8w (text-label-medium)"
      }
     ]
@@ -3982,7 +3982,7 @@
      },
      {
       "part": "rt",
-      "value": "duolingo-sans 500 16px/24px (text-caption)",
+      "value": "duolingo-sans `typography.caption.default` 500 16px/24px (text-caption)",
       "source": "lesson-light-challenge-default #57; css:1327-4028784b.css ._271_n"
      }
     ]
@@ -4517,7 +4517,7 @@
      },
      {
       "part": "rt",
-      "value": "duolingo-sans 500 16px/24px, hare",
+      "value": "duolingo-sans `typography.caption.default` 500 16px/24px, hare",
       "source": "lesson-dark-choice-default #45"
      }
     ]
@@ -4898,7 +4898,7 @@
     "type": [
      {
       "part": "label",
-      "value": "duolingo-sans 500 19px/21.85px",
+      "value": "duolingo-sans `typography.lesson.token` 500 19px/21.85px",
       "source": "lesson-dark-match-default #30"
      },
      {
@@ -5097,7 +5097,7 @@
     "type": [
      {
       "part": "bubble text",
-      "value": "duolingo-sans 500 20px/32px",
+      "value": "duolingo-sans `typography.body.spacious` 500 20px/32px",
       "source": "lesson-dark-dialogue-default #34"
      },
      {
@@ -5272,7 +5272,7 @@
     "type": [
      {
       "part": "Can't listen now",
-      "value": "duolingo-sans 700 17px/20.4px uppercase, letter-spacing 0.8px",
+      "value": "duolingo-sans `typography.button.large` 700 17px/20.4px uppercase, letter-spacing 0.8px",
       "source": "lesson-dark-listen-default #139"
      },
      {
@@ -5336,7 +5336,7 @@
     {
      "part": "bar",
      "property": "height / top border",
-     "value": "140px (min-height, max-height 140px), border-top 2px solid",
+     "value": "140px (min-height, max-height `size.lessonFooterHeight` 140px), border-top 2px solid",
      "source": "lesson-dark-challenge-default cl=_3rB4d _1VTif _2HXQ9 (#146); css:1008-b4d34396.css ._3rB4d @media (min-width:700px)"
     },
     {
@@ -5682,7 +5682,7 @@
     "type": [
      {
       "part": "title",
-      "value": "duolingo-sans 700 24px/30px",
+      "value": "duolingo-sans `typography.app.modalTitle` 700 24px/30px",
       "source": "lesson-dark-feedback-correct #148; css:app-f2ef02f8.css h2; css:1008-b4d34396.css ._2U7Gm @media (min-width:700px)"
      },
      {
@@ -5697,7 +5697,7 @@
      },
      {
       "part": "CONTINUE",
-      "value": "duolingo-sans 700 17px/20.4px uppercase, letter-spacing 0.8px",
+      "value": "duolingo-sans `typography.button.large` 700 17px/20.4px uppercase, letter-spacing 0.8px",
       "source": "lesson-dark-feedback-correct #168"
      }
     ]
@@ -7958,7 +7958,7 @@
      },
      {
       "part": "trial: option label / date",
-      "value": "700 20px / 28px ; 400 16px / 18.4px",
+      "value": "`typography.body.bold` 700 20px / 28px ; 400 16px / 18.4px",
       "source": "lesson-light-trial-upsell cl=_1En-_ (#37), cl=_1UP1a (#38)"
      },
      {
@@ -8424,7 +8424,7 @@
      },
      {
       "part": "title",
-      "value": "700 25px/34px",
+      "value": "`typography.app.promoTitle` 700 25px/34px",
       "source": "learn-dark-streak-dropdown dt=streak-panel-header (#85); css:app-f2ef02f8.css ._108HH, .O6MuF"
      },
      {
@@ -8444,7 +8444,7 @@
      },
      {
       "part": "friend caption",
-      "value": "500 16px/24px (--text-caption)",
+      "value": "`typography.caption.default` 500 16px/24px (--text-caption)",
       "source": "learn-dark-streak-dropdown cl=_3Ymcg (#119)"
      },
      {
@@ -8454,7 +8454,7 @@
      },
      {
       "part": "buttons",
-      "value": "700 15px/18px, letter-spacing 0.8px, uppercase",
+      "value": "`typography.button.default` 700 15px/18px, letter-spacing 0.8px, uppercase",
       "source": "learn-dark-streak-dropdown (#120, #128)"
      }
     ]
@@ -8655,17 +8655,17 @@
     "type": [
      {
       "part": "title",
-      "value": "700 24px/26px",
+      "value": "`typography.app.sectionTitle` 700 24px/26px",
       "source": "learn-dark-gems-dropdown h2 (#88)"
      },
      {
       "part": "balance",
-      "value": "500 17px/20px",
+      "value": "`typography.app.bodyDefault` 500 17px/20px",
       "source": "learn-dark-gems-dropdown p (#89); css:app-f2ef02f8.css body {font:500 17px/20px} + * {font-family:duolingo-sans,sans-serif}; dump baseline is a div appended to body, so unlisted size/weight/colour = these"
      },
      {
       "part": "GO TO SHOP",
-      "value": "700 15px/18px, 0.8px, uppercase",
+      "value": "`typography.button.default` 700 15px/18px, 0.8px, uppercase",
       "source": "learn-dark-gems-dropdown (#90)"
      }
     ]
@@ -9138,7 +9138,7 @@
      },
      {
       "part": "course name / add label",
-      "value": "700 17px/20px",
+      "value": "`typography.app.bodyStrong` 700 17px/20px",
       "source": "learn-dark-courses-dropdown (#79, #96); css:app-f2ef02f8.css body {font:500 17px/20px} + * {font-family:duolingo-sans,sans-serif}; dump baseline is a div appended to body, so unlisted size/weight/colour = these"
      }
     ]
@@ -9559,12 +9559,12 @@
      },
      {
       "part": "rank number / name",
-      "value": "700 17px/20px",
+      "value": "`typography.app.bodyStrong` 700 17px/20px",
       "source": "leaderboard-dark-top (#190, #171)"
      },
      {
       "part": "XP",
-      "value": "500 17px/20px, right aligned",
+      "value": "`typography.app.bodyDefault` 500 17px/20px, right aligned",
       "source": "leaderboard-dark-top (#172); css:app-f2ef02f8.css body {font:500 17px/20px} + * {font-family:duolingo-sans,sans-serif}; dump baseline is a div appended to body, so unlisted size/weight/colour = these"
      },
      {
@@ -9875,12 +9875,12 @@
     "type": [
      {
       "part": "title",
-      "value": "700 19px/28px",
+      "value": "`typography.app.cardTitle` 700 19px/28px",
       "source": "leaderboard-dark-default (#88)"
      },
      {
       "part": "CLEAR",
-      "value": "700 15px/18px, 0.8px, uppercase",
+      "value": "`typography.button.default` 700 15px/18px, 0.8px, uppercase",
       "source": "leaderboard-dark-default (#89)"
      }
     ]
@@ -10187,7 +10187,7 @@
      },
      {
       "part": "rail card title",
-      "value": "700 19px/28px",
+      "value": "`typography.app.cardTitle` 700 19px/28px",
       "source": "learn-dark-default cl=_2MmUr _1d_-b (#106)"
      },
      {
@@ -10207,7 +10207,7 @@
      },
      {
       "part": "locked card",
-      "value": "700 19px/28px",
+      "value": "`typography.app.cardTitle` 700 19px/28px",
       "source": "quests-dark-default (#173)"
      }
     ]
@@ -10411,7 +10411,7 @@
     "type": [
      {
       "part": "title",
-      "value": "700 19px/28px",
+      "value": "`typography.app.cardTitle` 700 19px/28px",
       "source": "quests-dark-default cl=Z3uP1 _1d_-b (#88)"
      },
      {
@@ -10421,12 +10421,12 @@
      },
      {
       "part": "date",
-      "value": "500 17px/20px",
+      "value": "`typography.app.bodyDefault` 500 17px/20px",
       "source": "quests-dark-default cl=_7jKSO (#98); css:app-f2ef02f8.css body {font:500 17px/20px} + * {font-family:duolingo-sans,sans-serif}; dump baseline is a div appended to body, so unlisted size/weight/colour = these"
      },
      {
       "part": "VIEW ALL",
-      "value": "700 15px/18px, 0.8px, uppercase",
+      "value": "`typography.button.default` 700 15px/18px, 0.8px, uppercase",
       "source": "quests-dark-default (#89)"
      }
     ]
@@ -10585,7 +10585,7 @@
       "part": "title",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #317"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #317"
      },
      {
       "part": "counter \"238/250\"",
@@ -10647,7 +10647,7 @@
       "part": "title",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #328"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #328"
      },
      {
       "part": "counter",
@@ -10700,12 +10700,12 @@
      },
      {
       "part": "counter",
-      "value": "duolingo-sans 500 17px / 20px desktop (15px under 700px)",
+      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under 700px)",
       "source": "profile-dark-default #318; css:5515 ._8oTbo @media (min-width:700px)"
      },
      {
       "part": "description",
-      "value": "duolingo-sans 500 17px / 20px desktop (15px under 700px)",
+      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px desktop (15px under 700px)",
       "source": "profile-dark-default #328; css:5515 ._7Cbsk"
      },
      {
@@ -10869,7 +10869,7 @@
       "part": "name",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #217"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #217"
      },
      {
       "part": "handle",
@@ -10925,7 +10925,7 @@
       "part": "name",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #218"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #218"
      },
      {
       "part": "handle",
@@ -10966,12 +10966,12 @@
      },
      {
       "part": "handle",
-      "value": "duolingo-sans 500 17px / 20px",
+      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px",
       "source": "profile-dark-default #218; css:5515 ._1Fdxc"
      },
      {
       "part": "joined",
-      "value": "duolingo-sans 500 17px / 20px (15px under 700px)",
+      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px (15px under 700px)",
       "source": "profile-dark-default #221; css:5515 ._3KQMU"
      },
      {
@@ -11119,7 +11119,7 @@
       "part": "value (active)",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #248"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #248"
      },
      {
       "part": "value (inactive streak)",
@@ -11157,7 +11157,7 @@
       "part": "value",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #252"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #252"
      },
      {
       "part": "label",
@@ -11181,12 +11181,12 @@
     "type": [
      {
       "part": "value",
-      "value": "duolingo-sans 700 20px / 20px (19px under 700px)",
+      "value": "duolingo-sans `typography.app.statValue` 700 20px / 20px (19px under 700px)",
       "source": "profile-dark-default #242; css:5515 .-TMd4"
      },
      {
       "part": "label",
-      "value": "duolingo-sans 500 16px / 20px (15px under 700px)",
+      "value": "duolingo-sans `typography.body.compact` 500 16px / 20px (15px under 700px)",
       "source": "profile-dark-default #243; css:5515 ._3oUUc"
      },
      {
@@ -11416,7 +11416,7 @@
      },
      {
       "part": "FOLLOW",
-      "value": "duolingo-sans 700 15px / 20px uppercase, letter-spacing 0.8px",
+      "value": "duolingo-sans `typography.app.labelSmall` 700 15px / 20px uppercase, letter-spacing 0.8px",
       "source": "profile-dark-default #276; css:app ._3wPHf, ._2Rt1l"
      }
     ]
@@ -11569,7 +11569,7 @@
       "part": "event text",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #98"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-dark-default #98"
      },
      {
       "part": "event art",
@@ -11625,7 +11625,7 @@
       "part": "event text",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #99"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); profile-light-default #99"
      },
      {
       "part": "CELEBRATE",
@@ -11670,7 +11670,7 @@
      },
      {
       "part": "CELEBRATE",
-      "value": "duolingo-sans 700 15px / 18px uppercase, letter-spacing 0.8px",
+      "value": "duolingo-sans `typography.button.default` 700 15px / 18px uppercase, letter-spacing 0.8px",
       "source": "profile-dark-default #105"
      },
      {
@@ -11680,7 +11680,7 @@
      },
      {
       "part": "View all",
-      "value": "duolingo-sans 700 17px / 20px",
+      "value": "duolingo-sans `typography.app.bodyStrong` 700 17px / 20px",
       "source": "profile-dark-default #138"
      }
     ]
@@ -11890,12 +11890,12 @@
     "type": [
      {
       "part": "glyph",
-      "value": "duolingo-sans 500 19px / 19px, centred",
+      "value": "duolingo-sans `typography.characters.glyph` 500 19px / 19px, centred",
       "source": "characters-dark-default #175; css:9416 .IxPSK"
      },
      {
       "part": "romaji",
-      "value": "duolingo-sans 500 15px / 15px, text-transform none, letter-spacing 0.8px (inherited from button)",
+      "value": "duolingo-sans `typography.characters.romaji` 500 15px / 15px, text-transform none, letter-spacing 0.8px (inherited from button)",
       "source": "characters-dark-default #176; css:9416 ._3UqmZ, ._1ID0N"
      }
     ]
@@ -12032,7 +12032,7 @@
     "type": [
      {
       "part": "label",
-      "value": "duolingo-sans 700 17px / 20px uppercase, letter-spacing 0.03em (0.51px)",
+      "value": "duolingo-sans `typography.app.bodyStrong` 700 17px / 20px uppercase, letter-spacing 0.03em (0.51px)",
       "source": "characters-dark-default #155; css:9416 ._3ugho, ._1xZUP"
      }
     ]
@@ -12167,7 +12167,7 @@
       "part": "JP text",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); guidebook-dark-default #195"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); guidebook-dark-default #195"
      },
      {
       "part": "hint underline",
@@ -12205,7 +12205,7 @@
       "part": "JP text",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); guidebook-light-default #204"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); guidebook-light-default #204"
      },
      {
       "part": "hint underline",
@@ -12229,7 +12229,7 @@
     "type": [
      {
       "part": "JP text",
-      "value": "duolingo-sans 500 17px / 20px (tokens 24px tall with underline padding)",
+      "value": "duolingo-sans `typography.app.bodyDefault` 500 17px / 20px (tokens 24px tall with underline padding)",
       "source": "guidebook-dark-default #195"
      },
      {
@@ -12371,7 +12371,7 @@
       "part": "title",
       "property": "color",
       "value": "`text.body` #F1F7FB (black-text, dark)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); shop-dark-default #161"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); shop-dark-default #161"
      },
      {
       "part": "description",
@@ -12427,7 +12427,7 @@
       "part": "title",
       "property": "color",
       "value": "`text.body` #3C3C3C (black-text, light)",
-      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: 500 17px/20px } and css * { font-family: duolingo-sans }); shop-light-default #171"
+      "source": "baseline (property absent from dump = inherited body default: css:app-f2ef02f8.css body { color: rgb(var(--color-black-text)); font: `typography.app.bodyDefault` 500 17px/20px } and css * { font-family: duolingo-sans }); shop-light-default #171"
      },
      {
       "part": "description",
@@ -12463,7 +12463,7 @@
     "type": [
      {
       "part": "section heading",
-      "value": "duolingo-sans 700 24px / 26px",
+      "value": "duolingo-sans `typography.app.sectionTitle` 700 24px / 26px",
       "source": "shop-dark-default #155"
      },
      {
@@ -12478,7 +12478,7 @@
      },
      {
       "part": "price button",
-      "value": "duolingo-sans 700 15px / 18px uppercase, letter-spacing 0.8px",
+      "value": "duolingo-sans `typography.button.default` 700 15px / 18px uppercase, letter-spacing 0.8px",
       "source": "shop-dark-default #173"
      },
      {
@@ -12728,27 +12728,27 @@
     "type": [
      {
       "part": "A title",
-      "value": "duolingo-sans 700 19px / 28px",
+      "value": "duolingo-sans `typography.app.cardTitle` 700 19px / 28px",
       "source": "learn-dark-default #91"
      },
      {
       "part": "A body",
-      "value": "duolingo-sans 500 17px / 25px",
+      "value": "duolingo-sans `typography.app.railBody` 500 17px / 25px",
       "source": "learn-dark-default #92; css:7668 .OWSZL"
      },
      {
       "part": "buttons",
-      "value": "duolingo-sans 700 15px / 18px uppercase, letter-spacing 0.8px",
+      "value": "duolingo-sans `typography.button.default` 700 15px / 18px uppercase, letter-spacing 0.8px",
       "source": "learn-dark-default #93"
      },
      {
       "part": "B/C headline",
-      "value": "duolingo-sans 700 25px / 34px (23px / 31px under 530px)",
+      "value": "duolingo-sans `typography.app.promoTitle` 700 25px / 34px (23px / 31px under 530px)",
       "source": "shop-dark-default #149; css:8566 ._353sT"
      },
      {
       "part": "C body",
-      "value": "duolingo-sans 500 17px / 25px; emphasis 700",
+      "value": "duolingo-sans `typography.app.railBody` 500 17px / 25px; emphasis 700",
       "source": "settings-super-dark-default #106, #108; css:7668 ._15G6R"
      }
     ]
@@ -12931,17 +12931,17 @@
     "type": [
      {
       "part": "title",
-      "value": "duolingo-sans 700 24px / 30px (1.25), centred",
+      "value": "duolingo-sans `typography.app.modalTitle` 700 24px / 30px (1.25), centred",
       "source": "shop-dark-default #117"
      },
      {
       "part": "body",
-      "value": "duolingo-sans 500 16px / 24px, centred",
+      "value": "duolingo-sans `typography.caption.default` 500 16px / 24px, centred",
       "source": "shop-dark-default #118; css:1327 ._yQL7"
      },
      {
       "part": "button",
-      "value": "duolingo-sans 700 15px / 18px uppercase, letter-spacing 0.8px",
+      "value": "duolingo-sans `typography.button.default` 700 15px / 18px uppercase, letter-spacing 0.8px",
       "source": "shop-dark-default #120"
      },
      {

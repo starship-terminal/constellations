@@ -10,7 +10,7 @@
   "conventions": {
    "colour": "\"#HEX (palette-name, theme)\"; \"@ a alpha\" when translucent. When several palette names share a hex, the name used by the CSS rule is shown.",
    "trace": "dump#node <tag> cl=... ; css:<file> [@media] <selector>",
-   "body_defaults": "A missing font value in a dump equals the body default: duolingo-sans 500 17px/20px (css:app-f2ef02f8.css body); font-family is duolingo-sans for everything (css:app * {font-family:duolingo-sans,sans-serif}).",
+   "body_defaults": "A missing font value in a dump equals the body default: duolingo-sans `typography.app.bodyDefault` 500 17px/20px (css:app-f2ef02f8.css body); font-family is duolingo-sans for everything (css:app * {font-family:duolingo-sans,sans-serif}).",
    "screenshots": "screenshots/ are 2x; crops use rect x2 with 8px padding.",
    "caveat_overlay": "Captures include an injected agent overlay (orange inset glow at the viewport edges, a pointer svg). Ignore the orange tint near crop edges and the #D97757 / #111111 / #FAF9F5 values."
   },
@@ -3253,10 +3253,10 @@
     "sizes": [
      {
       "size": "default (variant-solid / variant-stroke)",
-      "height": "50px",
+      "height": "`size.buttonHeight` 50px",
       "padding": "0 16px",
       "radius": "16px (root --web-ui_button-border-radius:16px overrides the 12px component default)",
-      "font": "700 15px/1.2 duolingo-sans, 0.8px tracking, uppercase; 17px at >=700px when _3DbUj/_3fo6Q is present (player buttons)",
+      "font": "`typography.button.default` 700 15px/1.2 duolingo-sans, 0.8px tracking, uppercase; 17px at >=700px when _3DbUj/_3fo6Q is present (player buttons)",
       "lip": "4px",
       "source": [
        "css:4779-c36ad395.css ._1ursp { --__internal__font-size:var(--web-ui_button-font-size,15px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.8px); --__internal__line-height:var(--web-ui_button-line-height,1.2); letter-spacing:var(--__internal__letter-spacing) }",
@@ -3267,7 +3267,7 @@
      },
      {
       "size": "juicy (variant-solid-juicy / stroke-juicy / link-juicy)",
-      "height": "48px",
+      "height": "`size.buttonHeightMedium` 48px",
       "padding": "0 12px (solid-juicy) / 0 11px (stroke-juicy, link-juicy)",
       "radius": "16px measured (characters-dark-default#168, root var); 12px inside settings pages (settingsPage .unX5-), 8px when small",
       "font": "700 16px, 0.04em tracking (0.64px), line-height = height minus lip (44px solid, 42px stroke-juicy)",
@@ -3281,7 +3281,7 @@
      },
      {
       "size": "small (_1W_p8)",
-      "height": "32px",
+      "height": "`size.buttonHeightSmall` 32px",
       "padding": "0 8px (solid-juicy) / 0 7px (link, stroke-juicy)",
       "radius": "8px",
       "font": "700 14px",
@@ -3305,10 +3305,10 @@
      },
      {
       "size": "text (variant-text c1Mv-)",
-      "height": "48px (32px with _2xxrg)",
+      "height": "`size.buttonHeightMedium` 48px (`size.buttonHeightSmall` 32px with _2xxrg)",
       "padding": "0 16px",
       "radius": "n/a (no face)",
-      "font": "700 15px/1.2, 0.8px, uppercase",
+      "font": "`typography.button.default` 700 15px/1.2, 0.8px, uppercase",
       "lip": "none",
       "source": [
        "css:4779-c36ad395.css .c1Mv- { --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__filter-hover:var(--web-ui_button-filter-hover,brightness(1.1)); --__internal__height:var(--web-ui_button-height,48px); --__internal__padding:var(--web-ui_button-padding,0 16px); background:none; border:none; color:var(--__internal__color); height:var(--__internal__height); padding:var(--__internal__padding); transition:filter .2s }"
@@ -3747,12 +3747,12 @@
     "optional helper/error text _3c2kP (caption, wolf; fire-ant + circle-exclamation icon when error)"
    ],
    "measurements": {
-    "height": "48px (44px input + 2px border top/bottom)",
+    "height": "`size.inputHeight` 48px (44px input + 2px border top/bottom)",
     "input_padding": "8px 14px",
     "border": "2px",
     "radius": "12px",
-    "font": "body: 500 20px/28px (var(--text-body-*) = 1.25rem/1.75rem)",
-    "label": "700 20px/24px (heading-small), 24px tall, 4px gap to the field (_3zSI5 gap)",
+    "font": "body: `typography.body.default` 500 20px/28px (var(--text-body-*) = 1.25rem/1.75rem)",
+    "label": "`typography.heading.small` 700 20px/24px (heading-small), 24px tall, 4px gap to the field (_3zSI5 gap)",
     "trailing_icon_button": "24x24, margin 0 6px 0 -6px (rQJD2); eye glyph 24x17, clear glyph 18x18",
     "source": [
      "css:4779-c36ad395.css ._1Um2j { background:rgb(var(--color-polar)); border:2px solid rgb(var(--color-swan)); border-radius:12px; display:flex; overflow:hidden }",
@@ -4281,7 +4281,7 @@
     "border": "2px 2px 4px (transparent) + ::before 2px border",
     "lip": "2px box-shadow (4px visual)",
     "radius": "12px",
-    "font": "700 15px/18px, 0.8px, uppercase (value); face font 500 17px/25px",
+    "font": "`typography.button.default` 700 15px/18px, 0.8px, uppercase (value); face font `typography.app.railBody` 500 17px/25px",
     "chevron": "15x9",
     "source": [
      "css:2833-494f8efd.css ._3QwUP { border:solid transparent; border-radius:12px; border-width:2px 2px 4px; color:rgb(var(--color-wolf)); height:50px; padding:0 41px 0 12px }",
@@ -4308,7 +4308,7 @@
      "disabled value": "`text.tertiary` #52656D (hare, dark)"
     }
    },
-   "type_style": "Value: 700 15px/18px uppercase 0.8px.",
+   "type_style": "Value: `typography.button.default` 700 15px/18px uppercase 0.8px.",
    "states": [
     {
      "state": "default",
@@ -4861,8 +4861,8 @@
     "border": "2px, bottom 4px space for the lip",
     "lip": "0 2px 0 (4px visual)",
     "radius": "12px",
-    "title_font": "700 20px/32px (streak goal, body-spacious-bold via .WMgCJ)",
-    "caption_font": "500 16px/24px (caption)",
+    "title_font": "`typography.body.spaciousBold` 700 20px/32px (streak goal, body-spacious-bold via .WMgCJ)",
+    "caption_font": "`typography.caption.default` 500 16px/24px (caption)",
     "source": [
      "css:4779-c36ad395.css ._8dMUn { --__internal__border-color:var(\n    --web-ui_card-border-color,rgb(var(--color-swan))\n  ); border:solid transparent; border-radius:var(--web-ui_card-border-radius,12px); border-width:2px 2px 4px; cursor:pointer; display:inline-flex; outline:0; position:relative; touch-action:manipulation; transform:translateZ(0); -webkit-user-select:none; -moz-user-select:none; user-select:none }",
      "css:4779-c36ad395.css ._8dMUn:before { background-color:var(--web-ui_card-background-color,rgb(var(--color-snow))); border:2px solid var(--__internal__border-color); border-radius:var(--web-ui_card-border-radius,12px); bottom:-2px; box-shadow:0 2px 0 var(--__internal__border-color); content:\"\"; left:-2px; position:absolute; right:-2px; top:-2px; z-index:-1 }",
@@ -5614,7 +5614,7 @@
     "height": "52px",
     "padding": "15px 0",
     "border_bottom": "2px",
-    "font": "700 17px/20px, letter-spacing .03em (0.51px), uppercase",
+    "font": "`typography.app.bodyStrong` 700 17px/20px, letter-spacing .03em (0.51px), uppercase",
     "width": "158px each at 480px column (dark), 195px at 592px (light)",
     "source": [
      "css:9416-975668fa.css ._3ugho { border-bottom:2px solid rgb(var(--color-swan)); color:rgb(var(--color-hare)); font-size:17px; letter-spacing:.03em; padding:15px 0; text-transform:uppercase }"
@@ -5632,7 +5632,7 @@
      "selected/hover label + rule": "`border.focus` #49C0F8 (macaw, dark)"
     }
    },
-   "type_style": "700 17px/20px uppercase, 0.03em tracking.",
+   "type_style": "`typography.app.bodyStrong` 700 17px/20px uppercase, 0.03em tracking.",
    "states": [
     {
      "state": "default",
@@ -6109,7 +6109,7 @@
     "padding": "0 16px",
     "indicator": "4px bar (::after), 2px radius",
     "rule": "2px",
-    "font": "label-medium: 700 16px/16px, 0.04em, uppercase",
+    "font": "label-medium: `typography.label.medium` 700 16px/16px, 0.04em, uppercase",
     "source": [
      "css:5823-96f39733.css ._3Ji0r { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; --web-ui_button-filter-hover:none; align-items:center; border-bottom:2px solid rgb(var(--color-swan))!important; border-top:2px solid transparent!important; box-sizing:border-box; color:rgb(var(--color-eel)); flex:1; font:var(--text-label-weight-medium) var(--text-label-size-medium) /var(--text-label-line-height-medium) duolingo-sans,sans-serif; height:48px; justify-content:center; letter-spacing:var(--text-label-letter-spacing-medium); min-width:0; padding:0 16px!important; text-transform:var(--text-label-casing-medium) }",
      "css:5823-96f39733.css ._2d5P5:after { background:rgb(var(--color-whale)); border-radius:2px; bottom:-2px; content:\"\"; height:4px; position:absolute; width:100% }",
@@ -6130,7 +6130,7 @@
      "on coloured header (_1L0JB, as captured)": "`text.onColor` #FFFFFF (snow-always-light, dark)"
     }
    },
-   "type_style": "label-medium: 700 16px/16px, 0.04em, uppercase.",
+   "type_style": "label-medium: `typography.label.medium` 700 16px/16px, 0.04em, uppercase.",
    "states": [
     {
      "state": "default",
@@ -6362,7 +6362,7 @@
     "\"SUPER\" logo badge: SVG image asset (plus-offer-logo) 78x21, not CSS"
    ],
    "measurements": {
-    "up_next": "74x26, padding 4px 8px, radius 6px, 700 15px/18px, 0.04em (dump 0.6px), uppercase",
+    "up_next": "74x26, padding 4px 8px, radius 6px, `typography.app.eyebrow` 700 15px/18px, 0.04em (dump 0.6px), uppercase",
     "count": "42x25, padding 4px 8px, radius 16px, 700 15px/17.25px, 0.8px, uppercase",
     "equipped": "110x25, padding 8px, radius 16px, 700 15px uppercase",
     "super_logo": "78x21 image",
@@ -6647,14 +6647,14 @@
      "letter text": "`text.onPrimary` #FFFFFF (snow, light)",
      "online dot": "`accent.primary.face` #58CC02 (owl, light)",
      "dot border": "`surface.default` #FFFFFF (snow, light) (swan/sea-sponge/etc inside highlighted leaderboard rows)",
-     "ghost border": "`text.tertiary` #AFAFAF (hare, light)"
+     "ghost border": "`border.strong` #AFAFAF (hare, light)"
     },
     "dark": {
      "letter colours (by user id % 5)": "beetle, cardinal, fox, macaw, tree-frog",
      "letter text": "`text.onPrimary` #131F24 (snow, dark) (dark text on colour in dark theme)",
      "online dot": "`accent.primary.face` #93D333 (owl, dark)",
      "dot border": "`surface.default` #131F24 (snow, dark)",
-     "ghost border": "`text.tertiary` #52656D (hare, dark)"
+     "ghost border": "`border.strong` #52656D (hare, dark)"
     }
    },
    "type_style": "Letter: 700, 0.46 x size.",
@@ -6872,8 +6872,8 @@
     "radius": "15px (var --web-ui_popover-border-radius; 10px on path tooltips, 5px on progress-bar popover)",
     "offset": "8px from trigger (margin on direction class); path node popover 12px",
     "stem": "20x10 visible, square 14.14px CSS (20px rendered bbox) rotated 45deg",
-    "gems_content": "380x148, padding 24px 12px; 100px illustration + 12px gap; title 700 24px/26px; body wolf",
-    "path_popover": "295px wide, padding 16px, 700 19px/1.4, centered, no border",
+    "gems_content": "380x148, padding 24px 12px; 100px illustration + 12px gap; title `typography.app.sectionTitle` 700 24px/26px; body wolf",
+    "path_popover": "295px wide, padding 16px, `typography.path.unitDivider` 700 19px/1.4, centered, no border",
     "source": [
      "css:4779-c36ad395.css ._36bu_ { background-color:var(--web-ui_popover-background-color,rgb(var(--color-snow))); border:2px solid var(--web-ui_popover-border-color,rgb(var(--color-swan))); border-radius:var(--web-ui_popover-border-radius,15px); box-sizing:border-box; overflow:hidden; transform:translateZ(0) }",
      "css:4779-c36ad395.css ._1TMn5 { background-color:var(--web-ui_popover-background-color,rgb(var(--color-snow))); border:2px solid var(--web-ui_popover-border-color,rgb(var(--color-swan))); border-radius:2px; content:\"\"; height:14.14427157px; left:50%; transform:translateZ(0) rotate(45deg); transform-origin:top left; width:14.14427157px }",
@@ -6898,7 +6898,7 @@
      "body": "`text.secondary` #DCE6EC (wolf, dark)"
     }
    },
-   "type_style": "Dropdown title 700 24px/26px; body 17px/20px wolf. Path popover 700 19px/26.6px white.",
+   "type_style": "Dropdown title `typography.app.sectionTitle` 700 24px/26px; body 17px/20px wolf. Path popover `typography.path.unitDivider` 700 19px/26.6px white.",
    "states": [
     {
      "state": "closed",
@@ -7772,8 +7772,8 @@
     "margin": "24px",
     "border": "none",
     "shadow": "none",
-    "title": "700 24px/32px (heading-medium), 12px top margin",
-    "body": "500 16px/24px caption, wolf, 12px top margin",
+    "title": "`typography.heading.medium` 700 24px/32px (heading-medium), 12px top margin",
+    "body": "`typography.caption.default` 500 16px/24px caption, wolf, 12px top margin",
     "button_stack": "primary 50px, margin-top 32px; secondary text 32px, margin-top 16px",
     "close": "35x35, 2px border, radius 98px, 16px icon",
     "source": [
@@ -7808,7 +7808,7 @@
     },
     "backdrop": "rgb(var(--color-black)) @ 0.4 = #000000 @ 0.4 alpha in both themes (css:4779 ._1ATOC)"
    },
-   "type_style": "Title heading-medium (700 24px/32px); body caption (500 16px/24px).",
+   "type_style": "Title heading-medium (`typography.heading.medium` 700 24px/32px); body caption (`typography.caption.default` 500 16px/24px).",
    "states": [
     {
      "state": "open",
@@ -8244,7 +8244,7 @@
     "padding": "40px 24px",
     "grid_gap": "16px 40px",
     "radius": "none",
-    "title": "700 24px/32px heading-medium",
+    "title": "`typography.heading.medium` 700 24px/32px heading-medium",
     "description": "19px/24px wolf",
     "image": "109x110",
     "buttons": "184x50 each",
@@ -8269,7 +8269,7 @@
     },
     "backdrop": "#000000 @ 0.4 alpha (css:4779 ._1ATOC)"
    },
-   "type_style": "Title heading-medium 700 24px/32px; description 19px/24px.",
+   "type_style": "Title heading-medium `typography.heading.medium` 700 24px/32px; description 19px/24px.",
    "states": [
     {
      "state": "open",
@@ -8589,8 +8589,8 @@
     "row_gap": "4px",
     "padding": "8px 30px",
     "radius": "12px",
-    "font": "700 20px/24px (heading-small)",
-    "title": "700 24px/32px wolf",
+    "font": "`typography.heading.small` 700 20px/24px (heading-small)",
+    "title": "`typography.heading.medium` 700 24px/32px wolf",
     "source": [
      "css:settingsPage-f3f7f16a.css .bigAx { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; color:rgb(var(--color-eel)); display:block; font:var(--text-heading-weight-small) var(--text-heading-size-small) /var(--text-heading-line-height-small) duolingo-sans,sans-serif; letter-spacing:var(--text-heading-letter-spacing-small); padding:8px 30px; text-transform:var(--text-heading-casing-small) }",
      "css:settingsPage-f3f7f16a.css .wgPZT { border-radius:12px }",
@@ -8891,7 +8891,7 @@
      "divider / container border": "`border.default` #37464F (swan, dark)"
     }
    },
-   "type_style": "Course name heading-small 700 20px/24px; search name 700 24px; handle 18px; following name 20px, XP 16px.",
+   "type_style": "Course name heading-small `typography.heading.small` 700 20px/24px; search name 700 24px; handle 18px; following name 20px, XP 16px.",
    "states": [
     {
      "state": "default",
@@ -9326,7 +9326,7 @@
    "id": "card",
    "name": "Cards (right-rail cards, settings side cards, stat tiles)",
    "anatomy": [
-    "right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, 16px radius, 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (700 19px/28px), body (wolf, 25px lh), full-width CTA",
+    "right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, 16px radius, 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (`typography.app.cardTitle` 700 19px/28px), body (wolf, 25px lh), full-width CTA",
     "settings side card _1uIIO _1T_BQ: same shell, 24px 16px padding",
     "Super promo card _3Mmv9: eclipse fill + radial gradient, no border, 16px radius, 24px side padding",
     "stat tile _2uSOC: 2px swan border, 16px radius, 15px 24px padding, icon 21px + 15px gap, value 700 20px, caption 16px hare; inactive tile (_1kcT_) all hare"
@@ -9364,7 +9364,7 @@
      "super card fill": "`gamification.super.surface` #000437 (eclipse, dark)"
     }
    },
-   "type_style": "Title 700 19px/28px; body 17px/25px wolf; eyebrow 700 15px/18px uppercase hare; stat value 700 20px; stat caption 16px.",
+   "type_style": "Title `typography.app.cardTitle` 700 19px/28px; body 17px/25px wolf; eyebrow 700 15px/18px uppercase hare; stat value 700 20px; stat caption 16px.",
    "states": [
     {
      "state": "default",
@@ -10012,10 +10012,10 @@
     "optional inner text _2spfn (14px 700 uppercase) and cap icon (quests chest)"
    ],
    "measurements": {
-    "height": "16px default (lesson header), 18px (sections, quests), 8px (character cells), 14px (achievements)",
+    "height": "`size.progressBarHeightLesson` 16px default (lesson header), `size.progressBarHeightQuest` 18px (sections, quests), 8px (character cells), 14px (achievements)",
     "radius": "height / 2",
     "shine": "height 30%, opacity .2, top 25%",
-    "inner_text": "700 14px/18px, 0.04em, uppercase",
+    "inner_text": "`typography.app.progressLabel` 700 14px/18px, 0.04em, uppercase",
     "transition": "width/clip-path .4s",
     "source": [
      "css:4779-c36ad395.css ._3yKMC { background:var(--web-ui_progress-bar-background,rgb(var(--color-swan))); border-radius:calc(var(--__internal__progress-bar-height)/2); position:relative }",
@@ -10043,7 +10043,7 @@
     },
     "note": "Sections page sets the track to snow (_2MB9M); quest bars use a bee fill and guinea-pig-always-light inner text (_2nasW)."
    },
-   "type_style": "Inner text 700 14px/18px uppercase.",
+   "type_style": "Inner text `typography.app.progressLabel` 700 14px/18px uppercase.",
    "states": [
     {
      "state": "empty (value 0)",
@@ -10307,8 +10307,8 @@
    "name": "Links",
    "anatomy": [
     "inline text-button link (web-ui variant-text-no-padding-macaw, MVjvO _1nf6U c1Mv-): 700 15px/18px uppercase macaw (\"VIEW ALL\", \"GO TO SHOP\")",
-    "settings footer links hBgxi (hare) / _2FVDQ (cardinal): label-medium 700 16px/16px uppercase 0.04em",
-    "site footer links _1oCct: 700 13px/16px uppercase hare",
+    "settings footer links hBgxi (hare) / _2FVDQ (cardinal): label-medium `typography.label.medium` 700 16px/16px uppercase 0.04em",
+    "site footer links _1oCct: `typography.app.footerLink` 700 13px/16px uppercase hare",
     "copy-link action _1WLlV _1KSsU: macaw 700 15px uppercase",
     "plain <a> inside Super card: white 700 15px uppercase, 1px tracking"
    ],

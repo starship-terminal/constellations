@@ -2,7 +2,7 @@
 
 Generic (core) components of the Duolingo web app, extracted from computed-style dumps, CSS chunks and the palette. Duolingo-specific components (path nodes, lesson screen, leaderboard rows) are documented elsewhere.
 
-Conventions: colours are `#HEX (palette-name, theme)`; traces are `dump#node` or `css:<file> [@media] <selector>`. A font value missing from a dump equals the body default (duolingo-sans 500 17px/20px). Screenshots are 2x; crops are rect x2 + 8px.
+Conventions: colours are `#HEX (palette-name, theme)`; traces are `dump#node` or `css:<file> [@media] <selector>`. A font value missing from a dump equals the body default (duolingo-sans `typography.app.bodyDefault` 500 17px/20px). Screenshots are 2x; crops are rect x2 + 8px.
 
 Capture caveat: Captures include an injected agent overlay (orange inset glow at the viewport edges, a pointer svg). Ignore the orange tint near crop edges and the #D97757 / #111111 / #FAF9F5 values.
 
@@ -112,11 +112,11 @@ Face = `::before` fill (legacy FOLLOW: `::after`). Lip = `::before` box-shadow c
 
 | Property | Value |
 | --- | --- |
-| size: default (variant-solid / variant-stroke) | height: 50px; padding: 0 16px; radius: 16px (root --web-ui_button-border-radius:16px overrides the 12px component default); font: 700 15px/1.2 duolingo-sans, 0.8px tracking, uppercase; 17px at >=700px when _3DbUj/_3fo6Q is present (player buttons); lip: 4px<br>css:4779-c36ad395.css ._1ursp { --__internal__font-size:var(--web-ui_button-font-size,15px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.8px); --__internal__line-height:var(--web-ui_button-line-height,1.2); letter-spacing:var(--__internal__letter-spacing) }<br>css:4779-c36ad395.css ._1VYyp { --__internal__background-color:var(--web-ui_button-background-color,rgb(var(--color-macaw))); --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-swan))); --__internal__border-color:var(--web-ui_button-border-color,rgb(var(--color-whale))); --__internal__border-radius:var(--web-ui_button-border-radius,12px); --__internal__color:var(--web-ui_button-color,rgb(var(--color-snow))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__color-disabled:var(--web-ui_button-color-disabled,rgb(var(--color-hare))); --__internal__filter-hover:var(--web-ui_button-filter-hover,brightness(1.1)); --__internal__h … }<br>css:app-f2ef02f8.css :root { --viewport-height:100dvh; --web-ui_button-border-radius:16px; --rtl-sign:1; --text-pageTitle-casing-large:none; --text-pageTitle-letter-spacing-large:0; --text-pageTitle-line-height-large:2.75rem; --text-pageTitle-size-large:2.5rem; --text-pageTitle-weight-large:700; --text-pageTitle-casing-small:none; --text-pageTitle-letter-spacing-small:0; --text-pageTitle-line-height-small:2.25rem; --text-pageTitle-size-small:2rem; --text-pageTitle-weight-small:700; --text-heading-casing-large:none; --text-heading-letter-spacing-large:0; --text-heading-line-height-large:2rem; --text-heading-size-large:1.75rem; --text-heading-weight-large:700; --text-heading-casing-medium:none; --text-heading-letter-spaci … }<br>css:1008-b4d34396.css @media (min-width:700px) ._3DbUj { --web-ui_button-font-size:17px; width:auto } |
-| size: juicy (variant-solid-juicy / stroke-juicy / link-juicy) | height: 48px; padding: 0 12px (solid-juicy) / 0 11px (stroke-juicy, link-juicy); radius: 16px measured (characters-dark-default#168, root var); 12px inside settings pages (settingsPage .unX5-), 8px when small; font: 700 16px, 0.04em tracking (0.64px), line-height = height minus lip (44px solid, 42px stroke-juicy); lip: 4px solid; stroke-juicy 1px outline + 3px shadow<br>css:4779-c36ad395.css ._20olS { --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - var(--__internal__lip-width))); --__internal__padding:var(--web-ui_button-padding,0 12px) }<br>css:4779-c36ad395.css .rdtAy { --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-snow))); --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - 6px)); --__internal__padding:var(--web-ui_button-padding,0 11px); border-width:1px 1px 5px }<br>css:4779-c36ad395.css ._1GQxS { --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__color-disabled:var(--web-ui_button-color-disabled,rgb(var(--color-hare))); --__internal__filter-hover:var(--web-ui_button-filter-hover,brightness(1.1)); --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - 4px)); --__internal__padding:var(--web-ui_button-padding,0 11px); background:none; border-colo … }<br>css:settingsPage-f3f7f16a.css .unX5- { --web-ui_button-border-radius:12px } |
-| size: small (_1W_p8) | height: 32px; padding: 0 8px (solid-juicy) / 0 7px (link, stroke-juicy); radius: 8px; font: 700 14px; lip: 4px<br>css:4779-c36ad395.css ._20olS._1W_p8 { --__internal__border-radius:var(--web-ui_button-border-radius,8px); --__internal__font-size:var(--web-ui_button-font-size,14px); --__internal__height:var(--web-ui_button-height,32px); --__internal__padding:var(--web-ui_button-padding,0 8px) }<br>css:4779-c36ad395.css ._1GQxS._1W_p8 { --__internal__border-radius:var(--web-ui_button-border-radius,8px); --__internal__font-size:var(--web-ui_button-font-size,14px); --__internal__height:var(--web-ui_button-height,32px); --__internal__padding:var(--web-ui_button-padding,0 7px) } |
+| size: default (variant-solid / variant-stroke) | height: `size.buttonHeight` 50px; padding: 0 16px; radius: 16px (root --web-ui_button-border-radius:16px overrides the 12px component default); font: `typography.button.default` 700 15px/1.2 duolingo-sans, 0.8px tracking, uppercase; 17px at >=700px when _3DbUj/_3fo6Q is present (player buttons); lip: 4px<br>css:4779-c36ad395.css ._1ursp { --__internal__font-size:var(--web-ui_button-font-size,15px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.8px); --__internal__line-height:var(--web-ui_button-line-height,1.2); letter-spacing:var(--__internal__letter-spacing) }<br>css:4779-c36ad395.css ._1VYyp { --__internal__background-color:var(--web-ui_button-background-color,rgb(var(--color-macaw))); --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-swan))); --__internal__border-color:var(--web-ui_button-border-color,rgb(var(--color-whale))); --__internal__border-radius:var(--web-ui_button-border-radius,12px); --__internal__color:var(--web-ui_button-color,rgb(var(--color-snow))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__color-disabled:var(--web-ui_button-color-disabled,rgb(var(--color-hare))); --__internal__filter-hover:var(--web-ui_button-filter-hover,brightness(1.1)); --__internal__h … }<br>css:app-f2ef02f8.css :root { --viewport-height:100dvh; --web-ui_button-border-radius:16px; --rtl-sign:1; --text-pageTitle-casing-large:none; --text-pageTitle-letter-spacing-large:0; --text-pageTitle-line-height-large:2.75rem; --text-pageTitle-size-large:2.5rem; --text-pageTitle-weight-large:700; --text-pageTitle-casing-small:none; --text-pageTitle-letter-spacing-small:0; --text-pageTitle-line-height-small:2.25rem; --text-pageTitle-size-small:2rem; --text-pageTitle-weight-small:700; --text-heading-casing-large:none; --text-heading-letter-spacing-large:0; --text-heading-line-height-large:2rem; --text-heading-size-large:1.75rem; --text-heading-weight-large:700; --text-heading-casing-medium:none; --text-heading-letter-spaci … }<br>css:1008-b4d34396.css @media (min-width:700px) ._3DbUj { --web-ui_button-font-size:17px; width:auto } |
+| size: juicy (variant-solid-juicy / stroke-juicy / link-juicy) | height: `size.buttonHeightMedium` 48px; padding: 0 12px (solid-juicy) / 0 11px (stroke-juicy, link-juicy); radius: 16px measured (characters-dark-default#168, root var); 12px inside settings pages (settingsPage .unX5-), 8px when small; font: 700 16px, 0.04em tracking (0.64px), line-height = height minus lip (44px solid, 42px stroke-juicy); lip: 4px solid; stroke-juicy 1px outline + 3px shadow<br>css:4779-c36ad395.css ._20olS { --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - var(--__internal__lip-width))); --__internal__padding:var(--web-ui_button-padding,0 12px) }<br>css:4779-c36ad395.css .rdtAy { --__internal__background-color-disabled:var(--web-ui_button-background-color-disabled,rgb(var(--color-snow))); --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - 6px)); --__internal__padding:var(--web-ui_button-padding,0 11px); border-width:1px 1px 5px }<br>css:4779-c36ad395.css ._1GQxS { --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__color-active:var(--web-ui_button-color-active,var(--__internal__color)); --__internal__color-disabled:var(--web-ui_button-color-disabled,rgb(var(--color-hare))); --__internal__filter-hover:var(--web-ui_button-filter-hover,brightness(1.1)); --__internal__font-size:var(--web-ui_button-font-size,16px); --__internal__height:var(--web-ui_button-height,48px); --__internal__letter-spacing:var(--web-ui_button-letter-spacing,0.04em); --__internal__line-height:var(--web-ui_button-line-height,calc(var(--__internal__height) - 4px)); --__internal__padding:var(--web-ui_button-padding,0 11px); background:none; border-colo … }<br>css:settingsPage-f3f7f16a.css .unX5- { --web-ui_button-border-radius:12px } |
+| size: small (_1W_p8) | height: `size.buttonHeightSmall` 32px; padding: 0 8px (solid-juicy) / 0 7px (link, stroke-juicy); radius: 8px; font: 700 14px; lip: 4px<br>css:4779-c36ad395.css ._20olS._1W_p8 { --__internal__border-radius:var(--web-ui_button-border-radius,8px); --__internal__font-size:var(--web-ui_button-font-size,14px); --__internal__height:var(--web-ui_button-height,32px); --__internal__padding:var(--web-ui_button-padding,0 8px) }<br>css:4779-c36ad395.css ._1GQxS._1W_p8 { --__internal__border-radius:var(--web-ui_button-border-radius,8px); --__internal__font-size:var(--web-ui_button-font-size,14px); --__internal__height:var(--web-ui_button-height,32px); --__internal__padding:var(--web-ui_button-padding,0 7px) } |
 | size: pill (variant-pill, _17LYs) | height: 26px; padding: 0 9px; radius: 16px; font: 700 14px; lip: 2px; captured: not captured in any dump (CSS only)<br>css:4779-c36ad395.css ._17LYs { --__internal__border-radius:var(--web-ui_button-border-radius,16px); --__internal__font-size:var(--web-ui_button-font-size,14px); --__internal__height:var(--web-ui_button-height,26px); --__internal__lip-width:2px; --__internal__padding:var(--web-ui_button-padding,0 9px) } |
-| size: text (variant-text c1Mv-) | height: 48px (32px with _2xxrg); padding: 0 16px; radius: n/a (no face); font: 700 15px/1.2, 0.8px, uppercase; lip: none<br>css:4779-c36ad395.css .c1Mv- { --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__filter-hover:var(--web-ui_button-filter-hover,brightness(1.1)); --__internal__height:var(--web-ui_button-height,48px); --__internal__padding:var(--web-ui_button-padding,0 16px); background:none; border:none; color:var(--__internal__color); height:var(--__internal__height); padding:var(--__internal__padding); transition:filter .2s } |
+| size: text (variant-text c1Mv-) | height: `size.buttonHeightMedium` 48px (32px with _2xxrg); padding: 0 16px; radius: n/a (no face); font: `typography.button.default` 700 15px/1.2, 0.8px, uppercase; lip: none<br>css:4779-c36ad395.css .c1Mv- { --__internal__color:var(--web-ui_button-color,rgb(var(--color-macaw))); --__internal__filter-hover:var(--web-ui_button-filter-hover,brightness(1.1)); --__internal__height:var(--web-ui_button-height,48px); --__internal__padding:var(--web-ui_button-padding,0 16px); background:none; border:none; color:var(--__internal__color); height:var(--__internal__height); padding:var(--__internal__padding); transition:filter .2s } |
 | size: text no-padding (_1nf6U) | height: auto (18px measured); padding: 0<br>css:4779-c36ad395.css ._1nf6U { --__internal__height:var(--web-ui_button-height,auto); --__internal__padding:var(--web-ui_button-padding,0) } |
 | size: streak CTA (_2loTO) | height: 36px; radius: 8px<br>css:5275-8898b509.css ._2loTO { --web-ui_button-background-color:rgb(var(--color-snow-always-light)); --web-ui_button-border-color:rgb(var(--color-snow-always-light),0.6); --web-ui_button-border-radius:8px; --web-ui_button-color:rgb(var(--color-streak-panel-friend-background)); --web-ui_button-height:36px } |
 | size: full-width player button (_3DbUj) | width: 100% below 700px, auto with min-width 150px at >=700px<br>css:1008-b4d34396.css ._3DbUj { min-width:150px; width:100% }<br>css:1008-b4d34396.css @media (min-width:700px) ._3DbUj { --web-ui_button-font-size:17px; width:auto } |
@@ -126,12 +126,12 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| primary-green (dark) | lesson-dark-challenge-tiles-partial#136 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _3DbUj _38g3s _2oGJR' dt='player-next' | 150x50 | 0px 16px 0px 16px | 16px | 0px 0px 4px 0px transparent | ::before `accent.primary.face` #93D333 (owl, dark); lip `gamification.league.promotion` #79B933 (tree-frog, dark) 0px 4px 0px 0px | `text.onPrimary` #131F24 (snow, dark) | label 700 17px/20.4px ls 0.8px uppercase |
-| primary-green (light) | lesson-light-challenge-tiles-partial#167 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _3DbUj _38g3s _2oGJR' dt='player-next' | 150x50 | 0px 16px 0px 16px | 16px | 0px 0px 4px 0px transparent | ::before `accent.primary.face` #58CC02 (owl, light); lip `gamification.league.promotion` #58A700 (tree-frog, light) 0px 4px 0px 0px | `text.onPrimary` #FFFFFF (snow, light) | label 700 17px/20.4px ls 0.8px uppercase |
-| secondary (dark) | lesson-dark-challenge-tiles-partial#133 <button> cl='_2V6ug _1ursp _7jW2t _2x7Co _3fo6Q' dt='player-skip' | 150x50 | 0px 16px 0px 16px | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | label 700 17px/20.4px ls 0.8px uppercase |
-| juicy 48px (dark) | characters-dark-default#168 <a> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t' | 264x48 | 0px 12px 0px 12px | 16px | 0px 0px 4px 0px transparent | ::before `accent.secondary.face` #49C0F8 (macaw, dark); lip `text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px | `text.onPrimary` #131F24 (snow, dark) | label 700 16px/44px ls 0.64px uppercase |
-| small 32px (dark) | lesson-dark-friend-streak-invite#22 <button> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t _1W_p8 _2bkKc _38OE1' | 60x32 | 0px 8px 0px 8px | 8px | 0px 0px 4px 0px transparent | ::before `accent.secondary.face` #49C0F8 (macaw, dark); lip `text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px | `text.onPrimary` #131F24 (snow, dark) | label 700 14px/28px ls 0.56px uppercase |
-| popover CTA auto-height (dark) | learn-dark-node-popover#1244 <a> cl='_1rcV8 _1VYyp _1ursp _7jW2t PbV1v _2sYfM _19ped' dt='skill-path-state-active skill-path-unit-test-81' | 263x50 | 8px 16px 8px 16px | 16px | 0px 0px 4px 0px transparent | ::before `palette.dark.celestia` #FFFFFF (celestia, dark); lip `palette.dark.celestia` #FFFFFF (celestia, dark) @ 0.7 alpha 0px 4px 0px 0px | `unitColors.green` #58CC02 (owl-always-light, dark) | 700 15px/18px |
+| primary-green (dark) | lesson-dark-challenge-tiles-partial#136 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _3DbUj _38g3s _2oGJR' dt='player-next' | 150x50 | 0px 16px 0px 16px | 16px | 0px 0px 4px 0px transparent | ::before `accent.primary.face` #93D333 (owl, dark); lip `gamification.league.promotion` #79B933 (tree-frog, dark) 0px 4px 0px 0px | `text.onPrimary` #131F24 (snow, dark) | label `typography.button.large` 700 17px/20.4px ls 0.8px uppercase |
+| primary-green (light) | lesson-light-challenge-tiles-partial#167 <button> cl='_1rcV8 _1VYyp _1ursp _7jW2t _3DbUj _38g3s _2oGJR' dt='player-next' | 150x50 | 0px 16px 0px 16px | 16px | 0px 0px 4px 0px transparent | ::before `accent.primary.face` #58CC02 (owl, light); lip `gamification.league.promotion` #58A700 (tree-frog, light) 0px 4px 0px 0px | `text.onPrimary` #FFFFFF (snow, light) | label `typography.button.large` 700 17px/20.4px ls 0.8px uppercase |
+| secondary (dark) | lesson-dark-challenge-tiles-partial#133 <button> cl='_2V6ug _1ursp _7jW2t _2x7Co _3fo6Q' dt='player-skip' | 150x50 | 0px 16px 0px 16px | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | label `typography.button.large` 700 17px/20.4px ls 0.8px uppercase |
+| juicy 48px (dark) | characters-dark-default#168 <a> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t' | 264x48 | 0px 12px 0px 12px | 16px | 0px 0px 4px 0px transparent | ::before `accent.secondary.face` #49C0F8 (macaw, dark); lip `text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px | `text.onPrimary` #131F24 (snow, dark) | label `typography.button.medium` 700 16px/44px ls 0.64px uppercase |
+| small 32px (dark) | lesson-dark-friend-streak-invite#22 <button> cl='_3q--f _20olS _1VYyp _1ursp _7jW2t _1W_p8 _2bkKc _38OE1' | 60x32 | 0px 8px 0px 8px | 8px | 0px 0px 4px 0px transparent | ::before `accent.secondary.face` #49C0F8 (macaw, dark); lip `text.selected` #1899D6 (whale, dark) 0px 4px 0px 0px | `text.onPrimary` #131F24 (snow, dark) | label `typography.button.small` 700 14px/28px ls 0.56px uppercase |
+| popover CTA auto-height (dark) | learn-dark-node-popover#1244 <a> cl='_1rcV8 _1VYyp _1ursp _7jW2t PbV1v _2sYfM _19ped' dt='skill-path-state-active skill-path-unit-test-81' | 263x50 | 8px 16px 8px 16px | 16px | 0px 0px 4px 0px transparent | ::before `palette.dark.celestia` #FFFFFF (celestia, dark); lip `palette.dark.celestia` #FFFFFF (celestia, dark) @ 0.7 alpha 0px 4px 0px 0px | `unitColors.green` #58CC02 (owl-always-light, dark) | `typography.button.default` 700 15px/18px |
 
 **States**
 
@@ -187,12 +187,12 @@ Notes: Transition: css:4779 ._1VYyp declares "filter .2s, transform var(--web-ui
 
 | Property | Value |
 | --- | --- |
-| height | 48px (44px input + 2px border top/bottom) |
+| height | `size.inputHeight` 48px (44px input + 2px border top/bottom) |
 | input_padding | `space.8` 8px `space.14` 14px |
 | border | `borderWidth.2` 2px |
 | radius | `radius.12` 12px |
-| font | body: 500 20px/28px (var(--text-body-*) = 1.25rem/1.75rem) |
-| label | 700 20px/24px (heading-small), 24px tall, 4px gap to the field (_3zSI5 gap) |
+| font | body: `typography.body.default` 500 20px/28px (var(--text-body-*) = 1.25rem/1.75rem) |
+| label | `typography.heading.small` 700 20px/24px (heading-small), 24px tall, 4px gap to the field (_3zSI5 gap) |
 | trailing_icon_button | 24x24, margin 0 `space.6` 6px 0 -6px (rQJD2); eye glyph 24x17, clear glyph 18x18 |
 | CSS source | css:4779-c36ad395.css ._1Um2j { background:rgb(var(--color-polar)); border:2px solid rgb(var(--color-swan)); border-radius:12px; display:flex; overflow:hidden }<br>css:4779-c36ad395.css ._298F2 { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; -webkit-appearance:none; -moz-appearance:none; appearance:none; background:none; border:none; box-sizing:border-box; caret-color:rgb(var(--color-macaw)); color:rgb(var(--color-eel)); font:var(--text-body-weight) var(--text-body-size) /var(--text-body-line-height) duolingo-sans,sans-serif; font-size:var(--__internal__input-font-size,var(--text-body-size)); letter-spacing:var(--text-body-letter-spacing); line-height:var(--__internal__input-line-height,var(--text-body-line-height)); min-width:0; outline:none; padding:var(--__internal__input-padding,8px 14px); text-transform:var(--text-body-casing); width:100% }<br>css:4779-c36ad395.css .rQJD2 { align-self:center; margin-left:-6px; margin-right:6px }<br>css:4779-c36ad395.css ._3zSI5 { display:inline-flex; flex-direction:column; gap:4px }<br>css:4779-c36ad395.css ._17QjI { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; color:rgb(var(--color-eel)); font:var(--text-heading-weight-small) var(--text-heading-size-small) /var(--text-heading-line-height-small) duolingo-sans,sans-serif; letter-spacing:var(--text-heading-letter-spacing-small); text-transform:var(--text-heading-casing-small) } |
 
@@ -200,14 +200,14 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| text (dark, focused) | settings-profile-dark-input-focus#109 <div> cl='_1Um2j' | 480x48 |  | 12px | 2px `border.focus` #49C0F8 (macaw, dark) | `gamification.league.demotedRow` #202F36 (polar, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| input (dark) | settings-profile-dark-input-focus#110 <input> cl='_298F2' | 452x44 | 8px 14px 8px 14px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 20px/28px |
+| text (dark, focused) | settings-profile-dark-input-focus#109 <div> cl='_1Um2j' | 480x48 |  | 12px | 2px `border.focus` #49C0F8 (macaw, dark) | `gamification.league.demotedRow` #202F36 (polar, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
+| input (dark) | settings-profile-dark-input-focus#110 <input> cl='_298F2' | 452x44 | 8px 14px 8px 14px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.body.default` 500 20px/28px |
 | clear button (dark, focus only) | settings-profile-dark-input-focus#111 <button> cl='ypJiL _1gEmM _7jW2t _3as_M rQJD2' | 24x24 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
-| password field (dark) | settings-profile-dark-input-focus#124 <div> cl='_1Um2j' | 480x48 |  | 12px | 2px `border.default` #37464F (swan, dark) | `gamification.league.demotedRow` #202F36 (polar, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| password field (dark) | settings-profile-dark-input-focus#124 <div> cl='_1Um2j' | 480x48 |  | 12px | 2px `border.default` #37464F (swan, dark) | `gamification.league.demotedRow` #202F36 (polar, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
 | eye toggle (dark) | settings-profile-dark-input-focus#126 <button> cl='ypJiL _1gEmM _7jW2t rQJD2' | 24x24 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
-| text (light, default) | settings-profile-light-default#111 <div> cl='_1Um2j' | 592x48 |  | 12px | 2px `border.default` #E5E5E5 (swan, light) | `surface.subtle` #F7F7F7 (polar, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| input (light) | settings-profile-light-default#112 <input> cl='_298F2' | 588x44 | 8px 14px 8px 14px |  |  |  | `text.primary` #4B4B4B (eel, light) | 500 20px/28px |
-| label (dark) | settings-profile-dark-default#108 <label> cl='_17QjI' | 480x24 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 20px/24px |
+| text (light, default) | settings-profile-light-default#111 <div> cl='_1Um2j' | 592x48 |  | 12px | 2px `border.default` #E5E5E5 (swan, light) | `surface.subtle` #F7F7F7 (polar, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
+| input (light) | settings-profile-light-default#112 <input> cl='_298F2' | 588x44 | 8px 14px 8px 14px |  |  |  | `text.primary` #4B4B4B (eel, light) | `typography.body.default` 500 20px/28px |
+| label (dark) | settings-profile-dark-default#108 <label> cl='_17QjI' | 480x24 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.heading.small` 700 20px/24px |
 
 **States**
 
@@ -262,7 +262,7 @@ Crops: [dark: text-input-dark.png](crops/text-input-dark.png) [light: text-input
 
 | Property | Value |
 | --- | --- |
-| height | 63px (27px input + 16px padding x2 + `space.2` 2px border x2) |
+| height | 63px (27px input + 16px padding x2 + 2px border x2) |
 | padding | `space.16` 16px `space.20` 20px |
 | border | `borderWidth.2` 2px |
 | radius | `radius.12` 12px |
@@ -330,7 +330,7 @@ Notes: The web-ui input (_298F2) also has a type=search mode (RPjiw search icon,
 | border | `borderWidth.2` 2px `borderWidth.2` 2px `borderWidth.4` 4px (transparent) + ::before `borderWidth.2` 2px border |
 | lip | 2px box-shadow (4px visual) |
 | radius | `radius.12` 12px |
-| font | 700 15px/18px, 0.8px, uppercase (value); face font 500 17px/25px |
+| font | `typography.button.default` 700 15px/18px, 0.8px, uppercase (value); face font `typography.app.railBody` 500 17px/25px |
 | chevron | 15x9 |
 | CSS source | css:2833-494f8efd.css ._3QwUP { border:solid transparent; border-radius:12px; border-width:2px 2px 4px; color:rgb(var(--color-wolf)); height:50px; padding:0 41px 0 12px }<br>css:2833-494f8efd.css ._3QwUP:before { background:rgb(var(--color-snow)); border:2px solid rgb(var(--color-swan)); border-radius:12px; bottom:-2px; box-shadow:0 2px 0 rgb(var(--color-swan)); content:""; left:-2px; position:absolute; right:-2px; top:-2px }<br>css:2833-494f8efd.css ._3xxe1 { position:relative }<br>css:2833-494f8efd.css ._3QwUP ._3N2pE { color:rgb(var(--color-hare)); position:absolute; right:16px } |
 
@@ -338,12 +338,12 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| dark | settings-account-dark-default#140 <div> cl='_3QwUP _1dgwa' | 480x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.secondary` #DCE6EC (wolf, dark) | label 700 15px/18px ls 0.8px uppercase |
+| dark | settings-account-dark-default#140 <div> cl='_3QwUP _1dgwa' | 480x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.secondary` #DCE6EC (wolf, dark) | label `typography.button.default` 700 15px/18px ls 0.8px uppercase |
 | value dark | settings-account-dark-default#141 <span> cl='_3xxe1' | 423x18 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 700 15px/18px |
-| chevron dark | settings-account-dark-default#142 <svg> cl='_3N2pE' | 15x9 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | 500 17px/25px |
-| light | settings-account-light-default#143 <div> cl='_3QwUP _1dgwa' | 592x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #FFFFFF (snow, light); lip `surface.disabled` #E5E5E5 (swan, light) 0px 2px 0px 0px | `text.secondary` #777777 (wolf, light) | label 700 15px/18px ls 0.8px uppercase |
-| disabled light | settings-notifications-light-default#163 <div> cl='_3QwUP _1dgwa _2MogS' | 592x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.disabled` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | label 700 15px/18px ls 0.8px uppercase |
-| disabled dark | settings-notifications-dark-default#161 <div> cl='_3QwUP _1dgwa _2MogS' | 480x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.disabled` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | label 700 15px/18px ls 0.8px uppercase |
+| chevron dark | settings-account-dark-default#142 <svg> cl='_3N2pE' | 15x9 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | `typography.app.railBody` 500 17px/25px |
+| light | settings-account-light-default#143 <div> cl='_3QwUP _1dgwa' | 592x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #FFFFFF (snow, light); lip `surface.disabled` #E5E5E5 (swan, light) 0px 2px 0px 0px | `text.secondary` #777777 (wolf, light) | label `typography.button.default` 700 15px/18px ls 0.8px uppercase |
+| disabled light | settings-notifications-light-default#163 <div> cl='_3QwUP _1dgwa _2MogS' | 592x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.disabled` #E5E5E5 (swan, light) | `text.tertiary` #AFAFAF (hare, light) | label `typography.button.default` 700 15px/18px ls 0.8px uppercase |
+| disabled dark | settings-notifications-dark-default#161 <div> cl='_3QwUP _1dgwa _2MogS' | 480x50 | 0px 41px 0px 12px | 12px | 2px 2px 4px 2px transparent | ::before `surface.disabled` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | label `typography.button.default` 700 15px/18px ls 0.8px uppercase |
 
 **States**
 
@@ -367,7 +367,7 @@ Measured instances:
 | disabled face | `surface.disabled` #E5E5E5 (swan, light) | `surface.disabled` #37464F (swan, dark) |
 | disabled value | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
 
-Type style: Value: 700 15px/18px uppercase 0.8px.
+Type style: Value: `typography.button.default` 700 15px/18px uppercase 0.8px.
 
 Responsive (570px): Mobile (settings-account-dark-mobile#50): same 50px face, full column width 502px.
 
@@ -458,21 +458,21 @@ Crops: [dark: checkbox-dark.png](crops/checkbox-dark.png) [light: checkbox-light
 | border | `borderWidth.2` 2px, bottom `borderWidth.4` 4px space for the lip |
 | lip | 0 2px 0 (4px visual) |
 | radius | `radius.12` 12px |
-| title_font | 700 20px/32px (streak goal, body-spacious-bold via .WMgCJ) |
-| caption_font | 500 16px/24px (caption) |
+| title_font | `typography.body.spaciousBold` 700 20px/32px (streak goal, body-spacious-bold via .WMgCJ) |
+| caption_font | `typography.caption.default` 500 16px/24px (caption) |
 | CSS source | css:4779-c36ad395.css ._8dMUn { --__internal__border-color:var(     --web-ui_card-border-color,rgb(var(--color-swan))   ); border:solid transparent; border-radius:var(--web-ui_card-border-radius,12px); border-width:2px 2px 4px; cursor:pointer; display:inline-flex; outline:0; position:relative; touch-action:manipulation; transform:translateZ(0); -webkit-user-select:none; -moz-user-select:none; user-select:none }<br>css:4779-c36ad395.css ._8dMUn:before { background-color:var(--web-ui_card-background-color,rgb(var(--color-snow))); border:2px solid var(--__internal__border-color); border-radius:var(--web-ui_card-border-radius,12px); bottom:-2px; box-shadow:0 2px 0 var(--__internal__border-color); content:""; left:-2px; position:absolute; right:-2px; top:-2px; z-index:-1 }<br>css:1008-b4d34396.css .a3yOs { align-items:center; display:flex; justify-content:space-between; padding:8px 16px }<br>css:1008-b4d34396.css ._13-RH { display:flex; flex-direction:column; gap:12px; justify-content:center; margin:0 auto; max-width:480px; opacity:calc(1 - var(--streak-goal-before-slide-up, 1)); transition:opacity .35s ease-in-out; width:100% }<br>css:4243-a8d324a8.css ._8YNCv { color:rgb(var(--color-eel)); padding:15px } |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| streak goal row (dark) | lesson-dark-streak-goal-default#245 <div> cl='_8dMUn a3yOs' | 480x54 | 8px 16px 8px 16px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/32px ls normal none |
-| streak goal row hover (dark) | lesson-dark-streak-goal-row-hover#242 <div> cl='_8dMUn a3yOs' | 480x54 | 8px 16px 8px 16px | 12px | 2px 2px 4px 2px transparent | ::before `surface.subtle` #202F36 (polar, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/32px ls normal none |
-| settings card checked (dark) | settings-account-dark-default#159 <div> cl='_8dMUn _1pRZ7 _8YNCv' | 232x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.subtle` #202F36 (polar, dark); lip `border.selected` #3F85A7 (blue-jay, dark) 0px 2px 0px 0px | `text.selected` #1899D6 (whale, dark) | label 500 17px/20px ls normal none |
-| settings card unchecked (dark) | settings-account-dark-default#163 <div> cl='_8dMUn _8YNCv' | 232x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 500 17px/20px ls normal none |
-| settings card checked (light) | settings-account-light-default#162 <div> cl='_8dMUn _1pRZ7 _8YNCv' | 288x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.selected` #DDF4FF (iguana, light); lip `border.selected` #84D8FF (blue-jay, light) 0px 2px 0px 0px | `text.selected` #1899D6 (whale, light) | label 500 17px/20px ls normal none |
+| streak goal row (dark) | lesson-dark-streak-goal-default#245 <div> cl='_8dMUn a3yOs' | 480x54 | 8px 16px 8px 16px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.body.spaciousBold` 700 20px/32px ls normal none |
+| streak goal row hover (dark) | lesson-dark-streak-goal-row-hover#242 <div> cl='_8dMUn a3yOs' | 480x54 | 8px 16px 8px 16px | 12px | 2px 2px 4px 2px transparent | ::before `surface.subtle` #202F36 (polar, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.body.spaciousBold` 700 20px/32px ls normal none |
+| settings card checked (dark) | settings-account-dark-default#159 <div> cl='_8dMUn _1pRZ7 _8YNCv' | 232x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.subtle` #202F36 (polar, dark); lip `border.selected` #3F85A7 (blue-jay, dark) 0px 2px 0px 0px | `text.selected` #1899D6 (whale, dark) | label `typography.app.bodyDefault` 500 17px/20px ls normal none |
+| settings card unchecked (dark) | settings-account-dark-default#163 <div> cl='_8dMUn _8YNCv' | 232x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.bodyDefault` 500 17px/20px ls normal none |
+| settings card checked (light) | settings-account-light-default#162 <div> cl='_8dMUn _1pRZ7 _8YNCv' | 288x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.selected` #DDF4FF (iguana, light); lip `border.selected` #84D8FF (blue-jay, light) 0px 2px 0px 0px | `text.selected` #1899D6 (whale, light) | label `typography.app.bodyDefault` 500 17px/20px ls normal none |
 | lesson choice selected (dark, same _8dMUn card) | lesson-dark-choice-selected#59 <div> cl='_8dMUn _1pRZ7 _2cKzl _1G3d-' dt='challenge-choice' | 600x70 | 12px 16px 12px 16px | 12px | 2px 2px 4px 2px transparent | ::before `surface.subtle` #202F36 (polar, dark); lip `border.selected` #3F85A7 (blue-jay, dark) 0px 2px 0px 0px | `text.selected` #1899D6 (whale, dark) | label 700 15px/21px ls normal none |
-| settings card unchecked (light) | settings-account-light-default#166 <div> cl='_8dMUn _8YNCv' | 288x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #FFFFFF (snow, light); lip `surface.disabled` #E5E5E5 (swan, light) 0px 2px 0px 0px | `text.primary` #4B4B4B (eel, light) | label 500 17px/20px ls normal none |
+| settings card unchecked (light) | settings-account-light-default#166 <div> cl='_8dMUn _8YNCv' | 288x138 | 30px | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #FFFFFF (snow, light); lip `surface.disabled` #E5E5E5 (swan, light) 0px 2px 0px 0px | `text.primary` #4B4B4B (eel, light) | label `typography.app.bodyDefault` 500 17px/20px ls normal none |
 
 **States**
 
@@ -587,7 +587,7 @@ Crops: [dark: toggle-dark.png](crops/toggle-dark.png) [dark: toggle-off-dark.png
 | height | 52px |
 | padding | `space.15` 15px 0 |
 | border_bottom | `borderWidth.2` 2px |
-| font | 700 17px/20px, letter-spacing .03em (0.51px), uppercase |
+| font | `typography.app.bodyStrong` 700 17px/20px, letter-spacing .03em (0.51px), uppercase |
 | width | 158px each at 480px column (dark), 195px at 592px (light) |
 | CSS source | css:9416-975668fa.css ._3ugho { border-bottom:2px solid rgb(var(--color-swan)); color:rgb(var(--color-hare)); font-size:17px; letter-spacing:.03em; padding:15px 0; text-transform:uppercase } |
 
@@ -595,11 +595,11 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| selected (dark) | characters-dark-default#155 <div> cl='_1H-vp _3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | 700 17px/20px |
-| unselected (dark) | characters-dark-default#157 <div> cl='_3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.tertiary` #52656D (hare, dark) | 700 17px/20px |
-| hover (dark) | characters-dark-tab-hover#157 <div> cl='_3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | 700 17px/20px |
-| selected (light) | characters-light-default#163 <div> cl='_1H-vp _3ugho' | 195x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.focus` #1CB0F6 (macaw, light) |  | `text.link` #1CB0F6 (macaw, light) | 700 17px/20px |
-| unselected (light) | characters-light-default#165 <div> cl='_3ugho' | 195x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.default` #E5E5E5 (swan, light) |  | `text.tertiary` #AFAFAF (hare, light) | 700 17px/20px |
+| selected (dark) | characters-dark-default#155 <div> cl='_1H-vp _3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | `typography.app.bodyStrong` 700 17px/20px |
+| unselected (dark) | characters-dark-default#157 <div> cl='_3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.tertiary` #52656D (hare, dark) | `typography.app.bodyStrong` 700 17px/20px |
+| hover (dark) | characters-dark-tab-hover#157 <div> cl='_3ugho' | 158x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | `typography.app.bodyStrong` 700 17px/20px |
+| selected (light) | characters-light-default#163 <div> cl='_1H-vp _3ugho' | 195x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.focus` #1CB0F6 (macaw, light) |  | `text.link` #1CB0F6 (macaw, light) | `typography.app.bodyStrong` 700 17px/20px |
+| unselected (light) | characters-light-default#165 <div> cl='_3ugho' | 195x52 | 15px 0px 15px 0px |  | 0px 0px 2px 0px `border.default` #E5E5E5 (swan, light) |  | `text.tertiary` #AFAFAF (hare, light) | `typography.app.bodyStrong` 700 17px/20px |
 
 **States**
 
@@ -620,7 +620,7 @@ Measured instances:
 | rule | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
 | selected/hover label + rule | `border.focus` #1CB0F6 (macaw, light) | `border.focus` #49C0F8 (macaw, dark) |
 
-Type style: 700 17px/20px uppercase, 0.03em tracking.
+Type style: `typography.app.bodyStrong` 700 17px/20px uppercase, 0.03em tracking.
 
 Responsive (570px): No 570px capture of this component.
 
@@ -643,7 +643,7 @@ Crops: [dark: tabs-underline-dark.png](crops/tabs-underline-dark.png) [light: ta
 
 | Property | Value |
 | --- | --- |
-| tab_height | 48px (16px top padding + 34px label box - `space.2` 2px overlap) |
+| tab_height | 48px (16px top padding + 34px label box - 2px overlap) |
 | label | 700 16px, 0.8px, uppercase |
 | indicator | 2px bottom border |
 | CSS source | css:3014-2a6e31d6.css ._36qf- { flex:1 1 0; padding-top:16px }<br>css:3014-2a6e31d6.css .bsF09 { display:block; margin-bottom:-2px; text-align:center }<br>css:3014-2a6e31d6.css ._3Jy0n { border-bottom:2px solid rgb(var(--color-swan)); position:relative }<br>css:3014-2a6e31d6.css ._3o5O9>.bsF09 { border-bottom-color:rgb(var(--color-macaw)); color:rgb(var(--color-macaw)) } |
@@ -652,11 +652,11 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| selected (dark) | profile-dark-default#144 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px 12px 10px |  | 0px 0px 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | label 700 16px/20px ls 0.8px uppercase |
-| unselected (dark) | profile-dark-default#147 <span> cl='_38_oS bsF09' | 182x34 | 0px 10px 12px 0px |  | 0px 0px 2px 0px transparent |  | `text.secondary` #DCE6EC (wolf, dark) | label 700 16px/20px ls 0.8px uppercase |
-| strip (dark) | profile-dark-default#142 <ul> cl='_1SZs_ _3Jy0n _2Rt1l' | 364x50 |  |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 16px/20px ls 0.8px uppercase |
-| selected (light) | profile-light-default#145 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px 12px 10px |  | 0px 0px 2px 0px `border.focus` #1CB0F6 (macaw, light) |  | `text.link` #1CB0F6 (macaw, light) | label 700 16px/20px ls 0.8px uppercase |
-| unselected (light) | profile-light-default#148 <span> cl='_38_oS bsF09' | 182x34 | 0px 10px 12px 0px |  | 0px 0px 2px 0px transparent |  | #999999 (NO-PALETTE-MATCH, light) | label 700 16px/20px ls 0.8px uppercase |
+| selected (dark) | profile-dark-default#144 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px 12px 10px |  | 0px 0px 2px 0px `border.focus` #49C0F8 (macaw, dark) |  | `text.link` #49C0F8 (macaw, dark) | label `typography.heading.xsmall` 700 16px/20px ls 0.8px uppercase |
+| unselected (dark) | profile-dark-default#147 <span> cl='_38_oS bsF09' | 182x34 | 0px 10px 12px 0px |  | 0px 0px 2px 0px transparent |  | `text.secondary` #DCE6EC (wolf, dark) | label `typography.heading.xsmall` 700 16px/20px ls 0.8px uppercase |
+| strip (dark) | profile-dark-default#142 <ul> cl='_1SZs_ _3Jy0n _2Rt1l' | 364x50 |  |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.xsmall` 700 16px/20px ls 0.8px uppercase |
+| selected (light) | profile-light-default#145 <span> cl='_38_oS bsF09' | 182x34 | 0px 0px 12px 10px |  | 0px 0px 2px 0px `border.focus` #1CB0F6 (macaw, light) |  | `text.link` #1CB0F6 (macaw, light) | label `typography.heading.xsmall` 700 16px/20px ls 0.8px uppercase |
+| unselected (light) | profile-light-default#148 <span> cl='_38_oS bsF09' | 182x34 | 0px 10px 12px 0px |  | 0px 0px 2px 0px transparent |  | #999999 (NO-PALETTE-MATCH, light) | label `typography.heading.xsmall` 700 16px/20px ls 0.8px uppercase |
 
 **States**
 
@@ -702,17 +702,17 @@ Crops: [dark: tabs-list-dark.png](crops/tabs-list-dark.png) [light: tabs-list-li
 | padding | 0 `space.16` 16px |
 | indicator | 4px bar (::after), 2px radius |
 | rule | `borderWidth.2` 2px |
-| font | label-medium: 700 16px/16px, 0.04em, uppercase |
+| font | label-medium: `typography.label.medium` 700 16px/16px, 0.04em, uppercase |
 | CSS source | css:5823-96f39733.css ._3Ji0r { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; --web-ui_button-filter-hover:none; align-items:center; border-bottom:2px solid rgb(var(--color-swan))!important; border-top:2px solid transparent!important; box-sizing:border-box; color:rgb(var(--color-eel)); flex:1; font:var(--text-label-weight-medium) var(--text-label-size-medium) /var(--text-label-line-height-medium) duolingo-sans,sans-serif; height:48px; justify-content:center; letter-spacing:var(--text-label-letter-spacing-medium); min-width:0; padding:0 16px!important; text-transform:var(--text-label-casing-medium) }<br>css:5823-96f39733.css ._2d5P5:after { background:rgb(var(--color-whale)); border-radius:2px; bottom:-2px; content:""; height:4px; position:absolute; width:100% }<br>css:5823-96f39733.css ._1L0JB ._3Ji0r { border-bottom:2px solid rgb(var(--color-snow-always-light))!important; color:rgb(var(--color-snow-always-light)) } |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| selected (dark) | quests-dark-mobile#30 <button> cl='_1gEmM _7jW2t _2d5P5 _3Ji0r' | 285x48 | 0px 16px 0px 16px | 0px 0px 0px 2px | 2px 0px 2px 0px transparent / - / `palette.dark.celestia` #FFFFFF (celestia, dark) / - | ::after `palette.dark.celestia` #FFFFFF (celestia, dark) | `palette.dark.celestia` #FFFFFF (celestia, dark) | label 700 16px/16px ls 0.64px uppercase |
-| unselected (dark) | quests-dark-mobile#32 <button> cl='_1gEmM _7jW2t _3Ji0r' | 285x48 | 0px 16px 0px 16px |  | 2px 0px 2px 0px transparent / - / `palette.dark.celestia` #FFFFFF (celestia, dark) / - |  | `palette.dark.celestia` #FFFFFF (celestia, dark) | label 700 16px/16px ls 0.64px uppercase |
-| selected (light) | quests-light-mobile#30 <button> cl='_1gEmM _7jW2t _2d5P5 _3Ji0r' | 285x48 | 0px 16px 0px 16px | 0px 0px 0px 2px | 2px 0px 2px 0px transparent / - / `text.onPrimary` #FFFFFF (snow, light) / - | ::after `surface.default` #FFFFFF (snow, light) | `text.onPrimary` #FFFFFF (snow, light) | label 700 16px/16px ls 0.64px uppercase |
-| unselected (light) | quests-light-mobile#32 <button> cl='_1gEmM _7jW2t _3Ji0r' | 285x48 | 0px 16px 0px 16px |  | 2px 0px 2px 0px transparent / - / `text.onPrimary` #FFFFFF (snow, light) / - |  | `text.onPrimary` #FFFFFF (snow, light) | label 700 16px/16px ls 0.64px uppercase |
+| selected (dark) | quests-dark-mobile#30 <button> cl='_1gEmM _7jW2t _2d5P5 _3Ji0r' | 285x48 | 0px 16px 0px 16px | 0px 0px 0px 2px | 2px 0px 2px 0px transparent / - / `palette.dark.celestia` #FFFFFF (celestia, dark) / - | ::after `palette.dark.celestia` #FFFFFF (celestia, dark) | `palette.dark.celestia` #FFFFFF (celestia, dark) | label `typography.label.medium` 700 16px/16px ls 0.64px uppercase |
+| unselected (dark) | quests-dark-mobile#32 <button> cl='_1gEmM _7jW2t _3Ji0r' | 285x48 | 0px 16px 0px 16px |  | 2px 0px 2px 0px transparent / - / `palette.dark.celestia` #FFFFFF (celestia, dark) / - |  | `palette.dark.celestia` #FFFFFF (celestia, dark) | label `typography.label.medium` 700 16px/16px ls 0.64px uppercase |
+| selected (light) | quests-light-mobile#30 <button> cl='_1gEmM _7jW2t _2d5P5 _3Ji0r' | 285x48 | 0px 16px 0px 16px | 0px 0px 0px 2px | 2px 0px 2px 0px transparent / - / `text.onPrimary` #FFFFFF (snow, light) / - | ::after `surface.default` #FFFFFF (snow, light) | `text.onPrimary` #FFFFFF (snow, light) | label `typography.label.medium` 700 16px/16px ls 0.64px uppercase |
+| unselected (light) | quests-light-mobile#32 <button> cl='_1gEmM _7jW2t _3Ji0r' | 285x48 | 0px 16px 0px 16px |  | 2px 0px 2px 0px transparent / - / `text.onPrimary` #FFFFFF (snow, light) / - |  | `text.onPrimary` #FFFFFF (snow, light) | label `typography.label.medium` 700 16px/16px ls 0.64px uppercase |
 
 **States**
 
@@ -732,7 +732,7 @@ Measured instances:
 | rule | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
 | on coloured header (_1L0JB, as captured) | `text.onColor` #FFFFFF (snow-always-light, light) | `text.onColor` #FFFFFF (snow-always-light, dark) |
 
-Type style: label-medium: 700 16px/16px, 0.04em, uppercase.
+Type style: label-medium: `typography.label.medium` 700 16px/16px, 0.04em, uppercase.
 
 Responsive (570px): Only rendered below 700px (quests mobile); desktop Quests has no tabs.
 
@@ -756,7 +756,7 @@ Crops: [dark: tabs-segmented-dark.png](crops/tabs-segmented-dark.png) [light: ta
 
 | Property | Value |
 | --- | --- |
-| up_next | 74x26, padding `space.4` 4px `space.8` 8px, radius 6px, 700 15px/18px, 0.04em (dump 0.6px), uppercase |
+| up_next | 74x26, padding `space.4` 4px `space.8` 8px, radius 6px, `typography.app.eyebrow` 700 15px/18px, 0.04em (dump 0.6px), uppercase |
 | count | 42x25, padding `space.4` 4px `space.8` 8px, radius `radius.16` 16px, 700 15px/17.25px, 0.8px, uppercase |
 | equipped | 110x25, padding `space.8` 8px, radius `radius.16` 16px, 700 15px uppercase |
 | super_logo | 78x21 image |
@@ -773,7 +773,7 @@ Measured instances:
 | equipped empty (dark) | shop-dark-default#177 <div> cl='_2tJ-w _2I6Qk' | 111x25 | 8px | 16px |  | `surface.disabled` #37464F (swan, dark) | `text.tertiary` #52656D (hare, dark) | 700 15px/20px |
 | equipped full (light) | shop-light-default#187 <div> cl='_1-6PO _2I6Qk' | 110x25 | 8px | 16px |  | `status.successBackground` #D7FFB8 (sea-sponge, light) | `accent.primary.face` #58CC02 (owl, light) | 700 15px/20px |
 | equipped full (dark mobile) | shop-dark-mobile#83 <div> cl='_1-6PO _2I6Qk' | 110x25 | 8px | 16px |  | `surface.subtle` #202F36 (polar, dark) | `accent.primary.face` #93D333 (owl, dark) | 700 15px/20px |
-| SUPER logo (dark) | characters-dark-default#88 <img> cl='' dt='plus-offer-logo' | 78x21 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 500 17px/20px |
+| SUPER logo (dark) | characters-dark-default#88 <img> cl='' dt='plus-offer-logo' | 78x21 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | `typography.app.bodyDefault` 500 17px/20px |
 
 **States**
 
@@ -831,13 +831,13 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| photo 48 (dark) | profile-dark-default#153 <img> cl='_1yM9n fs-exclude' | 48x48 |  | 50% |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| photo 48 (dark) | profile-dark-default#153 <img> cl='_1yM9n fs-exclude' | 48x48 |  | 50% |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
 | letter 48 (dark) | leaderboard-dark-top#184 <div> cl='_1a-Dv _1N32S BfIim fs-exclude' | 48x48 |  | 50% |  | `dataViz.avatar.orange` #FFAB33 (fox, dark) | `text.onPrimary` #131F24 (snow, dark) | 700 22.08px/25px |
-| online dot (dark) | leaderboard-dark-top#185 <span> cl='_2NNBf' | 12x12 |  | 50% | 2px `surface.default` #131F24 (snow, dark) | `accent.primary.face` #93D333 (owl, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| online dot (dark) | leaderboard-dark-top#185 <span> cl='_2NNBf' | 12x12 |  | 50% | 2px `surface.default` #131F24 (snow, dark) | `accent.primary.face` #93D333 (owl, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
 | letter 48 (light) | leaderboard-light-default#187 <div> cl='_1gexH _1N32S BfIim fs-exclude' | 48x48 |  | 50% |  | `dataViz.avatar.purple` #CE82FF (beetle, light) | `text.onPrimary` #FFFFFF (snow, light) | 700 22.08px/25px |
-| online dot (light) | leaderboard-light-default#188 <span> cl='_2NNBf' | 12x12 |  | 50% | 2px `surface.default` #FFFFFF (snow, light) | `accent.primary.face` #58CC02 (owl, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| photo 70 (search result, dark) | user-search-dark-results#81 <img> cl='_1yM9n fs-exclude' | 70x70 |  | 50% |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| edit badge (dark) | settings-profile-dark-default#105 <a> cl='_1VC2W' | 31x31 |  | 50% | 3px `text.onPrimary` #131F24 (snow, dark) | `accent.secondary.face` #49C0F8 (macaw, dark) | #0000EE (browser default, not painted) | 500 17px/20px |
+| online dot (light) | leaderboard-light-default#188 <span> cl='_2NNBf' | 12x12 |  | 50% | 2px `surface.default` #FFFFFF (snow, light) | `accent.primary.face` #58CC02 (owl, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
+| photo 70 (search result, dark) | user-search-dark-results#81 <img> cl='_1yM9n fs-exclude' | 70x70 |  | 50% |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
+| edit badge (dark) | settings-profile-dark-default#105 <a> cl='_1VC2W' | 31x31 |  | 50% | 3px `text.onPrimary` #131F24 (snow, dark) | `accent.secondary.face` #49C0F8 (macaw, dark) | #0000EE (browser default, not painted) | `typography.app.bodyDefault` 500 17px/20px |
 
 **States**
 
@@ -855,7 +855,7 @@ Measured instances:
 | letter text | `text.onPrimary` #FFFFFF (snow, light) | `text.onPrimary` #131F24 (snow, dark) (dark text on colour in dark theme) |
 | online dot | `accent.primary.face` #58CC02 (owl, light) | `accent.primary.face` #93D333 (owl, dark) |
 | dot border | `surface.default` #FFFFFF (snow, light) (swan/sea-sponge/etc inside highlighted leaderboard rows) | `surface.default` #131F24 (snow, dark) |
-| ghost border | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
+| ghost border | `border.strong` #AFAFAF (hare, light) | `border.strong` #52656D (hare, dark) |
 
 Type style: Letter: 700, 0.46 x size.
 
@@ -885,18 +885,18 @@ Crops: [dark: avatar-dark.png](crops/avatar-dark.png) [dark: avatar-edit-dark.pn
 | radius | `radius.15` 15px (var --web-ui_popover-border-radius; `radius.10` 10px on path tooltips, 5px on progress-bar popover) |
 | offset | `space.8` 8px from trigger (margin on direction class); path node popover `space.12` 12px |
 | stem | 20x10 visible, square 14.14px CSS (20px rendered bbox) rotated 45deg |
-| gems_content | 380x148, padding `space.24` 24px `space.12` 12px; 100px illustration + 12px gap; title 700 24px/26px; body wolf |
-| path_popover | 295px wide, padding `space.16` 16px, 700 19px/1.4, centered, no border |
+| gems_content | 380x148, padding `space.24` 24px `space.12` 12px; 100px illustration + 12px gap; title `typography.app.sectionTitle` 700 24px/26px; body wolf |
+| path_popover | 295px wide, padding `space.16` 16px, `typography.path.unitDivider` 700 19px/1.4, centered, no border |
 | CSS source | css:4779-c36ad395.css ._36bu_ { background-color:var(--web-ui_popover-background-color,rgb(var(--color-snow))); border:2px solid var(--web-ui_popover-border-color,rgb(var(--color-swan))); border-radius:var(--web-ui_popover-border-radius,15px); box-sizing:border-box; overflow:hidden; transform:translateZ(0) }<br>css:4779-c36ad395.css ._1TMn5 { background-color:var(--web-ui_popover-background-color,rgb(var(--color-snow))); border:2px solid var(--web-ui_popover-border-color,rgb(var(--color-swan))); border-radius:2px; content:""; height:14.14427157px; left:50%; transform:translateZ(0) rotate(45deg); transform-origin:top left; width:14.14427157px }<br>css:4779-c36ad395.css ._3T97b { box-sizing:border-box; position:absolute }<br>css:4779-c36ad395.css ._3OfAS { margin-top:8px }<br>css:5275-8898b509.css ._3cG-N { align-items:center; box-sizing:border-box; display:flex; padding:24px 12px; width:380px }<br>css:path-e50cab6b.css ._3RP1Q { font-size:19px; font-weight:700; line-height:1.4; padding:16px; text-align:center }<br>css:path-e50cab6b.css ._1Fbw- { background-color:var(--path-unit-character-color); border:0; color:rgb(var(--color-snow-always-light)) } |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| gems dropdown bubble (dark) | learn-dark-gems-dropdown#84 <div> cl='_36bu_' | 384x152 |  | 15px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
-| gems content (dark) | learn-dark-gems-dropdown#85 <div> cl='_3n4Rk _3cG-N' dt='lingots-menu-content' | 380x148 | 24px 12px 24px 12px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
-| stem (dark) | learn-dark-gems-dropdown#92 <div> cl='_1TMn5' | 20x20 |  | 2px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| gems dropdown bubble (light) | learn-light-gems-dropdown#85 <div> cl='_36bu_' | 384x152 |  | 15px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
+| gems dropdown bubble (dark) | learn-dark-gems-dropdown#84 <div> cl='_36bu_' | 384x152 |  | 15px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.sectionTitle` 700 24px/26px ls normal none |
+| gems content (dark) | learn-dark-gems-dropdown#85 <div> cl='_3n4Rk _3cG-N' dt='lingots-menu-content' | 380x148 | 24px 12px 24px 12px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.sectionTitle` 700 24px/26px ls normal none |
+| stem (dark) | learn-dark-gems-dropdown#92 <div> cl='_1TMn5' | 20x20 |  | 2px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
+| gems dropdown bubble (light) | learn-light-gems-dropdown#85 <div> cl='_36bu_' | 384x152 |  | 15px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.sectionTitle` 700 24px/26px ls normal none |
 | path node popover (dark) | learn-dark-node-popover#1239 <div> cl='_36bu_ _3RP1Q _1Fbw-' | 295x151 | 16px | 15px |  | `unitColors.green` #58CC02 (owl-always-light, dark) | `palette.dark.celestia` #FFFFFF (celestia, dark) | label 500 17px/26.6px ls normal none |
 | path node popover (light) | learn-light-node-popover#1249 <div> cl='_36bu_ _3RP1Q _1Fbw-' | 295x151 | 16px | 15px |  | `accent.primary.face` #58CC02 (owl, light) | `text.onPrimary` #FFFFFF (snow, light) | label 500 17px/26.6px ls normal none |
 
@@ -919,7 +919,7 @@ Measured instances:
 | title | `text.primary` #4B4B4B (eel, light) | `text.primary` #F1F7FB (eel, dark) |
 | body | `text.secondary` #777777 (wolf, light) | `text.secondary` #DCE6EC (wolf, dark) |
 
-Type style: Dropdown title 700 24px/26px; body 17px/20px wolf. Path popover 700 19px/26.6px white.
+Type style: Dropdown title `typography.app.sectionTitle` 700 24px/26px; body 17px/20px wolf. Path popover `typography.path.unitDivider` 700 19px/26.6px white.
 
 Responsive (570px): No 570px capture of this component.
 
@@ -953,9 +953,9 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| START (dark) | learn-dark-default#1239 <div> cl='_36bu_ _27IMa' | 80x45 | 12px | 10px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `unitColors.green` #58CC02 (owl-always-light, dark) | 700 17px/17px |
-| START (light) | learn-light-default#1261 <div> cl='_36bu_ _27IMa' | 80x45 | 12px | 10px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `accent.primary.face` #58CC02 (owl, light) | 700 17px/17px |
-| stem (dark) | learn-dark-default#1241 <div> cl='_1TMn5 YxHCU' | 20x20 |  | 2px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
+| START (dark) | learn-dark-default#1239 <div> cl='_36bu_ _27IMa' | 80x45 | 12px | 10px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `unitColors.green` #58CC02 (owl-always-light, dark) | `typography.app.tooltipLabel` 700 17px/17px |
+| START (light) | learn-light-default#1261 <div> cl='_36bu_ _27IMa' | 80x45 | 12px | 10px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `accent.primary.face` #58CC02 (owl, light) | `typography.app.tooltipLabel` 700 17px/17px |
+| stem (dark) | learn-dark-default#1241 <div> cl='_1TMn5 YxHCU' | 20x20 |  | 2px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
 
 **States**
 
@@ -1019,8 +1019,8 @@ Measured instances:
 | action row hover (dark) | learn-dark-more-menu-item-hover#68 <button> cl='_1gEmM _7jW2t _3QrGV GHXZL' dt='settings-button' | 287x40 | 0px 40px 0px 20px |  |  | `surface.subtle` #202F36 (polar, dark) | `text.secondary` #DCE6EC (wolf, dark) | label 700 15px/16px ls normal uppercase |
 | MORE bubble (light) | learn-light-more-menu#59 <div> cl='_36bu_' | 291x262 |  | 15px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `text.tertiary` #AFAFAF (hare, light) | label 700 15px/16px ls normal uppercase |
 | action row (light) | learn-light-more-menu#68 <button> cl='_1gEmM _7jW2t _3QrGV GHXZL' dt='settings-button' | 287x40 | 0px 40px 0px 20px |  |  |  | `text.secondary` #777777 (wolf, light) | label 700 15px/16px ls normal uppercase |
-| courses menu item selected (dark) | learn-dark-courses-dropdown#79 <div> cl='_1aVVk _1WRXX' | 240x55 | 10px 12px 10px 20px |  |  | `surface.subtle` #202F36 (polar, dark) | `text.selected` #1899D6 (whale, dark) | 700 17px/20px |
-| courses menu item (light) | learn-light-courses-dropdown#83 <div> cl='_1aVVk' | 240x55 | 10px 12px 10px 20px |  |  |  | `text.primary` #4B4B4B (eel, light) | 700 17px/20px |
+| courses menu item selected (dark) | learn-dark-courses-dropdown#79 <div> cl='_1aVVk _1WRXX' | 240x55 | 10px 12px 10px 20px |  |  | `surface.subtle` #202F36 (polar, dark) | `text.selected` #1899D6 (whale, dark) | `typography.app.bodyStrong` 700 17px/20px |
+| courses menu item (light) | learn-light-courses-dropdown#83 <div> cl='_1aVVk' | 240x55 | 10px 12px 10px 20px |  |  |  | `text.primary` #4B4B4B (eel, light) | `typography.app.bodyStrong` 700 17px/20px |
 
 **States**
 
@@ -1075,8 +1075,8 @@ Crops: [dark: menu-dark.png](crops/menu-dark.png) [dark: menu-hover-dark.png](cr
 | margin | `space.24` 24px |
 | border | none |
 | shadow | none |
-| title | 700 24px/32px (heading-medium), 12px top margin |
-| body | 500 16px/24px caption, wolf, 12px top margin |
+| title | `typography.heading.medium` 700 24px/32px (heading-medium), 12px top margin |
+| body | `typography.caption.default` 500 16px/24px caption, wolf, 12px top margin |
 | button_stack | primary 50px, margin-top `space.32` 32px; secondary text 32px, margin-top `space.16` 16px |
 | close | 35x35, 2px border, radius 98px, 16px icon |
 | CSS source | css:app-f2ef02f8.css ._1yFTM { border-radius:var(--modal-border-radius,16px); margin:var(--modal-margin,24px) }<br>css:app-f2ef02f8.css .FohH5 { --modal-padding:30px; background:rgb(var(--color-snow)) }<br>css:1527-94387874.css ._3tUNa { --modal-padding:24px; width:384px }<br>css:4779-c36ad395.css ._1ATOC { background:rgb(var(--color-black),.4); bottom:0; left:0; position:fixed; right:0; top:0 }<br>css:app-f2ef02f8.css .rXoiv { align-items:center; background:rgb(var(--color-snow)); cursor:pointer; display:flex; height:35px; justify-content:center; position:absolute; right:4px; top:4px; width:35px; z-index:10 }<br>css:app-f2ef02f8.css @media (min-width:700px) .rXoiv { backface-visibility:hidden; border:2px solid rgb(var(--color-swan)); border-radius:98px; right:0; top:0; transform:translateX(50%) translateY(-50%) }<br>css:1060-a4cddb41.css ._3r1YP { color:rgb(var(--color-eel)) }<br>css:1060-a4cddb41.css ._3WCnS { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; color:rgb(var(--color-wolf)); font:var(--text-caption-weight) var(--text-caption-size) /var(--text-caption-line-height) duolingo-sans,sans-serif; letter-spacing:var(--text-caption-letter-spacing); margin-top:12px; text-transform:var(--text-caption-casing) } |
@@ -1085,16 +1085,16 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| notifications modal (dark) | learn-dark-modal-notifications#358 <div> cl='_1yFTM _3fFQQ FohH5 _3tUNa' | 384x442 | 24px | 16px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| backdrop (dark) | learn-dark-modal-notifications#353 <div> cl='_1ATOC _1Fnem' dt='drawer-backdrop' | 1200x797 |  |  |  | `background.scrim` #000000 (black, dark) @ 0.4 alpha | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| title (dark) | learn-dark-modal-notifications#475 <span> cl='_3r1YP' | 336x32 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 24px/32px |
-| body (dark) | learn-dark-modal-notifications#476 <span> cl='_3WCnS' | 336x48 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 500 16px/24px |
-| invite modal (dark) | user-search-dark-invite-modal#196 <div> cl='_1yFTM _3fFQQ FohH5' | 480x477 | 30px | 16px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
-| close button (dark) | user-search-dark-invite-modal#197 <div> cl='rXoiv' dt='close-button' | 35x35 |  | 98px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 500 17px/20px |
-| copy-link field (dark) | user-search-dark-invite-modal#202 <div> cl='_1CdbA DLitl' | 420x48 | 5px 10px 5px 10px | 16px | 2px `border.default` #37464F (swan, dark) | `text.onPrimary` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/20px ls 0.8px uppercase |
-| invite modal (light) | user-search-light-invite-modal#196 <div> cl='_1yFTM _3fFQQ FohH5' | 480x477 | 30px | 16px |  | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/26px ls normal none |
-| quit modal (dark) | lesson-dark-quit-modal#132 <div> cl='_1yFTM _3fFQQ FohH5 _3Dms8' | 384x387 | 24px | 16px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| quit modal (light) | lesson-light-quit-modal#148 <div> cl='_1yFTM _3fFQQ FohH5 _3Dms8' | 384x387 | 24px | 16px |  | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| notifications modal (dark) | learn-dark-modal-notifications#358 <div> cl='_1yFTM _3fFQQ FohH5 _3tUNa' | 384x442 | 24px | 16px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.medium` 700 24px/32px ls normal none |
+| backdrop (dark) | learn-dark-modal-notifications#353 <div> cl='_1ATOC _1Fnem' dt='drawer-backdrop' | 1200x797 |  |  |  | `background.scrim` #000000 (black, dark) @ 0.4 alpha | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
+| title (dark) | learn-dark-modal-notifications#475 <span> cl='_3r1YP' | 336x32 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.heading.medium` 700 24px/32px |
+| body (dark) | learn-dark-modal-notifications#476 <span> cl='_3WCnS' | 336x48 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | `typography.caption.default` 500 16px/24px |
+| invite modal (dark) | user-search-dark-invite-modal#196 <div> cl='_1yFTM _3fFQQ FohH5' | 480x477 | 30px | 16px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.sectionTitle` 700 24px/26px ls normal none |
+| close button (dark) | user-search-dark-invite-modal#197 <div> cl='rXoiv' dt='close-button' | 35x35 |  | 98px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.bodyDefault` 500 17px/20px |
+| copy-link field (dark) | user-search-dark-invite-modal#202 <div> cl='_1CdbA DLitl' | 420x48 | 5px 10px 5px 10px | 16px | 2px `border.default` #37464F (swan, dark) | `text.onPrimary` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.labelSmall` 700 15px/20px ls 0.8px uppercase |
+| invite modal (light) | user-search-light-invite-modal#196 <div> cl='_1yFTM _3fFQQ FohH5' | 480x477 | 30px | 16px |  | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.sectionTitle` 700 24px/26px ls normal none |
+| quit modal (dark) | lesson-dark-quit-modal#132 <div> cl='_1yFTM _3fFQQ FohH5 _3Dms8' | 384x387 | 24px | 16px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.medium` 700 24px/32px ls normal none |
+| quit modal (light) | lesson-light-quit-modal#148 <div> cl='_1yFTM _3fFQQ FohH5 _3Dms8' | 384x387 | 24px | 16px |  | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.medium` 700 24px/32px ls normal none |
 
 **States**
 
@@ -1118,7 +1118,7 @@ Measured instances:
 | field border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
 | backdrop | rgb(var(--color-black)) @ 0.4 = #000000 @ 0.4 alpha in both themes (css:4779 ._1ATOC) | |
 
-Type style: Title heading-medium (700 24px/32px); body caption (500 16px/24px).
+Type style: Title heading-medium (`typography.heading.medium` 700 24px/32px); body caption (`typography.caption.default` 500 16px/24px).
 
 Responsive (570px): Below 700px the close button sits inside the corner (right/top 4px, no border) instead of straddling it (css:app .rXoiv vs @media (min-width:700px)). No mobile modal capture.
 
@@ -1147,7 +1147,7 @@ Crops: [dark: modal-dark.png](crops/modal-dark.png) [dark: modal-invite-dark.png
 | padding | `space.40` 40px `space.24` 24px |
 | grid_gap | `space.16` 16px `space.40` 40px |
 | radius | none |
-| title | 700 24px/32px heading-medium |
+| title | `typography.heading.medium` 700 24px/32px heading-medium |
 | description | 19px/24px wolf |
 | image | 109x110 |
 | buttons | 184x50 each |
@@ -1157,13 +1157,13 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| sheet (dark) | settings-courses-dark-remove-confirm#134 <div> cl='rs95t _3fIZ6 _19idO' | 1200x195 |  |  |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| inner (dark) | settings-courses-dark-remove-confirm#135 <div> cl='_3qIEH' | 1140x195 | 40px 24px 40px 24px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| grid (dark) | settings-courses-dark-remove-confirm#136 <div> cl='_1fZrK _25RZD eDTjy _3tWO8' | 1092x115 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
-| title (dark) | settings-courses-dark-remove-confirm#139 <span> cl='_2ac0P' | 519x32 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 24px/32px |
+| sheet (dark) | settings-courses-dark-remove-confirm#134 <div> cl='rs95t _3fIZ6 _19idO' | 1200x195 |  |  |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.medium` 700 24px/32px ls normal none |
+| inner (dark) | settings-courses-dark-remove-confirm#135 <div> cl='_3qIEH' | 1140x195 | 40px 24px 40px 24px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.medium` 700 24px/32px ls normal none |
+| grid (dark) | settings-courses-dark-remove-confirm#136 <div> cl='_1fZrK _25RZD eDTjy _3tWO8' | 1092x115 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.medium` 700 24px/32px ls normal none |
+| title (dark) | settings-courses-dark-remove-confirm#139 <span> cl='_2ac0P' | 519x32 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.heading.medium` 700 24px/32px |
 | description (dark) | settings-courses-dark-remove-confirm#140 <span> cl='_3OWkn' | 519x48 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 500 19px/24px |
-| cancel (dark) | settings-courses-dark-remove-confirm#145 <button> cl='_3fmUm _2V6ug _1ursp _7jW2t _1wMvQ _3Lflf _1yKZz' dt='notification-drawer-no-thanks-button' | 184x50 | 0px 16px 0px 16px | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | label 700 15px/18px ls 0.8px uppercase |
-| sheet (light) | settings-courses-light-remove-confirm#136 <div> cl='rs95t _3fIZ6 _19idO' | 1384x195 |  |  |  | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| cancel (dark) | settings-courses-dark-remove-confirm#145 <button> cl='_3fmUm _2V6ug _1ursp _7jW2t _1wMvQ _3Lflf _1yKZz' dt='notification-drawer-no-thanks-button' | 184x50 | 0px 16px 0px 16px | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | label `typography.button.default` 700 15px/18px ls 0.8px uppercase |
+| sheet (light) | settings-courses-light-remove-confirm#136 <div> cl='rs95t _3fIZ6 _19idO' | 1384x195 |  |  |  | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.medium` 700 24px/32px ls normal none |
 
 **States**
 
@@ -1182,7 +1182,7 @@ Measured instances:
 | description | `text.secondary` #777777 (wolf, light) | `text.secondary` #DCE6EC (wolf, dark) |
 | backdrop | #000000 @ 0.4 alpha (css:4779 ._1ATOC) | |
 
-Type style: Title heading-medium 700 24px/32px; description 19px/24px.
+Type style: Title heading-medium `typography.heading.medium` 700 24px/32px; description 19px/24px.
 
 Responsive (570px): Below 700px the grid is a single centered column and the description gets 0 24px padding with line-height 1.4 (css:1060 ._1fZrK, ._3OWkn). No mobile capture.
 
@@ -1212,20 +1212,20 @@ Notes: Same drawer classes (rs95t) are shared across 40+ CSS chunks (lesson feed
 | row_gap | `space.4` 4px |
 | padding | `space.8` 8px `space.30` 30px |
 | radius | `radius.12` 12px |
-| font | 700 20px/24px (heading-small) |
-| title | 700 24px/32px wolf |
+| font | `typography.heading.small` 700 20px/24px (heading-small) |
+| title | `typography.heading.medium` 700 24px/32px wolf |
 | CSS source | css:settingsPage-f3f7f16a.css .bigAx { -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; color:rgb(var(--color-eel)); display:block; font:var(--text-heading-weight-small) var(--text-heading-size-small) /var(--text-heading-line-height-small) duolingo-sans,sans-serif; letter-spacing:var(--text-heading-letter-spacing-small); padding:8px 30px; text-transform:var(--text-heading-casing-small) }<br>css:settingsPage-f3f7f16a.css .wgPZT { border-radius:12px }<br>css:settingsPage-f3f7f16a.css ._1lpXi { display:grid; gap:4px }<br>css:settingsPage-f3f7f16a.css ._7yUNn { -webkit-font-smoothing:antialiased; font:var(--text-heading-weight-medium) var(--text-heading-size-medium) /var(--text-heading-line-height-medium) duolingo-sans,sans-serif; letter-spacing:var(--text-heading-letter-spacing-medium); margin:0 30px 16px; text-transform:var(--text-heading-casing-medium) } |
 
 Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| row (dark) | settings-courses-dark-default#71 <li> cl='wgPZT' | 332x40 |  | 12px |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| link (dark) | settings-courses-dark-default#72 <a> cl='bigAx' | 332x40 | 8px 30px 8px 30px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 20px/24px |
-| row hover (dark) | settings-courses-dark-sidenav-hover#93 <li> cl='wgPZT' | 332x40 |  | 12px |  | `surface.disabled` #37464F (swan, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| row (light) | settings-courses-light-default#71 <li> cl='wgPZT' | 332x40 |  | 12px |  |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| row hover (light, pointer resting in default capture) | settings-profile-light-default#83 <li> cl='wgPZT' | 332x40 |  | 12px |  | `surface.disabled` #E5E5E5 (swan, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| section title (dark) | settings-courses-dark-default#69 <h2> cl='_7yUNn' | 272x32 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 700 24px/32px |
+| row (dark) | settings-courses-dark-default#71 <li> cl='wgPZT' | 332x40 |  | 12px |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.small` 700 20px/24px ls normal none |
+| link (dark) | settings-courses-dark-default#72 <a> cl='bigAx' | 332x40 | 8px 30px 8px 30px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.heading.small` 700 20px/24px |
+| row hover (dark) | settings-courses-dark-sidenav-hover#93 <li> cl='wgPZT' | 332x40 |  | 12px |  | `surface.disabled` #37464F (swan, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.small` 700 20px/24px ls normal none |
+| row (light) | settings-courses-light-default#71 <li> cl='wgPZT' | 332x40 |  | 12px |  |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.small` 700 20px/24px ls normal none |
+| row hover (light, pointer resting in default capture) | settings-profile-light-default#83 <li> cl='wgPZT' | 332x40 |  | 12px |  | `surface.disabled` #E5E5E5 (swan, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.small` 700 20px/24px ls normal none |
+| section title (dark) | settings-courses-dark-default#69 <h2> cl='_7yUNn' | 272x32 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | `typography.heading.medium` 700 24px/32px |
 
 **States**
 
@@ -1280,16 +1280,16 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| course row (dark) | settings-courses-dark-default#102 <li> cl='_3hY-r Ej0kW' | 480x66 |  |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| course row (light) | settings-courses-light-default#104 <li> cl='_3hY-r Ej0kW' | 592x66 |  |  | 0px 0px 2px 0px `border.default` #E5E5E5 (swan, light) |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
-| search result (dark) | user-search-dark-results#78 <div> cl='nAD2k _39QMj' | 482x113 | 18px 24px 18px 24px |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/20px ls 0.8px uppercase |
-| search result (light) | user-search-light-results#78 <div> cl='nAD2k _39QMj' | 594x113 | 18px 24px 18px 24px |  | 0px 0px 2px 0px `border.default` #E5E5E5 (swan, light) |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/20px ls 0.8px uppercase |
+| course row (dark) | settings-courses-dark-default#102 <li> cl='_3hY-r Ej0kW' | 480x66 |  |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.small` 700 20px/24px ls normal none |
+| course row (light) | settings-courses-light-default#104 <li> cl='_3hY-r Ej0kW' | 592x66 |  |  | 0px 0px 2px 0px `border.default` #E5E5E5 (swan, light) |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.small` 700 20px/24px ls normal none |
+| search result (dark) | user-search-dark-results#78 <div> cl='nAD2k _39QMj' | 482x113 | 18px 24px 18px 24px |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.labelSmall` 700 15px/20px ls 0.8px uppercase |
+| search result (light) | user-search-light-results#78 <div> cl='nAD2k _39QMj' | 594x113 | 18px 24px 18px 24px |  | 0px 0px 2px 0px `border.default` #E5E5E5 (swan, light) |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.labelSmall` 700 15px/20px ls 0.8px uppercase |
 | result name (dark) | user-search-dark-results#83 <h3> cl='_25Afh _2jQO8' | 93x33 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 24px/normal |
 | result handle (dark) | user-search-dark-results#84 <div> cl='_347DQ LH3xS' | 93x20 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | 500 18px/20px |
 | following row (dark) | profile-dark-default#150 <div> cl='_1xR2j _39QMj _2SROJ' | 364x85 | 16px |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/normal ls normal none |
 | following row (light) | profile-light-default#151 <div> cl='_1xR2j _39QMj _2SROJ' | 364x85 | 16px |  |  |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/normal ls normal none |
 | view more (dark) | profile-dark-default#171 <button> cl='_1gEmM _7jW2t _3jvnF' | 364x54 | 16px |  | 2px 0px 0px 0px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 17px/19.55px |
-| settings row (dark) | settings-account-dark-default#106 <li> cl='hpqEH' | 480x32 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/24px ls normal none |
+| settings row (dark) | settings-account-dark-default#106 <li> cl='hpqEH' | 480x32 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.small` 700 20px/24px ls normal none |
 
 **States**
 
@@ -1308,7 +1308,7 @@ Measured instances:
 | secondary text | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
 | divider / container border | `border.default` #E5E5E5 (swan, light) | `border.default` #37464F (swan, dark) |
 
-Type style: Course name heading-small 700 20px/24px; search name 700 24px; handle 18px; following name 20px, XP 16px.
+Type style: Course name heading-small `typography.heading.small` 700 20px/24px; search name 700 24px; handle 18px; following name 20px, XP 16px.
 
 Responsive (570px): Below 700px: settings lists become one bordered group (2px swan, 12px radius) with 16px row padding and 2px dividers (css:settingsPage ._2QqPx, .hpqEH; settings-account-dark-mobile#16-#35); courses list gets the same border (._1GEp7) and 0 16px row padding.
 
@@ -1323,7 +1323,7 @@ Crops: [dark: list-rows-courses-dark.png](crops/list-rows-courses-dark.png) [dar
 
 **Anatomy**
 
-- right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, 16px radius, 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (700 19px/28px), body (wolf, 25px lh), full-width CTA
+- right-rail card _2cnFr _1T_BQ: snow fill, 2px swan border, 16px radius, 18px padding; optional eyebrow (bVnHX 700 15px hare uppercase), title (`typography.app.cardTitle` 700 19px/28px), body (wolf, 25px lh), full-width CTA
 - settings side card _1uIIO _1T_BQ: same shell, 24px 16px padding
 - Super promo card _3Mmv9: eclipse fill + radial gradient, no border, 16px radius, 24px side padding
 - stat tile _2uSOC: 2px swan border, 16px radius, 15px 24px padding, icon 21px + 15px gap, value 700 20px, caption 16px hare; inactive tile (_1kcT_) all hare
@@ -1343,14 +1343,14 @@ Measured instances:
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | rail card (dark) | characters-dark-default#95 <div> cl='_2cnFr _1T_BQ' | 368x230 | 18px | 16px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 15px/18px ls normal uppercase |
 | rail card eyebrow (dark) | characters-dark-default#96 <div> cl='bVnHX' | 328x18 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | 700 15px/18px |
-| rail card title (dark) | characters-dark-default#99 <h2> cl='_3yevs _1d_-b' | 224x28 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | 700 19px/28px |
-| rail card body (dark) | characters-dark-default#100 <div> cl='_1MY88 OWSZL' | 224x50 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | 500 17px/25px |
-| rail card (light) | characters-light-default#96 <div> cl='_2cnFr _1T_BQ' | 368x178 | 18px | 16px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 500 17px/25px ls normal none |
-| settings side card (dark) | settings-courses-dark-default#68 <div> cl='_1uIIO _1T_BQ' | 368x404 | 24px 16px 24px 16px | 16px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 24px/32px ls normal none |
+| rail card title (dark) | characters-dark-default#99 <h2> cl='_3yevs _1d_-b' | 224x28 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | `typography.app.cardTitle` 700 19px/28px |
+| rail card body (dark) | characters-dark-default#100 <div> cl='_1MY88 OWSZL' | 224x50 |  |  |  |  | `text.secondary` #DCE6EC (wolf, dark) | `typography.app.railBody` 500 17px/25px |
+| rail card (light) | characters-light-default#96 <div> cl='_2cnFr _1T_BQ' | 368x178 | 18px | 16px | 2px `border.default` #E5E5E5 (swan, light) | `surface.default` #FFFFFF (snow, light) | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.railBody` 500 17px/25px ls normal none |
+| settings side card (dark) | settings-courses-dark-default#68 <div> cl='_1uIIO _1T_BQ' | 368x404 | 24px 16px 24px 16px | 16px | 2px `border.default` #37464F (swan, dark) | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.heading.medium` 700 24px/32px ls normal none |
 | super promo card (dark) | characters-dark-default#123 <div> cl='_3Mmv9' | 368x330 | 0px 24px 0px 24px | 16px |  | `gamification.super.surface` #000437 (eclipse, dark) | `palette.dark.celestia` #FFFFFF (celestia, dark) | label 700 15px/20px ls 1px uppercase |
-| stat tile (dark) | profile-dark-default#245 <div> cl='_2uSOC' | 234x78 | 15px 24px 15px 24px | 16px | 2px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/20px ls normal none |
-| stat tile inactive (dark) | profile-dark-default#239 <div> cl='_2uSOC _1kcT_' | 234x78 | 15px 24px 15px 24px | 16px | 2px `border.default` #37464F (swan, dark) |  | `text.tertiary` #52656D (hare, dark) | label 700 20px/20px ls normal none |
-| stat tile (light) | profile-light-default#255 <div> cl='_2uSOC' | 290x78 | 15px 24px 15px 24px | 16px | 2px `border.default` #E5E5E5 (swan, light) |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 20px/20px ls normal none |
+| stat tile (dark) | profile-dark-default#245 <div> cl='_2uSOC' | 234x78 | 15px 24px 15px 24px | 16px | 2px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.statValue` 700 20px/20px ls normal none |
+| stat tile inactive (dark) | profile-dark-default#239 <div> cl='_2uSOC _1kcT_' | 234x78 | 15px 24px 15px 24px | 16px | 2px `border.default` #37464F (swan, dark) |  | `text.tertiary` #52656D (hare, dark) | label `typography.app.statValue` 700 20px/20px ls normal none |
+| stat tile (light) | profile-light-default#255 <div> cl='_2uSOC' | 290x78 | 15px 24px 15px 24px | 16px | 2px `border.default` #E5E5E5 (swan, light) |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.statValue` 700 20px/20px ls normal none |
 | stat tile (dark mobile) | profile-dark-mobile#80 <div> cl='_2uSOC' | 263x70 | 12px 14px 10px 14px | 16px | 2px `border.default` #37464F (swan, dark) |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 19px/20px ls normal none |
 
 **States**
@@ -1373,7 +1373,7 @@ Measured instances:
 | stat caption | `text.tertiary` #AFAFAF (hare, light) | `text.tertiary` #52656D (hare, dark) |
 | super card fill | `gamification.super.surface` #000437 (eclipse, light) | `gamification.super.surface` #000437 (eclipse, dark) |
 
-Type style: Title 700 19px/28px; body 17px/25px wolf; eyebrow 700 15px/18px uppercase hare; stat value 700 20px; stat caption 16px.
+Type style: Title `typography.app.cardTitle` 700 19px/28px; body 17px/25px wolf; eyebrow 700 15px/18px uppercase hare; stat value 700 20px; stat caption 16px.
 
 Responsive (570px): Stat tile below 700px: padding 12px 14px 10px, icon 15px wide with 7.5px gap, value 19px, caption 15px (css:5515 @media (max-width:699px); profile-dark-mobile#80 263x70). Right rail is hidden in the 570px captures.
 
@@ -1405,8 +1405,8 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| hr (dark) | settings-account-dark-default#104 <hr> cl='_3D1uH' | 480x2 |  |  | 2px 0px 0px 0px `border.default` #37464F (swan, dark) |  | #808080 (browser default, not painted) | 500 17px/20px |
-| hr (light) | settings-account-light-default#137 <hr> cl='_3D1uH' | 592x2 |  |  | 2px 0px 0px 0px `border.default` #E5E5E5 (swan, light) |  | #808080 (browser default, not painted) | 500 17px/20px |
+| hr (dark) | settings-account-dark-default#104 <hr> cl='_3D1uH' | 480x2 |  |  | 2px 0px 0px 0px `border.default` #37464F (swan, dark) |  | #808080 (browser default, not painted) | `typography.app.bodyDefault` 500 17px/20px |
+| hr (light) | settings-account-light-default#137 <hr> cl='_3D1uH' | 592x2 |  |  | 2px 0px 0px 0px `border.default` #E5E5E5 (swan, light) |  | #808080 (browser default, not painted) | `typography.app.bodyDefault` 500 17px/20px |
 | menu divider (dark) | learn-dark-more-menu#60 <div> cl='_1fv9a' | 287x122 | 8px 0px 8px 0px |  | 0px 0px 2px 0px `border.default` #37464F (swan, dark) |  | `text.tertiary` #52656D (hare, dark) | label 700 15px/16px ls 0.8px uppercase |
 
 **States**
@@ -1447,10 +1447,10 @@ Crops: [dark: divider-dark.png](crops/divider-dark.png) [light: divider-light.pn
 
 | Property | Value |
 | --- | --- |
-| height | 16px default (lesson header), 18px (sections, quests), 8px (character cells), 14px (achievements) |
+| height | `size.progressBarHeightLesson` 16px default (lesson header), `size.progressBarHeightQuest` 18px (sections, quests), 8px (character cells), 14px (achievements) |
 | radius | height / 2 |
 | shine | height 30%, opacity .2, top 25% |
-| inner_text | 700 14px/18px, 0.04em, uppercase |
+| inner_text | `typography.app.progressLabel` 700 14px/18px, 0.04em, uppercase |
 | transition | width/clip-path .4s |
 | CSS source | css:4779-c36ad395.css ._3yKMC { background:var(--web-ui_progress-bar-background,rgb(var(--color-swan))); border-radius:calc(var(--__internal__progress-bar-height)/2); position:relative }<br>css:4779-c36ad395.css ._27NV6 { border-radius:inherit; color:var(--web-ui_progress-bar-color,rgb(var(--color-owl))); height:var(--__internal__progress-bar-height); min-width:calc(var(--__internal__progress-bar-height)*1.5); transition-duration:.4s }<br>css:4779-c36ad395.css ._1EFTr { background:rgb(var(--color-snow-always-light)); border-radius:9999px; height:var(--web-ui_progress-bar-shine-height,30%); left:calc(var(--__internal__progress-bar-height)/4); opacity:.2; position:absolute; top:25%; transition-duration:.4s; transition-property:width; width:calc(var(--__internal__progress-bar-value) - var(--__internal__progress-bar-height)/2) }<br>css:4779-c36ad395.css ._1qzJe { -webkit-clip-path:inset(0 calc(100% - var(--__internal__progress-bar-inner-value)) 0 0 round calc(var(--__internal__progress-bar-height)/2)); clip-path:inset(0 calc(100% - var(--__internal__progress-bar-inner-value)) 0 0 round calc(var(--__internal__progress-bar-height)/2)); color:var(--web-ui_progress-bar-color-secondary,rgb(var(--color-bee))) }<br>css:4779-c36ad395.css ._2spfn { color:var(--web-ui_progress-bar-inner-text-color,rgb(var(--color-snow))); font-size:14px; line-height:var(--__internal__progress-bar-height); top:0 }<br>js/4779-9b5aed3c.js progress bar component default height:u=16 |
 
@@ -1458,12 +1458,12 @@ Measured instances:
 
 | Instance | Trace | WxH | Padding | Radius | Border | Fill | Text colour | Font |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| sections bar 18px (dark) | sections-dark-default#197 <div> cl='oCRfA _2MB9M' | 178x18 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
-| track (dark) | sections-dark-default#198 <div> cl='_3yKMC' | 178x18 |  | 9px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
-| fill (dark) | sections-dark-default#200 <div> cl='_27NV6' | 178x18 |  | 9px |  | `accent.primary.face` #93D333 (owl, dark) | `accent.primary.face` #93D333 (owl, dark) | label 700 14px/18px ls 0.56px uppercase |
-| shine (dark) | sections-dark-default#202 <div> cl='_1EFTr' | 38x3 |  | 9999px |  | `palette.dark.celestia` #FFFFFF (celestia, dark) | `accent.primary.face` #93D333 (owl, dark) | 500 17px/20px |
-| sections bar (light) | sections-light-default#206 <div> cl='oCRfA _2MB9M' | 254x18 |  |  |  |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
-| quest bar 18px empty (dark) | characters-dark-default#115 <div> cl='ThLWu _3yKMC' | 207x18 |  | 9px 0px 0px 9px |  | `surface.disabled` #37464F (swan, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label 700 14px/18px ls 0.56px uppercase |
+| sections bar 18px (dark) | sections-dark-default#197 <div> cl='oCRfA _2MB9M' | 178x18 |  |  |  |  | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.progressLabel` 700 14px/18px ls 0.56px uppercase |
+| track (dark) | sections-dark-default#198 <div> cl='_3yKMC' | 178x18 |  | 9px |  | `surface.default` #131F24 (snow, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.progressLabel` 700 14px/18px ls 0.56px uppercase |
+| fill (dark) | sections-dark-default#200 <div> cl='_27NV6' | 178x18 |  | 9px |  | `accent.primary.face` #93D333 (owl, dark) | `accent.primary.face` #93D333 (owl, dark) | label `typography.app.progressLabel` 700 14px/18px ls 0.56px uppercase |
+| shine (dark) | sections-dark-default#202 <div> cl='_1EFTr' | 38x3 |  | 9999px |  | `palette.dark.celestia` #FFFFFF (celestia, dark) | `accent.primary.face` #93D333 (owl, dark) | `typography.app.bodyDefault` 500 17px/20px |
+| sections bar (light) | sections-light-default#206 <div> cl='oCRfA _2MB9M' | 254x18 |  |  |  |  | `text.body` #3C3C3C (black-text, light) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.progressLabel` 700 14px/18px ls 0.56px uppercase |
+| quest bar 18px empty (dark) | characters-dark-default#115 <div> cl='ThLWu _3yKMC' | 207x18 |  | 9px 0px 0px 9px |  | `surface.disabled` #37464F (swan, dark) | `text.body` #F1F7FB (black-text = eel, dark) [not in dump: equals the body default rgb(var(--color-black-text))] | label `typography.app.progressLabel` 700 14px/18px ls 0.56px uppercase |
 
 **States**
 
@@ -1485,7 +1485,7 @@ Measured instances:
 | inner text on fill | `text.onPrimary` #FFFFFF (snow, light) | `text.onPrimary` #131F24 (snow, dark) |
 | note | Sections page sets the track to snow (_2MB9M); quest bars use a bee fill and guinea-pig-always-light inner text (_2nasW). | |
 
-Type style: Inner text 700 14px/18px uppercase.
+Type style: Inner text `typography.app.progressLabel` 700 14px/18px uppercase.
 
 Responsive (570px): No 570px capture of this component.
 
@@ -1503,8 +1503,8 @@ Notes: The lesson header bar (16px, fox/bee streak colours) is part of the lesso
 **Anatomy**
 
 - inline text-button link (web-ui variant-text-no-padding-macaw, MVjvO _1nf6U c1Mv-): 700 15px/18px uppercase macaw ("VIEW ALL", "GO TO SHOP")
-- settings footer links hBgxi (hare) / _2FVDQ (cardinal): label-medium 700 16px/16px uppercase 0.04em
-- site footer links _1oCct: 700 13px/16px uppercase hare
+- settings footer links hBgxi (hare) / _2FVDQ (cardinal): label-medium `typography.label.medium` 700 16px/16px uppercase 0.04em
+- site footer links _1oCct: `typography.app.footerLink` 700 13px/16px uppercase hare
 - copy-link action _1WLlV _1KSsU: macaw 700 15px uppercase
 - plain <a> inside Super card: white 700 15px uppercase, 1px tracking
 
@@ -1524,9 +1524,9 @@ Measured instances:
 | view all (dark) | characters-dark-default#107 <a> cl='_1nf6U c1Mv- _1ursp _7jW2t' | 65x18 |  |  |  |  | `text.link` #49C0F8 (macaw, dark) | 700 15px/18px |
 | view all (light) | characters-light-default#114 <a> cl='_1nf6U c1Mv- _1ursp _7jW2t' | 65x18 |  |  |  |  | `text.link` #1CB0F6 (macaw, light) | 700 15px/18px |
 | go to shop (dark) | learn-dark-gems-dropdown#90 <a> cl='MVjvO _1nf6U c1Mv- _1ursp _7jW2t _1PQJw' dt='shop-nav' | 83x18 |  |  |  |  | `text.link` #49C0F8 (macaw, dark) | 700 15px/18px |
-| export data (dark) | settings-profile-dark-default#137 <a> cl='hBgxi' | 125x16 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | 700 16px/16px |
-| delete account (dark) | settings-profile-dark-default#138 <a> cl='_2FVDQ' | 153x16 |  |  |  |  | `accent.danger.text` #EE5555 (cardinal, dark) | 700 16px/16px |
-| footer (dark) | characters-dark-default#136 <a> cl='_1oCct' | 38x16 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | 700 13px/16px |
+| export data (dark) | settings-profile-dark-default#137 <a> cl='hBgxi' | 125x16 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | `typography.label.medium` 700 16px/16px |
+| delete account (dark) | settings-profile-dark-default#138 <a> cl='_2FVDQ' | 153x16 |  |  |  |  | `accent.danger.text` #EE5555 (cardinal, dark) | `typography.label.medium` 700 16px/16px |
+| footer (dark) | characters-dark-default#136 <a> cl='_1oCct' | 38x16 |  |  |  |  | `text.tertiary` #52656D (hare, dark) | `typography.app.footerLink` 700 13px/16px |
 | copy link (dark) | user-search-dark-invite-modal#204 <span> cl='_2Go8B _1NHFn _1WLlV _1KSsU _2Rt1l' | 73x20 |  |  |  |  | `text.link` #49C0F8 (macaw, dark) | 700 15px/20px |
 
 **States**
@@ -1585,9 +1585,9 @@ Measured instances:
 | close X on upsell (light) | lesson-light-trial-upsell#21 <button> cl='_1gEmM _7jW2t GEQ3b _2pYm_ bafGS _2LoNU VzbUl _1saKQ _1AgKJ' dt='plus-close-x' | 19x19 |  |  |  |  | `palette.light.black` #000000 (black, light) | 400 17px/0px |
 | password eye (light) | settings-profile-light-default#125 <button> cl='ypJiL _1gEmM _7jW2t rQJD2' | 24x24 |  |  |  |  | `palette.light.black` #000000 (black, light) | 400 17px/19.55px |
 | suggestion dismiss (dark) | profile-dark-scrolled#278 <button> cl='_1gEmM _7jW2t _2FpYw' | 12x12 |  |  |  |  | `palette.dark.black` #000000 (black, dark) | 400 17px/19.55px |
-| fab 52 (dark) | learn-dark-completed-popover#1664 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR' | 52x52 |  | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | 700 15px/18px |
-| fab 52 (light) | learn-light-completed-popover#1674 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR' | 52x52 |  | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #FFFFFF (snow, light); lip `surface.disabled` #E5E5E5 (swan, light) 0px 2px 0px 0px | `text.tertiary` #AFAFAF (hare, light) | 700 15px/18px |
-| tile 48 (dark) | leaderboard-dark-default#102 <button> cl='_2V6ug _1ursp _7jW2t _5Keb0 _2FxcQ' | 48x48 |  | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | 700 15px/18px |
+| fab 52 (dark) | learn-dark-completed-popover#1664 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR' | 52x52 |  | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | `typography.button.default` 700 15px/18px |
+| fab 52 (light) | learn-light-completed-popover#1674 <button> cl='_2V6ug _1ursp _7jW2t _2dnkd _1KSEa eAlyQ _2El3L _3AJpR' | 52x52 |  | 16px | 2px 2px 4px 2px transparent | ::before `surface.default` #FFFFFF (snow, light); lip `surface.disabled` #E5E5E5 (swan, light) 0px 2px 0px 0px | `text.tertiary` #AFAFAF (hare, light) | `typography.button.default` 700 15px/18px |
+| tile 48 (dark) | leaderboard-dark-default#102 <button> cl='_2V6ug _1ursp _7jW2t _5Keb0 _2FxcQ' | 48x48 |  | 12px | 2px 2px 4px 2px transparent | ::before `surface.default` #131F24 (snow, dark); lip `surface.disabled` #37464F (swan, dark) 0px 2px 0px 0px | `text.tertiary` #52656D (hare, dark) | `typography.button.default` 700 15px/18px |
 
 **States**
 
