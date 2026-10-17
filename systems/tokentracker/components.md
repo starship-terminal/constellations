@@ -1459,7 +1459,7 @@ Crops: [table-header.light-default](components/crops/table-header.light-default.
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.text14w400lh21`, `text.primary` |
+| text | `typography.text14w400`, `text.primary` |
 | shadow | none |
 | transition | none |
 
@@ -1472,7 +1472,7 @@ Crops: [table-cell-default](components/crops/table-cell-default.png).
 | fill | transparent |
 | border | none |
 | radius | 0px |
-| text | `typography.text14w400lh21`, `text.primary` |
+| text | `typography.text14w400`, `text.primary` |
 | shadow | none |
 | transition | none |
 
@@ -1490,7 +1490,7 @@ Crops: [table-cell.light-default](components/crops/table-cell.light-default.png)
 | fill | transparent | `bg.rowHover` |
 | border | bottom `border.width.default` `bg.subtle` | = |
 | radius | 0px | = |
-| text | `typography.text14w400lh21`, `text.linkHover` | = |
+| text | `typography.text14w400`, `text.linkHover` | = |
 | shadow | none | = |
 | transition | color, background-color +4 `motion.duration.fast` | = |
 
@@ -1503,7 +1503,7 @@ Crops: [table-row-default](components/crops/table-row-default.png), [table-row-h
 | fill | transparent | `bg.rowHover` |
 | border | bottom `border.width.default` `bg.wash` | = |
 | radius | 0px | = |
-| text | `typography.text14w400lh21`, `text.secondary` | = |
+| text | `typography.text14w400`, `text.secondary` | = |
 | shadow | none | = |
 | transition | color, background-color +4 `motion.duration.fast` | = |
 
@@ -2054,7 +2054,7 @@ Crops: [confirm-dialog.light-open](components/crops/confirm-dialog.light-open.pn
 | fill | `bg.subtle` |
 | border | `border.width.default` `border.strong` |
 | radius | `radius.lg` |
-| text | `typography.text10w400`, `text.strong` |
+| text | `typography.groupLabel` with letter-spacing 0px, `text.strong` |
 | shadow | `shadow.lgBare` |
 | transition | all `motion.duration.base` |
 
@@ -2067,7 +2067,7 @@ Crops: [hint-tooltip-open](components/crops/hint-tooltip-open.png).
 | fill | `text.label` |
 | border | `border.width.default` `button.primary.hover` |
 | radius | `radius.lg` |
-| text | `typography.text10w400`, `bg.card` |
+| text | `typography.groupLabel` with letter-spacing 0px, `bg.card` |
 | shadow | `shadow.lgBare` |
 | transition | all `motion.duration.base` |
 

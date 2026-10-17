@@ -225,7 +225,12 @@ for role, key, desc in TYPE:
 
 # The type scale as rendered: every size / line height / weight that at least 10 text elements use
 # across the ten pages (dark), beyond the named roles above. Named by size and weight.
-named = {(core["font"]["size"][r]["$value"], core["font"]["lineHeight"][r]["$value"], core["font"]["weight"][r]["$value"]) for r, *_ in TYPE}
+def plain(v):
+    """A size token's value with a {font.scale.*} alias resolved, so it compares with a census size."""
+    return core["font"]["scale"][v[len("{font.scale."):-1]]["$value"] if v.startswith("{font.scale.") else v
+
+
+named = {(plain(core["font"]["size"][r]["$value"]), core["font"]["lineHeight"][r]["$value"], core["font"]["weight"][r]["$value"]) for r, *_ in TYPE}
 for v, x in K["totals"]["dark"]["type"].items():
     m = re.fullmatch(r"([\d.]+px)/([\d.]+px) (\d+)", v)
     if not m or x["n"] < 10 or (m.group(1), m.group(2), int(m.group(3))) in named:

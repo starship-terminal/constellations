@@ -185,23 +185,11 @@ typography:
     fontWeight: 500
     lineHeight: "16.8px"
     letterSpacing: "0.12px"
-  text12w400:
-    fontFamily: "-apple-system"
-    fontSize: "12px"
-    fontWeight: 400
-    lineHeight: "16px"
-    letterSpacing: "0px"
   text14w600:
     fontFamily: "-apple-system"
     fontSize: "14px"
     fontWeight: 600
     lineHeight: "20px"
-    letterSpacing: "0px"
-  text10w600:
-    fontFamily: "-apple-system"
-    fontSize: "10px"
-    fontWeight: 600
-    lineHeight: "15px"
     letterSpacing: "0px"
   text11w400:
     fontFamily: "-apple-system"
@@ -213,43 +201,7 @@ typography:
     fontFamily: "-apple-system"
     fontSize: "14px"
     fontWeight: 400
-    lineHeight: "20px"
-    letterSpacing: "0px"
-  text14w400lh21:
-    fontFamily: "-apple-system"
-    fontSize: "14px"
-    fontWeight: 400
     lineHeight: "21px"
-    letterSpacing: "0px"
-  text14w500:
-    fontFamily: "-apple-system"
-    fontSize: "14px"
-    fontWeight: 500
-    lineHeight: "20px"
-    letterSpacing: "0px"
-  text13w400:
-    fontFamily: "-apple-system"
-    fontSize: "13px"
-    fontWeight: 400
-    lineHeight: "19.5px"
-    letterSpacing: "0px"
-  text10w400:
-    fontFamily: "-apple-system"
-    fontSize: "10px"
-    fontWeight: 400
-    lineHeight: "15px"
-    letterSpacing: "0px"
-  text12w500:
-    fontFamily: "-apple-system"
-    fontSize: "12px"
-    fontWeight: 500
-    lineHeight: "16px"
-    letterSpacing: "0px"
-  text72w700:
-    fontFamily: "-apple-system"
-    fontSize: "72px"
-    fontWeight: 700
-    lineHeight: "72px"
     letterSpacing: "0px"
   text13w500:
     fontFamily: "-apple-system"
@@ -263,17 +215,11 @@ typography:
     fontWeight: 400
     lineHeight: "24px"
     letterSpacing: "0px"
-  text12w500lh15:
+  text12w500:
     fontFamily: "-apple-system"
     fontSize: "12px"
     fontWeight: 500
     lineHeight: "15px"
-    letterSpacing: "0px"
-  text36w600:
-    fontFamily: "-apple-system"
-    fontSize: "36px"
-    fontWeight: 600
-    lineHeight: "40px"
     letterSpacing: "0px"
   text10w500:
     fontFamily: "-apple-system"
@@ -361,7 +307,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-35 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, SF Mono.
+26 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, SF Mono.
 
 ### Fonts (from README.md)
 
