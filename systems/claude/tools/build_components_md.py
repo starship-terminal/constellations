@@ -58,7 +58,10 @@ def resolve(theme, v, depth=0):
 # The semantic groups first, so a colour is named by its role (text.primary) before its ramp step.
 ORDER_GROUPS = ["surface", "text", "alpha", "border", "fill", "bg", "frame", "control", "on", "neutral", "legacy"]
 for theme in ("dark", "light"):
-    toks = sorted(flat(T[theme]), key=lambda nt: (ORDER_GROUPS.index(nt[0].split(".")[0]) if nt[0].split(".")[0] in ORDER_GROUPS else 99, nt[0]))
+    # A role that only points at another role ({text.primary}, {surface.1}: text.info, bg.info, the
+    # *-pressed fills) comes after the role it points at, so a value is named by its own role first.
+    derived = lambda t: bool(re.fullmatch(r"\{(surface|text|border|fill|bg|on)\.[^{}]+\}", str(t["$value"])))
+    toks = sorted(flat(T[theme]), key=lambda nt: (derived(nt[1]), ORDER_GROUPS.index(nt[0].split(".")[0]) if nt[0].split(".")[0] in ORDER_GROUPS else 99, nt[0]))
     for n, t in toks + list(flat(T["core"])):
         if t["$type"] == "color":
             v = resolve(theme, t["$value"])
@@ -479,12 +482,13 @@ GROUP_INTRO = {
 }
 
 PAGE_DESC = [
-    ("home", "Home (new chat). The greeting and the composer. Captured at rest, with the plus menu, the model menu, the account menu, a chat row's menu, the search dialog, a line typed in the composer, and with the sidebar hidden (the account's own setting); on 2026-10-17 also with the Search button's tooltip open.", "/new"),
+    ("home", "Home (new chat). The greeting and the composer. Captured at rest, with the plus menu, the model menu, the account menu, a chat row's menu, the search dialog, a line typed in the composer, and with the sidebar hidden (the account's own setting); on 2026-10-17 also with the Search button's tooltip open, and with the warning toast raised by opening a chat that no longer exists.", "/new"),
     ("thread", "A chat, one copy read at three scroll positions: the top (user message, Thought for 6s, the code block), the table (scroll 1150) and the follow-up (scroll 1780).", "/chat/<id>"),
     ("artifacts", "Artifacts. Tabs, the notice card, Make something new, month groups of rows; also with the sidebar's More menu open. On 2026-10-17 the page had become a grid of cards, captured while loading (skeletons).", "/artifacts"),
     ("chats", "Chats and tasks. The table of chats and tasks with their times; on 2026-10-17 also in Select mode with one row ticked, with the filter menu open, with a search that matches nothing, and with a chat's delete confirmation open.", "/chats"),
     ("projects", "Projects. The two project cards; on 2026-10-17 also with the Create a project dialog open.", "/projects"),
     ("project", "A project page.", "/project/<id>"),
+    ("onboarding", "The first-run screen (2026-10-17), looked at only: the consent card and the Create account button.", "/onboarding"),
     ("settings", "Settings dialog: the General pane; on 2026-10-17 also the Account pane (text fields, a text area, a disabled button, links) and the Capabilities pane (a disabled switch, inline links).", "/settings/general"),
 ]
 MOBILE_DESC = [
@@ -560,6 +564,8 @@ OVER = [
     ("Delete confirmation", "Chats", "a sidebar chat row's menu, Delete; dismissed with Escape (2026-10-17)", "[chats-dark-delete-confirm](screenshots/chats-dark-delete-confirm.png), [confirm-dialog](#confirm-dialog)"),
     ("Create a project", "Projects", "New project; closed with Cancel (2026-10-17)", "[projects-dark-create](screenshots/projects-dark-create.png), [form-dialog](#form-dialog)"),
     ("Loading", "Artifacts", "the snapshot taken 120 ms after clicking Artifacts in the sidebar (2026-10-17)", "[artifacts-dark-loading](screenshots/artifacts-dark-loading.png), [skeleton](#skeleton)"),
+    ("Toast", "home", "opening /chat/<id> with an id that does not exist, which redirects home (2026-10-17)", "[home-dark-toast](screenshots/home-dark-toast.png), [toast](#toast)"),
+    ("First run", "onboarding", "opening /onboarding; snapshotted as it opened and left untouched (2026-10-17)", "[onboarding-dark](screenshots/onboarding-dark.png), [onboarding-card](#onboarding-card)"),
     ("Drawer sheet", "home at 390", "the Show sidebar button; it could not be closed in the copy, so it was hidden by hand before the phone chat copy", "[mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png), [m-drawer](#m-drawer)"),
 ]
 for row in OVER:
@@ -713,7 +719,7 @@ W("- Artifact previews are iframes and render as dark boxes where present.")
 W("- Hover and focus on the 390 wide copies were not measured (a phone has neither). The segmented controls' radio spans take no focus in a static copy, so their focus-visible state is skipped.")
 W("- Refreshed 2026-10-17 with nine more copies (Forms and feedback, and the overlays marked with that date). The 2026-10-04 screenshots and crops were not retaken, so the two days sit side by side: the Artifacts page is a list in the first and a grid of cards in the second.")
 W("- Focus was not read on the code block's copy button, the chat title's more button, search results, Artifacts list rows and a project's recent rows: their 2026-10-04 copies are gone and no 2026-10-17 copy shows them. The search dialog's field row shows no ring when its text area takes focus; the caret is the only sign.")
-W("- A toast was not captured: the toast region is mounted on every page but stayed empty, and the actions that raise one change the account. The text field's error state was read by setting `data-invalid` on the copy, so its ring is Claude's own CSS but the message under the field was never seen. A button's loading state needs a sent message.")
+W("- Only one toast was captured, the warning one; Claude raised none for copying, and the actions that raise others (rename, pin, share) change the account. The onboarding screen was snapshotted as it opened and never used, so its checked and error states are the shared checkbox and field readings. The text field's error state was read by setting `data-invalid` on the copy, so its ring is Claude's own CSS but the message under the field was never seen. A button's loading state needs a sent message.")
 W("- Streaming (a reply being written, the stop button), the artifact panel beside a chat, the Code mode, Cowork, the share sheet, and the Privacy, Billing and Usage settings panes were not captured: each would need sending a message or shows account and billing details.")
 W("- Chat and artifact titles are the owner's own. The account's name was replaced with \"Learner\" and its email with an example address, and two health-related titles were replaced with neutral ones, by the redaction file, which lives outside the repository.")
 W()

@@ -654,6 +654,12 @@ for setname, tree in (("light", light), ("dark", dark)):
     put(tree, ["fill", "accent-pressed"], tok("{fill.accent-hover}", "color", "derived: cds Buttons keep their hover fill while held (measured on the primary and danger buttons) and squish (core.press.button-scale); no accent-filled button was on the captured pages"))
     put(tree, ["fill", "primary-pressed"], tok("{fill.primary-hover}", "color", "measured: button-primary-page pressed, paint layer %s (the hover fill) scaled to core.press.button-scale" % pp))
     put(tree, ["fill", "danger-pressed"], tok("{fill.danger-hover}", "color", "measured: button-danger pressed, paint layer %s (the hover fill) scaled to core.press.button-scale" % dp))
+    # info: Claude has no info hue; its informational notice is the neutral cds Banner (role=status)
+    bn = state("banner-info", "default" if setname == "dark" else "light")
+    put(tree, ["bg", "info"], tok("{surface.1}", "color", "measured: banner-info (cds Banner, role=status, settings-dark-capabilities) background %s; the neutral banner is Claude's information notice, it has no info hue" % bn["style"]["backgroundColor"]))
+    put(tree, ["text", "info"], tok("{text.primary}", "color", "measured: banner-info text %s" % bn["style"]["color"]))
+    put(tree, ["fill", "info"], tok("{text.primary}", "color", "measured: banner-info-icon, the info glyph drawn in %s (the banner has no solid fill; its mark is the glyph)" % state("banner-info-icon", "default" if setname == "dark" else "light")["style"]["color"]))
+    put(tree, ["border", "info"], tok("{border.default}", "color", "measured: banner-info ring %s (--cds-banner-neutral-ring, falling back to the ring colour)" % bn["style"]["boxShadow"][:60]))
 
 light["$extensions"] = {"notTokenised": light_skipped}
 dark["$extensions"] = {"notTokenised": dark_skipped}
