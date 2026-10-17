@@ -391,9 +391,9 @@ typography:
     letterSpacing: "0px"
   code:
     fontFamily: "-apple-system"
-    fontSize: "13.6px"
+    fontSize: "16px"
     fontWeight: 400
-    lineHeight: "19.72px"
+    lineHeight: "24px"
     letterSpacing: "0px"
   label-system:
     fontFamily: "-apple-system"
@@ -484,6 +484,18 @@ typography:
     fontSize: "18px"
     fontWeight: 600
     lineHeight: "48px"
+    letterSpacing: "0px"
+  code-block:
+    fontFamily: "-apple-system"
+    fontSize: "13.6px"
+    fontWeight: 400
+    lineHeight: "22.44px"
+    letterSpacing: "0px"
+  atlas-rail:
+    fontFamily: "Rubik"
+    fontSize: "12px"
+    fontWeight: 700
+    lineHeight: "13.2px"
     letterSpacing: "0px"
 rounded:
   "4": "4px"
@@ -582,7 +594,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-56 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, Canvas Chapter, Canvas Print, Gauth Home Libre Baskerville, Inter, Playfair Display, Rubik.
+58 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, Canvas Chapter, Canvas Print, Gauth Home Libre Baskerville, Inter, Playfair Display, Rubik.
 
 ### Fonts (from README.md)
 

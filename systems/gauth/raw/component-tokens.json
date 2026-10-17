@@ -117,7 +117,8 @@
     "accent-70": {"value": "rgba(255, 196, 106, 0.7)", "type": "color", "source": "measured raw/measurements.md#upgrade-button (pressed), #plus-card-button (hover)"},
     "cream": {"value": "#fff6e9", "type": "color", "source": "measured raw/measurements.md#plus-card"},
     "start": {"value": "#ffe9dc", "type": "color", "source": "measured raw/measurements.md#upgrade-button (gradient start)"},
-    "end": {"value": "#ffeecd", "type": "color", "source": "measured raw/measurements.md#upgrade-button (gradient end)"}
+    "end": {"value": "#ffeecd", "type": "color", "source": "measured raw/measurements.md#upgrade-button (gradient end)"},
+    "plan": {"value": "#d38906", "type": "color", "source": "measured raw/measurements.md#plan-card-selected (3px border), #plan-tag (background)"}
    },
    "indigo": {
     "tint": {"value": "rgba(48, 46, 183, 0.06)", "type": "color", "source": "measured raw/measurements.md#question-box"},
@@ -179,7 +180,8 @@
     "delete-ink": {"value": "#141820", "type": "color", "source": "css .wap-atlas-drawer_deleteTitle (declared)"},
     "delete-desc": {"value": "#6d7482", "type": "color", "source": "css .wap-atlas-drawer_deleteDesc (declared)"},
     "delete-cancel": {"value": "#f3f4f7", "type": "color", "source": "css .wap-atlas-drawer_cancelDeleteBtn (declared)"},
-    "delete-confirm": {"value": "#ff4d4f", "type": "color", "source": "css .wap-atlas-drawer_confirmDeleteBtn (declared)"}
+    "delete-confirm": {"value": "#ff4d4f", "type": "color", "source": "css .wap-atlas-drawer_confirmDeleteBtn (declared)"},
+    "ink-strong": {"value": "#111827", "type": "color", "source": "measured raw/measurements.md#generate-video-button, #video-settings (text)"}
    },
    "lesson-math": {
     "track": {"value": "#edeade", "type": "color", "source": "measured raw/measurements.md#progress-bar (track and dots)"},
@@ -273,7 +275,7 @@
    "caption-strong": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 700, "fontSize": "12px", "lineHeight": "16.8px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#lesson-card-category"},
    "chip-label": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 400, "fontSize": "12px", "lineHeight": "18px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#subject-chip (name), #breadcrumb"},
    "atlas-label": {"value": {"fontFamily": "{fontFamily.rubik}", "fontWeight": 600, "fontSize": "12px", "lineHeight": "20px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#share-button, #generate-video-button"},
-   "code": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 400, "fontSize": "13.6px", "lineHeight": "19.72px", "letterSpacing": "0px"}, "type": "typography", "source": "css .highlight pre, pre (font-size 85%, line-height 1.45) and .md-container code (font-family inherit): Gauth's markdown styles for the tutor's answers; 13.6px and 19.72px derived from the 16px body; declared, not seen painted", "description": "Code in Gauth keeps the text face: inline code is the body font on a grey fill (palette.ink.code-fill), a code block 85% size on palette.slate.code-block at radius 16"},
+   "code": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 400, "fontSize": "16px", "lineHeight": "24px", "letterSpacing": "0px"}, "type": "typography", "source": "css .md-container code:not(pre > code) (font-family inherit, no size or line height of its own; raw/foundations.json declaredRules): inline code keeps the surrounding text's style, shown here at body size; declared, not seen painted", "description": "Inline code: the surrounding text on a grey fill (component.code.inline), padding 0 4px"},
    "label-system": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 500, "fontSize": "14px", "lineHeight": "21px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#pill-tab, #plan-table-cell, #signup-link"},
    "menu": {"value": {"fontFamily": "{fontFamily.sf-pro}", "fontWeight": 400, "fontSize": "14px", "lineHeight": "21px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#menu-item, #settings-popover, #speed-menu, #switch"},
    "dialog-display": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 600, "fontSize": "36px", "lineHeight": "46.8px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#signin-dialog (\"Welcome\"), #live-tutor-band"},
@@ -288,7 +290,9 @@
    "atlas-card-title": {"value": {"fontFamily": "{fontFamily.rubik}", "fontWeight": 600, "fontSize": "15px", "lineHeight": "18px", "letterSpacing": "0.45px"}, "type": "typography", "source": "measured raw/measurements.md#story-card, #new-badge"},
    "pagination": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 600, "fontSize": "16px", "lineHeight": "32px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#pagination-item-active"},
    "table-heading": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 500, "fontSize": "26px", "lineHeight": "34px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#plan-table-header (\"Features by plan\")"},
-   "button-xl": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 600, "fontSize": "18px", "lineHeight": "48px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#accent-button, #signin-submit"}
+   "button-xl": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 600, "fontSize": "18px", "lineHeight": "48px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#accent-button, #signin-submit"},
+   "code-block": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 400, "fontSize": "13.6px", "lineHeight": "22.44px", "letterSpacing": "0px"}, "type": "typography", "source": "css .highlight pre, pre (font-size 85%) and pre code, pre tt (line-height 1.65) (raw/foundations.json declaredRules); 13.6px and 22.44px derived from the 16px body; declared, not seen painted", "description": "Code blocks: 85% of the body size on component.code.block, padding 16px, radius 4 inside .md-container (16 elsewhere)"},
+   "atlas-rail": {"value": {"fontFamily": "{fontFamily.rubik}", "fontWeight": 700, "fontSize": "12px", "lineHeight": "13.2px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#rail-item, #view-rail (\"View\", \"Details\")"}
   },
   "spacing": {
    "base": {"value": "4px", "type": "dimension", "source": "derived raw/components-computed.json: 643 of 1,020 measured paddings and gaps (63%) are multiples of 4px; 8, 12 and 16 are the most used", "description": "The base unit. Gauth declares no spacing scale; this is the grid its measured paddings and gaps fall on. The values off it are under spacing-offgrid."},
@@ -639,8 +643,8 @@
     "helper-text": {"value": "{palette.ink.500}", "type": "color", "source": "measured raw/measurements.md#field-helper"}
    },
    "code": {
-    "inline": {"value": "{palette.ink.code-fill}", "type": "color", "source": "css .md-container code (declared)"},
-    "block": {"value": "{palette.slate.code-block}", "type": "color", "source": "css pre (declared)"}
+    "inline": {"value": "{palette.ink.code-fill}", "type": "color", "source": "css .md-container code:not(pre > code), .markdown-body code (declared; raw/foundations.json declaredRules)"},
+    "block": {"value": "{palette.slate.code-block}", "type": "color", "source": "css .highlight pre, pre (declared; raw/foundations.json declaredRules); .md-container pre sets radius 4"}
    },
    "delete-dialog": {
     "scrim": {"value": "{palette.atlas.delete-scrim}", "type": "color", "source": "css .wap-atlas-drawer_deleteMask (declared)"},

@@ -320,7 +320,7 @@ def props(v):
     o["background"] = colour(s["backgroundColor"], role="fill")
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
-        o["image"] = colour(img)[:200]
+        o["image"] = colour(img[:200])
     if s["boxShadow"] != "none":
         sh = shadow(s["boxShadow"])
         if sh is None:
@@ -341,8 +341,8 @@ def props(v):
             if anc:
                 o["outline"] = f"on its parent: {colour(anc['outline'], role='line')}"
     t = v.get("textStyle")
-    if not t and (v.get("icon") or not v.get("text")):
-        pass  # an icon-only control or an empty box draws no text, so it has no text style to record
+    if not t and not v.get("text"):
+        pass  # an element with no text and no label draws no text, so it has no text style to record
     elif t:
         o["text"] = f"{typeset(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('letterSpacing', 'normal'))}, {colour(t['color'], role='text')}"
     else:
@@ -422,7 +422,7 @@ def child_layers(c):
         if p.get("bg"):
             bits.append("background " + colour(p["bg"], role="fill"))
         if p.get("bgImage"):
-            bits.append("image " + colour(p["bgImage"])[:90])
+            bits.append("image " + colour(p["bgImage"][:90]))
         if p.get("border"):
             bw, _, bc = p["border"].split(" | ")[0][2:].partition(" solid ")
             bits.append("border " + (f"{dim_named(bw, ['borderWidth.hairline', 'borderWidth.strong', 'borderWidth.choice', 'borderWidth.indicator'])} solid {colour(bc, role='line')}" if bc else colour(p["border"].split(" | ")[0][2:], role="line")))
