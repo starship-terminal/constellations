@@ -5,62 +5,97 @@ visual system well enough to build a screen that matches it. It stands alone:
 it holds its own evidence and the tools that rebuild it, and nothing in it
 points at a path outside the folder.
 
-Every package, whatever its shape, has the same four things at its top level,
-so an agent can open any package without knowing which shape it is:
+## Layout
 
-| Path | What it is |
+Every package aims at the same layout, so an agent can open any of them
+without learning a new one. `make check` fails when a package lacks one of the
+four parts marked required. The rest are standard: the package's
+[Health](#health) section names each standard part it lacks, and the root
+README's catalog table shows the same gaps beside every package.
+
+| Path | Required | What it is |
+|---|---|---|
+| `README.md` | yes | The entry file. Read it in full before using anything else. [The README](#the-readme) lists its sections |
+| `DESIGN.md` | yes | A generated, read-only copy of the tokens in Google's DESIGN.md format, for tools that read that format. Never edit it by hand; see [DESIGN.md](#designmd) below |
+| `tokens.json` | | W3C DTCG tokens in Tokens Studio's multi-set layout: a `core` set of scales, a `light` and usually a `dark` semantic set, and `$themes`. Every token carries `$extensions.source`. [catalog.json](../catalog.json) names the tokens file for each package, so a package that keeps it elsewhere still works |
+| `style-guide.html` | yes | One page that renders every token and the main components with the real values, with a theme toggle |
+| `components.md` | | The component inventory: one entry per component with crops of the real product and its values as token names, the shared values, and a Gaps section |
+| `patterns.md` | | Page-level patterns: how components combine into the product's main screens, with the screenshots that show them |
+| `components/` | | `crops/`, element screenshots named `{component}-{state}.png` at 2x |
+| `icons/` | | The product's icons as SVG, with an `INDEX.tsv` naming each by role |
+| `screenshots/` | | Whole-page captures named `{page}-{theme}-{state}.png` |
+| `raw/` | | The unprocessed readings every token traces back to |
+| `tools/` | yes | Every script that rebuilds a generated file in the package, and the capture scripts |
+
+A package may add files for what is unusual about its product, such as
+researchrabbit's `graph.md`. Every top-level file and folder, standard or
+not, gets a row in the README's file table; Health lists any that do not.
+
+## The README
+
+The README is the one file an agent must read, so every package's README has
+the same outline, in this order:
+
+| Section | What it holds |
 |---|---|
-| `README.md` | The entry file. Read it in full before using anything else |
-| `style-guide.html` | One page that renders the tokens and components with the real values |
-| `tools/` | Every script that rebuilds a generated file in the package |
-| `DESIGN.md` | A generated, read-only copy of the tokens in Google's DESIGN.md format, for tools that read that format. Never edit it by hand; see [DESIGN.md](#designmd) below |
+| Title and intro | What the product is, which surfaces were captured, when, from which account, in which themes and widths |
+| File table | One row per top-level file and folder, linking it, with what it holds and how many |
+| `## Health` | Generated. See [Health](#health) |
+| `## How the values were read` | Where every value came from: which stylesheets, which pages, which tools, and what was changed or neutralised before reading |
+| `## What to distrust` | Values that look measured but are not, readings that came out wrong, and what the images no longer show |
+| `## Fonts` | The families, their licences, and the fallbacks the tokens use |
+| `## Coverage` | Which pages and states were captured and which were not |
+| `## Do and don't` | Rules for using the style, each linking the screenshot or crop that shows it |
+| `## Rebuild` | The commands that regenerate the package's files from its readings |
 
-The tokens file is `tokens.json` in the reference shape and under `tokens/` in
-the audit shape; [catalog.json](../catalog.json) names it for each package.
-`make check` fails if any package is missing one of these.
+A section about one product (its surfaces compared with the app it was
+captured for, a layout worth calling out) goes after these.
 
-Below that there are two shapes, because the packages came from two projects.
-New packages use the reference shape.
+## Health
 
-## The reference shape
+Each package's README opens with a `## Health` section, right after the file
+table. [tools/health.py](../tools/health.py) writes it from the newest
+scorecard snapshot in [scorecard/audits/](../scorecard/audits) and the
+package's folder, between the `health:start` and `health:end` markers. It
+says:
 
-Used by duolingo, brilliant, notebooklm, coursera, gauth, researchrabbit,
-manus, chatgpt, claude and hevy.
+- how many scorecard criteria the package meets, partly meets and misses,
+  leaving out the ones a capture cannot meet (C5, V1 and V2);
+- every criterion it partly meets or misses, missing first, with the
+  reviewer's evidence, which is the to-do list for its next capture;
+- when its grades were last reviewed and when it was captured, flagging a
+  capture newer than the review as a re-review due;
+- the standard parts of the [layout](#layout) it lacks, and any top-level
+  entry the file table does not list.
 
-| Path | What it is |
-|---|---|
-| `README.md` | The entry file. A table of the files, how the values were read (where, when, which account, which themes and widths), what to distrust, the fonts, and the rebuild commands |
-| `tokens.json` | W3C DTCG tokens in Tokens Studio's multi-set layout: a `core` set (palette, type, spacing, radii, borders, shadows, opacity, motion, breakpoints, layout, z-index), a `light` and usually a `dark` semantic set, and `$themes`. Every token carries `$extensions.source`; a value DTCG cannot hold is listed under the set's `$extensions.notTokenised` |
-| `style-guide.html` | One self-contained page, generated from `tokens.json`, that renders every token and the main components with the real values and a theme toggle. Open it straight from disk |
-| `components.md` | The component inventory: one entry per component with crops of the real product, the shared values (hover washes, radii, focus ring, motion), the icon index, and a Gaps section saying what was not captured |
-| `components/` | `crops/` (element screenshots named `{component}-{state}.png` at 2x). Duolingo also has `core.md` and `product.md` with JSON twins |
-| `icons/` | The product's icons as SVG, with an `INDEX.tsv` naming each by role |
-| `screenshots/` | Whole-page captures named `{page}-{theme}-{state}.png`, phone widths prefixed or suffixed `mobile`. 2x, stored as sRGB 256-colour PNGs |
-| `raw/` | The unprocessed readings every token traces back to: custom properties by selector (`css-vars.json`), per-component computed styles (`components-computed.json`, `measurements.md`), measured values the token builder reads (`component-tokens.json`), page geometry (`layout.json`, `pages.md`) |
-| `tools/` | `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `style-guide.template.html`, and `capture/` (the scripts the readings came from) |
+`make grade` rewrites every Health section after it writes a snapshot, and
+`make check` fails when one differs from a fresh write, so a README never
+shows grades the scorecard has moved past. Never edit the section by hand:
+change the package or its grades, then run `make grade`. It never reaches the
+package's `DESIGN.md`, which copies README sections by heading and has no
+home for this one. The root README's catalog table comes from the same script
+and the same data.
 
-Some packages add a file for what is unusual about the product:
-researchrabbit's `graph.md` (its citation graph, with `raw/graph-tokens.json`),
-duolingo's `tokens-notes.md`, `style-guide-notes.md` and `icons.md`.
+## Builders
 
-The three builders are deterministic and run from the package folder with
-plain `python3`, so a rebuild that changes nothing proves the outputs still
-match their inputs:
+The packages built in self-learn share three deterministic builders, run
+from the package folder with plain `python3`, so a rebuild that changes
+nothing proves the outputs still match their inputs:
 
 ```bash
 cd systems/claude && python3 tools/build_tokens.py && python3 tools/build_style_guide.py && python3 tools/build_components_md.py && git status --short .
 ```
 
-The earliest packages differ in small ways. Duolingo has no
-`build_tokens.py`: its `tokens.json` came out of the capture dumps, and
-`tokens-notes.md` explains how it is organised and how to import it. Its
-icons are indexed in `icons.md`. Brilliant's icons sit in `icons/app/` and
-`icons/public/` with no `INDEX.tsv`, and NotebookLM has no `icons/` or
-`components/` folder, only `components.md`.
+Duolingo has no `build_tokens.py`: its `tokens.json` came out of the capture
+dumps, and `tokens-notes.md` explains how it is organised. Brilliant's icons
+sit in `icons/app/` and `icons/public/` with no `INDEX.tsv`.
 
-## The audit shape
+## Linear and Polaris
 
-Used by linear and polaris. Same purpose, different files.
+These two came from a work project, with their own builders, and do not yet
+follow the layout: their tokens sit under `tokens/`, their readings under
+`evidence/`, and neither has `components.md`. Their Health sections list the
+gaps. Until they move, this is what they hold:
 
 | Path | What it is |
 |---|---|
@@ -118,18 +153,23 @@ from one of two rules the export cannot satisfy without inventing data:
 
 ## Adding a package
 
-1. Capture into `systems/<slug>/` in the reference shape, following
+1. Capture into `systems/<slug>/` in the [layout](#layout), following
    [CAPTURE.md](CAPTURE.md). Copy the shared kit from
    [tools/kit/](../tools/kit) into the package's `tools/` and adapt the parts
    its README marks.
 2. Label every value ([EVIDENCE.md](EVIDENCE.md)) and fill the Gaps section.
-3. Run the three builders and open `style-guide.html` in both themes.
-4. Add an entry to [catalog.json](../catalog.json) and a row to the catalog
-   table in [README.md](https://github.com/c-wenlong/design-systems/blob/main/README.md). The entry needs `tags` and a `preview`:
+3. Run the three builders and open `style-guide.html` in both themes. Write
+   the README in the [outline above](#the-readme), with a row in its file
+   table for every top-level entry.
+4. Add an entry to [catalog.json](../catalog.json). The entry needs `tags` and a `preview`:
    a cover screenshot and the token paths for its swatches (`page`,
    `surface`, `text`, `muted`, `accent`, `border` per theme) and fonts. Copy
    an existing entry, then run `make design-md` and `make check`, which
    resolves every token path, fails on one that does not exist, and fails if
    the package's `DESIGN.md` is missing or stale.
-5. Keep anything private out of the folder: account names, chat titles,
+5. Review the package against [scorecard/criteria.json](../scorecard/criteria.json)
+   and merge the grades with `python3 tools/grade.py --write --review
+   <slug>=<grades.json>`. That writes its Health section and its row in the
+   root README's catalog table.
+6. Keep anything private out of the folder: account names, chat titles,
    signed URLs, raw DOM copies ([RIGHTS.md](RIGHTS.md)).

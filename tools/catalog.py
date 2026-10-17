@@ -44,6 +44,10 @@ THUMB_WIDTH = 640
 
 # Every package exposes these at its top level, whatever shape it has.
 REQUIRED_FILES = ("README.md", "style-guide.html", "tools")
+# The standard layout (docs/PACKAGE.md#layout). Each package's generated Health section lists
+# the parts it lacks and the top-level entries its README's file table does not describe.
+STANDARD_PARTS = ("README.md", "DESIGN.md", "tokens.json", "style-guide.html", "components.md",
+                  "patterns.md", "components/", "icons/", "screenshots/", "raw/", "tools/")
 REQUIRED_FIELDS = ("slug", "name", "url", "category", "goodFor", "shape", "captured",
                    "themes", "entry", "tokens", "styleGuide", "preview", "tags")
 
@@ -1021,6 +1025,44 @@ def check() -> list[str]:
                 problems.append(f"{slug}: font token {path} does not resolve")
         problems += design_md_problems(s)
     return problems
+
+
+def file_table(readme: str) -> list[str]:
+    """The rows of a README's file table: the first table whose header starts with a
+    `File` or `Path` column. Other tables that happen to mention a path do not count."""
+    lines = readme.splitlines()
+    for i, line in enumerate(lines):
+        if re.match(r"\|\s*(files?|paths?)\s*\|", line, re.I):
+            rows = []
+            for row in lines[i + 1:]:
+                if not row.startswith("|"):
+                    break
+                rows.append(row)
+            return rows
+    return []
+
+
+def layout_gaps(slug: str) -> tuple[list[str], list[str]]:
+    """(the STANDARD_PARTS a package lacks, its top-level entries that no row of the
+    README's file table links or names). A folder is written with a trailing slash."""
+    folder = ROOT / "systems" / slug
+    if not folder.is_dir():
+        return list(STANDARD_PARTS), []
+    missing = []
+    for part in STANDARD_PARTS:
+        path = folder / part.rstrip("/")
+        if not path.exists() or path.is_dir() != part.endswith("/"):
+            missing.append(part)
+    readme = folder / "README.md"
+    rows = file_table(readme.read_text()) if readme.is_file() else []
+    unlisted = []
+    for entry in sorted(folder.iterdir()):
+        if entry.name.startswith(".") or entry.name == "README.md":
+            continue
+        named = re.compile(r"(\]\((?:\./)?|`)" + re.escape(entry.name) + r"[/)`#]")
+        if not any(named.search(row) for row in rows):
+            unlisted.append(entry.name + ("/" if entry.is_dir() else ""))
+    return missing, unlisted
 
 
 def design_md_problems(system: dict) -> list[str]:

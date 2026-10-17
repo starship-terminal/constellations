@@ -74,11 +74,17 @@ illustrations or brand colours into something that ships
   [.gitattributes](.gitattributes)). Run `git lfs install` once per
   machine. Never commit a binary type that is not covered; add the pattern
   to `.gitattributes` first.
-- **New packages use the reference shape** and label every value
-  ([docs/EVIDENCE.md](docs/EVIDENCE.md)). Add each one to
-  [catalog.json](catalog.json), with `tags` and a `preview` block, and to
-  the table in [README.md](README.md) in the same commit
-  ([docs/PACKAGE.md](docs/PACKAGE.md) has the steps).
+- **New packages follow the layout** in
+  [docs/PACKAGE.md](docs/PACKAGE.md#layout), with the README in its outline,
+  and label every value ([docs/EVIDENCE.md](docs/EVIDENCE.md)). Add each one
+  to [catalog.json](catalog.json), with `tags` and a `preview` block, in the
+  same commit ([docs/PACKAGE.md](docs/PACKAGE.md) has the steps).
+- **Health is generated.** Every package README's `## Health` section and the
+  catalog table in [README.md](README.md) are written by `make grade`
+  ([tools/health.py](tools/health.py)) from the newest scorecard snapshot and
+  the package's folder. Never edit them by hand; `make check` fails on a stale
+  one. Read a package's Health section before recapturing it: it is the list
+  of what the last review found open.
 - **`DESIGN.md` is generated.** Every package has one, written by
   `make design-md` from its tokens file and `README.md` in Google's DESIGN.md
   format for tools that read it. Never hand-edit it and never take a value
@@ -130,8 +136,9 @@ make check
 
 It confirms every folder under `systems/` has a catalog entry, every entry's
 files exist, every package has `README.md`, `style-guide.html` and `tools/`,
-every `preview` token path resolves, and every package's `DESIGN.md` matches a
-fresh generation.
+every `preview` token path resolves, every package's `DESIGN.md` matches a
+fresh generation, the scorecard's scripted grades are current, and every
+README's Health section matches the scorecard.
 
 ```bash
 git lfs status

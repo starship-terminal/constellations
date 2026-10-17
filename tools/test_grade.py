@@ -188,6 +188,20 @@ class RefreshAndReviewTest(unittest.TestCase):
             with self.assertRaises(SystemExit):
                 self.make({"x": {cid: {"grade": "meets", "evidence": "x"}}})
 
+    def test_a_first_review_adds_a_package_and_an_unknown_slug_is_refused(self):
+        new = {**self.SOURCE, "slug": "y", "name": "Y"}
+        with mock.patch.object(grade, "scripted", return_value={"F15": {"grade": "meets", "evidence": "s"}}):
+            out = grade.snapshot(self.CRITERIA, self.BASE, [self.SOURCE, new], "2026-10-17",
+                                 {"productivity": "Productivity"}, {"y": {"C1": {"grade": "partly", "evidence": "9/19"}}})
+            with self.assertRaises(SystemExit) as e:
+                grade.snapshot(self.CRITERIA, self.BASE, [self.SOURCE], "2026-10-17", {},
+                               {"z": {"C1": {"grade": "meets", "evidence": "x"}}})
+        y = next(s for s in out["systems"] if s["slug"] == "y")
+        self.assertEqual((y["name"], y["category"], y["reviewed"]), ("Y", "Productivity", "2026-10-17"))
+        self.assertEqual(set(y["grades"]), {"F15", "C1", "V1"})
+        self.assertEqual(y["grades"]["V1"]["grade"], "na")
+        self.assertIn("not in catalog.json", str(e.exception))
+
     def test_an_incomplete_review_is_refused(self):
         criteria = {**self.CRITERIA, "criteria": self.CRITERIA["criteria"] + [
             {"id": "C2", "layer": "Foundations", "title": "States", "doneWhen": "w"}]}
