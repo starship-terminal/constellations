@@ -6,7 +6,7 @@ Every component has one table per theme: a column per state, a row per property.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab), skipped where the element (a radio span of a segmented control) cannot take focus; the rest (`active`, `selected`, `checked`, `open`, `typed`, `enabled`, ...) are other elements or snapshots captured in that state. Light states are prefixed `light`. The 390 wide copies are measured at rest only.
 
-165 components, 692 states (688 measured, 4 skipped, 0 not found).
+169 components, 700 states (696 measured, 4 skipped, 0 not found).
 
 ## Shared values
 
@@ -14,8 +14,8 @@ Tallied over every measured state by the build script.
 
 - **Radius scale** (element radius, times seen): 8px (280), 6px (40), 7px (40), 12px (32), 9999px (26), 4px (14), 20px (12), 5px (12), 2px (12), 10px (10), 14px (6), 16px (4), 5.5px (2).
 - **Transitions**: `box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (140), `outline 0.2s ease` (70), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (32), `background-color, border-color, box-shadow, opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (12), `color, text-decoration-color, box-shadow 0.06s cubic-bezier(0.165, 0.84, 0.44, 1)` (10), `box-shadow 0.06s ease` (8), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)` (8), `transform, translate, scale, rotate 0.06s cubic-bezier(0.4, 0, 0.2, 1)` (4), `opacity, scale, filter 0.2s cubic-bezier(0.165, 0.84, 0.44, 1)` (4), `background-color 0.3s cubic-bezier(0.32, 0.72, 0, 1)` (2).
-- **Font families**: anthropic-sans (884), Anthropicons-Variable (272), anthropic-serif (50), anthropic-mono (6).
-- **Type sizes** (size/line-height weight of the first text): 20px/20px 433.25 (164), 14px/20px 400 (152), 14px/20px 500 (80), 16px/16px 533.25 (74), 14px/21px 400 (46), 16px/16px 700 (34), 15px/20px 400 (26), 13px/17px 400 (16), 13px/17px 500 (10), 24px/32px 500 (8), 15px/22px 500 (8), 13px/16px 400 (6), 16px/24px 400 (6), 12px/17px 400 (6).
+- **Font families**: anthropic-sans (894), Anthropicons-Variable (272), anthropic-serif (50), anthropic-mono (6).
+- **Type sizes** (size/line-height weight of the first text): 20px/20px 433.25 (164), 14px/20px 400 (156), 14px/20px 500 (82), 16px/16px 533.25 (74), 14px/21px 400 (46), 16px/16px 700 (34), 15px/20px 400 (28), 13px/17px 400 (16), 13px/17px 500 (10), 24px/32px 500 (8), 15px/22px 500 (8), 13px/16px 400 (6), 16px/24px 400 (6), 12px/17px 400 (6).
 - **Shadows**: `#151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px` (67); `#fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px` (67); `#151515 0px 0px 0px 1px inset` (21); `#fcfcfb 0px 0px 0px 1px inset` (21); `#0b0b0b @ 0.1 0px 0px 0px 1px inset, #000000 @ 0.05 0px 1px 2px 0px` (20); `#000000 @ 0.05 0px 1px 2px 0px` (15).
 - **Focus-visible, dark** (57 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #151515 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px (28); nothing painted on the element (12); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #184f95 @ 0.6 0px 0px 6px 1px (6); outline 2px solid #5598e7 offset 2px (4); outline 2px solid #5598e7 @ 0 offset 2px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #20201f 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #8e2626 @ 0.6 0px 0px 6px 1px (2); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.075 0px 4px 20px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset, #ffffff @ 0.2 0px 0px 0px 0px (1); outline 2px solid #000000 @ 0 offset 2px (1).
 - **Focus-visible, light** (57 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px (28); nothing painted on the element (12); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px (6); outline 2px solid #256abf offset 2px (4); outline 2px solid #256abf @ 0 offset 2px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 1px inset, #d03b3b 0px 0px 0px 1px, #fad6d6 0px 0px 6px 1px (2); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.075 0px 4px 20px 0px, #0b0b0b @ 0.2 0px 0px 0px 0px inset, #0b0b0b @ 0.2 0px 0px 0px 1px (1); outline 2px solid #000000 @ 0 offset 2px (1).
@@ -8043,6 +8043,52 @@ Light theme.
 
 Crops: `banner-info-icon-default.png`, `banner-info-icon-light.png`.
 
+#### banner-info-text
+
+Information banner message. The banner text read on its own (the banner entry above reads its glyph first).
+
+Copy: `settings-dark-capabilities`. Finder: `() => Q('[data-cds=Banner] .min-w-0 > div')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 652 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #f0efec |
+| Transition | none |
+| Painted layers | a.cds-reset.cds-text-link.cds-text-link-underline 647.2x38.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px |
+| Ancestor paint | 2 up div.flex.items-start.gap-xs bg #151515 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #ffffff @ 0.1 0px 0px 0px 0px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 654 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #0b0b0b |
+| Transition | none |
+| Painted layers | a.cds-reset.cds-text-link.cds-text-link-underline 651.9x38.0 r 2px outline 2px solid #256abf @ 0 offset 2px |
+| Ancestor paint | 2 up div.flex.items-start.gap-xs bg #fcfcfb shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #0b0b0b @ 0.1 0px 0px 0px 0px inset, #0b0b0b @ 0.1 0px 0px 0px 1px |
+| How | at rest |
+
+Crops: `banner-info-text-default.png`, `banner-info-text-light.png`.
+
 #### toast
 
 Toast (warning). The toast raised after opening a chat that no longer exists: bottom right, radius card, surface-3 under a bg.warning layer, a 1px warning ring (shadow-ring-warning), text.warning, a 20px warning glyph, a medium-weight message and a 16px Dismiss button. Toasts stack upward 14px apart and shrink 4% per step.
@@ -8092,6 +8138,52 @@ Light theme.
 | How | at rest |
 
 Crops: `toast-default.png`, `toast-light.png`.
+
+#### toast-text
+
+Toast message. The toast message read on its own (the toast entry above reads its glyph first).
+
+Copy: `home-dark-toast`. Finder: `() => Q('[data-cds=Toast] h2')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 268 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 500 |
+| Letter spacing | normal |
+| Colour | #db9300 |
+| Text node | span: anthropic-sans 14px/20px 500, #db9300 |
+| Transition | none |
+| Ancestor paint | 3 up div.rounded-card.bg-surface-3.shadow-panel bg #20201f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #512e00 0px 0px 0px 1px inset |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 268 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 500 |
+| Letter spacing | normal |
+| Colour | #734500 |
+| Text node | span: anthropic-sans 14px/20px 500, #734500 |
+| Transition | none |
+| Ancestor paint | 3 up div.rounded-card.bg-surface-3.shadow-panel bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #eda100 0px 0px 0px 1px inset |
+| How | at rest |
+
+Crops: `toast-text-default.png`, `toast-text-light.png`.
 
 #### toast-dismiss
 
@@ -8290,6 +8382,94 @@ Light theme.
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab (on the field inside) |
 
 Crops: `onboarding-checkbox-default.png`, `onboarding-checkbox-hover.png`, `onboarding-checkbox-focus-visible.png`, `onboarding-checkbox-light.png`, `onboarding-checkbox-light-hover.png`, `onboarding-checkbox-light-focus-visible.png`.
+
+#### onboarding-checkbox-label
+
+Consent checkbox label. The label text read on its own (the checkbox entries read the check glyph first), with its inline TextLinks.
+
+Copy: `onboarding-dark`. Finder: `() => [...document.querySelectorAll('form label span')].find((e) => e.innerText.startsWith('I agree'))`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 378 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #c3c2b7 |
+| Transition | none |
+| Cursor | default |
+| Painted layers | a.cds-reset.cds-text-link.cds-text-link-underline 110.4x18.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 357.6x38.0 r 2px outline 2px solid #5598e7 @ 0 offset 2px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 378 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #52514e |
+| Transition | none |
+| Cursor | default |
+| Painted layers | a.cds-reset.cds-text-link.cds-text-link-underline 111.2x18.0 r 2px outline 2px solid #256abf @ 0 offset 2px; a.cds-reset.cds-text-link.cds-text-link-underline 360.2x38.0 r 2px outline 2px solid #256abf @ 0 offset 2px |
+| How | at rest |
+
+Crops: `onboarding-checkbox-label-default.png`, `onboarding-checkbox-label-light.png`.
+
+#### onboarding-subtitle
+
+Onboarding secondary line.
+
+Copy: `onboarding-dark`. Finder: `() => Q('header p')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 448 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 15px/20px 400 |
+| Letter spacing | normal |
+| Colour | #c3c2b7 |
+| Transition | none |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 448 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | anthropic-sans 15px/20px 400 |
+| Letter spacing | normal |
+| Colour | #52514e |
+| Transition | none |
+| How | at rest |
+
+Crops: `onboarding-subtitle-default.png`, `onboarding-subtitle-light.png`.
 
 #### onboarding-button
 

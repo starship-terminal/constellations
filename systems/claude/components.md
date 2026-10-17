@@ -2,14 +2,14 @@
 
 The discovery list of every page and state captured, then one entry per component with crops of the real product, the shared values, the icon index and the Gaps. Captured from claude.ai on 2026-10-04 and refreshed on 2026-10-17, signed in, as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account: a line was typed into the composer and deleted, menus and dialogs were opened and closed (the delete confirmation with Escape, Create a project with Cancel), a checkbox was ticked in Select mode and the mode left, and the sidebar was shown for the captures and hidden again.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (165 components, 692 states). The page layouts are described in [raw/pages.md](raw/pages.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (169 components, 700 states). The page layouts are described in [raw/pages.md](raw/pages.md).
 
 How to read an entry:
 
-- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A height is named by the control-height, size or layout token that holds it; a width only when a layout width token holds it or the box is square, and otherwise it is the instance's content width, written raw and not counted below. A colour with zero alpha reads `transparent`. A value no token holds is written raw: a few line heights (14/21), odd paddings and some drop shadows inside components. Of the 2694 values written in the state rows and child-layer lines below (zeros and content widths aside), 2418 (90%) name a token.
+- Values are written as tokens: a colour, shadow, radius, padding, type style, icon size, opacity, duration or easing reads as the token in [tokens.json](tokens.json) that holds it in that theme, then the measured value in brackets, for example `` `text.primary` (#f0efec) ``. Where several tokens hold the value, the one the element's own utility classes name wins (`bg-fill-danger` is `fill.danger`), then a role that fits the property (text and on for text, fill and surface for backgrounds, border for edges). A focus ring drawn on another surface reads `` `shadow.focus on this surface` ``, and a hairline ring names its colour as a border. A height is named by the control-height, size or layout token that holds it; a width only when a layout width token holds it or the box is square, and otherwise it is the instance's content width, written raw and not counted below. A colour with zero alpha reads `transparent`. A value no token holds is written raw: a few line heights (14/21), odd paddings and some drop shadows inside components. Of the 2721 values written in the state rows and child-layer lines below (zeros and content widths aside), 2442 (90%) name a token.
 - Text is written as its typography token, then family size/line-height weight in brackets, then its colour, for example `` `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) ``, and is read from the first text node inside the component. A glyph from the icon font reads `Anthropicons` with its icon size step and weight.
 - Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do: a cds Button paints its fill on an inner span, so its hover shows there.
-- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (674 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (682 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -2357,6 +2357,19 @@ Tokens named in its classes: `--cds-banner-neutral-ring`, `--cds-banner-neutral-
 | default | size `density.h-control-nested--sm` (20) x `density.h-control-nested--sm` (20); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#f0efec) |
 | light | size `density.h-control-nested--sm` (20) x `density.h-control-nested--sm` (20); background transparent; text Anthropicons `density.icon` (20px, weight 433.25), `text.primary` (#0b0b0b) |
 
+#### Information banner message
+
+<a id="banner-info-text"></a>`banner-info-text`, on settings-dark-capabilities. The banner text read on its own (the banner entry above reads its glyph first).
+
+<img src="components/crops/banner-info-text-default.png" alt="Information banner message, default" height="40"> <img src="components/crops/banner-info-text-light.png" alt="Information banner message, light" height="40"> 
+
+| State | Values |
+|---|---|
+| default | size 652 x `density.h-control--lg` (40); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#f0efec) |
+| light | size 654 x `density.h-control--lg` (40); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.primary` (#0b0b0b) |
+
+Child layers: a 647.2x38 radius 2px
+
 #### Toast (warning)
 
 <a id="toast"></a>`toast`, on home-dark-toast. The toast raised after opening a chat that no longer exists: bottom right, radius card, surface-3 under a bg.warning layer, a 1px warning ring (shadow-ring-warning), text.warning, a 20px warning glyph, a medium-weight message and a 16px Dismiss button. Toasts stack upward 14px apart and shrink 4% per step.
@@ -2365,10 +2378,21 @@ Tokens named in its classes: `--cds-banner-neutral-ring`, `--cds-banner-neutral-
 
 | State | Values |
 |---|---|
-| default | size 360 x 64; radius `radius.card` (12px); background `surface.3` (#20201f); image linear-gradient(0deg, `bg.tint-yellow-opaque` (#311a00), `bg.tint-yellow-opaque` (#311a00)); shadow `borderWidth.default` (1px) ring inset `border.warning` (#512e00); text Anthropicons `density.icon` (20px, weight 433.25), `text.warning` (#db9300) |
-| light | size 360 x 64; radius `radius.card` (12px); background `surface.3` (#ffffff); image linear-gradient(0deg, `bg.tint-yellow-opaque` (#f9dca4), `bg.tint-yellow-opaque` (#f9dca4)); shadow `borderWidth.default` (1px) ring inset `border.warning` (#eda100); text Anthropicons `density.icon` (20px, weight 433.25), `text.warning` (#734500) |
+| default | size 360 x 64; radius `radius.card` (12px); background `surface.3` (#20201f); image linear-gradient(0deg, `bg.warning` (#311a00), `bg.warning` (#311a00)); shadow `borderWidth.default` (1px) ring inset `border.warning` (#512e00); text Anthropicons `density.icon` (20px, weight 433.25), `text.warning` (#db9300) |
+| light | size 360 x 64; radius `radius.card` (12px); background `surface.3` (#ffffff); image linear-gradient(0deg, `bg.warning` (#f9dca4), `bg.warning` (#f9dca4)); shadow `borderWidth.default` (1px) ring inset `border.warning` (#eda100); text Anthropicons `density.icon` (20px, weight 433.25), `text.warning` (#734500) |
 
 Tokens named in its classes: `--cds-bg-warning`.
+
+#### Toast message
+
+<a id="toast-text"></a>`toast-text`, on home-dark-toast. The toast message read on its own (the toast entry above reads its glyph first).
+
+<img src="components/crops/toast-text-default.png" alt="Toast message, default" height="40"> <img src="components/crops/toast-text-light.png" alt="Toast message, light" height="40"> 
+
+| State | Values |
+|---|---|
+| default | size 268 x `density.h-control--lg` (40); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.warning` (#db9300) |
+| light | size 268 x `density.h-control--lg` (40); background transparent; text `typography.body-medium` (Anthropic Sans 14/20 500), `text.warning` (#734500) |
 
 #### Toast dismiss button
 
@@ -2378,10 +2402,10 @@ Tokens named in its classes: `--cds-bg-warning`.
 
 | State | Values |
 |---|---|
-| default | size `density.h-control--xs` (24) x `density.h-control--xs` (24); padding `space.1` (4px); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.tint-yellow` (#db9300); transition color and 22 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| default | size `density.h-control--xs` (24) x `density.h-control--xs` (24); padding `space.1` (4px); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.warning` (#db9300); transition color and 22 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
 | hover | background `fill.ghost-hover` (rgba(255, 255, 255, 0.07)) |
 | focus-visible | shadow `shadow.focus on this surface` (#20201f 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, rgba(24, 79, 149, 0.6) 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
-| light | size `density.h-control--xs` (24) x `density.h-control--xs` (24); padding `space.1` (4px); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.tint-yellow` (#734500); transition color and 22 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
+| light | size `density.h-control--xs` (24) x `density.h-control--xs` (24); padding `space.1` (4px); radius `radius.row` (8px); background transparent; text Anthropicons `density.icon--sm` (16px, weight 533.25), `text.warning` (#734500); transition color and 22 more `duration.fast` (0.06s) `easing.tailwind-default` (cubic-bezier(0.4, 0, 0.2, 1)) |
 | light-hover | background `fill.ghost-hover` (rgba(11, 11, 11, 0.05)) |
 | light-focus-visible | shadow `shadow.focus on this surface` (#ffffff 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px); transition outline `duration.base` (0.2s) ease |
 
@@ -2425,6 +2449,30 @@ Tokens named in its classes: `--cds-checkbox`, `--cds-checkbox-radius`, `--cds-c
 Child layers: span 20x20 border `borderWidth.default` (1px) solid `border.strong` (rgba(255, 255, 255, 0.2)) radius 5px; input 1x1; a 110.4x18 radius 2px
 
 Tokens named in its classes: `--cds-checkbox`, `--cds-checkbox-radius`.
+
+#### Consent checkbox label
+
+<a id="onboarding-checkbox-label"></a>`onboarding-checkbox-label`, on onboarding-dark. The label text read on its own (the checkbox entries read the check glyph first), with its inline TextLinks.
+
+<img src="components/crops/onboarding-checkbox-label-default.png" alt="Consent checkbox label, default" height="40"> <img src="components/crops/onboarding-checkbox-label-light.png" alt="Consent checkbox label, light" height="40"> 
+
+| State | Values |
+|---|---|
+| default | size 378 x `density.h-control--lg` (40); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.secondary` (#c3c2b7) |
+| light | size 378 x `density.h-control--lg` (40); background transparent; text `typography.body-regular` (Anthropic Sans 14/20 400), `text.secondary` (#52514e) |
+
+Child layers: a 110.4x18 radius 2px; a 357.6x38 radius 2px
+
+#### Onboarding secondary line
+
+<a id="onboarding-subtitle"></a>`onboarding-subtitle`, on onboarding-dark.
+
+<img src="components/crops/onboarding-subtitle-default.png" alt="Onboarding secondary line, default" height="24"> <img src="components/crops/onboarding-subtitle-light.png" alt="Onboarding secondary line, light" height="24"> 
+
+| State | Values |
+|---|---|
+| default | size 448 x `density.h-control-nested--sm` (20); background transparent; text `typography.heading-regular` (Anthropic Sans 15/20 400), `text.secondary` (#c3c2b7) |
+| light | size 448 x `density.h-control-nested--sm` (20); background transparent; text `typography.heading-regular` (Anthropic Sans 15/20 400), `text.secondary` (#52514e) |
 
 #### Create account button
 

@@ -61,7 +61,8 @@ for theme in ("dark", "light"):
     # A role that only points at another role ({text.primary}, {surface.1}: text.info, bg.info, the
     # *-pressed fills) comes after the role it points at, so a value is named by its own role first.
     derived = lambda t: bool(re.fullmatch(r"\{(surface|text|border|fill|bg|on)\.[^{}]+\}", str(t["$value"])))
-    toks = sorted(flat(T[theme]), key=lambda nt: (derived(nt[1]), ORDER_GROUPS.index(nt[0].split(".")[0]) if nt[0].split(".")[0] in ORDER_GROUPS else 99, nt[0]))
+    # and a decorative tint (text.tint-yellow) after the status role that shares its value (text.warning)
+    toks = sorted(flat(T[theme]), key=lambda nt: (derived(nt[1]), ".tint-" in "." + nt[0].split(".", 1)[-1], ORDER_GROUPS.index(nt[0].split(".")[0]) if nt[0].split(".")[0] in ORDER_GROUPS else 99, nt[0]))
     for n, t in toks + list(flat(T["core"])):
         if t["$type"] == "color":
             v = resolve(theme, t["$value"])

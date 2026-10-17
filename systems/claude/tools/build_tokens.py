@@ -659,7 +659,8 @@ for setname, tree in (("light", light), ("dark", dark)):
     put(tree, ["bg", "info"], tok("{surface.1}", "color", "measured: banner-info (cds Banner, role=status, settings-dark-capabilities) background %s; the neutral banner is Claude's information notice, it has no info hue" % bn["style"]["backgroundColor"]))
     put(tree, ["text", "info"], tok("{text.primary}", "color", "measured: banner-info text %s" % bn["style"]["color"]))
     put(tree, ["fill", "info"], tok("{text.primary}", "color", "measured: banner-info-icon, the info glyph drawn in %s (the banner has no solid fill; its mark is the glyph)" % state("banner-info-icon", "default" if setname == "dark" else "light")["style"]["color"]))
-    put(tree, ["border", "info"], tok("{border.default}", "color", "measured: banner-info ring %s (--cds-banner-neutral-ring, falling back to the ring colour)" % bn["style"]["boxShadow"][:60]))
+    ring = [ly.strip() for ly in re.split(r",(?![^(]*\))", bn["style"]["boxShadow"]) if not ly.strip().endswith((" 0px 0px 0px 0px", " 0px 0px 0px 0px inset"))]
+    put(tree, ["border", "info"], tok("{border.default}", "color", "measured: banner-info ring %s (--cds-banner-neutral-ring, falling back to the ring colour)" % ", ".join(ring)))
 
 light["$extensions"] = {"notTokenised": light_skipped}
 dark["$extensions"] = {"notTokenised": dark_skipped}
