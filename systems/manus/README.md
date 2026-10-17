@@ -6,11 +6,11 @@ The earlier references cover learning products (Duolingo, Brilliant, NotebookLM,
 
 | File | What it is |
 |---|---|
-| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (260: font families and weights, the `--ui-*` type scale as sizes, line heights and 14 composite type styles plus seven named type roles, the `--ui-density-*` scale with its Compact override, colour ramps assembled from the palettes, a spacing scale, radii, border widths, the focus ring, sizes, durations, easings, z-index layers, breakpoints, page grids and the measured layout), `light` (704) and `dark` (704): Manus's two palettes, grouped by role (text, icon, background, border, fill, function, button, tab, shadow, gradient, overlay, activity-indicator, illustration, game, accent), plus the checklist roles mapped onto them (`role`), six elevation levels (`elevation`) and one entry per measured component naming the tokens its classes use (`component`), and `$themes`. Every token carries `$extensions.source`; a value DTCG cannot carry is listed under the set's `$extensions.notTokenised` rather than dropped. |
+| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (442: font families and weights, the `--ui-*` type scale as sizes, line heights and 14 composite type styles plus seven named type roles, the `--ui-density-*` scale with its Compact override, colour ramps for every hue assembled from the declared values (a 50 to 950 view and the full list), a 4px spacing scale, opacity steps, icon sizes, control heights, eight measured type roles beyond the seven named ones, radii, border widths, the focus ring, sizes, durations, easings, z-index layers, breakpoints, page grids and the measured layout), `light` (706) and `dark` (712): Manus's two palettes, grouped by role (text, icon, background, border, fill, function, button, tab, shadow, gradient, overlay, activity-indicator, illustration, game, accent), plus the checklist roles mapped onto them (`role`), six elevation levels (`elevation`) and one entry per measured component naming the tokens its classes use (`component`; dark has six more, the composer borders only a `dark:` class names), and `$themes`. Every token carries `$extensions.source`; a value DTCG cannot carry is listed under the set's `$extensions.notTokenised` rather than dropped. |
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and the main components (the shell, the collapsed rail, buttons and chips, the Library with its tabs, rows, grid card and menus, the task thread with its deliverable card and composer, settings controls, the phone layout) with the real values, states side by side, with a Light/Dark toggle that flips the same `dark` class Manus does. |
-| [components.md](components.md) | The discovery list of every page and state captured, one entry per component with crops of the real product, the shared values (hover fills, radii, motion, focus) and the Gaps. |
+| [components.md](components.md) | The discovery list of every page and state captured, one entry per component with crops of the real product, the shared values (hover fills, radii, motion, focus) and the Gaps. Every value is written token first; 85% of them name a token (68% exact, from the element's own class or the core tokens meant for that kind of value, 18% colours named by value and marked `≈`); the rest are text styles and heights off Manus's scales. |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png`, at 2x. |
-| [icons/](icons) | 161 SVGs lifted from the pages, named by role in [icons/INDEX.tsv](icons/INDEX.tsv) (76 by role, the rest by their Lucide name or a hash), and the eight task-type glyphs Manus serves as images under `icons/session/`. Manus's marks are its property, kept for reference only. |
+| [icons/](icons) | 161 SVGs lifted from the pages, every one named by its role or its Lucide name in [icons/INDEX.tsv](icons/INDEX.tsv) (the 67 left as a hash in 2026-10-04 were named on 2026-10-17 through [icon-names.tsv](tools/capture/icon-names.tsv) and [name_icons.py](tools/capture/name_icons.py); other companies' marks Manus shows are named `brand-*`), and the eight task-type glyphs Manus serves as images under `icons/session/`. Manus's marks are its property, kept for reference only. |
 | [screenshots/](screenshots) | 109 `{page}-{theme}-{state}.png` captures (89 from 2026-10-04, 20 from the 2026-10-17 refresh: `settings-*-developers-table`, `-key-menu`, `-delete-confirm`, `-create-key`, `-create-key-typed`, `-select-open`, `-personalization`, `-usage-loading`, `invite-*`). Desktop shots are 1440 x 900 at 2x, `-full` shots whole pages at 2x for the base pages only, `mobile-*` shots 390 x 844 at 2x. Every state exists in both themes. |
 | [raw/](raw) | The unprocessed readings: every custom property the stylesheets declare, by file, selector and condition, with the font faces (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the measured values the token builder reads (`component-tokens.json`); page geometry (`layout.json`) and the layout notes written from it (`pages.md`); the utility-class readings of the refresh (`css-rules.json`, from [rules.py](tools/capture/rules.py)); and the live keyboard-focus check (`focus-live.md`). |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild. |
@@ -49,7 +49,7 @@ Manus names colours by what they do (`text.primary`, `background.menu-white`, `f
 
 The primary action is black in light and near-white in dark, not blue. Hover is `opacity: 0.9`; the button's classes also ask for `active:opacity-80`, but `hover:opacity-90` comes later in the stylesheet and wins, so a pressed button reads 0.9 too (measured on button-primary, button-danger and button-blue). `role.accent.hover` and `role.accent.pressed` are that 90% composited over the page colour (Derived). Blue is the link and selection colour and the one a user can swap for green, yellow, pink, orange, purple or black in Settings.
 
-Manus declares no colour ramps: Tailwind's palette is not shipped and every variable is semantic. `core.palette` assembles them from the declared values (Derived): `neutral` is the 24 greys that at least two variables share, lightest to darkest, and each accent palette is a ramp from its user-bubble tint to its dark-theme bubble: 13 steps for blue, green, orange, pink and purple, 15 for yellow, 8 for black. There is no red ramp: the danger red (`function.error`) is two declared values, not a palette. Each step names the variables that hold it.
+Manus declares no colour ramps: Tailwind's palette is not shipped and every variable is semantic. `core.palette` assembles them (Derived): every colour literal the light and dark blocks and the accent palettes declare (433 declarations, 165 of them translucent) goes on the ramp of its hue, neutral first, then red, orange, yellow, green, teal, blue, purple and pink. A translucent token is its ramp step at that alpha, so every declared colour sits on a ramp, the danger red and the link blue included. Each hue has two views: `palette.<hue>` is a 50 to 950 ramp of up to 11 stops, each the declared colour nearest that lightness (neutral runs #f8f8f7 to #171717), and `palette.<hue>-all` is the full list, lightest first (71 neutrals, 28 blues). Every step names the variables that hold it.
 
 Elevation is six levels, each tied to its use, in each theme under `elevation`. Three are Manus's own named utilities:
 
@@ -66,7 +66,7 @@ Dialogs do not get a deeper shadow than menus; the scrim sets them apart. In dar
 
 ## Spacing, shape and layout
 
-Spacing is Tailwind's 4px scale, read from the classes on the elements of the refresh's copies (`raw/css-rules.json`, `spacing`): 8px (632 elements), 4px (525), 2px (425), 12px (327) and 10px (216) lead, with 16, 24, 6 and 20 after them. Steps on fewer than 20 elements are left out of `core.space`. The density variables (`core.density`) hold the paddings that sit off the scale, such as the 9px nav item.
+Spacing is Tailwind's scale on a 4px base, read from the classes on the elements of the refresh's copies (`raw/css-rules.json`, `spacing`). `core.space` keys each step by its class step, so `space.2` is gap-2 or p-2, 8px, and `space.2_5` the 10px half step; it runs from `space.0_5` (2px) to `space.15` (60px), each with its element count, and 8px (632), 4px (525), 2px (425), 12px (327) and 10px (216) lead. The few values off the grid (1px rules and arbitrary 7, 9, 11 and 34px) are kept apart in `core.space.$extensions.offGrid`: 73 of 2809 spacing class uses. The density variables (`core.density`) hold the paddings Manus sets by variable.
 
 Border widths are 0.5px (the share banner, the grid card ring), 1px (59 measured components) and 2px (the active underline tab), in `core.borderWidth`; illustrations draw their frames at 1.2px. Radii are in `core.radius`; dialogs are 16, cards and menus 12, rows 10, buttons and icon buttons 8.
 
@@ -99,14 +99,15 @@ Motion is short: colour transitions 150ms, the sidebar 200ms, resizes 300ms on `
 
 ## Fonts
 
-| Family | Weights | Used for |
-|---|---|---|
-| System stack (`-apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, Arial`) | 400, 500, 600, 700 | Everything in the interface. Manus ships no web font for UI text. |
-| Libre Baskerville | 400, 700 | The home's "What can I do for you?", the wordmark, the share banner's title, the document previewer's titles, promo cards. Self-hosted by Manus; the Chinese, Taiwanese and Japanese locales swap in Noto Serif SC, TC and JP through `--font-noto-serif-*`. |
-| ui-monospace stack | 400 | File names, code, the terminal panel |
-| KaTeX | | Maths in documents |
+| Family | Weights | Used for | Licence | Fallback |
+|---|---|---|---|---|
+| System stack (`-apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, Arial`) | 400, 500, 600, 700 | Everything in the interface. Manus ships no web font for UI text. | The operating system's own faces (SF Pro, Segoe UI); nothing to license or ship | `core.fontFamily.sans` ends in `Arial, sans-serif`. In Figma, SF Pro or Inter |
+| Libre Baskerville | 400, 700 | The home's "What can I do for you?", the wordmark, the share banner's title, the document previewer's titles, promo cards. Self-hosted by Manus. | SIL Open Font License 1.1 (google/fonts `ofl/librebaskerville/OFL.txt`) | `Georgia, Cambria, ui-serif, 'Times New Roman', Times, serif` (`core.fontFamily.serif`) |
+| Noto Serif SC, TC, JP | 400, 700 | The serif in the Chinese, Taiwanese and Japanese locales, through `--font-noto-serif-*` | SIL Open Font License 1.1 (notofonts/noto-cjk `Serif/LICENSE`) | the Libre Baskerville stack |
+| ui-monospace stack | 400 | File names, code, the terminal panel | System faces (SF Mono, Menlo, Consolas) | `'Courier New', monospace` (`core.fontFamily.mono`) |
+| KaTeX | 400, 700 | Maths in documents | MIT (the KaTeX repository's LICENSE; its fonts ship in that repository) | `'Times New Roman', serif` (`core.fontFamily.math`) |
 
-Libre Baskerville is open source, so the style guide loads it from Google Fonts; no font file is committed or needed.
+The licences were read from each project's own licence file on 2026-10-17. Libre Baskerville is open source, so the style guide loads it from Google Fonts; no font file is committed or needed.
 
 ## What the images no longer show
 
@@ -129,7 +130,7 @@ Limits: the values in `raw/` and the text of this folder were redacted separatel
 
 ## What to distrust
 
-- `core.palette` is assembled, not declared: Manus has no ramps, and the step numbers are this package's.
+- `core.palette` is assembled, not declared: Manus has no ramps. The hue families, the 50 to 950 stop names and the choice of colour for each stop are this package's; every value is one Manus declares.
 - `role.*` is this package's mapping of checklist roles onto Manus's tokens, chosen from where each token is used; the values are Manus's.
 - `role.accent.hover` and `.pressed` are computed (90% over the page colour); the opacity is measured.
 - Pressed was measured only on the components added on 2026-10-17. The older copies are gone.
@@ -144,9 +145,9 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Free plan; 
 | Item | Status | Where |
 |---|---|---|
 | Colour roles, light and dark | Captured; info not present (Manus has no info status); success and warning have no border token | `role`, `background`, `text`, `border`, `function` in `light` and `dark` |
-| Colour ramps | Derived from the declared values; Manus declares none | `core.palette` |
+| Colour ramps | Derived: every declared colour on a hue ramp, neutral first, 50 to 950 plus the full list; Manus declares none | `core.palette` |
 | Type families and roles | Captured: display, heading, body, body-long, label, caption, code | `core.typography.role`, `core.fontFamily` |
-| Spacing | Captured: Tailwind 4px scale with element counts | `core.space`, `core.density`, `raw/css-rules.json` |
+| Spacing | Captured: Tailwind 4px scale (2 to 60px) with element counts, off-grid values kept apart | `core.space`, `core.density`, `raw/css-rules.json` |
 | Radii, border widths | Captured | `core.radius`, `core.borderWidth` |
 | Elevation | Captured: six levels tied to use | `elevation` in `light` and `dark` |
 | Motion and reduced motion | Captured | `core.duration`, `core.easing`, `raw/css-rules.json` |
@@ -218,6 +219,10 @@ SNAPS=<dir> node tools/capture/icons.mjs
 
 ```bash
 python3 tools/capture/rules.py <dir of the .css chunks> <dir of page copies>
+```
+
+```bash
+python3 tools/capture/name_icons.py
 ```
 
 `python3 tools/capture/quantize.py <dir of renders>` stores renders into `screenshots/`. To take a new page copy: open the page in a signed-in tab, paste `snapshot.js` into its console, call `await __inline()` on a page with thumbnails, then `__snap('<page>-dark-<state>', REDACT)` with the redaction file's contents, save the returned string to a file and run `unsnap.py <file> <dir>`.
