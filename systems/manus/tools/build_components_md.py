@@ -115,13 +115,100 @@ def colour(c, tokens=True, prop=None):
         if not tokens:
             return v
         if prop and v in OWN[0].get(prop, {}):
-            return f"{v} `{OWN[0][prop][v]}`"
+            STATS["token"] += 1
+            return f"`{OWN[0][prop][v]}` ({v})"
         tok = BY_COLOR[THEME[0]].get(v)
-        return f"{v} `≈ {tok}`" if tok else v
+        STATS["approx" if tok else "raw"] += 1
+        return f"`≈ {tok}` ({v})" if tok else v
 
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
     return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
+
+
+# --------------------------------------------------------------------------- core tokens by value
+
+def resolve(v, tree):
+    """Follow {a.b} aliases inside one token set until a literal remains."""
+    seen = 0
+    while isinstance(v, str) and re.fullmatch(r"\{[^{}]+\}", v) and seen < 8:
+        node = tree
+        for k in v[1:-1].split("."):
+            node = node[k]
+        v = node["$value"]
+        seen += 1
+    return v
+
+
+CORE = T["core"]
+DIM = {}  # (kind, "12px") -> token path. A value names a token only through tokens meant for that kind
+# of value, generic ones first, so a 28px row height never reads as `size.avatar`.
+KINDS = {
+    "radius": ["radius.small", "radius.card", "radius.row", "radius.md", "radius.dialog", "radius.composer", "radius.full"],
+    "height": ["size.row", "size.row-small", "size.control-large", "size.control-small", "size.header"],
+    "icon": ["size.icon-xs", "size.icon-small", "size.icon", "size.icon-medium", "size.icon-large"],
+    "space": [n for n, _ in flat(CORE["space"], "space.")] + [n for n, _ in flat(CORE["density"], "density.") if "padding" in n],
+    "borderWidth": [n for n, _ in flat(CORE["borderWidth"], "borderWidth.")],
+    "focusRing": ["focusRing.width", "focusRing.offset", "focusRing.input-width"],
+}
+for kind, paths in KINDS.items():
+    for n in paths:
+        node = CORE
+        for k in n.split("."):
+            node = node[k]
+        val = resolve(node["$value"], CORE)
+        if isinstance(val, str) and re.fullmatch(r"-?[\d.]+px", val):
+            DIM.setdefault((kind, "%gpx" % float(val[:-2])), n)
+DUR = {}
+for n in ["duration.fast", "duration.sidebar", "duration.resize", "duration.theme", "duration.streamer"]:
+    DUR.setdefault("%gms" % float(str(CORE["duration"][n.split(".")[1]]["$value"])[:-2]), n)
+EASE = {}
+for n, t in flat(CORE["easing"], "easing."):
+    EASE.setdefault("cubic-bezier(" + ", ".join("%g" % x for x in t["$value"]) + ")", n)
+OPACITY = {"%g" % t["$value"]: n for n, t in flat(CORE["opacity"], "opacity.")}
+TYPE = {}
+FAMILY = {"System": "fontFamily.sans", "Libre Baskerville": "fontFamily.serif", "Mono": "fontFamily.mono"}
+for prefix, node in (("typography.role.", CORE["typography"]["role"]), ("typography.", {k: v for k, v in CORE["typography"].items() if k != "role"})):
+    for n, t in flat(node, prefix):
+        v = {k: resolve(x, CORE) for k, x in t["$value"].items()}
+        key = ("%gpx" % float(v["fontSize"][:-2]), "%gpx" % float(v["lineHeight"][:-2]), str(v["fontWeight"]), t["$value"]["fontFamily"], "%gpx" % float(str(v.get("letterSpacing", "0px"))[:-2]))
+        TYPE.setdefault(key, n)
+STATS = {"token": 0, "approx": 0, "raw": 0}
+
+
+def layer_key(layer, theme):
+    c = resolve(layer["color"], T[theme])
+    h = c.lstrip("#") if isinstance(c, str) and c.startswith("#") else None
+    if h is None:
+        m = re.fullmatch(r"rgba\((\d+), (\d+), (\d+), ([\d.]+)\)", c)
+        col = norm(*m.groups()) if m else c
+    else:
+        if len(h) in (3, 4):
+            h = "".join(x * 2 for x in h)
+        col = norm(int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16), int(h[6:8], 16) / 255 if len(h) == 8 else None)
+    if col == "rgba(0, 0, 0, 0)":
+        return None
+    return f"{col} {layer['offsetX']} {layer['offsetY']} {layer['blur']} {layer['spread']}" + (" inset" if layer.get("inset") else "")
+
+
+ELEVATION = {}
+for theme in ("dark", "light"):
+    ELEVATION[theme] = {}
+    for n, t in flat(T[theme]["elevation"], "elevation."):
+        keys = [k for k in (layer_key(l, theme) for l in t["$value"]) if k]
+        ELEVATION[theme].setdefault(", ".join(keys), n)
+
+
+def dim(px, groups):
+    """'12px' -> '`radius.card` (12px)' when a token in one of `groups` holds it, else the value."""
+    key = "%gpx" % float(px[:-2]) if px.endswith("px") else px
+    for g in groups:
+        if (g, key) in DIM:
+            STATS["token"] += 1
+            return f"`{DIM[(g, key)]}` ({px})"
+    if key != "0px":
+        STATS["raw"] += 1
+    return px
 
 
 def sides(t, r, b, l):
@@ -141,30 +228,38 @@ def num(x):
     return re.sub(r"(\d+\.\d\d)\d+", r"\1", str(x))
 
 
-def font(fz, lh, fw, f):
-    lh = lh.replace("px", "") if lh != "normal" else "normal"
-    return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
+def font(fz, lh, fw, f, ls="normal"):
+    """A text style; it names a typography token only when family, size, line height, weight and
+    letter spacing all match (normal spacing is 0px)."""
+    lhn = lh.replace("px", "") if lh != "normal" else "normal"
+    plain = f"{fam(f)} {num(fz.replace('px', ''))}/{num(lhn)} {fw}" + (f" tracking {ls}" if ls not in ("normal", "0px") else "")
+    lsk = "0px" if ls in ("normal", None) else "%gpx" % float(ls[:-2])
+    key = ("%gpx" % float(fz[:-2]), "%gpx" % float(lh[:-2]) if lh.endswith("px") else lh, str(fw), "{" + FAMILY.get(fam(f), "") + "}", lsk)
+    tok = TYPE.get(key)
+    STATS["token" if tok else "raw"] += 1
+    return f"`{tok}` ({plain})" if tok else plain
 
 
 def props(v):
     s = v["style"]
     OWN[0] = own_tokens(v, THEME[0], STATE[0])
     o = {}
-    o["size"] = f"{num(v['rect']['w'])} x {num(v['rect']['h'])}"
+    h = "%gpx" % round(v["rect"]["h"], 2)
+    o["size"] = f"{num(v['rect']['w'])} x " + (dim(h, ("height",)) if ("height", h) in DIM else num(v["rect"]["h"]))
     pad = sides(s["paddingTop"], s["paddingRight"], s["paddingBottom"], s["paddingLeft"])
     if pad != "0px":
-        o["padding"] = pad
+        o["padding"] = " ".join(dim(x, ("space",)) for x in pad.split(" "))
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], prop='border')}")
+            bds.append(f"{dim(s[f'border{d}Width'], ('borderWidth',))} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], prop='border')}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
         o["border"] = bds[0] if len(set(bds)) == 1 else "; ".join(f"{'TRBL'[i]}: {b}" for i, b in enumerate(bds) if b != "none")
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
-        o["radius"] = rad
+        o["radius"] = " ".join(dim(x, ("radius",)) for x in rad.split(" "))
     o["background"] = colour(s["backgroundColor"], prop="bg")
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
@@ -174,16 +269,21 @@ def props(v):
         layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
         layers = [x for x in layers if not x.startswith("transparent")]
         if layers:
-            o["shadow"] = ", ".join(layers)
+            el = ELEVATION[THEME[0]].get(", ".join(layers))
+            if el:
+                STATS["token"] += 1
+            else:
+                STATS["raw"] += 1
+            o["shadow"] = f"`{el}` ({', '.join(layers)})" if el else ", ".join(layers)
     if s.get("backdropFilter", "none") != "none":
         o["backdrop"] = s["backdropFilter"]
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
+        o["outline"] = f"{dim(s['outlineWidth'], ('focusRing', 'borderWidth'))} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {dim(s['outlineOffset'], ('focusRing',)) if not s['outlineOffset'].startswith('-') else s['outlineOffset']}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
+        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('letterSpacing', 'normal'))}, {colour(t['color'])}"
     elif v.get("text"):
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], prop='text')}"
+        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'], s.get('letterSpacing', 'normal'))}, {colour(s['color'], prop='text')}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -193,7 +293,16 @@ def props(v):
             d = durs[i % len(durs)]
             if d == "0s":
                 continue
-            parts.append(f"{p} {d} {tf[i % len(tf)] if tf else ''}".strip())
+            ms = "%gms" % round(float(d[:-1]) * 1000) if d.endswith("s") and not d.endswith("ms") else d
+            if ms in DUR:
+                STATS["token"] += 1
+                d = f"`{DUR[ms]}` ({d})"
+            else:
+                STATS["raw"] += 1
+            ease = tf[i % len(tf)] if tf else ""
+            if ease in EASE:
+                ease = f"`{EASE[ease]}` ({ease})"
+            parts.append(f"{p} {d} {ease}".strip())
         if parts:
             o["transition"] = ", ".join(parts) if len(parts) < 4 else f"{parts[0].split(' ')[0]} and {len(parts) - 1} more {' '.join(parts[0].split(' ')[1:])}"
     if s["transform"] not in ("none", "matrix(1, 0, 0, 1, 0, 0)"):
@@ -205,10 +314,17 @@ def props(v):
         else:
             o["transform"] = s["transform"]
     if s["opacity"] != "1":
-        o["opacity"] = s["opacity"]
+        tok = OPACITY.get("%g" % float(s["opacity"]))
+        STATS["token" if tok else "raw"] += 1
+        o["opacity"] = f"`{tok}` ({s['opacity']})" if tok else s["opacity"]
     ic = v.get("icon")
     if ic and ic.get("w", 0) > 0 and ic["w"] < 120:
-        o["icon"] = f"{num(ic['w'])} x {num(ic['h'])}, {colour(ic.get('color') or ic.get('stroke') or ic.get('fill'))}"
+        keep = OWN[0]
+        OWN[0] = own_tokens({"classes": ic.get("classes", ""), "vars": v.get("vars")}, THEME[0], STATE[0])
+        isz = "%gpx" % ic["w"]
+        size_ = f"`{DIM[('icon', isz)]}` ({num(ic['w'])} x {num(ic['h'])})" if ic["w"] == ic["h"] and ("icon", isz) in DIM else f"{num(ic['w'])} x {num(ic['h'])}"
+        o["icon"] = f"{size_}, {colour(ic.get('color') or ic.get('stroke') or ic.get('fill'), prop='text')}"
+        OWN[0] = keep
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"])
     return o
@@ -351,7 +467,7 @@ W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by its token in [tokens.json](tokens.json). A plain `token` is the variable the component's own classes name (bg-[var(--x)] and the like), so it is the token Manus wrote; `≈ token` is only a token with the same value in that theme, for colours no class names (inherited text, browser defaults). Each component's named tokens are also in tokens.json under `component.<key>` in each theme. Text is written family size/line-height weight, then its colour, for example `System 14/21 400, #e6e6e6`, and is read from the first text node inside the component.")
+W("- Every value is written token first: `` `token` (value) ``. A plain token is exact: for a colour, the variable the component's own classes name for that property in that state (bg-[var(--x)], text-, border-); for a size, radius, padding, type style, duration, easing, shadow or opacity, the core token whose value it is. `` `≈ token` `` names a colour token only by its value in that theme, for colours no class on the element names (inherited text, browser defaults). A value with no token is written alone. Text is family size/line-height weight, for example `` `typography.sm` (System 14/20 400) ``, read from the first text node inside the component. Each component's class-named colour tokens are also in tokens.json under `component.<key>` in each theme.")
 W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
@@ -508,12 +624,13 @@ for g, ids in groups.items():
 
 W("## Icon index")
 W()
-named = [r for r in icons if len(r) > 1 and not r[0].startswith("icon-") and not r[0].startswith("lucide-")]
-W(f"{len(icons)} distinct glyphs were lifted from the pages into [icons/](icons), {len(named)} named by role in [icons/INDEX.tsv](icons/INDEX.tsv) and the rest by their Lucide class or a hash. Manus draws almost everything with Lucide (24-unit stroke icons at 2px, shown at 16 or 18) in `--icon-primary`, `--icon-secondary` or `--icon-tertiary`; the file-type icons in the Library are filled 32-unit glyphs in blue, red, orange and grey; the sidebar's task glyphs are images Manus serves from its CDN, kept under `icons/session/`.")
+icons = [r for r in icons if len(r) >= 9 and r[0].endswith(".svg")]  # the inline glyphs; the <img> list after the blank line is separate
+named = [r for r in icons if not r[0].startswith("icon-") and not r[0].startswith("lucide-")]
+W(f"{len(icons)} distinct glyphs were lifted from the pages into [icons/](icons), every one named by its role or its Lucide name in [icons/INDEX.tsv](icons/INDEX.tsv) (the 67 icons.mjs had left as a hash were named on the 2026-10-17 refresh from the words beside them and by sight, through tools/capture/icon-names.tsv and name_icons.py). Glyphs named `brand-*` are other companies' marks (Gmail, Google Docs, Drive and Sheets, Instagram, Shopify, Windows, Apple) as Manus shows them in connectors and examples; they belong to those companies. Manus draws almost everything with Lucide (24-unit stroke icons at 2px, shown at 16 or 18) in `--icon-primary`, `--icon-secondary` or `--icon-tertiary`; the file-type icons in the Library are filled 32-unit glyphs in blue, red, orange and grey; the sidebar's task glyphs are images Manus serves from its CDN, kept under `icons/session/`.")
 W()
 W("| Icon | Where |")
 W("|---|---|")
-for r in named[:60]:
+for r in named:
     W(f"| `{r[0].replace('.svg', '')}` | {(r[8] if len(r) > 8 and r[8] else r[6])[:90].replace('|', '/')} |")
 W()
 
@@ -525,9 +642,54 @@ W("- The thread of a running task (streaming text, the live computer view, tool 
 W("- The deliverable card's slide preview is an iframe, kept as a same-size dark box in every copy; its header, menu and the file chips under it are real.")
 W("- Hover and focus on the 390-wide copies were not measured (a phone has neither), and the Library's checked view option does not exist in the mobile copy.")
 W("- The first grid-view copy (`library-dark-images-grid`) was taken before thumbnails were inlined, so its cards show the placeholder; the grouped-by-task and view-options copies have the real thumbnails.")
-W("- The Manus Flex promo dialog, the Create automation flow, a plugin's detail dialog, a creation's page, the Computers' create flow, the Account and Billing settings panes and the share sheet were not captured, since each either spends credits, changes the account or shows billing details.")
+W("- The Manus Flex promo dialog, the Create automation flow, a plugin's detail dialog, a creation's page, the Computers' create flow, the Account settings pane and the share sheet were not captured, since each either spends credits, changes the account or shows billing details.")
 W("- The light theme was read by removing the `dark` class from the copies, not by switching the account's theme. Everything Manus paints is a var() of the two palette blocks, so the readings match what the Light setting shows, but any image Manus swaps per theme through JavaScript rather than CSS would not have swapped.")
 W()
 
+# How many of the written values name a token, counted on the finished entries (the value after a
+# token, in parentheses, is not counted again).
+def coverage(rows):
+    t = " ".join(rows)
+    exact = len(re.findall(r"`[a-zA-Z][\w-]*\.[^` ]+` \(", t))
+    approx = len(re.findall(r"`≈ ", t))
+    rest, i = "", 0
+    while i < len(t):
+        if t.startswith("` (", i):
+            rest += "`"
+            j, depth = i + 2, 0
+            while j < len(t):
+                depth += t[j] == "("
+                depth -= t[j] == ")"
+                j += 1
+                if depth == 0:
+                    break
+            i = j
+            continue
+        rest += t[i]
+        i += 1
+    raw = len([c for c in re.findall(r"#[0-9a-f]{6}\b|rgba?\([\d., ]+\)", rest) if c != "rgba(0, 0, 0, 0)"])
+    raw += len(re.findall(r"(?<![\d.])\b(?!0px)\d+(?:\.\d+)?px", rest))
+    raw += len(re.findall(r"\b(?:System|Libre Baskerville|Mono|KaTeX_Main) [\d.]+/", rest))  # text styles with no token
+    raw += len(re.findall(r"\bsize [\d.]+ x [\d.]+", rest))  # heights with no token
+    raw += len(re.findall(r"\bicon [\d.]+ x [\d.]+", rest))  # icon sizes with no token
+    raw += len(re.findall(r"\bopacity [\d.]+", rest))  # opacities with no token
+    raw += len(re.findall(r"(?<![\w.(])\d*\.?\d+m?s\b", rest))  # durations with no token
+    raw += len(re.findall(r"(?:cubic-bezier\([^)]*\)|\bsteps\([^)]*\)|\b(?:ease|ease-in|ease-out|ease-in-out|linear)\b)", rest))  # easings with no token
+    return exact, approx, raw
+
+
+entry_rows, in_states = [], False
+for l in L:  # every row of every component's State | Values table, however many values it holds
+    if l.startswith("| State | Values |"):
+        in_states = True
+        continue
+    if not l.startswith("|"):
+        in_states = False
+    elif in_states and not l.startswith("|---"):
+        entry_rows.append(l)
+ex, ap, rw = coverage(entry_rows)
+tot = ex + ap + rw
+i = next(k for k, l in enumerate(L) if l.startswith("- Crops are images"))
+L.insert(i + 1, f"- Coverage: of {tot} values written in the entries below (colours, dimensions, heights, icon sizes, text styles, durations, easings, shadows and opacities; widths and zeros aside), {ex} ({ex / tot:.0%}) name an exact token, {ap} ({ap / tot:.0%}) name a colour token by value (`≈`) and {rw} ({rw / tot:.0%}) are raw: text styles and heights off Manus's scales, hairline offsets and one-off shadows. A colour's exact token comes from the element's own class; a dimension's from the core tokens meant for that kind of value (radii from `core.radius`, heights from the control sizes in `core.size`, icons from `core.size.icon*`, paddings from `core.space`, borders from `core.borderWidth` and `core.focusRing`), generic before component-specific; text to `core.typography` and its roles; transitions to `core.duration` and `core.easing`; shadows to `elevation.*`; opacity to `core.opacity`.")
 open("components.md", "w").write("\n".join(L) + "\n")
-print(f"components.md: {len(C)} components, {n_states} states, {n_crops} crops, {len(L)} lines")
+print(f"components.md: {len(C)} components, {n_states} states, {n_crops} crops, {len(L)} lines; values {ex} token, {ap} approx, {rw} raw")

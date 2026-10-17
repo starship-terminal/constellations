@@ -72,14 +72,14 @@ const all = [...seen.values()].sort((a, b) => b.n - a.n || a.key.localeCompare(b
 const used = new Map();
 for (const e of all) { e.name = names.get(e.key) || (e.lucide ? 'lucide-' + e.lucide : 'icon-' + e.key); used.set(e.name, (used.get(e.name) || 0) + 1); }
 const MARKS = /^(logo-|cue-|manus-)/;
-const rows = [['file', 'inferred_name', 'hash', 'sizes', 'viewBox', 'style', 'seen_on', 'count', 'role', 'note'].join('\t')];
+const rows = [['file', 'inferred_name', 'hash', 'sizes', 'viewBox', 'style', 'seen_on', 'count', 'context', 'note'].join('\t')];
 let named = 0, fallback = 0;
 for (const e of all) {
   e.file = (used.get(e.name) > 1 ? `${e.name}-${e.key}` : e.name) + '.svg';
   fs.writeFileSync(OUT + e.file, e.svg.replace(/></g, '>\n<') + '\n');
   if (names.has(e.key)) named++; else fallback++;
   const role = [...e.ctx.entries()].sort((a, b) => b[1] - a[1]).slice(0, 2).map(([c]) => c).join(' // ');
-  const note = MARKS.test(e.name) ? "Manus's property, kept for reference only" : names.has(e.key) ? '' : e.lucide ? 'unnamed, lucide class' : 'unnamed fallback';
+  const note = MARKS.test(e.name) ? "Manus's property, kept for reference only" : names.has(e.key) ? 'named by role (icon-names.tsv)' : e.lucide ? 'unnamed, lucide class' : 'unnamed fallback';
   rows.push([e.file, e.name, e.key, [...e.sizes].join(' '), e.vb, e.stroke ? 'stroke' : 'fill', [...e.where].slice(0, 6).join('; ') + (e.where.size > 6 ? `; +${e.where.size - 6}` : ''), e.n, role, note].map((x) => String(x).replace(/\t/g, ' ')).join('\t'));
 }
 

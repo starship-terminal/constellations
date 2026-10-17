@@ -824,6 +824,54 @@ typography:
     fontWeight: 400
     lineHeight: "24px"
     letterSpacing: "0px"
+  role-label-compact:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: "18px"
+    letterSpacing: "0px"
+  role-nav:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "21px"
+    letterSpacing: "0px"
+  role-nav-strong:
+    fontFamily: "-apple-system"
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: "21px"
+    letterSpacing: "0px"
+  role-meta:
+    fontFamily: "-apple-system"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18px"
+    letterSpacing: "0px"
+  role-section-label:
+    fontFamily: "-apple-system"
+    fontSize: "13px"
+    fontWeight: 500
+    lineHeight: "18px"
+    letterSpacing: "0px"
+  role-shortcut:
+    fontFamily: "-apple-system"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "19.5px"
+    letterSpacing: "0px"
+  role-menu-header:
+    fontFamily: "-apple-system"
+    fontSize: "12px"
+    fontWeight: 600
+    lineHeight: "18px"
+    letterSpacing: "0px"
+  role-initial:
+    fontFamily: "-apple-system"
+    fontSize: "12px"
+    fontWeight: 600
+    lineHeight: "20px"
+    letterSpacing: "0px"
 rounded:
   row: "10px"
   small: "8px"
@@ -832,19 +880,25 @@ rounded:
   segment-thumb: "6px"
   avatar: "9999px"
   dialog: "16px"
+  md: "6px"
+  full: "9999px"
 spacing:
-  "1": "1px"
-  "2": "2px"
-  "4": "4px"
-  "6": "6px"
-  "7": "7px"
-  "8": "8px"
-  "10": "10px"
-  "12": "12px"
-  "14": "14px"
-  "16": "16px"
-  "20": "20px"
-  "24": "24px"
+  "0_5": "2px"
+  "1": "4px"
+  "1_5": "6px"
+  "2": "8px"
+  "2_5": "10px"
+  "3": "12px"
+  "3_5": "14px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "7": "28px"
+  "8": "32px"
+  "10": "40px"
+  "12": "48px"
+  "14": "56px"
+  "15": "60px"
 components:
   assistant-text-default:
     textColor: "{colors.component-assistant-text-default-text}"
@@ -1483,7 +1537,7 @@ Manus names colours by what they do (`text.primary`, `background.menu-white`, `f
 
 The primary action is black in light and near-white in dark, not blue. Hover is `opacity: 0.9`; the button's classes also ask for `active:opacity-80`, but `hover:opacity-90` comes later in the stylesheet and wins, so a pressed button reads 0.9 too (measured on button-primary, button-danger and button-blue). `role.accent.hover` and `role.accent.pressed` are that 90% composited over the page colour (Derived). Blue is the link and selection colour and the one a user can swap for green, yellow, pink, orange, purple or black in Settings.
 
-Manus declares no colour ramps: Tailwind's palette is not shipped and every variable is semantic. `core.palette` assembles them from the declared values (Derived): `neutral` is the 24 greys that at least two variables share, lightest to darkest, and each accent palette is a ramp from its user-bubble tint to its dark-theme bubble: 13 steps for blue, green, orange, pink and purple, 15 for yellow, 8 for black. There is no red ramp: the danger red (`function.error`) is two declared values, not a palette. Each step names the variables that hold it.
+Manus declares no colour ramps: Tailwind's palette is not shipped and every variable is semantic. `core.palette` assembles them (Derived): every colour literal the light and dark blocks and the accent palettes declare (433 declarations, 165 of them translucent) goes on the ramp of its hue, neutral first, then red, orange, yellow, green, teal, blue, purple and pink. A translucent token is its ramp step at that alpha, so every declared colour sits on a ramp, the danger red and the link blue included. Each hue has two views: `palette.<hue>` is a 50 to 950 ramp of up to 11 stops, each the declared colour nearest that lightness (neutral runs #f8f8f7 to #171717), and `palette.<hue>-all` is the full list, lightest first (71 neutrals, 28 blues). Every step names the variables that hold it.
 
 Elevation is six levels, each tied to its use, in each theme under `elevation`. Three are Manus's own named utilities:
 
@@ -1500,26 +1554,27 @@ Dialogs do not get a deeper shadow than menus; the scrim sets them apart. In dar
 
 ## Typography
 
-21 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, LibreBaskerville, ui-monospace.
+29 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, LibreBaskerville, ui-monospace.
 
 ### Fonts (from README.md)
 
-| Family | Weights | Used for |
-|---|---|---|
-| System stack (`-apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, Arial`) | 400, 500, 600, 700 | Everything in the interface. Manus ships no web font for UI text. |
-| Libre Baskerville | 400, 700 | The home's "What can I do for you?", the wordmark, the share banner's title, the document previewer's titles, promo cards. Self-hosted by Manus; the Chinese, Taiwanese and Japanese locales swap in Noto Serif SC, TC and JP through `--font-noto-serif-*`. |
-| ui-monospace stack | 400 | File names, code, the terminal panel |
-| KaTeX | | Maths in documents |
+| Family | Weights | Used for | Licence | Fallback |
+|---|---|---|---|---|
+| System stack (`-apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, Arial`) | 400, 500, 600, 700 | Everything in the interface. Manus ships no web font for UI text. | The operating system's own faces (SF Pro, Segoe UI); nothing to license or ship | `core.fontFamily.sans` ends in `Arial, sans-serif`. In Figma, SF Pro or Inter |
+| Libre Baskerville | 400, 700 | The home's "What can I do for you?", the wordmark, the share banner's title, the document previewer's titles, promo cards. Self-hosted by Manus. | SIL Open Font License 1.1 (google/fonts `ofl/librebaskerville/OFL.txt`) | `Georgia, Cambria, ui-serif, 'Times New Roman', Times, serif` (`core.fontFamily.serif`) |
+| Noto Serif SC, TC, JP | 400, 700 | The serif in the Chinese, Taiwanese and Japanese locales, through `--font-noto-serif-*` | SIL Open Font License 1.1 (notofonts/noto-cjk `Serif/LICENSE`) | the Libre Baskerville stack |
+| ui-monospace stack | 400 | File names, code, the terminal panel | System faces (SF Mono, Menlo, Consolas) | `'Courier New', monospace` (`core.fontFamily.mono`) |
+| KaTeX | 400, 700 | Maths in documents | MIT (the KaTeX repository's LICENSE; its fonts ship in that repository) | `'Times New Roman', serif` (`core.fontFamily.math`) |
 
-Libre Baskerville is open source, so the style guide loads it from Google Fonts; no font file is committed or needed.
+The licences were read from each project's own licence file on 2026-10-17. Libre Baskerville is open source, so the style guide loads it from Google Fonts; no font file is committed or needed.
 
 ## Layout
 
-Spacing from `core.space`: `1` 1px, `2` 2px, `4` 4px, `6` 6px, `7` 7px, `8` 8px, `10` 10px, `12` 12px, `14` 14px, `16` 16px, `20` 20px, `24` 24px.
+Spacing from `core.space`: `0_5` 2px, `1` 4px, `1_5` 6px, `2` 8px, `2_5` 10px, `3` 12px, `3_5` 14px, `4` 16px, `5` 20px, `6` 24px, `7` 28px, `8` 32px, `10` 40px, `12` 48px, `14` 56px, `15` 60px.
 
 ### Spacing, shape and layout (from README.md)
 
-Spacing is Tailwind's 4px scale, read from the classes on the elements of the refresh's copies (`raw/css-rules.json`, `spacing`): 8px (632 elements), 4px (525), 2px (425), 12px (327) and 10px (216) lead, with 16, 24, 6 and 20 after them. Steps on fewer than 20 elements are left out of `core.space`. The density variables (`core.density`) hold the paddings that sit off the scale, such as the 9px nav item.
+Spacing is Tailwind's scale on a 4px base, read from the classes on the elements of the refresh's copies (`raw/css-rules.json`, `spacing`). `core.space` keys each step by its class step, so `space.2` is gap-2 or p-2, 8px, and `space.2_5` the 10px half step; it runs from `space.0_5` (2px) to `space.15` (60px), each with its element count, and 8px (632), 4px (525), 2px (425), 12px (327) and 10px (216) lead. The few values off the grid (1px rules and arbitrary 7, 9, 11 and 34px) are kept apart in `core.space.$extensions.offGrid`: 73 of 2809 spacing class uses. The density variables (`core.density`) hold the paddings Manus sets by variable.
 
 Border widths are 0.5px (the share banner, the grid card ring), 1px (59 measured components) and 2px (the active underline tab), in `core.borderWidth`; illustrations draw their frames at 1.2px. Radii are in `core.radius`; dialogs are 16, cards and menus 12, rows 10, buttons and icon buttons 8.
 
@@ -1544,7 +1599,7 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `row` 10px, `small` 8px, `card` 12px, `composer` 22px, `segment-thumb` 6px, `avatar` 9999px, `dialog` 16px.
+Corner radii from `core.radius`: `row` 10px, `small` 8px, `card` 12px, `composer` 22px, `segment-thumb` 6px, `avatar` 9999px, `dialog` 16px, `md` 6px, `full` 9999px.
 
 ## Components
 
@@ -1586,7 +1641,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- `core.palette` is assembled, not declared: Manus has no ramps, and the step numbers are this package's.
+- `core.palette` is assembled, not declared: Manus has no ramps. The hue families, the 50 to 950 stop names and the choice of colour for each stop are this package's; every value is one Manus declares.
 - `role.*` is this package's mapping of checklist roles onto Manus's tokens, chosen from where each token is used; the values are Manus's.
 - `role.accent.hover` and `.pressed` are computed (90% over the page colour); the opacity is measured.
 - Pressed was measured only on the components added on 2026-10-17. The older copies are gone.

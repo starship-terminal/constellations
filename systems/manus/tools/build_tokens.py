@@ -36,6 +36,7 @@ SPEC = json.loads((RAW / "component-tokens.json").read_text())
 THEME_SHEET = "0l0v22wndw5xb.css"  # the chunk names changed between the 2026-10-04 read and the 2026-10-17 refresh
 UI_SHEET = "1bc8iqysa6nev.css"
 RULES = json.loads((RAW / "css-rules.json").read_text())
+COMPS = json.loads((RAW / "components-computed.json").read_text())["components"]
 
 rules = [r for r in V["rules"] if "selector" in r]
 
@@ -405,28 +406,77 @@ def ramp(values, src):
     return out
 
 
-grey = {}
-for block_name, decls in ((":root", LIGHT), (".dark", DARK)):
-    for name, raw in decls.items():
-        if not re.fullmatch(r"#[0-9a-fA-F]{3,8}", raw.strip()):
-            continue
-        c = rgb_of(raw)
-        if c and max(c) - min(c) <= 8:
-            grey.setdefault(norm_color(raw), set()).add(f"{name} ({block_name})")
-shared_grey = {k: v for k, v in grey.items() if len(v) >= 2}
-core["palette"] = {"neutral": ramp(shared_grey, f"Derived: every opaque grey (channels within 8 of each other) that at least two variables in the {THEME_SHEET} :root and .dark blocks declare, ordered lightest to darkest by luminance. Manus declares no ramp of its own; `declaredAs` names the semantic variables that hold each step")}
-core["palette"]["neutral"]["$extensions"] = {"alsoDeclared": {k: sorted(v) for k, v in sorted(grey.items()) if len(v) < 2},
-                                             "note": "Greys only one variable declares; left out of the ramp so it shows the steps the palette reuses"}
+import colorsys
+
+FAMILIES = (("red", 345, 360), ("red", 0, 12), ("orange", 12, 38), ("yellow", 38, 65), ("green", 65, 170), ("teal", 170, 200),
+            ("blue", 200, 250), ("purple", 250, 290), ("pink", 290, 345))
+
+
+def family(rgb):
+    r, g, b = (c / 255 for c in rgb)
+    h, l_, sat = colorsys.rgb_to_hls(r, g, b)
+    if max(rgb) - min(rgb) <= 8 or sat < 0.12:
+        return "neutral"
+    return next(name for name, lo, hi in FAMILIES if lo <= h * 360 < hi)
+
+
+# Every colour literal the theme blocks and the accent palettes declare, opaque or not. A translucent
+# value contributes its base colour, so each declared colour is a ramp step or a step at an alpha.
+declared = []
+for where, decls in ((":root", LIGHT), (".dark", DARK)):
+    declared += [(name, raw, where) for name, raw in decls.items()]
 for colour, pair in sorted(ACCENTS.items()):
-    vals = {}
     for th, props in pair.items():
-        for name, raw in props.items():
-            if re.fullmatch(r"#[0-9a-fA-F]{6}", raw.strip()):
-                vals.setdefault(norm_color(raw), set()).add(f"{name} ({'.dark' if th == 'dark' else ''}.accent-custom[data-accent-color={colour}])")
-    if len(vals) >= 3:
-        core["palette"][colour] = ramp(vals, f"Derived: the opaque values of Manus's `{colour}` accent palette (Settings > General > accent colour), light and dark declarations together, ordered lightest to darkest; each palette is a full hue ramp from the user-bubble tint to the dark-theme bubble")
-core["palette"]["$description"] = ("Primitive ramps. Manus ships Tailwind 3 without its colour palette and declares only semantic variables, so these ramps are assembled from the values those variables hold "
-                                   "(Derived): the neutral ramp from every grey in the light and dark blocks, and one ramp per accent palette the user can pick. Semantic tokens do not alias them; use them to see the steps Manus actually uses.")
+        declared += [(name, raw, f"{'.dark' if th == 'dark' else ''}.accent-custom[data-accent-color={colour}]") for name, raw in props.items()]
+steps, alpha_uses, total = {}, 0, 0
+for name, raw, where in declared:
+    raw = raw.strip()
+    if not re.fullmatch(r"#[0-9a-fA-F]{3,8}", raw):
+        continue
+    total += 1
+    h = raw[1:].lower()
+    if len(h) in (3, 4):
+        h = "".join(c * 2 for c in h)
+    base = "#" + h[:6]
+    if len(h) == 8 and h[6:] != "ff":
+        alpha_uses += 1
+        label = f"{name} ({where}) at alpha {round(int(h[6:], 16) / 255, 2):g}"
+    else:
+        label = f"{name} ({where})"
+    steps.setdefault(base, set()).add(label)
+palette = {}
+for base, where in steps.items():
+    palette.setdefault(family(rgb_of(base)), {})[base] = where
+ORDER = ["neutral", "red", "orange", "yellow", "green", "teal", "blue", "purple", "pink"]
+STOPS = [("50", 0.97), ("100", 0.93), ("200", 0.86), ("300", 0.76), ("400", 0.64), ("500", 0.53), ("600", 0.43), ("700", 0.34), ("800", 0.25), ("900", 0.16), ("950", 0.09)]
+
+
+def condensed(values, fam):
+    """The 50 to 950 view of a family: for each stop, the declared colour whose HLS lightness is
+    nearest the stop's target, if one is within 0.06; a stop with none is left out."""
+    light = {hexv: colorsys.rgb_to_hls(*(c / 255 for c in rgb_of(hexv)))[1] for hexv in values}
+    out, used = {}, set()
+    for stop, target in STOPS:
+        best = min((v for v in light if v not in used), key=lambda v: (abs(light[v] - target), v), default=None)
+        if best is None or abs(light[best] - target) > 0.06:
+            continue
+        used.add(best)
+        out[stop] = {"$value": best, "$type": "color", "$extensions": {"source": f"Derived: the declared {fam} colour nearest lightness {target:g} (HLS); it also appears in `{fam}-all`", "lightness": round(light[best], 3), "declaredAs": sorted(values[best])}}
+    return out
+
+
+core["palette"] = {}
+for fam in ORDER:
+    if fam in palette:
+        core["palette"][fam] = condensed(palette[fam], fam)
+for fam in ORDER:
+    if fam in palette:
+        core["palette"][fam + "-all"] = ramp(palette[fam], f"Derived: every {fam} colour the {THEME_SHEET} :root and .dark blocks and the accent palettes declare, as itself or as the base of a translucent value, ordered lightest to darkest by luminance. Manus declares no ramp; `declaredAs` names the variables that hold each step")
+core["palette"]["$description"] = (f"Primitive ramps, assembled (Derived): Manus ships Tailwind 3 without its colour palette and declares only semantic variables, so every colour literal it declares ({total} declarations, {alpha_uses} of them translucent) is placed on the ramp of its hue, neutral first. "
+                                   "A translucent token is its ramp step at that alpha, so every declared colour sits on a ramp. Hue families: neutral (channels within 8, or saturation under 12%), then red, orange, yellow, green, teal, blue, purple and pink by hue angle. "
+                                   "Each hue has two views: `<hue>` is a 50 to 950 ramp (up to 11 stops, each the declared colour nearest that lightness) and `<hue>-all` lists every declared colour of the hue, lightest first. "
+                                   "The user-selectable accent palettes (blue, green, yellow, pink, orange, purple, black) fold into these ramps; each step's `declaredAs` says which palette or variable holds it.")
+core["palette"]["$extensions"] = {"declarations": total, "translucent": alpha_uses, "steps": {f: len(palette.get(f, {})) for f in ORDER if f in palette}}
 
 # shadow layers from the stylesheet, colours aliased to the theme's shadow.* tokens
 def css_layers(value, tree_index):
@@ -541,12 +591,20 @@ for theme, tree in (("light", light), ("dark", dark)):
     }
 
 # spacing, shape, focus, motion, layers, grid
-sp = {}
+sp, off = {}, {}
 for s_ in RULES["spacing"]:
-    if s_["elements"] >= 20 and s_["px"] > 0:
-        sp["%g" % s_["px"]] = {"$value": "%gpx" % s_["px"], "$type": "dimension", "$extensions": {"source": f"Measured: Tailwind spacing utilities (p-, m-, gap-, space-) resolving to {s_['px']:g}px on {s_['elements']} elements across the refresh's page copies (raw/css-rules.json spacing)", "elements": s_["elements"]}}
-sp["$description"] = ("Keys are pixel values. Manus writes spacing as Tailwind classes on a 4px base (a class step n is n x 4px, so gap-2 is 8px), with the 2px half steps it leans on in dense rows and a few arbitrary values (1, 7, 10 and 14px). Steps used on fewer than 20 elements are left out (they are in raw/css-rules.json). "
-                      "Component paddings that are not on the scale come from the density tokens (density.*: 10px menu rows, 9px nav items).")
+    v = s_["px"]
+    if v <= 0:
+        continue
+    if not (v % 4 == 0 or v in (2, 6, 10, 14)):  # off the 4px grid and Tailwind's half steps (0.5, 1.5, 2.5, 3.5)
+        off["%gpx" % v] = s_["elements"]
+    else:
+        step = ("%g" % (v / 4)).replace(".", "_")
+        sp[step] = {"$value": "%gpx" % v, "$type": "dimension", "$extensions": {"source": f"Measured: Tailwind spacing utilities (p-, m-, gap-, space-) resolving to {v:g}px on {s_['elements']} elements across the refresh's page copies (raw/css-rules.json spacing)", "elements": s_["elements"]}}
+sp["$description"] = ("Tailwind's spacing scale on a 4px base, as Manus uses it: a key is the class step, so `space.2` is gap-2 / p-2 = 8px, and `space.2_5` is the 10px half step. "
+                      "Every step carries its element count. Values off the grid are kept apart in $extensions.offGrid; the density tokens (density.*) hold the component paddings Manus sets by variable.")
+sp["$extensions"] = {"base": "4px", "offGrid": off,
+                     "note": f"{sum(off.values())} of {sum(x["elements"] for x in RULES["spacing"] if x["px"] > 0)} spacing class uses are off the grid (1px rules and arbitrary 7, 9, 11 and 34px values); everything else is on the scale"}
 core["space"] = sp
 bw = RULES["borderWidth"]
 core["radius"]["dialog"] = {"$value": "16px", "$type": "dimension", "$extensions": {"source": "Measured: rounded-[16px] on every role=dialog in the 2026-10-17 copies (confirm, form, invite and Settings dialogs)"}}
@@ -567,6 +625,13 @@ core["focusRing"] = {
 rm = RULES["reducedMotion"]
 core["duration"]["$extensions"] = {"reducedMotion": (f"{len(rm)} rules under @media (prefers-reduced-motion): animations and hover lifts are written as motion-safe: variants (spin, pulse, bounce, fade-in, slide-in, hover scale and translate), so they do not run at all when reduced motion is on; "
                                                    "motion-reduce: variants hide marquees and stop transforms; .t-resize and .connector-detail-page set transition: none. Colour transitions (transition-colors, 150ms) are not affected.")}
+dis = RULES["disabled"]
+core["opacity"] = {
+    "hover": {"$value": 0.9, "$type": "number", "$extensions": {"source": "Measured: hover:opacity-90 on the filled buttons (button-primary enabled-hover, button-danger, button-blue read opacity 0.9); pressed reads the same, see role.accent.pressed"}},
+    "pressed": {"$value": 0.8, "$type": "number", "$extensions": {"source": f"Measured (stylesheet): active:opacity-80 on {RULES['pressed'].get('opacity-80', 0)} elements in the copies; on the filled buttons hover:opacity-90 wins, so they read 0.9 while pressed"}},
+    "disabled": {"$value": 0.6, "$type": "number", "$extensions": {"source": f"Measured (stylesheet): disabled:opacity-60 on {dis.get('opacity-60', 0)} elements in the copies"}},
+    "disabled-strong": {"$value": 0.5, "$type": "number", "$extensions": {"source": "Measured: the composer's send button while the composer is empty (composer-send default, opacity 0.5)"}},
+}
 core["duration"]["fast"] = {"$value": "150ms", "$type": "duration", "$extensions": {"source": "Measured: transitionDuration 0.15s on every measured button (Tailwind's transition-colors default)"}}
 zu = RULES["zIndex"]["utilities"]
 core["zIndex"] = {
@@ -596,6 +661,31 @@ core["typography"]["role"] = {
     "code": {"$value": {"fontFamily": "{fontFamily.mono}", "fontSize": "13.6px", "lineHeight": "{lineHeight.base}", "fontWeight": "{fontWeight.regular}", "letterSpacing": "0px"}, "$type": "typography", "$extensions": {"source": "Measured (stylesheet): .manus-markdown code:not(pre code) is font-size 85% of the 16px message text, on fill.tsp-white-main with radius 4; the family is fontFamily.mono. Not seen on an element in the captured pages"}},
 }
 
+# Sizes, radii and type styles the measured components share, counted on their dark default states
+# (raw/components-computed.json), so a component entry can name them. Added 2026-10-17.
+_defaults = [st for c in COMPS.values() for n, st in c["states"].items() if n == "default" and st.get("theme") == "dark" and "style" in st]
+
+
+def _count(pred):
+    return sum(1 for st in _defaults if pred(st))
+
+
+for name, px_, what in (("icon-xs", 14, "14px glyphs (file chips, inline icons)"), ("icon-small", 16, "16px Lucide glyphs in menus, settings and buttons"),
+                        ("icon", 18, "18px glyphs in the sidebar and headers (as size.nav-icon)"), ("icon-medium", 20, "20px glyphs"), ("icon-large", 24, "24px glyphs and file icons")):
+    n = _count(lambda st, v=px_: (st.get("icon") or {}).get("w") == v and (st.get("icon") or {}).get("h") == v)
+    core["size"][name] = {"$value": f"{px_}px", "$type": "dimension", "$extensions": {"source": f"Measured: the icon of {n} measured components is {px_} x {px_}: {what}", "components": n}}
+core["size"]["control-small"] = {"$value": "28px", "$type": "dimension", "$extensions": {"source": f"Measured: {_count(lambda st: st['rect']['h'] == 28)} measured components are 28px tall (small icon buttons, the desktop and bell buttons, the table row button)"}}
+core["size"]["header"] = {"$value": "{layout.header-height}", "$type": "dimension", "$extensions": {"source": "Measured: the 48px page and sidebar header rows (layout.header-height)"}}
+core["radius"]["md"] = {"$value": "6px", "$type": "dimension", "$extensions": {"source": f"Measured: {_count(lambda st: st['style']['borderTopLeftRadius'] == '6px')} measured components round at 6px (Tailwind rounded-md and rounded-[6px]: icon buttons, the table row button, the segmented thumb)"}}
+core["radius"]["full"] = {"$value": "9999px", "$type": "dimension", "$extensions": {"source": f"Measured: {_count(lambda st: st['style']['borderTopLeftRadius'] == '9999px')} measured components are pills or circles (rounded-full: avatars, the send button, badges)"}}
+for name, (fs, lh, fw), what in (("label-compact", ("14px", "18px", 500), "outline and white buttons, Computers and creation actions"),
+                                 ("nav", ("14px", "21px", 400), "sidebar nav tabs and task rows"), ("nav-strong", ("14px", "21px", 500), "the files tree and side panel headings"),
+                                 ("meta", ("13px", "18px", 400), "small buttons, info banners, Cue links"), ("section-label", ("13px", "18px", 500), "sidebar section headers and small upgrade buttons"),
+                                 ("shortcut", ("13px", "19.5px", 400), "side panel tabs, view options, shortcut fields"), ("menu-header", ("12px", "18px", 600), "the account menu and settings account header"),
+                                 ("initial", ("12px", "20px", 600), "the avatar initial and the sidebar account row")):
+    n = _count(lambda st, k=(fs, lh, str(fw), "normal"): (st.get("textStyle") or {}) and (st["textStyle"]["fontSize"], st["textStyle"]["lineHeight"], st["textStyle"]["fontWeight"], st["textStyle"].get("letterSpacing", "normal")) == k)
+    core["typography"]["role"][name] = {"$value": {"fontFamily": "{fontFamily.sans}", "fontSize": fs, "lineHeight": lh, "fontWeight": fw, "letterSpacing": "0px"}, "$type": "typography",
+                                        "$extensions": {"source": f"Measured: the text of {n} measured components is {fs}/{lh} {fw} with normal letter spacing: {what}. Off Manus's --ui-* scale, so it is a role of its own; text of this size with negative tracking (the sidebar section labels) is a different style", "components": n}}
 # component entries: every var() a measured component's classes name, per state and theme
 def component_set(theme):
     tree_index = {}
@@ -643,7 +733,6 @@ def component_set(theme):
     return out
 
 
-COMPS = json.loads((RAW / "components-computed.json").read_text())["components"]
 for theme, tree in (("light", light), ("dark", dark)):
     tree["component"] = component_set(theme)
 
