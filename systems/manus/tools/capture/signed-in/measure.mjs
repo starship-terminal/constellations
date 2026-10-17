@@ -1,10 +1,11 @@
 // Measures Manus's signed-in components from the static DOM snapshots (see render.mjs, unsnap.py),
 // in both themes and in every state CSS can reach once scripts are gone.
 //
-//   PLAYWRIGHT=/path/to/playwright/index.mjs SNAPS=<snapshot dir> node tools/capture/signed-in/measure.mjs [label ...] [--jobs N]
+//   PLAYWRIGHT=/path/to/playwright/index.mjs SNAPS=<snapshot dir> node tools/capture/signed-in/measure.mjs [label ...] [--jobs N] [--states pressed]
 //
 // With labels, only the components (and states) that live on those snapshots are re-measured and
-// merged into the existing JSON. Writes raw/components-computed.json and one crop per component
+// merged into the existing JSON; with --states, only those states. A label whose copy is not in
+// SNAPS keeps its earlier readings. Writes raw/components-computed.json and one crop per component
 // and state into components/crops/<component>-<state>.png (2x, 256 colours, halved when wider than
 // 1600px). raw/measurements.md is then built from the JSON by build-measurements.mjs.
 //
@@ -21,6 +22,8 @@
 //   focus-visible  real keyboard focus: focus(), Shift+Tab, Tab (or a Shift keydown then focus()),
 //                  on the element or its first focusable descendant; a div with role=button and no
 //                  tabindex cannot take focus and is recorded as skipped
+//   pressed        the pointer held down (page.mouse.down), 300ms settle, so :active applies;
+//                  skipped where no :active rule or active: class reaches the element
 //   anything else  another element, or another snapshot, captured in that state: `active` (the
 //                  current nav tab), `selected` (the selected type tab), `checked` (the model in
 //                  the model menu), `open`, `typed`, `enabled`, ...
@@ -36,7 +39,11 @@ const OUT = path.join(RAW, 'components-computed.json');
 const args = process.argv.slice(2);
 const jobsArg = args.indexOf('--jobs');
 const CONC = jobsArg >= 0 ? +args[jobsArg + 1] : 4;
-const ONLY = args.filter((a, i) => !a.startsWith('--') && (jobsArg < 0 || i !== jobsArg + 1));
+// --states pressed,hover: measure only those states (and an extra's own states of that kind),
+// keeping every other reading as it is.
+const statesArg = args.indexOf('--states');
+const STATES = statesArg >= 0 ? args[statesArg + 1].split(',') : null;
+const ONLY = args.filter((a, i) => !a.startsWith('--') && (jobsArg < 0 || i !== jobsArg + 1) && (statesArg < 0 || i !== statesArg + 1));
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 // ---------------------------------------------------------------- page helpers (run in the page)
@@ -115,6 +122,21 @@ const HELPERS = () => {
       const t = a.effect && a.effect.getComputedTiming();
       if (t && t.iterations === Infinity) { a.pause(); a.currentTime = 0; } else { try { a.finish(); } catch { a.pause(); } }
     }
+  };
+  // Does any :active rule reach the element? Pressing an element makes it and its ancestors
+  // :active, so a same-origin rule counts when, with :active removed, it matches the element or
+  // one of its parts. Without one, pressed paints exactly like hover and is not measured again.
+  window.__hasActive = (el) => {
+    if (!window.__activeSels) {
+      window.__activeSels = [];
+      const walk = (rules) => { for (const r of rules) { if (r.selectorText && r.selectorText.includes(':active')) window.__activeSels.push(...r.selectorText.split(',').filter((x) => x.includes(':active')).map((x) => x.replace(/:active/g, ''))); else if (r.cssRules) walk(r.cssRules); } };
+      for (const ss of document.styleSheets) { try { walk(ss.cssRules); } catch { /* cross-origin sheet */ } }
+    }
+    const nodes = [el, ...el.querySelectorAll('*')];
+    // The Tailwind sheet is cross-origin in the copies, so its rules are read from the classes:
+    // active:, hover:active: and group-active: variants.
+    if (nodes.some((n) => [...(n.classList || [])].some((c) => /(^|:)(group-)?active:/.test(c)))) return true;
+    return window.__activeSels.some((sel) => { try { return nodes.some((n) => n.matches(sel)); } catch { return false; } });
   };
   document.addEventListener('click', (e) => e.preventDefault(), true);
   document.addEventListener('submit', (e) => e.preventDefault(), true);
@@ -232,14 +254,15 @@ function styleOf(el, props) {
 // optional `extra` states: { name: { snap?, find } } for another element or snapshot captured in
 // that state (they are measured at rest, then with their own `states` if given). `pad` is the crop
 // padding (8 by default); `crop: false` skips the crop.
-const ALL = ['default', 'hover', 'focus-visible'];
-const HV = ['default', 'hover'];
+const ALL = ['default', 'hover', 'focus-visible', 'pressed'];
+const HV = ['default', 'hover', 'pressed'];
 const R = ['default'];
-// Pressed (added on the 2026-10-17 refresh): the pointer held down on the element (page.mouse.down),
-// so Tailwind's active: variants apply; released after the reading. The copies have no scripts, so
-// the release clicks nothing.
-const AP = ['default', 'hover', 'focus-visible', 'pressed'];
-const HP = ['default', 'hover', 'pressed'];
+// Pressed: the pointer held down on the element (page.mouse.down), so Tailwind's active: variants
+// apply; released after the reading. The copies have no scripts and clicks are cancelled, so the
+// release clicks nothing. Every hover spec is also pressed; an element no :active rule reaches is
+// recorded as skipped (it paints like hover) rather than cropped twice.
+const AP = ALL;
+const HP = HV;
 
 const SPECS = [
   // ---------------- Sidebar
@@ -521,7 +544,8 @@ const SPECS = [
   { key: 'segmented', group: 'Settings and forms', title: 'Segmented control (Share on web | mobile)', snap: 'invite-dark-dialog', find: () => C(T('Share on web'), 'ul,div.relative,div'), states: R, extra: { item: { find: () => [...document.querySelectorAll('button')].find((b) => b.innerText.trim() === 'Share on mobile'), states: ['hover', 'focus-visible'] }, selected: { find: () => C(T('Share on web'), 'li') } } },
   { key: 'button-black-wide', group: 'Settings and forms', title: 'Full-width black button (Copy invitation link)', snap: 'invite-dark-dialog', find: () => C(T('Copy invitation link'), 'button'), states: AP },
   { key: 'button-blue', group: 'Settings and forms', title: 'Blue button (Invite Facebook friends)', snap: 'invite-dark-dialog', find: () => C(T('Invite Facebook friends'), 'button'), states: AP, desc: 'Facebook\'s own blue as a literal (#2167e8 in both themes), not a Manus token; Manus\'s blue is button.blue. Kept for its states, which match the black buttons (hover and pressed at opacity 0.9).' },
-  { key: 'email-field', group: 'Settings and forms', title: 'Email field', snap: 'invite-dark-dialog', find: () => Q('input[placeholder="Enter email address"]'), states: ALL, extra: { typed: { snap: 'invite-dark-email-typed', find: () => Q('input[placeholder="Enter email address"]') } } },
+  { key: 'email-field', group: 'Settings and forms', title: 'Email field (typed, then rejected)', snap: 'invite-dark-dialog', find: () => Q('input[placeholder="Enter email address"]'), states: ALL, desc: 'Validated only on submit, and the field itself never changes: an invalid address is reported by a toast (`error` is the field with the toast showing).', extra: { typed: { snap: 'invite-dark-email-typed', find: () => Q('input[placeholder="Enter email address"]') }, error: { snap: 'invite-dark-email-error', find: () => Q('input[placeholder="Enter email address"]') } } },
+  { key: 'toast', group: 'Settings and forms', title: 'Toast (error after an invalid email)', snap: 'invite-dark-email-error', find: () => Q('ol.fixed > li'), states: R, desc: 'Centred against the top edge of the window (its fixed list sits 28px down, z-index 1050, newest first, and the toast is drawn translated up 44px, so it measures top 0); --background-menu-tooltips, radius 12, a 1px --border-white and shadow-M, 10/16 padding, a 20px icon and 14/22 500 text. It shows for about 6.3s and has no close button. Form validation errors use it too.' },
   { key: 'send-button', group: 'Settings and forms', title: 'Send button (disabled, then enabled)', snap: 'invite-dark-dialog', find: () => C(T('Send', D()), 'button'), states: R, desc: 'Disabled while the field is empty; any text enables it (no format check before submit).', extra: { enabled: { snap: 'invite-dark-email-typed', find: () => C(T('Send', D()), 'button'), states: ['hover', 'pressed'] } } },
 
   // ---------------- Mobile
@@ -657,6 +681,11 @@ async function measureSnap(browser, label, specs, out) {
           await page.waitForTimeout(450);
           via = job.hoverOn ? 'mouse hover on its row' : 'mouse hover';
         } else if (job.base === 'pressed') {
+          if (!(await loc.evaluate((el) => window.__hasActive(el)))) {
+            c.states[state] = { theme, snapshot: label, skipped: 'no :active rule reaches it; pressed paints like hover' };
+            log('  -', name, 'skipped: no :active rule');
+            continue;
+          }
           const p = await pointOf(loc);
           await page.mouse.move(p.x, p.y, { steps: 4 });
           await page.waitForTimeout(80);
@@ -707,7 +736,11 @@ async function measureSnap(browser, label, specs, out) {
 // ---------------------------------------------------------------- main
 
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
-const labels = [...new Set(SPECS.flatMap((s) => jobsFor(s).map((j) => j.snap)))].filter((l) => !ONLY.length || ONLY.includes(l));
+const wanted = [...new Set(SPECS.flatMap((s) => jobsFor(s).map((j) => j.snap)))].filter((l) => !ONLY.length || ONLY.includes(l));
+// A page copy that is not on disk (they are not committed) keeps its earlier readings.
+const missing = wanted.filter((l) => !fs.existsSync(path.join(SNAPS, `${l}.json`)));
+if (missing.length) log(`no copy of ${missing.length} page(s), their readings are kept:`, missing.join(' '));
+const labels = wanted.filter((l) => !missing.includes(l));
 out._meta = {
   read: new Date().toISOString().slice(0, 10),
   source: 'Static, redacted DOM snapshots of the signed-in manus.im app (tools/capture/signed-in/snapshot.js), loaded from file:// in headless Chromium; Manus\'s stylesheets, fonts and images come from its CDN through a local cache. Nothing was requested from manus.im.',
@@ -716,7 +749,7 @@ out._meta = {
   states: {
     default: 'at rest, as captured',
     hover: 'real mouse hover (page.mouse.move), 450ms settle; not measured on the 390 snapshots',
-    pressed: 'the pointer held down on the element (page.mouse.down), 300ms settle, so active: variants apply',
+    pressed: 'the pointer held down on the element (page.mouse.down), 300ms settle, so active: variants apply; recorded as skipped where no :active rule or active: class reaches the element. On home-dark, read from a fresh copy of the page at rest (2026-10-17); the other states there come from the first copy',
     'focus-visible': 'real keyboard focus (focus, Shift+Tab, Tab) on the element or its first focusable descendant; recorded as skipped where the element cannot take focus',
     other: 'active / selected / checked / open / typed / enabled / ... are other elements or snapshots captured in that state',
   },
@@ -735,6 +768,7 @@ for (const spec of SPECS) {
   c.pages = [...new Set(jobs.map((j) => j.snap))];
   for (const job of jobs) {
     if (!labels.includes(job.snap)) continue;
+    if (STATES && (!STATES.includes(job.base) || (job.variant && job.base === 'default'))) continue;
     delete c.states[job.state];
     delete c.states[job.state === 'default' ? 'light' : `light-${job.state}`];
     if (!bySnap.has(job.snap)) bySnap.set(job.snap, []);
