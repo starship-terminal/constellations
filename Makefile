@@ -25,10 +25,10 @@ docs: ## Generate the scorecard pages and build the docs site into site/ (strict
 scorecard: ## Validate the scorecard's audit data
 	@$(PYTHON) tools/scorecard.py --check
 
-grade: ## Re-grade the scripted criteria (contrast, provenance, Do and don't, DESIGN.md) into a new audit snapshot
+grade: ## Re-grade the scripted criteria into a new audit snapshot, then rewrite every README's Health section
 	@$(PYTHON) tools/grade.py --write && $(PYTHON) tools/scorecard.py --check
 
-check: ## Validate catalog.json against the packages on disk, including that every DESIGN.md is current
+check: ## Validate catalog.json against the packages; fail on a stale DESIGN.md, scorecard or Health section
 	@$(PYTHON) tools/catalog.py check
 	@$(PYTHON) tools/grade.py --check
 
@@ -38,7 +38,7 @@ design-md: ## Regenerate every package's DESIGN.md from its tokens and README
 lint-design-md: ## Lint every DESIGN.md with Google's pinned linter (needs Node.js; runs npx in a temp dir)
 	@$(PYTHON) tools/catalog.py design-md --lint
 
-test: ## Run the catalog tool's tests
+test: ## Run the tools' tests
 	@$(PYTHON) -m unittest discover -s tools -p 'test_*.py'
 
 clean: ## Remove generated files

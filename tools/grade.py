@@ -2,7 +2,8 @@
 """Re-grade the scorecard criteria a script can check, and write a new audit snapshot.
 
     python3 tools/grade.py            print the scripted grades for every package
-    python3 tools/grade.py --write    write scorecard/audits/<today>[-N].json
+    python3 tools/grade.py --write    write scorecard/audits/<today>[-N].json, then every README's Health
+    python3 tools/grade.py --check    fail if the newest snapshot or a README's Health is stale
 
 A snapshot copies the newest audit, replaces the grades below with fresh results, and
 applies each criterion's `capture` rule from scorecard/criteria.json (criteria a capture
@@ -30,6 +31,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalog  # noqa: E402
+import health  # noqa: E402
 import scorecard  # noqa: E402
 
 ROOT = catalog.ROOT
@@ -296,11 +298,12 @@ def main() -> None:
     if args.check:
         criteria, audits = scorecard.load()
         problems, warnings = stale(criteria, audits[-1], systems, categories)
+        problems += health.problems(criteria, audits[-1], systems)
         for w in warnings:
             print(f"warning: {w}")
         if problems:
             sys.exit("scorecard is stale; run `make grade`:\n  " + "\n  ".join(problems))
-        print("scorecard current")
+        print("scorecard and health current")
         return
     if not args.write:
         for s in systems:
@@ -320,6 +323,8 @@ def main() -> None:
     path.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
     missing = sorted({s["slug"] for s in systems} - {s["slug"] for s in out["systems"]})
     print(f"wrote {path.relative_to(ROOT)}" + (f"; not in any review yet: {', '.join(missing)}" if missing else ""))
+    for readme in health.write(criteria, out, systems):
+        print(f"wrote {readme.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
