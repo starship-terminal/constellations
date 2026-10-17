@@ -112,6 +112,7 @@ colors:
   bg-user-message: "rgba(11, 11, 11, 0.05)"
   bg-warning: "#f9dca4"
   bg-warning-chip: "#f9dca4"
+  bg-info: "#fcfcfb"
   editor-bg-editor-canvas: "#edece8"
   editor-bg-editor-claude-pending: "rgba(217, 119, 87, 0.22)"
   editor-bg-editor-collaborator-1: "rgba(113, 97, 224, 0.22)"
@@ -199,6 +200,7 @@ colors:
   border-stronger: "rgba(11, 11, 11, 0.4)"
   border-success: "#73cb6d"
   border-warning: "#eda100"
+  border-info: "rgba(11, 11, 11, 0.1)"
   control-button-on-content: "rgba(255, 255, 255, 0.6)"
   control-button-on-content-hover: "rgba(255, 255, 255, 0.7)"
   control-button-on-content-ring: "rgba(255, 255, 255, 0.35)"
@@ -282,6 +284,7 @@ colors:
   fill-accent-pressed: "#3987e5"
   fill-primary-pressed: "#2c2c2a"
   fill-danger-pressed: "#e34948"
+  fill-info: "#0b0b0b"
   shadow-ring-color: "rgba(11, 11, 11, 0.1)"
   shadow-color: "rgba(11, 11, 11, 0.08)"
   neutral-0: "#ffffff"
@@ -350,6 +353,7 @@ colors:
   text-warning: "#734500"
   text-link: "#184f95"
   text-link-underline: "#184f95"
+  text-info: "#0b0b0b"
   frame-bg-page: "#fcfcfb"
   frame-hover: "#f0efec"
   frame-selected: "#edece8"
@@ -652,12 +656,12 @@ How Claude's components combine for the common jobs, read from the captures. Eac
 |---|---|---|---|
 | App shell and navigation | A 288px sidebar on its own ground (wordmark, Home/Code, New, Artifacts, More, Pinned, Chats and tasks, the account row) beside one content column with a 48px header; list pages centre a 960 column, a chat a 768 transcript. The sidebar can be hidden to one button, and on a phone it is a full-screen sheet. | `sidebar`, `nav-row`, `chat-row`, `pane-header`, `page-header` | [home-dark](screenshots/home-dark.png), [home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png) |
 | Forms and validation | Forms live in a dialog: a title, labelled fields stacked with the label above (sentence-case question, 14px medium), then Cancel and the primary action at the end. The action stays enabled while the field is empty. An invalid field keeps its fill and swaps its hairline for a 1px `fill.danger` ring, and its focus ring for `shadow.focus-danger`; the message text that goes with it was not seen. | `form-dialog`, `field-label`, `text-field`, `text-field-invalid`, `text-area`, `button-primary`, `button-secondary` | [projects-dark-create](screenshots/projects-dark-create.png) |
-| Empty, loading and error states | Empty is one centred `text.muted` line that quotes the query, with no picture and no action. Loading draws the page's real layout in `cds Skeleton` bars and cards that shimmer every 2 s (no shimmer under reduced motion). No error state was reachable. | `empty-state`, `skeleton`, `skeleton-card` | [chats-dark-search-empty](screenshots/chats-dark-search-empty.png), [artifacts-dark-loading](screenshots/artifacts-dark-loading.png) |
+| Empty, loading and error states | Empty is one centred `text.muted` line that quotes the query, with no picture and no action. Loading draws the page's real layout in `cds Skeleton` bars and cards that shimmer every 2 s (no shimmer under reduced motion). An error recovers rather than stops: opening a chat that no longer exists sends you to a fresh home page and says why in a warning toast ("That chat is no longer available. Starting a new one."). | `empty-state`, `skeleton`, `skeleton-card`, `toast` | [chats-dark-search-empty](screenshots/chats-dark-search-empty.png), [artifacts-dark-loading](screenshots/artifacts-dark-loading.png), [home-dark-toast](screenshots/home-dark-toast.png) |
 | Destructive confirmation | A small `ConfirmationDialog` (role alertdialog, 400 wide): a question as the title ("Delete chat?"), one sentence, then Cancel (secondary) and the action in `fill.danger`. The red menu item that opens it is the only other red. Bulk delete in Select mode uses the same red button in the page header. | `confirm-dialog`, `button-danger`, `button-secondary`, `chat-menu-item-danger`, `selection-bar` | [chats-dark-delete-confirm](screenshots/chats-dark-delete-confirm.png), [home-dark-chat-menu](screenshots/home-dark-chat-menu.png) |
-| Feedback after an action | Selection answers in place: ticking a row fills its checkbox with `fill.accent`, and the header swaps Select and New for a muted count, Select all and Delete. Pressing any cds button keeps its hover fill and squishes it to 97.5% in 60 ms. A toast was not seen: the toast region is mounted on every page but stayed empty, and copying a message raised none. | `checkbox`, `selection-bar`, `button-primary` (pressed) | [chats-dark-select](screenshots/chats-dark-select.png) |
+| Feedback after an action | Selection answers in place: ticking a row fills its checkbox with `fill.accent`, and the header swaps Select and New for a muted count, Select all and Delete. Pressing any cds button keeps its hover fill and squishes it to 97.5% in 60 ms. Copying (a message, the organization ID) raised no toast. A toast is kept for news the user did not ask for: bottom right, 360 wide, a status-coloured card (a `bg.*` layer over `surface.3`, a 1px `border.*` ring, `text.*` ink) with a glyph, one sentence and Dismiss; several stack upward. Information that stays on the page is a neutral `Banner` (role status) on `surface.1` with a hairline ring and an info glyph. | `checkbox`, `selection-bar`, `button-primary` (pressed), `toast`, `toast-text`, `toast-dismiss`, `banner-info`, `banner-info-text` | [chats-dark-select](screenshots/chats-dark-select.png), [home-dark-toast](screenshots/home-dark-toast.png), [settings-dark-capabilities](screenshots/settings-dark-capabilities.png) |
 | Search and filtering | Global search is a 672 dialog over a dimmed page (Shift Cmd K); list pages put a search icon in the header that opens an inline field with a clear button, and a filter icon that opens a menu of mutually exclusive filters (All, Chat, Shared, Cowork, Archived) with a tick on the current one. | `search-dialog`, `search-field`, `search-input`, `filter-menu`, `filter-menu-item` | [home-dark-search](screenshots/home-dark-search.png), [chats-dark-filter-menu](screenshots/chats-dark-filter-menu.png) |
 | Data display | Lists are full-width rows with the title at the start and a muted time at the end, hairlines between, a hover wash and the row's actions shown on hover; Chats is a table of such rows, Artifacts and Projects grids of cards (three and two columns, 24 gaps). Chats has a Sort by button beside its filter; tables inside a reply use the chat serif. No pagination was seen: lists scroll. | `chats-row`, `artifact-row`, `project-card`, `table`, `table-th` | [chats-dark](screenshots/chats-dark.png), [projects-dark](screenshots/projects-dark.png), [thread-dark-table](screenshots/thread-dark-table.png) |
-| Onboarding and first run | Not captured: the account is past onboarding, and the only first-run surface left is the home greeting, which is the empty state of a new chat. | `greeting`, `composer` | [home-dark](screenshots/home-dark.png) |
+| Onboarding and first run | First run is one screen at `/onboarding`: the wordmark at the top, a serif display title ("Let's create your account") with a secondary line, one 448-wide card on `surface.3` (radius 16, a hairline border, `shadow.sm`) holding the consent checkboxes (terms with inline links, and an opt-in for email) and a full-width 40px primary button, and the verified email with a "Use a different email" link at the foot. Nothing is pre-ticked. After it, the first thing a person sees is the home greeting and the composer, which is the empty state of a new chat. | `onboarding-card`, `onboarding-title`, `onboarding-subtitle`, `onboarding-checkbox`, `onboarding-checkbox-label`, `onboarding-button`, `greeting`, `composer` | [onboarding-dark](screenshots/onboarding-dark.png), [home-dark](screenshots/home-dark.png) |
 
 ### The screen to get right (from README.md)
 
