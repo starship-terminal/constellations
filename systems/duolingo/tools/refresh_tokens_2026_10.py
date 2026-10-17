@@ -64,10 +64,19 @@ for key, px, use in (("xs", 16, "inline glyphs in buttons and lists"), ("sm", 18
         "Measured")
 core["focusRing"] = {
     "width": tok("0px", "dimension",
-        "Duolingo draws no focus ring. Two live passes on 2026-10-17 pressed Tab (or an arrow key in a menu) 78 times across the learn, characters, profile and settings pages, the MORE and courses menus, a lesson, its quit dialog and its report form (components/focus.md); every focused control matched :focus-visible, and none but the text fields and the courses-menu rows changed visibly; the only outline property left is the UA outline-offset of 1px on links, with outline-style none. Text fields show focus by turning their 2px border border.focus, and menu rows by a polar fill.",
+        "Duolingo draws no focus ring on its controls. Two live passes on 2026-10-17 pressed Tab (or an arrow key in a menu) 84 times across the learn, characters, profile, settings and sections pages, the MORE and courses menus, a lesson, its quit dialog and its report form (components/focus.md); every focused control matched :focus-visible, and none but the text fields and the courses-menu rows changed visibly; the only outline property left is the UA outline-offset of 1px on links, with outline-style none. Text fields show focus by turning their 2px border border.focus, and menu rows by a polar fill.",
         f"{LIVE} focus[]; {CSSEV} outline_declarations ('*,:after,:before,button,button:focus,input,textarea{{outline:none}}', '._7jW2t:not(._1ZhE5){{outline:none}}'), focus_visible count 0",
         "Measured"),
     "offset": tok("0px", "dimension", "No ring, so no offset. Kept so a consumer that needs a ring knows Duolingo has none.", f"{LIVE} focus[]", "Measured"),
+    # the one exception, in a chunk the /learn page does not load (pathSections)
+    "listRow": {
+        "width": tok("2px", "dimension",
+            "The app's only ring: the section-group rows of the Math course's section picker (._3DGr8, role=button) draw a 2px solid border.focus (macaw) outline on :focus-visible. Read live by Tab in both themes.",
+            "raw/2026-10/live-measurements-2.json sections-math-dark / sections-math-light; css pathSections-c1a583d8.css '._3DGr8:focus-visible{outline:2px solid rgb(var(--color-macaw));outline-offset:-2px}'",
+            "Measured"),
+        "offset": tok("-2px", "dimension", "Inset by its own width, so the ring is drawn inside the row.",
+            "raw/2026-10/live-measurements-2.json sections-math-*: outline-offset -2px", "Measured"),
+    },
 }
 
 # --- Layout columns (F14) -----------------------------------------------------------------

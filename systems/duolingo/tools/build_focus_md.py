@@ -40,6 +40,8 @@ def kind(r):
     if "_1zl6C" in cls: return "Courses menu trigger"
     if cls.split()[:1] in (["_3KUWP"], ["_3w8he"], ["hCZR9"]): return "Top-bar stat button (streak / gems / hearts)"
     if "tFegI" in cls: return "Tooltip trigger (div with tabindex)"
+    if "_3DGr8" in cls: return "Section-group row (Math section picker, role=button)"
+    if "_2PuH8" in cls: return "Segmented tab (Grades / Topics)"
     if "_2paU5" in cls: return "Link button (outline)"
     if "_3q--f" in cls: return "Link button (filled)"
     if "_2V6ug" in cls: return "Outline button"
@@ -68,7 +70,12 @@ def change(r):
 
 def change2(r):
     parts = []
-    for k, (a, b) in (r.get("diff") or {}).items():
+    diff = dict(r.get("diff") or {})
+    if diff.get("outline-style", [None, None])[1] == "solid":
+        w, c, o = diff.pop("outline-width")[1], diff.pop("outline-color")[1], diff.pop("outline-offset", [None, "0px"])[1]
+        diff.pop("outline-style")
+        parts.append(f"{w} solid outline in {c} (`border.focus`, macaw), offset {o} (drawn inside the row)")
+    for k, (a, b) in diff.items():
         if k == "outline-offset":
             parts.append("outline-offset 1px with outline-style none (no ring drawn)")
         elif k == "background-color" and b == "rgb(32, 47, 54)":
@@ -85,7 +92,7 @@ def change2(r):
 
 L = ["# Duolingo: focus states, measured live", "",
      "Captured on 2026-10-17 in the signed-in web app (free account) by pressing the Tab key in the built-in browser pane and reading the focused element's computed styles after each press, against the same element at rest ([tools/capture/live-measure.js](../tools/capture/live-measure.js), data in [raw/2026-10/live-measurements.json](../raw/2026-10/live-measurements.json)).", "",
-     "Duolingo draws no focus ring. Its stylesheets set `outline:none` on every element (`*,:after,:before,button,button:focus,input,textarea`) and on every web-ui button (`._7jW2t:not(._1ZhE5)`), and none of the 20 chunks the app loaded has a `:focus-visible` rule ([raw/2026-10/css-evidence.json](../raw/2026-10/css-evidence.json)). Every control below matched `:focus-visible`; only text fields change visibly, by turning their 2px border `border.focus`. The one other visible keyboard state is the courses dropdown: its rows get a `surface.subtle` (polar) fill on `:focus` and `:focus-within`, read in CSS and confirmed live in the second pass (arrow keys move focus between rows). `core.focusRing.width` is 0px for that reason.", "",
+     "Duolingo draws no focus ring on its controls. Its stylesheets set `outline:none` on every element (`*,:after,:before,button,button:focus,input,textarea`) and on every web-ui button (`._7jW2t:not(._1ZhE5)`), and none of the 20 chunks the learn page loaded has a `:focus-visible` rule; the one that does, `pathSections`, rings the Math course's section-group rows (second pass, below) ([raw/2026-10/css-evidence.json](../raw/2026-10/css-evidence.json)). Every control below matched `:focus-visible`; only text fields change visibly, by turning their 2px border `border.focus`, plus the one ring below. The one other visible keyboard state is the courses dropdown: its rows get a `surface.subtle` (polar) fill on `:focus` and `:focus-within`, read in CSS and confirmed live in the second pass (arrow keys move focus between rows). `core.focusRing.width` is 0px for that reason.", "",
      "| # | Page | Control | `:focus-visible` | What changed on focus |", "| --- | --- | --- | --- | --- |"]
 n = 0
 for r in d["focus"]:
@@ -103,7 +110,12 @@ for r in d2["focus"]:
         continue
     m += 1
     L.append(f"| {m} | {r['page']} | {r['key']} | {kind(r)} | {'yes' if r.get('fv') else 'no'} | {change(r)} |")
-L += ["", f"{m} key presses.", "", "## Reachability", "",
+L += ["", f"{m} key presses.", "",
+      "The one ring Duolingo draws: the section-group rows of the Math course's section picker (`._3DGr8:focus-visible{outline:2px solid rgb(var(--color-macaw));outline-offset:-2px}`, the only `:focus-visible` rule in the app's CSS), focused by Tab in both themes:", "",
+      "| Dark | Light |", "| --- | --- |",
+      "| ![Math section-group row focused, dark](crops/focus-section-row-dark.png) | ![Math section-group row focused, light](crops/focus-section-row-light.png) |", "",
+      "The crops are from the browser pane at its own scale (not 2x).", "",
+      "## Reachability", "",
       "What the keyboard can and cannot reach, from the two passes:", ""]
 L += list(dict.fromkeys(f"- {r['page']}: {r['note']}." for r in d2["focus"] if r.get("note")))
 L += ["- MORE menu (sidebar): Enter on the trigger opens it; Tab then walks its four rows (Duolingo English Test, Settings, Help, Log out) with no visible change on any of them.",

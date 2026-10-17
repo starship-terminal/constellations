@@ -1,7 +1,7 @@
 {
  "_meta": {
   "captured": "2026-10-17",
-  "how": "Second live Tab pass in the built-in browser pane, signed in, 1440x900, dark theme. Each record is one real key press (Tab, or ArrowDown inside the courses menu) read against the same elements at rest; note records hold reachability findings. tools/capture/tab-pass.js holds the helpers. levels: diff is the control, ancestorDiff is keyed by ancestor depth 1-3.",
+  "how": "Second live Tab pass in the built-in browser pane, signed in, 1440x900, dark theme. Each record is one real key press (Tab, or ArrowDown inside the courses menu) read against the same elements at rest; note records hold reachability findings. tools/capture/tab-pass.js holds the helpers. levels: diff is the control, ancestorDiff is keyed by ancestor depth 1-3. The sections-math-* records come from the Math course section picker (the account was switched to Math for this read and back to Japanese afterwards, with the owner's approval), where the app's only :focus-visible rule lives; light and dark.",
   "not_recorded": "reads after a script focus() call; the body read when focus started outside the quit dialog"
  },
  "focus": [
@@ -784,6 +784,168 @@
    "tag": "input",
    "cls": "",
    "note": "native checkbox; Tab stays on it while Submit is disabled (focus trap inside the report popover); popover closes when focus leaves"
+  },
+  {
+   "page": "sections-math-dark",
+   "key": "Tab",
+   "tag": "button",
+   "cls": "_2PuH8 _2u4nn",
+   "fv": true,
+   "rect": [
+    370,
+    230,
+    270,
+    52
+   ],
+   "diff": {}
+  },
+  {
+   "page": "sections-math-dark",
+   "key": "Tab",
+   "tag": "button",
+   "cls": "_2PuH8 ",
+   "fv": true,
+   "rect": [
+    640,
+    230,
+    270,
+    52
+   ],
+   "diff": {}
+  },
+  {
+   "page": "sections-math-dark",
+   "key": "Tab",
+   "tag": "div",
+   "role": "button",
+   "cls": "_3DGr8 _3swWK",
+   "fv": true,
+   "rect": [
+    370,
+    282,
+    540,
+    98
+   ],
+   "diff": {
+    "outline-style": [
+     "none",
+     "solid"
+    ],
+    "outline-width": [
+     "3px",
+     "2px"
+    ],
+    "outline-color": [
+     "rgb(241, 247, 251)",
+     "rgb(73, 192, 248)"
+    ],
+    "outline-offset": [
+     "0px",
+     "-2px"
+    ]
+   }
+  },
+  {
+   "page": "sections-math-dark",
+   "key": "Tab",
+   "tag": "div",
+   "role": "button",
+   "cls": "_3DGr8 _3q-zZ",
+   "fv": true,
+   "rect": [
+    370,
+    723,
+    540,
+    98
+   ],
+   "diff": {
+    "outline-style": [
+     "none",
+     "solid"
+    ],
+    "outline-width": [
+     "3px",
+     "2px"
+    ],
+    "outline-color": [
+     "rgb(241, 247, 251)",
+     "rgb(73, 192, 248)"
+    ],
+    "outline-offset": [
+     "0px",
+     "-2px"
+    ]
+   }
+  },
+  {
+   "page": "sections-math-light",
+   "key": "Tab",
+   "tag": "div",
+   "role": "button",
+   "cls": "_3DGr8 _3swWK",
+   "fv": true,
+   "rect": [
+    370,
+    282,
+    540,
+    98
+   ],
+   "diff": {
+    "outline-style": [
+     "none",
+     "solid"
+    ],
+    "outline-width": [
+     "3px",
+     "2px"
+    ],
+    "outline-color": [
+     "rgb(60, 60, 60)",
+     "rgb(28, 176, 246)"
+    ],
+    "outline-offset": [
+     "0px",
+     "-2px"
+    ]
+   }
+  },
+  {
+   "page": "sections-math-light",
+   "key": "Tab",
+   "tag": "div",
+   "role": "button",
+   "cls": "_3DGr8 _3q-zZ",
+   "fv": true,
+   "rect": [
+    370,
+    723,
+    540,
+    98
+   ],
+   "diff": {
+    "outline-style": [
+     "none",
+     "solid"
+    ],
+    "outline-width": [
+     "3px",
+     "2px"
+    ],
+    "outline-color": [
+     "rgb(60, 60, 60)",
+     "rgb(28, 176, 246)"
+    ],
+    "outline-offset": [
+     "0px",
+     "-2px"
+    ]
+   }
+  },
+  {
+   "page": "sections-math",
+   "tag": "div",
+   "cls": "g62F5",
+   "note": "Math course section picker: the section rows inside an open grade group (div.g62F5) have no tabindex, so Tab moves from one grade header to the next"
   }
  ]
 }

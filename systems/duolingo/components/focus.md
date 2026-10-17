@@ -2,7 +2,7 @@
 
 Captured on 2026-10-17 in the signed-in web app (free account) by pressing the Tab key in the built-in browser pane and reading the focused element's computed styles after each press, against the same element at rest ([tools/capture/live-measure.js](../tools/capture/live-measure.js), data in [raw/2026-10/live-measurements.json](../raw/2026-10/live-measurements.json)).
 
-Duolingo draws no focus ring. Its stylesheets set `outline:none` on every element (`*,:after,:before,button,button:focus,input,textarea`) and on every web-ui button (`._7jW2t:not(._1ZhE5)`), and none of the 20 chunks the app loaded has a `:focus-visible` rule ([raw/2026-10/css-evidence.json](../raw/2026-10/css-evidence.json)). Every control below matched `:focus-visible`; only text fields change visibly, by turning their 2px border `border.focus`. The one other visible keyboard state is the courses dropdown: its rows get a `surface.subtle` (polar) fill on `:focus` and `:focus-within`, read in CSS and confirmed live in the second pass (arrow keys move focus between rows). `core.focusRing.width` is 0px for that reason.
+Duolingo draws no focus ring on its controls. Its stylesheets set `outline:none` on every element (`*,:after,:before,button,button:focus,input,textarea`) and on every web-ui button (`._7jW2t:not(._1ZhE5)`), and none of the 20 chunks the learn page loaded has a `:focus-visible` rule; the one that does, `pathSections`, rings the Math course's section-group rows (second pass, below) ([raw/2026-10/css-evidence.json](../raw/2026-10/css-evidence.json)). Every control below matched `:focus-visible`; only text fields change visibly, by turning their 2px border `border.focus`, plus the one ring below. The one other visible keyboard state is the courses dropdown: its rows get a `surface.subtle` (polar) fill on `:focus` and `:focus-within`, read in CSS and confirmed live in the second pass (arrow keys move focus between rows). `core.focusRing.width` is 0px for that reason.
 
 | # | Page | Control | `:focus-visible` | What changed on focus |
 | --- | --- | --- | --- | --- |
@@ -93,8 +93,22 @@ Same method, dark theme, 1440x900 ([tools/capture/tab-pass.js](../tools/capture/
 | 43 | lesson-dark-footer-correct | Tab | Footer feedback button (Too easy / Too difficult) | yes | no computed change |
 | 44 | lesson-dark-report-form | Tab | Checkbox (native input) | yes | outline-offset 1px with outline-style none (no ring drawn) |
 | 45 | lesson-dark-report-form | Tab | Checkbox (native input) | yes | outline-offset 1px with outline-style none (no ring drawn) |
+| 46 | sections-math-dark | Tab | Segmented tab (Grades / Topics) | yes | no computed change |
+| 47 | sections-math-dark | Tab | Segmented tab (Grades / Topics) | yes | no computed change |
+| 48 | sections-math-dark | Tab | Section-group row (Math section picker, role=button) | yes | 2px solid outline in rgb(73, 192, 248) (`border.focus`, macaw), offset -2px (drawn inside the row) |
+| 49 | sections-math-dark | Tab | Section-group row (Math section picker, role=button) | yes | 2px solid outline in rgb(73, 192, 248) (`border.focus`, macaw), offset -2px (drawn inside the row) |
+| 50 | sections-math-light | Tab | Section-group row (Math section picker, role=button) | yes | 2px solid outline in rgb(28, 176, 246) (`border.focus`, macaw), offset -2px (drawn inside the row) |
+| 51 | sections-math-light | Tab | Section-group row (Math section picker, role=button) | yes | 2px solid outline in rgb(28, 176, 246) (`border.focus`, macaw), offset -2px (drawn inside the row) |
 
-45 key presses.
+51 key presses.
+
+The one ring Duolingo draws: the section-group rows of the Math course's section picker (`._3DGr8:focus-visible{outline:2px solid rgb(var(--color-macaw));outline-offset:-2px}`, the only `:focus-visible` rule in the app's CSS), focused by Tab in both themes:
+
+| Dark | Light |
+| --- | --- |
+| ![Math section-group row focused, dark](crops/focus-section-row-dark.png) | ![Math section-group row focused, light](crops/focus-section-row-light.png) |
+
+The crops are from the browser pane at its own scale (not 2x).
 
 ## Reachability
 
@@ -105,6 +119,7 @@ What the keyboard can and cannot reach, from the two passes:
 - lesson-dark-footer-correct: Enter with Report focused advanced to the next challenge: the lesson binds Enter to Continue globally, so the report form cannot be opened by Enter.
 - lesson-dark-quit-dialog: focus trap: Tab cycles Keep learning and End session only; focus starts on body.
 - lesson-dark-report-form: native checkbox; Tab stays on it while Submit is disabled (focus trap inside the report popover); popover closes when focus leaves.
+- sections-math: Math course section picker: the section rows inside an open grade group (div.g62F5) have no tabindex, so Tab moves from one grade header to the next.
 - MORE menu (sidebar): Enter on the trigger opens it; Tab then walks its four rows (Duolingo English Test, Settings, Help, Log out) with no visible change on any of them.
 - Courses menu (top bar): opens on hover. Enter on its trigger did not open it, and the next Tab presses moved on to the stat buttons. With the menu open, Tab lands on the current course row (the only row with tabindex 0) and ArrowDown moves between rows (roving tabindex).
 - Quit dialog: opens only once the lesson has progress (with none, the X leaves at once).

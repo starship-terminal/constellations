@@ -1696,7 +1696,7 @@ Notes: Searched every dump for role alert/status and data-test containing toast/
 ## Gaps
 
 - Toasts / snackbars: none captured in any dump; no CSS or class map identifies one.
-- Focus / focus-visible: captured live in two keyboard passes (78 key presses, [focus.md](focus.md)). No control draws a ring; only text fields (border) and courses-menu rows (fill) change. The one `:focus-visible` rule in the CSS, `._3DGr8` on the sections page, was not reached.
+- Focus / focus-visible: captured live in two keyboard passes (84 key presses, [focus.md](focus.md)). Controls draw no ring; text fields change their border and courses-menu rows their fill. The one ring in the app, a 2px macaw outline on the Math course's section-group rows (`._3DGr8`), was read live in both themes.
 - Active / pressed: not captured live for any component (static dumps); all pressed values are from CSS.
 - Button pill variant (_17LYs, 26px) and solid owl/snow/humpback colour variants exist in the class map and CSS but appear in no dump.
 - Disabled text input, error input and helper text: CSS/JS only, no capture.

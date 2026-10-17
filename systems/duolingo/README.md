@@ -55,7 +55,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Free plan, 
 | Type | Captured: stacks, scale, weights, line heights, roles; code role not present | `core.fontFamily`, `core.typography` |
 | Spacing | Captured as used; Duolingo's paddings (5, 10, 14, 15, 18, 30px) sit on no single base unit, so no 4 or 8px scale is claimed | `core.space` |
 | Radii, border widths | Captured | `core.radius`, `core.borderWidth` |
-| Sizing | Captured: control heights, icon sizes; the focus ring is measured as none | `core.size`, `core.size.icon`, `core.focusRing` |
+| Sizing | Captured: control heights, icon sizes; the focus ring is measured as none on controls, 2px inset on the one place it is drawn (Math section-group rows) | `core.size`, `core.size.icon`, `core.focusRing` |
 | Elevation | Not present: no blurred shadow anywhere; surfaces are separated by 2px borders and zero-blur 3D lips | `core.shadow.lip` |
 | Motion | Captured: durations, easings, and what reduced motion turns off | `core.duration`, `core.easing`, `core.duration.reducedMotion` |
 | Layout | Captured: breakpoints, widths, columns at 1440, 1000 and 390, z-index | `core.breakpoint`, `core.size`, `core.layout.columns`, `core.zIndex` |
