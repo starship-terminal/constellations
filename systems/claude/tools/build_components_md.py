@@ -338,10 +338,11 @@ def props(v):
     o["background"] = colour(s["backgroundColor"], role="background")
     # A cds Button paints on an inner span (.cds-btn-squish), so its hover and press fills only show
     # there: when the root paints nothing, its first painted layer's fill is a state value too.
-    if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["backgroundImage"] == "none":
-        layer = next((ly for ly in (v.get("paint") or []) if ly.get("bg")), None)
+    # Only a cds Button (a group/btn root) has that paint span; any other child fill is not a state.
+    if "group/btn" in (v.get("classes") or "").split():
+        layer = next((ly for ly in (v.get("paint") or []) if ly["node"].startswith("span.absolute.inset-0")), None)
         if layer:
-            o["inner fill"] = colour(layer["bg"], role="background")
+            o["inner fill"] = colour(layer["bg"], role="background") if layer.get("bg") else "transparent"
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
         o["image"] = colour(img)[:200]
