@@ -3616,7 +3616,7 @@
     "crops/lesson-top-bar--bee-dark.png"
    ],
    "gaps": [
-    "Progress bar height (`space.16` 16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it.",
+    "Progress bar height (16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it.",
     "What triggers bee versus fox fill is not recorded; both captured only as inline colours.",
     "Light bee fill not captured.",
     "Settings gear hover not captured, only CSS."
@@ -5781,7 +5781,7 @@
    "gaps": [
     "Light incorrect not captured: every light incorrect value is derived from the CSS rules the dark incorrect nodes use.",
     "Light incorrect icon image and report icon not captured; REPORT icon class for light incorrect is probably .o8H6C (images/0f625e0c64ba72c0cd96755abcc4bcdf.svg), inferred only from the order of the report-icon rules in css:1008-b4d34396.css (light correct _26G6u, dark correct Htiq_, then o8H6C, dark incorrect _2M-GA).",
-    "TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, `space.2` 2px)."
+    "TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, 2px)."
    ],
    "notes": "Dark correct crop taken from a 1384px screenshot of a 1200px dump, crop_offset [92,0].",
    "feedback_table": [
@@ -13165,7 +13165,7 @@
   },
   {
    "component": "lesson-top-bar",
-   "gap": "Progress bar height (`space.16` 16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it."
+   "gap": "Progress bar height (16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it."
   },
   {
    "component": "lesson-top-bar",
@@ -13277,7 +13277,7 @@
   },
   {
    "component": "feedback-bar",
-   "gap": "TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, `space.2` 2px)."
+   "gap": "TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, 2px)."
   },
   {
    "component": "review-interstitial",

@@ -738,7 +738,7 @@ The per-icon table (file, source, where used, rendered size, fill or stroke, col
 - section-card: No mobile capture of /sections.
 - section-card: Hover states not captured.
 - section-card: Title colour on completed/in-progress cards is not recorded in the dump.
-- lesson-top-bar: Progress bar height (`space.16` 16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it.
+- lesson-top-bar: Progress bar height (16px) comes from an inline --__internal__progress-bar-height; no CSS rule sets it.
 - lesson-top-bar: What triggers bee versus fox fill is not recorded; both captured only as inline colours.
 - lesson-top-bar: Light bee fill not captured.
 - lesson-top-bar: Settings gear hover not captured, only CSS.
@@ -766,7 +766,7 @@ The per-icon table (file, source, where used, rendered size, fill or stroke, col
 - lesson-footer: Light enabled crop deleted: lesson-light-choice-selected screenshot shows CHECK still disabled.
 - feedback-bar: Light incorrect not captured: every light incorrect value is derived from the CSS rules the dark incorrect nodes use.
 - feedback-bar: Light incorrect icon image and report icon not captured; REPORT icon class for light incorrect is probably .o8H6C (images/0f625e0c64ba72c0cd96755abcc4bcdf.svg), inferred only from the order of the report-icon rules in css:1008-b4d34396.css (light correct _26G6u, dark correct Htiq_, then o8H6C, dark incorrect _2M-GA).
-- feedback-bar: TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, `space.2` 2px).
+- feedback-bar: TOO EASY / TOO DIFFICULT icons are inline stroke SVGs (stroke = state colour, 2px).
 - review-interstitial: light theme not captured: light values derived from CSS variables and palette
 - review-interstitial: mobile layout not captured
 - review-interstitial: the body text of the bubble has no own colour on the node, so its colour comes from the body rule

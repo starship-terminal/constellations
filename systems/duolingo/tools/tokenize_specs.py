@@ -379,7 +379,10 @@ def type_and_heights_md(md):
 def type_and_heights_json(v, ctx=""):
     if isinstance(v, str):
         field = ctx.lower().rsplit(" ", 1)[-1]
-        groups = {g for words, g in SCALES if re.search(words, field)}
+        # the field name stands in for the group, except in the
+        # evidence notes ('coverage_gaps[].gap' says what is missing, not a gap size)
+        notes = re.search(r"\b(?:gaps|coverage_gaps|notes|caveat\w*)\b", ctx.lower())
+        groups = set() if notes else {g for words, g in SCALES if re.search(words, field)}
         return type_and_heights(v, ctx.lower(), height_row=is_height(ctx.lower()), key_group=groups.pop() if len(groups) == 1 else None)
     if isinstance(v, list):
         return [type_and_heights_json(x, ctx) for x in v]
