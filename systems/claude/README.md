@@ -58,7 +58,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | light | 19.17:1 pass | 19.68:1 pass | 7.73:1 pass | 7.93:1 pass |
 | dark | 15.88:1 pass | 15.14:1 pass | 10.19:1 pass | 9.72:1 pass |
 
-8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.shadow.focus` inset 0px 0px 0px 1px #151515, 0px 0px 0px 1px #2a78d6, 0px 0px 6px 1px rgba(24, 79, 149, 0.6); `light.shadow.focus` inset 0px 0px 0px 1px #fcfcfb, 0px 0px 0px 1px #2a78d6, 0px 0px 6px 1px #cde2fb; `core.focusRing.glow` 6px; `dark.shadow.focus-danger` inset 0px 0px 0px 1px #151515, 0px 0px 0px 1px #d03b3b, 0px 0px 6px 1px rgba(142, 38, 38, 0.6).
+8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.shadow.focus` inset 0px 0px 0px 1px #151515, 0px 0px 0px 1px #2a78d6, 0px 0px 6px 1px rgba(24, 79, 149, 0.6); `light.shadow.focus` inset 0px 0px 0px 1px #fcfcfb, 0px 0px 0px 1px #2a78d6, 0px 0px 6px 1px #cde2fb; `core.focusRing.glow` 6px; `core.focusRing.ring-width` 1px.
 
 <!-- brief:end -->
 

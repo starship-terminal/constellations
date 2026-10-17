@@ -132,6 +132,12 @@ class SectionTest(unittest.TestCase):
         text = self.section(tokens=many)
         self.assertEqual(re.findall(r"`core\.focus\.(\w)`", text), ["a", "b", "c", "d"])
 
+    def test_a_base_focus_token_comes_before_its_variants(self):
+        tokens = json.loads(json.dumps(TOKENS))
+        tokens["light"]["border"] = {"focus-danger": {"$value": "#ff0000"}, "x": {"focus": {"$value": "{ink}"}}}
+        text = self.section(tokens=tokens)
+        self.assertLess(text.index("`light.border.x.focus`"), text.index("`light.border.focus-danger`"))
+
     def test_no_focus_tokens_is_said(self):
         tokens = json.loads(json.dumps(TOKENS))
         del tokens["core"]["focusRing"], tokens["light"]["border"]

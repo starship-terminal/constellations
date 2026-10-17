@@ -58,7 +58,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | light | 18.94:1 pass | 18.46:1 pass | 6.41:1 pass | 6.25:1 pass |
 | dark | 17.93:1 pass | 13.75:1 pass | 13.20:1 pass | 10.12:1 pass |
 
-8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.app.border-focus` #3a83f7; `dark.role.border.focus` #3a83f7; `light.app.border-focus` #3a83f7; `dark.token.focus-border` #3a83f7.
+8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.app.border-focus` #3a83f7; `dark.role.border.focus` #3a83f7; `light.app.border-focus` #3a83f7; `light.role.border.focus` #3a83f7.
 
 <!-- brief:end -->
 

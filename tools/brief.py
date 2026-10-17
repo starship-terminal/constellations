@@ -153,7 +153,10 @@ def _pair(row: dict | None) -> str:
 
 def focus_tokens(system: dict, theme: str | None) -> str:
     res = catalog.resolver_for(system["tokens"])
-    paths = sorted((p for p in res.flat if "focus" in p.lower()), key=lambda p: (len(p), p))[:FOCUS_LIMIT]
+    # A base token (`shadow.focus`, `focusRing.width`) before a variant of it (`shadow.focus-danger`).
+    variant = lambda p: bool(re.search(r"focus[a-z]*[-_][a-z]", p.split(".")[-1], re.I))
+    paths = sorted((p for p in res.flat if "focus" in p.lower()),
+                   key=lambda p: (variant(p), len(p), p))[:FOCUS_LIMIT]
     if not paths:
         return "Focus: no focus tokens (no token path contains \"focus\")."
     shown = []
