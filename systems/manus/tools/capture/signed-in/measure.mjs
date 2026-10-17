@@ -39,8 +39,8 @@ const OUT = path.join(RAW, 'components-computed.json');
 const args = process.argv.slice(2);
 const jobsArg = args.indexOf('--jobs');
 const CONC = jobsArg >= 0 ? +args[jobsArg + 1] : 4;
-// --states pressed,hover: measure only those states (and an extra's own states of that kind),
-// keeping every other reading as it is.
+// --states pressed,error: measure only those states (by kind, so pressed includes an extra's
+// enabled-pressed; or by name, for a captured state such as error), keeping every other reading.
 const statesArg = args.indexOf('--states');
 const STATES = statesArg >= 0 ? args[statesArg + 1].split(',') : null;
 const ONLY = args.filter((a, i) => !a.startsWith('--') && (jobsArg < 0 || i !== jobsArg + 1) && (statesArg < 0 || i !== statesArg + 1));
@@ -768,7 +768,9 @@ for (const spec of SPECS) {
   c.pages = [...new Set(jobs.map((j) => j.snap))];
   for (const job of jobs) {
     if (!labels.includes(job.snap)) continue;
-    if (STATES && (!STATES.includes(job.base) || (job.variant && job.base === 'default'))) continue;
+    // A captured state (error, typed, enabled) is matched by its name; a measured one (hover,
+    // pressed) by its kind, so `pressed` also selects enabled-pressed.
+    if (STATES && !STATES.includes(job.state) && (!STATES.includes(job.base) || (job.variant && job.base === 'default'))) continue;
     delete c.states[job.state];
     delete c.states[job.state === 'default' ? 'light' : `light-${job.state}`];
     if (!bySnap.has(job.snap)) bySnap.set(job.snap, []);

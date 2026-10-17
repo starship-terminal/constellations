@@ -7,7 +7,7 @@
   "states": {
    "default": "at rest, as captured",
    "hover": "real mouse hover (page.mouse.move), 450ms settle; not measured on the 390 snapshots",
-   "pressed": "the pointer held down on the element (page.mouse.down), 300ms settle, so active: variants apply",
+   "pressed": "the pointer held down on the element (page.mouse.down), 300ms settle, so active: variants apply; recorded as skipped where no :active rule or active: class reaches the element. On home-dark, read from a fresh copy of the page at rest (2026-10-17); the other states there come from the first copy",
    "focus-visible": "real keyboard focus (focus, Shift+Tab, Tab) on the element or its first focusable descendant; recorded as skipped where the element cannot take focus",
    "other": "active / selected / checked / open / typed / enabled / ... are other elements or snapshots captured in that state"
   },
