@@ -50,7 +50,12 @@
   "search-list-light-updating-dialog",
   "library-all-light-notes-empty",
   "library-all-light-selected",
-  "search-start-light-recent"
+  "search-start-light-recent",
+  "home-narrow-light-stacked",
+  "library-all-light-cite-dialog",
+  "library-all-light-toast",
+  "search-list-light-citation-missing",
+  "search-tablet-light-inspect"
  ],
  "root": {
   "--neg1": "-.25rem",
@@ -140,16 +145,16 @@
   "Plus+Jakarta+Sans"
  ],
  "media": {
-  "(max-width: 640px)": 24,
-  "(min-width: 40rem)": 24,
-  "(min-width: 48rem)": 24,
-  "(min-width: 64rem)": 24,
-  "(min-width: 80rem)": 24,
-  "(min-width: 96rem)": 24,
-  "print": 24,
-  "screen and (-ms-high-contrast:active)": 24,
-  "screen and (preferes-contrast:more)": 24,
-  "screen and (prefers-contrast: more)": 24
+  "(max-width: 640px)": 29,
+  "(min-width: 40rem)": 29,
+  "(min-width: 48rem)": 29,
+  "(min-width: 64rem)": 29,
+  "(min-width: 80rem)": 29,
+  "(min-width: 96rem)": 29,
+  "print": 29,
+  "screen and (-ms-high-contrast:active)": 29,
+  "screen and (preferes-contrast:more)": 29,
+  "screen and (prefers-contrast: more)": 29
  },
  "keyframes": {
   "bOXVIY": "0% { opacity: 0; transform: translate(-50%, -48%) scale(0.96); } 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }",
@@ -254,6 +259,9 @@
   "ArticleDetailsDisplay__ActionsSpace": [
    "& { height: 120px; flex-shrink: 0; }"
   ],
+  "ArticleDetailsDisplay__IncompleteContainer": [
+   "& { border-radius: var(--2); background-color: var(--peach-25); padding: var(--1) var(--2); }"
+  ],
   "ArticleDetailsDisplay__Journal": [
    "& { font-style: italic; font-size: 14px; }"
   ],
@@ -288,8 +296,14 @@
   "ArticleDetailsDisplay__SelectButton": [
    "& { font-size: 18px; }"
   ],
+  "ArticleDetailsDisplay__StyledIncomplete": [
+   "& { color: var(--grey-secondary); }"
+  ],
   "ArticleDetailsDisplay__StyledScrollContainer": [
    "& { overflow-x: hidden; }"
+  ],
+  "ArticleDetailsDisplay__UnselectableIncomplete": [
+   "& { font-size: 18px; color: var(--grey-tertiary); }"
   ],
   "ArticleEvaluation__Container": [
    "& { position: relative; border-radius: 48px; background-color: transparent; padding: var(--1) var(--1); font-size: 12px; font-weight: var(--font-weight-semibold); color: var(--secondary); display: flex; -webkit-box-align: center; align-items: center; gap: var(--1); cursor: pointer; }",
@@ -413,6 +427,14 @@
   ],
   "Confirm__StyledModal": [
    "& { max-width: 800px; min-width: 500px; width: fit-content; }"
+  ],
+  "CopyContainer__Container": [
+   "& { padding: var(--1); background-color: white; border: 1px solid var(--grey-2); border-radius: var(--2); cursor: pointer; display: flex; -webkit-box-align: center; align-items: center; position: relative; }",
+   "& { padding: var(--1); border: 1px solid var(--grey-2); border-radius: var(--2); cursor: pointer; display: flex; -webkit-box-align: center; align-items: center; position: relative; background-color: var(--selection-light); }",
+   "&:hover { background-color: var(--selection-light); }"
+  ],
+  "CopyContainer__Preview": [
+   "& { font-family: monospace; font-size: 12px; margin: var(--1); }"
   ],
   "DashboardFolders__FolderIcon": [
    "& { color: rgb(240, 125, 89); }"
@@ -556,6 +578,9 @@
   "ExploreActionsInspected__StyledExploreFurtherButton": [
    "& { background-color: var(--lavender-25); border-radius: 48px; padding: var(--2); color: black; }",
    "&:disabled { opacity: 0.5; }"
+  ],
+  "ExploreActionsInspected__WarningContainer": [
+   "& { color: black; border-radius: var(--2); background-color: var(--activity-error-bg); padding: var(--1) var(--2); font-size: 12px; }"
   ],
   "ExploreActionsMain__SearchSummary": [
    "& { line-height: 18px; }"
@@ -879,6 +904,10 @@
    "&[data-side=\"right\"] { animation-name: kOzgvf; }",
    "&[data-side=\"top\"] { animation-name: eyKRee; }"
   ],
+  "IncompleteInlineWarning__Container": [
+   "& svg { color: var(--grey-secondary); }",
+   "& { border-radius: 48px; padding: var(--1) var(--2); background-color: var(--peach-25); display: flex; -webkit-box-align: center; align-items: center; gap: var(--1); font-size: 12px; }"
+  ],
   "Input__form": [
    "& { padding: var(--2) var(--3); border-radius: var(--2); box-shadow: 0px 0px 0px 1px inset var(--grey-2); }"
   ],
@@ -1068,6 +1097,9 @@
   ],
   "ListItem__HR": [
    "& { margin: 0px 1px; }"
+  ],
+  "ListItem__Space": [
+   "& { width: 36px; height: 36px; flex-shrink: 0; }"
   ],
   "ListSelectionBar__ClearButton": [
    "& { font-size: 12px; text-decoration: underline; color: var(--grey-secondary); font-weight: 500; }",
@@ -1479,6 +1511,24 @@
   "ToastManager__Container": [
    "& { position: fixed; left: 50%; bottom: 12px; transform: translateX(-50%); display: flex; width: 500px; max-width: 85%; flex-direction: column; -webkit-box-pack: end; justify-content: flex-end; z-index: 2; }"
   ],
+  "Toast__CellContainer": [
+   "& { position: relative; pointer-events: auto; width: 100%; display: flex; flex-direction: column; -webkit-box-pack: end; justify-content: flex-end; }"
+  ],
+  "Toast__InlineButton": [
+   "& span { font-size: 14px; }",
+   "& { align-self: stretch; padding: var(--3); font-size: 18px; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; }",
+   "&:hover { background-color: rgba(255, 255, 255, 0.1); }"
+  ],
+  "Toast__Message": [
+   "& { font-weight: 500; }"
+  ],
+  "Toast__ToastContainer": [
+   "& { width: 100%; position: relative; }"
+  ],
+  "Toast__ToastFill": [
+   "& p { margin: 3px 0px; font-size: var(--font-size-large); line-height: var(--line-height-large); font-weight: var(--font-weight-medium); }",
+   "& { border-radius: var(--2); background-color: rgb(51, 51, 51); fill: white; color: white; border: 1px solid transparent; box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 12px; position: relative; overflow: hidden; }"
+  ],
   "UserOptionsButton__Alert": [
    "& { background-color: var(--activity-important); position: absolute; top: 0px; right: 0px; width: var(--2); height: var(--2); border-radius: 12px; }"
   ],
@@ -1503,6 +1553,7 @@
    "& { padding: var(--1); font-size: 16px; color: white; background-color: black; }",
    "& { padding: var(--2); font-size: 16px; background-color: rgba(0, 0, 0, 0.05); }",
    "& { padding: var(--2); font-size: 16px; color: white; background-color: black; }",
+   "& { padding: var(--2); font-size: 16px; cursor: not-allowed; background-color: rgba(0, 0, 0, 0.2); }",
    "&:hover { background-color: rgb(51, 51, 51); }",
    "&:hover { background-color: rgba(0, 0, 0, 0.1); }"
   ],

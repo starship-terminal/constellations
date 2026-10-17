@@ -43,6 +43,7 @@ GLOBALS = CSS.get("globals", [])
 MEDIA = CSS.get("media", {})
 COMPUTED = json.loads((RAW / "components-computed.json").read_text())["components"]
 NOTES = (RAW / "graph-code-notes.md").read_text()
+APP_NOTES = (RAW / "app-code-notes.md").read_text()
 
 SHOT = "screenshots/search-split-light-default.png"
 
@@ -131,7 +132,10 @@ def parse_shadow(s):
         color = norm_color(m.group(1))
         lens = re.findall(r"-?\d+(?:\.\d+)?px|(?<![\w.#])0(?![\w.])", part.replace(m.group(1), ""))
         lens = [x if x.endswith("px") else "0px" for x in lens] + ["0px"] * 4
-        layers.append({"color": color, "offsetX": lens[0], "offsetY": lens[1], "blur": lens[2], "spread": lens[3]})
+        layer = {"color": color, "offsetX": lens[0], "offsetY": lens[1], "blur": lens[2], "spread": lens[3]}
+        if re.search(r"\binset\b", part):
+            layer["inset"] = True
+        layers.append(layer)
     return layers
 
 
@@ -157,6 +161,11 @@ def G(ty, value, sel, decl, desc=None):
 
 def M(ty, value, comp, state, prop, desc=None):
     return {"type": ty, "value": value, "computed": (comp, state, prop), "description": desc}
+
+
+def A(ty, value, ident, section, desc=None):
+    """A value from the app's production bundle, quoted in raw/app-code-notes.md."""
+    return {"type": ty, "value": value, "app": (ident, section), "description": desc}
 
 
 def Q(value, cond, desc=None):
@@ -198,7 +207,9 @@ SPEC_CORE = {
         "alpha": {
             "black-05": R("color", "rgba(0, 0, 0, 0.05)", "GraphControls__StyledButton", "background-color: rgba(0, 0, 0, 0.05)", "Quiet hover on toolbar, ghost and side buttons"),
             "black-07": R("color", "rgba(0, 0, 0, 0.07)", "Select__Trigger", "background-color: rgba(0, 0, 0, 0.07)"),
+            "black-08": M("color", "rgba(0, 0, 0, 0.08)", "library-collections-title", "tool-sort-hover", "backgroundColor", "Hover on the library sidebar tools and the article panel's second icon button (no captured rule names it)"),
             "black-10": R("color", "rgba(0, 0, 0, 0.1)", "ExploreSession__NavButtonsContainer", "background-color: rgba(0, 0, 0, 0.1)", "The back and forward trail behind the header"),
+            "white-10": R("color", "rgba(255, 255, 255, 0.1)", "Toast__InlineButton", "&:hover { background-color: rgba(255, 255, 255, 0.1); }", "Quiet hover on dark surfaces: the toast's close button and the drawer's filter buttons"),
             "white-30": R("color", "rgba(255, 255, 255, 0.3)", "LibraryFolder__ArticlesContainer", "background-color: rgba(255, 255, 255, 0.3)"),
             "white-40": R("color", "rgba(255, 255, 255, 0.4)", "DashboardFolders__StyledSection", "background-color: rgba(255, 255, 255, 0.4)"),
             "white-50": R("color", "rgba(255, 255, 255, 0.5)", "ExploreStep__StyledScaffoldMain", "background-color: rgba(255, 255, 255, 0.5)"),
@@ -219,6 +230,7 @@ SPEC_CORE = {
     "fontFamily": {
         "ui": {"type": "fontFamily", "value": ["Plus Jakarta Sans", "system-ui", "sans-serif"], "font": "Plus+Jakarta+Sans",
                "description": "Every UI line and every canvas label"},
+        "mono": R("fontFamily", ["monospace"], "CopyContainer__Preview", "font-family: monospace; font-size: 12px", "The citation box in Cite Article; the browser's monospace face"),
         "light": {"type": "fontFamily", "value": ["IBM Plex Sans", "system-ui", "sans-serif"], "font": "IBM+Plex+Sans",
                   "description": "Loaded by the app at weight 300; which lines paint it was not read"},
     },
@@ -258,6 +270,7 @@ SPEC_CORE = {
         "heading-4": G("typography", TY("{fontFamily.ui}", "{fontSize.16}", "{fontWeight.medium}", 1.5), "h4", "font-size: 16px; font-weight: 500", "The h4 default. " + LH),
         "heading-5": G("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.semibold}", 1.5), "h5", "font-size: 14px; font-weight: 600", "The h5 default. " + LH),
         "form-label": G("typography", TY("{fontFamily.ui}", "{fontSize.14}", "{fontWeight.medium}", 1.5), "label", "font-size: 14px; font-weight: 500", "Field labels in dialogs. " + LH),
+        "code": R("typography", TY("{fontFamily.mono}", "{fontSize.12}", "{fontWeight.regular}", 1.5), "CopyContainer__Preview", "font-family: monospace; font-size: 12px", "Formatted citations to copy (Cite Article). Line height measured 12/18 on the citation box (raw/components-computed.json)."),
         "caption": R("typography", TY("{fontFamily.ui}", "{fontSize.12}", "{fontWeight.regular}", 1), "DashboardSearch__Tip", "font-size: 12px", "The one-line hint under the home search field. Line height measured 12/12 on that tip (home-hero, a span, in raw/components-computed.json), unlike the 1.5 of running text."),
     },
     "spacing": {},  # filled from --neg2..--16 below
@@ -310,6 +323,16 @@ SPEC_CORE = {
     },
     "breakpoint": {
         "too-small": Q("640px", "(max-width: 640px)", "At this width or less every page is covered by the Screen too small notice; there is no phone layout"),
+        "sm": A("dimension", "640px", 'sm:640', "1", "The app's script breakpoints (useBreakpoint); sm changes the upgrade dialog's price line"),
+        "md": A("dimension", "768px", 'md:768', "1", "The home hero illustration shows above this width"),
+        "xmd": A("dimension", "896px", 'xmd:896', "1", "Below this width the home cards stack in one column"),
+        "lg": A("dimension", "1024px", 'lg:1024', "1", "Below this width a split search view falls back to the list"),
+        "xl": A("dimension", "1280px", 'xl:1280', "1", "Declared; no use found"),
+        "2xl": A("dimension", "1536px", '"2xl":1536', "1", "Declared; no use found"),
+    },
+    "grid": {
+        "home-columns": A("number", 3, 'isSmallerThan("xmd")', "1", "Home cards per row at 896px and wider: three equal flex children, measured (home-columns row-1440); there is no CSS grid"),
+        "home-columns-narrow": A("number", 1, 'isSmallerThan("xmd")', "1", "Below 896px the same cards stack in one column (home-columns stacked-800)"),
     },
     "zIndex": {
         "raised": R("number", 1, "ArticleAuthors__AuthorButton", "z-index: 1", "Author chips and the note composer over their neighbours"),
@@ -324,8 +347,15 @@ SPEC_CORE = {
         "chevron": R("duration", "500ms", "FilterableSearchActions__Chevron", "transition: transform 500ms", "The drawer chevron and the nav logo width"),
         "dialog": R("duration", "400ms", "Modal__Content", "animation: 400ms cubic-bezier(0.16, 1, 0.3, 1)", "Dialog and scrim entrance"),
         "spinner": R("duration", "1100ms", "LoadWheel__StyledIcon", "animation: 1.1s linear 0s infinite", "One turn of the loading wheel"),
+        "enter": R("duration", "200ms", "AnimatedContainer__Container", "&.ac-enter-active, &.ac-appear-active { transition: opacity 200ms, transform 200ms", "Panels, menus and toasts sliding in (200, 300 or 350ms by size)"),
+        "exit": R("duration", "150ms", "AnimatedContainer__Container", "&.ac-exit-active { transition: opacity 150ms, transform 150ms", "The quickest exit (150 to 300ms)"),
+        "toast": A("duration", "4000ms", "duration:P=4e3", "2", "How long a toast stays"),
+        "toast-after-hover": A("duration", "2000ms", "durationAfterHover:me=2e3", "2", "How long a toast stays after the pointer leaves it"),
     },
     "easing": {
+        "standard": R("cubicBezier", [0.25, 0.1, 0.25, 1], "AnimatedContainer__Container", "&.ac-enter-active, &.ac-appear-active { transition: opacity 200ms, transform 200ms", "Derived: the rule names no timing function, so CSS's default ease applies (computed 'ease' on the drawer and note composer)"),
+        "out": R("cubicBezier", [0, 0, 0.58, 1], "ScrollContainer__Scrollbar", "transition: background-color 160ms ease-out", "ease-out, the scrollbar thumb's colour change"),
+        "linear": R("cubicBezier", [0, 0, 1, 1], "LoadWheel__StyledIcon", "animation: 1.1s linear 0s infinite", "The spinner's constant turn"),
         "popup": R("cubicBezier", [0.16, 1, 0.3, 1], "Popup__Content", "animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1)", "Popups, dropdowns and hints slide in on this"),
     },
 }
@@ -340,6 +370,8 @@ SPEC_LIGHT = {
         "panel": R("color", "{palette.base.white}", "Scaffold__Header", "background-color: white", "Panel headers, list cards, the settings panel"),
         "panel-glass": R("color", "{palette.alpha.white-50}", "ExploreStep__StyledScaffoldMain", "background-color: rgba(255, 255, 255, 0.5)", "The body of the results panel, graph included"),
         "section": R("color", "{palette.alpha.white-40}", "DashboardFolders__StyledSection", "background-color: rgba(255, 255, 255, 0.4)"),
+        "drop-zone": R("color", "{palette.alpha.white-30}", "ExploreEmpty__DropInstructionContainer", "background-color: rgba(255, 255, 255, 0.3)", "The BibTeX drop zone and the library's article containers"),
+        "panel-tint": R("color", "{palette.alpha.violet-20}", "ExploreBuilder__Container", "background-color: rgba(221, 204, 255, 0.2)", "The faint violet behind the Next Search panel"),
         "hint": R("color", "{palette.turq.25}", "GradientBackground__Container", "background-color: rgb(215, 246, 248)", "The turquoise tip strip, and the colour of the top glow"),
     },
     "gradient": {
@@ -348,6 +380,10 @@ SPEC_LIGHT = {
         "glow-bottom-right": S("{palette.peach.25}", (2870, 1795), "Lower right glow"),
     },
     "text": {
+        "choice-dark": R("color", "{palette.lavender.25}", "ExploreFiltersStyles__ExploreFiltersButton", "border: 1px solid var(--lavender-25); color: var(--lavender-25)", "An unselected single-choice pill on the black drawer"),
+        "chip-dark": R("color", "{palette.lavender.50}", "QuartileFilters__Button", "color: var(--lavender-50)", "An unselected multi-choice chip on the black drawer"),
+        "icon-strong": R("color", "{palette.base.secondary}", "ArticleEvaluation__Container", "color: var(--secondary)", "The article panel's action icons and their labels"),
+        "default": M("color", "{palette.base.black}", "home-section", "recent", "color", "Most text: body sets no colour, so it inherits the browser's black (computed on the home cards, dialogs and list cards)"),
         "primary": R("color", "{palette.grey.primary}", "ExploreGraphLegend__Container", "color: var(--grey-primary)"),
         "secondary": R("color", "{palette.grey.secondary}", "GraphAxes__AxisLabel", "color: var(--grey-secondary)"),
         "tertiary": R("color", "{palette.grey.tertiary}", "GraphAxes__AxisIcon", "color: var(--grey-tertiary)"),
@@ -365,6 +401,9 @@ SPEC_LIGHT = {
         "rule": R("color", "{palette.grey.1}", "InspectorStyles__Header", "border-bottom: 1px solid var(--grey-1)"),
         "drawer": R("color", "rgb(104, 109, 121)", "FilterableSearchActions__TrayHeadButton", "border-bottom: 1px solid rgb(104, 109, 121)"),
         "focus": R("color", "{palette.selection.base}", "InspectorStyles__Content", "box-shadow: inset 0 0 0 1px var(--selection)"),
+        "choice-dark": R("color", "{palette.lavender.25}", "ExploreFiltersStyles__ExploreFiltersButton", "border: 1px solid var(--lavender-25)", "Single-choice pills on the black drawer"),
+        "chip-dark": R("color", "{palette.lavender.50}", "QuartileFilters__Button", "border: 1px solid var(--lavender-50)", "Multi-choice chips on the black drawer"),
+        "focus-browser": M("color", "#005fcc", "nav-logo", "focus-visible", "outlineColor", "The browser's own focus ring (outline auto), on links and elements no rule restyles; computed on the wordmark, tabs, links and the note composer"),
     },
     "action": {
         "primary": R("color", "{palette.base.black}", "ExploreBuilder__AutosaveFolderButton", "background-color: black"),
@@ -376,6 +415,14 @@ SPEC_LIGHT = {
         "accent": R("color", "{palette.lavender.50}", "SearchBar__SearchButton", "background-color: var(--lavender-50)", "The lavender Search button and search pill"),
         "accent-soft": R("color", "{palette.lavender.25}", "ExploreActionsMain__StyledExploreFurtherButton", "background-color: var(--lavender-25)"),
         "quiet": R("color", "{palette.alpha.black-05}", "ViewSelection__Button", "background-color: rgba(0, 0, 0, 0.05)"),
+        "upgrade-hover": M("color", "{palette.green.50}", "nav-upgrade", "hover", "backgroundColor", "The Upgrade pill on hover and while pressed"),
+        "go": R("color", "{palette.turq.base}", "Commander__GoButton", "background-color: var(--turq)", "The filter popover's Go button"),
+        "control": R("color", "{palette.ui.bg}", "ArticleDetailsDisplay__NavContainer", "background-color: var(--ui-bg)", "Grey pill controls in the article panel (the previous and next pill, close and action buttons)"),
+        "control-hover": R("color", "{palette.ui.bg-hover}", "ArticleEvaluation__Container", "&:hover { background-color: var(--ui-bg-hover); }", "Hover on those grey controls"),
+        "select-hover": R("color", "{palette.alpha.black-07}", "Select__Trigger", "&:hover { background-color: rgba(0, 0, 0, 0.07); }", "Hover on selects and the layout select"),
+        "glass-hover": R("color", "{palette.alpha.white-90}", "DashboardSearch__StyledFolderSelect", "&:hover { background-color: rgba(255, 255, 255, 0.9); }", "Hover on white-glass buttons (Browse Library, the sticker and nickname buttons)"),
+        "quiet-hover-soft": M("color", "{palette.alpha.black-08}", "library-collections-title", "tool-sort-hover", "backgroundColor", "Hover on the library sidebar tools and the article panel's icon buttons"),
+        "quiet-hover-inverse": R("color", "{palette.alpha.white-10}", "Toast__InlineButton", "&:hover { background-color: rgba(255, 255, 255, 0.1); }", "Quiet hover on the toast and the black drawer"),
         "quiet-hover": R("color", "{palette.alpha.black-10}", "ViewSelection__Button", "&:hover { background-color: rgba(0, 0, 0, 0.1)"),
         "upgrade": M("color", "{palette.green.base}", "nav-upgrade", "default", "backgroundColor", "The Upgrade pill and the Upgrade badges"),
         "highlighted": R("color", "{palette.selection.base}", "Dropdown__Item", "&[data-highlighted] { background-color: var(--selection)"),
@@ -387,6 +434,15 @@ SPEC_LIGHT = {
         "menu": {"type": "shadow", "rule": ("Dropdown__Content", "box-shadow: rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px"),
                  "value": "rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px",
                  "description": "Menus and select lists"},
+        "ring-strong": M("shadow", "rgb(0, 0, 0) 0px 0px 0px 1px inset", "list-card", "selected", "boxShadow", "A 1px black ring drawn inside: selected cards, the current library list and filter pill"),
+        "ring-field": M("shadow", "rgb(201, 205, 211) 0px 0px 0px 1px inset", "text-field", "filled", "boxShadow", "A 1px grey-2 ring inside a light field and a disabled button"),
+        "ring-field-dark": M("shadow", "rgb(221, 224, 228) 0px 0px 0px 1px inset", "drawer-input", "keyword", "boxShadow", "The ring inside the black drawer's inputs"),
+        "ring-highlight": M("shadow", "rgb(167, 212, 255) 0px 0px 0px 1px inset", "list-card", "tinted", "boxShadow", "The selection-blue ring on a highlighted card and the article panel"),
+        "ring-composer": M("shadow", "rgb(104, 109, 121) 0px 0px 0px 1px", "note-composer", "default", "boxShadow", "The 1px grey-secondary ring round the note composer"),
+        "slider-thumb": M("shadow", "rgb(164, 158, 219) 0px 0px 0px 4px", "slider", "thumb", "boxShadow", "The lavender ring round a range slider thumb at rest and on hover"),
+        "slider-thumb-active": M("shadow", "rgb(164, 158, 219) 0px 0px 0px 5px", "slider", "thumb-pressed", "boxShadow", "The thumb ring grows to 5px when focused or pressed"),
+        "toast": {"type": "shadow", "rule": ("Toast__ToastFill", "box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 12px"),
+                  "value": "rgba(0, 0, 0, 0.3) 3px 3px 12px", "description": "Toasts"},
         "dialog": {"type": "shadow", "rule": ("Modal__Content", "box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 12px"),
                    "value": "rgba(0, 0, 0, 0.5) 3px 3px 12px", "description": "Dialogs, over the scrim"},
         "popup": {"type": "shadow", "rule": ("Popup__Content", "box-shadow: rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px"),
@@ -428,6 +484,13 @@ SPEC_LIGHT = {
         "positions-moved": R("color", "{palette.activity.important}", "GraphBrokenAxes__BrokenAxesDropdown", "background-color: var(--activity-important)"),
         "folder-tint": R("color", "{palette.alpha.amber-20}", "ArticleFolders__FolderContainer", "background-color: rgba(240, 125, 89, 0.2)"),
         "tooltip": R("color", "{palette.literal.charcoal}", "HintContainer__Content", "background-color: rgb(51, 51, 51)"),
+        "list-card-tinted": M("color", "#f0f6ff", "list-card", "tinted", "backgroundColor", "A result card while its node is hovered in the graph (set by script; no rule names it)"),
+        "note-placeholder": M("color", "#aaaaaa", "note-composer", "default", "textColor", "The note composer's italic placeholder line"),
+        "menu-separator": R("color", "{palette.grey.bg2}", "Dropdown__Separator", "background-color: var(--grey-bg2)", "The 1px rule between menu groups"),
+        "result-card-loadline": R("color", "#0000ff", "LoadLine__Container", "background-color: blue", "A 2px blue line across the top of a result card while it loads (hidden at opacity 0 when captured)"),
+        "toast": R("color", "{palette.literal.charcoal}", "Toast__ToastFill", "background-color: rgb(51, 51, 51)", "The toast bar, with white text"),
+        "citation-box": R("color", "{palette.selection.light}", "CopyContainer__Container", "background-color: var(--selection-light)", "The citation box on hover, while pressed and after copying; it is white at rest"),
+        "incomplete-warning": R("color", "{palette.peach.25}", "IncompleteInlineWarning__Container", "background-color: var(--peach-25)", "Incomplete data chip and banner"),
         "drawer-row": R("color", "{palette.literal.drawer-row}", "ExploreFilters__ItemContainer", "background-color: rgb(53, 53, 53)"),
         "drawer-row-on": R("color", "{palette.literal.drawer-row-on}", "ExploreFilters__ItemContainer", "background-color: rgb(77, 76, 91)"),
         "tab-current": R("color", "{palette.grey.bg2}", "TabbedContent__Option", "background-color: var(--grey-bg2)", "The current vertical tab in Account Settings"),
@@ -490,6 +553,11 @@ def leaf(path, spec):
             if not rules or (piece and piece not in flat):
                 raise KeyError(f"{path}: {sel} {{ {piece} }} is not in raw/css-vars.json globals")
         val, src = spec["value"], f"css rule {sel}: {decl}"
+    elif "app" in spec:
+        ident, sec = spec["app"]
+        if ident not in APP_NOTES:
+            raise KeyError(f"{path}: {ident!r} is not in raw/app-code-notes.md")
+        val, src = spec["value"], f"app code: {ident} (raw/app-code-notes.md section {sec})"
     elif "media" in spec:
         if spec["media"] not in MEDIA:
             raise KeyError(f"{path}: @media {spec['media']} is not in raw/css-vars.json")
@@ -498,7 +566,7 @@ def leaf(path, spec):
         comp, state, prop = spec["computed"]
         got = COMPUTED[comp]["states"][state]
         raw = (f"{got['rect']['h']:g}px" if prop == "height" else f"{got['icon']['w']:g}px" if prop == "iconWidth"
-               else got["style"][prop])
+               else got["textStyle"]["color"] if prop == "textColor" else got["style"][prop])
         val = spec["value"]
         want = val
         if is_alias(val):
@@ -583,7 +651,7 @@ for name in ROOT:
 SPEC_CORE["spacing"] = spacing
 
 core = {}
-for group in ("palette", "spacing", "fontFamily", "fontWeight", "fontSize", "typography", "radius", "borderWidth", "size", "breakpoint", "zIndex", "duration", "easing"):
+for group in ("palette", "spacing", "fontFamily", "fontWeight", "fontSize", "typography", "radius", "borderWidth", "size", "breakpoint", "grid", "zIndex", "duration", "easing"):
     core[group] = build(SPEC_CORE[group], group)
 core = {k: core[k] for k in SPEC_CORE}  # keep the SPEC's order in the file
 core["graph"] = build_graph(GRAPH, "graph")
