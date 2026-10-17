@@ -5,7 +5,7 @@
     python3 tools/health.py --check    fail if any of them differs from a fresh write
 
 A package's Health section sits in its README between the `health:start` and
-`health:end` markers, as the first `##` section. It says how many scorecard criteria the
+`health:end` markers, as the first `##` section after the Brief (tools/brief.py). It says how many scorecard criteria the
 package meets, lists every criterion it only partly meets or misses with the reviewer's
 evidence, flags a capture newer than the last review, and lists the standard layout parts
 the package lacks (docs/PACKAGE.md). The root README's catalog table, between the
@@ -106,13 +106,17 @@ def package_section(criteria: dict, audit: dict, system: dict) -> str:
 
 
 def with_section(readme: str, section: str) -> str:
-    """The README with its Health section replaced, or inserted before the first `##`."""
+    """The README with its Health section replaced, or inserted before the first `##`
+    that follows the Brief (tools/brief.py), which stays first."""
     if HEALTH.search(readme):
         return HEALTH.sub(lambda _: section, readme, count=1)
-    first = re.search(r"^## ", readme, re.M)
+    brief = re.search(r"^<!-- brief:end -->\n", readme, re.M)
+    start = brief.end() if brief else 0
+    first = re.search(r"^## ", readme[start:], re.M)
     if not first:
         return readme.rstrip("\n") + "\n\n" + section
-    return readme[:first.start()] + section + "\n" + readme[first.start():]
+    at = start + first.start()
+    return readme[:at] + section + "\n" + readme[at:]
 
 
 def catalog_table(audit: dict, systems: list[dict]) -> str:

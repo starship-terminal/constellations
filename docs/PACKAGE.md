@@ -48,6 +48,7 @@ the same outline, in this order:
 |---|---|
 | Title and intro | What the product is, which surfaces were captured, when, from which account, in which themes and widths |
 | File table | One row per top-level file and folder, linking it, with what it holds and how many |
+| `## Brief` | Generated. See [Brief](#brief) |
 | `## Health` | Generated. See [Health](#health) |
 | `## How the values were read` | Where every value came from: which stylesheets, which pages, which tools, and what was changed or neutralised before reading |
 | `## What to distrust` | Values that look measured but are not, readings that came out wrong, and what the images no longer show |
@@ -59,10 +60,31 @@ the same outline, in this order:
 A section about one product (its surfaces compared with the app it was
 captured for, a layout worth calling out) goes after these.
 
+## Brief
+
+Each package's README opens with a `## Brief` section, right after the file
+table: the short page an agent reads before designing in that style.
+[tools/brief.py](../tools/brief.py) writes it between the `brief:start` and
+`brief:end` markers, and nothing in it is written by hand:
+
+| Part | Comes from |
+|---|---|
+| Opening line | The package's tokens file, as [catalog.json](../catalog.json) names it |
+| Principles | The bold lead sentence of each rule in the README's Do and don't list (its first sentence when it has no bold lead), numbered, with a link to the list for the evidence. The rules are read the way the scorecard's K2 check reads them |
+| Using tokens | The catalog's preview swatches (page, surface, text, muted, accent, border) with token path and resolved value, one column per theme palette, and the preview fonts. Then the type styles, radius steps and spacing steps, counted as `DESIGN.md` holds them |
+| Using components | Links to `components.md`, `patterns.md`, `components/crops/` (with the number of crops) and `style-guide.html`, or the reason one is missing from the catalog's `layoutGaps` |
+| Accessibility | Text and muted on page and surface for every theme palette, with the ratio and pass or fail at 4.5:1, the same pairs the scorecard's F15 check grades. Then up to four tokens whose path contains `focus`, shortest path first, with their values |
+
+`make brief` rewrites every Brief, `make design-md` runs it first, and `make
+check` fails when one differs from a fresh write. Never edit the section by
+hand: change the README's Do and don't list, the tokens or the catalog entry,
+then run `make brief`. Like Health, it never reaches the package's
+`DESIGN.md`, and it adds no heading the K2 check could mistake for the Do and
+don't list.
+
 ## Health
 
-Each package's README opens with a `## Health` section, right after the file
-table. [tools/health.py](../tools/health.py) writes it from the newest
+Each package's README has a `## Health` section right after the Brief. [tools/health.py](../tools/health.py) writes it from the newest
 scorecard snapshot in [scorecard/audits/](../scorecard/audits) and the
 package's folder, between the `health:start` and `health:end` markers. It
 says:

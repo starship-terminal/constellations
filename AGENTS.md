@@ -24,9 +24,11 @@ per product under `systems/<slug>/`, indexed in [catalog.json](catalog.json).
    `platform` (`web`, `mobile` or `desktop`), `goodFor` or `tags` (platform, density, mood and layout words such as
    `ios`, `dense`, `chat`, `sidebar`). `python3 tools/catalog.py find dark
    dense` ranks them for you. Every package lives at `systems/<slug>/`.
-2. Read its `README.md` in full before anything else. It lists what was
-   captured and what is known to be wrong. Every package has one, whatever
-   its shape.
+2. Read its `README.md` in full before anything else, starting with its
+   `## Brief`: the principles, colour roles, scales, component pointers,
+   contrast and focus values, generated from the package's own data. The
+   rest lists what was captured and what is known to be wrong. Every package
+   has one, whatever its shape.
 3. Take values from its `tokens` file. Use the semantic sets (`light`,
    `dark`) for colour roles and `core` for scales. Never read a colour off a
    screenshot; they are 256-colour PNGs. `python3 tools/catalog.py export
@@ -81,6 +83,11 @@ illustrations or brand colours into something that ships
   and label every value ([docs/EVIDENCE.md](docs/EVIDENCE.md)). Add each one
   to [catalog.json](catalog.json), with `platform`, `tags` and a `preview`
   block, in the same commit ([docs/PACKAGE.md](docs/PACKAGE.md) has the steps).
+- **The Brief is generated.** Every package README's `## Brief` section is
+  written by `make brief` ([tools/brief.py](tools/brief.py)) from the
+  package's catalog entry, tokens file and README. Read it first when you use
+  a style. Never edit it by hand: change its sources, then run `make brief`
+  (`make design-md` runs it too); `make check` fails on a stale one.
 - **Health is generated.** Every package README's `## Health` section and the
   catalog table in [README.md](README.md) are written by `make grade`
   ([tools/health.py](tools/health.py)) from the newest scorecard snapshot and
@@ -150,7 +157,7 @@ make check
 It confirms every folder under `systems/` has a catalog entry, every entry's
 files exist, every package has `README.md`, `style-guide.html` and `tools/`,
 every `preview` token path resolves, every package's `DESIGN.md` matches a
-fresh generation, the scorecard's scripted grades are current, and every
+fresh generation, every README's Brief matches a fresh write, the scorecard's scripted grades are current, and every
 README's Health section matches the scorecard.
 
 ```bash

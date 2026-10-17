@@ -73,7 +73,10 @@ def theme_palettes(system: dict, tokens: dict) -> tuple[dict, list[str]]:
     return palettes, unchecked
 
 
-def grade_contrast(system: dict) -> tuple[str, str]:
+def contrast_rows(system: dict) -> tuple[list[dict], dict, list[str]]:
+    """(rows, palettes, unchecked themes): the `text` and `muted` swatches on the `page`
+    and `surface` swatches of every theme palette, in theme, then role, then background
+    order. A translucent surface is blended over the page. tools/brief.py lists the same rows."""
     tokens = json.loads((ROOT / system["tokens"]).read_text())
     palettes, unchecked = theme_palettes(system, tokens)
     rows = []
@@ -85,6 +88,11 @@ def grade_contrast(system: dict) -> tuple[str, str]:
                     continue
                 r = catalog.contrast(tokens, theme, [f"{roles[role]}:{bg}"], over=page)[0]
                 rows.append({**r, "theme": theme, "role": role, "bgRole": bg_role})
+    return rows, palettes, unchecked
+
+
+def grade_contrast(system: dict) -> tuple[str, str]:
+    rows, palettes, unchecked = contrast_rows(system)
     if not rows:
         return "missing", "Script: no text and background swatches to check"
     checked = [r for r in rows if r["ratio"] is not None]
@@ -160,16 +168,27 @@ def list_items(section: str) -> list[str]:
     return [i for i in items if i.strip()]
 
 
-def grade_do_and_dont(system: dict) -> tuple[str, str]:
-    readme = (ROOT / system["entry"]).read_text()
+def do_and_dont(readme: str) -> tuple[str, list[str]] | None:
+    """(the heading's text, its rules) for the README's "Do and don't" section, or None
+    when there is no such heading. The section runs to the next heading of its level or
+    higher. tools/brief.py reads the same rules."""
     m = DO_HEADING.search(readme)
     if not m:
-        return "missing", "Script: no \"Do and don't\" section in the README"
+        return None
     level = len(m.group(1))
+    line_end = readme.find("\n", m.start())
+    heading = readme[m.start():line_end if line_end != -1 else len(readme)].lstrip("#").strip()
     rest = readme[m.end():].split("\n", 1)[1] if "\n" in readme[m.end():] else ""
     end = re.search(rf"^#{{1,{level}}}\s", rest, re.M)
     section = rest[:end.start()] if end else rest
-    rules = list_items(section)
+    return heading, list_items(section)
+
+
+def grade_do_and_dont(system: dict) -> tuple[str, str]:
+    found = do_and_dont((ROOT / system["entry"]).read_text())
+    if found is None:
+        return "missing", "Script: no \"Do and don't\" section in the README"
+    rules = found[1]
     linked = [r for r in rules if IMAGE_LINK.search(r + " ")]
     if len(rules) >= 3 and len(linked) == len(rules):
         return "meets", f"Script: {len(rules)} rules, each linking a screenshot or crop"
