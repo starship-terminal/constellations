@@ -852,6 +852,105 @@ Page: home. Selector: `[class*="subscription-modal-parts_email-input-inline-shel
 
 Crops: `plus-email-default.png`, `plus-email-hover.png`.
 
+#### accent-button
+
+Primary button, brand red (Sign in). Gauth's own button component (button_btn-primary) in the Sign in dialog, enabled once the field holds an address: brand red #ff013e, hover #f00039, pressed #d80033 (its :active rule). name@example.com was typed and deleted; the button was never pressed.
+
+Page: home. Selector: `[class*="pc-login-modal-view_account-btn__"]`. States: default, hover, pressed.
+
+| Property | default | hover | pressed |
+|---|---|---|---|
+| Size (w x h) | 400 x 54 | = | = |
+| Padding | 0px | = | = |
+| Border | 1px solid #000000 @ 0 | = | = |
+| Radius | 14px | = | = |
+| Background | #ff013e | #f00039 | #d80033 |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 18px/48px 600 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #ffffff | = | = |
+| Text node | span: -apple-system 18px/48px 600, #ffffff | = | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Painted layers | button.button_btn.button_btn-full 400.0x54.0 bg #ff013e border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 14px | button.button_btn.button_btn-full 400.0x54.0 bg #f00039 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 14px | button.button_btn.button_btn-full 400.0x54.0 bg #d80033 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 14px |
+| How | field holds name@example.com; button enabled | mouse hover | CDP forcePseudoState :active:hover |
+
+Crops: `accent-button-default.png`, `accent-button-hover.png`, `accent-button-pressed.png`.
+
+#### field-error
+
+Text field, error (forced). The email field with Gauth's own form_error class added in DevTools: its CSS turns the field #fff2f2 with a #f00039 border and red text. Gauth shows it after a submit, which the capture never made, so the class was forced to read the rule.
+
+Page: home. Selector: `[class*="pc-login-modal-view_login-input__"] + form_error`. States: error.
+
+| Property | error |
+|---|---|
+| Size (w x h) | 400 x 48 |
+| Padding | 0px |
+| Border | 1px solid #f00039 |
+| Radius | 12px |
+| Background | #fff2f2 |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Transition | none |
+| Icon | 24 x 25, colour #000000 |
+| Painted layers | div.pc-login-modal-view_login-input.form_form-item 400.0x48.0 bg #fff2f2 border T:1px solid #f00039 / R:1px solid #f00039 / B:1px solid #f00039 / L:1px solid #f00039 r 12px; input 334.0x46.0 bg #fff2f2 |
+| How | class form_error added in DevTools |
+
+Crops: `field-error-error.png`.
+
+#### field-focused
+
+Text field, focused (sign-up password). Focusing a sign-up field gives it Gauth's form_active border (#8e8e93) and shows the rule line under the password field. Focused only; nothing typed.
+
+Page: home. Selector: `sign-up password field`. States: focused.
+
+| Property | focused |
+|---|---|
+| Size (w x h) | 400 x 48 |
+| Padding | 0px |
+| Border | 1px solid #8e8e93 |
+| Radius | 12px |
+| Background | #f5f5f7 |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Transition | none |
+| Icon | 24 x 25, colour #000000 |
+| Painted layers | div.pc-login-modal-view_login-input.form_form-item 400.0x48.0 bg #f5f5f7 border T:1px solid #8e8e93 / R:1px solid #8e8e93 / B:1px solid #8e8e93 / L:1px solid #8e8e93 r 12px; input 314.0x46.0 bg #f5f5f7 |
+| How | clicked into the field |
+
+Crops: `field-focused-focused.png`.
+
+#### field-helper
+
+Field helper text. The rule line Gauth shows under the password field while it has focus: "Use 6-20 characters from at least 2 categories".
+
+Page: home. Selector: `sign-up password helper`. States: focused.
+
+| Property | focused |
+|---|---|
+| Size (w x h) | 400 x 36 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 12px/18px 400 |
+| Letter spacing | normal |
+| Colour | #757c88 |
+| Transition | none |
+| How | clicked into the field |
+
+Crops: `field-helper-focused.png`.
+
 ### Shell and navigation
 
 #### header
@@ -3353,6 +3452,59 @@ Page: lesson-science. Selector: `canvas result card status line`. States: answer
 | Cursor | grab |
 | Ancestor paint | 2 up div.canvas_result bg #fef4f4 shadow #000000 @ 0.05 0px 8px 24px 0px |
 | How | picked the last option of the practice check-in (nothing of the visitor's sent) |
+
+Crops: none.
+
+#### quiz-result-correct
+
+Quiz result card, right answer. The check-in answered correctly comes back as the same result card in the lesson's right-answer colours.
+
+Page: lesson-science. Selector: `canvas result card (right)`. States: answered-correct.
+
+| Property | answered-correct |
+|---|---|
+| Size (w x h) | 416 x 403.5 |
+| Padding | 19px 20px 21px 26px |
+| Border | 1px solid #bdebcc |
+| Radius | 20px |
+| Background | #f1fbf4 |
+| Box shadow | #000000 @ 0.06 0px 8px 24px 0px |
+| Outline | none |
+| Font | Canvas Print 16px/normal 400 |
+| Letter spacing | normal |
+| Colour | #1c242e |
+| Text node | span: Canvas Print 12px/20px 700, #1a8c4f, ls 0.96px |
+| Transition | none |
+| Cursor | grab |
+| Icon | 20 x 20, colour #1a8c4f |
+| ::before | 8px x 403.5px, absolute, bg #1a8c4f, radius 0px |
+| Painted layers | div.canvas_result 416.0x403.5 bg #f1fbf4 border T:1px solid #bdebcc / R:1px solid #bdebcc / B:1px solid #bdebcc / L:1px solid #bdebcc r 20px shadow #000000 @ 0.06 0px 8px 24px 0px; div::before.canvas_result 8pxx403.5px bg #1a8c4f |
+| How | picked the option naming lift, thrust and climb cost (nothing of the visitor's sent) |
+
+Crops: `quiz-result-correct-answered-correct.png`.
+
+#### quiz-result-correct-label
+
+Quiz result status line, right answer.
+
+Page: lesson-science. Selector: `canvas result card status line (right)`. States: answered-correct.
+
+| Property | answered-correct |
+|---|---|
+| Size (w x h) | 168.64 x 20 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Canvas Print 12px/20px 700 |
+| Letter spacing | 0.96px |
+| Colour | #1a8c4f |
+| Transition | none |
+| Cursor | grab |
+| Ancestor paint | 2 up div.canvas_result bg #f1fbf4 shadow #000000 @ 0.06 0px 8px 24px 0px |
+| How | picked the option naming lift, thrust and climb cost (nothing of the visitor's sent) |
 
 Crops: none.
 

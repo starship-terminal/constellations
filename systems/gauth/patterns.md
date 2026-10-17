@@ -1,13 +1,13 @@
 # Gauth patterns
 
-How Gauth's components combine to do the recurring jobs on its public pages, written from the captures of 2026-10-17 (signed out, 1440 and 390 wide). Each pattern says when Gauth uses it, the components it is built from (entries in [components.md](components.md), values in [tokens.json](tokens.json)), the layout, and the screens that show it. These are observations of what the product does, not Gauth's own guidance; where a pattern could not be seen signed out, it says so.
+How Gauth's components combine to do the recurring jobs on its public pages, written from the captures of 2026-10-17 (signed out, 1440 and 390 wide). Each pattern says when Gauth uses it, the components it is built from (entries in [components.md](components.md), values in [tokens.json](tokens.json)), the layout, and the screens that show it. These are observations of what the product does, not Gauth's own guidance. Where a pattern lives behind sign-in, it is written from the rules Gauth's own stylesheets declare for it and marked declared, not seen.
 
 | Pattern | Captured | Example screen |
 |---|---|---|
 | [App shell and navigation](#app-shell-and-navigation) | yes | [home-light-default](screenshots/home-light-default.png) |
-| [Forms and validation](#forms-and-validation) | yes, without an error message (Gauth shows none) | [signin-light-dialog](screenshots/signin-light-dialog.png) |
-| [Empty, loading and error states](#empty-loading-and-error-states) | empty, one loading state, a lesson error | [academy-my-light-default](screenshots/academy-my-light-default.png) |
-| [Destructive confirmation](#destructive-confirmation) | not present signed out | - |
+| [Forms and validation](#forms-and-validation) | yes; the error state forced from Gauth's own class | [signin-light-signup-focused](screenshots/signin-light-signup-focused.png) |
+| [Empty, loading and error states](#empty-loading-and-error-states) | empty, one loading state, a lesson's wrong and right answers | [academy-my-light-default](screenshots/academy-my-light-default.png) |
+| [Destructive confirmation](#destructive-confirmation) | declared (deleting an Atlas topic, behind sign-in) | [delete-dialog tokens](tokens.json) |
 | [Feedback after an action](#feedback-after-an-action) | yes | [lesson-science-light-quiz-answered](screenshots/lesson-science-light-quiz-answered.png) |
 | [Search and filtering](#search-and-filtering) | yes, no results page | [academy-math-light-default](screenshots/academy-math-light-default.png) |
 | [Data display](#data-display) | yes | [plus-light-full](screenshots/plus-light-full.png) |
@@ -34,7 +34,7 @@ Three surfaces leave the shell:
 
 **When.** The few inputs a visitor meets: the Sign in dialog's email field, the question field, the Create a Course prompt, the Atlas prompt box, the Ask Tutor bar.
 
-**Components.** [Email field](components.md#email-field), [Primary button, disabled (Sign in)](components.md#primary-button-disabled-sign-in), [Social sign-in button](components.md#social-sign-in-button), [Question field](components.md#question-field), [Course prompt field](components.md#course-prompt-field), [Atlas prompt box](components.md#atlas-prompt-box), [Send button](components.md#send-button).
+**Components.** [Email field](components.md#email-field), [Text field, focused](components.md#text-field-focused-sign-up-password), [Field helper text](components.md#field-helper-text), [Text field, error (forced)](components.md#text-field-error-forced), [Primary button, brand red](components.md#primary-button-brand-red-sign-in), [Primary button, disabled (Sign in)](components.md#primary-button-disabled-sign-in), [Social sign-in button](components.md#social-sign-in-button), [Question field](components.md#question-field), [Course prompt field](components.md#course-prompt-field), [Atlas prompt box](components.md#atlas-prompt-box), [Send button](components.md#send-button).
 
 **Layout.** Fields are filled, not outlined: the email field is a grey 48px box at radius 12 with a leading mail icon, and a clear button appears once something is typed. The submit action sits under or inside the field: a full-width 54px button in the Sign in dialog, a round send button inside the prompt boxes.
 
@@ -43,9 +43,11 @@ Three surfaces leave the shell:
 - The Sign in button stays disabled, in brand red at low strength (`action.primary-disabled`, `#ffccd8`) with white text, while the email field is empty or holds something that is not an address. Typing a non-address and leaving the field shows no message, no red border and no icon.
 - The Atlas send button is a grey disc (`component.atlas.send` with a `text.disabled` arrow) carrying `disabled` while the box is empty, and turns near-black (`palette.atlas.toggle`) once text is typed. The Create a Course send button does the same.
 
-Where errors appear after a submit was not seen, since nothing was submitted.
+- Rules come before errors. Focusing the sign-up password field gives it a grey `#8e8e93` border (`component.field.border-focus`) and shows the rule under it in 12/18 grey (`component.field.helper-text`): "Use 6-20 characters from at least 2 categories: letters, numbers, special characters."
+- Once the field holds an address, the button turns brand red (`action.accent` `#ff013e`), darkens on hover (`#f00039`) and again when pressed (`#d80033`).
+- Where errors appear: under the field. Gauth's form CSS declares the state a rejected submit shows: the field turns `#fff2f2` with a `#f00039` border and red text and icon (`component.field.error-background`, `.error-border`, `.error-text`), and a 14/20 red message sits under it (`form_error-msg`). Nothing was submitted, so the capture added Gauth's own `form_error` class to the email field in DevTools to read the field's look; the message text itself was not seen.
 
-**Screens.** [signin-light-dialog](screenshots/signin-light-dialog.png), [home-light-question-focused](screenshots/home-light-question-focused.png), [academy-my-light-create-dialog](screenshots/academy-my-light-create-dialog.png); crops [signin-email-filled](components/crops/signin-email-filled.png), [signin-submit-disabled](components/crops/signin-submit-disabled.png), [send-button-disabled](components/crops/send-button-disabled.png), [send-button-enabled](components/crops/send-button-enabled.png).
+**Screens.** [signin-light-dialog](screenshots/signin-light-dialog.png), [signin-light-filled](screenshots/signin-light-filled.png), [signin-light-signup-focused](screenshots/signin-light-signup-focused.png), [home-light-question-focused](screenshots/home-light-question-focused.png), [academy-my-light-create-dialog](screenshots/academy-my-light-create-dialog.png); crops [field-error-error](components/crops/field-error-error.png), [accent-button-pressed](components/crops/accent-button-pressed.png), [signin-submit-disabled](components/crops/signin-submit-disabled.png), [send-button-disabled](components/crops/send-button-disabled.png), [send-button-enabled](components/crops/send-button-enabled.png).
 
 ## Empty, loading and error states
 
@@ -53,13 +55,20 @@ Where errors appear after a submit was not seen, since nothing was submitted.
 
 **Loading.** Gauth renders its pages on the server, so the skeletons its CSS declares (`catalog_mathSkeleton*`, `math-course-detail_detailSkeletonBanner`, loading dots in the course dialog and the lesson result page) never showed, even with the data request held back. The loading state captured is the math tutor's status line, "Explaining ...", which shimmers while the tutor narrates ([Tutor status line](components.md#tutor-status-line)). With reduced motion the shimmer, the skeleton pulse and the loading dots stop and hold still at reduced opacity ([raw/foundations.json](raw/foundations.json)).
 
-**Error.** The error a visitor can reach is a wrong answer in a lesson. The science lesson's check-in comes back as a result card in the notes, headed "Quick check · Needs review" with a cross icon, painted in the lesson's wrong colours (`status.danger.fill`, `.border`, `.text`), with Your answer beside Correct answer and a line on why the answer missed ([Quiz result card](components.md#quiz-result-card)). The math player has an incorrect frame state with its own animation (`.shared_playerFrameIncorrect`), not reached. A page that fails to load was not seen.
+**Error.** The error a visitor can reach is a wrong answer in a lesson. The science lesson's check-in comes back as a result card in the notes, headed "Quick check · Needs review" with a cross icon, painted in the lesson's wrong colours (`status.danger.fill`, `.border`, `.text`, and an 8px `status.danger.accent` bar), with Your answer beside Correct answer and a line on why the answer missed ([Quiz result card](components.md#quiz-result-card)). A right answer comes back as the same card headed "Quick check · Correct" in `status.success` ([Quiz result card, right answer](components.md#quiz-result-card-right-answer)). Field errors are under Forms and validation. The math player has an incorrect frame state with its own animation (`.shared_playerFrameIncorrect`), not reached. A page that fails to load was not seen.
 
 **Screens.** [academy-my-light-default](screenshots/academy-my-light-default.png), [lesson-math-light-default](screenshots/lesson-math-light-default.png), [lesson-science-light-quiz-answered](screenshots/lesson-science-light-quiz-answered.png).
 
 ## Destructive confirmation
 
-Not present signed out. A visitor has nothing to delete, leave or cancel: no course, topic, history or subscription. The one closing action, the lesson's exit cross, leaves without asking.
+**Not seen; declared.** A signed-out visitor has nothing to delete, leave or cancel, and the lesson's exit cross and the Create a Course dialog (even with a prompt typed) close without asking. Gauth's stylesheets, loaded on Atlas, declare the one confirmation it uses, for deleting a learner's own Atlas topic. Written from those rules (`header_deleteBtn`, `wap-atlas-drawer_delete*`); not rendered:
+
+- **When.** Deleting a topic from the Atlas sidebar's history.
+- **Trigger.** A 28px grey delete icon (`#afb3b9`, 14px glyph) sits at the end of each topic row, hidden until the row is hovered or holds focus (opacity over 150ms); on a touch screen it is always shown.
+- **Layout.** A centred 320px white dialog at radius 16 with 16px padding over a light scrim (`component.delete-dialog.scrim`, `rgba(20, 24, 32, 0.2)`): a 16px 600 title (`#141820`), a 13px grey description (`#6d7482`), then the actions right-aligned 8px apart, Cancel first in grey (`#f3f4f7`, `#2f343d` text) and Delete last in red (`#ff4d4f`, white text), both 36px tall, at least 88px wide, radius 10, SF Pro 14 500.
+- **Rule it shows.** The destructive action is the last, coloured button; the safe action comes first and is quiet. The red, `#ff4d4f`, is not Gauth's brand red (`#ff013e`); it is the same value as Ant Design's error colour.
+
+Tokens: `light.component.delete-dialog`.
 
 ## Feedback after an action
 

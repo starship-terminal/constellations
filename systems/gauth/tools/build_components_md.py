@@ -74,9 +74,14 @@ def _rank(n):
     return next((i for i, p in enumerate(COLOR_ORDER) if n.startswith(p)), 99), any(w in leaf for w in STATEFUL), n
 
 
+def ckey(v):
+    """A colour as a lookup key: an alpha rounded to two places, since #5058651a reads back as 0.1 when computed."""
+    return re.sub(r"(rgba\(\d+, \d+, \d+, )([\d.]+)\)", lambda m: f"{m.group(1)}{round(float(m.group(2)), 2):g})", v)
+
+
 BY_COLOR = {}
 for n in sorted((n for n in TOK if TYPES[n] == "color"), key=_rank):
-    BY_COLOR.setdefault(TOK[n], n)
+    BY_COLOR.setdefault(ckey(TOK[n]), n)
 
 # The same colour can hold several roles (#21252e is both text.primary and action.primary), so a value is
 # looked up by what it paints: a fill prefers background, action and status roles, text the text roles,
@@ -91,8 +96,8 @@ ROLE_ORDER = {
 
 def by_role(v, role):
     if role not in ROLE_ORDER:
-        return BY_COLOR.get(v)
-    names = [n for n in TOK if TYPES[n] == "color" and TOK[n] == v]
+        return BY_COLOR.get(ckey(v))
+    names = [n for n in TOK if TYPES[n] == "color" and ckey(TOK[n]) == ckey(v)]
     if not names:
         return None
     if role == "fill" and _control[0]:
@@ -125,10 +130,45 @@ for n in sorted((n for n in TOK if TYPES[n] == "shadow" and not n.startswith("el
     BY_SHADOW.setdefault(shadow_key(TOK[n]), n)
 for n in sorted(n for n in TOK if n.startswith("elevation.level-")):
     BY_SHADOW[shadow_key(TOK[n])] = n  # a level names the shadow when one matches
+def stack(f):
+    return [x.strip().strip('"').strip("'") for x in f.split(",") if x.strip()]
+
+
+# A measured family stack names its font family token: the token whose stack starts with the same family, else
+# the one that lists it ("SF Pro" is fontFamily.sf-pro, whose stack opens with -apple-system for Apple devices).
+FAMILIES = {n: stack(TOK[n]) for n in sorted(n for n in TOK if TYPES[n] == "fontFamily")}
+
+
+def fam_token(f):
+    """The family token sharing the longest opening run of families with the measured stack, else the one that
+    lists its first family anywhere."""
+    ms = stack(f)
+    if not ms:
+        return ""
+
+    def run(st):
+        k = 0
+        while k < min(len(st), len(ms)) and st[k] == ms[k]:
+            k += 1
+        return k
+    best = max(FAMILIES, key=lambda n: (run(FAMILIES[n]), n == "fontFamily.system"))
+    if run(FAMILIES[best]) > 0:
+        return best
+    return next((n for n, st in FAMILIES.items() if ms[0] in st), ms[0])
+
+
+def px2(v):
+    """'20.0004px' -> '20px', '0.126px' -> '0.13px': lengths compared at two decimals, as computed styles drift."""
+    if v in ("normal", "", None):
+        return "0px"
+    m = re.fullmatch(r"(-?[\d.]+)px", str(v))
+    return f"{round(float(m.group(1)), 2):g}px" if m else str(v)
+
+
 BY_TYPE = {}
 for n in sorted(n for n in TOK if TYPES[n] == "typography"):
     v = TOK[n]
-    BY_TYPE.setdefault((v["fontFamily"].split(",")[0].replace('"', "").strip(), v["fontSize"], v["lineHeight"], str(v["fontWeight"]), v.get("letterSpacing", "0px")), n)
+    BY_TYPE.setdefault((fam_token(TOK_RAW[n]["fontFamily"]) if TOK_RAW[n]["fontFamily"].startswith("{") is False else TOK_RAW[n]["fontFamily"].strip("{}"), px2(v["fontSize"]), px2(v["lineHeight"]), str(v["fontWeight"]), px2(v.get("letterSpacing", "0px"))), n)
 
 USED = {}  # component -> tokens it cites
 _cur = [None]
@@ -214,8 +254,8 @@ def shadow(css):
 def typeset(fz, lh, fw, f, ls="normal"):
     """A text style -> its typography token when family, size, line height, weight and letter spacing all
     match; otherwise the measured style, with its letter spacing when it is not zero."""
-    ls = "0px" if ls in ("normal", "0px", "") else num(ls)
-    n = BY_TYPE.get((fam(f), fz, lh, str(fw), ls))
+    ls = px2(ls)
+    n = BY_TYPE.get((fam_token(f), px2(fz), px2(lh) if lh != "normal" else "normal", str(fw), ls))
     return cite(n) if n else raw(font(fz, lh, fw, f) + (f", letter spacing {ls}" if ls != "0px" else ""))
 
 
@@ -287,7 +327,9 @@ def props(v):
             if anc:
                 o["outline"] = f"on its parent: {colour(anc['outline'], role='line')}"
     t = v.get("textStyle")
-    if t:
+    if not t and (v.get("icon") or not v.get("text")):
+        pass  # an icon-only control or an empty box draws no text, so it has no text style to record
+    elif t:
         o["text"] = f"{typeset(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'], t.get('letterSpacing', 'normal'))}, {colour(t['color'], role='text')}"
     else:
         o["text"] = f"{typeset(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'], s.get('letterSpacing', 'normal'))}, {colour(s['color'], role='text')}"
@@ -487,6 +529,10 @@ OVER = [
     ("Playback speed menu", "science lesson", "Settings, then its Speed row; no speed chosen", "[lesson-science-light-speed-menu](screenshots/lesson-science-light-speed-menu.png), [playback-speed-menu](#playback-speed-menu)"),
     ("Tooltip", "science lesson", "hovering a header control", "[lesson-science-light-tooltip](screenshots/lesson-science-light-tooltip.png), [tooltip](#tooltip)"),
     ("Sign in dialog", "every page with the top bar", "the top bar's Sign in; a throwaway string typed into the email field and deleted, nothing submitted", "[signin-light-dialog](screenshots/signin-light-dialog.png), [sign-in-dialog](#sign-in-dialog)"),
+    ("Sign in, enabled", "Sign in dialog", "name@example.com typed so the brand-red button enables; never pressed", "[signin-light-filled](screenshots/signin-light-filled.png), [primary-button-brand-red-sign-in](#primary-button-brand-red-sign-in)"),
+    ("Sign-up view", "Sign in dialog", "its Sign up link; the password field focused (never typed into) to show its rule line", "[signin-light-signup-focused](screenshots/signin-light-signup-focused.png), [field-helper-text](#field-helper-text)"),
+    ("Field error (forced)", "Sign in dialog", "Gauth's own form_error class added to the email field in DevTools; its error shows only after a submit", "[text-field-error-forced](#text-field-error-forced)"),
+    ("Quiz answered right", "science lesson", "a second visit, the option naming lift, thrust and climb cost picked", "[quiz-result-card-right-answer](#quiz-result-card-right-answer)"),
     ("Gauth PLUS dialog", "every page with the sidebar", "the sidebar card's Start Free Trial; nothing chosen, typed or bought", "[plus-dialog-light-default](screenshots/plus-dialog-light-default.png), [gauth-plus-dialog](#gauth-plus-dialog)"),
     ("Language list", "footer", "the footer's language select; no language chosen", "[footer-light-language-open](screenshots/footer-light-language-open.png), [select-list-language](#select-list-language)"),
     ("Chapters panel", "math and history lessons", "the chapters button", "[lesson-math-light-chapters](screenshots/lesson-math-light-chapters.png), [lesson-history-light-chapters](screenshots/lesson-history-light-chapters.png)"),
@@ -502,10 +548,10 @@ W()
 
 # ------------------------------------------------ checklist coverage
 CHECKLIST = [
-    ("Button", ["start-button", "create-button", "audio-not-now", "start-free-button", "join-button", "signin-submit"]),
+    ("Button", ["start-button", "create-button", "accent-button", "audio-not-now", "start-free-button", "join-button", "signin-submit"]),
     ("Icon button", ["canvas-control", "canvas-exit", "header-round-button", "page-nav", "modal-close"]),
     ("Link", ["inline-link", "footer-link", "terms-link", "signup-link", "back-link"]),
-    ("Text field", ["signin-email", "question-box", "atlas-search", "header-question", "tutor-input"]),
+    ("Text field", ["signin-email", "field-focused", "field-error", "field-helper", "question-box", "atlas-search", "header-question", "tutor-input"]),
     ("Text area", ["atlas-textarea", "atlas-composer", "create-prompt"]),
     ("Select", ["language-select", "language-list", "language-option-selected", "language-option"]),
     ("Checkbox", []),
@@ -585,7 +631,7 @@ with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} show a visible change (an outline on the element, a child or a parent, a shadow ring, a border or a fill): {', '.join(with_ring)}. The other {len(without)} change nothing, so a keyboard user sees no focus: {', '.join(without)}. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
 W()
-W("**Pressed.** Gauth's primary buttons shrink when pressed instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.")
+W("**Pressed.** Gauth's own button component, the brand-red primary in the Sign in dialog, darkens when pressed (`action.accent` `#ff013e`, hover `#f00039`, pressed `#d80033`). The learning pages' buttons shrink instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -724,7 +770,7 @@ W()
 W("### Pages")
 W()
 W("- **Signed-in pages.** Nothing behind sign-in was captured: a learner's own My Course list, course progress, history, the homework answer page, Atlas topics a learner made, account settings and the subscription checkout. The kit never signs in.")
-W("- **Anything that sends or creates.** No homework question was submitted (so the answer and step-by-step pages are missing), no course was generated from Create a Course, no tutor message or voice question was sent, no Atlas story was generated, no file was uploaded, and no dialog was submitted. The one answer given is to the science lesson's practice check-in, which a signed-out visitor answers as part of the lesson.")
+W("- **Anything that sends or creates.** No homework question was submitted (so the answer and step-by-step pages are missing), no course was generated from Create a Course, no tutor message or voice question was sent, no Atlas story was generated, no file was uploaded, and no dialog was submitted. The answers given are to the science lesson's practice check-in, once wrong and once right on two visits, which a signed-out visitor answers as part of the lesson.")
 W("- **Toast and checkbox.** Neither was seen. No toast appeared after any action the capture took, and no public form has a checkbox; the Sign in dialog states its terms in a line of text instead.")
 W("- **Study Resources.** `/study-resources/*` redirects to gauthmath.com, which answers a headless browser with Access Denied.")
 W("- **The science lesson's Completed screen** (a cover, a laurel \"Completed\" title, Share and View Canvas) was seen while exploring, after a lesson played to its end, but the kit does not wait the several minutes it takes, so there is no crop or measurement.")
@@ -736,7 +782,7 @@ W()
 W("- **Pressed** was forced with DevTools on every control except toggles, so a state a script adds on mousedown (if any) is missing.")
 W("- **Hover on the feature cards, the article rows, the Share button and the play disc** changed nothing measurable; their entries read 'same'.")
 W("- **The tutor transcript** held only the status line during the 25 seconds of playback the kit waits; transcript text was not captured.")
-W("- **Disabled states** were found on three controls: the Sign in dialog's Sign in button (brand red at low strength), the Atlas Send button while the box is empty (it turns dark, enabled, once text is typed), and the blog's Previous arrow on page 1. Gauth shows no inline error under a field: the Sign in dialog keeps its button disabled instead.")
+W("- **Disabled states** were found on three controls: the Sign in dialog's Sign in button (brand red at low strength), the Atlas Send button while the box is empty (it turns dark, enabled, once text is typed), and the blog's Previous arrow on page 1. Gauth shows no inline error while typing: the Sign in dialog keeps its button disabled instead. Its CSS declares the error state a submit would show (`form_error`: a `#fff2f2` field with a `#f00039` border, a red 14/20 message); the capture forced that class in DevTools to read it ([text-field-error-forced](#text-field-error-forced)).")
 W("- **Loading states.** The pages render on the server, so the skeletons in Gauth's CSS (`catalog_mathSkeleton*`, `math-course-detail_detailSkeletonBanner`) never showed, even with the data request held back. The nearest to a loading state is the math tutor's status line, which shimmers while it narrates; it was read at rest, as its default state ([tutor-status-line](#tutor-status-line)).")
 W()
 W("### Themes")
@@ -762,8 +808,8 @@ W("- No personal data was captured: the pages were read signed out, and the Atla
 # count the values in the entries, then turn the marks into Markdown
 body = "\n".join(L[ENTRY_START:ENTRY_END])
 n_tok, n_raw = body.count("\x03"), body.count("\x01")
-share = f"{n_tok} of {n_tok + n_raw} values in the entries ({round(100 * n_tok / max(1, n_tok + n_raw))}%) are written as tokens; the other {n_raw} are values Gauth gives no token (a one-off padding, a third-party library's colour, a type size used once) and stay raw"
+share = f"{n_tok} of {n_tok + n_raw} values in the entries ({round(100 * n_tok / max(1, n_tok + n_raw))}%) are written as tokens. The other {n_raw} are marked †: a value used by one component only (a one-off padding, colour or text style), a `50%` circle radius, or a line height of `normal`, none of which a DTCG token in this file holds; every other value used by two or more components has a token"
 text = "\n".join(L).replace("{{TOKEN_SHARE}}", share)
-text = re.sub("\x03([^\x04]*)\x04", r"`\1`", text).replace("\x01", "").replace("\x02", "")
+text = re.sub("\x03([^\x04]*)\x04", r"`\1`", text).replace("\x01", "").replace("\x02", "†")
 Path("components.md").write_text(text + "\n")
 print("components.md:", len(L), "lines,", len(C), "entries,", n_crops, "crops,", len(icons), "icons")

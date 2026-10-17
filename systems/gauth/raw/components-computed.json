@@ -310,9 +310,24 @@
   "storyUrl": "https://www.gauth.com/atlas/session/<id>?user_cases=1",
   "quizVerdict": {
    "found": true,
-   "label": "QUICK CHECK · NEEDS REVIEW",
+   "label": "QUICK CHECK \u00b7 NEEDS REVIEW",
    "right": false
-  }
+  },
+  "quizRightOption": {
+   "texts": [
+    "Because lift, thrust, and climb cost also matter",
+    "Because drag always rises with altitude",
+    "Because aircraft weight increases as fuel burns",
+    "Because engines do not use airflow"
+   ],
+   "picked": 0
+  },
+  "quizRightVerdict": {
+   "found": true,
+   "label": "QUICK CHECK \u00b7 CORRECT",
+   "right": true
+  },
+  "formErrorClass": "form_error__ATu6ZT"
  },
  "components": {
   "promo-dialog": {
@@ -4125,7 +4140,7 @@
        "node": "h1.slogan_title",
        "size": "680.0x104.0",
        "bg": "rgb(33, 37, 46)",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "div.pc_search-input-container.slogan_search-input",
@@ -4289,7 +4304,7 @@
        "node": "h1.slogan_title",
        "size": "680.0x104.0",
        "bg": "rgb(33, 37, 46)",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       }
      ],
      "crop": "components/crops/home-title-default.png",
@@ -7715,7 +7730,7 @@
        "size": "140.8x37.0",
        "border": "T:1px solid rgb(213, 227, 244) | R:1px solid rgb(213, 227, 244) | B:1px solid rgb(213, 227, 244) | L:1px solid rgb(213, 227, 244)",
        "bg": "rgb(255, 248, 248)",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "12px"
       },
       {
@@ -8259,7 +8274,7 @@
        "size": "140.8x37.0",
        "border": "T:1px solid rgb(213, 227, 244) | R:1px solid rgb(213, 227, 244) | B:1px solid rgb(213, 227, 244) | L:1px solid rgb(213, 227, 244)",
        "bg": "rgb(255, 248, 248)",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "12px"
       }
      ],
@@ -8371,7 +8386,7 @@
        "size": "140.8x37.0",
        "border": "T:1px solid rgb(197, 216, 238) | R:1px solid rgb(197, 216, 238) | B:1px solid rgb(197, 216, 238) | L:1px solid rgb(197, 216, 238)",
        "bg": "rgb(255, 248, 248)",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "12px"
       }
      ],
@@ -8483,7 +8498,7 @@
        "size": "140.8x37.0",
        "border": "T:1px solid rgb(213, 227, 244) | R:1px solid rgb(213, 227, 244) | B:1px solid rgb(213, 227, 244) | L:1px solid rgb(213, 227, 244)",
        "bg": "rgb(255, 248, 248)",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "12px"
       }
      ],
@@ -8595,7 +8610,7 @@
        "size": "138.0x36.3",
        "border": "T:1px solid rgb(197, 216, 238) | R:1px solid rgb(197, 216, 238) | B:1px solid rgb(197, 216, 238) | L:1px solid rgb(197, 216, 238)",
        "bg": "rgb(255, 248, 248)",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "12px"
       }
      ],
@@ -9467,7 +9482,7 @@
     "default": {
      "tag": "a",
      "classes": "catalog_premiumCard catalog_mobilePremiumCard",
-     "text": "Physics The Sweet Spot Higher isn’t always better. Find the altitude that saves ",
+     "text": "Physics The Sweet Spot Higher isn\u2019t always better. Find the altitude that saves ",
      "rect": {
       "x": 317.5,
       "y": 303,
@@ -9578,7 +9593,7 @@
     "hover": {
      "tag": "a",
      "classes": "catalog_premiumCard catalog_mobilePremiumCard",
-     "text": "Physics The Sweet Spot Higher isn’t always better. Find the altitude that saves ",
+     "text": "Physics The Sweet Spot Higher isn\u2019t always better. Find the altitude that saves ",
      "rect": {
       "x": 317.5,
       "y": 303,
@@ -9689,7 +9704,7 @@
     "focus-visible": {
      "tag": "a",
      "classes": "catalog_premiumCard catalog_mobilePremiumCard",
-     "text": "Physics The Sweet Spot Higher isn’t always better. Find the altitude that saves ",
+     "text": "Physics The Sweet Spot Higher isn\u2019t always better. Find the altitude that saves ",
      "rect": {
       "x": 317.5,
       "y": 303,
@@ -9800,7 +9815,7 @@
     "pressed": {
      "tag": "a",
      "classes": "catalog_premiumCard catalog_mobilePremiumCard",
-     "text": "Physics The Sweet Spot Higher isn’t always better. Find the altitude that saves ",
+     "text": "Physics The Sweet Spot Higher isn\u2019t always better. Find the altitude that saves ",
      "rect": {
       "x": 317.5,
       "y": 303,
@@ -10124,7 +10139,7 @@
     "default": {
      "tag": "p",
      "classes": "catalog_premiumSubtitle",
-     "text": "Higher isn’t always better. Find the altitude that saves fuel.",
+     "text": "Higher isn\u2019t always better. Find the altitude that saves fuel.",
      "rect": {
       "x": 338.5,
       "y": 441.3,
@@ -13923,7 +13938,7 @@
     "default": {
      "tag": "a",
      "classes": "math-course-detail_backLink",
-     "text": "← Math Curriculum",
+     "text": "\u2190 Math Curriculum",
      "rect": {
       "x": 317.5,
       "y": 40,
@@ -14010,7 +14025,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "←",
+      "text": "\u2190",
       "fontFamily": "\"SF Pro\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
       "fontSize": "20px",
       "lineHeight": "20px",
@@ -14026,7 +14041,7 @@
     "hover": {
      "tag": "a",
      "classes": "math-course-detail_backLink",
-     "text": "← Math Curriculum",
+     "text": "\u2190 Math Curriculum",
      "rect": {
       "x": 317.5,
       "y": 40,
@@ -14113,7 +14128,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "←",
+      "text": "\u2190",
       "fontFamily": "\"SF Pro\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
       "fontSize": "20px",
       "lineHeight": "20px",
@@ -14129,7 +14144,7 @@
     "focus-visible": {
      "tag": "a",
      "classes": "math-course-detail_backLink",
-     "text": "← Math Curriculum",
+     "text": "\u2190 Math Curriculum",
      "rect": {
       "x": 317.5,
       "y": 40,
@@ -14216,7 +14231,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "←",
+      "text": "\u2190",
       "fontFamily": "\"SF Pro\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
       "fontSize": "20px",
       "lineHeight": "20px",
@@ -14243,7 +14258,7 @@
     "default": {
      "tag": "section",
      "classes": "math-course-detail_courseBanner",
-     "text": "Algebra 1 77 Lessons · 599 Topics 0%",
+     "text": "Algebra 1 77 Lessons \u00b7 599 Topics 0%",
      "rect": {
       "x": 317.5,
       "y": 86,
@@ -19114,7 +19129,7 @@
     "default": {
      "tag": "div",
      "classes": "astryx-card default med canvas_shell",
-     "text": "Ask about anything on the board…",
+     "text": "Ask about anything on the board\u2026",
      "rect": {
       "x": 310,
       "y": 828,
@@ -19210,7 +19225,7 @@
      ],
      "textStyle": {
       "node": "div",
-      "text": "Ask about anything on the board…",
+      "text": "Ask about anything on the board\u2026",
       "fontFamily": "\"SF Pro\", -apple-system, \"system-ui\", sans-serif",
       "fontSize": "16px",
       "lineHeight": "24px",
@@ -19233,7 +19248,7 @@
     "hover": {
      "tag": "div",
      "classes": "astryx-card default med canvas_shell",
-     "text": "Ask about anything on the board…",
+     "text": "Ask about anything on the board\u2026",
      "rect": {
       "x": 310,
       "y": 828,
@@ -19329,7 +19344,7 @@
      ],
      "textStyle": {
       "node": "div",
-      "text": "Ask about anything on the board…",
+      "text": "Ask about anything on the board\u2026",
       "fontFamily": "\"SF Pro\", -apple-system, \"system-ui\", sans-serif",
       "fontSize": "16px",
       "lineHeight": "24px",
@@ -19679,7 +19694,7 @@
     "opened": {
      "tag": "div",
      "classes": "astryx-card default med canvas_shell",
-     "text": "Ask about anything on the board…",
+     "text": "Ask about anything on the board\u2026",
      "rect": {
       "x": 310,
       "y": 828,
@@ -19775,7 +19790,7 @@
      ],
      "textStyle": {
       "node": "div",
-      "text": "Ask about anything on the board…",
+      "text": "Ask about anything on the board\u2026",
       "fontFamily": "\"SF Pro\", -apple-system, \"system-ui\", sans-serif",
       "fontSize": "16px",
       "lineHeight": "24px",
@@ -20618,7 +20633,7 @@
     "default": {
      "tag": "div",
      "classes": "canvas_text",
-     "text": "Picture a long-haul jet in cruise. Thinner air means less drag—so should the pil",
+     "text": "Picture a long-haul jet in cruise. Thinner air means less drag\u2014so should the pil",
      "rect": {
       "x": 72,
       "y": 227,
@@ -20810,7 +20825,7 @@
       {
        "node": "div.canvas_grid",
        "size": "1440.0x900.0",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       }
      ],
      "ancestors": [
@@ -20951,7 +20966,7 @@
     "default": {
      "tag": "blockquote",
      "classes": "canvas_callout",
-     "text": "The best cruise altitude is a changing sweet spot—not the ceiling—balancing lowe",
+     "text": "The best cruise altitude is a changing sweet spot\u2014not the ceiling\u2014balancing lowe",
      "rect": {
       "x": 72,
       "y": 344,
@@ -21072,7 +21087,7 @@
     "default": {
      "tag": "ol",
      "classes": "canvas_list",
-     "text": "1 Thin-air advantage — lower density reduces aerodynamic drag. 2 Lift and drag —",
+     "text": "1 Thin-air advantage \u2014 lower density reduces aerodynamic drag. 2 Lift and drag \u2014",
      "rect": {
       "x": 72,
       "y": 528,
@@ -21204,7 +21219,7 @@
     "default": {
      "tag": "section",
      "classes": "canvas_dock",
-     "text": "Why is “thinner air means less drag” not enough to choose a cruise altitude? Bec",
+     "text": "Why is \u201cthinner air means less drag\u201d not enough to choose a cruise altitude? Bec",
      "rect": {
       "x": 440,
       "y": 588,
@@ -21325,7 +21340,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "Why is “thinner air means less drag” not",
+      "text": "Why is \u201cthinner air means less drag\u201d not",
       "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
       "fontSize": "16px",
       "lineHeight": "24px",
@@ -27457,7 +27472,7 @@
        "node": "h1.atlas-landing_start-project-title",
        "size": "682.9x48.0",
        "bg": "rgb(33, 37, 46)",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       }
      ],
      "crop": "components/crops/atlas-title-default.png",
@@ -27477,7 +27492,7 @@
     "default": {
      "tag": "div",
      "classes": "atlas-landing_composer",
-     "text": "Enter a topic, place, person, event, or story… Search",
+     "text": "Enter a topic, place, person, event, or story\u2026 Search",
      "rect": {
       "x": 375,
       "y": 303,
@@ -27603,7 +27618,7 @@
     "hover": {
      "tag": "div",
      "classes": "atlas-landing_composer",
-     "text": "Enter a topic, place, person, event, or story… Search",
+     "text": "Enter a topic, place, person, event, or story\u2026 Search",
      "rect": {
       "x": 375,
       "y": 303,
@@ -27729,7 +27744,7 @@
     "focused": {
      "tag": "div",
      "classes": "atlas-landing_composer",
-     "text": "Enter a topic, place, person, event, or story… Search",
+     "text": "Enter a topic, place, person, event, or story\u2026 Search",
      "rect": {
       "x": 375,
       "y": 303,
@@ -31706,7 +31721,7 @@
        "size": "266.9x36.5",
        "border": "T:1px solid rgb(229, 231, 235) | R:1px solid rgb(229, 231, 235) | B:1px solid rgb(229, 231, 235) | L:1px solid rgb(229, 231, 235)",
        "bg": "rgb(255, 255, 255)",
-       "bgImage": "url(data:…), none",
+       "bgImage": "url(data:\u2026), none",
        "radius": "8px"
       },
       {
@@ -34867,7 +34882,7 @@
     "default": {
      "tag": "a",
      "classes": "catalog_card",
-     "text": "Real Numbers and Sets Unit 1 42 Topics ›",
+     "text": "Real Numbers and Sets Unit 1 42 Topics \u203a",
      "rect": {
       "x": 16,
       "y": 272,
@@ -35759,7 +35774,7 @@
     "default": {
      "tag": "div",
      "classes": "modal-container_modal-context",
-     "text": "Welcome Don‘t have an account?Sign up Sign in with Facebook Sign in with Apple O",
+     "text": "Welcome Don\u2018t have an account?Sign up Sign in with Facebook Sign in with Apple O",
      "rect": {
       "x": 490,
       "y": 170.1,
@@ -35929,7 +35944,7 @@
     "default": {
      "tag": "div",
      "classes": "modal-container_modal-container",
-     "text": "Welcome Don‘t have an account?Sign up Sign in with Facebook Sign in with Apple O",
+     "text": "Welcome Don\u2018t have an account?Sign up Sign in with Facebook Sign in with Apple O",
      "rect": {
       "x": 0,
       "y": 0,
@@ -40631,7 +40646,7 @@
     "opened": {
      "tag": "div",
      "classes": "ant-select-dropdown select_s-popup select_s css-var-root",
-     "text": "main it English Italiano Deutsch Français 日本語 Português (Brasil) Español (México",
+     "text": "main it English Italiano Deutsch Fran\u00e7ais \u65e5\u672c\u8a9e Portugu\u00eas (Brasil) Espa\u00f1ol (M\u00e9xico",
      "rect": {
       "x": 404,
       "y": 168,
@@ -43532,7 +43547,7 @@
     "answered-wrong": {
      "tag": "div",
      "classes": "canvas_result",
-     "text": "QUICK CHECK · NEEDS REVIEW Why is “thinner air means less drag” not enough to ch",
+     "text": "QUICK CHECK \u00b7 NEEDS REVIEW Why is \u201cthinner air means less drag\u201d not enough to ch",
      "rect": {
       "x": 30,
       "y": 247.7,
@@ -43642,7 +43657,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "QUICK CHECK ·",
+      "text": "QUICK CHECK \u00b7",
       "fontFamily": "\"Canvas Print\", \"PingFang SC\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
       "fontSize": "11px",
       "lineHeight": "18px",
@@ -43668,7 +43683,7 @@
    "url": "https://www.gauth.com/course/science/how-things-work-1/learn?entry_source=start&from=science",
    "title": "Quiz result card",
    "group": "Lesson player: science canvas",
-   "desc": "After an option is picked the check-in leaves the dock and comes back as a card in the notes: a status line with an icon (\"Quick check · Needs review\" when wrong), the question, Your answer beside Correct answer, and why the answer missed. Wrong answers paint it in the lesson's wrong colours.",
+   "desc": "After an option is picked the check-in leaves the dock and comes back as a card in the notes: a status line with an icon (\"Quick check \u00b7 Needs review\" when wrong), the question, Your answer beside Correct answer, and why the answer missed. Wrong answers paint it in the lesson's wrong colours.",
    "selector": "canvas result card"
   },
   "quiz-result-label": {
@@ -43676,7 +43691,7 @@
     "answered-wrong": {
      "tag": "span",
      "classes": "",
-     "text": "QUICK CHECK · NEEDS REVIEW",
+     "text": "QUICK CHECK \u00b7 NEEDS REVIEW",
      "rect": {
       "x": 82,
       "y": 440.7,
@@ -43771,6 +43786,898 @@
    "title": "Quiz result status line",
    "group": "Lesson player: science canvas",
    "selector": "canvas result card status line"
+  },
+  "quiz-result-correct": {
+   "states": {
+    "answered-correct": {
+     "tag": "div",
+     "classes": "canvas_result",
+     "text": "QUICK CHECK \u00b7 CORRECT Why is \u201cthinner air means less drag\u201d not enough to choose ",
+     "rect": {
+      "x": 30,
+      "y": 248.7,
+      "w": 416,
+      "h": 403.5
+     },
+     "style": {
+      "display": "block",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "416px",
+      "height": "403.5px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "19px",
+      "paddingRight": "20px",
+      "paddingBottom": "21px",
+      "paddingLeft": "26px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(189, 235, 204)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(189, 235, 204)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(189, 235, 204)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(189, 235, 204)",
+      "borderTopLeftRadius": "20px",
+      "borderTopRightRadius": "20px",
+      "borderBottomRightRadius": "20px",
+      "borderBottomLeftRadius": "20px",
+      "backgroundColor": "rgb(241, 251, 244)",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(0, 0, 0, 0.06) 0px 8px 24px 0px",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(28, 36, 46)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Canvas Print\", \"PingFang SC\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(28, 36, 46)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(28, 36, 46)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "grab",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "::before": {
+      "content": "\"\"",
+      "width": "8px",
+      "height": "403.5px",
+      "position": "absolute",
+      "backgroundColor": "rgb(26, 140, 79)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(28, 36, 46)",
+      "borderRadius": "0px",
+      "inset": "-1px 407px -1px -1px",
+      "opacity": "1",
+      "transition": "all"
+     },
+     "paint": [
+      {
+       "node": "div.canvas_result",
+       "size": "416.0x403.5",
+       "border": "T:1px solid rgb(189, 235, 204) | R:1px solid rgb(189, 235, 204) | B:1px solid rgb(189, 235, 204) | L:1px solid rgb(189, 235, 204)",
+       "bg": "rgb(241, 251, 244)",
+       "shadow": "rgba(0, 0, 0, 0.06) 0px 8px 24px 0px",
+       "radius": "20px"
+      },
+      {
+       "node": "div::before.canvas_result",
+       "size": "8pxx403.5px",
+       "bg": "rgb(26, 140, 79)"
+      }
+     ],
+     "textStyle": {
+      "node": "span",
+      "text": "QUICK CHECK \u00b7",
+      "fontFamily": "\"Canvas Print\", \"PingFang SC\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "fontSize": "12px",
+      "lineHeight": "20px",
+      "fontWeight": "700",
+      "letterSpacing": "0.96px",
+      "color": "rgb(26, 140, 79)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(26, 140, 79)"
+     },
+     "crop": "components/crops/quiz-result-correct-answered-correct.png",
+     "via": "picked the option naming lift, thrust and climb cost (nothing of the visitor's sent)"
+    }
+   },
+   "page": "lesson-science",
+   "run": "quizright",
+   "url": "https://www.gauth.com/course/science/how-things-work-1/learn?entry_source=start&from=science",
+   "title": "Quiz result card, right answer",
+   "group": "Lesson player: science canvas",
+   "desc": "The check-in answered correctly comes back as the same result card in the lesson's right-answer colours.",
+   "selector": "canvas result card (right)"
+  },
+  "quiz-result-correct-label": {
+   "states": {
+    "answered-correct": {
+     "tag": "span",
+     "classes": "",
+     "text": "QUICK CHECK \u00b7 CORRECT",
+     "rect": {
+      "x": 84,
+      "y": 439.7,
+      "w": 168.64,
+      "h": 20
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "168.641px",
+      "height": "20px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(26, 140, 79)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(26, 140, 79)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(26, 140, 79)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(26, 140, 79)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(26, 140, 79)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Canvas Print\", \"PingFang SC\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "lineHeight": "20px",
+      "letterSpacing": "0.96px",
+      "textTransform": "uppercase",
+      "color": "rgb(26, 140, 79)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(26, 140, 79)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "grab",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "ancestors": [
+      {
+       "up": 2,
+       "node": "div.canvas_result",
+       "shadow": "rgba(0, 0, 0, 0.06) 0px 8px 24px 0px",
+       "radius": "20px",
+       "bg": "rgb(241, 251, 244)"
+      }
+     ],
+     "via": "picked the option naming lift, thrust and climb cost (nothing of the visitor's sent)"
+    }
+   },
+   "page": "lesson-science",
+   "run": "quizright",
+   "url": "https://www.gauth.com/course/science/how-things-work-1/learn?entry_source=start&from=science",
+   "title": "Quiz result status line, right answer",
+   "group": "Lesson player: science canvas",
+   "selector": "canvas result card status line (right)"
+  },
+  "accent-button": {
+   "states": {
+    "default": {
+     "tag": "button",
+     "classes": "button_btn button_btn-full button_btn-primary button_btn-bold",
+     "text": "Sign in",
+     "rect": {
+      "x": 520,
+      "y": 579.9,
+      "w": 400,
+      "h": 54
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "400px",
+      "height": "54px",
+      "minWidth": "0px",
+      "maxWidth": "400px",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "24px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "14px",
+      "borderTopRightRadius": "14px",
+      "borderBottomRightRadius": "14px",
+      "borderBottomLeftRadius": "14px",
+      "backgroundColor": "rgb(255, 1, 62)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "-apple-system, \"system-ui\", \"Google Sans\", Roboto, Arial, Helvatica",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "lineHeight": "48px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "button.button_btn.button_btn-full",
+       "size": "400.0x54.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
+       "bg": "rgb(255, 1, 62)",
+       "radius": "14px"
+      }
+     ],
+     "textStyle": {
+      "node": "span",
+      "text": "Sign in",
+      "fontFamily": "-apple-system, \"system-ui\", \"Google Sans\", Roboto, Arial, Helvatica",
+      "fontSize": "18px",
+      "lineHeight": "48px",
+      "fontWeight": "600",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/accent-button-default.png",
+     "via": "field holds name@example.com; button enabled"
+    },
+    "hover": {
+     "tag": "button",
+     "classes": "button_btn button_btn-full button_btn-primary button_btn-bold",
+     "text": "Sign in",
+     "rect": {
+      "x": 520,
+      "y": 579.9,
+      "w": 400,
+      "h": 54
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "400px",
+      "height": "54px",
+      "minWidth": "0px",
+      "maxWidth": "400px",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "24px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "14px",
+      "borderTopRightRadius": "14px",
+      "borderBottomRightRadius": "14px",
+      "borderBottomLeftRadius": "14px",
+      "backgroundColor": "rgb(240, 0, 57)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "-apple-system, \"system-ui\", \"Google Sans\", Roboto, Arial, Helvatica",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "lineHeight": "48px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "button.button_btn.button_btn-full",
+       "size": "400.0x54.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
+       "bg": "rgb(240, 0, 57)",
+       "radius": "14px"
+      }
+     ],
+     "textStyle": {
+      "node": "span",
+      "text": "Sign in",
+      "fontFamily": "-apple-system, \"system-ui\", \"Google Sans\", Roboto, Arial, Helvatica",
+      "fontSize": "18px",
+      "lineHeight": "48px",
+      "fontWeight": "600",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/accent-button-hover.png",
+     "via": "mouse hover"
+    },
+    "pressed": {
+     "tag": "button",
+     "classes": "button_btn button_btn-full button_btn-primary button_btn-bold",
+     "text": "Sign in",
+     "rect": {
+      "x": 520,
+      "y": 579.9,
+      "w": 400,
+      "h": 54
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "400px",
+      "height": "54px",
+      "minWidth": "0px",
+      "maxWidth": "400px",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "24px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "14px",
+      "borderTopRightRadius": "14px",
+      "borderBottomRightRadius": "14px",
+      "borderBottomLeftRadius": "14px",
+      "backgroundColor": "rgb(216, 0, 51)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "-apple-system, \"system-ui\", \"Google Sans\", Roboto, Arial, Helvatica",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "lineHeight": "48px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "button.button_btn.button_btn-full",
+       "size": "400.0x54.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
+       "bg": "rgb(216, 0, 51)",
+       "radius": "14px"
+      }
+     ],
+     "textStyle": {
+      "node": "span",
+      "text": "Sign in",
+      "fontFamily": "-apple-system, \"system-ui\", \"Google Sans\", Roboto, Arial, Helvatica",
+      "fontSize": "18px",
+      "lineHeight": "48px",
+      "fontWeight": "600",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/accent-button-pressed.png",
+     "via": "CDP forcePseudoState :active:hover"
+    }
+   },
+   "page": "home",
+   "run": "forms",
+   "url": "https://www.gauth.com/",
+   "title": "Primary button, brand red (Sign in)",
+   "group": "Dialogs and overlays",
+   "desc": "Gauth's own button component (button_btn-primary) in the Sign in dialog, enabled once the field holds an address: brand red #ff013e, hover #f00039, pressed #d80033 (its :active rule). name@example.com was typed and deleted; the button was never pressed.",
+   "selector": "[class*=\"pc-login-modal-view_account-btn__\"]"
+  },
+  "field-error": {
+   "states": {
+    "error": {
+     "tag": "div",
+     "classes": "pc-login-modal-view_login-input form_form-item form_error",
+     "text": "",
+     "rect": {
+      "x": 520,
+      "y": 479.9,
+      "w": 400,
+      "h": 48
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "400px",
+      "height": "48px",
+      "minWidth": "0px",
+      "maxWidth": "400px",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(240, 0, 57)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(240, 0, 57)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(240, 0, 57)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(240, 0, 57)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "rgb(255, 242, 242)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "-apple-system, \"system-ui\", \"Google Sans\", Roboto, Arial, Helvatica",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.pc-login-modal-view_login-input.form_form-item",
+       "size": "400.0x48.0",
+       "border": "T:1px solid rgb(240, 0, 57) | R:1px solid rgb(240, 0, 57) | B:1px solid rgb(240, 0, 57) | L:1px solid rgb(240, 0, 57)",
+       "bg": "rgb(255, 242, 242)",
+       "radius": "12px"
+      },
+      {
+       "node": "input",
+       "size": "334.0x46.0",
+       "bg": "rgb(255, 242, 242)"
+      }
+     ],
+     "icon": {
+      "w": 24,
+      "h": 25,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
+     "crop": "components/crops/field-error-error.png",
+     "via": "class form_error added in DevTools"
+    }
+   },
+   "page": "home",
+   "run": "forms",
+   "url": "https://www.gauth.com/",
+   "title": "Text field, error (forced)",
+   "group": "Dialogs and overlays",
+   "desc": "The email field with Gauth's own form_error class added in DevTools: its CSS turns the field #fff2f2 with a #f00039 border and red text. Gauth shows it after a submit, which the capture never made, so the class was forced to read the rule.",
+   "selector": "[class*=\"pc-login-modal-view_login-input__\"] + form_error"
+  },
+  "field-focused": {
+   "states": {
+    "focused": {
+     "tag": "div",
+     "classes": "pc-login-modal-view_login-input form_form-item form_active",
+     "text": "",
+     "rect": {
+      "x": 520,
+      "y": 370.9,
+      "w": 400,
+      "h": 48
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "400px",
+      "height": "48px",
+      "minWidth": "0px",
+      "maxWidth": "400px",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "12px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(142, 142, 147)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(142, 142, 147)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(142, 142, 147)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(142, 142, 147)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "rgb(245, 245, 247)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "-apple-system, \"system-ui\", \"Google Sans\", Roboto, Arial, Helvatica",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.pc-login-modal-view_login-input.form_form-item",
+       "size": "400.0x48.0",
+       "border": "T:1px solid rgb(142, 142, 147) | R:1px solid rgb(142, 142, 147) | B:1px solid rgb(142, 142, 147) | L:1px solid rgb(142, 142, 147)",
+       "bg": "rgb(245, 245, 247)",
+       "radius": "12px"
+      },
+      {
+       "node": "input",
+       "size": "314.0x46.0",
+       "bg": "rgb(245, 245, 247)"
+      }
+     ],
+     "icon": {
+      "w": 24,
+      "h": 25,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
+     "crop": "components/crops/field-focused-focused.png",
+     "via": "clicked into the field"
+    }
+   },
+   "page": "home",
+   "run": "forms",
+   "url": "https://www.gauth.com/",
+   "title": "Text field, focused (sign-up password)",
+   "group": "Dialogs and overlays",
+   "desc": "Focusing a sign-up field gives it Gauth's form_active border (#8e8e93) and shows the rule line under the password field. Focused only; nothing typed.",
+   "selector": "sign-up password field"
+  },
+  "field-helper": {
+   "states": {
+    "focused": {
+     "tag": "div",
+     "classes": "pc-login-modal-view_code-explain",
+     "text": "Use 6-20 characters from at least 2 categories: letters, numbers, special charac",
+     "rect": {
+      "x": 520,
+      "y": 422.9,
+      "w": 400,
+      "h": 36
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "400px",
+      "height": "36px",
+      "minWidth": "0px",
+      "maxWidth": "400px",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "-8px",
+      "marginRight": "0px",
+      "marginBottom": "24px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(117, 124, 136)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(117, 124, 136)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(117, 124, 136)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(117, 124, 136)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(117, 124, 136)",
+      "outlineOffset": "0px",
+      "fontFamily": "-apple-system, \"system-ui\", \"Google Sans\", Roboto, Arial, Helvatica",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "18px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(117, 124, 136)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(117, 124, 136)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "crop": "components/crops/field-helper-focused.png",
+     "via": "clicked into the field"
+    }
+   },
+   "page": "home",
+   "run": "forms",
+   "url": "https://www.gauth.com/",
+   "title": "Field helper text",
+   "group": "Dialogs and overlays",
+   "desc": "The rule line Gauth shows under the password field while it has focus: \"Use 6-20 characters from at least 2 categories\".",
+   "selector": "sign-up password helper"
   }
  }
 }

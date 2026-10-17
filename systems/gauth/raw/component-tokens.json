@@ -17,7 +17,12 @@
     "a06": {"value": "rgba(33, 37, 46, 0.06)", "type": "color", "source": "measured raw/measurements.md#create-close (hover)"},
     "a07": {"value": "rgba(33, 37, 46, 0.07)", "type": "color", "source": "measured raw/measurements.md#chapter-pill-active"},
     "a25": {"value": "rgba(33, 37, 46, 0.25)", "type": "color", "source": "measured raw/measurements.md#chapter-pill (label)"},
-    "scrim": {"value": "rgba(31, 35, 43, 0.7)", "type": "color", "source": "measured raw/measurements.md#signin-scrim (Gauth's own modal-container layer)"}
+    "scrim": {"value": "rgba(31, 35, 43, 0.7)", "type": "color", "source": "measured raw/measurements.md#signin-scrim (Gauth's own modal-container layer)"},
+    "code-fill": {"value": "rgba(117, 124, 136, 0.2)", "type": "color", "source": "css .md-container code:not(pre>code), .markdown-body code (Gauth's markdown styles; declared, not seen painted)"},
+    "story": {"value": "#1f2021", "type": "color", "source": "measured raw/measurements.md#ask-tutor-open, #story-strip-item (text)"},
+    "shimmer-1": {"value": "#7c818c", "type": "color", "source": "measured raw/measurements.md#tutor-status, #tutor-transcript (the status line's shimmer gradient, first stop)"},
+    "shimmer-2": {"value": "#a9adb5", "type": "color", "source": "measured raw/measurements.md#tutor-status, #tutor-transcript (shimmer gradient, middle stop)"},
+    "shimmer-3": {"value": "#d4d6da", "type": "color", "source": "measured raw/measurements.md#tutor-status, #tutor-transcript (shimmer gradient, light stop)"}
    },
    "slate": {
     "line-1": {"var": "--lesson-gray-line-1", "type": "color"},
@@ -30,7 +35,9 @@
     "pressed-line": {"value": "#aeb7c4", "type": "color", "source": "measured raw/measurements.md#lesson-card (pressed border)"},
     "pressed-fill": {"value": "#e9ecf1", "type": "color", "source": "measured raw/measurements.md#show-more (pressed)"},
     "divider": {"value": "#edeef1", "type": "color", "source": "measured raw/measurements.md#side-menu (right rule and divider)"},
-    "meta-rule": {"value": "#d9dde3", "type": "color", "source": "measured raw/measurements.md#unit-card-meta (::before separator)"}
+    "meta-rule": {"value": "#d9dde3", "type": "color", "source": "measured raw/measurements.md#unit-card-meta (::before separator)"},
+    "field-focus": {"value": "#8e8e93", "type": "color", "source": "measured raw/measurements.md#field-focused (css .form_form-item.form_active:not(.form_error))"},
+    "code-block": {"value": "rgba(228, 230, 235, 0.5)", "type": "color", "source": "css .highlight pre, pre (Gauth's markdown styles; declared, not seen painted)"}
    },
    "paper": {
     "white": {"var": "--lesson-white-fill", "type": "color"},
@@ -44,7 +51,8 @@
     "line-light": {"value": "#eeeeee", "type": "color", "source": "measured raw/measurements.md#create-suggestion, #video-settings, #view-rail (border)"},
     "card-line": {"value": "rgba(0, 0, 0, 0.08)", "type": "color", "source": "measured raw/measurements.md#lesson-card, #unit-card, #story-card (border)"},
     "hairline": {"value": "rgba(0, 0, 0, 0.04)", "type": "color", "source": "measured raw/measurements.md#unit-rail, #unit-header (border)"},
-    "table-line": {"value": "#f2f2f7", "type": "color", "source": "measured raw/measurements.md#plan-table (2px border and row rules)"}
+    "table-line": {"value": "#f2f2f7", "type": "color", "source": "measured raw/measurements.md#plan-table (2px border and row rules)"},
+    "glass": {"value": "rgba(255, 255, 255, 0.82)", "type": "color", "source": "measured raw/measurements.md#audio-gate, #play-button (white at 82%)"}
    },
    "sand": {
     "text": {"var": "--lesson-primary-text-1", "type": "color", "description": "Warm brown accent of the lesson palette (#b7684d)"},
@@ -75,7 +83,10 @@
     "fill": {"var": "--lesson-right-bg", "type": "color"},
     "callout": {"value": "#e8fbef", "type": "color", "source": "measured raw/measurements.md#callout"},
     "course": {"value": "#ecf4e5", "type": "color", "source": "measured raw/measurements.md#course-banner (Algebra 1)"},
-    "course-text": {"value": "#3c6b26", "type": "color", "source": "measured raw/measurements.md#unit-button-active, #course-banner (progress value)"}
+    "course-text": {"value": "#3c6b26", "type": "color", "source": "measured raw/measurements.md#unit-button-active, #course-banner (progress value)"},
+    "result-fill": {"value": "#f1fbf4", "type": "color", "source": "measured raw/measurements.md#quiz-result-correct (answered right: background)"},
+    "result-line": {"value": "#bdebcc", "type": "color", "source": "measured raw/measurements.md#quiz-result-correct (answered right: 1px border)"},
+    "result-bar": {"value": "#1a8c4f", "type": "color", "source": "measured raw/measurements.md#quiz-result-correct (answered right: 8px bar on ::before), #quiz-result-correct-label (text)"}
    },
    "red": {
     "text": {"var": "--lesson-wrong-text", "type": "color"},
@@ -84,7 +95,8 @@
     "result-fill": {"value": "#fef4f4", "type": "color", "source": "measured raw/measurements.md#quiz-result (answered wrong: background)"},
     "result-line": {"value": "#f2c7cc", "type": "color", "source": "measured raw/measurements.md#quiz-result (answered wrong: 1px border)"},
     "result-bar": {"value": "#d15259", "type": "color", "source": "measured raw/measurements.md#quiz-result (answered wrong: the 8px bar on ::before)"},
-    "result-text": {"value": "#b82b33", "type": "color", "source": "measured raw/measurements.md#quiz-result-label (answered wrong: \"Quick check · Needs review\")"}
+    "result-text": {"value": "#b82b33", "type": "color", "source": "measured raw/measurements.md#quiz-result-label (answered wrong: \"Quick check · Needs review\")"},
+    "field-fill": {"value": "#fff2f2", "type": "color", "source": "css .form_form-item.form_error (Gauth's form module); measured raw/measurements.md#field-error (class forced in DevTools)"}
    },
    "brand": {
     "red": {"value": "#ff013e", "type": "color", "source": "measured raw/measurements.md#new-badge, #solution-option (active)", "description": "Gauth red: the New badge, the active solution row and the logo mark"},
@@ -92,7 +104,9 @@
     "pink-fill": {"value": "#fff0f3", "type": "color", "source": "measured raw/measurements.md#pill-tab-active, #chapter-panel (current row)"},
     "pink-line": {"value": "#ffe5ec", "type": "color", "source": "measured raw/measurements.md#pill-tab-active (border)"},
     "pink-band": {"value": "#ffebf0", "type": "color", "source": "measured raw/measurements.md#live-tutor-band"},
-    "disabled": {"value": "#ffccd8", "type": "color", "source": "measured raw/measurements.md#signin-submit (disabled)"}
+    "disabled": {"value": "#ffccd8", "type": "color", "source": "measured raw/measurements.md#signin-submit (disabled)"},
+    "pressed": {"value": "#d80033", "type": "color", "source": "measured raw/measurements.md#accent-button (pressed, forced :active; css .button_btn-primary:active)"},
+    "focus": {"value": "#f0023a", "type": "color", "source": "measured raw/measurements.md#pill-tab, #pill-tab-active (focus-visible outline)"}
    },
    "gold": {
     "text": {"value": "#76542a", "type": "color", "source": "measured raw/measurements.md#upgrade-button"},
@@ -135,7 +149,12 @@
     "print-ink": {"value": "#45433f", "type": "color", "source": "measured raw/measurements.md#note-text"},
     "quiz-line": {"value": "#e3e3e3", "type": "color", "source": "measured raw/measurements.md#quiz-card (border)"},
     "option-line": {"value": "#e6e6e7", "type": "color", "source": "measured raw/measurements.md#quiz-option (border)"},
-    "menu-ink": {"value": "#0d0d0d", "type": "color", "source": "measured raw/measurements.md#menu-item, #menu-item-selected, #switch (row label)"}
+    "menu-ink": {"value": "#0d0d0d", "type": "color", "source": "measured raw/measurements.md#menu-item, #menu-item-selected, #switch (row label)"},
+    "warning-fill": {"value": "rgba(226, 164, 0, 0.2)", "type": "color", "source": "css-var --color-background-yellow (Astryx), resolved in the science player; not seen painted"},
+    "warning-text": {"value": "#753f07", "type": "color", "source": "css-var --color-text-yellow (Astryx), resolved in the science player; not seen painted"},
+    "warning-line": {"value": "#c58600", "type": "color", "source": "css-var --color-border-yellow (Astryx), resolved in the science player; not seen painted"},
+    "menu-fill": {"value": "rgba(37, 37, 42, 0.06)", "type": "color", "source": "measured raw/measurements.md#settings-popover, #speed-menu (the back row and Speed value pill)"},
+    "popover-line": {"value": "#f2f2f2", "type": "color", "source": "measured raw/measurements.md#settings-popover, #speed-menu (1px border)"}
    },
    "atlas": {
     "toggle": {"value": "#171410", "type": "color", "source": "measured raw/measurements.md#search-toggle"},
@@ -155,12 +174,21 @@
     "button-ink": {"value": "#374151", "type": "color", "source": "measured raw/measurements.md#generate-video-button"},
     "paper-card": {"var": "--aw-color-paper-card", "type": "color", "description": "Atlas's map paper; declared in Atlas's layout CSS"},
     "pin": {"var": "--aw-color-pin-accent", "type": "color"},
-    "hotspot": {"value": "rgba(121, 92, 255, 0.14)", "type": "color", "source": "measured raw/measurements.md#story-stage (tap mark)"}
+    "hotspot": {"value": "rgba(121, 92, 255, 0.14)", "type": "color", "source": "measured raw/measurements.md#story-stage (tap mark)"},
+    "delete-scrim": {"value": "rgba(20, 24, 32, 0.2)", "type": "color", "source": "css .wap-atlas-drawer_deleteMask (declared; the delete dialog is behind sign-in)"},
+    "delete-ink": {"value": "#141820", "type": "color", "source": "css .wap-atlas-drawer_deleteTitle (declared)"},
+    "delete-desc": {"value": "#6d7482", "type": "color", "source": "css .wap-atlas-drawer_deleteDesc (declared)"},
+    "delete-cancel": {"value": "#f3f4f7", "type": "color", "source": "css .wap-atlas-drawer_cancelDeleteBtn (declared)"},
+    "delete-confirm": {"value": "#ff4d4f", "type": "color", "source": "css .wap-atlas-drawer_confirmDeleteBtn (declared)"}
    },
    "lesson-math": {
     "track": {"value": "#edeade", "type": "color", "source": "measured raw/measurements.md#progress-bar (track and dots)"},
     "value": {"value": "#27220c", "type": "color", "source": "measured raw/measurements.md#progress-bar (value)"},
     "film": {"value": "rgba(0, 0, 0, 0.05)", "type": "color", "source": "measured raw/measurements.md#page-nav, #header-round-button (hover)"}
+   },
+   "antd": {
+    "text": {"value": "rgba(0, 0, 0, 0.88)", "type": "color", "source": "measured raw/measurements.md#language-select, #language-list, #language-option, #pagination-item (Ant Design's text colour, as Gauth shows it)", "description": "Ant Design's own colour, kept on the language select and pagination; not Gauth's palette"},
+    "disabled": {"value": "rgba(0, 0, 0, 0.25)", "type": "color", "source": "measured raw/measurements.md#language-select (chevron), #pagination, #pagination-prev (Ant Design's disabled and icon colour)", "description": "Ant Design's own colour"}
    }
   },
   "fontFamily": {
@@ -244,7 +272,23 @@
    "caption": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 400, "fontSize": "12px", "lineHeight": "16.8px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#lesson-card-subtitle"},
    "caption-strong": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 700, "fontSize": "12px", "lineHeight": "16.8px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#lesson-card-category"},
    "chip-label": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 400, "fontSize": "12px", "lineHeight": "18px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#subject-chip (name), #breadcrumb"},
-   "atlas-label": {"value": {"fontFamily": "{fontFamily.rubik}", "fontWeight": 600, "fontSize": "12px", "lineHeight": "20px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#share-button, #generate-video-button"}
+   "atlas-label": {"value": {"fontFamily": "{fontFamily.rubik}", "fontWeight": 600, "fontSize": "12px", "lineHeight": "20px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#share-button, #generate-video-button"},
+   "code": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 400, "fontSize": "13.6px", "lineHeight": "19.72px", "letterSpacing": "0px"}, "type": "typography", "source": "css .highlight pre, pre (font-size 85%, line-height 1.45) and .md-container code (font-family inherit): Gauth's markdown styles for the tutor's answers; 13.6px and 19.72px derived from the 16px body; declared, not seen painted", "description": "Code in Gauth keeps the text face: inline code is the body font on a grey fill (palette.ink.code-fill), a code block 85% size on palette.slate.code-block at radius 16"},
+   "label-system": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 500, "fontSize": "14px", "lineHeight": "21px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#pill-tab, #plan-table-cell, #signup-link"},
+   "menu": {"value": {"fontFamily": "{fontFamily.sf-pro}", "fontWeight": 400, "fontSize": "14px", "lineHeight": "21px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#menu-item, #settings-popover, #speed-menu, #switch"},
+   "dialog-display": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 600, "fontSize": "36px", "lineHeight": "46.8px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#signin-dialog (\"Welcome\"), #live-tutor-band"},
+   "rail-meta": {"value": {"fontFamily": "{fontFamily.sf-pro}", "fontWeight": 400, "fontSize": "12px", "lineHeight": "16.8px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#unit-button, #unit-rail (\"Unit n\")"},
+   "field": {"value": {"fontFamily": "{fontFamily.sf-pro}", "fontWeight": 400, "fontSize": "16px", "lineHeight": "24px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#ask-tutor, #create-prompt"},
+   "field-lg": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 400, "fontSize": "18px", "lineHeight": "27px", "letterSpacing": "0.126px"}, "type": "typography", "source": "measured raw/measurements.md#header-question, #upload-panel"},
+   "select-option": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 600, "fontSize": "14px", "lineHeight": "40px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#language-list, #language-option-selected"},
+   "tab-strong": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 700, "fontSize": "14px", "lineHeight": "19.6px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#category-tab-active, #m-category-tab"},
+   "rail-current": {"value": {"fontFamily": "{fontFamily.canvas-print}", "fontWeight": 600, "fontSize": "14px", "lineHeight": "20px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#canvas-outline, #outline-item-active"},
+   "overline": {"value": {"fontFamily": "{fontFamily.canvas-print}", "fontWeight": 700, "fontSize": "11px", "lineHeight": "18px", "letterSpacing": "0.88px"}, "type": "typography", "source": "measured raw/measurements.md#quiz-result-label (\"Quick check · Needs review\")"},
+   "overline-lg": {"value": {"fontFamily": "{fontFamily.canvas-print}", "fontWeight": 700, "fontSize": "12px", "lineHeight": "20px", "letterSpacing": "0.96px"}, "type": "typography", "source": "measured raw/measurements.md#quiz-result-correct-label (\"Quick check · Correct\")"},
+   "atlas-card-title": {"value": {"fontFamily": "{fontFamily.rubik}", "fontWeight": 600, "fontSize": "15px", "lineHeight": "18px", "letterSpacing": "0.45px"}, "type": "typography", "source": "measured raw/measurements.md#story-card, #new-badge"},
+   "pagination": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 600, "fontSize": "16px", "lineHeight": "32px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#pagination-item-active"},
+   "table-heading": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 500, "fontSize": "26px", "lineHeight": "34px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#plan-table-header (\"Features by plan\")"},
+   "button-xl": {"value": {"fontFamily": "{fontFamily.system}", "fontWeight": 600, "fontSize": "18px", "lineHeight": "48px", "letterSpacing": "0px"}, "type": "typography", "source": "measured raw/measurements.md#accent-button, #signin-submit"}
   },
   "spacing": {
    "base": {"value": "4px", "type": "dimension", "source": "derived raw/components-computed.json: 643 of 1,020 measured paddings and gaps (63%) are multiples of 4px; 8, 12 and 16 are the most used", "description": "The base unit. Gauth declares no spacing scale; this is the grid its measured paddings and gaps fall on. The values off it are under spacing-offgrid."},
@@ -256,22 +300,27 @@
    "24": {"value": "24px", "type": "dimension", "source": "measured raw/layout.json academy-science@1440 (card grid gap), #side-menu (top padding), #learning-panel"},
    "28": {"value": "28px", "type": "dimension", "source": "measured raw/measurements.md#course-banner (left padding), #atlas-showcase"},
    "32": {"value": "32px", "type": "dimension", "source": "measured raw/layout.json unit@1440 (rail to map gap), atlas@1440 (story grid gap)"},
+   "36": {"value": "36px", "type": "dimension", "source": "measured raw/measurements.md#course-section (padding-bottom 36), #my-empty"},
    "40": {"value": "40px", "type": "dimension", "source": "measured raw/measurements.md#atlas-band-title (bottom padding)"},
    "48": {"value": "48px", "type": "dimension", "source": "measured raw/layout.json atlas@1440 (FAQ video grid gap)"}
   },
   "radius": {
    "4": {"value": "4px", "type": "dimension", "source": "measured raw/measurements.md#lesson-card-progress, #course-banner (track)"},
+   "6": {"value": "6px", "type": "dimension", "source": "measured raw/measurements.md#atlas-textarea, #language-select, #m-question-box"},
    "8": {"value": "8px", "type": "dimension", "source": "measured raw/measurements.md#upgrade-button, #share-button, #video-badge, #outline-item"},
    "10": {"value": "10px", "type": "dimension", "source": "measured raw/measurements.md#side-menu-item, #sign-in-button, #subject-chip, #quiz-option, #recommendation-chip, #chapter-option"},
    "12": {"value": "12px", "type": "dimension", "source": "measured raw/measurements.md#category-tab, #create-course-button, #show-more, #start-button, #create-button, #plus-card, #unit-button, #new-topic"},
    "14": {"value": "14px", "type": "dimension", "source": "measured raw/measurements.md#promo-confirm, #atlas-cta, #callout"},
    "16": {"value": "16px", "type": "dimension", "source": "measured raw/measurements.md#lesson-card, #unit-card, #story-card, #unit-rail, #tutor-input, #create-prompt, #audio-not-now"},
+   "18": {"value": "18px", "type": "dimension", "source": "measured raw/measurements.md#pagination-item, #story-preview, #subject-more (a round 36px item)"},
    "20": {"value": "20px", "type": "dimension", "source": "measured raw/measurements.md#course-banner, #unit-header, #audio-dialog, #quiz-card, #figure-card, #atlas-composer, #solution-option"},
    "24": {"value": "24px", "type": "dimension", "source": "measured raw/measurements.md#promo-dialog, #create-dialog, #upload-panel, #settings-popover"},
    "28": {"value": "28px", "type": "dimension", "source": "measured raw/measurements.md#learning-panel, #chapter-panel"},
    "32": {"value": "32px", "type": "dimension", "source": "measured raw/measurements.md#feature-card, #player-frame"},
    "38": {"value": "38px", "type": "dimension", "source": "measured raw/measurements.md#question-box"},
    "48": {"value": "48px", "type": "dimension", "source": "measured raw/measurements.md#atlas-showcase"},
+   "100": {"value": "100px", "type": "dimension", "source": "measured raw/measurements.md#pill-tab, #pill-tab-active, #progress-bar"},
+   "999": {"value": "999px", "type": "dimension", "source": "measured raw/measurements.md#chapter-pill, #explore-button, #promo-close, #unit-card-progress (a second pill value beside radius.pill)"},
    "pill": {"value": "9999px", "type": "dimension", "source": "measured raw/measurements.md#ask-tutor, #canvas-control, #chapter-pill (999px), #pill-tab (100px)"}
   },
   "size": {
@@ -352,14 +401,24 @@
   "focus": {
    "width": {"value": "2px", "type": "dimension", "source": "measured raw/measurements.md#canvas-control, #pill-tab, #search-toggle (focus-visible outline)"},
    "offset-astryx": {"value": "3px", "type": "dimension", "source": "measured raw/measurements.md#canvas-control (outline-offset)"},
-   "offset": {"value": "2px", "type": "dimension", "source": "measured raw/measurements.md#pill-tab, #search-toggle, #ask-tutor-mic (outline-offset)"}
+   "offset": {"value": "2px", "type": "dimension", "source": "measured raw/measurements.md#pill-tab, #search-toggle, #ask-tutor-mic (outline-offset)"},
+   "offset-inset": {"value": "-2px", "type": "dimension", "source": "measured raw/measurements.md#menu-item, #switch (outline drawn 2px inside)"}
   },
   "spacing-offgrid": {
    "2": {"value": "2px", "type": "dimension", "source": "measured raw/measurements.md#quiz-option (focus offset 3px), #pill-tab (focus offset 2px)", "description": "Measured, off the 4px grid"},
+   "5": {"value": "5px", "type": "dimension", "source": "measured raw/measurements.md#language-option, #upgrade-button", "description": "Measured, off the 4px grid"},
    "6": {"value": "6px", "type": "dimension", "source": "measured raw/measurements.md#chapter-pills (padding), #view-rail (padding)", "description": "Measured, off the 4px grid"},
+   "9": {"value": "9px", "type": "dimension", "source": "measured raw/measurements.md#subject-more, #tutor-input", "description": "Measured, off the 4px grid"},
    "10": {"value": "10px", "type": "dimension", "source": "measured raw/measurements.md#unit-button (padding 10 16), #subject-chip", "description": "Measured, off the 4px grid; the most used off-grid value (131 of 1,020 paddings and gaps)"},
+   "11": {"value": "11px", "type": "dimension", "source": "measured raw/measurements.md#language-select, #m-unit-card", "description": "Measured, off the 4px grid"},
+   "13": {"value": "13px", "type": "dimension", "source": "measured raw/measurements.md#create-prompt, #plan-table-cell", "description": "Measured, off the 4px grid"},
    "14": {"value": "14px", "type": "dimension", "source": "measured raw/measurements.md#story-card (padding 14 14 18), #create-suggestion", "description": "Measured, off the 4px grid"},
-   "15": {"value": "15px", "type": "dimension", "source": "measured raw/measurements.md#category-tab (padding 0 15)", "description": "Measured, off the 4px grid"}
+   "15": {"value": "15px", "type": "dimension", "source": "measured raw/measurements.md#category-tab (padding 0 15)", "description": "Measured, off the 4px grid"},
+   "18": {"value": "18px", "type": "dimension", "source": "measured raw/measurements.md#create-button, #feature-card, #quiz-result, #story-card, #unit-header", "description": "Measured, off the 4px grid"},
+   "22": {"value": "22px", "type": "dimension", "source": "measured raw/measurements.md#benefits-table, #learning-panel", "description": "Measured, off the 4px grid"},
+   "26": {"value": "26px", "type": "dimension", "source": "measured raw/measurements.md#chapter-title, #learning-panel, #quiz-result-correct", "description": "Measured, off the 4px grid"},
+   "29": {"value": "29px", "type": "dimension", "source": "measured raw/measurements.md#breadcrumb, #course-section", "description": "Measured, off the 4px grid"},
+   "30": {"value": "30px", "type": "dimension", "source": "measured raw/measurements.md#plan-card, #question-box", "description": "Measured, off the 4px grid"}
   },
   "borderWidth": {
    "hairline": {"value": "1px", "type": "dimension", "source": "measured raw/measurements.md#lesson-card, #category-tab, #signin-social, #pagination-item (1px borders)", "description": "Cards, tabs, outlined buttons and fields"},
@@ -443,7 +502,11 @@
    "ghost-pressed": {"value": "{palette.astryx.film-10}", "type": "color", "source": "measured raw/measurements.md#canvas-control (pressed)"},
    "focus": {"value": "{palette.blue.focus}", "type": "color", "source": "measured raw/measurements.md#canvas-control (focus-visible)", "description": "Only the Astryx lesson controls draw a blue ring; most Gauth controls draw none"},
    "primary-pressed": {"value": "{palette.ink.hover}", "type": "color", "source": "measured raw/measurements.md#create-button (pressed: #333943 plus scale 0.98)", "description": "Gauth sets no separate :active colour; pressed keeps the hover fill and scales to scale.press"},
-   "primary-disabled": {"value": "{palette.brand.disabled}", "type": "color", "source": "measured raw/measurements.md#signin-submit (disabled)", "description": "The brand-red primary in the Sign in dialog, disabled"}
+   "primary-disabled": {"value": "{palette.brand.disabled}", "type": "color", "source": "measured raw/measurements.md#signin-submit (disabled)", "description": "The brand-red primary in the Sign in dialog, disabled"},
+   "accent": {"value": "{palette.brand.red}", "type": "color", "source": "measured raw/measurements.md#accent-button (default; css .button_btn-primary)", "description": "Gauth's own button component's primary, used by the Sign in dialog; the learning pages use the near-black action.primary instead"},
+   "accent-hover": {"value": "{palette.brand.pink-text}", "type": "color", "source": "measured raw/measurements.md#accent-button (hover, real pointer; css :hover #f00039)"},
+   "accent-pressed": {"value": "{palette.brand.pressed}", "type": "color", "source": "measured raw/measurements.md#accent-button (pressed, forced :active; css :active #d80033)"},
+   "accent-disabled": {"value": "{palette.brand.disabled}", "type": "color", "source": "measured raw/measurements.md#signin-submit (disabled)"}
   },
   "gradient": {
    "upgrade": {"value": [{"color": "{palette.gold.start}", "position": 0}, {"color": "{palette.gold.end}", "position": 1}], "type": "gradient", "angle": "90deg", "source": "measured raw/measurements.md#upgrade-button (linear-gradient(90deg, #ffe9dc, #ffeecd))"},
@@ -566,13 +629,34 @@
     "current": {"value": "{palette.brand.pink-fill}", "type": "color", "source": "measured raw/measurements.md#pill-tab-active"},
     "current-border": {"value": "{palette.brand.pink-line}", "type": "color", "source": "measured raw/measurements.md#pill-tab-active"},
     "current-text": {"value": "{palette.brand.pink-text}", "type": "color", "source": "measured raw/measurements.md#pill-tab-active"}
+   },
+   "field": {
+    "background": {"value": "{palette.paper.cool}", "type": "color", "source": "measured raw/measurements.md#signin-email (#f5f5f7)"},
+    "border-focus": {"value": "{palette.slate.field-focus}", "type": "color", "source": "measured raw/measurements.md#field-focused"},
+    "error-background": {"value": "{palette.red.field-fill}", "type": "color", "source": "measured raw/measurements.md#field-error (forced)"},
+    "error-border": {"value": "{palette.brand.pink-text}", "type": "color", "source": "measured raw/measurements.md#field-error (forced); css .form_error border-color #f00039"},
+    "error-text": {"value": "{palette.brand.pink-text}", "type": "color", "source": "css .form_error-msg (color #f00039, 14/20); declared, not seen painted"},
+    "helper-text": {"value": "{palette.ink.500}", "type": "color", "source": "measured raw/measurements.md#field-helper"}
+   },
+   "code": {
+    "inline": {"value": "{palette.ink.code-fill}", "type": "color", "source": "css .md-container code (declared)"},
+    "block": {"value": "{palette.slate.code-block}", "type": "color", "source": "css pre (declared)"}
+   },
+   "delete-dialog": {
+    "scrim": {"value": "{palette.atlas.delete-scrim}", "type": "color", "source": "css .wap-atlas-drawer_deleteMask (declared)"},
+    "background": {"value": "{palette.paper.white}", "type": "color", "source": "css .wap-atlas-drawer_deleteDialog (declared)"},
+    "title": {"value": "{palette.atlas.delete-ink}", "type": "color", "source": "css .wap-atlas-drawer_deleteTitle (declared)"},
+    "text": {"value": "{palette.atlas.delete-desc}", "type": "color", "source": "css .wap-atlas-drawer_deleteDesc (declared)"},
+    "cancel": {"value": "{palette.atlas.delete-cancel}", "type": "color", "source": "css .wap-atlas-drawer_cancelDeleteBtn (declared)"},
+    "confirm": {"value": "{palette.atlas.delete-confirm}", "type": "color", "source": "css .wap-atlas-drawer_confirmDeleteBtn (declared)"}
    }
   },
   "status": {
    "success": {
-    "fill": {"value": "{palette.green.fill}", "type": "color", "source": "css-var --lesson-right-bg", "description": "Declared by Gauth (--lesson-right-*); a correct answer was not captured, so not seen painted"},
-    "text": {"value": "{palette.green.text}", "type": "color", "source": "css-var --lesson-right-text", "description": "Declared by Gauth (--lesson-right-*); a correct answer was not captured, so not seen painted"},
-    "border": {"value": "{palette.green.line}", "type": "color", "source": "css-var --lesson-right-line", "description": "Declared by Gauth (--lesson-right-*); a correct answer was not captured, so not seen painted"}
+    "fill": {"value": "{palette.green.result-fill}", "type": "color", "source": "measured raw/measurements.md#quiz-result-correct", "description": "Painted by the lesson result card for a right answer; Gauth also declares --lesson-right-* (palette.green.fill, .line, .text), not seen painted"},
+    "text": {"value": "{palette.green.result-bar}", "type": "color", "source": "measured raw/measurements.md#quiz-result-correct-label (\"Quick check · Correct\")"},
+    "border": {"value": "{palette.green.result-line}", "type": "color", "source": "measured raw/measurements.md#quiz-result-correct"},
+    "accent": {"value": "{palette.green.result-bar}", "type": "color", "source": "measured raw/measurements.md#quiz-result-correct (8px leading bar)"}
    },
    "danger": {
     "fill": {"value": "{palette.red.result-fill}", "type": "color", "source": "measured raw/measurements.md#quiz-result (answered wrong)", "description": "Painted by the lesson result card; Gauth also declares --lesson-wrong-bg (#f9e8e8, palette.red.fill), not seen painted"},
@@ -584,6 +668,11 @@
     "fill": {"value": "{palette.blue.info-fill}", "type": "color", "source": "css-var --gauth-semantic-blue-bg", "description": "Declared by Gauth in the math lesson (--gauth-semantic-blue-*); not seen painted"},
     "text": {"value": "{palette.blue.info-text}", "type": "color", "source": "css-var --gauth-semantic-blue-text", "description": "Declared by Gauth in the math lesson (--gauth-semantic-blue-*); not seen painted"},
     "border": {"value": "{palette.blue.info-line}", "type": "color", "source": "css-var --gauth-semantic-blue-line", "description": "Declared by Gauth in the math lesson (--gauth-semantic-blue-*); not seen painted"}
+   },
+   "warning": {
+    "fill": {"value": "{palette.astryx.warning-fill}", "type": "color", "source": "css-var --color-background-yellow (Astryx), resolved in the science player", "description": "Astryx's warning, the only one Gauth ships (its badge, banner and field-status warning variants); no warning was seen painted"},
+    "text": {"value": "{palette.astryx.warning-text}", "type": "color", "source": "css-var --color-text-yellow (Astryx), resolved in the science player"},
+    "border": {"value": "{palette.astryx.warning-line}", "type": "color", "source": "css-var --color-border-yellow (Astryx), resolved in the science player"}
    }
   }
  }
