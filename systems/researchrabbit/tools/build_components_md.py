@@ -89,8 +89,9 @@ ROLE_PRE = {
     "bg": ("background.", "action.", "status.", "component."),
     "text": ("text.", "status.", "action.primary-text"),
     "border": ("border.", "status.", "action.focus-ring"),
+    "image": ("gradient.", "background."),
 }
-ROLE_OK = {"bg": lambda n: not n.startswith("status.") or n.endswith(".fill"),
+ROLE_OK = {"image": lambda n: True, "bg": lambda n: not n.startswith("status.") or n.endswith(".fill"),
            "text": lambda n: not n.startswith("status.") or n.endswith(".text"),
            "border": lambda n: not n.startswith("status.") or n.endswith(".border")}
 TOK_ROLE = {}
@@ -293,7 +294,7 @@ def props(v):
     o["background"] = colour(s["backgroundColor"], role="bg")
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
-        o["image"] = colour(img)[:200]
+        o["image"] = colour(img, role="image")[:200]
     if s["boxShadow"] != "none":
         o["shadow"] = shadow_text(s["boxShadow"])
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
@@ -387,7 +388,7 @@ def part(name, b, origin=None):
                    else space_tok(b[k]) if k in ("padding", "margin", "gap") else radius_tok(b[k]) if k == "radius" else b[k])
             bits.append(f"{lab} {val}")
     if b.get("bgImage"):
-        bits.append("image " + colour(b["bgImage"])[:110])
+        bits.append("image " + colour(b["bgImage"], role="image")[:110])
     if b.get("opacity"):
         bits.append(f"opacity {b['opacity']}")
     if b.get("text"):
@@ -773,7 +774,7 @@ W("|---|---|---|---|---|---|---|---|")
 reg = OrderedDict()
 for pk, pv in PG.items():
     for rn, r in pv.get("regions", {}).items():
-        key = (rn, px(r["x"]), px(r["y"]), px(r["w"]), px(r["h"]), colour(r["bg"]) if r.get("bg") else "-", r.get("radius", "-"))
+        key = (rn, px(r["x"]), px(r["y"]), px(r["w"]), px(r["h"]), colour(r["bg"], role="bg") if r.get("bg") else "-", r.get("radius", "-"))
         reg.setdefault(key, []).append(pk)
 for key, pks in sorted(reg.items(), key=lambda kv: (kv[0][0], kv[1][0])):
     W(f"| {' | '.join(key)} | {', '.join(pks) if len(pks) <= 4 else f'{pks[0]} and {len(pks) - 1} more'} |")
@@ -791,7 +792,7 @@ for k in SHAPES:
     p = props(st)
     if (p["background"] == "transparent" or "radius" not in p) and st.get("paint"):
         p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=shadow_text(p0.get("shadow", "")) or "none")
+        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", ""), role="bg") or "-", shadow=shadow_text(p0.get("shadow", "")) or "none")
     W(f"| [{C[k]['name']}](#{slug(C[k]['name'])}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 

@@ -140,7 +140,7 @@ Values that apply across entries, from the measurement file. Counts are componen
 | background | #f2f2f2 `{action.control}` | 2 |
 | background | #fcebe5 `{status.danger.fill}` | 2 |
 | background | rgba(0, 0, 0, 0.1) `{action.quiet-hover}` | 2 |
-| background | #61dce2 `{palette.turq.base}` | 1 |
+| background | #61dce2 `{action.go}` | 1 |
 | background | #d7f6f8 `{background.hint}` | 1 |
 | background | #e2f6e2 `{status.info.fill}` | 1 |
 | background | #e9f5fe `{component.option-selected}` | 1 |
@@ -148,7 +148,7 @@ Values that apply across entries, from the measurement file. Counts are componen
 | background | #f5c751 `{component.positions-moved}` | 1 |
 | background | #fef1c5 `{status.warning.fill}` | 1 |
 | background | rgba(221, 204, 255, 0.2) `{background.panel-tint}` | 1 |
-| background | rgba(255, 255, 255, 0.3) `{palette.alpha.white-30}` | 1 |
+| background | rgba(255, 255, 255, 0.3) `{background.drop-zone}` | 1 |
 | background | rgba(255, 255, 255, 0.4) `{background.section}` | 1 |
 | background | rgba(255, 255, 255, 0.9) `{action.glass-hover}` | 1 |
 
@@ -176,7 +176,7 @@ Values that apply across entries, from the measurement file. Counts are componen
 | rgba(0, 0, 0, 0.05) `{action.quiet}` | rgba(0, 0, 0, 0.08) `{action.quiet-hover-soft}` | 2 |
 | rgba(0, 0, 0, 0.05) `{action.quiet}` | rgba(0, 0, 0, 0.1) `{action.quiet-hover}` | 2 |
 | transparent | rgba(255, 255, 255, 0.1) `{action.quiet-hover-inverse}` | 2 |
-| #8add8a `{action.upgrade}` | #c4eec4 `{palette.green.50}` | 1 |
+| #8add8a `{action.upgrade}` | #c4eec4 `{action.upgrade-hover}` | 1 |
 | #f2f2f2 `{action.control}` | #e8e8e8 `{action.control-hover}` | 1 |
 | #ffffff `{background.surface}` | #e9f5fe `{component.option-selected}` | 1 |
 | #ffffff `{background.surface}` | #eef0f1 `{background.page}` | 1 |
@@ -211,23 +211,23 @@ Values that apply across entries, from the measurement file. Counts are componen
 | Scaffold__Body | 44 | 80 | 1352 | 812 | - | - | search-start |
 | Scaffold__Body | 24 | 166 | 994 | 726 | - | - | sp and 23 more |
 | Scaffold__Body | 24 | 166 | 629.33 | 626 | - | - | tablet |
-| Scaffold__Header | 24 | 120 | 994 | 46 | #ffffff `{palette.base.white}` | - | sp and 23 more |
-| Scaffold__Header | 24 | 120 | 629.33 | 46 | #ffffff `{palette.base.white}` | - | tablet |
+| Scaffold__Header | 24 | 120 | 994 | 46 | #ffffff `{background.surface}` | - | sp and 23 more |
+| Scaffold__Header | 24 | 120 | 629.33 | 46 | #ffffff `{background.surface}` | - | tablet |
 | Scaffold__Main | 24 | 80 | 1392 | 812 | - | - | lm and 11 more |
 | Scaffold__Main | 0 | 0 | 0 | 0 | - | - | mobile-warn |
 | Scaffold__Main | 44 | 80 | 1352 | 812 | - | - | search-start |
-| Scaffold__Main | 24 | 120 | 994 | 772 | rgba(255, 255, 255, 0.5) `{palette.alpha.white-50}` | 16px 16px 0px 0px | sp and 23 more |
-| Scaffold__Main | 24 | 120 | 629.33 | 672 | rgba(255, 255, 255, 0.5) `{palette.alpha.white-50}` | 16px 16px 0px 0px | tablet |
+| Scaffold__Main | 24 | 120 | 994 | 772 | rgba(255, 255, 255, 0.5) `{background.panel-glass}` | 16px 16px 0px 0px | sp and 23 more |
+| Scaffold__Main | 24 | 120 | 629.33 | 672 | rgba(255, 255, 255, 0.5) `{background.panel-glass}` | 16px 16px 0px 0px | tablet |
 
 **Surface shapes.** Values from the first state of each; the entries hold the others.
 
 | Surface | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Main card](#main-card) | 994 x 772 | - | 16px 16px 0px 0px | rgba(255, 255, 255, 0.5) `{background.panel-glass}` | none | 0 |
-| [Right panel](#right-panel) | 390 x 772 | - | 12px | rgba(221, 204, 255, 0.2) `{palette.alpha.violet-20}` | none | 0 |
+| [Right panel](#right-panel) | 390 x 772 | - | 12px | rgba(221, 204, 255, 0.2) `{background.panel-tint}` | none | 0 |
 | [Result card](#result-card) | 372 x 204 | - | 8px `{radius.lg}` | #ffffff `{background.surface}` | none | 0 |
 | [Search summary pill](#search-summary-pill) | 248.64 x 37 (height `{size.field}`) | - | 48px `{radius.pill}` | #d1ceed `{action.accent}` | none | 4px `{spacing.1}` |
-| [View toggle](#view-toggle) | 96 x 32 (height `{size.control-md}`) | - | - | #000000 `{palette.base.black}` | none | 0 |
+| [View toggle](#view-toggle) | 96 x 32 (height `{size.control-md}`) | - | - | #000000 `{action.primary}` | none | 0 |
 | [Filter popover](#filter-popover) | 356 x 148 | - | 16px `{radius.2xl}` | #ffffff `{background.surface}` | rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px (`{elevation.popup}`) | 8px `{spacing.2}` |
 | [Legend tooltip](#legend-tooltip) | 162.41 x 28 | - | 8px `{radius.lg}` | #333333 `{action.primary-hover}` | rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px (`{elevation.popup}`) | 8px 12px `{spacing.2} {spacing.3}` |
 | [Tip banner](#tip-banner) | 374 x 44 | - | 8px `{radius.lg}` | #d7f6f8 `{background.hint}` | none | 0 |
@@ -237,7 +237,7 @@ Values that apply across entries, from the measurement file. Counts are componen
 | [Layout select](#layout-select) | 119.59 x 29 | - | 4px `{radius.sm}` | rgba(0, 0, 0, 0.05) `{action.quiet}` | none | 4px 8px `{spacing.1} {spacing.2}` |
 | [Positions moved pill](#positions-moved-pill) | 150.33 x 24 (height `{size.control-sm}`) | - | 48px `{radius.pill}` | #f5c751 `{component.positions-moved}` | none | 4px 8px `{spacing.1} {spacing.2}` |
 | [Reset positions menu](#reset-positions-menu) | 220 x 38 | - | 6px `{radius.md}` | #ffffff `{background.surface}` | rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(22, 23, 24, 0.2) 0px 10px 20px -15px (`{elevation.menu}`) | 4px `{spacing.1}` |
-| [Library sidebar](#library-sidebar) | 250 x 812 | - | 8px | #ffffff `{palette.base.white}` | none | 0px 16px 0px 0px `{spacing.0} {spacing.4} {spacing.0} {spacing.0}` |
+| [Library sidebar](#library-sidebar) | 250 x 812 | - | 8px | #ffffff `{background.surface}` | none | 0px 16px 0px 0px `{spacing.0} {spacing.4} {spacing.0} {spacing.0}` |
 | [Collection header](#collection-header) | 1142 x 92 | - | 8px `{radius.lg}` | #ffffff `{background.surface}` | none | 0 |
 | [Home section card](#home-section-card) | 440 x 500 | - | 8px `{radius.lg}` | rgba(255, 255, 255, 0.4) `{background.section}` | none | 12px `{spacing.3}` |
 | [Guide card](#guide-card) | 416 x 275 | - | 16px `{radius.2xl}` | #ffffff `{background.surface}` | none | 0 |
@@ -261,9 +261,9 @@ Child layers that carry the look: div 1080x1080; div 1080x1080; div 1080x1080.
 Parts:
 
 - body: 1440 x 900; Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; background #eef0f1 `{background.page}`; text "Search Library Upgrade My work"
-- blobs 1: 1080 x 1080; padding 0px 0px 1080px; image radial-gradient(farthest-side at 100% 0%, #e8e7f6 `{palette.lavender.25}`, rgba(215, 246, 248, 0.5), transpare
-- blobs 2: 1080 x 1080; padding 0px 0px 1080px; image radial-gradient(farthest-side at 0% 100%, #e8e7f6 `{palette.lavender.25}`, transparent)
-- blobs 3: 1080 x 1080; padding 0px 0px 1080px; image radial-gradient(farthest-side at 100% 100%, #fcebe5 `{palette.peach.25}`, transparent)
+- blobs 1: 1080 x 1080; padding 0px 0px 1080px; image radial-gradient(farthest-side at 100% 0%, #e8e7f6 `{gradient.glow-left}`, rgba(215, 246, 248, 0.5), transparen
+- blobs 2: 1080 x 1080; padding 0px 0px 1080px; image radial-gradient(farthest-side at 0% 100%, #e8e7f6 `{gradient.glow-left}`, transparent)
+- blobs 3: 1080 x 1080; padding 0px 0px 1080px; image radial-gradient(farthest-side at 100% 100%, #fcebe5 `{gradient.glow-bottom-right}`, transparent)
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -335,9 +335,9 @@ Green pill button in the top bar. Read as `nav-upgrade` on the search split view
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
 | default | size 83.64 x 29; padding 4px 12px `{spacing.1} {spacing.3}`; gap 8px `{spacing.2}`; radius 48px `{radius.pill}`; background #8add8a `{action.upgrade}`; text Plus Jakarta Sans 14/21 600, #000000 `{text.default}`; cursor pointer |
-| hover | background #c4eec4 `{palette.green.50}` |
+| hover | background #c4eec4 `{action.upgrade-hover}` |
 | focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
-| pressed | background #c4eec4 `{palette.green.50}` |
+| pressed | background #c4eec4 `{action.upgrade-hover}` |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover { background-color: rgba(0, 0, 0, 0.05); }`; `.x:hover { background-color: var(--green-50); }`.
 
@@ -545,7 +545,7 @@ Small button at the right end of the filter field. Read as `filter-go` on the se
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default (same: hover) | size 38.59 x 27; padding 3px 9px; radius 4px `{radius.sm}`; background #61dce2 `{palette.turq.base}`; text Plus Jakarta Sans 14/21 500, #ffffff `{text.inverse}`; cursor pointer |
+| default (same: hover) | size 38.59 x 27; padding 3px 9px; radius 4px `{radius.sm}`; background #61dce2 `{action.go}`; text Plus Jakarta Sans 14/21 500, #ffffff `{text.inverse}`; cursor pointer |
 | focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`.
@@ -1110,7 +1110,7 @@ Parts:
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| first | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; gap 4px `{spacing.1}`; radius 48px `{radius.pill}`; background transparent; text Plus Jakarta Sans 12/18 600, #333333 `{palette.base.secondary}`; cursor pointer; icon 16 x 16, #333333 `{palette.base.secondary}` |
+| first | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; gap 4px `{spacing.1}`; radius 48px `{radius.pill}`; background transparent; text Plus Jakarta Sans 12/18 600, #333333 `{text.icon-strong}`; cursor pointer; icon 16 x 16, #333333 `{text.icon-strong}` |
 | first, hover | background #e8e8e8 `{action.control-hover}` |
 | first, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | second | size 24 x 24 (height `{size.control-sm}`); padding 4px `{spacing.1}`; radius 24px `{radius.chip}`; background transparent; text Plus Jakarta Sans 16/24 400, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
@@ -1949,9 +1949,9 @@ The product has no radio buttons. A choice of one is a row of outlined pills whe
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| selected (same: hover, pressed) | size 60.73 x 28; padding 4px 8px `{spacing.1} {spacing.2}`; border 1px solid #e8e7f6 `{palette.lavender.25}`; radius 48px `{radius.pill}`; background #e8e7f6 `{action.accent-soft}`; text Plus Jakarta Sans 12/18 400, #000000 `{text.default}`; cursor pointer |
+| selected (same: hover, pressed) | size 60.73 x 28; padding 4px 8px `{spacing.1} {spacing.2}`; border 1px solid #e8e7f6 `{border.choice-dark}`; radius 48px `{radius.pill}`; background #e8e7f6 `{action.accent-soft}`; text Plus Jakarta Sans 12/18 400, #000000 `{text.default}`; cursor pointer |
 | selected, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
-| other (as the first row, except) | size 62.14 x 28; background transparent; text Plus Jakarta Sans 12/18 400, #e8e7f6 `{palette.lavender.25}` |
+| other (as the first row, except) | size 62.14 x 28; background transparent; text Plus Jakarta Sans 12/18 400, #e8e7f6 `{text.choice-dark}` |
 | other, hover | background rgba(255, 255, 255, 0.1) `{action.quiet-hover-inverse}` |
 | other, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 | other, pressed | background rgba(255, 255, 255, 0.1) `{action.quiet-hover-inverse}` |
@@ -2017,7 +2017,7 @@ Outlined lavender chips that toggle independently (SJR quartiles Q1 to Q4). Read
 
 | State | Values (a hover, focus-visible or pressed row lists only what changes) |
 |---|---|
-| default (same: hover, pressed) | size 33 x 28; padding 4px 8px `{spacing.1} {spacing.2}`; border 1px solid #d1ceed `{palette.lavender.50}`; radius 24px `{radius.chip}`; background transparent; text Plus Jakarta Sans 12/18 400, #d1ceed `{palette.lavender.50}`; cursor pointer |
+| default (same: hover, pressed) | size 33 x 28; padding 4px 8px `{spacing.1} {spacing.2}`; border 1px solid #d1ceed `{border.chip-dark}`; radius 24px `{radius.chip}`; background transparent; text Plus Jakarta Sans 12/18 400, #d1ceed `{text.chip-dark}`; cursor pointer |
 | focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`.
@@ -2056,7 +2056,7 @@ Authored state rules (from the page's CSS): `.x:hover { background-color: var(--
 #### BibTeX drop zone
 A 30% white strip with 16px corners on the Search start page: "Drag and drop a BibTeX file to search from". Read as `drop-zone` on the Search start page (recent searches).
 
-**Values (default).** size 1288 x 78; padding 32px `{spacing.8}`; gap 16px `{spacing.4}`; radius 16px `{radius.2xl}`; background rgba(255, 255, 255, 0.3) `{palette.alpha.white-30}`; text Plus Jakarta Sans 14/14 500, #000000 `{text.default}`; icon 14 x 14, #000000 `{text.default}`.
+**Values (default).** size 1288 x 78; padding 32px `{spacing.8}`; gap 16px `{spacing.4}`; radius 16px `{radius.2xl}`; background rgba(255, 255, 255, 0.3) `{background.drop-zone}`; text Plus Jakarta Sans 14/14 500, #000000 `{text.default}`; icon 14 x 14, #000000 `{text.default}`.
 
 ![BibTeX drop zone default](components/crops/drop-zone-default.png)
 
