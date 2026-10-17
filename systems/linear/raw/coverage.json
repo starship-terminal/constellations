@@ -9,7 +9,7 @@
       "url": "https://linear.app/",
       "file": "screenshots/01-home.png",
       "type": "Public",
-      "evidence": "evidence/styles/01-home-styles.json",
+      "evidence": "raw/styles/01-home-styles.json",
       "thumbnail": "thumbnails/public-01-home.jpg"
     },
     {
@@ -18,7 +18,7 @@
       "url": "https://linear.app/brand",
       "file": "screenshots/02-brand.png",
       "type": "Public",
-      "evidence": "evidence/styles/02-brand-styles.json",
+      "evidence": "raw/styles/02-brand-styles.json",
       "thumbnail": "thumbnails/public-02-brand.jpg"
     },
     {
@@ -27,7 +27,7 @@
       "url": "https://linear.app/about",
       "file": "screenshots/about.png",
       "type": "Public",
-      "evidence": "evidence/styles/about-styles.json",
+      "evidence": "raw/styles/about-styles.json",
       "thumbnail": "thumbnails/public-about.jpg"
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://linear.app/agents",
       "file": "screenshots/agents.png",
       "type": "Public",
-      "evidence": "evidence/styles/agents-styles.json",
+      "evidence": "raw/styles/agents-styles.json",
       "thumbnail": "thumbnails/public-agents.jpg"
     },
     {
@@ -45,7 +45,7 @@
       "url": "https://linear.app/ai",
       "file": "screenshots/ai.png",
       "type": "Public",
-      "evidence": "evidence/styles/ai-styles.json",
+      "evidence": "raw/styles/ai-styles.json",
       "thumbnail": "thumbnails/public-ai.jpg"
     },
     {
@@ -54,7 +54,7 @@
       "url": "https://linear.app/asks",
       "file": "screenshots/asks.png",
       "type": "Public",
-      "evidence": "evidence/styles/asks-styles.json",
+      "evidence": "raw/styles/asks-styles.json",
       "thumbnail": "thumbnails/public-asks.jpg"
     },
     {
@@ -63,7 +63,7 @@
       "url": "https://linear.app/build",
       "file": "screenshots/build.png",
       "type": "Public",
-      "evidence": "evidence/styles/build-styles.json",
+      "evidence": "raw/styles/build-styles.json",
       "thumbnail": "thumbnails/public-build.jpg"
     },
     {
@@ -72,7 +72,7 @@
       "url": "https://linear.app/careers",
       "file": "screenshots/careers.png",
       "type": "Public",
-      "evidence": "evidence/styles/careers-styles.json",
+      "evidence": "raw/styles/careers-styles.json",
       "thumbnail": "thumbnails/public-careers.jpg"
     },
     {
@@ -81,7 +81,7 @@
       "url": "https://linear.app/changelog",
       "file": "screenshots/changelog.png",
       "type": "Public",
-      "evidence": "evidence/styles/changelog-styles.json",
+      "evidence": "raw/styles/changelog-styles.json",
       "thumbnail": "thumbnails/public-changelog.jpg"
     },
     {
@@ -90,7 +90,7 @@
       "url": "https://linear.app/coding-sessions",
       "file": "screenshots/coding-sessions.png",
       "type": "Public",
-      "evidence": "evidence/styles/coding-sessions-styles.json",
+      "evidence": "raw/styles/coding-sessions-styles.json",
       "thumbnail": "thumbnails/public-coding-sessions.jpg"
     },
     {
@@ -99,7 +99,7 @@
       "url": "https://linear.app/contact",
       "file": "screenshots/contact.png",
       "type": "Public",
-      "evidence": "evidence/styles/contact-styles.json",
+      "evidence": "raw/styles/contact-styles.json",
       "thumbnail": "thumbnails/public-contact.jpg"
     },
     {
@@ -108,7 +108,7 @@
       "url": "https://linear.app/customer-requests",
       "file": "screenshots/customer-requests.png",
       "type": "Public",
-      "evidence": "evidence/styles/customer-requests-styles.json",
+      "evidence": "raw/styles/customer-requests-styles.json",
       "thumbnail": "thumbnails/public-customer-requests.jpg"
     },
     {
@@ -117,7 +117,7 @@
       "url": "https://linear.app/customers",
       "file": "screenshots/customers.png",
       "type": "Public",
-      "evidence": "evidence/styles/customers-styles.json",
+      "evidence": "raw/styles/customers-styles.json",
       "thumbnail": "thumbnails/public-customers.jpg"
     },
     {
@@ -126,7 +126,7 @@
       "url": "https://linear.app/developers",
       "file": "screenshots/developers.png",
       "type": "Public",
-      "evidence": "evidence/styles/developers-styles.json",
+      "evidence": "raw/styles/developers-styles.json",
       "thumbnail": "thumbnails/public-developers.jpg"
     },
     {
@@ -135,7 +135,7 @@
       "url": "https://linear.app/docs",
       "file": "screenshots/docs.png",
       "type": "Public",
-      "evidence": "evidence/styles/docs-styles.json",
+      "evidence": "raw/styles/docs-styles.json",
       "thumbnail": "thumbnails/public-docs.jpg"
     },
     {
@@ -144,7 +144,7 @@
       "url": "https://linear.app/download",
       "file": "screenshots/download.png",
       "type": "Public",
-      "evidence": "evidence/styles/download-styles.json",
+      "evidence": "raw/styles/download-styles.json",
       "thumbnail": "thumbnails/public-download.jpg"
     },
     {
@@ -153,7 +153,7 @@
       "url": "https://linear.app/dpa",
       "file": "screenshots/dpa.png",
       "type": "Public",
-      "evidence": "evidence/styles/dpa-styles.json",
+      "evidence": "raw/styles/dpa-styles.json",
       "thumbnail": "thumbnails/public-dpa.jpg"
     },
     {
@@ -162,7 +162,7 @@
       "url": "https://linear.app/enterprise",
       "file": "screenshots/enterprise.png",
       "type": "Public",
-      "evidence": "evidence/styles/enterprise-styles.json",
+      "evidence": "raw/styles/enterprise-styles.json",
       "thumbnail": "thumbnails/public-enterprise.jpg"
     },
     {
@@ -171,7 +171,7 @@
       "url": "https://linear.app/insights",
       "file": "screenshots/insights.png",
       "type": "Public",
-      "evidence": "evidence/styles/insights-styles.json",
+      "evidence": "raw/styles/insights-styles.json",
       "thumbnail": "thumbnails/public-insights.jpg"
     },
     {
@@ -180,7 +180,7 @@
       "url": "https://linear.app/intake",
       "file": "screenshots/intake.png",
       "type": "Public",
-      "evidence": "evidence/styles/intake-styles.json",
+      "evidence": "raw/styles/intake-styles.json",
       "thumbnail": "thumbnails/public-intake.jpg"
     },
     {
@@ -189,7 +189,7 @@
       "url": "https://linear.app/integrations",
       "file": "screenshots/integrations.png",
       "type": "Public",
-      "evidence": "evidence/styles/integrations-styles.json",
+      "evidence": "raw/styles/integrations-styles.json",
       "thumbnail": "thumbnails/public-integrations.jpg"
     },
     {
@@ -198,7 +198,7 @@
       "url": "https://linear.app/legal/aup",
       "file": "screenshots/legal-aup.png",
       "type": "Public",
-      "evidence": "evidence/styles/legal-aup-styles.json",
+      "evidence": "raw/styles/legal-aup-styles.json",
       "thumbnail": "thumbnails/public-legal-aup.jpg"
     },
     {
@@ -207,7 +207,7 @@
       "url": "https://linear.app/login",
       "file": "screenshots/login.png",
       "type": "Public",
-      "evidence": "evidence/styles/login-styles.json",
+      "evidence": "raw/styles/login-styles.json",
       "thumbnail": "thumbnails/public-login.jpg"
     },
     {
@@ -216,7 +216,7 @@
       "url": "https://linear.app/method",
       "file": "screenshots/method.png",
       "type": "Public",
-      "evidence": "evidence/styles/method-styles.json",
+      "evidence": "raw/styles/method-styles.json",
       "thumbnail": "thumbnails/public-method.jpg"
     },
     {
@@ -225,7 +225,7 @@
       "url": "https://linear.app/mobile",
       "file": "screenshots/mobile.png",
       "type": "Public",
-      "evidence": "evidence/styles/mobile-styles.json",
+      "evidence": "raw/styles/mobile-styles.json",
       "thumbnail": "thumbnails/public-mobile.jpg"
     },
     {
@@ -234,7 +234,7 @@
       "url": "https://linear.app/now",
       "file": "screenshots/now.png",
       "type": "Public",
-      "evidence": "evidence/styles/now-styles.json",
+      "evidence": "raw/styles/now-styles.json",
       "thumbnail": "thumbnails/public-now.jpg"
     },
     {
@@ -243,7 +243,7 @@
       "url": "https://linear.app/plan",
       "file": "screenshots/plan.png",
       "type": "Public",
-      "evidence": "evidence/styles/plan-styles.json",
+      "evidence": "raw/styles/plan-styles.json",
       "thumbnail": "thumbnails/public-plan.jpg"
     },
     {
@@ -252,7 +252,7 @@
       "url": "https://linear.app/pricing",
       "file": "screenshots/pricing.png",
       "type": "Public",
-      "evidence": "evidence/styles/pricing-styles.json",
+      "evidence": "raw/styles/pricing-styles.json",
       "thumbnail": "thumbnails/public-pricing.jpg"
     },
     {
@@ -261,7 +261,7 @@
       "url": "https://linear.app/privacy",
       "file": "screenshots/privacy.png",
       "type": "Public",
-      "evidence": "evidence/styles/privacy-styles.json",
+      "evidence": "raw/styles/privacy-styles.json",
       "thumbnail": "thumbnails/public-privacy.jpg"
     },
     {
@@ -270,7 +270,7 @@
       "url": "https://linear.app/quality",
       "file": "screenshots/quality.png",
       "type": "Public",
-      "evidence": "evidence/styles/quality-styles.json",
+      "evidence": "raw/styles/quality-styles.json",
       "thumbnail": "thumbnails/public-quality.jpg"
     },
     {
@@ -279,7 +279,7 @@
       "url": "https://linear.app/security",
       "file": "screenshots/security.png",
       "type": "Public",
-      "evidence": "evidence/styles/security-styles.json",
+      "evidence": "raw/styles/security-styles.json",
       "thumbnail": "thumbnails/public-security.jpg"
     },
     {
@@ -288,7 +288,7 @@
       "url": "https://linear.app/signup",
       "file": "screenshots/signup.png",
       "type": "Public",
-      "evidence": "evidence/styles/signup-styles.json",
+      "evidence": "raw/styles/signup-styles.json",
       "thumbnail": "thumbnails/public-signup.jpg"
     },
     {
@@ -297,7 +297,7 @@
       "url": "https://linear.app/startups",
       "file": "screenshots/startups.png",
       "type": "Public",
-      "evidence": "evidence/styles/startups-styles.json",
+      "evidence": "raw/styles/startups-styles.json",
       "thumbnail": "thumbnails/public-startups.jpg"
     },
     {
@@ -306,7 +306,7 @@
       "url": "https://linear.app/switch",
       "file": "screenshots/switch.png",
       "type": "Public",
-      "evidence": "evidence/styles/switch-styles.json",
+      "evidence": "raw/styles/switch-styles.json",
       "thumbnail": "thumbnails/public-switch.jpg"
     },
     {
@@ -315,7 +315,7 @@
       "url": "https://linear.app/terms",
       "file": "screenshots/terms.png",
       "type": "Public",
-      "evidence": "evidence/styles/terms-styles.json",
+      "evidence": "raw/styles/terms-styles.json",
       "thumbnail": "thumbnails/public-terms.jpg"
     }
   ],

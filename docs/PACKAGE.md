@@ -100,22 +100,26 @@ sit in `icons/app/` and `icons/public/` with no `INDEX.tsv`.
 
 ## Linear and Polaris
 
-These two came from a work project, with their own builders, and do not yet
-follow the layout: their tokens sit under `tokens/`, their readings under
-`evidence/`, and neither has `components.md`. Their Health sections list the
-gaps. Until they move, this is what they hold:
+These two came from a work project, with their own builders. Linear now
+follows the layout: its DTCG tokens are `tokens.json`, its readings (the
+public site's included) are in `raw/`, and `components.md` holds its
+component inventory; it has no `patterns.md`. Polaris does not yet: its
+tokens sit under `tokens/`, its readings under `evidence/`, and it has no
+`components.md`. Their Health sections list the gaps. Beyond the layout, this
+is what they hold:
 
 | Path | What it is |
 |---|---|
 | `README.md` | The entry file: scope, evidence labels, colours, type, geometry, components, and the limits of the capture |
 | `style-guide.html` | A browsable guide over everything in the package. Polaris's fetches its data, so open it through `make serve` |
-| `tokens/` | Tokens as DTCG (`linear.tokens.json`), Tokens Studio (`*.tokens-studio.json`) and CSS custom properties (`linear.css`, `light.css`) |
+| `tokens/` | Linear: the tokens of `tokens.json` again as Tokens Studio (`tokens-studio.json`) and CSS custom properties (`linear.css`). Polaris: Tokens Studio (`*.tokens-studio.json`) and CSS custom properties (`light.css`) |
 | `components/` | One SVG redraw per component and state, with `manifest.json` (linear). These are reconstructions, labelled as such |
 | `boards/` | SVG sheets of colours, type, geometry, controls, components and icons, for dragging into Figma |
-| `screenshots/` | Linear: full-page public captures plus `app/` anonymised accessibility snapshots of the signed-in app (no app images). Polaris: the local reference gallery |
+| `screenshots/` | Linear: full-page public captures, `app-2026-10/` renders of the redacted app copies, and `app/` anonymised accessibility snapshots from the first capture. Polaris: the local reference gallery |
 | `previews/`, `thumbnails/`, `icons/` | Rendered previews of the boards, page thumbnails, reference icons |
-| `evidence/` | Linear: `pages/<page>-page.txt` and `styles/<page>-styles.json` per public page, plus `coverage.json`, `validation.json`, `capture-manifest.json`, `icon-evidence.json`, `public-navigation.json`, `settings-inventory.json`. Polaris: `token-parity.json`, `provenance.json`, `vector-manifest.json`, findings and verification notes. Polaris also keeps `licenses/` |
-| `tools/` | Linear: `build_library.py` (tokens, boards, components) and `build_guide.py` (the style guide, thumbnails, coverage and validation), both needing Pillow and Markdown. Polaris: `build.mjs` with its `package.json` (`cd tools && npm ci --ignore-scripts && npm run build`), `gallery.jsx` (bundled into `assets/gallery.js`) and `build_vectors.py` |
+| `raw/` | Linear: the app's readings (`css-vars.json`, `components-computed.json`, `measurements.md`), `pages/<page>-page.txt` and `styles/<page>-styles.json` per public page, plus `coverage.json`, `validation.json`, `capture-manifest.json`, `icon-evidence.json`, `public-navigation.json`, `settings-inventory.json` |
+| `evidence/` | Polaris: `token-parity.json`, `provenance.json`, `vector-manifest.json`, findings and verification notes. Polaris also keeps `licenses/` |
+| `tools/` | Linear: `build_tokens.py` (`tokens.json` and `tokens/`), `build_library.py` (boards, components) and `build_guide.py` (the style guide, thumbnails, `raw/coverage.json` and `raw/validation.json`); the last two need Pillow and Markdown. Polaris: `build.mjs` with its `package.json` (`cd tools && npm ci --ignore-scripts && npm run build`), `gallery.jsx` (bundled into `assets/gallery.js`) and `build_vectors.py` |
 | `assets/` | Polaris: the style guide's bundled script, CSS, font and data |
 
 ## DESIGN.md

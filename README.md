@@ -64,7 +64,7 @@ Health section that lists what is open, with the evidence.
 | [manus](systems/manus/README.md) | Agent app shell: multi-section sidebar, a Library of agent outputs by type and by day, task threads with deliverables | 2026-10-17 | light, dark | 17 of 25 met, 8 partly, 0 missing | none |
 | [researchrabbit](systems/researchrabbit/README.md) | Interactive citation graph beside a list: node and edge styling, canvas interaction (see graph.md) | 2026-10-17 | light | 17 of 24 met, 7 partly, 0 missing | none |
 | [duolingo](systems/duolingo/README.md) | Gamified learning: lesson flow, streaks, leaderboards, chunky 3D buttons, a mascot-led brand | 2026-10-17 | light, dark | 14 of 24 met, 10 partly, 0 missing | none |
-| [linear](systems/linear/README.md) | Dense, keyboard-first product UI in dark and light: issue boards, issue detail, menus, settings tables; plus the public marketing site | 2026-10-17 | dark, light | 12 of 25 met, 10 partly, 3 missing | `tokens.json`, `components.md`, `patterns.md` |
+| [linear](systems/linear/README.md) | Dense, keyboard-first product UI in dark and light: issue boards, issue detail, menus, settings tables; plus the public marketing site | 2026-10-17 | dark, light | 12 of 25 met, 10 partly, 3 missing | `patterns.md` |
 | [hevy](systems/hevy/README.md) | Native iOS workout logging: dense set table, one blue accent, pale grey fills, small corners, iOS 26 glass chrome, rest timer | 2026-10-10 | light, dark | 8 of 24 met, 14 partly, 2 missing | `patterns.md`, `components/`, `icons/` |
 
 <!-- catalog:end -->
