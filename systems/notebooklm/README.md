@@ -22,14 +22,17 @@ Everything else ran headless on the copies, with fonts served from a local cache
 
 - [read-css.mjs](tools/capture/read-css.mjs) resolved every `--nlm-*`, `--nb-*` and `--mat-sys-*` variable on `<body>` in both themes (colours through a probe element), and listed media queries, reduced-motion rules, transitions, z-index, grid columns at four widths and colour usage counts.
 - [measure.mjs](tools/capture/signed-in/measure.mjs) found 64 components by role and class and read their computed styles in 336 states: hover with the real pointer, focus-visible with real keyboard focus, pressed with the mouse held down, and selected, open, typed, error and disabled from copies captured in those states. Each state was cropped.
-- [build_tokens.py](tools/build_tokens.py) maps the readings into tokens. Labels: **Measured** is a declared variable or a computed style; **Derived** is worked out from measured values (the accent hover and pressed colours composite the measured state layer at its measured opacity; the assembled ramps order measured values by CIELAB L*). Nothing is sampled from a screenshot.
+- [build_tokens.py](tools/build_tokens.py) maps the readings into tokens. Labels: **Measured** is a declared variable or a computed style; **Derived** is worked out from measured values (the accent hover and pressed colours composite the measured state layer at its measured opacity; the neutral ramp orders measured greys by CIELAB L*; the tonal ramps fill unpainted tones with Material's generator, see below). Nothing is sampled from a screenshot.
+- [tonal-ramps.mjs](tools/capture/tonal-ramps.mjs) builds the ten hue ramps the product does not declare, into [raw/tonal-ramps.json](raw/tonal-ramps.json). Each is the Material tonal palette (13 tones, 0 to 100) of a measured seed, built with Material's own colour utilities. A tone the product paints keeps the measured value; the rest are generated and labelled Derived.
 
 The brand evidence (`<meta name="theme-color">` is black in light, white in dark; the manifest names the app "Gemini Notebook") is in [raw/brand.json](raw/brand.json).
 
 ## What to distrust
 
 - **Two UI generations live in the CSS.** The legacy `--nlm-*` palette (lavender page `#edeffa`, blue `#4259ff`) is still declared and still paints a few things: the dialog Save button, links, the checked toggle chip, the lavender focus ring. Everything else is the newer `--nb-sys-*` set. Tokens named `legacy-*` are declared but no longer painted.
-- **`--nlm-green-0` to `-40` and `-90` to `-99` are declared as `undefined`.** Only five green steps exist. The `neutral` (18 steps), `sky` (6), `red` (9), `green-status` (9), `amber` (7) and `info` (4) palettes are assembled from every value the product declares for that hue; the product itself declares no such ramps, and no further steps exist to read. The Studio and data-viz hues have one colour and one container each, so they have no ramp.
+- **`--nlm-green-0` to `-40` and `-90` to `-99` are declared as `undefined`.** Only five brand-green steps exist, and their names are not tones (`-50` is tone 83), so `palette.green` stays as declared; the green hue's full ramp is `green-status`.
+- **63 of the 137 tonal-ramp steps are generated, not read.** The product declares no ramps beyond grey, blue and green; its other hues are role colours on Material tones (40, 80, 90, 30, 100, 20). `red`, `orange`, `amber`, `yellow`, `green-status`, `cyan`, `sky`, `info`, `purple` and `pink` keep 74 measured colours (at their tone, or as an extra step named by their own tone when they sit between two, such as `info.46` for the blue Studio accent) and fill the other tones from Material's generator, seeded with the measured hue. As a check, of the 80 measured colours that sit on a standard tone, the generator reproduces 44 within 10 RGB units and 59 within 25; the misses are the luminous `nb-sys` colours and the Studio accents, which Google did not take from Material's palettes (code yellow and the dark positive green are the furthest off). 16 measured colours sit in no ramp because a nearly identical colour already holds that tone (Material error beside Material red, for example); [raw/tonal-ramps.json](raw/tonal-ramps.json) lists them under `notInRamp`.
+- **The luminous accent changes hue between themes.** It is sky (hue 244) in light and navy (hue 276) in dark, so the light values are `palette.sky` and the dark ones sit on `palette.info`; `sky` has only 2 measured steps.
 - **The scrim** is 32% black in both themes as painted, although `--nlm-fills-scrim` still says 60% in dark.
 - **Success, warning and info** colours are the declared variables; no such message appeared, so their use as fill, text and border is the product's naming, not an observed screen. Danger was observed (the "Blocked by browser" chip and the URL field error).
 - **Studio outputs** (audio and video players, mind map, flashcards, quiz, reports) were not opened; they render in other views and iframes. Their tile colours (`studio.*`, `tile.*`) are declared variables.
@@ -74,7 +77,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Captured on
 
 | Item | Status | Where |
 |---|---|---|
-| Colour ramps | Captured: grey and blue declared; neutral, sky, red, green-status, amber, info assembled from declared values; green only 5 declared steps | `core.palette.*` |
+| Colour ramps | Captured: grey and blue declared; green 5 declared steps; neutral assembled from declared greys; red, orange, amber, yellow, green-status, cyan, sky, info, purple and pink as Material tonal palettes of 13 to 16 steps, measured where the product paints them and generated elsewhere (Derived) | `core.palette.*`, [raw/tonal-ramps.json](raw/tonal-ramps.json) |
 | Colour roles, dark and light | Captured | `dark.*`, `light.*` (144 keys each) |
 | Status colours | Captured: danger observed; success, warning, info declared, not seen on screen | `status.*` |
 | Type roles and fallbacks | Captured | `core.typography`, `core.fontFamily` |
@@ -137,7 +140,7 @@ From new readings (needs Playwright and the page copies in `~/.design-systems/sn
 ```bash
 export PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs SNAPS=~/.design-systems/snaps/notebooklm
 tools/capture/signed-in/render-all.sh && python3 tools/capture/quantize.py "$SNAPS/renders"
-node tools/capture/read-css.mjs && node tools/capture/signed-in/measure.mjs && node tools/capture/signed-in/build-measurements.mjs && node tools/capture/icons.mjs
+node tools/capture/read-css.mjs && node tools/capture/tonal-ramps.mjs && node tools/capture/signed-in/measure.mjs && node tools/capture/signed-in/build-measurements.mjs && node tools/capture/icons.mjs
 ```
 
-`measure.mjs` and `quantize.py` need Pillow. Edit `raw/` only through these scripts and the builders, never the generated files.
+`measure.mjs` and `quantize.py` need Pillow; `tonal-ramps.mjs` needs `@material/material-color-utilities` 0.3.0 (installed beside Playwright in `~/.design-systems/pw`, or set `MCU` to its `index.js`). Edit `raw/` only through these scripts and the builders, never the generated files.

@@ -129,7 +129,7 @@ core["palette"]["grey"] = declared_ramp("--nlm-grey", [0, 10, 20, 30, 40, 50, 60
 core["palette"]["blue"] = declared_ramp("--nlm-blue", [2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 98, 100])
 core["palette"]["green"] = declared_ramp("--nlm-green", [50, 60, 70, 80, 100])
 for t in core["palette"]["green"].values():
-    t["$description"] = "--nlm-green-0 to -40 and -90 to -99 are declared with the value `undefined` in the product's CSS, so only these steps exist."
+    t["$description"] = "--nlm-green-0 to -40 and -90 to -99 are declared with the value `undefined` in the product's CSS, so only these steps exist. The step names are not tones (-50 is tone 83); the green hue's full ramp is palette.green-status."
 
 def assembled(name, members, desc):
     """A ramp per hue from every value the product declares for that hue, ordered by L*.
@@ -144,7 +144,7 @@ def assembled(name, members, desc):
             continue
         seen[h] = step
         out[step] = T(h, "color", M(f"css-var {var_name} ({theme})") + "; " + D("ramp step named by CIELAB L*"), desc)
-    return dict(sorted(out.items(), key=lambda kv: -int(kv[0])))
+    return dict(sorted(out.items(), key=lambda kv: int(kv[0])))
 
 both = lambda names: [(n, th) for n in names for th in ("light", "dark")]
 core["palette"]["neutral"] = assembled("neutral", both([
@@ -152,23 +152,25 @@ core["palette"]["neutral"] = assembled("neutral", both([
     "--nb-sys-color--on-surface", "--nlm-grey-95", "--nlm-grey-90", "--nlm-grey-80", "--nlm-grey-70", "--nlm-grey-60",
     "--nlm-grey-50", "--nlm-grey-40", "--nlm-grey-30", "--nlm-grey-20", "--nb-sys-color--surface-bright", "--nlm-grey-10",
     "--nb-sys-color--black"]), "Neutral used by the luminous UI: the nb-sys surface and text greys merged with the --nlm-grey ramp.")
-core["palette"]["sky"] = assembled("sky", both([
-    "--nb-sys-color-acc-color--accent-container", "--nb-sys-color-acc-color--accent", "--nb-sys-color-acc-color--accent-fixed",
-    "--nb-sys-color--surface-accent"]), "The luminous accent hue (the New notebook button, the selected chip).")
-core["palette"]["red"] = assembled("red", both([
-    "--nb-sys-color--error-container", "--mat-sys-red-container", "--mat-sys-error-container", "--mat-sys-red", "--mat-sys-error",
-    "--nb-sys-color--error", "--nlm-red-50", "--mat-sys-on-error-container", "--mat-sys-on-red-container"]),
-    "Every red the product declares: nb-sys error, Material error and the red data-viz pair.")
-core["palette"]["green-status"] = assembled("green-status", both([
-    "--nb-sys-color--positive-container", "--mat-sys-success-container", "--mat-sys-success", "--nb-sys-color--positive",
-    "--nb-sys-color--on-positive-container", "--mat-sys-on-success-container"]),
-    "Every status green the product declares (nb-sys positive, Material success); the brand green is palette.green.")
-core["palette"]["amber"] = assembled("amber", both([
-    "--nlm-fills-ui-caution-subtle", "--mat-sys-warning-container", "--mat-sys-warning", "--nlm-text-warning",
-    "--mat-sys-on-warning-container"]), "Every warning amber the product declares.")
-core["palette"]["info"] = assembled("info", both([
-    "--mat-sys-info-container", "--mat-sys-info", "--mat-sys-on-info-container"]),
-    "Material info blue, distinct from the brand blue ramp.")
+# The other hues have no declared ramp, only role colours on Material 3 tones. Each ramp is the
+# Material tonal palette of a measured seed (tools/capture/tonal-ramps.mjs, raw/tonal-ramps.json):
+# steps the product paints keep the measured value, the rest are the generated tone.
+TONAL = json.loads((HERE / "raw" / "tonal-ramps.json").read_text())
+def tonal(name):
+    r = TONAL["ramps"][name]
+    seed = r["seed"]
+    out = {}
+    for step, st in r["steps"].items():
+        if st.get("extra"):
+            src = M(f"css-var {st['var']} ({st['theme']})") + f"; extra step at its own Material tone {step}, between the standard tones"
+        elif st["source"] == "measured":
+            src = M(f"css-var {st['var']} ({st['theme']})") + f"; on Material tone {step} (generated {st['generated']}, RGB distance {st['rgbDistance']})"
+        else:
+            src = D(f"Material tonal palette tone {step} of the seed {seed['var']} {seed['hex']}, built with material-color-utilities; the product declares no colour at this tone")
+        out[step] = T(st["hex"], "color", src, r["description"])
+    return out
+for name in ("red", "orange", "amber", "yellow", "green-status", "cyan", "sky", "info", "purple", "pink"):
+    core["palette"][name] = tonal(name)
 core["palette"]["brand"] = {k: T(var(f"--nlm-brand-{k}"), "color", M(f"css-var --nlm-brand-{k}")) for k in ("black", "white", "green", "blue", "dark-blue")}
 core["palette"]["icon"] = {k: T(var(f"--nlm-icons-{v}"), "color", M(f"css-var --nlm-icons-{v}")) for k, v in
                            (("blue", "blue"), ("yellow", "yellow"), ("red", "red"), ("pink", "pink"), ("green", "green"), ("youtube", "youtube"))}
