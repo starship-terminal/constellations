@@ -6,21 +6,21 @@ Every component has one table per theme: a column per state, a row per property.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab), skipped where the element cannot take focus. ChatGPT draws most focus rings from `keyboard-focused:` variants that its own script turns on, so with scripts gone many focused states look like the rest state. The rest (`active`, `selected`, `checked`, `open`, `typed`, `highlighted`, ...) are other elements or copies captured in that state. Light states are prefixed `light`. The 390 wide copies are measured at rest only.
 
-114 components, 588 states (588 measured, 0 skipped, 0 not found).
+130 components, 670 states (670 measured, 0 skipped, 0 not found).
 
 ## Shared values
 
 Tallied over every measured state by the build script.
 
-- **Radius scale** (element radius, times seen): 9999px (260), 8px (90), 12px (50), 16px (44), 4px (12), 24px (11), 26px (8), 6px (6), 22px (4), 3.72px (2), 32px (2), 28px (2).
-- **Transitions**: `opacity, color 0.15s ease` (38), `opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (24), `color 0.075s ease` (8), `background-color, border-color, box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (4), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0, 0, 0.2, 1)` (3), `height 0.3s cubic-bezier(0.23, 1, 0.32, 1)` (2), `transform, translate, scale, rotate 0.2s cubic-bezier(0, 0, 0.2, 1)` (2).
-- **Font families**: -apple-system-body (798), -apple-system (18), ui-monospace (6).
-- **Type sizes** (size/line-height weight of the first text): 14px/20px 500 (116), 14px/20px 400 (114), 14px/18px 400 (72), 16px/24px 400 (66), 16px/26px 400 (50), 16px/18px 400 (28), 14px/14px 500 (26), 12px/12px 600 (22), 12px/16px 400 (16), 14px/20px 510 (10), 12px/16px 500 (8), 16px/16px 400 (8), 14px/18px 500 (6), 9px/9px 500 (6).
+- **Radius scale** (element radius, times seen): 9999px (278), 8px (90), 12px (52), 999px (50), 16px (48), 4px (12), 24px (11), 26px (8), 6px (6), 22px (6), 3.72px (2), 32px (2), 20px (2), 28px (2).
+- **Transitions**: `opacity, color 0.15s ease` (38), `opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (32), `color 0.075s ease` (8), `background-color, border-color, box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1)` (4), `color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0, 0, 0.2, 1)` (3), `height 0.3s cubic-bezier(0.23, 1, 0.32, 1)` (2), `transform 0.3s cubic-bezier(0.2, 0, 0, 1)` (2), `transform, translate, scale, rotate 0.2s cubic-bezier(0, 0, 0.2, 1)` (2).
+- **Font families**: -apple-system-body (900), -apple-system (18), ui-monospace (6).
+- **Type sizes** (size/line-height weight of the first text): 14px/20px 500 (118), 14px/20px 400 (114), 16px/24px 400 (86), 14px/18px 400 (72), 16px/26px 400 (52), 16px/18px 400 (28), 14px/14px 500 (26), 12px/12px 600 (22), 12px/16px 400 (18), 16px/20px 500 (18), 14px/20px 600 (16), 14px/20px 510 (10), 12px/16px 500 (8), 16px/24px 500 (8).
 - **Shadows**: `#ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px` (92); `#ffffff @ 0.2 0px 0px 1px 0px inset` (22); `#ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset` (20); `#000000 @ 0.08 0px 1px 2px -1px` (20); `#000000 @ 0.05 0px 4px 16px 0px` (14); `#3a83f7 0px 0px 0px 2px` (12).
-- **Focus-visible, dark** (57 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (5); outline 2px solid #3a83f7 offset -2px (4); outline 1px auto #99c8ff offset 1px (4); outline 1px auto #99c8ff offset 0px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); outline 2px solid #2c67c5 offset 0px (2); outline 2px solid #3a83f7 offset 0px (1); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #ffffff @ 0.2 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1).
-- **Focus-visible, light** (57 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (5); outline 2px solid #3a83f7 offset -2px (4); outline 1px auto #005fcc offset 1px (4); outline 2px solid #3a83f7 offset 0px (3); outline 1px auto #005fcc offset 0px (3); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #000000 @ 0.15 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1).
-- **Hover changes, dark** (63 hovered components, 21 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #ffffff @ 0.1 (18); inner layer #ffffff @ 0.1 → #ffffff @ 0.1 (3); backgroundColor #000000 @ 0 → #ffffff @ 0.0509804 (3); backgroundColor #303030 → #ffffff @ 0.1 (2); backgroundColor #ff6764 @ 0.1 → #ff6764 @ 0.2 (2); backgroundColor #ededed → #ededed @ 0.8 (2); backgroundColor #ededed @ 0.05 → #ededed @ 0.1 (2); backgroundColor #212121 → #2f2f2f (1).
-- **Hover changes, light** (63 hovered components, 21 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #000000 @ 0.05 (18); inner layer #000000 @ 0.05 → #000000 @ 0.05 (3); backgroundColor #000000 @ 0 → #000000 @ 0.0254902 (3); backgroundColor #f3f3f3 → #000000 @ 0.05 (2); backgroundColor #e02e2a @ 0.1 → #e02e2a @ 0.2 (2); backgroundColor #0d0d0d → #0d0d0d @ 0.8 (2); backgroundColor #0d0d0d @ 0.05 → #0d0d0d @ 0.1 (2); backgroundColor #ffffff → #f9f9f9 (1).
+- **Focus-visible, dark** (65 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (5); outline 2px solid #3a83f7 offset -2px (4); outline 1px auto #99c8ff offset 1px (4); outline 1px auto #99c8ff offset 0px (4); outline 2px solid #3566f0 offset 2px (4); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); outline 2px solid #2c67c5 offset 0px (3); outline 2px solid #3a83f7 offset 0px (1); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #ffffff @ 0.2 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1); outline 2px solid #3566f0 offset 1px (1); outline 2px solid #3566f0 offset 0px (1).
+- **Focus-visible, light** (65 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (5); outline 2px solid #3a83f7 offset -2px (4); outline 2px solid #3a83f7 offset 0px (4); outline 1px auto #005fcc offset 1px (4); outline 1px auto #005fcc offset 0px (4); outline 2px solid #3566f0 offset 2px (4); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #000000 @ 0.15 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1); outline 2px solid #3566f0 offset 1px (1); outline 2px solid #3566f0 offset 0px (1).
+- **Hover changes, dark** (71 hovered components, 23 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #ffffff @ 0.1 (18); inner layer #ffffff @ 0.1 → #ffffff @ 0.1 (3); backgroundColor #000000 @ 0 → #ffffff @ 0.0509804 (3); backgroundColor #212121 → #303030 (3); backgroundColor #303030 → #ffffff @ 0.1 (2); backgroundColor #ff6764 @ 0.1 → #ff6764 @ 0.2 (2); backgroundColor #ededed → #ededed @ 0.8 (2); backgroundColor #ededed @ 0.05 → #ededed @ 0.1 (2).
+- **Hover changes, light** (71 hovered components, 23 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #000000 @ 0.05 (18); inner layer #000000 @ 0.05 → #000000 @ 0.05 (3); backgroundColor #000000 @ 0 → #000000 @ 0.0254902 (3); backgroundColor #ffffff → #f3f3f3 (3); backgroundColor #f3f3f3 → #000000 @ 0.05 (2); backgroundColor #e02e2a @ 0.1 → #e02e2a @ 0.2 (2); backgroundColor #0d0d0d → #0d0d0d @ 0.8 (2); backgroundColor #0d0d0d @ 0.05 → #0d0d0d @ 0.1 (2).
 
 ### Tokens the measured components use
 
@@ -69,7 +69,7 @@ Every custom property a measured component's classes or inline style name, with 
 | `--radix-dropdown-menu-content-transform-origin` | 0% 289px, 0% 318px, 100% 0px | 0% 289px, 0% 318px, 100% 0px |
 | `--radix-dropdown-menu-trigger-height` | 20px, 48px, 28px | 20px, 48px, 28px |
 | `--radix-dropdown-menu-trigger-width` | 20px, 248.1171875px, 80.78125px | 20px, 248.1171875px, 80.78125px |
-| `--radix-tooltip-content-available-height` | 464px | 464px |
+| `--radix-tooltip-content-available-height` | 464px, 838px | 464px, 838px |
 | `--radix-tooltip-content-available-width` | 1424px | 1424px |
 | `--radix-tooltip-trigger-width` | 36px | 36px |
 | `--shadow-dropdown-overlay` | 0px 0px 0px .5px #ffffff26, 0px 8px 16px -4px #0000001f | 0px 0px 0px .5px #0000001a, 0px 8px 16px -4px #0000001f |
@@ -2563,6 +2563,302 @@ Light theme.
 
 Crops: `thread-disclaimer-default.png`, `thread-disclaimer-light.png`.
 
+### Feedback
+
+#### streaming-dot
+
+Loading indicator (streaming dot). Where the answer will appear while it is being generated: a 12px dot in the composer colour that pulses (the copy shows one frame).
+
+Page copy: `thread-dark-streaming`. Finder: `() => Q('.pulsing-dot')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 12 x 12 |
+| Padding | 0px |
+| Border | none |
+| Radius | 9999px |
+| Background | #2c67c5 |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #ededed |
+| Transition | none |
+| Painted layers | span.inline-block.size-3.pulsing-dot 12.0x12.0 bg #2c67c5 r 9999px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 12 x 12 |
+| Padding | 0px |
+| Border | none |
+| Radius | 9999px |
+| Background | #3a83f7 |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0d0d0d |
+| Transition | none |
+| Painted layers | span.inline-block.size-3.pulsing-dot 12.0x12.0 bg #3a83f7 r 9999px |
+| How | at rest |
+
+Crops: `streaming-dot-default.png`, `streaming-dot-light.png`.
+
+#### stop-button
+
+Icon button (Stop, while streaming). The composer's send button becomes Stop for as long as the answer streams.
+
+Page copy: `thread-dark-streaming`. Finder: `() => Q('[data-testid="stop-button"], button[aria-label*="Stop"]')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 36 x 36 | = | = | = |
+| Padding | 2px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 9999px | = | = | = |
+| Background | #2c67c5 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #2c67c5 offset 0px | = |
+| Font | -apple-system-body 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ededed | = | = | = |
+| Transition | opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 20 x 20, colour #ffffff | = | = | = |
+| Painted layers | button.cursor-interaction.size-token-button-composer.flex 36.0x36.0 bg #2c67c5 r 9999px | = | button.cursor-interaction.size-token-button-composer.flex 36.0x36.0 bg #2c67c5 r 9999px outline 2px solid #2c67c5 offset 0px | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 36 x 36 | = | = | = |
+| Padding | 2px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 9999px | = | = | = |
+| Background | #3a83f7 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3a83f7 offset 0px | = |
+| Font | -apple-system-body 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Transition | opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 20 x 20, colour #ffffff | = | = | = |
+| Painted layers | button.cursor-interaction.size-token-button-composer.flex 36.0x36.0 bg #3a83f7 r 9999px | = | button.cursor-interaction.size-token-button-composer.flex 36.0x36.0 bg #3a83f7 r 9999px outline 2px solid #3a83f7 offset 0px | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+
+Crops: `stop-button-default.png`, `stop-button-hover.png`, `stop-button-focus-visible.png`, `stop-button-pressed.png`, `stop-button-light.png`, `stop-button-light-hover.png`, `stop-button-light-focus-visible.png`, `stop-button-light-pressed.png`.
+
+#### toast
+
+Toast (error: Couldn’t copy to clipboard). Copy on a code block failed (the capture browser refuses clipboard writes), and ChatGPT said so in a toast at the top centre: an icon, a bold line, a second line, and a close button.
+
+Page copy: `thread-dark-copied`. Finder: `() => C(T('Couldn\u2019t copy to clipboard'), '.alert-root')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 539.05 x 66 |
+| Padding | 8px 12px |
+| Gap | 8px |
+| Border | 1px solid #fa423e @ 0.4 |
+| Radius | 12px |
+| Background | #280b0a |
+| Box shadow | #000000 @ 0.1 0px 4px 12px 0px |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #ff6764 |
+| Text node | div.flex.min-h-6.items-center: -apple-system-body 16px/24px 500, #ff6764 |
+| Transition | none |
+| Icon | 16 x 16, colour #ff6764, fill #000000 |
+| Painted layers | div.alert-root.inline-flex.flex-col 539.0x66.0 bg #280b0a border T:1px solid #fa423e @ 0.4 / R:1px solid #fa423e @ 0.4 / B:1px solid #fa423e @ 0.4 / L:1px solid #fa423e @ 0.4 r 12px shadow #000000 @ 0.1 0px 4px 12px 0px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 539.05 x 66 |
+| Padding | 8px 12px |
+| Gap | 8px |
+| Border | 1px solid #e02e2a @ 0.15 |
+| Radius | 12px |
+| Background | #fff0f0 |
+| Box shadow | #000000 @ 0.1 0px 4px 12px 0px |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #e02e2a |
+| Text node | div.flex.min-h-6.items-center: -apple-system-body 16px/24px 500, #e02e2a |
+| Transition | none |
+| Icon | 16 x 16, colour #e02e2a, fill #000000 |
+| Painted layers | div.alert-root.inline-flex.flex-col 539.0x66.0 bg #fff0f0 border T:1px solid #e02e2a @ 0.15 / R:1px solid #e02e2a @ 0.15 / B:1px solid #e02e2a @ 0.15 / L:1px solid #e02e2a @ 0.15 r 12px shadow #000000 @ 0.1 0px 4px 12px 0px |
+| How | at rest |
+
+Crops: `toast-default.png`, `toast-light.png`.
+
+#### toast-close
+
+Icon button (close toast).
+
+Page copy: `thread-dark-copied`. Finder: `() => C(T('Couldn\u2019t copy to clipboard'), '.alert-root').querySelector('button')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 24 x 24 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 9999px | = | = | = |
+| Background | transparent | #ffffff @ 0.00509804 | = | #ffffff @ 0.00509804 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #99c8ff offset 0px | = |
+| Font | -apple-system-body 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ff6764 | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #ff6764, fill #000000 | = | = | = |
+| Ancestor paint | 2 up div.alert-root.inline-flex.flex-col bg #280b0a shadow #000000 @ 0.1 0px 4px 12px 0px | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+| Painted layers | - | button.flex.size-6.shrink-0 24.0x24.0 bg #ffffff @ 0.00509804 r 9999px | button.flex.size-6.shrink-0 24.0x24.0 r 9999px outline 1px auto #99c8ff offset 0px | button.flex.size-6.shrink-0 24.0x24.0 bg #ffffff @ 0.00509804 r 9999px |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 24 x 24 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 9999px | = | = | = |
+| Background | transparent | #000000 @ 0.00254902 | = | #000000 @ 0.00254902 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #005fcc offset 0px | = |
+| Font | -apple-system-body 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #e02e2a | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #e02e2a, fill #000000 | = | = | = |
+| Ancestor paint | 2 up div.alert-root.inline-flex.flex-col bg #fff0f0 shadow #000000 @ 0.1 0px 4px 12px 0px | = | = | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+| Painted layers | - | button.flex.size-6.shrink-0 24.0x24.0 bg #000000 @ 0.00254902 r 9999px | button.flex.size-6.shrink-0 24.0x24.0 r 9999px outline 1px auto #005fcc offset 0px | button.flex.size-6.shrink-0 24.0x24.0 bg #000000 @ 0.00254902 r 9999px |
+
+Crops: `toast-close-default.png`, `toast-close-hover.png`, `toast-close-focus-visible.png`, `toast-close-pressed.png`, `toast-close-light.png`, `toast-close-light-hover.png`, `toast-close-light-focus-visible.png`, `toast-close-light-pressed.png`.
+
+#### save-chat
+
+Popover (Save chat, temporary chat). After the first answer in a temporary chat, a popover under the header offers to save the chat to the history.
+
+Page copy: `thread-dark-copied`. Finder: `() => PW(T('Save chat'), 300)`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 320 x 88 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #303030 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 4px 8px -2px |
+| Outline | none |
+| Font | -apple-system-body 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #ededed |
+| Text node | div.min-w-0.text-base.font-medium: -apple-system-body 16px/18px 500, #ededed, ls -0.08px |
+| Transition | none |
+| Transform | matrix(1, 0, 0, 1, 1112, 54) |
+| Icon | 16 x 16, colour #afafaf, fill #000000 |
+| Painted layers | div.w-fit.text-sm.whitespace-normal 320.0x88.0 bg #303030 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 4px 8px -2px; button.no-drag.cursor-interaction.items-center 24.0x24.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 6px; div.pointer-events-none.absolute.rotate-45 17.0x17.0 bg #303030 r 2px |
+| Tokens | --radix-tooltip-content-available-height 838px; --radix-tooltip-content-available-width 1424px; --radix-tooltip-trigger-width 36px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 320 x 88 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 4px 8px -2px |
+| Outline | none |
+| Font | -apple-system-body 14px/20px 400 |
+| Letter spacing | normal |
+| Colour | #0d0d0d |
+| Text node | div.min-w-0.text-base.font-medium: -apple-system-body 16px/18px 500, #0d0d0d, ls -0.08px |
+| Transition | none |
+| Transform | matrix(1, 0, 0, 1, 1112, 54) |
+| Icon | 16 x 16, colour #8f8f8f, fill #000000 |
+| Painted layers | div.w-fit.text-sm.whitespace-normal 320.0x88.0 bg #ffffff r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 4px 8px -2px; button.no-drag.cursor-interaction.items-center 24.0x24.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 6px; div.pointer-events-none.absolute.rotate-45 17.0x17.0 bg #ffffff r 2px |
+| Tokens | --radix-tooltip-content-available-height 838px; --radix-tooltip-content-available-width 1424px; --radix-tooltip-trigger-width 36px |
+| How | at rest |
+
+Crops: `save-chat-default.png`, `save-chat-light.png`.
+
+#### temp-bubble
+
+User bubble (temporary chat). In a temporary chat the user bubble keeps the accent fill and gains a dashed outline.
+
+Page copy: `thread-dark-copied`. Finder: `() => Q('[class*="bg-user-message"]')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 537.59 x 98 |
+| Padding | 10px 16px |
+| Border | none |
+| Radius | 22px |
+| Background | #173e76 |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #f6fafe |
+| Text node | div.text-size-chat.whitespace-pre-wrap: -apple-system-body 16px/26px 400, #f6fafe |
+| Transition | none |
+| Icon | 537.59 x 98, colour #f6fafe, fill #000000 |
+| Painted layers | div.bg-user-message.text-user-message.min-w-0 537.6x98.0 bg #173e76 r 22px |
+| Tokens | --thread-content-margin calc(.25rem * 4); --user-chat-width 70% |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 537.59 x 98 |
+| Padding | 10px 16px |
+| Border | none |
+| Radius | 22px |
+| Background | #e8f3fe |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0c274a |
+| Text node | div.text-size-chat.whitespace-pre-wrap: -apple-system-body 16px/26px 400, #0c274a |
+| Transition | none |
+| Icon | 537.59 x 98, colour #0c274a, fill #000000 |
+| Painted layers | div.bg-user-message.text-user-message.min-w-0 537.6x98.0 bg #e8f3fe r 22px |
+| Tokens | --thread-content-margin calc(.25rem * 4); --user-chat-width 70% |
+| How | at rest |
+
+Crops: `temp-bubble-default.png`, `temp-bubble-light.png`.
+
 ### Menus
 
 #### chat-menu
@@ -4026,6 +4322,50 @@ Light theme.
 | How | at rest |
 
 Crops: `inline-error-default.png`, `inline-error-light.png`.
+
+#### library-loading
+
+Loading placeholder (file card shimmer). While the file list loads, the grid holds shimmer cards of the file card's size (the capture guard held the request open). The shimmer is animated in the product; the copy has no scripts, so it shows one frame.
+
+Page copy: `library-dark-loading`. Finder: `() => Q('[class*="LoadingResultsShimmer"]').parentElement`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 238.75 x 198.95 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #ededed |
+| Transition | none |
+| Painted layers | div.LoadingResultsShimmer-IzeCFB::before 716.25pxx198.953px image linear-gradient(90deg, #afafaf @ 0.1, #afafaf @ 0.16, #afafaf @ 0.1) |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 238.75 x 198.95 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0d0d0d |
+| Transition | none |
+| Painted layers | div.LoadingResultsShimmer-IzeCFB::before 716.25pxx198.953px image linear-gradient(90deg, #8f8f8f @ 0.1, #8f8f8f @ 0.16, #8f8f8f @ 0.1) |
+| How | at rest |
+
+Crops: `library-loading-default.png`, `library-loading-light.png`.
 
 ### Images
 
@@ -5523,6 +5863,448 @@ Light theme.
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
 
 Crops: `pricing-close-default.png`, `pricing-close-hover.png`, `pricing-close-focus-visible.png`, `pricing-close-pressed.png`, `pricing-close-light.png`, `pricing-close-light-hover.png`, `pricing-close-light-focus-visible.png`, `pricing-close-light-pressed.png`.
+
+### Signed out
+
+#### onb-nudge
+
+Card (sign-in nudge). The sidebar card a signed-out visitor sees: a heading, one line on what signing in adds, and a full-width Log in button.
+
+Page copy: `onboarding-dark`. Finder: `() => C(T('Get responses tailored to you'), 'section')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 260 x 185 |
+| Padding | 20px |
+| Border | T: 1px solid #ffffff @ 0.15; R: none; B: none; L: none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | h2.x1gqwrcx.xpugu0j.xdj266r: -apple-system-body 14px/20px 500, #ffffff, ls -0.2px |
+| Transition | none |
+| Painted layers | section.x1y8v6su.x1o24gnf.x13fuv20 260.0x185.0 border T:1px solid #ffffff @ 0.15; button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
+| Ancestor paint | 1 up div.x1cho1rl.xz472uy.x5cu31j bg #000000 |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 260 x 185 |
+| Padding | 20px |
+| Border | T: 1px solid #000000 @ 0.1; R: none; B: none; L: none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0d0d0d |
+| Text node | h2.x1gqwrcx.xpugu0j.xdj266r: -apple-system-body 14px/20px 500, #0d0d0d, ls -0.2px |
+| Transition | none |
+| Painted layers | section.x1y8v6su.x1o24gnf.x13fuv20 260.0x185.0 border T:1px solid #000000 @ 0.1; button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px |
+| Ancestor paint | 1 up div.x1cho1rl.xz472uy.x5cu31j bg #fcfcfc |
+| How | at rest |
+
+Crops: `onb-nudge-default.png`, `onb-nudge-light.png`.
+
+#### onb-login-header
+
+Inverted button (Log in, header).
+
+Page copy: `onboarding-dark`. Finder: `() => [...document.querySelectorAll('button')].find((b) => b.textContent.trim() === 'Log in' && b.getBoundingClientRect().y < 60)`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 64.03 x 44 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | #ffffff | #e8e8e8 | = | #cdcdcd |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 2px | = |
+| Font | -apple-system-body 14px/20px 600 | = | = | = |
+| Letter spacing | -0.08px | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #ffffff r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #e8e8e8 r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #ffffff r 999px outline 2px solid #3566f0 offset 2px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #cdcdcd r 999px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 64.03 x 44 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | #0d0d0d | #212121 | = | #303030 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 2px | = |
+| Font | -apple-system-body 14px/20px 600 | = | = | = |
+| Letter spacing | -0.08px | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #0d0d0d r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #212121 r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #0d0d0d r 999px outline 2px solid #3566f0 offset 2px | button.x6s0dn4.xgwjoxm.x1y0btm7 64.0x44.0 bg #303030 r 999px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+
+Crops: `onb-login-header-default.png`, `onb-login-header-hover.png`, `onb-login-header-focus-visible.png`, `onb-login-header-pressed.png`, `onb-login-header-light.png`, `onb-login-header-light-hover.png`, `onb-login-header-light-focus-visible.png`, `onb-login-header-light-pressed.png`.
+
+#### onb-signup-header
+
+Secondary button (Sign up for free).
+
+Page copy: `onboarding-dark`. Finder: `() => B('Sign up for free')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 128.8 x 44 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | 1px solid #ffffff @ 0.2 | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | #212121 | #303030 | = | #303030 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 2px | = |
+| Font | -apple-system-body 14px/20px 600 | = | = | = |
+| Letter spacing | -0.08px | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #303030 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #303030 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 128.8 x 44 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | 1px solid #000000 @ 0.2 | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | #ffffff | #f3f3f3 | = | #f3f3f3 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 2px | = |
+| Font | -apple-system-body 14px/20px 600 | = | = | = |
+| Letter spacing | -0.08px | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #f3f3f3 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | button.x1gnnqk1.x9f619.xc0rdgb 128.8x44.0 bg #f3f3f3 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+
+Crops: `onb-signup-header-default.png`, `onb-signup-header-hover.png`, `onb-signup-header-focus-visible.png`, `onb-signup-header-pressed.png`, `onb-signup-header-light.png`, `onb-signup-header-light-hover.png`, `onb-signup-header-light-focus-visible.png`, `onb-signup-header-light-pressed.png`.
+
+#### onb-login-card
+
+Secondary button (Log in, card).
+
+Page copy: `onboarding-dark`. Finder: `() => C(T('Get responses tailored to you'), 'section').querySelector('button')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 220 x 44 | = | = | = |
+| Padding | 8px 16px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | 1px solid #ffffff @ 0.2 | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | #212121 | #303030 | = | #414141 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 2px | = |
+| Font | -apple-system-body 14px/18.6666px 500 | = | = | = |
+| Letter spacing | -0.2px | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #303030 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #414141 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 220 x 44 | = | = | = |
+| Padding | 8px 16px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | 1px solid #000000 @ 0.2 | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | #ffffff | #f3f3f3 | = | #e8e8e8 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 2px | = |
+| Font | -apple-system-body 14px/18.6666px 500 | = | = | = |
+| Letter spacing | -0.2px | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #f3f3f3 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #e8e8e8 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+
+Crops: `onb-login-card-default.png`, `onb-login-card-hover.png`, `onb-login-card-focus-visible.png`, `onb-login-card-pressed.png`, `onb-login-card-light.png`, `onb-login-card-light-hover.png`, `onb-login-card-light-focus-visible.png`, `onb-login-card-light-pressed.png`.
+
+#### onb-dialog
+
+Dialog (Log in or sign up). Opened by Sign up for free: three provider buttons, an OR rule, an email field and Continue.
+
+Page copy: `onboarding-dark-signup`. Finder: `() => [...document.querySelectorAll('dialog[open], [role=dialog]')].filter((d) => d.getBoundingClientRect().width > 300).pop()`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 448 x 504 |
+| Padding | 0px |
+| Border | none |
+| Radius | 20px |
+| Background | #303030 |
+| Box shadow | #000000 @ 0.22 0px 24px 64px 0px, #000000 @ 0.12 0px 4px 16px 0px |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | h2.xorku9x.xcg35fi.x1h1fi3m: -apple-system-body 24px/32px 400, #ffffff |
+| Transition | transform 0.3s cubic-bezier(0.2, 0, 0, 1) |
+| Transform | matrix(1, 0, 0, 1, -224, -252) |
+| Icon | 20 x 20, colour #ffffff |
+| Placeholder | "" #ffffff, opacity 1, 16px |
+| Painted layers | dialog.xm7sogi.x1jpqdmu.x1l9hn29 448.0x504.0 bg #303030 r 20px shadow #000000 @ 0.22 0px 24px 64px 0px, #000000 @ 0.12 0px 4px 16px 0px; section.x1f9q82l.xxny6gs.x1v1hne3 448.0x504.0 bg #303030; button.x6s0dn4.xgwjoxm.x1y0btm7 44.0x44.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 999px; a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px; a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px; button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 448 x 504 |
+| Padding | 0px |
+| Border | none |
+| Radius | 20px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0.22 0px 24px 64px 0px, #000000 @ 0.12 0px 4px 16px 0px |
+| Outline | none |
+| Font | -apple-system-body 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0d0d0d |
+| Text node | h2.xorku9x.xcg35fi.x1h1fi3m: -apple-system-body 24px/32px 400, #0d0d0d |
+| Transition | transform 0.3s cubic-bezier(0.2, 0, 0, 1) |
+| Transform | matrix(1, 0, 0, 1, -224, -252) |
+| Icon | 20 x 20, colour #0d0d0d |
+| Placeholder | "" #000000, opacity 1, 16px |
+| Painted layers | dialog.xm7sogi.x1jpqdmu.x1l9hn29 448.0x504.0 bg #ffffff r 20px shadow #000000 @ 0.22 0px 24px 64px 0px, #000000 @ 0.12 0px 4px 16px 0px; section.x1f9q82l.xxny6gs.x1v1hne3 448.0x504.0 bg #ffffff; button.x6s0dn4.xgwjoxm.x1y0btm7 44.0x44.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 999px; a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px; a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px; button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px |
+| How | at rest |
+
+Crops: `onb-dialog-default.png`, `onb-dialog-light.png`.
+
+#### onb-provider
+
+Outline button (Continue with Google).
+
+Page copy: `onboarding-dark-signup`. Finder: `() => C(T('Continue with Google'), 'a,button')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 364.93 x 47.99 | 365 x 48 | 365 x 48 | 365 x 48 |
+| Padding | 0px 16px 0px 12.0001px | = | = | = |
+| Gap | 8px | = | = | = |
+| Border | 1px solid #ffffff @ 0.2 | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | #212121 | #303030 | = | #414141 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 1px | = |
+| Font | -apple-system-body 16px/20px 500 | = | = | = |
+| Letter spacing | -0.08px | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span: -apple-system-body 16px/20px 500, #ffffff, ls -0.08px | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 20 x 20, colour #ffffff | = | = | = |
+| Painted layers | a.x6s0dn4.xgwjoxm.x1y0btm7 364.9x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #303030 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px outline 2px solid #3566f0 offset 1px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #414141 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed |
+|---|---|---|---|---|
+| Size (w x h) | 364.66 x 47.96 | 365 x 48 | 365 x 48 | 365 x 48 |
+| Padding | 0px 16px 0px 12.0001px | = | = | = |
+| Gap | 8px | = | = | = |
+| Border | 1px solid #000000 @ 0.2 | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | #ffffff | #f3f3f3 | = | #e8e8e8 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 1px | = |
+| Font | -apple-system-body 16px/20px 500 | = | = | = |
+| Letter spacing | -0.08px | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Text node | span: -apple-system-body 16px/20px 500, #0d0d0d, ls -0.08px | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 19.98 x 19.98, colour #0d0d0d | 20 x 20, colour #0d0d0d | 20 x 20, colour #0d0d0d | 20 x 20, colour #0d0d0d |
+| Painted layers | a.x6s0dn4.xgwjoxm.x1y0btm7 364.7x48.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #f3f3f3 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px outline 2px solid #3566f0 offset 1px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #e8e8e8 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
+
+Crops: `onb-provider-default.png`, `onb-provider-hover.png`, `onb-provider-focus-visible.png`, `onb-provider-pressed.png`, `onb-provider-light.png`, `onb-provider-light-hover.png`, `onb-provider-light-focus-visible.png`, `onb-provider-light-pressed.png`.
+
+#### onb-email
+
+Text field (email).
+
+Page copy: `onboarding-dark-signup`, `onboarding-dark-email-error`. Finder: `() => Q('input[type=email]')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | error |
+|---|---|---|---|---|
+| Size (w x h) | 365 x 48 | = | = | = |
+| Padding | 1px 16px | = | = | = |
+| Border | 1px solid #ffffff @ 0.15 | = | = | 1px solid #fa423e |
+| Radius | 999px | = | = | = |
+| Background | #000000 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 2px | = |
+| Font | -apple-system-body 16px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | text | = | = | = |
+| Placeholder | "Email address" #cdcdcd, opacity 1, 16px | = | = | = |
+| Painted layers | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #000000 border T:1px solid #ffffff @ 0.15 / R:1px solid #ffffff @ 0.15 / B:1px solid #ffffff @ 0.15 / L:1px solid #ffffff @ 0.15 r 999px | = | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #000000 border T:1px solid #ffffff @ 0.15 / R:1px solid #ffffff @ 0.15 / B:1px solid #ffffff @ 0.15 / L:1px solid #ffffff @ 0.15 r 999px outline 2px solid #3566f0 offset 2px | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #000000 border T:1px solid #fa423e / R:1px solid #fa423e / B:1px solid #fa423e / L:1px solid #fa423e r 999px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | at rest, captured error |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-error |
+|---|---|---|---|---|
+| Size (w x h) | 365 x 48 | = | = | 364.66 x 47.96 |
+| Padding | 1px 16px | = | = | = |
+| Border | 1px solid #000000 @ 0.1 | = | = | 1px solid #ba2623 |
+| Radius | 999px | = | = | = |
+| Background | #fcfcfc | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 2px | = |
+| Font | -apple-system-body 16px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | text | = | = | = |
+| Placeholder | "Email address" #5d5d5d, opacity 1, 16px | = | = | = |
+| Painted layers | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 999px | = | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 999px outline 2px solid #3566f0 offset 2px | input.x1pw6kkn.x7xwk5j.x1v3hlx4 364.7x48.0 bg #fcfcfc border T:1px solid #ba2623 / R:1px solid #ba2623 / B:1px solid #ba2623 / L:1px solid #ba2623 r 999px |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | at rest, captured error |
+
+Other finders: error: `() => Q('input[type=email]')`; light-error: `() => Q('input[type=email]')`.
+
+Crops: `onb-email-default.png`, `onb-email-hover.png`, `onb-email-focus-visible.png`, `onb-email-error.png`, `onb-email-light.png`, `onb-email-light-hover.png`, `onb-email-light-focus-visible.png`, `onb-email-light-error.png`.
+
+#### onb-email-error
+
+Field error text (Email is not valid.). Shown under the field after Continue with an incomplete address; the field gets a red border and aria-invalid.
+
+Page copy: `onboarding-dark-email-error`. Finder: `() => C(T('Email is not valid.'), 'p') // T('Email is not valid.')`.
+
+Dark theme.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 364.86 x 15.99 |
+| Padding | 0px 16px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system-body 12px/16px 400 |
+| Letter spacing | normal |
+| Colour | #ff6764 |
+| Text node | span: -apple-system-body 12px/16px 400, #ff6764 |
+| Transition | none |
+| How | at rest |
+
+Light theme.
+
+| Property | light |
+|---|---|
+| Size (w x h) | 364.66 x 15.99 |
+| Padding | 0px 16px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system-body 12px/16px 400 |
+| Letter spacing | normal |
+| Colour | #ba2623 |
+| Text node | span: -apple-system-body 12px/16px 400, #ba2623 |
+| Transition | none |
+| How | at rest |
+
+Crops: `onb-email-error-default.png`, `onb-email-error-light.png`.
+
+#### onb-continue
+
+Primary button (Continue).
+
+Page copy: `onboarding-dark-signup`, `onboarding-dark-email-error`. Finder: `() => B('Continue')`.
+
+Dark theme.
+
+| Property | default | hover | focus-visible | pressed | after-error |
+|---|---|---|---|---|---|
+| Size (w x h) | 364.66 x 47.96 | 365 x 48 | 365 x 48 | 365 x 48 | = |
+| Padding | 0px 16px | = | = | = | = |
+| Gap | 6px | = | = | = | = |
+| Border | 1px solid #ffffff | = | = | = | = |
+| Radius | 999px | = | = | = | = |
+| Background | #ffffff | #e8e8e8 | = | #cdcdcd | = |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 0px | = | = |
+| Font | -apple-system-body 16px/20px 500 | = | = | = | = |
+| Letter spacing | -0.08px | = | = | = | = |
+| Colour | #0d0d0d | = | = | = | = |
+| Transition | none | = | = | = | = |
+| Cursor | pointer | = | = | = | = |
+| Painted layers | button.x6s0dn4.xgwjoxm.x1y0btm7 364.7x48.0 bg #ffffff border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #e8e8e8 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #ffffff border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 999px outline 2px solid #3566f0 offset 0px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #cdcdcd border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 999px | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) | at rest, captured after-error |
+
+Light theme.
+
+| Property | light | light-hover | light-focus-visible | light-pressed | light-after-error |
+|---|---|---|---|---|---|
+| Size (w x h) | 364.66 x 47.96 | 365 x 48 | 365 x 48 | 365 x 48 | = |
+| Padding | 0px 16px | = | = | = | = |
+| Gap | 6px | = | = | = | = |
+| Border | 1px solid #0d0d0d | = | = | = | = |
+| Radius | 999px | = | = | = | = |
+| Background | #0d0d0d | #212121 | = | #303030 | = |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | 2px solid #3566f0 offset 0px | = | = |
+| Font | -apple-system-body 16px/20px 500 | = | = | = | = |
+| Letter spacing | -0.08px | = | = | = | = |
+| Colour | #ffffff | = | = | = | = |
+| Transition | none | = | = | = | = |
+| Cursor | pointer | = | = | = | = |
+| Painted layers | button.x6s0dn4.xgwjoxm.x1y0btm7 364.7x48.0 bg #0d0d0d border T:1px solid #0d0d0d / R:1px solid #0d0d0d / B:1px solid #0d0d0d / L:1px solid #0d0d0d r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #0d0d0d / R:1px solid #0d0d0d / B:1px solid #0d0d0d / L:1px solid #0d0d0d r 999px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #0d0d0d border T:1px solid #0d0d0d / R:1px solid #0d0d0d / B:1px solid #0d0d0d / L:1px solid #0d0d0d r 999px outline 2px solid #3566f0 offset 0px | button.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #303030 border T:1px solid #0d0d0d / R:1px solid #0d0d0d / B:1px solid #0d0d0d / L:1px solid #0d0d0d r 999px | = |
+| How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) | at rest, captured after-error |
+
+Other finders: after-error: `() => B('Continue')`; light-after-error: `() => B('Continue')`.
+
+Crops: `onb-continue-default.png`, `onb-continue-hover.png`, `onb-continue-focus-visible.png`, `onb-continue-pressed.png`, `onb-continue-after-error.png`, `onb-continue-light.png`, `onb-continue-light-hover.png`, `onb-continue-light-focus-visible.png`, `onb-continue-light-pressed.png`, `onb-continue-light-after-error.png`.
 
 ### Phone
 
