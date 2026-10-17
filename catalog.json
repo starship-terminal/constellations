@@ -749,7 +749,7 @@
         390
       ],
       "entry": "systems/polaris/README.md",
-      "tokens": "systems/polaris/tokens/polaris.tokens-studio.json",
+      "tokens": "systems/polaris/tokens.json",
       "styleGuide": "systems/polaris/style-guide.html",
       "preview": {
         "cover": "systems/polaris/screenshots/01-overview.png",
@@ -775,7 +775,7 @@
           "light.font.font-family-sans"
         ]
       },
-      "notes": "style-guide.html fetches its data, so open it through `make serve`, not from disk. Tokens match the archive with zero differences (evidence/token-parity.json).",
+      "notes": "style-guide.html fetches its data, so open it through `make serve`, not from disk. Tokens match the archive with zero differences (raw/token-parity.json).",
       "source": {
         "path": "a private work project (path not recorded)",
         "excluded": [

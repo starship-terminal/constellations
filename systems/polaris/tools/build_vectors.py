@@ -68,7 +68,7 @@ for start in range(0,len(colors),48):
  for i,(k,v) in enumerate(chunk):
   x=32+i%3*468;y=80+i//3*61;b+=rect(x,y,36,36,v,8,'#ddd')+text(x+48,y+14,k,10,550)+text(x+48,y+31,v,10,450,'#616161')
  (root/'boards'/f'colors-{start//48+1:02}.svg').write_text(svg(b,1440,1100))
-(root/'evidence/vector-manifest.json').write_text(json.dumps({'components':[n for n,*_ in items],'count':len(items),'status':'Token-based editable redraws. Complex bevels, gradients, responsive behavior and interaction are documented by actual React gallery, not reproduced completely in SVG.'},indent=2))
+(root/'raw/vector-manifest.json').write_text(json.dumps({'components':[n for n,*_ in items],'count':len(items),'status':'Token-based editable redraws. Complex bevels, gradients, responsive behavior and interaction are documented by actual React gallery, not reproduced completely in SVG.'},indent=2))
 print(len(items),'component SVGs')
 b=rect(0,0,1120,1120,'#fff',0)+text(40,52,'Polaris / Typography',28,650);y=110
 for k,v in tokens.items():

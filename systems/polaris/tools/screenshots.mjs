@@ -2,7 +2,7 @@
 // Needs Playwright with Chromium, which is not a package dependency: point PLAYWRIGHT_DIR
 // at any folder whose node_modules holds it (default ~/.design-systems/pw).
 //   node tools/screenshots.mjs            all shots
-//   node tools/screenshots.mjs focus      only the focus crops and evidence/focus-states.json
+//   node tools/screenshots.mjs focus      only the focus crops and raw/focus-states.json
 import fs from 'node:fs';
 import http from 'node:http';
 import os from 'node:os';
@@ -150,9 +150,9 @@ for (const [name, section, find] of targets) {
   results[name] = {section, focusVisible: visible, changed};
   await page.close();
 }
-fs.writeFileSync('evidence/focus-states.json', JSON.stringify({
+fs.writeFileSync('raw/focus-states.json', JSON.stringify({
   method: 'Chromium via Playwright, 1440 px at 2x, light theme. Tab pressed once for keyboard modality, then the control focused; values are computed styles that differ from the unfocused control.',
   gallery: '@shopify/polaris 13.9.5', results}, null, 2) + '\n');
-console.log('wrote evidence/focus-states.json');
+console.log('wrote raw/focus-states.json');
 await browser.close();
 server.close();

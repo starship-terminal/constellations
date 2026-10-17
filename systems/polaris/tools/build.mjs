@@ -26,10 +26,10 @@ const aliases=(()=>{
 })();
 const source='/tmp/polaris-reference-source-20260925';
 const write=(p,v)=>fs.writeFileSync(p,typeof v==='string'?v:JSON.stringify(v,null,2));
-for(const dir of ['assets','tokens','icons','licenses'])fs.mkdirSync(dir,{recursive:true});
-write('tokens/polaris-themes.raw.json',t.themes);
-write('tokens/polaris-metadata.json',t.metaThemes);
-write('tokens/polaris-colors.raw.json',ramps);
+for(const dir of ['assets','tokens','raw','icons','licenses'])fs.mkdirSync(dir,{recursive:true});
+write('raw/polaris-themes.raw.json',t.themes);
+write('raw/polaris-metadata.json',t.metaThemes);
+write('raw/polaris-colors.raw.json',ramps);
 // Neutral first, then the hues in the package's order.
 const rampOrder=Object.entries(ramps).sort(([a],[b])=>(b==='gray')-(a==='gray'));
 const studio={core:{color:Object.fromEntries(rampOrder.map(([hue,steps])=>[hue,Object.fromEntries(Object.entries(steps).map(([step,value])=>[step,{value,type:'color',description:'@shopify/polaris-tokens 9.4.2 / colors.js primitive ramp'}]))]))}};
@@ -105,7 +105,7 @@ const component={
 };
 const typeOf=(group,v)=>typeof v==='number'?'other':group==='focusRing'&&String(v).includes('color')?'color':'sizing';
 for(const [group,entries] of Object.entries(component))studio.core[group]=Object.fromEntries(Object.entries(entries).map(([name,[value,cite]])=>[name,{value,type:typeOf(group,value),description:src(cite)}]));
-write('tokens/polaris.tokens-studio.json',studio);
+write('tokens.json',studio);
 const flat=Object.assign({},...Object.values(t.themes.light));
 write('assets/tokens.json',flat);
 write('tokens/light.css',`:root{\n${Object.entries(flat).map(([k,v])=>`  --p-${k}: ${v};`).join('\n')}\n}`);
@@ -120,5 +120,5 @@ fs.copyFileSync('tools/node_modules/@shopify/polaris/build/esm/styles.css','asse
 fs.copyFileSync('tools/node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2','assets/inter.woff2');
 fs.copyFileSync('tools/node_modules/@fontsource-variable/inter/LICENSE','licenses/INTER-OFL.txt');
 await build({absWorkingDir:process.cwd(),entryPoints:['./tools/gallery.jsx'],bundle:true,minify:true,outfile:'assets/gallery.js',define:{'process.env.NODE_ENV':'"production"'},loader:{'.png':'dataurl'}});
-write('evidence/provenance.json',{repository:'https://github.com/Shopify/polaris-react-archive',commit:'3f7954ae42fabf26d63cee68c23ceebfd7ef0972',archiveReactVersion:'13.10.1',previewReactVersion:'13.9.5',tokens:'9.4.2',icons:'9.3.1',date:'2026-09-25',note:'Archive React version unavailable in registry; previews use published 13.9.5. Inter preview supplied by Fontsource 5.2.8; glyph version can differ from archived docs.'});
+write('raw/provenance.json',{repository:'https://github.com/Shopify/polaris-react-archive',commit:'3f7954ae42fabf26d63cee68c23ceebfd7ef0972',archiveReactVersion:'13.10.1',previewReactVersion:'13.9.5',tokens:'9.4.2',icons:'9.3.1',date:'2026-09-25',note:'Archive React version unavailable in registry; previews use published 13.9.5. Inter preview supplied by Fontsource 5.2.8; glyph version can differ from archived docs.'});
 console.log('Built',Object.values(ramps).reduce((n,r)=>n+Object.keys(r).length,0),'ramp steps,',Object.values(aliases).reduce((n,a)=>n+Object.keys(a).length,0),'aliased theme colours,',Object.keys(flat).length,'light tokens and',fs.readdirSync('icons').filter(f=>f.endsWith('.svg')).length,'icons');
