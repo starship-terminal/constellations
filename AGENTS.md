@@ -102,7 +102,7 @@ illustrations or brand colours into something that ships
   while those are stale, and warns when a package was captured after its
   reviewed grades were set: re-review that package against
   `scorecard/criteria.json` and merge the result with
-  `python3 tools/grade.py --write --review <slug>=<grades.json>`. Criteria marked `capture` in `scorecard/criteria.json` (C5, V1,
+  `python3 tools/grade.py --write --review <slug>=<grades.json>`, adding `--method "<text>"` to say how the review was done (it replaces the carried-over account, so cover every review still in the scorecard). Criteria marked `capture` in `scorecard/criteria.json` (C5, V1,
   V2) are not applicable to a captured package; never grade them from a
   capture.
 - **The published site never includes the gallery.** The Pages workflow

@@ -170,6 +170,19 @@ class RefreshAndReviewTest(unittest.TestCase):
         self.assertEqual(s["grades"]["C1"]["grade"], "meets")
         self.assertEqual(s["reviewed"], "2026-10-17")
 
+    def test_a_review_can_replace_the_method_and_later_snapshots_keep_it(self):
+        with mock.patch.object(grade, "scripted", return_value={}):
+            out = grade.snapshot(self.CRITERIA, self.BASE, [self.SOURCE], "2026-10-17", {},
+                                 {"x": {"C1": {"grade": "meets", "evidence": "17/19"}}}, "Second review.")
+            later = grade.snapshot(self.CRITERIA, out, [self.SOURCE], "2026-10-18")
+        self.assertEqual(out["reviewMethod"], "Second review.")
+        self.assertTrue(out["method"].endswith("Second review.") and "Review." not in out["method"])
+        self.assertEqual(later["reviewMethod"], "Second review.")
+
+    def test_a_method_without_a_review_is_refused(self):
+        with mock.patch.object(grade, "scripted", return_value={}), self.assertRaises(SystemExit):
+            grade.snapshot(self.CRITERIA, self.BASE, [self.SOURCE], "2026-10-17", {}, None, "Text.")
+
     def test_a_review_cannot_set_scripted_or_capture_criteria(self):
         for cid in ("F15", "V1"):
             with self.assertRaises(SystemExit):
