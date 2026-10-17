@@ -75527,7 +75527,6 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "occludedBy": "div.xdmi676.x1roiz7s.x78zum5",
      "crop": "components/crops/onb-nudge-default.png",
      "via": "at rest"
     },
@@ -75656,7 +75655,6 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "occludedBy": "div.xdmi676.x1roiz7s.x78zum5",
      "crop": "components/crops/onb-nudge-light.png",
      "via": "at rest"
     }
@@ -77606,7 +77604,6 @@
        "position": "sticky"
       }
      ],
-     "occludedBy": "div.xdmi676.x1roiz7s.x78zum5",
      "crop": "components/crops/onb-login-card-default.png",
      "via": "at rest"
     },
@@ -77662,7 +77659,7 @@
       "borderTopRightRadius": "999px",
       "borderBottomRightRadius": "999px",
       "borderBottomLeftRadius": "999px",
-      "backgroundColor": "rgb(33, 33, 33)",
+      "backgroundColor": "rgb(48, 48, 48)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -77703,7 +77700,7 @@
        "node": "button.x1d5dutw.xewkrzm.xllfjz4",
        "size": "220.0x44.0",
        "border": "T:1px solid rgba(255, 255, 255, 0.2) | R:1px solid rgba(255, 255, 255, 0.2) | B:1px solid rgba(255, 255, 255, 0.2) | L:1px solid rgba(255, 255, 255, 0.2)",
-       "bg": "rgb(33, 33, 33)",
+       "bg": "rgb(48, 48, 48)",
        "radius": "999px"
       }
      ],
@@ -77714,7 +77711,6 @@
        "position": "sticky"
       }
      ],
-     "occludedBy": "div.xdmi676.x1roiz7s.x78zum5",
      "crop": "components/crops/onb-login-card-hover.png",
      "via": "mouse hover"
     },
@@ -77828,7 +77824,6 @@
       "how": "keyboard: focus(), Shift+Tab, Tab",
       "matches": true
      },
-     "occludedBy": "div.xdmi676.x1roiz7s.x78zum5",
      "crop": "components/crops/onb-login-card-focus-visible.png",
      "via": "keyboard: focus(), Shift+Tab, Tab"
     },
@@ -77884,7 +77879,7 @@
       "borderTopRightRadius": "999px",
       "borderBottomRightRadius": "999px",
       "borderBottomLeftRadius": "999px",
-      "backgroundColor": "rgb(33, 33, 33)",
+      "backgroundColor": "rgb(65, 65, 65)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -77925,7 +77920,7 @@
        "node": "button.x1d5dutw.xewkrzm.xllfjz4",
        "size": "220.0x44.0",
        "border": "T:1px solid rgba(255, 255, 255, 0.2) | R:1px solid rgba(255, 255, 255, 0.2) | B:1px solid rgba(255, 255, 255, 0.2) | L:1px solid rgba(255, 255, 255, 0.2)",
-       "bg": "rgb(33, 33, 33)",
+       "bg": "rgb(65, 65, 65)",
        "radius": "999px"
       }
      ],
@@ -77936,7 +77931,6 @@
        "position": "sticky"
       }
      ],
-     "occludedBy": "div.xdmi676.x1roiz7s.x78zum5",
      "crop": "components/crops/onb-login-card-pressed.png",
      "via": "mouse button held down on it (:hover:active)"
     },
@@ -78044,7 +78038,6 @@
        "position": "sticky"
       }
      ],
-     "occludedBy": "div.xdmi676.x1roiz7s.x78zum5",
      "crop": "components/crops/onb-login-card-light.png",
      "via": "at rest"
     },
@@ -78100,7 +78093,7 @@
       "borderTopRightRadius": "999px",
       "borderBottomRightRadius": "999px",
       "borderBottomLeftRadius": "999px",
-      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(243, 243, 243)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -78141,7 +78134,7 @@
        "node": "button.x1d5dutw.xewkrzm.xllfjz4",
        "size": "220.0x44.0",
        "border": "T:1px solid rgba(0, 0, 0, 0.2) | R:1px solid rgba(0, 0, 0, 0.2) | B:1px solid rgba(0, 0, 0, 0.2) | L:1px solid rgba(0, 0, 0, 0.2)",
-       "bg": "rgb(255, 255, 255)",
+       "bg": "rgb(243, 243, 243)",
        "radius": "999px"
       }
      ],
@@ -78152,7 +78145,6 @@
        "position": "sticky"
       }
      ],
-     "occludedBy": "div.xdmi676.x1roiz7s.x78zum5",
      "crop": "components/crops/onb-login-card-light-hover.png",
      "via": "mouse hover"
     },
@@ -78266,7 +78258,6 @@
       "how": "keyboard: focus(), Shift+Tab, Tab",
       "matches": true
      },
-     "occludedBy": "div.xdmi676.x1roiz7s.x78zum5",
      "crop": "components/crops/onb-login-card-light-focus-visible.png",
      "via": "keyboard: focus(), Shift+Tab, Tab"
     },
@@ -78322,7 +78313,7 @@
       "borderTopRightRadius": "999px",
       "borderBottomRightRadius": "999px",
       "borderBottomLeftRadius": "999px",
-      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(232, 232, 232)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -78363,7 +78354,7 @@
        "node": "button.x1d5dutw.xewkrzm.xllfjz4",
        "size": "220.0x44.0",
        "border": "T:1px solid rgba(0, 0, 0, 0.2) | R:1px solid rgba(0, 0, 0, 0.2) | B:1px solid rgba(0, 0, 0, 0.2) | L:1px solid rgba(0, 0, 0, 0.2)",
-       "bg": "rgb(255, 255, 255)",
+       "bg": "rgb(232, 232, 232)",
        "radius": "999px"
       }
      ],
@@ -78374,7 +78365,6 @@
        "position": "sticky"
       }
      ],
-     "occludedBy": "div.xdmi676.x1roiz7s.x78zum5",
      "crop": "components/crops/onb-login-card-light-pressed.png",
      "via": "mouse button held down on it (:hover:active)"
     }
@@ -78774,10 +78764,10 @@
      "classes": "x6s0dn4 xgwjoxm x1y0btm7 x16hnadc x1gnnqk1 x9f619 xln7xf2 xl56j7k x1q51uy1 xj0wd6c xt970qd x1rlenzs x1n2onr6 x2b8uid x1b2iylo xwgcxoh x1hl2dhg x1d5dutw x17venrh xuop9uq x1215fxi xe8imf4 x15lsfg0 x31jatw xbs2zpe x1pfi8qd x78zum5 x1kd3hbs x11t45mb xtc8aji xd1eonm x1ktndqv xalwuse x17k1z94 x1mwi2t0 x1jchvi3 x1gqwrcx xeh89su x-default-marker",
      "text": "Continue with Google",
      "rect": {
-      "x": 537.7,
-      "y": 346.1,
-      "w": 364.66,
-      "h": 47.96
+      "x": 537.5,
+      "y": 346,
+      "w": 364.93,
+      "h": 47.99
      },
      "style": {
       "display": "flex",
@@ -78858,7 +78848,7 @@
      "paint": [
       {
        "node": "a.x6s0dn4.xgwjoxm.x1y0btm7",
-       "size": "364.7x48.0",
+       "size": "364.9x48.0",
        "border": "T:1px solid rgba(255, 255, 255, 0.2) | R:1px solid rgba(255, 255, 255, 0.2) | B:1px solid rgba(255, 255, 255, 0.2) | L:1px solid rgba(255, 255, 255, 0.2)",
        "bg": "rgb(33, 33, 33)",
        "radius": "999px"
@@ -78884,8 +78874,8 @@
       "textTransform": "none"
      },
      "icon": {
-      "w": 19.98,
-      "h": 19.98,
+      "w": 20,
+      "h": 20,
       "fill": "none",
       "stroke": "none",
       "color": "rgb(255, 255, 255)",
@@ -80603,10 +80593,10 @@
      "classes": "x1pw6kkn x7xwk5j x1v3hlx4 x124b2mw xe2c345 x1e6avla x1y0btm7 xmkeg23 x9f619 xbs2zpe xln7xf2 x1jchvi3 x1mqdek1 x1pd3egz x1t9htyp x4gjf66 x1tfozve xh8yej3 x8r4c90 xbwsl75 xd1eonm x1ktndqv xs005hw xiji9z6 x7s97pk x1rlenzs x18ydh9o",
      "text": "Email address",
      "rect": {
-      "x": 537.5,
-      "y": 555,
-      "w": 364.97,
-      "h": 48
+      "x": 537.7,
+      "y": 554.9,
+      "w": 364.66,
+      "h": 47.96
      },
      "style": {
       "display": "block",
@@ -80683,7 +80673,7 @@
      "paint": [
       {
        "node": "input.x1pw6kkn.x7xwk5j.x1v3hlx4",
-       "size": "365.0x48.0",
+       "size": "364.7x48.0",
        "border": "T:1px solid rgb(186, 38, 35) | R:1px solid rgb(186, 38, 35) | B:1px solid rgb(186, 38, 35) | L:1px solid rgb(186, 38, 35)",
        "bg": "rgb(252, 252, 252)",
        "radius": "999px"

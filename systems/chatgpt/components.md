@@ -59,9 +59,9 @@ Values that apply across entries, tallied from the measurement file.
 
 **Radius.** `radius.full` (278), `radius.lg` (90), `radius.xl` (52), 999px (50), `radius.2xl` (48), `radius.sm` (12), `radius.3xl` (11), 26px (8), `radius.md` (6), `radius.token-composer-single-line` (6).
 
-**Hover.** Dark: no change (25), transparent to `variant.primary.soft.bg-hover` (18), ::before transparent to `variant.primary.soft.bg-hover` (3), transparent to `token.border-light` (3), opacity 1 to 0.8 (2), `surface.elevated-secondary` to `variant.primary.soft.bg-hover` (2). Light: no change (25), transparent to `variant.primary.soft.bg-hover` (18), ::before transparent to `variant.primary.soft.bg-hover` (3), transparent to rgba(0, 0, 0, 0.03) (3), text `role.text.secondary` to `role.text.primary` (2), opacity 1 to 0.8 (2). Ghost buttons, menu items, rows and tabs all hover to `variant.primary.soft.bg-hover` (white at 10% in dark, black at 5% in light); solid neutral buttons drop to 80% opacity instead; the accent send and voice buttons do not change.
+**Hover.** Dark: no change (24), transparent to `variant.primary.soft.bg-hover` (18), ::before transparent to `variant.primary.soft.bg-hover` (3), transparent to `token.border-light` (3), `role.bg.surface` to `surface.elevated-secondary` (3), opacity 1 to 0.8 (2). Light: no change (24), transparent to `variant.primary.soft.bg-hover` (18), ::before transparent to `variant.primary.soft.bg-hover` (3), transparent to rgba(0, 0, 0, 0.03) (3), `role.bg.raised` to `bg.user-message-compact` (3), text `role.text.secondary` to `role.text.primary` (2). Ghost buttons, menu items, rows and tabs all hover to `variant.primary.soft.bg-hover` (white at 10% in dark, black at 5% in light); solid neutral buttons drop to 80% opacity instead; the accent send and voice buttons do not change.
 
-**Pressed.** 8 of 50 pressed readings (the mouse button held down, so `:active` applies) differ from hover. ChatGPT's `Button` paints its fill on `::before`, and `:active` swaps that layer to the variant's `-active` colour: `variant.primary.ghost.bg-active` (4), white at 16% where hover is 10%. The stylesheet also scales the layer by `--scale`, which no captured button sets, so nothing shrinks. The signed-out page's buttons change their own background instead. The rest (rows, links, tabs and the Tailwind-styled controls) set no `:active` style, so for them pressed is the hover state.
+**Pressed.** 9 of 50 pressed readings (the mouse button held down, so `:active` applies) differ from hover. ChatGPT's `Button` paints its fill on `::before`, and `:active` swaps that layer to the variant's `-active` colour: `variant.primary.ghost.bg-active` (4), white at 16% where hover is 10%. The stylesheet also scales the layer by `--scale`, which no captured button sets, so nothing shrinks. The signed-out page's buttons change their own background instead. The rest (rows, links, tabs and the Tailwind-styled controls) set no `:active` style, so for them pressed is the hover state.
 
 **Focus.** Of 65 elements given a real keyboard focus in dark: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (8), no ring on the element (6), a 2px box-shadow ring (inset) in `role.border.focus` (5), a 2px outline in `role.border.focus`, offset -2px (4), a 2px outline in #3566f0, offset 2px (4), a 2px outline on ::after, offset -1px (3), a 2px outline in `text.info`, offset 0px (3). In light: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (8), no ring on the element (6), a 2px box-shadow ring (inset) in `role.border.focus` (5), a 2px outline in `role.border.focus`, offset -2px (4), a 2px outline in `role.border.focus`, offset 0px (4), a 2px outline in #3566f0, offset 2px (4), a 2px outline on ::after, offset -1px (3). The ring is `ring.default` (#3a83f7) at `size.focusRing.width` (2px) with no offset; rows draw it as an inset outline, ghost buttons on their ::after, links and segments fall back to the browser's outline.
 
@@ -1753,10 +1753,14 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 220 x `size.control.2xl`; padding `spacing.2` `spacing.4`; border 1px solid `role.border.strong`; radius 999px; background `role.bg.surface`; text `fontSize.sm`/18.66 `fontWeight.medium`, `role.text.on-accent` |
+| default | size 220 x `size.control.2xl`; padding `spacing.2` `spacing.4`; border 1px solid `role.border.strong`; radius 999px; background `role.bg.surface`; text `fontSize.sm`/18.66 `fontWeight.medium`, `role.text.on-accent` |
+| hover | background `surface.elevated-secondary` |
 | focus-visible | outline 2px solid #3566f0, offset 2px |
-| light (same: light-hover, light-pressed) | size 220 x `size.control.2xl`; padding `spacing.2` `spacing.4`; border 1px solid rgba(0, 0, 0, 0.2); radius 999px; background `role.bg.raised`; text `fontSize.sm`/18.66 `fontWeight.medium`, `role.text.primary` |
+| pressed | background `bg.user-message-compact` |
+| light | size 220 x `size.control.2xl`; padding `spacing.2` `spacing.4`; border 1px solid rgba(0, 0, 0, 0.2); radius 999px; background `role.bg.raised`; text `fontSize.sm`/18.66 `fontWeight.medium`, `role.text.primary` |
+| light-hover | background `bg.user-message-compact` |
 | light-focus-visible | outline 2px solid #3566f0, offset 2px |
+| light-pressed | background `bg.activity-control` |
 
 #### Dialog (Log in or sign up)
 
@@ -1777,10 +1781,10 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 
 | State | Values |
 |---|---|
-| default | size 364.66 x 47.96; padding 0 `spacing.4` 0 12.0001px; border 1px solid `role.border.strong`; radius 999px; background `role.bg.surface`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.on-accent`; icon 19.98 x 19.98, `role.text.on-accent` |
-| hover | size 365 x `size.control.3xl`; background `surface.elevated-secondary`; icon 20 x 20, `role.text.on-accent` |
-| focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 1px; icon 20 x 20, `role.text.on-accent` |
-| pressed | size 365 x `size.control.3xl`; background `bg.user-message-compact`; icon 20 x 20, `role.text.on-accent` |
+| default | size 364.93 x 47.99; padding 0 `spacing.4` 0 12.0001px; border 1px solid `role.border.strong`; radius 999px; background `role.bg.surface`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.on-accent`; icon 20 x 20, `role.text.on-accent` |
+| hover | size 365 x `size.control.3xl`; background `surface.elevated-secondary` |
+| focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 1px |
+| pressed | size 365 x `size.control.3xl`; background `bg.user-message-compact` |
 | light | size 364.66 x 47.96; padding 0 `spacing.4` 0 12.0001px; border 1px solid rgba(0, 0, 0, 0.2); radius 999px; background `role.bg.raised`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.primary`; icon 19.98 x 19.98, `role.text.primary` |
 | light-hover | size 365 x `size.control.3xl`; background `bg.user-message-compact`; icon 20 x 20, `role.text.primary` |
 | light-focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 1px; icon 20 x 20, `role.text.primary` |
@@ -1799,7 +1803,7 @@ The public chatgpt.com a visitor without an account sees, read in a clean browse
 | error | border 1px solid `variant.danger.ghost.text` |
 | light (same: light-hover) | size 365 x `size.control.3xl`; padding 1px `spacing.4`; border 1px solid `role.border.default`; radius 999px; background `role.bg.page`; text `fontSize.base`/20 `fontWeight.normal`, `role.text.primary`; placeholder `role.text.secondary` |
 | light-focus-visible | outline 2px solid #3566f0, offset 2px |
-| light-error | size 364.97 x `size.control.3xl`; border 1px solid `variant.danger.surface.text` |
+| light-error | size 364.66 x 47.96; border 1px solid `variant.danger.surface.text` |
 
 #### Field error text (Email is not valid.)
 

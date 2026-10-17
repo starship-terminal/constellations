@@ -19,8 +19,8 @@ Tallied over every measured state by the build script.
 - **Shadows**: `#ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px` (92); `#ffffff @ 0.2 0px 0px 1px 0px inset` (22); `#ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset` (20); `#000000 @ 0.08 0px 1px 2px -1px` (20); `#000000 @ 0.05 0px 4px 16px 0px` (14); `#3a83f7 0px 0px 0px 2px` (12).
 - **Focus-visible, dark** (65 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (5); outline 2px solid #3a83f7 offset -2px (4); outline 1px auto #99c8ff offset 1px (4); outline 1px auto #99c8ff offset 0px (4); outline 2px solid #3566f0 offset 2px (4); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); outline 2px solid #2c67c5 offset 0px (3); outline 2px solid #3a83f7 offset 0px (1); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #ffffff @ 0.2 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1); outline 2px solid #3566f0 offset 1px (1); outline 2px solid #3566f0 offset 0px (1).
 - **Focus-visible, light** (65 focused states): shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (23); nothing painted on the element (9); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px inset, #3a83f7 0px 0px 0px 2px inset, #000000 @ 0 0px 0px 0px 0px (5); outline 2px solid #3a83f7 offset -2px (4); outline 2px solid #3a83f7 offset 0px (4); outline 1px auto #005fcc offset 1px (4); outline 1px auto #005fcc offset 0px (4); outline 2px solid #3566f0 offset 2px (4); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px (3); shadow #ffffff @ 0.2 0px 0px 1px 0px inset (1); outline 2px solid #000000 @ 0.15 offset -2px (1); shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, #3a83f7 0px 0px 0px 2px, #000000 @ 0.13 0px 2px 4px -1px (1); outline 2px solid #3566f0 offset 1px (1); outline 2px solid #3566f0 offset 0px (1).
-- **Hover changes, dark** (71 hovered components, 24 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #ffffff @ 0.1 (18); inner layer #ffffff @ 0.1 → #ffffff @ 0.1 (3); backgroundColor #000000 @ 0 → #ffffff @ 0.0509804 (3); backgroundColor #303030 → #ffffff @ 0.1 (2); backgroundColor #ff6764 @ 0.1 → #ff6764 @ 0.2 (2); backgroundColor #ededed → #ededed @ 0.8 (2); backgroundColor #ededed @ 0.05 → #ededed @ 0.1 (2); backgroundColor #ffffff → #e8e8e8 (2).
-- **Hover changes, light** (71 hovered components, 24 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #000000 @ 0.05 (18); inner layer #000000 @ 0.05 → #000000 @ 0.05 (3); backgroundColor #000000 @ 0 → #000000 @ 0.0254902 (3); backgroundColor #f3f3f3 → #000000 @ 0.05 (2); backgroundColor #e02e2a @ 0.1 → #e02e2a @ 0.2 (2); backgroundColor #0d0d0d → #0d0d0d @ 0.8 (2); backgroundColor #0d0d0d @ 0.05 → #0d0d0d @ 0.1 (2); backgroundColor #0d0d0d → #212121 (2).
+- **Hover changes, dark** (71 hovered components, 23 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #ffffff @ 0.1 (18); inner layer #ffffff @ 0.1 → #ffffff @ 0.1 (3); backgroundColor #000000 @ 0 → #ffffff @ 0.0509804 (3); backgroundColor #212121 → #303030 (3); backgroundColor #303030 → #ffffff @ 0.1 (2); backgroundColor #ff6764 @ 0.1 → #ff6764 @ 0.2 (2); backgroundColor #ededed → #ededed @ 0.8 (2); backgroundColor #ededed @ 0.05 → #ededed @ 0.1 (2).
+- **Hover changes, light** (71 hovered components, 23 with no change on the element or its first painted layer): backgroundColor #000000 @ 0 → #000000 @ 0.05 (18); inner layer #000000 @ 0.05 → #000000 @ 0.05 (3); backgroundColor #000000 @ 0 → #000000 @ 0.0254902 (3); backgroundColor #ffffff → #f3f3f3 (3); backgroundColor #f3f3f3 → #000000 @ 0.05 (2); backgroundColor #e02e2a @ 0.1 → #e02e2a @ 0.2 (2); backgroundColor #0d0d0d → #0d0d0d @ 0.8 (2); backgroundColor #0d0d0d @ 0.05 → #0d0d0d @ 0.1 (2).
 
 ### Tokens the measured components use
 
@@ -6025,7 +6025,7 @@ Dark theme.
 | Gap | 6px | = | = | = |
 | Border | 1px solid #ffffff @ 0.2 | = | = | = |
 | Radius | 999px | = | = | = |
-| Background | #212121 | = | = | = |
+| Background | #212121 | #303030 | = | #414141 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #3566f0 offset 2px | = |
 | Font | -apple-system-body 14px/18.6666px 500 | = | = | = |
@@ -6033,7 +6033,7 @@ Dark theme.
 | Colour | #ffffff | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | = | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | = |
+| Painted layers | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #303030 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #414141 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
 
 Light theme.
@@ -6045,7 +6045,7 @@ Light theme.
 | Gap | 6px | = | = | = |
 | Border | 1px solid #000000 @ 0.2 | = | = | = |
 | Radius | 999px | = | = | = |
-| Background | #ffffff | = | = | = |
+| Background | #ffffff | #f3f3f3 | = | #e8e8e8 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #3566f0 offset 2px | = |
 | Font | -apple-system-body 14px/18.6666px 500 | = | = | = |
@@ -6053,7 +6053,7 @@ Light theme.
 | Colour | #0d0d0d | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | = | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | = |
+| Painted layers | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #f3f3f3 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #ffffff border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px outline 2px solid #3566f0 offset 2px | button.x1d5dutw.xewkrzm.xllfjz4 220.0x44.0 bg #e8e8e8 border T:1px solid #000000 @ 0.2 / R:1px solid #000000 @ 0.2 / B:1px solid #000000 @ 0.2 / L:1px solid #000000 @ 0.2 r 999px |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
 
 Crops: `onb-login-card-default.png`, `onb-login-card-hover.png`, `onb-login-card-focus-visible.png`, `onb-login-card-pressed.png`, `onb-login-card-light.png`, `onb-login-card-light-hover.png`, `onb-login-card-light-focus-visible.png`, `onb-login-card-light-pressed.png`.
@@ -6120,7 +6120,7 @@ Dark theme.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 364.66 x 47.96 | 365 x 48 | 365 x 48 | 365 x 48 |
+| Size (w x h) | 364.93 x 47.99 | 365 x 48 | 365 x 48 | 365 x 48 |
 | Padding | 0px 16px 0px 12.0001px | = | = | = |
 | Gap | 8px | = | = | = |
 | Border | 1px solid #ffffff @ 0.2 | = | = | = |
@@ -6134,8 +6134,8 @@ Dark theme.
 | Text node | span: -apple-system-body 16px/20px 500, #ffffff, ls -0.08px | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 19.98 x 19.98, colour #ffffff | 20 x 20, colour #ffffff | 20 x 20, colour #ffffff | 20 x 20, colour #ffffff |
-| Painted layers | a.x6s0dn4.xgwjoxm.x1y0btm7 364.7x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #303030 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px outline 2px solid #3566f0 offset 1px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #414141 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
+| Icon | 20 x 20, colour #ffffff | = | = | = |
+| Painted layers | a.x6s0dn4.xgwjoxm.x1y0btm7 364.9x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #303030 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #212121 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px outline 2px solid #3566f0 offset 1px | a.x6s0dn4.xgwjoxm.x1y0btm7 365.0x48.0 bg #414141 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 999px |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | mouse button held down on it (:hover:active) |
 
 Light theme.
@@ -6192,7 +6192,7 @@ Light theme.
 
 | Property | light | light-hover | light-focus-visible | light-error |
 |---|---|---|---|---|
-| Size (w x h) | 365 x 48 | = | = | 364.97 x 48 |
+| Size (w x h) | 365 x 48 | = | = | 364.66 x 47.96 |
 | Padding | 1px 16px | = | = | = |
 | Border | 1px solid #000000 @ 0.1 | = | = | 1px solid #ba2623 |
 | Radius | 999px | = | = | = |
@@ -6205,7 +6205,7 @@ Light theme.
 | Transition | none | = | = | = |
 | Cursor | text | = | = | = |
 | Placeholder | "Email address" #5d5d5d, opacity 1, 16px | = | = | = |
-| Painted layers | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 999px | = | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 999px outline 2px solid #3566f0 offset 2px | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #fcfcfc border T:1px solid #ba2623 / R:1px solid #ba2623 / B:1px solid #ba2623 / L:1px solid #ba2623 r 999px |
+| Painted layers | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 999px | = | input.x1pw6kkn.x7xwk5j.x1v3hlx4 365.0x48.0 bg #fcfcfc border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 999px outline 2px solid #3566f0 offset 2px | input.x1pw6kkn.x7xwk5j.x1v3hlx4 364.7x48.0 bg #fcfcfc border T:1px solid #ba2623 / R:1px solid #ba2623 / B:1px solid #ba2623 / L:1px solid #ba2623 r 999px |
 | How | at rest | mouse hover | keyboard: focus(), Shift+Tab, Tab | at rest, captured error |
 
 Other finders: error: `() => Q('input[type=email]')`; light-error: `() => Q('input[type=email]')`.

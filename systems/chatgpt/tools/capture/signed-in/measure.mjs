@@ -124,6 +124,9 @@ const HELPERS = () => {
   window.__freeze = () => {
     for (const a of document.getAnimations()) {
       if (typeof CSSAnimation === 'undefined' || !(a instanceof CSSAnimation)) continue;
+      // A scroll-driven animation (the signed-out page's panels) follows the scroll position, not
+      // time; finishing it would jump it to the fully scrolled state and move the layout.
+      if (!(a.timeline instanceof DocumentTimeline)) continue;
       const t = a.effect && a.effect.getComputedTiming();
       if (t && t.iterations === Infinity) { a.pause(); a.currentTime = 0; } else { try { a.finish(); } catch { a.pause(); } }
     }
