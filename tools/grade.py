@@ -37,7 +37,8 @@ SCRIPTED = ("F15", "F16", "K2", "K3")
 METHOD = ("Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are "
           "now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). "
           "Criteria a capture cannot meet are graded not applicable (see each criterion). Every other "
-          "grade is carried over from the {base} review: ")
+          "grade comes from the review that last set it (each package's reviewed date, else the {base} "
+          "review): ")
 
 
 # ---------------------------------------------------------------- the four checks
@@ -189,20 +190,25 @@ META = ("name", "goodFor", "url", "captured", "themes")
 
 
 def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
-             categories: dict | None = None, reviews: dict[str, dict] | None = None) -> dict:
+             categories: dict | None = None, reviews: dict[str, dict] | None = None,
+             review_method: str | None = None) -> dict:
     """The newest audit with each package's details refreshed from the catalog, any fresh
     reviews merged in, scripted grades replaced and capture rules applied. A package in
     the catalog but not in the base audit is left out: it has no reviewed grades yet.
 
     `reviews` maps a slug to {criterion: {grade, evidence}} from a new review of that
-    package; it may only set reviewed criteria, and the package records the review date."""
+    package; it may only set reviewed criteria, and the package records the review date.
+    `review_method` replaces the account of how the reviewed grades were set; later
+    snapshots carry it forward, so it should cover every review still in the scorecard."""
     out = copy.deepcopy(base)
     out.pop("_seq", None)
     out["date"] = date
     out["rubric"] = str(criteria.get("version", base.get("rubric", "1")))
     # A snapshot made from an earlier scripted one still credits the original review.
     out["base"] = base.get("base", base["date"])
-    out["reviewMethod"] = base.get("reviewMethod", base["method"])
+    if review_method and not reviews:
+        raise SystemExit("--method describes a review; pass it with --review")
+    out["reviewMethod"] = review_method or base.get("reviewMethod", base["method"])
     out["method"] = METHOD.format(base=out["base"]) + out["reviewMethod"]
     by_slug = {s["slug"]: s for s in catalog_systems}
     capture_rules = {c["id"]: c["capture"] for c in criteria["criteria"] if c.get("capture")}
@@ -281,6 +287,8 @@ def main() -> None:
     parser.add_argument("--check", action="store_true", help="fail if the newest snapshot is stale")
     parser.add_argument("--review", action="append", default=[], metavar="SLUG=FILE",
                         help="with --write, merge a fresh review of one package (JSON {criterion: {grade, evidence}})")
+    parser.add_argument("--method", metavar="TEXT",
+                        help="with --review, how the reviewed grades were set (replaces the carried-over account)")
     parser.add_argument("--date", default=dt.date.today().isoformat(), help=argparse.SUPPRESS)
     args = parser.parse_args()
     cat = catalog.load_catalog()
@@ -304,7 +312,7 @@ def main() -> None:
     for spec in args.review:
         slug, _, path = spec.partition("=")
         reviews[slug] = json.loads(Path(path).read_text())
-    out = snapshot(criteria, audits[-1], systems, args.date, categories, reviews)
+    out = snapshot(criteria, audits[-1], systems, args.date, categories, reviews, args.method)
     problems = scorecard.check(criteria, audits + [out])
     if problems:
         sys.exit("snapshot problems:\n  " + "\n  ".join(problems))
