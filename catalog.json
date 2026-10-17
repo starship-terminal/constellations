@@ -724,6 +724,9 @@
         ],
         "rounded": "core.radius.",
         "spacing": "core.space."
+      },
+      "layoutGaps": {
+        "patterns.md": "no patterns were written from the capture; the Coverage table records which pattern screens were captured, and the next recapture writes them"
       }
     },
     {
