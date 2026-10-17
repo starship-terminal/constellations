@@ -449,14 +449,13 @@ def accent_feedback(theme_name):
             "text": c("{text.%s-primary}" % panda, f"css-var --panda-colors-text-{panda}-primary"),
             "border": c("{border.%s-primary}" % panda, f"css-var --panda-colors-border-{panda}-primary"),
         }
-    b = lambda prop: comp_val("badge-primary", theme_name, "default", prop)
-    hx = lambda css: over(css, 1.0, css)
+    a = lambda prop: comp_val("alert-info", theme_name, "default", prop)
     fb["info"] = {
-        "fill-subtle": c(hx(b("background-color")), f"Derived: computed 2026-10 blue subtle badge ('PRIMARY', .panda-badge--colorPalette_blue) background {b('background-color')}",
-                         "Brilliant defines no info role; its only neutral-information colour is the blue subtle badge"),
-        "text": c(hx(b("color")), f"Derived: computed 2026-10 blue subtle badge text {b('color')}"),
-        "fill": c("{bg.blue-primary}", "Derived: Panda bg.blue-primary, the solid blue the badge palette pairs with"),
-        "border": c("{border.blue-primary}", "Derived: Panda border.blue-primary (no info border is used in the app)"),
+        "fill-subtle": c("{bg.blue-secondary}", f"computed 2026-10 Settings > Account info alert ([data-slot=alert], class panda-bg_bg.blue.secondary) background {a('background-color')}",
+                         "The info alert's tinted background"),
+        "text": c("{text.primary}", f"computed 2026-10 info alert text {a('color')}"),
+        "fill": c("{bg.blue-primary}", "Derived: Panda bg.blue-primary; no solid info fill is used in the app"),
+        "border": c("{border.blue-primary}", f"Derived: Panda border.blue-primary; the info alert draws no border (border-top-width {a('border-top-width')})"),
     }
     return {"accent": acc, "feedback": fb}
 

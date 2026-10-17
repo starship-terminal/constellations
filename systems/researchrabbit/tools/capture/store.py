@@ -61,6 +61,12 @@ NAMES = {
     'search-start': 'search-start-light-recent',
     'library-notes-empty': 'library-all-light-notes-empty',
     'library-all-selected': 'library-all-light-selected',
+    # 2026-10-17 second pass
+    'library-cite-dialog': 'library-all-light-cite-dialog',
+    'feedback-toast': 'library-all-light-toast',
+    'search-error-citation-missing': 'search-list-light-citation-missing',
+    'search-tablet-inspect': 'search-tablet-light-inspect',
+    'home-narrow-stacked': 'home-narrow-light-stacked',
 }
 
 REF = pathlib.Path(__file__).resolve().parent.parent.parent

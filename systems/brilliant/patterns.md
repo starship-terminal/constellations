@@ -27,7 +27,8 @@ Evidence: [home-dark-default](screenshots/app-2026-10/home-dark-default.png), [s
 - Labels sit above fields (`field-label`, `typography.body.sm`); fields are `size.control-lg` (52px) with a 2px `border.primary` edge and `radius.md`. Focus thickens the edge to `border.active` with an inset 1px ring (`shadow.input-focus`), with no outer glow. See [text-field crops](components/crops/2026-10/text-field-dark-focus-visible.png).
 - The submit button is full width and disabled (`bg.disabled`, `text.disabled`) until the form has a change to save: "Update personal info" in settings, "Sign in" on login, Check in a lesson, Continue in onboarding. It fills in place rather than appearing. See [settings-dark-account](screenshots/app-2026-10/settings-dark-account.png) and [login-light-default](screenshots/login-light-default.png).
 - Secondary form actions are outline buttons at `size.control-sm` inside the row they act on ("Send verification" beside an unverified address), and status sits in badges on the same row (UNVERIFIED in yellow, PRIMARY in blue). See [settings-light-account](screenshots/app-2026-10/settings-light-account.png).
-- Errors: none was triggered, because errors appear only after a submit (see Gaps in [components.md](components.md#gaps)). The stylesheet puts invalid fields in `border.danger-primary` and the message in `text.danger-primary` ([raw/css-rules.json](raw/css-rules.json)).
+- Errors: the product leaves format checks to the browser. An invalid address in Settings > Add another email stops at Chrome's native bubble ("Please include an '@' in the email address") and the field keeps its default `border.primary` edge, so nothing on the page itself turns red. See [settings-dark-email-invalid](screenshots/app-2026-10/settings-dark-email-invalid.png) and [raw/live-readings.json](raw/live-readings.json). The stylesheet also has invalid rules (`border.danger-primary` outline, `text.danger-primary` message, [raw/css-rules.json](raw/css-rules.json)) that this field never showed.
+- Informational notes sit above the form as an info alert (`feedback.info`: `bg.blue-secondary`, `text.primary`, no border, `radius.lg`), for example the no-password notice in Settings > Account. See [alert-info crop](components/crops/2026-10/alert-info-dark-default.png).
 
 ## Empty, loading and error states
 
@@ -35,23 +36,23 @@ Evidence: [home-dark-default](screenshots/app-2026-10/home-dark-default.png), [s
 
 **Search with no result.** The Help Center says so inside the results panel, quoting the query ("No results found for …"), and leaves the topic lists below it. See [help-light-search-empty](screenshots/app-2026-10/help-light-search-empty.png).
 
-**Loading.** Text that depends on account data renders inside skeleton slots (`data-slot=skeleton`, pulsing between `component.skeleton.from` and `to` over `duration.skeleton`), buttons that wait show a 16px spinner in their own label colour, and plan creation gets a full-screen Koji loader. See [plan-dark-creating-plan-loading](screenshots/plan-dark-creating-plan-loading.png).
+**Loading.** Text that depends on account data renders inside skeleton slots (`data-slot=skeleton`, pulsing between `component.skeleton.from` and `to` over `duration.skeleton`); the You page holds its chart's place with one large rounded skeleton block while it loads ([you-dark-loading](screenshots/app-2026-10/you-dark-loading.png), [you-light-loading](screenshots/app-2026-10/you-light-loading.png)). Buttons that wait show a 16px spinner in their own label colour, and plan creation gets a full-screen Koji loader. See [plan-dark-creating-plan-loading](screenshots/plan-dark-creating-plan-loading.png).
 
 **Error.** A missing page is a plain page with a heading and a "Go home" button; no in-app error banner was reached. See [notfound-light-404](screenshots/notfound-light-404.png).
 
 ## Destructive confirmation
 
-**When:** leaving a lesson part-way (the only destructive action reached).
+**When:** leaving a lesson part-way, and deactivating the account.
 
 A centred dialog (`modal-content`, `shadow.md`, `radius.2xl`, max `size.modal-max`) over `special.overlay.default` asks "Are you sure?" and states the cost in one line ("If you quit, you will lose your progress and XP."). The safe choice is the filled full-width button3d ("Keep learning"); the destructive one is a red text button below it ("Quit", `feedback.danger.text`), which only gains a tint on hover (`bg.red-tertiary`) or press. See [lesson-dark-quit-dialog](screenshots/app-2026-10/lesson-dark-quit-dialog.png), [lesson-light-quit-dialog](screenshots/app-2026-10/lesson-light-quit-dialog.png) and the [Quit crops](components/crops/2026-10/button-danger-text-dark-hover.png).
 
-Account deletion lives behind a plain "Deactivate or delete your account" link in Settings and was not opened.
+Deactivating the account is a full page behind a plain "Deactivate or delete your account" link in Settings. It asks why, as a list of checkboxes ("Other" opens a bordered text area), and its solid red "Deactivate account" button (`size.control-md`, pill radius) stays disabled in a dark red tint until a reason is checked. Nothing was submitted. See [deactivate-dark-default](screenshots/app-2026-10/deactivate-dark-default.png), [deactivate-light-other-checked](screenshots/app-2026-10/deactivate-light-other-checked.png) and the [danger button crops](components/crops/2026-10/button-danger-disabled-dark-default.png).
 
 ## Feedback after an action
 
 - **Inline, in place.** The lesson answers Check in the panel itself: the frame border turns `component.lesson.frame-correct` (with a 1s glow) or `frame-retry` (with a 0.45s shake when motion is allowed), Koji's bubble arrives in the same hue, and the footer swaps to a green "Continue" or yellow "Try again". See [lesson-dark-correct](screenshots/lesson-dark-correct.png) and [lesson-dark-retryable](screenshots/lesson-dark-retryable.png).
 - **State change on the control.** Preferences has no save button: its switches and segments change on click and show their new state as the only feedback. See [settings-dark-preferences](screenshots/app-2026-10/settings-dark-preferences.png).
-- **Toast.** The Sonner toaster is mounted on every page, but no look-only action fired one, so its use is not captured.
+- **Toast.** Quick, reversible actions confirm with a Sonner toast at the bottom of the viewport (356px, `radius.lg`, `shadow.base`). Unstarring a topic shows a neutral toast ("Removed from your topics"); starring shows a green success-tinted one ("Added to your learning paths"). Neither has an undo button; the star itself undoes it. See [courses-dark-toast](screenshots/app-2026-10/courses-dark-toast.png), [courses-light-toast-added](screenshots/app-2026-10/courses-light-toast-added.png).
 
 ## Search and filtering
 
