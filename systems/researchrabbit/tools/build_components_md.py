@@ -730,7 +730,7 @@ for k, c in C.items():
                 continue
             s_ = v["style"]
             if s_["outlineStyle"] != "none" and float(s_["outlineWidth"].replace("px", "")) > 0:
-                ring[f"{s_['outlineWidth']} {s_['outlineStyle']} {colour(s_['outlineColor'])}, offset {s_['outlineOffset']}"].append(k)
+                ring[f"{s_['outlineWidth']} {s_['outlineStyle']} {colour(s_['outlineColor'], role="border")}, offset {s_['outlineOffset']}"].append(k)
             elif diff(props(v), props(bv)):
                 changed_f.append(k)
             else:
