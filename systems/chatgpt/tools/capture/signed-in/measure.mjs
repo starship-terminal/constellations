@@ -171,7 +171,7 @@ function styleOf(el, props) {
   for (const pe of ['::before', '::after']) {
     const p = getComputedStyle(el, pe);
     if (p.content && p.content !== 'none' && p.content !== 'normal') {
-      out[pe] = { content: p.content.slice(0, 40), width: p.width, height: p.height, position: p.position, backgroundColor: p.backgroundColor, backgroundImage: p.backgroundImage.slice(0, 200), boxShadow: p.boxShadow, borderTopWidth: p.borderTopWidth, borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor, borderRadius: p.borderRadius, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity, transition: p.transition };
+      out[pe] = { content: p.content.slice(0, 40), width: p.width, height: p.height, position: p.position, backgroundColor: p.backgroundColor, backgroundImage: p.backgroundImage.slice(0, 200), boxShadow: p.boxShadow, borderTopWidth: p.borderTopWidth, borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor, borderRadius: p.borderRadius, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity, transform: p.transform, transition: p.transition };
     }
   }
   const paint = [];
@@ -342,6 +342,14 @@ const SPECS = [
   { key: 'scroll-button', group: 'Thread', title: 'Scroll to bottom button', snap: 'thread-dark-user-turn', find: () => Q('button[aria-label="Scroll to bottom"]'), states: ALLP },
   { key: 'thread-disclaimer', group: 'Thread', title: 'Thread disclaimer', snap: 'thread-dark-code', find: () => TS('ChatGPT can make mistakes'), states: R },
 
+  // ---------------- Feedback (a temporary chat: one prompt sent, then Copy on its code block)
+  { key: 'streaming-dot', group: 'Feedback', title: 'Loading indicator (streaming dot)', snap: 'thread-dark-streaming', find: () => Q('.pulsing-dot'), states: R, desc: 'Where the answer will appear while it is being generated: a 12px dot in the composer colour that pulses (the copy shows one frame).' },
+  { key: 'stop-button', group: 'Feedback', title: 'Icon button (Stop, while streaming)', snap: 'thread-dark-streaming', find: () => Q('[data-testid="stop-button"], button[aria-label*="Stop"]'), states: ALLP, desc: 'The composer\'s send button becomes Stop for as long as the answer streams.' },
+  { key: 'toast', group: 'Feedback', title: 'Toast (error: Couldn\u2019t copy to clipboard)', snap: 'thread-dark-copied', find: () => C(T('Couldn\u2019t copy to clipboard'), '.alert-root'), states: R, desc: 'Copy on a code block failed (the capture browser refuses clipboard writes), and ChatGPT said so in a toast at the top centre: an icon, a bold line, a second line, and a close button.' },
+  { key: 'toast-close', group: 'Feedback', title: 'Icon button (close toast)', snap: 'thread-dark-copied', find: () => C(T('Couldn\u2019t copy to clipboard'), '.alert-root').querySelector('button'), states: ALLP },
+  { key: 'save-chat', group: 'Feedback', title: 'Popover (Save chat, temporary chat)', snap: 'thread-dark-copied', find: () => PW(T('Save chat'), 300), states: R, desc: 'After the first answer in a temporary chat, a popover under the header offers to save the chat to the history.' },
+  { key: 'temp-bubble', group: 'Feedback', title: 'User bubble (temporary chat)', snap: 'thread-dark-copied', find: () => Q('[class*="bg-user-message"]'), states: R, desc: 'In a temporary chat the user bubble keeps the accent fill and gains a dashed outline.' },
+
   // ---------------- Menus
   { key: 'chat-menu', group: 'Menus', title: 'Menu (chat row)', snap: 'home-dark-chat-menu', find: () => Q('[role=menu]'), states: R, desc: 'Rename, Pin, Share, Archive, Delete (danger), Move to project; hairline separators between groups.' },
   { key: 'menu-item', group: 'Menus', title: 'Menu item', snap: 'home-dark-chat-menu', find: () => Q('[role=menu] [role=menuitem]', 0), states: ['default', 'hover', 'pressed'] },
@@ -376,6 +384,7 @@ const SPECS = [
   { key: 'library-error', group: 'Library', title: 'Error state (Failed to load files)', snap: 'library-dark-error', find: () => B('Try again') && B('Try again').parentElement, states: R, desc: 'Shown when the file list request fails (the capture guard refused it); a centred line and a Try again button.' },
   { key: 'retry-button', group: 'Library', title: 'Small button (Try again)', snap: 'library-dark-error', find: () => B('Try again'), states: ALLP },
   { key: 'inline-error', group: 'Library', title: 'Inline error (partial search results)', snap: 'library-dark-search-error', find: () => W(TS('Some search results'), 300), states: R },
+  { key: 'library-loading', group: 'Library', title: 'Loading placeholder (file card shimmer)', snap: 'library-dark-loading', find: () => Q('[class*="LoadingResultsShimmer"]').parentElement, states: R, desc: 'While the file list loads, the grid holds shimmer cards of the file card\'s size (the capture guard held the request open). The shimmer is animated in the product; the copy has no scripts, so it shows one frame.' },
 
   // ---------------- Images and Plugins
   { key: 'images-tab', group: 'Images', title: 'Tab (Images)', snap: 'images-dark', find: () => Q('main [role=tab][aria-selected=false]'), states: ALLP, extra: { selected: { find: () => Q('main [role=tab][aria-selected=true]') } } },
@@ -415,6 +424,18 @@ const SPECS = [
   { key: 'pricing-primary', group: 'Pricing', title: 'Accent button (Rejoin Plus)', snap: 'pricing-dark', find: () => B('Rejoin Plus'), states: ALLP },
   { key: 'pricing-close', group: 'Pricing', title: 'Icon button (Close pricing)', snap: 'pricing-dark', find: () => Q('button[aria-label="Close pricing"]'), states: ALLP },
 
+  // ---------------- Signed out (the public page, read in a clean browser with no account)
+  { key: 'onb-nudge', group: 'Signed out', title: 'Card (sign-in nudge)', snap: 'onboarding-dark', find: () => C(T('Get responses tailored to you'), 'section'), states: R, desc: 'The sidebar card a signed-out visitor sees: a heading, one line on what signing in adds, and a full-width Log in button.' },
+  { key: 'onb-login-header', group: 'Signed out', title: 'Inverted button (Log in, header)', snap: 'onboarding-dark', find: () => [...document.querySelectorAll('button')].find((b) => b.textContent.trim() === 'Log in' && b.getBoundingClientRect().y < 60), states: ALLP },
+  { key: 'onb-signup-header', group: 'Signed out', title: 'Secondary button (Sign up for free)', snap: 'onboarding-dark', find: () => B('Sign up for free'), states: ALLP },
+  { key: 'onb-login-card', group: 'Signed out', title: 'Secondary button (Log in, card)', snap: 'onboarding-dark', find: () => C(T('Get responses tailored to you'), 'section').querySelector('button'), states: ALLP },
+  { key: 'onb-dialog', group: 'Signed out', title: 'Dialog (Log in or sign up)', snap: 'onboarding-dark-signup', find: () => [...document.querySelectorAll('dialog[open], [role=dialog]')].filter((d) => d.getBoundingClientRect().width > 300).pop(), states: R, desc: 'Opened by Sign up for free: three provider buttons, an OR rule, an email field and Continue.' },
+  { key: 'onb-provider', group: 'Signed out', title: 'Outline button (Continue with Google)', snap: 'onboarding-dark-signup', find: () => C(T('Continue with Google'), 'a,button'), states: ALLP },
+  { key: 'onb-email', group: 'Signed out', title: 'Text field (email)', snap: 'onboarding-dark-signup', find: () => Q('input[type=email]'), states: ['default', 'hover', 'focus-visible'],
+    extra: { error: { snap: 'onboarding-dark-email-error', find: () => Q('input[type=email]') } } },
+  { key: 'onb-email-error', group: 'Signed out', title: 'Field error text (Email is not valid.)', snap: 'onboarding-dark-email-error', find: () => C(T('Email is not valid.'), 'p') || T('Email is not valid.'), states: R, desc: 'Shown under the field after Continue with an incomplete address; the field gets a red border and aria-invalid.' },
+  { key: 'onb-continue', group: 'Signed out', title: 'Primary button (Continue)', snap: 'onboarding-dark-signup', find: () => B('Continue'), states: ALLP, extra: { 'after-error': { snap: 'onboarding-dark-email-error', find: () => B('Continue') } } },
+
   // ---------------- Phone (390)
   { key: 'm-header', group: 'Phone', title: 'Phone header', snap: 'mobile-home-dark', find: () => QA('header'), states: R, pad: 0 },
   { key: 'm-composer', group: 'Phone', title: 'Phone composer', snap: 'mobile-home-dark', find: () => P(Q('.ProseMirror').parentElement), states: R },
@@ -451,9 +472,12 @@ async function measureSnap(browser, label, specs, out) {
     return;
   }
   const rest = { x: meta.w - 2, y: Math.round(meta.h / 2) };
-  await page.evaluate(() => window.__saveScroll());
+  // A <dialog open closedby="any"> (the signed-out sign-up sheet) closes itself on a light
+  // dismiss even with scripts gone, so every dialog open in the copy is opened again before each
+  // reading.
+  await page.evaluate(() => { window.__saveScroll(); window.__openDialogs = [...document.querySelectorAll('dialog[open]')]; });
   const resetPage = async () => {
-    await page.evaluate(() => { if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); });
+    await page.evaluate(() => { if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); for (const d of window.__openDialogs || []) if (!d.open) d.setAttribute('open', ''); });
     await page.mouse.move(rest.x, rest.y);
     await page.evaluate(() => { window.__restoreScroll(); window.__freeze(); });
     await page.waitForTimeout(200);

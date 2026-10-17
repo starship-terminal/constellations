@@ -1,14 +1,14 @@
 # ChatGPT components
 
-The discovery list of every page and state captured, the checklist coverage, the shared values, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from chatgpt.com on 2026-10-17, signed in to the owner's account (Free plan, dark theme, blue accent), as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Phone group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account; the only actions were hovering, keyboard focus, opening menus and dialogs and closing them, and typing into the composer and the search fields without sending.
+The discovery list of every page and state captured, the checklist coverage, the shared values, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from chatgpt.com on 2026-10-17, signed in to the owner's account (Free plan, dark theme, blue accent), as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Phone group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was created or deleted in the account. Apart from one prompt sent in a temporary chat (not saved to the history) for the streaming and feedback states, the only actions were hovering, keyboard focus, opening menus and dialogs and closing them, and typing into the composer and the search fields without sending.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (114 components, 588 states). Page geometry is in [raw/layout.json](raw/layout.json).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (130 components, 670 states). Page geometry is in [raw/layout.json](raw/layout.json).
 
 How to read an entry:
 
 - Values are written as tokens from [tokens.json](tokens.json): a colour is the token in that theme's set whose value is the same (`role.text.primary`, `surface.card`, `variant.primary.soft.bg-hover`), a padding, radius or control height the core token that holds it (`spacing.2`, `radius.2xl`, `size.control.lg`). Text is the typography style with the same size, line height and weight (`typography.text-sm`), that style at another weight, or a `fontSize` token with its line height and a `fontWeight` token, then its colour. A raw value is written only where no token holds it.
 - Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example "default (same: pressed)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (584 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) (666 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -16,13 +16,14 @@ Screenshots are named `{page}-{theme}-{state}.png`, 1440 x 900 at 2x; `-full` sh
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home. Captured at rest, with a tooltip, the + menu, a chat row's menu, the account menu, the delete confirmation, the search dialog (empty and with no results), a line typed in the composer, and with the sidebar hidden. | `/` | [chat-menu (dark)](screenshots/home-dark-chat-menu.png), [composer-typed (dark)](screenshots/home-dark-composer-typed.png), [delete-confirm (dark)](screenshots/home-dark-delete-confirm.png), [full (dark)](screenshots/home-dark-full.png), [plus-menu (dark)](screenshots/home-dark-plus-menu.png), [search-empty (dark)](screenshots/home-dark-search-empty.png), [search (dark)](screenshots/home-dark-search.png), [sidebar-collapsed (dark)](screenshots/home-dark-sidebar-collapsed.png), [tooltip (dark)](screenshots/home-dark-tooltip.png), [user-menu (dark)](screenshots/home-dark-user-menu.png), [default (dark)](screenshots/home-dark.png), [chat-menu (light)](screenshots/home-light-chat-menu.png), [composer-typed (light)](screenshots/home-light-composer-typed.png), [delete-confirm (light)](screenshots/home-light-delete-confirm.png), [plus-menu (light)](screenshots/home-light-plus-menu.png), [search-empty (light)](screenshots/home-light-search-empty.png), [search (light)](screenshots/home-light-search.png), [sidebar-collapsed (light)](screenshots/home-light-sidebar-collapsed.png), [tooltip (light)](screenshots/home-light-tooltip.png), [user-menu (light)](screenshots/home-light-user-menu.png), [default (light)](screenshots/home-light.png) |
-| Two threads, their text replaced by same-length filler: one with code blocks (at the bottom, and at its user turn), one with a table and citations. | `/c/<id>` | [code (dark)](screenshots/thread-dark-code.png), [table (dark)](screenshots/thread-dark-table.png), [user-turn (dark)](screenshots/thread-dark-user-turn.png), [code (light)](screenshots/thread-light-code.png), [table (light)](screenshots/thread-light-table.png), [user-turn (light)](screenshots/thread-light-user-turn.png) |
-| Library, grid view, Suggested tab; the error state (the capture guard refused the file list request) and a search with a partial-results banner. | `/library` | [error (dark)](screenshots/library-dark-error.png), [full (dark)](screenshots/library-dark-full.png), [search-error (dark)](screenshots/library-dark-search-error.png), [default (dark)](screenshots/library-dark.png), [error (light)](screenshots/library-light-error.png), [search-error (light)](screenshots/library-light-search-error.png), [default (light)](screenshots/library-light.png) |
+| Home. Captured at rest, with a tooltip, the + menu, a chat row's menu, the account menu, the delete confirmation, the search dialog (empty and with no results), a line typed in the composer, with the sidebar hidden, and a new temporary chat. | `/` | [chat-menu (dark)](screenshots/home-dark-chat-menu.png), [composer-typed (dark)](screenshots/home-dark-composer-typed.png), [delete-confirm (dark)](screenshots/home-dark-delete-confirm.png), [full (dark)](screenshots/home-dark-full.png), [plus-menu (dark)](screenshots/home-dark-plus-menu.png), [search-empty (dark)](screenshots/home-dark-search-empty.png), [search (dark)](screenshots/home-dark-search.png), [sidebar-collapsed (dark)](screenshots/home-dark-sidebar-collapsed.png), [temporary (dark)](screenshots/home-dark-temporary.png), [tooltip (dark)](screenshots/home-dark-tooltip.png), [user-menu (dark)](screenshots/home-dark-user-menu.png), [default (dark)](screenshots/home-dark.png), [chat-menu (light)](screenshots/home-light-chat-menu.png), [composer-typed (light)](screenshots/home-light-composer-typed.png), [delete-confirm (light)](screenshots/home-light-delete-confirm.png), [plus-menu (light)](screenshots/home-light-plus-menu.png), [search-empty (light)](screenshots/home-light-search-empty.png), [search (light)](screenshots/home-light-search.png), [sidebar-collapsed (light)](screenshots/home-light-sidebar-collapsed.png), [temporary (light)](screenshots/home-light-temporary.png), [tooltip (light)](screenshots/home-light-tooltip.png), [user-menu (light)](screenshots/home-light-user-menu.png), [default (light)](screenshots/home-light.png) |
+| Two threads, their text replaced by same-length filler: one with code blocks (at the bottom, and at its user turn), one with a table and citations. Also a temporary chat with one prompt sent: while its answer streams, and after Copy on its code block (the error toast and the Save chat popover). | `/c/<id>` | [code (dark)](screenshots/thread-dark-code.png), [copied (dark)](screenshots/thread-dark-copied.png), [streaming (dark)](screenshots/thread-dark-streaming.png), [table (dark)](screenshots/thread-dark-table.png), [user-turn (dark)](screenshots/thread-dark-user-turn.png), [code (light)](screenshots/thread-light-code.png), [copied (light)](screenshots/thread-light-copied.png), [streaming (light)](screenshots/thread-light-streaming.png), [table (light)](screenshots/thread-light-table.png), [user-turn (light)](screenshots/thread-light-user-turn.png) |
+| Library, grid view, Suggested tab; loading (the capture held the file list request open, so the grid shows its shimmer cards); the error state (the capture guard refused the file list request) and a search with a partial-results banner. | `/library` | [error (dark)](screenshots/library-dark-error.png), [full (dark)](screenshots/library-dark-full.png), [loading (dark)](screenshots/library-dark-loading.png), [search-error (dark)](screenshots/library-dark-search-error.png), [default (dark)](screenshots/library-dark.png), [error (light)](screenshots/library-light-error.png), [loading (light)](screenshots/library-light-loading.png), [search-error (light)](screenshots/library-light-search-error.png), [default (light)](screenshots/library-light.png) |
 | Images, Trending tab. | `/images` | [default (dark)](screenshots/images-dark.png), [default (light)](screenshots/images-light.png) |
 | Plugins. | `/plugins` | [full (dark)](screenshots/plugins-dark-full.png), [default (dark)](screenshots/plugins-dark.png), [default (light)](screenshots/plugins-light.png) |
 | Settings: General, Appearance (and its accent listbox), Keyboard, Data controls, Archived chats, Notifications (with a channel menu open). | `/settings/...` | [accent-menu (dark)](screenshots/settings-dark-accent-menu.png), [appearance (dark)](screenshots/settings-dark-appearance.png), [archived (dark)](screenshots/settings-dark-archived.png), [data-controls (dark)](screenshots/settings-dark-data-controls.png), [general (dark)](screenshots/settings-dark-general.png), [keyboard (dark)](screenshots/settings-dark-keyboard.png), [notifications-menu (dark)](screenshots/settings-dark-notifications-menu.png), [accent-menu (light)](screenshots/settings-light-accent-menu.png), [appearance (light)](screenshots/settings-light-appearance.png), [archived (light)](screenshots/settings-light-archived.png), [data-controls (light)](screenshots/settings-light-data-controls.png), [general (light)](screenshots/settings-light-general.png), [keyboard (light)](screenshots/settings-light-keyboard.png), [notifications-menu (light)](screenshots/settings-light-notifications-menu.png) |
 | The Upgrade dialog over the home. | `/#pricing` | [default (dark)](screenshots/pricing-dark.png), [default (light)](screenshots/pricing-light.png) |
+| Signed out, in a clean browser with no account: the home, the Log in or sign up dialog, and the dialog after Continue with an incomplete address (the email error). | `/ (signed out)` | [email-error (dark)](screenshots/onboarding-dark-email-error.png), [signup (dark)](screenshots/onboarding-dark-signup.png), [default (dark)](screenshots/onboarding-dark.png), [email-error (light)](screenshots/onboarding-light-email-error.png), [signup (light)](screenshots/onboarding-light-signup.png), [default (light)](screenshots/onboarding-light.png) |
 | Home at 390, and the drawer. | `/` | [drawer (dark)](screenshots/mobile-home-dark-drawer.png), [default (dark)](screenshots/mobile-home-dark.png), [drawer (light)](screenshots/mobile-home-light-drawer.png), [default (light)](screenshots/mobile-home-light.png) |
 | The code thread at 390, top and bottom. | `/c/<id>` | [bottom (dark)](screenshots/mobile-thread-dark-bottom.png), [default (dark)](screenshots/mobile-thread-dark.png), [bottom (light)](screenshots/mobile-thread-light-bottom.png), [default (light)](screenshots/mobile-thread-light.png) |
 
@@ -32,10 +33,10 @@ The 19 components of the checklist in [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-
 
 | Component | Entries | States measured |
 |---|---|---|
-| Button | [promo-button](#promo-button), [button-secondary](#button-secondary), [button-danger](#button-danger), [button-outline](#button-outline), [library-new](#library-new), [pricing-primary](#pricing-primary), [button-disabled](#button-disabled) | default, hover, focus-visible, pressed, disabled |
-| Icon button | [header-icon-button](#header-icon-button), [sidebar-icon-button](#sidebar-icon-button), [composer-plus](#composer-plus), [voice-button](#voice-button), [send-button](#send-button), [code-block-button](#code-block-button) | default, hover, focus-visible, pressed |
+| Button | [promo-button](#promo-button), [button-secondary](#button-secondary), [button-danger](#button-danger), [button-outline](#button-outline), [library-new](#library-new), [pricing-primary](#pricing-primary), [button-disabled](#button-disabled), [onb-continue](#onb-continue), [onb-login-header](#onb-login-header), [onb-provider](#onb-provider) | default, hover, focus-visible, pressed, after-error, disabled |
+| Icon button | [header-icon-button](#header-icon-button), [sidebar-icon-button](#sidebar-icon-button), [composer-plus](#composer-plus), [voice-button](#voice-button), [send-button](#send-button), [stop-button](#stop-button), [code-block-button](#code-block-button) | default, hover, focus-visible, pressed |
 | Link | [md-link](#md-link), [text-link](#text-link), [archived-link](#archived-link), [header-upgrade](#header-upgrade) | default, hover, focus-visible, pressed |
-| Text field | [search-field](#search-field), [library-search](#library-search), [plugins-search](#plugins-search), [archived-search](#archived-search), [color-field](#color-field) | default, hover, focus-visible, typed |
+| Text field | [search-field](#search-field), [library-search](#library-search), [plugins-search](#plugins-search), [archived-search](#archived-search), [color-field](#color-field), [onb-email](#onb-email), [onb-email-error](#onb-email-error) | default, hover, focus-visible, typed, error |
 | Text area | [composer](#composer) | default, focus-visible, typed, thread |
 | Select | [select](#select), [code-theme-select](#code-theme-select), [accent-menu](#accent-menu) | default, hover, focus-visible, pressed, open |
 | Checkbox | [checkbox](#checkbox), [checkbox-menu-item](#checkbox-menu-item) | default, hover, focus-visible |
@@ -44,9 +45,9 @@ The 19 components of the checklist in [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-
 | Tabs | [library-tab](#library-tab), [search-tab](#search-tab), [images-tab](#images-tab), [plugins-tab](#plugins-tab) | default, hover, focus-visible, pressed, selected |
 | Menu | [chat-menu](#chat-menu), [menu-item](#menu-item), [menu-item-danger](#menu-item-danger), [plus-menu](#plus-menu), [user-menu](#user-menu) | default, hover, pressed |
 | Tooltip | [tooltip](#tooltip) | default |
-| Dialog | [confirm-dialog](#confirm-dialog), [search-dialog](#search-dialog), [pricing-dialog](#pricing-dialog), [dialog-backdrop](#dialog-backdrop) | default |
-| Toast | not captured: ChatGPT shows a toast only after an action (copying, archiving, sharing), and the capture took no action | - |
-| Card | [promo-card](#promo-card), [library-card](#library-card), [pricing-card](#pricing-card), [image-card](#image-card) | default, hover |
+| Dialog | [confirm-dialog](#confirm-dialog), [search-dialog](#search-dialog), [pricing-dialog](#pricing-dialog), [dialog-backdrop](#dialog-backdrop), [onb-dialog](#onb-dialog) | default |
+| Toast | [toast](#toast), [toast-close](#toast-close), [save-chat](#save-chat) | default, hover, focus-visible, pressed |
+| Card | [promo-card](#promo-card), [library-card](#library-card), [library-loading](#library-loading), [pricing-card](#pricing-card), [image-card](#image-card), [onb-nudge](#onb-nudge) | default, hover, loading |
 | List row | [chat-row](#chat-row), [nav-row](#nav-row), [search-result](#search-result), [archived-row](#archived-row), [plugin-row](#plugin-row), [plugin-row-link](#plugin-row-link), [settings-row](#settings-row) | default, hover, focus-visible, pressed, active, active-library |
 | Table | [md-table](#md-table), [md-th](#md-th), [md-td](#md-td) | default |
 | Avatar | [avatar](#avatar) | default |
@@ -56,17 +57,17 @@ The 19 components of the checklist in [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-
 
 Values that apply across entries, tallied from the measurement file.
 
-**Radius.** `radius.full` (260), `radius.lg` (90), `radius.xl` (50), `radius.2xl` (44), `radius.sm` (12), `radius.3xl` (11), 26px (8), `radius.md` (6), `radius.token-composer-single-line` (4), 3.72px (2).
+**Radius.** `radius.full` (278), `radius.lg` (90), `radius.xl` (52), 999px (50), `radius.2xl` (48), `radius.sm` (12), `radius.3xl` (11), 26px (8), `radius.md` (6), `radius.token-composer-single-line` (6).
 
-**Hover.** Dark: no change on the element (25), transparent to `variant.primary.soft.bg-hover` (18), transparent to `token.border-light` (3), opacity 1 to 0.8 (2), `surface.elevated-secondary` to `variant.primary.soft.bg-hover` (2), `component.button-danger.bg` to `component.button-danger.bg-hover` (2). Light: no change on the element (25), transparent to `variant.primary.soft.bg-hover` (18), transparent to rgba(0, 0, 0, 0.03) (3), text `role.text.secondary` to `role.text.primary` (2), opacity 1 to 0.8 (2), `bg.user-message-compact` to `variant.primary.soft.bg-hover` (2). Ghost buttons, menu items, rows and tabs all hover to `variant.primary.soft.bg-hover` (white at 10% in dark, black at 5% in light); solid neutral buttons drop to 80% opacity instead; the accent send and voice buttons do not change.
+**Hover.** Dark: no change (25), transparent to `variant.primary.soft.bg-hover` (18), ::before transparent to `variant.primary.soft.bg-hover` (3), transparent to `token.border-light` (3), opacity 1 to 0.8 (2), `surface.elevated-secondary` to `variant.primary.soft.bg-hover` (2). Light: no change (25), transparent to `variant.primary.soft.bg-hover` (18), ::before transparent to `variant.primary.soft.bg-hover` (3), transparent to rgba(0, 0, 0, 0.03) (3), text `role.text.secondary` to `role.text.primary` (2), opacity 1 to 0.8 (2). Ghost buttons, menu items, rows and tabs all hover to `variant.primary.soft.bg-hover` (white at 10% in dark, black at 5% in light); solid neutral buttons drop to 80% opacity instead; the accent send and voice buttons do not change.
 
-**Pressed.** 42 of 43 pressed readings (the mouse button held down) look the same as hover. The product's `Button` styles pressed through a data attribute its script sets, so with scripts gone `:active` changes nothing; the pressed colours exist only as tokens (`variant.*.*.bg-active`).
+**Pressed.** 8 of 50 pressed readings (the mouse button held down, so `:active` applies) differ from hover. ChatGPT's `Button` paints its fill on `::before`, and `:active` swaps that layer to the variant's `-active` colour: `variant.primary.ghost.bg-active` (4), white at 16% where hover is 10%. The stylesheet also scales the layer by `--scale`, which no captured button sets, so nothing shrinks. The signed-out page's buttons change their own background instead. The rest (rows, links, tabs and the Tailwind-styled controls) set no `:active` style, so for them pressed is the hover state.
 
-**Focus.** Of 57 elements given a real keyboard focus in dark: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (7), no ring on the element (6), a 2px box-shadow ring (inset) in `role.border.focus` (5), a 2px outline in `role.border.focus`, offset -2px (4), a 2px outline on ::after, offset -1px (3), a 2px outline in `text.info`, offset 0px (2), a 2px outline on ::after, offset 0px (1). In light: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (7), no ring on the element (6), a 2px box-shadow ring (inset) in `role.border.focus` (5), a 2px outline in `role.border.focus`, offset -2px (4), a 2px outline in `role.border.focus`, offset 0px (3), a 2px outline on ::after, offset -1px (3), a 2px outline on ::after, offset 0px (1). The ring is `ring.default` (#3a83f7) at `size.focusRing.width` (2px) with no offset; rows draw it as an inset outline, ghost buttons on their ::after, links and segments fall back to the browser's outline.
+**Focus.** Of 65 elements given a real keyboard focus in dark: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (8), no ring on the element (6), a 2px box-shadow ring (inset) in `role.border.focus` (5), a 2px outline in `role.border.focus`, offset -2px (4), a 2px outline in #3566f0, offset 2px (4), a 2px outline on ::after, offset -1px (3), a 2px outline in `text.info`, offset 0px (3). In light: a 2px box-shadow ring in `role.border.focus` (27), the browser's own outline (auto) (8), no ring on the element (6), a 2px box-shadow ring (inset) in `role.border.focus` (5), a 2px outline in `role.border.focus`, offset -2px (4), a 2px outline in `role.border.focus`, offset 0px (4), a 2px outline in #3566f0, offset 2px (4), a 2px outline on ::after, offset -1px (3). The ring is `ring.default` (#3a83f7) at `size.focusRing.width` (2px) with no offset; rows draw it as an inset outline, ghost buttons on their ::after, links and segments fall back to the browser's outline.
 
 **Disabled.** A disabled button keeps its variant's colours at 40% opacity (`component.button-disabled.opacity`): Restore defaults in Keyboard settings and Your current plan in the pricing dialog.
 
-**Motion.** 0.15s ease (38), 0.15s cubic-bezier(0.4, 0, 0.2, 1) (28), 0.075s ease (8), 0.2s cubic-bezier(0, 0, 0.2, 1) (5), 0.3s cubic-bezier(0.23, 1, 0.32, 1) (2). Colour and opacity changes run at `duration.basic` (150 ms) on `easing.basic` or `easing.in-out`; the reduced-motion rules are listed under `core.duration.$extensions.reducedMotion` in [tokens.json](tokens.json).
+**Motion.** 0.15s ease (38), 0.15s cubic-bezier(0.4, 0, 0.2, 1) (36), 0.075s ease (8), 0.2s cubic-bezier(0, 0, 0.2, 1) (5), 0.3s cubic-bezier(0.23, 1, 0.32, 1) (2), 0.3s cubic-bezier(0.2, 0, 0, 1) (2). Colour and opacity changes run at `duration.basic` (150 ms) on `easing.basic` or `easing.in-out`; the reduced-motion rules are listed under `core.duration.$extensions.reducedMotion` in [tokens.json](tokens.json).
 
 **Layout.** The sidebar is 340 wide at 1440 (`--spacing-token-sidebar` clamps it between 240 and 520), the rail 52, the header 52 tall. The composer and thread share one 768 wide centred column. Settings panes are 768 wide. The Library is a masonry grid of 4 columns at 1440 (`core.layout.grid-columns-library`; `--masonry-columns` steps from 1 to 6 with the container width), Images a 5 column grid and the plugin store 2 columns. On a phone the sidebar is a 260 wide drawer over the page and the column is 358 wide at x 16.
 
@@ -95,8 +96,12 @@ The sidebar every page shares (`aside.LeftPanel`, 340 wide at 1440): a 52px head
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.disabled`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.disabled` |
-| light (same: light-hover, light-focus-visible, light-pressed) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.disabled`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.disabled` |
+| default (same: focus-visible) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.disabled`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.disabled` |
+| hover | ::before `variant.primary.soft.bg-hover` |
+| pressed | ::before `variant.primary.ghost.bg-active` |
+| light (same: light-focus-visible) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.disabled`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.disabled` |
+| light-hover | ::before `variant.primary.soft.bg-hover` |
+| light-pressed | ::before `variant.primary.ghost.bg-focus` |
 
 Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius 8px
 
@@ -192,8 +197,14 @@ Child layers: a 253x20; a 328pxx36px
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed, open) | size 248.11 x `size.control.3xl`; padding 0 `spacing.2`; radius `radius.xl`; background transparent; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.on-accent`; transition opacity 0.15s ease, color 0.15s ease |
-| light (same: light-hover, light-focus-visible, light-pressed, light-open) | size 248.11 x `size.control.3xl`; padding 0 `spacing.2`; radius `radius.xl`; background transparent; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.inverse`; transition opacity 0.15s ease, color 0.15s ease |
+| default (same: focus-visible) | size 248.11 x `size.control.3xl`; padding 0 `spacing.2`; radius `radius.xl`; background transparent; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.on-accent`; transition opacity 0.15s ease, color 0.15s ease |
+| hover | ::before `variant.primary.soft.bg-hover` |
+| pressed | ::before `variant.primary.ghost.bg-active` |
+| open | ::before `variant.primary.soft.bg-hover`, opacity 0.6 |
+| light (same: light-focus-visible) | size 248.11 x `size.control.3xl`; padding 0 `spacing.2`; radius `radius.xl`; background transparent; text `fontSize.xs`/12 `fontWeight.semibold`, `role.text.inverse`; transition opacity 0.15s ease, color 0.15s ease |
+| light-hover | ::before `variant.primary.soft.bg-hover` |
+| light-pressed | ::before `variant.primary.ghost.bg-focus` |
+| light-open | ::before `variant.primary.soft.bg-hover`, opacity 0.6 |
 
 Child layers: button 248.109pxx48px background `variant.primary.soft.bg-hover` radius 12px; div 24x24 background #8a8a8a radius 9999px
 
@@ -351,8 +362,12 @@ Child layers: button 106.2x34 border 1px solid transparent radius 8px; button 36
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.primary` |
-| light (same: light-hover, light-focus-visible, light-pressed) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.primary` |
+| default (same: focus-visible) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.primary` |
+| hover | ::before `variant.primary.soft.bg-hover` |
+| pressed | ::before `variant.primary.ghost.bg-active` |
+| light (same: light-focus-visible) | size 36 x `size.control.lg`; radius `radius.lg`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.primary` |
+| light-hover | ::before `variant.primary.soft.bg-hover` |
+| light-pressed | ::before `variant.primary.ghost.bg-focus` |
 
 Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius 8px
 
@@ -753,6 +768,82 @@ Child layers: td 128x125 border 1px solid `role.border.subtle`
 | default | size 1067 x `size.icon.sm`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `role.text.disabled` |
 | light | size 1067 x `size.icon.sm`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `role.text.disabled` |
 
+### Feedback
+
+What ChatGPT shows around an action, from a temporary chat (one prompt sent, nothing saved to the history): the pulsing dot and the Stop button while the answer streams, the toast after a failed Copy (the capture browser refuses clipboard writes, so the success state could not be shown), and the Save chat popover a temporary chat offers after its first answer.
+
+#### Loading indicator (streaming dot)
+
+<a id="streaming-dot"></a>`streaming-dot`, on thread-dark-streaming. Where the answer will appear while it is being generated: a 12px dot in the composer colour that pulses (the copy shows one frame).
+
+<img src="components/crops/streaming-dot-default.png" alt="Loading indicator (streaming dot), default" height="24"> <img src="components/crops/streaming-dot-light.png" alt="Loading indicator (streaming dot), light" height="24"> 
+
+| State | Values |
+|---|---|
+| default | size 12 x `size.control-font.sm`; radius `radius.full`; background `bg.accent-action` |
+| light | size 12 x `size.control-font.sm`; radius `radius.full`; background `bg.accent-action` |
+
+#### Icon button (Stop, while streaming)
+
+<a id="stop-button"></a>`stop-button`, on thread-dark-streaming. The composer's send button becomes Stop for as long as the answer streams.
+
+<img src="components/crops/stop-button-default.png" alt="Icon button (Stop, while streaming), default" height="36"> <img src="components/crops/stop-button-hover.png" alt="Icon button (Stop, while streaming), hover" height="36"> <img src="components/crops/stop-button-focus-visible.png" alt="Icon button (Stop, while streaming), focus-visible" height="36"> <img src="components/crops/stop-button-pressed.png" alt="Icon button (Stop, while streaming), pressed" height="36"> <img src="components/crops/stop-button-light.png" alt="Icon button (Stop, while streaming), light" height="36"> <img src="components/crops/stop-button-light-hover.png" alt="Icon button (Stop, while streaming), light-hover" height="36"> <img src="components/crops/stop-button-light-focus-visible.png" alt="Icon button (Stop, while streaming), light-focus-visible" height="36"> <img src="components/crops/stop-button-light-pressed.png" alt="Icon button (Stop, while streaming), light-pressed" height="36"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 36 x `size.control.lg`; padding `spacing.0_5`; radius `radius.full`; background `bg.accent-action`; text `typography.text-md`, `role.text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, `role.text.on-accent` |
+| focus-visible | outline 2px solid `text.info`, offset 0px |
+| light (same: light-hover, light-pressed) | size 36 x `size.control.lg`; padding `spacing.0_5`; radius `radius.full`; background `bg.accent-action`; text `typography.text-md`, `role.text.primary`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, `role.text.inverse` |
+| light-focus-visible | outline 2px solid `role.border.focus`, offset 0px |
+
+#### Toast (error: Couldn’t copy to clipboard)
+
+<a id="toast"></a>`toast`, on thread-dark-copied. Copy on a code block failed (the capture browser refuses clipboard writes), and ChatGPT said so in a toast at the top centre: an icon, a bold line, a second line, and a close button.
+
+<img src="components/crops/toast-default.png" alt="Toast (error: Couldn’t copy to clipboard), default" height="66"> <img src="components/crops/toast-light.png" alt="Toast (error: Couldn’t copy to clipboard), light" height="66"> 
+
+| State | Values |
+|---|---|
+| default | size 539.05 x 66; padding `spacing.2` `spacing.3`; border 1px solid `variant.danger.outline.border`; radius `radius.xl`; background `variant.danger.surface.bg`; shadow rgba(0, 0, 0, 0.1) 0px 4px 12px 0px; text `typography.text-md` at `fontWeight.medium`, `text.danger`; icon 16 x 16, `text.danger` |
+| light | size 539.05 x 66; padding `spacing.2` `spacing.3`; border 1px solid `variant.danger.outline.border`; radius `radius.xl`; background `variant.danger.surface.bg`; shadow rgba(0, 0, 0, 0.1) 0px 4px 12px 0px; text `typography.text-md` at `fontWeight.medium`, `text.danger`; icon 16 x 16, `text.danger` |
+
+#### Icon button (close toast)
+
+<a id="toast-close"></a>`toast-close`, on thread-dark-copied.
+
+<img src="components/crops/toast-close-default.png" alt="Icon button (close toast), default" height="24"> <img src="components/crops/toast-close-hover.png" alt="Icon button (close toast), hover" height="24"> <img src="components/crops/toast-close-focus-visible.png" alt="Icon button (close toast), focus-visible" height="24"> <img src="components/crops/toast-close-pressed.png" alt="Icon button (close toast), pressed" height="24"> <img src="components/crops/toast-close-light.png" alt="Icon button (close toast), light" height="24"> <img src="components/crops/toast-close-light-hover.png" alt="Icon button (close toast), light-hover" height="24"> <img src="components/crops/toast-close-light-focus-visible.png" alt="Icon button (close toast), light-focus-visible" height="24"> <img src="components/crops/toast-close-light-pressed.png" alt="Icon button (close toast), light-pressed" height="24"> 
+
+| State | Values |
+|---|---|
+| default | size 24 x `size.control.2xs`; radius `radius.full`; background transparent; text `typography.text-md`, `text.danger`; icon 16 x 16, `text.danger` |
+| hover | background rgba(255, 255, 255, 0.01) |
+| focus-visible | outline 1px auto #99c8ff, offset 0px |
+| pressed | background rgba(255, 255, 255, 0.01) |
+| light (same: light-hover, light-pressed) | size 24 x `size.control.2xs`; radius `radius.full`; background transparent; text `typography.text-md`, `text.danger`; icon 16 x 16, `text.danger` |
+| light-focus-visible | outline 1px auto #005fcc, offset 0px |
+
+#### Popover (Save chat, temporary chat)
+
+<a id="save-chat"></a>`save-chat`, on thread-dark-copied. After the first answer in a temporary chat, a popover under the header offers to save the chat to the history.
+
+<img src="components/crops/save-chat-default.png" alt="Popover (Save chat, temporary chat), default" height="88"> <img src="components/crops/save-chat-light.png" alt="Popover (Save chat, temporary chat), light" height="88"> 
+
+| State | Values |
+|---|---|
+| default | size 320 x 88; radius `radius.2xl`; background `surface.elevated-secondary`; shadow rgba(0, 0, 0, 0.1) 0px 4px 8px -2px; text `fontSize.base`/18 `fontWeight.medium`, `role.text.primary`; transform translate(1112px, 54px); icon 16 x 16, `role.text.disabled` |
+| light | size 320 x 88; radius `radius.2xl`; background `role.bg.raised`; shadow rgba(0, 0, 0, 0.1) 0px 4px 8px -2px; text `fontSize.base`/18 `fontWeight.medium`, `role.text.primary`; transform translate(1112px, 54px); icon 16 x 16, `role.text.disabled` |
+
+#### User bubble (temporary chat)
+
+<a id="temp-bubble"></a>`temp-bubble`, on thread-dark-copied. In a temporary chat the user bubble keeps the accent fill and gains a dashed outline.
+
+<img src="components/crops/temp-bubble-default.png" alt="User bubble (temporary chat), default" height="98"> <img src="components/crops/temp-bubble-light.png" alt="User bubble (temporary chat), light" height="98"> 
+
+| State | Values |
+|---|---|
+| default | size 537.59 x 98; padding `spacing.2_5` `spacing.4`; radius `radius.token-composer-single-line`; background `bg.user-message`; text `fontSize.base`/26 `fontWeight.normal`, `text.user-message` |
+| light | size 537.59 x 98; padding `spacing.2_5` `spacing.4`; radius `radius.token-composer-single-line`; background `bg.user-message`; text `fontSize.base`/26 `fontWeight.normal`, `text.user-message` |
+
 ### Menus
 
 The popovers: the chat row menu, the composer + menu (a popover of buttons, not a role=menu), the account menu, a notification channel's checkbox menu and the accent colour listbox. Menus are 90% surfaces with a 16px backdrop blur.
@@ -1040,9 +1131,13 @@ The file library: title, filter, grid and list view buttons, search, New, pill t
 | State | Values |
 |---|---|
 | default (same: focus-visible) | size 36 x `size.control.lg`; radius `radius.full`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.secondary`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.secondary` |
-| hover, pressed, selected | text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| hover | ::before `variant.primary.soft.bg-hover`; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| pressed | ::before `variant.primary.ghost.bg-active`; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| selected | ::before `variant.primary.soft.bg-hover`; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
 | light (same: light-focus-visible) | size 36 x `size.control.lg`; radius `radius.full`; background transparent; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.secondary`; transition opacity 0.15s ease, color 0.15s ease; icon 20 x 20, `role.text.secondary` |
-| light-hover, light-pressed, light-selected | text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light-hover | ::before `variant.primary.soft.bg-hover`; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light-pressed | ::before `variant.primary.ghost.bg-focus`; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
+| light-selected | ::before `variant.primary.soft.bg-hover`; text `fontSize.sm`/14 `fontWeight.medium`, `role.text.primary`; icon 20 x 20, `role.text.primary` |
 
 Child layers: button 36pxx36px background `variant.primary.soft.bg-hover` radius 9999px
 
@@ -1159,6 +1254,19 @@ Child layers: button 77x24 background `variant.primary.solid.bg` border 1px soli
 | light | size 1003 x 56; padding `spacing.4` 0; background transparent; text `typography.text-md`, `role.text.primary` |
 
 Child layers: button 77x24 background `variant.primary.solid.bg` border 1px solid `role.border.default` radius 9999px
+
+#### Loading placeholder (file card shimmer)
+
+<a id="library-loading"></a>`library-loading`, on library-dark-loading. While the file list loads, the grid holds shimmer cards of the file card's size (the capture guard held the request open). The shimmer is animated in the product; the copy has no scripts, so it shows one frame.
+
+<img src="components/crops/library-loading-default.png" alt="Loading placeholder (file card shimmer), default" height="120"> <img src="components/crops/library-loading-light.png" alt="Loading placeholder (file card shimmer), light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 238.75 x 198.95; radius `radius.2xl`; background transparent; text `typography.text-md`, `role.text.primary` |
+| light | size 238.75 x 198.95; radius `radius.2xl`; background transparent; text `typography.text-md`, `role.text.primary` |
+
+Child layers: div 716.25pxx198.953px
 
 ### Images
 
@@ -1281,8 +1389,8 @@ The settings page (a full page since the redesign, not a dialog): a left nav, th
 
 | State | Values |
 |---|---|
-| default | size 766 x 60; padding `spacing.3` `spacing.4`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
-| light | size 766 x 60; padding `spacing.3` `spacing.4`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| default | size 766 x 60; padding `spacing.3` `spacing.4`; background transparent; ::after `token.border`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
+| light | size 766 x 60; padding `spacing.3` `spacing.4`; background transparent; ::after `token.border`; text `typography.text-sm` at `fontWeight.medium`, `role.text.primary` |
 
 Child layers: div 734pxx1px background `token.border`; button 92.5x36 background `bg.disabled` border 1px solid transparent radius 9999px
 
@@ -1436,8 +1544,8 @@ Child layers: span 32x20 background `variant.primary.soft.ring` radius 9999px; s
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 766 x 62; padding `spacing.3` `spacing.4`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.link`; icon 18 x 18, `role.text.primary` |
-| light (same: light-hover) | size 766 x 62; padding `spacing.3` `spacing.4`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.link`; icon 18 x 18, `role.text.primary` |
+| default (same: hover) | size 766 x 62; padding `spacing.3` `spacing.4`; background transparent; ::after `token.border`; text `typography.text-sm` at `fontWeight.medium`, `role.text.link`; icon 18 x 18, `role.text.primary` |
+| light (same: light-hover) | size 766 x 62; padding `spacing.3` `spacing.4`; background transparent; ::after `token.border`; text `typography.text-sm` at `fontWeight.medium`, `role.text.link`; icon 18 x 18, `role.text.primary` |
 
 Child layers: div 734pxx1px background `token.border`; button 90.8x36 background `bg.disabled` border 1px solid transparent radius 9999px; button 67.8x36 background `component.button-danger.bg` border 1px solid transparent radius 9999px
 
@@ -1588,6 +1696,140 @@ Child layers: main 1440x900 background `role.bg.surface`; button 32x32 border 1p
 | light-focus-visible | focus ring `size.focusRing.width` box-shadow ring in `role.border.focus` |
 | light-pressed | background `variant.primary.soft.bg-hover` |
 
+### Signed out
+
+The public chatgpt.com a visitor without an account sees, read in a clean browser: Log in and Sign up for free in the header, a sign-in nudge card in the sidebar, and the Log in or sign up dialog with its provider buttons, email field and Continue. Continue with an incomplete address shows the field's error state. This page uses its own atomic CSS, not the app's `Button` modules.
+
+#### Card (sign-in nudge)
+
+<a id="onb-nudge"></a>`onb-nudge`, on onboarding-dark. The sidebar card a signed-out visitor sees: a heading, one line on what signing in adds, and a full-width Log in button.
+
+<img src="components/crops/onb-nudge-default.png" alt="Card (sign-in nudge), default" height="120"> <img src="components/crops/onb-nudge-light.png" alt="Card (sign-in nudge), light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 260 x 185; padding `spacing.5`; border T: 1px solid `role.border.default`; background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.on-accent` |
+| light | size 260 x 185; padding `spacing.5`; border T: 1px solid rgba(255, 255, 255, 0.15); background transparent; text `typography.text-sm` at `fontWeight.medium`, `role.text.inverse` |
+
+#### Inverted button (Log in, header)
+
+<a id="onb-login-header"></a>`onb-login-header`, on onboarding-dark.
+
+<img src="components/crops/onb-login-header-default.png" alt="Inverted button (Log in, header), default" height="44"> <img src="components/crops/onb-login-header-hover.png" alt="Inverted button (Log in, header), hover" height="44"> <img src="components/crops/onb-login-header-focus-visible.png" alt="Inverted button (Log in, header), focus-visible" height="44"> <img src="components/crops/onb-login-header-pressed.png" alt="Inverted button (Log in, header), pressed" height="44"> <img src="components/crops/onb-login-header-light.png" alt="Inverted button (Log in, header), light" height="44"> <img src="components/crops/onb-login-header-light-hover.png" alt="Inverted button (Log in, header), light-hover" height="44"> <img src="components/crops/onb-login-header-light-focus-visible.png" alt="Inverted button (Log in, header), light-focus-visible" height="44"> <img src="components/crops/onb-login-header-light-pressed.png" alt="Inverted button (Log in, header), light-pressed" height="44"> 
+
+| State | Values |
+|---|---|
+| default | size 64.03 x `size.control.2xl`; padding 0 `spacing.3`; radius 999px; background `variant.danger.solid.text`; text `typography.text-sm` at `fontWeight.semibold`, `role.text.inverse` |
+| hover | background #e8e8e8 |
+| focus-visible | outline 2px solid #3566f0, offset 2px |
+| pressed | background `variant.secondary.ghost.text` |
+| light | size 64.03 x `size.control.2xl`; padding 0 `spacing.3`; radius 999px; background `role.bg.raised`; text `typography.text-sm` at `fontWeight.semibold`, `role.text.primary` |
+| light-hover | background `bg.activity-control` |
+| light-focus-visible | outline 2px solid #3566f0, offset 2px |
+| light-pressed | background `gray.200` |
+
+#### Secondary button (Sign up for free)
+
+<a id="onb-signup-header"></a>`onb-signup-header`, on onboarding-dark.
+
+<img src="components/crops/onb-signup-header-default.png" alt="Secondary button (Sign up for free), default" height="44"> <img src="components/crops/onb-signup-header-hover.png" alt="Secondary button (Sign up for free), hover" height="44"> <img src="components/crops/onb-signup-header-focus-visible.png" alt="Secondary button (Sign up for free), focus-visible" height="44"> <img src="components/crops/onb-signup-header-pressed.png" alt="Secondary button (Sign up for free), pressed" height="44"> <img src="components/crops/onb-signup-header-light.png" alt="Secondary button (Sign up for free), light" height="44"> <img src="components/crops/onb-signup-header-light-hover.png" alt="Secondary button (Sign up for free), light-hover" height="44"> <img src="components/crops/onb-signup-header-light-focus-visible.png" alt="Secondary button (Sign up for free), light-focus-visible" height="44"> <img src="components/crops/onb-signup-header-light-pressed.png" alt="Secondary button (Sign up for free), light-pressed" height="44"> 
+
+| State | Values |
+|---|---|
+| default | size 128.8 x `size.control.2xl`; padding 0 `spacing.3`; border 1px solid `role.border.strong`; radius 999px; background `role.bg.surface`; text `typography.text-sm` at `fontWeight.semibold`, `role.text.on-accent` |
+| hover | background `surface.elevated-secondary` |
+| focus-visible | outline 2px solid #3566f0, offset 2px |
+| pressed | background `surface.elevated-secondary` |
+| light | size 128.8 x `size.control.2xl`; padding 0 `spacing.3`; border 1px solid rgba(255, 255, 255, 0.2); radius 999px; background `gray.800`; text `typography.text-sm` at `fontWeight.semibold`, `role.text.inverse` |
+| light-hover | background `variant.primary.solid.bg-hover` |
+| light-focus-visible | outline 2px solid #3566f0, offset 2px |
+| light-pressed | background `variant.primary.solid.bg-hover` |
+
+#### Secondary button (Log in, card)
+
+<a id="onb-login-card"></a>`onb-login-card`, on onboarding-dark.
+
+<img src="components/crops/onb-login-card-default.png" alt="Secondary button (Log in, card), default" height="44"> <img src="components/crops/onb-login-card-hover.png" alt="Secondary button (Log in, card), hover" height="44"> <img src="components/crops/onb-login-card-focus-visible.png" alt="Secondary button (Log in, card), focus-visible" height="44"> <img src="components/crops/onb-login-card-pressed.png" alt="Secondary button (Log in, card), pressed" height="44"> <img src="components/crops/onb-login-card-light.png" alt="Secondary button (Log in, card), light" height="44"> <img src="components/crops/onb-login-card-light-hover.png" alt="Secondary button (Log in, card), light-hover" height="44"> <img src="components/crops/onb-login-card-light-focus-visible.png" alt="Secondary button (Log in, card), light-focus-visible" height="44"> <img src="components/crops/onb-login-card-light-pressed.png" alt="Secondary button (Log in, card), light-pressed" height="44"> 
+
+| State | Values |
+|---|---|
+| default (same: hover, pressed) | size 220 x `size.control.2xl`; padding `spacing.2` `spacing.4`; border 1px solid `role.border.strong`; radius 999px; background `role.bg.surface`; text `fontSize.sm`/18.66 `fontWeight.medium`, `role.text.on-accent` |
+| focus-visible | outline 2px solid #3566f0, offset 2px |
+| light (same: light-hover, light-pressed) | size 220 x `size.control.2xl`; padding `spacing.2` `spacing.4`; border 1px solid rgba(255, 255, 255, 0.2); radius 999px; background `gray.800`; text `fontSize.sm`/18.66 `fontWeight.medium`, `role.text.inverse` |
+| light-focus-visible | outline 2px solid #3566f0, offset 2px |
+
+#### Dialog (Log in or sign up)
+
+<a id="onb-dialog"></a>`onb-dialog`, on onboarding-dark-signup. Opened by Sign up for free: three provider buttons, an OR rule, an email field and Continue.
+
+<img src="components/crops/onb-dialog-default.png" alt="Dialog (Log in or sign up), default" height="120"> <img src="components/crops/onb-dialog-light.png" alt="Dialog (Log in or sign up), light" height="120"> 
+
+| State | Values |
+|---|---|
+| default | size 448 x 504; radius 20px; background `surface.elevated-secondary`; shadow rgba(0, 0, 0, 0.22) 0px 24px 64px 0px, rgba(0, 0, 0, 0.12) 0px 4px 16px 0px; text `fontSize.2xl`/32 `fontWeight.normal`, `role.text.on-accent`; transition transform 0.3s cubic-bezier(0.2, 0, 0, 1); transform translate(-224px, -252px); icon 20 x 20, `role.text.on-accent`; placeholder `role.text.on-accent` |
+| light | size 448 x 504; radius 20px; background `variant.primary.solid.bg-hover`; shadow rgba(0, 0, 0, 0.22) 0px 24px 64px 0px, rgba(0, 0, 0, 0.12) 0px 4px 16px 0px; text `fontSize.2xl`/32 `fontWeight.normal`, `role.text.inverse`; transition transform 0.3s cubic-bezier(0.2, 0, 0, 1); transform translate(-224px, -252px); icon 20 x 20, `role.text.inverse`; placeholder `variant.info.solid.text` |
+
+#### Outline button (Continue with Google)
+
+<a id="onb-provider"></a>`onb-provider`, on onboarding-dark-signup.
+
+<img src="components/crops/onb-provider-default.png" alt="Outline button (Continue with Google), default" height="48"> <img src="components/crops/onb-provider-hover.png" alt="Outline button (Continue with Google), hover" height="48"> <img src="components/crops/onb-provider-focus-visible.png" alt="Outline button (Continue with Google), focus-visible" height="48"> <img src="components/crops/onb-provider-pressed.png" alt="Outline button (Continue with Google), pressed" height="48"> <img src="components/crops/onb-provider-light.png" alt="Outline button (Continue with Google), light" height="48"> <img src="components/crops/onb-provider-light-hover.png" alt="Outline button (Continue with Google), light-hover" height="48"> <img src="components/crops/onb-provider-light-focus-visible.png" alt="Outline button (Continue with Google), light-focus-visible" height="48"> <img src="components/crops/onb-provider-light-pressed.png" alt="Outline button (Continue with Google), light-pressed" height="48"> 
+
+| State | Values |
+|---|---|
+| default | size 364.66 x 47.96; padding 0 `spacing.4` 0 12.0001px; border 1px solid `role.border.strong`; radius 999px; background `role.bg.surface`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.on-accent`; icon 19.98 x 19.98, `role.text.on-accent` |
+| hover | size 365 x `size.control.3xl`; background `surface.elevated-secondary`; icon 20 x 20, `role.text.on-accent` |
+| focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 1px; icon 20 x 20, `role.text.on-accent` |
+| pressed | size 365 x `size.control.3xl`; background `bg.user-message-compact`; icon 20 x 20, `role.text.on-accent` |
+| light | size 364.66 x 47.96; padding 0 `spacing.4` 0 12.0001px; border 1px solid rgba(255, 255, 255, 0.2); radius 999px; background `gray.800`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.inverse`; icon 19.98 x 19.98, `role.text.inverse` |
+| light-hover | size 365 x `size.control.3xl`; background `variant.primary.solid.bg-hover`; icon 20 x 20, `role.text.inverse` |
+| light-focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 1px; icon 20 x 20, `role.text.inverse` |
+| light-pressed | size 365 x `size.control.3xl`; background `variant.primary.solid.bg-active`; icon 20 x 20, `role.text.inverse` |
+
+#### Text field (email)
+
+<a id="onb-email"></a>`onb-email`, on onboarding-dark-signup, onboarding-dark-email-error.
+
+<img src="components/crops/onb-email-default.png" alt="Text field (email), default" height="48"> <img src="components/crops/onb-email-hover.png" alt="Text field (email), hover" height="48"> <img src="components/crops/onb-email-focus-visible.png" alt="Text field (email), focus-visible" height="48"> <img src="components/crops/onb-email-light.png" alt="Text field (email), light" height="48"> <img src="components/crops/onb-email-light-hover.png" alt="Text field (email), light-hover" height="48"> <img src="components/crops/onb-email-error.png" alt="Text field (email), error" height="48"> <img src="components/crops/onb-email-light-error.png" alt="Text field (email), light-error" height="48"> <img src="components/crops/onb-email-light-focus-visible.png" alt="Text field (email), light-focus-visible" height="48"> 
+
+| State | Values |
+|---|---|
+| default (same: hover) | size 365 x `size.control.3xl`; padding 1px `spacing.4`; border 1px solid `role.border.default`; radius 999px; background `role.bg.page`; text `fontSize.base`/20 `fontWeight.normal`, `role.text.on-accent`; placeholder `role.text.secondary` |
+| focus-visible | outline 2px solid #3566f0, offset 2px |
+| error | border 1px solid `variant.danger.ghost.text` |
+| light (same: light-hover) | size 365 x `size.control.3xl`; padding 1px `spacing.4`; border 1px solid rgba(255, 255, 255, 0.15); radius 999px; background `variant.info.solid.text`; text `fontSize.base`/20 `fontWeight.normal`, `role.text.inverse`; placeholder `gray.200` |
+| light-focus-visible | outline 2px solid #3566f0, offset 2px |
+| light-error | size 364.86 x 47.98; border 1px solid `variant.danger.outline.text` |
+
+#### Field error text (Email is not valid.)
+
+<a id="onb-email-error"></a>`onb-email-error`, on onboarding-dark-email-error. Shown under the field after Continue with an incomplete address; the field gets a red border and aria-invalid.
+
+<img src="components/crops/onb-email-error-default.png" alt="Field error text (Email is not valid.), default" height="24"> <img src="components/crops/onb-email-error-light.png" alt="Field error text (Email is not valid.), light" height="24"> 
+
+| State | Values |
+|---|---|
+| default | size 364.66 x 15.99; padding 0 `spacing.4`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, `text.danger` |
+| light | size 364.93 x `size.icon.sm`; padding 0 `spacing.4`; background transparent; text `fontSize.xs`/16 `fontWeight.normal`, #ff6764 |
+
+#### Primary button (Continue)
+
+<a id="onb-continue"></a>`onb-continue`, on onboarding-dark-signup, onboarding-dark-email-error.
+
+<img src="components/crops/onb-continue-default.png" alt="Primary button (Continue), default" height="48"> <img src="components/crops/onb-continue-hover.png" alt="Primary button (Continue), hover" height="48"> <img src="components/crops/onb-continue-focus-visible.png" alt="Primary button (Continue), focus-visible" height="48"> <img src="components/crops/onb-continue-pressed.png" alt="Primary button (Continue), pressed" height="48"> <img src="components/crops/onb-continue-light.png" alt="Primary button (Continue), light" height="48"> <img src="components/crops/onb-continue-light-hover.png" alt="Primary button (Continue), light-hover" height="48"> <img src="components/crops/onb-continue-after-error.png" alt="Primary button (Continue), after-error" height="48"> <img src="components/crops/onb-continue-light-after-error.png" alt="Primary button (Continue), light-after-error" height="48"> <img src="components/crops/onb-continue-light-focus-visible.png" alt="Primary button (Continue), light-focus-visible" height="48"> <img src="components/crops/onb-continue-light-pressed.png" alt="Primary button (Continue), light-pressed" height="48"> 
+
+| State | Values |
+|---|---|
+| default (same: after-error) | size 364.66 x 47.96; padding 0 `spacing.4`; border 1px solid `variant.danger.solid.text`; radius 999px; background `variant.danger.solid.text`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.inverse` |
+| hover | size 365 x `size.control.3xl`; background #e8e8e8 |
+| focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 0px |
+| pressed | size 365 x `size.control.3xl`; background `variant.secondary.ghost.text` |
+| light | size 364.97 x `size.control.3xl`; padding 0 `spacing.4`; border 1px solid `variant.primary.soft.bg`; radius 999px; background `role.bg.raised`; text `fontSize.base`/20 `fontWeight.medium`, `role.text.primary` |
+| light-hover | size 365 x `size.control.3xl`; background `bg.activity-control` |
+| light-focus-visible | size 365 x `size.control.3xl`; outline 2px solid #3566f0, offset 0px |
+| light-pressed | size 365 x `size.control.3xl`; background `gray.200` |
+| light-after-error | size 364.86 x 47.98 |
+
 ### Phone
 
 The same app at 390 wide: the header, the two-row composer, the drawer, the user bubble and a code block.
@@ -1662,16 +1904,27 @@ Child layers: div 36x36 background `role.bg.page` radius 8px; button 36pxx36px b
 
 ## Icon index
 
-66 icons were lifted from the sprite symbols inlined in the page copies into [icons/](icons), named by their sprite id. [icons/INDEX.tsv](icons/INDEX.tsv) indexes each by role, where it is drawn most (action 34, header action 11, message action 7, composer action 6, menu item 6, navigation 1, content 1), with every role it plays, its sprite id, viewBox, the sizes it was drawn at and the control it labels. ChatGPT draws them through `<use href="sprites-core-*.svg#name">` at 20px (`size.icon.lg`), 16px (`size.icon.sm`) or 12px, filled in currentColor, paired with 14px labels in rows and menus and alone (with an aria-label) in 36px icon buttons. A few glyphs are CSS masks or inline SVG and are not in the folder. The icons are OpenAI's property, kept for reference only.
+80 icons were lifted from the sprite symbols inlined in the page copies into [icons/](icons), named by their sprite id. [icons/INDEX.tsv](icons/INDEX.tsv) indexes each by role, where it is drawn most (action 37, header action 16, message action 8, navigation 7, composer action 6, menu item 5, content 1), with every role it plays, its sprite id, viewBox, the sizes it was drawn at and the control it labels. ChatGPT draws them through `<use href="sprites-core-*.svg#name">` at 20px (`size.icon.lg`), 16px (`size.icon.sm`) or 12px, filled in currentColor, paired with 14px labels in rows and menus and alone (with an aria-label) in 36px icon buttons. A few glyphs are CSS masks or inline SVG and are not in the folder. The icons are OpenAI's property, kept for reference only.
 
 | Icon | Role | Sizes | Where it was used |
 |---|---|---|---|
 | `books-light-20` | navigation | 20 | Library |
+| `lightweight-sidebar-compose` | navigation | 20 | New chat |
+| `lightweight-sidebar-external-link` | navigation | 16 | See plans and pricing |
+| `lightweight-sidebar-help` | navigation | 20 | OpenAI Help |
+| `lightweight-sidebar-images` | navigation | 20 | Images |
+| `lightweight-sidebar-plans` | navigation | 20 | See plans and pricing |
+| `lightweight-sidebar-plugins` | navigation | 20 | Plugins |
+| `bookmark-light-16` | header action |  | Save chat |
+| `bookmark-light-20` | header action | 20 | Save chat |
+| `chat-bubble-checkmark-dashed-light-20` | header action | 20 | Turn off temporary chat |
 | `chat-bubble-dashed-light-20` | header action | 20 | Temporary chat |
+| `chevron-down-lg-light-16` | header action | 16 | Personalized |
 | `chevron-down-md-light-20` | header action | 20 | Add |
 | `drag-light-16` | header action |  | Dock Chat |
 | `gear-light-16` | header action |  | Manage |
 | `gear-light-20` | header action | 20 | Manage |
+| `lightweight-sidebar-sidebar` | header action | 20 | Close sidebar |
 | `minus-sm-light-20` | header action |  | Minimize chat |
 | `sidebar-hidden-light-16` | header action |  | Show sidebar |
 | `sidebar-hidden-light-20` | header action | 20 | Show sidebar |
@@ -1688,10 +1941,10 @@ Child layers: div 36x36 background `role.bg.page` radius 8px; button 36pxx36px b
 | `arrow-up-right-arrow-down-left-md-light-16` | message action |  | - |
 | `arrow-up-right-arrow-down-left-sm-light-20` | message action | 20 | - |
 | `globe-light-12` | message action | 12 | - |
+| `play-light-20` | message action | 20 | - |
 | `square-on-square-light-16` | message action |  | - |
 | `square-on-square-light-20` | message action | 20 | Copy Dark theme |
 | `text-overflow-light-20` | message action | 20 | - |
-| `chat-bubble-light-20` | menu item | 20 | Sample title 11 |
 | `help-light-20` | menu item | 20 | Help |
 | `open-base-arrow-forward-light-16` | menu item |  | Log out |
 | `open-base-arrow-forward-light-20` | menu item | 20 | Log out |
@@ -1704,6 +1957,7 @@ Child layers: div 36x36 background `role.bg.page` radius 8px; button 36pxx36px b
 | `arrows-clockwise-rotate-lg-light-16` | action | 16 | - |
 | `brain-light-16` | action |  | Thinking |
 | `brain-light-20` | action | 20 | Thinking |
+| `chat-bubble-light-20` | action | 20 | Restore floating chat: New chat |
 | `chevron-down-md-light-16` | action | 16 | New |
 | `chevron-right-md-light-16` | action | 16 | Advanced |
 | `credit-card-light-20` | action | 20 | Billing |
@@ -1714,6 +1968,8 @@ Child layers: div 36x36 background `role.bg.page` radius 8px; button 36pxx36px b
 | `folder-light-16` | action | 16 | Filter archived chats by project |
 | `folder-light-20` | action | 20 | Storage |
 | `laptop-light-20` | action | 20 | - |
+| `lightweight-sidebar-deep-research` | action | 20 | Deep research |
+| `lightweight-sidebar-settings` | action | 20 | Settings |
 | `list-bullet-light-20` | action | 20 | List view |
 | `magnifying-glass-lg-light-16` | action | 16 | Search |
 | `magnifying-glass-lg-light-20` | action | 20 | Search |
@@ -1735,13 +1991,11 @@ Child layers: div 36x36 background `role.bg.page` radius 8px; button 36pxx36px b
 
 ## Gaps
 
-- Toast: ChatGPT shows one only after an action (copy, archive, share, delete), and the capture took none.
-- Pressed: the product switches its pressed styles from script, so the pressed readings equal hover; the `-active` colours are in the tokens only.
-- Loading: no skeleton or spinner was on screen in any copy; the streaming text speed (`duration.animation-duration-streaming-text`, 700 ms) is from the CSS only.
-- Forms with a validation error: no form in reach validates without submitting it.
-- Onboarding: the account is past its first run.
+- Toast: only the error toast was seen. The capture browser refuses clipboard writes, so Copy failed; the success state (the button's check mark) was not shown.
+- Loading: the Library's file shimmer (the capture held its request open) and a streaming answer (the pulsing dot and Stop) were captured as single frames; the animations themselves and the streaming text speed (`duration.animation-duration-streaming-text`, 700 ms) are from the CSS only. A button's own loader (`ButtonLoader`) was not seen.
+- Forms with a validation error and onboarding were read on the signed-out page, which is built with a different CSS system (atomic `x…` class names) from the signed-in app, so its values match the app's tokens only where the colours coincide. The account's own first-run flow is past.
 - Message text, chat, project and file titles, Library thumbnails and the installed plugins were replaced or blanked in the copies before they left the browser, so widths that depend on text are those of the filler.
 - Hover and focus on the 390 wide copies were not measured (a phone has neither).
 - The light theme was read by setting every `data-theme="dark"` to light in the copies, not by changing the account's appearance. Only the Blue accent was captured; switching it is an account setting.
-- Not captured: a streaming answer, voice mode, Work mode, Codex, Scheduled, a project page, the share dialog, the Account, Billing and Personalization panes, since each either sends something, spends quota or shows account details.
+- Not captured: voice mode, Work mode, Codex, Scheduled, a project page, the share dialog, the Account, Billing and Personalization panes, since each either spends quota, changes the account or shows account details. One prompt was sent, in a temporary chat, for the streaming and feedback states.
 

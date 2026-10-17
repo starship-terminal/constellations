@@ -213,6 +213,35 @@ def font(fz, lh, fw, f):
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh_)} {fw}"
 
 
+def scale_of(t):
+    m = re.fullmatch(r"matrix\(([\d.]+), 0, 0, ([\d.]+), (-?[\d.]+), (-?[\d.]+)\)", t or "")
+    if m and m.group(1) == m.group(2) and m.group(1) != "1":
+        return f"scale({num(m.group(1))})"
+    return None
+
+
+def pseudo(p):
+    """A painted ::before or ::after, in tokens; None when it paints nothing."""
+    if not p or p.get("opacity") == "0":
+        return None
+    bits = []
+    if p.get("backgroundColor") not in (None, "rgba(0, 0, 0, 0)", "transparent"):
+        bits.append(colour(p["backgroundColor"]))
+    if p.get("boxShadow") not in (None, "none"):
+        layers = [x.strip() for x in re.split(r",(?![^(]*\))", colour(p["boxShadow"], tokens=False))]
+        layers = [x for x in layers if not x.startswith("transparent") and not re.fullmatch(r"(rgba\(0, 0, 0, 0\)|#0000|#00000000) 0px 0px 0px 0px( inset)?", x)]
+        if layers:
+            bits.append("shadow " + ", ".join(layers))
+    if not bits:
+        return None
+    sc = scale_of(p.get("transform"))
+    if sc:
+        bits.append(sc)
+    if p.get("opacity") not in (None, "1"):
+        bits.append(f"opacity {p['opacity']}")
+    return ", ".join(bits)
+
+
 def props(v):
     s = v["style"]
     o = {}
@@ -245,6 +274,12 @@ def props(v):
             o["shadow"] = ", ".join(layers)
     if s.get("backdropFilter", "none") != "none":
         o["backdrop"] = s["backdropFilter"]
+    # ChatGPT's Button paints its fill on ::before (hover and pressed change that layer, not the
+    # element), so both pseudo-elements are part of every state's values.
+    for pe in ("::before", "::after"):
+        layer = pseudo(v.get(pe))
+        if layer:
+            o[pe] = layer
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
         o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], role='border')}, offset {s['outlineOffset']}"
     ring = re.search(r"(rgb\([^)]*\)) 0px 0px 0px ([1-9][\d.]*px)( inset)?", s["boxShadow"])
@@ -285,7 +320,7 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "focus ring", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "::before", "::after", "backdrop", "outline", "focus ring", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
@@ -354,6 +389,7 @@ GROUP_INTRO = {
     "Home": "The new-chat page: one heading over the composer, three suggestion rows, and the Plus nudge card at the bottom.",
     "Composer": "The composer shared by the home and a thread: a 768 wide pill with the + button, the ProseMirror field, Think, Dictate and the voice button, which becomes Send once there is text.",
     "Thread": "A conversation: the user bubble in the accent colour, the assistant's markdown (paragraphs, headings, strong, inline code, code blocks, tables, links), the actions under a turn and the scroll-to-bottom button. Message text in the copies is same-length filler.",
+    "Feedback": "What ChatGPT shows around an action, from a temporary chat (one prompt sent, nothing saved to the history): the pulsing dot and the Stop button while the answer streams, the toast after a failed Copy (the capture browser refuses clipboard writes, so the success state could not be shown), and the Save chat popover a temporary chat offers after its first answer.",
     "Menus": "The popovers: the chat row menu, the composer + menu (a popover of buttons, not a role=menu), the account menu, a notification channel's checkbox menu and the accent colour listbox. Menus are 90% surfaces with a 16px backdrop blur.",
     "Dialogs": "The delete confirmation (420 wide, a danger action and Cancel) and the global search dialog with its filter tabs and empty state.",
     "Library": "The file library: title, filter, grid and list view buttons, search, New, pill tabs, then a masonry grid of file cards with a hover checkbox. Also its error state and a partial-results banner.",
@@ -361,17 +397,19 @@ GROUP_INTRO = {
     "Plugins": "The plugin store: Plugins / Skills tabs, a search field and plugin rows. The installed plugins were blanked in the copy.",
     "Settings": "The settings page (a full page since the redesign, not a dialog): a left nav, then panes of 60 to 64 tall rows with switches, select buttons, outline buttons and danger buttons.",
     "Pricing": "The Upgrade dialog: a full-screen sheet with a Personal / Business radio segment and plan cards.",
+    "Signed out": "The public chatgpt.com a visitor without an account sees, read in a clean browser: Log in and Sign up for free in the header, a sign-in nudge card in the sidebar, and the Log in or sign up dialog with its provider buttons, email field and Continue. Continue with an incomplete address shows the field's error state. This page uses its own atomic CSS, not the app's `Button` modules.",
     "Phone": "The same app at 390 wide: the header, the two-row composer, the drawer, the user bubble and a code block.",
 }
 
 PAGE_DESC = [
-    ("home", "Home. Captured at rest, with a tooltip, the + menu, a chat row's menu, the account menu, the delete confirmation, the search dialog (empty and with no results), a line typed in the composer, and with the sidebar hidden.", "/"),
-    ("thread", "Two threads, their text replaced by same-length filler: one with code blocks (at the bottom, and at its user turn), one with a table and citations.", "/c/<id>"),
-    ("library", "Library, grid view, Suggested tab; the error state (the capture guard refused the file list request) and a search with a partial-results banner.", "/library"),
+    ("home", "Home. Captured at rest, with a tooltip, the + menu, a chat row's menu, the account menu, the delete confirmation, the search dialog (empty and with no results), a line typed in the composer, with the sidebar hidden, and a new temporary chat.", "/"),
+    ("thread", "Two threads, their text replaced by same-length filler: one with code blocks (at the bottom, and at its user turn), one with a table and citations. Also a temporary chat with one prompt sent: while its answer streams, and after Copy on its code block (the error toast and the Save chat popover).", "/c/<id>"),
+    ("library", "Library, grid view, Suggested tab; loading (the capture held the file list request open, so the grid shows its shimmer cards); the error state (the capture guard refused the file list request) and a search with a partial-results banner.", "/library"),
     ("images", "Images, Trending tab.", "/images"),
     ("plugins", "Plugins.", "/plugins"),
     ("settings", "Settings: General, Appearance (and its accent listbox), Keyboard, Data controls, Archived chats, Notifications (with a channel menu open).", "/settings/..."),
     ("pricing", "The Upgrade dialog over the home.", "/#pricing"),
+    ("onboarding", "Signed out, in a clean browser with no account: the home, the Log in or sign up dialog, and the dialog after Continue with an incomplete address (the email error).", "/ (signed out)"),
 ]
 MOBILE_DESC = [
     ("mobile-home", "Home at 390, and the drawer.", "/"),
@@ -380,10 +418,10 @@ MOBILE_DESC = [
 
 # Which measured entries show each component of the checklist in docs/DESIGN-SYSTEM.md.
 CHECKLIST = [
-    ("Button", ["promo-button", "button-secondary", "button-danger", "button-outline", "library-new", "pricing-primary", "button-disabled"]),
-    ("Icon button", ["header-icon-button", "sidebar-icon-button", "composer-plus", "voice-button", "send-button", "code-block-button"]),
+    ("Button", ["promo-button", "button-secondary", "button-danger", "button-outline", "library-new", "pricing-primary", "button-disabled", "onb-continue", "onb-login-header", "onb-provider"]),
+    ("Icon button", ["header-icon-button", "sidebar-icon-button", "composer-plus", "voice-button", "send-button", "stop-button", "code-block-button"]),
     ("Link", ["md-link", "text-link", "archived-link", "header-upgrade"]),
-    ("Text field", ["search-field", "library-search", "plugins-search", "archived-search", "color-field"]),
+    ("Text field", ["search-field", "library-search", "plugins-search", "archived-search", "color-field", "onb-email", "onb-email-error"]),
     ("Text area", ["composer"]),
     ("Select", ["select", "code-theme-select", "accent-menu"]),
     ("Checkbox", ["checkbox", "checkbox-menu-item"]),
@@ -392,9 +430,9 @@ CHECKLIST = [
     ("Tabs", ["library-tab", "search-tab", "images-tab", "plugins-tab"]),
     ("Menu", ["chat-menu", "menu-item", "menu-item-danger", "plus-menu", "user-menu"]),
     ("Tooltip", ["tooltip"]),
-    ("Dialog", ["confirm-dialog", "search-dialog", "pricing-dialog", "dialog-backdrop"]),
-    ("Toast", []),
-    ("Card", ["promo-card", "library-card", "pricing-card", "image-card"]),
+    ("Dialog", ["confirm-dialog", "search-dialog", "pricing-dialog", "dialog-backdrop", "onb-dialog"]),
+    ("Toast", ["toast", "toast-close", "save-chat"]),
+    ("Card", ["promo-card", "library-card", "library-loading", "pricing-card", "image-card", "onb-nudge"]),
     ("List row", ["chat-row", "nav-row", "search-result", "archived-row", "plugin-row", "plugin-row-link", "settings-row"]),
     ("Table", ["md-table", "md-th", "md-td"]),
     ("Avatar", ["avatar"]),
@@ -429,7 +467,7 @@ icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n
 
 W("# ChatGPT components")
 W()
-W(f"The discovery list of every page and state captured, the checklist coverage, the shared values, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from chatgpt.com on {META['read']}, signed in to the owner's account (Free plan, dark theme, blue accent), as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Phone group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account; the only actions were hovering, keyboard focus, opening menus and dialogs and closing them, and typing into the composer and the search fields without sending.")
+W(f"The discovery list of every page and state captured, the checklist coverage, the shared values, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from chatgpt.com on {META['read']}, signed in to the owner's account (Free plan, dark theme, blue accent), as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Phone group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was created or deleted in the account. Apart from one prompt sent in a temporary chat (not saved to the history) for the streaming and feedback states, the only actions were hovering, keyboard focus, opening menus and dialogs and closing them, and typing into the composer and the search fields without sending.")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). Page geometry is in [raw/layout.json](raw/layout.json).")
 W()
@@ -462,9 +500,11 @@ for name, keys in CHECKLIST:
     if not have:
         W(f"| {name} | not captured: ChatGPT shows a toast only after an action (copying, archiving, sharing), and the capture took no action | - |")
         continue
-    states = sorted({re.sub(r"^light-?", "", s) or "default" for k in have for s, v in C[k]["states"].items() if "style" in v}, key=lambda x: ["default", "hover", "focus-visible", "pressed", "selected", "active", "checked", "open", "typed", "highlighted"].index(x) if x in ["default", "hover", "focus-visible", "pressed", "selected", "active", "checked", "open", "typed", "highlighted"] else 99)
+    states = sorted({re.sub(r"^light-?", "", s) or "default" for k in have for s, v in C[k]["states"].items() if "style" in v}, key=lambda x: ["default", "hover", "focus-visible", "pressed", "selected", "active", "checked", "open", "typed", "highlighted", "error"].index(x) if x in ["default", "hover", "focus-visible", "pressed", "selected", "active", "checked", "open", "typed", "highlighted", "error"] else 99)
     if any("disabled" in C[k]["title"].lower() for k in have):
         states.append("disabled")
+    if any("loading" in C[k]["title"].lower() for k in have):
+        states.append("loading")
     W(f"| {name} | {', '.join(f'[{k}](#{k})' for k in have)} | {', '.join(states)} |")
 W()
 
@@ -519,10 +559,15 @@ for cid, c in C.items():
             ctr[f"text {colour(a['style']['color'], role='text')} to {colour(b['style']['color'], role='text')}"] += 1
         elif a["style"]["opacity"] != b["style"]["opacity"]:
             ctr[f"opacity {a['style']['opacity']} to {b['style']['opacity']}"] += 1
+        elif pseudo(a.get("::before")) != pseudo(b.get("::before")):
+            ctr[f"::before {pseudo(a.get('::before')) or 'transparent'} to {pseudo(b.get('::before')) or 'transparent'}"] += 1
         else:
-            ctr["no change on the element"] += 1
-pressed_same = sum(1 for c in C.values() for n, s in c["states"].items() if n == "pressed" and "style" in s and c["states"].get("hover", {}).get("style") == s["style"])
-pressed_all = sum(1 for c in C.values() for n, s in c["states"].items() if n == "pressed" and "style" in s)
+            ctr["no change"] += 1
+THEME[0] = "dark"
+pressed_pairs = [(k, c["states"]["hover"], s) for k, c in C.items() for n, s in c["states"].items() if n == "pressed" and "style" in s and "style" in c["states"].get("hover", {})]
+pressed_all = len(pressed_pairs)
+pressed_diff = [k for k, h, s in pressed_pairs if props(h) != props(s)]
+pressed_layers = collections.Counter(pseudo(s.get("::before")) for k, h, s in pressed_pairs if k in pressed_diff and pseudo(s.get("::before")) != pseudo(h.get("::before")))
 
 
 def top(ctr, n):
@@ -533,7 +578,7 @@ W(f"**Radius.** {top(radii, 10)}.")
 W()
 W(f"**Hover.** Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. Ghost buttons, menu items, rows and tabs all hover to `variant.primary.soft.bg-hover` (white at 10% in dark, black at 5% in light); solid neutral buttons drop to 80% opacity instead; the accent send and voice buttons do not change.")
 W()
-W(f"**Pressed.** {pressed_same} of {pressed_all} pressed readings (the mouse button held down) look the same as hover. The product's `Button` styles pressed through a data attribute its script sets, so with scripts gone `:active` changes nothing; the pressed colours exist only as tokens (`variant.*.*.bg-active`).")
+W(f"**Pressed.** {len(pressed_diff)} of {pressed_all} pressed readings (the mouse button held down, so `:active` applies) differ from hover. ChatGPT's `Button` paints its fill on `::before`, and `:active` swaps that layer to the variant's `-active` colour: {top(pressed_layers, 4)}, white at 16% where hover is 10%. The stylesheet also scales the layer by `--scale`, which no captured button sets, so nothing shrinks. The signed-out page's buttons change their own background instead. The rest (rows, links, tabs and the Tailwind-styled controls) set no `:active` style, so for them pressed is the hover state.")
 W()
 W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 8)}. In light: {top(focus['light'], 8)}. The ring is `ring.default` (#3a83f7) at `size.focusRing.width` (2px) with no offset; rows draw it as an inset outline, ghost buttons on their ::after, links and segments fall back to the browser's outline.")
 W()
@@ -601,15 +646,13 @@ W()
 
 W("## Gaps")
 W()
-W("- Toast: ChatGPT shows one only after an action (copy, archive, share, delete), and the capture took none.")
-W("- Pressed: the product switches its pressed styles from script, so the pressed readings equal hover; the `-active` colours are in the tokens only.")
-W("- Loading: no skeleton or spinner was on screen in any copy; the streaming text speed (`duration.animation-duration-streaming-text`, 700 ms) is from the CSS only.")
-W("- Forms with a validation error: no form in reach validates without submitting it.")
-W("- Onboarding: the account is past its first run.")
+W("- Toast: only the error toast was seen. The capture browser refuses clipboard writes, so Copy failed; the success state (the button's check mark) was not shown.")
+W("- Loading: the Library's file shimmer (the capture held its request open) and a streaming answer (the pulsing dot and Stop) were captured as single frames; the animations themselves and the streaming text speed (`duration.animation-duration-streaming-text`, 700 ms) are from the CSS only. A button's own loader (`ButtonLoader`) was not seen.")
+W("- Forms with a validation error and onboarding were read on the signed-out page, which is built with a different CSS system (atomic `x…` class names) from the signed-in app, so its values match the app's tokens only where the colours coincide. The account's own first-run flow is past.")
 W("- Message text, chat, project and file titles, Library thumbnails and the installed plugins were replaced or blanked in the copies before they left the browser, so widths that depend on text are those of the filler.")
 W("- Hover and focus on the 390 wide copies were not measured (a phone has neither).")
 W("- The light theme was read by setting every `data-theme=\"dark\"` to light in the copies, not by changing the account's appearance. Only the Blue accent was captured; switching it is an account setting.")
-W("- Not captured: a streaming answer, voice mode, Work mode, Codex, Scheduled, a project page, the share dialog, the Account, Billing and Personalization panes, since each either sends something, spends quota or shows account details.")
+W("- Not captured: voice mode, Work mode, Codex, Scheduled, a project page, the share dialog, the Account, Billing and Personalization panes, since each either spends quota, changes the account or shows account details. One prompt was sent, in a temporary chat, for the streaming and feedback states.")
 W()
 
 open("components.md", "w").write("\n".join(L) + "\n")
