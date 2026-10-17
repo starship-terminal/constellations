@@ -5,7 +5,7 @@
 PYTHON ?= python3
 PORT ?= 8800
 
-.PHONY: help setup serve build docs scorecard grade check test design-md lint-design-md clean
+.PHONY: help setup serve build docs scorecard grade check test brief design-md lint-design-md clean
 
 help: ## List the targets
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-14s %s\n", $$1, $$2}'
@@ -28,11 +28,15 @@ scorecard: ## Validate the scorecard's audit data
 grade: ## Re-grade the scripted criteria into a new audit snapshot, then rewrite every README's Health section
 	@$(PYTHON) tools/grade.py --write && $(PYTHON) tools/scorecard.py --check
 
-check: ## Validate catalog.json against the packages; fail on a stale DESIGN.md, scorecard or Health section
+check: ## Validate catalog.json against the packages; fail on a stale Brief, DESIGN.md, scorecard or Health section
 	@$(PYTHON) tools/catalog.py check
+	@$(PYTHON) tools/brief.py --check
 	@$(PYTHON) tools/grade.py --check
 
-design-md: ## Regenerate every package's DESIGN.md from its tokens and README
+brief: ## Rewrite every package README's Brief from its catalog entry, tokens and README
+	@$(PYTHON) tools/brief.py
+
+design-md: brief ## Rewrite every Brief, then regenerate every package's DESIGN.md from its tokens and README
 	@$(PYTHON) tools/catalog.py design-md
 
 lint-design-md: ## Lint every DESIGN.md with Google's pinned linter (needs Node.js; runs npx in a temp dir)
