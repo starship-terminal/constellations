@@ -220,9 +220,10 @@ def index_page(criteria: dict, audit: dict) -> str:
     md += "</div>\n\n## Scorecard\n\n"
     md += heatmap(criteria, systems, audit) + "\n\n" + legend() + "\n\n"
     md += ('!!! info "Reading the grades"\n\n'
-           "    These are captures of other companies' products, so the top layers (principles, voice, "
-           "per-component behaviour) are usually missing: a capture records how a product looks, not "
-           "why. [How each criterion is judged](criteria.md).\n")
+           "    These are captures of other companies' products. Principles, voice and per-component "
+           "behaviour are optional for a capture: they count where the product publishes them and are "
+           "otherwise not applicable, because a capture records how a product looks, not why. "
+           "[How each criterion is judged](criteria.md).\n")
     return md
 
 
@@ -279,13 +280,13 @@ def criteria_page(criteria: dict, audit: dict) -> str:
     md += f"| {badge('partly')} | Some of it is there; the evidence says what is missing |\n"
     md += f"| {badge('missing')} | Absent |\n"
     md += (f"| {badge('na')} | The product has no such thing (a dark theme on a light-only product), or the "
-           "criterion cannot be met by a capture (marked below) |\n\n")
+           "criterion is optional for a capture and the product does not publish it (marked below) |\n\n")
     md += f"## How the audit was run\n\n{esc(audit['method'])}\n\n"
     for layer in criteria["layers"].values():
         md += f"## {layer}\n\n| | Criterion | Done when |\n|---|---|---|\n"
         for c in criteria["criteria"]:
             if c["layer"] == layer:
-                capture = f"<br>*Not applicable to a capture:* {esc(c['capture'])}" if c.get("capture") else ""
+                capture = f"<br>*Optional for a capture:* {esc(c['optional'])}" if c.get("optional") else ""
                 groups = wordings(c)
                 rule = (esc(groups[0][1]) if len(groups) == 1 else
                         "<br>".join(f"*{platform_label(names)}:* {esc(text)}" for names, text in groups))

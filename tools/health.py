@@ -81,9 +81,12 @@ def package_section(criteria: dict, audit: dict, system: dict) -> str:
                   "`python3 tools/grade.py --write --review " + slug + "=<grades.json>`.", ""]
     else:
         n = tally(graded["grades"])
-        na = [cid for cid, g in graded["grades"].items() if g["grade"] == "na"]
+        opt = {c["id"] for c in criteria["criteria"] if c.get("optional")}
+        na = [cid for cid, g in graded["grades"].items() if g["grade"] == "na" and cid not in opt]
+        unpublished = [cid for cid, g in graded["grades"].items() if g["grade"] == "na" and cid in opt]
         when = reviewed(audit, graded)
-        text = (f"Scorecard: **{summary(n)}**" + (f"; {', '.join(na)} do not apply to a capture" if na else "")
+        text = (f"Scorecard: **{summary(n)}**" + (f"; {', '.join(na)} do not apply" if na else "")
+                + (f"; {', '.join(unpublished)} are optional for a capture and not published" if unpublished else "")
                 + f". Grades last reviewed {when}, package captured {system.get('captured', 'on an unknown date')}.")
         if system.get("captured", "") > when:
             text += " **Re-review due**: the capture is newer than the review."

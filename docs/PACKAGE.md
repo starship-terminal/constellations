@@ -90,7 +90,8 @@ package's folder, between the `health:start` and `health:end` markers. It
 says:
 
 - how many scorecard criteria the package meets, partly meets and misses,
-  leaving out the ones a capture cannot meet (C5, V1 and V2);
+  leaving out the ones that do not apply, including the optional ones (C5,
+  V1 and V2) where the product does not publish them;
 - every criterion it partly meets or misses, missing first, with the
   reviewer's evidence, which is the to-do list for its next capture;
 - when its grades were last reviewed and when it was captured, flagging a

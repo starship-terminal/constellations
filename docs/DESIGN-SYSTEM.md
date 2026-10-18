@@ -194,6 +194,13 @@ foundations and thin on the layers a product does not publish.
 | Components | Partial. Crops of real components and some states; no behaviour specs |
 | Patterns | Screenshots of whole pages, but no written patterns |
 | Principles and voice | Almost none. A capture cannot see the reasons |
+
+When the scorecard grades a capture, three criteria are **optional**:
+principles (V1), voice (V2) and per-component behaviour (C5). They count when
+the product publishes them (a design-system site, a content guide) and are
+otherwise graded not applicable, never missing, because a capture records how
+a product looks, not why. Every other criterion is required. For a design
+system of your own, all of them are required.
 | Assets | Icons where licensing allowed; no fonts |
 
 Polaris is the exception, because Shopify published its system. Read its

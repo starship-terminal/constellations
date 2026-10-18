@@ -117,9 +117,11 @@ illustrations or brand colours into something that ships
   while those are stale, and warns when a package was captured after its
   reviewed grades were set: re-review that package against
   `scorecard/criteria.json` and merge the result with
-  `python3 tools/grade.py --write --review <slug>=<grades.json>`, adding `--method "<text>"` to say how the review was done (it replaces the carried-over account, so cover every review still in the scorecard). Criteria marked `capture` in `scorecard/criteria.json` (C5, V1,
-  V2) are not applicable to a captured package; never grade them from a
-  capture.
+  `python3 tools/grade.py --write --review <slug>=<grades.json>`, adding `--method "<text>"` to say how the review was done (it replaces the carried-over account, so cover every review still in the scorecard). Criteria marked `optional` in `scorecard/criteria.json` (C5,
+  V1, V2) are graded only where the product publishes them (Polaris's
+  component guidance, say), with that source as evidence; otherwise leave
+  them out of a review and they become not applicable, never missing. Never
+  infer them from screenshots.
 - **Grade a package against its platform's wording.** Each catalog entry has a
   `platform` (`web`, `mobile` or `desktop`). In `scorecard/criteria.json` a
   criterion's `doneWhen` is the web wording, and `platforms` holds the mobile

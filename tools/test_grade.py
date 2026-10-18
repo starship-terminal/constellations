@@ -118,14 +118,14 @@ class DoAndDontTest(unittest.TestCase):
 class SnapshotTest(unittest.TestCase):
     CRITERIA = {"version": "2", "layers": {"F": "Foundations"}, "criteria": [
         {"id": "F15", "layer": "Foundations", "title": "Contrast", "doneWhen": "x"},
-        {"id": "V1", "layer": "Foundations", "title": "Principles", "doneWhen": "y", "capture": "not visible"},
+        {"id": "V1", "layer": "Foundations", "title": "Principles", "doneWhen": "y", "optional": "where published"},
         {"id": "C1", "layer": "Foundations", "title": "Coverage", "doneWhen": "z"}]}
     BASE = {"date": "2026-10-16", "rubric": "1", "method": "Review.", "_seq": 1, "systems": [
         {"slug": "x", "grades": {"F15": {"grade": "meets", "evidence": "old"},
                                  "V1": {"grade": "missing", "evidence": "none"},
                                  "C1": {"grade": "partly", "evidence": "11/19"}}}]}
 
-    def test_scripted_grades_replace_capture_rules_apply_and_reviews_carry_over(self):
+    def test_scripted_grades_replace_optional_rules_apply_and_reviews_carry_over(self):
         fresh = {"F15": {"grade": "partly", "evidence": "Script: new"}}
         with mock.patch.object(grade, "scripted", return_value=fresh):
             out = grade.snapshot(self.CRITERIA, self.BASE, [{"slug": "x"}], "2026-10-17")
@@ -183,10 +183,28 @@ class RefreshAndReviewTest(unittest.TestCase):
         with mock.patch.object(grade, "scripted", return_value={}), self.assertRaises(SystemExit):
             grade.snapshot(self.CRITERIA, self.BASE, [self.SOURCE], "2026-10-17", {}, None, "Text.")
 
-    def test_a_review_cannot_set_scripted_or_capture_criteria(self):
-        for cid in ("F15", "V1"):
+    def test_a_review_cannot_set_scripted_or_unknown_criteria(self):
+        for cid in ("F15", "Z9"):
             with self.assertRaises(SystemExit):
-                self.make({"x": {cid: {"grade": "meets", "evidence": "x"}}})
+                self.make({"x": {cid: {"grade": "meets", "evidence": "x"}, "C1": {"grade": "meets", "evidence": "x"}}})
+
+    def test_an_optional_grade_counts_when_published_and_never_reads_missing(self):
+        kept = self.make({"x": {"C1": {"grade": "meets", "evidence": "x"},
+                                "V1": {"grade": "partly", "evidence": "principles page"}}})
+        self.assertEqual(kept["systems"][0]["grades"]["V1"], {"grade": "partly", "evidence": "principles page"})
+        dropped = self.make({"x": {"C1": {"grade": "meets", "evidence": "x"},
+                                   "V1": {"grade": "missing", "evidence": "none"}}})
+        self.assertEqual(dropped["systems"][0]["grades"]["V1"]["grade"], "na")
+        # A later snapshot with no review keeps the published grade.
+        with mock.patch.object(grade, "scripted", return_value={}):
+            later = grade.snapshot(self.CRITERIA, kept, [self.SOURCE], "2026-10-18")
+        self.assertEqual(later["systems"][0]["grades"]["V1"]["grade"], "partly")
+
+    def test_the_review_sheet_lists_optional_criteria_apart(self):
+        lines = grade.review_sheet(self.CRITERIA, {"slug": "x", "platform": "web"})
+        opt = next(i for i, l in enumerate(lines) if l.startswith("Optional:"))
+        self.assertTrue(lines[opt + 1].startswith("V1"))
+        self.assertFalse(any(l.startswith("V1") for l in lines[:opt]))
 
     def test_a_first_review_adds_a_package_and_an_unknown_slug_is_refused(self):
         new = {**self.SOURCE, "slug": "y", "name": "Y"}
@@ -239,7 +257,7 @@ class PlatformTest(unittest.TestCase):
         {"id": "F5", "layer": "Foundations", "title": "Accent states", "doneWhen": "Default, hover and pressed.",
          "platforms": {"mobile": "Default and pressed."}},
         {"id": "F15", "layer": "Foundations", "title": "Contrast", "doneWhen": "x", "platforms": {"mobile": "m"}},
-        {"id": "V1", "layer": "Foundations", "title": "Principles", "doneWhen": "y", "capture": "not visible",
+        {"id": "V1", "layer": "Foundations", "title": "Principles", "doneWhen": "y", "optional": "where published",
          "platforms": {"mobile": "m"}},
         {"id": "C1", "layer": "Foundations", "title": "Coverage", "doneWhen": "z"}]}
     # Rubric 2: no platform recorded, so the reviewed grades were set against the web wording.
@@ -275,7 +293,7 @@ class PlatformTest(unittest.TestCase):
         problems, warnings = self.stale(self.snap())
         self.assertEqual(problems, [])
         self.assertEqual(len(warnings), 1)
-        # Only reviewed criteria count: F15 is scripted and V1 a capture rule.
+        # Only reviewed criteria count: F15 is scripted and V1 optional.
         self.assertIn("app: reviewed grades for F5 were set against the web wording; re-review it against "
                       "the mobile wording (`python3 tools/grade.py --criteria app`)", warnings[0])
 
@@ -305,9 +323,11 @@ class PlatformTest(unittest.TestCase):
     def test_the_review_sheet_gives_each_reviewed_criterion_in_the_platform_wording(self):
         sheet = grade.review_sheet(self.CRITERIA, self.SOURCES[0])
         self.assertIn("app is a mobile package", sheet[0])
-        self.assertIn("F15, V1 are set automatically", sheet[0])
-        self.assertEqual(sheet[1:], ["F5   Accent states (mobile wording): Default and pressed.",
-                                     "C1   Coverage: z"])
+        self.assertIn("F15 is set automatically", sheet[0])
+        self.assertEqual(sheet[1:3], ["F5   Accent states (mobile wording): Default and pressed.",
+                                      "C1   Coverage: z"])
+        self.assertTrue(sheet[3].startswith("Optional:"))
+        self.assertEqual(sheet[4], "V1   Principles (mobile wording): m")
         self.assertIn("F5   Accent states: Default, hover and pressed.", grade.review_sheet(self.CRITERIA, self.SOURCES[1]))
 
 
