@@ -586,7 +586,7 @@ W(f"**Radius.** {top(radii, 10)}. The density tokens name four of them: `radius.
 W()
 W(f"**Hover.** Manus hovers with a translucent fill, not a colour change. Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. The two fills are `fill.tsp-white-light` (4%) and `fill.tsp-white-main` (6%); the current nav tab rests on the 6% fill and hovers to it.")
 W()
-W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 6)}. In light: {top(focus['light'], 6)}. Most of Manus's controls are `div`s with `role=button` and draw no ring; the inset 1px ring is Radix's menu item focus, the 2px blue ring (`text.blue`, offset 2) is the composer's send button and the theme cards.")
+W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 6)}. In light: {top(focus['light'], 6)}. Most of the focused elements are real `<button>`s, and most draw no ring; the 1px rings at offset -1px are the resting hairline of outlined buttons and the composer's chips, the same with or without focus; the 2px blue ring (`text.blue`, offset 2) is on the promo card, the Computers setup card and the Computers Customize band, and not on the send button or the theme cards, which draw none.")
 W()
 W(f"**Motion.** {top(trans, 6)}. Nearly every transition is Tailwind's `transition-colors` at 150 ms on the standard curve; the sidebar's width is 200 ms, the task column's theme cross-fade 500 ms, the segmented thumb 200 ms on transform.")
 W()
