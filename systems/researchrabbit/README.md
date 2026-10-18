@@ -42,8 +42,8 @@ production bundle ([raw/app-code-notes.md](raw/app-code-notes.md)).
 | [components.md](components.md) | Every page and component with crops and measured values (each colour, shadow and radius named by its token), the shared values, the icon index, and the gaps |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png`, at 2x |
 | [icons/](icons) | SVGs lifted from the pages, plus the graph's own canvas glyphs (`graph-*.svg`), named in [icons/INDEX.tsv](icons/INDEX.tsv). ResearchRabbit's property, kept for reference only |
-| [screenshots/](screenshots) | `{page}-light-{state}.png`, 2880 x 1800 renders (1440 x 900 at 2x) of each captured state; the two `library-mobile` ones are 390 x 844 at 2x |
-| [raw/](raw) | The unprocessed readings: [graph-code-notes.md](raw/graph-code-notes.md) (the engine, read from the production bundle, with identifiers and byte offsets), [app-code-notes.md](raw/app-code-notes.md) (the breakpoints, toast timing and reduced-motion search, read from the same bundle), [css-vars.json](raw/css-vars.json) (the `:root` properties, every styled-component's rules, the rules on bare elements, the @media conditions and keyframes), [components-computed.json](raw/components-computed.json) (computed styles per component and state, with the date each page was read) |
+| [screenshots/](screenshots) | `{page}-light-{state}.png`, 51 renders at 2x of each captured state: 47 are 2880 x 1800 (1440 x 900), the two `library-mobile` ones 780 x 1688 (390 x 844), `home-narrow` 1600 x 1800 (800 x 900) and `search-tablet` 2000 x 1600 (1000 x 800) |
+| [raw/](raw) | The unprocessed readings: [graph-code-notes.md](raw/graph-code-notes.md) (the engine, read from the production bundle, with identifiers and byte offsets), [app-code-notes.md](raw/app-code-notes.md) (the breakpoints, toast timing and reduced-motion search, read from the same bundle), [css-vars.json](raw/css-vars.json) (the `:root` properties, every styled-component's rules, the rules on bare elements, the @media conditions and keyframes), [components-computed.json](raw/components-computed.json) (computed styles per component and state, with the date each page was read), [graph-tokens.json](raw/graph-tokens.json) (the engine's constants transcribed from the code notes, each naming the identifier it was read from, for `build_tokens.py`) |
 | [tools/](tools) | The builders and the capture kit. See Rebuild |
 
 ## Brief
@@ -127,7 +127,8 @@ the minifier left with readable names (`GraphEngine`, `GraphArticle`,
 `GraphEdge`, `GraphLabel`, `DEFAULT_LAYOUT_SETTINGS`). The notes quote only
 short formula excerpts; no bundle code is committed.
 
-Screens were captured from the built-in browser at a 1440 x 900 viewport with
+Screens were captured from the built-in browser at a 1440 x 900 viewport
+(1000 x 800, 800 x 900 and 390 x 844 for the width checks) with
 [snapshot.js](tools/capture/snapshot.js): a static copy of the DOM with the
 CSSOM inlined and the canvas swapped for its own 2x bitmap, so each graph
 state is kept exactly as drawn. [unsnap.py](tools/capture/unsnap.py) writes the
@@ -186,8 +187,10 @@ italic. Both named families are open source on
 Google Fonts, which the style guide links; the citation box uses whatever
 monospace face the browser has.
 
-Every text line read computes to a line height of 1.5 times its size (14/21,
-16/24, 24/36, 32/48), the html default; only bare spans drop to 1em. The
+Almost every text line read computes to a line height of 1.5 times its size
+(14/21, 16/24, 24/36, 32/48), the html default. Spans drop to 1em, and three
+elements set their own: the legend tooltip (`line-height: 1`, 12/12), the
+library's Find in list field (14/14) and the tip banner's line (12/14). The
 element defaults give the heading scale: h1 32px 600, h2 28px, h3 24px (also
 the dialog title), h4 16px 500, h5 14px 600, and labels 14px 500. The one
 monospace text is the formatted citation in Cite Article, 12/18 in the
@@ -198,14 +201,14 @@ stack is declared but nothing uses it.
 
 | Group | What the tokens hold | Where it came from |
 |---|---|---|
-| Colour ramps | `core.palette`: a nine-step grey, three to four steps of turquoise, green, lavender and peach, three of the selection blue, nine collection colours, the status trios, and the alphas the rules use | The 80 `:root` properties; the product defines no longer ramps |
+| Colour ramps | `core.palette`: a nine-step grey, three to four steps of turquoise, green, lavender and peach, three of the selection blue, eight collection colours and the unsorted colour, the status trios, and the alphas the rules use | The 80 `:root` properties; the product defines no longer ramps |
 | Backgrounds | `light.background`: page (body), surface, raised (dialogs), overlay (menus), scrim, plus the glass panel, section and hint fills | Rules on `body`, `Modal__Content`, `Dropdown__Content`, `Modal__Overlay` |
 | Text | default (the inherited black most text uses), primary, secondary, tertiary, disabled, inverse, on-accent, link, link-hover | Rules and the computed link colour |
 | Borders | default, strong, rule, field, line, focus, the browser focus ring (`#005fcc`), drawer; widths in `core.borderWidth` (1px everywhere, a 2px select ring, a 4px slider ring) | Rules |
 | Actions | primary black with hover and pressed `#333333`, the lavender accent, quiet fills, the focus ring colour, the peach danger fill | Rules and computed pressed states |
 | Status | success, warning, danger and info, each with fill, text and border | The `--activity-*` properties, the typed-phrase box and the notice banner |
 | Sizing | controls 24, 32, 40 and 56px, the 37px field, icons 14, 16, 18 and 20px, a 1px focus ring at offset 0 | Rules, computed heights and icon sizes |
-| Elevation | `light.elevation`: menu, popup (popovers, tooltips), toast and dialog shadows, and the 1px inset rings (strong, field, field-dark, highlight) that stand in for borders; the declared `--shadow-s/m/l` are unused | Rules |
+| Elevation | `light.elevation`: menu, popup (popovers, tooltips), toast and dialog shadows, and the 1px inset rings (strong, field, field-dark, highlight) that stand in for borders. Of the declared `--shadow-*` properties only `--shadow-l` is used, by the yellow Commander bar (`elevation.l`), which no screenshot shows; `--shadow-s`, `--shadow-m` and the three `-dark` ones have no captured rule | Rules |
 | Motion | 150 to 500ms transitions (enter 200ms, exit 150ms), 400ms dialog and popover entrances on `cubic-bezier(0.16, 1, 0.3, 1)`, the default `ease` for panels and drawers, `ease-out` on the scrollbar, a linear 1.1s spinner, toasts held 4s (2s after hover) | Rules, computed transitions, the bundle |
 | Layout | the 640px Screen too small breakpoint, the script breakpoints sm 640, md 768, xmd 896, lg 1024, xl 1280, 2xl 1536, three home cards per row stacking to one below 896px, 1400px home column, 650px Account Settings, 500 to 800px dialogs, 220 to 500px menus, 290 to 390px right panel, z-index 1 to 3 | Rules, `@media`, the bundle and computed layout |
 
@@ -236,14 +239,27 @@ split a main card from the 290 to 390px right panel, which shrinks to
   states from 2026-10-17. The `:root` properties were identical on both dates,
   so the palette is the same, but a component read only on the first date
   may have changed since.
-- **Pressed is the hover fill.** No captured rule styles `:active`, so the
-  pressed tokens repeat the hover colours. A pressed state was read only on
-  the 2026-10-17 pages.
+- **Pressed is the hover fill.** No captured rule styles `:active` except
+  the slider thumb's cursor, so the pressed tokens repeat the hover
+  colours. A pressed state was read only on the 2026-10-17 pages.
 - **Status roles are a mapping.** The `--activity-*` colours are measured;
   which one is a fill, a text or a border colour is this package's reading of
   where the product uses them. No captured status surface draws a border.
 - **The danger button was seen only disabled**, at the opacity a disabled
   button gets, so its enabled fill and text are not captured.
+- **The Filter Go button is not the popover's.** Its entry in
+  [components.md](components.md#filter-go-button) and `light.action.go`
+  (`#61dce2`, white text) were read from `Commander__GoButton` inside the
+  Commander bar, a yellow bar fixed at the bottom left whose rule sets
+  opacity 0, not from the popover; the popover's Go is grey text. Its crop
+  is byte for byte the filter popover crop. No screenshot shows the
+  Commander bar, so its yellow (`palette.literal.toast`) and its
+  `--shadow-l` (`elevation.l`) were never seen drawn.
+- **The library's article panel has an unmeasured shadow.** In
+  [library-all-light-selected](screenshots/library-all-light-selected.png) it
+  draws a 1px `#c9cdd3` border and a soft drop shadow, as the captured
+  `LibraryInspector__StyledInspector` rule says (`rgba(0, 0, 0, 0.1) 0px 6px
+  12px`). No measured component and no token covers it.
 - **Six colours are still screenshot samples** (the corner glows, the
   drawer's idle Search button, the search summary's white half, the card
   rule); their tokens say so.
@@ -282,7 +298,7 @@ name the file that shows them; the rest say why not.
 | Text field | Captured | [text field](components.md#text-field), [home search field](components.md#home-search-field), [drawer inputs](components.md#drawer-inputs) |
 | Text area | Captured as a rich-text box | [note composer](components.md#note-composer), a contenteditable box; there is no `<textarea>` |
 | Select | Captured | [select in the drawer](components.md#select-in-the-drawer), [layout select](components.md#layout-select) |
-| Checkbox | Captured | [checkbox](components.md#checkbox), light and dark, unchecked and checked |
+| Checkbox | Captured | [checkbox](components.md#checkbox), light and dark unchecked, and dark checked; a checked light box was not captured |
 | Radio | Not present | Single choices are [pills](components.md#single-choice-pills), not radio buttons |
 | Switch | Not present | On and off options are [checkbox-like toggles](components.md#layout-toggle) |
 | Tabs | Captured | [vertical tab](components.md#vertical-tab), [layout tab](components.md#layout-tab), [filter pills](components.md#filter-toggle-pills) |
@@ -312,7 +328,7 @@ name the file that shows them; the rest say why not.
 1. **Do use black for the current choice and the main action.** The current view button, the current layout tab, Auto-save, Search from Collection, the Collection and Reading List buttons, the home search field and both drawers are black with white text; hover lightens the view button and Search from Collection to `#333333`. Other controls are a light grey or white pill, or bare. See [search-split-light-default](screenshots/search-split-light-default.png), [library-list-light-default](screenshots/library-list-light-default.png) and [inspector-library-row-default](components/crops/inspector-library-row-default.png).
 2. **Do keep hue for the user's collections.** The collection colour (here `#f07d59`, one of eight collection colours) fills search-input and saved nodes, folder icons and the collection tile, and at 20% tints the Share, settings and add buttons and the folder chip. The chrome is black, white and pastel washes; green appears only on the Upgrade pill and the 8px evaluation dot in the inspector's author row. See [library-list-light-default](screenshots/library-list-light-default.png), [search-map-light-default](screenshots/search-map-light-default.png) and [inspector-folder-chip-default](components/crops/inspector-folder-chip-default.png).
 3. **Do keep blue for what is in focus, and fade the rest.** A hovered card gets a `#a7d4ff` inset line and a `#f0f6ff` tint, a selected node gets a pale blue disc and `#2782F7` 2px edges, and the chosen layout option is `#e9f5fe`; nodes outside the focus drop to a tenth. No other control or surface in the chrome is blue. See [search-split-light-hover-list-card](screenshots/search-split-light-hover-list-card.png), [search-map-light-inspect-node](screenshots/search-map-light-inspect-node.png), [library-map-light-hover](screenshots/library-map-light-hover.png) and [layout-option-chosen](components/crops/layout-option-chosen.png).
-4. **Do separate surfaces with fill alone.** White cards sit on the half-white main card, which sits on the pastel ground, and no card or panel has a drop shadow. Only things that float get one: the filter popover, the legend tooltip and the Reset menu. See [home-light-default](screenshots/home-light-default.png), [search-list-light-default](screenshots/search-list-light-default.png) and [search-map-light-filter-popover](screenshots/search-map-light-filter-popover.png).
+4. **Do separate surfaces with fill alone.** White cards sit on the half-white main card, which sits on the pastel ground, and no card or panel has a drop shadow except the library's article panel ([library-all-light-selected](screenshots/library-all-light-selected.png)). Things that float get one: popovers such as the filter popover, the legend tooltip, menus such as the Reset menu, dialogs and the toast. See [home-light-default](screenshots/home-light-default.png), [search-list-light-default](screenshots/search-list-light-default.png) and [search-map-light-filter-popover](screenshots/search-map-light-filter-popover.png).
 5. **Do leave the graph's chrome unboxed.** The legend, the axis captions and the five toolbar buttons sit straight on the canvas with no container; legend and captions are 12px, the captions in `#686d79`. A chip or button gains a white or 5% black fill only on hover. See [search-map-light-default](screenshots/search-map-light-default.png), [graph-controls-default](components/crops/graph-controls-default.png) and [graph-legend-item-results-hover](components/crops/graph-legend-item-results-hover.png).
 6. **Don't copy the faint focus ring.** Most controls show keyboard focus as a 1px `#b0edf0` outline that barely shows on white or grey, and links fall back to the browser's `#005fcc`. Use one visible 2px ring. See [view-toggle-button-other-focus-visible](components/crops/view-toggle-button-other-focus-visible.png) and [autosave-button-focus-visible](components/crops/autosave-button-focus-visible.png).
 

@@ -19,10 +19,10 @@ The component inventory and the interaction states of Linear's signed-in app. Th
 
 Measured in both themes (crops in `components/crops/`, values in `raw/measurements.md`):
 
-- **Focus-visible** is a 1px solid outline in the focus colour, drawn in plain CSS. Its offset depends on the control: 2px outside buttons, 0 on icon buttons, 1px on links, -1px inside fields and tabs.
+- **Focus-visible** is a 1px solid outline in the focus colour, drawn in plain CSS. Its offset depends on the control: 2px outside primary buttons and the switch, 0 on secondary, destructive and icon buttons, the property chip and the select, 1px on links, -1px inside text fields, tabs and sidebar items. The board card, sub-issue row and description editor showed no ring in the copies (outline none; their focus-visible crops are identical to default).
 - **Hover** lightens the fill one step (accent #5E6AD2 to #6975E2 in dark; in light the accent darkens, #6D78D5 to #5E6AC1). Transitions are 0.15s ease on border, background, colour and opacity.
 - **Pressed** (:active) equals hover on every button measured.
-- **Selected** tabs and sidebar items take a filled pill one step above the control fill.
+- **Selected** view tabs take a filled pill one step past the hover fill. Selected sidebar items take an 8px rounded fill, also one step past their hover fill; at rest they have no fill.
 - **Disabled** never appeared: the composer's Create issue button stays enabled with an empty title.
 - Motion variables: `--speed-quickTransition` 100ms, `--speed-highlightFadeOut` 150ms, `--speed-regularTransition` 250ms, `--speed-slowTransition` 350ms, `--speed-highlightFadeIn` 0ms; easings `--ease-out-quad`, `--ease-out-cubic` and others. 14 rules respond to `prefers-reduced-motion: reduce`.
 

@@ -31,7 +31,7 @@ per product under `systems/<slug>/`, indexed in [catalog.json](catalog.json).
    has one, whatever its shape.
 3. Take values from its `tokens` file. Use the semantic sets (`light`,
    `dark`) for colour roles and `core` for scales. Never read a colour off a
-   screenshot; they are 256-colour PNGs. `python3 tools/catalog.py export
+   screenshot; most are 256-colour PNGs, and none is a measurement. `python3 tools/catalog.py export
    <slug>` prints every token with aliases resolved, as CSS custom properties
    (light on `:root`, other themes under `[data-theme]`) or `--format json`.
    A tool that only reads DESIGN.md can be pointed at the package's

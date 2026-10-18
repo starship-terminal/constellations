@@ -18,7 +18,7 @@ The 2026-10-17 refresh re-read the app from its own CSS, in both themes, from re
 | [components/](components) | 30 SVG redraws from the first capture (reconstructions) with `manifest.json`, written by `tools/build_library.py`; `crops/` holds 178 crops of the measured app components per state and theme, at 2x |
 | [boards/](boards) | Five SVG reference sheets (colours, type and geometry, controls, components, icons) for importing into a vector editor. Reconstructions, written by `tools/build_library.py` |
 | [icons/](icons) | `reference/`: 39 SVG extracts from visible buttons in Linear's public homepage demos (see Icons) |
-| [screenshots/](screenshots) | 35 full-page public captures (2026-09-23); `app-2026-10/`: 22 renders of the redacted app copies (256 colours); `app/`: 47 anonymised accessibility snapshots from the first capture, with no images |
+| [screenshots/](screenshots) | 35 full-page public captures (2026-09-23); `app-2026-10/`: 22 renders of the redacted app copies (256 colours); `app/`: 47 anonymised accessibility snapshots from the first capture, with no images (three of them are settings pages that redirected or did not load, which the style guide leaves out) |
 | [previews/](previews) | PNG renders of the five boards, `all-boards.png`, `aligned-buttons.png` and a public contact sheet |
 | [thumbnails/](thumbnails) | JPEG thumbnails of the public screenshots for the style guide, written by `tools/build_guide.py` |
 | [preview.html](preview.html) | Every board on one page, for checking the SVGs in a browser. Written by `tools/build_guide.py` |
@@ -134,6 +134,10 @@ Primary sources: Linear's live pages and signed-in workspace; https://linear.app
 
 Status colours depend on the team's workflow; feedback.warning is the "At risk" health label, a muted text colour, not a warning banner (none appeared); the checkbox is invisible in the copies (script shows it on row hover), so only its 12px box was read; avatar fills are this package's grey disc, only their size and shape are Linear's.
 
+Some crops do not show the state their name gives. Keyboard focus reached the board card, the sub-issue row and the description editor, but nothing changed in the copies: `raw/components-computed.json` reads outline none, and `card-focus-visible`, `list-row-focus-visible` and `text-area-focus-visible` (both themes) are byte-identical to their default crops. Whether the live app marks focus on these some other way is not known. The hover crops of the card and the toast are also identical to their defaults, with no computed change.
+
+No disabled control appeared, so `text.quaternary` is the faintest text colour, not a confirmed disabled colour. The focus offset differs by control (see Do and don't 6), so `core.focusRing.offset-button` (2px) fits primary buttons and the switch only; the secondary and destructive buttons measured 0. The redraws `button-primary-disabled.svg` and `field-error.svg` show states this capture never reached.
+
 ## Fonts
 
 The app's stacks are CSS variables: `--font-regular` is `"Inter Variable", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", "Linear Thai", sans-serif`; `--font-monospace` is `"Berkeley Mono", "SFMono Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace`. Both faces are served by the app as variable fonts (@font-face weight 100 to 900).
@@ -149,6 +153,7 @@ The app's type scale is `--font-size-*`: micro 12 (Derived from `round(up, .6875
 | Sidebar label | 13px | 500 | normal | sidebar item |
 | Control label | 12px | 500 | normal | view tabs, small buttons |
 | Caption | 12px | 450 | normal | card meta line |
+| Section label | 12px | 500 | normal | sidebar section label (Workspace) |
 | Code | 14.06 / 18.28px | 450 | -0.1px | inline code, Berkeley Mono |
 
 These are `core.typography.*` in the tokens. The public site's type follows.
@@ -191,7 +196,7 @@ The component redraws use 12–14px UI text and 20–24px detail titles as recon
 | Raised (cards, fields, dialog) | #1A1A1B | #FFFFFF | card background, equals `--color-bg-quaternary` |
 | Control (tabs, secondary buttons) | #1C1C1D | #FFFFFF | view tab at rest |
 | Control hover | #232424 | #F0F0F1 | view tab on hover |
-| Selected (tab, sidebar item) | #29292B | #ECECED | selected view tab |
+| Selected (view tab) | #29292B | #ECECED | selected view tab; a selected sidebar item is #232325 / #E1E1E2 (not a token) |
 | Overlay (menus, tooltips, toasts) | #212122 | #FFFFFF | toast and menu surfaces |
 | Overlay, strong (select list) | #28292B | #FFFFFF | open select |
 | Highlight (active menu option) | #313234 | #F1F1F1 | menu highlight box |
@@ -199,7 +204,7 @@ The component redraws use 12–14px UI text and 20–24px detail titles as recon
 | Text primary | #FFFFFF | #1B1B1B | `--color-text-primary` |
 | Text secondary | #E3E4E6 | #2F2F31 | `--color-text-secondary` |
 | Text tertiary (muted) | #959597 | #5C5C5E | `--color-text-tertiary` |
-| Text quaternary (faint, disabled) | #565759 | #9C9D9F | `--color-text-quaternary` |
+| Text quaternary (faint) | #565759 | #9C9D9F | `--color-text-quaternary` |
 | Link | #707FFE | #4061DA | `--sx-1xaoi8i`, named `--changelog-label-link` in Linear's bundle |
 | On accent | #FFFEFF | #FFFEFF | primary button label |
 | Border primary / secondary / tertiary | #1A1B1D / #232426 / #28282B | #F1F1F1 / #DEDEDE / #D3D3D3 | `--color-border-*` |
@@ -225,7 +230,7 @@ The first capture sampled five dark app surfaces from screenshots and filled tex
 | app.text | #FFFFFF, reconstruction | dark.color.text.primary | #FFFFFF |
 | app.muted | #969699, reconstruction | dark.color.text.tertiary | #959597 |
 | app.border | #2B2B2E, reconstruction | dark.color.border.tertiary | #28282B |
-| app.accent | #5E6AD2, public site | dark.color.accent.default | #5E6AD2 |
+| app.accent | #5E6AD2, reconstruction (the public site's accent) | dark.color.accent.default | #5E6AD2 |
 | semantic.* | reconstruction | dark.color.status.*, feedback.* | see above |
 
 The samples were within one or two steps of the CSS values. The old `app` and `semantic` groups are gone; every light value is new.
@@ -312,22 +317,22 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). App items w
 | Sizing and focus ring | Captured | `core.size`, `core.focusRing` |
 | Layout: breakpoints, widths | Captured | `core.breakpoint`, `core.layout` |
 | z-index | Captured for dialog, toast, menu; tooltip not captured (no z-index on its stack) | `core.zIndex` |
-| Button | Captured: default, hover, focus-visible, pressed; disabled not captured (none appeared) | `button-primary`, `button-primary-small`, `button-secondary`, `button-danger` |
+| Button | Captured: default, hover, focus-visible, pressed (not pressed on the destructive button, which was never clicked); disabled not captured (none appeared) | `button-primary`, `button-primary-small`, `button-secondary`, `button-danger` |
 | Icon button | Captured: default, hover, focus-visible, pressed | `icon-button` |
-| Link | Captured: default, hover, focus-visible | `link`, `breadcrumb-link` |
+| Link | Captured: default, hover, focus-visible; breadcrumb default and hover only | `link`, `breadcrumb-link` |
 | Text field | Captured: default, hover, focus-visible, read-only; error not captured (no form submitted) | `text-field`, `search-field` |
-| Text area | Captured: default, focus-visible | `text-area` (composer description) |
+| Text area | Captured: default; focus-visible reached but shows no change (outline none, crop identical to default) | `text-area` (composer description) |
 | Select | Captured: trigger default, hover, focus-visible, pressed; open list; option | `select` |
 | Checkbox | Not captured: Linear shows the row checkbox by script on hover; the copies only hold its 12px box | `checkbox` |
-| Radio | Not present: none on the 20 settings pages and views scanned | |
+| Radio | Not present: none on the settings pages and views scanned | |
 | Switch | Captured: on, off, hover, focus-visible | `switch` |
 | Tabs | Captured: default, hover, focus-visible, pressed, selected | `tab` |
 | Menu | Captured: open, highlighted option | `menu` |
 | Tooltip | Captured | `tooltip`, `kbd` |
 | Dialog | Captured | `dialog`, `dialog-scrim` |
 | Toast | Captured | `toast` |
-| Card | Captured: default, hover, focus-visible | `card` |
-| List row | Captured: default, hover, focus-visible; selected sidebar item | `list-row`, `nav-item` |
+| Card | Captured: default; focus-visible reached and hover tried, but neither shows a change (crops identical to default) | `card` |
+| List row | Captured: default, hover; selected sidebar item; focus-visible reached but shows no change (outline none, crop identical to default) | `list-row`, `nav-item` |
 | Table | Captured: row hover, sortable header, group header | `table-row`, `table-header`, `table-member-row`, `table-group-header` |
 | Avatar | Captured size and shape; fill not captured (photos replaced for privacy) | `avatar` |
 | Badge | Captured | `badge`, `label-chip`, `presence-online` |
@@ -353,7 +358,7 @@ Also not captured: an issue list in list layout (this workspace's views are boar
 3. **Don't use one rounded rectangle for everything.** Pill actions, modestly rounded sidebar items, squared list rows and more rounded floating surfaces serve different roles. The homepage shows all four at once: the Sign up pill, the 8px selected sidebar row, flat issue rows and the floating agent panel. See [01-home](screenshots/01-home.png).
 4. **Don't carry marketing scale into dense screens.** Public pages use large whitespace, narrow text measures and oversized editorial titles (64px homepage hero, 128px Tiempos on Method) that do not belong in a dense issue table. The product demos on the same pages keep 13px sidebar text and one-line issue rows. See [01-home](screenshots/01-home.png) and [method](screenshots/method.png).
 5. **Don't replace mixed filled and outlined glyphs with a uniform arbitrary stroke.** The demo sidebar sets outlined glyphs (Inbox, Projects) beside filled ones (the Agent Insights bars, the solid arrow inside Initiatives) and a half-filled status circle. See [01-home](screenshots/01-home.png).
-6. **Do draw focus as a 1px outline in the focus colour.** Every focus-visible state measured is `1px solid` #5E6AD2 (dark) or #6D78D5 (light), offset 2px outside buttons and -1px inside fields, with the control's own shadow unchanged. See [button-primary-focus-visible](components/crops/button-primary-focus-visible.png) and [text-field-focus-visible](components/crops/text-field-focus-visible.png).
+6. **Do draw focus as a 1px outline in the focus colour.** On every button, link, text and search field, select, switch, tab and sidebar item measured, focus-visible is `1px solid` #5E6AD2 (dark) or #6D78D5 (light), with the control's own shadow unchanged. The offset depends on the control: 2px outside primary buttons and the switch, 0 on secondary, destructive and icon buttons, the property chip and the select, 1px on links, -1px inside text fields, tabs and sidebar items. The board card, sub-issue row and description editor showed no ring in the copies (see What to distrust). See [button-primary-focus-visible](components/crops/button-primary-focus-visible.png) and [text-field-focus-visible](components/crops/text-field-focus-visible.png).
 
 ## Rebuild
 

@@ -11,14 +11,14 @@ This is a local reference library for Shopify's archived Polaris React system. I
 | [patterns.md](patterns.md) | The archive's written patterns (app shell, forms and validation, empty, loading and error states, destructive confirmation, feedback, search and filtering, data display, onboarding and more), each with its source `.mdx` path |
 | [components/](components) | 33 SVG redraws (buttons, badges, tags, text fields, checkboxes, radios, a card, banners, progress, tabs) built from the tokens by `tools/build_vectors.py`. Reconstructions, not captures |
 | [boards/](boards) | 10 SVG sheets for dragging into Figma or Paper: semantic colours (5), components (3), typography and geometry, written by `tools/build_vectors.py` |
-| [previews/](previews) | `components-board.png`, a rendered preview of the first components board |
-| [screenshots/](screenshots) | The local reference gallery in headless Chromium: 21 light pages at 1440 px, `dark/` (9), `phone/` (10, at 390 px) and `focus/` (23 focus-visible crops at 2x). See Screenshots |
+| [previews/](previews) | `components-board.png`, a rendered preview of the first components board: JPEG data under a `.png` name, 1327 by 1012 px, and no script in `tools/` writes it |
+| [screenshots/](screenshots) | The local reference gallery in headless Chromium: 21 light pages at 1440 px, `dark/` (9), `phone/` (10: nine sections at 390 px and a 316 by 621 px crop of the open navigation drawer) and `focus/` (23 focus-visible crops at 2x). See Screenshots |
 | [icons/](icons) | All 534 original Polaris icon SVGs, each with its YAML metadata |
 | [assets/](assets) | What the style guide loads: `gallery.js` (bundled from `tools/gallery.jsx`), `polaris.css` (the package's compiled CSS), `guide.css` (the guide's own layout), `tokens.json` (the light theme, flattened), `library.json` and `icons.json` (file lists), `inter.woff2` and its desktop conversion `inter-preview.ttf` |
 | [tokens/](tokens) | `light.css`: the light theme as `--p-*` CSS custom properties, written by `tools/build.mjs` |
 | [raw/](raw) | The readings: `polaris-themes.raw.json` (every theme value as published), `polaris-metadata.json` (the package's source metadata), `polaris-colors.raw.json` (the primitive ramps), `token-parity.json` (archive against package 9.4.2, zero differences), `provenance.json` (pinned commit and versions), `focus-states.json` (computed focus-visible changes), `vector-manifest.json` (the redraw list) and `verification.md` (what was checked, and when) |
 | [licenses/](licenses) | Shopify's licence and the icons' licence, the npm licences of `@shopify/polaris`, its tokens and icons, React and its dependencies, and Inter's OFL |
-| [tools/](tools) | The builders: `build.mjs` (`tokens.json`, the `raw/` JSON readings, `tokens/light.css` and the style guide's `assets/`; `npm run build`), `gallery.jsx` (the guide's source), `build_vectors.py` (`components/`, `boards/`, `raw/vector-manifest.json`), `screenshots.mjs` (`screenshots/` and `raw/focus-states.json`), `launch.command` (serves the package on port 8768), and `package.json` with its lockfile |
+| [tools/](tools) | The builders: `build.mjs` (`tokens.json`, `raw/polaris-themes.raw.json`, `polaris-metadata.json`, `polaris-colors.raw.json` and `provenance.json`, `tokens/light.css` and the style guide's `assets/`; `npm run build`), `gallery.jsx` (the guide's source), `build_vectors.py` (`components/`, `boards/`, `raw/vector-manifest.json`), `screenshots.mjs` (`screenshots/` and `raw/focus-states.json`), `launch.command` (serves the package on port 8768), and `package.json` with its lockfile |
 
 ## Brief
 
@@ -96,6 +96,19 @@ Refreshed 2026-10-17 from the same pinned versions: the primitive colour ramps t
 
 The website's navigation, green introduction panel, sample commerce data and specimen containers are editorial presentation, not Shopify product screenshots. Screenshots show the local reference gallery. Actual component rendering is supplied by the published React package. SVG components are deliberately labelled token-based redraws: they preserve editable geometry/text, but do not fully reproduce layered bevels, gradients, pseudo-elements or responsive behavior.
 
+## What to distrust
+
+- **Two package versions.** The component rules, sizes and layout values are read from the archive source (React 13.10.1); the gallery and every image run the published 13.9.5. Only the spot checks listed under Sizing and focus ring compare the two, and they matched.
+- **Hover was never shot.** It is read from CSS only. [components.md](components.md) names hover tokens only for the button, tab and tag-remove fills that focus also moves to; for text fields, selects, checkboxes and the rest it says hover has its own tokens without naming them.
+- **States and tones not rendered.** Select and text area show only default and focus-visible (no error or disabled), radio has no disabled state, tabs have no disabled tab, and badges show seven tones: the `-strong` tones, `magic`, `read-only` and `enabled` exist in the CSS but are in no image. The range slider's focus ring sits on a pseudo-element computed style cannot read, so only its crop shows it.
+- **Themes.** `light-mobile` and `light-high-contrast-experimental` are tokens only, never rendered. `dark-experimental` is marked experimental in the archive and is broken in places: typed text on inputs is 1.26:1 and the critical tokens do not change (see Theme coverage).
+- **The scrim token is unused.** `color-backdrop-bg` (71% black) is a token, but the backdrop component draws a literal `rgba(0, 0, 0, 0.5)` (see Background roles).
+- **The phone app shell is narrower than the phone.** At 390 px the shell specimen is a box about 316 px wide, and in [phone/14-app-shell](screenshots/phone/14-app-shell.png) the top bar's search field runs past its right edge. [phone/14-app-shell-nav-open](screenshots/phone/14-app-shell-nav-open.png) is a 316 by 621 px crop of that box showing only the navigation list: no top bar, page or backdrop.
+- **The guide's own chrome is not Polaris.** Besides the sidebar and green panel, [01-overview](screenshots/01-overview.png) says "13 guide sections" (there have been 15 since App shell and States were added), and in full-page shots taller than 900 px the sidebar's grey background stops at 900 px.
+- **The token parity file is thin.** [raw/token-parity.json](raw/token-parity.json) holds only the comparison's name and an empty list of differences, with no count of values compared, and no script in `tools/` writes it. The check you can rerun is in `tools/build.mjs`: the build stops if any colour alias does not equal the published value it replaces.
+- **Some redraws disagree with the readings.** [textfield-focus.svg](components/textfield-focus.svg) draws a 1 px ring 3 px out and keeps the resting border and fill; the measured focus is a 2 px ring 1 px out, with the border turning `#1A1A1A` and the fill `#F7F7F7`. [card.svg](components/card.svg) has a 1 px `#DEDEDE` border, a colour no light token holds; the real Card has no border and uses `shadow-100` plus a bevel.
+- **The board preview is mislabelled.** [previews/components-board.png](previews/components-board.png) is JPEG data under a `.png` name, and no script rebuilds it, so it can fall behind `boards/components-01.svg`.
+
 ## Fonts
 
 The UI sans stack is **Inter**, -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif. Code uses **ui-monospace**, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace. These are two role-based stacks, not a claim that all fallback fonts render simultaneously.
@@ -121,7 +134,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Refreshed 2
 | Layout: breakpoints, widths, grid, layers | Captured | `<theme>.breakpoints`, `core.layout`, `<theme>.zIndex` |
 | Button | Captured: default, focus-visible, pressed, selected, disabled, loading; hover from CSS only | [05-buttons](screenshots/05-buttons.png), [focus/button-primary](screenshots/focus/button-primary.png) |
 | Icon button | Captured: default, focus-visible | [05-buttons](screenshots/05-buttons.png), [focus/icon-button](screenshots/focus/icon-button.png) |
-| Link | Captured: plain button and `Link`, default and focus-visible | [19-states](screenshots/19-states.png), [focus/link](screenshots/focus/link.png) |
+| Link | Captured: plain button and `Link`, default and focus-visible | [05-buttons](screenshots/05-buttons.png), [19-states](screenshots/19-states.png), [focus/button-plain](screenshots/focus/button-plain.png), [focus/link](screenshots/focus/link.png) |
 | Text field | Captured: default, focus-visible, error, disabled, prefix and suffix | [07-forms](screenshots/07-forms.png), [focus/text-field](screenshots/focus/text-field.png) |
 | Text area | Captured: default, focus-visible | [07-forms](screenshots/07-forms.png), [focus/text-area](screenshots/focus/text-area.png) |
 | Select | Captured: default, focus-visible | [07-forms](screenshots/07-forms.png), [focus/select](screenshots/focus/select.png) |
@@ -137,7 +150,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Refreshed 2
 | List row | Captured: `ResourceItem` default, selectable, focus-visible | [16-app-shell](screenshots/16-app-shell.png), [focus/list-row](screenshots/focus/list-row.png) |
 | Table | Captured: `DataTable` with totals | [11-data](screenshots/11-data.png) |
 | Avatar | Captured: initials and customer placeholder, two sizes | [10-surfaces](screenshots/10-surfaces.png) |
-| Badge | Captured: every tone, progress, small | [06-badges-tags](screenshots/06-badges-tags.png) |
+| Badge | Captured: seven tones (default, info, success, attention, warning, critical, new), progress, small; the `-strong` tones, `magic`, `read-only` and `enabled` are not rendered | [06-badges-tags](screenshots/06-badges-tags.png) |
 | App shell and navigation | Captured: desktop, and phone with the drawer closed and open | [16-app-shell](screenshots/16-app-shell.png), [phone/14-app-shell](screenshots/phone/14-app-shell.png), [phone/14-app-shell-nav-open](screenshots/phone/14-app-shell-nav-open.png) |
 | Form with a validation error | Captured | [19-states](screenshots/19-states.png) |
 | Empty, loading, error states | Captured | [19-states](screenshots/19-states.png), [11-data](screenshots/11-data.png), [18-app-shell-error-toast](screenshots/18-app-shell-error-toast.png) |
@@ -149,7 +162,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Refreshed 2
 | Light and dark | Light everywhere; `dark-experimental` rendered for the nine component sections; `light-high-contrast-experimental` and `light-mobile` as tokens only, not rendered | [screenshots/dark/](screenshots/dark/) |
 | Desktop and phone widths | Captured: 1440 everywhere, 390 for the nine component sections | [screenshots/phone/](screenshots/phone/) |
 
-Totals over 38 rows: 37 captured (states that were not rendered are named in their row), 1 not present (switch), 0 not captured. Hover is the one state read only from CSS: the script does not shoot it, and [components.md](components.md) gives each component's hover tokens.
+Totals over 38 rows: 37 captured (states that were not rendered are named in their row), 1 not present (switch), 0 not captured. Hover is the one state read only from CSS: the script does not shoot it, and [components.md](components.md) names hover tokens only for the button, tab and tag-remove fills that focus also moves to; its other entries say hover has its own tokens without naming them.
 
 ## Do and don't
 
@@ -164,7 +177,7 @@ Totals over 38 rows: 37 captured (states that were not rendered are named in the
 
 From the repository root, run `make serve` and open Polaris from the catalog. Or, from this directory, run `python3 -m http.server 8768 --bind 127.0.0.1` and open http://127.0.0.1:8768/style-guide.html. The page fetches its data, so opening it straight from disk does not work. `-m` runs Python's HTTP server module; `8768` is the port; `--bind 127.0.0.1` restricts access to this computer.
 
-For changes, from `tools/`: `npm ci --ignore-scripts --no-audit --no-fund`, then `npm run build`. The flags disable package lifecycle scripts, security audit network requests, and funding notices respectively. The committed lockfile pins the dependencies. Existing bundled assets work without installing Node dependencies. `node tools/screenshots.mjs` re-shoots `screenshots/` and rewrites `raw/focus-states.json` (it needs Playwright, which is not in the lockfile). `python3 tools/build_vectors.py` regenerates SVG references; it needs Pillow, fontTools and Brotli. The font conversion produces a convenience desktop TTF from the included variable WOFF2 under the same OFL license.
+For changes, from `tools/`: `npm ci --ignore-scripts --no-audit --no-fund`, then `npm run build`. The flags disable package lifecycle scripts, security audit network requests, and funding notices respectively. The committed lockfile pins the dependencies. Existing bundled assets work without installing Node dependencies. `build.mjs` copies `icons/` and the two Shopify licences only when a checkout of the archive sits at `/tmp/polaris-reference-source-20260925`; without it they stay as committed. `node tools/screenshots.mjs` re-shoots `screenshots/` and rewrites `raw/focus-states.json` (it needs Playwright, which is not in the lockfile). `python3 tools/build_vectors.py` regenerates SVG references; it needs Pillow, fontTools and Brotli. The font conversion produces a convenience desktop TTF from the included variable WOFF2 under the same OFL license.
 
 ## Color
 
@@ -206,7 +219,7 @@ Buttons use their own `shadow-button*` bevels and `shadow-inset-*` presses rathe
 
 [tokens.json](tokens.json) has a `core` set with the 14 primitive ramps the tokens package builds its themes from: `gray`, `azure`, `blue`, `teal`, `green`, `lime`, `yellow`, `orange`, `red`, `rose`, `magenta`, `purple`, plus `blackAlpha` and `whiteAlpha`. Each has 16 steps, `1` lightest to `16` darkest (`gray.1` is `#FFFFFF`, `gray.16` is `#1A1A1A`; `blackAlpha` runs from 0% to 90% black and `whiteAlpha` from 1% to 80% white). The package ships them in `dist/cjs/src/colors.js` but does not export them from its index; `tools/build.mjs` reads that file and also writes it unchanged to `raw/polaris-colors.raw.json`.
 
-Every semantic colour in the four theme sets that names a ramp step is now an alias to it (`light.color.color-bg` is `{color.gray.6}`): 894 of 904 theme colours. The builder rebuilds the themes from source with each step replaced by a marker to find the step, then checks the alias resolves to the published value; all 1,812 theme tokens resolve to exactly the values they had before. The other 10 are `color-scheme` and the button gradient in each of the four sets, and the two `dark-experimental` tooltip-tail borders, which are literal in the source. Ramp use across the four themes: gray 327 roles, blue 92, azure, green, red and purple 64 each, blackAlpha 62, yellow and orange 56 each, whiteAlpha 13, rose, magenta, lime and teal 8 each.
+Every semantic colour in the four theme sets that names a ramp step is now an alias to it (`light.color.color-bg` is `{color.gray.6}`): 894 of 904 theme colours. The builder rebuilds the themes from source with each step replaced by a marker to find the step, then checks the alias resolves to the published value; all 1,812 theme tokens resolve to exactly the values they had before. The other 10 are `color-scheme` and `color-button-gradient-bg-fill` in each of the four sets (the gradient is `none` in `light-mobile`), and the two `dark-experimental` tooltip-tail borders, which are literal in the source. Ramp use across the four themes: gray 327 roles, blue 92, azure, green, red and purple 64 each, blackAlpha 62, yellow and orange 56 each, whiteAlpha 13, rose, magenta, lime and teal 8 each.
 
 Every color is searchable on the Colors page. `raw/polaris-themes.raw.json` preserves all values grouped by theme and type; `raw/polaris-metadata.json` preserves source metadata. `tokens/light.css` provides `--p-*` custom properties. At a 16px root, all displayed rem-to-pixel conversions are arithmetic conversions, not a recommendation to hard-code pixels.
 
@@ -274,11 +287,11 @@ These are in the `core` set as `size.*`, `focusRing.*` and `layout.*`. Polaris o
 | Spinner | small 20, large 44 (default) | same | `size.spinner-*` | Measured CSS |
 | Focus ring | 2px solid `color-border-focus` (`#005BD3`), 1px outside | same | `focusRing.width`, `.offset`, `.color` | Measured CSS, confirmed in the browser |
 
-Buttons draw the ring as an outline on the element; fields, selects, checkboxes and radios draw it on their backdrop; tabs, tags and navigation items use a 2px `box-shadow` ring on `::after`. Plain buttons pull the outline inside the text box (offset -6px). The full per-control list, with a crop of each, is under "Focus-visible, measured" in [components.md](components.md).
+Buttons and navigation items draw the ring as an outline on the element; fields, selects, checkboxes and radios draw it on their backdrop; tabs and the tag remove button use a 2px `box-shadow` ring on `::after`. Plain buttons pull the outline inside the text box (offset -6px). The full per-control list, with a crop of each, is under "Focus-visible, measured" in [components.md](components.md).
 
 ## Motion
 
-Durations run 0 to 500ms in 50ms steps, plus `motion-duration-5000`. Easings: `motion-ease` `cubic-bezier(0.25, 0.1, 0.25, 1)` for most transitions, `motion-ease-in`, `motion-ease-out` `cubic-bezier(0.19, 0.91, 0.38, 1)` and `motion-linear`.
+Durations run 0 to 500ms in 50ms steps, plus `motion-duration-5000`. Easings: `motion-ease` `cubic-bezier(0.25, 0.1, 0.25, 1)` for most transitions, `motion-ease-in`, `motion-ease-out` `cubic-bezier(0.19, 0.91, 0.38, 1)`, `motion-ease-in-out` and `motion-linear`.
 
 | Component | Motion | Duration | Easing |
 |---|---|---|---|
@@ -297,7 +310,7 @@ The component inventory is in [components.md](components.md): source rules with 
 
 ## Icons
 
-All **534 original SVGs** and their YAML metadata are bundled in `icons/`. The searchable Icons page links directly to downloads. Preserve each source viewBox; most are 20 × 20. Use semantic icon colors and standard Icon components in code. Decorative icons are hidden from assistive technology; icon-only actions need accessible labels.
+All **534 original SVGs** and their YAML metadata are bundled in `icons/`. The searchable Icons page links directly to downloads. Preserve each source viewBox; all 534 are `0 0 20 20`. Use semantic icon colors and standard Icon components in code. Decorative icons are hidden from assistive technology; icon-only actions need accessible labels.
 
 ## Theme coverage
 
@@ -309,10 +322,10 @@ All four sets are retained: `light`, `light-mobile`, `light-high-contrast-experi
 
 | Folder | What |
 |---|---|
-| `screenshots/01` to `13` | One full page per guide section, light, 1440 px |
-| `screenshots/14` to `21` | Open states: modal, popover menu, app shell, success and error toasts, the States section, delete confirmation, tooltip |
+| `screenshots/01` to `13` | One full page for each of the first 13 guide sections, light, 1440 px |
+| `screenshots/14` to `21` | The two sections added on 2026-10-17 (App shell as 16, States as 19, full page) and the open states: modal, popover menu, success and error toasts, delete confirmation, tooltip. 14, 15, 20 and 21 are the 1440 by 900 viewport only |
 | `screenshots/dark/` | The nine component sections in `dark-experimental`, 1440 px |
-| `screenshots/phone/` | The same nine sections at 390 px, light, plus the app shell with its navigation drawer opened from the top bar's menu button |
+| `screenshots/phone/` | The same nine sections at 390 px, light, plus the app shell with its navigation drawer opened from the top bar's menu button, shot as a 316 by 621 px crop of the shell specimen (see What to distrust) |
 | `screenshots/focus/` | 23 controls in their focus-visible state, 2x crops; computed values in `raw/focus-states.json` |
 
 Screenshots 01 to 15 replaced the 2026-09-25 originals (taken at 1327 px through computer use) on 2026-10-17.

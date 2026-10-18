@@ -90,7 +90,9 @@ search tags, how it was captured, and where it was copied from.
    its Health section says which parts of the checklist the package does not
    cover yet.
 2. Take values from the tokens file, never from a screenshot. Screenshots
-   are stored as 256-colour PNGs to keep the repo small.
+   are mostly stored as 256-colour PNGs to keep the repo small (Hevy's,
+   Polaris's and Linear's public-site shots are full colour), and none of
+   them is a measurement.
 3. Open the package's `style-guide.html` to see every token and component
    rendered with the real values. Most open straight from disk; Polaris's
    fetches data, so open it through `make serve`.
@@ -118,6 +120,7 @@ Studio) and Style Dictionary both read.
 | [tools/kit/](tools/kit) | The capture kit a new package starts from: web (public and signed-in), native iOS through iPhone Mirroring, and the token and style-guide builders |
 | [docs/](docs) | The docs site's source: the library docs below, the home page, [docs/gallery/](docs/gallery) (the gallery app; its `data.json` and `thumbs/` are generated and gitignored) and the scorecard pages (generated into `docs/scorecard/`, gitignored) |
 | [scorecard/](scorecard) | The scorecard's rubric (`criteria.json`) and one dated file per audit (`audits/<date>.json`, `<date>-2.json` for a second run that day). `make grade` writes a new one with the scripted criteria re-checked ([tools/grade.py](tools/grade.py)) |
+| [tools/make_icons.py](tools/make_icons.py) | Draws the site's PNG icons (touch icon, web app icons) from the brand mark in [docs/assets/favicon.svg](docs/assets/favicon.svg). [overrides/main.html](overrides/main.html) adds the web app manifest ([docs/site.webmanifest](docs/site.webmanifest)), the touch icon and theme colours to every docs page |
 | [tools/scorecard.py](tools/scorecard.py) | Writes the scorecard pages and the site's `zensical.toml` from [scorecard/](scorecard) |
 | [tools/brief.py](tools/brief.py) | Writes the Brief section near the top of every package README: the page to read before designing in that style, generated from the package's catalog entry, tokens and README. `make brief` and `make design-md` run it; `make check` fails when one is stale |
 | [tools/health.py](tools/health.py) | Writes the Health section at the top of every package README and the catalog table above, from the newest scorecard snapshot and each package's folder. `make grade` runs it; `make check` fails when one is stale |

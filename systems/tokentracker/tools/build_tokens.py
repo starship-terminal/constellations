@@ -393,7 +393,7 @@ core["$extensions"] = {"notTokenised": {
         "rules": [r["rule"] for r in K["sheet"]["reduced"]],
         "source": "Measured: every rule inside a prefers-reduced-motion media query, and the motion-safe/motion-reduce utilities, in the dashboard stylesheet, raw/census.json sheet.reduced",
     },
-    "rampSteps": "Each core.color ramp holds only the steps the dashboard stylesheet ships for that hue (Tailwind utilities it uses), so red and amber stop at 8 steps and the chart hues at fewer. Steps the product never uses are not filled in.",
+    "rampSteps": "Each core.color ramp holds only the steps the dashboard stylesheet ships for that hue (Tailwind utilities it uses), so red and amber stop at 8 steps and the other hues at 1 to 9. Steps the product never uses are not filled in.",
     "statusGaps": "No info surface rendered on this machine: the sky update badge and banner on Skills appear only when a skill has an update. No success fill or border renders; success is green text only.",
     "providerColors": "Per-provider colours (Claude orange, Codex blue, OpenCode purple) come from getProviderColor() in the dashboard source; data-viz only, not read as tokens.",
 }}
@@ -446,7 +446,7 @@ def themed(theme):
     P("accent.hover", color("cost-button", "color", theme, "hover"))
     P("accent.pressed", color("cost-button", "color", theme, "pressed", desc="Pressed reads the same as hover."))
     P("accent.fill", color("usage-fill", "backgroundColor", theme, desc="Usage bar fill."))
-    P("button.primary.bg", color("primary-button", "backgroundColor", theme, desc="Inverted: near-black in light, near-white in dark."))
+    P("button.primary.bg", color("primary-button", "backgroundColor", theme, desc="Inverted: near-black in light, white in dark."))
     P("button.primary.fg", color("primary-button", "color", theme))
     P("button.primary.hover", color("primary-button", "backgroundColor", theme, "hover"))
     P("button.primary.pressed", color("primary-button", "backgroundColor", theme, "pressed"))

@@ -627,7 +627,7 @@ Good for: Interactive problem-solving lessons, course paths, a calm editorial le
 
 Captured 2026-10-17, signed in, free account. Themes: light, dark.
 
-A token set, component reference and pattern guide for Brilliant's web app, for building mockups in Figma or Paper that match the product. It was extracted from brilliant.org on 2026-09-25, signed in to a new free account on the Math path, in the app's light and dark themes, at desktop width and (for public pages) at a 390px mobile width. It was refreshed on 2026-10-17 on a second free account: settings, You, Topics, Koji, the header menu and the lesson quit dialog were copied from the signed-in app and measured headless in both themes at 1440 and 390, every component state was forced and read, and the stylesheet was read for font stacks, focus rings and reduced motion.
+A token set, component reference and pattern guide for Brilliant's web app, for building mockups in Figma or Paper that match the product. It was extracted from brilliant.org on 2026-09-25, signed in to a new free account on the Math path, in the app's light and dark themes, at desktop width and (for public pages) at a 390px mobile width. It was refreshed on 2026-10-17 on a second free account: Home, Topics, You, settings (with the deactivate-account page), Koji, the header menu and the lesson quit dialog were copied from the signed-in app and measured headless in both themes at 1440 and 390, every component state was forced and read, and the stylesheet was read for font stacks, focus rings and reduced motion.
 
 ## Colors
 
@@ -650,7 +650,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 |---|---|---|
 | CoFo Brilliant | 400, 500, 700, with italics | All UI text |
 | CoFo Robert | 500, with italic | Display headlines (`display.*` styles) |
-| CoFo Semi Mono | 500, 700 | Lesson interactive tiles |
+| CoFo Semi Mono | 400, 500, 700 | Lesson interactive tiles |
 | Source Code Pro | 400, 500, 700, with italics | Code |
 | KaTeX_Main | 400, 700, with italics | Maths |
 | Soleil | 400, 600, 700, 400 italic | Legacy Django pages only |
@@ -697,6 +697,15 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't read colours off the screenshots; they are 256-colour PNGs.
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
+
+### What to distrust (from README.md)
+
+- Lesson copies from 2026-10 show an empty lesson frame, because the interactive renders in a shadow root that a DOM copy does not carry (the 2026-09 lesson screenshots stand in).
+- The 390 copies were taken from the pane at its phone emulation, whose layout viewport came out 406 wide, and re-rendered at 390, so the header's right edge clips at 390 as it would on a narrow phone. The two phone full-page renders (`mobile-settings-dark-account-full`, `mobile-you-dark-empty-full`) came out 798 pixels wide, not 780.
+- `feedback.info.fill` and `feedback.info.border` are Derived: the only info surface, the Settings info alert, has no solid fill and no border. `accent.hover` and `accent.pressed` are Derived too (the face composited at .85 opacity over the page).
+- `size.icon-md`, the Koji suggestion cards and the pricing page's iridescent frames are estimated from screenshots, not read from CSS.
+- 18 of the 2026-09 signed-in screenshots are stored at 1x (1384 pixels wide), not 2x: the dark course, courses, home, settings and You captures, the quit dialog pair, `lesson-dark-tutor-highlight` and `legacy-light-account-settings`. They and the 26 crops cut from them have half the resolution of the rest.
+- The real radio was only read unchecked. The "selected" state in the Radio row of Coverage is the segmented control's; no checked radio was captured.
 
 ### Do and don't (from README.md)
 

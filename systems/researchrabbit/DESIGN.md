@@ -340,8 +340,10 @@ italic. Both named families are open source on
 Google Fonts, which the style guide links; the citation box uses whatever
 monospace face the browser has.
 
-Every text line read computes to a line height of 1.5 times its size (14/21,
-16/24, 24/36, 32/48), the html default; only bare spans drop to 1em. The
+Almost every text line read computes to a line height of 1.5 times its size
+(14/21, 16/24, 24/36, 32/48), the html default. Spans drop to 1em, and three
+elements set their own: the legend tooltip (`line-height: 1`, 12/12), the
+library's Find in list field (14/14) and the tip banner's line (12/14). The
 element defaults give the heading scale: h1 32px 600, h2 28px, h3 24px (also
 the dialog title), h4 16px 500, h5 14px 600, and labels 14px 500. The one
 monospace text is the formatted citation in Cite Article, 12/18 in the
@@ -401,14 +403,27 @@ Measured states, crops and the full inventory: [components.md](components.md), [
   states from 2026-10-17. The `:root` properties were identical on both dates,
   so the palette is the same, but a component read only on the first date
   may have changed since.
-- **Pressed is the hover fill.** No captured rule styles `:active`, so the
-  pressed tokens repeat the hover colours. A pressed state was read only on
-  the 2026-10-17 pages.
+- **Pressed is the hover fill.** No captured rule styles `:active` except
+  the slider thumb's cursor, so the pressed tokens repeat the hover
+  colours. A pressed state was read only on the 2026-10-17 pages.
 - **Status roles are a mapping.** The `--activity-*` colours are measured;
   which one is a fill, a text or a border colour is this package's reading of
   where the product uses them. No captured status surface draws a border.
 - **The danger button was seen only disabled**, at the opacity a disabled
   button gets, so its enabled fill and text are not captured.
+- **The Filter Go button is not the popover's.** Its entry in
+  [components.md](components.md#filter-go-button) and `light.action.go`
+  (`#61dce2`, white text) were read from `Commander__GoButton` inside the
+  Commander bar, a yellow bar fixed at the bottom left whose rule sets
+  opacity 0, not from the popover; the popover's Go is grey text. Its crop
+  is byte for byte the filter popover crop. No screenshot shows the
+  Commander bar, so its yellow (`palette.literal.toast`) and its
+  `--shadow-l` (`elevation.l`) were never seen drawn.
+- **The library's article panel has an unmeasured shadow.** In
+  [library-all-light-selected](screenshots/library-all-light-selected.png) it
+  draws a 1px `#c9cdd3` border and a soft drop shadow, as the captured
+  `LibraryInspector__StyledInspector` rule says (`rgba(0, 0, 0, 0.1) 0px 6px
+  12px`). No measured component and no token covers it.
 - **Six colours are still screenshot samples** (the corner glows, the
   drawer's idle Search button, the search summary's white half, the card
   rule); their tokens say so.
@@ -425,6 +440,6 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 1. **Do use black for the current choice and the main action.** The current view button, the current layout tab, Auto-save, Search from Collection, the Collection and Reading List buttons, the home search field and both drawers are black with white text; hover lightens the view button and Search from Collection to `#333333`. Other controls are a light grey or white pill, or bare. See [search-split-light-default](screenshots/search-split-light-default.png), [library-list-light-default](screenshots/library-list-light-default.png) and [inspector-library-row-default](components/crops/inspector-library-row-default.png).
 2. **Do keep hue for the user's collections.** The collection colour (here `#f07d59`, one of eight collection colours) fills search-input and saved nodes, folder icons and the collection tile, and at 20% tints the Share, settings and add buttons and the folder chip. The chrome is black, white and pastel washes; green appears only on the Upgrade pill and the 8px evaluation dot in the inspector's author row. See [library-list-light-default](screenshots/library-list-light-default.png), [search-map-light-default](screenshots/search-map-light-default.png) and [inspector-folder-chip-default](components/crops/inspector-folder-chip-default.png).
 3. **Do keep blue for what is in focus, and fade the rest.** A hovered card gets a `#a7d4ff` inset line and a `#f0f6ff` tint, a selected node gets a pale blue disc and `#2782F7` 2px edges, and the chosen layout option is `#e9f5fe`; nodes outside the focus drop to a tenth. No other control or surface in the chrome is blue. See [search-split-light-hover-list-card](screenshots/search-split-light-hover-list-card.png), [search-map-light-inspect-node](screenshots/search-map-light-inspect-node.png), [library-map-light-hover](screenshots/library-map-light-hover.png) and [layout-option-chosen](components/crops/layout-option-chosen.png).
-4. **Do separate surfaces with fill alone.** White cards sit on the half-white main card, which sits on the pastel ground, and no card or panel has a drop shadow. Only things that float get one: the filter popover, the legend tooltip and the Reset menu. See [home-light-default](screenshots/home-light-default.png), [search-list-light-default](screenshots/search-list-light-default.png) and [search-map-light-filter-popover](screenshots/search-map-light-filter-popover.png).
+4. **Do separate surfaces with fill alone.** White cards sit on the half-white main card, which sits on the pastel ground, and no card or panel has a drop shadow except the library's article panel ([library-all-light-selected](screenshots/library-all-light-selected.png)). Things that float get one: popovers such as the filter popover, the legend tooltip, menus such as the Reset menu, dialogs and the toast. See [home-light-default](screenshots/home-light-default.png), [search-list-light-default](screenshots/search-list-light-default.png) and [search-map-light-filter-popover](screenshots/search-map-light-filter-popover.png).
 5. **Do leave the graph's chrome unboxed.** The legend, the axis captions and the five toolbar buttons sit straight on the canvas with no container; legend and captions are 12px, the captions in `#686d79`. A chip or button gains a white or 5% black fill only on hover. See [search-map-light-default](screenshots/search-map-light-default.png), [graph-controls-default](components/crops/graph-controls-default.png) and [graph-legend-item-results-hover](components/crops/graph-legend-item-results-hover.png).
 6. **Don't copy the faint focus ring.** Most controls show keyboard focus as a 1px `#b0edf0` outline that barely shows on white or grey, and links fall back to the browser's `#005fcc`. Use one visible 2px ring. See [view-toggle-button-other-focus-visible](components/crops/view-toggle-button-other-focus-visible.png) and [autosave-button-focus-visible](components/crops/autosave-button-focus-visible.png).

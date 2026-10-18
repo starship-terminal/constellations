@@ -161,7 +161,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 | Raised (cards, fields, dialog) | #1A1A1B | #FFFFFF | card background, equals `--color-bg-quaternary` |
 | Control (tabs, secondary buttons) | #1C1C1D | #FFFFFF | view tab at rest |
 | Control hover | #232424 | #F0F0F1 | view tab on hover |
-| Selected (tab, sidebar item) | #29292B | #ECECED | selected view tab |
+| Selected (view tab) | #29292B | #ECECED | selected view tab; a selected sidebar item is #232325 / #E1E1E2 (not a token) |
 | Overlay (menus, tooltips, toasts) | #212122 | #FFFFFF | toast and menu surfaces |
 | Overlay, strong (select list) | #28292B | #FFFFFF | open select |
 | Highlight (active menu option) | #313234 | #F1F1F1 | menu highlight box |
@@ -169,7 +169,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 | Text primary | #FFFFFF | #1B1B1B | `--color-text-primary` |
 | Text secondary | #E3E4E6 | #2F2F31 | `--color-text-secondary` |
 | Text tertiary (muted) | #959597 | #5C5C5E | `--color-text-tertiary` |
-| Text quaternary (faint, disabled) | #565759 | #9C9D9F | `--color-text-quaternary` |
+| Text quaternary (faint) | #565759 | #9C9D9F | `--color-text-quaternary` |
 | Link | #707FFE | #4061DA | `--sx-1xaoi8i`, named `--changelog-label-link` in Linear's bundle |
 | On accent | #FFFEFF | #FFFEFF | primary button label |
 | Border primary / secondary / tertiary | #1A1B1D / #232426 / #28282B | #F1F1F1 / #DEDEDE / #D3D3D3 | `--color-border-*` |
@@ -195,7 +195,7 @@ The first capture sampled five dark app surfaces from screenshots and filled tex
 | app.text | #FFFFFF, reconstruction | dark.color.text.primary | #FFFFFF |
 | app.muted | #969699, reconstruction | dark.color.text.tertiary | #959597 |
 | app.border | #2B2B2E, reconstruction | dark.color.border.tertiary | #28282B |
-| app.accent | #5E6AD2, public site | dark.color.accent.default | #5E6AD2 |
+| app.accent | #5E6AD2, reconstruction (the public site's accent) | dark.color.accent.default | #5E6AD2 |
 | semantic.* | reconstruction | dark.color.status.*, feedback.* | see above |
 
 The samples were within one or two steps of the CSS values. The old `app` and `semantic` groups are gone; every light value is new.
@@ -253,6 +253,7 @@ The app's type scale is `--font-size-*`: micro 12 (Derived from `round(up, .6875
 | Sidebar label | 13px | 500 | normal | sidebar item |
 | Control label | 12px | 500 | normal | view tabs, small buttons |
 | Caption | 12px | 450 | normal | card meta line |
+| Section label | 12px | 500 | normal | sidebar section label (Workspace) |
 | Code | 14.06 / 18.28px | 450 | -0.1px | inline code, Berkeley Mono |
 
 These are `core.typography.*` in the tokens. The public site's type follows.
@@ -347,6 +348,10 @@ The component inventory (what was measured on 2026-10-17 and what was redrawn on
 
 Status colours depend on the team's workflow; feedback.warning is the "At risk" health label, a muted text colour, not a warning banner (none appeared); the checkbox is invisible in the copies (script shows it on row hover), so only its 12px box was read; avatar fills are this package's grey disc, only their size and shape are Linear's.
 
+Some crops do not show the state their name gives. Keyboard focus reached the board card, the sub-issue row and the description editor, but nothing changed in the copies: `raw/components-computed.json` reads outline none, and `card-focus-visible`, `list-row-focus-visible` and `text-area-focus-visible` (both themes) are byte-identical to their default crops. Whether the live app marks focus on these some other way is not known. The hover crops of the card and the toast are also identical to their defaults, with no computed change.
+
+No disabled control appeared, so `text.quaternary` is the faintest text colour, not a confirmed disabled colour. The focus offset differs by control (see Do and don't 6), so `core.focusRing.offset-button` (2px) fits primary buttons and the switch only; the secondary and destructive buttons measured 0. The redraws `button-primary-disabled.svg` and `field-error.svg` show states this capture never reached.
+
 ### Do and don't (from README.md)
 
 1. **Do keep the pale filled pill for the one main action.** The header's Sign up and a single hero or plan action (Get started, Talk to sales, Watch example) are pale #E5E5E6 pills with dark text; the action beside them is a dark pill, and section links are muted text with an arrow or plus ("Learn more →", "Projects +"). See [01-home](screenshots/01-home.png), [pricing](screenshots/pricing.png) and [startups](screenshots/startups.png).
@@ -354,4 +359,4 @@ Status colours depend on the team's workflow; feedback.warning is the "At risk" 
 3. **Don't use one rounded rectangle for everything.** Pill actions, modestly rounded sidebar items, squared list rows and more rounded floating surfaces serve different roles. The homepage shows all four at once: the Sign up pill, the 8px selected sidebar row, flat issue rows and the floating agent panel. See [01-home](screenshots/01-home.png).
 4. **Don't carry marketing scale into dense screens.** Public pages use large whitespace, narrow text measures and oversized editorial titles (64px homepage hero, 128px Tiempos on Method) that do not belong in a dense issue table. The product demos on the same pages keep 13px sidebar text and one-line issue rows. See [01-home](screenshots/01-home.png) and [method](screenshots/method.png).
 5. **Don't replace mixed filled and outlined glyphs with a uniform arbitrary stroke.** The demo sidebar sets outlined glyphs (Inbox, Projects) beside filled ones (the Agent Insights bars, the solid arrow inside Initiatives) and a half-filled status circle. See [01-home](screenshots/01-home.png).
-6. **Do draw focus as a 1px outline in the focus colour.** Every focus-visible state measured is `1px solid` #5E6AD2 (dark) or #6D78D5 (light), offset 2px outside buttons and -1px inside fields, with the control's own shadow unchanged. See [button-primary-focus-visible](components/crops/button-primary-focus-visible.png) and [text-field-focus-visible](components/crops/text-field-focus-visible.png).
+6. **Do draw focus as a 1px outline in the focus colour.** On every button, link, text and search field, select, switch, tab and sidebar item measured, focus-visible is `1px solid` #5E6AD2 (dark) or #6D78D5 (light), with the control's own shadow unchanged. The offset depends on the control: 2px outside primary buttons and the switch, 0 on secondary, destructive and icon buttons, the property chip and the select, 1px on links, -1px inside text fields, tabs and sidebar items. The board card, sub-issue row and description editor showed no ring in the copies (see What to distrust). See [button-primary-focus-visible](components/crops/button-primary-focus-visible.png) and [text-field-focus-visible](components/crops/text-field-focus-visible.png).
