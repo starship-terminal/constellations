@@ -90,7 +90,9 @@ search tags, how it was captured, and where it was copied from.
    its Health section says which parts of the checklist the package does not
    cover yet.
 2. Take values from the tokens file, never from a screenshot. Screenshots
-   are stored as 256-colour PNGs to keep the repo small.
+   are mostly stored as 256-colour PNGs to keep the repo small (Hevy's,
+   Polaris's and Linear's public-site shots are full colour), and none of
+   them is a measurement.
 3. Open the package's `style-guide.html` to see every token and component
    rendered with the real values. Most open straight from disk; Polaris's
    fetches data, so open it through `make serve`.

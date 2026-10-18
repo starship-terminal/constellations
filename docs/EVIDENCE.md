@@ -40,7 +40,9 @@ New packages use the left column.
   their default (its README says which).
 - Claude's code blocks keep the dark theme's inline colours in the light
   renders; read code colours from the dark captures.
-- Screenshots everywhere are 256-colour PNGs. Flat UI colours survive
-  exactly, but read values from the tokens, not the images.
+- Screenshots are 256-colour PNGs in every package except Hevy and Polaris
+  (full colour) and Linear's public-site captures (full colour; its app
+  renders are 256-colour). Flat UI colours survive the palette, but read
+  values from the tokens, not the images.
 - Polaris live specimens use React package 13.9.5 while the archive declares
   13.10.1; the token values match the archive with zero differences.
