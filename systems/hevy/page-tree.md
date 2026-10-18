@@ -19,7 +19,7 @@ Capture files are in [screenshots/light/](screenshots/light/), [screenshots/dark
 - [x] Home tab
   - [x] Feed: Home (Following) [infinite] ([01-home.png](screenshots/light/01-home.png), [d17-home.png](screenshots/dark/d17-home.png))
     - [x] Feed switcher menu (popover: Home (Following), Discover) ([t01](screenshots/pages/t01-home-feed-switcher-menu.png))
-      - [x] Discover feed [infinite] ([t02](screenshots/pages/t02-discover-feed.png), [t21 trainer tag variant](screenshots/pages/t21-discover-post-trainer-tag.png))
+      - [x] Discover feed [infinite] ([t02](screenshots/pages/t02-discover-feed.png), [t21 trainer tag variant](screenshots/pages/t21-discover-post-trainer-tag.png), where the post is masked so the tag does not show)
         - [action] + Follow
         - [x] Post (Workout Detail), below
     - [x] Post card
@@ -76,7 +76,7 @@ Capture files are in [screenshots/light/](screenshots/light/), [screenshots/dark
       - [x] Typed query, nothing found → No-results state with Invite button ([t27](screenshots/pages/t27-search-no-results.png))
         - [external] Invite (opens share)
     - [x] Contacts tab
-      - [x] Loading spinner ([t24](screenshots/pages/t24-contacts-loading-spinner.png))
+      - [x] Loading spinner, not caught: [t24](screenshots/pages/t24-contacts-loading-spinner.png) is the same as the empty state t25 apart from the tab bar
       - [x] Empty state ([t25](screenshots/pages/t25-contacts-empty.png))
   - [x] Invite Friends ([t22](screenshots/pages/t22-invite-friends.png))
     - [external] WhatsApp, Messenger, Facebook, Messages, Share More
@@ -219,7 +219,7 @@ Capture files are in [screenshots/light/](screenshots/light/), [screenshots/dark
     - [x] "..." → Own post menu ([t90](screenshots/pages/t90-own-post-feed-menu.png))
       - [x] Share Workout → Workout share composer ([t91](screenshots/pages/t91-share-workout-template-1.png))
         - [x] Send to → sheet with ChatGPT, Claude ([t92](screenshots/pages/t92-share-send-to-sheet.png)); both [external]
-        - [x] Workout Link → Toast "Link Copied" ([t93](screenshots/pages/t93-toast-link-copied.png))
+        - [x] Workout Link → Toast "Link Copied", not caught: [t93](screenshots/pages/t93-toast-link-copied.png) is the same as t91 apart from the clock
         - [x] Background [same as t63]
         - [external] Stories, More
         - [action] Download
@@ -301,7 +301,7 @@ Capture files are in [screenshots/light/](screenshots/light/), [screenshots/dark
     - [x] Routine Help ([t127](screenshots/pages/t127-routine-help-guide.png))
   - [x] Help
     - [x] Frequently Asked Questions ([p34](screenshots/pages/p34-faq-card-list.png))
-      - [x] Article → Web view, loading ([t130](screenshots/pages/t130-faq-article-webview-loading.png)) then loaded ([t131](screenshots/pages/t131-faq-article-webview.png)); help-centre content, light theme
+      - [x] Article → Web view, loaded in both [t130](screenshots/pages/t130-faq-article-webview-loading.png) and [t131](screenshots/pages/t131-faq-article-webview.png) (the loading state was not caught); help-centre content, light theme
     - [external] Contact Us, Review Hevy on the App Store, Become an Affiliate, Careers
     - [x] About ([p35](screenshots/pages/p35-about.png))
       - [external] Instagram, Facebook, Twitter, email, Privacy Policy, Terms, Acknowledgements
@@ -326,6 +326,6 @@ Capture files are in [screenshots/light/](screenshots/light/), [screenshots/dark
 ## Notes from the pass
 
 - Hevy crashed once, on opening Statistics > Main exercises. It loaded fine on retry.
-- The only real toast in the app so far is "Link Copied" ([t93](screenshots/pages/t93-toast-link-copied.png)). Copy Link on Invite Friends uses an alert instead.
-- Loading states seen: spinner ([t24](screenshots/pages/t24-contacts-loading-spinner.png)), skeleton placeholders ([t98](screenshots/pages/t98-skeleton-loading-suggested.png)), web view spinner ([t130](screenshots/pages/t130-faq-article-webview-loading.png)).
+- The only real toast in the app so far is "Link Copied". It was not caught: [t93](screenshots/pages/t93-toast-link-copied.png) shows the share composer without it. Copy Link on Invite Friends uses an alert instead.
+- Loading states noted: spinner, skeleton placeholders, web view spinner. None was caught: [t24](screenshots/pages/t24-contacts-loading-spinner.png) shows the Contacts empty state, [t98](screenshots/pages/t98-skeleton-loading-suggested.png) the Suggested Athletes cards loaded (contents masked) with Follow buttons, and [t130](screenshots/pages/t130-faq-article-webview-loading.png) the loaded article.
 - Validation errors seen: "Add an exercise" ([t75](screenshots/pages/t75-finish-validation-alert.png)), "Your workout has no set values" ([t82](screenshots/pages/t82-finish-no-set-values-alert.png)).

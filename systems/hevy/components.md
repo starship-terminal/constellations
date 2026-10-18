@@ -278,7 +278,7 @@ How to read an entry:
 
 ### Toast
 - Small dark pill at the top, short text, disappears on its own. The only real toast is "Link Copied".
-- Capture: [t93-toast-link-copied.png](screenshots/pages/t93-toast-link-copied.png).
+- Not in any capture. This description comes from the capture notes alone: [t93-toast-link-copied.png](screenshots/pages/t93-toast-link-copied.png) shows no toast and is the same as the share composer [t91](screenshots/pages/t91-share-workout-template-1.png) apart from the clock.
 
 ### Tooltip
 - Light pill pointing at a row on first use ("Tap to select your gym").
@@ -286,7 +286,7 @@ How to read an entry:
 
 ### Skeleton and spinner
 - Skeleton: rounded grey placeholder cards while content loads. Spinner: small system spinner centred under the header.
-- Capture: [t98-skeleton-loading-suggested.png](screenshots/pages/t98-skeleton-loading-suggested.png), [t24-contacts-loading-spinner.png](screenshots/pages/t24-contacts-loading-spinner.png).
+- Not in any capture. This description comes from the capture notes alone: [t98-skeleton-loading-suggested.png](screenshots/pages/t98-skeleton-loading-suggested.png) shows the Suggested Athletes cards loaded, with their contents masked and blue Follow buttons, and [t24-contacts-loading-spinner.png](screenshots/pages/t24-contacts-loading-spinner.png) is the same as the empty state [t25](screenshots/pages/t25-contacts-empty.png) apart from the tab bar.
 
 ### Empty state
 - Line icon (`color.text.tertiary`), bold title or grey sentence, optional primary button.
@@ -326,7 +326,7 @@ How to read an entry:
 - Capture: [d10-workout.png](screenshots/dark/d10-workout.png), [17-workout-settings-toggles.png](screenshots/light/17-workout-settings-toggles.png).
 
 ### Large title and nav bar
-- Large title `typography.largeTitle`, nav bar title `typography.navTitle`. The scrolled state collapses the large title into the bar.
+- Large title `typography.largeTitle`, nav bar title `typography.navTitle`. The large title collapsing into the bar on scroll is not shown: [04-log-workout-scrolled.png](screenshots/light/04-log-workout-scrolled.png) is the Log Workout page, which has a nav bar title and no large title.
 - Capture: [02-workout.png](screenshots/light/02-workout.png), [04-log-workout-scrolled.png](screenshots/light/04-log-workout-scrolled.png).
 
 ## Patterns that span components
@@ -350,7 +350,8 @@ What was not captured, or is only a guess. Treat these as open.
 | Dark `button.disabledGlass` | No disabled Save in dark was captured. Borrowed from `switch.offTrack` |
 | Values read in one theme only | `set.failure`, `set.drop`, the three medals, `accent.glass` and `state.live` were read in one theme; the other is Derived |
 | Pressed and hover-like states | iPhone Mirroring gives clicks only; no pressed, highlighted or long-press state was seen |
-| Scrolled content | Scrolling inside iPhone Mirroring moves a few points at a time, so long pages were captured from the top only |
+| Scrolled content | Scrolling inside iPhone Mirroring moves a few points at a time. 24 captures show a page below its top (`04-log-workout-scrolled`, `d03-settings-mid` and the tree-pass `mid` and `bottom` pages); the rest of a long page between those positions is unseen |
+| Loading states and the toast | The pass names a spinner (t24), skeleton (t98), web view loading (t130) and a "Link Copied" toast (t93), but none of those captures shows one (README, What to distrust) |
 | Swipe-only content | Image carousel page 2 and share card templates 2 to 8 cannot be reached by clicking |
 | Software keyboard | iPhone Mirroring takes typing from the Mac keyboard and hides the keyboard |
 | Network error state | Turning off the phone's connection would also cut Mirroring |
