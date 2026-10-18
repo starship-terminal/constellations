@@ -846,7 +846,7 @@ What ChatGPT shows around an action, from a temporary chat (one prompt sent, not
 
 ### Menus
 
-The popovers: the chat row menu, the composer + menu (a popover of buttons, not a role=menu), the account menu, a notification channel's checkbox menu and the accent colour listbox. Menus are 90% surfaces with a 16px backdrop blur.
+The popovers: the chat row menu, the composer + menu (a popover of buttons, not a role=menu), the account menu, a notification channel's checkbox menu and the accent colour listbox. Menus are 90% surfaces with an 8px backdrop blur.
 
 #### Menu (chat row)
 
