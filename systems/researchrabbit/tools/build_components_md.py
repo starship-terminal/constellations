@@ -458,7 +458,7 @@ GROUP_INTRO = {
     "Library": "The Library page: a sidebar of lists and collections, a collection header, a selection bar, and the same list, split and map views as search.",
     "Home": "The home page: a hero with a search field, then three white cards (recent articles, collections, getting started).",
     "Dialogs": "Read on 2026-10-17. Account Settings, a form dialog stacked on it, the destructive confirmation and the loading dialog all use one modal: a white sheet over a teal-grey scrim.",
-    "Buttons": "Read on 2026-10-17. The button kinds outside the search chrome: the black primary, the text-only secondary, the pale red destructive button, disabled buttons, and text buttons. Pressed is the mouse held down; no captured rule styles `:active`, so a pressed button keeps its hover fill.",
+    "Buttons": "Read on 2026-10-17. The button kinds outside the search chrome: the black primary, the text-only secondary, the pale red destructive button, disabled buttons, and text buttons. Pressed is the mouse held down; no captured rule styles `:active` except the slider thumb's cursor, so a pressed button keeps its hover fill.",
     "Form controls": "Read on 2026-10-17. Fields, the checkbox, single- and multi-choice pills, the select, the range slider and the note composer. The light controls live in dialogs; the dark ones on the black Search Settings drawer.",
     "Tabs and navigation": "Read on 2026-10-17. The vertical tabs of Account Settings and the filter pills above the Reading List.",
     "Menus": "Read on 2026-10-17. The workspace menu (Radix dropdown) and the account popover.",
