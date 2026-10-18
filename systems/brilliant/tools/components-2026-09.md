@@ -15,7 +15,7 @@ Every page, view and overlay found, with what was captured. D is dark, L is ligh
 | Pricing | `/subscribe/` | L, D | viewport, full page, M | `pricing-{light,dark}-{default,fullpage}`, `mobile-pricing-*` |
 | 404 (legacy Django) | any bad path | L only | desktop, M | `notfound-light-404`, `mobile-notfound-light-404` |
 
-#### Signed-in app (Chrome, 1384x797 at 2x)
+#### Signed-in app (Chrome, 1384x797; 31 screenshots at 2x, 18 at 1x)
 
 | Surface | Where | Captured | Screenshots |
 |---|---|---|---|
