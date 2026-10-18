@@ -5,13 +5,16 @@
 PYTHON ?= python3
 PORT ?= 8800
 
-.PHONY: help setup serve build docs scorecard grade check test brief design-md lint-design-md clean
+.PHONY: help setup dev serve build docs scorecard grade check test brief design-md lint-design-md clean
 
 help: ## List the targets
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-14s %s\n", $$1, $$2}'
 
 setup: ## Create .venv with the pinned Zensical (once per machine)
 	uv venv -q --python 3.13 .venv && uv pip install -q --python .venv/bin/python -r requirements.txt
+
+dev: ## Serve the site and open the gallery and the scorecard in the browser (PORT, default 8800)
+	@./scripts/dev.sh --port $(PORT)
 
 serve: ## Build the gallery, scorecard and docs site and serve it on 127.0.0.1 (PORT, default 8800)
 	@$(PYTHON) tools/catalog.py serve --port $(PORT)
