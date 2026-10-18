@@ -117,7 +117,7 @@ Captured 2026-10-10, signed in, free account, iPhone Mirroring. Themes: light, d
 
 A token set and component reference for Hevy, the workout-logging app for iOS, for building a native iOS fitness app (SwiftUI) that borrows its proportions and structure: a dense set table, one accent colour, a pale grey fill for everything tappable, small corners and iOS 26 glass chrome. It was captured from the shipped app, version 3.1.16 on iOS 26, with a free account on 2026-10-10, through iPhone Mirroring, in light and dark mode. The device screen is 390 x 844 pt and the captures are 1 px = 1 pt, with the screen offset by (8, 38) px inside each PNG.
 
-It holds 200 captures: 17 light captures of the main flows, 17 dark ones, and 166 detail pages, sheets, menus, dialogs and toasts (dark). [page-tree.md](page-tree.md) lists every screen reachable in the app and whether it was opened.
+It holds 200 captures: 17 light captures of the main flows, 17 dark ones, and 166 detail pages, sheets, menus and dialogs (dark; the help-centre article in t130 and t131 is a light web page inside the dark app). No capture shows a toast or a loading state, although four are named for one (see [What to distrust](#what-to-distrust)). [page-tree.md](page-tree.md) lists every screen reachable in the app and whether it was opened.
 
 This package contains no Hevy code, and no Hevy artwork has been redrawn. The screenshots and the visual system they show are Hevy's property ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the logo, icons, exercise illustrations or brand colours.
 
@@ -181,14 +181,15 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### What to distrust (from README.md)
 
 - **The font.** Hevy's face is unknown. It is a geometric sans with a circular "o" and a two-storey "a", and it is not SF Pro. A Behance concept board used Poppins, which has a similar shape, but that was the concept author's choice and is not confirmed for the shipped app. `fontFamily.base` is `"system"`: use the platform face and expect slightly different text widths. Font sizes are estimates, and no line heights were measured.
-- **Scrolling captures show the top only.** Scrolling inside iPhone Mirroring moves a few points at a time, so long pages were captured from the top, and what sits below the fold is unseen.
+- **Long pages are only partly captured.** Scrolling inside iPhone Mirroring moves a few points at a time. 24 captures show a page below its top (`04-log-workout-scrolled`, `d03-settings-mid` and 22 tree-pass files named `mid` or `bottom`, such as t04 and t128), but the parts of a long page between captured positions are unseen.
 - **No keyboard.** iPhone Mirroring takes typing from the Mac keyboard and hides the software keyboard, so no capture has one.
 - **No network error state.** Turning off the phone's connection would also cut iPhone Mirroring.
 - **No pressed or long-press states, no motion.** The captures are stills made with clicks. Swipe-only content (the image carousel's second page, share card templates 2 to 8) was unreachable.
 - **Radii are estimates.** `radius.control` 8, `radius.button` 10 and `radius.card` 10 are good to plus or minus 2 pt.
 - **Dark text and border ranges.** `text.secondary` and `text.tertiary` are ranges in the source (dark `#64666A` to `#696B6F` and `#4A4A4A` to `#626468`; light tertiary `#AAAFB2` to `#B7BABC`). Each token holds the first value of its range and says so.
 - **The scrim.** The source gives black at about 70%, but the light dialog capture shows `#434343` over white, which works out nearer 74%. The token follows the documented 70%.
-- **Screenshots are 256-colour PNGs.** Flat UI colours survive exactly. Read values from the tokens, not the images.
+- **Screenshots are full-colour PNGs.** Each is 406 x 890 px, RGBA, with a transparent margin around the 390 x 844 screen, and holds between 1,590 and 24,906 distinct colours, so nothing was reduced to a palette. Flat UI colours are exact. Read values from the tokens, not the images.
+- **Some captures are named for a state they do not show.** No capture shows a loading state or a toast. `t24-contacts-loading-spinner` is the same image as the empty state t25 apart from the tab bar. `t98-skeleton-loading-suggested` shows the Suggested Athletes cards loaded, with their contents masked and blue Follow buttons. `t130-faq-article-webview-loading` is the same as the loaded article t131 apart from the battery level. `t93-toast-link-copied` is the same as the share composer t91 apart from the clock. The toast, skeleton and spinner descriptions in [components.md](components.md) and in the "Feedback, loading and growth patterns" table of [raw/hevy-style-measured.md](raw/hevy-style-measured.md) come from the capture notes alone, and that file's line saying loading and toast states were captured is wrong. `04-log-workout-scrolled`, cited for the large title collapsing on scroll, shows the Log Workout page, which has no large title, so it cannot show that. The post in `t21-discover-post-trainer-tag` is masked, so its trainer tag does not show.
 - **System glass.** The tab bar and nav bar buttons are iOS 26 glass. Their blur and tint come from the system, so the tokens only describe the colours Hevy puts under or on them.
 
 ### Do and don't (from README.md)
