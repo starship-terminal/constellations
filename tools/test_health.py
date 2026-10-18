@@ -10,7 +10,7 @@ import catalog  # noqa: E402
 import health  # noqa: E402
 
 CRITERIA = {"criteria": [{"id": "F1", "title": "Colour ramps"}, {"id": "F2", "title": "Background roles"},
-                         {"id": "C1", "title": "Component coverage"}, {"id": "V1", "title": "Principles"}]}
+                         {"id": "C1", "title": "Component coverage"}, {"id": "V1", "title": "Principles", "optional": "where published"}]}
 README = "# X design reference\n\nIntro.\n\n| File | What it is |\n|---|---|\n| [tokens.json](tokens.json) | Tokens |\n\n## Fonts\n\nInter.\n"
 
 
@@ -57,11 +57,17 @@ SYSTEM = {"slug": "x", "captured": "2026-10-10", "goodFor": "Tests | pipes", "th
 
 
 class SectionTest(unittest.TestCase):
-    def test_counts_leave_out_criteria_a_capture_cannot_meet(self):
+    def test_counts_leave_out_optional_criteria_a_product_does_not_publish(self):
         with Package():
             text = health.package_section(CRITERIA, audit({"slug": "x", "name": "X", "grades": grades(
                 F1="meets", F2="partly", C1="missing", V1="na")}), SYSTEM)
-        self.assertIn("**1 of 3 met, 1 partly, 1 missing**; V1 do not apply", text)
+        self.assertIn("**1 of 3 met, 1 partly, 1 missing**; V1 are optional for a capture and not published", text)
+
+    def test_a_product_level_not_applicable_is_told_apart_from_an_optional_one(self):
+        with Package():
+            text = health.package_section(CRITERIA, audit({"slug": "x", "name": "X", "grades": grades(
+                F1="na", F2="meets", C1="meets", V1="na")}), SYSTEM)
+        self.assertIn("; F1 do not apply; V1 are optional for a capture and not published", text)
 
     def test_open_criteria_list_missing_before_partly(self):
         with Package():

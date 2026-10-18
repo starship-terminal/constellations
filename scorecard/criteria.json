@@ -1,5 +1,5 @@
 {
- "version": "3",
+ "version": "4",
  "layers": {
   "F": "Foundations",
   "C": "Components",
@@ -162,7 +162,7 @@
    "layer": "Components",
    "title": "Behaviour",
    "doneWhen": "Keyboard and screen-reader behaviour, and do and don't, per component.",
-   "capture": "keyboard and screen-reader behaviour and per-component misuses are decisions a product team writes down; a capture can record what it saw, but cannot read the spec off the interface."
+   "optional": "graded where the product publishes per-component guidance (keyboard and screen-reader behaviour, misuses), as a public design system does. A capture alone records what it saw, not the spec behind it."
   },
   {
    "id": "P1",
@@ -175,14 +175,14 @@
    "layer": "Principles and voice",
    "title": "Principles",
    "doneWhen": "3 to 5 principles that decide real trade-offs, each with an example.",
-   "capture": "principles are the reasons behind a product's choices; a capture sees the choices, not the reasons. The package's Do and don't list (K2) records the rules it can observe."
+   "optional": "graded where the product publishes its design principles. A capture alone sees the choices, not the reasons; the package's Do and don't list (K2) records the rules it can observe."
   },
   {
    "id": "V2",
    "layer": "Principles and voice",
    "title": "Voice",
    "doneWhen": "Tone, capitalisation, vocabulary and a formula for messages.",
-   "capture": "voice guidelines (tone, vocabulary, message formula) are a team's own rules; a capture holds the product's copy, not the guideline behind it."
+   "optional": "graded where the product publishes a voice or content guide (tone, vocabulary, message formula). A capture alone holds the product's copy, not the guideline behind it."
   },
   {
    "id": "A1",

@@ -7,9 +7,11 @@
     python3 tools/grade.py --criteria SLUG    print the wording a reviewer grades SLUG against
 
 A snapshot copies the newest audit, replaces the grades below with fresh results, and
-applies each criterion's `capture` rule from scorecard/criteria.json (criteria a capture
-cannot meet are graded not applicable). Every other grade is a reviewer's judgement and is
-carried over unchanged, so it stays exactly as reliable as the review that set it.
+applies each criterion's `optional` rule from scorecard/criteria.json: a reviewer may grade
+an optional criterion where the product publishes it (a public design system's principles,
+say), a Meets or Partly grade counts, and anything else is graded not applicable, never
+missing. Every other grade is a reviewer's judgement and is carried over unchanged, so it
+stays exactly as reliable as the review that set it.
 
 A reviewer grades a package against the wording for its catalog `platform` (web, mobile
 or desktop; `--criteria SLUG` prints it). Each package in a snapshot records `platform` and
@@ -45,7 +47,8 @@ ROOT = catalog.ROOT
 SCRIPTED = ("F15", "F16", "K2", "K3")
 METHOD = ("Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are "
           "now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). "
-          "Criteria a capture cannot meet are graded not applicable (see each criterion). Every other "
+          "Criteria optional for a capture (see each criterion) count only where the product publishes "
+          "them and are otherwise graded not applicable. Every other "
           "grade comes from the review that last set it (each package's reviewed date, else the {base} "
           "review): ")
 
@@ -218,8 +221,24 @@ META = ("name", "goodFor", "url", "captured", "themes", "platform")
 
 
 def reviewable(criteria: dict) -> list[dict]:
-    """The criteria a reviewer grades: not scripted here, and not a capture rule."""
-    return [c for c in criteria["criteria"] if c["id"] not in SCRIPTED and not c.get("capture")]
+    """The criteria a reviewer must grade: not scripted here, and not optional."""
+    return [c for c in criteria["criteria"] if c["id"] not in SCRIPTED and not c.get("optional")]
+
+
+def optional(criteria: dict) -> list[dict]:
+    """The criteria a reviewer may grade, where the product publishes them."""
+    return [c for c in criteria["criteria"] if c.get("optional")]
+
+
+def apply_optional(criteria: dict, grades: dict) -> None:
+    """An optional criterion keeps a Meets or Partly grade; anything else, including no
+    grade, becomes not applicable, so a product that publishes nothing is never marked
+    missing for it."""
+    for c in optional(criteria):
+        g = grades.get(c["id"])
+        if not g or g.get("grade") not in ("meets", "partly"):
+            grades[c["id"]] = {"grade": "na", "evidence": "Optional for a capture, and this product "
+                                                          "does not publish it."}
 
 
 def wording_changed(criteria: dict, system: dict, platform: str) -> list[str]:
@@ -234,14 +253,22 @@ def review_sheet(criteria: dict, system: dict) -> list[str]:
     """What a reviewer of one package grades: every reviewed criterion in the package's
     platform wording, marked where that differs from the web wording."""
     platform = system.get("platform", scorecard.BASE_PLATFORM)
-    auto = [c["id"] for c in criteria["criteria"] if c["id"] in SCRIPTED or c.get("capture")]
+    auto = [c["id"] for c in criteria["criteria"] if c["id"] in SCRIPTED]
     lines = [f"{system['slug']} is a {platform} package. Grade each criterion below against this wording, "
              f"as {{\"<id>\": {{\"grade\": \"meets|partly|missing|na\", \"evidence\": \"...\"}}}}; "
-             f"{', '.join(auto)} are set automatically."]
+             f"{', '.join(auto)} {'is' if len(auto) == 1 else 'are'} set automatically."]
     for c in reviewable(criteria):
         text = scorecard.done_when(c, platform)
         own = f" ({platform} wording)" if text != c["doneWhen"] else ""
         lines.append(f"{c['id']:<4} {c['title']}{own}: {text}")
+    extra = optional(criteria)
+    if extra:
+        lines.append("Optional: grade these only where the product publishes them, with the source as "
+                     "evidence; leave them out otherwise (they become not applicable, never missing).")
+        for c in extra:
+            text = scorecard.done_when(c, platform)
+            own = f" ({platform} wording)" if text != c["doneWhen"] else ""
+            lines.append(f"{c['id']:<4} {c['title']}{own}: {text}")
     return lines
 
 
@@ -249,11 +276,12 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
              categories: dict | None = None, reviews: dict[str, dict] | None = None,
              review_method: str | None = None) -> dict:
     """The newest audit with each package's details refreshed from the catalog, any fresh
-    reviews merged in, scripted grades replaced and capture rules applied. A package in
+    reviews merged in, scripted grades replaced and optional rules applied. A package in
     the catalog but not in the base audit is left out until a review adds it.
 
     `reviews` maps a slug to {criterion: {grade, evidence}} from a new review of that
-    package; it may only set reviewed criteria, and the package records the review date.
+    package; it must set every reviewed criterion, may set optional ones, and the package
+    records the review date.
     `review_method` replaces the account of how the reviewed grades were set; later
     snapshots carry it forward, so it should cover every review still in the scorecard."""
     out = copy.deepcopy(base)
@@ -267,14 +295,14 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
     out["reviewMethod"] = review_method or base.get("reviewMethod", base["method"])
     out["method"] = METHOD.format(base=out["base"]) + out["reviewMethod"]
     by_slug = {s["slug"]: s for s in catalog_systems}
-    capture_rules = {c["id"]: c["capture"] for c in criteria["criteria"] if c.get("capture")}
     reviewed_ids = {c["id"] for c in reviewable(criteria)}
+    allowed = reviewed_ids | {c["id"] for c in optional(criteria)}
     for slug, grades in (reviews or {}).items():
         if slug not in by_slug:
             raise SystemExit(f"review for {slug}: not in catalog.json")
-        wrong = sorted(set(grades) - reviewed_ids)
+        wrong = sorted(set(grades) - allowed)
         if wrong:
-            raise SystemExit(f"review for {slug} sets {', '.join(wrong)}, which are scripted or capture rules")
+            raise SystemExit(f"review for {slug} sets {', '.join(wrong)}, which are scripted or not in the rubric")
         # A review dates the whole package, so it must grade every reviewed criterion.
         missing = sorted(reviewed_ids - set(grades), key=lambda c: (c[0], int(c[1:]) if c[1:].isdigit() else 0))
         if missing:
@@ -301,8 +329,7 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
             # Grades reviewed before rubric 3 were set against its one wording, the web one.
             system.setdefault("reviewedPlatform", scorecard.BASE_PLATFORM)
         system["grades"].update(scripted(source))
-        for cid, reason in capture_rules.items():
-            system["grades"][cid] = {"grade": "na", "evidence": f"Not applicable to a capture: {reason}"}
+        apply_optional(criteria, system["grades"])
     return out
 
 
