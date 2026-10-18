@@ -6,11 +6,11 @@ Source: computed-style dumps of the logged-in web app (Japanese course, light an
 
 | Set | Contents | Tokens |
 | --- | --- | --- |
-| `core` | `palette.light.*` and `palette.dark.*` (all 300 Duolingo colour names, per theme), fontFamily, fontWeight, typography, space, radius, borderWidth, shadow, blur, opacity, filter, duration, easing, breakpoint, size (layout), zIndex | 759 |
-| `light` | Semantic colour roles aliasing `{palette.light.<name>}` | 95 |
-| `dark` | The same keys aliasing `{palette.dark.<name>}` | 95 |
+| `core` | `palette.light.*` and `palette.dark.*` (all 300 Duolingo colour names, per theme), fontFamily, fontWeight, typography, space, radius, borderWidth, shadow, blur, opacity, filter, duration, easing, breakpoint, size (layout and icons), zIndex, focusRing, layout | 772 |
+| `light` | Semantic colour roles aliasing `{palette.light.<name>}` (109), and the derived `ramp.*` steps (68) | 177 |
+| `dark` | The same keys aliasing `{palette.dark.<name>}` | 177 |
 
-Core breakdown: palette 600, fontFamily 2, fontWeight 3, typography 39, space 18, radius 11, borderWidth 5, shadow 9, blur 1, opacity 7, filter 2, duration 9, easing 7, breakpoint 9, size 27, zIndex 10.
+Core breakdown: palette 600, fontFamily 2, fontWeight 3, typography 39, space 18, radius 11, borderWidth 5, shadow 9, blur 1, opacity 7, filter 2, duration 10, easing 7, breakpoint 9, size 32, zIndex 10, focusRing 4, layout 3.
 
 `$themes` holds Light (core=source, light=enabled) and Dark (core=source, dark=enabled); `$metadata.tokenSetOrder` is core, light, dark. Shadow tokens live in core but their colours reference semantic tokens (for example `{accent.primary.lip}`), so they resolve per theme.
 
@@ -27,7 +27,7 @@ Every lip is a solid, zero-blur shadow on a pseudo-element. The button reserves 
 
 ## Semantic colour roles
 
-Resolved per theme from that theme's dumps. When several palette names share a hex (dark `#202f36` is polar, iguana, canary, sea-sponge, walking-fish and cheetah), the name comes from the CSS rule that styles the node.
+Resolved per theme from that theme's dumps. The table holds the 95 roles of the 2026-09 capture; the 14 roles added in 2026-10 are under [2026-10 additions](#2026-10-additions). When several palette names share a hex (dark `#202f36` is polar, iguana, canary, sea-sponge, walking-fish and cheetah), the name comes from the CSS rule that styles the node.
 
 | Token | Light | Dark | Token | Light | Dark |
 | --- | --- | --- | --- | --- | --- |
@@ -144,7 +144,7 @@ Applied by [tools/refresh_tokens_2026_10.py](tools/refresh_tokens_2026_10.py); e
 | `status.{success,danger,info,warning}Border`, `status.infoText`, `status.warningText` | Derived | Roles assigned from the components that draw them (tile borders, the selected choice, the orange button's lip) |
 | `core.fontFamily.*` | Measured | Stacks as arrays: `duolingo-sans, sans-serif`, `feather, sans-serif` |
 | `core.size.icon.*` | Measured | 16, 18, 20, 24 and 32px |
-| `core.focusRing.*` | Measured | 0px: no ring anywhere ([components/focus.md](components/focus.md)) |
+| `core.focusRing.*` | Measured | 0px on every control; `core.focusRing.listRow` (2px, offset -2px) is the one ring, on the Math section-group rows ([components/focus.md](components/focus.md)) |
 | `core.layout.columns.*` | Measured | 2 columns at 1440 and 1000, 1 at 390 |
 | `core.duration.reducedMotion` | Measured | What `html[reduced-motion]` switches off |
 
