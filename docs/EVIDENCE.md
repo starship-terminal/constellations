@@ -34,8 +34,10 @@ New packages use the left column.
 
 ## Things the packages already warn about
 
-- Linear's app colours are sampled pixels from dark screenshots; only the
-  public site's values are measured CSS, and no light app theme exists.
+- Linear's app values were measured from redacted copies of the signed-in
+  app in both themes on 2026-10-17; the older component SVG redraws are
+  reconstructions, and several focus and hover crops show no change from
+  their default (its README says which).
 - Claude's code blocks keep the dark theme's inline colours in the light
   renders; read code colours from the dark captures.
 - Screenshots everywhere are 256-colour PNGs. Flat UI colours survive
