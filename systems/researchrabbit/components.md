@@ -1819,7 +1819,7 @@ Authored state rules (from the page's CSS): `button:focus, input:focus { outline
 
 ### Buttons
 
-Read on 2026-10-17. The button kinds outside the search chrome: the black primary, the text-only secondary, the pale red destructive button, disabled buttons, and text buttons. Pressed is the mouse held down; no captured rule styles `:active`, so a pressed button keeps its hover fill.
+Read on 2026-10-17. The button kinds outside the search chrome: the black primary, the text-only secondary, the pale red destructive button, disabled buttons, and text buttons. Pressed is the mouse held down; no captured rule styles `:active` except the slider thumb's cursor, so a pressed button keeps its hover fill.
 
 #### Primary button
 Black rectangle with white text and 8px corners ("Done" in a dialog, "Search for Articles" in an empty state). Read as `button-primary` on the Update profile dialog, library, Reading List (empty).

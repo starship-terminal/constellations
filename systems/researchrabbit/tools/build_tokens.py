@@ -178,8 +178,9 @@ def S(value, xy, desc=None, shot=SHOT):
 
 TY = lambda fam, size, weight, lh: {"fontFamily": fam, "fontSize": size, "fontWeight": weight,
                                     "lineHeight": lh, "letterSpacing": "0px"}
-LH = ("Line height measured, not set by the component's rule: every text line read computes to 1.5 times its "
-      "size (14/21, 16/24, 24/36, 32/48 in raw/components-computed.json), the html default.")
+LH = ("Line height measured, not set by the component's rule: almost every text line read computes to 1.5 times its "
+      "size (14/21, 16/24, 24/36, 32/48 in raw/components-computed.json), the html default; spans drop to 1em, and the "
+      "legend tooltip, the Find in list field and the tip banner set their own.")
 
 SPEC_CORE = {
     "palette": {
@@ -409,7 +410,7 @@ SPEC_LIGHT = {
         "primary": R("color", "{palette.base.black}", "ExploreBuilder__AutosaveFolderButton", "background-color: black"),
         "primary-text": R("color", "{palette.base.white}", "ExploreBuilder__AutosaveFolderButton", "color: white"),
         "primary-hover": R("color", "{palette.literal.charcoal}", "ViewSelection__Button", "&:hover { background-color: rgb(51, 51, 51)"),
-        "primary-pressed": M("color", "{palette.literal.charcoal}", "button-primary", "pressed", "backgroundColor", "Pressed keeps the hover fill: no captured rule styles :active"),
+        "primary-pressed": M("color", "{palette.literal.charcoal}", "button-primary", "pressed", "backgroundColor", "Pressed keeps the hover fill: no captured rule styles :active except the slider thumb's cursor"),
         "focus-ring": G("color", "{palette.turq.50}", "button:focus, input:focus", "outline-color: var(--turq-50)", "The 1px outline every focused button and input draws; links keep the browser's blue"),
         "danger": M("color", "{palette.peach.base}", "button-danger", "disabled", "backgroundColor", "The destructive button, seen only disabled"),
         "accent": R("color", "{palette.lavender.50}", "SearchBar__SearchButton", "background-color: var(--lavender-50)", "The lavender Search button and search pill"),
