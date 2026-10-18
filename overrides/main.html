@@ -1,0 +1,10 @@
+{#- The site's web app basics: manifest, touch icon and browser colours. The favicon
+    itself is theme.favicon in zensical.toml (written by tools/scorecard.py). -#}
+{% extends "base.html" %}
+{% block extrahead %}
+  <link rel="manifest" href="{{ base_url }}/site.webmanifest">
+  <link rel="apple-touch-icon" href="{{ base_url }}/assets/icons/apple-touch-icon.png">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1e2129">
+  <meta name="apple-mobile-web-app-title" content="Design">
+{% endblock %}

@@ -358,6 +358,9 @@ enabled = false
 
 [project.theme]
 language = "en"
+# overrides/main.html adds the web app manifest, the touch icon and theme colours.
+custom_dir = "overrides"
+favicon = "assets/favicon.svg"
 # No navigation.instant: StatiCrypt encrypts every published page, and instant
 # loading would fetch the encrypted HTML behind the decrypt step.
 features = [
