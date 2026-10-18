@@ -15,15 +15,15 @@ Everything is one [Zensical](https://zensical.org) docs site: the gallery, the
 scorecard and the library docs under `docs/`.
 
 ```bash
-make setup
+make dev
 ```
 
-```bash
-make serve
-```
-
-`make setup` installs the pinned Zensical into `.venv` once. `make serve` builds
-the site and serves it at http://127.0.0.1:8800/:
+`make dev` (or [scripts/dev.sh](scripts/dev.sh)) installs the pinned Zensical
+into `.venv` on the first run, builds the site, serves it at
+http://127.0.0.1:8800/ and opens the gallery and the scorecard in the browser.
+If the site is already running it only opens the tabs; `--port N` picks
+another port and `--no-open` skips the browser. `make serve` does the same
+without the checks or the browser. The site has three parts:
 
 - **Gallery**: one card per package with a cover screenshot, its colour roles and
   fonts. Each package's page reads in the same order, from a rail on the left:

@@ -39,7 +39,7 @@ per product under `systems/<slug>/`, indexed in [catalog.json](catalog.json).
 4. Look at `screenshots/` and `components/crops/` (or `components/` and
    `boards/` in an audit) for layout and proportion, not for values.
    `style-guide.html` renders every token. For a person choosing between
-   styles, `make serve` opens a gallery of all of them.
+   styles, `make dev` serves the site and opens a gallery of all of them.
 5. Say which package and which tokens you used in your summary, so the
    choice can be checked.
 
