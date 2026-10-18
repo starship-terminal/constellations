@@ -354,7 +354,7 @@ Good for: Course catalogue, course and module pages, course cards, a mature ente
 
 Captured 2026-10-17, public pages signed out, learner pages signed in. Themes: light, dark.
 
-A token set and component reference for Coursera's web product, for rebuilding our course list and course detail pages in the style of a real course platform. It was read from coursera.org on 2026-09-29: the public catalogue pages headless (home, search, browse, course, specialization, certificate and the Explore topic page with its compact course cards, chip rows and scrolling card rows), and the signed-in learner pages from one learner's account with one enrolled course, all at 1440 wide and (for public pages) 390 wide. A refresh on 2026-10-17 added the log-in dialog and its validation error, the AI coach text area, the 404 page, the z-index layers and reduced-motion rules, and, signed in, the course overflow menu, the review and share dialogs, and Account settings (switches, the colour theme select, a warning notification) in light and in the dark theme learners can now choose. It also added written [patterns](patterns.md) and a coverage table.
+A token set and component reference for Coursera's web product, for rebuilding our course list and course detail pages in the style of a real course platform. It was read from coursera.org on 2026-09-29: the public catalogue pages headless (home, search, browse, course, specialization, certificate and the Explore topic page with its compact course cards, chip rows and scrolling card rows), and the signed-in learner pages from one learner's account (the course pages all from one enrolled course; My Learning also lists the learner's other courses, renamed), all at 1440 wide, with five public pages also at 390 wide. A refresh on 2026-10-17 added the log-in dialog and its validation error, the AI coach text area, the 404 page, the z-index layers and reduced-motion rules, and, signed in, the course overflow menu, the review and share dialogs, and Account settings (switches, the colour theme select, a warning notification) in light and in the dark theme learners can now choose. It also added written [patterns](patterns.md) and a coverage table.
 
 The earlier references (Duolingo, Brilliant, NotebookLM) are learning apps. Coursera is the one built around courses: a catalogue of product cards, a course landing page with modules and outcomes, and a course home where a learner works through modules, lessons and items with deadlines and grades. Those last screens map onto our `/courses` and course pages most directly.
 
@@ -417,6 +417,16 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't read colours off the screenshots; they are 256-colour PNGs.
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
+
+### What to distrust (from README.md)
+
+- Screenshots are stored as 256-colour PNGs to keep the repo small. Flat UI colours are exact; read values from the tokens, not the images.
+- States labelled `focus-visible-cds` are emulated: the measurement added the class CDS's script would add on keyboard focus. Only the 2026-10-17 states labelled `focus-visible (as captured)` carry classes CDS set itself.
+- The learner pages were measured from static copies with scripts stripped, so menus, the AI chat panel, accordions and other scripted parts are only in the state they were copied in. The reading's subheadings, lists, code and tables come from a probe block the script inserted, not from course content.
+- The learner crops and screenshots have solid fills painted over the career goal, weekly commitment, enrolled course titles, dates and due times, and 17 crops that showed only private content were deleted. Do not read layout or type from the filled areas.
+- The public dark screenshots were made by setting `data-color-theme="dark"` by hand; signed-out pages ignore `prefers-color-scheme` and stay light. Partner logos and some art keep their light look in them, the audience strip is black in both themes and the tab bar fade stays light.
+- Some tokens are not readings. The four `role.status.*-border` colours are derived, because no CDS callout draws a border. `elevation.level3` is defined but nothing measured uses it. `callouts.tertiary-invert` is the same literal cyan in light and dark. In the dark set, `component.product-card.shadow-hover`, `component.hero.art-fill` and `component.hero.art-stroke` were measured in light only; the dark set reuses the same aliases.
+- Everything the capture could not reach is listed under Gaps in [components.md](components.md#gaps).
 
 ### Do and don't (from README.md)
 

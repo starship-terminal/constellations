@@ -13,7 +13,7 @@ How to read an entry:
 
 ## Discovery list
 
-Screenshots are named `{page}-{theme}-{state}.png`. Desktop shots are 2880x1800 (1440x900 at 2x); the `-full` shots are stored at 1x (1440 wide). Mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x). The state names below link to the file. L is light, D is dark.
+Screenshots are named `{page}-{theme}-{state}.png`. Desktop shots are 2880x1800 (1440x900 at 2x); the desktop `-full` shots are stored at 1x (1440 wide, 1456 for home, whose hero carousel overflows). Mobile shots, full pages included, are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x). The state names below link to the file. L is light, D is dark.
 
 ### Public pages (signed out)
 
@@ -2901,7 +2901,7 @@ The learner pages were measured from static snapshots with scripts stripped, so 
 
 ### Screenshots
 
-- Full-page shots (`-full`) are stored at 1x (1440 wide); the viewport shots are 2x.
+- Desktop full-page shots (`-full`) are stored at 1x (1440 wide, 1456 for home); the viewport shots and the mobile full-page shots are 2x.
 - Page heights move by a few hundred pixels between loads because carousels, promo banners and lazy images differ.
 - The AI panel opens by default on desktop course, specialization and certificate pages and pushes the content into 1024px. Component measurements were taken with it closed; the `ai-panel` screenshots show it.
 - In full-page mobile shots the fixed bottom CTA bar shows up mid-page where the tile boundary fell; ignore it.
