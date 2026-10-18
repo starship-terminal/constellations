@@ -1994,7 +1994,7 @@ Tokens named in its classes: `--cds-bg-user-message`, `--cds-cursor-interactive`
 
 ### Forms and feedback
 
-Added on 2026-10-17 from nine new copies: the tooltip, the text link, the checkbox, the confirmation and form dialogs with their primary, secondary, danger and disabled buttons, the text field (with its error state) and text area, the list search, empty result, filter menu, loading skeleton and the two page grids. Every button here was also read pressed, with the pointer held down: cds keeps the hover fill and squishes the paint layer to 97.5% (`core.press.button-scale`).
+Added on 2026-10-17 from twelve new copies: the tooltip, the text link, the checkbox, the confirmation and form dialogs with their primary, secondary, danger and disabled buttons, the text field (with its error state) and text area, the list search, empty result, filter menu, loading skeleton and the two page grids, the information banner, the warning toast and the onboarding screen. Every button here but the toast's Dismiss was also read pressed, with the pointer held down: cds keeps the hover fill and squishes the paint layer to 97.5% (`core.press.button-scale`).
 
 #### Text link
 
@@ -2626,7 +2626,7 @@ Tokens named in its classes: `--cds-cursor-interactive`, `--cds-page-bg`.
 - The thread is not virtualised: one copy rendered at three scroll positions (`thread-dark`, `-table` at 1150, `-followup` at 1780). Its replies hold a code block, a table and paragraphs but no visible heading or list; the prose heading sizes are in [raw/css-vars.json](raw/css-vars.json) (`--_prose-h*`), not measured. The user message carries the only list.
 - Artifact previews are iframes and render as dark boxes where present.
 - Hover and focus on the 390 wide copies were not measured (a phone has neither). The segmented controls' radio spans take no focus in a static copy, so their focus-visible state is skipped.
-- Refreshed 2026-10-17 with nine more copies (Forms and feedback, and the overlays marked with that date). The 2026-10-04 screenshots and crops were not retaken, so the two days sit side by side: the Artifacts page is a list in the first and a grid of cards in the second.
+- Refreshed 2026-10-17 with twelve more copies (Forms and feedback, and the overlays marked with that date). The 2026-10-04 screenshots and crops were not retaken, so the two days sit side by side: the Artifacts page is a list in the first and a grid of cards in the second.
 - Focus was not read on the code block's copy button, the chat title's more button, search results, Artifacts list rows and a project's recent rows: their 2026-10-04 copies are gone and no 2026-10-17 copy shows them. The search dialog's field row shows no ring when its text area takes focus; the caret is the only sign.
 - Only one toast was captured, the warning one; Claude raised none for copying, and the actions that raise others (rename, pin, share) change the account. The onboarding screen was snapshotted as it opened and never used, so its checked and error states are the shared checkbox and field readings. The text field's error state was read by setting `data-invalid` on the copy, so its ring is Claude's own CSS but the message under the field was never seen. A button's loading state needs a sent message.
 - Streaming (a reply being written, the stop button), the artifact panel beside a chat, the Code mode, Cowork, the share sheet, and the Privacy, Billing and Usage settings panes were not captured: each would need sending a message or shows account and billing details.
