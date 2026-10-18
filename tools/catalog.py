@@ -1049,22 +1049,40 @@ def file_table(readme: str) -> list[str]:
     return []
 
 
+def git_ignored(paths: list[Path]) -> set[Path]:
+    """The paths git ignores here (a package's local fonts/, say). Outside a git checkout,
+    or without git, nothing counts as ignored."""
+    if not paths:
+        return set()
+    try:
+        out = subprocess.run(["git", "-C", str(ROOT), "check-ignore", "--stdin"], capture_output=True, text=True,
+                             input="\n".join(str(p) for p in paths), timeout=30)
+    except (OSError, subprocess.SubprocessError):
+        return set()
+    if out.returncode not in (0, 1):
+        return set()
+    return {Path(line) for line in out.stdout.splitlines() if line}
+
+
 def layout_gaps(slug: str) -> tuple[list[str], list[str]]:
     """(the STANDARD_PARTS a package lacks, its top-level entries that no row of the
-    README's file table links or names). A folder is written with a trailing slash."""
+    README's file table links or names). A folder is written with a trailing slash. What
+    git ignores (local fonts, capture leftovers) is not part of the package, so it neither
+    fills a standard part nor needs a row."""
     folder = ROOT / "systems" / slug
     if not folder.is_dir():
         return list(STANDARD_PARTS), []
+    ignored = git_ignored(sorted(folder.iterdir()))
     missing = []
     for part in STANDARD_PARTS:
         path = folder / part.rstrip("/")
-        if not path.exists() or path.is_dir() != part.endswith("/"):
+        if not path.exists() or path.is_dir() != part.endswith("/") or path in ignored:
             missing.append(part)
     readme = folder / "README.md"
     rows = file_table(readme.read_text()) if readme.is_file() else []
     unlisted = []
     for entry in sorted(folder.iterdir()):
-        if entry.name.startswith(".") or entry.name == "README.md":
+        if entry.name.startswith(".") or entry.name == "README.md" or entry in ignored:
             continue
         named = re.compile(r"(\]\((?:\./)?|`)" + re.escape(entry.name) + r"[/)`#]")
         if not any(named.search(row) for row in rows):

@@ -635,6 +635,25 @@ class LayoutTest(unittest.TestCase):
         parts = [p for p in self.FULL if p != "raw/"] + ["raw"]
         self.assertIn("x: no raw/; add it", self.problems(parts, parts)[0])
 
+    def test_what_git_ignores_is_not_part_of_the_package(self):
+        import subprocess
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(["git", "init", "-q", str(root)], check=True)
+            (root / ".gitignore").write_text("systems/*/fonts/\nsystems/*/raw/\n")
+            folder = root / "systems" / "x"
+            folder.mkdir(parents=True)
+            for entry in self.FULL + ["fonts/"]:
+                (folder / entry).mkdir() if entry.endswith("/") else (folder / entry).write_text("")
+            rows = "\n".join(f"| [{r}]({r}) | what it is |" for r in self.FULL)
+            (folder / "README.md").write_text(f"# X\n\n| File | What |\n|---|---|\n{rows}\n")
+            with mock.patch.object(catalog, "ROOT", root):
+                missing, unlisted = catalog.layout_gaps("x")
+        self.assertEqual(unlisted, [])
+        self.assertEqual(missing, ["raw/"])
+
     def test_an_extra_entry_needs_a_row(self):
         self.assertEqual(self.problems(self.FULL + ["graph.md"], self.FULL),
                          ["x: graph.md has no row in the README's file table"])
