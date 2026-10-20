@@ -704,6 +704,108 @@ class SectionDataTest(unittest.TestCase):
         self.assertIn("spacing", data["omitted"]["spacing"])
 
 
+class ReferoBuildTest(unittest.TestCase):
+    """build_refero emits refero/index.json plus one refero/style/<slug>.json per
+    style, from a refero/ tree built in a temporary repository."""
+
+    def make(self, root, slug, meta, ds, docs=True):
+        folder = root / "refero" / slug
+        folder.mkdir(parents=True)
+        (folder / "meta.json").write_text(json.dumps(meta))
+        if ds is not None:
+            (folder / "design-system.json").write_text(json.dumps(ds))
+        if docs:
+            (folder / "DESIGN.md").write_text("# Designed\n")
+            (folder / "variables.css").write_text(":root {}")
+            (folder / "theme.css").write_text("body {}")
+            (folder / "tokens.json").write_text("{}")
+        return folder
+
+    def build(self, styles):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp:
+            root, site = Path(tmp), Path(tmp) / "docs" / "gallery"
+            for slug, meta, ds in styles:
+                self.make(root, slug, meta, ds)
+            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "SITE", site):
+                out = catalog.build_refero()
+            return json.loads(out.read_text()), {
+                p.stem: json.loads(p.read_text()) for p in site.glob("refero/style/*.json")}
+
+    ALPHA = {"slug": "alpha", "name": "Alpha", "tagline": "tag", "theme": "light",
+             "source_url": "https://www.alpha.example.com/x", "page_url": "https://p/alpha",
+             "extracted_at": "t0", "screenshot_url": "https://img/shot.jpg",
+             "video_url": "https://img/v.mp4", "video_poster_url": "https://img/p.jpg"}
+    ALPHA_DS = {"meta": {"thumbnailUrl": "https://img/t.jpg"}, "industry": "media",
+                "similar": [{"business": "Beta", "why": "same"}, {"business": "Nobody", "why": "none"}]}
+    BETA = {"slug": "beta", "name": "beta", "source_url": "https://beta.io"}
+    BETA_DS = {"industry": "other"}
+
+    def test_index_rows_and_name_sort(self):
+        index, _ = self.build([("beta", self.BETA, self.BETA_DS), ("alpha", self.ALPHA, self.ALPHA_DS)])
+        self.assertEqual(index["version"], 1)
+        self.assertEqual(index["count"], 2)
+        alpha, beta = index["styles"]
+        self.assertEqual([s["slug"] for s in index["styles"]], ["alpha", "beta"])
+        self.assertEqual(alpha["src"], "alpha.example.com")
+        self.assertEqual(alpha["card"], "/refero-media/posters/alpha.jpg")
+        self.assertEqual(alpha["cardRemote"], "https://img/p.jpg")
+        self.assertTrue(alpha["video"])
+        self.assertEqual(beta["industry"], "other")
+        self.assertIsNone(beta["card"])
+        self.assertIsNone(beta["cardRemote"])
+        self.assertFalse(beta["video"])
+
+    def test_card_remote_falls_back_to_thumbnail_then_shot(self):
+        meta = {**self.BETA, "screenshot_url": "https://img/s.jpg"}
+        index, _ = self.build([("beta", meta, {"meta": {"thumbnailUrl": "https://img/t.jpg"}})])
+        self.assertEqual(index["styles"][0]["card"], "/refero-media/shots/beta.jpg")
+        self.assertEqual(index["styles"][0]["cardRemote"], "https://img/t.jpg")
+
+    def test_entry_file_media_docs_ds_and_similar(self):
+        _, files = self.build([("beta", self.BETA, self.BETA_DS), ("alpha", self.ALPHA, self.ALPHA_DS)])
+        alpha = files["alpha"]
+        self.assertEqual(alpha["theme"], "light")
+        self.assertEqual(alpha["industry"], "media")
+        self.assertEqual(alpha["source_url"], "https://www.alpha.example.com/x")
+        self.assertEqual(alpha["media"]["shot"],
+                         {"local": "/refero-media/shots/alpha.jpg", "remote": "https://img/shot.jpg"})
+        self.assertEqual(alpha["media"]["video"]["remote"], "https://img/v.mp4")
+        self.assertIsNone(alpha["media"]["detail"])
+        self.assertIn("url=https://alpha.example.com", alpha["media"]["favicon"]["remote"])
+        self.assertEqual(alpha["media"]["favicon"]["local"], "/refero-media/favicons/alpha.png")
+        self.assertEqual(alpha["docs"]["design_md"], "# Designed\n")
+        self.assertEqual(alpha["docs"]["tokens_json"], "{}")
+        self.assertNotIn("meta", alpha["ds"])
+        self.assertEqual(alpha["similar"], [{"slug": "beta", "name": "Beta", "why": "same"},
+                                            {"slug": None, "name": "Nobody", "why": "none"}])
+        self.assertIsNone(files["beta"]["media"]["shot"])
+
+    def test_a_folder_without_both_files_is_skipped(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp:
+            root, site = Path(tmp), Path(tmp) / "docs" / "gallery"
+            self.make(root, "alpha", self.ALPHA, self.ALPHA_DS)
+            broken = root / "refero" / "broken"
+            broken.mkdir(parents=True)
+            (broken / "meta.json").write_text("{}")
+            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "SITE", site):
+                out = catalog.build_refero()
+            index = json.loads(out.read_text())
+        self.assertEqual(index["count"], 1)
+        self.assertEqual([s["slug"] for s in index["styles"]], ["alpha"])
+
+    def test_a_style_named_index_gets_an_entity_file(self):
+        # refero/index is a real style; under refero/style/ it cannot collide
+        # with the index.
+        index, files = self.build([("index", {**self.BETA, "slug": "index", "name": "index"}, self.BETA_DS)])
+        self.assertEqual(index["count"], 1)
+        self.assertEqual(index["styles"][0]["slug"], "index")
+        self.assertEqual(files["index"]["slug"], "index")
+
+
 class RepositoryTest(unittest.TestCase):
     def test_catalog_checks_clean(self):
         self.assertEqual(catalog.check(), [])

@@ -9,6 +9,14 @@ Refero's own serialization code (tools/refero/generators.js).
 Usage:
     python3 tools/refero/fetch.py [--workers 8] [--limit N] [--force]
     python3 tools/refero/fetch.py --export-only        # regenerate files/db artifacts from stored result_json
+    python3 tools/refero/fetch.py --enrich-media       # backfill video_url/poster columns + meta.json keys
+
+Media keys (video_url, video_poster_url, video_detail_url,
+video_detail_poster_url, video_w, video_h, video_ms) are scraped from the
+escaped JSON in each page's __next_f.push payload. They are always written
+to meta.json (null when absent) so the file has a fixed schema, and the four
+URL fields are stored as styles columns. media_fetched_at marks when the
+extraction ran; --enrich-media backfills rows where it is still NULL.
 """
 
 import argparse
@@ -56,7 +64,12 @@ CREATE TABLE IF NOT EXISTS styles (
   design_system_json TEXT,
   prompt_txt TEXT,
   result_json TEXT,
-  screenshot_url TEXT
+  screenshot_url TEXT,
+  video_url TEXT,
+  video_poster_url TEXT,
+  video_detail_url TEXT,
+  video_detail_poster_url TEXT,
+  media_fetched_at TEXT
 );
 CREATE TABLE IF NOT EXISTS fetch_errors (
   uuid TEXT PRIMARY KEY,
@@ -70,6 +83,25 @@ PUSH_RE = re.compile(r'self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)')
 PRE_RE = re.compile(r'<pre class="whitespace-pre-wrap[^"]*"><code[^>]*>(.*?)</code></pre>', re.S)
 TITLE_RE = re.compile(r'<title>(.*?)\s*\|\s*Refero Styles</title>', re.S)
 RESULT_KEY = '"result":{'
+
+# Added after the initial schema shipped; init_db() ALTERs existing DBs.
+MEDIA_COLUMNS = ["video_url", "video_poster_url", "video_detail_url",
+                 "video_detail_poster_url", "media_fetched_at"]
+
+# Media fields live in the raw page as escaped JSON inside __next_f.push
+# strings, e.g.  \"previewVideoUrl\":\"https://images.refero.design/...\".
+# The backslashes are literal characters, hence the \\*" fragments below.
+MEDIA_URL_FIELDS = {
+    "video_url": "previewVideoUrl",
+    "video_poster_url": "previewVideoPosterUrl",
+    "video_detail_url": "previewVideoDetailUrl",
+    "video_detail_poster_url": "previewVideoDetailPosterUrl",
+}
+MEDIA_INT_FIELDS = {
+    "video_w": "previewVideoWidth",
+    "video_h": "previewVideoHeight",
+    "video_ms": "previewVideoDurationMs",
+}
 
 
 def get(url, binary=True, tries=4):
@@ -130,6 +162,49 @@ def extract_design_md(page):
     return html_lib.unescape(m.group(1))
 
 
+SHOT_RE = re.compile(
+    r'\\"screenshot\\":\s*{\\"url\\":\\*"(https://images\.refero\.design/[^"\\]+)')
+SHOT_URL_RE = re.compile(r'screenshotUrl\\*":\\*"')
+
+
+def extract_media(page):
+    """Pull preview-video fields out of the raw page's escaped flight JSON.
+
+    Returns a dict with the MEDIA_URL_FIELDS/MEDIA_INT_FIELDS keys; values
+    are None when the style has no video (the field is emitted as null).
+
+    The page serializes ~20 other styles' records after the main one (a
+    related-styles list), so each field is read only inside the record whose
+    screenshotUrl matches the style's own result.screenshot.url. Falls back
+    to the first occurrence when that anchor is not found.
+    """
+    start = 0
+    shot = SHOT_RE.search(page)
+    if shot:
+        own = re.search(SHOT_URL_RE.pattern + re.escape(shot.group(1)), page)
+        if own:
+            start = own.end()
+            nxt = SHOT_URL_RE.search(page, start)
+            end = nxt.start() if nxt else start + 4000
+            window = page[start:end]
+        else:
+            window = page
+    else:
+        window = page
+    media = {}
+    for key, field in MEDIA_URL_FIELDS.items():
+        # The style's own record precedes the related-styles records, so the
+        # first field occurrence wins whether its value is a URL or null.
+        m = re.search(
+            field + r'\\*"\s*:\s*(?:\\*"(https://images\.refero\.design/[^"\\]+)\\*"|null)',
+            window)
+        media[key] = m.group(1) if m else None
+    for key, field in MEDIA_INT_FIELDS.items():
+        m = re.search(field + r'\\*":(?:null|(\d+))', window)
+        media[key] = int(m.group(1)) if m and m.group(1) else None
+    return media
+
+
 def parse_page(page):
     """Return (result dict, design_md str) or raise."""
     result = extract_result(flight_blob(page))
@@ -151,6 +226,11 @@ def init_db():
     WORK.mkdir(exist_ok=True)
     db = sqlite3.connect(DB)
     db.executescript(SCHEMA)
+    have = {r[1] for r in db.execute("PRAGMA table_info(styles)")}
+    for col in MEDIA_COLUMNS:
+        if col not in have:
+            db.execute(f"ALTER TABLE styles ADD COLUMN {col} TEXT")
+    db.commit()
     return db
 
 
@@ -173,7 +253,21 @@ def fetch_one(uuid):
     url = f"{BASE}/style/{uuid}"
     page = get(url).decode("utf-8", "replace")
     result, design_md = parse_page(page)
-    return uuid, url, result, design_md, style_name(result, page)
+    return uuid, url, result, design_md, style_name(result, page), extract_media(page)
+
+
+def write_meta(slug, media):
+    """Merge media keys into refero/<slug>/meta.json, preserving key order."""
+    meta_path = REFERO / slug / "meta.json"
+    meta_obj = {}
+    if meta_path.exists():
+        try:
+            meta_obj = json.loads(meta_path.read_text())
+        except json.JSONDecodeError:
+            pass
+    meta_obj.update(media)
+    meta_path.parent.mkdir(exist_ok=True)
+    meta_path.write_text(json.dumps(meta_obj, indent=2) + "\n")
 
 
 def cmd_fetch(args):
@@ -199,7 +293,7 @@ def cmd_fetch(args):
         for fut in concurrent.futures.as_completed(futures):
             uuid = futures[fut]
             try:
-                uuid, url, result, design_md, name = fut.result()
+                uuid, url, result, design_md, name, media = fut.result()
             except Exception as ex:
                 db.execute(
                     "INSERT OR REPLACE INTO fetch_errors (uuid, page_url, error, at) VALUES (?,?,?,?)",
@@ -229,16 +323,22 @@ def cmd_fetch(args):
                 "extracted_at": meta.get("extractedAt"),
                 "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                 "screenshot_url": (result.get("screenshot") or {}).get("url"),
+                **media,
             }
             (outdir / "meta.json").write_text(json.dumps(meta_obj, indent=2) + "\n")
             db.execute(
                 """INSERT OR REPLACE INTO styles
                    (uuid, slug, name, tagline, page_url, source_url, theme,
-                    extracted_at, fetched_at, design_md, result_json, screenshot_url)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""",
+                    extracted_at, fetched_at, design_md, result_json, screenshot_url,
+                    video_url, video_poster_url, video_detail_url,
+                    video_detail_poster_url, media_fetched_at)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                 (uuid, slug, name, meta_obj["tagline"], url, meta_obj["source_url"],
                  meta_obj["theme"], meta_obj["extracted_at"], meta_obj["fetched_at"],
-                 design_md, json.dumps(result), meta_obj["screenshot_url"]))
+                 design_md, json.dumps(result), meta_obj["screenshot_url"],
+                 media["video_url"], media["video_poster_url"],
+                 media["video_detail_url"], media["video_detail_poster_url"],
+                 meta_obj["fetched_at"]))
             db.commit()
             fetched += 1
             if fetched % 50 == 0:
@@ -284,6 +384,59 @@ def cmd_export():
     db.close()
 
 
+def enrich_one(url):
+    return extract_media(get(url).decode("utf-8", "replace"))
+
+
+def cmd_enrich_media(args):
+    """Backfill media columns for styles fetched before they existed."""
+    db = init_db()
+    if args.force:
+        rows = db.execute(
+            "SELECT uuid, slug, page_url FROM styles ORDER BY slug").fetchall()
+    else:
+        rows = db.execute(
+            "SELECT uuid, slug, page_url FROM styles "
+            "WHERE media_fetched_at IS NULL ORDER BY slug").fetchall()
+    if args.limit:
+        rows = rows[:args.limit]
+    print(f"to enrich: {len(rows)}")
+    if not rows:
+        db.close()
+        return
+
+    done = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
+        futures = {pool.submit(enrich_one, page_url): (uuid, slug, page_url)
+                   for uuid, slug, page_url in rows}
+        for fut in concurrent.futures.as_completed(futures):
+            uuid, slug, page_url = futures[fut]
+            try:
+                media = fut.result()
+            except Exception as ex:
+                db.execute(
+                    "INSERT OR REPLACE INTO fetch_errors (uuid, page_url, error, at) VALUES (?,?,?,?)",
+                    (uuid, page_url, str(ex)[:500],
+                     time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())))
+                db.commit()
+                print(f"FAIL {slug}: {ex}", file=sys.stderr)
+                continue
+            db.execute(
+                """UPDATE styles SET video_url=?, video_poster_url=?,
+                   video_detail_url=?, video_detail_poster_url=?,
+                   media_fetched_at=? WHERE uuid=?""",
+                (media["video_url"], media["video_poster_url"],
+                 media["video_detail_url"], media["video_detail_poster_url"],
+                 time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), uuid))
+            db.commit()
+            write_meta(slug, media)
+            done += 1
+            if done % 50 == 0:
+                print(f"enriched {done}/{len(rows)}")
+    print(f"enriched {done}, errors {len(rows) - done}")
+    db.close()
+
+
 def cmd_catalog():
     db = init_db()
     rows = db.execute(
@@ -315,8 +468,16 @@ def main():
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--export-only", action="store_true")
     ap.add_argument("--catalog-only", action="store_true")
+    ap.add_argument("--enrich-media", action="store_true")
     args = ap.parse_args()
 
+    if args.enrich_media and (args.export_only or args.catalog_only):
+        ap.error("--enrich-media is mutually exclusive with "
+                 "--export-only/--catalog-only")
+    if args.enrich_media:
+        cmd_enrich_media(args)
+        cmd_catalog()
+        return
     if args.catalog_only:
         cmd_catalog()
         return

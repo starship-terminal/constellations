@@ -51,6 +51,11 @@ window.addEventListener('resize', setBarHeight);
 function route() {
   if (!DATA) return;
   const parts = location.hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent);
+  document.querySelectorAll('.site-nav a[href^="#/"]').forEach((a) => {
+    const refero = a.getAttribute('href') === '#/refero';
+    if (refero === (parts[0] === 'refero')) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+  if (parts[0] === 'refero') { referoRoute(parts.slice(1)); return; }
   const sys = DATA.systems.find((s) => s.slug === parts[0]);
   if (!sys) { renderIndex(); document.title = 'Design systems'; return; }
   let sec = LEGACY[parts[1]] || parts[1] || 'overview';
@@ -145,7 +150,10 @@ function renderIndex() {
 
 qInput.addEventListener('input', () => {
   state.q = qInput.value;
-  if (location.hash.replace(/^#\/?/, '')) location.hash = '#/'; else renderIndex();
+  const h = location.hash.replace(/^#\/?/, '');
+  if (h === 'refero') renderReferoIndex();
+  else if (h.startsWith('refero/')) location.hash = '#/refero';
+  else if (h) location.hash = '#/'; else renderIndex();
 });
 
 // ---------------------------------------------------------------- detail
@@ -615,6 +623,285 @@ document.getElementById('theme').onclick = () => {
   try { localStorage.setItem('ds-theme', root.dataset.theme); } catch (e) {}
 };
 
+// ---------------------------------------------------------------- refero
+// The refero/ library: interpreted styles scraped from styles.refero.design.
+// catalog.py emits refero/index.json + refero/<slug>.json; media lives outside
+// the repo under /refero-media/ (shots, posters, videos, favicons). Every media
+// element carries data-r with the remote CDN URL and swaps to it onerror, so a
+// dev box without the mirror still renders.
+
+let RF_INDEX = null;
+let rfPromise = null;
+const rfState = { theme: 'all', video: false };
+try { Object.assign(rfState, JSON.parse(localStorage.getItem('ds-refero') || '{}')); } catch (e) {}
+const rfSave = () => { try { localStorage.setItem('ds-refero', JSON.stringify(rfState)); } catch (e) {} };
+const RF_PAGE = 48;
+const rfSlug = () => location.hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent);
+
+function getRefero() {
+  if (!rfPromise) rfPromise = fetch('refero/index.json', { cache: 'no-store' })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then((d) => (RF_INDEX = d))
+    .catch((e) => { rfPromise = null; throw e; });
+  return rfPromise;
+}
+
+const rfEntityCache = new Map();
+function getRfEntity(slug) {
+  if (!rfEntityCache.has(slug)) {
+    rfEntityCache.set(slug, fetch(`refero/style/${encodeURIComponent(slug)}.json`, { cache: 'no-store' })
+      .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .catch((e) => { rfEntityCache.delete(slug); throw e; }));
+  }
+  return rfEntityCache.get(slug);
+}
+
+function referoRoute(parts) {
+  if (!parts[0]) {
+    document.title = 'Refero styles · Design systems';
+    delete app.dataset.pkg;
+    app.innerHTML = '<p class="loading">Loading refero styles…</p>';
+    getRefero()
+      .then(() => { if (rfSlug()[0] === 'refero' && !rfSlug()[1]) drawReferoIndex(); })
+      .catch(() => { app.innerHTML = '<p class="empty">Could not load <code>gallery/refero/index.json</code>. Run <code>make serve</code>.</p>'; });
+    return;
+  }
+  renderRfEntity(parts[0]);
+}
+
+// Local mirror first, remote CDN on error, then nothing (the letter tile shows through).
+const rfErr = 'onerror="if(this.dataset.r&&this.src!==this.dataset.r){this.src=this.dataset.r}else{this.remove()}"';
+const rfImg = (media, cls, alt, attrs) => media && (media.local || media.remote)
+  ? `<img class="${cls}" ${attrs || ''} loading="lazy" src="${esc(media.local || media.remote)}" ${media.local && media.remote ? `data-r="${esc(media.remote)}"` : ''} ${rfErr} alt="${esc(alt)}">` : '';
+
+function rfFav(s, big) {
+  const remote = s.src || s.source_url
+    ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(`https://${host(s.src || s.source_url)}`)}&size=128` : '';
+  return `<span class="rf-fav${big ? ' big' : ''}"><i>${esc((s.name || '?')[0].toUpperCase())}</i><img loading="lazy" src="/refero-media/favicons/${encodeURIComponent(s.slug)}.png" ${remote ? `data-r="${esc(remote)}"` : ''} ${rfErr} alt=""></span>`;
+}
+const host = (u) => String(u || '').replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
+
+function rfMatches(s) {
+  if (rfState.theme !== 'all' && s.theme !== rfState.theme) return false;
+  if (rfState.video && !s.video) return false;
+  const q = state.q.trim().toLowerCase();
+  if (!q) return true;
+  const hay = [s.name, s.slug, s.tagline, s.industry, s.src].join(' ').toLowerCase();
+  return q.split(/\s+/).every((w) => hay.includes(w));
+}
+
+function rfCard(s, note) {
+  return `<a class="rf-card" href="#/refero/${esc(s.slug)}" data-slug="${esc(s.slug)}">
+    <div class="rf-tile"><div class="rf-shot">${rfImg({ local: s.card, remote: s.cardRemote }, '', `${s.name} screenshot`)}</div></div>
+    <div class="rf-card-foot">${rfFav(s)}<div class="rf-card-txt"><h3>${esc(s.name)}</h3><p>${esc(note || s.tagline || '')}</p></div>
+      ${s.video ? '<span class="rf-vid" title="Scroll-preview video">▸</span>' : ''}</div></a>`;
+}
+
+function drawReferoIndex() {
+  const all = RF_INDEX.styles;
+  const list = all.filter(rfMatches);
+  const chip = (attr, val, label, on) => `<button class="chip" data-${attr}="${esc(val)}" aria-pressed="${on}">${esc(label)}</button>`;
+  app.innerHTML = `
+    <div class="intro"><div><h1>Refero styles</h1>
+      <p>${list.length === all.length ? all.length : `${list.length} of ${all.length}`} styles interpreted by
+        <a href="https://styles.refero.design" target="_blank" rel="noopener">styles.refero.design</a> — their words,
+        not measured evidence. Treat values as inspiration.</p></div></div>
+    <div class="toolbar">
+      <div class="chips">${['all', 'light', 'dark'].map((t) => chip('theme', t, t === 'all' ? 'All themes' : t[0].toUpperCase() + t.slice(1), rfState.theme === t)).join('')}${chip('video', '1', 'Has video', rfState.video)}</div>
+      <span class="sep"></span>
+      <span class="faint-note">${list.length} styles</span>
+    </div>
+    ${!list.length ? '<p class="empty">No style matches. Clear the search or filters.</p>'
+      : '<div class="rf-grid"></div><div id="rf-sent" class="more"><button class="btn">Load more</button></div>'}`;
+  app.querySelectorAll('[data-theme]').forEach((b) => b.onclick = () => { rfState.theme = b.dataset.theme; rfSave(); drawReferoIndex(); });
+  app.querySelectorAll('[data-video]').forEach((b) => b.onclick = () => { rfState.video = !rfState.video; rfSave(); drawReferoIndex(); });
+  const grid = app.querySelector('.rf-grid');
+  const sent = app.querySelector('#rf-sent');
+  if (!grid) return;
+  let at = 0;
+  const feed = () => {
+    const chunk = list.slice(at, at + RF_PAGE);
+    at += chunk.length;
+    grid.insertAdjacentHTML('beforeend', chunk.map((s) => rfCard(s)).join(''));
+    if (at >= list.length && sent) sent.remove();
+  };
+  feed();
+  if (!sent) return;
+  const btn = sent.querySelector('button');
+  const io = new IntersectionObserver((es) => { if (es[0].isIntersecting) feed(); }, { rootMargin: '900px' });
+  io.observe(sent);
+  btn.onclick = feed;
+  // Refero plays a style's scroll-preview video when its card is hovered.
+  grid.addEventListener('mouseover', (ev) => {
+    const a = ev.target.closest('a.rf-card');
+    if (!a || a.dataset.vid) return;
+    const s = list.find((x) => x.slug === a.dataset.slug);
+    if (!s || !s.video || !(s.videoSrc || s.videoRemote)) return;
+    const shot = a.querySelector('.rf-shot');
+    if (!shot) return;
+    a.dataset.vid = '1';
+    shot.innerHTML = `<video src="${esc(s.videoSrc || s.videoRemote)}" ${s.videoSrc && s.videoRemote ? `data-r="${esc(s.videoRemote)}"` : ''} muted loop playsinline autoplay onerror="if(this.dataset.r){this.src=this.dataset.r;this.dataset.r=''}"></video>`;
+  });
+}
+
+// ---- entity page
+
+const RF_TABS = [
+  ['preview', 'Preview'], ['design_md', 'DESIGN.md'], ['theme_css', 'Tailwind v4'],
+  ['variables_css', 'CSS Variables'], ['tokens_json', 'Design Tokens'],
+];
+
+function renderRfEntity(slug) {
+  delete app.dataset.pkg;
+  app.innerHTML = '<p class="loading">Loading…</p>';
+  Promise.all([getRfEntity(slug), getRefero().catch(() => null)]).then(([e]) => {
+    const cur = rfSlug();
+    if (cur[0] !== 'refero' || cur[1] !== slug) return;
+    drawRfEntity(e);
+  }).catch(() => {
+    app.innerHTML = `<p class="empty">No refero style <code>${esc(slug)}</code>. <a href="#/refero">Back to Refero styles</a>.</p>`;
+  });
+}
+
+function rfMediaTag(e) {
+  const m = e.media || {};
+  const v = m.detail || m.video;
+  if (v && (v.local || v.remote)) {
+    const poster = (m.poster && (m.poster.local || m.poster.remote)) || '';
+    return `<video src="${esc(v.local || v.remote)}" ${v.local && v.remote ? `data-r="${esc(v.remote)}"` : ''}
+      ${poster ? `poster="${esc(poster)}"` : ''} muted loop playsinline autoplay
+      onerror="if(this.dataset.r){this.src=this.dataset.r;this.dataset.r=''}"></video>`;
+  }
+  return rfImg(m.shot || m.poster, 'rf-shot-img', `${e.name} screenshot`) || '<p class="empty">No preview captured.</p>';
+}
+
+function rfSwatch(c) {
+  const v = c.hex || c.value || '';
+  const grad = /gradient/i.test(v);
+  return `<button class="rf-sw" type="button" data-copy="${esc(v)}" title="Copy ${esc(grad ? 'gradient' : v)}">
+    <i style="background:${esc(v)}"></i>
+    <span class="rf-sw-top"><b>${esc(c.name || v)}</b><code>${esc(grad ? 'Gradient' : v)}</code></span>
+    ${c.role ? `<span class="rf-sw-role">${esc(c.role)}</span>` : ''}</button>`;
+}
+
+function rfColors(e) {
+  const colors = e.ds.colors || [];
+  if (!colors.length) return '';
+  const groups = new Map();
+  colors.forEach((c) => { const g = c.group || 'other'; if (!groups.has(g)) groups.set(g, []); groups.get(g).push(c); });
+  const order = [...groups.keys()].sort((a, b) => (a === 'neutral') - (b === 'neutral') || a.localeCompare(b));
+  const label = (g) => ({ neutral: 'Neutrals', accent: 'Accent', semantic: 'Semantic', brand: 'Brand' }[g] || g[0].toUpperCase() + g.slice(1));
+  return `<section class="rf-sec"><h2 class="rf-h2">Color Palette</h2>
+    ${order.map((g) => `<h3 class="rf-h3">${esc(label(g))}</h3><div class="rf-swatches">${groups.get(g).map(rfSwatch).join('')}</div>`).join('')}</section>`;
+}
+
+function rfTypography(e) {
+  const fonts = e.ds.typography || [];
+  const scale = e.ds.typeScale || [];
+  if (!fonts.length && !scale.length) return '';
+  const stack = (f) => `"${String(f.family || '').replace(/"/g, '')}", ${f.substitute ? `"${f.substitute}", ` : ''}${/mono/i.test(f.family || '') ? 'ui-monospace, monospace' : 'system-ui, sans-serif'}`;
+  const spec = (f) => [['Weight', f.weight], ['Sizes', f.sizes && `${f.sizes} px`], ['Line height', f.lineHeight], ['Tracking', f.letterSpacing], ['Substitute', f.substitute]]
+    .filter((x) => x[1]).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('');
+  const row = (t) => `<div class="rf-scale-row">
+    <span class="rf-scale-label">${esc(t.role || 'step')}<code>${esc([t.size && `${t.size}px`, t.weight, t.lineHeight].filter(Boolean).join(' · '))}</code></span>
+    <span class="rf-scale-sample" style="font-size:${esc(cssLen(t.size || 14))};line-height:${esc(t.lineHeight || 1.4)};font-weight:${esc(t.weight || 400)}">The quick brown fox jumps over the lazy dog</span></div>`;
+  return `<section class="rf-sec"><h2 class="rf-h2">Typography</h2>
+    ${scale.length ? `<div class="rf-scale" id="rf-scale">${scale.slice(0, 8).map(row).join('')}</div>
+      ${scale.length > 8 ? `<button class="btn" id="rf-scale-all" type="button">Show all ${scale.length} steps</button>` : ''}` : ''}
+    <div class="rf-fonts">${fonts.map((f) => `<div class="rf-font">
+      <div class="rf-font-sample" style="font-family:${esc(stack(f))}">${esc(f.family || 'Unknown')} Aa 123</div>
+      <dl class="rf-font-spec">${spec(f)}</dl>
+      ${f.role ? `<p class="rf-note">${esc(f.role)}</p>` : ''}</div>`).join('')}</div></section>`;
+}
+
+function rfSpacing(e) {
+  const sp = e.ds.spacing || {};
+  const el = e.ds.elevation || [];
+  const rows = [['Density', sp.density], ['Max width', sp.pageMaxWidth], ['Section gap', sp.sectionGap], ['Card padding', sp.cardPadding], ['Element gap', sp.elementGap]].filter((r) => r[1]);
+  const radii = Object.entries(sp.radius || {});
+  if (!rows.length && !radii.length && !el.length) return '';
+  const px = (v) => { const m = String(v).match(/^([\d.]+)px$/); return m ? +m[1] : null; };
+  return `<section class="rf-sec"><h2 class="rf-h2">Spacing &amp; Shape</h2>
+    <div class="rf-tables">
+      ${rows.length ? `<table class="rf-table"><thead><tr><th>Purpose</th><th>Value</th><th></th></tr></thead><tbody>
+        ${rows.map(([k, v]) => { const p = px(v); return `<tr><td>${esc(k)}</td><td><code>${esc(v)}</code></td><td>${p ? `<span class="rf-bar" style="width:${p}px"></span>` : ''}</td></tr>`; }).join('')}</tbody></table>` : ''}
+      ${radii.length ? `<table class="rf-table"><thead><tr><th>Element</th><th>Radius</th><th></th></tr></thead><tbody>
+        ${radii.map(([k, v]) => `<tr><td>${esc(k)}</td><td><code>${esc(v)}</code></td><td><i class="rf-rbox" style="border-radius:${esc(v)}"></i></td></tr>`).join('')}</tbody></table>` : ''}
+    </div>
+    ${el.length ? `<div class="rf-elev">${el.map((x) => `<div class="rf-elev-row"><i class="rf-ebox" style="box-shadow:${esc(x.style)}"></i><div><b>${esc(x.element)}</b><code>${esc(x.style)}</code></div></div>`).join('')}</div>` : ''}
+    ${e.ds.elevationPhilosophy ? `<p class="rf-note">${esc(e.ds.elevationPhilosophy)}</p>` : ''}</section>`;
+}
+
+function rfGuidelines(e) {
+  const dos = e.ds.dos || [];
+  const donts = e.ds.donts || [];
+  if (!dos.length && !donts.length) return '';
+  const txt = (t) => esc(typeof t === 'string' ? t : (t.text || JSON.stringify(t)));
+  const col = (title, items, mark, cls) => `<div class="rf-guide ${cls}"><h3 class="rf-h3">${title}</h3>
+    <ul>${items.map((t) => `<li><span class="mk">${mark}</span><span>${txt(t)}</span></li>`).join('')}</ul></div>`;
+  return `<section class="rf-sec"><h2 class="rf-h2">Guidelines</h2><div class="rf-guides">${col('Do', dos, '✓', 'do')}${col("Don't", donts, '✕', 'dont')}</div></section>`;
+}
+
+function rfSimilar(e) {
+  if (!RF_INDEX) return '';
+  const find = (slug) => slug && RF_INDEX.styles.find((x) => x.slug === slug);
+  const items = (e.similar || []).map((x) => ({ slug: x.slug, name: x.name, note: x.why, s: find(x.slug) }));
+  const have = new Set(items.map((i) => i.slug).concat([e.slug]));
+  const fill = RF_INDEX.styles.filter((s) => !have.has(s.slug) && s.theme === e.theme)
+    .slice(0, Math.max(0, 6 - items.length));
+  const all = items.concat(fill.map((s) => ({ slug: s.slug, name: s.name, note: null, s })));
+  if (!all.length) return '';
+  return `<section class="rf-sec"><h2 class="rf-h2">More like this</h2><div class="rf-grid rf-sim">
+    ${all.map((x) => (x.slug && x.s ? rfCard(x.s, x.note) : `<div class="rf-card rf-plain"><div class="rf-card-foot"><div class="rf-card-txt"><h3>${esc(x.name)}</h3><p>${esc(x.note || '')}</p></div></div></div>`)).join('')}
+  </div></section>`;
+}
+
+function drawRfEntity(e) {
+  document.title = `${e.name} · Refero · Design systems`;
+  const ds = e.ds || {};
+  app.innerHTML = `
+    <a class="back" href="#/refero">← Refero styles</a>
+    <div class="rf-page">
+      <aside class="rf-pane">
+        <div class="rf-tabs" role="tablist">${RF_TABS.map(([k, l]) => `<button role="tab" type="button" data-tab="${k}" aria-selected="${k === 'preview'}">${esc(l)}</button>`).join('')}
+          <span class="rf-tabs-sp"></span><button class="rf-copy" id="rf-copy" type="button" hidden>Copy</button></div>
+        <div class="rf-pane-body" id="rf-pane-body"></div>
+      </aside>
+      <div class="rf-main">
+        <header class="rf-head">${rfFav(e, true)}<div>
+          <h1>${esc(e.name)}</h1>
+          ${e.tagline ? `<p class="rf-tagline">${esc(e.tagline)}</p>` : ''}
+          <p class="rf-meta">${esc(e.theme || '')}${e.industry ? ` · ${esc(e.industry)}` : ''}${e.source_url ? ` · <a href="${esc(e.source_url)}" target="_blank" rel="noopener">${esc(host(e.source_url))} ↗</a>` : ''}${e.page_url ? ` · <a href="${esc(e.page_url)}" target="_blank" rel="noopener">refero ↗</a>` : ''}</p>
+        </div></header>
+        ${ds.description ? `<p class="rf-desc">${esc(ds.description)}</p>` : ''}
+        ${rfColors(e)}${rfTypography(e)}${rfSpacing(e)}${rfGuidelines(e)}${rfSimilar(e)}
+      </div>
+    </div>`;
+
+  let tab = 'preview';
+  const body = app.querySelector('#rf-pane-body');
+  const copyBtn = app.querySelector('#rf-copy');
+  const renderTab = () => {
+    app.querySelectorAll('.rf-tabs [data-tab]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
+    copyBtn.hidden = tab === 'preview';
+    body.innerHTML = tab === 'preview'
+      ? `<div class="rf-media">${rfMediaTag(e)}</div>`
+      : `<pre class="rf-code"><code>${esc((e.docs || {})[tab] || '(empty)')}</code></pre>`;
+  };
+  app.querySelectorAll('.rf-tabs [data-tab]').forEach((b) => b.onclick = () => { tab = b.dataset.tab; renderTab(); });
+  renderTab();
+  copyBtn.onclick = () => copy((e.docs || {})[tab] || '', `${RF_TABS.find((t) => t[0] === tab)[1]} copied`);
+  app.querySelectorAll('.rf-sw[data-copy]').forEach((b) => b.onclick = () => copy(b.dataset.copy, `Copied ${b.dataset.copy}`));
+  const all = app.querySelector('#rf-scale-all');
+  if (all) all.onclick = () => {
+    app.querySelector('#rf-scale').innerHTML = (ds.typeScale || []).map((t) => `<div class="rf-scale-row">
+      <span class="rf-scale-label">${esc(t.role || 'step')}<code>${esc([t.size && `${t.size}px`, t.weight, t.lineHeight].filter(Boolean).join(' · '))}</code></span>
+      <span class="rf-scale-sample" style="font-size:${esc(cssLen(t.size || 14))};line-height:${esc(t.lineHeight || 1.4)};font-weight:${esc(t.weight || 400)}">The quick brown fox jumps over the lazy dog</span></div>`).join('');
+    all.remove();
+  };
+  window.scrollTo(0, 0);
+}
+
 document.addEventListener('keydown', (e) => {
   if (!lb.hidden) {
     if (e.key === 'Escape') closeLightbox();
@@ -630,5 +917,9 @@ document.addEventListener('keydown', (e) => {
     return;
   }
   if (e.key === '/' && document.activeElement !== qInput) { e.preventDefault(); qInput.focus(); qInput.select(); }
-  if (e.key === 'Escape' && document.activeElement === qInput) { qInput.value = ''; state.q = ''; qInput.blur(); if (!location.hash.replace(/^#\/?/, '')) renderIndex(); }
+  if (e.key === 'Escape' && document.activeElement === qInput) {
+    qInput.value = ''; state.q = ''; qInput.blur();
+    const h = location.hash.replace(/^#\/?/, '');
+    if (h === 'refero') drawReferoIndex(); else if (!h) renderIndex();
+  }
 });

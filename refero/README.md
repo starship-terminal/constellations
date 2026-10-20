@@ -13,10 +13,14 @@ every value here as lower-confidence than the packages under `systems/`.
   (the product site), theme, `extracted_at`, `fetched_at`, every artifact
   (`design_md`, `variables_css`, `theme_css`, `tokens_json`,
   `design_system_json`, `prompt_txt`), the full `result_json` the artifacts
-  were generated from, and `screenshot_url`. `fetch_errors` records pages
+  were generated from, `screenshot_url`, and the media columns
+  (`video_url`, `video_poster_url`, `video_detail_url`,
+  `video_detail_poster_url`, `media_fetched_at`). `fetch_errors` records pages
   that failed. (`raw-result.json` is not stored: it is derivable from
   `result_json` with `generateRawResultJson` in
   [../tools/refero/generators.js](../tools/refero/generators.js).)
+  `meta.json` repeats the media fields plus `video_w`/`video_h`/`video_ms`
+  (null when the style has no preview video).
 - `<slug>/` — per-style files: `DESIGN.md`, `variables.css`, `theme.css`
   (Tailwind v4 `@theme`), `tokens.json` (DTCG-style), `design-system.json`,
   `meta.json`. `prompt.txt` lives only in the db.
@@ -34,7 +38,24 @@ verbatim from each page.
 ```bash
 python3 tools/refero/fetch.py            # fetch new/changed styles, re-export
 python3 tools/refero/fetch.py --force    # re-fetch everything
+python3 tools/refero/fetch.py --enrich-media   # backfill video/poster URLs into db + meta.json
 ```
 
 Requires node. Fetched result objects are cached in `.work/` (gitignored) and
 persisted in `refero.db`, so `--export-only` can re-materialize files offline.
+
+## Media mirror
+
+The gallery's `#/refero` pages serve media from a host-side mirror, not the
+repo: `tools/refero/mirror_media.py` downloads screenshots, video posters,
+scroll-preview videos and favicons into `~/services/design-systems/media/
+refero/` (nginx aliases `/refero-media/` onto it; the box's nginx.conf needs
+the location block setup.sh prints when missing). Media is deliberately
+outside git — the videos are ~1–2 GB. Anything not mirrored falls back to
+the images.refero.design URL in the browser.
+
+```bash
+python3 tools/refero/mirror_media.py                    # everything missing
+python3 tools/refero/mirror_media.py --only favicons    # one kind
+python3 tools/refero/mirror_media.py --compress-videos  # 960px/crf28 shrink
+```
