@@ -1,0 +1,446 @@
+{
+  "meta": {
+    "siteName": "Partiful",
+    "url": "https://partiful.com",
+    "extractedAt": "2026-04-29T23:17:09.758Z",
+    "thumbnailUrl": "https://images.refero.design/styles/refero.design/image/ed2506e6-631a-43e7-957a-226cbf694bb6.jpg",
+    "screenshotUrls": [
+      "https://images.refero.design/styles/refero.design/image/8be60b09-d028-4a17-b61a-0fa76af8b63e.jpg"
+    ]
+  },
+  "description": "Partiful runs on celebration energy: a white canvas that gives way to full-bleed photographic heroes washed in purple-to-pink gradients, then returns to white for feature sections with soft periwinkle-to-white gradient backgrounds. The type system pairs a custom display face (Partiful Display Medium) for statement headlines — used at sizes up to 112px with tight -0.03em tracking — with TWK Lausanne Pan across all weights for UI text, giving the whole interface a confident, slightly editorial quality. Black is the primary action color: filled black buttons, black borders, black headings — no blue accent, just pure contrast. Decorative depth comes from invitation card imagery, scattered at tilted angles against gradient washes, making the UI feel like a physical party surface rather than a software dashboard.",
+  "northStar": "confetti landing on white marble — the page stays quiet and light while the content explodes with color and celebration.",
+  "theme": "light",
+  "industry": "saas",
+  "colors": [
+    {
+      "hex": "#000000",
+      "name": "Midnight Ink",
+      "role": "Primary text, filled CTA buttons, icon fills, card borders — black on white is the entire contrast system; no blue or colored accent dilutes it",
+      "group": "brand"
+    },
+    {
+      "hex": "#ffffff",
+      "name": "Pure Canvas",
+      "role": "Page background, card surfaces, button text on dark backgrounds, nav surfaces",
+      "group": "neutral"
+    },
+    {
+      "hex": "#333333",
+      "name": "Graphite",
+      "role": "Secondary body text, footer links, supporting labels",
+      "group": "neutral"
+    },
+    {
+      "hex": "#666666",
+      "name": "Slate",
+      "role": "Tertiary body copy, descriptive paragraphs, helper text in feature sections",
+      "group": "neutral"
+    },
+    {
+      "hex": "#999999",
+      "name": "Ash",
+      "role": "Muted captions, attribution text, ratings sub-labels",
+      "group": "neutral"
+    },
+    {
+      "hex": "#b3b3b3",
+      "name": "Fog",
+      "role": "Footer section headings, disabled labels",
+      "group": "neutral"
+    },
+    {
+      "hex": "#cccccc",
+      "name": "Silver",
+      "role": "Hairline borders, disabled button backgrounds",
+      "group": "neutral"
+    },
+    {
+      "hex": "#d9c58b",
+      "name": "Warm Sand",
+      "role": "Active nav item highlight text — the single warm accent in an otherwise achromatic nav bar",
+      "group": "accent"
+    },
+    {
+      "hex": "#f8c4ff",
+      "name": "Party Pink",
+      "role": "Hero gradient start — soft pink-violet wash over photography",
+      "group": "accent",
+      "gradient": "linear-gradient(rgb(248, 196, 255) 0%, rgb(240, 182, 224) 100%)"
+    },
+    {
+      "hex": "#96c4ff",
+      "name": "Sky Periwinkle",
+      "role": "Section gradient accent — soft blue tint fading to white for feature-section backgrounds",
+      "group": "accent",
+      "gradient": "linear-gradient(rgba(150, 196, 255, 0.1) 0%, rgb(255, 255, 255) 100%)"
+    },
+    {
+      "hex": "#85dadc",
+      "name": "Spearmint",
+      "role": "Decorative surface gradient — teal-to-pale wash used in invitation card previews",
+      "group": "accent",
+      "gradient": "linear-gradient(130deg, rgb(133, 218, 220) 0%, rgb(192, 226, 226) 100%)"
+    },
+    {
+      "hex": "#001666",
+      "name": "Midnight Blue",
+      "role": "Deep brand accent in invitation templates and decorative event card designs",
+      "group": "accent"
+    }
+  ],
+  "typography": [
+    {
+      "family": "sans-serif",
+      "source": "system",
+      "weight": "400",
+      "sizes": "12px",
+      "lineHeight": "1.2",
+      "role": "sans-serif — detected in extracted data but not described by AI"
+    },
+    {
+      "family": "Partiful Display Medium",
+      "source": "custom",
+      "substitute": "Cabinet Grotesk, Satoshi",
+      "weight": "400, 500",
+      "sizes": "26px, 40px, 42px, 48px",
+      "lineHeight": "1.00–1.20",
+      "letterSpacing": "-0.02em across all sizes",
+      "fontFeatureSettings": "\"blwf\", \"cv03\", \"cv04\", \"cv09\", \"cv11\"",
+      "role": "Hero headlines and section display titles only — this custom face is the brand's signature; its slightly rounded geometric letterforms at weight 500 read as celebratory without being childish. Used exclusively for the largest type on any screen."
+    },
+    {
+      "family": "TWK Lausanne Pan",
+      "source": "custom",
+      "substitute": "Neue Haas Grotesk, Inter",
+      "weight": "400, 500, 550, 600, 650, 700, 825",
+      "sizes": "12px, 14px, 16px, 18px, 20px, 22px, 24px, 36px, 112px",
+      "lineHeight": "1.20–1.40",
+      "letterSpacing": "-0.02em at regular weights (400–600), -0.04em at heavy weights (650–825), -0.03em at 112px display size",
+      "fontFeatureSettings": "\"blwf\", \"cv03\", \"cv04\", \"cv09\", \"cv11\"",
+      "role": "Everything else: nav links, body copy, card labels, buttons, captions, and the massive 112px decorative numeral at weight 825. The variable weight axis means the entire type system runs through one family — 400 for prose, 550-650 for UI emphasis, 700 for section headings, 825 only for oversized display numerals. The tight -0.04em tracking at bold weights and -0.02em at regular weights gives text a snug, editorial density uncommon in event apps."
+    },
+    {
+      "family": ".SFNSDisplay / .SFNSText",
+      "source": "custom",
+      "substitute": "SF Pro, system-ui",
+      "weight": "400, 600",
+      "sizes": "11px, 12px",
+      "lineHeight": "1.00–1.40",
+      "letterSpacing": "-0.0200em",
+      "role": "System UI fallback appearing in app-like micro-UI contexts (notification previews, in-app RSVP widget). Renders as San Francisco on Apple devices — not a brand choice but a functional system font for OS-native feeling components."
+    },
+    {
+      "family": "TWK Lausanne Pan 550",
+      "source": "custom",
+      "weight": "400, 550",
+      "sizes": "16px, 20px, 24px",
+      "lineHeight": "1.4",
+      "letterSpacing": "-0.02",
+      "fontFeatureSettings": "\"blwf\", \"cv03\", \"cv04\", \"cv09\", \"cv11\"",
+      "role": "TWK Lausanne Pan 550 — detected in extracted data but not described by AI"
+    },
+    {
+      "family": "TWK Lausanne Pan 400",
+      "source": "custom",
+      "weight": "400",
+      "sizes": "14px, 18px",
+      "lineHeight": "1.4",
+      "letterSpacing": "-0.02",
+      "fontFeatureSettings": "\"blwf\", \"cv03\", \"cv04\", \"cv09\", \"cv11\"",
+      "role": "TWK Lausanne Pan 400 — detected in extracted data but not described by AI"
+    },
+    {
+      "family": "TWK Lausanne Pan 700",
+      "source": "custom",
+      "weight": "400, 700",
+      "sizes": "12px, 14px, 18px, 24px, 36px",
+      "lineHeight": "1.2",
+      "letterSpacing": "-0.04",
+      "role": "TWK Lausanne Pan 700 — detected in extracted data but not described by AI"
+    },
+    {
+      "family": ".SFNSText",
+      "source": "custom",
+      "weight": "400",
+      "sizes": "11px",
+      "lineHeight": "1.4",
+      "letterSpacing": "-0.02",
+      "role": ".SFNSText — detected in extracted data but not described by AI"
+    },
+    {
+      "family": ".SFNSDisplay-Semibold",
+      "source": "custom",
+      "weight": "600",
+      "sizes": "12px",
+      "lineHeight": "1",
+      "letterSpacing": "-0.02",
+      "role": ".SFNSDisplay-Semibold — detected in extracted data but not described by AI"
+    },
+    {
+      "family": "TWK Lausanne Pan 600",
+      "source": "custom",
+      "weight": "600",
+      "sizes": "14px",
+      "lineHeight": "1.4",
+      "letterSpacing": "-0.02",
+      "role": "TWK Lausanne Pan 600 — detected in extracted data but not described by AI"
+    },
+    {
+      "family": "TWK Lausanne Pan 650",
+      "source": "custom",
+      "weight": "400",
+      "sizes": "22px",
+      "lineHeight": "1.4",
+      "letterSpacing": "-0.04",
+      "fontFeatureSettings": "\"blwf\", \"cv03\", \"cv04\", \"cv09\", \"cv11\"",
+      "role": "TWK Lausanne Pan 650 — detected in extracted data but not described by AI"
+    },
+    {
+      "family": "TWK Lausanne Pan 500",
+      "source": "custom",
+      "weight": "500",
+      "sizes": "14px",
+      "lineHeight": "1.4",
+      "letterSpacing": "-0.02",
+      "role": "TWK Lausanne Pan 500 — detected in extracted data but not described by AI"
+    },
+    {
+      "family": "TWK Lausanne Pan 850",
+      "source": "custom",
+      "weight": "825",
+      "sizes": "112px",
+      "lineHeight": "0.8",
+      "letterSpacing": "-0.03",
+      "fontFeatureSettings": "\"blwf\", \"cv03\", \"cv04\", \"cv09\", \"cv11\"",
+      "role": "TWK Lausanne Pan 850 — detected in extracted data but not described by AI"
+    }
+  ],
+  "typeScale": [
+    {
+      "role": "caption",
+      "size": 11,
+      "lineHeight": 1.2,
+      "letterSpacing": -0.22
+    },
+    {
+      "role": "body",
+      "size": 14,
+      "lineHeight": 1.4,
+      "letterSpacing": -0.28
+    },
+    {
+      "role": "heading-sm",
+      "size": 18,
+      "lineHeight": 1.4,
+      "letterSpacing": -0.36
+    },
+    {
+      "role": "heading",
+      "size": 24,
+      "lineHeight": 1.2,
+      "letterSpacing": -0.96
+    },
+    {
+      "role": "heading-lg",
+      "size": 36,
+      "lineHeight": 1.2,
+      "letterSpacing": -1.44
+    },
+    {
+      "role": "display",
+      "size": 48,
+      "lineHeight": 1,
+      "letterSpacing": -0.96
+    }
+  ],
+  "spacing": {
+    "baseUnit": null,
+    "density": "comfortable",
+    "pageMaxWidth": "1200px",
+    "sectionGap": "80px",
+    "cardPadding": "",
+    "elementGap": "10px",
+    "radius": {
+      "cards": "12px",
+      "badges": "960px",
+      "images": "12px",
+      "inputs": "8px",
+      "modals": "16px",
+      "buttons": "8px",
+      "navPills": "4px"
+    }
+  },
+  "components": [
+    {
+      "html": "<style>:root{--color-midnight-ink:#000000;--color-pure-canvas:#ffffff;--color-graphite:#333333;--color-slate:#666666;--color-warm-sand:#d9c58b;--color-party-pink:linear-gradient(rgb(248,196,255) 0%,rgb(240,182,224) 100%);--font-twk-lausanne-pan:'Inter',sans-serif;--font-partiful-display-medium:'Cabinet Grotesk','Satoshi',sans-serif;--spacing-8:8px;--spacing-12:12px;--spacing-16:16px;}</style><div style=\"width:100%;background:linear-gradient(rgb(248,196,255) 0%,rgb(240,182,224) 100%);padding:10px 0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;\"><span style=\"font-family:var(--font-twk-lausanne-pan);font-size:14px;font-weight:550;letter-spacing:-0.02em;color:var(--color-midnight-ink);display:flex;align-items:center;gap:8px;\"><span style=\"font-size:16px;\">🎈</span> Get $400 to throw your birthday party <span style=\"font-size:16px;\">🎈</span></span></div>",
+      "name": "Announcement Banner",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$1f",
+      "name": "Feature Tab Selector",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$20",
+      "name": "RSVP Response Buttons",
+      "role": "",
+      "description": ""
+    },
+    {
+      "name": "Primary Filled Button",
+      "role": "Main page CTAs — Create invite, Create event",
+      "description": "Background #000000, text #ffffff, border-radius 8px, padding 10px 24px. Font: TWK Lausanne Pan 700 at 14px, -0.04em letter-spacing. On dark/photo hero sections appears as white-filled with black text. No shadow in default state."
+    },
+    {
+      "name": "Ghost Nav Button",
+      "role": "Login / secondary header action",
+      "description": "Background transparent, border 1px solid #000000, text #000000, border-radius 4px, padding 10px 24px. Sits in the navigation bar beside the filled Create button. Font: TWK Lausanne Pan 550 at 16px."
+    },
+    {
+      "name": "Pill Badge / Rating Tag",
+      "role": "Star rating display, count labels, RSVP status",
+      "description": "Background rgba(0,0,0,0.05) or rgba(0,0,0,0.2), border-radius 960px (full pill), padding 6px 12px. Text #000000 at 12px TWK Lausanne Pan 700. Semantic variants: Leaf #31c431 background for Going, Amber #ffae00 for Maybe, Ember red for Can't go."
+    },
+    {
+      "name": "Active Nav Link",
+      "role": "Currently selected category in horizontal navigation",
+      "description": "Text color #d9c58b (Warm Sand), border-bottom or border-color #d9c58b, border-radius 4px. Contrasts against the dark hero background to signal selection. All other nav links render in #ffffff on dark sections."
+    },
+    {
+      "name": "Standard Content Card",
+      "role": "Feature cards, testimonial cards, invite preview tiles",
+      "description": "Background #ffffff, border-radius 12px, box-shadow rgba(0,0,0,0.1) 0px 0px 6px 0px, padding 12px 16px 16px 16px. Headline in TWK Lausanne Pan 700 at 18px, body text #666666 at 14px TWK Lausanne Pan 400."
+    },
+    {
+      "name": "Event Preview Card",
+      "role": "Live event page mockup shown in feature demos",
+      "description": "Background #ffffff, border-radius 12px, multi-layer shadow (rgba(0,0,0,0.05) stack from 0.8px to 60px spread). Contains event title in Partiful Display Medium 40px, date/time in TWK Lausanne Pan 400 at 18px #333333, and a guest avatar row with a +N overflow indicator."
+    },
+    {
+      "name": "Invitation Template Tile",
+      "role": "Gallery of invitation design options in carousels",
+      "description": "Aspect ratio roughly 3:4 portrait. Border-radius 12px. Each tile is a full-bleed image — photography, illustration, or typographic design — with no overlaid text labels. Displayed in horizontal scrolling rows or scattered at ±15° rotation in feature sections."
+    },
+    {
+      "name": "Feature Tab Selector",
+      "role": "Tabbed navigation for Backgrounds / Fonts / Animations / Posters",
+      "description": "Background rgba(0,0,0,0.05) pill container with active tab having #ffffff background and box-shadow rgba(0,0,0,0.1) 0px 0px 6px 0px. Border-radius 960px for container and individual tab items. Font: TWK Lausanne Pan 550 at 14px. Padding 8px 16px per tab."
+    },
+    {
+      "name": "RSVP Response Button",
+      "role": "Going / Maybe / Can't go response options on event pages",
+      "description": "Circular shape (border-radius 960px), size ~56px, background #ffffff with box-shadow rgba(0,0,0,0.1) 0px 0px 6px 0px. Contains a single emoji. Label text in TWK Lausanne Pan 400 at 12px #333333 centered below the circle."
+    },
+    {
+      "name": "Hero Section",
+      "role": "Full-bleed page header with photography and gradient overlay",
+      "description": "Full viewport width, ~420px tall. Background: full-bleed editorial photography with a linear-gradient overlay (Party Pink #f8c4ff to mauve at 0.4 opacity) layered over the image from left-to-right. White headline text at Partiful Display Medium 48px, subtext TWK Lausanne Pan 400 18px #ffffff, white ghost Create invite button. Backdrop blur 2px on text containers for legibility."
+    },
+    {
+      "name": "Announcement Banner",
+      "role": "Top-of-page promotional strip",
+      "description": "Full width, ~32px tall, background: soft pink-to-mauve gradient (Party Pink gradient). Text #000000 TWK Lausanne Pan 550 at 14px, centered. Flanked by emoji decorators. No close button visible in default state."
+    },
+    {
+      "name": "App Notification Preview",
+      "role": "Mobile push notification widget shown floating over hero",
+      "description": "Background #ffffff, border-radius 16px, box-shadow rgba(0,0,0,0.1) 0px 0px 20px 0px. Width ~240px. Contains app icon (32px, radius 8px), headline in .SFNSDisplay-Semibold 12px, subtext .SFNSText 11px #666666. Action button in #000000 background #ffffff text, border-radius 40px, padding 6px 16px."
+    }
+  ],
+  "dos": [
+    "Use #000000 filled buttons with #ffffff text and 8px radius for all primary CTAs — no colored accent replaces this.",
+    "Apply TWK Lausanne Pan at -0.04em letter-spacing for all headings at 24px and above; drop to -0.02em for body text at 14-18px.",
+    "Use 960px border-radius for pill badges, RSVP status tags, and tab selectors — never a small radius on these elements.",
+    "Wrap feature sections in periwinkle-to-white gradients (rgba(150,196,255,0.1) → #ffffff) to create visual rhythm alternating with pure white sections.",
+    "Scatter invitation card tiles at ±10-15° rotation in showcase sections — the tilted stack of cards communicates creative variety and physical party energy.",
+    "Reserve Partiful Display Medium exclusively for hero headlines and the largest section display titles; use TWK Lausanne Pan 700 for all other headings.",
+    "Use #31c431, #ffae00, and red exclusively for RSVP semantic states (Going/Maybe/Can't go) — never use these as decorative or brand colors elsewhere in the UI."
+  ],
+  "donts": [
+    "Never use a colored accent (purple, blue, pink) as the primary button fill — the entire action hierarchy runs on black and white only.",
+    "Don't apply box-shadow to the hero or full-bleed sections — elevation is only used on cards and floating widgets, never on full-width surfaces.",
+    "Don't use Partiful Display Medium below 26px — at small sizes it loses its identity; use TWK Lausanne Pan 700 instead.",
+    "Never use #d9c58b (Warm Sand) for anything other than the active nav link state — it reads as a selected-state indicator, not a general accent.",
+    "Don't center-align body copy paragraphs in feature sections — body text stays left-aligned even when the section layout is centered.",
+    "Don't use more than 2 type sizes in a single card component — the hierarchy is title + body, not a cascade of 3+ sizes.",
+    "Never apply the pink-to-mauve gradient to interactive UI components (buttons, inputs, badges) — it is a background/surface treatment only."
+  ],
+  "surfaces": [
+    {
+      "hex": "#ffffff",
+      "name": "Canvas",
+      "level": 0,
+      "purpose": "Base page background for all feature and content sections"
+    },
+    {
+      "hex": "#ffffff",
+      "name": "Card Surface",
+      "level": 1,
+      "purpose": "White card with shadow separation (rgba(0,0,0,0.1) 0px 0px 6px 0px) — floats above canvas via shadow, not color difference"
+    },
+    {
+      "hex": "#96c4ff",
+      "name": "Gradient Wash",
+      "level": 2,
+      "purpose": "Section backgrounds using periwinkle-to-white or pink-to-mauve gradients — the only non-white surface level, used for hero and alternating feature bands"
+    },
+    {
+      "hex": "#000000",
+      "name": "Overlay Ink",
+      "level": 3,
+      "purpose": "Dark overlay for hero photography — photography sections use black with gradient overlay and backdrop blur for legible white text"
+    }
+  ],
+  "elevation": [
+    {
+      "style": "rgba(0, 0, 0, 0.1) 0px 0px 6px 0px",
+      "element": "Standard Card"
+    },
+    {
+      "style": "rgba(0, 0, 0, 0.05) 0px 0.8px 2.4px -0.6px, rgba(0, 0, 0, 0.05) 0px 2.4px 7.2px -1.25px, rgba(0, 0, 0, 0.05) 0px 6.4px 19.1px -1.875px, rgba(0, 0, 0, 0.05) 0px 20px 60px -2.5px",
+      "element": "Event Preview Card (elevated)"
+    },
+    {
+      "style": "rgba(0, 0, 0, 0.1) 0px 0px 20px 0px",
+      "element": "Floating Button"
+    }
+  ],
+  "imagery": "$1e",
+  "layout": "Max-width approximately 1200px, centered. Hero is full-bleed viewport-width photography (~420px tall) with left-aligned headline and centered gradient overlay, navigation sits in a dark-background top bar above it. Below the hero, sections alternate between white canvas (feature demos with tab selectors and event card mockups) and soft gradient washes (periwinkle-to-white or pink-to-white) for 'For every occasion' type sections. Feature sections use a two-column layout: text-left with a large product card mockup or scattered invitation tiles on the right. Invitation gallery carousels are full-width horizontal scroll rows with visible overflow. A 3-4 column card grid appears in testimonial/press sections. Section vertical rhythm is consistent at ~80px gaps. Navigation is a sticky top bar with horizontal category links (Graduations, Birthdays, Dinners, etc.) plus Login/Create button pair in the top right — no mega-menu, no sidebar.",
+  "customSections": [
+    {
+      "title": "Agent Prompt Guide",
+      "content": "$21"
+    },
+    {
+      "title": "Gradient System",
+      "content": "$22"
+    }
+  ],
+  "similar": [
+    {
+      "why": "Both use full-bleed event photography heroes with heavy white text overlays, but Partiful opts for black/white button system where Eventbrite uses orange CTAs",
+      "business": "Eventbrite"
+    },
+    {
+      "why": "Same editorial sans-serif type approach, white card UI for event previews, and gradient-washed section backgrounds — both position themselves as aesthetic event platforms vs functional ticketing tools",
+      "business": "Luma (lu.ma)"
+    },
+    {
+      "why": "Horizontal scrolling template gallery carousels with portrait-format tiles showing wildly varied design styles, same 'pick your vibe' creative showcase layout",
+      "business": "Canva"
+    },
+    {
+      "why": "Scattered rotated card displays at ±15° angles against gradient backgrounds to showcase product variety — same physical-pile-of-materials metaphor",
+      "business": "Hotmart"
+    },
+    {
+      "why": "Direct competitor with same invitation template gallery model and editorial photography in hero sections, though Paperless Post uses warmer brown tones where Partiful uses cool pink-violet",
+      "business": "Paperless Post"
+    }
+  ]
+}

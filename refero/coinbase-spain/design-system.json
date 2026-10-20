@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "siteName": "Coinbase Spain",
+    "url": "https://coinbase.com",
+    "extractedAt": "2026-04-11T17:43:55.835Z",
+    "thumbnailUrl": "https://images.refero.design/styles/refero.design/image/eaa47d11-9aec-47da-9d47-45a239c6db9e.jpg",
+    "screenshotUrls": [
+      "https://images.refero.design/styles/refero.design/image/fea0137f-1b3a-457e-9a6b-fc86d51d1174.jpg"
+    ]
+  },
+  "description": "The design system establishes a feeling of digital-native trust, grounded in a high-contrast, minimalist palette. A precise foundation of pure white (#ffffff) and near-black (#0a0b0d) creates an environment of clarity and focus. The system's entire personality is injected through a single, electric `Coinbase Blue` (#0052ff), which is reserved exclusively for primary actions and brand marks, acting as a confident guide. A suite of custom fonts (Coinbase Display, Sans, Text) provides a unique and cohesive typographic voice across all scales. Depth is achieved not with shadows but with bold, full-width color blocks, alternating between bright white and deep midnight sections, creating a clean, architectural rhythm.",
+  "northStar": "Digital Trust, Blueprinted. A system built on the clarity of an architectural plan, energized by a single, electric blue neuron.",
+  "theme": "light",
+  "colors": [
+    {
+      "hex": "#0052ff",
+      "name": "Coinbase Blue",
+      "role": "Primary CTAs, logos, active states — the core brand identifier.",
+      "group": "brand"
+    },
+    {
+      "hex": "#578bfa",
+      "name": "Interactive Blue",
+      "role": "Secondary links and interactive elements.",
+      "group": "accent"
+    },
+    {
+      "hex": "#ffffff",
+      "name": "Pure White",
+      "role": "Primary page background, text on dark surfaces.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#0a0b0d",
+      "name": "Midnight",
+      "role": "Dark section backgrounds, primary text.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#5b616",
+      "name": "Slate",
+      "role": "Body text, secondary headings, footer links.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#8a919",
+      "name": "Ash",
+      "role": "Helper text, disabled states, subtle UI text.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#f7f8f9",
+      "name": "Frost",
+      "role": "Subtle light backgrounds, like the footer area.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#eef0f3",
+      "name": "Cloud",
+      "role": "Light background dividers or button hover states.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#dedfe2",
+      "name": "Pewter",
+      "role": "Borders between light sections.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#141519",
+      "name": "Charcoal",
+      "role": "Alternative dark section background surface.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#27ad75",
+      "name": "Positive Green",
+      "role": "Price increases, success messages.",
+      "group": "semantic"
+    },
+    {
+      "hex": "#f0616d",
+      "name": "Negative Red",
+      "role": "Price decreases, error messages.",
+      "group": "semantic"
+    }
+  ],
+  "typography": [
+    {
+      "family": "CoinbaseDisplay",
+      "source": "custom",
+      "substitute": "Manrope",
+      "weight": "400",
+      "sizes": "44px, 52px, 64px, 80px",
+      "lineHeight": "1.0-1.09",
+      "role": "Used exclusively for large, impactful headlines (H1/H2). Its clean, slightly wide geometry gives headlines a declarative, confident presence."
+    },
+    {
+      "family": "CoinbaseSans",
+      "source": "custom",
+      "substitute": "Inter",
+      "weight": "400, 600",
+      "sizes": "13px, 16px, 18px, 20px, 28px, 36px, 64px",
+      "lineHeight": "1.11-1.50",
+      "role": "The primary workhorse font for subheadings, buttons, and some body copy. The 600 weight is used for emphasis and smaller headings."
+    },
+    {
+      "family": "CoinbaseText",
+      "source": "custom",
+      "substitute": "Inter",
+      "weight": "400, 700",
+      "sizes": "13px, 16px, 18px",
+      "lineHeight": "1.50-1.56",
+      "role": "Optimized for readability in dense UI and long-form text blocks. Its generous line-height makes paragraphs breathable."
+    }
+  ],
+  "typeScale": [
+    {
+      "role": "caption",
+      "size": 13,
+      "lineHeight": 1.54
+    },
+    {
+      "role": "body",
+      "size": 16,
+      "lineHeight": 1.5
+    },
+    {
+      "role": "subheading",
+      "size": 18,
+      "lineHeight": 1.56
+    },
+    {
+      "role": "heading-sm",
+      "size": 28,
+      "lineHeight": 1.25
+    },
+    {
+      "role": "heading",
+      "size": 44,
+      "lineHeight": 1.09
+    },
+    {
+      "role": "heading-lg",
+      "size": 64,
+      "lineHeight": 1
+    },
+    {
+      "role": "display",
+      "size": 80,
+      "lineHeight": 1
+    }
+  ],
+  "spacing": {
+    "baseUnit": 8,
+    "density": "comfortable",
+    "pageMaxWidth": "1200px",
+    "sectionGap": "",
+    "cardPadding": "24px",
+    "elementGap": "",
+    "radius": {
+      "tags": "100000px",
+      "cards": "24px",
+      "inputs": "8px",
+      "buttons": "56px"
+    }
+  },
+  "components": [
+    {
+      "html": "$1e",
+      "name": "Primary & Secondary Button Group",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$1f",
+      "name": "Crypto Price List Card",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$20",
+      "name": "Earn APY Feature Banner",
+      "role": "",
+      "description": ""
+    },
+    {
+      "name": "Primary CTA Button",
+      "role": "The main call-to-action on any page.",
+      "description": "Background: `Coinbase Blue` (#0052ff). Text: `Pure White` (#ffffff). Padding: 16px 32px. Radius: a distinctive elongated pill shape at 56px."
+    },
+    {
+      "name": "Secondary Pill Button",
+      "role": "Secondary action, often on a dark background.",
+      "description": "Background: `Pure White` (#ffffff). Text: `Midnight` (#0a0b0d). Padding: 12px 24px. Radius: a perfect pill shape at 100000px."
+    },
+    {
+      "name": "Ghost Link",
+      "role": "Inline, text-style interactive elements.",
+      "description": "Background: transparent. Text: `Interactive Blue` (#578bfa). No padding or border. Used for tertiary actions like 'Learn more'."
+    },
+    {
+      "name": "Header Nav Link",
+      "role": "Top-level navigation items.",
+      "description": "Background: transparent. Text: `Midnight` (#0a0b0d). No padding. Font: CoinbaseSans 16px."
+    },
+    {
+      "name": "Filter Tag",
+      "role": "Toggleable filter in data views.",
+      "description": "Background: typically transparent with a subtle border, or a light fill on hover/active. Text: `Slate` (#5b616e). Padding: 12px 24px. Radius: 100000px."
+    },
+    {
+      "name": "Footer Link",
+      "role": "Tertiary navigation links in the page footer.",
+      "description": "Background: transparent. Text: `Slate` (#5b616e). Font: CoinbaseText 16px. No underline until hover."
+    },
+    {
+      "name": "Large Headline",
+      "role": "The primary heading for a page or hero section.",
+      "description": "Font: CoinbaseDisplay, 64px. Color: `Midnight` (#0a0b0d)."
+    }
+  ],
+  "dos": [
+    "Use `Coinbase Blue` (#0052ff) exclusively for primary CTAs and the brand logo.",
+    "Define primary buttons with the signature 56px border-radius.",
+    "Construct all major page headlines using the `CoinbaseDisplay` font.",
+    "Create visual hierarchy by alternating full-width #ffffff and #0a0b0d sections.",
+    "Reserve `Slate` (#5b616e) for all secondary body copy and footer links.",
+    "Set body text at 16px with `CoinbaseSans` or `CoinbaseText` for optimal readability.",
+    "Apply a 24px radius to all larger content cards."
+  ],
+  "donts": [
+    "Don't use shadows on any element; rely on color blocking for depth.",
+    "Don't use `Coinbase Blue` (#0052ff) for text or non-interactive elements.",
+    "Don't use multiple saturated colors in one section; stick to the neutral palette with one blue accent.",
+    "Don't use sharp corners for buttons or tags; they must be rounded (56px or 100000px).",
+    "Don't use system fonts; the custom Coinbase font suite is essential to the brand identity.",
+    "Don't create visual dividers with lines; use negative space and background color changes.",
+    "Don't make footer links any color other than `Slate` (#5b616e)."
+  ],
+  "elevationPhilosophy": "The design intentionally avoids shadows. Depth and hierarchy are created through color blocking, contrasting light backgrounds (#ffffff) with distinct dark sections (#0a0b0d).",
+  "imagery": "Visuals are dominated by abstract vector illustrations and clean product UI screenshots. Illustrations use a flat-color, geometric style featuring brand colors, making complex financial concepts feel approachable and modern. They are always contained within layout blocks, reinforcing the structured, grid-based feel of the page. Photography is absent, placing the focus squarely on the product's interface and stylized brand graphics.",
+  "layout": "The layout is a centered, max-width container (approx. 1200px) providing a stable reading experience. A key pattern is the rhythmic alternation between a white-background hero (split-column text/visual) and a full-bleed dark feature section. This creates dramatic contrast and pacing. Content is organized in simple, clear structures like 2-column feature blocks and multi-column card grids. Generous vertical spacing (64px+) between sections ensures each message has room to breathe.",
+  "customSections": [
+    {
+      "title": "Agent Prompt Guide",
+      "content": "$21"
+    }
+  ],
+  "similar": [
+    {
+      "why": "Shared aesthetic of high-contrast typography, a single strong brand color, and a clean, developer-friendly feel.",
+      "business": "Stripe"
+    },
+    {
+      "why": "Similar goal of simplifying finance with a clean, mobile-first design and a dominant, optimistic brand color.",
+      "business": "Robinhood"
+    },
+    {
+      "why": "Uses a similar strategy of a strong blue brand color, custom illustrations, and ample white space.",
+      "business": "Intercom"
+    },
+    {
+      "why": "Also combines a trustworthy-but-not-stodgy feel with clean typography and approachable graphics.",
+      "business": "Wealthsimple"
+    }
+  ]
+}

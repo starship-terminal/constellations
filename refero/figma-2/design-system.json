@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "siteName": "Figma",
+    "url": "https://figma.com",
+    "extractedAt": "2026-04-28T22:02:49.564Z",
+    "thumbnailUrl": "https://images.refero.design/styles/refero.design/image/f523b78a-32ac-4d7f-b163-adcee1825e90.jpg",
+    "screenshotUrls": [
+      "https://images.refero.design/styles/refero.design/image/9c7810e8-5cd0-442b-875b-87953a4a1785.jpg"
+    ]
+  },
+  "description": "The interface operates as a strict, high-contrast structural container that entirely defers visual dominance to user-generated content. A stark #000000 on #ffffff palette forms the baseline, eschewing subtle grays in favor of absolute maximum contrast for primary boundaries and text. Typographic hierarchy relies almost purely on size and aggressive negative tracking rather than color variation, turning large text strings into dense graphical blocks. The border-radius logic enforces a severe dichotomy: 50px extreme pills for global navigation elements clashing intentionally against completely sharp 0px corners on content containers.",
+  "northStar": "monochrome chassis for chromatic chaos",
+  "theme": "light",
+  "industry": "design",
+  "colors": [
+    {
+      "hex": "#ffffff",
+      "name": "Absolute Canvas",
+      "role": "Page background, floating toolbars, elevated panel bases",
+      "group": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "name": "Structural Ink",
+      "role": "Primary typography, global solid button backgrounds, outlined button strokes",
+      "group": "neutral"
+    },
+    {
+      "hex": "#595959",
+      "name": "Graphite Metadata",
+      "role": "Secondary author text, localized component subtext, placeholder values",
+      "group": "neutral"
+    },
+    {
+      "hex": "#e2e2e2",
+      "name": "Boundary Frame",
+      "role": "Subtle hair-line dividers and inactive input field bounds",
+      "group": "neutral"
+    },
+    {
+      "hex": "#4d49fc",
+      "name": "Context Action Violet",
+      "role": "Localized primary CTA within utility panels—a singular interruptive color defining the focal execution point",
+      "group": "brand"
+    },
+    {
+      "hex": "#33dfdf",
+      "name": "Angular Teal",
+      "role": "Decorative sweeps, loading indicators, and active cursor visuals",
+      "group": "accent",
+      "gradient": "conic-gradient(rgb(51, 223, 223) 0deg, rgb(51, 223, 223) 18deg, rgba(0, 0, 0, 0) 18deg, rgba(0, 0, 0, 0) 30deg)"
+    }
+  ],
+  "typography": [
+    {
+      "family": "figmaSans",
+      "source": "custom",
+      "substitute": "Inter",
+      "weight": "320, 330, 340, 400, 450, 480, 520, 700",
+      "sizes": "16px, 18px, 24px, 56px, 72px",
+      "lineHeight": "1.00 - 1.45",
+      "letterSpacing": "-0.0200em, -0.0150em, -0.0100em, -0.0090em, -0.0080em, -0.0070em, -0.0050em",
+      "fontFeatureSettings": "\"kern\"",
+      "role": "Universal workhorse driving everything from display headers to navigational labels. Defines personality through varying optical negative tracking."
+    },
+    {
+      "family": "figmaMono",
+      "source": "custom",
+      "substitute": "JetBrains Mono",
+      "weight": "400",
+      "sizes": "12px, 16px",
+      "lineHeight": "1.00, 1.30",
+      "letterSpacing": "0.0300em, 0.0500em",
+      "fontFeatureSettings": "\"kern\"",
+      "role": "Micro-labels, coordinate tracking, and technical subtext functioning as UI chrome rather than content."
+    }
+  ],
+  "typeScale": [
+    {
+      "role": "caption",
+      "size": 12,
+      "lineHeight": 1,
+      "letterSpacing": 0.36
+    },
+    {
+      "role": "body-sm",
+      "size": 16,
+      "lineHeight": 1.4,
+      "letterSpacing": -0.08
+    },
+    {
+      "role": "body",
+      "size": 18,
+      "lineHeight": 1.4,
+      "letterSpacing": -0.13
+    },
+    {
+      "role": "subheading",
+      "size": 24,
+      "lineHeight": 1.3,
+      "letterSpacing": -0.24
+    },
+    {
+      "role": "heading",
+      "size": 56,
+      "lineHeight": 1.1,
+      "letterSpacing": -0.5
+    },
+    {
+      "role": "display",
+      "size": 72,
+      "lineHeight": 1,
+      "letterSpacing": -1.44
+    }
+  ],
+  "spacing": {
+    "baseUnit": 4,
+    "density": "comfortable",
+    "pageMaxWidth": "1440px",
+    "sectionGap": "96-120px",
+    "cardPadding": "16px",
+    "elementGap": "24px",
+    "radius": {
+      "contentCards": "0px",
+      "floatingPanels": "16px",
+      "globalNavButtons": "50px",
+      "contextualButtons": "8px"
+    }
+  },
+  "components": [
+    {
+      "html": "$1e",
+      "name": "Button Group — Global Action Pills",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$1f",
+      "name": "Prompt Input Panel",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$20",
+      "name": "Community Artifact Cards",
+      "role": "",
+      "description": ""
+    },
+    {
+      "name": "Global Action Pill",
+      "role": "Page-level CTA and authentication boundaries",
+      "description": "backgroundColor #000000, color #ffffff, extreme borderRadius 50px, padding 8px 18px. Typographically set in 16px weight 480."
+    },
+    {
+      "name": "Navigation Utility Pill",
+      "role": "Secondary global actions structurally matched to primary pill",
+      "description": "Transparent background with a 1.5px solid #000000 border, text #000000. borderRadius 50px, padding 8px 18px."
+    },
+    {
+      "name": "Prompt Input Panel",
+      "role": "The central elevated workspace orchestrator",
+      "description": "backgroundColor #ffffff, borderRadius 16px. Padding 16px all around, defined by an aggressive standalone shadow: rgba(0,0,0,0.1) 0px 24px 70px 0px."
+    },
+    {
+      "name": "Panel Execution CTA",
+      "role": "The localized trigger within a Prompt Input Panel",
+      "description": "backgroundColor #4d49fc, color #ffffff. Notably distinct borderRadius of 8px (differentiating it from 50px global pills), padding 8px 16px."
+    },
+    {
+      "name": "Community Artifact Card",
+      "role": "Container framework for raw user-generated output",
+      "description": "Strict 0px borderRadius grid cell. Image spans 100% full width to bleed at the top, bottom metadata stack uses 12px vertical gaps and no horizontal bounding padding against the grid frame."
+    }
+  ],
+  "dos": [
+    "Enforce absolute #000000 for primary typography matrices—rely on weight and harsh negative tracking (-1.44px at display sizes) for hierarchy instead of greys.",
+    "Pair the 50px pill paradigm explicitly and exclusively with global navbar / page-level navigation elements.",
+    "Maintain raw 0px corners on community and gallery containers to strip away UI artifacts from structural content layouts.",
+    "Use #4d49fc strictly as an inner-panel interruptive signal, never for global headers or marketing backgrounds.",
+    "Limit drop shadows strictly to workspace/prompt panels that float structurally above the canvas; do not apply baseline shadows to grid items."
+  ],
+  "donts": [
+    "Do not dilute body content with #595959 text; force high contrast #000000 on #ffffff for all core structural strings.",
+    "Do not mix button border geometries—never use an 8px radius in the header, and never use 50px pills within an elevated prompt panel.",
+    "Do not frame or stroke image artwork thumbnails; let the unstyled edge define the visual rectangle inside the card space.",
+    "Never apply hover elevation—use pure background-color offsets or opacity changes, reserving box-shadow for persistent Z-index tiers.",
+    "Avoid decorative colored blocks in the UI system—constrain #24cb71, #00b6ff, #ff7237 exclusively to actual artwork or avatar renders."
+  ],
+  "elevationPhilosophy": "Z-axis hierarchy relies on a binary absolute threshold. 99% of the UI (buttons, cards, inputs) exists entirely flush with the background, utilizing zero shadow. Elevation is summoned centrally as a single, massive volumetric throw (0 24px 70px 10% opacity) beneath core interactive 'prompt modules'—physically disconnecting the active toolset layer from the flat, passive content layer underneath.",
+  "imagery": "User-centric outputs completely govern the image domain. Assets appear as flat, unbordered 0px squares or scattered, overlapping physical-like cuts set against a stark void. The imagery operates as the only source of chroma on the site. There are zero lifestyle photography elements or generic corporate illustrations—every graphic is an exact, literal snapshot of a digital canvas creation, functioning both as proof of product and primary aesthetic payload.",
+  "layout": "Compositions rely on extreme maximum-width boundaries (1440px max) centering the viewport, utilizing tight clusters of content separated by massive macro-whitespace (96-120px section gaps). The hero archetype frequently stacks an asymmetric gallery-wall of images pinned dynamically beneath a floating, perfectly-centered UI block. Below the fold, information conforms immediately to strict 4-column unpadded grid architecture framing repeated card clusters, maximizing object density while eliminating frame padding.",
+  "customSections": [
+    {
+      "title": "Agent Prompt Guide",
+      "content": "$21"
+    }
+  ],
+  "similar": [
+    {
+      "why": "Typographic aggression via exact, tracked-in varying weights driving hierarchy entirely without structural color.",
+      "business": "Apple"
+    },
+    {
+      "why": "Tools-as-infrastructure layout mindset, relying entirely on monochrome wireframes that recede to let user components inject visual flair.",
+      "business": "Notion"
+    },
+    {
+      "why": "High-contrast monochromatic structural scaffolding that defines interaction surfaces with stark geometry and singular vivid accent highlights.",
+      "business": "Vercel"
+    }
+  ]
+}

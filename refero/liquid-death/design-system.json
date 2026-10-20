@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "siteName": "Liquid Death",
+    "url": "https://liquiddeath.com",
+    "extractedAt": "2026-04-11T17:51:51.532Z",
+    "thumbnailUrl": "https://images.refero.design/styles/refero.design/image/f197f5aa-32e3-4587-a8c0-20b59b201475.jpg",
+    "screenshotUrls": [
+      "https://images.refero.design/styles/refero.design/image/1ef29d2b-4f55-4298-a173-747f8ed77661.jpg"
+    ]
+  },
+  "description": "This design system feels like a heavy metal concert flyer brought to life as a direct-to-consumer brand. The aesthetic is built on brutalist principles: a stark palette of pure black and white, zero rounded corners, and aggressive, uppercase typography. This creates a hard, confrontational edge, deliberately rejecting the soft, approachable look of typical beverage companies. Splashes of antique gold in logos and links are the only moments of warmth, acting like a glint of metal on a matte black surface. The layout uses full-bleed, high-contrast sections, creating a jarring, powerful rhythm that mirrors the brand's 'Murder Your Thirst' tagline.",
+  "northStar": "Heavy Metal Vending Machine",
+  "theme": "mixed",
+  "colors": [
+    {
+      "hex": "#000000",
+      "name": "Death Black",
+      "role": "Primary text, core UI backgrounds, filled buttons. Establishes the dominant, aggressive tone.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#ffffff",
+      "name": "Bone White",
+      "role": "Text on dark backgrounds, primary page backgrounds.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#151515",
+      "name": "Off-Black",
+      "role": "Body copy on light backgrounds, secondary UI elements.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#e3e3e3",
+      "name": "Ash Gray",
+      "role": "Product grid background, subtle dividers.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#727272",
+      "name": "Gravel Gray",
+      "role": "Secondary text, disabled states, placeholder text.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#f5f5f5",
+      "name": "Light Ash",
+      "role": "Alternative light background color for section differentiation.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#232323",
+      "name": "Charcoal",
+      "role": "Hover states on dark elements.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#999999",
+      "name": "Input Border",
+      "role": "Default border color for text input fields.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#d2ac5a",
+      "name": "Polished Gold",
+      "role": "Accents, special links, logotype details — a premium, metallic highlight against the stark monochrome.",
+      "group": "accent"
+    },
+    {
+      "hex": "#8a6d35",
+      "name": "Antique Gold",
+      "role": "Hover state for gold accents, secondary logotype details.",
+      "group": "accent"
+    }
+  ],
+  "typography": [
+    {
+      "family": "Acumin Pro",
+      "source": "custom",
+      "substitute": "'Inter', 'Roboto', sans-serif",
+      "weight": "400, 500, 700",
+      "sizes": "12px, 14px, 16px, 18px, 20px, 24px, 32px, 36px, 40px, 56px, 60px",
+      "lineHeight": "1.00, 1.05, 1.13, 1.20, 1.29, 1.50, 1.67, 2.00",
+      "letterSpacing": "0.0200em, 0.0310em, 0.0560em, 0.0630em",
+      "role": "The single, dominant typeface used for everything from massive uppercase headlines to body copy. Its clean, geometric form provides a brutalist, no-nonsense foundation. Extensive use of uppercase at 700 weight for headings is the brand's signature voice."
+    },
+    {
+      "family": "acumin-pro-condensed",
+      "source": "custom",
+      "substitute": "'Roboto Condensed', sans-serif",
+      "weight": "400, 700",
+      "sizes": "10px, 16px, 18px, 20px, 45px",
+      "lineHeight": "1.00, 1.05, 1.20, 1.30",
+      "letterSpacing": "0.0560em",
+      "role": "Used sparingly for subtitles and calorie counts where horizontal space is limited. Maintains the core Acumin feel in a more compact format."
+    }
+  ],
+  "typeScale": [
+    {
+      "role": "caption",
+      "size": 10,
+      "lineHeight": 1
+    },
+    {
+      "role": "body-sm",
+      "size": 14,
+      "lineHeight": 1.5
+    },
+    {
+      "role": "body",
+      "size": 16,
+      "lineHeight": 1.67
+    },
+    {
+      "role": "subheading",
+      "size": 24,
+      "lineHeight": 1.2
+    },
+    {
+      "role": "heading-sm",
+      "size": 36,
+      "lineHeight": 1.13
+    },
+    {
+      "role": "heading",
+      "size": 45,
+      "lineHeight": 1.05
+    },
+    {
+      "role": "display",
+      "size": 60,
+      "lineHeight": 1
+    }
+  ],
+  "spacing": {
+    "baseUnit": 4,
+    "density": "comfortable",
+    "pageMaxWidth": null,
+    "sectionGap": "",
+    "cardPadding": "24px",
+    "elementGap": "",
+    "radius": {
+      "tags": "0px",
+      "cards": "0px",
+      "inputs": "0px",
+      "buttons": "0px"
+    }
+  },
+  "components": [
+    {
+      "html": "$1e",
+      "name": "Product Cards — Beverage Grid",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$1f",
+      "name": "Merch Product Card Row",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$20",
+      "name": "Full-Width Banner CTAs + Email Capture",
+      "role": "",
+      "description": ""
+    },
+    {
+      "name": "Primary Action Button",
+      "role": "Key CTAs like 'Shop Now' or 'Add to Cart'.",
+      "description": "A solid rectangle with background: `Death Black` (#000000), text: `Bone White` (#ffffff), padding: 8px 16px, and border-radius: 0px. Text is uppercase `Acumin Pro`."
+    },
+    {
+      "name": "Secondary Action Button",
+      "role": "Less prominent actions like 'Join the Contest'.",
+      "description": "An outlined rectangle with background: transparent, text & 1px border: `Death Black` (#000000), padding: 13px, and border-radius: 0px. Text is uppercase `Acumin Pro`."
+    },
+    {
+      "name": "Full-Width Banner CTA",
+      "role": "Major section-level calls to action, e.g., 'Join the Club'.",
+      "description": "A full-width block link with background: `Death Black` (#000000), text: `Bone White` (#ffffff), and a right-aligned chevron. It is always rectangular with a 0px radius."
+    },
+    {
+      "name": "Text Input Field",
+      "role": "For email capture and forms.",
+      "description": "A sharp-cornered field with background: `Bone White` (#ffffff), text: `Death Black` (#000000), and a 1px border in `Input Border` (#999999). Padding is typically 8px 12px with 0px radius."
+    },
+    {
+      "name": "Navigation Link",
+      "role": "Main site navigation items.",
+      "description": "Uppercase text in `Acumin Pro` 500, color `Off-Black` (#151515). No underline or background decoration on hover."
+    },
+    {
+      "name": "Modal Overlay",
+      "role": "Popup for email signup or promotions.",
+      "description": "A semi-transparent `Gravel Gray` (#727272) layer covers the page, with a centered rectangular container in `Ash Gray` (#e3e3e3) holding the content. All corners are sharp (0px radius)."
+    }
+  ],
+  "dos": [
+    "Use 0px border-radius for all buttons, inputs, cards, and containers.",
+    "Set all major headlines in uppercase `Acumin Pro`.",
+    "Rely on stark `Death Black` and `Bone White` for primary backgrounds and text.",
+    "Use full-bleed, high-contrast black and white sections to structure the page.",
+    "Reserve `Polished Gold` and `Antique Gold` for logotypes and hyper-specific accents.",
+    "Maintain high-contrast text accessibility (AAA) for all body copy.",
+    "Use sharp, rectangular product imagery on solid `Ash Gray` backgrounds."
+  ],
+  "donts": [
+    "Never use rounded corners on any element.",
+    "Do not use drop shadows or gradients for elevation.",
+    "Avoid using sentence case for primary headlines.",
+    "Don't use the gold colors for standard UI components like buttons or inputs.",
+    "Do not introduce any soft or playful colors into the palette.",
+    "Avoid subtle gray-on-gray text combinations.",
+    "Don't use lifestyle photography; focus on the product or provocative concepts."
+  ],
+  "elevationPhilosophy": "This design actively avoids drop shadows. Depth and hierarchy are achieved exclusively through high-contrast color blocking—placing `Bone White` elements on `Death Black` backgrounds or vice versa. This creates a flat, graphic, and intentionally harsh layering style.",
+  "imagery": "The visual language is provocative and product-focused, mirroring a heavy-metal aesthetic. Photography is high-contrast, often featuring stark product shots on plain backgrounds, or humorous, slightly absurd concepts (like drinking from a faucet). Imagery is used in full-bleed sections or as contained, sharp-edged blocks. There are no lifestyle photos; the can is the hero. Graphic elements include detailed, skull-based logotypes reminiscent of band art, rendered in black, white, and gold.",
+  "layout": "The layout is built on a foundation of alternating, full-bleed content bands. The page structure often starts with a complex hero and transitions into a series of stark black, white, or light gray sections with a strong vertical rhythm. Content within sections is typically centered and max-width, creating a pillar of text and visuals down the screen. Grids are used for product listings, following a simple, rigid 3 or 4-column structure with no frills. The overall impression is one of powerful, rhythmic, and confrontational organization.",
+  "customSections": [
+    {
+      "title": "Agent Prompt Guide",
+      "content": "$21"
+    }
+  ],
+  "similar": [
+    {
+      "why": "Similar counter-culture, internet-native brand voice with a stark, often brutalist digital presence.",
+      "business": "MSCHF"
+    },
+    {
+      "why": "Shares a gritty, unapologetic aesthetic rooted in a subculture, with bold, often gothic typography.",
+      "business": "Thrasher Magazine"
+    },
+    {
+      "why": "Employs a similar brutalist web design with stark typography, minimal color, and a focus on product in a harsh context.",
+      "business": "Balenciaga (under Demna)"
+    },
+    {
+      "why": "High-end streetwear e-commerce with a similar product-first, grid-based layout and monochrome palette, though Kith is less aggressive.",
+      "business": "Kith"
+    }
+  ]
+}
