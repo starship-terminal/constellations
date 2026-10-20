@@ -343,6 +343,7 @@ extra_css = ["stylesheets/scorecard.css"]
 nav = [
   {{ "Home" = "index.md" }},
   {{ "Gallery" = "gallery/index.html" }},
+  {{ "Refero" = "gallery/index.html#/refero" }},
   {{ "Scorecard" = [
     {{ "Overview" = "scorecard/index.md" }},
     {{ "Systems" = [{nav_systems}] }},
@@ -362,10 +363,15 @@ language = "en"
 # overrides/main.html adds the web app manifest, the touch icon and theme colours.
 custom_dir = "overrides"
 favicon = "assets/favicon.svg"
+# The same four-tile mark the gallery's own bar uses — not the default book icon.
+logo = "assets/favicon.svg"
 # No navigation.instant: StatiCrypt encrypts every published page, and instant
 # loading would fetch the encrypted HTML behind the decrypt step.
 features = [
   "navigation.tabs",
+  # tabs.sticky folds the section tabs into the sticky header, so the docs
+  # pages get one pinned top bar like the gallery's.
+  "navigation.tabs.sticky",
   "content.tabs.link",
   "content.tooltips",
   "navigation.footer",
