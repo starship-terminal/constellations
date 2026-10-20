@@ -112,15 +112,21 @@ def download(kind, url, dest):
 def compress_video(path, ffmpeg):
     """Re-encode path in place (faststart, <=960px wide, crf 28, no audio).
 
-    Keeps the smaller of the two files; returns True if replaced."""
+    Keeps the smaller of the two files; returns True if replaced, False if
+    the encode came out no smaller. Raises RuntimeError when ffmpeg fails."""
     tmp = path.parent / (path.stem + ".compress" + path.suffix)
     try:
         proc = subprocess.run(
             [ffmpeg, "-y", "-i", str(path), "-movflags", "+faststart",
              "-vf", "scale='min(960,iw)':-2", "-crf", "28", "-an", str(tmp)],
             capture_output=True, timeout=600)
-        if (proc.returncode == 0 and tmp.exists()
-                and 0 < tmp.stat().st_size < path.stat().st_size):
+        ok = (proc.returncode == 0 and tmp.exists()
+              and tmp.stat().st_size > 0)
+        if not ok:
+            tail = proc.stderr.decode(errors="replace").strip().splitlines()
+            raise RuntimeError(
+                tail[-1] if tail else f"ffmpeg exit {proc.returncode}")
+        if tmp.stat().st_size < path.stat().st_size:
             os.replace(tmp, path)
             return True
         return False
@@ -138,8 +144,8 @@ def do_job(job, ffmpeg):
     if compress and kind in ("videos", "detail") and ffmpeg:
         try:
             compressed = compress_video(dest, ffmpeg)
-        except Exception:
-            pass
+        except Exception as ex:
+            return kind, "downloaded", False, f"{slug}: compress: {ex}"
     return kind, "downloaded", compressed, None
 
 

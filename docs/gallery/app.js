@@ -56,6 +56,7 @@ function route() {
     if (refero === (parts[0] === 'refero')) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
   });
   if (parts[0] === 'refero') { referoRoute(parts.slice(1)); return; }
+  if (rfIO) { rfIO.disconnect(); rfIO = null; }
   const sys = DATA.systems.find((s) => s.slug === parts[0]);
   if (!sys) { renderIndex(); document.title = 'Design systems'; return; }
   let sec = LEGACY[parts[1]] || parts[1] || 'overview';
@@ -151,7 +152,7 @@ function renderIndex() {
 qInput.addEventListener('input', () => {
   state.q = qInput.value;
   const h = location.hash.replace(/^#\/?/, '');
-  if (h === 'refero') renderReferoIndex();
+  if (h === 'refero' && RF_INDEX) drawReferoIndex();
   else if (h.startsWith('refero/')) location.hash = '#/refero';
   else if (h) location.hash = '#/'; else renderIndex();
 });
@@ -636,6 +637,7 @@ const rfState = { theme: 'all', video: false };
 try { Object.assign(rfState, JSON.parse(localStorage.getItem('ds-refero') || '{}')); } catch (e) {}
 const rfSave = () => { try { localStorage.setItem('ds-refero', JSON.stringify(rfState)); } catch (e) {} };
 const RF_PAGE = 48;
+let rfIO = null;
 const rfSlug = () => location.hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent);
 
 function getRefero() {
@@ -663,7 +665,10 @@ function referoRoute(parts) {
     app.innerHTML = '<p class="loading">Loading refero styles…</p>';
     getRefero()
       .then(() => { if (rfSlug()[0] === 'refero' && !rfSlug()[1]) drawReferoIndex(); })
-      .catch(() => { app.innerHTML = '<p class="empty">Could not load <code>gallery/refero/index.json</code>. Run <code>make serve</code>.</p>'; });
+      .catch(() => {
+        if (rfSlug()[0] === 'refero' && !rfSlug()[1])
+          app.innerHTML = '<p class="empty">Could not load <code>gallery/refero/index.json</code>. Run <code>make serve</code>.</p>';
+      });
     return;
   }
   renderRfEntity(parts[0]);
@@ -718,29 +723,40 @@ function drawReferoIndex() {
   const grid = app.querySelector('.rf-grid');
   const sent = app.querySelector('#rf-sent');
   if (!grid) return;
+  if (rfIO) { rfIO.disconnect(); rfIO = null; }
   let at = 0;
   const feed = () => {
     const chunk = list.slice(at, at + RF_PAGE);
     at += chunk.length;
     grid.insertAdjacentHTML('beforeend', chunk.map((s) => rfCard(s)).join(''));
-    if (at >= list.length && sent) sent.remove();
+    if (at >= list.length) {
+      if (sent) sent.remove();
+      if (rfIO) { rfIO.disconnect(); rfIO = null; }
+    }
   };
   feed();
   if (!sent) return;
   const btn = sent.querySelector('button');
-  const io = new IntersectionObserver((es) => { if (es[0].isIntersecting) feed(); }, { rootMargin: '900px' });
-  io.observe(sent);
+  rfIO = new IntersectionObserver((es) => { if (es[0].isIntersecting) feed(); }, { rootMargin: '900px' });
+  rfIO.observe(sent);
   btn.onclick = feed;
   // Refero plays a style's scroll-preview video when its card is hovered.
   grid.addEventListener('mouseover', (ev) => {
     const a = ev.target.closest('a.rf-card');
-    if (!a || a.dataset.vid) return;
+    if (!a || a.contains(ev.relatedTarget)) return;
+    const v = a.querySelector('.rf-shot video');
+    if (v) { v.play().catch(() => {}); return; }
     const s = list.find((x) => x.slug === a.dataset.slug);
     if (!s || !s.video || !(s.videoSrc || s.videoRemote)) return;
     const shot = a.querySelector('.rf-shot');
     if (!shot) return;
-    a.dataset.vid = '1';
     shot.innerHTML = `<video src="${esc(s.videoSrc || s.videoRemote)}" ${s.videoSrc && s.videoRemote ? `data-r="${esc(s.videoRemote)}"` : ''} muted loop playsinline autoplay onerror="if(this.dataset.r){this.src=this.dataset.r;this.dataset.r=''}"></video>`;
+  });
+  grid.addEventListener('mouseout', (ev) => {
+    const a = ev.target.closest('a.rf-card');
+    if (!a || a.contains(ev.relatedTarget)) return;
+    const v = a.querySelector('.rf-shot video');
+    if (v) v.pause();
   });
 }
 
@@ -753,13 +769,16 @@ const RF_TABS = [
 
 function renderRfEntity(slug) {
   delete app.dataset.pkg;
+  if (rfIO) { rfIO.disconnect(); rfIO = null; }
   app.innerHTML = '<p class="loading">Loading…</p>';
   Promise.all([getRfEntity(slug), getRefero().catch(() => null)]).then(([e]) => {
     const cur = rfSlug();
     if (cur[0] !== 'refero' || cur[1] !== slug) return;
     drawRfEntity(e);
   }).catch(() => {
-    app.innerHTML = `<p class="empty">No refero style <code>${esc(slug)}</code>. <a href="#/refero">Back to Refero styles</a>.</p>`;
+    const cur = rfSlug();
+    if (cur[0] === 'refero' && cur[1] === slug)
+      app.innerHTML = `<p class="empty">No refero style <code>${esc(slug)}</code>. <a href="#/refero">Back to Refero styles</a>.</p>`;
   });
 }
 
