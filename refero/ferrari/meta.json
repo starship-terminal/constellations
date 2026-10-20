@@ -8,5 +8,12 @@
   "source_url": "https://ferrari.com",
   "extracted_at": "2026-07-03T03:38:44.685Z",
   "fetched_at": "2026-10-20T08:21:32Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/3db622e1-4f52-4a5f-a883-e64882ce672b.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/3db622e1-4f52-4a5f-a883-e64882ce672b.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/6b155171-8e1d-4f22-82dc-7f91d6ae39f2.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/3f60e8b3-b6bd-43ed-9e27-6be163c48ab8.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/3c24893c-da6f-4b0d-8e41-015f1a43b42a.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7b8ceaa4-f9c1-43a9-8030-71de18b93589.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

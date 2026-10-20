@@ -8,5 +8,12 @@
   "source_url": "https://tella.tv",
   "extracted_at": "2026-04-11T19:25:42.180Z",
   "fetched_at": "2026-10-20T08:25:16Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/d7683fe3-cdc5-4172-b099-be66a2e8459a.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/d7683fe3-cdc5-4172-b099-be66a2e8459a.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/24e950c1-f25f-419d-857f-c495b5bdc386.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/206c41f2-f5c7-4ba5-88b6-948544a2f3fa.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/98871876-cd6e-444f-99cf-1d4e58e5125e.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/42d7271c-2879-4ca4-b29d-bc957695db71.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

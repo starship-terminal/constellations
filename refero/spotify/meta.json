@@ -8,5 +8,12 @@
   "source_url": "https://www.spotify.com",
   "extracted_at": "2026-06-03T22:09:01.041Z",
   "fetched_at": "2026-10-20T08:21:42Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/bd011f49-f4a9-4526-9edc-6011c829cd7b.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/bd011f49-f4a9-4526-9edc-6011c829cd7b.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/fabaceb0-8249-4578-ac33-507272853f32.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/586c432c-a136-4d87-bafa-7961ed8a770f.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/b07c43ce-18c6-4dab-a2cd-d5504bc6b046.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6ba14e5d-21c0-4420-8996-d43a7c466cd5.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

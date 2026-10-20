@@ -8,5 +8,12 @@
   "source_url": "https://koto.com",
   "extracted_at": "2026-06-03T21:44:05.858Z",
   "fetched_at": "2026-10-20T08:21:45Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/8d785e2a-cb43-456b-a2bc-ad99984c9e01.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/8d785e2a-cb43-456b-a2bc-ad99984c9e01.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/7f83916f-2aeb-4226-b350-17bc77e6cfe2.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/124f3743-4a8b-4cb7-89e5-0d1380b33293.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/6e3acc47-9eee-4e59-9ae6-c9d8691689bd.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/cd2ed291-108a-4343-9c87-87bdc2c5337b.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

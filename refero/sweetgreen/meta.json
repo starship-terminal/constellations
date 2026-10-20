@@ -8,5 +8,12 @@
   "source_url": "https://www.sweetgreen.com",
   "extracted_at": "2026-06-03T15:48:11.711Z",
   "fetched_at": "2026-10-20T08:23:06Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/6002fafc-fb7b-4ff8-b658-7fd7824c99bf.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/6002fafc-fb7b-4ff8-b658-7fd7824c99bf.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/78214bec-9506-47f0-9d69-f30f25c17043.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/57cbda5e-f9d1-4cba-a8bf-96b822cdb992.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/09530661-b0f4-48ba-a1f4-769c82cad061.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/910c559d-cc91-4972-9fdf-192e9aad9286.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

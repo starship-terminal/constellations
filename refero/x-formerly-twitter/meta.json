@@ -8,5 +8,12 @@
   "source_url": "https://create.video",
   "extracted_at": "2026-06-03T19:32:01.467Z",
   "fetched_at": "2026-10-20T08:24:02Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/c829e152-2d31-4d36-a277-09084f01f38d.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/c829e152-2d31-4d36-a277-09084f01f38d.jpg",
+  "video_url": null,
+  "video_poster_url": null,
+  "video_detail_url": null,
+  "video_detail_poster_url": null,
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

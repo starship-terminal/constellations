@@ -8,5 +8,12 @@
   "source_url": "https://tesla.com",
   "extracted_at": "2026-04-11T17:46:47.791Z",
   "fetched_at": "2026-10-20T08:25:20Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/4bc7b538-3e84-421a-9318-35b864bac5c5.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/4bc7b538-3e84-421a-9318-35b864bac5c5.jpg",
+  "video_url": null,
+  "video_poster_url": null,
+  "video_detail_url": null,
+  "video_detail_poster_url": null,
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

@@ -8,5 +8,12 @@
   "source_url": "https://strava.com",
   "extracted_at": "2026-06-03T17:33:21.537Z",
   "fetched_at": "2026-10-20T08:22:58Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/32785cd7-ba62-4ec0-a64e-325056fd465e.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/32785cd7-ba62-4ec0-a64e-325056fd465e.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/4ef008f2-08b9-4b4d-8cdc-76d3691aeec3.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/de13829b-5c53-42d8-8172-ff87ff9cc2dc.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/39c2fe5b-e7ff-4ff2-acc3-4a91241390d0.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/8ff32010-c698-4431-933a-666ad4cb71f1.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

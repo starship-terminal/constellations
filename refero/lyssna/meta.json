@@ -8,5 +8,12 @@
   "source_url": "https://www.lyssna.com",
   "extracted_at": "2026-06-03T15:51:13.926Z",
   "fetched_at": "2026-10-20T08:23:05Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/3db9094c-e0a5-402d-a3b9-9aed97b49b97.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/3db9094c-e0a5-402d-a3b9-9aed97b49b97.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/f1e9c306-8a2e-4859-b131-9a418bee391b.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/cbc82507-c896-4066-94cc-8fd5ec5b5c92.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/1e18cb8f-9337-4597-b0b1-8289e5f70bbe.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/1f56c9d4-11e2-43f9-8193-f6b1bbca2305.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }
