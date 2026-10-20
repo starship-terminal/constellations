@@ -106,7 +106,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
 .brand svg { fill: var(--text-strong); }
 .site-nav { display: flex; gap: 8px; }
 .site-nav a {
-  padding: 8px 12px; color: var(--mist); text-decoration: none; font-size: 13px; font-weight: 400;
+  padding: 8px 12px; color: var(--text); text-decoration: none; font-size: 13px; font-weight: 400;
 }
 .site-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .site-nav a[aria-current="page"] { color: var(--text-strong); }
@@ -115,13 +115,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
   padding: 0 12px; height: 36px; background: var(--field-bg); border: 1px solid var(--field-line);
   border-radius: var(--radius-ctl); color: var(--faint);
 }
-.search:focus-within { border-color: var(--mist); }
+.search:focus-within { border-color: var(--focus); }
 :root[data-theme="light"] .search:focus-within { border-color: var(--text); }
 .search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: 14px; }
 .search input::placeholder { color: var(--faint); }
 .icon-btn {
   flex-shrink: 0; display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: var(--radius-ctl);
-  border: 1px solid var(--line); background: transparent; color: var(--mist); cursor: pointer;
+  border: 1px solid var(--line); background: transparent; color: var(--text); cursor: pointer;
 }
 .icon-btn:hover { border-color: var(--line-strong); color: var(--text-strong); }
 
@@ -137,7 +137,7 @@ main { padding: 40px clamp(16px, 4vw, 40px) 96px; max-width: 1200px; margin: 0 a
 .chip {
   display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 4px 12px;
   border-radius: 9999px; border: 0; background: var(--chip-bg);
-  color: var(--mist); cursor: pointer; font-size: 12px; font-weight: 400; white-space: nowrap;
+  color: var(--text); cursor: pointer; font-size: 12px; font-weight: 400; white-space: nowrap;
 }
 .chip:hover { color: var(--text-strong); }
 .chip[aria-pressed="true"] { background: var(--paper); color: var(--void); }
@@ -198,7 +198,7 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 .pkg-head { margin-bottom: 28px; }
 .pkg-head h1 { margin: 0 0 6px; font-size: 32px; letter-spacing: -.022em; font-weight: 510; color: var(--text-strong); line-height: 1.13; }
 .pkg-sub { display: flex; flex-wrap: wrap; gap: 4px 14px; color: var(--muted); font-size: 13px; }
-.pkg-sub .site { color: var(--mist); text-decoration: none; }
+.pkg-sub .site { color: var(--text); text-decoration: none; }
 .pkg-sub .site:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 /* rail + one section at a time */
@@ -223,7 +223,7 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 .sec-head { margin-bottom: 24px; }
 .sec-head h2 { margin: 0; font-size: 24px; letter-spacing: -.012em; font-weight: 400; color: var(--text-strong); line-height: 1.33; }
 .sec-head p { margin: 6px 0 0; color: var(--muted); max-width: 72ch; font-size: 14px; }
-.sec-head a { color: var(--mist); text-decoration: underline; text-underline-offset: 3px; }
+.sec-head a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
 .sub-title { display: flex; align-items: baseline; gap: 8px; font-family: var(--mono); font-size: 12px; font-weight: 400; letter-spacing: -.013em; color: var(--faint); margin: 36px 0 14px; }
 .sub-title .n { font-weight: 400; }
 .faint-note { color: var(--faint); font-size: 12px; margin: 12px 0 0; }
@@ -234,7 +234,7 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 .nc-tag { font-size: 12px; font-weight: 400; color: var(--nc-tag); }
 .nc p { margin: 0; color: var(--text); }
 .nc code { font: 12px var(--mono); background: var(--chip-bg); padding: 1px 5px; border-radius: var(--radius-badge); }
-.nc a { color: var(--mist); }
+.nc a { color: var(--text); }
 
 @media (max-width: 860px) {
   :root { --rail-h: 50px; }
@@ -262,7 +262,7 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
 .btn {
   display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 8px 12px; border-radius: var(--radius-ctl);
-  border: 1px solid var(--line); background: transparent; color: var(--mist); text-decoration: none; cursor: pointer; font-size: 13px; font-weight: 400;
+  border: 1px solid var(--line); background: transparent; color: var(--text); text-decoration: none; cursor: pointer; font-size: 13px; font-weight: 400;
 }
 .btn:hover { border-color: var(--line-strong); color: var(--text-strong); }
 .btn.primary {
@@ -275,7 +275,7 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 .meta { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 0; font-size: 13px; }
 .meta dt { color: var(--faint); }
 .meta dd { margin: 0; overflow-wrap: anywhere; color: var(--text); }
-.meta a { color: var(--mist); }
+.meta a { color: var(--text); }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag { font-size: 12px; padding: 0 6px; line-height: 18px; border-radius: var(--radius-badge); background: var(--chip-bg); color: var(--muted); }
 .hero-shot { display: block; width: 100%; padding: 0; font: inherit; text-align: left; border-radius: var(--radius-card); overflow: hidden; border: 0; box-shadow: var(--ring); background: var(--obsidian); cursor: zoom-in; max-height: 420px; }
@@ -367,7 +367,7 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 .md h1, .md h2, .md h3, .md h4 { letter-spacing: -.012em; line-height: 1.33; margin: 1.6em 0 .5em; color: var(--text-strong); font-weight: 510; }
 .md h1 { font-size: 24px; margin-top: 0; letter-spacing: -.022em; } .md h2 { font-size: 20px; } .md h3 { font-size: 16px; }
 .md p, .md ul, .md ol { margin: 0 0 .9em; }
-.md a { color: var(--mist); text-underline-offset: 3px; }
+.md a { color: var(--text); text-underline-offset: 3px; }
 .md code { font: 12px var(--mono); background: var(--chip-bg); padding: 1px 5px; border-radius: var(--radius-badge); letter-spacing: -.013em; }
 .md pre { background: var(--sunken); padding: 12px 14px; border-radius: var(--radius-ctl); overflow-x: auto; }
 .md pre code { background: none; padding: 0; }
