@@ -892,9 +892,9 @@ function drawRfEntity(e) {
         ${rfColors(e)}${rfTypography(e)}${rfSpacing(e)}${rfGuidelines(e)}${rfSimilar(e)}
       </div>
       <aside class="rf-pane">
-        <div class="rf-tabs" role="tablist">${RF_TABS.map(([k, l]) => `<button role="tab" type="button" data-tab="${k}" aria-selected="${k === 'design_md'}">${esc(l)}</button>`).join('')}
-          <span class="rf-tabs-sp"></span>
-          <span class="rf-mode">${[['compact', 'Compact'], ['extended', 'Extended']].map(([k, l]) => `<button type="button" data-mode="${k}" aria-selected="${k === 'extended'}">${esc(l)}</button>`).join('')}</span>
+        <div class="rf-tabs" role="tablist">${RF_TABS.map(([k, l]) => `<button role="tab" type="button" data-tab="${k}" aria-selected="${k === 'design_md'}">${esc(l)}</button>`).join('')}</div>
+        <div class="rf-docbar">
+          <span class="rf-mode">${[['compact', 'Compact'], ['extended', 'Extended']].map(([k, l]) => `<button type="button" data-mode="${k}" aria-pressed="${k === 'extended'}">${esc(l)}</button>`).join('')}</span>
           <button class="rf-copy" id="rf-copy" type="button">Copy</button></div>
         <div class="rf-pane-body" id="rf-pane-body"></div>
       </aside>
@@ -906,11 +906,11 @@ function drawRfEntity(e) {
   const copyBtn = app.querySelector('#rf-copy');
   const renderTab = () => {
     app.querySelectorAll('.rf-tabs [data-tab]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
-    app.querySelectorAll('.rf-mode [data-mode]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.mode === mode)));
+    app.querySelectorAll('.rf-mode [data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
     const doc = (e.docs || {})[tab] || '(empty)';
     const lines = doc.split('\n');
-    const cut = mode === 'compact' && lines.length > 32;
-    body.innerHTML = `<pre class="rf-code${cut ? ' rf-cut' : ''}"><code>${esc(cut ? lines.slice(0, 32).join('\n') + '\n…' : doc)}</code></pre>`;
+    const cut = mode === 'compact' && lines.length > 24;
+    body.innerHTML = `<pre class="rf-code${cut ? ' rf-cut' : ''}"><code>${esc(cut ? lines.slice(0, 24).join('\n') + '\n…' : doc)}</code></pre>`;
   };
   app.querySelectorAll('.rf-tabs [data-tab]').forEach((b) => b.onclick = () => { tab = b.dataset.tab; renderTab(); });
   app.querySelectorAll('.rf-mode [data-mode]').forEach((b) => b.onclick = () => { mode = b.dataset.mode; renderTab(); });
