@@ -8,5 +8,12 @@
   "source_url": "https://jitter.video",
   "extracted_at": "2026-06-03T19:36:31.987Z",
   "fetched_at": "2026-10-20T08:22:12Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/52aa4104-ebba-430c-8932-4795dc8b6aeb.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/52aa4104-ebba-430c-8932-4795dc8b6aeb.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/1dd30ea9-c9c9-4c3c-a952-7b7a22f7525c.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/6db44593-8399-4160-8c95-1b3bf30aeeec.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/3f648ff8-d317-412c-8154-7b156109f2ae.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/f366a465-2cf4-41d8-980e-79027db10953.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

@@ -8,5 +8,12 @@
   "source_url": "https://www.airbnb.com",
   "extracted_at": "2026-07-03T03:15:59.260Z",
   "fetched_at": "2026-10-20T08:21:36Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/55458139-76bc-4966-87ab-067c1194e905.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/55458139-76bc-4966-87ab-067c1194e905.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/db5a5f50-55f6-4a8a-85c2-38ab92d396b2.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/48774c22-dc4a-402a-8a29-f8227d63b2f8.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/16a5c574-3aa7-476a-86bb-35b4db74a71e.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/47c626f2-5207-457e-8b54-875a641cb1a1.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

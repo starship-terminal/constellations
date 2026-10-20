@@ -2,7 +2,7 @@
 """Check the catalog, build the browsable gallery, and serve it.
 
     python3 tools/catalog.py check            validate catalog.json against the packages
-    python3 tools/catalog.py build            write docs/gallery/data.json and docs/gallery/thumbs/
+    python3 tools/catalog.py build            write docs/gallery/data.json, thumbs/ and refero/
     python3 tools/catalog.py serve [--port N] build the gallery, scorecard and docs site, then serve it
     python3 tools/catalog.py find WORDS...    rank packages by name, use, tags and themes
     python3 tools/catalog.py export SLUG      print a package's tokens as CSS variables (or --format json)
@@ -1200,6 +1200,127 @@ def section_data(system: dict) -> dict:
     }
 
 
+# ---------------------------------------------------------------- refero
+
+# Extracted third-party styles under refero/<slug>/ (meta.json + design-system.json
+# plus DESIGN.md, variables.css, theme.css, tokens.json). The gallery's Refero section
+# reads what build_refero writes under docs/gallery/refero/. The `local` media paths
+# are where a separate fetch job puts each remote file; both sides are emitted so a
+# card can fall back to the remote while its file is missing.
+
+
+def _refero_host(url) -> str | None:
+    """Hostname of a style's source_url, without a leading www."""
+    if not isinstance(url, str) or not url:
+        return None
+    host = urllib.parse.urlparse(url if "//" in url else f"//{url}").hostname
+    return host.removeprefix("www.") if host else None
+
+
+def _refero_asset(kind: str, slug: str, ext: str, remote) -> dict | None:
+    """One media pair: the file's eventual local path and the remote it is fetched from."""
+    if not remote:
+        return None
+    return {"local": f"/refero-media/{kind}/{slug}.{ext}", "remote": remote}
+
+
+def load_refero() -> list[tuple[Path, dict, dict]]:
+    """(folder, meta, design-system) for every refero/<slug>/ that has meta.json and
+    design-system.json. A folder missing either, or one that does not parse, is
+    skipped with a warning rather than failing the build."""
+    base = ROOT / "refero"
+    styles = []
+    if not base.is_dir():
+        return styles
+    for folder in sorted(base.iterdir()):
+        if not folder.is_dir() or folder.name.startswith("."):  # .work and the like are not styles
+            continue
+        meta_path, ds_path = folder / "meta.json", folder / "design-system.json"
+        if not meta_path.is_file() or not ds_path.is_file():
+            print(f"warning: skipping refero/{folder.name}: needs meta.json and design-system.json",
+                  file=sys.stderr)
+            continue
+        try:
+            meta = json.loads(meta_path.read_text())
+            ds = json.loads(ds_path.read_text())
+        except (OSError, json.JSONDecodeError) as e:
+            print(f"warning: skipping refero/{folder.name}: {e}", file=sys.stderr)
+            continue
+        styles.append((folder, meta, ds))
+    return styles
+
+
+def refero_card(slug: str, meta: dict, ds: dict) -> dict:
+    """One row of refero/index.json. The card prefers the video poster and falls back
+    to the screenshot; the remote card also tries the design-system's thumbnail."""
+    poster, shot = meta.get("video_poster_url"), meta.get("screenshot_url")
+    ds_meta = ds.get("meta") if isinstance(ds.get("meta"), dict) else {}
+    return {"slug": slug, "name": meta.get("name"), "tagline": meta.get("tagline"),
+            "theme": meta.get("theme") or ds.get("theme"), "industry": ds.get("industry"),
+            "src": _refero_host(meta.get("source_url")),
+            "card": f"/refero-media/posters/{slug}.jpg" if poster
+                    else f"/refero-media/shots/{slug}.jpg" if shot else None,
+            "cardRemote": poster or ds_meta.get("thumbnailUrl") or shot,
+            "video": bool(meta.get("video_url")),
+            "videoSrc": f"/refero-media/videos/{slug}.mp4" if meta.get("video_url") else None,
+            "videoRemote": meta.get("video_url")}
+
+
+def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
+    """The JSON written to refero/<slug>.json: the meta fields, local+remote media
+    pairs (null where meta.json has no remote for one yet), the docs files' text, the
+    design-system minus its meta block, and `similar` with each business name resolved
+    to a refero slug where one matches."""
+    slug = meta.get("slug") or folder.name
+    host = _refero_host(meta.get("source_url"))
+    text = lambda name: (folder / name).read_text() if (folder / name).is_file() else None
+    media = {
+        "shot": _refero_asset("shots", slug, "jpg", meta.get("screenshot_url")),
+        "poster": _refero_asset("posters", slug, "jpg", meta.get("video_poster_url")),
+        "video": _refero_asset("videos", slug, "mp4", meta.get("video_url")),
+        "detail": _refero_asset("detail", slug, "mp4", meta.get("video_detail_url")),
+        "favicon": {"local": f"/refero-media/favicons/{slug}.png",
+                    "remote": ("https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON"
+                               f"&fallback_opts=TYPE,SIZE,URL&url=https://{host}&size=128") if host else None},
+    }
+    similar = [{"slug": slug_of.get(str(s.get("business") or "").lower()),
+                "name": s.get("business"), "why": s.get("why")}
+               for s in ds.get("similar") or [] if isinstance(s, dict)]
+    return {"slug": slug, "name": meta.get("name"), "tagline": meta.get("tagline"),
+            "theme": meta.get("theme") or ds.get("theme"), "industry": ds.get("industry"),
+            "source_url": meta.get("source_url"), "page_url": meta.get("page_url"),
+            "extracted_at": meta.get("extracted_at"), "media": media,
+            "docs": {"design_md": text("DESIGN.md"), "variables_css": text("variables.css"),
+                     "theme_css": text("theme.css"), "tokens_json": text("tokens.json")},
+            "ds": {k: v for k, v in ds.items() if k != "meta"},
+            "similar": similar}
+
+
+def build_refero() -> Path | None:
+    """Write docs/gallery/refero/index.json and one style/<slug>.json per style.
+    Entities sit under style/ so no slug can collide with the index (a real
+    style is slugged `index`). Returns the index path, or None when there is no
+    refero/ folder or nothing valid in it."""
+    styles = load_refero()
+    if not styles:
+        return None
+    out_dir = SITE / "refero"
+    ent_dir = out_dir / "style"
+    ent_dir.mkdir(parents=True, exist_ok=True)
+    slug_of = {str(meta["name"]).lower(): meta.get("slug") or folder.name
+               for folder, meta, _ in styles if meta.get("name")}
+    index = []
+    for folder, meta, ds in styles:
+        slug = meta.get("slug") or folder.name
+        (ent_dir / f"{slug}.json").write_text(
+            json.dumps(refero_entry(folder, meta, ds, slug_of), indent=1))
+        index.append(refero_card(slug, meta, ds))
+    index.sort(key=lambda s: str(s["name"] or "").lower())
+    out = out_dir / "index.json"
+    out.write_text(json.dumps({"version": 1, "count": len(index), "styles": index}, indent=1))
+    return out
+
+
 def build() -> Path:
     problems = check()
     if problems:
@@ -1236,6 +1357,7 @@ def build() -> Path:
     out.write_text(json.dumps({"root": str(ROOT), "categories": catalog.get("categories", {}),
                                "systems": systems},
                               indent=1))
+    build_refero()
     return out
 
 

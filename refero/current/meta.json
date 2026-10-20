@@ -8,5 +8,12 @@
   "source_url": "https://current.com",
   "extracted_at": "2026-06-03T22:10:38.631Z",
   "fetched_at": "2026-10-20T08:23:20Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/0b7c0c1e-21e1-4f66-988f-00b27d03543d.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/0b7c0c1e-21e1-4f66-988f-00b27d03543d.jpg",
+  "video_url": null,
+  "video_poster_url": null,
+  "video_detail_url": null,
+  "video_detail_poster_url": null,
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

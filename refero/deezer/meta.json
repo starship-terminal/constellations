@@ -8,5 +8,12 @@
   "source_url": "https://deezer.com",
   "extracted_at": "2026-06-03T19:18:55.080Z",
   "fetched_at": "2026-10-20T08:24:05Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/8600002a-4973-49cf-8cdf-506061595ce2.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/8600002a-4973-49cf-8cdf-506061595ce2.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/2513cd18-e36f-4b6c-a69d-359b713ae6e3.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/408a41ad-608e-4f14-bd52-ceb86d0eefd1.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/69b2b2e2-b7a0-45a7-ac57-8fd9f6949508.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/77c1df41-7220-4d5f-999e-9c2f5d0629e3.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

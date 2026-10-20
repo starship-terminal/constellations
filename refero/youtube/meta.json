@@ -8,5 +8,12 @@
   "source_url": "https://youtube.com",
   "extracted_at": "2026-06-03T17:56:13.770Z",
   "fetched_at": "2026-10-20T08:22:47Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/465b279a-d349-4f08-8836-165feee9b0b0.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/465b279a-d349-4f08-8836-165feee9b0b0.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/dc3a2b5c-09ad-41d5-a111-340563cd3da6.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/17b3aaaa-c58c-4add-847c-8a7cc9000544.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/5e12dc06-f009-4ac3-b0ef-93f2ee906725.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0327e9a5-04f5-439d-8162-0e2a88264e13.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

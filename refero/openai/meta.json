@@ -8,5 +8,12 @@
   "source_url": "https://openai.com",
   "extracted_at": "2026-07-03T03:45:45.294Z",
   "fetched_at": "2026-10-20T08:21:31Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/0433fa1a-7859-4f98-9663-b0a4a5b1eb19.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/0433fa1a-7859-4f98-9663-b0a4a5b1eb19.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/316e9b1b-1c20-472a-925c-157aab010ae2.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/32c4d4ac-4951-4ede-8d91-512783f6f3eb.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/1a46f90b-5caa-4e31-85c1-209ce10bad5d.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/909f4957-99d3-41e1-ab83-5ffca21f075b.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

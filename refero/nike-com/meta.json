@@ -8,5 +8,12 @@
   "source_url": "https://nike.com",
   "extracted_at": "2026-06-03T15:44:37.448Z",
   "fetched_at": "2026-10-20T08:23:08Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/0b830461-3938-425e-ad1d-4560d056ea7c.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/0b830461-3938-425e-ad1d-4560d056ea7c.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/9f751be9-7252-4bf7-8fac-acd43616da29.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/b6d59082-584d-40c5-8178-d591837e7282.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/374228ec-917a-49cb-8acb-7dd97aa5ad8a.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/beac7e78-27d8-4a53-9534-168b2e229bd4.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

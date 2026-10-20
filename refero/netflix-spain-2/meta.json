@@ -8,5 +8,12 @@
   "source_url": "https://netflix.com",
   "extracted_at": "2026-04-11T17:50:41.173Z",
   "fetched_at": "2026-10-20T08:25:20Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/ad093659-4d00-40ed-bf3c-c4767f76692e.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/ad093659-4d00-40ed-bf3c-c4767f76692e.jpg",
+  "video_url": "https://images.refero.design/styles/refero.design/video/65a0bdf8-e90c-4b41-9602-f928dbeb7d42.mp4",
+  "video_poster_url": "https://images.refero.design/styles/refero.design/image/a3411df0-c7b8-4637-ab26-5708c9927a3e.jpg",
+  "video_detail_url": "https://images.refero.design/styles/refero.design/video/f3dcd21d-350c-4bae-beda-d82ef7aa43a4.mp4",
+  "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9e2f6777-67b1-47e9-9180-350e1a8bbc85.jpg",
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

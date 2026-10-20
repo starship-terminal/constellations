@@ -8,5 +8,12 @@
   "source_url": "https://twitch.tv",
   "extracted_at": "2026-06-03T19:25:43.413Z",
   "fetched_at": "2026-10-20T08:24:03Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/8bdf1d64-f114-44d8-b0e8-58da98413613.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/8bdf1d64-f114-44d8-b0e8-58da98413613.jpg",
+  "video_url": null,
+  "video_poster_url": null,
+  "video_detail_url": null,
+  "video_detail_poster_url": null,
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

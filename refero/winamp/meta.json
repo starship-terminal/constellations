@@ -8,5 +8,12 @@
   "source_url": "https://www.winamp.com",
   "extracted_at": "2026-06-03T20:08:26.124Z",
   "fetched_at": "2026-10-20T08:23:54Z",
-  "screenshot_url": "https://images.refero.design/styles/refero.design/image/8f1c93ed-452d-4c24-ae1e-b52c9b9f9a68.jpg"
+  "screenshot_url": "https://images.refero.design/styles/refero.design/image/8f1c93ed-452d-4c24-ae1e-b52c9b9f9a68.jpg",
+  "video_url": null,
+  "video_poster_url": null,
+  "video_detail_url": null,
+  "video_detail_poster_url": null,
+  "video_w": null,
+  "video_h": null,
+  "video_ms": null
 }

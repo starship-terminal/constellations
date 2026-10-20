@@ -17,6 +17,7 @@ systems/*/tools/capture/out/
 /site/
 docs/gallery/data.json
 docs/gallery/thumbs/
+docs/gallery/refero/
 docs/scorecard/
 /zensical.toml
 /.venv/
