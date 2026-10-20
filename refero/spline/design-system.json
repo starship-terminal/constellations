@@ -1,0 +1,296 @@
+{
+  "meta": {
+    "siteName": "Spline",
+    "url": "https://spline.design",
+    "extractedAt": "2026-04-11T17:42:35.262Z",
+    "thumbnailUrl": "https://images.refero.design/styles/refero.design/image/9b84b2f8-a0a8-4af2-b6f7-4b1867418478.jpg",
+    "screenshotUrls": [
+      "https://images.refero.design/styles/refero.design/image/8ed586dd-2486-465a-99b7-8b0d289e9c28.jpg"
+    ]
+  },
+  "description": "The design feels like a creative void, a deep space canvas where ideas materialize as glowing forms. An absolute black (#000000) background serves as this void, making every piece of content feel like it's emitting light. Hierarchy is achieved not through shadows or solid grays, but through layered translucency — panels and buttons are semi-transparent white overlays, creating a glassmorphism effect. The custom Spline Sans typeface is used universally at normal weights, giving headings a confident but understated presence. A single, energetic Spline Blue (#0062ff) is reserved for primary actions, acting as a focused beacon in the minimalist dark environment.",
+  "northStar": "Glowing Forms in the Void",
+  "theme": "dark",
+  "colors": [
+    {
+      "hex": "#000000",
+      "name": "Void Black",
+      "role": "Global page background, the foundational canvas for all content",
+      "group": "neutral"
+    },
+    {
+      "hex": "#ffffff",
+      "name": "Panel Sheen",
+      "role": "Card and panel surfaces (CSS var: --color-panel-bg)",
+      "alpha": 0.08,
+      "group": "neutral"
+    },
+    {
+      "hex": "#ffffff",
+      "name": "Button Sheen",
+      "role": "Secondary button backgrounds (CSS var: --color-btn-bg)",
+      "alpha": 0.15,
+      "group": "neutral"
+    },
+    {
+      "hex": "#ffffff",
+      "name": "Bright White",
+      "role": "Headlines, primary text, active icons, logos",
+      "group": "neutral"
+    },
+    {
+      "hex": "#cccccc",
+      "name": "Cloud",
+      "role": "Secondary body text",
+      "group": "neutral"
+    },
+    {
+      "hex": "#999999",
+      "name": "Silver",
+      "role": "Tertiary text, metadata, placeholder text",
+      "group": "neutral"
+    },
+    {
+      "hex": "#ffffff",
+      "name": "Text Dim",
+      "role": "Inactive navigation link text",
+      "alpha": 0.7,
+      "group": "neutral"
+    },
+    {
+      "hex": "#191a1d",
+      "name": "Nav Background",
+      "role": "Opaque background for navigation bar on scroll",
+      "group": "neutral"
+    },
+    {
+      "hex": "#0062ff",
+      "name": "Spline Blue",
+      "role": "Primary CTA buttons — the single, high-energy action color",
+      "group": "brand"
+    },
+    {
+      "hex": "#ff5cab",
+      "name": "Neon Pink",
+      "role": "Hero graphic accents and illustrative elements",
+      "group": "accent"
+    },
+    {
+      "hex": "#ffb01f",
+      "name": "Golden Orb",
+      "role": "Hero graphic accents and illustrative elements",
+      "group": "accent"
+    },
+    {
+      "hex": "#a770ff",
+      "name": "Violet Haze",
+      "role": "Hero graphic accents and illustrative elements",
+      "group": "accent"
+    },
+    {
+      "hex": "#47b35f",
+      "name": "Emerald Glow",
+      "role": "Hero graphic accents and illustrative elements",
+      "group": "accent"
+    },
+    {
+      "hex": "#ce9178",
+      "name": "Code Orange",
+      "role": "Syntax highlighting in code blocks",
+      "group": "accent"
+    },
+    {
+      "hex": "#6a9955",
+      "name": "Code Green",
+      "role": "Syntax highlighting in code blocks",
+      "group": "accent"
+    },
+    {
+      "hex": "#569cd6",
+      "name": "Code Blue",
+      "role": "Syntax highlighting in code blocks",
+      "group": "accent"
+    }
+  ],
+  "typography": [
+    {
+      "family": "Spline Sans",
+      "source": "custom",
+      "substitute": "Inter",
+      "weight": "400, 500",
+      "sizes": "12px, 13px, 14px, 16px, 18px, 20px, 24px, 36px, 40px, 58px",
+      "lineHeight": "1.15, 1.22, 1.24, 1.25, 1.33, 1.35, 1.38, 1.43, 1.50, 1.56, 1.71",
+      "role": "The universal brand typeface for all UI text, from display headlines to body copy. Its use at normal weights (400/500) gives the design an approachable, technical feel, avoiding the aggression of heavy, bold headlines."
+    },
+    {
+      "family": "Spline Sans Mono",
+      "source": "custom",
+      "substitute": "IBM Plex Mono",
+      "weight": "400",
+      "sizes": "14px",
+      "lineHeight": "1.50",
+      "role": "Used exclusively for code snippets and technical text, providing clear differentiation from UI copy."
+    }
+  ],
+  "typeScale": [
+    {
+      "role": "caption",
+      "size": 13,
+      "lineHeight": 1.5
+    },
+    {
+      "role": "body",
+      "size": 16,
+      "lineHeight": 1.5
+    },
+    {
+      "role": "subheading",
+      "size": 20,
+      "lineHeight": 1.35
+    },
+    {
+      "role": "heading-sm",
+      "size": 24,
+      "lineHeight": 1.33
+    },
+    {
+      "role": "heading",
+      "size": 40,
+      "lineHeight": 1.25
+    },
+    {
+      "role": "display",
+      "size": 58,
+      "lineHeight": 1.22
+    }
+  ],
+  "spacing": {
+    "baseUnit": 4,
+    "density": "comfortable",
+    "pageMaxWidth": "1280px",
+    "sectionGap": "96px",
+    "cardPadding": "40px",
+    "elementGap": "",
+    "radius": {
+      "cards": "24px",
+      "pills": "99px",
+      "buttons": "12px",
+      "smallPanels": "16px"
+    }
+  },
+  "components": [
+    {
+      "html": "$1e",
+      "name": "CTA Button Group",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$1f",
+      "name": "Community Showcase Cards",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$20",
+      "name": "Announcement Banner + Feature Card",
+      "role": "",
+      "description": ""
+    },
+    {
+      "name": "Primary CTA Button",
+      "role": "The main user call-to-action.",
+      "description": "Solid Spline Blue (#0062ff) background with Bright White (#ffffff) text. Uses a 12px radius and generous padding (16px 24px). Font is Spline Sans 16px weight 500."
+    },
+    {
+      "name": "Secondary Button",
+      "role": "Secondary actions, like 'Log in' or alternate CTAs.",
+      "description": "Translucent Button Sheen (rgba(255, 255, 255, 0.15)) background with Bright White (#ffffff) text. Uses a 12px radius and 10px 20px padding."
+    },
+    {
+      "name": "Navigation Link",
+      "role": "Links within the main header navigation.",
+      "description": "Ghost button style with a transparent background. Text is Text Dim (rgba(255, 255, 255, 0.7)) and becomes Bright White (#ffffff) on hover/active. No border or radius."
+    },
+    {
+      "name": "Feature Card",
+      "role": "Large cards used to detail product features or benefits.",
+      "description": "Large container with a Panel Sheen (rgba(255, 255, 255, 0.08)) background, a 24px border radius, and 40px internal padding. Contains heading and body text."
+    },
+    {
+      "name": "Header Nav Bar",
+      "role": "Persistent site navigation.",
+      "description": "A full-width container, initially transparent over the hero and transitioning to a translucent Nav Background (#191a1d) on scroll. Contains the logo, navigation links, and primary/secondary buttons."
+    },
+    {
+      "name": "Logo Marquee Item",
+      "role": "Displaying partner or customer logos.",
+      "description": "A simple container with a single monochrome logo in Bright White (#ffffff). No background, border, or shadow."
+    }
+  ],
+  "dos": [
+    "Use Void Black (#000000) as the universal background. Never use solid grays.",
+    "Achieve depth and hierarchy using translucent white overlays (e.g., rgba(255,255,255,0.08)), not shadows.",
+    "Reserve the vibrant Spline Blue (#0062ff) exclusively for primary call-to-action buttons.",
+    "Use a 24px radius for large panels/cards and a 12px radius for buttons.",
+    "Set all UI text, including headlines, in Spline Sans at a 400 or 500 font weight.",
+    "Maintain generous whitespace between sections (approx. 96px) to let content breathe.",
+    "Pair any imagery or illustrative elements with the core accent palette (Neon Pink, Golden Orb, Violet Haze)."
+  ],
+  "donts": [
+    "Don't use drop shadows or box shadows for elevation.",
+    "Don't introduce new saturated colors for UI elements beyond the primary Spline Blue.",
+    "Don't use bold (700+) font weights; rely on size and color for typographic hierarchy.",
+    "Don't use fully opaque gray backgrounds for any component.",
+    "Don't use inconsistent corner radii; stick to the 12px/24px/pill system.",
+    "Don't outline buttons or inputs with solid borders; use translucent fills instead.",
+    "Don't place text directly on complex background imagery without a text protection scrim or overlay."
+  ],
+  "surfaces": [
+    {
+      "hex": "#000000",
+      "name": "Void",
+      "level": 0,
+      "purpose": "Global page background"
+    },
+    {
+      "hex": "#ffffff14",
+      "name": "Panel",
+      "level": 1,
+      "purpose": "Base card and large container surfaces"
+    },
+    {
+      "hex": "#ffffff26",
+      "name": "Interactive",
+      "level": 2,
+      "purpose": "Secondary buttons and interactive surfaces"
+    }
+  ],
+  "elevationPhilosophy": "Elevation is achieved through layered glassmorphism, not shadows. Surfaces are defined by varying opacities of white (e.g., rgba(255, 255, 255, 0.08) for panels) on the pitch-black #000000 background. This creates a sense of depth through emitted light rather than cast shadow, reinforcing the 'glow in the void' aesthetic.",
+  "imagery": "The visual language is split between abstract and concrete. The hero features amorphous, glowing 3D shapes that are purely atmospheric, setting a futuristic and creative tone. Below this, the imagery switches to product-focused showcases: a grid of thumbnails displaying user-generated 3D scenes and designs. All imagery serves to demonstrate the tool's capabilities, either by evoking creative possibility (abstract) or showing tangible results (showcase). There is no lifestyle photography; the product and its output are the heroes.",
+  "layout": "The layout leads with a full-bleed, immersive hero section with centered text over an animated visual background. Subsequent content is contained within a centered, max-width (approx. 1280px) column. The page structure is a simple vertical stack of sections separated by generous whitespace (96px+). Content is often arranged in multi-column grids, such as the 5-column community showcase and the multi-column logo marquee, to display information densely but cleanly.",
+  "customSections": [
+    {
+      "title": "Agent Prompt Guide",
+      "content": "$21"
+    }
+  ],
+  "similar": [
+    {
+      "why": "Precision dark-mode UI with a custom sans-serif font and a single, vibrant accent color for key actions.",
+      "business": "Linear"
+    },
+    {
+      "why": "Developer-focused dark theme, emphasis on typography, and a minimalist interface with high-contrast elements.",
+      "business": "Vercel"
+    },
+    {
+      "why": "Creative tool for digital products with a polished dark theme, clean typography, and focus on interactive examples.",
+      "business": "Framer"
+    },
+    {
+      "why": "AI creative tool with a futuristic dark UI, glowing accents, and emphasis on showcasing generated media.",
+      "business": "Runway"
+    }
+  ]
+}

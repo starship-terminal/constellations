@@ -1,0 +1,281 @@
+{
+  "meta": {
+    "siteName": "Neon",
+    "url": "https://neon.tech",
+    "extractedAt": "2026-04-11T17:38:19.074Z",
+    "thumbnailUrl": "https://images.refero.design/styles/refero.design/image/b9b8dd42-f956-4f8f-9008-a7b4cc3d4d7d.jpg",
+    "screenshotUrls": [
+      "https://images.refero.design/styles/refero.design/image/f8702c84-0251-44b0-b71f-1706ef64345d.jpg"
+    ]
+  },
+  "description": "The design feels like a high-end server room after dark — a pure black void where information glows. A strict monochrome palette of pure black (#000000) and white (#ffffff) creates maximum contrast, ensuring text and UI are starkly legible. All visual energy comes from a single, electric green (#34d59a) that mimics terminal output and data visualizations, used exclusively for accents and decorative, code-like background graphics. The system achieves depth not with shadows but with subtle, layered near-black surfaces. A unique tension exists between the pill-shaped buttons and the sharp, 4px corners of all other UI containers.",
+  "northStar": "Server Room After Dark. A deep black environment where data and interactions are the only sources of light.",
+  "theme": "dark",
+  "colors": [
+    {
+      "hex": "#34d59a",
+      "name": "Neon Glow",
+      "role": "Key brand accent, active state indicators, data visualizations — injects a vibrant, code-like energy.",
+      "group": "brand"
+    },
+    {
+      "hex": "#285d49",
+      "name": "Neon Muted",
+      "role": "Subtle background tones in visualizations, less prominent brand elements.",
+      "group": "brand"
+    },
+    {
+      "hex": "#39a57d",
+      "name": "Scanline Fade",
+      "role": "Special effect for highlighting code or UI elements, mimicking a terminal scanline.",
+      "group": "brand",
+      "gradient": "linear-gradient(90deg, rgba(57, 165, 125, 0.6) 50%, rgba(0, 0, 0, 0) 50%)"
+    },
+    {
+      "hex": "#ff3621",
+      "name": "System Warning",
+      "role": "Used sparingly for icons or highlights requiring urgent attention.",
+      "group": "accent"
+    },
+    {
+      "hex": "#ffffff",
+      "name": "Whiteout",
+      "role": "Primary text, primary CTA button backgrounds, icons.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#797d86",
+      "name": "Ash",
+      "role": "Secondary text, descriptive copy, inactive navigation links.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#94979",
+      "name": "Pewter",
+      "role": "Tertiary text, metadata, placeholder text.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#c9cbcf",
+      "name": "Cloud",
+      "role": "Hover states on dark elements, subtle highlights.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#303236",
+      "name": "Graphite Light",
+      "role": "Borders, dividers, subtle UI structure.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#242628",
+      "name": "Graphite",
+      "role": "Secondary surfaces floating on the background.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#151617",
+      "name": "Graphite Deep",
+      "role": "Card backgrounds, code block surfaces.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#0a0a0b",
+      "name": "Depth",
+      "role": "The darkest surface color before pure black, for subtle elevation.",
+      "group": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "name": "Blackout",
+      "role": "The absolute page background.",
+      "group": "neutral"
+    }
+  ],
+  "typography": [
+    {
+      "family": "Inter",
+      "source": "google",
+      "substitute": "Inter",
+      "weight": "400, 500",
+      "sizes": "10px, 12px, 13px, 14px, 15px, 16px, 18px, 20px, 24px, 28px, 32px, 40px, 44px, 48px, 60px, 80px",
+      "lineHeight": "1.00, 1.13, 1.25, 1.38, 1.50",
+      "letterSpacing": "Tight negative tracking on all display and heading sizes (-3.2px at 80px, -1.2px at 48px), becoming normal at body copy sizes.",
+      "role": "Headlines and primary marketing copy. Its clean, neutral geometry provides high readability, contrasting with the more stylized monospaced font."
+    },
+    {
+      "family": "GeistMono",
+      "source": "custom",
+      "substitute": "Fira Code, Source Code Pro",
+      "weight": "400, 500, 600",
+      "sizes": "12px, 14px, 16px, 18px, 20px",
+      "lineHeight": "1.00, 1.13, 1.38, 1.50, 1.65",
+      "letterSpacing": "Slight negative tracking enhances density in UI contexts (-0.7px at 14px, -0.43px at 16px).",
+      "role": "Code snippets, UI labels, and data displays. Its monospaced form adds a technical, typewriter-like precision, reinforcing the developer-centric identity."
+    }
+  ],
+  "typeScale": [
+    {
+      "role": "caption",
+      "size": 12,
+      "lineHeight": 1.5,
+      "letterSpacing": -0.7
+    },
+    {
+      "role": "body-sm",
+      "size": 14,
+      "lineHeight": 1.5,
+      "letterSpacing": -0.7
+    },
+    {
+      "role": "body",
+      "size": 16,
+      "lineHeight": 1.5,
+      "letterSpacing": -0.43
+    },
+    {
+      "role": "subheading",
+      "size": 18,
+      "lineHeight": 1.38,
+      "letterSpacing": -0.36
+    },
+    {
+      "role": "heading-sm",
+      "size": 24,
+      "lineHeight": 1.25,
+      "letterSpacing": -0.24
+    },
+    {
+      "role": "heading",
+      "size": 32,
+      "lineHeight": 1.25,
+      "letterSpacing": -0.64
+    },
+    {
+      "role": "heading-lg",
+      "size": 48,
+      "lineHeight": 1.13,
+      "letterSpacing": -1.2
+    },
+    {
+      "role": "display",
+      "size": 80,
+      "lineHeight": 1,
+      "letterSpacing": -3.2
+    }
+  ],
+  "spacing": {
+    "baseUnit": 4,
+    "density": "comfortable",
+    "pageMaxWidth": "1200px",
+    "sectionGap": "96-128px",
+    "cardPadding": "24px",
+    "elementGap": "8-16px",
+    "radius": {
+      "cards": "4px",
+      "inputs": "4px",
+      "buttons": "9999px",
+      "containers": "4px"
+    }
+  },
+  "components": [
+    {
+      "html": "$1e",
+      "name": "CTA Button Group",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$1f",
+      "name": "Terminal Code Block",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$20",
+      "name": "Feature Navigation List",
+      "role": "",
+      "description": ""
+    },
+    {
+      "name": "Primary Pill Button",
+      "role": "The main call-to-action, e.g., 'Get started', 'Sign up'.",
+      "description": "A pill-shaped button with a Whiteout (#ffffff) background and Graphite Deep (#151617) text. Uses Inter font. Padding is H: 28px, V: 12px. Radius is 9999px."
+    },
+    {
+      "name": "Ghost Pill Button",
+      "role": "Secondary actions, e.g., 'Read the docs', 'Log in'.",
+      "description": "A pill-shaped button with a transparent background, Whiteout (#ffffff) text, and a 1px solid border in Graphite Light (#303236). Uses Inter font. Padding is H: 18px, V: 12px. Radius is 9999px."
+    },
+    {
+      "name": "Feature List Item",
+      "role": "Bulleted items in feature sections.",
+      "description": "Whiteout (#ffffff) text using Inter. Preceded by a small dot or icon colored with Neon Glow (#34d59a)."
+    },
+    {
+      "name": "Navigation Link",
+      "role": "Links in the main site header.",
+      "description": "Text in Ash (#797d86) using Inter font. On hover or active state, text becomes Whiteout (#ffffff)."
+    },
+    {
+      "name": "Tag Badge",
+      "role": "Small informational tags, like 'A DATABRICKS COMPANY'.",
+      "description": "Small, all-caps text using GeistMono in Ash (#797d86) or a similar gray. Often preceded by a Neon Glow (#34d59a) icon or symbol."
+    },
+    {
+      "name": "Announcement Bar",
+      "role": "A persistent top bar for site-wide announcements.",
+      "description": "Full-width bar with a Blackout (#000000) background. Text uses Inter font in a legible color like Whiteout (#ffffff) or Neon Glow (#34d59a)."
+    },
+    {
+      "name": "Logo Bar",
+      "role": "A section displaying logos of partner or client companies.",
+      "description": "A row of logos rendered in a monochrome Ash (#797d86) or Pewter (#94979e) color on a Blackout (#000000) background."
+    }
+  ],
+  "dos": [
+    "Use pure Blackout (#000000) for all main section backgrounds.",
+    "Reserve Neon Glow (#34d59a) for interactive highlights, data visualizations, and small decorative accents only.",
+    "Employ the Whiteout (#ffffff) pill button for all primary calls-to-action.",
+    "Use GeistMono for all code snippets, terminal simulations, and compact UI labels.",
+    "Apply tight negative letter-spacing (-1.2px or more) to all headlines 48px and larger.",
+    "Achieve depth by layering near-black surfaces (e.g., #151617 on #000000), not with box-shadows.",
+    "Maintain a strict dichotomy of shapes: 9999px radius for buttons, 4px for all other containers."
+  ],
+  "donts": [
+    "Don't use gradients or background colors on main page sections.",
+    "Don't use traditional box-shadows for elevation.",
+    "Don't use Neon Glow (#34d59a) for body copy or headlines.",
+    "Don't use saturated colors other than the primary brand green and the occasional red alert accent.",
+    "Don't mix Inter and GeistMono within the same sentence or headline.",
+    "Don't use rounded corners larger than 4px on cards, code blocks, or input fields.",
+    "Don't create buttons that aren't pill-shaped."
+  ],
+  "elevationPhilosophy": "Elevation is achieved through layered, near-black surfaces, not traditional box-shadows. Surfaces like Graphite Deep (#151617) float on the pure Blackout (#000000) background, creating depth through contrast without relying on blurs. This reinforces a flat, digital-native aesthetic.",
+  "imagery": "Visuals are exclusively abstract, generative graphics resembling data streams, server activity, or glitch art. Composed of thin vertical lines in Neon Glow (#34d59a) and other muted tones, they serve as atmospheric backdrops rather than informational content. Product visuals are limited to stylized screenshots of terminal windows and code blocks, treated as UI components. Photography and traditional illustrations are absent. This text-and-abstract-graphic approach creates a purely digital, code-native environment.",
+  "layout": "The page structure is full-bleed black, creating an immersive, infinite canvas. A centered headline over an abstract data-viz graphic defines the hero. Below the hero, content is organized within a centered max-width container (approx. 1200px), creating focus. Sections flow seamlessly into one another without visual dividers, relying on generous vertical spacing (96-128px) to create rhythm. Content is arranged in simple, symmetrical layouts: centered stacks for headlines, two-column grids for feature lists, and multi-column grids for logos. A sticky header provides persistent navigation.",
+  "customSections": [
+    {
+      "title": "Agent Prompt Guide",
+      "content": "$21"
+    }
+  ],
+  "similar": [
+    {
+      "why": "Identical developer focus with a black/white monochrome palette, single accent color, and use of Inter font.",
+      "business": "Vercel"
+    },
+    {
+      "why": "Shares a pristine, high-contrast dark UI, minimalist aesthetic, and sharp focus on typography.",
+      "business": "Linear"
+    },
+    {
+      "why": "Similar dark-mode theming, developer-centric tooling aesthetic, and heavy reliance on monospaced fonts for identity.",
+      "business": "GitHub"
+    },
+    {
+      "why": "Also uses a dark, code-focused environment with vibrant color accents to appeal to a developer audience.",
+      "business": "Replit"
+    }
+  ]
+}

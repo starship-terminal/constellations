@@ -1,0 +1,266 @@
+{
+  "meta": {
+    "siteName": "Obsidian",
+    "url": "https://obsidian.md",
+    "extractedAt": "2026-04-11T17:51:43.812Z",
+    "thumbnailUrl": "https://images.refero.design/styles/refero.design/image/f43bf9cd-e2b7-4f76-9aba-a342382152c9.jpg",
+    "screenshotUrls": [
+      "https://images.refero.design/styles/refero.design/image/4c1a2028-5920-45f5-96c3-0008d40c4a00.jpg"
+    ]
+  },
+  "description": "The design feels like being inside a piece of precision software—a dark, focused digital workspace where thoughts crystallize. The foundation is a near-black, void-like background (#171717), creating a high-contrast canvas. A single, electric violet accent (#7c3aed, #a78bfa) is used strictly for interactive elements like CTAs and links, acting as functional beacons in the dark. Typography is exclusively the system's native UI font, reinforcing its identity as a functional tool rather than a stylized marketing site. Instead of drop shadows, surfaces use a subtle, 1px white inset highlight, giving them an internal luminescence as if lit from within.",
+  "northStar": "Crystalline Knowledge Vault. A sharp, faceted digital space built for clarity and focus, with glowing violet veins of interaction.",
+  "theme": "dark",
+  "colors": [
+    {
+      "hex": "#ffffff",
+      "name": "White",
+      "role": "Bright text on dark CTAs, inset glows for definition",
+      "group": "neutral"
+    },
+    {
+      "hex": "#eeeeee",
+      "name": "Bright Gray",
+      "role": "Primary body text, headings",
+      "group": "neutral"
+    },
+    {
+      "hex": "#bcbcbc",
+      "name": "Medium Gray",
+      "role": "Secondary text, navigation links",
+      "group": "neutral"
+    },
+    {
+      "hex": "#a3a3a3",
+      "name": "Muted Gray",
+      "role": "Tertiary text, subtle metadata",
+      "group": "neutral"
+    },
+    {
+      "hex": "#3f3f3f",
+      "name": "Graphite",
+      "role": "Borders, UI element dividers",
+      "group": "neutral"
+    },
+    {
+      "hex": "#1e1e1",
+      "name": "Surface",
+      "role": "Card backgrounds, elevated UI panels",
+      "group": "neutral"
+    },
+    {
+      "hex": "#171717",
+      "name": "Abyss",
+      "role": "Main page background",
+      "group": "neutral"
+    },
+    {
+      "hex": "#7c3aed",
+      "name": "Amethyst",
+      "role": "Primary CTA buttons—a sharp, functional accent against the dark theme",
+      "group": "brand"
+    },
+    {
+      "hex": "#a78bfa",
+      "name": "Lavender",
+      "role": "Links, badge text, and active states—the secondary, brighter interaction color",
+      "group": "accent"
+    },
+    {
+      "hex": "#8a5cf5",
+      "name": "Tag Background",
+      "role": "Background for tag/badge elements, used at 15% opacity",
+      "group": "accent"
+    },
+    {
+      "hex": "#4ade80",
+      "name": "Success Green",
+      "role": "Success states or syntax highlighting within the app UI",
+      "group": "semantic"
+    },
+    {
+      "hex": "#facc15",
+      "name": "Warning Yellow",
+      "role": "Warning states or syntax highlighting within the app UI",
+      "group": "semantic"
+    },
+    {
+      "hex": "#f87171",
+      "name": "Error Red",
+      "role": "Error states or syntax highlighting within the app UI",
+      "group": "semantic"
+    }
+  ],
+  "typography": [
+    {
+      "family": "ui-sans-serif, system-ui",
+      "source": "custom",
+      "substitute": "\"SF Pro Display\", \"Roboto\", \"Segoe UI\", sans-serif",
+      "weight": "400, 500, 600, 700",
+      "sizes": "8px, 9px, 10px, 11px, 12px, 13px, 14px, 16px, 18px, 20px, 24px, 28px, 36px, 60px",
+      "lineHeight": "1.25-1.5",
+      "letterSpacing": "Negative tracking (-0.02em) on larger sizes tightens headlines for a more compact, solid appearance.",
+      "role": "Used for all text. The choice of a system font is deliberate, making the website feel like a native application—a functional tool for thought."
+    }
+  ],
+  "typeScale": [
+    {
+      "role": "caption",
+      "size": 12,
+      "lineHeight": 1.5,
+      "letterSpacing": -0.24
+    },
+    {
+      "role": "body-sm",
+      "size": 14,
+      "lineHeight": 1.5,
+      "letterSpacing": -0.28
+    },
+    {
+      "role": "body",
+      "size": 16,
+      "lineHeight": 1.5,
+      "letterSpacing": -0.32
+    },
+    {
+      "role": "subheading",
+      "size": 18,
+      "lineHeight": 1.4,
+      "letterSpacing": -0.36
+    },
+    {
+      "role": "heading-sm",
+      "size": 24,
+      "lineHeight": 1.33,
+      "letterSpacing": -0.48
+    },
+    {
+      "role": "heading",
+      "size": 28,
+      "lineHeight": 1.25,
+      "letterSpacing": -0.56
+    },
+    {
+      "role": "heading-lg",
+      "size": 36,
+      "lineHeight": 1.25,
+      "letterSpacing": -0.72
+    },
+    {
+      "role": "display",
+      "size": 60,
+      "lineHeight": 1.1,
+      "letterSpacing": -1.2
+    }
+  ],
+  "spacing": {
+    "baseUnit": 4,
+    "density": "compact",
+    "pageMaxWidth": "1120px",
+    "sectionGap": "96px",
+    "cardPadding": "24px",
+    "elementGap": "16px",
+    "radius": {
+      "tags": "9999px",
+      "cards": "12px",
+      "inputs": "8px",
+      "buttons": "8px"
+    }
+  },
+  "components": [
+    {
+      "html": "$1e",
+      "name": "Primary CTA Button Group",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$1f",
+      "name": "Tag Badge Collection",
+      "role": "",
+      "description": ""
+    },
+    {
+      "html": "$20",
+      "name": "Feature List Cards",
+      "role": "",
+      "description": ""
+    },
+    {
+      "name": "Primary CTA Button",
+      "role": "The main call-to-action button.",
+      "description": "Solid Amethyst (#7c3aed) background with White (#ffffff) text. Padding is 16px 24px. Corner radius is 8px."
+    },
+    {
+      "name": "Secondary Ghost Button",
+      "role": "A less prominent action, often for secondary choices like 'More platforms'.",
+      "description": "Transparent background with Medium Gray (#bcbcbc) text. Padding is 8px. Corner radius is 8px. No border."
+    },
+    {
+      "name": "Community Link Card",
+      "role": "Large, clickable cards used to link to community resources.",
+      "description": "Surface (#1e1e1e) background with Bright Gray (#eeeeee) text. Padding is 24px. Corner radius is 12px. Features a 1px white inset glow `rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset`."
+    },
+    {
+      "name": "Tag Badge",
+      "role": "Used inside the app UI to display tags on notes.",
+      "description": "Pill-shaped (9999px radius). Background is Tag Background (#8a5cf5) at 15% opacity. Text is Lavender (#a78bfa). Padding is 2px 8px."
+    },
+    {
+      "name": "App Showcase",
+      "role": "Displays the product UI directly on the page.",
+      "description": "A detailed screenshot or rendered view of the Obsidian application, showing elements like the note editor, sidebar file browser, and distinctive graph view. Follows the site's dark theme."
+    },
+    {
+      "name": "App Icon",
+      "role": "The primary brand mark and application icon.",
+      "description": "A squircle-shaped icon (approx 20% border-radius) depicting a faceted purple and black gem. Has a subtle internal gloss and shadow to give it dimension."
+    },
+    {
+      "name": "Navigation Link",
+      "role": "Text links in the main header navigation.",
+      "description": "Medium Gray (#bcbcbc) text using the system UI font at 16px. No background or borders. Hover state is likely a color change to Bright Gray (#eeeeee)."
+    }
+  ],
+  "dos": [
+    "Use the system UI font for all text to maintain the native-app feel.",
+    "Reserve Amethyst (#7c3aed) and Lavender (#a78bfa) exclusively for interactive elements like buttons and links.",
+    "Employ subtle 1px inset white glows for definition on dark cards and buttons.",
+    "Maintain high contrast with light gray text (#eeeeee) on near-black backgrounds (#171717).",
+    "Use pill-shaped radii (9999px) for tags and badges only; keep other elements sharp.",
+    "Keep layouts centered and spacious, with generous vertical rhythm between sections."
+  ],
+  "donts": [
+    "Do not use traditional drop shadows for elevation; prefer the inset glow effect.",
+    "Do not introduce other saturated colors into the primary UI; stick to the violet-on-dark palette.",
+    "Do not use decorative or serif fonts; the brand identity is utilitarian.",
+    "Do not use bright or light-themed backgrounds for primary content sections.",
+    "Do not use large border radii on cards or buttons; stick to the 8-12px range.",
+    "Do not use lifestyle photography; focus on the product UI as the primary visual."
+  ],
+  "elevationPhilosophy": "Elevation is achieved through internal luminescence, not external shadows. Most interactive surfaces like cards and buttons feature a 1px inset white 'glow' (e.g., `rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset`). This creates definition and a subtle sense of depth without making elements feel like they are floating above the surface, reinforcing the in-app, digital tool aesthetic.",
+  "customSections": [
+    {
+      "title": "Agent Prompt Guide",
+      "content": "$21"
+    }
+  ],
+  "similar": [
+    {
+      "why": "Shares the dark UI, native-app feel from using system fonts, and a focus on utility and speed.",
+      "business": "Raycast"
+    },
+    {
+      "why": "Similar dark, high-contrast aesthetic with a single sharp violet/purple accent and subtle internal glow effects.",
+      "business": "Linear"
+    },
+    {
+      "why": "Directly echoes the visual language of a code editor, appealing to a developer-adjacent audience with its dark theme and focus on plaintext.",
+      "business": "VS Code"
+    },
+    {
+      "why": "Another productivity tool with a premium, dark-mode-first interface that emphasizes speed and function over adornment.",
+      "business": "Superhuman"
+    }
+  ]
+}
