@@ -161,7 +161,7 @@ def call_api(batch, model, tries=3):
             start, end = text.find("["), text.rfind("]")
             items = json.loads(text[start:end + 1])
             for it in items:
-                if not isinstance(it, dict) or not it.get("slug"):
+                if not isinstance(it, dict) or it.get("slug") not in want:
                     continue
                 pt = norm(it.get("product_type"), PRODUCT_TYPES)
                 st = norm(it.get("design_style"), DESIGN_STYLES)
