@@ -34,7 +34,7 @@ const LEGACY = { screens: 'assets', docs: 'files' };
 
 // ---------------------------------------------------------------- boot
 
-fetch('data.json', { cache: 'no-store' })
+fetch('data.json', { cache: 'no-cache' })
   .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then((d) => { DATA = d; route(); })
   .catch(() => {
@@ -641,7 +641,7 @@ let rfIO = null;
 const rfSlug = () => location.hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent);
 
 function getRefero() {
-  if (!rfPromise) rfPromise = fetch('refero/index.json', { cache: 'no-store' })
+  if (!rfPromise) rfPromise = fetch('refero/index.json', { cache: 'no-cache' })
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then((d) => (RF_INDEX = d))
     .catch((e) => { rfPromise = null; throw e; });
@@ -651,7 +651,7 @@ function getRefero() {
 const rfEntityCache = new Map();
 function getRfEntity(slug) {
   if (!rfEntityCache.has(slug)) {
-    rfEntityCache.set(slug, fetch(`refero/style/${encodeURIComponent(slug)}.json`, { cache: 'no-store' })
+    rfEntityCache.set(slug, fetch(`refero/style/${encodeURIComponent(slug)}.json`, { cache: 'no-cache' })
       .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
       .catch((e) => { rfEntityCache.delete(slug); throw e; }));
   }
