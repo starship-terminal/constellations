@@ -518,3 +518,6 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 
 .rf-sim .rf-tile { padding: 20px; border-radius: 18px; }
 .rf-card.rf-plain { cursor: default; }
+.rf-card.rf-plain:hover .rf-tile { background: var(--panel); }
+.rf-shot.rf-empty { display: grid; place-items: center; }
+.rf-shot.rf-empty span { font-size: 30px; font-weight: 510; color: var(--faint); letter-spacing: -.02em; }
