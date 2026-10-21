@@ -4,6 +4,11 @@
   "name": "Minimal Collective",
   "tagline": "midnight gallery wall",
   "theme": "dark",
+  "product_type": "media",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/94c15607-2f19-4dc4-9aec-2b40f28b754f",
   "source_url": "https://minimalcollective.digital",
   "extracted_at": "2026-06-03T17:27:27.922Z",

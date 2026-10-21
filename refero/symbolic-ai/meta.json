@@ -4,6 +4,12 @@
   "name": "Symbolic.ai",
   "tagline": "editorial newsroom on cream paper. A broadsheet masthead in serif type, floating on warm off-white stock, with soft tan shadows that make every card feel like it was set in letterpress \u2014 not rendered.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/694723e9-0df7-4b9f-ba07-83fc598532d6",
   "source_url": "https://symbolic.ai",
   "extracted_at": "2026-06-03T21:27:32.223Z",

@@ -4,6 +4,11 @@
   "name": "Squarespace",
   "tagline": "Cinematic monochrome gallery",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "cinematic",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/8618f649-6d1c-45ca-aff8-e7f04928d8dd",
   "source_url": "https://www.squarespace.com",
   "extracted_at": "2026-06-03T18:05:33.974Z",

@@ -4,6 +4,11 @@
   "name": "Healthy Together",
   "tagline": "Midnight navy with a violet brushstroke ribbon.",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/d577e44e-bc63-4cbe-b759-25262d089b95",
   "source_url": "https://www.healthytogether.co",
   "extracted_at": "2026-06-03T15:51:21.757Z",

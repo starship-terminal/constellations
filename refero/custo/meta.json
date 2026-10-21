@@ -4,6 +4,12 @@
   "name": "Custo",
   "tagline": "Gunmetal gallery with monolithic type. A muted gray-green showroom where a single dark object and 57px type do all the talking.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/3ad131ed-b603-49a3-9491-7407db6cb423",
   "source_url": "https://custo.io",
   "extracted_at": "2026-06-03T18:09:43.299Z",

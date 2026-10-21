@@ -4,6 +4,12 @@
   "name": "Palmer",
   "tagline": "Ceramic gallery in soft daylight \u2014 the interface is the wall, the objects are the art.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "luxury",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/7cae43cd-dd0e-4658-86e6-d66935cfb213",
   "source_url": "https://www.palmer-dinnerware.com",
   "extracted_at": "2026-06-03T19:46:36.187Z",

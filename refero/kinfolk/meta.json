@@ -4,6 +4,12 @@
   "name": "Kinfolk",
   "tagline": "Editorial broadsheet on bone-white linen \u2014 generous margins, ink-black serif, and a single warm-paper accent for section breaks.",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/ac9b040e-36aa-4881-ada5-72d4744947a4",
   "source_url": "https://www.kinfolk.com",
   "extracted_at": "2026-06-03T20:14:28.774Z",

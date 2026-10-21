@@ -4,6 +4,11 @@
   "name": "Shop",
   "tagline": "Floating shopping constellation on white marble",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/4fa67bd1-f01d-454a-b522-4a0359ff9815",
   "source_url": "https://shop.app",
   "extracted_at": "2026-07-03T03:29:39.498Z",

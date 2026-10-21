@@ -4,6 +4,12 @@
   "name": "Switch-Lit",
   "tagline": "Inked editorial grid on cream paper",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/97f7787e-bba0-4d37-8b74-4b0cb8d5a57c",
   "source_url": "https://switch-lit.com",
   "extracted_at": "2026-06-03T21:15:29.096Z",

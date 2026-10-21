@@ -4,6 +4,11 @@
   "name": "Stellar",
   "tagline": "Gallery wall at midnight",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/98a1ad40-90e2-4665-b49f-e5ffd4d4b90b",
   "source_url": "https://www.stellar.work",
   "extracted_at": "2026-06-03T21:53:03.016Z",

@@ -4,6 +4,12 @@
   "name": "Opennote",
   "tagline": "warm leather journal on sunlit paper \u2014 the interface feels hand-bound, not engineered",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "organic",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/24d3b281-04a6-4cc7-8a74-634b08472291",
   "source_url": "https://www.opennote.com",
   "extracted_at": "2026-06-03T17:19:14.702Z",

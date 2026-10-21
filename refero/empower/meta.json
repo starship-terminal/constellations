@@ -4,6 +4,11 @@
   "name": "Empower",
   "tagline": "Chartreuse zine on midnight paper",
   "theme": "mixed",
+  "product_type": "fintech",
+  "design_style": "neon",
+  "tags": [
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/8d3dc65e-4443-4bb3-b1a9-b0fc98381db9",
   "source_url": "https://empower.me",
   "extracted_at": "2026-06-03T19:19:29.646Z",

@@ -4,6 +4,11 @@
   "name": "Paragraph",
   "tagline": "Editorial letterpress on warm parchment \u2014 a literary journal where the only color is ink-blue and every border is a page edge",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/37dd9612-4df0-4cdd-b942-bd97dd0efbd2",
   "source_url": "https://mirror.xyz",
   "extracted_at": "2026-06-03T20:33:31.523Z",

@@ -4,6 +4,11 @@
   "name": "Convex",
   "tagline": "Cream paper engineering notebook",
   "theme": "mixed",
+  "product_type": "devtools",
+  "design_style": "paper",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/f71e92b0-d7a5-4203-b975-394f185218c2",
   "source_url": "https://convex.dev",
   "extracted_at": "2026-06-03T17:34:57.360Z",

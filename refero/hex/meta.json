@@ -4,6 +4,11 @@
   "name": "Hex",
   "tagline": "alchemy lab on cream parchment \u2014 literary serif headline over dense data notebook",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "paper",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/3e32db74-a61d-4e72-93b8-1fb949af2c00",
   "source_url": "https://hex.tech",
   "extracted_at": "2026-06-03T17:39:31.908Z",

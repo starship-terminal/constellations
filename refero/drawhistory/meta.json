@@ -4,6 +4,11 @@
   "name": "DrawHistory",
   "tagline": "Warm gallery wall behind charcoal display panels",
   "theme": "mixed",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/25246b10-83a4-4f51-a411-cf85503b94a8",
   "source_url": "https://drawhistory.com",
   "extracted_at": "2026-06-03T22:40:36.175Z",

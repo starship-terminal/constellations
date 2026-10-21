@@ -4,6 +4,12 @@
   "name": "Bose",
   "tagline": "Coastal soundstage. A wind-swept campaign image fills the frame while sharp black-and-white commerce controls sit like precision hardware around it.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/ac53627e-5738-4121-8f5d-05e4d8475a5b",
   "source_url": "https://www.bose.com/home",
   "extracted_at": "2026-09-24T17:31:26.443Z",

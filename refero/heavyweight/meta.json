@@ -4,6 +4,11 @@
   "name": "Heavyweight",
   "tagline": "Paper specimen archive. A wall of photographed letterforms printed on textured stock, hung on a cool off-white gallery wall with hairline frames.",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/d991c31d-2ffa-4a94-ab37-7f7d8f7d6a0c",
   "source_url": "https://heavyweight-type.com",
   "extracted_at": "2026-06-03T21:02:00.456Z",

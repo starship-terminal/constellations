@@ -4,6 +4,11 @@
   "name": "Secure",
   "tagline": "European caf\u00e9 conversation in soft daylight \u2014 a warm, editorial take on video calling where serif headlines read like a thoughtful magazine spread rather than a tech product page.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/7942590d-b11b-4cfb-8fe8-945b3867d865",
   "source_url": "https://whereby.com",
   "extracted_at": "2026-06-03T21:20:55.656Z",

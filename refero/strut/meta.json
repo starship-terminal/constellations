@@ -4,6 +4,11 @@
   "name": "Strut",
   "tagline": "editorial broadsheet on warm canvas \u2014 oversized serif-adjacent display type sitting on a cream paper field, marked only by a single amber highlighter and hairline rules.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/deb6c017-d2d3-4945-aaee-fa3d9ea6de70",
   "source_url": "https://strut.so",
   "extracted_at": "2026-06-03T21:00:52.971Z",

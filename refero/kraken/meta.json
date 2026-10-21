@@ -4,6 +4,12 @@
   "name": "Kraken",
   "tagline": "violet ledger on frosted glass \u2014 a precise financial document where one electric purple ink does all the talking.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/14389660-81ff-4ca0-957f-b0dcc8fbe120",
   "source_url": "https://kraken.com",
   "extracted_at": "2026-06-03T17:56:15.571Z",

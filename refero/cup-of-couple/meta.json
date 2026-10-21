@@ -4,6 +4,11 @@
   "name": "Cup of Couple",
   "tagline": "printed fashion magazine on cream paper",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/f4e1b510-6085-4fb8-8597-05d479d3c00c",
   "source_url": "https://www.cupofcouple.com",
   "extracted_at": "2026-06-03T20:34:52.239Z",

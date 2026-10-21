@@ -4,6 +4,11 @@
   "name": "Antimetal",
   "tagline": "editorial observatory on cream paper \u2014 a quiet morning in a research journal where restraint signals confidence and the serif does the heavy lifting",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/9f9a4a4f-1a27-47ca-a65b-68b9850a84e4",
   "source_url": "https://antimetal.com",
   "extracted_at": "2026-07-03T03:06:29.588Z",

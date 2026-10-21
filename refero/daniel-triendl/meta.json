@@ -4,6 +4,11 @@
   "name": "Daniel Triendl",
   "tagline": "White gallery wall for loud art",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/14f10100-a102-427a-88d1-7cc80cbb332d",
   "source_url": "https://www.danieltriendl.com",
   "extracted_at": "2026-06-03T18:51:06.348Z",

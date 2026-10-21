@@ -4,6 +4,11 @@
   "name": "Duolingo",
   "tagline": "Green playground with thick marker outlines",
   "theme": "light",
+  "product_type": "education",
+  "design_style": "playful",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/95b472c5-fc07-46a8-a11f-c5432e290fcd",
   "source_url": "https://www.duolingo.com",
   "extracted_at": "2026-06-03T21:58:26.322Z",

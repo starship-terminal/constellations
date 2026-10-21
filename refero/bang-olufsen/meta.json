@@ -4,6 +4,11 @@
   "name": "Bang & Olufsen",
   "tagline": "Scandinavian gallery on porcelain. When a B&O page goes dark, the product is lit like a sculpture in a midnight alcove; when it goes light, the product floats on white silk with nothing else competing for attention.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "luxury",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/27a4a4fa-4b1a-4e7e-b2c3-3e5bf57f00e5",
   "source_url": "https://bang-olufsen.com",
   "extracted_at": "2026-06-03T15:06:20.007Z",

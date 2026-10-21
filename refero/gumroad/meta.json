@@ -4,6 +4,11 @@
   "name": "Gumroad",
   "tagline": "Pink coin on a cream sketchbook. Warm off-white canvas, inky geometric type, and a single hot-pink coin mascot stamped across every page like a sticker on a notebook.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/d67e1407-6d16-47e8-89cf-22f5c5f2dd88",
   "source_url": "https://gumroad.com",
   "extracted_at": "2026-06-03T15:01:11.612Z",

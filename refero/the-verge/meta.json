@@ -4,6 +4,12 @@
   "name": "The Verge",
   "tagline": "Midnight control room, mint alerts",
   "theme": "dark",
+  "product_type": "media",
+  "design_style": "neon",
+  "tags": [
+    "technical",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/e8c4206d-9a2a-4c08-9524-6f14a25e792f",
   "source_url": "https://theverge.com",
   "extracted_at": "2026-06-03T18:39:56.188Z",

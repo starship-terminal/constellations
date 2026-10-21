@@ -4,6 +4,11 @@
   "name": "AREA 17",
   "tagline": "Monochrome editorial struck yellow \u2014 a typographic monolith on white marble interrupted by a single flash of electric yellow.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/143d553e-d71f-4e86-98ed-b80b9ef78ea9",
   "source_url": "https://area17.com",
   "extracted_at": "2026-06-03T18:59:39.509Z",

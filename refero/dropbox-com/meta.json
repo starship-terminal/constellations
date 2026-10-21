@@ -4,6 +4,11 @@
   "name": "Dropbox.com",
   "tagline": "warm cream workspace \u2014 editorial confidence on paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/2b41e7c4-1e8c-4ea2-a87f-51e24c57886e",
   "source_url": "https://dropbox.com",
   "extracted_at": "2026-06-03T22:38:25.677Z",

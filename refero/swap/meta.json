@@ -4,6 +4,12 @@
   "name": "Swap",
   "tagline": "Mint editorial greenhouse \u2014 pale sage rooms with vivid lime accents and whisper-weight serif type.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/15d10d6c-1844-46c6-ae69-c99a56e6ad41",
   "source_url": "https://www.swap-commerce.com",
   "extracted_at": "2026-06-03T20:10:10.783Z",

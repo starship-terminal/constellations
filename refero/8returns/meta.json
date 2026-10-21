@@ -4,6 +4,12 @@
   "name": "8returns",
   "tagline": "Lime spark inside a midnight control room \u2014 a single electric accent that wakes up an otherwise monochrome workspace.",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/d5799c71-f9ae-4bad-aef3-4c07bac42c08",
   "source_url": "https://www.8returns.com",
   "extracted_at": "2026-06-03T19:56:23.510Z",

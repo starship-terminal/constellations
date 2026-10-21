@@ -4,6 +4,12 @@
   "name": "Elektron",
   "tagline": "Hardware control panel at midnight \u2014 a near-black canvas where product photography glows and the interface stays almost invisible.",
   "theme": "dark",
+  "product_type": "hardware",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/6b5a0bf4-3d2a-4c3b-aa2e-652f1acb82c0",
   "source_url": "https://elektron.se",
   "extracted_at": "2026-06-03T18:02:54.118Z",

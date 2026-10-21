@@ -4,6 +4,11 @@
   "name": "Lamanna",
   "tagline": "Neon circus tent on a Naples sidewalk",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "neon",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/057d7c66-76b7-4272-849c-4058543e6799",
   "source_url": "https://lamannabakery.com",
   "extracted_at": "2026-06-03T17:40:16.304Z",

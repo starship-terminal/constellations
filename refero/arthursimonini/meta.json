@@ -4,6 +4,11 @@
   "name": "Arthursimonini",
   "tagline": "printed film programme in black ink",
   "theme": "dark",
+  "product_type": "media",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/6778ff21-44eb-40f3-ba85-2ee7de935f8f",
   "source_url": "https://arthursimonini.com",
   "extracted_at": "2026-06-03T21:42:02.940Z",

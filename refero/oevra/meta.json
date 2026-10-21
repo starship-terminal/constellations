@@ -4,6 +4,12 @@
   "name": "Oevra",
   "tagline": "sage greenhouse at dawn",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "organic",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/01d6013d-a176-4a22-b7dd-fbd113592956",
   "source_url": "https://oevra.com",
   "extracted_at": "2026-06-03T18:43:22.345Z",

@@ -4,6 +4,12 @@
   "name": "Acctual",
   "tagline": "Paper invoice on frosted glass",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/aeefc294-a8f7-443d-b76a-538dddc29afe",
   "source_url": "https://acctual.com",
   "extracted_at": "2026-07-03T03:15:23.064Z",

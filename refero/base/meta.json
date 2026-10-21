@@ -4,6 +4,11 @@
   "name": "Base",
   "tagline": "Blueprint globe, blue pulse.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/530eb4cf-7e75-4833-95c9-746818050db7",
   "source_url": "https://www.base.org",
   "extracted_at": "2026-06-03T18:26:44.810Z",

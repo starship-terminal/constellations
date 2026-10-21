@@ -4,6 +4,11 @@
   "name": "Redbrick Coffee",
   "tagline": "Scarlet ink editorial on butcher paper",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/9307193e-7ce3-48c1-b650-8ab77aa83c3f",
   "source_url": "https://redbrick.coffee",
   "extracted_at": "2026-06-03T18:15:41.140Z",

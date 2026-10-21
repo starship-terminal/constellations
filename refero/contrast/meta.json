@@ -4,6 +4,11 @@
   "name": "Contrast",
   "tagline": "neon coral signal on white silence",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/effca480-81fb-4b8f-ab9c-3aa8c219c82a",
   "source_url": "https://www.getcontrast.io",
   "extracted_at": "2026-06-03T20:01:42.074Z",

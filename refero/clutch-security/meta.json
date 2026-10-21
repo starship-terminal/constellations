@@ -4,6 +4,11 @@
   "name": "Clutch Security",
   "tagline": "Typography museum on white marble. Gallery-white walls where each word is the artifact, one blue button the only painting in the room.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "swiss",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/802bdc0e-ec2e-4d2d-bf5d-de98c0899f66",
   "source_url": "https://www.clutch.security",
   "extracted_at": "2026-06-03T18:50:08.827Z",

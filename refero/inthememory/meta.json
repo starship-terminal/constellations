@@ -4,6 +4,12 @@
   "name": "Inthememory",
   "tagline": "Architectural blueprint on white marble with a single warm spark. A quiet, editorial data room where deep teal ink and pill-shaped controls float over chalk-white surfaces, broken only by a single orange flare.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/8872694d-261d-4eb4-b355-fb39ee4c37ad",
   "source_url": "https://inthememory.com",
   "extracted_at": "2026-06-03T21:08:25.664Z",

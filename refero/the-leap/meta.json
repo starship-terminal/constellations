@@ -4,6 +4,12 @@
   "name": "The Leap",
   "tagline": "espresso ink on warm cream",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/6b201ccd-16ae-4c2d-84bb-498f7cb568dd",
   "source_url": "https://www.theleap.co",
   "extracted_at": "2026-06-03T17:50:07.625Z",

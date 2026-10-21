@@ -4,6 +4,12 @@
   "name": "Integrated Biosciences",
   "tagline": "bioluminescent laboratory at midnight",
   "theme": "mixed",
+  "product_type": "ai",
+  "design_style": "neon",
+  "tags": [
+    "technical",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/80099f79-72b7-4367-b2e9-6a3d4a3e9e6a",
   "source_url": "https://integratedbiosciences.com",
   "extracted_at": "2026-06-03T17:37:02.986Z",

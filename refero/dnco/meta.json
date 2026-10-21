@@ -4,6 +4,11 @@
   "name": "DNCO",
   "tagline": "editorial gallery on white linen.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/c072c00a-ee7f-4160-bd06-645cca12f7a8",
   "source_url": "https://dnco.com",
   "extracted_at": "2026-06-03T20:17:25.554Z",

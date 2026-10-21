@@ -4,6 +4,12 @@
   "name": "Augen Pro",
   "tagline": "Apple keynote on surgical white \u2014 clinical, weightless, electric blue as single accent in monochrome void",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "swiss",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/0f7da1b2-9d06-4ef5-b5a8-ef7f92e57ab2",
   "source_url": "https://augen.pro",
   "extracted_at": "2026-07-03T03:18:40.191Z",

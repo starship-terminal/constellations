@@ -4,6 +4,11 @@
   "name": "Le Puzz",
   "tagline": "Sunny Sunday circular \u2014 a yellow tabloid stuffed with puzzles.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "playful",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/66e7b131-d68c-4751-954c-f5d0d8869647",
   "source_url": "https://lepuzz.com",
   "extracted_at": "2026-06-03T19:09:34.873Z",

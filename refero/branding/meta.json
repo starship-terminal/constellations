@@ -4,6 +4,12 @@
   "name": "Branding",
   "tagline": "Black gallery wall, blood-red punctuation \u2014 Oversized white display type floats on a void-like dark canvas, interrupted by a single vivid red accent and dramatic ornamental display faces that feel like gallery signage rather than web UI.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/4d4772a3-e1da-415f-a6d7-658dcefdcecd",
   "source_url": "https://www.svz.io",
   "extracted_at": "2026-06-03T16:45:35.103Z",

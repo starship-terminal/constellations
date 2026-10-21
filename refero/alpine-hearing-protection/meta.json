@@ -4,6 +4,11 @@
   "name": "Alpine Hearing Protection",
   "tagline": "Sunlit Scandinavian editorial. A cinnamon-ink wordmark on warm cream paper, with one red exclamation \u2014 the rest is photography and generous whitespace.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/76c761d8-4af1-4ed5-ba93-eeb60f7006b5",
   "source_url": "https://www.alpinehearingprotection.com",
   "extracted_at": "2026-06-03T21:52:56.971Z",

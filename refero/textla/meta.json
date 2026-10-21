@@ -4,6 +4,12 @@
   "name": "Textla",
   "tagline": "Sunlit retro botanical almanac \u2014 a cream-yellow page printed in deep forest green, illustrated with cactus line art, stamped with hard offset shadows.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "retro",
+  "tags": [
+    "paper",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/fb812ddb-d7c0-4540-82d7-1562dff16f09",
   "source_url": "https://www.textla.com",
   "extracted_at": "2026-06-03T20:53:52.002Z",

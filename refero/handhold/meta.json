@@ -4,6 +4,11 @@
   "name": "Handhold",
   "tagline": "warm parchment under whispered serifs \u2014 a hand-set editorial spread with zero chromatic noise, where a hairline serif at weight 200 carries all the voice.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/28a7115a-bcf8-4b05-89a5-5290f5842a3c",
   "source_url": "https://handhold.io",
   "extracted_at": "2026-06-03T20:03:58.657Z",

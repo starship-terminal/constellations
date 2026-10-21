@@ -4,6 +4,12 @@
   "name": "Tally Forms",
   "tagline": "Notebook doodles on warm paper \u2014 a gray-paper canvas scattered with magenta-pink hand-drawn marks and centered editorial headlines.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/4e3aa524-b146-416c-907f-382c079ea80c",
   "source_url": "https://tally.so",
   "extracted_at": "2026-06-03T18:23:44.870Z",

@@ -4,6 +4,11 @@
   "name": "Qatalog",
   "tagline": "ink on paper with two violet sparks",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/7eed2626-ab11-472c-b04a-603476ff8957",
   "source_url": "https://qatalog.com",
   "extracted_at": "2026-06-03T19:08:14.403Z",

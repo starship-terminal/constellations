@@ -4,6 +4,11 @@
   "name": "dope.security",
   "tagline": "Midnight terminal with violet beacons",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/e1f18a7e-5af1-46b3-8f89-bce6c78b80d4",
   "source_url": "https://dope.security",
   "extracted_at": "2026-07-03T03:26:00.046Z",

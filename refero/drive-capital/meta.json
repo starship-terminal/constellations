@@ -4,6 +4,11 @@
   "name": "Drive Capital",
   "tagline": "Retro road-trip poster on warm paper",
   "theme": "light",
+  "product_type": "venture",
+  "design_style": "retro",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/241ebab6-1f3a-4637-8754-4f6b164ea090",
   "source_url": "https://www.thesummerdrive.com",
   "extracted_at": "2026-06-03T18:17:14.872Z",

@@ -4,6 +4,11 @@
   "name": "Dani\u00ebl van der Winden",
   "tagline": "Printed monograph on vellum",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e8eda526-d686-4e45-a60d-61b6503a8eda",
   "source_url": "https://www.daniel.pizza",
   "extracted_at": "2026-06-03T19:27:22.172Z",

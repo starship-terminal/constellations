@@ -4,6 +4,11 @@
   "name": "Base44",
   "tagline": "sunlit notepad with a lime highlighter",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/e869e214-f672-4ac3-bfc2-bd25de7b003b",
   "source_url": "https://base44.com",
   "extracted_at": "2026-07-03T03:23:49.893Z",

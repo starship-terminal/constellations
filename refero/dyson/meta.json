@@ -4,6 +4,12 @@
   "name": "Dyson",
   "tagline": "engineering gallery on warm paper \u2014 products are specimens on a mat board, framed by a black lintel and a single green purchase signal in an otherwise monochrome room.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/96845df2-7ddb-420a-814e-c339f95a6554",
   "source_url": "https://dyson.com",
   "extracted_at": "2026-06-03T18:17:14.628Z",

@@ -4,6 +4,11 @@
   "name": "Fingerprint",
   "tagline": "warm CRT terminal on cream paper \u2014 a fraud-detection lab notebook where code blocks are the main characters",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/da6ad92d-4f29-4f92-a59a-3a46295d0d1c",
   "source_url": "https://fingerprint.com",
   "extracted_at": "2026-06-03T15:43:23.474Z",

@@ -4,6 +4,11 @@
   "name": "Free Resume Builder",
   "tagline": "fresh worksheet with blue ballpoint.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/41e65213-1c4a-41c4-b715-50427fa8926e",
   "source_url": "https://resume.io",
   "extracted_at": "2026-06-03T17:56:45.791Z",

@@ -4,6 +4,11 @@
   "name": "Seline Analytics",
   "tagline": "Quiet analyst's desk on warm paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/7967c6d9-e50c-42b5-b4d1-74003ba41781",
   "source_url": "https://seline.so",
   "extracted_at": "2026-07-03T03:09:48.528Z",

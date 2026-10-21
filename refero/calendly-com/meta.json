@@ -4,6 +4,12 @@
   "name": "Calendly.com",
   "tagline": "Navy ink on cool marble.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "swiss",
+  "tags": [
+    "corporate",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/9946887b-ffa9-4276-af81-ae6352795afb",
   "source_url": "https://calendly.com",
   "extracted_at": "2026-07-03T03:23:43.697Z",

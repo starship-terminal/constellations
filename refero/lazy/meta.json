@@ -4,6 +4,11 @@
   "name": "Lazy",
   "tagline": "Midnight typeset manuscript",
   "theme": "dark",
+  "product_type": "productivity",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/2b939c70-c08e-4bb6-8fac-ade99b0d1cf0",
   "source_url": "https://lazy.so",
   "extracted_at": "2026-06-03T18:27:19.265Z",

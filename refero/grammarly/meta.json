@@ -4,6 +4,11 @@
   "name": "Grammarly",
   "tagline": "Thoughtful editor's desk \u2014 restrained, precise, one confident accent",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/be2af3f3-3886-4d70-973f-f7b5ab8d1a99",
   "source_url": "https://grammarly.com",
   "extracted_at": "2026-06-03T19:52:13.706Z",

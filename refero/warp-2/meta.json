@@ -4,6 +4,12 @@
   "name": "Warp",
   "tagline": "Moonlit terminal behind amber glass",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "retro",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/79714b4e-c89a-44b3-8da4-931daa9a466f",
   "source_url": "https://warp.dev/code",
   "extracted_at": "2026-06-03T17:29:14.310Z",

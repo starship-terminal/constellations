@@ -4,6 +4,11 @@
   "name": "Arc",
   "tagline": "Scalloped editorial playground",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "playful",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/ca93daf1-daf3-41b7-8248-8f63082761e8",
   "source_url": "https://arc.net",
   "extracted_at": "2026-06-03T18:55:59.053Z",

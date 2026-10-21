@@ -4,6 +4,12 @@
   "name": "Trawelt",
   "tagline": "Boarding pass on black marble",
   "theme": "mixed",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "luxury",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/fade1fe1-bbd3-4b1a-ae19-fe88f6744fe0",
   "source_url": "https://www.trawelt.com",
   "extracted_at": "2026-06-03T21:25:17.078Z",

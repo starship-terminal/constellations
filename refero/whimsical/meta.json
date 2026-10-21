@@ -4,6 +4,11 @@
   "name": "Whimsical",
   "tagline": "Deep plum ink on lavender mist \u2014 a creative studio notebook that thinks it's a technical whiteboard.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "playful",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/8e153a14-40a9-4793-b94b-c144d325c730",
   "source_url": "https://whimsical.com",
   "extracted_at": "2026-06-03T18:36:43.070Z",

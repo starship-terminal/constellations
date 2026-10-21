@@ -4,6 +4,12 @@
   "name": "Ableton",
   "tagline": "Editorial workshop on stark white. White paper, black Futura, one blue pen mark for interactivity, photography clipped flush to the edges like magazine spreads.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "editorial",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/e5081033-bd79-479a-aef6-8b002df6086a",
   "source_url": "https://ableton.com",
   "extracted_at": "2026-06-03T19:50:43.615Z",

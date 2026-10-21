@@ -4,6 +4,11 @@
   "name": "David Kirschberg",
   "tagline": "midnight gallery wall \u2014 a darkened room where spotlit work is the only color, and the frame around it is intentionally invisible.",
   "theme": "dark",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/004f4856-4b01-4c23-a9fb-866303d5013b",
   "source_url": "https://kirschberg.co.nz",
   "extracted_at": "2026-06-03T20:58:21.817Z",

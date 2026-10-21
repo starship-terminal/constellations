@@ -4,6 +4,11 @@
   "name": "Endlesstools",
   "tagline": "Black-box gallery wall for digital art",
   "theme": "dark",
+  "product_type": "design-tool",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/667c59e3-aaba-46e8-a2b3-255254328b6e",
   "source_url": "https://endlesstools.io",
   "extracted_at": "2026-06-03T20:50:34.817Z",

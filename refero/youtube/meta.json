@@ -4,6 +4,11 @@
   "name": "YouTube",
   "tagline": "minimalist broadcast console",
   "theme": "light",
+  "product_type": "entertainment",
+  "design_style": "minimal",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/8fc58a26-47be-406e-8429-37925551c0ec",
   "source_url": "https://youtube.com",
   "extracted_at": "2026-06-03T17:56:13.770Z",

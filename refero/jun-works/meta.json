@@ -4,6 +4,12 @@
   "name": "jun.works",
   "tagline": "printed editorial zine with sticker labels \u2014 black ink on bright white, nothing else",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "monochrome",
+  "tags": [
+    "brutalist",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/02ba867b-49e3-4ab4-ad23-c30baf345078",
   "source_url": "https://jun.works",
   "extracted_at": "2026-06-03T21:16:05.032Z",

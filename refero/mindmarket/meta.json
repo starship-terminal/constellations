@@ -4,6 +4,11 @@
   "name": "MindMarket",
   "tagline": "Warm storybook on cream paper \u2014 a friendly editorial canvas where oversized Inter headlines and paper-cut characters share a sunlit, sticker-soft surface.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "playful",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/9130ad37-bf80-458f-b808-ac0ef6a8d1e9",
   "source_url": "https://mindmarket.com",
   "extracted_at": "2026-06-03T22:39:57.287Z",

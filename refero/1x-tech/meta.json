@@ -4,6 +4,12 @@
   "name": "1X Tech",
   "tagline": "1X Tech \u2014 quiet domestic cinema. A pale editorial page opens into cinematic scenes of people and a humanoid robot, with interface chrome reduced to tiny spaced labels and soft monochrome pills.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/7aa1dbff-f5f1-4a64-9dba-f4caad7f1ebf",
   "source_url": "https://www.1x.tech/neo",
   "extracted_at": "2026-09-20T22:15:06.310Z",

@@ -4,6 +4,12 @@
   "name": "Brisbane Web Developer",
   "tagline": "gallery wall in winter light. An achromatic, spacious portfolio on a warm bone-white canvas, with each project tile framed by soft brown-toned shadows and labeled in a whisper-thin display face.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/23d83a89-8f22-405a-aa33-74fd0ebde9d8",
   "source_url": "https://carlbeaverson.com",
   "extracted_at": "2026-06-03T17:38:39.701Z",

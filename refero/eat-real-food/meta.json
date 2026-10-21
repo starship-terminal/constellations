@@ -4,6 +4,11 @@
   "name": "Eat Real Food",
   "tagline": "government health brief on cream parchment",
   "theme": "light",
+  "product_type": "culture",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/3d32f841-490d-4e5f-aba0-43c9d0c13130",
   "source_url": "https://realfood.gov",
   "extracted_at": "2026-06-03T21:50:04.420Z",

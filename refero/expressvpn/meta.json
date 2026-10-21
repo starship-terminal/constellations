@@ -4,6 +4,11 @@
   "name": "ExpressVPN",
   "tagline": "Fortress garden at dawn. A bright, spacious canopy of teal and ivory where dark navy anchors signal weight and warmth.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "corporate",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/eddfa579-89f1-467d-a486-99a56be36c30",
   "source_url": "https://www.expressvpn.com",
   "extracted_at": "2026-06-03T20:41:00.252Z",

@@ -4,6 +4,12 @@
   "name": "TWOTWO",
   "tagline": "voltage lime on monochrome concrete \u2014 a single neon punch inside a black-and-white editorial grid",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "neon",
+  "tags": [
+    "editorial",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/170a690b-7424-4c2e-9d08-975725cf9261",
   "source_url": "https://twotwo-official.com",
   "extracted_at": "2026-06-03T20:00:42.943Z",

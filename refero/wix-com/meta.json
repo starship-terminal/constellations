@@ -4,6 +4,11 @@
   "name": "wix.com",
   "tagline": "Daylight gallery wall with electric blue signposts",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/a31f5b99-6e7d-4e13-9b80-cd60e455bd76",
   "source_url": "https://www.wix.com",
   "extracted_at": "2026-06-03T21:18:56.559Z",

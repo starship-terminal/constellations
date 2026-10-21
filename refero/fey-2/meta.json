@@ -4,6 +4,11 @@
   "name": "Fey",
   "tagline": "Nocturnal Bloomberg terminal, matte-black with luminous type",
   "theme": "dark",
+  "product_type": "fintech",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/a0630421-7b66-48b4-aa14-6194a3b2c2b9",
   "source_url": "https://www.fey.com",
   "extracted_at": "2026-06-03T17:41:40.011Z",

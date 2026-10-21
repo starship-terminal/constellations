@@ -4,6 +4,11 @@
   "name": "Partiful",
   "tagline": "confetti landing on white marble \u2014 the page stays quiet and light while the content explodes with color and celebration.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/6db1057d-3457-4173-9184-df160415f060",
   "source_url": "https://partiful.com",
   "extracted_at": "2026-04-29T23:17:09.758Z",

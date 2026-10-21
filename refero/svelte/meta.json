@@ -4,6 +4,12 @@
   "name": "Svelte",
   "tagline": "Editorial broadsheet on white marble \u2014 serif voice, single ember accent",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/303ca7ea-e6fa-4e95-8acb-8008c4d3c068",
   "source_url": "https://svelte.dev",
   "extracted_at": "2026-06-03T16:43:18.388Z",

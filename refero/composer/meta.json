@@ -4,6 +4,11 @@
   "name": "Composer",
   "tagline": "Bauhaus confetti on concrete",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "swiss",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/1e675740-7935-4a49-b4c8-e5aa9fda06dd",
   "source_url": "https://www.composer.trade",
   "extracted_at": "2026-06-03T20:12:16.457Z",

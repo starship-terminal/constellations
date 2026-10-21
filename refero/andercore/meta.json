@@ -4,6 +4,11 @@
   "name": "Andercore",
   "tagline": "Steel blueprint at midnight",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/2d4ced28-e579-4fa0-84bc-836dd008034f",
   "source_url": "https://www.andercore.com",
   "extracted_at": "2026-06-03T19:50:37.304Z",

@@ -4,6 +4,11 @@
   "name": "Sing-sing",
   "tagline": "butter-paper broadsheet at golden hour \u2014 a warm saffron canvas with sea-glass ink.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/12b20c12-27f8-4938-89ba-569404d36fe8",
   "source_url": "https://sing-sing.co",
   "extracted_at": "2026-06-03T21:52:11.199Z",

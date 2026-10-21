@@ -4,6 +4,11 @@
   "name": "Cluely",
   "tagline": "blue dawn over mountain ridges \u2014 a premium product emerging from atmospheric gradient into crisp white workspace.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/72da35d5-1cfd-41a3-94f6-cb6b8c07a670",
   "source_url": "https://cluely.com",
   "extracted_at": "2026-06-03T17:17:12.563Z",

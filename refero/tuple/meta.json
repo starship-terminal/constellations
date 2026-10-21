@@ -4,6 +4,12 @@
   "name": "Tuple",
   "tagline": "Developer pair-programming workshop \u2014 clean white surfaces, one violet CTA, playful multi-color accents, and a dark band that makes the light sections breathe.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "minimal",
+  "tags": [
+    "playful",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/1003d7c5-536c-485d-b191-a34178415eac",
   "source_url": "https://tuple.app",
   "extracted_at": "2026-06-03T21:07:25.693Z",

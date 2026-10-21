@@ -4,6 +4,11 @@
   "name": "Lusion",
   "tagline": "3D sculpture gallery on a frosted lavender plane. Every interface element should feel like a tactile object resting on a pale, slightly cool gallery floor, with the 3D content doing all the chromatic and dramatic work.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "futuristic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/1b44386e-31a8-40b0-a577-27c088b51264",
   "source_url": "https://lusion.co",
   "extracted_at": "2026-06-03T18:06:30.524Z",

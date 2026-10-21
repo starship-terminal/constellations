@@ -4,6 +4,11 @@
   "name": "Daniel Sun",
   "tagline": "Solar monolith on a white gallery wall \u2014 one yellow beam, one obsidian name, all the breathing room in the world.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/8d1b6c70-e045-4ce6-891d-aba5d5c00e0d",
   "source_url": "https://danielsun.space",
   "extracted_at": "2026-06-03T19:43:36.477Z",

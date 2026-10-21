@@ -636,7 +636,7 @@ document.getElementById('theme').onclick = () => {
 
 let RF_INDEX = null;
 let rfPromise = null;
-const rfState = { theme: 'all', video: false };
+const rfState = { theme: 'all', video: false, type: 'all', style: 'all' };
 try { Object.assign(rfState, JSON.parse(localStorage.getItem('ds-refero') || '{}')); } catch (e) {}
 const rfSave = () => { try { localStorage.setItem('ds-refero', JSON.stringify(rfState)); } catch (e) {} };
 const RF_PAGE = 48;
@@ -692,9 +692,11 @@ const host = (u) => String(u || '').replace(/^https?:\/\//, '').replace(/^www\./
 function rfMatches(s) {
   if (rfState.theme !== 'all' && s.theme !== rfState.theme) return false;
   if (rfState.video && !s.video) return false;
+  if (rfState.type !== 'all' && s.type !== rfState.type) return false;
+  if (rfState.style !== 'all' && s.style !== rfState.style) return false;
   const q = state.q.trim().toLowerCase();
   if (!q) return true;
-  const hay = [s.name, s.slug, s.tagline, s.industry, s.src].join(' ').toLowerCase();
+  const hay = [s.name, s.slug, s.tagline, s.industry, s.src, s.type, s.style, ...(s.tags || [])].join(' ').toLowerCase();
   return q.split(/\s+/).every((w) => hay.includes(w));
 }
 
@@ -709,6 +711,8 @@ function drawReferoIndex() {
   const all = RF_INDEX.styles;
   const list = all.filter(rfMatches);
   const chip = (attr, val, label, on) => `<button class="chip" data-${attr}="${esc(val)}" aria-pressed="${on}">${esc(label)}</button>`;
+  const values = (key) => [...new Set(all.map((s) => s[key]).filter(Boolean))].sort();
+  const sel = (key, first) => `<select class="rf-sel" data-sel="${key}" aria-label="${first}"><option value="all">${first}</option>${values(key).map((v) => `<option value="${esc(v)}"${v === rfState[key] ? ' selected' : ''}>${esc(v)}</option>`).join('')}</select>`;
   app.innerHTML = `
     <div class="intro"><div><h1>Refero styles</h1>
       <p>${list.length === all.length ? all.length : `${list.length} of ${all.length}`} styles interpreted by
@@ -716,6 +720,7 @@ function drawReferoIndex() {
         not measured evidence. Treat values as inspiration.</p></div></div>
     <div class="toolbar">
       <div class="chips">${['all', 'light', 'dark'].map((t) => chip('theme', t, t === 'all' ? 'All themes' : t[0].toUpperCase() + t.slice(1), rfState.theme === t)).join('')}${chip('video', '1', 'Has video', rfState.video)}</div>
+      ${sel('type', 'All types')}${sel('style', 'All styles')}
       <span class="sep"></span>
       <span class="faint-note">${list.length} styles</span>
     </div>
@@ -723,6 +728,7 @@ function drawReferoIndex() {
       : '<div class="rf-grid"></div><div id="rf-sent" class="more"><button class="btn">Load more</button></div>'}`;
   app.querySelectorAll('[data-theme]').forEach((b) => b.onclick = () => { rfState.theme = b.dataset.theme; rfSave(); drawReferoIndex(); });
   app.querySelectorAll('[data-video]').forEach((b) => b.onclick = () => { rfState.video = !rfState.video; rfSave(); drawReferoIndex(); });
+  app.querySelectorAll('select[data-sel]').forEach((s) => s.onchange = () => { rfState[s.dataset.sel] = s.value; rfSave(); drawReferoIndex(); });
   const grid = app.querySelector('.rf-grid');
   const sent = app.querySelector('#rf-sent');
   if (!grid) return;
@@ -869,8 +875,11 @@ function rfSimilar(e) {
   const find = (slug) => slug && RF_INDEX.styles.find((x) => x.slug === slug);
   const items = (e.similar || []).map((x) => ({ slug: x.slug, name: x.name, note: x.why, s: find(x.slug) }));
   const have = new Set(items.map((i) => i.slug).concat([e.slug]));
-  const fill = RF_INDEX.styles.filter((s) => !have.has(s.slug) && s.theme === e.theme)
-    .slice(0, Math.max(0, 6 - items.length));
+  const fill = RF_INDEX.styles.filter((s) => !have.has(s.slug))
+    .map((s) => ({ s, sc: (e.type && s.type === e.type) + (e.style && s.style === e.style) + (e.theme && s.theme === e.theme) }))
+    .filter((x) => x.sc > 0)
+    .sort((a, b) => b.sc - a.sc || String(a.s.name).localeCompare(String(b.s.name)))
+    .slice(0, Math.max(0, 6 - items.length)).map((x) => x.s);
   const all = items.concat(fill.map((s) => ({ slug: s.slug, name: s.name, note: null, s })));
   if (!all.length) return '';
   return `<section class="rf-sec"><h2 class="rf-h2">More like this</h2><div class="rf-grid rf-sim">
@@ -890,7 +899,7 @@ function drawRfEntity(e) {
         <header class="rf-head">${rfFav(e, true)}<div>
           <h1>${esc(e.name)}</h1>
           ${e.tagline ? `<p class="rf-tagline">${esc(e.tagline)}</p>` : ''}
-          <p class="rf-meta">${esc(e.theme || '')}${e.industry ? ` · ${esc(e.industry)}` : ''}${e.source_url ? ` · <a href="${esc(e.source_url)}" target="_blank" rel="noopener">${esc(host(e.source_url))} ↗</a>` : ''}${e.page_url ? ` · <a href="${esc(e.page_url)}" target="_blank" rel="noopener">refero ↗</a>` : ''}</p>
+          <p class="rf-meta">${esc(e.theme || '')}${e.type ? ` · ${esc(e.type)}` : ''}${e.style ? ` · ${esc(e.style)}` : ''}${e.industry ? ` · ${esc(e.industry)}` : ''}${e.source_url ? ` · <a href="${esc(e.source_url)}" target="_blank" rel="noopener">${esc(host(e.source_url))} ↗</a>` : ''}${e.page_url ? ` · <a href="${esc(e.page_url)}" target="_blank" rel="noopener">refero ↗</a>` : ''}</p>
         </div></header>
         ${ds.description ? `<p class="rf-desc">${esc(ds.description)}</p>` : ''}
         ${rfColors(e)}${rfTypography(e)}${rfSpacing(e)}${rfGuidelines(e)}${rfSimilar(e)}

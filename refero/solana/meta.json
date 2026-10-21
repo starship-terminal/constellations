@@ -4,6 +4,11 @@
   "name": "Solana",
   "tagline": "neon aurora in a midnight void \u2014 flowing magenta and violet ribbons suspended against pure black",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/f493133e-e289-4fb1-9729-f611d9816aae",
   "source_url": "https://solana.com",
   "extracted_at": "2026-06-03T19:16:23.963Z",

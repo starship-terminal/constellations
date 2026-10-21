@@ -4,6 +4,12 @@
   "name": "Aboard",
   "tagline": "pastel paper notebook on a white desk",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/fabacd2a-acb6-46c4-939c-4a464df15440",
   "source_url": "https://aboardhr.com",
   "extracted_at": "2026-06-03T18:06:00.772Z",

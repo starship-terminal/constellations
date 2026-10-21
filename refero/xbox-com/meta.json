@@ -4,6 +4,11 @@
   "name": "Xbox.com",
   "tagline": "stadium-lit arcade storefront. Stark white shelves displaying game artwork under dramatic lighting, with one signature green neon strip cutting through the rows.",
   "theme": "light",
+  "product_type": "entertainment",
+  "design_style": "neon",
+  "tags": [
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/3792d0ca-6c74-4667-a64d-76efe9f87076",
   "source_url": "https://xbox.com",
   "extracted_at": "2026-06-03T19:09:29.419Z",

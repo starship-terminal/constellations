@@ -4,6 +4,11 @@
   "name": "Relate",
   "tagline": "cool dawn over product canvas",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/337ade6a-4bae-49ba-b4aa-8994ac805a81",
   "source_url": "https://www.relate.so",
   "extracted_at": "2026-07-03T03:33:05.281Z",

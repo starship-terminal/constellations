@@ -4,6 +4,12 @@
   "name": "WalletConnect",
   "tagline": "Cobalt obelisks on parchment \u2014 saturated blue monoliths floating above a warm white desert, with rounded edges that soften the tech seriousness.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/29392960-0acf-4891-ad33-28a72f6a9b75",
   "source_url": "https://walletconnect.com",
   "extracted_at": "2026-06-03T20:32:27.494Z",

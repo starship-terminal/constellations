@@ -4,6 +4,12 @@
   "name": "Tailark Pro",
   "tagline": "white gallery wall with violet sparks \u2014 a curated component museum",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "minimal",
+  "tags": [
+    "corporate",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/ee8698fd-bb1e-4813-9571-5db39e508542",
   "source_url": "https://pro.tailark.com/illustrations",
   "extracted_at": "2026-06-03T19:35:47.699Z",

@@ -4,6 +4,11 @@
   "name": "Groq",
   "tagline": "speed lab notebook \u2014 parchment pages, graphite text, one highlighter-orange mark",
   "theme": "mixed",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/8efa9029-b39c-48db-a8ec-c97c645a7a58",
   "source_url": "https://groq.com",
   "extracted_at": "2026-06-03T18:45:24.773Z",

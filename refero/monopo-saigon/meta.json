@@ -4,6 +4,12 @@
   "name": "monopo saigon",
   "tagline": "Liquid iridescence behind editorial silence \u2014 a monochrome editorial gallery floating on molten light.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
   "source_url": "https://monopo.vn",
   "extracted_at": "2026-07-03T02:46:16.954Z",

@@ -4,6 +4,11 @@
   "name": "Extract",
   "tagline": "Editorial monolith on gallery paper",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/c4e125b6-e3a3-4509-b06f-f0169216a394",
   "source_url": "https://extract.studio",
   "extracted_at": "2026-06-03T21:53:12.837Z",

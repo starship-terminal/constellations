@@ -4,6 +4,11 @@
   "name": "Ayaka B. Ito",
   "tagline": "Editorial spread on warm linen paper.\n\nA tactile, magazine-like atmosphere where oversized serif type and flat color planes replace the usual UI scaffolding.",
   "theme": "mixed",
+  "product_type": "portfolio",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/8ac43b3b-7139-4777-bc77-217614e01e89",
   "source_url": "https://ayakaito.com",
   "extracted_at": "2026-06-03T21:39:55.027Z",

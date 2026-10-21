@@ -4,6 +4,11 @@
   "name": "VEED",
   "tagline": "white gallery wall with neon-green ignition buttons",
   "theme": "light",
+  "product_type": "ai-media",
+  "design_style": "minimal",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/fff821ec-a3bf-41a5-aea2-626185bcd227",
   "source_url": "https://www.veed.io",
   "extracted_at": "2026-06-03T18:32:02.467Z",

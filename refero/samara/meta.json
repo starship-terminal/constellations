@@ -4,6 +4,11 @@
   "name": "Samara",
   "tagline": "Sunlit architectural model. The design combines the precision of a blueprint with the warmth and airiness of natural light.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/934a61aa-50ff-4e90-852b-4ad0b8262d54",
   "source_url": "https://samara.com",
   "extracted_at": "2026-04-11T17:53:21.380Z",

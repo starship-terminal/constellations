@@ -4,6 +4,11 @@
   "name": "Reworkd",
   "tagline": "Soft daylight over a product blueprint \u2014 the only color that speaks is the action button and the gradient headline above it.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/95913740-3ff7-45ec-a05b-4acf040850a0",
   "source_url": "https://www.reworkd.ai",
   "extracted_at": "2026-06-03T17:15:28.960Z",

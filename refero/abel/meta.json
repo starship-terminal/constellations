@@ -4,6 +4,12 @@
   "name": "Abel",
   "tagline": "Cream paper, black ink, breathing room \u2014 an editorial lookbook that smells of perfume.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/f3f7122e-d8d3-48f7-9d9d-df6e71545010",
   "source_url": "https://abelfragrance.com",
   "extracted_at": "2026-06-03T21:54:29.098Z",

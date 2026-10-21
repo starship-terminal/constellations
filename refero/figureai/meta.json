@@ -4,6 +4,11 @@
   "name": "FigureAI",
   "tagline": "Robotics lab catalog. White technical documentation is interrupted by cinematic evidence of a humanoid moving through real interiors.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/2997507c-ba60-4653-b217-3eca4858dec8",
   "source_url": "https://www.figure.ai/figure",
   "extracted_at": "2026-09-20T22:15:01.223Z",

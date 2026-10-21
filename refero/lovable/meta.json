@@ -4,6 +4,11 @@
   "name": "Lovable",
   "tagline": "Warm parchment canvas behind a single prismatic horizon",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/9ff62d34-e48d-4fcb-9fd9-c018e2747542",
   "source_url": "https://lovable.dev",
   "extracted_at": "2026-06-05T12:23:55.484Z",

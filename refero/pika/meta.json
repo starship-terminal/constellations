@@ -4,6 +4,11 @@
   "name": "Pika",
   "tagline": "Cream diptych meets cinema void",
   "theme": "mixed",
+  "product_type": "ai-media",
+  "design_style": "cinematic",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/9fe9f106-44d2-45fc-9873-10c6ddcfa59b",
   "source_url": "https://pika.art",
   "extracted_at": "2026-06-03T17:12:25.763Z",

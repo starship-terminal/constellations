@@ -4,6 +4,11 @@
   "name": "Sana Agents",
   "tagline": "Lime spark on editorial white",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/5bfbe8b0-de0e-470f-b130-929f50437160",
   "source_url": "https://sana.ai",
   "extracted_at": "2026-06-03T15:26:40.726Z",

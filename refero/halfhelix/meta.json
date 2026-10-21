@@ -4,6 +4,11 @@
   "name": "Halfhelix",
   "tagline": "Gallery wall on white marble \u2014 restrained, text-led, photographic",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "minimal",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/36fb90f7-3547-4dfd-a34e-592aa140078a",
   "source_url": "https://www.halfhelix.com",
   "extracted_at": "2026-06-03T20:49:44.145Z",

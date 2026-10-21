@@ -4,6 +4,11 @@
   "name": "Auros",
   "tagline": "Abyssal terminal with bioluminescent data orbs",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/21cfe0c1-778d-4613-9f47-a5718eb929b3",
   "source_url": "https://auros.global",
   "extracted_at": "2026-07-03T03:04:41.961Z",

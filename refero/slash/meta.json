@@ -4,6 +4,11 @@
   "name": "Slash",
   "tagline": "Midnight vault with gilded ledger lines.",
   "theme": "dark",
+  "product_type": "fintech",
+  "design_style": "luxury",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/7c38e84b-aea0-4c8f-b3e9-60b994ee6c6b",
   "source_url": "https://www.slash.com",
   "extracted_at": "2026-07-03T03:52:06.621Z",

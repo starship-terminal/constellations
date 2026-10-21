@@ -4,6 +4,12 @@
   "name": "Bumble",
   "tagline": "Sunlit honey editorial",
   "theme": "light",
+  "product_type": "social",
+  "design_style": "editorial",
+  "tags": [
+    "playful",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/f32595cf-478e-4ccd-8722-0daffa693d76",
   "source_url": "https://bumble.com",
   "extracted_at": "2026-06-03T17:46:44.528Z",

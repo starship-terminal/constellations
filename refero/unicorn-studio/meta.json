@@ -4,6 +4,12 @@
   "name": "Unicorn Studio",
   "tagline": "aurora behind smoked glass \u2014 a black velvet void pierced by prismatic violet light, with type that breathes quietly beside it",
   "theme": "dark",
+  "product_type": "design-tool",
+  "design_style": "futuristic",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/6bd8007f-01bc-46cc-8599-b396a39c1474",
   "source_url": "https://www.unicorn.studio",
   "extracted_at": "2026-06-03T20:12:22.803Z",

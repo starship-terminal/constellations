@@ -4,6 +4,12 @@
   "name": "Outsource Consultants",
   "tagline": "Architectural broadsheet on bone paper. A monograph aesthetic where one violent indigo section interrupts an otherwise warm, typographically maximalist grid.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/16be276a-d8ce-484e-8f7a-cbbb09f717f7",
   "source_url": "https://oci.madebybuzzworthy.com",
   "extracted_at": "2026-06-03T17:58:11.567Z",

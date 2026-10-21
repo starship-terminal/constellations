@@ -4,6 +4,11 @@
   "name": "Craftwork",
   "tagline": "Designer's atelier with one acid-green lamp. A bright, paper-clean workspace where one vivid lime accent marks the premium shelf and everything else is a measured, gallery-quiet neutral.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/47c9e353-bed3-4d6c-8316-63a2db5cc377",
   "source_url": "https://craftwork.design",
   "extracted_at": "2026-06-03T17:24:32.152Z",

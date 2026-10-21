@@ -4,6 +4,12 @@
   "name": "Tracky",
   "tagline": "doodled planner on warm paper",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "playful",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/34788d94-1147-4d38-8df7-6f47ef7efb12",
   "source_url": "https://tracky.so",
   "extracted_at": "2026-06-03T19:09:19.849Z",

@@ -4,6 +4,12 @@
   "name": "Passionfroot",
   "tagline": "Twilight cloud library on warm parchment. A serif headline drifts above cream cards lit by a violet-to-coral sky, where a pastel mascot peeks from the corner.",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/aaaa705d-3042-4355-ad30-13360f04e403",
   "source_url": "https://www.passionfroot.me",
   "extracted_at": "2026-06-03T22:08:16.147Z",

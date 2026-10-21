@@ -4,6 +4,12 @@
   "name": "Overflow",
   "tagline": "blueprint washed in indigo",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/6845a075-8573-4bdc-9346-58cb09b83547",
   "source_url": "https://overflow.io",
   "extracted_at": "2026-06-03T18:57:09.132Z",

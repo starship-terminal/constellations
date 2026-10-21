@@ -4,6 +4,11 @@
   "name": "Electronic Materials Office\u00ae",
   "tagline": "Incandescent ember in a charcoal gallery",
   "theme": "dark",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/297f65f7-0fbd-4521-ab91-a5f6e17175d9",
   "source_url": "https://electronicmaterialsoffice.com",
   "extracted_at": "2026-06-03T20:53:44.735Z",

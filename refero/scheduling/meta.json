@@ -4,6 +4,11 @@
   "name": "Scheduling",
   "tagline": "Editorial ink on cream paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/7ad5549e-9baa-4fda-ac43-79d568a86b98",
   "source_url": "https://glossgenius.com",
   "extracted_at": "2026-07-03T03:27:47.776Z",

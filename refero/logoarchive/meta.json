@@ -4,6 +4,11 @@
   "name": "LogoArchive",
   "tagline": "midnight gallery of iconic marks",
   "theme": "dark",
+  "product_type": "design-resource",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/b63cc4ca-52c6-4b70-9a5a-cb04bae15edb",
   "source_url": "https://www.logo-archive.org",
   "extracted_at": "2026-06-03T22:05:16.175Z",

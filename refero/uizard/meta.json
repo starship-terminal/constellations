@@ -4,6 +4,12 @@
   "name": "Uizard",
   "tagline": "violet aurora over obsidian \u2014 a single charged accent glowing against an ink-dark product canvas",
   "theme": "dark",
+  "product_type": "design-tool",
+  "design_style": "neon",
+  "tags": [
+    "futuristic",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/8065e38a-cdb7-4645-b168-98e6f80e7118",
   "source_url": "https://uizard.io",
   "extracted_at": "2026-06-03T18:13:38.973Z",

@@ -4,6 +4,11 @@
   "name": "LottieFiles",
   "tagline": "Bright motion studio with teal accent",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/a80507cb-afda-46dd-a2b9-ba91f3a78e78",
   "source_url": "https://lottiefiles.com",
   "extracted_at": "2026-07-03T03:45:00.181Z",

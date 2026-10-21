@@ -4,6 +4,12 @@
   "name": "Afterglo",
   "tagline": "Editorial boudoir printed on cream paper \u2014 quiet, tactile, typographic.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/b13069df-7475-4b51-a734-621e3da75f8b",
   "source_url": "https://myafterglo.com",
   "extracted_at": "2026-06-03T18:57:44.324Z",

@@ -4,6 +4,12 @@
   "name": "Kit",
   "tagline": "Warm creator notebook \u2014 parchment pages, highlighter-blue ink, heavy type on linen.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/7f7d24b9-6878-4548-82ca-a26bbf7a6f2c",
   "source_url": "https://kit.com",
   "extracted_at": "2026-04-11T19:03:33.812Z",

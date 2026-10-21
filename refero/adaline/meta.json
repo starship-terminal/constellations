@@ -4,6 +4,12 @@
   "name": "Adaline",
   "tagline": "botanist's specimen journal beside a developer's terminal \u2014 warm linen pages, sage ink annotations, and tracked mono tags.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/312423bf-72ea-42fb-b8f5-ab0104e778f3",
   "source_url": "https://www.adaline.ai",
   "extracted_at": "2026-07-03T03:02:41.642Z",

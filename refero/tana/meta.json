@@ -4,6 +4,12 @@
   "name": "Tana",
   "tagline": "Midnight gallery, single lime beacon \u2014 a dark editorial spread where one pale-green button is the only color on the entire page.",
   "theme": "dark",
+  "product_type": "productivity",
+  "design_style": "neon",
+  "tags": [
+    "minimal",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/f7bf0618-817c-4b7d-9568-cbd9c476c599",
   "source_url": "https://tana.inc",
   "extracted_at": "2026-06-03T21:42:17.328Z",

@@ -4,6 +4,11 @@
   "name": "Mockups made easy",
   "tagline": "Editorial design studio on white paper",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/ef545f0f-e7ad-4296-b3eb-65f8d045a5d9",
   "source_url": "https://maneken.app",
   "extracted_at": "2026-06-03T21:39:21.812Z",

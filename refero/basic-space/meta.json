@@ -4,6 +4,11 @@
   "name": "Basic.Space",
   "tagline": "curated gallery on white marble",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/d7096101-d33c-43b8-8b0b-d9dfff802db2",
   "source_url": "https://basic.space",
   "extracted_at": "2026-06-03T20:23:23.030Z",

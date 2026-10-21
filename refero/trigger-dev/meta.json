@@ -4,6 +4,12 @@
   "name": "Trigger.dev",
   "tagline": "Charging terminal on slate. The interface is a dimly lit workstation where one lime LED signals activity against rows of quiet monospaced text and faint violet syntax glow.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/86541d12-7870-4d51-8c47-0880fdb1ea01",
   "source_url": "https://trigger.dev",
   "extracted_at": "2026-06-03T18:23:10.089Z",

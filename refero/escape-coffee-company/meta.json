@@ -4,6 +4,12 @@
   "name": "Escape Coffee Company",
   "tagline": "Frost-bleached editorial broadsheet \u2014 large display type cut into warm off-white, all atmosphere carried by raw photography.",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/b5532c58-620a-4d69-8861-35b2b6443956",
   "source_url": "https://escape.cafe",
   "extracted_at": "2026-06-03T21:24:15.747Z",

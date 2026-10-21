@@ -4,6 +4,12 @@
   "name": "Numbered",
   "tagline": "fashion editorial on black velvet. A near-black runway where a single face fills the frame and the only marks are white ink and a whispered bronze thread.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "cinematic",
+  "tags": [
+    "luxury",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/50f0b6d5-9e96-42a1-9564-a6e99c289f98",
   "source_url": "https://numbered.studio",
   "extracted_at": "2026-06-03T21:37:08.390Z",

@@ -4,6 +4,13 @@
   "name": "Hugo & Marie",
   "tagline": "Monochrome gallery catalog \u2014 editorial photography mounted on infinite white, framed by whisper-thin serif.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial",
+    "minimal",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/58a36cba-3fc4-48fa-a7d9-7f14592b7857",
   "source_url": "https://www.hugoandmarie.com",
   "extracted_at": "2026-06-03T21:21:13.226Z",

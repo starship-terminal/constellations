@@ -4,6 +4,12 @@
   "name": "HOUSEPLANT",
   "tagline": "walnut bookstore on linen paper",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "luxury",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/7fdd9506-0a85-41a5-b2a7-c5ce1f31d863",
   "source_url": "https://www.houseplant.com",
   "extracted_at": "2026-06-03T19:46:52.215Z",

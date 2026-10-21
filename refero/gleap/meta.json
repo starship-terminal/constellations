@@ -4,6 +4,11 @@
   "name": "Gleap",
   "tagline": "warm cream-paper workspace with graphite accents \u2014 a studio where matte-black ink dots float over linen architecture.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/2eab438d-32cd-40c2-b160-1e4127dac569",
   "source_url": "https://gleap.io",
   "extracted_at": "2026-07-03T03:13:43.210Z",

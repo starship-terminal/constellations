@@ -4,6 +4,11 @@
   "name": "Webflow",
   "tagline": "white studio, black ink, one blue mark \u2014 a designer's drafting table rendered as a web page.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "swiss",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/31471407-598a-45fd-a505-d921980d8855",
   "source_url": "https://webflow.com",
   "extracted_at": "2026-06-03T15:10:42.812Z",

@@ -4,6 +4,11 @@
   "name": "Sneak in Peace",
   "tagline": "Editorial gallery behind frosted glass. A single muted fashion film bleeds edge-to-edge while every interactive surface \u2014 tabs, now-playing card, product tiles \u2014 hovers in a translucent white panel pinned to the right edge, as if pinned to a museum vitrine.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "cinematic",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/643f90ba-dc30-428b-a145-26f02fe70551",
   "source_url": "https://www.sneakinpeace.com",
   "extracted_at": "2026-06-03T18:50:49.270Z",

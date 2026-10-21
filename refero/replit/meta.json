@@ -4,6 +4,11 @@
   "name": "replit",
   "tagline": "warm workshop with coral sparks",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/c556ab50-a242-4854-9395-450c0004bac5",
   "source_url": "https://replit.com",
   "extracted_at": "2026-06-03T19:20:26.750Z",

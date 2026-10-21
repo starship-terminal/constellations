@@ -4,6 +4,11 @@
   "name": "Air",
   "tagline": "midnight sky through glass sculpture",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/d3289fe7-a85e-42d8-96b7-eb7faa62a104",
   "source_url": "https://air.inc",
   "extracted_at": "2026-07-03T03:08:34.002Z",

@@ -4,6 +4,12 @@
   "name": "Netflix Spain",
   "tagline": "A black cinema lobby with one red exit sign.",
   "theme": "dark",
+  "product_type": "entertainment",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal",
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/0e4d933c-aa07-4787-9884-40a0e6c338e4",
   "source_url": "https://www.netflix.com",
   "extracted_at": "2026-06-03T22:05:43.990Z",

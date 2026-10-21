@@ -4,6 +4,12 @@
   "name": "Jp",
   "tagline": "Monochrome museum wall of templates \u2014 quiet, editorial, pill-shaped.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/60b529c2-c0f7-49be-9a77-8d3762838f05",
   "source_url": "https://jp.works",
   "extracted_at": "2026-06-03T19:03:13.094Z",

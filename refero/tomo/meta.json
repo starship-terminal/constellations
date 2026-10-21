@@ -4,6 +4,12 @@
   "name": "TOMO",
   "tagline": "torn zine pages taped to a fridge \u2014 flat, warm, and unapologetically analog.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "maximalist",
+  "tags": [
+    "retro",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/6f148ff6-ae72-496a-a21d-84d7779825ff",
   "source_url": "https://tomoseattle.com",
   "extracted_at": "2026-06-03T20:28:28.899Z",

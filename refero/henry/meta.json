@@ -4,6 +4,11 @@
   "name": "Henry",
   "tagline": "Gothic broadside poster on warm cream paper. One hundred percent monochrome, no chromatic accent, all visual intensity carried by display type and full-bleed paper-to-ink inversions.",
   "theme": "mixed",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/ff4b9eff-dc0b-4886-bd65-c2f5e9069318",
   "source_url": "https://henry.codes",
   "extracted_at": "2026-06-03T18:12:39.112Z",

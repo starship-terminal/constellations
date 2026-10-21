@@ -4,6 +4,12 @@
   "name": "Swwim",
   "tagline": "Cobalt wave with floating luxury objects.\n\nA vivid blue ocean where oversized white type is pierced by editorial product still-lifes.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "luxury",
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/5cb1fbe8-b539-4482-b645-74a745332965",
   "source_url": "https://www.weswwim.com",
   "extracted_at": "2026-06-03T20:37:27.198Z",

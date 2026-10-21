@@ -4,6 +4,11 @@
   "name": "70Materia",
   "tagline": "Architectural sample board on white paper \u2014 the UI is the mount, never the artwork.",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/f22a5ad1-2770-48d5-aff4-d1aaf0b789b8",
   "source_url": "https://70materia.com",
   "extracted_at": "2026-06-03T20:47:01.880Z",

@@ -4,6 +4,11 @@
   "name": "Alpine Bio",
   "tagline": "Sun-drenched botanical apothecary on cream parchment",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "organic",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/1995b916-d3f1-4b13-8eb0-c1317ab63ccb",
   "source_url": "https://alpbio.com",
   "extracted_at": "2026-06-03T22:08:59.606Z",

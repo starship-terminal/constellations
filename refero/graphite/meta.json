@@ -4,6 +4,11 @@
   "name": "Graphite",
   "tagline": "Luminous terminal lattice. Build dark, bordered product surfaces around precise white typography and sparse bursts of spectral light.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/fd36bae9-dbf4-4b0f-a48b-e8c6f92edca3",
   "source_url": "https://graphite.dev",
   "extracted_at": "2026-09-24T17:37:54.849Z",

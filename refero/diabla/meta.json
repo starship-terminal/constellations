@@ -4,6 +4,11 @@
   "name": "Diabla",
   "tagline": "Mediterranean courtyard at noon \u2014 sun-bleached pink walls, one bold red canvas awning, and editorial serif headlines stretched across the sky.",
   "theme": "light",
+  "product_type": "fashion",
+  "design_style": "editorial",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/5528d10f-2e7d-4502-aa49-7bde290e8fe2",
   "source_url": "https://www.diablaoutdoor.com/en",
   "extracted_at": "2026-06-03T18:33:25.015Z",

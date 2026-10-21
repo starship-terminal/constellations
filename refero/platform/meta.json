@@ -4,6 +4,11 @@
   "name": "PLATFORM",
   "tagline": "white cube gallery under spotlights",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/81507860-e43d-4c50-b371-7267af9a914b",
   "source_url": "https://www.platformart.com",
   "extracted_at": "2026-06-03T19:28:05.314Z",

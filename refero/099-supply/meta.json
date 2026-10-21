@@ -4,6 +4,11 @@
   "name": "099 SUPPLY",
   "tagline": "Gallery wall of black-on-white objects",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/e4a7b5f3-f393-4f6d-b4a5-ecf874024bed",
   "source_url": "https://099.supply",
   "extracted_at": "2026-07-03T03:40:37.533Z",

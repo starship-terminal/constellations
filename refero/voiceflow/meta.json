@@ -4,6 +4,12 @@
   "name": "Voiceflow",
   "tagline": "editorial whiteboard under daylight \u2014 serif whispers, pill controls glow blue.\n\n",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/03b3d707-2a30-4f53-a524-347d1b70eb2c",
   "source_url": "https://www.voiceflow.com",
   "extracted_at": "2026-06-03T18:51:12.002Z",

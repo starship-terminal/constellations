@@ -4,6 +4,12 @@
   "name": "Val Town",
   "tagline": "daylight IDE with cyan sparks. White-washed IDE where chrome recedes, code glows in syntax colors, and one electric cyan button reads as 'run'.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/4d0a5051-1c4c-4338-8406-2babdc97915c",
   "source_url": "https://val.town",
   "extracted_at": "2026-06-03T15:35:13.618Z",

@@ -4,6 +4,12 @@
   "name": "VSCO\u00ae",
   "tagline": "Monochrome gallery wall \u2014 a black-and-white photo exhibition where a single warm spotlight makes the next action glow.",
   "theme": "mixed",
+  "product_type": "ai-media",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/759c0588-ea22-44c1-a1cf-42cb81eb6cb0",
   "source_url": "https://vsco.co",
   "extracted_at": "2026-06-03T19:54:01.012Z",

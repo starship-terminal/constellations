@@ -4,6 +4,12 @@
   "name": "ilovecreatives",
   "tagline": "Gen-Z monochrome zine at viewport scale",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "monochrome",
+  "tags": [
+    "maximalist",
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/9afa0254-423b-4354-a852-8894c33d2e6b",
   "source_url": "https://ilovecreatives.com",
   "extracted_at": "2026-06-03T21:05:09.509Z",

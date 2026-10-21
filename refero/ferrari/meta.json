@@ -4,6 +4,11 @@
   "name": "Ferrari",
   "tagline": "cavallino rampante on black marble. Black voids punctuated by singular Ferrari red, white uppercase tracking, and full-bleed cinematic photography.",
   "theme": "dark",
+  "product_type": "commerce",
+  "design_style": "cinematic",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/80164adf-a898-4f7c-bce7-12f3f62e1649",
   "source_url": "https://ferrari.com",
   "extracted_at": "2026-07-03T03:38:44.685Z",

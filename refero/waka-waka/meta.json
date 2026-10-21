@@ -4,6 +4,12 @@
   "name": "Waka Waka",
   "tagline": "museum poster in bone and ink \u2014 monumental black grotesk type printed on warm off-white paper, everything else recedes",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "paper",
+  "tags": [
+    "monochrome",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/ea55601d-e953-48b3-99db-374b39bf2f56",
   "source_url": "https://wakawaka.world",
   "extracted_at": "2026-06-03T21:57:37.582Z",

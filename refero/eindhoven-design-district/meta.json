@@ -4,6 +4,12 @@
   "name": "Eindhoven Design District",
   "tagline": "editorial brutalism on white paper \u2014 a municipal design manifesto rendered in oversized type, sparse photographs, and absolute restraint.",
   "theme": "light",
+  "product_type": "culture",
+  "design_style": "brutalist",
+  "tags": [
+    "editorial",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/c90b584e-de5b-4971-9e13-8ab991bd96c0",
   "source_url": "https://www.eindhovendesigndistrict.com",
   "extracted_at": "2026-06-03T18:35:09.594Z",

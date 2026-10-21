@@ -4,6 +4,12 @@
   "name": "ToDesktop",
   "tagline": "Cosmic command deck transitioning into a bright spec sheet. Dark gradient hero with a single electric blue accent button; below, a calm, light, hairline-bordered document surface with pill navigation and floating product mockups.",
   "theme": "mixed",
+  "product_type": "devtools",
+  "design_style": "futuristic",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/dd89ce6c-f0aa-4ca8-bd63-19dcd81920a7",
   "source_url": "https://www.todesktop.com",
   "extracted_at": "2026-06-03T17:11:15.635Z",

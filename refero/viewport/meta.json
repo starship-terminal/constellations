@@ -4,6 +4,11 @@
   "name": "Viewport",
   "tagline": "Mint sticky-notes on a glass desk. A clean productivity canvas where one vivid indigo button is the only thing that 'switches on' against pale teal surfaces and white walls.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/754ad72f-9abd-43df-ac72-c6abf2036ed4",
   "source_url": "https://viewport.co",
   "extracted_at": "2026-06-03T21:49:47.714Z",

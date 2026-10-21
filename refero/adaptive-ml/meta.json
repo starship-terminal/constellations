@@ -4,6 +4,12 @@
   "name": "Adaptive ML",
   "tagline": "Printed monograph on warm cream paper. A confident editorial monochrome where the only color is the artwork on the cards and the only ornament is the serif.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/f08ee8f2-2ba5-4ae8-aba7-fec7cea40ae4",
   "source_url": "https://www.adaptive-ml.com",
   "extracted_at": "2026-06-03T20:15:57.196Z",

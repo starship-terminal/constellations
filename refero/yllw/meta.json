@@ -4,6 +4,11 @@
   "name": "Yllw",
   "tagline": "Swiss-Bauhaus print monograph. Think oversized Grotesk on warm putty paper, hairline rules, no shadows \u2014 architecture rendered as typography.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "swiss",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/9483a10e-e098-4f94-ae22-ab5a63702243",
   "source_url": "https://www.yllw.com/en",
   "extracted_at": "2026-06-03T18:37:10.589Z",

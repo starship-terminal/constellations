@@ -4,6 +4,11 @@
   "name": "Runway",
   "tagline": "Kraft paper ledger under amber desk lamp. Every screen should feel like opening a well-organized financial notebook: cream paper, espresso ink, one warm highlight color, no cold digital surfaces.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/874aaea0-c718-454e-8a58-f3beed1284ec",
   "source_url": "https://runway.com",
   "extracted_at": "2026-06-03T19:03:23.827Z",

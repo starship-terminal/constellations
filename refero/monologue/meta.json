@@ -4,6 +4,12 @@
   "name": "Monologue",
   "tagline": "Velvet library with a single blue spark. A vast dark room where a single italic serif headline commands attention and one cyan glow signals action.",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "neon",
+  "tags": [
+    "minimal",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/8401cb26-91a3-4b46-941e-1c75790821eb",
   "source_url": "https://www.monologue.to",
   "extracted_at": "2026-06-03T15:39:04.388Z",

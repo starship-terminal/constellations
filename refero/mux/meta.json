@@ -4,6 +4,12 @@
   "name": "Mux",
   "tagline": "Sunlit video workshop on olive paper \u2014 warm sage canvas with crisp white cards, orange CTAs, and a chunky display headline that feels hand-lettered",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "paper",
+  "tags": [
+    "playful",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/a26f1a4d-758c-4df0-a61e-88a7ca0931ce",
   "source_url": "https://www.mux.com",
   "extracted_at": "2026-06-03T19:42:57.983Z",

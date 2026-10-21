@@ -4,6 +4,11 @@
   "name": "Current",
   "tagline": "Editorial gallery in black and white. A whisper-thin headline floats on white paper beside a saturated photograph \u2014 banking as a magazine spread, not a dashboard.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/84b951e2-eaae-4f56-8f3f-d90407517a56",
   "source_url": "https://current.com",
   "extracted_at": "2026-06-03T22:10:38.631Z",

@@ -4,6 +4,11 @@
   "name": "destroytoday.com",
   "tagline": "Designer's monograph on cream paper. A portfolio that reads like a printed document \u2014 paragraph text, underlined links, small blue initials stamp, and illustrations that arrive as full-bleed moments between blocks of writing.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/b8fd5772-ac2b-4bfd-b5e5-d182261b09c5",
   "source_url": "https://destroytoday.com",
   "extracted_at": "2026-06-03T18:52:26.754Z",

@@ -4,6 +4,11 @@
   "name": "Shade",
   "tagline": "Editorial paper cutouts on white",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/e549766e-b8b1-48a2-bd72-8cc04e9e4e9d",
   "source_url": "https://shade.inc",
   "extracted_at": "2026-06-03T19:20:48.350Z",

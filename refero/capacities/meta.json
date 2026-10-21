@@ -4,6 +4,11 @@
   "name": "Capacities",
   "tagline": "Capacities - sunlit desk of ideas. Build pages as an open white workspace where connected notes drift around one central thought.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/586b97ac-f687-46ba-bbf7-31031cfcc110",
   "source_url": "https://capacities.io",
   "extracted_at": "2026-09-24T17:33:59.887Z",

@@ -4,6 +4,11 @@
   "name": "Claude",
   "tagline": "Warm parchment printed artifact \u2014 ink on bone paper, clay as the only chromatic breath.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/47cb86b6-cb2d-41c8-94ba-8607cd7c41cd",
   "source_url": "https://claude.ai",
   "extracted_at": "2026-07-03T03:15:32.032Z",

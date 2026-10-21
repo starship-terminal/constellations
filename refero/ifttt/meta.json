@@ -4,6 +4,12 @@
   "name": "IFTTT",
   "tagline": "Editorial darkroom with neon service tiles. A near-black gallery wall where each connected app brings its own paint.",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/635b7769-7517-48ac-bb95-2ad7fa337e54",
   "source_url": "https://ifttt.com",
   "extracted_at": "2026-06-03T22:04:39.318Z",

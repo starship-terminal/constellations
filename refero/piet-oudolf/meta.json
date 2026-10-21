@@ -4,6 +4,11 @@
   "name": "Piet Oudolf",
   "tagline": "Botanical index on white paper.\nA field guide to gardens, set in light type with the restraint of a museum wall label.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/3cc1d30c-3b08-48af-bbf0-df195d77835f",
   "source_url": "https://oudolf.com",
   "extracted_at": "2026-06-03T21:03:23.292Z",

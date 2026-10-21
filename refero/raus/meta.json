@@ -4,6 +4,11 @@
   "name": "Raus",
   "tagline": "Warm cabin journal on cream paper \u2014 every page a postcard from the woods.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/d28732de-1b7a-4d37-b7aa-edfa7caf428b",
   "source_url": "https://www.raus.life",
   "extracted_at": "2026-06-03T16:50:55.593Z",

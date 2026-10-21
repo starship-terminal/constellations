@@ -4,6 +4,11 @@
   "name": "Glitch Blog",
   "tagline": "Neon zine on white paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/8472cc85-e4fa-4011-b742-1b9fc7966d76",
   "source_url": "https://glitch.com",
   "extracted_at": "2026-06-03T19:55:05.942Z",

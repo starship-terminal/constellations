@@ -4,6 +4,12 @@
   "name": "Aptos Network",
   "tagline": "Earth-toned code atelier \u2014 a sage-walled observatory where terracotta, sand, and powder-blue panels hold monospaced code beside serif prose, framed by 1px ink hairlines.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/9a23d457-a23a-404a-9f75-12007ea7eb0f",
   "source_url": "https://aptosnetwork.com",
   "extracted_at": "2026-06-03T20:32:43.159Z",

@@ -4,6 +4,11 @@
   "name": "Dub",
   "tagline": "frosted link dashboard on rice paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
   "source_url": "https://dub.co",
   "extracted_at": "2026-07-03T03:35:52.880Z",

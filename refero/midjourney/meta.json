@@ -4,6 +4,12 @@
   "name": "Midjourney",
   "tagline": "Deep-ocean bioluminescent terminal. A pressurized darkness where intelligence visibly generates itself in ASCII streams, and controls appear as faintly glowing specimens.",
   "theme": "dark",
+  "product_type": "ai-media",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/225059ac-0450-49d3-b2b7-d0e98b7ae938",
   "source_url": "https://midjourney.com",
   "extracted_at": "2026-04-11T18:05:53.023Z",

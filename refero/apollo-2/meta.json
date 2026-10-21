@@ -4,6 +4,11 @@
   "name": "Apollo",
   "tagline": "Warm brick atelier at golden hour",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/5fbdad0a-d102-41c2-8253-f201ad6a6673",
   "source_url": "https://apolloworkspace.com",
   "extracted_at": "2026-06-03T17:48:32.670Z",

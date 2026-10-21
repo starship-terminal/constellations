@@ -4,6 +4,11 @@
   "name": "Asana",
   "tagline": "Productivity whiteboard lit by a coral lamp \u2014 authoritative black type on a breathing white field, with a warm coral flash and a deep-navy flicker to signal where action lives.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/6b2a0513-df80-4140-87a8-38b1fef34313",
   "source_url": "https://asana.com",
   "extracted_at": "2026-04-11T19:03:30.181Z",

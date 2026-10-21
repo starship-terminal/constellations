@@ -4,6 +4,11 @@
   "name": "Automate Supplier Payments",
   "tagline": "butcher paper bakery ledger.\n\nA cream-colored, sun-warmed workspace where thick slab type, pill buttons, and a single school-bus yellow accent do all the work \u2014 no shadows, no gradients, just warm paper and confident black ink.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/dfbcffc2-79a3-4349-b5c6-1aa9fae4fcf4",
   "source_url": "https://getapron.com",
   "extracted_at": "2026-06-03T17:14:05.621Z",

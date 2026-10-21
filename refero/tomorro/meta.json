@@ -4,6 +4,12 @@
   "name": "Tomorro",
   "tagline": "lush greenhouse at midnight \u2014 Electric Sprout neon pierces the deep forest canvas and bone-white beds below. The brand lives in that contrast: the dark is the soil, the light is the greenhouse bench, the green is the growth.",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "organic",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/bc7458ba-6b81-4f3e-ab5a-4126ee1eaf80",
   "source_url": "https://www.gotomorro.com",
   "extracted_at": "2026-06-03T18:23:12.893Z",

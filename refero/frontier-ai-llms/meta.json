@@ -4,6 +4,11 @@
   "name": "Frontier AI LLMs",
   "tagline": "warm parchment with a campfire heart",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/d3caa7bf-2e2e-489a-845d-5cab274e7a92",
   "source_url": "https://mistral.ai",
   "extracted_at": "2026-06-03T17:45:40.193Z",

@@ -4,6 +4,11 @@
   "name": "Wizz",
   "tagline": "Neon pink highlighter on a black-and-white editorial \u2014 like a single fluorescent mark on a fashion magazine spread.",
   "theme": "light",
+  "product_type": "social",
+  "design_style": "editorial",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/408d0b89-be7d-4a09-bc29-8a8ce13d0a7b",
   "source_url": "https://wizzapp.com",
   "extracted_at": "2026-06-03T22:02:37.017Z",

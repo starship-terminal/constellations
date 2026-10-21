@@ -4,6 +4,11 @@
   "name": "ALIGNE",
   "tagline": "editorial spec sheet on warm charcoal",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/4c637873-7632-46c0-ac36-5744efa00444",
   "source_url": "https://aligne.co",
   "extracted_at": "2026-06-03T20:09:31.620Z",

@@ -4,6 +4,12 @@
   "name": "WRITER",
   "tagline": "editorial AI atelier \u2014 a white marble newsroom where pill-shaped controls and a single violet accent turn enterprise software into confident editorial design",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "editorial",
+  "tags": [
+    "minimal",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/ddd9ffaa-d831-4cb4-a5bf-a1efce421dca",
   "source_url": "https://writer.com",
   "extracted_at": "2026-06-03T17:30:50.573Z",

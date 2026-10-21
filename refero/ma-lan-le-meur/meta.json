@@ -4,6 +4,11 @@
   "name": "Ma\u00eblan Le Meur",
   "tagline": "Museum wall, warm parchment and tobacco \u2014 a portfolio printed on bone-colored paper with ink-black display type and deep umber chapter breaks.",
   "theme": "mixed",
+  "product_type": "portfolio",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/ea0d7b5a-c887-4b6b-9260-6ca4d1fd7caa",
   "source_url": "https://maelanlemeur.com",
   "extracted_at": "2026-06-03T21:08:28.717Z",

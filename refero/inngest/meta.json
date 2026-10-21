@@ -4,6 +4,12 @@
   "name": "Inngest",
   "tagline": "Warm-black observatory \u2014 quiet, instrument-grade, lit by a single amber pilot light",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/62e8e59e-17a5-4eba-a6c6-1c7f67ded518",
   "source_url": "https://inngest.com",
   "extracted_at": "2026-06-03T16:18:24.048Z",

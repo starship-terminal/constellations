@@ -4,6 +4,11 @@
   "name": "Letterboxd",
   "tagline": "Darkened cinema lobby with neon rating glow",
   "theme": "dark",
+  "product_type": "media",
+  "design_style": "neon",
+  "tags": [
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/d98dea0b-00a4-4c15-b4a9-d196e2c3e4b4",
   "source_url": "https://letterboxd.com",
   "extracted_at": "2026-06-03T18:53:40.862Z",

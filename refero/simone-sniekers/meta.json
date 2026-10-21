@@ -4,6 +4,11 @@
   "name": "Simone Sniekers",
   "tagline": "A single editorial photograph breathes behind whisper-thin black captions \u2014 the image does all the work, the UI almost disappears.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/017ce823-c338-417d-849d-497c97701c4c",
   "source_url": "https://www.simonesniekers.com",
   "extracted_at": "2026-06-03T20:09:15.893Z",

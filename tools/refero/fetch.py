@@ -69,7 +69,10 @@ CREATE TABLE IF NOT EXISTS styles (
   video_poster_url TEXT,
   video_detail_url TEXT,
   video_detail_poster_url TEXT,
-  media_fetched_at TEXT
+  media_fetched_at TEXT,
+  product_type TEXT,
+  design_style TEXT,
+  tags TEXT
 );
 CREATE TABLE IF NOT EXISTS fetch_errors (
   uuid TEXT PRIMARY KEY,
@@ -87,6 +90,9 @@ RESULT_KEY = '"result":{'
 # Added after the initial schema shipped; init_db() ALTERs existing DBs.
 MEDIA_COLUMNS = ["video_url", "video_poster_url", "video_detail_url",
                  "video_detail_poster_url", "media_fetched_at"]
+
+# Label columns are written by tools/refero/classify.py, not by the fetch pass.
+LABEL_COLUMNS = ["product_type", "design_style", "tags"]
 
 # Media fields live in the raw page as escaped JSON inside __next_f.push
 # strings, e.g.  \"previewVideoUrl\":\"https://images.refero.design/...\".
@@ -227,7 +233,7 @@ def init_db():
     db = sqlite3.connect(DB)
     db.executescript(SCHEMA)
     have = {r[1] for r in db.execute("PRAGMA table_info(styles)")}
-    for col in MEDIA_COLUMNS:
+    for col in MEDIA_COLUMNS + LABEL_COLUMNS:
         if col not in have:
             db.execute(f"ALTER TABLE styles ADD COLUMN {col} TEXT")
     db.commit()
@@ -307,6 +313,13 @@ def cmd_fetch(args):
             ds = result.get("designSystem") or {}
             name = name or uuid
             slug = unique_slug(db, name, uuid)
+            # A refetch must not erase labels classify.py or a human already set.
+            old = db.execute(
+                "SELECT product_type, design_style, tags FROM styles WHERE uuid=?",
+                (uuid,)).fetchone()
+            labels = {"product_type": old[0], "design_style": old[1],
+                      "tags": json.loads(old[2] or "[]")} if old and old[0] \
+                     else {"product_type": None, "design_style": None, "tags": []}
             (WORK / f"{uuid}.json").write_text(json.dumps(result))
             outdir = REFERO / slug
             outdir.mkdir(exist_ok=True)
@@ -318,6 +331,7 @@ def cmd_fetch(args):
                 "name": name,
                 "tagline": ds.get("northStar"),
                 "theme": ds.get("theme"),
+                **labels,
                 "page_url": url,
                 "source_url": meta.get("url"),
                 "extracted_at": meta.get("extractedAt"),
@@ -331,14 +345,16 @@ def cmd_fetch(args):
                    (uuid, slug, name, tagline, page_url, source_url, theme,
                     extracted_at, fetched_at, design_md, result_json, screenshot_url,
                     video_url, video_poster_url, video_detail_url,
-                    video_detail_poster_url, media_fetched_at)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                    video_detail_poster_url, media_fetched_at,
+                    product_type, design_style, tags)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                 (uuid, slug, name, meta_obj["tagline"], url, meta_obj["source_url"],
                  meta_obj["theme"], meta_obj["extracted_at"], meta_obj["fetched_at"],
                  design_md, json.dumps(result), meta_obj["screenshot_url"],
                  media["video_url"], media["video_poster_url"],
                  media["video_detail_url"], media["video_detail_poster_url"],
-                 meta_obj["fetched_at"]))
+                 meta_obj["fetched_at"], meta_obj["product_type"],
+                 meta_obj["design_style"], json.dumps(meta_obj["tags"])))
             db.commit()
             fetched += 1
             if fetched % 50 == 0:
@@ -441,7 +457,8 @@ def cmd_catalog():
     db = init_db()
     rows = db.execute(
         """SELECT slug, name, tagline, uuid, page_url, source_url, theme,
-                  extracted_at, fetched_at FROM styles ORDER BY name""").fetchall()
+                  extracted_at, fetched_at, product_type, design_style, tags
+           FROM styles ORDER BY name""").fetchall()
     catalog = {
         "version": 1,
         "about": "Snapshot of styles.refero.design — third-party interpreted "
@@ -452,8 +469,9 @@ def cmd_catalog():
         "styles": [
             {"slug": s, "name": n, "tagline": t, "uuid": u,
              "page_url": p, "source_url": su, "theme": th,
+             "product_type": pt, "design_style": st, "tags": json.loads(tg or "[]"),
              "extracted_at": ea, "fetched_at": fa}
-            for s, n, t, u, p, su, th, ea, fa in rows
+            for s, n, t, u, p, su, th, ea, fa, pt, st, tg in rows
         ],
     }
     (REFERO / "catalog.json").write_text(json.dumps(catalog, indent=2) + "\n")

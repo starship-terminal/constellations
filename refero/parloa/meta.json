@@ -4,6 +4,11 @@
   "name": "Parloa",
   "tagline": "warm editorial paper with ink and highlighter",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/c90e63f8-76c1-4159-9460-29e0d18751ae",
   "source_url": "https://www.parloa.com",
   "extracted_at": "2026-06-03T19:26:16.141Z",

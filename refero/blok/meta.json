@@ -4,6 +4,12 @@
   "name": "Blok",
   "tagline": "Swiss showroom on teal-tinted paper",
   "theme": "mixed",
+  "product_type": "commerce",
+  "design_style": "swiss",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/7d10f1d6-f2a8-43ce-b055-6ddd74e3c7e1",
   "source_url": "https://blokwatches.com",
   "extracted_at": "2026-06-03T21:14:21.425Z",

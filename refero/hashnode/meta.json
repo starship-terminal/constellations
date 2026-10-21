@@ -4,6 +4,11 @@
   "name": "Hashnode",
   "tagline": "Editorial newsroom on a gray runway \u2014 a clean monochrome feed where one electric blue accent carries all the energy.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/6a8bf4c2-8cf2-463a-bcb9-36c15ea177c2",
   "source_url": "https://hashnode.com",
   "extracted_at": "2026-06-03T20:47:55.284Z",

@@ -4,6 +4,12 @@
   "name": "Klim",
   "tagline": "typographic gallery in a black box \u2014 a curator's vitrina where each specimen hangs in its own dark band",
   "theme": "mixed",
+  "product_type": "design-resource",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/0dad8530-9422-4d9e-8622-1f50ee4bc702",
   "source_url": "https://klim.co.nz",
   "extracted_at": "2026-06-03T21:59:28.904Z",

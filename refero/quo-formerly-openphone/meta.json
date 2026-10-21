@@ -4,6 +4,11 @@
   "name": "Quo (formerly OpenPhone)",
   "tagline": "highlighter on newsprint \u2014 a single chartreuse stroke against stark black-and-white editorial layout.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/792089e6-c045-498c-8ba1-48d72c206c66",
   "source_url": "https://www.openphone.com",
   "extracted_at": "2026-06-03T20:16:46.998Z",

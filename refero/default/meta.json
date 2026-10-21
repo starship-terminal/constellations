@@ -4,6 +4,11 @@
   "name": "Default",
   "tagline": "Mission control behind frosted glass \u2014 weight 400 headlines float over matte-black panels lit by thin blue ring-light accents.",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/eeeb6ac9-fc07-4965-935a-e1989ed831f1",
   "source_url": "https://www.default.com",
   "extracted_at": "2026-07-03T03:25:49.096Z",

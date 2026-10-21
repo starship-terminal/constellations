@@ -4,6 +4,11 @@
   "name": "Petertarka",
   "tagline": "curated gallery on warm concrete \u2014 every card a framed print, every margin deliberate, every type weight a whisper",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/40a590a3-1f0d-41ab-9c39-30adf86dd400",
   "source_url": "https://petertarka.com",
   "extracted_at": "2026-06-03T21:25:42.998Z",

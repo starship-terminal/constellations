@@ -4,6 +4,12 @@
   "name": "Woset",
   "tagline": "paper gallery in morning light \u2014 a quiet, warm-gray room where one golden accent is the only color allowed on the walls.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "paper",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/430813c0-f0c7-434f-92ef-d3a0780ba734",
   "source_url": "https://www.woset.world",
   "extracted_at": "2026-06-03T17:43:16.733Z",

@@ -4,6 +4,12 @@
   "name": "Isla Beauty",
   "tagline": "Cream apothecary with surgical red accents \u2014 think warm parchment walls, amber bottles, and a single red seal on every label.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "luxury",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/0b9da6ef-bec5-4073-90af-66c67e72f2a4",
   "source_url": "https://isla-beauty.com",
   "extracted_at": "2026-06-03T19:33:49.432Z",

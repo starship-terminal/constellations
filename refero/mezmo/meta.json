@@ -4,6 +4,11 @@
   "name": "Mezmo",
   "tagline": "observatory at dawn",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/691e7b4e-fee9-4f08-a2e9-9a2742c22b7b",
   "source_url": "https://www.mezmo.com",
   "extracted_at": "2026-06-03T21:31:54.359Z",

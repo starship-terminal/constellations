@@ -4,6 +4,12 @@
   "name": "Midday",
   "tagline": "Editorial broadsheet on parchment \u2014 a 72px serif headline over warm stone, spaced sans-serif body text, pill-shaped controls, zero shadows.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/3f2b79c1-d980-4380-a903-29856975fc37",
   "source_url": "https://midday.ai",
   "extracted_at": "2026-06-03T17:01:00.411Z",

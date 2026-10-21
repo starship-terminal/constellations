@@ -4,6 +4,11 @@
   "name": "Getanchor",
   "tagline": "Warm terracotta on sun-bleached cream.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/51734338-9046-47eb-a595-77ffa37b4725",
   "source_url": "https://www.getanchor.ai",
   "extracted_at": "2026-06-03T21:43:43.190Z",

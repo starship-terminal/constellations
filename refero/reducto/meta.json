@@ -4,6 +4,11 @@
   "name": "Reducto",
   "tagline": "Magazine on warm paper",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/af55f85e-1c82-44c1-a8d0-32634bfa6296",
   "source_url": "https://reducto.ai",
   "extracted_at": "2026-06-03T19:57:55.685Z",

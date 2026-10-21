@@ -4,6 +4,11 @@
   "name": "Postevand",
   "tagline": "editorial gallery on bone paper",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/76bfda6b-125f-4d9b-96c0-356de1e9fc10",
   "source_url": "https://postevand.com",
   "extracted_at": "2026-06-03T20:07:27.786Z",

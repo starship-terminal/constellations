@@ -4,6 +4,11 @@
   "name": "Depot",
   "tagline": "Dark server-rack terminal. A near-black developer console where one green LED signals action and the rest of the UI whispers in graphite.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/f4636c5b-1342-48b2-b9b1-a82e2182440e",
   "source_url": "https://depot.dev",
   "extracted_at": "2026-06-03T19:57:10.436Z",

@@ -4,6 +4,11 @@
   "name": "Art In DUMBO",
   "tagline": "gallery broadside on raw paper",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/5d79f0c2-526e-4c37-b780-08404f60839b",
   "source_url": "https://artindumbo.com",
   "extracted_at": "2026-06-03T21:22:27.634Z",

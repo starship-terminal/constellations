@@ -4,6 +4,11 @@
   "name": "Vapi",
   "tagline": "Neon spectrogram across midnight concrete",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/bab34295-03fc-4993-ae42-b440fe78647b",
   "source_url": "https://vapi.ai",
   "extracted_at": "2026-06-03T20:59:12.863Z",

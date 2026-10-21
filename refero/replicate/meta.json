@@ -4,6 +4,11 @@
   "name": "Replicate",
   "tagline": "Golden hour API workshop",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/71c21f97-ba85-4439-b259-198a66f4b3d2",
   "source_url": "https://replicate.com",
   "extracted_at": "2026-06-03T18:10:30.093Z",

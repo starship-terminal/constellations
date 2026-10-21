@@ -4,6 +4,12 @@
   "name": "Syllabus",
   "tagline": "cream-paper magazine meets geometric sans-serif. Warm off-white surfaces, near-black violet ink, and one buttery yellow accent that functions as the page's only raised voice \u2014 like a sticky note pressed onto fine stationery.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/b78edcaa-6754-41d7-ac00-0119b41ad88a",
   "source_url": "https://syllabus.io",
   "extracted_at": "2026-06-03T16:53:22.258Z",

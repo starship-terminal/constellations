@@ -4,6 +4,11 @@
   "name": "Microsoft AI",
   "tagline": "old library at golden hour",
   "theme": "mixed",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/46781641-8afd-4b01-9f67-06046b6eda71",
   "source_url": "https://microsoft.ai",
   "extracted_at": "2026-06-03T15:50:27.167Z",

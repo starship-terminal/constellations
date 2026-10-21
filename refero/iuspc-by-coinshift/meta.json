@@ -4,6 +4,12 @@
   "name": "iUSPC by Coinshift",
   "tagline": "Midnight trading floor \u2014 cold slate surfaces, a single ember pilot light, and grid lines drawn on darkness.",
   "theme": "dark",
+  "product_type": "fintech",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/46bca11b-6920-4d70-8dd7-c4e3dbc123c7",
   "source_url": "https://www.coinshift.xyz",
   "extracted_at": "2026-06-03T21:17:51.997Z",

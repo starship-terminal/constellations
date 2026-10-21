@@ -4,6 +4,11 @@
   "name": "Circle",
   "tagline": "Aurora-lit mission control in deep midnight. A near-black indigo page glows from the center outward, cradling a single white product panel like a lit window in a planetarium.",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "futuristic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/ab8450d9-1b42-4395-aa24-9e277f021aa1",
   "source_url": "https://www.circle.so",
   "extracted_at": "2026-06-03T18:02:03.287Z",

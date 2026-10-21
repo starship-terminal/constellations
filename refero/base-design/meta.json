@@ -4,6 +4,11 @@
   "name": "Base Design",
   "tagline": "Monochrome art book unbound \u2014 two-tone editorial monolith with documentary bleed photography and zero chromatic accent",
   "theme": "mixed",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/6be758be-344f-4301-8ff9-60706356ea00",
   "source_url": "https://www.basedesign.com",
   "extracted_at": "2026-06-03T22:36:15.188Z",

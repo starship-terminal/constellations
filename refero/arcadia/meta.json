@@ -4,6 +4,11 @@
   "name": "Arcadia",
   "tagline": "forest observatory at dawn \u2014 deep evergreen authority on warm cream paper, one mint LED accent and pale violet data orbs suspended in soft morning light.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/b52981ce-fdb2-4ba0-86bb-f5ce0c27a9c6",
   "source_url": "https://www.arcadia.com",
   "extracted_at": "2026-06-03T17:55:35.725Z",

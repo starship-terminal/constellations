@@ -4,6 +4,11 @@
   "name": "Splice",
   "tagline": "midnight recording studio \u2014 a dark, weightless space where the only thing that ever gets loud is the music.",
   "theme": "dark",
+  "product_type": "entertainment",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/1f69df96-675d-4ee0-aa85-e085d9d39981",
   "source_url": "https://splice.com",
   "extracted_at": "2026-06-03T19:54:10.025Z",

@@ -4,6 +4,11 @@
   "name": "Cosmos",
   "tagline": "Linen gallery wall with floating polaroids",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/eb804e3a-1b75-446c-8374-114bbabaf0cd",
   "source_url": "https://cosmos.so",
   "extracted_at": "2026-06-03T17:19:29.348Z",

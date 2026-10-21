@@ -4,6 +4,12 @@
   "name": "OpenSea",
   "tagline": "Black trading terminal with frosted blue wireframes.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "monochrome",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/61f1902f-6da3-4af7-b046-3b08bc1377f6",
   "source_url": "https://opensea.io",
   "extracted_at": "2026-06-03T16:30:06.467Z",

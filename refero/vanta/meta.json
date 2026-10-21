@@ -4,6 +4,11 @@
   "name": "Vanta",
   "tagline": "Editorial violet ledger on parchment",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/6b4c8ca5-476e-442b-b713-d5fc58cf04ac",
   "source_url": "https://www.vanta.com",
   "extracted_at": "2026-06-03T17:29:52.183Z",

@@ -4,6 +4,12 @@
   "name": "Jitter",
   "tagline": "kinetic playground in a Swiss design studio \u2014 soft white surfaces, pill-shaped cards, and a violet spark firing on near-black ink.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "swiss",
+  "tags": [
+    "minimal",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/ab1e41e9-7d21-4762-b498-51b8c63ae7ce",
   "source_url": "https://jitter.video",
   "extracted_at": "2026-06-03T19:36:31.987Z",

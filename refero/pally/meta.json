@@ -4,6 +4,12 @@
   "name": "Pally",
   "tagline": "violet signals in a dark void. A single white pill floats in a near-black observatory, with the product's purple glass UI glowing softly below like an instrument panel lit from within.",
   "theme": "dark",
+  "product_type": "productivity",
+  "design_style": "futuristic",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/029d3ce0-0fe5-4a8c-99c4-4f9d704f1c60",
   "source_url": "https://www.pally.com",
   "extracted_at": "2026-06-03T17:13:22.544Z",

@@ -4,6 +4,11 @@
   "name": "Hatch",
   "tagline": "Hand-drawn zine meets pastel candy store. A cream-paper canvas splashed with mint highlights, confetti dots, and pill-shaped CTAs, where a chunky bold serif whispers fun and a blue mascot winks from the corner.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "playful",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/e1afed53-6854-40dd-8157-dfc1dd3505f0",
   "source_url": "https://www.hatch.fm",
   "extracted_at": "2026-06-03T18:38:37.954Z",

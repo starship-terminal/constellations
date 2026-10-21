@@ -4,6 +4,12 @@
   "name": "Uniswap",
   "tagline": "Pink confetti over a clean white trading desk.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "minimal",
+  "tags": [
+    "playful",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/b0cb2465-ad7b-4657-a2e4-b8c793355cd3",
   "source_url": "https://app.uniswap.org",
   "extracted_at": "2026-06-03T21:04:44.163Z",

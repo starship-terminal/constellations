@@ -4,6 +4,11 @@
   "name": "Factory",
   "tagline": "Terminal war room at midnight. Factory is a stark black control surface where a single white card lands like a flashlit dispatch \u2014 the only object in the room is the work itself.",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/13d6fc89-eba2-4724-ac37-20f4f2e5efec",
   "source_url": "https://factory.ai",
   "extracted_at": "2026-07-03T03:18:23.580Z",

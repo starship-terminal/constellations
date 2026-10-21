@@ -4,6 +4,11 @@
   "name": "SuperHi Plus",
   "tagline": "Cobalt blueprint scattered with emoji marbles. The page lives half in electric blue, half in ice white, swapping sides as you scroll.",
   "theme": "dark",
+  "product_type": "education",
+  "design_style": "futuristic",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/a1f9e844-c4b6-4526-9cfc-81208c50aee1",
   "source_url": "https://superhi.plus",
   "extracted_at": "2026-06-03T21:13:55.418Z",

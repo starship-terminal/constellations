@@ -4,6 +4,12 @@
   "name": "Moonli",
   "tagline": "Electric lime on white canvas \u2014 one vivid room carved out of monochrome space, framed by generous rounded edges.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "minimal",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/74be1036-f867-4cee-959a-a9a9129111c0",
   "source_url": "https://moonli.me",
   "extracted_at": "2026-06-03T20:18:39.108Z",

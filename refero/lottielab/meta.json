@@ -4,6 +4,11 @@
   "name": "Lottielab",
   "tagline": "Animation studio on bright paper",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/1f782141-d407-4c27-8cee-2246720a9f42",
   "source_url": "https://www.lottielab.com",
   "extracted_at": "2026-06-03T22:00:45.937Z",

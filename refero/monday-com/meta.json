@@ -4,6 +4,12 @@
   "name": "monday.com",
   "tagline": "white workshop with pastel sticky notes",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "playful",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/77ee57e9-9f8e-4ec1-93f7-cc1c4b84307a",
   "source_url": "https://monday.com",
   "extracted_at": "2026-06-03T16:47:38.617Z",

@@ -4,6 +4,11 @@
   "name": "Skillshare",
   "tagline": "Poster studio on matte black \u2014 bold instructor faces, chalk-white type, single neon pulse.",
   "theme": "mixed",
+  "product_type": "education",
+  "design_style": "maximalist",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/162e9ba9-7487-4b57-aee8-0bbeadcc586d",
   "source_url": "https://skillshare.com",
   "extracted_at": "2026-04-11T19:16:57.861Z",

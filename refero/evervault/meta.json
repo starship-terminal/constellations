@@ -4,6 +4,12 @@
   "name": "Evervault",
   "tagline": "Encrypted vault behind ultraviolet light \u2014 a dark crypt where one violet beam reveals everything.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "neon",
+  "tags": [
+    "minimal",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/03dcd158-bc4d-447b-aaf2-8e522671a109",
   "source_url": "https://evervault.com",
   "extracted_at": "2026-06-03T20:48:08.220Z",

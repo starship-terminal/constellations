@@ -4,6 +4,12 @@
   "name": "Cake Equity",
   "tagline": "founder's command center on warm bone-white, electric violet switches, chartreuse receipts",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "technical",
+  "tags": [
+    "playful",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/4c33d8fe-81d5-46cb-9dc1-dd231be1c9ec",
   "source_url": "https://www.cakeequity.com",
   "extracted_at": "2026-06-03T18:13:36.941Z",

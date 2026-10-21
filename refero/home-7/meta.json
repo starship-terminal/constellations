@@ -4,6 +4,12 @@
   "name": "Home",
   "tagline": "Swiss broadsheet behind a highlighter pen",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "swiss",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/657e55de-8cff-4d24-9a4e-17d3b7593a55",
   "source_url": "https://traffic.productions",
   "extracted_at": "2026-06-03T18:12:30.569Z",

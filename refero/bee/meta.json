@@ -4,6 +4,12 @@
   "name": "Bee",
   "tagline": "Sunlit honey-yellow talisman. Build each screen as a tactile editorial spread: intimate wrist-worn product imagery contained in generously rounded frames beside bold, near-black type on yellow or pale neutral fields.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/84a0fc5e-3610-4c10-a922-7848daa68b92",
   "source_url": "https://www.bee.computer",
   "extracted_at": "2026-09-20T19:29:54.519Z",

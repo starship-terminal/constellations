@@ -4,6 +4,11 @@
   "name": "bella Kitchen Appliances",
   "tagline": "Sunlit kitchen counter at golden hour \u2014 warm cream surfaces with a single pop of coral.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "organic",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/e327d332-270d-4779-a55c-cd82b8624d2a",
   "source_url": "https://bellakitchenware.com",
   "extracted_at": "2026-06-03T17:39:42.820Z",

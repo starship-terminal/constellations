@@ -4,6 +4,12 @@
   "name": "Woven",
   "tagline": "Ink on cream parchment. A distiller's editorial spread where warm cream canvases, a single dark ink color, and wide-tracked uppercase type create the only visual structure; product photography provides all the color.",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/76483bd1-37d3-4fb9-889b-aecf27b08b83",
   "source_url": "https://wovenwhisky.com",
   "extracted_at": "2026-06-03T20:46:50.721Z",

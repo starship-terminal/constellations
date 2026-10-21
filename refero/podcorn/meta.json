@@ -4,6 +4,11 @@
   "name": "Podcorn",
   "tagline": "Indie magazine spread on warm blush paper. A cream canvas carrying deep-indigo editorial typography, hand-drawn illustrations framed in hairline rectangles, and a single coral button as the only warm mark on the page.",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/8d4b0738-c302-45c6-98c9-b3cd36e04613",
   "source_url": "https://podcorn.com",
   "extracted_at": "2026-06-03T20:17:13.707Z",

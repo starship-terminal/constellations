@@ -4,6 +4,11 @@
   "name": "Podia",
   "tagline": "Warm papercraft afternoon. Organic blob shapes float across a matte white canvas in terracotta, lavender, and dusty blue, framing compressed geometric headlines and generous colored product cards.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "playful",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/342f1c3b-a123-49b6-a980-3491bc7793db",
   "source_url": "https://www.podia.com",
   "extracted_at": "2026-06-03T16:59:00.804Z",

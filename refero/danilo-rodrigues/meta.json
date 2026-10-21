@@ -4,6 +4,11 @@
   "name": "Danilo Rodrigues",
   "tagline": "Neon flare in a black void \u2014 a single oversized lime disc burning against a perfectly black page, with white type drifting around it like caption text on a gallery wall.",
   "theme": "dark",
+  "product_type": "portfolio",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/0d68dc70-15ec-494a-855d-fdb6a4e7c982",
   "source_url": "https://danilorodrigues.com",
   "extracted_at": "2026-06-03T20:29:10.776Z",

@@ -4,6 +4,12 @@
   "name": "Monad",
   "tagline": "editorial tech journal on warm parchment",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
   "source_url": "https://www.monad.com",
   "extracted_at": "2026-07-03T03:11:40.065Z",

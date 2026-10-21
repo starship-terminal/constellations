@@ -4,6 +4,11 @@
   "name": "Amie",
   "tagline": "Sunlit productivity dashboard \u2014 a workspace where everything is white, flat, and purposeful, with one electric-blue switch that turns things on.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/29567671-da1e-4f85-ae52-8b611fecc384",
   "source_url": "https://amie.so",
   "extracted_at": "2026-04-29T21:01:53.656Z",

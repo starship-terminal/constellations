@@ -4,6 +4,11 @@
   "name": "Apple",
   "tagline": "Bronze sensor in darkness. Treat the watch hardware and its health readings as illuminated objects suspended in a near-black gallery.",
   "theme": "dark",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/375e255f-6e7b-4091-bf73-6df42a094263",
   "source_url": "https://www.apple.com/apple-watch-series-12",
   "extracted_at": "2026-09-20T21:34:21.942Z",

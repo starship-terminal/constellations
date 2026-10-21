@@ -4,6 +4,11 @@
   "name": "ARKET",
   "tagline": "Scandinavian white gallery. Full-bleed photography on bone-white canvases, hairline rules, and a small-caps monospace labeling each section like a museum wall tag.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/3c605c8e-daf2-4d46-94d7-2cb705a93b7b",
   "source_url": "https://arket.com",
   "extracted_at": "2026-06-03T18:04:39.057Z",

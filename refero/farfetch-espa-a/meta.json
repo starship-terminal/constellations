@@ -4,6 +4,11 @@
   "name": "FARFETCH Espa\u00f1a",
   "tagline": "White-cube fashion gallery. Imagine a high-end retail space where the walls, floors, and fixtures have been bleached to bone, leaving only the garments and the people wearing them to provide every hue, texture, and visual weight.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/600002c5-c5f5-4df0-adf6-6324ee6255c0",
   "source_url": "https://farfetch.com",
   "extracted_at": "2026-06-03T17:15:01.137Z",

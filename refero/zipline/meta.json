@@ -4,6 +4,11 @@
   "name": "Zipline",
   "tagline": "open meadow in morning light",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "minimal",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/4a248569-2b5a-4416-bb2a-c78890218b9f",
   "source_url": "https://www.zipline.com",
   "extracted_at": "2026-06-03T19:20:24.152Z",

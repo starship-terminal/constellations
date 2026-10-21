@@ -4,6 +4,11 @@
   "name": "Craft Docs",
   "tagline": "Digital Scrapbook Collage. The design feels like a thoughtful, tactile scrapbook where structured digital notes meet soft, organic textures.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/9f228e72-997a-4410-9190-68359028e3d0",
   "source_url": "https://craft.do",
   "extracted_at": "2026-04-11T17:34:08.934Z",

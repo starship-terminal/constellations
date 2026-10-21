@@ -4,6 +4,11 @@
   "name": "ProtoPie",
   "tagline": "sunlit prototyping workshop with violet ink \u2014 a designer's clean white drafting table where one electric purple pencil marks every interactive idea.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/031302e5-3269-4735-ab56-d4c7d02edc01",
   "source_url": "https://protopie.io",
   "extracted_at": "2026-06-03T20:40:15.784Z",

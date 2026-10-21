@@ -4,6 +4,12 @@
   "name": "Privy",
   "tagline": "ink-on-marble editorial spread. White marble canvas, black serif headlines compressed tight, a single violet banner cutting across the top \u2014 restraint as authority.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "editorial",
+  "tags": [
+    "luxury",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/78d9ece2-9033-479a-997a-ede94fc87fda",
   "source_url": "https://www.privy.io",
   "extracted_at": "2026-06-03T17:57:47.222Z",

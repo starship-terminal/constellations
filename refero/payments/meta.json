@@ -4,6 +4,11 @@
   "name": "Payments",
   "tagline": "zesty citrus on royal violet. Deep electric purple acts as the night sky while lemon-yellow accents spark like fresh citrus zest across a clean white surface.",
   "theme": "mixed",
+  "product_type": "fintech",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/123a15b8-4e17-4812-83ec-899cce45db5b",
   "source_url": "https://lemonsqueezy.com",
   "extracted_at": "2026-06-03T18:46:23.577Z",

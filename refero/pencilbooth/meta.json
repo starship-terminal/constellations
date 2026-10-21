@@ -4,6 +4,11 @@
   "name": "PencilBooth",
   "tagline": "Monochrome broadsheet manifesto. PencilBooth looks like a typographic broadsheet laid flat on a gallery wall \u2014 enormous display type anchoring two-column reading rows, hairline rules separating sections, and a single deep-navy accent breaking the gray silence only when a state is active.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/47b15ce2-34c8-46e3-b2de-f7eed0b6a3b9",
   "source_url": "https://www.pencilbooth.com",
   "extracted_at": "2026-06-03T21:33:43.238Z",

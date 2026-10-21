@@ -4,6 +4,11 @@
   "name": "Ameba",
   "tagline": "Midnight control room \u2014 electric blue pulse inside frosted glass panels.",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/371df039-a090-402b-b2e4-21ab38e07625",
   "source_url": "https://www.ameba.ai",
   "extracted_at": "2026-06-03T17:28:13.420Z",

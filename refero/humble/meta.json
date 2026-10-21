@@ -4,6 +4,12 @@
   "name": "Humble",
   "tagline": "architect's broadsheet with safety-orange punctuation \u2014 a flat warm-white page where one vivid orange mark carries the entire brand voice.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "swiss",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/a6950b49-8ce4-4330-9499-26ca08061599",
   "source_url": "https://humbleops.ai",
   "extracted_at": "2026-06-03T15:26:21.086Z",

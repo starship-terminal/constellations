@@ -4,6 +4,11 @@
   "name": "Quin",
   "tagline": "warm cream notebook with stamped yellow ink",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/5dc8ca28-26fe-41f2-979a-cda2669c262a",
   "source_url": "https://www.heyquin.io",
   "extracted_at": "2026-06-03T22:07:21.905Z",

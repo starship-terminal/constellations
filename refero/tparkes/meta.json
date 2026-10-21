@@ -4,6 +4,12 @@
   "name": "Tparkes",
   "tagline": "Editorial broadsheet on white. A four-word image: a designer typesetting their own name at 86px and lets the page breathe around it.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "editorial",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/a21cf7a4-80e0-4f4a-9297-823a5180c2d3",
   "source_url": "https://www.tparkes.com",
   "extracted_at": "2026-06-03T21:13:38.288Z",

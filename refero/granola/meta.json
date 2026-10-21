@@ -4,6 +4,12 @@
   "name": "Granola",
   "tagline": "Field notes on warm parchment \u2014 Granola reads like a well-worn Moleskine open on a sunlit desk: serifed headlines with editorial gravity, organic green accents like ink from a plant-based pen, and hairline-ruled card borders that suggest hand-drawn note margins.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/d6c2a911-45ed-4860-a992-43df22793c2a",
   "source_url": "https://www.granola.ai",
   "extracted_at": "2026-05-07T22:41:01.983Z",

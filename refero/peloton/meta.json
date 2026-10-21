@@ -4,6 +4,11 @@
   "name": "Peloton",
   "tagline": "Red beacon on charcoal runway. A fitness showroom where one electric red CTA cuts through vast dark exhibition space into clean white product galleries.",
   "theme": "mixed",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/355e8465-df7d-486a-9d76-2ace37d076a2",
   "source_url": "https://onepeloton.com",
   "extracted_at": "2026-06-03T19:03:37.207Z",

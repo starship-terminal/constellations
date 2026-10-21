@@ -4,6 +4,11 @@
   "name": "Gsap",
   "tagline": "animated chalkboard in a design studio. A near-black wall, warm cream chalk, and five color-coded highlighters \u2014 one for each animation discipline.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/00537a20-e99e-4ef2-b119-c6f532c44cc9",
   "source_url": "https://gsap.com",
   "extracted_at": "2026-07-03T03:17:18.650Z",

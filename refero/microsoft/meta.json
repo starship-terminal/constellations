@@ -4,6 +4,11 @@
   "name": "Microsoft",
   "tagline": "Corporate blue retail catalog \u2014 think 4-square logo against a white showroom floor with one accent blue guiding every interaction.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "corporate",
+  "tags": [
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/c70a9990-bc4b-4a64-a69b-aeb7b344fb74",
   "source_url": "https://www.microsoft.com",
   "extracted_at": "2026-06-03T22:09:57.481Z",

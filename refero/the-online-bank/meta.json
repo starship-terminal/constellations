@@ -4,6 +4,12 @@
   "name": "The online bank",
   "tagline": "Digital vault in deep ocean teal \u2014 a bank that earns calm through quiet white space and a single confident color.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "minimal",
+  "tags": [
+    "corporate",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/e9f07a27-bdd4-4f6a-8132-329d014aa5f4",
   "source_url": "https://n26.com",
   "extracted_at": "2026-06-03T18:35:03.395Z",

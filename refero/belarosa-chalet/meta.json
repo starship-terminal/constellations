@@ -4,6 +4,11 @@
   "name": "BelArosa Chalet",
   "tagline": "dusk on alpine vellum",
   "theme": "mixed",
+  "product_type": "architecture",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/46c8dbc5-47c8-4796-b94c-5e46dcda3532",
   "source_url": "https://www.belarosa-chalet.ch",
   "extracted_at": "2026-06-03T17:50:24.459Z",

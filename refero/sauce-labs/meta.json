@@ -4,6 +4,11 @@
   "name": "Sauce Labs",
   "tagline": "Neon-lit command center on obsidian glass \u2014 a dark engineering console where a single green pulse marks every live signal.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/d271a6c4-942f-4abf-a3de-66795f15f031",
   "source_url": "https://saucelabs.com",
   "extracted_at": "2026-06-03T20:01:57.689Z",

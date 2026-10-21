@@ -4,6 +4,11 @@
   "name": "Verse",
   "tagline": "monochrome terminal grid in a dark void \u2014 hairline cells on black, the work inside each cell carrying all the color",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "technical",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/486c3132-9ff7-4e27-9eef-ca2e130bd827",
   "source_url": "https://www.verse.sh",
   "extracted_at": "2026-06-03T21:29:46.159Z",

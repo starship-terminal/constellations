@@ -4,6 +4,11 @@
   "name": "Stark",
   "tagline": "midnight lecture hall with yellow highlighter",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "monochrome",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/ea9c37e8-c56c-42aa-8e81-9b55222a5cd3",
   "source_url": "https://www.getstark.co",
   "extracted_at": "2026-06-03T22:08:43.948Z",

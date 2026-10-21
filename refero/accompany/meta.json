@@ -4,6 +4,12 @@
   "name": "ACCOMPANY",
   "tagline": "Editorial broadside on bone canvas. A monochrome typographic system where a 80px light serif headline does all the emotional work and everything else stays out of its way.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/5af60925-9c29-48fe-a19b-0f8cf12505ab",
   "source_url": "https://accompany.group",
   "extracted_at": "2026-06-03T21:19:44.705Z",

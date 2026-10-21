@@ -4,6 +4,11 @@
   "name": "Riptype Foundry",
   "tagline": "ink on black paper \u2014 the type is the only bright thing in the room",
   "theme": "dark",
+  "product_type": "design-resource",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/3e397dc6-0e68-435f-9dee-1966a9d245d3",
   "source_url": "https://www.riptype.xyz",
   "extracted_at": "2026-06-03T22:06:14.473Z",

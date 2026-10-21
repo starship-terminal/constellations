@@ -4,6 +4,11 @@
   "name": "Websmith Studio",
   "tagline": "morning light on cream paper",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/11cfc460-807b-42c5-b10a-7b042c60f3e8",
   "source_url": "https://websmith.studio",
   "extracted_at": "2026-06-03T18:58:58.630Z",

@@ -4,6 +4,11 @@
   "name": "A-dam",
   "tagline": "morning surf over a curated product shelf \u2014 a light, airy canvas where honest basics and ocean-toned photography do the talking.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/0fc184f7-6143-4303-8e3d-0e2f075f76b2",
   "source_url": "https://a-dam.com",
   "extracted_at": "2026-06-03T21:50:00.298Z",

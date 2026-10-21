@@ -4,6 +4,11 @@
   "name": "Deta Surf",
   "tagline": "Open notebook floating in a clear blue sky. A serif headline drifts above a pill-shaped search bar while tilted content cards orbit like ideas in a thought bubble.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "playful",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/51752cfb-4fd4-464f-8b78-ecbc813830e1",
   "source_url": "https://deta.surf",
   "extracted_at": "2026-06-03T18:34:01.932Z",

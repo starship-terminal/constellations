@@ -4,6 +4,11 @@
   "name": "Apl\u00f3s",
   "tagline": "Old-world apothecary at dusk",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/765e6ba8-af87-4519-afb7-774ceedc463d",
   "source_url": "https://aplos.world",
   "extracted_at": "2026-06-03T19:41:10.534Z",

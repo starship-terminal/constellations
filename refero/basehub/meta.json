@@ -4,6 +4,11 @@
   "name": "BaseHub",
   "tagline": "midnight canvas, molten filament",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/2cfb738d-6c44-4628-a2f5-e9c9fc92a0ca",
   "source_url": "https://basehub.com",
   "extracted_at": "2026-06-03T21:43:32.673Z",

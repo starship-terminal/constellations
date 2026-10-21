@@ -4,6 +4,11 @@
   "name": "Yuga",
   "tagline": "Black gallery with neon lime punctuation",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/5f2dd17d-72e6-4aa4-88e6-6be9e41299ab",
   "source_url": "https://yuga.com",
   "extracted_at": "2026-06-03T21:24:41.530Z",

@@ -4,6 +4,12 @@
   "name": "Synthesia",
   "tagline": "studio control room on white",
   "theme": "light",
+  "product_type": "ai-media",
+  "design_style": "minimal",
+  "tags": [
+    "technical",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/36a7e1ed-8d14-456b-b828-ff4f47797a74",
   "source_url": "https://www.synthesia.io",
   "extracted_at": "2026-06-03T18:09:15.476Z",

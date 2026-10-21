@@ -4,6 +4,11 @@
   "name": "GRAZA",
   "tagline": "Mediterranean deli counter, sunlit and hand-set",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/f2a84e0f-cf77-41fa-ade0-b062a3a42495",
   "source_url": "https://graza.co",
   "extracted_at": "2026-06-03T17:58:09.573Z",

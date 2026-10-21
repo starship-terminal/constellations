@@ -4,6 +4,12 @@
   "name": "Equals",
   "tagline": "Broadsheet meets spreadsheet \u2014 editorial serif authority on warm cream, punctuated by floating pastel data cells.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/dae7cbf2-0485-433b-8f63-eea8716ad14d",
   "source_url": "https://equals.com",
   "extracted_at": "2026-04-11T19:03:11.531Z",

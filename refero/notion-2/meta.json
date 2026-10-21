@@ -4,6 +4,11 @@
   "name": "Notion",
   "tagline": "midnight workspace, warm paper below",
   "theme": "mixed",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/f58e99d1-940d-4254-8822-5d856bba6505",
   "source_url": "https://www.notion.com",
   "extracted_at": "2026-06-03T21:46:11.701Z",

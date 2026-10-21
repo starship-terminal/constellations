@@ -4,6 +4,11 @@
   "name": "Zendesk",
   "tagline": "Lime signal in a forest clearing \u2014 precision SaaS dressed in warm organic ink, where the single electric-green accent cuts through like a backlit leaf.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/240234ba-9cf5-4a91-b618-76963551d425",
   "source_url": "https://zendesk.com",
   "extracted_at": "2026-04-11T19:21:37.090Z",

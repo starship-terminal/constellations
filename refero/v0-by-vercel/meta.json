@@ -4,6 +4,11 @@
   "name": "v0 by Vercel",
   "tagline": "A Machinist's Blueprint. Precision and function are paramount, with every element serving a clear purpose on a clean, technical surface.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/50aa2b8e-4760-4379-a3c1-59b65d8576a7",
   "source_url": "https://v0.dev",
   "extracted_at": "2026-04-11T17:39:37.040Z",

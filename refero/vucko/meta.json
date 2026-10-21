@@ -4,6 +4,12 @@
   "name": "Vucko",
   "tagline": "oversized type on white gallery floor \u2014 a type-specimen book where the wordmark is the room.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/cc5b19fd-12cf-4b30-801c-8a0363646e48",
   "source_url": "https://vucko.co",
   "extracted_at": "2026-06-03T21:40:03.414Z",

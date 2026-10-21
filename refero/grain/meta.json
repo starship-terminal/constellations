@@ -4,6 +4,11 @@
   "name": "Grain",
   "tagline": "frosted glass desk with a single green pen",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/04793c2a-ca1a-4edd-a661-56c965e42aec",
   "source_url": "https://www.grain.com",
   "extracted_at": "2026-06-03T18:32:42.477Z",

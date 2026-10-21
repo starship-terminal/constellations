@@ -4,6 +4,11 @@
   "name": "Sprout Social",
   "tagline": "Green sprout on black slate. One vivid accent on a stark monochrome canvas, the color rationed to actions only, with confident geometric type that functions like wayfinding signage.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "swiss",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/da7c4464-f135-41fc-b635-99c6f4dc58e6",
   "source_url": "https://sproutsocial.com",
   "extracted_at": "2026-06-03T17:41:38.571Z",

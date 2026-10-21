@@ -4,6 +4,11 @@
   "name": "Copilot Money",
   "tagline": "Scattered neon tags over a midnight vault \u2014 a black canvas where a few candy-colored labels drift at playful angles, each glowing like an airport departure sign.",
   "theme": "dark",
+  "product_type": "fintech",
+  "design_style": "neon",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/91b110da-902b-4d09-8bf0-26bd1f25f8b2",
   "source_url": "https://copilot.money",
   "extracted_at": "2026-06-03T22:39:04.016Z",

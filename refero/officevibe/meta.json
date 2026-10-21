@@ -4,6 +4,12 @@
   "name": "Officevibe",
   "tagline": "Editorial journal on warm cream paper. Think a thoughtful HR essay rendered as a product \u2014 serif italics whispering through a modern blue interface.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/ced1c98f-d489-48f7-a01f-1fa59a07b706",
   "source_url": "https://officevibe.com",
   "extracted_at": "2026-06-03T15:05:52.842Z",

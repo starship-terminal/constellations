@@ -4,6 +4,11 @@
   "name": "Backlight",
   "tagline": "Vermillion stamp on warm vellum \u2014 a printed catalog cover where one ink red commands the cream page and everything else stays in quiet grayscale.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/ca9bff3b-d488-46e5-8a32-2d858bb5eed2",
   "source_url": "https://www.backlight.co",
   "extracted_at": "2026-06-03T22:00:10.610Z",

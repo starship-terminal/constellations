@@ -4,6 +4,11 @@
   "name": "REKKI",
   "tagline": "Mission control dashboard in a darkroom",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/65b8df27-36a3-47a6-be53-735d1f6a485d",
   "source_url": "https://rekki.com",
   "extracted_at": "2026-06-03T20:24:24.551Z",

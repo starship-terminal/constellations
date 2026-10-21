@@ -4,6 +4,12 @@
   "name": "FORA",
   "tagline": "Swiss editorial mosaic on white. A grid of monumental color tiles and airy geometric type, where each panel of terracotta or lilac functions as a full-bleed typographic stage.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "swiss",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/9929101b-90d4-4306-bc4a-4d8f65b527f5",
   "source_url": "https://fora-concept.com",
   "extracted_at": "2026-06-03T20:52:40.941Z",

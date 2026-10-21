@@ -4,6 +4,12 @@
   "name": "WGSN",
   "tagline": "editorial monochrome showroom",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/6cf3aec4-d028-44b0-b634-cc93e6c08e3c",
   "source_url": "https://www.wgsn.com/en",
   "extracted_at": "2026-06-03T21:52:45.915Z",

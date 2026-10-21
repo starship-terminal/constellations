@@ -4,6 +4,12 @@
   "name": "Acolorbright",
   "tagline": "White gallery walls around black-ink editorial type",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/b1ec0888-1dbe-439c-bccd-ba2c39effb70",
   "source_url": "https://acolorbright.com",
   "extracted_at": "2026-06-03T19:50:32.830Z",

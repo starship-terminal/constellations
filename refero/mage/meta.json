@@ -4,6 +4,12 @@
   "name": "Mage",
   "tagline": "data alchemy on parchment. Warm off-white canvas, whisper-weight Inter headlines, one cobalt switch for action, dark-mode product islands floating inside a bright editorial page.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/ba07accb-b2cc-4ad9-a25f-c50b0f90f34e",
   "source_url": "https://www.mage.ai",
   "extracted_at": "2026-06-03T20:56:35.729Z",

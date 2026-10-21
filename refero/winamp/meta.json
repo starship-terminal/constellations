@@ -4,6 +4,11 @@
   "name": "Winamp",
   "tagline": "Tilted phone cards fanning across bone paper",
   "theme": "light",
+  "product_type": "entertainment",
+  "design_style": "paper",
+  "tags": [
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/bc4b4dee-8b32-494c-9a2d-d56fcd450b79",
   "source_url": "https://www.winamp.com",
   "extracted_at": "2026-06-03T20:08:26.124Z",

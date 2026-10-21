@@ -4,6 +4,11 @@
   "name": "Qatchup",
   "tagline": "Ink on warm paper, whispered quietly.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/1b010453-80df-406a-8b1a-72630c4a5165",
   "source_url": "https://www.qatchup.com",
   "extracted_at": "2026-06-03T19:25:40.019Z",

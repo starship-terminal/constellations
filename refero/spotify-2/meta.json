@@ -4,6 +4,11 @@
   "name": "Spotify",
   "tagline": "Nocturnal jukebox control room",
   "theme": "dark",
+  "product_type": "entertainment",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/1514a95f-878c-4d4d-bb14-99d1b83f6227",
   "source_url": "https://spotify.com",
   "extracted_at": "2026-06-03T16:53:22.094Z",

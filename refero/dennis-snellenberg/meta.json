@@ -4,6 +4,11 @@
   "name": "Dennis Snellenberg",
   "tagline": "Dark editorial canvas with giant quiet headlines",
   "theme": "dark",
+  "product_type": "portfolio",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/28e8e762-8d8c-4e88-84ed-858f9917cb58",
   "source_url": "https://dennissnellenberg.com",
   "extracted_at": "2026-06-03T17:51:09.281Z",

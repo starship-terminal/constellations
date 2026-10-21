@@ -4,6 +4,11 @@
   "name": "Linear",
   "tagline": "midnight precision instrument",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/90ce5883-bb24-4466-93f7-801cd617b0d1",
   "source_url": "https://linear.app",
   "extracted_at": "2026-07-03T02:44:11.708Z",

@@ -4,6 +4,11 @@
   "name": "ElevenReader",
   "tagline": "newsprint minimalism with a single color bloom",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/c51c8371-0e42-4bdf-9766-c9eac5eee9a5",
   "source_url": "https://elevenreader.io",
   "extracted_at": "2026-06-03T19:24:02.439Z",

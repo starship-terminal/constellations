@@ -4,6 +4,11 @@
   "name": "MA Quilts",
   "tagline": "Crayon-bright quilt workshop pinned to sunlit wall",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "playful",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/6d4ef8f4-badd-4e3c-a168-0cc89c833b26",
   "source_url": "https://maquilts.com",
   "extracted_at": "2026-06-03T21:19:48.491Z",

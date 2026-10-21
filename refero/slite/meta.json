@@ -4,6 +4,11 @@
   "name": "Slite",
   "tagline": "Warm parchment notebook with terracotta pen \u2014 every surface is cream paper, every accent a single ember-orange stroke.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/607c2098-bbbb-40bb-b23e-adf2b72c63dd",
   "source_url": "https://slite.com",
   "extracted_at": "2026-07-03T03:44:10.775Z",

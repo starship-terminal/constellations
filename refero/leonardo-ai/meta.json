@@ -4,6 +4,11 @@
   "name": "Leonardo.ai",
   "tagline": "Inverted editorial gallery. A black-walled museum where 165px violet headlines act as wall installations and AI-generated portraits hang in a tight grid below.",
   "theme": "dark",
+  "product_type": "ai-media",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/8c3f2805-dfce-4edd-8a9c-946bee4f1cff",
   "source_url": "https://leonardo.ai",
   "extracted_at": "2026-06-03T15:13:21.475Z",

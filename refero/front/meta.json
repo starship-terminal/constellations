@@ -4,6 +4,11 @@
   "name": "Front",
   "tagline": "Midnight plum control room, one lime spark. Deep aubergine walls, lavender mist borders, and a single chartreuse beacon that pulls every eye.",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/3281b445-805b-4dc7-933f-42b544a6d798",
   "source_url": "https://front.com",
   "extracted_at": "2026-06-03T18:24:36.831Z",

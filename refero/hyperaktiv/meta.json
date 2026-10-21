@@ -4,6 +4,12 @@
   "name": "HyperAktiv",
   "tagline": "Swiss editorial broadsheet. Black display type at 90px on white, with electric blue as the only chromatic note.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "swiss",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/d19c6fc3-1fc6-44a0-9c22-a0a82f7f79b4",
   "source_url": "https://hyperaktiv.li",
   "extracted_at": "2026-06-03T18:07:18.039Z",

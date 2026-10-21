@@ -4,6 +4,12 @@
   "name": "a16z speedrun",
   "tagline": "Monochrome broadsheet with a mint launch flare. A near-grayscale newspaper-grade layout, nearly devoid of color, where one multicolor gradient button cuts through the silence like a countdown timer lighting up.",
   "theme": "light",
+  "product_type": "venture",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/4fa31278-33ea-4f1c-b7ac-cdc871e36089",
   "source_url": "https://speedrun.a16z.com",
   "extracted_at": "2026-06-03T21:44:08.942Z",

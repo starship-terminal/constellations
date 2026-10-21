@@ -4,6 +4,11 @@
   "name": "Function",
   "tagline": "warm apothecary journal on parchment",
   "theme": "light",
+  "product_type": "health",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/21b71be3-78a0-4681-a5b9-64cc4b40eb67",
   "source_url": "https://www.functionhealth.com",
   "extracted_at": "2026-06-03T15:39:10.246Z",

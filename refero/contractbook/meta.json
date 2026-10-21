@@ -4,6 +4,11 @@
   "name": "Contractbook",
   "tagline": "cream-paper contracts under ultramarine sky",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/fbc60c55-da20-4684-a279-0ed86590272e",
   "source_url": "https://contractbook.com",
   "extracted_at": "2026-07-03T03:40:58.665Z",

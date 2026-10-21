@@ -4,6 +4,12 @@
   "name": "Adcker",
   "tagline": "Giant brutalist poster on warm museum paper",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "brutalist",
+  "tags": [
+    "paper",
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/e48b2dd0-328a-42ab-ad0f-ed24901bac4c",
   "source_url": "https://adcker.com",
   "extracted_at": "2026-06-03T19:41:03.010Z",

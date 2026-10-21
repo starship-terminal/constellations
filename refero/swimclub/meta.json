@@ -4,6 +4,12 @@
   "name": "SwimClub",
   "tagline": "Clinical dossier behind pixelated LCD readouts",
   "theme": "mixed",
+  "product_type": "commerce",
+  "design_style": "technical",
+  "tags": [
+    "retro",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/d7a73e16-4b3e-4b9d-aef2-2c31a9db7457",
   "source_url": "https://swimclub.co",
   "extracted_at": "2026-06-03T20:51:41.003Z",

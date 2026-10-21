@@ -4,6 +4,12 @@
   "name": "Monarch",
   "tagline": "warm linen notebook under morning light",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "paper",
+  "tags": [
+    "organic",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/a9dd8050-c03a-4901-b7fa-a9cc0ca54812",
   "source_url": "https://www.monarchmoney.com",
   "extracted_at": "2026-06-03T19:18:40.533Z",

@@ -4,6 +4,12 @@
   "name": "Adam Lippes",
   "tagline": "Monochrome editorial atelier on cream paper \u2014 a Vogue spread where the layout grid, not the color palette, is the only decoration.",
   "theme": "light",
+  "product_type": "fashion",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/cdc4a162-cefa-49a1-81e7-4857e421ae24",
   "source_url": "https://adamlippes.com",
   "extracted_at": "2026-06-03T20:35:20.727Z",

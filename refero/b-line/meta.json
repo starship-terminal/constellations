@@ -4,6 +4,11 @@
   "name": "B\u2014Line",
   "tagline": "Monospaced editorial museum catalog \u2014 achromatic typographic grid where the wordmark out-sizes every product.",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "technical",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/3b9ed801-511c-48b6-b516-68b1aa8a36ea",
   "source_url": "https://www.b-line.it",
   "extracted_at": "2026-06-03T19:45:37.229Z",

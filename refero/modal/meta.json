@@ -4,6 +4,11 @@
   "name": "Modal",
   "tagline": "Phosphor terminal in a darkened server room \u2014 the vivid green is the only light source.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/68c15685-5db9-4869-b71d-27240568c9d8",
   "source_url": "https://modal.com",
   "extracted_at": "2026-07-03T03:37:14.735Z",

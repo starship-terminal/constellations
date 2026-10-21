@@ -4,6 +4,11 @@
   "name": "Railway",
   "tagline": "Cosmic Midnight Express. A calm, powerful journey through a dark, starlit environment, guided by clear signals.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "futuristic",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/5c32375f-6ef1-4345-9418-ebbb7e887343",
   "source_url": "https://railway.app",
   "extracted_at": "2026-04-11T17:36:56.930Z",

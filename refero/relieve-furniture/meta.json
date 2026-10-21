@@ -4,6 +4,11 @@
   "name": "Relieve Furniture",
   "tagline": "Living moss on warm stone \u2014 a grounded, organic palette where a single deep forest-teal holds the structure and chartreuse sparks punctuate the silence.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "organic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/4e7daadc-3dc4-4211-bf25-626ea7b216e6",
   "source_url": "https://relievefurniture.com",
   "extracted_at": "2026-06-03T21:17:31.002Z",

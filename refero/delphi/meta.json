@@ -4,6 +4,11 @@
   "name": "Delphi",
   "tagline": "warm parchment editorial with ember sparks",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/43c1b150-0dab-42f9-9bce-fe0be3dde26c",
   "source_url": "https://delphi.ai",
   "extracted_at": "2026-06-03T15:38:48.639Z",

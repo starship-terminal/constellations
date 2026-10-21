@@ -4,6 +4,11 @@
   "name": "Bevel",
   "tagline": "Morning metrics in cloudlight. Build screens as a bright white health journal punctuated by a softly glowing wearable dashboard.",
   "theme": "light",
+  "product_type": "health",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/c0717d1a-b446-4166-a445-6497fe287fea",
   "source_url": "https://www.bevel.health",
   "extracted_at": "2026-09-24T17:31:24.413Z",

@@ -4,6 +4,12 @@
   "name": "North Kingdom",
   "tagline": "cinematic void with luminous type \u2014 a black film-studio soundstage where a single wordmark glows",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "cinematic",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/145e70b3-e0a4-4fbd-8d9e-23bd93dd0021",
   "source_url": "https://www.northkingdom.com",
   "extracted_at": "2026-06-03T21:55:43.378Z",

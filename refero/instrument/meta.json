@@ -4,6 +4,12 @@
   "name": "Instrument",
   "tagline": "Newspaper broadsheet meets brutalist poster",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "brutalist",
+  "tags": [
+    "editorial",
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/dcd215e5-3511-4e40-87ff-95c095f44ad6",
   "source_url": "https://www.instrument.com",
   "extracted_at": "2026-06-03T20:46:22.578Z",

@@ -4,6 +4,11 @@
   "name": "Genway",
   "tagline": "Indigo observatory at lavender dawn \u2014 a research terminal floating above a violet mist.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/a81607e2-254f-4f53-b357-68c39c9cfc03",
   "source_url": "https://www.genway.ai",
   "extracted_at": "2026-06-03T19:13:40.204Z",

@@ -4,6 +4,11 @@
   "name": "Era",
   "tagline": "Quiet ledger on warm paper",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/715a3ad2-5b6d-421f-b72b-3aa6fec86351",
   "source_url": "https://era.app",
   "extracted_at": "2026-06-03T20:53:47.514Z",

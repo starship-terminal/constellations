@@ -4,6 +4,12 @@
   "name": "Gigantic",
   "tagline": "punk-rock candy wrapper shouting on cream paper",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "maximalist",
+  "tags": [
+    "retro",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/22e11001-8786-4af7-bdb9-f9419ce8ad1a",
   "source_url": "https://giganticcandy.com",
   "extracted_at": "2026-06-03T20:52:07.575Z",

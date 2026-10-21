@@ -4,6 +4,12 @@
   "name": "aave.com",
   "tagline": "neon violet threading twilight \u2014 a light lavender noon collapses into a midnight product surface, and one electric violet is the only color that survives the transition.",
   "theme": "mixed",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "minimal",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/e352ec32-830a-4650-b7c2-d32a5f559f7e",
   "source_url": "https://aave.com",
   "extracted_at": "2026-06-03T17:49:28.188Z",

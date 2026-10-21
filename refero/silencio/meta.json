@@ -4,6 +4,11 @@
   "name": "Silencio",
   "tagline": "white room with floating artifacts. A warm-paper gallery vitrine where every element earns its space against negative volume, and silence is a deliberate design material.",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/e67ac20e-6497-4756-b7e2-17859a794fb6",
   "source_url": "https://silencio.es",
   "extracted_at": "2026-06-03T17:34:46.576Z",

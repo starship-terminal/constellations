@@ -4,6 +4,12 @@
   "name": "Zed",
   "tagline": "Blueprint workshop, wide open. A near-white gridded page held together by a single deep violet-blue and the calm authority of a humanist serif \u2014 every screen feels like a chapter in a well-printed technical manual.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "swiss",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/a541789c-36e7-45a4-9d1d-143921a82a8b",
   "source_url": "https://zed.dev",
   "extracted_at": "2026-06-03T15:17:35.888Z",

@@ -4,6 +4,11 @@
   "name": "beehiiv",
   "tagline": "midnight observatory with neon plasma",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/350b1557-56f0-4361-8c8b-b7a88081982b",
   "source_url": "https://beehiiv.com",
   "extracted_at": "2026-06-03T17:32:00.026Z",

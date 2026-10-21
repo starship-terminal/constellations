@@ -4,6 +4,12 @@
   "name": "Thomas Hedger",
   "tagline": "Silent frame, loud prints",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "brutalist"
+  ],
   "page_url": "https://styles.refero.design/style/9fe18d8b-58b7-404d-bcc6-9e8a73b8862c",
   "source_url": "https://thomashedger.co.uk",
   "extracted_at": "2026-06-03T21:40:50.885Z",

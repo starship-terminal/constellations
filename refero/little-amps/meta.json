@@ -4,6 +4,11 @@
   "name": "Little Amps",
   "tagline": "vinyl record sleeve in afternoon sun. Cream paper, burnt-orange ink, a single dusty blue stamp, every label set in monospace \u2014 the interface behaves like a printed coffee zine: tactile, editorial, never sterile.",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "paper",
+  "tags": [
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/ca522706-03ed-48cb-acb3-1bb2a22f2eda",
   "source_url": "https://littleampscoffee.com",
   "extracted_at": "2026-06-03T19:45:20.544Z",

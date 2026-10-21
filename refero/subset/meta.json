@@ -4,6 +4,11 @@
   "name": "Subset",
   "tagline": "editorial boutique on raw linen",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/a4dcee26-dd31-415a-ac99-64299959e7f1",
   "source_url": "https://knickey.com",
   "extracted_at": "2026-06-03T19:05:10.461Z",

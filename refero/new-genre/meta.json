@@ -4,6 +4,12 @@
   "name": "New Genre",
   "tagline": "Cinematic horizon at golden hour \u2014 a single gradient arc from charred umber through steel twilight to warm parchment, against which condensed serif headlines carve like editorial mastheads.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "cinematic",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/2318d650-b229-4be0-9adc-9f17cecfd253",
   "source_url": "https://newgenre.studio",
   "extracted_at": "2026-06-03T16:09:05.659Z",

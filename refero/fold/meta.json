@@ -4,6 +4,11 @@
   "name": "Fold",
   "tagline": "Bauhaus poster on fog",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "swiss",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/4d1d50ff-18b8-4acf-a356-48eb5c414711",
   "source_url": "https://fold.money",
   "extracted_at": "2026-06-03T18:29:54.656Z",

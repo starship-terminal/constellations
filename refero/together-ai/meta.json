@@ -4,6 +4,12 @@
   "name": "Together AI",
   "tagline": "Research console on glacier paper",
   "theme": "mixed",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/461da0f0-fde6-46bc-8137-7eca006260a8",
   "source_url": "https://together.ai",
   "extracted_at": "2026-06-03T16:03:15.890Z",

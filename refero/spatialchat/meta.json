@@ -4,6 +4,11 @@
   "name": "SpatialChat",
   "tagline": "violet pulse on white parchment",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/5b90e218-b325-4901-a1c5-ea1134339826",
   "source_url": "https://spatial.chat",
   "extracted_at": "2026-06-03T20:39:01.373Z",

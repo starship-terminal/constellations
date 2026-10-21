@@ -4,6 +4,12 @@
   "name": "Koto",
   "tagline": "Obsidian gallery at midnight. A near-black stage where a single yellow mark is the only warm light, and condensed type floats in vast negative space like exhibition placards.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/a88fa835-1d5e-4b8e-b3d5-602597870563",
   "source_url": "https://koto.com",
   "extracted_at": "2026-06-03T21:44:05.858Z",

@@ -4,6 +4,12 @@
   "name": "Pangram Pangram Foundry",
   "tagline": "Museum vitrine on white marble. A gallery-style type foundry where the canvas is bare stone, the lighting is flat daylight, and the only vivid color is a single orange-red label used by a curator to flag what is new.",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "minimal",
+  "tags": [
+    "luxury",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/6d64a4da-ef40-453e-86f7-4bfabc0c9051",
   "source_url": "https://pangrampangram.com",
   "extracted_at": "2026-06-03T21:20:44.798Z",

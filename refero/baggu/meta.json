@@ -4,6 +4,11 @@
   "name": "Baggu",
   "tagline": "Sunlit print catalog on cream paper \u2014 a single warm off-white surface where black type and product photography do all the work, and a single green whisper says 'new'.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/39105d96-3cb1-497a-8f9f-507a1bed4d30",
   "source_url": "https://baggu.com",
   "extracted_at": "2026-06-03T20:06:53.266Z",

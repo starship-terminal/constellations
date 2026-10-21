@@ -4,6 +4,12 @@
   "name": "Tella",
   "tagline": "Violet broadcast signal \u2014 the design feels like a TV network's on-air package: full-bleed chromatic fields, bold compressed display type, hard cuts between saturated and white.",
   "theme": "mixed",
+  "product_type": "ai-media",
+  "design_style": "neon",
+  "tags": [
+    "cinematic",
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/41547c7a-3bbe-49f0-95d6-9701c9df9a5e",
   "source_url": "https://tella.tv",
   "extracted_at": "2026-04-11T19:25:42.180Z",

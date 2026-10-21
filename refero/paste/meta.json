@@ -4,6 +4,11 @@
   "name": "Paste",
   "tagline": "Amber lantern on white marble \u2014 the brand's warm gradient logo floats in vast white space, like a single lit window in a snow-covered building.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/742b500d-3e10-4daa-bb89-d0d26272e5f6",
   "source_url": "https://pasteapp.io",
   "extracted_at": "2026-04-11T23:07:11.731Z",

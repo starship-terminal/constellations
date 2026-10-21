@@ -4,6 +4,12 @@
   "name": "MAKR",
   "tagline": "Museum vitrine for crafted leather. A quiet, paper-white gallery where warm-black ink labels float beneath large editorial photographs of leather objects held in hands or placed in landscapes, with one muted sage band as the only chromatic interruption.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/f2bf6db7-37b6-4394-be97-6bbb2c45c268",
   "source_url": "https://makr.com",
   "extracted_at": "2026-06-03T18:08:20.965Z",

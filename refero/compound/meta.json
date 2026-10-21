@@ -4,6 +4,11 @@
   "name": "Compound",
   "tagline": "ink-on-paper wealth journal \u2014 a quiet editorial system where one font at one weight does all the work, and the only color is the cream ribbon at the top of the page.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/cd31ecdb-297a-4fc5-a727-05f835ff917f",
   "source_url": "https://withcompound.com/membership",
   "extracted_at": "2026-06-03T18:04:54.036Z",

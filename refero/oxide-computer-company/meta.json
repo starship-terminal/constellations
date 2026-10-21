@@ -4,6 +4,12 @@
   "name": "Oxide Computer Company",
   "tagline": "Datacenter rack at midnight with one green LED lit",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/b721fa94-72e6-49ad-a9bc-bab3d075f19c",
   "source_url": "https://oxide.computer",
   "extracted_at": "2026-06-03T15:49:13.609Z",

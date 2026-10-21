@@ -4,6 +4,12 @@
   "name": "teenage engineering",
   "tagline": "industrial catalogue under studio light \u2014 the product is the only rich object on the page and everything else is whispered around it",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "luxury",
+  "tags": [
+    "minimal",
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/aecf9dda-5cba-4dc7-9e73-59b65d895cdf",
   "source_url": "https://teenage.engineering",
   "extracted_at": "2026-06-03T15:14:09.088Z",

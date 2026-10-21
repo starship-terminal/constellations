@@ -4,6 +4,11 @@
   "name": "Poly",
   "tagline": "Ember on porcelain \u2014 one warm gradient ember floating on an otherwise pure white editorial page, surrounded by quiet serif headlines and full-bleed photography.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/d8e01e43-d260-4fa3-8f42-ae39e5c6ac84",
   "source_url": "https://poly.app",
   "extracted_at": "2026-06-03T19:29:44.088Z",

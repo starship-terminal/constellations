@@ -4,6 +4,11 @@
   "name": "Filling Pieces",
   "tagline": "monochrome fashion editorial",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/f401f04f-c45b-4261-9441-f502c6569a29",
   "source_url": "https://www.fillingpieces.com",
   "extracted_at": "2026-06-03T21:00:51.448Z",

@@ -4,6 +4,12 @@
   "name": "Elementor",
   "tagline": "High-stakes monochrome printing press \u2014 a system where black and white do all the heavy lifting, Roobert's compressed weight-900 headlines stamped like bold ink on paper.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "monochrome",
+  "tags": [
+    "technical",
+    "brutalist"
+  ],
   "page_url": "https://styles.refero.design/style/4bbc63cf-c995-4c56-9873-e7f300f1c9e7",
   "source_url": "https://elementor.com",
   "extracted_at": "2026-04-11T19:12:35.931Z",

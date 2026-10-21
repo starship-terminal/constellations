@@ -4,6 +4,11 @@
   "name": "Wispr Flow",
   "tagline": "cream broadsheet, dark velvet chambers",
   "theme": "mixed",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/ac53825c-1e06-4ae0-8489-cace5c5e0339",
   "source_url": "https://wisprflow.ai",
   "extracted_at": "2026-07-03T03:38:29.443Z",

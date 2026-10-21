@@ -4,6 +4,11 @@
   "name": "Fuser",
   "tagline": "Scattered polaroids on a designer's working wall",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "retro",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/bf5616e4-7bd1-40ce-8b2d-aae84c2e4ebd",
   "source_url": "https://fuser.studio",
   "extracted_at": "2026-06-03T17:14:30.145Z",

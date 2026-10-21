@@ -4,6 +4,11 @@
   "name": "Pixso",
   "tagline": "pristine designer's canvas flooded with morning light",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/155dbf6e-1187-424e-9ce8-59ffecff7e6b",
   "source_url": "https://pixso.net",
   "extracted_at": "2026-06-03T20:18:25.824Z",

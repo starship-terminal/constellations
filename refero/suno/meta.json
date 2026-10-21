@@ -4,6 +4,11 @@
   "name": "Suno",
   "tagline": "Afterglow on a mixing console. Cream typography and a sunset wash over a matte black studio, with a single coral button as the only chromatic punctuation.",
   "theme": "dark",
+  "product_type": "ai-media",
+  "design_style": "neon",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/3b5ff57f-a371-4c7f-82ae-5fc5485da073",
   "source_url": "https://suno.com",
   "extracted_at": "2026-06-03T17:22:36.887Z",

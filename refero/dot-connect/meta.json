@@ -4,6 +4,11 @@
   "name": "(dot)connect",
   "tagline": "Swiss engineering blueprint with a single ember",
   "theme": "light",
+  "product_type": "venture",
+  "design_style": "swiss",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/981d90e9-7be3-497f-a899-52a0a9ec16f4",
   "source_url": "https://dotconnect.vc",
   "extracted_at": "2026-06-03T15:06:24.539Z",

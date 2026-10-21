@@ -4,6 +4,11 @@
   "name": "Magicbeans",
   "tagline": "Notion whiteboard with confetti",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "playful",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/5af8ba79-c73f-4388-8ea8-b805e24599f8",
   "source_url": "https://magicbeans.app",
   "extracted_at": "2026-06-03T19:44:53.966Z",

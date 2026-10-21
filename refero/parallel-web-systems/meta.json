@@ -4,6 +4,11 @@
   "name": "Parallel Web Systems",
   "tagline": "Engineering journal at dawn \u2014 a technical reading room where data streams replace photography and the type does the talking.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/32845f27-6b24-48be-af25-8e664f826b30",
   "source_url": "https://parallel.ai",
   "extracted_at": "2026-06-03T17:16:35.585Z",

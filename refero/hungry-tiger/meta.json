@@ -4,6 +4,12 @@
   "name": "Hungry Tiger",
   "tagline": "Turmeric-bright graffiti on a tandoor wall. A single gold-on-rust palette with display type so large it reads as a spice market sign, not a webpage.",
   "theme": "dark",
+  "product_type": "food-drink",
+  "design_style": "maximalist",
+  "tags": [
+    "playful",
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/47f15da7-8905-45b3-bcab-06a4277c6168",
   "source_url": "https://www.eathungrytiger.com",
   "extracted_at": "2026-06-03T19:04:45.766Z",

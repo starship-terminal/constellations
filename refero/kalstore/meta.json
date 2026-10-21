@@ -4,6 +4,12 @@
   "name": "Kalstore\u00ae",
   "tagline": "Paper atelier on a quiet morning. The interface is warm off-white, sparsely set, and lets one mustard accent and oversized editorial type do the talking.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/e854a4f7-4243-44a7-92e2-e22db22bef1b",
   "source_url": "https://kal-store.com",
   "extracted_at": "2026-06-03T21:13:53.379Z",

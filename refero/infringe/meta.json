@@ -4,6 +4,12 @@
   "name": "INFRINGE",
   "tagline": "Punk editorial broadsheet with highlighter pen",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "maximalist",
+  "tags": [
+    "editorial",
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/36e7c3f9-b7cb-48a2-9695-db726e3dccdb",
   "source_url": "https://www.infringe.com",
   "extracted_at": "2026-06-03T20:29:56.090Z",

@@ -4,6 +4,11 @@
   "name": "Lightdash",
   "tagline": "violet pixel-grid on drafting paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/d0f65d12-a8e6-4631-99f7-bb7cdcd5b6c5",
   "source_url": "https://www.lightdash.com",
   "extracted_at": "2026-06-03T15:42:56.888Z",

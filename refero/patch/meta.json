@@ -4,6 +4,11 @@
   "name": "Patch",
   "tagline": "electric blueprint on drafting paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/7af0134b-c299-42f8-9d95-7004e2d0e278",
   "source_url": "https://thepatchsystem.com",
   "extracted_at": "2026-06-03T21:15:15.868Z",

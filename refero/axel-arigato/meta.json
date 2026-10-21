@@ -4,6 +4,11 @@
   "name": "AXEL ARIGATO",
   "tagline": "AXEL ARIGATO \u2014 candid city contact sheet. Build pages as a sequence of white editorial margins and tightly cropped, socially charged fashion photography, punctuated by compact black labels.",
   "theme": "light",
+  "product_type": "fashion",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/bcad2276-2885-4acd-bbd2-37b9dd4eea4d",
   "source_url": "https://axelarigato.com",
   "extracted_at": "2026-09-20T19:24:28.599Z",

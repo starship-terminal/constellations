@@ -4,6 +4,12 @@
   "name": "Orderful",
   "tagline": "industrial command deck \u2014 a logistics dispatcher's printed control sheet in black ink and surgical vermillion, every page restrained enough to let a single CTA shout.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "brutalist",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/d95a35c2-d3f7-49e7-9ba7-282d52d3211d",
   "source_url": "https://www.orderful.com",
   "extracted_at": "2026-06-03T16:41:38.493Z",

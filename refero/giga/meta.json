@@ -4,6 +4,11 @@
   "name": "Giga",
   "tagline": "Midnight horizon above matte obsidian",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/607e0dbf-e2fc-45c9-b939-946b8981c156",
   "source_url": "https://giga.ai",
   "extracted_at": "2026-07-03T03:23:13.251Z",

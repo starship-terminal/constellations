@@ -4,6 +4,12 @@
   "name": "Warp",
   "tagline": "obsidian command center \u2014 a developer's IDE cockpit where the only glow is a single violet phosphor on matte black, and typography carries every signal",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "monochrome",
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/d4c51049-58eb-404a-9fcb-f195928b1c99",
   "source_url": "https://warp.dev",
   "extracted_at": "2026-06-03T18:10:03.870Z",

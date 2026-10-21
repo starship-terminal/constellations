@@ -4,6 +4,11 @@
   "name": "Vana",
   "tagline": "Digital constellation map on midnight canvas \u2014 a dark protocol interface where electric blue traces the topography of user-owned data across a starfield of ASCII characters.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/2a3cdb2e-effe-406b-932e-37e4dc88ab1d",
   "source_url": "https://www.vana.com",
   "extracted_at": "2026-06-03T20:22:15.273Z",

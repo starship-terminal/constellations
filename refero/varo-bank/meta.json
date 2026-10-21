@@ -4,6 +4,12 @@
   "name": "Varo Bank",
   "tagline": "neon bank statement on a sticky note \u2014 bold compressed type punched onto bright colored cardstock, held together by hairline black outlines",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "playful",
+  "tags": [
+    "neon",
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/2c05cf8d-97c5-4f35-96ef-eb53fc03ea81",
   "source_url": "https://www.varomoney.com",
   "extracted_at": "2026-06-03T20:22:56.658Z",

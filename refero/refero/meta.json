@@ -4,6 +4,12 @@
   "name": "Refero",
   "tagline": "Editorial ink on white marble \u2014 a typographer's product page where the serif headline IS the brand, and everything else stays out of its way.",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "editorial",
+  "tags": [
+    "minimal",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/3f296d6e-6a1c-45db-829b-afb078d49ab4",
   "source_url": "https://refero.design/mcp",
   "extracted_at": "2026-04-30T15:06:33.442Z",

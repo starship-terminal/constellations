@@ -4,6 +4,11 @@
   "name": "Cosmos Network",
   "tagline": "Deep space command center \u2014 a near-black financial observatory where white type and concentric diagrams float in measured silence.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/60ee0386-cfad-409a-8310-762bfc2e4816",
   "source_url": "https://cosmos.network",
   "extracted_at": "2026-06-03T19:35:02.413Z",

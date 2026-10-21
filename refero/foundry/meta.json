@@ -4,6 +4,11 @@
   "name": "Foundry",
   "tagline": "orange-lit type cathedral \u2014 a black room where enormous illuminated letterforms hang as exhibits and the only guide rails are pale wireframe borders and one neon marker color.",
   "theme": "dark",
+  "product_type": "design-tool",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/896f0ea9-6f1a-40a6-aba7-fdaa579c7352",
   "source_url": "https://foundry.basement.studio",
   "extracted_at": "2026-06-03T17:52:01.302Z",

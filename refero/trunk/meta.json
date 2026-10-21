@@ -4,6 +4,12 @@
   "name": "Trunk",
   "tagline": "monochrome control room with one green signal light. A dark, technical, near-grayscale interface where the only color that matters is a single dot of green confirming the pipeline is alive.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "monochrome",
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/48971df7-919d-453c-9d0b-4600cd24c583",
   "source_url": "https://trunk.io",
   "extracted_at": "2026-06-03T21:48:00.085Z",

@@ -4,6 +4,11 @@
   "name": "Ghost",
   "tagline": "Monumental type on infinite white paper",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/532b3211-cca9-4207-a11c-812cfabc1a73",
   "source_url": "https://ghost.org",
   "extracted_at": "2026-06-03T19:27:27.517Z",

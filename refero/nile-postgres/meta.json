@@ -4,6 +4,12 @@
   "name": "Nile Postgres",
   "tagline": "infra sunset on black velvet \u2014 a quiet command center where three pastel tiles glow in the dark",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/7671d0fc-b9fc-462e-9c74-38511264aabd",
   "source_url": "https://www.thenile.dev",
   "extracted_at": "2026-06-03T22:00:49.336Z",

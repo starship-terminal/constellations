@@ -4,6 +4,11 @@
   "name": "Linearity",
   "tagline": "glowing studio console. Build screens as sparse black workspaces with precise white interface chrome and isolated bursts of molten orange.",
   "theme": "dark",
+  "product_type": "design-tool",
+  "design_style": "minimal",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/a44424b2-2f87-47f4-b6a5-28b556ed7497",
   "source_url": "https://www.linearity.io",
   "extracted_at": "2026-09-20T22:04:03.946Z",

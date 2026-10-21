@@ -4,6 +4,11 @@
   "name": "Flying Papers",
   "tagline": "Saturday morning cartoon confessional",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "playful",
+  "tags": [
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/7d254296-6817-487a-a58c-4d5eca89cbf3",
   "source_url": "https://www.flyingpapers.com",
   "extracted_at": "2026-06-03T17:03:21.797Z",

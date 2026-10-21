@@ -4,6 +4,11 @@
   "name": "Carrot",
   "tagline": "Activist poster on a single sheet of acid-lime paper \u2014 confident, flat, and slightly loud.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "maximalist",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/a7a69d27-e1a9-4322-b58f-3c7633fdc60d",
   "source_url": "https://carrot.tech",
   "extracted_at": "2026-06-03T22:02:30.136Z",

@@ -4,6 +4,11 @@
   "name": "Hey Low",
   "tagline": "botanical field journal on cream paper \u2014 Measured, organic, and mostly silent, with one lime-green note singing on the page.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/7829a500-242b-4932-b42d-7ce40c254101",
   "source_url": "https://heylow.world",
   "extracted_at": "2026-06-03T18:28:04.459Z",

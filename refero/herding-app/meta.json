@@ -4,6 +4,11 @@
   "name": "herding.app",
   "tagline": "Warm charcoal desk with a single neon spray \u2014 monochrome editorial dark UI broken by one vivid teal-lime wash.",
   "theme": "dark",
+  "product_type": "productivity",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/6d1d19a3-294d-4bad-9f8b-f775cb24b47a",
   "source_url": "https://herdi.ng",
   "extracted_at": "2026-06-03T19:57:05.442Z",

@@ -4,6 +4,11 @@
   "name": "Freshman",
   "tagline": "cinema title card on black velvet",
   "theme": "dark",
+  "product_type": "media",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/a6284fcd-fa69-4469-ac40-4239e5b84a39",
   "source_url": "https://freshman.tv",
   "extracted_at": "2026-06-03T19:41:29.048Z",

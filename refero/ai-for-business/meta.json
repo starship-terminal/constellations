@@ -4,6 +4,11 @@
   "name": "AI for Business",
   "tagline": "Brutalist editorial showroom on warm gray",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "brutalist",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/ee403055-480e-4bd4-9216-07c9ae2dde2e",
   "source_url": "https://www.dayos.com",
   "extracted_at": "2026-07-03T03:07:26.669Z",

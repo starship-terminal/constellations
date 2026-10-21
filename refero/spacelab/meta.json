@@ -4,6 +4,11 @@
   "name": "Spacelab",
   "tagline": "Swiss editorial grid on raw paper. A quiet gallery where Helvetica sits at the baseline and a single slate-violet button is the loudest thing in the room.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "swiss",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/7fdcf5eb-4d65-49a2-b887-60119bca4edc",
   "source_url": "https://spacelab.co.uk",
   "extracted_at": "2026-06-03T18:18:47.985Z",

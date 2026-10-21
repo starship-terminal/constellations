@@ -4,6 +4,11 @@
   "name": "Drizzle ORM",
   "tagline": "Rainwater terminal on graph paper \u2014 a clean developer workbench where ink-blue notes float over monochrome code, with little raindrop creatures as the only witnesses.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/972925c4-0caa-4dc2-9c00-798b5be0ad70",
   "source_url": "https://orm.drizzle.team",
   "extracted_at": "2026-06-03T17:32:50.882Z",

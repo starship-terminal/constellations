@@ -4,6 +4,11 @@
   "name": "Sequence",
   "tagline": "API console on soft daylight \u2014 the interface is the product, and purple is the only power color.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/5b188bcc-95f6-45b4-b0af-1c78e2ef05f2",
   "source_url": "https://light.so/home",
   "extracted_at": "2026-06-03T21:23:02.423Z",

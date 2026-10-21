@@ -4,6 +4,11 @@
   "name": "Your workplace has the answer. Just ask Dala for it.",
   "tagline": "constellation floating on black velvet",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
   "source_url": "https://dala.craftedbygc.com",
   "extracted_at": "2026-07-03T02:42:43.049Z",

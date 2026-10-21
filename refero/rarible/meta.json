@@ -4,6 +4,12 @@
   "name": "Rarible",
   "tagline": "blacklight crypto terminal \u2014 a midnight trading floor where a single highlighter mark signals everything that matters.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/44c69f5d-68bf-4507-8f00-e6aa1c96246b",
   "source_url": "https://rarible.com",
   "extracted_at": "2026-06-03T18:29:39.412Z",

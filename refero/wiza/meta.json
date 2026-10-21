@@ -4,6 +4,11 @@
   "name": "Wiza",
   "tagline": "Twilight prospecting observatory bathed in lavender mist",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/3720657f-2b59-475e-a43d-b18cac718325",
   "source_url": "https://wiza.co",
   "extracted_at": "2026-06-03T18:49:26.710Z",

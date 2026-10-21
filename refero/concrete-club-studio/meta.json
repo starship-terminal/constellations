@@ -4,6 +4,12 @@
   "name": "Concrete Club Studio",
   "tagline": "sun-faded editorial zine on dusty rose paper \u2014 the layout is a printed page, not a screen",
   "theme": "mixed",
+  "product_type": "agency",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/f8ab25e8-87c1-4d7b-a633-daf3ea39b916",
   "source_url": "https://concreteclub.studio",
   "extracted_at": "2026-06-03T18:56:04.130Z",

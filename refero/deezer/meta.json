@@ -4,6 +4,11 @@
   "name": "Deezer",
   "tagline": "Festival poster meets dark arena",
   "theme": "mixed",
+  "product_type": "entertainment",
+  "design_style": "cinematic",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/502af24a-b765-44b2-828f-dd610f27a125",
   "source_url": "https://deezer.com",
   "extracted_at": "2026-06-03T19:18:55.080Z",

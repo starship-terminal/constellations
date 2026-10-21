@@ -4,6 +4,12 @@
   "name": "Kobu",
   "tagline": "Monochrome travel gazette on warm parchment",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/355d4b38-1a53-4544-911e-0f5073ab836b",
   "source_url": "https://kobu.co",
   "extracted_at": "2026-06-03T15:46:09.162Z",

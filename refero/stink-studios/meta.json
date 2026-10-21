@@ -4,6 +4,11 @@
   "name": "Stink Studios",
   "tagline": "cinema studio at midnight \u2014 the projector hums, the room is black, only the reel glows.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "cinematic",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/e287e026-3433-4a1d-9b23-9a65f8b9c138",
   "source_url": "https://www.stinkstudios.com",
   "extracted_at": "2026-06-03T21:42:02.371Z",

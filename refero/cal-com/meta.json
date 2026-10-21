@@ -4,6 +4,12 @@
   "name": "Cal.com",
   "tagline": "Monochrome Utility, Human Touch. A system that prioritizes clarity and function with a stark black-and-white palette, but softens it with friendly typography and rounded forms.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "corporate",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/5d7aa503-8cfa-49a4-bd3b-0c2f0f075c70",
   "source_url": "https://cal.com",
   "extracted_at": "2026-04-11T17:33:49.454Z",

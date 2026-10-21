@@ -4,6 +4,11 @@
   "name": "Subframe",
   "tagline": "graphite blueprint on warm vellum. A designer's drafting paper where every mark is either graphite or erasure, never paint \u2014 depth comes from line weight and the occasional serif flourish.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "paper",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/c65db621-7faa-45f3-8e30-dc3ef9ffe660",
   "source_url": "https://www.subframe.com",
   "extracted_at": "2026-06-03T17:55:49.754Z",

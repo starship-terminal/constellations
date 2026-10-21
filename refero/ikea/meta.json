@@ -4,6 +4,12 @@
   "name": "IKEA",
   "tagline": "sunlit Swedish flat-pack showroom",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "playful",
+  "tags": [
+    "corporate",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e7b37c82-239c-48d5-b293-79a2bfa235cc",
   "source_url": "https://www.ikea.com",
   "extracted_at": "2026-06-03T20:49:37.912Z",

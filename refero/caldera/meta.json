@@ -4,6 +4,12 @@
   "name": "Caldera",
   "tagline": "forge fire on warm limestone. The canvas is raw warm plaster, and every orange element reads as glowing embers pressed into the surface.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "paper",
+  "tags": [
+    "organic",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/fe8cdcf9-c850-4d52-be07-5ad269bf9ebf",
   "source_url": "https://caldera.xyz",
   "extracted_at": "2026-07-03T03:13:33.116Z",

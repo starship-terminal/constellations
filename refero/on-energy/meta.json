@@ -4,6 +4,12 @@
   "name": "ON.energy",
   "tagline": "High-voltage caution yellow on midnight steel",
   "theme": "mixed",
+  "product_type": "other",
+  "design_style": "technical",
+  "tags": [
+    "brutalist",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/31e00a99-6946-4f07-829a-b0904a39a20d",
   "source_url": "https://www.on.energy",
   "extracted_at": "2026-06-03T17:12:41.267Z",

@@ -4,6 +4,11 @@
   "name": "Legora",
   "tagline": "Editorial law journal on warm cream",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/f89bad29-019a-48d7-9724-c40a0d7d8171",
   "source_url": "https://legora.com",
   "extracted_at": "2026-06-03T15:41:10.801Z",

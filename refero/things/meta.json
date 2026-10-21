@@ -4,6 +4,12 @@
   "name": "Things",
   "tagline": "Apple keynote at half volume \u2014 a gallery wall of tilted product frames floating on a quiet cool-gray canvas, with one vivid blue spark pulling the eye to every interactive moment.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "corporate",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/ec0f5bca-8367-49e7-b8aa-73b3fa09a4a0",
   "source_url": "https://culturedcode.com/things",
   "extracted_at": "2026-06-03T15:34:27.509Z",

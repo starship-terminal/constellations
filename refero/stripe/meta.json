@@ -4,6 +4,11 @@
   "name": "Stripe",
   "tagline": "indigo-ink ledger on frosted glass",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "swiss",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/48e5de76-05d5-4c4e-a269-c7c245b291ec",
   "source_url": "https://stripe.com",
   "extracted_at": "2026-07-03T02:51:26.285Z",

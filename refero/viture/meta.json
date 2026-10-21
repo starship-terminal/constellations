@@ -4,6 +4,11 @@
   "name": "VITURE",
   "tagline": "neon product stage behind midnight glass \u2014 a blacked-out showroom where one orange beam cuts through the dark to illuminate a pair of glasses on a pedestal.",
   "theme": "mixed",
+  "product_type": "hardware",
+  "design_style": "neon",
+  "tags": [
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/390cfba6-8c2f-4273-8c9e-750d470b6e2e",
   "source_url": "https://www.viture.com",
   "extracted_at": "2026-06-03T20:33:14.195Z",

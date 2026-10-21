@@ -4,6 +4,12 @@
   "name": "Home",
   "tagline": "Warm editorial atelier. Cream paper, charcoal ink, and one ember-orange period of emphasis \u2014 a job platform that feels like an art-book spread photographed under amber light.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/2230ba53-445e-411d-b483-16410a072639",
   "source_url": "https://www.useparallel.com",
   "extracted_at": "2026-06-03T15:53:28.456Z",

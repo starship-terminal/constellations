@@ -4,6 +4,11 @@
   "name": "Reclaim",
   "tagline": "lavender productivity workshop with violet ink",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/71c7b9ad-44cc-483f-9c53-3cf73e0522a4",
   "source_url": "https://reclaim.ai",
   "extracted_at": "2026-06-03T20:01:32.538Z",

@@ -4,6 +4,11 @@
   "name": "Lens",
   "tagline": "mint signal on white paper \u2014 a single teal CTA floating in a sea of quiet graphite and pale gray.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "minimal",
+  "tags": [
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/63c0e759-3175-4f62-a8e3-b9e285f9e998",
   "source_url": "https://lens.xyz",
   "extracted_at": "2026-06-03T18:56:37.360Z",

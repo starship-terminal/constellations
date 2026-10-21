@@ -4,6 +4,11 @@
   "name": "Arc",
   "tagline": "industrial white gallery above midnight water",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/acfb6fa1-3aed-4e64-8522-7f332a796de8",
   "source_url": "https://arcboats.com",
   "extracted_at": "2026-06-03T18:21:23.122Z",

@@ -4,6 +4,12 @@
   "name": "Superlative",
   "tagline": "Industrial product monograph behind studio glass. A darkroom vitrine where hardware, label, and oversized headline share one continuous, almost weightless plane.",
   "theme": "mixed",
+  "product_type": "design-tool",
+  "design_style": "luxury",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/10ab6120-3d03-48ff-aebe-0b4910edc046",
   "source_url": "https://playsuperlative.com",
   "extracted_at": "2026-06-03T16:28:40.426Z",

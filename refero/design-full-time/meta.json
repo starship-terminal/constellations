@@ -4,6 +4,11 @@
   "name": "Design Full-Time",
   "tagline": "black-box cinema with a single warm spotlight",
   "theme": "dark",
+  "product_type": "education",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/80b2cc74-62c5-4898-bc2b-12aa94ed2943",
   "source_url": "https://designfulltime.com",
   "extracted_at": "2026-06-03T21:30:15.398Z",

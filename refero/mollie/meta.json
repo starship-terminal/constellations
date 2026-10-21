@@ -4,6 +4,12 @@
   "name": "Mollie",
   "tagline": "cashmere counter, dark ledger. Keep broad white editorial space around black type, then anchor product moments in warm cream, espresso-brown, and tactile real-world payment photography.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/73ec75d6-edec-4ed2-bc09-debb261b6ee0",
   "source_url": "https://www.mollie.com",
   "extracted_at": "2026-09-24T17:42:55.719Z",

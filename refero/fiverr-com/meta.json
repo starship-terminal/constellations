@@ -4,6 +4,11 @@
   "name": "Fiverr.com",
   "tagline": "Digital bazaar spotlight \u2014 vivid green pulse on dark theatrical stages. One neon-green period anchors the wordmark; everything else is monochrome staging built to make service offerings glow.",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/c3b34927-0638-463e-bf85-180d73bfc367",
   "source_url": "https://www.fiverr.com",
   "extracted_at": "2026-06-03T18:19:06.160Z",

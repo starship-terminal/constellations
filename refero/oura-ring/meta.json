@@ -4,6 +4,12 @@
   "name": "Oura Ring",
   "tagline": "Warm oatmeal atelier under soft daylight",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "paper",
+  "tags": [
+    "organic",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/9decde51-2a8b-4212-bba5-be9457efc62e",
   "source_url": "https://ouraring.com",
   "extracted_at": "2026-06-03T17:08:52.901Z",

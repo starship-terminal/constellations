@@ -4,6 +4,11 @@
   "name": "Peak Design",
   "tagline": "Gallery wall, half lit",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/6f3fb64d-d4c9-4ec1-86a1-7983e5180985",
   "source_url": "https://peakdesign.com",
   "extracted_at": "2026-06-03T16:44:14.809Z",

@@ -4,6 +4,12 @@
   "name": "Aboard",
   "tagline": "Editorial field journal under industrial light",
   "theme": "mixed",
+  "product_type": "ai",
+  "design_style": "editorial",
+  "tags": [
+    "technical",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/7b083729-e694-4b66-82a3-befb08451722",
   "source_url": "https://aboard.com",
   "extracted_at": "2026-06-03T17:10:01.369Z",

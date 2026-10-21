@@ -4,6 +4,12 @@
   "name": "Micro",
   "tagline": "sunrise over a digital meadow \u2014 a calm horizon gradient holding a quiet, ink-on-paper workspace beneath it.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/cc43cfe3-195b-4081-b586-c42db054a466",
   "source_url": "https://www.micro.so",
   "extracted_at": "2026-06-03T17:10:00.482Z",

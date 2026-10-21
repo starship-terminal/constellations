@@ -4,6 +4,11 @@
   "name": "Rally",
   "tagline": "Cosmic farewell observatory",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "futuristic",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/ed492f55-eddf-40ed-81cb-550b013787c8",
   "source_url": "https://rally.space",
   "extracted_at": "2026-06-03T22:10:03.790Z",

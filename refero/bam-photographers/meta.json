@@ -4,6 +4,11 @@
   "name": "BAM Photographers",
   "tagline": "gallery projection after midnight. Black canvas, blown-up white lettering, and cinematic image pairs make the site feel like a projected portfolio rather than a conventional editorial grid.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "cinematic",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/ff475028-7044-43b0-b4da-b84c4b77246f",
   "source_url": "https://benandmartin.com",
   "extracted_at": "2026-09-20T19:26:46.303Z",

@@ -4,6 +4,12 @@
   "name": "TWOMUCH.STUDIO",
   "tagline": "floating museum of curiosities",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "maximalist",
+  "tags": [
+    "playful",
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/12b3e1b6-31b9-4843-9b3b-8f39c9dd1474",
   "source_url": "https://twomuch.studio",
   "extracted_at": "2026-06-03T19:15:21.377Z",

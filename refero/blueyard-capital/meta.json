@@ -4,6 +4,12 @@
   "name": "BlueYard Capital",
   "tagline": "Sunset editorial observatory. A warm peach horizon bleeds into pure white, one oversized headline floats in the negative space, and a single 3D celestial body hangs below like a planet in a printed monograph.",
   "theme": "light",
+  "product_type": "venture",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/ea11696a-17c0-41f8-9b08-c820851e0ea9",
   "source_url": "https://www.blueyard.com",
   "extracted_at": "2026-06-03T20:07:35.302Z",

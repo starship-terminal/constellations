@@ -4,6 +4,12 @@
   "name": "Zara",
   "tagline": "Gallery wall for fashion \u2014 pure white space, hairline frames, editorial imagery as the only color.",
   "theme": "light",
+  "product_type": "fashion",
+  "design_style": "minimal",
+  "tags": [
+    "editorial",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/97823ba1-ee1e-489d-aefd-8d72a578669a",
   "source_url": "https://zara.com",
   "extracted_at": "2026-06-03T18:15:42.357Z",

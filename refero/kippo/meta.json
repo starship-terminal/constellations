@@ -4,6 +4,12 @@
   "name": "Kippo",
   "tagline": "Pixel arcade boot screen in a black void. Monospace glyphs traced in white neon against a pure black void, with a single hot-pink power-up color that should feel rare and electric when it appears.",
   "theme": "dark",
+  "product_type": "other",
+  "design_style": "retro",
+  "tags": [
+    "neon",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/917048a3-53b3-44e6-ab33-faefc4dcc9df",
   "source_url": "https://kippo.com",
   "extracted_at": "2026-06-03T20:51:47.605Z",

@@ -4,6 +4,12 @@
   "name": "Julia Krantz",
   "tagline": "Darkroom contact sheet \u2014 a grid of photographic tiles on pure black, identity spelled in barely-visible weight-300 letterforms.",
   "theme": "dark",
+  "product_type": "portfolio",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/92857b05-1c01-4c7a-b196-beb4e4871998",
   "source_url": "https://juliakrantz.com",
   "extracted_at": "2026-04-28T21:33:21.869Z",

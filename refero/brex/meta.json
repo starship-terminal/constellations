@@ -4,6 +4,12 @@
   "name": "Brex",
   "tagline": "White concrete, single ember \u2014 a clinical financial instrument where one orange spark does all the talking.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "minimal",
+  "tags": [
+    "corporate",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/b58d92f6-68a8-4358-8fc9-6ea58e6d483b",
   "source_url": "https://brex.com",
   "extracted_at": "2026-06-03T17:18:35.523Z",

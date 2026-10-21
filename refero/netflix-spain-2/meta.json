@@ -4,6 +4,12 @@
   "name": "Netflix Spain",
   "tagline": "The Infinite Digital Shelf. A cinematic experience where an endless library of content is presented against a pure black, theatrical backdrop.",
   "theme": "dark",
+  "product_type": "entertainment",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal",
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/32959012-f50d-4465-bb01-2aa4d506e0a8",
   "source_url": "https://netflix.com",
   "extracted_at": "2026-04-11T17:50:41.173Z",

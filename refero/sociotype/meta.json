@@ -4,6 +4,11 @@
   "name": "Sociotype",
   "tagline": "Type specimen museum on white paper",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/973332dc-4e10-4e90-85d8-3bce9c3cd3ed",
   "source_url": "https://socio-type.com",
   "extracted_at": "2026-06-03T14:59:19.335Z",

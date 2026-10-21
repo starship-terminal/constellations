@@ -4,6 +4,12 @@
   "name": "Browserbase",
   "tagline": "editorial broadsheet meets data terminal \u2014 a single hot orange punctuating a near-monochrome field of oversized GT Planar headlines, soft pastel card surfaces, and tiny mono metadata.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "editorial",
+  "tags": [
+    "technical",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/34d438ad-0647-471e-9a6f-7c1fa29d5df6",
   "source_url": "https://www.browserbase.com",
   "extracted_at": "2026-06-03T20:36:03.247Z",

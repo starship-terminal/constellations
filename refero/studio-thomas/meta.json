@@ -4,6 +4,11 @@
   "name": "Studio Thomas",
   "tagline": "Alarm-orange broadcast panel on raw linen",
   "theme": "mixed",
+  "product_type": "agency",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/f2b24dce-5b1f-47c2-8ef6-bbbd08b68826",
   "source_url": "https://studiothomas.co.uk",
   "extracted_at": "2026-06-03T21:36:08.581Z",

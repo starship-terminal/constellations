@@ -4,6 +4,11 @@
   "name": "Zora",
   "tagline": "Neon gallery on graphite glass.\\n\\n{",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/5c4eb249-fa38-4254-81e0-a32ee22766e2",
   "source_url": "https://zora.co",
   "extracted_at": "2026-06-03T21:02:09.728Z",

@@ -4,6 +4,12 @@
   "name": "Exo Ape",
   "tagline": "Venetian gallery at golden hour",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "luxury",
+  "tags": [
+    "minimal",
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/18e84ffd-4a5d-453d-aeff-dae2847aa3c9",
   "source_url": "https://www.exoape.com",
   "extracted_at": "2026-06-03T17:42:33.758Z",

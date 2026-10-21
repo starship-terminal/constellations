@@ -4,6 +4,11 @@
   "name": "Playdate",
   "tagline": "A yellow Game Boy under museum lights. Playdate's whole identity is that single bright product held against neutral gray, with one violet spark doing all the interactive work.",
   "theme": "mixed",
+  "product_type": "hardware",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/2175034b-96d7-417e-886f-ff5a4d8551ae",
   "source_url": "https://play.date",
   "extracted_at": "2026-06-03T17:10:18.598Z",

@@ -4,6 +4,11 @@
   "name": "Charlie",
   "tagline": "Monastery stone-cut typography on obsidian. A portfolio that uses one red wall to make silence deafening.",
   "theme": "dark",
+  "product_type": "portfolio",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/34aa811f-6084-484c-b4c0-f587b514e970",
   "source_url": "https://charlielemaignan.com",
   "extracted_at": "2026-06-03T17:23:27.749Z",

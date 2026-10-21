@@ -4,6 +4,12 @@
   "name": "JetBrains",
   "tagline": "Neon nebula on obsidian \u2014 a black-ground page where violet-blue gradients bloom upward like deep-space imagery, punctuated by hot-pink neon and per-product chromatic icon light.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "neon",
+  "tags": [
+    "futuristic",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/bc4fb98b-37ec-480a-b7a9-acd197cbebb9",
   "source_url": "https://jetbrains.com",
   "extracted_at": "2026-04-11T19:10:37.048Z",

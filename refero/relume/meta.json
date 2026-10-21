@@ -4,6 +4,11 @@
   "name": "Relume",
   "tagline": "Cream canvas, one violet spark.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/b2dab9ac-9e35-43f5-a8bb-dd9d6702acf0",
   "source_url": "https://relume.io",
   "extracted_at": "2026-06-03T19:35:23.514Z",

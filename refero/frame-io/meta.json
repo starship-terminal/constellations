@@ -4,6 +4,11 @@
   "name": "Frame.io",
   "tagline": "Midnight cinema projection room.\n\nA dark suite where a single blue spotlight does all the work and the UI recedes so creative content can project forward.",
   "theme": "dark",
+  "product_type": "design-tool",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/30c3aa18-4323-4448-8ddd-3ca933fe5780",
   "source_url": "https://frame.io",
   "extracted_at": "2026-06-03T17:25:20.903Z",

@@ -4,6 +4,12 @@
   "name": "Cowboy",
   "tagline": "Belgian bicycle gallery in porcelain white. A showroom where matte surfaces, oversized editorial type, and near-zero decoration force the eye onto the machine and the message.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "editorial",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/00ce9181-45be-4340-b6a6-75a4d5d60cef",
   "source_url": "https://cowboy.com",
   "extracted_at": "2026-06-03T18:56:05.727Z",

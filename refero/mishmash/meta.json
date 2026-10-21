@@ -4,6 +4,11 @@
   "name": "mishmash\u00ae",
   "tagline": "paper boutique, black frame, vivid contents.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "playful",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/ebac84e6-b22c-4d21-845f-9165158af844",
   "source_url": "https://mishmash.pt",
   "extracted_at": "2026-06-03T19:03:01.315Z",

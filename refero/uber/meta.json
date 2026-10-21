@@ -4,6 +4,12 @@
   "name": "Uber",
   "tagline": "Black-and-white transit kiosk. Picture a monochrome wayfinding panel where the only color comes from editorial illustrations mounted beside the input form.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/caf8d2ef-4173-4431-9d26-05be0272e9f8",
   "source_url": "https://uber.com",
   "extracted_at": "2026-06-03T16:14:29.443Z",

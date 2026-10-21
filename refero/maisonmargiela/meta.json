@@ -4,6 +4,11 @@
   "name": "Maisonmargiela",
   "tagline": "Gallery wall with a whisper",
   "theme": "light",
+  "product_type": "fashion",
+  "design_style": "luxury",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/44a6d2a5-16ef-42cd-a69c-33a7af16638d",
   "source_url": "https://maisonmargiela.com",
   "extracted_at": "2026-06-03T17:51:49.332Z",

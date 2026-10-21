@@ -4,6 +4,11 @@
   "name": "Coda",
   "tagline": "Cream-paper workspace \u2014 warm editor's desk where bold black type and a single orange accent do all the work.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/0f0d4cb7-5109-4e81-8c8d-f6bd0441b27c",
   "source_url": "https://coda.io",
   "extracted_at": "2026-06-03T19:31:52.708Z",

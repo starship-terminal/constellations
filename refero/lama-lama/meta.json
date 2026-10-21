@@ -4,6 +4,11 @@
   "name": "Lama Lama",
   "tagline": "midnight studio with a frozen-white spotlight",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/8e26bf8a-44b8-4fe1-9b4b-188dd5827c0f",
   "source_url": "https://lamalama.nl",
   "extracted_at": "2026-06-03T21:36:18.823Z",

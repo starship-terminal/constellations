@@ -4,6 +4,12 @@
   "name": "Adanola",
   "tagline": "Editorial lookbook on white paper. A fashion editorial spread where typography and photography breathe across clean white surfaces, with black ink for type and a whisper-thin custom sans-serif (Favorit) carrying the entire brand voice.",
   "theme": "light",
+  "product_type": "fashion",
+  "design_style": "editorial",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/a54e5114-bfb1-44ce-ab07-a133a1226117",
   "source_url": "https://adanola.com",
   "extracted_at": "2026-06-03T19:46:06.786Z",
