@@ -871,7 +871,8 @@ function rfSimilar(e) {
   const all = items.concat(fill.map((s) => ({ slug: s.slug, name: s.name, note: null, s })));
   if (!all.length) return '';
   return `<section class="rf-sec"><h2 class="rf-h2">More like this</h2><div class="rf-grid rf-sim">
-    ${all.map((x) => (x.slug && x.s ? rfCard(x.s, x.note) : `<div class="rf-card rf-plain"><div class="rf-card-foot"><div class="rf-card-txt"><h3>${esc(x.name)}</h3><p>${esc(x.note || '')}</p></div></div></div>`)).join('')}
+    ${all.map((x) => (x.slug && x.s ? rfCard(x.s, x.note)
+      : `<div class="rf-card rf-plain" title="Not in this library"><div class="rf-tile"><div class="rf-shot rf-empty"><span>${esc((x.name || '?')[0].toUpperCase())}</span></div></div><div class="rf-card-foot"><div class="rf-card-txt"><h3>${esc(x.name)}</h3><p>${esc(x.note || '')}</p></div></div></div>`)).join('')}
   </div></section>`;
 }
 
