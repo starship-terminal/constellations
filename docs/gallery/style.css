@@ -522,3 +522,19 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 .rf-card.rf-plain:hover .rf-shot { transform: none; }
 .rf-shot.rf-empty { display: grid; place-items: center; }
 .rf-shot.rf-empty span { font-size: 30px; font-weight: 510; color: var(--faint); letter-spacing: -.02em; }
+
+/* ---------- deploy bar (docs/assets/redeploy.js) */
+#deploy-bar {
+  display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+  justify-content: space-between; padding: 10px clamp(16px, 4vw, 40px);
+  border-top: 1px solid var(--line); background: var(--panel);
+  color: var(--faint); font-size: 12px;
+}
+#deploy-bar .deploy-bar__side { display: inline-flex; align-items: center; gap: 10px; }
+#deploy-bar .deploy-bar__button {
+  font: inherit; color: var(--muted); background: transparent;
+  border: 1px solid var(--line); border-radius: var(--radius-ctl);
+  padding: 3px 12px; cursor: pointer;
+}
+#deploy-bar .deploy-bar__button:hover { color: var(--text); border-color: var(--line-strong); }
+#deploy-bar .deploy-bar__button:disabled { opacity: .55; cursor: default; }

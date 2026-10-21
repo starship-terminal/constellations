@@ -53,3 +53,11 @@
     });
   </script>
 {% endblock %}
+{% block footer %}
+  {{ super() }}
+  {#- The deploy bar (scripts/deploy_trigger.py on kai-home-server): last
+      redeploy stamp + the Redeploy button, injected by redeploy.js below
+      the theme footer. Off the host it degrades to build time + a miss
+      notice, like the sources site's button. -#}
+  <script src="{{ base_url }}/assets/redeploy.js" defer></script>
+{% endblock %}
