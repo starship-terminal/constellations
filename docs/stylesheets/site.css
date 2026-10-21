@@ -148,7 +148,6 @@ body[data-md-color-scheme="default"][data-md-color-primary] .md-header {
 .md-header--shadow { box-shadow: none; }
 .md-header__inner {
   height: var(--ds-bar-h);
-  max-width: var(--ds-page-w);
   padding: 0 var(--ds-pad);
   gap: 16px;
 }
@@ -227,7 +226,11 @@ body[data-md-color-scheme="default"][data-md-color-primary] .md-icon { color: #2
 
 /* ---------- layout ---------- */
 .md-grid { max-width: var(--ds-page-w); }
-.md-main__inner { margin-top: 32px; padding: 0 var(--ds-pad); }
+/* Chrome bands run full-bleed like the gallery's .bar: mark, links and the
+   footer strip sit at the page pad from the viewport edge; only the content
+   column rides the page grid. */
+.md-header__inner.md-grid, .md-footer .md-grid { max-width: none; }
+.md-main__inner { margin-top: 40px; padding: 0 var(--ds-pad); }
 .md-content__inner { margin: 0; }
 .md-content__inner { margin-bottom: 96px; }
 /* the gallery's .pkg rhythm: 40px between a rail and the content.
