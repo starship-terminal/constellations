@@ -6,14 +6,30 @@
   --sc-partly: #ef9f27;
   --sc-missing: #e24b4a;
   --sc-na: transparent;
-  --sc-glyph: rgba(0, 0, 0, 0.62);
-  --sc-cell: 1.35rem;
+  --sc-cell: 1.2rem;
+  --sc-meets-bg: rgba(29, 158, 117, .1);
+  --sc-partly-bg: rgba(239, 159, 39, .12);
+  --sc-missing-bg: rgba(226, 75, 74, .1);
+  --sc-meets-line: rgba(29, 158, 117, .34);
+  --sc-partly-line: rgba(239, 159, 39, .38);
+  --sc-missing-line: rgba(226, 75, 74, .34);
+  --sc-meets-ink: #0f6b4f;
+  --sc-partly-ink: #96590a;
+  --sc-missing-ink: #b03333;
 }
 [data-md-color-scheme="slate"] {
   --sc-meets: #2bb488;
   --sc-partly: #f0a83a;
   --sc-missing: #e86160;
-  --sc-glyph: rgba(0, 0, 0, 0.7);
+  --sc-meets-bg: rgba(43, 180, 136, .12);
+  --sc-partly-bg: rgba(240, 168, 58, .12);
+  --sc-missing-bg: rgba(232, 97, 96, .12);
+  --sc-meets-line: rgba(43, 180, 136, .4);
+  --sc-partly-line: rgba(240, 168, 58, .4);
+  --sc-missing-line: rgba(232, 97, 96, .4);
+  --sc-meets-ink: #4fd1a5;
+  --sc-partly-ink: #f5bd60;
+  --sc-missing-ink: #f0807e;
 }
 
 .sc-scroll {
@@ -91,7 +107,7 @@
 .md-typeset .sc-heat td[class^="g-"] a {
   display: block;
   line-height: var(--sc-cell);
-  color: var(--sc-glyph);
+  color: var(--md-default-fg-color--light);
   font-size: 0.7rem;
   text-decoration: none;
   border-radius: 5px;
@@ -123,10 +139,25 @@
   padding-right: 0.6rem;
 }
 
-.g-meets { background: var(--sc-meets) !important; }
-.g-partly { background: var(--sc-partly) !important; }
-.g-missing { background: var(--sc-missing) !important; }
+/* Grades render as quiet tinted cells with a hairline ring and a glyph in the
+   grade's ink colour, not saturated chips. The stacked .sc-bar keeps solid
+   fills (its segments are too thin for a ring). */
+.g-meets { background: var(--sc-meets-bg) !important; box-shadow: inset 0 0 0 1px var(--sc-meets-line); }
+.g-partly { background: var(--sc-partly-bg) !important; box-shadow: inset 0 0 0 1px var(--sc-partly-line); }
+.g-missing { background: var(--sc-missing-bg) !important; box-shadow: inset 0 0 0 1px var(--sc-missing-line); }
 .g-na { background: var(--sc-na); }
+
+.sc-bar .g-meets { background: var(--sc-meets) !important; box-shadow: none; }
+.sc-bar .g-partly { background: var(--sc-partly) !important; box-shadow: none; }
+.sc-bar .g-missing { background: var(--sc-missing) !important; box-shadow: none; }
+
+.md-typeset .sc-heat td.g-meets a { color: var(--sc-meets-ink); }
+.md-typeset .sc-heat td.g-partly a { color: var(--sc-partly-ink); }
+.md-typeset .sc-heat td.g-missing a { color: var(--sc-missing-ink); }
+
+.md-typeset .sc-badge.g-meets { color: var(--sc-meets-ink); }
+.md-typeset .sc-badge.g-partly { color: var(--sc-partly-ink); }
+.md-typeset .sc-badge.g-missing { color: var(--sc-missing-ink); }
 
 /* Visible only to screen readers. */
 .sc-sr {

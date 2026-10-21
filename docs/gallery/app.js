@@ -15,6 +15,9 @@ const PAGE = 60;
 let DATA = null;
 const state = { q: '', cat: 'all', dark: false, platform: 'all', view: 'grid' };
 try { Object.assign(state, JSON.parse(localStorage.getItem('ds-index') || '{}'), { q: '' }); } catch (e) {}
+// The docs pages' header search lands here as gallery/index.html?q=<term>.
+try { state.q = new URLSearchParams(location.search).get('q') || ''; } catch (e) {}
+if (state.q) qInput.value = state.q;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const url = (p) => UP + p.split('/').map(encodeURIComponent).join('/');

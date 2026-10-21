@@ -414,3 +414,38 @@ body[data-md-color-scheme="default"][data-md-color-primary] .md-top { background
 @media screen and (max-width: 44.984375em) {
   .md-header__title { font-size: 15px; }
 }
+
+/* ---------- header search ---------- */
+/* The gallery bar's search field, mirrored on the docs pages. A plain form
+   injected by overrides/main.html: it submits to gallery/index.html?q=..., so
+   nothing here depends on the (disabled) search plugin or an index file. */
+.ds-search {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 32px;
+  padding: 0 10px;
+  margin: 0 0.4rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--ds-radius-ctl);
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+}
+.ds-search:focus-within { border-color: var(--md-default-fg-color--light); }
+.ds-search svg { flex-shrink: 0; }
+.ds-search input {
+  width: 10.5rem;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font: inherit;
+  font-size: 13px;
+}
+.ds-search input::placeholder { color: var(--md-default-fg-color--light); }
+
+/* below ~960px the bar keeps mark + title + toggle only */
+@media screen and (max-width: 59.984375em) {
+  .ds-search { display: none; }
+}
