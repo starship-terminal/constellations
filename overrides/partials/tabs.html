@@ -1,0 +1,9 @@
+{#- Renders inside the header's own bar (overrides/partials/header.html), so no
+    nav/md-grid wrapper — just the list of top-level links the CSS lays out
+    inline. Item logic is the theme's own tabs-item macro. -#}
+{% import "partials/tabs-item.html" as item with context %}
+<ul class="md-tabs__list">
+  {% for nav_item in nav.items %}
+    {{ item.render(nav_item) }}
+  {% endfor %}
+</ul>

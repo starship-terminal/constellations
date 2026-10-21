@@ -339,7 +339,7 @@ site_name = "Design systems"
 site_url = "{SITE_URL}"
 site_description = "The design-systems library: captured styles, the scorecard, and how the library works"
 copyright = "Private study notes. Products and trademarks belong to their owners."
-extra_css = ["stylesheets/scorecard.css"]
+extra_css = ["stylesheets/scorecard.css", "stylesheets/site.css"]
 nav = [
   {{ "Home" = "index.md" }},
   {{ "Gallery" = "gallery/index.html" }},
@@ -365,6 +365,10 @@ custom_dir = "overrides"
 favicon = "assets/favicon.svg"
 # The same four-tile mark the gallery's own bar uses — not the default book icon.
 logo = "assets/favicon.svg"
+# No webfont fetch: the site uses the same font stack as the gallery (Inter
+# Variable if installed, then the system sans; Berkeley Mono then JetBrains
+# Mono or the system mono). One less request on the wire.
+font = false
 # No navigation.instant: StatiCrypt encrypts every published page, and instant
 # loading would fetch the encrypted HTML behind the decrypt step.
 features = [
