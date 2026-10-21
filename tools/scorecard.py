@@ -217,7 +217,7 @@ def index_page(criteria: dict, audit: dict) -> str:
     label = "Met by no system" if floor == 0 else f"Met by only {floor}"
     md += (f"-   **{label}**\n\n    ---\n\n    " +
            ", ".join(f"[{c['id']} {c['title']}](criteria.md#{c['id'].lower()})" for c in weakest) + ".\n\n")
-    md += "</div>\n\n## Scorecard\n\n"
+    md += "</div>\n\n## Grades\n\n"
     md += heatmap(criteria, systems, audit) + "\n\n" + legend() + "\n\n"
     md += ('!!! info "Reading the grades"\n\n'
            "    These are captures of other companies' products. Principles, voice and per-component "

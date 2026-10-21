@@ -23,5 +23,33 @@
         if (opt) __md_set("__palette", { color: opt });
       }
     } catch (e) {}
+
+    /* The gallery bar's search field, mirrored on the docs pages. The search
+       plugin stays off (its index would leak text on the encrypted Pages
+       deploy), so this is a plain form that submits to the gallery, whose own
+       client-side search reads ?q=. Placed before the palette toggle to match
+       the gallery bar's order: nav left, search then theme right. */
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        var palette = document.querySelector('form.md-header__option[data-md-component="palette"]');
+        var man = document.querySelector('link[rel="manifest"]');
+        if (!palette || !man) return;
+        var gallery = new URL(man.getAttribute('href'), location.href).href.replace(/site\.webmanifest$/, 'gallery/index.html');
+        /* The Pages workflow deletes site/gallery before publishing; without
+           this probe every search there would 404. The field only appears
+           where a gallery actually answers. */
+        fetch(gallery, { method: 'HEAD' }).then(function (r) {
+          if (!r.ok) return;
+          var form = document.createElement('form');
+          form.className = 'ds-search';
+          form.setAttribute('role', 'search');
+          form.action = gallery;
+          form.method = 'get';
+          form.innerHTML = '<svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>'
+            + '<input name="q" type="search" placeholder="Search name, use, tag…" autocomplete="off" aria-label="Search design systems">';
+          palette.parentNode.insertBefore(form, palette);
+        }).catch(function () {});
+      } catch (e) {}
+    });
   </script>
 {% endblock %}
