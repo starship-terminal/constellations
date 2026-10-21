@@ -401,6 +401,24 @@ body[data-md-color-scheme="default"][data-md-color-primary] .md-typeset .grid.ca
 .md-copyright { font-size: 12px; color: var(--md-default-fg-color--lighter); }
 .md-footer-meta.md-typeset a { color: var(--md-default-fg-color--light); }
 
+/* deploy bar (docs/assets/redeploy.js): left = last redeploy stamp, right =
+   the button. Under the theme footer, on the footer's darker band. */
+#deploy-bar {
+  display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+  justify-content: space-between; padding: 10px var(--ds-pad);
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-footer-bg-color--dark);
+  color: var(--md-default-fg-color--lighter); font-size: 12px;
+}
+#deploy-bar .deploy-bar__side { display: inline-flex; align-items: center; gap: 10px; }
+#deploy-bar .deploy-bar__button {
+  font: inherit; color: var(--md-default-fg-color--light); background: transparent;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--ds-radius-ctl); padding: 3px 12px; cursor: pointer;
+}
+#deploy-bar .deploy-bar__button:hover { color: var(--md-default-fg-color); border-color: var(--ds-ash); }
+#deploy-bar .deploy-bar__button:disabled { opacity: .55; cursor: default; }
+
 /* back-to-top and scroll offsets stay under the bar */
 .md-top { background: var(--ds-carbon); border: 1px solid var(--ds-graphite); border-radius: var(--ds-radius-ctl); color: var(--ds-mist); }
 body[data-md-color-scheme="default"][data-md-color-primary] .md-top { background: #ffffff; border-color: #d4d4d8; color: #27272a; }
