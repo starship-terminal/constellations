@@ -134,21 +134,25 @@ def init_db():
 
 
 def call_api(batch, model, tries=3):
-    """One API call for a list of styles; returns {slug: validated labels}."""
-    payload = [{"slug": s["slug"], "name": s["name"], "host": s["host"],
-                "industry": s["industry"], "tagline": s["tagline"]} for s in batch]
-    body = json.dumps({
-        "model": model, "max_tokens": 4096, "temperature": 0,
-        "system": SYSTEM,
-        "messages": [{"role": "user", "content": json.dumps(payload)}],
-    }).encode()
-    req = urllib.request.Request(API, data=body, method="POST", headers={
-        "content-type": "application/json",
-        "x-api-key": os.environ["ANTHROPIC_API_KEY"],
-        "anthropic-version": "2023-06-01",
-    })
-    last = None
+    """Classify a list of styles; returns (results, missing, last_error).
+    Valid results are kept even when other styles in the batch fail or the
+    model drops them; each retry only re-asks for the slugs still missing."""
+    want = {s["slug"]: s for s in batch}
+    out, missing, last = {}, list(want), None
     for attempt in range(tries):
+        payload = [{"slug": s["slug"], "name": s["name"], "host": s["host"],
+                    "industry": s["industry"], "tagline": s["tagline"]}
+                   for s in (want[k] for k in missing)]
+        body = json.dumps({
+            "model": model, "max_tokens": 4096, "temperature": 0,
+            "system": SYSTEM,
+            "messages": [{"role": "user", "content": json.dumps(payload)}],
+        }).encode()
+        req = urllib.request.Request(API, data=body, method="POST", headers={
+            "content-type": "application/json",
+            "x-api-key": os.environ["ANTHROPIC_API_KEY"],
+            "anthropic-version": "2023-06-01",
+        })
         try:
             with urllib.request.urlopen(req, timeout=180) as r:
                 resp = json.loads(r.read())
@@ -156,7 +160,6 @@ def call_api(batch, model, tries=3):
             text = FENCE_RE.sub("", text.strip())
             start, end = text.find("["), text.rfind("]")
             items = json.loads(text[start:end + 1])
-            out = {}
             for it in items:
                 if not isinstance(it, dict) or not it.get("slug"):
                     continue
@@ -170,15 +173,27 @@ def call_api(batch, model, tries=3):
                     if t and t not in (pt, st) and t not in tags:
                         tags.append(t)
                 out[it["slug"]] = {"product_type": pt, "design_style": st,
-                                  "tags": tags[:4]}
-            missing = [s["slug"] for s in batch if s["slug"] not in out]
+                                   "tags": tags[:4]}
+            missing = [k for k in missing if k not in out]
             if not missing:
-                return out
+                break
             last = f"missing/invalid slugs: {missing[:8]}"
         except Exception as ex:
             last = str(ex)[:300]
         time.sleep(2 * (attempt + 1))
-    raise RuntimeError(f"batch failed: {last}")
+    return out, missing, last
+
+
+def apply(db, results):
+    """Write one batch's labels to the db and each style's meta.json, so an
+    interrupted run keeps completed work for the next resume."""
+    for slug, labels in results.items():
+        db.execute(
+            "UPDATE styles SET product_type=?, design_style=?, tags=? WHERE slug=?",
+            (labels["product_type"], labels["design_style"],
+             json.dumps(labels["tags"]), slug))
+        write_meta(slug, labels)
+    db.commit()
 
 
 def write_meta(slug, labels):
@@ -256,6 +271,7 @@ def main():
     if not batches:
         return
 
+    by_slug = {s["slug"]: s for s in styles}
     results, failed, done = {}, [], 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
         futures = {pool.submit(call_api, b, args.model): b for b in batches}
@@ -263,33 +279,33 @@ def main():
             batch = futures[fut]
             done += len(batch)
             try:
-                results.update(fut.result())
+                out, missing, last = fut.result()
             except Exception as ex:
-                failed += batch
-                print(f"FAIL batch of {len(batch)}: {ex}", file=sys.stderr)
+                missing, out, last = [s["slug"] for s in batch], {}, str(ex)[:300]
+            if out:
+                results.update(out)
+                apply(db, out)
+            if missing:
+                failed += [by_slug[k] for k in missing]
+                print(f"partial batch of {len(batch)}: {last}", file=sys.stderr)
             if done % 500 < args.batch:
                 print(f"classified {len(results)}/{len(styles)}")
 
     # One more pass, smaller batches, over whatever the bulk pass dropped.
+    still = []
     for i in range(0, len(failed), 10):
         chunk = failed[i:i + 10]
-        try:
-            results.update(call_api(chunk, args.model))
-        except Exception as ex:
-            print(f"FAIL retry of {len(chunk)}: {ex}", file=sys.stderr)
+        out, missing, last = call_api(chunk, args.model)
+        if out:
+            results.update(out)
+            apply(db, out)
+        if missing:
+            still += missing
+            print(f"retry of {len(chunk)} still missing {len(missing)}: {last}",
+                  file=sys.stderr)
 
-    for s in styles:
-        labels = results.get(s["slug"])
-        if not labels:
-            continue
-        db.execute(
-            "UPDATE styles SET product_type=?, design_style=?, tags=? WHERE slug=?",
-            (labels["product_type"], labels["design_style"],
-             json.dumps(labels["tags"]), s["slug"]))
-        write_meta(s["slug"], labels)
-    db.commit()
     print(f"labeled {len(results)}/{len(styles)}; "
-          f"{len(styles) - len(results)} left unlabeled")
+          f"{len(still)} left unlabeled")
     stats(db)
     db.close()
 

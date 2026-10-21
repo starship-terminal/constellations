@@ -313,6 +313,13 @@ def cmd_fetch(args):
             ds = result.get("designSystem") or {}
             name = name or uuid
             slug = unique_slug(db, name, uuid)
+            # A refetch must not erase labels classify.py or a human already set.
+            old = db.execute(
+                "SELECT product_type, design_style, tags FROM styles WHERE uuid=?",
+                (uuid,)).fetchone()
+            labels = {"product_type": old[0], "design_style": old[1],
+                      "tags": json.loads(old[2] or "[]")} if old and old[0] \
+                     else {"product_type": None, "design_style": None, "tags": []}
             (WORK / f"{uuid}.json").write_text(json.dumps(result))
             outdir = REFERO / slug
             outdir.mkdir(exist_ok=True)
@@ -324,9 +331,7 @@ def cmd_fetch(args):
                 "name": name,
                 "tagline": ds.get("northStar"),
                 "theme": ds.get("theme"),
-                "product_type": None,
-                "design_style": None,
-                "tags": [],
+                **labels,
                 "page_url": url,
                 "source_url": meta.get("url"),
                 "extracted_at": meta.get("extractedAt"),
@@ -340,14 +345,16 @@ def cmd_fetch(args):
                    (uuid, slug, name, tagline, page_url, source_url, theme,
                     extracted_at, fetched_at, design_md, result_json, screenshot_url,
                     video_url, video_poster_url, video_detail_url,
-                    video_detail_poster_url, media_fetched_at)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                    video_detail_poster_url, media_fetched_at,
+                    product_type, design_style, tags)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                 (uuid, slug, name, meta_obj["tagline"], url, meta_obj["source_url"],
                  meta_obj["theme"], meta_obj["extracted_at"], meta_obj["fetched_at"],
                  design_md, json.dumps(result), meta_obj["screenshot_url"],
                  media["video_url"], media["video_poster_url"],
                  media["video_detail_url"], media["video_detail_poster_url"],
-                 meta_obj["fetched_at"]))
+                 meta_obj["fetched_at"], meta_obj["product_type"],
+                 meta_obj["design_style"], json.dumps(meta_obj["tags"])))
             db.commit()
             fetched += 1
             if fetched % 50 == 0:
