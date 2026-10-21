@@ -4,6 +4,11 @@
   "name": "Firstandforemost",
   "tagline": "Protest poster on cream paper",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "maximalist",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/ac86af87-6f60-42a2-b805-87a168792e55",
   "source_url": "https://firstandforemost.co",
   "extracted_at": "2026-06-03T19:25:20.960Z",

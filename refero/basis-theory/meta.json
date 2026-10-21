@@ -4,6 +4,12 @@
   "name": "Basis Theory",
   "tagline": "payment rails in a drafting studio. White technical paper, stacked translucent transaction layers, and one switched-on aqua control define the visual direction.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "technical",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/a5c06875-c374-4af3-923b-6e66a5d58493",
   "source_url": "https://basistheory.com",
   "extracted_at": "2026-09-20T19:28:17.333Z",

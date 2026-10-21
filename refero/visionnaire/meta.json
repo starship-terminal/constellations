@@ -4,6 +4,11 @@
   "name": "VISIONNAIRE",
   "tagline": "Editorial streetwear gallery on bone-white. The brand behaves like a printed lookbook: flat white canvas, sharp black ink, and a single warm cream panel used as a colour-block stage for product or wordmark.",
   "theme": "light",
+  "product_type": "fashion",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/0ecfea58-c1f3-4671-806d-5ae0eb779f38",
   "source_url": "https://vision-naire.com",
   "extracted_at": "2026-06-03T21:42:12.556Z",

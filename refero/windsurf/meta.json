@@ -4,6 +4,11 @@
   "name": "Windsurf",
   "tagline": "Midnight aurora command center \u2014 a deep navy terminal where a single mint teal action glows and a chromatic ribbon is the only permitted spectacle.",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/cfab7b43-ed24-41e9-9272-c858700b865b",
   "source_url": "https://windsurf.com",
   "extracted_at": "2026-06-03T19:22:33.412Z",

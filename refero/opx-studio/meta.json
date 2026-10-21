@@ -4,6 +4,12 @@
   "name": "OPX Studio",
   "tagline": "Dark gallery monolith \u2014 a near-black exhibition hall where monumental white type and full-bleed photography do all the talking, and borders whisper at #292a2c.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "cinematic",
+  "tags": [
+    "monochrome",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/bd395e2e-58a8-4626-acfa-9be8d6cdf604",
   "source_url": "https://opx.studio",
   "extracted_at": "2026-06-03T21:59:16.226Z",

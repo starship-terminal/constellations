@@ -4,6 +4,11 @@
   "name": "Deel",
   "tagline": "Global command split-screen \u2014 a war-room purple panel beside a neon product showcase, then warm cream scrolls below.",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/5ec4eb4f-a37c-4787-b4c1-de49e01770e7",
   "source_url": "https://deel.com",
   "extracted_at": "2026-04-11T19:19:36.969Z",

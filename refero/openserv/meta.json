@@ -4,6 +4,12 @@
   "name": "OpenServ",
   "tagline": "Bright blueprint on frosted glass",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/063be10d-593d-4c81-a99e-a7543737b9db",
   "source_url": "https://openserv.ai",
   "extracted_at": "2026-06-03T15:42:58.476Z",

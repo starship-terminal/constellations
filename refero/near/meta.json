@@ -4,6 +4,12 @@
   "name": "NEAR",
   "tagline": "Emerald constellation on obsidian void \u2014 a black chamber where geometric star-crosses hover like fiber-optic nodes, and a single neon green pulse is the only color that matters.",
   "theme": "mixed",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "futuristic",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/a8c07777-ae41-4b69-9aa7-b05700ff7a14",
   "source_url": "https://near.org",
   "extracted_at": "2026-06-03T20:01:05.474Z",

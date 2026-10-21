@@ -4,6 +4,11 @@
   "name": "Slack",
   "tagline": "Aubergine stage with white spotlights. Deep plum dominates dark sections while a near-white canvas lets oversized Avant-Garde headlines breathe.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "corporate",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/e26cb9b0-f876-41ff-9f24-fd67a6b9776c",
   "source_url": "https://slack.com",
   "extracted_at": "2026-07-03T03:28:46.188Z",

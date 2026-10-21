@@ -4,6 +4,12 @@
   "name": "Timescale",
   "tagline": "Engineering blueprint on warm graph paper",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "paper",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/ae175f23-1ec7-47ea-9380-7bff7041028b",
   "source_url": "https://www.timescale.com",
   "extracted_at": "2026-06-03T20:26:39.604Z",

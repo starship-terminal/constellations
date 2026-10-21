@@ -4,6 +4,11 @@
   "name": "Ambrook",
   "tagline": "harvest ledger on butcher paper",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/f3c955e4-0fea-462d-b05f-868552e9628c",
   "source_url": "https://ambrook.com",
   "extracted_at": "2026-06-03T20:05:27.377Z",

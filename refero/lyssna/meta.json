@@ -4,6 +4,11 @@
   "name": "Lyssna",
   "tagline": "botanical research journal \u2014 a quiet white page where one deep teal button glows beneath serif headlines and mint accent panels breathe like greenhouse glass.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/65f775f1-6dcc-4c49-80d2-b5a017b76f59",
   "source_url": "https://www.lyssna.com",
   "extracted_at": "2026-06-03T15:51:13.926Z",

@@ -4,6 +4,11 @@
   "name": "Relief",
   "tagline": "Cream-paper harbor under flat sky-blue",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e6b53c1e-644b-4300-b42f-0e64905d1443",
   "source_url": "https://www.relief.app",
   "extracted_at": "2026-06-03T18:02:30.634Z",

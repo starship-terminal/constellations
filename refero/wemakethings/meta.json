@@ -4,6 +4,12 @@
   "name": "Wemakethings",
   "tagline": "Brutalist editorial broadsheet \u2014 ink-on-white architecture with type as the only building material.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "brutalist",
+  "tags": [
+    "editorial",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/15d57573-513b-49aa-91c7-1b7f87bb1a55",
   "source_url": "https://wemakethings.de",
   "extracted_at": "2026-06-03T21:56:26.799Z",

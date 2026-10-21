@@ -4,6 +4,11 @@
   "name": "Spotify",
   "tagline": "Darkened record store at midnight \u2014 every surface recedes so the album art can glow.",
   "theme": "dark",
+  "product_type": "entertainment",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/cc59e195-fed0-4928-96d1-303752786073",
   "source_url": "https://www.spotify.com",
   "extracted_at": "2026-06-03T22:09:01.041Z",

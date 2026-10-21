@@ -4,6 +4,11 @@
   "name": "Aninix",
   "tagline": "white gallery wall with one indigo switch",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/653b7b25-f610-4a46-90e1-e3eed98b1f24",
   "source_url": "https://www.aninix.com",
   "extracted_at": "2026-06-03T21:45:20.886Z",

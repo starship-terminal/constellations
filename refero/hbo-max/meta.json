@@ -4,6 +4,11 @@
   "name": "HBO Max",
   "tagline": "Cinema lobby at midnight. Pure black walls, one cool blue exit sign, and movie posters glowing from every surface.",
   "theme": "dark",
+  "product_type": "entertainment",
+  "design_style": "cinematic",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/898f0127-d235-4832-bf33-ab21104f0529",
   "source_url": "https://www.hbomax.com",
   "extracted_at": "2026-06-03T19:06:36.162Z",

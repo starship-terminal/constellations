@@ -4,6 +4,12 @@
   "name": "Ordinal",
   "tagline": "dark observatory with one mint filament \u2014 a near-black room where a single neon green switch glows as the only thing that matters",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/4657db98-0c6c-4848-91e9-c339f3bb7815",
   "source_url": "https://www.meetassembly.com",
   "extracted_at": "2026-06-03T20:00:03.203Z",

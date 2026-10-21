@@ -4,6 +4,11 @@
   "name": "Loom",
   "tagline": "Sunlit message lounge \u2014 a bright, pill-shaped communication booth on white marble, lit by one confident blue lamp.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/bc2c6ecc-7a0d-4693-86e5-9fa93b165601",
   "source_url": "https://loom.com",
   "extracted_at": "2026-06-03T16:16:05.858Z",

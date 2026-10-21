@@ -4,6 +4,11 @@
   "name": "Linktr",
   "tagline": "Editorial posters stacked like candy. A full-bleed color-block site where lime green headlines sit on cobalt blue walls and white pill-shaped navs float across maroon fields.",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "playful",
+  "tags": [
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/b04c379c-7c33-4d69-8882-8d85d7768654",
   "source_url": "https://linktr.ee",
   "extracted_at": "2026-06-03T15:26:07.229Z",

@@ -4,6 +4,11 @@
   "name": "Perplexity AI",
   "tagline": "Warm research terminal. A cream-toned search bar floats on aged-paper canvas, surrounded by quiet monochrome controls \u2014 the calm of a library reading desk distilled into a single input field.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/e9fff87a-63ce-4c19-840f-98233db62f58",
   "source_url": "https://www.perplexity.ai",
   "extracted_at": "2026-06-03T22:04:09.750Z",

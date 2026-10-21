@@ -4,6 +4,11 @@
   "name": "Sublime",
   "tagline": "white-walled curator's atelier \u2014 a quiet gallery where one bold black headline holds the room and a single green object is always the only thing worth picking up",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/80392d80-3970-46f0-a7ed-f213f316c933",
   "source_url": "https://sublime.app",
   "extracted_at": "2026-06-03T22:02:57.107Z",

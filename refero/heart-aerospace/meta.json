@@ -4,6 +4,11 @@
   "name": "Heart Aerospace",
   "tagline": "monumental type drifting through cloud-level gradient skies \u2014 the brand reads like an engineering manifesto printed on atmosphere.",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "futuristic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/bf523387-03fc-4243-86ca-25af34daa0ce",
   "source_url": "https://heartaerospace.com",
   "extracted_at": "2026-06-03T18:44:12.211Z",

@@ -4,6 +4,12 @@
   "name": "Tapbots",
   "tagline": "cosmic command center in violet dusk \u2014 a midnight spacecraft hangar where a single violet frequency cuts through the void",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "futuristic",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/8ce08850-085e-4954-a2f0-16acfb8dce23",
   "source_url": "https://tapbots.com/ivory",
   "extracted_at": "2026-06-03T19:10:58.016Z",

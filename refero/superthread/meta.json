@@ -4,6 +4,12 @@
   "name": "Superthread",
   "tagline": "Whiteboard confidence with amber highlighter energy. Superthread feels like a well-organized notebook page \u2014 dark ink lines, ample white space, and a single warm yellow mark that signals what matters.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/aa87c258-0eb8-4c14-9f2f-96f16fb926b8",
   "source_url": "https://www.superthread.com",
   "extracted_at": "2026-06-03T21:57:22.474Z",

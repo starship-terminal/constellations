@@ -4,6 +4,11 @@
   "name": "Counterprint",
   "tagline": "white gallery wall, books as art",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/36ab47c3-3d47-42a5-af2e-1760bc348bcd",
   "source_url": "https://www.counter-print.co.uk",
   "extracted_at": "2026-06-03T21:19:01.888Z",

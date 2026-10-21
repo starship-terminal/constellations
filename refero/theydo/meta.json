@@ -4,6 +4,12 @@
   "name": "TheyDo",
   "tagline": "Blush editorial spread with magenta confetti. Warm pink paper, serif headlines, a single hot-pink accent that only outlines and whispers \u2014 never shouts.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/b490cff8-9d2c-4225-9118-6468e4f3213d",
   "source_url": "https://www.theydo.com",
   "extracted_at": "2026-06-03T21:18:29.859Z",

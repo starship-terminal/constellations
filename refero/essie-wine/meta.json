@@ -4,6 +4,11 @@
   "name": "Essie Wine",
   "tagline": "Dusty rose chapbook with mustard chapter breaks",
   "theme": "mixed",
+  "product_type": "food-drink",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/07f5281d-2a18-4e12-a8ff-d54d3e03d198",
   "source_url": "https://www.essiewine.com",
   "extracted_at": "2026-06-03T20:42:23.893Z",

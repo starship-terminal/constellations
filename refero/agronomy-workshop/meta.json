@@ -4,6 +4,11 @@
   "name": "Agronomy Workshop",
   "tagline": "newsprint zine taped to a workshop wall",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/37f752a0-879e-4451-a4a4-0a82896e3890",
   "source_url": "https://agronomywork.shop",
   "extracted_at": "2026-06-03T21:02:25.014Z",

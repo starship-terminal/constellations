@@ -4,6 +4,11 @@
   "name": "Andrei Rybin",
   "tagline": "monochrome atelier notebook \u2014 a designer's sketchbook where phone screens are pinned like contact sheets on a white wall",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/519ca09b-9a85-4eec-8630-0d7aae5ac2da",
   "source_url": "https://andreirybin.com",
   "extracted_at": "2026-06-03T21:51:21.069Z",

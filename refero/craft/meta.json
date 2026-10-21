@@ -4,6 +4,11 @@
   "name": "Craft",
   "tagline": "botanical conservatory on warm parchment \u2014 cream pages holding vivid green specimens and one quiet forest room.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/329075e8-97ed-4722-8952-d9bf001de233",
   "source_url": "https://itscraft.com",
   "extracted_at": "2026-06-03T20:55:58.644Z",

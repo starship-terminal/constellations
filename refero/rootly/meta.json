@@ -4,6 +4,11 @@
   "name": "Rootly",
   "tagline": "violet signal over alpine dawn \u2014 thin whisper-type on near-white, with one vivid violet accent rising into a luminous gradient sky",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "minimal",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/a037c352-4315-4650-a16c-08392ffca597",
   "source_url": "https://rootly.com",
   "extracted_at": "2026-06-03T19:22:51.200Z",

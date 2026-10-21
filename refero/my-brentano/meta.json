@@ -4,6 +4,12 @@
   "name": "My Brentano",
   "tagline": "Pharmacy broadsheet on cream paper. A Swiss editorial layout where one typewriter voice does all the speaking and warm-toned product photography supplies the only color.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/d211aaa4-e09b-4ef9-a9bf-f6fa8495de73",
   "source_url": "https://mybrentano.ch",
   "extracted_at": "2026-06-03T21:56:18.721Z",

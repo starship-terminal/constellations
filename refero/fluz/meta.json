@@ -4,6 +4,11 @@
   "name": "Fluz",
   "tagline": "Gemstone vault on warm parchment",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "luxury",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/7ce6bd42-e498-47c0-ad02-7b3a0f5d94e0",
   "source_url": "https://fluz.app/us",
   "extracted_at": "2026-06-03T18:02:52.380Z",

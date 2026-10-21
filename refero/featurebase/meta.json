@@ -4,6 +4,11 @@
   "name": "Featurebase",
   "tagline": "Violet-lit support console. Build each page as a dark, quiet stage with a luminous product workspace emerging from the lower edge.",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/506f983d-e4ed-4e7a-a3b3-851a18f5b402",
   "source_url": "https://featurebase.app",
   "extracted_at": "2026-09-24T17:35:11.555Z",

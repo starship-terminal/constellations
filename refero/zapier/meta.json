@@ -4,6 +4,11 @@
   "name": "Zapier",
   "tagline": "sunlit maker's notebook. A warm cream canvas with paper-thin surfaces, a single vivid orange that powers every connection, and editorial typography that reads like a design magazine rather than enterprise software.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/63295283-c1a3-4adb-891a-d1365a47a50b",
   "source_url": "https://zapier.com",
   "extracted_at": "2026-06-03T18:55:38.283Z",

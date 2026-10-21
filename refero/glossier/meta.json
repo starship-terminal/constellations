@@ -4,6 +4,12 @@
   "name": "Glossier",
   "tagline": "Sunlit beauty editorial \u2014 paper white, ink black, one flash of yellow",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "editorial",
+  "tags": [
+    "minimal",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/efd8dda0-b7dc-4b0b-b65f-348849d2cd65",
   "source_url": "https://glossier.com",
   "extracted_at": "2026-06-03T19:12:24.093Z",

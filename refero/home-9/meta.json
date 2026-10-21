@@ -4,6 +4,11 @@
   "name": "Home",
   "tagline": "Primary-color toy aisle \u2014 the brightness of a freshly opened set box on a white table.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "playful",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/7e21f6e1-deec-4bc4-a30e-f2c9d3320314",
   "source_url": "https://lego.com",
   "extracted_at": "2026-04-11T19:15:24.282Z",

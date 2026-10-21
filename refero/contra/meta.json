@@ -4,6 +4,11 @@
   "name": "Contra",
   "tagline": "Editorial portfolio wall on white marble",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/1608cf19-b249-46d4-bd37-b4c6a7fc4b56",
   "source_url": "https://contra.com",
   "extracted_at": "2026-06-03T20:03:40.165Z",

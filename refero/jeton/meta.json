@@ -4,6 +4,12 @@
   "name": "Jeton",
   "tagline": "Editorial fintech on warm marble",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/1f32d914-6fdd-4692-b4fc-fcee2c414766",
   "source_url": "https://www.jeton.com",
   "extracted_at": "2026-07-03T03:16:30.698Z",

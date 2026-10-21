@@ -4,6 +4,11 @@
   "name": "Repeat",
   "tagline": "Highlighter swipe on warm notebook paper \u2014 Repeat's lime washes act like marker strokes across cream stock, with near-black ink and pill-rounded cards floating flat above.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/53538d2d-d5a1-4719-9c7a-d7ab1f3a8c8a",
   "source_url": "https://www.getrepeat.io",
   "extracted_at": "2026-06-03T22:04:27.043Z",

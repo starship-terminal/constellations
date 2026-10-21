@@ -4,6 +4,12 @@
   "name": "zkPass",
   "tagline": "Encrypted terminal meets classified broadsheet \u2014 a single lime-green signal cutting through near-black typography that mixes a whisper-weight serif with terminal-grade sans.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/3a398f82-579e-4ec4-a442-9962bf007edf",
   "source_url": "https://zkpass.org",
   "extracted_at": "2026-06-03T18:00:19.788Z",

@@ -4,6 +4,12 @@
   "name": "Tesla",
   "tagline": "Automotive Showroom on Screen. High-fidelity product visuals dominate, framed by a minimal, functional interface that gets out of the way.",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/7266b546-2fb0-465c-acd6-79001c39829a",
   "source_url": "https://tesla.com",
   "extracted_at": "2026-04-11T17:46:47.791Z",

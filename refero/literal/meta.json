@@ -4,6 +4,11 @@
   "name": "Literal",
   "tagline": "Library in soft daylight \u2014 a reading room where warm cream walls meet dark walnut shelves.",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/7e698bf6-6b31-40ed-a89a-40f4c37ade38",
   "source_url": "https://literal.club",
   "extracted_at": "2026-06-03T20:56:31.318Z",

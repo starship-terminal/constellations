@@ -4,6 +4,11 @@
   "name": "Heynds",
   "tagline": "Ember on fresh snow. A single vivid orange flame burning against pristine white, radiating subtle warmth.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "minimal",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/7027ecd6-41d9-4bc6-b919-3df5c573b950",
   "source_url": "https://www.heynds.com/en",
   "extracted_at": "2026-06-03T21:00:52.630Z",

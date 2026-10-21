@@ -4,6 +4,11 @@
   "name": "Pastel",
   "tagline": "Quiet paper notebook with one vivid ink stamp",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/409d92b9-00a8-4e21-a430-ab95ea48204f",
   "source_url": "https://usepastel.com",
   "extracted_at": "2026-06-03T19:30:06.600Z",

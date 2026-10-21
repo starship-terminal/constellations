@@ -4,6 +4,11 @@
   "name": "Look inc",
   "tagline": "White-walled gallery on a press proof. A typographic system of black serif and grotesque sans surrounds large documentary photography on pure white \u2014 the interface is the negative space between stories.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/ab1b113a-ed21-4512-acc2-d10c8927c410",
   "source_url": "https://look.inc",
   "extracted_at": "2026-06-03T17:34:00.444Z",

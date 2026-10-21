@@ -4,6 +4,11 @@
   "name": "High Protein",
   "tagline": "Magic Spoon \u2014 neon cereal arcade. Build expansive pastel aisles where vivid violet typography and playful packaged-product collisions feel like a snack shelf lit by an arcade glow.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "playful",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/4d42420f-a7d4-499f-8025-5af294fff0f5",
   "source_url": "https://magicspoon.com",
   "extracted_at": "2026-09-24T17:41:21.018Z",

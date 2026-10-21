@@ -4,6 +4,11 @@
   "name": "Agencja brandingowa",
   "tagline": "Editorial white gallery with black ink typography",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/c43237e3-dae2-4fc6-a917-519b25c870e5",
   "source_url": "https://247studio.co",
   "extracted_at": "2026-06-03T17:35:02.637Z",

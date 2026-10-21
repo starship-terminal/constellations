@@ -4,6 +4,11 @@
   "name": "VALIENTE BRANDS",
   "tagline": "Signal flare on sun-baked clay. A single urgent red-orange screaming across a warm matte peach field, held together by a monolithic neo-grotesque and almost nothing else.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "maximalist",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/f63bf016-5b53-4ddf-9f8c-da43f75a9e2b",
   "source_url": "https://valientebrands.com",
   "extracted_at": "2026-06-03T18:54:48.683Z",

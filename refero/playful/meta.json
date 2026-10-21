@@ -4,6 +4,11 @@
   "name": "Playful",
   "tagline": "sunlit paper notebook with a hot-pink highlighter. A friendly, editorial product surface printed on warm cream stock, where one vivid magenta accent punctuates an otherwise monochrome warm-gray world.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/f93ac72e-73b2-4b2c-80eb-351ddfa56f4d",
   "source_url": "https://playful.software",
   "extracted_at": "2026-06-03T16:03:07.634Z",

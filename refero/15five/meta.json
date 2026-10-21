@@ -4,6 +4,11 @@
   "name": "15five",
   "tagline": "Sunrise over a clean desk",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/88a00b3e-1c1e-49d3-ae0f-9fbc1f35ad99",
   "source_url": "https://www.15five.com",
   "extracted_at": "2026-06-03T19:15:20.969Z",

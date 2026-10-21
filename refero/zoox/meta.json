@@ -4,6 +4,12 @@
   "name": "Zoox",
   "tagline": "serene sage showroom. A pale mint gallery space where one vivid teal accent and one dark forest panel interrupt the quiet \u2014 spacious, premium, and forward-looking.",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "minimal",
+  "tags": [
+    "luxury",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/e85a82b1-c70e-42de-8c42-4bd95dd5e047",
   "source_url": "https://zoox.com",
   "extracted_at": "2026-06-03T20:49:18.000Z",

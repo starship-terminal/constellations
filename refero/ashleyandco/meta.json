@@ -4,6 +4,11 @@
   "name": "Ashleyandco",
   "tagline": "Whispered apothecary editorial \u2014 a warm cream page where a single serif headline floats like a perfume ad and every other element recedes into silence.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/645d7583-8391-455b-83d2-c95fb7fe91dc",
   "source_url": "https://ashleyandco.co",
   "extracted_at": "2026-06-03T21:31:08.203Z",

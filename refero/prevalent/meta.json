@@ -4,6 +4,12 @@
   "name": "Prevalent",
   "tagline": "Editorial command observatory \u2014 serif intelligence briefings under a navy planetarium dome",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "technical",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/b1e0a894-7440-44b8-9737-0ea4c988fc24",
   "source_url": "https://prevalent.ai",
   "extracted_at": "2026-06-03T21:39:59.568Z",

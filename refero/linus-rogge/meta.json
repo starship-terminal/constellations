@@ -4,6 +4,11 @@
   "name": "Linus Rogge",
   "tagline": "Editorial portfolio on gallery-white \u2014 each project a wall-sized photograph with whisper-quiet captions in the corner.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/81a66e75-23af-4525-8a4e-f4a54c2700e7",
   "source_url": "https://linusrogge.com",
   "extracted_at": "2026-06-03T16:30:04.560Z",

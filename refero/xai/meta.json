@@ -4,6 +4,11 @@
   "name": "xAI",
   "tagline": "warm cream laboratory with a black pill",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/3b83dfe4-2f53-4a4d-819d-e6045ca5f7dc",
   "source_url": "https://x.ai",
   "extracted_at": "2026-07-03T03:06:57.822Z",

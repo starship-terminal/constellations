@@ -4,6 +4,11 @@
   "name": "Studio Emmerer",
   "tagline": "Typeset on drafting paper",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/670869ea-9576-4f9d-af3a-038910f8b9b8",
   "source_url": "https://emmerer.com",
   "extracted_at": "2026-06-03T20:51:35.223Z",

@@ -4,6 +4,12 @@
   "name": "mostlikely",
   "tagline": "Inked archways on bone-white vellum",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/4040f97b-42cf-49ef-ab2d-a77c00fe8285",
   "source_url": "https://mostlikely.at",
   "extracted_at": "2026-06-03T16:26:05.354Z",

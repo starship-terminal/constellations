@@ -4,6 +4,11 @@
   "name": "Ghia",
   "tagline": "Mediterranean sunset on a vintage aperitivo label",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "retro",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/156462ab-7b11-4029-be45-c2dba853e894",
   "source_url": "https://drinkghia.com",
   "extracted_at": "2026-06-03T18:46:21.791Z",

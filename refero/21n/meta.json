@@ -4,6 +4,11 @@
   "name": "21n",
   "tagline": "Open atlas under pale daylight \u2014 a spacious, light-mode canvas where knowledge tools feel weightless against a single charcoal anchor.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/68d18deb-bb09-4258-8024-001af9c844c0",
   "source_url": "https://memotron.app",
   "extracted_at": "2026-06-03T16:28:19.647Z",

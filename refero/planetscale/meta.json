@@ -4,6 +4,11 @@
   "name": "PlanetScale",
   "tagline": "Terminal man-page in daylight",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/a6771960-b826-49bc-9ee7-7f7a5e29642b",
   "source_url": "https://planetscale.com",
   "extracted_at": "2026-06-03T18:23:26.707Z",

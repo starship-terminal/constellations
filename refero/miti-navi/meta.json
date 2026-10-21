@@ -4,6 +4,11 @@
   "name": "Miti Navi",
   "tagline": "Tuscan sea-view chapbook on raw linen",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/887f0c74-c696-4589-82ae-85705ecda919",
   "source_url": "https://miti-navi.com",
   "extracted_at": "2026-06-03T15:56:53.540Z",

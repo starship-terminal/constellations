@@ -4,6 +4,11 @@
   "name": "Agence K72",
   "tagline": "theater marquee at midnight \u2014 a single electric spark cutting through cinematic black",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "neon",
+  "tags": [
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/1ff3bd9c-827d-450a-a382-300839768d66",
   "source_url": "https://k72.ca",
   "extracted_at": "2026-06-03T20:36:00.675Z",

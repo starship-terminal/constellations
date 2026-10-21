@@ -4,6 +4,11 @@
   "name": "MasterClass",
   "tagline": "black-box stage lit by magenta spotlights",
   "theme": "dark",
+  "product_type": "education",
+  "design_style": "cinematic",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/4367b4cd-b002-4719-a418-cbce020f0d33",
   "source_url": "https://www.masterclass.com",
   "extracted_at": "2026-06-03T17:00:47.834Z",

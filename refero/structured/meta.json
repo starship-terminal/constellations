@@ -4,6 +4,11 @@
   "name": "Structured",
   "tagline": "Renaissance gallery on putty paper",
   "theme": "mixed",
+  "product_type": "crypto",
+  "design_style": "paper",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/6c0b77d3-71f9-469d-98aa-4ce1d6d76ac8",
   "source_url": "https://structured.money",
   "extracted_at": "2026-06-03T16:22:36.077Z",

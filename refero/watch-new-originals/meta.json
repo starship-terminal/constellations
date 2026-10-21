@@ -4,6 +4,12 @@
   "name": "Watch new Originals",
   "tagline": "Cinematic void with electric spotlight. Picture a darkened theater lobby where a single cyan marquee light is the only chromatic thing in sight \u2014 everything else is monochrome depth leading the eye to the posters on the wall.",
   "theme": "dark",
+  "product_type": "entertainment",
+  "design_style": "cinematic",
+  "tags": [
+    "neon",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/e586b296-bfac-4e93-add2-daa384712b39",
   "source_url": "https://www.disneyplus.com",
   "extracted_at": "2026-06-03T20:37:55.488Z",

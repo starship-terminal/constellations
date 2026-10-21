@@ -4,6 +4,12 @@
   "name": "Twitch",
   "tagline": "Stadium scoreboard on parchment",
   "theme": "light",
+  "product_type": "entertainment",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/40030487-56e3-447d-904f-b955ebadd0b5",
   "source_url": "https://twitch.tv",
   "extracted_at": "2026-06-03T19:25:43.413Z",

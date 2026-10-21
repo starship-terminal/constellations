@@ -4,6 +4,11 @@
   "name": "Anything",
   "tagline": "afternoon daydream over a wildflower field. Soft, floating, a little surreal \u2014 white UI plates drifting above a photograph that feels half-remembered.",
   "theme": "light",
+  "product_type": "ai-media",
+  "design_style": "minimal",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/edf7f95d-da5f-42bf-94c5-b33ade0a2ba2",
   "source_url": "https://www.createanything.com",
   "extracted_at": "2026-06-03T19:50:21.131Z",

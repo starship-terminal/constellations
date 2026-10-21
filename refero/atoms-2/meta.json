@@ -4,6 +4,11 @@
   "name": "Atoms",
   "tagline": "obsidian monolith in candlelight \u2014 a near-black canvas where a single warm champagne accent cuts like a blade through the darkness",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "luxury",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/4433dfe7-315a-4459-bfd7-f59ccdc09bad",
   "source_url": "https://atoms.co",
   "extracted_at": "2026-06-03T18:52:37.323Z",

@@ -4,6 +4,12 @@
   "name": "OpenWeb",
   "tagline": "Editorial broadsheet on warm rose paper. A blush canvas carries enormous serif headlines and one electric-blue accent \u2014 the whole page reads like a printed editorial spread rebuilt as a screen, where type weight and warm negative space replace panels, borders, and shadows.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/c38d077b-3cdb-48c6-899c-e8a543508c31",
   "source_url": "https://www.openweb.com",
   "extracted_at": "2026-06-03T15:45:05.032Z",

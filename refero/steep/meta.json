@@ -4,6 +4,11 @@
   "name": "Steep",
   "tagline": "serif analytics on warm paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/75fdb89f-ca64-41b3-af36-7a78bd09448e",
   "source_url": "https://steep.app",
   "extracted_at": "2026-07-03T02:46:12.201Z",

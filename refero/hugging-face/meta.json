@@ -4,6 +4,12 @@
   "name": "Hugging Face",
   "tagline": "Friendly ML workshop on white paper",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "playful",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/4363070d-02da-4954-88e4-d4a2101c5204",
   "source_url": "https://huggingface.co",
   "extracted_at": "2026-06-03T18:03:43.506Z",

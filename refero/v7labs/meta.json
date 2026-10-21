@@ -4,6 +4,12 @@
   "name": "V7labs",
   "tagline": "Sunlit amber archive \u2014 editorial intelligence behind theater curtains. The first screen pours warm orange light through vertical drapery streaks, then strips to monochrome seriousness below.",
   "theme": "mixed",
+  "product_type": "ai",
+  "design_style": "cinematic",
+  "tags": [
+    "editorial",
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/1ab79e76-a07f-48fd-8e93-0a0fee12abd7",
   "source_url": "https://www.v7labs.com",
   "extracted_at": "2026-06-03T21:10:49.013Z",

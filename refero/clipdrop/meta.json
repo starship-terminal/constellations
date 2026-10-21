@@ -4,6 +4,11 @@
   "name": "Clipdrop",
   "tagline": "photo studio on bone paper",
   "theme": "light",
+  "product_type": "ai-media",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/935f22cb-04ec-48c8-a6da-aa8c2c5abe8b",
   "source_url": "https://clipdrop.co",
   "extracted_at": "2026-06-03T21:40:52.643Z",

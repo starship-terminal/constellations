@@ -4,6 +4,11 @@
   "name": "ChatGPT",
   "tagline": "graphite ink on warm paper",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/52a007ed-ad1b-46a6-bd44-b76f91df6d0c",
   "source_url": "https://chatgpt.com",
   "extracted_at": "2026-07-03T03:39:32.068Z",

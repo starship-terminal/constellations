@@ -4,6 +4,11 @@
   "name": "Slab",
   "tagline": "midnight-wine reading room",
   "theme": "mixed",
+  "product_type": "productivity",
+  "design_style": "luxury",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/f240ed7d-d466-478e-bbce-6c93420dfd1c",
   "source_url": "https://slab.com",
   "extracted_at": "2026-06-03T20:05:23.933Z",

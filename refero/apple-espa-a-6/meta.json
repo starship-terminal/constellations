@@ -4,6 +4,11 @@
   "name": "Apple (Espa\u00f1a)",
   "tagline": "cinematic gallery on poured concrete \u2014 every product its own still life, every headline a wall label",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/96eae189-95ad-4a38-83d1-840497e5daf3",
   "source_url": "https://www.apple.com/apple-watch-series-11",
   "extracted_at": "2026-06-03T19:26:49.385Z",

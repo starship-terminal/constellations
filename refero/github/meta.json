@@ -4,6 +4,11 @@
   "name": "GitHub",
   "tagline": "cosmic command deck with bioluminescent waypoints \u2014 a dark, atmospheric workspace where a single green glow marks the path forward",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/c3ceca5c-d329-4559-b947-016172941ba2",
   "source_url": "https://github.com",
   "extracted_at": "2026-07-03T03:46:17.051Z",

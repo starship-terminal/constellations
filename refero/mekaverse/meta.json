@@ -4,6 +4,12 @@
   "name": "MekaVerse",
   "tagline": "monochrome gallery for digital artifacts \u2014 a pure black void where a rendered world hangs like a museum piece, and all UI is white ink on matte black glass.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/09e43758-12c5-4a2b-8ae8-ded156ef66bf",
   "source_url": "https://themekaverse.com",
   "extracted_at": "2026-06-03T17:54:48.569Z",

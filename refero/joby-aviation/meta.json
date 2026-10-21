@@ -4,6 +4,12 @@
   "name": "Joby Aviation",
   "tagline": "Golden hour cockpit over a sleeping city \u2014 every screen is a window seat.",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "cinematic",
+  "tags": [
+    "futuristic",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/c1052d8d-3663-46a4-a882-e50d9b8a1166",
   "source_url": "https://www.jobyaviation.com",
   "extracted_at": "2026-06-03T18:57:55.678Z",

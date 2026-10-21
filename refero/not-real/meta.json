@@ -4,6 +4,12 @@
   "name": "Not Real",
   "tagline": "Editorial gallery spread on greyscale vellum \u2014 a high-end catalog where only the artwork is allowed to scream with color.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/c0a3f588-74b7-4fad-b557-1fc7cd7bd777",
   "source_url": "https://notreal.tv",
   "extracted_at": "2026-06-03T21:12:12.230Z",

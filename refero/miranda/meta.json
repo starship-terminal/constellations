@@ -4,6 +4,11 @@
   "name": "Miranda",
   "tagline": "Old-world broadsheet on warm cream \u2014 newspaper editorial for the digital age.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/3f6e3076-e77f-487e-b212-3b5946a34e87",
   "source_url": "https://www.niccolomiranda.com",
   "extracted_at": "2026-06-03T19:16:57.231Z",

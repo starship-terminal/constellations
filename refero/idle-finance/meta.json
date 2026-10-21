@@ -4,6 +4,12 @@
   "name": "Idle Finance",
   "tagline": "Neon deep-sea trading floor \u2014 a dark navy terminal where a single cyan signal pierces the gloom.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "technical",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/11fed738-a5b5-4509-b4e2-3295ceab3604",
   "source_url": "https://idle.finance",
   "extracted_at": "2026-06-03T18:11:47.558Z",

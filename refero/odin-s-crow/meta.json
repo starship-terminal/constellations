@@ -4,6 +4,12 @@
   "name": "Odin's Crow",
   "tagline": "Swiss broadsheet on warm bone \u2014 a single typographic grid held together by hairline rules, where one massive headline bleeds past the fold while a 10px wordmark anchors the corner.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "swiss",
+  "tags": [
+    "editorial",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/65c01b0f-7ae5-42ff-ad5b-162bbdce8e01",
   "source_url": "https://odins-crow.com",
   "extracted_at": "2026-06-03T18:07:27.708Z",

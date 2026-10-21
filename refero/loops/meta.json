@@ -4,6 +4,11 @@
   "name": "Loops",
   "tagline": "Warm parchment behind a serif headline \u2014 like a stationer's print proof lit by afternoon sun.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/4d832c12-dd14-45b0-bba7-2d3bc25d8264",
   "source_url": "https://loops.so",
   "extracted_at": "2026-06-03T20:43:48.838Z",

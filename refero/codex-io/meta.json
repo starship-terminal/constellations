@@ -4,6 +4,11 @@
   "name": "Codex.io",
   "tagline": "Citrine beacon in void \u2014 a glowing lime cube anchoring a dark room, with thin white type and scattered node rings floating around it.",
   "theme": "mixed",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/c55d2f24-deb1-44c1-9846-66a3523beb29",
   "source_url": "https://www.codex.io",
   "extracted_at": "2026-06-03T22:38:16.616Z",

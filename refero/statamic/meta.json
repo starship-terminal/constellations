@@ -4,6 +4,11 @@
   "name": "Statamic",
   "tagline": "Warm editorial sunset over floating islands",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/1efb4cc9-0923-4d4f-884a-b06d4fca4db2",
   "source_url": "https://statamic.com",
   "extracted_at": "2026-06-03T21:47:59.310Z",

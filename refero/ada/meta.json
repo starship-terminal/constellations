@@ -4,6 +4,12 @@
   "name": "Ada",
   "tagline": "Daylight gallery with pastel punctuation \u2014 a quiet off-white room where four jewel-tone colors are allowed to speak, and everything else stays in charcoal.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "playful",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/f23e132d-3bfb-498d-a2e4-6d069b4dbc59",
   "source_url": "https://www.ada.cx",
   "extracted_at": "2026-06-03T18:20:26.162Z",

@@ -4,6 +4,11 @@
   "name": "Ecosia",
   "tagline": "verdant search clearing \u2014 a white-canvas interface with a single lime-green accent and full-bleed leaf photography as the only chromatic noise.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "minimal",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/198d4f13-0e88-4372-86fd-7abf34a668b1",
   "source_url": "https://www.ecosia.org",
   "extracted_at": "2026-06-03T20:45:16.420Z",

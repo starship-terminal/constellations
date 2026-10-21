@@ -4,6 +4,11 @@
   "name": "AWE",
   "tagline": "robot observatory after midnight. Build black, gallery-like screens where pale editorial type floats above contained AI-world imagery and tiny instrument-panel labels.",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/2d78835a-fffe-4416-8e3d-ac37207fbd6b",
   "source_url": "https://www.awenetwork.ai",
   "extracted_at": "2026-09-20T19:23:25.686Z",

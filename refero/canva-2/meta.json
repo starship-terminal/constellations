@@ -4,6 +4,11 @@
   "name": "Canva",
   "tagline": "candy-colored creative studio \u2014 a white canvas floating inside a gradient sky",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/62f89392-609d-45b7-b9df-7a5acd529864",
   "source_url": "https://canva.com",
   "extracted_at": "2026-06-03T15:38:45.503Z",

@@ -4,6 +4,11 @@
   "name": "Eddie",
   "tagline": "Pastel sticker pack on warm cream paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/5f446754-1fb7-4a99-8cee-7bd5de3bfd9e",
   "source_url": "https://eddie.eco",
   "extracted_at": "2026-06-03T18:28:38.594Z",

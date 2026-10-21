@@ -4,6 +4,12 @@
   "name": "Moving Parts",
   "tagline": "Electric blueprint on matte paper \u2014 a monochrome architect's sheet that learned to glow blue. Pure black, pure white, one bolt of #0000ff.",
   "theme": "mixed",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/fb459c9d-c089-4d0b-b5b0-d147b1c4ebd7",
   "source_url": "https://movingparts.io",
   "extracted_at": "2026-06-03T15:34:03.804Z",

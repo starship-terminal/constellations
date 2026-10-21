@@ -4,6 +4,12 @@
   "name": "Garden Eight",
   "tagline": "Monumental cream-paper editorial. A 215px serif headline sits alone on warm parchment, surrounded by floating sculptural forms and ocean-air negative space \u2014 the page behaves like the cover plate of an art monograph, not a dashboard.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e4593570-e43f-4eda-8618-0bb704d5ebb7",
   "source_url": "https://garden-eight.com",
   "extracted_at": "2026-06-03T20:19:17.796Z",

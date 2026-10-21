@@ -4,6 +4,11 @@
   "name": "CHAIBOY",
   "tagline": "black gallery wall with a single illuminated photograph.",
   "theme": "dark",
+  "product_type": "commerce",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/442dfaf8-c0c6-467b-a8d4-54e953c049f3",
   "source_url": "https://wearechaiboy.com",
   "extracted_at": "2026-06-03T21:32:46.796Z",

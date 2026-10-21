@@ -4,6 +4,11 @@
   "name": "HashiCorp",
   "tagline": "midnight control room with violet neon \u2014 a dark technical surface where a glowing hexagonal cube serves as the only chromatic anchor",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/834ce97f-61f2-4b12-bf5c-e9fad2544456",
   "source_url": "https://hashicorp.com",
   "extracted_at": "2026-06-03T18:51:13.137Z",

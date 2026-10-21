@@ -4,6 +4,11 @@
   "name": "Aaron Poe & Co",
   "tagline": "Quiet white gallery \u2014 coral pink whispers float in vast considered silence, framed only by pill-shaped nav and tightly-tracked type.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/3240fdc0-ffea-4054-a996-a5f6b942eff0",
   "source_url": "https://aaronpoeandco.com",
   "extracted_at": "2026-06-03T20:57:46.568Z",

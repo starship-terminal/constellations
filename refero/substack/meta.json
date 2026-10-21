@@ -4,6 +4,11 @@
   "name": "Substack",
   "tagline": "orange ink on a newsroom desk",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/14e563d8-a35a-4867-b4bf-15d1620ddae7",
   "source_url": "https://substack.com",
   "extracted_at": "2026-06-03T17:19:55.187Z",

@@ -4,6 +4,11 @@
   "name": "SuperHi",
   "tagline": "Paper-cut shapes scattered across a pale-blue classroom wall",
   "theme": "light",
+  "product_type": "education",
+  "design_style": "playful",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/90b8631c-4e2c-407e-86a3-d2bff456dc93",
   "source_url": "https://superhi.com",
   "extracted_at": "2026-06-03T17:49:35.630Z",

@@ -4,6 +4,11 @@
   "name": "Locomotive",
   "tagline": "Monochrome zine between blood-red slides. Black ink and white paper form the structural grammar; only photography is allowed to scream.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/131d07b0-f71b-4bd2-8046-f61485ed545c",
   "source_url": "https://locomotive.ca",
   "extracted_at": "2026-06-03T19:14:07.711Z",

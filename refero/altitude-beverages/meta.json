@@ -4,6 +4,11 @@
   "name": "Altitude Beverages",
   "tagline": "Monochrome editorial spread. Imagine a fashion magazine spread stripped of all color except the product photography \u2014 the type and whitespace do all the storytelling.",
   "theme": "mixed",
+  "product_type": "commerce",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/243a3dde-80a8-47a9-87f8-c549726ec6f3",
   "source_url": "https://altitudebev.com",
   "extracted_at": "2026-06-03T20:48:52.014Z",

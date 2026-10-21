@@ -4,6 +4,11 @@
   "name": "Bareis + Nicolaus",
   "tagline": "White chalk on black slate. A typographic control panel and a full-bleed visual index share one strict monochrome stage, with pill-shaped outlines as the only punctuation.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/e80c5b4a-fd03-460e-a577-49928a4ab5db",
   "source_url": "https://www.bareis-nicolaus.com",
   "extracted_at": "2026-06-03T18:58:13.400Z",

@@ -4,6 +4,12 @@
   "name": "Thomas Vimare",
   "tagline": "midnight monochrome atelier \u2014 a designer's darkroom where white type and saturated photography are the only light",
   "theme": "dark",
+  "product_type": "portfolio",
+  "design_style": "monochrome",
+  "tags": [
+    "luxury",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/1b293bed-e6fc-4880-9691-2dbf04339bd5",
   "source_url": "https://thms.works",
   "extracted_at": "2026-06-03T17:44:25.253Z",

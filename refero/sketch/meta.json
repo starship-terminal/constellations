@@ -4,6 +4,11 @@
   "name": "Sketch",
   "tagline": "serif poetry on pastel paper",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/4caadb3c-3865-4a4d-9e1a-46478ac71078",
   "source_url": "https://sketch.com",
   "extracted_at": "2026-06-03T15:08:30.514Z",

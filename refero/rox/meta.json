@@ -4,6 +4,11 @@
   "name": "Rox",
   "tagline": "Editorial broadsheet meets product UI \u2014 black serif masthead on warm newsprint, hairline rules, one blue button",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/66eb1c37-a8e5-4e6c-b17f-a75385b462e7",
   "source_url": "https://rox.com",
   "extracted_at": "2026-06-03T15:05:41.193Z",

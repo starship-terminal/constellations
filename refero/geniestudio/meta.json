@@ -4,6 +4,11 @@
   "name": "Geniestudio",
   "tagline": "soft daylight notebook \u2014 the kind with generous margins and a single bold pen stroke",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/2ffd50d4-93b7-4acf-9bc2-e86e61b63f27",
   "source_url": "https://geniestudio.app",
   "extracted_at": "2026-07-03T03:11:24.001Z",

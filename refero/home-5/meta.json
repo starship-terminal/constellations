@@ -4,6 +4,12 @@
   "name": "Home",
   "tagline": "Botanical specimen on vellum \u2014 an oxblood-stamped plate of golden fat, edges sharp, paper warm, nothing rounded.",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "paper",
+  "tags": [
+    "luxury",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/84c9c7ab-c0b5-437f-b2bf-dc2fd8a61681",
   "source_url": "https://www.savor.it",
   "extracted_at": "2026-06-03T20:56:18.847Z",

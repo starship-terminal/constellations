@@ -4,6 +4,11 @@
   "name": "Vimeo",
   "tagline": "Spotlight on matte white",
   "theme": "mixed",
+  "product_type": "entertainment",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/be6c7488-9cea-43db-bb28-2606f53ade14",
   "source_url": "https://vimeo.com",
   "extracted_at": "2026-06-03T20:47:19.106Z",

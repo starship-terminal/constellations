@@ -4,6 +4,12 @@
   "name": "Home",
   "tagline": "Stargazer's dark observatory",
   "theme": "dark",
+  "product_type": "productivity",
+  "design_style": "neon",
+  "tags": [
+    "technical",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/606d4af9-9d8c-41ea-a122-f515f38f20e5",
   "source_url": "https://www.fluidtouch.biz",
   "extracted_at": "2026-06-03T21:13:12.934Z",

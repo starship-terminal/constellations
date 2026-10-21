@@ -4,6 +4,11 @@
   "name": "Goodnotes",
   "tagline": "Paper-white command canvas \u2014 a blank notebook page where every tool snap into place without decoration.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/c7fe6b78-9ce3-4d69-a3f0-b8310c779e7a",
   "source_url": "https://www.goodnotes.com",
   "extracted_at": "2026-05-11T13:17:05.961Z",

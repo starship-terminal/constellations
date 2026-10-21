@@ -4,6 +4,11 @@
   "name": "Intercom",
   "tagline": "Warm cream editorial spread",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/12255b63-e506-4bc1-a4cd-d05487de32f3",
   "source_url": "https://intercom.com",
   "extracted_at": "2026-06-03T14:57:12.763Z",

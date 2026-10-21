@@ -4,6 +4,11 @@
   "name": "Workable",
   "tagline": "warm newsroom with teal ink",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/0ab4c544-6147-4998-8365-3a0f6191e54f",
   "source_url": "https://www.workable.com",
   "extracted_at": "2026-07-03T03:39:59.467Z",

@@ -4,6 +4,11 @@
   "name": "Plain",
   "tagline": "Botanical greenhouse on warm parchment \u2014 a single living green accent breathing inside a calm cream workspace.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/9501cfdc-3eb3-4b64-90f6-9afdded48945",
   "source_url": "https://plain.com",
   "extracted_at": "2026-06-03T15:48:15.912Z",

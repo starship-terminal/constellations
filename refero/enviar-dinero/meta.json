@@ -4,6 +4,11 @@
   "name": "Enviar Dinero",
   "tagline": "Electric Sky Wallet \u2014 a sky that you can spend from.",
   "theme": "mixed",
+  "product_type": "fintech",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/46c16139-b0bb-49e6-95dc-74bef576e5ce",
   "source_url": "https://paypal.com",
   "extracted_at": "2026-04-11T19:14:39.744Z",

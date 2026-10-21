@@ -4,6 +4,12 @@
   "name": "Twingate",
   "tagline": "Midnight control room with violet and chartreuse signal lights. The whole interface sits on a near-black void, with two accent colors pulsing like status LEDs across instrument-panel components \u2014 restrained, engineered, and slightly futuristic without being showy.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/0acef011-07da-4416-b874-ccdd675140f6",
   "source_url": "https://twingate.com",
   "extracted_at": "2026-06-03T18:04:16.919Z",

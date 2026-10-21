@@ -4,6 +4,12 @@
   "name": "Surfshark",
   "tagline": "crisp ocean horizon at golden hour \u2014 warm coral sun meets teal sea, all floating on white sand",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/4fc7a535-3c99-4ffe-8365-7d025d33274e",
   "source_url": "https://surfshark.com",
   "extracted_at": "2026-06-03T21:03:35.803Z",

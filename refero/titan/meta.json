@@ -4,6 +4,12 @@
   "name": "Titan",
   "tagline": "warm-toned monochrome archive",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "monochrome",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/964b9215-396b-492c-abec-7bd778d7b1c9",
   "source_url": "https://www.titan.com",
   "extracted_at": "2026-07-03T03:22:10.162Z",

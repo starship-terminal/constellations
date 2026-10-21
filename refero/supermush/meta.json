@@ -4,6 +4,12 @@
   "name": "SuperMush",
   "tagline": "Sun-bleached skate ramp meets wellness billboard. Warm bone canvas, one electric blue action color, and full-bleed lifestyle photography that does the shouting.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "cinematic",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/71a9583d-1710-4696-9269-50ca8c9a2cfa",
   "source_url": "https://supermush.com",
   "extracted_at": "2026-06-03T18:21:44.028Z",

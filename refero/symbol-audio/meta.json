@@ -4,6 +4,12 @@
   "name": "Symbol Audio",
   "tagline": "midcentury listening room after dusk",
   "theme": "dark",
+  "product_type": "commerce",
+  "design_style": "luxury",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/3b742f76-25ad-446c-a942-09b09b93f6a3",
   "source_url": "https://www.symbolaudio.com",
   "extracted_at": "2026-06-03T21:28:37.052Z",

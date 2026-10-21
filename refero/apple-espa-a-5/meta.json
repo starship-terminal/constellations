@@ -4,6 +4,11 @@
   "name": "Apple (Espa\u00f1a)",
   "tagline": "obsidian gallery vitrine \u2014 a dark showroom where a single titanium object glows against pure black",
   "theme": "mixed",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/da7e5084-9e5d-4eb2-bb10-4c2d7733a56e",
   "source_url": "https://www.apple.com/apple-watch-ultra-3",
   "extracted_at": "2026-06-03T20:30:17.041Z",

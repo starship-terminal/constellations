@@ -4,6 +4,11 @@
   "name": "Eight Sleep",
   "tagline": "midnight observatory with single neon pulse",
   "theme": "mixed",
+  "product_type": "health",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e4e8fe86-47ed-4ddd-a6c6-2c28eae9aabe",
   "source_url": "https://eightsleep.com",
   "extracted_at": "2026-06-03T19:50:37.133Z",

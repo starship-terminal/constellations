@@ -4,6 +4,11 @@
   "name": "ClickHouse",
   "tagline": "phosphor terminal at midnight \u2014 a lone lime cursor glowing on black glass.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/bd96c1a6-32ba-42e0-bd5c-23c70a23142c",
   "source_url": "https://clickhouse.com",
   "extracted_at": "2026-06-03T17:14:18.751Z",

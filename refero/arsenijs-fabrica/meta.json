@@ -4,6 +4,11 @@
   "name": "Arsenijs Fabrica",
   "tagline": "Editorial beauty spread under gallery lights. Pure-white gallery walls, a single warm strobe pulsing orange against the monochrome, type set thin as glass and hung with generous negative space.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/eb3bf6c1-a18f-4d72-801e-50c2cdbbaa21",
   "source_url": "https://www.arsenijsfabrica.com",
   "extracted_at": "2026-06-03T19:14:40.454Z",

@@ -4,6 +4,12 @@
   "name": "OpenAI",
   "tagline": "Research lab notebook at noon.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/dc541737-8bf2-4b31-b729-0352f696e82f",
   "source_url": "https://openai.com",
   "extracted_at": "2026-07-03T03:45:45.294Z",

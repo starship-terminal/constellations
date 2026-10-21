@@ -4,6 +4,11 @@
   "name": "Elva",
   "tagline": "Monumental type on warm concrete",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "brutalist",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/9568198a-5a51-4cbb-9dc3-b7610757cdd6",
   "source_url": "https://helloelva.com",
   "extracted_at": "2026-06-03T19:34:21.159Z",

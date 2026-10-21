@@ -1257,6 +1257,8 @@ def refero_card(slug: str, meta: dict, ds: dict) -> dict:
     ds_meta = ds.get("meta") if isinstance(ds.get("meta"), dict) else {}
     return {"slug": slug, "name": meta.get("name"), "tagline": meta.get("tagline"),
             "theme": meta.get("theme") or ds.get("theme"), "industry": ds.get("industry"),
+            "type": meta.get("product_type"), "style": meta.get("design_style"),
+            "tags": meta.get("tags") or [],
             "src": _refero_host(meta.get("source_url")),
             "card": f"/refero-media/posters/{slug}.jpg" if poster
                     else f"/refero-media/shots/{slug}.jpg" if shot else None,
@@ -1288,6 +1290,8 @@ def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
                for s in ds.get("similar") or [] if isinstance(s, dict)]
     return {"slug": slug, "name": meta.get("name"), "tagline": meta.get("tagline"),
             "theme": meta.get("theme") or ds.get("theme"), "industry": ds.get("industry"),
+            "type": meta.get("product_type"), "style": meta.get("design_style"),
+            "tags": meta.get("tags") or [],
             "source_url": meta.get("source_url"), "page_url": meta.get("page_url"),
             "extracted_at": meta.get("extracted_at"), "media": media,
             "docs": {"design_md": text("DESIGN.md"), "variables_css": text("variables.css"),

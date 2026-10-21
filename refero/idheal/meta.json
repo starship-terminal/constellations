@@ -4,6 +4,12 @@
   "name": "IDHEAL",
   "tagline": "Architectural editorial masthead on white marble. Display type that could be 2 meters tall in print, single photography frames, and chromatic accents drawn with a fine-point pen.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "swiss",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/8d8d5861-dee0-431b-826d-56f3fa4e1f84",
   "source_url": "https://idheal.fr",
   "extracted_at": "2026-06-03T21:08:01.797Z",

@@ -4,6 +4,12 @@
   "name": "WHOOP",
   "tagline": "Performance laboratory at midnight \u2014 clinical white lab benches beneath a black theatrical void, one violet pulse of electricity.",
   "theme": "mixed",
+  "product_type": "health",
+  "design_style": "neon",
+  "tags": [
+    "technical",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/05053a60-1964-4154-9d58-ebdf6352ed3a",
   "source_url": "https://whoop.com",
   "extracted_at": "2026-06-03T17:01:52.654Z",

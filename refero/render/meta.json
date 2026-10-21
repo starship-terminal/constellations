@@ -4,6 +4,11 @@
   "name": "Render",
   "tagline": "Blueprint on brushed aluminum. The interface reads as a clean, geometric engineering document \u2014 white space, hairline rules, and one violet marker line drawing the eye to the action.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "swiss",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/c14bfde7-6f08-4b54-bd9b-39989d10cfef",
   "source_url": "https://render.com",
   "extracted_at": "2026-06-03T15:08:30.270Z",

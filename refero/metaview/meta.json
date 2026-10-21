@@ -4,6 +4,11 @@
   "name": "Metaview",
   "tagline": "Bioluminescent control room \u2014 a near-black instrument panel lit by a single living mint signal.",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/f99856e1-3627-4624-a811-f6053a978b62",
   "source_url": "https://metaview.ai",
   "extracted_at": "2026-06-03T18:25:36.140Z",

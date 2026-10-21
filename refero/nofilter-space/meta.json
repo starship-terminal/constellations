@@ -4,6 +4,12 @@
   "name": "Nofilter.space",
   "tagline": "Brutalist fashion zine on white paper. A disciplined, zero-color editorial grid where every hairline, checkbox, and line break is intentional.",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "brutalist",
+  "tags": [
+    "monochrome",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/4235ebdc-a070-46ef-abbf-692151449bea",
   "source_url": "https://www.nofilter.space",
   "extracted_at": "2026-06-03T20:08:13.987Z",

@@ -4,6 +4,11 @@
   "name": "SST",
   "tagline": "Code terminal in a gallery. The config file is the artwork; everything else is a clean white frame.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/19f92be1-65ac-4432-a82b-0aa1e685d97d",
   "source_url": "https://sst.dev",
   "extracted_at": "2026-06-03T18:26:05.623Z",

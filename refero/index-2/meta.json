@@ -4,6 +4,11 @@
   "name": "Index",
   "tagline": "Blueprint on a backlit drafting table \u2014 the entire interface is a wireframe drawing, with one periwinkle annotation pen.",
   "theme": "dark",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/7f8c0c07-86e9-4b7c-a042-a7563b169143",
   "source_url": "https://index.app",
   "extracted_at": "2026-06-03T18:42:56.947Z",

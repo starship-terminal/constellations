@@ -4,6 +4,11 @@
   "name": "Savvycal",
   "tagline": "forest-green stage with cream paper pages, serif headlines and lime-green punctuation",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/83b71dd8-de08-4c57-80b2-9fced17a0ca5",
   "source_url": "https://savvycal.com",
   "extracted_at": "2026-06-03T19:06:45.093Z",

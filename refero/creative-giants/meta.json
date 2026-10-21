@@ -4,6 +4,11 @@
   "name": "Creative Giants",
   "tagline": "oversized editorial poster on cream paper",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/ff8f39ee-a10e-4a9d-a94d-6993c6084060",
   "source_url": "https://www.creativegiants.art",
   "extracted_at": "2026-06-03T22:36:59.017Z",

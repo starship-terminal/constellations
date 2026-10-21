@@ -4,6 +4,11 @@
   "name": "CleanShot X",
   "tagline": "Blue-lit desktop studio. Build quiet white space around compact black type, then let saturated blue controls and layered Mac-product imagery create the focal points.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/679f08af-741f-4b04-bb44-0a9b97e96ad3",
   "source_url": "https://cleanshot.com",
   "extracted_at": "2026-09-24T17:35:16.141Z",

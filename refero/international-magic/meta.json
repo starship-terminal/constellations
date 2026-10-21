@@ -4,6 +4,12 @@
   "name": "International Magic",
   "tagline": "midnight gallery wall \u2014 a single spotlight, a piece of work, and a wall of black velvet",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "luxury",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/c406697b-677f-40c7-a3a2-10ea545278f1",
   "source_url": "https://intmagic.com",
   "extracted_at": "2026-06-03T21:16:36.868Z",

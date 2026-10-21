@@ -4,6 +4,11 @@
   "name": "Awesomic",
   "tagline": "editorial zinc grid with confetti-orange punctuation.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/8512e28d-5385-4c20-a336-214568c4370c",
   "source_url": "https://www.awesomic.io",
   "extracted_at": "2026-07-03T02:50:26.225Z",

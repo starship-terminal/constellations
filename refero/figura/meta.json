@@ -4,6 +4,11 @@
   "name": "Figura",
   "tagline": "Black-box gallery with neon-white typography",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/5e427a82-a223-4b69-be7f-01c6656ce823",
   "source_url": "https://www.figura.digital",
   "extracted_at": "2026-06-03T19:13:21.505Z",

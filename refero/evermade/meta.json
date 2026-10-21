@@ -4,6 +4,12 @@
   "name": "Evermade",
   "tagline": "Editorial punk on cream paper",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "brutalist"
+  ],
   "page_url": "https://styles.refero.design/style/b22f68eb-7ed1-47b6-995e-2c0afc79ac7e",
   "source_url": "https://evermade.fi",
   "extracted_at": "2026-06-03T20:52:02.286Z",

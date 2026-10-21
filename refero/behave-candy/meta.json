@@ -4,6 +4,11 @@
   "name": "BEHAVE Candy",
   "tagline": "neon candy-aisle pop. A single electric cobalt carries every word, chartreuse lime stabs through as the only accent, and pale lavender makes the whole thing feel lit from within rather than printed.",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "neon",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/5cc6e3be-1cbd-4d09-9958-9cb82b2487db",
   "source_url": "https://www.eatbehave.com",
   "extracted_at": "2026-06-03T19:13:33.506Z",

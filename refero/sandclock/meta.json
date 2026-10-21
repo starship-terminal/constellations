@@ -4,6 +4,11 @@
   "name": "Sandclock",
   "tagline": "DeFi command terminal at midnight \u2014 green signal lights on a matte black console",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/ccbb774f-d1a9-4cc6-b1be-31379ba0baf1",
   "source_url": "https://www.sandclock.org",
   "extracted_at": "2026-06-03T19:24:02.480Z",

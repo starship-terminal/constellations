@@ -4,6 +4,11 @@
   "name": "Fictional",
   "tagline": "Sticker-bombed tabletop \u2014 vivid decals scattered across a warm cream surface, held down by chunky rounded type.",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "playful",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/af2e0bc4-ef1c-4365-a25d-00b691218431",
   "source_url": "https://fictional-typeface.com",
   "extracted_at": "2026-06-03T15:04:26.450Z",

@@ -4,6 +4,12 @@
   "name": "Popcorn",
   "tagline": "warm broadsheet on cream paper \u2014 a near-monochrome editorial where a single serif headline does all the emotional work and everything else whispers in warm gray",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/93fe74fd-bac8-4d13-9d5b-3b5e242f74e6",
   "source_url": "https://popcorn.space",
   "extracted_at": "2026-06-03T21:24:44.951Z",

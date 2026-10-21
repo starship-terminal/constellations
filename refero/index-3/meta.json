@@ -4,6 +4,12 @@
   "name": "Index",
   "tagline": "twilight summit command center \u2014 a violet-tinted dark dashboard crowned by a single mountain horizon at dusk, where the only warm light is the coral CTA",
   "theme": "dark",
+  "product_type": "productivity",
+  "design_style": "neon",
+  "tags": [
+    "futuristic",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/b136f0a0-8064-4978-a18e-db54b9362c24",
   "source_url": "https://index.inc",
   "extracted_at": "2026-06-03T16:41:33.843Z",

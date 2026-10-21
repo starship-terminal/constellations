@@ -4,6 +4,11 @@
   "name": "Marco",
   "tagline": "Moleskine notebook in cool morning light \u2014 a personal workspace where widgets float like sticky notes on warm paper.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/88e9d606-7e8f-479c-9508-1b081e254ed9",
   "source_url": "https://www.marco.fyi",
   "extracted_at": "2026-06-03T20:34:57.889Z",

@@ -4,6 +4,11 @@
   "name": "Leif Products",
   "tagline": "Apothecary on raw linen. A warm, hand-pressed editorial where ink-black type sits on bone-cream paper beside botanical product photography.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/3f56ea4d-ed9d-4a36-8fb5-a801519ef80b",
   "source_url": "https://leifproducts.com",
   "extracted_at": "2026-06-03T20:08:44.606Z",

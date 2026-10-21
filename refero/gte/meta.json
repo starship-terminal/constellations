@@ -4,6 +4,11 @@
   "name": "GTE",
   "tagline": "Trading terminal behind gallery lighting",
   "theme": "mixed",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/5d273906-0110-48cf-99cd-63a72eb9c586",
   "source_url": "https://www.gte.xyz",
   "extracted_at": "2026-06-03T18:14:15.268Z",

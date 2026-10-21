@@ -4,6 +4,11 @@
   "name": "Replay",
   "tagline": "editorial red-pen on white blueprint. A debugging instrument that speaks in a whisper and marks its targets in coral.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/74417603-5cb1-49d1-96bd-435382f054bd",
   "source_url": "https://www.replay.io",
   "extracted_at": "2026-06-03T21:50:52.694Z",

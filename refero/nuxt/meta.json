@@ -4,6 +4,12 @@
   "name": "Nuxt",
   "tagline": "terminal glow in deep space. Build dark, contained interface planes where green appears as a switched-on signal against blue-black surfaces.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/d9a19632-e9ee-4c9c-849b-ed48b1c43ee7",
   "source_url": "https://nuxt.com",
   "extracted_at": "2026-09-24T17:43:43.467Z",

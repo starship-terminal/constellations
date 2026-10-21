@@ -4,6 +4,11 @@
   "name": "RainbowKit",
   "tagline": "Neon wallet modal floating in a black void \u2014 the blue-to-violet aurora glows through the dark.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/7421c174-a1b1-4695-a9e7-a82dc6f5ea3b",
   "source_url": "https://www.rainbowkit.com",
   "extracted_at": "2026-06-03T21:09:42.622Z",

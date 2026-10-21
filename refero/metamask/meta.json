@@ -4,6 +4,11 @@
   "name": "Metamask",
   "tagline": "Warm peach workshop with giant purple type \u2014 cozy, loud headlines, quiet controls.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "playful",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/6248749d-b440-4561-b4d7-2d39c0fd4fd3",
   "source_url": "https://metamask.io",
   "extracted_at": "2026-06-03T20:14:06.637Z",

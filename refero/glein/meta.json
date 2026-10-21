@@ -4,6 +4,12 @@
   "name": "Glein",
   "tagline": "Atelier lookbook on warm linen \u2014 full-bleed photography, hairline rules, one whisper-weight voice.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/2e4ce685-9f49-47a3-9577-bc4f196bd8f7",
   "source_url": "https://glein.wien",
   "extracted_at": "2026-06-03T19:47:42.676Z",

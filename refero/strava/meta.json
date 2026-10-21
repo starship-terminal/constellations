@@ -4,6 +4,11 @@
   "name": "Strava",
   "tagline": "athlete's logbook on warm paper \u2014 a single orange highlighter mark against black-and-white print",
   "theme": "light",
+  "product_type": "health",
+  "design_style": "paper",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/efdd6d8f-4488-4312-86a7-4ee8e016c83a",
   "source_url": "https://strava.com",
   "extracted_at": "2026-06-03T17:33:21.537Z",

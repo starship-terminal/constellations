@@ -4,6 +4,11 @@
   "name": "Patrick Miller",
   "tagline": "oversized masthead on chalky color fields \u2014 a portfolio that behaves like a printed poster",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "maximalist",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/bb63a015-b018-4bd9-be66-0973ac6be753",
   "source_url": "https://patrickmiller.se",
   "extracted_at": "2026-06-03T17:31:27.274Z",

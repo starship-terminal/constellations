@@ -4,6 +4,11 @@
   "name": "Atelier Deux-C\u00e9",
   "tagline": "Sunlit editorial gallery",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/d531f0ec-ea94-4a40-b568-3073ff2bd8ed",
   "source_url": "https://deux-ce.com",
   "extracted_at": "2026-06-03T20:25:01.824Z",

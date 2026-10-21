@@ -4,6 +4,11 @@
   "name": "Boostinsurance",
   "tagline": "Abyssal mission control",
   "theme": "dark",
+  "product_type": "fintech",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/e60c61d3-2657-429e-a581-568aea27a448",
   "source_url": "https://boostinsurance.com",
   "extracted_at": "2026-06-03T21:33:18.271Z",

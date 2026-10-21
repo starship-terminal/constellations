@@ -4,6 +4,11 @@
   "name": "Dopper",
   "tagline": "Sunlit cream lagoon with a vivid blue current. A warm beige expanse where one electric blue channel and full-bleed candy-bright cards cut through like sunlight on water.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "playful",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/734ab03c-a326-43e3-a463-c5f90247404f",
   "source_url": "https://dopper.com",
   "extracted_at": "2026-06-03T17:16:10.083Z",

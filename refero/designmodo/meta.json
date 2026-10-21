@@ -4,6 +4,11 @@
   "name": "Designmodo",
   "tagline": "Forest clearing at dawn \u2014 dark canopy above, open light below, a single green glow marking the path forward.",
   "theme": "mixed",
+  "product_type": "design-resource",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/c60a19c1-259a-4001-95d9-6a3826f5c06e",
   "source_url": "https://designmodo.com",
   "extracted_at": "2026-04-11T19:25:33.174Z",

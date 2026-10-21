@@ -4,6 +4,12 @@
   "name": "Katherine Pihl",
   "tagline": "art gallery wall at dawn \u2014 a white-walled space where black type, generous gaps, and full-bleed imagery do all the work, and the UI itself is almost invisible.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/a6b2d6dc-7d71-4d2d-af3e-b34a8b665744",
   "source_url": "https://katherinepihl.com",
   "extracted_at": "2026-06-03T21:59:07.963Z",

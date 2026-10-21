@@ -4,6 +4,11 @@
   "name": "Freelance frontend UI developer and designer, Rou Hun Fan",
   "tagline": "Riso-printed zine on black construction paper",
   "theme": "dark",
+  "product_type": "portfolio",
+  "design_style": "maximalist",
+  "tags": [
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/ffb945f9-2d70-45e8-9024-492900318fa8",
   "source_url": "https://flowen.me",
   "extracted_at": "2026-06-03T21:23:41.675Z",

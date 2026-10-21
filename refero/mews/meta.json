@@ -4,6 +4,11 @@
   "name": "Mews",
   "tagline": "Hospitality command center at pink dawn. A white-walled, sunlit workspace where bold black type, warm cream cards, and a single candy-pink action button define every screen \u2014 playful confidence over enterprise restraint.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "playful",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/6b2777fd-7021-4a96-add3-ec4a32374214",
   "source_url": "https://www.mews.com/en",
   "extracted_at": "2026-06-03T19:44:30.042Z",

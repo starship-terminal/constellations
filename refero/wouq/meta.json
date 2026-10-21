@@ -4,6 +4,11 @@
   "name": "WOUQ",
   "tagline": "Monochrome gallery wall, museum label typography",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/4fc87190-9783-4a85-bdc1-35800a2ec690",
   "source_url": "https://wearewouq.com",
   "extracted_at": "2026-06-03T21:32:24.334Z",

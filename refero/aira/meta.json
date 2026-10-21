@@ -4,6 +4,11 @@
   "name": "Aira",
   "tagline": "Sunday broadsheet at midnight \u2014 warm photography, ink type, whisper-quiet UI.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/750387be-bda4-448b-950f-c9356c3ec25f",
   "source_url": "https://www.aira.app",
   "extracted_at": "2026-06-03T20:43:24.446Z",

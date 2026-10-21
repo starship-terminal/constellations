@@ -4,6 +4,12 @@
   "name": "Ysl",
   "tagline": "black-and-white cinema still \u2014 a single model under a single wordmark, nothing else permitted",
   "theme": "dark",
+  "product_type": "fashion",
+  "design_style": "monochrome",
+  "tags": [
+    "luxury",
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/bb2a2b0b-c84e-48ee-9dd9-7b623f81a422",
   "source_url": "https://ysl.com",
   "extracted_at": "2026-06-03T17:56:58.227Z",

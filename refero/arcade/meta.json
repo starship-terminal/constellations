@@ -4,6 +4,11 @@
   "name": "Arcade",
   "tagline": "Electric blue ripple on white paper. A clean editorial canvas where a single vivid blue flows like liquid from corner to corner, making every interactive element feel switched on.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/f65b0b91-bdd1-458d-8775-2f6fa8a9d4b1",
   "source_url": "https://arcade.software",
   "extracted_at": "2026-06-03T15:17:53.160Z",

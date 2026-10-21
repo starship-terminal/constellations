@@ -4,6 +4,12 @@
   "name": "Monte",
   "tagline": "rust-tinted coastal morning",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "organic",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/fb6ac216-c11a-47c3-88e8-0423541da69c",
   "source_url": "https://montecafe.com.au",
   "extracted_at": "2026-06-03T18:05:30.528Z",

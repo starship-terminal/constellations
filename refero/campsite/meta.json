@@ -4,6 +4,12 @@
   "name": "Campsite",
   "tagline": "Warm paper workspace \u2014 quiet, cream, and product-forward",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/5d8ad116-b3d8-4890-a969-5b856b35c678",
   "source_url": "https://www.campsite.com",
   "extracted_at": "2026-06-03T19:00:09.708Z",

@@ -4,6 +4,11 @@
   "name": "Ditto",
   "tagline": "marked-up manuscript on warm parchment",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/2db41cd9-c898-4f59-b704-3042c0d87f45",
   "source_url": "https://www.dittowords.com",
   "extracted_at": "2026-06-03T19:01:41.956Z",

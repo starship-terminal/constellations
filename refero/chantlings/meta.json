@@ -4,6 +4,11 @@
   "name": "Chantlings",
   "tagline": "Candlelit cave, ember in the void",
   "theme": "dark",
+  "product_type": "other",
+  "design_style": "monochrome",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/5090ce54-9097-4d29-a741-2847dbacc419",
   "source_url": "https://www.iorama.studio/chantlings",
   "extracted_at": "2026-06-03T20:21:38.774Z",

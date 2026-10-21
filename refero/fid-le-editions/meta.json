@@ -4,6 +4,11 @@
   "name": "Fid\u00e8le Editions",
   "tagline": "Risograph blue ink on warm cream paper. A single fluorescent blue floods headlines, the announcement bar, and a giant asterisk logo, stamped onto a flat cream stock with zero shadows and near-zero rounding \u2014 the page reads as a printed broadsheet, not a SaaS interface.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/957da5c3-7063-4992-9d25-e255752dc9b3",
   "source_url": "https://fidele-editions.com",
   "extracted_at": "2026-06-03T19:47:11.904Z",

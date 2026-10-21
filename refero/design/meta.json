@@ -4,6 +4,11 @@
   "name": "Design",
   "tagline": "neon green glyph in a dark void",
   "theme": "dark",
+  "product_type": "fintech",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/bbfbe753-a417-43ec-9af7-ef6c08a5140d",
   "source_url": "https://design.cash.app",
   "extracted_at": "2026-06-03T20:45:31.948Z",

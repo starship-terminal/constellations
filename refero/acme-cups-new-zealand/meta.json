@@ -4,6 +4,12 @@
   "name": "Acme Cups New Zealand",
   "tagline": "editorial ceramics gallery. A stark white-walled room with a single massive black headline and quiet gray dividers, where handmade cups in terracotta, forest, and teal are the only vivid things visible.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "editorial",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/14f6777e-1f6e-4b33-a7ed-d89c33f35722",
   "source_url": "https://acmecups.nz",
   "extracted_at": "2026-06-03T19:30:05.260Z",

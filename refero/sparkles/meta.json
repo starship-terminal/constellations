@@ -4,6 +4,11 @@
   "name": "Sparkles",
   "tagline": "Ink-on-paper broadsheet guarded by crayon mascots",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "editorial",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/eefc0305-818c-4f57-80ce-a4bc1f7aac92",
   "source_url": "https://sparkles.dev",
   "extracted_at": "2026-06-03T17:38:33.603Z",

@@ -4,6 +4,11 @@
   "name": "Ready",
   "tagline": "violet daylight workspace \u2014 a warm off-white page where a single periwinkle accent marks what matters and everything else recedes",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/aaca1e02-7b5a-4c03-ac40-454f0d477356",
   "source_url": "https://ready.so",
   "extracted_at": "2026-06-03T19:36:46.768Z",

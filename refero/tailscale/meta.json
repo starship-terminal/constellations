@@ -4,6 +4,12 @@
   "name": "Tailscale",
   "tagline": "Engineer's whiteboard on cream paper. A warm off-white canvas with a single red marker stroke, soft 16px corners, and Inter at whisper weights \u2014 the visual language of infrastructure documentation that respects the reader.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/5b679fb6-8d53-402d-a77b-c88bfb397623",
   "source_url": "https://tailscale.com",
   "extracted_at": "2026-06-03T15:31:33.744Z",

@@ -4,6 +4,12 @@
   "name": "Monotype.",
   "tagline": "Curated typography showcase on paper. Monotype's interface behaves like a gallery wall: white surfaces, hairline dividers, generous whitespace, and type itself as the only ornament.",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "minimal",
+  "tags": [
+    "paper",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/be5cf0d7-fc29-4b7f-bf86-f87185b122fc",
   "source_url": "https://variable-fonts.com",
   "extracted_at": "2026-06-03T20:23:34.786Z",

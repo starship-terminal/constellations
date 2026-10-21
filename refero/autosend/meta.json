@@ -4,6 +4,11 @@
   "name": "AutoSend",
   "tagline": "Warm stone atelier with a single violet spark \u2014 where serif headlines and electric-indigo CTAs share the same quiet off-white room.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/3d6eda0c-16ab-4e7e-aca6-5f9a5432bfd1",
   "source_url": "https://autosend.com",
   "extracted_at": "2026-06-03T15:03:06.173Z",

@@ -4,6 +4,11 @@
   "name": "Status",
   "tagline": "encrypted vault behind midnight glass \u2014 a dark security console where the only color is a single violet signal lamp",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/4ce66adb-ed8b-4e71-8066-15d92c4d2be0",
   "source_url": "https://status.app",
   "extracted_at": "2026-06-03T19:22:22.652Z",

@@ -4,6 +4,11 @@
   "name": "Raw Materials",
   "tagline": "brutalist editorial on warm cream",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "brutalist",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/274e85fb-a34d-4e41-9369-be03065b971b",
   "source_url": "https://therawmaterials.com",
   "extracted_at": "2026-06-03T19:01:21.444Z",

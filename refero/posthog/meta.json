@@ -4,6 +4,11 @@
   "name": "PostHog",
   "tagline": "Warm paper desktop pinned to cork \u2014 a tactile beige workspace where every interface element is a printed artifact, not a floating panel.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "paper",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/56cd3725-3ff0-459e-894d-5da58d1fc549",
   "source_url": "https://posthog.com",
   "extracted_at": "2026-07-03T03:36:06.150Z",

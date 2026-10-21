@@ -4,6 +4,11 @@
   "name": "Headspace",
   "tagline": "Sunlit wellness retreat on warm paper",
   "theme": "light",
+  "product_type": "health",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/035a098b-5a27-48a3-8a3a-c68a698e3eab",
   "source_url": "https://headspace.com",
   "extracted_at": "2026-06-03T14:58:55.460Z",

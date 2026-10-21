@@ -4,6 +4,12 @@
   "name": "React Email",
   "tagline": "Obsidian workshop for code artisans \u2014 deep matte black, hairline white edges, and one cyan beacon glowing through developer glass.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/9905b62f-007b-4b3a-9357-84e85c07ef96",
   "source_url": "https://react.email",
   "extracted_at": "2026-06-03T20:27:10.388Z",

@@ -4,6 +4,11 @@
   "name": "Athletics",
   "tagline": "monograph on black velvet",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/fd36c7c7-4f8c-4d2a-9346-72e3d8403f01",
   "source_url": "https://athleticsnyc.com",
   "extracted_at": "2026-06-03T19:50:02.475Z",

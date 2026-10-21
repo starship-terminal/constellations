@@ -4,6 +4,11 @@
   "name": "Maze",
   "tagline": "Editorial research journal \u2014 warm bone paper, serif ink, chartreuse highlighter",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/966a03d5-13e9-48d8-9b01-28e6ae3f3967",
   "source_url": "https://maze.co",
   "extracted_at": "2026-06-03T21:16:17.741Z",

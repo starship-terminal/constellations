@@ -4,6 +4,12 @@
   "name": "Oak\u00e2me",
   "tagline": "Sunlit Proven\u00e7al atelier carved in warm stone",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "organic",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/a6791bc8-c49d-4e7a-a09d-877afcd04c25",
   "source_url": "https://www.oakame.com",
   "extracted_at": "2026-06-03T17:29:32.935Z",

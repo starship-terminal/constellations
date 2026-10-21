@@ -4,6 +4,11 @@
   "name": "Revolut",
   "tagline": "Monochrome editorial banking on cloud photography \u2014 white ink, pill buttons, one blue ribbon of color in an otherwise grayscale world.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/a3161c3c-26d4-425b-aaa3-4fc3f06b77ee",
   "source_url": "https://revolut.com",
   "extracted_at": "2026-07-03T03:30:22.443Z",

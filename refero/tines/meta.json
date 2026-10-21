@@ -4,6 +4,12 @@
   "name": "Tines",
   "tagline": "lavender observatory under glass \u2014 soft warm white, deep violet edges, specimen cards in pastel tints",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "luxury",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/18e2c0b4-f29c-4e84-90b0-1d8066b59409",
   "source_url": "https://www.tines.com",
   "extracted_at": "2026-06-03T20:31:54.076Z",

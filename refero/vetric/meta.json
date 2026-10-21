@@ -4,6 +4,11 @@
   "name": "Vetric",
   "tagline": "Iridescent prism refracting clarity \u2014 a white room with one glass diamond that throws pink, blue, yellow, and green light across every surface.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/d51a3a30-965c-427e-9e40-ff177786889f",
   "source_url": "https://vetric.io",
   "extracted_at": "2026-06-03T19:52:03.372Z",

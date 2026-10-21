@@ -4,6 +4,11 @@
   "name": "Modern Business Intelligence",
   "tagline": "Sunlit greenhouse editorial",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/7479c233-6fee-468b-af95-9169d01a293e",
   "source_url": "https://mode.com",
   "extracted_at": "2026-06-03T20:30:01.403Z",

@@ -4,6 +4,11 @@
   "name": "Copy",
   "tagline": "violet voltage on white blueprint",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/1ae4bcfe-c613-42fc-aab7-f9583381e7cc",
   "source_url": "https://copy.ai",
   "extracted_at": "2026-06-03T16:40:12.632Z",

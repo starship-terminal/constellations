@@ -4,6 +4,12 @@
   "name": "Eco",
   "tagline": "skyline vault at dusk \u2014 a near-monochrome ledger where negative space and oversized display type carry the entire brand weight, interrupted only by tiny electric-blue marks.",
   "theme": "mixed",
+  "product_type": "crypto",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal",
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/9cc537fc-97d8-4632-8703-f9aa296c2206",
   "source_url": "https://eco.com",
   "extracted_at": "2026-06-03T16:14:59.838Z",

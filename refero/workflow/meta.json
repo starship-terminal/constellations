@@ -4,6 +4,11 @@
   "name": "Workflow",
   "tagline": "editorial manuscript on warm linen \u2014 a designer's working notebook spread open on white paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/71451d9e-9a8a-4858-9a91-fbe44047e110",
   "source_url": "https://www.workflow.design",
   "extracted_at": "2026-06-03T19:52:13.232Z",

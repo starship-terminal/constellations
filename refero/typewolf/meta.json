@@ -4,6 +4,12 @@
   "name": "Typewolf",
   "tagline": "Warm parchment typography atelier. Every element is a brownish-ink stamp on dusty rose paper, with no color allowed to compete with the type.",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/c46ecd77-9c92-4a85-9162-c6d4afd99d95",
   "source_url": "https://typewolf.com",
   "extracted_at": "2026-06-03T19:24:34.052Z",

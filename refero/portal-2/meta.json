@@ -4,6 +4,12 @@
   "name": "Portal",
   "tagline": "twilight serif editorial \u2014 a premium indie magazine spread sitting inside a native iOS aesthetic",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "luxury",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/b9aeb945-2f6e-4557-9115-e3ff3a8f8dc8",
   "source_url": "https://useportal.net",
   "extracted_at": "2026-06-03T17:26:39.402Z",

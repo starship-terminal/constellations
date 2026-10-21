@@ -4,6 +4,12 @@
   "name": "Evernote",
   "tagline": "Afternoon sun on cream paper \u2014 a warm, lived-in notebook where white cards float on beige, dark text breathes, and one lime-green highlighter marks the important things.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/0c0b6140-2b6c-44f8-8bba-4ecfcadba420",
   "source_url": "https://evernote.com",
   "extracted_at": "2026-06-03T19:06:10.500Z",

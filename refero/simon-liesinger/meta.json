@@ -4,6 +4,11 @@
   "name": "Simon Liesinger",
   "tagline": "Drafting table on bone paper. A designer\u2019s monograph rendered as a website \u2014 serif body type sitting on a vast off-white canvas, punctuated by a single stroke of red.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/a90dbcb6-e42c-4992-a83b-94879699dd4f",
   "source_url": "https://www.liesingers.com",
   "extracted_at": "2026-06-03T18:49:45.007Z",

@@ -4,6 +4,11 @@
   "name": "Erno Forsstr\u00f6m",
   "tagline": "editorial gallery on warm paper",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/cffa5959-4283-41d2-ad11-bada2d731419",
   "source_url": "https://erno.works",
   "extracted_at": "2026-06-03T21:50:34.144Z",

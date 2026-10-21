@@ -4,6 +4,12 @@
   "name": "reboot",
   "tagline": "quiet atelier on cream paper \u2014 a design studio's homepage that reads like a printed monograph, where the only color is the one blue mark in the margin",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/ac14ea36-ea3e-4a25-bd16-11fb50d806fb",
   "source_url": "https://reboot.studio",
   "extracted_at": "2026-06-03T19:33:34.511Z",

@@ -4,6 +4,11 @@
   "name": "Graphy",
   "tagline": "Blueprint on white marble. A hushed, indigo-inked technical surface where a single vivid blue is the only raised voice, and floating glassy chart fragments drift across a soft gray void.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/7f9eabb2-3f76-477d-849f-e868e698f421",
   "source_url": "https://graphy.app",
   "extracted_at": "2026-06-03T17:40:51.771Z",

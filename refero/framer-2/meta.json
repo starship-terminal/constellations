@@ -4,6 +4,12 @@
   "name": "Framer",
   "tagline": "cinematic black gallery. Pure black canvases cradle white editorial type and one electric blue accent that traces edges rather than filling space.",
   "theme": "dark",
+  "product_type": "design-tool",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/242db326-a6f3-482a-b12e-5e7f8af94981",
   "source_url": "https://www.framer.com",
   "extracted_at": "2026-06-03T22:02:30.970Z",

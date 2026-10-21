@@ -4,6 +4,12 @@
   "name": "UY Studio",
   "tagline": "Monastic stone gallery \u2014 a quiet concrete-walled space where perfume bottles sit on white plinths, lit by one weight-400 voice and four warm grays.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "luxury",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/b376d42c-b2cb-4a52-8cec-ebf19cf1883f",
   "source_url": "https://www.uy-studio.com",
   "extracted_at": "2026-06-03T19:24:56.148Z",

@@ -4,6 +4,12 @@
   "name": "pampam.city",
   "tagline": "Old explorer's notebook on warm cream",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "paper",
+  "tags": [
+    "retro",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/001480cb-05f4-4802-be39-84b942169481",
   "source_url": "https://www.pampam.city",
   "extracted_at": "2026-06-03T18:39:34.594Z",

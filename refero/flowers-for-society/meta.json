@@ -4,6 +4,11 @@
   "name": "Flowers For Society",
   "tagline": "indigo editorial on white gallery \u2014 a single deep-violet voice laid over a paper-white canvas, where the product photograph and the typography do all the talking.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e00519a1-7b8a-4171-b49b-550c64a57d3c",
   "source_url": "https://flowersforsociety.com",
   "extracted_at": "2026-06-03T20:15:33.521Z",

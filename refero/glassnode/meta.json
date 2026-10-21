@@ -4,6 +4,11 @@
   "name": "Glassnode",
   "tagline": "Bloomberg terminal in a glass-walled research lab",
   "theme": "mixed",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/a79b6a74-6b67-4c9f-9d69-bff80869b943",
   "source_url": "https://glassnode.com",
   "extracted_at": "2026-06-03T17:44:52.271Z",

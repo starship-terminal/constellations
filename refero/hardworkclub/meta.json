@@ -4,6 +4,11 @@
   "name": "Hardworkclub",
   "tagline": "midnight black-box theater \u2014 a dark room where one round blue light glows above a stage, and the only thing louder than the silence is the film playing",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/1775bf6a-afdd-48b1-8435-b92ec585c674",
   "source_url": "https://www.hardworkclub.com",
   "extracted_at": "2026-06-03T21:38:44.624Z",

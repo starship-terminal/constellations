@@ -4,6 +4,11 @@
   "name": "Bluesky Social",
   "tagline": "Morning dispatch beneath open sky",
   "theme": "light",
+  "product_type": "social",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/aa9234ca-0cc8-470b-bd38-398712de3e95",
   "source_url": "https://bsky.app",
   "extracted_at": "2026-06-03T19:49:09.406Z",

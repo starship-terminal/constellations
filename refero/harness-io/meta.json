@@ -4,6 +4,11 @@
   "name": "Harness.io",
   "tagline": "midnight mission control with phosphor-green accents",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/6f3652cf-583f-411d-a117-3a03f6342917",
   "source_url": "https://gitness.com",
   "extracted_at": "2026-06-03T17:53:43.027Z",

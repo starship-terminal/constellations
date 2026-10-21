@@ -4,6 +4,11 @@
   "name": "FRANKY'S",
   "tagline": "Retro arcade kiosk on a skate-shop counter.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "retro",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/7c84da5d-b7a0-436f-bfaa-68d0a14f8e86",
   "source_url": "https://frankys-hats.com",
   "extracted_at": "2026-06-03T22:39:52.730Z",

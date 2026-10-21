@@ -4,6 +4,11 @@
   "name": "Employment Hero",
   "tagline": "violet ink on white parchment",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/f4ebfdf4-c79c-4d95-8221-9330254fb1f9",
   "source_url": "https://employmenthero.com",
   "extracted_at": "2026-06-03T17:32:35.734Z",

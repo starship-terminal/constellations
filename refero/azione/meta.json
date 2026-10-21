@@ -4,6 +4,11 @@
   "name": "Azione",
   "tagline": "Sunlit editorial diptych. Pair warm, imperfect campaign imagery with gallery-like typography and rust-colored information blocks.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/01d00b5d-5afe-4940-97b6-90ee994f62f6",
   "source_url": "https://azionepr.com",
   "extracted_at": "2026-09-20T19:25:37.974Z",

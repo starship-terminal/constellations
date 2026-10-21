@@ -4,6 +4,12 @@
   "name": "Busy Bee Honey",
   "tagline": "painted barn-side honey label \u2014 dark cocoa, gold, and blue stacked like a vintage billboard. Two sentence grounding: massive condensed serif display type bleeds edge-to-edge against solid color bands, and the bear-bottle product sits centered and unframed like the hero of a roadside sign.",
   "theme": "mixed",
+  "product_type": "food-drink",
+  "design_style": "retro",
+  "tags": [
+    "paper",
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/9836e7c2-ac8e-453d-bdef-2677eb078d59",
   "source_url": "https://www.busybeehoney.com",
   "extracted_at": "2026-06-03T19:30:10.367Z",

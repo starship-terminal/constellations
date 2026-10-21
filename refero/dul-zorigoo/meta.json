@@ -4,6 +4,11 @@
   "name": "Dul Zorigoo",
   "tagline": "ink-and-pencil gallery wall \u2014 a designer's portfolio rendered as monochrome exhibition panels on white, where structure is drawn not filled",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/c8ca6c83-3197-4b19-af1c-b29d6f829c5f",
   "source_url": "https://dzrgo.com",
   "extracted_at": "2026-06-03T17:22:00.899Z",

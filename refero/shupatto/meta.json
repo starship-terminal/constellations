@@ -4,6 +4,11 @@
   "name": "Shupatto",
   "tagline": "Museum vitrine on white marble",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/17824ea8-ac7d-42ca-97e2-9bf92ebea7e1",
   "source_url": "https://www.shupatto.com/en",
   "extracted_at": "2026-06-03T19:40:57.383Z",

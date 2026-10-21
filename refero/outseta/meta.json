@@ -4,6 +4,12 @@
   "name": "Outseta",
   "tagline": "Sunset marketplace at golden hour \u2014 a warm gradient sky hanging over deep plum night.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "corporate",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/859d51e6-fc3f-45e0-a4c4-fe280c400ca7",
   "source_url": "https://www.outseta.com",
   "extracted_at": "2026-06-03T15:59:10.214Z",

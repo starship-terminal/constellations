@@ -4,6 +4,11 @@
   "name": "Wealthsimple",
   "tagline": "Cashmere-lined vault with gallery lighting",
   "theme": "mixed",
+  "product_type": "fintech",
+  "design_style": "luxury",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/043341c3-cf82-4be1-9142-fa5e6a370ca9",
   "source_url": "https://wealthsimple.com",
   "extracted_at": "2026-06-03T17:30:02.885Z",

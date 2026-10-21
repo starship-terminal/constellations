@@ -4,6 +4,11 @@
   "name": "Supahub",
   "tagline": "Soft daylight on a violet ridge. A mostly white, airy canvas lit by a single bright violet sun, with decorative gradient orbs spilling color into negative space and generous rounded geometry giving every surface a friendly, tactile weight.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/a6d39bad-6e32-462e-afce-67c9cb76cf40",
   "source_url": "https://grabee.com",
   "extracted_at": "2026-06-03T17:17:57.283Z",

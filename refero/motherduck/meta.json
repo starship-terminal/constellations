@@ -4,6 +4,12 @@
   "name": "MotherDuck",
   "tagline": "crayon-coded terminal on cream paper",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "paper",
+  "tags": [
+    "technical",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/2bd7363d-7aae-4b1f-9d5a-1edeb17ca567",
   "source_url": "https://motherduck.com",
   "extracted_at": "2026-06-03T16:48:03.858Z",

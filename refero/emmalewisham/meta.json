@@ -4,6 +4,12 @@
   "name": "Emmalewisham",
   "tagline": "porcelain apothecary at golden hour. Warm linen surfaces cradle jewel-toned glass vessels; the brand violet traces hairlines through the room; serif labels float over clean sans-serif UI like engraved pharmacy signs.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "luxury",
+  "tags": [
+    "paper",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/1e93f444-0b01-4412-aa2b-877be5ef08d7",
   "source_url": "https://emmalewisham.co.uk",
   "extracted_at": "2026-06-03T19:36:36.578Z",

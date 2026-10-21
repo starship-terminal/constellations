@@ -4,6 +4,12 @@
   "name": "Juicebox.ai",
   "tagline": "Talent command center on cream paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/2186dddd-60ee-4898-b11d-88483daf477e",
   "source_url": "https://juicebox.ai",
   "extracted_at": "2026-06-03T22:07:16.826Z",

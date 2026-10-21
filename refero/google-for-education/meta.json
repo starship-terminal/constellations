@@ -4,6 +4,11 @@
   "name": "Google for Education",
   "tagline": "Open notebook in morning light \u2014 a digital classroom where whitespace, type, and one blue accent do all the work.",
   "theme": "light",
+  "product_type": "education",
+  "design_style": "minimal",
+  "tags": [
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/c57ba3f8-1d76-4660-8ba4-48ddce26e759",
   "source_url": "https://classroom.google.com",
   "extracted_at": "2026-06-03T17:37:16.469Z",

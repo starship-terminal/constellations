@@ -4,6 +4,11 @@
   "name": "Raycast",
   "tagline": "Midnight command center, coral neon",
   "theme": "dark",
+  "product_type": "productivity",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
   "source_url": "https://raycast.com",
   "extracted_at": "2026-07-03T02:55:06.053Z",

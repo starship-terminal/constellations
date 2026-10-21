@@ -4,6 +4,11 @@
   "name": "Supabase",
   "tagline": "Midnight code editor with phosphor green caret \u2014 a single chromatic pulse on a sea of charcoal.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/632249f1-fd78-4c77-9b34-7bae37ff3e9b",
   "source_url": "https://supabase.com",
   "extracted_at": "2026-06-03T15:08:05.355Z",

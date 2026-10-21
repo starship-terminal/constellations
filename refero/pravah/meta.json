@@ -4,6 +4,11 @@
   "name": "Pravah",
   "tagline": "engineering dossier on warm parchment",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/30a8b128-a5bb-4d86-85eb-743b78091596",
   "source_url": "https://pravah.com",
   "extracted_at": "2026-06-03T18:17:28.007Z",

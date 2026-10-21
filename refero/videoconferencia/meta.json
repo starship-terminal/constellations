@@ -4,6 +4,11 @@
   "name": "Videoconferencia",
   "tagline": "Collaborative daylight workspace \u2014 every surface a white panel under fluorescent clarity, single violet pulse marking where to act.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "corporate",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/206c6c51-df38-425f-8d07-b0cc9dd065cf",
   "source_url": "https://microsoft.com/teams",
   "extracted_at": "2026-04-11T19:21:51.014Z",

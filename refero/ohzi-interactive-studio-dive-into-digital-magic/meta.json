@@ -4,6 +4,12 @@
   "name": "OHZI Interactive Studio / Dive into digital magic.",
   "tagline": "A glowing cube suspended in a dark gallery",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "futuristic",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/03e03554-d7aa-40da-9764-79320ecfa1d0",
   "source_url": "https://ohzi.io",
   "extracted_at": "2026-06-03T19:35:15.938Z",

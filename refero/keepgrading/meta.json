@@ -4,6 +4,12 @@
   "name": "KeepGrading",
   "tagline": "Polaroids scattered in a darkroom",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "retro",
+  "tags": [
+    "playful",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/2f0a053b-0596-4212-a4f4-8a7b580acb90",
   "source_url": "https://www.keepgrading.com",
   "extracted_at": "2026-06-03T20:43:23.352Z",

@@ -4,6 +4,12 @@
   "name": "mymind",
   "tagline": "Sunlit personal archive \u2014 a warm afternoon light spilling across a private collection of saved thoughts, images, and bookmarks, curated without folders.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "organic",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/5bfe6c1d-1b15-4f8d-b0c9-677a33291c5d",
   "source_url": "https://mymind.com",
   "extracted_at": "2026-04-29T10:42:11.503Z",

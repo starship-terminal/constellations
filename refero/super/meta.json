@@ -4,6 +4,11 @@
   "name": "Super",
   "tagline": "Sunlit paper desk with one amber marker",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/25863c92-a287-491e-bae7-4da37a1f9a98",
   "source_url": "https://super.so",
   "extracted_at": "2026-06-03T20:19:44.960Z",

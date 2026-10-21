@@ -4,6 +4,12 @@
   "name": "BitcoinOS",
   "tagline": "Obsidian monolith with a burning yellow sigil \u2014 BitcoinOS is a crypto project whose interface looks like a declaration carved in stone, with cinematic 3D worlds bleeding in at the edges.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "futuristic",
+  "tags": [
+    "cinematic",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/bfd97dc2-5c12-483b-9101-ebfaf82ba83e",
   "source_url": "https://bitcoinos.build",
   "extracted_at": "2026-06-03T21:35:50.589Z",

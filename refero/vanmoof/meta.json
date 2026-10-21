@@ -4,6 +4,11 @@
   "name": "Vanmoof",
   "tagline": "cinematic monochrome showroom",
   "theme": "mixed",
+  "product_type": "hardware",
+  "design_style": "cinematic",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/4887c681-d4e6-41d3-b83c-5650cf925ee9",
   "source_url": "https://www.vanmoof.com",
   "extracted_at": "2026-06-03T20:12:56.987Z",

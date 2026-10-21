@@ -4,6 +4,12 @@
   "name": "Break Maiden",
   "tagline": "Oversized white type carved into a black gallery wall. A single condensed display face at 150px sits in a sea of negative space, surrounded by product photographs arranged like a magazine spread.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/02610b06-d16e-47bd-a1ea-18979a9ed4f5",
   "source_url": "https://www.breakmaiden.co",
   "extracted_at": "2026-06-03T19:16:50.716Z",

@@ -4,6 +4,11 @@
   "name": "Perk",
   "tagline": "electric lime on warm parchment paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/75c06591-34d2-493a-bd49-70551b5e4a53",
   "source_url": "https://travelperk.com",
   "extracted_at": "2026-07-03T03:34:24.972Z",

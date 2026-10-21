@@ -4,6 +4,11 @@
   "name": "Riverside",
   "tagline": "Studio darkroom behind frosted glass",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/09b5a06b-29dc-4d17-8722-d29bd93010c8",
   "source_url": "https://riverside.fm",
   "extracted_at": "2026-06-03T21:55:06.145Z",

@@ -4,6 +4,12 @@
   "name": "Pop Site",
   "tagline": "Stark typographic gallery \u2014 monumental black headlines floating on white walls, with one blue dot of intent.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/e7d4a7de-aeaf-4d49-8c0c-0dedd05a8992",
   "source_url": "https://pop.site",
   "extracted_at": "2026-06-03T17:27:29.605Z",

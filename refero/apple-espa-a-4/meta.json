@@ -4,6 +4,11 @@
   "name": "Apple (Espa\u00f1a)",
   "tagline": "black theater with luminous hardware",
   "theme": "dark",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/764b6a64-c233-4e0f-b8e1-bc01e2f8aa16",
   "source_url": "https://www.apple.com/macbook-pro",
   "extracted_at": "2026-07-03T03:37:16.981Z",

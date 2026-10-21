@@ -4,6 +4,11 @@
   "name": "Jasper",
   "tagline": "serif headlines over a pastel tile mosaic",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "playful",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/02a9c799-eb91-425b-8d68-3776b5e84229",
   "source_url": "https://jasper.ai",
   "extracted_at": "2026-06-03T18:39:22.582Z",

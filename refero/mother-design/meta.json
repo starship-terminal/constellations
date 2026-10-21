@@ -4,6 +4,12 @@
   "name": "Mother Design",
   "tagline": "broadsheet manifesto in black ink",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/f40e6a6c-1704-407a-b21b-6141fb90adfe",
   "source_url": "https://www.motherdesign.com",
   "extracted_at": "2026-06-03T21:10:35.261Z",

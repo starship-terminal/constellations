@@ -4,6 +4,12 @@
   "name": "Getburnt",
   "tagline": "editorial monochrome on warm paper \u2014 a minimal typeset spread where warm-black ink, a light display serif, and pill-shaped controls turn a B2B tool into something that reads like a quarterly journal.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/002cc5a7-0d34-4d8d-afa0-c5fad69477d5",
   "source_url": "https://www.getburnt.ai",
   "extracted_at": "2026-06-03T18:41:18.806Z",

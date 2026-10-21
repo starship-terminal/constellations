@@ -4,6 +4,12 @@
   "name": "Volume",
   "tagline": "gallery wall with whispers \u2014 editorial restraint on paper-white canvas, the chrome is invisible, the imagery is the only color",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "editorial",
+  "tags": [
+    "minimal",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/edc0c03e-8c20-4e22-badd-2735fcb9f4a8",
   "source_url": "https://vol.co",
   "extracted_at": "2026-06-03T17:20:14.125Z",

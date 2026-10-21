@@ -4,6 +4,11 @@
   "name": "Getclockwise",
   "tagline": "monogrammed letterhead on cream paper \u2014 a warm, editorial announcement, not a product page",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/6024d069-8a74-4534-917f-5f5b11224cc5",
   "source_url": "https://www.getclockwise.com",
   "extracted_at": "2026-06-03T21:55:48.810Z",

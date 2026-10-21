@@ -4,6 +4,12 @@
   "name": "NEVERHACK",
   "tagline": "encrypted command terminal on cold marble",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "monochrome",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/05a82625-786e-4343-a554-3ba8f4de23d7",
   "source_url": "https://neverhack.com/en",
   "extracted_at": "2026-06-03T20:05:34.171Z",

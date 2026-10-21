@@ -4,6 +4,12 @@
   "name": "Threads",
   "tagline": "Quiet monochrome paper feed",
   "theme": "light",
+  "product_type": "social",
+  "design_style": "paper",
+  "tags": [
+    "monochrome",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/182f8743-fe22-45d3-98bc-9fd29d058602",
   "source_url": "https://threads.net",
   "extracted_at": "2026-06-03T18:55:01.524Z",

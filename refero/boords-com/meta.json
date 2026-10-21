@@ -4,6 +4,12 @@
   "name": "boords.com",
   "tagline": "Warm storyboard studio on cream paper \u2014 a cream canvas, amber pencil accents, and flat geometric type that feels hand-drawn even when it's pure UI.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/c955d25a-b32a-441d-9f07-a260d1df897b",
   "source_url": "https://boords.com",
   "extracted_at": "2026-06-03T16:51:33.474Z",

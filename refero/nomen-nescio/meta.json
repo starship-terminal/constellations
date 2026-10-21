@@ -4,6 +4,12 @@
   "name": "Nomen Nescio",
   "tagline": "ink on warm paper",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/2fd71e12-12fc-4346-8281-52afe12bb951",
   "source_url": "https://nomennescio.fi",
   "extracted_at": "2026-06-03T20:36:39.025Z",

@@ -4,6 +4,11 @@
   "name": "Avoice",
   "tagline": "lime drafting mark on midnight plans. Build pale, document-like page sections around near-black product stages, then use electric lime as the high-visibility signal for conversion, selection, and architectural annotation.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/e0afdaa3-c90a-4ec7-8d0d-f5a72000c4b1",
   "source_url": "https://www.avoice.co",
   "extracted_at": "2026-09-20T19:23:25.316Z",

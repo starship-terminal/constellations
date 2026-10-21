@@ -4,6 +4,11 @@
   "name": "Preply",
   "tagline": "Pink billboard with human stickers",
   "theme": "light",
+  "product_type": "education",
+  "design_style": "playful",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/476fea7c-d578-4625-b9e6-36e95faa6ca4",
   "source_url": "https://preply.com",
   "extracted_at": "2026-06-03T17:54:14.567Z",

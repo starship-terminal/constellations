@@ -4,6 +4,11 @@
   "name": "Dylanbrouwer",
   "tagline": "Brutalist type foundry at dusk",
   "theme": "mixed",
+  "product_type": "design-resource",
+  "design_style": "brutalist",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/b1e82907-d1cf-46cd-8ae7-3561c5b15fd0",
   "source_url": "https://www.dylanbrouwer.design",
   "extracted_at": "2026-07-03T03:43:58.087Z",

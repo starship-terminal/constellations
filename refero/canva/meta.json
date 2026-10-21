@@ -4,6 +4,11 @@
   "name": "Canva",
   "tagline": "playful artist's studio bathed in violet dawn \u2014 a clean white workspace where every accent, icon, and gradient wash arrives pre-tuned for creative work.",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/17d0a00e-5de6-48c7-9f3b-25b04f7dab4c",
   "source_url": "https://www.canva.com",
   "extracted_at": "2026-06-03T21:53:09.561Z",

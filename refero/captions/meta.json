@@ -4,6 +4,11 @@
   "name": "Captions",
   "tagline": "Sunlit editing desk. Float a translucent rounded navigation bar over a paper-white, subtly noisy workspace, then punctuate it with pale-air-blue production surfaces and tightly cropped creator footage.",
   "theme": "light",
+  "product_type": "ai-media",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/196dc658-219f-4ea0-b150-f9af17cd4c3f",
   "source_url": "https://captions.ai",
   "extracted_at": "2026-09-24T17:33:54.842Z",

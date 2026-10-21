@@ -4,6 +4,11 @@
   "name": "Chester's Garden",
   "tagline": "Flimsy art-zine on drafting paper",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "maximalist",
+  "tags": [
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/a639fa6c-1705-47c2-b452-d4479469a734",
   "source_url": "https://chester.how",
   "extracted_at": "2026-06-03T18:19:45.224Z",

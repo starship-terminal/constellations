@@ -4,6 +4,12 @@
   "name": "entire studios",
   "tagline": "Concrete-walled fashion zine \u2014 an editorial runway printed on warm cream paper, where photography is the only luxury.",
   "theme": "light",
+  "product_type": "fashion",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "brutalist"
+  ],
   "page_url": "https://styles.refero.design/style/cef25151-078c-4631-8f02-4f204f071b8b",
   "source_url": "https://entirestudios.com",
   "extracted_at": "2026-06-03T17:03:33.246Z",

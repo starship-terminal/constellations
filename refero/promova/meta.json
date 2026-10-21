@@ -4,6 +4,11 @@
   "name": "Promova",
   "tagline": "midnight magazine with one yellow highlighter \u2014 a black page, white type, and a vivid lemon swatch that says 'press here'.",
   "theme": "dark",
+  "product_type": "education",
+  "design_style": "technical",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/dae5e893-ca18-44c3-8f83-358cb52af237",
   "source_url": "https://promova.com",
   "extracted_at": "2026-06-03T18:53:59.710Z",

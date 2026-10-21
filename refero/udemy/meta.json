@@ -4,6 +4,12 @@
   "name": "Udemy",
   "tagline": "Modern classroom whiteboard with violet ink.",
   "theme": "light",
+  "product_type": "education",
+  "design_style": "corporate",
+  "tags": [
+    "playful",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/c03afcbd-96ed-4b7f-8d0a-277fc0042ba7",
   "source_url": "https://www.udemy.com",
   "extracted_at": "2026-06-03T17:48:42.658Z",

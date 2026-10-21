@@ -4,6 +4,11 @@
   "name": "Schema",
   "tagline": "Ink-black keynote stage with confetti-bright murals",
   "theme": "mixed",
+  "product_type": "design-tool",
+  "design_style": "playful",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/2b07d62c-d706-4c9d-a3fb-9c163da09f03",
   "source_url": "https://schema.figma.com",
   "extracted_at": "2026-06-03T21:47:01.755Z",

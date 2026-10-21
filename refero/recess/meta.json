@@ -4,6 +4,11 @@
   "name": "Recess",
   "tagline": "pastel sunset over a swimming pool",
   "theme": "mixed",
+  "product_type": "commerce",
+  "design_style": "playful",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/2c7a280c-7cc1-4766-b043-bc8bdd9b868c",
   "source_url": "https://takearecess.com",
   "extracted_at": "2026-06-03T18:47:48.084Z",

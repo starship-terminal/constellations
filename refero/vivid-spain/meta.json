@@ -4,6 +4,11 @@
   "name": "Vivid Spain",
   "tagline": "Lavender dusk over white marble \u2014 a soft violet wash on a clean white surface, where one vivid purple accent does all the work.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/c25e8eb5-634d-4aca-b30b-d8ba5a50dc5a",
   "source_url": "https://vivid.money",
   "extracted_at": "2026-06-03T18:34:15.715Z",

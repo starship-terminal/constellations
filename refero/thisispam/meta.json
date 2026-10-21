@@ -4,6 +4,12 @@
   "name": "Thisispam",
   "tagline": "butter-yellow editorial broadsheet \u2014 a Swiss-press layout where a single warm cream stock, razor-sharp type, and a zero-chrome surface system turn each scroll into a printed page.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "swiss",
+  "tags": [
+    "paper",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/f352b093-1ba7-49c7-9ce3-ad73cf9a1aee",
   "source_url": "https://thisispam.com",
   "extracted_at": "2026-06-03T22:11:49.010Z",

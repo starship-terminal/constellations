@@ -4,6 +4,11 @@
   "name": "Dialog",
   "tagline": "Neutral showroom with one warm price tag. Every surface is a different tone of off-white; the orange CTA is the only color in the room.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/c8c22958-ec50-47f1-aedc-a131d7aeb442",
   "source_url": "https://askdialog.com",
   "extracted_at": "2026-04-12T10:44:14.833Z",

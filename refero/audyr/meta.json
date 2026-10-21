@@ -4,6 +4,11 @@
   "name": "Audyr",
   "tagline": "Ink on cold-pressed paper. The interface reads as a meticulously typeset monograph \u2014 black ink, white stock, hairline rules, and the softest possible shadows to suggest depth.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/afde66c4-ad74-4d19-94df-0216e945ac5e",
   "source_url": "https://audyr.com",
   "extracted_at": "2026-06-03T15:39:37.355Z",

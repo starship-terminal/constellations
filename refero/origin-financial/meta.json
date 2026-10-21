@@ -4,6 +4,12 @@
   "name": "Origin Financial",
   "tagline": "midnight gallery of quiet wealth. A hushed, near-black room where oversized serif whispers and a few luminous color panels make finance feel like curated art.",
   "theme": "dark",
+  "product_type": "fintech",
+  "design_style": "luxury",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/c60f05ff-2420-4a24-92db-80c4b6a74683",
   "source_url": "https://www.useorigin.com",
   "extracted_at": "2026-07-03T03:32:26.906Z",

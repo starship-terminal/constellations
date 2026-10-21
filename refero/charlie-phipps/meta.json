@@ -4,6 +4,11 @@
   "name": "Charlie Phipps",
   "tagline": "oversized editorial gallery wall \u2014 a single massive Helvetica headline and one full-bleed photograph, nothing else",
   "theme": "mixed",
+  "product_type": "portfolio",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/7f6799d9-0733-4523-9a94-036b9ad3bf28",
   "source_url": "https://phippscharlie.com",
   "extracted_at": "2026-06-03T19:45:21.588Z",

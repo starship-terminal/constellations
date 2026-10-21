@@ -4,6 +4,11 @@
   "name": "FLORA",
   "tagline": "Black velvet gallery \u2014 pure dark canvas, vivid images as the only color",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/cf8cd07d-bff0-41dc-ab70-fa85750f6168",
   "source_url": "https://www.florafauna.ai",
   "extracted_at": "2026-06-03T18:41:34.218Z",

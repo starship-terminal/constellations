@@ -4,6 +4,12 @@
   "name": "Home",
   "tagline": "editorial broadsheet in a green room",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "editorial",
+  "tags": [
+    "swiss",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/1a519123-071a-449f-b5df-0def73ed7f35",
   "source_url": "https://www.newformcap.com",
   "extracted_at": "2026-07-03T03:08:30.113Z",

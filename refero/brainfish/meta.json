@@ -4,6 +4,12 @@
   "name": "Brainfish",
   "tagline": "lime-marker editorial broadsheet \u2014 a near-monochrome page where a single vivid green stroke does all the work",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/800734fd-eb95-41f3-b6f4-15fc19e127f0",
   "source_url": "https://www.brainfishai.com",
   "extracted_at": "2026-07-03T03:40:18.117Z",

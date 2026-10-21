@@ -4,6 +4,11 @@
   "name": "HeroKit",
   "tagline": "Pale lemon neon on an obsidian void \u2014 an editorial poster that happens to be a product page.",
   "theme": "dark",
+  "product_type": "design-tool",
+  "design_style": "neon",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/b3f7b44d-6564-4015-902a-259b4790b9de",
   "source_url": "https://herokit.design",
   "extracted_at": "2026-06-03T20:45:06.494Z",

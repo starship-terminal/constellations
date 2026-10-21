@@ -4,6 +4,11 @@
   "name": "Grove AI",
   "tagline": "clinical journal in morning light \u2014 a single green word anchors a page of measured prose",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/7f7d3ff7-7a74-40f1-9098-a946ce53d4d4",
   "source_url": "https://www.grovetrials.com",
   "extracted_at": "2026-06-03T20:09:22.333Z",

@@ -4,6 +4,11 @@
   "name": "Resident",
   "tagline": "Architecture monograph on cream paper",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/f451c085-f048-4c9c-ae3b-03acc88320ab",
   "source_url": "https://resident.co.nz",
   "extracted_at": "2026-06-03T19:07:07.606Z",

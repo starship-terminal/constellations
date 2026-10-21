@@ -4,6 +4,12 @@
   "name": "Ortto",
   "tagline": "blueprint on midnight paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/45c4f990-e6b4-472d-89a4-06870ac17b9f",
   "source_url": "https://ortto.com",
   "extracted_at": "2026-06-03T21:28:50.187Z",

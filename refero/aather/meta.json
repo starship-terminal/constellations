@@ -4,6 +4,12 @@
   "name": "AATHER",
   "tagline": "Open palm, single flame \u2014 quiet luxury held in stillness.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "luxury",
+  "tags": [
+    "minimal",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/3b080dc3-1992-43fe-91d6-2a721f934435",
   "source_url": "https://aather.com",
   "extracted_at": "2026-06-03T17:05:48.371Z",

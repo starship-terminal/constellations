@@ -4,6 +4,11 @@
   "name": "Pirsch Analytics",
   "tagline": "sunlit paper notebook with highlighter swatches",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/e4b9d41a-8165-47dd-818a-5f6810046ea9",
   "source_url": "https://pirsch.io",
   "extracted_at": "2026-06-03T15:32:35.765Z",

@@ -4,6 +4,12 @@
   "name": "Uniswap",
   "tagline": "cotton-candy swap terminal in white air. Vivid magenta accents pierce an otherwise colorless, floating interface, while soft chromatic orbs drift in the background like currency made visible.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "minimal",
+  "tags": [
+    "neon",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/e5b95270-9148-417a-89c6-32138d83a251",
   "source_url": "https://uniswap.org",
   "extracted_at": "2026-06-03T19:05:51.909Z",

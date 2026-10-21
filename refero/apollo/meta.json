@@ -4,6 +4,11 @@
   "name": "Apollo",
   "tagline": "Sun-baked limestone with highlighter-pen accents \u2014 editorial warmth over corporate coldness",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/3963a727-8dec-4308-80c0-3ae198d15b87",
   "source_url": "https://www.apollo.io",
   "extracted_at": "2026-06-03T18:30:02.409Z",

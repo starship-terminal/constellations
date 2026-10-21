@@ -4,6 +4,11 @@
   "name": "Perplexity AI",
   "tagline": "scholar's parchment behind clean glass",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/81afaa5c-73ac-4ef4-9a99-296da325ea6c",
   "source_url": "https://perplexity.ai",
   "extracted_at": "2026-07-03T03:24:13.114Z",

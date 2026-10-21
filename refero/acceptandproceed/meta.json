@@ -4,6 +4,11 @@
   "name": "Acceptandproceed",
   "tagline": "editorial broadsheet on warm paper",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/f63b4703-db8b-4bc9-8d8f-17262b12d4b3",
   "source_url": "https://www.acceptandproceed.com",
   "extracted_at": "2026-06-03T20:39:21.828Z",

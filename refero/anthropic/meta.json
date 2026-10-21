@@ -4,6 +4,11 @@
   "name": "Anthropic",
   "tagline": "scientific field journal on warm parchment \u2014 quiet ivory surfaces, editorial serif headlines, and a single clay accent that only appears when you must act",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/d469cba4-c448-4a43-a033-883f8bfcdc42",
   "source_url": "https://anthropic.com",
   "extracted_at": "2026-07-03T03:04:05.854Z",

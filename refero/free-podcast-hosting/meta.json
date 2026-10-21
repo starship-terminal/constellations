@@ -4,6 +4,12 @@
   "name": "Free Podcast Hosting",
   "tagline": "Botanical broadcast studio \u2014 a forest-green command console on white paper, anchored by a massive condensed-serif headline that reads like a magazine cover for audio.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "organic",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/b409c050-ab0f-4cf0-a388-95fd7072cd6a",
   "source_url": "https://www.buzzsprout.com",
   "extracted_at": "2026-06-03T21:48:59.252Z",

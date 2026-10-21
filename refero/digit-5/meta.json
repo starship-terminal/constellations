@@ -4,6 +4,11 @@
   "name": "Digit 5",
   "tagline": "Agility \u2014 robot workshop at dusk. Warm-white technical documentation emerges from a near-black machine bay, with soft industrial photography and restrained instrument-panel details.",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e31435dd-d4fc-4534-8a40-35a1e38ebae5",
   "source_url": "https://www.agilityrobotics.com/solutions/digit-5",
   "extracted_at": "2026-09-20T22:16:21.191Z",

@@ -4,6 +4,12 @@
   "name": "The Beams",
   "tagline": "overlapping ink on white paper",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "brutalist"
+  ],
   "page_url": "https://styles.refero.design/style/b321ca45-2971-4828-9165-82b77f676bfd",
   "source_url": "https://thebeamslondon.com",
   "extracted_at": "2026-06-03T21:58:53.103Z",

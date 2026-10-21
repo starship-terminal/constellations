@@ -4,6 +4,11 @@
   "name": "Mailchimp",
   "tagline": "Vintage press meets electric yellow \u2014 an editorial print house with one neon switch.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/24929007-7e62-4c96-a940-7de65438a578",
   "source_url": "https://mailchimp.com",
   "extracted_at": "2026-04-11T19:20:50.339Z",

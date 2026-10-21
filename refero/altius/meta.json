@@ -4,6 +4,11 @@
   "name": "Altius",
   "tagline": "Molten embers on obsidian. A blockchain command center lit from within by coral fire, where dark surfaces breathe warm light through hairline gaps and inset glows.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/227ff379-9b46-44fc-8ff1-37e0472239a6",
   "source_url": "https://www.altiuslabs.xyz",
   "extracted_at": "2026-06-03T21:39:22.697Z",

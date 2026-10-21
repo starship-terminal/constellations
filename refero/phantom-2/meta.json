@@ -4,6 +4,11 @@
   "name": "Phantom",
   "tagline": "Lavender dreamscape with a violet ghost. A pastel world that flips to midnight violet in key moments, with a friendly mascot ghost wandering between sections.",
   "theme": "mixed",
+  "product_type": "crypto",
+  "design_style": "playful",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/80028bf5-0c05-43a4-8c9e-b98750d610bd",
   "source_url": "https://phantom.app",
   "extracted_at": "2026-06-03T17:51:59.669Z",

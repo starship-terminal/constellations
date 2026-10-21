@@ -4,6 +4,12 @@
   "name": "Vercel",
   "tagline": "Typeset terminal on white paper",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/f24daf3a-d43f-4dec-85a9-8ac1d5148a03",
   "source_url": "https://vercel.com",
   "extracted_at": "2026-07-03T03:20:12.094Z",

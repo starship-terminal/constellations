@@ -4,6 +4,12 @@
   "name": "Adnaut",
   "tagline": "After-hours mission control lit by sodium lamps",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/5d210b76-702a-45cf-97ed-ed90c47b1eb0",
   "source_url": "https://www.adnaut.digital",
   "extracted_at": "2026-06-03T19:52:14.316Z",

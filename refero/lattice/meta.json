@@ -4,6 +4,12 @@
   "name": "Lattice",
   "tagline": "Botanical field journal on warm parchment \u2014 a quiet cream canvas where dark forest ink does the speaking and pastel specimen cards provide the color.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "organic",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/cbb335e5-c8df-49be-a0fc-0ec5dfa0d61f",
   "source_url": "https://lattice.com",
   "extracted_at": "2026-06-03T18:31:35.840Z",

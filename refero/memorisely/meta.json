@@ -4,6 +4,12 @@
   "name": "Memorisely",
   "tagline": "Architect's drafting table on warm parchment \u2014 a quiet, monochrome workspace where every element is a typographic decision.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "paper",
+  "tags": [
+    "monochrome",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e1497817-b9f1-4d7a-842f-58a08dd9e455",
   "source_url": "https://www.memorisely.com",
   "extracted_at": "2026-06-03T21:56:40.271Z",

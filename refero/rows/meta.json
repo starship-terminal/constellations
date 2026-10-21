@@ -4,6 +4,11 @@
   "name": "Rows",
   "tagline": "blank spreadsheet at dawn \u2014 calm, precise, one warm spark on cold white",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/8d4a4e15-31f1-4509-8d13-7746f85c20d7",
   "source_url": "https://rows.com",
   "extracted_at": "2026-06-03T18:13:51.806Z",

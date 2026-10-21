@@ -4,6 +4,12 @@
   "name": "OFFFICE :",
   "tagline": "noir gallery swallowed by monolithic type",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "brutalist",
+  "tags": [
+    "monochrome",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/190d4a0b-0353-4fc8-be09-affa6e977146",
   "source_url": "https://offficestud.io",
   "extracted_at": "2026-06-03T19:58:32.706Z",

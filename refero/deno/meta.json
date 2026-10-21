@@ -4,6 +4,12 @@
   "name": "Deno",
   "tagline": "whitepaper schematic with mint highlighter \u2014 a developer reading desk under daylight",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/973dcf14-2237-4346-81af-3d8c811666c2",
   "source_url": "https://deno.com",
   "extracted_at": "2026-06-03T18:11:02.558Z",

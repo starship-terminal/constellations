@@ -4,6 +4,11 @@
   "name": "Peggy",
   "tagline": "monochrome art gallery on a winter morning \u2014 the only color comes from the work on the walls",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/0ed4e85f-f3e9-438c-bc34-2a726863c602",
   "source_url": "https://peggy.com/royalties",
   "extracted_at": "2026-06-03T21:31:50.529Z",

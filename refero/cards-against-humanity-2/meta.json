@@ -4,6 +4,11 @@
   "name": "Cards Against Humanity",
   "tagline": "Apocalypse broadcast on blackout paper",
   "theme": "dark",
+  "product_type": "entertainment",
+  "design_style": "maximalist",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/cef9a300-8513-46c2-9c2c-c0016e5a5d30",
   "source_url": "https://www.climatecatastrophepack.com",
   "extracted_at": "2026-06-03T21:06:36.930Z",

@@ -4,6 +4,11 @@
   "name": "Amplemarket",
   "tagline": "Sunlit workspace with scattered confetti",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "playful",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/db451eca-8de6-43a9-a5d5-35271befdffd",
   "source_url": "https://www.amplemarket.com",
   "extracted_at": "2026-07-03T03:12:58.514Z",

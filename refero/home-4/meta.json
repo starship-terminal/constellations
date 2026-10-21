@@ -4,6 +4,12 @@
   "name": "Home",
   "tagline": "Expressive creative studio on warm blush paper",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/ad529e8a-3427-4152-bed9-6ec5097f25b6",
   "source_url": "https://moderne.st",
   "extracted_at": "2026-06-03T18:19:41.701Z",

@@ -4,6 +4,11 @@
   "name": "Airbnb",
   "tagline": "Quiet white gallery wall with one coral-red bookmark",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/c2325884-4391-4688-85cd-e143f5107517",
   "source_url": "https://www.airbnb.com",
   "extracted_at": "2026-07-03T03:15:59.260Z",

@@ -4,6 +4,11 @@
   "name": "Fable",
   "tagline": "a literary reading nook with cream paper and ink \u2014 the book is the art",
   "theme": "mixed",
+  "product_type": "media",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/ab650279-aa18-43e5-a998-34190d7bedc7",
   "source_url": "https://fable.co",
   "extracted_at": "2026-06-03T19:18:53.735Z",

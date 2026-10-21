@@ -4,6 +4,11 @@
   "name": "Stykka",
   "tagline": "Scandi atelier under white light \u2014 a quiet, hand-built showroom where the only voice is the photograph",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/b43fdb3c-85e9-4282-9262-1d3deb4b679d",
   "source_url": "https://stykka.com",
   "extracted_at": "2026-06-03T17:53:57.777Z",

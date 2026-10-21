@@ -4,6 +4,12 @@
   "name": "Wayfinder",
   "tagline": "A black cinema screen with one whispered title floating over a living illustration. The interface is a dimmer switch, not a dashboard.",
   "theme": "dark",
+  "product_type": "media",
+  "design_style": "cinematic",
+  "tags": [
+    "minimal",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/d9fbc68b-0d42-4c09-829d-1207b781f46a",
   "source_url": "https://wayfinder.nfb.ca",
   "extracted_at": "2026-06-03T18:31:48.595Z",

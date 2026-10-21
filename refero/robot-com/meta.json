@@ -4,6 +4,11 @@
   "name": "robot.com",
   "tagline": "a printed editorial spread with a yellow highlighter\n\nWarm off-white paper, ink-black type, and a single neon-yellow accent that marks what matters \u2014 the system behaves like a confident magazine layout, not a software dashboard.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "editorial",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/30dfffb4-ff6d-4128-b3e5-39046ba258f0",
   "source_url": "https://www.robot.com",
   "extracted_at": "2026-06-03T17:52:52.524Z",

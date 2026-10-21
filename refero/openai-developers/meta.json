@@ -4,6 +4,12 @@
   "name": "OpenAI Developers",
   "tagline": "stark white laboratory",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "minimal",
+  "tags": [
+    "corporate",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/5c94c49f-0612-4261-842c-e1d501f3e13d",
   "source_url": "https://developers.openai.com",
   "extracted_at": "2026-06-03T17:12:54.234Z",

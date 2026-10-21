@@ -4,6 +4,12 @@
   "name": "Huddle",
   "tagline": "Pastel inventory cards on cream paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/2cfd1a08-e5b1-4bd8-9270-29aa08f80aa0",
   "source_url": "https://www.huddle.works",
   "extracted_at": "2026-06-03T20:29:42.429Z",

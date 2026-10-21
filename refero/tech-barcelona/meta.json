@@ -4,6 +4,12 @@
   "name": "Tech Barcelona",
   "tagline": "Editorial tech manifesto on white marble",
   "theme": "mixed",
+  "product_type": "culture",
+  "design_style": "editorial",
+  "tags": [
+    "swiss",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/271172f7-9f6d-4d6f-9baa-91a41648d8be",
   "source_url": "https://techbarcelona.com/en",
   "extracted_at": "2026-06-03T20:22:07.660Z",

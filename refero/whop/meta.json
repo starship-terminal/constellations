@@ -4,6 +4,11 @@
   "name": "Whop",
   "tagline": "Bold sticker on cream paper \u2014 a minimal light canvas with a single orange button that casts a hard burnt-orange shadow.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/9eeab5f0-eece-4898-a1d2-2db48ac2bc7d",
   "source_url": "https://whop.com",
   "extracted_at": "2026-06-03T21:10:46.376Z",

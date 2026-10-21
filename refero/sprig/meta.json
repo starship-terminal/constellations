@@ -4,6 +4,11 @@
   "name": "Sprig",
   "tagline": "editorial research notebook on warm paper \u2014 quiet, almost inkless, with warm light leaking in at the edges",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/cbd8a058-6ecb-4f1b-9b5a-2bf2597826ee",
   "source_url": "https://sprig.com",
   "extracted_at": "2026-06-03T20:53:59.378Z",

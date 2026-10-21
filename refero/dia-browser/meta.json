@@ -4,6 +4,11 @@
   "name": "Dia Browser",
   "tagline": "blackroom gallery meets editorial broadsheet. A pitch-dark stage opens onto a sunlit paper spread where a single serif headline anchors each section.",
   "theme": "mixed",
+  "product_type": "productivity",
+  "design_style": "editorial",
+  "tags": [
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/b458ca1a-70f0-4f85-b745-f879a4d08457",
   "source_url": "https://diabrowser.com",
   "extracted_at": "2026-07-03T02:58:05.117Z",

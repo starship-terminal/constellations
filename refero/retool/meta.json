@@ -4,6 +4,11 @@
   "name": "Retool",
   "tagline": "Warm obsidian workshop \u2014 a precision tool surface lit by ember glow, where everything is built.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/c45b115b-dcb5-446d-8952-85aef740f8e4",
   "source_url": "https://retool.com",
   "extracted_at": "2026-04-29T23:05:34.544Z",

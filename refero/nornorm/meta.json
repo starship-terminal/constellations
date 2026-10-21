@@ -4,6 +4,12 @@
   "name": "Nornorm",
   "tagline": "Scandinavian showroom, cobalt punctuation \u2014 a white-walled furniture gallery where one deep blue stroke cuts through warm bone and ink.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "paper",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/0769ff4c-f719-4865-98df-de2f44c694a6",
   "source_url": "https://nornorm.com",
   "extracted_at": "2026-06-03T22:06:32.352Z",

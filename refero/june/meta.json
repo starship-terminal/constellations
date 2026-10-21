@@ -4,6 +4,12 @@
   "name": "June",
   "tagline": "Midnight ink on cream paper.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/40e4d3ef-cd28-483b-8c8a-b9cf44281b03",
   "source_url": "https://www.june.so",
   "extracted_at": "2026-06-03T21:46:25.936Z",

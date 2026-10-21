@@ -4,6 +4,12 @@
   "name": "Nakedcityfilms",
   "tagline": "electric blue headline over cinematic void",
   "theme": "mixed",
+  "product_type": "media",
+  "design_style": "cinematic",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/b7fc2173-c9b1-45ed-bd3a-9999320b3248",
   "source_url": "https://www.nakedcityfilms.com",
   "extracted_at": "2026-06-03T19:24:04.168Z",

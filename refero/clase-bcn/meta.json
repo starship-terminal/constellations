@@ -4,6 +4,11 @@
   "name": "Clase bcn",
   "tagline": "editorial gallery on white wall",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "editorial",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/73359194-de93-436e-af53-81d4029f5e7a",
   "source_url": "https://clasebcn.com",
   "extracted_at": "2026-06-03T21:54:23.798Z",

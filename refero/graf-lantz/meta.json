@@ -4,6 +4,12 @@
   "name": "Graf Lantz",
   "tagline": "Scandinavian atelier on raw linen \u2014 one violet stroke of urgency inside an otherwise bone-white room.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/f1a690c7-234d-4ee9-9806-5790934e7043",
   "source_url": "https://glob.land",
   "extracted_at": "2026-06-03T21:30:57.226Z",

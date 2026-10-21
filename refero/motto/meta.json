@@ -4,6 +4,12 @@
   "name": "Motto\u00ae",
   "tagline": "Typographic monolith on paper \u2014 a single confident voice announcing itself on bone-white stock.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/6eb5fc89-d0db-4293-8bff-13c5aa530a28",
   "source_url": "https://wearemotto.com",
   "extracted_at": "2026-06-03T16:17:14.466Z",

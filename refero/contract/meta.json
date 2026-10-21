@@ -4,6 +4,11 @@
   "name": "Contract",
   "tagline": "white-walled gallery catalogue",
   "theme": "mixed",
+  "product_type": "design-resource",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/76faeb42-b43d-4cc7-ac03-1e4bd74f04b7",
   "source_url": "https://contract.mdfitalia.com/en",
   "extracted_at": "2026-06-03T18:07:19.972Z",

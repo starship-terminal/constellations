@@ -4,6 +4,11 @@
   "name": "Relate dot App",
   "tagline": "Diversity mosaic behind frosted notes. A wall of color-blocked portraits carries every visual mood the system needs; every UI element is a clean white card or a flat colored chip floating above it.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "playful",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/6bc9448b-5d39-4aba-9007-25c7a2aedbad",
   "source_url": "https://relate.app",
   "extracted_at": "2026-06-03T22:09:31.766Z",

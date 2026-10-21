@@ -4,6 +4,11 @@
   "name": "Bear Markdown Notes",
   "tagline": "Quiet notebook on white linen",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/4afe77ff-e7fa-41d8-96d6-ce8cdc159f97",
   "source_url": "https://bear.app",
   "extracted_at": "2026-06-03T18:23:11.861Z",

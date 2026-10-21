@@ -4,6 +4,11 @@
   "name": "San Rita",
   "tagline": "alpine field guide on sage paper",
   "theme": "mixed",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/f6b396e6-0ad6-402e-9ab9-0034df0d204d",
   "source_url": "https://sanrita.ca/about",
   "extracted_at": "2026-06-03T17:19:53.815Z",

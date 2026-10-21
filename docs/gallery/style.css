@@ -143,6 +143,11 @@ main { padding: 40px clamp(16px, 4vw, 40px) 96px; max-width: 1200px; margin: 0 a
 .chip[aria-pressed="true"] { background: var(--paper); color: var(--void); }
 :root[data-theme="light"] .chip[aria-pressed="true"] { background: var(--text-strong); color: var(--bg); }
 .chip .n { font-family: var(--mono); font-size: 10px; opacity: .7; }
+.rf-sel {
+  height: 28px; padding: 0 8px; border: 0; border-radius: 9999px; background: var(--chip-bg);
+  color: var(--text); font-size: 12px; cursor: pointer; max-width: 150px;
+}
+.rf-sel:hover { color: var(--text-strong); }
 .toolbar .sep { width: 1px; height: 20px; background: var(--line); margin: 0 4px; }
 .seg { display: inline-flex; margin-left: auto; border: 1px solid var(--line); border-radius: var(--radius-ctl); padding: 2px; background: var(--field-bg); }
 .seg button { border: 0; background: transparent; padding: 4px 12px; border-radius: 4px; color: var(--muted); cursor: pointer; font-size: 12px; }

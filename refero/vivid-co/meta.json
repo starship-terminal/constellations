@@ -4,6 +4,11 @@
   "name": "Vivid+Co",
   "tagline": "prismatic light through obsidian",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/8875b14e-c59a-492f-8780-8027a480f21c",
   "source_url": "https://vividand.co",
   "extracted_at": "2026-07-03T03:09:37.717Z",

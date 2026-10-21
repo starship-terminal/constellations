@@ -4,6 +4,12 @@
   "name": "BMW.com",
   "tagline": "Gallery wall for sculpted metal \u2014 a typographic frame where the cars are the only color.",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "minimal",
+  "tags": [
+    "cinematic",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/b8899cbd-e2ca-4069-83cf-d8f8b0d71100",
   "source_url": "https://bmw.com",
   "extracted_at": "2026-06-03T15:25:48.551Z",

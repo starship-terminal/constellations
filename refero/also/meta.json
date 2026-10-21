@@ -4,6 +4,11 @@
   "name": "ALSO",
   "tagline": "Bicycle zine on cream paper",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/d04a3970-45f0-4030-8375-d0d26c083c0f",
   "source_url": "https://ridealso.com",
   "extracted_at": "2026-06-03T21:02:20.553Z",

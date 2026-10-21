@@ -4,6 +4,11 @@
   "name": "Wonder",
   "tagline": "Neon violet command center \u2014 deep plum darkness pierced by a single laser-purple light source.",
   "theme": "mixed",
+  "product_type": "design-tool",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/c81d2be0-05b7-4755-8046-f2d19fbc448c",
   "source_url": "https://wonder.design",
   "extracted_at": "2026-06-03T17:59:40.899Z",

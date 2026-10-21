@@ -4,6 +4,11 @@
   "name": "Planhat",
   "tagline": "Cinematic monochrome editorial \u2014 a darkroom print on cold-pressed paper.",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/94c4fc51-4323-4f06-a4a4-27517e190445",
   "source_url": "https://www.planhat.com",
   "extracted_at": "2026-06-03T20:13:26.791Z",

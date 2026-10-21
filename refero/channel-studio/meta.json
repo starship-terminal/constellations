@@ -4,6 +4,11 @@
   "name": "Channel Studio",
   "tagline": "Studio darkroom with a single coral flare",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/4c19bf7b-d5e8-4e2a-b3e3-69a9bde19b7a",
   "source_url": "https://channel.studio",
   "extracted_at": "2026-06-03T19:39:13.498Z",

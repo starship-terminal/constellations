@@ -4,6 +4,12 @@
   "name": "Bejamas",
   "tagline": "Bejamas \u2014 acid lime through black glass. Build quiet light-gray editorial pages interrupted by immersive black panels where blurred green light streaks cut across the surface.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "neon",
+  "tags": [
+    "editorial",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/80a282fa-4fb5-48ce-a9c7-bb3df5ddbc43",
   "source_url": "https://bejamas.com",
   "extracted_at": "2026-09-20T19:30:38.652Z",

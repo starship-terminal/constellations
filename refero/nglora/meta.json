@@ -4,6 +4,12 @@
   "name": "NGLORA",
   "tagline": "NGLORA - Apothecary's Formulary. A meticulously organized space where typography and product photography are treated with scientific precision.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "minimal",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/24c0de95-295d-42aa-8240-4e36683cf35b",
   "source_url": "https://aesop.com",
   "extracted_at": "2026-04-11T17:53:01.853Z",

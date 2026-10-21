@@ -4,6 +4,12 @@
   "name": "Superwhisper",
   "tagline": "aurora dissolving over midnight glass",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "neon",
+  "tags": [
+    "minimal",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/b8a8976c-52d9-4ebb-95ea-4c40f4a9acab",
   "source_url": "https://superwhisper.com",
   "extracted_at": "2026-06-03T16:11:03.734Z",

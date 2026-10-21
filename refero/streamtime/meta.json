@@ -4,6 +4,11 @@
   "name": "Streamtime",
   "tagline": "Tactile creative moodboard \u2014 designer scrapbook desk",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/9be20798-843b-424c-bc87-192edc0cce22",
   "source_url": "https://streamtime.net",
   "extracted_at": "2026-06-03T21:27:24.103Z",

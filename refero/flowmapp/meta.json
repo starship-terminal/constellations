@@ -4,6 +4,11 @@
   "name": "Flowmapp",
   "tagline": "White blueprint desk with one blue pen",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/caca412f-7fc7-4510-aacc-5664d4f8ce9f",
   "source_url": "https://flowmapp.com",
   "extracted_at": "2026-06-03T17:03:57.091Z",

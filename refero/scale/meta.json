@@ -4,6 +4,11 @@
   "name": "Scale",
   "tagline": "Museum-quality darkroom gallery meets technical blueprint",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e81d4724-9615-4159-8678-cef35f986cab",
   "source_url": "https://scale.com",
   "extracted_at": "2026-07-03T03:31:46.378Z",

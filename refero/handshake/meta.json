@@ -4,6 +4,11 @@
   "name": "Handshake",
   "tagline": "neon highlighter on white paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/dba3eb4f-c1c2-437f-beb2-708e9d074729",
   "source_url": "https://joinhandshake.com",
   "extracted_at": "2026-06-03T16:38:04.247Z",

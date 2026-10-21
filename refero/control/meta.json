@@ -4,6 +4,11 @@
   "name": "Control",
   "tagline": "Editorial Swiss grid meets creative tool",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "swiss",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/f4e3f701-0fa0-4601-b652-ecfc5c573f86",
   "source_url": "https://cntrl.site",
   "extracted_at": "2026-06-03T21:15:16.959Z",

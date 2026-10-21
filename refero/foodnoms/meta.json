@@ -4,6 +4,11 @@
   "name": "Foodnoms",
   "tagline": "Sunlit fruit market on white porcelain \u2014 warm orange, fresh green, and generous rounded forms",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "playful",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/1e7dae3b-cb34-4fcf-8c32-051152aebbab",
   "source_url": "https://foodnoms.com",
   "extracted_at": "2026-06-03T16:56:49.644Z",

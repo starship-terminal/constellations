@@ -4,6 +4,12 @@
   "name": "Superpower",
   "tagline": "Bioluminescent health command center",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "technical",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/5d34568d-4bdc-445d-a527-c6f5249fa8fb",
   "source_url": "https://superpower.com",
   "extracted_at": "2026-06-03T16:19:25.513Z",

@@ -4,6 +4,11 @@
   "name": "basement.studio",
   "tagline": "Void print shop at 3am \u2014 massive compressed type bleeding off a pitch-black canvas, one ember of orange light on the nav, everything else white or ghost-gray.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "neon",
+  "tags": [
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/e06224b2-6d52-4d06-bbde-115cec719b47",
   "source_url": "https://basement.studio",
   "extracted_at": "2026-04-11T22:15:28.353Z",

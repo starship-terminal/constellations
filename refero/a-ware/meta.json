@@ -4,6 +4,12 @@
   "name": "A-WARE",
   "tagline": "Apothecary editorial on warm parchment. A alpine athlete's apothecary spread: cream paper, black ink, one bronze seal, and dark glass canisters floating in generous whitespace.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "editorial",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/5681f7b6-c665-44b8-a065-da7180133149",
   "source_url": "https://a-ware.at",
   "extracted_at": "2026-06-03T20:44:11.949Z",

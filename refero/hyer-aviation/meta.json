@@ -4,6 +4,12 @@
   "name": "Hyer Aviation",
   "tagline": "Cockpit twilight over parchment. A pale dawn-sky meets a slab-serif logo the size of a fuselage, with one warm clay accent breaking the monochrome restraint.",
   "theme": "mixed",
+  "product_type": "hardware",
+  "design_style": "paper",
+  "tags": [
+    "luxury",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/f61cf515-ccd5-4494-bdd1-be9fe4d7258c",
   "source_url": "https://www.flyhyer.com",
   "extracted_at": "2026-07-03T03:14:39.142Z",

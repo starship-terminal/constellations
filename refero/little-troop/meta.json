@@ -4,6 +4,11 @@
   "name": "Little Troop",
   "tagline": "Monochrome gallery with chromatic artworks. A black pearl floating in white void.",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/bd62b51f-e1be-4e4f-b3d9-e9b91f817625",
   "source_url": "https://littletroop.com",
   "extracted_at": "2026-06-03T21:12:53.990Z",

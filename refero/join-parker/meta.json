@@ -4,6 +4,12 @@
   "name": "Join Parker",
   "tagline": "Banker's ledger meets indie magazine \u2014 white paper, electric blue ink, one italic flourish that rewrites the headline.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/f08f9870-2018-4c0b-80d4-0b2e525ff49c",
   "source_url": "https://www.getparker.com",
   "extracted_at": "2026-06-03T18:29:08.442Z",

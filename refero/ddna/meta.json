@@ -4,6 +4,11 @@
   "name": "ddna",
   "tagline": "warm museum vitrine on raw linen",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/0e8e546b-004c-46b6-a960-5dd88968ae07",
   "source_url": "https://d-d-n-a.com",
   "extracted_at": "2026-06-03T20:02:18.675Z",

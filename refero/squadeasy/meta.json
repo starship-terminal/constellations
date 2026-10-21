@@ -4,6 +4,11 @@
   "name": "SquadEasy",
   "tagline": "Polaroid scrapbook on sunlit peach paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/3e5c272b-8d68-40d8-9726-b4d6914b4b16",
   "source_url": "https://www.squadeasy.com",
   "extracted_at": "2026-06-03T17:36:27.640Z",

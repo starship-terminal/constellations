@@ -4,6 +4,11 @@
   "name": "Resend",
   "tagline": "black velvet with violet neon",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/0d914ef0-fa84-4c60-a9aa-cef0b5eb6e5d",
   "source_url": "https://resend.com",
   "extracted_at": "2026-07-03T03:05:25.246Z",

@@ -4,6 +4,12 @@
   "name": "Home",
   "tagline": "Neon-lit gaming arena at midnight \u2014 black floor, one electric lime, and tournament-scale typography screaming from the walls.",
   "theme": "dark",
+  "product_type": "commerce",
+  "design_style": "neon",
+  "tags": [
+    "futuristic",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/604af0f7-b4c3-4921-93af-9da03df81493",
   "source_url": "https://www.swoosh.nike",
   "extracted_at": "2026-06-03T20:50:19.014Z",

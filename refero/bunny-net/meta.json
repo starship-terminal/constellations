@@ -4,6 +4,12 @@
   "name": "bunny.net",
   "tagline": "Orbital rabbit relay. Build pages as a pale-blue edge-network landscape punctuated by rounded navy launch bays, energetic orange signals, and friendly technical illustrations.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "playful",
+  "tags": [
+    "corporate",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/5ac4d8c4-2994-4d14-b563-0a51332dc7e0",
   "source_url": "https://bunny.net",
   "extracted_at": "2026-09-24T17:31:30.506Z",

@@ -4,6 +4,12 @@
   "name": "Freitag",
   "tagline": "Swiss industrial catalog \u2014 a printed manifest of truck tarpaulins laid flat on poured concrete, where the only color is the recycled product itself.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "swiss",
+  "tags": [
+    "brutalist",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/d75a643b-a518-4550-b430-679cd989a447",
   "source_url": "https://freitag.ch/en_ID",
   "extracted_at": "2026-06-03T18:51:44.979Z",

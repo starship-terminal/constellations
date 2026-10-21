@@ -4,6 +4,11 @@
   "name": "Finn",
   "tagline": "warm puppy-kissed comfort",
   "theme": "mixed",
+  "product_type": "commerce",
+  "design_style": "playful",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/07546cf0-b9df-49dd-9da9-319d7a654703",
   "source_url": "https://petfinn.com",
   "extracted_at": "2026-06-03T18:22:40.546Z",

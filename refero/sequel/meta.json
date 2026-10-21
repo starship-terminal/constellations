@@ -4,6 +4,11 @@
   "name": "Sequel",
   "tagline": "Private screening after dark \u2014 a single warm lamp in an otherwise unlit cinema.",
   "theme": "dark",
+  "product_type": "other",
+  "design_style": "cinematic",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/1bd3b2ba-9ad9-44ed-9130-03f9d94de821",
   "source_url": "https://sequel.co",
   "extracted_at": "2026-07-03T02:56:12.987Z",

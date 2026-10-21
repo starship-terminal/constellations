@@ -4,6 +4,11 @@
   "name": "Atlantic.vc",
   "tagline": "Midnight observatory wireframe \u2014 electric blue and ice-white type on layered charcoal, traced with cool-white borders.",
   "theme": "dark",
+  "product_type": "venture",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/6f365ecd-a040-4533-88c1-3f60fe062632",
   "source_url": "https://atlantic.vc",
   "extracted_at": "2026-06-03T18:06:02.805Z",

@@ -4,6 +4,12 @@
   "name": "Index",
   "tagline": "editorial broadsheet with yellow highlighter \u2014 a stark black-and-white printed publication where #ffd600 marks the only point of emphasis",
   "theme": "light",
+  "product_type": "culture",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/b1ec2120-ceb0-42d1-9f96-2c9db2bf009b",
   "source_url": "https://index-space.org",
   "extracted_at": "2026-06-03T21:50:47.852Z",

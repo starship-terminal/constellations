@@ -4,6 +4,12 @@
   "name": "Jam",
   "tagline": "late-night dev console with mint LED pulse \u2014 a near-black interface where one vivid green button glows like a power LED on matte hardware.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/5e9d8377-e6f2-4063-b678-9f1bbfc24598",
   "source_url": "https://jam.dev",
   "extracted_at": "2026-06-03T21:37:47.042Z",

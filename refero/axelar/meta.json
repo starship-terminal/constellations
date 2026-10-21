@@ -4,6 +4,11 @@
   "name": "Axelar",
   "tagline": "Signal lights through dark lattice",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/109e52eb-e70f-493e-9527-84d672b00c7b",
   "source_url": "https://axelar.network",
   "extracted_at": "2026-06-03T20:53:02.326Z",

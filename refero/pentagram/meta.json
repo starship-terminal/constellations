@@ -4,6 +4,11 @@
   "name": "Pentagram",
   "tagline": "Gallery wall of compressed restraint",
   "theme": "light",
+  "product_type": "agency",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/86b56f02-57da-48a1-a647-fda9bbdf2c97",
   "source_url": "https://pentagram.com",
   "extracted_at": "2026-06-03T20:37:31.688Z",

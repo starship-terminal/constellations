@@ -4,6 +4,12 @@
   "name": "Mintlify",
   "tagline": "Cloud garden over a glass desk. A hand-illustrated sky and a documentation product share the same frame \u2014 the only place color and concept collide before the page settles into monastic white.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "minimal",
+  "tags": [
+    "playful",
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/80d7ef36-ed7e-48bb-b558-f772eb40106f",
   "source_url": "https://mintlify.com",
   "extracted_at": "2026-06-03T16:21:24.571Z",

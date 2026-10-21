@@ -4,6 +4,11 @@
   "name": "Duolingo",
   "tagline": "Playful classroom mascot on white paper",
   "theme": "light",
+  "product_type": "education",
+  "design_style": "playful",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/7088d695-362b-4e09-b325-fa8136d4f350",
   "source_url": "https://duolingo.com",
   "extracted_at": "2026-07-03T02:54:54.809Z",

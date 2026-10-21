@@ -4,6 +4,11 @@
   "name": "HEY",
   "tagline": "sunlit letters on a desk. White rounded panels, paper-like backgrounds, and handwritten marks sit above soft violet-and-salmon color washes.",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/eb5e696d-353c-4094-ad54-151ecdc50cb5",
   "source_url": "https://hey.com",
   "extracted_at": "2026-09-24T17:39:03.126Z",

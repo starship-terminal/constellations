@@ -4,6 +4,11 @@
   "name": "Going\u2122",
   "tagline": "Sun-bleached travel journal with electric ink",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "retro",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/3461e90e-35d2-4269-9f11-cbe935f0a3a2",
   "source_url": "https://www.going.com",
   "extracted_at": "2026-06-03T17:21:50.238Z",

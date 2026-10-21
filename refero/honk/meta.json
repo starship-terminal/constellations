@@ -4,6 +4,12 @@
   "name": "Honk",
   "tagline": "Cobalt billboard with a yellow highlighter slash",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "swiss",
+  "tags": [
+    "minimal",
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/ca4708f7-7175-4da2-a47f-ce8f5e601f99",
   "source_url": "https://honk.me",
   "extracted_at": "2026-06-03T19:48:33.783Z",

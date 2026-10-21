@@ -4,6 +4,12 @@
   "name": "T1 Energy",
   "tagline": "Factory floor blueprint on warm vellum \u2014 a quiet, monochromatic stage where industrial scale and whisper-light typography carry the entire brand.",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "technical",
+  "tags": [
+    "paper",
+    "brutalist"
+  ],
   "page_url": "https://styles.refero.design/style/e79b761d-f476-4c5d-8943-e31a58664e4d",
   "source_url": "https://t1energy.com",
   "extracted_at": "2026-06-03T16:19:26.410Z",

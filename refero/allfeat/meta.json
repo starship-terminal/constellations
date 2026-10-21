@@ -4,6 +4,11 @@
   "name": "Allfeat",
   "tagline": "Backstage monitor at midnight \u2014 one teal stage light cutting through warm cream type on charcoal glass.",
   "theme": "dark",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/2f9bf724-3829-4c62-bcc8-391b32925d1b",
   "source_url": "https://allfeat.org",
   "extracted_at": "2026-06-03T21:51:30.352Z",

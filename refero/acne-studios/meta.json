@@ -4,6 +4,12 @@
   "name": "Acne Studios",
   "tagline": "Minimalist gallery white space with bold photographic moments \u2014 a fashion magazine laid flat on marble.",
   "theme": "light",
+  "product_type": "fashion",
+  "design_style": "minimal",
+  "tags": [
+    "cinematic",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/234e9a17-236d-4446-9d58-f83f6806d012",
   "source_url": "https://acnestudios.com",
   "extracted_at": "2026-06-03T18:15:17.678Z",

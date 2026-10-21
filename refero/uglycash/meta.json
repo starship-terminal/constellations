@@ -4,6 +4,12 @@
   "name": "UGLYCASH",
   "tagline": "Sticker-covered notebook on cream paper \u2014 a vibe of irreverent, maximalist fintech that wears its chaos proudly.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "maximalist",
+  "tags": [
+    "playful",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/680cf16b-0093-473b-854f-f1de9af5e698",
   "source_url": "https://ugly.cash",
   "extracted_at": "2026-06-03T17:41:13.919Z",

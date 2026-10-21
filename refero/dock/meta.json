@@ -4,6 +4,11 @@
   "name": "Dock",
   "tagline": "Sunlit cream paper, cobalt pulse",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/d7fb1721-1878-4cbb-a24b-051800557c75",
   "source_url": "https://dock.us",
   "extracted_at": "2026-06-03T17:15:31.006Z",

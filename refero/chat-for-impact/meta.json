@@ -4,6 +4,11 @@
   "name": "Chat for impact",
   "tagline": "forest-green clinic with pastel rooms",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/18975f37-2e5d-47ca-9367-8b201d20390d",
   "source_url": "https://www.turn.io",
   "extracted_at": "2026-06-03T20:01:41.338Z",

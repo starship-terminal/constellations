@@ -4,6 +4,11 @@
   "name": "Figma Config",
   "tagline": "modernist poster on black velvet",
   "theme": "dark",
+  "product_type": "design-tool",
+  "design_style": "maximalist",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/8caa5004-a8cc-4c7e-a2bb-00ff60618729",
   "source_url": "https://config.figma.com/events/figma-config-2022",
   "extracted_at": "2026-06-03T18:01:59.688Z",

@@ -4,6 +4,11 @@
   "name": "Maciej Zadykowicz",
   "tagline": "midnight gallery with a kaleidoscope mural \u2014 a near-black studio wall where one brilliantly colorful typographic artwork commands attention and everything else stays quiet and deliberate.",
   "theme": "dark",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/f1b76a42-050e-4c9e-96e3-a77fbd718c68",
   "source_url": "https://maciej.co",
   "extracted_at": "2026-06-03T18:31:51.783Z",

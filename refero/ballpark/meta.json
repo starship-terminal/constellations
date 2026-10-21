@@ -4,6 +4,11 @@
   "name": "Ballpark",
   "tagline": "editorial white studio, single vermilion flare",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/9342e89b-c2fe-4acf-9993-53b44e0c13b5",
   "source_url": "https://ballparkhq.com",
   "extracted_at": "2026-06-03T15:43:57.455Z",

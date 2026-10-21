@@ -4,6 +4,11 @@
   "name": "Wrike",
   "tagline": "Lime switch on a clean engineer's console \u2014 vivid green accents powered against deep navy authority, floating on white.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/e1c7cab3-dae7-47c3-bb2c-c8f616a8124f",
   "source_url": "https://wrike.com",
   "extracted_at": "2026-06-03T18:17:12.878Z",

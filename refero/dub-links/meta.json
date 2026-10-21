@@ -4,6 +4,11 @@
   "name": "Dub Links",
   "tagline": "warm sunrise over monochrome architecture",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/7bbbf1bc-e375-4200-8d71-e373a3c78654",
   "source_url": "https://dub.sh",
   "extracted_at": "2026-06-03T18:40:57.931Z",

@@ -4,6 +4,11 @@
   "name": "AngelList",
   "tagline": "midnight greenhouse with violet dawn \u2014 a near-black teal void where mint-green serif type glows and lavender buttons bloom as the single point of warm light",
   "theme": "dark",
+  "product_type": "fintech",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/c75603c7-492d-4c26-9744-9acc22fe6225",
   "source_url": "https://www.angellist.com",
   "extracted_at": "2026-06-03T19:10:03.570Z",

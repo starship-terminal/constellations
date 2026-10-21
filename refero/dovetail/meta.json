@@ -4,6 +4,11 @@
   "name": "Dovetail",
   "tagline": "Cream-paper editorial magazine on a sunlit table",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "paper",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/1d51a2db-18fc-4de3-bff7-d1e73ace8b6e",
   "source_url": "https://dovetail.no",
   "extracted_at": "2026-06-03T18:20:22.789Z",

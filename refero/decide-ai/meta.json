@@ -4,6 +4,11 @@
   "name": "Decide AI",
   "tagline": "Observatory at midnight \u2014 mint signal",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/5d9e1cc2-4b81-40fe-aa92-640f2e1d7420",
   "source_url": "https://decideai.xyz",
   "extracted_at": "2026-06-03T18:58:30.843Z",

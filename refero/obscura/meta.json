@@ -4,6 +4,12 @@
   "name": "Obscura",
   "tagline": "8-bit arcade floating on cloud paper",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "retro",
+  "tags": [
+    "playful",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/c445eb73-e403-4a00-8b90-f454c9181fd6",
   "source_url": "https://obscura.net",
   "extracted_at": "2026-06-03T18:44:08.118Z",

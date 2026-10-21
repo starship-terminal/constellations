@@ -4,6 +4,12 @@
   "name": "Jakub Reis",
   "tagline": "gallery wall on bone paper \u2014 every screen is a quiet white room where only typography and photography exist",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "paper",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/3af36935-8383-49e7-857e-9fb5caa06966",
   "source_url": "https://jakubreis.com",
   "extracted_at": "2026-06-03T18:21:48.958Z",

@@ -4,6 +4,11 @@
   "name": "Checkly",
   "tagline": "Mission control at deep orbit",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/78558b01-c101-4b8e-8401-db91269b1150",
   "source_url": "https://www.checklyhq.com",
   "extracted_at": "2026-06-03T15:52:38.926Z",

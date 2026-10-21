@@ -4,6 +4,12 @@
   "name": "Krea",
   "tagline": "noir gallery at midnight",
   "theme": "dark",
+  "product_type": "ai-media",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/50833119-cb36-4b75-b0cc-be48afea050a",
   "source_url": "https://krea.ai",
   "extracted_at": "2026-06-03T15:20:17.823Z",

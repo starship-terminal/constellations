@@ -15,12 +15,15 @@ every value here as lower-confidence than the packages under `systems/`.
   `design_system_json`, `prompt_txt`), the full `result_json` the artifacts
   were generated from, `screenshot_url`, and the media columns
   (`video_url`, `video_poster_url`, `video_detail_url`,
-  `video_detail_poster_url`, `media_fetched_at`). `fetch_errors` records pages
-  that failed. (`raw-result.json` is not stored: it is derivable from
+  `video_detail_poster_url`, `media_fetched_at`), and the label columns
+  `product_type`, `design_style`, `tags` (a JSON array of secondary labels;
+  `tags` is TEXT in the db, an array in `meta.json`). `fetch_errors` records
+  pages that failed. (`raw-result.json` is not stored: it is derivable from
   `result_json` with `generateRawResultJson` in
   [../tools/refero/generators.js](../tools/refero/generators.js).)
   `meta.json` repeats the media fields plus `video_w`/`video_h`/`video_ms`
-  (null when the style has no preview video).
+  (null when the style has no preview video), and the three label keys sit
+  after `theme`.
 - `<slug>/` — per-style files: `DESIGN.md`, `variables.css`, `theme.css`
   (Tailwind v4 `@theme`), `tokens.json` (DTCG-style), `design-system.json`,
   `meta.json`. `prompt.txt` lives only in the db.
@@ -39,7 +42,18 @@ verbatim from each page.
 python3 tools/refero/fetch.py            # fetch new/changed styles, re-export
 python3 tools/refero/fetch.py --force    # re-fetch everything
 python3 tools/refero/fetch.py --enrich-media   # backfill video/poster URLs into db + meta.json
+python3 tools/refero/classify.py         # label unlabeled styles into product_type/design_style/tags
+python3 tools/refero/classify.py --stats # print the label distribution
 ```
+
+Labels come from [../tools/refero/classify.py](../tools/refero/classify.py):
+an Anthropic API pass over each style's name, domain, upstream `industry` and
+tagline, validated against the two vocabularies defined there (23 product
+types, 16 design styles). `product_type` is what the organisation is;
+`design_style` is the page's dominant aesthetic; `tags` holds up to four
+secondary labels from either vocabulary and feeds gallery search, not the
+filter dropdowns. Run `classify.py` after a fetch so new styles get labeled
+(it only touches rows where `product_type` is NULL unless `--force`).
 
 Requires node. Fetched result objects are cached in `.work/` (gitignored) and
 persisted in `refero.db`, so `--export-only` can re-materialize files offline.

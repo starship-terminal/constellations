@@ -4,6 +4,11 @@
   "name": "Specht Studio",
   "tagline": "Gallery wall of restrained curiosity. The studio's own chrome is a white plane and black type; the visual fireworks live entirely inside the project tiles.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/dd646da4-36f5-42b1-83dd-6a1c90cf8983",
   "source_url": "https://stephaniespecht.com",
   "extracted_at": "2026-06-03T21:12:14.171Z",

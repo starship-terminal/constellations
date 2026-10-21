@@ -4,6 +4,12 @@
   "name": "ThoughtLab",
   "tagline": "Obsidian monument with crimson signal. A void-black canvas where a single saturated red pill is the only chromatic object in a cathedral of oversized white type.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "monochrome",
+  "tags": [
+    "neon",
+    "brutalist"
+  ],
   "page_url": "https://styles.refero.design/style/82d52a5f-b1bb-4a69-91a3-15a7eb8bbe99",
   "source_url": "https://www.thoughtlab.com",
   "extracted_at": "2026-07-03T03:42:08.490Z",

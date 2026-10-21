@@ -4,6 +4,11 @@
   "name": "Cycle",
   "tagline": "Ink-stained porcelain workshop with jewel-toned labels",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "paper",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/3677bc04-7461-4aa4-aec7-5291bac41b0b",
   "source_url": "https://cycle.app",
   "extracted_at": "2026-06-03T16:13:43.013Z",

@@ -4,6 +4,11 @@
   "name": "Ease Health",
   "tagline": "Botanical greenhouse on cream paper",
   "theme": "light",
+  "product_type": "health",
+  "design_style": "organic",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/e9f5e976-53f7-42f5-a882-4e63b3c2f734",
   "source_url": "https://easehealth.com",
   "extracted_at": "2026-07-03T03:18:42.774Z",

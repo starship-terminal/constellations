@@ -4,6 +4,12 @@
   "name": "Everlane",
   "tagline": "Minimalist atelier on raw linen. White walls, bare architecture, a single sage-green ribbon of light.",
   "theme": "light",
+  "product_type": "fashion",
+  "design_style": "minimal",
+  "tags": [
+    "paper",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/34b4856c-cc2b-4164-ab90-1b87cf8e0213",
   "source_url": "https://everlane.com",
   "extracted_at": "2026-06-03T20:07:10.848Z",

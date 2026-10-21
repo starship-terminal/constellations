@@ -4,6 +4,11 @@
   "name": "Aspelin Reitan",
   "tagline": "Candlelit architectural archive \u2014 the page reads like a portfolio of built places pinned to a warm cream wall, with a single line of white type floating over each full-bleed image.",
   "theme": "light",
+  "product_type": "other",
+  "design_style": "cinematic",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/3a331157-f5a5-4640-ada8-8a3ad262ee6a",
   "source_url": "https://www.aspelineiendom.no",
   "extracted_at": "2026-06-03T21:33:24.654Z",

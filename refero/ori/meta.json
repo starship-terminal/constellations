@@ -4,6 +4,12 @@
   "name": "Ori",
   "tagline": "Server-room at midnight \u2014 black void, white light, one ignited switch.",
   "theme": "dark",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/4ef4a6dc-bee9-420a-b197-f20415b9caaa",
   "source_url": "https://www.ori.co",
   "extracted_at": "2026-06-03T19:43:36.282Z",

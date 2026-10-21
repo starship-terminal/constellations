@@ -4,6 +4,12 @@
   "name": "Impilo",
   "tagline": "Midnight clinical observatory \u2014 a violet command console where health data glows in cyan.",
   "theme": "dark",
+  "product_type": "health",
+  "design_style": "neon",
+  "tags": [
+    "technical",
+    "futuristic"
+  ],
   "page_url": "https://styles.refero.design/style/b44b0bb2-4ba3-4599-9706-3c3e0c8c2522",
   "source_url": "https://impilo.health",
   "extracted_at": "2026-06-03T19:11:00.879Z",

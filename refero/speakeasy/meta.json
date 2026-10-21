@@ -4,6 +4,11 @@
   "name": "Speakeasy",
   "tagline": "Editorial broadsheet on a white field with a rainbow ribbon",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "editorial",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/a0244aab-0dba-45fe-a595-416c1f0715be",
   "source_url": "https://www.speakeasy.com",
   "extracted_at": "2026-06-03T16:20:24.899Z",

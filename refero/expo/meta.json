@@ -4,6 +4,12 @@
   "name": "Expo",
   "tagline": "precision notebook in graphite and signal blue \u2014 every control a rounded chip, every screen a quiet page of ink and paper until blue says \"look here.\"",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "minimal",
+  "tags": [
+    "swiss",
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/b054773d-2d14-4a35-b366-81b4ac00f171",
   "source_url": "https://expo.dev",
   "extracted_at": "2026-06-03T21:03:20.614Z",

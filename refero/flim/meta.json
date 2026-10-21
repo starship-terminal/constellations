@@ -4,6 +4,11 @@
   "name": "Flim",
   "tagline": "Scattered polaroids on a sketchpad grid",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "retro",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/94ed6ce8-c2e5-45bf-83bd-e5d1daf63efc",
   "source_url": "https://flim.ai",
   "extracted_at": "2026-06-03T18:54:21.982Z",

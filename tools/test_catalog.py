@@ -734,6 +734,7 @@ class ReferoBuildTest(unittest.TestCase):
                 p.stem: json.loads(p.read_text()) for p in site.glob("refero/style/*.json")}
 
     ALPHA = {"slug": "alpha", "name": "Alpha", "tagline": "tag", "theme": "light",
+             "product_type": "devtools", "design_style": "technical", "tags": ["neon"],
              "source_url": "https://www.alpha.example.com/x", "page_url": "https://p/alpha",
              "extracted_at": "t0", "screenshot_url": "https://img/shot.jpg",
              "video_url": "https://img/v.mp4", "video_poster_url": "https://img/p.jpg"}
@@ -753,6 +754,11 @@ class ReferoBuildTest(unittest.TestCase):
         self.assertEqual(alpha["cardRemote"], "https://img/p.jpg")
         self.assertTrue(alpha["video"])
         self.assertEqual(beta["industry"], "other")
+        self.assertEqual(alpha["type"], "devtools")
+        self.assertEqual(alpha["style"], "technical")
+        self.assertEqual(alpha["tags"], ["neon"])
+        self.assertIsNone(beta["type"])
+        self.assertEqual(beta["tags"], [])
         self.assertIsNone(beta["card"])
         self.assertIsNone(beta["cardRemote"])
         self.assertFalse(beta["video"])
@@ -768,6 +774,8 @@ class ReferoBuildTest(unittest.TestCase):
         alpha = files["alpha"]
         self.assertEqual(alpha["theme"], "light")
         self.assertEqual(alpha["industry"], "media")
+        self.assertEqual(alpha["type"], "devtools")
+        self.assertEqual(alpha["style"], "technical")
         self.assertEqual(alpha["source_url"], "https://www.alpha.example.com/x")
         self.assertEqual(alpha["media"]["shot"],
                          {"local": "/refero-media/shots/alpha.jpg", "remote": "https://img/shot.jpg"})

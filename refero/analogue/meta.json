@@ -4,6 +4,11 @@
   "name": "Analogue",
   "tagline": "Black gallery vitrine \u2014 products float in void",
   "theme": "dark",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/98ab0172-9474-43b5-9055-98cf1a6a2401",
   "source_url": "https://analogue.co",
   "extracted_at": "2026-06-03T17:24:20.630Z",

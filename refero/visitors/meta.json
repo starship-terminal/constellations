@@ -4,6 +4,11 @@
   "name": "Visitors",
   "tagline": "white engineering blueprint",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e7876363-181a-44a9-9e5c-2255cf98aea5",
   "source_url": "https://visitors.now",
   "extracted_at": "2026-07-03T03:27:12.471Z",

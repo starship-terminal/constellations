@@ -4,6 +4,11 @@
   "name": "Planpoint",
   "tagline": "Blueprint on white drafting table \u2014 an interactive property plan rendered on pristine paper, with one blue pen and one yellow highlighter for emphasis.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "technical",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/fc96be71-d71b-4fc1-a041-f13b3eae7dd5",
   "source_url": "https://www.planpoint.io",
   "extracted_at": "2026-06-03T20:00:45.764Z",

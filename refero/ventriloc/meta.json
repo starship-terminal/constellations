@@ -4,6 +4,12 @@
   "name": "Ventriloc",
   "tagline": "Editorial data observatory on warm paper \u2014 a single orange ember punctuating monochrome precision.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/f99aca3e-5289-4595-a7cc-77a72052f4b8",
   "source_url": "https://ventriloc.ca/en",
   "extracted_at": "2026-07-03T02:57:52.899Z",

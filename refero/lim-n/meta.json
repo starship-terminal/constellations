@@ -4,6 +4,11 @@
   "name": "Lim\u00f3n",
   "tagline": "moody brasserie under candlelight",
   "theme": "dark",
+  "product_type": "other",
+  "design_style": "luxury",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/f1b6a7d6-1ecb-4f1c-95b0-e03323363999",
   "source_url": "https://limonoslo.no",
   "extracted_at": "2026-06-03T15:55:46.529Z",

@@ -4,6 +4,12 @@
   "name": "Osmo",
   "tagline": "developer museum on concrete gray",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "brutalist",
+  "tags": [
+    "technical",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/7976704d-549b-4ba6-9a0f-c792766a9df3",
   "source_url": "https://www.osmo.supply",
   "extracted_at": "2026-06-03T19:59:03.587Z",

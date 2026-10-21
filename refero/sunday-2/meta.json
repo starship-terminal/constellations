@@ -4,6 +4,11 @@
   "name": "Sunday",
   "tagline": "Monochrome magazine spread with one yellow highlight",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "editorial",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/c521be99-14af-4d57-8f8f-34c76c9ade61",
   "source_url": "https://www.sunday.ai",
   "extracted_at": "2026-06-03T18:41:22.353Z",

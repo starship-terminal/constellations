@@ -4,6 +4,12 @@
   "name": "Kagi",
   "tagline": "Private reading room. Build open white space around decisive graphite text, with small violet cues and warm pastel product surfaces interrupting the calm.",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "minimal",
+  "tags": [
+    "paper",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/3a4d1008-0bd1-4ebb-9efe-0c146c45a99b",
   "source_url": "https://kagi.com",
   "extracted_at": "2026-09-24T17:40:25.239Z",

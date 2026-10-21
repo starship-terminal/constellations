@@ -4,6 +4,11 @@
   "name": "Runway",
   "tagline": "monochrome research studio \u2014 a printer's tray of cinematic stills on cold white paper",
   "theme": "light",
+  "product_type": "ai-media",
+  "design_style": "monochrome",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/8f623d19-51f6-4da2-bc45-05573cc98283",
   "source_url": "https://runwayml.com",
   "extracted_at": "2026-06-03T18:48:28.392Z",

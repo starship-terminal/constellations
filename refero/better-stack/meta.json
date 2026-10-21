@@ -4,6 +4,11 @@
   "name": "Better Stack",
   "tagline": "Midnight SRE console",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/1de273f2-166f-4526-8442-16cc39fc7fd5",
   "source_url": "https://betterstack.com",
   "extracted_at": "2026-06-03T20:59:19.365Z",

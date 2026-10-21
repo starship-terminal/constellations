@@ -4,6 +4,12 @@
   "name": "Turso",
   "tagline": "Terminal glow in a server closet \u2014 the mint LED on a rack of dark steel.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/5a7ec81f-03b6-4d21-a706-0d1d323d8899",
   "source_url": "https://turso.tech",
   "extracted_at": "2026-06-03T18:46:29.525Z",

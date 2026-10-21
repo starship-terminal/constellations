@@ -4,6 +4,12 @@
   "name": "Bun",
   "tagline": "Hot pink cursor in a midnight terminal \u2014 every interface element is either prose or code, and the pink tells you what to click.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/408a149c-702f-4442-99df-bea49d9c0d9b",
   "source_url": "https://bun.sh",
   "extracted_at": "2026-06-03T16:04:21.544Z",

@@ -4,6 +4,12 @@
   "name": "Typeform",
   "tagline": "Publishing house meets product dashboard \u2014 serif headlines borrowed from a literary journal, UI chrome stripped to bare minimum so the type can own every screen.",
   "theme": "mixed",
+  "product_type": "saas",
+  "design_style": "editorial",
+  "tags": [
+    "minimal",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/a0d54731-58dc-448b-a6b0-ed543f397ab1",
   "source_url": "https://typeform.com",
   "extracted_at": "2026-04-11T19:07:51.673Z",

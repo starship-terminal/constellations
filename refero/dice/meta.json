@@ -4,6 +4,11 @@
   "name": "DICE",
   "tagline": "Monochrome gig flyer \u2014 black ink on white paper, headlines screaming, everything else dead quiet.",
   "theme": "light",
+  "product_type": "entertainment",
+  "design_style": "monochrome",
+  "tags": [
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/f4af4c42-2cba-4aa6-8d06-2f728bce702d",
   "source_url": "https://dice.fm",
   "extracted_at": "2026-06-03T17:44:42.754Z",

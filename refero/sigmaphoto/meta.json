@@ -4,6 +4,11 @@
   "name": "Sigmaphoto",
   "tagline": "Monochrome gallery for precision instruments \u2014 a hushed white room where the only color that matters is the one that asks you to act.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/67c60ee4-ac38-41ee-834e-ed2a92146417",
   "source_url": "https://www.sigmaphoto.com",
   "extracted_at": "2026-06-03T19:04:34.120Z",

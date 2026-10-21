@@ -4,6 +4,11 @@
   "name": "DJI",
   "tagline": "aerospace black canvas with a single electric blue thrust",
   "theme": "mixed",
+  "product_type": "hardware",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/f11750fc-d7c0-4d26-b32a-3b1d2098ae34",
   "source_url": "https://dji.com",
   "extracted_at": "2026-06-03T16:42:12.976Z",

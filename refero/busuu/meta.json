@@ -4,6 +4,12 @@
   "name": "Busuu",
   "tagline": "playful passport of global connection. Vivid gradient skies, bubble greetings, and circular flags make the whole interface feel like a warm invitation to the world.",
   "theme": "light",
+  "product_type": "education",
+  "design_style": "playful",
+  "tags": [
+    "organic",
+    "maximalist"
+  ],
   "page_url": "https://styles.refero.design/style/72b85d0a-1ff8-4dd3-b33a-f55aad6df5c9",
   "source_url": "https://busuu.com",
   "extracted_at": "2026-06-03T18:00:17.345Z",

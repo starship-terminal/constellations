@@ -4,6 +4,12 @@
   "name": "ORYZO AI",
   "tagline": "Darkroom product editorial. A lone object floating in warm darkness, cream typography the only decoration.",
   "theme": "dark",
+  "product_type": "design-tool",
+  "design_style": "minimal",
+  "tags": [
+    "paper",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/1f204e95-454a-437e-845b-c1b169d35607",
   "source_url": "https://oryzo.ai",
   "extracted_at": "2026-07-03T02:49:01.712Z",

@@ -4,6 +4,11 @@
   "name": "LaunchDarkly",
   "tagline": "Neon control room \u2014 a dark cockpit where violet signals pulse through charcoal panels.",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "neon",
+  "tags": [
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/18a75348-513a-49d8-94f5-e2df8c118b6b",
   "source_url": "https://launchdarkly.com",
   "extracted_at": "2026-06-03T17:40:10.191Z",

@@ -4,6 +4,12 @@
   "name": "NCDA",
   "tagline": "Architectural monograph in negative space. The NCDA wordmark at 62px is cropped by the viewport edge, turning a logo into a wall.",
   "theme": "mixed",
+  "product_type": "agency",
+  "design_style": "brutalist",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/f654d52c-42de-4f3b-a377-9287b1536ad0",
   "source_url": "https://ncda.biz",
   "extracted_at": "2026-06-03T19:39:26.456Z",

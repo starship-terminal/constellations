@@ -4,6 +4,11 @@
   "name": "Mike Matas",
   "tagline": "Ink on fresh snow. A personal page reduced to one whisper-thin display headline floating in vast white space, with product photography as the only color.",
   "theme": "light",
+  "product_type": "portfolio",
+  "design_style": "minimal",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/04f6cb02-de90-4d78-9c5f-0eb52f826484",
   "source_url": "https://mikematas.com",
   "extracted_at": "2026-06-03T14:58:31.833Z",

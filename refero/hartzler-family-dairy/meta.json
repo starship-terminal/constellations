@@ -4,6 +4,11 @@
   "name": "Hartzler Family Dairy",
   "tagline": "Creamery billboard at golden hour \u2014 the products are the type and the type is the room.",
   "theme": "light",
+  "product_type": "food-drink",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/14efe0a8-5abf-441c-919d-add271317bf9",
   "source_url": "https://www.hartzlerdairy.com",
   "extracted_at": "2026-06-03T18:39:48.187Z",

@@ -4,6 +4,12 @@
   "name": "Ramp",
   "tagline": "Editorial finance desk, black-and-white pages with a single neon highlighter. A near-monochrome publication surface where one vivid chartreuse mark turns every interaction into a money signal.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "editorial",
+  "tags": [
+    "technical",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/b38702a0-75ab-474c-9106-00b624535825",
   "source_url": "https://ramp.com",
   "extracted_at": "2026-07-03T03:46:06.428Z",

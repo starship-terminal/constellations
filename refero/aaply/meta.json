@@ -4,6 +4,11 @@
   "name": "Aaply",
   "tagline": "Digital sketchpad with electric highlighter",
   "theme": "light",
+  "product_type": "design-tool",
+  "design_style": "playful",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/357e6fee-72db-40cf-b858-254b802018bd",
   "source_url": "https://aaply.app",
   "extracted_at": "2026-06-03T16:48:25.505Z",

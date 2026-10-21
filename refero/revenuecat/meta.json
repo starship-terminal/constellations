@@ -4,6 +4,11 @@
   "name": "Revenuecat",
   "tagline": "Periwinkle dashboard on a cloud-white canvas \u2014 generous, airy, and confidently understated.",
   "theme": "light",
+  "product_type": "devtools",
+  "design_style": "minimal",
+  "tags": [
+    "corporate"
+  ],
   "page_url": "https://styles.refero.design/style/b5fdba21-fd4d-427e-b551-1e22c51e42db",
   "source_url": "https://revenuecat.com",
   "extracted_at": "2026-06-03T16:50:09.516Z",

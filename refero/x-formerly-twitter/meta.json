@@ -4,6 +4,11 @@
   "name": "X (formerly Twitter)",
   "tagline": "blue wire on white newsprint. A stark, content-first timeline where one vivid blue punctures an otherwise monochrome interface, and pill-shaped controls signal action without weight.",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "minimal",
+  "tags": [
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/655340ae-abff-4a90-8545-8feb62411f68",
   "source_url": "https://create.video",
   "extracted_at": "2026-06-03T19:32:01.467Z",

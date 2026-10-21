@@ -4,6 +4,11 @@
   "name": "Assembly Coffee London",
   "tagline": "Embers in a dark roastery. A near-black canvas with warm, low-lit product photography and italic serif labels \u2014 the feeling of a specialty coffee menu printed in a midnight zine.",
   "theme": "dark",
+  "product_type": "food-drink",
+  "design_style": "paper",
+  "tags": [
+    "retro"
+  ],
   "page_url": "https://styles.refero.design/style/8288950a-2731-44fd-85ef-211aecd8091d",
   "source_url": "https://assemblycoffee.co.uk",
   "extracted_at": "2026-06-03T18:15:44.656Z",

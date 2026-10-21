@@ -4,6 +4,12 @@
   "name": "Hyper Tria",
   "tagline": "chrome monolith in a white gallery",
   "theme": "mixed",
+  "product_type": "agency",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/6665a3dd-606f-4fd1-80dd-a84e3b3a6226",
   "source_url": "https://hypertria.com",
   "extracted_at": "2026-06-03T20:42:45.387Z",

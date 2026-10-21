@@ -4,6 +4,11 @@
   "name": "Shortverse",
   "tagline": "Shortverse \u2014 projector beam on white. Let a single full-width film still create the opening drama, then return to a bright editorial index of titles, metadata, and thumbnail strips.",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "editorial",
+  "tags": [
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/9e885c21-63ee-42c2-9b85-fd420948e9f4",
   "source_url": "https://www.shortverse.com",
   "extracted_at": "2026-09-20T22:05:44.287Z",

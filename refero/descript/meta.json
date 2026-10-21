@@ -4,6 +4,11 @@
   "name": "Descript",
   "tagline": "Broadcast booth meets editorial press \u2014 deep burgundy theater dark, editorial serif headlines, coral on-air signals.",
   "theme": "mixed",
+  "product_type": "ai-media",
+  "design_style": "editorial",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/fe955d4a-c56d-4ab0-a6b3-8d985ab9570c",
   "source_url": "https://descript.com",
   "extracted_at": "2026-04-11T19:27:40.467Z",

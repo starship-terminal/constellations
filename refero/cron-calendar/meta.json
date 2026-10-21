@@ -4,6 +4,11 @@
   "name": "Cron Calendar",
   "tagline": "Ember in an obsidian void \u2014 one warm orange spark burning against a near-black canvas.",
   "theme": "dark",
+  "product_type": "productivity",
+  "design_style": "neon",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/476184db-a4e6-440b-aa53-27294668361c",
   "source_url": "https://cron.com",
   "extracted_at": "2026-06-03T15:46:38.134Z",

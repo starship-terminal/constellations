@@ -4,6 +4,12 @@
   "name": "EPIC agency",
   "tagline": "violet observatory with gilded instruments \u2014 a gallery-as-night-sky where pale lavender light and warm gold details float over an infinite aubergine void.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "luxury",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/6eb778ca-6808-4cc6-ac8a-7beea5a25c36",
   "source_url": "https://epic.net",
   "extracted_at": "2026-06-03T19:38:10.872Z",

@@ -4,6 +4,11 @@
   "name": "Devin",
   "tagline": "Electric ink on drafting paper. Let near-black type and pale technical surfaces do nearly all of the work, with #2200ff appearing as a deliberate switched-on signal.",
   "theme": "light",
+  "product_type": "ai",
+  "design_style": "technical",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/e9a1c1e1-2c35-47c0-864f-d1e9fea57579",
   "source_url": "https://devin.ai",
   "extracted_at": "2026-09-20T22:02:07.054Z",

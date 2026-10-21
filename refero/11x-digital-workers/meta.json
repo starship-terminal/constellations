@@ -4,6 +4,12 @@
   "name": "11x\u2013 Digital workers",
   "tagline": "Cinematic editorial desert \u2014 full-bleed terrain photography against monumental serif headlines, where the page reads like a luxury magazine spread.",
   "theme": "mixed",
+  "product_type": "ai",
+  "design_style": "cinematic",
+  "tags": [
+    "luxury",
+    "editorial"
+  ],
   "page_url": "https://styles.refero.design/style/850ee61c-4ecd-4558-9c0c-fab99721b34c",
   "source_url": "https://www.11x.ai",
   "extracted_at": "2026-06-03T15:53:42.543Z",

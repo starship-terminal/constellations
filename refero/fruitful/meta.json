@@ -4,6 +4,11 @@
   "name": "Fruitful",
   "tagline": "Sun-drenched kitchen herb garden \u2014 warm cream surfaces, single deep green accent, botanical softness throughout.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "organic",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/3634d5eb-ccfa-4881-b234-3dd735fb7ae4",
   "source_url": "https://fruitful.com",
   "extracted_at": "2026-06-03T17:21:14.726Z",

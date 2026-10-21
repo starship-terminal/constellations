@@ -4,6 +4,11 @@
   "name": "Axiom",
   "tagline": "Terminal window at midnight \u2014 flat black canvas, monospaced text, and one orange cursor blinking",
   "theme": "dark",
+  "product_type": "devtools",
+  "design_style": "technical",
+  "tags": [
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/c809190a-035c-458d-87ed-4758807dd84e",
   "source_url": "https://axiom.co",
   "extracted_at": "2026-06-03T17:36:40.258Z",

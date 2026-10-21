@@ -4,6 +4,11 @@
   "name": "Mercury",
   "tagline": "Alpine banking at blue hour",
   "theme": "dark",
+  "product_type": "fintech",
+  "design_style": "corporate",
+  "tags": [
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/3172cd4d-118a-4a16-a259-6b634d32322e",
   "source_url": "https://mercury.com",
   "extracted_at": "2026-07-03T02:46:39.901Z",

@@ -4,6 +4,11 @@
   "name": "Drepute",
   "tagline": "midnight observatory over still water \u2014 a single sentence floats beneath a field of stars",
   "theme": "dark",
+  "product_type": "other",
+  "design_style": "minimal",
+  "tags": [
+    "cinematic"
+  ],
   "page_url": "https://styles.refero.design/style/523d3e7b-b0a2-4979-a626-00f1487b6e4d",
   "source_url": "https://drepute.xyz",
   "extracted_at": "2026-06-03T20:35:36.073Z",

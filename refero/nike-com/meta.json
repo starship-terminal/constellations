@@ -4,6 +4,12 @@
   "name": "Nike.com",
   "tagline": "monochrome gallery of athletic performance \u2014 white walls, product as art, chrome dissolved into the background.",
   "theme": "mixed",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "monochrome",
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/d7ace114-0548-41f5-a2ff-2afbf32be94d",
   "source_url": "https://nike.com",
   "extracted_at": "2026-06-03T15:44:37.448Z",

@@ -4,6 +4,12 @@
   "name": "NEON Rated",
   "tagline": "cinematic gallery behind crimson neon",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "cinematic",
+  "tags": [
+    "neon",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/d7d9c36d-fec9-4218-9e17-3d129dfb2dee",
   "source_url": "https://neonrated.com",
   "extracted_at": "2026-06-03T18:46:08.905Z",

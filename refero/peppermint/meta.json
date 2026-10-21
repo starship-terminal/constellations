@@ -4,6 +4,11 @@
   "name": "Peppermint",
   "tagline": "Midnight canvas with playful streamers \u2014 a deep navy void where hand-drawn ribbons and geometric type dance above warm cream paper surfaces.",
   "theme": "dark",
+  "product_type": "fintech",
+  "design_style": "playful",
+  "tags": [
+    "paper"
+  ],
   "page_url": "https://styles.refero.design/style/c03d3f6f-91f9-4571-9840-7fd4da539322",
   "source_url": "https://paywithpeppermint.com",
   "extracted_at": "2026-06-03T21:44:32.456Z",

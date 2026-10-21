@@ -4,6 +4,12 @@
   "name": "Glideapps",
   "tagline": "monochrome drafting table with one electric teal spark",
   "theme": "light",
+  "product_type": "saas",
+  "design_style": "monochrome",
+  "tags": [
+    "minimal",
+    "technical"
+  ],
   "page_url": "https://styles.refero.design/style/a80cb179-2d90-4896-b52d-4e674b421498",
   "source_url": "https://www.glideapps.com",
   "extracted_at": "2026-06-03T16:33:17.286Z",

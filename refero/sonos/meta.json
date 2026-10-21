@@ -4,6 +4,11 @@
   "name": "Sonos",
   "tagline": "Gallery wall of warm light",
   "theme": "light",
+  "product_type": "hardware",
+  "design_style": "cinematic",
+  "tags": [
+    "luxury"
+  ],
   "page_url": "https://styles.refero.design/style/8d315332-6267-4dc0-a14c-e8b49c26b0e1",
   "source_url": "https://sonos.com",
   "extracted_at": "2026-06-03T18:34:54.165Z",

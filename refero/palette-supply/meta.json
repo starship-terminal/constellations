@@ -4,6 +4,12 @@
   "name": "Palette Supply",
   "tagline": "art-supply shelf in a sunlit studio",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "paper",
+  "tags": [
+    "organic",
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/542453bb-1895-45fe-95c9-66dbacbf1b08",
   "source_url": "https://palette.supply",
   "extracted_at": "2026-06-03T15:14:58.926Z",

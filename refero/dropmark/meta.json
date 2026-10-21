@@ -4,6 +4,11 @@
   "name": "Dropmark",
   "tagline": "Warm paper atelier with cubist murals",
   "theme": "light",
+  "product_type": "productivity",
+  "design_style": "paper",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/5618f26a-4df6-42cb-8081-15e4318b54ff",
   "source_url": "https://dropmark.com",
   "extracted_at": "2026-06-03T20:03:45.682Z",

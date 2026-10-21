@@ -4,6 +4,11 @@
   "name": "Cassette",
   "tagline": "Neon cassette on black velvet. A single hi-vis yellow burns against a warm-black void, the way a tape label glows under a single bulb in a dark room.",
   "theme": "dark",
+  "product_type": "agency",
+  "design_style": "neon",
+  "tags": [
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/fb4cfe58-00b5-4e6a-b251-0c65e60b6649",
   "source_url": "https://cassettemusic.com",
   "extracted_at": "2026-06-03T18:27:04.829Z",

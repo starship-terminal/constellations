@@ -4,6 +4,12 @@
   "name": "Monocle",
   "tagline": "Quality broadsheet on cream paper. A curated newsroom where every column earns its keep and the only color on the page is the one that matters.",
   "theme": "light",
+  "product_type": "media",
+  "design_style": "editorial",
+  "tags": [
+    "paper",
+    "minimal"
+  ],
   "page_url": "https://styles.refero.design/style/9165ecb1-f068-4093-8783-1f3c98898b8a",
   "source_url": "https://monocle.com",
   "extracted_at": "2026-06-03T16:11:34.936Z",

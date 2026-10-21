@@ -4,6 +4,12 @@
   "name": "Ui",
   "tagline": "clinical blueprint on frosted paper",
   "theme": "light",
+  "product_type": "design-resource",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "monochrome"
+  ],
   "page_url": "https://styles.refero.design/style/0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
   "source_url": "https://ui.shadcn.com",
   "extracted_at": "2026-07-03T02:53:52.225Z",

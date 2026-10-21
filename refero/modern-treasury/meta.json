@@ -4,6 +4,12 @@
   "name": "Modern Treasury",
   "tagline": "Treasury ledger on graph paper. Build pages as a quiet white operating sheet where money flows are mapped with fine lines, labeled nodes, and exact dark controls.",
   "theme": "light",
+  "product_type": "fintech",
+  "design_style": "technical",
+  "tags": [
+    "minimal",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/2e9b3dcb-f937-488d-891c-351c7366188f",
   "source_url": "https://moderntreasury.com",
   "extracted_at": "2026-09-24T17:42:35.263Z",

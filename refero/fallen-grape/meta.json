@@ -4,6 +4,11 @@
   "name": "Fallen Grape",
   "tagline": "Sun-drenched vineyard at golden hour. Warm cream paper, walnut ink, terracotta warmth \u2014 a wine label breathed into a full interface.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "paper",
+  "tags": [
+    "organic"
+  ],
   "page_url": "https://styles.refero.design/style/17ce9ad2-f22d-4e48-92de-e28fb8551cc5",
   "source_url": "https://www.fallengrape.com",
   "extracted_at": "2026-06-03T15:57:06.846Z",

@@ -4,6 +4,12 @@
   "name": "Uniswap Cup",
   "tagline": "Esports broadcast on a wireframe court \u2014 a pink highlighter tracing through a grid of white boxes and hairline rules.",
   "theme": "light",
+  "product_type": "crypto",
+  "design_style": "technical",
+  "tags": [
+    "playful",
+    "neon"
+  ],
   "page_url": "https://styles.refero.design/style/fabb51a0-0f83-4177-b83e-4969705a389c",
   "source_url": "https://unicup.uniswap.org",
   "extracted_at": "2026-06-03T20:45:14.175Z",

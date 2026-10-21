@@ -4,6 +4,12 @@
   "name": "TeePublic",
   "tagline": "Indie creator marketplace on white paper. A clean gallery wall where artist designs sit on bright cards, one signature blue links it all together, and the whole thing moves at the speed of discovery.",
   "theme": "light",
+  "product_type": "commerce",
+  "design_style": "minimal",
+  "tags": [
+    "corporate",
+    "swiss"
+  ],
   "page_url": "https://styles.refero.design/style/0231caf5-0347-4f2d-ba20-5bab8fcaf2ce",
   "source_url": "https://unfurproject.com",
   "extracted_at": "2026-06-03T20:24:41.234Z",

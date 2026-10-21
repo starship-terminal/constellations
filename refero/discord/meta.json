@@ -4,6 +4,11 @@
   "name": "Discord",
   "tagline": "Game world behind a chat bubble \u2014 every section is a self-contained environment with its own lighting and cast of characters.",
   "theme": "dark",
+  "product_type": "social",
+  "design_style": "cinematic",
+  "tags": [
+    "playful"
+  ],
   "page_url": "https://styles.refero.design/style/faec4b0c-cf93-4150-97de-0a8e7eed1840",
   "source_url": "https://discord.com",
   "extracted_at": "2026-04-11T18:08:26.644Z",
