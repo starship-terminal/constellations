@@ -1,14 +1,13 @@
 # Build the docs site (home, scorecard, library docs), encrypt every page with
 # StatiCrypt, and publish to GitHub Pages. The gallery shows the captures, so it is
 # removed before publishing; it runs locally only.
-# Adapted from Zensical's official workflow (https://zensical.org/docs/publish-your-site/).
 name: Pages
 on:
   push:
     branches: [main]
-    paths: [docs/**, scorecard/**, tools/scorecard.py, tools/test_scorecard.py, requirements.txt, .staticrypt.json, .github/workflows/pages.yml]
+    paths: [docs/**, scorecard/**, tools/scorecard.py, tools/test_scorecard.py, tools/site.py, requirements.txt, .staticrypt.json, .github/workflows/pages.yml]
   pull_request:
-    paths: [docs/**, scorecard/**, tools/scorecard.py, tools/test_scorecard.py, requirements.txt, .staticrypt.json, .github/workflows/pages.yml]
+    paths: [docs/**, scorecard/**, tools/scorecard.py, tools/test_scorecard.py, tools/site.py, requirements.txt, .staticrypt.json, .github/workflows/pages.yml]
   workflow_dispatch:
 permissions:
   contents: read
@@ -31,18 +30,16 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Test the scorecard generator
         run: python3 -m unittest tools/test_scorecard.py
-      - name: Generate the scorecard pages and zensical.toml
+      - name: Generate the scorecard pages
         run: python3 tools/scorecard.py
       - name: Build
-        run: zensical build --clean --strict
+        run: python3 tools/site.py
       - name: Drop the gallery and check nothing readable leaks outside the HTML
         run: |
           rm -rf site/gallery
-          python3 - <<'PY'
-          import json, sys
-          items = json.load(open("site/search.json"))["items"]
-          sys.exit(f"search index has {len(items)} entries; every page must be excluded") if items else print("search index empty")
-          PY
+          if [ -f site/search.json ]; then
+            python3 -c "import json,sys; items=json.load(open('site/search.json'))['items']; sys.exit(f'search index has {len(items)} entries; every page must be excluded') if items else print('search index empty')"
+          fi
           rm -f site/sitemap.xml site/sitemap.xml.gz
       - name: Encrypt every page
         if: github.event_name != 'pull_request'
