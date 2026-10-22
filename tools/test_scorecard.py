@@ -147,10 +147,11 @@ class PageTest(unittest.TestCase):
         self.assertIn("F2 Roles partly → meets", md)
         self.assertLess(md.index("2026-10-16"), md.index("2026-10-01"))
 
-    def test_every_page_is_kept_out_of_search(self):
-        for md in (bp.index_page(CRITERIA, audit(SYSTEM)), bp.system_page(CRITERIA, audit(SYSTEM), SYSTEM, 1),
+    def test_only_the_index_page_hides_the_rail(self):
+        self.assertTrue(bp.index_page(CRITERIA, audit(SYSTEM)).startswith("---\nhide:\n  - navigation\n---\n"))
+        for md in (bp.system_page(CRITERIA, audit(SYSTEM), SYSTEM, 1),
                    bp.criteria_page(CRITERIA, audit(SYSTEM)), bp.changelog_page(CRITERIA, [audit(SYSTEM)])):
-            self.assertTrue(md.startswith("---\nsearch:\n  exclude: true\n"))
+            self.assertFalse(md.startswith("---"))
 
 
 if __name__ == "__main__":

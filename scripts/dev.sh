@@ -58,9 +58,9 @@ fi
 
 # What the build needs.
 command -v python3 >/dev/null 2>&1 || die "python3 is not on PATH"
-if [ ! -x .venv/bin/zensical ]; then
+if [ ! -x .venv/bin/python ]; then
   command -v uv >/dev/null 2>&1 || die "no .venv and no uv to make one; install uv, then run make setup"
-  printf 'first run: installing the pinned Zensical into .venv\n'
+  printf 'first run: installing the site builder into .venv\n'
   make setup
 fi
 cover="$(python3 -c 'import json; print(json.load(open("catalog.json"))["systems"][0]["preview"]["cover"])')"

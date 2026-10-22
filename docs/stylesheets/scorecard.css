@@ -1,7 +1,21 @@
 /* Scorecard heatmap, badges and bar. Colours follow the theme through
-   [data-md-color-scheme]; each grade also carries a glyph, so colour is never the
+   [data-theme]; each grade also carries a glyph, so colour is never the
    only cue (WCAG 1.4.1). */
 :root {
+  --sc-meets: #2bb488;
+  --sc-partly: #f0a83a;
+  --sc-missing: #e86160;
+  --sc-meets-bg: rgba(43, 180, 136, .12);
+  --sc-partly-bg: rgba(240, 168, 58, .12);
+  --sc-missing-bg: rgba(232, 97, 96, .12);
+  --sc-meets-line: rgba(43, 180, 136, .4);
+  --sc-partly-line: rgba(240, 168, 58, .4);
+  --sc-missing-line: rgba(232, 97, 96, .4);
+  --sc-meets-ink: #4fd1a5;
+  --sc-partly-ink: #f5bd60;
+  --sc-missing-ink: #f0807e;
+}
+:root[data-theme="light"] {
   --sc-meets: #1d9e75;
   --sc-partly: #ef9f27;
   --sc-missing: #e24b4a;
@@ -17,20 +31,6 @@
   --sc-partly-ink: #96590a;
   --sc-missing-ink: #b03333;
 }
-[data-md-color-scheme="slate"] {
-  --sc-meets: #2bb488;
-  --sc-partly: #f0a83a;
-  --sc-missing: #e86160;
-  --sc-meets-bg: rgba(43, 180, 136, .12);
-  --sc-partly-bg: rgba(240, 168, 58, .12);
-  --sc-missing-bg: rgba(232, 97, 96, .12);
-  --sc-meets-line: rgba(43, 180, 136, .4);
-  --sc-partly-line: rgba(240, 168, 58, .4);
-  --sc-missing-line: rgba(232, 97, 96, .4);
-  --sc-meets-ink: #4fd1a5;
-  --sc-partly-ink: #f5bd60;
-  --sc-missing-ink: #f0807e;
-}
 
 .sc-scroll {
   overflow-x: auto;
@@ -38,11 +38,11 @@
   padding-bottom: 0.25rem;
 }
 .sc-scroll:focus-visible {
-  outline: 2px solid var(--md-accent-fg-color);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-.md-typeset table.sc-heat {
+.doc table.sc-heat {
   display: table;
   border: 0;
   border-collapse: separate;
@@ -53,88 +53,88 @@
   width: auto;
   margin: 0;
 }
-.md-typeset .sc-heat caption {
+.doc .sc-heat caption {
   caption-side: top;
   text-align: left;
-  color: var(--md-default-fg-color--light);
+  color: var(--muted);
   padding-bottom: 0.4rem;
 }
-.md-typeset .sc-heat th,
-.md-typeset .sc-heat td {
+.doc .sc-heat th,
+.doc .sc-heat td {
   border: 0;
   padding: 0;
   background: none;
   vertical-align: middle;
 }
-.md-typeset .sc-heat thead th {
+.doc .sc-heat thead th {
   font-weight: 600;
-  color: var(--md-default-fg-color--light);
+  color: var(--muted);
   text-align: center;
   min-width: var(--sc-cell);
 }
-.md-typeset .sc-heat thead th a {
+.doc .sc-heat thead th a {
   color: inherit;
 }
-.md-typeset .sc-heat .sc-layers th {
+.doc .sc-heat .sc-layers th {
   font-weight: 500;
   font-size: 0.6rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  border-bottom: 1px solid var(--line);
   padding-bottom: 0.2rem;
 }
-.md-typeset .sc-heat tbody th {
+.doc .sc-heat tbody th {
   text-align: right;
   white-space: nowrap;
   padding-right: 0.6rem;
   font-weight: 600;
   font-size: 0.75rem;
 }
-.md-typeset .sc-heat tbody th a {
-  color: var(--md-default-fg-color);
+.doc .sc-heat tbody th a {
+  color: var(--text);
   text-decoration: none;
 }
-.md-typeset .sc-heat tbody th a:hover,
-.md-typeset .sc-heat tbody th a:focus-visible {
+.doc .sc-heat tbody th a:hover,
+.doc .sc-heat tbody th a:focus-visible {
   text-decoration: underline;
 }
-.md-typeset .sc-heat td[class^="g-"] {
+.doc .sc-heat td[class^="g-"] {
   width: var(--sc-cell);
   height: var(--sc-cell);
   border-radius: 5px;
   text-align: center;
 }
-.md-typeset .sc-heat td[class^="g-"] a {
+.doc .sc-heat td[class^="g-"] a {
   display: block;
   line-height: var(--sc-cell);
-  color: var(--md-default-fg-color--light);
+  color: var(--muted);
   font-size: 0.7rem;
   text-decoration: none;
   border-radius: 5px;
 }
-.md-typeset .sc-heat td[class^="g-"] a:hover,
-.md-typeset .sc-heat td[class^="g-"] a:focus-visible {
-  outline: 2px solid var(--md-default-fg-color);
+.doc .sc-heat td[class^="g-"] a:hover,
+.doc .sc-heat td[class^="g-"] a:focus-visible {
+  outline: 2px solid var(--text);
   outline-offset: 1px;
 }
-.md-typeset .sc-heat td.g-na {
-  box-shadow: inset 0 0 0 1px var(--md-default-fg-color--lightest);
+.doc .sc-heat td.g-na {
+  box-shadow: inset 0 0 0 1px var(--line);
 }
-.md-typeset .sc-heat td.g-na a {
-  color: var(--md-default-fg-color--light);
+.doc .sc-heat td.g-na a {
+  color: var(--muted);
 }
-.md-typeset .sc-heat .sc-total {
+.doc .sc-heat .sc-total {
   font-variant-numeric: tabular-nums;
   font-size: 0.75rem;
   padding: 0 0.35rem;
   text-align: center;
-  color: var(--md-default-fg-color);
+  color: var(--text);
 }
-.md-typeset .sc-heat thead .sc-total,
-.md-typeset .sc-heat .sc-corner {
-  color: var(--md-default-fg-color--light);
+.doc .sc-heat thead .sc-total,
+.doc .sc-heat .sc-corner {
+  color: var(--muted);
 }
-.md-typeset .sc-heat .sc-corner {
+.doc .sc-heat .sc-corner {
   text-align: right;
   padding-right: 0.6rem;
 }
@@ -151,13 +151,13 @@
 .sc-bar .g-partly { background: var(--sc-partly) !important; box-shadow: none; }
 .sc-bar .g-missing { background: var(--sc-missing) !important; box-shadow: none; }
 
-.md-typeset .sc-heat td.g-meets a { color: var(--sc-meets-ink); }
-.md-typeset .sc-heat td.g-partly a { color: var(--sc-partly-ink); }
-.md-typeset .sc-heat td.g-missing a { color: var(--sc-missing-ink); }
+.doc .sc-heat td.g-meets a { color: var(--sc-meets-ink); }
+.doc .sc-heat td.g-partly a { color: var(--sc-partly-ink); }
+.doc .sc-heat td.g-missing a { color: var(--sc-missing-ink); }
 
-.md-typeset .sc-badge.g-meets { color: var(--sc-meets-ink); }
-.md-typeset .sc-badge.g-partly { color: var(--sc-partly-ink); }
-.md-typeset .sc-badge.g-missing { color: var(--sc-missing-ink); }
+.doc .sc-badge.g-meets { color: var(--sc-meets-ink); }
+.doc .sc-badge.g-partly { color: var(--sc-partly-ink); }
+.doc .sc-badge.g-missing { color: var(--sc-missing-ink); }
 
 /* Visible only to screen readers. */
 .sc-sr {
@@ -169,7 +169,7 @@
   white-space: nowrap;
 }
 
-.md-typeset .sc-badge {
+.doc .sc-badge {
   display: inline-block;
   padding: 0.05rem 0.45rem;
   border-radius: 0.3rem;
@@ -178,20 +178,20 @@
   white-space: nowrap;
   color: rgba(0, 0, 0, 0.78);
 }
-.md-typeset .sc-badge.g-na {
-  color: var(--md-default-fg-color--light);
-  box-shadow: inset 0 0 0 1px var(--md-default-fg-color--lighter);
+.doc .sc-badge.g-na {
+  color: var(--muted);
+  box-shadow: inset 0 0 0 1px var(--faint);
 }
 
-.md-typeset .sc-legend {
+.doc .sc-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
   font-size: 0.7rem;
 }
-.md-typeset .sc-key {
-  color: var(--md-default-fg-color--light);
+.doc .sc-key {
+  color: var(--muted);
   margin-left: 0.4rem;
 }
 
@@ -204,41 +204,34 @@
   gap: 2px;
 }
 .sc-bar .g-na {
-  background: var(--md-default-fg-color--lightest) !important;
+  background: var(--line) !important;
 }
 
-.md-typeset .sc-heat .sc-layers .sc-layer-gap {
-  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+.doc .sc-heat .sc-layers .sc-layer-gap {
+  border-bottom: 1px solid var(--line);
 }
 
 /* Jumping to a grade from the heatmap: clear the sticky header, mark the row. */
-.md-typeset td span[id] {
-  scroll-margin-top: 4.5rem;
+.doc td span[id] {
+  scroll-margin-top: calc(var(--bar-h) + 16px);
 }
-.md-typeset tr:has(span[id]:target) td {
-  background: var(--md-accent-fg-color--transparent);
+.doc tr:has(span[id]:target) td {
+  background: var(--accent-soft);
 }
 
 /* Keep system names visible while the grid scrolls sideways on narrow screens. */
-.md-typeset .sc-heat tbody th,
-.md-typeset .sc-heat thead .sc-corner {
+.doc .sc-heat tbody th,
+.doc .sc-heat thead .sc-corner {
   position: sticky;
   left: 0;
   z-index: 1;
-  background: var(--md-default-bg-color);
-}
-
-/* Search is switched off (every page is excluded so the index cannot leak the
-   encrypted content), so hide its box. */
-.md-search,
-label[for="__search"] {
-  display: none !important;
+  background: var(--bg);
 }
 
 /* A system page's done-when rule, under each criterion's title, for the package's platform. */
-.md-typeset .sc-done {
+.doc .sc-done {
   display: inline-block;
   margin-top: 0.15rem;
-  color: var(--md-default-fg-color--light);
+  color: var(--muted);
   font-size: 0.9em;
 }

@@ -32,7 +32,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-# The docs site is built from docs/ by Zensical into site/; the gallery is one page of it.
+# The docs site is built from docs/ by tools/site.py into site/; the gallery is one page of it.
 DOCS = ROOT / "docs"
 SITE = DOCS / "gallery"
 SITE_OUT = ROOT / "site"
@@ -1392,11 +1392,9 @@ def repo_file(url_path: str) -> Path | None:
 def build_docs() -> None:
     """Generate the scorecard pages, then build the whole docs site into site/."""
     subprocess.run([sys.executable, str(ROOT / "tools" / "scorecard.py")], check=True)
-    zensical = ROOT / ".venv" / "bin" / "zensical"
-    exe = str(zensical) if zensical.exists() else shutil.which("zensical")
-    if not exe:
-        sys.exit("Zensical is not installed: run `make setup` once, then `make serve`.")
-    subprocess.run([exe, "build", "--clean"], cwd=ROOT, check=True)
+    venv_python = ROOT / ".venv" / "bin" / "python"
+    python = str(venv_python) if venv_python.exists() else sys.executable
+    subprocess.run([python, str(ROOT / "tools" / "site.py")], cwd=ROOT, check=True)
 
 
 def serve(port: int) -> None:

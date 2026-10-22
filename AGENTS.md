@@ -102,11 +102,12 @@ illustrations or brand colours into something that ships
   the result with the change; `make check` fails on a stale one.
   [docs/PACKAGE.md](docs/PACKAGE.md#designmd) has the mapping and the lint
   rules it is allowed to fail.
-- **The docs site is generated.** It is one Zensical site built from
-  [docs/](docs) into `site/` (gitignored). [docs/gallery/](docs/gallery) holds
-  the gallery app; [tools/catalog.py](tools/catalog.py) writes its `data.json`
+- **The docs site is generated.** [tools/site.py](tools/site.py) builds
+  [docs/](docs) into `site/` (gitignored): every markdown page rendered with the
+  gallery's own chrome. [docs/gallery/](docs/gallery) holds the gallery app;
+  [tools/catalog.py](tools/catalog.py) writes its `data.json`
   and `thumbs/` from [catalog.json](catalog.json). [tools/scorecard.py](tools/scorecard.py)
-  writes `docs/scorecard/` and `zensical.toml` from [scorecard/](scorecard). All
+  writes `docs/scorecard/` from [scorecard/](scorecard). All
   of those are gitignored; never hand-edit them, and never list a package in
   the gallery any other way. A new audit is a new
   `scorecard/audits/<YYYY-MM-DD>.json`; `make scorecard` validates it.

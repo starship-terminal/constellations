@@ -1,6 +1,6 @@
 # Browse the library's docs site (gallery, scorecard, docs), and check the catalog before a commit.
-# `make setup` once installs the pinned Zensical into .venv; everything else needs only python3
-# (lint-design-md also needs Node.js). `make serve PORT=9000` picks another port.
+# `make setup` once installs the site builder's markdown dependency into .venv; everything else
+# needs only python3 (lint-design-md also needs Node.js). `make serve PORT=9000` picks another port.
 
 PYTHON ?= python3
 PORT ?= 8800
@@ -10,7 +10,7 @@ PORT ?= 8800
 help: ## List the targets
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-14s %s\n", $$1, $$2}'
 
-setup: ## Create .venv with the pinned Zensical (once per machine)
+setup: ## Create .venv with the site builder's dependencies (once per machine)
 	uv venv -q --python 3.13 .venv && uv pip install -q --python .venv/bin/python -r requirements.txt
 
 dev: ## Serve the site and open the gallery and the scorecard in the browser (PORT, default 8800)
@@ -22,8 +22,8 @@ serve: ## Build the gallery, scorecard and docs site and serve it on 127.0.0.1 (
 build: ## Write the gallery's data and screenshot thumbnails into docs/gallery/
 	@$(PYTHON) tools/catalog.py build
 
-docs: ## Generate the scorecard pages and build the docs site into site/ (strict)
-	@$(PYTHON) tools/scorecard.py && .venv/bin/zensical build --clean --strict
+docs: ## Generate the scorecard pages and build the docs site into site/
+	@$(PYTHON) tools/scorecard.py && .venv/bin/python tools/site.py
 
 scorecard: ## Validate the scorecard's audit data
 	@$(PYTHON) tools/scorecard.py --check
@@ -49,4 +49,4 @@ test: ## Run the tools' tests
 	@$(PYTHON) -m unittest discover -s tools -p 'test_*.py'
 
 clean: ## Remove generated files
-	rm -rf site docs/gallery/data.json docs/gallery/thumbs docs/scorecard zensical.toml
+	rm -rf site docs/gallery/data.json docs/gallery/thumbs docs/scorecard

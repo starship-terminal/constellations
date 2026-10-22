@@ -12,14 +12,13 @@ systems/*/tools/capture/out/
 # Clones of public reference repos; only example/README.md is committed.
 /example/*/
 
-# The docs site. `make serve` writes the gallery data, the scorecard pages and the
-# Zensical config, then builds everything into site/.
+# The docs site. `make serve` writes the gallery data and the scorecard pages,
+# then builds everything into site/.
 /site/
 docs/gallery/data.json
 docs/gallery/thumbs/
 docs/gallery/refero/
 docs/scorecard/
-/zensical.toml
 /.venv/
 # Local secrets. StatiCrypt reads STATICRYPT_PASSWORD from here.
 .env
