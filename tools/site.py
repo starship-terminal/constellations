@@ -10,6 +10,7 @@ workflow builds it, drops site/gallery/ and encrypts the rest.
 """
 import argparse
 import html
+import posixpath
 import re
 import shutil
 import sys
@@ -44,6 +45,7 @@ HIDE_RE = re.compile(r"^\s*-\s*(navigation|toc)\s*$", re.M)
 HEADING_RE = re.compile(r"^#\s+(.+)$", re.M)
 TAG_RE = re.compile(r"<[^>]+>|\*\*|__|`")
 LINK_RE = re.compile(r'href="([^"#]+\.md)(#[^"]*)?"')
+SCHEME_RE = re.compile(r"^([a-zA-Z][a-zA-Z0-9+.-]*:|//)")
 
 
 def frontmatter(md: str) -> tuple[set[str], str]:
@@ -62,17 +64,32 @@ def page_title(md: str, stem: str) -> str:
     return TAG_RE.sub("", m.group(1)).strip()
 
 
-def rewrite_links(rendered: str) -> str:
-    """Point markdown links at the dir-style URLs the build emits (foo.md -> foo/)."""
+def rewrite_links(rendered: str, page: "Page") -> str:
+    """Point markdown links at the dir-style URLs the build emits.
+
+    A link such as `../criteria.md` is relative to the source file, so resolve
+    it inside docs/ first, map it to the target's output dir URL, then write it
+    relative to this page's output URL. Links with a scheme or host (https://,
+    //host, mailto:) are external and left alone.
+    """
+    src_dir = str(page.src.parent.relative_to(DOCS))
+    page_dir = page.url or "."
+
     def repl(m: re.Match) -> str:
         path, frag = m.group(1), m.group(2) or ""
-        if path.endswith("/index.md"):
-            path = path[:-len("index.md")]
-        elif path == "index.md":
-            path = "./"
+        if SCHEME_RE.match(path):
+            return m.group(0)
+        target = posixpath.normpath(path.lstrip("/") if path.startswith("/")
+                                    else posixpath.join(src_dir, path))
+        stem = target[:-len(".md")]
+        if stem == "index" or stem.endswith("/index"):
+            url = stem[:-len("index")]
         else:
-            path = path[:-len(".md")] + "/"
-        return f'href="{path}{frag}"'
+            url = stem + "/"
+        out = posixpath.relpath(url or ".", page_dir)
+        if not out.endswith("/"):
+            out += "/"
+        return f'href="{out}{frag}"'
     return LINK_RE.sub(repl, rendered)
 
 
@@ -193,6 +210,8 @@ def render(page: Page, rendered: str, hidden: set[str]) -> str:
 def build() -> None:
     import markdown
 
+    # site/ is fully generated; start clean so removed pages and assets leave.
+    shutil.rmtree(OUT, ignore_errors=True)
     statics = ["assets", "stylesheets", "gallery", "site.webmanifest"]
     for name in statics:
         src, dst = DOCS / name, OUT / name
@@ -210,15 +229,24 @@ def build() -> None:
             continue
         hidden, md = frontmatter(page.src.read_text())
         page.title = page_title(md, page.src.stem)
-        body = rewrite_links(markdown.markdown(md, extensions=MD_EXTENSIONS, extension_configs=MD_CONFIGS))
+        body = rewrite_links(markdown.markdown(md, extensions=MD_EXTENSIONS, extension_configs=MD_CONFIGS), page)
         dest = OUT / page.url / "index.html" if page.url else OUT / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(render(page, body, hidden))
         count += 1
 
+    # A 404 is served at the missing URL, whatever its depth, so the page's
+    # relative links would resolve inside the missing directory. The script
+    # writes <base> before the stylesheet links: the site sits at / on the
+    # deploy host and under /design-systems/ on GitHub Pages.
     not_found = Page(DOCS / "index.md", "", None)
     not_found.title = "Page not found"
-    (OUT / "404.html").write_text(render(not_found, "<h1>Page not found</h1><p><a href='./'>Back to the library home</a>.</p>", {"navigation"}))
+    base_fix = ("<script>\n  var __seg = location.pathname.split('/').filter(Boolean);\n"
+                "  document.write('<base href=\"/' + (__seg[0] === 'design-systems' ? 'design-systems/' : '') + '\">');\n"
+                "</script>")
+    html_404 = render(not_found, "<h1>Page not found</h1><p><a href='./'>Back to the library home</a>.</p>",
+                      {"navigation"}).replace("<head>", "<head>\n" + base_fix, 1)
+    (OUT / "404.html").write_text(html_404)
     print(f"site: wrote {count} pages to {OUT.relative_to(ROOT)}/")
 
 
