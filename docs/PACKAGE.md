@@ -85,7 +85,7 @@ don't list.
 ## Health
 
 Each package's README has a `## Health` section right after the Brief. [tools/health.py](../tools/health.py) writes it from the newest
-scorecard snapshot in [scorecard/audits/](../scorecard/audits) and the
+scorecard snapshot in `scorecard/audits/` and the
 package's folder, between the `health:start` and `health:end` markers. It
 says:
 
@@ -202,7 +202,7 @@ from one of two rules the export cannot satisfy without inventing data:
    an existing entry, then run `make design-md` and `make check`, which
    resolves every token path, fails on one that does not exist, and fails if
    the package's `DESIGN.md` is missing or stale.
-5. Review the package against [scorecard/criteria.json](../scorecard/criteria.json)
+5. Review the package against `scorecard/criteria.json`
    in its platform's wording (`python3 tools/grade.py --criteria <slug>` prints
    it) and merge the grades with `python3 tools/grade.py --write --review
    <slug>=<grades.json>`. That writes its Health section and its row in the
