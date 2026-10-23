@@ -1,13 +1,17 @@
 # Build the docs site (home, scorecard, library docs), encrypt every page with
-# StatiCrypt, and publish to GitHub Pages. The gallery shows the captures, so it is
-# removed before publishing; it runs locally only.
+# StatiCrypt, and publish to GitHub Pages. The gallery shows the captures, so the
+# site is built with `tools/site.py --publish`, which leaves it and its links out;
+# it runs locally only. `make check` runs first so a commit missing `make brief`
+# or `make grade` fails the deploy visibly instead of shipping stale content.
 name: Pages
 on:
   push:
     branches: [main]
-    paths: [docs/**, scorecard/**, tools/scorecard.py, tools/test_scorecard.py, tools/site.py, requirements.txt, .staticrypt.json, .github/workflows/pages.yml]
+    paths: [docs/**, scorecard/**, catalog.json, systems/**, Makefile, tools/*.py,
+            requirements.txt, .staticrypt.json, .github/workflows/pages.yml]
   pull_request:
-    paths: [docs/**, scorecard/**, tools/scorecard.py, tools/test_scorecard.py, tools/site.py, requirements.txt, .staticrypt.json, .github/workflows/pages.yml]
+    paths: [docs/**, scorecard/**, catalog.json, systems/**, Makefile, tools/*.py,
+            requirements.txt, .staticrypt.json, .github/workflows/pages.yml]
   workflow_dispatch:
 permissions:
   contents: read
@@ -27,13 +31,15 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
+      - name: Freshness gates (catalog, Brief, scorecard shape, scripted grades, Health)
+        run: make check
       - run: pip install -r requirements.txt
       - name: Test the scorecard generator
         run: python3 -m unittest tools/test_scorecard.py
       - name: Generate the scorecard pages
         run: python3 tools/scorecard.py
       - name: Build
-        run: python3 tools/site.py
+        run: python3 tools/site.py --publish
       - name: Drop the gallery and check nothing readable leaks outside the HTML
         run: |
           rm -rf site/gallery

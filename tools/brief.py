@@ -233,7 +233,7 @@ def write(systems: list[dict]) -> list[Path]:
     changed = []
     for path, text in expected(systems).items():
         if path.read_text() != text:
-            path.write_text(text)
+            catalog.atomic_write(path, text)
             changed.append(path)
     return changed
 

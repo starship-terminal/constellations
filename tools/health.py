@@ -167,7 +167,7 @@ def write(criteria: dict, audit: dict, systems: list[dict]) -> list[Path]:
     changed = []
     for path, text in expected(criteria, audit, systems).items():
         if path.read_text() != text:
-            path.write_text(text)
+            catalog.atomic_write(path, text)
             changed.append(path)
     return changed
 

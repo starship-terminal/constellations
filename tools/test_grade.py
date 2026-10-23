@@ -220,6 +220,12 @@ class RefreshAndReviewTest(unittest.TestCase):
         self.assertEqual(y["grades"]["V1"]["grade"], "na")
         self.assertIn("not in catalog.json", str(e.exception))
 
+    def test_a_review_entry_needs_grade_and_evidence(self):
+        for bad in ({"grade": "meets"}, {"evidence": "e"}, {"grade": "great", "evidence": "e"}, "meets"):
+            with self.assertRaises(SystemExit) as e:
+                self.make({"x": {"C1": bad}})
+            self.assertIn("C1", str(e.exception), bad)
+
     def test_an_incomplete_review_is_refused(self):
         criteria = {**self.CRITERIA, "criteria": self.CRITERIA["criteria"] + [
             {"id": "C2", "layer": "Foundations", "title": "States", "doneWhen": "w"}]}
