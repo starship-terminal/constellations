@@ -45,8 +45,7 @@ class ReferoCheckTest(unittest.TestCase):
         folder.mkdir()
         for name in refero_check.STYLE_FILES:
             (folder / name).write_text("{}" if name.endswith("json") else "x")
-        meta = {**row, "video_w": None, "video_h": None, "video_ms": None}
-        (folder / "meta.json").write_text(json.dumps(meta))
+        (folder / "meta.json").write_text(json.dumps(row))
         return folder
 
     def write_db(self, rows):

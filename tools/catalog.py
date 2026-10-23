@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import functools
 import http.server
+import importlib.util
 import json
 import math
 import os
@@ -1294,6 +1295,15 @@ def section_data(system: dict) -> dict:
 # are where a separate fetch job puts each remote file; both sides are emitted so a
 # card can fall back to the remote while its file is missing.
 
+# The /refero-media/<kind>/<slug>.<ext> contract and the gstatic favicon URL are
+# shared with tools/refero/mirror_media.py (which downloads those files) through
+# tools/refero/refero_media.py, imported by location so tools/refero/ stays off
+# sys.path.
+_spec = importlib.util.spec_from_file_location(
+    "refero_media", Path(__file__).resolve().parent / "refero" / "refero_media.py")
+refero_media = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(refero_media)
+
 # Every remote media file sits under one CDN prefix; index.json carries it once
 # under `cdn` and each remote field keeps only the suffix after it.
 REFERO_CDN = "https://images.refero.design/styles/refero.design/"
@@ -1314,11 +1324,31 @@ def _refero_host(url) -> str | None:
     return host.removeprefix("www.") if host else None
 
 
-def _refero_asset(kind: str, slug: str, ext: str, remote) -> dict | None:
+def _refero_asset(kind: str, slug: str, remote) -> dict | None:
     """One media pair: the file's eventual local path and the remote it is fetched from."""
     if not remote:
         return None
-    return {"local": f"/refero-media/{kind}/{slug}.{ext}", "remote": remote}
+    return {"local": refero_media.local_path(kind, slug), "remote": remote}
+
+
+# Entity media key -> (refero_media kind, meta.json field the remote URL lives
+# in). `favicon` has no meta field; its remote is the gstatic faviconV2 URL for
+# source_url, the same URL mirror_media.py downloads the file from.
+REFERO_MEDIA = {
+    "shot": ("shots", "screenshot_url"),
+    "poster": ("posters", "video_poster_url"),
+    "video": ("videos", "video_url"),
+    "detail": ("detail", "video_detail_url"),
+    "detail_poster": ("detail-posters", "video_detail_poster_url"),
+    "favicon": ("favicons", None),
+}
+
+# The entity doc's `ds` keeps only what the gallery reads (see the rf* helpers
+# in docs/gallery/app.js); meta, theme, industry, northStar and similar are
+# lifted out or duplicated elsewhere, and components/imagery/layout/
+# customSections/surfaces are shipped nowhere.
+REFERO_DS_KEYS = ("description", "colors", "typography", "typeScale", "spacing",
+                  "elevation", "elevationPhilosophy", "dos", "donts")
 
 
 def load_refero() -> list[tuple[Path, dict, dict]]:
@@ -1368,19 +1398,15 @@ def refero_card(slug: str, meta: dict, ds: dict) -> dict:
 def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
     """The JSON written to refero/<slug>.json: the meta fields, local+remote media
     pairs (null where meta.json has no remote for one yet), the docs files' text, the
-    design-system minus its meta block, and `similar` with each business name resolved
-    to a refero slug where one matches."""
+    design-system keys the page renders (REFERO_DS_KEYS), and `similar` with each
+    business name resolved to a refero slug where one matches."""
     slug = meta.get("slug") or folder.name
-    host = _refero_host(meta.get("source_url"))
     text = lambda name: (folder / name).read_text() if (folder / name).is_file() else None
     media = {
-        "shot": _refero_asset("shots", slug, "jpg", meta.get("screenshot_url")),
-        "poster": _refero_asset("posters", slug, "jpg", meta.get("video_poster_url")),
-        "video": _refero_asset("videos", slug, "mp4", meta.get("video_url")),
-        "detail": _refero_asset("detail", slug, "mp4", meta.get("video_detail_url")),
-        "favicon": {"local": f"/refero-media/favicons/{slug}.png",
-                    "remote": ("https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON"
-                               f"&fallback_opts=TYPE,SIZE,URL&url=https://{host}&size=128") if host else None},
+        key: _refero_asset(kind, slug,
+                           refero_media.favicon_url(meta.get("source_url"))
+                           if field is None else meta.get(field))
+        for key, (kind, field) in REFERO_MEDIA.items()
     }
     similar = [{"slug": slug_of.get(str(s.get("business") or "").lower()),
                 "name": s.get("business"), "why": s.get("why")}
@@ -1388,12 +1414,11 @@ def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
     return {"slug": slug, "name": meta.get("name"), "tagline": meta.get("tagline"),
             "theme": meta.get("theme") or ds.get("theme"), "industry": ds.get("industry"),
             "type": meta.get("product_type"), "style": meta.get("design_style"),
-            "tags": meta.get("tags") or [],
             "source_url": meta.get("source_url"), "page_url": meta.get("page_url"),
-            "extracted_at": meta.get("extracted_at"), "media": media,
+            "media": media,
             "docs": {"design_md": text("DESIGN.md"), "variables_css": text("variables.css"),
                      "theme_css": text("theme.css"), "tokens_json": text("tokens.json")},
-            "ds": {k: v for k, v in ds.items() if k != "meta"},
+            "ds": {k: ds[k] for k in REFERO_DS_KEYS if k in ds},
             "similar": similar}
 
 
@@ -1442,8 +1467,7 @@ def build_refero() -> Path | None:
             stale.unlink()
     index.sort(key=lambda s: str(s["name"] or "").lower())
     out = out_dir / "index.json"
-    atomic_write(out, json.dumps({"version": 2, "cdn": REFERO_CDN, "count": len(index),
-                                  "styles": index},
+    atomic_write(out, json.dumps({"version": 2, "cdn": REFERO_CDN, "styles": index},
                                  separators=(",", ":")))
     return out
 

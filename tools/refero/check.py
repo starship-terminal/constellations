@@ -31,8 +31,7 @@ STYLE_FILES = ("meta.json", "design-system.json", "DESIGN.md", "variables.css",
 CATALOG_FIELDS = ("slug", "name", "tagline", "uuid", "page_url", "source_url",
                   "theme", "product_type", "design_style", "tags",
                   "extracted_at", "fetched_at")
-# meta.json repeats the media URLs on top of the catalog fields (video_w/h/ms
-# are meta-only).
+# meta.json repeats the media URLs on top of the catalog fields.
 META_FIELDS = CATALOG_FIELDS + ("screenshot_url", "video_url", "video_poster_url",
                                 "video_detail_url", "video_detail_poster_url")
 

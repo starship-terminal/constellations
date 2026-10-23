@@ -808,8 +808,12 @@ class ReferoBuildTest(unittest.TestCase):
              "product_type": "devtools", "design_style": "technical", "tags": ["neon"],
              "source_url": "https://www.alpha.example.com/x", "page_url": "https://p/alpha",
              "extracted_at": "t0", "screenshot_url": "https://img/shot.jpg",
-             "video_url": "https://img/v.mp4", "video_poster_url": "https://img/p.jpg"}
+             "video_url": "https://img/v.mp4", "video_poster_url": "https://img/p.jpg",
+             "video_detail_url": "https://img/d.mp4",
+             "video_detail_poster_url": "https://img/dp.jpg"}
     ALPHA_DS = {"meta": {"thumbnailUrl": "https://img/t.jpg"}, "industry": "media",
+                "description": "d", "colors": [], "components": {"x": 1},
+                "northStar": "north", "customSections": [],
                 "similar": [{"business": "Beta", "why": "same"}, {"business": "Nobody", "why": "none"}]}
     BETA = {"slug": "beta", "name": "beta", "source_url": "https://beta.io"}
     BETA_DS = {"industry": "other"}
@@ -818,7 +822,7 @@ class ReferoBuildTest(unittest.TestCase):
         index, _ = self.build([("beta", self.BETA, self.BETA_DS), ("alpha", self.ALPHA, self.ALPHA_DS)])
         self.assertEqual(index["version"], 2)
         self.assertEqual(index["cdn"], catalog.REFERO_CDN)
-        self.assertEqual(index["count"], 2)
+        self.assertEqual(len(index["styles"]), 2)
         alpha, beta = index["styles"]
         self.assertEqual([s["slug"] for s in index["styles"]], ["alpha", "beta"])
         self.assertEqual(alpha["src"], "alpha.example.com")
@@ -864,12 +868,21 @@ class ReferoBuildTest(unittest.TestCase):
         self.assertEqual(alpha["media"]["shot"],
                          {"local": "/refero-media/shots/alpha.jpg", "remote": "https://img/shot.jpg"})
         self.assertEqual(alpha["media"]["video"]["remote"], "https://img/v.mp4")
-        self.assertIsNone(alpha["media"]["detail"])
-        self.assertIn("url=https://alpha.example.com", alpha["media"]["favicon"]["remote"])
+        self.assertEqual(alpha["media"]["detail"]["remote"], "https://img/d.mp4")
+        self.assertEqual(alpha["media"]["detail_poster"],
+                         {"local": "/refero-media/detail-posters/alpha.jpg",
+                          "remote": "https://img/dp.jpg"})
+        self.assertIn("url=https%3A%2F%2Fwww.alpha.example.com", alpha["media"]["favicon"]["remote"])
         self.assertEqual(alpha["media"]["favicon"]["local"], "/refero-media/favicons/alpha.png")
         self.assertEqual(alpha["docs"]["design_md"], "# Designed\n")
         self.assertEqual(alpha["docs"]["tokens_json"], "{}")
-        self.assertNotIn("meta", alpha["ds"])
+        # `ds` carries only what the page renders; the rest of the upstream
+        # design-system (and keys lifted to the top level) is stripped.
+        for k in ("meta", "components", "northStar", "customSections", "industry", "similar"):
+            self.assertNotIn(k, alpha["ds"], k)
+        self.assertEqual(alpha["ds"]["description"], "d")
+        for k in ("tags", "extracted_at"):
+            self.assertNotIn(k, alpha, k)
         self.assertEqual(alpha["similar"], [{"slug": "beta", "name": "Beta", "why": "same"},
                                             {"slug": None, "name": "Nobody", "why": "none"}])
         self.assertIsNone(files["beta"]["media"]["shot"])
@@ -903,14 +916,14 @@ class ReferoBuildTest(unittest.TestCase):
             with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "SITE", site):
                 out = catalog.build_refero()
             index = json.loads(out.read_text())
-        self.assertEqual(index["count"], 1)
+        self.assertEqual(len(index["styles"]), 1)
         self.assertEqual([s["slug"] for s in index["styles"]], ["alpha"])
 
     def test_a_style_named_index_gets_an_entity_file(self):
         # refero/index is a real style; under refero/style/ it cannot collide
         # with the index.
         index, files = self.build([("index", {**self.BETA, "slug": "index", "name": "index"}, self.BETA_DS)])
-        self.assertEqual(index["count"], 1)
+        self.assertEqual(len(index["styles"]), 1)
         self.assertEqual(index["styles"][0]["slug"], "index")
         self.assertEqual(files["index"]["slug"], "index")
 
@@ -928,7 +941,7 @@ class ReferoBuildTest(unittest.TestCase):
                 # entities are written first and only absent slugs are pruned.
                 (root / "refero" / "beta" / "meta.json").unlink()
                 index = json.loads(catalog.build_refero().read_text())
-            self.assertEqual(index["count"], 1)
+            self.assertEqual(len(index["styles"]), 1)
             self.assertFalse((site / "refero/style/beta.json").exists())
             self.assertTrue((site / "refero/style/alpha.json").exists())
 
@@ -943,7 +956,7 @@ class ReferoBuildTest(unittest.TestCase):
                 import shutil
                 shutil.rmtree(root / "refero" / "alpha")
                 index = json.loads(catalog.build_refero().read_text())
-            self.assertEqual(index["count"], 0)
+            self.assertEqual(len(index["styles"]), 0)
             self.assertEqual(index["styles"], [])
             self.assertEqual(list((site / "refero/style").glob("*.json")), [])
 

@@ -12,11 +12,11 @@ Usage:
     python3 tools/refero/fetch.py --enrich-media       # backfill video_url/poster columns + meta.json keys
 
 Media keys (video_url, video_poster_url, video_detail_url,
-video_detail_poster_url, video_w, video_h, video_ms) are scraped from the
-escaped JSON in each page's __next_f.push payload. They are always written
-to meta.json (null when absent) so the file has a fixed schema, and the four
-URL fields are stored as styles columns. media_fetched_at marks when the
-extraction ran; --enrich-media backfills rows where it is still NULL.
+video_detail_poster_url) are scraped from the escaped JSON in each page's
+__next_f.push payload. They are always written to meta.json (null when
+absent) so the file has a fixed schema, and stored as styles columns.
+media_fetched_at marks when the extraction ran; --enrich-media backfills
+rows where it is still NULL.
 """
 
 import argparse
@@ -103,11 +103,9 @@ MEDIA_URL_FIELDS = {
     "video_detail_url": "previewVideoDetailUrl",
     "video_detail_poster_url": "previewVideoDetailPosterUrl",
 }
-MEDIA_INT_FIELDS = {
-    "video_w": "previewVideoWidth",
-    "video_h": "previewVideoHeight",
-    "video_ms": "previewVideoDurationMs",
-}
+# Refero also ships previewVideoWidth/Height/DurationMs, but the values were
+# null for every fetched style, nothing reads them, and the raw page is not
+# kept around to re-check against; they were dropped rather than carried.
 
 
 def get(url, binary=True, tries=4):
@@ -176,8 +174,8 @@ SHOT_URL_RE = re.compile(r'screenshotUrl\\*":\\*"')
 def extract_media(page):
     """Pull preview-video fields out of the raw page's escaped flight JSON.
 
-    Returns a dict with the MEDIA_URL_FIELDS/MEDIA_INT_FIELDS keys; values
-    are None when the style has no video (the field is emitted as null).
+    Returns a dict with the MEDIA_URL_FIELDS keys; values are None when the
+    style has no video (the field is emitted as null).
 
     The page serializes ~20 other styles' records after the main one (a
     related-styles list), so each field is read only inside the record whose
@@ -205,9 +203,6 @@ def extract_media(page):
             field + r'\\*"\s*:\s*(?:\\*"(https://images\.refero\.design/[^"\\]+)\\*"|null)',
             window)
         media[key] = m.group(1) if m else None
-    for key, field in MEDIA_INT_FIELDS.items():
-        m = re.search(field + r'\\*":(?:null|(\d+))', window)
-        media[key] = int(m.group(1)) if m and m.group(1) else None
     return media
 
 
@@ -274,6 +269,29 @@ def write_atomic(path, text):
     tmp = path.with_name(path.name + ".tmp")
     tmp.write_text(text)
     os.replace(tmp, path)
+
+
+def style_meta(uuid, slug, name, result, media, labels, fetched_at):
+    """The meta.json object a fetched style gets: uuid/slug/name, tagline and
+    theme from designSystem, the classify.py label keys, the URLs, then the
+    media keys (fixed schema; null when absent). write_meta's rebuild selects
+    the same keys back out of the styles row."""
+    meta = result.get("meta") or {}
+    ds = result.get("designSystem") or {}
+    return {
+        "uuid": uuid,
+        "slug": slug,
+        "name": name,
+        "tagline": ds.get("northStar"),
+        "theme": ds.get("theme"),
+        **labels,
+        "page_url": f"{BASE}/style/{uuid}",
+        "source_url": meta.get("url"),
+        "extracted_at": meta.get("extractedAt"),
+        "fetched_at": fetched_at,
+        "screenshot_url": (result.get("screenshot") or {}).get("url"),
+        **media,
+    }
 
 
 def write_meta(db, slug, media):
@@ -356,8 +374,6 @@ def cmd_fetch(args):
                 print(f"FAIL {uuid}: {ex}", file=sys.stderr)
                 continue
 
-            meta = result.get("meta") or {}
-            ds = result.get("designSystem") or {}
             name = name or uuid
             slug = unique_slug(db, name, uuid)
             # A refetch must not erase labels classify.py or a human already set.
@@ -372,20 +388,9 @@ def cmd_fetch(args):
             outdir.mkdir(exist_ok=True)
             if design_md:
                 (outdir / "DESIGN.md").write_text(design_md)
-            meta_obj = {
-                "uuid": uuid,
-                "slug": slug,
-                "name": name,
-                "tagline": ds.get("northStar"),
-                "theme": ds.get("theme"),
-                **labels,
-                "page_url": url,
-                "source_url": meta.get("url"),
-                "extracted_at": meta.get("extractedAt"),
-                "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-                "screenshot_url": (result.get("screenshot") or {}).get("url"),
-                **media,
-            }
+            meta_obj = style_meta(
+                uuid, slug, name, result, media, labels,
+                time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
             (outdir / "meta.json").write_text(json.dumps(meta_obj, indent=2) + "\n")
             db.execute(
                 """INSERT OR REPLACE INTO styles

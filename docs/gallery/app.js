@@ -662,7 +662,8 @@ document.getElementById('theme').onclick = () => {
 // ---------------------------------------------------------------- refero
 // The refero/ library: interpreted styles scraped from styles.refero.design.
 // catalog.py emits refero/index.json + refero/<slug>.json; media lives outside
-// the repo under /refero-media/ (shots, posters, videos, favicons). Every media
+// the repo under /refero-media/ (shots, posters, videos, detail videos and
+// their posters, favicons). Every media
 // element carries data-r with the remote CDN URL and swaps to it onerror, so a
 // dev box without the mirror still renders.
 
@@ -672,13 +673,18 @@ const rfState = { theme: 'all', video: false, type: 'all', style: 'all' };
 try { Object.assign(rfState, JSON.parse(localStorage.getItem('ds-refero') || '{}')); } catch (e) {}
 const rfSave = () => { try { localStorage.setItem('ds-refero', JSON.stringify(rfState)); } catch (e) {} };
 const RF_PAGE = 48;
+// The emitted refero/index.json shape; getRefero refuses a stale format.
+const RF_VERSION = 2;
 let rfIO = null;
 const rfSlug = () => location.hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent);
 
 function getRefero() {
   if (!rfPromise) rfPromise = fetch('refero/index.json', { cache: 'no-cache' })
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then((d) => (RF_INDEX = d))
+    .then((d) => {
+      if (d.version !== RF_VERSION) throw new Error(`refero index.json version ${d.version}`);
+      return (RF_INDEX = d);
+    })
     .catch((e) => { rfPromise = null; throw e; });
   return rfPromise;
 }
@@ -733,9 +739,13 @@ const rfImg = (media, cls, alt, attrs) => {
 };
 
 function rfFav(s, big) {
-  const remote = s.src || s.source_url
-    ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(`https://${host(s.src || s.source_url)}`)}&size=128` : '';
-  return `<span class="rf-fav${big ? ' big' : ''}"><i>${esc((s.name || '?')[0].toUpperCase())}</i><img loading="lazy" ${rfMediaAttrs({ local: rfLocalMedia('favicons', s, 'png'), remote }, true)} alt=""></span>`;
+  // Entity JSONs emit media.favicon {local, remote}; index cards carry no
+  // media block, so cards derive the same pair from the slug and source host.
+  const media = ((s.media || {}).favicon)
+    || { local: rfLocalMedia('favicons', s, 'png'),
+         remote: s.src || s.source_url
+           ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(`https://${host(s.src || s.source_url)}`)}&size=128` : null };
+  return `<span class="rf-fav${big ? ' big' : ''}"><i>${esc((s.name || '?')[0].toUpperCase())}</i><img loading="lazy" ${rfMediaAttrs(media, true)} alt=""></span>`;
 }
 const host = (u) => String(u || '').replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
 
@@ -870,7 +880,8 @@ function rfMediaTag(e) {
   const m = e.media || {};
   const v = m.detail || m.video;
   if (v && (v.local || v.remote)) {
-    const poster = (m.poster && (m.poster.local || m.poster.remote)) || '';
+    const pair = (v === m.detail && m.detail_poster) || m.poster;
+    const poster = (pair && (pair.local || pair.remote)) || '';
     return `<video ${rfMediaAttrs(v, false)}
       ${poster ? `poster="${esc(poster)}"` : ''} muted loop playsinline autoplay></video>`;
   }
