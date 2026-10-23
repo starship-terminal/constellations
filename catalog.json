@@ -871,6 +871,71 @@
       "layoutGaps": {
         "icons/": "Grok Bot's icons and bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "notion-ios",
+      "name": "Notion for iOS",
+      "url": "https://www.notion.com/mobile",
+      "category": "productivity",
+      "platform": "mobile",
+      "goodFor": "Native iOS docs and workspace app: a warm navigation grey and a content canvas, top tabs instead of a tab bar, iOS 26 glass floating at the bottom, plain text rows with grouped cards only in sheets, one blue accent, an AI chat that bubbles only the user",
+      "tags": [
+        "ios",
+        "mobile",
+        "productivity",
+        "docs",
+        "notes",
+        "ai",
+        "chat",
+        "glass",
+        "top-tabs",
+        "warm-grey",
+        "minimal",
+        "database"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-24",
+      "access": "signed in, iPhone Mirroring",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/notion-ios/README.md",
+      "tokens": "systems/notion-ios/tokens.json",
+      "styleGuide": "systems/notion-ios/style-guide.html",
+      "preview": {
+        "cover": "systems/notion-ios/screenshots/dark/01-home-sidebar-tree.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.sidebar",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.separator"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.sidebar",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.separator"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/notion-ios/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Notion's icons and the Notion AI face are its artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }
