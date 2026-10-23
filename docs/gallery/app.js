@@ -467,7 +467,7 @@ function renderImages(pane, s, items, withThemeFilter) {
     for (; at < end; at++) groups.get(shown[at].group).insertAdjacentHTML('beforeend', tile(shown[at], at));
     const more = pane.querySelector('[data-more]');
     if (at >= shown.length) { if (more) more.parentElement.remove(); return; }
-    if (drain) requestAnimationFrame(() => { if (g === gen) feed(true, g); });
+    if (drain) requestAnimationFrame(() => { if (g === gen && pane.isConnected) feed(true, g); });
   };
   const draw = () => {
     const g = ++gen;
@@ -654,7 +654,7 @@ function copy(text, msg) {
 
 document.getElementById('theme').onclick = () => {
   const root = document.documentElement;
-  // index.html always sets data-theme (stored pref, else the OS preference).
+  // index.html always sets data-theme (stored pref, else dark).
   root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
   try { localStorage.setItem('ds-theme', root.dataset.theme); } catch (e) {}
 };
@@ -817,6 +817,7 @@ function drawReferoIndex() {
     if (!shot || rfHoverTimers.has(a)) return;
     rfHoverTimers.set(a, setTimeout(() => {
       rfHoverTimers.delete(a);
+      if (!shot.isConnected) return; // the grid was replaced while the timer waited
       shot.innerHTML = `<video ${rfMediaAttrs({ local: rfLocalMedia('videos', s, 'mp4'), remote: rfCdn(s.videoRemote) }, false)} muted loop playsinline autoplay></video>`;
     }, RF_HOVER_MS));
   });
