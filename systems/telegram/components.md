@@ -215,7 +215,7 @@ Checklist item: sheet. New Message and the attachment picker rise as sheets with
 
 Crops: [New Message (dark)](components/crops/sheet-new-message.png), [attachment (dark)](components/crops/sheet-attachment.png).
 
-The attachment sheet ends in its own glass tab bar (Gallery, File, Location, Poll, Checklist). Its photo grid is masked.
+The attachment sheet ends in its own glass tab bar (Gallery, File, Location, Poll, Checklist). One thumbnail's hostname is masked.
 
 ## Grouped card
 
@@ -314,7 +314,7 @@ Checklist item: list row. Plain rows on the black or white list background with 
 
 Crops: [call (dark)](components/crops/list-row-call.png), [call (light)](components/crops/list-row-call-light.png), [missed call (dark)](components/crops/list-row-call-missed.png), [missed call (light)](components/crops/list-row-call-missed-light.png), [contact (dark)](components/crops/list-row-contact.png), [contact (light)](components/crops/list-row-contact-light.png), [search result (dark)](components/crops/list-row-search-result.png).
 
-Call-list names are masked in these crops.
+A missed call's name turns red.
 
 ## Destructive row
 

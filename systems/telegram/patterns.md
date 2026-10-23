@@ -41,7 +41,7 @@ The composer floats at the bottom: a round glass paperclip, a glass capsule fiel
 inside it, and a microphone that becomes an accent send pill once there is text
 ([04](screenshots/dark/04-composer-typed-send-button.png)). The paperclip opens the attachment sheet, which has its
 own glass tab bar: Gallery, File, Location, Poll, Checklist ([22](screenshots/dark/22-attachment-sheet-tab-bar.png),
-photo grid masked).
+one hostname in a thumbnail masked).
 
 ## Lists and data display
 
