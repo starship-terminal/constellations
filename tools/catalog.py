@@ -12,8 +12,9 @@
     python3 tools/catalog.py design-md [SLUG...] [--check | --lint | --stdout]  write each package's DESIGN.md
 
 Standard library only, except `design-md --lint`, which runs Google's DESIGN.md linter
-through npx. Thumbnails use macOS `sips` or Pillow when present and
-fall back to the full-size image otherwise. Run from anywhere.
+through npx. Thumbnails use macOS `sips` or Pillow (see
+tools/requirements-capture.txt); with neither, each one falls back to the
+full-size image and `build` warns once. Run from anywhere.
 """
 from __future__ import annotations
 
@@ -934,18 +935,30 @@ def _thumb_name(path: str) -> Path:
     return THUMBS / (path.replace("/", "__").rsplit(".", 1)[0] + ".jpg")
 
 
+@functools.lru_cache(maxsize=1)
+def _thumb_backend() -> str | None:
+    """What makes thumbnails: macOS `sips`, Pillow, or neither. Probed once per run."""
+    if shutil.which("sips"):
+        return "sips"
+    try:
+        from PIL import Image  # noqa: F401
+    except ImportError:
+        return None
+    return "pillow"
+
+
 def _make_thumb(src: Path, dst: Path) -> bool:
     if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
         return True
-    if shutil.which("sips"):
+    backend = _thumb_backend()
+    if backend == "sips":
         done = subprocess.run(["sips", "-s", "format", "jpeg", "-s", "formatOptions", "78",
                                "--resampleWidth", str(THUMB_WIDTH), str(src), "--out", str(dst)],
                               capture_output=True)
         return done.returncode == 0 and dst.exists()
-    try:
-        from PIL import Image  # optional
-    except ImportError:
+    if backend != "pillow":
         return False
+    from PIL import Image
     with Image.open(src) as im:
         im = im.convert("RGB")
         if im.width > THUMB_WIDTH:
@@ -970,6 +983,17 @@ def attach_thumbs(images: list[dict]) -> None:
         thumbs = dict(pool.map(one, paths))
     for item in images:
         item["thumb"] = thumbs[item["path"]]
+
+    degraded = [p for p in paths if thumbs[p] == p]
+    if degraded:
+        backend = _thumb_backend()
+        if backend is None:
+            why = ("no `sips` on PATH and Pillow is not importable; "
+                   "pip install -r tools/requirements-capture.txt")
+        else:
+            why = f"`{backend}` could not convert them"
+        print(f"warning: {len(degraded)} of {len(paths)} gallery thumbnails "
+              f"fell back to the full-size screenshot ({why})", file=sys.stderr)
 
 
 # ---------------------------------------------------------------- commands

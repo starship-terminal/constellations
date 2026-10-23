@@ -8,6 +8,10 @@ import { execFileSync } from 'node:child_process';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 export const { chromium } = pw.default ?? pw;
 
+// Interpreter for the inline Pillow calls below: an activated .venv resolves
+// `python3` to itself, so set PYTHON when Pillow lives elsewhere.
+const PYTHON = process.env.PYTHON || 'python3';
+
 export const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 export const UA_MOBILE =
@@ -223,7 +227,7 @@ export async function centre(locator) {
 // 256 colours, and a crop larger than about 1.2 megapixels (a whole sidebar or
 // section at 2x) is halved, so the folder stays small.
 export function quantize(file) {
-  execFileSync('python3', [
+  execFileSync(PYTHON, [
     '-c',
     'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nif im.width*im.height>1200000: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)',
     file,

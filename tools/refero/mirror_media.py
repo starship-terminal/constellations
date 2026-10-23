@@ -18,6 +18,9 @@ against 404 HTML error pages).
 Usage:
     python3 tools/refero/mirror_media.py [--media-root DIR] [--workers 6]
         [--limit N] [--only shots,posters] [--force] [--compress-videos]
+
+--compress-videos needs ffmpeg on PATH (a ~/.nix-profile/bin/ffmpeg install is
+tried as a fallback); without it the flag warns and videos are mirrored raw.
 """
 
 import argparse

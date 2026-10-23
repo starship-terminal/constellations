@@ -1,7 +1,10 @@
 """Tests for tools/catalog.py. Run with `make test`."""
+import contextlib
 import copy
+import io
 import json
 import re
+import shutil
 import sys
 import unittest
 from pathlib import Path
@@ -74,6 +77,74 @@ class ThumbTest(unittest.TestCase):
             catalog._make_thumb = original
         self.assertEqual(len(calls), 2)
         self.assertEqual([i["thumb"] for i in items], ["systems/a/s.png", "systems/a/s.png", "systems/a/t.png"])
+
+    def test_fallback_to_full_size_warns_once(self):
+        original = catalog._make_thumb
+        catalog._make_thumb = lambda src, dst: False
+        try:
+            items = [{"path": "systems/a/s.png"}, {"path": "systems/a/t.png"}]
+            err = io.StringIO()
+            with contextlib.redirect_stderr(err):
+                catalog.attach_thumbs(items)
+        finally:
+            catalog._make_thumb = original
+        self.assertEqual(err.getvalue().count("warning:"), 1)
+        self.assertIn("2 of 2 gallery thumbnails fell back to the full-size screenshot",
+                      err.getvalue())
+        self.assertEqual([i["thumb"] for i in items], ["systems/a/s.png", "systems/a/t.png"])
+
+    def _warn_on_thumb_failure(self, backend):
+        original_make, original_backend = catalog._make_thumb, catalog._thumb_backend
+        catalog._make_thumb = lambda src, dst: False
+        catalog._thumb_backend = lambda: backend
+        try:
+            err = io.StringIO()
+            with contextlib.redirect_stderr(err):
+                catalog.attach_thumbs([{"path": "systems/a/s.png"}])
+        finally:
+            catalog._make_thumb, catalog._thumb_backend = original_make, original_backend
+        return err.getvalue()
+
+    def test_fallback_warning_names_missing_deps(self):
+        err = self._warn_on_thumb_failure(None)
+        self.assertIn("no `sips` on PATH and Pillow is not importable", err)
+        self.assertIn("requirements-capture.txt", err)
+
+    def test_fallback_warning_names_failed_backend(self):
+        err = self._warn_on_thumb_failure("sips")
+        self.assertIn("`sips` could not convert them", err)
+
+    def test_thumb_backend_prefers_sips_else_pillow_else_none(self):
+        sentinel = object()
+        saved_pil = sys.modules.get("PIL", sentinel)
+        original_which = shutil.which
+        try:
+            shutil.which = lambda name: "/usr/bin/sips"
+            catalog._thumb_backend.cache_clear()
+            self.assertEqual(catalog._thumb_backend(), "sips")
+
+            shutil.which = lambda name: None
+            sys.modules["PIL"] = None  # forces ImportError on `from PIL import ...`
+            catalog._thumb_backend.cache_clear()
+            self.assertIsNone(catalog._thumb_backend())
+        finally:
+            shutil.which = original_which
+            if saved_pil is sentinel:
+                sys.modules.pop("PIL", None)
+            else:
+                sys.modules["PIL"] = saved_pil
+            catalog._thumb_backend.cache_clear()
+        try:
+            import PIL  # noqa: F401
+        except ImportError:
+            self.skipTest("Pillow not installed")
+        shutil.which = lambda name: None
+        catalog._thumb_backend.cache_clear()
+        try:
+            self.assertEqual(catalog._thumb_backend(), "pillow")
+        finally:
+            shutil.which = original_which
+            catalog._thumb_backend.cache_clear()
 
 
 class ExportTest(unittest.TestCase):
