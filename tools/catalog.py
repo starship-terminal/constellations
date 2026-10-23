@@ -1024,6 +1024,9 @@ def check() -> list[str]:
     on_disk = sorted(p.name for p in (ROOT / "systems").iterdir() if p.is_dir())
     for missing in sorted(set(on_disk) - set(slugs)):
         problems.append(f"systems/{missing} has no catalog.json entry")
+    for dup in sorted({s for s in slugs if s and slugs.count(s) > 1}):
+        problems.append(f"{dup}: more than one catalog entry uses this slug")
+    categories = catalog.get("categories", {})
     for s in catalog["systems"]:
         slug = s.get("slug", "?")
         for field in REQUIRED_FIELDS:
@@ -1031,6 +1034,8 @@ def check() -> list[str]:
                 problems.append(f"{slug}: missing field {field}")
         if "platform" in s and s["platform"] not in PLATFORMS:
             problems.append(f"{slug}: platform {s['platform']!r} is not one of {', '.join(PLATFORMS)}")
+        if "category" in s and s["category"] not in categories:
+            problems.append(f"{slug}: category {s['category']!r} is not in categories")
         if not (ROOT / "systems" / slug).is_dir():
             problems.append(f"{slug}: systems/{slug} does not exist")
             continue
@@ -1040,6 +1045,15 @@ def check() -> list[str]:
         for field in ("entry", "tokens", "styleGuide"):
             if field in s and not (ROOT / s[field]).exists():
                 problems.append(f"{slug}: {field} {s[field]} does not exist")
+        extras = s.get("extras", [])
+        if not isinstance(extras, list):
+            problems.append(f"{slug}: extras must be a list of paths")
+        else:
+            for path in extras:
+                if not isinstance(path, str):
+                    problems.append(f"{slug}: extras path {path!r} is not a string")
+                elif not (ROOT / path).exists():
+                    problems.append(f"{slug}: extras path {path} does not exist")
         problems += layout_problems(s)
         if "preview" not in s or "tokens" not in s:
             continue
@@ -1346,8 +1360,25 @@ def build_refero() -> Path | None:
     out_dir = SITE / "refero"
     ent_dir = out_dir / "style"
     ent_dir.mkdir(parents=True, exist_ok=True)
+    name_count: dict[str, int] = {}
+    for _, meta, _ in styles:
+        if meta.get("name"):
+            key = str(meta["name"]).lower()
+            name_count[key] = name_count.get(key, 0) + 1
+    # A `similar` business name resolves to a slug only when exactly one style
+    # carries it. Names several styles share (Apple x6) would otherwise keep
+    # the last alphabetical match, a confident wrong link; the gallery renders
+    # a `slug: null` entry as an unlinked card with the name and why.
     slug_of = {str(meta["name"]).lower(): meta.get("slug") or folder.name
-               for folder, meta, _ in styles if meta.get("name")}
+               for folder, meta, _ in styles
+               if meta.get("name") and name_count[str(meta["name"]).lower()] == 1}
+    ambiguous = {n for n, count in name_count.items() if count > 1}
+    if ambiguous:
+        dropped = sum(str(s.get("business") or "").lower() in ambiguous
+                      for _, _, ds in styles for s in ds.get("similar") or []
+                      if isinstance(s, dict))
+        print(f"refero: {dropped} similar links left unlinked; "
+              f"{len(ambiguous)} business names are not unique", file=sys.stderr)
     index = []
     for folder, meta, ds in styles:
         slug = meta.get("slug") or folder.name

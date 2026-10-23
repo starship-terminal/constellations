@@ -44,6 +44,7 @@ python3 tools/refero/fetch.py --force    # re-fetch everything
 python3 tools/refero/fetch.py --enrich-media   # backfill video/poster URLs into db + meta.json
 python3 tools/refero/classify.py         # label unlabeled styles into product_type/design_style/tags
 python3 tools/refero/classify.py --stats # print the label distribution
+python3 tools/refero/check.py            # assert refero.db, the style folders and catalog.json agree (make check runs it)
 ```
 
 Labels come from [../tools/refero/classify.py](../tools/refero/classify.py):
