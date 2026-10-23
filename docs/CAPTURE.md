@@ -35,7 +35,27 @@ how it was captured. The `extract-style` skill in the quiver-hub
 The Playwright scripts take `PLAYWRIGHT` as the path to any Playwright
 install's `index.mjs`. The package READMEs show a path inside self-learn;
 any install works. The signed-in scripts take `SNAPS` as the folder of page
-copies.
+copies. The `.mjs` scripts run their inline Pillow calls through `python3`;
+set `PYTHON` when the interpreter with the dependencies below lives
+elsewhere (an activated `.venv` resolves bare `python3` to itself).
+
+## Dependencies
+
+`make setup` installs
+[tools/requirements-capture.txt](../tools/requirements-capture.txt) into
+`.venv` along with the site builder's requirements. On a capture host
+without it, run `pip install -r tools/requirements-capture.txt` into the
+interpreter `PYTHON`/`python3` resolves to.
+
+| Dependency | Needed by |
+|---|---|
+| Pillow (`pillow`) | `capture/quantize.py` and its per-package copies, `crops.py`, `srgb.py`, `shot.py`, `store.py`, the inline `python3 -c "from PIL import …"` quantize calls in the `.mjs` scripts, `tools/make_icons.py`, `tools/redact_images.py`, linear's `build_guide.py`/`build_library.py`, polaris's `build_vectors.py`, and `tools/catalog.py` gallery thumbnails (macOS `sips` is used instead when present; with neither, thumbs fall back to the full-size screenshot and `build` warns once) |
+| numpy (`numpy`) | `tools/redact_images.py` (also needs `tesseract` on PATH) |
+| markdown (`markdown`) | `tools/site.py`, linear's `build_guide.py` |
+| fontTools (`fonttools`) | polaris's `build_vectors.py` (text measurement; widths drift across versions) |
+| ffmpeg | `tools/refero/mirror_media.py --compress-videos`; a binary on PATH, not pip (`~/.nix-profile/bin/ffmpeg` is a fallback) |
+| `sips` | gallery thumbnails on macOS; optional, Pillow covers Linux |
+| Node.js + Playwright | every `*.mjs` capture script |
 
 ## What to capture: the coverage checklist
 

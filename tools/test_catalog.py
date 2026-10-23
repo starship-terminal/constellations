@@ -1,5 +1,7 @@
 """Tests for tools/catalog.py. Run with `make test`."""
+import contextlib
 import copy
+import io
 import json
 import re
 import sys
@@ -74,6 +76,21 @@ class ThumbTest(unittest.TestCase):
             catalog._make_thumb = original
         self.assertEqual(len(calls), 2)
         self.assertEqual([i["thumb"] for i in items], ["systems/a/s.png", "systems/a/s.png", "systems/a/t.png"])
+
+    def test_fallback_to_full_size_warns_once(self):
+        original = catalog._make_thumb
+        catalog._make_thumb = lambda src, dst: False
+        try:
+            items = [{"path": "systems/a/s.png"}, {"path": "systems/a/t.png"}]
+            err = io.StringIO()
+            with contextlib.redirect_stderr(err):
+                catalog.attach_thumbs(items)
+        finally:
+            catalog._make_thumb = original
+        self.assertEqual(err.getvalue().count("warning:"), 1)
+        self.assertIn("2 of 2 gallery thumbnails fell back to the full-size screenshot",
+                      err.getvalue())
+        self.assertEqual([i["thumb"] for i in items], ["systems/a/s.png", "systems/a/t.png"])
 
 
 class ExportTest(unittest.TestCase):

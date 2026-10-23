@@ -22,6 +22,10 @@ export const CROPS = path.join(REF, 'components', 'crops');
 export const SNAPS = process.env.SNAPS ? path.resolve(process.env.SNAPS) : null;
 export const CACHE = process.env.CDN_CACHE ? path.resolve(process.env.CDN_CACHE) : SNAPS && `${SNAPS}-cdn-cache`;
 
+// Interpreter for the inline Pillow calls in measure.mjs: an activated .venv
+// resolves `python3` to itself, so set PYTHON when Pillow lives elsewhere.
+export const PYTHON = process.env.PYTHON || 'python3';
+
 // The scroll each thread copy needs, as in shots.tsv: the thread is one long list (not
 // virtualised), so one copy is read at three scroll positions of its inner scroller.
 export const SCROLL = { 'thread-dark-table': '1150', 'thread-dark-followup': '1780' };

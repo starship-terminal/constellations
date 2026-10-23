@@ -73,3 +73,7 @@ python3 tools/refero/mirror_media.py                    # everything missing
 python3 tools/refero/mirror_media.py --only favicons    # one kind
 python3 tools/refero/mirror_media.py --compress-videos  # 960px/crf28 shrink
 ```
+
+`--compress-videos` needs ffmpeg on PATH (it also tries
+`~/.nix-profile/bin/ffmpeg`); without it the run warns and mirrors the videos
+uncompressed.
