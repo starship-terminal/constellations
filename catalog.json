@@ -8,8 +8,7 @@
     "ai-research": "AI research",
     "productivity": "Productivity",
     "fitness": "Fitness",
-    "component-library": "Component libraries",
-    "reading": "Reading and publishing"
+    "component-library": "Component libraries"
   },
   "systems": [
     {
@@ -871,70 +870,6 @@
       },
       "layoutGaps": {
         "icons/": "Grok Bot's icons and bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
-      }
-    },
-    {
-      "slug": "substack",
-      "name": "Substack",
-      "url": "https://substack.com",
-      "category": "reading",
-      "platform": "mobile",
-      "goodFor": "Native iOS reading and newsletter app: near-black or white page, floating glass tab bar, one orange for the app's own actions, system blue for controls, a publication's colour on its Subscribe buttons, serif post bodies",
-      "tags": [
-        "ios",
-        "mobile",
-        "reading",
-        "publishing",
-        "newsletter",
-        "feed",
-        "glass",
-        "tab-bar",
-        "serif",
-        "grouped-list"
-      ],
-      "shape": "reference",
-      "captured": "2026-10-24",
-      "access": "signed in, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
-      "entry": "systems/substack/README.md",
-      "tokens": "systems/substack/tokens.json",
-      "styleGuide": "systems/substack/style-guide.html",
-      "preview": {
-        "cover": "systems/substack/screenshots/dark/03-read-tabs-featured-card-inbox-unread.png",
-        "swatches": {
-          "light": {
-            "page": "light.color.bg.page",
-            "surface": "light.color.surface.raised",
-            "text": "light.color.text.primary",
-            "muted": "light.color.text.secondary",
-            "accent": "light.color.accent.brand",
-            "border": "light.color.border.divider"
-          },
-          "dark": {
-            "page": "dark.color.bg.page",
-            "surface": "dark.color.surface.raised",
-            "text": "dark.color.text.primary",
-            "muted": "dark.color.text.secondary",
-            "accent": "dark.color.accent.brand",
-            "border": "dark.color.border.divider"
-          }
-        },
-        "fonts": [
-          "core.fontFamily.base",
-          "core.fontFamily.reader"
-        ]
-      },
-      "source": {
-        "path": "~/.design-systems/substack/raw-shots (full-colour captures, outside the repo)"
-      },
-      "layoutGaps": {
-        "icons/": "Substack's icons and the publications' artwork are theirs and are not kept here (docs/RIGHTS.md)"
       }
     }
   ]
