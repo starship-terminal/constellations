@@ -45,6 +45,7 @@ colors:
   color-text-sectionHeader: "#8D8D8D"
   color-text-footnote: "#86858C"
   color-text-placeholder: "#8C8C8C"
+  color-text-fieldPlaceholder: "#928E8F"
   color-text-chevron: "#C4C4C6"
   color-text-suggestion: "#5C5C5C"
   color-text-timestamp: "#8E8E8E"
@@ -108,6 +109,11 @@ typography:
     fontSize: "12px"
     fontWeight: 400
     lineHeight: "16px"
+  taskBody:
+    fontFamily: "system"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: "18px"
 rounded:
   card: "26px"
   composer: "22px"
@@ -144,7 +150,7 @@ A token set and component reference for ChatGPT's native iOS app (OpenAI). Use i
 
 It holds 41 captures: 22 in dark (new chat in both modes, the composer, plus and chat menus, the sidebar, a thread, find in chat, Settings, General, Personalization with an error alert, Usage, the effort slider, search and Scheduled) and 19 of the same screens in light. Under the repository's rule (AGENTS.md) nothing in them is masked: they show the owner's chats, suggestions and work email (on the allow list), and no credentials or personally identifiable data.
 
-[systems/chatgpt](../chatgpt/README.md) is ChatGPT's web app, captured separately from its CSS. This package takes no values from it; [Compared with the web app](#compared-with-the-web-app) says how the two differ.
+[systems/chatgpt](../chatgpt/README.md) is ChatGPT's web app, captured separately from its CSS. This package takes no values from it; [Compared with the web app](README.md#compared-with-the-web-app) says how the two differ.
 
 This package contains no ChatGPT code, and none of its artwork has been redrawn. The screenshots and the visual system they show are OpenAI's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the icons, the logo or the accent palette as a brand.
 
@@ -161,7 +167,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-8 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: system.
+9 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: system.
 
 ### Fonts (from README.md)
 
@@ -170,7 +176,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 | Unknown (matches the iOS system face) | Everything. The style guide uses the platform sans; nothing is committed or needed |
 | Unknown serif italic (close to KaTeX's) | Rendered maths in replies |
 
-Type roles, in points: the sidebar's ChatGPT title 22 bold; plus-menu items 20; nav titles, section headers, the alert title and bold reply lines 17 semibold; reply text, rows, sidebar items, recents, menu items, the composer, suggestions, tab and pill labels 17 regular; Chat / Work labels and empty-state body 15; alert body 14; helper text, task-card descriptions, the thread's date line and the usage reset time 12. Reply text runs on a 24 pt line, the owner's bubble on 26 pt, the alert body on 20 pt and helper text on 16 pt.
+Type roles, in points: the sidebar's ChatGPT title 22 bold; plus-menu items 20; nav titles, section headers, the alert title and bold reply lines 17 semibold; reply text, rows, sidebar items, recents, menu items, the composer, suggestions, tab and pill labels 17 regular; Chat / Work labels and empty-state body 15; alert body 14; helper text, task-card descriptions, the thread's date line and the usage reset time 12. Reply text runs on a 24 pt line, the owner's bubble on 26 pt, the alert body on 20 pt, task-card descriptions on 18 pt and helper text on 16 pt.
 
 ## Layout
 

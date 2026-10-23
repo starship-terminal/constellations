@@ -203,7 +203,8 @@ def core():
         "bubble": ty("type.userBubble", "regular", lines("lines.userBubble"), "Text in the owner's bubble: body size on a looser line."),
         "callout": ty("type.segment", "medium", None, "Chat / Work labels and empty-state body text.", ("type.emptyBody",)),
         "subheadline": ty("type.dialogBody", "regular", lines("lines.dialogBody"), "Alert body."),
-        "footnote": ty("type.footnote", "regular", lines("lines.footnote"), "Helper text under cards, task-card descriptions (on an 18 pt line), the thread date line, the usage reset time.", ("type.cardBody", "type.timestamp", "type.usageFoot")),
+        "footnote": ty("type.footnote", "regular", lines("lines.footnote"), "Helper text under cards, the thread date line, the usage reset time.", ("type.timestamp", "type.usageFoot")),
+        "taskBody": ty("type.cardBody", "regular", lines("lines.taskBody"), "Task-card descriptions on Scheduled: footnote size on a looser line."),
     }
     c["$extensions"] = {"notTokenised": [
         "iOS 26 glass (round buttons, the Chat / Work control, the composer, menus, the alert, the search field, the slider): blur and refraction come from the system material",
@@ -277,7 +278,8 @@ def semantic(theme):
             "muted": f("text.seeAll", f"See all, empty-state body, unselected tabs, the model pill's effort, find-in-chat count, task-card descriptions. Readings in this role: {', '.join(sorted({rd(r, theme)['value'] for r in ('text.seeAll', 'text.emptyBody', 'text.emptyLine', 'text.tabUnselected', 'text.modelEffort', 'text.findCount', 'text.taskBody')}))}."),
             "sectionHeader": f("text.sectionHeader", "Settings section headers (Customize ChatGPT, Account)."),
             "footnote": f("text.footnote", "Helper text under a card."),
-            "placeholder": f("text.placeholder", f"Composer placeholder; the custom-instructions field reads {rd('text.fieldPlaceholder', theme)['value']}."),
+            "placeholder": f("text.placeholder", "Composer and search placeholders."),
+            "fieldPlaceholder": f("text.fieldPlaceholder", "Placeholder in a grouped-card field (Custom instructions): lighter than the composer's in dark."),
             "chevron": f("text.chevron", "Disclosure chevrons and the pop-up arrows on row values."),
             "suggestion": f("text.suggestion", "Suggestion rows above an empty composer."),
             "timestamp": one_theme(theme, "text.timestamp", "dark", "The thread's date line.", "text.seeAll", "the banner covered it, so text.muted is used, which reads the same in dark."),

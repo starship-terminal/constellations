@@ -124,7 +124,7 @@ Checklist item: text field. Custom instructions in Personalization: a grouped ca
 |---|---|
 | fill | `color.surface.card` |
 | corner | `radius.card` |
-| placeholder | `color.text.placeholder` |
+| placeholder | `color.text.fieldPlaceholder` |
 | header | `color.text.sectionHeader` |
 
 Crops: [empty (dark)](components/crops/text-field-empty.png), [empty (light)](components/crops/text-field-empty-light.png).
@@ -300,7 +300,7 @@ Checklist item: card. A recommended Scheduled task: emoji, title, three lines of
 | rim width | `border.width.dashed` |
 | title type | `typography.body` |
 | description | `color.text.muted` |
-| description type | `typography.footnote` |
+| description type | `typography.taskBody` |
 
 Crops: [recommended (dark)](components/crops/card-task.png), [recommended (light)](components/crops/card-task-light.png).
 

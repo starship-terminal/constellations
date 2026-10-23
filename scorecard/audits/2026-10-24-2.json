@@ -1835,7 +1835,7 @@
     },
     "F3": {
      "grade": "partly",
-     "evidence": "color.text.primary, reply, secondary, muted, placeholder, onAccent, accent, danger and onUserBubble in both themes. No disabled or link role: no disabled control or link appeared (README Coverage)."
+     "evidence": "color.text.primary, reply, secondary, muted, placeholder, fieldPlaceholder, onAccent, accent, danger and onUserBubble in both themes. No disabled or link role: no disabled control or link appeared (README Coverage)."
     },
     "F4": {
      "grade": "partly",
@@ -1855,7 +1855,7 @@
     },
     "F8": {
      "grade": "partly",
-     "evidence": "core.typography has 8 named roles (titleLarge, menuLarge, headline, body, bubble, callout, subheadline, footnote) with sizes from cap heights and weights by eye, all Derived; line heights only for body, bubble, subheadline and footnote; roles are not mapped to Dynamic Type names; fontFamily.base is system, Not captured."
+     "evidence": "core.typography has 9 named roles (titleLarge, menuLarge, headline, body, bubble, callout, subheadline, footnote, taskBody) with sizes from cap heights and weights by eye, all Derived; line heights only for body, bubble, subheadline, footnote and taskBody; roles are not mapped to Dynamic Type names; fontFamily.base is system, Not captured."
     },
     "F9": {
      "grade": "partly",
@@ -1867,7 +1867,7 @@
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Control heights in core.size (row 52, nav button 44, segmented 159 x 49, composer 92, send 32, pill 48, ink pill 40, tab 44, switch 62 x 28, alert button 48, search field 48, slider 84) and core.size.touchTarget 44 with the smaller send button named; no icon sizes."
+     "evidence": "Control heights in core.size (row 52, nav button 44, segmented 159 x 49, composer 92, send 32, pill 48, ink pill 40, tab 44, switch 62 x 28, alert 320 wide, alert button 48, search field 48, slider 72) and core.size.touchTarget 44 with the smaller send button named; no icon sizes."
     },
     "F12": {
      "grade": "meets",
@@ -1915,7 +1915,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 208 of 208 tokens name their source"
+     "evidence": "Script: 211 of 211 tokens name their source"
     },
     "K2": {
      "grade": "meets",

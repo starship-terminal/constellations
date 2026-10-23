@@ -83,7 +83,7 @@ R = {
     "border.taskCard":    (D["21"], "fill", (251, 543, 14, 1), "One dash of a recommended task card's rim, one pixel row"),
     "border.taskCardLight": (L["21"], "fill", (251, 542, 14, 1), "One dash of a recommended task card's rim, one pixel row"),
     "surface.searchTile": (C["19"], "fill", (370, 520, 70, 10), "Rounded tile behind the empty-state magnifier"),
-    "surface.searchBar":  (C["20"], "fill", (300, 1590, 300, 10), "Search field at the bottom of search (glass)"),
+    "surface.searchBar":  (D["20"], "fill", (300, 1590, 300, 10), "Search field at the bottom of search (glass)"),
     "surface.progressTrack": (C["14"], "fill", (600, 472, 100, 8), "Usage meter track, unfilled part"),
     "surface.sliderTrack": (C["16"], "fill", (470, 1580, 150, 8), "Effort slider track (glass)"),
     "border.divider":     (C["09"], "fill", (300, 461, 200, 1), "Hairline between grouped rows, one pixel row"),
@@ -162,15 +162,15 @@ R = {
     "size.tab.h":         (D["21"], "extent", ("col", 90, 290, 420, (90, 292), 12), "Selected tab pill, height"),
     "size.menuIcon":      (D["04"], "bbox", ((80, 1100), (55, 1015, 130, 130), 6), "Round icon well in the plus menu"),
     "size.menu.w":        (D["04"], "extent", ("row", 1150, 20, 800, (700, 1150), 12), "Plus menu, width"),
-    "size.dialog.w":      (D["12"], "extent", ("row", 955, 40, 780, (60, 955), 6), "Alert, width"),
-    "size.dialog.h":      (D["12"], "extent", ("col", 400, 700, 1150, (400, 705), 6), "Alert, height"),
+    "size.dialog.w":      (D["12"], "extent", ("row", 955, 50, 760, (60, 955), 6), "Alert, width"),
+    "size.dialog.h":      (D["12"], "extent", ("col", 400, 745, 1109, (400, 745), 6), "Alert, height"),
     "size.dialogButton":  (D["12"], "bbox", ((140, 995), (100, 960, 310, 130), 6), "Alert button (Cancel)"),
     "size.searchBar.h":   (D["20"], "extent", ("col", 400, 1540, 1720, (400, 1545), 12), "Search field, height"),
     "size.searchBar.w":   (D["20"], "extent", ("row", 1590, 20, 665, (25, 1590), 12), "Search field, width"),
     "size.searchTile":    (C["19"], "bbox", ((370, 520), (350, 440, 110, 110), 6), "Empty-state magnifier tile"),
     "size.progress.h":    (C["14"], "extent", ("col", 600, 455, 500, (600, 458), 6), "Usage meter track, height"),
     "size.userBubble":    (D["08"], "bbox", ((600, 560), (200, 360, 600, 600), 4), "The owner's bubble (nine lines)"),
-    "size.slider.h":      (D["16"], "extent", ("col", 470, 1530, 1720, (470, 1535), 10), "Effort slider track, height"),
+    "size.slider.h":      (D["16"], "extent", ("col", 500, 1530, 1700, (500, 1535), 12), "Effort slider track, height"),
     "size.sliderThumb":   (D["16"], "bbox", ((345, 1615), (300, 1560, 110, 120), 20), "Effort slider thumb"),
     # ---------------------------------------------------------------- radii
     "radius.card":        (C["09"], "diag", (400, 380, 150, 455), "Settings card"),
@@ -247,6 +247,8 @@ def op_extent(rows, axis, line, a, b, bgpt, thr):
     pix = (lambda i: rows[line][i]) if axis == "row" else (lambda i: rows[i][line])
     hits = [i for i in range(a, b) if d(pix(i), bg) > thr]
     start, end = hits[0], hits[-1]
+    if start == a or end == b - 1:   # the control runs to the scan's end, so the scan did not find its edge
+        raise ValueError(f"extent reached the scan limit ({a} to {b - 1}): widen the scan or move the background point")
     return {"value": f"{(end - start + 1) / SCALE:g}pt", "from": start, "to": end, "evidence": "Sampled"}
 
 
@@ -368,8 +370,10 @@ def write(readings):
 
 if __name__ == "__main__":
     readings = run(sys.argv[1] if len(sys.argv) > 1 else f"~/.design-systems/{SLUG}/raw-shots")
-    missing = sorted(rid for rid in R if rid not in readings)
-    if missing:   # a light-only gap is fine; a reading with no theme at all means a capture is absent
-        raise SystemExit(f"no capture for {len(missing)} readings ({', '.join(missing[:5])}...); nothing written")
+    # A reading without a theme prefix is read in both themes; a theme missing for one means a capture is absent.
+    short = sorted(rid for rid, (cap, *_) in R.items()
+                   if set(readings.get(rid, {})) != ({cap.split("/")[0]} if "/" in cap else {"dark", "light"}))
+    if short:
+        raise SystemExit(f"{len(short)} readings lack a theme they need ({', '.join(short[:5])}...); nothing written")
     write(readings)
     print(f"{sum(len(v) for v in readings.values())} readings of {len(readings)} ids")

@@ -1704,11 +1704,11 @@
    "args": [
     "col",
     400,
-    700,
-    1150,
+    745,
+    1109,
     [
      400,
-     705
+     745
     ],
     6
    ],
@@ -1717,8 +1717,8 @@
    "from": 760,
    "note": "Alert, height",
    "op": "extent",
-   "to": 1149,
-   "value": "195pt"
+   "to": 1105,
+   "value": "173pt"
   }
  },
  "size.dialog.w": {
@@ -1726,8 +1726,8 @@
    "args": [
     "row",
     955,
-    40,
-    780,
+    50,
+    760,
     [
      60,
      955
@@ -1736,11 +1736,11 @@
    ],
    "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
    "evidence": "Sampled",
-   "from": 40,
+   "from": 86,
    "note": "Alert, width",
    "op": "extent",
-   "to": 779,
-   "value": "370pt"
+   "to": 725,
+   "value": "320pt"
   }
  },
  "size.dialogButton": {
@@ -2232,22 +2232,22 @@
   "dark": {
    "args": [
     "col",
-    470,
+    500,
     1530,
-    1720,
+    1700,
     [
-     470,
+     500,
      1535
     ],
-    10
+    12
    ],
    "capture": "screenshots/dark/16-effort-slider-stepped.png",
    "evidence": "Sampled",
    "from": 1552,
    "note": "Effort slider track, height",
    "op": "extent",
-   "to": 1719,
-   "value": "84pt"
+   "to": 1695,
+   "value": "72pt"
   }
  },
  "size.sliderThumb": {
