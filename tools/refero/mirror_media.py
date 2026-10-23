@@ -4,11 +4,12 @@
 Reads refero/refero.db and downloads into a media root (default:
 $DESIGN_SYSTEMS_MEDIA or ~/services/design-systems/media/refero):
 
-    shots/<slug>.jpg      styles.screenshot_url
-    posters/<slug>.jpg    styles.video_poster_url
-    videos/<slug>.mp4     styles.video_url
-    detail/<slug>.mp4     styles.video_detail_url
-    favicons/<slug>.png   Google faviconV2 for the source_url host
+    shots/<slug>.jpg           styles.screenshot_url
+    posters/<slug>.jpg         styles.video_poster_url
+    videos/<slug>.mp4          styles.video_url
+    detail/<slug>.mp4          styles.video_detail_url
+    detail-posters/<slug>.jpg  styles.video_detail_poster_url
+    favicons/<slug>.png        Google faviconV2 for the source_url host
 
 Resumable: existing non-empty files are skipped unless --force. Downloads go
 to <name>.partial and are renamed on success; a response whose Content-Type
@@ -18,6 +19,7 @@ against 404 HTML error pages).
 Usage:
     python3 tools/refero/mirror_media.py [--media-root DIR] [--workers 6]
         [--limit N] [--only shots,posters] [--force] [--compress-videos]
+    python3 tools/refero/mirror_media.py --check   # exit 1 if any expected file is absent
 
 --compress-videos needs ffmpeg on PATH (a ~/.nix-profile/bin/ffmpeg install is
 tried as a fallback); without it the flag warns and videos are mirrored raw.
@@ -31,7 +33,6 @@ import sqlite3
 import subprocess
 import sys
 import time
-import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -41,47 +42,36 @@ DEFAULT_MEDIA_ROOT = Path(
     os.environ.get("DESIGN_SYSTEMS_MEDIA")
     or "~/services/design-systems/media/refero").expanduser()
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import refero_media  # noqa: E402
+
 UA = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                   "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml",
 }
 
-# kind -> (extension, required Content-Type prefix)
-KINDS = {
-    "shots": (".jpg", "image/"),
-    "posters": (".jpg", "image/"),
-    "videos": (".mp4", "video/"),
-    "detail": (".mp4", "video/"),
-    "favicons": (".png", "image/"),
-}
+# The kind -> (extension, Content-Type) table, /refero-media path builders and
+# the gstatic favicon URL all live in refero_media.py, shared with catalog.py's
+# emitted `local`/`remote` fields.
+KINDS = refero_media.KINDS
+FAVICON_API = refero_media.FAVICON_API
+favicon_url = refero_media.favicon_url
+media_dest = refero_media.media_dest
+
 # Some CDNs serve media with a generic type; still not an HTML error page.
 GENERIC_CT = {"application/octet-stream", "binary/octet-stream"}
-FAVICON_API = ("https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON"
-               "&fallback_opts=TYPE,SIZE,URL&size=128&url=")
-
-
-def favicon_url(source_url):
-    """gstatic faviconV2 for the source host. The url param needs a scheme;
-    a bare host returns 404."""
-    if not source_url:
-        return None
-    parsed = urllib.parse.urlparse(
-        source_url if "://" in source_url else "https://" + source_url)
-    if not parsed.netloc:
-        return None
-    return FAVICON_API + urllib.parse.quote("https://" + parsed.netloc,
-                                            safe="")
 
 
 def style_urls(row):
     """All candidate (kind, url) pairs for one styles row."""
-    slug, shot, poster, video, detail, source = row
+    slug, shot, poster, video, detail, detail_poster, source = row
     return {
         "shots": shot,
         "posters": poster,
         "videos": video,
         "detail": detail,
+        "detail-posters": detail_poster,
         "favicons": favicon_url(source),
     }
 
@@ -136,6 +126,23 @@ def compress_video(path, ffmpeg):
         tmp.unlink(missing_ok=True)
 
 
+def missing_files(rows, media_root, only):
+    """(kind, slug) pairs whose emitted local file is absent or empty.
+
+    A remote URL exists for the row but the mirror file does not, so a page
+    serving /refero-media would 404 and fall back to the CDN."""
+    missing = []
+    for row in rows:
+        slug = row[0]
+        for kind, url in style_urls(row).items():
+            if kind not in only or not url:
+                continue
+            dest = media_dest(media_root, kind, slug)
+            if not (dest.is_file() and dest.stat().st_size > 0):
+                missing.append((kind, slug))
+    return missing
+
+
 def open_db():
     """Open refero.db read-only.
 
@@ -178,6 +185,9 @@ def main():
                     help="comma list of " + ",".join(KINDS))
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--compress-videos", action="store_true")
+    ap.add_argument("--check", action="store_true",
+                    help="verify every expected file exists under the media root; "
+                         "downloads nothing")
     args = ap.parse_args()
 
     only = (set(KINDS) if not args.only
@@ -200,7 +210,7 @@ def main():
     try:
         rows = db.execute(
             """SELECT slug, screenshot_url, video_poster_url, video_url,
-                      video_detail_url, source_url
+                      video_detail_url, video_detail_poster_url, source_url
                FROM styles ORDER BY slug""").fetchall()
     except sqlite3.DatabaseError as ex:
         sys.exit(f"error: {DB}: {ex}; run tools/refero/fetch.py first")
@@ -208,6 +218,24 @@ def main():
         db.close()
     if args.limit:
         rows = rows[:args.limit]
+
+    if args.check:
+        missing = missing_files(rows, args.media_root, only)
+        if not missing:
+            print(f"media root ok: every expected file exists under "
+                  f"{args.media_root}")
+            return
+        by_kind = {k: [] for k in KINDS}
+        for kind, slug in missing:
+            by_kind[kind].append(slug)
+        for kind in KINDS:
+            slugs = by_kind[kind]
+            if not slugs:
+                continue
+            print(f"{kind}: {len(slugs)} missing "
+                  f"(e.g. {', '.join(slugs[:3])})", file=sys.stderr)
+        sys.exit(f"{len(missing)} expected files missing under "
+                 f"{args.media_root}")
 
     counts = {k: {"downloaded": 0, "skipped": 0, "missing": 0, "failed": 0,
                   "compressed": 0} for k in KINDS}
@@ -220,7 +248,7 @@ def main():
             if not url:
                 counts[kind]["missing"] += 1
                 continue
-            dest = args.media_root / kind / (slug + KINDS[kind][0])
+            dest = media_dest(args.media_root, kind, slug)
             if (dest.exists() and dest.stat().st_size > 0
                     and not args.force):
                 counts[kind]["skipped"] += 1
