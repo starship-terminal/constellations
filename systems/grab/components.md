@@ -289,7 +289,6 @@ Checklist item: dialog. Sheet over a scrim with an illustration, a two-line titl
 | fill | `color.surface.sheet` |
 | corner | `radius.sheet` |
 | scrim | `color.bg.scrim` |
-| lighter scrim | `color.bg.scrimLight` |
 | title type | `typography.sheetTitle` |
 | flash header | `color.service.flash` |
 | timer box | `color.service.timer` |

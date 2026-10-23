@@ -100,7 +100,7 @@ INVENTORY = [
     ("Coach mark", "tooltip", "White card over a scrim, pointing at a control, with a Next button.",
      [("fill", "color.surface.sheet"), ("scrim", "color.bg.scrim"), ("button", "color.button.primary.bg")], [("shown", "coachmark-export")], ""),
     ("Bottom sheet", "dialog", "Sheet over a scrim with an illustration, a two-line title, body and two buttons; or a coloured flash-deals sheet with a countdown.",
-     [("fill", "color.surface.sheet"), ("corner", "radius.sheet"), ("scrim", "color.bg.scrim"), ("lighter scrim", "color.bg.scrimLight"),
+     [("fill", "color.surface.sheet"), ("corner", "radius.sheet"), ("scrim", "color.bg.scrim"),
       ("title type", "typography.sheetTitle"), ("flash header", "color.service.flash"), ("timer box", "color.service.timer")],
      [("permission pre-prompt", "sheet-preprompt"), ("flash deals", "sheet-flash-deals"), ("pickup, over the map", "sheet-pickup-over-map")],
      "The map behind the pickup sheet is masked: it was centred on the owner's home."),

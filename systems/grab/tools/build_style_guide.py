@@ -110,13 +110,17 @@ def build():
                       % (esc(".".join(p)), esc(css(t["$value"])), esc(t["$value"])) for p, t in under(("space",)))
     sizes = "".join('<div class="space-row"><code>%s</code><span class="bar thin" style="width:%s"></span><span>%s</span></div>'
                     % (esc(".".join(p)), esc(css(t["$value"])), esc(t["$value"])) for p, t in under(("size",)))
+    others = "".join('<tr><th scope="row"><code>%s</code><span class="desc">%s</span></th><td><code>%s</code></td><td><span class="ev %s">%s</span></td></tr>'
+                     % (esc(".".join(p)), esc(t["$description"]), esc(t["$value"]), EV_CLASS[t["$extensions"]["source"]["evidence"]],
+                        esc(t["$extensions"]["source"]["evidence"])) for p, t in under(("border",)) + under(("fontFamily",)) + under(("fontWeight",)))
     sample = {  # PRODUCT (adapt): specimen text per type style
         "largeTitle": "Activity", "sheetTitle": "Timely updates for a stress-free experience", "display": "Night munchies",
         "title": "For more value", "button": "Book Standard", "body": "Subscriptions", "chip": "Transport",
         "subhead": "May contain dairy, egg, or alliums", "label": "Finance", "caption": "Messages"}
     type_rows = "".join('<tr><th scope="row"><code>%s</code><span class="desc">%s</span></th><td class="meta">%s, %s%s</td>'
                         '<td><span class="type-%s">%s</span></td></tr>'
-                        % (esc(".".join(p)), esc(t["$description"]), esc(t["$value"]["fontSize"]), esc(t["$value"]["fontWeight"]),
+                        % (esc(".".join(p)), esc(t["$description"]), esc(t["$value"]["fontSize"]),
+                           esc("%s %s" % (t["$value"]["fontFamily"].strip("{}").split(".")[-1], resolve(t["$value"]["fontWeight"], core_by))),
                            (", line " + t["$value"]["lineHeight"]) if "lineHeight" in t["$value"] else "", p[-1], esc(sample.get(p[-1], "Sample")))
                         for p, t in under(("typography",)))
 
@@ -131,7 +135,7 @@ def build():
     <div class="cards"><div class="mini"><span class="type-label sec">Finance</span><b class="type-body">S$0.00</b></div><div class="mini"><span class="type-label sec">Ride to</span><b class="type-body">&#160;</b></div></div>
     <div class="row-btns"><span class="chip on type-chip">All</span><span class="chip type-chip">Transport</span><span class="chip type-chip">Food</span></div>
    </div>
-   <div class="tabbar"><span class="ti act type-caption">&#8962;<br>Home</span><span class="ti type-caption">&#9678;<br>Moments</span><span class="scan">&#9635;</span><span class="ti type-caption">&#9636;<br>Activity</span><span class="ti type-caption">&#9993;<br>Messages</span></div>
+   <div class="tabbar"><span class="ti act"><i class="ic">&#8962;</i><span class="type-caption">Home</span></span><span class="ti"><i class="ic">&#9678;</i><span class="type-caption">Moments</span></span><span class="scan">&#9635;</span><span class="ti"><i class="ic">&#9636;</i><span class="type-caption">Activity</span></span><span class="ti"><i class="ic">&#9993;</i><span class="type-caption">Messages</span></span></div>
   </div>
   <p class="note">bg.header, surface.card, border.card, size.card.height, chip.selected / default, size.chip, nav.active / inactive / scan, size.scanButton</p>
  </div>
@@ -214,7 +218,7 @@ table.tokens th[scope=row]{font-weight:500;width:55%}
 .chip{height:var(--size-chip);padding:0 16px;border-radius:var(--radius-capsule);background:var(--color-chip-default-bg);color:var(--color-chip-default-text);display:inline-flex;align-items:center}
 .chip.on{background:var(--color-chip-selected-bg);color:var(--color-chip-selected-text)}
 .tabbar{display:flex;justify-content:space-around;align-items:center;border-top:var(--border-width-hairline) solid var(--color-border-divider);padding:8px 4px 14px;margin-top:20px}
-.ti{color:var(--color-nav-inactive);text-align:center;font-size:18px}.ti.act{color:var(--color-nav-active)}
+.ti{color:var(--color-nav-inactive);text-align:center}.ti.act{color:var(--color-nav-active)}.ti .ic{display:block;font-style:normal;font-size:18px;line-height:1.2}
 .scan{width:var(--size-scanButton);height:var(--size-scanButton);border-radius:50%;background:var(--color-nav-scan);color:var(--color-text-onPrimary);display:inline-flex;align-items:center;justify-content:center;font-size:24px;margin-top:-20px}
 .scrimmed{background:var(--color-bg-page);padding:120px 0 0}
 .scrimmed::before{content:"";position:absolute;inset:0;background:var(--color-bg-scrim)}
@@ -264,6 +268,8 @@ footer{margin-top:48px;color:var(--color-text-secondary);font-size:12px}
              '<div class="ramp">%s</div>' % neutrals,
              "<h2>Radii</h2>", '<div class="radii">%s</div>' % radii,
              "<h2>Spacing</h2>", spacing, "<h2>Sizes</h2>", sizes,
+             "<h2>Borders, families and weights</h2>",
+             '<div class="scroll"><table class="tokens"><thead><tr><th>Token</th><th>Value</th><th>Evidence</th></tr></thead><tbody>%s</tbody></table></div>' % others,
              "<h2>Type scale</h2>",
              '<div class="scroll"><table class="tokens"><thead><tr><th>Token</th><th>Spec</th><th>Specimen</th></tr></thead><tbody>%s</tbody></table></div>' % type_rows,
              "<h2>Components</h2>", '<p class="lede">Built from the tokens only, with no Grab artwork.</p>', specimens,

@@ -1831,7 +1831,7 @@
     },
     "F2": {
      "grade": "meets",
-     "evidence": "color.bg.page (page), color.surface.card (surface), color.surface.sheet (raised: sheets, coach mark), color.surface.tooltip (overlay), color.bg.scrim and color.bg.scrimLight (black at 58% and 44%, Derived from dimmed readings)."
+     "evidence": "color.bg.page (page), color.surface.card (surface), color.surface.sheet (raised: sheets, coach mark), color.surface.tooltip (overlay), color.bg.scrim (black at 58%, Derived from the dimmed Messages page). The flash-deals sheet's navy backdrop is described, not tokenised."
     },
     "F3": {
      "grade": "meets",
@@ -1867,7 +1867,7 @@
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Control heights in core.size (button 56, compact 32, chip 36, field 40, row 52, checkbox 20, FAB 55, scan button 58, tab bar 90) and touchTarget 44 with the smaller controls named; no icon sizes."
+     "evidence": "Control heights in core.size (button 56, compact 31.5, chip 35.5, field 40, row 52, checkbox 20, FAB 55, scan button 58, tab bar 90) and touchTarget 44 with the smaller controls named; no icon sizes."
     },
     "F12": {
      "grade": "partly",
@@ -1915,7 +1915,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 128 of 128 tokens name their source"
+     "evidence": "Script: 127 of 127 tokens name their source"
     },
     "K2": {
      "grade": "meets",

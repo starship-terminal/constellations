@@ -19,7 +19,7 @@ Near Me, Offers, Cart):
 | Header | Service colour behind the status bar: Home deep green, GrabFood blue, Transport and Offer Zone peach, Pickup green to teal | `color.bg.header`, `color.bg.headerEnd`, `color.service.food`, `color.service.peach` |
 | Page | Lists, cards and forms on white, with grey bands between groups | `color.bg.page`, `color.bg.section` |
 | Pushed page | A back arrow and a display-face title on white (Dietary preferences) or on mint (account) | `typography.title`, `color.bg.tint` |
-| Sheet | Pre-prompts and flash deals over a dimmed page, rounded top corners | `color.surface.sheet`, `radius.sheet`, `color.bg.scrim`, `color.bg.scrimLight` |
+| Sheet | Pre-prompts and flash deals over a dimmed page, rounded top corners | `color.surface.sheet`, `radius.sheet`, `color.bg.scrim` |
 | Coach mark and tooltip | A white card over a scrim, or a deep green bubble, pointing at a control | `color.surface.sheet`, `color.surface.tooltip` |
 
 The account page collapses its mint header into a compact title bar as it scrolls

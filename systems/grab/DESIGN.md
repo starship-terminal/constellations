@@ -20,7 +20,6 @@ colors:
   color-bg-header: "#034C35"
   color-bg-headerEnd: "#00322A"
   color-bg-scrim: "#00000095"
-  color-bg-scrimLight: "#00000070"
   color-surface-card: "#FFFFFF"
   color-surface-field: "#F5F5F5"
   color-surface-pill: "#F5F5F5"
@@ -205,7 +204,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### What to distrust (from README.md)
 
 - **The fonts.** Not determinable from pixels. Body text, rows, labels and buttons use a neo-grotesque close to Inter; titles (Messages, Activity, For more value, sheet and empty-state titles) use a rounded geometric display face that is Grab's own and is not identified here. Both `fontFamily` tokens are `system` and marked Not captured.
-- **Brand green fails contrast with white text.** The primary button is `#02B150` with a white label, about 2.8:1. That is the product's value and the token keeps it; a new design should darken the fill or the label size should stay at 17 pt semibold and above.
+- **Brand green fails contrast with white text.** The primary button is `#02B150` with a white label, about 2.8:1, below even the 3:1 minimum for large text, so a bigger or bolder label does not fix it. The token keeps the product's value; when reusing the pairing in an accessible design, change one of the colours (white on `color.brand.forest` `#05804B` is about 5.0:1).
 - **Gradients.** The Home header runs from `#034C35` to `#00322A`, and the Pickup header from green to teal; only the Home ends were read (`bg.header`, `bg.headerEnd`, Derived). Promo cards on Home are tinted gradients too.
 - **Radii are estimates**, plus or minus 2 pt: tooltip 8.5, search field 12, cards 15.4, sheets 24, capsules on buttons and chips.
 - **Type sizes are estimates**, plus or minus 1 pt, from cap heights at an assumed 0.72 em, which fits neither family exactly. Weights are judged by eye. Only multi-line blocks have line heights.
@@ -223,4 +222,4 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 4. **Do say status in coloured text, not a filled badge.** Cancelled is red and Bill paid green, above the trip title; Open is green beside the closing time. See [10-activity-list-status-labels](screenshots/light/10-activity-list-status-labels.png) and [08-merchant-page-tabs-voucher-buy](screenshots/light/08-merchant-page-tabs-voucher-buy.png).
 5. **Do show focus with a darker green border and a soft halo.** The focused field gets both; the unfocused field above keeps its grey border. See [04-destination-focused-recent-tabs](screenshots/light/04-destination-focused-recent-tabs.png) and [crop](components/crops/text-field-focused.png).
 6. **Don't leave a disabled primary button green.** Save turns light grey with a grey label until a choice is made. See [16-checkboxes-disabled-save](screenshots/light/16-checkboxes-disabled-save.png).
-7. **Don't put white body text on Grab green.** The product does it on buttons at 17 pt semibold (about 2.8:1); keep that pairing to large, bold labels. See [button-primary-default](components/crops/button-primary-default.png).
+7. **Don't copy white text on Grab green into an accessible design.** The product's buttons pair them at about 2.8:1, below the 3:1 minimum even for large text; keep the captured colours as a record and darken the green (or change the label colour) when you reuse it. See [button-primary-default](components/crops/button-primary-default.png).

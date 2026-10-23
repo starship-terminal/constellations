@@ -132,9 +132,9 @@ def core():
     }
     tab_top = rd("size.tabBar")["value"][0]
     c["size"] = {
-        "button": tok(px(round(pt_of("size.buttonSecondary", index=1))), "dimension", f"Full-width button height: primary {rd('size.buttonPrimary')['value']}, secondary {rd('size.buttonSecondary')['value']}, disabled {rd('size.buttonDisabled')['value']}.", "Sampled", rd("size.buttonSecondary")["capture"]),
-        "buttonCompact": tok(px(round(pt_of("size.buttonCompact", index=1))), "dimension", f"Compact button in a card (Buy): {rd('size.buttonCompact')['value']}.", "Sampled", rd("size.buttonCompact")["capture"]),
-        "chip": tok(px(round(pt_of("size.chipDefault", index=1))), "dimension", f"Filter chip height: selected {rd('size.chip')['value']}, unselected {rd('size.chipDefault')['value']}.", "Sampled", rd("size.chipDefault")["capture"]),
+        "button": tok(px(pt_of("size.buttonSecondary", index=1)), "dimension", f"Full-width button height: primary {rd('size.buttonPrimary')['value']}, secondary {rd('size.buttonSecondary')['value']}, disabled {rd('size.buttonDisabled')['value']}.", "Sampled", rd("size.buttonSecondary")["capture"]),
+        "buttonCompact": tok(px(pt_of("size.buttonCompact", index=1)), "dimension", f"Compact button in a card (Buy): {rd('size.buttonCompact')['value']}.", "Sampled", rd("size.buttonCompact")["capture"]),
+        "chip": tok(px(pt_of("size.chipDefault", index=1)), "dimension", f"Filter chip height: selected {rd('size.chip')['value']}, unselected {rd('size.chipDefault')['value']}.", "Sampled", rd("size.chipDefault")["capture"]),
         "field": tok(px(pt_of("size.field")), "dimension", f"Text and search field height: pickup field {rd('size.field')['value']}, grey search field {rd('size.searchField')['value']}, home search {rd('size.searchHome')['value']}.", "Sampled", rd("size.field")["capture"]),
         "row": tok(px(float(rd("rows.settings")["value"].rstrip("pt"))), "dimension", "Single-line settings row, label to label (For more value list).", "Derived", rd("rows.settings")["capture"]),
         "card": {
@@ -213,7 +213,6 @@ def semantic(theme):
             "header": f("bg.headerHome", "Home header, top of its gradient (deep green)."),
             "headerEnd": f("bg.headerHomeEnd", "Home header, bottom of its gradient."),
             "scrim": scrim("scrim.dialog", "scrim.ref", "a sheet's backdrop: the Messages page"),
-            "scrimLight": scrim("scrim.sheet", "scrim.sheetRef", "a lighter sheet backdrop: the Food header"),
         },
         "surface": {
             "card": f("surface.card", "Cards, list sections, the search field on a coloured header."),
@@ -294,6 +293,7 @@ def semantic(theme):
     s["$extensions"] = {"notTokenised": [
         "Dark theme: not applicable, Grab has no dark UI (it stays light with the phone in dark mode)",
         "Pressed and hover states: stills only",
+        "The flash-deals sheet's backdrop: the Food header reads #0D54A8 undimmed and #172F4C under it, a navy veil whose red channel rises, so no black alpha reproduces it (raw/readings.json scrim.sheet)",
         "Warning colour and error states: none were seen",
         "Switch colours: no switch was captured",
     ]}
