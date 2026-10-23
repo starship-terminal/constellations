@@ -1,0 +1,3522 @@
+{
+ "accent.button": {
+  "dark": {
+   "args": [
+    560,
+    730,
+    150,
+    50
+   ],
+   "capture": "screenshots/dark/24-devices-primary-button-destructive-row.png",
+   "evidence": "Sampled",
+   "note": "Accent button ('Add Device')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3F88F8"
+  },
+  "light": {
+   "args": [
+    560,
+    730,
+    150,
+    50
+   ],
+   "capture": "screenshots/light/24-devices-primary-button-destructive-row.png",
+   "evidence": "Sampled",
+   "note": "Accent button ('Add Device')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0088FE"
+  }
+ },
+ "accent.caret": {
+  "dark": {
+   "args": [
+    238,
+    1648,
+    1,
+    38
+   ],
+   "capture": "screenshots/dark/04-composer-typed-send-button.png",
+   "evidence": "Derived",
+   "note": "Text caret in the composer, one pixel column",
+   "op": "fill",
+   "share": 0.29,
+   "value": "#3F88F7"
+  },
+  "light": {
+   "args": [
+    238,
+    1648,
+    1,
+    38
+   ],
+   "capture": "screenshots/light/04-composer-typed-send-button.png",
+   "evidence": "Derived",
+   "note": "Text caret in the composer, one pixel column",
+   "op": "fill",
+   "share": 0.47,
+   "value": "#0088FE"
+  }
+ },
+ "accent.check": {
+  "dark": {
+   "args": [
+    712,
+    715,
+    25,
+    25
+   ],
+   "capture": "screenshots/dark/12-checklist-with-sticker-header.png",
+   "evidence": "Sampled (text)",
+   "note": "Checkmark on the chosen row",
+   "op": "text",
+   "value": "#3F89F6"
+  },
+  "light": {
+   "args": [
+    95,
+    482,
+    25,
+    25
+   ],
+   "capture": "screenshots/light/12-checklist-auto-night-mode.png",
+   "evidence": "Sampled (text)",
+   "note": "Checkmark on the chosen row",
+   "op": "text",
+   "value": "#0088FD"
+  }
+ },
+ "accent.compose": {
+  "dark": {
+   "args": [
+    738,
+    225,
+    15,
+    20
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Derived",
+   "note": "Compose button (round, accent glass), right of its glyph",
+   "op": "fill",
+   "share": 0.76,
+   "value": "#418BF8"
+  },
+  "light": {
+   "args": [
+    738,
+    225,
+    15,
+    20
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Derived",
+   "note": "Compose button (round, accent glass), right of its glyph",
+   "op": "fill",
+   "share": 0.38,
+   "value": "#0285FC"
+  }
+ },
+ "accent.pill": {
+  "dark": {
+   "args": [
+    630,
+    1645,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/13-chat-folders-add-pill-buttons.png",
+   "evidence": "Derived",
+   "note": "Small accent pill ('ADD')",
+   "op": "fill",
+   "share": 0.88,
+   "value": "#3F88F8"
+  },
+  "light": {
+   "args": [
+    630,
+    1645,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/13-chat-folders-add-pill-buttons.png",
+   "evidence": "Sampled",
+   "note": "Small accent pill ('ADD')",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#0088FE"
+  }
+ },
+ "accent.send": {
+  "dark": {
+   "args": [
+    662,
+    1650,
+    12,
+    14
+   ],
+   "capture": "screenshots/dark/04-composer-typed-send-button.png",
+   "evidence": "Sampled",
+   "note": "Send button in the composer",
+   "op": "fill",
+   "share": 0.94,
+   "value": "#3F88F8"
+  },
+  "light": {
+   "args": [
+    662,
+    1650,
+    12,
+    14
+   ],
+   "capture": "screenshots/light/04-composer-typed-send-button.png",
+   "evidence": "Sampled",
+   "note": "Send button in the composer",
+   "op": "fill",
+   "share": 0.96,
+   "value": "#0088FE"
+  }
+ },
+ "avatar.blue": {
+  "dark": {
+   "args": [
+    52,
+    987,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/21-new-message-sheet-index.png",
+   "evidence": "Derived",
+   "note": "Initials avatar, blue ('A'), left of the letter",
+   "op": "fill",
+   "share": 0.27,
+   "value": "#7486FF"
+  }
+ },
+ "avatar.green": {
+  "dark": {
+   "args": [
+    92,
+    613,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/14-calls-segmented-all.png",
+   "evidence": "Derived",
+   "note": "Initials avatar, green ('M'), left of the letter",
+   "op": "fill",
+   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
+   "share": 0.33,
+   "value": "#79D472"
+  }
+ },
+ "avatar.orange": {
+  "dark": {
+   "args": [
+    58,
+    765,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/23-folder-chip-selected-os.png",
+   "evidence": "Derived",
+   "note": "Initials avatar, orange-red ('A'), left of the letter",
+   "op": "fill",
+   "share": 0.7,
+   "value": "#FF6B64"
+  }
+ },
+ "avatar.purple": {
+  "dark": {
+   "args": [
+    52,
+    797,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/18-search-typed-global-results.png",
+   "evidence": "Derived",
+   "note": "Initials avatar, purple ('S'), left of the letter",
+   "op": "fill",
+   "share": 0.57,
+   "value": "#DB82F0"
+  }
+ },
+ "avatar.red": {
+  "dark": {
+   "args": [
+    52,
+    697,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/18-search-typed-global-results.png",
+   "evidence": "Derived",
+   "note": "Initials avatar, red ('N'), left of the letter",
+   "op": "fill",
+   "share": 0.43,
+   "value": "#FF6B64"
+  }
+ },
+ "badge.count": {
+  "dark": {
+   "args": [
+    729,
+    326,
+    7,
+    6
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Derived",
+   "note": "Count badge on a folder chip ('19'), muted",
+   "op": "fill",
+   "share": 0.69,
+   "value": "#666666"
+  },
+  "light": {
+   "args": [
+    700,
+    772,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Derived",
+   "note": "Count badge on the archive row ('109'), muted",
+   "op": "fill",
+   "share": 0.64,
+   "value": "#B6B5BD"
+  }
+ },
+ "bg.chats": {
+  "dark": {
+   "args": [
+    300,
+    1200,
+    200,
+    200
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Chat list background below the rows",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    300,
+    1450,
+    200,
+    100
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Chat list background below the rows",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "bg.grouped": {
+  "dark": {
+   "args": [
+    100,
+    1110,
+    600,
+    30
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Grouped settings page, between cards",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    100,
+    1110,
+    600,
+    30
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Grouped settings page, between cards",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EFEFF3"
+  }
+ },
+ "bg.groupedAlt": {
+  "dark": {
+   "args": [
+    100,
+    1490,
+    600,
+    30
+   ],
+   "capture": "screenshots/dark/13-chat-folders-add-pill-buttons.png",
+   "evidence": "Sampled",
+   "note": "Chat Folders page, between cards (a lighter page in dark)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1E"
+  },
+  "light": {
+   "args": [
+    100,
+    1490,
+    600,
+    30
+   ],
+   "capture": "screenshots/light/13-chat-folders-add-pill-buttons.png",
+   "evidence": "Sampled",
+   "note": "Chat Folders page, between cards (a lighter page in dark)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EFEFF3"
+  }
+ },
+ "bg.pinned": {
+  "dark": {
+   "args": [
+    300,
+    790,
+    300,
+    30
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Pinned chats band behind the top rows",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1E"
+  },
+  "light": {
+   "args": [
+    300,
+    1250,
+    300,
+    30
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Pinned chats band behind the top rows",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F7F7F7"
+  }
+ },
+ "bg.sheet": {
+  "dark": {
+   "args": [
+    500,
+    690,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/22-attachment-sheet-tab-bar.png",
+   "evidence": "Sampled",
+   "note": "Attachment sheet, beside its title",
+   "op": "fill",
+   "readFrom": "22-attachment-sheet-tab-bar.raw.png, converted to sRGB (the .png is masked)",
+   "share": 1.0,
+   "value": "#1A1A1A"
+  }
+ },
+ "border.divider": {
+  "dark": {
+   "args": [
+    500,
+    442,
+    200,
+    1
+   ],
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled",
+   "note": "Divider between grouped rows (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2B2B2D"
+  },
+  "light": {
+   "args": [
+    500,
+    442,
+    200,
+    1
+   ],
+   "capture": "screenshots/light/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled",
+   "note": "Divider between grouped rows (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E4E4E4"
+  }
+ },
+ "border.dividerList": {
+  "dark": {
+   "args": [
+    300,
+    535,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Divider between chat rows (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2E2E30"
+  },
+  "light": {
+   "args": [
+    300,
+    987,
+    300,
+    1
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Divider between chat rows (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DCDCDC"
+  }
+ },
+ "icon.secondary": {
+  "dark": {
+   "args": [
+    725,
+    460,
+    40,
+    40
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Pin glyph on a pinned chat row",
+   "op": "text",
+   "value": "#777679"
+  },
+  "light": {
+   "args": [
+    725,
+    915,
+    40,
+    40
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Pin glyph on a pinned chat row",
+   "op": "text",
+   "value": "#B5B5B7"
+  }
+ },
+ "lines.chatPreview": {
+  "dark": {
+   "args": [
+    230,
+    440,
+    700,
+    515
+   ],
+   "bands": [
+    [
+     448,
+     475
+    ],
+    [
+     488,
+     514
+    ]
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Derived",
+   "note": "Two-line chat row preview",
+   "op": "lines",
+   "value": "20.0pt"
+  }
+ },
+ "lines.footnote": {
+  "dark": {
+   "args": [
+    78,
+    970,
+    700,
+    1040
+   ],
+   "bands": [
+    [
+     982,
+     1006
+    ],
+    [
+     1014,
+     1037
+    ]
+   ],
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Derived",
+   "note": "Two-line footnote",
+   "op": "lines",
+   "value": "16.0pt"
+  }
+ },
+ "lines.quote": {
+  "dark": {
+   "args": [
+    140,
+    880,
+    740,
+    1015
+   ],
+   "bands": [
+    [
+     884,
+     910
+    ],
+    [
+     918,
+     944
+    ],
+    [
+     952,
+     978
+    ],
+    [
+     986,
+     1012
+    ]
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Derived",
+   "note": "Lines of a link preview's description",
+   "op": "lines",
+   "value": "17.0pt"
+  }
+ },
+ "radius.bubble": {
+  "dark": {
+   "args": [
+    600,
+    718,
+    112,
+    900
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "corner": [
+    106,
+    709
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Outgoing bubble, top-left corner",
+   "op": "diag",
+   "value": "15.4pt"
+  },
+  "light": {
+   "args": [
+    600,
+    718,
+    112,
+    900
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "corner": [
+    106,
+    709
+   ],
+   "evidence": "Derived",
+   "inset": 10,
+   "note": "Outgoing bubble, top-left corner",
+   "op": "diag",
+   "value": "17.1pt"
+  }
+ },
+ "radius.button": {
+  "dark": {
+   "args": [
+    300,
+    730,
+    80,
+    757
+   ],
+   "capture": "screenshots/dark/24-devices-primary-button-destructive-row.png",
+   "corner": [
+    48,
+    705
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Accent button (capsule)",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    300,
+    730,
+    80,
+    757
+   ],
+   "capture": "screenshots/light/24-devices-primary-button-destructive-row.png",
+   "corner": [
+    48,
+    705
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Accent button (capsule)",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.card": {
+  "dark": {
+   "args": [
+    400,
+    360,
+    60,
+    700
+   ],
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "corner": [
+    48,
+    338
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Grouped card",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    400,
+    360,
+    60,
+    700
+   ],
+   "capture": "screenshots/light/11-settings-privacy-grouped-values.png",
+   "corner": [
+    48,
+    338
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Grouped card",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.cardAlt": {
+  "dark": {
+   "args": [
+    400,
+    720,
+    60,
+    980
+   ],
+   "capture": "screenshots/dark/13-chat-folders-add-pill-buttons.png",
+   "corner": [
+    48,
+    701
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Grouped card on the Chat Folders page",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    400,
+    720,
+    60,
+    980
+   ],
+   "capture": "screenshots/light/13-chat-folders-add-pill-buttons.png",
+   "corner": [
+    48,
+    701
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Grouped card on the Chat Folders page",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.iconTile": {
+  "dark": {
+   "args": [
+    105,
+    448,
+    82,
+    470
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "corner": [
+    76,
+    438
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Settings icon tile",
+   "op": "diag",
+   "value": "8.5pt"
+  }
+ },
+ "radius.menu": {
+  "dark": {
+   "args": [
+    600,
+    980,
+    345,
+    1065
+   ],
+   "capture": "screenshots/dark/05-message-context-menu-reactions.png",
+   "corner": [
+    332,
+    955
+   ],
+   "evidence": "Derived",
+   "inset": 17,
+   "note": "Context menu (glass)",
+   "op": "diag",
+   "value": "29.0pt"
+  },
+  "light": {
+   "args": [
+    600,
+    980,
+    345,
+    1065
+   ],
+   "capture": "screenshots/light/05-message-context-menu-reactions.png",
+   "corner": [
+    332,
+    952
+   ],
+   "evidence": "Derived",
+   "inset": 18,
+   "note": "Context menu (glass)",
+   "op": "diag",
+   "value": "30.7pt"
+  }
+ },
+ "radius.search": {
+  "dark": {
+   "args": [
+    300,
+    320,
+    120,
+    342
+   ],
+   "capture": "screenshots/dark/16-contacts-list-search.png",
+   "corner": [
+    48,
+    298
+   ],
+   "evidence": "Derived",
+   "inset": 13,
+   "note": "Search field (capsule)",
+   "op": "diag",
+   "value": "22.2pt"
+  },
+  "light": {
+   "args": [
+    300,
+    320,
+    120,
+    342
+   ],
+   "capture": "screenshots/light/16-contacts-list-search.png",
+   "corner": [
+    48,
+    298
+   ],
+   "evidence": "Derived",
+   "inset": 13,
+   "note": "Search field (capsule)",
+   "op": "diag",
+   "value": "22.2pt"
+  }
+ },
+ "radius.sheet": {
+  "dark": {
+   "args": [
+    400,
+    650,
+    40,
+    700
+   ],
+   "capture": "screenshots/dark/22-attachment-sheet-tab-bar.png",
+   "corner": [
+    27,
+    627
+   ],
+   "evidence": "Derived",
+   "inset": 21,
+   "note": "Attachment sheet, top-left corner",
+   "op": "diag",
+   "readFrom": "22-attachment-sheet-tab-bar.raw.png, converted to sRGB (the .png is masked)",
+   "value": "35.8pt"
+  }
+ },
+ "radius.tabBar": {
+  "dark": {
+   "args": [
+    300,
+    1612,
+    75,
+    1662
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "corner": [
+    56,
+    1598
+   ],
+   "evidence": "Derived",
+   "inset": 18,
+   "note": "Tab bar (capsule)",
+   "op": "diag",
+   "value": "30.7pt"
+  }
+ },
+ "rows.calls": {
+  "dark": {
+   "args": [
+    "col",
+    560,
+    540,
+    1000,
+    [
+     26,
+     26,
+     26
+    ],
+    2
+   ],
+   "capture": "screenshots/dark/14-calls-segmented-all.png",
+   "evidence": "Sampled",
+   "note": "Dividers down the calls list",
+   "op": "find",
+   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
+   "value": [
+    559,
+    667,
+    775,
+    883,
+    991
+   ]
+  }
+ },
+ "rows.chats": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    520,
+    850,
+    [
+     46,
+     46,
+     48
+    ],
+    3
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Dividers down the chat list (text pixels of the same grey included)",
+   "op": "find",
+   "value": [
+    535,
+    650,
+    687,
+    757,
+    839
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    300,
+    830,
+    1300,
+    [
+     220,
+     220,
+     220
+    ],
+    3
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Dividers down the chat list (text pixels of the same grey included)",
+   "op": "find",
+   "value": [
+    835,
+    987,
+    1139,
+    1171,
+    1291
+   ]
+  }
+ },
+ "rows.contacts": {
+  "dark": {
+   "args": [
+    "col",
+    600,
+    500,
+    960,
+    [
+     26,
+     26,
+     26
+    ],
+    3
+   ],
+   "capture": "screenshots/dark/16-contacts-list-search.png",
+   "evidence": "Sampled",
+   "note": "Dividers down the contacts list",
+   "op": "find",
+   "value": [
+    519,
+    625,
+    731,
+    837,
+    943
+   ]
+  }
+ },
+ "rows.grouped": {
+  "dark": {
+   "args": [
+    "col",
+    560,
+    330,
+    970,
+    [
+     43,
+     43,
+     45
+    ],
+    3
+   ],
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled",
+   "note": "Dividers down a card of one-line rows",
+   "op": "find",
+   "value": [
+    442,
+    546,
+    650,
+    754,
+    858
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    560,
+    330,
+    970,
+    [
+     228,
+     228,
+     228
+    ],
+    3
+   ],
+   "capture": "screenshots/light/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled",
+   "note": "Dividers down a card of one-line rows",
+   "op": "find",
+   "value": [
+    442,
+    546,
+    650,
+    754,
+    858
+   ]
+  }
+ },
+ "rows.groupedTwoLine": {
+  "dark": {
+   "args": [
+    "col",
+    560,
+    390,
+    1080,
+    [
+     46,
+     46,
+     48
+    ],
+    3
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Dividers down a card of two-line rows",
+   "op": "find",
+   "value": [
+    539,
+    683,
+    827,
+    931
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    560,
+    390,
+    1080,
+    [
+     224,
+     224,
+     224
+    ],
+    3
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Dividers down a card of two-line rows",
+   "op": "find",
+   "value": [
+    539,
+    683,
+    827,
+    931
+   ]
+  }
+ },
+ "size.avatarChat": {
+  "dark": {
+   "args": [
+    "col",
+    100,
+    690,
+    838,
+    [
+     100,
+     695
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "from": 704,
+   "note": "Chat list avatar",
+   "op": "extent",
+   "to": 823,
+   "value": "60pt"
+  }
+ },
+ "size.avatarContact": {
+  "dark": {
+   "args": [
+    "col",
+    100,
+    625,
+    740,
+    [
+     100,
+     630
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/16-contacts-list-search.png",
+   "evidence": "Sampled",
+   "from": 640,
+   "note": "Contacts list avatar",
+   "op": "extent",
+   "to": 715,
+   "value": "38pt"
+  }
+ },
+ "size.avatarList": {
+  "dark": {
+   "args": [
+    "row",
+    615,
+    60,
+    200,
+    [
+     65,
+     615
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/14-calls-segmented-all.png",
+   "evidence": "Sampled",
+   "from": 83,
+   "note": "Calls list avatar",
+   "op": "extent",
+   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
+   "to": 164,
+   "value": "41pt"
+  }
+ },
+ "size.button": {
+  "dark": {
+   "args": [
+    [
+     600,
+     755
+    ],
+    [
+     30,
+     690,
+     760,
+     140
+    ],
+    24
+   ],
+   "box": [
+    49,
+    706,
+    762,
+    806
+   ],
+   "capture": "screenshots/dark/24-devices-primary-button-destructive-row.png",
+   "colour": "#3F88F8",
+   "evidence": "Sampled",
+   "note": "Full-width accent button",
+   "op": "bbox",
+   "value": "357x50.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     600,
+     755
+    ],
+    [
+     30,
+     690,
+     760,
+     140
+    ],
+    24
+   ],
+   "box": [
+    49,
+    707,
+    762,
+    806
+   ],
+   "capture": "screenshots/light/24-devices-primary-button-destructive-row.png",
+   "colour": "#0088FE",
+   "evidence": "Sampled",
+   "note": "Full-width accent button",
+   "op": "bbox",
+   "value": "357x50pt"
+  }
+ },
+ "size.chipBar.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    285,
+    395,
+    [
+     400,
+     290
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "from": 297,
+   "note": "Folder chip bar height",
+   "op": "extent",
+   "to": 378,
+   "value": "41pt"
+  }
+ },
+ "size.chipSelected": {
+  "dark": {
+   "args": [
+    [
+     70,
+     338
+    ],
+    [
+     49,
+     302,
+     110,
+     72
+    ],
+    6
+   ],
+   "box": [
+    55,
+    302,
+    153,
+    373
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "colour": "#5F5F61",
+   "evidence": "Sampled",
+   "note": "Selected folder chip ('All')",
+   "op": "bbox",
+   "value": "49.5x36pt"
+  }
+ },
+ "size.iconTile": {
+  "dark": {
+   "args": [
+    "col",
+    90,
+    420,
+    520,
+    [
+     90,
+     425
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "from": 437,
+   "note": "Settings icon tile",
+   "op": "extent",
+   "to": 498,
+   "value": "31pt"
+  }
+ },
+ "size.navButton.h": {
+  "dark": {
+   "args": [
+    "col",
+    90,
+    160,
+    320,
+    [
+     90,
+     165
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "from": 189,
+   "note": "Round glass back button, height",
+   "op": "extent",
+   "to": 278,
+   "value": "45pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    90,
+    160,
+    320,
+    [
+     90,
+     165
+    ],
+    8
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "from": 189,
+   "note": "Round glass back button, height",
+   "op": "extent",
+   "to": 278,
+   "value": "45pt"
+  }
+ },
+ "size.navButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    233,
+    30,
+    200,
+    [
+     32,
+     233
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Round glass back button, width",
+   "op": "extent",
+   "to": 135,
+   "value": "44pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    233,
+    30,
+    200,
+    [
+     32,
+     233
+    ],
+    8
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "from": 46,
+   "note": "Round glass back button, width",
+   "op": "extent",
+   "to": 137,
+   "value": "46pt"
+  }
+ },
+ "size.pill": {
+  "dark": {
+   "args": [
+    [
+     630,
+     1655
+    ],
+    [
+     590,
+     1610,
+     190,
+     100
+    ],
+    24
+   ],
+   "box": [
+    615,
+    1637,
+    731,
+    1691
+   ],
+   "capture": "screenshots/dark/13-chat-folders-add-pill-buttons.png",
+   "colour": "#3F88F8",
+   "evidence": "Sampled",
+   "note": "Small accent pill ('ADD')",
+   "op": "bbox",
+   "value": "58.5x27.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     630,
+     1655
+    ],
+    [
+     590,
+     1610,
+     190,
+     100
+    ],
+    24
+   ],
+   "box": [
+    615,
+    1638,
+    730,
+    1691
+   ],
+   "capture": "screenshots/light/13-chat-folders-add-pill-buttons.png",
+   "colour": "#0088FE",
+   "evidence": "Sampled",
+   "note": "Small accent pill ('ADD')",
+   "op": "bbox",
+   "value": "58x27pt"
+  }
+ },
+ "size.search.h": {
+  "dark": {
+   "args": [
+    "col",
+    150,
+    270,
+    420,
+    [
+     150,
+     285
+    ],
+    3
+   ],
+   "capture": "screenshots/dark/16-contacts-list-search.png",
+   "evidence": "Sampled",
+   "from": 297,
+   "note": "Search field height",
+   "op": "extent",
+   "to": 386,
+   "value": "45pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    150,
+    270,
+    420,
+    [
+     150,
+     285
+    ],
+    3
+   ],
+   "capture": "screenshots/light/16-contacts-list-search.png",
+   "evidence": "Sampled",
+   "from": 298,
+   "note": "Search field height",
+   "op": "extent",
+   "to": 385,
+   "value": "44pt"
+  }
+ },
+ "size.segmented": {
+  "dark": {
+   "args": [
+    "row",
+    233,
+    255,
+    560,
+    [
+     258,
+     233
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/14-calls-segmented-all.png",
+   "evidence": "Sampled",
+   "from": 268,
+   "note": "Segmented control width",
+   "op": "extent",
+   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
+   "to": 543,
+   "value": "138pt"
+  }
+ },
+ "size.segmented.h": {
+  "dark": {
+   "args": [
+    "col",
+    520,
+    175,
+    290,
+    [
+     520,
+     180
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/14-calls-segmented-all.png",
+   "evidence": "Sampled",
+   "from": 194,
+   "note": "Segmented control height",
+   "op": "extent",
+   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
+   "to": 273,
+   "value": "40pt"
+  }
+ },
+ "size.send": {
+  "dark": {
+   "args": [
+    [
+     668,
+     1650
+    ],
+    [
+     630,
+     1600,
+     140,
+     140
+    ],
+    40
+   ],
+   "box": [
+    658,
+    1634,
+    737,
+    1701
+   ],
+   "capture": "screenshots/dark/04-composer-typed-send-button.png",
+   "colour": "#3F88F8",
+   "evidence": "Sampled",
+   "note": "Send button in the composer",
+   "op": "bbox",
+   "value": "40x34pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     620,
+     1240
+    ],
+    [
+     590,
+     1200,
+     170,
+     90
+    ],
+    12
+   ],
+   "box": [
+    609,
+    1215,
+    732,
+    1268
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "colour": "#67CD67",
+   "evidence": "Sampled",
+   "note": "Switch track (on)",
+   "op": "bbox",
+   "value": "62x27pt"
+  }
+ },
+ "size.switchThumb": {
+  "dark": {
+   "args": [
+    [
+     640,
+     1345
+    ],
+    [
+     600,
+     1320,
+     140,
+     50
+    ],
+    10
+   ],
+   "box": [
+    613,
+    1323,
+    684,
+    1368
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Switch thumb (off)",
+   "op": "bbox",
+   "value": "36x23pt"
+  }
+ },
+ "size.tabBar.h": {
+  "dark": {
+   "args": [
+    "col",
+    150,
+    1570,
+    1760,
+    [
+     150,
+     1580
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "from": 1596,
+   "note": "Tab bar height",
+   "op": "extent",
+   "to": 1723,
+   "value": "64pt"
+  }
+ },
+ "size.tabBar.w": {
+  "dark": {
+   "args": [
+    "row",
+    1660,
+    20,
+    790,
+    [
+     30,
+     1660
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "from": 56,
+   "note": "Tab bar width",
+   "op": "extent",
+   "to": 754,
+   "value": "349.5pt"
+  }
+ },
+ "size.tabSelected.h": {
+  "dark": {
+   "args": [
+    "col",
+    487,
+    1600,
+    1719,
+    [
+     487,
+     1602
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "from": 1604,
+   "note": "Selected tab pill height",
+   "op": "extent",
+   "to": 1715,
+   "value": "56pt"
+  }
+ },
+ "size.tabSelected.w": {
+  "dark": {
+   "args": [
+    "row",
+    1660,
+    380,
+    600,
+    [
+     390,
+     1660
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "from": 405,
+   "note": "Selected tab pill width",
+   "op": "extent",
+   "to": 575,
+   "value": "85.5pt"
+  }
+ },
+ "surface.bubbleIn": {
+  "dark": {
+   "args": [
+    390,
+    525,
+    120,
+    15
+   ],
+   "capture": "screenshots/dark/25-appearance-theme-cards-disabled-switch.png",
+   "evidence": "Derived",
+   "note": "Incoming bubble in the theme preview (Appearance)",
+   "op": "fill",
+   "share": 0.28,
+   "value": "#23231F"
+  },
+  "light": {
+   "args": [
+    390,
+    525,
+    120,
+    15
+   ],
+   "capture": "screenshots/light/25-appearance-theme-cards-switch-off.png",
+   "evidence": "Derived",
+   "note": "Incoming bubble in the theme preview (Appearance)",
+   "op": "fill",
+   "share": 0.76,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.bubbleOut": {
+  "dark": {
+   "args": [
+    690,
+    715,
+    25,
+    40
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Derived",
+   "note": "Outgoing bubble, top",
+   "op": "fill",
+   "share": 0.38,
+   "value": "#944AF2"
+  },
+  "light": {
+   "args": [
+    690,
+    715,
+    25,
+    40
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled",
+   "note": "Outgoing bubble, top",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E1FFC7"
+  }
+ },
+ "surface.bubbleOutEnd": {
+  "dark": {
+   "args": [
+    650,
+    1400,
+    40,
+    12
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Derived",
+   "note": "Outgoing bubble, bottom",
+   "op": "fill",
+   "share": 0.77,
+   "value": "#525FFF"
+  },
+  "light": {
+   "args": [
+    650,
+    1400,
+    40,
+    12
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Derived",
+   "note": "Outgoing bubble, bottom",
+   "op": "fill",
+   "share": 0.74,
+   "value": "#E1FFC7"
+  }
+ },
+ "surface.card": {
+  "dark": {
+   "args": [
+    430,
+    610,
+    150,
+    30
+   ],
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled",
+   "note": "Grouped card (Privacy and Security)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1E"
+  },
+  "light": {
+   "args": [
+    430,
+    610,
+    150,
+    30
+   ],
+   "capture": "screenshots/light/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled",
+   "note": "Grouped card (Privacy and Security)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.cardAlt": {
+  "dark": {
+   "args": [
+    300,
+    960,
+    300,
+    30
+   ],
+   "capture": "screenshots/dark/13-chat-folders-add-pill-buttons.png",
+   "evidence": "Sampled",
+   "note": "Grouped card on the Chat Folders page",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2C2C2E"
+  },
+  "light": {
+   "args": [
+    300,
+    960,
+    300,
+    30
+   ],
+   "capture": "screenshots/light/13-chat-folders-add-pill-buttons.png",
+   "evidence": "Sampled",
+   "note": "Grouped card on the Chat Folders page",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.chipBar": {
+  "dark": {
+   "args": [
+    600,
+    320,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Folder chip bar (glass), between two chips",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3F3F41"
+  },
+  "light": {
+   "args": [
+    600,
+    620,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Derived",
+   "note": "Folder chip bar (glass), between two chips",
+   "op": "fill",
+   "share": 0.5,
+   "value": "#FBFBFB"
+  }
+ },
+ "surface.chipSelected": {
+  "dark": {
+   "args": [
+    58,
+    325,
+    30,
+    25
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Derived",
+   "note": "Selected folder chip ('All')",
+   "op": "fill",
+   "share": 0.5,
+   "value": "#5F5F61"
+  },
+  "light": {
+   "args": [
+    58,
+    625,
+    30,
+    25
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Derived",
+   "note": "Selected folder chip ('All')",
+   "op": "fill",
+   "share": 0.23,
+   "value": "#EBEBEB"
+  }
+ },
+ "surface.composer": {
+  "dark": {
+   "args": [
+    450,
+    1650,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Derived",
+   "note": "Composer field (glass over the wallpaper)",
+   "op": "fill",
+   "share": 0.03,
+   "value": "#CC7D54"
+  },
+  "light": {
+   "args": [
+    450,
+    1650,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Derived",
+   "note": "Composer field (glass over the wallpaper)",
+   "op": "fill",
+   "share": 0.05,
+   "value": "#CBEACC"
+  }
+ },
+ "surface.glassButton": {
+  "dark": {
+   "args": [
+    60,
+    210,
+    20,
+    15
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Round glass back button, above its chevron",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#242424"
+  },
+  "light": {
+   "args": [
+    60,
+    210,
+    20,
+    15
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Derived",
+   "note": "Round glass back button, above its chevron",
+   "op": "fill",
+   "share": 0.43,
+   "value": "#F5F5F9"
+  }
+ },
+ "surface.menu": {
+  "dark": {
+   "args": [
+    620,
+    1000,
+    120,
+    60
+   ],
+   "capture": "screenshots/dark/05-message-context-menu-reactions.png",
+   "evidence": "Derived",
+   "note": "Context menu (glass over the blurred chat)",
+   "op": "fill",
+   "share": 0.27,
+   "value": "#413C22"
+  },
+  "light": {
+   "args": [
+    620,
+    1000,
+    120,
+    60
+   ],
+   "capture": "screenshots/light/05-message-context-menu-reactions.png",
+   "evidence": "Derived",
+   "note": "Context menu (glass over the blurred chat)",
+   "op": "fill",
+   "share": 0.16,
+   "value": "#B9EAB7"
+  }
+ },
+ "surface.menuSort": {
+  "dark": {
+   "args": [
+    380,
+    300,
+    80,
+    4
+   ],
+   "capture": "screenshots/dark/17-contacts-sort-menu.png",
+   "evidence": "Derived",
+   "note": "Pull-down menu (Contacts > Sort), between its items",
+   "op": "fill",
+   "share": 0.61,
+   "value": "#353535"
+  }
+ },
+ "surface.quote": {
+  "dark": {
+   "args": [
+    640,
+    895,
+    100,
+    15
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled",
+   "note": "Link preview card inside an outgoing bubble",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#9B59FD"
+  },
+  "light": {
+   "args": [
+    640,
+    895,
+    100,
+    15
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled",
+   "note": "Link preview card inside an outgoing bubble",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#CBF5B3"
+  }
+ },
+ "surface.reactions": {
+  "dark": {
+   "args": [
+    640,
+    255,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/05-message-context-menu-reactions.png",
+   "evidence": "Derived",
+   "note": "Reaction bar above the message",
+   "op": "fill",
+   "share": 0.21,
+   "value": "#452B53"
+  },
+  "light": {
+   "args": [
+    640,
+    255,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/05-message-context-menu-reactions.png",
+   "evidence": "Derived",
+   "note": "Reaction bar above the message",
+   "op": "fill",
+   "share": 0.34,
+   "value": "#E8F7E0"
+  }
+ },
+ "surface.search": {
+  "dark": {
+   "args": [
+    100,
+    310,
+    150,
+    60
+   ],
+   "capture": "screenshots/dark/16-contacts-list-search.png",
+   "evidence": "Sampled",
+   "note": "Search field (Contacts)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#191919"
+  },
+  "light": {
+   "args": [
+    100,
+    310,
+    150,
+    60
+   ],
+   "capture": "screenshots/light/16-contacts-list-search.png",
+   "evidence": "Sampled",
+   "note": "Search field (Contacts)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F0F0F0"
+  }
+ },
+ "surface.segmented": {
+  "dark": {
+   "args": [
+    512,
+    205,
+    20,
+    50
+   ],
+   "capture": "screenshots/dark/14-calls-segmented-all.png",
+   "evidence": "Derived",
+   "note": "Segmented control track (All / Missed), right end",
+   "op": "fill",
+   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
+   "share": 0.51,
+   "value": "#252525"
+  },
+  "light": {
+   "args": [
+    512,
+    205,
+    20,
+    50
+   ],
+   "capture": "screenshots/light/14-calls-segmented-all.png",
+   "evidence": "Derived",
+   "note": "Segmented control track (All / Missed), right end",
+   "op": "fill",
+   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
+   "share": 0.36,
+   "value": "#FDFDFD"
+  }
+ },
+ "surface.segmentedSelected": {
+  "dark": {
+   "args": [
+    282,
+    205,
+    25,
+    50
+   ],
+   "capture": "screenshots/dark/14-calls-segmented-all.png",
+   "evidence": "Derived",
+   "note": "Selected segment ('All'), left of its label",
+   "op": "fill",
+   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
+   "share": 0.55,
+   "value": "#464646"
+  },
+  "light": {
+   "args": [
+    282,
+    205,
+    25,
+    50
+   ],
+   "capture": "screenshots/light/14-calls-segmented-all.png",
+   "evidence": "Derived",
+   "note": "Selected segment ('All'), left of its label",
+   "op": "fill",
+   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
+   "share": 0.37,
+   "value": "#EDEDED"
+  }
+ },
+ "surface.service": {
+  "dark": {
+   "args": [
+    440,
+    690,
+    60,
+    8
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Derived",
+   "note": "Service message pill ('... was created'), under its text",
+   "op": "fill",
+   "share": 0.13,
+   "value": "#525F71"
+  },
+  "light": {
+   "args": [
+    440,
+    690,
+    60,
+    8
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Derived",
+   "note": "Service message pill ('... was created'), under its text",
+   "op": "fill",
+   "share": 0.4,
+   "value": "#57A152"
+  }
+ },
+ "surface.tabBar": {
+  "dark": {
+   "args": [
+    240,
+    1700,
+    60,
+    12
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Derived",
+   "note": "Tab bar (glass), between two tabs",
+   "op": "fill",
+   "share": 0.75,
+   "value": "#252525"
+  },
+  "light": {
+   "args": [
+    240,
+    1700,
+    60,
+    12
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Tab bar (glass), between two tabs",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.tabSelected": {
+  "dark": {
+   "args": [
+    430,
+    1610,
+    40,
+    10
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Derived",
+   "note": "Selected tab's pill (Chats)",
+   "op": "fill",
+   "share": 0.88,
+   "value": "#454545"
+  },
+  "light": {
+   "args": [
+    430,
+    1610,
+    40,
+    10
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Selected tab's pill (Chats)",
+   "op": "fill",
+   "share": 0.93,
+   "value": "#EBEBEB"
+  }
+ },
+ "switch.off": {
+  "dark": {
+   "args": [
+    695,
+    1340,
+    25,
+    12
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off track (In-App Vibrate)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#5A5A5C"
+  },
+  "light": {
+   "args": [
+    695,
+    1340,
+    25,
+    12
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off track (In-App Vibrate)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F9F9FB"
+  }
+ },
+ "switch.offDisabled": {
+  "dark": {
+   "args": [
+    700,
+    1365,
+    25,
+    10
+   ],
+   "capture": "screenshots/dark/25-appearance-theme-cards-disabled-switch.png",
+   "evidence": "Sampled",
+   "note": "Switch off and disabled (Night Mode)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#353537"
+  }
+ },
+ "switch.on": {
+  "dark": {
+   "args": [
+    620,
+    1232,
+    25,
+    14
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch on (In-App Sounds)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#67CD67"
+  },
+  "light": {
+   "args": [
+    620,
+    1232,
+    25,
+    14
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch on (In-App Sounds)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#37C759"
+  }
+ },
+ "switch.thumb": {
+  "dark": {
+   "args": [
+    630,
+    1340,
+    40,
+    12
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    630,
+    1340,
+    40,
+    12
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "switch.thumbDisabled": {
+  "dark": {
+   "args": [
+    630,
+    1365,
+    30,
+    10
+   ],
+   "capture": "screenshots/dark/25-appearance-theme-cards-disabled-switch.png",
+   "evidence": "Sampled",
+   "note": "Thumb of the disabled switch",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#777777"
+  }
+ },
+ "text.bubbleLink": {
+  "dark": {
+   "args": [
+    125,
+    722,
+    330,
+    40
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Link in an outgoing bubble",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    125,
+    722,
+    330,
+    40
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Link in an outgoing bubble",
+   "op": "text",
+   "value": "#034AAC"
+  }
+ },
+ "text.bubbleMeta": {
+  "dark": {
+   "args": [
+    660,
+    1378,
+    55,
+    25
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Time inside an outgoing bubble ('23:08')",
+   "op": "text",
+   "value": "#A5ABFF"
+  },
+  "light": {
+   "args": [
+    660,
+    1378,
+    55,
+    25
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Time inside an outgoing bubble ('23:08')",
+   "op": "text",
+   "value": "#38A539"
+  }
+ },
+ "text.chatPreview": {
+  "dark": {
+   "args": [
+    188,
+    745,
+    180,
+    35
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Chat row preview line",
+   "op": "text",
+   "value": "#8E8E95"
+  },
+  "light": {
+   "args": [
+    188,
+    1200,
+    180,
+    35
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Chat row preview line",
+   "op": "text",
+   "value": "#8E8D92"
+  }
+ },
+ "text.chatTime": {
+  "dark": {
+   "args": [
+    690,
+    705,
+    75,
+    35
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Chat row time ('14:53')",
+   "op": "text",
+   "value": "#8E8E95"
+  },
+  "light": {
+   "args": [
+    725,
+    1160,
+    45,
+    35
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Chat row time ('Fri')",
+   "op": "text",
+   "value": "#8E8E90"
+  }
+ },
+ "text.chatTitle": {
+  "dark": {
+   "args": [
+    275,
+    700,
+    120,
+    45
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Chat row title ('Hannah')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    275,
+    1155,
+    120,
+    45
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Chat row title ('Hannah')",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.danger": {
+  "dark": {
+   "args": [
+    165,
+    1105,
+    420,
+    45
+   ],
+   "capture": "screenshots/dark/24-devices-primary-button-destructive-row.png",
+   "evidence": "Sampled (text)",
+   "note": "Destructive row ('Terminate all other sessions')",
+   "op": "text",
+   "value": "#E9574B"
+  },
+  "light": {
+   "args": [
+    165,
+    1105,
+    420,
+    45
+   ],
+   "capture": "screenshots/light/24-devices-primary-button-destructive-row.png",
+   "evidence": "Sampled (text)",
+   "note": "Destructive row ('Terminate all other sessions')",
+   "op": "text",
+   "value": "#FF3A31"
+  }
+ },
+ "text.dangerMenu": {
+  "dark": {
+   "args": [
+    450,
+    1495,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/05-message-context-menu-reactions.png",
+   "evidence": "Sampled (text)",
+   "note": "Destructive menu item ('Delete')",
+   "op": "text",
+   "value": "#EC5646"
+  },
+  "light": {
+   "args": [
+    450,
+    1495,
+    100,
+    40
+   ],
+   "capture": "screenshots/light/05-message-context-menu-reactions.png",
+   "evidence": "Sampled (text)",
+   "note": "Destructive menu item ('Delete')",
+   "op": "text",
+   "value": "#FE3A31"
+  }
+ },
+ "text.disabled": {
+  "dark": {
+   "args": [
+    78,
+    1350,
+    180,
+    45
+   ],
+   "capture": "screenshots/dark/25-appearance-theme-cards-disabled-switch.png",
+   "evidence": "Sampled (text)",
+   "note": "Disabled row label ('Night Mode')",
+   "op": "text",
+   "value": "#777779"
+  }
+ },
+ "text.disabledAction": {
+  "dark": {
+   "args": [
+    75,
+    1660,
+    150,
+    45
+   ],
+   "capture": "screenshots/dark/20-chat-list-edit-mode-disabled-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "Disabled bottom action ('Read All')",
+   "op": "text",
+   "value": "#939393"
+  }
+ },
+ "text.footnote": {
+  "dark": {
+   "args": [
+    78,
+    975,
+    600,
+    60
+   ],
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Footnote under a card",
+   "op": "text",
+   "value": "#8E8E93"
+  },
+  "light": {
+   "args": [
+    78,
+    975,
+    600,
+    60
+   ],
+   "capture": "screenshots/light/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Footnote under a card",
+   "op": "text",
+   "value": "#6C6C70"
+  }
+ },
+ "text.link": {
+  "dark": {
+   "args": [
+    170,
+    660,
+    320,
+    45
+   ],
+   "capture": "screenshots/dark/09-settings-root-profile.png",
+   "evidence": "Sampled (text)",
+   "note": "Accent action row ('Change Profile Photo')",
+   "op": "text",
+   "readFrom": "09-settings-root-profile.raw.png, converted to sRGB (the .png is masked)",
+   "value": "#418AF9"
+  },
+  "light": {
+   "args": [
+    170,
+    660,
+    320,
+    45
+   ],
+   "capture": "screenshots/light/09-settings-root-profile.png",
+   "evidence": "Sampled (text)",
+   "note": "Accent action row ('Change Profile Photo')",
+   "op": "text",
+   "readFrom": "09-settings-root-profile.raw.png, converted to sRGB (the .png is masked)",
+   "value": "#0087FC"
+  }
+ },
+ "text.missed": {
+  "dark": {
+   "args": [
+    188,
+    305,
+    150,
+    40
+   ],
+   "capture": "screenshots/dark/15-calls-segmented-missed-red.png",
+   "evidence": "Sampled (text)",
+   "note": "Missed call name (red)",
+   "op": "text",
+   "readFrom": "15-calls-segmented-missed-red.raw.png, converted to sRGB (the .png is masked)",
+   "value": "#EA5647"
+  },
+  "light": {
+   "args": [
+    188,
+    305,
+    150,
+    40
+   ],
+   "capture": "screenshots/light/15-calls-segmented-missed-red.png",
+   "evidence": "Sampled (text)",
+   "note": "Missed call name (red)",
+   "op": "text",
+   "readFrom": "15-calls-segmented-missed-red.raw.png, converted to sRGB (the .png is masked)",
+   "value": "#FE3A2E"
+  }
+ },
+ "text.navTitle": {
+  "dark": {
+   "args": [
+    300,
+    210,
+    210,
+    45
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Navigation title ('Notifications')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    300,
+    210,
+    210,
+    45
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Navigation title ('Notifications')",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.onAccent": {
+  "dark": {
+   "args": [
+    345,
+    730,
+    180,
+    50,
+    "light"
+   ],
+   "capture": "screenshots/dark/24-devices-primary-button-destructive-row.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the accent button ('Add Device')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    345,
+    730,
+    180,
+    50,
+    "light"
+   ],
+   "capture": "screenshots/light/24-devices-primary-button-destructive-row.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the accent button ('Add Device')",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.onBubbleOut": {
+  "dark": {
+   "args": [
+    140,
+    945,
+    600,
+    30
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Text in an outgoing bubble",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    140,
+    945,
+    600,
+    30
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Text in an outgoing bubble",
+   "op": "text",
+   "value": "#000001"
+  }
+ },
+ "text.online": {
+  "dark": {
+   "args": [
+    145,
+    575,
+    90,
+    30
+   ],
+   "capture": "screenshots/dark/16-contacts-list-search.png",
+   "evidence": "Sampled (text)",
+   "note": "Presence line ('online')",
+   "op": "text",
+   "value": "#3E86F4"
+  },
+  "light": {
+   "args": [
+    145,
+    575,
+    90,
+    30
+   ],
+   "capture": "screenshots/light/16-contacts-list-search.png",
+   "evidence": "Sampled (text)",
+   "note": "Presence line ('online')",
+   "op": "text",
+   "value": "#008AFE"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    375,
+    320,
+    130,
+    45
+   ],
+   "capture": "screenshots/dark/16-contacts-list-search.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder",
+   "op": "text",
+   "value": "#8F8F8F"
+  },
+  "light": {
+   "args": [
+    375,
+    320,
+    130,
+    45
+   ],
+   "capture": "screenshots/light/16-contacts-list-search.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder",
+   "op": "text",
+   "value": "#8D8D8F"
+  }
+ },
+ "text.primary": {
+  "dark": {
+   "args": [
+    165,
+    365,
+    230,
+    45
+   ],
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Row title ('Blocked Users')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    165,
+    365,
+    230,
+    45
+   ],
+   "capture": "screenshots/light/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Row title ('Blocked Users')",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.quoteTitle": {
+  "dark": {
+   "args": [
+    143,
+    778,
+    170,
+    30
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Site name on a link preview ('docusaurus.io')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    143,
+    778,
+    170,
+    30
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Site name on a link preview ('docusaurus.io')",
+   "op": "text",
+   "value": "#00A700"
+  }
+ },
+ "text.readMark": {
+  "dark": {
+   "args": [
+    650,
+    555,
+    30,
+    30
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Read tick beside a chat row time",
+   "op": "text",
+   "value": "#4087F7"
+  },
+  "light": {
+   "args": [
+    650,
+    1010,
+    30,
+    30
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Read tick beside a chat row time",
+   "op": "text",
+   "value": "#21C103"
+  }
+ },
+ "text.secondary": {
+  "dark": {
+   "args": [
+    165,
+    470,
+    200,
+    35
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Row subtitle ('173 exceptions')",
+   "op": "text",
+   "value": "#98989F"
+  },
+  "light": {
+   "args": [
+    165,
+    470,
+    200,
+    35
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Row subtitle ('173 exceptions')",
+   "op": "text",
+   "value": "#8D8D90"
+  }
+ },
+ "text.sectionHeader": {
+  "dark": {
+   "args": [
+    78,
+    352,
+    320,
+    30
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Section header ('MESSAGE NOTIFICATIONS')",
+   "op": "text",
+   "value": "#8E8D94"
+  },
+  "light": {
+   "args": [
+    78,
+    352,
+    320,
+    30
+   ],
+   "capture": "screenshots/light/10-settings-notifications-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Section header ('MESSAGE NOTIFICATIONS')",
+   "op": "text",
+   "value": "#6D6C71"
+  }
+ },
+ "text.service": {
+  "dark": {
+   "args": [
+    310,
+    655,
+    230,
+    35,
+    "light"
+   ],
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Service message text",
+   "op": "text",
+   "value": "#FEFEFE"
+  },
+  "light": {
+   "args": [
+    310,
+    655,
+    230,
+    35,
+    "light"
+   ],
+   "capture": "screenshots/light/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Service message text",
+   "op": "text",
+   "value": "#FEFFFD"
+  }
+ },
+ "text.tab": {
+  "dark": {
+   "args": [
+    285,
+    1670,
+    60,
+    30
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected tab label ('Calls')",
+   "op": "text",
+   "value": "#FBFBFB"
+  },
+  "light": {
+   "args": [
+    285,
+    1670,
+    60,
+    30
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected tab label ('Calls')",
+   "op": "text",
+   "value": "#363636"
+  }
+ },
+ "text.tabSelected": {
+  "dark": {
+   "args": [
+    450,
+    1670,
+    80,
+    30
+   ],
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected tab label ('Chats')",
+   "op": "text",
+   "value": "#4089F6"
+  },
+  "light": {
+   "args": [
+    450,
+    1670,
+    80,
+    30
+   ],
+   "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected tab label ('Chats')",
+   "op": "text",
+   "value": "#0089FE"
+  }
+ },
+ "text.username": {
+  "dark": {
+   "args": [
+    145,
+    410,
+    120,
+    35
+   ],
+   "capture": "screenshots/dark/18-search-typed-global-results.png",
+   "evidence": "Sampled (text)",
+   "note": "Username in search results ('@...')",
+   "op": "text",
+   "value": "#4087F9"
+  }
+ },
+ "text.value": {
+  "dark": {
+   "args": [
+    640,
+    1210,
+    75,
+    40
+   ],
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Row value ('My Contacts')",
+   "op": "text",
+   "value": "#99989D"
+  },
+  "light": {
+   "args": [
+    640,
+    1210,
+    75,
+    40
+   ],
+   "capture": "screenshots/light/11-settings-privacy-grouped-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Row value ('My Contacts')",
+   "op": "text",
+   "value": "#8E8D91"
+  }
+ },
+ "tile.blue": {
+  "dark": {
+   "args": [
+    80,
+    468,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Derived",
+   "note": "Settings icon tile (a gradient), blue (Private Chats)",
+   "op": "fill",
+   "share": 0.4,
+   "value": "#2B94FF"
+  }
+ },
+ "tile.green": {
+  "dark": {
+   "args": [
+    80,
+    612,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Derived",
+   "note": "Settings icon tile (a gradient), green (Group Chats)",
+   "op": "fill",
+   "share": 0.33,
+   "value": "#4ED86C"
+  }
+ },
+ "tile.grey": {
+  "dark": {
+   "args": [
+    85,
+    1555,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/09-settings-root-profile.png",
+   "evidence": "Derived",
+   "note": "Settings icon tile (a gradient), grey (Privacy and Security)",
+   "op": "fill",
+   "readFrom": "09-settings-root-profile.raw.png, converted to sRGB (the .png is masked)",
+   "share": 0.3,
+   "value": "#9F9FA3"
+  }
+ },
+ "tile.orange": {
+  "dark": {
+   "args": [
+    80,
+    757,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Derived",
+   "note": "Settings icon tile (a gradient), orange (Channels)",
+   "op": "fill",
+   "share": 0.3,
+   "value": "#FFB029"
+  }
+ },
+ "tile.pink": {
+  "dark": {
+   "args": [
+    80,
+    1005,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Derived",
+   "note": "Settings icon tile (a gradient), pink (Reactions)",
+   "op": "fill",
+   "share": 0.3,
+   "value": "#FF4166"
+  }
+ },
+ "tile.purple": {
+  "dark": {
+   "args": [
+    80,
+    910,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Derived",
+   "note": "Settings icon tile (a gradient), purple (Auto-Delete Messages)",
+   "op": "fill",
+   "share": 0.33,
+   "value": "#C064EF"
+  }
+ },
+ "tile.red": {
+  "dark": {
+   "args": [
+    80,
+    390,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Derived",
+   "note": "Settings icon tile (a gradient), red (Blocked Users)",
+   "op": "fill",
+   "share": 0.23,
+   "value": "#FF594F"
+  }
+ },
+ "tile.violet": {
+  "dark": {
+   "args": [
+    80,
+    880,
+    10,
+    3
+   ],
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Derived",
+   "note": "Settings icon tile (a gradient), violet (Stories)",
+   "op": "fill",
+   "share": 0.43,
+   "value": "#706DF7"
+  }
+ },
+ "type.bubble": {
+  "dark": {
+   "args": [
+    86,
+    520,
+    112,
+    565
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/25-appearance-theme-cards-disabled-switch.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'D' of bubble text (Appearance preview)",
+   "op": "cap",
+   "top": 532,
+   "value": "16pt"
+  }
+ },
+ "type.bubbleMeta": {
+  "dark": {
+   "args": [
+    664,
+    1378,
+    677,
+    1403
+   ],
+   "capHeight": "7.5pt",
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Derived",
+   "inkPx": 16,
+   "note": "'2' of a bubble time",
+   "op": "cap",
+   "top": 1386,
+   "value": "10pt"
+  }
+ },
+ "type.button": {
+  "dark": {
+   "args": [
+    345,
+    730,
+    372,
+    780
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/24-devices-primary-button-destructive-row.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of 'Add Device'",
+   "op": "cap",
+   "top": 743,
+   "value": "17pt"
+  }
+ },
+ "type.chatPreview": {
+  "dark": {
+   "args": [
+    188,
+    595,
+    210,
+    635
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'Y' of a chat row preview",
+   "op": "cap",
+   "top": 600,
+   "value": "15pt"
+  }
+ },
+ "type.chatTitle": {
+  "dark": {
+   "args": [
+    275,
+    700,
+    300,
+    745
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'H' of a chat row title",
+   "op": "cap",
+   "top": 712,
+   "value": "15pt"
+  }
+ },
+ "type.chip": {
+  "dark": {
+   "args": [
+    88,
+    318,
+    112,
+    360
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'A' of a folder chip",
+   "op": "cap",
+   "top": 326,
+   "value": "15pt"
+  }
+ },
+ "type.footnote": {
+  "dark": {
+   "args": [
+    78,
+    972,
+    98,
+    1005
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'A' of a footnote",
+   "op": "cap",
+   "top": 983,
+   "value": "12pt"
+  }
+ },
+ "type.menuItem": {
+  "dark": {
+   "args": [
+    450,
+    990,
+    474,
+    1040
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/05-message-context-menu-reactions.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'R' of a menu item",
+   "op": "cap",
+   "top": 1001,
+   "value": "17pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    303,
+    205,
+    332,
+    260
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'N' of a navigation title",
+   "op": "cap",
+   "top": 221,
+   "value": "17pt"
+  }
+ },
+ "type.profileName": {
+  "dark": {
+   "args": [
+    342,
+    440,
+    362,
+    495
+   ],
+   "capHeight": "19.5pt",
+   "capture": "screenshots/dark/09-settings-root-profile.png",
+   "evidence": "Derived",
+   "inkPx": 40,
+   "note": "'k' of the profile name (ascender height)",
+   "op": "cap",
+   "readFrom": "09-settings-root-profile.raw.png, converted to sRGB (the .png is masked)",
+   "top": 445,
+   "value": "27pt"
+  }
+ },
+ "type.quote": {
+  "dark": {
+   "args": [
+    143,
+    878,
+    167,
+    915
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/dark/03-chat-topics-pinned-link-preview.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'A' of a link preview's description",
+   "op": "cap",
+   "top": 885,
+   "value": "14pt"
+  }
+ },
+ "type.rowSubtitle": {
+  "dark": {
+   "args": [
+    165,
+    1005,
+    192,
+    1045
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'M' of a row subtitle ('Messages, Stories')",
+   "op": "cap",
+   "top": 1014,
+   "value": "15pt"
+  }
+ },
+ "type.rowTitle": {
+  "dark": {
+   "args": [
+    165,
+    365,
+    186,
+    415
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/11-settings-privacy-grouped-values.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'B' of a row title",
+   "op": "cap",
+   "top": 378,
+   "value": "17pt"
+  }
+ },
+ "type.sectionHeader": {
+  "dark": {
+   "args": [
+    78,
+    350,
+    98,
+    385
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/10-settings-notifications-switches-on-off.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'M' of a section header",
+   "op": "cap",
+   "top": 358,
+   "value": "12pt"
+  }
+ },
+ "type.segmented": {
+  "dark": {
+   "args": [
+    300,
+    210,
+    325,
+    255
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/14-calls-segmented-all.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'A' of a segment label",
+   "op": "cap",
+   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
+   "top": 223,
+   "value": "15pt"
+  }
+ },
+ "type.tab": {
+  "dark": {
+   "args": [
+    288,
+    1668,
+    304,
+    1700
+   ],
+   "capHeight": "7.5pt",
+   "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
+   "evidence": "Derived",
+   "inkPx": 16,
+   "note": "'C' of a tab label",
+   "op": "cap",
+   "top": 1682,
+   "value": "10pt"
+  }
+ }
+}
