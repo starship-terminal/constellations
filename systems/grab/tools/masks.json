@@ -1,0 +1,29 @@
+{
+ "_doc": "Private spans painted over in each capture before it is quantised into screenshots/light/ (tools/capture/quantize.py), so every committed screenshot and crop comes out masked. Each box is [x, y, w, h] in capture pixels. A plain box is filled with the most common colour on its one-pixel border (sample.py mask). A box given as an object has its own fill, leaves pure-black pixels (outside the rounded screen) alone when \"screen\" is true, and may keep shapes ([x, y, w, h, \"rect\" | \"ellipse\"]) unpainted: the controls floating over a masked map. Black boxes put back the screen's rounded corners where an earlier pass had painted over them. What each box hides is described in words only; the README lists them. Values were read before masking, from the unmasked captures.",
+ "masks": {
+  "01-home-tiles-search": [[444, 797, 177, 29]],
+  "02-home-scrolled-cards": [[444, 637, 177, 29]],
+  "03-transport-where-to-recents": [[135, 667, 470, 77]],
+  "04-destination-focused-recent-tabs": [[108, 698, 185, 40], [218, 748, 410, 35], [218, 888, 445, 35], [108, 922, 320, 32], [108, 1148, 195, 40], [218, 1198, 440, 35],
+                                         {"box": [108, 1740, 520, 25], "fill": "#FFFFFF"}],
+  "06-pickup-map-sheet-primary-button": [
+   {"box": [16, 76, 780, 1047], "fill": "#EEEFEE", "screen": true,
+    "keep": [[76, 110, 132, 38, "rect"], [583, 111, 162, 34, "rect"], [48, 200, 83, 85, "ellipse"], [145, 200, 622, 85, "rect"],
+             [686, 910, 80, 80, "ellipse"], [686, 1024, 80, 80, "ellipse"]]},
+   {"box": [16, 76, 96, 96], "fill": "#000000", "keep": [[16, 76, 192, 192, "ellipse"]]},
+   {"box": [700, 76, 96, 96], "fill": "#000000", "keep": [[604, 76, 192, 192, "ellipse"]]},
+   [60, 1158, 145, 40], [148, 1203, 432, 32], [222, 1330, 190, 34], [132, 1403, 222, 42]],
+  "07-ride-options-book-button-not-pressed": [[120, 468, 162, 59], [133, 1462, 66, 36]],
+  "09-activity-coachmark-tooltip": [[165, 503, 52, 44], [165, 676, 435, 40], [165, 911, 435, 42]],
+  "10-activity-list-status-labels": [[165, 503, 432, 44], [165, 676, 435, 40], [165, 911, 435, 42]],
+  "14-account-cards-list": [[80, 894, 102, 28]],
+  "15-account-scrolled-compact-header-new-badges": [[80, 534, 102, 28]],
+  "17-search-focused-chips-recent-pills": [[133, 657, 182, 38], [225, 707, 410, 36], [133, 903, 500, 42], [228, 955, 515, 38], [512, 1158, 58, 36]],
+  "24-pickup-chip-selected-map-list": [
+   {"box": [16, 330, 780, 423], "fill": "#EEEFEE", "screen": true,
+    "keep": [[48, 300, 718, 116, "rect"], [50, 443, 194, 64, "rect"], [264, 440, 176, 70, "rect"], [470, 443, 326, 64, "rect"],
+             [684, 606, 82, 82, "ellipse"]]},
+   {"box": [16, 745, 50, 22], "fill": "#EEEFEE", "screen": true, "keep": [[16, 752, 96, 96, "ellipse"]]},
+   {"box": [746, 745, 50, 22], "fill": "#EEEFEE", "screen": true, "keep": [[700, 752, 96, 96, "ellipse"]]}]
+ }
+}

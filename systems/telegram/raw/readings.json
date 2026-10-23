@@ -205,7 +205,6 @@
    "evidence": "Derived",
    "note": "Initials avatar, green ('M'), left of the letter",
    "op": "fill",
-   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
    "share": 0.33,
    "value": "#79D472"
   }
@@ -903,7 +902,6 @@
    "evidence": "Sampled",
    "note": "Dividers down the calls list",
    "op": "find",
-   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
    "value": [
     559,
     667,
@@ -1156,7 +1154,6 @@
    "from": 83,
    "note": "Calls list avatar",
    "op": "extent",
-   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
    "to": 164,
    "value": "41pt"
   }
@@ -1490,7 +1487,6 @@
    "from": 268,
    "note": "Segmented control width",
    "op": "extent",
-   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
    "to": 543,
    "value": "138pt"
   }
@@ -1513,7 +1509,6 @@
    "from": 194,
    "note": "Segmented control height",
    "op": "extent",
-   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
    "to": 273,
    "value": "40pt"
   }
@@ -2111,7 +2106,6 @@
    "evidence": "Derived",
    "note": "Segmented control track (All / Missed), right end",
    "op": "fill",
-   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
    "share": 0.51,
    "value": "#252525"
   },
@@ -2126,7 +2120,6 @@
    "evidence": "Derived",
    "note": "Segmented control track (All / Missed), right end",
    "op": "fill",
-   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
    "share": 0.36,
    "value": "#FDFDFD"
   }
@@ -2143,7 +2136,6 @@
    "evidence": "Derived",
    "note": "Selected segment ('All'), left of its label",
    "op": "fill",
-   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
    "share": 0.55,
    "value": "#464646"
   },
@@ -2158,7 +2150,6 @@
    "evidence": "Derived",
    "note": "Selected segment ('All'), left of its label",
    "op": "fill",
-   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
    "share": 0.37,
    "value": "#EDEDED"
   }
@@ -2671,7 +2662,6 @@
    "evidence": "Sampled (text)",
    "note": "Missed call name (red)",
    "op": "text",
-   "readFrom": "15-calls-segmented-missed-red.raw.png, converted to sRGB (the .png is masked)",
    "value": "#EA5647"
   },
   "light": {
@@ -2685,7 +2675,6 @@
    "evidence": "Sampled (text)",
    "note": "Missed call name (red)",
    "op": "text",
-   "readFrom": "15-calls-segmented-missed-red.raw.png, converted to sRGB (the .png is masked)",
    "value": "#FE3A2E"
   }
  },
@@ -3496,7 +3485,6 @@
    "inkPx": 22,
    "note": "'A' of a segment label",
    "op": "cap",
-   "readFrom": "14-calls-segmented-all.raw.png, converted to sRGB (the .png is masked)",
    "top": 223,
    "value": "15pt"
   }
