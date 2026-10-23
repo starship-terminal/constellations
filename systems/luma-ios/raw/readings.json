@@ -1,0 +1,4325 @@
+{
+ "accent.emphasis": {
+  "dark": {
+   "args": [
+    64,
+    786,
+    12,
+    14
+   ],
+   "capture": "screenshots/dark/11-category-page-subscribe-badges.png",
+   "evidence": "Sampled",
+   "note": "'Subscribe' button, left of its label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#A35AC6"
+  },
+  "light": {
+   "args": [
+    64,
+    786,
+    12,
+    14
+   ],
+   "capture": "screenshots/light/11-category-page-subscribe-badges.png",
+   "evidence": "Derived",
+   "note": "'Subscribe' button, left of its label",
+   "op": "fill",
+   "share": 0.58,
+   "value": "#AB69CE"
+  }
+ },
+ "accent.fg": {
+  "dark": {
+   "args": [
+    98,
+    512,
+    76,
+    26
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Sampled (text)",
+   "note": "'Invited' badge label",
+   "op": "text",
+   "value": "#B495FF"
+  },
+  "light": {
+   "args": [
+    98,
+    512,
+    76,
+    26
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Sampled (text)",
+   "note": "'Invited' badge label",
+   "op": "text",
+   "value": "#662FFE"
+  }
+ },
+ "accent.subtle": {
+  "dark": {
+   "args": [
+    110,
+    510,
+    50,
+    4
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "note": "'Invited' badge fill, above its label",
+   "op": "mean",
+   "spread": 5,
+   "value": "#1B0C41"
+  },
+  "light": {
+   "args": [
+    110,
+    510,
+    50,
+    4
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "note": "'Invited' badge fill, above its label",
+   "op": "mean",
+   "spread": 3,
+   "value": "#EDE6FF"
+  }
+ },
+ "accent.tile": {
+  "dark": {
+   "args": [
+    72,
+    340,
+    8,
+    10
+   ],
+   "capture": "screenshots/dark/11-category-page-subscribe-badges.png",
+   "evidence": "Derived",
+   "note": "Category icon disc (Family), inside its left edge",
+   "op": "mean",
+   "spread": 2,
+   "value": "#291A2F"
+  },
+  "light": {
+   "args": [
+    72,
+    340,
+    8,
+    10
+   ],
+   "capture": "screenshots/light/11-category-page-subscribe-badges.png",
+   "evidence": "Derived",
+   "note": "Category icon disc (Family), inside its left edge",
+   "op": "mean",
+   "spread": 2,
+   "value": "#F0E0F6"
+  }
+ },
+ "bg.grouped": {
+  "dark": {
+   "args": [
+    300,
+    530,
+    200,
+    30
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "note": "Page behind grouped cards (Settings and its pushed pages), between two cards",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    300,
+    530,
+    200,
+    30
+   ],
+   "capture": "screenshots/light/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "note": "Page behind grouped cards (Settings and its pushed pages), between two cards",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F7F7F9"
+  }
+ },
+ "bg.page": {
+  "dark": {
+   "args": [
+    300,
+    1200,
+    200,
+    100
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Page behind full-bleed lists (Home, Discover, Chat, Your Events); the chat list's empty lower half",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    300,
+    1200,
+    200,
+    100
+   ],
+   "capture": "screenshots/light/28-chat-list-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Page behind full-bleed lists (Home, Discover, Chat, Your Events); the chat list's empty lower half",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "border.cardDivider": {
+  "dark": {
+   "args": [
+    300,
+    669,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "note": "Hairline between rows in a grouped card (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#38383A"
+  },
+  "light": {
+   "args": [
+    300,
+    669,
+    300,
+    1
+   ],
+   "capture": "screenshots/light/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "note": "Hairline between rows in a grouped card (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F4F4F4"
+  }
+ },
+ "border.chip": {
+  "dark": {
+   "args": [
+    120,
+    1217,
+    60,
+    1
+   ],
+   "capture": "screenshots/dark/09-discover-popular-category-chips.png",
+   "evidence": "Sampled",
+   "note": "Category chip outline, top edge (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202021"
+  },
+  "light": {
+   "args": [
+    120,
+    1217,
+    60,
+    1
+   ],
+   "capture": "screenshots/light/09-discover-popular-category-chips.png",
+   "evidence": "Sampled",
+   "note": "Category chip outline, top edge (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F2F3"
+  }
+ },
+ "border.control": {
+  "dark": {
+   "args": [
+    380,
+    438,
+    40,
+    1
+   ],
+   "capture": "screenshots/dark/24-appearance-scheme-cards-icon-grid.png",
+   "evidence": "Sampled",
+   "note": "Unselected Colour Scheme card outline, top edge",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#333333"
+  },
+  "light": {
+   "args": [
+    130,
+    438,
+    40,
+    1
+   ],
+   "capture": "screenshots/light/24-appearance-scheme-cards-icon-grid.png",
+   "evidence": "Sampled",
+   "note": "Unselected Colour Scheme card outline, top edge",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#D0D0D1"
+  }
+ },
+ "border.divider": {
+  "dark": {
+   "args": [
+    300,
+    557,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Sampled",
+   "note": "Hairline between event rows (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1A1A1A"
+  },
+  "light": {
+   "args": [
+    300,
+    557,
+    300,
+    1
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Sampled",
+   "note": "Hairline between event rows (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F4F4F4"
+  }
+ },
+ "border.selected": {
+  "dark": {
+   "args": [
+    130,
+    438,
+    40,
+    1
+   ],
+   "capture": "screenshots/dark/24-appearance-scheme-cards-icon-grid.png",
+   "evidence": "Sampled",
+   "note": "Selected Colour Scheme card outline, top edge (System in dark, Light in light)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    380,
+    438,
+    40,
+    1
+   ],
+   "capture": "screenshots/light/24-appearance-scheme-cards-icon-grid.png",
+   "evidence": "Sampled",
+   "note": "Selected Colour Scheme card outline, top edge (System in dark, Light in light)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#151517"
+  }
+ },
+ "danger.badge": {
+  "dark": {
+   "args": [
+    600,
+    1628,
+    6,
+    8
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "note": "Unread count badge on the Chat tab, left of the '1'",
+   "op": "mean",
+   "spread": 2,
+   "value": "#FA534F"
+  },
+  "light": {
+   "args": [
+    600,
+    1628,
+    6,
+    8
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "note": "Unread count badge on the Chat tab, left of the '1'",
+   "op": "mean",
+   "spread": 1,
+   "value": "#EE2B32"
+  }
+ },
+ "danger.dot": {
+  "dark": {
+   "args": [
+    742,
+    374,
+    4,
+    4
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Derived",
+   "note": "Unread dot in a chat row",
+   "op": "mean",
+   "spread": 2,
+   "value": "#FA534F"
+  },
+  "light": {
+   "args": [
+    742,
+    374,
+    4,
+    4
+   ],
+   "capture": "screenshots/light/28-chat-list-unread-dot.png",
+   "evidence": "Derived",
+   "note": "Unread dot in a chat row",
+   "op": "mean",
+   "spread": 1,
+   "value": "#EE2B32"
+  }
+ },
+ "danger.fg": {
+  "dark": {
+   "args": [
+    656,
+    1088,
+    90,
+    30
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled (text)",
+   "note": "'Sold Out' label",
+   "op": "text",
+   "value": "#FD766B"
+  },
+  "light": {
+   "args": [
+    656,
+    1088,
+    90,
+    30
+   ],
+   "capture": "screenshots/light/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled (text)",
+   "note": "'Sold Out' label",
+   "op": "text",
+   "value": "#EE2F33"
+  }
+ },
+ "danger.subtle": {
+  "dark": {
+   "args": [
+    670,
+    1089,
+    60,
+    4
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Derived",
+   "note": "'Sold Out' pill fill, above its label",
+   "op": "mean",
+   "spread": 0,
+   "value": "#190C0A"
+  },
+  "light": {
+   "args": [
+    670,
+    1089,
+    60,
+    4
+   ],
+   "capture": "screenshots/light/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Derived",
+   "note": "'Sold Out' pill fill, above its label",
+   "op": "mean",
+   "spread": 3,
+   "value": "#FEF5F4"
+  }
+ },
+ "focus.caret": {
+  "dark": {
+   "args": [
+    343,
+    200,
+    2,
+    30
+   ],
+   "capture": "screenshots/dark/13-search-typed-results-waitlist-badge.png",
+   "evidence": "Derived",
+   "note": "Text caret after 'design' in the search field, a two-pixel column",
+   "op": "fill",
+   "share": 0.45,
+   "value": "#5A5A5A"
+  },
+  "light": {
+   "args": [
+    343,
+    200,
+    2,
+    30
+   ],
+   "capture": "screenshots/light/13-search-typed-results-waitlist-badge.png",
+   "evidence": "Derived",
+   "note": "Text caret after 'design' in the search field, a two-pixel column",
+   "op": "fill",
+   "share": 0.22,
+   "value": "#151515"
+  }
+ },
+ "info.emphasis": {
+  "dark": {
+   "args": [
+    712,
+    1652,
+    12,
+    8
+   ],
+   "capture": "screenshots/dark/30-chat-composer-typed-send-enabled.png",
+   "evidence": "Derived",
+   "note": "Send button, below its arrow",
+   "op": "mean",
+   "spread": 0,
+   "value": "#0563F1"
+  },
+  "light": {
+   "args": [
+    712,
+    1652,
+    12,
+    8
+   ],
+   "capture": "screenshots/light/30-chat-composer-typed-send-enabled.png",
+   "evidence": "Derived",
+   "note": "Send button, below its arrow",
+   "op": "mean",
+   "spread": 5,
+   "value": "#0463F1"
+  }
+ },
+ "info.fg": {
+  "dark": {
+   "args": [
+    604,
+    440,
+    146,
+    32
+   ],
+   "capture": "screenshots/dark/13-search-typed-results-waitlist-badge.png",
+   "evidence": "Sampled (text)",
+   "note": "'Waitlist Open' label",
+   "op": "text",
+   "value": "#78ACFF"
+  },
+  "light": {
+   "args": [
+    604,
+    440,
+    146,
+    32
+   ],
+   "capture": "screenshots/light/13-search-typed-results-waitlist-badge.png",
+   "evidence": "Sampled (text)",
+   "note": "'Waitlist Open' label",
+   "op": "text",
+   "value": "#156BEB"
+  }
+ },
+ "info.subtle": {
+  "dark": {
+   "args": [
+    630,
+    441,
+    100,
+    4
+   ],
+   "capture": "screenshots/dark/13-search-typed-results-waitlist-badge.png",
+   "evidence": "Derived",
+   "note": "'Waitlist Open' pill fill, above its label",
+   "op": "mean",
+   "spread": 4,
+   "value": "#0D1118"
+  },
+  "light": {
+   "args": [
+    630,
+    441,
+    100,
+    4
+   ],
+   "capture": "screenshots/light/13-search-typed-results-waitlist-badge.png",
+   "evidence": "Derived",
+   "note": "'Waitlist Open' pill fill, above its label",
+   "op": "mean",
+   "spread": 5,
+   "value": "#F3F8FE"
+  }
+ },
+ "lines.aboutHeading": {
+  "dark": {
+   "args": [
+    56,
+    1100,
+    750,
+    1260
+   ],
+   "bands": [
+    [
+     1104,
+     1142
+    ],
+    [
+     1158,
+     1259
+    ]
+   ],
+   "capture": "screenshots/dark/07-event-compact-nav-hosts-about.png",
+   "evidence": "Derived",
+   "note": "Three lines of the bold About Event opening",
+   "op": "lines",
+   "value": "27.0pt"
+  }
+ },
+ "lines.body": {
+  "dark": {
+   "args": [
+    56,
+    600,
+    750,
+    720
+   ],
+   "bands": [
+    [
+     607,
+     635
+    ],
+    [
+     647,
+     675
+    ],
+    [
+     687,
+     710
+    ]
+   ],
+   "capture": "screenshots/dark/11-category-page-subscribe-badges.png",
+   "evidence": "Derived",
+   "note": "Three lines of category description",
+   "op": "lines",
+   "value": "20.0pt"
+  }
+ },
+ "lines.headline": {
+  "dark": {
+   "args": [
+    240,
+    890,
+    560,
+    1000
+   ],
+   "bands": [
+    [
+     899,
+     931
+    ],
+    [
+     943,
+     975
+    ],
+    [
+     997,
+     999
+    ]
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "note": "Two-line event row title ('Mahjong After Dark: / Spooky Edition')",
+   "op": "lines",
+   "value": "22.0pt"
+  }
+ },
+ "lines.notification": {
+  "dark": {
+   "args": [
+    152,
+    355,
+    640,
+    480
+   ],
+   "bands": [
+    [
+     361,
+     391
+    ],
+    [
+     402,
+     433
+    ],
+    [
+     445,
+     475
+    ]
+   ],
+   "capture": "screenshots/dark/17-notifications-list-unread-tint.png",
+   "evidence": "Derived",
+   "note": "Three-line notification text",
+   "op": "lines",
+   "value": "21.0pt"
+  }
+ },
+ "radius.banner": {
+  "dark": {
+   "args": [
+    400,
+    300,
+    70,
+    440
+   ],
+   "capture": "screenshots/dark/25-notification-settings-banner-popup-values.png",
+   "corner": [
+    56,
+    282
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Push Notifications Disabled banner",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    400,
+    300,
+    70,
+    440
+   ],
+   "capture": "screenshots/light/25-notification-settings-banner-popup-values.png",
+   "corner": [
+    56,
+    282
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Push Notifications Disabled banner",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.calendarTile": {
+  "light": {
+   "args": [
+    330,
+    1240,
+    245,
+    1300
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "corner": [
+    232,
+    1222
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Calendar tile in Your Calendars",
+   "op": "diag",
+   "value": "8.5pt"
+  }
+ },
+ "radius.card": {
+  "dark": {
+   "args": [
+    400,
+    300,
+    70,
+    470
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "corner": [
+    57,
+    282
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Settings card",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    400,
+    300,
+    70,
+    470
+   ],
+   "capture": "screenshots/light/23-settings-root-grouped-rows.png",
+   "corner": [
+    56,
+    282
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Settings card",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.eventAction": {
+  "dark": {
+   "args": [
+    160,
+    1410,
+    70,
+    1470
+   ],
+   "capture": "screenshots/dark/05-event-page-cover-tinted-actions.png",
+   "corner": [
+    56,
+    1396
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Register button on the event page",
+   "op": "diag",
+   "value": "11.9pt"
+  },
+  "light": {
+   "args": [
+    160,
+    1410,
+    70,
+    1470
+   ],
+   "capture": "screenshots/light/05-event-page-cover-tinted-actions.png",
+   "corner": [
+    56,
+    1396
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Register button on the event page",
+   "op": "diag",
+   "value": "11.9pt"
+  }
+ },
+ "radius.formGroup": {
+  "dark": {
+   "args": [
+    400,
+    970,
+    70,
+    1050
+   ],
+   "capture": "screenshots/dark/18-create-event-form-cover-tinted.png",
+   "corner": [
+    56,
+    970
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Start and End group on the Create Event sheet",
+   "op": "diag",
+   "value": "11.9pt"
+  },
+  "light": {
+   "args": [
+    400,
+    970,
+    70,
+    1050
+   ],
+   "capture": "screenshots/light/18-create-event-form-cover-tinted.png",
+   "corner": [
+    56,
+    970
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Start and End group on the Create Event sheet",
+   "op": "diag",
+   "value": "11.9pt"
+  }
+ },
+ "radius.settingsIcon": {
+  "dark": {
+   "args": [
+    108,
+    598,
+    92,
+    640
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "corner": [
+    89,
+    592
+   ],
+   "evidence": "Derived",
+   "inset": 4,
+   "note": "Coloured icon tile in a Settings row",
+   "op": "diag",
+   "value": "6.8pt"
+  },
+  "light": {
+   "args": [
+    108,
+    598,
+    92,
+    640
+   ],
+   "capture": "screenshots/light/23-settings-root-grouped-rows.png",
+   "corner": [
+    90,
+    593
+   ],
+   "evidence": "Derived",
+   "inset": 3,
+   "note": "Coloured icon tile in a Settings row",
+   "op": "diag",
+   "value": "5.1pt"
+  }
+ },
+ "radius.textArea": {
+  "dark": {
+   "args": [
+    650,
+    780,
+    70,
+    900
+   ],
+   "capture": "screenshots/dark/27-edit-profile-fields-social-handles.png",
+   "corner": [
+    59,
+    759
+   ],
+   "evidence": "Derived",
+   "inset": 14,
+   "note": "Bio text area",
+   "op": "diag",
+   "value": "23.9pt"
+  },
+  "light": {
+   "args": [
+    650,
+    780,
+    70,
+    900
+   ],
+   "capture": "screenshots/light/27-edit-profile-fields-social-handles.png",
+   "corner": [
+    59,
+    759
+   ],
+   "evidence": "Derived",
+   "inset": 14,
+   "note": "Bio text area",
+   "op": "diag",
+   "value": "23.9pt"
+  }
+ },
+ "radius.thumb": {
+  "dark": {
+   "args": [
+    150,
+    1420,
+    70,
+    1480
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "corner": [
+    56,
+    1398
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Event thumbnail with a flat cream cover (Founders House)",
+   "op": "diag",
+   "value": "8.5pt"
+  },
+  "light": {
+   "args": [
+    150,
+    1420,
+    70,
+    1480
+   ],
+   "capture": "screenshots/light/31-your-events-segmented-upcoming-soldout-badge.png",
+   "corner": [
+    56,
+    1398
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Event thumbnail with a flat cream cover (Founders House)",
+   "op": "diag",
+   "value": "8.5pt"
+  }
+ },
+ "rows.events": {
+  "dark": {
+   "args": [
+    "col",
+    500,
+    360,
+    1400,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled",
+   "note": "Edges down the Your Events list",
+   "op": "find",
+   "value": [
+    423,
+    424,
+    426,
+    427,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484,
+    486,
+    487,
+    488,
+    489,
+    490,
+    491,
+    493,
+    494,
+    495,
+    496,
+    497,
+    504,
+    505,
+    506,
+    508,
+    509,
+    510,
+    549,
+    551,
+    746,
+    747,
+    748,
+    749,
+    750,
+    751,
+    760,
+    761,
+    762,
+    763,
+    764,
+    765,
+    801,
+    803,
+    899,
+    900,
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908,
+    909,
+    910,
+    911,
+    914,
+    915,
+    916,
+    917,
+    918,
+    919,
+    989,
+    990,
+    991,
+    993,
+    994,
+    995,
+    998,
+    999,
+    1000,
+    1002,
+    1003,
+    1004,
+    1010,
+    1011,
+    1012,
+    1014,
+    1015,
+    1016,
+    1052,
+    1053,
+    1054,
+    1055,
+    1145,
+    1146,
+    1147,
+    1148,
+    1150,
+    1151,
+    1152,
+    1153,
+    1154,
+    1161,
+    1162,
+    1163,
+    1164,
+    1165,
+    1167,
+    1168,
+    1169,
+    1170,
+    1198,
+    1199,
+    1200,
+    1201,
+    1202,
+    1203,
+    1204,
+    1205,
+    1208,
+    1211,
+    1212,
+    1213,
+    1214,
+    1241,
+    1242,
+    1243,
+    1245,
+    1246,
+    1247,
+    1260,
+    1261,
+    1262,
+    1264,
+    1265,
+    1266,
+    1267
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    500,
+    360,
+    1400,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled",
+   "note": "Edges down the Your Events list",
+   "op": "find",
+   "value": [
+    423,
+    424,
+    426,
+    427,
+    480,
+    481,
+    482,
+    483,
+    484,
+    486,
+    487,
+    488,
+    489,
+    490,
+    491,
+    493,
+    494,
+    496,
+    497,
+    505,
+    506,
+    508,
+    509,
+    549,
+    551,
+    746,
+    747,
+    748,
+    749,
+    750,
+    751,
+    760,
+    761,
+    763,
+    764,
+    801,
+    803,
+    899,
+    900,
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908,
+    909,
+    910,
+    911,
+    914,
+    915,
+    916,
+    917,
+    918,
+    919,
+    990,
+    991,
+    993,
+    994,
+    998,
+    999,
+    1000,
+    1002,
+    1003,
+    1004,
+    1010,
+    1011,
+    1012,
+    1014,
+    1015,
+    1016,
+    1052,
+    1053,
+    1054,
+    1145,
+    1146,
+    1147,
+    1148,
+    1150,
+    1151,
+    1152,
+    1153,
+    1161,
+    1162,
+    1163,
+    1164,
+    1165,
+    1167,
+    1168,
+    1169,
+    1170,
+    1198,
+    1199,
+    1200,
+    1201,
+    1202,
+    1203,
+    1204,
+    1205,
+    1208,
+    1211,
+    1212,
+    1213,
+    1214,
+    1241,
+    1242,
+    1243,
+    1245,
+    1246,
+    1247,
+    1260,
+    1261,
+    1262,
+    1264,
+    1265,
+    1266
+   ]
+  }
+ },
+ "rows.notifSettings": {
+  "dark": {
+   "args": [
+    "col",
+    500,
+    690,
+    1180,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/25-notification-settings-banner-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Edges down the Events You Attend card",
+   "op": "find",
+   "value": [
+    732,
+    733,
+    734,
+    829,
+    830,
+    831,
+    832,
+    869,
+    870,
+    871,
+    890,
+    891,
+    892,
+    893,
+    928,
+    929,
+    930,
+    1025,
+    1026,
+    1027,
+    1028,
+    1124
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    500,
+    690,
+    1180,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/25-notification-settings-banner-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Edges down the Events You Attend card",
+   "op": "find",
+   "value": [
+    732,
+    733,
+    734,
+    830,
+    831,
+    832,
+    869,
+    870,
+    871,
+    890,
+    891,
+    892,
+    928,
+    929,
+    1026,
+    1027,
+    1028,
+    1124
+   ]
+  }
+ },
+ "rows.settings": {
+  "dark": {
+   "args": [
+    "col",
+    600,
+    280,
+    1170,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "note": "Edges down the first three Settings cards",
+   "op": "find",
+   "value": [
+    281,
+    282,
+    283,
+    425,
+    426,
+    427,
+    428,
+    524,
+    572,
+    668,
+    669,
+    670,
+    671,
+    766,
+    767,
+    875,
+    876,
+    972,
+    973,
+    974,
+    1069,
+    1070,
+    1071,
+    1072,
+    1168
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    600,
+    280,
+    1170,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "note": "Edges down the first three Settings cards",
+   "op": "find",
+   "value": [
+    282,
+    426,
+    427,
+    428,
+    524,
+    572,
+    668,
+    669,
+    670,
+    767,
+    972,
+    973,
+    974,
+    1070,
+    1071,
+    1072,
+    1168
+   ]
+  }
+ },
+ "scrim.ref": {
+  "dark": {
+   "args": [
+    500,
+    236,
+    100,
+    8
+   ],
+   "capture": "screenshots/dark/12-search-focused-filter-chips-recent.png",
+   "evidence": "Sampled",
+   "note": "Search field, undimmed",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    500,
+    236,
+    100,
+    8
+   ],
+   "capture": "screenshots/light/12-search-focused-filter-chips-recent.png",
+   "evidence": "Sampled",
+   "note": "Search field, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FDFDFD"
+  }
+ },
+ "scrim.sheet": {
+  "dark": {
+   "args": [
+    500,
+    236,
+    100,
+    8
+   ],
+   "capture": "screenshots/dark/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Derived",
+   "note": "The same search field behind the Date Range sheet (dimmed)",
+   "op": "fill",
+   "share": 0.52,
+   "value": "#0B0B0B"
+  },
+  "light": {
+   "args": [
+    500,
+    236,
+    100,
+    8
+   ],
+   "capture": "screenshots/light/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Sampled",
+   "note": "The same search field behind the Date Range sheet (dimmed)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C0C0C0"
+  }
+ },
+ "size.avatarHeader": {
+  "dark": {
+   "args": [
+    "row",
+    214,
+    30,
+    150,
+    [
+     40,
+     214
+    ],
+    14
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Sampled",
+   "from": 56,
+   "note": "Account avatar at the top left of a tab root",
+   "op": "extent",
+   "to": 143,
+   "value": "44pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    214,
+    30,
+    150,
+    [
+     40,
+     214
+    ],
+    14
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Sampled",
+   "from": 54,
+   "note": "Account avatar at the top left of a tab root",
+   "op": "extent",
+   "to": 145,
+   "value": "46pt"
+  }
+ },
+ "size.badge": {
+  "dark": {
+   "args": [
+    [
+     88,
+     520
+    ],
+    [
+     70,
+     495,
+     140,
+     60
+    ],
+    6
+   ],
+   "box": [
+    86,
+    508,
+    185,
+    543
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "colour": "#1B0C41",
+   "evidence": "Sampled",
+   "note": "'Invited' badge on a thumbnail",
+   "op": "bbox",
+   "value": "50x18pt"
+  },
+  "light": {
+   "args": [
+    [
+     88,
+     520
+    ],
+    [
+     70,
+     495,
+     140,
+     60
+    ],
+    6
+   ],
+   "box": [
+    85,
+    508,
+    186,
+    543
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "colour": "#EDE6FF",
+   "evidence": "Sampled",
+   "note": "'Invited' badge on a thumbnail",
+   "op": "bbox",
+   "value": "51x18pt"
+  }
+ },
+ "size.calendarTile": {
+  "light": {
+   "args": [
+    "row",
+    1300,
+    225,
+    400,
+    [
+     228,
+     1300
+    ],
+    12
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Sampled",
+   "from": 231,
+   "note": "Calendar tile in Your Calendars",
+   "op": "extent",
+   "to": 392,
+   "value": "81pt"
+  }
+ },
+ "size.categoryChip.h": {
+  "dark": {
+   "args": [
+    "col",
+    150,
+    1205,
+    1310,
+    [
+     150,
+     1210
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/09-discover-popular-category-chips.png",
+   "evidence": "Sampled",
+   "from": 1216,
+   "note": "Outlined category chip height ('Family')",
+   "op": "extent",
+   "to": 1296,
+   "value": "40.5pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    150,
+    1205,
+    1310,
+    [
+     150,
+     1210
+    ],
+    8
+   ],
+   "capture": "screenshots/light/09-discover-popular-category-chips.png",
+   "evidence": "Sampled",
+   "from": 1217,
+   "note": "Outlined category chip height ('Family')",
+   "op": "extent",
+   "to": 1296,
+   "value": "40pt"
+  }
+ },
+ "size.chip.h": {
+  "dark": {
+   "args": [
+    "col",
+    230,
+    265,
+    345,
+    [
+     230,
+     268
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/12-search-focused-filter-chips-recent.png",
+   "evidence": "Sampled",
+   "from": 274,
+   "note": "Filter chip height ('Near you')",
+   "op": "extent",
+   "to": 341,
+   "value": "34pt"
+  }
+ },
+ "size.chip.w": {
+  "dark": {
+   "args": [
+    "row",
+    288,
+    40,
+    280,
+    [
+     45,
+     288
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/12-search-focused-filter-chips-recent.png",
+   "evidence": "Sampled",
+   "from": 62,
+   "note": "Filter chip width ('Near you')",
+   "op": "extent",
+   "to": 263,
+   "value": "101pt"
+  }
+ },
+ "size.composer.h": {
+  "dark": {
+   "args": [
+    "col",
+    420,
+    1570,
+    1720,
+    [
+     420,
+     1580
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/29-chat-thread-image-bubble-composer.png",
+   "evidence": "Sampled",
+   "from": 1601,
+   "note": "Composer field height",
+   "op": "extent",
+   "to": 1683,
+   "value": "41.5pt"
+  }
+ },
+ "size.dot": {
+  "dark": {
+   "args": [
+    [
+     744,
+     376
+    ],
+    [
+     730,
+     360,
+     30,
+     30
+    ],
+    40
+   ],
+   "box": [
+    740,
+    369,
+    755,
+    383
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "colour": "#FA534F",
+   "evidence": "Sampled",
+   "note": "Unread dot in a chat row",
+   "op": "bbox",
+   "value": "8x7.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     744,
+     376
+    ],
+    [
+     730,
+     360,
+     30,
+     30
+    ],
+    40
+   ],
+   "box": [
+    740,
+    369,
+    755,
+    383
+   ],
+   "capture": "screenshots/light/28-chat-list-unread-dot.png",
+   "colour": "#EE2B32",
+   "evidence": "Sampled",
+   "note": "Unread dot in a chat row",
+   "op": "bbox",
+   "value": "8x7.5pt"
+  }
+ },
+ "size.eventAction": {
+  "dark": {
+   "args": [
+    [
+     70,
+     1420
+    ],
+    [
+     40,
+     1380,
+     280,
+     150
+    ],
+    4
+   ],
+   "box": [
+    57,
+    1397,
+    280,
+    1502
+   ],
+   "capture": "screenshots/dark/05-event-page-cover-tinted-actions.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Register button on the event page",
+   "op": "bbox",
+   "value": "112x53pt"
+  },
+  "light": {
+   "args": [
+    [
+     70,
+     1420
+    ],
+    [
+     40,
+     1380,
+     280,
+     150
+    ],
+    4
+   ],
+   "box": [
+    57,
+    1397,
+    280,
+    1502
+   ],
+   "capture": "screenshots/light/05-event-page-cover-tinted-actions.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Register button on the event page",
+   "op": "bbox",
+   "value": "112x53pt"
+  }
+ },
+ "size.field": {
+  "dark": {
+   "args": [
+    [
+     250,
+     580
+    ],
+    [
+     40,
+     540,
+     740,
+     140
+    ],
+    2
+   ],
+   "box": [
+    58,
+    563,
+    754,
+    657
+   ],
+   "capture": "screenshots/dark/27-edit-profile-fields-social-handles.png",
+   "colour": "#232325",
+   "evidence": "Sampled",
+   "note": "Name field",
+   "op": "bbox",
+   "value": "348.5x47.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     250,
+     580
+    ],
+    [
+     40,
+     540,
+     740,
+     140
+    ],
+    2
+   ],
+   "box": [
+    57,
+    562,
+    754,
+    658
+   ],
+   "capture": "screenshots/light/27-edit-profile-fields-social-handles.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Name field",
+   "op": "bbox",
+   "value": "349x48.5pt"
+  }
+ },
+ "size.headerButtons.w": {
+  "dark": {
+   "args": [
+    "row",
+    214,
+    540,
+    780,
+    [
+     550,
+     214
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Sampled",
+   "from": 580,
+   "note": "Glass pair of header buttons (+ and bell), width",
+   "op": "extent",
+   "to": 755,
+   "value": "88pt"
+  }
+ },
+ "size.icon.meta": {
+  "dark": {
+   "args": [
+    "row",
+    502,
+    236,
+    276,
+    [
+     238,
+     502
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Sampled",
+   "from": 241,
+   "note": "Clock icon before an event meta line, width",
+   "op": "extent",
+   "to": 268,
+   "value": "14pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    502,
+    236,
+    276,
+    [
+     238,
+     502
+    ],
+    30
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Sampled",
+   "from": 241,
+   "note": "Clock icon before an event meta line, width",
+   "op": "extent",
+   "to": 268,
+   "value": "14pt"
+  }
+ },
+ "size.icon.tab": {
+  "dark": {
+   "args": [
+    "row",
+    1646,
+    372,
+    440,
+    [
+     374,
+     1646
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Sampled",
+   "from": 384,
+   "note": "Discover tab icon, width",
+   "op": "extent",
+   "to": 427,
+   "value": "22pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    1646,
+    372,
+    440,
+    [
+     374,
+     1646
+    ],
+    30
+   ],
+   "capture": "screenshots/light/28-chat-list-unread-dot.png",
+   "evidence": "Sampled",
+   "from": 384,
+   "note": "Discover tab icon, width",
+   "op": "extent",
+   "to": 427,
+   "value": "22pt"
+  }
+ },
+ "size.navButton.h": {
+  "dark": {
+   "args": [
+    "col",
+    100,
+    150,
+    270,
+    [
+     100,
+     160
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "from": 169,
+   "note": "Round glass back button, height",
+   "op": "extent",
+   "to": 258,
+   "value": "45pt"
+  }
+ },
+ "size.navButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    214,
+    30,
+    200,
+    [
+     40,
+     214
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "from": 56,
+   "note": "Round glass back button, width",
+   "op": "extent",
+   "to": 143,
+   "value": "44pt"
+  }
+ },
+ "size.pill": {
+  "dark": {
+   "args": [
+    [
+     668,
+     390
+    ],
+    [
+     640,
+     360,
+     130,
+     60
+    ],
+    4
+   ],
+   "box": [
+    666,
+    373,
+    755,
+    406
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "colour": "#0C160B",
+   "evidence": "Sampled",
+   "note": "Price pill ('US$15')",
+   "op": "bbox",
+   "value": "45x17pt"
+  },
+  "light": {
+   "args": [
+    [
+     668,
+     390
+    ],
+    [
+     640,
+     360,
+     130,
+     60
+    ],
+    4
+   ],
+   "box": [
+    665,
+    373,
+    754,
+    406
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "colour": "#F6FCF5",
+   "evidence": "Sampled",
+   "note": "Price pill ('US$15')",
+   "op": "bbox",
+   "value": "45x17pt"
+  }
+ },
+ "size.primary": {
+  "dark": {
+   "args": [
+    [
+     200,
+     1600
+    ],
+    [
+     40,
+     1560,
+     740,
+     150
+    ],
+    4
+   ],
+   "box": [
+    71,
+    1588,
+    740,
+    1681
+   ],
+   "capture": "screenshots/dark/14-date-range-sheet-calendar-confirm.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Confirm button",
+   "op": "bbox",
+   "value": "335x47pt"
+  },
+  "light": {
+   "args": [
+    [
+     200,
+     1600
+    ],
+    [
+     40,
+     1560,
+     740,
+     150
+    ],
+    4
+   ],
+   "box": [
+    70,
+    1592,
+    741,
+    1677
+   ],
+   "capture": "screenshots/light/14-date-range-sheet-calendar-confirm.png",
+   "colour": "#151517",
+   "evidence": "Sampled",
+   "note": "Confirm button",
+   "op": "bbox",
+   "value": "336x43pt"
+  }
+ },
+ "size.search.h": {
+  "dark": {
+   "args": [
+    "col",
+    500,
+    150,
+    268,
+    [
+     500,
+     155
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/12-search-focused-filter-chips-recent.png",
+   "evidence": "Sampled",
+   "from": 169,
+   "note": "Search field height",
+   "op": "extent",
+   "to": 258,
+   "value": "45pt"
+  }
+ },
+ "size.segmentPill.h": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    170,
+    258,
+    [
+     300,
+     170
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled",
+   "from": 173,
+   "note": "Selected segment pill height",
+   "op": "extent",
+   "to": 254,
+   "value": "41pt"
+  }
+ },
+ "size.segmentPill.w": {
+  "dark": {
+   "args": [
+    "row",
+    180,
+    216,
+    520,
+    [
+     215,
+     180
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled",
+   "from": 220,
+   "note": "Selected segment pill width ('Upcoming')",
+   "op": "extent",
+   "to": 380,
+   "value": "80.5pt"
+  }
+ },
+ "size.segmented.h": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    150,
+    280,
+    [
+     300,
+     155
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled",
+   "from": 165,
+   "note": "Segmented control height",
+   "op": "extent",
+   "to": 262,
+   "value": "49pt"
+  }
+ },
+ "size.segmented.w": {
+  "dark": {
+   "args": [
+    "row",
+    214,
+    150,
+    640,
+    [
+     160,
+     214
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled",
+   "from": 194,
+   "note": "Segmented control width",
+   "op": "extent",
+   "to": 617,
+   "value": "212pt"
+  }
+ },
+ "size.send": {
+  "dark": {
+   "args": [
+    [
+     712,
+     1656
+    ],
+    [
+     690,
+     1600,
+     90,
+     90
+    ],
+    30
+   ],
+   "box": [
+    704,
+    1616,
+    759,
+    1671
+   ],
+   "capture": "screenshots/dark/30-chat-composer-typed-send-enabled.png",
+   "colour": "#0563F1",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "bbox",
+   "value": "28x28pt"
+  },
+  "light": {
+   "args": [
+    [
+     712,
+     1656
+    ],
+    [
+     690,
+     1600,
+     90,
+     90
+    ],
+    30
+   ],
+   "box": [
+    704,
+    1616,
+    758,
+    1670
+   ],
+   "capture": "screenshots/light/30-chat-composer-typed-send-enabled.png",
+   "colour": "#0563F1",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "bbox",
+   "value": "27.5x27.5pt"
+  }
+ },
+ "size.settingsIcon": {
+  "dark": {
+   "args": [
+    "row",
+    622,
+    70,
+    170,
+    [
+     75,
+     622
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "from": 88,
+   "note": "Coloured icon tile in a Settings row (Account Settings)",
+   "op": "extent",
+   "to": 143,
+   "value": "28pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    622,
+    70,
+    170,
+    [
+     75,
+     622
+    ],
+    30
+   ],
+   "capture": "screenshots/light/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "from": 88,
+   "note": "Coloured icon tile in a Settings row (Account Settings)",
+   "op": "extent",
+   "to": 143,
+   "value": "28pt"
+  }
+ },
+ "size.statusPill.h": {
+  "dark": {
+   "args": [
+    "col",
+    700,
+    1070,
+    1130,
+    [
+     700,
+     1072
+    ],
+    3
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled",
+   "from": 1085,
+   "note": "'Sold Out' pill height",
+   "op": "extent",
+   "to": 1121,
+   "value": "18.5pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    700,
+    1070,
+    1130,
+    [
+     700,
+     1072
+    ],
+    3
+   ],
+   "capture": "screenshots/light/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled",
+   "from": 1086,
+   "note": "'Sold Out' pill height",
+   "op": "extent",
+   "to": 1120,
+   "value": "17.5pt"
+  }
+ },
+ "size.subscribe.h": {
+  "dark": {
+   "args": [
+    "col",
+    150,
+    740,
+    840,
+    [
+     150,
+     745
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/11-category-page-subscribe-badges.png",
+   "evidence": "Sampled",
+   "from": 757,
+   "note": "Subscribe button height",
+   "op": "extent",
+   "to": 825,
+   "value": "34.5pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    150,
+    740,
+    840,
+    [
+     150,
+     745
+    ],
+    12
+   ],
+   "capture": "screenshots/light/11-category-page-subscribe-badges.png",
+   "evidence": "Sampled",
+   "from": 756,
+   "note": "Subscribe button height",
+   "op": "extent",
+   "to": 826,
+   "value": "35.5pt"
+  }
+ },
+ "size.subscribe.w": {
+  "dark": {
+   "args": [
+    "row",
+    794,
+    30,
+    250,
+    [
+     35,
+     794
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/11-category-page-subscribe-badges.png",
+   "evidence": "Sampled",
+   "from": 55,
+   "note": "Subscribe button width",
+   "op": "extent",
+   "to": 246,
+   "value": "96pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    794,
+    30,
+    250,
+    [
+     35,
+     794
+    ],
+    12
+   ],
+   "capture": "screenshots/light/11-category-page-subscribe-badges.png",
+   "evidence": "Sampled",
+   "from": 54,
+   "note": "Subscribe button width",
+   "op": "extent",
+   "to": 247,
+   "value": "97pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     700,
+     1224
+    ],
+    [
+     580,
+     1180,
+     170,
+     90
+    ],
+    10
+   ],
+   "box": [
+    603,
+    1196,
+    727,
+    1250
+   ],
+   "capture": "screenshots/dark/19-create-event-ticketing-options-switch-popups.png",
+   "colour": "#B69D86",
+   "evidence": "Sampled",
+   "note": "Switch track",
+   "op": "bbox",
+   "value": "62.5x27.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     700,
+     1224
+    ],
+    [
+     580,
+     1180,
+     170,
+     90
+    ],
+    10
+   ],
+   "box": [
+    603,
+    1196,
+    727,
+    1250
+   ],
+   "capture": "screenshots/light/19-create-event-ticketing-options-switch-popups.png",
+   "colour": "#AF8CAB",
+   "evidence": "Sampled",
+   "note": "Switch track",
+   "op": "bbox",
+   "value": "62.5x27.5pt"
+  }
+ },
+ "size.switchThumb": {
+  "dark": {
+   "args": [
+    [
+     626,
+     1224
+    ],
+    [
+     590,
+     1185,
+     100,
+     80
+    ],
+    6
+   ],
+   "box": [
+    607,
+    1200,
+    678,
+    1245
+   ],
+   "capture": "screenshots/dark/19-create-event-ticketing-options-switch-popups.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "bbox",
+   "value": "36x23pt"
+  },
+  "light": {
+   "args": [
+    [
+     626,
+     1224
+    ],
+    [
+     590,
+     1185,
+     100,
+     80
+    ],
+    6
+   ],
+   "box": [
+    607,
+    1200,
+    678,
+    1245
+   ],
+   "capture": "screenshots/light/19-create-event-ticketing-options-switch-popups.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "bbox",
+   "value": "36x23pt"
+  }
+ },
+ "size.tabBadge": {
+  "dark": {
+   "args": [
+    [
+     600,
+     1630
+    ],
+    [
+     580,
+     1600,
+     70,
+     60
+    ],
+    40
+   ],
+   "box": [
+    592,
+    1611,
+    630,
+    1648
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "colour": "#FA534F",
+   "evidence": "Sampled",
+   "note": "Unread count badge on a tab",
+   "op": "bbox",
+   "value": "19.5x19pt"
+  },
+  "light": {
+   "args": [
+    [
+     600,
+     1630
+    ],
+    [
+     580,
+     1600,
+     70,
+     60
+    ],
+    40
+   ],
+   "box": [
+    592,
+    1611,
+    630,
+    1648
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "colour": "#EE2B32",
+   "evidence": "Sampled",
+   "note": "Unread count badge on a tab",
+   "op": "bbox",
+   "value": "19.5x19pt"
+  }
+ },
+ "size.tabBar.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    1560,
+    1770,
+    [
+     400,
+     1570
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Sampled",
+   "from": 1597,
+   "note": "Tab bar height",
+   "op": "extent",
+   "to": 1722,
+   "value": "63pt"
+  }
+ },
+ "size.tabBar.w": {
+  "dark": {
+   "args": [
+    "row",
+    1661,
+    100,
+    720,
+    [
+     110,
+     1661
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Sampled",
+   "from": 132,
+   "note": "Tab bar width",
+   "op": "extent",
+   "to": 679,
+   "value": "274pt"
+  }
+ },
+ "size.tabSelected": {
+  "dark": {
+   "args": [
+    "row",
+    1661,
+    440,
+    676,
+    [
+     460,
+     1661
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Sampled",
+   "from": 484,
+   "note": "Selected tab pill width",
+   "op": "extent",
+   "to": 671,
+   "value": "94pt"
+  }
+ },
+ "size.thumb": {
+  "dark": {
+   "args": [
+    "row",
+    450,
+    30,
+    230,
+    [
+     40,
+     450
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Sampled",
+   "from": 56,
+   "note": "Event cover thumbnail in a row, width",
+   "op": "extent",
+   "to": 215,
+   "value": "80pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    450,
+    30,
+    230,
+    [
+     40,
+     450
+    ],
+    12
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Sampled",
+   "from": 55,
+   "note": "Event cover thumbnail in a row, width",
+   "op": "extent",
+   "to": 216,
+   "value": "81pt"
+  }
+ },
+ "success.fg": {
+  "dark": {
+   "args": [
+    676,
+    376,
+    76,
+    30
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Sampled (text)",
+   "note": "Price pill label",
+   "op": "text",
+   "value": "#79D56C"
+  },
+  "light": {
+   "args": [
+    676,
+    376,
+    76,
+    30
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Sampled (text)",
+   "note": "Price pill label",
+   "op": "text",
+   "value": "#3DBF31"
+  }
+ },
+ "success.subtle": {
+  "dark": {
+   "args": [
+    700,
+    375,
+    40,
+    4
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "note": "Price pill fill ('US$15'), above its label",
+   "op": "mean",
+   "spread": 3,
+   "value": "#0C160B"
+  },
+  "light": {
+   "args": [
+    700,
+    375,
+    40,
+    4
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "note": "Price pill fill ('US$15'), above its label",
+   "op": "mean",
+   "spread": 5,
+   "value": "#F6FBF6"
+  }
+ },
+ "surface.banner": {
+  "dark": {
+   "args": [
+    600,
+    400,
+    120,
+    8
+   ],
+   "capture": "screenshots/dark/25-notification-settings-banner-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Push Notifications Disabled banner card",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#232325"
+  },
+  "light": {
+   "args": [
+    600,
+    400,
+    120,
+    8
+   ],
+   "capture": "screenshots/light/25-notification-settings-banner-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Push Notifications Disabled banner card",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.bubble": {
+  "dark": {
+   "args": [
+    106,
+    1516,
+    8,
+    20
+   ],
+   "capture": "screenshots/dark/29-chat-thread-image-bubble-composer.png",
+   "evidence": "Sampled",
+   "note": "Message bubble ('FOOD IS OUT'), left padding",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#313133"
+  },
+  "light": {
+   "args": [
+    106,
+    1516,
+    8,
+    20
+   ],
+   "capture": "screenshots/light/29-chat-thread-image-bubble-composer.png",
+   "evidence": "Sampled",
+   "note": "Message bubble ('FOOD IS OUT'), left padding",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#F5F5F7"
+  }
+ },
+ "surface.card": {
+  "dark": {
+   "args": [
+    500,
+    440,
+    200,
+    30
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "note": "Grouped card (Settings, Edit Profile row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#232325"
+  },
+  "light": {
+   "args": [
+    500,
+    440,
+    200,
+    30
+   ],
+   "capture": "screenshots/light/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled",
+   "note": "Grouped card (Settings, Edit Profile row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.chip": {
+  "dark": {
+   "args": [
+    230,
+    288,
+    30,
+    6
+   ],
+   "capture": "screenshots/dark/12-search-focused-filter-chips-recent.png",
+   "evidence": "Derived",
+   "note": "'Near you' filter chip (glass), above its label",
+   "op": "fill",
+   "share": 0.8,
+   "value": "#1F1F1F"
+  },
+  "light": {
+   "args": [
+    230,
+    288,
+    30,
+    6
+   ],
+   "capture": "screenshots/light/12-search-focused-filter-chips-recent.png",
+   "evidence": "Derived",
+   "note": "'Near you' filter chip (glass), above its label",
+   "op": "fill",
+   "share": 0.68,
+   "value": "#F9F9F9"
+  }
+ },
+ "surface.composer": {
+  "dark": {
+   "args": [
+    420,
+    1612,
+    100,
+    8
+   ],
+   "capture": "screenshots/dark/29-chat-thread-image-bubble-composer.png",
+   "evidence": "Derived",
+   "note": "Message composer field (glass)",
+   "op": "fill",
+   "share": 0.5,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    420,
+    1612,
+    100,
+    8
+   ],
+   "capture": "screenshots/light/29-chat-thread-image-bubble-composer.png",
+   "evidence": "Derived",
+   "note": "Message composer field (glass)",
+   "op": "fill",
+   "share": 0.62,
+   "value": "#F9F9F9"
+  }
+ },
+ "surface.field": {
+  "dark": {
+   "args": [
+    250,
+    576,
+    100,
+    8
+   ],
+   "capture": "screenshots/dark/27-edit-profile-fields-social-handles.png",
+   "evidence": "Sampled",
+   "note": "Name field on Edit Profile",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#232325"
+  },
+  "light": {
+   "args": [
+    250,
+    576,
+    100,
+    8
+   ],
+   "capture": "screenshots/light/27-edit-profile-fields-social-handles.png",
+   "evidence": "Sampled",
+   "note": "Name field on Edit Profile",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.glass": {
+  "dark": {
+   "args": [
+    300,
+    1700,
+    30,
+    8
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Tab bar glass over an empty page",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    300,
+    1700,
+    30,
+    8
+   ],
+   "capture": "screenshots/light/28-chat-list-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Tab bar glass over an empty page",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FDFDFD"
+  }
+ },
+ "surface.menu": {
+  "dark": {
+   "args": [
+    640,
+    300,
+    80,
+    8
+   ],
+   "capture": "screenshots/dark/33-your-events-filter-menu-icons.png",
+   "evidence": "Sampled",
+   "note": "Pull-down menu (glass; takes colour from what is behind)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#212121"
+  },
+  "light": {
+   "args": [
+    640,
+    300,
+    80,
+    8
+   ],
+   "capture": "screenshots/light/33-your-events-filter-menu-icons.png",
+   "evidence": "Sampled",
+   "note": "Pull-down menu (glass; takes colour from what is behind)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FEFEFE"
+  }
+ },
+ "surface.navButton": {
+  "dark": {
+   "args": [
+    110,
+    232,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Derived",
+   "note": "Round glass back button, below the chevron",
+   "op": "fill",
+   "share": 0.85,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    110,
+    232,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/23-settings-root-grouped-rows.png",
+   "evidence": "Derived",
+   "note": "Round glass back button, below the chevron",
+   "op": "fill",
+   "share": 0.34,
+   "value": "#F9F9FB"
+  }
+ },
+ "surface.popup": {
+  "dark": {
+   "args": [
+    400,
+    380,
+    80,
+    8
+   ],
+   "capture": "screenshots/dark/15-location-filter-popup-menu.png",
+   "evidence": "Derived",
+   "note": "Pop-up menu (glass), right of 'Near you'",
+   "op": "fill",
+   "share": 0.49,
+   "value": "#252525"
+  },
+  "light": {
+   "args": [
+    400,
+    380,
+    80,
+    8
+   ],
+   "capture": "screenshots/light/15-location-filter-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Pop-up menu (glass), right of 'Near you'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FDFDFD"
+  }
+ },
+ "surface.primary": {
+  "dark": {
+   "args": [
+    200,
+    1600,
+    60,
+    8
+   ],
+   "capture": "screenshots/dark/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Sampled",
+   "note": "Confirm button: the theme's ink",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    200,
+    1600,
+    60,
+    8
+   ],
+   "capture": "screenshots/light/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Derived",
+   "note": "Confirm button: the theme's ink",
+   "op": "fill",
+   "share": 0.88,
+   "value": "#141416"
+  }
+ },
+ "surface.search": {
+  "dark": {
+   "args": [
+    500,
+    236,
+    200,
+    10
+   ],
+   "capture": "screenshots/dark/12-search-focused-filter-chips-recent.png",
+   "evidence": "Derived",
+   "note": "Search field (glass capsule)",
+   "op": "fill",
+   "share": 0.78,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    500,
+    236,
+    200,
+    10
+   ],
+   "capture": "screenshots/light/12-search-focused-filter-chips-recent.png",
+   "evidence": "Sampled",
+   "note": "Search field (glass capsule)",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#FDFDFD"
+  }
+ },
+ "surface.segmentSelected": {
+  "dark": {
+   "args": [
+    300,
+    178,
+    30,
+    6
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Derived",
+   "note": "Selected segment's pill ('Upcoming'), above its label",
+   "op": "fill",
+   "share": 0.5,
+   "value": "#0A0A0A"
+  },
+  "light": {
+   "args": [
+    300,
+    178,
+    30,
+    6
+   ],
+   "capture": "screenshots/light/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled",
+   "note": "Selected segment's pill ('Upcoming'), above its label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E7E7E7"
+  }
+ },
+ "surface.selected": {
+  "dark": {
+   "args": [
+    520,
+    1700,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Derived",
+   "note": "Selected tab's pill inside the tab bar ('Chat')",
+   "op": "fill",
+   "share": 0.8,
+   "value": "#0A0A0A"
+  },
+  "light": {
+   "args": [
+    520,
+    1700,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/28-chat-list-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Selected tab's pill inside the tab bar ('Chat')",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#EBEBEB"
+  }
+ },
+ "surface.sheet": {
+  "dark": {
+   "args": [
+    600,
+    560,
+    120,
+    20
+   ],
+   "capture": "screenshots/dark/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Derived",
+   "note": "Date Range sheet (glass over the search page)",
+   "op": "mean",
+   "spread": 5,
+   "value": "#2A2A2A"
+  },
+  "light": {
+   "args": [
+    600,
+    560,
+    120,
+    20
+   ],
+   "capture": "screenshots/light/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Derived",
+   "note": "Date Range sheet (glass over the search page)",
+   "op": "mean",
+   "spread": 4,
+   "value": "#E0E0E0"
+  }
+ },
+ "switch.off": {
+  "dark": {
+   "args": [
+    700,
+    1218,
+    10,
+    12
+   ],
+   "capture": "screenshots/dark/19-create-event-ticketing-options-switch-popups.png",
+   "evidence": "Derived",
+   "note": "Switch off track (over the cover-tinted sheet)",
+   "op": "mean",
+   "spread": 0,
+   "value": "#B69D86"
+  },
+  "light": {
+   "args": [
+    700,
+    1218,
+    10,
+    12
+   ],
+   "capture": "screenshots/light/19-create-event-ticketing-options-switch-popups.png",
+   "evidence": "Derived",
+   "note": "Switch off track (over the cover-tinted sheet)",
+   "op": "mean",
+   "spread": 2,
+   "value": "#AF8CAB"
+  }
+ },
+ "switch.thumb": {
+  "dark": {
+   "args": [
+    622,
+    1218,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/19-create-event-ticketing-options-switch-popups.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb (off) on the Create Event sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    622,
+    1218,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/19-create-event-ticketing-options-switch-popups.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb (off) on the Create Event sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "text.danger": {
+  "dark": {
+   "args": [
+    88,
+    1312,
+    240,
+    34
+   ],
+   "capture": "screenshots/dark/26-account-settings-destructive-row.png",
+   "evidence": "Sampled (text)",
+   "note": "'Delete Account' row",
+   "op": "text",
+   "value": "#FF786D"
+  },
+  "light": {
+   "args": [
+    88,
+    1312,
+    240,
+    34
+   ],
+   "capture": "screenshots/light/26-account-settings-destructive-row.png",
+   "evidence": "Sampled (text)",
+   "note": "'Delete Account' row",
+   "op": "text",
+   "value": "#ED2932"
+  }
+ },
+ "text.dangerMenu": {
+  "dark": {
+   "args": [
+    408,
+    564,
+    140,
+    34
+   ],
+   "capture": "screenshots/dark/22-following-menu-destructive-unfollow.png",
+   "evidence": "Sampled (text)",
+   "note": "'Unfollow' in the Following menu",
+   "op": "text",
+   "value": "#FF575B"
+  },
+  "light": {
+   "args": [
+    408,
+    564,
+    140,
+    34
+   ],
+   "capture": "screenshots/light/22-following-menu-destructive-unfollow.png",
+   "evidence": "Sampled (text)",
+   "note": "'Unfollow' in the Following menu",
+   "op": "text",
+   "value": "#FD3639"
+  }
+ },
+ "text.disabled": {
+  "dark": {
+   "args": [
+    130,
+    1205,
+    40,
+    30
+   ],
+   "capture": "screenshots/dark/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Sampled (text)",
+   "note": "A past day in the Date Range calendar ('18'), greyed",
+   "op": "text",
+   "value": "#7D7A7B"
+  },
+  "light": {
+   "args": [
+    130,
+    1205,
+    40,
+    30
+   ],
+   "capture": "screenshots/light/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Sampled (text)",
+   "note": "A past day in the Date Range calendar ('18'), greyed",
+   "op": "text",
+   "value": "#A09E9F"
+  }
+ },
+ "text.host": {
+  "dark": {
+   "args": [
+    282,
+    372,
+    130,
+    34
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Sampled (text)",
+   "note": "Event row host line ('Spice King')",
+   "op": "text",
+   "value": "#CACACA"
+  },
+  "light": {
+   "args": [
+    282,
+    372,
+    130,
+    34
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Sampled (text)",
+   "note": "Event row host line ('Spice King')",
+   "op": "text",
+   "value": "#727272"
+  }
+ },
+ "text.link": {
+  "dark": {
+   "args": [
+    160,
+    464,
+    200,
+    34
+   ],
+   "capture": "screenshots/dark/25-notification-settings-banner-popup-values.png",
+   "evidence": "Sampled (text)",
+   "note": "'Open Settings' link in the banner",
+   "op": "text",
+   "value": "#0D90FE"
+  },
+  "light": {
+   "args": [
+    160,
+    464,
+    200,
+    34
+   ],
+   "capture": "screenshots/light/25-notification-settings-banner-popup-values.png",
+   "evidence": "Sampled (text)",
+   "note": "'Open Settings' link in the banner",
+   "op": "text",
+   "value": "#0087FC"
+  }
+ },
+ "text.linkDate": {
+  "dark": {
+   "args": [
+    98,
+    718,
+    72,
+    34
+   ],
+   "capture": "screenshots/dark/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Sampled (text)",
+   "note": "'Now' in the Date Range sheet",
+   "op": "text",
+   "value": "#77ADFF"
+  },
+  "light": {
+   "args": [
+    98,
+    718,
+    72,
+    34
+   ],
+   "capture": "screenshots/light/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Sampled (text)",
+   "note": "'Now' in the Date Range sheet",
+   "op": "text",
+   "value": "#136AEA"
+  }
+ },
+ "text.navTitle": {
+  "dark": {
+   "args": [
+    340,
+    196,
+    140,
+    36
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Nav title ('Settings')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    340,
+    196,
+    140,
+    36
+   ],
+   "capture": "screenshots/light/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Nav title ('Settings')",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.onAccent": {
+  "dark": {
+   "args": [
+    82,
+    776,
+    136,
+    32,
+    "light"
+   ],
+   "capture": "screenshots/dark/11-category-page-subscribe-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "'Subscribe' label on the purple button",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    82,
+    776,
+    136,
+    32,
+    "light"
+   ],
+   "capture": "screenshots/light/11-category-page-subscribe-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "'Subscribe' label on the purple button",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.onPrimary": {
+  "dark": {
+   "args": [
+    346,
+    1620,
+    120,
+    36,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Sampled (text)",
+   "note": "'Confirm' label on the ink button",
+   "op": "text",
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    346,
+    1620,
+    120,
+    36,
+    "inverse"
+   ],
+   "capture": "screenshots/light/14-date-range-sheet-calendar-confirm.png",
+   "evidence": "Sampled (text)",
+   "note": "'Confirm' label on the ink button",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    88,
+    790,
+    450,
+    36
+   ],
+   "capture": "screenshots/dark/27-edit-profile-fields-social-handles.png",
+   "evidence": "Sampled (text)",
+   "note": "Bio text area placeholder",
+   "op": "text",
+   "value": "#605F63"
+  },
+  "light": {
+   "args": [
+    88,
+    790,
+    450,
+    36
+   ],
+   "capture": "screenshots/light/27-edit-profile-fields-social-handles.png",
+   "evidence": "Sampled (text)",
+   "note": "Bio text area placeholder",
+   "op": "text",
+   "value": "#C4C4C6"
+  }
+ },
+ "text.primary": {
+  "dark": {
+   "args": [
+    280,
+    425,
+    280,
+    40
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Sampled (text)",
+   "note": "Event row title ('Fri/Sat Gamenight')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    280,
+    425,
+    280,
+    40
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Sampled (text)",
+   "note": "Event row title ('Fri/Sat Gamenight')",
+   "op": "text",
+   "value": "#131315"
+  }
+ },
+ "text.secondary": {
+  "dark": {
+   "args": [
+    282,
+    485,
+    330,
+    34
+   ],
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Sampled (text)",
+   "note": "Event row meta line ('Yesterday, 19:00 GMT-7')",
+   "op": "text",
+   "value": "#CCCCCC"
+  },
+  "light": {
+   "args": [
+    282,
+    485,
+    330,
+    34
+   ],
+   "capture": "screenshots/light/01-home-your-events-calendars.png",
+   "evidence": "Sampled (text)",
+   "note": "Event row meta line ('Yesterday, 19:00 GMT-7')",
+   "op": "text",
+   "value": "#727272"
+  }
+ },
+ "text.sectionHeader": {
+  "dark": {
+   "args": [
+    88,
+    816,
+    200,
+    36
+   ],
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Grouped section header ('Preferences')",
+   "op": "text",
+   "value": "#9A9A9A"
+  },
+  "light": {
+   "args": [
+    88,
+    816,
+    200,
+    36
+   ],
+   "capture": "screenshots/light/23-settings-root-grouped-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Grouped section header ('Preferences')",
+   "op": "text",
+   "value": "#9C9C9E"
+  }
+ },
+ "text.tab": {
+  "dark": {
+   "args": [
+    364,
+    1676,
+    84,
+    24
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected tab label ('Discover')",
+   "op": "text",
+   "value": "#A0A0A0"
+  },
+  "light": {
+   "args": [
+    364,
+    1676,
+    84,
+    24
+   ],
+   "capture": "screenshots/light/28-chat-list-unread-dot.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected tab label ('Discover')",
+   "op": "text",
+   "value": "#A0A0A0"
+  }
+ },
+ "text.tabSelected": {
+  "dark": {
+   "args": [
+    550,
+    1676,
+    60,
+    24
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected tab label ('Chat')",
+   "op": "text",
+   "value": "#F0F0F0"
+  },
+  "light": {
+   "args": [
+    550,
+    1676,
+    60,
+    24
+   ],
+   "capture": "screenshots/light/28-chat-list-unread-dot.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected tab label ('Chat')",
+   "op": "text",
+   "value": "#0C0C0E"
+  }
+ },
+ "text.tertiary": {
+  "dark": {
+   "args": [
+    150,
+    290,
+    160,
+    34
+   ],
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled (text)",
+   "note": "Weekday after a date section ('/ Saturday')",
+   "op": "text",
+   "value": "#9A9A9A"
+  },
+  "light": {
+   "args": [
+    150,
+    290,
+    160,
+    34
+   ],
+   "capture": "screenshots/light/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Sampled (text)",
+   "note": "Weekday after a date section ('/ Saturday')",
+   "op": "text",
+   "value": "#A09FA1"
+  }
+ },
+ "text.time": {
+  "dark": {
+   "args": [
+    636,
+    312,
+    92,
+    30
+   ],
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Sampled (text)",
+   "note": "Chat row date ('12 Oct')",
+   "op": "text",
+   "value": "#999999"
+  },
+  "light": {
+   "args": [
+    636,
+    312,
+    92,
+    30
+   ],
+   "capture": "screenshots/light/28-chat-list-unread-dot.png",
+   "evidence": "Sampled (text)",
+   "note": "Chat row date ('12 Oct')",
+   "op": "text",
+   "value": "#A1A1A1"
+  }
+ },
+ "tint.createField": {
+  "dark": {
+   "args": [
+    650,
+    896,
+    80,
+    10
+   ],
+   "capture": "screenshots/dark/18-create-event-form-cover-tinted.png",
+   "evidence": "Derived",
+   "note": "Event Name field on the Create Event sheet",
+   "op": "mean",
+   "spread": 8,
+   "value": "#8B633C"
+  },
+  "light": {
+   "args": [
+    650,
+    896,
+    80,
+    10
+   ],
+   "capture": "screenshots/light/18-create-event-form-cover-tinted.png",
+   "evidence": "Derived",
+   "note": "Event Name field on the Create Event sheet",
+   "op": "mean",
+   "spread": 3,
+   "value": "#803F70"
+  }
+ },
+ "tint.createPage": {
+  "dark": {
+   "args": [
+    600,
+    1540,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/18-create-event-form-cover-tinted.png",
+   "evidence": "Derived",
+   "note": "Create Event sheet background between sections (random cover)",
+   "op": "mean",
+   "spread": 3,
+   "value": "#7C4A1D"
+  },
+  "light": {
+   "args": [
+    600,
+    1540,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/18-create-event-form-cover-tinted.png",
+   "evidence": "Derived",
+   "note": "Create Event sheet background between sections (random cover)",
+   "op": "mean",
+   "spread": 0,
+   "value": "#67265C"
+  }
+ },
+ "tint.eventButton": {
+  "dark": {
+   "args": [
+    300,
+    1420,
+    24,
+    40
+   ],
+   "capture": "screenshots/dark/05-event-page-cover-tinted-actions.png",
+   "evidence": "Derived",
+   "note": "Contact button on the event page, left padding",
+   "op": "mean",
+   "spread": 3,
+   "value": "#363C48"
+  },
+  "light": {
+   "args": [
+    300,
+    1420,
+    24,
+    40
+   ],
+   "capture": "screenshots/light/05-event-page-cover-tinted-actions.png",
+   "evidence": "Derived",
+   "note": "Contact button on the event page, left padding",
+   "op": "mean",
+   "spread": 2,
+   "value": "#343A46"
+  }
+ },
+ "tint.eventPage": {
+  "dark": {
+   "args": [
+    560,
+    1230,
+    160,
+    20
+   ],
+   "capture": "screenshots/dark/05-event-page-cover-tinted-actions.png",
+   "evidence": "Derived",
+   "note": "Event page background beside the host line (TEDxSingapore cover)",
+   "op": "mean",
+   "spread": 8,
+   "value": "#45474A"
+  },
+  "light": {
+   "args": [
+    560,
+    1230,
+    160,
+    20
+   ],
+   "capture": "screenshots/light/05-event-page-cover-tinted-actions.png",
+   "evidence": "Derived",
+   "note": "Event page background beside the host line (TEDxSingapore cover)",
+   "op": "mean",
+   "spread": 5,
+   "value": "#373B42"
+  }
+ },
+ "type.aboutHeading": {
+  "dark": {
+   "args": [
+    54,
+    1100,
+    74,
+    1145
+   ],
+   "capHeight": "14.5pt",
+   "capture": "screenshots/dark/07-event-compact-nav-hosts-about.png",
+   "evidence": "Derived",
+   "inkPx": 30,
+   "note": "'T' of the bold opening line of About Event",
+   "op": "cap",
+   "top": 1106,
+   "value": "20pt"
+  }
+ },
+ "type.body": {
+  "dark": {
+   "args": [
+    166,
+    598,
+    190,
+    645
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of a Settings row ('Account Settings')",
+   "op": "cap",
+   "top": 608,
+   "value": "17pt"
+  }
+ },
+ "type.button": {
+  "dark": {
+   "args": [
+    118,
+    1462,
+    134,
+    1488
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/05-event-page-cover-tinted-actions.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'R' of an event action label ('Register')",
+   "op": "cap",
+   "top": 1465,
+   "value": "12pt"
+  }
+ },
+ "type.caption": {
+  "dark": {
+   "args": [
+    96,
+    512,
+    104,
+    542
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'I' of the 'Invited' badge",
+   "op": "cap",
+   "top": 517,
+   "value": "12pt"
+  }
+ },
+ "type.chatTitle": {
+  "dark": {
+   "args": [
+    166,
+    444,
+    186,
+    482
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/28-chat-list-unread-dot.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'P' of a chat row title ('Poker With Friends')",
+   "op": "cap",
+   "top": 451,
+   "value": "17pt"
+  }
+ },
+ "type.dateSection": {
+  "dark": {
+   "args": [
+    54,
+    290,
+    72,
+    324
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'T' of a date section ('Today')",
+   "op": "cap",
+   "top": 294,
+   "value": "17pt"
+  }
+ },
+ "type.description": {
+  "dark": {
+   "args": [
+    54,
+    605,
+    72,
+    637
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/11-category-page-subscribe-badges.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'F' of a category description ('From')",
+   "op": "cap",
+   "top": 608,
+   "value": "15pt"
+  }
+ },
+ "type.eventTitle": {
+  "dark": {
+   "args": [
+    54,
+    1080,
+    74,
+    1135
+   ],
+   "capHeight": "15.5pt",
+   "capture": "screenshots/dark/05-event-page-cover-tinted-actions.png",
+   "evidence": "Derived",
+   "inkPx": 32,
+   "note": "'T' of an event page title",
+   "op": "cap",
+   "top": 1089,
+   "value": "22pt"
+  }
+ },
+ "type.footnote": {
+  "dark": {
+   "args": [
+    86,
+    1168,
+    110,
+    1194
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/26-account-settings-destructive-row.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'W' of a footnote under a card",
+   "op": "cap",
+   "top": 1170,
+   "value": "12pt"
+  }
+ },
+ "type.headline": {
+  "dark": {
+   "args": [
+    238,
+    890,
+    268,
+    935
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'M' of an event row title ('Mahjong')",
+   "op": "cap",
+   "top": 901,
+   "value": "17pt"
+  }
+ },
+ "type.host": {
+  "dark": {
+   "args": [
+    280,
+    1086,
+    296,
+    1118
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'E' of a host line ('Emergent')",
+   "op": "cap",
+   "top": 1092,
+   "value": "12pt"
+  }
+ },
+ "type.largeTitle": {
+  "dark": {
+   "args": [
+    158,
+    190,
+    184,
+    240
+   ],
+   "capHeight": "16pt",
+   "capture": "screenshots/dark/09-discover-popular-category-chips.png",
+   "evidence": "Derived",
+   "inkPx": 33,
+   "note": "'D' of a tab root title ('Discover')",
+   "op": "cap",
+   "top": 198,
+   "value": "22pt"
+  }
+ },
+ "type.meta": {
+  "dark": {
+   "args": [
+    282,
+    482,
+    302,
+    524
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'Y' of an event meta line ('Yesterday')",
+   "op": "cap",
+   "top": 491,
+   "value": "15pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    304,
+    192,
+    326,
+    238
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/17-notifications-list-unread-tint.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'N' of a nav title ('Notifications')",
+   "op": "cap",
+   "top": 202,
+   "value": "17pt"
+  }
+ },
+ "type.pill": {
+  "dark": {
+   "args": [
+    678,
+    378,
+    694,
+    404
+   ],
+   "capHeight": "8pt",
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "inkPx": 17,
+   "note": "'U' of a price pill ('US$15')",
+   "op": "cap",
+   "top": 381,
+   "value": "11pt"
+  }
+ },
+ "type.placeholderLarge": {
+  "dark": {
+   "args": [
+    86,
+    850,
+    106,
+    895
+   ],
+   "capHeight": "15pt",
+   "capture": "screenshots/dark/18-create-event-form-cover-tinted.png",
+   "evidence": "Derived",
+   "inkPx": 31,
+   "note": "'E' of the Event Name placeholder",
+   "op": "cap",
+   "top": 857,
+   "value": "21pt"
+  }
+ },
+ "type.sectionHeader": {
+  "dark": {
+   "args": [
+    86,
+    815,
+    106,
+    855
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/23-settings-root-grouped-rows.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'P' of a grouped section header ('Preferences')",
+   "op": "cap",
+   "top": 823,
+   "value": "17pt"
+  }
+ },
+ "type.tab": {
+  "dark": {
+   "args": [
+    202,
+    1676,
+    218,
+    1700
+   ],
+   "capHeight": "7pt",
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "inkPx": 15,
+   "note": "'H' of a tab label ('Home')",
+   "op": "cap",
+   "top": 1681,
+   "value": "10pt"
+  }
+ },
+ "type.timestamp": {
+  "dark": {
+   "args": [
+    288,
+    712,
+    302,
+    738
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/29-chat-thread-image-bubble-composer.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'T' of a thread timestamp ('Thu')",
+   "op": "cap",
+   "top": 715,
+   "value": "12pt"
+  }
+ },
+ "type.title1": {
+  "dark": {
+   "args": [
+    54,
+    455,
+    80,
+    515
+   ],
+   "capHeight": "20pt",
+   "capture": "screenshots/dark/11-category-page-subscribe-badges.png",
+   "evidence": "Derived",
+   "inkPx": 41,
+   "note": "'F' of a category title ('Family')",
+   "op": "cap",
+   "top": 463,
+   "value": "28pt"
+  }
+ },
+ "type.title2": {
+  "dark": {
+   "args": [
+    56,
+    285,
+    82,
+    330
+   ],
+   "capHeight": "14pt",
+   "capture": "screenshots/dark/01-home-your-events-calendars.png",
+   "evidence": "Derived",
+   "inkPx": 29,
+   "note": "'Y' of a section title ('Your Events')",
+   "op": "cap",
+   "top": 291,
+   "value": "19pt"
+  }
+ },
+ "warning.fg": {
+  "dark": {
+   "args": [
+    600,
+    1362,
+    150,
+    32
+   ],
+   "capture": "screenshots/dark/11-category-page-subscribe-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "'Near Capacity' label",
+   "op": "text",
+   "value": "#F6C978"
+  },
+  "light": {
+   "args": [
+    600,
+    1362,
+    150,
+    32
+   ],
+   "capture": "screenshots/light/11-category-page-subscribe-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "'Near Capacity' label",
+   "op": "text",
+   "value": "#D59613"
+  }
+ },
+ "warning.subtle": {
+  "dark": {
+   "args": [
+    620,
+    1363,
+    100,
+    4
+   ],
+   "capture": "screenshots/dark/11-category-page-subscribe-badges.png",
+   "evidence": "Derived",
+   "note": "'Near Capacity' pill fill, above its label",
+   "op": "mean",
+   "spread": 1,
+   "value": "#17140C"
+  },
+  "light": {
+   "args": [
+    620,
+    1363,
+    100,
+    4
+   ],
+   "capture": "screenshots/light/11-category-page-subscribe-badges.png",
+   "evidence": "Derived",
+   "note": "'Near Capacity' pill fill, above its label",
+   "op": "mean",
+   "spread": 3,
+   "value": "#FEFAF4"
+  }
+ }
+}
