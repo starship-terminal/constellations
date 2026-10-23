@@ -936,6 +936,68 @@
       }
     },
     {
+      "slug": "youtube",
+      "name": "YouTube",
+      "url": "https://www.youtube.com",
+      "category": "media",
+      "platform": "mobile",
+      "goodFor": "Native iOS video feed: near-black or white page, one neutral grey for chips and fields, rounded-rectangle filter chips that invert when selected, ink-coloured capsule buttons, edge-to-edge 16:9 thumbnails with a translucent duration badge, a five-item tab bar with a round Create button, YouTube red kept for progress and badges",
+      "tags": [
+        "ios",
+        "mobile",
+        "video",
+        "media",
+        "feed",
+        "chips",
+        "tab-bar",
+        "dark",
+        "ambient-tint"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-24",
+      "access": "signed in, free plan, iPhone Mirroring",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/youtube/README.md",
+      "tokens": "systems/youtube/tokens.json",
+      "styleGuide": "systems/youtube/style-guide.html",
+      "preview": {
+        "cover": "systems/youtube/screenshots/dark/14-chip-selected-video-cards-preview.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.surface.secondary",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.outline"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.surface.secondary",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.outline"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/youtube/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "YouTube's icons and logo are Google's artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
       "slug": "spotify",
       "name": "Spotify",
       "url": "https://www.spotify.com",
