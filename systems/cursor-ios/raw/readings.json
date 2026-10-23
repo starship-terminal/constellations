@@ -1,0 +1,4133 @@
+{
+ "accent.caret": {
+  "dark": {
+   "args": [
+    126,
+    1346,
+    1,
+    40
+   ],
+   "capture": "screenshots/dark/08-composer-expanded-typed-model-send.png",
+   "evidence": "Derived",
+   "note": "Text caret in the typed composer, one pixel column (light: the caret straddles two columns, so it reads paler)",
+   "op": "fill",
+   "share": 0.53,
+   "value": "#436BF3"
+  },
+  "light": {
+   "args": [
+    126,
+    1346,
+    1,
+    40
+   ],
+   "capture": "screenshots/light/08-composer-expanded-typed-model-send.png",
+   "evidence": "Derived",
+   "note": "Text caret in the typed composer, one pixel column (light: the caret straddles two columns, so it reads paler)",
+   "op": "fill",
+   "share": 0.2,
+   "value": "#6F8DF2"
+  }
+ },
+ "accent.unread": {
+  "dark": {
+   "args": [
+    75,
+    775,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/03-all-agents-grouped-status-dots.png",
+   "evidence": "Derived",
+   "note": "Unread dot before a Needs Attention agent",
+   "op": "fill",
+   "share": 0.47,
+   "value": "#42A2EB"
+  },
+  "light": {
+   "args": [
+    75,
+    775,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/03-all-agents-grouped-status-dots.png",
+   "evidence": "Derived",
+   "note": "Unread dot before a Needs Attention agent",
+   "op": "fill",
+   "share": 0.86,
+   "value": "#057AC8"
+  }
+ },
+ "bg.inbox": {
+  "dark": {
+   "args": [
+    300,
+    1300,
+    300,
+    20
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Inbox background between Projects and Workspaces",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  },
+  "light": {
+   "args": [
+    300,
+    1300,
+    300,
+    20
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Inbox background between Projects and Workspaces",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F7F7F7"
+  }
+ },
+ "bg.page": {
+  "dark": {
+   "args": [
+    300,
+    1000,
+    200,
+    100
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "note": "Repo list, Inbox and agent thread background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  },
+  "light": {
+   "args": [
+    300,
+    1000,
+    200,
+    100
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "note": "Repo list, Inbox and agent thread background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F7F7F7"
+  }
+ },
+ "bg.sheet": {
+  "dark": {
+   "args": [
+    400,
+    1650,
+    200,
+    50
+   ],
+   "capture": "screenshots/dark/04-customize-sheet-switches-popups.png",
+   "evidence": "Sampled",
+   "note": "Customize sheet background (full-height sheet)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#181818"
+  },
+  "light": {
+   "args": [
+    400,
+    1650,
+    200,
+    50
+   ],
+   "capture": "screenshots/light/04-customize-sheet-switches-popups.png",
+   "evidence": "Sampled",
+   "note": "Customize sheet background (full-height sheet)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "bg.sheetGrouped": {
+  "dark": {
+   "args": [
+    300,
+    1200,
+    300,
+    100
+   ],
+   "capture": "screenshots/dark/07-changes-sheet-disclosure-empty-diff.png",
+   "evidence": "Sampled",
+   "note": "Changes sheet background below its file rows",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#242424"
+  },
+  "light": {
+   "args": [
+    300,
+    1200,
+    300,
+    100
+   ],
+   "capture": "screenshots/light/07-changes-sheet-disclosure-empty-diff.png",
+   "evidence": "Sampled",
+   "note": "Changes sheet background below its file rows",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F5F5F5"
+  }
+ },
+ "bg.sheetHalf": {
+  "dark": {
+   "args": [
+    600,
+    1280,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/09-model-sheet-search-field.png",
+   "evidence": "Sampled",
+   "note": "Model sheet background (half-height sheet)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#181818"
+  },
+  "light": {
+   "args": [
+    600,
+    1280,
+    100,
+    40
+   ],
+   "capture": "screenshots/light/09-model-sheet-search-field.png",
+   "evidence": "Sampled",
+   "note": "Model sheet background (half-height sheet)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "border.chartGrid": {
+  "dark": {
+   "args": [
+    400,
+    1209,
+    200,
+    6
+   ],
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "evidence": "Sampled (text)",
+   "note": "Chart gridline (200M)",
+   "op": "text",
+   "value": "#3B3A3B"
+  },
+  "light": {
+   "args": [
+    400,
+    1209,
+    200,
+    6
+   ],
+   "capture": "screenshots/light/15-profile-sheet-bar-charts.png",
+   "evidence": "Sampled (text)",
+   "note": "Chart gridline (200M)",
+   "op": "text",
+   "value": "#DDDDDD"
+  }
+ },
+ "border.divider": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    990,
+    1300,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Row edges down the Projects list (dividers)",
+   "op": "find",
+   "value": [
+    1075,
+    1077,
+    1187,
+    1295
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    400,
+    990,
+    1300,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Row edges down the Projects list (dividers)",
+   "op": "find",
+   "value": [
+    1075,
+    1077,
+    1185,
+    1187,
+    1295,
+    1297
+   ]
+  }
+ },
+ "border.dividerColour": {
+  "dark": {
+   "args": [
+    300,
+    1075,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Divider between Projects rows: its darkest pixel row (the line is anti-aliased over two rows)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1C"
+  },
+  "light": {
+   "args": [
+    300,
+    1075,
+    300,
+    1
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Divider between Projects rows: its darkest pixel row (the line is anti-aliased over two rows)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EEEEEE"
+  }
+ },
+ "border.menuDivider": {
+  "dark": {
+   "args": [
+    330,
+    631,
+    380,
+    1
+   ],
+   "capture": "screenshots/dark/11-agent-menu-pulldown.png",
+   "evidence": "Derived",
+   "note": "Divider between menu groups (one pixel row)",
+   "op": "fill",
+   "share": 0.37,
+   "value": "#444444"
+  },
+  "light": {
+   "args": [
+    330,
+    631,
+    380,
+    1
+   ],
+   "capture": "screenshots/light/11-agent-menu-pulldown.png",
+   "evidence": "Derived",
+   "note": "Divider between menu groups (one pixel row)",
+   "op": "fill",
+   "share": 0.56,
+   "value": "#E8E8E8"
+  }
+ },
+ "border.tile": {
+  "dark": {
+   "args": [
+    48,
+    470,
+    1,
+    80
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Tile rim, its left pixel column",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#212121"
+  },
+  "light": {
+   "args": [
+    48,
+    470,
+    1,
+    80
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Tile rim, its left pixel column",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F1F1F1"
+  }
+ },
+ "button.clear": {
+  "dark": {
+   "args": [
+    586,
+    1028,
+    4,
+    4
+   ],
+   "capture": "screenshots/dark/10-model-search-no-match.png",
+   "evidence": "Derived",
+   "note": "Clear button in a typed search field",
+   "op": "fill",
+   "share": 0.88,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    586,
+    1028,
+    4,
+    4
+   ],
+   "capture": "screenshots/light/10-model-search-no-match.png",
+   "evidence": "Derived",
+   "note": "Clear button in a typed search field",
+   "op": "fill",
+   "share": 0.69,
+   "value": "#010101"
+  }
+ },
+ "button.mic": {
+  "dark": {
+   "args": [
+    605,
+    1605,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/08-composer-expanded-typed-model-send.png",
+   "evidence": "Derived",
+   "note": "Microphone button beside send",
+   "op": "fill",
+   "share": 0.75,
+   "value": "#444444"
+  },
+  "light": {
+   "args": [
+    605,
+    1605,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled",
+   "note": "Microphone button beside send",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EBEBEB"
+  }
+ },
+ "button.send": {
+  "dark": {
+   "args": [
+    688,
+    1598,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled",
+   "note": "Send button, enabled",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E4E4E4"
+  },
+  "light": {
+   "args": [
+    688,
+    1598,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled",
+   "note": "Send button, enabled",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  }
+ },
+ "button.sendGlyph": {
+  "dark": {
+   "args": [
+    700,
+    1595,
+    30,
+    45,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled (text)",
+   "note": "Send arrow",
+   "op": "text",
+   "value": "#181818"
+  },
+  "light": {
+   "args": [
+    700,
+    1595,
+    30,
+    45,
+    "inverse"
+   ],
+   "capture": "screenshots/light/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled (text)",
+   "note": "Send arrow",
+   "op": "text",
+   "value": "#FCFCFC"
+  }
+ },
+ "chart.bar": {
+  "dark": {
+   "args": [
+    230,
+    1150,
+    4,
+    100
+   ],
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "evidence": "Derived",
+   "note": "Bar in the Tokens chart",
+   "op": "fill",
+   "share": 0.65,
+   "value": "#FE3902"
+  },
+  "light": {
+   "args": [
+    230,
+    1150,
+    4,
+    100
+   ],
+   "capture": "screenshots/light/15-profile-sheet-bar-charts.png",
+   "evidence": "Sampled",
+   "note": "Bar in the Tokens chart",
+   "op": "fill",
+   "share": 0.91,
+   "value": "#FE3902"
+  }
+ },
+ "dot.read": {
+  "dark": {
+   "args": [
+    75,
+    511,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/03-all-agents-grouped-status-dots.png",
+   "evidence": "Derived",
+   "note": "Read dot before a read agent",
+   "op": "fill",
+   "share": 0.81,
+   "value": "#313131"
+  },
+  "light": {
+   "args": [
+    75,
+    511,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/03-all-agents-grouped-status-dots.png",
+   "evidence": "Derived",
+   "note": "Read dot before a read agent",
+   "op": "fill",
+   "share": 0.81,
+   "value": "#D7D7D7"
+  }
+ },
+ "heat.0": {
+  "light": {
+   "args": [
+    82,
+    507,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/20-profile-bottom-streak-heatmap-support.png",
+   "evidence": "Sampled",
+   "note": "Activity heatmap, no activity",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EEEEEE"
+  }
+ },
+ "heat.1": {
+  "light": {
+   "args": [
+    373,
+    507,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/20-profile-bottom-streak-heatmap-support.png",
+   "evidence": "Sampled",
+   "note": "Activity heatmap, level 1",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFDDD5"
+  }
+ },
+ "heat.2": {
+  "light": {
+   "args": [
+    373,
+    623,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/20-profile-bottom-streak-heatmap-support.png",
+   "evidence": "Sampled",
+   "note": "Activity heatmap, level 2",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFAF97"
+  }
+ },
+ "heat.3": {
+  "light": {
+   "args": [
+    432,
+    565,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/20-profile-bottom-streak-heatmap-support.png",
+   "evidence": "Sampled",
+   "note": "Activity heatmap, level 3",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FF7852"
+  }
+ },
+ "heat.4": {
+  "light": {
+   "args": [
+    432,
+    681,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/20-profile-bottom-streak-heatmap-support.png",
+   "evidence": "Sampled",
+   "note": "Activity heatmap, level 4 (busiest)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FE3902"
+  }
+ },
+ "icon.allAgents": {
+  "dark": {
+   "args": [
+    75,
+    510,
+    40,
+    40
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "All Agents tile icon",
+   "op": "text",
+   "value": "#F8360A"
+  },
+  "light": {
+   "args": [
+    75,
+    510,
+    40,
+    40
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "All Agents tile icon",
+   "op": "text",
+   "value": "#FE4713"
+  }
+ },
+ "icon.attention": {
+  "dark": {
+   "args": [
+    447,
+    510,
+    35,
+    40
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Needs Attention tile icon (bell)",
+   "op": "text",
+   "value": "#FDB257"
+  },
+  "light": {
+   "args": [
+    447,
+    510,
+    35,
+    40
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Needs Attention tile icon (bell)",
+   "op": "text",
+   "value": "#C98114"
+  }
+ },
+ "icon.projectA": {
+  "dark": {
+   "args": [
+    60,
+    1003,
+    38,
+    38
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Project icon, first project (teal wrench)",
+   "op": "text",
+   "value": "#76C3D3"
+  },
+  "light": {
+   "args": [
+    60,
+    1003,
+    38,
+    38
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Project icon, first project (teal wrench)",
+   "op": "text",
+   "value": "#036E74"
+  }
+ },
+ "icon.projectB": {
+  "dark": {
+   "args": [
+    60,
+    1113,
+    38,
+    38
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Project icon, second project (violet wrench)",
+   "op": "text",
+   "value": "#9485FA"
+  },
+  "light": {
+   "args": [
+    60,
+    1113,
+    38,
+    38
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Project icon, second project (violet wrench)",
+   "op": "text",
+   "value": "#7764D2"
+  }
+ },
+ "icon.review": {
+  "dark": {
+   "args": [
+    445,
+    750,
+    40,
+    40
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "In Review tile icon",
+   "op": "text",
+   "value": "#BB8CAF"
+  },
+  "light": {
+   "args": [
+    445,
+    750,
+    40,
+    40
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "In Review tile icon",
+   "op": "text",
+   "value": "#A1006C"
+  }
+ },
+ "icon.working": {
+  "dark": {
+   "args": [
+    73,
+    745,
+    45,
+    45
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Working tile icon (dots)",
+   "op": "text",
+   "value": "#45A3EB"
+  },
+  "light": {
+   "args": [
+    73,
+    745,
+    45,
+    45
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Working tile icon (dots)",
+   "op": "text",
+   "value": "#0279C7"
+  }
+ },
+ "lines.body": {
+  "dark": {
+   "args": [
+    57,
+    648,
+    740,
+    775
+   ],
+   "bands": [
+    [
+     651,
+     681
+    ],
+    [
+     695,
+     725
+    ],
+    [
+     740,
+     764
+    ]
+   ],
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Derived",
+   "note": "Three lines of an agent reply",
+   "op": "lines",
+   "value": "22.2pt"
+  }
+ },
+ "lines.detailTitle": {
+  "dark": {
+   "args": [
+    100,
+    1035,
+    710,
+    1185
+   ],
+   "bands": [
+    [
+     1037,
+     1075
+    ],
+    [
+     1090,
+     1129
+    ],
+    [
+     1144,
+     1182
+    ]
+   ],
+   "capture": "screenshots/dark/12-agent-details-sheet-icon-buttons.png",
+   "evidence": "Derived",
+   "note": "Three lines of the agent title in its details sheet",
+   "op": "lines",
+   "value": "26.8pt"
+  }
+ },
+ "lines.empty": {
+  "dark": {
+   "args": [
+    90,
+    1135,
+    725,
+    1210
+   ],
+   "bands": [
+    [
+     1137,
+     1165
+    ],
+    [
+     1178,
+     1205
+    ]
+   ],
+   "capture": "screenshots/dark/14-search-no-matches-empty.png",
+   "evidence": "Derived",
+   "note": "Two lines of empty-state body",
+   "op": "lines",
+   "value": "20.5pt"
+  }
+ },
+ "radius.banner": {
+  "dark": {
+   "args": [
+    600,
+    1030,
+    80,
+    1030
+   ],
+   "capture": "screenshots/dark/18-context-sheet-mode-options.png",
+   "corner": [
+    63,
+    997
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Photo-access card",
+   "op": "diag",
+   "value": "11.9pt"
+  },
+  "light": {
+   "args": [
+    600,
+    1030,
+    80,
+    1030
+   ],
+   "capture": "screenshots/light/18-context-sheet-mode-options.png",
+   "corner": [
+    63,
+    997
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Photo-access card",
+   "op": "diag",
+   "value": "11.9pt"
+  }
+ },
+ "radius.card": {
+  "dark": {
+   "args": [
+    400,
+    845,
+    70,
+    845
+   ],
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "corner": [
+    58,
+    810
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Changes card",
+   "op": "diag",
+   "value": "15.4pt"
+  },
+  "light": {
+   "args": [
+    400,
+    845,
+    70,
+    845
+   ],
+   "capture": "screenshots/light/06-agent-thread-changes-card-diffstat.png",
+   "corner": [
+    58,
+    810
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Changes card",
+   "op": "diag",
+   "value": "15.4pt"
+  }
+ },
+ "radius.composerOpen": {
+  "dark": {
+   "args": [
+    550,
+    1330,
+    60,
+    1450
+   ],
+   "capture": "screenshots/dark/08-composer-expanded-typed-model-send.png",
+   "corner": [
+    40,
+    1282
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Expanded composer panel",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.menu": {
+  "dark": {
+   "args": [
+    650,
+    270,
+    300,
+    270
+   ],
+   "capture": "screenshots/dark/11-agent-menu-pulldown.png",
+   "corner": [
+    264,
+    170
+   ],
+   "evidence": "Derived",
+   "inset": 19,
+   "note": "Pull-down menu",
+   "op": "diag",
+   "value": "32.4pt"
+  }
+ },
+ "radius.popup": {
+  "dark": {
+   "args": [
+    650,
+    520,
+    290,
+    520
+   ],
+   "capture": "screenshots/dark/05-group-by-popup-menu.png",
+   "corner": [
+    256,
+    424
+   ],
+   "evidence": "Derived",
+   "inset": 18,
+   "note": "Pop-up menu",
+   "op": "diag",
+   "value": "30.7pt"
+  }
+ },
+ "radius.sheet": {
+  "light": {
+   "args": [
+    600,
+    320,
+    30,
+    320,
+    20
+   ],
+   "capture": "screenshots/light/04-customize-sheet-switches-popups.png",
+   "corner": [
+    16,
+    170
+   ],
+   "evidence": "Derived",
+   "inset": 22,
+   "note": "Full-height sheet, top corner, against the grey strip above it",
+   "op": "diag",
+   "value": "37.6pt"
+  }
+ },
+ "radius.sheetHalf": {
+  "dark": {
+   "args": [
+    600,
+    990,
+    60,
+    1110
+   ],
+   "capture": "screenshots/dark/09-model-sheet-search-field.png",
+   "corner": [
+    32,
+    863
+   ],
+   "evidence": "Derived",
+   "inset": 21,
+   "note": "Half-height sheet, top corner",
+   "op": "diag",
+   "value": "35.8pt"
+  },
+  "light": {
+   "args": [
+    600,
+    990,
+    60,
+    1110
+   ],
+   "capture": "screenshots/light/09-model-sheet-search-field.png",
+   "corner": [
+    32,
+    863
+   ],
+   "evidence": "Derived",
+   "inset": 21,
+   "note": "Half-height sheet, top corner",
+   "op": "diag",
+   "value": "35.8pt"
+  }
+ },
+ "radius.tile": {
+  "dark": {
+   "args": [
+    200,
+    470,
+    150,
+    470
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "corner": [
+    49,
+    420
+   ],
+   "evidence": "Derived",
+   "inset": 10,
+   "note": "Inbox tile",
+   "op": "diag",
+   "value": "17.1pt"
+  },
+  "light": {
+   "args": [
+    200,
+    470,
+    150,
+    470
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "corner": [
+    49,
+    420
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Inbox tile",
+   "op": "diag",
+   "value": "15.4pt"
+  }
+ },
+ "rows.double": {
+  "dark": {
+   "args": [
+    "col",
+    78,
+    740,
+    1150,
+    [
+     66,
+     162,
+     235
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/03-all-agents-grouped-status-dots.png",
+   "evidence": "Sampled",
+   "note": "Unread-dot pixels down the three Needs Attention rows",
+   "op": "find",
+   "value": [
+    770,
+    771,
+    772,
+    773,
+    774,
+    775,
+    776,
+    777,
+    778,
+    779,
+    780,
+    781,
+    782,
+    783,
+    784,
+    785,
+    786,
+    921,
+    922,
+    923,
+    924,
+    925,
+    926,
+    927,
+    928,
+    929,
+    930,
+    931,
+    932,
+    933,
+    934,
+    935,
+    936,
+    937,
+    1072,
+    1073,
+    1074,
+    1075,
+    1076,
+    1077,
+    1078,
+    1079,
+    1080,
+    1081,
+    1082,
+    1083,
+    1084,
+    1085,
+    1086,
+    1087,
+    1088
+   ]
+  }
+ },
+ "rows.single": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    990,
+    1300,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Row edges down the Projects list",
+   "op": "find",
+   "value": [
+    1075,
+    1077,
+    1187,
+    1295
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    400,
+    990,
+    1300,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Row edges down the Projects list",
+   "op": "find",
+   "value": [
+    1075,
+    1077,
+    1185,
+    1187,
+    1295,
+    1297
+   ]
+  }
+ },
+ "scrim.fullSheet": {
+  "dark": {
+   "args": [
+    400,
+    100,
+    100,
+    30
+   ],
+   "capture": "screenshots/dark/04-customize-sheet-switches-popups.png",
+   "evidence": "Sampled",
+   "note": "Status-bar strip above a full-height sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0A0A0A"
+  },
+  "light": {
+   "args": [
+    400,
+    100,
+    100,
+    30
+   ],
+   "capture": "screenshots/light/04-customize-sheet-switches-popups.png",
+   "evidence": "Sampled",
+   "note": "Status-bar strip above a full-height sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C6C6C6"
+  }
+ },
+ "scrim.ref": {
+  "dark": {
+   "args": [
+    600,
+    620,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled",
+   "note": "Thread background, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  },
+  "light": {
+   "args": [
+    600,
+    620,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled",
+   "note": "Thread background, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F7F7F7"
+  }
+ },
+ "scrim.sheet": {
+  "dark": {
+   "args": [
+    600,
+    620,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/09-model-sheet-search-field.png",
+   "evidence": "Sampled",
+   "note": "The same thread under the Model sheet's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0A0A0A"
+  },
+  "light": {
+   "args": [
+    600,
+    620,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/09-model-sheet-search-field.png",
+   "evidence": "Sampled",
+   "note": "The same thread under the Model sheet's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C6C6C6"
+  }
+ },
+ "size.avatar": {
+  "dark": {
+   "args": [
+    [
+     330,
+     380
+    ],
+    [
+     280,
+     320,
+     250,
+     250
+    ],
+    3
+   ],
+   "box": [
+    298,
+    334,
+    513,
+    549
+   ],
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "colour": "#282828",
+   "evidence": "Sampled",
+   "note": "Profile avatar",
+   "op": "bbox",
+   "value": "108x108pt"
+  },
+  "light": {
+   "args": [
+    [
+     330,
+     380
+    ],
+    [
+     280,
+     320,
+     250,
+     250
+    ],
+    3
+   ],
+   "box": [
+    298,
+    334,
+    513,
+    549
+   ],
+   "capture": "screenshots/light/15-profile-sheet-bar-charts.png",
+   "colour": "#E9E9E9",
+   "evidence": "Sampled",
+   "note": "Profile avatar",
+   "op": "bbox",
+   "value": "108x108pt"
+  }
+ },
+ "size.bar": {
+  "dark": {
+   "args": [
+    [
+     235,
+     1200
+    ],
+    [
+     220,
+     1100,
+     40,
+     220
+    ],
+    12
+   ],
+   "box": [
+    230,
+    1114,
+    241,
+    1306
+   ],
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "colour": "#FF3A00",
+   "evidence": "Sampled",
+   "note": "One bar of the Tokens chart",
+   "op": "bbox",
+   "value": "6x96.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     235,
+     1200
+    ],
+    [
+     220,
+     1100,
+     40,
+     220
+    ],
+    12
+   ],
+   "box": [
+    230,
+    1114,
+    241,
+    1306
+   ],
+   "capture": "screenshots/light/15-profile-sheet-bar-charts.png",
+   "colour": "#FE3902",
+   "evidence": "Sampled",
+   "note": "One bar of the Tokens chart",
+   "op": "bbox",
+   "value": "6x96.5pt"
+  }
+ },
+ "size.card": {
+  "dark": {
+   "args": [
+    [
+     400,
+     830
+    ],
+    [
+     40,
+     790,
+     730,
+     540
+    ],
+    2
+   ],
+   "box": [
+    55,
+    807,
+    756,
+    1316
+   ],
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "colour": "#181818",
+   "evidence": "Sampled",
+   "note": "Changes card",
+   "op": "bbox",
+   "value": "351x255pt"
+  },
+  "light": {
+   "args": [
+    [
+     400,
+     830
+    ],
+    [
+     40,
+     790,
+     730,
+     540
+    ],
+    2
+   ],
+   "box": [
+    57,
+    810,
+    753,
+    1313
+   ],
+   "capture": "screenshots/light/06-agent-thread-changes-card-diffstat.png",
+   "colour": "#FCFCFC",
+   "evidence": "Sampled",
+   "note": "Changes card",
+   "op": "bbox",
+   "value": "348.5x252pt"
+  }
+ },
+ "size.chip.h": {
+  "dark": {
+   "args": [
+    "col",
+    95,
+    420,
+    530,
+    [
+     95,
+     420
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Sampled",
+   "from": 434,
+   "note": "Selected filter chip, height through its centre",
+   "op": "extent",
+   "to": 509,
+   "value": "38pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    95,
+    420,
+    530,
+    [
+     95,
+     420
+    ],
+    4
+   ],
+   "capture": "screenshots/light/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Sampled",
+   "from": 434,
+   "note": "Selected filter chip, height through its centre",
+   "op": "extent",
+   "to": 509,
+   "value": "38pt"
+  }
+ },
+ "size.chip.w": {
+  "dark": {
+   "args": [
+    "row",
+    472,
+    40,
+    160,
+    [
+     300,
+     445
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Selected filter chip ('All'), width through its centre",
+   "op": "extent",
+   "to": 137,
+   "value": "45pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    472,
+    40,
+    160,
+    [
+     300,
+     445
+    ],
+    4
+   ],
+   "capture": "screenshots/light/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Selected filter chip ('All'), width through its centre",
+   "op": "extent",
+   "to": 137,
+   "value": "45pt"
+  }
+ },
+ "size.composer.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    1530,
+    1740,
+    [
+     400,
+     1530
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "from": 1560,
+   "note": "Composer capsule height",
+   "op": "extent",
+   "to": 1671,
+   "value": "56pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    400,
+    1530,
+    1740,
+    [
+     400,
+     1530
+    ],
+    12
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "from": 1559,
+   "note": "Composer capsule height",
+   "op": "extent",
+   "to": 1672,
+   "value": "57pt"
+  }
+ },
+ "size.composer.w": {
+  "dark": {
+   "args": [
+    "row",
+    1616,
+    20,
+    790,
+    [
+     400,
+     1530
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "from": 40,
+   "note": "Composer capsule width (the scan stops inside the screen, which ends at x 795)",
+   "op": "extent",
+   "to": 771,
+   "value": "366pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    1616,
+    20,
+    790,
+    [
+     400,
+     1530
+    ],
+    12
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "from": 38,
+   "note": "Composer capsule width (the scan stops inside the screen, which ends at x 795)",
+   "op": "extent",
+   "to": 773,
+   "value": "368pt"
+  }
+ },
+ "size.composerButton": {
+  "dark": {
+   "args": [
+    "row",
+    1616,
+    45,
+    145,
+    [
+     300,
+     1600
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "from": 60,
+   "note": "Round + button inside the composer, width",
+   "op": "extent",
+   "to": 131,
+   "value": "36pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    1616,
+    45,
+    145,
+    [
+     300,
+     1600
+    ],
+    6
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "from": 60,
+   "note": "Round + button inside the composer, width",
+   "op": "extent",
+   "to": 131,
+   "value": "36pt"
+  }
+ },
+ "size.composerOpen.h": {
+  "dark": {
+   "args": [
+    "col",
+    550,
+    1230,
+    1740,
+    [
+     550,
+     1230
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled",
+   "from": 1280,
+   "note": "Expanded composer height",
+   "op": "extent",
+   "to": 1671,
+   "value": "196pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    550,
+    1230,
+    1740,
+    [
+     550,
+     1230
+    ],
+    12
+   ],
+   "capture": "screenshots/light/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled",
+   "from": 1278,
+   "note": "Expanded composer height",
+   "op": "extent",
+   "to": 1694,
+   "value": "208.5pt"
+  }
+ },
+ "size.continue": {
+  "dark": {
+   "args": [
+    "row",
+    1123,
+    300,
+    520,
+    [
+     300,
+     1060
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/18-context-sheet-mode-options.png",
+   "evidence": "Sampled",
+   "from": 320,
+   "note": "'Continue' capsule width through its centre",
+   "op": "extent",
+   "to": 491,
+   "value": "86pt"
+  }
+ },
+ "size.continue.h": {
+  "dark": {
+   "args": [
+    "col",
+    405,
+    1060,
+    1190,
+    [
+     300,
+     1060
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/18-context-sheet-mode-options.png",
+   "evidence": "Sampled",
+   "from": 1089,
+   "note": "'Continue' capsule height through its centre",
+   "op": "extent",
+   "to": 1157,
+   "value": "34.5pt"
+  }
+ },
+ "size.grabber": {
+  "dark": {
+   "args": [
+    [
+     400,
+     185
+    ],
+    [
+     320,
+     170,
+     170,
+     30
+    ],
+    6
+   ],
+   "box": [
+    347,
+    183,
+    464,
+    188
+   ],
+   "capture": "screenshots/dark/07-changes-sheet-disclosure-empty-diff.png",
+   "colour": "#5A5A5C",
+   "evidence": "Sampled",
+   "note": "Sheet grabber",
+   "op": "bbox",
+   "value": "59x3pt"
+  },
+  "light": {
+   "args": [
+    [
+     400,
+     185
+    ],
+    [
+     320,
+     170,
+     170,
+     30
+    ],
+    6
+   ],
+   "box": [
+    347,
+    183,
+    464,
+    188
+   ],
+   "capture": "screenshots/light/07-changes-sheet-disclosure-empty-diff.png",
+   "colour": "#BBBBBD",
+   "evidence": "Sampled",
+   "note": "Sheet grabber",
+   "op": "bbox",
+   "value": "59x3pt"
+  }
+ },
+ "size.heatDot": {
+  "light": {
+   "args": [
+    [
+     435,
+     684
+    ],
+    [
+     410,
+     660,
+     50,
+     50
+    ],
+    30
+   ],
+   "box": [
+    426,
+    675,
+    444,
+    693
+   ],
+   "capture": "screenshots/light/20-profile-bottom-streak-heatmap-support.png",
+   "colour": "#FE3902",
+   "evidence": "Sampled",
+   "note": "Busiest heatmap dot",
+   "op": "bbox",
+   "value": "9.5x9.5pt"
+  }
+ },
+ "size.iconButton": {
+  "dark": {
+   "args": [
+    [
+     262,
+     1262
+    ],
+    [
+     240,
+     1210,
+     120,
+     120
+    ],
+    4
+   ],
+   "box": [
+    257,
+    1225,
+    339,
+    1305
+   ],
+   "capture": "screenshots/dark/12-agent-details-sheet-icon-buttons.png",
+   "colour": "#2A2A2A",
+   "evidence": "Sampled",
+   "note": "Round action button in agent details",
+   "op": "bbox",
+   "value": "41.5x40.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     262,
+     1262
+    ],
+    [
+     240,
+     1210,
+     120,
+     120
+    ],
+    4
+   ],
+   "box": [
+    257,
+    1225,
+    340,
+    1308
+   ],
+   "capture": "screenshots/light/12-agent-details-sheet-icon-buttons.png",
+   "colour": "#E7E7E7",
+   "evidence": "Sampled",
+   "note": "Round action button in agent details",
+   "op": "bbox",
+   "value": "42x42pt"
+  }
+ },
+ "size.menu.w": {
+  "dark": {
+   "args": [
+    "row",
+    600,
+    200,
+    790,
+    [
+     230,
+     600
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/11-agent-menu-pulldown.png",
+   "evidence": "Sampled",
+   "from": 264,
+   "note": "Pull-down menu width (the scan stops inside the screen)",
+   "op": "extent",
+   "to": 763,
+   "value": "250pt"
+  }
+ },
+ "size.navButton.h": {
+  "dark": {
+   "args": [
+    "col",
+    92,
+    150,
+    290,
+    [
+     300,
+     215
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "from": 169,
+   "note": "Round glass nav button, height",
+   "op": "extent",
+   "to": 258,
+   "value": "45pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    92,
+    150,
+    290,
+    [
+     300,
+     215
+    ],
+    12
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "from": 169,
+   "note": "Round glass nav button, height",
+   "op": "extent",
+   "to": 258,
+   "value": "45pt"
+  }
+ },
+ "size.navButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    215,
+    20,
+    200,
+    [
+     300,
+     215
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Round glass nav button, width",
+   "op": "extent",
+   "to": 135,
+   "value": "44pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    215,
+    20,
+    200,
+    [
+     300,
+     215
+    ],
+    12
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "from": 46,
+   "note": "Round glass nav button, width",
+   "op": "extent",
+   "to": 137,
+   "value": "46pt"
+  }
+ },
+ "size.popup.w": {
+  "dark": {
+   "args": [
+    "row",
+    600,
+    200,
+    790,
+    [
+     230,
+     600
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/05-group-by-popup-menu.png",
+   "evidence": "Sampled",
+   "from": 255,
+   "note": "Pop-up menu width (the scan stops inside the screen)",
+   "op": "extent",
+   "to": 755,
+   "value": "250.5pt"
+  }
+ },
+ "size.search.h": {
+  "dark": {
+   "args": [
+    "col",
+    600,
+    290,
+    420,
+    [
+     600,
+     290
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Sampled",
+   "from": 309,
+   "note": "Search field height",
+   "op": "extent",
+   "to": 398,
+   "value": "45pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    600,
+    290,
+    420,
+    [
+     600,
+     290
+    ],
+    12
+   ],
+   "capture": "screenshots/light/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Sampled",
+   "from": 309,
+   "note": "Search field height",
+   "op": "extent",
+   "to": 398,
+   "value": "45pt"
+  }
+ },
+ "size.segment.h": {
+  "light": {
+   "args": [
+    "col",
+    105,
+    995,
+    1110,
+    [
+     105,
+     995
+    ],
+    4
+   ],
+   "capture": "screenshots/light/19-pull-requests-sheet-segmented.png",
+   "evidence": "Sampled",
+   "from": 1013,
+   "note": "Selected segment, height through its centre",
+   "op": "extent",
+   "to": 1085,
+   "value": "36.5pt"
+  }
+ },
+ "size.segment.w": {
+  "light": {
+   "args": [
+    "row",
+    1049,
+    40,
+    170,
+    [
+     300,
+     1022
+    ],
+    4
+   ],
+   "capture": "screenshots/light/19-pull-requests-sheet-segmented.png",
+   "evidence": "Sampled",
+   "from": 63,
+   "note": "Selected segment ('All'), width through its centre",
+   "op": "extent",
+   "to": 148,
+   "value": "43pt"
+  }
+ },
+ "size.send": {
+  "dark": {
+   "args": [
+    [
+     688,
+     1598
+    ],
+    [
+     650,
+     1560,
+     120,
+     115
+    ],
+    6
+   ],
+   "box": [
+    681,
+    1581,
+    750,
+    1650
+   ],
+   "capture": "screenshots/dark/08-composer-expanded-typed-model-send.png",
+   "colour": "#E4E4E4",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "bbox",
+   "value": "35x35pt"
+  },
+  "light": {
+   "args": [
+    [
+     688,
+     1598
+    ],
+    [
+     650,
+     1560,
+     120,
+     115
+    ],
+    6
+   ],
+   "box": [
+    681,
+    1581,
+    750,
+    1650
+   ],
+   "capture": "screenshots/light/08-composer-expanded-typed-model-send.png",
+   "colour": "#141414",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "bbox",
+   "value": "35x35pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     650,
+     1195
+    ],
+    [
+     610,
+     1160,
+     180,
+     90
+    ],
+    10
+   ],
+   "box": [
+    635,
+    1181,
+    758,
+    1234
+   ],
+   "capture": "screenshots/dark/04-customize-sheet-switches-popups.png",
+   "colour": "#459DE0",
+   "evidence": "Sampled",
+   "note": "Switch track",
+   "op": "bbox",
+   "value": "62x27pt"
+  },
+  "light": {
+   "args": [
+    [
+     650,
+     1195
+    ],
+    [
+     610,
+     1160,
+     180,
+     90
+    ],
+    10
+   ],
+   "box": [
+    635,
+    1181,
+    758,
+    1234
+   ],
+   "capture": "screenshots/light/04-customize-sheet-switches-popups.png",
+   "colour": "#117FC8",
+   "evidence": "Sampled",
+   "note": "Switch track",
+   "op": "bbox",
+   "value": "62x27pt"
+  }
+ },
+ "size.switchThumb": {
+  "dark": {
+   "args": [
+    [
+     700,
+     1200
+    ],
+    [
+     650,
+     1170,
+     130,
+     80
+    ],
+    6
+   ],
+   "box": [
+    683,
+    1185,
+    754,
+    1230
+   ],
+   "capture": "screenshots/dark/04-customize-sheet-switches-popups.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "bbox",
+   "value": "36x23pt"
+  }
+ },
+ "size.tile.x": {
+  "dark": {
+   "args": [
+    "row",
+    470,
+    20,
+    790,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Tile edges across the first row of Inbox tiles (rim pixels included)",
+   "op": "find",
+   "value": [
+    48,
+    49,
+    393,
+    394,
+    418,
+    419,
+    763,
+    764
+   ]
+  },
+  "light": {
+   "args": [
+    "row",
+    470,
+    20,
+    790,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Tile edges across the first row of Inbox tiles (rim pixels included)",
+   "op": "find",
+   "value": [
+    48,
+    49,
+    393,
+    419,
+    763,
+    764
+   ]
+  }
+ },
+ "size.tile.y": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    380,
+    920,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Tile edges down the left column of Inbox tiles",
+   "op": "find",
+   "value": [
+    418,
+    419,
+    420,
+    633,
+    635,
+    658,
+    659,
+    660,
+    873,
+    875
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    300,
+    380,
+    920,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Tile edges down the left column of Inbox tiles",
+   "op": "find",
+   "value": [
+    420,
+    633,
+    634,
+    635,
+    660,
+    873,
+    874,
+    875
+   ]
+  }
+ },
+ "status.closed": {
+  "light": {
+   "args": [
+    75,
+    1450,
+    35,
+    40
+   ],
+   "capture": "screenshots/light/19-pull-requests-sheet-segmented.png",
+   "evidence": "Sampled (text)",
+   "note": "Closed pull-request icon",
+   "op": "text",
+   "value": "#E20054"
+  }
+ },
+ "status.draft": {
+  "dark": {
+   "args": [
+    122,
+    813,
+    30,
+    35
+   ],
+   "capture": "screenshots/dark/03-all-agents-grouped-status-dots.png",
+   "evidence": "Sampled (text)",
+   "note": "Draft pull-request icon",
+   "op": "text",
+   "value": "#676767"
+  },
+  "light": {
+   "args": [
+    122,
+    813,
+    30,
+    35
+   ],
+   "capture": "screenshots/light/03-all-agents-grouped-status-dots.png",
+   "evidence": "Sampled (text)",
+   "note": "Draft pull-request icon",
+   "op": "text",
+   "value": "#9C9C9C"
+  }
+ },
+ "status.merged": {
+  "dark": {
+   "args": [
+    122,
+    550,
+    30,
+    30
+   ],
+   "capture": "screenshots/dark/03-all-agents-grouped-status-dots.png",
+   "evidence": "Sampled (text)",
+   "note": "Merged branch icon",
+   "op": "text",
+   "value": "#9785FA"
+  },
+  "light": {
+   "args": [
+    122,
+    550,
+    30,
+    30
+   ],
+   "capture": "screenshots/light/03-all-agents-grouped-status-dots.png",
+   "evidence": "Sampled (text)",
+   "note": "Merged branch icon",
+   "op": "text",
+   "value": "#7B53E3"
+  }
+ },
+ "surface.avatar": {
+  "dark": {
+   "args": [
+    330,
+    380,
+    40,
+    40
+   ],
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "evidence": "Sampled",
+   "note": "Profile avatar circle (initial on grey)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#282828"
+  },
+  "light": {
+   "args": [
+    330,
+    380,
+    40,
+    40
+   ],
+   "capture": "screenshots/light/15-profile-sheet-bar-charts.png",
+   "evidence": "Sampled",
+   "note": "Profile avatar circle (initial on grey)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E9E9E9"
+  }
+ },
+ "surface.banner": {
+  "dark": {
+   "args": [
+    100,
+    1020,
+    80,
+    20
+   ],
+   "capture": "screenshots/dark/18-context-sheet-mode-options.png",
+   "evidence": "Sampled",
+   "note": "Photo-access card in the Context sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#242424"
+  },
+  "light": {
+   "args": [
+    100,
+    1020,
+    80,
+    20
+   ],
+   "capture": "screenshots/light/18-context-sheet-mode-options.png",
+   "evidence": "Sampled",
+   "note": "Photo-access card in the Context sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EEEEEE"
+  }
+ },
+ "surface.card": {
+  "dark": {
+   "args": [
+    400,
+    830,
+    200,
+    40
+   ],
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Sampled",
+   "note": "Changes card in the agent thread",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#181818"
+  },
+  "light": {
+   "args": [
+    400,
+    830,
+    200,
+    40
+   ],
+   "capture": "screenshots/light/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Sampled",
+   "note": "Changes card in the agent thread",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "surface.code": {
+  "dark": {
+   "args": [
+    315,
+    392,
+    8,
+    25
+   ],
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Derived",
+   "note": "Inline code chip in an agent reply (dominant pixel beside the glyphs)",
+   "op": "fill",
+   "share": 0.17,
+   "value": "#242424"
+  },
+  "light": {
+   "args": [
+    315,
+    392,
+    8,
+    25
+   ],
+   "capture": "screenshots/light/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Derived",
+   "note": "Inline code chip in an agent reply (dominant pixel beside the glyphs)",
+   "op": "fill",
+   "share": 0.18,
+   "value": "#E6E6E6"
+  }
+ },
+ "surface.composer": {
+  "dark": {
+   "args": [
+    400,
+    1590,
+    200,
+    10
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Sampled",
+   "note": "Composer capsule (glass; centre reading)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#333333"
+  },
+  "light": {
+   "args": [
+    400,
+    1590,
+    200,
+    10
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Derived",
+   "note": "Composer capsule (glass; centre reading)",
+   "op": "fill",
+   "share": 0.4,
+   "value": "#F8F8F8"
+  }
+ },
+ "surface.composerButton": {
+  "dark": {
+   "args": [
+    70,
+    1605,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Derived",
+   "note": "Round + and microphone buttons inside the composer",
+   "op": "fill",
+   "share": 0.58,
+   "value": "#464646"
+  },
+  "light": {
+   "args": [
+    70,
+    1605,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Derived",
+   "note": "Round + and microphone buttons inside the composer",
+   "op": "fill",
+   "share": 0.86,
+   "value": "#E9E9E9"
+  }
+ },
+ "surface.composerOpen": {
+  "dark": {
+   "args": [
+    400,
+    1450,
+    200,
+    50
+   ],
+   "capture": "screenshots/dark/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled",
+   "note": "Expanded composer panel",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#313131"
+  },
+  "light": {
+   "args": [
+    400,
+    1450,
+    200,
+    50
+   ],
+   "capture": "screenshots/light/08-composer-expanded-typed-model-send.png",
+   "evidence": "Sampled",
+   "note": "Expanded composer panel",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "surface.continue": {
+  "dark": {
+   "args": [
+    325,
+    1105,
+    15,
+    30
+   ],
+   "capture": "screenshots/dark/18-context-sheet-mode-options.png",
+   "evidence": "Derived",
+   "note": "'Continue' capsule in the photo-access card (glass)",
+   "op": "fill",
+   "share": 0.3,
+   "value": "#383838"
+  },
+  "light": {
+   "args": [
+    325,
+    1105,
+    15,
+    30
+   ],
+   "capture": "screenshots/light/18-context-sheet-mode-options.png",
+   "evidence": "Derived",
+   "note": "'Continue' capsule in the photo-access card (glass)",
+   "op": "fill",
+   "share": 0.75,
+   "value": "#DFDFDF"
+  }
+ },
+ "surface.grabber": {
+  "dark": {
+   "args": [
+    370,
+    184,
+    60,
+    3
+   ],
+   "capture": "screenshots/dark/07-changes-sheet-disclosure-empty-diff.png",
+   "evidence": "Sampled",
+   "note": "Sheet grabber",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#5A5A5C"
+  },
+  "light": {
+   "args": [
+    370,
+    184,
+    60,
+    3
+   ],
+   "capture": "screenshots/light/07-changes-sheet-disclosure-empty-diff.png",
+   "evidence": "Sampled",
+   "note": "Sheet grabber",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#BBBBBD"
+  }
+ },
+ "surface.iconButton": {
+  "dark": {
+   "args": [
+    262,
+    1262,
+    6,
+    10
+   ],
+   "capture": "screenshots/dark/12-agent-details-sheet-icon-buttons.png",
+   "evidence": "Derived",
+   "note": "Round action button in the agent details sheet (Rename, Unpin, Share)",
+   "op": "fill",
+   "share": 0.7,
+   "value": "#292929"
+  },
+  "light": {
+   "args": [
+    262,
+    1262,
+    6,
+    10
+   ],
+   "capture": "screenshots/light/12-agent-details-sheet-icon-buttons.png",
+   "evidence": "Derived",
+   "note": "Round action button in the agent details sheet (Rename, Unpin, Share)",
+   "op": "fill",
+   "share": 0.75,
+   "value": "#E6E6E6"
+  }
+ },
+ "surface.inset": {
+  "dark": {
+   "args": [
+    100,
+    680,
+    150,
+    30
+   ],
+   "capture": "screenshots/dark/07-changes-sheet-disclosure-empty-diff.png",
+   "evidence": "Sampled",
+   "note": "Expanded file row: the empty diff band ('Diff not available')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#303030"
+  },
+  "light": {
+   "args": [
+    100,
+    820,
+    150,
+    30
+   ],
+   "capture": "screenshots/light/07-changes-sheet-disclosure-empty-diff.png",
+   "evidence": "Sampled",
+   "note": "Expanded file row: the empty diff band ('Diff not available')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E7E7E7"
+  }
+ },
+ "surface.menu": {
+  "dark": {
+   "args": [
+    600,
+    250,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/11-agent-menu-pulldown.png",
+   "evidence": "Derived",
+   "note": "Pull-down menu (glass; picks up what is behind)",
+   "op": "fill",
+   "share": 0.32,
+   "value": "#363636"
+  },
+  "light": {
+   "args": [
+    600,
+    250,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/11-agent-menu-pulldown.png",
+   "evidence": "Derived",
+   "note": "Pull-down menu (glass; picks up what is behind)",
+   "op": "fill",
+   "share": 0.69,
+   "value": "#FCFCFC"
+  }
+ },
+ "surface.navButton": {
+  "dark": {
+   "args": [
+    58,
+    205,
+    10,
+    20
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Derived",
+   "note": "Round glass nav button (back), beside the glyph",
+   "op": "fill",
+   "share": 0.53,
+   "value": "#323232"
+  },
+  "light": {
+   "args": [
+    58,
+    205,
+    10,
+    20
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Derived",
+   "note": "Round glass nav button (back), beside the glyph",
+   "op": "fill",
+   "share": 0.47,
+   "value": "#F6F6F6"
+  }
+ },
+ "surface.popup": {
+  "dark": {
+   "args": [
+    600,
+    520,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/05-group-by-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Pop-up menu over a sheet (Group by)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#333333"
+  },
+  "light": {
+   "args": [
+    600,
+    520,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/05-group-by-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Pop-up menu over a sheet (Group by)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FDFDFD"
+  }
+ },
+ "surface.row": {
+  "dark": {
+   "args": [
+    300,
+    380,
+    200,
+    10
+   ],
+   "capture": "screenshots/dark/07-changes-sheet-disclosure-empty-diff.png",
+   "evidence": "Sampled",
+   "note": "File row in the Changes sheet (the sheet is laid out differently in each theme)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#181818"
+  },
+  "light": {
+   "args": [
+    300,
+    500,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/07-changes-sheet-disclosure-empty-diff.png",
+   "evidence": "Sampled",
+   "note": "File row in the Changes sheet (the sheet is laid out differently in each theme)",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#FCFCFC"
+  }
+ },
+ "surface.search": {
+  "dark": {
+   "args": [
+    500,
+    330,
+    200,
+    15
+   ],
+   "capture": "screenshots/dark/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Derived",
+   "note": "Search field in a sheet (glass capsule)",
+   "op": "fill",
+   "share": 0.67,
+   "value": "#363636"
+  },
+  "light": {
+   "args": [
+    500,
+    330,
+    200,
+    15
+   ],
+   "capture": "screenshots/light/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Derived",
+   "note": "Search field in a sheet (glass capsule)",
+   "op": "fill",
+   "share": 0.4,
+   "value": "#F8F8F8"
+  }
+ },
+ "surface.secondary": {
+  "dark": {
+   "args": [
+    62,
+    450,
+    8,
+    40
+   ],
+   "capture": "screenshots/dark/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Sampled",
+   "note": "Selected filter chip ('All') in Search",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#242424"
+  },
+  "light": {
+   "args": [
+    62,
+    450,
+    8,
+    40
+   ],
+   "capture": "screenshots/light/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Sampled",
+   "note": "Selected filter chip ('All') in Search",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EEEEEE"
+  }
+ },
+ "surface.segment": {
+  "light": {
+   "args": [
+    70,
+    1035,
+    10,
+    30
+   ],
+   "capture": "screenshots/light/19-pull-requests-sheet-segmented.png",
+   "evidence": "Sampled",
+   "note": "Selected segment ('All') in the Pull Requests sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EEEEEE"
+  }
+ },
+ "surface.tile": {
+  "dark": {
+   "args": [
+    200,
+    440,
+    150,
+    30
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Inbox tile (All Agents)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#181818"
+  },
+  "light": {
+   "args": [
+    200,
+    440,
+    150,
+    30
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled",
+   "note": "Inbox tile (All Agents)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "switch.off": {
+  "dark": {
+   "args": [
+    720,
+    1565,
+    20,
+    15
+   ],
+   "capture": "screenshots/dark/04-customize-sheet-switches-popups.png",
+   "evidence": "Sampled",
+   "note": "Switch off (Last Updated)",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#575759"
+  },
+  "light": {
+   "args": [
+    720,
+    1565,
+    20,
+    15
+   ],
+   "capture": "screenshots/light/04-customize-sheet-switches-popups.png",
+   "evidence": "Sampled",
+   "note": "Switch off (Last Updated)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C3C3C5"
+  }
+ },
+ "switch.on": {
+  "dark": {
+   "args": [
+    650,
+    1195,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/04-customize-sheet-switches-popups.png",
+   "evidence": "Sampled",
+   "note": "Switch on (Changes)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#459DE0"
+  },
+  "light": {
+   "args": [
+    650,
+    1195,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/04-customize-sheet-switches-popups.png",
+   "evidence": "Sampled",
+   "note": "Switch on (Changes)",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#117FC8"
+  }
+ },
+ "switch.thumb": {
+  "dark": {
+   "args": [
+    700,
+    1200,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/04-customize-sheet-switches-popups.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    700,
+    1200,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/04-customize-sheet-switches-popups.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "text.body": {
+  "dark": {
+   "args": [
+    57,
+    650,
+    680,
+    120
+   ],
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Agent reply text",
+   "op": "text",
+   "value": "#DDDDDD"
+  },
+  "light": {
+   "args": [
+    57,
+    650,
+    680,
+    120
+   ],
+   "capture": "screenshots/light/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Agent reply text",
+   "op": "text",
+   "value": "#121212"
+  }
+ },
+ "text.check": {
+  "dark": {
+   "args": [
+    705,
+    1210,
+    35,
+    35
+   ],
+   "capture": "screenshots/dark/09-model-sheet-search-field.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick on the active model",
+   "op": "text",
+   "value": "#C7C7C7"
+  },
+  "light": {
+   "args": [
+    705,
+    1210,
+    35,
+    35
+   ],
+   "capture": "screenshots/light/09-model-sheet-search-field.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick on the active model",
+   "op": "text",
+   "value": "#333333"
+  }
+ },
+ "text.chevron": {
+  "dark": {
+   "args": [
+    725,
+    1005,
+    25,
+    35
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Row chevron",
+   "op": "text",
+   "value": "#676767"
+  },
+  "light": {
+   "args": [
+    725,
+    1005,
+    25,
+    35
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Row chevron",
+   "op": "text",
+   "value": "#9D9D9D"
+  }
+ },
+ "text.chip": {
+  "dark": {
+   "args": [
+    168,
+    458,
+    380,
+    35
+   ],
+   "capture": "screenshots/dark/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected filter chip label",
+   "op": "text",
+   "value": "#B3B3B3"
+  },
+  "light": {
+   "args": [
+    168,
+    458,
+    380,
+    35
+   ],
+   "capture": "screenshots/light/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected filter chip label",
+   "op": "text",
+   "value": "#4C4B4C"
+  }
+ },
+ "text.code": {
+  "dark": {
+   "args": [
+    103,
+    390,
+    220,
+    35
+   ],
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Inline code text",
+   "op": "text",
+   "value": "#DEDEDE"
+  },
+  "light": {
+   "args": [
+    103,
+    390,
+    220,
+    35
+   ],
+   "capture": "screenshots/light/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Inline code text",
+   "op": "text",
+   "value": "#141414"
+  }
+ },
+ "text.count": {
+  "dark": {
+   "args": [
+    205,
+    815,
+    25,
+    35
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Tile count ('0')",
+   "op": "text",
+   "value": "#6A6A6A"
+  },
+  "light": {
+   "args": [
+    205,
+    815,
+    25,
+    35
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Tile count ('0')",
+   "op": "text",
+   "value": "#9F9F9F"
+  }
+ },
+ "text.diffAdd": {
+  "dark": {
+   "args": [
+    645,
+    925,
+    50,
+    35
+   ],
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Lines added ('+17')",
+   "op": "text",
+   "value": "#58B587"
+  },
+  "light": {
+   "args": [
+    645,
+    925,
+    50,
+    35
+   ],
+   "capture": "screenshots/light/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Lines added ('+17')",
+   "op": "text",
+   "value": "#008C61"
+  }
+ },
+ "text.diffDelete": {
+  "dark": {
+   "args": [
+    702,
+    925,
+    32,
+    35
+   ],
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Lines deleted ('-0')",
+   "op": "text",
+   "value": "#FF5E82"
+  },
+  "light": {
+   "args": [
+    702,
+    925,
+    32,
+    35
+   ],
+   "capture": "screenshots/light/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Lines deleted ('-0')",
+   "op": "text",
+   "value": "#E50055"
+  }
+ },
+ "text.empty": {
+  "dark": {
+   "args": [
+    90,
+    1135,
+    630,
+    70
+   ],
+   "capture": "screenshots/dark/14-search-no-matches-empty.png",
+   "evidence": "Sampled (text)",
+   "note": "Empty-state body",
+   "op": "text",
+   "value": "#939393"
+  },
+  "light": {
+   "args": [
+    90,
+    1135,
+    630,
+    70
+   ],
+   "capture": "screenshots/light/14-search-no-matches-empty.png",
+   "evidence": "Sampled (text)",
+   "note": "Empty-state body",
+   "op": "text",
+   "value": "#707070"
+  }
+ },
+ "text.glyph": {
+  "dark": {
+   "args": [
+    70,
+    185,
+    40,
+    60
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Back chevron on a glass nav button",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    70,
+    185,
+    40,
+    60
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Back chevron on a glass nav button",
+   "op": "text",
+   "value": "#0C0C0C"
+  }
+ },
+ "text.groupHeader": {
+  "dark": {
+   "args": [
+    55,
+    420,
+    70,
+    35
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Collapsible group header ('Read')",
+   "op": "text",
+   "value": "#919191"
+  },
+  "light": {
+   "args": [
+    55,
+    420,
+    70,
+    35
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Collapsible group header ('Read')",
+   "op": "text",
+   "value": "#6F6F6F"
+  }
+ },
+ "text.icon": {
+  "dark": {
+   "args": [
+    60,
+    1425,
+    38,
+    35
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Outline row icon (folder)",
+   "op": "text",
+   "value": "#676767"
+  },
+  "light": {
+   "args": [
+    60,
+    1425,
+    38,
+    35
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Outline row icon (folder)",
+   "op": "text",
+   "value": "#9C9C9C"
+  }
+ },
+ "text.largeTitle": {
+  "dark": {
+   "args": [
+    55,
+    315,
+    110,
+    45
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Large page title ('Inbox')",
+   "op": "text",
+   "value": "#DDDDDD"
+  },
+  "light": {
+   "args": [
+    55,
+    315,
+    110,
+    45
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Large page title ('Inbox')",
+   "op": "text",
+   "value": "#131313"
+  }
+ },
+ "text.muted": {
+  "dark": {
+   "args": [
+    120,
+    1225,
+    180,
+    35
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "'New Project' row: an action label between primary and secondary",
+   "op": "text",
+   "value": "#B2B2B2"
+  },
+  "light": {
+   "args": [
+    120,
+    1225,
+    180,
+    35
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "'New Project' row: an action label between primary and secondary",
+   "op": "text",
+   "value": "#4A4A4A"
+  }
+ },
+ "text.navTitle": {
+  "dark": {
+   "args": [
+    360,
+    920,
+    95,
+    35
+   ],
+   "capture": "screenshots/dark/09-model-sheet-search-field.png",
+   "evidence": "Sampled (text)",
+   "note": "Sheet title ('Model')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    360,
+    920,
+    95,
+    35
+   ],
+   "capture": "screenshots/light/09-model-sheet-search-field.png",
+   "evidence": "Sampled (text)",
+   "note": "Sheet title ('Model')",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.onBanner": {
+  "dark": {
+   "args": [
+    185,
+    1038,
+    440,
+    30
+   ],
+   "capture": "screenshots/dark/18-context-sheet-mode-options.png",
+   "evidence": "Sampled (text)",
+   "note": "Text in the photo-access card",
+   "op": "text",
+   "value": "#B5B5B5"
+  },
+  "light": {
+   "args": [
+    185,
+    1038,
+    440,
+    30
+   ],
+   "capture": "screenshots/light/18-context-sheet-mode-options.png",
+   "evidence": "Sampled (text)",
+   "note": "Text in the photo-access card",
+   "op": "text",
+   "value": "#494949"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    150,
+    1600,
+    250,
+    40
+   ],
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Composer placeholder ('Plan, ask, build...')",
+   "op": "text",
+   "value": "#7B7B7B"
+  },
+  "light": {
+   "args": [
+    150,
+    1600,
+    250,
+    40
+   ],
+   "capture": "screenshots/light/01-repo-agents-list-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Composer placeholder ('Plan, ask, build...')",
+   "op": "text",
+   "value": "#9D9D9D"
+  }
+ },
+ "text.primary": {
+  "dark": {
+   "args": [
+    120,
+    1005,
+    160,
+    35
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Row title ('toolbox-v1')",
+   "op": "text",
+   "value": "#DCDCDC"
+  },
+  "light": {
+   "args": [
+    120,
+    1005,
+    160,
+    35
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Row title ('toolbox-v1')",
+   "op": "text",
+   "value": "#141414"
+  }
+ },
+ "text.searchPlaceholder": {
+  "dark": {
+   "args": [
+    140,
+    1025,
+    140,
+    35
+   ],
+   "capture": "screenshots/dark/09-model-sheet-search-field.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder ('Models...')",
+   "op": "text",
+   "value": "#848484"
+  },
+  "light": {
+   "args": [
+    140,
+    1025,
+    140,
+    35
+   ],
+   "capture": "screenshots/light/09-model-sheet-search-field.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder ('Models...')",
+   "op": "text",
+   "value": "#949494"
+  }
+ },
+ "text.secondary": {
+  "dark": {
+   "args": [
+    165,
+    550,
+    105,
+    35
+   ],
+   "capture": "screenshots/dark/03-all-agents-grouped-status-dots.png",
+   "evidence": "Sampled (text)",
+   "note": "Row subtitle ('Merged')",
+   "op": "text",
+   "value": "#919191"
+  },
+  "light": {
+   "args": [
+    165,
+    550,
+    105,
+    35
+   ],
+   "capture": "screenshots/light/03-all-agents-grouped-status-dots.png",
+   "evidence": "Sampled (text)",
+   "note": "Row subtitle ('Merged')",
+   "op": "text",
+   "value": "#6F6F6F"
+  }
+ },
+ "text.sectionHeader": {
+  "dark": {
+   "args": [
+    55,
+    935,
+    115,
+    35
+   ],
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Section header ('Projects')",
+   "op": "text",
+   "value": "#929292"
+  },
+  "light": {
+   "args": [
+    55,
+    935,
+    115,
+    35
+   ],
+   "capture": "screenshots/light/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Sampled (text)",
+   "note": "Section header ('Projects')",
+   "op": "text",
+   "value": "#6F6F6F"
+  }
+ },
+ "text.segmentOff": {
+  "light": {
+   "args": [
+    178,
+    1035,
+    100,
+    30
+   ],
+   "capture": "screenshots/light/19-pull-requests-sheet-segmented.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected segment label ('Merged')",
+   "op": "text",
+   "value": "#4B4B4B"
+  }
+ },
+ "text.segmentOn": {
+  "light": {
+   "args": [
+    90,
+    1035,
+    30,
+    30
+   ],
+   "capture": "screenshots/light/19-pull-requests-sheet-segmented.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected segment label ('All')",
+   "op": "text",
+   "value": "#161616"
+  }
+ },
+ "text.stat": {
+  "dark": {
+   "args": [
+    57,
+    875,
+    100,
+    25
+   ],
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "evidence": "Sampled (text)",
+   "note": "Stat label ('Tokens')",
+   "op": "text",
+   "value": "#929292"
+  },
+  "light": {
+   "args": [
+    57,
+    875,
+    100,
+    25
+   ],
+   "capture": "screenshots/light/15-profile-sheet-bar-charts.png",
+   "evidence": "Sampled (text)",
+   "note": "Stat label ('Tokens')",
+   "op": "text",
+   "value": "#717171"
+  }
+ },
+ "text.tertiary": {
+  "dark": {
+   "args": [
+    440,
+    550,
+    300,
+    35
+   ],
+   "capture": "screenshots/dark/03-all-agents-grouped-status-dots.png",
+   "evidence": "Sampled (text)",
+   "note": "Repo name after a row subtitle",
+   "op": "text",
+   "value": "#676767"
+  },
+  "light": {
+   "args": [
+    440,
+    550,
+    300,
+    35
+   ],
+   "capture": "screenshots/light/03-all-agents-grouped-status-dots.png",
+   "evidence": "Sampled (text)",
+   "note": "Repo name after a row subtitle",
+   "op": "text",
+   "value": "#9A9A9A"
+  }
+ },
+ "text.version": {
+  "light": {
+   "args": [
+    255,
+    1672,
+    300,
+    22
+   ],
+   "capture": "screenshots/light/20-profile-bottom-streak-heatmap-support.png",
+   "evidence": "Sampled (text)",
+   "note": "Version footer (monospace, upper case)",
+   "op": "text",
+   "value": "#727172"
+  }
+ },
+ "type.body": {
+  "dark": {
+   "args": [
+    55,
+    645,
+    64,
+    690
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'I' of 'Items' in an agent reply",
+   "op": "cap",
+   "top": 652,
+   "value": "16pt"
+  }
+ },
+ "type.chartAxis": {
+  "dark": {
+   "args": [
+    211,
+    1316,
+    225,
+    1344
+   ],
+   "capHeight": "7.5pt",
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "evidence": "Derived",
+   "inkPx": 16,
+   "note": "'1' of '1 Oct' (monospace axis label)",
+   "op": "cap",
+   "top": 1321,
+   "value": "10pt"
+  }
+ },
+ "type.chip": {
+  "dark": {
+   "args": [
+    77,
+    455,
+    98,
+    490
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/13-search-sheet-focused-chips-rows.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'A' of the chip 'All'",
+   "op": "cap",
+   "top": 461,
+   "value": "15pt"
+  }
+ },
+ "type.code": {
+  "dark": {
+   "args": [
+    116,
+    390,
+    131,
+    422
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/06-agent-thread-changes-card-diffstat.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'L' of inline code 'GL11'",
+   "op": "cap",
+   "top": 393,
+   "value": "15pt"
+  }
+ },
+ "type.composer": {
+  "dark": {
+   "args": [
+    149,
+    1596,
+    169,
+    1642
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/01-repo-agents-list-composer.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'P' of the composer placeholder",
+   "op": "cap",
+   "top": 1605,
+   "value": "16pt"
+  }
+ },
+ "type.detailTitle": {
+  "dark": {
+   "args": [
+    194,
+    1033,
+    227,
+    1078
+   ],
+   "capHeight": "15pt",
+   "capture": "screenshots/dark/12-agent-details-sheet-icon-buttons.png",
+   "evidence": "Derived",
+   "inkPx": 31,
+   "note": "'M' of the agent title in its details sheet",
+   "op": "cap",
+   "top": 1038,
+   "value": "21pt"
+  }
+ },
+ "type.emptyBody": {
+  "dark": {
+   "args": [
+    89,
+    1133,
+    111,
+    1168
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/14-search-no-matches-empty.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'N' of 'Nothing matched'",
+   "op": "cap",
+   "top": 1138,
+   "value": "15pt"
+  }
+ },
+ "type.emptyTitle": {
+  "dark": {
+   "args": [
+    322,
+    1085,
+    344,
+    1118
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/14-search-no-matches-empty.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'N' of 'No matches'",
+   "op": "cap",
+   "top": 1090,
+   "value": "15pt"
+  }
+ },
+ "type.largeTitle": {
+  "dark": {
+   "args": [
+    54,
+    305,
+    66,
+    365
+   ],
+   "capHeight": "15.5pt",
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Derived",
+   "inkPx": 32,
+   "note": "'I' of 'Inbox'",
+   "op": "cap",
+   "top": 320,
+   "value": "22pt"
+  }
+ },
+ "type.menuItem": {
+  "dark": {
+   "args": [
+    392,
+    296,
+    413,
+    338
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/11-agent-menu-pulldown.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'R' of 'Rename'",
+   "op": "cap",
+   "top": 304,
+   "value": "16pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    354,
+    225,
+    373,
+    270
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'P' of the sheet title 'Profile'",
+   "op": "cap",
+   "top": 234,
+   "value": "17pt"
+  }
+ },
+ "type.profileName": {
+  "dark": {
+   "args": [
+    56,
+    600,
+    97,
+    645
+   ],
+   "capHeight": "14pt",
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "evidence": "Derived",
+   "inkPx": 29,
+   "note": "'W' of the profile name",
+   "op": "cap",
+   "top": 607,
+   "value": "19pt"
+  }
+ },
+ "type.rowTitle": {
+  "dark": {
+   "args": [
+    121,
+    636,
+    140,
+    680
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/04-customize-sheet-switches-popups.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'R' of the row title 'Repo'",
+   "op": "cap",
+   "top": 644,
+   "value": "16pt"
+  }
+ },
+ "type.sectionHeader": {
+  "dark": {
+   "args": [
+    55,
+    932,
+    74,
+    970
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'P' of 'Projects'",
+   "op": "cap",
+   "top": 938,
+   "value": "15pt"
+  }
+ },
+ "type.sheetTitle": {
+  "dark": {
+   "args": [
+    360,
+    915,
+    388,
+    960
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/09-model-sheet-search-field.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'M' of the sheet title 'Model'",
+   "op": "cap",
+   "top": 925,
+   "value": "16pt"
+  }
+ },
+ "type.statLabel": {
+  "dark": {
+   "args": [
+    56,
+    870,
+    78,
+    905
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'T' of 'Tokens'",
+   "op": "cap",
+   "top": 876,
+   "value": "15pt"
+  }
+ },
+ "type.statValue": {
+  "dark": {
+   "args": [
+    139,
+    915,
+    173,
+    962
+   ],
+   "capHeight": "15.5pt",
+   "capture": "screenshots/dark/15-profile-sheet-bar-charts.png",
+   "evidence": "Derived",
+   "inkPx": 32,
+   "note": "'M' of '947M'",
+   "op": "cap",
+   "top": 923,
+   "value": "22pt"
+  }
+ },
+ "type.subtitle": {
+  "dark": {
+   "args": [
+    164,
+    548,
+    191,
+    584
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/03-all-agents-grouped-status-dots.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'M' of the row subtitle 'Merged'",
+   "op": "cap",
+   "top": 553,
+   "value": "15pt"
+  }
+ },
+ "type.tileLabel": {
+  "dark": {
+   "args": [
+    444,
+    812,
+    453,
+    852
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'I' of 'In Review'",
+   "op": "cap",
+   "top": 820,
+   "value": "15pt"
+  }
+ }
+}
