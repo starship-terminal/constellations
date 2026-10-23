@@ -790,6 +790,23 @@ class ReferoBuildTest(unittest.TestCase):
                                             {"slug": None, "name": "Nobody", "why": "none"}])
         self.assertIsNone(files["beta"]["media"]["shot"])
 
+    def test_a_duplicated_name_leaves_similar_unlinked(self):
+        # Two styles named "Beta": alpha's "Beta" similar entry cannot pick
+        # one, so it falls back to an unlinked card (slug: null).
+        dup_a = {**self.BETA, "name": "Beta"}
+        dup_b = {**self.BETA, "slug": "beta-2", "name": "Beta"}
+        solo = {**self.BETA, "slug": "gamma", "name": "Gamma"}
+        alpha_ds = {**self.ALPHA_DS,
+                    "similar": [{"business": "Beta", "why": "same"},
+                                {"business": "Gamma", "why": "unique"}]}
+        _, files = self.build([("beta", dup_a, self.BETA_DS),
+                               ("beta-2", dup_b, self.BETA_DS),
+                               ("gamma", solo, self.BETA_DS),
+                               ("alpha", self.ALPHA, alpha_ds)])
+        self.assertEqual(files["alpha"]["similar"],
+                         [{"slug": None, "name": "Beta", "why": "same"},
+                          {"slug": "gamma", "name": "Gamma", "why": "unique"}])
+
     def test_a_folder_without_both_files_is_skipped(self):
         import tempfile
         from unittest import mock
