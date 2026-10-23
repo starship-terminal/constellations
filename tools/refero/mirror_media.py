@@ -28,7 +28,6 @@ import sqlite3
 import subprocess
 import sys
 import time
-import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -134,6 +133,24 @@ def compress_video(path, ffmpeg):
         tmp.unlink(missing_ok=True)
 
 
+def open_db():
+    """Open refero.db read-only.
+
+    Exits with a clear message when the db is missing (a bare
+    sqlite3.connect would create a 0-byte file that then dies on
+    'no such table'), or is still a Git LFS pointer (a clone without
+    `git lfs pull`)."""
+    if not DB.exists():
+        sys.exit(f"error: {DB} not found; run tools/refero/fetch.py first")
+    with open(DB, "rb") as f:
+        if f.read(64).startswith(b"version https://git-lfs"):
+            sys.exit(f"error: {DB} is a Git LFS pointer; "
+                     "run: git lfs install && git lfs pull")
+    db = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
+    db.execute("PRAGMA busy_timeout=30000")
+    return db
+
+
 def do_job(job, ffmpeg):
     kind, slug, url, dest, compress = job
     try:
@@ -176,12 +193,16 @@ def main():
             print("warning: ffmpeg not found, skipping --compress-videos",
                   file=sys.stderr)
 
-    db = sqlite3.connect(DB)
-    rows = db.execute(
-        """SELECT slug, screenshot_url, video_poster_url, video_url,
-                  video_detail_url, source_url
-           FROM styles ORDER BY slug""").fetchall()
-    db.close()
+    db = open_db()
+    try:
+        rows = db.execute(
+            """SELECT slug, screenshot_url, video_poster_url, video_url,
+                      video_detail_url, source_url
+               FROM styles ORDER BY slug""").fetchall()
+    except sqlite3.DatabaseError as ex:
+        sys.exit(f"error: {DB}: {ex}; run tools/refero/fetch.py first")
+    finally:
+        db.close()
     if args.limit:
         rows = rows[:args.limit]
 

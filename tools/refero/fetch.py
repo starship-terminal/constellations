@@ -23,13 +23,13 @@ import argparse
 import concurrent.futures
 import html as html_lib
 import json
+import os
 import re
 import sqlite3
 import subprocess
 import sys
 import time
 import urllib.request
-import urllib.error
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -230,7 +230,13 @@ def style_name(result, page):
 def init_db():
     REFERO.mkdir(exist_ok=True)
     WORK.mkdir(exist_ok=True)
+    if DB.exists():
+        with open(DB, "rb") as f:
+            if f.read(64).startswith(b"version https://git-lfs"):
+                sys.exit(f"error: {DB} is a Git LFS pointer; "
+                         "run: git lfs install && git lfs pull")
     db = sqlite3.connect(DB)
+    db.execute("PRAGMA busy_timeout=30000")
     db.executescript(SCHEMA)
     have = {r[1] for r in db.execute("PRAGMA table_info(styles)")}
     for col in MEDIA_COLUMNS + LABEL_COLUMNS:
@@ -262,18 +268,59 @@ def fetch_one(uuid):
     return uuid, url, result, design_md, style_name(result, page), extract_media(page)
 
 
-def write_meta(slug, media):
-    """Merge media keys into refero/<slug>/meta.json, preserving key order."""
+def write_atomic(path, text):
+    """Write text to path via a sibling .tmp file and rename, so a crash can
+    never leave a truncated file behind."""
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(text)
+    os.replace(tmp, path)
+
+
+def write_meta(db, slug, media):
+    """Merge media keys into refero/<slug>/meta.json, preserving key order.
+
+    A missing meta.json is rebuilt from the styles row; one that does not
+    parse is moved aside to meta.json.bad first, so a torn file is never
+    replaced by a media-keys-only file that drops
+    uuid/slug/name/source_url/page_url.
+    """
     meta_path = REFERO / slug / "meta.json"
-    meta_obj = {}
+    meta_obj = None
     if meta_path.exists():
         try:
             meta_obj = json.loads(meta_path.read_text())
-        except json.JSONDecodeError:
-            pass
+            if not isinstance(meta_obj, dict):
+                raise ValueError("not an object")
+        except (ValueError, UnicodeDecodeError):
+            bad = meta_path.with_name(meta_path.name + ".bad")
+            meta_path.rename(bad)
+            print(f"warning: {meta_path} does not parse; moved to "
+                  f"{bad.name} and rebuilt from the db", file=sys.stderr)
+            meta_obj = None
+    if meta_obj is None:
+        row = db.execute(
+            """SELECT uuid, slug, name, tagline, theme,
+                      product_type, design_style, tags, page_url,
+                      source_url, extracted_at, fetched_at, screenshot_url
+               FROM styles WHERE slug=?""", (slug,)).fetchone()
+        meta_obj = {
+            "uuid": row[0],
+            "slug": row[1],
+            "name": row[2],
+            "tagline": row[3],
+            "theme": row[4],
+            "product_type": row[5],
+            "design_style": row[6],
+            "tags": json.loads(row[7] or "[]"),
+            "page_url": row[8],
+            "source_url": row[9],
+            "extracted_at": row[10],
+            "fetched_at": row[11],
+            "screenshot_url": row[12],
+        } if row else {}
     meta_obj.update(media)
     meta_path.parent.mkdir(exist_ok=True)
-    meta_path.write_text(json.dumps(meta_obj, indent=2) + "\n")
+    write_atomic(meta_path, json.dumps(meta_obj, indent=2) + "\n")
 
 
 def cmd_fetch(args):
@@ -320,7 +367,7 @@ def cmd_fetch(args):
             labels = {"product_type": old[0], "design_style": old[1],
                       "tags": json.loads(old[2] or "[]")} if old and old[0] \
                      else {"product_type": None, "design_style": None, "tags": []}
-            (WORK / f"{uuid}.json").write_text(json.dumps(result))
+            write_atomic(WORK / f"{uuid}.json", json.dumps(result))
             outdir = REFERO / slug
             outdir.mkdir(exist_ok=True)
             if design_md:
@@ -355,11 +402,16 @@ def cmd_fetch(args):
                  media["video_detail_url"], media["video_detail_poster_url"],
                  meta_obj["fetched_at"], meta_obj["product_type"],
                  meta_obj["design_style"], json.dumps(meta_obj["tags"])))
+            # Clear the row's earlier failure, if any, in the same commit.
+            db.execute("DELETE FROM fetch_errors WHERE uuid=?", (uuid,))
             db.commit()
             fetched += 1
             if fetched % 50 == 0:
                 print(f"fetched {fetched}/{len(uuids)}")
-    print(f"fetched {fetched}, errors {len(uuids) - fetched}")
+    total_errors = db.execute(
+        "SELECT COUNT(*) FROM fetch_errors").fetchone()[0]
+    print(f"fetched {fetched}, errors {len(uuids) - fetched} "
+          f"({total_errors} in fetch_errors)")
     db.close()
 
 
@@ -371,10 +423,16 @@ def cmd_export():
     jobs = []
     for uuid, slug in rows:
         rpath = WORK / f"{uuid}.json"
-        if not rpath.exists():
+        # A torn cache file must not shadow the good copy in the db.
+        try:
+            json.loads(rpath.read_text())
+            usable = True
+        except (OSError, ValueError):
+            usable = False
+        if not usable:
             row = db.execute("SELECT result_json FROM styles WHERE uuid=?",
                              (uuid,)).fetchone()
-            rpath.write_text(row[0])
+            write_atomic(rpath, row[0])
         jobs.append({"uuid": uuid, "slug": slug, "resultPath": str(rpath),
                      "outDir": str(REFERO / slug)})
     jobs_file = WORK / "jobs.json"
@@ -437,6 +495,10 @@ def cmd_enrich_media(args):
                 db.commit()
                 print(f"FAIL {slug}: {ex}", file=sys.stderr)
                 continue
+            # meta.json first, then the db: a crash between the two leaves a
+            # retryable NULL media_fetched_at, not an enriched row with a
+            # meta.json that lacks the media keys.
+            write_meta(db, slug, media)
             db.execute(
                 """UPDATE styles SET video_url=?, video_poster_url=?,
                    video_detail_url=?, video_detail_poster_url=?,
@@ -444,12 +506,15 @@ def cmd_enrich_media(args):
                 (media["video_url"], media["video_poster_url"],
                  media["video_detail_url"], media["video_detail_poster_url"],
                  time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), uuid))
+            db.execute("DELETE FROM fetch_errors WHERE uuid=?", (uuid,))
             db.commit()
-            write_meta(slug, media)
             done += 1
             if done % 50 == 0:
                 print(f"enriched {done}/{len(rows)}")
-    print(f"enriched {done}, errors {len(rows) - done}")
+    total_errors = db.execute(
+        "SELECT COUNT(*) FROM fetch_errors").fetchone()[0]
+    print(f"enriched {done}, errors {len(rows) - done} "
+          f"({total_errors} in fetch_errors)")
     db.close()
 
 
