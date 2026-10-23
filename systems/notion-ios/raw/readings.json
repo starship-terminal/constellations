@@ -1,0 +1,5024 @@
+{
+ "accent.button": {
+  "dark": {
+   "args": [
+    250,
+    1650,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/15-chats-sheet-primary-button.png",
+   "evidence": "Sampled",
+   "note": "'+ Chat' button (glass over blue)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2D85DE"
+  },
+  "light": {
+   "args": [
+    250,
+    1650,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/15-chats-sheet-primary-button.png",
+   "evidence": "Sampled",
+   "note": "'+ Chat' button (glass over blue)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2881DC"
+  }
+ },
+ "accent.caret": {
+  "dark": {
+   "args": [
+    145,
+    1540,
+    2,
+    30
+   ],
+   "capture": "screenshots/dark/12-ai-composer-typed-send-enabled.png",
+   "evidence": "Derived",
+   "note": "Text caret",
+   "op": "fill",
+   "share": 0.35,
+   "value": "#446BF3"
+  }
+ },
+ "accent.caretLight": {
+  "light": {
+   "args": [
+    71,
+    1540,
+    2,
+    30
+   ],
+   "capture": "screenshots/light/11-ai-chat-empty-composer.png",
+   "evidence": "Derived",
+   "note": "Text caret in the focused composer",
+   "op": "fill",
+   "share": 0.17,
+   "value": "#446CF4"
+  }
+ },
+ "accent.dot": {
+  "dark": {
+   "args": [
+    108,
+    190,
+    7,
+    5
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "note": "Red dot on the avatar button (unread)",
+   "op": "fill",
+   "share": 0.23,
+   "value": "#FF978B"
+  },
+  "light": {
+   "args": [
+    108,
+    190,
+    7,
+    5
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "note": "Red dot on the avatar button (unread)",
+   "op": "fill",
+   "share": 0.37,
+   "value": "#DA5B4F"
+  }
+ },
+ "accent.fill": {
+  "dark": {
+   "args": [
+    588,
+    845,
+    12,
+    40
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "note": "'+' new-row button on a database",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#2683DE"
+  },
+  "light": {
+   "args": [
+    588,
+    845,
+    12,
+    40
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "note": "'+' new-row button on a database",
+   "op": "fill",
+   "share": 0.93,
+   "value": "#2683DE"
+  }
+ },
+ "accent.radio": {
+  "dark": {
+   "args": [
+    692,
+    1046,
+    3,
+    3
+   ],
+   "capture": "screenshots/dark/10-sort-radio-list.png",
+   "evidence": "Derived",
+   "note": "Selected radio (Best matches)",
+   "op": "fill",
+   "share": 0.78,
+   "value": "#2683DE"
+  }
+ },
+ "bg.behindPushed": {
+  "dark": {
+   "args": [
+    400,
+    100,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled",
+   "note": "The screen behind a pushed card (AI chat), above its top edge",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#111111"
+  },
+  "light": {
+   "args": [
+    400,
+    100,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled",
+   "note": "The screen behind a pushed card (AI chat), above its top edge",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C9C5C6"
+  }
+ },
+ "bg.chat": {
+  "dark": {
+   "args": [
+    400,
+    800,
+    100,
+    100
+   ],
+   "capture": "screenshots/dark/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled",
+   "note": "Notion AI chat canvas",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#191919"
+  },
+  "light": {
+   "args": [
+    400,
+    800,
+    100,
+    100
+   ],
+   "capture": "screenshots/light/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled",
+   "note": "Notion AI chat canvas",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "bg.page": {
+  "dark": {
+   "args": [
+    400,
+    1030,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/17-page-headings-table.png",
+   "evidence": "Sampled",
+   "note": "A page: the document canvas",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#191919"
+  },
+  "light": {
+   "args": [
+    400,
+    1030,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/17-page-headings-table.png",
+   "evidence": "Sampled",
+   "note": "A page: the document canvas",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "bg.search": {
+  "dark": {
+   "args": [
+    400,
+    600,
+    100,
+    100
+   ],
+   "capture": "screenshots/dark/08-search-no-results-empty.png",
+   "evidence": "Sampled",
+   "note": "Search results canvas",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#191919"
+  },
+  "light": {
+   "args": [
+    400,
+    600,
+    100,
+    100
+   ],
+   "capture": "screenshots/light/08-search-no-results-empty.png",
+   "evidence": "Sampled",
+   "note": "Search results canvas",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "bg.sheet": {
+  "dark": {
+   "args": [
+    400,
+    1500,
+    200,
+    50
+   ],
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "note": "Small sheet (search Filters)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#191919"
+  },
+  "light": {
+   "args": [
+    400,
+    1500,
+    200,
+    50
+   ],
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "note": "Small sheet (search Filters)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "bg.sheetLarge": {
+  "dark": {
+   "args": [
+    400,
+    310,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "evidence": "Sampled",
+   "note": "Large sheet (page Actions), behind its grouped cards",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    400,
+    310,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "evidence": "Sampled",
+   "note": "Large sheet (page Actions), behind its grouped cards",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FAF8F8"
+  }
+ },
+ "bg.sheetTheme": {
+  "dark": {
+   "args": [
+    400,
+    1000,
+    100,
+    100
+   ],
+   "capture": "screenshots/dark/29-theme-choice-sheet.png",
+   "evidence": "Sampled",
+   "note": "Large sheet (Theme choice)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    400,
+    1000,
+    100,
+    100
+   ],
+   "capture": "screenshots/light/29-theme-choice-sheet.png",
+   "evidence": "Sampled",
+   "note": "Large sheet (Theme choice)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FAF8F8"
+  }
+ },
+ "bg.sidebar": {
+  "dark": {
+   "args": [
+    300,
+    1300,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "note": "Home (the sidebar tree), Chats, Meetings and Inbox tabs, Settings",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    300,
+    1300,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "note": "Home (the sidebar tree), Chats, Meetings and Inbox tabs, Settings",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FAF8F8"
+  }
+ },
+ "border.card": {
+  "dark": {
+   "args": [
+    400,
+    1218,
+    200,
+    12
+   ],
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled (text)",
+   "note": "Rim of an AI result card",
+   "op": "text",
+   "value": "#323232"
+  },
+  "light": {
+   "args": [
+    400,
+    1218,
+    200,
+    12
+   ],
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled (text)",
+   "note": "Rim of an AI result card",
+   "op": "text",
+   "value": "#ECEAEB"
+  }
+ },
+ "border.control": {
+  "dark": {
+   "args": [
+    690,
+    1560,
+    30,
+    10
+   ],
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Rim of the 'Off' select",
+   "op": "text",
+   "value": "#353535"
+  },
+  "light": {
+   "args": [
+    690,
+    1560,
+    30,
+    10
+   ],
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Rim of the 'Off' select",
+   "op": "text",
+   "value": "#E2E0E1"
+  }
+ },
+ "border.divider": {
+  "dark": {
+   "args": [
+    300,
+    630,
+    200,
+    12
+   ],
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Divider between grouped rows (darkest or lightest pixel of the hairline)",
+   "op": "text",
+   "value": "#2B2B2B"
+  },
+  "light": {
+   "args": [
+    300,
+    630,
+    200,
+    12
+   ],
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Divider between grouped rows (darkest or lightest pixel of the hairline)",
+   "op": "text",
+   "value": "#F0F0F0"
+  }
+ },
+ "border.frame": {
+  "dark": {
+   "args": [
+    400,
+    712,
+    100,
+    12
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Sampled (text)",
+   "note": "Rim of an inline database",
+   "op": "text",
+   "value": "#2E2E2E"
+  },
+  "light": {
+   "args": [
+    400,
+    712,
+    100,
+    12
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Sampled (text)",
+   "note": "Rim of an inline database",
+   "op": "text",
+   "value": "#E8E8E8"
+  }
+ },
+ "border.settings": {
+  "dark": {
+   "args": [
+    300,
+    530,
+    200,
+    12
+   ],
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Divider between settings rows",
+   "op": "text",
+   "value": "#373737"
+  },
+  "light": {
+   "args": [
+    300,
+    530,
+    200,
+    12
+   ],
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Divider between settings rows",
+   "op": "text",
+   "value": "#E7E5E6"
+  }
+ },
+ "border.table": {
+  "dark": {
+   "args": [
+    200,
+    1420,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/17-page-headings-table.png",
+   "evidence": "Sampled (text)",
+   "note": "Table rim, top edge",
+   "op": "text",
+   "value": "#373737"
+  },
+  "light": {
+   "args": [
+    200,
+    1420,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/17-page-headings-table.png",
+   "evidence": "Sampled (text)",
+   "note": "Table rim, top edge",
+   "op": "text",
+   "value": "#ECEAE9"
+  }
+ },
+ "group.blue": {
+  "dark": {
+   "args": [
+    500,
+    935,
+    150,
+    10
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "note": "Group background, blue ('Mind (Self)')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#233950"
+  },
+  "light": {
+   "args": [
+    500,
+    935,
+    150,
+    10
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "note": "Group background, blue ('Mind (Self)')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E6F1FC"
+  }
+ },
+ "group.green": {
+  "dark": {
+   "args": [
+    500,
+    1175,
+    150,
+    10
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "note": "Group background, green ('Building (Action)')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#273D30"
+  },
+  "light": {
+   "args": [
+    500,
+    1175,
+    150,
+    10
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "note": "Group background, green ('Building (Action)')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E8F1ED"
+  }
+ },
+ "group.orange": {
+  "dark": {
+   "args": [
+    500,
+    1570,
+    150,
+    10
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "note": "Group background, orange ('Travel')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#53361F"
+  },
+  "light": {
+   "args": [
+    500,
+    1570,
+    150,
+    10
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "note": "Group background, orange ('Travel')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FBEADF"
+  }
+ },
+ "group.pink": {
+  "dark": {
+   "args": [
+    500,
+    1415,
+    150,
+    10
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "note": "Group background, pink ('Relationships (1-to-1)')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#4F2B3C"
+  },
+  "light": {
+   "args": [
+    500,
+    1415,
+    150,
+    10
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "note": "Group background, pink ('Relationships (1-to-1)')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FBE8F1"
+  }
+ },
+ "lines.chatRows": {
+  "dark": {
+   "args": [
+    57,
+    640,
+    677,
+    1140
+   ],
+   "bands": [
+    [
+     644,
+     677
+    ],
+    [
+     732,
+     765
+    ],
+    [
+     821,
+     853
+    ],
+    [
+     909,
+     935
+    ],
+    [
+     996,
+     1029
+    ],
+    [
+     1084,
+     1117
+    ]
+   ],
+   "capture": "screenshots/dark/02-chats-tab-list.png",
+   "evidence": "Derived",
+   "note": "Rows in the Chats list",
+   "op": "lines",
+   "value": "44.0pt"
+  },
+  "light": {
+   "args": [
+    57,
+    640,
+    677,
+    1140
+   ],
+   "bands": [
+    [
+     644,
+     677
+    ],
+    [
+     732,
+     765
+    ],
+    [
+     821,
+     853
+    ],
+    [
+     909,
+     935
+    ],
+    [
+     996,
+     1029
+    ],
+    [
+     1084,
+     1117
+    ]
+   ],
+   "capture": "screenshots/light/02-chats-tab-list.png",
+   "evidence": "Derived",
+   "note": "Rows in the Chats list",
+   "op": "lines",
+   "value": "44.0pt"
+  }
+ },
+ "lines.dbRows": {
+  "dark": {
+   "args": [
+    176,
+    925,
+    206,
+    1150
+   ],
+   "bands": [
+    [
+     941,
+     965
+    ],
+    [
+     991,
+     994
+    ],
+    [
+     1022,
+     1045
+    ],
+    [
+     1071,
+     1074
+    ],
+    [
+     1102,
+     1125
+    ]
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Derived",
+   "note": "Rows in a database group",
+   "op": "lines",
+   "value": "40.2pt"
+  },
+  "light": {
+   "args": [
+    176,
+    925,
+    206,
+    1150
+   ],
+   "bands": [
+    [
+     941,
+     965
+    ],
+    [
+     1022,
+     1045
+    ],
+    [
+     1102,
+     1125
+    ]
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Derived",
+   "note": "Rows in a database group",
+   "op": "lines",
+   "value": "40.2pt"
+  }
+ },
+ "lines.pageBody": {
+  "dark": {
+   "args": [
+    69,
+    725,
+    709,
+    995
+   ],
+   "bands": [
+    [
+     730,
+     762
+    ],
+    [
+     778,
+     810
+    ],
+    [
+     826,
+     830
+    ],
+    [
+     833,
+     852
+    ],
+    [
+     874,
+     906
+    ],
+    [
+     922,
+     954
+    ],
+    [
+     970,
+     994
+    ]
+   ],
+   "capture": "screenshots/dark/17-page-headings-table.png",
+   "evidence": "Derived",
+   "note": "Page body, a six-line block",
+   "op": "lines",
+   "value": "24.0pt"
+  },
+  "light": {
+   "args": [
+    69,
+    725,
+    709,
+    995
+   ],
+   "bands": [
+    [
+     730,
+     762
+    ],
+    [
+     778,
+     810
+    ],
+    [
+     826,
+     830
+    ],
+    [
+     833,
+     852
+    ],
+    [
+     874,
+     906
+    ],
+    [
+     922,
+     954
+    ],
+    [
+     970,
+     994
+    ]
+   ],
+   "capture": "screenshots/light/17-page-headings-table.png",
+   "evidence": "Derived",
+   "note": "Page body, a six-line block",
+   "op": "lines",
+   "value": "24.0pt"
+  }
+ },
+ "lines.prose": {
+  "dark": {
+   "args": [
+    49,
+    975,
+    709,
+    1205
+   ],
+   "bands": [
+    [
+     981,
+     1006
+    ],
+    [
+     1030,
+     1062
+    ],
+    [
+     1079,
+     1106
+    ],
+    [
+     1128,
+     1160
+    ],
+    [
+     1178,
+     1204
+    ]
+   ],
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "evidence": "Derived",
+   "note": "AI answer, a five-line block",
+   "op": "lines",
+   "value": "24.6pt"
+  },
+  "light": {
+   "args": [
+    49,
+    975,
+    709,
+    1205
+   ],
+   "bands": [
+    [
+     981,
+     1006
+    ],
+    [
+     1030,
+     1062
+    ],
+    [
+     1079,
+     1106
+    ],
+    [
+     1128,
+     1160
+    ],
+    [
+     1177,
+     1204
+    ]
+   ],
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "evidence": "Derived",
+   "note": "AI answer, a five-line block",
+   "op": "lines",
+   "value": "24.5pt"
+  }
+ },
+ "lines.searchRows": {
+  "dark": {
+   "args": [
+    52,
+    410,
+    97,
+    1310
+   ],
+   "bands": [
+    [
+     428,
+     465
+    ],
+    [
+     553,
+     590
+    ],
+    [
+     681,
+     713
+    ],
+    [
+     806,
+     838
+    ],
+    [
+     931,
+     963
+    ],
+    [
+     1057,
+     1089
+    ],
+    [
+     1182,
+     1214
+    ],
+    [
+     1305,
+     1309
+    ]
+   ],
+   "capture": "screenshots/dark/06-search-focused-recents.png",
+   "evidence": "Derived",
+   "note": "Icons down the search results",
+   "op": "lines",
+   "value": "62.8pt"
+  }
+ },
+ "lines.sheetRows": {
+  "dark": {
+   "args": [
+    141,
+    560,
+    441,
+    1160
+   ],
+   "bands": [
+    [
+     578,
+     604
+    ],
+    [
+     668,
+     694
+    ],
+    [
+     758,
+     790
+    ],
+    [
+     849,
+     880
+    ],
+    [
+     938,
+     970
+    ],
+    [
+     1029,
+     1054
+    ],
+    [
+     1118,
+     1144
+    ]
+   ],
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "evidence": "Derived",
+   "note": "Rows of a grouped card in the Actions sheet",
+   "op": "lines",
+   "value": "45.0pt"
+  },
+  "light": {
+   "args": [
+    141,
+    560,
+    441,
+    1160
+   ],
+   "bands": [
+    [
+     578,
+     604
+    ],
+    [
+     668,
+     694
+    ],
+    [
+     758,
+     790
+    ],
+    [
+     849,
+     880
+    ],
+    [
+     938,
+     970
+    ],
+    [
+     1029,
+     1054
+    ],
+    [
+     1118,
+     1144
+    ]
+   ],
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "evidence": "Derived",
+   "note": "Rows of a grouped card in the Actions sheet",
+   "op": "lines",
+   "value": "45.0pt"
+  }
+ },
+ "lines.sidebarRows": {
+  "dark": {
+   "args": [
+    125,
+    490,
+    575,
+    720
+   ],
+   "bands": [
+    [
+     501,
+     533
+    ],
+    [
+     589,
+     621
+    ],
+    [
+     678,
+     710
+    ]
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "note": "Sidebar rows under Favourites",
+   "op": "lines",
+   "value": "44.2pt"
+  },
+  "light": {
+   "args": [
+    125,
+    490,
+    575,
+    720
+   ],
+   "bands": [
+    [
+     501,
+     533
+    ],
+    [
+     589,
+     621
+    ],
+    [
+     678,
+     710
+    ]
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "note": "Sidebar rows under Favourites",
+   "op": "lines",
+   "value": "44.2pt"
+  }
+ },
+ "lines.subtitle": {
+  "dark": {
+   "args": [
+    53,
+    420,
+    503,
+    490
+   ],
+   "bands": [
+    [
+     424,
+     447
+    ],
+    [
+     460,
+     483
+    ]
+   ],
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Derived",
+   "note": "Two-line settings subtitle",
+   "op": "lines",
+   "value": "18.0pt"
+  },
+  "light": {
+   "args": [
+    53,
+    420,
+    503,
+    490
+   ],
+   "bands": [
+    [
+     424,
+     447
+    ],
+    [
+     460,
+     483
+    ]
+   ],
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Derived",
+   "note": "Two-line settings subtitle",
+   "op": "lines",
+   "value": "18.0pt"
+  }
+ },
+ "radio.off": {
+  "dark": {
+   "args": [
+    685,
+    1125,
+    40,
+    40
+   ],
+   "capture": "screenshots/dark/10-sort-radio-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected radio ring",
+   "op": "text",
+   "value": "#ACA8A4"
+  }
+ },
+ "radius.bubble": {
+  "dark": {
+   "args": [
+    500,
+    705,
+    225,
+    760
+   ],
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "corner": [
+    214,
+    694
+   ],
+   "evidence": "Derived",
+   "inset": 13,
+   "note": "The owner's bubble",
+   "op": "diag",
+   "value": "22.2pt"
+  },
+  "light": {
+   "args": [
+    500,
+    705,
+    225,
+    760
+   ],
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "corner": [
+    214,
+    694
+   ],
+   "evidence": "Derived",
+   "inset": 13,
+   "note": "The owner's bubble",
+   "op": "diag",
+   "value": "22.2pt"
+  }
+ },
+ "radius.card": {
+  "dark": {
+   "args": [
+    600,
+    560,
+    65,
+    700
+   ],
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "corner": [
+    48,
+    548
+   ],
+   "evidence": "Derived",
+   "inset": 6,
+   "note": "Grouped card (Actions)",
+   "op": "diag",
+   "value": "10.2pt"
+  },
+  "light": {
+   "args": [
+    600,
+    560,
+    65,
+    700
+   ],
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "corner": [
+    48,
+    548
+   ],
+   "evidence": "Derived",
+   "inset": 6,
+   "note": "Grouped card (Actions)",
+   "op": "diag",
+   "value": "10.2pt"
+  }
+ },
+ "radius.cardInSheet": {
+  "dark": {
+   "args": [
+    400,
+    1010,
+    70,
+    1095
+   ],
+   "capture": "screenshots/dark/10-sort-radio-list.png",
+   "corner": [
+    63,
+    997
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Grouped card in the small sheet (Sort)",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.cardSeg": {
+  "dark": {
+   "args": [
+    600,
+    355,
+    60,
+    430
+   ],
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "corner": [
+    48,
+    344
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Segmented font card",
+   "op": "diag",
+   "value": "11.9pt"
+  },
+  "light": {
+   "args": [
+    600,
+    355,
+    60,
+    430
+   ],
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "corner": [
+    48,
+    344
+   ],
+   "evidence": "Derived",
+   "inset": 8,
+   "note": "Segmented font card",
+   "op": "diag",
+   "value": "13.7pt"
+  }
+ },
+ "radius.composer": {
+  "dark": {
+   "args": [
+    400,
+    1512,
+    50,
+    1600
+   ],
+   "capture": "screenshots/dark/11-ai-chat-empty-composer.png",
+   "corner": [
+    40,
+    1506
+   ],
+   "evidence": "Derived",
+   "inset": 12,
+   "note": "Expanded composer",
+   "op": "diag",
+   "value": "20.5pt"
+  },
+  "light": {
+   "args": [
+    400,
+    1512,
+    50,
+    1600
+   ],
+   "capture": "screenshots/light/11-ai-chat-empty-composer.png",
+   "corner": [
+    41,
+    1512
+   ],
+   "evidence": "Derived",
+   "inset": 11,
+   "note": "Expanded composer",
+   "op": "diag",
+   "value": "18.8pt"
+  }
+ },
+ "radius.control": {
+  "dark": {
+   "args": [
+    618,
+    1448,
+    686,
+    1430,
+    6
+   ],
+   "capture": "screenshots/dark/26-settings-select-and-secondary-button.png",
+   "corner": [
+    614,
+    1421
+   ],
+   "evidence": "Derived",
+   "inset": 2,
+   "note": "'Connect' button (outlined)",
+   "op": "rimdiag",
+   "value": "3.4pt"
+  }
+ },
+ "radius.dbAdd": {
+  "dark": {
+   "args": [
+    640,
+    840,
+    595,
+    865
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "corner": [
+    584,
+    833
+   ],
+   "evidence": "Derived",
+   "inset": 4,
+   "note": "Database '+' split button",
+   "op": "diag",
+   "value": "6.8pt"
+  },
+  "light": {
+   "args": [
+    640,
+    840,
+    595,
+    865
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "corner": [
+    584,
+    833
+   ],
+   "evidence": "Derived",
+   "inset": 4,
+   "note": "Database '+' split button",
+   "op": "diag",
+   "value": "6.8pt"
+  }
+ },
+ "radius.frame": {
+  "dark": {
+   "args": [
+    80,
+    1000,
+    400,
+    730,
+    6
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "corner": [
+    69,
+    719
+   ],
+   "evidence": "Derived",
+   "inset": 4,
+   "note": "Inline database frame (outlined)",
+   "op": "rimdiag",
+   "value": "6.8pt"
+  },
+  "light": {
+   "args": [
+    80,
+    1000,
+    400,
+    730,
+    6
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "corner": [
+    69,
+    719
+   ],
+   "evidence": "Derived",
+   "inset": 4,
+   "note": "Inline database frame (outlined)",
+   "op": "rimdiag",
+   "value": "6.8pt"
+  }
+ },
+ "radius.menu": {
+  "dark": {
+   "args": [
+    450,
+    990,
+    210,
+    1300
+   ],
+   "capture": "screenshots/dark/13-model-picker-menu.png",
+   "corner": [
+    196,
+    980
+   ],
+   "evidence": "Derived",
+   "inset": 19,
+   "note": "Pop-up menu (model picker)",
+   "op": "diag",
+   "value": "32.4pt"
+  }
+ },
+ "radius.resultCard": {
+  "dark": {
+   "args": [
+    60,
+    1300,
+    400,
+    1240,
+    6
+   ],
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "corner": [
+    49,
+    1225
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "AI result card (outlined)",
+   "op": "rimdiag",
+   "value": "8.5pt"
+  },
+  "light": {
+   "args": [
+    60,
+    1300,
+    400,
+    1240,
+    6
+   ],
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "corner": [
+    48,
+    1224
+   ],
+   "evidence": "Derived",
+   "inset": 6,
+   "note": "AI result card (outlined)",
+   "op": "rimdiag",
+   "value": "10.2pt"
+  }
+ },
+ "radius.select": {
+  "dark": {
+   "args": [
+    656,
+    1592,
+    700,
+    1572,
+    6
+   ],
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "corner": [
+    651,
+    1565
+   ],
+   "evidence": "Derived",
+   "inset": 2,
+   "note": "'Off' select (outlined)",
+   "op": "rimdiag",
+   "value": "3.4pt"
+  },
+  "light": {
+   "args": [
+    656,
+    1592,
+    700,
+    1572,
+    6
+   ],
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "corner": [
+    651,
+    1565
+   ],
+   "evidence": "Derived",
+   "inset": 2,
+   "note": "'Off' select (outlined)",
+   "op": "rimdiag",
+   "value": "3.4pt"
+  }
+ },
+ "radius.sheet": {
+  "dark": {
+   "args": [
+    200,
+    880,
+    45,
+    1000
+   ],
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "corner": [
+    32,
+    863
+   ],
+   "evidence": "Derived",
+   "inset": 21,
+   "note": "Small sheet, top corner",
+   "op": "diag",
+   "value": "35.8pt"
+  },
+  "light": {
+   "args": [
+    200,
+    880,
+    45,
+    1000
+   ],
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "corner": [
+    32,
+    863
+   ],
+   "evidence": "Derived",
+   "inset": 21,
+   "note": "Small sheet, top corner",
+   "op": "diag",
+   "value": "35.8pt"
+  }
+ },
+ "radius.viewChip": {
+  "dark": {
+   "args": [
+    300,
+    836,
+    118,
+    865
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "corner": [
+    110,
+    832
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Database view chip",
+   "op": "diag",
+   "value": "15.4pt"
+  },
+  "light": {
+   "args": [
+    300,
+    836,
+    118,
+    865
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "corner": [
+    110,
+    832
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Database view chip",
+   "op": "diag",
+   "value": "15.4pt"
+  }
+ },
+ "scrim.ref": {
+  "dark": {
+   "args": [
+    600,
+    350,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/08-search-no-results-empty.png",
+   "evidence": "Sampled",
+   "note": "Search canvas, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#191919"
+  },
+  "light": {
+   "args": [
+    600,
+    350,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/08-search-no-results-empty.png",
+   "evidence": "Sampled",
+   "note": "Search canvas, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "scrim.sheet": {
+  "dark": {
+   "args": [
+    600,
+    350,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "note": "Search canvas under the Filters sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0D0D0D"
+  },
+  "light": {
+   "args": [
+    600,
+    350,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "note": "Search canvas under the Filters sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#CCCCCC"
+  }
+ },
+ "size.avatarButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    215,
+    30,
+    150,
+    [
+     35,
+     215
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 47,
+   "note": "Avatar button in the top bar, width",
+   "op": "extent",
+   "to": 136,
+   "value": "45pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    215,
+    30,
+    150,
+    [
+     35,
+     215
+    ],
+    12
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 46,
+   "note": "Avatar button in the top bar, width",
+   "op": "extent",
+   "to": 137,
+   "value": "46pt"
+  }
+ },
+ "size.barButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    1660,
+    40,
+    185,
+    [
+     42,
+     1660
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 71,
+   "note": "Round glass search button in the bottom bar, width",
+   "op": "extent",
+   "to": 168,
+   "value": "49pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    1660,
+    40,
+    185,
+    [
+     42,
+     1660
+    ],
+    12
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 70,
+   "note": "Round glass search button in the bottom bar, width",
+   "op": "extent",
+   "to": 169,
+   "value": "50pt"
+  }
+ },
+ "size.barPill.h": {
+  "dark": {
+   "args": [
+    "col",
+    450,
+    1580,
+    1745,
+    [
+     450,
+     1585
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 1612,
+   "note": "'Ask AI' glass pill, height",
+   "op": "extent",
+   "to": 1707,
+   "value": "48pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    450,
+    1580,
+    1745,
+    [
+     450,
+     1585
+    ],
+    10
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 1611,
+   "note": "'Ask AI' glass pill, height",
+   "op": "extent",
+   "to": 1708,
+   "value": "49pt"
+  }
+ },
+ "size.barPill.w": {
+  "dark": {
+   "args": [
+    "row",
+    1660,
+    180,
+    630,
+    [
+     182,
+     1660
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 191,
+   "note": "'Ask AI' glass pill, width",
+   "op": "extent",
+   "to": 620,
+   "value": "215pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    1660,
+    180,
+    630,
+    [
+     182,
+     1660
+    ],
+    10
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 190,
+   "note": "'Ask AI' glass pill, width",
+   "op": "extent",
+   "to": 621,
+   "value": "216pt"
+  }
+ },
+ "size.cardSeg": {
+  "dark": {
+   "args": [
+    [
+     300,
+     360
+    ],
+    [
+     30,
+     330,
+     760,
+     200
+    ],
+    2
+   ],
+   "box": [
+    48,
+    344,
+    763,
+    513
+   ],
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "colour": "#252525",
+   "evidence": "Sampled",
+   "note": "Segmented font card (Actions)",
+   "op": "bbox",
+   "value": "358x85pt"
+  },
+  "light": {
+   "args": [
+    [
+     300,
+     360
+    ],
+    [
+     30,
+     330,
+     760,
+     200
+    ],
+    2
+   ],
+   "box": [
+    48,
+    344,
+    763,
+    513
+   ],
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Segmented font card (Actions)",
+   "op": "bbox",
+   "value": "358x85pt"
+  }
+ },
+ "size.chatButton": {
+  "dark": {
+   "args": [
+    [
+     250,
+     1650
+    ],
+    [
+     50,
+     1590,
+     250,
+     130
+    ],
+    14
+   ],
+   "box": [
+    73,
+    1615,
+    266,
+    1704
+   ],
+   "capture": "screenshots/dark/15-chats-sheet-primary-button.png",
+   "colour": "#2D85DE",
+   "evidence": "Sampled",
+   "note": "'+ Chat' button",
+   "op": "bbox",
+   "value": "97x45pt"
+  },
+  "light": {
+   "args": [
+    [
+     250,
+     1650
+    ],
+    [
+     50,
+     1590,
+     250,
+     130
+    ],
+    14
+   ],
+   "box": [
+    72,
+    1615,
+    267,
+    1704
+   ],
+   "capture": "screenshots/light/15-chats-sheet-primary-button.png",
+   "colour": "#2881DC",
+   "evidence": "Sampled",
+   "note": "'+ Chat' button",
+   "op": "bbox",
+   "value": "98x45pt"
+  }
+ },
+ "size.composer.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    1470,
+    1720,
+    [
+     400,
+     1480
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled",
+   "from": 1502,
+   "note": "Expanded composer, height",
+   "op": "extent",
+   "to": 1671,
+   "value": "85pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    400,
+    1470,
+    1720,
+    [
+     400,
+     1480
+    ],
+    10
+   ],
+   "capture": "screenshots/light/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled",
+   "from": 1502,
+   "note": "Expanded composer, height",
+   "op": "extent",
+   "to": 1673,
+   "value": "86pt"
+  }
+ },
+ "size.composerCompact.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    1590,
+    1735,
+    [
+     400,
+     1595
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/14-ai-composer-unfocused.png",
+   "evidence": "Sampled",
+   "from": 1618,
+   "note": "Unfocused composer, height",
+   "op": "extent",
+   "to": 1707,
+   "value": "45pt"
+  }
+ },
+ "size.control.h": {
+  "dark": {
+   "args": [
+    "col",
+    622,
+    1405,
+    1495,
+    [
+     622,
+     1410
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/26-settings-select-and-secondary-button.png",
+   "evidence": "Sampled",
+   "from": 1420,
+   "note": "'Connect' button, height",
+   "op": "extent",
+   "to": 1475,
+   "value": "28pt"
+  }
+ },
+ "size.dbAdd": {
+  "dark": {
+   "args": [
+    [
+     640,
+     850
+    ],
+    [
+     570,
+     820,
+     150,
+     100
+    ],
+    30
+   ],
+   "box": [
+    584,
+    834,
+    703,
+    896
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "colour": "#2683DE",
+   "evidence": "Sampled",
+   "note": "Database '+' split button",
+   "op": "bbox",
+   "value": "60x31.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     640,
+     850
+    ],
+    [
+     570,
+     820,
+     150,
+     100
+    ],
+    30
+   ],
+   "box": [
+    584,
+    834,
+    703,
+    896
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "colour": "#2683DE",
+   "evidence": "Sampled",
+   "note": "Database '+' split button",
+   "op": "bbox",
+   "value": "60x31.5pt"
+  }
+ },
+ "size.navButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    245,
+    30,
+    160,
+    [
+     35,
+     245
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled",
+   "from": 47,
+   "note": "Round glass button on the AI chat (history), width",
+   "op": "extent",
+   "to": 136,
+   "value": "45pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    245,
+    30,
+    160,
+    [
+     35,
+     245
+    ],
+    10
+   ],
+   "capture": "screenshots/light/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled",
+   "from": 46,
+   "note": "Round glass button on the AI chat (history), width",
+   "op": "extent",
+   "to": 137,
+   "value": "46pt"
+  }
+ },
+ "size.radio": {
+  "dark": {
+   "args": [
+    "row",
+    1047,
+    670,
+    740,
+    [
+     672,
+     1047
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/10-sort-radio-list.png",
+   "evidence": "Sampled",
+   "from": 685,
+   "note": "Radio, outer diameter",
+   "op": "extent",
+   "to": 720,
+   "value": "18pt"
+  }
+ },
+ "size.select.h": {
+  "dark": {
+   "args": [
+    "col",
+    660,
+    1550,
+    1630,
+    [
+     660,
+     1552
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled",
+   "from": 1564,
+   "note": "'Off' select, height",
+   "op": "extent",
+   "to": 1619,
+   "value": "28pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    660,
+    1550,
+    1630,
+    [
+     660,
+     1552
+    ],
+    6
+   ],
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled",
+   "from": 1564,
+   "note": "'Off' select, height",
+   "op": "extent",
+   "to": 1619,
+   "value": "28pt"
+  }
+ },
+ "size.selectWide.h": {
+  "dark": {
+   "args": [
+    "col",
+    430,
+    1410,
+    1510,
+    [
+     430,
+     1412
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/28-settings-preferences-theme-select.png",
+   "evidence": "Sampled",
+   "from": 1426,
+   "note": "Theme select, height",
+   "op": "extent",
+   "to": 1497,
+   "value": "36pt"
+  }
+ },
+ "size.send": {
+  "dark": {
+   "args": [
+    [
+     728,
+     1600
+    ],
+    [
+     680,
+     1575,
+     100,
+     105
+    ],
+    24
+   ],
+   "box": [
+    696,
+    1596,
+    759,
+    1659
+   ],
+   "capture": "screenshots/dark/12-ai-composer-typed-send-enabled.png",
+   "colour": "#2683DE",
+   "evidence": "Sampled",
+   "note": "Blue send button",
+   "op": "bbox",
+   "value": "32x32pt"
+  }
+ },
+ "size.switch.h": {
+  "dark": {
+   "args": [
+    "col",
+    735,
+    1095,
+    1200,
+    [
+     735,
+     1100
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "from": 1121,
+   "note": "Switch, height",
+   "op": "extent",
+   "to": 1172,
+   "value": "26pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    735,
+    1095,
+    1200,
+    [
+     735,
+     1100
+    ],
+    10
+   ],
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "from": 1121,
+   "note": "Switch, height",
+   "op": "extent",
+   "to": 1171,
+   "value": "25.5pt"
+  }
+ },
+ "size.switch.w": {
+  "dark": {
+   "args": [
+    "row",
+    1148,
+    600,
+    775,
+    [
+     610,
+     1148
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "from": 632,
+   "note": "Switch, width",
+   "op": "extent",
+   "to": 753,
+   "value": "61pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    1148,
+    600,
+    775,
+    [
+     610,
+     1148
+    ],
+    10
+   ],
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "from": 632,
+   "note": "Switch, width",
+   "op": "extent",
+   "to": 753,
+   "value": "61pt"
+  }
+ },
+ "size.switchThumb": {
+  "dark": {
+   "args": [
+    [
+     668,
+     1148
+    ],
+    [
+     620,
+     1100,
+     110,
+     100
+    ],
+    8
+   ],
+   "box": [
+    637,
+    1125,
+    705,
+    1168
+   ],
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "bbox",
+   "value": "34.5x22pt"
+  }
+ },
+ "size.tab.h": {
+  "dark": {
+   "args": [
+    "col",
+    461,
+    150,
+    280,
+    [
+     461,
+     155
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 170,
+   "note": "Unselected tab, height",
+   "op": "extent",
+   "to": 257,
+   "value": "44pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    461,
+    150,
+    280,
+    [
+     461,
+     155
+    ],
+    6
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 170,
+   "note": "Unselected tab, height",
+   "op": "extent",
+   "to": 257,
+   "value": "44pt"
+  }
+ },
+ "size.tab.w": {
+  "dark": {
+   "args": [
+    "row",
+    215,
+    400,
+    525,
+    [
+     402,
+     215
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 408,
+   "note": "Unselected tab, width",
+   "op": "extent",
+   "to": 515,
+   "value": "54pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    215,
+    400,
+    525,
+    [
+     402,
+     215
+    ],
+    6
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 408,
+   "note": "Unselected tab, width",
+   "op": "extent",
+   "to": 515,
+   "value": "54pt"
+  }
+ },
+ "size.tabSelected.h": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    150,
+    280,
+    [
+     300,
+     155
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 170,
+   "note": "Selected tab pill, height",
+   "op": "extent",
+   "to": 257,
+   "value": "44pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    300,
+    150,
+    280,
+    [
+     300,
+     155
+    ],
+    8
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 170,
+   "note": "Selected tab pill, height",
+   "op": "extent",
+   "to": 257,
+   "value": "44pt"
+  }
+ },
+ "size.tabSelected.w": {
+  "dark": {
+   "args": [
+    "row",
+    215,
+    145,
+    400,
+    [
+     147,
+     215
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 153,
+   "note": "Selected tab pill, width",
+   "op": "extent",
+   "to": 391,
+   "value": "119.5pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    215,
+    145,
+    400,
+    [
+     147,
+     215
+    ],
+    8
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 153,
+   "note": "Selected tab pill, width",
+   "op": "extent",
+   "to": 391,
+   "value": "119.5pt"
+  }
+ },
+ "size.viewChip.h": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    815,
+    905,
+    [
+     300,
+     817
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "from": 832,
+   "note": "Database view chip, height",
+   "op": "extent",
+   "to": 897,
+   "value": "33pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    300,
+    815,
+    905,
+    [
+     300,
+     817
+    ],
+    6
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "from": 832,
+   "note": "Database view chip, height",
+   "op": "extent",
+   "to": 897,
+   "value": "33pt"
+  }
+ },
+ "size.viewChip.w": {
+  "dark": {
+   "args": [
+    "row",
+    865,
+    100,
+    340,
+    [
+     102,
+     865
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "from": 110,
+   "note": "Database view chip, width",
+   "op": "extent",
+   "to": 322,
+   "value": "106.5pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    865,
+    100,
+    340,
+    [
+     102,
+     865
+    ],
+    6
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Sampled",
+   "from": 110,
+   "note": "Database view chip, width",
+   "op": "extent",
+   "to": 322,
+   "value": "106.5pt"
+  }
+ },
+ "space.pageText": {
+  "dark": {
+   "args": [
+    "row",
+    745,
+    17,
+    120,
+    [
+     20,
+     745
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/17-page-headings-table.png",
+   "evidence": "Sampled",
+   "from": 70,
+   "note": "First ink of page body text from the screen edge",
+   "op": "extent",
+   "to": 119,
+   "value": "25pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    745,
+    17,
+    120,
+    [
+     20,
+     745
+    ],
+    30
+   ],
+   "capture": "screenshots/light/17-page-headings-table.png",
+   "evidence": "Sampled",
+   "from": 70,
+   "note": "First ink of page body text from the screen edge",
+   "op": "extent",
+   "to": 119,
+   "value": "25pt"
+  }
+ },
+ "space.settingsText": {
+  "dark": {
+   "args": [
+    "row",
+    385,
+    17,
+    120,
+    [
+     20,
+     385
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled",
+   "from": 54,
+   "note": "First ink of a settings row title from the screen edge",
+   "op": "extent",
+   "to": 118,
+   "value": "32.5pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    385,
+    17,
+    120,
+    [
+     20,
+     385
+    ],
+    30
+   ],
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled",
+   "from": 54,
+   "note": "First ink of a settings row title from the screen edge",
+   "op": "extent",
+   "to": 118,
+   "value": "32.5pt"
+  }
+ },
+ "space.sidebarText": {
+  "dark": {
+   "args": [
+    "row",
+    320,
+    17,
+    120,
+    [
+     20,
+     320
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 58,
+   "note": "First ink of a sidebar section header from the screen edge",
+   "op": "extent",
+   "to": 113,
+   "value": "28pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    320,
+    17,
+    120,
+    [
+     20,
+     320
+    ],
+    30
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "from": 58,
+   "note": "First ink of a sidebar section header from the screen edge",
+   "op": "extent",
+   "to": 113,
+   "value": "28pt"
+  }
+ },
+ "surface.bubble": {
+  "dark": {
+   "args": [
+    222,
+    720,
+    15,
+    90
+   ],
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled",
+   "note": "The owner's message bubble in an AI chat, left padding",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2B2B2B"
+  },
+  "light": {
+   "args": [
+    222,
+    720,
+    15,
+    90
+   ],
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled",
+   "note": "The owner's message bubble in an AI chat, left padding",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F1EFED"
+  }
+ },
+ "surface.card": {
+  "dark": {
+   "args": [
+    500,
+    600,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "evidence": "Sampled",
+   "note": "Grouped card in a large sheet (Actions)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#252525"
+  },
+  "light": {
+   "args": [
+    500,
+    600,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "evidence": "Sampled",
+   "note": "Grouped card in a large sheet (Actions)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.cardInSheet": {
+  "dark": {
+   "args": [
+    400,
+    1080,
+    200,
+    6
+   ],
+   "capture": "screenshots/dark/10-sort-radio-list.png",
+   "evidence": "Sampled",
+   "note": "Grouped card inside the small sheet (Sort)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#222222"
+  }
+ },
+ "surface.cardTheme": {
+  "dark": {
+   "args": [
+    400,
+    450,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/29-theme-choice-sheet.png",
+   "evidence": "Sampled",
+   "note": "Grouped card in the Theme sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#252525"
+  },
+  "light": {
+   "args": [
+    400,
+    450,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/29-theme-choice-sheet.png",
+   "evidence": "Sampled",
+   "note": "Grouped card in the Theme sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.code": {
+  "dark": {
+   "args": [
+    300,
+    1078,
+    4,
+    30
+   ],
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled",
+   "note": "Inline code behind red text ('Distance from Home (km)')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#292927"
+  },
+  "light": {
+   "args": [
+    300,
+    1078,
+    4,
+    30
+   ],
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled",
+   "note": "Inline code behind red text ('Distance from Home (km)')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EDEDEB"
+  }
+ },
+ "surface.composer": {
+  "dark": {
+   "args": [
+    400,
+    1520,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled",
+   "note": "Expanded AI composer",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#363636"
+  },
+  "light": {
+   "args": [
+    400,
+    1520,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled",
+   "note": "Expanded AI composer",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#F9F9F9"
+  }
+ },
+ "surface.glass": {
+  "dark": {
+   "args": [
+    300,
+    1620,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/08-search-no-results-empty.png",
+   "evidence": "Sampled",
+   "note": "Glass search bar at the bottom of search",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#373737"
+  },
+  "light": {
+   "args": [
+    300,
+    1620,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/08-search-no-results-empty.png",
+   "evidence": "Derived",
+   "note": "Glass search bar at the bottom of search",
+   "op": "fill",
+   "share": 0.8,
+   "value": "#F9F9F9"
+  }
+ },
+ "surface.glassBar": {
+  "dark": {
+   "args": [
+    450,
+    1630,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "note": "Glass 'Ask AI' pill in the bottom bar",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#3C3C3C"
+  },
+  "light": {
+   "args": [
+    450,
+    1630,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "note": "Glass 'Ask AI' pill in the bottom bar",
+   "op": "fill",
+   "share": 0.6,
+   "value": "#F8F6F6"
+  }
+ },
+ "surface.grabber": {
+  "dark": {
+   "args": [
+    360,
+    876,
+    80,
+    4
+   ],
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "evidence": "Derived",
+   "note": "Sheet grabber",
+   "op": "fill",
+   "share": 0.76,
+   "value": "#5F5F61"
+  },
+  "light": {
+   "args": [
+    360,
+    876,
+    80,
+    4
+   ],
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "evidence": "Derived",
+   "note": "Sheet grabber",
+   "op": "fill",
+   "share": 0.42,
+   "value": "#C5C5C7"
+  }
+ },
+ "surface.icon": {
+  "dark": {
+   "args": [
+    60,
+    1072,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "note": "Teamspace icon tile",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2F2F2F"
+  },
+  "light": {
+   "args": [
+    60,
+    1072,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "note": "Teamspace icon tile",
+   "op": "fill",
+   "share": 0.83,
+   "value": "#E0DEDA"
+  }
+ },
+ "surface.menu": {
+  "dark": {
+   "args": [
+    650,
+    1250,
+    20,
+    40
+   ],
+   "capture": "screenshots/dark/13-model-picker-menu.png",
+   "evidence": "Sampled",
+   "note": "Pop-up menu (AI model picker)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#333333"
+  },
+  "light": {
+   "args": [
+    650,
+    1250,
+    20,
+    40
+   ],
+   "capture": "screenshots/light/13-model-picker-menu.png",
+   "evidence": "Sampled",
+   "note": "Pop-up menu (AI model picker)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FEFEFE"
+  }
+ },
+ "surface.tab": {
+  "dark": {
+   "args": [
+    460,
+    180,
+    30,
+    8
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "note": "Unselected top tab (a circle)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2B2B29"
+  },
+  "light": {
+   "args": [
+    460,
+    180,
+    30,
+    8
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "note": "Unselected top tab (a circle)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F1EFED"
+  }
+ },
+ "surface.tabSelected": {
+  "dark": {
+   "args": [
+    360,
+    180,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled",
+   "note": "Selected top tab (Home pill)",
+   "op": "fill",
+   "share": 0.92,
+   "value": "#373735"
+  },
+  "light": {
+   "args": [
+    360,
+    180,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "note": "Selected top tab (Home pill)",
+   "op": "fill",
+   "share": 0.85,
+   "value": "#ECEAE8"
+  }
+ },
+ "surface.tableHeader": {
+  "dark": {
+   "args": [
+    200,
+    1440,
+    100,
+    8
+   ],
+   "capture": "screenshots/dark/17-page-headings-table.png",
+   "evidence": "Sampled",
+   "note": "Table header row in a page",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    200,
+    1440,
+    100,
+    8
+   ],
+   "capture": "screenshots/light/17-page-headings-table.png",
+   "evidence": "Sampled",
+   "note": "Table header row in a page",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F8F6F4"
+  }
+ },
+ "surface.viewChip": {
+  "dark": {
+   "args": [
+    130,
+    830,
+    20,
+    8
+   ],
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Derived",
+   "note": "Database view chip ('Areas')",
+   "op": "fill",
+   "share": 0.72,
+   "value": "#262626"
+  },
+  "light": {
+   "args": [
+    130,
+    830,
+    20,
+    8
+   ],
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Derived",
+   "note": "Database view chip ('Areas')",
+   "op": "fill",
+   "share": 0.5,
+   "value": "#F3F3F3"
+  }
+ },
+ "switch.off": {
+  "dark": {
+   "args": [
+    730,
+    1145,
+    15,
+    10
+   ],
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off track (search Filters, Title only)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#58585A"
+  },
+  "light": {
+   "args": [
+    730,
+    1145,
+    15,
+    10
+   ],
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off track (search Filters, Title only)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C5C5C7"
+  }
+ },
+ "switch.offSettings": {
+  "dark": {
+   "args": [
+    735,
+    425,
+    15,
+    10
+   ],
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off track (Settings)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#65635F"
+  },
+  "light": {
+   "args": [
+    735,
+    425,
+    15,
+    10
+   ],
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off track (Settings)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E1DFDD"
+  }
+ },
+ "switch.thumb": {
+  "dark": {
+   "args": [
+    660,
+    1145,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    660,
+    1145,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "text.accent": {
+  "dark": {
+   "args": [
+    145,
+    375,
+    62,
+    32
+   ],
+   "capture": "screenshots/dark/22-filter-sheet-properties.png",
+   "evidence": "Sampled (text)",
+   "note": "Accent text ('Sort', an active sort)",
+   "op": "text",
+   "value": "#2B83DE"
+  },
+  "light": {
+   "args": [
+    145,
+    375,
+    62,
+    32
+   ],
+   "capture": "screenshots/light/22-filter-sheet-properties.png",
+   "evidence": "Sampled (text)",
+   "note": "Accent text ('Sort', an active sort)",
+   "op": "text",
+   "value": "#2782DD"
+  }
+ },
+ "text.accentSel": {
+  "dark": {
+   "args": [
+    140,
+    385,
+    55,
+    45
+   ],
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected segment glyph ('Ag', Default)",
+   "op": "text",
+   "value": "#2B83DF"
+  },
+  "light": {
+   "args": [
+    140,
+    385,
+    55,
+    45
+   ],
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected segment glyph ('Ag', Default)",
+   "op": "text",
+   "value": "#2482DC"
+  }
+ },
+ "text.askPlaceholder": {
+  "dark": {
+   "args": [
+    290,
+    1645,
+    95,
+    35
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled (text)",
+   "note": "'Ask AI' in the bottom bar",
+   "op": "text",
+   "value": "#ADA9A6"
+  },
+  "light": {
+   "args": [
+    290,
+    1645,
+    95,
+    35
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled (text)",
+   "note": "'Ask AI' in the bottom bar",
+   "op": "text",
+   "value": "#7E7976"
+  }
+ },
+ "text.bubble": {
+  "dark": {
+   "args": [
+    247,
+    722,
+    470,
+    35
+   ],
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled (text)",
+   "note": "Text in the owner's bubble",
+   "op": "text",
+   "value": "#D7D7D7"
+  },
+  "light": {
+   "args": [
+    247,
+    722,
+    470,
+    35
+   ],
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled (text)",
+   "note": "Text in the owner's bubble",
+   "op": "text",
+   "value": "#312F2C"
+  }
+ },
+ "text.code": {
+  "dark": {
+   "args": [
+    155,
+    1080,
+    400,
+    30
+   ],
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled (text)",
+   "note": "Inline code text (red)",
+   "op": "text",
+   "value": "#EB5758"
+  },
+  "light": {
+   "args": [
+    155,
+    1080,
+    400,
+    30
+   ],
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled (text)",
+   "note": "Inline code text (red)",
+   "op": "text",
+   "value": "#E95657"
+  }
+ },
+ "text.danger": {
+  "dark": {
+   "args": [
+    141,
+    1115,
+    178,
+    40
+   ],
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "'Move to Bin'",
+   "op": "text",
+   "value": "#E76459"
+  },
+  "light": {
+   "args": [
+    141,
+    1115,
+    178,
+    40
+   ],
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "'Move to Bin'",
+   "op": "text",
+   "value": "#E46357"
+  }
+ },
+ "text.emptyBody": {
+  "dark": {
+   "args": [
+    213,
+    972,
+    385,
+    65
+   ],
+   "capture": "screenshots/dark/08-search-no-results-empty.png",
+   "evidence": "Sampled (text)",
+   "note": "Empty-state lines",
+   "op": "text",
+   "value": "#ADA9A4"
+  },
+  "light": {
+   "args": [
+    213,
+    972,
+    385,
+    65
+   ],
+   "capture": "screenshots/light/08-search-no-results-empty.png",
+   "evidence": "Sampled (text)",
+   "note": "Empty-state lines",
+   "op": "text",
+   "value": "#7D7977"
+  }
+ },
+ "text.icon": {
+  "dark": {
+   "args": [
+    80,
+    665,
+    32,
+    35
+   ],
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Row icon (Share)",
+   "op": "text",
+   "value": "#E5E5E4"
+  },
+  "light": {
+   "args": [
+    80,
+    665,
+    32,
+    35
+   ],
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Row icon (Share)",
+   "op": "text",
+   "value": "#383838"
+  }
+ },
+ "text.iconMuted": {
+  "dark": {
+   "args": [
+    440,
+    195,
+    45,
+    40
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected tab icon",
+   "op": "text",
+   "value": "#ADA7A2"
+  },
+  "light": {
+   "args": [
+    440,
+    195,
+    45,
+    40
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected tab icon",
+   "op": "text",
+   "value": "#8D8B88"
+  }
+ },
+ "text.inbox": {
+  "dark": {
+   "args": [
+    125,
+    445,
+    475,
+    35
+   ],
+   "capture": "screenshots/dark/04-inbox-tab.png",
+   "evidence": "Sampled (text)",
+   "note": "Inbox notification body",
+   "op": "text",
+   "value": "#D5D5D5"
+  },
+  "light": {
+   "args": [
+    125,
+    445,
+    475,
+    35
+   ],
+   "capture": "screenshots/light/04-inbox-tab.png",
+   "evidence": "Sampled (text)",
+   "note": "Inbox notification body",
+   "op": "text",
+   "value": "#302F2C"
+  }
+ },
+ "text.menu": {
+  "dark": {
+   "args": [
+    355,
+    1180,
+    175,
+    35
+   ],
+   "capture": "screenshots/dark/13-model-picker-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Menu item ('GPT-6.1 Sol')",
+   "op": "text",
+   "value": "#F7F7F7"
+  },
+  "light": {
+   "args": [
+    355,
+    1180,
+    175,
+    35
+   ],
+   "capture": "screenshots/light/13-model-picker-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Menu item ('GPT-6.1 Sol')",
+   "op": "text",
+   "value": "#090909"
+  }
+ },
+ "text.menuDesc": {
+  "dark": {
+   "args": [
+    355,
+    1068,
+    270,
+    30
+   ],
+   "capture": "screenshots/dark/13-model-picker-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Menu item description",
+   "op": "text",
+   "value": "#7F7F7F"
+  },
+  "light": {
+   "args": [
+    355,
+    1068,
+    270,
+    30
+   ],
+   "capture": "screenshots/light/13-model-picker-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Menu item description",
+   "op": "text",
+   "value": "#999999"
+  }
+ },
+ "text.onAccent": {
+  "dark": {
+   "args": [
+    160,
+    1643,
+    75,
+    35,
+    "light"
+   ],
+   "capture": "screenshots/dark/15-chats-sheet-primary-button.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the blue '+ Chat' button",
+   "op": "text",
+   "value": "#F3EFEE"
+  },
+  "light": {
+   "args": [
+    160,
+    1643,
+    75,
+    35,
+    "light"
+   ],
+   "capture": "screenshots/light/15-chats-sheet-primary-button.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the blue '+ Chat' button",
+   "op": "text",
+   "value": "#F1EFEE"
+  }
+ },
+ "text.pageBody": {
+  "dark": {
+   "args": [
+    68,
+    728,
+    570,
+    35
+   ],
+   "capture": "screenshots/dark/17-page-headings-table.png",
+   "evidence": "Sampled (text)",
+   "note": "Page body text",
+   "op": "text",
+   "value": "#F0F0EE"
+  },
+  "light": {
+   "args": [
+    68,
+    728,
+    570,
+    35
+   ],
+   "capture": "screenshots/light/17-page-headings-table.png",
+   "evidence": "Sampled (text)",
+   "note": "Page body text",
+   "op": "text",
+   "value": "#2B2B2B"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    80,
+    1540,
+    90,
+    35
+   ],
+   "capture": "screenshots/dark/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Composer placeholder ('Ask AI')",
+   "op": "text",
+   "value": "#7E7B77"
+  },
+  "light": {
+   "args": [
+    80,
+    1540,
+    90,
+    35
+   ],
+   "capture": "screenshots/light/11-ai-chat-empty-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Composer placeholder ('Ask AI')",
+   "op": "text",
+   "value": "#9F9D99"
+  }
+ },
+ "text.primary": {
+  "dark": {
+   "args": [
+    125,
+    495,
+    240,
+    40
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled (text)",
+   "note": "Sidebar row title ('Setup call Logs')",
+   "op": "text",
+   "value": "#F2F0EE"
+  },
+  "light": {
+   "args": [
+    125,
+    495,
+    240,
+    40
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled (text)",
+   "note": "Sidebar row title ('Setup call Logs')",
+   "op": "text",
+   "value": "#2B2A2A"
+  }
+ },
+ "text.propertySearch": {
+  "dark": {
+   "args": [
+    145,
+    498,
+    330,
+    32
+   ],
+   "capture": "screenshots/dark/22-filter-sheet-properties.png",
+   "evidence": "Sampled (text)",
+   "note": "'Search for a property...' placeholder",
+   "op": "text",
+   "value": "#727171"
+  },
+  "light": {
+   "args": [
+    145,
+    498,
+    330,
+    32
+   ],
+   "capture": "screenshots/light/22-filter-sheet-properties.png",
+   "evidence": "Sampled (text)",
+   "note": "'Search for a property...' placeholder",
+   "op": "text",
+   "value": "#B0B0B0"
+  }
+ },
+ "text.prose": {
+  "dark": {
+   "args": [
+    49,
+    978,
+    650,
+    35
+   ],
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled (text)",
+   "note": "AI chat answer text",
+   "op": "text",
+   "value": "#D4D4D4"
+  },
+  "light": {
+   "args": [
+    49,
+    978,
+    650,
+    35
+   ],
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "evidence": "Sampled (text)",
+   "note": "AI chat answer text",
+   "op": "text",
+   "value": "#302F2D"
+  }
+ },
+ "text.searchPlaceholder": {
+  "dark": {
+   "args": [
+    155,
+    1632,
+    215,
+    35
+   ],
+   "capture": "screenshots/dark/06-search-focused-recents.png",
+   "evidence": "Sampled (text)",
+   "note": "Search bar placeholder",
+   "op": "text",
+   "value": "#7D7A79"
+  }
+ },
+ "text.searchSub": {
+  "dark": {
+   "args": [
+    120,
+    458,
+    265,
+    35
+   ],
+   "capture": "screenshots/dark/06-search-focused-recents.png",
+   "evidence": "Sampled (text)",
+   "note": "Search result location line",
+   "op": "text",
+   "value": "#ABA8A1"
+  }
+ },
+ "text.secondary": {
+  "dark": {
+   "args": [
+    57,
+    305,
+    110,
+    35
+   ],
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Sampled (text)",
+   "note": "Sidebar section header ('Recents')",
+   "op": "text",
+   "value": "#AEA9A6"
+  },
+  "light": {
+   "args": [
+    57,
+    305,
+    110,
+    35
+   ],
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Sampled (text)",
+   "note": "Sidebar section header ('Recents')",
+   "op": "text",
+   "value": "#7C7877"
+  }
+ },
+ "text.settingsRow": {
+  "dark": {
+   "args": [
+    53,
+    373,
+    350,
+    35
+   ],
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row title",
+   "op": "text",
+   "value": "#F3EFF0"
+  },
+  "light": {
+   "args": [
+    53,
+    373,
+    350,
+    35
+   ],
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row title",
+   "op": "text",
+   "value": "#2C2A2A"
+  }
+ },
+ "text.sheetTitle": {
+  "dark": {
+   "args": [
+    360,
+    922,
+    95,
+    32
+   ],
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Small sheet title ('Filters')",
+   "op": "text",
+   "value": "#D4D4D4"
+  },
+  "light": {
+   "args": [
+    360,
+    922,
+    95,
+    32
+   ],
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Small sheet title ('Filters')",
+   "op": "text",
+   "value": "#312F2D"
+  }
+ },
+ "text.sortValue": {
+  "dark": {
+   "args": [
+    582,
+    375,
+    97,
+    32
+   ],
+   "capture": "screenshots/dark/22-filter-sheet-properties.png",
+   "evidence": "Sampled (text)",
+   "note": "Row value ('bucket')",
+   "op": "text",
+   "value": "#7C7B77"
+  },
+  "light": {
+   "args": [
+    582,
+    375,
+    97,
+    32
+   ],
+   "capture": "screenshots/light/22-filter-sheet-properties.png",
+   "evidence": "Sampled (text)",
+   "note": "Row value ('bucket')",
+   "op": "text",
+   "value": "#A09F9B"
+  }
+ },
+ "text.subtitle": {
+  "dark": {
+   "args": [
+    53,
+    420,
+    425,
+    32
+   ],
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row subtitle",
+   "op": "text",
+   "value": "#AAA9A3"
+  },
+  "light": {
+   "args": [
+    53,
+    420,
+    425,
+    32
+   ],
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row subtitle",
+   "op": "text",
+   "value": "#7B7976"
+  }
+ },
+ "text.tertiary": {
+  "dark": {
+   "args": [
+    655,
+    385,
+    78,
+    35
+   ],
+   "capture": "screenshots/dark/04-inbox-tab.png",
+   "evidence": "Sampled (text)",
+   "note": "Inbox date ('5 Sep')",
+   "op": "text",
+   "value": "#7D7A78"
+  },
+  "light": {
+   "args": [
+    655,
+    385,
+    78,
+    35
+   ],
+   "capture": "screenshots/light/04-inbox-tab.png",
+   "evidence": "Sampled (text)",
+   "note": "Inbox date ('5 Sep')",
+   "op": "text",
+   "value": "#9F9E9A"
+  }
+ },
+ "text.typed": {
+  "dark": {
+   "args": [
+    73,
+    1540,
+    70,
+    35
+   ],
+   "capture": "screenshots/dark/12-ai-composer-typed-send-enabled.png",
+   "evidence": "Sampled (text)",
+   "note": "Text typed in the composer",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "type.actionItem": {
+  "dark": {
+   "args": [
+    141,
+    575,
+    175,
+    615
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of an Actions row",
+   "op": "cap",
+   "top": 580,
+   "value": "17pt"
+  },
+  "light": {
+   "args": [
+    141,
+    575,
+    175,
+    615
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of an Actions row",
+   "op": "cap",
+   "top": 580,
+   "value": "17pt"
+  }
+ },
+ "type.body": {
+  "dark": {
+   "args": [
+    70,
+    722,
+    87,
+    770
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/17-page-headings-table.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'E' of page body text",
+   "op": "cap",
+   "top": 732,
+   "value": "16pt"
+  },
+  "light": {
+   "args": [
+    70,
+    722,
+    87,
+    770
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/light/17-page-headings-table.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'E' of page body text",
+   "op": "cap",
+   "top": 732,
+   "value": "16pt"
+  }
+ },
+ "type.bubble": {
+  "dark": {
+   "args": [
+    249,
+    718,
+    269,
+    765
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'N' of bubble text",
+   "op": "cap",
+   "top": 726,
+   "value": "17pt"
+  },
+  "light": {
+   "args": [
+    249,
+    718,
+    269,
+    765
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'N' of bubble text",
+   "op": "cap",
+   "top": 726,
+   "value": "17pt"
+  }
+ },
+ "type.button": {
+  "dark": {
+   "args": [
+    161,
+    1638,
+    183,
+    1685
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/15-chats-sheet-primary-button.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'C' of '+ Chat'",
+   "op": "cap",
+   "top": 1648,
+   "value": "17pt"
+  },
+  "light": {
+   "args": [
+    161,
+    1638,
+    183,
+    1685
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/light/15-chats-sheet-primary-button.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'C' of '+ Chat'",
+   "op": "cap",
+   "top": 1648,
+   "value": "17pt"
+  }
+ },
+ "type.chatRow": {
+  "dark": {
+   "args": [
+    58,
+    635,
+    75,
+    690
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/02-chats-tab-list.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'F' of a Chats row",
+   "op": "cap",
+   "top": 646,
+   "value": "17pt"
+  },
+  "light": {
+   "args": [
+    58,
+    635,
+    75,
+    690
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/light/02-chats-tab-list.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'F' of a Chats row",
+   "op": "cap",
+   "top": 646,
+   "value": "17pt"
+  }
+ },
+ "type.composer": {
+  "dark": {
+   "args": [
+    80,
+    1535,
+    94,
+    1585
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/11-ai-chat-empty-composer.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'A' of the composer placeholder",
+   "op": "cap",
+   "top": 1544,
+   "value": "16pt"
+  },
+  "light": {
+   "args": [
+    80,
+    1535,
+    94,
+    1585
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/light/11-ai-chat-empty-composer.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'A' of the composer placeholder",
+   "op": "cap",
+   "top": 1544,
+   "value": "16pt"
+  }
+ },
+ "type.control": {
+  "dark": {
+   "args": [
+    631,
+    1430,
+    649,
+    1470
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/26-settings-select-and-secondary-button.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'C' of 'Connect'",
+   "op": "cap",
+   "top": 1437,
+   "value": "15pt"
+  }
+ },
+ "type.date": {
+  "dark": {
+   "args": [
+    655,
+    380,
+    669,
+    420
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/04-inbox-tab.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'5' of an inbox date",
+   "op": "cap",
+   "top": 388,
+   "value": "15pt"
+  },
+  "light": {
+   "args": [
+    655,
+    380,
+    669,
+    420
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/light/04-inbox-tab.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'5' of an inbox date",
+   "op": "cap",
+   "top": 388,
+   "value": "15pt"
+  }
+ },
+ "type.done": {
+  "dark": {
+   "args": [
+    688,
+    250,
+    708,
+    290
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/21-views-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'D' of 'Done'",
+   "op": "cap",
+   "top": 257,
+   "value": "15pt"
+  }
+ },
+ "type.empty": {
+  "dark": {
+   "args": [
+    298,
+    915,
+    316,
+    960
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/08-search-no-results-empty.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'N' of an empty-state title",
+   "op": "cap",
+   "top": 926,
+   "value": "15pt"
+  },
+  "light": {
+   "args": [
+    298,
+    915,
+    316,
+    960
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/light/08-search-no-results-empty.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'N' of an empty-state title",
+   "op": "cap",
+   "top": 926,
+   "value": "15pt"
+  }
+ },
+ "type.h1": {
+  "dark": {
+   "args": [
+    71,
+    545,
+    99,
+    605
+   ],
+   "capHeight": "21pt",
+   "capture": "screenshots/dark/17-page-headings-table.png",
+   "evidence": "Derived",
+   "inkPx": 43,
+   "note": "'L' of a heading 1",
+   "op": "cap",
+   "top": 550,
+   "value": "29pt"
+  },
+  "light": {
+   "args": [
+    71,
+    545,
+    99,
+    605
+   ],
+   "capHeight": "21pt",
+   "capture": "screenshots/light/17-page-headings-table.png",
+   "evidence": "Derived",
+   "inkPx": 43,
+   "note": "'L' of a heading 1",
+   "op": "cap",
+   "top": 550,
+   "value": "29pt"
+  }
+ },
+ "type.h2": {
+  "dark": {
+   "args": [
+    70,
+    1088,
+    106,
+    1140
+   ],
+   "capHeight": "16.5pt",
+   "capture": "screenshots/dark/17-page-headings-table.png",
+   "evidence": "Derived",
+   "inkPx": 34,
+   "note": "'M' of a heading 2",
+   "op": "cap",
+   "top": 1094,
+   "value": "23pt"
+  },
+  "light": {
+   "args": [
+    70,
+    1088,
+    106,
+    1140
+   ],
+   "capHeight": "16.5pt",
+   "capture": "screenshots/light/17-page-headings-table.png",
+   "evidence": "Derived",
+   "inkPx": 34,
+   "note": "'M' of a heading 2",
+   "op": "cap",
+   "top": 1094,
+   "value": "23pt"
+  }
+ },
+ "type.menuDesc": {
+  "dark": {
+   "args": [
+    356,
+    1065,
+    370,
+    1100
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/13-model-picker-menu.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'B' of a menu item description",
+   "op": "cap",
+   "top": 1072,
+   "value": "12pt"
+  },
+  "light": {
+   "args": [
+    356,
+    1065,
+    370,
+    1100
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/light/13-model-picker-menu.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'B' of a menu item description",
+   "op": "cap",
+   "top": 1071,
+   "value": "12pt"
+  }
+ },
+ "type.menuHeader": {
+  "dark": {
+   "args": [
+    242,
+    315,
+    254,
+    345
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/05-inbox-filter-menu.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'F' of a menu header",
+   "op": "cap",
+   "top": 321,
+   "value": "12pt"
+  }
+ },
+ "type.menuItem": {
+  "dark": {
+   "args": [
+    242,
+    475,
+    263,
+    520
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/05-inbox-filter-menu.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'U' of a menu item",
+   "op": "cap",
+   "top": 481,
+   "value": "17pt"
+  }
+ },
+ "type.modelItem": {
+  "dark": {
+   "args": [
+    355,
+    1020,
+    376,
+    1065
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/13-model-picker-menu.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'A' of 'Auto' in the model picker",
+   "op": "cap",
+   "top": 1028,
+   "value": "16pt"
+  },
+  "light": {
+   "args": [
+    355,
+    1020,
+    376,
+    1065
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/light/13-model-picker-menu.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'A' of 'Auto' in the model picker",
+   "op": "cap",
+   "top": 1028,
+   "value": "16pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    344,
+    175,
+    363,
+    215
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'S' of a nav title",
+   "op": "cap",
+   "top": 182,
+   "value": "17pt"
+  },
+  "light": {
+   "args": [
+    344,
+    175,
+    363,
+    215
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'S' of a nav title",
+   "op": "cap",
+   "top": 182,
+   "value": "17pt"
+  }
+ },
+ "type.pageTitle": {
+  "dark": {
+   "args": [
+    72,
+    570,
+    114,
+    640
+   ],
+   "capHeight": "24pt",
+   "capture": "screenshots/dark/20-database-cover-inline-view.png",
+   "evidence": "Derived",
+   "inkPx": 49,
+   "note": "'D' of a page title",
+   "op": "cap",
+   "top": 580,
+   "value": "33pt"
+  },
+  "light": {
+   "args": [
+    72,
+    570,
+    114,
+    640
+   ],
+   "capHeight": "24pt",
+   "capture": "screenshots/light/20-database-cover-inline-view.png",
+   "evidence": "Derived",
+   "inkPx": 49,
+   "note": "'D' of a page title",
+   "op": "cap",
+   "top": 580,
+   "value": "33pt"
+  }
+ },
+ "type.prose": {
+  "dark": {
+   "args": [
+    49,
+    975,
+    70,
+    1020
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/16-ai-chat-thread-bubbles.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of AI answer text",
+   "op": "cap",
+   "top": 982,
+   "value": "17pt"
+  },
+  "light": {
+   "args": [
+    49,
+    975,
+    70,
+    1020
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/light/16-ai-chat-thread-bubbles.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of AI answer text",
+   "op": "cap",
+   "top": 982,
+   "value": "17pt"
+  }
+ },
+ "type.rowTitle": {
+  "dark": {
+   "args": [
+    125,
+    490,
+    145,
+    545
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'S' of a sidebar row",
+   "op": "cap",
+   "top": 502,
+   "value": "17pt"
+  },
+  "light": {
+   "args": [
+    125,
+    490,
+    145,
+    545
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'S' of a sidebar row",
+   "op": "cap",
+   "top": 502,
+   "value": "17pt"
+  }
+ },
+ "type.searchSub": {
+  "dark": {
+   "args": [
+    150,
+    455,
+    166,
+    495
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/06-search-focused-recents.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'D' of a search result location",
+   "op": "cap",
+   "top": 463,
+   "value": "12pt"
+  }
+ },
+ "type.sectionHeader": {
+  "dark": {
+   "args": [
+    58,
+    300,
+    75,
+    345
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'R' of a sidebar section header",
+   "op": "cap",
+   "top": 309,
+   "value": "15pt"
+  },
+  "light": {
+   "args": [
+    58,
+    300,
+    75,
+    345
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'R' of a sidebar section header",
+   "op": "cap",
+   "top": 309,
+   "value": "15pt"
+  }
+ },
+ "type.segLabel": {
+  "dark": {
+   "args": [
+    123,
+    445,
+    140,
+    480
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'D' of a segment label",
+   "op": "cap",
+   "top": 452,
+   "value": "13pt"
+  },
+  "light": {
+   "args": [
+    123,
+    445,
+    140,
+    480
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'D' of a segment label",
+   "op": "cap",
+   "top": 452,
+   "value": "13pt"
+  }
+ },
+ "type.settingsRow": {
+  "dark": {
+   "args": [
+    54,
+    368,
+    76,
+    410
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'M' of a settings row title",
+   "op": "cap",
+   "top": 378,
+   "value": "15pt"
+  },
+  "light": {
+   "args": [
+    54,
+    368,
+    76,
+    410
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'M' of a settings row title",
+   "op": "cap",
+   "top": 378,
+   "value": "15pt"
+  }
+ },
+ "type.settingsTitle": {
+  "dark": {
+   "args": [
+    54,
+    298,
+    79,
+    345
+   ],
+   "capHeight": "14.5pt",
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Derived",
+   "inkPx": 30,
+   "note": "'N' of a settings section title",
+   "op": "cap",
+   "top": 305,
+   "value": "20pt"
+  },
+  "light": {
+   "args": [
+    54,
+    298,
+    79,
+    345
+   ],
+   "capHeight": "14.5pt",
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Derived",
+   "inkPx": 30,
+   "note": "'N' of a settings section title",
+   "op": "cap",
+   "top": 305,
+   "value": "20pt"
+  }
+ },
+ "type.sheetRow": {
+  "dark": {
+   "args": [
+    122,
+    1025,
+    140,
+    1075
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'S' of a sheet row",
+   "op": "cap",
+   "top": 1035,
+   "value": "17pt"
+  },
+  "light": {
+   "args": [
+    122,
+    1025,
+    140,
+    1075
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'S' of a sheet row",
+   "op": "cap",
+   "top": 1035,
+   "value": "17pt"
+  }
+ },
+ "type.sheetTitle": {
+  "dark": {
+   "args": [
+    345,
+    230,
+    375,
+    270
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/19-page-actions-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of a large sheet title",
+   "op": "cap",
+   "top": 237,
+   "value": "17pt"
+  },
+  "light": {
+   "args": [
+    345,
+    230,
+    375,
+    270
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/light/19-page-actions-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of a large sheet title",
+   "op": "cap",
+   "top": 237,
+   "value": "17pt"
+  }
+ },
+ "type.sheetTitleSmall": {
+  "dark": {
+   "args": [
+    361,
+    915,
+    377,
+    960
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/09-search-filters-sheet-switch-off.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'F' of a small sheet title",
+   "op": "cap",
+   "top": 925,
+   "value": "16pt"
+  },
+  "light": {
+   "args": [
+    361,
+    915,
+    377,
+    960
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/light/09-search-filters-sheet-switch-off.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'F' of a small sheet title",
+   "op": "cap",
+   "top": 925,
+   "value": "16pt"
+  }
+ },
+ "type.subtitle": {
+  "dark": {
+   "args": [
+    53,
+    415,
+    70,
+    455
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/25-settings-notifications-switches-off.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'G' of a settings subtitle",
+   "op": "cap",
+   "top": 424,
+   "value": "13pt"
+  },
+  "light": {
+   "args": [
+    53,
+    415,
+    70,
+    455
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/light/25-settings-notifications-switches-off.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'G' of a settings subtitle",
+   "op": "cap",
+   "top": 424,
+   "value": "13pt"
+  }
+ },
+ "type.tab": {
+  "dark": {
+   "args": [
+    258,
+    190,
+    278,
+    240
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'H' of a tab label",
+   "op": "cap",
+   "top": 202,
+   "value": "16pt"
+  },
+  "light": {
+   "args": [
+    258,
+    190,
+    278,
+    240
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/light/01-home-sidebar-tree.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'H' of a tab label",
+   "op": "cap",
+   "top": 202,
+   "value": "16pt"
+  }
+ },
+ "type.tableHeader": {
+  "dark": {
+   "args": [
+    100,
+    1445,
+    114,
+    1480
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/17-page-headings-table.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'R' of a table header",
+   "op": "cap",
+   "top": 1452,
+   "value": "12pt"
+  },
+  "light": {
+   "args": [
+    100,
+    1445,
+    114,
+    1480
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/light/17-page-headings-table.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'R' of a table header",
+   "op": "cap",
+   "top": 1453,
+   "value": "12pt"
+  }
+ }
+}
