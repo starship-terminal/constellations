@@ -1,0 +1,517 @@
+{
+ "_doc": "Element crops cut from screenshots/<theme>/<capture>.png by tools/crops.py into components/crops/{component}-{state}[-light].png. box is [x, y, w, h] in capture pixels (2 px per pt). A crop listed with themes [\"dark\", \"light\"] is cut from both captures at the same box; one whose light capture is laid out differently has a second entry for light. Video thumbnails in the crops are other creators' artwork: they show layout only.",
+ "crops": [
+  {
+   "name": "tab-bar",
+   "capture": "08-you-tab-profile-history-library-chips",
+   "box": [
+    16,
+    1598,
+    780,
+    166
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "header-home",
+   "capture": "02-home-ad-shorts-shelf-tabbar",
+   "box": [
+    16,
+    170,
+    780,
+    90
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "nav-bar-pushed",
+   "capture": "11-general-switches-on-off",
+   "box": [
+    16,
+    170,
+    780,
+    100
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "chip-row-all-selected",
+   "capture": "13-subscriptions-avatars-chips",
+   "box": [
+    16,
+    465,
+    780,
+    85
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "chip-row-videos-selected",
+   "capture": "14-chip-selected-video-cards-preview",
+   "box": [
+    16,
+    465,
+    780,
+    85
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "chip-library",
+   "capture": "08-you-tab-profile-history-library-chips",
+   "box": [
+    40,
+    1095,
+    700,
+    80
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "search-field-empty",
+   "capture": "04-search-focused-history-rows",
+   "box": [
+    16,
+    170,
+    780,
+    90
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "search-field-typed",
+   "capture": "05-search-typed-suggestions",
+   "box": [
+    16,
+    170,
+    780,
+    90
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-search-history",
+   "capture": "04-search-focused-history-rows",
+   "box": [
+    16,
+    260,
+    780,
+    230
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-suggestion",
+   "capture": "05-search-typed-suggestions",
+   "box": [
+    16,
+    1150,
+    780,
+    120
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-settings",
+   "capture": "10-settings-icon-list",
+   "box": [
+    16,
+    300,
+    780,
+    500
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "button-ad-pair",
+   "capture": "02-home-ad-shorts-shelf-tabbar",
+   "box": [
+    30,
+    880,
+    760,
+    105
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "button-ad-pair",
+   "capture": "02-home-ad-shorts-shelf-tabbar",
+   "box": [
+    30,
+    920,
+    760,
+    105
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "card-ad",
+   "capture": "02-home-ad-shorts-shelf-tabbar",
+   "box": [
+    16,
+    700,
+    780,
+    320
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "card-ad",
+   "capture": "02-home-ad-shorts-shelf-tabbar",
+   "box": [
+    16,
+    700,
+    780,
+    360
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "button-pill-pair",
+   "capture": "08-you-tab-profile-history-library-chips",
+   "box": [
+    40,
+    450,
+    735,
+    90
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "button-subscribe-short",
+   "capture": "07-shorts-player-action-rail-subscribe",
+   "box": [
+    30,
+    1370,
+    550,
+    210
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "button-large-upsell",
+   "capture": "01-premium-upsell-interstitial",
+   "box": [
+    60,
+    1300,
+    700,
+    280
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "avatar-profile",
+   "capture": "08-you-tab-profile-history-library-chips",
+   "box": [
+    40,
+    280,
+    500,
+    140
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "avatar-subscriptions",
+   "capture": "13-subscriptions-avatars-chips",
+   "box": [
+    16,
+    270,
+    780,
+    190
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "shelf-history",
+   "capture": "08-you-tab-profile-history-library-chips",
+   "box": [
+    16,
+    580,
+    780,
+    380
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "shelf-shorts",
+   "capture": "02-home-ad-shorts-shelf-tabbar",
+   "box": [
+    16,
+    1060,
+    780,
+    540
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "shelf-shorts",
+   "capture": "02-home-ad-shorts-shelf-tabbar",
+   "box": [
+    16,
+    1100,
+    780,
+    500
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "card-video",
+   "capture": "14-chip-selected-video-cards-preview",
+   "box": [
+    16,
+    550,
+    780,
+    570
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "card-video",
+   "capture": "14-chip-selected-video-cards-preview",
+   "box": [
+    16,
+    550,
+    780,
+    600
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "badge-duration",
+   "capture": "14-chip-selected-video-cards-preview",
+   "box": [
+    670,
+    925,
+    130,
+    60
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "sheet-sort",
+   "capture": "09-sort-bottom-sheet-checked",
+   "box": [
+    20,
+    1340,
+    772,
+    370
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "sheet-ad-centre",
+   "capture": "03-ad-centre-sheet-accordions",
+   "box": [
+    16,
+    700,
+    780,
+    1064
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "accordion-ad-centre",
+   "capture": "03-ad-centre-sheet-accordions",
+   "box": [
+    40,
+    1055,
+    735,
+    350
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "menu-overflow",
+   "capture": "15-video-overflow-menu",
+   "box": [
+    150,
+    570,
+    550,
+    945
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "menu-overflow",
+   "capture": "15-video-overflow-menu",
+   "box": [
+    190,
+    150,
+    590,
+    870
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "switch-on-off",
+   "capture": "11-general-switches-on-off",
+   "box": [
+    16,
+    390,
+    780,
+    560
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "choice-list-check",
+   "capture": "12-appearance-choice-list-not-changed",
+   "box": [
+    16,
+    370,
+    780,
+    270
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "choice-list-check",
+   "capture": "12-appearance-choice-list",
+   "box": [
+    16,
+    370,
+    780,
+    270
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "watch-actions",
+   "capture": "16-watch-page-actions-comments-teaser",
+   "box": [
+    16,
+    610,
+    780,
+    240
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "card-comments",
+   "capture": "16-watch-page-actions-comments-teaser",
+   "box": [
+    30,
+    850,
+    752,
+    180
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "shorts-action-rail",
+   "capture": "07-shorts-player-action-rail-subscribe",
+   "box": [
+    680,
+    880,
+    120,
+    600
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "mini-player",
+   "capture": "18-floating-mini-player",
+   "box": [
+    390,
+    1360,
+    410,
+    230
+   ],
+   "themes": [
+    "dark"
+   ]
+  }
+ ]
+}
