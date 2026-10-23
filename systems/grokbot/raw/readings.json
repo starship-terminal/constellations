@@ -1,0 +1,4082 @@
+{
+ "accent.caret": {
+  "dark": {
+   "args": [
+    447,
+    888,
+    1,
+    25
+   ],
+   "capture": "screenshots/dark/05-new-bot-typed.png",
+   "evidence": "Derived",
+   "note": "Text caret, one pixel column",
+   "op": "fill",
+   "share": 0.24,
+   "value": "#436AF2"
+  },
+  "light": {
+   "args": [
+    447,
+    888,
+    1,
+    25
+   ],
+   "capture": "screenshots/light/05-new-bot-typed.png",
+   "evidence": "Derived",
+   "note": "Text caret, one pixel column",
+   "op": "fill",
+   "share": 0.28,
+   "value": "#436BF1"
+  }
+ },
+ "accent.dot": {
+  "dark": {
+   "args": [
+    488,
+    550,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled",
+   "note": "Unread dot",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#126DD3"
+  },
+  "light": {
+   "args": [
+    488,
+    550,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Sampled",
+   "note": "Unread dot",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#1983F9"
+  }
+ },
+ "accent.pill": {
+  "dark": {
+   "args": [
+    305,
+    1500,
+    15,
+    15
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Derived",
+   "note": "'3 unread' pill",
+   "op": "fill",
+   "share": 0.85,
+   "value": "#1170D5"
+  },
+  "light": {
+   "args": [
+    305,
+    1500,
+    15,
+    15
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Derived",
+   "note": "'3 unread' pill",
+   "op": "fill",
+   "share": 0.6,
+   "value": "#1780F5"
+  }
+ },
+ "avatar.eye": {
+  "dark": {
+   "args": [
+    414,
+    413,
+    4,
+    8
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled",
+   "note": "Avatar eye (a cut-out showing the page)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  },
+  "light": {
+   "args": [
+    414,
+    413,
+    4,
+    8
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Sampled",
+   "note": "Avatar eye (a cut-out showing the page)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "badge.star": {
+  "dark": {
+   "args": [
+    462,
+    486,
+    3,
+    3
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Derived",
+   "note": "Star badge on a pinned bot",
+   "op": "fill",
+   "share": 0.89,
+   "value": "#FF9700"
+  },
+  "light": {
+   "args": [
+    462,
+    486,
+    3,
+    3
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Derived",
+   "note": "Star badge on a pinned bot",
+   "op": "fill",
+   "share": 0.67,
+   "value": "#FF9700"
+  }
+ },
+ "bg.detail": {
+  "dark": {
+   "args": [
+    300,
+    1000,
+    200,
+    100
+   ],
+   "capture": "screenshots/dark/13-routines.png",
+   "evidence": "Sampled",
+   "note": "Pushed detail page background (Routines)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1E1E1E"
+  },
+  "light": {
+   "args": [
+    300,
+    1000,
+    200,
+    100
+   ],
+   "capture": "screenshots/light/13-routines.png",
+   "evidence": "Sampled",
+   "note": "Pushed detail page background (Routines)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F7F7F7"
+  }
+ },
+ "bg.page": {
+  "dark": {
+   "args": [
+    300,
+    1150,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled",
+   "note": "Home and chat background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  },
+  "light": {
+   "args": [
+    300,
+    1150,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Sampled",
+   "note": "Home and chat background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "bg.profile": {
+  "dark": {
+   "args": [
+    300,
+    1500,
+    300,
+    50
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Bot profile background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1E1E1E"
+  },
+  "light": {
+   "args": [
+    300,
+    1500,
+    300,
+    50
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Bot profile background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F7F7F7"
+  }
+ },
+ "bg.sheet": {
+  "dark": {
+   "args": [
+    400,
+    300,
+    300,
+    30
+   ],
+   "capture": "screenshots/dark/19-account-menu.png",
+   "evidence": "Sampled",
+   "note": "Settings sheet background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1E1E1E"
+  },
+  "light": {
+   "args": [
+    400,
+    300,
+    300,
+    30
+   ],
+   "capture": "screenshots/light/19-account-menu.png",
+   "evidence": "Sampled",
+   "note": "Settings sheet background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F7F7F7"
+  }
+ },
+ "bg.sheetNewBot": {
+  "dark": {
+   "args": [
+    100,
+    450,
+    100,
+    50
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Create New Bot sheet background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1E1E1E"
+  },
+  "light": {
+   "args": [
+    100,
+    450,
+    100,
+    50
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Derived",
+   "note": "Create New Bot sheet background",
+   "op": "fill",
+   "share": 0.79,
+   "value": "#F7F7F7"
+  }
+ },
+ "bg.thread": {
+  "dark": {
+   "args": [
+    690,
+    900,
+    80,
+    200
+   ],
+   "capture": "screenshots/dark/30-group-chat.png",
+   "evidence": "Sampled",
+   "note": "Chat thread background, right of the bubbles",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  },
+  "light": {
+   "args": [
+    690,
+    900,
+    80,
+    200
+   ],
+   "capture": "screenshots/light/30-group-chat.png",
+   "evidence": "Sampled",
+   "note": "Chat thread background, right of the bubbles",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "border.card": {
+  "dark": {
+   "args": [
+    64,
+    900,
+    2,
+    60
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Card rim, left edge",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#353537"
+  },
+  "light": {
+   "args": [
+    64,
+    900,
+    2,
+    60
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "evidence": "Derived",
+   "note": "Card rim, left edge",
+   "op": "fill",
+   "share": 0.5,
+   "value": "#F5F5F5"
+  }
+ },
+ "border.dividerColour": {
+  "dark": {
+   "args": [
+    300,
+    822,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Divider colour (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#363638"
+  },
+  "light": {
+   "args": [
+    300,
+    822,
+    300,
+    1
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Divider colour (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F4F4F4"
+  }
+ },
+ "button.disabled": {
+  "dark": {
+   "args": [
+    150,
+    1620,
+    150,
+    15
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Derived",
+   "note": "Create, disabled (glass; dominant pixel)",
+   "op": "fill",
+   "share": 0.65,
+   "value": "#9E9E9E"
+  },
+  "light": {
+   "args": [
+    150,
+    1620,
+    150,
+    15
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Derived",
+   "note": "Create, disabled (glass; dominant pixel)",
+   "op": "fill",
+   "share": 0.53,
+   "value": "#818181"
+  }
+ },
+ "button.disabledLabel": {
+  "dark": {
+   "args": [
+    355,
+    1630,
+    100,
+    40,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled (text)",
+   "note": "Create label, disabled",
+   "op": "text",
+   "value": "#2F2F2F"
+  },
+  "light": {
+   "args": [
+    355,
+    1630,
+    100,
+    40,
+    "inverse"
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled (text)",
+   "note": "Create label, disabled",
+   "op": "text",
+   "value": "#DBDBDB"
+  }
+ },
+ "button.primary": {
+  "dark": {
+   "args": [
+    150,
+    1620,
+    150,
+    15
+   ],
+   "capture": "screenshots/dark/05-new-bot-typed.png",
+   "evidence": "Sampled",
+   "note": "Create, enabled",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    150,
+    1620,
+    150,
+    15
+   ],
+   "capture": "screenshots/light/05-new-bot-typed.png",
+   "evidence": "Sampled",
+   "note": "Create, enabled",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0D0D0D"
+  }
+ },
+ "button.primaryLabel": {
+  "dark": {
+   "args": [
+    355,
+    1630,
+    100,
+    40,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/05-new-bot-typed.png",
+   "evidence": "Sampled (text)",
+   "note": "Create label, enabled",
+   "op": "text",
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    355,
+    1630,
+    100,
+    40,
+    "inverse"
+   ],
+   "capture": "screenshots/light/05-new-bot-typed.png",
+   "evidence": "Sampled (text)",
+   "note": "Create label, enabled",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "button.secondary": {
+  "dark": {
+   "args": [
+    622,
+    690,
+    12,
+    20
+   ],
+   "capture": "screenshots/dark/25-connect-apps.png",
+   "evidence": "Sampled",
+   "note": "'Added' button fill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2C2C2E"
+  },
+  "light": {
+   "args": [
+    622,
+    690,
+    12,
+    20
+   ],
+   "capture": "screenshots/light/25-connect-apps.png",
+   "evidence": "Sampled",
+   "note": "'Added' button fill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#ECECEE"
+  }
+ },
+ "button.secondaryLabel": {
+  "dark": {
+   "args": [
+    675,
+    885,
+    70,
+    50
+   ],
+   "capture": "screenshots/dark/32-connect-apps-add.png",
+   "evidence": "Sampled (text)",
+   "note": "'Add' label",
+   "op": "text",
+   "value": "#FDFDFF"
+  },
+  "light": {
+   "args": [
+    675,
+    885,
+    70,
+    50
+   ],
+   "capture": "screenshots/light/32-connect-apps-add.png",
+   "evidence": "Sampled (text)",
+   "note": "'Add' label",
+   "op": "text",
+   "value": "#020202"
+  }
+ },
+ "button.send": {
+  "dark": {
+   "args": [
+    650,
+    1640,
+    15,
+    15
+   ],
+   "capture": "screenshots/dark/10-composer-typed.png",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    650,
+    1640,
+    15,
+    15
+   ],
+   "capture": "screenshots/light/10-composer-typed.png",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  }
+ },
+ "button.sendGlyph": {
+  "dark": {
+   "args": [
+    665,
+    1630,
+    30,
+    50,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/10-composer-typed.png",
+   "evidence": "Sampled (text)",
+   "note": "Send arrow",
+   "op": "text",
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    665,
+    1630,
+    30,
+    50,
+    "inverse"
+   ],
+   "capture": "screenshots/light/10-composer-typed.png",
+   "evidence": "Sampled (text)",
+   "note": "Send arrow",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "button.voice": {
+  "dark": {
+   "args": [
+    650,
+    1640,
+    15,
+    15
+   ],
+   "capture": "screenshots/dark/06-chat.png",
+   "evidence": "Sampled",
+   "note": "Voice button",
+   "op": "fill",
+   "share": 0.92,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    650,
+    1640,
+    15,
+    15
+   ],
+   "capture": "screenshots/light/06-chat.png",
+   "evidence": "Sampled",
+   "note": "Voice button",
+   "op": "fill",
+   "share": 0.92,
+   "value": "#000000"
+  }
+ },
+ "lines.bubble": {
+  "dark": {
+   "args": [
+    125,
+    520,
+    620,
+    700
+   ],
+   "bands": [
+    [
+     530,
+     563
+    ],
+    [
+     574,
+     601
+    ],
+    [
+     618,
+     645
+    ],
+    [
+     662,
+     689
+    ]
+   ],
+   "capture": "screenshots/dark/30-group-chat.png",
+   "evidence": "Derived",
+   "note": "Text lines in a four-line group bubble",
+   "op": "lines",
+   "value": "22.0pt"
+  }
+ },
+ "lines.footnote": {
+  "dark": {
+   "args": [
+    100,
+    1300,
+    720,
+    1380
+   ],
+   "bands": [
+    [
+     1311,
+     1337
+    ],
+    [
+     1347,
+     1373
+    ]
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Derived",
+   "note": "Two-line helper text",
+   "op": "lines",
+   "value": "18.0pt"
+  }
+ },
+ "lines.subtitle": {
+  "dark": {
+   "args": [
+    85,
+    1235,
+    560,
+    1300
+   ],
+   "bands": [
+    [
+     1235,
+     1262
+    ],
+    [
+     1271,
+     1298
+    ]
+   ],
+   "capture": "screenshots/dark/19-account-menu.png",
+   "evidence": "Derived",
+   "note": "Two-line settings row subtitle",
+   "op": "lines",
+   "value": "18.0pt"
+  }
+ },
+ "palette.1": {
+  "dark": {
+   "args": [
+    142,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 1",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    142,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 1",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  }
+ },
+ "palette.10": {
+  "dark": {
+   "args": [
+    503,
+    1503,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 10",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FF2F9C"
+  },
+  "light": {
+   "args": [
+    503,
+    1503,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 10",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#FF2F9C"
+  }
+ },
+ "palette.11": {
+  "dark": {
+   "args": [
+    606,
+    1503,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 11",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#777777"
+  },
+  "light": {
+   "args": [
+    606,
+    1503,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 11",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#777777"
+  }
+ },
+ "palette.2": {
+  "dark": {
+   "args": [
+    245,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 2",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#93633A"
+  },
+  "light": {
+   "args": [
+    245,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 2",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#93633A"
+  }
+ },
+ "palette.3": {
+  "dark": {
+   "args": [
+    348,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 3",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FF253D"
+  },
+  "light": {
+   "args": [
+    348,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 3",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FF253D"
+  }
+ },
+ "palette.4": {
+  "dark": {
+   "args": [
+    451,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 4",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FF6600"
+  },
+  "light": {
+   "args": [
+    451,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 4",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FF6600"
+  }
+ },
+ "palette.5": {
+  "dark": {
+   "args": [
+    554,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 5",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FF9700"
+  },
+  "light": {
+   "args": [
+    554,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 5",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FF9700"
+  }
+ },
+ "palette.6": {
+  "dark": {
+   "args": [
+    657,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 6",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0DC972"
+  },
+  "light": {
+   "args": [
+    657,
+    1418,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 6",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0DC972"
+  }
+ },
+ "palette.7": {
+  "dark": {
+   "args": [
+    194,
+    1503,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 7",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#00BCA6"
+  },
+  "light": {
+   "args": [
+    194,
+    1503,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 7",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#00BCA6"
+  }
+ },
+ "palette.8": {
+  "dark": {
+   "args": [
+    297,
+    1503,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 8",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1283FD"
+  },
+  "light": {
+   "args": [
+    297,
+    1503,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 8",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1283FD"
+  }
+ },
+ "palette.9": {
+  "dark": {
+   "args": [
+    400,
+    1503,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 9",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#9158FE"
+  },
+  "light": {
+   "args": [
+    400,
+    1503,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch 9",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#9158FE"
+  }
+ },
+ "radius.bubble": {
+  "dark": {
+   "args": [
+    600,
+    520,
+    110,
+    640
+   ],
+   "capture": "screenshots/dark/30-group-chat.png",
+   "corner": [
+    102,
+    504
+   ],
+   "evidence": "Derived",
+   "inset": 12,
+   "note": "Group bubble, first in a run",
+   "op": "diag",
+   "value": "20.5pt"
+  },
+  "light": {
+   "args": [
+    600,
+    520,
+    110,
+    640
+   ],
+   "capture": "screenshots/light/30-group-chat.png",
+   "corner": [
+    102,
+    504
+   ],
+   "evidence": "Derived",
+   "inset": 12,
+   "note": "Group bubble, first in a run",
+   "op": "diag",
+   "value": "20.5pt"
+  }
+ },
+ "radius.bubbleJoined": {
+  "dark": {
+   "args": [
+    600,
+    670,
+    56,
+    900
+   ],
+   "capture": "screenshots/dark/07-chat-bubbles.png",
+   "corner": [
+    48,
+    660
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Bubble whose top follows another bubble",
+   "op": "diag",
+   "value": "8.5pt"
+  }
+ },
+ "radius.button": {
+  "dark": {
+   "args": [
+    300,
+    1615,
+    105,
+    1648
+   ],
+   "capture": "screenshots/dark/05-new-bot-typed.png",
+   "corner": [
+    89,
+    1606
+   ],
+   "evidence": "Derived",
+   "inset": 13,
+   "note": "Create button (capsule)",
+   "op": "diag",
+   "value": "22.2pt"
+  },
+  "light": {
+   "args": [
+    300,
+    1615,
+    105,
+    1648
+   ],
+   "capture": "screenshots/light/05-new-bot-typed.png",
+   "corner": [
+    88,
+    1605
+   ],
+   "evidence": "Derived",
+   "inset": 13,
+   "note": "Create button (capsule)",
+   "op": "diag",
+   "value": "22.2pt"
+  }
+ },
+ "radius.card": {
+  "dark": {
+   "args": [
+    560,
+    380,
+    60,
+    560
+   ],
+   "capture": "screenshots/dark/19-account-menu.png",
+   "corner": [
+    50,
+    358
+   ],
+   "evidence": "Derived",
+   "inset": 8,
+   "note": "Settings card",
+   "op": "diag",
+   "value": "13.7pt"
+  },
+  "light": {
+   "args": [
+    560,
+    380,
+    60,
+    560
+   ],
+   "capture": "screenshots/light/19-account-menu.png",
+   "corner": [
+    50,
+    360
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Settings card",
+   "op": "diag",
+   "value": "15.4pt"
+  }
+ },
+ "radius.cardProfile": {
+  "dark": {
+   "args": [
+    400,
+    740,
+    80,
+    920
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "corner": [
+    66,
+    721
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Bot profile card",
+   "op": "diag",
+   "value": "11.9pt"
+  },
+  "light": {
+   "args": [
+    400,
+    740,
+    80,
+    920
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "corner": [
+    66,
+    721
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Bot profile card",
+   "op": "diag",
+   "value": "15.4pt"
+  }
+ },
+ "radius.chip": {
+  "dark": {
+   "args": [
+    320,
+    690,
+    174,
+    701
+   ],
+   "capture": "screenshots/dark/25-connect-apps.png",
+   "corner": [
+    168,
+    676
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Chip (capsule)",
+   "op": "diag",
+   "value": "11.9pt"
+  },
+  "light": {
+   "args": [
+    320,
+    690,
+    174,
+    701
+   ],
+   "capture": "screenshots/light/25-connect-apps.png",
+   "corner": [
+    168,
+    676
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Chip (capsule)",
+   "op": "diag",
+   "value": "11.9pt"
+  }
+ },
+ "radius.code": {
+  "dark": {
+   "args": [
+    560,
+    390,
+    80,
+    470
+   ],
+   "capture": "screenshots/dark/36-tutor-chat-mid.png",
+   "corner": [
+    76,
+    373
+   ],
+   "evidence": "Derived",
+   "inset": 6,
+   "note": "Code block",
+   "op": "diag",
+   "value": "10.2pt"
+  }
+ },
+ "radius.composer": {
+  "dark": {
+   "args": [
+    500,
+    1615,
+    205,
+    1656
+   ],
+   "capture": "screenshots/dark/06-chat.png",
+   "corner": [
+    192,
+    1611
+   ],
+   "evidence": "Derived",
+   "inset": 13,
+   "note": "Composer field (capsule)",
+   "op": "diag",
+   "value": "22.2pt"
+  }
+ },
+ "radius.field": {
+  "dark": {
+   "args": [
+    600,
+    870,
+    72,
+    903
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "corner": [
+    64,
+    848
+   ],
+   "evidence": "Derived",
+   "inset": 8,
+   "note": "Name field",
+   "op": "diag",
+   "value": "13.7pt"
+  },
+  "light": {
+   "args": [
+    600,
+    870,
+    72,
+    903
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "corner": [
+    65,
+    851
+   ],
+   "evidence": "Derived",
+   "inset": 8,
+   "note": "Name field",
+   "op": "diag",
+   "value": "13.7pt"
+  }
+ },
+ "radius.menu": {
+  "dark": {
+   "args": [
+    560,
+    200,
+    300,
+    280
+   ],
+   "capture": "screenshots/dark/02-plus-menu.png",
+   "corner": [
+    280,
+    172
+   ],
+   "evidence": "Derived",
+   "inset": 18,
+   "note": "Pull-down menu",
+   "op": "diag",
+   "value": "30.7pt"
+  }
+ },
+ "radius.ownBubble": {
+  "dark": {
+   "args": [
+    600,
+    360,
+    180,
+    450
+   ],
+   "capture": "screenshots/dark/37-own-bubble.png",
+   "corner": [
+    136,
+    335
+   ],
+   "evidence": "Derived",
+   "inset": 12,
+   "note": "The owner's bubble",
+   "op": "diag",
+   "value": "20.5pt"
+  }
+ },
+ "radius.secondaryButton": {
+  "dark": {
+   "args": [
+    690,
+    690,
+    624,
+    702
+   ],
+   "capture": "screenshots/dark/25-connect-apps.png",
+   "corner": [
+    615,
+    668
+   ],
+   "evidence": "Derived",
+   "inset": 10,
+   "note": "'Added' button (capsule)",
+   "op": "diag",
+   "value": "17.1pt"
+  },
+  "light": {
+   "args": [
+    690,
+    690,
+    624,
+    702
+   ],
+   "capture": "screenshots/light/25-connect-apps.png",
+   "corner": [
+    615,
+    668
+   ],
+   "evidence": "Derived",
+   "inset": 10,
+   "note": "'Added' button (capsule)",
+   "op": "diag",
+   "value": "17.1pt"
+  }
+ },
+ "radius.sheet": {
+  "dark": {
+   "args": [
+    500,
+    300,
+    45,
+    600
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "corner": [
+    32,
+    292
+   ],
+   "evidence": "Derived",
+   "inset": 21,
+   "note": "Sheet top corner",
+   "op": "diag",
+   "value": "35.8pt"
+  },
+  "light": {
+   "args": [
+    500,
+    300,
+    45,
+    600
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "corner": [
+    32,
+    292
+   ],
+   "evidence": "Derived",
+   "inset": 22,
+   "note": "Sheet top corner",
+   "op": "diag",
+   "value": "37.6pt"
+  }
+ },
+ "radius.textArea": {
+  "dark": {
+   "args": [
+    600,
+    370,
+    56,
+    550
+   ],
+   "capture": "screenshots/dark/23-feedback.png",
+   "corner": [
+    50,
+    358
+   ],
+   "evidence": "Derived",
+   "inset": 8,
+   "note": "Text area",
+   "op": "diag",
+   "value": "13.7pt"
+  }
+ },
+ "rows.profile": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    700,
+    1300,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Row edges down the bot profile card",
+   "op": "find",
+   "value": [
+    719,
+    720,
+    721,
+    821,
+    823,
+    921,
+    923,
+    1021,
+    1023,
+    1024,
+    1121,
+    1123,
+    1124,
+    1171,
+    1172,
+    1173,
+    1285,
+    1287,
+    1288
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    400,
+    700,
+    1300,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Row edges down the bot profile card",
+   "op": "find",
+   "value": [
+    721,
+    821,
+    823,
+    824,
+    921,
+    923,
+    1021,
+    1023,
+    1121,
+    1173,
+    1174,
+    1285
+   ]
+  }
+ },
+ "scrim.context": {
+  "dark": {
+   "args": [
+    300,
+    180,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/33-bot-context-menu.png",
+   "evidence": "Sampled",
+   "note": "Home under the context-menu scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0B0B0B"
+  },
+  "light": {
+   "args": [
+    300,
+    180,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/33-bot-context-menu.png",
+   "evidence": "Sampled",
+   "note": "Home under the context-menu scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#CACACA"
+  }
+ },
+ "scrim.ref": {
+  "dark": {
+   "args": [
+    300,
+    180,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled",
+   "note": "Home behind the context menu, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#151515"
+  },
+  "light": {
+   "args": [
+    300,
+    180,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Sampled",
+   "note": "Home behind the context menu, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "scrim.sheet": {
+  "dark": {
+   "args": [
+    300,
+    250,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Home under a sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0B0B0B"
+  },
+  "light": {
+   "args": [
+    300,
+    250,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Derived",
+   "note": "Home under a sheet",
+   "op": "fill",
+   "share": 0.45,
+   "value": "#C8C8C8"
+  }
+ },
+ "size.avatarGrid": {
+  "dark": {
+   "args": [
+    [
+     390,
+     380
+    ],
+    [
+     290,
+     320,
+     230,
+     220
+    ],
+    10
+   ],
+   "box": [
+    311,
+    348,
+    482,
+    502
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "colour": "#FF2F9C",
+   "evidence": "Sampled",
+   "note": "Home grid avatar (pink bot)",
+   "op": "bbox",
+   "value": "86x77.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     390,
+     380
+    ],
+    [
+     290,
+     320,
+     230,
+     220
+    ],
+    10
+   ],
+   "box": [
+    311,
+    348,
+    482,
+    502
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "colour": "#FF2F9C",
+   "evidence": "Sampled",
+   "note": "Home grid avatar (pink bot)",
+   "op": "bbox",
+   "value": "86x77.5pt"
+  }
+ },
+ "size.avatarGridB": {
+  "dark": {
+   "args": [
+    [
+     620,
+     450
+    ],
+    [
+     550,
+     320,
+     250,
+     220
+    ],
+    10
+   ],
+   "box": [
+    571,
+    339,
+    760,
+    520
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "colour": "#FF6600",
+   "evidence": "Sampled",
+   "note": "Home grid avatar (orange bot)",
+   "op": "bbox",
+   "value": "95x91pt"
+  },
+  "light": {
+   "args": [
+    [
+     620,
+     450
+    ],
+    [
+     550,
+     320,
+     250,
+     220
+    ],
+    10
+   ],
+   "box": [
+    571,
+    339,
+    760,
+    520
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "colour": "#FF6600",
+   "evidence": "Sampled",
+   "note": "Home grid avatar (orange bot)",
+   "op": "bbox",
+   "value": "95x91pt"
+  }
+ },
+ "size.bubbleDirect": {
+  "dark": {
+   "args": [
+    [
+     300,
+     640
+    ],
+    [
+     30,
+     470,
+     700,
+     190
+    ],
+    3
+   ],
+   "box": [
+    48,
+    476,
+    675,
+    643
+   ],
+   "capture": "screenshots/dark/07-chat-bubbles.png",
+   "colour": "#232020",
+   "evidence": "Sampled",
+   "note": "One-to-one bot bubble",
+   "op": "bbox",
+   "value": "314x84pt"
+  }
+ },
+ "size.bubbleGroup": {
+  "dark": {
+   "args": [
+    [
+     560,
+     620
+    ],
+    [
+     90,
+     495,
+     600,
+     230
+    ],
+    3
+   ],
+   "box": [
+    102,
+    504,
+    675,
+    715
+   ],
+   "capture": "screenshots/dark/30-group-chat.png",
+   "colour": "#202020",
+   "evidence": "Sampled",
+   "note": "Group bubble",
+   "op": "bbox",
+   "value": "287x106pt"
+  },
+  "light": {
+   "args": [
+    [
+     560,
+     620
+    ],
+    [
+     90,
+     495,
+     600,
+     230
+    ],
+    3
+   ],
+   "box": [
+    102,
+    504,
+    675,
+    715
+   ],
+   "capture": "screenshots/light/30-group-chat.png",
+   "colour": "#F2F2F2",
+   "evidence": "Sampled",
+   "note": "Group bubble",
+   "op": "bbox",
+   "value": "287x106pt"
+  }
+ },
+ "size.button": {
+  "dark": {
+   "args": [
+    [
+     150,
+     1625
+    ],
+    [
+     40,
+     1580,
+     740,
+     140
+    ],
+    8
+   ],
+   "box": [
+    91,
+    1607,
+    720,
+    1689
+   ],
+   "capture": "screenshots/dark/05-new-bot-typed.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Full-width primary button",
+   "op": "bbox",
+   "value": "315x41.5pt"
+  }
+ },
+ "size.cardProfile": {
+  "dark": {
+   "args": [
+    [
+     400,
+     760
+    ],
+    [
+     30,
+     700,
+     760,
+     440
+    ],
+    3
+   ],
+   "box": [
+    64,
+    719,
+    747,
+    1122
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "colour": "#2C2C2E",
+   "evidence": "Sampled",
+   "note": "Bot profile card",
+   "op": "bbox",
+   "value": "342x202pt"
+  },
+  "light": {
+   "args": [
+    [
+     400,
+     760
+    ],
+    [
+     30,
+     700,
+     760,
+     440
+    ],
+    3
+   ],
+   "box": [
+    66,
+    722,
+    745,
+    1120
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Bot profile card",
+   "op": "bbox",
+   "value": "340x199.5pt"
+  }
+ },
+ "size.cardSettings": {
+  "dark": {
+   "args": [
+    [
+     560,
+     590
+    ],
+    [
+     20,
+     340,
+     780,
+     320
+    ],
+    3
+   ],
+   "box": [
+    48,
+    358,
+    763,
+    641
+   ],
+   "capture": "screenshots/dark/19-account-menu.png",
+   "colour": "#2C2C2E",
+   "evidence": "Sampled",
+   "note": "Settings card",
+   "op": "bbox",
+   "value": "358x142pt"
+  },
+  "light": {
+   "args": [
+    [
+     560,
+     590
+    ],
+    [
+     20,
+     340,
+     780,
+     320
+    ],
+    3
+   ],
+   "box": [
+    50,
+    360,
+    761,
+    639
+   ],
+   "capture": "screenshots/light/19-account-menu.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Settings card",
+   "op": "bbox",
+   "value": "356x140pt"
+  }
+ },
+ "size.chip": {
+  "dark": {
+   "args": [
+    [
+     320,
+     695
+    ],
+    [
+     160,
+     668,
+     190,
+     70
+    ],
+    3
+   ],
+   "box": [
+    168,
+    675,
+    336,
+    724
+   ],
+   "capture": "screenshots/dark/25-connect-apps.png",
+   "colour": "#2C2C2E",
+   "evidence": "Sampled",
+   "note": "Account chip",
+   "op": "bbox",
+   "value": "84.5x25pt"
+  },
+  "light": {
+   "args": [
+    [
+     320,
+     695
+    ],
+    [
+     160,
+     668,
+     190,
+     70
+    ],
+    3
+   ],
+   "box": [
+    168,
+    674,
+    336,
+    725
+   ],
+   "capture": "screenshots/light/25-connect-apps.png",
+   "colour": "#ECECEE",
+   "evidence": "Sampled",
+   "note": "Account chip",
+   "op": "bbox",
+   "value": "84.5x26pt"
+  }
+ },
+ "size.code": {
+  "dark": {
+   "args": [
+    [
+     560,
+     470
+    ],
+    [
+     60,
+     360,
+     680,
+     170
+    ],
+    4
+   ],
+   "box": [
+    76,
+    373,
+    647,
+    513
+   ],
+   "capture": "screenshots/dark/36-tutor-chat-mid.png",
+   "colour": "#343436",
+   "evidence": "Sampled",
+   "note": "Code block",
+   "op": "bbox",
+   "value": "286x70.5pt"
+  }
+ },
+ "size.composer.h": {
+  "dark": {
+   "args": [
+    "col",
+    470,
+    1570,
+    1764,
+    [
+     470,
+     1570
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/06-chat.png",
+   "evidence": "Sampled",
+   "from": 1608,
+   "note": "Composer field height",
+   "op": "extent",
+   "to": 1703,
+   "value": "48pt"
+  }
+ },
+ "size.composerPlus.w": {
+  "dark": {
+   "args": [
+    "row",
+    1655,
+    20,
+    185,
+    [
+     30,
+     1580
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/06-chat.png",
+   "evidence": "Sampled",
+   "from": 76,
+   "note": "Composer + button width",
+   "op": "extent",
+   "to": 171,
+   "value": "48pt"
+  }
+ },
+ "size.field": {
+  "dark": {
+   "args": [
+    [
+     80,
+     860
+    ],
+    [
+     40,
+     830,
+     740,
+     140
+    ],
+    3
+   ],
+   "box": [
+    63,
+    849,
+    748,
+    956
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "colour": "#2C2C2E",
+   "evidence": "Sampled",
+   "note": "Single-line field",
+   "op": "bbox",
+   "value": "343x54pt"
+  },
+  "light": {
+   "args": [
+    [
+     80,
+     860
+    ],
+    [
+     40,
+     830,
+     740,
+     140
+    ],
+    3
+   ],
+   "box": [
+    65,
+    851,
+    746,
+    954
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Single-line field",
+   "op": "bbox",
+   "value": "341x52pt"
+  }
+ },
+ "size.menu.h": {
+  "dark": {
+   "args": [
+    "col",
+    560,
+    150,
+    420,
+    [
+     560,
+     160
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/02-plus-menu.png",
+   "evidence": "Sampled",
+   "from": 170,
+   "note": "Menu height, two items",
+   "op": "extent",
+   "to": 377,
+   "value": "104pt"
+  }
+ },
+ "size.menu.w": {
+  "dark": {
+   "args": [
+    "row",
+    280,
+    220,
+    812,
+    [
+     240,
+     280
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/02-plus-menu.png",
+   "evidence": "Sampled",
+   "from": 282,
+   "note": "Menu width",
+   "op": "extent",
+   "to": 778,
+   "value": "248.5pt"
+  }
+ },
+ "size.navButton.h": {
+  "dark": {
+   "args": [
+    "col",
+    96,
+    150,
+    300,
+    [
+     250,
+     160
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/13-routines.png",
+   "evidence": "Sampled",
+   "from": 181,
+   "note": "Round glass back button, height",
+   "op": "extent",
+   "to": 270,
+   "value": "45pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    96,
+    150,
+    300,
+    [
+     250,
+     160
+    ],
+    12
+   ],
+   "capture": "screenshots/light/13-routines.png",
+   "evidence": "Sampled",
+   "from": 181,
+   "note": "Round glass back button, height",
+   "op": "extent",
+   "to": 270,
+   "value": "45pt"
+  }
+ },
+ "size.navButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    226,
+    20,
+    200,
+    [
+     250,
+     160
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/13-routines.png",
+   "evidence": "Sampled",
+   "from": 51,
+   "note": "Round glass back button, width",
+   "op": "extent",
+   "to": 140,
+   "value": "45pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    226,
+    20,
+    200,
+    [
+     250,
+     160
+    ],
+    12
+   ],
+   "capture": "screenshots/light/13-routines.png",
+   "evidence": "Sampled",
+   "from": 50,
+   "note": "Round glass back button, width",
+   "op": "extent",
+   "to": 141,
+   "value": "46pt"
+  }
+ },
+ "size.ownBubble": {
+  "dark": {
+   "args": [
+    [
+     600,
+     352
+    ],
+    [
+     100,
+     320,
+     700,
+     250
+    ],
+    6
+   ],
+   "box": [
+    137,
+    336,
+    762,
+    545
+   ],
+   "capture": "screenshots/dark/37-own-bubble.png",
+   "colour": "#C37300",
+   "evidence": "Sampled",
+   "note": "The owner's bubble",
+   "op": "bbox",
+   "value": "313x105pt"
+  }
+ },
+ "size.pill": {
+  "dark": {
+   "args": [
+    [
+     365,
+     610
+    ],
+    [
+     330,
+     580,
+     160,
+     110
+    ],
+    4
+   ],
+   "box": [
+    355,
+    596,
+    456,
+    670
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "colour": "#333335",
+   "evidence": "Sampled",
+   "note": "Edit pill",
+   "op": "bbox",
+   "value": "51x37.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     365,
+     610
+    ],
+    [
+     330,
+     580,
+     160,
+     110
+    ],
+    4
+   ],
+   "box": [
+    355,
+    596,
+    457,
+    670
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "colour": "#E7E7E9",
+   "evidence": "Sampled",
+   "note": "Edit pill",
+   "op": "bbox",
+   "value": "51.5x37.5pt"
+  }
+ },
+ "size.searchBar.h": {
+  "dark": {
+   "args": [
+    "col",
+    465,
+    1570,
+    1764,
+    [
+     465,
+     1580
+    ],
+    14
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled",
+   "from": 1608,
+   "note": "Home search bar height",
+   "op": "extent",
+   "to": 1704,
+   "value": "48.5pt"
+  }
+ },
+ "size.secondaryButton": {
+  "dark": {
+   "args": [
+    [
+     622,
+     690
+    ],
+    [
+     600,
+     650,
+     170,
+     100
+    ],
+    3
+   ],
+   "box": [
+    616,
+    668,
+    751,
+    735
+   ],
+   "capture": "screenshots/dark/25-connect-apps.png",
+   "colour": "#2C2C2E",
+   "evidence": "Sampled",
+   "note": "'Added' button",
+   "op": "bbox",
+   "value": "68x34pt"
+  },
+  "light": {
+   "args": [
+    [
+     622,
+     690
+    ],
+    [
+     600,
+     650,
+     170,
+     100
+    ],
+    3
+   ],
+   "box": [
+    616,
+    668,
+    751,
+    735
+   ],
+   "capture": "screenshots/light/25-connect-apps.png",
+   "colour": "#ECECEE",
+   "evidence": "Sampled",
+   "note": "'Added' button",
+   "op": "bbox",
+   "value": "68x34pt"
+  }
+ },
+ "size.sendButton.h": {
+  "dark": {
+   "args": [
+    "col",
+    678,
+    1612,
+    1720,
+    [
+     678,
+     1614
+    ],
+    40
+   ],
+   "capture": "screenshots/dark/10-composer-typed.png",
+   "evidence": "Sampled",
+   "from": 1624,
+   "note": "Send button height",
+   "op": "extent",
+   "to": 1687,
+   "value": "32pt"
+  }
+ },
+ "size.sendButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    1655,
+    626,
+    734,
+    [
+     610,
+     1655
+    ],
+    40
+   ],
+   "capture": "screenshots/dark/10-composer-typed.png",
+   "evidence": "Sampled",
+   "from": 638,
+   "note": "Send button width",
+   "op": "extent",
+   "to": 718,
+   "value": "40.5pt"
+  }
+ },
+ "size.swatch": {
+  "dark": {
+   "args": [
+    [
+     251,
+     1424
+    ],
+    [
+     210,
+     1385,
+     85,
+     80
+    ],
+    10
+   ],
+   "box": [
+    228,
+    1401,
+    275,
+    1448
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "colour": "#93633A",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch",
+   "op": "bbox",
+   "value": "24x24pt"
+  },
+  "light": {
+   "args": [
+    [
+     251,
+     1424
+    ],
+    [
+     210,
+     1385,
+     85,
+     80
+    ],
+    10
+   ],
+   "box": [
+    228,
+    1401,
+    275,
+    1448
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "colour": "#93633A",
+   "evidence": "Sampled",
+   "note": "Avatar colour swatch",
+   "op": "bbox",
+   "value": "24x24pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     600,
+     1215
+    ],
+    [
+     560,
+     1180,
+     220,
+     100
+    ],
+    10
+   ],
+   "box": [
+    585,
+    1202,
+    708,
+    1256
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "colour": "#6F44C3",
+   "evidence": "Sampled",
+   "note": "Switch track",
+   "op": "bbox",
+   "value": "62x27.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     600,
+     1215
+    ],
+    [
+     560,
+     1180,
+     220,
+     100
+    ],
+    10
+   ],
+   "box": [
+    585,
+    1202,
+    708,
+    1256
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "colour": "#6F44C3",
+   "evidence": "Sampled",
+   "note": "Switch track",
+   "op": "bbox",
+   "value": "62x27.5pt"
+  }
+ },
+ "size.switchThumb": {
+  "dark": {
+   "args": [
+    [
+     680,
+     1222
+    ],
+    [
+     600,
+     1195,
+     130,
+     70
+    ],
+    6
+   ],
+   "box": [
+    633,
+    1206,
+    704,
+    1252
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "bbox",
+   "value": "36x23.5pt"
+  }
+ },
+ "size.textArea": {
+  "dark": {
+   "args": [
+    [
+     300,
+     550
+    ],
+    [
+     30,
+     340,
+     760,
+     400
+    ],
+    3
+   ],
+   "box": [
+    48,
+    358,
+    763,
+    739
+   ],
+   "capture": "screenshots/dark/23-feedback.png",
+   "colour": "#2C2C2E",
+   "evidence": "Sampled",
+   "note": "Text area",
+   "op": "bbox",
+   "value": "358x191pt"
+  }
+ },
+ "surface.bubble": {
+  "dark": {
+   "args": [
+    560,
+    620,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/30-group-chat.png",
+   "evidence": "Derived",
+   "note": "Bot message bubble (group chat)",
+   "op": "fill",
+   "share": 0.86,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    560,
+    620,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/30-group-chat.png",
+   "evidence": "Derived",
+   "note": "Bot message bubble (group chat)",
+   "op": "fill",
+   "share": 0.87,
+   "value": "#F2F2F2"
+  }
+ },
+ "surface.bubbleDirect": {
+  "dark": {
+   "args": [
+    650,
+    700,
+    20,
+    300
+   ],
+   "capture": "screenshots/dark/07-chat-bubbles.png",
+   "evidence": "Sampled",
+   "note": "Bot message bubble (one-to-one chat), right padding",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#232020"
+  }
+ },
+ "surface.bubbleDirectLight": {
+  "light": {
+   "args": [
+    650,
+    400,
+    20,
+    300
+   ],
+   "capture": "screenshots/light/06-chat.png",
+   "evidence": "Sampled",
+   "note": "Bot message bubble (one-to-one chat), right padding",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F2F2"
+  }
+ },
+ "surface.card": {
+  "dark": {
+   "args": [
+    330,
+    1200,
+    220,
+    60
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Grouped card (bot profile, Notifications row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2C2C2E"
+  },
+  "light": {
+   "args": [
+    330,
+    1200,
+    220,
+    60
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Grouped card (bot profile, Notifications row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.cardSettings": {
+  "dark": {
+   "args": [
+    560,
+    590,
+    30,
+    30
+   ],
+   "capture": "screenshots/dark/19-account-menu.png",
+   "evidence": "Sampled",
+   "note": "Grouped card in Settings (Usage row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2C2C2E"
+  },
+  "light": {
+   "args": [
+    560,
+    590,
+    30,
+    30
+   ],
+   "capture": "screenshots/light/19-account-menu.png",
+   "evidence": "Sampled",
+   "note": "Grouped card in Settings (Usage row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.chip": {
+  "dark": {
+   "args": [
+    320,
+    695,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/25-connect-apps.png",
+   "evidence": "Sampled",
+   "note": "Account chip in Connect apps",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2C2C2E"
+  },
+  "light": {
+   "args": [
+    320,
+    695,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/25-connect-apps.png",
+   "evidence": "Sampled",
+   "note": "Account chip in Connect apps",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#ECECEE"
+  }
+ },
+ "surface.code": {
+  "dark": {
+   "args": [
+    560,
+    470,
+    60,
+    10
+   ],
+   "capture": "screenshots/dark/36-tutor-chat-mid.png",
+   "evidence": "Sampled",
+   "note": "Code block inside a bot bubble",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#343436"
+  }
+ },
+ "surface.composer": {
+  "dark": {
+   "args": [
+    470,
+    1620,
+    80,
+    15
+   ],
+   "capture": "screenshots/dark/06-chat.png",
+   "evidence": "Sampled",
+   "note": "Composer field (glass; centre reading)",
+   "op": "fill",
+   "share": 0.93,
+   "value": "#333333"
+  },
+  "light": {
+   "args": [
+    470,
+    1620,
+    80,
+    15
+   ],
+   "capture": "screenshots/light/06-chat.png",
+   "evidence": "Derived",
+   "note": "Composer field (glass; centre reading)",
+   "op": "fill",
+   "share": 0.33,
+   "value": "#F8F8F8"
+  }
+ },
+ "surface.field": {
+  "dark": {
+   "args": [
+    80,
+    860,
+    150,
+    15
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Name field",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2C2C2E"
+  },
+  "light": {
+   "args": [
+    80,
+    860,
+    150,
+    15
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled",
+   "note": "Name field",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.menu": {
+  "dark": {
+   "args": [
+    300,
+    270,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/02-plus-menu.png",
+   "evidence": "Sampled",
+   "note": "Menu (glass; picks up colour from what is behind)",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#353132"
+  },
+  "light": {
+   "args": [
+    300,
+    270,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/02-plus-menu.png",
+   "evidence": "Derived",
+   "note": "Menu (glass; picks up colour from what is behind)",
+   "op": "fill",
+   "share": 0.27,
+   "value": "#FEFCFC"
+  }
+ },
+ "surface.ownBubble": {
+  "dark": {
+   "args": [
+    600,
+    352,
+    120,
+    8
+   ],
+   "capture": "screenshots/dark/37-own-bubble.png",
+   "evidence": "Sampled",
+   "note": "The owner's own message bubble ([Tutor] bot, amber)",
+   "op": "fill",
+   "share": 0.94,
+   "value": "#C37300"
+  }
+ },
+ "surface.pill": {
+  "dark": {
+   "args": [
+    365,
+    610,
+    10,
+    30
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Edit pill on the bot profile",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#333335"
+  },
+  "light": {
+   "args": [
+    365,
+    610,
+    10,
+    30
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Edit pill on the bot profile",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E7E7E9"
+  }
+ },
+ "surface.textArea": {
+  "dark": {
+   "args": [
+    300,
+    550,
+    200,
+    50
+   ],
+   "capture": "screenshots/dark/23-feedback.png",
+   "evidence": "Sampled",
+   "note": "Feedback text area",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2C2C2E"
+  }
+ },
+ "switch.off": {
+  "dark": {
+   "args": [
+    690,
+    1310,
+    25,
+    15
+   ],
+   "capture": "screenshots/dark/20-settings-mid.png",
+   "evidence": "Sampled",
+   "note": "Switch off (Notifications)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#656569"
+  },
+  "light": {
+   "args": [
+    690,
+    1310,
+    25,
+    15
+   ],
+   "capture": "screenshots/light/20-settings-mid.png",
+   "evidence": "Sampled",
+   "note": "Switch off (Notifications)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C5C5C7"
+  }
+ },
+ "switch.onBot": {
+  "dark": {
+   "args": [
+    600,
+    1215,
+    20,
+    15
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Switch on, Bot color accent (purple bot)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#6F44C3"
+  },
+  "light": {
+   "args": [
+    600,
+    1215,
+    20,
+    15
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Switch on, Bot color accent (purple bot)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#6F44C3"
+  }
+ },
+ "switch.onNeutral": {
+  "dark": {
+   "args": [
+    608,
+    1200,
+    20,
+    15
+   ],
+   "capture": "screenshots/dark/19-account-menu.png",
+   "evidence": "Sampled",
+   "note": "Switch on in Settings",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#B6B5BF"
+  },
+  "light": {
+   "args": [
+    608,
+    1200,
+    20,
+    15
+   ],
+   "capture": "screenshots/light/19-account-menu.png",
+   "evidence": "Sampled",
+   "note": "Switch on in Settings",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#737277"
+  }
+ },
+ "switch.thumb": {
+  "dark": {
+   "args": [
+    680,
+    1222,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    680,
+    1222,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "text.body": {
+  "dark": {
+   "args": [
+    130,
+    540,
+    300,
+    30
+   ],
+   "capture": "screenshots/dark/30-group-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Bubble text",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    130,
+    540,
+    300,
+    30
+   ],
+   "capture": "screenshots/light/30-group-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Bubble text",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.code": {
+  "dark": {
+   "args": [
+    100,
+    395,
+    120,
+    30
+   ],
+   "capture": "screenshots/dark/36-tutor-chat-mid.png",
+   "evidence": "Sampled (text)",
+   "note": "Monospace text in a code block",
+   "op": "text",
+   "value": "#A2A2A6"
+  }
+ },
+ "text.composerPlaceholder": {
+  "dark": {
+   "args": [
+    225,
+    1640,
+    200,
+    35
+   ],
+   "capture": "screenshots/dark/06-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Composer placeholder",
+   "op": "text",
+   "value": "#6C6C6E"
+  },
+  "light": {
+   "args": [
+    225,
+    1640,
+    200,
+    35
+   ],
+   "capture": "screenshots/light/06-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Composer placeholder",
+   "op": "text",
+   "value": "#C1C0C2"
+  }
+ },
+ "text.destructive": {
+  "dark": {
+   "args": [
+    410,
+    465,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/11-chat-more-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "'Delete' menu item",
+   "op": "text",
+   "value": "#FF6C70"
+  },
+  "light": {
+   "args": [
+    410,
+    465,
+    100,
+    40
+   ],
+   "capture": "screenshots/light/11-chat-more-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "'Delete' menu item",
+   "op": "text",
+   "value": "#FB3239"
+  }
+ },
+ "text.disabled": {
+  "dark": {
+   "args": [
+    640,
+    688,
+    90,
+    30
+   ],
+   "capture": "screenshots/dark/25-connect-apps.png",
+   "evidence": "Sampled (text)",
+   "note": "'Added' label on a disabled button",
+   "op": "text",
+   "value": "#818183"
+  },
+  "light": {
+   "args": [
+    640,
+    688,
+    90,
+    30
+   ],
+   "capture": "screenshots/light/25-connect-apps.png",
+   "evidence": "Sampled (text)",
+   "note": "'Added' label on a disabled button",
+   "op": "text",
+   "value": "#8D8D8D"
+  }
+ },
+ "text.fieldLabel": {
+  "dark": {
+   "args": [
+    100,
+    550,
+    80,
+    30
+   ],
+   "capture": "screenshots/dark/17-edit-bot.png",
+   "evidence": "Sampled (text)",
+   "note": "Form field label ('Name')",
+   "op": "text",
+   "value": "#5C5C5E"
+  },
+  "light": {
+   "args": [
+    100,
+    550,
+    80,
+    30
+   ],
+   "capture": "screenshots/light/17-edit-bot.png",
+   "evidence": "Sampled (text)",
+   "note": "Form field label ('Name')",
+   "op": "text",
+   "value": "#BEBEBF"
+  }
+ },
+ "text.folderCount": {
+  "dark": {
+   "args": [
+    162,
+    1200,
+    30,
+    35
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Folder count",
+   "op": "text",
+   "value": "#545456"
+  },
+  "light": {
+   "args": [
+    162,
+    1200,
+    30,
+    35
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Folder count",
+   "op": "text",
+   "value": "#C3C3C4"
+  }
+ },
+ "text.footnote": {
+  "dark": {
+   "args": [
+    103,
+    1300,
+    600,
+    70
+   ],
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Sampled (text)",
+   "note": "Helper text under a card",
+   "op": "text",
+   "value": "#5D5D5D"
+  },
+  "light": {
+   "args": [
+    103,
+    1300,
+    600,
+    70
+   ],
+   "capture": "screenshots/light/12-bot-profile.png",
+   "evidence": "Sampled (text)",
+   "note": "Helper text under a card",
+   "op": "text",
+   "value": "#BFBFBF"
+  }
+ },
+ "text.gridLabel": {
+  "dark": {
+   "args": [
+    77,
+    540,
+    140,
+    35
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Bot name under a home grid avatar",
+   "op": "text",
+   "value": "#95949B"
+  },
+  "light": {
+   "args": [
+    77,
+    540,
+    140,
+    35
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Bot name under a home grid avatar",
+   "op": "text",
+   "value": "#88888C"
+  }
+ },
+ "text.link": {
+  "dark": {
+   "args": [
+    170,
+    1075,
+    170,
+    40
+   ],
+   "capture": "screenshots/dark/30-group-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Inline link in a bubble",
+   "op": "text",
+   "value": "#499FFF"
+  },
+  "light": {
+   "args": [
+    170,
+    1075,
+    170,
+    40
+   ],
+   "capture": "screenshots/light/30-group-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Inline link in a bubble",
+   "op": "text",
+   "value": "#0364BD"
+  }
+ },
+ "text.onOwnBubble": {
+  "dark": {
+   "args": [
+    180,
+    365,
+    560,
+    160
+   ],
+   "capture": "screenshots/dark/37-own-bubble.png",
+   "evidence": "Sampled (text)",
+   "note": "Text on the owner's bubble",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.onPill": {
+  "dark": {
+   "args": [
+    365,
+    1490,
+    120,
+    35,
+    "light"
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the blue unread pill",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    365,
+    1490,
+    120,
+    35,
+    "light"
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the blue unread pill",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    260,
+    880,
+    290,
+    45
+   ],
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Sampled (text)",
+   "note": "Name field placeholder",
+   "op": "text",
+   "value": "#66666A"
+  },
+  "light": {
+   "args": [
+    260,
+    880,
+    290,
+    45
+   ],
+   "capture": "screenshots/light/03-new-bot.png",
+   "evidence": "Sampled (text)",
+   "note": "Name field placeholder",
+   "op": "text",
+   "value": "#C3C4C6"
+  }
+ },
+ "text.preview": {
+  "dark": {
+   "args": [
+    181,
+    1520,
+    100,
+    30
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Home row preview line",
+   "op": "text",
+   "value": "#95959C"
+  },
+  "light": {
+   "args": [
+    181,
+    1520,
+    100,
+    30
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Home row preview line",
+   "op": "text",
+   "value": "#89898A"
+  }
+ },
+ "text.primary": {
+  "dark": {
+   "args": [
+    181,
+    1470,
+    120,
+    35
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Home row title",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    181,
+    1470,
+    120,
+    35
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Home row title",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.rowSubtitle": {
+  "dark": {
+   "args": [
+    87,
+    980,
+    350,
+    30
+   ],
+   "capture": "screenshots/dark/19-account-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row subtitle",
+   "op": "text",
+   "value": "#9E9DA4"
+  },
+  "light": {
+   "args": [
+    87,
+    980,
+    350,
+    30
+   ],
+   "capture": "screenshots/light/19-account-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row subtitle",
+   "op": "text",
+   "value": "#8A898E"
+  }
+ },
+ "text.rowValue": {
+  "dark": {
+   "args": [
+    624,
+    575,
+    50,
+    35
+   ],
+   "capture": "screenshots/dark/19-account-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row value ('0%')",
+   "op": "text",
+   "value": "#9F9FA4"
+  },
+  "light": {
+   "args": [
+    624,
+    575,
+    50,
+    35
+   ],
+   "capture": "screenshots/light/19-account-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row value ('0%')",
+   "op": "text",
+   "value": "#8A8A8C"
+  }
+ },
+ "text.sectionHeader": {
+  "dark": {
+   "args": [
+    85,
+    1100,
+    45,
+    35
+   ],
+   "capture": "screenshots/dark/19-account-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings section header ('Bot')",
+   "op": "text",
+   "value": "#5D5D5F"
+  },
+  "light": {
+   "args": [
+    85,
+    1100,
+    45,
+    35
+   ],
+   "capture": "screenshots/light/19-account-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings section header ('Bot')",
+   "op": "text",
+   "value": "#BEBEC0"
+  }
+ },
+ "text.senderLabel": {
+  "dark": {
+   "args": [
+    127,
+    470,
+    150,
+    30
+   ],
+   "capture": "screenshots/dark/30-group-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Sender label above a group bubble",
+   "op": "text",
+   "value": "#939295"
+  },
+  "light": {
+   "args": [
+    127,
+    470,
+    150,
+    30
+   ],
+   "capture": "screenshots/light/30-group-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Sender label above a group bubble",
+   "op": "text",
+   "value": "#8B8B8E"
+  }
+ },
+ "text.success": {
+  "dark": {
+   "args": [
+    290,
+    688,
+    30,
+    25
+   ],
+   "capture": "screenshots/dark/25-connect-apps.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick in a connected-account chip",
+   "op": "text",
+   "value": "#419F67"
+  },
+  "light": {
+   "args": [
+    290,
+    688,
+    30,
+    25
+   ],
+   "capture": "screenshots/light/25-connect-apps.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick in a connected-account chip",
+   "op": "text",
+   "value": "#027344"
+  }
+ },
+ "text.systemLine": {
+  "dark": {
+   "args": [
+    225,
+    1445,
+    130,
+    30
+   ],
+   "capture": "screenshots/dark/06-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Thread system line ('Messaged ...')",
+   "op": "text",
+   "value": "#959599"
+  },
+  "light": {
+   "args": [
+    225,
+    1445,
+    130,
+    30
+   ],
+   "capture": "screenshots/light/06-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Thread system line ('Messaged ...')",
+   "op": "text",
+   "value": "#89888B"
+  }
+ },
+ "text.systemTime": {
+  "dark": {
+   "args": [
+    310,
+    1368,
+    190,
+    32
+   ],
+   "capture": "screenshots/dark/06-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Thread timestamp line",
+   "op": "text",
+   "value": "#565657"
+  },
+  "light": {
+   "args": [
+    310,
+    1368,
+    190,
+    32
+   ],
+   "capture": "screenshots/light/06-chat.png",
+   "evidence": "Sampled (text)",
+   "note": "Thread timestamp line",
+   "op": "text",
+   "value": "#C1C1C1"
+  }
+ },
+ "text.timestamp": {
+  "dark": {
+   "args": [
+    600,
+    1470,
+    150,
+    35
+   ],
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Home row timestamp",
+   "op": "text",
+   "value": "#555557"
+  },
+  "light": {
+   "args": [
+    600,
+    1470,
+    150,
+    35
+   ],
+   "capture": "screenshots/light/01-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Home row timestamp",
+   "op": "text",
+   "value": "#C1C1C3"
+  }
+ },
+ "type.bubble": {
+  "dark": {
+   "args": [
+    72,
+    495,
+    90,
+    540
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/07-chat-bubbles.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'I' of bubble text",
+   "op": "cap",
+   "top": 504,
+   "value": "17pt"
+  }
+ },
+ "type.button": {
+  "dark": {
+   "args": [
+    350,
+    1620,
+    383,
+    1675
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/05-new-bot-typed.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'C' of 'Create'",
+   "op": "cap",
+   "top": 1635,
+   "value": "17pt"
+  }
+ },
+ "type.composer": {
+  "dark": {
+   "args": [
+    222,
+    1630,
+    258,
+    1685
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/06-chat.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'A' of the composer placeholder",
+   "op": "cap",
+   "top": 1644,
+   "value": "16pt"
+  }
+ },
+ "type.emptyState": {
+  "dark": {
+   "args": [
+    82,
+    875,
+    112,
+    925
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/16-coding.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'C' of an empty-state line",
+   "op": "cap",
+   "top": 885,
+   "value": "17pt"
+  }
+ },
+ "type.fieldText": {
+  "dark": {
+   "args": [
+    362,
+    875,
+    392,
+    930
+   ],
+   "capHeight": "15.5pt",
+   "capture": "screenshots/dark/05-new-bot-typed.png",
+   "evidence": "Derived",
+   "inkPx": 32,
+   "note": "'T' of typed text in the name field",
+   "op": "cap",
+   "top": 886,
+   "value": "22pt"
+  }
+ },
+ "type.footnote": {
+  "dark": {
+   "args": [
+    98,
+    1300,
+    127,
+    1345
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'G' of helper text",
+   "op": "cap",
+   "top": 1312,
+   "value": "13pt"
+  }
+ },
+ "type.gridLabel": {
+  "dark": {
+   "args": [
+    74,
+    535,
+    98,
+    578
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'E' of a home grid label",
+   "op": "cap",
+   "top": 546,
+   "value": "14pt"
+  }
+ },
+ "type.menuItem": {
+  "dark": {
+   "args": [
+    334,
+    212,
+    365,
+    255
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/02-plus-menu.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'N' of a menu item",
+   "op": "cap",
+   "top": 220,
+   "value": "16pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    333,
+    200,
+    362,
+    255
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/13-routines.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'R' of a nav title ('Routines')",
+   "op": "cap",
+   "top": 214,
+   "value": "17pt"
+  }
+ },
+ "type.preview": {
+  "dark": {
+   "args": [
+    178,
+    1515,
+    207,
+    1558
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'N' of a home row preview",
+   "op": "cap",
+   "top": 1523,
+   "value": "15pt"
+  }
+ },
+ "type.profileTitle": {
+  "dark": {
+   "args": [
+    405,
+    525,
+    430,
+    570
+   ],
+   "capHeight": "16pt",
+   "capture": "screenshots/dark/12-bot-profile.png",
+   "evidence": "Derived",
+   "inkPx": 33,
+   "note": "'L' of the bot name on its profile",
+   "op": "cap",
+   "top": 528,
+   "value": "22pt"
+  }
+ },
+ "type.rowTitle": {
+  "dark": {
+   "args": [
+    178,
+    1462,
+    208,
+    1512
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'H' of a home row title",
+   "op": "cap",
+   "top": 1473,
+   "value": "17pt"
+  }
+ },
+ "type.sectionHeader": {
+  "dark": {
+   "args": [
+    82,
+    1095,
+    104,
+    1140
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/dark/19-account-menu.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'B' of a section header",
+   "op": "cap",
+   "top": 1106,
+   "value": "14pt"
+  }
+ },
+ "type.senderLabel": {
+  "dark": {
+   "args": [
+    224,
+    468,
+    240,
+    500
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/30-group-chat.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'L' of a sender label",
+   "op": "cap",
+   "top": 473,
+   "value": "12pt"
+  }
+ },
+ "type.settingsRow": {
+  "dark": {
+   "args": [
+    84,
+    565,
+    112,
+    620
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/19-account-menu.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'U' of a settings row ('Usage')",
+   "op": "cap",
+   "top": 578,
+   "value": "17pt"
+  }
+ },
+ "type.sheetTitle": {
+  "dark": {
+   "args": [
+    178,
+    345,
+    208,
+    395
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/03-new-bot.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'C' of a sheet title",
+   "op": "cap",
+   "top": 357,
+   "value": "17pt"
+  }
+ },
+ "type.subtitle": {
+  "dark": {
+   "args": [
+    84,
+    975,
+    107,
+    1015
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/dark/19-account-menu.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'T' of a settings row subtitle",
+   "op": "cap",
+   "top": 984,
+   "value": "14pt"
+  }
+ },
+ "type.systemLine": {
+  "dark": {
+   "args": [
+    306,
+    1362,
+    333,
+    1402
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/dark/06-chat.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'T' of the thread timestamp",
+   "op": "cap",
+   "top": 1372,
+   "value": "14pt"
+  }
+ },
+ "type.timestamp": {
+  "dark": {
+   "args": [
+    596,
+    1465,
+    640,
+    1508
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/01-home.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'W' of a row timestamp",
+   "op": "cap",
+   "top": 1476,
+   "value": "13pt"
+  }
+ }
+}
