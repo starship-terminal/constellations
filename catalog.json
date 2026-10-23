@@ -10,8 +10,7 @@
     "fitness": "Fitness",
     "component-library": "Component libraries",
     "messaging": "Messaging",
-    "media": "Media",
-    "super-app": "Super apps"
+    "media": "Media"
   },
   "systems": [
     {
@@ -996,62 +995,6 @@
       },
       "layoutGaps": {
         "icons/": "YouTube's icons and logo are Google's artwork and are not kept here (docs/RIGHTS.md)"
-      }
-    },
-    {
-      "slug": "grab",
-      "name": "Grab",
-      "url": "https://www.grab.com",
-      "category": "super-app",
-      "platform": "mobile",
-      "goodFor": "Native iOS service app: white pages under a coloured service header, Grab green for every primary action, pale mint secondary controls, dark-teal selected chips, capsule buttons, a tab bar with a raised scan button, bottom sheets over a scrim",
-      "tags": [
-        "ios",
-        "mobile",
-        "super-app",
-        "transport",
-        "food-delivery",
-        "light-only",
-        "green",
-        "tab-bar",
-        "chips",
-        "bottom-sheet",
-        "map"
-      ],
-      "shape": "reference",
-      "captured": "2026-10-23",
-      "access": "signed in, iPhone Mirroring",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        390
-      ],
-      "entry": "systems/grab/README.md",
-      "tokens": "systems/grab/tokens.json",
-      "styleGuide": "systems/grab/style-guide.html",
-      "preview": {
-        "cover": "systems/grab/screenshots/light/01-home-tiles-search.png",
-        "swatches": {
-          "light": {
-            "page": "light.color.bg.page",
-            "surface": "light.color.surface.card",
-            "text": "light.color.text.primary",
-            "muted": "light.color.text.secondary",
-            "accent": "light.color.accent.default",
-            "border": "light.color.border.divider"
-          }
-        },
-        "fonts": [
-          "core.fontFamily.base",
-          "core.fontFamily.display"
-        ]
-      },
-      "source": {
-        "path": "~/.design-systems/grab/raw-shots (full-colour captures, outside the repo)"
-      },
-      "layoutGaps": {
-        "icons/": "Grab's icons, 3D service icons and illustrations are its artwork and are not kept here (docs/RIGHTS.md)"
       }
     }
   ]
