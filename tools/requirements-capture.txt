@@ -14,4 +14,5 @@ pillow      # quantize.py, crops.py, srgb.py, shot.py, store.py,
             # linear build_guide.py/build_library.py, polaris build_vectors.py
 numpy       # redact_images.py
 markdown    # site.py, linear build_guide.py
-fonttools   # polaris build_vectors.py (measures text widths)
+fonttools[woff]  # polaris build_vectors.py (measures text widths; the woff
+                 # extra pulls brotli, needed to decode inter.woff2 to TTF)

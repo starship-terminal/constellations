@@ -52,7 +52,7 @@ interpreter `PYTHON`/`python3` resolves to.
 | Pillow (`pillow`) | `capture/quantize.py` and its per-package copies, `crops.py`, `srgb.py`, `shot.py`, `store.py`, the inline `python3 -c "from PIL import …"` quantize calls in the `.mjs` scripts, `tools/make_icons.py`, `tools/redact_images.py`, linear's `build_guide.py`/`build_library.py`, polaris's `build_vectors.py`, and `tools/catalog.py` gallery thumbnails (macOS `sips` is used instead when present; with neither, thumbs fall back to the full-size screenshot and `build` warns once) |
 | numpy (`numpy`) | `tools/redact_images.py` (also needs `tesseract` on PATH) |
 | markdown (`markdown`) | `tools/site.py`, linear's `build_guide.py` |
-| fontTools (`fonttools`) | polaris's `build_vectors.py` (text measurement; widths drift across versions) |
+| fontTools + Brotli (`fonttools[woff]`) | polaris's `build_vectors.py` (text measurement; widths drift across versions; Brotli decodes `inter.woff2` to TTF) |
 | ffmpeg | `tools/refero/mirror_media.py --compress-videos`; a binary on PATH, not pip (`~/.nix-profile/bin/ffmpeg` is a fallback) |
 | `sips` | gallery thumbnails on macOS; optional, Pillow covers Linux |
 | Node.js + Playwright | every `*.mjs` capture script |
