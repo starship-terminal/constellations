@@ -1,0 +1,3703 @@
+{
+ "accent.check": {
+  "dark": {
+   "args": [
+    690,
+    515,
+    40,
+    40
+   ],
+   "capture": "screenshots/dark/08-settings-search-engine-checklist.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick on the chosen search engine (Google)",
+   "op": "text",
+   "value": "#6F87FE"
+  },
+  "light": {
+   "args": [
+    690,
+    515,
+    40,
+    40
+   ],
+   "capture": "screenshots/light/08-settings-search-engine-checklist.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick on the chosen search engine (Google)",
+   "op": "text",
+   "value": "#3239FA"
+  }
+ },
+ "accent.default": {
+  "dark": {
+   "args": [
+    682,
+    262,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Sampled",
+   "note": "Round confirm button at the top right of the Archive",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#768AFF"
+  },
+  "light": {
+   "args": [
+    682,
+    262,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Derived",
+   "note": "Round confirm button at the top right of the Archive",
+   "op": "fill",
+   "share": 0.88,
+   "value": "#2D36F8"
+  }
+ },
+ "accent.link": {
+  "dark": {
+   "args": [
+    150,
+    1145,
+    280,
+    40
+   ],
+   "capture": "screenshots/dark/08-settings-search-engine-checklist.png",
+   "evidence": "Sampled (text)",
+   "note": "'Add Search Engine' link",
+   "op": "text",
+   "value": "#7187FF"
+  },
+  "light": {
+   "args": [
+    150,
+    1145,
+    280,
+    40
+   ],
+   "capture": "screenshots/light/08-settings-search-engine-checklist.png",
+   "evidence": "Sampled (text)",
+   "note": "'Add Search Engine' link",
+   "op": "text",
+   "value": "#2F39FA"
+  }
+ },
+ "bg.behindSheet": {
+  "dark": {
+   "args": [
+    60,
+    140,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Derived",
+   "note": "The page behind the Settings sheet, dimmed (above the sheet's top edge)",
+   "op": "mean",
+   "value": "#13121C"
+  },
+  "light": {
+   "args": [
+    60,
+    140,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Derived",
+   "note": "The page behind the Settings sheet, dimmed (above the sheet's top edge)",
+   "op": "mean",
+   "value": "#ADABC1"
+  }
+ },
+ "bg.page": {
+  "dark": {
+   "args": [
+    300,
+    330,
+    200,
+    30
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Sampled",
+   "note": "Archive page, between the header and 'Today'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1E"
+  },
+  "light": {
+   "args": [
+    300,
+    330,
+    200,
+    30
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Sampled",
+   "note": "Archive page, between the header and 'Today'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F2F6"
+  }
+ },
+ "bg.searchPage": {
+  "dark": {
+   "args": [
+    300,
+    600,
+    200,
+    400
+   ],
+   "capture": "screenshots/dark/23-archive-search-no-results-blank.png",
+   "evidence": "Sampled",
+   "note": "Archive search with no results: a blank page",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1E"
+  },
+  "light": {
+   "args": [
+    300,
+    600,
+    200,
+    400
+   ],
+   "capture": "screenshots/light/23-archive-search-no-results-blank.png",
+   "evidence": "Sampled",
+   "note": "Archive search with no results: a blank page",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F2F6"
+  }
+ },
+ "bg.sheet": {
+  "dark": {
+   "args": [
+    100,
+    990,
+    600,
+    16
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Settings sheet, between two groups",
+   "op": "fill",
+   "share": 0.96,
+   "value": "#2A2A2C"
+  },
+  "light": {
+   "args": [
+    100,
+    990,
+    600,
+    16
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Settings sheet, between two groups",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F5F5F5"
+  }
+ },
+ "border.separator": {
+  "dark": {
+   "args": [
+    300,
+    728,
+    40,
+    16
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Hairline between Set Arc as Default Browser and Change App Icon",
+   "op": "text",
+   "value": "#737373"
+  },
+  "light": {
+   "args": [
+    300,
+    728,
+    40,
+    16
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Hairline between Set Arc as Default Browser and Change App Icon",
+   "op": "text",
+   "value": "#CBCBCB"
+  }
+ },
+ "edges.groups": {
+  "dark": {
+   "args": [
+    "col",
+    145,
+    400,
+    1700,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Every edge down x = 145, between the icon tiles and the labels (group tops and bottoms, separators)",
+   "op": "find",
+   "value": [
+    406,
+    407,
+    458,
+    459,
+    562,
+    563,
+    632,
+    633,
+    944,
+    945,
+    1014,
+    1015,
+    1222,
+    1223,
+    1292,
+    1293
+   ]
+  }
+ },
+ "focus.caret": {
+  "dark": {
+   "args": [
+    216,
+    1225,
+    2,
+    30
+   ],
+   "capture": "screenshots/dark/02-search-typed-suggestions.png",
+   "evidence": "Derived",
+   "note": "Text caret in the search field (two pixel columns; dark: typed field, light: empty field)",
+   "op": "fill",
+   "share": 0.38,
+   "value": "#7086FF"
+  },
+  "light": {
+   "args": [
+    97,
+    1225,
+    2,
+    30
+   ],
+   "capture": "screenshots/light/01-launch-search-focused-pinned.png",
+   "evidence": "Derived",
+   "note": "Text caret in the search field (two pixel columns; dark: typed field, light: empty field)",
+   "op": "fill",
+   "share": 0.13,
+   "value": "#3039FC"
+  }
+ },
+ "gradient.bottom": {
+  "dark": {
+   "args": [
+    400,
+    1500,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/17-space-sheet-gradient.png",
+   "evidence": "Derived",
+   "note": "Space sheet (Main), near the bottom",
+   "op": "mean",
+   "value": "#074E1E"
+  },
+  "light": {
+   "args": [
+    400,
+    1500,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/17-space-sheet-gradient.png",
+   "evidence": "Derived",
+   "note": "Space sheet (Main), near the bottom",
+   "op": "mean",
+   "value": "#A1E8B8"
+  }
+ },
+ "gradient.top": {
+  "dark": {
+   "args": [
+    400,
+    350,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/17-space-sheet-gradient.png",
+   "evidence": "Derived",
+   "note": "Space sheet (Main), near the top",
+   "op": "mean",
+   "value": "#8C7788"
+  },
+  "light": {
+   "args": [
+    400,
+    350,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/17-space-sheet-gradient.png",
+   "evidence": "Derived",
+   "note": "Space sheet (Main), near the top",
+   "op": "mean",
+   "value": "#9C8699"
+  }
+ },
+ "lines.helper": {
+  "dark": {
+   "args": [
+    76,
+    320,
+    640,
+    400
+   ],
+   "bands": [
+    [
+     332,
+     364
+    ],
+    [
+     376,
+     399
+    ]
+   ],
+   "capture": "screenshots/dark/09-site-settings-switches.png",
+   "evidence": "Derived",
+   "note": "Two-line helper text",
+   "op": "lines",
+   "value": "22.0pt"
+  }
+ },
+ "radius.address": {
+  "dark": {
+   "args": [
+    400,
+    595,
+    80,
+    628
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "corner": [
+    49,
+    579
+   ],
+   "evidence": "Derived",
+   "inset": 12,
+   "note": "Address bar, top-left corner",
+   "op": "diag",
+   "value": "20.5pt"
+  }
+ },
+ "radius.button": {
+  "dark": {
+   "args": [
+    250,
+    335,
+    70,
+    366
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "corner": [
+    48,
+    326
+   ],
+   "evidence": "Derived",
+   "inset": 12,
+   "note": "Downloads button, top-left corner",
+   "op": "diag",
+   "value": "20.5pt"
+  },
+  "light": {
+   "args": [
+    250,
+    335,
+    70,
+    366
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "corner": [
+    48,
+    326
+   ],
+   "evidence": "Derived",
+   "inset": 12,
+   "note": "Downloads button, top-left corner",
+   "op": "diag",
+   "value": "20.5pt"
+  }
+ },
+ "radius.card": {
+  "dark": {
+   "args": [
+    500,
+    440,
+    70,
+    640
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "corner": [
+    48,
+    440
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Archive card, top-left corner",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    500,
+    440,
+    70,
+    640
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "corner": [
+    48,
+    440
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Archive card, top-left corner",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.group": {
+  "dark": {
+   "args": [
+    400,
+    1035,
+    100,
+    1120
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "corner": [
+    48,
+    1015
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Search Engine group, top-left corner",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    400,
+    1035,
+    100,
+    1120
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "corner": [
+    48,
+    1015
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Search Engine group, top-left corner",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.menuGroup": {
+  "dark": {
+   "args": [
+    46,
+    936,
+    [
+     40,
+     930
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "corner": [
+    46,
+    936
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "List panel, top-left corner against the menu",
+   "op": "corner",
+   "value": "14.5pt"
+  },
+  "light": {
+   "args": [
+    46,
+    936,
+    [
+     40,
+     930
+    ],
+    6
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "corner": [
+    46,
+    936
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "List panel, top-left corner against the menu",
+   "op": "corner",
+   "value": "14.5pt"
+  }
+ },
+ "radius.pill": {
+  "dark": {
+   "args": [
+    660,
+    1333,
+    566,
+    1358
+   ],
+   "capture": "screenshots/dark/02-search-typed-suggestions.png",
+   "corner": [
+    558,
+    1326
+   ],
+   "evidence": "Derived",
+   "inset": 6,
+   "note": "Browse for Me button, top-left corner",
+   "op": "diag",
+   "value": "10.2pt"
+  }
+ },
+ "radius.search": {
+  "dark": {
+   "args": [
+    250,
+    1200,
+    80,
+    1240
+   ],
+   "capture": "screenshots/dark/01-launch-search-focused-pinned.png",
+   "corner": [
+    49,
+    1193
+   ],
+   "evidence": "Derived",
+   "inset": 13,
+   "note": "Search field, top-left corner",
+   "op": "diag",
+   "value": "22.2pt"
+  }
+ },
+ "radius.sheet": {
+  "light": {
+   "args": [
+    400,
+    185,
+    40,
+    300
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "corner": [
+    16,
+    76
+   ],
+   "evidence": "Derived",
+   "inset": 28,
+   "note": "Settings sheet, top-left corner against the dimmed page (the dark sheet is too close to the dimmed page to bound)",
+   "op": "diag",
+   "value": "47.8pt"
+  }
+ },
+ "radius.tile": {
+  "dark": {
+   "args": [
+    76,
+    1038,
+    [
+     70,
+     1032
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "corner": [
+    76,
+    1038
+   ],
+   "evidence": "Derived",
+   "inset": 3,
+   "note": "Search Engine icon tile, top-left corner against the group",
+   "op": "corner",
+   "value": "4.3pt"
+  },
+  "light": {
+   "args": [
+    76,
+    1038,
+    [
+     70,
+     1032
+    ],
+    12
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "corner": [
+    76,
+    1038
+   ],
+   "evidence": "Derived",
+   "inset": 3,
+   "note": "Search Engine icon tile, top-left corner against the group",
+   "op": "corner",
+   "value": "4.3pt"
+  }
+ },
+ "radius.tileButton": {
+  "dark": {
+   "args": [
+    48,
+    705,
+    [
+     42,
+     700
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "corner": [
+    48,
+    705
+   ],
+   "evidence": "Derived",
+   "inset": 12,
+   "note": "Find on Page button, top-left corner against the menu",
+   "op": "corner",
+   "value": "19.6pt"
+  },
+  "light": {
+   "args": [
+    48,
+    705,
+    [
+     42,
+     700
+    ],
+    6
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "corner": [
+    48,
+    705
+   ],
+   "evidence": "Derived",
+   "inset": 12,
+   "note": "Find on Page button, top-left corner against the menu",
+   "op": "corner",
+   "value": "19.6pt"
+  }
+ },
+ "rows.archive": {
+  "dark": {
+   "args": [
+    50,
+    450,
+    90,
+    820
+   ],
+   "bands": [
+    [
+     475,
+     504
+    ],
+    [
+     568,
+     607
+    ],
+    [
+     666,
+     706
+    ],
+    [
+     769,
+     798
+    ]
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Derived",
+   "note": "Favicons down the first card (the pitch is the row height)",
+   "op": "lines",
+   "value": "49.0pt"
+  },
+  "light": {
+   "args": [
+    50,
+    450,
+    90,
+    820
+   ],
+   "bands": [
+    [
+     476,
+     503
+    ],
+    [
+     573,
+     602
+    ],
+    [
+     665,
+     706
+    ],
+    [
+     770,
+     797
+    ]
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Derived",
+   "note": "Favicons down the first card (the pitch is the row height)",
+   "op": "lines",
+   "value": "49.0pt"
+  }
+ },
+ "rows.launcher": {
+  "dark": {
+   "args": [
+    112,
+    1340,
+    134,
+    1740
+   ],
+   "bands": [
+    [
+     1344,
+     1368
+    ],
+    [
+     1456,
+     1480
+    ],
+    [
+     1568,
+     1592
+    ],
+    [
+     1680,
+     1705
+    ]
+   ],
+   "capture": "screenshots/dark/01-launch-search-focused-pinned.png",
+   "evidence": "Derived",
+   "note": "First letters of the launcher rows (the pitch is the row height)",
+   "op": "lines",
+   "value": "56.0pt"
+  },
+  "light": {
+   "args": [
+    112,
+    1340,
+    134,
+    1740
+   ],
+   "bands": [
+    [
+     1344,
+     1369
+    ],
+    [
+     1456,
+     1481
+    ],
+    [
+     1567,
+     1593
+    ],
+    [
+     1679,
+     1705
+    ]
+   ],
+   "capture": "screenshots/light/01-launch-search-focused-pinned.png",
+   "evidence": "Derived",
+   "note": "First letters of the launcher rows (the pitch is the row height)",
+   "op": "lines",
+   "value": "55.8pt"
+  }
+ },
+ "rows.menu": {
+  "dark": {
+   "args": [
+    150,
+    960,
+    175,
+    1205
+   ],
+   "bands": [
+    [
+     973,
+     995
+    ],
+    [
+     1071,
+     1094
+    ],
+    [
+     1169,
+     1192
+    ]
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "First letters of the first three list rows (the pitch is the row height)",
+   "op": "lines",
+   "value": "49.0pt"
+  }
+ },
+ "rows.settings": {
+  "dark": {
+   "args": [
+    75,
+    1300,
+    130,
+    1700
+   ],
+   "bands": [
+    [
+     1316,
+     1372
+    ],
+    [
+     1420,
+     1476
+    ],
+    [
+     1524,
+     1580
+    ],
+    [
+     1628,
+     1684
+    ]
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Derived",
+   "note": "Icon tiles down the last group (the pitch is the row height)",
+   "op": "lines",
+   "value": "52.0pt"
+  },
+  "light": {
+   "args": [
+    75,
+    1300,
+    130,
+    1700
+   ],
+   "bands": [
+    [
+     1316,
+     1372
+    ],
+    [
+     1420,
+     1476
+    ],
+    [
+     1524,
+     1580
+    ],
+    [
+     1628,
+     1684
+    ]
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Derived",
+   "note": "Icon tiles down the last group (the pitch is the row height)",
+   "op": "lines",
+   "value": "52.0pt"
+  }
+ },
+ "size.address": {
+  "dark": {
+   "args": [
+    "col",
+    230,
+    565,
+    690,
+    10
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "from": 577,
+   "note": "Address bar height: its rims down x = 230",
+   "op": "span",
+   "to": 674,
+   "value": "48.5pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    230,
+    565,
+    690,
+    10
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "from": 577,
+   "note": "Address bar height: its rims down x = 230",
+   "op": "span",
+   "to": 674,
+   "value": "48.5pt"
+  }
+ },
+ "size.button": {
+  "dark": {
+   "args": [
+    [
+     60,
+     365
+    ],
+    [
+     30,
+     300,
+     375,
+     130
+    ],
+    3
+   ],
+   "box": [
+    48,
+    327,
+    396,
+    405
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "colour": "#434343",
+   "evidence": "Sampled",
+   "note": "Downloads button",
+   "op": "bbox",
+   "value": "174.5x39.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     60,
+     365
+    ],
+    [
+     30,
+     300,
+     375,
+     130
+    ],
+    3
+   ],
+   "box": [
+    48,
+    327,
+    396,
+    405
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "colour": "#DDDDDD",
+   "evidence": "Sampled",
+   "note": "Downloads button",
+   "op": "bbox",
+   "value": "174.5x39.5pt"
+  }
+ },
+ "size.buttonRight": {
+  "dark": {
+   "args": [
+    [
+     440,
+     366
+    ],
+    [
+     405,
+     300,
+     387,
+     130
+    ],
+    3
+   ],
+   "box": [
+    415,
+    327,
+    763,
+    405
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "colour": "#444444",
+   "evidence": "Sampled",
+   "note": "Archive button, right of Downloads",
+   "op": "bbox",
+   "value": "174.5x39.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     440,
+     366
+    ],
+    [
+     405,
+     300,
+     387,
+     130
+    ],
+    3
+   ],
+   "box": [
+    415,
+    327,
+    763,
+    405
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "colour": "#DDDDDD",
+   "evidence": "Sampled",
+   "note": "Archive button, right of Downloads",
+   "op": "bbox",
+   "value": "174.5x39.5pt"
+  }
+ },
+ "size.close": {
+  "dark": {
+   "args": [
+    [
+     678,
+     1254
+    ],
+    [
+     650,
+     1200,
+     110,
+     110
+    ],
+    8
+   ],
+   "box": [
+    666,
+    1215,
+    748,
+    1298
+   ],
+   "capture": "screenshots/dark/10-app-icon-sheet.png",
+   "colour": "#4A4A4A",
+   "evidence": "Sampled",
+   "note": "Round close button (the light one is white glass on a white sheet)",
+   "op": "bbox",
+   "value": "41.5x42pt"
+  }
+ },
+ "size.confirm": {
+  "dark": {
+   "args": [
+    [
+     684,
+     266
+    ],
+    [
+     650,
+     200,
+     130,
+     130
+    ],
+    12
+   ],
+   "box": [
+    677,
+    225,
+    762,
+    307
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "colour": "#768AFF",
+   "evidence": "Sampled",
+   "note": "Confirm button",
+   "op": "bbox",
+   "value": "43x41.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     684,
+     266
+    ],
+    [
+     650,
+     200,
+     130,
+     130
+    ],
+    12
+   ],
+   "box": [
+    676,
+    225,
+    763,
+    306
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "colour": "#2D36F8",
+   "evidence": "Sampled",
+   "note": "Confirm button",
+   "op": "bbox",
+   "value": "44x41pt"
+  }
+ },
+ "size.edit": {
+  "dark": {
+   "args": [
+    [
+     60,
+     266
+    ],
+    [
+     30,
+     200,
+     180,
+     130
+    ],
+    6
+   ],
+   "box": [
+    48,
+    222,
+    171,
+    309
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "colour": "#3A3A3C",
+   "evidence": "Sampled",
+   "note": "Edit button",
+   "op": "bbox",
+   "value": "62x44pt"
+  }
+ },
+ "size.findClose": {
+  "dark": {
+   "args": [
+    "row",
+    1688,
+    30,
+    160,
+    10
+   ],
+   "capture": "screenshots/dark/15-find-bar-typed-match.png",
+   "evidence": "Derived",
+   "from": 49,
+   "note": "Close button of the find bar: its rims across the middle",
+   "op": "span",
+   "to": 147,
+   "value": "49pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    1688,
+    30,
+    160,
+    10
+   ],
+   "capture": "screenshots/light/15-find-bar-typed-match.png",
+   "evidence": "Derived",
+   "from": 48,
+   "note": "Close button of the find bar: its rims across the middle",
+   "op": "span",
+   "to": 148,
+   "value": "50pt"
+  }
+ },
+ "size.findField": {
+  "dark": {
+   "args": [
+    "col",
+    250,
+    1615,
+    1760,
+    10
+   ],
+   "capture": "screenshots/dark/15-find-bar-typed-match.png",
+   "evidence": "Derived",
+   "from": 1641,
+   "note": "Find field height: its rims down x = 250",
+   "op": "span",
+   "to": 1739,
+   "value": "49pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    250,
+    1615,
+    1760,
+    10
+   ],
+   "capture": "screenshots/light/15-find-bar-typed-match.png",
+   "evidence": "Derived",
+   "from": 1642,
+   "note": "Find field height: its rims down x = 250",
+   "op": "span",
+   "to": 1738,
+   "value": "48pt"
+  }
+ },
+ "size.group": {
+  "dark": {
+   "args": [
+    [
+     420,
+     1045
+    ],
+    [
+     30,
+     1000,
+     752,
+     230
+    ],
+    3
+   ],
+   "box": [
+    48,
+    1015,
+    763,
+    1221
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "colour": "#444444",
+   "evidence": "Sampled",
+   "note": "Search Engine and Languages group (two rows)",
+   "op": "bbox",
+   "value": "358x103.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     420,
+     1045
+    ],
+    [
+     30,
+     1000,
+     752,
+     230
+    ],
+    3
+   ],
+   "box": [
+    48,
+    1015,
+    763,
+    1221
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "colour": "#DDDDDD",
+   "evidence": "Sampled",
+   "note": "Search Engine and Languages group (two rows)",
+   "op": "bbox",
+   "value": "358x103.5pt"
+  }
+ },
+ "size.pill": {
+  "dark": {
+   "args": [
+    [
+     566,
+     1358
+    ],
+    [
+     540,
+     1310,
+     240,
+     100
+    ],
+    6
+   ],
+   "box": [
+    559,
+    1326,
+    759,
+    1386
+   ],
+   "capture": "screenshots/dark/02-search-typed-suggestions.png",
+   "colour": "#57524F",
+   "evidence": "Sampled",
+   "note": "Browse for Me button",
+   "op": "bbox",
+   "value": "100.5x30.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     566,
+     1358
+    ],
+    [
+     540,
+     1310,
+     240,
+     100
+    ],
+    6
+   ],
+   "box": [
+    558,
+    1326,
+    759,
+    1386
+   ],
+   "capture": "screenshots/light/02-search-typed-suggestions.png",
+   "colour": "#C2ACB1",
+   "evidence": "Sampled",
+   "note": "Browse for Me button",
+   "op": "bbox",
+   "value": "101x30.5pt"
+  }
+ },
+ "size.plus": {
+  "dark": {
+   "args": [
+    [
+     345,
+     1665
+    ],
+    [
+     300,
+     1610,
+     220,
+     120
+    ],
+    6
+   ],
+   "box": [
+    330,
+    1635,
+    481,
+    1715
+   ],
+   "capture": "screenshots/dark/03-page-bottom-toolbar.png",
+   "colour": "#57504A",
+   "evidence": "Sampled",
+   "note": "+ button",
+   "op": "bbox",
+   "value": "76x40.5pt"
+  }
+ },
+ "size.search": {
+  "dark": {
+   "args": [
+    [
+     250,
+     1215
+    ],
+    [
+     20,
+     1170,
+     772,
+     140
+    ],
+    6
+   ],
+   "box": [
+    48,
+    1192,
+    763,
+    1287
+   ],
+   "capture": "screenshots/dark/01-launch-search-focused-pinned.png",
+   "colour": "#4F4F4F",
+   "evidence": "Sampled",
+   "note": "Search field (the light one is too close to its sheet to bound)",
+   "op": "bbox",
+   "value": "358x48pt"
+  }
+ },
+ "size.searchBar": {
+  "dark": {
+   "args": [
+    [
+     300,
+     1660
+    ],
+    [
+     40,
+     1600,
+     600,
+     130
+    ],
+    6
+   ],
+   "box": [
+    72,
+    1612,
+    619,
+    1707
+   ],
+   "capture": "screenshots/dark/22-archive-search-typed.png",
+   "colour": "#3B3B3D",
+   "evidence": "Sampled",
+   "note": "Archive search field, typed",
+   "op": "bbox",
+   "value": "274x48pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     620,
+     1345
+    ],
+    [
+     590,
+     1300,
+     170,
+     100
+    ],
+    12
+   ],
+   "box": [
+    611,
+    1318,
+    734,
+    1371
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "colour": "#2ED158",
+   "evidence": "Sampled",
+   "note": "Switch track (thumb included where it is white over the track)",
+   "op": "bbox",
+   "value": "62x27pt"
+  },
+  "light": {
+   "args": [
+    [
+     620,
+     1345
+    ],
+    [
+     590,
+     1300,
+     170,
+     100
+    ],
+    12
+   ],
+   "box": [
+    611,
+    1318,
+    734,
+    1371
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "colour": "#37C759",
+   "evidence": "Sampled",
+   "note": "Switch track (thumb included where it is white over the track)",
+   "op": "bbox",
+   "value": "62x27pt"
+  }
+ },
+ "size.switchThumb": {
+  "dark": {
+   "args": [
+    [
+     690,
+     1345
+    ],
+    [
+     640,
+     1310,
+     120,
+     80
+    ],
+    12
+   ],
+   "box": [
+    659,
+    1322,
+    730,
+    1367
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Switch thumb (the light thumb's shadow joins the white sheet)",
+   "op": "bbox",
+   "value": "36x23pt"
+  }
+ },
+ "size.tile": {
+  "dark": {
+   "args": [
+    [
+     80,
+     1080
+    ],
+    [
+     60,
+     1020,
+     90,
+     95
+    ],
+    6
+   ],
+   "box": [
+    77,
+    1039,
+    130,
+    1093
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "colour": "#0053FF",
+   "evidence": "Sampled",
+   "note": "Search Engine icon tile",
+   "op": "bbox",
+   "value": "27x27.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     80,
+     1080
+    ],
+    [
+     60,
+     1020,
+     90,
+     95
+    ],
+    6
+   ],
+   "box": [
+    77,
+    1039,
+    130,
+    1093
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "colour": "#0253FF",
+   "evidence": "Sampled",
+   "note": "Search Engine icon tile",
+   "op": "bbox",
+   "value": "27x27.5pt"
+  }
+ },
+ "size.tileButton": {
+  "dark": {
+   "args": [
+    [
+     60,
+     730
+    ],
+    [
+     30,
+     690,
+     190,
+     190
+    ],
+    8
+   ],
+   "box": [
+    49,
+    705,
+    202,
+    859
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "colour": "#5B5453",
+   "evidence": "Sampled",
+   "note": "Find on Page square button",
+   "op": "bbox",
+   "value": "77x77.5pt"
+  }
+ },
+ "surface.address": {
+  "dark": {
+   "args": [
+    230,
+    600,
+    50,
+    20
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "Address bar in the page menu",
+   "op": "mean",
+   "value": "#7F6B5B"
+  },
+  "light": {
+   "args": [
+    230,
+    600,
+    50,
+    20
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "Address bar in the page menu",
+   "op": "mean",
+   "value": "#E1A8BA"
+  }
+ },
+ "surface.button": {
+  "dark": {
+   "args": [
+    350,
+    340,
+    50,
+    50
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Derived",
+   "note": "Downloads button, right of its label",
+   "op": "fill",
+   "share": 0.85,
+   "value": "#444444"
+  },
+  "light": {
+   "args": [
+    350,
+    340,
+    50,
+    50
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Derived",
+   "note": "Downloads button, right of its label",
+   "op": "fill",
+   "share": 0.87,
+   "value": "#DDDDDD"
+  }
+ },
+ "surface.card": {
+  "dark": {
+   "args": [
+    500,
+    445,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Sampled",
+   "note": "Archive list card, above its first row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2C2C2E"
+  },
+  "light": {
+   "args": [
+    500,
+    445,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Sampled",
+   "note": "Archive list card, above its first row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.close": {
+  "dark": {
+   "args": [
+    676,
+    1250,
+    6,
+    8
+   ],
+   "capture": "screenshots/dark/10-app-icon-sheet.png",
+   "evidence": "Sampled",
+   "note": "Round close button in the App Icon sheet, left of its x",
+   "op": "fill",
+   "share": 0.92,
+   "value": "#4A4A4A"
+  },
+  "light": {
+   "args": [
+    676,
+    1250,
+    6,
+    8
+   ],
+   "capture": "screenshots/light/10-app-icon-sheet.png",
+   "evidence": "Derived",
+   "note": "Round close button in the App Icon sheet, left of its x",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#F5F5F5"
+  }
+ },
+ "surface.edit": {
+  "dark": {
+   "args": [
+    58,
+    262,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Sampled",
+   "note": "Edit button, left of its label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3A3A3C"
+  },
+  "light": {
+   "args": [
+    58,
+    262,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Derived",
+   "note": "Edit button, left of its label",
+   "op": "fill",
+   "share": 0.32,
+   "value": "#F4F4F8"
+  }
+ },
+ "surface.findField": {
+  "dark": {
+   "args": [
+    180,
+    1650,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/15-find-bar-typed-match.png",
+   "evidence": "Derived",
+   "note": "Find field (glass)",
+   "op": "mean",
+   "value": "#63484C"
+  },
+  "light": {
+   "args": [
+    180,
+    1650,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/15-find-bar-typed-match.png",
+   "evidence": "Derived",
+   "note": "Find field (glass)",
+   "op": "mean",
+   "value": "#FDECF0"
+  }
+ },
+ "surface.group": {
+  "dark": {
+   "args": [
+    420,
+    1045,
+    120,
+    40
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Grouped list card (Search Engine row, between label and value)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#444444"
+  },
+  "light": {
+   "args": [
+    420,
+    1045,
+    120,
+    40
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Grouped list card (Search Engine row, between label and value)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DDDDDD"
+  }
+ },
+ "surface.iconSheet": {
+  "dark": {
+   "args": [
+    300,
+    1320,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/10-app-icon-sheet.png",
+   "evidence": "Sampled",
+   "note": "App Icon sheet over Settings",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2F2F2F"
+  },
+  "light": {
+   "args": [
+    300,
+    1320,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/10-app-icon-sheet.png",
+   "evidence": "Sampled",
+   "note": "App Icon sheet over Settings",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F5F5F5"
+  }
+ },
+ "surface.launcher": {
+  "dark": {
+   "args": [
+    400,
+    1310,
+    200,
+    14
+   ],
+   "capture": "screenshots/dark/01-launch-search-focused-pinned.png",
+   "evidence": "Derived",
+   "note": "Launcher sheet under the search field (glass over the page)",
+   "op": "mean",
+   "value": "#3D3938"
+  },
+  "light": {
+   "args": [
+    400,
+    1310,
+    200,
+    14
+   ],
+   "capture": "screenshots/light/01-launch-search-focused-pinned.png",
+   "evidence": "Derived",
+   "note": "Launcher sheet under the search field (glass over the page)",
+   "op": "mean",
+   "value": "#DDC5CA"
+  }
+ },
+ "surface.menu": {
+  "dark": {
+   "args": [
+    400,
+    1570,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "Page menu sheet between its last two panels (glass)",
+   "op": "mean",
+   "value": "#582D30"
+  },
+  "light": {
+   "args": [
+    400,
+    1570,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "Page menu sheet between its last two panels (glass)",
+   "op": "mean",
+   "value": "#F5D1D8"
+  }
+ },
+ "surface.menuGroup": {
+  "dark": {
+   "args": [
+    400,
+    1100,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "List panel (Translate row)",
+   "op": "mean",
+   "value": "#594547"
+  },
+  "light": {
+   "args": [
+    400,
+    1100,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "List panel (Translate row)",
+   "op": "mean",
+   "value": "#C5B7B1"
+  }
+ },
+ "surface.navButton": {
+  "dark": {
+   "args": [
+    636,
+    225,
+    10,
+    20
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Derived",
+   "note": "Done button left of its label (glass)",
+   "op": "mean",
+   "value": "#464648"
+  },
+  "light": {
+   "args": [
+    636,
+    225,
+    10,
+    20
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Derived",
+   "note": "Done button left of its label (glass)",
+   "op": "mean",
+   "value": "#F5F5F5"
+  }
+ },
+ "surface.notice": {
+  "dark": {
+   "args": [
+    600,
+    1610,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "Notice card at the bottom of the page menu",
+   "op": "mean",
+   "value": "#724D4C"
+  },
+  "light": {
+   "args": [
+    600,
+    1610,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "Notice card at the bottom of the page menu",
+   "op": "mean",
+   "value": "#DDC0C7"
+  }
+ },
+ "surface.pill": {
+  "dark": {
+   "args": [
+    565,
+    1355,
+    6,
+    8
+   ],
+   "capture": "screenshots/dark/02-search-typed-suggestions.png",
+   "evidence": "Derived",
+   "note": "Browse for Me button, left of its label",
+   "op": "fill",
+   "share": 0.81,
+   "value": "#57524F"
+  },
+  "light": {
+   "args": [
+    565,
+    1355,
+    6,
+    8
+   ],
+   "capture": "screenshots/light/02-search-typed-suggestions.png",
+   "evidence": "Derived",
+   "note": "Browse for Me button, left of its label",
+   "op": "fill",
+   "share": 0.88,
+   "value": "#C2ACB1"
+  }
+ },
+ "surface.plus": {
+  "dark": {
+   "args": [
+    345,
+    1660,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/03-page-bottom-toolbar.png",
+   "evidence": "Derived",
+   "note": "+ (new tab) button, left of its glyph",
+   "op": "mean",
+   "value": "#57504A"
+  },
+  "light": {
+   "args": [
+    345,
+    1660,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/03-page-bottom-toolbar.png",
+   "evidence": "Derived",
+   "note": "+ (new tab) button, left of its glyph",
+   "op": "mean",
+   "value": "#CACCD4"
+  }
+ },
+ "surface.popup": {
+  "dark": {
+   "args": [
+    420,
+    940,
+    80,
+    20
+   ],
+   "capture": "screenshots/dark/07-popup-menu-archive-tabs.png",
+   "evidence": "Derived",
+   "note": "Pop-up menu of Archive Inactive Tabs (glass), right of '12 hours'",
+   "op": "mean",
+   "value": "#535353"
+  },
+  "light": {
+   "args": [
+    420,
+    970,
+    80,
+    20
+   ],
+   "capture": "screenshots/light/07-popup-menu-archive-tabs.png",
+   "evidence": "Derived",
+   "note": "Pop-up menu of Archive Inactive Tabs (glass), right of '12 hours'",
+   "op": "mean",
+   "value": "#F4F4F4"
+  }
+ },
+ "surface.search": {
+  "dark": {
+   "args": [
+    250,
+    1212,
+    300,
+    12
+   ],
+   "capture": "screenshots/dark/01-launch-search-focused-pinned.png",
+   "evidence": "Derived",
+   "note": "Search field in the launcher (glass)",
+   "op": "mean",
+   "value": "#504F4F"
+  },
+  "light": {
+   "args": [
+    250,
+    1212,
+    300,
+    12
+   ],
+   "capture": "screenshots/light/01-launch-search-focused-pinned.png",
+   "evidence": "Derived",
+   "note": "Search field in the launcher (glass)",
+   "op": "mean",
+   "value": "#C7B7BB"
+  }
+ },
+ "surface.searchBar": {
+  "dark": {
+   "args": [
+    300,
+    1640,
+    150,
+    10
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Derived",
+   "note": "Search field at the bottom of the Archive (glass over the list)",
+   "op": "mean",
+   "value": "#515153"
+  },
+  "light": {
+   "args": [
+    300,
+    1640,
+    150,
+    10
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Derived",
+   "note": "Search field at the bottom of the Archive (glass over the list)",
+   "op": "mean",
+   "value": "#F6F6F6"
+  }
+ },
+ "surface.tileButton": {
+  "dark": {
+   "args": [
+    60,
+    720,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "Find on Page square button (glass)",
+   "op": "mean",
+   "value": "#5B5453"
+  },
+  "light": {
+   "args": [
+    60,
+    720,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "note": "Find on Page square button (glass)",
+   "op": "mean",
+   "value": "#CFAFBA"
+  }
+ },
+ "surface.toolbar": {
+  "dark": {
+   "args": [
+    500,
+    1730,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/03-page-bottom-toolbar.png",
+   "evidence": "Derived",
+   "note": "Bottom toolbar below the + button (glass over the page)",
+   "op": "mean",
+   "value": "#4C4031"
+  },
+  "light": {
+   "args": [
+    500,
+    1730,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/03-page-bottom-toolbar.png",
+   "evidence": "Derived",
+   "note": "Bottom toolbar below the + button (glass over the page)",
+   "op": "mean",
+   "value": "#D3D6E2"
+  }
+ },
+ "switch.onTrack": {
+  "dark": {
+   "args": [
+    615,
+    1330,
+    30,
+    30
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Auto-Open Keyboard switch, on: track left of the thumb",
+   "op": "fill",
+   "share": 0.94,
+   "value": "#2ED158"
+  },
+  "light": {
+   "args": [
+    615,
+    1330,
+    30,
+    30
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Auto-Open Keyboard switch, on: track left of the thumb",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#37C759"
+  }
+ },
+ "switch.thumb": {
+  "dark": {
+   "args": [
+    680,
+    1335,
+    30,
+    20
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb (on)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    680,
+    1335,
+    30,
+    20
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb (on)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "text.address": {
+  "dark": {
+   "args": [
+    300,
+    600,
+    200,
+    45
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "'m.youtube.com'",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    300,
+    600,
+    200,
+    45
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "'m.youtube.com'",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.button": {
+  "dark": {
+   "args": [
+    165,
+    345,
+    175,
+    45
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "'Downloads' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    165,
+    345,
+    175,
+    45
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "'Downloads' label",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.chevron": {
+  "dark": {
+   "args": [
+    700,
+    1050,
+    30,
+    36
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Disclosure chevron after 'Google'",
+   "op": "text",
+   "value": "#7B7B7B"
+  },
+  "light": {
+   "args": [
+    700,
+    1050,
+    30,
+    36
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Disclosure chevron after 'Google'",
+   "op": "text",
+   "value": "#A4A4A4"
+  }
+ },
+ "text.close": {
+  "dark": {
+   "args": [
+    690,
+    1240,
+    30,
+    32
+   ],
+   "capture": "screenshots/dark/10-app-icon-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "The x in the close button",
+   "op": "text",
+   "value": "#ACABB3"
+  },
+  "light": {
+   "args": [
+    690,
+    1240,
+    30,
+    32
+   ],
+   "capture": "screenshots/light/10-app-icon-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "The x in the close button",
+   "op": "text",
+   "value": "#86868A"
+  }
+ },
+ "text.completion": {
+  "dark": {
+   "args": [
+    225,
+    1440,
+    210,
+    42
+   ],
+   "capture": "screenshots/dark/02-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "The completed part of a suggestion ('ation meaning')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    225,
+    1440,
+    210,
+    42
+   ],
+   "capture": "screenshots/light/02-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "The completed part of a suggestion ('ation meaning')",
+   "op": "text",
+   "value": "#151112"
+  }
+ },
+ "text.destructive": {
+  "dark": {
+   "args": [
+    170,
+    1305,
+    260,
+    45
+   ],
+   "capture": "screenshots/dark/19-longpress-favorite-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "'Remove Favorite' in the long-press menu",
+   "op": "text",
+   "value": "#FB7174"
+  },
+  "light": {
+   "args": [
+    170,
+    1305,
+    260,
+    45
+   ],
+   "capture": "screenshots/light/19-longpress-favorite-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "'Remove Favorite' in the long-press menu",
+   "op": "text",
+   "value": "#EF2A30"
+  }
+ },
+ "text.destructiveEdit": {
+  "dark": {
+   "args": [
+    150,
+    262,
+    135,
+    40
+   ],
+   "capture": "screenshots/dark/21-edit-menu-destructive-item.png",
+   "evidence": "Sampled (text)",
+   "note": "'Clear All' in the Archive Edit menu",
+   "op": "text",
+   "value": "#FF676B"
+  },
+  "light": {
+   "args": [
+    150,
+    262,
+    135,
+    40
+   ],
+   "capture": "screenshots/light/21-edit-menu-destructive-item.png",
+   "evidence": "Sampled (text)",
+   "note": "'Clear All' in the Archive Edit menu",
+   "op": "text",
+   "value": "#FB3339"
+  }
+ },
+ "text.findCount": {
+  "dark": {
+   "args": [
+    425,
+    1665,
+    85,
+    40
+   ],
+   "capture": "screenshots/dark/15-find-bar-typed-match.png",
+   "evidence": "Sampled (text)",
+   "note": "Match count '1 of 2'",
+   "op": "text",
+   "value": "#C5A4AC"
+  },
+  "light": {
+   "args": [
+    425,
+    1665,
+    85,
+    40
+   ],
+   "capture": "screenshots/light/15-find-bar-typed-match.png",
+   "evidence": "Sampled (text)",
+   "note": "Match count '1 of 2'",
+   "op": "text",
+   "value": "#93797F"
+  }
+ },
+ "text.findQuery": {
+  "dark": {
+   "args": [
+    285,
+    1660,
+    80,
+    45
+   ],
+   "capture": "screenshots/dark/15-find-bar-typed-match.png",
+   "evidence": "Sampled (text)",
+   "note": "Query 'food' (dark) or 'asmr' (light)",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    285,
+    1660,
+    80,
+    45
+   ],
+   "capture": "screenshots/light/15-find-bar-typed-match.png",
+   "evidence": "Sampled (text)",
+   "note": "Query 'food' (dark) or 'asmr' (light)",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.helper": {
+  "dark": {
+   "args": [
+    76,
+    320,
+    560,
+    75
+   ],
+   "capture": "screenshots/dark/09-site-settings-switches.png",
+   "evidence": "Sampled (text)",
+   "note": "Helper text over the Default Site Settings groups",
+   "op": "text",
+   "value": "#9F9FA6"
+  },
+  "light": {
+   "args": [
+    76,
+    320,
+    560,
+    75
+   ],
+   "capture": "screenshots/light/09-site-settings-switches.png",
+   "evidence": "Sampled (text)",
+   "note": "Helper text over the Default Site Settings groups",
+   "op": "text",
+   "value": "#858587"
+  }
+ },
+ "text.launcherRow": {
+  "dark": {
+   "args": [
+    112,
+    1350,
+    140,
+    50
+   ],
+   "capture": "screenshots/dark/01-launch-search-focused-pinned.png",
+   "evidence": "Sampled (text)",
+   "note": "Launcher row 'RedeemSG'",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    112,
+    1350,
+    140,
+    50
+   ],
+   "capture": "screenshots/light/01-launch-search-focused-pinned.png",
+   "evidence": "Sampled (text)",
+   "note": "Launcher row 'RedeemSG'",
+   "op": "text",
+   "value": "#161213"
+  }
+ },
+ "text.menuRow": {
+  "dark": {
+   "args": [
+    150,
+    1065,
+    140,
+    40
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "Menu row 'Translate'",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    150,
+    1065,
+    140,
+    40
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "Menu row 'Translate'",
+   "op": "text",
+   "value": "#312C2D"
+  }
+ },
+ "text.navButton": {
+  "dark": {
+   "args": [
+    648,
+    225,
+    85,
+    45
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "'Done' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    648,
+    225,
+    85,
+    45
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "'Done' label",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.navTitle": {
+  "dark": {
+   "args": [
+    338,
+    225,
+    140,
+    45
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Nav title 'Settings'",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    338,
+    225,
+    140,
+    45
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Nav title 'Settings'",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.notice": {
+  "dark": {
+   "args": [
+    85,
+    1605,
+    450,
+    35
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "'Arc scrubbed 5 ads and trackers'",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    85,
+    1605,
+    450,
+    35
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "'Arc scrubbed 5 ads and trackers'",
+   "op": "text",
+   "value": "#392E31"
+  }
+ },
+ "text.noticeSub": {
+  "dark": {
+   "args": [
+    85,
+    1645,
+    450,
+    35
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "'Problems? Tap to restore original page'",
+   "op": "text",
+   "value": "#B6ABB1"
+  },
+  "light": {
+   "args": [
+    85,
+    1645,
+    450,
+    35
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "'Problems? Tap to restore original page'",
+   "op": "text",
+   "value": "#7E6E75"
+  }
+ },
+ "text.onAccent": {
+  "dark": {
+   "args": [
+    700,
+    245,
+    45,
+    45,
+    "light"
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick on the confirm button",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    700,
+    245,
+    45,
+    45,
+    "light"
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick on the confirm button",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.pill": {
+  "dark": {
+   "args": [
+    575,
+    1342,
+    170,
+    36
+   ],
+   "capture": "screenshots/dark/02-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "'Browse for Me' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    575,
+    1342,
+    170,
+    36
+   ],
+   "capture": "screenshots/light/02-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "'Browse for Me' label",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.pin": {
+  "dark": {
+   "args": [
+    690,
+    1352,
+    30,
+    40
+   ],
+   "capture": "screenshots/dark/01-launch-search-focused-pinned.png",
+   "evidence": "Sampled (text)",
+   "note": "Pin glyph at the end of a pinned row",
+   "op": "text",
+   "value": "#716C6B"
+  },
+  "light": {
+   "args": [
+    690,
+    1352,
+    30,
+    40
+   ],
+   "capture": "screenshots/light/01-launch-search-focused-pinned.png",
+   "evidence": "Sampled (text)",
+   "note": "Pin glyph at the end of a pinned row",
+   "op": "text",
+   "value": "#A9989E"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    100,
+    1222,
+    90,
+    45
+   ],
+   "capture": "screenshots/dark/01-launch-search-focused-pinned.png",
+   "evidence": "Sampled (text)",
+   "note": "'Search...' placeholder, right of the caret",
+   "op": "text",
+   "value": "#AEADB5"
+  },
+  "light": {
+   "args": [
+    100,
+    1222,
+    90,
+    45
+   ],
+   "capture": "screenshots/light/01-launch-search-focused-pinned.png",
+   "evidence": "Sampled (text)",
+   "note": "'Search...' placeholder, right of the caret",
+   "op": "text",
+   "value": "#727086"
+  }
+ },
+ "text.plus": {
+  "dark": {
+   "args": [
+    380,
+    1650,
+    50,
+    50
+   ],
+   "capture": "screenshots/dark/03-page-bottom-toolbar.png",
+   "evidence": "Sampled (text)",
+   "note": "The + glyph",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    380,
+    1650,
+    50,
+    50
+   ],
+   "capture": "screenshots/light/03-page-bottom-toolbar.png",
+   "evidence": "Sampled (text)",
+   "note": "The + glyph",
+   "op": "text",
+   "value": "#303131"
+  }
+ },
+ "text.popupItem": {
+  "dark": {
+   "args": [
+    238,
+    925,
+    135,
+    45
+   ],
+   "capture": "screenshots/dark/07-popup-menu-archive-tabs.png",
+   "evidence": "Sampled (text)",
+   "note": "Pop-up menu item '12 hours'",
+   "op": "text",
+   "value": "#F9F9F9"
+  },
+  "light": {
+   "args": [
+    238,
+    955,
+    135,
+    45
+   ],
+   "capture": "screenshots/light/07-popup-menu-archive-tabs.png",
+   "evidence": "Sampled (text)",
+   "note": "Pop-up menu item '12 hours'",
+   "op": "text",
+   "value": "#080808"
+  }
+ },
+ "text.row": {
+  "dark": {
+   "args": [
+    160,
+    1048,
+    210,
+    42
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Row label 'Search Engine'",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    160,
+    1048,
+    210,
+    42
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Row label 'Search Engine'",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.rowTitle": {
+  "dark": {
+   "args": [
+    140,
+    455,
+    300,
+    35
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Sampled (text)",
+   "note": "History row title",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    140,
+    455,
+    300,
+    35
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Sampled (text)",
+   "note": "History row title",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.rowUrl": {
+  "dark": {
+   "args": [
+    140,
+    495,
+    300,
+    25
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Sampled (text)",
+   "note": "History row URL",
+   "op": "text",
+   "value": "#A4A4A8"
+  },
+  "light": {
+   "args": [
+    140,
+    495,
+    300,
+    25
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Sampled (text)",
+   "note": "History row URL",
+   "op": "text",
+   "value": "#858585"
+  }
+ },
+ "text.searchIcon": {
+  "dark": {
+   "args": [
+    60,
+    1340,
+    40,
+    40
+   ],
+   "capture": "screenshots/dark/02-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "Magnifier before a suggestion",
+   "op": "text",
+   "value": "#D9D7D8"
+  },
+  "light": {
+   "args": [
+    60,
+    1340,
+    40,
+    40
+   ],
+   "capture": "screenshots/light/02-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "Magnifier before a suggestion",
+   "op": "text",
+   "value": "#2C282B"
+  }
+ },
+ "text.section": {
+  "dark": {
+   "args": [
+    90,
+    390,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Section header 'Today' (light: 'Yesterday')",
+   "op": "text",
+   "value": "#98989F"
+  },
+  "light": {
+   "args": [
+    90,
+    390,
+    100,
+    40
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Section header 'Today' (light: 'Yesterday')",
+   "op": "text",
+   "value": "#84838B"
+  }
+ },
+ "text.spaceTitle": {
+  "dark": {
+   "args": [
+    60,
+    230,
+    100,
+    50
+   ],
+   "capture": "screenshots/dark/17-space-sheet-gradient.png",
+   "evidence": "Sampled (text)",
+   "note": "Space name 'Main'",
+   "op": "text",
+   "value": "#FBE1FC"
+  },
+  "light": {
+   "args": [
+    60,
+    230,
+    100,
+    50
+   ],
+   "capture": "screenshots/light/17-space-sheet-gradient.png",
+   "evidence": "Sampled (text)",
+   "note": "Space name 'Main'",
+   "op": "text",
+   "value": "#613C61"
+  }
+ },
+ "text.subtitle": {
+  "dark": {
+   "args": [
+    155,
+    1650,
+    300,
+    28
+   ],
+   "capture": "screenshots/dark/06-settings-scrolled-header-blur.png",
+   "evidence": "Sampled (text)",
+   "note": "Second line of Export Data ('Share your open tab URLs')",
+   "op": "text",
+   "value": "#A7A7A7"
+  },
+  "light": {
+   "args": [
+    155,
+    1685,
+    300,
+    28
+   ],
+   "capture": "screenshots/light/06-settings-scrolled-header-blur.png",
+   "evidence": "Sampled (text)",
+   "note": "Second line of Export Data ('Share your open tab URLs')",
+   "op": "text",
+   "value": "#7A7A7A"
+  }
+ },
+ "text.suggestion": {
+  "dark": {
+   "args": [
+    110,
+    1338,
+    115,
+    42
+   ],
+   "capture": "screenshots/dark/02-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "Suggestion 'design' (the typed text)",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    110,
+    1338,
+    115,
+    42
+   ],
+   "capture": "screenshots/light/02-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "Suggestion 'design' (the typed text)",
+   "op": "text",
+   "value": "#131313"
+  }
+ },
+ "text.tileLabel": {
+  "dark": {
+   "args": [
+    40,
+    875,
+    170,
+    30
+   ],
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "'Find on Page' label under its button",
+   "op": "text",
+   "value": "#FEFEFF"
+  },
+  "light": {
+   "args": [
+    40,
+    875,
+    170,
+    30
+   ],
+   "capture": "screenshots/light/12-page-menu-address-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "'Find on Page' label under its button",
+   "op": "text",
+   "value": "#7B7173"
+  }
+ },
+ "text.title": {
+  "dark": {
+   "args": [
+    345,
+    245,
+    125,
+    45
+   ],
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Page title 'Archive'",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    345,
+    245,
+    125,
+    45
+   ],
+   "capture": "screenshots/light/20-archive-history-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Page title 'Archive'",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.typedPrefix": {
+  "dark": {
+   "args": [
+    110,
+    1440,
+    105,
+    42
+   ],
+   "capture": "screenshots/dark/02-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "The typed part of a later suggestion ('desig' of 'designation meaning')",
+   "op": "text",
+   "value": "#ACA7A5"
+  },
+  "light": {
+   "args": [
+    110,
+    1440,
+    105,
+    42
+   ],
+   "capture": "screenshots/light/02-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "The typed part of a later suggestion ('desig' of 'designation meaning')",
+   "op": "text",
+   "value": "#5D5356"
+  }
+ },
+ "text.value": {
+  "dark": {
+   "args": [
+    575,
+    1048,
+    115,
+    42
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Row value 'Google'",
+   "op": "text",
+   "value": "#AAAAAA"
+  },
+  "light": {
+   "args": [
+    575,
+    1048,
+    115,
+    42
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Row value 'Google'",
+   "op": "text",
+   "value": "#7A7A7A"
+  }
+ },
+ "tile.blue": {
+  "dark": {
+   "args": [
+    79,
+    1080,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Icon tile of Search Engine",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#0053FF"
+  },
+  "light": {
+   "args": [
+    79,
+    1080,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Icon tile of Search Engine",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#0053FF"
+  }
+ },
+ "tile.green": {
+  "dark": {
+   "args": [
+    82,
+    1146,
+    6,
+    5
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Icon tile of Languages",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#0AAF00"
+  },
+  "light": {
+   "args": [
+    82,
+    1146,
+    6,
+    5
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Icon tile of Languages",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0AAF00"
+  }
+ },
+ "tile.purple": {
+  "dark": {
+   "args": [
+    82,
+    1426,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Icon tile of Archive Inactive Tabs",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#CC49FF"
+  },
+  "light": {
+   "args": [
+    82,
+    1426,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Icon tile of Archive Inactive Tabs",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#CC49FF"
+  }
+ },
+ "tile.red": {
+  "dark": {
+   "args": [
+    79,
+    1634,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Icon tile of Clear Browsing Data",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#FF2C52"
+  },
+  "light": {
+   "args": [
+    79,
+    1634,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Icon tile of Clear Browsing Data",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FF2C52"
+  }
+ },
+ "tile.yellow": {
+  "dark": {
+   "args": [
+    82,
+    1321,
+    6,
+    5
+   ],
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Icon tile of Auto-Open Keyboard",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFC30A"
+  },
+  "light": {
+   "args": [
+    82,
+    1321,
+    6,
+    5
+   ],
+   "capture": "screenshots/light/05-settings-sheet.png",
+   "evidence": "Sampled",
+   "note": "Icon tile of Auto-Open Keyboard",
+   "op": "fill",
+   "share": 0.93,
+   "value": "#FFC30A"
+  }
+ },
+ "type.button": {
+  "dark": {
+   "args": [
+    165,
+    345,
+    192,
+    390
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'D' of 'Downloads'",
+   "op": "cap",
+   "top": 354,
+   "value": "17pt"
+  }
+ },
+ "type.destructive": {
+  "dark": {
+   "args": [
+    170,
+    1305,
+    192,
+    1350
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/19-longpress-favorite-menu.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'R' of 'Remove Favorite'",
+   "op": "cap",
+   "top": 1312,
+   "value": "17pt"
+  }
+ },
+ "type.helper": {
+  "dark": {
+   "args": [
+    76,
+    320,
+    96,
+    360
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/09-site-settings-switches.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'S' of 'Settings will apply'",
+   "op": "cap",
+   "top": 334,
+   "value": "17pt"
+  }
+ },
+ "type.launcherRow": {
+  "dark": {
+   "args": [
+    112,
+    1345,
+    134,
+    1400
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/01-launch-search-focused-pinned.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'R' of 'RedeemSG'",
+   "op": "cap",
+   "top": 1345,
+   "value": "16pt"
+  }
+ },
+ "type.menuRow": {
+  "dark": {
+   "args": [
+    150,
+    1065,
+    172,
+    1105
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'T' of 'Translate'",
+   "op": "cap",
+   "top": 1071,
+   "value": "16pt"
+  }
+ },
+ "type.navButton": {
+  "dark": {
+   "args": [
+    648,
+    225,
+    672,
+    270
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'D' of 'Done'",
+   "op": "cap",
+   "top": 234,
+   "value": "17pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    338,
+    225,
+    362,
+    270
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'S' of the nav title 'Settings'",
+   "op": "cap",
+   "top": 234,
+   "value": "17pt"
+  }
+ },
+ "type.notice": {
+  "dark": {
+   "args": [
+    85,
+    1605,
+    108,
+    1640
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'A' of 'Arc scrubbed'",
+   "op": "cap",
+   "top": 1611,
+   "value": "14pt"
+  }
+ },
+ "type.noticeSub": {
+  "dark": {
+   "args": [
+    85,
+    1645,
+    103,
+    1680
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'P' of 'Problems?'",
+   "op": "cap",
+   "top": 1651,
+   "value": "12pt"
+  }
+ },
+ "type.pill": {
+  "dark": {
+   "args": [
+    575,
+    1342,
+    590,
+    1378
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/02-search-typed-suggestions.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'B' of 'Browse for Me'",
+   "op": "cap",
+   "top": 1347,
+   "value": "12pt"
+  }
+ },
+ "type.row": {
+  "dark": {
+   "args": [
+    160,
+    1048,
+    180,
+    1090
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/05-settings-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'S' of 'Search Engine'",
+   "op": "cap",
+   "top": 1054,
+   "value": "17pt"
+  }
+ },
+ "type.rowTitle": {
+  "dark": {
+   "args": [
+    140,
+    455,
+    162,
+    492
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'A' of 'Asking'",
+   "op": "cap",
+   "top": 461,
+   "value": "16pt"
+  }
+ },
+ "type.search": {
+  "dark": {
+   "args": [
+    98,
+    1218,
+    122,
+    1268
+   ],
+   "capHeight": "14.5pt",
+   "capture": "screenshots/dark/01-launch-search-focused-pinned.png",
+   "evidence": "Derived",
+   "inkPx": 30,
+   "note": "'S' of 'Search...'",
+   "op": "cap",
+   "top": 1225,
+   "value": "20pt"
+  }
+ },
+ "type.section": {
+  "dark": {
+   "args": [
+    90,
+    390,
+    110,
+    430
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'T' of 'Today'",
+   "op": "cap",
+   "top": 396,
+   "value": "16pt"
+  }
+ },
+ "type.sheetTitle": {
+  "dark": {
+   "args": [
+    335,
+    1235,
+    360,
+    1280
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/10-app-icon-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'A' of 'App Icon'",
+   "op": "cap",
+   "top": 1246,
+   "value": "16pt"
+  }
+ },
+ "type.spaceTitle": {
+  "dark": {
+   "args": [
+    60,
+    230,
+    92,
+    280
+   ],
+   "capHeight": "17pt",
+   "capture": "screenshots/dark/17-space-sheet-gradient.png",
+   "evidence": "Derived",
+   "inkPx": 35,
+   "note": "'M' of the space name 'Main'",
+   "op": "cap",
+   "top": 233,
+   "value": "24pt"
+  }
+ },
+ "type.subtitle": {
+  "dark": {
+   "args": [
+    155,
+    1646,
+    168,
+    1676
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/06-settings-scrolled-header-blur.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'S' of 'Share your open tab URLs'",
+   "op": "cap",
+   "top": 1654,
+   "value": "12pt"
+  }
+ },
+ "type.tileLabel": {
+  "dark": {
+   "args": [
+    55,
+    875,
+    70,
+    905
+   ],
+   "capHeight": "8pt",
+   "capture": "screenshots/dark/12-page-menu-address-actions.png",
+   "evidence": "Derived",
+   "inkPx": 17,
+   "note": "'F' of 'Find on Page'",
+   "op": "cap",
+   "top": 882,
+   "value": "11pt"
+  }
+ },
+ "type.title": {
+  "dark": {
+   "args": [
+    345,
+    245,
+    372,
+    290
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/20-archive-history-list.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of the page title 'Archive'",
+   "op": "cap",
+   "top": 254,
+   "value": "17pt"
+  }
+ }
+}
