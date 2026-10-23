@@ -871,6 +871,70 @@
       "layoutGaps": {
         "icons/": "Grok Bot's icons and bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "claude-ios",
+      "name": "Claude for iOS",
+      "url": "https://claude.ai/download",
+      "category": "ai-chat",
+      "platform": "mobile",
+      "goodFor": "Native iOS AI chat: serif replies on the page with no bubble, a grey user bubble, a slide-over sidebar instead of a tab bar, iOS 26 glass controls, bottom sheets of grouped cards, one inverse pill for the main action, blue for interactive state and orange only for the brand and send",
+      "tags": [
+        "ios",
+        "mobile",
+        "ai",
+        "chat",
+        "glass",
+        "serif-accent",
+        "warm-neutral",
+        "sidebar",
+        "grouped-list",
+        "sheets"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-24",
+      "access": "signed in, Max plan, iPhone Mirroring (dark 2026-10-23, light 2026-10-24)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/claude-ios/README.md",
+      "tokens": "systems/claude-ios/tokens.json",
+      "styleGuide": "systems/claude-ios/style-guide.html",
+      "preview": {
+        "cover": "systems/claude-ios/screenshots/dark/07-chat-thread-user-bubble-response-actions.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.surface.card",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.tertiary",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.divider"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.surface.card",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.tertiary",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.serif"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/claude-ios/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Claude's icons and the spark are Anthropic's artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }
