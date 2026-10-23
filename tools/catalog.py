@@ -1021,12 +1021,14 @@ def check() -> list[str]:
         for field in ("entry", "tokens", "styleGuide"):
             if field in s and not (ROOT / s[field]).exists():
                 problems.append(f"{slug}: {field} {s[field]} does not exist")
-        extras = s.get("extras") or []
+        extras = s.get("extras", [])
         if not isinstance(extras, list):
             problems.append(f"{slug}: extras must be a list of paths")
         else:
             for path in extras:
-                if not (ROOT / path).exists():
+                if not isinstance(path, str):
+                    problems.append(f"{slug}: extras path {path!r} is not a string")
+                elif not (ROOT / path).exists():
                     problems.append(f"{slug}: extras path {path} does not exist")
         problems += layout_problems(s)
         if "preview" not in s or "tokens" not in s:

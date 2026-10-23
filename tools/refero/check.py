@@ -101,20 +101,24 @@ def check(refero: Path) -> list[str]:
     cat_path = refero / "catalog.json"
     try:
         cat = json.loads(cat_path.read_text())
-        styles = cat.get("styles")
-        if not isinstance(styles, list):
+    except (OSError, json.JSONDecodeError) as e:
+        problems.append(f"refero/catalog.json does not parse: {e}")
+        cat = None
+    if cat is not None:
+        if not isinstance(cat, dict) or not isinstance(cat.get("styles"), list):
             problems.append("refero/catalog.json: styles is not a list")
         else:
-            for entry in styles:
+            for entry in cat["styles"]:
+                if not isinstance(entry, dict):
+                    problems.append("refero/catalog.json: a styles entry is not an object")
+                    continue
                 slug = entry.get("slug")
                 if slug in catalog:
                     problems.append(f"refero/catalog.json: slug {slug} appears twice")
                 catalog[slug] = entry
-            if cat.get("count") != len(styles):
+            if cat.get("count") != len(cat["styles"]):
                 problems.append(f"refero/catalog.json: count {cat.get('count')} "
-                                f"!= {len(styles)} styles")
-    except (OSError, json.JSONDecodeError) as e:
-        problems.append(f"refero/catalog.json does not parse: {e}")
+                                f"!= {len(cat['styles'])} styles")
 
     # ---- refero.db: slugs/uuids unique, fetch_errors empty. None when the db
     # cannot be opened; the db-pair checks below are skipped then.
@@ -168,6 +172,15 @@ def check(refero: Path) -> list[str]:
                 if norm(field, entry.get(field)) != norm(field, row.get(field)):
                     problems.append(f"refero/catalog.json: {slug} {field} "
                                     f"does not match the styles row")
+    else:
+        # Without the db, meta.json is the row's stand-in: the catalog fields
+        # it shares with meta.json are still compared.
+        for slug in sorted(set(metas) & set(catalog)):
+            meta, entry = metas[slug], catalog[slug]
+            for field in CATALOG_FIELDS:
+                if norm(field, entry.get(field)) != norm(field, meta.get(field)):
+                    problems.append(f"refero/catalog.json: {slug} {field} "
+                                    f"does not match meta.json")
 
     # ---- refero/README.md's stated style count stays honest
     readme = refero / "README.md"
