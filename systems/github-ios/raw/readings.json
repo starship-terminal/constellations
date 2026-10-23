@@ -1,0 +1,4149 @@
+{
+ "accent.branch": {
+  "dark": {
+   "args": [
+    300,
+    1118,
+    30,
+    6
+   ],
+   "capture": "screenshots/dark/05-explore-activity-card-merged-badge-code.png",
+   "evidence": "Sampled",
+   "note": "Branch-name pill ('main')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#121D2E"
+  },
+  "light": {
+   "args": [
+    300,
+    1118,
+    30,
+    6
+   ],
+   "capture": "screenshots/light/05-explore-activity-card-merged-badge-code.png",
+   "evidence": "Sampled",
+   "note": "Branch-name pill ('main')",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#DEF4FE"
+  }
+ },
+ "accent.caret": {
+  "dark": {
+   "args": [
+    135,
+    202,
+    1,
+    26
+   ],
+   "capture": "screenshots/dark/07-search-focused-empty-qualifier-chips.png",
+   "evidence": "Derived",
+   "note": "Text caret, one pixel column",
+   "op": "fill",
+   "share": 0.19,
+   "value": "#5BABFF"
+  }
+ },
+ "accent.emphasis": {
+  "dark": {
+   "args": [
+    608,
+    812,
+    22,
+    22
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch on",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#4393F9"
+  },
+  "light": {
+   "args": [
+    608,
+    812,
+    22,
+    22
+   ],
+   "capture": "screenshots/light/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch on",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0A69DC"
+  }
+ },
+ "accent.fg": {
+  "dark": {
+   "args": [
+    66,
+    1033,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Derived",
+   "note": "Unread dot",
+   "op": "fill",
+   "share": 0.84,
+   "value": "#4393F9"
+  },
+  "light": {
+   "args": [
+    66,
+    1033,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Derived",
+   "note": "Unread dot",
+   "op": "fill",
+   "share": 0.68,
+   "value": "#0A69DC"
+  }
+ },
+ "accent.subtle": {
+  "dark": {
+   "args": [
+    588,
+    860,
+    150,
+    8
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled",
+   "note": "Configure button fill, under its label",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#121D2E"
+  },
+  "light": {
+   "args": [
+    588,
+    860,
+    150,
+    8
+   ],
+   "capture": "screenshots/light/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Derived",
+   "note": "Configure button fill, under its label",
+   "op": "fill",
+   "share": 0.89,
+   "value": "#DEF4FE"
+  }
+ },
+ "accent.text": {
+  "dark": {
+   "args": [
+    600,
+    822,
+    142,
+    38
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Configure label",
+   "op": "text",
+   "value": "#4694FA"
+  },
+  "light": {
+   "args": [
+    600,
+    822,
+    142,
+    38
+   ],
+   "capture": "screenshots/light/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Configure label",
+   "op": "text",
+   "value": "#0169DA"
+  }
+ },
+ "attention.subtle": {
+  "dark": {
+   "args": [
+    100,
+    316,
+    40,
+    12
+   ],
+   "capture": "screenshots/dark/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Sampled",
+   "note": "Archived banner",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3A2301"
+  },
+  "light": {
+   "args": [
+    100,
+    316,
+    40,
+    12
+   ],
+   "capture": "screenshots/light/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Sampled",
+   "note": "Archived banner",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FAE17D"
+  }
+ },
+ "bg.groupedSystem": {
+  "dark": {
+   "args": [
+    300,
+    280,
+    200,
+    30
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Code Options page background (a system grouped table)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    300,
+    280,
+    200,
+    30
+   ],
+   "capture": "screenshots/light/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Code Options page background (a system grouped table)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F2F6"
+  }
+ },
+ "bg.list": {
+  "dark": {
+   "args": [
+    300,
+    870,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled",
+   "note": "Full-bleed list page (Inbox, Issues, Pull Requests, repository, issue and PR pages)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0D1117"
+  },
+  "light": {
+   "args": [
+    300,
+    870,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled",
+   "note": "Full-bleed list page (Inbox, Issues, Pull Requests, repository, issue and PR pages)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "bg.page": {
+  "dark": {
+   "args": [
+    300,
+    1170,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Page behind grouped cards (Home, Explore, Settings, Appearance)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#01040A"
+  },
+  "light": {
+   "args": [
+    300,
+    1170,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Page behind grouped cards (Home, Explore, Settings, Appearance)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F6F8FA"
+  }
+ },
+ "bg.sheet": {
+  "dark": {
+   "args": [
+    300,
+    1400,
+    200,
+    40
+   ],
+   "capture": "screenshots/dark/04-inbox-filters-sheet-checked.png",
+   "evidence": "Sampled",
+   "note": "Inbox Filters sheet background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#01040A"
+  }
+ },
+ "border.divider": {
+  "dark": {
+   "args": [
+    300,
+    483,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Divider between card rows (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2D3137"
+  },
+  "light": {
+   "args": [
+    300,
+    483,
+    300,
+    1
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Divider between card rows (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E9E9E9"
+  }
+ },
+ "border.section": {
+  "dark": {
+   "args": [
+    300,
+    942,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled",
+   "note": "Full-width separator between list sections",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#282C33"
+  },
+  "light": {
+   "args": [
+    300,
+    942,
+    300,
+    1
+   ],
+   "capture": "screenshots/light/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled",
+   "note": "Full-width separator between list sections",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#ECECEC"
+  }
+ },
+ "diff.addition": {
+  "dark": {
+   "args": [
+    400,
+    888,
+    40,
+    12
+   ],
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Added line",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0E2F19"
+  },
+  "light": {
+   "args": [
+    400,
+    888,
+    40,
+    12
+   ],
+   "capture": "screenshots/light/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Added line",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#D9FCE0"
+  }
+ },
+ "diff.additionGutter": {
+  "dark": {
+   "args": [
+    22,
+    888,
+    22,
+    12
+   ],
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Added line's gutter",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1F5727"
+  },
+  "light": {
+   "args": [
+    22,
+    888,
+    22,
+    12
+   ],
+   "capture": "screenshots/light/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Added line's gutter",
+   "op": "fill",
+   "share": 0.94,
+   "value": "#ACEEBB"
+  }
+ },
+ "diff.deletion": {
+  "dark": {
+   "args": [
+    140,
+    598,
+    30,
+    8
+   ],
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Deleted line",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#311416"
+  },
+  "light": {
+   "args": [
+    140,
+    598,
+    30,
+    8
+   ],
+   "capture": "screenshots/light/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Deleted line",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFEBE8"
+  }
+ },
+ "diff.deletionGutter": {
+  "dark": {
+   "args": [
+    22,
+    598,
+    22,
+    12
+   ],
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Deleted line's gutter",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#6D2625"
+  },
+  "light": {
+   "args": [
+    22,
+    598,
+    22,
+    12
+   ],
+   "capture": "screenshots/light/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Deleted line's gutter",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFCECC"
+  }
+ },
+ "diff.hunk": {
+  "dark": {
+   "args": [
+    300,
+    385,
+    40,
+    6
+   ],
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Hunk header row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#061323"
+  },
+  "light": {
+   "args": [
+    300,
+    385,
+    40,
+    6
+   ],
+   "capture": "screenshots/light/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Hunk header row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DEF4FE"
+  }
+ },
+ "done.button": {
+  "dark": {
+   "args": [
+    338,
+    690,
+    12,
+    25
+   ],
+   "capture": "screenshots/dark/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled",
+   "note": "'Email me a download link' button",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#8857E6"
+  },
+  "light": {
+   "args": [
+    338,
+    690,
+    12,
+    25
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled",
+   "note": "'Email me a download link' button",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#8251E0"
+  }
+ },
+ "done.emphasis": {
+  "dark": {
+   "args": [
+    238,
+    1130,
+    8,
+    18
+   ],
+   "capture": "screenshots/dark/05-explore-activity-card-merged-badge-code.png",
+   "evidence": "Sampled",
+   "note": "'Merged' state badge, right of its label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#AC7DF8"
+  },
+  "light": {
+   "args": [
+    238,
+    1130,
+    8,
+    18
+   ],
+   "capture": "screenshots/light/05-explore-activity-card-merged-badge-code.png",
+   "evidence": "Sampled",
+   "note": "'Merged' state badge, right of its label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#8251E0"
+  }
+ },
+ "icon.danger": {
+  "dark": {
+   "args": [
+    94,
+    1172,
+    38,
+    40
+   ],
+   "capture": "screenshots/dark/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "Failed agent-session icon",
+   "op": "text",
+   "value": "#FA534A"
+  },
+  "light": {
+   "args": [
+    94,
+    1172,
+    38,
+    40
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "Failed agent-session icon",
+   "op": "text",
+   "value": "#D0222D"
+  }
+ },
+ "icon.success": {
+  "dark": {
+   "args": [
+    50,
+    385,
+    44,
+    44
+   ],
+   "capture": "screenshots/dark/13-issues-list-filter-chips-labels.png",
+   "evidence": "Sampled (text)",
+   "note": "Open-issue icon",
+   "op": "text",
+   "value": "#41BA53"
+  }
+ },
+ "lines.body": {
+  "dark": {
+   "args": [
+    73,
+    1310,
+    710,
+    1505
+   ],
+   "bands": [
+    [
+     1317,
+     1349
+    ],
+    [
+     1368,
+     1399
+    ],
+    [
+     1419,
+     1450
+    ],
+    [
+     1470,
+     1504
+    ]
+   ],
+   "capture": "screenshots/dark/05-explore-activity-card-merged-badge-code.png",
+   "evidence": "Derived",
+   "note": "Four lines of Markdown body text",
+   "op": "lines",
+   "value": "25.5pt"
+  }
+ },
+ "lines.code": {
+  "dark": {
+   "args": [
+    100,
+    520,
+    560,
+    672
+   ],
+   "bands": [
+    [
+     523,
+     545
+    ],
+    [
+     561,
+     584
+    ],
+    [
+     601,
+     623
+    ],
+    [
+     641,
+     661
+    ]
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Derived",
+   "note": "Four lines of the code preview",
+   "op": "lines",
+   "value": "19.7pt"
+  }
+ },
+ "lines.diff": {
+  "dark": {
+   "args": [
+    50,
+    455,
+    95,
+    590
+   ],
+   "bands": [
+    [
+     461,
+     478
+    ],
+    [
+     508,
+     526
+    ],
+    [
+     556,
+     573
+    ],
+    [
+     588,
+     589
+    ]
+   ],
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Derived",
+   "note": "Diff line numbers 9 to 11 (one row each)",
+   "op": "lines",
+   "value": "23.8pt"
+  }
+ },
+ "lines.headline": {
+  "dark": {
+   "args": [
+    128,
+    1020,
+    600,
+    1135
+   ],
+   "bands": [
+    [
+     1022,
+     1054
+    ],
+    [
+     1062,
+     1092
+    ],
+    [
+     1101,
+     1125
+    ]
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Derived",
+   "note": "Three-line Inbox row title",
+   "op": "lines",
+   "value": "19.8pt"
+  }
+ },
+ "lines.subhead": {
+  "dark": {
+   "args": [
+    48,
+    700,
+    745,
+    778
+   ],
+   "bands": [
+    [
+     703,
+     731
+    ],
+    [
+     743,
+     771
+    ]
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Derived",
+   "note": "Two-line banner text",
+   "op": "lines",
+   "value": "20.0pt"
+  }
+ },
+ "lines.title1": {
+  "dark": {
+   "args": [
+    48,
+    390,
+    740,
+    548
+   ],
+   "bands": [
+    [
+     395,
+     435
+    ],
+    [
+     448,
+     488
+    ],
+    [
+     500,
+     541
+    ]
+   ],
+   "capture": "screenshots/dark/15-issue-page-open-locked-badges-comment.png",
+   "evidence": "Derived",
+   "note": "Three-line issue title",
+   "op": "lines",
+   "value": "26.2pt"
+  }
+ },
+ "neutral.chip": {
+  "dark": {
+   "args": [
+    168,
+    1053,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled",
+   "note": "'Completed' status chip",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1F232A"
+  },
+  "light": {
+   "args": [
+    168,
+    1053,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled",
+   "note": "'Completed' status chip",
+   "op": "fill",
+   "share": 0.94,
+   "value": "#EFF1F3"
+  }
+ },
+ "neutral.emphasis": {
+  "dark": {
+   "args": [
+    180,
+    533,
+    12,
+    14
+   ],
+   "capture": "screenshots/dark/17-pr-page-draft-branch-pills-diffstat.png",
+   "evidence": "Sampled",
+   "note": "'Draft' state badge",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#9198A1"
+  },
+  "light": {
+   "args": [
+    180,
+    533,
+    12,
+    14
+   ],
+   "capture": "screenshots/light/17-pr-page-draft-branch-pills-diffstat.png",
+   "evidence": "Sampled",
+   "note": "'Draft' state badge",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#5A636E"
+  }
+ },
+ "neutral.muted": {
+  "dark": {
+   "args": [
+    222,
+    536,
+    10,
+    12
+   ],
+   "capture": "screenshots/dark/17-pr-page-draft-branch-pills-diffstat.png",
+   "evidence": "Sampled",
+   "note": "'Locked' badge",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1F232B"
+  },
+  "light": {
+   "args": [
+    222,
+    536,
+    10,
+    12
+   ],
+   "capture": "screenshots/light/17-pr-page-draft-branch-pills-diffstat.png",
+   "evidence": "Sampled",
+   "note": "'Locked' badge",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F1F1F3"
+  }
+ },
+ "radius.button": {
+  "dark": {
+   "args": [
+    200,
+    1032,
+    88,
+    1070
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "corner": [
+    81,
+    1025
+   ],
+   "evidence": "Derived",
+   "inset": 8,
+   "note": "Add Favorites button",
+   "op": "diag",
+   "value": "13.7pt"
+  },
+  "light": {
+   "args": [
+    200,
+    1032,
+    88,
+    1070
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "corner": [
+    81,
+    1025
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Add Favorites button",
+   "op": "diag",
+   "value": "15.4pt"
+  }
+ },
+ "radius.buttonRepo": {
+  "dark": {
+   "args": [
+    180,
+    780,
+    58,
+    816
+   ],
+   "capture": "screenshots/dark/11-repo-page-archived-banner-star-button-rows.png",
+   "corner": [
+    48,
+    772
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Star button",
+   "op": "diag",
+   "value": "15.4pt"
+  },
+  "light": {
+   "args": [
+    180,
+    780,
+    58,
+    816
+   ],
+   "capture": "screenshots/light/11-repo-page-archived-banner-star-button-rows.png",
+   "corner": [
+    49,
+    774
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Star button",
+   "op": "diag",
+   "value": "11.9pt"
+  }
+ },
+ "radius.card": {
+  "dark": {
+   "args": [
+    400,
+    380,
+    60,
+    550
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "corner": [
+    48,
+    371
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "My Work card",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    400,
+    380,
+    60,
+    550
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "corner": [
+    48,
+    371
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "My Work card",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.cardSettings": {
+  "dark": {
+   "args": [
+    400,
+    360,
+    60,
+    520
+   ],
+   "capture": "screenshots/dark/21-settings-grouped-values-new-badge.png",
+   "corner": [
+    48,
+    348
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Settings card",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    400,
+    360,
+    60,
+    520
+   ],
+   "capture": "screenshots/light/21-settings-grouped-values-new-badge.png",
+   "corner": [
+    48,
+    348
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Settings card",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.codeCard": {
+  "dark": {
+   "args": [
+    400,
+    396,
+    58,
+    470
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "corner": [
+    48,
+    389
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Code preview card",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.status": {
+  "dark": {
+   "args": [
+    400,
+    488,
+    58,
+    560
+   ],
+   "capture": "screenshots/dark/20-profile-status-achievements-rows.png",
+   "corner": [
+    48,
+    480
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Profile status card",
+   "op": "diag",
+   "value": "11.9pt"
+  },
+  "light": {
+   "args": [
+    400,
+    488,
+    58,
+    560
+   ],
+   "capture": "screenshots/light/20-profile-status-achievements-rows.png",
+   "corner": [
+    48,
+    480
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Profile status card",
+   "op": "diag",
+   "value": "11.9pt"
+  }
+ },
+ "radius.tile": {
+  "dark": {
+   "args": [
+    100,
+    400,
+    92,
+    440
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "corner": [
+    88,
+    396
+   ],
+   "evidence": "Derived",
+   "inset": 4,
+   "note": "Icon tile (Issues)",
+   "op": "diag",
+   "value": "6.8pt"
+  },
+  "light": {
+   "args": [
+    100,
+    400,
+    92,
+    440
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "corner": [
+    88,
+    396
+   ],
+   "evidence": "Derived",
+   "inset": 4,
+   "note": "Icon tile (Issues)",
+   "op": "diag",
+   "value": "6.8pt"
+  }
+ },
+ "rows.home": {
+  "dark": {
+   "args": [
+    "col",
+    600,
+    372,
+    712,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Edges down the My Work card",
+   "op": "find",
+   "value": [
+    482,
+    483,
+    484,
+    485,
+    486,
+    596,
+    597,
+    598,
+    599
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    600,
+    372,
+    712,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Edges down the My Work card",
+   "op": "find",
+   "value": [
+    482,
+    483,
+    484,
+    485,
+    596,
+    597,
+    598,
+    599
+   ]
+  }
+ },
+ "rows.search": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    280,
+    1080,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/08-search-typed-scope-rows.png",
+   "evidence": "Sampled",
+   "note": "Edges down the search scope list",
+   "op": "find",
+   "value": [
+    322,
+    323,
+    324,
+    325,
+    331,
+    332,
+    333,
+    334,
+    389,
+    390,
+    392,
+    456,
+    504,
+    506,
+    507,
+    617,
+    618,
+    620,
+    670,
+    671,
+    672,
+    673,
+    674,
+    675,
+    676,
+    678,
+    679,
+    680,
+    682,
+    683,
+    684,
+    685,
+    686,
+    687,
+    688,
+    689,
+    690,
+    732,
+    734,
+    735,
+    785,
+    786,
+    787,
+    789,
+    790,
+    802,
+    803,
+    804,
+    805,
+    845,
+    846,
+    847,
+    848,
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    911,
+    912,
+    913,
+    914,
+    915,
+    916,
+    959,
+    960,
+    962,
+    963,
+    1014,
+    1015,
+    1016,
+    1017,
+    1019,
+    1020,
+    1021,
+    1023,
+    1024,
+    1025,
+    1026,
+    1028,
+    1029,
+    1030,
+    1031,
+    1073,
+    1074,
+    1076,
+    1077
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    300,
+    280,
+    1080,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/08-search-typed-scope-rows.png",
+   "evidence": "Sampled",
+   "note": "Edges down the search scope list",
+   "op": "find",
+   "value": [
+    322,
+    323,
+    324,
+    325,
+    331,
+    332,
+    333,
+    334,
+    389,
+    390,
+    392,
+    456,
+    504,
+    506,
+    618,
+    620,
+    670,
+    671,
+    672,
+    673,
+    674,
+    675,
+    676,
+    678,
+    679,
+    680,
+    681,
+    682,
+    683,
+    684,
+    685,
+    686,
+    687,
+    688,
+    689,
+    690,
+    732,
+    734,
+    735,
+    785,
+    786,
+    787,
+    789,
+    790,
+    802,
+    803,
+    804,
+    805,
+    846,
+    848,
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    910,
+    911,
+    912,
+    913,
+    914,
+    915,
+    916,
+    960,
+    962,
+    1014,
+    1015,
+    1016,
+    1017,
+    1019,
+    1020,
+    1021,
+    1023,
+    1024,
+    1025,
+    1026,
+    1028,
+    1029,
+    1030,
+    1031,
+    1074,
+    1076
+   ]
+  }
+ },
+ "rows.settings": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    350,
+    990,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/21-settings-grouped-values-new-badge.png",
+   "evidence": "Sampled",
+   "note": "Edges down the first Settings card",
+   "op": "find",
+   "value": [
+    452,
+    453,
+    454,
+    455,
+    558,
+    559,
+    560,
+    561,
+    562,
+    665,
+    666,
+    668,
+    774,
+    775,
+    776,
+    777,
+    778,
+    881,
+    882,
+    883,
+    884
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    400,
+    350,
+    990,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/21-settings-grouped-values-new-badge.png",
+   "evidence": "Sampled",
+   "note": "Edges down the first Settings card",
+   "op": "find",
+   "value": [
+    452,
+    453,
+    454,
+    455,
+    559,
+    560,
+    561,
+    562,
+    665,
+    666,
+    668,
+    774,
+    775,
+    776,
+    777,
+    881,
+    882,
+    883,
+    884
+   ]
+  }
+ },
+ "size.avatarComment": {
+  "dark": {
+   "args": [
+    "row",
+    750,
+    30,
+    150,
+    [
+     32,
+     750
+    ],
+    14
+   ],
+   "capture": "screenshots/dark/15-issue-page-open-locked-badges-comment.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Comment author avatar",
+   "op": "extent",
+   "to": 135,
+   "value": "44pt"
+  }
+ },
+ "size.avatarHeader": {
+  "dark": {
+   "args": [
+    "row",
+    214,
+    30,
+    170,
+    [
+     32,
+     214
+    ],
+    14
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "from": 49,
+   "note": "Account avatar on Home",
+   "op": "extent",
+   "to": 130,
+   "value": "41pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    214,
+    30,
+    170,
+    [
+     32,
+     214
+    ],
+    14
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "from": 49,
+   "note": "Account avatar on Home",
+   "op": "extent",
+   "to": 130,
+   "value": "41pt"
+  }
+ },
+ "size.avatarProfile": {
+  "dark": {
+   "args": [
+    "row",
+    375,
+    30,
+    200,
+    [
+     32,
+     375
+    ],
+    14
+   ],
+   "capture": "screenshots/dark/20-profile-status-achievements-rows.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Profile avatar",
+   "op": "extent",
+   "to": 175,
+   "value": "64pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    375,
+    30,
+    200,
+    [
+     32,
+     375
+    ],
+    14
+   ],
+   "capture": "screenshots/light/20-profile-status-achievements-rows.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Profile avatar",
+   "op": "extent",
+   "to": 175,
+   "value": "64pt"
+  }
+ },
+ "size.badge": {
+  "dark": {
+   "args": [
+    [
+     190,
+     596
+    ],
+    [
+     40,
+     560,
+     180,
+     75
+    ],
+    12
+   ],
+   "box": [
+    48,
+    568,
+    201,
+    623
+   ],
+   "capture": "screenshots/dark/15-issue-page-open-locked-badges-comment.png",
+   "colour": "#268535",
+   "evidence": "Sampled",
+   "note": "'Open' badge",
+   "op": "bbox",
+   "value": "77x28pt"
+  }
+ },
+ "size.branch": {
+  "dark": {
+   "args": [
+    [
+     300,
+     1118
+    ],
+    [
+     262,
+     1100,
+     130,
+     80
+    ],
+    4
+   ],
+   "box": [
+    272,
+    1113,
+    379,
+    1165
+   ],
+   "capture": "screenshots/dark/05-explore-activity-card-merged-badge-code.png",
+   "colour": "#121D2E",
+   "evidence": "Sampled",
+   "note": "Branch-name pill",
+   "op": "bbox",
+   "value": "54x26.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     300,
+     1118
+    ],
+    [
+     262,
+     1100,
+     130,
+     80
+    ],
+    4
+   ],
+   "box": [
+    272,
+    1113,
+    379,
+    1163
+   ],
+   "capture": "screenshots/light/05-explore-activity-card-merged-badge-code.png",
+   "colour": "#DEF4FE",
+   "evidence": "Sampled",
+   "note": "Branch-name pill",
+   "op": "bbox",
+   "value": "54x25.5pt"
+  }
+ },
+ "size.button": {
+  "dark": {
+   "args": [
+    [
+     200,
+     1035
+    ],
+    [
+     70,
+     1010,
+     680,
+     110
+    ],
+    3
+   ],
+   "box": [
+    80,
+    1024,
+    731,
+    1111
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "colour": "#21282F",
+   "evidence": "Sampled",
+   "note": "Add Favorites button",
+   "op": "bbox",
+   "value": "326x44pt"
+  },
+  "light": {
+   "args": [
+    [
+     200,
+     1035
+    ],
+    [
+     70,
+     1010,
+     680,
+     110
+    ],
+    3
+   ],
+   "box": [
+    80,
+    1024,
+    731,
+    1112
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "colour": "#F6F8FA",
+   "evidence": "Sampled",
+   "note": "Add Favorites button",
+   "op": "bbox",
+   "value": "326x44.5pt"
+  }
+ },
+ "size.buttonRepo": {
+  "dark": {
+   "args": [
+    [
+     300,
+     840
+    ],
+    [
+     40,
+     760,
+     520,
+     120
+    ],
+    3
+   ],
+   "box": [
+    48,
+    773,
+    539,
+    860
+   ],
+   "capture": "screenshots/dark/11-repo-page-archived-banner-star-button-rows.png",
+   "colour": "#21282F",
+   "evidence": "Sampled",
+   "note": "Star button",
+   "op": "bbox",
+   "value": "246x44pt"
+  },
+  "light": {
+   "args": [
+    [
+     300,
+     840
+    ],
+    [
+     40,
+     760,
+     520,
+     120
+    ],
+    3
+   ],
+   "box": [
+    48,
+    772,
+    539,
+    861
+   ],
+   "capture": "screenshots/light/11-repo-page-archived-banner-star-button-rows.png",
+   "colour": "#F6F8FA",
+   "evidence": "Sampled",
+   "note": "Star button",
+   "op": "bbox",
+   "value": "246x45pt"
+  }
+ },
+ "size.chip.h": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    370,
+    462,
+    [
+     300,
+     372
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled",
+   "from": 387,
+   "note": "Filter chip height ('Focused')",
+   "op": "extent",
+   "to": 443,
+   "value": "28.5pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    300,
+    370,
+    462,
+    [
+     300,
+     372
+    ],
+    8
+   ],
+   "capture": "screenshots/light/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled",
+   "from": 387,
+   "note": "Filter chip height ('Focused')",
+   "op": "extent",
+   "to": 445,
+   "value": "29.5pt"
+  }
+ },
+ "size.chipStatus": {
+  "dark": {
+   "args": [
+    [
+     170,
+     1056
+    ],
+    [
+     150,
+     1025,
+     190,
+     65
+    ],
+    4
+   ],
+   "box": [
+    160,
+    1034,
+    318,
+    1077
+   ],
+   "capture": "screenshots/dark/06-copilot-promo-card-status-badges.png",
+   "colour": "#1F232A",
+   "evidence": "Sampled",
+   "note": "'Completed' chip",
+   "op": "bbox",
+   "value": "79.5x22pt"
+  },
+  "light": {
+   "args": [
+    [
+     170,
+     1056
+    ],
+    [
+     150,
+     1025,
+     190,
+     65
+    ],
+    4
+   ],
+   "box": [
+    160,
+    1034,
+    318,
+    1077
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "colour": "#EFF1F3",
+   "evidence": "Sampled",
+   "note": "'Completed' chip",
+   "op": "bbox",
+   "value": "79.5x22pt"
+  }
+ },
+ "size.configure": {
+  "dark": {
+   "args": [
+    [
+     590,
+     862
+    ],
+    [
+     565,
+     795,
+     210,
+     90
+    ],
+    4
+   ],
+   "box": [
+    577,
+    805,
+    764,
+    873
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "colour": "#121D2E",
+   "evidence": "Sampled",
+   "note": "Configure button",
+   "op": "bbox",
+   "value": "94x34.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     590,
+     862
+    ],
+    [
+     565,
+     795,
+     210,
+     90
+    ],
+    4
+   ],
+   "box": [
+    577,
+    805,
+    762,
+    873
+   ],
+   "capture": "screenshots/light/03-inbox-chips-banner-unread-rows.png",
+   "colour": "#DEF4FE",
+   "evidence": "Sampled",
+   "note": "Configure button",
+   "op": "bbox",
+   "value": "93x34.5pt"
+  }
+ },
+ "size.doneButton": {
+  "dark": {
+   "args": [
+    [
+     340,
+     700
+    ],
+    [
+     320,
+     650,
+     430,
+     100
+    ],
+    10
+   ],
+   "box": [
+    333,
+    667,
+    730,
+    734
+   ],
+   "capture": "screenshots/dark/06-copilot-promo-card-status-badges.png",
+   "colour": "#8857E6",
+   "evidence": "Sampled",
+   "note": "Purple Copilot button",
+   "op": "bbox",
+   "value": "199x34pt"
+  },
+  "light": {
+   "args": [
+    [
+     340,
+     700
+    ],
+    [
+     320,
+     650,
+     430,
+     100
+    ],
+    10
+   ],
+   "box": [
+    333,
+    667,
+    730,
+    734
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "colour": "#8251E0",
+   "evidence": "Sampled",
+   "note": "Purple Copilot button",
+   "op": "bbox",
+   "value": "199x34pt"
+  }
+ },
+ "size.draft": {
+  "dark": {
+   "args": [
+    [
+     185,
+     540
+    ],
+    [
+     40,
+     505,
+     175,
+     80
+    ],
+    12
+   ],
+   "box": [
+    49,
+    516,
+    197,
+    569
+   ],
+   "capture": "screenshots/dark/17-pr-page-draft-branch-pills-diffstat.png",
+   "colour": "#9198A1",
+   "evidence": "Sampled",
+   "note": "'Draft' badge",
+   "op": "bbox",
+   "value": "74.5x27pt"
+  },
+  "light": {
+   "args": [
+    [
+     185,
+     540
+    ],
+    [
+     40,
+     505,
+     175,
+     80
+    ],
+    12
+   ],
+   "box": [
+    49,
+    516,
+    197,
+    569
+   ],
+   "capture": "screenshots/light/17-pr-page-draft-branch-pills-diffstat.png",
+   "colour": "#5A636E",
+   "evidence": "Sampled",
+   "note": "'Draft' badge",
+   "op": "bbox",
+   "value": "74.5x27pt"
+  }
+ },
+ "size.fab": {
+  "light": {
+   "args": [
+    [
+     640,
+     1520
+    ],
+    [
+     360,
+     1465,
+     310,
+     115
+    ],
+    10
+   ],
+   "box": [
+    368,
+    1481,
+    659,
+    1562
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "colour": "#1F232A",
+   "evidence": "Sampled",
+   "note": "New Session floating button",
+   "op": "bbox",
+   "value": "146x41pt"
+  }
+ },
+ "size.iconButtonRepo": {
+  "dark": {
+   "args": [
+    [
+     580,
+     840
+    ],
+    [
+     555,
+     760,
+     110,
+     120
+    ],
+    3
+   ],
+   "box": [
+    564,
+    773,
+    651,
+    860
+   ],
+   "capture": "screenshots/dark/11-repo-page-archived-banner-star-button-rows.png",
+   "colour": "#21282F",
+   "evidence": "Sampled",
+   "note": "Fork button beside Star",
+   "op": "bbox",
+   "value": "44x44pt"
+  },
+  "light": {
+   "args": [
+    [
+     580,
+     840
+    ],
+    [
+     555,
+     760,
+     110,
+     120
+    ],
+    3
+   ],
+   "box": [
+    563,
+    772,
+    651,
+    861
+   ],
+   "capture": "screenshots/light/11-repo-page-archived-banner-star-button-rows.png",
+   "colour": "#F6F8FA",
+   "evidence": "Sampled",
+   "note": "Fork button beside Star",
+   "op": "bbox",
+   "value": "44.5x45pt"
+  }
+ },
+ "size.label": {
+  "dark": {
+   "args": [
+    [
+     398,
+     580
+    ],
+    [
+     120,
+     555,
+     300,
+     55
+    ],
+    14
+   ],
+   "box": [
+    129,
+    561,
+    406,
+    597
+   ],
+   "capture": "screenshots/dark/13-issues-list-filter-chips-labels.png",
+   "colour": "#DCEEFF",
+   "evidence": "Sampled",
+   "note": "Issue label ('area: documentation')",
+   "op": "bbox",
+   "value": "139x18.5pt"
+  }
+ },
+ "size.navButton.h": {
+  "dark": {
+   "args": [
+    "col",
+    92,
+    150,
+    300,
+    [
+     92,
+     300
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/23-appearance-choice-list.png",
+   "evidence": "Sampled",
+   "from": 169,
+   "note": "Round glass back button, height",
+   "op": "extent",
+   "to": 258,
+   "value": "45pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    92,
+    150,
+    300,
+    [
+     92,
+     300
+    ],
+    12
+   ],
+   "capture": "screenshots/light/23-appearance-choice-list.png",
+   "evidence": "Sampled",
+   "from": 169,
+   "note": "Round glass back button, height",
+   "op": "extent",
+   "to": 258,
+   "value": "45pt"
+  }
+ },
+ "size.navButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    214,
+    20,
+    200,
+    [
+     30,
+     300
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/23-appearance-choice-list.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Round glass back button, width",
+   "op": "extent",
+   "to": 135,
+   "value": "44pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    214,
+    20,
+    200,
+    [
+     30,
+     300
+    ],
+    12
+   ],
+   "capture": "screenshots/light/23-appearance-choice-list.png",
+   "evidence": "Sampled",
+   "from": 46,
+   "note": "Round glass back button, width",
+   "op": "extent",
+   "to": 137,
+   "value": "46pt"
+  }
+ },
+ "size.newBadge": {
+  "dark": {
+   "args": [
+    [
+     95,
+     722
+    ],
+    [
+     80,
+     695,
+     80,
+     60
+    ],
+    4
+   ],
+   "box": [
+    89,
+    701,
+    150,
+    743
+   ],
+   "capture": "screenshots/dark/21-settings-grouped-values-new-badge.png",
+   "colour": "#121D2E",
+   "evidence": "Sampled",
+   "note": "'New' badge",
+   "op": "bbox",
+   "value": "31x21.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     95,
+     722
+    ],
+    [
+     80,
+     695,
+     80,
+     60
+    ],
+    4
+   ],
+   "box": [
+    89,
+    701,
+    151,
+    743
+   ],
+   "capture": "screenshots/light/21-settings-grouped-values-new-badge.png",
+   "colour": "#DEF4FF",
+   "evidence": "Sampled",
+   "note": "'New' badge",
+   "op": "bbox",
+   "value": "31.5x21.5pt"
+  }
+ },
+ "size.search.h": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    150,
+    275,
+    [
+     300,
+     155
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/07-search-focused-empty-qualifier-chips.png",
+   "evidence": "Sampled",
+   "from": 169,
+   "note": "Search field height",
+   "op": "extent",
+   "to": 258,
+   "value": "45pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     612,
+     823
+    ],
+    [
+     580,
+     780,
+     170,
+     90
+    ],
+    10
+   ],
+   "box": [
+    599,
+    795,
+    722,
+    848
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "colour": "#4393F9",
+   "evidence": "Sampled",
+   "note": "Switch track, on",
+   "op": "bbox",
+   "value": "62x27pt"
+  },
+  "light": {
+   "args": [
+    [
+     612,
+     823
+    ],
+    [
+     580,
+     780,
+     170,
+     90
+    ],
+    10
+   ],
+   "box": [
+    599,
+    795,
+    722,
+    848
+   ],
+   "capture": "screenshots/light/22-code-options-preview-switches-on-off.png",
+   "colour": "#0A69DC",
+   "evidence": "Sampled",
+   "note": "Switch track, on",
+   "op": "bbox",
+   "value": "62x27pt"
+  }
+ },
+ "size.switchThumb": {
+  "dark": {
+   "args": [
+    [
+     640,
+     1036
+    ],
+    [
+     590,
+     1000,
+     150,
+     75
+    ],
+    6
+   ],
+   "box": [
+    603,
+    1013,
+    674,
+    1057
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "bbox",
+   "value": "36x22.5pt"
+  }
+ },
+ "size.tabBar.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    1560,
+    1764,
+    [
+     400,
+     1570
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/19-search-no-repositories-empty.png",
+   "evidence": "Sampled",
+   "from": 1597,
+   "note": "Tab bar height",
+   "op": "extent",
+   "to": 1722,
+   "value": "63pt"
+  }
+ },
+ "size.tabBar.w": {
+  "dark": {
+   "args": [
+    "row",
+    1700,
+    16,
+    796,
+    [
+     30,
+     1580
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/19-search-no-repositories-empty.png",
+   "evidence": "Sampled",
+   "from": 22,
+   "note": "Tab bar width",
+   "op": "extent",
+   "to": 789,
+   "value": "384pt"
+  }
+ },
+ "size.tile": {
+  "dark": {
+   "args": [
+    [
+     93,
+     401
+    ],
+    [
+     75,
+     385,
+     95,
+     95
+    ],
+    14
+   ],
+   "box": [
+    88,
+    396,
+    151,
+    459
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "colour": "#2EA44F",
+   "evidence": "Sampled",
+   "note": "Icon tile (Issues)",
+   "op": "bbox",
+   "value": "32x32pt"
+  },
+  "light": {
+   "args": [
+    [
+     93,
+     401
+    ],
+    [
+     75,
+     385,
+     95,
+     95
+    ],
+    14
+   ],
+   "box": [
+    89,
+    397,
+    150,
+    458
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "colour": "#2EA44F",
+   "evidence": "Sampled",
+   "note": "Icon tile (Issues)",
+   "op": "bbox",
+   "value": "31x31pt"
+  }
+ },
+ "success.emphasis": {
+  "dark": {
+   "args": [
+    183,
+    588,
+    12,
+    14
+   ],
+   "capture": "screenshots/dark/15-issue-page-open-locked-badges-comment.png",
+   "evidence": "Sampled",
+   "note": "'Open' state badge",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#268535"
+  }
+ },
+ "surface.button": {
+  "dark": {
+   "args": [
+    200,
+    1035,
+    60,
+    10
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Add Favorites button",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#21282F"
+  },
+  "light": {
+   "args": [
+    200,
+    1035,
+    60,
+    10
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Add Favorites button",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F6F8FA"
+  }
+ },
+ "surface.buttonRepo": {
+  "dark": {
+   "args": [
+    300,
+    840,
+    40,
+    8
+   ],
+   "capture": "screenshots/dark/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Sampled",
+   "note": "Star button on a repository",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#21282F"
+  },
+  "light": {
+   "args": [
+    300,
+    840,
+    40,
+    8
+   ],
+   "capture": "screenshots/light/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Sampled",
+   "note": "Star button on a repository",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F6F8FA"
+  }
+ },
+ "surface.card": {
+  "dark": {
+   "args": [
+    300,
+    690,
+    200,
+    10
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Grouped card (My Work)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0D1117"
+  },
+  "light": {
+   "args": [
+    300,
+    690,
+    200,
+    10
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Grouped card (My Work)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.cardSettings": {
+  "dark": {
+   "args": [
+    300,
+    985,
+    200,
+    4
+   ],
+   "capture": "screenshots/dark/21-settings-grouped-values-new-badge.png",
+   "evidence": "Derived",
+   "note": "Grouped card in Settings, below the last row",
+   "op": "fill",
+   "share": 0.75,
+   "value": "#0D1117"
+  },
+  "light": {
+   "args": [
+    300,
+    985,
+    200,
+    4
+   ],
+   "capture": "screenshots/light/21-settings-grouped-values-new-badge.png",
+   "evidence": "Sampled",
+   "note": "Grouped card in Settings, below the last row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.cardSystem": {
+  "dark": {
+   "args": [
+    60,
+    1100,
+    20,
+    60
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Grouped card on Code Options, left margin",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0D1117"
+  },
+  "light": {
+   "args": [
+    60,
+    1100,
+    20,
+    60
+   ],
+   "capture": "screenshots/light/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Grouped card on Code Options, left margin",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.code": {
+  "dark": {
+   "args": [
+    400,
+    512,
+    40,
+    12
+   ],
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Unchanged line in the Files Changed diff",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0D1117"
+  },
+  "light": {
+   "args": [
+    400,
+    512,
+    40,
+    12
+   ],
+   "capture": "screenshots/light/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Unchanged line in the Files Changed diff",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.fab": {
+  "dark": {
+   "args": [
+    640,
+    1515,
+    8,
+    14
+   ],
+   "capture": "screenshots/dark/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled",
+   "note": "New Session floating button, right of its label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#383F46"
+  },
+  "light": {
+   "args": [
+    640,
+    1515,
+    8,
+    14
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled",
+   "note": "New Session floating button, right of its label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1F232A"
+  }
+ },
+ "surface.glass": {
+  "dark": {
+   "args": [
+    560,
+    1700,
+    30,
+    8
+   ],
+   "capture": "screenshots/dark/23-appearance-choice-list.png",
+   "evidence": "Sampled",
+   "note": "Tab bar glass over an empty page",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#20242B"
+  },
+  "light": {
+   "args": [
+    560,
+    1700,
+    30,
+    8
+   ],
+   "capture": "screenshots/light/23-appearance-choice-list.png",
+   "evidence": "Sampled",
+   "note": "Tab bar glass over an empty page",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FAFAFC"
+  }
+ },
+ "surface.gutter": {
+  "dark": {
+   "args": [
+    22,
+    512,
+    22,
+    12
+   ],
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Line-number gutter of an unchanged line",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141B22"
+  },
+  "light": {
+   "args": [
+    22,
+    512,
+    22,
+    12
+   ],
+   "capture": "screenshots/light/18-files-changed-diff-view.png",
+   "evidence": "Sampled",
+   "note": "Line-number gutter of an unchanged line",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F6F8FA"
+  }
+ },
+ "surface.menu": {
+  "dark": {
+   "args": [
+    600,
+    470,
+    60,
+    10
+   ],
+   "capture": "screenshots/dark/12-repo-overflow-menu.png",
+   "evidence": "Sampled",
+   "note": "Pull-down menu (glass; takes colour from what is behind)",
+   "op": "fill",
+   "share": 0.92,
+   "value": "#292D34"
+  }
+ },
+ "surface.navButton": {
+  "dark": {
+   "args": [
+    66,
+    232,
+    12,
+    10
+   ],
+   "capture": "screenshots/dark/23-appearance-choice-list.png",
+   "evidence": "Derived",
+   "note": "Round glass back button, below the chevron",
+   "op": "fill",
+   "share": 0.88,
+   "value": "#20242B"
+  },
+  "light": {
+   "args": [
+    66,
+    232,
+    12,
+    10
+   ],
+   "capture": "screenshots/light/23-appearance-choice-list.png",
+   "evidence": "Derived",
+   "note": "Round glass back button, below the chevron",
+   "op": "fill",
+   "share": 0.6,
+   "value": "#F8FAFC"
+  }
+ },
+ "surface.status": {
+  "dark": {
+   "args": [
+    300,
+    575,
+    200,
+    10
+   ],
+   "capture": "screenshots/dark/20-profile-status-achievements-rows.png",
+   "evidence": "Sampled",
+   "note": "Profile status card ('locked in')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1F232B"
+  },
+  "light": {
+   "args": [
+    300,
+    575,
+    200,
+    10
+   ],
+   "capture": "screenshots/light/20-profile-status-achievements-rows.png",
+   "evidence": "Sampled",
+   "note": "Profile status card ('locked in')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F1F1F3"
+  }
+ },
+ "surface.tabSelected": {
+  "dark": {
+   "args": [
+    125,
+    1655,
+    14,
+    14
+   ],
+   "capture": "screenshots/dark/23-appearance-choice-list.png",
+   "evidence": "Sampled",
+   "note": "Selected tab's pill inside the tab bar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#090D15"
+  },
+  "light": {
+   "args": [
+    125,
+    1655,
+    14,
+    14
+   ],
+   "capture": "screenshots/light/23-appearance-choice-list.png",
+   "evidence": "Sampled",
+   "note": "Selected tab's pill inside the tab bar",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#E7E7E9"
+  }
+ },
+ "switch.off": {
+  "dark": {
+   "args": [
+    700,
+    1030,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off track",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#50525A"
+  },
+  "light": {
+   "args": [
+    700,
+    1030,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off track",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C5C5C7"
+  }
+ },
+ "switch.thumb": {
+  "dark": {
+   "args": [
+    636,
+    1030,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    636,
+    1030,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "syntax.constant": {
+  "dark": {
+   "args": [
+    366,
+    562,
+    16,
+    24
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Code preview number ('0..1')",
+   "op": "text",
+   "value": "#77B9F6"
+  },
+  "light": {
+   "args": [
+    366,
+    562,
+    16,
+    24
+   ],
+   "capture": "screenshots/light/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Code preview number ('0..1')",
+   "op": "text",
+   "value": "#1156B1"
+  }
+ },
+ "syntax.entity": {
+  "dark": {
+   "args": [
+    174,
+    520,
+    140,
+    32
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Code preview function name ('fibonacci')",
+   "op": "text",
+   "value": "#D0A7FF"
+  },
+  "light": {
+   "args": [
+    174,
+    520,
+    140,
+    32
+   ],
+   "capture": "screenshots/light/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Code preview function name ('fibonacci')",
+   "op": "text",
+   "value": "#663BBB"
+  }
+ },
+ "syntax.keyword": {
+  "dark": {
+   "args": [
+    108,
+    520,
+    50,
+    32
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Code preview keyword ('def')",
+   "op": "text",
+   "value": "#FF7B70"
+  },
+  "light": {
+   "args": [
+    108,
+    520,
+    50,
+    32
+   ],
+   "capture": "screenshots/light/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Code preview keyword ('def')",
+   "op": "text",
+   "value": "#D0222F"
+  }
+ },
+ "text.attention": {
+  "dark": {
+   "args": [
+    210,
+    304,
+    440,
+    35
+   ],
+   "capture": "screenshots/dark/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Archived banner text",
+   "op": "text",
+   "value": "#D39A27"
+  },
+  "light": {
+   "args": [
+    210,
+    304,
+    440,
+    35
+   ],
+   "capture": "screenshots/light/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Archived banner text",
+   "op": "text",
+   "value": "#996600"
+  }
+ },
+ "text.danger": {
+  "dark": {
+   "args": [
+    676,
+    1030,
+    52,
+    35
+   ],
+   "capture": "screenshots/dark/17-pr-page-draft-branch-pills-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Deletions in a diffstat ('-26')",
+   "op": "text",
+   "value": "#FA5149"
+  },
+  "light": {
+   "args": [
+    676,
+    1030,
+    52,
+    35
+   ],
+   "capture": "screenshots/light/17-pr-page-draft-branch-pills-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Deletions in a diffstat ('-26')",
+   "op": "text",
+   "value": "#D2242F"
+  }
+ },
+ "text.done": {
+  "dark": {
+   "args": [
+    175,
+    686,
+    110,
+    32
+   ],
+   "capture": "screenshots/dark/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "'Dismiss' text button on the Copilot card",
+   "op": "text",
+   "value": "#AC7EF9"
+  },
+  "light": {
+   "args": [
+    175,
+    686,
+    110,
+    32
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "'Dismiss' text button on the Copilot card",
+   "op": "text",
+   "value": "#8051E0"
+  }
+ },
+ "text.emptyBody": {
+  "dark": {
+   "args": [
+    130,
+    1450,
+    330,
+    25
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled (text)",
+   "note": "Shortcuts empty-state body",
+   "op": "text",
+   "value": "#91989F"
+  },
+  "light": {
+   "args": [
+    130,
+    1450,
+    330,
+    25
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled (text)",
+   "note": "Shortcuts empty-state body",
+   "op": "text",
+   "value": "#5B626D"
+  }
+ },
+ "text.hunk": {
+  "dark": {
+   "args": [
+    160,
+    402,
+    110,
+    28
+   ],
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Sampled (text)",
+   "note": "Hunk header text",
+   "op": "text",
+   "value": "#4694FA"
+  },
+  "light": {
+   "args": [
+    160,
+    402,
+    110,
+    28
+   ],
+   "capture": "screenshots/light/18-files-changed-diff-view.png",
+   "evidence": "Sampled (text)",
+   "note": "Hunk header text",
+   "op": "text",
+   "value": "#0169DA"
+  }
+ },
+ "text.lineNumber": {
+  "dark": {
+   "args": [
+    50,
+    503,
+    40,
+    30
+   ],
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Sampled (text)",
+   "note": "Line number in the diff gutter",
+   "op": "text",
+   "value": "#8E949C"
+  },
+  "light": {
+   "args": [
+    50,
+    503,
+    40,
+    30
+   ],
+   "capture": "screenshots/light/18-files-changed-diff-view.png",
+   "evidence": "Sampled (text)",
+   "note": "Line number in the diff gutter",
+   "op": "text",
+   "value": "#616772"
+  }
+ },
+ "text.link": {
+  "dark": {
+   "args": [
+    612,
+    812,
+    115,
+    35
+   ],
+   "capture": "screenshots/dark/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "'View All' link",
+   "op": "text",
+   "value": "#4693FA"
+  },
+  "light": {
+   "args": [
+    612,
+    812,
+    115,
+    35
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "'View All' link",
+   "op": "text",
+   "value": "#0C68DA"
+  }
+ },
+ "text.onDone": {
+  "dark": {
+   "args": [
+    356,
+    686,
+    360,
+    32,
+    "light"
+   ],
+   "capture": "screenshots/dark/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the purple Copilot button",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    356,
+    686,
+    360,
+    32,
+    "light"
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the purple Copilot button",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.onEmphasis": {
+  "dark": {
+   "args": [
+    136,
+    1126,
+    96,
+    28,
+    "light"
+   ],
+   "capture": "screenshots/dark/05-explore-activity-card-merged-badge-code.png",
+   "evidence": "Sampled (text)",
+   "note": "'Merged' label on its badge",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    136,
+    1126,
+    96,
+    28,
+    "light"
+   ],
+   "capture": "screenshots/light/05-explore-activity-card-merged-badge-code.png",
+   "evidence": "Sampled (text)",
+   "note": "'Merged' label on its badge",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.onFab": {
+  "dark": {
+   "args": [
+    448,
+    1503,
+    182,
+    38,
+    "light"
+   ],
+   "capture": "screenshots/dark/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "'New Session' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    448,
+    1503,
+    182,
+    38,
+    "light"
+   ],
+   "capture": "screenshots/light/06-copilot-promo-card-status-badges.png",
+   "evidence": "Sampled (text)",
+   "note": "'New Session' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    140,
+    200,
+    220,
+    30
+   ],
+   "capture": "screenshots/dark/07-search-focused-empty-qualifier-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder",
+   "op": "text",
+   "value": "#6E7279"
+  }
+ },
+ "text.primary": {
+  "dark": {
+   "args": [
+    176,
+    405,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled (text)",
+   "note": "Card row title ('Issues')",
+   "op": "text",
+   "value": "#F0F7FC"
+  },
+  "light": {
+   "args": [
+    176,
+    405,
+    100,
+    40
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled (text)",
+   "note": "Card row title ('Issues')",
+   "op": "text",
+   "value": "#1E2329"
+  }
+ },
+ "text.rowValue": {
+  "dark": {
+   "args": [
+    530,
+    385,
+    160,
+    35
+   ],
+   "capture": "screenshots/dark/21-settings-grouped-values-new-badge.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row value",
+   "op": "text",
+   "value": "#9298A2"
+  },
+  "light": {
+   "args": [
+    530,
+    385,
+    160,
+    35
+   ],
+   "capture": "screenshots/light/21-settings-grouped-values-new-badge.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row value",
+   "op": "text",
+   "value": "#5B626C"
+  }
+ },
+ "text.secondary": {
+  "dark": {
+   "args": [
+    128,
+    975,
+    360,
+    30
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Inbox row repository line",
+   "op": "text",
+   "value": "#9298A2"
+  },
+  "light": {
+   "args": [
+    128,
+    975,
+    360,
+    30
+   ],
+   "capture": "screenshots/light/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Inbox row repository line",
+   "op": "text",
+   "value": "#5B626C"
+  }
+ },
+ "text.sectionHeader": {
+  "dark": {
+   "args": [
+    88,
+    340,
+    130,
+    35
+   ],
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Grouped section header ('Preview')",
+   "op": "text",
+   "value": "#8E8D95"
+  },
+  "light": {
+   "args": [
+    88,
+    340,
+    130,
+    35
+   ],
+   "capture": "screenshots/light/22-code-options-preview-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Grouped section header ('Preview')",
+   "op": "text",
+   "value": "#84838A"
+  }
+ },
+ "text.success": {
+  "dark": {
+   "args": [
+    612,
+    1030,
+    60,
+    35
+   ],
+   "capture": "screenshots/dark/17-pr-page-draft-branch-pills-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Additions in a diffstat ('+30')",
+   "op": "text",
+   "value": "#3EB84F"
+  },
+  "light": {
+   "args": [
+    612,
+    1030,
+    60,
+    35
+   ],
+   "capture": "screenshots/light/17-pr-page-draft-branch-pills-diffstat.png",
+   "evidence": "Sampled (text)",
+   "note": "Additions in a diffstat ('+30')",
+   "op": "text",
+   "value": "#178038"
+  }
+ },
+ "text.tab": {
+  "dark": {
+   "args": [
+    296,
+    1676,
+    58,
+    24
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected tab label ('Inbox')",
+   "op": "text",
+   "value": "#F6F7FA"
+  },
+  "light": {
+   "args": [
+    296,
+    1676,
+    58,
+    24
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected tab label ('Inbox')",
+   "op": "text",
+   "value": "#141416"
+  }
+ },
+ "text.tabSelected": {
+  "dark": {
+   "args": [
+    130,
+    1676,
+    62,
+    24
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected tab label ('Home')",
+   "op": "text",
+   "value": "#4F9EFF"
+  },
+  "light": {
+   "args": [
+    130,
+    1676,
+    62,
+    24
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected tab label ('Home')",
+   "op": "text",
+   "value": "#0761CF"
+  }
+ },
+ "text.time": {
+  "dark": {
+   "args": [
+    698,
+    972,
+    66,
+    32
+   ],
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Inbox row age ('3mo')",
+   "op": "text",
+   "value": "#9498A2"
+  },
+  "light": {
+   "args": [
+    698,
+    972,
+    66,
+    32
+   ],
+   "capture": "screenshots/light/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Inbox row age ('3mo')",
+   "op": "text",
+   "value": "#5B626D"
+  }
+ },
+ "tile.blue": {
+  "dark": {
+   "args": [
+    53,
+    1037,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Derived",
+   "note": "Pull Requests tile",
+   "op": "fill",
+   "share": 0.75,
+   "value": "#248AFF"
+  },
+  "light": {
+   "args": [
+    53,
+    1037,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Derived",
+   "note": "Pull Requests tile",
+   "op": "fill",
+   "share": 0.77,
+   "value": "#248AFF"
+  }
+ },
+ "tile.gold": {
+  "dark": {
+   "args": [
+    53,
+    1265,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Derived",
+   "note": "Actions tile",
+   "op": "fill",
+   "share": 0.64,
+   "value": "#D4A62D"
+  },
+  "light": {
+   "args": [
+    53,
+    1265,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Derived",
+   "note": "Actions tile",
+   "op": "fill",
+   "share": 0.83,
+   "value": "#D4A62D"
+  }
+ },
+ "tile.gray": {
+  "dark": {
+   "args": [
+    93,
+    515,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Top Repositories tile",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#383F46"
+  },
+  "light": {
+   "args": [
+    93,
+    515,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Derived",
+   "note": "Top Repositories tile",
+   "op": "fill",
+   "share": 0.84,
+   "value": "#383F46"
+  }
+ },
+ "tile.green": {
+  "dark": {
+   "args": [
+    93,
+    401,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Issues tile",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2EA44F"
+  },
+  "light": {
+   "args": [
+    93,
+    401,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Issues tile",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#2EA44F"
+  }
+ },
+ "tile.orange": {
+  "dark": {
+   "args": [
+    53,
+    1247,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/20-profile-status-achievements-rows.png",
+   "evidence": "Derived",
+   "note": "Organizations tile",
+   "op": "fill",
+   "share": 0.62,
+   "value": "#E36F24"
+  },
+  "light": {
+   "args": [
+    53,
+    1247,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/20-profile-status-achievements-rows.png",
+   "evidence": "Derived",
+   "note": "Organizations tile",
+   "op": "fill",
+   "share": 0.81,
+   "value": "#E36F24"
+  }
+ },
+ "tile.pink": {
+  "dark": {
+   "args": [
+    53,
+    1379,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Sampled",
+   "note": "Agents tile",
+   "op": "fill",
+   "share": 0.94,
+   "value": "#E85AAD"
+  },
+  "light": {
+   "args": [
+    53,
+    1379,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Derived",
+   "note": "Agents tile",
+   "op": "fill",
+   "share": 0.84,
+   "value": "#E85AAD"
+  }
+ },
+ "tile.purple": {
+  "dark": {
+   "args": [
+    53,
+    1151,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Derived",
+   "note": "Discussions tile",
+   "op": "fill",
+   "share": 0.77,
+   "value": "#A575F9"
+  },
+  "light": {
+   "args": [
+    53,
+    1151,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/11-repo-page-archived-banner-star-button-rows.png",
+   "evidence": "Derived",
+   "note": "Discussions tile",
+   "op": "fill",
+   "share": 0.64,
+   "value": "#A575F9"
+  }
+ },
+ "tile.red": {
+  "dark": {
+   "args": [
+    84,
+    621,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/05-explore-activity-card-merged-badge-code.png",
+   "evidence": "Sampled",
+   "note": "Awesome Lists tile",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#FA4448"
+  },
+  "light": {
+   "args": [
+    84,
+    621,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/05-explore-activity-card-merged-badge-code.png",
+   "evidence": "Derived",
+   "note": "Awesome Lists tile",
+   "op": "fill",
+   "share": 0.89,
+   "value": "#FA4448"
+  }
+ },
+ "tile.yellow": {
+  "dark": {
+   "args": [
+    93,
+    629,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Starred tile",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#E4B241"
+  },
+  "light": {
+   "args": [
+    93,
+    629,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Sampled",
+   "note": "Starred tile",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#EBC550"
+  }
+ },
+ "type.badge": {
+  "dark": {
+   "args": [
+    136,
+    1125,
+    157,
+    1152
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/05-explore-activity-card-merged-badge-code.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'M' of 'Merged'",
+   "op": "cap",
+   "top": 1129,
+   "value": "12pt"
+  }
+ },
+ "type.body": {
+  "dark": {
+   "args": [
+    48,
+    832,
+    56,
+    866
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/15-issue-page-open-locked-badges-comment.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'I' of comment body text",
+   "op": "cap",
+   "top": 837,
+   "value": "17pt"
+  }
+ },
+ "type.button": {
+  "dark": {
+   "args": [
+    301,
+    1048,
+    342,
+    1084
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of 'Add Favorites'",
+   "op": "cap",
+   "top": 1055,
+   "value": "17pt"
+  }
+ },
+ "type.chip": {
+  "dark": {
+   "args": [
+    221,
+    400,
+    236,
+    432
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'F' of a filter chip ('Focused')",
+   "op": "cap",
+   "top": 407,
+   "value": "12pt"
+  }
+ },
+ "type.emptyTitle": {
+  "dark": {
+   "args": [
+    114,
+    884,
+    142,
+    928
+   ],
+   "capHeight": "16pt",
+   "capture": "screenshots/dark/19-search-no-repositories-empty.png",
+   "evidence": "Derived",
+   "inkPx": 33,
+   "note": "'T' of an empty-state line",
+   "op": "cap",
+   "top": 890,
+   "value": "22pt"
+  }
+ },
+ "type.footnote": {
+  "dark": {
+   "args": [
+    176,
+    682,
+    196,
+    707
+   ],
+   "capHeight": "8pt",
+   "capture": "screenshots/dark/17-pr-page-draft-branch-pills-diffstat.png",
+   "evidence": "Derived",
+   "inkPx": 17,
+   "note": "'M' of the 'Member' label",
+   "op": "cap",
+   "top": 687,
+   "value": "11pt"
+  }
+ },
+ "type.headline": {
+  "dark": {
+   "args": [
+    176,
+    408,
+    184,
+    446
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'I' of a card row title ('Issues')",
+   "op": "cap",
+   "top": 416,
+   "value": "16pt"
+  }
+ },
+ "type.inboxTitle": {
+  "dark": {
+   "args": [
+    128,
+    1060,
+    136,
+    1094
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'I' of an Inbox row title",
+   "op": "cap",
+   "top": 1064,
+   "value": "15pt"
+  }
+ },
+ "type.largeTitle": {
+  "dark": {
+   "args": [
+    48,
+    296,
+    66,
+    356
+   ],
+   "capHeight": "24.5pt",
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Derived",
+   "inkPx": 50,
+   "note": "'I' of the large title 'Inbox'",
+   "op": "cap",
+   "top": 301,
+   "value": "34pt"
+  }
+ },
+ "type.meta": {
+  "dark": {
+   "args": [
+    111,
+    318,
+    156,
+    350
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/10-repo-results-list.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'W' of a result's owner line",
+   "op": "cap",
+   "top": 323,
+   "value": "15pt"
+  }
+ },
+ "type.mono": {
+  "dark": {
+   "args": [
+    181,
+    455,
+    195,
+    484
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/18-files-changed-diff-view.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'I' of diff code ('Install')",
+   "op": "cap",
+   "top": 460,
+   "value": "12pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    355,
+    196,
+    364,
+    234
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/13-issues-list-filter-chips-labels.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'I' of a nav title ('Issues')",
+   "op": "cap",
+   "top": 202,
+   "value": "17pt"
+  }
+ },
+ "type.sectionHeader": {
+  "dark": {
+   "args": [
+    88,
+    340,
+    110,
+    372
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/22-code-options-preview-switches-on-off.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'P' of a grouped section header",
+   "op": "cap",
+   "top": 344,
+   "value": "16pt"
+  }
+ },
+ "type.settingsRow": {
+  "dark": {
+   "args": [
+    87,
+    384,
+    111,
+    420
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/21-settings-grouped-values-new-badge.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'A' of a Settings row",
+   "op": "cap",
+   "top": 389,
+   "value": "17pt"
+  }
+ },
+ "type.tab": {
+  "dark": {
+   "args": [
+    131,
+    1676,
+    147,
+    1700
+   ],
+   "capHeight": "7pt",
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Derived",
+   "inkPx": 15,
+   "note": "'H' of a tab label",
+   "op": "cap",
+   "top": 1681,
+   "value": "10pt"
+  }
+ },
+ "type.time": {
+  "dark": {
+   "args": [
+    699,
+    972,
+    718,
+    1003
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/03-inbox-chips-banner-unread-rows.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'3' of a row age",
+   "op": "cap",
+   "top": 975,
+   "value": "16pt"
+  }
+ },
+ "type.title1": {
+  "dark": {
+   "args": [
+    455,
+    390,
+    503,
+    435
+   ],
+   "capHeight": "16pt",
+   "capture": "screenshots/dark/15-issue-page-open-locked-badges-comment.png",
+   "evidence": "Derived",
+   "inkPx": 33,
+   "note": "'F' of an issue title",
+   "op": "cap",
+   "top": 396,
+   "value": "22pt"
+  }
+ },
+ "type.title2": {
+  "dark": {
+   "args": [
+    48,
+    306,
+    85,
+    350
+   ],
+   "capHeight": "15.5pt",
+   "capture": "screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+   "evidence": "Derived",
+   "inkPx": 32,
+   "note": "'M' of a Home section title ('My Work')",
+   "op": "cap",
+   "top": 312,
+   "value": "22pt"
+  }
+ }
+}
