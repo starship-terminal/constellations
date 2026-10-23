@@ -8,7 +8,10 @@
     "ai-research": "AI research",
     "productivity": "Productivity",
     "fitness": "Fitness",
-    "component-library": "Component libraries"
+    "component-library": "Component libraries",
+    "messaging": "Messaging",
+    "media": "Media",
+    "super-app": "Super apps"
   },
   "systems": [
     {
@@ -870,6 +873,364 @@
       },
       "layoutGaps": {
         "icons/": "Grok Bot's icons and bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "telegram",
+      "name": "Telegram",
+      "url": "https://telegram.org",
+      "category": "messaging",
+      "platform": "mobile",
+      "goodFor": "Native iOS messaging: black or white chat list with a grey pinned band, grouped settings cards led by gradient icon tiles, iOS 26 glass nav buttons, folder chips and a floating tab bar, one blue accent, violet-to-blue (dark) or pale green (light) outgoing bubbles over a wallpaper",
+      "tags": [
+        "ios",
+        "mobile",
+        "chat",
+        "messaging",
+        "glass",
+        "grouped-list",
+        "tab-bar",
+        "dense"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-23",
+      "access": "signed in, iPhone Mirroring",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/telegram/README.md",
+      "tokens": "systems/telegram/tokens.json",
+      "styleGuide": "systems/telegram/style-guide.html",
+      "preview": {
+        "cover": "systems/telegram/screenshots/dark/02-chat-list-folders-tabbar.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.chats",
+            "surface": "light.color.surface.card",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.divider"
+          },
+          "dark": {
+            "page": "dark.color.bg.chats",
+            "surface": "dark.color.surface.card",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/telegram/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Telegram's icons, stickers and illustrations are its artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "url": "https://www.youtube.com",
+      "category": "media",
+      "platform": "mobile",
+      "goodFor": "Native iOS video feed: near-black or white page, one neutral grey for chips and fields, rounded-rectangle filter chips that invert when selected, ink-coloured capsule buttons, edge-to-edge 16:9 thumbnails with a translucent duration badge, a five-item tab bar with a round Create button, YouTube red kept for progress and badges",
+      "tags": [
+        "ios",
+        "mobile",
+        "video",
+        "media",
+        "feed",
+        "chips",
+        "tab-bar",
+        "dark",
+        "ambient-tint"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-24",
+      "access": "signed in, free plan, iPhone Mirroring",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/youtube/README.md",
+      "tokens": "systems/youtube/tokens.json",
+      "styleGuide": "systems/youtube/style-guide.html",
+      "preview": {
+        "cover": "systems/youtube/screenshots/dark/14-chip-selected-video-cards-preview.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.surface.secondary",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.outline"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.surface.secondary",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.outline"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/youtube/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "YouTube's icons and logo are Google's artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "gemini",
+      "name": "Gemini",
+      "url": "https://gemini.google.com",
+      "category": "ai-chat",
+      "platform": "mobile",
+      "goodFor": "Native iOS AI assistant: a near-empty black or off-white page with a glow behind a floating glass composer, glass circles for navigation, the owner's messages in bubbles and replies as plain text, rimless grouped settings cards, Material primary blue for filled actions",
+      "tags": [
+        "ios",
+        "mobile",
+        "ai",
+        "chat",
+        "assistant",
+        "glass",
+        "gradient",
+        "sidebar",
+        "grouped-list",
+        "material"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-24",
+      "access": "signed in, Google AI Pro, iPhone Mirroring",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/gemini/README.md",
+      "tokens": "systems/gemini/tokens.json",
+      "styleGuide": "systems/gemini/style-guide.html",
+      "preview": {
+        "cover": "systems/gemini/screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.surface.card",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.primary",
+            "border": "light.color.border.divider"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.surface.card",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.primary",
+            "border": "dark.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/gemini/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Gemini's icons and the Gemini spark are Google's artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "spotify",
+      "name": "Spotify",
+      "url": "https://www.spotify.com",
+      "category": "media",
+      "platform": "mobile",
+      "goodFor": "Native iOS media app: near-black page where artwork carries the colour, dark grey tiles and cards, an artwork-tinted mini player over the tab bar, Spotify green only for what is selected or playable, white and outlined pill buttons, glass chips and bottom sheets",
+      "tags": [
+        "ios",
+        "mobile",
+        "music",
+        "media",
+        "dark",
+        "dark-only",
+        "glass",
+        "artwork",
+        "tab-bar",
+        "sheets"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-23",
+      "access": "signed in, Premium Family plan, iPhone Mirroring",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/spotify/README.md",
+      "tokens": "systems/spotify/tokens.json",
+      "styleGuide": "systems/spotify/style-guide.html",
+      "preview": {
+        "cover": "systems/spotify/screenshots/dark/02-home.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.surface.tile",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/spotify/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Spotify's icons and logo are its artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "grab",
+      "name": "Grab",
+      "url": "https://www.grab.com",
+      "category": "super-app",
+      "platform": "mobile",
+      "goodFor": "Native iOS service app: white pages under a coloured service header, Grab green for every primary action, pale mint secondary controls, dark-teal selected chips, capsule buttons, a tab bar with a raised scan button, bottom sheets over a scrim",
+      "tags": [
+        "ios",
+        "mobile",
+        "super-app",
+        "transport",
+        "food-delivery",
+        "light-only",
+        "green",
+        "tab-bar",
+        "chips",
+        "bottom-sheet",
+        "map"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-23",
+      "access": "signed in, iPhone Mirroring",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/grab/README.md",
+      "tokens": "systems/grab/tokens.json",
+      "styleGuide": "systems/grab/style-guide.html",
+      "preview": {
+        "cover": "systems/grab/screenshots/light/01-home-tiles-search.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.surface.card",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base",
+          "core.fontFamily.display"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/grab/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Grab's icons, 3D service icons and illustrations are its artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "github-ios",
+      "name": "GitHub Mobile",
+      "url": "https://github.com/mobile",
+      "category": "productivity",
+      "platform": "mobile",
+      "goodFor": "Native iOS developer tools: grouped cards on a near-black or pale grey page, full-bleed lists on the card colour, a floating iOS 26 glass tab bar, grey neutral buttons, coloured icon tiles per object type, filled state badges, monospace diffs with line and syntax colours",
+      "tags": [
+        "ios",
+        "mobile",
+        "developer-tools",
+        "code",
+        "glass",
+        "tab-bar",
+        "grouped-list",
+        "per-item-colour"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-24",
+      "access": "signed in, Copilot Pro, iPhone Mirroring",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/github-ios/README.md",
+      "tokens": "systems/github-ios/tokens.json",
+      "styleGuide": "systems/github-ios/style-guide.html",
+      "preview": {
+        "cover": "systems/github-ios/screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.surface.card",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.fg",
+            "border": "light.color.border.divider"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.surface.card",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.fg",
+            "border": "dark.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/github-ios/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "GitHub's icons are its artwork and were not extracted from the captures (docs/RIGHTS.md)"
       }
     }
   ]
