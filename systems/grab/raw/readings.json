@@ -1,0 +1,1960 @@
+{
+ "badge.discount": {
+  "light": {
+   "args": [
+    300,
+    1525,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/20-food-home-chips-categories-tabbar.png",
+   "evidence": "Derived",
+   "note": "Flash deals bar",
+   "op": "fill",
+   "share": 0.85,
+   "value": "#F6670A"
+  }
+ },
+ "badge.new": {
+  "light": {
+   "args": [
+    586,
+    582,
+    5,
+    15
+   ],
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "evidence": "Sampled",
+   "note": "'New' badge on a chip, right padding",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#D52E1D"
+  }
+ },
+ "bg.flash": {
+  "light": {
+   "args": [
+    300,
+    350,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/19-food-flash-deals-sheet-timer.png",
+   "evidence": "Sampled",
+   "note": "Flash deals sheet header",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F6670A"
+  }
+ },
+ "bg.headerFood": {
+  "light": {
+   "args": [
+    300,
+    150,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/20-food-home-chips-categories-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Food home header",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0D54A8"
+  }
+ },
+ "bg.headerHome": {
+  "light": {
+   "args": [
+    30,
+    160,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Derived",
+   "note": "Home header, top (a vertical gradient)",
+   "op": "fill",
+   "share": 0.31,
+   "value": "#034C35"
+  }
+ },
+ "bg.headerHomeEnd": {
+  "light": {
+   "args": [
+    30,
+    272,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Derived",
+   "note": "Home header, bottom of the gradient",
+   "op": "fill",
+   "share": 0.38,
+   "value": "#00322A"
+  }
+ },
+ "bg.page": {
+  "light": {
+   "args": [
+    300,
+    400,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/21-cart-empty-state.png",
+   "evidence": "Sampled",
+   "note": "Page background (empty cart)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "bg.promoCream": {
+  "light": {
+   "args": [
+    600,
+    300,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/23-pickup-promo-interstitial.png",
+   "evidence": "Sampled",
+   "note": "Pickup promo interstitial",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFF5EC"
+  }
+ },
+ "bg.promoPeach": {
+  "light": {
+   "args": [
+    700,
+    170,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/22-offer-zone-grid.png",
+   "evidence": "Sampled",
+   "note": "Offer Zone header",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFD3AE"
+  }
+ },
+ "bg.section": {
+  "light": {
+   "args": [
+    300,
+    1000,
+    200,
+    10
+   ],
+   "capture": "screenshots/light/14-account-cards-list.png",
+   "evidence": "Sampled",
+   "note": "Grey band between account sections",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F5F5F5"
+  }
+ },
+ "bg.tint": {
+  "light": {
+   "args": [
+    300,
+    150,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/14-account-cards-list.png",
+   "evidence": "Sampled",
+   "note": "Mint header behind the account card",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EEFAFA"
+  }
+ },
+ "border.card": {
+  "light": {
+   "args": [
+    100,
+    732,
+    200,
+    1
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Sampled",
+   "note": "Card border, top edge (Finance card, one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DEDEDE"
+  }
+ },
+ "border.chip": {
+  "light": {
+   "args": [
+    400,
+    555,
+    100,
+    1
+   ],
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "evidence": "Sampled",
+   "note": "Outlined filter chip border, top edge (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C4C4C4"
+  }
+ },
+ "border.control": {
+  "light": {
+   "args": [
+    705,
+    795,
+    2,
+    10
+   ],
+   "capture": "screenshots/light/16-checkboxes-disabled-save.png",
+   "evidence": "Sampled",
+   "note": "Checkbox border, left edge",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#BFBFBF"
+  }
+ },
+ "border.divider": {
+  "light": {
+   "args": [
+    300,
+    428,
+    200,
+    1
+   ],
+   "capture": "screenshots/light/12-messages-toast-fab.png",
+   "evidence": "Sampled",
+   "note": "Divider under a list row (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DEDEDE"
+  }
+ },
+ "border.field": {
+  "light": {
+   "args": [
+    300,
+    334,
+    200,
+    1
+   ],
+   "capture": "screenshots/light/04-destination-focused-recent-tabs.png",
+   "evidence": "Sampled",
+   "note": "Text field border, unfocused (pickup field, top edge)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E2E2E2"
+  }
+ },
+ "border.selected": {
+  "light": {
+   "args": [
+    300,
+    838,
+    200,
+    1
+   ],
+   "capture": "screenshots/light/07-ride-options-book-button-not-pressed.png",
+   "evidence": "Sampled",
+   "note": "Selected ride option border, top edge (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3DBA64"
+  }
+ },
+ "button.compact": {
+  "light": {
+   "args": [
+    690,
+    1145,
+    10,
+    20
+   ],
+   "capture": "screenshots/light/08-merchant-page-tabs-voucher-buy.png",
+   "evidence": "Derived",
+   "note": "Compact buy button ('Buy')",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#05804B"
+  }
+ },
+ "button.disabled": {
+  "light": {
+   "args": [
+    60,
+    1560,
+    100,
+    15
+   ],
+   "capture": "screenshots/light/16-checkboxes-disabled-save.png",
+   "evidence": "Sampled",
+   "note": "Disabled primary button ('Save')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F5F5F5"
+  }
+ },
+ "button.primary": {
+  "light": {
+   "args": [
+    300,
+    1450,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "evidence": "Sampled",
+   "note": "Primary button ('Yes')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#02B150"
+  }
+ },
+ "button.secondary": {
+  "light": {
+   "args": [
+    300,
+    1590,
+    20,
+    30
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "evidence": "Sampled",
+   "note": "Secondary button ('Later')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EEFAFA"
+  }
+ },
+ "chip.default": {
+  "light": {
+   "args": [
+    180,
+    436,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "evidence": "Sampled",
+   "note": "Unselected chip ('Transport')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EEFAFA"
+  }
+ },
+ "chip.selected": {
+  "light": {
+   "args": [
+    60,
+    440,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "evidence": "Sampled",
+   "note": "Selected chip ('All')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#174440"
+  }
+ },
+ "fab": {
+  "light": {
+   "args": [
+    700,
+    1460,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/12-messages-toast-fab.png",
+   "evidence": "Sampled",
+   "note": "Floating action button (new chat)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#025339"
+  }
+ },
+ "focus.caret": {
+  "light": {
+   "args": [
+    129,
+    325,
+    2,
+    10
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "evidence": "Derived",
+   "note": "Text caret in a focused field",
+   "op": "fill",
+   "share": 0.2,
+   "value": "#00B34E"
+  }
+ },
+ "focus.glow": {
+  "light": {
+   "args": [
+    300,
+    435,
+    200,
+    1
+   ],
+   "capture": "screenshots/light/04-destination-focused-recent-tabs.png",
+   "evidence": "Sampled",
+   "note": "Soft green glow outside the focused field",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DAF3E5"
+  }
+ },
+ "focus.ring": {
+  "light": {
+   "args": [
+    300,
+    439,
+    200,
+    1
+   ],
+   "capture": "screenshots/light/04-destination-focused-recent-tabs.png",
+   "evidence": "Sampled",
+   "note": "Focused text field border (destination field, top edge)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2A8959"
+  }
+ },
+ "lines.body": {
+  "light": {
+   "args": [
+    65,
+    1270,
+    630,
+    1360
+   ],
+   "bands": [
+    [
+     1278,
+     1308
+    ],
+    [
+     1326,
+     1356
+    ]
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "evidence": "Derived",
+   "note": "Two-line sheet body",
+   "op": "lines",
+   "value": "24.0pt"
+  }
+ },
+ "lines.paragraph": {
+  "light": {
+   "args": [
+    48,
+    618,
+    715,
+    722
+   ],
+   "bands": [
+    [
+     624,
+     651
+    ],
+    [
+     657,
+     685
+    ],
+    [
+     692,
+     713
+    ]
+   ],
+   "capture": "screenshots/light/16-checkboxes-disabled-save.png",
+   "evidence": "Derived",
+   "note": "Three-line intro paragraph",
+   "op": "lines",
+   "value": "17.0pt"
+  }
+ },
+ "lines.sheetTitle": {
+  "light": {
+   "args": [
+    65,
+    1138,
+    620,
+    1240
+   ],
+   "bands": [
+    [
+     1142,
+     1183
+    ],
+    [
+     1198,
+     1238
+    ]
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "evidence": "Derived",
+   "note": "Two-line sheet title",
+   "op": "lines",
+   "value": "28.0pt"
+  }
+ },
+ "nav.scan": {
+  "light": {
+   "args": [
+    395,
+    1600,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Sampled",
+   "note": "Centre scan button in the tab bar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#174440"
+  }
+ },
+ "radius.button": {
+  "light": {
+   "args": [
+    300,
+    1440,
+    80,
+    1465
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "corner": [
+    64,
+    1408
+   ],
+   "evidence": "Derived",
+   "inset": 16,
+   "note": "Primary button (capsule)",
+   "op": "diag",
+   "value": "27.3pt"
+  }
+ },
+ "radius.buttonSecondary": {
+  "light": {
+   "args": [
+    300,
+    1570,
+    80,
+    1610
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "corner": [
+    64,
+    1552
+   ],
+   "evidence": "Derived",
+   "inset": 16,
+   "note": "Secondary button (capsule)",
+   "op": "diag",
+   "value": "27.3pt"
+  }
+ },
+ "radius.card": {
+  "light": {
+   "args": [
+    300,
+    320,
+    60,
+    340
+   ],
+   "capture": "screenshots/light/14-account-cards-list.png",
+   "corner": [
+    48,
+    295
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Account card over the mint header",
+   "op": "diag",
+   "value": "15.4pt"
+  }
+ },
+ "radius.chip": {
+  "light": {
+   "args": [
+    100,
+    435,
+    60,
+    470
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "corner": [
+    49,
+    426
+   ],
+   "evidence": "Derived",
+   "inset": 10,
+   "note": "Chip (capsule)",
+   "op": "diag",
+   "value": "17.1pt"
+  }
+ },
+ "radius.promo": {
+  "light": {
+   "args": [
+    200,
+    930,
+    60,
+    1000
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "corner": [
+    48,
+    916
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Promo card (insurance)",
+   "op": "diag",
+   "value": "15.4pt"
+  }
+ },
+ "radius.searchField": {
+  "light": {
+   "args": [
+    300,
+    300,
+    60,
+    330
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "corner": [
+    48,
+    290
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Search field",
+   "op": "diag",
+   "value": "11.9pt"
+  }
+ },
+ "radius.sheet": {
+  "light": {
+   "args": [
+    400,
+    700,
+    40,
+    720
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "corner": [
+    16,
+    655
+   ],
+   "evidence": "Derived",
+   "inset": 14,
+   "note": "Sheet top corner",
+   "op": "diag",
+   "value": "23.9pt"
+  }
+ },
+ "radius.sheetFlash": {
+  "light": {
+   "args": [
+    200,
+    300,
+    30,
+    300
+   ],
+   "capture": "screenshots/light/19-food-flash-deals-sheet-timer.png",
+   "corner": [
+    16,
+    250
+   ],
+   "evidence": "Derived",
+   "inset": 14,
+   "note": "Flash deals sheet top corner",
+   "op": "diag",
+   "value": "23.9pt"
+  }
+ },
+ "radius.tooltip": {
+  "light": {
+   "args": [
+    300,
+    318,
+    135,
+    340
+   ],
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "corner": [
+    126,
+    306
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Tooltip",
+   "op": "diag",
+   "value": "8.5pt"
+  }
+ },
+ "rows.settings": {
+  "light": {
+   "args": [
+    55,
+    1350,
+    260,
+    1720
+   ],
+   "bands": [
+    [
+     1360,
+     1384
+    ],
+    [
+     1464,
+     1494
+    ],
+    [
+     1568,
+     1592
+    ],
+    [
+     1672,
+     1702
+    ]
+   ],
+   "capture": "screenshots/light/14-account-cards-list.png",
+   "evidence": "Derived",
+   "note": "Settings row labels: their pitch is the row height",
+   "op": "lines",
+   "value": "52.0pt"
+  }
+ },
+ "scrim.coachmark": {
+  "light": {
+   "args": [
+    300,
+    1640,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/09-activity-coachmark-tooltip.png",
+   "evidence": "Sampled",
+   "note": "Activity under the coach mark",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#6D6D6D"
+  }
+ },
+ "scrim.dialog": {
+  "light": {
+   "args": [
+    300,
+    500,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "evidence": "Sampled",
+   "note": "Messages under the pre-prompt sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#6A6A6A"
+  }
+ },
+ "scrim.ref": {
+  "light": {
+   "args": [
+    300,
+    500,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/12-messages-toast-fab.png",
+   "evidence": "Sampled",
+   "note": "Messages, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "scrim.sheet": {
+  "light": {
+   "args": [
+    400,
+    180,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/19-food-flash-deals-sheet-timer.png",
+   "evidence": "Sampled",
+   "note": "Food header under the flash deals sheet",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#172F4C"
+  }
+ },
+ "scrim.sheetRef": {
+  "light": {
+   "args": [
+    400,
+    180,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/20-food-home-chips-categories-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Food header, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0D54A8"
+  }
+ },
+ "size.buttonCompact": {
+  "light": {
+   "args": [
+    [
+     690,
+     1150
+    ],
+    [
+     630,
+     1130,
+     130,
+     90
+    ],
+    12
+   ],
+   "box": [
+    649,
+    1143,
+    738,
+    1205
+   ],
+   "capture": "screenshots/light/08-merchant-page-tabs-voucher-buy.png",
+   "colour": "#05804B",
+   "evidence": "Sampled",
+   "note": "Compact Buy button",
+   "op": "bbox",
+   "value": "45x31.5pt"
+  }
+ },
+ "size.buttonDisabled": {
+  "light": {
+   "args": [
+    [
+     200,
+     1560
+    ],
+    [
+     40,
+     1520,
+     740,
+     140
+    ],
+    2
+   ],
+   "box": [
+    48,
+    1536,
+    763,
+    1647
+   ],
+   "capture": "screenshots/light/16-checkboxes-disabled-save.png",
+   "colour": "#F5F5F5",
+   "evidence": "Sampled",
+   "note": "Disabled primary button",
+   "op": "bbox",
+   "value": "358x56pt"
+  }
+ },
+ "size.buttonPrimary": {
+  "light": {
+   "args": [
+    [
+     300,
+     1450
+    ],
+    [
+     40,
+     1390,
+     740,
+     150
+    ],
+    8
+   ],
+   "box": [
+    65,
+    1409,
+    746,
+    1518
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "colour": "#02B150",
+   "evidence": "Sampled",
+   "note": "Primary button",
+   "op": "bbox",
+   "value": "341x55pt"
+  }
+ },
+ "size.buttonSecondary": {
+  "light": {
+   "args": [
+    [
+     300,
+     1600
+    ],
+    [
+     40,
+     1540,
+     740,
+     140
+    ],
+    3
+   ],
+   "box": [
+    64,
+    1552,
+    747,
+    1663
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "colour": "#EEFAFA",
+   "evidence": "Sampled",
+   "note": "Secondary button",
+   "op": "bbox",
+   "value": "342x56pt"
+  }
+ },
+ "size.cardH": {
+  "light": {
+   "args": [
+    "col",
+    600,
+    700,
+    880,
+    [
+     600,
+     700
+    ],
+    12
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Sampled",
+   "from": 732,
+   "note": "Ride to card height",
+   "op": "extent",
+   "to": 851,
+   "value": "60pt"
+  }
+ },
+ "size.cardW": {
+  "light": {
+   "args": [
+    "row",
+    790,
+    400,
+    790,
+    [
+     400,
+     790
+    ],
+    12
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Sampled",
+   "from": 414,
+   "note": "Ride to card width",
+   "op": "extent",
+   "to": 759,
+   "value": "173pt"
+  }
+ },
+ "size.checkbox": {
+  "light": {
+   "args": [
+    "row",
+    800,
+    690,
+    760,
+    [
+     690,
+     800
+    ],
+    12
+   ],
+   "capture": "screenshots/light/16-checkboxes-disabled-save.png",
+   "evidence": "Sampled",
+   "from": 704,
+   "note": "Checkbox width",
+   "op": "extent",
+   "to": 743,
+   "value": "20pt"
+  }
+ },
+ "size.chip": {
+  "light": {
+   "args": [
+    [
+     60,
+     440
+    ],
+    [
+     40,
+     415,
+     130,
+     100
+    ],
+    10
+   ],
+   "box": [
+    49,
+    427,
+    146,
+    496
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "colour": "#174440",
+   "evidence": "Sampled",
+   "note": "Selected chip ('All')",
+   "op": "bbox",
+   "value": "49x35pt"
+  }
+ },
+ "size.chipDefault": {
+  "light": {
+   "args": [
+    [
+     180,
+     436
+    ],
+    [
+     155,
+     415,
+     270,
+     100
+    ],
+    3
+   ],
+   "box": [
+    165,
+    426,
+    409,
+    496
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "colour": "#EEFAFA",
+   "evidence": "Sampled",
+   "note": "Unselected chip ('Transport')",
+   "op": "bbox",
+   "value": "122.5x35.5pt"
+  }
+ },
+ "size.fab": {
+  "light": {
+   "args": [
+    [
+     700,
+     1460
+    ],
+    [
+     630,
+     1420,
+     160,
+     160
+    ],
+    30
+   ],
+   "box": [
+    653,
+    1441,
+    762,
+    1550
+   ],
+   "capture": "screenshots/light/12-messages-toast-fab.png",
+   "colour": "#025339",
+   "evidence": "Sampled",
+   "note": "Floating action button",
+   "op": "bbox",
+   "value": "55x55pt"
+  }
+ },
+ "size.field": {
+  "light": {
+   "args": [
+    "col",
+    400,
+    320,
+    430,
+    [
+     400,
+     320
+    ],
+    12
+   ],
+   "capture": "screenshots/light/04-destination-focused-recent-tabs.png",
+   "evidence": "Sampled",
+   "from": 334,
+   "note": "Text field height (pickup field)",
+   "op": "extent",
+   "to": 413,
+   "value": "40pt"
+  }
+ },
+ "size.scan": {
+  "light": {
+   "args": [
+    [
+     395,
+     1600
+    ],
+    [
+     340,
+     1570,
+     140,
+     130
+    ],
+    30
+   ],
+   "box": [
+    359,
+    1570,
+    476,
+    1687
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "colour": "#174440",
+   "evidence": "Sampled",
+   "note": "Centre scan button",
+   "op": "bbox",
+   "value": "59x59pt"
+  }
+ },
+ "size.searchField": {
+  "light": {
+   "args": [
+    [
+     300,
+     330
+    ],
+    [
+     30,
+     280,
+     760,
+     110
+    ],
+    2
+   ],
+   "box": [
+    48,
+    290,
+    763,
+    369
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "colour": "#F5F5F5",
+   "evidence": "Sampled",
+   "note": "Search field (grey)",
+   "op": "bbox",
+   "value": "358x40pt"
+  }
+ },
+ "size.searchHome": {
+  "light": {
+   "args": [
+    [
+     100,
+     225
+    ],
+    [
+     40,
+     175,
+     540,
+     100
+    ],
+    3
+   ],
+   "box": [
+    49,
+    187,
+    570,
+    264
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Search field on the home header",
+   "op": "bbox",
+   "value": "261x39pt"
+  }
+ },
+ "size.tabBar": {
+  "light": {
+   "args": [
+    "col",
+    200,
+    1560,
+    1600,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/12-messages-toast-fab.png",
+   "evidence": "Sampled",
+   "note": "Tab bar top edge",
+   "op": "find",
+   "value": [
+    1584
+   ]
+  }
+ },
+ "size.tooltip": {
+  "light": {
+   "args": [
+    [
+     140,
+     318
+    ],
+    [
+     110,
+     280,
+     680,
+     170
+    ],
+    10
+   ],
+   "box": [
+    127,
+    292,
+    762,
+    432
+   ],
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "colour": "#025339",
+   "evidence": "Sampled",
+   "note": "Tooltip",
+   "op": "bbox",
+   "value": "318x70.5pt"
+  }
+ },
+ "surface.card": {
+  "light": {
+   "args": [
+    600,
+    770,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Sampled",
+   "note": "Ride to card",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.coachmark": {
+  "light": {
+   "args": [
+    300,
+    330,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/09-activity-coachmark-tooltip.png",
+   "evidence": "Sampled",
+   "note": "Coach mark card",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.field": {
+  "light": {
+   "args": [
+    300,
+    330,
+    20,
+    20
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "evidence": "Sampled",
+   "note": "Search field (food search)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F5F5F5"
+  }
+ },
+ "surface.pill": {
+  "light": {
+   "args": [
+    450,
+    1250,
+    5,
+    5
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "evidence": "Sampled",
+   "note": "Recent-search pill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F5F5F5"
+  }
+ },
+ "surface.sheet": {
+  "light": {
+   "args": [
+    300,
+    1700,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "evidence": "Sampled",
+   "note": "Pre-prompt sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.timer": {
+  "light": {
+   "args": [
+    318,
+    380,
+    6,
+    50
+   ],
+   "capture": "screenshots/light/19-food-flash-deals-sheet-timer.png",
+   "evidence": "Sampled",
+   "note": "Flash deal countdown digit box",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#712203"
+  }
+ },
+ "surface.tooltip": {
+  "light": {
+   "args": [
+    140,
+    318,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "evidence": "Sampled",
+   "note": "Tooltip (Save posts)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#025339"
+  }
+ },
+ "tab.indicator": {
+  "light": {
+   "args": [
+    400,
+    519,
+    20,
+    2
+   ],
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "evidence": "Sampled",
+   "note": "Active tab underline",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#05804B"
+  }
+ },
+ "text.body": {
+  "light": {
+   "args": [
+    55,
+    1355,
+    160,
+    40
+   ],
+   "capture": "screenshots/light/14-account-cards-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row label",
+   "op": "text",
+   "value": "#1A1A1A"
+  }
+ },
+ "text.chip": {
+  "light": {
+   "args": [
+    246,
+    448,
+    135,
+    38
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected chip label ('Transport')",
+   "op": "text",
+   "value": "#19423F"
+  }
+ },
+ "text.danger": {
+  "light": {
+   "args": [
+    165,
+    452,
+    140,
+    35
+   ],
+   "capture": "screenshots/light/10-activity-list-status-labels.png",
+   "evidence": "Sampled (text)",
+   "note": "Status label 'Cancelled'",
+   "op": "text",
+   "value": "#D42C1B"
+  }
+ },
+ "text.disabled": {
+  "light": {
+   "args": [
+    365,
+    1575,
+    80,
+    35
+   ],
+   "capture": "screenshots/light/16-checkboxes-disabled-save.png",
+   "evidence": "Sampled (text)",
+   "note": "Disabled Save label",
+   "op": "text",
+   "value": "#A2A2A2"
+  }
+ },
+ "text.label": {
+  "light": {
+   "args": [
+    80,
+    758,
+    90,
+    28
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Sampled (text)",
+   "note": "Card label ('Finance')",
+   "op": "text",
+   "value": "#737273"
+  }
+ },
+ "text.link": {
+  "light": {
+   "args": [
+    590,
+    355,
+    175,
+    35
+   ],
+   "capture": "screenshots/light/10-activity-list-status-labels.png",
+   "evidence": "Sampled (text)",
+   "note": "Link ('View History')",
+   "op": "text",
+   "value": "#0F6FD6"
+  }
+ },
+ "text.linkBrand": {
+  "light": {
+   "args": [
+    235,
+    1212,
+    345,
+    35
+   ],
+   "capture": "screenshots/light/21-cart-empty-state.png",
+   "evidence": "Sampled (text)",
+   "note": "Green text link ('Explore Available Options')",
+   "op": "text",
+   "value": "#00B04C"
+  }
+ },
+ "text.navActive": {
+  "light": {
+   "args": [
+    65,
+    1660,
+    60,
+    25
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Sampled (text)",
+   "note": "Active tab bar label ('Home')",
+   "op": "text",
+   "value": "#00B04F"
+  }
+ },
+ "text.navInactive": {
+  "light": {
+   "args": [
+    60,
+    1660,
+    65,
+    25
+   ],
+   "capture": "screenshots/light/12-messages-toast-fab.png",
+   "evidence": "Sampled (text)",
+   "note": "Inactive tab bar label ('Home')",
+   "op": "text",
+   "value": "#787878"
+  }
+ },
+ "text.new": {
+  "light": {
+   "args": [
+    630,
+    1462,
+    55,
+    30
+   ],
+   "capture": "screenshots/light/14-account-cards-list.png",
+   "evidence": "Sampled (text)",
+   "note": "'New' marker on a settings row",
+   "op": "text",
+   "value": "#D42C1B"
+  }
+ },
+ "text.onPrimary": {
+  "light": {
+   "args": [
+    370,
+    1445,
+    70,
+    45,
+    "light"
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "evidence": "Sampled (text)",
+   "note": "Primary button label ('Yes')",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.onSecondary": {
+  "light": {
+   "args": [
+    360,
+    1590,
+    90,
+    40
+   ],
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "evidence": "Sampled (text)",
+   "note": "Secondary button label ('Later')",
+   "op": "text",
+   "value": "#17423E"
+  }
+ },
+ "text.onTooltip": {
+  "light": {
+   "args": [
+    158,
+    335,
+    200,
+    35,
+    "light"
+   ],
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "evidence": "Sampled (text)",
+   "note": "Tooltip text",
+   "op": "text",
+   "value": "#FEFFFD"
+  }
+ },
+ "text.placeholder": {
+  "light": {
+   "args": [
+    120,
+    210,
+    190,
+    35
+   ],
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Sampled (text)",
+   "note": "Search placeholder on the home header",
+   "op": "text",
+   "value": "#A2A2A2"
+  }
+ },
+ "text.placeholderField": {
+  "light": {
+   "args": [
+    140,
+    315,
+    150,
+    35
+   ],
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "evidence": "Sampled (text)",
+   "note": "Search placeholder in a grey field",
+   "op": "text",
+   "value": "#BEBEBF"
+  }
+ },
+ "text.primary": {
+  "light": {
+   "args": [
+    50,
+    955,
+    170,
+    45
+   ],
+   "capture": "screenshots/light/08-merchant-page-tabs-voucher-buy.png",
+   "evidence": "Sampled (text)",
+   "note": "Section title ('Vouchers')",
+   "op": "text",
+   "value": "#191919"
+  }
+ },
+ "text.promo": {
+  "light": {
+   "args": [
+    48,
+    195,
+    90,
+    35
+   ],
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "evidence": "Sampled (text)",
+   "note": "Orange highlight ('3.2M+')",
+   "op": "text",
+   "value": "#F56600"
+  }
+ },
+ "text.rowValue": {
+  "light": {
+   "args": [
+    540,
+    1358,
+    145,
+    30
+   ],
+   "capture": "screenshots/light/14-account-cards-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Row value ('0 GrabCoins')",
+   "op": "text",
+   "value": "#434243"
+  }
+ },
+ "text.secondary": {
+  "light": {
+   "args": [
+    165,
+    770,
+    230,
+    35
+   ],
+   "capture": "screenshots/light/10-activity-list-status-labels.png",
+   "evidence": "Sampled (text)",
+   "note": "Trip date in Activity",
+   "op": "text",
+   "value": "#717171"
+  }
+ },
+ "text.success": {
+  "light": {
+   "args": [
+    165,
+    1148,
+    110,
+    35
+   ],
+   "capture": "screenshots/light/10-activity-list-status-labels.png",
+   "evidence": "Sampled (text)",
+   "note": "Status label 'Bill paid'",
+   "op": "text",
+   "value": "#00B04B"
+  }
+ },
+ "text.tab": {
+  "light": {
+   "args": [
+    100,
+    455,
+    125,
+    35
+   ],
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "evidence": "Sampled (text)",
+   "note": "Inactive tab label ('Following')",
+   "op": "text",
+   "value": "#3C3C3C"
+  }
+ },
+ "text.tabActive": {
+  "light": {
+   "args": [
+    355,
+    455,
+    105,
+    35
+   ],
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "evidence": "Sampled (text)",
+   "note": "Active tab label ('For you')",
+   "op": "text",
+   "value": "#005239"
+  }
+ },
+ "type.body": {
+  "light": {
+   "args": [
+    55,
+    1555,
+    80,
+    1610
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/light/14-account-cards-list.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'R' of a settings row ('Rewards')",
+   "op": "cap",
+   "top": 1568,
+   "value": "16pt"
+  }
+ },
+ "type.button": {
+  "light": {
+   "args": [
+    378,
+    1445,
+    402,
+    1488
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'Y' of 'Yes'",
+   "op": "cap",
+   "top": 1452,
+   "value": "17pt"
+  }
+ },
+ "type.caption": {
+  "light": {
+   "args": [
+    66,
+    1658,
+    82,
+    1690
+   ],
+   "capHeight": "7.5pt",
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Derived",
+   "inkPx": 16,
+   "note": "'H' of a tab bar label",
+   "op": "cap",
+   "top": 1664,
+   "value": "10pt"
+  }
+ },
+ "type.chip": {
+  "light": {
+   "args": [
+    246,
+    448,
+    266,
+    485
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/light/17-search-focused-chips-recent-pills.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'T' of 'Transport'",
+   "op": "cap",
+   "top": 453,
+   "value": "15pt"
+  }
+ },
+ "type.display": {
+  "light": {
+   "args": [
+    48,
+    465,
+    76,
+    520
+   ],
+   "capHeight": "15pt",
+   "capture": "screenshots/light/20-food-home-chips-categories-tabbar.png",
+   "evidence": "Derived",
+   "inkPx": 31,
+   "note": "'N' of a banner title ('Night munchies')",
+   "op": "cap",
+   "top": 475,
+   "value": "21pt"
+  }
+ },
+ "type.label": {
+  "light": {
+   "args": [
+    80,
+    755,
+    93,
+    790
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/light/01-home-tiles-search.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'F' of a card label ('Finance')",
+   "op": "cap",
+   "top": 761,
+   "value": "12pt"
+  }
+ },
+ "type.largeTitle": {
+  "light": {
+   "args": [
+    48,
+    200,
+    96,
+    262
+   ],
+   "capHeight": "17.5pt",
+   "capture": "screenshots/light/12-messages-toast-fab.png",
+   "evidence": "Derived",
+   "inkPx": 36,
+   "note": "'M' of a page title ('Messages')",
+   "op": "cap",
+   "top": 215,
+   "value": "24pt"
+  }
+ },
+ "type.listTitle": {
+  "light": {
+   "args": [
+    253,
+    555,
+    272,
+    595
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/light/19-food-flash-deals-sheet-timer.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'P' of a merchant name",
+   "op": "cap",
+   "top": 562,
+   "value": "14pt"
+  }
+ },
+ "type.sectionHeader": {
+  "light": {
+   "args": [
+    48,
+    345,
+    72,
+    390
+   ],
+   "capHeight": "13pt",
+   "capture": "screenshots/light/10-activity-list-status-labels.png",
+   "evidence": "Derived",
+   "inkPx": 27,
+   "note": "'R' of a list header ('Recent')",
+   "op": "cap",
+   "top": 353,
+   "value": "18pt"
+  }
+ },
+ "type.sectionTitle": {
+  "light": {
+   "args": [
+    48,
+    1235,
+    68,
+    1290
+   ],
+   "capHeight": "13pt",
+   "capture": "screenshots/light/14-account-cards-list.png",
+   "evidence": "Derived",
+   "inkPx": 27,
+   "note": "'F' of a section title ('For more value')",
+   "op": "cap",
+   "top": 1247,
+   "value": "18pt"
+  }
+ },
+ "type.sheetTitle": {
+  "light": {
+   "args": [
+    63,
+    1135,
+    90,
+    1190
+   ],
+   "capHeight": "14.5pt",
+   "capture": "screenshots/light/11-notification-preprompt-sheet-yes-later.png",
+   "evidence": "Derived",
+   "inkPx": 30,
+   "note": "'T' of a sheet title",
+   "op": "cap",
+   "top": 1145,
+   "value": "20pt"
+  }
+ },
+ "type.subhead": {
+  "light": {
+   "args": [
+    152,
+    1032,
+    177,
+    1068
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/light/16-checkboxes-disabled-save.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'M' of a row subtitle",
+   "op": "cap",
+   "top": 1038,
+   "value": "14pt"
+  }
+ },
+ "type.tab": {
+  "light": {
+   "args": [
+    100,
+    455,
+    116,
+    492
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/light/13-moments-feed-tabs-chips-tooltip.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'F' of 'Following'",
+   "op": "cap",
+   "top": 461,
+   "value": "15pt"
+  }
+ },
+ "type.title": {
+  "light": {
+   "args": [
+    143,
+    205,
+    170,
+    262
+   ],
+   "capHeight": "13pt",
+   "capture": "screenshots/light/16-checkboxes-disabled-save.png",
+   "evidence": "Derived",
+   "inkPx": 27,
+   "note": "'D' of a pushed page title ('Dietary preferences')",
+   "op": "cap",
+   "top": 219,
+   "value": "18pt"
+  }
+ }
+}

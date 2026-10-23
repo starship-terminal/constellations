@@ -1,0 +1,3278 @@
+{
+ "accent.caret": {
+  "dark": {
+   "args": [
+    73,
+    205,
+    2,
+    30
+   ],
+   "capture": "screenshots/dark/07-search-focused-recents.png",
+   "evidence": "Derived",
+   "note": "Text caret, two pixel columns",
+   "op": "fill",
+   "share": 0.15,
+   "value": "#16D765"
+  }
+ },
+ "accent.chipHome": {
+  "dark": {
+   "args": [
+    146,
+    200,
+    8,
+    40
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "note": "Selected home chip (All)",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#1BD761"
+  }
+ },
+ "accent.dot": {
+  "dark": {
+   "args": [
+    676,
+    790,
+    4,
+    4
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Sampled",
+   "note": "Unread dot (Your Updates)",
+   "op": "fill",
+   "share": 0.94,
+   "value": "#1278F1"
+  }
+ },
+ "accent.green": {
+  "dark": {
+   "args": [
+    140,
+    300,
+    12,
+    30
+   ],
+   "capture": "screenshots/dark/11-library-chip-selected.png",
+   "evidence": "Sampled",
+   "note": "Selected filter chip (Playlists)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1BD761"
+  }
+ },
+ "accent.like": {
+  "dark": {
+   "args": [
+    613,
+    1488,
+    5,
+    10
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Derived",
+   "note": "Saved (liked) tick in the mini player",
+   "op": "fill",
+   "share": 0.7,
+   "value": "#1BD761"
+  }
+ },
+ "accent.pin": {
+  "dark": {
+   "args": [
+    210,
+    552,
+    3,
+    3
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled",
+   "note": "Pin icon in a library row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1BD761"
+  }
+ },
+ "accent.play": {
+  "dark": {
+   "args": [
+    715,
+    850,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled",
+   "note": "Play button",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#1BD761"
+  }
+ },
+ "accent.slider": {
+  "dark": {
+   "args": [
+    140,
+    865,
+    60,
+    1
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "evidence": "Sampled",
+   "note": "Slider, filled part",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1BD761"
+  }
+ },
+ "accent.tabIndicator": {
+  "dark": {
+   "args": [
+    60,
+    1017,
+    60,
+    2
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled",
+   "note": "Underline under the selected artist tab",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1BD761"
+  }
+ },
+ "badge.beta": {
+  "dark": {
+   "args": [
+    399,
+    1660,
+    5,
+    20
+   ],
+   "capture": "screenshots/dark/24-artist-context-sheet.png",
+   "evidence": "Sampled",
+   "note": "'Beta' tag",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1BD761"
+  }
+ },
+ "badge.family": {
+  "dark": {
+   "args": [
+    575,
+    485,
+    6,
+    35
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Sampled",
+   "note": "Plan badge ('Family')",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#D8A3FE"
+  }
+ },
+ "bg.drawer": {
+  "dark": {
+   "args": [
+    560,
+    940,
+    100,
+    30
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Sampled",
+   "note": "Profile drawer background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1F1F1F"
+  }
+ },
+ "bg.page": {
+  "dark": {
+   "args": [
+    450,
+    1195,
+    200,
+    10
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "note": "Home background, between sections",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#121212"
+  }
+ },
+ "border.divider": {
+  "dark": {
+   "args": [
+    300,
+    927,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "evidence": "Sampled",
+   "note": "Section divider in Playback (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#282828"
+  }
+ },
+ "border.drawerDivider": {
+  "dark": {
+   "args": [
+    300,
+    344,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Sampled",
+   "note": "Divider inside the drawer's account card",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#353535"
+  }
+ },
+ "border.grabber": {
+  "dark": {
+   "args": [
+    380,
+    1118,
+    40,
+    2
+   ],
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Derived",
+   "note": "Sheet grabber",
+   "op": "fill",
+   "share": 0.65,
+   "value": "#727274"
+  }
+ },
+ "border.outline": {
+  "dark": {
+   "args": [
+    158,
+    875,
+    12,
+    30
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled (text)",
+   "note": "Following pill outline (1 pt, anti-aliased)",
+   "op": "text",
+   "value": "#767676"
+  }
+ },
+ "border.sheetDivider": {
+  "dark": {
+   "args": [
+    300,
+    958,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/24-artist-context-sheet.png",
+   "evidence": "Derived",
+   "note": "Divider under a context sheet's header",
+   "op": "fill",
+   "share": 0.68,
+   "value": "#363636"
+  }
+ },
+ "button.inverse": {
+  "dark": {
+   "args": [
+    525,
+    1095,
+    30,
+    10
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "note": "'Pre-save' pill",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#FFFFFF"
+  }
+ },
+ "button.notice": {
+  "dark": {
+   "args": [
+    440,
+    1320,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Sampled",
+   "note": "'Turn on' pill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "category.fitness": {
+  "dark": {
+   "args": [
+    470,
+    720,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "evidence": "Sampled",
+   "note": "Browse tile 'Fitness'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#777777"
+  }
+ },
+ "category.liveEvents": {
+  "dark": {
+   "args": [
+    100,
+    720,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "evidence": "Sampled",
+   "note": "Browse tile 'Live Events'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#8400E8"
+  }
+ },
+ "category.madeForYou": {
+  "dark": {
+   "args": [
+    100,
+    960,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "evidence": "Sampled",
+   "note": "Browse tile 'Made For You'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#8E67AC"
+  }
+ },
+ "category.music": {
+  "dark": {
+   "args": [
+    100,
+    480,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "evidence": "Sampled",
+   "note": "Browse tile 'Music'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DC148D"
+  }
+ },
+ "category.newReleases": {
+  "dark": {
+   "args": [
+    100,
+    1200,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "evidence": "Sampled",
+   "note": "Browse tile 'New Releases'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#628006"
+  }
+ },
+ "category.playlisting": {
+  "dark": {
+   "args": [
+    470,
+    1250,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "evidence": "Sampled",
+   "note": "Browse tile 'The Art of Playlisting'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E9105C"
+  }
+ },
+ "category.podcasts": {
+  "dark": {
+   "args": [
+    470,
+    480,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "evidence": "Sampled",
+   "note": "Browse tile 'Podcasts'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#006450"
+  }
+ },
+ "category.upcoming": {
+  "dark": {
+   "args": [
+    470,
+    1010,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "evidence": "Sampled",
+   "note": "Browse tile 'Upcoming releases'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#006450"
+  }
+ },
+ "lines.category": {
+  "dark": {
+   "args": [
+    439,
+    900,
+    600,
+    990
+   ],
+   "bands": [
+    [
+     905,
+     936
+    ],
+    [
+     950,
+     974
+    ]
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "evidence": "Derived",
+   "note": "Two-line browse tile title",
+   "op": "lines",
+   "value": "22.5pt"
+  }
+ },
+ "lines.notice": {
+  "dark": {
+   "args": [
+    64,
+    1315,
+    380,
+    1385
+   ],
+   "bands": [
+    [
+     1320,
+     1344
+    ],
+    [
+     1356,
+     1379
+    ]
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Derived",
+   "note": "Two-line notification text",
+   "op": "lines",
+   "value": "18.0pt"
+  }
+ },
+ "lines.settingsSubtitle": {
+  "dark": {
+   "args": [
+    48,
+    460,
+    600,
+    530
+   ],
+   "bands": [
+    [
+     466,
+     490
+    ],
+    [
+     502,
+     521
+    ]
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "evidence": "Derived",
+   "note": "Two-line setting description",
+   "op": "lines",
+   "value": "18.0pt"
+  }
+ },
+ "lines.tileTitle": {
+  "dark": {
+   "args": [
+    160,
+    395,
+    330,
+    470
+   ],
+   "bands": [
+    [
+     402,
+     421
+    ],
+    [
+     437,
+     457
+    ]
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Derived",
+   "note": "Two-line shortcut tile title",
+   "op": "lines",
+   "value": "17.5pt"
+  }
+ },
+ "radius.card": {
+  "dark": {
+   "args": [
+    700,
+    900,
+    755,
+    1000
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "corner": [
+    763,
+    878
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Promo card, top-right corner",
+   "op": "diagr",
+   "value": "8.5pt"
+  }
+ },
+ "radius.category": {
+  "dark": {
+   "args": [
+    200,
+    420,
+    100,
+    550
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "corner": [
+    48,
+    396
+   ],
+   "evidence": "Derived",
+   "inset": 2,
+   "note": "Browse category tile",
+   "op": "diag",
+   "value": "3.4pt"
+  }
+ },
+ "radius.drawerCard": {
+  "dark": {
+   "args": [
+    500,
+    230,
+    40,
+    280
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "corner": [
+    32,
+    210
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Account card in the drawer",
+   "op": "diag",
+   "value": "8.5pt"
+  }
+ },
+ "radius.field": {
+  "dark": {
+   "args": [
+    300,
+    300,
+    60,
+    338
+   ],
+   "capture": "screenshots/dark/05-search.png",
+   "corner": [
+    48,
+    290
+   ],
+   "evidence": "Derived",
+   "inset": 4,
+   "note": "Search field",
+   "op": "diag",
+   "value": "6.8pt"
+  }
+ },
+ "radius.miniPlayer": {
+  "dark": {
+   "args": [
+    300,
+    1460,
+    40,
+    1475
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "corner": [
+    32,
+    1434
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Mini player",
+   "op": "diag",
+   "value": "8.5pt"
+  }
+ },
+ "radius.notice": {
+  "dark": {
+   "args": [
+    300,
+    1295,
+    40,
+    1350
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "corner": [
+    32,
+    1284
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Notification card in the drawer",
+   "op": "diag",
+   "value": "8.5pt"
+  }
+ },
+ "radius.settingsTile": {
+  "dark": {
+   "args": [
+    220,
+    305,
+    50,
+    380
+   ],
+   "capture": "screenshots/dark/20-settings.png",
+   "corner": [
+    40,
+    294
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Settings quick tile",
+   "op": "diag",
+   "value": "8.5pt"
+  }
+ },
+ "radius.sheet": {
+  "dark": {
+   "args": [
+    300,
+    850,
+    50,
+    1000
+   ],
+   "capture": "screenshots/dark/24-artist-context-sheet.png",
+   "corner": [
+    32,
+    807
+   ],
+   "evidence": "Derived",
+   "inset": 20,
+   "note": "Context sheet, top corner",
+   "op": "diag",
+   "value": "34.1pt"
+  }
+ },
+ "radius.tile": {
+  "dark": {
+   "args": [
+    380,
+    300,
+    390,
+    330
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "corner": [
+    397,
+    270
+   ],
+   "evidence": "Derived",
+   "inset": 2,
+   "note": "Home shortcut tile, top-right corner",
+   "op": "diagr",
+   "value": "3.4pt"
+  }
+ },
+ "scrim.context": {
+  "dark": {
+   "args": [
+    600,
+    785,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/24-artist-context-sheet.png",
+   "evidence": "Sampled",
+   "note": "The same spot under the context sheet's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#050505"
+  }
+ },
+ "scrim.contextRef": {
+  "dark": {
+   "args": [
+    600,
+    785,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled",
+   "note": "Artist page below the header, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#121212"
+  }
+ },
+ "scrim.ref": {
+  "dark": {
+   "args": [
+    300,
+    600,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled",
+   "note": "Your Library between rows, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#121212"
+  }
+ },
+ "scrim.share": {
+  "dark": {
+   "args": [
+    550,
+    180,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/14-share-sheet.png",
+   "evidence": "Sampled",
+   "note": "The same spot under the share sheet's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#010101"
+  }
+ },
+ "scrim.shareRef": {
+  "dark": {
+   "args": [
+    550,
+    180,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled",
+   "note": "Your Library header, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#121212"
+  }
+ },
+ "scrim.sort": {
+  "dark": {
+   "args": [
+    300,
+    600,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Sampled",
+   "note": "The same spot under the sort sheet's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#090909"
+  }
+ },
+ "segmented.selected": {
+  "dark": {
+   "args": [
+    298,
+    1000,
+    10,
+    30
+   ],
+   "capture": "screenshots/dark/18-share-song-segmented.png",
+   "evidence": "Sampled",
+   "note": "Selected segment ('Song')",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#FFFFFF"
+  }
+ },
+ "size.artLibrary": {
+  "dark": {
+   "args": [
+    "col",
+    60,
+    450,
+    610,
+    [
+     60,
+     450
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled",
+   "from": 465,
+   "note": "Library row artwork, first row",
+   "op": "extent",
+   "to": 594,
+   "value": "65pt"
+  }
+ },
+ "size.artLibrary2": {
+  "dark": {
+   "args": [
+    "col",
+    60,
+    610,
+    770,
+    [
+     60,
+     610
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled",
+   "from": 625,
+   "note": "Library row artwork, second row",
+   "op": "extent",
+   "to": 754,
+   "value": "65pt"
+  }
+ },
+ "size.artSearch": {
+  "dark": {
+   "args": [
+    "col",
+    60,
+    270,
+    400,
+    [
+     60,
+     270
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/09-search-results-rows.png",
+   "evidence": "Sampled",
+   "from": 281,
+   "note": "Search result artwork, first row",
+   "op": "extent",
+   "to": 378,
+   "value": "49pt"
+  }
+ },
+ "size.artSearch2": {
+  "dark": {
+   "args": [
+    "col",
+    60,
+    400,
+    525,
+    [
+     60,
+     400
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/09-search-results-rows.png",
+   "evidence": "Sampled",
+   "from": 410,
+   "note": "Search result artwork, second row",
+   "op": "extent",
+   "to": 506,
+   "value": "48.5pt"
+  }
+ },
+ "size.avatarDrawer": {
+  "dark": {
+   "args": [
+    "row",
+    280,
+    40,
+    160,
+    [
+     40,
+     280
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Account avatar in the drawer",
+   "op": "extent",
+   "to": 143,
+   "value": "48pt"
+  }
+ },
+ "size.avatarHeader": {
+  "dark": {
+   "args": [
+    "row",
+    218,
+    30,
+    125,
+    [
+     30,
+     218
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Account avatar in a page header",
+   "op": "extent",
+   "to": 111,
+   "value": "32pt"
+  }
+ },
+ "size.beta": {
+  "dark": {
+   "args": [
+    [
+     400,
+     1660
+    ],
+    [
+     390,
+     1640,
+     80,
+     60
+    ],
+    14
+   ],
+   "box": [
+    399,
+    1654,
+    457,
+    1689
+   ],
+   "capture": "screenshots/dark/24-artist-context-sheet.png",
+   "colour": "#1BD761",
+   "evidence": "Sampled",
+   "note": "'Beta' tag",
+   "op": "bbox",
+   "value": "29.5x18pt"
+  }
+ },
+ "size.cancel.h": {
+  "dark": {
+   "args": [
+    "col",
+    760,
+    170,
+    265,
+    [
+     760,
+     170
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/07-search-focused-recents.png",
+   "evidence": "Sampled",
+   "from": 191,
+   "note": "Cancel button height (glass)",
+   "op": "extent",
+   "to": 247,
+   "value": "28.5pt"
+  }
+ },
+ "size.cancel.w": {
+  "dark": {
+   "args": [
+    "row",
+    205,
+    662,
+    790,
+    [
+     662,
+     205
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/07-search-focused-recents.png",
+   "evidence": "Sampled",
+   "from": 672,
+   "note": "Cancel button width (glass)",
+   "op": "extent",
+   "to": 775,
+   "value": "52pt"
+  }
+ },
+ "size.card.h": {
+  "dark": {
+   "args": [
+    "col",
+    700,
+    860,
+    1190,
+    [
+     700,
+     860
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "from": 878,
+   "note": "Promo card height",
+   "op": "extent",
+   "to": 1173,
+   "value": "148pt"
+  }
+ },
+ "size.card.w": {
+  "dark": {
+   "args": [
+    "row",
+    1050,
+    30,
+    790,
+    [
+     30,
+     1050
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "from": 47,
+   "note": "Promo card width",
+   "op": "extent",
+   "to": 763,
+   "value": "358.5pt"
+  }
+ },
+ "size.category": {
+  "dark": {
+   "args": [
+    [
+     100,
+     480
+    ],
+    [
+     30,
+     380,
+     390,
+     260
+    ],
+    4
+   ],
+   "box": [
+    49,
+    397,
+    388,
+    604
+   ],
+   "capture": "screenshots/dark/06-search-grid.png",
+   "colour": "#DC148D",
+   "evidence": "Sampled",
+   "note": "Browse category tile (Music)",
+   "op": "bbox",
+   "value": "170x104pt"
+  }
+ },
+ "size.chip": {
+  "dark": {
+   "args": [
+    [
+     140,
+     300
+    ],
+    [
+     115,
+     270,
+     200,
+     90
+    ],
+    14
+   ],
+   "box": [
+    129,
+    283,
+    286,
+    344
+   ],
+   "capture": "screenshots/dark/11-library-chip-selected.png",
+   "colour": "#1BD761",
+   "evidence": "Sampled",
+   "note": "Selected filter chip (Playlists)",
+   "op": "bbox",
+   "value": "79x31pt"
+  }
+ },
+ "size.chipGlass.h": {
+  "dark": {
+   "args": [
+    "col",
+    150,
+    265,
+    365,
+    [
+     150,
+     265
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled",
+   "from": 281,
+   "note": "Glass filter chip height",
+   "op": "extent",
+   "to": 346,
+   "value": "33pt"
+  }
+ },
+ "size.chipGlass.w": {
+  "dark": {
+   "args": [
+    "row",
+    300,
+    30,
+    216,
+    [
+     30,
+     300
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled",
+   "from": 51,
+   "note": "Glass filter chip width (Playlists)",
+   "op": "extent",
+   "to": 204,
+   "value": "77pt"
+  }
+ },
+ "size.chipHome": {
+  "dark": {
+   "args": [
+    [
+     150,
+     200
+    ],
+    [
+     125,
+     175,
+     110,
+     90
+    ],
+    14
+   ],
+   "box": [
+    137,
+    189,
+    214,
+    250
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "colour": "#1ED862",
+   "evidence": "Sampled",
+   "note": "Selected home chip (All)",
+   "op": "bbox",
+   "value": "39x31pt"
+  }
+ },
+ "size.dot": {
+  "dark": {
+   "args": [
+    [
+     678,
+     792
+    ],
+    [
+     660,
+     775,
+     40,
+     40
+    ],
+    40
+   ],
+   "box": [
+    671,
+    786,
+    684,
+    800
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "colour": "#1278F1",
+   "evidence": "Sampled",
+   "note": "Unread dot",
+   "op": "bbox",
+   "value": "7x7.5pt"
+  }
+ },
+ "size.drawerEdge": {
+  "dark": {
+   "args": [
+    "row",
+    960,
+    20,
+    800,
+    [
+     300,
+     960
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Sampled",
+   "from": 718,
+   "note": "Where the drawer ends and the page behind it shows",
+   "op": "extent",
+   "to": 799,
+   "value": "41pt"
+  }
+ },
+ "size.family": {
+  "dark": {
+   "args": [
+    [
+     575,
+     490
+    ],
+    [
+     555,
+     470,
+     150,
+     75
+    ],
+    14
+   ],
+   "box": [
+    568,
+    480,
+    684,
+    529
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "colour": "#D8A3FE",
+   "evidence": "Sampled",
+   "note": "Plan badge",
+   "op": "bbox",
+   "value": "58.5x25pt"
+  }
+ },
+ "size.fieldFocused.h": {
+  "dark": {
+   "args": [
+    "col",
+    560,
+    170,
+    265,
+    [
+     560,
+     170
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/07-search-focused-recents.png",
+   "evidence": "Sampled",
+   "from": 185,
+   "note": "Focused search field height",
+   "op": "extent",
+   "to": 250,
+   "value": "33pt"
+  }
+ },
+ "size.fieldFocused.w": {
+  "dark": {
+   "args": [
+    "row",
+    205,
+    30,
+    662,
+    [
+     30,
+     205
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/07-search-focused-recents.png",
+   "evidence": "Sampled",
+   "from": 50,
+   "note": "Focused search field width",
+   "op": "extent",
+   "to": 653,
+   "value": "302pt"
+  }
+ },
+ "size.following.h": {
+  "dark": {
+   "args": [
+    "col",
+    180,
+    840,
+    940,
+    [
+     180,
+     840
+    ],
+    20
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled",
+   "from": 863,
+   "note": "Following pill height",
+   "op": "extent",
+   "to": 920,
+   "value": "29pt"
+  }
+ },
+ "size.following.w": {
+  "dark": {
+   "args": [
+    "row",
+    892,
+    150,
+    360,
+    [
+     150,
+     892
+    ],
+    20
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled",
+   "from": 164,
+   "note": "Following pill width",
+   "op": "extent",
+   "to": 347,
+   "value": "92pt"
+  }
+ },
+ "size.grabber.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    1105,
+    1130,
+    [
+     400,
+     1108
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Sampled",
+   "from": 1115,
+   "note": "Sheet grabber height",
+   "op": "extent",
+   "to": 1122,
+   "value": "4pt"
+  }
+ },
+ "size.grabber.w": {
+  "dark": {
+   "args": [
+    "row",
+    1118,
+    330,
+    480,
+    [
+     330,
+     1118
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Sampled",
+   "from": 349,
+   "note": "Sheet grabber width",
+   "op": "extent",
+   "to": 462,
+   "value": "57pt"
+  }
+ },
+ "size.like": {
+  "dark": {
+   "args": [
+    [
+     614,
+     1497
+    ],
+    [
+     590,
+     1460,
+     80,
+     70
+    ],
+    14
+   ],
+   "box": [
+    611,
+    1469,
+    652,
+    1510
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "colour": "#1BD761",
+   "evidence": "Sampled",
+   "note": "Saved tick (a filled circle)",
+   "op": "bbox",
+   "value": "21x21pt"
+  }
+ },
+ "size.miniArt": {
+  "dark": {
+   "args": [
+    "row",
+    1490,
+    40,
+    140,
+    [
+     40,
+     1490
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Mini player artwork",
+   "op": "extent",
+   "to": 127,
+   "value": "40pt"
+  }
+ },
+ "size.miniPlayer": {
+  "dark": {
+   "args": [
+    [
+     300,
+     1460
+    ],
+    [
+     20,
+     1420,
+     780,
+     140
+    ],
+    8
+   ],
+   "box": [
+    32,
+    1434,
+    778,
+    1544
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "colour": "#69501E",
+   "evidence": "Sampled",
+   "note": "Mini player, without its progress line",
+   "op": "bbox",
+   "value": "373.5x55.5pt"
+  }
+ },
+ "size.miniPlayer.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    1425,
+    1560,
+    [
+     400,
+     1560
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "from": 1425,
+   "note": "Mini player height with its progress line",
+   "op": "extent",
+   "to": 1546,
+   "value": "61pt"
+  }
+ },
+ "size.navButton.h": {
+  "dark": {
+   "args": [
+    "col",
+    92,
+    150,
+    275,
+    [
+     92,
+     150
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/20-settings.png",
+   "evidence": "Sampled",
+   "from": 169,
+   "note": "Round glass back button, height",
+   "op": "extent",
+   "to": 258,
+   "value": "45pt"
+  }
+ },
+ "size.navButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    214,
+    30,
+    150,
+    [
+     30,
+     214
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/20-settings.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Round glass back button, width",
+   "op": "extent",
+   "to": 135,
+   "value": "44pt"
+  }
+ },
+ "size.noticeButton": {
+  "dark": {
+   "args": [
+    [
+     440,
+     1320
+    ],
+    [
+     400,
+     1300,
+     220,
+     100
+    ],
+    8
+   ],
+   "box": [
+    414,
+    1317,
+    604,
+    1378
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "'Turn on' pill",
+   "op": "bbox",
+   "value": "95.5x31pt"
+  }
+ },
+ "size.pill": {
+  "dark": {
+   "args": [
+    [
+     530,
+     1100
+    ],
+    [
+     500,
+     1070,
+     250,
+     90
+    ],
+    8
+   ],
+   "box": [
+    522,
+    1083,
+    730,
+    1144
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "'Pre-save' pill",
+   "op": "bbox",
+   "value": "104.5x31pt"
+  }
+ },
+ "size.play": {
+  "dark": {
+   "args": [
+    [
+     715,
+     850
+    ],
+    [
+     650,
+     830,
+     130,
+     130
+    ],
+    14
+   ],
+   "box": [
+    669,
+    845,
+    762,
+    938
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "colour": "#1BD761",
+   "evidence": "Sampled",
+   "note": "Play button",
+   "op": "bbox",
+   "value": "47x47pt"
+  }
+ },
+ "size.searchField": {
+  "dark": {
+   "args": [
+    [
+     300,
+     300
+    ],
+    [
+     30,
+     270,
+     760,
+     140
+    ],
+    6
+   ],
+   "box": [
+    49,
+    291,
+    762,
+    384
+   ],
+   "capture": "screenshots/dark/05-search.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Search field, resting",
+   "op": "bbox",
+   "value": "357x47pt"
+  }
+ },
+ "size.segmented.h": {
+  "dark": {
+   "args": [
+    "col",
+    470,
+    970,
+    1070,
+    [
+     470,
+     970
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/18-share-song-segmented.png",
+   "evidence": "Sampled",
+   "from": 984,
+   "note": "Segmented control height",
+   "op": "extent",
+   "to": 1055,
+   "value": "36pt"
+  }
+ },
+ "size.segmented.w": {
+  "dark": {
+   "args": [
+    "row",
+    1020,
+    280,
+    530,
+    [
+     280,
+     1020
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/18-share-song-segmented.png",
+   "evidence": "Sampled",
+   "from": 293,
+   "note": "Segmented control width",
+   "op": "extent",
+   "to": 518,
+   "value": "113pt"
+  }
+ },
+ "size.segmentedSelected": {
+  "dark": {
+   "args": [
+    [
+     300,
+     1020
+    ],
+    [
+     285,
+     975,
+     140,
+     90
+    ],
+    10
+   ],
+   "box": [
+    294,
+    985,
+    402,
+    1054
+   ],
+   "capture": "screenshots/dark/18-share-song-segmented.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Selected segment",
+   "op": "bbox",
+   "value": "54.5x35pt"
+  }
+ },
+ "size.settingsTile": {
+  "dark": {
+   "args": [
+    [
+     60,
+     305
+    ],
+    [
+     30,
+     280,
+     255,
+     170
+    ],
+    3
+   ],
+   "box": [
+    40,
+    294,
+    272,
+    434
+   ],
+   "capture": "screenshots/dark/20-settings.png",
+   "colour": "#1F1F1F",
+   "evidence": "Sampled",
+   "note": "Settings quick tile (the window stops before the second tile)",
+   "op": "bbox",
+   "value": "116.5x70.5pt"
+  }
+ },
+ "size.shareTarget": {
+  "dark": {
+   "args": [
+    [
+     60,
+     1260
+    ],
+    [
+     40,
+     1205,
+     130,
+     130
+    ],
+    6
+   ],
+   "box": [
+    48,
+    1216,
+    159,
+    1327
+   ],
+   "capture": "screenshots/dark/18-share-song-segmented.png",
+   "colour": "#343434",
+   "evidence": "Sampled",
+   "note": "Round share target",
+   "op": "bbox",
+   "value": "56x56pt"
+  }
+ },
+ "size.shortcut.h": {
+  "dark": {
+   "args": [
+    "col",
+    380,
+    255,
+    375,
+    [
+     380,
+     255
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "from": 270,
+   "note": "Home shortcut tile height",
+   "op": "extent",
+   "to": 365,
+   "value": "48pt"
+  }
+ },
+ "size.shortcut.w": {
+  "dark": {
+   "args": [
+    "row",
+    340,
+    30,
+    405,
+    [
+     30,
+     340
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Home shortcut tile width",
+   "op": "extent",
+   "to": 397,
+   "value": "175pt"
+  }
+ },
+ "size.sliderThumb": {
+  "dark": {
+   "args": [
+    [
+     228,
+     865
+    ],
+    [
+     200,
+     835,
+     60,
+     60
+    ],
+    30
+   ],
+   "box": [
+    212,
+    850,
+    243,
+    880
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Slider thumb",
+   "op": "bbox",
+   "value": "16x15.5pt"
+  }
+ },
+ "size.sliderTrack": {
+  "dark": {
+   "args": [
+    "col",
+    500,
+    850,
+    880,
+    [
+     500,
+     850
+    ],
+    20
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "evidence": "Sampled",
+   "from": 863,
+   "note": "Slider track thickness",
+   "op": "extent",
+   "to": 867,
+   "value": "2.5pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     655,
+     460
+    ],
+    [
+     620,
+     420,
+     170,
+     100
+    ],
+    14
+   ],
+   "box": [
+    643,
+    441,
+    766,
+    495
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "colour": "#2ED158",
+   "evidence": "Sampled",
+   "note": "Switch track",
+   "op": "bbox",
+   "value": "62x27.5pt"
+  }
+ },
+ "size.switchThumb": {
+  "dark": {
+   "args": [
+    [
+     720,
+     465
+    ],
+    [
+     680,
+     430,
+     100,
+     80
+    ],
+    30
+   ],
+   "box": [
+    691,
+    444,
+    763,
+    491
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "bbox",
+   "value": "36.5x24pt"
+  }
+ },
+ "size.tabIndicator.h": {
+  "dark": {
+   "args": [
+    "col",
+    90,
+    1005,
+    1025,
+    [
+     90,
+     1005
+    ],
+    20
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled",
+   "from": 1016,
+   "note": "Selected tab underline, thickness",
+   "op": "extent",
+   "to": 1019,
+   "value": "2pt"
+  }
+ },
+ "size.tabIndicator.w": {
+  "dark": {
+   "args": [
+    "row",
+    1017,
+    40,
+    145,
+    [
+     40,
+     1017
+    ],
+    20
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Selected tab underline, width",
+   "op": "extent",
+   "to": 135,
+   "value": "44pt"
+  }
+ },
+ "slider.thumb": {
+  "dark": {
+   "args": [
+    224,
+    860,
+    8,
+    10
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "evidence": "Sampled",
+   "note": "Slider thumb",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#FFFFFF"
+  }
+ },
+ "slider.track": {
+  "dark": {
+   "args": [
+    500,
+    865,
+    100,
+    1
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "evidence": "Sampled",
+   "note": "Slider, empty part",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#7C7C7C"
+  }
+ },
+ "surface.card": {
+  "dark": {
+   "args": [
+    400,
+    1030,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "note": "Promo card (Upcoming release)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#333333"
+  }
+ },
+ "surface.chip": {
+  "dark": {
+   "args": [
+    55,
+    300,
+    6,
+    20
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Derived",
+   "note": "Library filter chip (glass), left of its label",
+   "op": "fill",
+   "share": 0.62,
+   "value": "#303030"
+  }
+ },
+ "surface.drawerCard": {
+  "dark": {
+   "args": [
+    500,
+    230,
+    100,
+    15
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Sampled",
+   "note": "Account card in the profile drawer",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2A2A2A"
+  }
+ },
+ "surface.field": {
+  "dark": {
+   "args": [
+    300,
+    300,
+    200,
+    10
+   ],
+   "capture": "screenshots/dark/05-search.png",
+   "evidence": "Sampled",
+   "note": "Search field, resting",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.fieldFocused": {
+  "dark": {
+   "args": [
+    560,
+    205,
+    40,
+    15
+   ],
+   "capture": "screenshots/dark/07-search-focused-recents.png",
+   "evidence": "Derived",
+   "note": "Focused search field (glass), right of the placeholder",
+   "op": "fill",
+   "share": 0.67,
+   "value": "#313131"
+  }
+ },
+ "surface.glass": {
+  "dark": {
+   "args": [
+    55,
+    205,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/20-settings.png",
+   "evidence": "Derived",
+   "note": "Round glass back button, centre",
+   "op": "fill",
+   "share": 0.56,
+   "value": "#303030"
+  }
+ },
+ "surface.miniPlayer": {
+  "dark": {
+   "args": [
+    300,
+    1460,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "note": "Mini player, tinted from the playing track's artwork",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#69501E"
+  }
+ },
+ "surface.notice": {
+  "dark": {
+   "args": [
+    600,
+    1300,
+    20,
+    20
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Sampled",
+   "note": "Push-notification card in the drawer",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2A2A2A"
+  }
+ },
+ "surface.segmented": {
+  "dark": {
+   "args": [
+    500,
+    1000,
+    8,
+    15
+   ],
+   "capture": "screenshots/dark/18-share-song-segmented.png",
+   "evidence": "Sampled",
+   "note": "Segmented control track, right of 'Lyrics'",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#333732"
+  }
+ },
+ "surface.settingsTile": {
+  "dark": {
+   "args": [
+    220,
+    300,
+    40,
+    10
+   ],
+   "capture": "screenshots/dark/20-settings.png",
+   "evidence": "Sampled",
+   "note": "Settings quick tile (Data Saver mode)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1F1F1F"
+  }
+ },
+ "surface.shareSheet": {
+  "dark": {
+   "args": [
+    400,
+    1680,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/14-share-sheet.png",
+   "evidence": "Derived",
+   "note": "Share sheet (glass), bottom",
+   "op": "fill",
+   "share": 0.38,
+   "value": "#232323"
+  }
+ },
+ "surface.shareTarget": {
+  "dark": {
+   "args": [
+    70,
+    1250,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/14-share-sheet.png",
+   "evidence": "Sampled",
+   "note": "Round share target (Search), left of its icon",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#343434"
+  }
+ },
+ "surface.sheet": {
+  "dark": {
+   "args": [
+    450,
+    1300,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/24-artist-context-sheet.png",
+   "evidence": "Sampled",
+   "note": "Context sheet (glass) over the artist page",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#252525"
+  }
+ },
+ "surface.sheetSort": {
+  "dark": {
+   "args": [
+    500,
+    1180,
+    80,
+    20
+   ],
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Sampled",
+   "note": "Sort sheet (glass) over Your Library",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#292929"
+  }
+ },
+ "surface.tile": {
+  "dark": {
+   "args": [
+    350,
+    290,
+    30,
+    50
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled",
+   "note": "Home shortcut tile, right of its title",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2A2A2A"
+  }
+ },
+ "switch.off": {
+  "dark": {
+   "args": [
+    735,
+    1330,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/22-settings-switch-off.png",
+   "evidence": "Derived",
+   "note": "Switch off, track (Mono audio)",
+   "op": "fill",
+   "share": 0.48,
+   "value": "#474749"
+  }
+ },
+ "switch.on": {
+  "dark": {
+   "args": [
+    655,
+    460,
+    15,
+    15
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "evidence": "Sampled",
+   "note": "Switch on, track",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2ED158"
+  }
+ },
+ "switch.thumb": {
+  "dark": {
+   "args": [
+    720,
+    465,
+    20,
+    6
+   ],
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "evidence": "Sampled",
+   "note": "Switch on, thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "switch.thumbOff": {
+  "dark": {
+   "args": [
+    680,
+    1333,
+    15,
+    4
+   ],
+   "capture": "screenshots/dark/22-settings-switch-off.png",
+   "evidence": "Derived",
+   "note": "Switch off, thumb (shaded)",
+   "op": "fill",
+   "share": 0.25,
+   "value": "#D4D4D4"
+  }
+ },
+ "text.accent": {
+  "dark": {
+   "args": [
+    70,
+    365,
+    175,
+    35
+   ],
+   "capture": "screenshots/dark/20-settings.png",
+   "evidence": "Sampled (text)",
+   "note": "Green label on an active settings tile",
+   "op": "text",
+   "value": "#20D361"
+  }
+ },
+ "text.accentOnSheet": {
+  "dark": {
+   "args": [
+    78,
+    1235,
+    115,
+    40
+   ],
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected sort option ('Recents'), on glass",
+   "op": "text",
+   "value": "#1BB551"
+  }
+ },
+ "text.cancel": {
+  "dark": {
+   "args": [
+    355,
+    1620,
+    100,
+    40
+   ],
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Sort sheet Cancel, on glass",
+   "op": "text",
+   "value": "#B4B4B4"
+  }
+ },
+ "text.checkOnSheet": {
+  "dark": {
+   "args": [
+    690,
+    1230,
+    45,
+    40
+   ],
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick beside the selected sort option",
+   "op": "text",
+   "value": "#21B452"
+  }
+ },
+ "text.chevron": {
+  "dark": {
+   "args": [
+    745,
+    490,
+    25,
+    45
+   ],
+   "capture": "screenshots/dark/20-settings.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row chevron",
+   "op": "text",
+   "value": "#B3B2B3"
+  }
+ },
+ "text.eyebrow": {
+  "dark": {
+   "args": [
+    376,
+    905,
+    40,
+    30
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Promo card eyebrow ('EP')",
+   "op": "text",
+   "value": "#B2B2B2"
+  }
+ },
+ "text.listeners": {
+  "dark": {
+   "args": [
+    48,
+    795,
+    250,
+    35
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled (text)",
+   "note": "Monthly listeners line",
+   "op": "text",
+   "value": "#B8B8B8"
+  }
+ },
+ "text.miniArtist": {
+  "dark": {
+   "args": [
+    140,
+    1495,
+    200,
+    35
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Mini player artist line",
+   "op": "text",
+   "value": "#D1CBBE"
+  }
+ },
+ "text.miniTitle": {
+  "dark": {
+   "args": [
+    140,
+    1455,
+    100,
+    35
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Mini player track title",
+   "op": "text",
+   "value": "#FFFEFF"
+  }
+ },
+ "text.onAccent": {
+  "dark": {
+   "args": [
+    160,
+    300,
+    100,
+    30,
+    "dark"
+   ],
+   "capture": "screenshots/dark/11-library-chip-selected.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the selected green chip",
+   "op": "text",
+   "value": "#121212"
+  }
+ },
+ "text.onBeta": {
+  "dark": {
+   "args": [
+    405,
+    1655,
+    45,
+    35,
+    "dark"
+   ],
+   "capture": "screenshots/dark/24-artist-context-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "'Beta' on its green tag",
+   "op": "text",
+   "value": "#010201"
+  }
+ },
+ "text.onFamily": {
+  "dark": {
+   "args": [
+    588,
+    490,
+    80,
+    35,
+    "dark"
+   ],
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Sampled (text)",
+   "note": "'Family' on the plan badge",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.onInverse": {
+  "dark": {
+   "args": [
+    550,
+    1095,
+    110,
+    40,
+    "dark"
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled (text)",
+   "note": "'Pre-save' label on the white pill",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.onPlay": {
+  "dark": {
+   "args": [
+    690,
+    870,
+    50,
+    45,
+    "dark"
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled (text)",
+   "note": "Play glyph on the green button",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.onSegmented": {
+  "dark": {
+   "args": [
+    310,
+    1000,
+    80,
+    45,
+    "dark"
+   ],
+   "capture": "screenshots/dark/18-share-song-segmented.png",
+   "evidence": "Sampled (text)",
+   "note": "'Song' on the selected segment",
+   "op": "text",
+   "value": "#111111"
+  }
+ },
+ "text.pageTabInactive": {
+  "dark": {
+   "args": [
+    185,
+    965,
+    90,
+    45
+   ],
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Sampled (text)",
+   "note": "Artist page tab, not selected ('Video')",
+   "op": "text",
+   "value": "#B4B4B4"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    145,
+    320,
+    440,
+    40,
+    "dark"
+   ],
+   "capture": "screenshots/dark/05-search.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder, on white",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.placeholderFocused": {
+  "dark": {
+   "args": [
+    80,
+    200,
+    430,
+    40
+   ],
+   "capture": "screenshots/dark/07-search-focused-recents.png",
+   "evidence": "Sampled (text)",
+   "note": "Focused search field placeholder",
+   "op": "text",
+   "value": "#B4B4B4"
+  }
+ },
+ "text.primary": {
+  "dark": {
+   "args": [
+    200,
+    495,
+    270,
+    40
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled (text)",
+   "note": "Library row title",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "text.searchSubtitle": {
+  "dark": {
+   "args": [
+    168,
+    418,
+    260,
+    35
+   ],
+   "capture": "screenshots/dark/07-search-focused-recents.png",
+   "evidence": "Sampled (text)",
+   "note": "Recent search subtitle",
+   "op": "text",
+   "value": "#B3B3B3"
+  }
+ },
+ "text.secondary": {
+  "dark": {
+   "args": [
+    264,
+    540,
+    190,
+    30
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled (text)",
+   "note": "Library row subtitle",
+   "op": "text",
+   "value": "#B4B4B4"
+  }
+ },
+ "text.settingsSubtitle": {
+  "dark": {
+   "args": [
+    112,
+    525,
+    430,
+    35
+   ],
+   "capture": "screenshots/dark/20-settings.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row subtitle",
+   "op": "text",
+   "value": "#B4B4B4"
+  }
+ },
+ "text.sheetHeader": {
+  "dark": {
+   "args": [
+    78,
+    1155,
+    90,
+    30
+   ],
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Sampled (text)",
+   "note": "Sort sheet header ('Sort by'), on glass",
+   "op": "text",
+   "value": "#C0BFBF"
+  }
+ },
+ "text.tabActive": {
+  "dark": {
+   "args": [
+    80,
+    1625,
+    70,
+    35
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Tab bar label, current tab",
+   "op": "text",
+   "value": "#F8F8F8"
+  }
+ },
+ "text.tabInactive": {
+  "dark": {
+   "args": [
+    270,
+    1625,
+    80,
+    35
+   ],
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Sampled (text)",
+   "note": "Tab bar label, other tabs",
+   "op": "text",
+   "value": "#B0B0B0"
+  }
+ },
+ "text.tertiary": {
+  "dark": {
+   "args": [
+    200,
+    1340,
+    140,
+    30
+   ],
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Sampled (text)",
+   "note": "DJ row subtitle ('Tap to start')",
+   "op": "text",
+   "value": "#8C8C8C"
+  }
+ },
+ "type.badge": {
+  "dark": {
+   "args": [
+    403,
+    1658,
+    421,
+    1688
+   ],
+   "capHeight": "8pt",
+   "capture": "screenshots/dark/24-artist-context-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 17,
+   "note": "'B' of the 'Beta' tag",
+   "op": "cap",
+   "top": 1663,
+   "value": "11pt"
+  }
+ },
+ "type.badgeFamily": {
+  "dark": {
+   "args": [
+    584,
+    490,
+    607,
+    525
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'F' of the plan badge",
+   "op": "cap",
+   "top": 496,
+   "value": "13pt"
+  }
+ },
+ "type.button": {
+  "dark": {
+   "args": [
+    548,
+    1095,
+    570,
+    1135
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'P' of 'Pre-save'",
+   "op": "cap",
+   "top": 1104,
+   "value": "13pt"
+  }
+ },
+ "type.buttonOutline": {
+  "dark": {
+   "args": [
+    192,
+    872,
+    216,
+    912
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'F' of 'Following'",
+   "op": "cap",
+   "top": 882,
+   "value": "13pt"
+  }
+ },
+ "type.cardTitle": {
+  "dark": {
+   "args": [
+    372,
+    935,
+    396,
+    975
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'A' of the promo card title",
+   "op": "cap",
+   "top": 946,
+   "value": "13pt"
+  }
+ },
+ "type.category": {
+  "dark": {
+   "args": [
+    60,
+    415,
+    92,
+    455
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/06-search-grid.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'M' of a browse tile title",
+   "op": "cap",
+   "top": 422,
+   "value": "16pt"
+  }
+ },
+ "type.chip": {
+  "dark": {
+   "args": [
+    75,
+    295,
+    96,
+    335
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'P' of a chip label",
+   "op": "cap",
+   "top": 304,
+   "value": "13pt"
+  }
+ },
+ "type.display": {
+  "dark": {
+   "args": [
+    45,
+    600,
+    71,
+    690
+   ],
+   "capHeight": "34pt",
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Derived",
+   "inkPx": 69,
+   "note": "'I' of the artist name over the header photo",
+   "op": "cap",
+   "top": 611,
+   "value": "47pt"
+  }
+ },
+ "type.drawerRow": {
+  "dark": {
+   "args": [
+    115,
+    485,
+    150,
+    525
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'Y' of a drawer row ('Your Premium')",
+   "op": "cap",
+   "top": 493,
+   "value": "17pt"
+  }
+ },
+ "type.drawerSection": {
+  "dark": {
+   "args": [
+    45,
+    1215,
+    83,
+    1260
+   ],
+   "capHeight": "14.5pt",
+   "capture": "screenshots/dark/19-profile-drawer.png",
+   "evidence": "Derived",
+   "inkPx": 30,
+   "note": "'M' of 'Messages' in the drawer",
+   "op": "cap",
+   "top": 1221,
+   "value": "20pt"
+  }
+ },
+ "type.eyebrow": {
+  "dark": {
+   "args": [
+    372,
+    900,
+    392,
+    935
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'E' of the promo card eyebrow",
+   "op": "cap",
+   "top": 910,
+   "value": "13pt"
+  }
+ },
+ "type.miniPlayer": {
+  "dark": {
+   "args": [
+    142,
+    1490,
+    166,
+    1525
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'M' of the mini player artist line",
+   "op": "cap",
+   "top": 1498,
+   "value": "13pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    335,
+    190,
+    360,
+    240
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/21-settings-playback-switches-slider.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'P' of the nav title 'Playback'",
+   "op": "cap",
+   "top": 202,
+   "value": "16pt"
+  }
+ },
+ "type.pageTitle": {
+  "dark": {
+   "args": [
+    125,
+    185,
+    182,
+    255
+   ],
+   "capHeight": "17.5pt",
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Derived",
+   "inkPx": 36,
+   "note": "'Y' of 'Your Library'",
+   "op": "cap",
+   "top": 201,
+   "value": "24pt"
+  }
+ },
+ "type.rowTitle": {
+  "dark": {
+   "args": [
+    195,
+    490,
+    219,
+    535
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'T' of a library row title",
+   "op": "cap",
+   "top": 500,
+   "value": "16pt"
+  }
+ },
+ "type.searchPlaceholder": {
+  "dark": {
+   "args": [
+    140,
+    320,
+    176,
+    358
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/05-search.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'W' of the search placeholder",
+   "op": "cap",
+   "top": 326,
+   "value": "16pt"
+  }
+ },
+ "type.sectionTitle": {
+  "dark": {
+   "args": [
+    45,
+    1220,
+    76,
+    1275
+   ],
+   "capHeight": "14.5pt",
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Derived",
+   "inkPx": 30,
+   "note": "'I' of a home section title",
+   "op": "cap",
+   "top": 1231,
+   "value": "20pt"
+  }
+ },
+ "type.sectionTitle2": {
+  "dark": {
+   "args": [
+    45,
+    290,
+    82,
+    345
+   ],
+   "capHeight": "14.5pt",
+   "capture": "screenshots/dark/07-search-focused-recents.png",
+   "evidence": "Derived",
+   "inkPx": 30,
+   "note": "'R' of 'Recent searches'",
+   "op": "cap",
+   "top": 299,
+   "value": "20pt"
+  }
+ },
+ "type.segmented": {
+  "dark": {
+   "args": [
+    425,
+    1005,
+    446,
+    1040
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/18-share-song-segmented.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'L' of 'Lyrics' in the segmented control",
+   "op": "cap",
+   "top": 1010,
+   "value": "17pt"
+  }
+ },
+ "type.settingsRow": {
+  "dark": {
+   "args": [
+    108,
+    470,
+    140,
+    515
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/20-settings.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'A' of a settings row ('Account')",
+   "op": "cap",
+   "top": 477,
+   "value": "16pt"
+  }
+ },
+ "type.settingsRow3": {
+  "dark": {
+   "args": [
+    108,
+    705,
+    134,
+    760
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/20-settings.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'P' of the third settings row ('Privacy and social')",
+   "op": "cap",
+   "top": 717,
+   "value": "16pt"
+  }
+ },
+ "type.settingsTile": {
+  "dark": {
+   "args": [
+    578,
+    365,
+    596,
+    395
+   ],
+   "capHeight": "8pt",
+   "capture": "screenshots/dark/20-settings.png",
+   "evidence": "Derived",
+   "inkPx": 17,
+   "note": "'P' of a settings tile label",
+   "op": "cap",
+   "top": 372,
+   "value": "11pt"
+  }
+ },
+ "type.sheetHeader": {
+  "dark": {
+   "args": [
+    74,
+    1150,
+    93,
+    1185
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'S' of 'Sort by'",
+   "op": "cap",
+   "top": 1157,
+   "value": "12pt"
+  }
+ },
+ "type.sheetItem": {
+  "dark": {
+   "args": [
+    128,
+    1115,
+    155,
+    1158
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/24-artist-context-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'R' of a context sheet item ('Report')",
+   "op": "cap",
+   "top": 1124,
+   "value": "15pt"
+  }
+ },
+ "type.sortItem": {
+  "dark": {
+   "args": [
+    74,
+    1305,
+    97,
+    1345
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/12-sort-sheet.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'R' of a sort option",
+   "op": "cap",
+   "top": 1312,
+   "value": "15pt"
+  }
+ },
+ "type.subtitle": {
+  "dark": {
+   "args": [
+    260,
+    535,
+    280,
+    575
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/10-library.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'P' of a library row subtitle",
+   "op": "cap",
+   "top": 542,
+   "value": "13pt"
+  }
+ },
+ "type.tab": {
+  "dark": {
+   "args": [
+    45,
+    965,
+    76,
+    1000
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/23-artist-tabs-following.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'M' of the selected artist tab",
+   "op": "cap",
+   "top": 970,
+   "value": "16pt"
+  }
+ },
+ "type.tabLabel": {
+  "dark": {
+   "args": [
+    80,
+    1630,
+    99,
+    1660
+   ],
+   "capHeight": "7.5pt",
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Derived",
+   "inkPx": 16,
+   "note": "'H' of a tab bar label",
+   "op": "cap",
+   "top": 1636,
+   "value": "10pt"
+  }
+ },
+ "type.tileTitle": {
+  "dark": {
+   "args": [
+    155,
+    300,
+    181,
+    340
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/02-home.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'L' of a home shortcut tile title",
+   "op": "cap",
+   "top": 308,
+   "value": "13pt"
+  }
+ }
+}
