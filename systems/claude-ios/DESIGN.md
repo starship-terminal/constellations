@@ -224,7 +224,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Radii are estimates**, plus or minus 2 pt: cards 25.6 pt, sheet cards and the bubble 23.9, the composer 22.2, the sheet 35.8, the selected row 13.7. The menu's 17.1 pt was read on a soft glass edge, so plus or minus 4 pt.
 - **Two dark page greys.** A chat reads #151515 and list pages read #0B0B0B in dark; in light both are #F9F9F7. `color.bg.page` and `color.bg.list` keep them apart.
 - **Light covers 12 of 36 screens.** Effort, the long-press menu, the tool-step sheet, lists, search, empty states, Artifacts, Code and the gift sheet are dark only.
-- **Composer widths differ by screen.** The new-chat composer reads 384 pt wide in dark and the thread composer 358 pt; the light new chat used the narrower one. Read sizes from the token, which is the thread's.
+- **Composer widths differ by screen.** The new-chat composer reads 374 pt wide in dark and the thread composer 358 pt; the light new chat used the narrower one. Read sizes from the token, which is the thread's.
 - **The greeting changes with the time of day** ("It's a late-night jam session." in dark, "Hello, night owl" in light); only its colour and size are tokens.
 - **No pressed states, no motion, no keyboard, no streaming.** The captures are stills made with clicks; iPhone Mirroring hides the software keyboard; no message was sent, so streaming and loading are unseen; Delete was not tapped.
 - **Screenshots are 256-colour PNGs.** Flat UI colours survive exactly; glass, photos and the artifact thumbnails band slightly. Read values from tokens.json.
