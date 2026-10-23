@@ -1518,7 +1518,7 @@
     "row",
     1580,
     20,
-    800,
+    796,
     [
      25,
      1450
@@ -1528,10 +1528,10 @@
    "capture": "screenshots/dark/01-new-chat-greeting-composer.png",
    "evidence": "Sampled",
    "from": 32,
-   "note": "Composer width, new chat",
+   "note": "Composer width, new chat (scan kept inside the screen, x 16 to 795)",
    "op": "extent",
-   "to": 799,
-   "value": "384pt"
+   "to": 779,
+   "value": "374pt"
   }
  },
  "size.dayToggle": {

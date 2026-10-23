@@ -8,17 +8,22 @@ Checklist item: button. The inverse capsule that carries a screen's main action:
 
 | Property | Token |
 |---|---|
-| height | `size.pill` |
-| full-width height | `size.button` |
-| Talk | `size.talk.width` |
 | corner | `radius.capsule` |
 | fill | `color.button.primary.bg` |
 | label | `color.button.primary.text` |
-| label type | `typography.callout` |
+| New chat height | `size.pill` |
+| New chat label | `typography.callout` |
+| New chat label weight | `fontWeight.medium` |
+| Talk width | `size.talk.width` |
+| Talk height | `size.talk.height` |
+| Talk label | `typography.subheadline` |
+| Talk label weight | `fontWeight.semibold` |
+| Share height | `size.button` |
+| Share label weight | `fontWeight.semibold` |
 
 Crops: [New chat over the sidebar (dark)](components/crops/button-primary-pill.png), [New chat over the sidebar (light)](components/crops/button-primary-pill-light.png), [full width (Share) (dark)](components/crops/button-primary-full.png).
 
-Near-white in dark, near-black in light. No button is filled orange or blue; orange is kept for send.
+Near-white in dark, near-black in light. Three sizes: the floating pill (New chat), the smaller Talk pill inside the composer, and the full-width sheet button (Share). No button is filled orange or blue; orange is kept for send.
 
 ## Secondary pill
 

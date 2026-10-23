@@ -130,7 +130,7 @@ R = {
     "size.navButton.h":   ("dark/01-new-chat-greeting-composer", "extent", ("col", 92, 150, 280, (92, 150), 12), "Round glass sidebar button, height"),
     "size.composer.h":    ("dark/07-chat-thread-user-bubble-response-actions", "extent", ("col", 450, 1480, 1720, (450, 1480), 12), "Composer height, thread"),
     "size.composer.w":    ("dark/07-chat-thread-user-bubble-response-actions", "extent", ("row", 1580, 30, 790, (35, 1450), 12), "Composer width, thread"),
-    "size.composerNew.w": ("dark/01-new-chat-greeting-composer", "extent", ("row", 1580, 20, 800, (25, 1450), 12), "Composer width, new chat"),
+    "size.composerNew.w": ("dark/01-new-chat-greeting-composer", "extent", ("row", 1580, 20, 796, (25, 1450), 12), "Composer width, new chat (scan kept inside the screen, x 16 to 795)"),
     "size.composerButton": ("dark/07-chat-thread-user-bubble-response-actions", "extent", ("row", 1645, 50, 150, (52, 1645), 6), "+ button inside the composer"),
     "size.talk":          ("dark/07-chat-thread-user-bubble-response-actions", "bbox", ((600, 1620), (570, 1590, 200, 110), 12), "Talk pill"),
     "size.send":          ("dark/02-composer-typed-send-enabled", "bbox", ((700, 1660), (670, 1590, 120, 110), 40), "Send button"),

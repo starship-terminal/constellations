@@ -52,7 +52,7 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .space-row{display:grid;grid-template-columns:minmax(150px,240px) 1fr 70px;align-items:center;gap:12px;padding:3px 0}
 .space-row .bar{display:block;height:12px;background:var(--color-accent-default);border-radius:2px;max-width:100%}
 .space-row .bar.thin{height:8px;background:var(--color-text-tertiary)}
-.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:16px}
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,430px),1fr));gap:16px}
 .spec{border:1px solid var(--color-border-divider);border-radius:var(--radius-cardSheet);padding:4px 16px 16px;min-width:0}
 .screen{background:var(--color-bg-page);border:1px solid var(--color-border-divider);border-radius:var(--radius-sheet);padding:12px var(--space-screenMargin) 16px;max-width:390px}
 .screen.center{text-align:center;display:flex;flex-direction:column;justify-content:flex-end;min-height:420px}
@@ -68,7 +68,8 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .composer{background:var(--color-surface-glass);border-radius:var(--radius-composer);min-height:var(--size-composer-height);padding:12px 8px 8px;text-align:left}
 .ph{color:var(--color-text-placeholder);padding:0 8px 10px}.typed{color:var(--color-text-primary);padding:0 8px 10px}
 .caret{display:inline-block;width:2px;height:1.1em;vertical-align:-3px;background:var(--color-focus-caret);margin-left:1px}
-.ctl{display:flex;align-items:center;gap:var(--space-sm)}.ctl .sp{flex:1}
+.ctl{display:flex;align-items:center;gap:var(--space-sm)}.ctl>*{flex:none}.ctl .sp{flex:1 1 0}
+.screen{overflow-x:auto}.composer{min-width:340px}.ctl .sp{flex:1}
 .ctrl{background:var(--color-button-control-bg);color:var(--color-text-primary);height:var(--size-control);display:inline-flex;align-items:center;justify-content:center}
 .round-c{width:var(--size-control);border-radius:50%}
 .pillc{padding:0 14px;border-radius:var(--radius-capsule);gap:6px}.pillc i{font-style:normal;color:var(--color-text-tertiary)}
@@ -103,6 +104,7 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .pill{position:absolute;right:16px;bottom:12px;height:var(--size-pill);padding:0 20px;border-radius:var(--radius-capsule);background:var(--color-button-primary-bg);color:var(--color-button-primary-text);display:inline-flex;align-items:center;font-weight:500}
 .menu{width:250px;max-width:100%;border-radius:var(--radius-menu);background:var(--color-surface-menu);padding:6px 0;margin-top:12px}
 .menu div{padding:12px 24px}
+.mdiv{border:0;border-top:var(--border-width-hairline) solid var(--color-border-divider);margin:4px 24px}
 .meter{padding:14px var(--space-cardPadding);margin-top:14px}.mrow{display:flex;justify-content:space-between}
 .track{height:var(--size-progress);border-radius:var(--radius-capsule);background:var(--color-progress-track);margin:10px 0 8px;overflow:hidden}
 .track i{display:block;height:100%;background:var(--color-progress-fill);border-radius:var(--radius-capsule)}
@@ -204,7 +206,7 @@ footer{margin-top:48px;color:var(--color-text-secondary);font-size:12px}
  </div>
  <div class="spec">
   <h3>Menu, meter, select, empty state</h3>
-  <div class="menu"><div class="type-body">Share</div><div class="type-body">Rename</div><div class="type-body danger">Delete</div></div>
+  <div class="menu"><div class="type-body">Share</div><div class="type-body">Rename</div><hr class="mdiv"><div class="type-body danger">Delete</div></div>
   <div class="card meter"><div class="mrow"><span class="type-body">All models</span><span class="type-body ter">17% used</span></div>
    <div class="track"><i style="width:17%"></i></div><span class="type-callout ter">Resets Fri 04:00</span></div>
   <div class="row-btns"><span class="sel-f type-body">&#8211; <b>&#8964;</b></span><span class="day type-callout">S</span><span class="day type-callout">M</span><span class="pill2 type-callout">+ &nbsp;Add device</span></div>

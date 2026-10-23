@@ -33,10 +33,12 @@ NAME = "Claude for iOS"  # PRODUCT (adapt)
 # PRODUCT (adapt): (component, checklist item, what it is, [(property, token path)], [(state, crop stem)], notes)
 INVENTORY = [
     ("Primary pill", "button", "The inverse capsule that carries a screen's main action: Talk in the composer, New chat, New project and New session floating at the bottom right, Share at the foot of a promo sheet.",
-     [("height", "size.pill"), ("full-width height", "size.button"), ("Talk", "size.talk.width"), ("corner", "radius.capsule"), ("fill", "color.button.primary.bg"),
-      ("label", "color.button.primary.text"), ("label type", "typography.callout")],
+     [("corner", "radius.capsule"), ("fill", "color.button.primary.bg"), ("label", "color.button.primary.text"),
+      ("New chat height", "size.pill"), ("New chat label", "typography.callout"), ("New chat label weight", "fontWeight.medium"),
+      ("Talk width", "size.talk.width"), ("Talk height", "size.talk.height"), ("Talk label", "typography.subheadline"), ("Talk label weight", "fontWeight.semibold"),
+      ("Share height", "size.button"), ("Share label weight", "fontWeight.semibold")],
      [("New chat over the sidebar", "button-primary-pill"), ("full width (Share)", "button-primary-full")],
-     "Near-white in dark, near-black in light. No button is filled orange or blue; orange is kept for send."),
+     "Near-white in dark, near-black in light. Three sizes: the floating pill (New chat), the smaller Talk pill inside the composer, and the full-width sheet button (Share). No button is filled orange or blue; orange is kept for send."),
     ("Secondary pill", "button", "A glass capsule with a + and a label (Add device).",
      [("height", "size.pillSecondary"), ("corner", "radius.capsule"), ("fill", "color.surface.glass"), ("label", "color.text.primary")],
      [("default", "button-secondary-glass")], ""),
