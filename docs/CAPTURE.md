@@ -116,6 +116,21 @@ package was made this way and its README shows the evidence labels to use.
    Look at every capture and paint those regions over with `sample.py mask
    shot.png X,Y,W,H ...`, which fills each box with the surface colour
    around it. Sample values first, mask second, then quantise.
+   - Mask the smallest span that holds the private value: the digits of a
+     phone number, not the line that also carries a handle; the street, not
+     the whole list row. Neighbouring text of the same style then stays in
+     the screenshot, so the layout still reads.
+   - Keep the unmasked `.raw.png` outside the repo, beside the capture. It
+     is what the values were sampled from, and the only place a masked
+     region can be measured again.
+   - If a masked string is the only example of its text style in the app,
+     say so in the package README and name the `.raw.png` it was sampled
+     from. Never draw substitute text over a masked region; the font is
+     usually Not captured, so the overlay would be a guess that looks like
+     evidence.
+   - `redact_images.py check` finds only what its pattern file lists, and
+     that file holds no addresses or phone numbers, so a clean result does
+     not clear a native capture. Looking at every capture is the check.
 6. **Do not break the mirror.** Turning off the phone's network or locking
    it ends the session, so offline and lock-screen states cannot be
    captured this way.
