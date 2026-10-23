@@ -307,7 +307,7 @@ Checklist item: card. Replies are plain text on the page, no bubble: numbered li
 | text | `color.text.primary` |
 | type | `typography.body` |
 | list number | `color.text.secondary` |
-| code fill | `color.surface.secondary` |
+| code fill | `color.surface.code` |
 | code text | `color.text.code` |
 | code type | `typography.code` |
 

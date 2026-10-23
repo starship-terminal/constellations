@@ -246,7 +246,8 @@ def semantic(theme):
         },
         "surface": {
             "card": f("surface.card", "Inbox tiles, the Changes card in a thread and the file rows of the Changes sheet."),
-            "secondary": f("surface.secondary", "Selected filter chip, the photo-access card, inline code and the empty-heatmap dot (light)."),
+            "secondary": f("surface.secondary", "Selected filter chip, the photo-access card and the empty-heatmap dot (light)."),
+            "code": f("surface.code", "Inline code chip in an agent reply. Read beside the glyphs, so the share is low; in light it is a step darker than surface.secondary."),
             "inset": f("surface.inset", "An expanded file row's diff area ('Diff not available')."),
             "avatar": f("surface.avatar", "Initial avatar on the profile and in the Inbox nav button."),
             "iconButton": f("surface.iconButton", "Round action buttons in the agent details sheet (Rename, Unpin, Share)."),
@@ -273,7 +274,7 @@ def semantic(theme):
             "secondary": f("text.secondary", f"Row status lines, section and group headers, stat labels, empty states. Readings range {', '.join(sorted({rd(r, theme)['value'] for r in ('text.secondary', 'text.sectionHeader', 'text.groupHeader', 'text.stat', 'text.empty')}))}."),
             "tertiary": f("text.tertiary", f"Repo names after a status line, tile counts, chevrons and outline row icons. Readings range {', '.join(sorted({rd(r, theme)['value'] for r in ('text.tertiary', 'text.count', 'text.chevron', 'text.icon')}))}."),
             "placeholder": f("text.placeholder", f"Composer placeholder (search fields read {rd('text.searchPlaceholder', theme)['value']})."),
-            "code": f("text.code", "Inline code text, on surface.secondary."),
+            "code": f("text.code", "Inline code text, on surface.code."),
         },
         "accent": {
             "default": f("accent.unread", "Unread dots and the Working tile icon: the app's one accent."),

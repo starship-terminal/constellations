@@ -37,7 +37,7 @@ middle dots. See [03-all-agents](screenshots/dark/03-all-agents-grouped-status-d
 ## Conversation
 
 An agent thread has no bubbles: replies are plain `typography.body` text on the page, with numbered lists in
-secondary, semibold runs, and inline code on a `color.surface.secondary` chip. A reply that changed files ends
+secondary, semibold runs, and inline code on a `color.surface.code` chip. A reply that changed files ends
 in a Changes card listing each file with its diffstat; tapping it opens the Changes sheet, where each file is a
 disclosure row that expands into its diff. A glass '7 PRs' capsule floats above the composer and opens the Pull
 Requests sheet. See [06-agent-thread](screenshots/dark/06-agent-thread-changes-card-diffstat.png),

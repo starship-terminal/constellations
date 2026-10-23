@@ -154,7 +154,7 @@ def build():
     <div class="crow type-body"><span>uploads.py</span><span><span class="add">+1</span> <span class="del">-1</span></span></div></div>
    <div class="panel"><span class="type-body">hey<i class="caret"></i></span><span class="pbar"><span class="cbtn">+</span><span class="type-body">Claude Opus 5.5 &#8964;</span><span class="send">&#8593;</span></span></div>
   </div>
-  <p class="note">status.unread / read / merged / draft, diff.add / delete, surface.secondary + text.code, surface.card, radius.card, surface.composerPanel, button.send, focus.caret</p>
+  <p class="note">status.unread / read / merged / draft, diff.add / delete, surface.code + text.code, surface.card, radius.card, surface.composerPanel, button.send, focus.caret</p>
  </div>
  <div class="spec">
   <h3>Sheet with switches and a pop-up</h3>
@@ -232,7 +232,7 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .emph{color:var(--color-text-emphasis)}.sec{color:var(--color-text-secondary)}.ter{color:var(--color-text-tertiary);font-weight:400}.mut{color:var(--color-text-muted)}
 .add{color:var(--color-diff-add)}.del{color:var(--color-diff-delete)}
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md)}
-.tile{height:calc(var(--size-tile-height) * .7);border-radius:var(--radius-tile);background:var(--color-surface-card);border:var(--border-width-hairline) solid var(--color-border-tile);padding:12px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
+.tile{height:var(--size-tile-height);border-radius:var(--radius-tile);background:var(--color-surface-card);border:var(--border-width-hairline) solid var(--color-border-tile);padding:12px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
 .ic{font-style:normal;width:20px;display:inline-block;text-align:center}
 .hdr{margin:20px 0 4px}
 .row{display:flex;align-items:center;gap:12px;min-height:var(--size-row);border-bottom:var(--border-width-hairline) solid var(--color-border-divider)}
@@ -243,10 +243,10 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .arow{display:flex;gap:14px;align-items:flex-start;min-height:var(--size-rowTwoLine);padding-top:8px;border-bottom:var(--border-width-hairline) solid var(--color-border-divider)}
 .dot{flex:none;width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--color-status-read)}.dot.on{background:var(--color-status-unread)}
 .reply{margin:16px 0}
-.ic-code{font-family:var(--font-mono);font-size:14px;background:var(--color-surface-secondary);color:var(--color-text-code);padding:1px 5px;border-radius:6px}
+.ic-code{font-family:var(--font-mono);font-size:14px;background:var(--color-surface-code);color:var(--color-text-code);padding:1px 5px;border-radius:6px}
 .ccard{background:var(--color-surface-card);border-radius:var(--radius-card);padding:10px 14px}
 .crow{display:flex;justify-content:space-between;padding:8px 0}
-.panel{margin-top:16px;height:calc(var(--size-composerPanel) * .6);border-radius:var(--radius-composerPanel);background:var(--color-surface-composerPanel);padding:14px;display:flex;flex-direction:column;justify-content:space-between}
+.panel{margin-top:16px;height:var(--size-composerPanel);border-radius:var(--radius-composerPanel);background:var(--color-surface-composerPanel);padding:14px;display:flex;flex-direction:column;justify-content:space-between}
 .pbar{display:flex;align-items:center;gap:10px}.pbar .type-body{flex:1}
 .caret{display:inline-block;width:2px;height:1.1em;vertical-align:text-bottom;background:var(--color-focus-caret);margin-left:1px}
 .send{width:var(--size-sendButton);height:var(--size-sendButton);border-radius:50%;background:var(--color-button-send-bg);color:var(--color-button-send-glyph);display:inline-flex;align-items:center;justify-content:center;font-weight:600}

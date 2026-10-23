@@ -1622,7 +1622,7 @@
     "row",
     1616,
     20,
-    800,
+    790,
     [
      400,
      1530
@@ -1632,17 +1632,17 @@
    "capture": "screenshots/dark/01-repo-agents-list-composer.png",
    "evidence": "Sampled",
    "from": 40,
-   "note": "Composer capsule width",
+   "note": "Composer capsule width (the scan stops inside the screen, which ends at x 795)",
    "op": "extent",
-   "to": 799,
-   "value": "380pt"
+   "to": 771,
+   "value": "366pt"
   },
   "light": {
    "args": [
     "row",
     1616,
     20,
-    800,
+    790,
     [
      400,
      1530
@@ -1652,10 +1652,10 @@
    "capture": "screenshots/light/01-repo-agents-list-composer.png",
    "evidence": "Sampled",
    "from": 38,
-   "note": "Composer capsule width",
+   "note": "Composer capsule width (the scan stops inside the screen, which ends at x 795)",
    "op": "extent",
-   "to": 799,
-   "value": "381pt"
+   "to": 773,
+   "value": "368pt"
   }
  },
  "size.composerButton": {
@@ -1933,7 +1933,7 @@
     "row",
     600,
     200,
-    800,
+    790,
     [
      230,
      600
@@ -1943,10 +1943,10 @@
    "capture": "screenshots/dark/11-agent-menu-pulldown.png",
    "evidence": "Sampled",
    "from": 264,
-   "note": "Pull-down menu width",
+   "note": "Pull-down menu width (the scan stops inside the screen)",
    "op": "extent",
-   "to": 799,
-   "value": "268pt"
+   "to": 763,
+   "value": "250pt"
   }
  },
  "size.navButton.h": {
@@ -2039,7 +2039,7 @@
     "row",
     600,
     200,
-    800,
+    790,
     [
      230,
      600
@@ -2049,10 +2049,10 @@
    "capture": "screenshots/dark/05-group-by-popup-menu.png",
    "evidence": "Sampled",
    "from": 255,
-   "note": "Pop-up menu width",
+   "note": "Pop-up menu width (the scan stops inside the screen)",
    "op": "extent",
-   "to": 799,
-   "value": "272.5pt"
+   "to": 755,
+   "value": "250.5pt"
   }
  },
  "size.search.h": {
