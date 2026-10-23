@@ -1208,6 +1208,17 @@ def section_data(system: dict) -> dict:
 # are where a separate fetch job puts each remote file; both sides are emitted so a
 # card can fall back to the remote while its file is missing.
 
+# Every remote media file sits under one CDN prefix; index.json carries it once
+# under `cdn` and each remote field keeps only the suffix after it.
+REFERO_CDN = "https://images.refero.design/styles/refero.design/"
+
+
+def _cdn_rel(url) -> str | None:
+    """A url under REFERO_CDN becomes its path suffix; anything else stays absolute."""
+    if not url:
+        return None
+    return url[len(REFERO_CDN):] if url.startswith(REFERO_CDN) else url
+
 
 def _refero_host(url) -> str | None:
     """Hostname of a style's source_url, without a leading www."""
@@ -1252,7 +1263,9 @@ def load_refero() -> list[tuple[Path, dict, dict]]:
 
 def refero_card(slug: str, meta: dict, ds: dict) -> dict:
     """One row of refero/index.json. The card prefers the video poster and falls back
-    to the screenshot; the remote card also tries the design-system's thumbnail."""
+    to the screenshot; the remote card also tries the design-system's thumbnail.
+    `card` keeps one bit ("p" poster, "s" shot); the gallery builds local media paths
+    from the slug and joins remote suffixes onto the index's `cdn` prefix."""
     poster, shot = meta.get("video_poster_url"), meta.get("screenshot_url")
     ds_meta = ds.get("meta") if isinstance(ds.get("meta"), dict) else {}
     return {"slug": slug, "name": meta.get("name"), "tagline": meta.get("tagline"),
@@ -1260,12 +1273,10 @@ def refero_card(slug: str, meta: dict, ds: dict) -> dict:
             "type": meta.get("product_type"), "style": meta.get("design_style"),
             "tags": meta.get("tags") or [],
             "src": _refero_host(meta.get("source_url")),
-            "card": f"/refero-media/posters/{slug}.jpg" if poster
-                    else f"/refero-media/shots/{slug}.jpg" if shot else None,
-            "cardRemote": poster or ds_meta.get("thumbnailUrl") or shot,
+            "card": "p" if poster else "s" if shot else None,
+            "cardRemote": _cdn_rel(poster or ds_meta.get("thumbnailUrl") or shot),
             "video": bool(meta.get("video_url")),
-            "videoSrc": f"/refero-media/videos/{slug}.mp4" if meta.get("video_url") else None,
-            "videoRemote": meta.get("video_url")}
+            "videoRemote": _cdn_rel(meta.get("video_url"))}
 
 
 def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
@@ -1317,11 +1328,12 @@ def build_refero() -> Path | None:
     for folder, meta, ds in styles:
         slug = meta.get("slug") or folder.name
         (ent_dir / f"{slug}.json").write_text(
-            json.dumps(refero_entry(folder, meta, ds, slug_of), indent=1))
+            json.dumps(refero_entry(folder, meta, ds, slug_of), separators=(",", ":")))
         index.append(refero_card(slug, meta, ds))
     index.sort(key=lambda s: str(s["name"] or "").lower())
     out = out_dir / "index.json"
-    out.write_text(json.dumps({"version": 1, "count": len(index), "styles": index}, indent=1))
+    out.write_text(json.dumps({"version": 2, "cdn": REFERO_CDN, "count": len(index), "styles": index},
+                              separators=(",", ":")))
     return out
 
 
@@ -1360,7 +1372,7 @@ def build() -> Path:
     out = SITE / "data.json"
     out.write_text(json.dumps({"root": str(ROOT), "categories": catalog.get("categories", {}),
                                "systems": systems},
-                              indent=1))
+                              separators=(",", ":")))
     build_refero()
     return out
 

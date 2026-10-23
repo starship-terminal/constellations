@@ -26,6 +26,14 @@ const isDark = (t) => /dark/.test(t);
 const themeLabel = (t) => t.replace('-experimental', ' (exp.)').replace('light-mobile', 'mobile').replace('light-high-contrast', 'high contrast');
 const portrait = (s) => s.tags.includes('ios');
 
+// A toolbar filter button; `n` is the count badge only the package index shows.
+const chip = (attr, val, label, n, on) => `<button class="chip" data-${attr}="${esc(val)}" aria-pressed="${on}">${esc(label)}${n != null ? `<span class="n">${n}</span>` : ''}</button>`;
+// Both indexes end their filters the same way: every search word must appear in the haystack.
+const textMatch = (fields) => {
+  const q = state.q.trim().toLowerCase();
+  return !q || q.split(/\s+/).every((w) => fields.join(' ').toLowerCase().includes(w));
+};
+
 // The detail page's sections, in rail order. null draws the divider.
 const SECTIONS = [
   ['overview', 'Overview'], ['colors', 'Colors'], ['typography', 'Typography'], ['spacing', 'Spacing'],
@@ -37,13 +45,14 @@ const LEGACY = { screens: 'assets', docs: 'files' };
 
 // ---------------------------------------------------------------- boot
 
-fetch('data.json', { cache: 'no-cache' })
+// data.json streams in parallel with the first route; the refero section never
+// touches it, so nothing waits on it. Catalog routes re-dispatch when it lands.
+const dataPromise = fetch('data.json', { cache: 'no-cache' })
   .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then((d) => { DATA = d; route(); })
-  .catch(() => {
-    app.innerHTML = '<p class="empty">Could not load <code>gallery/data.json</code>. Run <code>make serve</code> from the repository root.</p>';
-  });
+  .then((d) => (DATA = d));
+dataPromise.catch(() => {}); // a failed load is reported by the route that needs it
 window.addEventListener('hashchange', route);
+// The first route() runs at the bottom of this file, once every declaration exists.
 
 // The sticky rail sits under the sticky top bar, whose height changes with the layout.
 const bar = document.querySelector('.bar');
@@ -52,7 +61,6 @@ setBarHeight();
 window.addEventListener('resize', setBarHeight);
 
 function route() {
-  if (!DATA) return;
   const parts = location.hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent);
   document.querySelectorAll('.site-nav a[href^="#/"]').forEach((a) => {
     const refero = a.getAttribute('href') === '#/refero';
@@ -60,6 +68,14 @@ function route() {
   });
   if (parts[0] === 'refero') { referoRoute(parts.slice(1)); return; }
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
+  if (!DATA) {
+    app.innerHTML = '<p class="loading">Loading catalog…</p>';
+    dataPromise.then(route).catch(() => {
+      if (location.hash.replace(/^#\/?/, '').split('/')[0] !== 'refero')
+        app.innerHTML = '<p class="empty">Could not load <code>gallery/data.json</code>. Run <code>make serve</code> from the repository root.</p>';
+    });
+    return;
+  }
   const sys = DATA.systems.find((s) => s.slug === parts[0]);
   if (!sys) { renderIndex(); document.title = 'Design systems'; return; }
   let sec = LEGACY[parts[1]] || parts[1] || 'overview';
@@ -78,10 +94,7 @@ function matches(s) {
   if (state.cat !== 'all' && s.category !== state.cat) return false;
   if (state.dark && !s.themes.some(isDark)) return false;
   if (state.platform !== 'all' && !s.tags.includes(state.platform)) return false;
-  const q = state.q.trim().toLowerCase();
-  if (!q) return true;
-  const hay = [s.name, s.slug, s.goodFor, s.category, DATA.categories[s.category], ...s.tags, ...s.themes, ...s.fonts.map((f) => f.family)].join(' ').toLowerCase();
-  return q.split(/\s+/).every((w) => hay.includes(w));
+  return textMatch([s.name, s.slug, s.goodFor, s.category, DATA.categories[s.category], ...s.tags, ...s.themes, ...s.fonts.map((f) => f.family)]);
 }
 
 function strip(sw) {
@@ -128,7 +141,6 @@ function renderIndex() {
   const list = all.filter(matches);
   const cats = Object.entries(DATA.categories).filter(([k]) => all.some((s) => s.category === k));
   delete app.dataset.pkg;
-  const chip = (attr, val, label, n, on) => `<button class="chip" data-${attr}="${esc(val)}" aria-pressed="${on}">${esc(label)}${n != null ? `<span class="n">${n}</span>` : ''}</button>`;
   app.innerHTML = `
     <div class="intro"><div><h1>Design systems</h1>
       <p>${list.length === all.length ? all.length : `${list.length} of ${all.length}`} styles captured from real products. Each one links to measured tokens, a rendered style guide and the original screenshots.</p></div></div>
@@ -150,14 +162,17 @@ function renderIndex() {
     const go = () => { location.hash = `#/${tr.dataset.slug}`; };
     tr.onclick = go; tr.onkeydown = (e) => { if (e.key === 'Enter') go(); };
   });
+  window.scrollTo(0, 0);
 }
 
 qInput.addEventListener('input', () => {
   state.q = qInput.value;
   const h = location.hash.replace(/^#\/?/, '');
-  if (h === 'refero' && RF_INDEX) drawReferoIndex();
+  // A failed JSON leaves its error page up; typing must not navigate away or throw.
+  if (h === 'refero') { if (RF_INDEX) drawReferoIndex(); }
   else if (h.startsWith('refero/')) location.hash = '#/refero';
-  else if (h) location.hash = '#/'; else renderIndex();
+  else if (h) location.hash = '#/';
+  else if (DATA) renderIndex();
 });
 
 // ---------------------------------------------------------------- detail
@@ -191,7 +206,6 @@ function between(text, name) {
 const filesHref = (s, path) => `#/${esc(s.slug)}/files/${esc(path)}`;
 const fileName = (p) => p.split('/').pop();
 const cssLen = (v) => (typeof v === 'number' ? `${v}px` : String(v));
-const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
 const sentence = (t) => String(t).trim().replace(/\.$/, '');
 const tokensFile = (s) => fileName(s.tokens);
 
@@ -438,24 +452,42 @@ function paletteBlock(theme, sw) {
 
 function renderImages(pane, s, items, withThemeFilter) {
   let filter = 'all';
-  let limit = PAGE;
   const counts = { light: 0, dark: 0, mobile: 0 };
   items.forEach((i) => i.tags.forEach((t) => { counts[t] += 1; }));
+  let shown = [];
+  let groups = new Map();
+  let at = 0;
+  let gen = 0;
+  const tile = (i, k) => `<button class="shot ${!portrait(s) && (i.tags.includes('mobile') || !withThemeFilter) ? 'contain' : ''}" data-i="${k}">
+    <div class="frame"><img loading="lazy" decoding="async" src="${url(i.thumb || i.path)}" alt="${esc(i.name)}"></div><span>${esc(i.name)}</span></button>`;
+  // Tiles append a PAGE at a time: "Show all" drains the rest a chunk per frame
+  // instead of building one giant innerHTML.
+  const feed = (drain, g) => {
+    const end = Math.min(at + PAGE, shown.length);
+    for (; at < end; at++) groups.get(shown[at].group).insertAdjacentHTML('beforeend', tile(shown[at], at));
+    const more = pane.querySelector('[data-more]');
+    if (at >= shown.length) { if (more) more.parentElement.remove(); return; }
+    if (drain) requestAnimationFrame(() => { if (g === gen) feed(true, g); });
+  };
   const draw = () => {
-    const shown = items.filter((i) => filter === 'all' || i.tags.includes(filter));
-    const visible = shown.slice(0, limit);
-    const groups = [...new Set(visible.map((i) => i.group))];
-    const tile = (i) => `<button class="shot ${!portrait(s) && (i.tags.includes('mobile') || !withThemeFilter) ? 'contain' : ''}" data-i="${shown.indexOf(i)}">
-      <div class="frame"><img loading="lazy" decoding="async" src="${url(i.thumb || i.path)}" alt="${esc(i.name)}"></div><span>${esc(i.name)}</span></button>`;
+    const g = ++gen;
+    shown = items.filter((i) => filter === 'all' || i.tags.includes(filter));
+    const names = [...new Set(shown.map((i) => i.group))];
     pane.innerHTML = `
       ${withThemeFilter ? `<div class="subfilters">${['all', 'light', 'dark', 'mobile'].filter((k) => k === 'all' || counts[k])
         .map((k) => `<button class="chip" data-f="${k}" aria-pressed="${filter === k}">${k === 'all' ? 'All' : k[0].toUpperCase() + k.slice(1)}<span class="n">${k === 'all' ? items.length : counts[k]}</span></button>`).join('')}</div>` : ''}
-      ${groups.map((g) => `${groups.length > 1 ? `<div class="group-title">${esc(g)}/</div>` : ''}<div class="shots ${portrait(s) && withThemeFilter ? 'phone' : ''}">${visible.filter((i) => i.group === g).map(tile).join('')}</div>`).join('')}
-      ${shown.length > limit ? `<div class="more"><button class="btn" data-more>Show all ${shown.length}</button></div>` : ''}`;
-    pane.querySelectorAll('[data-f]').forEach((b) => b.onclick = () => { filter = b.dataset.f; limit = PAGE; draw(); pane.querySelector(`[data-f="${filter}"]`).focus(); });
-    pane.querySelectorAll('[data-i]').forEach((b) => b.onclick = () => openLightbox(shown, +b.dataset.i));
+      ${names.map((gr) => `${names.length > 1 ? `<div class="group-title">${esc(gr)}/</div>` : ''}<div class="shots ${portrait(s) && withThemeFilter ? 'phone' : ''}" data-g="${esc(gr)}"></div>`).join('')}
+      ${shown.length > PAGE ? `<div class="more"><button class="btn" data-more>Show all ${shown.length}</button></div>` : ''}`;
+    groups = new Map([...pane.querySelectorAll('.shots')].map((el) => [el.dataset.g, el]));
+    at = 0;
+    pane.querySelectorAll('[data-f]').forEach((b) => b.onclick = () => { filter = b.dataset.f; draw(); pane.querySelector(`[data-f="${filter}"]`).focus(); });
     const more = pane.querySelector('[data-more]');
-    if (more) more.onclick = () => { limit = Infinity; draw(); };
+    if (more) more.onclick = () => { more.disabled = true; feed(true, g); };
+    feed(false, g);
+  };
+  pane.onclick = (e) => {
+    const b = e.target.closest('.shot[data-i]');
+    if (b && shown[+b.dataset.i]) openLightbox(shown, +b.dataset.i);
   };
   draw();
 }
@@ -622,8 +654,8 @@ function copy(text, msg) {
 
 document.getElementById('theme').onclick = () => {
   const root = document.documentElement;
-  const current = root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  root.dataset.theme = current === 'dark' ? 'light' : 'dark';
+  // index.html always sets data-theme (stored pref, else the OS preference).
+  root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
   try { localStorage.setItem('ds-theme', root.dataset.theme); } catch (e) {}
 };
 
@@ -651,9 +683,12 @@ function getRefero() {
   return rfPromise;
 }
 
+// Entity JSONs run ~40-100 KB each; keep a few, evicting the oldest first (FIFO).
+const RF_ENTITY_CAP = 20;
 const rfEntityCache = new Map();
 function getRfEntity(slug) {
   if (!rfEntityCache.has(slug)) {
+    if (rfEntityCache.size >= RF_ENTITY_CAP) rfEntityCache.delete(rfEntityCache.keys().next().value);
     rfEntityCache.set(slug, fetch(`refero/style/${encodeURIComponent(slug)}.json`, { cache: 'no-cache' })
       .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
       .catch((e) => { rfEntityCache.delete(slug); throw e; }));
@@ -677,15 +712,30 @@ function referoRoute(parts) {
   renderRfEntity(parts[0]);
 }
 
-// Local mirror first, remote CDN on error, then nothing (the letter tile shows through).
-const rfErr = 'onerror="if(this.dataset.r&&this.src!==this.dataset.r){this.src=this.dataset.r}else{this.remove()}"';
-const rfImg = (media, cls, alt, attrs) => media && (media.local || media.remote)
-  ? `<img class="${cls}" ${attrs || ''} loading="lazy" src="${esc(media.local || media.remote)}" ${media.local && media.remote ? `data-r="${esc(media.remote)}"` : ''} ${rfErr} alt="${esc(alt)}">` : '';
+// Local media mirrors live under /refero-media/<kind>/<slug>.<ext>. index.json
+// keeps the remote CDN prefix once under `cdn`; a remote field is a path suffix
+// under it, or an absolute URL as-is.
+const rfLocalMedia = (kind, s, ext) => `/refero-media/${kind}/${encodeURIComponent(s.slug)}.${ext}`;
+const rfCdn = (u) => (u ? (u.includes('://') ? u : `${RF_INDEX.cdn || ''}${u}`) : null);
+
+// Local mirror first, remote CDN on error. With `drop` a broken element removes
+// itself (the letter tile shows through); a video just stops retrying.
+const rfMediaAttrs = (media, drop) => {
+  if (!media || !(media.local || media.remote)) return '';
+  const src = `src="${esc(media.local || media.remote)}"`;
+  if (!(media.local && media.remote)) return drop ? `${src} onerror="this.remove()"` : src;
+  const fail = drop ? 'this.remove()' : `this.dataset.r=''`;
+  return `${src} data-r="${esc(media.remote)}" onerror="if(this.dataset.r&&this.src!==this.dataset.r){this.src=this.dataset.r}else{${fail}}"`;
+};
+const rfImg = (media, cls, alt, attrs) => {
+  const m = rfMediaAttrs(media, true);
+  return m ? `<img class="${cls}" ${attrs || ''} loading="lazy" ${m} alt="${esc(alt)}">` : '';
+};
 
 function rfFav(s, big) {
   const remote = s.src || s.source_url
     ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(`https://${host(s.src || s.source_url)}`)}&size=128` : '';
-  return `<span class="rf-fav${big ? ' big' : ''}"><i>${esc((s.name || '?')[0].toUpperCase())}</i><img loading="lazy" src="/refero-media/favicons/${encodeURIComponent(s.slug)}.png" ${remote ? `data-r="${esc(remote)}"` : ''} ${rfErr} alt=""></span>`;
+  return `<span class="rf-fav${big ? ' big' : ''}"><i>${esc((s.name || '?')[0].toUpperCase())}</i><img loading="lazy" ${rfMediaAttrs({ local: rfLocalMedia('favicons', s, 'png'), remote }, true)} alt=""></span>`;
 }
 const host = (u) => String(u || '').replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
 
@@ -694,23 +744,27 @@ function rfMatches(s) {
   if (rfState.video && !s.video) return false;
   if (rfState.type !== 'all' && s.type !== rfState.type) return false;
   if (rfState.style !== 'all' && s.style !== rfState.style) return false;
-  const q = state.q.trim().toLowerCase();
-  if (!q) return true;
-  const hay = [s.name, s.slug, s.tagline, s.industry, s.src, s.type, s.style, ...(s.tags || [])].join(' ').toLowerCase();
-  return q.split(/\s+/).every((w) => hay.includes(w));
+  return textMatch([s.name, s.slug, s.tagline, s.industry, s.src, s.type, s.style, ...(s.tags || [])]);
 }
 
 function rfCard(s, note) {
+  // index.json's `card` is one bit: "p" poster, "s" shot; the path derives from the slug.
+  const card = { local: s.card ? rfLocalMedia(s.card === 'p' ? 'posters' : 'shots', s, 'jpg') : null,
+    remote: rfCdn(s.cardRemote) };
   return `<a class="rf-card" href="#/refero/${esc(s.slug)}" data-slug="${esc(s.slug)}">
-    <div class="rf-tile"><div class="rf-shot">${rfImg({ local: s.card, remote: s.cardRemote }, '', `${s.name} screenshot`)}</div></div>
+    <div class="rf-tile"><div class="rf-shot">${rfImg(card, '', `${s.name} screenshot`)}</div></div>
     <div class="rf-card-foot">${rfFav(s)}<div class="rf-card-txt"><h3>${esc(s.name)}</h3><p>${esc(note || s.tagline || '')}</p></div>
       ${s.video ? '<span class="rf-vid" title="Scroll-preview video">▸</span>' : ''}</div></a>`;
 }
 
+// A hover must hold briefly before its ~1-3 MB preview video starts buffering,
+// or sweeping the grid would download several at once.
+const RF_HOVER_MS = 200;
+const rfHoverTimers = new WeakMap();
+
 function drawReferoIndex() {
   const all = RF_INDEX.styles;
   const list = all.filter(rfMatches);
-  const chip = (attr, val, label, on) => `<button class="chip" data-${attr}="${esc(val)}" aria-pressed="${on}">${esc(label)}</button>`;
   const values = (key) => [...new Set(all.map((s) => s[key]).filter(Boolean))].sort();
   const sel = (key, first) => `<select class="rf-sel" data-sel="${key}" aria-label="${first}"><option value="all">${first}</option>${values(key).map((v) => `<option value="${esc(v)}"${v === rfState[key] ? ' selected' : ''}>${esc(v)}</option>`).join('')}</select>`;
   app.innerHTML = `
@@ -719,7 +773,7 @@ function drawReferoIndex() {
         <a href="https://styles.refero.design" target="_blank" rel="noopener">styles.refero.design</a> — their words,
         not measured evidence. Treat values as inspiration.</p></div></div>
     <div class="toolbar">
-      <div class="chips">${['all', 'light', 'dark'].map((t) => chip('theme', t, t === 'all' ? 'All themes' : t[0].toUpperCase() + t.slice(1), rfState.theme === t)).join('')}${chip('video', '1', 'Has video', rfState.video)}</div>
+      <div class="chips">${['all', 'light', 'dark'].map((t) => chip('theme', t, t === 'all' ? 'All themes' : t[0].toUpperCase() + t.slice(1), null, rfState.theme === t)).join('')}${chip('video', '1', 'Has video', null, rfState.video)}</div>
       ${sel('type', 'All types')}${sel('style', 'All styles')}
       <span class="sep"></span>
       <span class="faint-note">${list.length} styles</span>
@@ -729,10 +783,12 @@ function drawReferoIndex() {
   app.querySelectorAll('[data-theme]').forEach((b) => b.onclick = () => { rfState.theme = b.dataset.theme; rfSave(); drawReferoIndex(); });
   app.querySelectorAll('[data-video]').forEach((b) => b.onclick = () => { rfState.video = !rfState.video; rfSave(); drawReferoIndex(); });
   app.querySelectorAll('select[data-sel]').forEach((s) => s.onchange = () => { rfState[s.dataset.sel] = s.value; rfSave(); drawReferoIndex(); });
+  window.scrollTo(0, 0);
   const grid = app.querySelector('.rf-grid');
   const sent = app.querySelector('#rf-sent');
   if (!grid) return;
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
+  const bySlug = new Map(list.map((s) => [s.slug, s]));
   let at = 0;
   const feed = () => {
     const chunk = list.slice(at, at + RF_PAGE);
@@ -755,15 +811,20 @@ function drawReferoIndex() {
     if (!a || a.contains(ev.relatedTarget)) return;
     const v = a.querySelector('.rf-shot video');
     if (v) { v.play().catch(() => {}); return; }
-    const s = list.find((x) => x.slug === a.dataset.slug);
-    if (!s || !s.video || !(s.videoSrc || s.videoRemote)) return;
+    const s = bySlug.get(a.dataset.slug);
+    if (!s || !s.video) return;
     const shot = a.querySelector('.rf-shot');
-    if (!shot) return;
-    shot.innerHTML = `<video src="${esc(s.videoSrc || s.videoRemote)}" ${s.videoSrc && s.videoRemote ? `data-r="${esc(s.videoRemote)}"` : ''} muted loop playsinline autoplay onerror="if(this.dataset.r){this.src=this.dataset.r;this.dataset.r=''}"></video>`;
+    if (!shot || rfHoverTimers.has(a)) return;
+    rfHoverTimers.set(a, setTimeout(() => {
+      rfHoverTimers.delete(a);
+      shot.innerHTML = `<video ${rfMediaAttrs({ local: rfLocalMedia('videos', s, 'mp4'), remote: rfCdn(s.videoRemote) }, false)} muted loop playsinline autoplay></video>`;
+    }, RF_HOVER_MS));
   });
   grid.addEventListener('mouseout', (ev) => {
     const a = ev.target.closest('a.rf-card');
     if (!a || a.contains(ev.relatedTarget)) return;
+    clearTimeout(rfHoverTimers.get(a));
+    rfHoverTimers.delete(a);
     const v = a.querySelector('.rf-shot video');
     if (v) v.pause();
   });
@@ -780,14 +841,27 @@ function renderRfEntity(slug) {
   delete app.dataset.pkg;
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
   app.innerHTML = '<p class="loading">Loading…</p>';
-  Promise.all([getRfEntity(slug), getRefero().catch(() => null)]).then(([e]) => {
-    const cur = rfSlug();
-    if (cur[0] !== 'refero' || cur[1] !== slug) return;
+  const onPage = () => { const cur = rfSlug(); return cur[0] === 'refero' && cur[1] === slug; };
+  let entity = null;
+  // The ~800 KB index only feeds the "More like this" strip: the page paints on
+  // the entity alone, and the strip fills in whenever the index lands.
+  getRefero()
+    .then(() => {
+      if (!entity || !onPage()) return;
+      const el = app.querySelector('#rf-similar');
+      if (el) el.innerHTML = rfSimilar(entity);
+    })
+    .catch(() => {});
+  getRfEntity(slug).then((e) => {
+    if (!onPage()) return;
+    entity = e;
     drawRfEntity(e);
-  }).catch(() => {
-    const cur = rfSlug();
-    if (cur[0] === 'refero' && cur[1] === slug)
-      app.innerHTML = `<p class="empty">No refero style <code>${esc(slug)}</code>. <a href="#/refero">Back to Refero styles</a>.</p>`;
+  }).catch((err) => {
+    if (!onPage()) return;
+    // A 404 means the style does not exist; anything else may be transient.
+    app.innerHTML = err instanceof Error && err.message === '404'
+      ? `<p class="empty">No refero style <code>${esc(slug)}</code>. <a href="#/refero">Back to Refero styles</a>.</p>`
+      : `<p class="empty">Could not load <code>gallery/refero/style/${esc(slug)}.json</code>. Check the connection and reload, or <a href="#/refero">go back to Refero styles</a>.</p>`;
   });
 }
 
@@ -796,9 +870,8 @@ function rfMediaTag(e) {
   const v = m.detail || m.video;
   if (v && (v.local || v.remote)) {
     const poster = (m.poster && (m.poster.local || m.poster.remote)) || '';
-    return `<video src="${esc(v.local || v.remote)}" ${v.local && v.remote ? `data-r="${esc(v.remote)}"` : ''}
-      ${poster ? `poster="${esc(poster)}"` : ''} muted loop playsinline autoplay
-      onerror="if(this.dataset.r){this.src=this.dataset.r;this.dataset.r=''}"></video>`;
+    return `<video ${rfMediaAttrs(v, false)}
+      ${poster ? `poster="${esc(poster)}"` : ''} muted loop playsinline autoplay></video>`;
   }
   return rfImg(m.shot || m.poster, 'rf-shot-img', `${e.name} screenshot`) || '<p class="empty">No preview captured.</p>';
 }
@@ -823,6 +896,11 @@ function rfColors(e) {
     ${order.map((g) => `<h3 class="rf-h3">${esc(label(g))}</h3><div class="rf-swatches">${groups.get(g).map(rfSwatch).join('')}</div>`).join('')}</section>`;
 }
 
+// One type-scale row; the "Show all N steps" button emits the rest verbatim.
+const rfScaleRow = (t) => `<div class="rf-scale-row">
+  <span class="rf-scale-label">${esc(t.role || 'step')}<code>${esc([t.size && `${t.size}px`, t.weight, t.lineHeight].filter(Boolean).join(' · '))}</code></span>
+  <span class="rf-scale-sample" style="font-size:${esc(cssLen(t.size || 14))};line-height:${esc(t.lineHeight || 1.4)};font-weight:${esc(t.weight || 400)}">The quick brown fox jumps over the lazy dog</span></div>`;
+
 function rfTypography(e) {
   const fonts = e.ds.typography || [];
   const scale = e.ds.typeScale || [];
@@ -830,11 +908,8 @@ function rfTypography(e) {
   const stack = (f) => `"${String(f.family || '').replace(/"/g, '')}", ${f.substitute ? `"${f.substitute}", ` : ''}${/mono/i.test(f.family || '') ? 'ui-monospace, monospace' : 'system-ui, sans-serif'}`;
   const spec = (f) => [['Weight', f.weight], ['Sizes', f.sizes && `${f.sizes} px`], ['Line height', f.lineHeight], ['Tracking', f.letterSpacing], ['Substitute', f.substitute]]
     .filter((x) => x[1]).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('');
-  const row = (t) => `<div class="rf-scale-row">
-    <span class="rf-scale-label">${esc(t.role || 'step')}<code>${esc([t.size && `${t.size}px`, t.weight, t.lineHeight].filter(Boolean).join(' · '))}</code></span>
-    <span class="rf-scale-sample" style="font-size:${esc(cssLen(t.size || 14))};line-height:${esc(t.lineHeight || 1.4)};font-weight:${esc(t.weight || 400)}">The quick brown fox jumps over the lazy dog</span></div>`;
   return `<section class="rf-sec"><h2 class="rf-h2">Typography</h2>
-    ${scale.length ? `<div class="rf-scale" id="rf-scale">${scale.slice(0, 8).map(row).join('')}</div>
+    ${scale.length ? `<div class="rf-scale" id="rf-scale">${scale.slice(0, 8).map(rfScaleRow).join('')}</div>
       ${scale.length > 8 ? `<button class="btn" id="rf-scale-all" type="button">Show all ${scale.length} steps</button>` : ''}` : ''}
     <div class="rf-fonts">${fonts.map((f) => `<div class="rf-font">
       <div class="rf-font-sample" style="font-family:${esc(stack(f))}">${esc(f.family || 'Unknown')} Aa 123</div>
@@ -902,7 +977,7 @@ function drawRfEntity(e) {
           <p class="rf-meta">${esc(e.theme || '')}${e.type ? ` · ${esc(e.type)}` : ''}${e.style ? ` · ${esc(e.style)}` : ''}${e.industry ? ` · ${esc(e.industry)}` : ''}${e.source_url ? ` · <a href="${esc(e.source_url)}" target="_blank" rel="noopener">${esc(host(e.source_url))} ↗</a>` : ''}${e.page_url ? ` · <a href="${esc(e.page_url)}" target="_blank" rel="noopener">refero ↗</a>` : ''}</p>
         </div></header>
         ${ds.description ? `<p class="rf-desc">${esc(ds.description)}</p>` : ''}
-        ${rfColors(e)}${rfTypography(e)}${rfSpacing(e)}${rfGuidelines(e)}${rfSimilar(e)}
+        ${rfColors(e)}${rfTypography(e)}${rfSpacing(e)}${rfGuidelines(e)}<div id="rf-similar">${rfSimilar(e)}</div>
       </div>
       <aside class="rf-pane">
         <div class="rf-tabs" role="tablist">${RF_TABS.map(([k, l]) => `<button role="tab" type="button" data-tab="${k}" aria-selected="${k === 'design_md'}">${esc(l)}</button>`).join('')}</div>
@@ -932,9 +1007,7 @@ function drawRfEntity(e) {
   app.querySelectorAll('.rf-sw[data-copy]').forEach((b) => b.onclick = () => copy(b.dataset.copy, `Copied ${b.dataset.copy}`));
   const all = app.querySelector('#rf-scale-all');
   if (all) all.onclick = () => {
-    app.querySelector('#rf-scale').innerHTML = (ds.typeScale || []).map((t) => `<div class="rf-scale-row">
-      <span class="rf-scale-label">${esc(t.role || 'step')}<code>${esc([t.size && `${t.size}px`, t.weight, t.lineHeight].filter(Boolean).join(' · '))}</code></span>
-      <span class="rf-scale-sample" style="font-size:${esc(cssLen(t.size || 14))};line-height:${esc(t.lineHeight || 1.4)};font-weight:${esc(t.weight || 400)}">The quick brown fox jumps over the lazy dog</span></div>`).join('');
+    app.querySelector('#rf-scale').innerHTML = (ds.typeScale || []).map(rfScaleRow).join('');
     all.remove();
   };
   window.scrollTo(0, 0);
@@ -958,6 +1031,10 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && document.activeElement === qInput) {
     qInput.value = ''; state.q = ''; qInput.blur();
     const h = location.hash.replace(/^#\/?/, '');
-    if (h === 'refero') drawReferoIndex(); else if (!h) renderIndex();
+    if (h === 'refero' && RF_INDEX) drawReferoIndex(); else if (!h && DATA) renderIndex();
   }
 });
+
+// First paint: everything above is declared, and data.json has been downloading
+// since the top of the file. Refero routes never wait on it.
+route();
