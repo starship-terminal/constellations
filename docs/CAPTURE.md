@@ -128,9 +128,11 @@ package was made this way and its README shows the evidence labels to use.
      from. Never draw substitute text over a masked region; the font is
      usually Not captured, so the overlay would be a guess that looks like
      evidence.
-   - `redact_images.py check` finds only what its pattern file lists, and
-     that file holds no addresses or phone numbers, so a clean result does
-     not clear a native capture. Looking at every capture is the check.
+   - `redact_images.py check` finds configured patterns and, by default,
+     email addresses. The shared `cleanup-redact.json` holds no addresses
+     or phone numbers, and the tool does not detect them on its own, so a
+     clean result does not clear a native capture. Looking at every
+     capture is the check.
 6. **Do not break the mirror.** Turning off the phone's network or locking
    it ends the session, so offline and lock-screen states cannot be
    captured this way.
