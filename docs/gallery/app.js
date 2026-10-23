@@ -881,7 +881,10 @@ function rfMediaTag(e) {
   const v = m.detail || m.video;
   if (v && (v.local || v.remote)) {
     const pair = (v === m.detail && m.detail_poster) || m.poster;
-    const poster = (pair && (pair.local || pair.remote)) || '';
+    // poster= is an attribute, not an element: it cannot fall back like
+    // rfMediaAttrs' src does, so the remote URL wins over a possibly absent
+    // local file (e.g. a mirror that predates a kind).
+    const poster = (pair && (pair.remote || pair.local)) || '';
     return `<video ${rfMediaAttrs(v, false)}
       ${poster ? `poster="${esc(poster)}"` : ''} muted loop playsinline autoplay></video>`;
   }

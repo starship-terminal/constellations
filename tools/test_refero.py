@@ -424,12 +424,38 @@ SIMILAR_KEYS = {"slug", "name", "why"}
 EMITTED_KEYS = (INDEX_KEYS | CARD_KEYS | ENTITY_KEYS | MEDIA_KEYS
                 | MEDIA_PAIR_KEYS | DOCS_KEYS | DS_KEYS | SIMILAR_KEYS)
 
-# Reads in app.js that are not emitted keys: DOM/event properties on reused
-# variables (the keydown handler's `e`, the toolbar's `s` selects), array
-# methods, the rfSimilar local item shape ({s, sc, note}) and a field inside
-# emitted ds arrays (elevation rows carry {element, style}).
-ALLOWED_EXTRA = {"dataset", "onchange", "value", "key", "preventDefault",
-                 "shiftKey", "filter", "find", "s", "sc", "note", "element"}
+# Keys a hop-1 variable may read that are not emitted payload fields: `e` is
+# also the keydown event, `s` also the toolbar selects, `x` carries the derived
+# rfSimilar item shape plus fields inside emitted ds arrays (elevation rows
+# are {element, style}), and rfFav takes either a card or the entity, so its
+# `s` may touch entity-only media/source_url.
+EXTRA_READS = {
+    "RF_INDEX": set(),
+    "d": set(),
+    "e": {"key", "preventDefault", "shiftKey"},
+    "s": {"media", "source_url", "onchange", "dataset", "value"},
+    "x": {"s", "sc", "note", "element", "style"},
+    "m": set(),
+    "media": set(),
+    "ds": set(),
+}
+# var -> the key set its first hop resolves to
+SCOPES = {
+    "RF_INDEX": INDEX_KEYS,
+    "d": INDEX_KEYS,
+    "e": ENTITY_KEYS,
+    "s": CARD_KEYS,
+    "x": SIMILAR_KEYS,
+    "m": MEDIA_KEYS,
+    "media": MEDIA_PAIR_KEYS,
+    "ds": DS_KEYS,
+}
+# hop-1 key -> key set the resolved object carries
+SECOND_HOP = {"ds": DS_KEYS, "media": MEDIA_KEYS, "docs": DOCS_KEYS,
+              "similar": SIMILAR_KEYS, "styles": CARD_KEYS}
+JS_METHODS = {"filter", "find", "map", "forEach", "slice", "join", "includes",
+              "indexOf", "keys", "values", "entries", "push", "get", "set",
+              "has", "delete", "then", "catch", "play", "pause", "length"}
 
 CONTRACT_META = {"slug": "alpha", "name": "Alpha", "tagline": "tag",
                  "theme": "light", "product_type": "devtools",
@@ -497,19 +523,42 @@ class ReferoEmitContractTest(unittest.TestCase):
         self.assertEqual(set(self.beta["ds"]), {"description"})
 
     def test_every_emitted_key_is_read_by_the_page(self):
-        # A key the page never reads is dead payload (issue #61): each emitted
-        # name must show up as a `.key` access or a 'key' literal (RF_TABS).
-        for key in sorted(EMITTED_KEYS):
-            with self.subTest(key=key):
-                self.assertRegex(RF_JS, rf"\.{key}\b|'{key}'|\"{key}\"")
+        # A key the page never reads is dead payload (issue #61). Each emitted
+        # key must show up on its own object: index keys on RF_INDEX/d, card
+        # keys on `s`, entity keys on `e`, media keys on `m`/media pairs,
+        # docs keys as the RF_TABS literals, ds keys under ds, similar keys
+        # on `x`.
+        scopes = [
+            ("index", INDEX_KEYS, rf"(?:RF_INDEX|d)\.{{}}\b"),
+            ("card", CARD_KEYS, rf"s\.{{}}\b"),
+            ("entity", ENTITY_KEYS, rf"e\.{{}}\b"),
+            ("media", MEDIA_KEYS, rf"\.{{}}\b"),
+            ("media pair", MEDIA_PAIR_KEYS, rf"media\.{{}}\b"),
+            ("docs", DOCS_KEYS, rf"'{{}}'"),
+            ("ds", DS_KEYS, rf"ds\.{{}}\b"),
+            ("similar", SIMILAR_KEYS - {"slug", "name"}, rf"x\.{{}}\b"),
+        ]
+        for label, keys, pattern in scopes:
+            for key in sorted(keys):
+                with self.subTest(scope=label, key=key):
+                    self.assertRegex(RF_JS, pattern.format(re.escape(key)))
 
     def test_every_key_the_page_reads_is_emitted(self):
-        # The reverse direction: renaming or dropping an emitted key would
-        # leave app.js reading a field nothing sends.
-        reads = set(re.findall(
-            r"\b(?:RF_INDEX|e|s|x|m|ds|media|d)"
-            r"(?:\.(?:ds|media|docs|similar|styles))*\.(\w+)", RF_JS))
-        self.assertEqual(reads - EMITTED_KEYS - ALLOWED_EXTRA, set())
+        # The reverse direction, checked per object shape: renaming or
+        # dropping an emitted key would leave app.js reading a field that
+        # object never sends. A card-level read must be a CARD key, an
+        # entity-level read an ENTITY key, and so on.
+        chains = re.findall(r"\b(RF_INDEX|e|s|x|m|ds|media|d)((?:\.\w+)+)", RF_JS)
+        bad = []
+        for var, chain in chains:
+            hops = chain.split(".")[1:]
+            keys, extra = SCOPES[var], EXTRA_READS[var]
+            if hops[0] not in keys | extra:
+                bad.append(f"{var}{chain}")
+            elif (len(hops) > 1 and hops[0] in SECOND_HOP
+                  and hops[1] not in SECOND_HOP[hops[0]] | JS_METHODS):
+                bad.append(f"{var}{chain}")
+        self.assertEqual(bad, [])
 
     def test_media_locals_are_the_shared_path_contract(self):
         for key, (kind, _field) in catalog.REFERO_MEDIA.items():
