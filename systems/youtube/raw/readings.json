@@ -1,0 +1,6089 @@
+{
+ "accent.unreadDot": {
+  "dark": {
+   "args": [
+    132,
+    370,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled",
+   "note": "Blue new-content dot on a subscription avatar",
+   "op": "fill",
+   "share": 0.92,
+   "value": "#3DA6FF"
+  },
+  "light": {
+   "args": [
+    132,
+    370,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/13-subscriptions-avatars-chips.png",
+   "evidence": "Derived",
+   "note": "Blue new-content dot on a subscription avatar",
+   "op": "fill",
+   "share": 0.64,
+   "value": "#055ED4"
+  }
+ },
+ "bg.home": {
+  "dark": {
+   "args": [
+    300,
+    1030,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Home feed background between the ad and the Shorts shelf (light: the ad card)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0F0F0F"
+  },
+  "light": {
+   "args": [
+    300,
+    1030,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Home feed background between the ad and the Shorts shelf (light: the ad card)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F7F7F7"
+  }
+ },
+ "bg.page": {
+  "dark": {
+   "args": [
+    600,
+    1000,
+    100,
+    100
+   ],
+   "capture": "screenshots/dark/10-settings-icon-list.png",
+   "evidence": "Sampled",
+   "note": "Settings page background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0F0F0F"
+  },
+  "light": {
+   "args": [
+    600,
+    1000,
+    100,
+    100
+   ],
+   "capture": "screenshots/light/10-settings-icon-list.png",
+   "evidence": "Sampled",
+   "note": "Settings page background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "bg.sheet": {
+  "dark": {
+   "args": [
+    500,
+    1500,
+    200,
+    50
+   ],
+   "capture": "screenshots/dark/09-sort-bottom-sheet-checked.png",
+   "evidence": "Sampled",
+   "note": "Sort bottom sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#212121"
+  },
+  "light": {
+   "args": [
+    500,
+    1500,
+    200,
+    50
+   ],
+   "capture": "screenshots/light/09-sort-bottom-sheet-checked.png",
+   "evidence": "Sampled",
+   "note": "Sort bottom sheet",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "border.accordion": {
+  "dark": {
+   "args": [
+    44,
+    1130,
+    8,
+    20
+   ],
+   "capture": "screenshots/dark/03-ad-centre-sheet-accordions.png",
+   "evidence": "Sampled (text)",
+   "note": "Accordion outline in My Ad Centre",
+   "op": "text",
+   "value": "#4A4A4B"
+  }
+ },
+ "border.outline": {
+  "dark": {
+   "args": [
+    420,
+    470,
+    10,
+    20
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Get Premium outline (the hairline furthest from the page)",
+   "op": "text",
+   "value": "#3B3B3B"
+  },
+  "light": {
+   "args": [
+    420,
+    470,
+    10,
+    20
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Get Premium outline (the hairline furthest from the page)",
+   "op": "text",
+   "value": "#D0D0D0"
+  }
+ },
+ "border.tabBar": {
+  "dark": {
+   "args": [
+    300,
+    1600,
+    40,
+    2
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Derived",
+   "note": "Hairline along the top of the tab bar",
+   "op": "fill",
+   "share": 0.3,
+   "value": "#3C3C3C"
+  },
+  "light": {
+   "args": [
+    300,
+    1600,
+    40,
+    2
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Derived",
+   "note": "Hairline along the top of the tab bar",
+   "op": "fill",
+   "share": 0.36,
+   "value": "#E7E7E7"
+  }
+ },
+ "brand.badge": {
+  "dark": {
+   "args": [
+    573,
+    1618,
+    10,
+    8
+   ],
+   "capture": "screenshots/dark/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Derived",
+   "note": "Red dot on the Subscriptions tab icon",
+   "op": "fill",
+   "share": 0.69,
+   "value": "#E1012E"
+  }
+ },
+ "brand.red": {
+  "dark": {
+   "args": [
+    58,
+    825,
+    12,
+    2
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Derived",
+   "note": "Red watch-progress bar along the bottom of a History thumbnail",
+   "op": "fill",
+   "share": 0.42,
+   "value": "#FE0A34"
+  },
+  "light": {
+   "args": [
+    58,
+    825,
+    12,
+    2
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Derived",
+   "note": "Red watch-progress bar along the bottom of a History thumbnail",
+   "op": "fill",
+   "share": 0.21,
+   "value": "#FF0034"
+  }
+ },
+ "button.filled": {
+  "dark": {
+   "args": [
+    450,
+    950,
+    40,
+    10
+   ],
+   "capture": "screenshots/dark/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Ad call to action, filled (Install / Shop now)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F1F1F1"
+  },
+  "light": {
+   "args": [
+    450,
+    950,
+    40,
+    10
+   ],
+   "capture": "screenshots/light/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Ad call to action, filled (Install / Shop now)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0F0F0F"
+  }
+ },
+ "button.filledLabel": {
+  "dark": {
+   "args": [
+    550,
+    912,
+    90,
+    42,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Filled button label",
+   "op": "text",
+   "value": "#0E0E0E"
+  },
+  "light": {
+   "args": [
+    525,
+    952,
+    135,
+    42,
+    "inverse"
+   ],
+   "capture": "screenshots/light/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Filled button label",
+   "op": "text",
+   "value": "#F2F2F2"
+  }
+ },
+ "button.largeLabel": {
+  "dark": {
+   "args": [
+    300,
+    1360,
+    210,
+    45
+   ],
+   "capture": "screenshots/dark/01-premium-upsell-interstitial.png",
+   "evidence": "Sampled (text)",
+   "note": "'1 month free' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "button.pill": {
+  "dark": {
+   "args": [
+    70,
+    485,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "note": "View channel pill, filled",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F1F1F1"
+  },
+  "light": {
+   "args": [
+    70,
+    485,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "note": "View channel pill, filled",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0F0F0F"
+  }
+ },
+ "button.pillLabel": {
+  "dark": {
+   "args": [
+    145,
+    480,
+    155,
+    35,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "View channel label",
+   "op": "text",
+   "value": "#0E0E0E"
+  },
+  "light": {
+   "args": [
+    145,
+    480,
+    155,
+    35,
+    "inverse"
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "View channel label",
+   "op": "text",
+   "value": "#F1F1F1"
+  }
+ },
+ "button.tonal": {
+  "dark": {
+   "args": [
+    100,
+    950,
+    40,
+    10
+   ],
+   "capture": "screenshots/dark/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Ad Watch button, tonal (tinted from the ad in dark)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1B2734"
+  },
+  "light": {
+   "args": [
+    100,
+    950,
+    40,
+    10
+   ],
+   "capture": "screenshots/light/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Ad Watch button, tonal (tinted from the ad in dark)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EAEAEA"
+  }
+ },
+ "button.tonalLabel": {
+  "dark": {
+   "args": [
+    178,
+    912,
+    85,
+    42
+   ],
+   "capture": "screenshots/dark/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Tonal button label ('Watch')",
+   "op": "text",
+   "value": "#F2F2F2"
+  },
+  "light": {
+   "args": [
+    178,
+    952,
+    85,
+    42
+   ],
+   "capture": "screenshots/light/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled (text)",
+   "note": "Tonal button label ('Watch')",
+   "op": "text",
+   "value": "#0E0E0E"
+  }
+ },
+ "focus.caret": {
+  "dark": {
+   "args": [
+    232,
+    200,
+    2,
+    30
+   ],
+   "capture": "screenshots/dark/05-search-typed-suggestions.png",
+   "evidence": "Derived",
+   "note": "Text caret in the focused search field (two pixel columns)",
+   "op": "fill",
+   "share": 0.35,
+   "value": "#F1F1F1"
+  },
+  "light": {
+   "args": [
+    232,
+    200,
+    2,
+    30
+   ],
+   "capture": "screenshots/light/05-search-typed-suggestions.png",
+   "evidence": "Derived",
+   "note": "Text caret in the focused search field (two pixel columns)",
+   "op": "fill",
+   "share": 0.4,
+   "value": "#BABABA"
+  }
+ },
+ "icon.check": {
+  "dark": {
+   "args": [
+    700,
+    400,
+    45,
+    35
+   ],
+   "capture": "screenshots/dark/12-appearance-choice-list-not-changed.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick on the chosen appearance (dark: Use device theme; light: Light theme)",
+   "op": "text",
+   "value": "#E4E4E4"
+  },
+  "light": {
+   "args": [
+    700,
+    580,
+    45,
+    35
+   ],
+   "capture": "screenshots/light/12-appearance-choice-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick on the chosen appearance (dark: Use device theme; light: Light theme)",
+   "op": "text",
+   "value": "#1D1D1D"
+  }
+ },
+ "lines.helper": {
+  "dark": {
+   "args": [
+    50,
+    675,
+    670,
+    775
+   ],
+   "bands": [
+    [
+     678,
+     702
+    ],
+    [
+     712,
+     736
+    ],
+    [
+     746,
+     770
+    ]
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "evidence": "Derived",
+   "note": "Three-line helper text (Restricted Mode)",
+   "op": "lines",
+   "value": "17.0pt"
+  }
+ },
+ "lines.videoTitle": {
+  "dark": {
+   "args": [
+    130,
+    1515,
+    680,
+    1600
+   ],
+   "bands": [
+    [
+     1522,
+     1552
+    ],
+    [
+     1562,
+     1587
+    ]
+   ],
+   "capture": "screenshots/dark/16-watch-page-actions-comments-teaser.png",
+   "evidence": "Derived",
+   "note": "Two-line video title on the watch page",
+   "op": "lines",
+   "value": "20.0pt"
+  }
+ },
+ "overlay.duration": {
+  "dark": {
+   "args": [
+    689,
+    942,
+    8,
+    6
+   ],
+   "capture": "screenshots/dark/14-chip-selected-video-cards-preview.png",
+   "evidence": "Derived",
+   "note": "Duration badge over a white thumbnail area",
+   "op": "fill",
+   "share": 0.48,
+   "value": "#666666"
+  }
+ },
+ "overlay.durationRef": {
+  "dark": {
+   "args": [
+    676,
+    950,
+    6,
+    14
+   ],
+   "capture": "screenshots/dark/14-chip-selected-video-cards-preview.png",
+   "evidence": "Sampled",
+   "note": "The white thumbnail beside the duration badge",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "radius.buttonFilled": {
+  "dark": {
+   "args": [
+    600,
+    905,
+    420,
+    950
+   ],
+   "capture": "screenshots/dark/02-home-ad-shorts-shelf-tabbar.png",
+   "corner": [
+    418,
+    893
+   ],
+   "evidence": "Derived",
+   "inset": 10,
+   "note": "Ad call to action (capsule)",
+   "op": "diag",
+   "value": "17.1pt"
+  },
+  "light": {
+   "args": [
+    600,
+    945,
+    420,
+    990
+   ],
+   "capture": "screenshots/light/02-home-ad-shorts-shelf-tabbar.png",
+   "corner": [
+    418,
+    933
+   ],
+   "evidence": "Derived",
+   "inset": 10,
+   "note": "Ad call to action (capsule)",
+   "op": "diag",
+   "value": "17.1pt"
+  }
+ },
+ "radius.chip": {
+  "dark": {
+   "args": [
+    200,
+    480,
+    141,
+    520
+   ],
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "corner": [
+    140,
+    474
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Filter chip",
+   "op": "diag",
+   "value": "8.5pt"
+  },
+  "light": {
+   "args": [
+    200,
+    480,
+    141,
+    520
+   ],
+   "capture": "screenshots/light/13-subscriptions-avatars-chips.png",
+   "corner": [
+    140,
+    474
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "Filter chip",
+   "op": "diag",
+   "value": "8.5pt"
+  }
+ },
+ "radius.comments": {
+  "dark": {
+   "args": [
+    300,
+    865,
+    48,
+    900
+   ],
+   "capture": "screenshots/dark/16-watch-page-actions-comments-teaser.png",
+   "corner": [
+    40,
+    858
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Comments teaser card",
+   "op": "diag",
+   "value": "11.9pt"
+  }
+ },
+ "radius.menu": {
+  "dark": {
+   "args": [
+    600,
+    590,
+    166,
+    900
+   ],
+   "capture": "screenshots/dark/15-video-overflow-menu.png",
+   "corner": [
+    158,
+    577
+   ],
+   "evidence": "Derived",
+   "inset": 10,
+   "note": "Overflow menu",
+   "op": "diag",
+   "value": "17.1pt"
+  }
+ },
+ "radius.search": {
+  "dark": {
+   "args": [
+    400,
+    190,
+    120,
+    215
+   ],
+   "capture": "screenshots/dark/04-search-focused-history-rows.png",
+   "corner": [
+    112,
+    182
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Search field (capsule)",
+   "op": "diag",
+   "value": "15.4pt"
+  },
+  "light": {
+   "args": [
+    400,
+    190,
+    120,
+    215
+   ],
+   "capture": "screenshots/light/04-search-focused-history-rows.png",
+   "corner": [
+    112,
+    182
+   ],
+   "evidence": "Derived",
+   "inset": 9,
+   "note": "Search field (capsule)",
+   "op": "diag",
+   "value": "15.4pt"
+  }
+ },
+ "radius.sheet": {
+  "dark": {
+   "args": [
+    500,
+    1360,
+    40,
+    1500
+   ],
+   "capture": "screenshots/dark/09-sort-bottom-sheet-checked.png",
+   "corner": [
+    32,
+    1351
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Sort sheet top corner",
+   "op": "diag",
+   "value": "11.9pt"
+  },
+  "light": {
+   "args": [
+    500,
+    1360,
+    40,
+    1500
+   ],
+   "capture": "screenshots/light/09-sort-bottom-sheet-checked.png",
+   "corner": [
+    32,
+    1351
+   ],
+   "evidence": "Derived",
+   "inset": 7,
+   "note": "Sort sheet top corner",
+   "op": "diag",
+   "value": "11.9pt"
+  }
+ },
+ "radius.shortsCard": {
+  "dark": {
+   "args": [
+    42,
+    943,
+    [
+     30,
+     930
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/06-home-scrolled-ad-buttons-shorts-grid.png",
+   "corner": [
+    42,
+    943
+   ],
+   "evidence": "Derived",
+   "inset": 4,
+   "note": "Shorts shelf card, top-left corner",
+   "op": "corner",
+   "value": "6.0pt"
+  }
+ },
+ "radius.thumbnail": {
+  "dark": {
+   "args": [
+    48,
+    667,
+    [
+     40,
+     660
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "corner": [
+    48,
+    667
+   ],
+   "evidence": "Derived",
+   "inset": 5,
+   "note": "History thumbnail, top-left corner",
+   "op": "corner",
+   "value": "7.7pt"
+  }
+ },
+ "rows.search": {
+  "dark": {
+   "args": [
+    50,
+    270,
+    100,
+    1690
+   ],
+   "bands": [
+    [
+     292,
+     335
+    ],
+    [
+     404,
+     447
+    ],
+    [
+     516,
+     559
+    ],
+    [
+     628,
+     671
+    ],
+    [
+     740,
+     783
+    ],
+    [
+     852,
+     895
+    ],
+    [
+     964,
+     1007
+    ],
+    [
+     1076,
+     1119
+    ],
+    [
+     1188,
+     1231
+    ],
+    [
+     1300,
+     1343
+    ],
+    [
+     1412,
+     1455
+    ],
+    [
+     1524,
+     1567
+    ],
+    [
+     1636,
+     1679
+    ]
+   ],
+   "capture": "screenshots/dark/04-search-focused-history-rows.png",
+   "evidence": "Derived",
+   "note": "History icons down the search list (the pitch is the row height)",
+   "op": "lines",
+   "value": "56.0pt"
+  },
+  "light": {
+   "args": [
+    50,
+    270,
+    100,
+    1690
+   ],
+   "bands": [
+    [
+     292,
+     335
+    ],
+    [
+     404,
+     447
+    ],
+    [
+     516,
+     559
+    ],
+    [
+     628,
+     671
+    ],
+    [
+     740,
+     783
+    ],
+    [
+     852,
+     895
+    ],
+    [
+     964,
+     1007
+    ],
+    [
+     1076,
+     1119
+    ],
+    [
+     1188,
+     1231
+    ],
+    [
+     1300,
+     1343
+    ],
+    [
+     1412,
+     1455
+    ],
+    [
+     1524,
+     1567
+    ],
+    [
+     1636,
+     1679
+    ]
+   ],
+   "capture": "screenshots/light/04-search-focused-history-rows.png",
+   "evidence": "Derived",
+   "note": "History icons down the search list (the pitch is the row height)",
+   "op": "lines",
+   "value": "56.0pt"
+  }
+ },
+ "rows.settings": {
+  "dark": {
+   "args": [
+    128,
+    400,
+    160,
+    1700
+   ],
+   "bands": [
+    [
+     422,
+     445
+    ],
+    [
+     522,
+     545
+    ],
+    [
+     622,
+     645
+    ],
+    [
+     721,
+     745
+    ],
+    [
+     822,
+     845
+    ],
+    [
+     922,
+     945
+    ],
+    [
+     949,
+     951
+    ],
+    [
+     1022,
+     1045
+    ],
+    [
+     1122,
+     1145
+    ],
+    [
+     1222,
+     1245
+    ],
+    [
+     1322,
+     1345
+    ],
+    [
+     1422,
+     1445
+    ],
+    [
+     1522,
+     1545
+    ],
+    [
+     1622,
+     1645
+    ],
+    [
+     1649,
+     1651
+    ]
+   ],
+   "capture": "screenshots/dark/10-settings-icon-list.png",
+   "evidence": "Derived",
+   "note": "First letters of the settings rows (the pitch is the row height)",
+   "op": "lines",
+   "value": "50.0pt"
+  },
+  "light": {
+   "args": [
+    128,
+    400,
+    160,
+    1700
+   ],
+   "bands": [
+    [
+     422,
+     446
+    ],
+    [
+     522,
+     546
+    ],
+    [
+     622,
+     645
+    ],
+    [
+     721,
+     745
+    ],
+    [
+     822,
+     845
+    ],
+    [
+     922,
+     945
+    ],
+    [
+     949,
+     951
+    ],
+    [
+     1022,
+     1045
+    ],
+    [
+     1122,
+     1145
+    ],
+    [
+     1222,
+     1245
+    ],
+    [
+     1322,
+     1345
+    ],
+    [
+     1422,
+     1445
+    ],
+    [
+     1522,
+     1546
+    ],
+    [
+     1622,
+     1645
+    ],
+    [
+     1649,
+     1651
+    ]
+   ],
+   "capture": "screenshots/light/10-settings-icon-list.png",
+   "evidence": "Derived",
+   "note": "First letters of the settings rows (the pitch is the row height)",
+   "op": "lines",
+   "value": "50.0pt"
+  }
+ },
+ "rows.tabBar": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    1590,
+    1764,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "note": "Edges down the tab bar at x = 300 (its top hairline)",
+   "op": "find",
+   "value": [
+    1592,
+    1600,
+    1602,
+    1603
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    300,
+    1590,
+    1764,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "note": "Edges down the tab bar at x = 300 (its top hairline)",
+   "op": "find",
+   "value": [
+    1591,
+    1592,
+    1593,
+    1600,
+    1602
+   ]
+  }
+ },
+ "scrim.dim": {
+  "dark": {
+   "args": [
+    70,
+    485,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/09-sort-bottom-sheet-checked.png",
+   "evidence": "Sampled",
+   "note": "The same point under the sort sheet's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#787878"
+  },
+  "light": {
+   "args": [
+    600,
+    600,
+    50,
+    50
+   ],
+   "capture": "screenshots/light/09-sort-bottom-sheet-checked.png",
+   "evidence": "Sampled",
+   "note": "The same point under the sort sheet's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#7F7F7F"
+  }
+ },
+ "scrim.ref": {
+  "dark": {
+   "args": [
+    70,
+    485,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "note": "You tab undimmed (dark: the white View channel pill; light: the page)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F1F1F1"
+  },
+  "light": {
+   "args": [
+    600,
+    600,
+    50,
+    50
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "note": "You tab undimmed (dark: the white View channel pill; light: the page)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "sheet.grabber": {
+  "dark": {
+   "args": [
+    385,
+    1366,
+    40,
+    6
+   ],
+   "capture": "screenshots/dark/09-sort-bottom-sheet-checked.png",
+   "evidence": "Derived",
+   "note": "Grabber at the top of the sort sheet",
+   "op": "fill",
+   "share": 0.5,
+   "value": "#636363"
+  },
+  "light": {
+   "args": [
+    385,
+    1366,
+    40,
+    6
+   ],
+   "capture": "screenshots/light/09-sort-bottom-sheet-checked.png",
+   "evidence": "Derived",
+   "note": "Grabber at the top of the sort sheet",
+   "op": "fill",
+   "share": 0.5,
+   "value": "#E6E6E6"
+  }
+ },
+ "size.accordion": {
+  "dark": {
+   "args": [
+    "col",
+    60,
+    1040,
+    1420,
+    [
+     72,
+     72,
+     72
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/03-ad-centre-sheet-accordions.png",
+   "evidence": "Sampled",
+   "note": "Accordion and Send feedback outlines down x = 60",
+   "op": "find",
+   "value": [
+    1067,
+    1068,
+    1159,
+    1160,
+    1191,
+    1192,
+    1283,
+    1284,
+    1331,
+    1332,
+    1333,
+    1386,
+    1387,
+    1388
+   ]
+  }
+ },
+ "size.avatarChannel": {
+  "dark": {
+   "args": [
+    "row",
+    1052,
+    30,
+    125,
+    [
+     34,
+     1052
+    ],
+    20
+   ],
+   "capture": "screenshots/dark/14-chip-selected-video-cards-preview.png",
+   "evidence": "Sampled",
+   "from": 40,
+   "note": "Channel avatar beside a video title",
+   "op": "extent",
+   "to": 111,
+   "value": "36pt"
+  }
+ },
+ "size.avatarProfile": {
+  "dark": {
+   "args": [
+    "row",
+    360,
+    30,
+    210,
+    [
+     36,
+     360
+    ],
+    20
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "The owner's avatar on the You tab",
+   "op": "extent",
+   "to": 191,
+   "value": "72pt"
+  }
+ },
+ "size.avatarSub": {
+  "dark": {
+   "args": [
+    "row",
+    333,
+    320,
+    450,
+    [
+     316,
+     333
+    ],
+    25
+   ],
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled",
+   "from": 328,
+   "note": "Subscription avatar (a flat light-blue channel icon)",
+   "op": "extent",
+   "to": 439,
+   "value": "56pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    333,
+    320,
+    450,
+    [
+     316,
+     333
+    ],
+    25
+   ],
+   "capture": "screenshots/light/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled",
+   "from": 328,
+   "note": "Subscription avatar (a flat light-blue channel icon)",
+   "op": "extent",
+   "to": 439,
+   "value": "56pt"
+  }
+ },
+ "size.buttonFilled": {
+  "dark": {
+   "args": [
+    [
+     450,
+     950
+    ],
+    [
+     400,
+     870,
+     400,
+     160
+    ],
+    8
+   ],
+   "box": [
+    415,
+    894,
+    770,
+    972
+   ],
+   "capture": "screenshots/dark/02-home-ad-shorts-shelf-tabbar.png",
+   "colour": "#F1F1F1",
+   "evidence": "Sampled",
+   "note": "Ad call-to-action button",
+   "op": "bbox",
+   "value": "178x39.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     450,
+     950
+    ],
+    [
+     400,
+     870,
+     400,
+     160
+    ],
+    8
+   ],
+   "box": [
+    415,
+    934,
+    770,
+    1012
+   ],
+   "capture": "screenshots/light/02-home-ad-shorts-shelf-tabbar.png",
+   "colour": "#0F0F0F",
+   "evidence": "Sampled",
+   "note": "Ad call-to-action button",
+   "op": "bbox",
+   "value": "178x39.5pt"
+  }
+ },
+ "size.chip": {
+  "dark": {
+   "args": [
+    [
+     200,
+     520
+    ],
+    [
+     135,
+     460,
+     150,
+     100
+    ],
+    10
+   ],
+   "box": [
+    140,
+    474,
+    269,
+    537
+   ],
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "colour": "#272727",
+   "evidence": "Sampled",
+   "note": "Filter chip ('Today')",
+   "op": "bbox",
+   "value": "65x32pt"
+  },
+  "light": {
+   "args": [
+    [
+     200,
+     520
+    ],
+    [
+     135,
+     460,
+     150,
+     100
+    ],
+    10
+   ],
+   "box": [
+    140,
+    473,
+    270,
+    538
+   ],
+   "capture": "screenshots/light/13-subscriptions-avatars-chips.png",
+   "colour": "#F2F2F2",
+   "evidence": "Sampled",
+   "note": "Filter chip ('Today')",
+   "op": "bbox",
+   "value": "65.5x33pt"
+  }
+ },
+ "size.commentField": {
+  "dark": {
+   "args": [
+    [
+     300,
+     960
+    ],
+    [
+     120,
+     930,
+     650,
+     70
+    ],
+    4
+   ],
+   "box": [
+    136,
+    943,
+    747,
+    989
+   ],
+   "capture": "screenshots/dark/16-watch-page-actions-comments-teaser.png",
+   "colour": "#313131",
+   "evidence": "Sampled",
+   "note": "'Comment...' field",
+   "op": "bbox",
+   "value": "306x23.5pt"
+  }
+ },
+ "size.comments": {
+  "dark": {
+   "args": [
+    [
+     300,
+     870
+    ],
+    [
+     20,
+     840,
+     772,
+     190
+    ],
+    4
+   ],
+   "box": [
+    41,
+    859,
+    770,
+    1020
+   ],
+   "capture": "screenshots/dark/16-watch-page-actions-comments-teaser.png",
+   "colour": "#1E1E1E",
+   "evidence": "Sampled",
+   "note": "Comments teaser card",
+   "op": "bbox",
+   "value": "365x81pt"
+  }
+ },
+ "size.createButton": {
+  "dark": {
+   "args": [
+    "row",
+    1648,
+    345,
+    470,
+    [
+     345,
+     1648
+    ],
+    14
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "from": 370,
+   "note": "Create (+) button width",
+   "op": "extent",
+   "to": 441,
+   "value": "36pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    1648,
+    345,
+    470,
+    [
+     345,
+     1648
+    ],
+    6
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "from": 370,
+   "note": "Create (+) button width",
+   "op": "extent",
+   "to": 441,
+   "value": "36pt"
+  }
+ },
+ "size.menu.h": {
+  "dark": {
+   "args": [
+    "col",
+    600,
+    540,
+    1560,
+    [
+     40,
+     40,
+     40
+    ],
+    2
+   ],
+   "capture": "screenshots/dark/15-video-overflow-menu.png",
+   "evidence": "Sampled",
+   "note": "Overflow menu, positions of its fill down a column",
+   "op": "find",
+   "value": [
+    578,
+    579,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    598,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604,
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    620,
+    621,
+    622,
+    623,
+    624,
+    625,
+    626,
+    627,
+    628,
+    629,
+    630,
+    631,
+    632,
+    633,
+    634,
+    635,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655,
+    656,
+    657,
+    658,
+    669,
+    670,
+    671,
+    672,
+    673,
+    674,
+    675,
+    676,
+    677,
+    678,
+    679,
+    680,
+    681,
+    682,
+    683,
+    684,
+    685,
+    686,
+    687,
+    688,
+    689,
+    690,
+    691,
+    692,
+    693,
+    694,
+    695,
+    696,
+    697,
+    698,
+    699,
+    700,
+    701,
+    702,
+    703,
+    704,
+    705,
+    706,
+    707,
+    708,
+    709,
+    710,
+    711,
+    712,
+    713,
+    714,
+    715,
+    716,
+    717,
+    718,
+    719,
+    720,
+    721,
+    722,
+    723,
+    724,
+    725,
+    726,
+    727,
+    728,
+    729,
+    730,
+    731,
+    732,
+    733,
+    734,
+    735,
+    736,
+    737,
+    738,
+    739,
+    740,
+    741,
+    742,
+    743,
+    744,
+    745,
+    746,
+    747,
+    748,
+    749,
+    750,
+    751,
+    752,
+    753,
+    754,
+    755,
+    756,
+    757,
+    758,
+    759,
+    760,
+    761,
+    762,
+    763,
+    764,
+    765,
+    766,
+    767,
+    768,
+    769,
+    770,
+    771,
+    772,
+    773,
+    774,
+    775,
+    776,
+    777,
+    778,
+    779,
+    780,
+    781,
+    782,
+    783,
+    784,
+    785,
+    786,
+    787,
+    788,
+    789,
+    790,
+    791,
+    792,
+    793,
+    794,
+    795,
+    796,
+    797,
+    798,
+    799,
+    800,
+    801,
+    802,
+    803,
+    804,
+    805,
+    806,
+    807,
+    808,
+    809,
+    810,
+    811,
+    812,
+    813,
+    814,
+    815,
+    816,
+    817,
+    818,
+    819,
+    820,
+    821,
+    822,
+    823,
+    824,
+    825,
+    826,
+    827,
+    828,
+    829,
+    830,
+    831,
+    832,
+    833,
+    834,
+    835,
+    836,
+    837,
+    838,
+    839,
+    840,
+    841,
+    842,
+    843,
+    844,
+    845,
+    846,
+    847,
+    848,
+    849,
+    850,
+    851,
+    852,
+    853,
+    854,
+    855,
+    856,
+    857,
+    858,
+    859,
+    860,
+    861,
+    862,
+    863,
+    864,
+    865,
+    866,
+    867,
+    868,
+    869,
+    870,
+    871,
+    872,
+    873,
+    874,
+    875,
+    876,
+    877,
+    878,
+    879,
+    880,
+    881,
+    882,
+    883,
+    884,
+    885,
+    886,
+    887,
+    888,
+    889,
+    890,
+    891,
+    892,
+    893,
+    894,
+    895,
+    896,
+    897,
+    898,
+    899,
+    900,
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908,
+    909,
+    910,
+    911,
+    912,
+    913,
+    914,
+    915,
+    916,
+    917,
+    918,
+    919,
+    920,
+    921,
+    922,
+    923,
+    924,
+    925,
+    926,
+    927,
+    928,
+    929,
+    930,
+    931,
+    932,
+    933,
+    934,
+    935,
+    936,
+    937,
+    938,
+    939,
+    940,
+    941,
+    942,
+    943,
+    944,
+    945,
+    946,
+    947,
+    948,
+    949,
+    950,
+    951,
+    952,
+    953,
+    954,
+    955,
+    956,
+    957,
+    958,
+    959,
+    960,
+    961,
+    962,
+    963,
+    964,
+    965,
+    966,
+    967,
+    968,
+    969,
+    970,
+    971,
+    972,
+    973,
+    974,
+    975,
+    976,
+    977,
+    978,
+    979,
+    980,
+    981,
+    982,
+    983,
+    984,
+    985,
+    986,
+    987,
+    988,
+    989,
+    990,
+    991,
+    992,
+    993,
+    994,
+    995,
+    996,
+    997,
+    998,
+    999,
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019,
+    1020,
+    1021,
+    1022,
+    1023,
+    1024,
+    1025,
+    1026,
+    1027,
+    1028,
+    1029,
+    1030,
+    1031,
+    1032,
+    1033,
+    1034,
+    1035,
+    1036,
+    1037,
+    1038,
+    1039,
+    1040,
+    1041,
+    1042,
+    1043,
+    1044,
+    1045,
+    1046,
+    1047,
+    1048,
+    1049,
+    1050,
+    1051,
+    1052,
+    1053,
+    1054,
+    1055,
+    1056,
+    1057,
+    1058,
+    1059,
+    1060,
+    1061,
+    1062,
+    1063,
+    1064,
+    1065,
+    1066,
+    1067,
+    1068,
+    1069,
+    1070,
+    1071,
+    1072,
+    1073,
+    1074,
+    1075,
+    1076,
+    1077,
+    1078,
+    1079,
+    1080,
+    1081,
+    1082,
+    1083,
+    1084,
+    1085,
+    1086,
+    1087,
+    1088,
+    1089,
+    1090,
+    1091,
+    1092,
+    1093,
+    1094,
+    1095,
+    1096,
+    1097,
+    1098,
+    1099,
+    1100,
+    1101,
+    1102,
+    1103,
+    1104,
+    1105,
+    1106,
+    1107,
+    1108,
+    1109,
+    1110,
+    1111,
+    1112,
+    1113,
+    1114,
+    1115,
+    1116,
+    1117,
+    1118,
+    1119,
+    1120,
+    1121,
+    1122,
+    1123,
+    1124,
+    1125,
+    1126,
+    1127,
+    1128,
+    1129,
+    1130,
+    1131,
+    1132,
+    1133,
+    1134,
+    1135,
+    1136,
+    1137,
+    1138,
+    1139,
+    1140,
+    1141,
+    1142,
+    1143,
+    1144,
+    1145,
+    1146,
+    1147,
+    1148,
+    1149,
+    1150,
+    1151,
+    1152,
+    1153,
+    1154,
+    1155,
+    1156,
+    1157,
+    1158,
+    1159,
+    1160,
+    1161,
+    1162,
+    1163,
+    1164,
+    1165,
+    1166,
+    1167,
+    1168,
+    1169,
+    1170,
+    1171,
+    1172,
+    1173,
+    1174,
+    1175,
+    1176,
+    1177,
+    1178,
+    1179,
+    1180,
+    1181,
+    1182,
+    1183,
+    1184,
+    1185,
+    1186,
+    1187,
+    1188,
+    1189,
+    1190,
+    1191,
+    1192,
+    1193,
+    1194,
+    1195,
+    1196,
+    1197,
+    1198,
+    1199,
+    1200,
+    1201,
+    1202,
+    1203,
+    1204,
+    1205,
+    1206,
+    1207,
+    1208,
+    1209,
+    1210,
+    1211,
+    1212,
+    1213,
+    1214,
+    1215,
+    1216,
+    1217,
+    1218,
+    1219,
+    1220,
+    1221,
+    1222,
+    1223,
+    1224,
+    1225,
+    1226,
+    1227,
+    1228,
+    1229,
+    1230,
+    1231,
+    1232,
+    1233,
+    1234,
+    1235,
+    1236,
+    1237,
+    1238,
+    1239,
+    1240,
+    1241,
+    1242,
+    1243,
+    1244,
+    1245,
+    1246,
+    1247,
+    1248,
+    1249,
+    1250,
+    1251,
+    1252,
+    1253,
+    1254,
+    1255,
+    1256,
+    1257,
+    1258,
+    1259,
+    1260,
+    1261,
+    1262,
+    1263,
+    1264,
+    1265,
+    1266,
+    1267,
+    1268,
+    1269,
+    1270,
+    1271,
+    1272,
+    1273,
+    1274,
+    1275,
+    1276,
+    1277,
+    1278,
+    1279,
+    1280,
+    1281,
+    1282,
+    1283,
+    1284,
+    1285,
+    1286,
+    1287,
+    1288,
+    1289,
+    1290,
+    1291,
+    1292,
+    1293,
+    1294,
+    1295,
+    1296,
+    1297,
+    1298,
+    1299,
+    1300,
+    1301,
+    1302,
+    1303,
+    1304,
+    1305,
+    1306,
+    1307,
+    1308,
+    1309,
+    1310,
+    1311,
+    1312,
+    1313,
+    1314,
+    1315,
+    1316,
+    1317,
+    1318,
+    1319,
+    1320,
+    1321,
+    1322,
+    1323,
+    1324,
+    1325,
+    1326,
+    1327,
+    1328,
+    1329,
+    1330,
+    1331,
+    1332,
+    1333,
+    1334,
+    1335,
+    1336,
+    1337,
+    1338,
+    1339,
+    1340,
+    1341,
+    1342,
+    1343,
+    1344,
+    1345,
+    1346,
+    1347,
+    1348,
+    1349,
+    1350,
+    1351,
+    1352,
+    1353,
+    1354,
+    1355,
+    1356,
+    1357,
+    1358,
+    1359,
+    1360,
+    1361,
+    1362,
+    1363,
+    1364,
+    1365,
+    1366,
+    1367,
+    1368,
+    1369,
+    1370,
+    1371,
+    1372,
+    1373,
+    1374,
+    1375,
+    1376,
+    1377,
+    1378,
+    1379,
+    1380,
+    1381,
+    1382,
+    1383,
+    1384,
+    1385,
+    1386,
+    1387,
+    1388,
+    1389,
+    1390,
+    1391,
+    1392,
+    1393,
+    1394,
+    1395,
+    1396,
+    1397,
+    1398,
+    1399,
+    1400,
+    1401,
+    1402,
+    1403,
+    1404,
+    1405,
+    1406,
+    1407,
+    1408,
+    1409,
+    1410,
+    1411,
+    1412,
+    1413,
+    1414,
+    1415,
+    1416,
+    1417,
+    1418,
+    1419,
+    1420,
+    1421,
+    1422,
+    1423,
+    1424,
+    1425,
+    1426,
+    1427,
+    1428,
+    1429,
+    1430,
+    1431,
+    1432,
+    1433,
+    1434,
+    1435,
+    1436,
+    1437,
+    1438,
+    1439,
+    1440,
+    1441,
+    1442,
+    1443,
+    1444,
+    1445,
+    1446,
+    1447,
+    1448,
+    1449,
+    1450,
+    1451,
+    1452,
+    1453,
+    1454,
+    1455,
+    1456,
+    1457,
+    1458,
+    1459,
+    1460,
+    1461,
+    1462,
+    1463,
+    1464,
+    1465,
+    1466,
+    1467,
+    1468,
+    1469,
+    1470,
+    1471,
+    1472,
+    1473,
+    1474,
+    1475,
+    1476,
+    1477,
+    1478,
+    1479,
+    1480,
+    1481,
+    1482,
+    1483,
+    1484,
+    1485,
+    1486,
+    1487,
+    1488,
+    1489,
+    1490,
+    1491,
+    1492,
+    1493,
+    1494,
+    1495,
+    1496,
+    1497,
+    1498,
+    1499,
+    1500,
+    1501,
+    1502,
+    1503
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    700,
+    160,
+    1040,
+    [
+     255,
+     255,
+     255
+    ],
+    1
+   ],
+   "capture": "screenshots/light/15-video-overflow-menu.png",
+   "evidence": "Sampled",
+   "note": "Overflow menu, positions of its fill down a column",
+   "op": "find",
+   "value": [
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475,
+    476,
+    477,
+    478,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484,
+    485,
+    486,
+    487,
+    488,
+    489,
+    490,
+    491,
+    492,
+    493,
+    494,
+    495,
+    496,
+    497,
+    498,
+    499,
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    519,
+    520,
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549,
+    550,
+    551,
+    552,
+    553,
+    554,
+    555,
+    556,
+    557,
+    558,
+    559,
+    560,
+    561,
+    562,
+    563,
+    564,
+    565,
+    566,
+    567,
+    568,
+    569,
+    570,
+    571,
+    572,
+    573,
+    574,
+    575,
+    576,
+    577,
+    578,
+    579,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    598,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604,
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    620,
+    621,
+    622,
+    623,
+    624,
+    625,
+    626,
+    627,
+    628,
+    629,
+    630,
+    631,
+    632,
+    633,
+    634,
+    635,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655,
+    656,
+    657,
+    658,
+    659,
+    660,
+    661,
+    662,
+    663,
+    664,
+    665,
+    666,
+    667,
+    668,
+    669,
+    670,
+    671,
+    672,
+    673,
+    674,
+    675,
+    676,
+    677,
+    678,
+    679,
+    680,
+    681,
+    682,
+    683,
+    684,
+    685,
+    686,
+    687,
+    688,
+    689,
+    690,
+    691,
+    692,
+    693,
+    694,
+    695,
+    696,
+    697,
+    698,
+    699,
+    700,
+    701,
+    702,
+    703,
+    704,
+    705,
+    706,
+    707,
+    708,
+    709,
+    710,
+    711,
+    712,
+    713,
+    714,
+    715,
+    716,
+    717,
+    718,
+    719,
+    720,
+    721,
+    722,
+    723,
+    724,
+    725,
+    726,
+    727,
+    728,
+    729,
+    730,
+    731,
+    732,
+    733,
+    734,
+    735,
+    736,
+    737,
+    738,
+    739,
+    740,
+    741,
+    742,
+    743,
+    744,
+    745,
+    746,
+    747,
+    748,
+    749,
+    750,
+    751,
+    752,
+    753,
+    754,
+    755,
+    756,
+    757,
+    758,
+    759,
+    760,
+    761,
+    762,
+    763,
+    764,
+    765,
+    766,
+    767,
+    768,
+    769,
+    770,
+    771,
+    772,
+    773,
+    774,
+    775,
+    776,
+    777,
+    778,
+    779,
+    780,
+    781,
+    782,
+    783,
+    784,
+    785,
+    786,
+    787,
+    788,
+    789,
+    790,
+    791,
+    792,
+    793,
+    794,
+    795,
+    796,
+    797,
+    798,
+    799,
+    800,
+    801,
+    802,
+    803,
+    804,
+    805,
+    806,
+    807,
+    808,
+    809,
+    810,
+    811,
+    812,
+    813,
+    814,
+    815,
+    816,
+    817,
+    818,
+    819,
+    820,
+    821,
+    822,
+    823,
+    824,
+    825,
+    826,
+    827,
+    828,
+    829,
+    830,
+    831,
+    832,
+    833,
+    834,
+    835,
+    836,
+    837,
+    838,
+    839,
+    840,
+    841,
+    842,
+    843,
+    844,
+    845,
+    846,
+    847,
+    848,
+    849,
+    850,
+    851,
+    852,
+    853,
+    854,
+    855,
+    856,
+    857,
+    858,
+    859,
+    860,
+    861,
+    862,
+    863,
+    864,
+    865,
+    866,
+    867,
+    868,
+    869,
+    870,
+    871,
+    872,
+    873,
+    874,
+    875,
+    876,
+    877,
+    878,
+    879,
+    880,
+    881,
+    882,
+    883,
+    884,
+    885,
+    886,
+    887,
+    888,
+    889,
+    890,
+    891,
+    892,
+    893,
+    894,
+    895,
+    896,
+    897,
+    898,
+    899,
+    900,
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908,
+    909,
+    910,
+    911,
+    912,
+    913,
+    914,
+    915,
+    916,
+    917,
+    918,
+    919,
+    920,
+    921,
+    922,
+    923,
+    924,
+    925,
+    926,
+    927,
+    928,
+    929,
+    930,
+    931,
+    932,
+    933,
+    934,
+    935,
+    936,
+    937,
+    938,
+    939,
+    940,
+    941,
+    942,
+    943,
+    944,
+    945,
+    946,
+    947,
+    948,
+    949,
+    950,
+    951,
+    952,
+    953,
+    954,
+    955,
+    956,
+    957,
+    958,
+    959,
+    960,
+    961,
+    962,
+    963,
+    964,
+    965,
+    966,
+    967,
+    968,
+    969,
+    970,
+    971,
+    972,
+    973,
+    974,
+    975,
+    976,
+    977,
+    978,
+    979,
+    980,
+    981,
+    982,
+    983,
+    984,
+    985,
+    986,
+    987,
+    988,
+    989,
+    990,
+    991,
+    992,
+    993,
+    994,
+    995,
+    996,
+    997,
+    998,
+    999,
+    1000
+   ]
+  }
+ },
+ "size.menu.w": {
+  "dark": {
+   "args": [
+    "row",
+    1450,
+    100,
+    790,
+    [
+     40,
+     40,
+     40
+    ],
+    2
+   ],
+   "capture": "screenshots/dark/15-video-overflow-menu.png",
+   "evidence": "Sampled",
+   "note": "Overflow menu, positions of its fill along a row",
+   "op": "find",
+   "value": [
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475,
+    476,
+    477,
+    478,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484,
+    485,
+    486,
+    487,
+    488,
+    489,
+    490,
+    491,
+    492,
+    493,
+    494,
+    495,
+    496,
+    497,
+    498,
+    499,
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    519,
+    520,
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549,
+    550,
+    551,
+    552,
+    553,
+    554,
+    555,
+    556,
+    557,
+    558,
+    559,
+    560,
+    561,
+    562,
+    563,
+    564,
+    565,
+    566,
+    567,
+    568,
+    569,
+    570,
+    571,
+    572,
+    573,
+    574,
+    575,
+    576,
+    577,
+    578,
+    579,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    598,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604,
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    620,
+    621,
+    622,
+    623,
+    624,
+    625,
+    626,
+    627,
+    628,
+    629,
+    630,
+    631,
+    632,
+    633,
+    634,
+    635,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655,
+    656,
+    657,
+    658,
+    659,
+    660,
+    661,
+    662,
+    663,
+    664,
+    665,
+    666,
+    667,
+    668,
+    669,
+    670,
+    671,
+    672,
+    673,
+    674,
+    675,
+    676,
+    677,
+    678,
+    679,
+    680,
+    681,
+    682,
+    683,
+    688
+   ]
+  },
+  "light": {
+   "args": [
+    "row",
+    600,
+    190,
+    790,
+    [
+     255,
+     255,
+     255
+    ],
+    0
+   ],
+   "capture": "screenshots/light/15-video-overflow-menu.png",
+   "evidence": "Sampled",
+   "note": "Overflow menu, positions of its fill along a row",
+   "op": "find",
+   "value": [
+    223,
+    224,
+    225,
+    226,
+    227,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475,
+    476,
+    477,
+    478,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484,
+    485,
+    486,
+    487,
+    488,
+    489,
+    490,
+    491,
+    492,
+    493,
+    494,
+    495,
+    496,
+    497,
+    498,
+    499,
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    519,
+    520,
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549,
+    550,
+    551,
+    552,
+    553,
+    554,
+    555,
+    556,
+    557,
+    558,
+    559,
+    560,
+    561,
+    562,
+    563,
+    564,
+    565,
+    566,
+    567,
+    568,
+    569,
+    570,
+    571,
+    572,
+    573,
+    574,
+    575,
+    576,
+    577,
+    578,
+    579,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    598,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604,
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    620,
+    621,
+    622,
+    623,
+    624,
+    625,
+    626,
+    627,
+    628,
+    629,
+    630,
+    631,
+    632,
+    633,
+    634,
+    635,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655,
+    656,
+    657,
+    658,
+    659,
+    660,
+    661,
+    662,
+    663,
+    664,
+    665,
+    666,
+    667,
+    668,
+    669,
+    670,
+    671,
+    672,
+    673,
+    674,
+    675,
+    676,
+    677,
+    678,
+    679,
+    680,
+    681,
+    682,
+    683,
+    684,
+    685,
+    686,
+    687,
+    688,
+    689,
+    690,
+    691,
+    692,
+    693,
+    694,
+    695,
+    696,
+    697,
+    698,
+    699,
+    700,
+    701,
+    702,
+    703,
+    704,
+    705,
+    706,
+    707,
+    708,
+    709,
+    710,
+    711,
+    712,
+    713,
+    714,
+    715,
+    716,
+    717,
+    718,
+    719,
+    720,
+    721,
+    722,
+    723,
+    724,
+    725,
+    726,
+    727,
+    728,
+    729,
+    730,
+    731,
+    732,
+    733,
+    734,
+    735,
+    736,
+    737,
+    738,
+    739,
+    740,
+    741,
+    742,
+    743,
+    744,
+    745
+   ]
+  }
+ },
+ "size.pill": {
+  "dark": {
+   "args": [
+    [
+     150,
+     495
+    ],
+    [
+     40,
+     450,
+     380,
+     100
+    ],
+    8
+   ],
+   "box": [
+    47,
+    461,
+    419,
+    526
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "colour": "#262626",
+   "evidence": "Sampled",
+   "note": "View channel pill",
+   "op": "bbox",
+   "value": "186.5x33pt"
+  },
+  "light": {
+   "args": [
+    [
+     150,
+     495
+    ],
+    [
+     40,
+     450,
+     380,
+     100
+    ],
+    8
+   ],
+   "box": [
+    48,
+    461,
+    419,
+    526
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "colour": "#DADADA",
+   "evidence": "Sampled",
+   "note": "View channel pill",
+   "op": "bbox",
+   "value": "186x33pt"
+  }
+ },
+ "size.search": {
+  "dark": {
+   "args": [
+    [
+     400,
+     215
+    ],
+    [
+     100,
+     170,
+     620,
+     100
+    ],
+    6
+   ],
+   "box": [
+    112,
+    182,
+    719,
+    245
+   ],
+   "capture": "screenshots/dark/04-search-focused-history-rows.png",
+   "colour": "#272727",
+   "evidence": "Sampled",
+   "note": "Search field",
+   "op": "bbox",
+   "value": "304x32pt"
+  },
+  "light": {
+   "args": [
+    [
+     400,
+     215
+    ],
+    [
+     100,
+     170,
+     620,
+     100
+    ],
+    6
+   ],
+   "box": [
+    112,
+    182,
+    719,
+    245
+   ],
+   "capture": "screenshots/light/04-search-focused-history-rows.png",
+   "colour": "#F2F2F2",
+   "evidence": "Sampled",
+   "note": "Search field",
+   "op": "bbox",
+   "value": "304x32pt"
+  }
+ },
+ "size.sheet": {
+  "dark": {
+   "args": [
+    [
+     500,
+     1500
+    ],
+    [
+     25,
+     1345,
+     762,
+     360
+    ],
+    3
+   ],
+   "box": [
+    25,
+    1351,
+    783,
+    1704
+   ],
+   "capture": "screenshots/dark/09-sort-bottom-sheet-checked.png",
+   "colour": "#212121",
+   "evidence": "Sampled",
+   "note": "Sort bottom sheet",
+   "op": "bbox",
+   "value": "379.5x177pt"
+  },
+  "light": {
+   "args": [
+    [
+     500,
+     1500
+    ],
+    [
+     25,
+     1345,
+     762,
+     360
+    ],
+    3
+   ],
+   "box": [
+    33,
+    1353,
+    778,
+    1693
+   ],
+   "capture": "screenshots/light/09-sort-bottom-sheet-checked.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Sort bottom sheet",
+   "op": "bbox",
+   "value": "373x170.5pt"
+  }
+ },
+ "size.subscribe": {
+  "dark": {
+   "args": [
+    [
+     370,
+     1470
+    ],
+    [
+     340,
+     1430,
+     220,
+     100
+    ],
+    10
+   ],
+   "box": [
+    340,
+    1452,
+    526,
+    1515
+   ],
+   "capture": "screenshots/dark/07-shorts-player-action-rail-subscribe.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Subscribe pill on a Short",
+   "op": "bbox",
+   "value": "93.5x32pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     740,
+     437
+    ],
+    [
+     680,
+     400,
+     110,
+     80
+    ],
+    12
+   ],
+   "box": [
+    692,
+    419,
+    763,
+    455
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "colour": "#575757",
+   "evidence": "Sampled",
+   "note": "Switch track and the thumb's edge (its width)",
+   "op": "bbox",
+   "value": "36x18.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     740,
+     437
+    ],
+    [
+     680,
+     400,
+     110,
+     80
+    ],
+    12
+   ],
+   "box": [
+    698,
+    425,
+    763,
+    460
+   ],
+   "capture": "screenshots/light/11-general-switches-on-off.png",
+   "colour": "#BDBDBD",
+   "evidence": "Sampled",
+   "note": "Switch track and the thumb's edge (its width)",
+   "op": "bbox",
+   "value": "33x18pt"
+  }
+ },
+ "size.switchThumb": {
+  "dark": {
+   "args": [
+    [
+     712,
+     437
+    ],
+    [
+     680,
+     400,
+     110,
+     80
+    ],
+    12
+   ],
+   "box": [
+    693,
+    420,
+    730,
+    457
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "colour": "#BDC1C8",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "bbox",
+   "value": "19x19pt"
+  },
+  "light": {
+   "args": [
+    [
+     712,
+     437
+    ],
+    [
+     680,
+     400,
+     110,
+     80
+    ],
+    3
+   ],
+   "box": [
+    686,
+    415,
+    764,
+    468
+   ],
+   "capture": "screenshots/light/11-general-switches-on-off.png",
+   "colour": "#F9F9FB",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "bbox",
+   "value": "39.5x27pt"
+  }
+ },
+ "size.switchTrack.h": {
+  "dark": {
+   "args": [
+    "col",
+    752,
+    410,
+    470,
+    [
+     752,
+     410
+    ],
+    20
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "from": 425,
+   "note": "Switch track height, right of the thumb",
+   "op": "extent",
+   "to": 452,
+   "value": "14pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    752,
+    410,
+    470,
+    [
+     752,
+     410
+    ],
+    20
+   ],
+   "capture": "screenshots/light/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "from": 425,
+   "note": "Switch track height, right of the thumb",
+   "op": "extent",
+   "to": 452,
+   "value": "14pt"
+  }
+ },
+ "size.upsellButton": {
+  "dark": {
+   "args": [
+    [
+     150,
+     1380
+    ],
+    [
+     60,
+     1300,
+     700,
+     170
+    ],
+    6
+   ],
+   "box": [
+    87,
+    1325,
+    724,
+    1434
+   ],
+   "capture": "screenshots/dark/01-premium-upsell-interstitial.png",
+   "colour": "#212121",
+   "evidence": "Sampled",
+   "note": "'1 month free' button",
+   "op": "bbox",
+   "value": "319x55pt"
+  }
+ },
+ "surface.adCard": {
+  "dark": {
+   "args": [
+    60,
+    850,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Ad card behind the ad's text and buttons (tinted from the ad in dark)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#020F1B"
+  },
+  "light": {
+   "args": [
+    600,
+    880,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Sampled",
+   "note": "Ad card behind the ad's text and buttons (tinted from the ad in dark)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F7F7F7"
+  }
+ },
+ "surface.adSheet": {
+  "dark": {
+   "args": [
+    400,
+    1580,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/03-ad-centre-sheet-accordions.png",
+   "evidence": "Sampled",
+   "note": "My Ad Centre sheet body",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202020"
+  }
+ },
+ "surface.adSheetHeader": {
+  "dark": {
+   "args": [
+    400,
+    770,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/03-ad-centre-sheet-accordions.png",
+   "evidence": "Sampled",
+   "note": "My Ad Centre sheet header row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0F0F0F"
+  },
+  "light": {
+   "args": [
+    400,
+    770,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/03-ad-centre-sheet-accordions.png",
+   "evidence": "Sampled",
+   "note": "My Ad Centre sheet header row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.chip": {
+  "dark": {
+   "args": [
+    200,
+    520,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled",
+   "note": "Filter chip, unselected ('Today')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#272727"
+  },
+  "light": {
+   "args": [
+    200,
+    520,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled",
+   "note": "Filter chip, unselected ('Today')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F2F2"
+  }
+ },
+ "surface.chipSelected": {
+  "dark": {
+   "args": [
+    104,
+    518,
+    14,
+    12
+   ],
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled",
+   "note": "Filter chip, selected ('All')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F1F1F1"
+  },
+  "light": {
+   "args": [
+    104,
+    518,
+    14,
+    12
+   ],
+   "capture": "screenshots/light/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled",
+   "note": "Filter chip, selected ('All')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0F0F0F"
+  }
+ },
+ "surface.commentField": {
+  "dark": {
+   "args": [
+    300,
+    950,
+    300,
+    20
+   ],
+   "capture": "screenshots/dark/16-watch-page-actions-comments-teaser.png",
+   "evidence": "Sampled",
+   "note": "'Comment...' field inside the teaser",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#313131"
+  }
+ },
+ "surface.comments": {
+  "dark": {
+   "args": [
+    300,
+    870,
+    300,
+    40
+   ],
+   "capture": "screenshots/dark/16-watch-page-actions-comments-teaser.png",
+   "evidence": "Derived",
+   "note": "Comments teaser card on the watch page",
+   "op": "fill",
+   "share": 0.49,
+   "value": "#1B1B1B"
+  }
+ },
+ "surface.createButton": {
+  "dark": {
+   "args": [
+    372,
+    1660,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Derived",
+   "note": "Round Create (+) button in the tab bar",
+   "op": "fill",
+   "share": 0.51,
+   "value": "#323436"
+  },
+  "light": {
+   "args": [
+    372,
+    1660,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Derived",
+   "note": "Round Create (+) button in the tab bar",
+   "op": "fill",
+   "share": 0.4,
+   "value": "#EAEAEC"
+  }
+ },
+ "surface.menu": {
+  "dark": {
+   "args": [
+    600,
+    1450,
+    40,
+    30
+   ],
+   "capture": "screenshots/dark/15-video-overflow-menu.png",
+   "evidence": "Sampled",
+   "note": "Video overflow menu",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#282828"
+  },
+  "light": {
+   "args": [
+    400,
+    600,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/15-video-overflow-menu.png",
+   "evidence": "Sampled",
+   "note": "Video overflow menu",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.outlined": {
+  "dark": {
+   "args": [
+    450,
+    470,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "note": "Get Premium outlined button fill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0F0F0F"
+  },
+  "light": {
+   "args": [
+    450,
+    470,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "note": "Get Premium outlined button fill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.safetyCard": {
+  "dark": {
+   "args": [
+    400,
+    1700,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/03-ad-centre-sheet-accordions.png",
+   "evidence": "Sampled",
+   "note": "Privacy card at the bottom of My Ad Centre",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#383A3E"
+  }
+ },
+ "surface.search": {
+  "dark": {
+   "args": [
+    400,
+    212,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/04-search-focused-history-rows.png",
+   "evidence": "Sampled",
+   "note": "Search field",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#272727"
+  },
+  "light": {
+   "args": [
+    400,
+    212,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/04-search-focused-history-rows.png",
+   "evidence": "Sampled",
+   "note": "Search field",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F2F2"
+  }
+ },
+ "surface.subscribe": {
+  "dark": {
+   "args": [
+    370,
+    1470,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/07-shorts-player-action-rail-subscribe.png",
+   "evidence": "Derived",
+   "note": "Subscribe pill over a Short",
+   "op": "fill",
+   "share": 0.85,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.tabBar": {
+  "dark": {
+   "args": [
+    400,
+    1720,
+    30,
+    20
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Derived",
+   "note": "Tab bar, between Shorts and the Create button (material over content)",
+   "op": "fill",
+   "share": 0.46,
+   "value": "#1C1C1C"
+  },
+  "light": {
+   "args": [
+    400,
+    1720,
+    30,
+    20
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled",
+   "note": "Tab bar, between Shorts and the Create button (material over content)",
+   "op": "fill",
+   "share": 0.91,
+   "value": "#F6F6F6"
+  }
+ },
+ "surface.upsellButton": {
+  "dark": {
+   "args": [
+    150,
+    1380,
+    30,
+    10
+   ],
+   "capture": "screenshots/dark/01-premium-upsell-interstitial.png",
+   "evidence": "Sampled",
+   "note": "'1 month free' button on the Premium interstitial",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#212121"
+  }
+ },
+ "switch.offThumb": {
+  "dark": {
+   "args": [
+    710,
+    434,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off, thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#BDC1C8"
+  },
+  "light": {
+   "args": [
+    710,
+    434,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off, thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F9F9FB"
+  }
+ },
+ "switch.offTrack": {
+  "dark": {
+   "args": [
+    740,
+    437,
+    10,
+    6
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off, track",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#575757"
+  },
+  "light": {
+   "args": [
+    740,
+    437,
+    10,
+    6
+   ],
+   "capture": "screenshots/light/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch off, track",
+   "op": "fill",
+   "share": 0.93,
+   "value": "#BDBDBD"
+  }
+ },
+ "switch.onThumb": {
+  "dark": {
+   "args": [
+    742,
+    850,
+    8,
+    8
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch on, thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3DA6FF"
+  },
+  "light": {
+   "args": [
+    742,
+    850,
+    8,
+    8
+   ],
+   "capture": "screenshots/light/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch on, thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#055ED4"
+  }
+ },
+ "switch.onTrack": {
+  "dark": {
+   "args": [
+    708,
+    851,
+    10,
+    6
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch on, track",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#295B87"
+  },
+  "light": {
+   "args": [
+    708,
+    851,
+    10,
+    6
+   ],
+   "capture": "screenshots/light/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "note": "Switch on, track",
+   "op": "fill",
+   "share": 0.92,
+   "value": "#82AEEA"
+  }
+ },
+ "text.channelName": {
+  "dark": {
+   "args": [
+    40,
+    420,
+    110,
+    30
+   ],
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Channel name under a subscription avatar",
+   "op": "text",
+   "value": "#EFEFEF"
+  },
+  "light": {
+   "args": [
+    40,
+    420,
+    110,
+    30
+   ],
+   "capture": "screenshots/light/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Channel name under a subscription avatar",
+   "op": "text",
+   "value": "#111111"
+  }
+ },
+ "text.chip": {
+  "dark": {
+   "args": [
+    165,
+    490,
+    80,
+    35
+   ],
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected chip label ('Today')",
+   "op": "text",
+   "value": "#F2F2F2"
+  },
+  "light": {
+   "args": [
+    165,
+    490,
+    80,
+    35
+   ],
+   "capture": "screenshots/light/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected chip label ('Today')",
+   "op": "text",
+   "value": "#0E0E0E"
+  }
+ },
+ "text.chipSelected": {
+  "dark": {
+   "args": [
+    64,
+    490,
+    40,
+    35,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected chip label ('All')",
+   "op": "text",
+   "value": "#0E0E0E"
+  },
+  "light": {
+   "args": [
+    64,
+    490,
+    40,
+    35,
+    "inverse"
+   ],
+   "capture": "screenshots/light/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected chip label ('All')",
+   "op": "text",
+   "value": "#F2F2F2"
+  }
+ },
+ "text.handle": {
+  "dark": {
+   "args": [
+    225,
+    380,
+    145,
+    30
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "The owner's handle under their name",
+   "op": "text",
+   "value": "#A8A8A8"
+  },
+  "light": {
+   "args": [
+    225,
+    380,
+    145,
+    30
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "The owner's handle under their name",
+   "op": "text",
+   "value": "#626262"
+  }
+ },
+ "text.helper": {
+  "dark": {
+   "args": [
+    50,
+    485,
+    560,
+    65
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Helper text under a General row",
+   "op": "text",
+   "value": "#AAAAAA"
+  },
+  "light": {
+   "args": [
+    50,
+    485,
+    560,
+    65
+   ],
+   "capture": "screenshots/light/11-general-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Helper text under a General row",
+   "op": "text",
+   "value": "#666666"
+  }
+ },
+ "text.link": {
+  "dark": {
+   "args": [
+    730,
+    318,
+    40,
+    32
+   ],
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "'All' link at the end of the subscriptions row",
+   "op": "text",
+   "value": "#3FA7FF"
+  },
+  "light": {
+   "args": [
+    730,
+    318,
+    40,
+    32
+   ],
+   "capture": "screenshots/light/13-subscriptions-avatars-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "'All' link at the end of the subscriptions row",
+   "op": "text",
+   "value": "#025DD4"
+  }
+ },
+ "text.linkSheet": {
+  "dark": {
+   "args": [
+    145,
+    1655,
+    155,
+    40
+   ],
+   "capture": "screenshots/dark/03-ad-centre-sheet-accordions.png",
+   "evidence": "Sampled (text)",
+   "note": "'Safety Centre' link in My Ad Centre",
+   "op": "text",
+   "value": "#A4C9FF"
+  }
+ },
+ "text.menuItem": {
+  "dark": {
+   "args": [
+    288,
+    640,
+    360,
+    40
+   ],
+   "capture": "screenshots/dark/15-video-overflow-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Overflow menu item ('Play on a different device')",
+   "op": "text",
+   "value": "#F1F1F1"
+  },
+  "light": {
+   "args": [
+    288,
+    225,
+    360,
+    40
+   ],
+   "capture": "screenshots/light/15-video-overflow-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Overflow menu item ('Play on a different device')",
+   "op": "text",
+   "value": "#0F0F0F"
+  }
+ },
+ "text.meta": {
+  "dark": {
+   "args": [
+    130,
+    1062,
+    360,
+    38
+   ],
+   "capture": "screenshots/dark/14-chip-selected-video-cards-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Channel, views and age under a video title",
+   "op": "text",
+   "value": "#A9A8A6"
+  },
+  "light": {
+   "args": [
+    128,
+    1095,
+    360,
+    45
+   ],
+   "capture": "screenshots/light/14-chip-selected-video-cards-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Channel, views and age under a video title",
+   "op": "text",
+   "value": "#61615F"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    135,
+    195,
+    235,
+    40
+   ],
+   "capture": "screenshots/dark/04-search-focused-history-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder ('Search YouTube')",
+   "op": "text",
+   "value": "#C4C4C4"
+  },
+  "light": {
+   "args": [
+    135,
+    195,
+    235,
+    40
+   ],
+   "capture": "screenshots/light/04-search-focused-history-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder ('Search YouTube')",
+   "op": "text",
+   "value": "#5F5F5F"
+  }
+ },
+ "text.rowValue": {
+  "dark": {
+   "args": [
+    548,
+    322,
+    215,
+    38
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Row value on the right ('Use device theme')",
+   "op": "text",
+   "value": "#A9A9A9"
+  },
+  "light": {
+   "args": [
+    548,
+    322,
+    215,
+    38
+   ],
+   "capture": "screenshots/light/11-general-switches-on-off.png",
+   "evidence": "Sampled (text)",
+   "note": "Row value on the right ('Use device theme')",
+   "op": "text",
+   "value": "#676767"
+  }
+ },
+ "text.searchRow": {
+  "dark": {
+   "args": [
+    145,
+    300,
+    75,
+    35
+   ],
+   "capture": "screenshots/dark/04-search-focused-history-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Search history row ('asmr')",
+   "op": "text",
+   "value": "#F2F2F2"
+  },
+  "light": {
+   "args": [
+    145,
+    300,
+    75,
+    35
+   ],
+   "capture": "screenshots/light/04-search-focused-history-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Search history row ('asmr')",
+   "op": "text",
+   "value": "#0F0F0E"
+  }
+ },
+ "text.sectionHeader": {
+  "dark": {
+   "args": [
+    52,
+    330,
+    145,
+    40
+   ],
+   "capture": "screenshots/dark/10-settings-icon-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings section header ('Account')",
+   "op": "text",
+   "value": "#F2F2F2"
+  },
+  "light": {
+   "args": [
+    52,
+    330,
+    145,
+    40
+   ],
+   "capture": "screenshots/light/10-settings-icon-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings section header ('Account')",
+   "op": "text",
+   "value": "#0F0F0F"
+  }
+ },
+ "text.settingsRow": {
+  "dark": {
+   "args": [
+    128,
+    715,
+    270,
+    40
+   ],
+   "capture": "screenshots/dark/10-settings-icon-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row label ('Time management')",
+   "op": "text",
+   "value": "#F2F2F2"
+  },
+  "light": {
+   "args": [
+    128,
+    715,
+    270,
+    40
+   ],
+   "capture": "screenshots/light/10-settings-icon-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row label ('Time management')",
+   "op": "text",
+   "value": "#0F0F0F"
+  }
+ },
+ "text.suggestionSub": {
+  "dark": {
+   "args": [
+    145,
+    1220,
+    155,
+    32
+   ],
+   "capture": "screenshots/dark/05-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "Second line of a suggestion ('Thriller series')",
+   "op": "text",
+   "value": "#AAAAAA"
+  },
+  "light": {
+   "args": [
+    145,
+    1220,
+    155,
+    32
+   ],
+   "capture": "screenshots/light/05-search-typed-suggestions.png",
+   "evidence": "Sampled (text)",
+   "note": "Second line of a suggestion ('Thriller series')",
+   "op": "text",
+   "value": "#616161"
+  }
+ },
+ "text.tab": {
+  "dark": {
+   "args": [
+    60,
+    1662,
+    62,
+    26
+   ],
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Tab bar label ('Home')",
+   "op": "text",
+   "value": "#E3E3E4"
+  },
+  "light": {
+   "args": [
+    60,
+    1662,
+    62,
+    26
+   ],
+   "capture": "screenshots/light/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Sampled (text)",
+   "note": "Tab bar label ('Home')",
+   "op": "text",
+   "value": "#201F21"
+  }
+ },
+ "text.title": {
+  "dark": {
+   "args": [
+    130,
+    1015,
+    530,
+    45
+   ],
+   "capture": "screenshots/dark/14-chip-selected-video-cards-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Video title under a feed card",
+   "op": "text",
+   "value": "#F3F2F2"
+  },
+  "light": {
+   "args": [
+    128,
+    1005,
+    520,
+    45
+   ],
+   "capture": "screenshots/light/14-chip-selected-video-cards-preview.png",
+   "evidence": "Sampled (text)",
+   "note": "Video title under a feed card",
+   "op": "text",
+   "value": "#100D0E"
+  }
+ },
+ "type.button": {
+  "dark": {
+   "args": [
+    178,
+    915,
+    218,
+    955
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/dark/02-home-ad-shorts-shelf-tabbar.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'W' of 'Watch'",
+   "op": "cap",
+   "top": 923,
+   "value": "14pt"
+  }
+ },
+ "type.channelName": {
+  "dark": {
+   "args": [
+    43,
+    418,
+    66,
+    450
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'M' of a channel name under an avatar",
+   "op": "cap",
+   "top": 425,
+   "value": "12pt"
+  }
+ },
+ "type.chip": {
+  "dark": {
+   "args": [
+    165,
+    488,
+    190,
+    530
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/dark/13-subscriptions-avatars-chips.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'T' of the 'Today' chip",
+   "op": "cap",
+   "top": 496,
+   "value": "14pt"
+  }
+ },
+ "type.display": {
+  "dark": {
+   "args": [
+    265,
+    745,
+    305,
+    805
+   ],
+   "capHeight": "25.5pt",
+   "capture": "screenshots/dark/01-premium-upsell-interstitial.png",
+   "evidence": "Derived",
+   "inkPx": 52,
+   "note": "'P' of 'Premium' on the interstitial",
+   "op": "cap",
+   "top": 748,
+   "value": "35pt"
+  }
+ },
+ "type.duration": {
+  "dark": {
+   "args": [
+    702,
+    940,
+    720,
+    973
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/14-chip-selected-video-cards-preview.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "First digit of a duration badge",
+   "op": "cap",
+   "top": 947,
+   "value": "12pt"
+  }
+ },
+ "type.helper": {
+  "dark": {
+   "args": [
+    50,
+    485,
+    70,
+    520
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'E' of helper text",
+   "op": "cap",
+   "top": 489,
+   "value": "12pt"
+  }
+ },
+ "type.menuItem": {
+  "dark": {
+   "args": [
+    288,
+    640,
+    310,
+    685
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/15-video-overflow-menu.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'P' of 'Play on a different device'",
+   "op": "cap",
+   "top": 643,
+   "value": "17pt"
+  }
+ },
+ "type.meta": {
+  "dark": {
+   "args": [
+    130,
+    1065,
+    152,
+    1100
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/14-chip-selected-video-cards-preview.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'Y' of 'Y Combinator'",
+   "op": "cap",
+   "top": 1071,
+   "value": "12pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    121,
+    195,
+    145,
+    250
+   ],
+   "capHeight": "15.5pt",
+   "capture": "screenshots/dark/10-settings-icon-list.png",
+   "evidence": "Derived",
+   "inkPx": 32,
+   "note": "'S' of the nav title 'Settings'",
+   "op": "cap",
+   "top": 199,
+   "value": "22pt"
+  }
+ },
+ "type.searchRow": {
+  "dark": {
+   "args": [
+    145,
+    1172,
+    172,
+    1215
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/05-search-typed-suggestions.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'D' of 'Designated Survivor'",
+   "op": "cap",
+   "top": 1180,
+   "value": "15pt"
+  }
+ },
+ "type.sectionHeader": {
+  "dark": {
+   "args": [
+    53,
+    330,
+    80,
+    375
+   ],
+   "capHeight": "13pt",
+   "capture": "screenshots/dark/10-settings-icon-list.png",
+   "evidence": "Derived",
+   "inkPx": 27,
+   "note": "'A' of the 'Account' section header",
+   "op": "cap",
+   "top": 336,
+   "value": "18pt"
+  }
+ },
+ "type.sectionTitle": {
+  "dark": {
+   "args": [
+    50,
+    590,
+    75,
+    640
+   ],
+   "capHeight": "13pt",
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Derived",
+   "inkPx": 27,
+   "note": "'H' of the 'History' shelf title",
+   "op": "cap",
+   "top": 596,
+   "value": "18pt"
+  }
+ },
+ "type.settingsRow": {
+  "dark": {
+   "args": [
+    128,
+    715,
+    152,
+    760
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/10-settings-icon-list.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'T' of 'Time management'",
+   "op": "cap",
+   "top": 721,
+   "value": "17pt"
+  }
+ },
+ "type.sheetTitle": {
+  "dark": {
+   "args": [
+    122,
+    760,
+    160,
+    810
+   ],
+   "capHeight": "18pt",
+   "capture": "screenshots/dark/03-ad-centre-sheet-accordions.png",
+   "evidence": "Derived",
+   "inkPx": 37,
+   "note": "'M' of 'My Ad Centre'",
+   "op": "cap",
+   "top": 769,
+   "value": "25pt"
+  }
+ },
+ "type.subscribe": {
+  "dark": {
+   "args": [
+    385,
+    1462,
+    405,
+    1505
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/07-shorts-player-action-rail-subscribe.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'S' of 'Subscribe'",
+   "op": "cap",
+   "top": 1474,
+   "value": "12pt"
+  }
+ },
+ "type.suggestionSub": {
+  "dark": {
+   "args": [
+    145,
+    1218,
+    162,
+    1250
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/05-search-typed-suggestions.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'T' of 'Thriller series'",
+   "op": "cap",
+   "top": 1223,
+   "value": "12pt"
+  }
+ },
+ "type.tab": {
+  "dark": {
+   "args": [
+    68,
+    1662,
+    84,
+    1690
+   ],
+   "capHeight": "6.5pt",
+   "capture": "screenshots/dark/08-you-tab-profile-history-library-chips.png",
+   "evidence": "Derived",
+   "inkPx": 14,
+   "note": "'H' of the 'Home' tab label",
+   "op": "cap",
+   "top": 1668,
+   "value": "9pt"
+  }
+ },
+ "type.videoTitle": {
+  "dark": {
+   "args": [
+    130,
+    1015,
+    160,
+    1060
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/14-chip-selected-video-cards-preview.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'H' of a video title",
+   "op": "cap",
+   "top": 1024,
+   "value": "15pt"
+  }
+ }
+}
