@@ -1,0 +1,4779 @@
+{
+ "accent.caret": {
+  "light": {
+   "args": [
+    217,
+    1606,
+    2,
+    44
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Derived",
+   "note": "Text caret in the focused composer",
+   "op": "fill",
+   "share": 0.19,
+   "value": "#446CF3"
+  }
+ },
+ "accent.dot": {
+  "dark": {
+   "args": [
+    504,
+    210,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Derived",
+   "note": "Blue dot after the model name",
+   "op": "fill",
+   "share": 0.53,
+   "value": "#3086FE"
+  }
+ },
+ "accent.ring": {
+  "dark": {
+   "args": [
+    74,
+    380,
+    4,
+    20
+   ],
+   "capture": "screenshots/dark/23-account-sheet-pro-badge.png",
+   "evidence": "Derived",
+   "note": "Ring around the account avatar",
+   "op": "fill",
+   "share": 0.21,
+   "value": "#3086FE"
+  },
+  "light": {
+   "args": [
+    74,
+    380,
+    4,
+    20
+   ],
+   "capture": "screenshots/light/23-account-sheet-pro-badge.png",
+   "evidence": "Derived",
+   "note": "Ring around the account avatar",
+   "op": "fill",
+   "share": 0.12,
+   "value": "#3086FE"
+  }
+ },
+ "bg.glow": {
+  "dark": {
+   "args": [
+    300,
+    1740,
+    200,
+    10
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Derived",
+   "note": "Home background at the bottom edge, where the glow is strongest",
+   "op": "fill",
+   "share": 0.29,
+   "value": "#16296B"
+  },
+  "light": {
+   "args": [
+    300,
+    1740,
+    200,
+    10
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Derived",
+   "note": "Home background at the bottom edge, where the glow is strongest",
+   "op": "fill",
+   "share": 0.34,
+   "value": "#BADEFC"
+  }
+ },
+ "bg.glowTask": {
+  "dark": {
+   "args": [
+    300,
+    1740,
+    200,
+    10
+   ],
+   "capture": "screenshots/dark/08-task-mode-suggestions-purple.png",
+   "evidence": "Derived",
+   "note": "Task mode background at the bottom edge (the purple glow)",
+   "op": "fill",
+   "share": 0.27,
+   "value": "#322B87"
+  },
+  "light": {
+   "args": [
+    300,
+    1740,
+    200,
+    10
+   ],
+   "capture": "screenshots/light/08-task-mode-suggestions-purple.png",
+   "evidence": "Derived",
+   "note": "Task mode background at the bottom edge (the purple glow)",
+   "op": "fill",
+   "share": 0.29,
+   "value": "#7D9AFB"
+  }
+ },
+ "bg.page": {
+  "dark": {
+   "args": [
+    300,
+    400,
+    200,
+    50
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Home background, above the greeting",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    300,
+    400,
+    200,
+    50
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Home background, above the greeting",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FBF9F9"
+  }
+ },
+ "bg.sheet": {
+  "dark": {
+   "args": [
+    300,
+    300,
+    200,
+    30
+   ],
+   "capture": "screenshots/dark/12-settings-sheet-grouped.png",
+   "evidence": "Sampled",
+   "note": "Settings sheet background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    300,
+    300,
+    200,
+    30
+   ],
+   "capture": "screenshots/light/12-settings-sheet-grouped.png",
+   "evidence": "Sampled",
+   "note": "Settings sheet background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FBF9F9"
+  }
+ },
+ "bg.sheetAccount": {
+  "dark": {
+   "args": [
+    300,
+    1200,
+    200,
+    50
+   ],
+   "capture": "screenshots/dark/23-account-sheet-pro-badge.png",
+   "evidence": "Sampled",
+   "note": "Account sheet background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#272A2C"
+  },
+  "light": {
+   "args": [
+    300,
+    1200,
+    200,
+    50
+   ],
+   "capture": "screenshots/light/23-account-sheet-pro-badge.png",
+   "evidence": "Sampled",
+   "note": "Account sheet background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F0F5FB"
+  }
+ },
+ "border.divider": {
+  "dark": {
+   "args": [
+    300,
+    489,
+    300,
+    1
+   ],
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "evidence": "Sampled",
+   "note": "Hairline between grouped rows (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3E3E40"
+  },
+  "light": {
+   "args": [
+    300,
+    489,
+    300,
+    1
+   ],
+   "capture": "screenshots/light/15-voice-settings-switch-on.png",
+   "evidence": "Sampled",
+   "note": "Hairline between grouped rows (one pixel row)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EAEAEA"
+  }
+ },
+ "button.primary": {
+  "dark": {
+   "args": [
+    100,
+    1550,
+    100,
+    15
+   ],
+   "capture": "screenshots/dark/02-onboarding-get-started-terms.png",
+   "evidence": "Sampled",
+   "note": "Get started (capsule on the onboarding glow)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1C"
+  }
+ },
+ "button.primaryLabel": {
+  "dark": {
+   "args": [
+    320,
+    1550,
+    170,
+    40
+   ],
+   "capture": "screenshots/dark/02-onboarding-get-started-terms.png",
+   "evidence": "Sampled (text)",
+   "note": "Get started label",
+   "op": "text",
+   "value": "#E1E1E1"
+  }
+ },
+ "button.send": {
+  "dark": {
+   "args": [
+    660,
+    1598,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/05-composer-typed-send.png",
+   "evidence": "Derived",
+   "note": "Send button, with text typed",
+   "op": "fill",
+   "share": 0.67,
+   "value": "#203B9B"
+  },
+  "light": {
+   "args": [
+    660,
+    1598,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/05-composer-typed-send.png",
+   "evidence": "Derived",
+   "note": "Send button, with text typed",
+   "op": "fill",
+   "share": 0.59,
+   "value": "#9DD1FF"
+  }
+ },
+ "button.sendGlyph": {
+  "dark": {
+   "args": [
+    676,
+    1598,
+    30,
+    55
+   ],
+   "capture": "screenshots/dark/05-composer-typed-send.png",
+   "evidence": "Sampled (text)",
+   "note": "Send arrow",
+   "op": "text",
+   "value": "#FAFFFE"
+  },
+  "light": {
+   "args": [
+    676,
+    1598,
+    30,
+    55
+   ],
+   "capture": "screenshots/light/05-composer-typed-send.png",
+   "evidence": "Sampled (text)",
+   "note": "Send arrow",
+   "op": "text",
+   "value": "#000111"
+  }
+ },
+ "button.signIn": {
+  "dark": {
+   "args": [
+    100,
+    1640,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/01-onboarding-sign-in-gate.png",
+   "evidence": "Sampled",
+   "note": "Continue as Kai (Google sign-in button)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#8AB4FA"
+  }
+ },
+ "button.signInLabel": {
+  "dark": {
+   "args": [
+    305,
+    1640,
+    200,
+    40,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/01-onboarding-sign-in-gate.png",
+   "evidence": "Sampled (text)",
+   "note": "Continue as Kai label",
+   "op": "text",
+   "value": "#202022"
+  }
+ },
+ "button.tonal": {
+  "dark": {
+   "args": [
+    210,
+    878,
+    20,
+    12
+   ],
+   "capture": "screenshots/dark/14-memory-switch-on-tonal-button-empty.png",
+   "evidence": "Sampled",
+   "note": "Add button (filled capsule)",
+   "op": "fill",
+   "share": 0.93,
+   "value": "#A8C6FA"
+  },
+  "light": {
+   "args": [
+    210,
+    878,
+    20,
+    12
+   ],
+   "capture": "screenshots/light/14-memory-switch-on-tonal-button-empty.png",
+   "evidence": "Sampled",
+   "note": "Add button (filled capsule)",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#0957CF"
+  }
+ },
+ "button.tonalLabel": {
+  "dark": {
+   "args": [
+    140,
+    892,
+    58,
+    38,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/14-memory-switch-on-tonal-button-empty.png",
+   "evidence": "Sampled (text)",
+   "note": "Add label",
+   "op": "text",
+   "value": "#062D6E"
+  },
+  "light": {
+   "args": [
+    140,
+    892,
+    58,
+    38,
+    "inverse"
+   ],
+   "capture": "screenshots/light/14-memory-switch-on-tonal-button-empty.png",
+   "evidence": "Sampled (text)",
+   "note": "Add label",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "button.voice": {
+  "dark": {
+   "args": [
+    628,
+    1600,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Derived",
+   "note": "Voice (Live) button, empty composer",
+   "op": "fill",
+   "share": 0.7,
+   "value": "#192967"
+  },
+  "light": {
+   "args": [
+    628,
+    1600,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Derived",
+   "note": "Voice (Live) button, empty composer",
+   "op": "fill",
+   "share": 0.78,
+   "value": "#DCF1FF"
+  }
+ },
+ "button.voiceGlyph": {
+  "dark": {
+   "args": [
+    640,
+    1600,
+    40,
+    55
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Voice glyph (bars)",
+   "op": "text",
+   "value": "#F1F8FD"
+  },
+  "light": {
+   "args": [
+    640,
+    1600,
+    40,
+    55
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Voice glyph (bars)",
+   "op": "text",
+   "value": "#081016"
+  }
+ },
+ "button.voiceTask": {
+  "dark": {
+   "args": [
+    628,
+    1600,
+    10,
+    10
+   ],
+   "capture": "screenshots/dark/08-task-mode-suggestions-purple.png",
+   "evidence": "Derived",
+   "note": "Voice (Live) button in Task mode",
+   "op": "fill",
+   "share": 0.78,
+   "value": "#2E1B6D"
+  },
+  "light": {
+   "args": [
+    628,
+    1600,
+    10,
+    10
+   ],
+   "capture": "screenshots/light/08-task-mode-suggestions-purple.png",
+   "evidence": "Derived",
+   "note": "Voice (Live) button in Task mode",
+   "op": "fill",
+   "share": 0.85,
+   "value": "#E0E7FF"
+  }
+ },
+ "lines.body": {
+  "dark": {
+   "args": [
+    64,
+    1235,
+    740,
+    1325
+   ],
+   "bands": [
+    [
+     1241,
+     1273
+    ],
+    [
+     1289,
+     1322
+    ]
+   ],
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Derived",
+   "note": "Two lines of Gemini's reply",
+   "op": "lines",
+   "value": "24.0pt"
+  }
+ },
+ "lines.bubble": {
+  "dark": {
+   "args": [
+    168,
+    1035,
+    690,
+    1125
+   ],
+   "bands": [
+    [
+     1040,
+     1073
+    ],
+    [
+     1088,
+     1113
+    ]
+   ],
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Derived",
+   "note": "Two lines in the owner's bubble",
+   "op": "lines",
+   "value": "24.0pt"
+  }
+ },
+ "lines.cardBody": {
+  "dark": {
+   "args": [
+    88,
+    620,
+    600,
+    690
+   ],
+   "bands": [
+    [
+     622,
+     651
+    ],
+    [
+     660,
+     682
+    ]
+   ],
+   "capture": "screenshots/dark/20-scheduled-suggestion-cards.png",
+   "evidence": "Derived",
+   "note": "Two-line suggestion card description",
+   "op": "lines",
+   "value": "19.0pt"
+  }
+ },
+ "lines.greeting": {
+  "dark": {
+   "args": [
+    145,
+    680,
+    670,
+    822
+   ],
+   "bands": [
+    [
+     684,
+     731
+    ],
+    [
+     763,
+     821
+    ]
+   ],
+   "capture": "screenshots/dark/08-task-mode-suggestions-purple.png",
+   "evidence": "Derived",
+   "note": "Two-line Task mode greeting",
+   "op": "lines",
+   "value": "39.5pt"
+  }
+ },
+ "lines.menu": {
+  "dark": {
+   "args": [
+    390,
+    205,
+    425,
+    430
+   ],
+   "bands": [
+    [
+     218,
+     244
+    ],
+    [
+     302,
+     327
+    ],
+    [
+     388,
+     412
+    ],
+    [
+     427,
+     429
+    ]
+   ],
+   "capture": "screenshots/dark/11-chat-menu-destructive.png",
+   "evidence": "Derived",
+   "note": "First letters of the first three menu items (above the video): the row pitch",
+   "op": "lines",
+   "value": "42.5pt"
+  }
+ },
+ "lines.search": {
+  "dark": {
+   "args": [
+    120,
+    320,
+    520,
+    1490
+   ],
+   "bands": [
+    [
+     332,
+     365
+    ],
+    [
+     444,
+     469
+    ],
+    [
+     556,
+     581
+    ],
+    [
+     668,
+     701
+    ],
+    [
+     780,
+     813
+    ],
+    [
+     892,
+     925
+    ],
+    [
+     1004,
+     1037
+    ],
+    [
+     1116,
+     1149
+    ],
+    [
+     1228,
+     1260
+    ],
+    [
+     1340,
+     1373
+    ],
+    [
+     1452,
+     1485
+    ]
+   ],
+   "capture": "screenshots/dark/17-search-focused-recent-list.png",
+   "evidence": "Derived",
+   "note": "Search result titles: the row pitch",
+   "op": "lines",
+   "value": "56.0pt"
+  }
+ },
+ "lines.sidebar": {
+  "dark": {
+   "args": [
+    145,
+    340,
+    450,
+    830
+   ],
+   "bands": [
+    [
+     354,
+     379
+    ],
+    [
+     442,
+     474
+    ],
+    [
+     531,
+     563
+    ],
+    [
+     618,
+     643
+    ],
+    [
+     706,
+     731
+    ],
+    [
+     795,
+     819
+    ]
+   ],
+   "capture": "screenshots/dark/09-sidebar-nav-notebooks-account.png",
+   "evidence": "Derived",
+   "note": "Sidebar row labels: the row pitch",
+   "op": "lines",
+   "value": "44.1pt"
+  }
+ },
+ "lines.subtitle": {
+  "dark": {
+   "args": [
+    160,
+    575,
+    520,
+    645
+   ],
+   "bands": [
+    [
+     577,
+     606
+    ],
+    [
+     616,
+     638
+    ]
+   ],
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "evidence": "Derived",
+   "note": "Two-line settings row subtitle",
+   "op": "lines",
+   "value": "19.5pt"
+  }
+ },
+ "radius.alert": {
+  "dark": {
+   "args": [
+    400,
+    735,
+    110,
+    900
+   ],
+   "capture": "screenshots/dark/03-system-notification-permission-alert.png",
+   "corner": [
+    86,
+    721
+   ],
+   "evidence": "Derived",
+   "inset": 19,
+   "note": "iOS permission alert",
+   "op": "diag",
+   "value": "32.4pt"
+  }
+ },
+ "radius.bubble": {
+  "dark": {
+   "args": [
+    400,
+    1012,
+    150,
+    1080
+   ],
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "corner": [
+    112,
+    992
+   ],
+   "evidence": "Derived",
+   "inset": 23,
+   "note": "The owner's bubble",
+   "op": "diag",
+   "value": "39.3pt"
+  }
+ },
+ "radius.bubbleLight": {
+  "light": {
+   "args": [
+    400,
+    1137,
+    150,
+    1205
+   ],
+   "capture": "screenshots/light/10-chat-thread-media-bubble-actions.png",
+   "corner": [
+    112,
+    1117
+   ],
+   "evidence": "Derived",
+   "inset": 24,
+   "note": "The owner's bubble",
+   "op": "diag",
+   "value": "41.0pt"
+  }
+ },
+ "radius.card": {
+  "dark": {
+   "args": [
+    300,
+    360,
+    70,
+    420
+   ],
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "corner": [
+    48,
+    342
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Voice settings card",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    300,
+    360,
+    70,
+    420
+   ],
+   "capture": "screenshots/light/15-voice-settings-switch-on.png",
+   "corner": [
+    48,
+    342
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Voice settings card",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.cardAccount": {
+  "dark": {
+   "args": [
+    400,
+    535,
+    64,
+    574
+   ],
+   "capture": "screenshots/dark/23-account-sheet-pro-badge.png",
+   "corner": [
+    48,
+    520
+   ],
+   "evidence": "Derived",
+   "inset": 16,
+   "note": "Account sheet row card",
+   "op": "diag",
+   "value": "27.3pt"
+  },
+  "light": {
+   "args": [
+    400,
+    535,
+    64,
+    574
+   ],
+   "capture": "screenshots/light/23-account-sheet-pro-badge.png",
+   "corner": [
+    48,
+    520
+   ],
+   "evidence": "Derived",
+   "inset": 16,
+   "note": "Account sheet row card",
+   "op": "diag",
+   "value": "27.3pt"
+  }
+ },
+ "radius.cardSuggestion": {
+  "dark": {
+   "args": [
+    400,
+    545,
+    75,
+    640
+   ],
+   "capture": "screenshots/dark/20-scheduled-suggestion-cards.png",
+   "corner": [
+    48,
+    525
+   ],
+   "evidence": "Derived",
+   "inset": 14,
+   "note": "Suggestion card",
+   "op": "diag",
+   "value": "23.9pt"
+  },
+  "light": {
+   "args": [
+    400,
+    545,
+    75,
+    640
+   ],
+   "capture": "screenshots/light/20-scheduled-suggestion-cards.png",
+   "corner": [
+    48,
+    525
+   ],
+   "evidence": "Derived",
+   "inset": 14,
+   "note": "Suggestion card",
+   "op": "diag",
+   "value": "23.9pt"
+  }
+ },
+ "radius.composer": {
+  "dark": {
+   "args": [
+    420,
+    1575,
+    120,
+    1627
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "corner": [
+    79,
+    1556
+   ],
+   "evidence": "Derived",
+   "inset": 21,
+   "note": "Composer (capsule)",
+   "op": "diag",
+   "value": "35.8pt"
+  }
+ },
+ "radius.menu": {
+  "dark": {
+   "args": [
+    400,
+    185,
+    185,
+    400
+   ],
+   "capture": "screenshots/dark/07-model-picker-menu.png",
+   "corner": [
+    160,
+    172
+   ],
+   "evidence": "Derived",
+   "inset": 17,
+   "note": "Model picker menu",
+   "op": "diag",
+   "value": "29.0pt"
+  }
+ },
+ "radius.sheet": {
+  "dark": {
+   "args": [
+    400,
+    190,
+    40,
+    260
+   ],
+   "capture": "screenshots/dark/23-account-sheet-pro-badge.png",
+   "corner": [
+    16,
+    170
+   ],
+   "evidence": "Derived",
+   "inset": 22,
+   "note": "Account sheet top corner",
+   "op": "diag",
+   "value": "37.6pt"
+  }
+ },
+ "rows.settings": {
+  "dark": {
+   "args": [
+    "col",
+    600,
+    860,
+    1500,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/12-settings-sheet-grouped.png",
+   "evidence": "Sampled",
+   "note": "Row edges down the Preferences card",
+   "op": "find",
+   "value": [
+    959,
+    960,
+    961,
+    962,
+    1067,
+    1068,
+    1069,
+    1070,
+    1175,
+    1176,
+    1177,
+    1178,
+    1283,
+    1284,
+    1285,
+    1286,
+    1391,
+    1392,
+    1393,
+    1394,
+    1499
+   ]
+  }
+ },
+ "scrim.dimDark": {
+  "dark": {
+   "args": [
+    100,
+    225,
+    15,
+    15
+   ],
+   "capture": "screenshots/dark/06-plus-sheet-tiles-tools-list.png",
+   "evidence": "Sampled",
+   "note": "Menu button glass under the + sheet's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0B0B0B"
+  }
+ },
+ "scrim.dimLight": {
+  "light": {
+   "args": [
+    300,
+    400,
+    200,
+    50
+   ],
+   "capture": "screenshots/light/06-plus-sheet-tiles-tools-list.png",
+   "evidence": "Sampled",
+   "note": "Home background under the + sheet's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#CAC6C7"
+  }
+ },
+ "scrim.refDark": {
+  "dark": {
+   "args": [
+    100,
+    225,
+    15,
+    15
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Menu button glass, undimmed",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#202020"
+  }
+ },
+ "scrim.refLight": {
+  "light": {
+   "args": [
+    300,
+    400,
+    200,
+    50
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Home background, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FBF9F9"
+  }
+ },
+ "size.bubble": {
+  "dark": {
+   "args": [
+    [
+     600,
+     1135
+    ],
+    [
+     90,
+     970,
+     690,
+     220
+    ],
+    4
+   ],
+   "box": [
+    112,
+    992,
+    747,
+    1162
+   ],
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "colour": "#141414",
+   "evidence": "Sampled",
+   "note": "The owner's two-line bubble",
+   "op": "bbox",
+   "value": "318x85.5pt"
+  }
+ },
+ "size.card": {
+  "dark": {
+   "args": [
+    [
+     200,
+     505
+    ],
+    [
+     20,
+     320,
+     780,
+     380
+    ],
+    3
+   ],
+   "box": [
+    48,
+    343,
+    763,
+    675
+   ],
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "colour": "#2C2C2E",
+   "evidence": "Sampled",
+   "note": "Voice settings card (two rows)",
+   "op": "bbox",
+   "value": "358x166.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     200,
+     505
+    ],
+    [
+     20,
+     320,
+     780,
+     380
+    ],
+    3
+   ],
+   "box": [
+    48,
+    342,
+    763,
+    676
+   ],
+   "capture": "screenshots/light/15-voice-settings-switch-on.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Voice settings card (two rows)",
+   "op": "bbox",
+   "value": "358x167.5pt"
+  }
+ },
+ "size.cardAccount": {
+  "dark": {
+   "args": [
+    [
+     600,
+     560
+    ],
+    [
+     30,
+     500,
+     760,
+     150
+    ],
+    3
+   ],
+   "box": [
+    48,
+    520,
+    763,
+    627
+   ],
+   "capture": "screenshots/dark/23-account-sheet-pro-badge.png",
+   "colour": "#1B1B1B",
+   "evidence": "Sampled",
+   "note": "Account sheet row card",
+   "op": "bbox",
+   "value": "358x54pt"
+  },
+  "light": {
+   "args": [
+    [
+     600,
+     560
+    ],
+    [
+     30,
+     500,
+     760,
+     150
+    ],
+    3
+   ],
+   "box": [
+    48,
+    520,
+    763,
+    627
+   ],
+   "capture": "screenshots/light/23-account-sheet-pro-badge.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Account sheet row card",
+   "op": "bbox",
+   "value": "358x54pt"
+  }
+ },
+ "size.cardSuggestion": {
+  "dark": {
+   "args": [
+    [
+     600,
+     540
+    ],
+    [
+     20,
+     500,
+     780,
+     250
+    ],
+    3
+   ],
+   "box": [
+    48,
+    526,
+    763,
+    730
+   ],
+   "capture": "screenshots/dark/20-scheduled-suggestion-cards.png",
+   "colour": "#1C1C1C",
+   "evidence": "Sampled",
+   "note": "Suggestion card",
+   "op": "bbox",
+   "value": "358x102.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     600,
+     540
+    ],
+    [
+     20,
+     500,
+     780,
+     250
+    ],
+    3
+   ],
+   "box": [
+    48,
+    525,
+    763,
+    731
+   ],
+   "capture": "screenshots/light/20-scheduled-suggestion-cards.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Suggestion card",
+   "op": "bbox",
+   "value": "358x103.5pt"
+  }
+ },
+ "size.closeButton.h": {
+  "dark": {
+   "args": [
+    "col",
+    720,
+    180,
+    320,
+    [
+     720,
+     185
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/12-settings-sheet-grouped.png",
+   "evidence": "Sampled",
+   "from": 201,
+   "note": "Round glass close button, height",
+   "op": "extent",
+   "to": 290,
+   "value": "45pt"
+  }
+ },
+ "size.composer.h": {
+  "dark": {
+   "args": [
+    "col",
+    420,
+    1520,
+    1760,
+    [
+     29,
+     31,
+     38
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Composer capsule: pixels down a column close to its fill",
+   "op": "find",
+   "value": [
+    1558,
+    1559,
+    1560,
+    1561,
+    1562,
+    1563,
+    1564,
+    1565,
+    1566,
+    1567,
+    1568,
+    1569,
+    1570,
+    1571,
+    1572,
+    1573,
+    1574,
+    1575,
+    1576,
+    1577,
+    1578,
+    1579,
+    1580,
+    1581,
+    1582,
+    1583,
+    1584,
+    1585,
+    1586,
+    1587,
+    1588,
+    1589,
+    1590,
+    1591,
+    1592,
+    1593,
+    1594,
+    1595,
+    1596,
+    1597,
+    1598,
+    1599,
+    1600,
+    1601,
+    1602,
+    1603,
+    1604,
+    1605,
+    1606,
+    1607,
+    1608,
+    1609,
+    1610,
+    1611,
+    1612,
+    1613,
+    1614,
+    1615,
+    1616,
+    1617,
+    1618,
+    1619,
+    1620,
+    1621,
+    1622,
+    1623,
+    1624,
+    1625,
+    1626,
+    1627,
+    1628,
+    1629,
+    1630,
+    1631,
+    1632,
+    1633,
+    1634,
+    1635,
+    1636,
+    1637,
+    1638,
+    1639,
+    1640,
+    1641,
+    1642,
+    1643,
+    1644,
+    1645,
+    1646,
+    1647,
+    1648,
+    1649,
+    1650,
+    1651,
+    1652,
+    1653,
+    1654,
+    1655,
+    1656,
+    1657,
+    1658,
+    1659,
+    1660,
+    1661,
+    1662,
+    1663,
+    1664,
+    1665,
+    1666,
+    1667,
+    1668,
+    1669,
+    1670,
+    1671,
+    1672,
+    1673,
+    1674,
+    1675,
+    1676,
+    1677,
+    1678,
+    1679,
+    1680,
+    1681,
+    1682,
+    1683,
+    1684,
+    1685,
+    1686,
+    1687,
+    1688,
+    1689,
+    1690,
+    1691,
+    1692,
+    1693,
+    1694,
+    1695,
+    1696,
+    1697
+   ]
+  }
+ },
+ "size.composer.w": {
+  "dark": {
+   "args": [
+    "row",
+    1627,
+    20,
+    790,
+    [
+     29,
+     31,
+     38
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Composer capsule, empty: pixels along a row close to its fill",
+   "op": "find",
+   "value": [
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    226,
+    227,
+    228,
+    229,
+    230,
+    236,
+    237,
+    238,
+    239,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    262,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    311,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    330,
+    331,
+    332,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    362,
+    363,
+    369,
+    370,
+    371,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    390,
+    391,
+    392,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475,
+    476,
+    477,
+    478,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484,
+    485,
+    486,
+    487,
+    488,
+    489,
+    490,
+    491,
+    492,
+    493,
+    494,
+    495,
+    496,
+    497,
+    498,
+    499,
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    519,
+    520,
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    560,
+    561,
+    562,
+    563,
+    564,
+    565,
+    566,
+    573,
+    579,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    598,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604,
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    700,
+    701,
+    702,
+    703,
+    704,
+    705,
+    706,
+    707,
+    708,
+    709,
+    710,
+    711,
+    712,
+    713,
+    714,
+    715,
+    716,
+    717,
+    718,
+    719,
+    720,
+    721,
+    722,
+    723,
+    724,
+    725,
+    726,
+    727,
+    728,
+    729,
+    730,
+    731
+   ]
+  }
+ },
+ "size.composerTyped.w": {
+  "dark": {
+   "args": [
+    "row",
+    1627,
+    20,
+    790,
+    [
+     29,
+     31,
+     38
+    ],
+    8
+   ],
+   "capture": "screenshots/dark/05-composer-typed-send.png",
+   "evidence": "Sampled",
+   "note": "Composer capsule, with text: pixels along a row close to its fill",
+   "op": "find",
+   "value": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    203,
+    204,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    223,
+    224,
+    230,
+    231,
+    232,
+    238,
+    239,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475,
+    476,
+    477,
+    478,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484,
+    485,
+    486,
+    487,
+    488,
+    489,
+    490,
+    491,
+    492,
+    493,
+    494,
+    495,
+    496,
+    497,
+    498,
+    499,
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    519,
+    520,
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549,
+    550,
+    551,
+    552,
+    553,
+    554,
+    555,
+    556,
+    557,
+    558,
+    559,
+    560,
+    561,
+    562,
+    563,
+    564,
+    565,
+    566,
+    567,
+    568,
+    569,
+    570,
+    571,
+    572,
+    573,
+    574,
+    575,
+    576,
+    577,
+    578,
+    579,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    598,
+    604,
+    605,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    620,
+    621,
+    622,
+    623,
+    624,
+    625,
+    626,
+    627,
+    628,
+    629,
+    630,
+    631,
+    632,
+    633,
+    634,
+    635,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    732,
+    733,
+    734,
+    735,
+    736,
+    737,
+    738,
+    739,
+    740,
+    741,
+    742,
+    743,
+    744,
+    745,
+    746,
+    747,
+    748,
+    749,
+    750,
+    751,
+    752,
+    753,
+    754,
+    755,
+    756,
+    757,
+    758,
+    759,
+    760,
+    761,
+    762,
+    763
+   ]
+  }
+ },
+ "size.grabber.h": {
+  "dark": {
+   "args": [
+    "col",
+    405,
+    170,
+    200,
+    [
+     405,
+     172
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/12-settings-sheet-grouped.png",
+   "evidence": "Sampled",
+   "from": 182,
+   "note": "Sheet grabber height",
+   "op": "extent",
+   "to": 189,
+   "value": "4pt"
+  }
+ },
+ "size.grabber.w": {
+  "dark": {
+   "args": [
+    "row",
+    186,
+    320,
+    490,
+    [
+     330,
+     186
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/12-settings-sheet-grouped.png",
+   "evidence": "Sampled",
+   "from": 346,
+   "note": "Sheet grabber width",
+   "op": "extent",
+   "to": 465,
+   "value": "60pt"
+  }
+ },
+ "size.menu.h": {
+  "dark": {
+   "args": [
+    "col",
+    600,
+    150,
+    860,
+    [
+     600,
+     155
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/07-model-picker-menu.png",
+   "evidence": "Sampled",
+   "from": 170,
+   "note": "Model picker menu height (four models and a row)",
+   "op": "extent",
+   "to": 814,
+   "value": "322.5pt"
+  }
+ },
+ "size.menu.w": {
+  "dark": {
+   "args": [
+    "row",
+    450,
+    100,
+    750,
+    [
+     110,
+     450
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/07-model-picker-menu.png",
+   "evidence": "Sampled",
+   "from": 160,
+   "note": "Model picker menu width",
+   "op": "extent",
+   "to": 659,
+   "value": "250pt"
+  }
+ },
+ "size.navButton.h": {
+  "dark": {
+   "args": [
+    "col",
+    92,
+    150,
+    290,
+    [
+     92,
+     155
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "from": 169,
+   "note": "Round glass menu button, height",
+   "op": "extent",
+   "to": 258,
+   "value": "45pt"
+  }
+ },
+ "size.navButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    214,
+    20,
+    180,
+    [
+     25,
+     214
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "from": 48,
+   "note": "Round glass menu button, width",
+   "op": "extent",
+   "to": 135,
+   "value": "44pt"
+  }
+ },
+ "size.primaryButton": {
+  "dark": {
+   "args": [
+    [
+     100,
+     1550
+    ],
+    [
+     40,
+     1500,
+     730,
+     140
+    ],
+    6
+   ],
+   "box": [
+    65,
+    1516,
+    747,
+    1620
+   ],
+   "capture": "screenshots/dark/02-onboarding-get-started-terms.png",
+   "colour": "#1C1C1C",
+   "evidence": "Sampled",
+   "note": "Get started button",
+   "op": "bbox",
+   "value": "341.5x52.5pt"
+  }
+ },
+ "size.segment.h": {
+  "light": {
+   "args": [
+    "col",
+    300,
+    1440,
+    1550,
+    [
+     255,
+     255,
+     255
+    ],
+    2
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Selected segment pill: white pixels down a column",
+   "op": "find",
+   "value": [
+    1471,
+    1472,
+    1473,
+    1474,
+    1475,
+    1476,
+    1477,
+    1478,
+    1479,
+    1480,
+    1481,
+    1482,
+    1483,
+    1484,
+    1485,
+    1486,
+    1487,
+    1488,
+    1489,
+    1490,
+    1491,
+    1492,
+    1493,
+    1494,
+    1495,
+    1496,
+    1497,
+    1498,
+    1499,
+    1500,
+    1501,
+    1502,
+    1503,
+    1504,
+    1505,
+    1506,
+    1507,
+    1508,
+    1509,
+    1510,
+    1511,
+    1512,
+    1513,
+    1514,
+    1515,
+    1516,
+    1517,
+    1518,
+    1519,
+    1520,
+    1521,
+    1522,
+    1523,
+    1524,
+    1525,
+    1526,
+    1527,
+    1528
+   ]
+  }
+ },
+ "size.segment.w": {
+  "light": {
+   "args": [
+    "row",
+    1500,
+    250,
+    430,
+    [
+     255,
+     255,
+     255
+    ],
+    2
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Selected segment pill (Chat): white pixels along a row",
+   "op": "find",
+   "value": [
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    333,
+    334,
+    335,
+    336,
+    342,
+    343,
+    347,
+    348,
+    349,
+    350,
+    357,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396
+   ]
+  }
+ },
+ "size.sendButton.h": {
+  "dark": {
+   "args": [
+    "col",
+    690,
+    1570,
+    1690,
+    [
+     690,
+     1575
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/05-composer-typed-send.png",
+   "evidence": "Sampled",
+   "from": 1588,
+   "note": "Send button height",
+   "op": "extent",
+   "to": 1668,
+   "value": "40.5pt"
+  }
+ },
+ "size.sendButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    1627,
+    630,
+    760,
+    [
+     640,
+     1627
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/05-composer-typed-send.png",
+   "evidence": "Sampled",
+   "from": 652,
+   "note": "Send button width",
+   "op": "extent",
+   "to": 731,
+   "value": "40pt"
+  }
+ },
+ "size.signInButton": {
+  "dark": {
+   "args": [
+    [
+     100,
+     1640
+    ],
+    [
+     30,
+     1600,
+     750,
+     110
+    ],
+    6
+   ],
+   "box": [
+    49,
+    1625,
+    762,
+    1694
+   ],
+   "capture": "screenshots/dark/01-onboarding-sign-in-gate.png",
+   "colour": "#8AB4FA",
+   "evidence": "Sampled",
+   "note": "Continue as Kai button",
+   "op": "bbox",
+   "value": "357x35pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     662,
+     415
+    ],
+    [
+     630,
+     380,
+     150,
+     100
+    ],
+    12
+   ],
+   "box": [
+    653,
+    399,
+    754,
+    460
+   ],
+   "capture": "screenshots/dark/14-memory-switch-on-tonal-button-empty.png",
+   "colour": "#A8C6FA",
+   "evidence": "Sampled",
+   "note": "Material switch track",
+   "op": "bbox",
+   "value": "51x31pt"
+  },
+  "light": {
+   "args": [
+    [
+     662,
+     415
+    ],
+    [
+     630,
+     380,
+     150,
+     100
+    ],
+    12
+   ],
+   "box": [
+    653,
+    399,
+    754,
+    460
+   ],
+   "capture": "screenshots/light/14-memory-switch-on-tonal-button-empty.png",
+   "colour": "#0957CF",
+   "evidence": "Sampled",
+   "note": "Material switch track",
+   "op": "bbox",
+   "value": "51x31pt"
+  }
+ },
+ "size.switchSystem": {
+  "dark": {
+   "args": [
+    [
+     612,
+     575
+    ],
+    [
+     580,
+     540,
+     170,
+     90
+    ],
+    12
+   ],
+   "box": [
+    603,
+    557,
+    726,
+    610
+   ],
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "colour": "#3086FE",
+   "evidence": "Sampled",
+   "note": "iOS switch track",
+   "op": "bbox",
+   "value": "62x27pt"
+  },
+  "light": {
+   "args": [
+    [
+     612,
+     575
+    ],
+    [
+     580,
+     540,
+     170,
+     90
+    ],
+    12
+   ],
+   "box": [
+    603,
+    557,
+    726,
+    610
+   ],
+   "capture": "screenshots/light/15-voice-settings-switch-on.png",
+   "colour": "#3086FE",
+   "evidence": "Sampled",
+   "note": "iOS switch track",
+   "op": "bbox",
+   "value": "62x27pt"
+  }
+ },
+ "size.tonalButton": {
+  "dark": {
+   "args": [
+    [
+     210,
+     878
+    ],
+    [
+     40,
+     850,
+     230,
+     120
+    ],
+    12
+   ],
+   "box": [
+    57,
+    871,
+    242,
+    948
+   ],
+   "capture": "screenshots/dark/14-memory-switch-on-tonal-button-empty.png",
+   "colour": "#A8C6FA",
+   "evidence": "Sampled",
+   "note": "Add button",
+   "op": "bbox",
+   "value": "93x39pt"
+  },
+  "light": {
+   "args": [
+    [
+     210,
+     878
+    ],
+    [
+     40,
+     850,
+     230,
+     120
+    ],
+    12
+   ],
+   "box": [
+    57,
+    871,
+    242,
+    948
+   ],
+   "capture": "screenshots/light/14-memory-switch-on-tonal-button-empty.png",
+   "colour": "#0957CF",
+   "evidence": "Sampled",
+   "note": "Add button",
+   "op": "bbox",
+   "value": "93x39pt"
+  }
+ },
+ "size.videoCard.w": {
+  "dark": {
+   "args": [
+    "row",
+    630,
+    20,
+    800,
+    [
+     30,
+     630
+    ],
+    30
+   ],
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Sampled",
+   "from": 64,
+   "note": "Video result card, width",
+   "op": "extent",
+   "to": 747,
+   "value": "342pt"
+  }
+ },
+ "size.voiceButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    1627,
+    600,
+    720,
+    [
+     610,
+     1627
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "from": 620,
+   "note": "Voice button width",
+   "op": "extent",
+   "to": 699,
+   "value": "40pt"
+  }
+ },
+ "surface.alert": {
+  "dark": {
+   "args": [
+    650,
+    790,
+    40,
+    40
+   ],
+   "capture": "screenshots/dark/03-system-notification-permission-alert.png",
+   "evidence": "Sampled",
+   "note": "iOS permission alert (system glass)",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#202020"
+  }
+ },
+ "surface.badge": {
+  "dark": {
+   "args": [
+    478,
+    398,
+    6,
+    30
+   ],
+   "capture": "screenshots/dark/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled",
+   "note": "PRO badge beside the Usage limits title",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  },
+  "light": {
+   "args": [
+    478,
+    398,
+    6,
+    30
+   ],
+   "capture": "screenshots/light/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled",
+   "note": "PRO badge beside the Usage limits title",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F0F0"
+  }
+ },
+ "surface.bubble": {
+  "dark": {
+   "args": [
+    600,
+    1135,
+    100,
+    12
+   ],
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Sampled",
+   "note": "The owner's message bubble, below the text",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  }
+ },
+ "surface.bubbleLight": {
+  "light": {
+   "args": [
+    600,
+    1260,
+    100,
+    12
+   ],
+   "capture": "screenshots/light/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Sampled",
+   "note": "The owner's message bubble, below the text",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F0F0"
+  }
+ },
+ "surface.card": {
+  "dark": {
+   "args": [
+    200,
+    500,
+    350,
+    12
+   ],
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "evidence": "Sampled",
+   "note": "Grouped settings card (Voice), between the divider and the next row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2C2C2E"
+  },
+  "light": {
+   "args": [
+    200,
+    500,
+    350,
+    12
+   ],
+   "capture": "screenshots/light/15-voice-settings-switch-on.png",
+   "evidence": "Sampled",
+   "note": "Grouped settings card (Voice), between the divider and the next row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.cardAccount": {
+  "dark": {
+   "args": [
+    600,
+    560,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/23-account-sheet-pro-badge.png",
+   "evidence": "Sampled",
+   "note": "Row card on the account sheet (Manage your Google Account)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1B1B1B"
+  },
+  "light": {
+   "args": [
+    600,
+    560,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/23-account-sheet-pro-badge.png",
+   "evidence": "Sampled",
+   "note": "Row card on the account sheet (Manage your Google Account)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.cardNotebook": {
+  "dark": {
+   "args": [
+    650,
+    1220,
+    80,
+    15
+   ],
+   "capture": "screenshots/dark/19-students-cards-empty-notebook-card.png",
+   "evidence": "Sampled",
+   "note": "Empty study-notebook card (Students)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1C"
+  },
+  "light": {
+   "args": [
+    650,
+    1220,
+    80,
+    15
+   ],
+   "capture": "screenshots/light/19-students-cards-empty-notebook-card.png",
+   "evidence": "Sampled",
+   "note": "Empty study-notebook card (Students)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.cardSuggestion": {
+  "dark": {
+   "args": [
+    600,
+    540,
+    100,
+    15
+   ],
+   "capture": "screenshots/dark/20-scheduled-suggestion-cards.png",
+   "evidence": "Sampled",
+   "note": "Suggestion card (Scheduled)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1C"
+  },
+  "light": {
+   "args": [
+    600,
+    540,
+    100,
+    15
+   ],
+   "capture": "screenshots/light/20-scheduled-suggestion-cards.png",
+   "evidence": "Sampled",
+   "note": "Suggestion card (Scheduled)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.cardUsage": {
+  "dark": {
+   "args": [
+    400,
+    700,
+    150,
+    10
+   ],
+   "capture": "screenshots/dark/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled",
+   "note": "Usage card",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  },
+  "light": {
+   "args": [
+    400,
+    700,
+    150,
+    10
+   ],
+   "capture": "screenshots/light/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled",
+   "note": "Usage card",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F0F0"
+  }
+ },
+ "surface.composer": {
+  "dark": {
+   "args": [
+    420,
+    1665,
+    100,
+    15
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Composer capsule (glass; centre reading)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1D1F26"
+  },
+  "light": {
+   "args": [
+    420,
+    1665,
+    100,
+    15
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Composer capsule (glass; centre reading)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FBFBFB"
+  }
+ },
+ "surface.glass": {
+  "dark": {
+   "args": [
+    100,
+    225,
+    15,
+    15
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Round glass menu button (centre reading)",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    100,
+    225,
+    15,
+    15
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Derived",
+   "note": "Round glass menu button (centre reading)",
+   "op": "fill",
+   "share": 0.72,
+   "value": "#FCFAFA"
+  }
+ },
+ "surface.menu": {
+  "dark": {
+   "args": [
+    550,
+    300,
+    80,
+    40
+   ],
+   "capture": "screenshots/dark/07-model-picker-menu.png",
+   "evidence": "Derived",
+   "note": "Model picker menu (glass; centre reading)",
+   "op": "fill",
+   "share": 0.76,
+   "value": "#212121"
+  },
+  "light": {
+   "args": [
+    550,
+    300,
+    80,
+    40
+   ],
+   "capture": "screenshots/light/07-model-picker-menu.png",
+   "evidence": "Derived",
+   "note": "Model picker menu (glass; centre reading)",
+   "op": "fill",
+   "share": 0.48,
+   "value": "#FCFCFC"
+  }
+ },
+ "surface.menuPopup": {
+  "light": {
+   "args": [
+    620,
+    1300,
+    80,
+    30
+   ],
+   "capture": "screenshots/light/16-theme-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Theme pop-up menu over the settings card (light)",
+   "op": "fill",
+   "share": 0.95,
+   "value": "#FEFEFE"
+  }
+ },
+ "surface.menuPopupDark": {
+  "dark": {
+   "args": [
+    620,
+    1300,
+    80,
+    30
+   ],
+   "capture": "screenshots/dark/16-theme-popup-menu-not-changed.png",
+   "evidence": "Derived",
+   "note": "Theme pop-up menu over the settings card",
+   "op": "fill",
+   "share": 0.43,
+   "value": "#424246"
+  }
+ },
+ "surface.navSelected": {
+  "dark": {
+   "args": [
+    500,
+    345,
+    200,
+    40
+   ],
+   "capture": "screenshots/dark/09-sidebar-nav-notebooks-account.png",
+   "evidence": "Sampled",
+   "note": "Current row in the sidebar (New chat)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  }
+ },
+ "surface.segment": {
+  "dark": {
+   "args": [
+    372,
+    1490,
+    20,
+    15
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Selected Chat pill of the Chat / Task toggle",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    372,
+    1490,
+    20,
+    15
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled",
+   "note": "Selected Chat pill of the Chat / Task toggle",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.sheetPlus": {
+  "dark": {
+   "args": [
+    650,
+    1250,
+    100,
+    30
+   ],
+   "capture": "screenshots/dark/06-plus-sheet-tiles-tools-list.png",
+   "evidence": "Derived",
+   "note": "+ sheet (glass over the page)",
+   "op": "fill",
+   "share": 0.35,
+   "value": "#222634"
+  },
+  "light": {
+   "args": [
+    650,
+    1250,
+    100,
+    30
+   ],
+   "capture": "screenshots/light/06-plus-sheet-tiles-tools-list.png",
+   "evidence": "Derived",
+   "note": "+ sheet (glass over the page)",
+   "op": "fill",
+   "share": 0.73,
+   "value": "#E0E9F2"
+  }
+ },
+ "surface.signIn": {
+  "dark": {
+   "args": [
+    300,
+    1470,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/01-onboarding-sign-in-gate.png",
+   "evidence": "Sampled",
+   "note": "Google sign-in sheet at onboarding",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2F2F33"
+  }
+ },
+ "surface.tile": {
+  "dark": {
+   "args": [
+    80,
+    925,
+    30,
+    30
+   ],
+   "capture": "screenshots/dark/06-plus-sheet-tiles-tools-list.png",
+   "evidence": "Sampled",
+   "note": "Photos tile on the + sheet",
+   "op": "fill",
+   "share": 0.96,
+   "value": "#343436"
+  },
+  "light": {
+   "args": [
+    80,
+    925,
+    30,
+    30
+   ],
+   "capture": "screenshots/light/06-plus-sheet-tiles-tools-list.png",
+   "evidence": "Sampled",
+   "note": "Photos tile on the + sheet",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#DFDDDD"
+  }
+ },
+ "surface.track": {
+  "dark": {
+   "args": [
+    400,
+    780,
+    200,
+    8
+   ],
+   "capture": "screenshots/dark/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled",
+   "note": "Usage progress track (0% used)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1C"
+  },
+  "light": {
+   "args": [
+    400,
+    780,
+    200,
+    8
+   ],
+   "capture": "screenshots/light/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled",
+   "note": "Usage progress track (0% used)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "switch.on": {
+  "dark": {
+   "args": [
+    662,
+    415,
+    14,
+    30
+   ],
+   "capture": "screenshots/dark/14-memory-switch-on-tonal-button-empty.png",
+   "evidence": "Sampled",
+   "note": "Switch on, Material style (Memory): track",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#A8C6FA"
+  },
+  "light": {
+   "args": [
+    662,
+    415,
+    14,
+    30
+   ],
+   "capture": "screenshots/light/14-memory-switch-on-tonal-button-empty.png",
+   "evidence": "Sampled",
+   "note": "Switch on, Material style (Memory): track",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0957CF"
+  }
+ },
+ "switch.onSystem": {
+  "dark": {
+   "args": [
+    612,
+    575,
+    20,
+    15
+   ],
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "evidence": "Sampled",
+   "note": "Switch on, iOS style (Voice): track",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3086FE"
+  },
+  "light": {
+   "args": [
+    612,
+    575,
+    20,
+    15
+   ],
+   "capture": "screenshots/light/15-voice-settings-switch-on.png",
+   "evidence": "Sampled",
+   "note": "Switch on, iOS style (Voice): track",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#3086FE"
+  }
+ },
+ "switch.thumb": {
+  "dark": {
+   "args": [
+    735,
+    412,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/14-memory-switch-on-tonal-button-empty.png",
+   "evidence": "Derived",
+   "note": "Switch on, Material style: thumb, beside the tick",
+   "op": "fill",
+   "share": 0.42,
+   "value": "#072E71"
+  },
+  "light": {
+   "args": [
+    735,
+    412,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/14-memory-switch-on-tonal-button-empty.png",
+   "evidence": "Derived",
+   "note": "Switch on, Material style: thumb, beside the tick",
+   "op": "fill",
+   "share": 0.75,
+   "value": "#FFFFFF"
+  }
+ },
+ "switch.thumbSystem": {
+  "dark": {
+   "args": [
+    680,
+    570,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "evidence": "Sampled",
+   "note": "Switch on, iOS style: thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    680,
+    570,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/15-voice-settings-switch-on.png",
+   "evidence": "Sampled",
+   "note": "Switch on, iOS style: thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "switch.tick": {
+  "dark": {
+   "args": [
+    705,
+    415,
+    40,
+    30
+   ],
+   "capture": "screenshots/dark/14-memory-switch-on-tonal-button-empty.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick on the Material switch's thumb",
+   "op": "text",
+   "value": "#D2E4FF"
+  },
+  "light": {
+   "args": [
+    705,
+    415,
+    40,
+    30
+   ],
+   "capture": "screenshots/light/14-memory-switch-on-tonal-button-empty.png",
+   "evidence": "Sampled (text)",
+   "note": "Tick on the Material switch's thumb",
+   "op": "text",
+   "value": "#0B41A0"
+  }
+ },
+ "text.action": {
+  "dark": {
+   "args": [
+    678,
+    215,
+    78,
+    35
+   ],
+   "capture": "screenshots/dark/23-account-sheet-pro-badge.png",
+   "evidence": "Sampled (text)",
+   "note": "Text button in a sheet header ('Done')",
+   "op": "text",
+   "value": "#A9C8FB"
+  },
+  "light": {
+   "args": [
+    678,
+    215,
+    78,
+    35
+   ],
+   "capture": "screenshots/light/23-account-sheet-pro-badge.png",
+   "evidence": "Sampled (text)",
+   "note": "Text button in a sheet header ('Done')",
+   "op": "text",
+   "value": "#0756CF"
+  }
+ },
+ "text.badge": {
+  "dark": {
+   "args": [
+    413,
+    398,
+    60,
+    30
+   ],
+   "capture": "screenshots/dark/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled (text)",
+   "note": "PRO badge label",
+   "op": "text",
+   "value": "#959595"
+  },
+  "light": {
+   "args": [
+    413,
+    398,
+    60,
+    30
+   ],
+   "capture": "screenshots/light/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled (text)",
+   "note": "PRO badge label",
+   "op": "text",
+   "value": "#706C6D"
+  }
+ },
+ "text.body": {
+  "dark": {
+   "args": [
+    64,
+    1238,
+    400,
+    35
+   ],
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "Gemini's reply text",
+   "op": "text",
+   "value": "#E1E1E1"
+  }
+ },
+ "text.bodyLight": {
+  "light": {
+   "args": [
+    64,
+    1363,
+    400,
+    35
+   ],
+   "capture": "screenshots/light/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "Gemini's reply text",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.cardBody": {
+  "dark": {
+   "args": [
+    88,
+    620,
+    500,
+    32
+   ],
+   "capture": "screenshots/dark/20-scheduled-suggestion-cards.png",
+   "evidence": "Sampled (text)",
+   "note": "Suggestion card description",
+   "op": "text",
+   "value": "#9A9A9A"
+  },
+  "light": {
+   "args": [
+    88,
+    620,
+    500,
+    32
+   ],
+   "capture": "screenshots/light/20-scheduled-suggestion-cards.png",
+   "evidence": "Sampled (text)",
+   "note": "Suggestion card description",
+   "op": "text",
+   "value": "#727272"
+  }
+ },
+ "text.danger": {
+  "dark": {
+   "args": [
+    395,
+    720,
+    95,
+    35
+   ],
+   "capture": "screenshots/dark/11-chat-menu-destructive.png",
+   "evidence": "Sampled (text)",
+   "note": "Destructive menu item ('Delete')",
+   "op": "text",
+   "value": "#FF9296"
+  },
+  "light": {
+   "args": [
+    395,
+    720,
+    95,
+    35
+   ],
+   "capture": "screenshots/light/11-chat-menu-destructive.png",
+   "evidence": "Sampled (text)",
+   "note": "Destructive menu item ('Delete')",
+   "op": "text",
+   "value": "#F63036"
+  }
+ },
+ "text.disclaimer": {
+  "dark": {
+   "args": [
+    64,
+    1445,
+    435,
+    30
+   ],
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "Disclaimer under the thread",
+   "op": "text",
+   "value": "#8C8C8C"
+  }
+ },
+ "text.helper": {
+  "dark": {
+   "args": [
+    80,
+    612,
+    235,
+    35
+   ],
+   "capture": "screenshots/dark/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled (text)",
+   "note": "Helper line ('Updated just now')",
+   "op": "text",
+   "value": "#8D8D8D"
+  },
+  "light": {
+   "args": [
+    80,
+    612,
+    235,
+    35
+   ],
+   "capture": "screenshots/light/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled (text)",
+   "note": "Helper line ('Updated just now')",
+   "op": "text",
+   "value": "#716F6F"
+  }
+ },
+ "text.link": {
+  "dark": {
+   "args": [
+    537,
+    545,
+    150,
+    30
+   ],
+   "capture": "screenshots/dark/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled (text)",
+   "note": "Inline link ('Learn more')",
+   "op": "text",
+   "value": "#3286FE"
+  },
+  "light": {
+   "args": [
+    537,
+    545,
+    150,
+    30
+   ],
+   "capture": "screenshots/light/13-usage-limits-badge-progress.png",
+   "evidence": "Sampled (text)",
+   "note": "Inline link ('Learn more')",
+   "op": "text",
+   "value": "#3086FE"
+  }
+ },
+ "text.menuItem": {
+  "dark": {
+   "args": [
+    290,
+    215,
+    200,
+    35
+   ],
+   "capture": "screenshots/dark/07-model-picker-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Model name in the picker",
+   "op": "text",
+   "value": "#F7F7F9"
+  },
+  "light": {
+   "args": [
+    290,
+    215,
+    200,
+    35
+   ],
+   "capture": "screenshots/light/07-model-picker-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Model name in the picker",
+   "op": "text",
+   "value": "#090909"
+  }
+ },
+ "text.menuSubtitle": {
+  "dark": {
+   "args": [
+    288,
+    258,
+    195,
+    30
+   ],
+   "capture": "screenshots/dark/07-model-picker-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Model description in the picker ('Fastest answers')",
+   "op": "text",
+   "value": "#6D6D6D"
+  },
+  "light": {
+   "args": [
+    288,
+    258,
+    195,
+    30
+   ],
+   "capture": "screenshots/light/07-model-picker-menu.png",
+   "evidence": "Sampled (text)",
+   "note": "Model description in the picker ('Fastest answers')",
+   "op": "text",
+   "value": "#989697"
+  }
+ },
+ "text.modelName": {
+  "dark": {
+   "args": [
+    298,
+    195,
+    140,
+    40
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Model name beside 'Gemini' in the title ('Flash-Lite')",
+   "op": "text",
+   "value": "#8E8D96"
+  },
+  "light": {
+   "args": [
+    298,
+    195,
+    140,
+    40
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Model name beside 'Gemini' in the title ('Flash-Lite')",
+   "op": "text",
+   "value": "#898789"
+  }
+ },
+ "text.onAlert": {
+  "dark": {
+   "args": [
+    148,
+    870,
+    440,
+    30
+   ],
+   "capture": "screenshots/dark/03-system-notification-permission-alert.png",
+   "evidence": "Sampled (text)",
+   "note": "Alert message (iOS system text)",
+   "op": "text",
+   "value": "#777678"
+  }
+ },
+ "text.onBubble": {
+  "dark": {
+   "args": [
+    168,
+    1038,
+    300,
+    35
+   ],
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "Text in the owner's bubble",
+   "op": "text",
+   "value": "#E1E1E1"
+  }
+ },
+ "text.onBubbleLight": {
+  "light": {
+   "args": [
+    168,
+    1162,
+    300,
+    35
+   ],
+   "capture": "screenshots/light/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Sampled (text)",
+   "note": "Text in the owner's bubble",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    224,
+    1608,
+    175,
+    40
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Composer placeholder ('Ask Gemini')",
+   "op": "text",
+   "value": "#9B9A9E"
+  },
+  "light": {
+   "args": [
+    224,
+    1608,
+    175,
+    40
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Composer placeholder ('Ask Gemini')",
+   "op": "text",
+   "value": "#707070"
+  }
+ },
+ "text.primary": {
+  "dark": {
+   "args": [
+    172,
+    865,
+    130,
+    60
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Greeting ('Let's')",
+   "op": "text",
+   "value": "#E1E1E1"
+  },
+  "light": {
+   "args": [
+    172,
+    865,
+    130,
+    60
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Greeting ('Let's')",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.rowSubtitle": {
+  "dark": {
+   "args": [
+    160,
+    425,
+    410,
+    35
+   ],
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row subtitle",
+   "op": "text",
+   "value": "#A0A0A2"
+  },
+  "light": {
+   "args": [
+    160,
+    425,
+    410,
+    35
+   ],
+   "capture": "screenshots/light/15-voice-settings-switch-on.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row subtitle",
+   "op": "text",
+   "value": "#727373"
+  }
+ },
+ "text.searchPlaceholder": {
+  "dark": {
+   "args": [
+    142,
+    1608,
+    96,
+    35
+   ],
+   "capture": "screenshots/dark/17-search-focused-recent-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder",
+   "op": "text",
+   "value": "#656567"
+  },
+  "light": {
+   "args": [
+    142,
+    1608,
+    96,
+    35
+   ],
+   "capture": "screenshots/light/17-search-focused-recent-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder",
+   "op": "text",
+   "value": "#C2C2C4"
+  }
+ },
+ "text.sectionHeader": {
+  "dark": {
+   "args": [
+    88,
+    470,
+    112,
+    32
+   ],
+   "capture": "screenshots/dark/12-settings-sheet-grouped.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings section header ('Account')",
+   "op": "text",
+   "value": "#8C8C8C"
+  },
+  "light": {
+   "args": [
+    88,
+    470,
+    112,
+    32
+   ],
+   "capture": "screenshots/light/12-settings-sheet-grouped.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings section header ('Account')",
+   "op": "text",
+   "value": "#727070"
+  }
+ },
+ "text.segmentOff": {
+  "dark": {
+   "args": [
+    448,
+    1486,
+    55,
+    30
+   ],
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected segment label ('Task')",
+   "op": "text",
+   "value": "#F7F8F9"
+  },
+  "light": {
+   "args": [
+    448,
+    1486,
+    55,
+    30
+   ],
+   "capture": "screenshots/light/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected segment label ('Task')",
+   "op": "text",
+   "value": "#060708"
+  }
+ },
+ "text.timestamp": {
+  "dark": {
+   "args": [
+    678,
+    330,
+    85,
+    35
+   ],
+   "capture": "screenshots/dark/17-search-focused-recent-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Search result age ('3 days')",
+   "op": "text",
+   "value": "#8D8D8D"
+  },
+  "light": {
+   "args": [
+    678,
+    330,
+    85,
+    35
+   ],
+   "capture": "screenshots/light/17-search-focused-recent-list.png",
+   "evidence": "Sampled (text)",
+   "note": "Search result age ('3 days')",
+   "op": "text",
+   "value": "#706E6F"
+  }
+ },
+ "type.badge": {
+  "dark": {
+   "args": [
+    412,
+    395,
+    431,
+    432
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/13-usage-limits-badge-progress.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'P' of the PRO badge",
+   "op": "cap",
+   "top": 401,
+   "value": "15pt"
+  }
+ },
+ "type.body": {
+  "dark": {
+   "args": [
+    62,
+    1235,
+    73,
+    1275
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'I' of Gemini's reply",
+   "op": "cap",
+   "top": 1241,
+   "value": "17pt"
+  }
+ },
+ "type.bubble": {
+  "dark": {
+   "args": [
+    165,
+    1032,
+    197,
+    1078
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'O' of the owner's bubble",
+   "op": "cap",
+   "top": 1040,
+   "value": "17pt"
+  }
+ },
+ "type.button": {
+  "dark": {
+   "args": [
+    370,
+    1545,
+    393,
+    1590
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/21-images-intro-sheet-glass.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'T' of a full-width button ('Try it')",
+   "op": "cap",
+   "top": 1553,
+   "value": "17pt"
+  }
+ },
+ "type.cardBody": {
+  "dark": {
+   "args": [
+    86,
+    845,
+    105,
+    885
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/20-scheduled-suggestion-cards.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'T' of a suggestion card description",
+   "op": "cap",
+   "top": 853,
+   "value": "15pt"
+  }
+ },
+ "type.cardTitle": {
+  "dark": {
+   "args": [
+    86,
+    795,
+    108,
+    840
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/20-scheduled-suggestion-cards.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'B' of a suggestion card title",
+   "op": "cap",
+   "top": 803,
+   "value": "17pt"
+  }
+ },
+ "type.composer": {
+  "dark": {
+   "args": [
+    215,
+    1600,
+    244,
+    1650
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'A' of the composer placeholder",
+   "op": "cap",
+   "top": 1614,
+   "value": "17pt"
+  }
+ },
+ "type.disclaimer": {
+  "dark": {
+   "args": [
+    62,
+    1440,
+    87,
+    1480
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/dark/10-chat-thread-media-bubble-actions.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'G' of the disclaimer",
+   "op": "cap",
+   "top": 1449,
+   "value": "14pt"
+  }
+ },
+ "type.emptyBody": {
+  "dark": {
+   "args": [
+    182,
+    885,
+    204,
+    925
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/18-search-no-results-empty.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'N' of an empty-state line",
+   "op": "cap",
+   "top": 892,
+   "value": "15pt"
+  }
+ },
+ "type.emptyTitle": {
+  "dark": {
+   "args": [
+    327,
+    838,
+    351,
+    880
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/18-search-no-results-empty.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'N' of an empty-state title",
+   "op": "cap",
+   "top": 844,
+   "value": "17pt"
+  }
+ },
+ "type.greeting": {
+  "dark": {
+   "args": [
+    168,
+    860,
+    200,
+    925
+   ],
+   "capHeight": "23pt",
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Derived",
+   "inkPx": 47,
+   "note": "'L' of the greeting",
+   "op": "cap",
+   "top": 870,
+   "value": "32pt"
+  }
+ },
+ "type.largeTitle": {
+  "dark": {
+   "args": [
+    47,
+    330,
+    88,
+    395
+   ],
+   "capHeight": "20.5pt",
+   "capture": "screenshots/dark/12-settings-sheet-grouped.png",
+   "evidence": "Derived",
+   "inkPx": 42,
+   "note": "'S' of the Settings title",
+   "op": "cap",
+   "top": 341,
+   "value": "28pt"
+  }
+ },
+ "type.menuItem": {
+  "dark": {
+   "args": [
+    392,
+    295,
+    412,
+    338
+   ],
+   "capHeight": "11.5pt",
+   "capture": "screenshots/dark/11-chat-menu-destructive.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'P' of a menu item ('Pin')",
+   "op": "cap",
+   "top": 304,
+   "value": "16pt"
+  }
+ },
+ "type.menuSubtitle": {
+  "dark": {
+   "args": [
+    286,
+    255,
+    302,
+    291
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/07-model-picker-menu.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'F' of a model description",
+   "op": "cap",
+   "top": 264,
+   "value": "12pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    360,
+    225,
+    392,
+    268
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'V' of a nav title ('Voice')",
+   "op": "cap",
+   "top": 232,
+   "value": "17pt"
+  }
+ },
+ "type.onboarding": {
+  "dark": {
+   "args": [
+    114,
+    470,
+    141,
+    532
+   ],
+   "capHeight": "23pt",
+   "capture": "screenshots/dark/02-onboarding-get-started-terms.png",
+   "evidence": "Derived",
+   "inkPx": 47,
+   "note": "'L' of the onboarding title",
+   "op": "cap",
+   "top": 477,
+   "value": "32pt"
+  }
+ },
+ "type.pageTitle": {
+  "dark": {
+   "args": [
+    126,
+    448,
+    150,
+    502
+   ],
+   "capHeight": "20pt",
+   "capture": "screenshots/dark/19-students-cards-empty-notebook-card.png",
+   "evidence": "Derived",
+   "inkPx": 41,
+   "note": "'L' of the Students page title",
+   "op": "cap",
+   "top": 451,
+   "value": "28pt"
+  }
+ },
+ "type.rowTitle": {
+  "dark": {
+   "args": [
+    158,
+    885,
+    182,
+    930
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/12-settings-sheet-grouped.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'N' of a settings row ('Notifications')",
+   "op": "cap",
+   "top": 894,
+   "value": "17pt"
+  }
+ },
+ "type.searchRow": {
+  "dark": {
+   "args": [
+    118,
+    325,
+    146,
+    368
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/17-search-focused-recent-list.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'A' of a search result title",
+   "op": "cap",
+   "top": 332,
+   "value": "17pt"
+  }
+ },
+ "type.sectionHeader": {
+  "dark": {
+   "args": [
+    86,
+    465,
+    112,
+    505
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/12-settings-sheet-grouped.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'A' of a section header ('Account')",
+   "op": "cap",
+   "top": 473,
+   "value": "15pt"
+  }
+ },
+ "type.segment": {
+  "dark": {
+   "args": [
+    445,
+    1480,
+    467,
+    1520
+   ],
+   "capHeight": "9.5pt",
+   "capture": "screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'T' of a segment label ('Task')",
+   "op": "cap",
+   "top": 1490,
+   "value": "13pt"
+  }
+ },
+ "type.sidebarHeader": {
+  "dark": {
+   "args": [
+    63,
+    900,
+    87,
+    945
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/09-sidebar-nav-notebooks-account.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'N' of the sidebar section header",
+   "op": "cap",
+   "top": 908,
+   "value": "17pt"
+  }
+ },
+ "type.sidebarItem": {
+  "dark": {
+   "args": [
+    144,
+    345,
+    170,
+    392
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/09-sidebar-nav-notebooks-account.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'N' of a sidebar row ('New chat')",
+   "op": "cap",
+   "top": 354,
+   "value": "17pt"
+  }
+ },
+ "type.subtitle": {
+  "dark": {
+   "args": [
+    158,
+    570,
+    177,
+    612
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/15-voice-settings-switch-on.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'T' of a settings row subtitle",
+   "op": "cap",
+   "top": 578,
+   "value": "15pt"
+  }
+ },
+ "type.taskGreeting": {
+  "dark": {
+   "args": [
+    144,
+    675,
+    205,
+    740
+   ],
+   "capHeight": "23.5pt",
+   "capture": "screenshots/dark/08-task-mode-suggestions-purple.png",
+   "evidence": "Derived",
+   "inkPx": 48,
+   "note": "'W' of the Task mode greeting",
+   "op": "cap",
+   "top": 684,
+   "value": "33pt"
+  }
+ },
+ "type.usageTitle": {
+  "dark": {
+   "args": [
+    78,
+    915,
+    112,
+    955
+   ],
+   "capHeight": "11pt",
+   "capture": "screenshots/dark/13-usage-limits-badge-progress.png",
+   "evidence": "Derived",
+   "inkPx": 23,
+   "note": "'W' of a usage card title ('Weekly limit')",
+   "op": "cap",
+   "top": 923,
+   "value": "15pt"
+  }
+ }
+}
