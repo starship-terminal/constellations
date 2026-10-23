@@ -185,6 +185,16 @@ class Matching(unittest.TestCase):
             pats = R.load_patterns([str(f)])                # an invalid regex falls back to a literal
             self.assertTrue(pats[0].search("xa(bx") and pats[1].search("REAL"))
 
+    def test_patterns_file_email_allow_lets_the_owner_address_through(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "p.json"
+            f.write_text(json.dumps({"replace": [["x", "y"]], "email_allow": [r"^owner@mine\.test$"]}))
+            allow = R.load_email_allow([str(f)])
+            self.assertEqual(allow, [r"^owner@mine\.test$"])
+            self.assertEqual(R.find_private(self.words("owner@mine.test"), [], True, allow), [])
+            self.assertEqual(len(R.find_private(self.words("other@mine.test"), [], True, allow)), 1)
+            self.assertEqual(R.load_email_allow([]), [])
+
 
 if __name__ == "__main__":
     unittest.main()

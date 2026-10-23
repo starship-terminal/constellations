@@ -158,7 +158,9 @@ illustrations or brand colours into something that ships
   ~/.design-systems/cleanup-redact.json` must report no match before a commit
   that touches a signed-in package's screenshots or crops
   ([docs/CAPTURE.md](docs/CAPTURE.md)). That pattern file lists only what is
-  still banned, so it holds no entry for the owner's own name or email.
+  still banned, so it holds no entry for the owner's own name or email, and
+  its `email_allow` list names the owner's addresses, which the check's
+  email detector would otherwise flag.
 - **Do not make this repository public**, and do not push it anywhere but
   its private GitHub remote.
 - Run Python as `python3`.

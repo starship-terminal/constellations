@@ -97,6 +97,15 @@ def load_patterns(paths):
     return pats
 
 
+def load_email_allow(paths):
+    """The `email_allow` regexes of the same files: addresses an image may show (the owner's own,
+    which AGENTS.md allows). Merged with a rules file's ocr.email_allow."""
+    allow = []
+    for path in ([paths] if isinstance(paths, str) else paths or []):
+        allow += json.loads(Path(path).expanduser().read_text()).get("email_allow", [])
+    return allow
+
+
 # Crop files are named {component}-{state}.png, with "light" added for the light theme.
 STATES = "default|hover|focus-visible|active|selected|checked|open|typed|second|disabled|pressed"
 
@@ -370,8 +379,9 @@ def save_256(im, f):
 def cmd_apply(args):
     pkg = Path(args.package)
     rules = json.loads(Path(args.rules).read_text())
-    ocr_cfg = rules.get("ocr", {})
+    ocr_cfg = dict(rules.get("ocr", {}))
     patterns = load_patterns(args.patterns) if args.patterns else []
+    ocr_cfg["email_allow"] = ocr_cfg.get("email_allow", []) + load_email_allow(args.patterns)
     global_keep = [re.compile(k, re.I) for k in ocr_cfg.get("keep", [])]
     only = args.only
     deleted, edited, flagged = set(), 0, []
@@ -434,7 +444,8 @@ def cmd_check(args):
     patterns = load_patterns(args.patterns)
     if not patterns:
         sys.exit("no patterns read; a check against nothing proves nothing")
-    cfg = json.loads(Path(args.rules).read_text()).get("ocr", {}) if args.rules else {}
+    cfg = dict(json.loads(Path(args.rules).read_text()).get("ocr", {})) if args.rules else {}
+    cfg["email_allow"] = cfg.get("email_allow", []) + load_email_allow(args.patterns)
     bad = 0
     targets = [Path(p) for p in args.files] if args.files else package_images(pkg)
     if not targets:
