@@ -1,0 +1,577 @@
+{
+ "_doc": "Element crops cut from screenshots/light/<capture>.png by tools/crops.py into components/crops/{component}-{state}.png. box is [x, y, w, h] in capture pixels (2 px per pt). Grab has one theme, so every crop is light and carries no theme suffix. The screenshots are masked before quantising (tools/masks.json), so every crop is too.",
+ "crops": [
+  {
+   "name": "header-home",
+   "capture": "01-home-tiles-search",
+   "box": [
+    16,
+    76,
+    780,
+    215
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "search-field-home",
+   "capture": "01-home-tiles-search",
+   "box": [
+    40,
+    180,
+    550,
+    95
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "card-shortcut",
+   "capture": "01-home-tiles-search",
+   "box": [
+    40,
+    725,
+    732,
+    135
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "card-promo",
+   "capture": "01-home-tiles-search",
+   "box": [
+    40,
+    905,
+    740,
+    235
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "tab-bar-home",
+   "capture": "01-home-tiles-search",
+   "box": [
+    16,
+    1575,
+    780,
+    140
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "segmented-now-later",
+   "capture": "04-destination-focused-recent-tabs",
+   "box": [
+    250,
+    225,
+    315,
+    85
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "text-field-focused",
+   "capture": "04-destination-focused-recent-tabs",
+   "box": [
+    40,
+    325,
+    732,
+    205
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "tabs-recent-suggested-saved",
+   "capture": "04-destination-focused-recent-tabs",
+   "box": [
+    50,
+    575,
+    560,
+    85
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-place-suggestion",
+   "capture": "05-destination-typed-suggestions",
+   "box": [
+    40,
+    670,
+    740,
+    300
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "text-field-typed",
+   "capture": "05-destination-typed-suggestions",
+   "box": [
+    40,
+    325,
+    732,
+    205
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "sheet-pickup-over-map",
+   "capture": "06-pickup-map-sheet-primary-button",
+   "box": [
+    16,
+    1120,
+    780,
+    644
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-ride-option-selected",
+   "capture": "07-ride-options-book-button-not-pressed",
+   "box": [
+    30,
+    760,
+    752,
+    600
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "button-primary-book",
+   "capture": "07-ride-options-book-button-not-pressed",
+   "box": [
+    30,
+    1540,
+    752,
+    140
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "tabs-merchant",
+   "capture": "08-merchant-page-tabs-voucher-buy",
+   "box": [
+    16,
+    850,
+    780,
+    85
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "card-voucher",
+   "capture": "08-merchant-page-tabs-voucher-buy",
+   "box": [
+    40,
+    1015,
+    732,
+    225
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "button-compact-buy",
+   "capture": "08-merchant-page-tabs-voucher-buy",
+   "box": [
+    620,
+    1125,
+    160,
+    100
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "coachmark-export",
+   "capture": "09-activity-coachmark-tooltip",
+   "box": [
+    200,
+    195,
+    590,
+    395
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-activity-status",
+   "capture": "10-activity-list-status-labels",
+   "box": [
+    30,
+    430,
+    760,
+    470
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "sheet-preprompt",
+   "capture": "11-notification-preprompt-sheet-yes-later",
+   "box": [
+    16,
+    650,
+    780,
+    1114
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "button-primary-default",
+   "capture": "11-notification-preprompt-sheet-yes-later",
+   "box": [
+    40,
+    1395,
+    732,
+    140
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "button-secondary-default",
+   "capture": "11-notification-preprompt-sheet-yes-later",
+   "box": [
+    40,
+    1540,
+    732,
+    140
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "fab-new-chat",
+   "capture": "12-messages-toast-fab",
+   "box": [
+    630,
+    1420,
+    170,
+    150
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "tooltip-save-posts",
+   "capture": "13-moments-feed-tabs-chips-tooltip",
+   "box": [
+    110,
+    285,
+    690,
+    160
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "tabs-underline",
+   "capture": "13-moments-feed-tabs-chips-tooltip",
+   "box": [
+    16,
+    440,
+    780,
+    90
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "chip-outlined-new-badge",
+   "capture": "13-moments-feed-tabs-chips-tooltip",
+   "box": [
+    40,
+    545,
+    772,
+    90
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "card-account",
+   "capture": "14-account-cards-list",
+   "box": [
+    40,
+    290,
+    732,
+    360
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "card-payment",
+   "capture": "14-account-cards-list",
+   "box": [
+    40,
+    670,
+    772,
+    295
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-settings-new",
+   "capture": "14-account-cards-list",
+   "box": [
+    16,
+    1340,
+    780,
+    400
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "header-compact-account",
+   "capture": "15-account-scrolled-compact-header-new-badges",
+   "box": [
+    16,
+    76,
+    780,
+    200
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "checkbox-unchecked",
+   "capture": "16-checkboxes-disabled-save",
+   "box": [
+    40,
+    765,
+    732,
+    300
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "button-primary-disabled",
+   "capture": "16-checkboxes-disabled-save",
+   "box": [
+    40,
+    1525,
+    732,
+    135
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "search-field-focused",
+   "capture": "17-search-focused-chips-recent-pills",
+   "box": [
+    40,
+    285,
+    732,
+    95
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "chip-filter-selected",
+   "capture": "17-search-focused-chips-recent-pills",
+   "box": [
+    40,
+    415,
+    580,
+    95
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "pill-recent-search",
+   "capture": "17-search-focused-chips-recent-pills",
+   "box": [
+    40,
+    1135,
+    560,
+    145
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "empty-state-search",
+   "capture": "18-search-results-nothing-caught-hint",
+   "box": [
+    40,
+    790,
+    732,
+    110
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "sheet-flash-deals",
+   "capture": "19-food-flash-deals-sheet-timer",
+   "box": [
+    16,
+    245,
+    780,
+    500
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-merchant",
+   "capture": "19-food-flash-deals-sheet-timer",
+   "box": [
+    40,
+    540,
+    740,
+    190
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "header-food",
+   "capture": "20-food-home-chips-categories-tabbar",
+   "box": [
+    16,
+    76,
+    780,
+    560
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "chip-service-selected",
+   "capture": "20-food-home-chips-categories-tabbar",
+   "box": [
+    40,
+    670,
+    772,
+    90
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "banner-flash-deals",
+   "capture": "20-food-home-chips-categories-tabbar",
+   "box": [
+    16,
+    1490,
+    780,
+    95
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "tab-bar-food",
+   "capture": "20-food-home-chips-categories-tabbar",
+   "box": [
+    16,
+    1580,
+    780,
+    130
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "empty-state-cart",
+   "capture": "21-cart-empty-state",
+   "box": [
+    60,
+    650,
+    700,
+    620
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "card-offer-grid",
+   "capture": "22-offer-zone-grid",
+   "box": [
+    30,
+    780,
+    752,
+    500
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "interstitial-pickup-promo",
+   "capture": "23-pickup-promo-interstitial",
+   "box": [
+    16,
+    76,
+    780,
+    1690
+   ],
+   "themes": [
+    "light"
+   ]
+  }
+ ]
+}
