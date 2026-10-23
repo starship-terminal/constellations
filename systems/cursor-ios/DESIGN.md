@@ -20,6 +20,7 @@ colors:
   color-bg-scrim: "#00000033"
   color-surface-card: "#FCFCFC"
   color-surface-secondary: "#EEEEEE"
+  color-surface-code: "#E6E6E6"
   color-surface-inset: "#E7E7E7"
   color-surface-avatar: "#E9E9E9"
   color-surface-iconButton: "#E6E6E6"
@@ -209,7 +210,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### Do and don't (from README.md)
 
-1. **Do let agent replies sit on the page as plain text.** Replies have no bubble or card: numbered lists, semibold runs and inline code on a grey chip, set straight on `color.bg.page`. Only a reply's changed files get a card. See [06-agent-thread](screenshots/dark/06-agent-thread-changes-card-diffstat.png) and [reply-text](components/crops/reply-text.png).
+1. **Do let agent replies sit on the page as plain text.** Replies have no bubble or card: numbered lists, semibold runs and inline code on a grey chip (`color.surface.code`), set straight on `color.bg.page`. Only a reply's changed files get a card. See [06-agent-thread](screenshots/dark/06-agent-thread-changes-card-diffstat.png) and [reply-text](components/crops/reply-text.png).
 2. **Do carry state in small coloured marks, not in fills.** An agent row is grey text with a blue or grey dot, a violet merged or grey draft icon and a green and pink-red diffstat; nothing else on it is coloured. See [03-all-agents](screenshots/dark/03-all-agents-grouped-status-dots.png) and [list-row-agent-unread](components/crops/list-row-agent-unread.png).
 3. **Do float the composer and nav controls as glass over the content.** The nav buttons are glass circles, the composer a glass capsule pinned to the bottom of every list and thread, and content scrolls under both; there are no bars. See [02-inbox](screenshots/dark/02-inbox-tiles-projects-workspaces.png) and [01-repo-agents-list](screenshots/dark/01-repo-agents-list-composer.png).
 4. **Do draw the send button in the theme's inverse, not the accent.** Send is a near-white circle in dark and a near-black one in light; the blue accent is kept for unread dots, the caret and switches. See [composer-typed](components/crops/composer-typed.png) and its [light twin](components/crops/composer-typed-light.png).
