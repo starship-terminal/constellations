@@ -109,12 +109,13 @@ package was made this way and its README shows the evidence labels to use.
    (Sampled (text)), `edges` the pixel positions where colour changes, for
    sizes, padding and radii (exact for sizes, Derived for radii). Font
    family is usually not determinable; mark it Not captured.
-5. **Mask private text before anything enters the package.** A native
-   capture is pixels, so `scan` cannot see an account name, an avatar or a
-   private title in it. Look at every capture and paint those regions over
-   with `sample.py mask shot.png X,Y,W,H ...`, which fills each box with
-   the surface colour around it. Sample values first, mask second, then
-   quantise.
+5. **Mask what [AGENTS.md](../AGENTS.md) still bans before anything enters
+   the package.** Names, avatars, chat text and published content may stay;
+   a password, a code, a phone number, an address or another person's
+   email may not. A native capture is pixels, so `scan` cannot see any of it.
+   Look at every capture and paint those regions over with `sample.py mask
+   shot.png X,Y,W,H ...`, which fills each box with the surface colour
+   around it. Sample values first, mask second, then quantise.
 6. **Do not break the mirror.** Turning off the phone's network or locking
    it ends the session, so offline and lock-screen states cannot be
    captured this way.

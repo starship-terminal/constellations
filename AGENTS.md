@@ -143,13 +143,36 @@ illustrations or brand colours into something that ships
   Search and instant navigation stay off for that reason. Never publish
   `systems/`, screenshots or the gallery, and never commit `.env` (it holds
   the site password).
-- **Private material never enters the repo**: raw page copies, redaction
-  lists, account names, signed URLs, proprietary fonts. `systems/*/fonts/`
-  is gitignored for this reason.
+- **Only credentials and personally identifiable data are masked.** The
+  owner agreed on 2026-10-23 that these may show in screenshots and crops,
+  because the repository stays private:
+  - the owner's own account profile (name, email, handle, avatar,
+    initials), their chat, document and project text, and their time zone;
+  - other people's names, usernames and profile pictures as the app shows
+    them (leaderboards, friends, coworkers, comments, share sheets);
+  - anything the product itself publishes: marketing pages, staff and
+    instructor names, testimonials, promo photos, stock and sample images.
+
+  Masked or left out, and nothing else:
+  - credentials: passwords, one-time and recovery codes, API keys, tokens
+    and session cookies, signed URLs;
+  - personally identifiable data: phone numbers, street addresses, precise
+    locations, dates of birth, government, payment-card and bank numbers,
+    and the email or other contact details of anyone but the owner.
+
+  An account profile (name, email, handle, avatar) is not personally
+  identifiable data under this rule, and neither are figures such as body
+  weight or a usage total. Raw page copies, redaction lists and
+  proprietary fonts stay outside the repo too; `systems/*/fonts/` is
+  gitignored for this reason.
+
   Images count: `python3 tools/redact_images.py check systems/<slug> --patterns
   ~/.design-systems/cleanup-redact.json` must report no match before a commit
   that touches a signed-in package's screenshots or crops
-  ([docs/CAPTURE.md](docs/CAPTURE.md)).
+  ([docs/CAPTURE.md](docs/CAPTURE.md)). That pattern file lists only what is
+  still banned, so it holds no names or titles, and its `email_allow` list
+  names the owner's addresses, which the check's email detector would
+  otherwise flag.
 - **Do not make this repository public**, and do not push it anywhere but
   its private GitHub remote.
 - Run Python as `python3`.
