@@ -378,7 +378,9 @@ class ScanFailsLoudlyTest(unittest.TestCase):
 class FindTest(unittest.TestCase):
     def test_tag_hit_outranks_description_hit(self):
         hits = catalog.find(["ios"])
-        self.assertEqual(hits[0]["slug"], "hevy")
+        tagged = [h["slug"] for h in hits if "ios" in h.get("tags", [])]
+        self.assertTrue(tagged)
+        self.assertEqual([h["slug"] for h in hits[:len(tagged)]], tagged)
 
     def test_no_words_lists_everything(self):
         self.assertEqual(len(catalog.find([])), len(catalog.load_catalog()["systems"]))
