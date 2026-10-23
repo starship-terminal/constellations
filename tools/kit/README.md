@@ -11,6 +11,17 @@ cp -R tools/kit/capture systems/<slug>/tools/capture
 cp tools/kit/build/* systems/<slug>/tools/
 ```
 
+A native iOS app uses `native/` in place of `build/`, from Grok Bot, the first
+package captured that way:
+
+```bash
+mkdir -p systems/<slug>/tools/capture
+cp -R tools/kit/capture/native systems/<slug>/tools/capture/native
+cp tools/kit/native/quantize.py systems/<slug>/tools/capture/quantize.py
+cp tools/kit/native/*.py tools/kit/native/crops.json systems/<slug>/tools/
+rm systems/<slug>/tools/quantize.py
+```
+
 The process, the coverage checklist and the traps are in
 [docs/CAPTURE.md](../../docs/CAPTURE.md). What a package must contain is in
 [docs/PACKAGE.md](../../docs/PACKAGE.md).
@@ -27,7 +38,7 @@ See [docs/CAPTURE.md](../../docs/CAPTURE.md#dependencies) for the full table.
 |---|---|---|
 | Public web pages | Headless Playwright straight from the URL | `capture/public/` (from gauth), with its own `build-measurements.mjs`; use `build/build_components_md.public.py` as the package's `build_components_md.py` |
 | Signed-in web app | The owner signs in to a real browser; `snapshot.js` copies each state to disk, then everything is rendered and measured headless from the copies | `capture/signed-in/` (from claude, with chatgpt's measurement builder) |
-| Native iOS app | iPhone Mirroring on the Mac; values are sampled from window screenshots | `capture/native/` |
+| Native iOS app | iPhone Mirroring on the Mac; values are sampled from window screenshots | `capture/native/` to capture, `native/` to measure and build (from grokbot) |
 
 `vars.mjs`, `layout.mjs`, `icons.mjs` and `quantize.py` serve both web routes.
 The `build/` scripts serve every route.
@@ -41,6 +52,9 @@ The `build/` scripts serve every route.
 | `capture/signed-in/unsnap.py` | Writes a snapshot to disk; refuses it if a redacted string or a signing parameter survived. Needs `SNAP_REDACT` |
 | `capture/signed-in/redact.example.json` | The shape of the redaction file, which lives in `~/.design-systems/<slug>-redact.json` |
 | `capture/signed-in/render-all.sh` | Renders every row of `shots.tsv`: a copy taken in dark (`-dark` in its label) in both themes, any other once |
+| `capture/native/shot.sh` | `shot.sh <slug> <theme> <name>`: the mirroring window alone, in sRGB, to `~/.design-systems/<slug>/raw-shots/<theme>/` |
+| `native/quantize.py` | The native `quantize.py`: keeps the window's transparent corners |
+| `native/crops.py` | Cuts `components/crops/` from `screenshots/` by `crops.json` |
 | `capture/native/winid.swift` | The iPhone Mirroring window id, for `screencapture -l` |
 | `capture/native/sample.py` | Flat fills, text colours and edge positions from a screenshot (tested in `tools/test_sample.py`) |
 
@@ -62,6 +76,12 @@ Search each file for `PRODUCT (adapt)` first, then work down this list.
 | `build/build_tokens.py` | The header constants and the whole mapping from readings to `core`, `light` and `dark`; keep the helpers, build and checks |
 | `build/build_components_md.py` (signed-in) or `build_components_md.public.py` (public) | `PREFER`, `ORDER_GROUPS`, group and page descriptions, the intro and the Gaps section. The two read different measurement files, so use the one that matches the route |
 | `build/style-guide.template.html` | The theme attribute (`data-mode` or a `.dark` class), the token group names, and the whole Components section |
+| `native/measure.py` | `NAME` and the reading table `R`: one box per value, in capture pixels on this product's screens. It writes `raw/readings.json` and `raw/<slug>-measured.md` |
+| `native/build_tokens.py` | `core()` and `semantic()`: the mapping from readings to tokens. Keep the helpers, `check()` and `build()` |
+| `native/build_style_guide.py` | `NAME`, `OWNER`, `LEDE`, the specimen text and the Components specimens, drawn from tokens only |
+| `native/build_components_md.py` | `NAME`, `INVENTORY` (one row per checklist component, with its crops) and `GAPS` |
+| `native/test_build_tokens.py` | Nothing: its fixture is product-free, and it also checks the package's own `tokens.json` once one exists |
+| `native/crops.json` | One box per component state, in capture pixels; Grok Bot's boxes are the example |
 | `build/build_style_guide.py` | Usually nothing; it renders a light-only package too, and the template then starts in light with the theme toggle hidden |
 
 ## Never commit
