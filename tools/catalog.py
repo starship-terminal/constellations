@@ -12,8 +12,9 @@
     python3 tools/catalog.py design-md [SLUG...] [--check | --lint | --stdout]  write each package's DESIGN.md
 
 Standard library only, except `design-md --lint`, which runs Google's DESIGN.md linter
-through npx. Thumbnails use macOS `sips` or Pillow when present and
-fall back to the full-size image otherwise. Run from anywhere.
+through npx. Thumbnails use macOS `sips` or Pillow (see
+tools/requirements-capture.txt); with neither, each one falls back to the
+full-size image and `build` warns once. Run from anywhere.
 """
 from __future__ import annotations
 
@@ -966,18 +967,30 @@ def _thumb_ok(dst: Path) -> bool:
         return False
 
 
+@functools.lru_cache(maxsize=1)
+def _thumb_backend() -> str | None:
+    """What makes thumbnails: macOS `sips`, Pillow, or neither. Probed once per run."""
+    if shutil.which("sips"):
+        return "sips"
+    try:
+        from PIL import Image  # noqa: F401
+    except ImportError:
+        return None
+    return "pillow"
+
+
 def _make_thumb(src: Path, dst: Path) -> bool:
     if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime and _thumb_ok(dst):
         return True
-    if shutil.which("sips"):
+    backend = _thumb_backend()
+    if backend == "sips":
         done = subprocess.run(["sips", "-s", "format", "jpeg", "-s", "formatOptions", "78",
                                "--resampleWidth", str(THUMB_WIDTH), str(src), "--out", str(dst)],
                               capture_output=True)
         return done.returncode == 0 and dst.exists()
-    try:
-        from PIL import Image  # optional
-    except ImportError:
+    if backend != "pillow":
         return False
+    from PIL import Image
     with Image.open(src) as im:
         im = im.convert("RGB")
         if im.width > THUMB_WIDTH:
@@ -1010,6 +1023,17 @@ def attach_thumbs(images: list[dict]) -> None:
     for item in images:
         item["thumb"] = thumbs[item["path"]]
 
+    degraded = [p for p in paths if thumbs[p] == p]
+    if degraded:
+        backend = _thumb_backend()
+        if backend is None:
+            why = ("no `sips` on PATH and Pillow is not importable; "
+                   "pip install -r tools/requirements-capture.txt")
+        else:
+            why = f"`{backend}` could not convert them"
+        print(f"warning: {len(degraded)} of {len(paths)} gallery thumbnails "
+              f"fell back to the full-size screenshot ({why})", file=sys.stderr)
+
 
 # ---------------------------------------------------------------- commands
 
@@ -1039,6 +1063,9 @@ def check() -> list[str]:
     on_disk = sorted(p.name for p in (ROOT / "systems").iterdir() if p.is_dir())
     for missing in sorted(set(on_disk) - set(slugs)):
         problems.append(f"systems/{missing} has no catalog.json entry")
+    for dup in sorted({s for s in slugs if s and slugs.count(s) > 1}):
+        problems.append(f"{dup}: more than one catalog entry uses this slug")
+    categories = catalog.get("categories", {})
     for s in catalog["systems"]:
         slug = s.get("slug", "?")
         for field in REQUIRED_FIELDS:
@@ -1046,6 +1073,8 @@ def check() -> list[str]:
                 problems.append(f"{slug}: missing field {field}")
         if "platform" in s and s["platform"] not in PLATFORMS:
             problems.append(f"{slug}: platform {s['platform']!r} is not one of {', '.join(PLATFORMS)}")
+        if "category" in s and s["category"] not in categories:
+            problems.append(f"{slug}: category {s['category']!r} is not in categories")
         if not (ROOT / "systems" / slug).is_dir():
             problems.append(f"{slug}: systems/{slug} does not exist")
             continue
@@ -1055,6 +1084,15 @@ def check() -> list[str]:
         for field in ("entry", "tokens", "styleGuide"):
             if field in s and not (ROOT / s[field]).exists():
                 problems.append(f"{slug}: {field} {s[field]} does not exist")
+        extras = s.get("extras", [])
+        if not isinstance(extras, list):
+            problems.append(f"{slug}: extras must be a list of paths")
+        else:
+            for path in extras:
+                if not isinstance(path, str):
+                    problems.append(f"{slug}: extras path {path!r} is not a string")
+                elif not (ROOT / path).exists():
+                    problems.append(f"{slug}: extras path {path} does not exist")
         problems += layout_problems(s)
         if "preview" not in s or "tokens" not in s:
             continue
@@ -1256,6 +1294,17 @@ def section_data(system: dict) -> dict:
 # are where a separate fetch job puts each remote file; both sides are emitted so a
 # card can fall back to the remote while its file is missing.
 
+# Every remote media file sits under one CDN prefix; index.json carries it once
+# under `cdn` and each remote field keeps only the suffix after it.
+REFERO_CDN = "https://images.refero.design/styles/refero.design/"
+
+
+def _cdn_rel(url) -> str | None:
+    """A url under REFERO_CDN becomes its path suffix; anything else stays absolute."""
+    if not url:
+        return None
+    return url[len(REFERO_CDN):] if url.startswith(REFERO_CDN) else url
+
 
 def _refero_host(url) -> str | None:
     """Hostname of a style's source_url, without a leading www."""
@@ -1300,7 +1349,9 @@ def load_refero() -> list[tuple[Path, dict, dict]]:
 
 def refero_card(slug: str, meta: dict, ds: dict) -> dict:
     """One row of refero/index.json. The card prefers the video poster and falls back
-    to the screenshot; the remote card also tries the design-system's thumbnail."""
+    to the screenshot; the remote card also tries the design-system's thumbnail.
+    `card` keeps one bit ("p" poster, "s" shot); the gallery builds local media paths
+    from the slug and joins remote suffixes onto the index's `cdn` prefix."""
     poster, shot = meta.get("video_poster_url"), meta.get("screenshot_url")
     ds_meta = ds.get("meta") if isinstance(ds.get("meta"), dict) else {}
     return {"slug": slug, "name": meta.get("name"), "tagline": meta.get("tagline"),
@@ -1308,12 +1359,10 @@ def refero_card(slug: str, meta: dict, ds: dict) -> dict:
             "type": meta.get("product_type"), "style": meta.get("design_style"),
             "tags": meta.get("tags") or [],
             "src": _refero_host(meta.get("source_url")),
-            "card": f"/refero-media/posters/{slug}.jpg" if poster
-                    else f"/refero-media/shots/{slug}.jpg" if shot else None,
-            "cardRemote": poster or ds_meta.get("thumbnailUrl") or shot,
+            "card": "p" if poster else "s" if shot else None,
+            "cardRemote": _cdn_rel(poster or ds_meta.get("thumbnailUrl") or shot),
             "video": bool(meta.get("video_url")),
-            "videoSrc": f"/refero-media/videos/{slug}.mp4" if meta.get("video_url") else None,
-            "videoRemote": meta.get("video_url")}
+            "videoRemote": _cdn_rel(meta.get("video_url"))}
 
 
 def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
@@ -1359,14 +1408,31 @@ def build_refero() -> Path | None:
     out_dir = SITE / "refero"
     ent_dir = out_dir / "style"
     ent_dir.mkdir(parents=True, exist_ok=True)
+    name_count: dict[str, int] = {}
+    for _, meta, _ in styles:
+        if meta.get("name"):
+            key = str(meta["name"]).lower()
+            name_count[key] = name_count.get(key, 0) + 1
+    # A `similar` business name resolves to a slug only when exactly one style
+    # carries it. Names several styles share (Apple x6) would otherwise keep
+    # the last alphabetical match, a confident wrong link; the gallery renders
+    # a `slug: null` entry as an unlinked card with the name and why.
     slug_of = {str(meta["name"]).lower(): meta.get("slug") or folder.name
-               for folder, meta, _ in styles if meta.get("name")}
+               for folder, meta, _ in styles
+               if meta.get("name") and name_count[str(meta["name"]).lower()] == 1}
+    ambiguous = {n for n, count in name_count.items() if count > 1}
+    if ambiguous:
+        dropped = sum(str(s.get("business") or "").lower() in ambiguous
+                      for _, _, ds in styles for s in ds.get("similar") or []
+                      if isinstance(s, dict))
+        print(f"refero: {dropped} similar links left unlinked; "
+              f"{len(ambiguous)} business names are not unique", file=sys.stderr)
     index = []
     written = set()
     for folder, meta, ds in styles:
         slug = meta.get("slug") or folder.name
         atomic_write(ent_dir / f"{slug}.json",
-                     json.dumps(refero_entry(folder, meta, ds, slug_of), indent=1))
+                     json.dumps(refero_entry(folder, meta, ds, slug_of), separators=(",", ":")))
         written.add(slug)
         index.append(refero_card(slug, meta, ds))
     # Prune after writing, not before: a style deleted from refero/ loses its page,
@@ -1376,7 +1442,9 @@ def build_refero() -> Path | None:
             stale.unlink()
     index.sort(key=lambda s: str(s["name"] or "").lower())
     out = out_dir / "index.json"
-    atomic_write(out, json.dumps({"version": 1, "count": len(index), "styles": index}, indent=1))
+    atomic_write(out, json.dumps({"version": 2, "cdn": REFERO_CDN, "count": len(index),
+                                  "styles": index},
+                                 separators=(",", ":")))
     return out
 
 
@@ -1414,8 +1482,8 @@ def build() -> Path:
     attach_thumbs(all_shots)
     out = SITE / "data.json"
     atomic_write(out, json.dumps({"root": str(ROOT), "categories": catalog.get("categories", {}),
-                                 "systems": systems},
-                                indent=1))
+                                  "systems": systems},
+                                 separators=(",", ":")))
     build_refero()
     return out
 

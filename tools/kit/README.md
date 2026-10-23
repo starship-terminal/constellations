@@ -15,6 +15,12 @@ The process, the coverage checklist and the traps are in
 [docs/CAPTURE.md](../../docs/CAPTURE.md). What a package must contain is in
 [docs/PACKAGE.md](../../docs/PACKAGE.md).
 
+Python deps (Pillow for `quantize.py` and the inline PIL calls in the `.mjs`
+scripts, and whatever a route adds) are in
+[tools/requirements-capture.txt](../requirements-capture.txt), installed by
+`make setup`; the `.mjs` scripts call `process.env.PYTHON || 'python3'`.
+See [docs/CAPTURE.md](../../docs/CAPTURE.md#dependencies) for the full table.
+
 ## Which route
 
 | Product | Route | Scripts |

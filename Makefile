@@ -1,6 +1,7 @@
 # Browse the library's docs site (gallery, scorecard, docs), and check the catalog before a commit.
-# `make setup` once installs the site builder's markdown dependency into .venv; everything else
-# needs only python3 (lint-design-md also needs Node.js). `make serve PORT=9000` picks another port.
+# `make setup` once installs the site builder's and the capture tools' python dependencies
+# (requirements.txt + tools/requirements-capture.txt) into .venv; everything else needs only
+# python3 (lint-design-md also needs Node.js). `make serve PORT=9000` picks another port.
 
 PYTHON ?= python3
 PORT ?= 8800
@@ -10,8 +11,8 @@ PORT ?= 8800
 help: ## List the targets
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-14s %s\n", $$1, $$2}'
 
-setup: ## Create .venv with the site builder's dependencies (once per machine)
-	uv venv -q --python 3.13 .venv && uv pip install -q --python .venv/bin/python -r requirements.txt
+setup: ## Create .venv with the site builder's and capture tools' dependencies (once per machine)
+	uv venv -q --python 3.13 .venv && uv pip install -q --python .venv/bin/python -r requirements.txt -r tools/requirements-capture.txt
 
 dev: ## Serve the site and open the gallery and the scorecard in the browser (PORT, default 8800)
 	@./scripts/dev.sh --port $(PORT)
@@ -31,8 +32,9 @@ scorecard: ## Validate the scorecard's audit data
 grade: ## Re-grade the scripted criteria into a new audit snapshot, then rewrite every README's Health section
 	@$(PYTHON) tools/grade.py --write && $(PYTHON) tools/scorecard.py --check
 
-check: ## Validate catalog.json against the packages; fail on a stale Brief, DESIGN.md, scorecard or Health section
+check: ## Validate catalog.json and the refero stores; fail on a stale Brief, DESIGN.md, scorecard or Health section
 	@$(PYTHON) tools/catalog.py check
+	@$(PYTHON) tools/refero/check.py
 	@$(PYTHON) tools/brief.py --check
 	@$(PYTHON) tools/grade.py --check
 

@@ -1,7 +1,10 @@
 """Tests for tools/catalog.py. Run with `make test`."""
+import contextlib
 import copy
+import io
 import json
 import re
+import shutil
 import sys
 import unittest
 from pathlib import Path
@@ -74,6 +77,74 @@ class ThumbTest(unittest.TestCase):
             catalog._make_thumb = original
         self.assertEqual(len(calls), 2)
         self.assertEqual([i["thumb"] for i in items], ["systems/a/s.png", "systems/a/s.png", "systems/a/t.png"])
+
+    def test_fallback_to_full_size_warns_once(self):
+        original = catalog._make_thumb
+        catalog._make_thumb = lambda src, dst: False
+        try:
+            items = [{"path": "systems/a/s.png"}, {"path": "systems/a/t.png"}]
+            err = io.StringIO()
+            with contextlib.redirect_stderr(err):
+                catalog.attach_thumbs(items)
+        finally:
+            catalog._make_thumb = original
+        self.assertEqual(err.getvalue().count("warning:"), 1)
+        self.assertIn("2 of 2 gallery thumbnails fell back to the full-size screenshot",
+                      err.getvalue())
+        self.assertEqual([i["thumb"] for i in items], ["systems/a/s.png", "systems/a/t.png"])
+
+    def _warn_on_thumb_failure(self, backend):
+        original_make, original_backend = catalog._make_thumb, catalog._thumb_backend
+        catalog._make_thumb = lambda src, dst: False
+        catalog._thumb_backend = lambda: backend
+        try:
+            err = io.StringIO()
+            with contextlib.redirect_stderr(err):
+                catalog.attach_thumbs([{"path": "systems/a/s.png"}])
+        finally:
+            catalog._make_thumb, catalog._thumb_backend = original_make, original_backend
+        return err.getvalue()
+
+    def test_fallback_warning_names_missing_deps(self):
+        err = self._warn_on_thumb_failure(None)
+        self.assertIn("no `sips` on PATH and Pillow is not importable", err)
+        self.assertIn("requirements-capture.txt", err)
+
+    def test_fallback_warning_names_failed_backend(self):
+        err = self._warn_on_thumb_failure("sips")
+        self.assertIn("`sips` could not convert them", err)
+
+    def test_thumb_backend_prefers_sips_else_pillow_else_none(self):
+        sentinel = object()
+        saved_pil = sys.modules.get("PIL", sentinel)
+        original_which = shutil.which
+        try:
+            shutil.which = lambda name: "/usr/bin/sips"
+            catalog._thumb_backend.cache_clear()
+            self.assertEqual(catalog._thumb_backend(), "sips")
+
+            shutil.which = lambda name: None
+            sys.modules["PIL"] = None  # forces ImportError on `from PIL import ...`
+            catalog._thumb_backend.cache_clear()
+            self.assertIsNone(catalog._thumb_backend())
+        finally:
+            shutil.which = original_which
+            if saved_pil is sentinel:
+                sys.modules.pop("PIL", None)
+            else:
+                sys.modules["PIL"] = saved_pil
+            catalog._thumb_backend.cache_clear()
+        try:
+            import PIL  # noqa: F401
+        except ImportError:
+            self.skipTest("Pillow not installed")
+        shutil.which = lambda name: None
+        catalog._thumb_backend.cache_clear()
+        try:
+            self.assertEqual(catalog._thumb_backend(), "pillow")
+        finally:
+            shutil.which = original_which
+            catalog._thumb_backend.cache_clear()
 
 
 class ExportTest(unittest.TestCase):
@@ -745,14 +816,17 @@ class ReferoBuildTest(unittest.TestCase):
 
     def test_index_rows_and_name_sort(self):
         index, _ = self.build([("beta", self.BETA, self.BETA_DS), ("alpha", self.ALPHA, self.ALPHA_DS)])
-        self.assertEqual(index["version"], 1)
+        self.assertEqual(index["version"], 2)
+        self.assertEqual(index["cdn"], catalog.REFERO_CDN)
         self.assertEqual(index["count"], 2)
         alpha, beta = index["styles"]
         self.assertEqual([s["slug"] for s in index["styles"]], ["alpha", "beta"])
         self.assertEqual(alpha["src"], "alpha.example.com")
-        self.assertEqual(alpha["card"], "/refero-media/posters/alpha.jpg")
+        self.assertEqual(alpha["card"], "p")
         self.assertEqual(alpha["cardRemote"], "https://img/p.jpg")
         self.assertTrue(alpha["video"])
+        self.assertEqual(alpha["videoRemote"], "https://img/v.mp4")
+        self.assertNotIn("videoSrc", alpha)
         self.assertEqual(beta["industry"], "other")
         self.assertEqual(alpha["type"], "devtools")
         self.assertEqual(alpha["style"], "technical")
@@ -766,8 +840,18 @@ class ReferoBuildTest(unittest.TestCase):
     def test_card_remote_falls_back_to_thumbnail_then_shot(self):
         meta = {**self.BETA, "screenshot_url": "https://img/s.jpg"}
         index, _ = self.build([("beta", meta, {"meta": {"thumbnailUrl": "https://img/t.jpg"}})])
-        self.assertEqual(index["styles"][0]["card"], "/refero-media/shots/beta.jpg")
+        self.assertEqual(index["styles"][0]["card"], "s")
         self.assertEqual(index["styles"][0]["cardRemote"], "https://img/t.jpg")
+
+    def test_cdn_urls_emit_suffixes(self):
+        cdn = catalog.REFERO_CDN
+        meta = {**self.BETA, "screenshot_url": f"{cdn}image/s.jpg",
+                "video_url": f"{cdn}video/v.mp4", "video_poster_url": f"{cdn}image/p.jpg"}
+        index, _ = self.build([("beta", meta, self.BETA_DS)])
+        row = index["styles"][0]
+        self.assertEqual(row["card"], "p")
+        self.assertEqual(row["cardRemote"], "image/p.jpg")
+        self.assertEqual(row["videoRemote"], "video/v.mp4")
 
     def test_entry_file_media_docs_ds_and_similar(self):
         _, files = self.build([("beta", self.BETA, self.BETA_DS), ("alpha", self.ALPHA, self.ALPHA_DS)])
@@ -789,6 +873,23 @@ class ReferoBuildTest(unittest.TestCase):
         self.assertEqual(alpha["similar"], [{"slug": "beta", "name": "Beta", "why": "same"},
                                             {"slug": None, "name": "Nobody", "why": "none"}])
         self.assertIsNone(files["beta"]["media"]["shot"])
+
+    def test_a_duplicated_name_leaves_similar_unlinked(self):
+        # Two styles named "Beta": alpha's "Beta" similar entry cannot pick
+        # one, so it falls back to an unlinked card (slug: null).
+        dup_a = {**self.BETA, "name": "Beta"}
+        dup_b = {**self.BETA, "slug": "beta-2", "name": "Beta"}
+        solo = {**self.BETA, "slug": "gamma", "name": "Gamma"}
+        alpha_ds = {**self.ALPHA_DS,
+                    "similar": [{"business": "Beta", "why": "same"},
+                                {"business": "Gamma", "why": "unique"}]}
+        _, files = self.build([("beta", dup_a, self.BETA_DS),
+                               ("beta-2", dup_b, self.BETA_DS),
+                               ("gamma", solo, self.BETA_DS),
+                               ("alpha", self.ALPHA, alpha_ds)])
+        self.assertEqual(files["alpha"]["similar"],
+                         [{"slug": None, "name": "Beta", "why": "same"},
+                          {"slug": "gamma", "name": "Gamma", "why": "unique"}])
 
     def test_a_folder_without_both_files_is_skipped(self):
         import tempfile
