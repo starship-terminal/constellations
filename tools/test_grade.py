@@ -221,7 +221,8 @@ class RefreshAndReviewTest(unittest.TestCase):
         self.assertIn("not in catalog.json", str(e.exception))
 
     def test_a_review_entry_needs_grade_and_evidence(self):
-        for bad in ({"grade": "meets"}, {"evidence": "e"}, {"grade": "great", "evidence": "e"}, "meets"):
+        for bad in ({"grade": "meets"}, {"evidence": "e"}, {"grade": "great", "evidence": "e"},
+                    {"grade": ["meets"], "evidence": "e"}, "meets"):
             with self.assertRaises(SystemExit) as e:
                 self.make({"x": {"C1": bad}})
             self.assertIn("C1", str(e.exception), bad)

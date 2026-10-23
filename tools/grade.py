@@ -306,7 +306,8 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
         if wrong:
             raise SystemExit(f"review for {slug} sets {', '.join(wrong)}, which are scripted or not in the rubric")
         for cid, g in grades.items():
-            if not isinstance(g, dict) or g.get("grade") not in scorecard.GRADES \
+            if not isinstance(g, dict) or not isinstance(g.get("grade"), str) \
+                    or g["grade"] not in scorecard.GRADES \
                     or not isinstance(g.get("evidence"), str):
                 raise SystemExit(f"review for {slug} {cid}: every grade needs "
                                  "{\"grade\": meets|partly|missing|na, \"evidence\": \"what backs it\"}")

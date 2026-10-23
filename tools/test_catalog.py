@@ -813,6 +813,39 @@ class ReferoBuildTest(unittest.TestCase):
         self.assertEqual(index["styles"][0]["slug"], "index")
         self.assertEqual(files["index"]["slug"], "index")
 
+    def test_a_removed_style_loses_its_entity_but_kept_styles_survive_a_crash(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp:
+            root, site = Path(tmp), Path(tmp) / "docs" / "gallery"
+            self.make(root, "alpha", self.ALPHA, self.ALPHA_DS)
+            self.make(root, "beta", self.BETA, self.BETA_DS)
+            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "SITE", site):
+                catalog.build_refero()
+                self.assertTrue((site / "refero/style/beta.json").is_file())
+                # An interrupted rerun leaves retained styles' files in place:
+                # entities are written first and only absent slugs are pruned.
+                (root / "refero" / "beta" / "meta.json").unlink()
+                index = json.loads(catalog.build_refero().read_text())
+            self.assertEqual(index["count"], 1)
+            self.assertFalse((site / "refero/style/beta.json").exists())
+            self.assertTrue((site / "refero/style/alpha.json").exists())
+
+    def test_a_refero_folder_emptied_of_styles_writes_an_empty_index(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp:
+            root, site = Path(tmp), Path(tmp) / "docs" / "gallery"
+            self.make(root, "alpha", self.ALPHA, self.ALPHA_DS)
+            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "SITE", site):
+                catalog.build_refero()
+                import shutil
+                shutil.rmtree(root / "refero" / "alpha")
+                index = json.loads(catalog.build_refero().read_text())
+            self.assertEqual(index["count"], 0)
+            self.assertEqual(index["styles"], [])
+            self.assertEqual(list((site / "refero/style").glob("*.json")), [])
+
 
 class RepositoryTest(unittest.TestCase):
     def test_catalog_checks_clean(self):

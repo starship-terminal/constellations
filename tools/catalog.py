@@ -25,6 +25,7 @@ import math
 import os
 import re
 import shutil
+import tempfile
 import posixpath
 import subprocess
 import sys
@@ -58,15 +59,18 @@ PLATFORMS = ("web", "mobile", "desktop")
 
 
 def atomic_write(path: Path, text: str) -> None:
-    """Write text to path through a sibling temp file and a rename, so a concurrent
-    reader, or a deploy building while a generator runs, never sees a half-written
-    file. Every generator that writes a committed or generated file uses this."""
-    tmp = path.with_name(path.name + ".tmp")
+    """Write text to path through a temp file and a rename, so a concurrent reader,
+    or a deploy building while a generator runs, never sees a half-written file.
+    The temp file is unique to the call: two writers of the same path cannot steal
+    each other's rename. Every generator that writes a committed or generated file
+    uses this."""
+    fd, tmp = tempfile.mkstemp(dir=str(path.parent), prefix=path.name + ".", suffix=".tmp")
     try:
-        tmp.write_text(text)
+        with os.fdopen(fd, "w") as f:
+            f.write(text)
         os.replace(tmp, path)
     except BaseException:
-        tmp.unlink(missing_ok=True)
+        Path(tmp).unlink(missing_ok=True)
         raise
 
 
@@ -1187,16 +1191,19 @@ def latest_scores() -> dict[str, dict]:
     """Each package's grade counts from the newest scorecard audit, plus its contrast
     result when that criterion is not met, for the gallery cards and detail pages."""
     import scorecard  # tools/ is on the path; imported here so `check` never needs it
-    _, audits = scorecard.load()
+    criteria, audits = scorecard.load()
+    # Malformed audit data must fail here with its clean report, not as a KeyError
+    # mid-build or, worse, silently wrong score cells.
+    problems = scorecard.check(criteria, audits)
+    if problems:
+        sys.exit("scorecard data problems:\n  " + "\n  ".join(problems))
     audit = audits[-1]
     out = {}
     for s in audit["systems"]:
         counts = {g: 0 for g in scorecard.GRADES}
-        # Malformed grade entries are reported by scorecard.check; skip them here so
-        # a build reaches that clean error instead of a KeyError mid-way.
         grades = s["grades"] if isinstance(s.get("grades"), dict) else {}
         for g in grades.values():
-            if isinstance(g, dict) and g.get("grade") in counts:
+            if isinstance(g, dict) and isinstance(g.get("grade"), str) and g["grade"] in counts:
                 counts[g["grade"]] += 1
         f15 = grades.get("F15") or {}
         out[s["slug"]] = {**counts, "applicable": len(grades) - counts["na"], "date": audit["date"],
@@ -1345,24 +1352,28 @@ def build_refero() -> Path | None:
     """Write docs/gallery/refero/index.json and one style/<slug>.json per style.
     Entities sit under style/ so no slug can collide with the index (a real
     style is slugged `index`). Returns the index path, or None when there is no
-    refero/ folder or nothing valid in it."""
+    refero/ folder; an empty or unparseable one clears the generated output."""
     styles = load_refero()
-    if not styles:
+    if not (ROOT / "refero").is_dir():
         return None
     out_dir = SITE / "refero"
     ent_dir = out_dir / "style"
     ent_dir.mkdir(parents=True, exist_ok=True)
-    # Remove entity JSONs first, so a style deleted from refero/ does not keep its page.
-    for stale in ent_dir.glob("*.json"):
-        stale.unlink()
     slug_of = {str(meta["name"]).lower(): meta.get("slug") or folder.name
                for folder, meta, _ in styles if meta.get("name")}
     index = []
+    written = set()
     for folder, meta, ds in styles:
         slug = meta.get("slug") or folder.name
         atomic_write(ent_dir / f"{slug}.json",
                      json.dumps(refero_entry(folder, meta, ds, slug_of), indent=1))
+        written.add(slug)
         index.append(refero_card(slug, meta, ds))
+    # Prune after writing, not before: a style deleted from refero/ loses its page,
+    # while a crash mid-build leaves retained styles' entities in place.
+    for stale in ent_dir.glob("*.json"):
+        if stale.stem not in written:
+            stale.unlink()
     index.sort(key=lambda s: str(s["name"] or "").lower())
     out = out_dir / "index.json"
     atomic_write(out, json.dumps({"version": 1, "count": len(index), "styles": index}, indent=1))

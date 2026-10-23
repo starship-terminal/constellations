@@ -110,18 +110,18 @@ def check(criteria: dict, audits: list[dict]) -> list[str]:
             problems.append(f"criteria {c['id']}: platforms has {', '.join(wrong)}; "
                             f"list only {', '.join(p for p in PLATFORMS if p != BASE_PLATFORM)}")
     for audit in audits:
-        systems = audit.get("systems", [])
+        systems = audit.get("systems")
         if not isinstance(systems, list):
-            problems.append(f"{audit.get('date', '?')}: systems must be a list")
+            problems.append(f"{audit.get('date', '?')}: systems must be a list of graded packages")
             continue
-        slugs = [s.get("slug") for s in systems if isinstance(s, dict)]
+        slugs = [s["slug"] for s in systems if isinstance(s, dict) and isinstance(s.get("slug"), str)]
         for slug in sorted({x for x in slugs if slugs.count(x) > 1}):
             problems.append(f"{audit['date']}: slug {slug!r} appears {slugs.count(slug)} times; each page needs its own")
         for s in systems:
-            if not isinstance(s, dict):
-                problems.append(f"{audit['date']}: a systems entry is not an object")
+            if not isinstance(s, dict) or not isinstance(s.get("slug"), str) or not s["slug"]:
+                problems.append(f"{audit['date']}: a systems entry is not an object with a slug")
                 continue
-            slug = s.get("slug", "?")
+            slug = s["slug"]
             if "platform" in s and platform_of(s) not in PLATFORMS:
                 problems.append(f"{audit['date']} {slug}: unknown platform {s['platform']!r}")
             grades = s.get("grades")
@@ -140,7 +140,7 @@ def check(criteria: dict, audits: list[dict]) -> list[str]:
                     problems.append(f"{audit['date']} {slug} {cid}: a grade must be "
                                     "{\"grade\": ..., \"evidence\": ...}")
                     continue
-                if g.get("grade") not in GRADES:
+                if not isinstance(g.get("grade"), str) or g["grade"] not in GRADES:
                     problems.append(f"{audit['date']} {slug} {cid}: unknown grade {g.get('grade')!r}")
                 if not isinstance(g.get("evidence"), str):
                     problems.append(f"{audit['date']} {slug} {cid}: every grade needs an "
