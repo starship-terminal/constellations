@@ -43,11 +43,10 @@ SCALE = 2          # px per pt
 SRGB = "/System/Library/ColorSync/Profiles/sRGB Profile.icc"
 CAP_EM = 0.72      # cap height assumed for font sizes (the family is not known)
 
-# Captures whose .png was masked after capture (a phone number, call-list names, the photo grid).
+# Captures whose .png was masked after capture (the owner's phone number, a hostname in a thumbnail).
 # Their readings come from the unmasked Display P3 original, <name>.raw.png, converted to sRGB with
 # the same sips call capture/native/shot.sh makes, so they read the pixels the .png held before masking.
-FROM_RAW = {"09-settings-root-profile", "14-calls-segmented-all", "15-calls-segmented-missed-red",
-            "22-attachment-sheet-tab-bar"}
+FROM_RAW = {"09-settings-root-profile", "22-attachment-sheet-tab-bar"}
 
 # Three screens have a different name per theme: the light chat list also shows stories, the archive
 # row and a search field, so its rows sit lower; the light pass captured Auto-Night Mode for the
